@@ -1,3 +1,4 @@
+// Docusaurus v2, see package.json for versions
 module.exports = {
   title: 'Unity Multiplayer Technology',
   tagline: 'The tagline of my site',
@@ -34,7 +35,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
+          to: 'docs',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -110,8 +111,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.css'),

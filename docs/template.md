@@ -1,7 +1,7 @@
 ---
-id: doc1
-title: Style Guide
-sidebar_label: Style Guide
+id: template
+title: Markdown Style Guide
+sidebar_label: Markdown Style Guide
 slug: /
 ---
 
@@ -25,8 +25,6 @@ To serve as an example page when styling markdown based Docusaurus sites.
 
 ###### H6 - Create the best documentation
 
----
-
 ## Emphasis
 
 Emphasis, aka italics, with *asterisks* or _underscores_.
@@ -36,8 +34,6 @@ Strong emphasis, aka bold, with **asterisks** or __underscores__.
 Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
-
----
 
 ## Lists
 
@@ -54,9 +50,9 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 + Or pluses
 
----
-
 ## Links
+
+
 
 [I'm an inline-style link](https://www.google.com/)
 
@@ -76,8 +72,6 @@ Some text to show that the reference links can follow later.
 [1]: http://slashdot.org/
 [link text itself]: http://www.reddit.com/
 
----
-
 ## Images
 
 Here's our logo (hover to see the title text):
@@ -91,8 +85,6 @@ Reference-style: ![alt text][logo]
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
 ![img](../static/img/logo.png)
-
----
 
 ## Code
 
@@ -117,8 +109,6 @@ function highlightMe() {
 }
 ```
 
----
-
 ## Tables
 
 Colons can be used to align columns.
@@ -136,8 +126,6 @@ There must be at least 3 dashes separating each header cell. The outer pipes (|)
 | _Still_  | `renders` | **nicely** |
 | 1        | 2         | 3          |
 
----
-
 ## Blockquotes
 
 > Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
@@ -145,8 +133,6 @@ There must be at least 3 dashes separating each header cell. The outer pipes (|)
 Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
-
----
 
 ## Inline HTML
 
@@ -158,8 +144,6 @@ Quote break.
   <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
 </dl>
 
----
-
 ## Line Breaks
 
 Here's a line for us to start with.
@@ -167,8 +151,6 @@ Here's a line for us to start with.
 This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
 
 This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
-
----
 
 ## Admonitions
 
@@ -202,6 +184,15 @@ This is a warning
 
 :::
 
+## Mermaid Charts
+
+<Mermaid chart={`
+	graph LR;
+		A-->B;
+		B-->C;
+		B-->D[plop lanflz eknlzeknfz];
+`}/>
+
 ## MDX
 
 You can write JSX and use React components within your Markdown thanks to [MDX](https://mdxjs.com/).
@@ -216,3 +207,6 @@ export const Highlight = ({children, color}) => ( <span style={{
 <Highlight color="#25c2a0">Docusaurus green</Highlight> and <Highlight color="#1877F2">Facebook blue</Highlight> are my favorite colors.
 
 I can write **Markdown** alongside my _JSX_!
+
+<!-- On page code -->
+import Mermaid from '@theme/Mermaid';
