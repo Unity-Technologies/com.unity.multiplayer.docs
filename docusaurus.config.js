@@ -9,11 +9,11 @@ module.exports = {
   organizationName: 'unity', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-    gtag: {
-      trackingID: 'UA-123456789-1',
+    //gtag: {
+      //trackingID: 'UA-123456789-1',
       // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
+      //anonymizeIP: true, // Should IPs be anonymized?
+    //},
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
@@ -125,5 +125,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['@docusaurus/plugin-google-analytics', '@docusaurus/plugin-google-gtag'],
+  //plugins: ['@docusaurus/plugin-google-gtag'],
 };
