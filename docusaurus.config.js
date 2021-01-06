@@ -9,6 +9,23 @@ module.exports = {
   organizationName: 'unity', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
+    gtag: {
+      trackingID: 'UA-123456789-1',
+      // Optional fields.
+      anonymizeIP: true, // Should IPs be anonymized?
+    },
+    colorMode: {
+      // "light" | "dark"
+      defaultMode: 'dark',
+
+      // Hides the switch in the navbar
+      // Useful if you want to support a single color mode
+      disableSwitch: false,
+
+      // Should we use the prefers-color-scheme media-query,
+      // using user system preferences, instead of the hardcoded defaultMode
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: 'Unity Multiplayer Technology',
       logo: {
@@ -22,12 +39,15 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
+        { 
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
         },
+        { 
+          href: 'https://blogs.unity3d.com/',
+          label: 'Blog',
+          position: 'right'},
       ],
     },
     prism: {
@@ -100,9 +120,10 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/unity-custom.css'),
         },
       },
     ],
   ],
+  plugins: ['@docusaurus/plugin-google-analytics', '@docusaurus/plugin-google-gtag'],
 };
