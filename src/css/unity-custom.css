@@ -6,6 +6,9 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
 :root {
   --ifm-color-primary: #3578e5;
   --ifm-color-primary-dark: #1d68e1;
@@ -27,4 +30,22 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.fp-check:before {
+  color:rgb(45, 160, 0);
+  content: '\f058'; /* You should use \ and not /*/
+  font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+  font-style: normal;
+  font-weight: normal;
+  font-size:20px;
+}
+
+.fp-x:before {
+  color:rgb(207, 0, 0);
+  content: '\f057'; /* You should use \ and not /*/
+  font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+  font-style: normal;
+  font-weight: normal;
+  font-size:20px;
 }

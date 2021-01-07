@@ -2,7 +2,6 @@
 id: template
 title: Markdown Style Guide
 sidebar_label: Markdown Style Guide
-slug: /
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
@@ -51,8 +50,6 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 + Or pluses
 
 ## Links
-
-
 
 [I'm an inline-style link](https://www.google.com/)
 
