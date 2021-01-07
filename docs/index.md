@@ -6,7 +6,11 @@ slug: /
 
 The MLAPI is a high level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and the MLAPI collaborators. The MLAPI is open source with no attached costs or limitations.
 
+The MLAPI is one of the oldest and most actively developed game networking library out there. As a direct result of this, it offers many more features than other libraries. The MLAPI's focus is to make networking simple and let you focus on what matters most for your game.
+
 ## Features
+
+This table compares MLAPI and the deprecated UNET library features.
 
 | Feature | MLAPI | HLAPI |
 | -- | -- | -- |

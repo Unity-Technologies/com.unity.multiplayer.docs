@@ -1,7 +1,7 @@
 // Docusaurus v2, see package.json for versions
 module.exports = {
   title: 'Unity Multiplayer Technology',
-  tagline: 'The tagline of my site',
+  tagline: 'MLAPI and MTT Guides',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

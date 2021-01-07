@@ -8,32 +8,34 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Dependable Solution',
+    imageUrl: 'img/dependable.png',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        The MLAPI is one of the oldest and most actively developed game networking
+        library out there. As a direct result of this, it offers many more
+        features than other libraries.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Open Source',
+    imageUrl: 'img/opensource.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        The MLAPI is completeley free and open source, this means that it comes with 
+        no hidden CCU's or other limitations. Just a great networking library for you to use.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'General Purpose',
+    imageUrl: 'img/purpose.png',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The MLAPI is a general purpose networking library designed to work with any game.
+        It supports high-performance, large scale and small co-op games. Dedicated server 
+        applications or player hosted? The MLAPI does it all.
       </>
     ),
   },
