@@ -1,7 +1,7 @@
 ---
-id: messaging-system
-title: Messaging System
-sidebar_label: Messaging System
+id: introduction
+title: Introduction
+sidebar_label: Introduction
 ---
 
 The MLAPI has two parts to it's messaging system. Remote Procedure Call (RPC) messages and Custom Messages. Both types have sub types that change their behaviour, functionality and performance.
