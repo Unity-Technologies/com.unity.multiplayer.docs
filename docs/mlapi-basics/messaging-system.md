@@ -8,93 +8,10 @@ The MLAPI has two parts to it's messaging system. Remote Procedure Call (RPC) me
 
 ## RPC Remote Procedure Call
 
-The multiplayer framework provides two main network constructs [ServerRpc](#ServerRpc)  and [ClientRpc](#ClientRpc) to execute logic on either server-side or client-side. 
+The multiplayer framework provides two main network constructs [ServerRpc](ServerRpc.md)  and [ClientRpc](ClientRpc.md) to execute logic on either server-side or client-side. 
 
- 
-## <a name="ServerRpc"></a>ServerRpc
+For more information see the wikipedia  entry on  [Remote Procedure Call's](https://en.wikipedia.org/wiki/Remote_procedure_call). 
 
-A ``ServerRpc`` can be invoked by a client to be executed on the server.
-
-Developers can declare a ``ServerRpc``by marking a method with ``[ServerRpc]`` attribute and making sure to have ``ServerRpc`` suffix in the method name.
-
-```csharp
-[ServerRpc]
-void PingServerRpc(int somenumber, string sometext) { /* ... */ }
-```
-Developers can invoke a ``ServerRpc`` by making a direct function call with parameters:
-
-```csharp
-void Update()
-{
-    if (Input.GetKeyDown(KeyCode.P))
-    {
-        PingServerRpc(Time.frameCount, "hello, world"); // Client -> Server
-    }
-}
-```
-
-Marking method with ``[ServerRpc]`` attribute and putting ``ServerRpc`` suffix to the method name are required, otherwise it will prompt error messages:
-
-```csharp
-// Error: Invalid, missing 'ServerRpc' suffix in the method name
-[ServerRpc]
-void Ping(int somenumber, string sometext) { /* ... */ }
-
-// Error: Invalid, missing [ServerRpc] attribute on the method
-void PingServerRpc(int somenumber, string sometext) { /* ... */ }
-```
-
-``[ServerRpc]`` attribute and matching ``...ServerRpc`` suffix in the method name are there to make it crystal clear for RPC call sites to know when they are executing an RPC, it will be replicated and executed on the server-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it is a ServerRpc or [ClientRpc](#ClientRpc):
-
-```csharp
-Ping(somenumber, sometext); // Is this an RPC call?
-
-PingRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
-
-PingServerRpc(somenumber, sometext); // This is clearly a ServerRpc call
-```
-## <a name="ClientRpc"></a>ClientRpc
-
-A ``ClientRpc`` can be invoked by the server to be executed on a client.
-
-Developers can declare a ``ClientRpc`` by marking a method with ``[ClientRpc]`` attribute and making sure to have ``ClientRpc`` suffix in the method name.
-
-```csharp
-[ClientRpc]
-void PongClientRpc(int somenumber, string sometext) { /* ... */ }
-```
-
-Developers can invoke a ``ClientRpc`` by making a direct function call with parameters:
-
-```csharp
-void Update()
-{
-    if (Input.GetKeyDown(KeyCode.P))
-    {
-        PongClientRpc(Time.frameCount, "hello, world"); // Server -> Client
-    }
-}
-```
-Marking method with ``[ClientRpc]`` attribute and putting ClientRpc suffix to the method name are required, otherwise it will prompt error messages:
-
-```csharp
-// Error: Invalid, missing 'ClientRpc' suffix in the method name
-[ClientRpc]
-void Pong(int somenumber, string sometext) { /* ... */ }
-
-// Error: Invalid, missing [ClientRpc] attribute on the method
-void PongClientRpc(int somenumber, string sometext) { /* ... */ }
-```
-
-``[ClientRpc]`` attribute and matching ``...ClientRpc`` suffix in the method name are there to make it crystal clear for RPC call sites to know when they are executing an RPC, it will be replicated and executed on the client-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it is a [ServerRpc](#ServerRpc) or ClientRpc:
-
-```csharp
-Pong(somenumber, sometext); // Is this an RPC call?
-
-PongRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
-
-PongClientRpc(somenumber, sometext); // This is clearly a ClientRpc call
-```
 
 ### Modes
 
