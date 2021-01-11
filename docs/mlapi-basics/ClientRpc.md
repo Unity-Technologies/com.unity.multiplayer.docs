@@ -6,13 +6,14 @@ sidebar_label: ClientRpc
 
 A ``ClientRpc`` can be invoked by the server to be executed on a client.
 
+## Declaring
 Developers can declare a ``ClientRpc`` by marking a method with ``[ClientRpc]`` attribute and making sure to have ``ClientRpc`` suffix in the method name.
 
 ```csharp
 [ClientRpc]
 void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 ```
-
+## Invoking
 Developers can invoke a ``ClientRpc`` by making a direct function call with parameters:
 
 ```csharp
@@ -24,6 +25,8 @@ void Update()
     }
 }
 ```
+
+
 Marking method with ``[ClientRpc]`` attribute and putting ClientRpc suffix to the method name are required, otherwise it will prompt error messages:
 
 ```csharp
