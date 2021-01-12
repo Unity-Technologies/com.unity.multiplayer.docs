@@ -60,7 +60,16 @@
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: normal;
-  font-size:20px;
+  font-size:28px;
+}
+
+.fp-github:before {
+  color:rgb(255, 255, 255);
+  content: '\f09b';
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: normal;
+  font-size:28px;
 }
 
 .navbar {
