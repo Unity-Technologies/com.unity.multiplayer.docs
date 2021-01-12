@@ -1,5 +1,5 @@
 ---
-id: ClientRpc
+id: clientrpc
 title: ClientRpc 
 sidebar_label: ClientRpc 
 ---

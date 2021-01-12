@@ -1,5 +1,5 @@
 ---
-id: ServerRpc
+id: serverrpc
 title: ServerRpc
 sidebar_label: ServerRpc
 ---
