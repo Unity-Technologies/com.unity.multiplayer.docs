@@ -4,7 +4,7 @@ title: Markdown Style Guide
 sidebar_label: Markdown Style Guide
 ---
 
-You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
 
 ## Markdown Syntax
 
