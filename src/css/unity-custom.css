@@ -32,6 +32,10 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+/* FontAwesome - find icons here https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
+ * Add new entry using the following as examples.
+*/
+
 .fp-check:before {
   color:rgb(45, 160, 0);
   content: '\f058'; /* You should use \ and not /*/
@@ -43,11 +47,38 @@
 
 .fp-x:before {
   color:rgb(207, 0, 0);
-  content: '\f057'; /* You should use \ and not /*/
-  font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+  content: '\f057';
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: normal;
   font-size:20px;
+}
+
+.fp-grid:before {
+  color:rgb(255, 255, 255);
+  content: '\f00a';
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: normal;
+  font-size:28px;
+}
+
+.fp-github:before {
+  color:rgb(255, 255, 255);
+  content: '\f09b';
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: normal;
+  font-size:28px;
+}
+
+.navbar {
+  --ifm-navbar-background-color: rgb(0, 0, 0) !important;
+  --ifm-navbar-link-color: rgb(255, 255, 255) !important;
+}
+
+.navbar__title:hover, .navbar__brand:hover {
+  color: #3578e5;
 }
 
 .hero--primary {
@@ -60,3 +91,4 @@
 .button.button--secondary.button--outline:not(.button--active):not(:hover) {
   color:rgb(255, 255, 255);
 }
+
