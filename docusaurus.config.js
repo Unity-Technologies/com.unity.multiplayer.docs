@@ -40,7 +40,7 @@ module.exports = {
       },
       items: [
         { 
-          activeBasePath: 'docs/',
+          activeBasePath: '/',
           label: 'MLAPI SDK',
           to: 'about-mlapi',
           position: 'left',
