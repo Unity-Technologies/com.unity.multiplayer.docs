@@ -32,4 +32,4 @@ See the Contribution Guide for details. A [template file](https://github.com/Uni
 
 ## Connect with Unity 
 
-Connect with the Unity MTT team and community on the [MLAPI by Unity](http://discord.mlapi.network/) Discord.
+Connect with the Unity Multitplayer team and community on the [MLAPI by Unity](http://discord.mlapi.network/) Discord using channel #documentation. You can also raise threads on the [Unity Multiplayer Forum](https://forum.unity.com/forums/multiplayer.26/)
