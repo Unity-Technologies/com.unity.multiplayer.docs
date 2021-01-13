@@ -28,20 +28,17 @@ module.exports = {
       respectPrefersColorScheme: true,
 
       switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: '\u{1F319}',
-
         // CSS to apply to dark icon,
         // React inline style object
         // see https://reactjs.org/docs/dom-elements.html#style
+        // Unicode icons such as '\u2600' will work
+        // Unicode with 5 chars require brackets: '\u{1F602}'
+        // Icon for the switch while in dark mode
+        darkIcon: '\u{1F319}',
         darkIconStyle: {
           marginLeft: '1px',
         },
-
-        // Unicode icons such as '\u2600' will work
-        // Unicode with 5 chars require brackets: '\u{1F602}'
         lightIcon: '\u{1F324}',
-
         lightIconStyle: {
           marginLeft: '1px',
         },
@@ -55,20 +52,29 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
+          to: 'docs',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
         { 
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
           label: 'GitHub',
+          className: 'fp-github',
           position: 'right',
         },
         { 
           href: 'https://blogs.unity3d.com/',
           label: 'Blog',
           position: 'right'},
+        {
+          label: 'Language', 
+          position: 'right', 
+          items:[
+            {label:'English', to:'/about-mlapi'},
+            {label:'日本人', to:'/jp/about-mlapi'}
+          ]
+        }
       ],
     },
     prism: {
@@ -129,7 +135,10 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          path: 'docs', //frozen version do not remove
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          includeCurrentVersion: false
           // Please change this to your repo.
           // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
         },
@@ -139,5 +148,12 @@ module.exports = {
       },
     ],
   ],
-  //plugins: ['@docusaurus/plugin-google-gtag'],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ['html'],
+      },
+    ],
+  ],
 };

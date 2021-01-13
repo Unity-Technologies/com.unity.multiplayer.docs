@@ -1,0 +1,151 @@
+{
+  "version-en/docs": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-en/about-mlapi"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/getting-started/installation"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/getting-started/library-initialization"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/getting-started/connection-approval"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "MLAPI Basics",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/messaging-system"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/object-spawning"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/object-behavior-relation"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/modularity"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/networkedvar"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/syncedvar"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/scene-management"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/object-ownership"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/object-visibility"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/mlapi-basics/logging"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Core Components",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-en/core-components/core-components"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/core-components/networkingmanager"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/core-components/trackedobject"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/core-components/networkedobject"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/core-components/networkedbehavior"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Advanced Topics",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/message-encryption"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/object-pooling"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/lag-compensation"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/bitwriter-bitreader-bitstream"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/custom-transports"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/networkprofiler-window"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/custom-serialization"
+        },
+        {
+          "type": "doc",
+          "id": "version-en/advanced-topics/boxing-systems"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Troubleshooting",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-en/troubleshooting/troubleshooting"
+        }
+      ]
+    }
+  ]
+}
