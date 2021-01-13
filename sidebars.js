@@ -5,5 +5,23 @@ module.exports = {
     'Core Components': ['core-components/core-components', 'core-components/networkingmanager', 'core-components/trackedobject', 'core-components/networkedobject', 'core-components/networkedbehavior'],
     'Advanced Topics': ['advanced-topics/message-encryption', 'advanced-topics/object-pooling', 'advanced-topics/lag-compensation', 'advanced-topics/bitwriter-bitreader-bitstream', 'advanced-topics/custom-transports', 'advanced-topics/networkprofiler-window', 'advanced-topics/custom-serialization', 'advanced-topics/boxing-systems'],
     'Troubleshooting': ['troubleshooting/troubleshooting'],
-  },
+    'Reference': 
+    [
+    
+      {
+        'Glossary':
+            [ 
+            'reference/glossary/network-latency-management',
+            'reference/glossary/relevancy',
+            'reference/glossary/prioritization',
+            'reference/glossary/distributed-simulation-topologies',
+
+
+
+
+
+        ],
+      }
+    ]
+  }
 };
