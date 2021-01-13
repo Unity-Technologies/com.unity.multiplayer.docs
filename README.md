@@ -28,7 +28,7 @@ yarn install
 
 ## Contributing Content
 
-See the Contribution Guide for details. A [template file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md) (/docs/template.md) is included in the repo to understand markdown formatting and options.
+See the Contribution Guide for details. A [template file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md) (file located at /docs/template.md) is included in the repo to understand markdown formatting and options.
 
 ## Connect with Unity 
 

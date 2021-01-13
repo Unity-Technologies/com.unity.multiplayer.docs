@@ -16,24 +16,12 @@ module.exports = {
       //anonymizeIP: true, // Should IPs be anonymized?
     //},
     colorMode: {
-      // "light" | "dark"
       defaultMode: 'dark',
-
-      // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
       disableSwitch: false,
-
-      // Should we use the prefers-color-scheme media-query,
-      // using user system preferences, instead of the hardcoded defaultMode
       respectPrefersColorScheme: true,
-
       switchConfig: {
-        // CSS to apply to dark icon,
-        // React inline style object
-        // see https://reactjs.org/docs/dom-elements.html#style
-        // Unicode icons such as '\u2600' will work
-        // Unicode with 5 chars require brackets: '\u{1F602}'
-        // Icon for the switch while in dark mode
+        // CSS to modify icons
+        // Unicode '\u2600', 5 chars require brackets: '\u{1F602}'
         darkIcon: '\u{1F319}',
         darkIconStyle: {
           marginLeft: '1px',
@@ -51,30 +39,27 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
-        {
-          to: 'docs',
-          activeBasePath: 'docs',
-          label: 'Docs',
+        { 
+          activeBasePath: 'docs/',
+          label: 'MLAPI SDK',
+          to: 'about-mlapi',
           position: 'left',
         },
         { 
           href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
-          label: 'GitHub',
-          className: 'fp-github',
+          //label: 'GitHub',
           position: 'right',
+          className: 'navbar-github-link',
         },
         { 
           href: 'https://blogs.unity3d.com/',
           label: 'Blog',
           position: 'right'},
         {
-          label: 'Language', 
-          position: 'right', 
-          items:[
-            {label:'English', to:'/about-mlapi'},
-            {label:'日本人', to:'/jp/about-mlapi'}
-          ]
-        }
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownActiveClassDisabled: true
+        },
       ],
     },
     prism: {
@@ -138,9 +123,18 @@ module.exports = {
           path: 'docs', //frozen version do not remove
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          includeCurrentVersion: false
-          // Please change this to your repo.
-          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
+          includeCurrentVersion: false,
+          lastVersion: 'en',
+          versions: {
+            'en': {
+              label: 'English',
+              path: '',
+            },
+            'jp': {
+              label: '日本人',
+              path: 'jp',
+            },
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.css'),
