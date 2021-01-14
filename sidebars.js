@@ -15,6 +15,8 @@ module.exports = {
             'reference/glossary/relevancy',
             'reference/glossary/prioritization',
             'reference/glossary/distributed-simulation-topologies',
+            'reference/glossary/high-level-terminology',
+            'reference/glossary/networking-transport-layer',
 
 
 
