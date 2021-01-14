@@ -6,7 +6,7 @@ sidebar_label: Networking Transport Layer
 
 It’s what’s closer to the hardware, sending the bits back and forward over the internet connection.
 
-![](../../images/networking-transport.png)
+![](../../../static/img/networking-transport.png)
 
 ### IP address 
 
@@ -45,7 +45,7 @@ A data packet travels at a more or less fixed speed, so a player's ping is direc
 
 Another factor that affects the data travel time is the number of stops (or hops) that your data packet must make on its way. Every additional hop also increases the risk that you lose a data packet.
 
-![Datagram relay](../../images/data-relay.jpg)
+![Datagram relay](../../../static/img/data-relay.jpg)
 
 **Packet loss** — where did my data go?
 
