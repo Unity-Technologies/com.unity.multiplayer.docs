@@ -72,9 +72,14 @@
   font-size:28px;
 }
 
-.navbar {
-  --ifm-navbar-background-color: rgb(0, 0, 0) !important;
-  --ifm-navbar-link-color: rgb(255, 255, 255) !important;
+html[data-theme="light"] {
+  --ifm-navbar-background-color: rgb(0, 0, 0);
+  --ifm-navbar-link-color: rgb(255, 255, 255);
+}
+
+html[data-theme="dark"] {
+  --ifm-navbar-background-color: rgb(0, 0, 0);
+  --ifm-navbar-link-color: rgb(255, 255, 255);
 }
 
 .navbar__title:hover, .navbar__brand:hover {
@@ -106,3 +111,14 @@
 .navbar-github-link:hover:after {
     opacity: 0.5;
   }
+
+.navbar-grid-menu {
+  transition: opacity 0.2s;
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background-image: url("../../static/img/grid.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}

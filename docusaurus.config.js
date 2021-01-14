@@ -40,26 +40,40 @@ module.exports = {
       },
       items: [
         { 
-          activeBasePath: '/',
           label: 'MLAPI SDK',
-          to: 'about-mlapi',
+          type: 'doc',
+          docId: 'about-mlapi',
           position: 'left',
         },
         { 
           href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
-          //label: 'GitHub',
           position: 'right',
           className: 'navbar-github-link',
         },
-        { 
-          href: 'https://blogs.unity3d.com/',
-          label: 'Blog',
-          position: 'right'},
         {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownActiveClassDisabled: true
         },
+        {
+          position: 'right',
+          label: 'Community',
+          //className: 'navbar-grid-menu',
+          items: [
+            {
+              label: 'Unity Blog',
+              href: 'https://blogs.unity3d.com/',
+            },
+            {
+              label: 'Unity Multiplayer Forum',
+              href: 'https://forum.unity.com/forums/multiplayer.26/',
+            },
+            {
+              label: 'Discord',
+              href: 'http://discord.mlapi.network/',
+            },
+          ]
+        }
       ],
     },
     prism: {

@@ -1,5 +1,5 @@
 module.exports = {
-  docs: {
+  mlapi: {
     'Getting Started': ['about-mlapi', 'getting-started/installation', 'getting-started/library-initialization', 'getting-started/connection-approval'],
     'MLAPI Basics': ['mlapi-basics/messaging-system', 'mlapi-basics/object-spawning', 'mlapi-basics/object-behavior-relation', 'mlapi-basics/modularity', 'mlapi-basics/networkedvar', 'mlapi-basics/syncedvar', 'mlapi-basics/scene-management', 'mlapi-basics/object-ownership', 'mlapi-basics/object-visibility', 'mlapi-basics/logging'],
     'Core Components': ['core-components/core-components', 'core-components/networkingmanager', 'core-components/trackedobject', 'core-components/networkedobject', 'core-components/networkedbehavior'],
