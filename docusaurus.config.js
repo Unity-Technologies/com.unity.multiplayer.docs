@@ -55,9 +55,9 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
+          to: 'docs',
           activeBasePath: 'docs',
-          label: 'Docs',
+          label: 'MLAPI SDK',
           position: 'left',
         },
         { 
