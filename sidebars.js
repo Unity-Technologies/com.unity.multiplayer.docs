@@ -11,12 +11,16 @@ module.exports = {
       {
         'Glossary':
             [ 
-            'reference/glossary/network-latency-management',
-            'reference/glossary/relevancy',
-            'reference/glossary/prioritization',
+            //'reference/glossary/general-terms',//
             'reference/glossary/distributed-simulation-topologies',
             'reference/glossary/high-level-terminology',
-            'reference/glossary/networking-transport-layer',
+            'reference/glossary/network-latency-management',
+            'reference/glossary/network-models',
+            'reference/glossary/network-terms',
+            'reference/glossary/prioritization',
+            'reference/glossary/relevancy',
+           
+            
 
 
 
