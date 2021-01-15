@@ -1,12 +1,10 @@
 ---
-id: networking-transport-layer
-title: Networking Transport Layer
-sidebar_label: Networking Transport Layer
+id: network-terms
+title: Network Terms
+sidebar_label: Network Terms
 ---
 
-It’s what’s closer to the hardware, sending the bits back and forward over the internet connection.
 
-![](../../../static/img/networking-transport.png)
 
 ### IP address 
 
@@ -21,19 +19,23 @@ A network port is a process-specific or an application-specific software constru
 A socket is one endpoint of a two-way communication link between two programs running on the network. A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to. An endpoint is a combination of an IP address and a port number.
 
 
-### Communication
+### Packet
 
-A packet is composed of header + payload
+Packets are composed of a header and payload. 
+
+- The **header** consists of fixed and optional fields. 
+- The **payload** is the data that is carried on behalf of an application
+The payload appears immediately after the header
 
 ### Protocols
 
-**TCP** 
+**Transmission Control Protocol (TCP)** 
 
 Transmission Control Protocol (TCP) is a connection-oriented communications protocol that facilitates the exchange of messages between computing devices in a network. It is the most common protocol in networks that use the Internet Protocol (IP); together they are sometimes referred to as TCP/IP.
 
 TCP takes messages from an application/server and divides them into packets, which can then be forwarded by the devices in the network – switches, routers, security gateways – to the destination. TCP numbers each packet and reassembles them prior to handing them off to the application/server recipient. Because it is connection-oriented, it ensures a connection is established and maintained until the exchange between the application/servers sending and receiving the message is complete.
 
-**UDP** 
+**User Datagram Protocol (UDP)** 
 
 User Datagram Protocol (UDP) uses a simple connectionless communication model with a minimum of protocol mechanisms. UDP provides checksums for data integrity, and port numbers for addressing different functions at the source and destination of the datagram. It has no handshaking dialogues, and thus exposes the user's program to any unreliability of the underlying network; there is no guarantee of delivery, ordering, or duplicate protection. 
 
