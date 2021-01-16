@@ -12,6 +12,8 @@ To serve as an example page when styling markdown based Docusaurus sites.
 
 ## Headers
 
+Use hashtags `#` to indicate the heading level. You should not use H1, this is automatically used for the page title when building the site. Link anchors automatically also generate.
+
 # H1 - Create the best documentation
 
 ## H2 - Create the best documentation
@@ -36,6 +38,17 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
+For numbered lists, always start with `1.`. The generator will automatically number the list correctly when building the site:
+
+```markdown title="Markdown Ordered List"
+1. First ordered list item
+1. Another item
+   - Unordered sub-list.
+1. Actual numbers don't matter, just that it's a number
+   1. Ordered sub-list
+1. And another item.
+```
+
 1. First ordered list item
 1. Another item
    - Unordered sub-list.
@@ -43,31 +56,39 @@ Strikethrough uses two tildes. ~~Scratch this.~~
    1. Ordered sub-list
 1. And another item.
 
-* Unordered list can use asterisks
+* Use asterisks `*` for unordered lists.
 
-- Or minuses
+You can configure your editor to always use this format for lists. For Visual Studio Code, configure the following settings:
 
-+ Or pluses
+* **Ordered List: Marker** set to *one*.
+* **Unordered List: Marker** set to *.
 
 ## Links
 
+See the following example code for Markdown links.
+
+```markdown title="Markdown Link Examples"
 [I'm an inline-style link](https://www.google.com/)
 
 [I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
 
 [I'm a reference-style link][arbitrary case-insensitive reference text]
 
+See [Page Name](filename.md) to link to Markdown site pages.
+```
+
+URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
+
+Some text to show that the reference links can be added at the bottom:
+
+```markdown title="Markdown Reference Links"
 [You can use numbers for reference-style link definitions][1]
 
 Or leave it empty and use the [link text itself].
 
-URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/
 [1]: http://slashdot.org/
 [link text itself]: http://www.reddit.com/
+```
 
 ## Images
 
@@ -85,7 +106,15 @@ Images from any folder can be used by providing path to file. Path should be rel
 
 ## Code
 
-```javascript
+To add code inline, use single ticks:
+
+```markdown title="Markdown Inline Example"
+Use the `npm update` command to check and update packages for Docusaurus.
+```
+
+To add code sample blocks, use three ticks and the programming language. Optionally, you can add a `title="name"` to describe the example.
+
+```javascript title="Javascript Example"
 var s = 'JavaScript syntax highlighting';
 alert(s);
 ```
@@ -95,12 +124,9 @@ s = "Python syntax highlighting"
 print(s)
 ```
 
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
-```
+To highlight a line of code, add `{#}` with the line number in the brackets.
 
-```js {2}
+```js {2} title="Example with line {2} highlighted"
 function highlightMe() {
   console.log('This line can be highlighted!');
 }
@@ -108,15 +134,23 @@ function highlightMe() {
 
 ## Tables
 
-Colons can be used to align columns.
+Tables can have one header at the top, with a line indiciting the header and alignment, and rows surrounded by pipes (|). 
+
+```markdown title="Markdown Table"
+| Tables        |      Are      |   Cool |
+| ------------- | :-----------: | -----: |
+| col 3 is      | right-aligned |  $1600 |
+| col 2 is      |   centered    |    $12 |
+| zebra stripes |   are neat    |     $1 |
+```
 
 | Tables        |      Are      |   Cool |
 | ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+| col 3 is      | right-aligned |  $1600 |
+| col 2 is      |   centered    |    $12 |
+| zebra stripes |   are neat    |     $1 |
 
-There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+There must be at least 3 dashes separating each header cell. You can also use inline Markdown.
 
 | Markdown | Less      | Pretty     |
 | -------- | --------- | ---------- |
@@ -124,6 +158,10 @@ There must be at least 3 dashes separating each header cell. The outer pipes (|)
 | 1        | 2         | 3          |
 
 ## Blockquotes
+
+```markdown title="Markdown Code"
+> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
+```
 
 > Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
 
@@ -150,6 +188,16 @@ This line is separated from the one above by two newlines, so it will be a _sepa
 This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
 
 ## Admonitions
+
+Add an admonition using three colons, the type, and closing content with colons:
+
+```markdown title="Markdown Code"
+:::note
+
+This is a note
+
+:::
+```
 
 :::note
 
