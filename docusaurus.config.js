@@ -72,7 +72,7 @@ module.exports = {
       ],
     },
     prism: {
-      additionalLanguages: ['csharp', 'powershell', 'java'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown'],
     },
     footer: {
       style: 'dark',

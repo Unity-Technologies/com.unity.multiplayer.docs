@@ -92,3 +92,88 @@
   color:rgb(255, 255, 255);
 }
 
+/* note */
+html[data-theme='dark'] .alert--secondary {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #20c997;
+  border-left: 6px solid #20c997;
+  --ifm-alert-color: #ffffff;
+  --ra-admonition-icon-color: #ffffff;   
+}
+
+html[data-theme='light'] .alert--secondary {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-color: #20c997;
+  --ifm-alert-border-color: #20c997;
+  --ra-admonition-icon-color: #ffffff;
+  border-left: 6px solid #20c997;
+  --ifm-alert-color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: var(--ifm-font-color-base);  
+}
+
+/* important, blue */
+html[data-theme='light'] .alert--info {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #008bb2;
+  border-left: 6px solid #008bb2;
+  --ifm-alert-color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: var(--ifm-font-color-base);  
+}
+
+html[data-theme='dark'] .alert--info {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #008bb2;
+  border-left: 6px solid #008bb2;
+  --ifm-alert-color: #ffffff;
+  --ra-admonition-icon-color: #ffffff;  
+}
+
+/* tip */
+html[data-theme='light'] .alert--success {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #3f923f;
+  border-left: 6px solid #3f923f;
+  --ifm-alert-color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: var(--ifm-font-color-base);   
+}
+
+html[data-theme='dark'] .alert--success {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #3f923f;
+  border-left: 6px solid #3f923f;
+  --ifm-alert-color: #ffffff;
+  --ra-admonition-icon-color: #ffffff;   
+}
+
+/* caution, yellow */
+html[data-theme='light'] .alert--warning {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #ff8d03;
+  border-left: 6px solid #ff8d03;
+  --ifm-alert-color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: var(--ifm-font-color-base);
+}
+html[data-theme='dark'] .alert--warning {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #ff8d03;
+  border-left: 6px solid #ff8d03;
+  --ifm-alert-color: #ffffff;
+  --ra-admonition-icon-color: #ffffff;
+}
+
+/* warning, red */
+html[data-theme='light'] .alert--danger {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #df4b30;
+  border-left: 6px solid #df4b30;
+  --ifm-alert-color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: var(--ifm-font-color-base);
+}
+
+html[data-theme='dark'] .alert--danger {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-color: #df4b30;
+  border-left: 6px solid #df4b30;
+  --ifm-alert-color: #ffffff;
+  --ra-admonition-icon-color: #ffffff;
+}
