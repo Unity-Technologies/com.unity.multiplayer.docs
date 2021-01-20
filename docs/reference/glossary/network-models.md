@@ -24,7 +24,7 @@ A P2P network can be:
 - An ad hoc connection—a couple of computers connected via a Universal Serial Bus to transfer files.
 - A permanent infrastructure that links a half-dozen computers in a small office over copper wires. 
 - A network on a much grander scale in which special protocols and applications set up direct relationships among users over the Internet.
-
+  
 
 ## Client hosted (Listen server)
 
