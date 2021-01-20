@@ -19,8 +19,10 @@
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "mermaid": "^8.8.4",
+    "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "remark-custom-blocks": "^2.5.0"
   },
   "browserslist": {
     "production": [

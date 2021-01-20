@@ -16,30 +16,18 @@ module.exports = {
       //anonymizeIP: true, // Should IPs be anonymized?
     //},
     colorMode: {
-      // "light" | "dark"
       defaultMode: 'dark',
-
-      // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
       disableSwitch: false,
-
-      // Should we use the prefers-color-scheme media-query,
-      // using user system preferences, instead of the hardcoded defaultMode
       respectPrefersColorScheme: true,
 
       switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: '\u{1F319}',
-
         // CSS to apply to dark icon,
         // React inline style object
         // see https://reactjs.org/docs/dom-elements.html#style
+        darkIcon: '\u{1F319}',
         darkIconStyle: {
           marginLeft: '1px',
         },
-
-        // Unicode icons such as '\u2600' will work
-        // Unicode with 5 chars require brackets: '\u{1F602}'
         lightIcon: '\u{1F324}',
 
         lightIconStyle: {
@@ -61,14 +49,35 @@ module.exports = {
           position: 'left',
         },
         { 
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          //href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
+          className: 'navbar-github-link',
           position: 'right',
+          items: [
+            {
+              label: 'GitHub Doc Repo',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
+            },
+            {
+              label: 'GitHub Code Repo',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+            },
+          ]
         },
-        { 
-          href: 'https://blogs.unity3d.com/',
-          label: 'Blog',
-          position: 'right'},
+        {
+          position: 'right',
+          //label: 'Community',
+          className: 'navbar-grid-menu',
+          items: [
+            { 
+              label: 'Discord',
+              href: 'http://discord.mlapi.network/',
+            },
+            {
+              label: 'Unity Multiplayer Forum',
+              href: 'https://forum.unity.com/forums/multiplayer.26/',
+            },
+          ]
+          },
       ],
     },
     prism: {
@@ -78,28 +87,44 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Site',
+          title: 'Unity',
           items: [
             {
-              label: 'Unity',
+              label: 'Our Company',
               href: 'https://unity.com/',
             },
             {
-              label: 'Manual',
+              label: 'Unity Learn',
+              href: 'https://learn.unity.com/',
+            },
+            {
+              label: 'Unity Manual',
               href: 'https://docs.unity3d.com/Manual/index.html',
+            },
+            {
+              label: 'Unity Scripting Reference',
+              href: 'https://docs.unity3d.com/ScriptReference/index.html',
             },
           ],
         },
         {
-          title: 'Links',
+          title: 'Multiplayer',
           items: [
             {
-              label: 'Multiplay',
-              href: 'https://multiplay.com/',
+              label: 'Releases',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
             },
             {
-              label: 'Multiplay Docs',
-              href: 'https://docs.multiplay.com/',
+              label: 'GitHub - Code',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+            },
+            {
+              label: 'GitHub - Docs',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
+            },
+            {
+              label: 'Multiplayer RFCs',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs',
             },
           ],
         },
@@ -115,8 +140,8 @@ module.exports = {
               href: 'https://forum.unity.com/',
             },
             {
-              label: 'GitHub',
-              href: 'https://unity-technologies.github.io',
+              label: 'Discord',
+              href: 'http://discord.mlapi.network/',
             },
           ],
         },
@@ -132,6 +157,19 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
+          /*remarkPlugins: [
+            [ remark-custom-blocks
+              {
+                options: {
+                  blocks: {
+                    danger: {
+                      classes: "danger",
+                    }
+                  }
+                }
+              },
+            ],
+          ]*/
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.css'),
@@ -139,5 +177,8 @@ module.exports = {
       },
     ],
   ],
-  //plugins: ['@docusaurus/plugin-google-gtag'],
+  plugins: [
+    //'@docusaurus/plugin-google-gtag'
+      'plugin-image-zoom' 
+  ],
 };
