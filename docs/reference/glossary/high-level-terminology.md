@@ -4,21 +4,25 @@ title: High Level Terminology
 sidebar_label: High Level Terminology
 ---
 
-### 
+### Networking Transport Layer
 
-Networking Transport Layer
+The transport layer collects message segments from applications, and transmits them into the network. The transport layer is also responsible for the management of error correction, providing quality and reliability to the end user.
 
-It’s what’s closer to the hardware, sending the bits back and forward over the internet connection.
+This layer enables the host to send and receive error corrected data, packets or messages over a network 
 
 ![](../../../static/img/networking-transport.png)
+
+### Client Runtime
+
+
+### Server Runtime
+
 
 ### Netcode
 
 Is a blanket term for anything that somehow relates to networking in online games; netcode is a term most commonly used by gamers when discussing synchronization issues between clients and servers.
 
-### QoS
 
-Quality of service is the description or measurement of the overall performance of a service, such as a telephony or computer network or a cloud computing service, particularly the performance seen by the users of the network. Refers to any technology that manages data traffic to reduce packet loss, latency and jitter on the network. QoS controls and manages network resources by setting priorities for specific types of data on the network.
 
 ###  Client 
 Is a network client that connects an individual user to the server, used mainly in multiplayer video games. It collects data such as score, player status, position and movement from a single player and sends it to the  server, which allows the server to collect each individual's data and show every player in game.

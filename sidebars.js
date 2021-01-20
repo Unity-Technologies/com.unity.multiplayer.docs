@@ -163,10 +163,6 @@ module.exports = {
       } */
       {
         "type": "doc",
-        "id": "reference/glossary/distributed-simulation-topologies"
-      },
-      {
-        "type": "doc",
         "id": "reference/glossary/high-level-terminology"
       },
       {
