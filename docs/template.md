@@ -102,7 +102,7 @@ Reference-style: ![alt text][logo]
 
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
-![img](../static/img/logo.png)
+![img](/img/example-img.png)
 
 ## Code
 
@@ -231,11 +231,25 @@ This is a warning
 
 ## Mermaid Charts
 
+Mermaid provides sequence diagrams, charts, and more. Use these charts to detail processes, workflows, inheritance, and more. See the [Mermaid guide](https://mermaid-js.github.io/mermaid/#/) for specifics and examples, and use the [live editor](https://mermaid-js.github.io/mermaid-live-editor/) to generate code.
+
+See the following example code for adding Mermaid charts. You need to include the import line once per page.
+
+```markdown title="Mermaid Example Code"
 <Mermaid chart={`
 	graph LR;
 		A-->B;
 		B-->C;
-		B-->D[plop lanflz eknlzeknfz];
+		B-->D[Example Label];
+`}/>
+import Mermaid from '@theme/Mermaid';
+```
+
+<Mermaid chart={`
+	graph LR;
+		A-->B;
+		B-->C;
+		B-->D[Example Label];
 `}/>
 
 ## MDX
