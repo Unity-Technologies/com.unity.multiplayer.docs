@@ -1,8 +1,10 @@
 /* stylelint-disable docusaurus/copyright-header */
+
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -17,24 +19,14 @@
 }
 
 .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .features {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 2rem 0;
   width: 100%;
 }
@@ -43,4 +35,3 @@
   height: 200px;
   width: 200px;
 }
-/*# sourceMappingURL=styles.module.css.map */
