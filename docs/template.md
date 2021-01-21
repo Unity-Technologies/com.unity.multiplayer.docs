@@ -229,6 +229,12 @@ This is a warning
 
 :::
 
+:::contribution Community Contribution
+
+Thank you to [Unity](https://unity3d.com/) for this tutorial! This contribution is a great help to the community.
+
+:::
+
 ## Mermaid Charts
 
 Mermaid provides sequence diagrams, charts, and more. Use these charts to detail processes, workflows, inheritance, and more. See the [Mermaid guide](https://mermaid-js.github.io/mermaid/#/) for specifics and examples, and use the [live editor](https://mermaid-js.github.io/mermaid-live-editor/) to generate code.
