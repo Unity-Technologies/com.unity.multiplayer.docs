@@ -60,6 +60,24 @@ module.exports = {
           label: 'MLAPI Docs',
           position: 'left',
         },
+        {
+          type: 'doc',
+          docId: 'tools/introduction',
+          label: 'Tools',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'tutorials/introduction',
+          label: 'Tutorials',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'release-notes/introduction',
+          label: 'Release Notes',
+          position: 'left',
+        },
         { 
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
