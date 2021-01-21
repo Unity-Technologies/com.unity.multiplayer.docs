@@ -18,6 +18,7 @@
     "@docusaurus/theme-common": "^2.0.0-alpha.70",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.1.11",
     "mermaid": "^8.8.4",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "react": "^16.8.4",

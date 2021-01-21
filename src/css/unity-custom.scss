@@ -101,7 +101,8 @@
   color:rgb(255, 255, 255);
 }
 
-/* note */
+// ADMONITIONS
+// NOTE
 html[data-theme='dark'] .alert--secondary {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-color: #20c997;
@@ -120,7 +121,7 @@ html[data-theme='light'] .alert--secondary {
   --ra-admonition-icon-color: var(--ifm-font-color-base);  
 }
 
-/* important, blue */
+// IMPORTANT
 html[data-theme='light'] .alert--info {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-color: #008bb2;
@@ -137,7 +138,7 @@ html[data-theme='dark'] .alert--info {
   --ra-admonition-icon-color: #ffffff;  
 }
 
-/* tip */
+// TIP
 html[data-theme='light'] .alert--success {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-color: #3f923f;
@@ -154,7 +155,7 @@ html[data-theme='dark'] .alert--success {
   --ra-admonition-icon-color: #ffffff;   
 }
 
-/* caution, yellow */
+// CAUTION
 html[data-theme='light'] .alert--warning {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-color: #ff8d03;
@@ -162,6 +163,7 @@ html[data-theme='light'] .alert--warning {
   --ifm-alert-color: var(--ifm-font-color-base);
   --ra-admonition-icon-color: var(--ifm-font-color-base);
 }
+
 html[data-theme='dark'] .alert--warning {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-color: #ff8d03;
@@ -170,7 +172,7 @@ html[data-theme='dark'] .alert--warning {
   --ra-admonition-icon-color: #ffffff;
 }
 
-/* warning, red */
+// WARNING
 html[data-theme='light'] .alert--danger {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-color: #df4b30;
@@ -187,6 +189,22 @@ html[data-theme='dark'] .alert--danger {
   --ra-admonition-icon-color: #ffffff;
 }
 
+// CONTRIBUTION
+html[data-theme='light'] .admonition-contribution {
+  background-color: transparent;
+  border: 1px solid #855EF0;
+  border-left: 6px solid #855EF0;
+  color: var(--ifm-font-color-base);
+}
+
+html[data-theme='dark'] .admonition-contribution {
+  background-color: transparent;
+  border: 1px solid #855EF0;
+  border-left: 6px solid #855EF0;
+  color: #ffffff;
+}
+
+// NAVBAR
 .navbar-github-link:after {
   transition: opacity 0.2s;
   content: "";
@@ -237,7 +255,8 @@ html[data-theme='dark'] .alert--danger {
   border-style: none !important;
 }
 
-@media screen  and (max-device-width: 480px) { 
+// Responsive
+@media screen and (max-device-width: 480px) { 
   .navbar-github-link, .navbar-github-link:before {
     content: "GitHub";
   }
@@ -250,7 +269,7 @@ html[data-theme='dark'] .alert--danger {
   }
 }
 
-/* Mermaid Styles */
+// Mermaid Styles 
 html[data-theme='light'] .arrowheadPath {
   fill: #333333 !important;
 }
@@ -299,6 +318,28 @@ html[data-theme='dark'] .node polygon {
   stroke: #2196F3 !important;
 }
 
+// Images
+
+.medium-zoom-overlay {
+  opacity: .8 !important;
+}
+
+.medium-zoom-image {
+  max-width: 600px;
+}
+
+// FOOTER
+
+.footerLogoLink {
+  opacity: 0.5;
+  -webkit-transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.footerLogoLink:hover {
+  opacity: 1;
+}
+
 .footer__link-item {
   --ifm-footer-link-color: #757575;
 }
@@ -315,10 +356,146 @@ html[data-theme='dark'] .node polygon {
   --ifm-link-color: #757575;
 }
 
-.medium-zoom-overlay {
-  opacity: .8 !important;
+/* CUSTOM BLOCKS */
+
+.table-rows { 
+  table {
+      table-layout: fixed;
+      border-spacing: 0;
+      width: 100%;
+      empty-cells: hide;
+      overflow: hidden;
+      border: 0px;
+      tr {
+          background-color: transparent !important;
+      }
+      th {
+          border: 0px !important;
+          a {
+              color: white;
+              text-decoration: none;
+          }
+      }
+      th:nth-child(1) {
+          background-color: #639df1;
+          color: white;
+      }
+      th:nth-child(2) {
+          background-color: #4c78d9;
+          color: white;
+      }
+      th:nth-child(3) {
+          background-color: #3657b6;
+          color: white;
+      }
+      th:nth-child(4) {
+          background-color: #2a428c;
+          color: white;
+      }
+      th:nth-child(5) {
+          background-color: #16234d;
+          color: white;
+      }
+      th:nth-child(6) {
+          background-color: #0e1a3e;
+          color: white;
+      }
+      th:nth-child(7) {
+          background-color: #081029;
+          color: white;
+      }
+      tbody {
+          background-color: transparent !important;
+      }
+      td {
+          position: relative;
+          width: auto;
+      }
+      tr:nth-child(even) {background-color: rgba(210, 235, 255, 0.2) !important;}
+  }
 }
 
-.medium-zoom-image {
-  max-width: 600px;
+table {
+  th {
+     --ifm-table-head-background: #3657b6 !important; 
+     --ifm-table-head-color: #ffffff;
+    }
+}
+html[data-theme='dark'] tr:nth-child(even) {background-color: rgba(210, 235, 255, 0.1) !important;}
+html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 255, 0.2) !important;}
+
+.table-columns { 
+  table {
+    table-layout: fixed;
+    //border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    empty-cells: hide;
+    overflow: hidden;
+    border: 0px;
+    tr {
+        background-color: transparent !important;
+    }
+    th {
+        border: 0px !important;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    th:hover {
+        background-color: #e59700 !important;
+        a {
+            color: white;
+            text-decoration: solid underline white 2px;
+            }
+    }
+    th:nth-child(1) {
+        background-color: #639df1;
+        color: white;
+    }
+    th:nth-child(2) {
+        background-color: #4c78d9;
+        color: white;
+    }
+    th:nth-child(3) {
+        background-color: #3657b6;
+        color: white;
+    }
+    th:nth-child(4) {
+        background-color: #2a428c;
+        color: white;
+    }
+    th:nth-child(5) {
+        background-color: #16234d;
+        color: white;
+    }
+    th:nth-child(6) {
+        background-color: #0e1a3e;
+        color: white;
+    }
+    th:nth-child(7) {
+        background-color: #081029;
+        color: white;
+    }
+    tbody {
+        background-color: transparent !important;
+    }
+    td {
+        position: relative;
+        width: auto;
+        &:hover {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -9999px;
+                bottom: -9999px;
+                background-color: rgba(210, 235, 255, 0.2) !important;
+                z-index: -1;
+            }
+        }
+    }
+  }
 }
