@@ -152,5 +152,23 @@ module.exports = {
       }
     ]
   }
-]
+],
+  tools: [
+    {
+      "type": "doc",
+      "id": "tools/introduction"
+    },
+  ],
+  tutorials: [
+    {
+      "type": "doc",
+      "id": "tutorials/introduction"
+    },
+  ],
+  releasenotes: [
+    {
+      "type": "doc",
+      "id": "release-notes/introduction"
+    },
+  ]
 };
