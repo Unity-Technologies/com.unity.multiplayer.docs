@@ -12,6 +12,8 @@ The MLAPI is one of the oldest and most actively developed game networking libra
 
 This table compares MLAPI and the deprecated UNET library features.
 
+<div class="table-rows">
+
 | Feature | MLAPI | HLAPI |
 | -- | -- | -- |
 | Host Support | <i class="fp-check"></i> | <i class="fp-check"></i> |
@@ -58,6 +60,7 @@ This table compares MLAPI and the deprecated UNET library features.
 | Pooled Memory Management (Internal) | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | P2P | <i class="fp-x"></i> | <i class="fp-x"></i> |
 | Area Of Interest | <i class="fp-check"></i> | <i class="fp-check"></i> |
+</div>
 
 ## Licence
 Documentation on the wiki is licenced under the following licence.
