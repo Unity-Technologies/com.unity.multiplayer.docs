@@ -208,6 +208,18 @@ module.exports = {
         "id": "troubleshooting/troubleshooting"
       }
     ]
-  },
+  }
+],
+  tutorials: [
+    {
+      "type": "doc",
+      "id": "tutorials/introduction"
+    },
+  ],
+  releasenotes: [
+    {
+      "type": "doc",
+      "id": "release-notes/introduction"
+    },
   ]
 };
