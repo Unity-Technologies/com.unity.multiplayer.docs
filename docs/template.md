@@ -157,6 +157,30 @@ There must be at least 3 dashes separating each header cell. You can also use in
 | _Still_  | `renders` | **nicely** |
 | 1        | 2         | 3          |
 
+Custom styles are available for tables, added using `<div>` tags around the markdown table. 
+
+`<div class="table-rows">`
+
+<div class="table-rows"> supports up to 5 columns with differing shades.
+
+| Tables        |      Are      |   Cool | Check | It | Out |
+| ------------- | :-----------: | -----: | --- | --- | --- | 
+| col 3 is      | right-aligned |  $1600 | $1 | .003 | *finals* |
+| col 2 is      |   centered    |    $12 | | | |
+| zebra stripes |   are neat    |     $1 | | | |
+</div>
+
+`<div class="table-columns">` supports up to 5 columns with differing shades and highlights a column on hover.
+
+<div class="table-columns">
+
+| Tables        |      Are      |   Cool | Check | It | Out |
+| ------------- | :-----------: | -----: | --- | --- | --- | 
+| col 3 is      | right-aligned |  $1600 | $1 | .003 | *finals* |
+| col 2 is      |   centered    |    $12 | | | |
+| zebra stripes |   are neat    |     $1 | | | |
+</div>
+
 ## Blockquotes
 
 ```markdown title="Markdown Code"
