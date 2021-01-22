@@ -76,6 +76,30 @@ module.exports = {
                   "type": "doc",
                   "id": "mlapi-basics/serialization-intro"
                 },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/cprimitives"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/unity-primitives"
+                },   {
+                  "type": "doc",
+                  "id": "mlapi-basics/enum_types"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/static-arrays"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/networkobject-networkbehaviour"
+                },
+                { 
+                  "type": "doc",
+                  "id": "mlapi-basics/inetworkserializable-bitserializer"
+                  
+                },
               ]
               },
               {
