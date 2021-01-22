@@ -42,7 +42,6 @@ function DocItem(props) {
     title,
     permalink,
     editUrl,
-    issueUrl,
     lastUpdatedAt,
     lastUpdatedBy
   } = metadata;
@@ -73,11 +72,10 @@ function DocItem(props) {
         {metaImage && <meta name="twitter:image:alt" content={`Image for ${title}`} />}
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
-        {issueUrl && <script type="text/javascript">
-          
+        <script type="text/javascript">
           var x = window.location.href;
-          document.getElementById("feedback").href = {issueUrl}+encodeURIComponent(x);
-        </script> }
+          document.getElementById("feedback").href = "https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?title=Feedback%20for%20"+encodeURIComponent(x);
+        </script>
       </Head>
 
       <div className="row">

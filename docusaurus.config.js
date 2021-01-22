@@ -208,7 +208,4 @@ module.exports = {
       'plugin-image-zoom',
       'docusaurus-plugin-sass'
   ],
-  customFields: {
-    issueUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?title=Feedback%20for%20',
-  },
 };
