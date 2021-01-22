@@ -5,6 +5,44 @@
 */
 module.exports = {
   mlapi: [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Migration",
+      "items": [
+                {
+          "type": "doc",
+          "id": "migration/introduction"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Project Settings ",
+          "items": [
+            {
+              "type": "doc",
+              "id": "migration/unet-mlapi/networkmanager-networkingmanager"
+            },
+            {
+              "type": "doc",
+              "id": "migration/unet-mlapi/networkmanagerhud"
+            },
+            {
+              "type": "doc",
+              "id": "migration/unet-mlapi/networkidentity-networkedobject"
+            },
+            {
+              "type": "doc",
+              "id": "migration/unet-mlapi/unetnetworktransform-networkedtransform"
+            },
+            {
+              "type": "doc",
+              "id": "migration/unet-mlapi/unetnetworkanimator-networkedanimator"
+            },
+          ]
+        },
+      ]
+    },
   {
     "collapsed": true,
     "type": "category",
