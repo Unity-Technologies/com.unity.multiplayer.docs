@@ -62,7 +62,7 @@ void Update()
 ```
 ## Conditional Serialization
 
-As tyou have more control over serialization of a struct, you might implement conditional serialization at runtime.
+As you have more control over serialization of a struct, you might implement conditional serialization at runtime.
 
 More advanced use-cases are explored in the examples below:
 
