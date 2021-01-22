@@ -8,7 +8,7 @@ module.exports = {
     {
       "collapsed": true,
       "type": "category",
-      "label": "Migration",
+      "label": "Migration from Unet to MLAPI",
       "items": [
                 {
           "type": "doc",
