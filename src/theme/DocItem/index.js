@@ -60,6 +60,7 @@ function DocItem(props) {
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true
   });
+
   return <>
       <Head>
         <title>{metaTitle}</title>
@@ -72,10 +73,6 @@ function DocItem(props) {
         {metaImage && <meta name="twitter:image:alt" content={`Image for ${title}`} />}
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
-        <script type="text/javascript">
-          var x = window.location.href;
-          document.getElementById("feedback").href = "https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?title=Feedback%20for%20"+encodeURIComponent(x);
-        </script>
       </Head>
 
       <div className="row">
@@ -97,7 +94,7 @@ function DocItem(props) {
                 <DocContent />
               </div>
             </article>
-            {(editUrl || issueUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-vert--xl">
+            {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-vert--xl">
                 <div className="row">
                   <div className="col">
                     {editUrl && <a href={editUrl} target="_blank" rel="noreferrer noopener">
@@ -106,7 +103,7 @@ function DocItem(props) {
                       </a>}
                   </div>
                   <div className="col">
-                  <a id="feedback" href="" target="_blank">
+                  <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?title=Feedback%20for%20' + window.location.href }  target="_blank">
                     <IconBug />
                     Log an issue</a>
                   </div>
