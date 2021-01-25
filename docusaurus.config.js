@@ -198,6 +198,7 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.scss'),
+          
         },
       },
     ],
@@ -205,6 +206,7 @@ module.exports = {
   plugins: [
     //'@docusaurus/plugin-google-gtag'
       'plugin-image-zoom',
-      'docusaurus-plugin-sass'
+      'docusaurus-plugin-sass',
+      '@saucelabs/theme-github-codeblock'
   ],
 };
