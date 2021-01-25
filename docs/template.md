@@ -133,13 +133,15 @@ function highlightMe() {
 ```
 ### Embedding Code from a Repository
 
-To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
 
 This code references a JavaScript file: ` ```js reference`, for example:
 
 ```js reference
 https://github.com/saucelabs/docusaurus-theme-github-codeblock/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
 ```
+
+You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
 
 ## Tables
 
