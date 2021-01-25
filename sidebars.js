@@ -12,35 +12,9 @@ module.exports = {
       "items": [
                 {
           "type": "doc",
-          "id": "migration/introduction"
+          "id": "migration/migratingtomlapi"
         },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Project Settings ",
-          "items": [
-            {
-              "type": "doc",
-              "id": "migration/unet-mlapi/networkmanager-networkingmanager"
-            },
-            {
-              "type": "doc",
-              "id": "migration/unet-mlapi/networkmanagerhud"
-            },
-            {
-              "type": "doc",
-              "id": "migration/unet-mlapi/networkidentity-networkedobject"
-            },
-            {
-              "type": "doc",
-              "id": "migration/unet-mlapi/unetnetworktransform-networkedtransform"
-            },
-            {
-              "type": "doc",
-              "id": "migration/unet-mlapi/unetnetworkanimator-networkedanimator"
-            },
-          ]
-        },
+        
       ]
     },
   {
