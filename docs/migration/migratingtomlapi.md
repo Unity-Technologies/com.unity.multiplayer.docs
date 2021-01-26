@@ -9,7 +9,7 @@ This guide give you a step by step guide to migrating your project from Unet to 
 
 ## Current Limitations
 
-- `CommandAttribute` → `ServerRPCAttribute` and `ClientRPCAttribute` → `ClientRPCAttribute` naming constraints may cause issues (unet tended to prefix methods with `Cmd` or `Rpc`, MLAPI requires postfix. Means either complicated multi-line regex find/replace, or a ton of manual effort
+- `CommandAttribute` → `ServerRPCAttribute` and `ClientRPCAttribute` → `ClientRPCAttribute` naming constraints may cause issues (Unet tended to prefix methods with `Cmd` or `Rpc`, MLAPI requires postfix. Means either complicated multi-line regex find/replace, or a ton of manual effort
 - Errors about RPC postfix naming pattern do not show up in IDE. 
 - MLAPI RPCs do not support arrays yet
 - Client & Server have separate representations in UNET. There's a number of callbacks in UNET that don't exist for MLAPI 
