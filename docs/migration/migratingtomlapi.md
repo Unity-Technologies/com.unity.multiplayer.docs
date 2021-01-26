@@ -391,11 +391,21 @@ To learn more about MLAPIs network visiblity check this: TODO link to visibilty 
 
 ### SceneManagement
 
-Replace `SceneManagement` with  `TBC` everywhere in your project. 
+In MLAPI scene management is not done over the NetworkManager like in UNet. The NetworkSceneManager provides equivalent functionality for switching scenes.
+
 ##### UNET Example
+```csharp
+public void ChangeScene()
+{
+    MyNetworkManager.ServerChangeScene("MyNewScene");
+}
+```
 
 ##### MLAPI Example
-
+public void ChangeScene()
+{
+    NetworkSceneManager.SwitchScene("MyNewScene");
+}
 
 ### ClientAttribute/CLientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
 
