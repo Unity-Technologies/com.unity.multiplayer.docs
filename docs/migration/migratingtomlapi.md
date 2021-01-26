@@ -164,44 +164,54 @@ public class MyMLAPIExample : NetworkedBehaviour
 
 Replace  `SyncVar`  with  `NetworkedVar` everywhere in your project.
 
+To achieve equivalent functionality of SyncVar hooks in MLAPI subscribe a function to the
+OnValueChanged callback of the NetworkedVar.</br>A noteable difference between the UNet hooks and the
+MLAPI OnValueChanged callback is that MLAPI gives you both the old and the newly changed value while UNet provides
+you only with the old value.
+
 ##### UNET Example
 
 ```csharp
 public class SpaceShip : NetworkBehaviour
 {
     [SyncVar]
-    public int health;
+    public string PlayerName;
 
-    [SyncVar]
-    public string playerName;
+
+    [SyncVar(hook = "OnChangeHealth"))]
+    public int Health = 42;
+
+    void OnChangeHealth(int newHealth){
+        Debug.Log($"My new health is {newHealth}.");
+    }
 }
 ```
 ##### MLAPI Example
 
 ```csharp
-private NetworkedVar<float> myFloat = new NetworkedVar<float>(5.0f);
+// Don't forget to initialize NetworkedVar with a value.
+public NetworkedVar<string> PlayerName = new NetworkedVar<string>();
 
+public NetworkedVar<int> Health = new NetworkedVar<int>(42);
+
+// This how you update the value of a Networkedvar, you can also use .Value to access the current value of a NetworkedVar.
 void MyUpdate()
 {
-    myFloat.Value += 30;
+    Health.Value += 30;
 }
 
+// Call this is in Awake or Start to subscribe to changes of the Networkedvar.
 void ListenChanges()
 {
-    myFloat.OnValueChanged += valueChanged;
+    Health.OnValueChanged += OnChangeHealth;
 }
 
-void valueChanged(float prevF, float newF){
-    Debug.Log("myFloat went from " + prevF + " to " + newF);
+void OnChangeHealth(int oldHealth, int newHealth){
+        Debug.Log($"My new health is {newHealth}. Before my health was {oldHealth}");
 }
 ```
 See [NetworkedVar](../mlapi-basics/networkedvar.md) for more information.
 
-### SyncedVar
-
-`SyncedVar` has been removed from MLAPI use `NetworkedVar` for that functionality.
-
-See [NetworkedVar](../mlapi-basics/networkedvar.md) for more information.
 
 ### Replace SyncList => NetworkedList
 
