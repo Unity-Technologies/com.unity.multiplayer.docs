@@ -4,7 +4,7 @@ title: Migration Guide
 sidebar_label: Migration Guide
 ---
 
-This guide give you a step by step guide to migrating your project from Unet to MLAPI. 
+This guide is intended to provide a step by step guide to migrating your project from Unet to MLAPI. 
 
 
 ## Current Limitations
