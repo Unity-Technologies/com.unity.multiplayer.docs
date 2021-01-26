@@ -469,3 +469,6 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
+
+### Network Discovery
+MLAPI does not provide Network Discovery. The UNet Network Discovery is a standalone component that can be used with any networking solution. You can use the UNet Network Discovery to discover a broadcasting MLAPI host and then connect to it with MLAPI.
