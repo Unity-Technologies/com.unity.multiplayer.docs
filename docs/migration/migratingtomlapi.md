@@ -390,11 +390,55 @@ public void MyClientOnlyFunction()
 ```csharp
 public void MyClientOnlyFunction()
 {
-    if (!IsClient)
-    {
-        return;
-    }
+    if (!IsClient) { return; }
 
     Debug.Log("I'm a client!");
+}
+```
+
+
+### SyncEvent
+
+MLAPI does not provide an equivalent for SyncEvent. To port SyncEvent code from UNet to MLAPI send an
+RPC to invoke the event on the other side.
+
+##### UNET Example
+
+```csharp
+public class DamageClass : NetworkBehaviour
+{
+    public delegate void TakeDamageDelegate(int amount);
+
+    [SyncEvent]
+    public event TakeDamageDelegate EventTakeDamage;
+
+    [Command]
+    public void CmdTakeDamage(int val)
+    {
+        EventTakeDamage(val);
+    }
+}
+```
+
+##### MLAPI Example
+
+```csharp
+public class DamageClass : NetworkBehaviour
+{
+    public delegate void TakeDamageDelegate(int amount);
+
+    public event TakeDamageDelegate EventTakeDamage;
+
+    [ServerRpc]
+    public void TakeDamageServerRpc(int val)
+    {
+        EventTakeDamage(val);
+        OnTakeDamageClientRpc(val);
+    }
+
+    [ClientRpc]
+    public void OnTakeDamageClientRpc(int val){
+        EventTakeDamage(val);
+    }
 }
 ```
