@@ -350,17 +350,44 @@ The MLAPI has IsLocalPlayer, IsClient, IsServer and IsHost to replace UNETs isLo
 
 ### Network Proximity Checker/ OnCheckObserver => MLAPI visibility
 
-Replace  `OnCheckObserver` with  `NetworkedBehaviour` everywhere in your project.
+There is no direct equivalent to the NetworkPromimityChecker UNet component in MLAPI.
 
+Network visiblilty for clients works similar as in UNET. MLAPI does not have an equivalent to the 'ObjectHide' message from UNEt. 
+
+In MLAPI networked objects on the host are always visible. There is no equivalent to the 'OnSetLocalVisibility' function in UNet.
+
+A manual network promiximty implementation with the OnCheckObserver can be ported to MLAPI by using NetworkedObject.CheckObjectVisibility. OnRebuildObservers is not needed for MLAPIs visibilty system.
 
 ##### UNET Example
 
 
 ```csharp
-public bool OnCheckObserver(Networking.NetworkConnection conn);
+public override bool OnCheckObserver(NetworkConnection conn)
+{
+ return IsvisibleToPlayer(getComponent<NetworkIdentity>(), coon);
+}
+
+public bool IsVisibleToPlayer(NetworkIdentity identity, NetworkConnection conn){
+    // Any promimity function.
+    return true;
+}
 ```
 
 ##### MLAPI Example
+```csharp
+public void Start(){
+    NetworkedObject.CheckObjectVisibility = ((clientId) => {
+        return IsVisibleToPlayer(NetworkedObject, NetworkingManager.Singleton.ConnectedClients[clientId]);
+    });
+}
+
+public bool IsVisibleToPlayer(NetworkedObject networkedObject, NetworkedClient client){
+    // Any promimity function.
+    return true;
+}
+```
+
+To learn more about MLAPIs network visiblity check this: TODO link to visibilty page.
 
 ### SceneManagement
 
