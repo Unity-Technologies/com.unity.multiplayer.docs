@@ -53,11 +53,7 @@ NetworkingManager.Singleton.StartClient();
 See [NetworkingManager](../core-components/networking-manager.md) for more information.
 ### Replace NetworkManagerHUD 
 
-UNET’s `NetworkBehaviour` is called `NetworkedBehaviour` in the MLAPI and works in a similar way.
-
-
-##### UNET Example
-##### MLAPI Example
+Currently MLAPI offers no replacment for the NetworkMangerHUD. 
 
 ### Replace NetworkIdentity => NetworkedObject
 
