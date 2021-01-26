@@ -374,3 +374,31 @@ Replace `SceneManagement` with  `TBC` everywhere in your project.
 ##### MLAPI Example
 
 
+### ClientAttribute/CLientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
+
+MLAPI currently does not offer a replacement for marking a function with an attribute so that it only
+runs on the server or the client. You can manually return out of the function instead.
+
+##### UNET Example
+
+```csharp
+[Client]
+public void MyClientOnlyFunction()
+{
+    Debug.Log("I'm a client!");
+}
+```
+
+##### MLAPI Example
+
+```csharp
+public void MyClientOnlyFunction()
+{
+    if (!IsClient)
+    {
+        return;
+    }
+
+    Debug.Log("I'm a client!");
+}
+```
