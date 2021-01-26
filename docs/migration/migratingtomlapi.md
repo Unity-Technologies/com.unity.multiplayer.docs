@@ -4,11 +4,19 @@ title: Migration Guide
 sidebar_label: Migration Guide
 ---
 
-This guide give you a step by step guide to migrating your project from Unet to MLAPI. The migration should be straightforward for most projects.
+This guide give you a step by step guide to migrating your project from Unet to MLAPI. 
 
-:::important
-You should review the information on the Deprecations page to see if your project will be impacted.
-:::
+
+## Current Limitations
+
+- `CommandAttribute` → `ServerRPCAttribute` and `ClientRPCAttribute` → `ClientRPCAttribute` naming constraints may cause issues (unet tended to prefix methods with `Cmd` or `Rpc`, MLAPI requires postfix. Means either complicated multi-line regex find/replace, or a ton of manual effort
+- Errors about RPC postfix naming pattern do not show up in IDE. 
+- MLAPI RPCs do not support arrays yet
+- Client & Server have separate representations in UNET. There's a number of callbacks in UNET that don't exist for MLAPI 
+- Prefabs need to be added to the prefab registration list for MLAPI
+- You cannot  sub-class NetworkingManager, which was a RECOMMENDED pattern in UNET. 
+- Connection callbacks do not happen in single player / host mode 
+- Matchmaking
 
 ### Backup
 
@@ -53,7 +61,7 @@ UNET’s `NetworkBehaviour` is called `NetworkedBehaviour` in the MLAPI and work
 
 ### Replace NetworkIdentity => NetworkedObject
 
-UNET’s `NetworkIdentity` is called `NetworkedBehaviour` in the MLAPI and works in a similar way.
+UNET’s `NetworkIdentity` is called `NetworkedObject` in the MLAPI and works in a similar way.
 
 
 ##### UNET Example
@@ -69,7 +77,7 @@ UNET’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and work
 
 ### Replace  UNet NetworkAnimator => NetworkedAnimator
 
-UNET’s `NetworkAnimator` is called `NetworkedAnimator` in the MLAPI and works in a similar way.
+Replace  `NetworkAnimator` with `NetworkedAnimator` everywhere in your project.
 
 
 ##### UNET Example
@@ -77,7 +85,8 @@ UNET’s `NetworkAnimator` is called `NetworkedAnimator` in the MLAPI and works 
 
 ### Replace NetworkBehaviour
 
-UNET’s `NetworkBehaviour` is called `NetworkedBehaviour` in the MLAPI and works in a similar way.
+Replace `NetworkBehaviour` with `NetworkedBehaviour` everywhere in your project.
+
 
 ##### UNET Example
 ```csharp
@@ -134,10 +143,14 @@ public class MyMLAPIExample : NetworkedBehaviour
 
 See [NetworkedBehaviour](../core-components/networked-behaviour.md) for more information. 
 
+##### Add callback registration in `Awake` or Init methods
+
+##### Replace postfix increment/decrement usages
+
+##### Update callback method signatures to new format (MLAPI passes oldvalue & newvalue, unet only passed newvalue)
+
 ##### NetworkedStart
 In the MLAPI, RPCs, VarChanges etc will not be replicated if they are done before the `NetworkedStart` method is called. The `NetworkedStart` method is called when the `NetworkedObject` is replicated.
-
-##### UNET Example
 
 ##### MLAPI Example
 ```csharp
@@ -151,9 +164,9 @@ public class MyMLAPIExample : NetworkedBehaviour
 ```
 
 
-### Replace SyncVar => NetworkedVar
+### Replace SyncVar 
 
-UNET’s `SyncVar` is replaced by `NetworkedVar` in the MLAPI which works in a similar way.
+Replace  `SyncVar`  with  `NetworkedVar` everywhere in your project.
 
 ##### UNET Example
 
@@ -188,17 +201,22 @@ void valueChanged(float prevF, float newF){
 ```
 See [NetworkedVar](../mlapi-basics/networkedvar.md) for more information.
 
+### SyncedVar
+
+`SyncedVar` has been removed from MLAPI use `NetworkedVar` for that functionality.
+
+See [NetworkedVar](../mlapi-basics/networkedvar.md) for more information.
 
 ### Replace SyncList => NetworkedList
 
-UNET’s `SyncList` is called `NetworkedList` in the MLAPI and works in a similar way.
+Replace `SyncList` with `NetworkedList` everywhere in your project.
 
 
 ##### UNET Example
 
 ##### MLAPI Example
 
-### Replace Command/ClientRPC => Standard RPC
+### Replace Command/ClientRPC 
 
 UNET’s Command/ClientRPC is replaced with  Server/ClientRPC in the MLAPI which works in a similar way.
 
@@ -216,6 +234,9 @@ UNET’s Command/ClientRPC is replaced with  Server/ClientRPC in the MLAPI which
     }
 ```
 ##### MLAPI Example
+
+
+
 ```csharp
     [ServerRPC]
     public void ServerRpcExample(float x)
@@ -231,22 +252,89 @@ UNET’s Command/ClientRPC is replaced with  Server/ClientRPC in the MLAPI which
 
 See [Messaging System](../mlapi-basics/messaging-system.md) for more information.
 
-### Replace OnServerAddPlayer => ConnectionApproval 
+### Replace OnServerAddPlayer  
 
-UNET’s `OnServerAddPlayer` is called `ConnectionApproval` in the MLAPI and works in a similar way.
+Replace  `OnServerAddPlayer` with  `ConnectionApproval` everywhere in your project.
 
 
 ##### UNET Example
 
+```csharp
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
+
+class MyManager : NetworkManager
+{
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
+    {
+        if (extraMessageReader != null)
+        {
+            var s = extraMessageReader.ReadMessage<StringMessage>();
+            Debug.Log("my name is " + s.value);
+        }
+        OnServerAddPlayer(conn, playerControllerId, extraMessageReader);
+    }
+}
+```
+
 ##### MLAPI Example
+
+Server-only example:
+```csharp
+using MLAPI;
+using MLAPI.Spawning;
+
+private void Setup() 
+{
+    NetworkingManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+    NetworkingManager.Singleton.StartHost();
+}
+
+private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkingManager.ConnectionApprovedDelegate callback)
+{
+    //Your logic here
+    bool approve = true;
+    bool createPlayerObject = true;
+
+    // The prefab hash. Use null to use the default player prefab
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkedPrefabs field of your NetworkingManager object in the scene
+    ulong? prefabHash = SpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
+    
+    //If approve is true, the connection gets added. If it's false. The client gets disconnected
+    callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
+}
+```
+See [Connection Approvasl](../getting-started/connection-approval.md) for more information.
 
 ### Replace NetworkServer.Spawn => NetworkingManager.Spawn
 
-UNET’s `NetworkServer.spawn` is replaced with `NetworkingManager.spawn` and works in a similar way. 
+Replace `NetworkServer.spawn`  with `NetworkingManager.spawn` everywhere in your project. 
 
 ##### UNET Example
+```csharp
 
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class Example : NetworkBehaviour
+{
+    //Assign the prefab in the Inspector
+    public GameObject m_MyGameObject;
+    GameObject m_MyInstantiated;
+
+    void Start()
+    {
+        //Instantiate the prefab
+        m_MyInstantiated = Instantiate(m_MyGameObject);
+        //Spawn the GameObject you assign in the Inspector
+        NetworkServer.Spawn(m_MyInstantiated);
+    }
+}
+
+```
 ##### MLAPI Example
+
 ```csharp
 GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
 go.GetComponent<NetworkedObject>().Spawn();
@@ -266,16 +354,23 @@ The MLAPI has IsLocalPlayer, IsClient, IsServer and IsHost to replace UNETs isLo
 
 ### Network Proximity Checker/ OnCheckObserver => MLAPI visibility
 
-UNET’s `OnCheckObserver` is called `NetworkedBehaviour` in the MLAPI and works in a similar way.
+Replace  `OnCheckObserver` with  `NetworkedBehaviour` everywhere in your project.
 
 
 ##### UNET Example
+
+
+```csharp
+public bool OnCheckObserver(Networking.NetworkConnection conn);
+```
+
 ##### MLAPI Example
 
 ### SceneManagement
 
-UNET’s `SceneManagement` is called `TBC` in the MLAPI and works in a similar way.
-
+Replace `SceneManagement` with  `TBC` everywhere in your project. 
 ##### UNET Example
 
 ##### MLAPI Example
+
+
