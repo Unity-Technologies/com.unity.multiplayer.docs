@@ -92,7 +92,17 @@ Or leave it empty and use the [link text itself].
 
 ## Images
 
-Here's our logo (hover to see the title text):
+To include images, save PNG (.png) files to the `/static/img` folder. Add an image to a markdown file using the following format:
+
+```markdown title="Markdown for displaying images"
+![alt text](/img/filename.png)
+```
+
+```markdown title="Markdown for website image"
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
+```
+
+See the following examples:
 
 Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
 
@@ -105,6 +115,10 @@ Images from any folder can be used by providing path to file. Path should be rel
 ![img](/img/example-img.png)
 
 ## Code
+
+:::important
+All code samples should meet coding standard guidelines and requirements for Unity. They should be tested, functioning, and provide live examples that developers can reuse easily.
+:::
 
 To add code inline, use single ticks:
 
