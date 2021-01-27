@@ -60,6 +60,8 @@ function DocItem(props) {
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true
   });
+  // grabs the markdown file location for submitting GitHub issues
+  const mdPath = editUrl.substring(76, );
 
   return <>
       <Head>
@@ -102,10 +104,10 @@ function DocItem(props) {
                         Edit this page
                       </a>}
                   </div>
-                  <div className="col">
-                  <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?title=Feedback%20for%20' + window.location.href }  target="_blank">
+                  <div className="col center">
+                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
                     <IconBug />
-                    Log an issue</a>
+                    Log an issue</a>}
                   </div>
                   {(lastUpdatedAt || lastUpdatedBy) && <div className="col text--right">
                       <em>
