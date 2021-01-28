@@ -40,8 +40,23 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-basics/introduction"
+            "id": "mlapi-basics/messaging-system/introduction"
           },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Network Update Loop System",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-basics/messaging-system/network-update-loop-system/introduction"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/messaging-system/network-update-loop-system/network-game-update-loop"
+              },
+            ]
+            },
           {
             "collapsed": true,
             "type": "category",
@@ -49,23 +64,23 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-basics/clientrpc"
+                "id": "mlapi-basics/messaging-system/clientrpc"
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/serverrpc"
+                "id": "mlapi-basics/messaging-system/serverrpc"
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/reliability"
+                "id": "mlapi-basics/messaging-system/reliability"
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/execution-table"
+                "id": "mlapi-basics/messaging-system/execution-table"
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/rpc-params"
+                "id": "mlapi-basics/messaging-system/rpc-params"
               },
               {
               "collapsed": true,
@@ -74,21 +89,21 @@ module.exports = {
               "items": [
                 {
                   "type": "doc",
-                  "id": "mlapi-basics/serialization-intro"
+                  "id": "mlapi-basics/messaging-system/serialization/serialization-intro"                                                                                                                                                                                                                 
                 },
               ]
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/backward-compatibility"
+                "id": "mlapi-basics/messaging-system/backward-compatibility"
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/cross-compatibility"
+                "id": "mlapi-basics/messaging-system/cross-compatibility"
               },
               {
                 "type": "doc",
-                "id": "mlapi-basics/deprecation-of-return-values"
+                "id": "mlapi-basics/messaging-system/deprecation-of-return-values"
               },
             ]
           },
