@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
-    "@docusaurus/core": "2.0.0-alpha.70",
+    "@docusaurus/core": "^2.0.0-alpha.70",
     "@docusaurus/plugin-google-analytics": "^2.0.0-alpha.70",
     "@docusaurus/preset-classic": "2.0.0-alpha.70",
     "@docusaurus/theme-common": "^2.0.0-alpha.70",
@@ -24,8 +24,7 @@
     "mermaid": "^8.9.0",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "remark-custom-blocks": "^2.5.0"
+    "react-dom": "^16.8.4"
   },
   "browserslist": {
     "production": [
