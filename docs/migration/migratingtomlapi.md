@@ -215,12 +215,41 @@ See [NetworkedVar](../mlapi-basics/networkedvar.md) for more information.
 
 ### Replace SyncList => NetworkedList
 
-Replace `SyncList` with `NetworkedList` everywhere in your project.
-
+Replace `SyncList<T>` with `NetworkedList<T>` everywhere in your project. NetworkedList has a OnListChanged event which is similar to UNet's Callback.
 
 ##### UNET Example
+```csharp
+public SyncListInt m_ints = new SyncListInt();
+
+private void OnIntChanged(SyncListInt.Operation op, int index)
+{
+    Debug.Log("list changed " + op);
+}
+
+
+public override void OnStartClient()
+{
+    m_ints.Callback = OnIntChanged;
+}
+```
 
 ##### MLAPI Example
+
+```csharp
+NetworkedList<int> m_ints = new NetworkedList<int>();
+
+// Call this is in Awake or Start to subscribe to changes of the NetworkedList.
+void ListenChanges()
+{
+    m_ints.OnListChanged += OnIntChanged;
+}
+
+// The NetworkedListEvent contains information about the operation and index of the change.
+void OnIntChanged(NetworkedListEvent<int> changeEvent)
+{
+
+}
+```
 
 ### Replace Command/ClientRPC 
 
