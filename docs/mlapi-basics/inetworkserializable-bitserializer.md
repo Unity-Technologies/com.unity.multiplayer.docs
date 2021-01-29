@@ -9,7 +9,31 @@ sidebar_label: INetworkSerializable & BitSerializer
 
 Complex user-defined types that implements `INetworkSerializable` interface are serialized by user provided serialization code.
 
+```csharp
+interface INetworkSerializable
+{
+    void NetworkSerialize(BitSerializer serializer);
+}
+
+```
 An instance of `BitSerializer` is passed into the `INetworkSerializable::NetworkSerialize(BitSerializer)` method which is used to easily serialize fields by reference.
+
+```csharp
+struct MyComplexStruct : INetworkSerializable
+{
+    public Vector3 Position;
+    public Quaternion Rotation;
+
+    // INetworkSerializable
+    public NetworkSerialize(BitSerializer serializer)
+    {
+        serializer.Serialize(ref Position);
+        serializer.Serialize(ref Rotation);
+    }
+    // ~INetworkSerializable
+}
+
+```
 
 All types supporting serialization are supported by `BitSerializer` with `BitSerializer::Serialize(ref int value)` variant methods and templated `BitSerializer::Serialize<T>(ref T value) where T : INetSerializable` method.
 
@@ -60,6 +84,44 @@ void Update()
     }
 }
 ```
+
+`BitSerializer` will both serialize and deserialize fields based on its serialization mode indicated by `IsReading` flag using its internal `BitReader` and `BitWriter` instances.
+
+```csharp
+class BitSerializer
+{
+    BitReader m_Reader;
+    BitWriter m_Writer;
+
+    bool IsReading { get; }
+
+    BitSerializer(BitReader reader)
+    {
+        IsReading = true;
+        m_Reader = reader;
+    }
+
+    BitSerializer(BitWriter writer)
+    {
+        IsReading = false;
+        m_Writer = writer;
+    }
+
+    void Serialize(ref int value)
+    {
+        if (IsReading)
+        {
+            value = m_Reader.ReadInt32Packed();
+        }
+        else
+        {
+            m_Writer.WriteInt32Packed(value);
+        }
+    }
+
+    // ...
+}
+```
 ## Conditional Serialization
 
 As you have more control over serialization of a struct, you might implement conditional serialization at runtime.
@@ -100,8 +162,8 @@ public struct MyCustomStruct : INetworkSerializable
 ```
 **Reading:**
 
-- (De)serialize length back from the stream
-- Iterate over Array member n=length times
+- (De)serialize `length` back from the stream
+- Iterate over `Array` member `n=length` times
 - (De)serialize value back into Array[n] element from the stream
 
 
@@ -148,30 +210,30 @@ public struct MyMoveStruct : INetworkSerializable
 ```
 **Reading:**
 
-- (De)serialize Position back from the stream
-- (De)serialize Rotation back from the stream
-- (De)serialize SyncVelocity back from the stream
-- Check if SyncVelocity is set to true, if so:
-- (De)serialize LinearVelocity back from the stream
-- (De)serialize AngularVelocity back from the stream
+- (De)serialize `Position` back from the stream
+- (De)serialize `Rotation` back from the stream
+- (De)serialize `SyncVelocity` back from the stream
+- Check if `SyncVelocity` is set to true, if so:
+  - (De)serialize `LinearVelocity` back from the stream
+  - (De)serialize `AngularVelocity` back from the stream
 
 
 **Writing:**
 
-- Serialize Position into the stream
-- Serialize Rotation into the stream
-- SerializeSyncVelocity into the stream
-- Check if SyncVelocity is set to true, if so:
-  -  Serialize LinearVelocity into the stream
-  -  Serialize AngularVelocity into the stream
+- Serialize `Position` into the stream
+- Serialize `Rotation` into the stream
+- Serialize `SyncVelocity` into the stream
+- Check if `SyncVelocity` is set to true, if so:
+  -  Serialize `LinearVelocity` into the stream
+  -  Serialize `AngularVelocity` into the stream
 
 Unlike the [Array](#example-array) example above,  in this example we do not use `BitSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.  So:
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.
 
-## Nested/Recursive Serialization
+## Recursive Nested Serialization
 
-`BitSerializer` implements `void Serialize<T>(ref T value) where T : INetSerializable` method which allows for recursive nested serialization.
+It is possible to recursively serialize nested members with `INetworkSerializable` interface down in the hierachy tree.
 
 Let's have a look at the example below:
 
