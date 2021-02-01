@@ -3,6 +3,7 @@
 * types: category (section of content), doc (markdown file), ref (markdown page, no navigation), link (webpage)
 * id: id of the markdown file, includes subdirectory names
 */
+
 module.exports = {
   mlapi: [
   {
@@ -191,11 +192,8 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/boxing-systems"
-      }
+      }///
+ 
     ]
   },
   {
@@ -210,6 +208,12 @@ module.exports = {
     ]
   }
 ],
+  tools: [
+    {
+      "type": "doc",
+      "id": "tools/introduction"
+    },
+  ],
   tutorials: [
     {
       "type": "doc",
