@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const features = [
   {
@@ -62,7 +62,7 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="This site provides Unity Multiplayer Tech documentation, references, and tutorials.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>

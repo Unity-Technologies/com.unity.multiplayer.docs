@@ -1,4 +1,5 @@
 // Docusaurus v2, see package.json for versions
+//const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
   title: 'Unity Multiplayer Technology',
   tagline: 'MLAPI and MTT Guides',
@@ -16,30 +17,18 @@ module.exports = {
       //anonymizeIP: true, // Should IPs be anonymized?
     //},
     colorMode: {
-      // "light" | "dark"
       defaultMode: 'dark',
-
-      // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
       disableSwitch: false,
-
-      // Should we use the prefers-color-scheme media-query,
-      // using user system preferences, instead of the hardcoded defaultMode
       respectPrefersColorScheme: true,
 
       switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: '\u{1F319}',
-
         // CSS to apply to dark icon,
         // React inline style object
         // see https://reactjs.org/docs/dom-elements.html#style
+        darkIcon: '\u{1F319}',
         darkIconStyle: {
           marginLeft: '1px',
         },
-
-        // Unicode icons such as '\u2600' will work
-        // Unicode with 5 chars require brackets: '\u{1F602}'
         lightIcon: '\u{1F324}',
 
         lightIconStyle: {
@@ -55,51 +44,105 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs',
-          activeBasePath: 'docs',
-          label: 'MLAPI SDK',
+          type: 'doc',
+          docId: 'about-mlapi',
+          label: 'MLAPI Docs',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'tools/introduction',
+          label: 'Tools',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'tutorials/introduction',
+          label: 'Tutorials',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'release-notes/introduction',
+          label: 'Release Notes',
           position: 'left',
         },
         { 
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          className: 'navbar-github-link',
           position: 'right',
+          items: [
+            {
+              label: 'GitHub Doc Repo',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
+            },
+            {
+              label: 'GitHub Code Repo',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+            },
+          ]
         },
-        { 
-          href: 'https://blogs.unity3d.com/',
-          label: 'Blog',
-          position: 'right'},
+        {
+          position: 'right',
+          //label: 'Community',
+          className: 'navbar-grid-menu',
+          items: [
+            { 
+              label: 'Discord',
+              href: 'http://discord.mlapi.network/',
+            },
+            {
+              label: 'Unity Multiplayer Forum',
+              href: 'https://forum.unity.com/forums/multiplayer.26/',
+            },
+          ]
+          },
       ],
     },
     prism: {
-      additionalLanguages: ['csharp', 'powershell', 'java'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown'],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Site',
+          title: 'Unity',
           items: [
             {
-              label: 'Unity',
+              label: 'Our Company',
               href: 'https://unity.com/',
             },
             {
-              label: 'Manual',
+              label: 'Unity Learn',
+              href: 'https://learn.unity.com/',
+            },
+            {
+              label: 'Unity Manual',
               href: 'https://docs.unity3d.com/Manual/index.html',
+            },
+            {
+              label: 'Unity Scripting Reference',
+              href: 'https://docs.unity3d.com/ScriptReference/index.html',
             },
           ],
         },
         {
-          title: 'Links',
+          title: 'Multiplayer',
           items: [
             {
-              label: 'Multiplay',
-              href: 'https://multiplay.com/',
+              label: 'Releases',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
             },
             {
-              label: 'Multiplay Docs',
-              href: 'https://docs.multiplay.com/',
+              label: 'GitHub - Code',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+            },
+            {
+              label: 'GitHub - Docs',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
+            },
+            {
+              label: 'Multiplayer RFCs',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs',
             },
           ],
         },
@@ -115,8 +158,8 @@ module.exports = {
               href: 'https://forum.unity.com/',
             },
             {
-              label: 'GitHub',
-              href: 'https://unity-technologies.github.io',
+              label: 'Discord',
+              href: 'http://discord.mlapi.network/',
             },
           ],
         },
@@ -130,14 +173,41 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          // Edit this page repo domain URL
+          editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/',
+          admonitions: {
+            customTypes: {
+              contribution: {
+                keyword: `contribution`,
+                infima: true,
+                svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.23 15.39L12 15.45l-3.22 1.94c-.38.23-.85-.11-.75-.54l.85-3.66-2.83-2.45c-.33-.29-.15-.84.29-.88l3.74-.32 1.46-3.45c.17-.41.75-.41.92 0l1.46 3.44 3.74.32c.44.04.62.59.28.88l-2.83 2.45.85 3.67c.1.43-.36.77-.74.54z" fill="#855EF0"/></svg>'
+              }
+            }
+          },
+          /*remarkPlugins: [
+            [ remarkCustomBlocks, { options: {
+                columns: {
+                  classes: 'columns-table',
+                  title: 'optional',
+                },
+            },
+          },
+          ]
+          ]*/
         },
         theme: {
-          customCss: require.resolve('./src/css/unity-custom.css'),
+          customCss: require.resolve('./src/css/unity-custom.scss'),
+          
         },
       },
     ],
   ],
-  //plugins: ['@docusaurus/plugin-google-gtag'],
+  plugins: [
+    //'@docusaurus/plugin-google-gtag'
+      'plugin-image-zoom',
+      'docusaurus-plugin-sass',
+      '@saucelabs/theme-github-codeblock'
+  ],
 };
