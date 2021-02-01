@@ -68,7 +68,6 @@ module.exports = {
           position: 'left',
         },
         { 
-          //href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
           className: 'navbar-github-link',
           position: 'right',
           items: [
@@ -174,8 +173,10 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          // Edit this page repo domain URL
+          editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/',
           admonitions: {
             customTypes: {
               contribution: {
@@ -198,6 +199,7 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.scss'),
+          
         },
       },
     ],
@@ -205,6 +207,7 @@ module.exports = {
   plugins: [
     //'@docusaurus/plugin-google-gtag'
       'plugin-image-zoom',
-      'docusaurus-plugin-sass'
+      'docusaurus-plugin-sass',
+      '@saucelabs/theme-github-codeblock'
   ],
 };
