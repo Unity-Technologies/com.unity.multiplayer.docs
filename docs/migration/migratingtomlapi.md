@@ -165,7 +165,9 @@ public class MyMLAPIExample : NetworkedBehaviour
 Replace  `SyncVar`  with  `NetworkedVar` everywhere in your project.
 
 To achieve equivalent functionality of SyncVar hooks in MLAPI subscribe a function to the
-OnValueChanged callback of the NetworkedVar.</br>A noteable difference between the UNet hooks and the
+OnValueChanged callback of the NetworkedVar.
+
+A noteable difference between the UNet hooks and the
 MLAPI OnValueChanged callback is that MLAPI gives you both the old and the newly changed value while UNet provides
 you only with the old value.
 
