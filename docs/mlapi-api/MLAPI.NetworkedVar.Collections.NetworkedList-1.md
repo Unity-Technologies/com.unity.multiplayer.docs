@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedVar.Collections.NetworkedList1
+id: MLAPI.NetworkedVar.Collections.NetworkedList-1
 
-title: MLAPI.NetworkedVar.Collections.NetworkedList1
+title: MLAPI.NetworkedVar.Collections.NetworkedList-1
 
 ---
 

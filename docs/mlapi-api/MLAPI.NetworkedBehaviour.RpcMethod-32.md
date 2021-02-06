@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedBehaviour.RpcMethod32
+id: MLAPI.NetworkedBehaviour.RpcMethod-32
 
-title: MLAPI.NetworkedBehaviour.RpcMethod32
+title: MLAPI.NetworkedBehaviour.RpcMethod-32
 
 ---
 

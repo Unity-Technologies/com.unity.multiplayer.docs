@@ -95,7 +95,7 @@ Interface for serializable classes and structs
 
 ## Delegates
 
-### MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate1
+### MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1
 
 <div class="section" markdown="1">
 
@@ -103,7 +103,7 @@ The delegate used when registering custom deserialization for a type.
 
 </div>
 
-### MLAPI.Serialization.SerializationManager.CustomSerializationDelegate1
+### MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
 
 <div class="section" markdown="1">
 

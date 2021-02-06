@@ -1,10 +1,10 @@
 ---
 
 id:
-MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate1
+MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1
 
 title:
-MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate1
+MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1
 
 ---
 

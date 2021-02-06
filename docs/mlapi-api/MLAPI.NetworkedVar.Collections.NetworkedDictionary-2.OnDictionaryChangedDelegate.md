@@ -1,10 +1,10 @@
 ---
 
 id:
-MLAPI.NetworkedVar.Collections.NetworkedDictionary2.OnDictionaryChangedDelegate
+MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate
 
 title:
-MLAPI.NetworkedVar.Collections.NetworkedDictionary2.OnDictionaryChangedDelegate
+MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate
 
 ---
 

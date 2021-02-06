@@ -53,7 +53,7 @@ directly.
 
 </div>
 
-### MLAPI.Messaging.RpcResponse1
+### MLAPI.Messaging.RpcResponse-1
 
 <div class="section" markdown="1">
 

@@ -1,10 +1,10 @@
 ---
 
 id:
-MLAPI.NetworkedVar.Collections.NetworkedList1.OnListChangedDelegate
+MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
 
 title:
-MLAPI.NetworkedVar.Collections.NetworkedList1.OnListChangedDelegate
+MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
 
 ---
 

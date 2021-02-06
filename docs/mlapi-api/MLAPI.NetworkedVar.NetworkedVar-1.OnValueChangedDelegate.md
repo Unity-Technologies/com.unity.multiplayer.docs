@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedVar.NetworkedVar1.OnValueChangedDelegate
+id: MLAPI.NetworkedVar.NetworkedVar-1.OnValueChangedDelegate
 
-title: MLAPI.NetworkedVar.NetworkedVar1.OnValueChangedDelegate
+title: MLAPI.NetworkedVar.NetworkedVar-1.OnValueChangedDelegate
 
 ---
 
