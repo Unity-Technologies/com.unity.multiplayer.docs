@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate  
+title: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
-
-title: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
-
----
-
-Delegate NetworkedList\<T\>.OnListChangedDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

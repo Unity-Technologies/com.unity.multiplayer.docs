@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.Tasks.SocketTask  
+title: MLAPI.Transports.Tasks.SocketTask  
 ---
-
-id: MLAPI.Transports.Tasks.SocketTask
-
-title: MLAPI.Transports.Tasks.SocketTask
-
----
-
-Class SocketTask
 
 <div class="markdown level0 summary" markdown="1">
 

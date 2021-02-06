@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Configuration.NetworkConfig  
+title: MLAPI.Configuration.NetworkConfig  
 ---
-
-id: MLAPI.Configuration.NetworkConfig
-
-title: MLAPI.Configuration.NetworkConfig
-
----
-
-Class NetworkConfig
 
 <div class="markdown level0 summary" markdown="1">
 

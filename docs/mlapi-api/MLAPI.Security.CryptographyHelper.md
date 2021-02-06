@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Security.CryptographyHelper  
+title: MLAPI.Security.CryptographyHelper  
 ---
-
-id: MLAPI.Security.CryptographyHelper
-
-title: MLAPI.Security.CryptographyHelper
-
----
-
-Class CryptographyHelper
 
 <div class="markdown level0 summary" markdown="1">
 

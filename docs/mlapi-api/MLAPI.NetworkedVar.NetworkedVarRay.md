@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarRay  
+title: MLAPI.NetworkedVar.NetworkedVarRay  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarRay
-
-title: MLAPI.NetworkedVar.NetworkedVarRay
-
----
-
-Class NetworkedVarRay
 
 <div class="markdown level0 summary" markdown="1">
 

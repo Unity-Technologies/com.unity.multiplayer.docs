@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.AutoBitWritable  
+title: MLAPI.Serialization.AutoBitWritable  
 ---
-
-id: MLAPI.Serialization.AutoBitWritable
-
-title: MLAPI.Serialization.AutoBitWritable
-
----
-
-Class AutoBitWritable
 
 <div class="markdown level0 summary" markdown="1">
 

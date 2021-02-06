@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.Transport.TransportEventDelegate  
+title: MLAPI.Transports.Transport.TransportEventDelegate  
 ---
-
-id: MLAPI.Transports.Transport.TransportEventDelegate
-
-title: MLAPI.Transports.Transport.TransportEventDelegate
-
----
-
-Delegate Transport.TransportEventDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

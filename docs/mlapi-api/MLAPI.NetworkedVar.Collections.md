@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections  
+title: MLAPI.NetworkedVar.Collections  
 ---
-
-id: MLAPI.NetworkedVar.Collections
-
-title: MLAPI.NetworkedVar.Collections
-
----
-
-Namespace MLAPI.NetworkedVar.Collections
 
 ## Namespace MLAPI.NetworkedVar.Collections [MLAPI_NetworkedVar_Collections]
 

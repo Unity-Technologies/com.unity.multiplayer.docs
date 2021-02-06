@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.Pooled.PooledBitWriter  
+title: MLAPI.Serialization.Pooled.PooledBitWriter  
 ---
-
-id: MLAPI.Serialization.Pooled.PooledBitWriter
-
-title: MLAPI.Serialization.Pooled.PooledBitWriter
-
----
-
-Class PooledBitWriter
 
 <div class="markdown level0 summary" markdown="1">
 

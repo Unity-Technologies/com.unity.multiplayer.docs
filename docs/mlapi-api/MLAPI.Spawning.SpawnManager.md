@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Spawning.SpawnManager  
+title: MLAPI.Spawning.SpawnManager  
 ---
-
-id: MLAPI.Spawning.SpawnManager
-
-title: MLAPI.Spawning.SpawnManager
-
----
-
-Class SpawnManager
 
 <div class="markdown level0 summary" markdown="1">
 

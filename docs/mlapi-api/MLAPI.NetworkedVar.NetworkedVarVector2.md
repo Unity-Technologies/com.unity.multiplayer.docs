@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarVector2  
+title: MLAPI.NetworkedVar.NetworkedVarVector2  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarVector2
-
-title: MLAPI.NetworkedVar.NetworkedVarVector2
-
----
-
-Class NetworkedVarVector2
 
 <div class="markdown level0 summary" markdown="1">
 

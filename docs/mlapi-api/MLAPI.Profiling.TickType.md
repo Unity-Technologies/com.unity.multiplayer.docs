@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Profiling.TickType  
+title: MLAPI.Profiling.TickType  
 ---
-
-id: MLAPI.Profiling.TickType
-
-title: MLAPI.Profiling.TickType
-
----
-
-Enum TickType
 
 <div class="markdown level0 summary" markdown="1">
 

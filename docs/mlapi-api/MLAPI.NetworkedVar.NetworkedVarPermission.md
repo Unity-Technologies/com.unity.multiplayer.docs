@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarPermission  
+title: MLAPI.NetworkedVar.NetworkedVarPermission  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarPermission
-
-title: MLAPI.NetworkedVar.NetworkedVarPermission
-
----
-
-Enum NetworkedVarPermission
 
 <div class="markdown level0 summary" markdown="1">
 

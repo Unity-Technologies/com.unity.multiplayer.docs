@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Exceptions.NetworkConfigurationException  
+title: MLAPI.Exceptions.NetworkConfigurationException  
 ---
-
-id: MLAPI.Exceptions.NetworkConfigurationException
-
-title: MLAPI.Exceptions.NetworkConfigurationException
-
----
-
-Class NetworkConfigurationException
 
 <div class="markdown level0 summary" markdown="1">
 

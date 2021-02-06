@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarQuaternion  
+title: MLAPI.NetworkedVar.NetworkedVarQuaternion  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarQuaternion
-
-title: MLAPI.NetworkedVar.NetworkedVarQuaternion
-
----
-
-Class NetworkedVarQuaternion
 
 <div class="markdown level0 summary" markdown="1">
 

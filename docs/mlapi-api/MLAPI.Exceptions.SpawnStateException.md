@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Exceptions.SpawnStateException  
+title: MLAPI.Exceptions.SpawnStateException  
 ---
-
-id: MLAPI.Exceptions.SpawnStateException
-
-title: MLAPI.Exceptions.SpawnStateException
-
----
-
-Class SpawnStateException
 
 <div class="markdown level0 summary" markdown="1">
 

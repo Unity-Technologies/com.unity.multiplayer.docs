@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1  
+title: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1
-
-title: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1
-
----
-
-Struct NetworkedListEvent\<T\>
 
 <div class="markdown level0 summary" markdown="1">
 

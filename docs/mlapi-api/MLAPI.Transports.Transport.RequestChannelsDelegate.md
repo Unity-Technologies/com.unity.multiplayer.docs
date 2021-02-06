@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.Transport.RequestChannelsDelegate  
+title: MLAPI.Transports.Transport.RequestChannelsDelegate  
 ---
-
-id: MLAPI.Transports.Transport.RequestChannelsDelegate
-
-title: MLAPI.Transports.Transport.RequestChannelsDelegate
-
----
-
-Delegate Transport.RequestChannelsDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Security.SecuritySendFlags  
+title: MLAPI.Security.SecuritySendFlags  
 ---
-
-id: MLAPI.Security.SecuritySendFlags
-
-title: MLAPI.Security.SecuritySendFlags
-
----
-
-Enum SecuritySendFlags
 
 <div class="markdown level0 summary" markdown="1">
 

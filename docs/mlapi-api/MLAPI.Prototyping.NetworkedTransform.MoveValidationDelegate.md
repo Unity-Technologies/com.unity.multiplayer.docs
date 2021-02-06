@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate  
+title: MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate  
 ---
-
-id: MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate
-
-title: MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate
-
----
-
-Delegate NetworkedTransform.MoveValidationDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

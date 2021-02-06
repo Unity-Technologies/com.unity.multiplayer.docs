@@ -1,12 +1,7 @@
+---  
+id: MLAPI.SceneManagement.SceneSwitchProgress  
+title: MLAPI.SceneManagement.SceneSwitchProgress  
 ---
-
-id: MLAPI.SceneManagement.SceneSwitchProgress
-
-title: MLAPI.SceneManagement.SceneSwitchProgress
-
----
-
-Class SceneSwitchProgress
 
 <div class="markdown level0 summary" markdown="1">
 

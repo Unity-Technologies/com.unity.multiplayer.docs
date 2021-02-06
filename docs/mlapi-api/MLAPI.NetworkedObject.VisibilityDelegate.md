@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedObject.VisibilityDelegate  
+title: MLAPI.NetworkedObject.VisibilityDelegate  
 ---
-
-id: MLAPI.NetworkedObject.VisibilityDelegate
-
-title: MLAPI.NetworkedObject.VisibilityDelegate
-
----
-
-Delegate NetworkedObject.VisibilityDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

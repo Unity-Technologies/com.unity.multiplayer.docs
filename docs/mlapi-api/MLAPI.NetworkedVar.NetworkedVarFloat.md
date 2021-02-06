@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarFloat  
+title: MLAPI.NetworkedVar.NetworkedVarFloat  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarFloat
-
-title: MLAPI.NetworkedVar.NetworkedVarFloat
-
----
-
-Class NetworkedVarFloat
 
 <div class="markdown level0 summary" markdown="1">
 

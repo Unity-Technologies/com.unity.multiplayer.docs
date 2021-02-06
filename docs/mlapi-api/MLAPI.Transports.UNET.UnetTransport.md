@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.UNET.UnetTransport  
+title: MLAPI.Transports.UNET.UnetTransport  
 ---
-
-id: MLAPI.Transports.UNET.UnetTransport
-
-title: MLAPI.Transports.UNET.UnetTransport
-
----
-
-Class UnetTransport
 
 <div class="markdown level0 summary" markdown="1">
 

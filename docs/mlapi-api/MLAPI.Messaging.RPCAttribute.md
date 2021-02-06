@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging.RPCAttribute  
+title: MLAPI.Messaging.RPCAttribute  
 ---
-
-id: MLAPI.Messaging.RPCAttribute
-
-title: MLAPI.Messaging.RPCAttribute
-
----
-
-Class RPCAttribute
 
 <div class="markdown level0 summary" markdown="1">
 

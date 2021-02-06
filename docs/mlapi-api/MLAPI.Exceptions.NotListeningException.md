@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Exceptions.NotListeningException  
+title: MLAPI.Exceptions.NotListeningException  
 ---
-
-id: MLAPI.Exceptions.NotListeningException
-
-title: MLAPI.Exceptions.NotListeningException
-
----
-
-Class NotListeningException
 
 <div class="markdown level0 summary" markdown="1">
 

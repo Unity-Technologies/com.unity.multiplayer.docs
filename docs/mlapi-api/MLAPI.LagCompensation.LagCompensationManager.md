@@ -1,12 +1,7 @@
+---  
+id: MLAPI.LagCompensation.LagCompensationManager  
+title: MLAPI.LagCompensation.LagCompensationManager  
 ---
-
-id: MLAPI.LagCompensation.LagCompensationManager
-
-title: MLAPI.LagCompensation.LagCompensationManager
-
----
-
-Class LagCompensationManager
 
 <div class="markdown level0 summary" markdown="1">
 

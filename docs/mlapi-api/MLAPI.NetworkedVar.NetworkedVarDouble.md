@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarDouble  
+title: MLAPI.NetworkedVar.NetworkedVarDouble  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarDouble
-
-title: MLAPI.NetworkedVar.NetworkedVarDouble
-
----
-
-Class NetworkedVarDouble
 
 <div class="markdown level0 summary" markdown="1">
 

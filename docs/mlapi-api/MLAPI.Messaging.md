@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging  
+title: MLAPI.Messaging  
 ---
-
-id: MLAPI.Messaging
-
-title: MLAPI.Messaging
-
----
-
-Namespace MLAPI.Messaging
 
 ## Namespace MLAPI.Messaging [MLAPI_Messaging]
 

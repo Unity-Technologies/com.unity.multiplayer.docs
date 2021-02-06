@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.BitReader  
+title: MLAPI.Serialization.BitReader  
 ---
-
-id: MLAPI.Serialization.BitReader
-
-title: MLAPI.Serialization.BitReader
-
----
-
-Class BitReader
 
 <div class="markdown level0 summary" markdown="1">
 

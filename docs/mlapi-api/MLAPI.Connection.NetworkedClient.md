@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Connection.NetworkedClient  
+title: MLAPI.Connection.NetworkedClient  
 ---
-
-id: MLAPI.Connection.NetworkedClient
-
-title: MLAPI.Connection.NetworkedClient
-
----
-
-Class NetworkedClient
 
 <div class="markdown level0 summary" markdown="1">
 

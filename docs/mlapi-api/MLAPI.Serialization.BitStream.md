@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.BitStream  
+title: MLAPI.Serialization.BitStream  
 ---
-
-id: MLAPI.Serialization.BitStream
-
-title: MLAPI.Serialization.BitStream
-
----
-
-Class BitStream
 
 <div class="markdown level0 summary" markdown="1">
 

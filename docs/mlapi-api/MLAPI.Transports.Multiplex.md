@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.Multiplex  
+title: MLAPI.Transports.Multiplex  
 ---
-
-id: MLAPI.Transports.Multiplex
-
-title: MLAPI.Transports.Multiplex
-
----
-
-Namespace MLAPI.Transports.Multiplex
 
 ## Namespace MLAPI.Transports.Multiplex [MLAPI_Transports_Multiplex]
 

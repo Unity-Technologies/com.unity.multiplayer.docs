@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Configuration.HashSize  
+title: MLAPI.Configuration.HashSize  
 ---
-
-id: MLAPI.Configuration.HashSize
-
-title: MLAPI.Configuration.HashSize
-
----
-
-Enum HashSize
 
 <div class="markdown level0 summary" markdown="1">
 

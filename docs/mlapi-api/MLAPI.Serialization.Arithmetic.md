@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.Arithmetic  
+title: MLAPI.Serialization.Arithmetic  
 ---
-
-id: MLAPI.Serialization.Arithmetic
-
-title: MLAPI.Serialization.Arithmetic
-
----
-
-Class Arithmetic
 
 <div class="markdown level0 summary" markdown="1">
 

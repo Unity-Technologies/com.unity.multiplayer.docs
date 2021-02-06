@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Logging  
+title: MLAPI.Logging  
 ---
-
-id: MLAPI.Logging
-
-title: MLAPI.Logging
-
----
-
-Namespace MLAPI.Logging
 
 ## Namespace MLAPI.Logging [MLAPI_Logging]
 

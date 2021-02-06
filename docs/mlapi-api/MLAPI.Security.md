@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Security  
+title: MLAPI.Security  
 ---
-
-id: MLAPI.Security
-
-title: MLAPI.Security
-
----
-
-Namespace MLAPI.Security
 
 ## Namespace MLAPI.Security [MLAPI_Security]
 

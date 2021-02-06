@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar  
+title: MLAPI.NetworkedVar  
 ---
-
-id: MLAPI.NetworkedVar
-
-title: MLAPI.NetworkedVar
-
----
-
-Namespace MLAPI.NetworkedVar
 
 ## Namespace MLAPI.NetworkedVar [MLAPI_NetworkedVar]
 

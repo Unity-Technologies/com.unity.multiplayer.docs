@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.TransportChannel  
+title: MLAPI.Transports.TransportChannel  
 ---
-
-id: MLAPI.Transports.TransportChannel
-
-title: MLAPI.Transports.TransportChannel
-
----
-
-Class TransportChannel
 
 <div class="markdown level0 summary" markdown="1">
 

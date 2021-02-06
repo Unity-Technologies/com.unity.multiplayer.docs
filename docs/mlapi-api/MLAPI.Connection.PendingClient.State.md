@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Connection.PendingClient.State  
+title: MLAPI.Connection.PendingClient.State  
 ---
-
-id: MLAPI.Connection.PendingClient.State
-
-title: MLAPI.Connection.PendingClient.State
-
----
-
-Enum PendingClient.State
 
 <div class="markdown level0 summary" markdown="1">
 

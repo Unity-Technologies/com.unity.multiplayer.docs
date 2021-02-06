@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarSByte  
+title: MLAPI.NetworkedVar.NetworkedVarSByte  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarSByte
-
-title: MLAPI.NetworkedVar.NetworkedVarSByte
-
----
-
-Class NetworkedVarSByte
 
 <div class="markdown level0 summary" markdown="1">
 

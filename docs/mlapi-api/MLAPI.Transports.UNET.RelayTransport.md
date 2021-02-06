@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.UNET.RelayTransport  
+title: MLAPI.Transports.UNET.RelayTransport  
 ---
-
-id: MLAPI.Transports.UNET.RelayTransport
-
-title: MLAPI.Transports.UNET.RelayTransport
-
----
-
-Class RelayTransport
 
 <div class="markdown level0 summary" markdown="1">
 

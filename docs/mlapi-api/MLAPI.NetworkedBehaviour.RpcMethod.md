@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedBehaviour.RpcMethod  
+title: MLAPI.NetworkedBehaviour.RpcMethod  
 ---
-
-id: MLAPI.NetworkedBehaviour.RpcMethod
-
-title: MLAPI.NetworkedBehaviour.RpcMethod
-
----
-
-Delegate NetworkedBehaviour.RpcMethod
 
 <div class="markdown level0 summary" markdown="1">
 

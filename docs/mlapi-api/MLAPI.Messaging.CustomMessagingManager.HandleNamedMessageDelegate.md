@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate  
+title: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate  
 ---
-
-id: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate
-
-title: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate
-
----
-
-Delegate CustomMessagingManager.HandleNamedMessageDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

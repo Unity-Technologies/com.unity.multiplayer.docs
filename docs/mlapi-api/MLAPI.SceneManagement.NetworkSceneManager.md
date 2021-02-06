@@ -1,12 +1,7 @@
+---  
+id: MLAPI.SceneManagement.NetworkSceneManager  
+title: MLAPI.SceneManagement.NetworkSceneManager  
 ---
-
-id: MLAPI.SceneManagement.NetworkSceneManager
-
-title: MLAPI.SceneManagement.NetworkSceneManager
-
----
-
-Class NetworkSceneManager
 
 <div class="markdown level0 summary" markdown="1">
 

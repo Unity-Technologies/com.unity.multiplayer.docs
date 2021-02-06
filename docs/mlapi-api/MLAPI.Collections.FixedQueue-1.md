@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Collections.FixedQueue-1  
+title: MLAPI.Collections.FixedQueue-1  
 ---
-
-id: MLAPI.Collections.FixedQueue-1
-
-title: MLAPI.Collections.FixedQueue-1
-
----
-
-Class FixedQueue\<T\>
 
 <div class="markdown level0 summary" markdown="1">
 

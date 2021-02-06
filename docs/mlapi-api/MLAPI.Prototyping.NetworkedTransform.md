@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Prototyping.NetworkedTransform  
+title: MLAPI.Prototyping.NetworkedTransform  
 ---
-
-id: MLAPI.Prototyping.NetworkedTransform
-
-title: MLAPI.Prototyping.NetworkedTransform
-
----
-
-Class NetworkedTransform
 
 <div class="markdown level0 summary" markdown="1">
 

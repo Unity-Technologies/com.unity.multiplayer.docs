@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Profiling.TickEvent  
+title: MLAPI.Profiling.TickEvent  
 ---
-
-id: MLAPI.Profiling.TickEvent
-
-title: MLAPI.Profiling.TickEvent
-
----
-
-Class TickEvent
 
 <div class="markdown level0 summary" markdown="1">
 

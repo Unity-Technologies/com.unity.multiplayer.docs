@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging.CustomMessagingManager  
+title: MLAPI.Messaging.CustomMessagingManager  
 ---
-
-id: MLAPI.Messaging.CustomMessagingManager
-
-title: MLAPI.Messaging.CustomMessagingManager
-
----
-
-Class CustomMessagingManager
 
 <div class="markdown level0 summary" markdown="1">
 

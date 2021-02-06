@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate  
+title: MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate
-
-title: MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate
-
----
-
-Delegate NetworkedVarPermissionsDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

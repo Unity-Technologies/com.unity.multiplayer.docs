@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkingManager  
+title: MLAPI.NetworkingManager  
 ---
-
-id: MLAPI.NetworkingManager
-
-title: MLAPI.NetworkingManager
-
----
-
-Class NetworkingManager
 
 <div class="markdown level0 summary" markdown="1">
 

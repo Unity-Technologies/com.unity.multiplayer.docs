@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate  
+title: MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate  
 ---
-
-id: MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate
-
-title: MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate
-
----
-
-Delegate SpawnManager.DestroyHandlerDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

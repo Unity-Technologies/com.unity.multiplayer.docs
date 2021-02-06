@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3  
+title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3  
 ---
-
-id: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3
-
-title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3
-
----
-
-Delegate NetworkedBehaviour.ResponseRpcMethod\<TResult, T1, T2\>
 
 <div class="markdown level0 summary" markdown="1">
 

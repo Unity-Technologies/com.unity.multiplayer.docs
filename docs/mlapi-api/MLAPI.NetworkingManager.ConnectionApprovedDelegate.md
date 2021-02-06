@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkingManager.ConnectionApprovedDelegate  
+title: MLAPI.NetworkingManager.ConnectionApprovedDelegate  
 ---
-
-id: MLAPI.NetworkingManager.ConnectionApprovedDelegate
-
-title: MLAPI.NetworkingManager.ConnectionApprovedDelegate
-
----
-
-Delegate NetworkingManager.ConnectionApprovedDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

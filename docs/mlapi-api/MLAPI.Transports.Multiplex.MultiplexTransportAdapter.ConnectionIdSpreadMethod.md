@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod  
+title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod  
 ---
-
-id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
-
-title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
-
----
-
-Enum MultiplexTransportAdapter.ConnectionIdSpreadMethod
 
 <div class="markdown level0 summary" markdown="1">
 

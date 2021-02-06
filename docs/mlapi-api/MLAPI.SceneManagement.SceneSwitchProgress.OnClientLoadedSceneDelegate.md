@@ -1,12 +1,7 @@
+---  
+id: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate  
+title: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate  
 ---
-
-id: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
-
-title: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
-
----
-
-Delegate SceneSwitchProgress.OnClientLoadedSceneDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

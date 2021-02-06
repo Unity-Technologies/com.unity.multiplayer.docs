@@ -1,12 +1,7 @@
+---  
+id: MLAPI.LagCompensation.TrackedObject  
+title: MLAPI.LagCompensation.TrackedObject  
 ---
-
-id: MLAPI.LagCompensation.TrackedObject
-
-title: MLAPI.LagCompensation.TrackedObject
-
----
-
-Class TrackedObject
 
 <div class="markdown level0 summary" markdown="1">
 

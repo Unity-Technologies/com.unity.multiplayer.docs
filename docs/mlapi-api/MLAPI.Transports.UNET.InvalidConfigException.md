@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.UNET.InvalidConfigException  
+title: MLAPI.Transports.UNET.InvalidConfigException  
 ---
-
-id: MLAPI.Transports.UNET.InvalidConfigException
-
-title: MLAPI.Transports.UNET.InvalidConfigException
-
----
-
-Class InvalidConfigException
 
 <div class="markdown level0 summary" markdown="1">
 

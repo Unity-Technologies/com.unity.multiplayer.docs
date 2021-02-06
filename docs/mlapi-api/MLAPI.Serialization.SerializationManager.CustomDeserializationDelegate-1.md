@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1  
+title: MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1  
 ---
-
-id: MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1
-
-title: MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1
-
----
-
-Delegate SerializationManager.CustomDeserializationDelegate\<T\>
 
 <div class="markdown level0 summary" markdown="1">
 

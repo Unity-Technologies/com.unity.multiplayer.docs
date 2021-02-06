@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType  
+title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType
-
-title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType
-
----
-
-Enum NetworkedDictionaryEvent\<TKey, TValue\>.NetworkedListEventType
 
 <div class="markdown level0 summary" markdown="1">
 

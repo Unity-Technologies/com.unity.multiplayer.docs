@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.BitWriter  
+title: MLAPI.Serialization.BitWriter  
 ---
-
-id: MLAPI.Serialization.BitWriter
-
-title: MLAPI.Serialization.BitWriter
-
----
-
-Class BitWriter
 
 <div class="markdown level0 summary" markdown="1">
 

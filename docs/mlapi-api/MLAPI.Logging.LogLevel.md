@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Logging.LogLevel  
+title: MLAPI.Logging.LogLevel  
 ---
-
-id: MLAPI.Logging.LogLevel
-
-title: MLAPI.Logging.LogLevel
-
----
-
-Enum LogLevel
 
 <div class="markdown level0 summary" markdown="1">
 

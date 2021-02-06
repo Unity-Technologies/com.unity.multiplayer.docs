@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.Pooled.PooledBitReader  
+title: MLAPI.Serialization.Pooled.PooledBitReader  
 ---
-
-id: MLAPI.Serialization.Pooled.PooledBitReader
-
-title: MLAPI.Serialization.Pooled.PooledBitReader
-
----
-
-Class PooledBitReader
 
 <div class="markdown level0 summary" markdown="1">
 
