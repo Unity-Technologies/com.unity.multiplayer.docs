@@ -24,7 +24,7 @@ Namespace MLAPI.NetworkedVar.Collections
 
 ## Classes
 
-### MLAPI.NetworkedVar.Collections.NetworkedDictionary2
+### MLAPI.NetworkedVar.Collections.NetworkedDictionary-2
 
 <div class="section" markdown="1">
 
@@ -32,7 +32,7 @@ Event based networkedVar container for syncing Dictionaries
 
 </div>
 
-### MLAPI.NetworkedVar.Collections.NetworkedList1
+### MLAPI.NetworkedVar.Collections.NetworkedList-1
 
 <div class="section" markdown="1">
 
@@ -42,7 +42,7 @@ Event based networkedVar container for syncing Lists
 
 ## Structs
 
-### MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent2
+### MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2
 
 <div class="section" markdown="1">
 
@@ -51,7 +51,7 @@ NetworkedDictionary.
 
 </div>
 
-### MLAPI.NetworkedVar.Collections.NetworkedListEvent1
+### MLAPI.NetworkedVar.Collections.NetworkedListEvent-1
 
 <div class="section" markdown="1">
 
@@ -61,7 +61,7 @@ Struct containing event information about changes to a NetworkedList.
 
 ## Enums
 
-### MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent2.NetworkedListEventType
+### MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType
 
 <div class="section" markdown="1">
 
@@ -70,7 +70,7 @@ event.
 
 </div>
 
-### MLAPI.NetworkedVar.Collections.NetworkedListEvent1.EventType
+### MLAPI.NetworkedVar.Collections.NetworkedListEvent-1.EventType
 
 <div class="section" markdown="1">
 
@@ -81,7 +81,7 @@ event.
 
 ## Delegates
 
-### MLAPI.NetworkedVar.Collections.NetworkedDictionary2.OnDictionaryChangedDelegate
+### MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate
 
 <div class="section" markdown="1">
 
@@ -89,7 +89,7 @@ Delegate type for dictionary changed event
 
 </div>
 
-### MLAPI.NetworkedVar.Collections.NetworkedList1.OnListChangedDelegate
+### MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
 
 <div class="section" markdown="1">
 

@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedBehaviour.ResponseRpcMethod13
+id: MLAPI.NetworkedBehaviour.ResponseRpcMethod-13
 
-title: MLAPI.NetworkedBehaviour.ResponseRpcMethod13
+title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-13
 
 ---
 

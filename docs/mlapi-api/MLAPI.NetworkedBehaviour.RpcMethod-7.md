@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedBehaviour.RpcMethod7
+id: MLAPI.NetworkedBehaviour.RpcMethod-7
 
-title: MLAPI.NetworkedBehaviour.RpcMethod7
+title: MLAPI.NetworkedBehaviour.RpcMethod-7
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedVar.Collections.NetworkedListEvent1
+id: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1
 
-title: MLAPI.NetworkedVar.Collections.NetworkedListEvent1
+title: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1
 
 ---
 

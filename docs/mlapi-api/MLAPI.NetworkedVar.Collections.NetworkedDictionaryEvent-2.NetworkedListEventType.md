@@ -1,10 +1,10 @@
 ---
 
 id:
-MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent2.NetworkedListEventType
+MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType
 
 title:
-MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent2.NetworkedListEventType
+MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2.NetworkedListEventType
 
 ---
 

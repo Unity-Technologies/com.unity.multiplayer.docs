@@ -24,7 +24,7 @@ Namespace MLAPI.NetworkedVar
 
 ## Classes
 
-### MLAPI.NetworkedVar.NetworkedVar1
+### MLAPI.NetworkedVar.NetworkedVar-1
 
 <div class="section" markdown="1">
 
@@ -223,7 +223,7 @@ Permission type
 
 ## Delegates
 
-### MLAPI.NetworkedVar.NetworkedVar1.OnValueChangedDelegate
+### MLAPI.NetworkedVar.NetworkedVar-1.OnValueChangedDelegate
 
 <div class="section" markdown="1">
 

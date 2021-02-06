@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent2
+id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2
 
-title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent2
+title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2
 
 ---
 

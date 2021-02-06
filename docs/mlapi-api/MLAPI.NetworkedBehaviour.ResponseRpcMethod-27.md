@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedBehaviour.ResponseRpcMethod27
+id: MLAPI.NetworkedBehaviour.ResponseRpcMethod-27
 
-title: MLAPI.NetworkedBehaviour.ResponseRpcMethod27
+title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-27
 
 ---
 

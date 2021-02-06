@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.Collections.FixedQueue1
+id: MLAPI.Collections.FixedQueue-1
 
-title: MLAPI.Collections.FixedQueue1
+title: MLAPI.Collections.FixedQueue-1
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.Messaging.RpcResponse1
+id: MLAPI.Messaging.RpcResponse-1
 
-title: MLAPI.Messaging.RpcResponse1
+title: MLAPI.Messaging.RpcResponse-1
 
 ---
 

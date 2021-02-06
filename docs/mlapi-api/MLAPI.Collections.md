@@ -24,7 +24,7 @@ Namespace MLAPI.Collections
 
 ## Classes
 
-### MLAPI.Collections.FixedQueue1
+### MLAPI.Collections.FixedQueue-1
 
 <div class="section" markdown="1">
 

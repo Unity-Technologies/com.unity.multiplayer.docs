@@ -51,199 +51,199 @@ The main component of the library
 
 ## Delegates
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod1
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-1
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod10
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-10
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod11
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-11
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod12
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-12
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod13
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-13
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod14
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-14
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod15
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-15
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod16
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-16
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod17
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-17
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod18
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-18
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod19
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-19
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod2
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-2
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod20
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-20
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod21
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-21
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod22
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-22
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod23
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-23
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod24
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-24
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod25
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-25
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod26
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-26
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod27
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-27
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod28
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-28
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod29
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-29
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod3
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-3
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod30
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-30
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod31
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-31
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod32
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-32
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod33
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-33
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod4
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-4
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod5
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-5
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod6
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-6
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod7
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-7
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod8
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-8
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.ResponseRpcMethod9
+### MLAPI.NetworkedBehaviour.ResponseRpcMethod-9
 
 <div class="section" markdown="1">
 
@@ -255,193 +255,193 @@ The main component of the library
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod1
+### MLAPI.NetworkedBehaviour.RpcMethod-1
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod10
+### MLAPI.NetworkedBehaviour.RpcMethod-10
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod11
+### MLAPI.NetworkedBehaviour.RpcMethod-11
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod12
+### MLAPI.NetworkedBehaviour.RpcMethod-12
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod13
+### MLAPI.NetworkedBehaviour.RpcMethod-13
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod14
+### MLAPI.NetworkedBehaviour.RpcMethod-14
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod15
+### MLAPI.NetworkedBehaviour.RpcMethod-15
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod16
+### MLAPI.NetworkedBehaviour.RpcMethod-16
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod17
+### MLAPI.NetworkedBehaviour.RpcMethod-17
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod18
+### MLAPI.NetworkedBehaviour.RpcMethod-18
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod19
+### MLAPI.NetworkedBehaviour.RpcMethod-19
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod2
+### MLAPI.NetworkedBehaviour.RpcMethod-2
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod20
+### MLAPI.NetworkedBehaviour.RpcMethod-20
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod21
+### MLAPI.NetworkedBehaviour.RpcMethod-21
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod22
+### MLAPI.NetworkedBehaviour.RpcMethod-22
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod23
+### MLAPI.NetworkedBehaviour.RpcMethod-23
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod24
+### MLAPI.NetworkedBehaviour.RpcMethod-24
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod25
+### MLAPI.NetworkedBehaviour.RpcMethod-25
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod26
+### MLAPI.NetworkedBehaviour.RpcMethod-26
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod27
+### MLAPI.NetworkedBehaviour.RpcMethod-27
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod28
+### MLAPI.NetworkedBehaviour.RpcMethod-28
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod29
+### MLAPI.NetworkedBehaviour.RpcMethod-29
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod3
+### MLAPI.NetworkedBehaviour.RpcMethod-3
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod30
+### MLAPI.NetworkedBehaviour.RpcMethod-30
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod31
+### MLAPI.NetworkedBehaviour.RpcMethod-31
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod32
+### MLAPI.NetworkedBehaviour.RpcMethod-32
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod4
+### MLAPI.NetworkedBehaviour.RpcMethod-4
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod5
+### MLAPI.NetworkedBehaviour.RpcMethod-5
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod6
+### MLAPI.NetworkedBehaviour.RpcMethod-6
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod7
+### MLAPI.NetworkedBehaviour.RpcMethod-7
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod8
+### MLAPI.NetworkedBehaviour.RpcMethod-8
 
 <div class="section" markdown="1">
 
 </div>
 
-### MLAPI.NetworkedBehaviour.RpcMethod9
+### MLAPI.NetworkedBehaviour.RpcMethod-9
 
 <div class="section" markdown="1">
 

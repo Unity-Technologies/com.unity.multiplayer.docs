@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedVar.Collections.NetworkedListEvent1.EventType
+id: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1.EventType
 
-title: MLAPI.NetworkedVar.Collections.NetworkedListEvent1.EventType
+title: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1.EventType
 
 ---
 

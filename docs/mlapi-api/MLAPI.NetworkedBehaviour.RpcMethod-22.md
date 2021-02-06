@@ -1,8 +1,8 @@
 ---
 
-id: MLAPI.NetworkedBehaviour.RpcMethod22
+id: MLAPI.NetworkedBehaviour.RpcMethod-22
 
-title: MLAPI.NetworkedBehaviour.RpcMethod22
+title: MLAPI.NetworkedBehaviour.RpcMethod-22
 
 ---
 
