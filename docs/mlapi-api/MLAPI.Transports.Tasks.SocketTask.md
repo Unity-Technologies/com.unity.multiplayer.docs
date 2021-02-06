@@ -92,7 +92,7 @@ Object.ToString()
 
     public class SocketTask
 
-## Properties <span id="MLAPI_Transports_Tasks_SocketTask_Done_"></span>
+## Properties 
 
 ### Done [MLAPI_Transports_Tasks_SocketTask_Done]
 
@@ -116,8 +116,6 @@ Gets a done task.
 |------------|-------------|
 | SocketTask | The done.   |
 
-<span id="MLAPI_Transports_Tasks_SocketTask_Fault_"></span>
-
 ### Fault [MLAPI_Transports_Tasks_SocketTask_Fault]
 
 <div class="markdown level1 summary" markdown="1">
@@ -140,8 +138,6 @@ Gets a faulty task.
 |------------|-------------|
 | SocketTask | The fault.  |
 
-<span id="MLAPI_Transports_Tasks_SocketTask_IsDone_"></span>
-
 ### IsDone [MLAPI_Transports_Tasks_SocketTask_IsDone]
 
 <div class="markdown level1 summary" markdown="1">
@@ -160,11 +156,9 @@ Gets or sets a value indicating whether this SocketTask is done.
 
 #### Property Value [property-value-2]
 
-| Type                                     | Description                            |
-|------------------------------------------|----------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if is done; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_Message_"></span>
+| Type           | Description                            |
+|----------------|----------------------------------------|
+| System.Boolean | `true` if is done; otherwise, `false`. |
 
 ### Message [MLAPI_Transports_Tasks_SocketTask_Message]
 
@@ -184,11 +178,9 @@ Gets or sets the message.
 
 #### Property Value [property-value-3]
 
-| Type                                    | Description  |
-|-----------------------------------------|--------------|
-| <span class="xref">System.String</span> | The message. |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_SocketError_"></span>
+| Type          | Description  |
+|---------------|--------------|
+| System.String | The message. |
 
 ### SocketError [MLAPI_Transports_Tasks_SocketTask_SocketError]
 
@@ -208,11 +200,9 @@ Gets or sets the socket error.
 
 #### Property Value [property-value-4]
 
-| Type                                                     | Description       |
-|----------------------------------------------------------|-------------------|
-| <span class="xref">System.Net.Sockets.SocketError</span> | The socket error. |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_State_"></span>
+| Type                           | Description       |
+|--------------------------------|-------------------|
+| System.Net.Sockets.SocketError | The socket error. |
 
 ### State [MLAPI_Transports_Tasks_SocketTask_State]
 
@@ -232,11 +222,9 @@ Gets or sets the state.
 
 #### Property Value [property-value-5]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Object</span> | The state.  |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_Success_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.Object | The state.  |
 
 ### Success [MLAPI_Transports_Tasks_SocketTask_Success]
 
@@ -256,11 +244,9 @@ Gets or sets a value indicating whether this SocketTask is success.
 
 #### Property Value [property-value-6]
 
-| Type                                     | Description                            |
-|------------------------------------------|----------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if success; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_TransportCode_"></span>
+| Type           | Description                            |
+|----------------|----------------------------------------|
+| System.Boolean | `true` if success; otherwise, `false`. |
 
 ### TransportCode [MLAPI_Transports_Tasks_SocketTask_TransportCode]
 
@@ -280,11 +266,9 @@ Gets or sets the transport code.
 
 #### Property Value [property-value-7]
 
-| Type                                   | Description         |
-|----------------------------------------|---------------------|
-| <span class="xref">System.Int32</span> | The transport code. |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_TransportException_"></span>
+| Type         | Description         |
+|--------------|---------------------|
+| System.Int32 | The transport code. |
 
 ### TransportException [MLAPI_Transports_Tasks_SocketTask_TransportException]
 
@@ -304,11 +288,9 @@ Gets or sets the transport exception.
 
 #### Property Value [property-value-8]
 
-| Type                                       | Description              |
-|--------------------------------------------|--------------------------|
-| <span class="xref">System.Exception</span> | The transport exception. |
-
-<span id="MLAPI_Transports_Tasks_SocketTask_Working_"></span>
+| Type             | Description              |
+|------------------|--------------------------|
+| System.Exception | The transport exception. |
 
 ### Working [MLAPI_Transports_Tasks_SocketTask_Working]
 
@@ -332,7 +314,7 @@ Gets a working task.
 |------------|--------------|
 | SocketTask | The working. |
 
-## Methods <span id="MLAPI_Transports_Tasks_SocketTask_AsTasks_"></span>
+## Methods 
 
 ### AsTasks() [MLAPI_Transports_Tasks_SocketTask_AsTasks]
 

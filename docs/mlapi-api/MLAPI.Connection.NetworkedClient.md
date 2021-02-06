@@ -112,9 +112,9 @@ The encryption key used for this client
 
 #### Field Value [field-value]
 
-| Type                                      | Description |
-|-------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>\[\] |             |
+| Type            | Description |
+|-----------------|-------------|
+| System.Byte\[\] |             |
 
 ### ClientId [MLAPI_Connection_NetworkedClient_ClientId]
 
@@ -134,9 +134,9 @@ The Id of the NetworkedClient
 
 #### Field Value [field-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### OwnedObjects [MLAPI_Connection_NetworkedClient_OwnedObjects]
 
@@ -156,9 +156,9 @@ The NetworkedObject's owned by this Client
 
 #### Field Value [field-value-2]
 
-| Type                                                                         | Description |
-|------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<NetworkedObject\> |             |
+| Type                                               | Description |
+|----------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkedObject\> |             |
 
 ### PlayerObject [MLAPI_Connection_NetworkedClient_PlayerObject]
 

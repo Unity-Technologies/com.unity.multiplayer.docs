@@ -8,7 +8,7 @@ title: MLAPI.Profiling
 
 Namespace MLAPI.Profiling
 
-# Namespace MLAPI.Profiling [MLAPI_Profiling]
+## Namespace MLAPI.Profiling [MLAPI_Profiling]
 
 <div class="markdown level0 summary" markdown="1">
 

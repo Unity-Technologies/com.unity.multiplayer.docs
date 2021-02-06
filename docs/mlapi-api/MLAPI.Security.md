@@ -8,7 +8,7 @@ title: MLAPI.Security
 
 Namespace MLAPI.Security
 
-# Namespace MLAPI.Security [MLAPI_Security]
+## Namespace MLAPI.Security [MLAPI_Security]
 
 <div class="markdown level0 summary" markdown="1">
 

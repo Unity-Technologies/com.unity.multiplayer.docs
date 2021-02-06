@@ -28,12 +28,12 @@ Delegate type for permission checking
 
 ##### Parameters [parameters]
 
-| Type                                    | Name       | Description                             |
-|-----------------------------------------|------------|-----------------------------------------|
-| <span class="xref">System.UInt64</span> | \*clientId | The clientId whose permissions to check |
+| Type          | Name       | Description                             |
+|---------------|------------|-----------------------------------------|
+| System.UInt64 | \*clientId | The clientId whose permissions to check |
 
 ##### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

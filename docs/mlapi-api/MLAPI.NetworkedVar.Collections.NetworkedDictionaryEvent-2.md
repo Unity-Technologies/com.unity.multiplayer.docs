@@ -71,10 +71,10 @@ Object.ReferenceEquals(Object, Object)
 
 ##### Type Parameters [type-parameters]
 
-| Name                                      | Description                                               |
-|-------------------------------------------|-----------------------------------------------------------|
-| <span class="parametername">TKey</span>   | The type for the dictionary key that the event is about   |
-| <span class="parametername">TValue</span> | The type for the dictionary value that the event is about |
+| Name   | Description                                               |
+|--------|-----------------------------------------------------------|
+| TKey   | The type for the dictionary key that the event is about   |
+| TValue | The type for the dictionary value that the event is about |
 
 ## Fields
 
@@ -118,9 +118,9 @@ the key changed, added or removed if available.
 
 #### Field Value [field-value-1]
 
-| Type                           | Description |
-|--------------------------------|-------------|
-| <span class="xref">TKey</span> |             |
+| Type | Description |
+|------|-------------|
+| TKey |             |
 
 ### value [MLAPI_NetworkedVar_Collections_NetworkedDictionaryEvent_2_value]
 
@@ -140,6 +140,6 @@ The value changed, added or removed if available.
 
 #### Field Value [field-value-2]
 
-| Type                             | Description |
-|----------------------------------|-------------|
-| <span class="xref">TValue</span> |             |
+| Type   | Description |
+|--------|-------------|
+| TValue |             |

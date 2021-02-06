@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarUShort : NetworkedVar<ushort>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarUShort__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarUShort() [MLAPI_NetworkedVar_NetworkedVarUShort__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarUShort()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarUShort__ctor_"></span>
 
 ### NetworkedVarUShort(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarUShort__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarUShort__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarUShort(NetworkedVarSettings, UInt16) [MLAPI_NetworkedVar_NetworkedVarUShort__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_UInt16_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                    | <span class="parametername">settings</span> |             |
-| <span class="xref">System.UInt16</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarUShort__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.UInt16        | value    |             |
 
 ### NetworkedVarUShort(UInt16) [MLAPI_NetworkedVar_NetworkedVarUShort__ctor_System_UInt16_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                     | Description |
-|-----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.UInt16</span> | <span class="parametername">value</span> |             |
+| Type          | Name  | Description |
+|---------------|-------|-------------|
+| System.UInt16 | value |             |
 
 ### Implements [implements]
 

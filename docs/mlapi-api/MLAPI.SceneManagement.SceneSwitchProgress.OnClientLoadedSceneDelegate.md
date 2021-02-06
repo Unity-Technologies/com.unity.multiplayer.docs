@@ -1,10 +1,8 @@
 ---
 
-id:
-MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
+id: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
 
-title:
-MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
+title: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
 
 ---
 
@@ -30,6 +28,6 @@ Delegate type for when a client is done loading the scene.
 
 ##### Parameters [parameters]
 
-| Type                                    | Name       | Description |
-|-----------------------------------------|------------|-------------|
-| <span class="xref">System.UInt64</span> | \*clientId |             |
+| Type          | Name       | Description |
+|---------------|------------|-------------|
+| System.UInt64 | \*clientId |             |

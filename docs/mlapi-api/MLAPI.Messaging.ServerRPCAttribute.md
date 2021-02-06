@@ -56,7 +56,7 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Attribute</span>
+System.Runtime.InteropServices.\_Attribute
 
 </div>
 
@@ -376,14 +376,14 @@ of the object
 
 #### Field Value [field-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Implements [implements]
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Attribute</span>
+System.Runtime.InteropServices.\_Attribute
 
 </div>

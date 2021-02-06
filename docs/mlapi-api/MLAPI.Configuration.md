@@ -8,7 +8,7 @@ title: MLAPI.Configuration
 
 Namespace MLAPI.Configuration
 
-# Namespace MLAPI.Configuration [MLAPI_Configuration]
+## Namespace MLAPI.Configuration [MLAPI_Configuration]
 
 <div class="markdown level0 summary" markdown="1">
 

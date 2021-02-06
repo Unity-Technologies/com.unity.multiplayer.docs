@@ -113,9 +113,9 @@ The name of the channel
 
 #### Field Value [field-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### Type [MLAPI_Transports_UnetChannel_Type]
 
@@ -135,6 +135,6 @@ The type of channel
 
 #### Field Value [field-value-1]
 
-| Type                                                     | Description |
-|----------------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.QosType</span> |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| UnityEngine.Networking.QosType |             |

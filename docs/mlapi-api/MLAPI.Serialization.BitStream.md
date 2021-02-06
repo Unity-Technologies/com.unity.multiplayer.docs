@@ -60,7 +60,7 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.IDisposable</span>
+System.IDisposable
 
 </div>
 
@@ -218,7 +218,7 @@ Object.ReferenceEquals(Object, Object)
 
     public class BitStream : Stream, IDisposable
 
-## Constructors <span id="MLAPI_Serialization_BitStream__ctor_"></span>
+## Constructors 
 
 ### BitStream() [MLAPI_Serialization_BitStream__ctor]
 
@@ -237,8 +237,6 @@ be used to write compressed data.
 #### Declaration [declaration]
 
     public BitStream()
-
-<span id="MLAPI_Serialization_BitStream__ctor_"></span>
 
 ### BitStream(Byte\[\]) [MLAPI_Serialization_BitStream__ctor_System_Byte___]
 
@@ -261,11 +259,9 @@ buffer, the stream will not grow!
 
 #### Parameters [parameters]
 
-| Type                                      | Name                                      | Description                      |
-|-------------------------------------------|-------------------------------------------|----------------------------------|
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">target</span> | Pre-allocated buffer to write to |
-
-<span id="MLAPI_Serialization_BitStream__ctor_"></span>
+| Type            | Name   | Description                      |
+|-----------------|--------|----------------------------------|
+| System.Byte\[\] | target | Pre-allocated buffer to write to |
 
 ### BitStream(Int32) [MLAPI_Serialization_BitStream__ctor_System_Int32_]
 
@@ -287,11 +283,9 @@ be used to write compressed data.
 
 #### Parameters [parameters-1]
 
-| Type                                   | Name                                        | Description |
-|----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">capacity</span> |             |
-
-<span id="MLAPI_Serialization_BitStream__ctor_"></span>
+| Type         | Name     | Description |
+|--------------|----------|-------------|
+| System.Int32 | capacity |             |
 
 ### BitStream(Int32, Single) [MLAPI_Serialization_BitStream__ctor_System_Int32_System_Single_]
 
@@ -313,12 +307,10 @@ be used to write compressed data.
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                            | Description                                        |
-|-----------------------------------------|-------------------------------------------------|----------------------------------------------------|
-| <span class="xref">System.Int32</span>  | <span class="parametername">capacity</span>     | Initial capacity of buffer in bytes.               |
-| <span class="xref">System.Single</span> | <span class="parametername">growthFactor</span> | Factor by which buffer should grow when necessary. |
-
-<span id="MLAPI_Serialization_BitStream__ctor_"></span>
+| Type          | Name         | Description                                        |
+|---------------|--------------|----------------------------------------------------|
+| System.Int32  | capacity     | Initial capacity of buffer in bytes.               |
+| System.Single | growthFactor | Factor by which buffer should grow when necessary. |
 
 ### BitStream(Single) [MLAPI_Serialization_BitStream__ctor_System_Single_]
 
@@ -340,11 +332,11 @@ be used to write compressed data.
 
 #### Parameters [parameters-3]
 
-| Type                                    | Name                                            | Description                                        |
-|-----------------------------------------|-------------------------------------------------|----------------------------------------------------|
-| <span class="xref">System.Single</span> | <span class="parametername">growthFactor</span> | Factor by which buffer should grow when necessary. |
+| Type          | Name         | Description                                        |
+|---------------|--------------|----------------------------------------------------|
+| System.Single | growthFactor | Factor by which buffer should grow when necessary. |
 
-## Properties <span id="MLAPI_Serialization_BitStream_BitAligned_"></span>
+## Properties 
 
 ### BitAligned [MLAPI_Serialization_BitStream_BitAligned]
 
@@ -365,11 +357,9 @@ whether or not the BitPosition is at a byte boundary.
 
 #### Property Value [property-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Serialization_BitStream_BitLength_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### BitLength [MLAPI_Serialization_BitStream_BitLength]
 
@@ -389,11 +379,9 @@ Length of data (in bits) that is considered to be written to the stream.
 
 #### Property Value [property-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_Serialization_BitStream_BitPosition_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### BitPosition [MLAPI_Serialization_BitStream_BitPosition]
 
@@ -413,11 +401,9 @@ Bit offset into the buffer that new data will be written to.
 
 #### Property Value [property-value-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_Serialization_BitStream_CanRead_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### CanRead [MLAPI_Serialization_BitStream_CanRead]
 
@@ -437,19 +423,17 @@ Whether or not stream supports reading. (Always true)
 
 #### Property Value [property-value-3]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 #### Overrides [overrides]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.CanRead</span>
+System.IO.Stream.CanRead
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_CanSeek_"></span>
 
 ### CanSeek [MLAPI_Serialization_BitStream_CanSeek]
 
@@ -469,19 +453,17 @@ Whether or not seeking is supported by this stream. (Always true)
 
 #### Property Value [property-value-4]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 #### Overrides [overrides-1]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.CanSeek</span>
+System.IO.Stream.CanSeek
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_CanWrite_"></span>
 
 ### CanWrite [MLAPI_Serialization_BitStream_CanWrite]
 
@@ -502,19 +484,17 @@ true even if only fewer than 8 bits can be written!
 
 #### Property Value [property-value-5]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 #### Overrides [overrides-2]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.CanWrite</span>
+System.IO.Stream.CanWrite
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_Capacity_"></span>
 
 ### Capacity [MLAPI_Serialization_BitStream_Capacity]
 
@@ -535,11 +515,9 @@ Position is equal to Capacity and an attempt to write data is made.
 
 #### Property Value [property-value-6]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int64</span> |             |
-
-<span id="MLAPI_Serialization_BitStream_GrowthFactor_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
 
 ### GrowthFactor [MLAPI_Serialization_BitStream_GrowthFactor]
 
@@ -559,11 +537,9 @@ Factor by which buffer should grow when necessary.
 
 #### Property Value [property-value-7]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
-
-<span id="MLAPI_Serialization_BitStream_HasDataToRead_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### HasDataToRead [MLAPI_Serialization_BitStream_HasDataToRead]
 
@@ -583,11 +559,9 @@ Whether or not or there is any data to be read from the stream.
 
 #### Property Value [property-value-8]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Serialization_BitStream_Length_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Length [MLAPI_Serialization_BitStream_Length]
 
@@ -607,19 +581,17 @@ The current length of data considered to be "written" to the buffer.
 
 #### Property Value [property-value-9]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int64</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
 
 #### Overrides [overrides-3]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.Length</span>
+System.IO.Stream.Length
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_Position_"></span>
 
 ### Position [MLAPI_Serialization_BitStream_Position]
 
@@ -640,19 +612,17 @@ this stream.
 
 #### Property Value [property-value-10]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int64</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
 
 #### Overrides [overrides-4]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.Position</span>
+System.IO.Stream.Position
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_Resizable_"></span>
 
 ### Resizable [MLAPI_Serialization_BitStream_Resizable]
 
@@ -672,11 +642,11 @@ Whether or not the stream will grow the buffer to accomodate more data.
 
 #### Property Value [property-value-11]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-## Methods <span id="MLAPI_Serialization_BitStream_CopyFrom_"></span>
+## Methods 
 
 ### CopyFrom(BitStream, Int32, Boolean) [MLAPI_Serialization_BitStream_CopyFrom_MLAPI_Serialization_BitStream_System_Int32_System_Boolean_]
 
@@ -696,13 +666,11 @@ Copys the bits from the provided BitStream
 
 #### Parameters [parameters-4]
 
-| Type                                     | Name                                         | Description                                                        |
-|------------------------------------------|----------------------------------------------|--------------------------------------------------------------------|
-| BitStream                                | <span class="parametername">stream</span>    | The stream to copy from                                            |
-| <span class="xref">System.Int32</span>   | <span class="parametername">dataCount</span> | The amount of data evel                                            |
-| <span class="xref">System.Boolean</span> | <span class="parametername">copyBits</span>  | Whether or not to copy at the bit level rather than the byte level |
-
-<span id="MLAPI_Serialization_BitStream_CopyFrom_"></span>
+| Type           | Name      | Description                                                        |
+|----------------|-----------|--------------------------------------------------------------------|
+| BitStream      | stream    | The stream to copy from                                            |
+| System.Int32   | dataCount | The amount of data evel                                            |
+| System.Boolean | copyBits  | Whether or not to copy at the bit level rather than the byte level |
 
 ### CopyFrom(Stream, Int32) [MLAPI_Serialization_BitStream_CopyFrom_System_IO_Stream_System_Int32_]
 
@@ -722,12 +690,10 @@ Copy data from another stream
 
 #### Parameters [parameters-5]
 
-| Type                                       | Name                                     | Description                                                                          |
-|--------------------------------------------|------------------------------------------|--------------------------------------------------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">s</span>     | Stream to copy from                                                                  |
-| <span class="xref">System.Int32</span>     | <span class="parametername">count</span> | How many bytes to read. Set to value less than one to read until ReadByte returns -1 |
-
-<span id="MLAPI_Serialization_BitStream_CopyTo_"></span>
+| Type             | Name  | Description                                                                          |
+|------------------|-------|--------------------------------------------------------------------------------------|
+| System.IO.Stream | s     | Stream to copy from                                                                  |
+| System.Int32     | count | How many bytes to read. Set to value less than one to read until ReadByte returns -1 |
 
 ### CopyTo(Stream, Int32) [MLAPI_Serialization_BitStream_CopyTo_System_IO_Stream_System_Int32_]
 
@@ -747,12 +713,10 @@ Copies internal buffer to stream
 
 #### Parameters [parameters-6]
 
-| Type                                       | Name                                      | Description                                                                             |
-|--------------------------------------------|-------------------------------------------|-----------------------------------------------------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to copy to                                                                   |
-| <span class="xref">System.Int32</span>     | <span class="parametername">count</span>  | The maximum amount of bytes to copy. Set to value less than one to copy the full length |
-
-<span id="MLAPI_Serialization_BitStream_CopyUnreadFrom_"></span>
+| Type             | Name   | Description                                                                             |
+|------------------|--------|-----------------------------------------------------------------------------------------|
+| System.IO.Stream | stream | The stream to copy to                                                                   |
+| System.Int32     | count  | The maximum amount of bytes to copy. Set to value less than one to copy the full length |
 
 ### CopyUnreadFrom(Stream, Int32) [MLAPI_Serialization_BitStream_CopyUnreadFrom_System_IO_Stream_System_Int32_]
 
@@ -772,12 +736,10 @@ Copies urnead bytes from the source stream
 
 #### Parameters [parameters-7]
 
-| Type                                       | Name                                     | Description                     |
-|--------------------------------------------|------------------------------------------|---------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">s</span>     | The source stream to copy from  |
-| <span class="xref">System.Int32</span>     | <span class="parametername">count</span> | The max amount of bytes to copy |
-
-<span id="MLAPI_Serialization_BitStream_Flush_"></span>
+| Type             | Name  | Description                     |
+|------------------|-------|---------------------------------|
+| System.IO.Stream | s     | The source stream to copy from  |
+| System.Int32     | count | The max amount of bytes to copy |
 
 ### Flush() [MLAPI_Serialization_BitStream_Flush]
 
@@ -800,11 +762,9 @@ buffer.
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.Flush()</span>
+System.IO.Stream.Flush()
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_GetBuffer_"></span>
 
 ### GetBuffer() [MLAPI_Serialization_BitStream_GetBuffer]
 
@@ -824,11 +784,9 @@ Get the internal buffer being written to by this stream.
 
 #### Returns [returns]
 
-| Type                                      | Description |
-|-------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>\[\] |             |
-
-<span id="MLAPI_Serialization_BitStream_PadStream_"></span>
+| Type            | Description |
+|-----------------|-------------|
+| System.Byte\[\] |             |
 
 ### PadStream() [MLAPI_Serialization_BitStream_PadStream]
 
@@ -845,8 +803,6 @@ Writes zeros to fill the last byte
 #### Declaration [declaration-23]
 
     public void PadStream()
-
-<span id="MLAPI_Serialization_BitStream_PeekByte_"></span>
 
 ### PeekByte() [MLAPI_Serialization_BitStream_PeekByte]
 
@@ -866,11 +822,9 @@ Peeks a byte without advancing the position
 
 #### Returns [returns-1]
 
-| Type                                   | Description     |
-|----------------------------------------|-----------------|
-| <span class="xref">System.Int32</span> | The peeked byte |
-
-<span id="MLAPI_Serialization_BitStream_Read_"></span>
+| Type         | Description     |
+|--------------|-----------------|
+| System.Int32 | The peeked byte |
 
 ### Read(Byte\[\], Int32, Int32) [MLAPI_Serialization_BitStream_Read_System_Byte___System_Int32_System_Int32_]
 
@@ -891,28 +845,25 @@ supplied buffer.
 
 #### Parameters [parameters-8]
 
-| Type                                      | Name                                      | Description                              |
-|-------------------------------------------|-------------------------------------------|------------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span> | Buffer to copy data to.                  |
-| <span class="xref">System.Int32</span>    | <span class="parametername">offset</span> | Offset into the buffer to write data to. |
-| <span class="xref">System.Int32</span>    | <span class="parametername">count</span>  | How many bytes to attempt to read.       |
+| Type            | Name   | Description                              |
+|-----------------|--------|------------------------------------------|
+| System.Byte\[\] | buffer | Buffer to copy data to.                  |
+| System.Int32    | offset | Offset into the buffer to write data to. |
+| System.Int32    | count  | How many bytes to attempt to read.       |
 
 #### Returns [returns-2]
 
-| Type                                   | Description           |
-|----------------------------------------|-----------------------|
-| <span class="xref">System.Int32</span> | Amount of bytes read. |
+| Type         | Description           |
+|--------------|-----------------------|
+| System.Int32 | Amount of bytes read. |
 
 #### Overrides [overrides-6]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.Read(System.Byte\[\], System.Int32,
-System.Int32)</span>
+System.IO.Stream.Read(System.Byte\[\], System.Int32, System.Int32)
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_ReadBit_"></span>
 
 ### ReadBit() [MLAPI_Serialization_BitStream_ReadBit]
 
@@ -932,11 +883,9 @@ Read a single bit from the stream.
 
 #### Returns [returns-3]
 
-| Type                                     | Description                                                   |
-|------------------------------------------|---------------------------------------------------------------|
-| <span class="xref">System.Boolean</span> | A bit in bool format. (True represents 1, False represents 0) |
-
-<span id="MLAPI_Serialization_BitStream_ReadByte_"></span>
+| Type           | Description                                                   |
+|----------------|---------------------------------------------------------------|
+| System.Boolean | A bit in bool format. (True represents 1, False represents 0) |
 
 ### ReadByte() [MLAPI_Serialization_BitStream_ReadByte]
 
@@ -957,19 +906,17 @@ misalignment.
 
 #### Returns [returns-4]
 
-| Type                                   | Description                                             |
-|----------------------------------------|---------------------------------------------------------|
-| <span class="xref">System.Int32</span> | A byte from the buffer or, if a byte can't be read, -1. |
+| Type         | Description                                             |
+|--------------|---------------------------------------------------------|
+| System.Int32 | A byte from the buffer or, if a byte can't be read, -1. |
 
 #### Overrides [overrides-7]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.ReadByte()</span>
+System.IO.Stream.ReadByte()
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_Seek_"></span>
 
 ### Seek(Int64, SeekOrigin) [MLAPI_Serialization_BitStream_Seek_System_Int64_System_IO_SeekOrigin_]
 
@@ -989,27 +936,24 @@ Set position in stream to read from/write to.
 
 #### Parameters [parameters-9]
 
-| Type                                           | Name                                      | Description                  |
-|------------------------------------------------|-------------------------------------------|------------------------------|
-| <span class="xref">System.Int64</span>         | <span class="parametername">offset</span> | Offset from position origin. |
-| <span class="xref">System.IO.SeekOrigin</span> | <span class="parametername">origin</span> | How to calculate offset.     |
+| Type                 | Name   | Description                  |
+|----------------------|--------|------------------------------|
+| System.Int64         | offset | Offset from position origin. |
+| System.IO.SeekOrigin | origin | How to calculate offset.     |
 
 #### Returns [returns-5]
 
-| Type                                   | Description                                                  |
-|----------------------------------------|--------------------------------------------------------------|
-| <span class="xref">System.Int64</span> | The new position in the buffer that data will be written to. |
+| Type         | Description                                                  |
+|--------------|--------------------------------------------------------------|
+| System.Int64 | The new position in the buffer that data will be written to. |
 
 #### Overrides [overrides-8]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.Seek(System.Int64,
-System.IO.SeekOrigin)</span>
+System.IO.Stream.Seek(System.Int64, System.IO.SeekOrigin)
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_SetLength_"></span>
 
 ### SetLength(Int64) [MLAPI_Serialization_BitStream_SetLength_System_Int64_]
 
@@ -1029,19 +973,17 @@ Set length of data considered to be "written" to the stream.
 
 #### Parameters [parameters-10]
 
-| Type                                   | Name                                     | Description                     |
-|----------------------------------------|------------------------------------------|---------------------------------|
-| <span class="xref">System.Int64</span> | <span class="parametername">value</span> | New length of the written data. |
+| Type         | Name  | Description                     |
+|--------------|-------|---------------------------------|
+| System.Int64 | value | New length of the written data. |
 
 #### Overrides [overrides-9]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.SetLength(System.Int64)</span>
+System.IO.Stream.SetLength(System.Int64)
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_SkipPadBits_"></span>
 
 ### SkipPadBits() [MLAPI_Serialization_BitStream_SkipPadBits]
 
@@ -1058,8 +1000,6 @@ Reads zeros until the the stream is byte aligned
 #### Declaration [declaration-30]
 
     public void SkipPadBits()
-
-<span id="MLAPI_Serialization_BitStream_ToArray_"></span>
 
 ### ToArray() [MLAPI_Serialization_BitStream_ToArray]
 
@@ -1079,11 +1019,9 @@ Creates a copy of the internal buffer. This only contains the used bytes
 
 #### Returns [returns-6]
 
-| Type                                      | Description                                 |
-|-------------------------------------------|---------------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | A copy of used bytes in the internal buffer |
-
-<span id="MLAPI_Serialization_BitStream_ToString_"></span>
+| Type            | Description                                 |
+|-----------------|---------------------------------------------|
+| System.Byte\[\] | A copy of used bytes in the internal buffer |
 
 ### ToString() [MLAPI_Serialization_BitStream_ToString]
 
@@ -1103,19 +1041,17 @@ Returns hex encoded version of the buffer
 
 #### Returns [returns-7]
 
-| Type                                    | Description                       |
-|-----------------------------------------|-----------------------------------|
-| <span class="xref">System.String</span> | Hex encoded version of the buffer |
+| Type          | Description                       |
+|---------------|-----------------------------------|
+| System.String | Hex encoded version of the buffer |
 
 #### Overrides [overrides-10]
 
 <div markdown="1">
 
-<span class="xref">System.Object.ToString()</span>
+System.Object.ToString()
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_Write_"></span>
 
 ### Write(Byte\[\]) [MLAPI_Serialization_BitStream_Write_System_Byte___]
 
@@ -1135,11 +1071,9 @@ Write data from the given buffer to the internal stream buffer.
 
 #### Parameters [parameters-11]
 
-| Type                                      | Name                                      | Description           |
-|-------------------------------------------|-------------------------------------------|-----------------------|
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span> | Buffer to write from. |
-
-<span id="MLAPI_Serialization_BitStream_Write_"></span>
+| Type            | Name   | Description           |
+|-----------------|--------|-----------------------|
+| System.Byte\[\] | buffer | Buffer to write from. |
 
 ### Write(Byte\[\], Int32, Int32) [MLAPI_Serialization_BitStream_Write_System_Byte___System_Int32_System_Int32_]
 
@@ -1159,22 +1093,19 @@ Write data from the given buffer to the internal stream buffer.
 
 #### Parameters [parameters-12]
 
-| Type                                      | Name                                      | Description                                                      |
-|-------------------------------------------|-------------------------------------------|------------------------------------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span> | Buffer to write from.                                            |
-| <span class="xref">System.Int32</span>    | <span class="parametername">offset</span> | Offset in given buffer to start reading from.                    |
-| <span class="xref">System.Int32</span>    | <span class="parametername">count</span>  | Amount of bytes to read copy from given buffer to stream buffer. |
+| Type            | Name   | Description                                                      |
+|-----------------|--------|------------------------------------------------------------------|
+| System.Byte\[\] | buffer | Buffer to write from.                                            |
+| System.Int32    | offset | Offset in given buffer to start reading from.                    |
+| System.Int32    | count  | Amount of bytes to read copy from given buffer to stream buffer. |
 
 #### Overrides [overrides-11]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.Write(System.Byte\[\], System.Int32,
-System.Int32)</span>
+System.IO.Stream.Write(System.Byte\[\], System.Int32, System.Int32)
 
 </div>
-
-<span id="MLAPI_Serialization_BitStream_WriteBit_"></span>
 
 ### WriteBit(Boolean) [MLAPI_Serialization_BitStream_WriteBit_System_Boolean_]
 
@@ -1194,11 +1125,9 @@ Write a single bit to the stream
 
 #### Parameters [parameters-13]
 
-| Type                                     | Name                                   | Description                                             |
-|------------------------------------------|----------------------------------------|---------------------------------------------------------|
-| <span class="xref">System.Boolean</span> | <span class="parametername">bit</span> | Value of the bit. True represents 1, False represents 0 |
-
-<span id="MLAPI_Serialization_BitStream_WriteByte_"></span>
+| Type           | Name | Description                                             |
+|----------------|------|---------------------------------------------------------|
+| System.Boolean | bit  | Value of the bit. True represents 1, False represents 0 |
 
 ### WriteByte(Byte) [MLAPI_Serialization_BitStream_WriteByte_System_Byte_]
 
@@ -1218,15 +1147,15 @@ Write byte value to the internal stream buffer.
 
 #### Parameters [parameters-14]
 
-| Type                                  | Name                                     | Description              |
-|---------------------------------------|------------------------------------------|--------------------------|
-| <span class="xref">System.Byte</span> | <span class="parametername">value</span> | The byte value to write. |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| System.Byte | value | The byte value to write. |
 
 #### Overrides [overrides-12]
 
 <div markdown="1">
 
-<span class="xref">System.IO.Stream.WriteByte(System.Byte)</span>
+System.IO.Stream.WriteByte(System.Byte)
 
 </div>
 
@@ -1234,6 +1163,6 @@ Write byte value to the internal stream buffer.
 
 <div markdown="1">
 
-<span class="xref">System.IDisposable</span>
+System.IDisposable
 
 </div>

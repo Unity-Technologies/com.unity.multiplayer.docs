@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarVector2 : NetworkedVar<Vector2>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarVector2__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarVector2() [MLAPI_NetworkedVar_NetworkedVarVector2__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarVector2()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarVector2__ctor_"></span>
 
 ### NetworkedVarVector2(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarVector2__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarVector2__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarVector2(NetworkedVarSettings, Vector2) [MLAPI_NetworkedVar_NetworkedVarVector2__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Vector2_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                          | Name                                        | Description |
-|-----------------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                          | <span class="parametername">settings</span> |             |
-| <span class="xref">UnityEngine.Vector2</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarVector2__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| UnityEngine.Vector2  | value    |             |
 
 ### NetworkedVarVector2(Vector2) [MLAPI_NetworkedVar_NetworkedVarVector2__ctor_UnityEngine_Vector2_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                          | Name                                     | Description |
-|-----------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Vector2</span> | <span class="parametername">value</span> |             |
+| Type                | Name  | Description |
+|---------------------|-------|-------------|
+| UnityEngine.Vector2 | value |             |
 
 ### Implements [implements]
 

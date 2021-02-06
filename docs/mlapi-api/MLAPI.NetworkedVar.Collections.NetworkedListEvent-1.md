@@ -70,9 +70,9 @@ Object.ReferenceEquals(Object, Object)
 
 ##### Type Parameters [type-parameters]
 
-| Name                                 | Description                                   |
-|--------------------------------------|-----------------------------------------------|
-| <span class="parametername">T</span> | The type for the list that the event is about |
+| Name | Description                                   |
+|------|-----------------------------------------------|
+| T    | The type for the list that the event is about |
 
 ## Fields
 
@@ -116,9 +116,9 @@ the index changed, added or removed if available
 
 #### Field Value [field-value-1]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### value [MLAPI_NetworkedVar_Collections_NetworkedListEvent_1_value]
 
@@ -138,6 +138,6 @@ The value changed, added or removed if available.
 
 #### Field Value [field-value-2]
 
-| Type                        | Description |
-|-----------------------------|-------------|
-| <span class="xref">T</span> |             |
+| Type | Description |
+|------|-------------|
+| T    |             |

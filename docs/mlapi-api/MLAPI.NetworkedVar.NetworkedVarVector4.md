@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarVector4 : NetworkedVar<Vector4>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarVector4__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarVector4() [MLAPI_NetworkedVar_NetworkedVarVector4__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarVector4()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarVector4__ctor_"></span>
 
 ### NetworkedVarVector4(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarVector4__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarVector4__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarVector4(NetworkedVarSettings, Vector4) [MLAPI_NetworkedVar_NetworkedVarVector4__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Vector4_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                          | Name                                        | Description |
-|-----------------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                          | <span class="parametername">settings</span> |             |
-| <span class="xref">UnityEngine.Vector4</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarVector4__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| UnityEngine.Vector4  | value    |             |
 
 ### NetworkedVarVector4(Vector4) [MLAPI_NetworkedVar_NetworkedVarVector4__ctor_UnityEngine_Vector4_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                          | Name                                     | Description |
-|-----------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Vector4</span> | <span class="parametername">value</span> |             |
+| Type                | Name  | Description |
+|---------------------|-------|-------------|
+| UnityEngine.Vector4 | value |             |
 
 ### Implements [implements]
 

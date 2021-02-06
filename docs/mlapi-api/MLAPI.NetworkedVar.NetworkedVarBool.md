@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarBool : NetworkedVar<bool>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarBool__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarBool() [MLAPI_NetworkedVar_NetworkedVarBool__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarBool()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarBool__ctor_"></span>
 
 ### NetworkedVarBool(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarBool__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarBool__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarBool(NetworkedVarSettings, Boolean) [MLAPI_NetworkedVar_NetworkedVarBool__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Boolean_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                     | Name                                        | Description |
-|------------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                     | <span class="parametername">settings</span> |             |
-| <span class="xref">System.Boolean</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarBool__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.Boolean       | value    |             |
 
 ### NetworkedVarBool(Boolean) [MLAPI_NetworkedVar_NetworkedVarBool__ctor_System_Boolean_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                     | Name                                     | Description |
-|------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> | <span class="parametername">value</span> |             |
+| Type           | Name  | Description |
+|----------------|-------|-------------|
+| System.Boolean | value |             |
 
 ### Implements [implements]
 

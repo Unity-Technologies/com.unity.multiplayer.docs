@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class SerializationManager
 
-## Methods <span id="MLAPI_Serialization_SerializationManager_IsTypeSupported_"></span>
+## Methods 
 
 ### IsTypeSupported(Type) [MLAPI_Serialization_SerializationManager_IsTypeSupported_System_Type_]
 
@@ -112,18 +112,15 @@ Returns if a type is supported for serialization
 
 #### Parameters [parameters]
 
-| Type                                  | Name                                    | Description       |
-|---------------------------------------|-----------------------------------------|-------------------|
-| <span class="xref">System.Type</span> | <span class="parametername">type</span> | The type to check |
+| Type        | Name | Description       |
+|-------------|------|-------------------|
+| System.Type | type | The type to check |
 
 #### Returns [returns]
 
-| Type                                     | Description                          |
-|------------------------------------------|--------------------------------------|
-| <span class="xref">System.Boolean</span> | Whether or not the type is supported |
-
-<span
-id="MLAPI_Serialization_SerializationManager_RegisterSerializationHandlers_"></span>
+| Type           | Description                          |
+|----------------|--------------------------------------|
+| System.Boolean | Whether or not the type is supported |
 
 ### RegisterSerializationHandlers\<T\>(SerializationManager.CustomSerializationDelegate\<T\>, SerializationManager.CustomDeserializationDelegate\<T\>) [MLAPI_Serialization_SerializationManager_RegisterSerializationHandlers__1_MLAPI_Serialization_SerializationManager_CustomSerializationDelegate___0__MLAPI_Serialization_SerializationManager_CustomDeserializationDelegate___0__]
 
@@ -145,19 +142,16 @@ Such as .NET types.
 
 #### Parameters [parameters-1]
 
-| Type                                                    | Name                                             | Description                                     |
-|---------------------------------------------------------|--------------------------------------------------|-------------------------------------------------|
-| SerializationManager.CustomSerializationDelegate\<T\>   | <span class="parametername">onSerialize</span>   | The delegate to invoke to serialize the type.   |
-| SerializationManager.CustomDeserializationDelegate\<T\> | <span class="parametername">onDeserialize</span> | The delegate to invoke to deserialize the type. |
+| Type                                                    | Name          | Description                                     |
+|---------------------------------------------------------|---------------|-------------------------------------------------|
+| SerializationManager.CustomSerializationDelegate\<T\>   | onSerialize   | The delegate to invoke to serialize the type.   |
+| SerializationManager.CustomDeserializationDelegate\<T\> | onDeserialize | The delegate to invoke to deserialize the type. |
 
 #### Type Parameters [type-parameters]
 
-| Name                                 | Description           |
-|--------------------------------------|-----------------------|
-| <span class="parametername">T</span> | The type to register. |
-
-<span
-id="MLAPI_Serialization_SerializationManager_RemoveSerializationHandlers_"></span>
+| Name | Description           |
+|------|-----------------------|
+| T    | The type to register. |
 
 ### RemoveSerializationHandlers\<T\>() [MLAPI_Serialization_SerializationManager_RemoveSerializationHandlers__1]
 
@@ -179,12 +173,12 @@ deserialization handler.
 
 #### Returns [returns-1]
 
-| Type                                     | Description                                                                                   |
-|------------------------------------------|-----------------------------------------------------------------------------------------------|
-| <span class="xref">System.Boolean</span> | Whether or not either the serialization or deserialization handlers for the type was removed. |
+| Type           | Description                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------|
+| System.Boolean | Whether or not either the serialization or deserialization handlers for the type was removed. |
 
 #### Type Parameters [type-parameters-1]
 
-| Name                                 | Description                                        |
-|--------------------------------------|----------------------------------------------------|
-| <span class="parametername">T</span> | The type for the serialization handlers to remove. |
+| Name | Description                                        |
+|------|----------------------------------------------------|
+| T    | The type for the serialization handlers to remove. |

@@ -147,8 +147,7 @@ module.exports = {
       "type": "doc",
       "id": "mlapi-api/MLAPI"
     },
-        
-    {
+   {
       "collapsed": true,
       "type": "category",
       "label": "MLAPI.Collections",
@@ -163,7 +162,7 @@ module.exports = {
         },
       ]
     },
-    {
+     {
       "collapsed": true,
       "type": "category",
       "label": "MLAPI.Configuration",
@@ -224,7 +223,7 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.Exceptions.NetListeningException"
+          "id": "mlapi-api/MLAPI.Exceptions.NotListeningException"
         },
         {
           "type": "doc",
@@ -313,7 +312,7 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.Messaging.RpcResponse"
+          "id": "mlapi-api/MLAPI.Messaging.RpcResponse-1"
         },
         {
           "type": "doc",
@@ -326,10 +325,11 @@ module.exports = {
       "type": "category",
       "label": "MLAPI.NetworkedBehaviour",
       "items": [
+        /*Hiding this file in /temp on root for now, 3.5mb
         {
           "type": "doc",
           "id": "mlapi-api/MLAPI.NetworkedBehaviour"
-        },
+        },*/
         {
           "collapsed": true,
           "type": "category",
@@ -679,6 +679,10 @@ module.exports = {
       "items": [
         {
           "type": "doc",
+          "id": "mlapi-api/MLAPI.NetworkedVar"
+        },
+        {
+          "type": "doc",
           "id": "mlapi-api/MLAPI.NetworkedVar.INetworkedVar"
         },
         {
@@ -691,7 +695,7 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.MLAPI.NetworkedVar.NetworkedVarBool"
+          "id": "mlapi-api/MLAPI.NetworkedVar.NetworkedVarBool"
         },
         {
           "type": "doc",
@@ -731,7 +735,7 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkedVar.NetworkedVarQuaterion"
+          "id": "mlapi-api/MLAPI.NetworkedVar.NetworkedVarQuaternion"
         },
         {
           "type": "doc",
@@ -896,6 +900,14 @@ module.exports = {
           "type": "doc",
           "id": "mlapi-api/MLAPI.Security.SecuritySendFlags"
         },
+        {
+          "type": "doc",
+          "id": "mlapi-api/MLAPI.Security.CryptographyHelper"
+        },
+        {
+          "type": "doc",
+          "id": "mlapi-api/MLAPI.Security.CryptographyHelper.VerifyCertificateDelegate"
+        },
       ]
     },
     {
@@ -909,7 +921,7 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.Serialization.Arthimetic"
+          "id": "mlapi-api/MLAPI.Serialization.Arithmetic"
         },
         {
           "type": "doc",
@@ -934,10 +946,6 @@ module.exports = {
         {
           "type": "doc",
           "id": "mlapi-api/MLAPI.Serialization.IBitWritable"
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI.Serialization."
         },
         {
           "collapsed": true,
@@ -1076,21 +1084,21 @@ module.exports = {
           "items": [
             {
               "type": "doc",
-              "id": "mlapi-api/MLAPI.Transport"
+              "id": "mlapi-api/MLAPI.Transports.Transport"
             },
             {
               "type": "doc",
-              "id": "mlapi-api/MLAPI.Transport.RequestChannelsDelegate"
+              "id": "mlapi-api/MLAPI.Transports.Transport.RequestChannelsDelegate"
             },
             {
               "type": "doc",
-              "id": "mlapi-api/MLAPI.Transport.TransportEventDelegate"
+              "id": "mlapi-api/MLAPI.Transports.Transport.TransportEventDelegate"
             },
           ]
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.TransportChannel"
+          "id": "mlapi-api/MLAPI.Transports.TransportChannel"
         },
         {
           "collapsed": true,
@@ -1116,77 +1124,8 @@ module.exports = {
           "id": "mlapi-api/MLAPI.Transports.UnetChannel"
         },
       ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "MLAPI.",
-      "items": [
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "MLAPI.",
-      "items": [
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "MLAPI.",
-      "items": [
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI."
-        },
-      ]
-    },
-  ]
+    }, 
+    ]
   },
   {
     "collapsed": true,
@@ -1218,4 +1157,4 @@ module.exports = {
       "id": "release-notes/introduction"
     },
   ]
-};
+}

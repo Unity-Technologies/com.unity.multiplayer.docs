@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class BitStreamPool
 
-## Methods <span id="MLAPI_Serialization_Pooled_BitStreamPool_GetStream_"></span>
+## Methods 
 
 ### GetStream() [MLAPI_Serialization_Pooled_BitStreamPool_GetStream]
 
@@ -116,9 +116,6 @@ Retrieves an expandable PooledBitStream from the pool
 |-----------------|-------------------------------|
 | PooledBitStream | An expandable PooledBitStream |
 
-<span
-id="MLAPI_Serialization_Pooled_BitStreamPool_PutBackInPool_"></span>
-
 ### PutBackInPool(PooledBitStream) [MLAPI_Serialization_Pooled_BitStreamPool_PutBackInPool_MLAPI_Serialization_Pooled_PooledBitStream_]
 
 <div class="markdown level1 summary" markdown="1">
@@ -137,6 +134,6 @@ Puts a PooledBitStream back into the pool
 
 #### Parameters [parameters]
 
-| Type            | Name                                      | Description                   |
-|-----------------|-------------------------------------------|-------------------------------|
-| PooledBitStream | <span class="parametername">stream</span> | The stream to put in the pool |
+| Type            | Name   | Description                   |
+|-----------------|--------|-------------------------------|
+| PooledBitStream | stream | The stream to put in the pool |

@@ -98,7 +98,7 @@ Object.ToString()
 
     public abstract class RpcResponseBase
 
-## Properties <span id="MLAPI_Messaging_RpcResponseBase_ClientId_"></span>
+## Properties 
 
 ### ClientId [MLAPI_Messaging_RpcResponseBase_ClientId]
 
@@ -118,11 +118,9 @@ The clientId which the Request/Response was done wit
 
 #### Property Value [property-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_Messaging_RpcResponseBase_Id_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### Id [MLAPI_Messaging_RpcResponseBase_Id]
 
@@ -142,11 +140,9 @@ Unique ID for the Rpc Request and Response pair
 
 #### Property Value [property-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_Messaging_RpcResponseBase_IsDone_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### IsDone [MLAPI_Messaging_RpcResponseBase_IsDone]
 
@@ -168,11 +164,9 @@ operation was successful and when a timeout occured
 
 #### Property Value [property-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Messaging_RpcResponseBase_IsSuccessful_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsSuccessful [MLAPI_Messaging_RpcResponseBase_IsSuccessful]
 
@@ -192,11 +186,9 @@ Whether or not a valid result was received
 
 #### Property Value [property-value-3]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Messaging_RpcResponseBase_Timeout_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Timeout [MLAPI_Messaging_RpcResponseBase_Timeout]
 
@@ -216,6 +208,6 @@ The amount of time to wait for the operation to complete
 
 #### Property Value [property-value-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |

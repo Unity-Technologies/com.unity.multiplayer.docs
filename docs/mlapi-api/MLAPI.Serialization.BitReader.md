@@ -99,7 +99,7 @@ Object.ToString()
 
     public class BitReader
 
-## Constructors <span id="MLAPI_Serialization_BitReader__ctor_"></span>
+## Constructors 
 
 ### BitReader(Stream) [MLAPI_Serialization_BitReader__ctor_System_IO_Stream_]
 
@@ -119,11 +119,11 @@ Creates a new BitReader backed by a given stream
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description             |
-|--------------------------------------------|-------------------------------------------|-------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to read from |
+| Type             | Name   | Description             |
+|------------------|--------|-------------------------|
+| System.IO.Stream | stream | The stream to read from |
 
-## Methods <span id="MLAPI_Serialization_BitReader_ReadBit_"></span>
+## Methods 
 
 ### ReadBit() [MLAPI_Serialization_BitReader_ReadBit]
 
@@ -143,11 +143,9 @@ Reads a single bit
 
 #### Returns [returns]
 
-| Type                                     | Description  |
-|------------------------------------------|--------------|
-| <span class="xref">System.Boolean</span> | The bit read |
-
-<span id="MLAPI_Serialization_BitReader_ReadBits_"></span>
+| Type           | Description  |
+|----------------|--------------|
+| System.Boolean | The bit read |
 
 ### ReadBits(Int32) [MLAPI_Serialization_BitReader_ReadBits_System_Int32_]
 
@@ -167,17 +165,15 @@ Read a certain amount of bits from the stream.
 
 #### Parameters [parameters-1]
 
-| Type                                   | Name                                        | Description                                  |
-|----------------------------------------|---------------------------------------------|----------------------------------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">bitCount</span> | How many bits to read. Minimum 0, maximum 8. |
+| Type         | Name     | Description                                  |
+|--------------|----------|----------------------------------------------|
+| System.Int32 | bitCount | How many bits to read. Minimum 0, maximum 8. |
 
 #### Returns [returns-1]
 
-| Type                                    | Description             |
-|-----------------------------------------|-------------------------|
-| <span class="xref">System.UInt64</span> | The bits that were read |
-
-<span id="MLAPI_Serialization_BitReader_ReadBool_"></span>
+| Type          | Description             |
+|---------------|-------------------------|
+| System.UInt64 | The bits that were read |
 
 ### ReadBool() [MLAPI_Serialization_BitReader_ReadBool]
 
@@ -197,11 +193,9 @@ Reads a single bit
 
 #### Returns [returns-2]
 
-| Type                                     | Description  |
-|------------------------------------------|--------------|
-| <span class="xref">System.Boolean</span> | The bit read |
-
-<span id="MLAPI_Serialization_BitReader_ReadByte_"></span>
+| Type           | Description  |
+|----------------|--------------|
+| System.Boolean | The bit read |
 
 ### ReadByte() [MLAPI_Serialization_BitReader_ReadByte]
 
@@ -221,11 +215,9 @@ Reads a single byte
 
 #### Returns [returns-3]
 
-| Type                                   | Description                 |
-|----------------------------------------|-----------------------------|
-| <span class="xref">System.Int32</span> | The byte read as an integer |
-
-<span id="MLAPI_Serialization_BitReader_ReadByteArray_"></span>
+| Type         | Description                 |
+|--------------|-----------------------------|
+| System.Int32 | The byte read as an integer |
 
 ### ReadByteArray(Byte\[\], Int64) [MLAPI_Serialization_BitReader_ReadByteArray_System_Byte___System_Int64_]
 
@@ -245,18 +237,16 @@ Read byte array into an optional buffer from the stream.
 
 #### Parameters [parameters-2]
 
-| Type                                      | Name                                           | Description                                                                                       |
-|-------------------------------------------|------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">readTo</span>      | The array to read into. If the array is not large enough or if it's null. A new array is created. |
-| <span class="xref">System.Int64</span>    | <span class="parametername">knownLength</span> | The length of the array if it's known. Otherwise -1                                               |
+| Type            | Name        | Description                                                                                       |
+|-----------------|-------------|---------------------------------------------------------------------------------------------------|
+| System.Byte\[\] | readTo      | The array to read into. If the array is not large enough or if it's null. A new array is created. |
+| System.Int64    | knownLength | The length of the array if it's known. Otherwise -1                                               |
 
 #### Returns [returns-4]
 
-| Type                                      | Description                        |
-|-------------------------------------------|------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | The byte array that has been read. |
-
-<span id="MLAPI_Serialization_BitReader_ReadByteArrayDiff_"></span>
+| Type            | Description                        |
+|-----------------|------------------------------------|
+| System.Byte\[\] | The byte array that has been read. |
 
 ### ReadByteArrayDiff(Byte\[\], Int64) [MLAPI_Serialization_BitReader_ReadByteArrayDiff_System_Byte___System_Int64_]
 
@@ -276,18 +266,16 @@ Read byte array diff into an optional buffer from the stream.
 
 #### Parameters [parameters-3]
 
-| Type                                      | Name                                           | Description                                         |
-|-------------------------------------------|------------------------------------------------|-----------------------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null.      |
-| <span class="xref">System.Int64</span>    | <span class="parametername">knownLength</span> | The length of the array if it's known. Otherwise -1 |
+| Type            | Name        | Description                                         |
+|-----------------|-------------|-----------------------------------------------------|
+| System.Byte\[\] | readTo      | The buffer containing the old version or null.      |
+| System.Int64    | knownLength | The length of the array if it's known. Otherwise -1 |
 
 #### Returns [returns-5]
 
-| Type                                      | Description                                        |
-|-------------------------------------------|----------------------------------------------------|
-| <span class="xref">System.Byte</span>\[\] | The byte array created from the diff and original. |
-
-<span id="MLAPI_Serialization_BitReader_ReadByteBits_"></span>
+| Type            | Description                                        |
+|-----------------|----------------------------------------------------|
+| System.Byte\[\] | The byte array created from the diff and original. |
 
 ### ReadByteBits(Int32) [MLAPI_Serialization_BitReader_ReadByteBits_System_Int32_]
 
@@ -307,17 +295,15 @@ Read a certain amount of bits from the stream.
 
 #### Parameters [parameters-4]
 
-| Type                                   | Name                                        | Description                                   |
-|----------------------------------------|---------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">bitCount</span> | How many bits to read. Minimum 0, maximum 64. |
+| Type         | Name     | Description                                   |
+|--------------|----------|-----------------------------------------------|
+| System.Int32 | bitCount | How many bits to read. Minimum 0, maximum 64. |
 
 #### Returns [returns-6]
 
-| Type                                  | Description             |
-|---------------------------------------|-------------------------|
-| <span class="xref">System.Byte</span> | The bits that were read |
-
-<span id="MLAPI_Serialization_BitReader_ReadByteDirect_"></span>
+| Type        | Description             |
+|-------------|-------------------------|
+| System.Byte | The bits that were read |
 
 ### ReadByteDirect() [MLAPI_Serialization_BitReader_ReadByteDirect]
 
@@ -337,11 +323,9 @@ Reads a byte
 
 #### Returns [returns-7]
 
-| Type                                  | Description   |
-|---------------------------------------|---------------|
-| <span class="xref">System.Byte</span> | The byte read |
-
-<span id="MLAPI_Serialization_BitReader_ReadChar_"></span>
+| Type        | Description   |
+|-------------|---------------|
+| System.Byte | The byte read |
 
 ### ReadChar() [MLAPI_Serialization_BitReader_ReadChar]
 
@@ -361,11 +345,9 @@ Read a single character from the stream
 
 #### Returns [returns-8]
 
-| Type                                  | Description             |
-|---------------------------------------|-------------------------|
-| <span class="xref">System.Char</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadCharPacked_"></span>
+| Type        | Description             |
+|-------------|-------------------------|
+| System.Char | Value read from stream. |
 
 ### ReadCharPacked() [MLAPI_Serialization_BitReader_ReadCharPacked]
 
@@ -385,11 +367,9 @@ Read a varint two-byte character from the stream.
 
 #### Returns [returns-9]
 
-| Type                                  | Description        |
-|---------------------------------------|--------------------|
-| <span class="xref">System.Char</span> | Un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadColor_"></span>
+| Type        | Description        |
+|-------------|--------------------|
+| System.Char | Un-varinted value. |
 
 ### ReadColor() [MLAPI_Serialization_BitReader_ReadColor]
 
@@ -409,11 +389,9 @@ Read a Color from the stream.
 
 #### Returns [returns-10]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">UnityEngine.Color</span> | The Color read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadColor32_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| UnityEngine.Color | The Color read from the stream. |
 
 ### ReadColor32() [MLAPI_Serialization_BitReader_ReadColor32]
 
@@ -433,11 +411,9 @@ Read a Color32 from the stream.
 
 #### Returns [returns-11]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Color32</span> | The Color32 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadColorPacked_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Color32 | The Color32 read from the stream. |
 
 ### ReadColorPacked() [MLAPI_Serialization_BitReader_ReadColorPacked]
 
@@ -457,11 +433,9 @@ Read a Color from the stream.
 
 #### Returns [returns-12]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">UnityEngine.Color</span> | The Color read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadDouble_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| UnityEngine.Color | The Color read from the stream. |
 
 ### ReadDouble() [MLAPI_Serialization_BitReader_ReadDouble]
 
@@ -481,11 +455,9 @@ Read a double-precision floating point value from the stream.
 
 #### Returns [returns-13]
 
-| Type                                    | Description    |
-|-----------------------------------------|----------------|
-| <span class="xref">System.Double</span> | The read value |
-
-<span id="MLAPI_Serialization_BitReader_ReadDoubleArray_"></span>
+| Type          | Description    |
+|---------------|----------------|
+| System.Double | The read value |
 
 ### ReadDoubleArray(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArray_System_Double___System_Int64_]
 
@@ -505,18 +477,16 @@ Read double array from the stream.
 
 #### Parameters [parameters-5]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Double</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.Double\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-14]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.Double</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadDoubleArrayDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.Double\[\] | The array read from the stream. |
 
 ### ReadDoubleArrayDiff(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArrayDiff_System_Double___System_Int64_]
 
@@ -536,18 +506,16 @@ Read double array diff from the stream.
 
 #### Parameters [parameters-6]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Double</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.Double\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-15]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Double</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadDoubleArrayPacked_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.Double\[\] | The array created from the diff and the current version. |
 
 ### ReadDoubleArrayPacked(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArrayPacked_System_Double___System_Int64_]
 
@@ -567,19 +535,16 @@ Read double array in a packed format from the stream.
 
 #### Parameters [parameters-7]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Double</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.Double\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-16]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.Double</span>\[\] | The array read from the stream. |
-
-<span
-id="MLAPI_Serialization_BitReader_ReadDoubleArrayPackedDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.Double\[\] | The array read from the stream. |
 
 ### ReadDoubleArrayPackedDiff(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArrayPackedDiff_System_Double___System_Int64_]
 
@@ -599,18 +564,16 @@ Read double array diff in a packed format from the stream.
 
 #### Parameters [parameters-8]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Double</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.Double\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-17]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Double</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadDoublePacked_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.Double\[\] | The array created from the diff and the current version. |
 
 ### ReadDoublePacked() [MLAPI_Serialization_BitReader_ReadDoublePacked]
 
@@ -630,11 +593,9 @@ Read a double-precision floating point value from the stream as a varint
 
 #### Returns [returns-18]
 
-| Type                                    | Description    |
-|-----------------------------------------|----------------|
-| <span class="xref">System.Double</span> | The read value |
-
-<span id="MLAPI_Serialization_BitReader_ReadFloatArray_"></span>
+| Type          | Description    |
+|---------------|----------------|
+| System.Double | The read value |
 
 ### ReadFloatArray(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArray_System_Single___System_Int64_]
 
@@ -654,18 +615,16 @@ Read float array from the stream.
 
 #### Parameters [parameters-9]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Single</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.Single\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-19]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.Single</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadFloatArrayDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.Single\[\] | The array read from the stream. |
 
 ### ReadFloatArrayDiff(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArrayDiff_System_Single___System_Int64_]
 
@@ -685,18 +644,16 @@ Read float array diff from the stream.
 
 #### Parameters [parameters-10]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Single</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.Single\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-20]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Single</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadFloatArrayPacked_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.Single\[\] | The array created from the diff and the current version. |
 
 ### ReadFloatArrayPacked(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArrayPacked_System_Single___System_Int64_]
 
@@ -716,19 +673,16 @@ Read float array in a packed format from the stream.
 
 #### Parameters [parameters-11]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Single</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.Single\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-21]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.Single</span>\[\] | The array read from the stream. |
-
-<span
-id="MLAPI_Serialization_BitReader_ReadFloatArrayPackedDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.Single\[\] | The array read from the stream. |
 
 ### ReadFloatArrayPackedDiff(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArrayPackedDiff_System_Single___System_Int64_]
 
@@ -748,18 +702,16 @@ Read float array diff in a packed format from the stream.
 
 #### Parameters [parameters-12]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Single</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.Single\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-22]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Single</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadInt16_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.Single\[\] | The array created from the diff and the current version. |
 
 ### ReadInt16() [MLAPI_Serialization_BitReader_ReadInt16]
 
@@ -779,11 +731,9 @@ Read a signed short (Int16) from the stream.
 
 #### Returns [returns-23]
 
-| Type                                   | Description             |
-|----------------------------------------|-------------------------|
-| <span class="xref">System.Int16</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadInt16Packed_"></span>
+| Type         | Description             |
+|--------------|-------------------------|
+| System.Int16 | Value read from stream. |
 
 ### ReadInt16Packed() [MLAPI_Serialization_BitReader_ReadInt16Packed]
 
@@ -803,11 +753,9 @@ Read a ZigZag encoded varint signed short (Int16) from the stream.
 
 #### Returns [returns-24]
 
-| Type                                   | Description                |
-|----------------------------------------|----------------------------|
-| <span class="xref">System.Int16</span> | Decoded un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadInt32_"></span>
+| Type         | Description                |
+|--------------|----------------------------|
+| System.Int16 | Decoded un-varinted value. |
 
 ### ReadInt32() [MLAPI_Serialization_BitReader_ReadInt32]
 
@@ -827,11 +775,9 @@ Read a signed int (Int32) from the stream.
 
 #### Returns [returns-25]
 
-| Type                                   | Description             |
-|----------------------------------------|-------------------------|
-| <span class="xref">System.Int32</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadInt32Packed_"></span>
+| Type         | Description             |
+|--------------|-------------------------|
+| System.Int32 | Value read from stream. |
 
 ### ReadInt32Packed() [MLAPI_Serialization_BitReader_ReadInt32Packed]
 
@@ -851,11 +797,9 @@ Read a ZigZag encoded varint signed int (Int32) from the stream.
 
 #### Returns [returns-26]
 
-| Type                                   | Description                |
-|----------------------------------------|----------------------------|
-| <span class="xref">System.Int32</span> | Decoded un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadInt64_"></span>
+| Type         | Description                |
+|--------------|----------------------------|
+| System.Int32 | Decoded un-varinted value. |
 
 ### ReadInt64() [MLAPI_Serialization_BitReader_ReadInt64]
 
@@ -875,11 +819,9 @@ Read a signed long (Int64) from the stream.
 
 #### Returns [returns-27]
 
-| Type                                   | Description             |
-|----------------------------------------|-------------------------|
-| <span class="xref">System.Int64</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadInt64Packed_"></span>
+| Type         | Description             |
+|--------------|-------------------------|
+| System.Int64 | Value read from stream. |
 
 ### ReadInt64Packed() [MLAPI_Serialization_BitReader_ReadInt64Packed]
 
@@ -899,11 +841,9 @@ Read a ZigZag encoded varint signed long(Int64) from the stream.
 
 #### Returns [returns-28]
 
-| Type                                   | Description                |
-|----------------------------------------|----------------------------|
-| <span class="xref">System.Int64</span> | Decoded un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadIntArray_"></span>
+| Type         | Description                |
+|--------------|----------------------------|
+| System.Int64 | Decoded un-varinted value. |
 
 ### ReadIntArray(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArray_System_Int32___System_Int64_]
 
@@ -923,18 +863,16 @@ Read int array from the stream.
 
 #### Parameters [parameters-13]
 
-| Type                                       | Name                                           | Description                                           |
-|--------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Int32</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type             | Name        | Description                                           |
+|------------------|-------------|-------------------------------------------------------|
+| System.Int32\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64     | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-29]
 
-| Type                                       | Description                     |
-|--------------------------------------------|---------------------------------|
-| <span class="xref">System.Int32</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadIntArrayDiff_"></span>
+| Type             | Description                     |
+|------------------|---------------------------------|
+| System.Int32\[\] | The array read from the stream. |
 
 ### ReadIntArrayDiff(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArrayDiff_System_Int32___System_Int64_]
 
@@ -954,18 +892,16 @@ Read int array diff from the stream.
 
 #### Parameters [parameters-14]
 
-| Type                                       | Name                                           | Description                                    |
-|--------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Int32</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type             | Name        | Description                                    |
+|------------------|-------------|------------------------------------------------|
+| System.Int32\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64     | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-30]
 
-| Type                                       | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Int32</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadIntArrayPacked_"></span>
+| Type             | Description                                              |
+|------------------|----------------------------------------------------------|
+| System.Int32\[\] | The array created from the diff and the current version. |
 
 ### ReadIntArrayPacked(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArrayPacked_System_Int32___System_Int64_]
 
@@ -985,18 +921,16 @@ Read int array in a packed format from the stream.
 
 #### Parameters [parameters-15]
 
-| Type                                       | Name                                           | Description                                           |
-|--------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Int32</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type             | Name        | Description                                           |
+|------------------|-------------|-------------------------------------------------------|
+| System.Int32\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64     | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-31]
 
-| Type                                       | Description                     |
-|--------------------------------------------|---------------------------------|
-| <span class="xref">System.Int32</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadIntArrayPackedDiff_"></span>
+| Type             | Description                     |
+|------------------|---------------------------------|
+| System.Int32\[\] | The array read from the stream. |
 
 ### ReadIntArrayPackedDiff(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArrayPackedDiff_System_Int32___System_Int64_]
 
@@ -1016,18 +950,16 @@ Read int array diff in a packed format from the stream.
 
 #### Parameters [parameters-16]
 
-| Type                                       | Name                                           | Description                                    |
-|--------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Int32</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type             | Name        | Description                                    |
+|------------------|-------------|------------------------------------------------|
+| System.Int32\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64     | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-32]
 
-| Type                                       | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Int32</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadLongArray_"></span>
+| Type             | Description                                              |
+|------------------|----------------------------------------------------------|
+| System.Int32\[\] | The array created from the diff and the current version. |
 
 ### ReadLongArray(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArray_System_Int64___System_Int64_]
 
@@ -1047,18 +979,16 @@ Read long array from the stream.
 
 #### Parameters [parameters-17]
 
-| Type                                       | Name                                           | Description                                           |
-|--------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Int64</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type             | Name        | Description                                           |
+|------------------|-------------|-------------------------------------------------------|
+| System.Int64\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64     | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-33]
 
-| Type                                       | Description                     |
-|--------------------------------------------|---------------------------------|
-| <span class="xref">System.Int64</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadLongArrayDiff_"></span>
+| Type             | Description                     |
+|------------------|---------------------------------|
+| System.Int64\[\] | The array read from the stream. |
 
 ### ReadLongArrayDiff(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArrayDiff_System_Int64___System_Int64_]
 
@@ -1078,18 +1008,16 @@ Read long array diff from the stream.
 
 #### Parameters [parameters-18]
 
-| Type                                       | Name                                           | Description                                    |
-|--------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Int64</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type             | Name        | Description                                    |
+|------------------|-------------|------------------------------------------------|
+| System.Int64\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64     | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-34]
 
-| Type                                       | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Int64</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadLongArrayPacked_"></span>
+| Type             | Description                                              |
+|------------------|----------------------------------------------------------|
+| System.Int64\[\] | The array created from the diff and the current version. |
 
 ### ReadLongArrayPacked(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArrayPacked_System_Int64___System_Int64_]
 
@@ -1109,19 +1037,16 @@ Read long array in a packed format from the stream.
 
 #### Parameters [parameters-19]
 
-| Type                                       | Name                                           | Description                                           |
-|--------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Int64</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type             | Name        | Description                                           |
+|------------------|-------------|-------------------------------------------------------|
+| System.Int64\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64     | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-35]
 
-| Type                                       | Description                     |
-|--------------------------------------------|---------------------------------|
-| <span class="xref">System.Int64</span>\[\] | The array read from the stream. |
-
-<span
-id="MLAPI_Serialization_BitReader_ReadLongArrayPackedDiff_"></span>
+| Type             | Description                     |
+|------------------|---------------------------------|
+| System.Int64\[\] | The array read from the stream. |
 
 ### ReadLongArrayPackedDiff(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArrayPackedDiff_System_Int64___System_Int64_]
 
@@ -1141,18 +1066,16 @@ Read long array diff in a packed format from the stream.
 
 #### Parameters [parameters-20]
 
-| Type                                       | Name                                           | Description                                    |
-|--------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Int64</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type             | Name        | Description                                    |
+|------------------|-------------|------------------------------------------------|
+| System.Int64\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64     | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-36]
 
-| Type                                       | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Int64</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadNibble_"></span>
+| Type             | Description                                              |
+|------------------|----------------------------------------------------------|
+| System.Int64\[\] | The array created from the diff and the current version. |
 
 ### ReadNibble() [MLAPI_Serialization_BitReader_ReadNibble]
 
@@ -1172,11 +1095,9 @@ Read a nibble (4 bits) from the stream.
 
 #### Returns [returns-37]
 
-| Type                                  | Description              |
-|---------------------------------------|--------------------------|
-| <span class="xref">System.Byte</span> | The nibble that was read |
-
-<span id="MLAPI_Serialization_BitReader_ReadNibble_"></span>
+| Type        | Description              |
+|-------------|--------------------------|
+| System.Byte | The nibble that was read |
 
 ### ReadNibble(Boolean) [MLAPI_Serialization_BitReader_ReadNibble_System_Boolean_]
 
@@ -1196,17 +1117,15 @@ Read a nibble (4 bits) from the stream.
 
 #### Parameters [parameters-21]
 
-| Type                                     | Name                                       | Description                                                |
-|------------------------------------------|--------------------------------------------|------------------------------------------------------------|
-| <span class="xref">System.Boolean</span> | <span class="parametername">asUpper</span> | Whether or not the nibble should be left-shifted by 4 bits |
+| Type           | Name    | Description                                                |
+|----------------|---------|------------------------------------------------------------|
+| System.Boolean | asUpper | Whether or not the nibble should be left-shifted by 4 bits |
 
 #### Returns [returns-38]
 
-| Type                                  | Description              |
-|---------------------------------------|--------------------------|
-| <span class="xref">System.Byte</span> | The nibble that was read |
-
-<span id="MLAPI_Serialization_BitReader_ReadObjectPacked_"></span>
+| Type        | Description              |
+|-------------|--------------------------|
+| System.Byte | The nibble that was read |
 
 ### ReadObjectPacked(Type) [MLAPI_Serialization_BitReader_ReadObjectPacked_System_Type_]
 
@@ -1226,17 +1145,15 @@ Reads a single boxed object of a given type in a packed format
 
 #### Parameters [parameters-22]
 
-| Type                                  | Name                                    | Description      |
-|---------------------------------------|-----------------------------------------|------------------|
-| <span class="xref">System.Type</span> | <span class="parametername">type</span> | The type to read |
+| Type        | Name | Description      |
+|-------------|------|------------------|
+| System.Type | type | The type to read |
 
 #### Returns [returns-39]
 
-| Type                                    | Description                   |
-|-----------------------------------------|-------------------------------|
-| <span class="xref">System.Object</span> | Returns the boxed read object |
-
-<span id="MLAPI_Serialization_BitReader_ReadRangedDouble_"></span>
+| Type          | Description                   |
+|---------------|-------------------------------|
+| System.Object | Returns the boxed read object |
 
 ### ReadRangedDouble(Double, Double, Int32) [MLAPI_Serialization_BitReader_ReadRangedDouble_System_Double_System_Double_System_Int32_]
 
@@ -1257,19 +1174,17 @@ is between (inclusive) the minValue and maxValue.
 
 #### Parameters [parameters-23]
 
-| Type                                    | Name                                        | Description                                                                       |
-|-----------------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------|
-| <span class="xref">System.Double</span> | <span class="parametername">minValue</span> | Minimum value that this value could be                                            |
-| <span class="xref">System.Double</span> | <span class="parametername">maxValue</span> | Maximum possible value that this could be                                         |
-| <span class="xref">System.Int32</span>  | <span class="parametername">bytes</span>    | How many bytes the compressed value occupies. Must be between 1 and 8 (inclusive) |
+| Type          | Name     | Description                                                                       |
+|---------------|----------|-----------------------------------------------------------------------------------|
+| System.Double | minValue | Minimum value that this value could be                                            |
+| System.Double | maxValue | Maximum possible value that this could be                                         |
+| System.Int32  | bytes    | How many bytes the compressed value occupies. Must be between 1 and 8 (inclusive) |
 
 #### Returns [returns-40]
 
-| Type                                    | Description    |
-|-----------------------------------------|----------------|
-| <span class="xref">System.Double</span> | The read value |
-
-<span id="MLAPI_Serialization_BitReader_ReadRangedSingle_"></span>
+| Type          | Description    |
+|---------------|----------------|
+| System.Double | The read value |
 
 ### ReadRangedSingle(Single, Single, Int32) [MLAPI_Serialization_BitReader_ReadRangedSingle_System_Single_System_Single_System_Int32_]
 
@@ -1290,19 +1205,17 @@ is between (inclusive) the minValue and maxValue.
 
 #### Parameters [parameters-24]
 
-| Type                                    | Name                                        | Description                                                                       |
-|-----------------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------|
-| <span class="xref">System.Single</span> | <span class="parametername">minValue</span> | Minimum value that this value could be                                            |
-| <span class="xref">System.Single</span> | <span class="parametername">maxValue</span> | Maximum possible value that this could be                                         |
-| <span class="xref">System.Int32</span>  | <span class="parametername">bytes</span>    | How many bytes the compressed value occupies. Must be between 1 and 4 (inclusive) |
+| Type          | Name     | Description                                                                       |
+|---------------|----------|-----------------------------------------------------------------------------------|
+| System.Single | minValue | Minimum value that this value could be                                            |
+| System.Single | maxValue | Maximum possible value that this could be                                         |
+| System.Int32  | bytes    | How many bytes the compressed value occupies. Must be between 1 and 4 (inclusive) |
 
 #### Returns [returns-41]
 
-| Type                                    | Description    |
-|-----------------------------------------|----------------|
-| <span class="xref">System.Single</span> | The read value |
-
-<span id="MLAPI_Serialization_BitReader_ReadRay_"></span>
+| Type          | Description    |
+|---------------|----------------|
+| System.Single | The read value |
 
 ### ReadRay() [MLAPI_Serialization_BitReader_ReadRay]
 
@@ -1322,11 +1235,9 @@ Read a Ray from the stream.
 
 #### Returns [returns-42]
 
-| Type                                      | Description                   |
-|-------------------------------------------|-------------------------------|
-| <span class="xref">UnityEngine.Ray</span> | The Ray read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadRayPacked_"></span>
+| Type            | Description                   |
+|-----------------|-------------------------------|
+| UnityEngine.Ray | The Ray read from the stream. |
 
 ### ReadRayPacked() [MLAPI_Serialization_BitReader_ReadRayPacked]
 
@@ -1346,11 +1257,9 @@ Read a Ray from the stream.
 
 #### Returns [returns-43]
 
-| Type                                      | Description                   |
-|-------------------------------------------|-------------------------------|
-| <span class="xref">UnityEngine.Ray</span> | The Ray read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadRotation_"></span>
+| Type            | Description                   |
+|-----------------|-------------------------------|
+| UnityEngine.Ray | The Ray read from the stream. |
 
 ### ReadRotation() [MLAPI_Serialization_BitReader_ReadRotation]
 
@@ -1370,11 +1279,9 @@ Reads the rotation from the stream
 
 #### Returns [returns-44]
 
-| Type                                             | Description                       |
-|--------------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Quaternion</span> | The rotation read from the stream |
-
-<span id="MLAPI_Serialization_BitReader_ReadRotationPacked_"></span>
+| Type                   | Description                       |
+|------------------------|-----------------------------------|
+| UnityEngine.Quaternion | The rotation read from the stream |
 
 ### ReadRotationPacked() [MLAPI_Serialization_BitReader_ReadRotationPacked]
 
@@ -1394,11 +1301,9 @@ Reads the rotation from the stream
 
 #### Returns [returns-45]
 
-| Type                                             | Description                       |
-|--------------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Quaternion</span> | The rotation read from the stream |
-
-<span id="MLAPI_Serialization_BitReader_ReadSByte_"></span>
+| Type                   | Description                       |
+|------------------------|-----------------------------------|
+| UnityEngine.Quaternion | The rotation read from the stream |
 
 ### ReadSByte() [MLAPI_Serialization_BitReader_ReadSByte]
 
@@ -1418,11 +1323,9 @@ Reads a signed byte
 
 #### Returns [returns-46]
 
-| Type                                   | Description             |
-|----------------------------------------|-------------------------|
-| <span class="xref">System.SByte</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadShortArray_"></span>
+| Type         | Description             |
+|--------------|-------------------------|
+| System.SByte | Value read from stream. |
 
 ### ReadShortArray(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArray_System_Int16___System_Int64_]
 
@@ -1442,18 +1345,16 @@ Read short array from the stream.
 
 #### Parameters [parameters-25]
 
-| Type                                       | Name                                           | Description                                           |
-|--------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Int16</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type             | Name        | Description                                           |
+|------------------|-------------|-------------------------------------------------------|
+| System.Int16\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64     | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-47]
 
-| Type                                       | Description                     |
-|--------------------------------------------|---------------------------------|
-| <span class="xref">System.Int16</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadShortArrayDiff_"></span>
+| Type             | Description                     |
+|------------------|---------------------------------|
+| System.Int16\[\] | The array read from the stream. |
 
 ### ReadShortArrayDiff(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArrayDiff_System_Int16___System_Int64_]
 
@@ -1473,18 +1374,16 @@ Read short array diff from the stream.
 
 #### Parameters [parameters-26]
 
-| Type                                       | Name                                           | Description                                    |
-|--------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Int16</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type             | Name        | Description                                    |
+|------------------|-------------|------------------------------------------------|
+| System.Int16\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64     | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-48]
 
-| Type                                       | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Int16</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadShortArrayPacked_"></span>
+| Type             | Description                                              |
+|------------------|----------------------------------------------------------|
+| System.Int16\[\] | The array created from the diff and the current version. |
 
 ### ReadShortArrayPacked(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArrayPacked_System_Int16___System_Int64_]
 
@@ -1504,19 +1403,16 @@ Read short array in a packed format from the stream.
 
 #### Parameters [parameters-27]
 
-| Type                                       | Name                                           | Description                                           |
-|--------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.Int16</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type             | Name        | Description                                           |
+|------------------|-------------|-------------------------------------------------------|
+| System.Int16\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64     | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-49]
 
-| Type                                       | Description                     |
-|--------------------------------------------|---------------------------------|
-| <span class="xref">System.Int16</span>\[\] | The array read from the stream. |
-
-<span
-id="MLAPI_Serialization_BitReader_ReadShortArrayPackedDiff_"></span>
+| Type             | Description                     |
+|------------------|---------------------------------|
+| System.Int16\[\] | The array read from the stream. |
 
 ### ReadShortArrayPackedDiff(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArrayPackedDiff_System_Int16___System_Int64_]
 
@@ -1536,18 +1432,16 @@ Read short array diff in a packed format from the stream.
 
 #### Parameters [parameters-28]
 
-| Type                                       | Name                                           | Description                                    |
-|--------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Int16</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>     | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type             | Name        | Description                                    |
+|------------------|-------------|------------------------------------------------|
+| System.Int16\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64     | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-50]
 
-| Type                                       | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.Int16</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadSingle_"></span>
+| Type             | Description                                              |
+|------------------|----------------------------------------------------------|
+| System.Int16\[\] | The array created from the diff and the current version. |
 
 ### ReadSingle() [MLAPI_Serialization_BitReader_ReadSingle]
 
@@ -1567,11 +1461,9 @@ Read a single-precision floating point value from the stream.
 
 #### Returns [returns-51]
 
-| Type                                    | Description    |
-|-----------------------------------------|----------------|
-| <span class="xref">System.Single</span> | The read value |
-
-<span id="MLAPI_Serialization_BitReader_ReadSinglePacked_"></span>
+| Type          | Description    |
+|---------------|----------------|
+| System.Single | The read value |
 
 ### ReadSinglePacked() [MLAPI_Serialization_BitReader_ReadSinglePacked]
 
@@ -1592,11 +1484,9 @@ varint
 
 #### Returns [returns-52]
 
-| Type                                    | Description    |
-|-----------------------------------------|----------------|
-| <span class="xref">System.Single</span> | The read value |
-
-<span id="MLAPI_Serialization_BitReader_ReadString_"></span>
+| Type          | Description    |
+|---------------|----------------|
+| System.Single | The read value |
 
 ### ReadString(Boolean) [MLAPI_Serialization_BitReader_ReadString_System_Boolean_]
 
@@ -1616,17 +1506,15 @@ Read a string from the stream.
 
 #### Parameters [parameters-29]
 
-| Type                                     | Name                                            | Description                                                           |
-|------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------|
-| <span class="xref">System.Boolean</span> | <span class="parametername">oneByteChars</span> | If set to `true` one byte chars are used and only ASCII is supported. |
+| Type           | Name         | Description                                                           |
+|----------------|--------------|-----------------------------------------------------------------------|
+| System.Boolean | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
 #### Returns [returns-53]
 
-| Type                                                | Description               |
-|-----------------------------------------------------|---------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string that was read. |
-
-<span id="MLAPI_Serialization_BitReader_ReadString_"></span>
+| Type                      | Description               |
+|---------------------------|---------------------------|
+| System.Text.StringBuilder | The string that was read. |
 
 ### ReadString(StringBuilder, Boolean) [MLAPI_Serialization_BitReader_ReadString_System_Text_StringBuilder_System_Boolean_]
 
@@ -1646,18 +1534,16 @@ Read a string from the stream.
 
 #### Parameters [parameters-30]
 
-| Type                                                | Name                                            | Description                                                           |
-|-----------------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | <span class="parametername">builder</span>      | The builder to read the values into or null to use a new builder.     |
-| <span class="xref">System.Boolean</span>            | <span class="parametername">oneByteChars</span> | If set to `true` one byte chars are used and only ASCII is supported. |
+| Type                      | Name         | Description                                                           |
+|---------------------------|--------------|-----------------------------------------------------------------------|
+| System.Text.StringBuilder | builder      | The builder to read the values into or null to use a new builder.     |
+| System.Boolean            | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
 #### Returns [returns-54]
 
-| Type                                                | Description               |
-|-----------------------------------------------------|---------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string that was read. |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringDiff_"></span>
+| Type                      | Description               |
+|---------------------------|---------------------------|
+| System.Text.StringBuilder | The string that was read. |
 
 ### ReadStringDiff(String, Boolean) [MLAPI_Serialization_BitReader_ReadStringDiff_System_String_System_Boolean_]
 
@@ -1677,18 +1563,16 @@ Read string diff from the stream.
 
 #### Parameters [parameters-31]
 
-| Type                                     | Name                                            | Description                                                           |
-|------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------|
-| <span class="xref">System.String</span>  | <span class="parametername">compare</span>      | The version to compare the diff to.                                   |
-| <span class="xref">System.Boolean</span> | <span class="parametername">oneByteChars</span> | If set to `true` one byte chars are used and only ASCII is supported. |
+| Type           | Name         | Description                                                           |
+|----------------|--------------|-----------------------------------------------------------------------|
+| System.String  | compare      | The version to compare the diff to.                                   |
+| System.Boolean | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
 #### Returns [returns-55]
 
-| Type                                                | Description                                       |
-|-----------------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string based on the diff and the old version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringDiff_"></span>
+| Type                      | Description                                       |
+|---------------------------|---------------------------------------------------|
+| System.Text.StringBuilder | The string based on the diff and the old version. |
 
 ### ReadStringDiff(StringBuilder, Boolean) [MLAPI_Serialization_BitReader_ReadStringDiff_System_Text_StringBuilder_System_Boolean_]
 
@@ -1708,18 +1592,16 @@ Read string diff from the stream.
 
 #### Parameters [parameters-32]
 
-| Type                                                | Name                                                | Description                                                                                 |
-|-----------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | <span class="parametername">compareAndBuffer</span> | The builder containing the current version and that will also be used as the output buffer. |
-| <span class="xref">System.Boolean</span>            | <span class="parametername">oneByteChars</span>     | If set to `true` one byte chars will be used and only ASCII will be supported.              |
+| Type                      | Name             | Description                                                                                 |
+|---------------------------|------------------|---------------------------------------------------------------------------------------------|
+| System.Text.StringBuilder | compareAndBuffer | The builder containing the current version and that will also be used as the output buffer. |
+| System.Boolean            | oneByteChars     | If set to `true` one byte chars will be used and only ASCII will be supported.              |
 
 #### Returns [returns-56]
 
-| Type                                                | Description                                       |
-|-----------------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string based on the diff and the old version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringDiff_"></span>
+| Type                      | Description                                       |
+|---------------------------|---------------------------------------------------|
+| System.Text.StringBuilder | The string based on the diff and the old version. |
 
 ### ReadStringDiff(StringBuilder, String, Boolean) [MLAPI_Serialization_BitReader_ReadStringDiff_System_Text_StringBuilder_System_String_System_Boolean_]
 
@@ -1739,19 +1621,17 @@ Read string diff from the stream.
 
 #### Parameters [parameters-33]
 
-| Type                                                | Name                                            | Description                                                           |
-|-----------------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | <span class="parametername">builder</span>      | The builder to read the string into or null to use a new builder.     |
-| <span class="xref">System.String</span>             | <span class="parametername">compare</span>      | The version to compare the diff to.                                   |
-| <span class="xref">System.Boolean</span>            | <span class="parametername">oneByteChars</span> | If set to `true` one byte chars are used and only ASCII is supported. |
+| Type                      | Name         | Description                                                           |
+|---------------------------|--------------|-----------------------------------------------------------------------|
+| System.Text.StringBuilder | builder      | The builder to read the string into or null to use a new builder.     |
+| System.String             | compare      | The version to compare the diff to.                                   |
+| System.Boolean            | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
 #### Returns [returns-57]
 
-| Type                                                | Description                                      |
-|-----------------------------------------------------|--------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string based on the diff and the old version |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringPacked_"></span>
+| Type                      | Description                                      |
+|---------------------------|--------------------------------------------------|
+| System.Text.StringBuilder | The string based on the diff and the old version |
 
 ### ReadStringPacked(StringBuilder) [MLAPI_Serialization_BitReader_ReadStringPacked_System_Text_StringBuilder_]
 
@@ -1771,17 +1651,15 @@ Read string encoded as a varint from the stream.
 
 #### Parameters [parameters-34]
 
-| Type                                                | Name                                       | Description                                                      |
-|-----------------------------------------------------|--------------------------------------------|------------------------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | <span class="parametername">builder</span> | The builder to read the string into or null to use a new builder |
+| Type                      | Name    | Description                                                      |
+|---------------------------|---------|------------------------------------------------------------------|
+| System.Text.StringBuilder | builder | The builder to read the string into or null to use a new builder |
 
 #### Returns [returns-58]
 
-| Type                                                | Description               |
-|-----------------------------------------------------|---------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string that was read. |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringPackedDiff_"></span>
+| Type                      | Description               |
+|---------------------------|---------------------------|
+| System.Text.StringBuilder | The string that was read. |
 
 ### ReadStringPackedDiff(String) [MLAPI_Serialization_BitReader_ReadStringPackedDiff_System_String_]
 
@@ -1801,17 +1679,15 @@ Read string diff encoded as varints from the stream.
 
 #### Parameters [parameters-35]
 
-| Type                                    | Name                                       | Description                         |
-|-----------------------------------------|--------------------------------------------|-------------------------------------|
-| <span class="xref">System.String</span> | <span class="parametername">compare</span> | The version to compare the diff to. |
+| Type          | Name    | Description                         |
+|---------------|---------|-------------------------------------|
+| System.String | compare | The version to compare the diff to. |
 
 #### Returns [returns-59]
 
-| Type                                                | Description                                       |
-|-----------------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string based on the diff and the old version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringPackedDiff_"></span>
+| Type                      | Description                                       |
+|---------------------------|---------------------------------------------------|
+| System.Text.StringBuilder | The string based on the diff and the old version. |
 
 ### ReadStringPackedDiff(StringBuilder) [MLAPI_Serialization_BitReader_ReadStringPackedDiff_System_Text_StringBuilder_]
 
@@ -1831,17 +1707,15 @@ Read string diff encoded as varints from the stream.
 
 #### Parameters [parameters-36]
 
-| Type                                                | Name                                                | Description                                                                                 |
-|-----------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | <span class="parametername">compareAndBuffer</span> | The builder containing the current version and that will also be used as the output buffer. |
+| Type                      | Name             | Description                                                                                 |
+|---------------------------|------------------|---------------------------------------------------------------------------------------------|
+| System.Text.StringBuilder | compareAndBuffer | The builder containing the current version and that will also be used as the output buffer. |
 
 #### Returns [returns-60]
 
-| Type                                                | Description                                       |
-|-----------------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string based on the diff and the old version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadStringPackedDiff_"></span>
+| Type                      | Description                                       |
+|---------------------------|---------------------------------------------------|
+| System.Text.StringBuilder | The string based on the diff and the old version. |
 
 ### ReadStringPackedDiff(StringBuilder, String) [MLAPI_Serialization_BitReader_ReadStringPackedDiff_System_Text_StringBuilder_System_String_]
 
@@ -1861,18 +1735,16 @@ Read string diff encoded as varints from the stream.
 
 #### Parameters [parameters-37]
 
-| Type                                                | Name                                       | Description                                                       |
-|-----------------------------------------------------|--------------------------------------------|-------------------------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | <span class="parametername">builder</span> | The builder to read the string into or null to use a new builder. |
-| <span class="xref">System.String</span>             | <span class="parametername">compare</span> | The version to compare the diff to.                               |
+| Type                      | Name    | Description                                                       |
+|---------------------------|---------|-------------------------------------------------------------------|
+| System.Text.StringBuilder | builder | The builder to read the string into or null to use a new builder. |
+| System.String             | compare | The version to compare the diff to.                               |
 
 #### Returns [returns-61]
 
-| Type                                                | Description                                      |
-|-----------------------------------------------------|--------------------------------------------------|
-| <span class="xref">System.Text.StringBuilder</span> | The string based on the diff and the old version |
-
-<span id="MLAPI_Serialization_BitReader_ReadUInt16_"></span>
+| Type                      | Description                                      |
+|---------------------------|--------------------------------------------------|
+| System.Text.StringBuilder | The string based on the diff and the old version |
 
 ### ReadUInt16() [MLAPI_Serialization_BitReader_ReadUInt16]
 
@@ -1892,11 +1764,9 @@ Read an unsigned short (UInt16) from the stream.
 
 #### Returns [returns-62]
 
-| Type                                    | Description             |
-|-----------------------------------------|-------------------------|
-| <span class="xref">System.UInt16</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUInt16Packed_"></span>
+| Type          | Description             |
+|---------------|-------------------------|
+| System.UInt16 | Value read from stream. |
 
 ### ReadUInt16Packed() [MLAPI_Serialization_BitReader_ReadUInt16Packed]
 
@@ -1916,11 +1786,9 @@ Read a varint unsigned short (UInt16) from the stream.
 
 #### Returns [returns-63]
 
-| Type                                    | Description        |
-|-----------------------------------------|--------------------|
-| <span class="xref">System.UInt16</span> | Un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUInt32_"></span>
+| Type          | Description        |
+|---------------|--------------------|
+| System.UInt16 | Un-varinted value. |
 
 ### ReadUInt32() [MLAPI_Serialization_BitReader_ReadUInt32]
 
@@ -1940,11 +1808,9 @@ Read an unsigned int (UInt32) from the stream.
 
 #### Returns [returns-64]
 
-| Type                                    | Description             |
-|-----------------------------------------|-------------------------|
-| <span class="xref">System.UInt32</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUInt32Packed_"></span>
+| Type          | Description             |
+|---------------|-------------------------|
+| System.UInt32 | Value read from stream. |
 
 ### ReadUInt32Packed() [MLAPI_Serialization_BitReader_ReadUInt32Packed]
 
@@ -1964,11 +1830,9 @@ Read a varint unsigned int (UInt32) from the stream.
 
 #### Returns [returns-65]
 
-| Type                                    | Description        |
-|-----------------------------------------|--------------------|
-| <span class="xref">System.UInt32</span> | Un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUInt64_"></span>
+| Type          | Description        |
+|---------------|--------------------|
+| System.UInt32 | Un-varinted value. |
 
 ### ReadUInt64() [MLAPI_Serialization_BitReader_ReadUInt64]
 
@@ -1988,11 +1852,9 @@ Read an unsigned long (UInt64) from the stream.
 
 #### Returns [returns-66]
 
-| Type                                    | Description             |
-|-----------------------------------------|-------------------------|
-| <span class="xref">System.UInt64</span> | Value read from stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUInt64Packed_"></span>
+| Type          | Description             |
+|---------------|-------------------------|
+| System.UInt64 | Value read from stream. |
 
 ### ReadUInt64Packed() [MLAPI_Serialization_BitReader_ReadUInt64Packed]
 
@@ -2012,11 +1874,9 @@ Read a varint unsigned long (UInt64) from the stream.
 
 #### Returns [returns-67]
 
-| Type                                    | Description        |
-|-----------------------------------------|--------------------|
-| <span class="xref">System.UInt64</span> | Un-varinted value. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUIntArray_"></span>
+| Type          | Description        |
+|---------------|--------------------|
+| System.UInt64 | Un-varinted value. |
 
 ### ReadUIntArray(UInt32\[\], Int64) [MLAPI_Serialization_BitReader_ReadUIntArray_System_UInt32___System_Int64_]
 
@@ -2036,18 +1896,16 @@ Read uint array from the stream.
 
 #### Parameters [parameters-38]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.UInt32</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.UInt32\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-68]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.UInt32</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUIntArrayDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.UInt32\[\] | The array read from the stream. |
 
 ### ReadUIntArrayDiff(UInt32\[\], Int64) [MLAPI_Serialization_BitReader_ReadUIntArrayDiff_System_UInt32___System_Int64_]
 
@@ -2067,18 +1925,16 @@ Read uint array diff from the stream.
 
 #### Parameters [parameters-39]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.UInt32</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.UInt32\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-69]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.UInt32</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUIntArrayPacked_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.UInt32\[\] | The array created from the diff and the current version. |
 
 ### ReadUIntArrayPacked(UInt32\[\], Int64) [MLAPI_Serialization_BitReader_ReadUIntArrayPacked_System_UInt32___System_Int64_]
 
@@ -2098,18 +1954,16 @@ Read uint array in a packed format from the stream.
 
 #### Parameters [parameters-40]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.UInt32</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.UInt32\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-70]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.UInt32</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadULongArray_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.UInt32\[\] | The array read from the stream. |
 
 ### ReadULongArray(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArray_System_UInt64___System_Int64_]
 
@@ -2129,18 +1983,16 @@ Read ulong array from the stream.
 
 #### Parameters [parameters-41]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.UInt64\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-71]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadULongArrayDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.UInt64\[\] | The array read from the stream. |
 
 ### ReadULongArrayDiff(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArrayDiff_System_UInt64___System_Int64_]
 
@@ -2160,18 +2012,16 @@ Read ulong array diff from the stream.
 
 #### Parameters [parameters-42]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.UInt64\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-72]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadULongArrayPacked_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.UInt64\[\] | The array created from the diff and the current version. |
 
 ### ReadULongArrayPacked(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArrayPacked_System_UInt64___System_Int64_]
 
@@ -2191,19 +2041,16 @@ Read ulong array in a packed format from the stream.
 
 #### Parameters [parameters-43]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.UInt64\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-73]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | The array read from the stream. |
-
-<span
-id="MLAPI_Serialization_BitReader_ReadULongArrayPackedDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.UInt64\[\] | The array read from the stream. |
 
 ### ReadULongArrayPackedDiff(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArrayPackedDiff_System_UInt64___System_Int64_]
 
@@ -2223,18 +2070,16 @@ Read ulong array diff in a packed format from the stream.
 
 #### Parameters [parameters-44]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.UInt64\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-74]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.UInt64</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUShortArray_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.UInt64\[\] | The array created from the diff and the current version. |
 
 ### ReadUShortArray(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArray_System_UInt16___System_Int64_]
 
@@ -2254,18 +2099,16 @@ Read ushort array from the stream.
 
 #### Parameters [parameters-45]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.UInt16\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-75]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | The array read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUShortArrayDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.UInt16\[\] | The array read from the stream. |
 
 ### ReadUShortArrayDiff(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArrayDiff_System_UInt16___System_Int64_]
 
@@ -2285,18 +2128,16 @@ Read ushort array diff from the stream.
 
 #### Parameters [parameters-46]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.UInt16\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-76]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadUShortArrayPacked_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.UInt16\[\] | The array created from the diff and the current version. |
 
 ### ReadUShortArrayPacked(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArrayPacked_System_UInt16___System_Int64_]
 
@@ -2316,19 +2157,16 @@ Read ushort array in a packed format from the stream.
 
 #### Parameters [parameters-47]
 
-| Type                                        | Name                                           | Description                                           |
-|---------------------------------------------|------------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | <span class="parametername">readTo</span>      | The buffer to read into or null to create a new array |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown                     |
+| Type              | Name        | Description                                           |
+|-------------------|-------------|-------------------------------------------------------|
+| System.UInt16\[\] | readTo      | The buffer to read into or null to create a new array |
+| System.Int64      | knownLength | The known length or -1 if unknown                     |
 
 #### Returns [returns-77]
 
-| Type                                        | Description                     |
-|---------------------------------------------|---------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | The array read from the stream. |
-
-<span
-id="MLAPI_Serialization_BitReader_ReadUShortArrayPackedDiff_"></span>
+| Type              | Description                     |
+|-------------------|---------------------------------|
+| System.UInt16\[\] | The array read from the stream. |
 
 ### ReadUShortArrayPackedDiff(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArrayPackedDiff_System_UInt16___System_Int64_]
 
@@ -2348,18 +2186,16 @@ Read ushort array diff in a packed format from the stream.
 
 #### Parameters [parameters-48]
 
-| Type                                        | Name                                           | Description                                    |
-|---------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | <span class="parametername">readTo</span>      | The buffer containing the old version or null. |
-| <span class="xref">System.Int64</span>      | <span class="parametername">knownLength</span> | The known length or -1 if unknown              |
+| Type              | Name        | Description                                    |
+|-------------------|-------------|------------------------------------------------|
+| System.UInt16\[\] | readTo      | The buffer containing the old version or null. |
+| System.Int64      | knownLength | The known length or -1 if unknown              |
 
 #### Returns [returns-78]
 
-| Type                                        | Description                                              |
-|---------------------------------------------|----------------------------------------------------------|
-| <span class="xref">System.UInt16</span>\[\] | The array created from the diff and the current version. |
-
-<span id="MLAPI_Serialization_BitReader_ReadVector2_"></span>
+| Type              | Description                                              |
+|-------------------|----------------------------------------------------------|
+| System.UInt16\[\] | The array created from the diff and the current version. |
 
 ### ReadVector2() [MLAPI_Serialization_BitReader_ReadVector2]
 
@@ -2379,11 +2215,9 @@ Read a Vector2 from the stream.
 
 #### Returns [returns-79]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Vector2</span> | The Vector2 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadVector2Packed_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Vector2 | The Vector2 read from the stream. |
 
 ### ReadVector2Packed() [MLAPI_Serialization_BitReader_ReadVector2Packed]
 
@@ -2403,11 +2237,9 @@ Read a Vector2 from the stream.
 
 #### Returns [returns-80]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Vector2</span> | The Vector2 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadVector3_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Vector2 | The Vector2 read from the stream. |
 
 ### ReadVector3() [MLAPI_Serialization_BitReader_ReadVector3]
 
@@ -2427,11 +2259,9 @@ Read a Vector3 from the stream.
 
 #### Returns [returns-81]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Vector3</span> | The Vector3 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadVector3Packed_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Vector3 | The Vector3 read from the stream. |
 
 ### ReadVector3Packed() [MLAPI_Serialization_BitReader_ReadVector3Packed]
 
@@ -2451,11 +2281,9 @@ Read a Vector3 from the stream.
 
 #### Returns [returns-82]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Vector3</span> | The Vector3 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadVector4_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Vector3 | The Vector3 read from the stream. |
 
 ### ReadVector4() [MLAPI_Serialization_BitReader_ReadVector4]
 
@@ -2475,11 +2303,9 @@ Read a Vector4 from the stream.
 
 #### Returns [returns-83]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Vector4</span> | The Vector4 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_ReadVector4Packed_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Vector4 | The Vector4 read from the stream. |
 
 ### ReadVector4Packed() [MLAPI_Serialization_BitReader_ReadVector4Packed]
 
@@ -2499,11 +2325,9 @@ Read a Vector4 from the stream.
 
 #### Returns [returns-84]
 
-| Type                                          | Description                       |
-|-----------------------------------------------|-----------------------------------|
-| <span class="xref">UnityEngine.Vector4</span> | The Vector4 read from the stream. |
-
-<span id="MLAPI_Serialization_BitReader_SetStream_"></span>
+| Type                | Description                       |
+|---------------------|-----------------------------------|
+| UnityEngine.Vector4 | The Vector4 read from the stream. |
 
 ### SetStream(Stream) [MLAPI_Serialization_BitReader_SetStream_System_IO_Stream_]
 
@@ -2523,11 +2347,9 @@ Changes the underlying stream the reader is reading from
 
 #### Parameters [parameters-49]
 
-| Type                                       | Name                                      | Description             |
-|--------------------------------------------|-------------------------------------------|-------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to read from |
-
-<span id="MLAPI_Serialization_BitReader_SkipPadBits_"></span>
+| Type             | Name   | Description             |
+|------------------|--------|-------------------------|
+| System.IO.Stream | stream | The stream to read from |
 
 ### SkipPadBits() [MLAPI_Serialization_BitReader_SkipPadBits]
 

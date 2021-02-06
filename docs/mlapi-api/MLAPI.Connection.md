@@ -8,7 +8,7 @@ title: MLAPI.Connection
 
 Namespace MLAPI.Connection
 
-# Namespace MLAPI.Connection [MLAPI_Connection]
+## Namespace MLAPI.Connection [MLAPI_Connection]
 
 <div class="markdown level0 summary" markdown="1">
 

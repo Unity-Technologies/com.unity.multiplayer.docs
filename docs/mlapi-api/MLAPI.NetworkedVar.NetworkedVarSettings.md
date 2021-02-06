@@ -92,7 +92,7 @@ Object.ToString()
 
     public class NetworkedVarSettings
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarSettings__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarSettings() [MLAPI_NetworkedVar_NetworkedVarSettings__ctor]
 
@@ -176,9 +176,9 @@ different channels will be split into different packets
 
 #### Field Value [field-value-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### SendTickrate [MLAPI_NetworkedVar_NetworkedVarSettings_SendTickrate]
 
@@ -201,9 +201,9 @@ spawn and not update again.
 
 #### Field Value [field-value-3]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### WritePermission [MLAPI_NetworkedVar_NetworkedVarSettings_WritePermission]
 

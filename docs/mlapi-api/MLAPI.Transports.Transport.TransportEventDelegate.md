@@ -28,10 +28,10 @@ Delegate for transport events.
 
 ##### Parameters [parameters]
 
-| Type                                                                                   | Name          | Description |
-|----------------------------------------------------------------------------------------|---------------|-------------|
-| NetEventType                                                                           | \*type        |             |
-| <span class="xref">System.UInt64</span>                                                | \*clientId    |             |
-| <span class="xref">System.String</span>                                                | \*channelName |             |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | \*payload     |             |
-| <span class="xref">System.Single</span>                                                | \*receiveTime |             |
+| Type                               | Name          | Description |
+|------------------------------------|---------------|-------------|
+| NetEventType                       | \*type        |             |
+| System.UInt64                      | \*clientId    |             |
+| System.String                      | \*channelName |             |
+| System.ArraySegment\<System.Byte\> | \*payload     |             |
+| System.Single                      | \*receiveTime |             |

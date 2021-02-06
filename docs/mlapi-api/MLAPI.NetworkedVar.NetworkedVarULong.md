@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarULong : NetworkedVar<ulong>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarULong__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarULong() [MLAPI_NetworkedVar_NetworkedVarULong__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarULong()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarULong__ctor_"></span>
 
 ### NetworkedVarULong(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarULong__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarULong__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarULong(NetworkedVarSettings, UInt64) [MLAPI_NetworkedVar_NetworkedVarULong__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_UInt64_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                    | <span class="parametername">settings</span> |             |
-| <span class="xref">System.UInt64</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarULong__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.UInt64        | value    |             |
 
 ### NetworkedVarULong(UInt64) [MLAPI_NetworkedVar_NetworkedVarULong__ctor_System_UInt64_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                     | Description |
-|-----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">value</span> |             |
+| Type          | Name  | Description |
+|---------------|-------|-------------|
+| System.UInt64 | value |             |
 
 ### Implements [implements]
 

@@ -28,7 +28,7 @@ Delegate type for value changed event
 
 ##### Parameters [parameters]
 
-| Type                        | Name            | Description                 |
-|-----------------------------|-----------------|-----------------------------|
-| <span class="xref">T</span> | \*previousValue | The value before the change |
-| <span class="xref">T</span> | \*newValue      | The new value               |
+| Type | Name            | Description                 |
+|------|-----------------|-----------------------------|
+| T    | \*previousValue | The value before the change |
+| T    | \*newValue      | The new value               |

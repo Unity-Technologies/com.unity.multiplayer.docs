@@ -113,9 +113,9 @@ Whether or not this is a playerPrefab
 
 #### Field Value [field-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Prefab [MLAPI_Configuration_NetworkedPrefab_Prefab]
 
@@ -135,6 +135,6 @@ The gameobject of the prefab
 
 #### Field Value [field-value-1]
 
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.GameObject</span> |             |
+| Type                   | Description |
+|------------------------|-------------|
+| UnityEngine.GameObject |             |

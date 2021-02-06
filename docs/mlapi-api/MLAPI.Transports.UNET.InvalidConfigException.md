@@ -52,13 +52,13 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Exception</span>
+System.Runtime.InteropServices.\_Exception
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.Serialization.ISerializable</span>
+System.Runtime.Serialization.ISerializable
 
 </div>
 
@@ -180,7 +180,7 @@ Object.ReferenceEquals(Object, Object)
 
     public class InvalidConfigException : SystemException, _Exception, ISerializable
 
-## Constructors <span id="MLAPI_Transports_UNET_InvalidConfigException__ctor_"></span>
+## Constructors 
 
 ### InvalidConfigException() [MLAPI_Transports_UNET_InvalidConfigException__ctor]
 
@@ -195,8 +195,6 @@ Object.ReferenceEquals(Object, Object)
 #### Declaration [declaration]
 
     public InvalidConfigException()
-
-<span id="MLAPI_Transports_UNET_InvalidConfigException__ctor_"></span>
 
 ### InvalidConfigException(String) [MLAPI_Transports_UNET_InvalidConfigException__ctor_System_String_]
 
@@ -214,20 +212,20 @@ Object.ReferenceEquals(Object, Object)
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                     | Description |
-|-----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.String</span> | <span class="parametername">issue</span> |             |
+| Type          | Name  | Description |
+|---------------|-------|-------------|
+| System.String | issue |             |
 
 ### Implements [implements]
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Exception</span>
+System.Runtime.InteropServices.\_Exception
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.Serialization.ISerializable</span>
+System.Runtime.Serialization.ISerializable
 
 </div>

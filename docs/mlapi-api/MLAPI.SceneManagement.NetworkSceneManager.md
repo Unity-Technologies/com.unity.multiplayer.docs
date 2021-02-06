@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class NetworkSceneManager
 
-## Methods <span id="MLAPI_SceneManagement_NetworkSceneManager_AddRuntimeSceneName_"></span>
+## Methods 
 
 ### AddRuntimeSceneName(String, UInt32) [MLAPI_SceneManagement_NetworkSceneManager_AddRuntimeSceneName_System_String_System_UInt32_]
 
@@ -113,13 +113,10 @@ same across all instances.
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                         | Description |
-|-----------------------------------------|----------------------------------------------|-------------|
-| <span class="xref">System.String</span> | <span class="parametername">sceneName</span> | Scene name. |
-| <span class="xref">System.UInt32</span> | <span class="parametername">index</span>     | Index.      |
-
-<span
-id="MLAPI_SceneManagement_NetworkSceneManager_SwitchScene_"></span>
+| Type          | Name      | Description |
+|---------------|-----------|-------------|
+| System.String | sceneName | Scene name. |
+| System.UInt32 | index     | Index.      |
 
 ### SwitchScene(String) [MLAPI_SceneManagement_NetworkSceneManager_SwitchScene_System_String_]
 
@@ -139,9 +136,9 @@ Switches to a scene with a given name. Can only be called from Server
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                         | Description                        |
-|-----------------------------------------|----------------------------------------------|------------------------------------|
-| <span class="xref">System.String</span> | <span class="parametername">sceneName</span> | The name of the scene to switch to |
+| Type          | Name      | Description                        |
+|---------------|-----------|------------------------------------|
+| System.String | sceneName | The name of the scene to switch to |
 
 #### Returns [returns]
 

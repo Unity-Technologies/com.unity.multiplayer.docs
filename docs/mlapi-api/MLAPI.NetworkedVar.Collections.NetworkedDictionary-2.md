@@ -42,30 +42,25 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Collections.Generic.IDictionary</span>\<TKey,
-TValue\>
+System.Collections.Generic.IDictionary\<TKey, TValue\>
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Collections.Generic.ICollection</span>\<<span
-class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey,
-TValue\>\>
+System.Collections.Generic.ICollection\<System.Collections.Generic.KeyValuePair\<TKey, TValue\>\>
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Collections.Generic.IEnumerable</span>\<<span
-class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey,
-TValue\>\>
+System.Collections.Generic.IEnumerable\<System.Collections.Generic.KeyValuePair\<TKey, TValue\>\>
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Collections.IEnumerable</span>
+System.Collections.IEnumerable
 
 </div>
 
@@ -135,12 +130,12 @@ Object.ToString()
 
 ##### Type Parameters [type-parameters]
 
-| Name                                      | Description                        |
-|-------------------------------------------|------------------------------------|
-| <span class="parametername">TKey</span>   | The type for the dictionary keys   |
-| <span class="parametername">TValue</span> | The type for the dictionary values |
+| Name   | Description                        |
+|--------|------------------------------------|
+| TKey   | The type for the dictionary keys   |
+| TValue | The type for the dictionary values |
 
-## Constructors <span id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_"></span>
+## Constructors 
 
 ### NetworkedDictionary() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor]
 
@@ -157,9 +152,6 @@ Creates a NetworkedDictionary with the default value and settings
 #### Declaration [declaration]
 
     public NetworkedDictionary()
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_"></span>
 
 ### NetworkedDictionary(NetworkedVarSettings) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -179,12 +171,9 @@ Creates a NetworkedDictionary with the default value and custom settings
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description                                     |
-|----------------------|---------------------------------------------|-------------------------------------------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> | The settings to use for the NetworkedDictionary |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_"></span>
+| Type                 | Name     | Description                                     |
+|----------------------|----------|-------------------------------------------------|
+| NetworkedVarSettings | settings | The settings to use for the NetworkedDictionary |
 
 ### NetworkedDictionary(NetworkedVarSettings, IDictionary\<TKey, TValue\>) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Collections_Generic_IDictionary__0__1__]
 
@@ -204,13 +193,10 @@ Creates a NetworkedDictionary with a custom value and custom settings
 
 #### Parameters [parameters-1]
 
-| Type                                                                             | Name                                        | Description                                          |
-|----------------------------------------------------------------------------------|---------------------------------------------|------------------------------------------------------|
-| NetworkedVarSettings                                                             | <span class="parametername">settings</span> | The settings to use for the NetworkedDictionary      |
-| <span class="xref">System.Collections.Generic.IDictionary</span>\<TKey, TValue\> | <span class="parametername">value</span>    | The initial value to use for the NetworkedDictionary |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_"></span>
+| Type                                                   | Name     | Description                                          |
+|--------------------------------------------------------|----------|------------------------------------------------------|
+| NetworkedVarSettings                                   | settings | The settings to use for the NetworkedDictionary      |
+| System.Collections.Generic.IDictionary\<TKey, TValue\> | value    | The initial value to use for the NetworkedDictionary |
 
 ### NetworkedDictionary(IDictionary\<TKey, TValue\>) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2__ctor_System_Collections_Generic_IDictionary__0__1__]
 
@@ -231,9 +217,9 @@ settings
 
 #### Parameters [parameters-2]
 
-| Type                                                                             | Name                                     | Description                                          |
-|----------------------------------------------------------------------------------|------------------------------------------|------------------------------------------------------|
-| <span class="xref">System.Collections.Generic.IDictionary</span>\<TKey, TValue\> | <span class="parametername">value</span> | The initial value to use for the NetworkedDictionary |
+| Type                                                   | Name  | Description                                          |
+|--------------------------------------------------------|-------|------------------------------------------------------|
+| System.Collections.Generic.IDictionary\<TKey, TValue\> | value | The initial value to use for the NetworkedDictionary |
 
 ## Fields
 
@@ -259,7 +245,7 @@ The settings for this container
 |----------------------|-------------|
 | NetworkedVarSettings |             |
 
-## Properties <span id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Count_"></span>
+## Properties 
 
 ### Count [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Count]
 
@@ -277,12 +263,9 @@ The settings for this container
 
 #### Property Value [property-value]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_IsReadOnly_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### IsReadOnly [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_IsReadOnly]
 
@@ -300,12 +283,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_IsReadOnly_"></span>
 
 #### Property Value [property-value-1]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Item_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Item\[TKey\] [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Item__0_]
 
@@ -323,18 +303,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Item_"></span>
 
 #### Parameters [parameters-3]
 
-| Type                           | Name                                   | Description |
-|--------------------------------|----------------------------------------|-------------|
-| <span class="xref">TKey</span> | <span class="parametername">key</span> |             |
+| Type | Name | Description |
+|------|------|-------------|
+| TKey | key  |             |
 
 #### Property Value [property-value-2]
 
-| Type                             | Description |
-|----------------------------------|-------------|
-| <span class="xref">TValue</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Keys_"></span>
+| Type   | Description |
+|--------|-------------|
+| TValue |             |
 
 ### Keys [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Keys]
 
@@ -352,12 +329,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Keys_"></span>
 
 #### Property Value [property-value-3]
 
-| Type                                                                     | Description |
-|--------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.ICollection</span>\<TKey\> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_LastSyncedTime_"></span>
+| Type                                           | Description |
+|------------------------------------------------|-------------|
+| System.Collections.Generic.ICollection\<TKey\> |             |
 
 ### LastSyncedTime [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_LastSyncedTime]
 
@@ -377,12 +351,9 @@ Gets the last time the variable was synced
 
 #### Property Value [property-value-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Values_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### Values [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Values]
 
@@ -400,11 +371,11 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Values_"></span>
 
 #### Property Value [property-value-5]
 
-| Type                                                                       | Description |
-|----------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.ICollection</span>\<TValue\> |             |
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.ICollection\<TValue\> |             |
 
-## Methods <span id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Add_"></span>
+## Methods 
 
 ### Add(TKey, TValue) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Add__0__1_]
 
@@ -422,13 +393,10 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Values_"></span>
 
 #### Parameters [parameters-4]
 
-| Type                             | Name                                     | Description |
-|----------------------------------|------------------------------------------|-------------|
-| <span class="xref">TKey</span>   | <span class="parametername">key</span>   |             |
-| <span class="xref">TValue</span> | <span class="parametername">value</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Add_"></span>
+| Type   | Name  | Description |
+|--------|-------|-------------|
+| TKey   | key   |             |
+| TValue | value |             |
 
 ### Add(KeyValuePair\<TKey, TValue\>) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Add_System_Collections_Generic_KeyValuePair__0__1__]
 
@@ -446,12 +414,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Add_"></span>
 
 #### Parameters [parameters-5]
 
-| Type                                                                              | Name                                    | Description |
-|-----------------------------------------------------------------------------------|-----------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey, TValue\> | <span class="parametername">item</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CanClientRead_"></span>
+| Type                                                    | Name | Description |
+|---------------------------------------------------------|------|-------------|
+| System.Collections.Generic.KeyValuePair\<TKey, TValue\> | item |             |
 
 ### CanClientRead(UInt64) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CanClientRead_System_UInt64_]
 
@@ -469,18 +434,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CanClientRead_"></span>
 
 #### Parameters [parameters-6]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CanClientWrite_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### CanClientWrite(UInt64) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CanClientWrite_System_UInt64_]
 
@@ -498,18 +460,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CanClientWrite_"></span
 
 #### Parameters [parameters-7]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns-1]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Clear_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Clear() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Clear]
 
@@ -524,9 +483,6 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Clear_"></span>
 #### Declaration [declaration-15]
 
     public void Clear()
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Contains_"></span>
 
 ### Contains(KeyValuePair\<TKey, TValue\>) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Contains_System_Collections_Generic_KeyValuePair__0__1__]
 
@@ -544,18 +500,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Contains_"></span>
 
 #### Parameters [parameters-8]
 
-| Type                                                                              | Name                                    | Description |
-|-----------------------------------------------------------------------------------|-----------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey, TValue\> | <span class="parametername">item</span> |             |
+| Type                                                    | Name | Description |
+|---------------------------------------------------------|------|-------------|
+| System.Collections.Generic.KeyValuePair\<TKey, TValue\> | item |             |
 
 #### Returns [returns-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ContainsKey_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ContainsKey(TKey) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ContainsKey__0_]
 
@@ -573,18 +526,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ContainsKey_"></span>
 
 #### Parameters [parameters-9]
 
-| Type                           | Name                                   | Description |
-|--------------------------------|----------------------------------------|-------------|
-| <span class="xref">TKey</span> | <span class="parametername">key</span> |             |
+| Type | Name | Description |
+|------|------|-------------|
+| TKey | key  |             |
 
 #### Returns [returns-3]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CopyTo_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### CopyTo(KeyValuePair\<TKey, TValue\>\[\], Int32) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CopyTo_System_Collections_Generic_KeyValuePair__0__1____System_Int32_]
 
@@ -602,13 +552,10 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_CopyTo_"></span>
 
 #### Parameters [parameters-10]
 
-| Type                                                                                  | Name                                          | Description |
-|---------------------------------------------------------------------------------------|-----------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey, TValue\>\[\] | <span class="parametername">array</span>      |             |
-| <span class="xref">System.Int32</span>                                                | <span class="parametername">arrayIndex</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_GetChannel_"></span>
+| Type                                                        | Name       | Description |
+|-------------------------------------------------------------|------------|-------------|
+| System.Collections.Generic.KeyValuePair\<TKey, TValue\>\[\] | array      |             |
+| System.Int32                                                | arrayIndex |             |
 
 ### GetChannel() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_GetChannel]
 
@@ -626,12 +573,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_GetChannel_"></span>
 
 #### Returns [returns-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_GetEnumerator_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### GetEnumerator() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_GetEnumerator]
 
@@ -649,12 +593,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_GetEnumerator_"></span>
 
 #### Returns [returns-5]
 
-| Type                                                                                                                                                  | Description |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.IEnumerator</span>\<<span class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey, TValue\>\> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_IsDirty_"></span>
+| Type                                                                                              | Description |
+|---------------------------------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.IEnumerator\<System.Collections.Generic.KeyValuePair\<TKey, TValue\>\> |             |
 
 ### IsDirty() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_IsDirty]
 
@@ -672,12 +613,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_IsDirty_"></span>
 
 #### Returns [returns-6]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ReadDelta_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ReadDelta(Stream, Boolean) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ReadDelta_System_IO_Stream_System_Boolean_]
 
@@ -695,13 +633,10 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ReadDelta_"></span>
 
 #### Parameters [parameters-11]
 
-| Type                                       | Name                                              | Description |
-|--------------------------------------------|---------------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span>         |             |
-| <span class="xref">System.Boolean</span>   | <span class="parametername">keepDirtyDelta</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ReadField_"></span>
+| Type             | Name           | Description |
+|------------------|----------------|-------------|
+| System.IO.Stream | stream         |             |
+| System.Boolean   | keepDirtyDelta |             |
 
 ### ReadField(Stream) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ReadField_System_IO_Stream_]
 
@@ -719,12 +654,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ReadField_"></span>
 
 #### Parameters [parameters-12]
 
-| Type                                       | Name                                      | Description |
-|--------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Remove_"></span>
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| System.IO.Stream | stream |             |
 
 ### Remove(TKey) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Remove__0_]
 
@@ -742,18 +674,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Remove_"></span>
 
 #### Parameters [parameters-13]
 
-| Type                           | Name                                   | Description |
-|--------------------------------|----------------------------------------|-------------|
-| <span class="xref">TKey</span> | <span class="parametername">key</span> |             |
+| Type | Name | Description |
+|------|------|-------------|
+| TKey | key  |             |
 
 #### Returns [returns-7]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Remove_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Remove(KeyValuePair\<TKey, TValue\>) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Remove_System_Collections_Generic_KeyValuePair__0__1__]
 
@@ -771,18 +700,15 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_Remove_"></span>
 
 #### Parameters [parameters-14]
 
-| Type                                                                              | Name                                    | Description |
-|-----------------------------------------------------------------------------------|-----------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.KeyValuePair</span>\<TKey, TValue\> | <span class="parametername">item</span> |             |
+| Type                                                    | Name | Description |
+|---------------------------------------------------------|------|-------------|
+| System.Collections.Generic.KeyValuePair\<TKey, TValue\> | item |             |
 
 #### Returns [returns-8]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ResetDirty_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ResetDirty() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ResetDirty]
 
@@ -797,9 +723,6 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_ResetDirty_"></span>
 #### Declaration [declaration-26]
 
     public void ResetDirty()
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_SetNetworkedBehaviour_"></span>
 
 ### SetNetworkedBehaviour(NetworkedBehaviour) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_SetNetworkedBehaviour_MLAPI_NetworkedBehaviour_]
 
@@ -817,12 +740,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_SetNetworkedBehaviour_"
 
 #### Parameters [parameters-15]
 
-| Type               | Name                                         | Description |
-|--------------------|----------------------------------------------|-------------|
-| NetworkedBehaviour | <span class="parametername">behaviour</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_TryGetValue_"></span>
+| Type               | Name      | Description |
+|--------------------|-----------|-------------|
+| NetworkedBehaviour | behaviour |             |
 
 ### TryGetValue(TKey, out TValue) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_TryGetValue__0__1__]
 
@@ -840,19 +760,16 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_TryGetValue_"></span>
 
 #### Parameters [parameters-16]
 
-| Type                             | Name                                     | Description |
-|----------------------------------|------------------------------------------|-------------|
-| <span class="xref">TKey</span>   | <span class="parametername">key</span>   |             |
-| <span class="xref">TValue</span> | <span class="parametername">value</span> |             |
+| Type   | Name  | Description |
+|--------|-------|-------------|
+| TKey   | key   |             |
+| TValue | value |             |
 
 #### Returns [returns-9]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_WriteDelta_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### WriteDelta(Stream) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_WriteDelta_System_IO_Stream_]
 
@@ -870,12 +787,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_WriteDelta_"></span>
 
 #### Parameters [parameters-17]
 
-| Type                                       | Name                                      | Description |
-|--------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> |             |
-
-<span
-id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_WriteField_"></span>
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| System.IO.Stream | stream |             |
 
 ### WriteField(Stream) [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_WriteField_System_IO_Stream_]
 
@@ -893,9 +807,9 @@ id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_WriteField_"></span>
 
 #### Parameters [parameters-18]
 
-| Type                                       | Name                                      | Description |
-|--------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> |             |
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| System.IO.Stream | stream |             |
 
 ## Events
 
@@ -921,7 +835,7 @@ The callback to be invoked when the dictionary gets changed
 |-----------------------------------------------------|-------------|
 | NetworkedDictionary.OnDictionaryChangedDelegate\<\> |             |
 
-## Explicit Interface Implementations <span id="MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_System_Collections_IEnumerable_GetEnumerator_"></span> [eii]
+## Explicit Interface Implementations  [eii]
 
 ### IEnumerable.GetEnumerator() [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_System_Collections_IEnumerable_GetEnumerator]
 
@@ -939,34 +853,33 @@ The callback to be invoked when the dictionary gets changed
 
 #### Returns [returns-10]
 
-| Type                                                     | Description |
-|----------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.IEnumerator</span> |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| System.Collections.IEnumerator |             |
 
 ### Implements [implements]
 
 <div markdown="1">
 
-<span class="xref">System.Collections.Generic.IDictionary\<TKey,
-TValue\></span>
+System.Collections.Generic.IDictionary\<TKey, TValue\>
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Collections.Generic.ICollection\<T\></span>
+System.Collections.Generic.ICollection\<T\>
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Collections.Generic.IEnumerable\<T\></span>
+System.Collections.Generic.IEnumerable\<T\>
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Collections.IEnumerable</span>
+System.Collections.IEnumerable
 
 </div>
 

@@ -112,9 +112,9 @@ The amount of bytes sent or received
 
 #### Field Value [field-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt32</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
 
 ### ChannelName [MLAPI_Profiling_TickEvent_ChannelName]
 
@@ -134,9 +134,9 @@ The name of the channel
 
 #### Field Value [field-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### Closed [MLAPI_Profiling_TickEvent_Closed]
 
@@ -156,9 +156,9 @@ Whether or not the event is closed
 
 #### Field Value [field-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EventType [MLAPI_Profiling_TickEvent_EventType]
 
@@ -200,11 +200,11 @@ The message type
 
 #### Field Value [field-value-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
-## Methods <span id="MLAPI_Profiling_TickEvent_FromStream_"></span>
+## Methods 
 
 ### FromStream(Stream) [MLAPI_Profiling_TickEvent_FromStream_System_IO_Stream_]
 
@@ -224,17 +224,15 @@ Creates a TickEvent from data in the provided stream
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description                              |
-|--------------------------------------------|-------------------------------------------|------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream containing the TickEvent data |
+| Type             | Name   | Description                              |
+|------------------|--------|------------------------------------------|
+| System.IO.Stream | stream | The stream containing the TickEvent data |
 
 #### Returns [returns]
 
 | Type      | Description                                  |
 |-----------|----------------------------------------------|
 | TickEvent | The TickEvent with data read from the stream |
-
-<span id="MLAPI_Profiling_TickEvent_SerializeToStream_"></span>
 
 ### SerializeToStream(Stream) [MLAPI_Profiling_TickEvent_SerializeToStream_System_IO_Stream_]
 
@@ -254,6 +252,6 @@ Writes the TickEvent data to the stream
 
 #### Parameters [parameters-1]
 
-| Type                                       | Name                                      | Description                               |
-|--------------------------------------------|-------------------------------------------|-------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to write the TickEvent data to |
+| Type             | Name   | Description                               |
+|------------------|--------|-------------------------------------------|
+| System.IO.Stream | stream | The stream to write the TickEvent data to |

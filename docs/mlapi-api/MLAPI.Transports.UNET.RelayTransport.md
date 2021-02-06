@@ -90,7 +90,7 @@ Object.ToString()
 
     public static class RelayTransport
 
-## Properties <span id="MLAPI_Transports_UNET_RelayTransport_Enabled_"></span>
+## Properties 
 
 ### Enabled [MLAPI_Transports_UNET_RelayTransport_Enabled]
 
@@ -108,11 +108,9 @@ Object.ToString()
 
 #### Property Value [property-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_RelayAddress_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### RelayAddress [MLAPI_Transports_UNET_RelayTransport_RelayAddress]
 
@@ -130,11 +128,9 @@ Object.ToString()
 
 #### Property Value [property-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_RelayPort_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### RelayPort [MLAPI_Transports_UNET_RelayTransport_RelayPort]
 
@@ -152,11 +148,11 @@ Object.ToString()
 
 #### Property Value [property-value-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt16</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
 
-## Methods <span id="MLAPI_Transports_UNET_RelayTransport_AddHost_"></span>
+## Methods 
 
 ### AddHost(HostTopology, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHost_UnityEngine_Networking_HostTopology_System_Boolean_]
 
@@ -174,18 +170,16 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_AddHost_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddHost(HostTopology, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHost_UnityEngine_Networking_HostTopology_System_Int32_System_Boolean_]
 
@@ -203,19 +197,17 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">port</span>         |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | port         |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-1]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_AddHost_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddHost(HostTopology, Int32, String, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHost_UnityEngine_Networking_HostTopology_System_Int32_System_String_System_Boolean_]
 
@@ -233,21 +225,18 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">port</span>         |             |
-| <span class="xref">System.String</span>                       | <span class="parametername">ip</span>           |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | port         |             |
+| System.String                       | ip           |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-2]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddHostWithSimulator(HostTopology, Int32, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_UnityEngine_Networking_HostTopology_System_Int32_System_Int32_System_Boolean_]
 
@@ -265,21 +254,18 @@ id="MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_"></span>
 
 #### Parameters [parameters-3]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">minTimeout</span>   |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">maxTimeout</span>   |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | minTimeout   |             |
+| System.Int32                        | maxTimeout   |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-3]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddHostWithSimulator(HostTopology, Int32, Int32, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_UnityEngine_Networking_HostTopology_System_Int32_System_Int32_System_Int32_System_Boolean_]
 
@@ -297,22 +283,19 @@ id="MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_"></span>
 
 #### Parameters [parameters-4]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">minTimeout</span>   |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">maxTimeout</span>   |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">port</span>         |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | minTimeout   |             |
+| System.Int32                        | maxTimeout   |             |
+| System.Int32                        | port         |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-4]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddHostWithSimulator(HostTopology, Int32, Int32, Int32, String, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_UnityEngine_Networking_HostTopology_System_Int32_System_Int32_System_Int32_System_String_System_Boolean_]
 
@@ -330,23 +313,20 @@ id="MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_"></span>
 
 #### Parameters [parameters-5]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">minTimeout</span>   |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">maxTimeout</span>   |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">port</span>         |             |
-| <span class="xref">System.String</span>                       | <span class="parametername">ip</span>           |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | minTimeout   |             |
+| System.Int32                        | maxTimeout   |             |
+| System.Int32                        | port         |             |
+| System.String                       | ip           |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-5]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddWebsocketHost(HostTopology, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_UnityEngine_Networking_HostTopology_System_Int32_System_Boolean_]
 
@@ -364,20 +344,17 @@ id="MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_"></span>
 
 #### Parameters [parameters-6]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">port</span>         |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | port         |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-6]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddWebsocketHost(HostTopology, Int32, String, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_UnityEngine_Networking_HostTopology_System_Int32_System_String_System_Boolean_]
 
@@ -395,20 +372,18 @@ id="MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_"></span>
 
 #### Parameters [parameters-7]
 
-| Type                                                          | Name                                            | Description |
-|---------------------------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.HostTopology</span> | <span class="parametername">topology</span>     |             |
-| <span class="xref">System.Int32</span>                        | <span class="parametername">port</span>         |             |
-| <span class="xref">System.String</span>                       | <span class="parametername">ip</span>           |             |
-| <span class="xref">System.Boolean</span>                      | <span class="parametername">createServer</span> |             |
+| Type                                | Name         | Description |
+|-------------------------------------|--------------|-------------|
+| UnityEngine.Networking.HostTopology | topology     |             |
+| System.Int32                        | port         |             |
+| System.String                       | ip           |             |
+| System.Boolean                      | createServer |             |
 
 #### Returns [returns-7]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_Connect_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### Connect(Int32, String, Int32, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Connect_System_Int32_System_String_System_Int32_System_Int32_System_Byte__]
 
@@ -426,21 +401,19 @@ id="MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_"></span>
 
 #### Parameters [parameters-8]
 
-| Type                                    | Name                                                     | Description |
-|-----------------------------------------|----------------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>  | <span class="parametername">hostId</span>                |             |
-| <span class="xref">System.String</span> | <span class="parametername">serverAddress</span>         |             |
-| <span class="xref">System.Int32</span>  | <span class="parametername">serverPort</span>            |             |
-| <span class="xref">System.Int32</span>  | <span class="parametername">exceptionConnectionId</span> |             |
-| <span class="xref">System.Byte</span>   | <span class="parametername">error</span>                 |             |
+| Type          | Name                  | Description |
+|---------------|-----------------------|-------------|
+| System.Int32  | hostId                |             |
+| System.String | serverAddress         |             |
+| System.Int32  | serverPort            |             |
+| System.Int32  | exceptionConnectionId |             |
+| System.Byte   | error                 |             |
 
 #### Returns [returns-8]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_ConnectEndPoint_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ConnectEndPoint(Int32, EndPoint, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_ConnectEndPoint_System_Int32_System_Net_EndPoint_System_Int32_System_Byte__]
 
@@ -458,21 +431,18 @@ id="MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_"></span>
 
 #### Parameters [parameters-9]
 
-| Type                                          | Name                                                     | Description |
-|-----------------------------------------------|----------------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>        | <span class="parametername">hostId</span>                |             |
-| <span class="xref">System.Net.EndPoint</span> | <span class="parametername">endPoint</span>              |             |
-| <span class="xref">System.Int32</span>        | <span class="parametername">exceptionConnectionId</span> |             |
-| <span class="xref">System.Byte</span>         | <span class="parametername">error</span>                 |             |
+| Type                | Name                  | Description |
+|---------------------|-----------------------|-------------|
+| System.Int32        | hostId                |             |
+| System.Net.EndPoint | endPoint              |             |
+| System.Int32        | exceptionConnectionId |             |
+| System.Byte         | error                 |             |
 
 #### Returns [returns-9]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_ConnectWithSimulator_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ConnectWithSimulator(Int32, String, Int32, Int32, out Byte, ConnectionSimulatorConfig) [MLAPI_Transports_UNET_RelayTransport_ConnectWithSimulator_System_Int32_System_String_System_Int32_System_Int32_System_Byte__UnityEngine_Networking_ConnectionSimulatorConfig_]
 
@@ -490,22 +460,20 @@ id="MLAPI_Transports_UNET_RelayTransport_ConnectWithSimulator_"></span>
 
 #### Parameters [parameters-10]
 
-| Type                                                                       | Name                                                     | Description |
-|----------------------------------------------------------------------------|----------------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>                                     | <span class="parametername">hostId</span>                |             |
-| <span class="xref">System.String</span>                                    | <span class="parametername">serverAddress</span>         |             |
-| <span class="xref">System.Int32</span>                                     | <span class="parametername">serverPort</span>            |             |
-| <span class="xref">System.Int32</span>                                     | <span class="parametername">exceptionConnectionId</span> |             |
-| <span class="xref">System.Byte</span>                                      | <span class="parametername">error</span>                 |             |
-| <span class="xref">UnityEngine.Networking.ConnectionSimulatorConfig</span> | <span class="parametername">conf</span>                  |             |
+| Type                                             | Name                  | Description |
+|--------------------------------------------------|-----------------------|-------------|
+| System.Int32                                     | hostId                |             |
+| System.String                                    | serverAddress         |             |
+| System.Int32                                     | serverPort            |             |
+| System.Int32                                     | exceptionConnectionId |             |
+| System.Byte                                      | error                 |             |
+| UnityEngine.Networking.ConnectionSimulatorConfig | conf                  |             |
 
 #### Returns [returns-10]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_Disconnect_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### Disconnect(Int32, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Disconnect_System_Int32_System_Int32_System_Byte__]
 
@@ -523,20 +491,17 @@ id="MLAPI_Transports_UNET_RelayTransport_ConnectWithSimulator_"></span>
 
 #### Parameters [parameters-11]
 
-| Type                                   | Name                                            | Description |
-|----------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.Int32</span> | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Byte</span>  | <span class="parametername">error</span>        |             |
+| Type         | Name         | Description |
+|--------------|--------------|-------------|
+| System.Int32 | hostId       |             |
+| System.Int32 | connectionId |             |
+| System.Byte  | error        |             |
 
 #### Returns [returns-11]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### QueueMessageForSending(Int32, Int32, Int32, Byte\[\], Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_System_Int32_System_Int32_System_Int32_System_Byte___System_Int32_System_Byte__]
 
@@ -554,22 +519,20 @@ id="MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_"></span>
 
 #### Parameters [parameters-12]
 
-| Type                                      | Name                                            | Description |
-|-------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>    | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">channelId</span>    |             |
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">size</span>         |             |
-| <span class="xref">System.Byte</span>     | <span class="parametername">error</span>        |             |
+| Type            | Name         | Description |
+|-----------------|--------------|-------------|
+| System.Int32    | hostId       |             |
+| System.Int32    | connectionId |             |
+| System.Int32    | channelId    |             |
+| System.Byte\[\] | buffer       |             |
+| System.Int32    | size         |             |
+| System.Byte     | error        |             |
 
 #### Returns [returns-12]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_Receive_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Receive(out Int32, out Int32, out Int32, Byte\[\], Int32, out Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Receive_System_Int32__System_Int32__System_Int32__System_Byte___System_Int32_System_Int32__System_Byte__]
 
@@ -587,23 +550,21 @@ id="MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_"></span>
 
 #### Parameters [parameters-13]
 
-| Type                                      | Name                                            | Description |
-|-------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>    | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">channelId</span>    |             |
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">bufferSize</span>   |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">receivedSize</span> |             |
-| <span class="xref">System.Byte</span>     | <span class="parametername">error</span>        |             |
+| Type            | Name         | Description |
+|-----------------|--------------|-------------|
+| System.Int32    | hostId       |             |
+| System.Int32    | connectionId |             |
+| System.Int32    | channelId    |             |
+| System.Byte\[\] | buffer       |             |
+| System.Int32    | bufferSize   |             |
+| System.Int32    | receivedSize |             |
+| System.Byte     | error        |             |
 
 #### Returns [returns-13]
 
-| Type                                                              | Description |
-|-------------------------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.NetworkEventType</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_ReceiveFromHost_"></span>
+| Type                                    | Description |
+|-----------------------------------------|-------------|
+| UnityEngine.Networking.NetworkEventType |             |
 
 ### ReceiveFromHost(Int32, out Int32, out Int32, Byte\[\], Int32, out Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_ReceiveFromHost_System_Int32_System_Int32__System_Int32__System_Byte___System_Int32_System_Int32__System_Byte__]
 
@@ -621,23 +582,21 @@ id="MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_"></span>
 
 #### Parameters [parameters-14]
 
-| Type                                      | Name                                            | Description |
-|-------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>    | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">channelId</span>    |             |
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">bufferSize</span>   |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">receivedSize</span> |             |
-| <span class="xref">System.Byte</span>     | <span class="parametername">error</span>        |             |
+| Type            | Name         | Description |
+|-----------------|--------------|-------------|
+| System.Int32    | hostId       |             |
+| System.Int32    | connectionId |             |
+| System.Int32    | channelId    |             |
+| System.Byte\[\] | buffer       |             |
+| System.Int32    | bufferSize   |             |
+| System.Int32    | receivedSize |             |
+| System.Byte     | error        |             |
 
 #### Returns [returns-14]
 
-| Type                                                              | Description |
-|-------------------------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.NetworkEventType</span> |             |
-
-<span id="MLAPI_Transports_UNET_RelayTransport_Send_"></span>
+| Type                                    | Description |
+|-----------------------------------------|-------------|
+| UnityEngine.Networking.NetworkEventType |             |
 
 ### Send(Int32, Int32, Int32, Byte\[\], Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Send_System_Int32_System_Int32_System_Int32_System_Byte___System_Int32_System_Byte__]
 
@@ -655,23 +614,20 @@ id="MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_"></span>
 
 #### Parameters [parameters-15]
 
-| Type                                      | Name                                            | Description |
-|-------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span>    | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">channelId</span>    |             |
-| <span class="xref">System.Byte</span>\[\] | <span class="parametername">buffer</span>       |             |
-| <span class="xref">System.Int32</span>    | <span class="parametername">size</span>         |             |
-| <span class="xref">System.Byte</span>     | <span class="parametername">error</span>        |             |
+| Type            | Name         | Description |
+|-----------------|--------------|-------------|
+| System.Int32    | hostId       |             |
+| System.Int32    | connectionId |             |
+| System.Int32    | channelId    |             |
+| System.Byte\[\] | buffer       |             |
+| System.Int32    | size         |             |
+| System.Byte     | error        |             |
 
 #### Returns [returns-15]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_RelayTransport_SendQueuedMessages_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### SendQueuedMessages(Int32, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_SendQueuedMessages_System_Int32_System_Int32_System_Byte__]
 
@@ -689,17 +645,17 @@ id="MLAPI_Transports_UNET_RelayTransport_SendQueuedMessages_"></span>
 
 #### Parameters [parameters-16]
 
-| Type                                   | Name                                            | Description |
-|----------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.Int32</span> | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Byte</span>  | <span class="parametername">error</span>        |             |
+| Type         | Name         | Description |
+|--------------|--------------|-------------|
+| System.Int32 | hostId       |             |
+| System.Int32 | connectionId |             |
+| System.Byte  | error        |             |
 
 #### Returns [returns-16]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ## Events
 
@@ -719,6 +675,6 @@ id="MLAPI_Transports_UNET_RelayTransport_SendQueuedMessages_"></span>
 
 #### Event Type [event-type]
 
-| Type                                                                                       | Description |
-|--------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Action</span>\<<span class="xref">System.Net.IPEndPoint</span>\> |             |
+| Type                                   | Description |
+|----------------------------------------|-------------|
+| System.Action\<System.Net.IPEndPoint\> |             |

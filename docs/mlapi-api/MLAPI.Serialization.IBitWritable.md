@@ -26,7 +26,7 @@ Interface for serializable classes and structs
 
     public interface IBitWritable
 
-## Methods <span id="MLAPI_Serialization_IBitWritable_Read_"></span>
+## Methods 
 
 ### Read(Stream) [MLAPI_Serialization_IBitWritable_Read_System_IO_Stream_]
 
@@ -46,11 +46,9 @@ Reads the contents from the stream and applies it to the type instance
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description             |
-|--------------------------------------------|-------------------------------------------|-------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to read from |
-
-<span id="MLAPI_Serialization_IBitWritable_Write_"></span>
+| Type             | Name   | Description             |
+|------------------|--------|-------------------------|
+| System.IO.Stream | stream | The stream to read from |
 
 ### Write(Stream) [MLAPI_Serialization_IBitWritable_Write_System_IO_Stream_]
 
@@ -70,6 +68,6 @@ Writes the contents of the type instance to the stream
 
 #### Parameters [parameters-1]
 
-| Type                                       | Name                                      | Description            |
-|--------------------------------------------|-------------------------------------------|------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to write to |
+| Type             | Name   | Description            |
+|------------------|--------|------------------------|
+| System.IO.Stream | stream | The stream to write to |

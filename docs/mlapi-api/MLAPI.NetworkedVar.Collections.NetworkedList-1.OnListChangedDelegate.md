@@ -1,10 +1,8 @@
 ---
 
-id:
-MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
+id: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
 
-title:
-MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
+title: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
 
 ---
 

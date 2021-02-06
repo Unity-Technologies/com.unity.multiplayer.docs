@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarRay : NetworkedVar<Ray>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarRay__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarRay() [MLAPI_NetworkedVar_NetworkedVarRay__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarRay()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarRay__ctor_"></span>
 
 ### NetworkedVarRay(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarRay__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarRay__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarRay(NetworkedVarSettings, Ray) [MLAPI_NetworkedVar_NetworkedVarRay__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Ray_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                      | Name                                        | Description |
-|-------------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                      | <span class="parametername">settings</span> |             |
-| <span class="xref">UnityEngine.Ray</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarRay__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| UnityEngine.Ray      | value    |             |
 
 ### NetworkedVarRay(Ray) [MLAPI_NetworkedVar_NetworkedVarRay__ctor_UnityEngine_Ray_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                      | Name                                     | Description |
-|-------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Ray</span> | <span class="parametername">value</span> |             |
+| Type            | Name  | Description |
+|-----------------|-------|-------------|
+| UnityEngine.Ray | value |             |
 
 ### Implements [implements]
 

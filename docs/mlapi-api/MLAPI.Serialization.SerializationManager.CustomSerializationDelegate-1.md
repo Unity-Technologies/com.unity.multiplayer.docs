@@ -1,10 +1,8 @@
 ---
 
-id:
-MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
+id: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
 
-title:
-MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
+title: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
 
 ---
 
@@ -30,13 +28,13 @@ The delegate used when registering custom serialization for a type.
 
 ##### Parameters [parameters]
 
-| Type                                       | Name       | Description                                                                                           |
-|--------------------------------------------|------------|-------------------------------------------------------------------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | \*stream   | The stream to write data to that is required to reconstruct the type in the deserialization delegate. |
-| <span class="xref">T</span>                | \*instance | The instance to serialize to the stream.                                                              |
+| Type             | Name       | Description                                                                                           |
+|------------------|------------|-------------------------------------------------------------------------------------------------------|
+| System.IO.Stream | \*stream   | The stream to write data to that is required to reconstruct the type in the deserialization delegate. |
+| T                | \*instance | The instance to serialize to the stream.                                                              |
 
 ##### Type Parameters [type-parameters]
 
-| Name                                 | Description            |
-|--------------------------------------|------------------------|
-| <span class="parametername">T</span> | The type to serialize. |
+| Name | Description            |
+|------|------------------------|
+| T    | The type to serialize. |

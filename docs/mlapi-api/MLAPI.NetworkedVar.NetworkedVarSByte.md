@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarSByte : NetworkedVar<sbyte>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarSByte__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarSByte() [MLAPI_NetworkedVar_NetworkedVarSByte__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarSByte()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarSByte__ctor_"></span>
 
 ### NetworkedVarSByte(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarSByte__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarSByte__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarSByte(NetworkedVarSettings, SByte) [MLAPI_NetworkedVar_NetworkedVarSByte__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_SByte_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                   | Name                                        | Description |
-|----------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                   | <span class="parametername">settings</span> |             |
-| <span class="xref">System.SByte</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarSByte__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.SByte         | value    |             |
 
 ### NetworkedVarSByte(SByte) [MLAPI_NetworkedVar_NetworkedVarSByte__ctor_System_SByte_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                   | Name                                     | Description |
-|----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.SByte</span> | <span class="parametername">value</span> |             |
+| Type         | Name  | Description |
+|--------------|-------|-------------|
+| System.SByte | value |             |
 
 ### Implements [implements]
 

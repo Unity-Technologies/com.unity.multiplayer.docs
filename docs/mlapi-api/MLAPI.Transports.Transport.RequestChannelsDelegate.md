@@ -28,6 +28,6 @@ Delegate used to request channels on the underlying transport.
 
 ##### Parameters [parameters]
 
-| Type                                                                          | Name       | Description |
-|-------------------------------------------------------------------------------|------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<TransportChannel\> | \*channels |             |
+| Type                                                | Name       | Description |
+|-----------------------------------------------------|------------|-------------|
+| System.Collections.Generic.List\<TransportChannel\> | \*channels |             |

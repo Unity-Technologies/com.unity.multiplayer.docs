@@ -736,7 +736,7 @@ Object.ReferenceEquals(Object, Object)
     [AddComponentMenu("MLAPI/TrackedObject", -98)]
     public class TrackedObject : MonoBehaviour
 
-## Properties <span id="MLAPI_LagCompensation_TrackedObject_AvgTimeBetweenPointsMs_"></span>
+## Properties 
 
 ### AvgTimeBetweenPointsMs [MLAPI_LagCompensation_TrackedObject_AvgTimeBetweenPointsMs]
 
@@ -756,11 +756,9 @@ Gets the average amount of time between the points in miliseconds
 
 #### Property Value [property-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
-
-<span id="MLAPI_LagCompensation_TrackedObject_TotalPoints_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### TotalPoints [MLAPI_LagCompensation_TrackedObject_TotalPoints]
 
@@ -780,11 +778,9 @@ Gets the total amount of points stored in the component
 
 #### Property Value [property-value-1]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_LagCompensation_TrackedObject_TotalTimeHistory_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### TotalTimeHistory [MLAPI_LagCompensation_TrackedObject_TotalTimeHistory]
 
@@ -804,6 +800,6 @@ Gets the total time history we have for this object
 
 #### Property Value [property-value-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |

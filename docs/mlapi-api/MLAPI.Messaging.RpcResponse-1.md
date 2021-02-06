@@ -131,11 +131,11 @@ Object.ToString()
 
 ##### Type Parameters [type-parameters]
 
-| Name                                 | Description     |
-|--------------------------------------|-----------------|
-| <span class="parametername">T</span> | The result type |
+| Name | Description     |
+|------|-----------------|
+| T    | The result type |
 
-## Properties <span id="MLAPI_Messaging_RpcResponse_1_Value_"></span>
+## Properties 
 
 ### Value [MLAPI_Messaging_RpcResponse_1_Value]
 
@@ -155,6 +155,6 @@ Gets the return value of the operation
 
 #### Property Value [property-value]
 
-| Type                        | Description |
-|-----------------------------|-------------|
-| <span class="xref">T</span> |             |
+| Type | Description |
+|------|-------------|
+| T    |             |

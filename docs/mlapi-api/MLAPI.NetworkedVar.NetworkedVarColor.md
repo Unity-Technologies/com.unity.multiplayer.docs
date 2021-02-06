@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarColor : NetworkedVar<Color>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarColor__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarColor() [MLAPI_NetworkedVar_NetworkedVarColor__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarColor()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarColor__ctor_"></span>
 
 ### NetworkedVarColor(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarColor__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarColor__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarColor(NetworkedVarSettings, Color) [MLAPI_NetworkedVar_NetworkedVarColor__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Color_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                        | Name                                        | Description |
-|---------------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                        | <span class="parametername">settings</span> |             |
-| <span class="xref">UnityEngine.Color</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarColor__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| UnityEngine.Color    | value    |             |
 
 ### NetworkedVarColor(Color) [MLAPI_NetworkedVar_NetworkedVarColor__ctor_UnityEngine_Color_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                        | Name                                     | Description |
-|---------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Color</span> | <span class="parametername">value</span> |             |
+| Type              | Name  | Description |
+|-------------------|-------|-------------|
+| UnityEngine.Color | value |             |
 
 ### Implements [implements]
 

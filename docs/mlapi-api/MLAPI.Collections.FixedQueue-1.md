@@ -94,11 +94,11 @@ Object.ToString()
 
 ##### Type Parameters [type-parameters]
 
-| Name                                 | Description           |
-|--------------------------------------|-----------------------|
-| <span class="parametername">T</span> | The type of the queue |
+| Name | Description           |
+|------|-----------------------|
+| T    | The type of the queue |
 
-## Constructors <span id="MLAPI_Collections_FixedQueue_1__ctor_"></span>
+## Constructors 
 
 ### FixedQueue(Int32) [MLAPI_Collections_FixedQueue_1__ctor_System_Int32_]
 
@@ -118,11 +118,11 @@ Creates a new FixedQueue with a given size
 
 #### Parameters [parameters]
 
-| Type                                   | Name                                       | Description           |
-|----------------------------------------|--------------------------------------------|-----------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">maxSize</span> | The size of the queue |
+| Type         | Name    | Description           |
+|--------------|---------|-----------------------|
+| System.Int32 | maxSize | The size of the queue |
 
-## Properties <span id="MLAPI_Collections_FixedQueue_1_Count_"></span>
+## Properties 
 
 ### Count [MLAPI_Collections_FixedQueue_1_Count]
 
@@ -142,11 +142,9 @@ The amount of enqueued objects
 
 #### Property Value [property-value]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Collections_FixedQueue_1_Item_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### Item\[Int32\] [MLAPI_Collections_FixedQueue_1_Item_System_Int32_]
 
@@ -166,17 +164,17 @@ Gets the element at a given virtual index
 
 #### Parameters [parameters-1]
 
-| Type                                   | Name                                     | Description                            |
-|----------------------------------------|------------------------------------------|----------------------------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">index</span> | The virtual index to get the item from |
+| Type         | Name  | Description                            |
+|--------------|-------|----------------------------------------|
+| System.Int32 | index | The virtual index to get the item from |
 
 #### Property Value [property-value-1]
 
-| Type                        | Description                      |
-|-----------------------------|----------------------------------|
-| <span class="xref">T</span> | The element at the virtual index |
+| Type | Description                      |
+|------|----------------------------------|
+| T    | The element at the virtual index |
 
-## Methods <span id="MLAPI_Collections_FixedQueue_1_Dequeue_"></span>
+## Methods 
 
 ### Dequeue() [MLAPI_Collections_FixedQueue_1_Dequeue]
 
@@ -196,11 +194,9 @@ Dequeues an object
 
 #### Returns [returns]
 
-| Type                        | Description |
-|-----------------------------|-------------|
-| <span class="xref">T</span> |             |
-
-<span id="MLAPI_Collections_FixedQueue_1_ElementAt_"></span>
+| Type | Description |
+|------|-------------|
+| T    |             |
 
 ### ElementAt(Int32) [MLAPI_Collections_FixedQueue_1_ElementAt_System_Int32_]
 
@@ -220,17 +216,15 @@ Gets the element at a given virtual index
 
 #### Parameters [parameters-2]
 
-| Type                                   | Name                                     | Description                            |
-|----------------------------------------|------------------------------------------|----------------------------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">index</span> | The virtual index to get the item from |
+| Type         | Name  | Description                            |
+|--------------|-------|----------------------------------------|
+| System.Int32 | index | The virtual index to get the item from |
 
 #### Returns [returns-1]
 
-| Type                        | Description                      |
-|-----------------------------|----------------------------------|
-| <span class="xref">T</span> | The element at the virtual index |
-
-<span id="MLAPI_Collections_FixedQueue_1_Enqueue_"></span>
+| Type | Description                      |
+|------|----------------------------------|
+| T    | The element at the virtual index |
 
 ### Enqueue(T) [MLAPI_Collections_FixedQueue_1_Enqueue__0_]
 
@@ -250,12 +244,12 @@ Enqueues an object
 
 #### Parameters [parameters-3]
 
-| Type                        | Name                                 | Description |
-|-----------------------------|--------------------------------------|-------------|
-| <span class="xref">T</span> | <span class="parametername">t</span> |             |
+| Type | Name | Description |
+|------|------|-------------|
+| T    | t    |             |
 
 #### Returns [returns-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

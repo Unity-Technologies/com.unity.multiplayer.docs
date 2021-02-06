@@ -28,7 +28,7 @@ Delegate used to handle named messages
 
 ##### Parameters [parameters]
 
-| Type                                       | Name      | Description |
-|--------------------------------------------|-----------|-------------|
-| <span class="xref">System.UInt64</span>    | \*sender  |             |
-| <span class="xref">System.IO.Stream</span> | \*payload |             |
+| Type             | Name      | Description |
+|------------------|-----------|-------------|
+| System.UInt64    | \*sender  |             |
+| System.IO.Stream | \*payload |             |

@@ -8,7 +8,7 @@ title: MLAPI
 
 Namespace MLAPI
 
-# Namespace MLAPI [MLAPI]
+## Namespace MLAPI [MLAPI]
 
 <div class="markdown level0 summary" markdown="1">
 

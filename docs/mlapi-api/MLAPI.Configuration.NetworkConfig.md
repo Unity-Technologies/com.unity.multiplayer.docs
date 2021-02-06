@@ -116,9 +116,9 @@ work together.
 
 #### Field Value [field-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ClientConnectionBufferTimeout [MLAPI_Configuration_NetworkConfig_ClientConnectionBufferTimeout]
 
@@ -140,9 +140,9 @@ out a client
 
 #### Field Value [field-value-1]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ConnectionApproval [MLAPI_Configuration_NetworkConfig_ConnectionApproval]
 
@@ -163,9 +163,9 @@ Whether or not to use connection approval
 
 #### Field Value [field-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ConnectionData [MLAPI_Configuration_NetworkConfig_ConnectionData]
 
@@ -187,9 +187,9 @@ client should get accepted
 
 #### Field Value [field-value-3]
 
-| Type                                      | Description |
-|-------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>\[\] |             |
+| Type            | Description |
+|-----------------|-------------|
+| System.Byte\[\] |             |
 
 ### CreatePlayerPrefab [MLAPI_Configuration_NetworkConfig_CreatePlayerPrefab]
 
@@ -211,9 +211,9 @@ can be overriden on a case by case basis with ConnectionApproval.
 
 #### Field Value [field-value-4]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnableEncryption [MLAPI_Configuration_NetworkConfig_EnableEncryption]
 
@@ -235,9 +235,9 @@ and authentication of messages
 
 #### Field Value [field-value-5]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnableMessageBuffering [MLAPI_Configuration_NetworkConfig_EnableMessageBuffering]
 
@@ -259,9 +259,9 @@ most out of order messages during spawn.
 
 #### Field Value [field-value-6]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnableNetworkedVar [MLAPI_Configuration_NetworkConfig_EnableNetworkedVar]
 
@@ -285,9 +285,9 @@ system.
 
 #### Field Value [field-value-7]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnableNetworkLogs [MLAPI_Configuration_NetworkConfig_EnableNetworkLogs]
 
@@ -307,9 +307,9 @@ Whether or not to enable network logs.
 
 #### Field Value [field-value-8]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnableSceneManagement [MLAPI_Configuration_NetworkConfig_EnableSceneManagement]
 
@@ -333,9 +333,9 @@ also enables PrefabSync.
 
 #### Field Value [field-value-9]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnableTimeResync [MLAPI_Configuration_NetworkConfig_EnableTimeResync]
 
@@ -358,9 +358,9 @@ be turned on
 
 #### Field Value [field-value-10]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EnsureNetworkedVarLengthSafety [MLAPI_Configuration_NetworkConfig_EnsureNetworkedVarLengthSafety]
 
@@ -383,9 +383,9 @@ bandwdith.
 
 #### Field Value [field-value-11]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### EventTickrate [MLAPI_Configuration_NetworkConfig_EventTickrate]
 
@@ -407,9 +407,9 @@ examples include SyncedVar send checking.
 
 #### Field Value [field-value-12]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ForceSamePrefabs [MLAPI_Configuration_NetworkConfig_ForceSamePrefabs]
 
@@ -431,9 +431,9 @@ connection. If you dynamically add prefabs at runtime, turn this OFF
 
 #### Field Value [field-value-13]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### LoadSceneTimeOut [MLAPI_Configuration_NetworkConfig_LoadSceneTimeOut]
 
@@ -456,9 +456,9 @@ clients to complete loading, is called anyway.
 
 #### Field Value [field-value-14]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### MaxObjectUpdatesPerTick [MLAPI_Configuration_NetworkConfig_MaxObjectUpdatesPerTick]
 
@@ -482,9 +482,9 @@ or equal to 0 for unlimited
 
 #### Field Value [field-value-15]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### MaxReceiveEventsPerTickRate [MLAPI_Configuration_NetworkConfig_MaxReceiveEventsPerTickRate]
 
@@ -506,9 +506,9 @@ prevent flooding.
 
 #### Field Value [field-value-16]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### MessageBufferTimeout [MLAPI_Configuration_NetworkConfig_MessageBufferTimeout]
 
@@ -530,9 +530,9 @@ consumed. If it is not consumed within this time, it will be dropped.
 
 #### Field Value [field-value-17]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### NetworkedPrefabs [MLAPI_Configuration_NetworkConfig_NetworkedPrefabs]
 
@@ -553,9 +553,9 @@ A list of spawnable prefabs
 
 #### Field Value [field-value-18]
 
-| Type                                                                         | Description |
-|------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<NetworkedPrefab\> |             |
+| Type                                               | Description |
+|----------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkedPrefab\> |             |
 
 ### NetworkIdRecycleDelay [MLAPI_Configuration_NetworkConfig_NetworkIdRecycleDelay]
 
@@ -577,9 +577,9 @@ reused.
 
 #### Field Value [field-value-19]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### NetworkTransport [MLAPI_Configuration_NetworkConfig_NetworkTransport]
 
@@ -623,9 +623,9 @@ The protocol version. Different versions doesn't talk to each other.
 
 #### Field Value [field-value-21]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt16</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
 
 ### ReceiveTickrate [MLAPI_Configuration_NetworkConfig_ReceiveTickrate]
 
@@ -647,9 +647,9 @@ inside are processed.
 
 #### Field Value [field-value-22]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### RecycleNetworkIds [MLAPI_Configuration_NetworkConfig_RecycleNetworkIds]
 
@@ -670,9 +670,9 @@ If true, NetworkIds will be reused after the NetworkIdRecycleDelay.
 
 #### Field Value [field-value-23]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### RegisteredScenes [MLAPI_Configuration_NetworkConfig_RegisteredScenes]
 
@@ -693,9 +693,9 @@ A list of SceneNames that can be used during networked games.
 
 #### Field Value [field-value-24]
 
-| Type                                                                                                 | Description |
-|------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<<span class="xref">System.String</span>\> |             |
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List\<System.String\> |             |
 
 ### RpcHashSize [MLAPI_Configuration_NetworkConfig_RpcHashSize]
 
@@ -740,9 +740,9 @@ The amount of seconds to keep a lag compensation position history
 
 #### Field Value [field-value-26]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ServerBase64PfxCertificate [MLAPI_Configuration_NetworkConfig_ServerBase64PfxCertificate]
 
@@ -764,9 +764,9 @@ Pfx file in base64 encoding containing private and public key
 
 #### Field Value [field-value-27]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### SignKeyExchange [MLAPI_Configuration_NetworkConfig_SignKeyExchange]
 
@@ -787,9 +787,9 @@ Whether or not to enable signed diffie hellman key exchange.
 
 #### Field Value [field-value-28]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### TimeResyncInterval [MLAPI_Configuration_NetworkConfig_TimeResyncInterval]
 
@@ -811,9 +811,9 @@ in seconds.
 
 #### Field Value [field-value-29]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### UsePrefabSync [MLAPI_Configuration_NetworkConfig_UsePrefabSync]
 
@@ -839,11 +839,11 @@ time. Useful for single projects
 
 #### Field Value [field-value-30]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-## Properties <span id="MLAPI_Configuration_NetworkConfig_ServerX509Certificate_"></span>
+## Properties 
 
 ### ServerX509Certificate [MLAPI_Configuration_NetworkConfig_ServerX509Certificate]
 
@@ -863,12 +863,9 @@ Gets the currently in use certificate
 
 #### Property Value [property-value]
 
-| Type                                                                                     | Description |
-|------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Security.Cryptography.X509Certificates.X509Certificate2</span> |             |
-
-<span
-id="MLAPI_Configuration_NetworkConfig_ServerX509CertificateBytes_"></span>
+| Type                                                           | Description |
+|----------------------------------------------------------------|-------------|
+| System.Security.Cryptography.X509Certificates.X509Certificate2 |             |
 
 ### ServerX509CertificateBytes [MLAPI_Configuration_NetworkConfig_ServerX509CertificateBytes]
 
@@ -889,11 +886,11 @@ used for handshaking
 
 #### Property Value [property-value-1]
 
-| Type                                      | Description |
-|-------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>\[\] |             |
+| Type            | Description |
+|-----------------|-------------|
+| System.Byte\[\] |             |
 
-## Methods <span id="MLAPI_Configuration_NetworkConfig_CompareConfig_"></span>
+## Methods 
 
 ### CompareConfig(UInt64) [MLAPI_Configuration_NetworkConfig_CompareConfig_System_UInt64_]
 
@@ -914,17 +911,15 @@ instances hash
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                    | Description |
-|-----------------------------------------|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">hash</span> |             |
+| Type          | Name | Description |
+|---------------|------|-------------|
+| System.UInt64 | hash |             |
 
 #### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Configuration_NetworkConfig_FromBase64_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### FromBase64(String) [MLAPI_Configuration_NetworkConfig_FromBase64_System_String_]
 
@@ -944,11 +939,9 @@ Sets the NetworkConfig data with that from a base64 encoded version
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                      | Description                |
-|-----------------------------------------|-------------------------------------------|----------------------------|
-| <span class="xref">System.String</span> | <span class="parametername">base64</span> | The base64 encoded version |
-
-<span id="MLAPI_Configuration_NetworkConfig_GetConfig_"></span>
+| Type          | Name   | Description                |
+|---------------|--------|----------------------------|
+| System.String | base64 | The base64 encoded version |
 
 ### GetConfig(Boolean) [MLAPI_Configuration_NetworkConfig_GetConfig_System_Boolean_]
 
@@ -968,17 +961,15 @@ Gets a SHA256 hash of parts of the NetworkingConfiguration instance
 
 #### Parameters [parameters-2]
 
-| Type                                     | Name                                     | Description |
-|------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> | <span class="parametername">cache</span> |             |
+| Type           | Name  | Description |
+|----------------|-------|-------------|
+| System.Boolean | cache |             |
 
 #### Returns [returns-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_Configuration_NetworkConfig_ToBase64_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### ToBase64() [MLAPI_Configuration_NetworkConfig_ToBase64]
 
@@ -998,6 +989,6 @@ Returns a base64 encoded version of the config
 
 #### Returns [returns-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |

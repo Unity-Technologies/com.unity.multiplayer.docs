@@ -28,12 +28,12 @@ Delegate type for checking spawn options
 
 ##### Parameters [parameters]
 
-| Type                                    | Name       | Description                             |
-|-----------------------------------------|------------|-----------------------------------------|
-| <span class="xref">System.UInt64</span> | \*clientId | The clientId to check spawn options for |
+| Type          | Name       | Description                             |
+|---------------|------------|-----------------------------------------|
+| System.UInt64 | \*clientId | The clientId to check spawn options for |
 
 ##### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

@@ -8,7 +8,7 @@ title: MLAPI.Collections
 
 Namespace MLAPI.Collections
 
-# Namespace MLAPI.Collections [MLAPI_Collections]
+## Namespace MLAPI.Collections [MLAPI_Collections]
 
 <div class="markdown level0 summary" markdown="1">
 

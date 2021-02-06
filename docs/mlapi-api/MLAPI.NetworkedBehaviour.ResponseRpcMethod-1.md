@@ -26,12 +26,12 @@ Delegate NetworkedBehaviour.ResponseRpcMethod\<TResult\>
 
 ##### Returns [returns]
 
-| Type                              | Description |
-|-----------------------------------|-------------|
-| <span class="xref">TResult</span> |             |
+| Type    | Description |
+|---------|-------------|
+| TResult |             |
 
 ##### Type Parameters [type-parameters]
 
-| Name                                       | Description |
-|--------------------------------------------|-------------|
-| <span class="parametername">TResult</span> |             |
+| Name    | Description |
+|---------|-------------|
+| TResult |             |

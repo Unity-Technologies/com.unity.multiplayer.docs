@@ -28,13 +28,13 @@ The delegate type used to validate certificates
 
 ##### Parameters [parameters]
 
-| Type                                                                                     | Name          | Description                                    |
-|------------------------------------------------------------------------------------------|---------------|------------------------------------------------|
-| <span class="xref">System.Security.Cryptography.X509Certificates.X509Certificate2</span> | \*certificate | The certificate to validate                    |
-| <span class="xref">System.String</span>                                                  | \*hostname    | The hostname the certificate is claiming to be |
+| Type                                                           | Name          | Description                                    |
+|----------------------------------------------------------------|---------------|------------------------------------------------|
+| System.Security.Cryptography.X509Certificates.X509Certificate2 | \*certificate | The certificate to validate                    |
+| System.String                                                  | \*hostname    | The hostname the certificate is claiming to be |
 
 ##### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

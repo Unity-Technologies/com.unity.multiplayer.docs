@@ -746,7 +746,7 @@ Object.ReferenceEquals(Object, Object)
 
     public abstract class Transport : MonoBehaviour
 
-## Properties <span id="MLAPI_Transports_Transport_IsSupported_"></span>
+## Properties 
 
 ### IsSupported [MLAPI_Transports_Transport_IsSupported]
 
@@ -767,11 +767,9 @@ current runtime context. This is used by multiplex adapters.
 
 #### Property Value [property-value]
 
-| Type                                     | Description                                 |
-|------------------------------------------|---------------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if is supported; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Transport_MLAPI_CHANNELS_"></span>
+| Type           | Description                                 |
+|----------------|---------------------------------------------|
+| System.Boolean | `true` if is supported; otherwise, `false`. |
 
 ### MLAPI_CHANNELS [MLAPI_Transports_Transport_MLAPI_CHANNELS]
 
@@ -793,8 +791,6 @@ current runtime context. This is used by multiplex adapters.
 |----------------------|-------------|
 | TransportChannel\[\] |             |
 
-<span id="MLAPI_Transports_Transport_ServerClientId_"></span>
-
 ### ServerClientId [MLAPI_Transports_Transport_ServerClientId]
 
 <div class="markdown level1 summary" markdown="1">
@@ -815,11 +811,11 @@ means "the server"
 
 #### Property Value [property-value-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
-## Methods <span id="MLAPI_Transports_Transport_DisconnectLocalClient_"></span>
+## Methods 
 
 ### DisconnectLocalClient() [MLAPI_Transports_Transport_DisconnectLocalClient]
 
@@ -836,8 +832,6 @@ Disconnects the local client from the server
 #### Declaration [declaration-3]
 
     public abstract void DisconnectLocalClient()
-
-<span id="MLAPI_Transports_Transport_DisconnectRemoteClient_"></span>
 
 ### DisconnectRemoteClient(UInt64) [MLAPI_Transports_Transport_DisconnectRemoteClient_System_UInt64_]
 
@@ -857,11 +851,9 @@ Disconnects a client from the server
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                        | Description                |
-|-----------------------------------------|---------------------------------------------|----------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId to disconnect |
-
-<span id="MLAPI_Transports_Transport_GetCurrentRtt_"></span>
+| Type          | Name     | Description                |
+|---------------|----------|----------------------------|
+| System.UInt64 | clientId | The clientId to disconnect |
 
 ### GetCurrentRtt(UInt64) [MLAPI_Transports_Transport_GetCurrentRtt_System_UInt64_]
 
@@ -881,17 +873,15 @@ Gets the round trip time for a specific client. This method is optional
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description                      |
-|-----------------------------------------|---------------------------------------------|----------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId to get the rtt from |
+| Type          | Name     | Description                      |
+|---------------|----------|----------------------------------|
+| System.UInt64 | clientId | The clientId to get the rtt from |
 
 #### Returns [returns]
 
-| Type                                    | Description                                 |
-|-----------------------------------------|---------------------------------------------|
-| <span class="xref">System.UInt64</span> | Returns the round trip time in milliseconds |
-
-<span id="MLAPI_Transports_Transport_Init_"></span>
+| Type          | Description                                 |
+|---------------|---------------------------------------------|
+| System.UInt64 | Returns the round trip time in milliseconds |
 
 ### Init() [MLAPI_Transports_Transport_Init]
 
@@ -908,8 +898,6 @@ Initializes the transport
 #### Declaration [declaration-6]
 
     public abstract void Init()
-
-<span id="MLAPI_Transports_Transport_PollEvent_"></span>
 
 ### PollEvent(out UInt64, out String, out ArraySegment\<Byte\>, out Single) [MLAPI_Transports_Transport_PollEvent_System_UInt64__System_String__System_ArraySegment_System_Byte___System_Single__]
 
@@ -930,20 +918,18 @@ precise time the event was received.
 
 #### Parameters [parameters-2]
 
-| Type                                                                                   | Name                                           | Description                                                                               |
-|----------------------------------------------------------------------------------------|------------------------------------------------|-------------------------------------------------------------------------------------------|
-| <span class="xref">System.UInt64</span>                                                | <span class="parametername">clientId</span>    | The clientId this event is for                                                            |
-| <span class="xref">System.String</span>                                                | <span class="parametername">channelName</span> | The channel the data arrived at. This is usually used when responding to things like RPCs |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | <span class="parametername">payload</span>     | The incoming data payload                                                                 |
-| <span class="xref">System.Single</span>                                                | <span class="parametername">receiveTime</span> | The time the event was received, as reported by Time.realtimeSinceStartup.                |
+| Type                               | Name        | Description                                                                               |
+|------------------------------------|-------------|-------------------------------------------------------------------------------------------|
+| System.UInt64                      | clientId    | The clientId this event is for                                                            |
+| System.String                      | channelName | The channel the data arrived at. This is usually used when responding to things like RPCs |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                                 |
+| System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup.                |
 
 #### Returns [returns-1]
 
 | Type         | Description            |
 |--------------|------------------------|
 | NetEventType | Returns the event type |
-
-<span id="MLAPI_Transports_Transport_Send_"></span>
 
 ### Send(UInt64, ArraySegment\<Byte\>, String) [MLAPI_Transports_Transport_Send_System_UInt64_System_ArraySegment_System_Byte__System_String_]
 
@@ -963,13 +949,11 @@ Send a payload to the specified clientId, data and channelName.
 
 #### Parameters [parameters-3]
 
-| Type                                                                                   | Name                                           | Description                 |
-|----------------------------------------------------------------------------------------|------------------------------------------------|-----------------------------|
-| <span class="xref">System.UInt64</span>                                                | <span class="parametername">clientId</span>    | The clientId to send to     |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | <span class="parametername">data</span>        | The data to send            |
-| <span class="xref">System.String</span>                                                | <span class="parametername">channelName</span> | The channel to send data to |
-
-<span id="MLAPI_Transports_Transport_Shutdown_"></span>
+| Type                               | Name        | Description                 |
+|------------------------------------|-------------|-----------------------------|
+| System.UInt64                      | clientId    | The clientId to send to     |
+| System.ArraySegment\<System.Byte\> | data        | The data to send            |
+| System.String                      | channelName | The channel to send data to |
 
 ### Shutdown() [MLAPI_Transports_Transport_Shutdown]
 
@@ -986,8 +970,6 @@ Shuts down the transport
 #### Declaration [declaration-9]
 
     public abstract void Shutdown()
-
-<span id="MLAPI_Transports_Transport_StartClient_"></span>
 
 ### StartClient() [MLAPI_Transports_Transport_StartClient]
 
@@ -1010,8 +992,6 @@ Connects client to server
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
-
-<span id="MLAPI_Transports_Transport_StartServer_"></span>
 
 ### StartServer() [MLAPI_Transports_Transport_StartServer]
 
