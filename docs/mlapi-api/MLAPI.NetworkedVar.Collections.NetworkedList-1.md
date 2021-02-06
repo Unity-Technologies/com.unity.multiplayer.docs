@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedList-1  
+title: MLAPI.NetworkedVar.Collections.NetworkedList-1  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedList-1
-
-title: MLAPI.NetworkedVar.Collections.NetworkedList-1
-
----
-
-Class NetworkedList\<T\>
 
 <div class="markdown level0 summary" markdown="1">
 

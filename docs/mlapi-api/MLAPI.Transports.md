@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports  
+title: MLAPI.Transports  
 ---
-
-id: MLAPI.Transports
-
-title: MLAPI.Transports
-
----
-
-Namespace MLAPI.Transports
 
 ## Namespace MLAPI.Transports [MLAPI_Transports]
 

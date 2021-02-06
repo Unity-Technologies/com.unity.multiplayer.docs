@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Profiling.NetworkProfiler  
+title: MLAPI.Profiling.NetworkProfiler  
 ---
-
-id: MLAPI.Profiling.NetworkProfiler
-
-title: MLAPI.Profiling.NetworkProfiler
-
----
-
-Class NetworkProfiler
 
 <div class="markdown level0 summary" markdown="1">
 

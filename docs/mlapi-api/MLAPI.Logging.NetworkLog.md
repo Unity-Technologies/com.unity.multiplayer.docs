@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Logging.NetworkLog  
+title: MLAPI.Logging.NetworkLog  
 ---
-
-id: MLAPI.Logging.NetworkLog
-
-title: MLAPI.Logging.NetworkLog
-
----
-
-Class NetworkLog
 
 <div class="markdown level0 summary" markdown="1">
 

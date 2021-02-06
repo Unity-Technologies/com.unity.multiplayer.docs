@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Security.CryptographyHelper.VerifyCertificateDelegate  
+title: MLAPI.Security.CryptographyHelper.VerifyCertificateDelegate  
 ---
-
-id: MLAPI.Security.CryptographyHelper.VerifyCertificateDelegate
-
-title: MLAPI.Security.CryptographyHelper.VerifyCertificateDelegate
-
----
-
-Delegate CryptographyHelper.VerifyCertificateDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

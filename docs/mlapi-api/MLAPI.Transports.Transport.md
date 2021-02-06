@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.Transport  
+title: MLAPI.Transports.Transport  
 ---
-
-id: MLAPI.Transports.Transport
-
-title: MLAPI.Transports.Transport
-
----
-
-Class Transport
 
 <div class="markdown level0 summary" markdown="1">
 

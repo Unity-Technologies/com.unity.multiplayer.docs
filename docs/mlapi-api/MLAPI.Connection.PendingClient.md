@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Connection.PendingClient  
+title: MLAPI.Connection.PendingClient  
 ---
-
-id: MLAPI.Connection.PendingClient
-
-title: MLAPI.Connection.PendingClient
-
----
-
-Class PendingClient
 
 <div class="markdown level0 summary" markdown="1">
 

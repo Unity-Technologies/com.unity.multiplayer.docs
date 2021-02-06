@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate  
+title: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate
-
-title: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate
-
----
-
-Delegate NetworkedDictionary\<TKey, TValue\>.OnDictionaryChangedDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Connection  
+title: MLAPI.Connection  
 ---
-
-id: MLAPI.Connection
-
-title: MLAPI.Connection
-
----
-
-Namespace MLAPI.Connection
 
 ## Namespace MLAPI.Connection [MLAPI_Connection]
 

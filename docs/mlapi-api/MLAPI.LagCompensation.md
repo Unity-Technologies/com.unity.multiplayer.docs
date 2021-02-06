@@ -1,12 +1,7 @@
+---  
+id: MLAPI.LagCompensation  
+title: MLAPI.LagCompensation  
 ---
-
-id: MLAPI.LagCompensation
-
-title: MLAPI.LagCompensation
-
----
-
-Namespace MLAPI.LagCompensation
 
 ## Namespace MLAPI.LagCompensation [MLAPI_LagCompensation]
 

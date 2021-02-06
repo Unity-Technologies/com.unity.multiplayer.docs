@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Prototyping  
+title: MLAPI.Prototyping  
 ---
-
-id: MLAPI.Prototyping
-
-title: MLAPI.Prototyping
-
----
-
-Namespace MLAPI.Prototyping
 
 ## Namespace MLAPI.Prototyping [MLAPI_Prototyping]
 

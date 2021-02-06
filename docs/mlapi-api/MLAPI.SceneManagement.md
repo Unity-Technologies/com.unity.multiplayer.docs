@@ -1,12 +1,7 @@
+---  
+id: MLAPI.SceneManagement  
+title: MLAPI.SceneManagement  
 ---
-
-id: MLAPI.SceneManagement
-
-title: MLAPI.SceneManagement
-
----
-
-Namespace MLAPI.SceneManagement
 
 ## Namespace MLAPI.SceneManagement [MLAPI_SceneManagement]
 

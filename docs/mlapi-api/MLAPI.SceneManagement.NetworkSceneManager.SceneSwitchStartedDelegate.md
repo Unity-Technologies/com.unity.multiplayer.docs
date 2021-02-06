@@ -1,12 +1,7 @@
+---  
+id: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate  
+title: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate  
 ---
-
-id: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
-
-title: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
-
----
-
-Delegate NetworkSceneManager.SceneSwitchStartedDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

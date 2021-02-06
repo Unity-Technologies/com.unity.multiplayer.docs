@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2  
+title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2
-
-title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2
-
----
-
-Struct NetworkedDictionaryEvent\<TKey, TValue\>
 
 <div class="markdown level0 summary" markdown="1">
 

@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging.ServerRPCAttribute  
+title: MLAPI.Messaging.ServerRPCAttribute  
 ---
-
-id: MLAPI.Messaging.ServerRPCAttribute
-
-title: MLAPI.Messaging.ServerRPCAttribute
-
----
-
-Class ServerRPCAttribute
 
 <div class="markdown level0 summary" markdown="1">
 

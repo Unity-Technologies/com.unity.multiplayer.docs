@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization  
+title: MLAPI.Serialization  
 ---
-
-id: MLAPI.Serialization
-
-title: MLAPI.Serialization
-
----
-
-Namespace MLAPI.Serialization
 
 ## Namespace MLAPI.Serialization [MLAPI_Serialization]
 

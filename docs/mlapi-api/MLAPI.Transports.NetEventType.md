@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.NetEventType  
+title: MLAPI.Transports.NetEventType  
 ---
-
-id: MLAPI.Transports.NetEventType
-
-title: MLAPI.Transports.NetEventType
-
----
-
-Enum NetEventType
 
 <div class="markdown level0 summary" markdown="1">
 

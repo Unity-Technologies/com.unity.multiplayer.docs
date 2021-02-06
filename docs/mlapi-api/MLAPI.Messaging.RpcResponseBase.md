@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging.RpcResponseBase  
+title: MLAPI.Messaging.RpcResponseBase  
 ---
-
-id: MLAPI.Messaging.RpcResponseBase
-
-title: MLAPI.Messaging.RpcResponseBase
-
----
-
-Class RpcResponseBase
 
 <div class="markdown level0 summary" markdown="1">
 

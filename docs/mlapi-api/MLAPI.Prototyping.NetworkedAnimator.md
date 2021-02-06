@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Prototyping.NetworkedAnimator  
+title: MLAPI.Prototyping.NetworkedAnimator  
 ---
-
-id: MLAPI.Prototyping.NetworkedAnimator
-
-title: MLAPI.Prototyping.NetworkedAnimator
-
----
-
-Class NetworkedAnimator
 
 <div class="markdown level0 summary" markdown="1">
 

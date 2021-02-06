@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Configuration  
+title: MLAPI.Configuration  
 ---
-
-id: MLAPI.Configuration
-
-title: MLAPI.Configuration
-
----
-
-Namespace MLAPI.Configuration
 
 ## Namespace MLAPI.Configuration [MLAPI_Configuration]
 

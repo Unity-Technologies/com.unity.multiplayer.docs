@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Messaging.RpcDelegate  
+title: MLAPI.Messaging.RpcDelegate  
 ---
-
-id: MLAPI.Messaging.RpcDelegate
-
-title: MLAPI.Messaging.RpcDelegate
-
----
-
-Delegate RpcDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

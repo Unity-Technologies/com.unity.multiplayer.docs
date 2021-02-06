@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.SerializationManager  
+title: MLAPI.Serialization.SerializationManager  
 ---
-
-id: MLAPI.Serialization.SerializationManager
-
-title: MLAPI.Serialization.SerializationManager
-
----
-
-Class SerializationManager
 
 <div class="markdown level0 summary" markdown="1">
 

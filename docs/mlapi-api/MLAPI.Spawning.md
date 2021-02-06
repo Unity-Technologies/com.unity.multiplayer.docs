@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Spawning  
+title: MLAPI.Spawning  
 ---
-
-id: MLAPI.Spawning
-
-title: MLAPI.Spawning
-
----
-
-Namespace MLAPI.Spawning
 
 ## Namespace MLAPI.Spawning [MLAPI_Spawning]
 

@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedBehaviour.RpcMethod-4  
+title: MLAPI.NetworkedBehaviour.RpcMethod-4  
 ---
-
-id: MLAPI.NetworkedBehaviour.RpcMethod-4
-
-title: MLAPI.NetworkedBehaviour.RpcMethod-4
-
----
-
-Delegate NetworkedBehaviour.RpcMethod\<T1, T2, T3, T4\>
 
 <div class="markdown level0 summary" markdown="1">
 

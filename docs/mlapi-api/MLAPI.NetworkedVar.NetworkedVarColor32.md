@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarColor32  
+title: MLAPI.NetworkedVar.NetworkedVarColor32  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarColor32
-
-title: MLAPI.NetworkedVar.NetworkedVarColor32
-
----
-
-Class NetworkedVarColor32
 
 <div class="markdown level0 summary" markdown="1">
 

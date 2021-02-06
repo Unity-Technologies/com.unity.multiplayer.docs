@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Profiling  
+title: MLAPI.Profiling  
 ---
-
-id: MLAPI.Profiling
-
-title: MLAPI.Profiling
-
----
-
-Namespace MLAPI.Profiling
 
 ## Namespace MLAPI.Profiling [MLAPI_Profiling]
 

@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Profiling.ProfilerTick  
+title: MLAPI.Profiling.ProfilerTick  
 ---
-
-id: MLAPI.Profiling.ProfilerTick
-
-title: MLAPI.Profiling.ProfilerTick
-
----
-
-Class ProfilerTick
 
 <div class="markdown level0 summary" markdown="1">
 

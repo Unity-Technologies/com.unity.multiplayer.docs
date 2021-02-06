@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.EndianHelper  
+title: MLAPI.Serialization.EndianHelper  
 ---
-
-id: MLAPI.Serialization.EndianHelper
-
-title: MLAPI.Serialization.EndianHelper
-
----
-
-Class EndianHelper
 
 <div class="markdown level0 summary" markdown="1">
 

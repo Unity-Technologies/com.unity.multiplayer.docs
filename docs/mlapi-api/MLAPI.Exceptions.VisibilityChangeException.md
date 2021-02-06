@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Exceptions.VisibilityChangeException  
+title: MLAPI.Exceptions.VisibilityChangeException  
 ---
-
-id: MLAPI.Exceptions.VisibilityChangeException
-
-title: MLAPI.Exceptions.VisibilityChangeException
-
----
-
-Class VisibilityChangeException
 
 <div class="markdown level0 summary" markdown="1">
 

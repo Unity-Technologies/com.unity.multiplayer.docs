@@ -1,12 +1,7 @@
+---  
+id: MLAPI  
+title: MLAPI  
 ---
-
-id: MLAPI
-
-title: MLAPI
-
----
-
-Namespace MLAPI
 
 ## Namespace MLAPI [MLAPI]
 

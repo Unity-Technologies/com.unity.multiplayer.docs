@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate  
+title: MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate  
 ---
-
-id: MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate
-
-title: MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate
-
----
-
-Delegate SpawnManager.SpawnHandlerDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

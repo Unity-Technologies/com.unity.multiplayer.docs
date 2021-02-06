@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVar-1  
+title: MLAPI.NetworkedVar.NetworkedVar-1  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVar-1
-
-title: MLAPI.NetworkedVar.NetworkedVar-1
-
----
-
-Class NetworkedVar\<T\>
 
 <div class="markdown level0 summary" markdown="1">
 

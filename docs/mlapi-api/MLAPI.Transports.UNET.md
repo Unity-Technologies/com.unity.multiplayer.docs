@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.UNET  
+title: MLAPI.Transports.UNET  
 ---
-
-id: MLAPI.Transports.UNET
-
-title: MLAPI.Transports.UNET
-
----
-
-Namespace MLAPI.Transports.UNET
 
 ## Namespace MLAPI.Transports.UNET [MLAPI_Transports_UNET]
 

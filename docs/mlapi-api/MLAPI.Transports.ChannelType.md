@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Transports.ChannelType  
+title: MLAPI.Transports.ChannelType  
 ---
-
-id: MLAPI.Transports.ChannelType
-
-title: MLAPI.Transports.ChannelType
-
----
-
-Enum ChannelType
 
 <div class="markdown level0 summary" markdown="1">
 

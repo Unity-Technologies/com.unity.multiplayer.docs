@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedObject  
+title: MLAPI.NetworkedObject  
 ---
-
-id: MLAPI.NetworkedObject
-
-title: MLAPI.NetworkedObject
-
----
-
-Class NetworkedObject
 
 <div class="markdown level0 summary" markdown="1">
 

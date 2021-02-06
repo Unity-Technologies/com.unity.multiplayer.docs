@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Configuration.NetworkedPrefab  
+title: MLAPI.Configuration.NetworkedPrefab  
 ---
-
-id: MLAPI.Configuration.NetworkedPrefab
-
-title: MLAPI.Configuration.NetworkedPrefab
-
----
-
-Class NetworkedPrefab
 
 <div class="markdown level0 summary" markdown="1">
 

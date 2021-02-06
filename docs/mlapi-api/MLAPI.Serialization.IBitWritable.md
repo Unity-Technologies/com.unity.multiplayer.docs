@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Serialization.IBitWritable  
+title: MLAPI.Serialization.IBitWritable  
 ---
-
-id: MLAPI.Serialization.IBitWritable
-
-title: MLAPI.Serialization.IBitWritable
-
----
-
-Interface IBitWritable
 
 <div class="markdown level0 summary" markdown="1">
 

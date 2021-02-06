@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.NetworkedVarLong  
+title: MLAPI.NetworkedVar.NetworkedVarLong  
 ---
-
-id: MLAPI.NetworkedVar.NetworkedVarLong
-
-title: MLAPI.NetworkedVar.NetworkedVarLong
-
----
-
-Class NetworkedVarLong
 
 <div class="markdown level0 summary" markdown="1">
 

@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedObject.SpawnDelegate  
+title: MLAPI.NetworkedObject.SpawnDelegate  
 ---
-
-id: MLAPI.NetworkedObject.SpawnDelegate
-
-title: MLAPI.NetworkedObject.SpawnDelegate
-
----
-
-Delegate NetworkedObject.SpawnDelegate
 
 <div class="markdown level0 summary" markdown="1">
 

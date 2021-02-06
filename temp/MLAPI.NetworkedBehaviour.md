@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedBehaviour  
+title: MLAPI.NetworkedBehaviour  
 ---
-
-id: MLAPI.NetworkedBehaviour
-
-title: MLAPI.NetworkedBehaviour
-
----
-
-Class NetworkedBehaviour
 
 <div class="markdown level0 summary" markdown="1">
 

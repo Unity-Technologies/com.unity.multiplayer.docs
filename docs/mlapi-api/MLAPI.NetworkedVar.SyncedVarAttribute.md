@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.SyncedVarAttribute  
+title: MLAPI.NetworkedVar.SyncedVarAttribute  
 ---
-
-id: MLAPI.NetworkedVar.SyncedVarAttribute
-
-title: MLAPI.NetworkedVar.SyncedVarAttribute
-
----
-
-Class SyncedVarAttribute
 
 <div class="markdown level0 summary" markdown="1">
 

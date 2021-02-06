@@ -1,12 +1,7 @@
+---  
+id: MLAPI.Prototyping.NetworkedNavMeshAgent  
+title: MLAPI.Prototyping.NetworkedNavMeshAgent  
 ---
-
-id: MLAPI.Prototyping.NetworkedNavMeshAgent
-
-title: MLAPI.Prototyping.NetworkedNavMeshAgent
-
----
-
-Class NetworkedNavMeshAgent
 
 <div class="markdown level0 summary" markdown="1">
 

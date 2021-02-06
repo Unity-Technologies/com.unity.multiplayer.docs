@@ -1,12 +1,7 @@
+---  
+id: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2  
+title: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2  
 ---
-
-id: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2
-
-title: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2
-
----
-
-Class NetworkedDictionary\<TKey, TValue\>
 
 <div class="markdown level0 summary" markdown="1">
 
