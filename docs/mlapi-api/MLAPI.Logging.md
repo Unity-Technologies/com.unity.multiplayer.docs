@@ -8,7 +8,7 @@ title: MLAPI.Logging
 
 Namespace MLAPI.Logging
 
-# Namespace MLAPI.Logging [MLAPI_Logging]
+## Namespace MLAPI.Logging [MLAPI_Logging]
 
 <div class="markdown level0 summary" markdown="1">
 

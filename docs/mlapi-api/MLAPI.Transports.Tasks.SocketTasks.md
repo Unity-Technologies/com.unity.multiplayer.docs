@@ -92,7 +92,7 @@ Object.ToString()
 
     public class SocketTasks
 
-## Properties <span id="MLAPI_Transports_Tasks_SocketTasks_AnyDone_"></span>
+## Properties 
 
 ### AnyDone [MLAPI_Transports_Tasks_SocketTasks_AnyDone]
 
@@ -112,11 +112,9 @@ Gets a value indicating whether any tasks are done.
 
 #### Property Value [property-value]
 
-| Type                                     | Description                             |
-|------------------------------------------|-----------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if any done; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Tasks_SocketTasks_AnySuccess_"></span>
+| Type           | Description                             |
+|----------------|-----------------------------------------|
+| System.Boolean | `true` if any done; otherwise, `false`. |
 
 ### AnySuccess [MLAPI_Transports_Tasks_SocketTasks_AnySuccess]
 
@@ -136,11 +134,9 @@ Gets a value indicating whether any tasks were successful.
 
 #### Property Value [property-value-1]
 
-| Type                                     | Description                                |
-|------------------------------------------|--------------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if any success; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Tasks_SocketTasks_IsDone_"></span>
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | `true` if any success; otherwise, `false`. |
 
 ### IsDone [MLAPI_Transports_Tasks_SocketTasks_IsDone]
 
@@ -160,11 +156,9 @@ Gets a value indicating whether this all tasks is done.
 
 #### Property Value [property-value-2]
 
-| Type                                     | Description                            |
-|------------------------------------------|----------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if is done; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Tasks_SocketTasks_Success_"></span>
+| Type           | Description                            |
+|----------------|----------------------------------------|
+| System.Boolean | `true` if is done; otherwise, `false`. |
 
 ### Success [MLAPI_Transports_Tasks_SocketTasks_Success]
 
@@ -184,11 +178,9 @@ Gets a value indicating whether all tasks were sucessful.
 
 #### Property Value [property-value-3]
 
-| Type                                     | Description                            |
-|------------------------------------------|----------------------------------------|
-| <span class="xref">System.Boolean</span> | `true` if success; otherwise, `false`. |
-
-<span id="MLAPI_Transports_Tasks_SocketTasks_Tasks_"></span>
+| Type           | Description                            |
+|----------------|----------------------------------------|
+| System.Boolean | `true` if success; otherwise, `false`. |
 
 ### Tasks [MLAPI_Transports_Tasks_SocketTasks_Tasks]
 

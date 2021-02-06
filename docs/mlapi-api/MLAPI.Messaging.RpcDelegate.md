@@ -28,7 +28,7 @@ Delegate definition for performance RPC's.
 
 ##### Parameters [parameters]
 
-| Type                                       | Name       | Description |
-|--------------------------------------------|------------|-------------|
-| <span class="xref">System.UInt64</span>    | \*clientId |             |
-| <span class="xref">System.IO.Stream</span> | \*stream   |             |
+| Type             | Name       | Description |
+|------------------|------------|-------------|
+| System.UInt64    | \*clientId |             |
+| System.IO.Stream | \*stream   |             |

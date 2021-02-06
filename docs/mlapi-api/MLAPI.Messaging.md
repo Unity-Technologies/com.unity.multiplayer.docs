@@ -8,7 +8,7 @@ title: MLAPI.Messaging
 
 Namespace MLAPI.Messaging
 
-# Namespace MLAPI.Messaging [MLAPI_Messaging]
+## Namespace MLAPI.Messaging [MLAPI_Messaging]
 
 <div class="markdown level0 summary" markdown="1">
 

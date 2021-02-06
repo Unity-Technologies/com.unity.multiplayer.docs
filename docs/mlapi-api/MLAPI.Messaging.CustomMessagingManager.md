@@ -94,7 +94,7 @@ Object.ToString()
 
     public static class CustomMessagingManager
 
-## Methods <span id="MLAPI_Messaging_CustomMessagingManager_RegisterNamedMessageHandler_"></span>
+## Methods 
 
 ### RegisterNamedMessageHandler(String, CustomMessagingManager.HandleNamedMessageDelegate) [MLAPI_Messaging_CustomMessagingManager_RegisterNamedMessageHandler_System_String_MLAPI_Messaging_CustomMessagingManager_HandleNamedMessageDelegate_]
 
@@ -114,13 +114,10 @@ Registers a named message handler delegate.
 
 #### Parameters [parameters]
 
-| Type                                              | Name                                        | Description                                           |
-|---------------------------------------------------|---------------------------------------------|-------------------------------------------------------|
-| <span class="xref">System.String</span>           | <span class="parametername">name</span>     | Name of the message.                                  |
-| CustomMessagingManager.HandleNamedMessageDelegate | <span class="parametername">callback</span> | The callback to run when a named message is received. |
-
-<span
-id="MLAPI_Messaging_CustomMessagingManager_SendNamedMessage_"></span>
+| Type                                              | Name     | Description                                           |
+|---------------------------------------------------|----------|-------------------------------------------------------|
+| System.String                                     | name     | Name of the message.                                  |
+| CustomMessagingManager.HandleNamedMessageDelegate | callback | The callback to run when a named message is received. |
 
 ### SendNamedMessage(String, List\<UInt64\>, Stream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendNamedMessage_System_String_System_Collections_Generic_List_System_UInt64__System_IO_Stream_System_String_MLAPI_Security_SecuritySendFlags_]
 
@@ -140,16 +137,13 @@ Sends the named message
 
 #### Parameters [parameters-1]
 
-| Type                                                                                                 | Name                                         | Description                                       |
-|------------------------------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.String</span>                                                              | <span class="parametername">name</span>      | The message name to send                          |
-| <span class="xref">System.Collections.Generic.List</span>\<<span class="xref">System.UInt64</span>\> | <span class="parametername">clientIds</span> | The clients to send to, sends to everyone if null |
-| <span class="xref">System.IO.Stream</span>                                                           | <span class="parametername">stream</span>    | The message stream containing the data            |
-| <span class="xref">System.String</span>                                                              | <span class="parametername">channel</span>   | The channel to send the data on                   |
-| SecuritySendFlags                                                                                    | <span class="parametername">security</span>  | The security settings to apply to the message     |
-
-<span
-id="MLAPI_Messaging_CustomMessagingManager_SendNamedMessage_"></span>
+| Type                                             | Name      | Description                                       |
+|--------------------------------------------------|-----------|---------------------------------------------------|
+| System.String                                    | name      | The message name to send                          |
+| System.Collections.Generic.List\<System.UInt64\> | clientIds | The clients to send to, sends to everyone if null |
+| System.IO.Stream                                 | stream    | The message stream containing the data            |
+| System.String                                    | channel   | The channel to send the data on                   |
+| SecuritySendFlags                                | security  | The security settings to apply to the message     |
 
 ### SendNamedMessage(String, UInt64, Stream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendNamedMessage_System_String_System_UInt64_System_IO_Stream_System_String_MLAPI_Security_SecuritySendFlags_]
 
@@ -169,16 +163,13 @@ Sends a named message
 
 #### Parameters [parameters-2]
 
-| Type                                       | Name                                        | Description                                   |
-|--------------------------------------------|---------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.String</span>    | <span class="parametername">name</span>     | The message name to send                      |
-| <span class="xref">System.UInt64</span>    | <span class="parametername">clientId</span> | The client to send the message to             |
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span>   | The message stream containing the data        |
-| <span class="xref">System.String</span>    | <span class="parametername">channel</span>  | The channel to send the data on               |
-| SecuritySendFlags                          | <span class="parametername">security</span> | The security settings to apply to the message |
-
-<span
-id="MLAPI_Messaging_CustomMessagingManager_SendUnnamedMessage_"></span>
+| Type              | Name     | Description                                   |
+|-------------------|----------|-----------------------------------------------|
+| System.String     | name     | The message name to send                      |
+| System.UInt64     | clientId | The client to send the message to             |
+| System.IO.Stream  | stream   | The message stream containing the data        |
+| System.String     | channel  | The channel to send the data on               |
+| SecuritySendFlags | security | The security settings to apply to the message |
 
 ### SendUnnamedMessage(List\<UInt64\>, BitStream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendUnnamedMessage_System_Collections_Generic_List_System_UInt64__MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
 
@@ -198,15 +189,12 @@ Sends unnamed message to a list of clients
 
 #### Parameters [parameters-3]
 
-| Type                                                                                                 | Name                                         | Description                                       |
-|------------------------------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Collections.Generic.List</span>\<<span class="xref">System.UInt64</span>\> | <span class="parametername">clientIds</span> | The clients to send to, sends to everyone if null |
-| BitStream                                                                                            | <span class="parametername">stream</span>    | The message stream containing the data            |
-| <span class="xref">System.String</span>                                                              | <span class="parametername">channel</span>   | The channel to send the data on                   |
-| SecuritySendFlags                                                                                    | <span class="parametername">security</span>  | The security settings to apply to the message     |
-
-<span
-id="MLAPI_Messaging_CustomMessagingManager_SendUnnamedMessage_"></span>
+| Type                                             | Name      | Description                                       |
+|--------------------------------------------------|-----------|---------------------------------------------------|
+| System.Collections.Generic.List\<System.UInt64\> | clientIds | The clients to send to, sends to everyone if null |
+| BitStream                                        | stream    | The message stream containing the data            |
+| System.String                                    | channel   | The channel to send the data on                   |
+| SecuritySendFlags                                | security  | The security settings to apply to the message     |
 
 ### SendUnnamedMessage(UInt64, BitStream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendUnnamedMessage_System_UInt64_MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
 
@@ -226,15 +214,12 @@ Sends a unnamed message to a specific client
 
 #### Parameters [parameters-4]
 
-| Type                                    | Name                                        | Description                                   |
-|-----------------------------------------|---------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The client to send the message to             |
-| BitStream                               | <span class="parametername">stream</span>   | The message stream containing the data        |
-| <span class="xref">System.String</span> | <span class="parametername">channel</span>  | The channel tos end the data on               |
-| SecuritySendFlags                       | <span class="parametername">security</span> | The security settings to apply to the message |
-
-<span
-id="MLAPI_Messaging_CustomMessagingManager_UnregisterNamedMessageHandler_"></span>
+| Type              | Name     | Description                                   |
+|-------------------|----------|-----------------------------------------------|
+| System.UInt64     | clientId | The client to send the message to             |
+| BitStream         | stream   | The message stream containing the data        |
+| System.String     | channel  | The channel tos end the data on               |
+| SecuritySendFlags | security | The security settings to apply to the message |
 
 ### UnregisterNamedMessageHandler(String) [MLAPI_Messaging_CustomMessagingManager_UnregisterNamedMessageHandler_System_String_]
 
@@ -254,9 +239,9 @@ Unregisters a named message handler.
 
 #### Parameters [parameters-5]
 
-| Type                                    | Name                                    | Description              |
-|-----------------------------------------|-----------------------------------------|--------------------------|
-| <span class="xref">System.String</span> | <span class="parametername">name</span> | The name of the message. |
+| Type          | Name | Description              |
+|---------------|------|--------------------------|
+| System.String | name | The name of the message. |
 
 ## Events
 

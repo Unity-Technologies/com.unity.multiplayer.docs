@@ -8,7 +8,7 @@ title: MLAPI.Exceptions
 
 Namespace MLAPI.Exceptions
 
-# Namespace MLAPI.Exceptions [MLAPI_Exceptions]
+## Namespace MLAPI.Exceptions [MLAPI_Exceptions]
 
 <div class="markdown level0 summary" markdown="1">
 

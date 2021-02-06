@@ -49,7 +49,7 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Attribute</span>
+System.Runtime.InteropServices.\_Attribute
 
 </div>
 
@@ -368,9 +368,9 @@ The channel to send changes on.
 
 #### Field Value [field-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### SendTickrate [MLAPI_NetworkedVar_SyncedVarAttribute_SendTickrate]
 
@@ -393,14 +393,14 @@ spawn and not update again.
 
 #### Field Value [field-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### Implements [implements]
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Attribute</span>
+System.Runtime.InteropServices.\_Attribute
 
 </div>

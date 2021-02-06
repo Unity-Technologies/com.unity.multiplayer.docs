@@ -92,7 +92,7 @@ Object.ToString()
 
     public class SceneSwitchProgress
 
-## Properties <span id="MLAPI_SceneManagement_SceneSwitchProgress_DoneClients_"></span>
+## Properties 
 
 ### DoneClients [MLAPI_SceneManagement_SceneSwitchProgress_DoneClients]
 
@@ -112,12 +112,9 @@ List of clientIds of those clients that is done loading the scene.
 
 #### Property Value [property-value]
 
-| Type                                                                                                 | Description |
-|------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<<span class="xref">System.UInt64</span>\> |             |
-
-<span
-id="MLAPI_SceneManagement_SceneSwitchProgress_IsAllClientsDoneLoading_"></span>
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List\<System.UInt64\> |             |
 
 ### IsAllClientsDoneLoading [MLAPI_SceneManagement_SceneSwitchProgress_IsAllClientsDoneLoading]
 
@@ -137,12 +134,9 @@ If all clients are done loading the scene, at the moment of completed.
 
 #### Property Value [property-value-1]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_SceneManagement_SceneSwitchProgress_IsCompleted_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsCompleted [MLAPI_SceneManagement_SceneSwitchProgress_IsCompleted]
 
@@ -163,12 +157,9 @@ the scene or a timeout has occured.
 
 #### Property Value [property-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span
-id="MLAPI_SceneManagement_SceneSwitchProgress_TimeAtInitiation_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### TimeAtInitiation [MLAPI_SceneManagement_SceneSwitchProgress_TimeAtInitiation]
 
@@ -189,9 +180,9 @@ server.
 
 #### Property Value [property-value-3]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ## Events
 

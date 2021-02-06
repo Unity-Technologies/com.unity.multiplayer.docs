@@ -26,12 +26,12 @@ Delegate NetworkedBehaviour.RpcMethod\<T1\>
 
 ##### Parameters [parameters]
 
-| Type                         | Name | Description |
-|------------------------------|------|-------------|
-| <span class="xref">T1</span> | \*t1 |             |
+| Type | Name | Description |
+|------|------|-------------|
+| T1   | \*t1 |             |
 
 ##### Type Parameters [type-parameters]
 
-| Name                                  | Description |
-|---------------------------------------|-------------|
-| <span class="parametername">T1</span> |             |
+| Name | Description |
+|------|-------------|
+| T1   |             |

@@ -113,9 +113,9 @@ The current AesKey
 
 #### Field Value [field-value]
 
-| Type                                      | Description |
-|-------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>\[\] |             |
+| Type            | Description |
+|-----------------|-------------|
+| System.Byte\[\] |             |
 
 ### ClientId [MLAPI_Connection_PendingClient_ClientId]
 
@@ -135,9 +135,9 @@ The ClientId of the client
 
 #### Field Value [field-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### ConnectionState [MLAPI_Connection_PendingClient_ConnectionState]
 

@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class NetworkProfiler
 
-## Properties <span id="MLAPI_Profiling_NetworkProfiler_IsRunning_"></span>
+## Properties 
 
 ### IsRunning [MLAPI_Profiling_NetworkProfiler_IsRunning]
 
@@ -112,11 +112,9 @@ Whether or not the profiler is recording data
 
 #### Property Value [property-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_Profiling_NetworkProfiler_Ticks_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Ticks [MLAPI_Profiling_NetworkProfiler_Ticks]
 
@@ -140,7 +138,7 @@ The ticks that has been recorded
 |----------------------------|-------------|
 | FixedQueue\<ProfilerTick\> |             |
 
-## Methods <span id="MLAPI_Profiling_NetworkProfiler_Start_"></span>
+## Methods 
 
 ### Start(Int32) [MLAPI_Profiling_NetworkProfiler_Start_System_Int32_]
 
@@ -160,11 +158,9 @@ Starts recording data for the Profiler
 
 #### Parameters [parameters]
 
-| Type                                   | Name                                             | Description                           |
-|----------------------------------------|--------------------------------------------------|---------------------------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">historyLength</span> | The amount of ticks to keep in memory |
-
-<span id="MLAPI_Profiling_NetworkProfiler_Stop_"></span>
+| Type         | Name          | Description                           |
+|--------------|---------------|---------------------------------------|
+| System.Int32 | historyLength | The amount of ticks to keep in memory |
 
 ### Stop() [MLAPI_Profiling_NetworkProfiler_Stop]
 
@@ -181,8 +177,6 @@ Stops recording data
 #### Declaration [declaration-3]
 
     public static void Stop()
-
-<span id="MLAPI_Profiling_NetworkProfiler_Stop_"></span>
 
 ### Stop(ref ProfilerTick\[\]) [MLAPI_Profiling_NetworkProfiler_Stop_MLAPI_Profiling_ProfilerTick____]
 
@@ -203,17 +197,15 @@ returns the length;
 
 #### Parameters [parameters-1]
 
-| Type             | Name                                          | Description                       |
-|------------------|-----------------------------------------------|-----------------------------------|
-| ProfilerTick\[\] | <span class="parametername">tickBuffer</span> | The buffer to fill with the ticks |
+| Type             | Name       | Description                       |
+|------------------|------------|-----------------------------------|
+| ProfilerTick\[\] | tickBuffer | The buffer to fill with the ticks |
 
 #### Returns [returns]
 
-| Type                                   | Description                  |
-|----------------------------------------|------------------------------|
-| <span class="xref">System.Int32</span> | The number of ticks recorded |
-
-<span id="MLAPI_Profiling_NetworkProfiler_Stop_"></span>
+| Type         | Description                  |
+|--------------|------------------------------|
+| System.Int32 | The number of ticks recorded |
 
 ### Stop(ref List\<ProfilerTick\>) [MLAPI_Profiling_NetworkProfiler_Stop_System_Collections_Generic_List_MLAPI_Profiling_ProfilerTick___]
 
@@ -234,12 +226,12 @@ returns the length;
 
 #### Parameters [parameters-2]
 
-| Type                                                                      | Name                                          | Description                       |
-|---------------------------------------------------------------------------|-----------------------------------------------|-----------------------------------|
-| <span class="xref">System.Collections.Generic.List</span>\<ProfilerTick\> | <span class="parametername">tickBuffer</span> | The buffer to fill with the ticks |
+| Type                                            | Name       | Description                       |
+|-------------------------------------------------|------------|-----------------------------------|
+| System.Collections.Generic.List\<ProfilerTick\> | tickBuffer | The buffer to fill with the ticks |
 
 #### Returns [returns-1]
 
-| Type                                   | Description                  |
-|----------------------------------------|------------------------------|
-| <span class="xref">System.Int32</span> | The number of ticks recorded |
+| Type         | Description                  |
+|--------------|------------------------------|
+| System.Int32 | The number of ticks recorded |

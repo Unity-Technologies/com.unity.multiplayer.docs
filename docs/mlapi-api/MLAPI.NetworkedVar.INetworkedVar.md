@@ -26,7 +26,7 @@ Interface for networked value containers
 
     public interface INetworkedVar
 
-## Methods <span id="MLAPI_NetworkedVar_INetworkedVar_CanClientRead_"></span>
+## Methods 
 
 ### CanClientRead(UInt64) [MLAPI_NetworkedVar_INetworkedVar_CanClientRead_System_UInt64_]
 
@@ -46,17 +46,15 @@ Gets Whether or not a specific client can read to the varaible
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                        | Description                       |
-|-----------------------------------------|---------------------------------------------|-----------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId of the remote client |
+| Type          | Name     | Description                       |
+|---------------|----------|-----------------------------------|
+| System.UInt64 | clientId | The clientId of the remote client |
 
 #### Returns [returns]
 
-| Type                                     | Description                                        |
-|------------------------------------------|----------------------------------------------------|
-| <span class="xref">System.Boolean</span> | Whether or not the client can read to the variable |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_CanClientWrite_"></span>
+| Type           | Description                                        |
+|----------------|----------------------------------------------------|
+| System.Boolean | Whether or not the client can read to the variable |
 
 ### CanClientWrite(UInt64) [MLAPI_NetworkedVar_INetworkedVar_CanClientWrite_System_UInt64_]
 
@@ -76,17 +74,15 @@ Gets Whether or not a specific client can write to the varaible
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description                       |
-|-----------------------------------------|---------------------------------------------|-----------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId of the remote client |
+| Type          | Name     | Description                       |
+|---------------|----------|-----------------------------------|
+| System.UInt64 | clientId | The clientId of the remote client |
 
 #### Returns [returns-1]
 
-| Type                                     | Description                                         |
-|------------------------------------------|-----------------------------------------------------|
-| <span class="xref">System.Boolean</span> | Whether or not the client can write to the variable |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_GetChannel_"></span>
+| Type           | Description                                         |
+|----------------|-----------------------------------------------------|
+| System.Boolean | Whether or not the client can write to the variable |
 
 ### GetChannel() [MLAPI_NetworkedVar_INetworkedVar_GetChannel]
 
@@ -106,11 +102,9 @@ Returns the name of the channel to be used for syncing
 
 #### Returns [returns-2]
 
-| Type                                    | Description                                    |
-|-----------------------------------------|------------------------------------------------|
-| <span class="xref">System.String</span> | The name of the channel to be used for syncing |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_IsDirty_"></span>
+| Type          | Description                                    |
+|---------------|------------------------------------------------|
+| System.String | The name of the channel to be used for syncing |
 
 ### IsDirty() [MLAPI_NetworkedVar_INetworkedVar_IsDirty]
 
@@ -130,11 +124,9 @@ Gets Whether or not the container is dirty
 
 #### Returns [returns-3]
 
-| Type                                     | Description                           |
-|------------------------------------------|---------------------------------------|
-| <span class="xref">System.Boolean</span> | Whether or not the container is dirty |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_ReadDelta_"></span>
+| Type           | Description                           |
+|----------------|---------------------------------------|
+| System.Boolean | Whether or not the container is dirty |
 
 ### ReadDelta(Stream, Boolean) [MLAPI_NetworkedVar_INetworkedVar_ReadDelta_System_IO_Stream_System_Boolean_]
 
@@ -154,12 +146,10 @@ Reads delta from the reader and applies them to the internal value
 
 #### Parameters [parameters-2]
 
-| Type                                       | Name                                              | Description                                                  |
-|--------------------------------------------|---------------------------------------------------|--------------------------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span>         | The stream to read the delta from                            |
-| <span class="xref">System.Boolean</span>   | <span class="parametername">keepDirtyDelta</span> | Whether or not the delta should be kept as dirty or consumed |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_ReadField_"></span>
+| Type             | Name           | Description                                                  |
+|------------------|----------------|--------------------------------------------------------------|
+| System.IO.Stream | stream         | The stream to read the delta from                            |
+| System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed |
 
 ### ReadField(Stream) [MLAPI_NetworkedVar_INetworkedVar_ReadField_System_IO_Stream_]
 
@@ -179,11 +169,9 @@ Reads the complete state from the reader and applies it
 
 #### Parameters [parameters-3]
 
-| Type                                       | Name                                      | Description                       |
-|--------------------------------------------|-------------------------------------------|-----------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to read the state from |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_ResetDirty_"></span>
+| Type             | Name   | Description                       |
+|------------------|--------|-----------------------------------|
+| System.IO.Stream | stream | The stream to read the state from |
 
 ### ResetDirty() [MLAPI_NetworkedVar_INetworkedVar_ResetDirty]
 
@@ -200,9 +188,6 @@ Resets the dirty state and marks the variable as synced / clean
 #### Declaration [declaration-6]
 
     void ResetDirty()
-
-<span
-id="MLAPI_NetworkedVar_INetworkedVar_SetNetworkedBehaviour_"></span>
 
 ### SetNetworkedBehaviour(NetworkedBehaviour) [MLAPI_NetworkedVar_INetworkedVar_SetNetworkedBehaviour_MLAPI_NetworkedBehaviour_]
 
@@ -222,11 +207,9 @@ Sets NetworkedBehaviour the container belongs to.
 
 #### Parameters [parameters-4]
 
-| Type               | Name                                         | Description                            |
-|--------------------|----------------------------------------------|----------------------------------------|
-| NetworkedBehaviour | <span class="parametername">behaviour</span> | The behaviour the container behaves to |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_WriteDelta_"></span>
+| Type               | Name      | Description                            |
+|--------------------|-----------|----------------------------------------|
+| NetworkedBehaviour | behaviour | The behaviour the container behaves to |
 
 ### WriteDelta(Stream) [MLAPI_NetworkedVar_INetworkedVar_WriteDelta_System_IO_Stream_]
 
@@ -247,11 +230,9 @@ last dirty, to the writer
 
 #### Parameters [parameters-5]
 
-| Type                                       | Name                                      | Description                              |
-|--------------------------------------------|-------------------------------------------|------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to write the dirty changes to |
-
-<span id="MLAPI_NetworkedVar_INetworkedVar_WriteField_"></span>
+| Type             | Name   | Description                              |
+|------------------|--------|------------------------------------------|
+| System.IO.Stream | stream | The stream to write the dirty changes to |
 
 ### WriteField(Stream) [MLAPI_NetworkedVar_INetworkedVar_WriteField_System_IO_Stream_]
 
@@ -271,6 +252,6 @@ Writes the complete state of the variable to the writer
 
 #### Parameters [parameters-6]
 
-| Type                                       | Name                                      | Description                      |
-|--------------------------------------------|-------------------------------------------|----------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to write the state to |
+| Type             | Name   | Description                      |
+|------------------|--------|----------------------------------|
+| System.IO.Stream | stream | The stream to write the state to |

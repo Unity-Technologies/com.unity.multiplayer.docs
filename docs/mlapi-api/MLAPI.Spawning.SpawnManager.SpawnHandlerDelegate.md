@@ -28,10 +28,10 @@ The delegate used when spawning a networked object
 
 ##### Parameters [parameters]
 
-| Type                                             | Name       | Description                           |
-|--------------------------------------------------|------------|---------------------------------------|
-| <span class="xref">UnityEngine.Vector3</span>    | \*position | The position to spawn the object at   |
-| <span class="xref">UnityEngine.Quaternion</span> | \*rotation | The rotation to spawn the object with |
+| Type                   | Name       | Description                           |
+|------------------------|------------|---------------------------------------|
+| UnityEngine.Vector3    | \*position | The position to spawn the object at   |
+| UnityEngine.Quaternion | \*rotation | The rotation to spawn the object with |
 
 ##### Returns [returns]
 

@@ -756,9 +756,9 @@ only populated on the server.
 
 #### Field Value [field-value]
 
-| Type                                                                                                                        | Description |
-|-----------------------------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.Dictionary</span>\<<span class="xref">System.UInt64</span>, NetworkedClient\> |             |
+| Type                                                                    | Description |
+|-------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary\<System.UInt64, NetworkedClient\> |             |
 
 ### ConnectedClientsList [MLAPI_NetworkingManager_ConnectedClientsList]
 
@@ -778,9 +778,9 @@ Gets a list of connected clients. This is only populated on the server.
 
 #### Field Value [field-value-1]
 
-| Type                                                                         | Description |
-|------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<NetworkedClient\> |             |
+| Type                                               | Description |
+|----------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkedClient\> |             |
 
 ### DontDestroy [MLAPI_NetworkingManager_DontDestroy]
 
@@ -802,9 +802,9 @@ DontDestroyOnLoad
 
 #### Field Value [field-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### LogLevel [MLAPI_NetworkingManager_LogLevel]
 
@@ -872,9 +872,9 @@ the server.
 
 #### Field Value [field-value-5]
 
-| Type                                                                                                                      | Description |
-|---------------------------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.Dictionary</span>\<<span class="xref">System.UInt64</span>, PendingClient\> |             |
+| Type                                                                  | Description |
+|-----------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary\<System.UInt64, PendingClient\> |             |
 
 ### RunInBackground [MLAPI_NetworkingManager_RunInBackground]
 
@@ -895,11 +895,11 @@ Gets or sets if the application should be set to run in background
 
 #### Field Value [field-value-6]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-## Properties <span id="MLAPI_NetworkingManager_ConnectedHostname_"></span>
+## Properties 
 
 ### ConnectedHostname [MLAPI_NetworkingManager_ConnectedHostname]
 
@@ -919,11 +919,9 @@ The current hostname we are connected to, used to validate certificate
 
 #### Property Value [property-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
-
-<span id="MLAPI_NetworkingManager_IsClient_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### IsClient [MLAPI_NetworkingManager_IsClient]
 
@@ -943,11 +941,9 @@ Gets Whether or not a client is running
 
 #### Property Value [property-value-1]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkingManager_IsConnectedClient_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsConnectedClient [MLAPI_NetworkingManager_IsConnectedClient]
 
@@ -967,11 +963,9 @@ Gets if we are connected as a client
 
 #### Property Value [property-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkingManager_IsHost_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsHost [MLAPI_NetworkingManager_IsHost]
 
@@ -991,11 +985,9 @@ Gets if we are running as host
 
 #### Property Value [property-value-3]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkingManager_IsListening_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsListening [MLAPI_NetworkingManager_IsListening]
 
@@ -1015,11 +1007,9 @@ Gets Whether or not we are listening for connections
 
 #### Property Value [property-value-4]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkingManager_IsServer_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsServer [MLAPI_NetworkingManager_IsServer]
 
@@ -1039,11 +1029,9 @@ Gets Whether or not a server is running
 
 #### Property Value [property-value-5]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkingManager_LocalClientId_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### LocalClientId [MLAPI_NetworkingManager_LocalClientId]
 
@@ -1064,11 +1052,9 @@ clients
 
 #### Property Value [property-value-6]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_NetworkingManager_NetworkTime_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### NetworkTime [MLAPI_NetworkingManager_NetworkTime]
 
@@ -1089,11 +1075,9 @@ application started. Is replicated across all clients
 
 #### Property Value [property-value-7]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
-
-<span id="MLAPI_NetworkingManager_ServerClientId_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### ServerClientId [MLAPI_NetworkingManager_ServerClientId]
 
@@ -1113,11 +1097,9 @@ Gets the networkId of the server
 
 #### Property Value [property-value-8]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_NetworkingManager_Singleton_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### Singleton [MLAPI_NetworkingManager_Singleton]
 
@@ -1141,7 +1123,7 @@ The singleton instance of the NetworkingManager
 |-------------------|-------------|
 | NetworkingManager |             |
 
-## Methods <span id="MLAPI_NetworkingManager_DisconnectClient_"></span>
+## Methods 
 
 ### DisconnectClient(UInt64) [MLAPI_NetworkingManager_DisconnectClient_System_UInt64_]
 
@@ -1161,11 +1143,9 @@ Disconnects the remote client.
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                        | Description                |
-|-----------------------------------------|---------------------------------------------|----------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The ClientId to disconnect |
-
-<span id="MLAPI_NetworkingManager_SendCustomMessage_"></span>
+| Type          | Name     | Description                |
+|---------------|----------|----------------------------|
+| System.UInt64 | clientId | The ClientId to disconnect |
 
 ### SendCustomMessage(List\<UInt64\>, BitStream, String, SecuritySendFlags) [MLAPI_NetworkingManager_SendCustomMessage_System_Collections_Generic_List_System_UInt64__MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
 
@@ -1186,14 +1166,12 @@ Sends unnamed message to a list of clients
 
 #### Parameters [parameters-1]
 
-| Type                                                                                                 | Name                                         | Description                                       |
-|------------------------------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Collections.Generic.List</span>\<<span class="xref">System.UInt64</span>\> | <span class="parametername">clientIds</span> | The clients to send to, sends to everyone if null |
-| BitStream                                                                                            | <span class="parametername">stream</span>    | The message stream containing the data            |
-| <span class="xref">System.String</span>                                                              | <span class="parametername">channel</span>   | The channel to send the data on                   |
-| SecuritySendFlags                                                                                    | <span class="parametername">security</span>  | The security settings to apply to the message     |
-
-<span id="MLAPI_NetworkingManager_SendCustomMessage_"></span>
+| Type                                             | Name      | Description                                       |
+|--------------------------------------------------|-----------|---------------------------------------------------|
+| System.Collections.Generic.List\<System.UInt64\> | clientIds | The clients to send to, sends to everyone if null |
+| BitStream                                        | stream    | The message stream containing the data            |
+| System.String                                    | channel   | The channel to send the data on                   |
+| SecuritySendFlags                                | security  | The security settings to apply to the message     |
 
 ### SendCustomMessage(UInt64, BitStream, String, SecuritySendFlags) [MLAPI_NetworkingManager_SendCustomMessage_System_UInt64_MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
 
@@ -1214,14 +1192,12 @@ Sends a unnamed message to a specific client
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                        | Description                                   |
-|-----------------------------------------|---------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The client to send the message to             |
-| BitStream                               | <span class="parametername">stream</span>   | The message stream containing the data        |
-| <span class="xref">System.String</span> | <span class="parametername">channel</span>  | The channel tos end the data on               |
-| SecuritySendFlags                       | <span class="parametername">security</span> | The security settings to apply to the message |
-
-<span id="MLAPI_NetworkingManager_StartClient_"></span>
+| Type              | Name     | Description                                   |
+|-------------------|----------|-----------------------------------------------|
+| System.UInt64     | clientId | The client to send the message to             |
+| BitStream         | stream   | The message stream containing the data        |
+| System.String     | channel  | The channel tos end the data on               |
+| SecuritySendFlags | security | The security settings to apply to the message |
 
 ### StartClient() [MLAPI_NetworkingManager_StartClient]
 
@@ -1245,8 +1221,6 @@ Starts a client
 |-------------|-------------|
 | SocketTasks |             |
 
-<span id="MLAPI_NetworkingManager_StartHost_"></span>
-
 ### StartHost(Nullable\<Vector3\>, Nullable\<Quaternion\>, Nullable\<Boolean\>, Nullable\<UInt64\>, Stream) [MLAPI_NetworkingManager_StartHost_System_Nullable_UnityEngine_Vector3__System_Nullable_UnityEngine_Quaternion__System_Nullable_System_Boolean__System_Nullable_System_UInt64__System_IO_Stream_]
 
 <div class="markdown level1 summary" markdown="1">
@@ -1265,21 +1239,19 @@ Starts a Host
 
 #### Parameters [parameters-3]
 
-| Type                                                                                          | Name                                                  | Description |
-|-----------------------------------------------------------------------------------------------|-------------------------------------------------------|-------------|
-| <span class="xref">System.Nullable</span>\<<span class="xref">UnityEngine.Vector3</span>\>    | <span class="parametername">position</span>           |             |
-| <span class="xref">System.Nullable</span>\<<span class="xref">UnityEngine.Quaternion</span>\> | <span class="parametername">rotation</span>           |             |
-| <span class="xref">System.Nullable</span>\<<span class="xref">System.Boolean</span>\>         | <span class="parametername">createPlayerObject</span> |             |
-| <span class="xref">System.Nullable</span>\<<span class="xref">System.UInt64</span>\>          | <span class="parametername">prefabHash</span>         |             |
-| <span class="xref">System.IO.Stream</span>                                                    | <span class="parametername">payloadStream</span>      |             |
+| Type                                      | Name               | Description |
+|-------------------------------------------|--------------------|-------------|
+| System.Nullable\<UnityEngine.Vector3\>    | position           |             |
+| System.Nullable\<UnityEngine.Quaternion\> | rotation           |             |
+| System.Nullable\<System.Boolean\>         | createPlayerObject |             |
+| System.Nullable\<System.UInt64\>          | prefabHash         |             |
+| System.IO.Stream                          | payloadStream      |             |
 
 #### Returns [returns-1]
 
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
-
-<span id="MLAPI_NetworkingManager_StartServer_"></span>
 
 ### StartServer() [MLAPI_NetworkingManager_StartServer]
 
@@ -1303,8 +1275,6 @@ Starts a server
 |-------------|-------------|
 | SocketTasks |             |
 
-<span id="MLAPI_NetworkingManager_StopClient_"></span>
-
 ### StopClient() [MLAPI_NetworkingManager_StopClient]
 
 <div class="markdown level1 summary" markdown="1">
@@ -1321,8 +1291,6 @@ Stops the running client
 
     public void StopClient()
 
-<span id="MLAPI_NetworkingManager_StopHost_"></span>
-
 ### StopHost() [MLAPI_NetworkingManager_StopHost]
 
 <div class="markdown level1 summary" markdown="1">
@@ -1338,8 +1306,6 @@ Stops the running host
 #### Declaration [declaration-24]
 
     public void StopHost()
-
-<span id="MLAPI_NetworkingManager_StopServer_"></span>
 
 ### StopServer() [MLAPI_NetworkingManager_StopServer]
 
@@ -1377,9 +1343,9 @@ The callback to invoke during connection approval
 
 #### Event Type [event-type]
 
-| Type                                                                                                                                                                        | Description |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Action</span>\<<span class="xref">System.Byte</span>\[\], <span class="xref">System.UInt64</span>, NetworkingManager.ConnectionApprovedDelegate\> |             |
+| Type                                                                                          | Description |
+|-----------------------------------------------------------------------------------------------|-------------|
+| System.Action\<System.Byte\[\], System.UInt64, NetworkingManager.ConnectionApprovedDelegate\> |             |
 
 ### OnClientConnectedCallback [MLAPI_NetworkingManager_OnClientConnectedCallback]
 
@@ -1400,9 +1366,9 @@ on the server and on the local client that connects.
 
 #### Event Type [event-type-1]
 
-| Type                                                                               | Description |
-|------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Action</span>\<<span class="xref">System.UInt64</span>\> |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| System.Action\<System.UInt64\> |             |
 
 ### OnClientDisconnectCallback [MLAPI_NetworkingManager_OnClientDisconnectCallback]
 
@@ -1423,9 +1389,9 @@ ran on the server and on the local client that disconnects.
 
 #### Event Type [event-type-2]
 
-| Type                                                                               | Description |
-|------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Action</span>\<<span class="xref">System.UInt64</span>\> |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| System.Action\<System.UInt64\> |             |
 
 ### OnIncomingCustomMessage [MLAPI_NetworkingManager_OnIncomingCustomMessage]
 
@@ -1466,6 +1432,6 @@ The callback to invoke once the server is ready
 
 #### Event Type [event-type-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Action</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.Action |             |

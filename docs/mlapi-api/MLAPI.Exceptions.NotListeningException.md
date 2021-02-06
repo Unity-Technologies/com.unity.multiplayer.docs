@@ -49,13 +49,13 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Exception</span>
+System.Runtime.InteropServices.\_Exception
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.Serialization.ISerializable</span>
+System.Runtime.Serialization.ISerializable
 
 </div>
 
@@ -177,7 +177,7 @@ Object.ReferenceEquals(Object, Object)
 
     public class NotListeningException : Exception, _Exception, ISerializable
 
-## Constructors <span id="MLAPI_Exceptions_NotListeningException__ctor_"></span>
+## Constructors 
 
 ### NotListeningException() [MLAPI_Exceptions_NotListeningException__ctor]
 
@@ -194,8 +194,6 @@ Constructs a NotListeningException
 #### Declaration [declaration]
 
     public NotListeningException()
-
-<span id="MLAPI_Exceptions_NotListeningException__ctor_"></span>
 
 ### NotListeningException(String) [MLAPI_Exceptions_NotListeningException__ctor_System_String_]
 
@@ -215,11 +213,9 @@ Constructs a NotListeningException with a message
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                       | Description           |
-|-----------------------------------------|--------------------------------------------|-----------------------|
-| <span class="xref">System.String</span> | <span class="parametername">message</span> | The exception message |
-
-<span id="MLAPI_Exceptions_NotListeningException__ctor_"></span>
+| Type          | Name    | Description           |
+|---------------|---------|-----------------------|
+| System.String | message | The exception message |
 
 ### NotListeningException(String, Exception) [MLAPI_Exceptions_NotListeningException__ctor_System_String_System_Exception_]
 
@@ -239,21 +235,21 @@ Constructs a NotListeningException with a message and a inner exception
 
 #### Parameters [parameters-1]
 
-| Type                                       | Name                                       | Description           |
-|--------------------------------------------|--------------------------------------------|-----------------------|
-| <span class="xref">System.String</span>    | <span class="parametername">message</span> | The exception message |
-| <span class="xref">System.Exception</span> | <span class="parametername">inner</span>   | The inner exception   |
+| Type             | Name    | Description           |
+|------------------|---------|-----------------------|
+| System.String    | message | The exception message |
+| System.Exception | inner   | The inner exception   |
 
 ### Implements [implements]
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Exception</span>
+System.Runtime.InteropServices.\_Exception
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.Serialization.ISerializable</span>
+System.Runtime.Serialization.ISerializable
 
 </div>

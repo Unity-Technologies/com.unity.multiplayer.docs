@@ -112,9 +112,9 @@ The id of the tick
 
 #### Field Value [field-value]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### Events [MLAPI_Profiling_ProfilerTick_Events]
 
@@ -134,9 +134,9 @@ The events that occured during this tick
 
 #### Field Value [field-value-1]
 
-| Type                                                                   | Description |
-|------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<TickEvent\> |             |
+| Type                                         | Description |
+|----------------------------------------------|-------------|
+| System.Collections.Generic.List\<TickEvent\> |             |
 
 ### Frame [MLAPI_Profiling_ProfilerTick_Frame]
 
@@ -156,9 +156,9 @@ The frame the tick executed on
 
 #### Field Value [field-value-2]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### Type [MLAPI_Profiling_ProfilerTick_Type]
 
@@ -182,7 +182,7 @@ The type of tick
 |----------|-------------|
 | TickType |             |
 
-## Properties <span id="MLAPI_Profiling_ProfilerTick_Bytes_"></span>
+## Properties 
 
 ### Bytes [MLAPI_Profiling_ProfilerTick_Bytes]
 
@@ -202,11 +202,11 @@ The amount of bytes that were sent and / or received during this tick
 
 #### Property Value [property-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt32</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
 
-## Methods <span id="MLAPI_Profiling_ProfilerTick_FromStream_"></span>
+## Methods 
 
 ### FromStream(Stream) [MLAPI_Profiling_ProfilerTick_FromStream_System_IO_Stream_]
 
@@ -226,17 +226,15 @@ Creates a ProfilerTick from data in the provided stream
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description                                 |
-|--------------------------------------------|-------------------------------------------|---------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream containing the ProfilerTick data |
+| Type             | Name   | Description                                 |
+|------------------|--------|---------------------------------------------|
+| System.IO.Stream | stream | The stream containing the ProfilerTick data |
 
 #### Returns [returns]
 
 | Type         | Description                                     |
 |--------------|-------------------------------------------------|
 | ProfilerTick | The ProfilerTick with data read from the stream |
-
-<span id="MLAPI_Profiling_ProfilerTick_SerializeToStream_"></span>
 
 ### SerializeToStream(Stream) [MLAPI_Profiling_ProfilerTick_SerializeToStream_System_IO_Stream_]
 
@@ -256,6 +254,6 @@ Writes the current ProfilerTick to the stream
 
 #### Parameters [parameters-1]
 
-| Type                                       | Name                                      | Description           |
-|--------------------------------------------|-------------------------------------------|-----------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream containing |
+| Type             | Name   | Description           |
+|------------------|--------|-----------------------|
+| System.IO.Stream | stream | The stream containing |

@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class BitReaderPool
 
-## Methods <span id="MLAPI_Serialization_Pooled_BitReaderPool_GetReader_"></span>
+## Methods 
 
 ### GetReader(Stream) [MLAPI_Serialization_Pooled_BitReaderPool_GetReader_System_IO_Stream_]
 
@@ -112,18 +112,15 @@ Retrieves a PooledBitReader
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description                            |
-|--------------------------------------------|-------------------------------------------|----------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream the reader should read from |
+| Type             | Name   | Description                            |
+|------------------|--------|----------------------------------------|
+| System.IO.Stream | stream | The stream the reader should read from |
 
 #### Returns [returns]
 
 | Type            | Description       |
 |-----------------|-------------------|
 | PooledBitReader | A PooledBitReader |
-
-<span
-id="MLAPI_Serialization_Pooled_BitReaderPool_PutBackInPool_"></span>
 
 ### PutBackInPool(PooledBitReader) [MLAPI_Serialization_Pooled_BitReaderPool_PutBackInPool_MLAPI_Serialization_Pooled_PooledBitReader_]
 
@@ -143,6 +140,6 @@ Puts a PooledBitReader back into the pool
 
 #### Parameters [parameters-1]
 
-| Type            | Name                                      | Description                   |
-|-----------------|-------------------------------------------|-------------------------------|
-| PooledBitReader | <span class="parametername">reader</span> | The reader to put in the pool |
+| Type            | Name   | Description                   |
+|-----------------|--------|-------------------------------|
+| PooledBitReader | reader | The reader to put in the pool |

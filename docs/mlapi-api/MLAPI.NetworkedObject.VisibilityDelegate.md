@@ -28,12 +28,12 @@ Delegate type for checking visibility
 
 ##### Parameters [parameters]
 
-| Type                                    | Name       | Description                          |
-|-----------------------------------------|------------|--------------------------------------|
-| <span class="xref">System.UInt64</span> | \*clientId | The clientId to check visibility for |
+| Type          | Name       | Description                          |
+|---------------|------------|--------------------------------------|
+| System.UInt64 | \*clientId | The clientId to check visibility for |
 
 ##### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

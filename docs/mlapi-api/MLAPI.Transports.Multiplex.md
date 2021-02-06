@@ -8,7 +8,7 @@ title: MLAPI.Transports.Multiplex
 
 Namespace MLAPI.Transports.Multiplex
 
-# Namespace MLAPI.Transports.Multiplex [MLAPI_Transports_Multiplex]
+## Namespace MLAPI.Transports.Multiplex [MLAPI_Transports_Multiplex]
 
 <div class="markdown level0 summary" markdown="1">
 

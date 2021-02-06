@@ -48,13 +48,13 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Exception</span>
+System.Runtime.InteropServices.\_Exception
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.Serialization.ISerializable</span>
+System.Runtime.Serialization.ISerializable
 
 </div>
 
@@ -176,7 +176,7 @@ Object.ReferenceEquals(Object, Object)
 
     public class NetworkConfigurationException : Exception, _Exception, ISerializable
 
-## Constructors <span id="MLAPI_Exceptions_NetworkConfigurationException__ctor_"></span>
+## Constructors 
 
 ### NetworkConfigurationException() [MLAPI_Exceptions_NetworkConfigurationException__ctor]
 
@@ -193,8 +193,6 @@ Constructs a NetworkConfigurationException
 #### Declaration [declaration]
 
     public NetworkConfigurationException()
-
-<span id="MLAPI_Exceptions_NetworkConfigurationException__ctor_"></span>
 
 ### NetworkConfigurationException(String) [MLAPI_Exceptions_NetworkConfigurationException__ctor_System_String_]
 
@@ -214,11 +212,9 @@ Constructs a NetworkConfigurationException with a message
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                       | Description           |
-|-----------------------------------------|--------------------------------------------|-----------------------|
-| <span class="xref">System.String</span> | <span class="parametername">message</span> | The exception message |
-
-<span id="MLAPI_Exceptions_NetworkConfigurationException__ctor_"></span>
+| Type          | Name    | Description           |
+|---------------|---------|-----------------------|
+| System.String | message | The exception message |
 
 ### NetworkConfigurationException(String, Exception) [MLAPI_Exceptions_NetworkConfigurationException__ctor_System_String_System_Exception_]
 
@@ -239,21 +235,21 @@ exception
 
 #### Parameters [parameters-1]
 
-| Type                                       | Name                                       | Description           |
-|--------------------------------------------|--------------------------------------------|-----------------------|
-| <span class="xref">System.String</span>    | <span class="parametername">message</span> | The exception message |
-| <span class="xref">System.Exception</span> | <span class="parametername">inner</span>   | The inner exception   |
+| Type             | Name    | Description           |
+|------------------|---------|-----------------------|
+| System.String    | message | The exception message |
+| System.Exception | inner   | The inner exception   |
 
 ### Implements [implements]
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Exception</span>
+System.Runtime.InteropServices.\_Exception
 
 </div>
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.Serialization.ISerializable</span>
+System.Runtime.Serialization.ISerializable
 
 </div>

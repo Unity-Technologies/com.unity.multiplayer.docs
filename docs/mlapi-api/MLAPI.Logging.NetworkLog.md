@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class NetworkLog
 
-## Methods <span id="MLAPI_Logging_NetworkLog_LogErrorServer_"></span>
+## Methods 
 
 ### LogErrorServer(String) [MLAPI_Logging_NetworkLog_LogErrorServer_System_String_]
 
@@ -112,11 +112,9 @@ Logs an error log locally and on the server if possible.
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                       | Description        |
-|-----------------------------------------|--------------------------------------------|--------------------|
-| <span class="xref">System.String</span> | <span class="parametername">message</span> | The message to log |
-
-<span id="MLAPI_Logging_NetworkLog_LogInfoServer_"></span>
+| Type          | Name    | Description        |
+|---------------|---------|--------------------|
+| System.String | message | The message to log |
 
 ### LogInfoServer(String) [MLAPI_Logging_NetworkLog_LogInfoServer_System_String_]
 
@@ -136,11 +134,9 @@ Logs an info log locally and on the server if possible.
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                       | Description        |
-|-----------------------------------------|--------------------------------------------|--------------------|
-| <span class="xref">System.String</span> | <span class="parametername">message</span> | The message to log |
-
-<span id="MLAPI_Logging_NetworkLog_LogWarningServer_"></span>
+| Type          | Name    | Description        |
+|---------------|---------|--------------------|
+| System.String | message | The message to log |
 
 ### LogWarningServer(String) [MLAPI_Logging_NetworkLog_LogWarningServer_System_String_]
 
@@ -160,6 +156,6 @@ Logs a warning log locally and on the server if possible.
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                       | Description        |
-|-----------------------------------------|--------------------------------------------|--------------------|
-| <span class="xref">System.String</span> | <span class="parametername">message</span> | The message to log |
+| Type          | Name    | Description        |
+|---------------|---------|--------------------|
+| System.String | message | The message to log |

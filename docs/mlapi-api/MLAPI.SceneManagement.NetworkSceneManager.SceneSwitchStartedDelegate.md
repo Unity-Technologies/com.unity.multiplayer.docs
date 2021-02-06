@@ -2,8 +2,7 @@
 
 id: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
 
-title:
-MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
+title: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
 
 ---
 
@@ -29,6 +28,6 @@ Delegate for when a scene switch has been initiated
 
 ##### Parameters [parameters]
 
-| Type                                                 | Name        | Description |
-|------------------------------------------------------|-------------|-------------|
-| <span class="xref">UnityEngine.AsyncOperation</span> | \*operation |             |
+| Type                       | Name        | Description |
+|----------------------------|-------------|-------------|
+| UnityEngine.AsyncOperation | \*operation |             |

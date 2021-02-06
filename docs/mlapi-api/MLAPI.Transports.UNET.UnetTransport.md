@@ -780,9 +780,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value]
 
-| Type                                                                     | Description |
-|--------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<UnetChannel\> |             |
+| Type                                           | Description |
+|------------------------------------------------|-------------|
+| System.Collections.Generic.List\<UnetChannel\> |             |
 
 ### ConnectAddress [MLAPI_Transports_UNET_UnetTransport_ConnectAddress]
 
@@ -800,9 +800,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### ConnectPort [MLAPI_Transports_UNET_UnetTransport_ConnectPort]
 
@@ -820,9 +820,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-2]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### MaxConnections [MLAPI_Transports_UNET_UnetTransport_MaxConnections]
 
@@ -840,9 +840,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-3]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### MessageBufferSize [MLAPI_Transports_UNET_UnetTransport_MessageBufferSize]
 
@@ -860,9 +860,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-4]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### MLAPIRelayAddress [MLAPI_Transports_UNET_UnetTransport_MLAPIRelayAddress]
 
@@ -880,9 +880,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-5]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### MLAPIRelayPort [MLAPI_Transports_UNET_UnetTransport_MLAPIRelayPort]
 
@@ -900,9 +900,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-6]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ServerListenPort [MLAPI_Transports_UNET_UnetTransport_ServerListenPort]
 
@@ -920,9 +920,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-7]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### ServerWebsocketListenPort [MLAPI_Transports_UNET_UnetTransport_ServerWebsocketListenPort]
 
@@ -940,9 +940,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-8]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### SupportWebsocket [MLAPI_Transports_UNET_UnetTransport_SupportWebsocket]
 
@@ -960,9 +960,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-9]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### UseMLAPIRelay [MLAPI_Transports_UNET_UnetTransport_UseMLAPIRelay]
 
@@ -980,11 +980,11 @@ Object.ReferenceEquals(Object, Object)
 
 #### Field Value [field-value-10]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-## Properties <span id="MLAPI_Transports_UNET_UnetTransport_ServerClientId_"></span>
+## Properties 
 
 ### ServerClientId [MLAPI_Transports_UNET_UnetTransport_ServerClientId]
 
@@ -1002,9 +1002,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Property Value [property-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 #### Overrides [overrides]
 
@@ -1014,7 +1014,7 @@ Transport.ServerClientId
 
 </div>
 
-## Methods <span id="MLAPI_Transports_UNET_UnetTransport_AddMLAPIChannel_"></span>
+## Methods 
 
 ### AddMLAPIChannel(ChannelType, ConnectionConfig) [MLAPI_Transports_UNET_UnetTransport_AddMLAPIChannel_MLAPI_Transports_ChannelType_UnityEngine_Networking_ConnectionConfig_]
 
@@ -1032,18 +1032,16 @@ Transport.ServerClientId
 
 #### Parameters [parameters]
 
-| Type                                                              | Name                                      | Description |
-|-------------------------------------------------------------------|-------------------------------------------|-------------|
-| ChannelType                                                       | <span class="parametername">type</span>   |             |
-| <span class="xref">UnityEngine.Networking.ConnectionConfig</span> | <span class="parametername">config</span> |             |
+| Type                                    | Name   | Description |
+|-----------------------------------------|--------|-------------|
+| ChannelType                             | type   |             |
+| UnityEngine.Networking.ConnectionConfig | config |             |
 
 #### Returns [returns]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span id="MLAPI_Transports_UNET_UnetTransport_AddUNETChannel_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### AddUNETChannel(QosType, ConnectionConfig) [MLAPI_Transports_UNET_UnetTransport_AddUNETChannel_UnityEngine_Networking_QosType_UnityEngine_Networking_ConnectionConfig_]
 
@@ -1061,19 +1059,16 @@ Transport.ServerClientId
 
 #### Parameters [parameters-1]
 
-| Type                                                              | Name                                      | Description |
-|-------------------------------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.QosType</span>          | <span class="parametername">type</span>   |             |
-| <span class="xref">UnityEngine.Networking.ConnectionConfig</span> | <span class="parametername">config</span> |             |
+| Type                                    | Name   | Description |
+|-----------------------------------------|--------|-------------|
+| UnityEngine.Networking.QosType          | type   |             |
+| UnityEngine.Networking.ConnectionConfig | config |             |
 
 #### Returns [returns-1]
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| <span class="xref">System.Int32</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_UnetTransport_DisconnectLocalClient_"></span>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### DisconnectLocalClient() [MLAPI_Transports_UNET_UnetTransport_DisconnectLocalClient]
 
@@ -1097,9 +1092,6 @@ Transport.DisconnectLocalClient()
 
 </div>
 
-<span
-id="MLAPI_Transports_UNET_UnetTransport_DisconnectRemoteClient_"></span>
-
 ### DisconnectRemoteClient(UInt64) [MLAPI_Transports_UNET_UnetTransport_DisconnectRemoteClient_System_UInt64_]
 
 <div class="markdown level1 summary" markdown="1">
@@ -1116,9 +1108,9 @@ id="MLAPI_Transports_UNET_UnetTransport_DisconnectRemoteClient_"></span>
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Overrides [overrides-2]
 
@@ -1127,8 +1119,6 @@ id="MLAPI_Transports_UNET_UnetTransport_DisconnectRemoteClient_"></span>
 Transport.DisconnectRemoteClient(UInt64)
 
 </div>
-
-<span id="MLAPI_Transports_UNET_UnetTransport_GetConfig_"></span>
 
 ### GetConfig() [MLAPI_Transports_UNET_UnetTransport_GetConfig]
 
@@ -1146,11 +1136,9 @@ Transport.DisconnectRemoteClient(UInt64)
 
 #### Returns [returns-2]
 
-| Type                                                              | Description |
-|-------------------------------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Networking.ConnectionConfig</span> |             |
-
-<span id="MLAPI_Transports_UNET_UnetTransport_GetCurrentRtt_"></span>
+| Type                                    | Description |
+|-----------------------------------------|-------------|
+| UnityEngine.Networking.ConnectionConfig |             |
 
 ### GetCurrentRtt(UInt64) [MLAPI_Transports_UNET_UnetTransport_GetCurrentRtt_System_UInt64_]
 
@@ -1168,15 +1156,15 @@ Transport.DisconnectRemoteClient(UInt64)
 
 #### Parameters [parameters-3]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns-3]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 #### Overrides [overrides-3]
 
@@ -1185,8 +1173,6 @@ Transport.DisconnectRemoteClient(UInt64)
 Transport.GetCurrentRtt(UInt64)
 
 </div>
-
-<span id="MLAPI_Transports_UNET_UnetTransport_GetMLAPIClientId_"></span>
 
 ### GetMLAPIClientId(Byte, UInt16, Boolean) [MLAPI_Transports_UNET_UnetTransport_GetMLAPIClientId_System_Byte_System_UInt16_System_Boolean_]
 
@@ -1204,20 +1190,17 @@ Transport.GetCurrentRtt(UInt64)
 
 #### Parameters [parameters-4]
 
-| Type                                     | Name                                            | Description |
-|------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>    | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.UInt16</span>  | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Boolean</span> | <span class="parametername">isServer</span>     |             |
+| Type           | Name         | Description |
+|----------------|--------------|-------------|
+| System.Byte    | hostId       |             |
+| System.UInt16  | connectionId |             |
+| System.Boolean | isServer     |             |
 
 #### Returns [returns-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span
-id="MLAPI_Transports_UNET_UnetTransport_GetUnetConnectionDetails_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### GetUnetConnectionDetails(UInt64, out Byte, out UInt16) [MLAPI_Transports_UNET_UnetTransport_GetUnetConnectionDetails_System_UInt64_System_Byte__System_UInt16__]
 
@@ -1235,13 +1218,11 @@ id="MLAPI_Transports_UNET_UnetTransport_GetUnetConnectionDetails_"></span>
 
 #### Parameters [parameters-5]
 
-| Type                                    | Name                                            | Description |
-|-----------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span>     |             |
-| <span class="xref">System.Byte</span>   | <span class="parametername">hostId</span>       |             |
-| <span class="xref">System.UInt16</span> | <span class="parametername">connectionId</span> |             |
-
-<span id="MLAPI_Transports_UNET_UnetTransport_Init_"></span>
+| Type          | Name         | Description |
+|---------------|--------------|-------------|
+| System.UInt64 | clientId     |             |
+| System.Byte   | hostId       |             |
+| System.UInt16 | connectionId |             |
 
 ### Init() [MLAPI_Transports_UNET_UnetTransport_Init]
 
@@ -1265,8 +1246,6 @@ Transport.Init()
 
 </div>
 
-<span id="MLAPI_Transports_UNET_UnetTransport_PollEvent_"></span>
-
 ### PollEvent(out UInt64, out String, out ArraySegment\<Byte\>, out Single) [MLAPI_Transports_UNET_UnetTransport_PollEvent_System_UInt64__System_String__System_ArraySegment_System_Byte___System_Single__]
 
 <div class="markdown level1 summary" markdown="1">
@@ -1283,12 +1262,12 @@ Transport.Init()
 
 #### Parameters [parameters-6]
 
-| Type                                                                                   | Name                                           | Description |
-|----------------------------------------------------------------------------------------|------------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span>                                                | <span class="parametername">clientId</span>    |             |
-| <span class="xref">System.String</span>                                                | <span class="parametername">channelName</span> |             |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | <span class="parametername">payload</span>     |             |
-| <span class="xref">System.Single</span>                                                | <span class="parametername">receiveTime</span> |             |
+| Type                               | Name        | Description |
+|------------------------------------|-------------|-------------|
+| System.UInt64                      | clientId    |             |
+| System.String                      | channelName |             |
+| System.ArraySegment\<System.Byte\> | payload     |             |
+| System.Single                      | receiveTime |             |
 
 #### Returns [returns-5]
 
@@ -1304,8 +1283,6 @@ Transport.PollEvent(out UInt64, out String, out ArraySegment\<Byte\>,
 out Single)
 
 </div>
-
-<span id="MLAPI_Transports_UNET_UnetTransport_Send_"></span>
 
 ### Send(UInt64, ArraySegment\<Byte\>, String) [MLAPI_Transports_UNET_UnetTransport_Send_System_UInt64_System_ArraySegment_System_Byte__System_String_]
 
@@ -1323,11 +1300,11 @@ out Single)
 
 #### Parameters [parameters-7]
 
-| Type                                                                                   | Name                                           | Description |
-|----------------------------------------------------------------------------------------|------------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span>                                                | <span class="parametername">clientId</span>    |             |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | <span class="parametername">data</span>        |             |
-| <span class="xref">System.String</span>                                                | <span class="parametername">channelName</span> |             |
+| Type                               | Name        | Description |
+|------------------------------------|-------------|-------------|
+| System.UInt64                      | clientId    |             |
+| System.ArraySegment\<System.Byte\> | data        |             |
+| System.String                      | channelName |             |
 
 #### Overrides [overrides-6]
 
@@ -1336,8 +1313,6 @@ out Single)
 Transport.Send(UInt64, ArraySegment\<Byte\>, String)
 
 </div>
-
-<span id="MLAPI_Transports_UNET_UnetTransport_Shutdown_"></span>
 
 ### Shutdown() [MLAPI_Transports_UNET_UnetTransport_Shutdown]
 
@@ -1360,8 +1335,6 @@ Transport.Send(UInt64, ArraySegment\<Byte\>, String)
 Transport.Shutdown()
 
 </div>
-
-<span id="MLAPI_Transports_UNET_UnetTransport_StartClient_"></span>
 
 ### StartClient() [MLAPI_Transports_UNET_UnetTransport_StartClient]
 
@@ -1390,8 +1363,6 @@ Transport.Shutdown()
 Transport.StartClient()
 
 </div>
-
-<span id="MLAPI_Transports_UNET_UnetTransport_StartServer_"></span>
 
 ### StartServer() [MLAPI_Transports_UNET_UnetTransport_StartServer]
 

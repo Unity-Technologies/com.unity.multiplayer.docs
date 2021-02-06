@@ -756,9 +756,9 @@ parent will be ignored.
 
 #### Field Value [field-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### CheckObjectVisibility [MLAPI_NetworkedObject_CheckObjectVisibility]
 
@@ -802,9 +802,9 @@ false, the objects ownership will be given to the server.
 
 #### Field Value [field-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IncludeTransformWhenSpawning [MLAPI_NetworkedObject_IncludeTransformWhenSpawning]
 
@@ -852,9 +852,9 @@ manually
 
 #### Field Value [field-value-4]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### PrefabHash [MLAPI_NetworkedObject_PrefabHash]
 
@@ -878,9 +878,9 @@ all instances of a prefab
 
 #### Field Value [field-value-5]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### PrefabHashGenerator [MLAPI_NetworkedObject_PrefabHashGenerator]
 
@@ -903,11 +903,11 @@ prefabs
 
 #### Field Value [field-value-6]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
-## Properties <span id="MLAPI_NetworkedObject_DestroyWithScene_"></span>
+## Properties 
 
 ### DestroyWithScene [MLAPI_NetworkedObject_DestroyWithScene]
 
@@ -928,11 +928,9 @@ scene is unloaded.
 
 #### Property Value [property-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedObject_IsLocalPlayer_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsLocalPlayer [MLAPI_NetworkedObject_IsLocalPlayer]
 
@@ -952,11 +950,9 @@ Gets if the object is the the personal clients player object
 
 #### Property Value [property-value-1]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedObject_IsOwnedByServer_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsOwnedByServer [MLAPI_NetworkedObject_IsOwnedByServer]
 
@@ -976,11 +972,9 @@ Gets Whether or not the object is owned by anyone
 
 #### Property Value [property-value-2]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedObject_IsOwner_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsOwner [MLAPI_NetworkedObject_IsOwner]
 
@@ -1001,11 +995,9 @@ local player object
 
 #### Property Value [property-value-3]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedObject_IsPlayerObject_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsPlayerObject [MLAPI_NetworkedObject_IsPlayerObject]
 
@@ -1025,11 +1017,9 @@ Gets if this object is a player object
 
 #### Property Value [property-value-4]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedObject_IsSceneObject_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsSceneObject [MLAPI_NetworkedObject_IsSceneObject]
 
@@ -1050,11 +1040,9 @@ a scene object.
 
 #### Property Value [property-value-5]
 
-| Type                                                                                  | Description |
-|---------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Nullable</span>\<<span class="xref">System.Boolean</span>\> |             |
-
-<span id="MLAPI_NetworkedObject_IsSpawned_"></span>
+| Type                              | Description |
+|-----------------------------------|-------------|
+| System.Nullable\<System.Boolean\> |             |
 
 ### IsSpawned [MLAPI_NetworkedObject_IsSpawned]
 
@@ -1074,11 +1062,9 @@ Gets if the object has yet been spawned across the network
 
 #### Property Value [property-value-6]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedObject_NetworkId_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### NetworkId [MLAPI_NetworkedObject_NetworkId]
 
@@ -1098,11 +1084,9 @@ Gets the unique ID of this object that is synced across the network
 
 #### Property Value [property-value-7]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span id="MLAPI_NetworkedObject_OwnerClientId_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### OwnerClientId [MLAPI_NetworkedObject_OwnerClientId]
 
@@ -1122,11 +1106,11 @@ Gets the clientId of the owner of this NetworkedObject
 
 #### Property Value [property-value-8]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
-## Methods <span id="MLAPI_NetworkedObject_ChangeOwnership_"></span>
+## Methods 
 
 ### ChangeOwnership(UInt64) [MLAPI_NetworkedObject_ChangeOwnership_System_UInt64_]
 
@@ -1146,11 +1130,9 @@ Changes the owner of the object. Can only be called from server
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                                | Description            |
-|-----------------------------------------|-----------------------------------------------------|------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">newOwnerClientId</span> | The new owner clientId |
-
-<span id="MLAPI_NetworkedObject_GetObservers_"></span>
+| Type          | Name             | Description            |
+|---------------|------------------|------------------------|
+| System.UInt64 | newOwnerClientId | The new owner clientId |
 
 ### GetObservers() [MLAPI_NetworkedObject_GetObservers]
 
@@ -1170,11 +1152,9 @@ Returns Observers enumerator
 
 #### Returns [returns]
 
-| Type                                                                        | Description          |
-|-----------------------------------------------------------------------------|----------------------|
-| <span class="xref">System.Collections.Generic.HashSet.Enumerator</span>\<\> | Observers enumerator |
-
-<span id="MLAPI_NetworkedObject_IsNetworkVisibleTo_"></span>
+| Type                                              | Description          |
+|---------------------------------------------------|----------------------|
+| System.Collections.Generic.HashSet.Enumerator\<\> | Observers enumerator |
 
 ### IsNetworkVisibleTo(UInt64) [MLAPI_NetworkedObject_IsNetworkVisibleTo_System_UInt64_]
 
@@ -1194,17 +1174,15 @@ Whether or not this object is visible to a specific client
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description                |
-|-----------------------------------------|---------------------------------------------|----------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId of the client |
+| Type          | Name     | Description                |
+|---------------|----------|----------------------------|
+| System.UInt64 | clientId | The clientId of the client |
 
 #### Returns [returns-1]
 
-| Type                                     | Description                               |
-|------------------------------------------|-------------------------------------------|
-| <span class="xref">System.Boolean</span> | True if the client knows about the object |
-
-<span id="MLAPI_NetworkedObject_NetworkHide_"></span>
+| Type           | Description                               |
+|----------------|-------------------------------------------|
+| System.Boolean | True if the client knows about the object |
 
 ### NetworkHide(List\<NetworkedObject\>, UInt64) [MLAPI_NetworkedObject_NetworkHide_System_Collections_Generic_List_MLAPI_NetworkedObject__System_UInt64_]
 
@@ -1224,12 +1202,10 @@ Hides a list of objects from a client
 
 #### Parameters [parameters-2]
 
-| Type                                                                         | Name                                                | Description                         |
-|------------------------------------------------------------------------------|-----------------------------------------------------|-------------------------------------|
-| <span class="xref">System.Collections.Generic.List</span>\<NetworkedObject\> | <span class="parametername">networkedObjects</span> | The objects to hide                 |
-| <span class="xref">System.UInt64</span>                                      | <span class="parametername">clientId</span>         | The client to hide the objects from |
-
-<span id="MLAPI_NetworkedObject_NetworkHide_"></span>
+| Type                                               | Name             | Description                         |
+|----------------------------------------------------|------------------|-------------------------------------|
+| System.Collections.Generic.List\<NetworkedObject\> | networkedObjects | The objects to hide                 |
+| System.UInt64                                      | clientId         | The client to hide the objects from |
 
 ### NetworkHide(UInt64) [MLAPI_NetworkedObject_NetworkHide_System_UInt64_]
 
@@ -1249,11 +1225,9 @@ Hides a object from a specific client
 
 #### Parameters [parameters-3]
 
-| Type                                    | Name                                        | Description                       |
-|-----------------------------------------|---------------------------------------------|-----------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The client to hide the object for |
-
-<span id="MLAPI_NetworkedObject_NetworkShow_"></span>
+| Type          | Name     | Description                       |
+|---------------|----------|-----------------------------------|
+| System.UInt64 | clientId | The client to hide the object for |
 
 ### NetworkShow(List\<NetworkedObject\>, UInt64, Stream) [MLAPI_NetworkedObject_NetworkShow_System_Collections_Generic_List_MLAPI_NetworkedObject__System_UInt64_System_IO_Stream_]
 
@@ -1273,13 +1247,11 @@ Shows a list of previously hidden objects to a client
 
 #### Parameters [parameters-4]
 
-| Type                                                                         | Name                                                | Description                                       |
-|------------------------------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------|
-| <span class="xref">System.Collections.Generic.List</span>\<NetworkedObject\> | <span class="parametername">networkedObjects</span> | The objects to show                               |
-| <span class="xref">System.UInt64</span>                                      | <span class="parametername">clientId</span>         | The client to show the objects to                 |
-| <span class="xref">System.IO.Stream</span>                                   | <span class="parametername">payload</span>          | An optional payload to send as part of the spawns |
-
-<span id="MLAPI_NetworkedObject_NetworkShow_"></span>
+| Type                                               | Name             | Description                                       |
+|----------------------------------------------------|------------------|---------------------------------------------------|
+| System.Collections.Generic.List\<NetworkedObject\> | networkedObjects | The objects to show                               |
+| System.UInt64                                      | clientId         | The client to show the objects to                 |
+| System.IO.Stream                                   | payload          | An optional payload to send as part of the spawns |
 
 ### NetworkShow(UInt64, Stream) [MLAPI_NetworkedObject_NetworkShow_System_UInt64_System_IO_Stream_]
 
@@ -1299,12 +1271,10 @@ Shows a previously hidden object to a client
 
 #### Parameters [parameters-5]
 
-| Type                                       | Name                                        | Description                                      |
-|--------------------------------------------|---------------------------------------------|--------------------------------------------------|
-| <span class="xref">System.UInt64</span>    | <span class="parametername">clientId</span> | The client to show the object to                 |
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">payload</span>  | An optional payload to send as part of the spawn |
-
-<span id="MLAPI_NetworkedObject_RemoveOwnership_"></span>
+| Type             | Name     | Description                                      |
+|------------------|----------|--------------------------------------------------|
+| System.UInt64    | clientId | The client to show the object to                 |
+| System.IO.Stream | payload  | An optional payload to send as part of the spawn |
 
 ### RemoveOwnership() [MLAPI_NetworkedObject_RemoveOwnership]
 
@@ -1322,8 +1292,6 @@ from server
 #### Declaration [declaration-23]
 
     public void RemoveOwnership()
-
-<span id="MLAPI_NetworkedObject_Spawn_"></span>
 
 ### Spawn(Stream, Boolean) [MLAPI_NetworkedObject_Spawn_System_IO_Stream_System_Boolean_]
 
@@ -1344,12 +1312,10 @@ Server
 
 #### Parameters [parameters-6]
 
-| Type                                       | Name                                                | Description                                             |
-|--------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">spawnPayload</span>     | The writer containing the spawn payload                 |
-| <span class="xref">System.Boolean</span>   | <span class="parametername">destroyWithScene</span> | Should the object be destroyd when the scene is changed |
-
-<span id="MLAPI_NetworkedObject_SpawnAsPlayerObject_"></span>
+| Type             | Name             | Description                                             |
+|------------------|------------------|---------------------------------------------------------|
+| System.IO.Stream | spawnPayload     | The writer containing the spawn payload                 |
+| System.Boolean   | destroyWithScene | Should the object be destroyd when the scene is changed |
 
 ### SpawnAsPlayerObject(UInt64, Stream, Boolean) [MLAPI_NetworkedObject_SpawnAsPlayerObject_System_UInt64_System_IO_Stream_System_Boolean_]
 
@@ -1370,13 +1336,11 @@ the given client
 
 #### Parameters [parameters-7]
 
-| Type                                       | Name                                                | Description                                             |
-|--------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
-| <span class="xref">System.UInt64</span>    | <span class="parametername">clientId</span>         | The clientId whos player object this is                 |
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">spawnPayload</span>     | The writer containing the spawn payload                 |
-| <span class="xref">System.Boolean</span>   | <span class="parametername">destroyWithScene</span> | Should the object be destroyd when the scene is changed |
-
-<span id="MLAPI_NetworkedObject_SpawnWithOwnership_"></span>
+| Type             | Name             | Description                                             |
+|------------------|------------------|---------------------------------------------------------|
+| System.UInt64    | clientId         | The clientId whos player object this is                 |
+| System.IO.Stream | spawnPayload     | The writer containing the spawn payload                 |
+| System.Boolean   | destroyWithScene | Should the object be destroyd when the scene is changed |
 
 ### SpawnWithOwnership(UInt64, Stream, Boolean) [MLAPI_NetworkedObject_SpawnWithOwnership_System_UInt64_System_IO_Stream_System_Boolean_]
 
@@ -1397,13 +1361,11 @@ called from server
 
 #### Parameters [parameters-8]
 
-| Type                                       | Name                                                | Description                                             |
-|--------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
-| <span class="xref">System.UInt64</span>    | <span class="parametername">clientId</span>         | The clientId to own the object                          |
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">spawnPayload</span>     | The writer containing the spawn payload                 |
-| <span class="xref">System.Boolean</span>   | <span class="parametername">destroyWithScene</span> | Should the object be destroyd when the scene is changed |
-
-<span id="MLAPI_NetworkedObject_UnSpawn_"></span>
+| Type             | Name             | Description                                             |
+|------------------|------------------|---------------------------------------------------------|
+| System.UInt64    | clientId         | The clientId to own the object                          |
+| System.IO.Stream | spawnPayload     | The writer containing the spawn payload                 |
+| System.Boolean   | destroyWithScene | Should the object be destroyd when the scene is changed |
 
 ### UnSpawn() [MLAPI_NetworkedObject_UnSpawn]
 

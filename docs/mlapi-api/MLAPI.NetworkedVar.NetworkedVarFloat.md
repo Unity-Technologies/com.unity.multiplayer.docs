@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarFloat : NetworkedVar<float>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarFloat__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarFloat() [MLAPI_NetworkedVar_NetworkedVarFloat__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarFloat()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarFloat__ctor_"></span>
 
 ### NetworkedVarFloat(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarFloat__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarFloat__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarFloat(NetworkedVarSettings, Single) [MLAPI_NetworkedVar_NetworkedVarFloat__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Single_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                    | <span class="parametername">settings</span> |             |
-| <span class="xref">System.Single</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarFloat__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.Single        | value    |             |
 
 ### NetworkedVarFloat(Single) [MLAPI_NetworkedVar_NetworkedVarFloat__ctor_System_Single_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                     | Description |
-|-----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.Single</span> | <span class="parametername">value</span> |             |
+| Type          | Name  | Description |
+|---------------|-------|-------------|
+| System.Single | value |             |
 
 ### Implements [implements]
 

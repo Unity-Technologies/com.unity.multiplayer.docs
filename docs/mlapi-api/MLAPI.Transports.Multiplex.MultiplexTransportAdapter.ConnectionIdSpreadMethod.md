@@ -1,10 +1,8 @@
 ---
 
-id:
-MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
+id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
 
-title:
-MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
+title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
 
 ---
 

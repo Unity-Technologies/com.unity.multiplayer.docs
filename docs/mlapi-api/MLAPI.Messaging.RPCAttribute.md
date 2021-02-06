@@ -61,7 +61,7 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Attribute</span>
+System.Runtime.InteropServices.\_Attribute
 
 </div>
 
@@ -363,6 +363,6 @@ Object.ToString()
 
 <div markdown="1">
 
-<span class="xref">System.Runtime.InteropServices.\_Attribute</span>
+System.Runtime.InteropServices.\_Attribute
 
 </div>

@@ -29,6 +29,6 @@ all clients done loading the scene or by time out.
 
 ##### Parameters [parameters]
 
-| Type                                     | Name       | Description |
-|------------------------------------------|------------|-------------|
-| <span class="xref">System.Boolean</span> | \*timedOut |             |
+| Type           | Name       | Description |
+|----------------|------------|-------------|
+| System.Boolean | \*timedOut |             |

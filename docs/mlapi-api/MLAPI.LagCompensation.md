@@ -8,7 +8,7 @@ title: MLAPI.LagCompensation
 
 Namespace MLAPI.LagCompensation
 
-# Namespace MLAPI.LagCompensation [MLAPI_LagCompensation]
+## Namespace MLAPI.LagCompensation [MLAPI_LagCompensation]
 
 <div class="markdown level0 summary" markdown="1">
 

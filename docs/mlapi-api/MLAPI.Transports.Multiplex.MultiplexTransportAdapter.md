@@ -800,7 +800,7 @@ Object.ReferenceEquals(Object, Object)
 |---------------|-------------|
 | Transport\[\] |             |
 
-## Properties <span id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_IsSupported_"></span>
+## Properties 
 
 ### IsSupported [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_IsSupported]
 
@@ -818,9 +818,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Property Value [property-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 #### Overrides [overrides]
 
@@ -829,9 +829,6 @@ Object.ReferenceEquals(Object, Object)
 Transport.IsSupported
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_ServerClientId_"></span>
 
 ### ServerClientId [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_ServerClientId]
 
@@ -849,9 +846,9 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_ServerClientId_"></span
 
 #### Property Value [property-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 #### Overrides [overrides-1]
 
@@ -861,7 +858,7 @@ Transport.ServerClientId
 
 </div>
 
-## Methods <span id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectLocalClient_"></span>
+## Methods 
 
 ### DisconnectLocalClient() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectLocalClient]
 
@@ -885,9 +882,6 @@ Transport.DisconnectLocalClient()
 
 </div>
 
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectRemoteClient_"></span>
-
 ### DisconnectRemoteClient(UInt64) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectRemoteClient_System_UInt64_]
 
 <div class="markdown level1 summary" markdown="1">
@@ -904,9 +898,9 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectRemoteClient_
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Overrides [overrides-3]
 
@@ -915,9 +909,6 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectRemoteClient_
 Transport.DisconnectRemoteClient(UInt64)
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetCurrentRtt_"></span>
 
 ### GetCurrentRtt(UInt64) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetCurrentRtt_System_UInt64_]
 
@@ -935,15 +926,15 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetCurrentRtt_"></span>
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 #### Overrides [overrides-4]
 
@@ -952,9 +943,6 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetCurrentRtt_"></span>
 Transport.GetCurrentRtt(UInt64)
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetFirstSupportedTransportIndex_"></span>
 
 ### GetFirstSupportedTransportIndex() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetFirstSupportedTransportIndex]
 
@@ -972,12 +960,9 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetFirstSupportedTransp
 
 #### Returns [returns-1]
 
-| Type                                  | Description |
-|---------------------------------------|-------------|
-| <span class="xref">System.Byte</span> |             |
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMLAPIClientId_"></span>
+| Type        | Description |
+|-------------|-------------|
+| System.Byte |             |
 
 ### GetMLAPIClientId(Byte, UInt64, Boolean) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMLAPIClientId_System_Byte_System_UInt64_System_Boolean_]
 
@@ -995,20 +980,17 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMLAPIClientId_"></sp
 
 #### Parameters [parameters-2]
 
-| Type                                     | Name                                            | Description |
-|------------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.Byte</span>    | <span class="parametername">transportId</span>  |             |
-| <span class="xref">System.UInt64</span>  | <span class="parametername">connectionId</span> |             |
-| <span class="xref">System.Boolean</span> | <span class="parametername">isServer</span>     |             |
+| Type           | Name         | Description |
+|----------------|--------------|-------------|
+| System.Byte    | transportId  |             |
+| System.UInt64  | connectionId |             |
+| System.Boolean | isServer     |             |
 
 #### Returns [returns-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> |             |
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMultiplexTransportDetails_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ### GetMultiplexTransportDetails(UInt64, out Byte, out UInt64) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMultiplexTransportDetails_System_UInt64_System_Byte__System_UInt64__]
 
@@ -1026,14 +1008,11 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMultiplexTransportDe
 
 #### Parameters [parameters-3]
 
-| Type                                    | Name                                            | Description |
-|-----------------------------------------|-------------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span>     |             |
-| <span class="xref">System.Byte</span>   | <span class="parametername">transportId</span>  |             |
-| <span class="xref">System.UInt64</span> | <span class="parametername">connectionId</span> |             |
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Init_"></span>
+| Type          | Name         | Description |
+|---------------|--------------|-------------|
+| System.UInt64 | clientId     |             |
+| System.Byte   | transportId  |             |
+| System.UInt64 | connectionId |             |
 
 ### Init() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Init]
 
@@ -1057,9 +1036,6 @@ Transport.Init()
 
 </div>
 
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_PollEvent_"></span>
-
 ### PollEvent(out UInt64, out String, out ArraySegment\<Byte\>, out Single) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_PollEvent_System_UInt64__System_String__System_ArraySegment_System_Byte___System_Single__]
 
 <div class="markdown level1 summary" markdown="1">
@@ -1076,12 +1052,12 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_PollEvent_"></span>
 
 #### Parameters [parameters-4]
 
-| Type                                                                                   | Name                                           | Description |
-|----------------------------------------------------------------------------------------|------------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span>                                                | <span class="parametername">clientId</span>    |             |
-| <span class="xref">System.String</span>                                                | <span class="parametername">channelName</span> |             |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | <span class="parametername">payload</span>     |             |
-| <span class="xref">System.Single</span>                                                | <span class="parametername">receiveTime</span> |             |
+| Type                               | Name        | Description |
+|------------------------------------|-------------|-------------|
+| System.UInt64                      | clientId    |             |
+| System.String                      | channelName |             |
+| System.ArraySegment\<System.Byte\> | payload     |             |
+| System.Single                      | receiveTime |             |
 
 #### Returns [returns-3]
 
@@ -1097,9 +1073,6 @@ Transport.PollEvent(out UInt64, out String, out ArraySegment\<Byte\>,
 out Single)
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Send_"></span>
 
 ### Send(UInt64, ArraySegment\<Byte\>, String) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Send_System_UInt64_System_ArraySegment_System_Byte__System_String_]
 
@@ -1117,11 +1090,11 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Send_"></span>
 
 #### Parameters [parameters-5]
 
-| Type                                                                                   | Name                                           | Description |
-|----------------------------------------------------------------------------------------|------------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span>                                                | <span class="parametername">clientId</span>    |             |
-| <span class="xref">System.ArraySegment</span>\<<span class="xref">System.Byte</span>\> | <span class="parametername">data</span>        |             |
-| <span class="xref">System.String</span>                                                | <span class="parametername">channelName</span> |             |
+| Type                               | Name        | Description |
+|------------------------------------|-------------|-------------|
+| System.UInt64                      | clientId    |             |
+| System.ArraySegment\<System.Byte\> | data        |             |
+| System.String                      | channelName |             |
 
 #### Overrides [overrides-7]
 
@@ -1130,9 +1103,6 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Send_"></span>
 Transport.Send(UInt64, ArraySegment\<Byte\>, String)
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Shutdown_"></span>
 
 ### Shutdown() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Shutdown]
 
@@ -1155,9 +1125,6 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Shutdown_"></span>
 Transport.Shutdown()
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartClient_"></span>
 
 ### StartClient() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartClient]
 
@@ -1186,9 +1153,6 @@ id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartClient_"></span>
 Transport.StartClient()
 
 </div>
-
-<span
-id="MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartServer_"></span>
 
 ### StartServer() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartServer]
 

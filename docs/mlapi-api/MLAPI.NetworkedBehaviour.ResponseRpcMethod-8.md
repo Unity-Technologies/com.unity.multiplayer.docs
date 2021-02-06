@@ -6,8 +6,7 @@ title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-8
 
 ---
 
-Delegate NetworkedBehaviour.ResponseRpcMethod\<TResult, T1, T2, T3, T4,
-T5, T6, T7\>
+Delegate NetworkedBehaviour.ResponseRpcMethod\<TResult, T1, T2, T3, T4, T5, T6, T7\>
 
 <div class="markdown level0 summary" markdown="1">
 
@@ -27,31 +26,31 @@ T5, T6, T7\>
 
 ##### Parameters [parameters]
 
-| Type                         | Name | Description |
-|------------------------------|------|-------------|
-| <span class="xref">T1</span> | \*t1 |             |
-| <span class="xref">T2</span> | \*t2 |             |
-| <span class="xref">T3</span> | \*t3 |             |
-| <span class="xref">T4</span> | \*t4 |             |
-| <span class="xref">T5</span> | \*t5 |             |
-| <span class="xref">T6</span> | \*t6 |             |
-| <span class="xref">T7</span> | \*t7 |             |
+| Type | Name | Description |
+|------|------|-------------|
+| T1   | \*t1 |             |
+| T2   | \*t2 |             |
+| T3   | \*t3 |             |
+| T4   | \*t4 |             |
+| T5   | \*t5 |             |
+| T6   | \*t6 |             |
+| T7   | \*t7 |             |
 
 ##### Returns [returns]
 
-| Type                              | Description |
-|-----------------------------------|-------------|
-| <span class="xref">TResult</span> |             |
+| Type    | Description |
+|---------|-------------|
+| TResult |             |
 
 ##### Type Parameters [type-parameters]
 
-| Name                                       | Description |
-|--------------------------------------------|-------------|
-| <span class="parametername">TResult</span> |             |
-| <span class="parametername">T1</span>      |             |
-| <span class="parametername">T2</span>      |             |
-| <span class="parametername">T3</span>      |             |
-| <span class="parametername">T4</span>      |             |
-| <span class="parametername">T5</span>      |             |
-| <span class="parametername">T6</span>      |             |
-| <span class="parametername">T7</span>      |             |
+| Name    | Description |
+|---------|-------------|
+| TResult |             |
+| T1      |             |
+| T2      |             |
+| T3      |             |
+| T4      |             |
+| T5      |             |
+| T6      |             |
+| T7      |             |

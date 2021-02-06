@@ -112,9 +112,9 @@ The currently spawned objects
 
 #### Field Value [field-value]
 
-| Type                                                                                                                        | Description |
-|-----------------------------------------------------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.Dictionary</span>\<<span class="xref">System.UInt64</span>, NetworkedObject\> |             |
+| Type                                                                    | Description |
+|-------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary\<System.UInt64, NetworkedObject\> |             |
 
 ### SpawnedObjectsList [MLAPI_Spawning_SpawnManager_SpawnedObjectsList]
 
@@ -134,11 +134,11 @@ A list of the spawned objects
 
 #### Field Value [field-value-1]
 
-| Type                                                                         | Description |
-|------------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<NetworkedObject\> |             |
+| Type                                               | Description |
+|----------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkedObject\> |             |
 
-## Methods <span id="MLAPI_Spawning_SpawnManager_GetLocalPlayerObject_"></span>
+## Methods 
 
 ### GetLocalPlayerObject() [MLAPI_Spawning_SpawnManager_GetLocalPlayerObject]
 
@@ -162,9 +162,6 @@ Returns the local player object or null if one does not exist
 |-----------------|-------------------------------------------------------|
 | NetworkedObject | The local player object or null if one does not exist |
 
-<span
-id="MLAPI_Spawning_SpawnManager_GetNetworkedPrefabIndexOfHash_"></span>
-
 ### GetNetworkedPrefabIndexOfHash(UInt64) [MLAPI_Spawning_SpawnManager_GetNetworkedPrefabIndexOfHash_System_UInt64_]
 
 <div class="markdown level1 summary" markdown="1">
@@ -183,17 +180,15 @@ Gets the prefab index of a given prefab hash
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                    | Description            |
-|-----------------------------------------|-----------------------------------------|------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">hash</span> | The hash of the prefab |
+| Type          | Name | Description            |
+|---------------|------|------------------------|
+| System.UInt64 | hash | The hash of the prefab |
 
 #### Returns [returns-1]
 
-| Type                                   | Description             |
-|----------------------------------------|-------------------------|
-| <span class="xref">System.Int32</span> | The index of the prefab |
-
-<span id="MLAPI_Spawning_SpawnManager_GetPlayerObject_"></span>
+| Type         | Description             |
+|--------------|-------------------------|
+| System.Int32 | The index of the prefab |
 
 ### GetPlayerObject(UInt64) [MLAPI_Spawning_SpawnManager_GetPlayerObject_System_UInt64_]
 
@@ -214,18 +209,15 @@ exist
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns-2]
 
 | Type            | Description                                                           |
 |-----------------|-----------------------------------------------------------------------|
 | NetworkedObject | The player object with a given clientId or null if one does not exist |
-
-<span
-id="MLAPI_Spawning_SpawnManager_GetPrefabHashFromGenerator_"></span>
 
 ### GetPrefabHashFromGenerator(String) [MLAPI_Spawning_SpawnManager_GetPrefabHashFromGenerator_System_String_]
 
@@ -245,17 +237,15 @@ Returns the prefab hash for a given prefab hash generator
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                         | Description               |
-|-----------------------------------------|----------------------------------------------|---------------------------|
-| <span class="xref">System.String</span> | <span class="parametername">generator</span> | The prefab hash generator |
+| Type          | Name      | Description               |
+|---------------|-----------|---------------------------|
+| System.String | generator | The prefab hash generator |
 
 #### Returns [returns-3]
 
-| Type                                    | Description                      |
-|-----------------------------------------|----------------------------------|
-| <span class="xref">System.UInt64</span> | The hash for the given generator |
-
-<span id="MLAPI_Spawning_SpawnManager_GetPrefabHashFromIndex_"></span>
+| Type          | Description                      |
+|---------------|----------------------------------|
+| System.UInt64 | The hash for the given generator |
 
 ### GetPrefabHashFromIndex(Int32) [MLAPI_Spawning_SpawnManager_GetPrefabHashFromIndex_System_Int32_]
 
@@ -275,18 +265,15 @@ Returns the prefab hash for the networked prefab with a given index
 
 #### Parameters [parameters-3]
 
-| Type                                   | Name                                     | Description                |
-|----------------------------------------|------------------------------------------|----------------------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">index</span> | The networked prefab index |
+| Type         | Name  | Description                |
+|--------------|-------|----------------------------|
+| System.Int32 | index | The networked prefab index |
 
 #### Returns [returns-4]
 
-| Type                                    | Description                                |
-|-----------------------------------------|--------------------------------------------|
-| <span class="xref">System.UInt64</span> | The prefab hash for the given prefab index |
-
-<span
-id="MLAPI_Spawning_SpawnManager_RegisterCustomDestroyHandler_"></span>
+| Type          | Description                                |
+|---------------|--------------------------------------------|
+| System.UInt64 | The prefab hash for the given prefab index |
 
 ### RegisterCustomDestroyHandler(UInt64, SpawnManager.DestroyHandlerDelegate) [MLAPI_Spawning_SpawnManager_RegisterCustomDestroyHandler_System_UInt64_MLAPI_Spawning_SpawnManager_DestroyHandlerDelegate_]
 
@@ -307,12 +294,10 @@ pooling
 
 #### Parameters [parameters-4]
 
-| Type                                    | Name                                          | Description                |
-|-----------------------------------------|-----------------------------------------------|----------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">prefabHash</span> | The prefab hash to destroy |
-| SpawnManager.DestroyHandlerDelegate     | <span class="parametername">handler</span>    | The delegate handler       |
-
-<span id="MLAPI_Spawning_SpawnManager_RegisterSpawnHandler_"></span>
+| Type                                | Name       | Description                |
+|-------------------------------------|------------|----------------------------|
+| System.UInt64                       | prefabHash | The prefab hash to destroy |
+| SpawnManager.DestroyHandlerDelegate | handler    | The delegate handler       |
 
 ### RegisterSpawnHandler(UInt64, SpawnManager.SpawnHandlerDelegate) [MLAPI_Spawning_SpawnManager_RegisterSpawnHandler_System_UInt64_MLAPI_Spawning_SpawnManager_SpawnHandlerDelegate_]
 
@@ -333,13 +318,10 @@ pooling
 
 #### Parameters [parameters-5]
 
-| Type                                    | Name                                          | Description              |
-|-----------------------------------------|-----------------------------------------------|--------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">prefabHash</span> | The prefab hash to spawn |
-| SpawnManager.SpawnHandlerDelegate       | <span class="parametername">handler</span>    | The delegate handler     |
-
-<span
-id="MLAPI_Spawning_SpawnManager_RemoveCustomDestroyHandler_"></span>
+| Type                              | Name       | Description              |
+|-----------------------------------|------------|--------------------------|
+| System.UInt64                     | prefabHash | The prefab hash to spawn |
+| SpawnManager.SpawnHandlerDelegate | handler    | The delegate handler     |
 
 ### RemoveCustomDestroyHandler(UInt64) [MLAPI_Spawning_SpawnManager_RemoveCustomDestroyHandler_System_UInt64_]
 
@@ -359,11 +341,9 @@ Removes the custom destroy handler for a specific prefab hash
 
 #### Parameters [parameters-6]
 
-| Type                                    | Name                                          | Description                                                         |
-|-----------------------------------------|-----------------------------------------------|---------------------------------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">prefabHash</span> | The prefab hash of the prefab destroy handler that is to be removed |
-
-<span id="MLAPI_Spawning_SpawnManager_RemoveCustomSpawnHandler_"></span>
+| Type          | Name       | Description                                                         |
+|---------------|------------|---------------------------------------------------------------------|
+| System.UInt64 | prefabHash | The prefab hash of the prefab destroy handler that is to be removed |
 
 ### RemoveCustomSpawnHandler(UInt64) [MLAPI_Spawning_SpawnManager_RemoveCustomSpawnHandler_System_UInt64_]
 
@@ -383,6 +363,6 @@ Removes the custom spawn handler for a specific prefab hash
 
 #### Parameters [parameters-7]
 
-| Type                                    | Name                                          | Description                                                       |
-|-----------------------------------------|-----------------------------------------------|-------------------------------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">prefabHash</span> | The prefab hash of the prefab spawn handler that is to be removed |
+| Type          | Name       | Description                                                       |
+|---------------|------------|-------------------------------------------------------------------|
+| System.UInt64 | prefabHash | The prefab hash of the prefab spawn handler that is to be removed |

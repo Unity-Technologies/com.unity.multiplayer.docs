@@ -116,7 +116,7 @@ The delegate to invoke to validate the certificates
 |----------------------------------------------|-------------|
 | CryptographyHelper.VerifyCertificateDelegate |             |
 
-## Methods <span id="MLAPI_Security_CryptographyHelper_GetClientKey_"></span>
+## Methods 
 
 ### GetClientKey(UInt64) [MLAPI_Security_CryptographyHelper_GetClientKey_System_UInt64_]
 
@@ -136,17 +136,15 @@ Gets the aes key for any given clientId
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                        | Description                                      |
-|-----------------------------------------|---------------------------------------------|--------------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId of the client whose aes key we want |
+| Type          | Name     | Description                                      |
+|---------------|----------|--------------------------------------------------|
+| System.UInt64 | clientId | The clientId of the client whose aes key we want |
 
 #### Returns [returns]
 
-| Type                                      | Description           |
-|-------------------------------------------|-----------------------|
-| <span class="xref">System.Byte</span>\[\] | The aes key in binary |
-
-<span id="MLAPI_Security_CryptographyHelper_GetServerKey_"></span>
+| Type            | Description           |
+|-----------------|-----------------------|
+| System.Byte\[\] | The aes key in binary |
 
 ### GetServerKey() [MLAPI_Security_CryptographyHelper_GetServerKey]
 
@@ -166,11 +164,9 @@ Gets the aes key for the server
 
 #### Returns [returns-1]
 
-| Type                                      | Description         |
-|-------------------------------------------|---------------------|
-| <span class="xref">System.Byte</span>\[\] | The servers aes key |
-
-<span id="MLAPI_Security_CryptographyHelper_VerifyCertificate_"></span>
+| Type            | Description         |
+|-----------------|---------------------|
+| System.Byte\[\] | The servers aes key |
 
 ### VerifyCertificate(X509Certificate2, String) [MLAPI_Security_CryptographyHelper_VerifyCertificate_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_]
 
@@ -188,13 +184,13 @@ Gets the aes key for the server
 
 #### Parameters [parameters-1]
 
-| Type                                                                                     | Name                                           | Description                                    |
-|------------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------------|
-| <span class="xref">System.Security.Cryptography.X509Certificates.X509Certificate2</span> | <span class="parametername">certificate</span> | The certificate to validate                    |
-| <span class="xref">System.String</span>                                                  | <span class="parametername">hostname</span>    | The hostname the certificate is claiming to be |
+| Type                                                           | Name        | Description                                    |
+|----------------------------------------------------------------|-------------|------------------------------------------------|
+| System.Security.Cryptography.X509Certificates.X509Certificate2 | certificate | The certificate to validate                    |
+| System.String                                                  | hostname    | The hostname the certificate is claiming to be |
 
 #### Returns [returns-2]
 
-| Type                                     | Description                                        |
-|------------------------------------------|----------------------------------------------------|
-| <span class="xref">System.Boolean</span> | Whether or not the certificate is considered valid |
+| Type           | Description                                        |
+|----------------|----------------------------------------------------|
+| System.Boolean | Whether or not the certificate is considered valid |

@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarInt : NetworkedVar<int>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarInt__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarInt() [MLAPI_NetworkedVar_NetworkedVarInt__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarInt()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarInt__ctor_"></span>
 
 ### NetworkedVarInt(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarInt__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarInt__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarInt(NetworkedVarSettings, Int32) [MLAPI_NetworkedVar_NetworkedVarInt__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Int32_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                   | Name                                        | Description |
-|----------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                   | <span class="parametername">settings</span> |             |
-| <span class="xref">System.Int32</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarInt__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.Int32         | value    |             |
 
 ### NetworkedVarInt(Int32) [MLAPI_NetworkedVar_NetworkedVarInt__ctor_System_Int32_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                   | Name                                     | Description |
-|----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.Int32</span> | <span class="parametername">value</span> |             |
+| Type         | Name  | Description |
+|--------------|-------|-------------|
+| System.Int32 | value |             |
 
 ### Implements [implements]
 

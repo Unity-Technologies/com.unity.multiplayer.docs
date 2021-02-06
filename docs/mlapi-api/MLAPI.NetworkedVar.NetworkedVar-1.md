@@ -221,11 +221,11 @@ Object.ToString()
 
 ##### Type Parameters [type-parameters]
 
-| Name                                 | Description |
-|--------------------------------------|-------------|
-| <span class="parametername">T</span> |             |
+| Name | Description |
+|------|-------------|
+| T    |             |
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVar_1__ctor_"></span>
+## Constructors 
 
 ### NetworkedVar() [MLAPI_NetworkedVar_NetworkedVar_1__ctor]
 
@@ -242,8 +242,6 @@ Creates a NetworkedVar with the default value and settings
 #### Declaration [declaration]
 
     public NetworkedVar()
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1__ctor_"></span>
 
 ### NetworkedVar(T) [MLAPI_NetworkedVar_NetworkedVar_1__ctor__0_]
 
@@ -263,11 +261,9 @@ Creates a NetworkedVar with a custom value and the default settings
 
 #### Parameters [parameters]
 
-| Type                        | Name                                     | Description                                   |
-|-----------------------------|------------------------------------------|-----------------------------------------------|
-| <span class="xref">T</span> | <span class="parametername">value</span> | The initial value to use for the NetworkedVar |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1__ctor_"></span>
+| Type | Name  | Description                                   |
+|------|-------|-----------------------------------------------|
+| T    | value | The initial value to use for the NetworkedVar |
 
 ### NetworkedVar(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVar_1__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -287,11 +283,9 @@ Creates a NetworkedVar with the default value and custom settings
 
 #### Parameters [parameters-1]
 
-| Type                 | Name                                        | Description                              |
-|----------------------|---------------------------------------------|------------------------------------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> | The settings to use for the NetworkedVar |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1__ctor_"></span>
+| Type                 | Name     | Description                              |
+|----------------------|----------|------------------------------------------|
+| NetworkedVarSettings | settings | The settings to use for the NetworkedVar |
 
 ### NetworkedVar(NetworkedVarSettings, T) [MLAPI_NetworkedVar_NetworkedVar_1__ctor_MLAPI_NetworkedVar_NetworkedVarSettings__0_]
 
@@ -311,10 +305,10 @@ Creates a NetworkedVar with a custom value and custom settings
 
 #### Parameters [parameters-2]
 
-| Type                        | Name                                        | Description                                   |
-|-----------------------------|---------------------------------------------|-----------------------------------------------|
-| NetworkedVarSettings        | <span class="parametername">settings</span> | The settings to use for the NetworkedVar      |
-| <span class="xref">T</span> | <span class="parametername">value</span>    | The initial value to use for the NetworkedVar |
+| Type                 | Name     | Description                                   |
+|----------------------|----------|-----------------------------------------------|
+| NetworkedVarSettings | settings | The settings to use for the NetworkedVar      |
+| T                    | value    | The initial value to use for the NetworkedVar |
 
 ## Fields
 
@@ -362,7 +356,7 @@ The settings for this var
 |----------------------|-------------|
 | NetworkedVarSettings |             |
 
-## Properties <span id="MLAPI_NetworkedVar_NetworkedVar_1_isDirty_"></span>
+## Properties 
 
 ### isDirty [MLAPI_NetworkedVar_NetworkedVar_1_isDirty]
 
@@ -382,11 +376,9 @@ Gets or sets Whether or not the variable needs to be delta synced
 
 #### Property Value [property-value]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_LastSyncedTime_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### LastSyncedTime [MLAPI_NetworkedVar_NetworkedVar_1_LastSyncedTime]
 
@@ -406,11 +398,9 @@ Gets the last time the variable was synced
 
 #### Property Value [property-value-1]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.Single</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_Value_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
 
 ### Value [MLAPI_NetworkedVar_NetworkedVar_1_Value]
 
@@ -430,11 +420,11 @@ The value of the NetworkedVar container
 
 #### Property Value [property-value-2]
 
-| Type                        | Description |
-|-----------------------------|-------------|
-| <span class="xref">T</span> |             |
+| Type | Description |
+|------|-------------|
+| T    |             |
 
-## Methods <span id="MLAPI_NetworkedVar_NetworkedVar_1_CanClientRead_"></span>
+## Methods 
 
 ### CanClientRead(UInt64) [MLAPI_NetworkedVar_NetworkedVar_1_CanClientRead_System_UInt64_]
 
@@ -452,17 +442,15 @@ The value of the NetworkedVar container
 
 #### Parameters [parameters-3]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_CanClientWrite_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### CanClientWrite(UInt64) [MLAPI_NetworkedVar_NetworkedVar_1_CanClientWrite_System_UInt64_]
 
@@ -480,17 +468,15 @@ The value of the NetworkedVar container
 
 #### Parameters [parameters-4]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> |             |
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 #### Returns [returns-1]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_GetChannel_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### GetChannel() [MLAPI_NetworkedVar_NetworkedVar_1_GetChannel]
 
@@ -508,11 +494,9 @@ The value of the NetworkedVar container
 
 #### Returns [returns-2]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_IsDirty_"></span>
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### IsDirty() [MLAPI_NetworkedVar_NetworkedVar_1_IsDirty]
 
@@ -530,11 +514,9 @@ The value of the NetworkedVar container
 
 #### Returns [returns-3]
 
-| Type                                     | Description |
-|------------------------------------------|-------------|
-| <span class="xref">System.Boolean</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_ReadDelta_"></span>
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ReadDelta(Stream, Boolean) [MLAPI_NetworkedVar_NetworkedVar_1_ReadDelta_System_IO_Stream_System_Boolean_]
 
@@ -554,12 +536,10 @@ Reads value from the reader and applies it
 
 #### Parameters [parameters-5]
 
-| Type                                       | Name                                              | Description                                                                             |
-|--------------------------------------------|---------------------------------------------------|-----------------------------------------------------------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span>         | The stream to read the value from                                                       |
-| <span class="xref">System.Boolean</span>   | <span class="parametername">keepDirtyDelta</span> | Whether or not the container should keep the dirty delta, or mark the delta as consumed |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_ReadField_"></span>
+| Type             | Name           | Description                                                                             |
+|------------------|----------------|-----------------------------------------------------------------------------------------|
+| System.IO.Stream | stream         | The stream to read the value from                                                       |
+| System.Boolean   | keepDirtyDelta | Whether or not the container should keep the dirty delta, or mark the delta as consumed |
 
 ### ReadField(Stream) [MLAPI_NetworkedVar_NetworkedVar_1_ReadField_System_IO_Stream_]
 
@@ -577,11 +557,9 @@ Reads value from the reader and applies it
 
 #### Parameters [parameters-6]
 
-| Type                                       | Name                                      | Description |
-|--------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_ResetDirty_"></span>
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| System.IO.Stream | stream |             |
 
 ### ResetDirty() [MLAPI_NetworkedVar_NetworkedVar_1_ResetDirty]
 
@@ -596,9 +574,6 @@ Reads value from the reader and applies it
 #### Declaration [declaration-15]
 
     public void ResetDirty()
-
-<span
-id="MLAPI_NetworkedVar_NetworkedVar_1_SetNetworkedBehaviour_"></span>
 
 ### SetNetworkedBehaviour(NetworkedBehaviour) [MLAPI_NetworkedVar_NetworkedVar_1_SetNetworkedBehaviour_MLAPI_NetworkedBehaviour_]
 
@@ -616,11 +591,9 @@ id="MLAPI_NetworkedVar_NetworkedVar_1_SetNetworkedBehaviour_"></span>
 
 #### Parameters [parameters-7]
 
-| Type               | Name                                         | Description |
-|--------------------|----------------------------------------------|-------------|
-| NetworkedBehaviour | <span class="parametername">behaviour</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_WriteDelta_"></span>
+| Type               | Name      | Description |
+|--------------------|-----------|-------------|
+| NetworkedBehaviour | behaviour |             |
 
 ### WriteDelta(Stream) [MLAPI_NetworkedVar_NetworkedVar_1_WriteDelta_System_IO_Stream_]
 
@@ -640,11 +613,9 @@ Writes the variable to the writer
 
 #### Parameters [parameters-8]
 
-| Type                                       | Name                                      | Description                      |
-|--------------------------------------------|-------------------------------------------|----------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream to write the value to |
-
-<span id="MLAPI_NetworkedVar_NetworkedVar_1_WriteField_"></span>
+| Type             | Name   | Description                      |
+|------------------|--------|----------------------------------|
+| System.IO.Stream | stream | The stream to write the value to |
 
 ### WriteField(Stream) [MLAPI_NetworkedVar_NetworkedVar_1_WriteField_System_IO_Stream_]
 
@@ -662,9 +633,9 @@ Writes the variable to the writer
 
 #### Parameters [parameters-9]
 
-| Type                                       | Name                                      | Description |
-|--------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> |             |
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| System.IO.Stream | stream |             |
 
 ### Implements [implements]
 

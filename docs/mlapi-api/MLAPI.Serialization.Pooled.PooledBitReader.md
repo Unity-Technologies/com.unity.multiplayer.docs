@@ -49,7 +49,7 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.IDisposable</span>
+System.IDisposable
 
 </div>
 
@@ -633,7 +633,7 @@ Object.ToString()
 
     public sealed class PooledBitReader : BitReader, IDisposable
 
-## Methods <span id="MLAPI_Serialization_Pooled_PooledBitReader_Dispose_"></span>
+## Methods 
 
 ### Dispose() [MLAPI_Serialization_Pooled_PooledBitReader_Dispose]
 
@@ -650,8 +650,6 @@ Returns the PooledBitReader into the static BitReaderPool
 #### Declaration [declaration]
 
     public void Dispose()
-
-<span id="MLAPI_Serialization_Pooled_PooledBitReader_Get_"></span>
 
 ### Get(Stream) [MLAPI_Serialization_Pooled_PooledBitReader_Get_System_IO_Stream_]
 
@@ -671,9 +669,9 @@ Gets a PooledBitReader from the static BitReaderPool
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description |
-|--------------------------------------------|-------------------------------------------|-------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> |             |
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| System.IO.Stream | stream |             |
 
 #### Returns [returns]
 
@@ -685,6 +683,6 @@ Gets a PooledBitReader from the static BitReaderPool
 
 <div markdown="1">
 
-<span class="xref">System.IDisposable</span>
+System.IDisposable
 
 </div>

@@ -28,7 +28,7 @@ Delegate used for incoming unnamed messages
 
 ##### Parameters [parameters]
 
-| Type                                       | Name       | Description                            |
-|--------------------------------------------|------------|----------------------------------------|
-| <span class="xref">System.UInt64</span>    | \*clientId | The clientId that sent the message     |
-| <span class="xref">System.IO.Stream</span> | \*stream   | The stream containing the message data |
+| Type             | Name       | Description                            |
+|------------------|------------|----------------------------------------|
+| System.UInt64    | \*clientId | The clientId that sent the message     |
+| System.IO.Stream | \*stream   | The stream containing the message data |

@@ -61,7 +61,7 @@ System.Dynamic.ExpandoObject
 
 <div markdown="1">
 
-<span class="xref">System.IDisposable</span>
+System.IDisposable
 
 </div>
 
@@ -405,7 +405,7 @@ Object.ReferenceEquals(Object, Object)
 
     public sealed class PooledBitStream : BitStream, IDisposable
 
-## Methods <span id="MLAPI_Serialization_Pooled_PooledBitStream_Dispose_"></span>
+## Methods 
 
 ### Dispose() [MLAPI_Serialization_Pooled_PooledBitStream_Dispose]
 
@@ -422,8 +422,6 @@ Returns the PooledBitStream into the static BitStreamPool
 #### Declaration [declaration]
 
     public void Dispose()
-
-<span id="MLAPI_Serialization_Pooled_PooledBitStream_Get_"></span>
 
 ### Get() [MLAPI_Serialization_Pooled_PooledBitStream_Get]
 
@@ -451,6 +449,6 @@ Gets a PooledBitStream from the static BitStreamPool
 
 <div markdown="1">
 
-<span class="xref">System.IDisposable</span>
+System.IDisposable
 
 </div>

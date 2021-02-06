@@ -112,11 +112,11 @@ Simulation objects
 
 #### Field Value [field-value]
 
-| Type                                                                       | Description |
-|----------------------------------------------------------------------------|-------------|
-| <span class="xref">System.Collections.Generic.List</span>\<TrackedObject\> |             |
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List\<TrackedObject\> |             |
 
-## Methods <span id="MLAPI_LagCompensation_LagCompensationManager_Simulate_"></span>
+## Methods 
 
 ### Simulate(Single, Action) [MLAPI_LagCompensation_LagCompensationManager_Simulate_System_Single_System_Action_]
 
@@ -137,13 +137,10 @@ it back
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                          | Description                                   |
-|-----------------------------------------|-----------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.Single</span> | <span class="parametername">secondsAgo</span> | The amount of seconds                         |
-| <span class="xref">System.Action</span> | <span class="parametername">action</span>     | The action to invoke when time is turned back |
-
-<span
-id="MLAPI_LagCompensation_LagCompensationManager_Simulate_"></span>
+| Type          | Name       | Description                                   |
+|---------------|------------|-----------------------------------------------|
+| System.Single | secondsAgo | The amount of seconds                         |
+| System.Action | action     | The action to invoke when time is turned back |
 
 ### Simulate(Single, IList\<TrackedObject\>, Action) [MLAPI_LagCompensation_LagCompensationManager_Simulate_System_Single_System_Collections_Generic_IList_MLAPI_LagCompensation_TrackedObject__System_Action_]
 
@@ -164,14 +161,11 @@ an action and turns it back
 
 #### Parameters [parameters-1]
 
-| Type                                                                        | Name                                                | Description                                   |
-|-----------------------------------------------------------------------------|-----------------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.Single</span>                                     | <span class="parametername">secondsAgo</span>       | The amount of seconds                         |
-| <span class="xref">System.Collections.Generic.IList</span>\<TrackedObject\> | <span class="parametername">simulatedObjects</span> | The object to simulate back in time           |
-| <span class="xref">System.Action</span>                                     | <span class="parametername">action</span>           | The action to invoke when time is turned back |
-
-<span
-id="MLAPI_LagCompensation_LagCompensationManager_Simulate_"></span>
+| Type                                              | Name             | Description                                   |
+|---------------------------------------------------|------------------|-----------------------------------------------|
+| System.Single                                     | secondsAgo       | The amount of seconds                         |
+| System.Collections.Generic.IList\<TrackedObject\> | simulatedObjects | The object to simulate back in time           |
+| System.Action                                     | action           | The action to invoke when time is turned back |
 
 ### Simulate(UInt64, Action) [MLAPI_LagCompensation_LagCompensationManager_Simulate_System_UInt64_System_Action_]
 
@@ -192,7 +186,7 @@ it back. The time is based on the estimated RTT of a clientId
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                        | Description                                   |
-|-----------------------------------------|---------------------------------------------|-----------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">clientId</span> | The clientId's RTT to use                     |
-| <span class="xref">System.Action</span> | <span class="parametername">action</span>   | The action to invoke when time is turned back |
+| Type          | Name     | Description                                   |
+|---------------|----------|-----------------------------------------------|
+| System.UInt64 | clientId | The clientId's RTT to use                     |
+| System.Action | action   | The action to invoke when time is turned back |

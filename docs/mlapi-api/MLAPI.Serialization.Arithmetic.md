@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class Arithmetic
 
-## Methods <span id="MLAPI_Serialization_Arithmetic_VarIntSize_"></span>
+## Methods 
 
 ### VarIntSize(UInt64) [MLAPI_Serialization_Arithmetic_VarIntSize_System_UInt64_]
 
@@ -112,17 +112,15 @@ Gets the output size in bytes after VarInting a unsigned integer
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                     | Description                              |
-|-----------------------------------------|------------------------------------------|------------------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">value</span> | The unsigned integer whose length to get |
+| Type          | Name  | Description                              |
+|---------------|-------|------------------------------------------|
+| System.UInt64 | value | The unsigned integer whose length to get |
 
 #### Returns [returns]
 
-| Type                                   | Description         |
-|----------------------------------------|---------------------|
-| <span class="xref">System.Int32</span> | The amount of bytes |
-
-<span id="MLAPI_Serialization_Arithmetic_ZigZagDecode_"></span>
+| Type         | Description         |
+|--------------|---------------------|
+| System.Int32 | The amount of bytes |
 
 ### ZigZagDecode(UInt64) [MLAPI_Serialization_Arithmetic_ZigZagDecode_System_UInt64_]
 
@@ -142,17 +140,15 @@ Decides a ZigZag encoded integer back to a signed integer
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                     | Description          |
-|-----------------------------------------|------------------------------------------|----------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">value</span> | The unsigned integer |
+| Type          | Name  | Description          |
+|---------------|-------|----------------------|
+| System.UInt64 | value | The unsigned integer |
 
 #### Returns [returns-1]
 
-| Type                                   | Description                       |
-|----------------------------------------|-----------------------------------|
-| <span class="xref">System.Int64</span> | The signed version of the integer |
-
-<span id="MLAPI_Serialization_Arithmetic_ZigZagEncode_"></span>
+| Type         | Description                       |
+|--------------|-----------------------------------|
+| System.Int64 | The signed version of the integer |
 
 ### ZigZagEncode(Int64) [MLAPI_Serialization_Arithmetic_ZigZagEncode_System_Int64_]
 
@@ -172,12 +168,12 @@ ZigZag encodes a signed integer and maps it to a unsigned integer
 
 #### Parameters [parameters-2]
 
-| Type                                   | Name                                     | Description                  |
-|----------------------------------------|------------------------------------------|------------------------------|
-| <span class="xref">System.Int64</span> | <span class="parametername">value</span> | The signed integer to encode |
+| Type         | Name  | Description                  |
+|--------------|-------|------------------------------|
+| System.Int64 | value | The signed integer to encode |
 
 #### Returns [returns-2]
 
-| Type                                    | Description                             |
-|-----------------------------------------|-----------------------------------------|
-| <span class="xref">System.UInt64</span> | A ZigZag encoded version of the integer |
+| Type          | Description                             |
+|---------------|-----------------------------------------|
+| System.UInt64 | A ZigZag encoded version of the integer |

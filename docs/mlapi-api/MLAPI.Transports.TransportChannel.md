@@ -113,9 +113,9 @@ The name of the channel
 
 #### Field Value [field-value]
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| <span class="xref">System.String</span> |             |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### Type [MLAPI_Transports_TransportChannel_Type]
 

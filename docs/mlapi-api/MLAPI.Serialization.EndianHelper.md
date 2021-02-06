@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class EndianHelper
 
-## Methods <span id="MLAPI_Serialization_EndianHelper_SwapEndian_"></span>
+## Methods 
 
 ### SwapEndian(UInt32) [MLAPI_Serialization_EndianHelper_SwapEndian_System_UInt32_]
 
@@ -112,17 +112,15 @@ Swaps the endianness of a given integer
 
 #### Parameters [parameters]
 
-| Type                                    | Name                                     | Description                   |
-|-----------------------------------------|------------------------------------------|-------------------------------|
-| <span class="xref">System.UInt32</span> | <span class="parametername">value</span> | The integer to swap endianess |
+| Type          | Name  | Description                   |
+|---------------|-------|-------------------------------|
+| System.UInt32 | value | The integer to swap endianess |
 
 #### Returns [returns]
 
-| Type                                    | Description                         |
-|-----------------------------------------|-------------------------------------|
-| <span class="xref">System.UInt32</span> | The integer with swapped endianness |
-
-<span id="MLAPI_Serialization_EndianHelper_SwapEndian_"></span>
+| Type          | Description                         |
+|---------------|-------------------------------------|
+| System.UInt32 | The integer with swapped endianness |
 
 ### SwapEndian(UInt64) [MLAPI_Serialization_EndianHelper_SwapEndian_System_UInt64_]
 
@@ -142,12 +140,12 @@ Swaps the endianness of a given integer
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                     | Description                   |
-|-----------------------------------------|------------------------------------------|-------------------------------|
-| <span class="xref">System.UInt64</span> | <span class="parametername">value</span> | The integer to swap endianess |
+| Type          | Name  | Description                   |
+|---------------|-------|-------------------------------|
+| System.UInt64 | value | The integer to swap endianess |
 
 #### Returns [returns-1]
 
-| Type                                    | Description                         |
-|-----------------------------------------|-------------------------------------|
-| <span class="xref">System.UInt64</span> | The integer with swapped endianness |
+| Type          | Description                         |
+|---------------|-------------------------------------|
+| System.UInt64 | The integer with swapped endianness |

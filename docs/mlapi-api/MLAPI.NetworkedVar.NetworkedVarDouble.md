@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarDouble : NetworkedVar<double>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarDouble__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarDouble() [MLAPI_NetworkedVar_NetworkedVarDouble__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarDouble()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarDouble__ctor_"></span>
 
 ### NetworkedVarDouble(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarDouble__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarDouble__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarDouble(NetworkedVarSettings, Double) [MLAPI_NetworkedVar_NetworkedVarDouble__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Double_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                    | Name                                        | Description |
-|-----------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                    | <span class="parametername">settings</span> |             |
-| <span class="xref">System.Double</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarDouble__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
+| System.Double        | value    |             |
 
 ### NetworkedVarDouble(Double) [MLAPI_NetworkedVar_NetworkedVarDouble__ctor_System_Double_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                    | Name                                     | Description |
-|-----------------------------------------|------------------------------------------|-------------|
-| <span class="xref">System.Double</span> | <span class="parametername">value</span> |             |
+| Type          | Name  | Description |
+|---------------|-------|-------------|
+| System.Double | value |             |
 
 ### Implements [implements]
 

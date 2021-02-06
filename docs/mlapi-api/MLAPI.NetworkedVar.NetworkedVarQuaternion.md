@@ -201,7 +201,7 @@ Object.ToString()
     [Serializable]
     public class NetworkedVarQuaternion : NetworkedVar<Quaternion>, INetworkedVar
 
-## Constructors <span id="MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_"></span>
+## Constructors 
 
 ### NetworkedVarQuaternion() [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor]
 
@@ -216,8 +216,6 @@ Object.ToString()
 #### Declaration [declaration]
 
     public NetworkedVarQuaternion()
-
-<span id="MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_"></span>
 
 ### NetworkedVarQuaternion(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
 
@@ -235,11 +233,9 @@ Object.ToString()
 
 #### Parameters [parameters]
 
-| Type                 | Name                                        | Description |
-|----------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings | <span class="parametername">settings</span> |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_"></span>
+| Type                 | Name     | Description |
+|----------------------|----------|-------------|
+| NetworkedVarSettings | settings |             |
 
 ### NetworkedVarQuaternion(NetworkedVarSettings, Quaternion) [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Quaternion_]
 
@@ -257,12 +253,10 @@ Object.ToString()
 
 #### Parameters [parameters-1]
 
-| Type                                             | Name                                        | Description |
-|--------------------------------------------------|---------------------------------------------|-------------|
-| NetworkedVarSettings                             | <span class="parametername">settings</span> |             |
-| <span class="xref">UnityEngine.Quaternion</span> | <span class="parametername">value</span>    |             |
-
-<span id="MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_"></span>
+| Type                   | Name     | Description |
+|------------------------|----------|-------------|
+| NetworkedVarSettings   | settings |             |
+| UnityEngine.Quaternion | value    |             |
 
 ### NetworkedVarQuaternion(Quaternion) [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_UnityEngine_Quaternion_]
 
@@ -280,9 +274,9 @@ Object.ToString()
 
 #### Parameters [parameters-2]
 
-| Type                                             | Name                                     | Description |
-|--------------------------------------------------|------------------------------------------|-------------|
-| <span class="xref">UnityEngine.Quaternion</span> | <span class="parametername">value</span> |             |
+| Type                   | Name  | Description |
+|------------------------|-------|-------------|
+| UnityEngine.Quaternion | value |             |
 
 ### Implements [implements]
 

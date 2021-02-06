@@ -28,13 +28,13 @@ The delegate used to check if a move is valid
 
 ##### Parameters [parameters]
 
-| Type                                          | Name     | Description                |
-|-----------------------------------------------|----------|----------------------------|
-| <span class="xref">UnityEngine.Vector3</span> | \*oldPos | The previous position      |
-| <span class="xref">UnityEngine.Vector3</span> | \*newPos | The new requested position |
+| Type                | Name     | Description                |
+|---------------------|----------|----------------------------|
+| UnityEngine.Vector3 | \*oldPos | The previous position      |
+| UnityEngine.Vector3 | \*newPos | The new requested position |
 
 ##### Returns [returns]
 
-| Type                                     | Description                              |
-|------------------------------------------|------------------------------------------|
-| <span class="xref">System.Boolean</span> | Returns Whether or not the move is valid |
+| Type           | Description                              |
+|----------------|------------------------------------------|
+| System.Boolean | Returns Whether or not the move is valid |

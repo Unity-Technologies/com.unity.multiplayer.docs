@@ -26,19 +26,19 @@ Delegate NetworkedBehaviour.ResponseRpcMethod\<TResult, T1\>
 
 ##### Parameters [parameters]
 
-| Type                         | Name | Description |
-|------------------------------|------|-------------|
-| <span class="xref">T1</span> | \*t1 |             |
+| Type | Name | Description |
+|------|------|-------------|
+| T1   | \*t1 |             |
 
 ##### Returns [returns]
 
-| Type                              | Description |
-|-----------------------------------|-------------|
-| <span class="xref">TResult</span> |             |
+| Type    | Description |
+|---------|-------------|
+| TResult |             |
 
 ##### Type Parameters [type-parameters]
 
-| Name                                       | Description |
-|--------------------------------------------|-------------|
-| <span class="parametername">TResult</span> |             |
-| <span class="parametername">T1</span>      |             |
+| Name    | Description |
+|---------|-------------|
+| TResult |             |
+| T1      |             |

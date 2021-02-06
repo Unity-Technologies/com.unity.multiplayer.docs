@@ -92,7 +92,7 @@ Object.ToString()
 
     public static class BitWriterPool
 
-## Methods <span id="MLAPI_Serialization_Pooled_BitWriterPool_GetWriter_"></span>
+## Methods 
 
 ### GetWriter(Stream) [MLAPI_Serialization_Pooled_BitWriterPool_GetWriter_System_IO_Stream_]
 
@@ -112,18 +112,15 @@ Retrieves a PooledBitWriter
 
 #### Parameters [parameters]
 
-| Type                                       | Name                                      | Description                           |
-|--------------------------------------------|-------------------------------------------|---------------------------------------|
-| <span class="xref">System.IO.Stream</span> | <span class="parametername">stream</span> | The stream the writer should write to |
+| Type             | Name   | Description                           |
+|------------------|--------|---------------------------------------|
+| System.IO.Stream | stream | The stream the writer should write to |
 
 #### Returns [returns]
 
 | Type            | Description       |
 |-----------------|-------------------|
 | PooledBitWriter | A PooledBitWriter |
-
-<span
-id="MLAPI_Serialization_Pooled_BitWriterPool_PutBackInPool_"></span>
 
 ### PutBackInPool(PooledBitWriter) [MLAPI_Serialization_Pooled_BitWriterPool_PutBackInPool_MLAPI_Serialization_Pooled_PooledBitWriter_]
 
@@ -143,6 +140,6 @@ Puts a PooledBitWriter back into the pool
 
 #### Parameters [parameters-1]
 
-| Type            | Name                                      | Description                   |
-|-----------------|-------------------------------------------|-------------------------------|
-| PooledBitWriter | <span class="parametername">writer</span> | The writer to put in the pool |
+| Type            | Name   | Description                   |
+|-----------------|--------|-------------------------------|
+| PooledBitWriter | writer | The writer to put in the pool |
