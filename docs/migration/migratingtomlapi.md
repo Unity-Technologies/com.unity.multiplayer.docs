@@ -24,7 +24,7 @@ It is recommended that you back up your project before proceeding with the migra
 
 ### Install MLAPI and restart Unity.
 
-See [Installion](../getting-started/installation.md) for more information.
+See [Installation](../getting-started/installation.md) for more information.
 
 ### Invoking
 Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkedBehaviour`` instead of calling the method directly like in UNET.
@@ -448,7 +448,7 @@ public void ChangeScene()
     NetworkSceneManager.SwitchScene("MyNewScene");
 }
 
-### ClientAttribute/CLientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
+### ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
 
 MLAPI currently does not offer a replacement for marking a function with an attribute so that it only
 runs on the server or the client. You can manually return out of the function instead.
