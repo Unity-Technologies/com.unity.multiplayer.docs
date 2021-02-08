@@ -52,9 +52,9 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-basics/messaging-system/network-update-loop-system/introduction"
               },
-              {
+             {
                 "type": "doc",
-                "id": "mlapi-basics/messaging-system/network-update-loop-system/network-game-update-loop"
+                "id": "mlapi-basics/messaging-system/network-update-loop-system/network-update-loop-reference"
               },
             ]
             },
