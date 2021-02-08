@@ -91,16 +91,17 @@ module.exports = {
                 {
                   "type": "doc",
                   "id": "mlapi-basics/static-arrays"
-                },
-                /*{
-                  "type": "doc",
-                  "id": "mlapi-basics/networkobject-networkbehaviour"
-                },*/
+                },  
                 { 
                   "type": "doc",
                   "id": "mlapi-basics/inetworkserializable-bitserializer"
                   
                 },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/serializable-reference"
+                },
+              
               ]
               },
               {
