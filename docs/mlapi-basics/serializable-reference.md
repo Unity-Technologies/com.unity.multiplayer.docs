@@ -1,7 +1,7 @@
 ---
-id: inetworkserializable-bitserializer
-title: INetworkSerializable & BitSerializer
-sidebar_label: INetworkSerializable & BitSerializer
+id: serializable-reference
+title: Advanced Reference Informtion
+sidebar_label: Advanced Reference Informtion
 ---
 
 ## INetworkSerializable
@@ -79,3 +79,6 @@ class BitSerializer
 }
 
 ```
+## RPC & ILPP Changes
+
+Currently `NetworkBehaviour.__beginSendServerRpc` and other internal RPC methods are returning and consuming `BitWriter` instances but  it is intended that they should return and consume `BitSerializer` instances constructed with `BitWriter` and `BitReader` instead. IL injected into RPC method bodies should change and use BitSerializer instead of BitWriter and generated static RPC handler methods should also use `BitSerializer` instead of `BitReader`.
