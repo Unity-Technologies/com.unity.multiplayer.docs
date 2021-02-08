@@ -503,3 +503,75 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
     }
   }
 }
+
+// API CSS - DOCFX
+
+h1, h2, h3, h4, h5, h6, .text-break {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.inheritance .level0:before,
+.inheritance .level1:before,
+.inheritance .level2:before,
+.inheritance .level3:before,
+.inheritance .level4:before,
+.inheritance .level5:before {
+    content: '↳';
+    margin-right: 5px;
+}
+
+.inheritance .level0 {
+    margin-left: 0em;
+}
+
+.inheritance .level1 {
+    margin-left: 1em;
+}
+
+.inheritance .level2 {
+    margin-left: 2em;
+}
+
+.inheritance .level3 {
+    margin-left: 3em;
+}
+
+.inheritance .level4 {
+    margin-left: 4em;
+}
+
+.inheritance .level5 {
+    margin-left: 5em;
+}
+
+.level0.summary {
+  margin: 2em 0 2em 0;
+}
+
+.level1.summary {
+  margin: 1em 0 1em 0;
+}
+
+span.parametername,
+span.paramref,
+span.typeparamref {
+    font-style: italic;
+}
+span.languagekeyword{
+    font-weight: bold;
+}
+
+.codewrapper {
+  position: relative;
+}
+
+.inheritance h5, .inheritedMembers h5 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2em;
+}
+
+.inheritance, .inheritedMembers {
+  margin-bottom: 25px;
+}
