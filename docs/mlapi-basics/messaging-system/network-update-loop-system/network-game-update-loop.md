@@ -84,7 +84,7 @@ Both the 'RegisterUpdate' and the `RegisterUpdateLoopSystemDestroyCallback` meth
 
 Currently, the `NetworkingManager` and the `RpcQueueContainer` derive from two predefined `INetworkUpdateLoopSystem` derived classes (`UpdateLoopBehaviour` and `GenericUpdateLoopSystem`). 
 
-![Updated Classes](../../../../build/img/UpdatedClassesNULS.png)
+![Updated Classes](../../../../static/img/UpdatedClassesNULS.png)
 
 **NetworkingManager:** Now derives from the UpdateLoopBehaviour and registers for the following network update loop stages:
 
