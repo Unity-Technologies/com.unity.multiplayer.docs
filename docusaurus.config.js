@@ -85,6 +85,11 @@ module.exports = {
               label: 'GitHub Code Repo',
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
             },
+            {
+              type: 'doc',
+              to: 'docs/template',
+              label: 'Doc Template',
+            },
           ]
         },
         {
