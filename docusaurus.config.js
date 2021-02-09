@@ -51,6 +51,12 @@ module.exports = {
         },
         {
           type: 'doc',
+          docId: 'mlapi-api/introduction',
+          label: 'API',
+          position: 'left',
+        },
+        {
+          type: 'doc',
           docId: 'tools/introduction',
           label: 'Tools',
           position: 'left',
