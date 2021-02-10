@@ -46,7 +46,13 @@ module.exports = {
         {
           type: 'doc',
           docId: 'about-mlapi',
-          label: 'MLAPI Docs',
+          label: 'MLAPI',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'transport/introduction',
+          label: 'Transport',
           position: 'left',
         },
         {
