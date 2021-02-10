@@ -51,6 +51,12 @@ module.exports = {
         },
         {
           type: 'doc',
+          docId: 'mlapi-api/introduction',
+          label: 'API',
+          position: 'left',
+        },
+        {
+          type: 'doc',
           docId: 'transport/introduction',
           label: 'Transport',
           position: 'left',
@@ -84,6 +90,11 @@ module.exports = {
             {
               label: 'GitHub Code Repo',
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+            },
+            {
+              type: 'doc',
+              to: 'docs/template',
+              label: 'Doc Template',
             },
           ]
         },
