@@ -19,6 +19,29 @@
   --ifm-color-primary-lightest: #80aaef;
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: Roboto,sans-serif;
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-h5-font-size: 0.875rem;
+  --ifm-h6-font-size: 0.85rem;
+  --ifm-font-family-headings: Roboto, 'Segoe UI';
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+h1, h2, h3, h4, h5, h6, .text-break {
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: var(--ifm-font-family-headings);
+}
+
+.docTitle_src-theme-DocItem- {
+  font-size: var(--ifm-h1-font-size);
+}
+
+.markdown > h2 {
+  font-size: 1.5rem !important;
 }
 
 .footer {
@@ -512,11 +535,6 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
 
 // API CSS - DOCFX
 
-h1, h2, h3, h4, h5, h6, .text-break {
-  word-wrap: break-word;
-  word-break: break-word;
-}
-
 .inheritance .level0:before,
 .inheritance .level1:before,
 .inheritance .level2:before,
@@ -529,26 +547,44 @@ h1, h2, h3, h4, h5, h6, .text-break {
 
 .inheritance .level0 {
     margin-left: 0em;
+    p {
+      display:inline;
+    }
 }
 
 .inheritance .level1 {
     margin-left: 1em;
+    p {
+      display:inline;
+    }
 }
 
 .inheritance .level2 {
     margin-left: 2em;
+    p {
+      display:inline;
+    }
 }
 
 .inheritance .level3 {
     margin-left: 3em;
+    p {
+      display:inline;
+    }
 }
 
 .inheritance .level4 {
     margin-left: 4em;
+    p {
+      display:inline;
+    }
 }
 
 .inheritance .level5 {
     margin-left: 5em;
+    p {
+      display:inline;
+    }
 }
 
 .level0.summary {
@@ -576,8 +612,20 @@ span.languagekeyword{
   padding-bottom: 5px;
   border-bottom: 1px solid #ccc;
   font-size: 1.2em;
+  p {
+    display:inline;
+  }
 }
 
 .inheritance, .inheritedMembers {
   margin-bottom: 25px;
+  p {
+    display:inline;
+  }
 }
+
+.inheritance hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+// General Styles
