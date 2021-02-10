@@ -1,10 +1,9 @@
 ---
 id: template
-title: Markdown Style Guide
-sidebar_label: Markdown Style Guide
+title: Doc Template
 ---
 
-This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
 ## Markdown Syntax
 
