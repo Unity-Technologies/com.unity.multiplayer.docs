@@ -5,7 +5,7 @@ title: JobifiedClientBehavior
 
 Sample code for `JobifiedClientBehavior`:
 
-```c#
+```csharp
 using UnityEngine;
 
 using Unity.Jobs;

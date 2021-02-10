@@ -21,7 +21,7 @@ The example below shows how the driver can create a new pipeline with 2 pipeline
 
 When sending packets the pipeline can then be specified as a parameter, so the packet is passed through it, it's then automatically processed the right way on the receiving end. It is therefore important both the client and server set up their pipelines in exactly the same way. One exception is with pipeline stages which do not manipulate the packet  payload or header, these do not need to be symmetric. For example, the simulator stage here is only keeping packets on hold for a certain time and then releases them unmodified or drops them altogether, it can therefore be set up to only run on the client.
 
-```c#
+```csharp
 using Unity.Collections;
 using Unity.Networking.Transport;
 using Unity.Networking.Transport.Utilities;
@@ -62,7 +62,7 @@ The simulator pipeline stage could be added on either the client or server to si
 
 No further configuration is needed after configuring the pipline. It can be set up when the driver is created, as follows:
 
-```c#
+```csharp
 m_DriverHandle = NetworkDriver.Create(new SimulatorUtility.Parameters {MaxPacketSize = NetworkParameterConstants.MTU, MaxPacketCount = 30, PacketDelayMs = 25, PacketDropPercentage = 10});
 m_Pipeline = m_DriverHandle.CreatePipeline(typeof(SimulatorPipelineStage));
 ```
@@ -73,7 +73,7 @@ This would create a simulator pipeline stage which can delay up to 30 packets of
 
 To get information about internal state in the simulator, check the `SimulatorUtility.Context` structure, stored in the pipeline stage shared buffer. This tracks how many packets have been set, `PacketCount`, and how many of those were dropped, `PacketDropCount`. `ReadyPackets` and `WaitingPackets` shows what packets are now ready to be sent (delay time expired) and how many are stored by the simulator. `StatsTime` and `NextPacketTime` show the last time the simulator ran and when the next packet is due to be released.
 
-```c#
+```csharp
 public unsafe void DumpSimulatorStatistics()
 {
     var simulatorStageId = NetworkPipelineStageCollection.GetStageId(typeof(SimulatorPipelineStage));
@@ -95,7 +95,7 @@ The reliability pipeline makes sure all packets are delivered and in order. It a
 
 Reliability packet header looks like this:
 
-```c#
+```csharp
 public struct PacketHeader
 {
     public ushort Type;
@@ -114,14 +114,14 @@ The ack packet type is used when a certain amount of time has passed and nothing
 
 The following creates a pipeline with just the reliability pipeline stage present, and initialize it to a window size of 32 (so it can keep track of 32 reliable packets at a one time). The maximum value for this is 32.
 
-```c#
+```csharp
 m_ServerDriver = NetworkDriver.Create(new ReliableUtility.Parameters { WindowSize = 32 });
 m_Pipeline = m_ServerDriver.CreatePipeline(typeof(ReliableSequencedPipelineStage));
 ```
 
 Because only 32 packets can be tracked at a time there can't be more than 32 packets in flight at any one time, trying to send a 33rd packet will result in an error and it will not be reliable (no guarantee of delivery). It's possible to check for such errors by checking the error code in the reliability internal state:
 
-```c#
+```csharp
 // Get a reference to the internal state or shared context of the reliability
 var reliableStageId = NetworkPipelineStageCollection.GetStageId(typeof(ReliableSequencedPipelineStage));
 m_ServerDriver.GetPipelineBuffers(serverPipe, reliableStageId, serverToClient, out var tmpReceiveBuffer, out var tmpSendBuffer, out var serverReliableBuffer);

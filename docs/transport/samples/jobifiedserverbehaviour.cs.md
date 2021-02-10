@@ -5,7 +5,7 @@ title: JobifiedServerBehavior
 
 Sample code for `JobifiedServerBehavior`:
 
-```c#
+```csharp
 using UnityEngine;
 using UnityEngine.Assertions;
 

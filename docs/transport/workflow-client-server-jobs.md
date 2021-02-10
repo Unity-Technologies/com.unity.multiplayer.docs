@@ -12,7 +12,7 @@ Before reading this workflow, review how the [C# Job System](https://docs.unity3
 
 Create a client job to handle your inputs from the network. As you only handle one client at a time, use [IJob](https://docs.unity3d.com/ScriptReference/Unity.Jobs.IJob.html) as your job type. You need to pass the driver and the connection to the job to handle updates within the `Execute` method of the job.
 
-```c#
+```csharp
 struct ClientUpdateJob: IJob
 {
     public NetworkDriver driver;
@@ -37,7 +37,7 @@ In your `Execute` method, move over your code from the `Update` method that you 
 
 You need to change any call to `m_Connection` to `connection[0]` to refer to the first element inside your `NativeArray`. The same goes for your `done` variable, you need to call `done[0]` when you refer to the `done` variable. See the following:
 
-```c#
+```csharp
 public void Execute()
 {
     if (!connection[0].IsCreated)
@@ -88,7 +88,7 @@ Complete changes to `ClientBehaviour`:
 * Change `m_Done` and `m_Connection` to type `NativeArray`
 * Add a [JobHandle](https://docs.unity3d.com/Manual/JobSystemJobDependencies.html) to track ongoing jobs
 
-```c#
+```csharp
 public class JobifiedClientBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
@@ -104,7 +104,7 @@ public class JobifiedClientBehaviour : MonoBehaviour
 
 #### Start method
 
-```c#
+```csharp
 void Start () {
     m_Driver = NetworkDriver.Create();
     m_Connection = new NativeArray<NetworkConnection>(1, Allocator.Persistent);
@@ -121,7 +121,7 @@ The `Start` method looks pretty similar to before, the major update here is to v
 
 #### OnDestroy method
 
-```c#
+```csharp
 public void OnDestroy()
 {
     ClientJobHandle.Complete();
@@ -138,7 +138,7 @@ For the `OnDestroy` method, dispose all `NativeArray` objects. Add a `ClientJobH
 
 Finally update your core game loop:
 
-```c#
+```csharp
 void Update()
 {
     ClientJobHandle.Complete();
@@ -150,7 +150,7 @@ Before you start running your new frame, check that the last frame has completed
 
 To chain your job, start by creating a job struct:
 
-```c#
+```csharp
 var job = new ClientUpdateJob
 {
     driver = m_Driver,
@@ -163,7 +163,7 @@ var job = new ClientUpdateJob
 
 Pass the returned `ClientJobHandle` to your own job, returning a newly updated `ClientJobHandle`.
 
-```c#
+```csharp
 ClientJobHandle = m_Driver.ScheduleUpdate();
 ClientJobHandle = job.Schedule(ClientJobHandle);
 ```
@@ -180,7 +180,7 @@ Consider this: you know that the `NetworkDriver` has a `ScheduleUpdate` method t
 Because you do not know how many requests you may receive or how many connections you may need to process at any one time, there is another `IJobPrarallelFor` job type that you can use namely: `IJobParallelForDefer`.
 :::
 
-```c#
+```csharp
 struct ServerUpdateJob : IJobParallelForDefer
 {
     public void Execute(int index)
@@ -196,7 +196,7 @@ In the client example above, you begin by cleaning up closed connections and acc
 
 Start by creating a `ServerUpdateConnectionJob` job. Pass both the `driver` and `connections` to the connection job. Then you want your job to "Clean up connections" and "Accept new connections":
 
-```c#
+```csharp
 struct ServerUpdateConnectionsJob : IJob
 {
     public NetworkDriver driver;
@@ -228,7 +228,7 @@ The code above should be almost identical to your old non-jobified code.
 
 With the `ServerUpdateConnectionsJob` done, implement the `ServerUpdateJob` using `IJobParallelFor`:
 
-```c#
+```csharp
 struct ServerUpdateJob : IJobParallelForDefer
 {
     public NetworkDriver.Concurrent driver;
@@ -250,7 +250,7 @@ There are two major differences compared with the other `job`:
 
 The only difference between the old code and the jobified example is that you remove the top level `for` loop that you had in your code: `for (int i = 0; i < m_Connections.Length; i++)`. This is removed because the `Execute` function on this job will be called for each connection, and the `index` to that a available connection will be passed in. 
 
-```c#
+```csharp
 public void Execute(int index)
 {
     DataStreamReader stream;
@@ -301,7 +301,7 @@ You now have two jobs:
 
 Access your [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) and start updating the server.
 
-```c#
+```csharp
 public class JobifiedServerBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
@@ -322,7 +322,7 @@ The only change made in your variable declaration is adding a `JobHandle` to kee
 
 You do not need to change your `Start` method as it should look the same:
 
-```c#
+```csharp
 void Start ()
 {
     m_Connections = new NativeList<NetworkConnection>(16, Allocator.Persistent);
@@ -341,7 +341,7 @@ void Start ()
 
 You need to remember to call `ServerJobHandle.Complete` in your `OnDestroy` method so you can properly clean up code:
 
-```c#
+```csharp
 public void OnDestroy()
 {
     // Make sure we run our jobs to completion before exiting.
@@ -355,7 +355,7 @@ public void OnDestroy()
 
 In your `Update` method, call `Complete` on the `JobHandle`. This forces the jobs to complete before you start a new frame:
 
-```c#
+```csharp
 void Update ()
 {
     ServerJobHandle.Complete();
@@ -383,7 +383,7 @@ To chain the jobs, you want to follow this process:
 
 Start by populating your `ServerUpdateConnectionsJob`:
 
-```c#
+```csharp
 var connectionJob = new ServerUpdateConnectionsJob
 {
     driver = m_Driver,
@@ -393,7 +393,7 @@ var connectionJob = new ServerUpdateConnectionsJob
 
 Then create your `ServerUpdateJob`. Remember to use the `ToConcurrent` call on your driver, to verify you are using a concurrent driver for the `IParallelForJobDefer`:
 
-```c#
+```csharp
 var serverUpdateJob = new ServerUpdateJob
 {
     driver = m_Driver.ToConcurrent(),

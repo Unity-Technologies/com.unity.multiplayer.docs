@@ -5,7 +5,7 @@ title: Event consumption
 
 There are currently four types of events supplied by the `NetworkDriver`:
 
-```c#
+```csharp
 public enum Type
 {
     Empty = 0,
@@ -19,7 +19,7 @@ As mentioned, there are a few subtle differences running the driver as a host or
 
 Both your client and your server loop will want to consume the events that are produced by the `NetworkDriver`. And you do so by either calling `PopEvent` on each `NetworkConnection` similar to how we did before.
 
-```c#
+```csharp
 DataStreamReader strm;
 NetworkEvent.Type cmd;
 while ((cmd = m_Connection.PopEvent(driver, out strm)) != NetworkEvent.Type.Empty)
@@ -28,7 +28,7 @@ while ((cmd = m_Connection.PopEvent(driver, out strm)) != NetworkEvent.Type.Empt
 
 You can try calling the `PopEventForConnection` on the `NetworkDriver` as we did in the ServerBehaviour example:
 
-```c#
+```csharp
 DataStreamReader strm;
 NetworkEvent.Type cmd;
 while ((cmd = m_Driver.PopEventForConnection(m_Connections[i], out strm)) != NetworkEvent.Type.Empty)
@@ -39,7 +39,7 @@ There is no real difference between these calls, both calls will do the same thi
 
 And finally to receive a new `NetworkConnection` on the Driver while Listening you can call `Accept`
 
-```c#
+```csharp
 NetworkConnection c;
 while ((c = m_Driver.Accept()) != default(NetworkConnection))
     ; // Handle Connection Event.
