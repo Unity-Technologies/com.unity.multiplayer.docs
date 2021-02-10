@@ -5,7 +5,7 @@ title: ClientBehavior
 
 Sample code for `ClientBehavior`:
 
-```c#
+```csharp
 using UnityEngine;
 
 using Unity.Networking.Transport;

@@ -5,7 +5,7 @@ title: ServerBehavior
 
 Sample code for `ServerBehavior`:
 
-```c#
+```csharp
 using UnityEngine;
 using UnityEngine.Assertions;
 

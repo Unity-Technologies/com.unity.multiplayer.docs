@@ -29,7 +29,7 @@ Start by creating a C# script in the Unity Editor.
 
 Filename: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
 
-```c#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,7 +60,7 @@ The next step is to clean up the dependencies and add our boilerplate code:
 
 **Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
 
-```c#
+```csharp
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -78,7 +78,7 @@ Adding the members we need the following code:
 
 **Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
 
-```c#
+```csharp
 using ...
 
 public class ServerBehaviour : MonoBehaviour {
@@ -110,7 +110,7 @@ You need to declare a `NetworkDriver`. You also need to create a [NativeList](ht
 
 **Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
 
-```c#
+```csharp
 void Start ()
 {
     m_Driver = NetworkDriver.Create();
@@ -129,7 +129,7 @@ void Start ()
 
 The first line of code, `m_Driver = NetworkDriver.Create();` , just makes sure you are creating your driver without any parameters.
 
-```c#
+```csharp
     if (m_Driver.Bind(endpoint) != 0)
         Debug.Log("Failed to bind to port 9000");
     else
@@ -154,7 +154,7 @@ Add the following code to the `OnDestroy` method on your [MonoBehaviour](https:/
 
 **Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
 
-```c#
+```csharp
 public void OnDestroy()
 {
     m_Driver.Dispose();
@@ -166,7 +166,7 @@ public void OnDestroy()
 
 As the `com.unity.transport` package uses the [Unity C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) internally, the `m_Driver` has a `ScheduleUpdate` method call. Inside our `Update` loop you need to make sure to call the `Complete` method on the [JobHandle](https://docs.unity3d.com/Manual/JobSystemJobDependencies.html) that is returned, in order to know when you are ready to process any updates.
 
-```c#
+```csharp
 void Update () {
 
     m_Driver.ScheduleUpdate().Complete();
@@ -181,7 +181,7 @@ The first thing we want to do, after you have updated your `m_Driver`, is to han
 
 Inside the "Clean up connections" block below, we iterate through our connection list and just simply remove any stale connections.
 
-```c#
+```csharp
     // Clean up connections
     for (int i = 0; i < m_Connections.Length; i++)
     {
@@ -195,7 +195,7 @@ Inside the "Clean up connections" block below, we iterate through our connection
 
 Under "Accept new connections" below, we add a connection while there are new connections to accept.
 
-```c#
+```csharp
     // Accept new connections
     NetworkConnection c;
     while ((c = m_Driver.Accept()) != default(NetworkConnection))
@@ -207,7 +207,7 @@ Under "Accept new connections" below, we add a connection while there are new co
 
 Now we have an up-to-date connection list. You can now start querying the driver for events that might have happened since the last update.
 
-```c#
+```csharp
     DataStreamReader stream;
     for (int i = 0; i < m_Connections.Length; i++)
     {
@@ -219,7 +219,7 @@ Begin by defining a `DataStreamReader`. This will be used in case any `Data` eve
 
 For each connection we want to call `PopEventForConnection` while there are more events still needing to get processed.
 
-```c#
+```csharp
     NetworkEvent.Type cmd;
     while ((cmd = m_Driver.PopEventForConnection(m_Connections[i], out stream)) != NetworkEvent.Type.Empty)
     {
@@ -229,14 +229,14 @@ For each connection we want to call `PopEventForConnection` while there are more
 
 We are now ready to process events. Lets start with the `Data` event.
 
-```c#
+```csharp
     if (cmd == NetworkEvent.Type.Data)
     {
 ```
 
 Next, we try to read a `uint` from the stream and output what we have received:
 
-```c#
+```csharp
     uint number = stream.ReadUInt();
     Debug.Log("Got " + number + " from the Client adding + 2 to it.");
 ```
@@ -245,7 +245,7 @@ When this is done we simply add two to the number we received and send it back. 
 
 After you have written your updated number to your stream, you call the `EndSend` method on the driver and off it goes:
 
-```c#
+```csharp
     number +=2;
 
     var writer = m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i]);
@@ -258,7 +258,7 @@ After you have written your updated number to your stream, you call the `EndSend
 
 Finally, you need to handle the disconnect case. This is pretty straight forward, if you receive a disconnect message you need to reset that connection to a `default(NetworkConnection)`. As you might remember, the next time the `Update` loop runs you will clean up after yourself.
 
-```c#
+```csharp
                 else if (cmd == NetworkEvent.Type.Disconnect)
                 {
                     Debug.Log("Client disconnected from server");
@@ -282,7 +282,7 @@ You still define a `NetworkDriver` but instead of having a list of connections w
 
 **Filename**: [_Assets\Scripts\ClientBehaviour.cs_](samples/clientbehaviour.cs.md)
 
-```c#
+```csharp
 using ...
 
 public class ClientBehaviour : MonoBehaviour {
@@ -300,7 +300,7 @@ public class ClientBehaviour : MonoBehaviour {
 ### Creating and Connecting a Client
 
 Start by creating a driver for the client and an address for the server.
-```c#
+```csharp
 void Start () {
     m_Driver = NetworkDriver.Create();
     m_Connection = default(NetworkConnection);
@@ -314,7 +314,7 @@ Then call the `Connect` method on your driver.
 
 Cleaning up this time is a bit easier because you don’t need a `NativeList` to hold your connections, so it simply just becomes:
 
-```c#
+```csharp
 public void OnDestroy()
 {
     m_Driver.Dispose();
@@ -325,7 +325,7 @@ public void OnDestroy()
 
 You start the same way as you did in the server by calling `m_Driver.ScheduleUpdate().Complete();` and make sure that the connection worked.
 
-```c#
+```csharp
 void Update()
 {
     m_Driver.ScheduleUpdate().Complete();
@@ -340,7 +340,7 @@ void Update()
 
 You should recognize the code below, but if you look closely you can see that the call to `m_Driver.PopEventForConnection` was switched out with a call to `m_Connection.PopEvent`. This is technically the same method, it just makes it a bit clearer that you are handling a single connection.
 
-```c#
+```csharp
     DataStreamReader stream;
     NetworkEvent.Type cmd;
     while ((cmd = m_Connection.PopEvent(m_Driver, out stream)) != NetworkEvent.Type.Empty)
@@ -372,7 +372,7 @@ When the `NetworkEvent` type is `Data`, as below, you read the `value` back that
 A good pattern is to always set your `NetworkConnection` to `default(NetworkConnection)` to avoid stale references.
 :::
 
-```c#
+```csharp
     else if (cmd == NetworkEvent.Type.Data)
     {
         uint value = stream.ReadUInt();
@@ -386,7 +386,7 @@ A good pattern is to always set your `NetworkConnection` to `default(NetworkConn
 
 Lastly we just want to make sure we handle the case that a server disconnects us for some reason.
 
-```c#
+```csharp
 
             else if (cmd == NetworkEvent.Type.Disconnect)
             {
