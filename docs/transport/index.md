@@ -7,7 +7,7 @@ Use the `com.unity.transport` package to add multiplayer and network features to
 
 ## Overview
 
-![Transport Overview](img/transport/layercake.png)
+![Transport Overview](/img/transport/layercake.png)
 
 ## Installing Unity.Networking.Transport
 
