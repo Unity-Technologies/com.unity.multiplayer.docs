@@ -403,11 +403,11 @@ See the full source code for the [_ClientBehaviour.cs_](samples/clientbehaviour.
 
 To take this for a test run, you can simply add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to our **Scene**.
 
-![GameObject Added](img/transport/game-object.PNG)
+![GameObject Added](/img/transport/game-object.PNG)
 
 Add add both of our behaviours to it.
-![Inspector](img/transport/inspector.PNG)
+![Inspector](/img/transport/inspector.PNG)
 
 Press **Play**. Five log messages should load in your **Console** window:
 
-![Console](img/transport/console-view.PNG)
+![Console](/img/transport/console-view.PNG)
