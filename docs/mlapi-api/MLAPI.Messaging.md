@@ -3,17 +3,17 @@ id: MLAPI.Messaging
 title: MLAPI.Messaging  
 ---
 
-## Namespace MLAPI.Messaging [MLAPI_Messaging]
+## Namespace MLAPI.Messaging
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Messaging
 
 ### MLAPI.Messaging.ClientRPCAttribute
 
-<div class="section" markdown="1">
+<div class="section">
 
 Attribute used on methods to me marked as ClientRPC ClientRPC methods
 can be requested from the server and will execute on a client Remember
@@ -31,7 +31,7 @@ that a host is a server and a client
 
 ### MLAPI.Messaging.CustomMessagingManager
 
-<div class="section" markdown="1">
+<div class="section">
 
 The manager class to manage custom messages, note that this is different
 from the NetworkingManager custom messages. These are named and are much
@@ -41,7 +41,7 @@ easier to use.
 
 ### MLAPI.Messaging.RPCAttribute
 
-<div class="section" markdown="1">
+<div class="section">
 
 Generic supertype of Client and Server RPC Attributes. Do not use
 directly.
@@ -50,7 +50,7 @@ directly.
 
 ### MLAPI.Messaging.RpcResponse-1
 
-<div class="section" markdown="1">
+<div class="section">
 
 The RpcResponse class exposed by the API. Represents a network
 Request/Response operation with a result
@@ -59,7 +59,7 @@ Request/Response operation with a result
 
 ### MLAPI.Messaging.RpcResponseBase
 
-<div class="section" markdown="1">
+<div class="section">
 
 Abstract base class for RpcResponse
 
@@ -67,7 +67,7 @@ Abstract base class for RpcResponse
 
 ### MLAPI.Messaging.ServerRPCAttribute
 
-<div class="section" markdown="1">
+<div class="section">
 
 Attribute used on methods to me marked as ServerRPC ServerRPC methods
 can be requested from a client and will execute on the server Remember
@@ -79,7 +79,7 @@ that a host is a server and a client
 
 ### MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate used to handle named messages
 
@@ -87,7 +87,7 @@ Delegate used to handle named messages
 
 ### MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate used for incoming unnamed messages
 
@@ -95,7 +95,7 @@ Delegate used for incoming unnamed messages
 
 ### MLAPI.Messaging.RpcDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate definition for performance RPC's.
 

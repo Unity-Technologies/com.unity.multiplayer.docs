@@ -3,17 +3,17 @@ id: MLAPI.Collections
 title: MLAPI.Collections  
 ---
 
-## Namespace MLAPI.Collections [MLAPI_Collections]
+## Namespace MLAPI.Collections
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Collections
 
 ### MLAPI.Collections.FixedQueue-1
 
-<div class="section" markdown="1">
+<div class="section">
 
 Queue with a fixed size
 

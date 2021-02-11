@@ -3,13 +3,13 @@ id: MLAPI.NetworkedVar.INetworkedVar
 title: MLAPI.NetworkedVar.INetworkedVar  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Interface for networked value containers
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,235 +17,235 @@ Interface for networked value containers
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_INetworkedVar_syntax]
+##### Syntax
 
     public interface INetworkedVar
 
 ## Methods 
 
-### CanClientRead(UInt64) [MLAPI_NetworkedVar_INetworkedVar_CanClientRead_System_UInt64_]
+### CanClientRead(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not a specific client can read to the varaible
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     bool CanClientRead(ulong clientId)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name     | Description                       |
 |---------------|----------|-----------------------------------|
 | System.UInt64 | clientId | The clientId of the remote client |
 
-#### Returns [returns]
+#### Returns
 
 | Type           | Description                                        |
 |----------------|----------------------------------------------------|
 | System.Boolean | Whether or not the client can read to the variable |
 
-### CanClientWrite(UInt64) [MLAPI_NetworkedVar_INetworkedVar_CanClientWrite_System_UInt64_]
+### CanClientWrite(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not a specific client can write to the varaible
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     bool CanClientWrite(ulong clientId)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name     | Description                       |
 |---------------|----------|-----------------------------------|
 | System.UInt64 | clientId | The clientId of the remote client |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type           | Description                                         |
 |----------------|-----------------------------------------------------|
 | System.Boolean | Whether or not the client can write to the variable |
 
-### GetChannel() [MLAPI_NetworkedVar_INetworkedVar_GetChannel]
+### GetChannel()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the name of the channel to be used for syncing
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     string GetChannel()
 
-#### Returns [returns-2]
+#### Returns
 
 | Type          | Description                                    |
 |---------------|------------------------------------------------|
 | System.String | The name of the channel to be used for syncing |
 
-### IsDirty() [MLAPI_NetworkedVar_INetworkedVar_IsDirty]
+### IsDirty()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not the container is dirty
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     bool IsDirty()
 
-#### Returns [returns-3]
+#### Returns
 
 | Type           | Description                           |
 |----------------|---------------------------------------|
 | System.Boolean | Whether or not the container is dirty |
 
-### ReadDelta(Stream, Boolean) [MLAPI_NetworkedVar_INetworkedVar_ReadDelta_System_IO_Stream_System_Boolean_]
+### ReadDelta(Stream, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads delta from the reader and applies them to the internal value
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     void ReadDelta(Stream stream, bool keepDirtyDelta)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type             | Name           | Description                                                  |
 |------------------|----------------|--------------------------------------------------------------|
 | System.IO.Stream | stream         | The stream to read the delta from                            |
 | System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed |
 
-### ReadField(Stream) [MLAPI_NetworkedVar_INetworkedVar_ReadField_System_IO_Stream_]
+### ReadField(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads the complete state from the reader and applies it
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     void ReadField(Stream stream)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type             | Name   | Description                       |
 |------------------|--------|-----------------------------------|
 | System.IO.Stream | stream | The stream to read the state from |
 
-### ResetDirty() [MLAPI_NetworkedVar_INetworkedVar_ResetDirty]
+### ResetDirty()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Resets the dirty state and marks the variable as synced / clean
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     void ResetDirty()
 
-### SetNetworkedBehaviour(NetworkedBehaviour) [MLAPI_NetworkedVar_INetworkedVar_SetNetworkedBehaviour_MLAPI_NetworkedBehaviour_]
+### SetNetworkedBehaviour(NetworkedBehaviour)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sets NetworkedBehaviour the container belongs to.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     void SetNetworkedBehaviour(NetworkedBehaviour behaviour)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type               | Name      | Description                            |
 |--------------------|-----------|----------------------------------------|
 | NetworkedBehaviour | behaviour | The behaviour the container behaves to |
 
-### WriteDelta(Stream) [MLAPI_NetworkedVar_INetworkedVar_WriteDelta_System_IO_Stream_]
+### WriteDelta(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the dirty changes, that is, the changes since the variable was
 last dirty, to the writer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     void WriteDelta(Stream stream)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type             | Name   | Description                              |
 |------------------|--------|------------------------------------------|
 | System.IO.Stream | stream | The stream to write the dirty changes to |
 
-### WriteField(Stream) [MLAPI_NetworkedVar_INetworkedVar_WriteField_System_IO_Stream_]
+### WriteField(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the complete state of the variable to the writer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     void WriteField(Stream stream)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|

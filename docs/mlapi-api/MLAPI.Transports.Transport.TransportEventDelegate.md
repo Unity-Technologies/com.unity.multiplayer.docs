@@ -3,13 +3,13 @@ id: MLAPI.Transports.Transport.TransportEventDelegate
 title: MLAPI.Transports.Transport.TransportEventDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate for transport events.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,16 +17,16 @@ Delegate for transport events.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_Transport_TransportEventDelegate_syntax]
+##### Syntax
 
     public delegate void TransportEventDelegate(NetEventType type, ulong clientId, string channelName, ArraySegment<byte> payload, float receiveTime);
 
-##### Parameters [parameters]
+##### Parameters
 
-| Type                               | Name          | Description |
-|------------------------------------|---------------|-------------|
-| NetEventType                       | \*type        |             |
-| System.UInt64                      | \*clientId    |             |
-| System.String                      | \*channelName |             |
-| System.ArraySegment\<System.Byte\> | \*payload     |             |
-| System.Single                      | \*receiveTime |             |
+| Type                                   | Name          | Description |
+|----------------------------------------|---------------|-------------|
+| NetEventType                           | \*type        |             |
+| System.UInt64                          | \*clientId    |             |
+| System.String                          | \*channelName |             |
+| System.ArraySegment&lt;System.Byte&gt; | \*payload     |             |
+| System.Single                          | \*receiveTime |             |

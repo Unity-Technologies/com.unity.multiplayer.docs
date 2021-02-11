@@ -3,13 +3,13 @@ id: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDele
 title: MLAPI.NetworkedVar.Collections.NetworkedDictionary-2.OnDictionaryChangedDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for dictionary changed event
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,12 +17,12 @@ Delegate type for dictionary changed event
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_Collections_NetworkedDictionary_2_OnDictionaryChangedDelegate_syntax]
+##### Syntax
 
     public delegate void OnDictionaryChangedDelegate(NetworkedDictionaryEvent<TKey, TValue> changeEvent);
 
-##### Parameters [parameters]
+##### Parameters
 
-| Type                                     | Name          | Description                                          |
-|------------------------------------------|---------------|------------------------------------------------------|
-| NetworkedDictionaryEvent\<TKey, TValue\> | \*changeEvent | Struct containing information about the change event |
+| Type                                         | Name          | Description                                          |
+|----------------------------------------------|---------------|------------------------------------------------------|
+| NetworkedDictionaryEvent&lt;TKey, TValue&gt; | \*changeEvent | Struct containing information about the change event |

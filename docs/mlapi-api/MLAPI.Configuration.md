@@ -3,17 +3,17 @@ id: MLAPI.Configuration
 title: MLAPI.Configuration  
 ---
 
-## Namespace MLAPI.Configuration [MLAPI_Configuration]
+## Namespace MLAPI.Configuration
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Configuration
 
 ### MLAPI.Configuration.NetworkConfig
 
-<div class="section" markdown="1">
+<div class="section">
 
 The configuration object used to start server, client and hosts
 
@@ -29,7 +29,7 @@ The configuration object used to start server, client and hosts
 
 ### MLAPI.Configuration.NetworkedPrefab
 
-<div class="section" markdown="1">
+<div class="section">
 
 A class that represents a NetworkedPrefab
 
@@ -39,7 +39,7 @@ A class that represents a NetworkedPrefab
 
 ### MLAPI.Configuration.HashSize
 
-<div class="section" markdown="1">
+<div class="section">
 
 Represents the length of a var int encoded hash Note that the HashSize
 does not say anything about the actual final output due to the var int

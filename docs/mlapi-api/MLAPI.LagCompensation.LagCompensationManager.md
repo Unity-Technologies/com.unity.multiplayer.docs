@@ -3,27 +3,27 @@ id: MLAPI.LagCompensation.LagCompensationManager
 title: MLAPI.LagCompensation.LagCompensationManager  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The main class for controlling lag compensation
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,103 +83,103 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_LagCompensation_LagCompensationManager_syntax]
+##### Syntax
 
     public static class LagCompensationManager
 
 ## Fields
 
-### SimulationObjects [MLAPI_LagCompensation_LagCompensationManager_SimulationObjects]
+### SimulationObjects
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Simulation objects
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static readonly List<TrackedObject> SimulationObjects
 
-#### Field Value [field-value]
+#### Field Value
 
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| System.Collections.Generic.List\<TrackedObject\> |             |
+| Type                                                 | Description |
+|------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;TrackedObject&gt; |             |
 
 ## Methods 
 
-### Simulate(Single, Action) [MLAPI_LagCompensation_LagCompensationManager_Simulate_System_Single_System_Action_]
+### Simulate(Single, Action)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Turns time back a given amount of seconds, invokes an action and turns
 it back
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static void Simulate(float secondsAgo, Action action)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name       | Description                                   |
 |---------------|------------|-----------------------------------------------|
 | System.Single | secondsAgo | The amount of seconds                         |
 | System.Action | action     | The action to invoke when time is turned back |
 
-### Simulate(Single, IList\<TrackedObject\>, Action) [MLAPI_LagCompensation_LagCompensationManager_Simulate_System_Single_System_Collections_Generic_IList_MLAPI_LagCompensation_TrackedObject__System_Action_]
+### Simulate(Single, IList&lt;TrackedObject&gt;, Action)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Turns time back a given amount of second on the given objects, invokes
 an action and turns it back
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static void Simulate(float secondsAgo, IList<TrackedObject> simulatedObjects, Action action)
 
-#### Parameters [parameters-1]
+#### Parameters
 
-| Type                                              | Name             | Description                                   |
-|---------------------------------------------------|------------------|-----------------------------------------------|
-| System.Single                                     | secondsAgo       | The amount of seconds                         |
-| System.Collections.Generic.IList\<TrackedObject\> | simulatedObjects | The object to simulate back in time           |
-| System.Action                                     | action           | The action to invoke when time is turned back |
+| Type                                                  | Name             | Description                                   |
+|-------------------------------------------------------|------------------|-----------------------------------------------|
+| System.Single                                         | secondsAgo       | The amount of seconds                         |
+| System.Collections.Generic.IList&lt;TrackedObject&gt; | simulatedObjects | The object to simulate back in time           |
+| System.Action                                         | action           | The action to invoke when time is turned back |
 
-### Simulate(UInt64, Action) [MLAPI_LagCompensation_LagCompensationManager_Simulate_System_UInt64_System_Action_]
+### Simulate(UInt64, Action)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Turns time back a given amount of seconds, invokes an action and turns
 it back. The time is based on the estimated RTT of a clientId
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public static void Simulate(ulong clientId, Action action)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type          | Name     | Description                                   |
 |---------------|----------|-----------------------------------------------|

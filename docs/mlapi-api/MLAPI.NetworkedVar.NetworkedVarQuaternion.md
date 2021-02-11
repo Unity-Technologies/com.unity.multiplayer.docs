@@ -3,33 +3,33 @@ id: MLAPI.NetworkedVar.NetworkedVarQuaternion
 title: MLAPI.NetworkedVar.NetworkedVarQuaternion  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A NetworkedVar that holds quaternions and support serialization
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -37,11 +37,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -49,137 +49,137 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.isDirty"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.Settings"
+NetworkedVar&lt;Quaternion&gt;.isDirty"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.LastSyncedTime"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.OnValueChanged"
+NetworkedVar&lt;Quaternion&gt;.Settings"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.Value"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.ResetDirty()"
+NetworkedVar&lt;Quaternion&gt;.LastSyncedTime"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.IsDirty()"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.CanClientRead(UInt64)"
+NetworkedVar&lt;Quaternion&gt;.OnValueChanged"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.WriteDelta(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.CanClientWrite(UInt64)"
+NetworkedVar&lt;Quaternion&gt;.Value"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.ReadDelta(Stream, Boolean)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.SetNetworkedBehaviour(NetworkedBehaviour)"
+NetworkedVar&lt;Quaternion&gt;.ResetDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.ReadField(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Quaternion\>.WriteField(Stream)"
+NetworkedVar&lt;Quaternion&gt;.IsDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Quaternion\>.GetChannel()"
+NetworkedVar&lt;Quaternion&gt;.CanClientRead(UInt64)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.WriteDelta(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.CanClientWrite(UInt64)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.ReadDelta(Stream, Boolean)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.SetNetworkedBehaviour(NetworkedBehaviour)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.ReadField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.WriteField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Quaternion&gt;.GetChannel()"
+
+</div>
+
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -191,91 +191,91 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarQuaternion_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkedVarQuaternion : NetworkedVar<Quaternion>, INetworkedVar
 
 ## Constructors 
 
-### NetworkedVarQuaternion() [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor]
+### NetworkedVarQuaternion()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarQuaternion()
 
-### NetworkedVarQuaternion(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedVarQuaternion(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarQuaternion(NetworkedVarSettings settings)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 
-### NetworkedVarQuaternion(NetworkedVarSettings, Quaternion) [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Quaternion_]
+### NetworkedVarQuaternion(NetworkedVarSettings, Quaternion)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarQuaternion(NetworkedVarSettings settings, Quaternion value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                   | Name     | Description |
 |------------------------|----------|-------------|
 | NetworkedVarSettings   | settings |             |
 | UnityEngine.Quaternion | value    |             |
 
-### NetworkedVarQuaternion(Quaternion) [MLAPI_NetworkedVar_NetworkedVarQuaternion__ctor_UnityEngine_Quaternion_]
+### NetworkedVarQuaternion(Quaternion)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarQuaternion(Quaternion value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type                   | Name  | Description |
 |------------------------|-------|-------------|
 | UnityEngine.Quaternion | value |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

@@ -3,27 +3,27 @@ id: MLAPI.Transports.Tasks.SocketTask
 title: MLAPI.Transports.Tasks.SocketTask  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A single socket task.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,227 +83,227 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_Tasks_SocketTask_syntax]
+##### Syntax
 
     public class SocketTask
 
 ## Properties 
 
-### Done [MLAPI_Transports_Tasks_SocketTask_Done]
+### Done
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a done task.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static SocketTask Done { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type       | Description |
 |------------|-------------|
 | SocketTask | The done.   |
 
-### Fault [MLAPI_Transports_Tasks_SocketTask_Fault]
+### Fault
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a faulty task.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static SocketTask Fault { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type       | Description |
 |------------|-------------|
 | SocketTask | The fault.  |
 
-### IsDone [MLAPI_Transports_Tasks_SocketTask_IsDone]
+### IsDone
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets a value indicating whether this SocketTask is done.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public bool IsDone { get; set; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type           | Description                            |
 |----------------|----------------------------------------|
 | System.Boolean | `true` if is done; otherwise, `false`. |
 
-### Message [MLAPI_Transports_Tasks_SocketTask_Message]
+### Message
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets the message.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public string Message { get; set; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type          | Description  |
 |---------------|--------------|
 | System.String | The message. |
 
-### SocketError [MLAPI_Transports_Tasks_SocketTask_SocketError]
+### SocketError
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets the socket error.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public SocketError SocketError { get; set; }
 
-#### Property Value [property-value-4]
+#### Property Value
 
 | Type                           | Description       |
 |--------------------------------|-------------------|
 | System.Net.Sockets.SocketError | The socket error. |
 
-### State [MLAPI_Transports_Tasks_SocketTask_State]
+### State
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets the state.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public object State { get; set; }
 
-#### Property Value [property-value-5]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Object | The state.  |
 
-### Success [MLAPI_Transports_Tasks_SocketTask_Success]
+### Success
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets a value indicating whether this SocketTask is success.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public bool Success { get; set; }
 
-#### Property Value [property-value-6]
+#### Property Value
 
 | Type           | Description                            |
 |----------------|----------------------------------------|
 | System.Boolean | `true` if success; otherwise, `false`. |
 
-### TransportCode [MLAPI_Transports_Tasks_SocketTask_TransportCode]
+### TransportCode
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets the transport code.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public int TransportCode { get; set; }
 
-#### Property Value [property-value-7]
+#### Property Value
 
 | Type         | Description         |
 |--------------|---------------------|
 | System.Int32 | The transport code. |
 
-### TransportException [MLAPI_Transports_Tasks_SocketTask_TransportException]
+### TransportException
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets the transport exception.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public Exception TransportException { get; set; }
 
-#### Property Value [property-value-8]
+#### Property Value
 
 | Type             | Description              |
 |------------------|--------------------------|
 | System.Exception | The transport exception. |
 
-### Working [MLAPI_Transports_Tasks_SocketTask_Working]
+### Working
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a working task.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public static SocketTask Working { get; }
 
-#### Property Value [property-value-9]
+#### Property Value
 
 | Type       | Description  |
 |------------|--------------|
@@ -311,23 +311,23 @@ Gets a working task.
 
 ## Methods 
 
-### AsTasks() [MLAPI_Transports_Tasks_SocketTask_AsTasks]
+### AsTasks()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Converts to a SocketTasks.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public SocketTasks AsTasks()
 
-#### Returns [returns]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|

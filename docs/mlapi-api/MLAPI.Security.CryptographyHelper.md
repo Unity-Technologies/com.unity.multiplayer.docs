@@ -3,27 +3,27 @@ id: MLAPI.Security.CryptographyHelper
 title: MLAPI.Security.CryptographyHelper  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Helper class for encryption purposes
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,29 +83,29 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Security_CryptographyHelper_syntax]
+##### Syntax
 
     public static class CryptographyHelper
 
 ## Fields
 
-### OnValidateCertificateCallback [MLAPI_Security_CryptographyHelper_OnValidateCertificateCallback]
+### OnValidateCertificateCallback
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The delegate to invoke to validate the certificates
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static CryptographyHelper.VerifyCertificateDelegate OnValidateCertificateCallback
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type                                         | Description |
 |----------------------------------------------|-------------|
@@ -113,78 +113,78 @@ The delegate to invoke to validate the certificates
 
 ## Methods 
 
-### GetClientKey(UInt64) [MLAPI_Security_CryptographyHelper_GetClientKey_System_UInt64_]
+### GetClientKey(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the aes key for any given clientId
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static byte[] GetClientKey(ulong clientId)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name     | Description                                      |
 |---------------|----------|--------------------------------------------------|
 | System.UInt64 | clientId | The clientId of the client whose aes key we want |
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description           |
 |-----------------|-----------------------|
 | System.Byte\[\] | The aes key in binary |
 
-### GetServerKey() [MLAPI_Security_CryptographyHelper_GetServerKey]
+### GetServerKey()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the aes key for the server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static byte[] GetServerKey()
 
-#### Returns [returns-1]
+#### Returns
 
 | Type            | Description         |
 |-----------------|---------------------|
 | System.Byte\[\] | The servers aes key |
 
-### VerifyCertificate(X509Certificate2, String) [MLAPI_Security_CryptographyHelper_VerifyCertificate_System_Security_Cryptography_X509Certificates_X509Certificate2_System_String_]
+### VerifyCertificate(X509Certificate2, String)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static bool VerifyCertificate(X509Certificate2 certificate, string hostname)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                                                           | Name        | Description                                    |
 |----------------------------------------------------------------|-------------|------------------------------------------------|
 | System.Security.Cryptography.X509Certificates.X509Certificate2 | certificate | The certificate to validate                    |
 | System.String                                                  | hostname    | The hostname the certificate is claiming to be |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type           | Description                                        |
 |----------------|----------------------------------------------------|

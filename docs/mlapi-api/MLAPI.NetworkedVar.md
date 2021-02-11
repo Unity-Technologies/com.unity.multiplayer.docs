@@ -3,17 +3,17 @@ id: MLAPI.NetworkedVar
 title: MLAPI.NetworkedVar  
 ---
 
-## Namespace MLAPI.NetworkedVar [MLAPI_NetworkedVar]
+## Namespace MLAPI.NetworkedVar
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.NetworkedVar
 
 ### MLAPI.NetworkedVar.NetworkedVar-1
 
-<div class="section" markdown="1">
+<div class="section">
 
 A variable that can be synchronized over the network.
 
@@ -29,7 +29,7 @@ A variable that can be synchronized over the network.
 
 ### MLAPI.NetworkedVar.NetworkedVarBool
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds bools and support serialization
 
@@ -37,7 +37,7 @@ A NetworkedVar that holds bools and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarByte
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds bytes and support serialization
 
@@ -45,7 +45,7 @@ A NetworkedVar that holds bytes and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarColor
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds colors and support serialization
 
@@ -53,7 +53,7 @@ A NetworkedVar that holds colors and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarColor32
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds color32s and support serialization
 
@@ -61,7 +61,7 @@ A NetworkedVar that holds color32s and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarDouble
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds doubles and support serialization
 
@@ -69,7 +69,7 @@ A NetworkedVar that holds doubles and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarFloat
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds floats and support serialization
 
@@ -77,7 +77,7 @@ A NetworkedVar that holds floats and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarInt
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds ints and support serialization
 
@@ -85,7 +85,7 @@ A NetworkedVar that holds ints and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarLong
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds longs and support serialization
 
@@ -93,7 +93,7 @@ A NetworkedVar that holds longs and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarQuaternion
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds quaternions and support serialization
 
@@ -101,7 +101,7 @@ A NetworkedVar that holds quaternions and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarRay
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds rays and support serialization
 
@@ -109,7 +109,7 @@ A NetworkedVar that holds rays and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarSByte
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds sbytes and support serialization
 
@@ -117,7 +117,7 @@ A NetworkedVar that holds sbytes and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarSettings
 
-<div class="section" markdown="1">
+<div class="section">
 
 The settings class used by the build in NetworkVar implementations
 
@@ -125,7 +125,7 @@ The settings class used by the build in NetworkVar implementations
 
 ### MLAPI.NetworkedVar.NetworkedVarShort
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds shorts and support serialization
 
@@ -133,7 +133,7 @@ A NetworkedVar that holds shorts and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarString
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds strings and support serialization
 
@@ -141,7 +141,7 @@ A NetworkedVar that holds strings and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarUInt
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds uints and support serialization
 
@@ -149,7 +149,7 @@ A NetworkedVar that holds uints and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarULong
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds ulongs and support serialization
 
@@ -157,7 +157,7 @@ A NetworkedVar that holds ulongs and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarUShort
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds ushorts and support serialization
 
@@ -165,7 +165,7 @@ A NetworkedVar that holds ushorts and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarVector2
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds vector2s and support serialization
 
@@ -173,7 +173,7 @@ A NetworkedVar that holds vector2s and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarVector3
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds vector3s and support serialization
 
@@ -181,7 +181,7 @@ A NetworkedVar that holds vector3s and support serialization
 
 ### MLAPI.NetworkedVar.NetworkedVarVector4
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedVar that holds vector4s and support serialization
 
@@ -189,7 +189,7 @@ A NetworkedVar that holds vector4s and support serialization
 
 ### MLAPI.NetworkedVar.SyncedVarAttribute
 
-<div class="section" markdown="1">
+<div class="section">
 
 SyncedVar attribute. Use this to automatically syncronize fields from
 the server to clients.
@@ -200,7 +200,7 @@ the server to clients.
 
 ### MLAPI.NetworkedVar.INetworkedVar
 
-<div class="section" markdown="1">
+<div class="section">
 
 Interface for networked value containers
 
@@ -210,7 +210,7 @@ Interface for networked value containers
 
 ### MLAPI.NetworkedVar.NetworkedVarPermission
 
-<div class="section" markdown="1">
+<div class="section">
 
 Permission type
 
@@ -220,7 +220,7 @@ Permission type
 
 ### MLAPI.NetworkedVar.NetworkedVar-1.OnValueChangedDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate type for value changed event
 
@@ -228,7 +228,7 @@ Delegate type for value changed event
 
 ### MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate type for permission checking
 

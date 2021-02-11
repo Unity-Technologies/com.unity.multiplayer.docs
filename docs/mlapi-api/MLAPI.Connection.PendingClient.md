@@ -3,28 +3,28 @@ id: MLAPI.Connection.PendingClient
 title: MLAPI.Connection.PendingClient  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A class representing a client that is currently in the process of
 connecting
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -32,47 +32,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -84,73 +84,73 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Connection_PendingClient_syntax]
+##### Syntax
 
     public class PendingClient
 
 ## Fields
 
-### AesKey [MLAPI_Connection_PendingClient_AesKey]
+### AesKey
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The current AesKey
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public byte[] AesKey
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | System.Byte\[\] |             |
 
-### ClientId [MLAPI_Connection_PendingClient_ClientId]
+### ClientId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The ClientId of the client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public ulong ClientId
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ConnectionState [MLAPI_Connection_PendingClient_ConnectionState]
+### ConnectionState
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The state of the connection process for the client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public PendingClient.State ConnectionState
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type                | Description |
 |---------------------|-------------|

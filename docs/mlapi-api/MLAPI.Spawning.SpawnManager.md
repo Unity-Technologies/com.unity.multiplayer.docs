@@ -3,27 +3,27 @@ id: MLAPI.Spawning.SpawnManager
 title: MLAPI.Spawning.SpawnManager  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Class that handles object spawning
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,280 +83,280 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Spawning_SpawnManager_syntax]
+##### Syntax
 
     public static class SpawnManager
 
 ## Fields
 
-### SpawnedObjects [MLAPI_Spawning_SpawnManager_SpawnedObjects]
+### SpawnedObjects
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The currently spawned objects
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static readonly Dictionary<ulong, NetworkedObject> SpawnedObjects
 
-#### Field Value [field-value]
+#### Field Value
 
-| Type                                                                    | Description |
-|-------------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\<System.UInt64, NetworkedObject\> |             |
+| Type                                                                        | Description |
+|-----------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary&lt;System.UInt64, NetworkedObject&gt; |             |
 
-### SpawnedObjectsList [MLAPI_Spawning_SpawnManager_SpawnedObjectsList]
+### SpawnedObjectsList
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A list of the spawned objects
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static readonly List<NetworkedObject> SpawnedObjectsList
 
-#### Field Value [field-value-1]
+#### Field Value
 
-| Type                                               | Description |
-|----------------------------------------------------|-------------|
-| System.Collections.Generic.List\<NetworkedObject\> |             |
+| Type                                                   | Description |
+|--------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;NetworkedObject&gt; |             |
 
 ## Methods 
 
-### GetLocalPlayerObject() [MLAPI_Spawning_SpawnManager_GetLocalPlayerObject]
+### GetLocalPlayerObject()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the local player object or null if one does not exist
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static NetworkedObject GetLocalPlayerObject()
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description                                           |
 |-----------------|-------------------------------------------------------|
 | NetworkedObject | The local player object or null if one does not exist |
 
-### GetNetworkedPrefabIndexOfHash(UInt64) [MLAPI_Spawning_SpawnManager_GetNetworkedPrefabIndexOfHash_System_UInt64_]
+### GetNetworkedPrefabIndexOfHash(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the prefab index of a given prefab hash
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public static int GetNetworkedPrefabIndexOfHash(ulong hash)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name | Description            |
 |---------------|------|------------------------|
 | System.UInt64 | hash | The hash of the prefab |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type         | Description             |
 |--------------|-------------------------|
 | System.Int32 | The index of the prefab |
 
-### GetPlayerObject(UInt64) [MLAPI_Spawning_SpawnManager_GetPlayerObject_System_UInt64_]
+### GetPlayerObject(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the player object with a given clientId or null if one does not
 exist
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public static NetworkedObject GetPlayerObject(ulong clientId)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type            | Description                                                           |
 |-----------------|-----------------------------------------------------------------------|
 | NetworkedObject | The player object with a given clientId or null if one does not exist |
 
-### GetPrefabHashFromGenerator(String) [MLAPI_Spawning_SpawnManager_GetPrefabHashFromGenerator_System_String_]
+### GetPrefabHashFromGenerator(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the prefab hash for a given prefab hash generator
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public static ulong GetPrefabHashFromGenerator(string generator)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type          | Name      | Description               |
 |---------------|-----------|---------------------------|
 | System.String | generator | The prefab hash generator |
 
-#### Returns [returns-3]
+#### Returns
 
 | Type          | Description                      |
 |---------------|----------------------------------|
 | System.UInt64 | The hash for the given generator |
 
-### GetPrefabHashFromIndex(Int32) [MLAPI_Spawning_SpawnManager_GetPrefabHashFromIndex_System_Int32_]
+### GetPrefabHashFromIndex(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the prefab hash for the networked prefab with a given index
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public static ulong GetPrefabHashFromIndex(int index)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type         | Name  | Description                |
 |--------------|-------|----------------------------|
 | System.Int32 | index | The networked prefab index |
 
-#### Returns [returns-4]
+#### Returns
 
 | Type          | Description                                |
 |---------------|--------------------------------------------|
 | System.UInt64 | The prefab hash for the given prefab index |
 
-### RegisterCustomDestroyHandler(UInt64, SpawnManager.DestroyHandlerDelegate) [MLAPI_Spawning_SpawnManager_RegisterCustomDestroyHandler_System_UInt64_MLAPI_Spawning_SpawnManager_DestroyHandlerDelegate_]
+### RegisterCustomDestroyHandler(UInt64, SpawnManager.DestroyHandlerDelegate)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Registers a delegate for destroying networked objects, useful for object
 pooling
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public static void RegisterCustomDestroyHandler(ulong prefabHash, SpawnManager.DestroyHandlerDelegate handler)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type                                | Name       | Description                |
 |-------------------------------------|------------|----------------------------|
 | System.UInt64                       | prefabHash | The prefab hash to destroy |
 | SpawnManager.DestroyHandlerDelegate | handler    | The delegate handler       |
 
-### RegisterSpawnHandler(UInt64, SpawnManager.SpawnHandlerDelegate) [MLAPI_Spawning_SpawnManager_RegisterSpawnHandler_System_UInt64_MLAPI_Spawning_SpawnManager_SpawnHandlerDelegate_]
+### RegisterSpawnHandler(UInt64, SpawnManager.SpawnHandlerDelegate)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Registers a delegate for spawning networked prefabs, useful for object
 pooling
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public static void RegisterSpawnHandler(ulong prefabHash, SpawnManager.SpawnHandlerDelegate handler)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type                              | Name       | Description              |
 |-----------------------------------|------------|--------------------------|
 | System.UInt64                     | prefabHash | The prefab hash to spawn |
 | SpawnManager.SpawnHandlerDelegate | handler    | The delegate handler     |
 
-### RemoveCustomDestroyHandler(UInt64) [MLAPI_Spawning_SpawnManager_RemoveCustomDestroyHandler_System_UInt64_]
+### RemoveCustomDestroyHandler(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Removes the custom destroy handler for a specific prefab hash
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public static void RemoveCustomDestroyHandler(ulong prefabHash)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type          | Name       | Description                                                         |
 |---------------|------------|---------------------------------------------------------------------|
 | System.UInt64 | prefabHash | The prefab hash of the prefab destroy handler that is to be removed |
 
-### RemoveCustomSpawnHandler(UInt64) [MLAPI_Spawning_SpawnManager_RemoveCustomSpawnHandler_System_UInt64_]
+### RemoveCustomSpawnHandler(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Removes the custom spawn handler for a specific prefab hash
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public static void RemoveCustomSpawnHandler(ulong prefabHash)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type          | Name       | Description                                                       |
 |---------------|------------|-------------------------------------------------------------------|

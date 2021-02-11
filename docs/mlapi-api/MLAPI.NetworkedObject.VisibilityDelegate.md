@@ -3,13 +3,13 @@ id: MLAPI.NetworkedObject.VisibilityDelegate
 title: MLAPI.NetworkedObject.VisibilityDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for checking visibility
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,17 +17,17 @@ Delegate type for checking visibility
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedObject_VisibilityDelegate_syntax]
+##### Syntax
 
     public delegate bool VisibilityDelegate(ulong clientId);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type          | Name       | Description                          |
 |---------------|------------|--------------------------------------|
 | System.UInt64 | \*clientId | The clientId to check visibility for |
 
-##### Returns [returns]
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|

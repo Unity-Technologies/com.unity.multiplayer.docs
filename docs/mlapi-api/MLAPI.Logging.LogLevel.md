@@ -3,13 +3,13 @@ id: MLAPI.Logging.LogLevel
 title: MLAPI.Logging.LogLevel  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Log level
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ Log level
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Logging_LogLevel_syntax]
+##### Syntax
 
     public enum LogLevel
 

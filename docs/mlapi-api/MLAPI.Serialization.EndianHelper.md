@@ -3,27 +3,27 @@ id: MLAPI.Serialization.EndianHelper
 title: MLAPI.Serialization.EndianHelper  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Binary helper class
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,63 +83,63 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_EndianHelper_syntax]
+##### Syntax
 
     public static class EndianHelper
 
 ## Methods 
 
-### SwapEndian(UInt32) [MLAPI_Serialization_EndianHelper_SwapEndian_System_UInt32_]
+### SwapEndian(UInt32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Swaps the endianness of a given integer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static uint SwapEndian(uint value)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name  | Description                   |
 |---------------|-------|-------------------------------|
 | System.UInt32 | value | The integer to swap endianess |
 
-#### Returns [returns]
+#### Returns
 
 | Type          | Description                         |
 |---------------|-------------------------------------|
 | System.UInt32 | The integer with swapped endianness |
 
-### SwapEndian(UInt64) [MLAPI_Serialization_EndianHelper_SwapEndian_System_UInt64_]
+### SwapEndian(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Swaps the endianness of a given integer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static ulong SwapEndian(ulong value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name  | Description                   |
 |---------------|-------|-------------------------------|
 | System.UInt64 | value | The integer to swap endianess |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type          | Description                         |
 |---------------|-------------------------------------|

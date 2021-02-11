@@ -3,34 +3,34 @@ id: MLAPI.Serialization.BitWriter
 title: MLAPI.Serialization.BitWriter  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A BinaryWriter that can do bit wise manipulation when backed by a
 BitStream
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -38,47 +38,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -90,29 +90,29 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_BitWriter_syntax]
+##### Syntax
 
     public class BitWriter
 
 ## Constructors 
 
-### BitWriter(Stream) [MLAPI_Serialization_BitWriter__ctor_System_IO_Stream_]
+### BitWriter(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a new BitWriter backed by a given stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public BitWriter(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description                   |
 |------------------|--------|-------------------------------|
@@ -120,68 +120,68 @@ Creates a new BitWriter backed by a given stream
 
 ## Methods 
 
-### SetStream(Stream) [MLAPI_Serialization_BitWriter_SetStream_System_IO_Stream_]
+### SetStream(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Changes the underlying stream the writer is writing to
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public void SetStream(Stream stream)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | System.IO.Stream | stream | The stream to write to |
 
-### WriteArrayPacked(Array, Int64) [MLAPI_Serialization_BitWriter_WriteArrayPacked_System_Array_System_Int64_]
+### WriteArrayPacked(Array, Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes an array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public void WriteArrayPacked(Array a, long count = -1L)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type         | Name  | Description                     |
 |--------------|-------|---------------------------------|
 | System.Array | a     | The array to write              |
 | System.Int64 | count | The amount of elements to write |
 
-### WriteArrayPackedDiff(Array, Array, Int64) [MLAPI_Serialization_BitWriter_WriteArrayPackedDiff_System_Array_System_Array_System_Int64_]
+### WriteArrayPackedDiff(Array, Array, Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public void WriteArrayPackedDiff(Array write, Array compare, long count = -1L)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type         | Name    | Description                        |
 |--------------|---------|------------------------------------|
@@ -189,158 +189,158 @@ Writes the diff between two arrays in a packed format
 | System.Array | compare | The previous array to use for diff |
 | System.Int64 | count   | The amount of elements to write    |
 
-### WriteBit(Boolean) [MLAPI_Serialization_BitWriter_WriteBit_System_Boolean_]
+### WriteBit(Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a single bit
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public void WriteBit(bool bit)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type           | Name | Description |
 |----------------|------|-------------|
 | System.Boolean | bit  |             |
 
-### WriteBits(Byte, Int32) [MLAPI_Serialization_BitWriter_WriteBits_System_Byte_System_Int32_]
+### WriteBits(Byte, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write bits to stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public void WriteBits(byte value, int bitCount)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type         | Name     | Description              |
 |--------------|----------|--------------------------|
 | System.Byte  | value    | Value to get bits from.  |
 | System.Int32 | bitCount | Amount of bits to write. |
 
-### WriteBits(UInt64, Int32) [MLAPI_Serialization_BitWriter_WriteBits_System_UInt64_System_Int32_]
+### WriteBits(UInt64, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write s certain amount of bits to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public void WriteBits(ulong value, int bitCount)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type          | Name     | Description             |
 |---------------|----------|-------------------------|
 | System.UInt64 | value    | Value to get bits from. |
 | System.Int32  | bitCount | Amount of bits to write |
 
-### WriteBool(Boolean) [MLAPI_Serialization_BitWriter_WriteBool_System_Boolean_]
+### WriteBool(Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a bool as a single bit
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public void WriteBool(bool value)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type           | Name  | Description |
 |----------------|-------|-------------|
 | System.Boolean | value |             |
 
-### WriteByte(Byte) [MLAPI_Serialization_BitWriter_WriteByte_System_Byte_]
+### WriteByte(Byte)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a byte to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public void WriteByte(byte value)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type        | Name  | Description    |
 |-------------|-------|----------------|
 | System.Byte | value | Value to write |
 
-### WriteByteArray(Byte\[\], Int64) [MLAPI_Serialization_BitWriter_WriteByteArray_System_Byte___System_Int64_]
+### WriteByteArray(Byte\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a byte array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public void WriteByteArray(byte[] b, long count = -1L)
 
-#### Parameters [parameters-9]
+#### Parameters
 
 | Type            | Name  | Description                     |
 |-----------------|-------|---------------------------------|
 | System.Byte\[\] | b     | The array to write              |
 | System.Int64    | count | The amount of elements to write |
 
-### WriteByteArrayDiff(Byte\[\], Byte\[\], Int64) [MLAPI_Serialization_BitWriter_WriteByteArrayDiff_System_Byte___System_Byte___System_Int64_]
+### WriteByteArrayDiff(Byte\[\], Byte\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two byte arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public void WriteByteArrayDiff(byte[] write, byte[] compare, long count = -1L)
 
-#### Parameters [parameters-10]
+#### Parameters
 
 | Type            | Name    | Description                        |
 |-----------------|---------|------------------------------------|
@@ -348,68 +348,68 @@ Writes the diff between two byte arrays
 | System.Byte\[\] | compare | The previous array to use for diff |
 | System.Int64    | count   | The amount of elements to write    |
 
-### WriteChar(Char) [MLAPI_Serialization_BitWriter_WriteChar_System_Char_]
+### WriteChar(Char)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a single character to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-11]
+#### Declaration
 
     public void WriteChar(char c)
 
-#### Parameters [parameters-11]
+#### Parameters
 
 | Type        | Name | Description        |
 |-------------|------|--------------------|
 | System.Char | c    | Character to write |
 
-### WriteCharArray(Char\[\], Int64) [MLAPI_Serialization_BitWriter_WriteCharArray_System_Char___System_Int64_]
+### WriteCharArray(Char\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a char array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-12]
+#### Declaration
 
     public void WriteCharArray(char[] b, long count = -1L)
 
-#### Parameters [parameters-12]
+#### Parameters
 
 | Type            | Name  | Description                     |
 |-----------------|-------|---------------------------------|
 | System.Char\[\] | b     | The array to write              |
 | System.Int64    | count | The amount of elements to write |
 
-### WriteCharArrayDiff(Char\[\], Char\[\], Int64) [MLAPI_Serialization_BitWriter_WriteCharArrayDiff_System_Char___System_Char___System_Int64_]
+### WriteCharArrayDiff(Char\[\], Char\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two char arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     public void WriteCharArrayDiff(char[] write, char[] compare, long count = -1L)
 
-#### Parameters [parameters-13]
+#### Parameters
 
 | Type            | Name    | Description                        |
 |-----------------|---------|------------------------------------|
@@ -417,46 +417,46 @@ Writes the diff between two char arrays
 | System.Char\[\] | compare | The previous array to use for diff |
 | System.Int64    | count   | The amount of elements to write    |
 
-### WriteCharArrayPacked(Char\[\], Int64) [MLAPI_Serialization_BitWriter_WriteCharArrayPacked_System_Char___System_Int64_]
+### WriteCharArrayPacked(Char\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a char array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-14]
+#### Declaration
 
     public void WriteCharArrayPacked(char[] b, long count = -1L)
 
-#### Parameters [parameters-14]
+#### Parameters
 
 | Type            | Name  | Description                     |
 |-----------------|-------|---------------------------------|
 | System.Char\[\] | b     | The array to write              |
 | System.Int64    | count | The amount of elements to write |
 
-### WriteCharArrayPackedDiff(Char\[\], Char\[\], Int64) [MLAPI_Serialization_BitWriter_WriteCharArrayPackedDiff_System_Char___System_Char___System_Int64_]
+### WriteCharArrayPackedDiff(Char\[\], Char\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two char arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-15]
+#### Declaration
 
     public void WriteCharArrayPackedDiff(char[] write, char[] compare, long count = -1L)
 
-#### Parameters [parameters-15]
+#### Parameters
 
 | Type            | Name    | Description                        |
 |-----------------|---------|------------------------------------|
@@ -464,159 +464,159 @@ Writes the diff between two char arrays in a packed format
 | System.Char\[\] | compare | The previous array to use for diff |
 | System.Int64    | count   | The amount of elements to write    |
 
-### WriteCharPacked(Char) [MLAPI_Serialization_BitWriter_WriteCharPacked_System_Char_]
+### WriteCharPacked(Char)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a two-byte character as a varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-16]
+#### Declaration
 
     public void WriteCharPacked(char c)
 
-#### Parameters [parameters-16]
+#### Parameters
 
 | Type        | Name | Description    |
 |-------------|------|----------------|
 | System.Char | c    | Value to write |
 
-### WriteColor(Color) [MLAPI_Serialization_BitWriter_WriteColor_UnityEngine_Color_]
+### WriteColor(Color)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes four non-varint floats from the color to
 the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     public void WriteColor(Color color)
 
-#### Parameters [parameters-17]
+#### Parameters
 
 | Type              | Name  | Description    |
 |-------------------|-------|----------------|
 | UnityEngine.Color | color | Color to write |
 
-### WriteColor32(Color32) [MLAPI_Serialization_BitWriter_WriteColor32_UnityEngine_Color32_]
+### WriteColor32(Color32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes four non-varint floats from the color to
 the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-18]
+#### Declaration
 
     public void WriteColor32(Color32 color32)
 
-#### Parameters [parameters-18]
+#### Parameters
 
 | Type                | Name    | Description      |
 |---------------------|---------|------------------|
 | UnityEngine.Color32 | color32 | Color32 to write |
 
-### WriteColorPacked(Color) [MLAPI_Serialization_BitWriter_WriteColorPacked_UnityEngine_Color_]
+### WriteColorPacked(Color)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes four varint floats from the color to the
 stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-19]
+#### Declaration
 
     public void WriteColorPacked(Color color)
 
-#### Parameters [parameters-19]
+#### Parameters
 
 | Type              | Name  | Description    |
 |-------------------|-------|----------------|
 | UnityEngine.Color | color | Color to write |
 
-### WriteDouble(Double) [MLAPI_Serialization_BitWriter_WriteDouble_System_Double_]
+### WriteDouble(Double)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write double-precision floating point value to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-20]
+#### Declaration
 
     public void WriteDouble(double value)
 
-#### Parameters [parameters-20]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.Double | value | Value to write |
 
-### WriteDoubleArray(Double\[\], Int64) [MLAPI_Serialization_BitWriter_WriteDoubleArray_System_Double___System_Int64_]
+### WriteDoubleArray(Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a double array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-21]
+#### Declaration
 
     public void WriteDoubleArray(double[] b, long count = -1L)
 
-#### Parameters [parameters-21]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.Double\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteDoubleArrayDiff(Double\[\], Double\[\], Int64) [MLAPI_Serialization_BitWriter_WriteDoubleArrayDiff_System_Double___System_Double___System_Int64_]
+### WriteDoubleArrayDiff(Double\[\], Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two double arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-22]
+#### Declaration
 
     public void WriteDoubleArrayDiff(double[] write, double[] compare, long count = -1L)
 
-#### Parameters [parameters-22]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -624,46 +624,46 @@ Writes the diff between two double arrays
 | System.Double\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteDoubleArrayPacked(Double\[\], Int64) [MLAPI_Serialization_BitWriter_WriteDoubleArrayPacked_System_Double___System_Int64_]
+### WriteDoubleArrayPacked(Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a double array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-23]
+#### Declaration
 
     public void WriteDoubleArrayPacked(double[] b, long count = -1L)
 
-#### Parameters [parameters-23]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.Double\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteDoubleArrayPackedDiff(Double\[\], Double\[\], Int64) [MLAPI_Serialization_BitWriter_WriteDoubleArrayPackedDiff_System_Double___System_Double___System_Int64_]
+### WriteDoubleArrayPackedDiff(Double\[\], Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two double arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-24]
+#### Declaration
 
     public void WriteDoubleArrayPackedDiff(double[] write, double[] compare, long count = -1L)
 
-#### Parameters [parameters-24]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -671,68 +671,68 @@ Writes the diff between two double arrays in a packed format
 | System.Double\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteDoublePacked(Double) [MLAPI_Serialization_BitWriter_WriteDoublePacked_System_Double_]
+### WriteDoublePacked(Double)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write double-precision floating point value to the stream as a varint
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-25]
+#### Declaration
 
     public void WriteDoublePacked(double value)
 
-#### Parameters [parameters-25]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.Double | value | Value to write |
 
-### WriteFloatArray(Single\[\], Int64) [MLAPI_Serialization_BitWriter_WriteFloatArray_System_Single___System_Int64_]
+### WriteFloatArray(Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a float array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-26]
+#### Declaration
 
     public void WriteFloatArray(float[] b, long count = -1L)
 
-#### Parameters [parameters-26]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.Single\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteFloatArrayDiff(Single\[\], Single\[\], Int64) [MLAPI_Serialization_BitWriter_WriteFloatArrayDiff_System_Single___System_Single___System_Int64_]
+### WriteFloatArrayDiff(Single\[\], Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two float arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-27]
+#### Declaration
 
     public void WriteFloatArrayDiff(float[] write, float[] compare, long count = -1L)
 
-#### Parameters [parameters-27]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -740,46 +740,46 @@ Writes the diff between two float arrays
 | System.Single\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteFloatArrayPacked(Single\[\], Int64) [MLAPI_Serialization_BitWriter_WriteFloatArrayPacked_System_Single___System_Int64_]
+### WriteFloatArrayPacked(Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a float array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-28]
+#### Declaration
 
     public void WriteFloatArrayPacked(float[] b, long count = -1L)
 
-#### Parameters [parameters-28]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.Single\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteFloatArrayPackedDiff(Single\[\], Single\[\], Int64) [MLAPI_Serialization_BitWriter_WriteFloatArrayPackedDiff_System_Single___System_Single___System_Int64_]
+### WriteFloatArrayPackedDiff(Single\[\], Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two float arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-29]
+#### Declaration
 
     public void WriteFloatArrayPackedDiff(float[] write, float[] compare, long count = -1L)
 
-#### Parameters [parameters-29]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -787,178 +787,178 @@ Writes the diff between two float arrays in a packed format
 | System.Single\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteInt16(Int16) [MLAPI_Serialization_BitWriter_WriteInt16_System_Int16_]
+### WriteInt16(Int16)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed short (Int16) to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-30]
+#### Declaration
 
     public void WriteInt16(short value)
 
-#### Parameters [parameters-30]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.Int16 | value | Value to write |
 
-### WriteInt16Packed(Int16) [MLAPI_Serialization_BitWriter_WriteInt16Packed_System_Int16_]
+### WriteInt16Packed(Int16)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed short (Int16) as a ZigZag encoded varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-31]
+#### Declaration
 
     public void WriteInt16Packed(short value)
 
-#### Parameters [parameters-31]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.Int16 | value | Value to write |
 
-### WriteInt32(Int32) [MLAPI_Serialization_BitWriter_WriteInt32_System_Int32_]
+### WriteInt32(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed int (Int32) to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-32]
+#### Declaration
 
     public void WriteInt32(int value)
 
-#### Parameters [parameters-32]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.Int32 | value | Value to write |
 
-### WriteInt32Packed(Int32) [MLAPI_Serialization_BitWriter_WriteInt32Packed_System_Int32_]
+### WriteInt32Packed(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed int (Int32) as a ZigZag encoded varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-33]
+#### Declaration
 
     public void WriteInt32Packed(int value)
 
-#### Parameters [parameters-33]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.Int32 | value | Value to write |
 
-### WriteInt64(Int64) [MLAPI_Serialization_BitWriter_WriteInt64_System_Int64_]
+### WriteInt64(Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed long (Int64) to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-34]
+#### Declaration
 
     public void WriteInt64(long value)
 
-#### Parameters [parameters-34]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.Int64 | value | Value to write |
 
-### WriteInt64Packed(Int64) [MLAPI_Serialization_BitWriter_WriteInt64Packed_System_Int64_]
+### WriteInt64Packed(Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed long (Int64) as a ZigZag encoded varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-35]
+#### Declaration
 
     public void WriteInt64Packed(long value)
 
-#### Parameters [parameters-35]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.Int64 | value | Value to write |
 
-### WriteIntArray(Int32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteIntArray_System_Int32___System_Int64_]
+### WriteIntArray(Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a int array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-36]
+#### Declaration
 
     public void WriteIntArray(int[] b, long count = -1L)
 
-#### Parameters [parameters-36]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.Int32\[\] | b     | The array to write              |
 | System.Int64     | count | The amount of elements to write |
 
-### WriteIntArrayDiff(Int32\[\], Int32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteIntArrayDiff_System_Int32___System_Int32___System_Int64_]
+### WriteIntArrayDiff(Int32\[\], Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two int arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-37]
+#### Declaration
 
     public void WriteIntArrayDiff(int[] write, int[] compare, long count = -1L)
 
-#### Parameters [parameters-37]
+#### Parameters
 
 | Type             | Name    | Description                        |
 |------------------|---------|------------------------------------|
@@ -966,46 +966,46 @@ Writes the diff between two int arrays
 | System.Int32\[\] | compare | The previous array to use for diff |
 | System.Int64     | count   | The amount of elements to write    |
 
-### WriteIntArrayPacked(Int32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteIntArrayPacked_System_Int32___System_Int64_]
+### WriteIntArrayPacked(Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a int array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-38]
+#### Declaration
 
     public void WriteIntArrayPacked(int[] b, long count = -1L)
 
-#### Parameters [parameters-38]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.Int32\[\] | b     | The array to write              |
 | System.Int64     | count | The amount of elements to write |
 
-### WriteIntArrayPackedDiff(Int32\[\], Int32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteIntArrayPackedDiff_System_Int32___System_Int32___System_Int64_]
+### WriteIntArrayPackedDiff(Int32\[\], Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two int arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-39]
+#### Declaration
 
     public void WriteIntArrayPackedDiff(int[] write, int[] compare, long count = -1L)
 
-#### Parameters [parameters-39]
+#### Parameters
 
 | Type             | Name    | Description                        |
 |------------------|---------|------------------------------------|
@@ -1013,46 +1013,46 @@ Writes the diff between two int arrays
 | System.Int32\[\] | compare | The previous array to use for diff |
 | System.Int64     | count   | The amount of elements to write    |
 
-### WriteLongArray(Int64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteLongArray_System_Int64___System_Int64_]
+### WriteLongArray(Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a long array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-40]
+#### Declaration
 
     public void WriteLongArray(long[] b, long count = -1L)
 
-#### Parameters [parameters-40]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.Int64\[\] | b     | The array to write              |
 | System.Int64     | count | The amount of elements to write |
 
-### WriteLongArrayDiff(Int64\[\], Int64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteLongArrayDiff_System_Int64___System_Int64___System_Int64_]
+### WriteLongArrayDiff(Int64\[\], Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two long arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-41]
+#### Declaration
 
     public void WriteLongArrayDiff(long[] write, long[] compare, long count = -1L)
 
-#### Parameters [parameters-41]
+#### Parameters
 
 | Type             | Name    | Description                        |
 |------------------|---------|------------------------------------|
@@ -1060,46 +1060,46 @@ Writes the diff between two long arrays
 | System.Int64\[\] | compare | The previous array to use for diff |
 | System.Int64     | count   | The amount of elements to write    |
 
-### WriteLongArrayPacked(Int64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteLongArrayPacked_System_Int64___System_Int64_]
+### WriteLongArrayPacked(Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a long array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-42]
+#### Declaration
 
     public void WriteLongArrayPacked(long[] b, long count = -1L)
 
-#### Parameters [parameters-42]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.Int64\[\] | b     | The array to write              |
 | System.Int64     | count | The amount of elements to write |
 
-### WriteLongArrayPackedDiff(Int64\[\], Int64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteLongArrayPackedDiff_System_Int64___System_Int64___System_Int64_]
+### WriteLongArrayPackedDiff(Int64\[\], Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two long arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-43]
+#### Declaration
 
     public void WriteLongArrayPackedDiff(long[] write, long[] compare, long count = -1L)
 
-#### Parameters [parameters-43]
+#### Parameters
 
 | Type             | Name    | Description                        |
 |------------------|---------|------------------------------------|
@@ -1107,107 +1107,107 @@ Writes the diff between two long arrays in a packed format
 | System.Int64\[\] | compare | The previous array to use for diff |
 | System.Int64     | count   | The amount of elements to write    |
 
-### WriteNibble(Byte) [MLAPI_Serialization_BitWriter_WriteNibble_System_Byte_]
+### WriteNibble(Byte)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write the lower half (lower nibble) of a byte.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-44]
+#### Declaration
 
     public void WriteNibble(byte value)
 
-#### Parameters [parameters-44]
+#### Parameters
 
 | Type        | Name  | Description                       |
 |-------------|-------|-----------------------------------|
 | System.Byte | value | Value containing nibble to write. |
 
-### WriteNibble(Byte, Boolean) [MLAPI_Serialization_BitWriter_WriteNibble_System_Byte_System_Boolean_]
+### WriteNibble(Byte, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write either the upper or lower nibble of a byte to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-45]
+#### Declaration
 
     public void WriteNibble(byte value, bool upper)
 
-#### Parameters [parameters-45]
+#### Parameters
 
 | Type           | Name  | Description                                                                                                         |
 |----------------|-------|---------------------------------------------------------------------------------------------------------------------|
 | System.Byte    | value | Value holding the nibble                                                                                            |
 | System.Boolean | upper | Whether or not the upper nibble should be written. True to write the four high bits, else writes the four low bits. |
 
-### WriteObjectPacked(Object) [MLAPI_Serialization_BitWriter_WriteObjectPacked_System_Object_]
+### WriteObjectPacked(Object)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a boxed object in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-46]
+#### Declaration
 
     public void WriteObjectPacked(object value)
 
-#### Parameters [parameters-46]
+#### Parameters
 
 | Type          | Name  | Description         |
 |---------------|-------|---------------------|
 | System.Object | value | The object to write |
 
-### WritePadBits() [MLAPI_Serialization_BitWriter_WritePadBits]
+### WritePadBits()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes pad bits to make the underlying stream aligned
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-47]
+#### Declaration
 
     public void WritePadBits()
 
-### WriteRangedDouble(Double, Double, Double, Int32) [MLAPI_Serialization_BitWriter_WriteRangedDouble_System_Double_System_Double_System_Double_System_Int32_]
+### WriteRangedDouble(Double, Double, Double, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a double-precision floating point value to the stream. The value
 is between (inclusive) the minValue and maxValue.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-48]
+#### Declaration
 
     public void WriteRangedDouble(double value, double minValue, double maxValue, int bytes)
 
-#### Parameters [parameters-47]
+#### Parameters
 
 | Type          | Name     | Description                                                                             |
 |---------------|----------|-----------------------------------------------------------------------------------------|
@@ -1216,24 +1216,24 @@ is between (inclusive) the minValue and maxValue.
 | System.Double | maxValue | Maximum possible value that this could be                                               |
 | System.Int32  | bytes    | How many bytes the compressed result should occupy. Must be between 1 and 8 (inclusive) |
 
-### WriteRangedSingle(Single, Single, Single, Int32) [MLAPI_Serialization_BitWriter_WriteRangedSingle_System_Single_System_Single_System_Single_System_Int32_]
+### WriteRangedSingle(Single, Single, Single, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a single-precision floating point value to the stream. The value
 is between (inclusive) the minValue and maxValue.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-49]
+#### Declaration
 
     public void WriteRangedSingle(float value, float minValue, float maxValue, int bytes)
 
-#### Parameters [parameters-48]
+#### Parameters
 
 | Type          | Name     | Description                                                                             |
 |---------------|----------|-----------------------------------------------------------------------------------------|
@@ -1242,158 +1242,158 @@ is between (inclusive) the minValue and maxValue.
 | System.Single | maxValue | Maximum possible value that this could be                                               |
 | System.Int32  | bytes    | How many bytes the compressed result should occupy. Must be between 1 and 4 (inclusive) |
 
-### WriteRay(Ray) [MLAPI_Serialization_BitWriter_WriteRay_UnityEngine_Ray_]
+### WriteRay(Ray)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes two non-packed Vector3 from the ray to
 the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-50]
+#### Declaration
 
     public void WriteRay(Ray ray)
 
-#### Parameters [parameters-49]
+#### Parameters
 
 | Type            | Name | Description  |
 |-----------------|------|--------------|
 | UnityEngine.Ray | ray  | Ray to write |
 
-### WriteRayPacked(Ray) [MLAPI_Serialization_BitWriter_WriteRayPacked_UnityEngine_Ray_]
+### WriteRayPacked(Ray)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes two packed Vector3 from the ray to the
 stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-51]
+#### Declaration
 
     public void WriteRayPacked(Ray ray)
 
-#### Parameters [parameters-50]
+#### Parameters
 
 | Type            | Name | Description  |
 |-----------------|------|--------------|
 | UnityEngine.Ray | ray  | Ray to write |
 
-### WriteRotation(Quaternion) [MLAPI_Serialization_BitWriter_WriteRotation_UnityEngine_Quaternion_]
+### WriteRotation(Quaternion)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the rotation to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-52]
+#### Declaration
 
     public void WriteRotation(Quaternion rotation)
 
-#### Parameters [parameters-51]
+#### Parameters
 
 | Type                   | Name     | Description       |
 |------------------------|----------|-------------------|
 | UnityEngine.Quaternion | rotation | Rotation to write |
 
-### WriteRotationPacked(Quaternion) [MLAPI_Serialization_BitWriter_WriteRotationPacked_UnityEngine_Quaternion_]
+### WriteRotationPacked(Quaternion)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the rotation to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-53]
+#### Declaration
 
     public void WriteRotationPacked(Quaternion rotation)
 
-#### Parameters [parameters-52]
+#### Parameters
 
 | Type                   | Name     | Description       |
 |------------------------|----------|-------------------|
 | UnityEngine.Quaternion | rotation | Rotation to write |
 
-### WriteSByte(SByte) [MLAPI_Serialization_BitWriter_WriteSByte_System_SByte_]
+### WriteSByte(SByte)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a signed byte to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-54]
+#### Declaration
 
     public void WriteSByte(sbyte value)
 
-#### Parameters [parameters-53]
+#### Parameters
 
 | Type         | Name  | Description    |
 |--------------|-------|----------------|
 | System.SByte | value | Value to write |
 
-### WriteShortArray(Int16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteShortArray_System_Int16___System_Int64_]
+### WriteShortArray(Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a short array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-55]
+#### Declaration
 
     public void WriteShortArray(short[] b, long count = -1L)
 
-#### Parameters [parameters-54]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.Int16\[\] | b     | The array to write              |
 | System.Int64     | count | The amount of elements to write |
 
-### WriteShortArrayDiff(Int16\[\], Int16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteShortArrayDiff_System_Int16___System_Int16___System_Int64_]
+### WriteShortArrayDiff(Int16\[\], Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two short arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-56]
+#### Declaration
 
     public void WriteShortArrayDiff(short[] write, short[] compare, long count = -1L)
 
-#### Parameters [parameters-55]
+#### Parameters
 
 | Type             | Name    | Description                        |
 |------------------|---------|------------------------------------|
@@ -1401,46 +1401,46 @@ Writes the diff between two short arrays
 | System.Int16\[\] | compare | The previous array to use for diff |
 | System.Int64     | count   | The amount of elements to write    |
 
-### WriteShortArrayPacked(Int16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteShortArrayPacked_System_Int16___System_Int64_]
+### WriteShortArrayPacked(Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a short array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-57]
+#### Declaration
 
     public void WriteShortArrayPacked(short[] b, long count = -1L)
 
-#### Parameters [parameters-56]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.Int16\[\] | b     | The array to write              |
 | System.Int64     | count | The amount of elements to write |
 
-### WriteShortArrayPackedDiff(Int16\[\], Int16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteShortArrayPackedDiff_System_Int16___System_Int16___System_Int64_]
+### WriteShortArrayPackedDiff(Int16\[\], Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two short arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-58]
+#### Declaration
 
     public void WriteShortArrayPackedDiff(short[] write, short[] compare, long count = -1L)
 
-#### Parameters [parameters-57]
+#### Parameters
 
 | Type             | Name    | Description                        |
 |------------------|---------|------------------------------------|
@@ -1448,90 +1448,90 @@ Writes the diff between two short arrays in a packed format
 | System.Int16\[\] | compare | The previous array to use for diff |
 | System.Int64     | count   | The amount of elements to write    |
 
-### WriteSingle(Single) [MLAPI_Serialization_BitWriter_WriteSingle_System_Single_]
+### WriteSingle(Single)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write single-precision floating point value to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-59]
+#### Declaration
 
     public void WriteSingle(float value)
 
-#### Parameters [parameters-58]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.Single | value | Value to write |
 
-### WriteSinglePacked(Single) [MLAPI_Serialization_BitWriter_WriteSinglePacked_System_Single_]
+### WriteSinglePacked(Single)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write single-precision floating point value to the stream as a varint
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-60]
+#### Declaration
 
     public void WriteSinglePacked(float value)
 
-#### Parameters [parameters-59]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.Single | value | Value to write |
 
-### WriteString(String, Boolean) [MLAPI_Serialization_BitWriter_WriteString_System_String_System_Boolean_]
+### WriteString(String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a string
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-61]
+#### Declaration
 
     public void WriteString(string s, bool oneByteChars = false)
 
-#### Parameters [parameters-60]
+#### Parameters
 
 | Type           | Name         | Description                                                              |
 |----------------|--------------|--------------------------------------------------------------------------|
 | System.String  | s            | The string to write                                                      |
 | System.Boolean | oneByteChars | Whether or not to use one byte per character. This will only allow ASCII |
 
-### WriteStringDiff(String, String, Boolean) [MLAPI_Serialization_BitWriter_WriteStringDiff_System_String_System_String_System_Boolean_]
+### WriteStringDiff(String, String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two strings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-62]
+#### Declaration
 
     public void WriteStringDiff(string write, string compare, bool oneByteChars = false)
 
-#### Parameters [parameters-61]
+#### Parameters
 
 | Type           | Name         | Description                                                                    |
 |----------------|--------------|--------------------------------------------------------------------------------|
@@ -1539,223 +1539,223 @@ Writes the diff between two strings
 | System.String  | compare      | The previous array to use for diff                                             |
 | System.Boolean | oneByteChars | Whether or not to use single byte chars. This will only allow ASCII characters |
 
-### WriteStringPacked(String) [MLAPI_Serialization_BitWriter_WriteStringPacked_System_String_]
+### WriteStringPacked(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a string in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-63]
+#### Declaration
 
     public void WriteStringPacked(string s)
 
-#### Parameters [parameters-62]
+#### Parameters
 
 | Type          | Name | Description |
 |---------------|------|-------------|
 | System.String | s    |             |
 
-### WriteStringPackedDiff(String, String) [MLAPI_Serialization_BitWriter_WriteStringPackedDiff_System_String_System_String_]
+### WriteStringPackedDiff(String, String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two strings in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-64]
+#### Declaration
 
     public void WriteStringPackedDiff(string write, string compare)
 
-#### Parameters [parameters-63]
+#### Parameters
 
 | Type          | Name    | Description                         |
 |---------------|---------|-------------------------------------|
 | System.String | write   | The new string                      |
 | System.String | compare | The previous string to use for diff |
 
-### WriteUInt16(UInt16) [MLAPI_Serialization_BitWriter_WriteUInt16_System_UInt16_]
+### WriteUInt16(UInt16)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write an unsigned short (UInt16) to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-65]
+#### Declaration
 
     public void WriteUInt16(ushort value)
 
-#### Parameters [parameters-64]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.UInt16 | value | Value to write |
 
-### WriteUInt16Packed(UInt16) [MLAPI_Serialization_BitWriter_WriteUInt16Packed_System_UInt16_]
+### WriteUInt16Packed(UInt16)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write an unsigned short (UInt16) as a varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-66]
+#### Declaration
 
     public void WriteUInt16Packed(ushort value)
 
-#### Parameters [parameters-65]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.UInt16 | value | Value to write |
 
-### WriteUInt32(UInt32) [MLAPI_Serialization_BitWriter_WriteUInt32_System_UInt32_]
+### WriteUInt32(UInt32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write an unsigned int (UInt32) to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-67]
+#### Declaration
 
     public void WriteUInt32(uint value)
 
-#### Parameters [parameters-66]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.UInt32 | value | Value to write |
 
-### WriteUInt32Packed(UInt32) [MLAPI_Serialization_BitWriter_WriteUInt32Packed_System_UInt32_]
+### WriteUInt32Packed(UInt32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write an unsigned int (UInt32) as a varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-68]
+#### Declaration
 
     public void WriteUInt32Packed(uint value)
 
-#### Parameters [parameters-67]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.UInt32 | value | Value to write |
 
-### WriteUInt64(UInt64) [MLAPI_Serialization_BitWriter_WriteUInt64_System_UInt64_]
+### WriteUInt64(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write an unsigned long (UInt64) to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-69]
+#### Declaration
 
     public void WriteUInt64(ulong value)
 
-#### Parameters [parameters-68]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.UInt64 | value | Value to write |
 
-### WriteUInt64Packed(UInt64) [MLAPI_Serialization_BitWriter_WriteUInt64Packed_System_UInt64_]
+### WriteUInt64Packed(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write an unsigned long (UInt64) as a varint to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-70]
+#### Declaration
 
     public void WriteUInt64Packed(ulong value)
 
-#### Parameters [parameters-69]
+#### Parameters
 
 | Type          | Name  | Description    |
 |---------------|-------|----------------|
 | System.UInt64 | value | Value to write |
 
-### WriteUIntArray(UInt32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUIntArray_System_UInt32___System_Int64_]
+### WriteUIntArray(UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a uint array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-71]
+#### Declaration
 
     public void WriteUIntArray(uint[] b, long count = -1L)
 
-#### Parameters [parameters-70]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.UInt32\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteUIntArrayDiff(UInt32\[\], UInt32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUIntArrayDiff_System_UInt32___System_UInt32___System_Int64_]
+### WriteUIntArrayDiff(UInt32\[\], UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two uint arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-72]
+#### Declaration
 
     public void WriteUIntArrayDiff(uint[] write, uint[] compare, long count = -1L)
 
-#### Parameters [parameters-71]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -1763,46 +1763,46 @@ Writes the diff between two uint arrays
 | System.UInt32\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteUIntArrayPacked(UInt32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUIntArrayPacked_System_UInt32___System_Int64_]
+### WriteUIntArrayPacked(UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a uint array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-73]
+#### Declaration
 
     public void WriteUIntArrayPacked(uint[] b, long count = -1L)
 
-#### Parameters [parameters-72]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.UInt32\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteUIntArrayPackedDiff(UInt32\[\], UInt32\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUIntArrayPackedDiff_System_UInt32___System_UInt32___System_Int64_]
+### WriteUIntArrayPackedDiff(UInt32\[\], UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two uing arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-74]
+#### Declaration
 
     public void WriteUIntArrayPackedDiff(uint[] write, uint[] compare, long count = -1L)
 
-#### Parameters [parameters-73]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -1810,46 +1810,46 @@ Writes the diff between two uing arrays in a packed format
 | System.UInt32\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteULongArray(UInt64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteULongArray_System_UInt64___System_Int64_]
+### WriteULongArray(UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a ulong array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-75]
+#### Declaration
 
     public void WriteULongArray(ulong[] b, long count = -1L)
 
-#### Parameters [parameters-74]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.UInt64\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteULongArrayDiff(UInt64\[\], UInt64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteULongArrayDiff_System_UInt64___System_UInt64___System_Int64_]
+### WriteULongArrayDiff(UInt64\[\], UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two ulong arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-76]
+#### Declaration
 
     public void WriteULongArrayDiff(ulong[] write, ulong[] compare, long count = -1L)
 
-#### Parameters [parameters-75]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -1857,46 +1857,46 @@ Writes the diff between two ulong arrays
 | System.UInt64\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteULongArrayPacked(UInt64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteULongArrayPacked_System_UInt64___System_Int64_]
+### WriteULongArrayPacked(UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a ulong array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-77]
+#### Declaration
 
     public void WriteULongArrayPacked(ulong[] b, long count = -1L)
 
-#### Parameters [parameters-76]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.UInt64\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteULongArrayPackedDiff(UInt64\[\], UInt64\[\], Int64) [MLAPI_Serialization_BitWriter_WriteULongArrayPackedDiff_System_UInt64___System_UInt64___System_Int64_]
+### WriteULongArrayPackedDiff(UInt64\[\], UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two ulong arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-78]
+#### Declaration
 
     public void WriteULongArrayPackedDiff(ulong[] write, ulong[] compare, long count = -1L)
 
-#### Parameters [parameters-77]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -1904,46 +1904,46 @@ Writes the diff between two ulong arrays in a packed format
 | System.UInt64\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteUShortArray(UInt16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUShortArray_System_UInt16___System_Int64_]
+### WriteUShortArray(UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a ushort array
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-79]
+#### Declaration
 
     public void WriteUShortArray(ushort[] b, long count = -1L)
 
-#### Parameters [parameters-78]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.UInt16\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteUShortArrayDiff(UInt16\[\], UInt16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUShortArrayDiff_System_UInt16___System_UInt16___System_Int64_]
+### WriteUShortArrayDiff(UInt16\[\], UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two ushort arrays
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-80]
+#### Declaration
 
     public void WriteUShortArrayDiff(ushort[] write, ushort[] compare, long count = -1L)
 
-#### Parameters [parameters-79]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -1951,46 +1951,46 @@ Writes the diff between two ushort arrays
 | System.UInt16\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteUShortArrayPacked(UInt16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUShortArrayPacked_System_UInt16___System_Int64_]
+### WriteUShortArrayPacked(UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes a ushort array in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-81]
+#### Declaration
 
     public void WriteUShortArrayPacked(ushort[] b, long count = -1L)
 
-#### Parameters [parameters-80]
+#### Parameters
 
 | Type              | Name  | Description                     |
 |-------------------|-------|---------------------------------|
 | System.UInt16\[\] | b     | The array to write              |
 | System.Int64      | count | The amount of elements to write |
 
-### WriteUShortArrayPackedDiff(UInt16\[\], UInt16\[\], Int64) [MLAPI_Serialization_BitWriter_WriteUShortArrayPackedDiff_System_UInt16___System_UInt16___System_Int64_]
+### WriteUShortArrayPackedDiff(UInt16\[\], UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the diff between two ushort arrays in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-82]
+#### Declaration
 
     public void WriteUShortArrayPackedDiff(ushort[] write, ushort[] compare, long count = -1L)
 
-#### Parameters [parameters-81]
+#### Parameters
 
 | Type              | Name    | Description                        |
 |-------------------|---------|------------------------------------|
@@ -1998,139 +1998,139 @@ Writes the diff between two ushort arrays in a packed format
 | System.UInt16\[\] | compare | The previous array to use for diff |
 | System.Int64      | count   | The amount of elements to write    |
 
-### WriteVector2(Vector2) [MLAPI_Serialization_BitWriter_WriteVector2_UnityEngine_Vector2_]
+### WriteVector2(Vector2)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes two non-varint floats from the vector to
 the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-83]
+#### Declaration
 
     public void WriteVector2(Vector2 vector2)
 
-#### Parameters [parameters-82]
+#### Parameters
 
 | Type                | Name    | Description     |
 |---------------------|---------|-----------------|
 | UnityEngine.Vector2 | vector2 | Vector to write |
 
-### WriteVector2Packed(Vector2) [MLAPI_Serialization_BitWriter_WriteVector2Packed_UnityEngine_Vector2_]
+### WriteVector2Packed(Vector2)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes two varint floats from the vector to the
 stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-84]
+#### Declaration
 
     public void WriteVector2Packed(Vector2 vector2)
 
-#### Parameters [parameters-83]
+#### Parameters
 
 | Type                | Name    | Description     |
 |---------------------|---------|-----------------|
 | UnityEngine.Vector2 | vector2 | Vector to write |
 
-### WriteVector3(Vector3) [MLAPI_Serialization_BitWriter_WriteVector3_UnityEngine_Vector3_]
+### WriteVector3(Vector3)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes three non-varint floats from the vector
 to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-85]
+#### Declaration
 
     public void WriteVector3(Vector3 vector3)
 
-#### Parameters [parameters-84]
+#### Parameters
 
 | Type                | Name    | Description     |
 |---------------------|---------|-----------------|
 | UnityEngine.Vector3 | vector3 | Vector to write |
 
-### WriteVector3Packed(Vector3) [MLAPI_Serialization_BitWriter_WriteVector3Packed_UnityEngine_Vector3_]
+### WriteVector3Packed(Vector3)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes three varint floats from the vector to
 the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-86]
+#### Declaration
 
     public void WriteVector3Packed(Vector3 vector3)
 
-#### Parameters [parameters-85]
+#### Parameters
 
 | Type                | Name    | Description     |
 |---------------------|---------|-----------------|
 | UnityEngine.Vector3 | vector3 | Vector to write |
 
-### WriteVector4(Vector4) [MLAPI_Serialization_BitWriter_WriteVector4_UnityEngine_Vector4_]
+### WriteVector4(Vector4)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes four non-varint floats from the vector to
 the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-87]
+#### Declaration
 
     public void WriteVector4(Vector4 vector4)
 
-#### Parameters [parameters-86]
+#### Parameters
 
 | Type                | Name    | Description     |
 |---------------------|---------|-----------------|
 | UnityEngine.Vector4 | vector4 | Vector to write |
 
-### WriteVector4Packed(Vector4) [MLAPI_Serialization_BitWriter_WriteVector4Packed_UnityEngine_Vector4_]
+### WriteVector4Packed(Vector4)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Convenience method that writes four varint floats from the vector to the
 stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-88]
+#### Declaration
 
     public void WriteVector4Packed(Vector4 vector4)
 
-#### Parameters [parameters-87]
+#### Parameters
 
 | Type                | Name    | Description     |
 |---------------------|---------|-----------------|

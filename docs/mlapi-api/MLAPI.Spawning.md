@@ -3,17 +3,17 @@ id: MLAPI.Spawning
 title: MLAPI.Spawning  
 ---
 
-## Namespace MLAPI.Spawning [MLAPI_Spawning]
+## Namespace MLAPI.Spawning
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Spawning
 
 ### MLAPI.Spawning.SpawnManager
 
-<div class="section" markdown="1">
+<div class="section">
 
 Class that handles object spawning
 
@@ -31,7 +31,7 @@ Class that handles object spawning
 
 ### MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 The delegate used when destroying networked objects
 
@@ -39,7 +39,7 @@ The delegate used when destroying networked objects
 
 ### MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 The delegate used when spawning a networked object
 
