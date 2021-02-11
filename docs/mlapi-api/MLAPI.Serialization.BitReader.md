@@ -3,34 +3,34 @@ id: MLAPI.Serialization.BitReader
 title: MLAPI.Serialization.BitReader  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A BinaryReader that can do bit wise manipulation when backed by a
 BitStream
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -38,47 +38,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -90,29 +90,29 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_BitReader_syntax]
+##### Syntax
 
     public class BitReader
 
 ## Constructors 
 
-### BitReader(Stream) [MLAPI_Serialization_BitReader__ctor_System_IO_Stream_]
+### BitReader(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a new BitReader backed by a given stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public BitReader(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description             |
 |------------------|--------|-------------------------|
@@ -120,1054 +120,1054 @@ Creates a new BitReader backed by a given stream
 
 ## Methods 
 
-### ReadBit() [MLAPI_Serialization_BitReader_ReadBit]
+### ReadBit()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads a single bit
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public bool ReadBit()
 
-#### Returns [returns]
+#### Returns
 
 | Type           | Description  |
 |----------------|--------------|
 | System.Boolean | The bit read |
 
-### ReadBits(Int32) [MLAPI_Serialization_BitReader_ReadBits_System_Int32_]
+### ReadBits(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a certain amount of bits from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public ulong ReadBits(int bitCount)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type         | Name     | Description                                  |
 |--------------|----------|----------------------------------------------|
 | System.Int32 | bitCount | How many bits to read. Minimum 0, maximum 8. |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type          | Description             |
 |---------------|-------------------------|
 | System.UInt64 | The bits that were read |
 
-### ReadBool() [MLAPI_Serialization_BitReader_ReadBool]
+### ReadBool()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads a single bit
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public bool ReadBool()
 
-#### Returns [returns-2]
+#### Returns
 
 | Type           | Description  |
 |----------------|--------------|
 | System.Boolean | The bit read |
 
-### ReadByte() [MLAPI_Serialization_BitReader_ReadByte]
+### ReadByte()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads a single byte
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public int ReadByte()
 
-#### Returns [returns-3]
+#### Returns
 
 | Type         | Description                 |
 |--------------|-----------------------------|
 | System.Int32 | The byte read as an integer |
 
-### ReadByteArray(Byte\[\], Int64) [MLAPI_Serialization_BitReader_ReadByteArray_System_Byte___System_Int64_]
+### ReadByteArray(Byte\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read byte array into an optional buffer from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public byte[] ReadByteArray(byte[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type            | Name        | Description                                                                                       |
 |-----------------|-------------|---------------------------------------------------------------------------------------------------|
 | System.Byte\[\] | readTo      | The array to read into. If the array is not large enough or if it's null. A new array is created. |
 | System.Int64    | knownLength | The length of the array if it's known. Otherwise -1                                               |
 
-#### Returns [returns-4]
+#### Returns
 
 | Type            | Description                        |
 |-----------------|------------------------------------|
 | System.Byte\[\] | The byte array that has been read. |
 
-### ReadByteArrayDiff(Byte\[\], Int64) [MLAPI_Serialization_BitReader_ReadByteArrayDiff_System_Byte___System_Int64_]
+### ReadByteArrayDiff(Byte\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read byte array diff into an optional buffer from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public byte[] ReadByteArrayDiff(byte[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type            | Name        | Description                                         |
 |-----------------|-------------|-----------------------------------------------------|
 | System.Byte\[\] | readTo      | The buffer containing the old version or null.      |
 | System.Int64    | knownLength | The length of the array if it's known. Otherwise -1 |
 
-#### Returns [returns-5]
+#### Returns
 
 | Type            | Description                                        |
 |-----------------|----------------------------------------------------|
 | System.Byte\[\] | The byte array created from the diff and original. |
 
-### ReadByteBits(Int32) [MLAPI_Serialization_BitReader_ReadByteBits_System_Int32_]
+### ReadByteBits(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a certain amount of bits from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public byte ReadByteBits(int bitCount)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type         | Name     | Description                                   |
 |--------------|----------|-----------------------------------------------|
 | System.Int32 | bitCount | How many bits to read. Minimum 0, maximum 64. |
 
-#### Returns [returns-6]
+#### Returns
 
 | Type        | Description             |
 |-------------|-------------------------|
 | System.Byte | The bits that were read |
 
-### ReadByteDirect() [MLAPI_Serialization_BitReader_ReadByteDirect]
+### ReadByteDirect()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads a byte
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public byte ReadByteDirect()
 
-#### Returns [returns-7]
+#### Returns
 
 | Type        | Description   |
 |-------------|---------------|
 | System.Byte | The byte read |
 
-### ReadChar() [MLAPI_Serialization_BitReader_ReadChar]
+### ReadChar()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a single character from the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public char ReadChar()
 
-#### Returns [returns-8]
+#### Returns
 
 | Type        | Description             |
 |-------------|-------------------------|
 | System.Char | Value read from stream. |
 
-### ReadCharPacked() [MLAPI_Serialization_BitReader_ReadCharPacked]
+### ReadCharPacked()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a varint two-byte character from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public char ReadCharPacked()
 
-#### Returns [returns-9]
+#### Returns
 
 | Type        | Description        |
 |-------------|--------------------|
 | System.Char | Un-varinted value. |
 
-### ReadColor() [MLAPI_Serialization_BitReader_ReadColor]
+### ReadColor()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Color from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-11]
+#### Declaration
 
     public Color ReadColor()
 
-#### Returns [returns-10]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | UnityEngine.Color | The Color read from the stream. |
 
-### ReadColor32() [MLAPI_Serialization_BitReader_ReadColor32]
+### ReadColor32()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Color32 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-12]
+#### Declaration
 
     public Color32 ReadColor32()
 
-#### Returns [returns-11]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Color32 | The Color32 read from the stream. |
 
-### ReadColorPacked() [MLAPI_Serialization_BitReader_ReadColorPacked]
+### ReadColorPacked()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Color from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     public Color ReadColorPacked()
 
-#### Returns [returns-12]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | UnityEngine.Color | The Color read from the stream. |
 
-### ReadDouble() [MLAPI_Serialization_BitReader_ReadDouble]
+### ReadDouble()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a double-precision floating point value from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-14]
+#### Declaration
 
     public double ReadDouble()
 
-#### Returns [returns-13]
+#### Returns
 
 | Type          | Description    |
 |---------------|----------------|
 | System.Double | The read value |
 
-### ReadDoubleArray(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArray_System_Double___System_Int64_]
+### ReadDoubleArray(Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read double array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-15]
+#### Declaration
 
     public double[] ReadDoubleArray(double[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.Double\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-14]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.Double\[\] | The array read from the stream. |
 
-### ReadDoubleArrayDiff(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArrayDiff_System_Double___System_Int64_]
+### ReadDoubleArrayDiff(Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read double array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-16]
+#### Declaration
 
     public double[] ReadDoubleArrayDiff(double[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.Double\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-15]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.Double\[\] | The array created from the diff and the current version. |
 
-### ReadDoubleArrayPacked(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArrayPacked_System_Double___System_Int64_]
+### ReadDoubleArrayPacked(Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read double array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     public double[] ReadDoubleArrayPacked(double[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.Double\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-16]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.Double\[\] | The array read from the stream. |
 
-### ReadDoubleArrayPackedDiff(Double\[\], Int64) [MLAPI_Serialization_BitReader_ReadDoubleArrayPackedDiff_System_Double___System_Int64_]
+### ReadDoubleArrayPackedDiff(Double\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read double array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-18]
+#### Declaration
 
     public double[] ReadDoubleArrayPackedDiff(double[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.Double\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-17]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.Double\[\] | The array created from the diff and the current version. |
 
-### ReadDoublePacked() [MLAPI_Serialization_BitReader_ReadDoublePacked]
+### ReadDoublePacked()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a double-precision floating point value from the stream as a varint
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-19]
+#### Declaration
 
     public double ReadDoublePacked()
 
-#### Returns [returns-18]
+#### Returns
 
 | Type          | Description    |
 |---------------|----------------|
 | System.Double | The read value |
 
-### ReadFloatArray(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArray_System_Single___System_Int64_]
+### ReadFloatArray(Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read float array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-20]
+#### Declaration
 
     public float[] ReadFloatArray(float[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-9]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.Single\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-19]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.Single\[\] | The array read from the stream. |
 
-### ReadFloatArrayDiff(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArrayDiff_System_Single___System_Int64_]
+### ReadFloatArrayDiff(Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read float array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-21]
+#### Declaration
 
     public float[] ReadFloatArrayDiff(float[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-10]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.Single\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-20]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.Single\[\] | The array created from the diff and the current version. |
 
-### ReadFloatArrayPacked(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArrayPacked_System_Single___System_Int64_]
+### ReadFloatArrayPacked(Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read float array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-22]
+#### Declaration
 
     public float[] ReadFloatArrayPacked(float[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-11]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.Single\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-21]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.Single\[\] | The array read from the stream. |
 
-### ReadFloatArrayPackedDiff(Single\[\], Int64) [MLAPI_Serialization_BitReader_ReadFloatArrayPackedDiff_System_Single___System_Int64_]
+### ReadFloatArrayPackedDiff(Single\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read float array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-23]
+#### Declaration
 
     public float[] ReadFloatArrayPackedDiff(float[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-12]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.Single\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-22]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.Single\[\] | The array created from the diff and the current version. |
 
-### ReadInt16() [MLAPI_Serialization_BitReader_ReadInt16]
+### ReadInt16()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a signed short (Int16) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-24]
+#### Declaration
 
     public short ReadInt16()
 
-#### Returns [returns-23]
+#### Returns
 
 | Type         | Description             |
 |--------------|-------------------------|
 | System.Int16 | Value read from stream. |
 
-### ReadInt16Packed() [MLAPI_Serialization_BitReader_ReadInt16Packed]
+### ReadInt16Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a ZigZag encoded varint signed short (Int16) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-25]
+#### Declaration
 
     public short ReadInt16Packed()
 
-#### Returns [returns-24]
+#### Returns
 
 | Type         | Description                |
 |--------------|----------------------------|
 | System.Int16 | Decoded un-varinted value. |
 
-### ReadInt32() [MLAPI_Serialization_BitReader_ReadInt32]
+### ReadInt32()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a signed int (Int32) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-26]
+#### Declaration
 
     public int ReadInt32()
 
-#### Returns [returns-25]
+#### Returns
 
 | Type         | Description             |
 |--------------|-------------------------|
 | System.Int32 | Value read from stream. |
 
-### ReadInt32Packed() [MLAPI_Serialization_BitReader_ReadInt32Packed]
+### ReadInt32Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a ZigZag encoded varint signed int (Int32) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-27]
+#### Declaration
 
     public int ReadInt32Packed()
 
-#### Returns [returns-26]
+#### Returns
 
 | Type         | Description                |
 |--------------|----------------------------|
 | System.Int32 | Decoded un-varinted value. |
 
-### ReadInt64() [MLAPI_Serialization_BitReader_ReadInt64]
+### ReadInt64()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a signed long (Int64) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-28]
+#### Declaration
 
     public long ReadInt64()
 
-#### Returns [returns-27]
+#### Returns
 
 | Type         | Description             |
 |--------------|-------------------------|
 | System.Int64 | Value read from stream. |
 
-### ReadInt64Packed() [MLAPI_Serialization_BitReader_ReadInt64Packed]
+### ReadInt64Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a ZigZag encoded varint signed long(Int64) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-29]
+#### Declaration
 
     public long ReadInt64Packed()
 
-#### Returns [returns-28]
+#### Returns
 
 | Type         | Description                |
 |--------------|----------------------------|
 | System.Int64 | Decoded un-varinted value. |
 
-### ReadIntArray(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArray_System_Int32___System_Int64_]
+### ReadIntArray(Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read int array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-30]
+#### Declaration
 
     public int[] ReadIntArray(int[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-13]
+#### Parameters
 
 | Type             | Name        | Description                                           |
 |------------------|-------------|-------------------------------------------------------|
 | System.Int32\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64     | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-29]
+#### Returns
 
 | Type             | Description                     |
 |------------------|---------------------------------|
 | System.Int32\[\] | The array read from the stream. |
 
-### ReadIntArrayDiff(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArrayDiff_System_Int32___System_Int64_]
+### ReadIntArrayDiff(Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read int array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-31]
+#### Declaration
 
     public int[] ReadIntArrayDiff(int[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-14]
+#### Parameters
 
 | Type             | Name        | Description                                    |
 |------------------|-------------|------------------------------------------------|
 | System.Int32\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64     | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-30]
+#### Returns
 
 | Type             | Description                                              |
 |------------------|----------------------------------------------------------|
 | System.Int32\[\] | The array created from the diff and the current version. |
 
-### ReadIntArrayPacked(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArrayPacked_System_Int32___System_Int64_]
+### ReadIntArrayPacked(Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read int array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-32]
+#### Declaration
 
     public int[] ReadIntArrayPacked(int[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-15]
+#### Parameters
 
 | Type             | Name        | Description                                           |
 |------------------|-------------|-------------------------------------------------------|
 | System.Int32\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64     | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-31]
+#### Returns
 
 | Type             | Description                     |
 |------------------|---------------------------------|
 | System.Int32\[\] | The array read from the stream. |
 
-### ReadIntArrayPackedDiff(Int32\[\], Int64) [MLAPI_Serialization_BitReader_ReadIntArrayPackedDiff_System_Int32___System_Int64_]
+### ReadIntArrayPackedDiff(Int32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read int array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-33]
+#### Declaration
 
     public int[] ReadIntArrayPackedDiff(int[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-16]
+#### Parameters
 
 | Type             | Name        | Description                                    |
 |------------------|-------------|------------------------------------------------|
 | System.Int32\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64     | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-32]
+#### Returns
 
 | Type             | Description                                              |
 |------------------|----------------------------------------------------------|
 | System.Int32\[\] | The array created from the diff and the current version. |
 
-### ReadLongArray(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArray_System_Int64___System_Int64_]
+### ReadLongArray(Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read long array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-34]
+#### Declaration
 
     public long[] ReadLongArray(long[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-17]
+#### Parameters
 
 | Type             | Name        | Description                                           |
 |------------------|-------------|-------------------------------------------------------|
 | System.Int64\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64     | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-33]
+#### Returns
 
 | Type             | Description                     |
 |------------------|---------------------------------|
 | System.Int64\[\] | The array read from the stream. |
 
-### ReadLongArrayDiff(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArrayDiff_System_Int64___System_Int64_]
+### ReadLongArrayDiff(Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read long array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-35]
+#### Declaration
 
     public long[] ReadLongArrayDiff(long[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-18]
+#### Parameters
 
 | Type             | Name        | Description                                    |
 |------------------|-------------|------------------------------------------------|
 | System.Int64\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64     | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-34]
+#### Returns
 
 | Type             | Description                                              |
 |------------------|----------------------------------------------------------|
 | System.Int64\[\] | The array created from the diff and the current version. |
 
-### ReadLongArrayPacked(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArrayPacked_System_Int64___System_Int64_]
+### ReadLongArrayPacked(Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read long array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-36]
+#### Declaration
 
     public long[] ReadLongArrayPacked(long[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-19]
+#### Parameters
 
 | Type             | Name        | Description                                           |
 |------------------|-------------|-------------------------------------------------------|
 | System.Int64\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64     | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-35]
+#### Returns
 
 | Type             | Description                     |
 |------------------|---------------------------------|
 | System.Int64\[\] | The array read from the stream. |
 
-### ReadLongArrayPackedDiff(Int64\[\], Int64) [MLAPI_Serialization_BitReader_ReadLongArrayPackedDiff_System_Int64___System_Int64_]
+### ReadLongArrayPackedDiff(Int64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read long array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-37]
+#### Declaration
 
     public long[] ReadLongArrayPackedDiff(long[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-20]
+#### Parameters
 
 | Type             | Name        | Description                                    |
 |------------------|-------------|------------------------------------------------|
 | System.Int64\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64     | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-36]
+#### Returns
 
 | Type             | Description                                              |
 |------------------|----------------------------------------------------------|
 | System.Int64\[\] | The array created from the diff and the current version. |
 
-### ReadNibble() [MLAPI_Serialization_BitReader_ReadNibble]
+### ReadNibble()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a nibble (4 bits) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-38]
+#### Declaration
 
     public byte ReadNibble()
 
-#### Returns [returns-37]
+#### Returns
 
 | Type        | Description              |
 |-------------|--------------------------|
 | System.Byte | The nibble that was read |
 
-### ReadNibble(Boolean) [MLAPI_Serialization_BitReader_ReadNibble_System_Boolean_]
+### ReadNibble(Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a nibble (4 bits) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-39]
+#### Declaration
 
     public byte ReadNibble(bool asUpper)
 
-#### Parameters [parameters-21]
+#### Parameters
 
 | Type           | Name    | Description                                                |
 |----------------|---------|------------------------------------------------------------|
 | System.Boolean | asUpper | Whether or not the nibble should be left-shifted by 4 bits |
 
-#### Returns [returns-38]
+#### Returns
 
 | Type        | Description              |
 |-------------|--------------------------|
 | System.Byte | The nibble that was read |
 
-### ReadObjectPacked(Type) [MLAPI_Serialization_BitReader_ReadObjectPacked_System_Type_]
+### ReadObjectPacked(Type)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads a single boxed object of a given type in a packed format
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-40]
+#### Declaration
 
     public object ReadObjectPacked(Type type)
 
-#### Parameters [parameters-22]
+#### Parameters
 
 | Type        | Name | Description      |
 |-------------|------|------------------|
 | System.Type | type | The type to read |
 
-#### Returns [returns-39]
+#### Returns
 
 | Type          | Description                   |
 |---------------|-------------------------------|
 | System.Object | Returns the boxed read object |
 
-### ReadRangedDouble(Double, Double, Int32) [MLAPI_Serialization_BitReader_ReadRangedDouble_System_Double_System_Double_System_Int32_]
+### ReadRangedDouble(Double, Double, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 read a double-precision floating point value from the stream. The value
 is between (inclusive) the minValue and maxValue.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-41]
+#### Declaration
 
     public double ReadRangedDouble(double minValue, double maxValue, int bytes)
 
-#### Parameters [parameters-23]
+#### Parameters
 
 | Type          | Name     | Description                                                                       |
 |---------------|----------|-----------------------------------------------------------------------------------|
@@ -1175,30 +1175,30 @@ is between (inclusive) the minValue and maxValue.
 | System.Double | maxValue | Maximum possible value that this could be                                         |
 | System.Int32  | bytes    | How many bytes the compressed value occupies. Must be between 1 and 8 (inclusive) |
 
-#### Returns [returns-40]
+#### Returns
 
 | Type          | Description    |
 |---------------|----------------|
 | System.Double | The read value |
 
-### ReadRangedSingle(Single, Single, Int32) [MLAPI_Serialization_BitReader_ReadRangedSingle_System_Single_System_Single_System_Int32_]
+### ReadRangedSingle(Single, Single, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a single-precision floating point value from the stream. The value
 is between (inclusive) the minValue and maxValue.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-42]
+#### Declaration
 
     public float ReadRangedSingle(float minValue, float maxValue, int bytes)
 
-#### Parameters [parameters-24]
+#### Parameters
 
 | Type          | Name     | Description                                                                       |
 |---------------|----------|-----------------------------------------------------------------------------------|
@@ -1206,415 +1206,415 @@ is between (inclusive) the minValue and maxValue.
 | System.Single | maxValue | Maximum possible value that this could be                                         |
 | System.Int32  | bytes    | How many bytes the compressed value occupies. Must be between 1 and 4 (inclusive) |
 
-#### Returns [returns-41]
+#### Returns
 
 | Type          | Description    |
 |---------------|----------------|
 | System.Single | The read value |
 
-### ReadRay() [MLAPI_Serialization_BitReader_ReadRay]
+### ReadRay()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Ray from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-43]
+#### Declaration
 
     public Ray ReadRay()
 
-#### Returns [returns-42]
+#### Returns
 
 | Type            | Description                   |
 |-----------------|-------------------------------|
 | UnityEngine.Ray | The Ray read from the stream. |
 
-### ReadRayPacked() [MLAPI_Serialization_BitReader_ReadRayPacked]
+### ReadRayPacked()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Ray from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-44]
+#### Declaration
 
     public Ray ReadRayPacked()
 
-#### Returns [returns-43]
+#### Returns
 
 | Type            | Description                   |
 |-----------------|-------------------------------|
 | UnityEngine.Ray | The Ray read from the stream. |
 
-### ReadRotation() [MLAPI_Serialization_BitReader_ReadRotation]
+### ReadRotation()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads the rotation from the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-45]
+#### Declaration
 
     public Quaternion ReadRotation()
 
-#### Returns [returns-44]
+#### Returns
 
 | Type                   | Description                       |
 |------------------------|-----------------------------------|
 | UnityEngine.Quaternion | The rotation read from the stream |
 
-### ReadRotationPacked() [MLAPI_Serialization_BitReader_ReadRotationPacked]
+### ReadRotationPacked()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads the rotation from the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-46]
+#### Declaration
 
     public Quaternion ReadRotationPacked()
 
-#### Returns [returns-45]
+#### Returns
 
 | Type                   | Description                       |
 |------------------------|-----------------------------------|
 | UnityEngine.Quaternion | The rotation read from the stream |
 
-### ReadSByte() [MLAPI_Serialization_BitReader_ReadSByte]
+### ReadSByte()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads a signed byte
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-47]
+#### Declaration
 
     public sbyte ReadSByte()
 
-#### Returns [returns-46]
+#### Returns
 
 | Type         | Description             |
 |--------------|-------------------------|
 | System.SByte | Value read from stream. |
 
-### ReadShortArray(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArray_System_Int16___System_Int64_]
+### ReadShortArray(Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read short array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-48]
+#### Declaration
 
     public short[] ReadShortArray(short[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-25]
+#### Parameters
 
 | Type             | Name        | Description                                           |
 |------------------|-------------|-------------------------------------------------------|
 | System.Int16\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64     | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-47]
+#### Returns
 
 | Type             | Description                     |
 |------------------|---------------------------------|
 | System.Int16\[\] | The array read from the stream. |
 
-### ReadShortArrayDiff(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArrayDiff_System_Int16___System_Int64_]
+### ReadShortArrayDiff(Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read short array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-49]
+#### Declaration
 
     public short[] ReadShortArrayDiff(short[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-26]
+#### Parameters
 
 | Type             | Name        | Description                                    |
 |------------------|-------------|------------------------------------------------|
 | System.Int16\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64     | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-48]
+#### Returns
 
 | Type             | Description                                              |
 |------------------|----------------------------------------------------------|
 | System.Int16\[\] | The array created from the diff and the current version. |
 
-### ReadShortArrayPacked(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArrayPacked_System_Int16___System_Int64_]
+### ReadShortArrayPacked(Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read short array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-50]
+#### Declaration
 
     public short[] ReadShortArrayPacked(short[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-27]
+#### Parameters
 
 | Type             | Name        | Description                                           |
 |------------------|-------------|-------------------------------------------------------|
 | System.Int16\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64     | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-49]
+#### Returns
 
 | Type             | Description                     |
 |------------------|---------------------------------|
 | System.Int16\[\] | The array read from the stream. |
 
-### ReadShortArrayPackedDiff(Int16\[\], Int64) [MLAPI_Serialization_BitReader_ReadShortArrayPackedDiff_System_Int16___System_Int64_]
+### ReadShortArrayPackedDiff(Int16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read short array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-51]
+#### Declaration
 
     public short[] ReadShortArrayPackedDiff(short[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-28]
+#### Parameters
 
 | Type             | Name        | Description                                    |
 |------------------|-------------|------------------------------------------------|
 | System.Int16\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64     | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-50]
+#### Returns
 
 | Type             | Description                                              |
 |------------------|----------------------------------------------------------|
 | System.Int16\[\] | The array created from the diff and the current version. |
 
-### ReadSingle() [MLAPI_Serialization_BitReader_ReadSingle]
+### ReadSingle()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a single-precision floating point value from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-52]
+#### Declaration
 
     public float ReadSingle()
 
-#### Returns [returns-51]
+#### Returns
 
 | Type          | Description    |
 |---------------|----------------|
 | System.Single | The read value |
 
-### ReadSinglePacked() [MLAPI_Serialization_BitReader_ReadSinglePacked]
+### ReadSinglePacked()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a single-precision floating point value from the stream from a
 varint
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-53]
+#### Declaration
 
     public float ReadSinglePacked()
 
-#### Returns [returns-52]
+#### Returns
 
 | Type          | Description    |
 |---------------|----------------|
 | System.Single | The read value |
 
-### ReadString(Boolean) [MLAPI_Serialization_BitReader_ReadString_System_Boolean_]
+### ReadString(Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a string from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-54]
+#### Declaration
 
     public StringBuilder ReadString(bool oneByteChars)
 
-#### Parameters [parameters-29]
+#### Parameters
 
 | Type           | Name         | Description                                                           |
 |----------------|--------------|-----------------------------------------------------------------------|
 | System.Boolean | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
-#### Returns [returns-53]
+#### Returns
 
 | Type                      | Description               |
 |---------------------------|---------------------------|
 | System.Text.StringBuilder | The string that was read. |
 
-### ReadString(StringBuilder, Boolean) [MLAPI_Serialization_BitReader_ReadString_System_Text_StringBuilder_System_Boolean_]
+### ReadString(StringBuilder, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a string from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-55]
+#### Declaration
 
     public StringBuilder ReadString(StringBuilder builder = null, bool oneByteChars = false)
 
-#### Parameters [parameters-30]
+#### Parameters
 
 | Type                      | Name         | Description                                                           |
 |---------------------------|--------------|-----------------------------------------------------------------------|
 | System.Text.StringBuilder | builder      | The builder to read the values into or null to use a new builder.     |
 | System.Boolean            | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
-#### Returns [returns-54]
+#### Returns
 
 | Type                      | Description               |
 |---------------------------|---------------------------|
 | System.Text.StringBuilder | The string that was read. |
 
-### ReadStringDiff(String, Boolean) [MLAPI_Serialization_BitReader_ReadStringDiff_System_String_System_Boolean_]
+### ReadStringDiff(String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-56]
+#### Declaration
 
     public StringBuilder ReadStringDiff(string compare, bool oneByteChars = false)
 
-#### Parameters [parameters-31]
+#### Parameters
 
 | Type           | Name         | Description                                                           |
 |----------------|--------------|-----------------------------------------------------------------------|
 | System.String  | compare      | The version to compare the diff to.                                   |
 | System.Boolean | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
-#### Returns [returns-55]
+#### Returns
 
 | Type                      | Description                                       |
 |---------------------------|---------------------------------------------------|
 | System.Text.StringBuilder | The string based on the diff and the old version. |
 
-### ReadStringDiff(StringBuilder, Boolean) [MLAPI_Serialization_BitReader_ReadStringDiff_System_Text_StringBuilder_System_Boolean_]
+### ReadStringDiff(StringBuilder, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-57]
+#### Declaration
 
     public StringBuilder ReadStringDiff(StringBuilder compareAndBuffer, bool oneByteChars = false)
 
-#### Parameters [parameters-32]
+#### Parameters
 
 | Type                      | Name             | Description                                                                                 |
 |---------------------------|------------------|---------------------------------------------------------------------------------------------|
 | System.Text.StringBuilder | compareAndBuffer | The builder containing the current version and that will also be used as the output buffer. |
 | System.Boolean            | oneByteChars     | If set to `true` one byte chars will be used and only ASCII will be supported.              |
 
-#### Returns [returns-56]
+#### Returns
 
 | Type                      | Description                                       |
 |---------------------------|---------------------------------------------------|
 | System.Text.StringBuilder | The string based on the diff and the old version. |
 
-### ReadStringDiff(StringBuilder, String, Boolean) [MLAPI_Serialization_BitReader_ReadStringDiff_System_Text_StringBuilder_System_String_System_Boolean_]
+### ReadStringDiff(StringBuilder, String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-58]
+#### Declaration
 
     public StringBuilder ReadStringDiff(StringBuilder builder, string compare, bool oneByteChars = false)
 
-#### Parameters [parameters-33]
+#### Parameters
 
 | Type                      | Name         | Description                                                           |
 |---------------------------|--------------|-----------------------------------------------------------------------|
@@ -1622,742 +1622,742 @@ Read string diff from the stream.
 | System.String             | compare      | The version to compare the diff to.                                   |
 | System.Boolean            | oneByteChars | If set to `true` one byte chars are used and only ASCII is supported. |
 
-#### Returns [returns-57]
+#### Returns
 
 | Type                      | Description                                      |
 |---------------------------|--------------------------------------------------|
 | System.Text.StringBuilder | The string based on the diff and the old version |
 
-### ReadStringPacked(StringBuilder) [MLAPI_Serialization_BitReader_ReadStringPacked_System_Text_StringBuilder_]
+### ReadStringPacked(StringBuilder)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string encoded as a varint from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-59]
+#### Declaration
 
     public StringBuilder ReadStringPacked(StringBuilder builder = null)
 
-#### Parameters [parameters-34]
+#### Parameters
 
 | Type                      | Name    | Description                                                      |
 |---------------------------|---------|------------------------------------------------------------------|
 | System.Text.StringBuilder | builder | The builder to read the string into or null to use a new builder |
 
-#### Returns [returns-58]
+#### Returns
 
 | Type                      | Description               |
 |---------------------------|---------------------------|
 | System.Text.StringBuilder | The string that was read. |
 
-### ReadStringPackedDiff(String) [MLAPI_Serialization_BitReader_ReadStringPackedDiff_System_String_]
+### ReadStringPackedDiff(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string diff encoded as varints from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-60]
+#### Declaration
 
     public StringBuilder ReadStringPackedDiff(string compare)
 
-#### Parameters [parameters-35]
+#### Parameters
 
 | Type          | Name    | Description                         |
 |---------------|---------|-------------------------------------|
 | System.String | compare | The version to compare the diff to. |
 
-#### Returns [returns-59]
+#### Returns
 
 | Type                      | Description                                       |
 |---------------------------|---------------------------------------------------|
 | System.Text.StringBuilder | The string based on the diff and the old version. |
 
-### ReadStringPackedDiff(StringBuilder) [MLAPI_Serialization_BitReader_ReadStringPackedDiff_System_Text_StringBuilder_]
+### ReadStringPackedDiff(StringBuilder)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string diff encoded as varints from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-61]
+#### Declaration
 
     public StringBuilder ReadStringPackedDiff(StringBuilder compareAndBuffer)
 
-#### Parameters [parameters-36]
+#### Parameters
 
 | Type                      | Name             | Description                                                                                 |
 |---------------------------|------------------|---------------------------------------------------------------------------------------------|
 | System.Text.StringBuilder | compareAndBuffer | The builder containing the current version and that will also be used as the output buffer. |
 
-#### Returns [returns-60]
+#### Returns
 
 | Type                      | Description                                       |
 |---------------------------|---------------------------------------------------|
 | System.Text.StringBuilder | The string based on the diff and the old version. |
 
-### ReadStringPackedDiff(StringBuilder, String) [MLAPI_Serialization_BitReader_ReadStringPackedDiff_System_Text_StringBuilder_System_String_]
+### ReadStringPackedDiff(StringBuilder, String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read string diff encoded as varints from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-62]
+#### Declaration
 
     public StringBuilder ReadStringPackedDiff(StringBuilder builder, string compare)
 
-#### Parameters [parameters-37]
+#### Parameters
 
 | Type                      | Name    | Description                                                       |
 |---------------------------|---------|-------------------------------------------------------------------|
 | System.Text.StringBuilder | builder | The builder to read the string into or null to use a new builder. |
 | System.String             | compare | The version to compare the diff to.                               |
 
-#### Returns [returns-61]
+#### Returns
 
 | Type                      | Description                                      |
 |---------------------------|--------------------------------------------------|
 | System.Text.StringBuilder | The string based on the diff and the old version |
 
-### ReadUInt16() [MLAPI_Serialization_BitReader_ReadUInt16]
+### ReadUInt16()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read an unsigned short (UInt16) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-63]
+#### Declaration
 
     public ushort ReadUInt16()
 
-#### Returns [returns-62]
+#### Returns
 
 | Type          | Description             |
 |---------------|-------------------------|
 | System.UInt16 | Value read from stream. |
 
-### ReadUInt16Packed() [MLAPI_Serialization_BitReader_ReadUInt16Packed]
+### ReadUInt16Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a varint unsigned short (UInt16) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-64]
+#### Declaration
 
     public ushort ReadUInt16Packed()
 
-#### Returns [returns-63]
+#### Returns
 
 | Type          | Description        |
 |---------------|--------------------|
 | System.UInt16 | Un-varinted value. |
 
-### ReadUInt32() [MLAPI_Serialization_BitReader_ReadUInt32]
+### ReadUInt32()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read an unsigned int (UInt32) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-65]
+#### Declaration
 
     public uint ReadUInt32()
 
-#### Returns [returns-64]
+#### Returns
 
 | Type          | Description             |
 |---------------|-------------------------|
 | System.UInt32 | Value read from stream. |
 
-### ReadUInt32Packed() [MLAPI_Serialization_BitReader_ReadUInt32Packed]
+### ReadUInt32Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a varint unsigned int (UInt32) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-66]
+#### Declaration
 
     public uint ReadUInt32Packed()
 
-#### Returns [returns-65]
+#### Returns
 
 | Type          | Description        |
 |---------------|--------------------|
 | System.UInt32 | Un-varinted value. |
 
-### ReadUInt64() [MLAPI_Serialization_BitReader_ReadUInt64]
+### ReadUInt64()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read an unsigned long (UInt64) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-67]
+#### Declaration
 
     public ulong ReadUInt64()
 
-#### Returns [returns-66]
+#### Returns
 
 | Type          | Description             |
 |---------------|-------------------------|
 | System.UInt64 | Value read from stream. |
 
-### ReadUInt64Packed() [MLAPI_Serialization_BitReader_ReadUInt64Packed]
+### ReadUInt64Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a varint unsigned long (UInt64) from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-68]
+#### Declaration
 
     public ulong ReadUInt64Packed()
 
-#### Returns [returns-67]
+#### Returns
 
 | Type          | Description        |
 |---------------|--------------------|
 | System.UInt64 | Un-varinted value. |
 
-### ReadUIntArray(UInt32\[\], Int64) [MLAPI_Serialization_BitReader_ReadUIntArray_System_UInt32___System_Int64_]
+### ReadUIntArray(UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read uint array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-69]
+#### Declaration
 
     public uint[] ReadUIntArray(uint[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-38]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.UInt32\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-68]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.UInt32\[\] | The array read from the stream. |
 
-### ReadUIntArrayDiff(UInt32\[\], Int64) [MLAPI_Serialization_BitReader_ReadUIntArrayDiff_System_UInt32___System_Int64_]
+### ReadUIntArrayDiff(UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read uint array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-70]
+#### Declaration
 
     public uint[] ReadUIntArrayDiff(uint[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-39]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.UInt32\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-69]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.UInt32\[\] | The array created from the diff and the current version. |
 
-### ReadUIntArrayPacked(UInt32\[\], Int64) [MLAPI_Serialization_BitReader_ReadUIntArrayPacked_System_UInt32___System_Int64_]
+### ReadUIntArrayPacked(UInt32\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read uint array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-71]
+#### Declaration
 
     public uint[] ReadUIntArrayPacked(uint[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-40]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.UInt32\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-70]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.UInt32\[\] | The array read from the stream. |
 
-### ReadULongArray(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArray_System_UInt64___System_Int64_]
+### ReadULongArray(UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ulong array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-72]
+#### Declaration
 
     public ulong[] ReadULongArray(ulong[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-41]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.UInt64\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-71]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.UInt64\[\] | The array read from the stream. |
 
-### ReadULongArrayDiff(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArrayDiff_System_UInt64___System_Int64_]
+### ReadULongArrayDiff(UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ulong array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-73]
+#### Declaration
 
     public ulong[] ReadULongArrayDiff(ulong[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-42]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.UInt64\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-72]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.UInt64\[\] | The array created from the diff and the current version. |
 
-### ReadULongArrayPacked(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArrayPacked_System_UInt64___System_Int64_]
+### ReadULongArrayPacked(UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ulong array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-74]
+#### Declaration
 
     public ulong[] ReadULongArrayPacked(ulong[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-43]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.UInt64\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-73]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.UInt64\[\] | The array read from the stream. |
 
-### ReadULongArrayPackedDiff(UInt64\[\], Int64) [MLAPI_Serialization_BitReader_ReadULongArrayPackedDiff_System_UInt64___System_Int64_]
+### ReadULongArrayPackedDiff(UInt64\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ulong array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-75]
+#### Declaration
 
     public ulong[] ReadULongArrayPackedDiff(ulong[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-44]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.UInt64\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-74]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.UInt64\[\] | The array created from the diff and the current version. |
 
-### ReadUShortArray(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArray_System_UInt16___System_Int64_]
+### ReadUShortArray(UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ushort array from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-76]
+#### Declaration
 
     public ushort[] ReadUShortArray(ushort[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-45]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.UInt16\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-75]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.UInt16\[\] | The array read from the stream. |
 
-### ReadUShortArrayDiff(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArrayDiff_System_UInt16___System_Int64_]
+### ReadUShortArrayDiff(UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ushort array diff from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-77]
+#### Declaration
 
     public ushort[] ReadUShortArrayDiff(ushort[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-46]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.UInt16\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-76]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.UInt16\[\] | The array created from the diff and the current version. |
 
-### ReadUShortArrayPacked(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArrayPacked_System_UInt16___System_Int64_]
+### ReadUShortArrayPacked(UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ushort array in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-78]
+#### Declaration
 
     public ushort[] ReadUShortArrayPacked(ushort[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-47]
+#### Parameters
 
 | Type              | Name        | Description                                           |
 |-------------------|-------------|-------------------------------------------------------|
 | System.UInt16\[\] | readTo      | The buffer to read into or null to create a new array |
 | System.Int64      | knownLength | The known length or -1 if unknown                     |
 
-#### Returns [returns-77]
+#### Returns
 
 | Type              | Description                     |
 |-------------------|---------------------------------|
 | System.UInt16\[\] | The array read from the stream. |
 
-### ReadUShortArrayPackedDiff(UInt16\[\], Int64) [MLAPI_Serialization_BitReader_ReadUShortArrayPackedDiff_System_UInt16___System_Int64_]
+### ReadUShortArrayPackedDiff(UInt16\[\], Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read ushort array diff in a packed format from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-79]
+#### Declaration
 
     public ushort[] ReadUShortArrayPackedDiff(ushort[] readTo = null, long knownLength = -1L)
 
-#### Parameters [parameters-48]
+#### Parameters
 
 | Type              | Name        | Description                                    |
 |-------------------|-------------|------------------------------------------------|
 | System.UInt16\[\] | readTo      | The buffer containing the old version or null. |
 | System.Int64      | knownLength | The known length or -1 if unknown              |
 
-#### Returns [returns-78]
+#### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | System.UInt16\[\] | The array created from the diff and the current version. |
 
-### ReadVector2() [MLAPI_Serialization_BitReader_ReadVector2]
+### ReadVector2()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Vector2 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-80]
+#### Declaration
 
     public Vector2 ReadVector2()
 
-#### Returns [returns-79]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Vector2 | The Vector2 read from the stream. |
 
-### ReadVector2Packed() [MLAPI_Serialization_BitReader_ReadVector2Packed]
+### ReadVector2Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Vector2 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-81]
+#### Declaration
 
     public Vector2 ReadVector2Packed()
 
-#### Returns [returns-80]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Vector2 | The Vector2 read from the stream. |
 
-### ReadVector3() [MLAPI_Serialization_BitReader_ReadVector3]
+### ReadVector3()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Vector3 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-82]
+#### Declaration
 
     public Vector3 ReadVector3()
 
-#### Returns [returns-81]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Vector3 | The Vector3 read from the stream. |
 
-### ReadVector3Packed() [MLAPI_Serialization_BitReader_ReadVector3Packed]
+### ReadVector3Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Vector3 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-83]
+#### Declaration
 
     public Vector3 ReadVector3Packed()
 
-#### Returns [returns-82]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Vector3 | The Vector3 read from the stream. |
 
-### ReadVector4() [MLAPI_Serialization_BitReader_ReadVector4]
+### ReadVector4()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Vector4 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-84]
+#### Declaration
 
     public Vector4 ReadVector4()
 
-#### Returns [returns-83]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Vector4 | The Vector4 read from the stream. |
 
-### ReadVector4Packed() [MLAPI_Serialization_BitReader_ReadVector4Packed]
+### ReadVector4Packed()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a Vector4 from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-85]
+#### Declaration
 
     public Vector4 ReadVector4Packed()
 
-#### Returns [returns-84]
+#### Returns
 
 | Type                | Description                       |
 |---------------------|-----------------------------------|
 | UnityEngine.Vector4 | The Vector4 read from the stream. |
 
-### SetStream(Stream) [MLAPI_Serialization_BitReader_SetStream_System_IO_Stream_]
+### SetStream(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Changes the underlying stream the reader is reading from
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-86]
+#### Declaration
 
     public void SetStream(Stream stream)
 
-#### Parameters [parameters-49]
+#### Parameters
 
 | Type             | Name   | Description             |
 |------------------|--------|-------------------------|
 | System.IO.Stream | stream | The stream to read from |
 
-### SkipPadBits() [MLAPI_Serialization_BitReader_SkipPadBits]
+### SkipPadBits()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Skips pad bits and aligns the position to the next byte
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-87]
+#### Declaration
 
     public void SkipPadBits()

@@ -3,27 +3,27 @@ id: MLAPI.Profiling.TickEvent
 title: MLAPI.Profiling.TickEvent  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A event that can occur during a Event
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,117 +83,117 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Profiling_TickEvent_syntax]
+##### Syntax
 
     public class TickEvent
 
 ## Fields
 
-### Bytes [MLAPI_Profiling_TickEvent_Bytes]
+### Bytes
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of bytes sent or received
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public uint Bytes
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ChannelName [MLAPI_Profiling_TickEvent_ChannelName]
+### ChannelName
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The name of the channel
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public string ChannelName
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### Closed [MLAPI_Profiling_TickEvent_Closed]
+### Closed
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not the event is closed
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public bool Closed
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EventType [MLAPI_Profiling_TickEvent_EventType]
+### EventType
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The type of evenmt
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public TickType EventType
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type     | Description |
 |----------|-------------|
 | TickType |             |
 
-### MessageType [MLAPI_Profiling_TickEvent_MessageType]
+### MessageType
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The message type
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public string MessageType
 
-#### Field Value [field-value-4]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -201,51 +201,51 @@ The message type
 
 ## Methods 
 
-### FromStream(Stream) [MLAPI_Profiling_TickEvent_FromStream_System_IO_Stream_]
+### FromStream(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a TickEvent from data in the provided stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public static TickEvent FromStream(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description                              |
 |------------------|--------|------------------------------------------|
 | System.IO.Stream | stream | The stream containing the TickEvent data |
 
-#### Returns [returns]
+#### Returns
 
 | Type      | Description                                  |
 |-----------|----------------------------------------------|
 | TickEvent | The TickEvent with data read from the stream |
 
-### SerializeToStream(Stream) [MLAPI_Profiling_TickEvent_SerializeToStream_System_IO_Stream_]
+### SerializeToStream(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the TickEvent data to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public void SerializeToStream(Stream stream)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name   | Description                               |
 |------------------|--------|-------------------------------------------|

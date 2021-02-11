@@ -3,27 +3,27 @@ id: MLAPI.SceneManagement.SceneSwitchProgress
 title: MLAPI.SceneManagement.SceneSwitchProgress  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Class for tracking scene switching progress by server and clients.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,97 +83,97 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_SceneManagement_SceneSwitchProgress_syntax]
+##### Syntax
 
     public class SceneSwitchProgress
 
 ## Properties 
 
-### DoneClients [MLAPI_SceneManagement_SceneSwitchProgress_DoneClients]
+### DoneClients
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 List of clientIds of those clients that is done loading the scene.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public List<ulong> DoneClients { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| System.Collections.Generic.List\<System.UInt64\> |             |
+| Type                                                 | Description |
+|------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;System.UInt64&gt; |             |
 
-### IsAllClientsDoneLoading [MLAPI_SceneManagement_SceneSwitchProgress_IsAllClientsDoneLoading]
+### IsAllClientsDoneLoading
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 If all clients are done loading the scene, at the moment of completed.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public bool IsAllClientsDoneLoading { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsCompleted [MLAPI_SceneManagement_SceneSwitchProgress_IsCompleted]
+### IsCompleted
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Is this scene switch progresses completed, all clients are done loading
 the scene or a timeout has occured.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public bool IsCompleted { get; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### TimeAtInitiation [MLAPI_SceneManagement_SceneSwitchProgress_TimeAtInitiation]
+### TimeAtInitiation
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The NetworkTime time at the moment the scene switch was initiated by the
 server.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public float TimeAtInitiation { get; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -181,46 +181,46 @@ server.
 
 ## Events
 
-### OnClientLoadedScene [MLAPI_SceneManagement_SceneSwitchProgress_OnClientLoadedScene]
+### OnClientLoadedScene
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback invoked when a client is done loading the scene.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public event SceneSwitchProgress.OnClientLoadedSceneDelegate OnClientLoadedScene
 
-#### Event Type [event-type]
+#### Event Type
 
 | Type                                            | Description |
 |-------------------------------------------------|-------------|
 | SceneSwitchProgress.OnClientLoadedSceneDelegate |             |
 
-### OnComplete [MLAPI_SceneManagement_SceneSwitchProgress_OnComplete]
+### OnComplete
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback invoked when the switch scene progress is completed. Either
 by all clients done loading the scene or by time out.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public event SceneSwitchProgress.OnCompletedDelegate OnComplete
 
-#### Event Type [event-type-1]
+#### Event Type
 
 | Type                                    | Description |
 |-----------------------------------------|-------------|

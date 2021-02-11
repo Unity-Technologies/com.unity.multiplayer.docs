@@ -3,17 +3,17 @@ id: MLAPI.Profiling
 title: MLAPI.Profiling  
 ---
 
-## Namespace MLAPI.Profiling [MLAPI_Profiling]
+## Namespace MLAPI.Profiling
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Profiling
 
 ### MLAPI.Profiling.NetworkProfiler
 
-<div class="section" markdown="1">
+<div class="section">
 
 NetworkProfiler for profiling network traffic
 
@@ -29,7 +29,7 @@ NetworkProfiler for profiling network traffic
 
 ### MLAPI.Profiling.ProfilerTick
 
-<div class="section" markdown="1">
+<div class="section">
 
 A tick in used for the Profiler
 
@@ -37,7 +37,7 @@ A tick in used for the Profiler
 
 ### MLAPI.Profiling.TickEvent
 
-<div class="section" markdown="1">
+<div class="section">
 
 A event that can occur during a Event
 
@@ -47,7 +47,7 @@ A event that can occur during a Event
 
 ### MLAPI.Profiling.TickType
 
-<div class="section" markdown="1">
+<div class="section">
 
 The type of Tick
 

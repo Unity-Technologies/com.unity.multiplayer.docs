@@ -3,13 +3,13 @@ id: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
 title: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The delegate used when registering custom serialization for a type.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,18 +17,18 @@ The delegate used when registering custom serialization for a type.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_SerializationManager_CustomSerializationDelegate_1_syntax]
+##### Syntax
 
     public delegate void CustomSerializationDelegate<T>(Stream stream, T instance);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type             | Name       | Description                                                                                           |
 |------------------|------------|-------------------------------------------------------------------------------------------------------|
 | System.IO.Stream | \*stream   | The stream to write data to that is required to reconstruct the type in the deserialization delegate. |
 | T                | \*instance | The instance to serialize to the stream.                                                              |
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description            |
 |------|------------------------|

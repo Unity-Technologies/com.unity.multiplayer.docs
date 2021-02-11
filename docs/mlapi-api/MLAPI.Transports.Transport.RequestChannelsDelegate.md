@@ -3,13 +3,13 @@ id: MLAPI.Transports.Transport.RequestChannelsDelegate
 title: MLAPI.Transports.Transport.RequestChannelsDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate used to request channels on the underlying transport.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,12 +17,12 @@ Delegate used to request channels on the underlying transport.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_Transport_RequestChannelsDelegate_syntax]
+##### Syntax
 
     public delegate void RequestChannelsDelegate(List<TransportChannel> channels);
 
-##### Parameters [parameters]
+##### Parameters
 
-| Type                                                | Name       | Description |
-|-----------------------------------------------------|------------|-------------|
-| System.Collections.Generic.List\<TransportChannel\> | \*channels |             |
+| Type                                                    | Name       | Description |
+|---------------------------------------------------------|------------|-------------|
+| System.Collections.Generic.List&lt;TransportChannel&gt; | \*channels |             |

@@ -3,13 +3,13 @@ id: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
 title: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for when a client is done loading the scene.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,11 +17,11 @@ Delegate type for when a client is done loading the scene.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_SceneManagement_SceneSwitchProgress_OnClientLoadedSceneDelegate_syntax]
+##### Syntax
 
     public delegate void OnClientLoadedSceneDelegate(ulong clientId);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type          | Name       | Description |
 |---------------|------------|-------------|

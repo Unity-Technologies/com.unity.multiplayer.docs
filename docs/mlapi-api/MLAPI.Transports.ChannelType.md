@@ -3,13 +3,13 @@ id: MLAPI.Transports.ChannelType
 title: MLAPI.Transports.ChannelType  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delivery methods
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ Delivery methods
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_ChannelType_syntax]
+##### Syntax
 
     public enum ChannelType
 

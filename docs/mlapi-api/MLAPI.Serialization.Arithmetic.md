@@ -3,27 +3,27 @@ id: MLAPI.Serialization.Arithmetic
 title: MLAPI.Serialization.Arithmetic  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Arithmetic helper class
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,91 +83,91 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_Arithmetic_syntax]
+##### Syntax
 
     public static class Arithmetic
 
 ## Methods 
 
-### VarIntSize(UInt64) [MLAPI_Serialization_Arithmetic_VarIntSize_System_UInt64_]
+### VarIntSize(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the output size in bytes after VarInting a unsigned integer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static int VarIntSize(ulong value)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name  | Description                              |
 |---------------|-------|------------------------------------------|
 | System.UInt64 | value | The unsigned integer whose length to get |
 
-#### Returns [returns]
+#### Returns
 
 | Type         | Description         |
 |--------------|---------------------|
 | System.Int32 | The amount of bytes |
 
-### ZigZagDecode(UInt64) [MLAPI_Serialization_Arithmetic_ZigZagDecode_System_UInt64_]
+### ZigZagDecode(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Decides a ZigZag encoded integer back to a signed integer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static long ZigZagDecode(ulong value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name  | Description          |
 |---------------|-------|----------------------|
 | System.UInt64 | value | The unsigned integer |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type         | Description                       |
 |--------------|-----------------------------------|
 | System.Int64 | The signed version of the integer |
 
-### ZigZagEncode(Int64) [MLAPI_Serialization_Arithmetic_ZigZagEncode_System_Int64_]
+### ZigZagEncode(Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 ZigZag encodes a signed integer and maps it to a unsigned integer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static ulong ZigZagEncode(long value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type         | Name  | Description                  |
 |--------------|-------|------------------------------|
 | System.Int64 | value | The signed integer to encode |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type          | Description                             |
 |---------------|-----------------------------------------|

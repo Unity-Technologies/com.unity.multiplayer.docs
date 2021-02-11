@@ -3,27 +3,27 @@ id: MLAPI.NetworkedVar.NetworkedVarSettings
 title: MLAPI.NetworkedVar.NetworkedVarSettings  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The settings class used by the build in NetworkVar implementations
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,101 +83,101 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarSettings_syntax]
+##### Syntax
 
     public class NetworkedVarSettings
 
 ## Constructors 
 
-### NetworkedVarSettings() [MLAPI_NetworkedVar_NetworkedVarSettings__ctor]
+### NetworkedVarSettings()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Constructs a new NetworkedVarSettings instance
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public NetworkedVarSettings()
 
 ## Fields
 
-### ReadPermission [MLAPI_NetworkedVar_NetworkedVarSettings_ReadPermission]
+### ReadPermission
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Defines the read permissions for this var
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public NetworkedVarPermission ReadPermission
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type                   | Description |
 |------------------------|-------------|
 | NetworkedVarPermission |             |
 
-### ReadPermissionCallback [MLAPI_NetworkedVar_NetworkedVarSettings_ReadPermissionCallback]
+### ReadPermissionCallback
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The delegate used to evaluate read permission when the "Custom" mode is
 used
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public NetworkedVarPermissionsDelegate ReadPermissionCallback
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type                            | Description |
 |---------------------------------|-------------|
 | NetworkedVarPermissionsDelegate |             |
 
-### SendChannel [MLAPI_NetworkedVar_NetworkedVarSettings_SendChannel]
+### SendChannel
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The name of the channel to use for this variable. Variables with
 different channels will be split into different packets
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public string SendChannel
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### SendTickrate [MLAPI_NetworkedVar_NetworkedVarSettings_SendTickrate]
+### SendTickrate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The maximum times per second this var will be synced. A value of 0 will
 cause the variable to sync as soon as possible after being changed. A
@@ -186,60 +186,60 @@ spawn and not update again.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public float SendTickrate
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### WritePermission [MLAPI_NetworkedVar_NetworkedVarSettings_WritePermission]
+### WritePermission
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Defines the write permissions for this var
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public NetworkedVarPermission WritePermission
 
-#### Field Value [field-value-4]
+#### Field Value
 
 | Type                   | Description |
 |------------------------|-------------|
 | NetworkedVarPermission |             |
 
-### WritePermissionCallback [MLAPI_NetworkedVar_NetworkedVarSettings_WritePermissionCallback]
+### WritePermissionCallback
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The delegate used to evaluate write permission when the "Custom" mode is
 used
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public NetworkedVarPermissionsDelegate WritePermissionCallback
 
-#### Field Value [field-value-5]
+#### Field Value
 
 | Type                            | Description |
 |---------------------------------|-------------|

@@ -3,17 +3,17 @@ id: MLAPI.Transports
 title: MLAPI.Transports  
 ---
 
-## Namespace MLAPI.Transports [MLAPI_Transports]
+## Namespace MLAPI.Transports
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Transports
 
 ### MLAPI.Transports.Transport
 
-<div class="section" markdown="1">
+<div class="section">
 
 A network transport
 
@@ -29,7 +29,7 @@ A network transport
 
 ### MLAPI.Transports.TransportChannel
 
-<div class="section" markdown="1">
+<div class="section">
 
 A transport channel used by the MLAPI
 
@@ -37,7 +37,7 @@ A transport channel used by the MLAPI
 
 ### MLAPI.Transports.UnetChannel
 
-<div class="section" markdown="1">
+<div class="section">
 
 A transport channel used by the MLAPI
 
@@ -47,7 +47,7 @@ A transport channel used by the MLAPI
 
 ### MLAPI.Transports.ChannelType
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delivery methods
 
@@ -55,7 +55,7 @@ Delivery methods
 
 ### MLAPI.Transports.NetEventType
 
-<div class="section" markdown="1">
+<div class="section">
 
 Represents a netEvent when polling
 
@@ -65,7 +65,7 @@ Represents a netEvent when polling
 
 ### MLAPI.Transports.Transport.RequestChannelsDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate used to request channels on the underlying transport.
 
@@ -73,7 +73,7 @@ Delegate used to request channels on the underlying transport.
 
 ### MLAPI.Transports.Transport.TransportEventDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate for transport events.
 

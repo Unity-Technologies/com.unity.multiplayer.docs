@@ -3,7 +3,7 @@ id: MLAPI.Messaging.CustomMessagingManager
 title: MLAPI.Messaging.CustomMessagingManager  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The manager class to manage custom messages, note that this is different
 from the NetworkingManager custom messages. These are named and are much
@@ -11,21 +11,21 @@ easier to use.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -33,47 +33,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -85,78 +85,78 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Messaging_CustomMessagingManager_syntax]
+##### Syntax
 
     public static class CustomMessagingManager
 
 ## Methods 
 
-### RegisterNamedMessageHandler(String, CustomMessagingManager.HandleNamedMessageDelegate) [MLAPI_Messaging_CustomMessagingManager_RegisterNamedMessageHandler_System_String_MLAPI_Messaging_CustomMessagingManager_HandleNamedMessageDelegate_]
+### RegisterNamedMessageHandler(String, CustomMessagingManager.HandleNamedMessageDelegate)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Registers a named message handler delegate.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static void RegisterNamedMessageHandler(string name, CustomMessagingManager.HandleNamedMessageDelegate callback)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                                              | Name     | Description                                           |
 |---------------------------------------------------|----------|-------------------------------------------------------|
 | System.String                                     | name     | Name of the message.                                  |
 | CustomMessagingManager.HandleNamedMessageDelegate | callback | The callback to run when a named message is received. |
 
-### SendNamedMessage(String, List\<UInt64\>, Stream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendNamedMessage_System_String_System_Collections_Generic_List_System_UInt64__System_IO_Stream_System_String_MLAPI_Security_SecuritySendFlags_]
+### SendNamedMessage(String, List&lt;UInt64&gt;, Stream, String, SecuritySendFlags)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sends the named message
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static void SendNamedMessage(string name, List<ulong> clientIds, Stream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
 
-#### Parameters [parameters-1]
+#### Parameters
 
-| Type                                             | Name      | Description                                       |
-|--------------------------------------------------|-----------|---------------------------------------------------|
-| System.String                                    | name      | The message name to send                          |
-| System.Collections.Generic.List\<System.UInt64\> | clientIds | The clients to send to, sends to everyone if null |
-| System.IO.Stream                                 | stream    | The message stream containing the data            |
-| System.String                                    | channel   | The channel to send the data on                   |
-| SecuritySendFlags                                | security  | The security settings to apply to the message     |
+| Type                                                 | Name      | Description                                       |
+|------------------------------------------------------|-----------|---------------------------------------------------|
+| System.String                                        | name      | The message name to send                          |
+| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds | The clients to send to, sends to everyone if null |
+| System.IO.Stream                                     | stream    | The message stream containing the data            |
+| System.String                                        | channel   | The channel to send the data on                   |
+| SecuritySendFlags                                    | security  | The security settings to apply to the message     |
 
-### SendNamedMessage(String, UInt64, Stream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendNamedMessage_System_String_System_UInt64_System_IO_Stream_System_String_MLAPI_Security_SecuritySendFlags_]
+### SendNamedMessage(String, UInt64, Stream, String, SecuritySendFlags)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sends a named message
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static void SendNamedMessage(string name, ulong clientId, Stream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type              | Name     | Description                                   |
 |-------------------|----------|-----------------------------------------------|
@@ -166,48 +166,48 @@ Sends a named message
 | System.String     | channel  | The channel to send the data on               |
 | SecuritySendFlags | security | The security settings to apply to the message |
 
-### SendUnnamedMessage(List\<UInt64\>, BitStream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendUnnamedMessage_System_Collections_Generic_List_System_UInt64__MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
+### SendUnnamedMessage(List&lt;UInt64&gt;, BitStream, String, SecuritySendFlags)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sends unnamed message to a list of clients
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public static void SendUnnamedMessage(List<ulong> clientIds, BitStream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
 
-#### Parameters [parameters-3]
+#### Parameters
 
-| Type                                             | Name      | Description                                       |
-|--------------------------------------------------|-----------|---------------------------------------------------|
-| System.Collections.Generic.List\<System.UInt64\> | clientIds | The clients to send to, sends to everyone if null |
-| BitStream                                        | stream    | The message stream containing the data            |
-| System.String                                    | channel   | The channel to send the data on                   |
-| SecuritySendFlags                                | security  | The security settings to apply to the message     |
+| Type                                                 | Name      | Description                                       |
+|------------------------------------------------------|-----------|---------------------------------------------------|
+| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds | The clients to send to, sends to everyone if null |
+| BitStream                                            | stream    | The message stream containing the data            |
+| System.String                                        | channel   | The channel to send the data on                   |
+| SecuritySendFlags                                    | security  | The security settings to apply to the message     |
 
-### SendUnnamedMessage(UInt64, BitStream, String, SecuritySendFlags) [MLAPI_Messaging_CustomMessagingManager_SendUnnamedMessage_System_UInt64_MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
+### SendUnnamedMessage(UInt64, BitStream, String, SecuritySendFlags)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sends a unnamed message to a specific client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public static void SendUnnamedMessage(ulong clientId, BitStream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type              | Name     | Description                                   |
 |-------------------|----------|-----------------------------------------------|
@@ -216,23 +216,23 @@ Sends a unnamed message to a specific client
 | System.String     | channel  | The channel tos end the data on               |
 | SecuritySendFlags | security | The security settings to apply to the message |
 
-### UnregisterNamedMessageHandler(String) [MLAPI_Messaging_CustomMessagingManager_UnregisterNamedMessageHandler_System_String_]
+### UnregisterNamedMessageHandler(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Unregisters a named message handler.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public static void UnregisterNamedMessageHandler(string name)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type          | Name | Description              |
 |---------------|------|--------------------------|
@@ -240,23 +240,23 @@ Unregisters a named message handler.
 
 ## Events
 
-### OnUnnamedMessage [MLAPI_Messaging_CustomMessagingManager_OnUnnamedMessage]
+### OnUnnamedMessage
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Event invoked when unnamed messages arrive
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public static event CustomMessagingManager.UnnamedMessageDelegate OnUnnamedMessage
 
-#### Event Type [event-type]
+#### Event Type
 
 | Type                                          | Description |
 |-----------------------------------------------|-------------|

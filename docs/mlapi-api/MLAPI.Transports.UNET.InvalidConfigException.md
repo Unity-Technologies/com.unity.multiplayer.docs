@@ -3,37 +3,37 @@ id: MLAPI.Transports.UNET.InvalidConfigException
 title: MLAPI.Transports.UNET.InvalidConfigException  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level3" markdown="1">
+<div class="level3">
 
 System.Dynamic.ExpandoObject
 
@@ -41,17 +41,17 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.Runtime.InteropServices.\_Exception
 
 </div>
 
-<div markdown="1">
+<div>
 
 System.Runtime.Serialization.ISerializable
 
@@ -59,107 +59,107 @@ System.Runtime.Serialization.ISerializable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Exception.GetBaseException()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.GetObjectData(SerializationInfo, StreamingContext)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.Data
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.HelpLink
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.HResult
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.InnerException
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.Message
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.Source
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.StackTrace
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.TargetSite
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -171,55 +171,55 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_UNET_InvalidConfigException_syntax]
+##### Syntax
 
     public class InvalidConfigException : SystemException, _Exception, ISerializable
 
 ## Constructors 
 
-### InvalidConfigException() [MLAPI_Transports_UNET_InvalidConfigException__ctor]
+### InvalidConfigException()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public InvalidConfigException()
 
-### InvalidConfigException(String) [MLAPI_Transports_UNET_InvalidConfigException__ctor_System_String_]
+### InvalidConfigException(String)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public InvalidConfigException(string issue)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.String | issue |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.Runtime.InteropServices.\_Exception
 
 </div>
 
-<div markdown="1">
+<div>
 
 System.Runtime.Serialization.ISerializable
 

@@ -3,27 +3,27 @@ id: MLAPI.Profiling.NetworkProfiler
 title: MLAPI.Profiling.NetworkProfiler  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 NetworkProfiler for profiling network traffic
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,149 +83,149 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Profiling_NetworkProfiler_syntax]
+##### Syntax
 
     public static class NetworkProfiler
 
 ## Properties 
 
-### IsRunning [MLAPI_Profiling_NetworkProfiler_IsRunning]
+### IsRunning
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not the profiler is recording data
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static bool IsRunning { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Ticks [MLAPI_Profiling_NetworkProfiler_Ticks]
+### Ticks
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The ticks that has been recorded
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static FixedQueue<ProfilerTick> Ticks { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
-| Type                       | Description |
-|----------------------------|-------------|
-| FixedQueue\<ProfilerTick\> |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| FixedQueue&lt;ProfilerTick&gt; |             |
 
 ## Methods 
 
-### Start(Int32) [MLAPI_Profiling_NetworkProfiler_Start_System_Int32_]
+### Start(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Starts recording data for the Profiler
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static void Start(int historyLength)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type         | Name          | Description                           |
 |--------------|---------------|---------------------------------------|
 | System.Int32 | historyLength | The amount of ticks to keep in memory |
 
-### Stop() [MLAPI_Profiling_NetworkProfiler_Stop]
+### Stop()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Stops recording data
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public static void Stop()
 
-### Stop(ref ProfilerTick\[\]) [MLAPI_Profiling_NetworkProfiler_Stop_MLAPI_Profiling_ProfilerTick____]
+### Stop(ref ProfilerTick\[\])
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Stops recording data and fills the buffer with the recorded ticks and
 returns the length;
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public static int Stop(ref ProfilerTick[] tickBuffer)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name       | Description                       |
 |------------------|------------|-----------------------------------|
 | ProfilerTick\[\] | tickBuffer | The buffer to fill with the ticks |
 
-#### Returns [returns]
+#### Returns
 
 | Type         | Description                  |
 |--------------|------------------------------|
 | System.Int32 | The number of ticks recorded |
 
-### Stop(ref List\<ProfilerTick\>) [MLAPI_Profiling_NetworkProfiler_Stop_System_Collections_Generic_List_MLAPI_Profiling_ProfilerTick___]
+### Stop(ref List&lt;ProfilerTick&gt;)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Stops recording data and fills the buffer with the recorded ticks and
 returns the length;
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public static int Stop(ref List<ProfilerTick> tickBuffer)
 
-#### Parameters [parameters-2]
+#### Parameters
 
-| Type                                            | Name       | Description                       |
-|-------------------------------------------------|------------|-----------------------------------|
-| System.Collections.Generic.List\<ProfilerTick\> | tickBuffer | The buffer to fill with the ticks |
+| Type                                                | Name       | Description                       |
+|-----------------------------------------------------|------------|-----------------------------------|
+| System.Collections.Generic.List&lt;ProfilerTick&gt; | tickBuffer | The buffer to fill with the ticks |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type         | Description                  |
 |--------------|------------------------------|

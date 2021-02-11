@@ -3,46 +3,46 @@ id: MLAPI.Serialization.Pooled.PooledBitStream
 title: MLAPI.Serialization.Pooled.PooledBitStream  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Disposable BitStream that returns the Stream to the BitStreamPool when
 disposed
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level3" markdown="1">
+<div class="level3">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level4" markdown="1">
+<div class="level4">
 
 System.Dynamic.ExpandoObject
 
@@ -50,11 +50,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 
@@ -62,329 +62,329 @@ System.IDisposable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 BitStream.Resizable
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.GrowthFactor
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CanRead
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.HasDataToRead
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CanSeek
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CanWrite
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Capacity
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Length
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Position
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.BitPosition
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.BitLength
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.BitAligned
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Flush()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.ReadByte()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.PeekByte()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.ReadBit()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Read(Byte\[\], Int32, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Seek(Int64, SeekOrigin)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.SetLength(Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Write(Byte\[\], Int32, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.WriteByte(Byte)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.Write(Byte\[\])
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.WriteBit(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CopyFrom(Stream, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CopyTo(Stream, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CopyUnreadFrom(Stream, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.CopyFrom(BitStream, Int32, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.GetBuffer()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.ToArray()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.PadStream()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.SkipPadBits()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitStream.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Null
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.BeginRead(Byte\[\], Int32, Int32, AsyncCallback, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.BeginWrite(Byte\[\], Int32, Int32, AsyncCallback, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Close()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.CreateWaitHandle()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Dispose(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.EndRead(IAsyncResult)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.EndWrite(IAsyncResult)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Synchronized(Stream)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.CanTimeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.ReadTimeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.WriteTimeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.CreateObjRef(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.GetLifetimeService()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.InitializeLifetimeService()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.MemberwiseClone(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -396,53 +396,53 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_Pooled_PooledBitStream_syntax]
+##### Syntax
 
     public sealed class PooledBitStream : BitStream, IDisposable
 
 ## Methods 
 
-### Dispose() [MLAPI_Serialization_Pooled_PooledBitStream_Dispose]
+### Dispose()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the PooledBitStream into the static BitStreamPool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public void Dispose()
 
-### Get() [MLAPI_Serialization_Pooled_PooledBitStream_Get]
+### Get()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a PooledBitStream from the static BitStreamPool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static PooledBitStream Get()
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description     |
 |-----------------|-----------------|
 | PooledBitStream | PooledBitStream |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 

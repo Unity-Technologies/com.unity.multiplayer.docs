@@ -3,51 +3,51 @@ id: MLAPI.NetworkingManager
 title: MLAPI.NetworkingManager  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The main component of the library
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level3" markdown="1">
+<div class="level3">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level4" markdown="1">
+<div class="level4">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level5" markdown="1">
+<div class="level5">
 
 System.Dynamic.ExpandoObject
 
@@ -55,665 +55,665 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.IsInvoking()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.CancelInvoke()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.Invoke(String, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.InvokeRepeating(String, Single, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.CancelInvoke(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.IsInvoking(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
-MonoBehaviour.StartCoroutine_Auto(IEnumerator)
+MonoBehaviour.StartCoroutine\_Auto(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(Coroutine)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopAllCoroutines()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.print(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.useGUILayout
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.runInEditMode
 
 </div>
 
-<div markdown="1">
+<div>
 
 Behaviour.enabled
 
 </div>
 
-<div markdown="1">
+<div>
 
 Behaviour.isActiveAndEnabled
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponent\<T\>()
+Component.GetComponent&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponent(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentInChildren(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentInChildren(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentInChildren\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentInChildren\<T\>()
+Component.GetComponentInChildren&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentInChildren&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.GetComponentsInChildren(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInChildren(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInChildren\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInChildren\<T\>(Boolean, List\<T\>)"
+Component.GetComponentsInChildren&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInChildren\<T\>()
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInChildren\<T\>(List\<T\>)"
+Component.GetComponentsInChildren&lt;T&gt;(Boolean, List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentsInChildren&lt;T&gt;()
+
+</div>
+
+<div>
+
+Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)"
+
+</div>
+
+<div>
 
 Component.GetComponentInParent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentInParent\<T\>()
+Component.GetComponentInParent&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInParent(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInParent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInParent\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInParent\<T\>(Boolean, List\<T\>)"
+Component.GetComponentsInParent&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInParent\<T\>()
+Component.GetComponentsInParent&lt;T&gt;(Boolean, List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentsInParent&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.GetComponents(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponents(Type, List\<Component\>)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponents\<T\>(List\<T\>)"
+Component.GetComponents(Type, List&lt;Component&gt;)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponents\<T\>()
+Component.GetComponents&lt;T&gt;(List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponents&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.CompareTag(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.transform
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.gameObject
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.tag
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.rigidbody
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.rigidbody2D
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.camera
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.light
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.animation
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.constantForce
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.renderer
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.audio
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiText
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.networkView
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiElement
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiTexture
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.collider
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.collider2D
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.hingeJoint
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.particleEmitter
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.particleSystem
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetInstanceID()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Vector3, Quaternion)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Vector3, Quaternion, Transform)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Transform)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Transform, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T)"
-
-</div>
-
-<div markdown="1">
-
-Object.Instantiate\<T\>(T, Vector3, Quaternion)"
+Object.Instantiate&lt;T&gt;(T)"
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T, Vector3, Quaternion, Transform)"
-
-</div>
-
-<div markdown="1">
-
-Object.Instantiate\<T\>(T, Transform)"
+Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)"
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T, Transform, Boolean)"
+Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Object.Instantiate&lt;T&gt;(T, Transform)"
+
+</div>
+
+<div>
+
+Object.Instantiate&lt;T&gt;(T, Transform, Boolean)"
+
+</div>
+
+<div>
 
 Object.Destroy(Object, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Destroy(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyImmediate(Object, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyImmediate(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectsOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DontDestroyOnLoad(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyObject(Object, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyObject(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindSceneObjectsOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectsOfTypeIncludingAssets(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.FindObjectsOfType\<T\>()
-
-</div>
-
-<div markdown="1">
-
-Object.FindObjectOfType\<T\>()
+Object.FindObjectsOfType&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
+
+Object.FindObjectOfType&lt;T&gt;()
+
+</div>
+
+<div>
 
 Object.FindObjectsOfTypeAll(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.name
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.hideFlags
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -725,131 +725,131 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkingManager_syntax]
+##### Syntax
 
     [AddComponentMenu("MLAPI/NetworkingManager", -100)]
     public class NetworkingManager : MonoBehaviour
 
 ## Fields
 
-### ConnectedClients [MLAPI_NetworkingManager_ConnectedClients]
+### ConnectedClients
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a dictionary of connected clients and their clientId keys. This is
 only populated on the server.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public readonly Dictionary<ulong, NetworkedClient> ConnectedClients
 
-#### Field Value [field-value]
+#### Field Value
 
-| Type                                                                    | Description |
-|-------------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\<System.UInt64, NetworkedClient\> |             |
+| Type                                                                        | Description |
+|-----------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary&lt;System.UInt64, NetworkedClient&gt; |             |
 
-### ConnectedClientsList [MLAPI_NetworkingManager_ConnectedClientsList]
+### ConnectedClientsList
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a list of connected clients. This is only populated on the server.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public readonly List<NetworkedClient> ConnectedClientsList
 
-#### Field Value [field-value-1]
+#### Field Value
 
-| Type                                               | Description |
-|----------------------------------------------------|-------------|
-| System.Collections.Generic.List\<NetworkedClient\> |             |
+| Type                                                   | Description |
+|--------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;NetworkedClient&gt; |             |
 
-### DontDestroy [MLAPI_NetworkingManager_DontDestroy]
+### DontDestroy
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets if the NetworkingManager should be marked as
 DontDestroyOnLoad
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     [HideInInspector]
     public bool DontDestroy
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### LogLevel [MLAPI_NetworkingManager_LogLevel]
+### LogLevel
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The log level to use
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     [HideInInspector]
     public LogLevel LogLevel
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type     | Description |
 |----------|-------------|
 | LogLevel |             |
 
-### NetworkConfig [MLAPI_NetworkingManager_NetworkConfig]
+### NetworkConfig
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The current NetworkingConfiguration
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     [HideInInspector]
     public NetworkConfig NetworkConfig
 
-#### Field Value [field-value-4]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkConfig |             |
 
-### PendingClients [MLAPI_NetworkingManager_PendingClients]
+### PendingClients
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a dictionary of the clients that have been accepted by the
 transport but are still pending by the MLAPI. This is only populated on
@@ -857,38 +857,38 @@ the server.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public readonly Dictionary<ulong, PendingClient> PendingClients
 
-#### Field Value [field-value-5]
+#### Field Value
 
-| Type                                                                  | Description |
-|-----------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\<System.UInt64, PendingClient\> |             |
+| Type                                                                      | Description |
+|---------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary&lt;System.UInt64, PendingClient&gt; |             |
 
-### RunInBackground [MLAPI_NetworkingManager_RunInBackground]
+### RunInBackground
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets if the application should be set to run in background
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     [HideInInspector]
     public bool RunInBackground
 
-#### Field Value [field-value-6]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
@@ -896,223 +896,223 @@ Gets or sets if the application should be set to run in background
 
 ## Properties 
 
-### ConnectedHostname [MLAPI_NetworkingManager_ConnectedHostname]
+### ConnectedHostname
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The current hostname we are connected to, used to validate certificate
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public string ConnectedHostname { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### IsClient [MLAPI_NetworkingManager_IsClient]
+### IsClient
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not a client is running
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public bool IsClient { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsConnectedClient [MLAPI_NetworkingManager_IsConnectedClient]
+### IsConnectedClient
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if we are connected as a client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public bool IsConnectedClient { get; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsHost [MLAPI_NetworkingManager_IsHost]
+### IsHost
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if we are running as host
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public bool IsHost { get; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsListening [MLAPI_NetworkingManager_IsListening]
+### IsListening
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not we are listening for connections
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-11]
+#### Declaration
 
     public bool IsListening { get; }
 
-#### Property Value [property-value-4]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsServer [MLAPI_NetworkingManager_IsServer]
+### IsServer
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not a server is running
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-12]
+#### Declaration
 
     public bool IsServer { get; }
 
-#### Property Value [property-value-5]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### LocalClientId [MLAPI_NetworkingManager_LocalClientId]
+### LocalClientId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The clientId the server calls the local client by, only valid for
 clients
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     public ulong LocalClientId { get; }
 
-#### Property Value [property-value-6]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### NetworkTime [MLAPI_NetworkingManager_NetworkTime]
+### NetworkTime
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A synchronized time, represents the time in seconds since the server
 application started. Is replicated across all clients
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-14]
+#### Declaration
 
     public float NetworkTime { get; }
 
-#### Property Value [property-value-7]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### ServerClientId [MLAPI_NetworkingManager_ServerClientId]
+### ServerClientId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the networkId of the server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-15]
+#### Declaration
 
     public ulong ServerClientId { get; }
 
-#### Property Value [property-value-8]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### Singleton [MLAPI_NetworkingManager_Singleton]
+### Singleton
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The singleton instance of the NetworkingManager
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-16]
+#### Declaration
 
     public static NetworkingManager Singleton { get; }
 
-#### Property Value [property-value-9]
+#### Property Value
 
 | Type              | Description |
 |-------------------|-------------|
@@ -1120,72 +1120,72 @@ The singleton instance of the NetworkingManager
 
 ## Methods 
 
-### DisconnectClient(UInt64) [MLAPI_NetworkingManager_DisconnectClient_System_UInt64_]
+### DisconnectClient(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Disconnects the remote client.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     public void DisconnectClient(ulong clientId)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name     | Description                |
 |---------------|----------|----------------------------|
 | System.UInt64 | clientId | The ClientId to disconnect |
 
-### SendCustomMessage(List\<UInt64\>, BitStream, String, SecuritySendFlags) [MLAPI_NetworkingManager_SendCustomMessage_System_Collections_Generic_List_System_UInt64__MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
+### SendCustomMessage(List&lt;UInt64&gt;, BitStream, String, SecuritySendFlags)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sends unnamed message to a list of clients
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-18]
+#### Declaration
 
     [Obsolete("Use CustomMessagingManager.SendUnnamedMessage instead")]
     public void SendCustomMessage(List<ulong> clientIds, BitStream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
 
-#### Parameters [parameters-1]
+#### Parameters
 
-| Type                                             | Name      | Description                                       |
-|--------------------------------------------------|-----------|---------------------------------------------------|
-| System.Collections.Generic.List\<System.UInt64\> | clientIds | The clients to send to, sends to everyone if null |
-| BitStream                                        | stream    | The message stream containing the data            |
-| System.String                                    | channel   | The channel to send the data on                   |
-| SecuritySendFlags                                | security  | The security settings to apply to the message     |
+| Type                                                 | Name      | Description                                       |
+|------------------------------------------------------|-----------|---------------------------------------------------|
+| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds | The clients to send to, sends to everyone if null |
+| BitStream                                            | stream    | The message stream containing the data            |
+| System.String                                        | channel   | The channel to send the data on                   |
+| SecuritySendFlags                                    | security  | The security settings to apply to the message     |
 
-### SendCustomMessage(UInt64, BitStream, String, SecuritySendFlags) [MLAPI_NetworkingManager_SendCustomMessage_System_UInt64_MLAPI_Serialization_BitStream_System_String_MLAPI_Security_SecuritySendFlags_]
+### SendCustomMessage(UInt64, BitStream, String, SecuritySendFlags)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sends a unnamed message to a specific client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-19]
+#### Declaration
 
     [Obsolete("Use CustomMessagingManager.SendUnnamedMessage instead")]
     public void SendCustomMessage(ulong clientId, BitStream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type              | Name     | Description                                   |
 |-------------------|----------|-----------------------------------------------|
@@ -1194,238 +1194,238 @@ Sends a unnamed message to a specific client
 | System.String     | channel  | The channel tos end the data on               |
 | SecuritySendFlags | security | The security settings to apply to the message |
 
-### StartClient() [MLAPI_NetworkingManager_StartClient]
+### StartClient()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Starts a client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-20]
+#### Declaration
 
     public SocketTasks StartClient()
 
-#### Returns [returns]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
 
-### StartHost(Nullable\<Vector3\>, Nullable\<Quaternion\>, Nullable\<Boolean\>, Nullable\<UInt64\>, Stream) [MLAPI_NetworkingManager_StartHost_System_Nullable_UnityEngine_Vector3__System_Nullable_UnityEngine_Quaternion__System_Nullable_System_Boolean__System_Nullable_System_UInt64__System_IO_Stream_]
+### StartHost(Nullable&lt;Vector3&gt;, Nullable&lt;Quaternion&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;UInt64&gt;, Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Starts a Host
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-21]
+#### Declaration
 
     public SocketTasks StartHost(Vector3? position = default(Vector3? ), Quaternion? rotation = default(Quaternion? ), bool? createPlayerObject = default(bool? ), ulong? prefabHash = default(ulong? ), Stream payloadStream = null)
 
-#### Parameters [parameters-3]
+#### Parameters
 
-| Type                                      | Name               | Description |
-|-------------------------------------------|--------------------|-------------|
-| System.Nullable\<UnityEngine.Vector3\>    | position           |             |
-| System.Nullable\<UnityEngine.Quaternion\> | rotation           |             |
-| System.Nullable\<System.Boolean\>         | createPlayerObject |             |
-| System.Nullable\<System.UInt64\>          | prefabHash         |             |
-| System.IO.Stream                          | payloadStream      |             |
+| Type                                          | Name               | Description |
+|-----------------------------------------------|--------------------|-------------|
+| System.Nullable&lt;UnityEngine.Vector3&gt;    | position           |             |
+| System.Nullable&lt;UnityEngine.Quaternion&gt; | rotation           |             |
+| System.Nullable&lt;System.Boolean&gt;         | createPlayerObject |             |
+| System.Nullable&lt;System.UInt64&gt;          | prefabHash         |             |
+| System.IO.Stream                              | payloadStream      |             |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
 
-### StartServer() [MLAPI_NetworkingManager_StartServer]
+### StartServer()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Starts a server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-22]
+#### Declaration
 
     public SocketTasks StartServer()
 
-#### Returns [returns-2]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
 
-### StopClient() [MLAPI_NetworkingManager_StopClient]
+### StopClient()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Stops the running client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-23]
+#### Declaration
 
     public void StopClient()
 
-### StopHost() [MLAPI_NetworkingManager_StopHost]
+### StopHost()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Stops the running host
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-24]
+#### Declaration
 
     public void StopHost()
 
-### StopServer() [MLAPI_NetworkingManager_StopServer]
+### StopServer()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Stops the running server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-25]
+#### Declaration
 
     public void StopServer()
 
 ## Events
 
-### ConnectionApprovalCallback [MLAPI_NetworkingManager_ConnectionApprovalCallback]
+### ConnectionApprovalCallback
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback to invoke during connection approval
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-26]
+#### Declaration
 
     public event Action<byte[], ulong, NetworkingManager.ConnectionApprovedDelegate> ConnectionApprovalCallback
 
-#### Event Type [event-type]
+#### Event Type
 
-| Type                                                                                          | Description |
-|-----------------------------------------------------------------------------------------------|-------------|
-| System.Action\<System.Byte\[\], System.UInt64, NetworkingManager.ConnectionApprovedDelegate\> |             |
+| Type                                                                                              | Description |
+|---------------------------------------------------------------------------------------------------|-------------|
+| System.Action&lt;System.Byte\[\], System.UInt64, NetworkingManager.ConnectionApprovedDelegate&gt; |             |
 
-### OnClientConnectedCallback [MLAPI_NetworkingManager_OnClientConnectedCallback]
+### OnClientConnectedCallback
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback to invoke once a client connects. This callback is only ran
 on the server and on the local client that connects.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-27]
+#### Declaration
 
     public event Action<ulong> OnClientConnectedCallback
 
-#### Event Type [event-type-1]
+#### Event Type
 
-| Type                           | Description |
-|--------------------------------|-------------|
-| System.Action\<System.UInt64\> |             |
+| Type                               | Description |
+|------------------------------------|-------------|
+| System.Action&lt;System.UInt64&gt; |             |
 
-### OnClientDisconnectCallback [MLAPI_NetworkingManager_OnClientDisconnectCallback]
+### OnClientDisconnectCallback
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback to invoke when a client disconnects. This callback is only
 ran on the server and on the local client that disconnects.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-28]
+#### Declaration
 
     public event Action<ulong> OnClientDisconnectCallback
 
-#### Event Type [event-type-2]
+#### Event Type
 
-| Type                           | Description |
-|--------------------------------|-------------|
-| System.Action\<System.UInt64\> |             |
+| Type                               | Description |
+|------------------------------------|-------------|
+| System.Action&lt;System.UInt64&gt; |             |
 
-### OnIncomingCustomMessage [MLAPI_NetworkingManager_OnIncomingCustomMessage]
+### OnIncomingCustomMessage
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-29]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     [Obsolete("Use OnUnnamedMessage instead")]
     public event CustomMessagingManager.UnnamedMessageDelegate OnIncomingCustomMessage
 
-#### Event Type [event-type-3]
+#### Event Type
 
 | Type                                          | Description |
 |-----------------------------------------------|-------------|
 | CustomMessagingManager.UnnamedMessageDelegate |             |
 
-### OnServerStarted [MLAPI_NetworkingManager_OnServerStarted]
+### OnServerStarted
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback to invoke once the server is ready
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-30]
+#### Declaration
 
     public event Action OnServerStarted
 
-#### Event Type [event-type-4]
+#### Event Type
 
 | Type          | Description |
 |---------------|-------------|

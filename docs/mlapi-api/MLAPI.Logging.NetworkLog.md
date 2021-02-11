@@ -3,27 +3,27 @@ id: MLAPI.Logging.NetworkLog
 title: MLAPI.Logging.NetworkLog  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Helper class for logging
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,73 +83,73 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Logging_NetworkLog_syntax]
+##### Syntax
 
     public static class NetworkLog
 
 ## Methods 
 
-### LogErrorServer(String) [MLAPI_Logging_NetworkLog_LogErrorServer_System_String_]
+### LogErrorServer(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Logs an error log locally and on the server if possible.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static void LogErrorServer(string message)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
 
-### LogInfoServer(String) [MLAPI_Logging_NetworkLog_LogInfoServer_System_String_]
+### LogInfoServer(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Logs an info log locally and on the server if possible.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static void LogInfoServer(string message)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
 
-### LogWarningServer(String) [MLAPI_Logging_NetworkLog_LogWarningServer_System_String_]
+### LogWarningServer(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Logs a warning log locally and on the server if possible.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static void LogWarningServer(string message)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|

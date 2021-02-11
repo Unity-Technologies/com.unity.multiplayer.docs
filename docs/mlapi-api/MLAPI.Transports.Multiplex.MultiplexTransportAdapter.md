@@ -3,57 +3,57 @@ id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter
 title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Multiplex transport adapter.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level3" markdown="1">
+<div class="level3">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level4" markdown="1">
+<div class="level4">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level5" markdown="1">
+<div class="level5">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level6" markdown="1">
+<div class="level6">
 
 System.Dynamic.ExpandoObject
 
@@ -61,683 +61,683 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Transport.OnChannelRegistration
 
 </div>
 
-<div markdown="1">
+<div>
 
-Transport.MLAPI_CHANNELS
+Transport.MLAPI\_CHANNELS
 
 </div>
 
-<div markdown="1">
+<div>
 
 Transport.OnTransportEvent
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.IsInvoking()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.CancelInvoke()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.Invoke(String, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.InvokeRepeating(String, Single, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.CancelInvoke(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.IsInvoking(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
-MonoBehaviour.StartCoroutine_Auto(IEnumerator)
+MonoBehaviour.StartCoroutine\_Auto(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(Coroutine)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopAllCoroutines()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.print(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.useGUILayout
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.runInEditMode
 
 </div>
 
-<div markdown="1">
+<div>
 
 Behaviour.enabled
 
 </div>
 
-<div markdown="1">
+<div>
 
 Behaviour.isActiveAndEnabled
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponent\<T\>()
+Component.GetComponent&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponent(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentInChildren(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentInChildren(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentInChildren\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentInChildren\<T\>()
+Component.GetComponentInChildren&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentInChildren&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.GetComponentsInChildren(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInChildren(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInChildren\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInChildren\<T\>(Boolean, List\<T\>)"
+Component.GetComponentsInChildren&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInChildren\<T\>()
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInChildren\<T\>(List\<T\>)"
+Component.GetComponentsInChildren&lt;T&gt;(Boolean, List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentsInChildren&lt;T&gt;()
+
+</div>
+
+<div>
+
+Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)"
+
+</div>
+
+<div>
 
 Component.GetComponentInParent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentInParent\<T\>()
+Component.GetComponentInParent&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInParent(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInParent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInParent\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInParent\<T\>(Boolean, List\<T\>)"
+Component.GetComponentsInParent&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInParent\<T\>()
+Component.GetComponentsInParent&lt;T&gt;(Boolean, List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentsInParent&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.GetComponents(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponents(Type, List\<Component\>)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponents\<T\>(List\<T\>)"
+Component.GetComponents(Type, List&lt;Component&gt;)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponents\<T\>()
+Component.GetComponents&lt;T&gt;(List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponents&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.CompareTag(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.transform
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.gameObject
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.tag
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.rigidbody
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.rigidbody2D
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.camera
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.light
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.animation
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.constantForce
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.renderer
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.audio
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiText
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.networkView
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiElement
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiTexture
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.collider
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.collider2D
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.hingeJoint
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.particleEmitter
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.particleSystem
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetInstanceID()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Vector3, Quaternion)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Vector3, Quaternion, Transform)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Transform)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Transform, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T)"
-
-</div>
-
-<div markdown="1">
-
-Object.Instantiate\<T\>(T, Vector3, Quaternion)"
+Object.Instantiate&lt;T&gt;(T)"
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T, Vector3, Quaternion, Transform)"
-
-</div>
-
-<div markdown="1">
-
-Object.Instantiate\<T\>(T, Transform)"
+Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)"
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T, Transform, Boolean)"
+Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Object.Instantiate&lt;T&gt;(T, Transform)"
+
+</div>
+
+<div>
+
+Object.Instantiate&lt;T&gt;(T, Transform, Boolean)"
+
+</div>
+
+<div>
 
 Object.Destroy(Object, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Destroy(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyImmediate(Object, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyImmediate(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectsOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DontDestroyOnLoad(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyObject(Object, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyObject(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindSceneObjectsOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectsOfTypeIncludingAssets(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.FindObjectsOfType\<T\>()
-
-</div>
-
-<div markdown="1">
-
-Object.FindObjectOfType\<T\>()
+Object.FindObjectsOfType&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
+
+Object.FindObjectOfType&lt;T&gt;()
+
+</div>
+
+<div>
 
 Object.FindObjectsOfTypeAll(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.name
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.hideFlags
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -749,47 +749,47 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_syntax]
+##### Syntax
 
     public class MultiplexTransportAdapter : Transport
 
 ## Fields
 
-### SpreadMethod [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_SpreadMethod]
+### SpreadMethod
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public MultiplexTransportAdapter.ConnectionIdSpreadMethod SpreadMethod
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type                                               | Description |
 |----------------------------------------------------|-------------|
 | MultiplexTransportAdapter.ConnectionIdSpreadMethod |             |
 
-### Transports [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Transports]
+### Transports
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public Transport[] Transports
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -797,57 +797,57 @@ Object.ReferenceEquals(Object, Object)
 
 ## Properties 
 
-### IsSupported [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_IsSupported]
+### IsSupported
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override bool IsSupported { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides [overrides]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.IsSupported
 
 </div>
 
-### ServerClientId [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_ServerClientId]
+### ServerClientId
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override ulong ServerClientId { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-#### Overrides [overrides-1]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.ServerClientId
 
@@ -855,125 +855,125 @@ Transport.ServerClientId
 
 ## Methods 
 
-### DisconnectLocalClient() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectLocalClient]
+### DisconnectLocalClient()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-4]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override void DisconnectLocalClient()
 
-#### Overrides [overrides-2]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.DisconnectLocalClient()
 
 </div>
 
-### DisconnectRemoteClient(UInt64) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_DisconnectRemoteClient_System_UInt64_]
+### DisconnectRemoteClient(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-5]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override void DisconnectRemoteClient(ulong clientId)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Overrides [overrides-3]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.DisconnectRemoteClient(UInt64)
 
 </div>
 
-### GetCurrentRtt(UInt64) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetCurrentRtt_System_UInt64_]
+### GetCurrentRtt(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-6]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override ulong GetCurrentRtt(ulong clientId)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-#### Overrides [overrides-4]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.GetCurrentRtt(UInt64)
 
 </div>
 
-### GetFirstSupportedTransportIndex() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetFirstSupportedTransportIndex]
+### GetFirstSupportedTransportIndex()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-7]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public byte GetFirstSupportedTransportIndex()
 
-#### Returns [returns-1]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | System.Byte |             |
 
-### GetMLAPIClientId(Byte, UInt64, Boolean) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMLAPIClientId_System_Byte_System_UInt64_System_Boolean_]
+### GetMLAPIClientId(Byte, UInt64, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-8]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public ulong GetMLAPIClientId(byte transportId, ulong connectionId, bool isServer)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type           | Name         | Description |
 |----------------|--------------|-------------|
@@ -981,27 +981,27 @@ Transport.GetCurrentRtt(UInt64)
 | System.UInt64  | connectionId |             |
 | System.Boolean | isServer     |             |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### GetMultiplexTransportDetails(UInt64, out Byte, out UInt64) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_GetMultiplexTransportDetails_System_UInt64_System_Byte__System_UInt64__]
+### GetMultiplexTransportDetails(UInt64, out Byte, out UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-9]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void GetMultiplexTransportDetails(ulong clientId, out byte transportId, out ulong connectionId)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type          | Name         | Description |
 |---------------|--------------|-------------|
@@ -1009,169 +1009,169 @@ Transport.GetCurrentRtt(UInt64)
 | System.Byte   | transportId  |             |
 | System.UInt64 | connectionId |             |
 
-### Init() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Init]
+### Init()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-10]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override void Init()
 
-#### Overrides [overrides-5]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.Init()
 
 </div>
 
-### PollEvent(out UInt64, out String, out ArraySegment\<Byte\>, out Single) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_PollEvent_System_UInt64__System_String__System_ArraySegment_System_Byte___System_Single__]
+### PollEvent(out UInt64, out String, out ArraySegment&lt;Byte&gt;, out Single)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-11]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override NetEventType PollEvent(out ulong clientId, out string channelName, out ArraySegment<byte> payload, out float receiveTime)
 
-#### Parameters [parameters-4]
+#### Parameters
 
-| Type                               | Name        | Description |
-|------------------------------------|-------------|-------------|
-| System.UInt64                      | clientId    |             |
-| System.String                      | channelName |             |
-| System.ArraySegment\<System.Byte\> | payload     |             |
-| System.Single                      | receiveTime |             |
+| Type                                   | Name        | Description |
+|----------------------------------------|-------------|-------------|
+| System.UInt64                          | clientId    |             |
+| System.String                          | channelName |             |
+| System.ArraySegment&lt;System.Byte&gt; | payload     |             |
+| System.Single                          | receiveTime |             |
 
-#### Returns [returns-3]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | NetEventType |             |
 
-#### Overrides [overrides-6]
+#### Overrides
 
-<div markdown="1">
+<div>
 
-Transport.PollEvent(out UInt64, out String, out ArraySegment\<Byte\>,
-out Single)
-
-</div>
-
-### Send(UInt64, ArraySegment\<Byte\>, String) [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Send_System_UInt64_System_ArraySegment_System_Byte__System_String_]
-
-<div class="markdown level1 summary" markdown="1">
+Transport.PollEvent(out UInt64, out String, out
+ArraySegment&lt;Byte&gt;, out Single)
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+### Send(UInt64, ArraySegment&lt;Byte&gt;, String)
+
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-12]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override void Send(ulong clientId, ArraySegment<byte> data, string channelName)
 
-#### Parameters [parameters-5]
+#### Parameters
 
-| Type                               | Name        | Description |
-|------------------------------------|-------------|-------------|
-| System.UInt64                      | clientId    |             |
-| System.ArraySegment\<System.Byte\> | data        |             |
-| System.String                      | channelName |             |
+| Type                                   | Name        | Description |
+|----------------------------------------|-------------|-------------|
+| System.UInt64                          | clientId    |             |
+| System.ArraySegment&lt;System.Byte&gt; | data        |             |
+| System.String                          | channelName |             |
 
-#### Overrides [overrides-7]
+#### Overrides
 
-<div markdown="1">
+<div>
 
-Transport.Send(UInt64, ArraySegment\<Byte\>, String)
-
-</div>
-
-### Shutdown() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_Shutdown]
-
-<div class="markdown level1 summary" markdown="1">
+Transport.Send(UInt64, ArraySegment&lt;Byte&gt;, String)
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+### Shutdown()
+
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-13]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override void Shutdown()
 
-#### Overrides [overrides-8]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.Shutdown()
 
 </div>
 
-### StartClient() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartClient]
+### StartClient()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-14]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override SocketTasks StartClient()
 
-#### Returns [returns-4]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
 
-#### Overrides [overrides-9]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.StartClient()
 
 </div>
 
-### StartServer() [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_StartServer]
+### StartServer()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-15]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public override SocketTasks StartServer()
 
-#### Returns [returns-5]
+#### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | SocketTasks |             |
 
-#### Overrides [overrides-10]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 Transport.StartServer()
 

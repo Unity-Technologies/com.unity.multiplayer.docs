@@ -3,27 +3,27 @@ id: MLAPI.SceneManagement.NetworkSceneManager
 title: MLAPI.SceneManagement.NetworkSceneManager  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Main class for managing network scenes
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,59 +83,59 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_SceneManagement_NetworkSceneManager_syntax]
+##### Syntax
 
     public static class NetworkSceneManager
 
 ## Methods 
 
-### AddRuntimeSceneName(String, UInt32) [MLAPI_SceneManagement_NetworkSceneManager_AddRuntimeSceneName_System_String_System_UInt32_]
+### AddRuntimeSceneName(String, UInt32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Adds a scene during runtime. The index is REQUIRED to be unique AND the
 same across all instances.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static void AddRuntimeSceneName(string sceneName, uint index)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name      | Description |
 |---------------|-----------|-------------|
 | System.String | sceneName | Scene name. |
 | System.UInt32 | index     | Index.      |
 
-### SwitchScene(String) [MLAPI_SceneManagement_NetworkSceneManager_SwitchScene_System_String_]
+### SwitchScene(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Switches to a scene with a given name. Can only be called from Server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static SceneSwitchProgress SwitchScene(string sceneName)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name      | Description                        |
 |---------------|-----------|------------------------------------|
 | System.String | sceneName | The name of the scene to switch to |
 
-#### Returns [returns]
+#### Returns
 
 | Type                | Description |
 |---------------------|-------------|
@@ -143,45 +143,45 @@ Switches to a scene with a given name. Can only be called from Server
 
 ## Events
 
-### OnSceneSwitched [MLAPI_SceneManagement_NetworkSceneManager_OnSceneSwitched]
+### OnSceneSwitched
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Event that is invoked when the scene is switched
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static event NetworkSceneManager.SceneSwitchedDelegate OnSceneSwitched
 
-#### Event Type [event-type]
+#### Event Type
 
 | Type                                      | Description |
 |-------------------------------------------|-------------|
 | NetworkSceneManager.SceneSwitchedDelegate |             |
 
-### OnSceneSwitchStarted [MLAPI_SceneManagement_NetworkSceneManager_OnSceneSwitchStarted]
+### OnSceneSwitchStarted
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Event that is invoked when a local scene switch has started
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public static event NetworkSceneManager.SceneSwitchStartedDelegate OnSceneSwitchStarted
 
-#### Event Type [event-type-1]
+#### Event Type
 
 | Type                                           | Description |
 |------------------------------------------------|-------------|

@@ -3,34 +3,34 @@ id: MLAPI.Serialization.Pooled.PooledBitReader
 title: MLAPI.Serialization.Pooled.PooledBitReader  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Disposable BitReader that returns the Reader to the BitReaderPool when
 disposed
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -38,11 +38,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 
@@ -50,569 +50,569 @@ System.IDisposable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 BitReader.SetStream(Stream)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadByte()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadByteDirect()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadBit()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadBool()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.SkipPadBits()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadObjectPacked(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadSingle()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadDouble()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadSinglePacked()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadDoublePacked()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadVector2()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadVector2Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadVector3()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadVector3Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadVector4()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadVector4Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadColor()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadColorPacked()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadColor32()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadRay()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadRayPacked()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadRangedSingle(Single, Single, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadRangedDouble(Double, Double, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadRotationPacked()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadRotation()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadBits(Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadByteBits(Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadNibble(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadNibble()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadSByte()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUInt16()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadInt16()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadChar()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUInt32()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadInt32()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUInt64()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadInt64()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadInt16Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUInt16Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadCharPacked()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadInt32Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUInt32Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadInt64Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUInt64Packed()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadString(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadString(StringBuilder, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringPacked(StringBuilder)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringDiff(String, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringDiff(StringBuilder, String, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringDiff(StringBuilder, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringPackedDiff(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringPackedDiff(StringBuilder, String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadStringPackedDiff(StringBuilder)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadByteArray(Byte\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadByteArrayDiff(Byte\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadShortArray(Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadShortArrayPacked(Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadShortArrayDiff(Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadShortArrayPackedDiff(Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUShortArray(UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUShortArrayPacked(UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUShortArrayDiff(UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUShortArrayPackedDiff(UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadIntArray(Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadIntArrayPacked(Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadIntArrayDiff(Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadIntArrayPackedDiff(Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUIntArray(UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUIntArrayPacked(UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadUIntArrayDiff(UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadLongArray(Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadLongArrayPacked(Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadLongArrayDiff(Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadLongArrayPackedDiff(Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadULongArray(UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadULongArrayPacked(UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadULongArrayDiff(UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadULongArrayPackedDiff(UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadFloatArray(Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadFloatArrayPacked(Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadFloatArrayDiff(Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadFloatArrayPackedDiff(Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadDoubleArray(Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadDoubleArrayPacked(Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadDoubleArrayDiff(Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitReader.ReadDoubleArrayPackedDiff(Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -624,59 +624,59 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_Pooled_PooledBitReader_syntax]
+##### Syntax
 
     public sealed class PooledBitReader : BitReader, IDisposable
 
 ## Methods 
 
-### Dispose() [MLAPI_Serialization_Pooled_PooledBitReader_Dispose]
+### Dispose()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the PooledBitReader into the static BitReaderPool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public void Dispose()
 
-### Get(Stream) [MLAPI_Serialization_Pooled_PooledBitReader_Get_System_IO_Stream_]
+### Get(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a PooledBitReader from the static BitReaderPool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static PooledBitReader Get(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
 | System.IO.Stream | stream |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description     |
 |-----------------|-----------------|
 | PooledBitReader | PooledBitReader |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 

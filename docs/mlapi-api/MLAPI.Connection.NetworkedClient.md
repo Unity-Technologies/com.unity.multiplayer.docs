@@ -3,27 +3,27 @@ id: MLAPI.Connection.NetworkedClient
 title: MLAPI.Connection.NetworkedClient  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A NetworkedClient
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,95 +83,95 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Connection_NetworkedClient_syntax]
+##### Syntax
 
     public class NetworkedClient
 
 ## Fields
 
-### AesKey [MLAPI_Connection_NetworkedClient_AesKey]
+### AesKey
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The encryption key used for this client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public byte[] AesKey
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | System.Byte\[\] |             |
 
-### ClientId [MLAPI_Connection_NetworkedClient_ClientId]
+### ClientId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The Id of the NetworkedClient
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public ulong ClientId
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### OwnedObjects [MLAPI_Connection_NetworkedClient_OwnedObjects]
+### OwnedObjects
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The NetworkedObject's owned by this Client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public readonly List<NetworkedObject> OwnedObjects
 
-#### Field Value [field-value-2]
+#### Field Value
 
-| Type                                               | Description |
-|----------------------------------------------------|-------------|
-| System.Collections.Generic.List\<NetworkedObject\> |             |
+| Type                                                   | Description |
+|--------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;NetworkedObject&gt; |             |
 
-### PlayerObject [MLAPI_Connection_NetworkedClient_PlayerObject]
+### PlayerObject
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The PlayerObject of the Client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public NetworkedObject PlayerObject
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type            | Description |
 |-----------------|-------------|

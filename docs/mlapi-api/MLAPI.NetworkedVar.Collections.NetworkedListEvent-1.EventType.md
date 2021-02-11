@@ -3,14 +3,14 @@ id: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1.EventType
 title: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1.EventType  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Enum representing the different operations available for triggering an
 event.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -18,7 +18,7 @@ event.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_Collections_NetworkedListEvent_1_EventType_syntax]
+##### Syntax
 
     public enum EventType
 

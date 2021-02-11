@@ -3,34 +3,34 @@ id: MLAPI.Serialization.Pooled.PooledBitWriter
 title: MLAPI.Serialization.Pooled.PooledBitWriter  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Disposable BitWriter that returns the Writer to the BitWriterPool when
 disposed
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -38,11 +38,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 
@@ -50,575 +50,575 @@ System.IDisposable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 BitWriter.SetStream(Stream)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteObjectPacked(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteSingle(Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteDouble(Double)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteSinglePacked(Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteDoublePacked(Double)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteRay(Ray)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteRayPacked(Ray)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteColor(Color)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteColorPacked(Color)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteColor32(Color32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteVector2(Vector2)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteVector2Packed(Vector2)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteVector3(Vector3)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteVector3Packed(Vector3)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteVector4(Vector4)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteVector4Packed(Vector4)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteRangedSingle(Single, Single, Single, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteRangedDouble(Double, Double, Double, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteRotationPacked(Quaternion)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteRotation(Quaternion)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteBit(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteBool(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WritePadBits()
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteNibble(Byte)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteNibble(Byte, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteBits(UInt64, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteBits(Byte, Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteSByte(SByte)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteChar(Char)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUInt16(UInt16)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteInt16(Int16)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUInt32(UInt32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteInt32(Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUInt64(UInt64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteInt64(Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteInt16Packed(Int16)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUInt16Packed(UInt16)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteCharPacked(Char)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteInt32Packed(Int32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUInt32Packed(UInt32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteInt64Packed(Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUInt64Packed(UInt64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteByte(Byte)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteString(String, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteStringPacked(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteStringDiff(String, String, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteStringPackedDiff(String, String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteByteArray(Byte\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteByteArrayDiff(Byte\[\], Byte\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteShortArray(Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteShortArrayDiff(Int16\[\], Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUShortArray(UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUShortArrayDiff(UInt16\[\], UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteCharArray(Char\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteCharArrayDiff(Char\[\], Char\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteIntArray(Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteIntArrayDiff(Int32\[\], Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUIntArray(UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUIntArrayDiff(UInt32\[\], UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteLongArray(Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteLongArrayDiff(Int64\[\], Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteULongArray(UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteULongArrayDiff(UInt64\[\], UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteFloatArray(Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteFloatArrayDiff(Single\[\], Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteDoubleArray(Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteDoubleArrayDiff(Double\[\], Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteArrayPacked(Array, Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteArrayPackedDiff(Array, Array, Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteShortArrayPacked(Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteShortArrayPackedDiff(Int16\[\], Int16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUShortArrayPacked(UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUShortArrayPackedDiff(UInt16\[\], UInt16\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteCharArrayPacked(Char\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteCharArrayPackedDiff(Char\[\], Char\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteIntArrayPacked(Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteIntArrayPackedDiff(Int32\[\], Int32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUIntArrayPacked(UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteUIntArrayPackedDiff(UInt32\[\], UInt32\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteLongArrayPacked(Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteLongArrayPackedDiff(Int64\[\], Int64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteULongArrayPacked(UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteULongArrayPackedDiff(UInt64\[\], UInt64\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteFloatArrayPacked(Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteFloatArrayPackedDiff(Single\[\], Single\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteDoubleArrayPacked(Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 BitWriter.WriteDoubleArrayPackedDiff(Double\[\], Double\[\], Int64)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -630,59 +630,59 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_Pooled_PooledBitWriter_syntax]
+##### Syntax
 
     public sealed class PooledBitWriter : BitWriter, IDisposable
 
 ## Methods 
 
-### Dispose() [MLAPI_Serialization_Pooled_PooledBitWriter_Dispose]
+### Dispose()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns the PooledBitWriter into the static BitWriterPool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public void Dispose()
 
-### Get(Stream) [MLAPI_Serialization_Pooled_PooledBitWriter_Get_System_IO_Stream_]
+### Get(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a PooledBitWriter from the static BitWriterPool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static PooledBitWriter Get(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
 | System.IO.Stream | stream |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description     |
 |-----------------|-----------------|
 | PooledBitWriter | PooledBitWriter |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 

@@ -3,13 +3,13 @@ id: MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate
 title: MLAPI.NetworkedVar.NetworkedVarPermissionsDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for permission checking
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,17 +17,17 @@ Delegate type for permission checking
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarPermissionsDelegate_syntax]
+##### Syntax
 
     public delegate bool NetworkedVarPermissionsDelegate(ulong clientId);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type          | Name       | Description                             |
 |---------------|------------|-----------------------------------------|
 | System.UInt64 | \*clientId | The clientId whose permissions to check |
 
-##### Returns [returns]
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|

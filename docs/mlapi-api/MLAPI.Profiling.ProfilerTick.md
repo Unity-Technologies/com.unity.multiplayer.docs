@@ -3,27 +3,27 @@ id: MLAPI.Profiling.ProfilerTick
 title: MLAPI.Profiling.ProfilerTick  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A tick in used for the Profiler
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,95 +83,95 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Profiling_ProfilerTick_syntax]
+##### Syntax
 
     public class ProfilerTick
 
 ## Fields
 
-### EventId [MLAPI_Profiling_ProfilerTick_EventId]
+### EventId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The id of the tick
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public int EventId
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Events [MLAPI_Profiling_ProfilerTick_Events]
+### Events
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The events that occured during this tick
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public readonly List<TickEvent> Events
 
-#### Field Value [field-value-1]
+#### Field Value
 
-| Type                                         | Description |
-|----------------------------------------------|-------------|
-| System.Collections.Generic.List\<TickEvent\> |             |
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;TickEvent&gt; |             |
 
-### Frame [MLAPI_Profiling_ProfilerTick_Frame]
+### Frame
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The frame the tick executed on
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public int Frame
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Type [MLAPI_Profiling_ProfilerTick_Type]
+### Type
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The type of tick
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public TickType Type
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type     | Description |
 |----------|-------------|
@@ -179,23 +179,23 @@ The type of tick
 
 ## Properties 
 
-### Bytes [MLAPI_Profiling_ProfilerTick_Bytes]
+### Bytes
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of bytes that were sent and / or received during this tick
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public uint Bytes { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -203,51 +203,51 @@ The amount of bytes that were sent and / or received during this tick
 
 ## Methods 
 
-### FromStream(Stream) [MLAPI_Profiling_ProfilerTick_FromStream_System_IO_Stream_]
+### FromStream(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a ProfilerTick from data in the provided stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public static ProfilerTick FromStream(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description                                 |
 |------------------|--------|---------------------------------------------|
 | System.IO.Stream | stream | The stream containing the ProfilerTick data |
 
-#### Returns [returns]
+#### Returns
 
 | Type         | Description                                     |
 |--------------|-------------------------------------------------|
 | ProfilerTick | The ProfilerTick with data read from the stream |
 
-### SerializeToStream(Stream) [MLAPI_Profiling_ProfilerTick_SerializeToStream_System_IO_Stream_]
+### SerializeToStream(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the current ProfilerTick to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public void SerializeToStream(Stream stream)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name   | Description           |
 |------------------|--------|-----------------------|
