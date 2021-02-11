@@ -3,13 +3,13 @@ id: MLAPI.Serialization.IBitWritable
 title: MLAPI.Serialization.IBitWritable  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Interface for serializable classes and structs
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,51 +17,51 @@ Interface for serializable classes and structs
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_IBitWritable_syntax]
+##### Syntax
 
     public interface IBitWritable
 
 ## Methods 
 
-### Read(Stream) [MLAPI_Serialization_IBitWritable_Read_System_IO_Stream_]
+### Read(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads the contents from the stream and applies it to the type instance
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     void Read(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description             |
 |------------------|--------|-------------------------|
 | System.IO.Stream | stream | The stream to read from |
 
-### Write(Stream) [MLAPI_Serialization_IBitWritable_Write_System_IO_Stream_]
+### Write(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the contents of the type instance to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     void Write(Stream stream)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|

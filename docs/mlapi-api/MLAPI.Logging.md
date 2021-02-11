@@ -3,17 +3,17 @@ id: MLAPI.Logging
 title: MLAPI.Logging  
 ---
 
-## Namespace MLAPI.Logging [MLAPI_Logging]
+## Namespace MLAPI.Logging
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Logging
 
 ### MLAPI.Logging.NetworkLog
 
-<div class="section" markdown="1">
+<div class="section">
 
 Helper class for logging
 
@@ -31,7 +31,7 @@ Helper class for logging
 
 ### MLAPI.Logging.LogLevel
 
-<div class="section" markdown="1">
+<div class="section">
 
 Log level
 

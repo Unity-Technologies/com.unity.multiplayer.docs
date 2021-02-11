@@ -3,13 +3,13 @@ id: MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate
 title: MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The delegate used when spawning a networked object
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,18 +17,18 @@ The delegate used when spawning a networked object
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Spawning_SpawnManager_SpawnHandlerDelegate_syntax]
+##### Syntax
 
     public delegate NetworkedObject SpawnHandlerDelegate(Vector3 position, Quaternion rotation);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type                   | Name       | Description                           |
 |------------------------|------------|---------------------------------------|
 | UnityEngine.Vector3    | \*position | The position to spawn the object at   |
 | UnityEngine.Quaternion | \*rotation | The rotation to spawn the object with |
 
-##### Returns [returns]
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|

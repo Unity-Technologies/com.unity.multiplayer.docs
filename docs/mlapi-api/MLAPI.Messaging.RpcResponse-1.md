@@ -3,34 +3,34 @@ id: MLAPI.Messaging.RpcResponse-1
 title: MLAPI.Messaging.RpcResponse-1  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The RpcResponse class exposed by the API. Represents a network
 Request/Response operation with a result
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -38,77 +38,77 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 RpcResponseBase.Id
 
 </div>
 
-<div markdown="1">
+<div>
 
 RpcResponseBase.IsDone
 
 </div>
 
-<div markdown="1">
+<div>
 
 RpcResponseBase.IsSuccessful
 
 </div>
 
-<div markdown="1">
+<div>
 
 RpcResponseBase.ClientId
 
 </div>
 
-<div markdown="1">
+<div>
 
 RpcResponseBase.Timeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -120,11 +120,11 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Messaging_RpcResponse_1_syntax]
+##### Syntax
 
     public class RpcResponse<T> : RpcResponseBase
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description     |
 |------|-----------------|
@@ -132,23 +132,23 @@ Object.ToString()
 
 ## Properties 
 
-### Value [MLAPI_Messaging_RpcResponse_1_Value]
+### Value
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the return value of the operation
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public T Value { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type | Description |
 |------|-------------|

@@ -3,13 +3,13 @@ id: MLAPI.NetworkedVar.NetworkedVar-1.OnValueChangedDelegate
 title: MLAPI.NetworkedVar.NetworkedVar-1.OnValueChangedDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for value changed event
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,11 +17,11 @@ Delegate type for value changed event
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVar_1_OnValueChangedDelegate_syntax]
+##### Syntax
 
     public delegate void OnValueChangedDelegate(T previousValue, T newValue);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type | Name            | Description                 |
 |------|-----------------|-----------------------------|

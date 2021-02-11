@@ -3,13 +3,13 @@ id: MLAPI.Transports.NetEventType
 title: MLAPI.Transports.NetEventType  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Represents a netEvent when polling
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ Represents a netEvent when polling
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_NetEventType_syntax]
+##### Syntax
 
     public enum NetEventType
 

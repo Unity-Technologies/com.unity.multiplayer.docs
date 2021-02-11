@@ -3,11 +3,11 @@ id: MLAPI.NetworkedBehaviour.RpcMethod-3
 title: MLAPI.NetworkedBehaviour.RpcMethod-3  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -15,11 +15,11 @@ title: MLAPI.NetworkedBehaviour.RpcMethod-3
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedBehaviour_RpcMethod_3_syntax]
+##### Syntax
 
     public delegate void RpcMethod<T1, T2, T3>(T1 t1, T2 t2, T3 t3);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
@@ -27,7 +27,7 @@ title: MLAPI.NetworkedBehaviour.RpcMethod-3
 | T2   | \*t2 |             |
 | T3   | \*t3 |             |
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description |
 |------|-------------|

@@ -3,27 +3,27 @@ id: MLAPI.Serialization.Pooled.BitStreamPool
 title: MLAPI.Serialization.Pooled.BitStreamPool  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Static class containing PooledBitStreams
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,51 +83,51 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_Pooled_BitStreamPool_syntax]
+##### Syntax
 
     public static class BitStreamPool
 
 ## Methods 
 
-### GetStream() [MLAPI_Serialization_Pooled_BitStreamPool_GetStream]
+### GetStream()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Retrieves an expandable PooledBitStream from the pool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static PooledBitStream GetStream()
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description                   |
 |-----------------|-------------------------------|
 | PooledBitStream | An expandable PooledBitStream |
 
-### PutBackInPool(PooledBitStream) [MLAPI_Serialization_Pooled_BitStreamPool_PutBackInPool_MLAPI_Serialization_Pooled_PooledBitStream_]
+### PutBackInPool(PooledBitStream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Puts a PooledBitStream back into the pool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static void PutBackInPool(PooledBitStream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type            | Name   | Description                   |
 |-----------------|--------|-------------------------------|

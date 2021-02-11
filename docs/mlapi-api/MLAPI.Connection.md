@@ -3,17 +3,17 @@ id: MLAPI.Connection
 title: MLAPI.Connection  
 ---
 
-## Namespace MLAPI.Connection [MLAPI_Connection]
+## Namespace MLAPI.Connection
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Connection
 
 ### MLAPI.Connection.NetworkedClient
 
-<div class="section" markdown="1">
+<div class="section">
 
 A NetworkedClient
 
@@ -29,7 +29,7 @@ A NetworkedClient
 
 ### MLAPI.Connection.PendingClient
 
-<div class="section" markdown="1">
+<div class="section">
 
 A class representing a client that is currently in the process of
 connecting
@@ -40,7 +40,7 @@ connecting
 
 ### MLAPI.Connection.PendingClient.State
 
-<div class="section" markdown="1">
+<div class="section">
 
 The states of a connection
 

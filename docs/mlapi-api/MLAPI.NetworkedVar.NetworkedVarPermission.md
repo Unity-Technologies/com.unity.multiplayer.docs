@@ -3,13 +3,13 @@ id: MLAPI.NetworkedVar.NetworkedVarPermission
 title: MLAPI.NetworkedVar.NetworkedVarPermission  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Permission type
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ Permission type
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarPermission_syntax]
+##### Syntax
 
     public enum NetworkedVarPermission
 
