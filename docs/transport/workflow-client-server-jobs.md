@@ -7,6 +7,7 @@ In the workflow [Creating a minimal client and server](workflow-client-server.md
 
 :::note
 Before reading this workflow, review how the [C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) works.
+:::
 
 ## Create a Jobified Client
 

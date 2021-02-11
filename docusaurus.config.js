@@ -92,6 +92,11 @@ module.exports = {
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
             },
             {
+              label: 'Contribution Guide',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki',
+
+            },
+            {
               type: 'doc',
               to: 'docs/template',
               label: 'Doc Template',
