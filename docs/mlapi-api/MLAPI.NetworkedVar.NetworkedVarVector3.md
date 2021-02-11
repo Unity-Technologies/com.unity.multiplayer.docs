@@ -3,33 +3,33 @@ id: MLAPI.NetworkedVar.NetworkedVarVector3
 title: MLAPI.NetworkedVar.NetworkedVarVector3  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A NetworkedVar that holds vector3s and support serialization
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -37,11 +37,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -49,137 +49,137 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.isDirty"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.Settings"
+NetworkedVar&lt;Vector3&gt;.isDirty"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.LastSyncedTime"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.OnValueChanged"
+NetworkedVar&lt;Vector3&gt;.Settings"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.Value"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.ResetDirty()"
+NetworkedVar&lt;Vector3&gt;.LastSyncedTime"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.IsDirty()"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.CanClientRead(UInt64)"
+NetworkedVar&lt;Vector3&gt;.OnValueChanged"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.WriteDelta(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.CanClientWrite(UInt64)"
+NetworkedVar&lt;Vector3&gt;.Value"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.ReadDelta(Stream, Boolean)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.SetNetworkedBehaviour(NetworkedBehaviour)"
+NetworkedVar&lt;Vector3&gt;.ResetDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.ReadField(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Vector3\>.WriteField(Stream)"
+NetworkedVar&lt;Vector3&gt;.IsDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Vector3\>.GetChannel()"
+NetworkedVar&lt;Vector3&gt;.CanClientRead(UInt64)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+NetworkedVar&lt;Vector3&gt;.WriteDelta(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Vector3&gt;.CanClientWrite(UInt64)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Vector3&gt;.ReadDelta(Stream, Boolean)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Vector3&gt;.SetNetworkedBehaviour(NetworkedBehaviour)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Vector3&gt;.ReadField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Vector3&gt;.WriteField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Vector3&gt;.GetChannel()"
+
+</div>
+
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -191,91 +191,91 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarVector3_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkedVarVector3 : NetworkedVar<Vector3>, INetworkedVar
 
 ## Constructors 
 
-### NetworkedVarVector3() [MLAPI_NetworkedVar_NetworkedVarVector3__ctor]
+### NetworkedVarVector3()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarVector3()
 
-### NetworkedVarVector3(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarVector3__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedVarVector3(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarVector3(NetworkedVarSettings settings)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 
-### NetworkedVarVector3(NetworkedVarSettings, Vector3) [MLAPI_NetworkedVar_NetworkedVarVector3__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Vector3_]
+### NetworkedVarVector3(NetworkedVarSettings, Vector3)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarVector3(NetworkedVarSettings settings, Vector3 value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 | UnityEngine.Vector3  | value    |             |
 
-### NetworkedVarVector3(Vector3) [MLAPI_NetworkedVar_NetworkedVarVector3__ctor_UnityEngine_Vector3_]
+### NetworkedVarVector3(Vector3)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarVector3(Vector3 value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type                | Name  | Description |
 |---------------------|-------|-------------|
 | UnityEngine.Vector3 | value |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

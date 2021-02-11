@@ -3,13 +3,13 @@ id: MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate
 title: MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The delegate used when destroying networked objects
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,11 +17,11 @@ The delegate used when destroying networked objects
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Spawning_SpawnManager_DestroyHandlerDelegate_syntax]
+##### Syntax
 
     public delegate void DestroyHandlerDelegate(NetworkedObject networkedObject);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type            | Name              | Description                        |
 |-----------------|-------------------|------------------------------------|

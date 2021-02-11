@@ -3,17 +3,17 @@ id: MLAPI.SceneManagement
 title: MLAPI.SceneManagement  
 ---
 
-## Namespace MLAPI.SceneManagement [MLAPI_SceneManagement]
+## Namespace MLAPI.SceneManagement
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.SceneManagement
 
 ### MLAPI.SceneManagement.NetworkSceneManager
 
-<div class="section" markdown="1">
+<div class="section">
 
 Main class for managing network scenes
 
@@ -29,7 +29,7 @@ Main class for managing network scenes
 
 ### MLAPI.SceneManagement.SceneSwitchProgress
 
-<div class="section" markdown="1">
+<div class="section">
 
 Class for tracking scene switching progress by server and clients.
 
@@ -39,7 +39,7 @@ Class for tracking scene switching progress by server and clients.
 
 ### MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchedDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate for when the scene has been switched
 
@@ -47,7 +47,7 @@ Delegate for when the scene has been switched
 
 ### MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate for when a scene switch has been initiated
 
@@ -55,7 +55,7 @@ Delegate for when a scene switch has been initiated
 
 ### MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate type for when a client is done loading the scene.
 
@@ -63,7 +63,7 @@ Delegate type for when a client is done loading the scene.
 
 ### MLAPI.SceneManagement.SceneSwitchProgress.OnCompletedDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 Delegate type for when the switch scene progress is completed. Either by
 all clients done loading the scene or by time out.

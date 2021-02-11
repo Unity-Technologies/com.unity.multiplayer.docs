@@ -3,13 +3,13 @@ id: MLAPI.Profiling.TickType
 title: MLAPI.Profiling.TickType  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The type of Tick
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ The type of Tick
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Profiling_TickType_syntax]
+##### Syntax
 
     public enum TickType
 

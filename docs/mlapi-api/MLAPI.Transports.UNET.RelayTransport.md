@@ -3,25 +3,25 @@ id: MLAPI.Transports.UNET.RelayTransport
 title: MLAPI.Transports.UNET.RelayTransport  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -29,47 +29,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -81,67 +81,67 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_UNET_RelayTransport_syntax]
+##### Syntax
 
     public static class RelayTransport
 
 ## Properties 
 
-### Enabled [MLAPI_Transports_UNET_RelayTransport_Enabled]
+### Enabled
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static bool Enabled { get; set; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### RelayAddress [MLAPI_Transports_UNET_RelayTransport_RelayAddress]
+### RelayAddress
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static string RelayAddress { get; set; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### RelayPort [MLAPI_Transports_UNET_RelayTransport_RelayPort]
+### RelayPort
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static ushort RelayPort { get; set; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -149,48 +149,48 @@ Object.ToString()
 
 ## Methods 
 
-### AddHost(HostTopology, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHost_UnityEngine_Networking_HostTopology_System_Boolean_]
+### AddHost(HostTopology, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddHost(HostTopology topology, bool createServer)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
 | UnityEngine.Networking.HostTopology | topology     |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddHost(HostTopology, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHost_UnityEngine_Networking_HostTopology_System_Int32_System_Boolean_]
+### AddHost(HostTopology, Int32, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-4]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddHost(HostTopology topology, int port, bool createServer)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -198,27 +198,27 @@ Object.ToString()
 | System.Int32                        | port         |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddHost(HostTopology, Int32, String, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHost_UnityEngine_Networking_HostTopology_System_Int32_System_String_System_Boolean_]
+### AddHost(HostTopology, Int32, String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-5]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddHost(HostTopology topology, int port, string ip, bool createServer)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -227,27 +227,27 @@ Object.ToString()
 | System.String                       | ip           |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddHostWithSimulator(HostTopology, Int32, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_UnityEngine_Networking_HostTopology_System_Int32_System_Int32_System_Boolean_]
+### AddHostWithSimulator(HostTopology, Int32, Int32, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-6]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddHostWithSimulator(HostTopology topology, int minTimeout, int maxTimeout, bool createServer)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -256,27 +256,27 @@ Object.ToString()
 | System.Int32                        | maxTimeout   |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-3]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddHostWithSimulator(HostTopology, Int32, Int32, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_UnityEngine_Networking_HostTopology_System_Int32_System_Int32_System_Int32_System_Boolean_]
+### AddHostWithSimulator(HostTopology, Int32, Int32, Int32, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-7]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddHostWithSimulator(HostTopology topology, int minTimeout, int maxTimeout, int port, bool createServer)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -286,27 +286,27 @@ Object.ToString()
 | System.Int32                        | port         |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-4]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddHostWithSimulator(HostTopology, Int32, Int32, Int32, String, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddHostWithSimulator_UnityEngine_Networking_HostTopology_System_Int32_System_Int32_System_Int32_System_String_System_Boolean_]
+### AddHostWithSimulator(HostTopology, Int32, Int32, Int32, String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-8]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddHostWithSimulator(HostTopology topology, int minTimeout, int maxTimeout, int port, string ip, bool createServer)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -317,27 +317,27 @@ Object.ToString()
 | System.String                       | ip           |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-5]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddWebsocketHost(HostTopology, Int32, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_UnityEngine_Networking_HostTopology_System_Int32_System_Boolean_]
+### AddWebsocketHost(HostTopology, Int32, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-9]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddWebsocketHost(HostTopology topology, int port, bool createServer)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -345,27 +345,27 @@ Object.ToString()
 | System.Int32                        | port         |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-6]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AddWebsocketHost(HostTopology, Int32, String, Boolean) [MLAPI_Transports_UNET_RelayTransport_AddWebsocketHost_UnityEngine_Networking_HostTopology_System_Int32_System_String_System_Boolean_]
+### AddWebsocketHost(HostTopology, Int32, String, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-10]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int AddWebsocketHost(HostTopology topology, int port, string ip, bool createServer)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type                                | Name         | Description |
 |-------------------------------------|--------------|-------------|
@@ -374,27 +374,27 @@ Object.ToString()
 | System.String                       | ip           |             |
 | System.Boolean                      | createServer |             |
 
-#### Returns [returns-7]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Connect(Int32, String, Int32, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Connect_System_Int32_System_String_System_Int32_System_Int32_System_Byte__]
+### Connect(Int32, String, Int32, Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-11]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int Connect(int hostId, string serverAddress, int serverPort, int exceptionConnectionId, out byte error)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type          | Name                  | Description |
 |---------------|-----------------------|-------------|
@@ -404,27 +404,27 @@ Object.ToString()
 | System.Int32  | exceptionConnectionId |             |
 | System.Byte   | error                 |             |
 
-#### Returns [returns-8]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ConnectEndPoint(Int32, EndPoint, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_ConnectEndPoint_System_Int32_System_Net_EndPoint_System_Int32_System_Byte__]
+### ConnectEndPoint(Int32, EndPoint, Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-12]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int ConnectEndPoint(int hostId, EndPoint endPoint, int exceptionConnectionId, out byte error)
 
-#### Parameters [parameters-9]
+#### Parameters
 
 | Type                | Name                  | Description |
 |---------------------|-----------------------|-------------|
@@ -433,27 +433,27 @@ Object.ToString()
 | System.Int32        | exceptionConnectionId |             |
 | System.Byte         | error                 |             |
 
-#### Returns [returns-9]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ConnectWithSimulator(Int32, String, Int32, Int32, out Byte, ConnectionSimulatorConfig) [MLAPI_Transports_UNET_RelayTransport_ConnectWithSimulator_System_Int32_System_String_System_Int32_System_Int32_System_Byte__UnityEngine_Networking_ConnectionSimulatorConfig_]
+### ConnectWithSimulator(Int32, String, Int32, Int32, out Byte, ConnectionSimulatorConfig)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-13]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static int ConnectWithSimulator(int hostId, string serverAddress, int serverPort, int exceptionConnectionId, out byte error, ConnectionSimulatorConfig conf)
 
-#### Parameters [parameters-10]
+#### Parameters
 
 | Type                                             | Name                  | Description |
 |--------------------------------------------------|-----------------------|-------------|
@@ -464,27 +464,27 @@ Object.ToString()
 | System.Byte                                      | error                 |             |
 | UnityEngine.Networking.ConnectionSimulatorConfig | conf                  |             |
 
-#### Returns [returns-10]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Disconnect(Int32, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Disconnect_System_Int32_System_Int32_System_Byte__]
+### Disconnect(Int32, Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-14]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static bool Disconnect(int hostId, int connectionId, out byte error)
 
-#### Parameters [parameters-11]
+#### Parameters
 
 | Type         | Name         | Description |
 |--------------|--------------|-------------|
@@ -492,27 +492,27 @@ Object.ToString()
 | System.Int32 | connectionId |             |
 | System.Byte  | error        |             |
 
-#### Returns [returns-11]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### QueueMessageForSending(Int32, Int32, Int32, Byte\[\], Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_QueueMessageForSending_System_Int32_System_Int32_System_Int32_System_Byte___System_Int32_System_Byte__]
+### QueueMessageForSending(Int32, Int32, Int32, Byte\[\], Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-15]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static bool QueueMessageForSending(int hostId, int connectionId, int channelId, byte[] buffer, int size, out byte error)
 
-#### Parameters [parameters-12]
+#### Parameters
 
 | Type            | Name         | Description |
 |-----------------|--------------|-------------|
@@ -523,27 +523,27 @@ Object.ToString()
 | System.Int32    | size         |             |
 | System.Byte     | error        |             |
 
-#### Returns [returns-12]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Receive(out Int32, out Int32, out Int32, Byte\[\], Int32, out Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Receive_System_Int32__System_Int32__System_Int32__System_Byte___System_Int32_System_Int32__System_Byte__]
+### Receive(out Int32, out Int32, out Int32, Byte\[\], Int32, out Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-16]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static NetworkEventType Receive(out int hostId, out int connectionId, out int channelId, byte[] buffer, int bufferSize, out int receivedSize, out byte error)
 
-#### Parameters [parameters-13]
+#### Parameters
 
 | Type            | Name         | Description |
 |-----------------|--------------|-------------|
@@ -555,27 +555,27 @@ Object.ToString()
 | System.Int32    | receivedSize |             |
 | System.Byte     | error        |             |
 
-#### Returns [returns-13]
+#### Returns
 
 | Type                                    | Description |
 |-----------------------------------------|-------------|
 | UnityEngine.Networking.NetworkEventType |             |
 
-### ReceiveFromHost(Int32, out Int32, out Int32, Byte\[\], Int32, out Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_ReceiveFromHost_System_Int32_System_Int32__System_Int32__System_Byte___System_Int32_System_Int32__System_Byte__]
+### ReceiveFromHost(Int32, out Int32, out Int32, Byte\[\], Int32, out Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-17]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static NetworkEventType ReceiveFromHost(int hostId, out int connectionId, out int channelId, byte[] buffer, int bufferSize, out int receivedSize, out byte error)
 
-#### Parameters [parameters-14]
+#### Parameters
 
 | Type            | Name         | Description |
 |-----------------|--------------|-------------|
@@ -587,27 +587,27 @@ Object.ToString()
 | System.Int32    | receivedSize |             |
 | System.Byte     | error        |             |
 
-#### Returns [returns-14]
+#### Returns
 
 | Type                                    | Description |
 |-----------------------------------------|-------------|
 | UnityEngine.Networking.NetworkEventType |             |
 
-### Send(Int32, Int32, Int32, Byte\[\], Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_Send_System_Int32_System_Int32_System_Int32_System_Byte___System_Int32_System_Byte__]
+### Send(Int32, Int32, Int32, Byte\[\], Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-18]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static bool Send(int hostId, int connectionId, int channelId, byte[] buffer, int size, out byte error)
 
-#### Parameters [parameters-15]
+#### Parameters
 
 | Type            | Name         | Description |
 |-----------------|--------------|-------------|
@@ -618,27 +618,27 @@ Object.ToString()
 | System.Int32    | size         |             |
 | System.Byte     | error        |             |
 
-#### Returns [returns-15]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### SendQueuedMessages(Int32, Int32, out Byte) [MLAPI_Transports_UNET_RelayTransport_SendQueuedMessages_System_Int32_System_Int32_System_Byte__]
+### SendQueuedMessages(Int32, Int32, out Byte)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-19]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static bool SendQueuedMessages(int hostId, int connectionId, out byte error)
 
-#### Parameters [parameters-16]
+#### Parameters
 
 | Type         | Name         | Description |
 |--------------|--------------|-------------|
@@ -646,7 +646,7 @@ Object.ToString()
 | System.Int32 | connectionId |             |
 | System.Byte  | error        |             |
 
-#### Returns [returns-16]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -654,22 +654,22 @@ Object.ToString()
 
 ## Events
 
-### OnRemoteEndpointReported [MLAPI_Transports_UNET_RelayTransport_OnRemoteEndpointReported]
+### OnRemoteEndpointReported
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-20]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public static event Action<IPEndPoint> OnRemoteEndpointReported
 
-#### Event Type [event-type]
+#### Event Type
 
-| Type                                   | Description |
-|----------------------------------------|-------------|
-| System.Action\<System.Net.IPEndPoint\> |             |
+| Type                                       | Description |
+|--------------------------------------------|-------------|
+| System.Action&lt;System.Net.IPEndPoint&gt; |             |

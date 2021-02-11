@@ -3,13 +3,13 @@ id: MLAPI.Messaging.RpcDelegate
 title: MLAPI.Messaging.RpcDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate definition for performance RPC's.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,11 +17,11 @@ Delegate definition for performance RPC's.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Messaging_RpcDelegate_syntax]
+##### Syntax
 
     public delegate void RpcDelegate(ulong clientId, Stream stream);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type             | Name       | Description |
 |------------------|------------|-------------|

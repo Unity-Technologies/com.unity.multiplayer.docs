@@ -3,13 +3,13 @@ id: MLAPI.NetworkedObject.SpawnDelegate
 title: MLAPI.NetworkedObject.SpawnDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for checking spawn options
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,17 +17,17 @@ Delegate type for checking spawn options
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedObject_SpawnDelegate_syntax]
+##### Syntax
 
     public delegate bool SpawnDelegate(ulong clientId);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type          | Name       | Description                             |
 |---------------|------------|-----------------------------------------|
 | System.UInt64 | \*clientId | The clientId to check spawn options for |
 
-##### Returns [returns]
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|

@@ -3,13 +3,13 @@ id: MLAPI.Connection.PendingClient.State
 title: MLAPI.Connection.PendingClient.State  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The states of a connection
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ The states of a connection
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Connection_PendingClient_State_syntax]
+##### Syntax
 
     public enum State
 

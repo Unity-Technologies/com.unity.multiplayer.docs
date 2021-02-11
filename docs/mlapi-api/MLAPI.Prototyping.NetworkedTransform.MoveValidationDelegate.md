@@ -3,13 +3,13 @@ id: MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate
 title: MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The delegate used to check if a move is valid
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,18 +17,18 @@ The delegate used to check if a move is valid
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Prototyping_NetworkedTransform_MoveValidationDelegate_syntax]
+##### Syntax
 
     public delegate bool MoveValidationDelegate(Vector3 oldPos, Vector3 newPos);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type                | Name     | Description                |
 |---------------------|----------|----------------------------|
 | UnityEngine.Vector3 | \*oldPos | The previous position      |
 | UnityEngine.Vector3 | \*newPos | The new requested position |
 
-##### Returns [returns]
+##### Returns
 
 | Type           | Description                              |
 |----------------|------------------------------------------|

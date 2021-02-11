@@ -3,17 +3,17 @@ id: MLAPI.Prototyping
 title: MLAPI.Prototyping  
 ---
 
-## Namespace MLAPI.Prototyping [MLAPI_Prototyping]
+## Namespace MLAPI.Prototyping
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Prototyping
 
 ### MLAPI.Prototyping.NetworkedAnimator
 
-<div class="section" markdown="1">
+<div class="section">
 
 A prototype component for syncing animations
 
@@ -29,7 +29,7 @@ A prototype component for syncing animations
 
 ### MLAPI.Prototyping.NetworkedNavMeshAgent
 
-<div class="section" markdown="1">
+<div class="section">
 
 A prototype component for syncing navmeshagents
 
@@ -37,7 +37,7 @@ A prototype component for syncing navmeshagents
 
 ### MLAPI.Prototyping.NetworkedTransform
 
-<div class="section" markdown="1">
+<div class="section">
 
 A prototype component for syncing transforms
 
@@ -47,7 +47,7 @@ A prototype component for syncing transforms
 
 ### MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 The delegate used to check if a move is valid
 

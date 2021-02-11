@@ -3,33 +3,33 @@ id: MLAPI.NetworkedVar.NetworkedVarColor
 title: MLAPI.NetworkedVar.NetworkedVarColor  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A NetworkedVar that holds colors and support serialization
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -37,11 +37,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -49,137 +49,137 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.isDirty"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.Settings"
+NetworkedVar&lt;Color&gt;.isDirty"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.LastSyncedTime"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.OnValueChanged"
+NetworkedVar&lt;Color&gt;.Settings"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.Value"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.ResetDirty()"
+NetworkedVar&lt;Color&gt;.LastSyncedTime"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.IsDirty()"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.CanClientRead(UInt64)"
+NetworkedVar&lt;Color&gt;.OnValueChanged"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.WriteDelta(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.CanClientWrite(UInt64)"
+NetworkedVar&lt;Color&gt;.Value"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.ReadDelta(Stream, Boolean)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.SetNetworkedBehaviour(NetworkedBehaviour)"
+NetworkedVar&lt;Color&gt;.ResetDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.ReadField(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Color\>.WriteField(Stream)"
+NetworkedVar&lt;Color&gt;.IsDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Color\>.GetChannel()"
+NetworkedVar&lt;Color&gt;.CanClientRead(UInt64)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+NetworkedVar&lt;Color&gt;.WriteDelta(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Color&gt;.CanClientWrite(UInt64)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Color&gt;.ReadDelta(Stream, Boolean)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Color&gt;.SetNetworkedBehaviour(NetworkedBehaviour)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Color&gt;.ReadField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Color&gt;.WriteField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Color&gt;.GetChannel()"
+
+</div>
+
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -191,91 +191,91 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarColor_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkedVarColor : NetworkedVar<Color>, INetworkedVar
 
 ## Constructors 
 
-### NetworkedVarColor() [MLAPI_NetworkedVar_NetworkedVarColor__ctor]
+### NetworkedVarColor()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarColor()
 
-### NetworkedVarColor(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarColor__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedVarColor(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarColor(NetworkedVarSettings settings)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 
-### NetworkedVarColor(NetworkedVarSettings, Color) [MLAPI_NetworkedVar_NetworkedVarColor__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_UnityEngine_Color_]
+### NetworkedVarColor(NetworkedVarSettings, Color)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarColor(NetworkedVarSettings settings, Color value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 | UnityEngine.Color    | value    |             |
 
-### NetworkedVarColor(Color) [MLAPI_NetworkedVar_NetworkedVarColor__ctor_UnityEngine_Color_]
+### NetworkedVarColor(Color)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarColor(Color value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type              | Name  | Description |
 |-------------------|-------|-------------|
 | UnityEngine.Color | value |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

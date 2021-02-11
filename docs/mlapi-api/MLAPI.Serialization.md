@@ -3,17 +3,17 @@ id: MLAPI.Serialization
 title: MLAPI.Serialization  
 ---
 
-## Namespace MLAPI.Serialization [MLAPI_Serialization]
+## Namespace MLAPI.Serialization
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Serialization
 
 ### MLAPI.Serialization.Arithmetic
 
-<div class="section" markdown="1">
+<div class="section">
 
 Arithmetic helper class
 
@@ -29,7 +29,7 @@ Arithmetic helper class
 
 ### MLAPI.Serialization.AutoBitWritable
 
-<div class="section" markdown="1">
+<div class="section">
 
 AutoBitWritable implements IBitWritable and automatically serializes
 fields using reflection
@@ -38,7 +38,7 @@ fields using reflection
 
 ### MLAPI.Serialization.BitReader
 
-<div class="section" markdown="1">
+<div class="section">
 
 A BinaryReader that can do bit wise manipulation when backed by a
 BitStream
@@ -47,7 +47,7 @@ BitStream
 
 ### MLAPI.Serialization.BitStream
 
-<div class="section" markdown="1">
+<div class="section">
 
 A stream that can be used at the bit level
 
@@ -55,7 +55,7 @@ A stream that can be used at the bit level
 
 ### MLAPI.Serialization.BitWriter
 
-<div class="section" markdown="1">
+<div class="section">
 
 A BinaryWriter that can do bit wise manipulation when backed by a
 BitStream
@@ -64,7 +64,7 @@ BitStream
 
 ### MLAPI.Serialization.EndianHelper
 
-<div class="section" markdown="1">
+<div class="section">
 
 Binary helper class
 
@@ -72,7 +72,7 @@ Binary helper class
 
 ### MLAPI.Serialization.SerializationManager
 
-<div class="section" markdown="1">
+<div class="section">
 
 Helper class to manage the MLAPI serialization.
 
@@ -82,7 +82,7 @@ Helper class to manage the MLAPI serialization.
 
 ### MLAPI.Serialization.IBitWritable
 
-<div class="section" markdown="1">
+<div class="section">
 
 Interface for serializable classes and structs
 
@@ -92,7 +92,7 @@ Interface for serializable classes and structs
 
 ### MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1
 
-<div class="section" markdown="1">
+<div class="section">
 
 The delegate used when registering custom deserialization for a type.
 
@@ -100,7 +100,7 @@ The delegate used when registering custom deserialization for a type.
 
 ### MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
 
-<div class="section" markdown="1">
+<div class="section">
 
 The delegate used when registering custom serialization for a type.
 

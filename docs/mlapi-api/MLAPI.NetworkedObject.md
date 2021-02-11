@@ -3,51 +3,51 @@ id: MLAPI.NetworkedObject
 title: MLAPI.NetworkedObject  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A component used to identify that a GameObject is networked
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level3" markdown="1">
+<div class="level3">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level4" markdown="1">
+<div class="level4">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level5" markdown="1">
+<div class="level5">
 
 System.Dynamic.ExpandoObject
 
@@ -55,665 +55,665 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.IsInvoking()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.CancelInvoke()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.Invoke(String, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.InvokeRepeating(String, Single, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.CancelInvoke(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.IsInvoking(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StartCoroutine(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
-MonoBehaviour.StartCoroutine_Auto(IEnumerator)
+MonoBehaviour.StartCoroutine\_Auto(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(IEnumerator)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(Coroutine)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopCoroutine(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.StopAllCoroutines()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.print(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.useGUILayout
 
 </div>
 
-<div markdown="1">
+<div>
 
 MonoBehaviour.runInEditMode
 
 </div>
 
-<div markdown="1">
+<div>
 
 Behaviour.enabled
 
 </div>
 
-<div markdown="1">
+<div>
 
 Behaviour.isActiveAndEnabled
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponent\<T\>()
+Component.GetComponent&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponent(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentInChildren(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentInChildren(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentInChildren\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentInChildren\<T\>()
+Component.GetComponentInChildren&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentInChildren&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.GetComponentsInChildren(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInChildren(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInChildren\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInChildren\<T\>(Boolean, List\<T\>)"
+Component.GetComponentsInChildren&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInChildren\<T\>()
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInChildren\<T\>(List\<T\>)"
+Component.GetComponentsInChildren&lt;T&gt;(Boolean, List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentsInChildren&lt;T&gt;()
+
+</div>
+
+<div>
+
+Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)"
+
+</div>
+
+<div>
 
 Component.GetComponentInParent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentInParent\<T\>()
+Component.GetComponentInParent&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInParent(Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.GetComponentsInParent(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInParent\<T\>(Boolean)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponentsInParent\<T\>(Boolean, List\<T\>)"
+Component.GetComponentsInParent&lt;T&gt;(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponentsInParent\<T\>()
+Component.GetComponentsInParent&lt;T&gt;(Boolean, List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponentsInParent&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.GetComponents(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponents(Type, List\<Component\>)
-
-</div>
-
-<div markdown="1">
-
-Component.GetComponents\<T\>(List\<T\>)"
+Component.GetComponents(Type, List&lt;Component&gt;)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Component.GetComponents\<T\>()
+Component.GetComponents&lt;T&gt;(List&lt;T&gt;)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Component.GetComponents&lt;T&gt;()
+
+</div>
+
+<div>
 
 Component.CompareTag(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessageUpwards(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.SendMessage(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, Object, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.BroadcastMessage(String, SendMessageOptions)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.transform
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.gameObject
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.tag
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.rigidbody
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.rigidbody2D
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.camera
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.light
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.animation
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.constantForce
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.renderer
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.audio
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiText
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.networkView
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiElement
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.guiTexture
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.collider
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.collider2D
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.hingeJoint
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.particleEmitter
 
 </div>
 
-<div markdown="1">
+<div>
 
 Component.particleSystem
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetInstanceID()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Vector3, Quaternion)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Vector3, Quaternion, Transform)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Transform)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Instantiate(Object, Transform, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T)"
-
-</div>
-
-<div markdown="1">
-
-Object.Instantiate\<T\>(T, Vector3, Quaternion)"
+Object.Instantiate&lt;T&gt;(T)"
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T, Vector3, Quaternion, Transform)"
-
-</div>
-
-<div markdown="1">
-
-Object.Instantiate\<T\>(T, Transform)"
+Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)"
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.Instantiate\<T\>(T, Transform, Boolean)"
+Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+Object.Instantiate&lt;T&gt;(T, Transform)"
+
+</div>
+
+<div>
+
+Object.Instantiate&lt;T&gt;(T, Transform, Boolean)"
+
+</div>
+
+<div>
 
 Object.Destroy(Object, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Destroy(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyImmediate(Object, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyImmediate(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectsOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DontDestroyOnLoad(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyObject(Object, Single)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.DestroyObject(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindSceneObjectsOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectsOfTypeIncludingAssets(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
-Object.FindObjectsOfType\<T\>()
-
-</div>
-
-<div markdown="1">
-
-Object.FindObjectOfType\<T\>()
+Object.FindObjectsOfType&lt;T&gt;()
 
 </div>
 
-<div markdown="1">
+<div>
+
+Object.FindObjectOfType&lt;T&gt;()
+
+</div>
+
+<div>
 
 Object.FindObjectsOfTypeAll(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.FindObjectOfType(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.name
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.hideFlags
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -725,108 +725,108 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedObject_syntax]
+##### Syntax
 
     [AddComponentMenu("MLAPI/NetworkedObject", -99)]
     public sealed class NetworkedObject : MonoBehaviour
 
 ## Fields
 
-### AlwaysReplicateAsRoot [MLAPI_NetworkedObject_AlwaysReplicateAsRoot]
+### AlwaysReplicateAsRoot
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 If true, the object will always be replicated as root on clients and the
 parent will be ignored.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public bool AlwaysReplicateAsRoot
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### CheckObjectVisibility [MLAPI_NetworkedObject_CheckObjectVisibility]
+### CheckObjectVisibility
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Delegate invoked when the MLAPI needs to know if the object should be
 visible to a client, if null it will assume true
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public NetworkedObject.VisibilityDelegate CheckObjectVisibility
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type                               | Description |
 |------------------------------------|-------------|
 | NetworkedObject.VisibilityDelegate |             |
 
-### DontDestroyWithOwner [MLAPI_NetworkedObject_DontDestroyWithOwner]
+### DontDestroyWithOwner
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to destroy this object if it's owner is destroyed. If
 false, the objects ownership will be given to the server.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public bool DontDestroyWithOwner
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IncludeTransformWhenSpawning [MLAPI_NetworkedObject_IncludeTransformWhenSpawning]
+### IncludeTransformWhenSpawning
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Delegate invoked when the MLAPI needs to know if it should include the
 transform when spawning the object, if null it will assume true
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public NetworkedObject.SpawnDelegate IncludeTransformWhenSpawning
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type                          | Description |
 |-------------------------------|-------------|
 | NetworkedObject.SpawnDelegate |             |
 
-### NetworkedInstanceId [MLAPI_NetworkedObject_NetworkedInstanceId]
+### NetworkedInstanceId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 InstanceId is the id that is unique to the object and scene for a scene
 object when UsePrefabSync is false. If UsePrefabSync is true or if it's
@@ -835,25 +835,25 @@ manually
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     [HideInInspector]
     [SerializeField]
     public ulong NetworkedInstanceId
 
-#### Field Value [field-value-4]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### PrefabHash [MLAPI_NetworkedObject_PrefabHash]
+### PrefabHash
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The Prefab unique hash. This should not be set my the user but rather
 changed by editing the PrefabHashGenerator. It has to be the same for
@@ -861,25 +861,25 @@ all instances of a prefab
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     [HideInInspector]
     [SerializeField]
     public ulong PrefabHash
 
-#### Field Value [field-value-5]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### PrefabHashGenerator [MLAPI_NetworkedObject_PrefabHashGenerator]
+### PrefabHashGenerator
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The generator used to change the PrefabHash. This should be set the same
 for all instances of a prefab. It has to be unique in relation to other
@@ -887,16 +887,16 @@ prefabs
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     [SerializeField]
     public string PrefabHashGenerator
 
-#### Field Value [field-value-6]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -904,202 +904,202 @@ prefabs
 
 ## Properties 
 
-### DestroyWithScene [MLAPI_NetworkedObject_DestroyWithScene]
+### DestroyWithScene
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets whether or not the object should be automatically removed when the
 scene is unloaded.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public bool DestroyWithScene { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsLocalPlayer [MLAPI_NetworkedObject_IsLocalPlayer]
+### IsLocalPlayer
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if the object is the the personal clients player object
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public bool IsLocalPlayer { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsOwnedByServer [MLAPI_NetworkedObject_IsOwnedByServer]
+### IsOwnedByServer
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets Whether or not the object is owned by anyone
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public bool IsOwnedByServer { get; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsOwner [MLAPI_NetworkedObject_IsOwner]
+### IsOwner
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if the object is owned by the local player or if the object is the
 local player object
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public bool IsOwner { get; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsPlayerObject [MLAPI_NetworkedObject_IsPlayerObject]
+### IsPlayerObject
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if this object is a player object
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-11]
+#### Declaration
 
     public bool IsPlayerObject { get; }
 
-#### Property Value [property-value-4]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsSceneObject [MLAPI_NetworkedObject_IsSceneObject]
+### IsSceneObject
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if the object is a SceneObject, null if it's not yet spawned but is
 a scene object.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-12]
+#### Declaration
 
     public bool? IsSceneObject { get; }
 
-#### Property Value [property-value-5]
+#### Property Value
 
-| Type                              | Description |
-|-----------------------------------|-------------|
-| System.Nullable\<System.Boolean\> |             |
+| Type                                  | Description |
+|---------------------------------------|-------------|
+| System.Nullable&lt;System.Boolean&gt; |             |
 
-### IsSpawned [MLAPI_NetworkedObject_IsSpawned]
+### IsSpawned
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets if the object has yet been spawned across the network
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     public bool IsSpawned { get; }
 
-#### Property Value [property-value-6]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### NetworkId [MLAPI_NetworkedObject_NetworkId]
+### NetworkId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the unique ID of this object that is synced across the network
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-14]
+#### Declaration
 
     public ulong NetworkId { get; }
 
-#### Property Value [property-value-7]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### OwnerClientId [MLAPI_NetworkedObject_OwnerClientId]
+### OwnerClientId
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the clientId of the owner of this NetworkedObject
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-15]
+#### Declaration
 
     public ulong OwnerClientId { get; }
 
-#### Property Value [property-value-8]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -1107,229 +1107,229 @@ Gets the clientId of the owner of this NetworkedObject
 
 ## Methods 
 
-### ChangeOwnership(UInt64) [MLAPI_NetworkedObject_ChangeOwnership_System_UInt64_]
+### ChangeOwnership(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Changes the owner of the object. Can only be called from server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-16]
+#### Declaration
 
     public void ChangeOwnership(ulong newOwnerClientId)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name             | Description            |
 |---------------|------------------|------------------------|
 | System.UInt64 | newOwnerClientId | The new owner clientId |
 
-### GetObservers() [MLAPI_NetworkedObject_GetObservers]
+### GetObservers()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns Observers enumerator
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     public HashSet<ulong>.Enumerator GetObservers()
 
-#### Returns [returns]
+#### Returns
 
-| Type                                              | Description          |
-|---------------------------------------------------|----------------------|
-| System.Collections.Generic.HashSet.Enumerator\<\> | Observers enumerator |
+| Type                                                  | Description          |
+|-------------------------------------------------------|----------------------|
+| System.Collections.Generic.HashSet.Enumerator&lt;&gt; | Observers enumerator |
 
-### IsNetworkVisibleTo(UInt64) [MLAPI_NetworkedObject_IsNetworkVisibleTo_System_UInt64_]
+### IsNetworkVisibleTo(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not this object is visible to a specific client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-18]
+#### Declaration
 
     public bool IsNetworkVisibleTo(ulong clientId)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name     | Description                |
 |---------------|----------|----------------------------|
 | System.UInt64 | clientId | The clientId of the client |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type           | Description                               |
 |----------------|-------------------------------------------|
 | System.Boolean | True if the client knows about the object |
 
-### NetworkHide(List\<NetworkedObject\>, UInt64) [MLAPI_NetworkedObject_NetworkHide_System_Collections_Generic_List_MLAPI_NetworkedObject__System_UInt64_]
+### NetworkHide(List&lt;NetworkedObject&gt;, UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Hides a list of objects from a client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-19]
+#### Declaration
 
     public static void NetworkHide(List<NetworkedObject> networkedObjects, ulong clientId)
 
-#### Parameters [parameters-2]
+#### Parameters
 
-| Type                                               | Name             | Description                         |
-|----------------------------------------------------|------------------|-------------------------------------|
-| System.Collections.Generic.List\<NetworkedObject\> | networkedObjects | The objects to hide                 |
-| System.UInt64                                      | clientId         | The client to hide the objects from |
+| Type                                                   | Name             | Description                         |
+|--------------------------------------------------------|------------------|-------------------------------------|
+| System.Collections.Generic.List&lt;NetworkedObject&gt; | networkedObjects | The objects to hide                 |
+| System.UInt64                                          | clientId         | The client to hide the objects from |
 
-### NetworkHide(UInt64) [MLAPI_NetworkedObject_NetworkHide_System_UInt64_]
+### NetworkHide(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Hides a object from a specific client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-20]
+#### Declaration
 
     public void NetworkHide(ulong clientId)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type          | Name     | Description                       |
 |---------------|----------|-----------------------------------|
 | System.UInt64 | clientId | The client to hide the object for |
 
-### NetworkShow(List\<NetworkedObject\>, UInt64, Stream) [MLAPI_NetworkedObject_NetworkShow_System_Collections_Generic_List_MLAPI_NetworkedObject__System_UInt64_System_IO_Stream_]
+### NetworkShow(List&lt;NetworkedObject&gt;, UInt64, Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Shows a list of previously hidden objects to a client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-21]
+#### Declaration
 
     public static void NetworkShow(List<NetworkedObject> networkedObjects, ulong clientId, Stream payload = null)
 
-#### Parameters [parameters-4]
+#### Parameters
 
-| Type                                               | Name             | Description                                       |
-|----------------------------------------------------|------------------|---------------------------------------------------|
-| System.Collections.Generic.List\<NetworkedObject\> | networkedObjects | The objects to show                               |
-| System.UInt64                                      | clientId         | The client to show the objects to                 |
-| System.IO.Stream                                   | payload          | An optional payload to send as part of the spawns |
+| Type                                                   | Name             | Description                                       |
+|--------------------------------------------------------|------------------|---------------------------------------------------|
+| System.Collections.Generic.List&lt;NetworkedObject&gt; | networkedObjects | The objects to show                               |
+| System.UInt64                                          | clientId         | The client to show the objects to                 |
+| System.IO.Stream                                       | payload          | An optional payload to send as part of the spawns |
 
-### NetworkShow(UInt64, Stream) [MLAPI_NetworkedObject_NetworkShow_System_UInt64_System_IO_Stream_]
+### NetworkShow(UInt64, Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Shows a previously hidden object to a client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-22]
+#### Declaration
 
     public void NetworkShow(ulong clientId, Stream payload = null)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type             | Name     | Description                                      |
 |------------------|----------|--------------------------------------------------|
 | System.UInt64    | clientId | The client to show the object to                 |
 | System.IO.Stream | payload  | An optional payload to send as part of the spawn |
 
-### RemoveOwnership() [MLAPI_NetworkedObject_RemoveOwnership]
+### RemoveOwnership()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Removes all ownership of an object from any client. Can only be called
 from server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-23]
+#### Declaration
 
     public void RemoveOwnership()
 
-### Spawn(Stream, Boolean) [MLAPI_NetworkedObject_Spawn_System_IO_Stream_System_Boolean_]
+### Spawn(Stream, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Spawns this GameObject across the network. Can only be called from the
 Server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-24]
+#### Declaration
 
     public void Spawn(Stream spawnPayload = null, bool destroyWithScene = false)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type             | Name             | Description                                             |
 |------------------|------------------|---------------------------------------------------------|
 | System.IO.Stream | spawnPayload     | The writer containing the spawn payload                 |
 | System.Boolean   | destroyWithScene | Should the object be destroyd when the scene is changed |
 
-### SpawnAsPlayerObject(UInt64, Stream, Boolean) [MLAPI_NetworkedObject_SpawnAsPlayerObject_System_UInt64_System_IO_Stream_System_Boolean_]
+### SpawnAsPlayerObject(UInt64, Stream, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Spawns an object across the network and makes it the player object for
 the given client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-25]
+#### Declaration
 
     public void SpawnAsPlayerObject(ulong clientId, Stream spawnPayload = null, bool destroyWithScene = false)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type             | Name             | Description                                             |
 |------------------|------------------|---------------------------------------------------------|
@@ -1337,24 +1337,24 @@ the given client
 | System.IO.Stream | spawnPayload     | The writer containing the spawn payload                 |
 | System.Boolean   | destroyWithScene | Should the object be destroyd when the scene is changed |
 
-### SpawnWithOwnership(UInt64, Stream, Boolean) [MLAPI_NetworkedObject_SpawnWithOwnership_System_UInt64_System_IO_Stream_System_Boolean_]
+### SpawnWithOwnership(UInt64, Stream, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Spawns an object across the network with a given owner. Can only be
 called from server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-26]
+#### Declaration
 
     public void SpawnWithOwnership(ulong clientId, Stream spawnPayload = null, bool destroyWithScene = false)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type             | Name             | Description                                             |
 |------------------|------------------|---------------------------------------------------------|
@@ -1362,19 +1362,19 @@ called from server
 | System.IO.Stream | spawnPayload     | The writer containing the spawn payload                 |
 | System.Boolean   | destroyWithScene | Should the object be destroyd when the scene is changed |
 
-### UnSpawn() [MLAPI_NetworkedObject_UnSpawn]
+### UnSpawn()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Unspawns this GameObject and destroys it for other clients. This should
 be used if the object should be kept on the server
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-27]
+#### Declaration
 
     public void UnSpawn()

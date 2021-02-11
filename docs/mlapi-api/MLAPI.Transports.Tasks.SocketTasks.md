@@ -3,27 +3,27 @@ id: MLAPI.Transports.Tasks.SocketTasks
 title: MLAPI.Transports.Tasks.SocketTasks  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Represents one or more socket tasks.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,117 +83,117 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_Tasks_SocketTasks_syntax]
+##### Syntax
 
     public class SocketTasks
 
 ## Properties 
 
-### AnyDone [MLAPI_Transports_Tasks_SocketTasks_AnyDone]
+### AnyDone
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a value indicating whether any tasks are done.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public bool AnyDone { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description                             |
 |----------------|-----------------------------------------|
 | System.Boolean | `true` if any done; otherwise, `false`. |
 
-### AnySuccess [MLAPI_Transports_Tasks_SocketTasks_AnySuccess]
+### AnySuccess
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a value indicating whether any tasks were successful.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public bool AnySuccess { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type           | Description                                |
 |----------------|--------------------------------------------|
 | System.Boolean | `true` if any success; otherwise, `false`. |
 
-### IsDone [MLAPI_Transports_Tasks_SocketTasks_IsDone]
+### IsDone
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a value indicating whether this all tasks is done.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public bool IsDone { get; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type           | Description                            |
 |----------------|----------------------------------------|
 | System.Boolean | `true` if is done; otherwise, `false`. |
 
-### Success [MLAPI_Transports_Tasks_SocketTasks_Success]
+### Success
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a value indicating whether all tasks were sucessful.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public bool Success { get; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type           | Description                            |
 |----------------|----------------------------------------|
 | System.Boolean | `true` if success; otherwise, `false`. |
 
-### Tasks [MLAPI_Transports_Tasks_SocketTasks_Tasks]
+### Tasks
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets the underlying SocketTasks.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public SocketTask[] Tasks { get; set; }
 
-#### Property Value [property-value-4]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|

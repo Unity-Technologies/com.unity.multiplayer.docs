@@ -3,45 +3,45 @@ id: MLAPI.Serialization.BitStream
 title: MLAPI.Serialization.BitStream  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A stream that can be used at the bit level
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level3" markdown="1">
+<div class="level3">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level4" markdown="1">
+<div class="level4">
 
 System.Dynamic.ExpandoObject
 
@@ -49,11 +49,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 
@@ -61,143 +61,143 @@ System.IDisposable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Stream.Null
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.BeginRead(Byte\[\], Int32, Int32, AsyncCallback, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.BeginWrite(Byte\[\], Int32, Int32, AsyncCallback, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Close()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.CreateWaitHandle()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Dispose()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Dispose(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.EndRead(IAsyncResult)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.EndWrite(IAsyncResult)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.Synchronized(Stream)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.CanTimeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.ReadTimeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 Stream.WriteTimeout
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.CreateObjRef(Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.GetLifetimeService()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.InitializeLifetimeService()
 
 </div>
 
-<div markdown="1">
+<div>
 
 MarshalByRefObject.MemberwiseClone(Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -209,15 +209,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_BitStream_syntax]
+##### Syntax
 
     public class BitStream : Stream, IDisposable
 
 ## Constructors 
 
-### BitStream() [MLAPI_Serialization_BitStream__ctor]
+### BitStream()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A stream that supports writing data smaller than a single byte. This
 stream also has a built-in compression algorithm that can (optionally)
@@ -225,17 +225,17 @@ be used to write compressed data.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public BitStream()
 
-### BitStream(Byte\[\]) [MLAPI_Serialization_BitStream__ctor_System_Byte___]
+### BitStream(Byte\[\])
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A stream that supports writing data smaller than a single byte. This
 stream also has a built-in compression algorithm that can (optionally)
@@ -244,23 +244,23 @@ buffer, the stream will not grow!
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public BitStream(byte[] target)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type            | Name   | Description                      |
 |-----------------|--------|----------------------------------|
 | System.Byte\[\] | target | Pre-allocated buffer to write to |
 
-### BitStream(Int32) [MLAPI_Serialization_BitStream__ctor_System_Int32_]
+### BitStream(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A stream that supports writing data smaller than a single byte. This
 stream also has a built-in compression algorithm that can (optionally)
@@ -268,23 +268,23 @@ be used to write compressed data.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public BitStream(int capacity)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type         | Name     | Description |
 |--------------|----------|-------------|
 | System.Int32 | capacity |             |
 
-### BitStream(Int32, Single) [MLAPI_Serialization_BitStream__ctor_System_Int32_System_Single_]
+### BitStream(Int32, Single)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A stream that supports writing data smaller than a single byte. This
 stream also has a built-in compression algorithm that can (optionally)
@@ -292,24 +292,24 @@ be used to write compressed data.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public BitStream(int capacity, float growthFactor)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type          | Name         | Description                                        |
 |---------------|--------------|----------------------------------------------------|
 | System.Int32  | capacity     | Initial capacity of buffer in bytes.               |
 | System.Single | growthFactor | Factor by which buffer should grow when necessary. |
 
-### BitStream(Single) [MLAPI_Serialization_BitStream__ctor_System_Single_]
+### BitStream(Single)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A stream that supports writing data smaller than a single byte. This
 stream also has a built-in compression algorithm that can (optionally)
@@ -317,15 +317,15 @@ be used to write compressed data.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public BitStream(float growthFactor)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type          | Name         | Description                                        |
 |---------------|--------------|----------------------------------------------------|
@@ -333,309 +333,309 @@ be used to write compressed data.
 
 ## Properties 
 
-### BitAligned [MLAPI_Serialization_BitStream_BitAligned]
+### BitAligned
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not the current BitPosition is evenly divisible by 8. I.e.
 whether or not the BitPosition is at a byte boundary.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public bool BitAligned { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### BitLength [MLAPI_Serialization_BitStream_BitLength]
+### BitLength
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Length of data (in bits) that is considered to be written to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public ulong BitLength { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### BitPosition [MLAPI_Serialization_BitStream_BitPosition]
+### BitPosition
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Bit offset into the buffer that new data will be written to.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public ulong BitPosition { get; set; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### CanRead [MLAPI_Serialization_BitStream_CanRead]
+### CanRead
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not stream supports reading. (Always true)
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public override bool CanRead { get; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides [overrides]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.CanRead
 
 </div>
 
-### CanSeek [MLAPI_Serialization_BitStream_CanSeek]
+### CanSeek
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not seeking is supported by this stream. (Always true)
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     public override bool CanSeek { get; }
 
-#### Property Value [property-value-4]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides [overrides-1]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.CanSeek
 
 </div>
 
-### CanWrite [MLAPI_Serialization_BitStream_CanWrite]
+### CanWrite
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not this stream can accept new data. NOTE: this will return
 true even if only fewer than 8 bits can be written!
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     public override bool CanWrite { get; }
 
-#### Property Value [property-value-5]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides [overrides-2]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.CanWrite
 
 </div>
 
-### Capacity [MLAPI_Serialization_BitStream_Capacity]
+### Capacity
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Current buffer size. The buffer will not be resized (if possible) until
 Position is equal to Capacity and an attempt to write data is made.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-11]
+#### Declaration
 
     public long Capacity { get; set; }
 
-#### Property Value [property-value-6]
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### GrowthFactor [MLAPI_Serialization_BitStream_GrowthFactor]
+### GrowthFactor
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Factor by which buffer should grow when necessary.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-12]
+#### Declaration
 
     public float GrowthFactor { get; set; }
 
-#### Property Value [property-value-7]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### HasDataToRead [MLAPI_Serialization_BitStream_HasDataToRead]
+### HasDataToRead
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not or there is any data to be read from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     public bool HasDataToRead { get; }
 
-#### Property Value [property-value-8]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Length [MLAPI_Serialization_BitStream_Length]
+### Length
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The current length of data considered to be "written" to the buffer.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-14]
+#### Declaration
 
     public override long Length { get; }
 
-#### Property Value [property-value-9]
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-#### Overrides [overrides-3]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.Length
 
 </div>
 
-### Position [MLAPI_Serialization_BitStream_Position]
+### Position
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The index that will be written to when any call to write data is made to
 this stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-15]
+#### Declaration
 
     public override long Position { get; set; }
 
-#### Property Value [property-value-10]
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-#### Overrides [overrides-4]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.Position
 
 </div>
 
-### Resizable [MLAPI_Serialization_BitStream_Resizable]
+### Resizable
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not the stream will grow the buffer to accomodate more data.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-16]
+#### Declaration
 
     public bool Resizable { get; }
 
-#### Property Value [property-value-11]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
@@ -643,23 +643,23 @@ Whether or not the stream will grow the buffer to accomodate more data.
 
 ## Methods 
 
-### CopyFrom(BitStream, Int32, Boolean) [MLAPI_Serialization_BitStream_CopyFrom_MLAPI_Serialization_BitStream_System_Int32_System_Boolean_]
+### CopyFrom(BitStream, Int32, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Copys the bits from the provided BitStream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     public void CopyFrom(BitStream stream, int dataCount, bool copyBits)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type           | Name      | Description                                                        |
 |----------------|-----------|--------------------------------------------------------------------|
@@ -667,178 +667,178 @@ Copys the bits from the provided BitStream
 | System.Int32   | dataCount | The amount of data evel                                            |
 | System.Boolean | copyBits  | Whether or not to copy at the bit level rather than the byte level |
 
-### CopyFrom(Stream, Int32) [MLAPI_Serialization_BitStream_CopyFrom_System_IO_Stream_System_Int32_]
+### CopyFrom(Stream, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Copy data from another stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-18]
+#### Declaration
 
     public void CopyFrom(Stream s, int count = -1)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type             | Name  | Description                                                                          |
 |------------------|-------|--------------------------------------------------------------------------------------|
 | System.IO.Stream | s     | Stream to copy from                                                                  |
 | System.Int32     | count | How many bytes to read. Set to value less than one to read until ReadByte returns -1 |
 
-### CopyTo(Stream, Int32) [MLAPI_Serialization_BitStream_CopyTo_System_IO_Stream_System_Int32_]
+### CopyTo(Stream, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Copies internal buffer to stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-19]
+#### Declaration
 
     public void CopyTo(Stream stream, int count = -1)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type             | Name   | Description                                                                             |
 |------------------|--------|-----------------------------------------------------------------------------------------|
 | System.IO.Stream | stream | The stream to copy to                                                                   |
 | System.Int32     | count  | The maximum amount of bytes to copy. Set to value less than one to copy the full length |
 
-### CopyUnreadFrom(Stream, Int32) [MLAPI_Serialization_BitStream_CopyUnreadFrom_System_IO_Stream_System_Int32_]
+### CopyUnreadFrom(Stream, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Copies urnead bytes from the source stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-20]
+#### Declaration
 
     public void CopyUnreadFrom(Stream s, int count = -1)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type             | Name  | Description                     |
 |------------------|-------|---------------------------------|
 | System.IO.Stream | s     | The source stream to copy from  |
 | System.Int32     | count | The max amount of bytes to copy |
 
-### Flush() [MLAPI_Serialization_BitStream_Flush]
+### Flush()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Flush stream. This does nothing since data is written directly to a byte
 buffer.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-21]
+#### Declaration
 
     public override void Flush()
 
-#### Overrides [overrides-5]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.Flush()
 
 </div>
 
-### GetBuffer() [MLAPI_Serialization_BitStream_GetBuffer]
+### GetBuffer()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Get the internal buffer being written to by this stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-22]
+#### Declaration
 
     public byte[] GetBuffer()
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | System.Byte\[\] |             |
 
-### PadStream() [MLAPI_Serialization_BitStream_PadStream]
+### PadStream()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes zeros to fill the last byte
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-23]
+#### Declaration
 
     public void PadStream()
 
-### PeekByte() [MLAPI_Serialization_BitStream_PeekByte]
+### PeekByte()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Peeks a byte without advancing the position
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-24]
+#### Declaration
 
     public int PeekByte()
 
-#### Returns [returns-1]
+#### Returns
 
 | Type         | Description     |
 |--------------|-----------------|
 | System.Int32 | The peeked byte |
 
-### Read(Byte\[\], Int32, Int32) [MLAPI_Serialization_BitStream_Read_System_Byte___System_Int32_System_Int32_]
+### Read(Byte\[\], Int32, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a subset of the stream buffer and write the contents to the
 supplied buffer.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-25]
+#### Declaration
 
     public override int Read(byte[] buffer, int offset, int count)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type            | Name   | Description                              |
 |-----------------|--------|------------------------------------------|
@@ -846,247 +846,247 @@ supplied buffer.
 | System.Int32    | offset | Offset into the buffer to write data to. |
 | System.Int32    | count  | How many bytes to attempt to read.       |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type         | Description           |
 |--------------|-----------------------|
 | System.Int32 | Amount of bytes read. |
 
-#### Overrides [overrides-6]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.Read(System.Byte\[\], System.Int32, System.Int32)
 
 </div>
 
-### ReadBit() [MLAPI_Serialization_BitStream_ReadBit]
+### ReadBit()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a single bit from the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-26]
+#### Declaration
 
     public bool ReadBit()
 
-#### Returns [returns-3]
+#### Returns
 
 | Type           | Description                                                   |
 |----------------|---------------------------------------------------------------|
 | System.Boolean | A bit in bool format. (True represents 1, False represents 0) |
 
-### ReadByte() [MLAPI_Serialization_BitStream_ReadByte]
+### ReadByte()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Read a byte from the buffer. This takes into account possible byte
 misalignment.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-27]
+#### Declaration
 
     public override int ReadByte()
 
-#### Returns [returns-4]
+#### Returns
 
 | Type         | Description                                             |
 |--------------|---------------------------------------------------------|
 | System.Int32 | A byte from the buffer or, if a byte can't be read, -1. |
 
-#### Overrides [overrides-7]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.ReadByte()
 
 </div>
 
-### Seek(Int64, SeekOrigin) [MLAPI_Serialization_BitStream_Seek_System_Int64_System_IO_SeekOrigin_]
+### Seek(Int64, SeekOrigin)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Set position in stream to read from/write to.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-28]
+#### Declaration
 
     public override long Seek(long offset, SeekOrigin origin)
 
-#### Parameters [parameters-9]
+#### Parameters
 
 | Type                 | Name   | Description                  |
 |----------------------|--------|------------------------------|
 | System.Int64         | offset | Offset from position origin. |
 | System.IO.SeekOrigin | origin | How to calculate offset.     |
 
-#### Returns [returns-5]
+#### Returns
 
 | Type         | Description                                                  |
 |--------------|--------------------------------------------------------------|
 | System.Int64 | The new position in the buffer that data will be written to. |
 
-#### Overrides [overrides-8]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.Seek(System.Int64, System.IO.SeekOrigin)
 
 </div>
 
-### SetLength(Int64) [MLAPI_Serialization_BitStream_SetLength_System_Int64_]
+### SetLength(Int64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Set length of data considered to be "written" to the stream.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-29]
+#### Declaration
 
     public override void SetLength(long value)
 
-#### Parameters [parameters-10]
+#### Parameters
 
 | Type         | Name  | Description                     |
 |--------------|-------|---------------------------------|
 | System.Int64 | value | New length of the written data. |
 
-#### Overrides [overrides-9]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.SetLength(System.Int64)
 
 </div>
 
-### SkipPadBits() [MLAPI_Serialization_BitStream_SkipPadBits]
+### SkipPadBits()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads zeros until the the stream is byte aligned
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-30]
+#### Declaration
 
     public void SkipPadBits()
 
-### ToArray() [MLAPI_Serialization_BitStream_ToArray]
+### ToArray()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a copy of the internal buffer. This only contains the used bytes
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-31]
+#### Declaration
 
     public byte[] ToArray()
 
-#### Returns [returns-6]
+#### Returns
 
 | Type            | Description                                 |
 |-----------------|---------------------------------------------|
 | System.Byte\[\] | A copy of used bytes in the internal buffer |
 
-### ToString() [MLAPI_Serialization_BitStream_ToString]
+### ToString()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns hex encoded version of the buffer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-32]
+#### Declaration
 
     public override string ToString()
 
-#### Returns [returns-7]
+#### Returns
 
 | Type          | Description                       |
 |---------------|-----------------------------------|
 | System.String | Hex encoded version of the buffer |
 
-#### Overrides [overrides-10]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.Object.ToString()
 
 </div>
 
-### Write(Byte\[\]) [MLAPI_Serialization_BitStream_Write_System_Byte___]
+### Write(Byte\[\])
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write data from the given buffer to the internal stream buffer.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-33]
+#### Declaration
 
     public void Write(byte[] buffer)
 
-#### Parameters [parameters-11]
+#### Parameters
 
 | Type            | Name   | Description           |
 |-----------------|--------|-----------------------|
 | System.Byte\[\] | buffer | Buffer to write from. |
 
-### Write(Byte\[\], Int32, Int32) [MLAPI_Serialization_BitStream_Write_System_Byte___System_Int32_System_Int32_]
+### Write(Byte\[\], Int32, Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write data from the given buffer to the internal stream buffer.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-34]
+#### Declaration
 
     public override void Write(byte[] buffer, int offset, int count)
 
-#### Parameters [parameters-12]
+#### Parameters
 
 | Type            | Name   | Description                                                      |
 |-----------------|--------|------------------------------------------------------------------|
@@ -1094,69 +1094,69 @@ Write data from the given buffer to the internal stream buffer.
 | System.Int32    | offset | Offset in given buffer to start reading from.                    |
 | System.Int32    | count  | Amount of bytes to read copy from given buffer to stream buffer. |
 
-#### Overrides [overrides-11]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.Write(System.Byte\[\], System.Int32, System.Int32)
 
 </div>
 
-### WriteBit(Boolean) [MLAPI_Serialization_BitStream_WriteBit_System_Boolean_]
+### WriteBit(Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write a single bit to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-35]
+#### Declaration
 
     public void WriteBit(bool bit)
 
-#### Parameters [parameters-13]
+#### Parameters
 
 | Type           | Name | Description                                             |
 |----------------|------|---------------------------------------------------------|
 | System.Boolean | bit  | Value of the bit. True represents 1, False represents 0 |
 
-### WriteByte(Byte) [MLAPI_Serialization_BitStream_WriteByte_System_Byte_]
+### WriteByte(Byte)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Write byte value to the internal stream buffer.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-36]
+#### Declaration
 
     public override void WriteByte(byte value)
 
-#### Parameters [parameters-14]
+#### Parameters
 
 | Type        | Name  | Description              |
 |-------------|-------|--------------------------|
 | System.Byte | value | The byte value to write. |
 
-#### Overrides [overrides-12]
+#### Overrides
 
-<div markdown="1">
+<div>
 
 System.IO.Stream.WriteByte(System.Byte)
 
 </div>
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.IDisposable
 

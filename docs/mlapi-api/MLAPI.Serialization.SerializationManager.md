@@ -3,27 +3,27 @@ id: MLAPI.Serialization.SerializationManager
 title: MLAPI.Serialization.SerializationManager  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Helper class to manage the MLAPI serialization.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,43 +83,43 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_SerializationManager_syntax]
+##### Syntax
 
     public static class SerializationManager
 
 ## Methods 
 
-### IsTypeSupported(Type) [MLAPI_Serialization_SerializationManager_IsTypeSupported_System_Type_]
+### IsTypeSupported(Type)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns if a type is supported for serialization
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static bool IsTypeSupported(Type type)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type        | Name | Description       |
 |-------------|------|-------------------|
 | System.Type | type | The type to check |
 
-#### Returns [returns]
+#### Returns
 
 | Type           | Description                          |
 |----------------|--------------------------------------|
 | System.Boolean | Whether or not the type is supported |
 
-### RegisterSerializationHandlers\<T\>(SerializationManager.CustomSerializationDelegate\<T\>, SerializationManager.CustomDeserializationDelegate\<T\>) [MLAPI_Serialization_SerializationManager_RegisterSerializationHandlers__1_MLAPI_Serialization_SerializationManager_CustomSerializationDelegate___0__MLAPI_Serialization_SerializationManager_CustomDeserializationDelegate___0__]
+### RegisterSerializationHandlers&lt;T&gt;(SerializationManager.CustomSerializationDelegate&lt;T&gt;, SerializationManager.CustomDeserializationDelegate&lt;T&gt;)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Registers a custom serialization and deserialization pair for a object.
 This is useful for writing objects that are behind the third party wall.
@@ -127,30 +127,30 @@ Such as .NET types.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static void RegisterSerializationHandlers<T>(SerializationManager.CustomSerializationDelegate<T> onSerialize, SerializationManager.CustomDeserializationDelegate<T> onDeserialize)
 
-#### Parameters [parameters-1]
+#### Parameters
 
-| Type                                                    | Name          | Description                                     |
-|---------------------------------------------------------|---------------|-------------------------------------------------|
-| SerializationManager.CustomSerializationDelegate\<T\>   | onSerialize   | The delegate to invoke to serialize the type.   |
-| SerializationManager.CustomDeserializationDelegate\<T\> | onDeserialize | The delegate to invoke to deserialize the type. |
+| Type                                                        | Name          | Description                                     |
+|-------------------------------------------------------------|---------------|-------------------------------------------------|
+| SerializationManager.CustomSerializationDelegate&lt;T&gt;   | onSerialize   | The delegate to invoke to serialize the type.   |
+| SerializationManager.CustomDeserializationDelegate&lt;T&gt; | onDeserialize | The delegate to invoke to deserialize the type. |
 
-#### Type Parameters [type-parameters]
+#### Type Parameters
 
 | Name | Description           |
 |------|-----------------------|
 | T    | The type to register. |
 
-### RemoveSerializationHandlers\<T\>() [MLAPI_Serialization_SerializationManager_RemoveSerializationHandlers__1]
+### RemoveSerializationHandlers&lt;T&gt;()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Removes a serialization handler that was registered previously for a
 specific type. This will remove both the serialization and
@@ -158,21 +158,21 @@ deserialization handler.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public static bool RemoveSerializationHandlers<T>()
 
-#### Returns [returns-1]
+#### Returns
 
 | Type           | Description                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------|
 | System.Boolean | Whether or not either the serialization or deserialization handlers for the type was removed. |
 
-#### Type Parameters [type-parameters-1]
+#### Type Parameters
 
 | Name | Description                                        |
 |------|----------------------------------------------------|

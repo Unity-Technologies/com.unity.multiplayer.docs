@@ -3,51 +3,51 @@ id: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1
 title: MLAPI.NetworkedVar.Collections.NetworkedListEvent-1  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Struct containing event information about changes to a NetworkedList.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 ValueType.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 ValueType.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 ValueType.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -59,11 +59,11 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_Collections_NetworkedListEvent_1_syntax]
+##### Syntax
 
     public struct NetworkedListEvent<T>
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description                                   |
 |------|-----------------------------------------------|
@@ -71,67 +71,67 @@ Object.ReferenceEquals(Object, Object)
 
 ## Fields
 
-### eventType [MLAPI_NetworkedVar_Collections_NetworkedListEvent_1_eventType]
+### eventType
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Enum representing the operation made to the list.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public NetworkedListEvent<T>.EventType eventType
 
-#### Field Value [field-value]
+#### Field Value
 
-| Type                             | Description |
-|----------------------------------|-------------|
-| NetworkedListEvent.EventType\<\> |             |
+| Type                                 | Description |
+|--------------------------------------|-------------|
+| NetworkedListEvent.EventType&lt;&gt; |             |
 
-### index [MLAPI_NetworkedVar_Collections_NetworkedListEvent_1_index]
+### index
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 the index changed, added or removed if available
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public int index
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### value [MLAPI_NetworkedVar_Collections_NetworkedListEvent_1_value]
+### value
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The value changed, added or removed if available.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public T value
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type | Description |
 |------|-------------|

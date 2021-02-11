@@ -3,13 +3,13 @@ id: MLAPI.Security.SecuritySendFlags
 title: MLAPI.Security.SecuritySendFlags  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The security operations of a payload
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,7 +17,7 @@ The security operations of a payload
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Security_SecuritySendFlags_syntax]
+##### Syntax
 
     [Flags]
     public enum SecuritySendFlags

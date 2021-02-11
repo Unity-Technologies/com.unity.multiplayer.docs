@@ -3,34 +3,34 @@ id: MLAPI.NetworkedVar.SyncedVarAttribute
 title: MLAPI.NetworkedVar.SyncedVarAttribute  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 SyncedVar attribute. Use this to automatically syncronize fields from
 the server to clients.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -38,11 +38,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.Runtime.InteropServices.\_Attribute
 
@@ -50,283 +50,283 @@ System.Runtime.InteropServices.\_Attribute
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Attribute.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(Assembly, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(Assembly, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(MemberInfo, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(MemberInfo, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(Module, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(Module, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(ParameterInfo, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttribute(ParameterInfo, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Assembly)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Assembly, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Assembly, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Assembly, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(MemberInfo)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(MemberInfo, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(MemberInfo, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(MemberInfo, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Module)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Module, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Module, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(Module, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(ParameterInfo)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(ParameterInfo, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(ParameterInfo, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetCustomAttributes(ParameterInfo, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefaultAttribute()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(Assembly, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(Assembly, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(MemberInfo, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(MemberInfo, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(Module, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(Module, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(ParameterInfo, Type)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.IsDefined(ParameterInfo, Type, Boolean)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.Match(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.\_Attribute.GetIDsOfNames(Guid, IntPtr, UInt32, UInt32,
 IntPtr)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.\_Attribute.GetTypeInfo(UInt32, UInt32, IntPtr)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.\_Attribute.GetTypeInfoCount(UInt32)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.\_Attribute.Invoke(UInt32, Guid, UInt32, Int16, IntPtr,
 IntPtr, IntPtr, IntPtr)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Attribute.TypeId
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -338,38 +338,38 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_SyncedVarAttribute_syntax]
+##### Syntax
 
     [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
     public class SyncedVarAttribute : Attribute, _Attribute
 
 ## Fields
 
-### Channel [MLAPI_NetworkedVar_SyncedVarAttribute_Channel]
+### Channel
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The channel to send changes on.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public string Channel
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### SendTickrate [MLAPI_NetworkedVar_SyncedVarAttribute_SendTickrate]
+### SendTickrate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The maximum times per second this var will be synced. A value of 0 will
 cause the variable to sync as soon as possible after being changed. A
@@ -378,23 +378,23 @@ spawn and not update again.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public float SendTickrate
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.Runtime.InteropServices.\_Attribute
 
