@@ -24,7 +24,8 @@
     "mermaid": "^8.9.0",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-iframe": "^1.8.0"
   },
   "browserslist": {
     "production": [

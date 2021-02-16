@@ -44,21 +44,25 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'about-mlapi',
-          label: 'MLAPI',
+          label: 'Guides',
           position: 'left',
+          items: [
+            {
+              type: 'doc',
+              to: 'docs/getting-started/about-mlapi',
+              label: 'MLAPI',
+            },
+            {
+              type: 'doc',
+              to: 'docs/transport/introduction',
+              label: 'Transport',
+            },
+          ]
         },
         {
           type: 'doc',
           docId: 'mlapi-api/introduction',
           label: 'API',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'transport/introduction',
-          label: 'Transport',
           position: 'left',
         },
         {
@@ -79,6 +83,7 @@ module.exports = {
           label: 'Release Notes',
           position: 'left',
         },
+        {to: 'blog', label: 'Blog', position: 'right'},
         { 
           className: 'navbar-github-link',
           position: 'right',
@@ -108,6 +113,11 @@ module.exports = {
           //label: 'Community',
           className: 'navbar-grid-menu',
           items: [
+            {
+              type: 'doc',
+              to: 'docs/roadmap',
+              label: 'Multiplayer Roadmap',
+            },
             { 
               label: 'Discord',
               href: 'http://discord.mlapi.network/',
@@ -172,7 +182,12 @@ module.exports = {
           title: 'Contact',
           items: [
             {
-              label: 'Blog',
+              type: 'doc',
+              to: 'docs/roadmap',
+              label: 'Multiplayer Roadmap',
+            },
+            {
+              label: 'Unity Blog',
               href: 'https://blogs.unity3d.com/',
             },
             {

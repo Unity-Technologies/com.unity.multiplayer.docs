@@ -360,9 +360,10 @@ html[data-theme='dark'] .node polygon {
   opacity: .8 !important;
 }
 
-.medium-zoom-image {
+img {
   max-width: 600px;
 }
+//.medium-zoom-image
 
 // FOOTER
 
@@ -636,4 +637,16 @@ span.languagekeyword{
   margin-top: 5px;
   margin-bottom: 5px;
 }
-// General Styles
+
+// Blog Styles
+.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-BlogPostItem- {
+  font-size: 2rem;
+}
+
+.avatar__intro {
+  border-bottom: 1px solid #757575;
+  color: #757575;
+  .avatar__name, a {
+    color: #757575;
+  }
+}
