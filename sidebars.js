@@ -13,7 +13,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "about-mlapi"
+        "id": "getting-started/about-mlapi"
       },
       {
         "type": "doc",
