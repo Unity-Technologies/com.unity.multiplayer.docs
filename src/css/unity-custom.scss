@@ -235,6 +235,40 @@ html[data-theme='dark'] .admonition-contribution {
   color: #ffffff;
 }
 
+// FUNFACT
+html[data-theme='light'] .admonition-funfact {
+  background-color: transparent;
+  border: 1px solid #40817a;
+  border-left: 6px solid #40817a;
+  color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: #40817a; 
+}
+
+html[data-theme='dark'] .admonition-funfact {
+  background-color: transparent;
+  border: 1px solid #40817a;
+  border-left: 6px solid #40817a;
+  color: #ffffff;
+  --ra-admonition-icon-color: #40817a; 
+}
+
+// BESTPRACTICE
+html[data-theme='light'] .admonition-bestpractice {
+  background-color: transparent;
+  border: 1px solid #e5ab09;
+  border-left: 6px solid #e5ab09;
+  color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: #e5ab09; 
+}
+
+html[data-theme='dark'] .admonition-bestpractice {
+  background-color: transparent;
+  border: 1px solid #e5ab09;
+  border-left: 6px solid #e5ab09;
+  color: #ffffff;
+  --ra-admonition-icon-color: #e5ab09; 
+}
+
 .alert a {
   color: var(--ifm-link-color);
   text-decoration: var(--ifm-link-decoration);
@@ -292,7 +326,7 @@ html[data-theme='dark'] .admonition-contribution {
 }
 
 // Responsive
-@media screen and (max-device-width: 480px) { 
+@media screen and (max-device-width: 996px) { 
   .navbar-github-link, .navbar-github-link:before {
     content: "GitHub";
   }
@@ -303,7 +337,31 @@ html[data-theme='dark'] .admonition-contribution {
     content: "Community";
     background-image: none;
   }
+  .navbar-sidebar {
+    .menu__link, .menu__link:hover {
+      color: #ffff !important;
+    }
+  }
+  .navbar__toggle {
+    color: #fff !important;
+  }
+  .button--secondary {
+    --ifm-button-border-color: #80aaef;
+  }
+  .button.button--secondary {
+    color: #fff;
+  }
+  .button--secondary:not(.button--outline) {
+  --ifm-button-background-color: #3578e5;
+  background-color: #3578e5;
+  :hover, :active, :focus, :visited {
+    --ifm-button-background-color: #3578e5;
+    background-color: #3578e5;
+    }
+  }
 }
+
+
 
 // Mermaid Styles 
 html[data-theme='light'] .arrowheadPath {
@@ -360,9 +418,10 @@ html[data-theme='dark'] .node polygon {
   opacity: .8 !important;
 }
 
-.medium-zoom-image {
+img {
   max-width: 600px;
 }
+//.medium-zoom-image
 
 // FOOTER
 
@@ -636,4 +695,16 @@ span.languagekeyword{
   margin-top: 5px;
   margin-bottom: 5px;
 }
-// General Styles
+
+// Blog Styles
+.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-BlogPostItem- {
+  font-size: 2rem;
+}
+
+.avatar__intro {
+  border-bottom: 1px solid #757575;
+  color: #757575;
+  .avatar__name, a {
+    color: #757575;
+  }
+}
