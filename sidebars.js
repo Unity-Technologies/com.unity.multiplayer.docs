@@ -250,6 +250,17 @@ transport: [
         },
     ]
   },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Managing Lag with Unity",
+    "items": [
+        {
+        "type": "doc",
+        "id": "tutorials/lagandpacketloss"
+        },
+    ]
+  },
  ],
   releasenotes: [
     {
