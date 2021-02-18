@@ -268,21 +268,15 @@ This is a warning.
 :::
 
 :::contribution Community Contribution
-
 Thank you to [Unity](https://unity3d.com/) for this tutorial! This contribution is a great help to the community.
-
 :::
 
 :::funfact Fun Fact
-
 Use for helpful facts and info.
-
 :::
 
 :::bestpractice Best Practice
-
 Highlight best practices and recommendations.
-
 :::
 
 ## Mermaid Charts
