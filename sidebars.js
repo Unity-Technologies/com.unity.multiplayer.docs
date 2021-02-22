@@ -253,11 +253,16 @@ transport: [
   {
     "collapsed": true,
     "type": "category",
-    "label": "Managing Lag with Unity",
+    "label": "Artichitecture for creating multiplayer games",
     "items": [
+
+      {
+        "type": "doc",
+        "id": "tutorials/multiplayergamearhitectureintroduction"
+        },
         {
         "type": "doc",
-        "id": "tutorials/lagandpacketloss"
+        "id": "tutorials/listenserverhostarchitecture"
         },
     ]
   },
