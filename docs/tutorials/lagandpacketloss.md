@@ -29,7 +29,7 @@ There are both network and non-network related components of latency.
 - **Input sampling delay**: The time it takes for the input device to recognize that it has been activated and the time it takes for the game to detect that change
 - **Render pipeline delay**: GPUs do not perform draw commands immediately, instead they batch them to be performed later on
 - **Vsync**:  Prevents an artifact known as screen tearing by locking the GPU to the vertical blanking interval of the monitor
-- **Display processing delay**: Monitors typically process the incoming signal in some ways (deinterlacing, noise cancellation etc.), which adds to latency
+- **Display processing delay**: Display devices typically process the incoming signal in some ways (such as deinterlacing and noise cancellation), which adds to latency
 - **Pixel response time**: LCD screen pixels physically take time to change their brightness
 
 All in all a sum of non-network latency contributors can be called Input Lag - the time it takes user input to be rendered on screen (without any network communications being involved).
