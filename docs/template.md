@@ -113,6 +113,113 @@ Images from any folder can be used by providing path to file. Path should be rel
 
 ![img](/img/example-img.png)
 
+## Tabs
+
+Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.
+
+At the bottom of the Markdown file, add the following code:
+
+```markdown
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+For each set of tabs, use the following code:
+
+```markdown
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Tab 1', value: 'tab1'},
+    {label: 'Tab 2', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+Add content here for first tab.
+
+</TabItem>
+<TabItem value="tab2">
+
+Add content here for second tab.
+
+</TabItem>
+</Tabs>
+```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+See the following tabbed code examples:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="unet"
+  values={[
+    {label: 'UNet Example', value: 'unet'},
+    {label: 'MLAPI Example', value: 'mlapi'},
+  ]}>
+
+<TabItem value="unet">
+
+```csharp
+   public class MyUnetClass : NetworkBehaviour
+   {
+      [SyncVar]
+      public float MySyncFloat;
+      public void Start()
+      {
+         if (isClient)
+         {
+               CmdExample(10f);
+         }
+         else if (isServer)
+         {
+               RpcExample(10f);
+         }
+      }
+      [Command]
+      public void CmdExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRpc]
+      public void RpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+  <TabItem value="mlapi">
+
+```csharp
+  public class MyMLAPIExample : NetworkedBehaviour
+   {
+      public NetworkedVar<float> MyNetworkedVar;
+      public override void NetworkedStart()
+      {
+         InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
+         InvokeServerRpc(ServerRpcExample, 10f);
+      }
+      [ServerRPC]
+      public void ServerRpcExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRPC]
+      public void ClientRpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+</Tabs>
+
 ## Code
 
 :::important
