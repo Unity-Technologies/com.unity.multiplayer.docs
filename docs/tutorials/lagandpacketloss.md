@@ -6,13 +6,11 @@ sidebar_label: Lag and Packet Loss
 A multiplayer game operating over the internet has to deal with several adverse factors that are not present when developing single-player or LAN-only multiplayer games.
 
 :::important
-It is important to mention that there are different game genres and platforms that allow for different acceptable latency budgets: 
-- VR games are very sensitive to latency
-    (7-20ms)
-- fighting games and shooter games with twitchy gameplay are the next most sensitive        
-(16-150ms latency before the user starts noticing lag regardless of framerate).
--  RTS games are on the other side of the latency tolerance spectrum.
-  (values up to 500ms can be acceptable and not degrade the overall experience.
+Different game genres and platforms allow for different acceptable latency budgets: 
+
+* VR games are highly sensitive to latency: 7-20ms.
+* Fighting games and shooter games with twitchy gameplay are the next most sensitive: 16-150ms latency before the user starts noticing lag regardless of frame rate.
+* RTS games are on the other side of the latency tolerance spectrum: values up to 500ms can be acceptable and not degrade the overall experience.
 :::
 
 ## Latency
@@ -84,7 +82,6 @@ Jitter can affect RTT mitigation and it can also make packets arrive out of orde
 Another danger that can befall our packets apart from being delayed is being lost entirely. In fact packet loss is probably a bigger problem than even Jitter.
 
 Packet Loss, apart from degrading and potentially making the game unplayable can contribute to the overall delay the user would experience. This would occur if packet loss would heavily affect the data that must be delivered reliably - packet loss would force the game to resend data, multiplying the delays.
-
 
 
 
