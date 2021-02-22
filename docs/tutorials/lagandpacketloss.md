@@ -79,9 +79,8 @@ Jitter can affect RTT mitigation and it can also make packets arrive out of orde
 
 ## Packet Loss
 
-Another danger that can befall our packets apart from being delayed is being lost entirely. In fact packet loss is probably a bigger problem than even Jitter.
+Another danger that can befall our packets apart from being delayed is being lost entirely. Packet loss can be a greater problem than even Jitter.
 
 Packet Loss, apart from degrading and potentially making the game unplayable can contribute to the overall delay the user would experience. This would occur if packet loss would heavily affect the data that must be delivered reliably - packet loss would force the game to resend data, multiplying the delays.
-
 
 
