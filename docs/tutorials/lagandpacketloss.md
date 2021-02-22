@@ -67,7 +67,7 @@ Non-network latency is a serious issue and can eat up a large chunk of our ~200m
 In the context of networking it is valuable to consider the combination of network latency factors which is typically referred to as Ping or Round Trip Time (RTT).
 
 ## Round Trip Time
-RTT is the time it takes for a packet to travel from one host to another and then for a response packet to travel back. This ends up including not only the two-way sum of network latency factors, but also the frame rate of the remote host, as it contributes to how quickly the server can send out a response.
+RTT is the time it takes for a packet to travel from one host to another and then for a response packet to travel back. This includes both the two-way sum of network latency factors and, as it contributes to how quickly the server can send out a response, the frame rate of the remote host,.
 
 Since the traffic is unlikely to travel at the same speed in each direction, the RTT is rarely exactly the time it takes for a packet to go from one host to another. Regardless, it is a very common practice to approximate one-way travel time by dividing RTT by 2.
 
