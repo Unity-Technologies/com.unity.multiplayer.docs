@@ -75,11 +75,10 @@ Another complication arises from the fact that for any two hosts, the RTT time b
 
 ## Jitter
 
-Jitter can affect RTT mitigation and it can also make packets arrive out of order if the router chooses to send packets via different routes and the one sent later actually arrives prior to the packet that was supposed to come before it.
+Jitter The rate at which ping changes over a period of time.  It can affect RTT mitigation and also make packets arrive out of order if it causes  the router to send packets through different routes, which can cause an older packet to arrive prior to a newer packet.
 
 ## Packet Loss
 
 Another danger that can befall our packets apart from being delayed is being lost entirely. Packet loss can be a greater problem than even Jitter.
 
 Packet Loss, apart from degrading and potentially making the game unplayable, can contribute to the overall delay the user would experience. This occurs when packet loss heavily affects the data that must be delivered reliably and forces the game to resend data, multiplying delays.
-
