@@ -71,7 +71,7 @@ RTT is the time it takes for a packet to travel from one host to another and the
 
 Since the traffic is unlikely to travel at the same speed in each direction, the RTT is rarely exactly the time it takes for a packet to go from one host to another. Regardless, it is a very common practice to approximate one-way travel time by dividing RTT by 2.
 
-Another complication arises from the fact that for any two hosts, the RTT time between them is not a constant. It varies over time, normally hovering around a certain average value. But, since the components of network latency can vary over time themselves, the RTT could deviate from the expected value. This deviation is called Jitter.
+Another complication arises from the fact that for any two hosts, the RTT time between them is not a constant. It varies over time, normally hovering around a certain average value. The components of network latency can also vary over time, causing the RTT to deviate from the expected value. This deviation is called Jitter.
 
 ## Jitter
 
@@ -82,7 +82,6 @@ Jitter can affect RTT mitigation and it can also make packets arrive out of orde
 Another danger that can befall our packets apart from being delayed is being lost entirely. In fact packet loss is probably a bigger problem than even Jitter.
 
 Packet Loss, apart from degrading and potentially making the game unplayable can contribute to the overall delay the user would experience. This would occur if packet loss would heavily affect the data that must be delivered reliably - packet loss would force the game to resend data, multiplying the delays.
-
 
 
 
