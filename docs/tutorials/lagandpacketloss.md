@@ -17,7 +17,7 @@ It is important to mention that there are different game genres and platforms th
 
 ## Latency
 
-One of these factors is Latency, which in the context of games means the amount of time between cause and it's visible effect. An example can be a click on a button and a message popping up in response to said click.
+One of the adverse factors is Latency, which in the context of games means the amount of time between a cause and it's visible effect. An example can be a click on a button and a message popping up in response to said click.
 
 Excessive latency that causes noticeable delay between cause and effect is typically referred to as Lag. 
 
