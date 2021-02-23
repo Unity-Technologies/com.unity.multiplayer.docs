@@ -40,6 +40,14 @@ h1, h2, h3, h4, h5, h6, .text-break {
   font-size: 2rem !important;
 }
 
+.docTitle_cWlf {
+  font-size: 2rem !important;
+}
+
+.markdown > h1 {
+  font-size: 2rem !important;
+}
+
 .markdown > h2 {
   font-size: 1.5rem !important;
 }
@@ -361,6 +369,49 @@ html[data-theme='dark'] .admonition-bestpractice {
   }
 }
 
+@media screen and (max-device-width: 450px) {
+
+  .feedback-edit {
+    text-align: left !important;
+  }
+  
+  .feedback-issue {
+    text-align: left !important;
+  }
+  
+  .feedback-update {
+    text-align: left !important;
+  }
+
+  .docTitle_src-theme-DocItem- {
+    font-size: 1.5rem !important;
+  }
+  
+  .docTitle_cWlf {
+    font-size: 1.5rem !important;
+  }
+  
+  .markdown > h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .markdown > h2 {
+    font-size: 1.35rem !important;
+  }
+  
+  .markdown > h3 {
+    font-size: 1.15rem !important;
+  }
+  
+  .markdown > h4 {
+    font-size: 1rem !important;
+  }
+
+  img {
+    max-width: 350px !important;
+  }
+}
+
 // Mermaid Styles 
 html[data-theme='light'] .arrowheadPath {
   fill: #333333 !important;
@@ -447,6 +498,18 @@ img {
   font-size: 14px;
   max-width: 600px;
   --ifm-link-color: #757575;
+}
+
+.feedback-edit {
+  text-align: left;
+}
+
+.feedback-issue {
+  text-align: center;
+}
+
+.feedback-update {
+  text-align: right;
 }
 
 /* CUSTOM BLOCKS */
