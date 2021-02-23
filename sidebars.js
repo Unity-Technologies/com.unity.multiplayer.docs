@@ -35,8 +35,90 @@ module.exports = {
     "label": "MLAPI Basics",
     "items": [
       {
-        "type": "doc",
-        "id": "mlapi-basics/messaging-system"
+        "collapsed": true,
+        "type": "category",
+        "label": "Messaging System",
+        "items": [
+          {
+            "type": "doc",
+            "id": "mlapi-basics/introduction"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "RPC Remote Procedure Call",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-basics/clientrpc"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/serverrpc"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/reliability"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/execution-table"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/rpc-params"
+              },
+              {
+              "collapsed": true,
+              "type": "category",
+              "label": "Serialization",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/serialization-intro"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/cprimitives"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/unity-primitives"
+                },   {
+                  "type": "doc",
+                  "id": "mlapi-basics/enum_types"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/static-arrays"
+                },  
+                { 
+                  "type": "doc",
+                  "id": "mlapi-basics/inetworkserializable-bitserializer"
+                  
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-basics/serializable-reference"
+                },
+              
+              ]
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/backward-compatibility"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/cross-compatibility"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-basics/deprecation-of-return-values"
+              },
+            ]
+          },
+        ]
       },
       {
         "type": "doc",
