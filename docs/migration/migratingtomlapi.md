@@ -287,7 +287,7 @@ UNET’s Command/ClientRPC is replaced with  Server/ClientRPC in the MLAPI which
     }
 ```
 
-See [Messaging System](../mlapi-basics/messaging-system.md) for more information.
+See [Messaging System](../mlapi-basics/messaging-system/Introduction.md) for more information.
 
 ### Replace OnServerAddPlayer  
 
