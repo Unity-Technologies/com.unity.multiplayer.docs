@@ -146,6 +146,22 @@ function highlightMe() {
 ```
 ![img](/img/example-img.png)
 
+
+
+## Code
+
+### Embedding Code from a Repository
+
+To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
+
+This code references a JavaScript file: ` ```js reference`, for example:
+
+```js reference
+https://github.com/saucelabs/docusaurus-theme-github-codeblock/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
+```
+
+You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
+
 ## Tabs
 
 Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.
@@ -160,6 +176,7 @@ import TabItem from '@theme/TabItem';
 For each set of tabs, use the following code:
 
 ```markdown
+
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -253,19 +270,6 @@ See the following tabbed code examples:
   </TabItem>
 </Tabs>
 
-## Code
-
-### Embedding Code from a Repository
-
-To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
-
-This code references a JavaScript file: ` ```js reference`, for example:
-
-```js reference
-https://github.com/saucelabs/docusaurus-theme-github-codeblock/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
-```
-
-You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
 
 ## Tables
 
