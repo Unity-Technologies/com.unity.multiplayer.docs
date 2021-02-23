@@ -148,8 +148,6 @@ function highlightMe() {
 
 
 
-## Code
-
 ### Embedding Code from a Repository
 
 To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
