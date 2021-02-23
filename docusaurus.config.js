@@ -37,7 +37,7 @@ module.exports = {
       }
     },
     navbar: {
-      title: 'Unity Multiplayer Technology',
+      title: 'Unity Multiplayer Documentation',
       logo: {
         alt: 'Unity',
         src: 'img/logo.png',
