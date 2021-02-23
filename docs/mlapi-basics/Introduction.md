@@ -1,14 +1,17 @@
 ---
-id: messaging-system
-title: Messaging System
-sidebar_label: Messaging System
+id: introduction
+title: Introduction
+sidebar_label: Introduction
 ---
 
-The MLAPI has two parts to it's messaging system. RPC messages and Custom Messages. Both types have sub types that change their behaviour, functionality and performance.
+The MLAPI has two parts to it's messaging system. Remote Procedure Call (RPC) messages and Custom Messages. Both types have sub types that change their behaviour, functionality and performance.
 
-## RPC Messages
+## RPC Remote Procedure Call
 
-RPC messages are the most common and easy to use type of message. There are two types of RPC messages. ServerRPC and ClientRPC. ServerRPC methods are invoked by clients (or host if there is no dedicated server) and runs on the Server and ClientRPC methods are invoked by the server but ran on one or more clients.
+The multiplayer framework provides two main network constructs [ServerRpc](ServerRpc.md)  and [ClientRpc](ClientRpc.md) to execute logic on either server-side or client-side. 
+
+For more information see the wikipedia  entry on  [Remote Procedure Call's](https://en.wikipedia.org/wiki/Remote_procedure_call). 
+
 
 ### Modes
 
