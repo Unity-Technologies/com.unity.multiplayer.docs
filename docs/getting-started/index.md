@@ -7,6 +7,12 @@ The MLAPI is a high level networking library built for the Unity game engine to 
 
 The MLAPI is one of the oldest and most actively developed game networking library out there. As a direct result of this, it offers many more features than other libraries. The MLAPI's focus is to make networking simple and let you focus on what matters most for your game.
 
+[![GitHub Release](https://img.shields.io/github/release/MidLevel/MLAPI.svg?logo=github)](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/latest)
+[![NuGet Release](https://img.shields.io/nuget/v/MLAPI.svg?logo=nuget)](https://www.nuget.org/packages/MLAPI/)
+[![Github All Releases](https://img.shields.io/github/downloads/MidLevel/MLAPI/total.svg?logo=github&color=informational)](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases)
+[![Forums](https://img.shields.io/badge/unity--forums-multiplayer-blue)](https://forum.unity.com/forums/multiplayer.26/)
+[![Discord](https://img.shields.io/discord/449263083769036810.svg?label=discord&logo=discord&color=informational)](https://discord.gg/FM8SE9E)
+
 ## Features
 
 This table compares MLAPI and the deprecated UNET library features.

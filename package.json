@@ -21,7 +21,7 @@
     "@saucelabs/theme-github-codeblock": "0.0.3",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.1.11",
-    "mermaid": "^8.9.0",
+    "mermaid": "^8.9.1",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
