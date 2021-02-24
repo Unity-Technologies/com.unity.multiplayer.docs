@@ -19,7 +19,7 @@ Listen servers run in the same process as a game client. They function like dedi
 ### Advantages 
 
 - Essentially free 
-- Do not require any special infrastructure or forward planning to set up, which makes them common at LAN parties where latency and bandwidth issues are not a concern. T
+- Do not require any special infrastructure or forward planning to set up, which makes them common at LAN parties where latency and bandwidth issues are not a concern.
 
 ## When to use a listen server architecture
 
