@@ -4,6 +4,12 @@ Welcome to the Unity Multiplayer Technology (MTT) Documentation. This site inclu
 
 The documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/). 
 
+[![GitHub Release](https://img.shields.io/github/release/MidLevel/MLAPI.svg?logo=github)](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/latest)
+[![NuGet Release](https://img.shields.io/nuget/v/MLAPI.svg?logo=nuget)](https://www.nuget.org/packages/MLAPI/)
+[![Github All Releases](https://img.shields.io/github/downloads/MidLevel/MLAPI/total.svg?logo=github&color=informational)](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases)
+[![Forums](https://img.shields.io/badge/unity--forums-multiplayer-blue)](https://forum.unity.com/forums/multiplayer.26/)
+[![Discord](https://img.shields.io/discord/449263083769036810.svg?label=discord&logo=discord&color=informational)](https://discord.gg/FM8SE9E)
+
 ## Contributing Content
 
 See the [Contribution Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details. A [template file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md) (/docs/template.md) is included in the repo to understand markdown formatting and options.
@@ -17,6 +23,8 @@ yarn install
 ```
 
 ## Building on Local
+
+For full building content, see [Building Locally](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki/Building-Locally):
 
 1. Run the build command to generate a site. This command generates static content into the `build` directory.
 
