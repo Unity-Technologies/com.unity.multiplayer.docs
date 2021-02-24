@@ -313,16 +313,16 @@ html[data-theme='dark'] .admonition-bestpractice {
   opacity: 0.5;
 }
 
-.navbar-grid-menu {
+.navbar-grid-menu:after {
   transition: opacity 0.2s;
   content: "";
   width: 24px;
   height: 24px;
   display: flex;
-  background-image: url("../../static/img/grid.png");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 18px;
+  margin-right: 12px;
 }
 
 .navbar-grid-menu:hover:after {
@@ -344,7 +344,12 @@ html[data-theme='dark'] .admonition-bestpractice {
   .navbar-grid-menu, .navbar-grid-menu:before {
     content: "Community";
     background-image: none;
+    margin-right: -10px;
   }
+  .navbar-grid-link:after {
+    background-image: none;
+  }
+
   .navbar-sidebar {
     .menu__link, .menu__link:hover {
       color: #fff !important;
@@ -366,6 +371,17 @@ html[data-theme='dark'] .admonition-bestpractice {
     --ifm-button-background-color: #3578e5;
     background-color: #3578e5;
     }
+  }
+
+  .menu__link--sublist:after {
+    background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
+    content: ' ';
+    display: inline-block;
+    height: 1.25rem;
+    width: 1.25rem;
+    transition: transform var(--ifm-transition-fast) linear;
+    transform: rotate(180deg);
+    filter: var(--ifm-menu-link-sublist-icon-filter);
   }
 }
 
@@ -409,6 +425,11 @@ html[data-theme='dark'] .admonition-bestpractice {
 
   img {
     max-width: 350px !important;
+  }
+
+  .margin-vert--xl {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
   }
 }
 
