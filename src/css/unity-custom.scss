@@ -334,7 +334,7 @@ html[data-theme='dark'] .admonition-bestpractice {
 }
 
 // Responsive
-@media screen and (max-device-width: 996px) { 
+@media screen and (max-width: 996px) { 
   .navbar-github-link, .navbar-github-link:before {
     content: "GitHub";
   }
@@ -383,9 +383,26 @@ html[data-theme='dark'] .admonition-bestpractice {
     transform: rotate(180deg);
     filter: var(--ifm-menu-link-sublist-icon-filter);
   }
+
+  .margin-vert--xl {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .feedback-edit {
+    text-align: left !important;
+  }
+  
+  .feedback-issue {
+    text-align: left !important;
+  }
+  
+  .feedback-update {
+    text-align: left !important;
+  }
 }
 
-@media screen and (max-device-width: 450px) {
+@media screen and (max-width: 450px) {
 
   .feedback-edit {
     text-align: left !important;

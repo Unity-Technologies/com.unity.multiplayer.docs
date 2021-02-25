@@ -348,9 +348,7 @@ Add an admonition using three colons, the type, and closing content with colons:
 
 ```markdown title="Markdown Code"
 :::note
-
 This is a note.
-
 :::
 ```
 
