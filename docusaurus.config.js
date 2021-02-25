@@ -44,7 +44,7 @@ module.exports = {
       },
       items: [
         {
-          label: 'Guides',
+          label: 'Docs',
           position: 'left',
           items: [
             {
@@ -67,14 +67,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'tools/introduction',
-          label: 'Tools',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'tutorials/introduction',
-          label: 'Tutorials',
+          docId: 'learn/introduction',
+          label: 'Learn',
           position: 'left',
         },
         {
@@ -230,6 +224,11 @@ module.exports = {
                 keyword: `bestpractice`,
                 infima: true,
                 svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-10 5h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>'
+              },
+              faq: {
+                keyword: `faq`,
+                infima: true,
+                svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>'
               }
             }
           },

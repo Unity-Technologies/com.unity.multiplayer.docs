@@ -228,16 +228,14 @@ transport: [
     ]
   },
 ],
-  tools: [
+  learn: [
     {
       "type": "doc",
-      "id": "tools/introduction"
+      "id": "learn/introduction"
     },
-  ],
-  tutorials: [
     {
       "type": "doc",
-      "id": "tutorials/introduction"
+      "id": "learn/faq"
     },
   ],
   releasenotes: [
