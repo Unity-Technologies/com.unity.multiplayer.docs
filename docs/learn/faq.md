@@ -25,9 +25,9 @@ We recommend the following:
    
    The other option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
 
-    :::note About Relays
-    We know there is a high demand for an out-of-the-box relay solution for MLAPI, and have plans to resolve in the future.
-    :::
+  :::note About Relays
+  We know there is a high demand for an out-of-the-box relay solution for MLAPI, and have plans to resolve in the future.
+  :::
 
 
 ### Is it good for add Spawnable object into NetworkConfig after start host? 
@@ -65,4 +65,4 @@ you can only have ONE networked object, which must be at the root of the prefab
 Does NetworkStart get called on each behavior related to the networked object?
 yes
 
-import styles from '../../src/css/faq.scss';
+import styles from '../../src/theme/faq.scss';
