@@ -1,8 +1,8 @@
 // Docusaurus v2, see package.json for versions
 //const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
-  title: 'Unity Multiplayer Technology',
-  tagline: 'MLAPI and MTT Guides',
+  title: 'Unity Multiplayer',
+  tagline: 'Documentation, Blogs, Sample Code, and More',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -154,6 +154,11 @@ module.exports = {
         {
           title: 'Multiplayer',
           items: [
+            {
+              label: 'Licenses',
+              type: 'doc',
+              to: 'docs/license',
+            },
             {
               label: 'Releases',
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
