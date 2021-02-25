@@ -266,6 +266,25 @@ transport: [
         },
     ]
   },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "What are RPCs and when to use them",
+    "items": [
+
+      {
+        "type": "doc",
+        "id": "tutorials/rpcvnetvar",
+        },
+        [
+          {
+          "type": "doc",
+          "id": "tutorials/rpcnetvarexamples",
+          },
+         ] 
+      ]
+      
+  },
  ],
   releasenotes: [
     {
