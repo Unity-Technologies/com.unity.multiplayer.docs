@@ -44,7 +44,7 @@ module.exports = {
       },
       items: [
         {
-          label: 'Guides',
+          label: 'Docs',
           position: 'left',
           items: [
             {
@@ -74,7 +74,7 @@ module.exports = {
         {
           type: 'doc',
           docId: 'tutorials/introduction',
-          label: 'Tutorials',
+          label: 'Learn',
           position: 'left',
         },
         {
