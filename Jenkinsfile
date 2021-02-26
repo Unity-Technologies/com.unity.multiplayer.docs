@@ -1,8 +1,8 @@
 properties([pipelineTriggers([githubPush()])])
 import java.text.SimpleDateFormat
 
-def BUCKET_NAME ="mp-docs-stg-unity-it-fileshare-test"
-def AKAMAI_URL ="https://docs-multiplayer-stg.unity3d.com/"
+def BUCKET_NAME ="mp-docs-unity-it-fileshare-prd"
+def AKAMAI_URL ="https://docs-multiplayer.unity3d.com/"
 
 pipeline {
    agent {
