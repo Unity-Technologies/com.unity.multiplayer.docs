@@ -136,8 +136,16 @@ h1, h2, h3, h4, h5, h6, .text-break {
   background-size: cover;
 }
 
+.hero {
+  align-items: flex-start;
+}
+
 .button.button--secondary.button--outline:not(.button--active):not(:hover) {
   color:rgb(255, 255, 255);
+}
+
+.buttons_src-pages {
+  align-items: flex-start;
 }
 
 // ADMONITIONS
