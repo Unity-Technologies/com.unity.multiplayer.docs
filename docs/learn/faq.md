@@ -51,18 +51,4 @@ We recommend the following:
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
 
-### IN PROGRESS
-1. Can you have multiple networked behaviors per networked object?
-2. If yes to #1, can the behaviors exist on the same game object?
-3. If yes to #1, can the behaviors exist on child game objects, and do I need to "do anything" to relate the behavior and networked object?
-
-The docs say Each NetworkedBehaviour will belong to a NetworkedObject, it will be the first parent or first component on the current object that is found., which is hard to understand. They also say, You need a NetworkedObject at the same GameObject or in a parent., which is more clear, but I'd like to confirm the setup.
-NFMynster02/21/2021
-@scottlin yes, yes and yse
-you can have multiple network behaviors, on same object and on any child object
-you can only have ONE networked object, which must be at the root of the prefab
-
-Does NetworkStart get called on each behavior related to the networked object?
-yes
-
 import styles from '../../src/theme/faq.scss';
