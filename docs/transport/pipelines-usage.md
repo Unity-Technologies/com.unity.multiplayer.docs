@@ -11,7 +11,7 @@ The way it works is that you can add any number of pipeline stages to your trans
 
 For example the first stage might compress a packet and a second stage could add a sequence number (just the packets header). When receiving the packet is first passed through the sequence stage and then decompressed. The sequence stage could drop the packet if it's out of order in which case it leaves the pipeline and doesn't continue to the decompression.
 
-![PipelineStagesDiagram](/img/transport/pipeline-stages-diagram.png)
+![PipelineStagesDiagram](/img/transport/pipeline-stages.png)
 
 The pipeline stages are gathered together in a collection. This is the interface between the pipeline processor in the driver to the pipeline stages you might be using. Here the pipeline stages are initialized and so on. There is a default collection provided in the driver which has all the built in pipeline stages already configured. It's possible to just use that and use a custom collection if you have your own pipeline stage you need to add to the collection.
 
