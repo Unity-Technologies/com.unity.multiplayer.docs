@@ -32,3 +32,12 @@ NullReferenceException: Object reference not set to an instance of an object
 ```
 
 **Solution:** You most likely forgot to `Spawn()` your object. Run `Spawn()` on your `NetworkedObject` component as the server to fix this issue.
+
+## Server build is using 100% CPU
+
+**Issue**: When running an MLAPI server created from a server build it has a cpu usage of 100% blocking all my other applications.
+
+**Solution**: Unity server builds try to push as many Updates per second as possible. On a server this is most often not necessary. You can limit the target frame rate to reduce the amounts of Updates with this:
+```csharp
+Application.targetFrameRate = 30;
+```
