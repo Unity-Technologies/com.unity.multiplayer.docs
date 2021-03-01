@@ -285,6 +285,29 @@ html[data-theme='dark'] .admonition-bestpractice {
   --ra-admonition-icon-color: #e5ab09; 
 }
 
+// UNITY 3578e5
+html[data-theme='dark'] .admonition-unity {
+  background-color: transparent;
+  border: 1px solid #757575;
+  border-left: 6px solid #757575;
+  --ra-admonition-icon-color: #757575; 
+  color: #ffffff;
+  .admonition-icon {
+    margin-right: .5rem;
+  }
+}
+
+html[data-theme='light'] .admonition-unity {
+  background-color: transparent;
+  border: 1px solid #757575;
+  border-left: 6px solid #757575;
+  color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: #757575; 
+  .admonition-icon {
+    margin-right: .5rem;
+  }
+}
+
 .alert a {
   color: var(--ifm-link-color);
   text-decoration: var(--ifm-link-decoration);

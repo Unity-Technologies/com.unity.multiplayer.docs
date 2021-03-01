@@ -384,6 +384,10 @@ Use for helpful facts and info.
 Highlight best practices and recommendations.
 :::
 
+:::unity
+Information specific to Unity, for example license information.
+:::
+
 ## Mermaid Charts
 
 Mermaid provides sequence diagrams, charts, and more. Use these charts to detail processes, workflows, inheritance, and more. See the [Mermaid guide](https://mermaid-js.github.io/mermaid/#/) for specifics and examples, and use the [live editor](https://mermaid-js.github.io/mermaid-live-editor/) to generate code.
