@@ -2,7 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 import java.text.SimpleDateFormat
 
 def BUCKET_NAME ="mp-docs-stg-unity-it-fileshare-test"
-def AKAMAI_URL ="https://docs-multiplayer-stg.unity3d.com/"
+def AKAMAI_URL ="docs-multiplayer-stg.unity3d.com"
 
 pipeline {
    agent {
@@ -52,6 +52,7 @@ def sync_bucket(BUCKET, CREDS) {
     withCredentials([file(credentialsId: CREDS, variable: 'SERVICEACCOUNT')]) {
       sh label: '', script: """
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
+      echo "uptimecheck" > build/uptimecheck.html
       gsutil -m rsync -r -d build/ gs://${BUCKET}
       """
      }
