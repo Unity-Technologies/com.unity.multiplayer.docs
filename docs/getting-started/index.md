@@ -13,6 +13,10 @@ The MLAPI is one of the oldest and most actively developed game networking libra
 [![Forums](https://img.shields.io/badge/unity--forums-multiplayer-blue)](https://forum.unity.com/forums/multiplayer.26/)
 [![Discord](https://img.shields.io/discord/449263083769036810.svg?label=discord&logo=discord&color=informational)](https://discord.gg/FM8SE9E)
 
+:::unity Content Licenses
+All MLAPI code and documentation is covered by MIT license. See [Liceses](../license.md) for more information. Sample code may include links to GitHub code repositories.
+:::
+
 ## Features
 
 This table compares MLAPI and the deprecated UNET library features.
