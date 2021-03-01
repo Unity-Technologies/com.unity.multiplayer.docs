@@ -2,7 +2,7 @@ The following Licenses cover all documentation and sample code in [this reposito
 
 ## Documentation License
 
-All documentation is bound by the license of the code it describes. As new content and code is added, licenses will be added to this page.
+All documentation is bound by the license of the code it describes. As new content and code is added, licenses will be added to this page. Licenses are noted in the documentation as needed.
 
 | Documentation | License |
 | -- | -- |
