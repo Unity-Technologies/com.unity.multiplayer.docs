@@ -380,11 +380,7 @@ transport: [
     {
       "type": "doc",
       "id": "learn/introduction"
-    },
-    {
-      "type": "doc",
-      "id": "learn/faq"
-    },
+    },    
     {
     "collapsed": true,
     "type": "category",
@@ -411,6 +407,10 @@ transport: [
         "id": "tutorials/listenserverhostarchitecture"
         },
     ]
+  },
+  {
+    "type": "doc",
+    "id": "learn/faq"
   },
  ],
   releasenotes: [
