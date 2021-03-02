@@ -129,15 +129,64 @@ h1, h2, h3, h4, h5, h6, .text-break {
   color: #3578e5;
 }
 
+//LANDING
+
 .hero--primary {
   --ifm-hero-text-color: rgb(255, 255, 255) !important;
-  background-image: url("../../static/img/hero-bk.jpg") !important;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.1),
+    rgba(0,0,0,0.65)),
+    url("../../static/img/hero-scifi.jpg") !important;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+}
+
+.hero {
+  align-items: flex-start !important;
+}
+
+.heroBanner_src-pages- {
+  text-align: left !important;
 }
 
 .button.button--secondary.button--outline:not(.button--active):not(:hover) {
   color:rgb(255, 255, 255);
+}
+
+.buttons_src-pages- {
+  justify-content: left !important;
+}
+
+.land-link {
+  font-size: 1.10rem;
+}
+
+.land-box {
+  height: 175px;
+}
+
+.land-feature {
+  height: 170px;
+  margin-bottom: 10px;
+}
+
+.featureImage_src-pages- {
+  height: 100% !important;
+  width: 100% !important;
+  max-width:100%;
+  max-height:100%;
+  border-radius: 10px 10px 0 0 ;
+}
+
+@media screen and (max-width: 996px) {
+  .land-box {
+    height: auto;
+  }
+  .featureImage_src-pages- {
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 ;
+  }
 }
 
 // ADMONITIONS
@@ -277,6 +326,29 @@ html[data-theme='dark'] .admonition-bestpractice {
   --ra-admonition-icon-color: #e5ab09; 
 }
 
+// UNITY 3578e5
+html[data-theme='dark'] .admonition-unity {
+  background-color: transparent;
+  border: 1px solid #757575;
+  border-left: 6px solid #757575;
+  --ra-admonition-icon-color: #757575; 
+  color: #ffffff;
+  .admonition-icon {
+    margin-right: .5rem;
+  }
+}
+
+html[data-theme='light'] .admonition-unity {
+  background-color: transparent;
+  border: 1px solid #757575;
+  border-left: 6px solid #757575;
+  color: var(--ifm-font-color-base);
+  --ra-admonition-icon-color: #757575; 
+  .admonition-icon {
+    margin-right: .5rem;
+  }
+}
+
 .alert a {
   color: var(--ifm-link-color);
   text-decoration: var(--ifm-link-decoration);
@@ -334,7 +406,7 @@ html[data-theme='dark'] .admonition-bestpractice {
 }
 
 // Responsive
-@media screen and (max-device-width: 996px) { 
+@media screen and (max-width: 996px) { 
   .navbar-github-link, .navbar-github-link:before {
     content: "GitHub";
   }
@@ -383,9 +455,26 @@ html[data-theme='dark'] .admonition-bestpractice {
     transform: rotate(180deg);
     filter: var(--ifm-menu-link-sublist-icon-filter);
   }
+
+  .margin-vert--xl {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .feedback-edit {
+    text-align: left !important;
+  }
+  
+  .feedback-issue {
+    text-align: left !important;
+  }
+  
+  .feedback-update {
+    text-align: left !important;
+  }
 }
 
-@media screen and (max-device-width: 450px) {
+@media screen and (max-width: 450px) {
 
   .feedback-edit {
     text-align: left !important;
