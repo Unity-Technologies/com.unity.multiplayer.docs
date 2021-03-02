@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 const features = [
   {
     title: 'Develop with MLAPI',
-    imageUrl: 'img/land-feature1.jpg',
+    imageUrl: 'img/land-feature.jpg',
     description: (
       <>
         Unity Multiplayer now includes MLAPI, one of the oldest and most actively developed game networking
