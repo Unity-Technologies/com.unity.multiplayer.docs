@@ -2,7 +2,7 @@
 //const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
   title: 'Unity Multiplayer',
-  tagline: 'Documentation, Blogs, Sample Code, and More',
+  tagline: 'Build multiplayer games in Unity',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
