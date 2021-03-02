@@ -1,7 +1,7 @@
 properties([pipelineTriggers([githubPush()])])
 import java.text.SimpleDateFormat
 
-def BUCKET_NAME ="mp-docs-sandbox-unity-it-fileshare-test"
+def BUCKET_NAME ="mp-docs-unity-it-fileshare-test"
 def AKAMAI_URL ="docs-multiplayer-sandbox.unity3d.com"
 
 pipeline {
