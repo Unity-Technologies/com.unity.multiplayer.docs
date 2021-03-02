@@ -70,5 +70,5 @@ You could rename this object to give it a more relevant name but for the purpose
     ![firstnetworkgame](../../static/img/firstnetworkgame.gif)
 
 :::funfact
-Congratulations you have created a networked game.  It is not a very flashy,game  but it's a networked game nonetheless.
+Congratulations you have created a networked game.  It is not a very flashy game  but it's a networked game nonetheless.
 :::
