@@ -146,7 +146,11 @@ h1, h2, h3, h4, h5, h6, .text-break {
   align-items: flex-start !important;
 }
 
-.heroBanner_src-pages-, .heroBanner_2Wl1 {
+.heroBanner_src-pages- {
+  text-align: left !important;
+}
+
+.heroBanner_2Wl1 {
   text-align: left !important;
 }
 
@@ -155,6 +159,10 @@ h1, h2, h3, h4, h5, h6, .text-break {
 }
 
 .buttons_src-pages- {
+  justify-content: left !important;
+}
+
+.buttons_2sHG {
   justify-content: left !important;
 }
 
@@ -171,7 +179,15 @@ h1, h2, h3, h4, h5, h6, .text-break {
   margin-bottom: 10px;
 }
 
-.featureImage_src-pages-, .featureImage_28zy {
+.featureImage_src-pages- {
+  height: 100% !important;
+  width: 100% !important;
+  max-width:100%;
+  max-height:100%;
+  border-radius: 10px 10px 0 0 ;
+}
+
+.featureImage_28zy {
   height: 100% !important;
   width: 100% !important;
   max-width:100%;
@@ -183,7 +199,11 @@ h1, h2, h3, h4, h5, h6, .text-break {
   .land-box {
     height: auto;
   }
-  .featureImage_src-pages-, .featureImage_28zy {
+  .featureImage_src-pages- {
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 ;
+  }
+  .featureImage_28zy {
     object-fit: cover;
     border-radius: 10px 10px 0 0 ;
   }
