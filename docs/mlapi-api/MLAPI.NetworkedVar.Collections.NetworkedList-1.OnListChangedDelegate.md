@@ -3,13 +3,13 @@ id: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate
 title: MLAPI.NetworkedVar.Collections.NetworkedList-1.OnListChangedDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate type for list changed event
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,12 +17,12 @@ Delegate type for list changed event
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_Collections_NetworkedList_1_OnListChangedDelegate_syntax]
+##### Syntax
 
     public delegate void OnListChangedDelegate(NetworkedListEvent<T> changeEvent);
 
-##### Parameters [parameters]
+##### Parameters
 
-| Type                    | Name          | Description                                          |
-|-------------------------|---------------|------------------------------------------------------|
-| NetworkedListEvent\<T\> | \*changeEvent | Struct containing information about the change event |
+| Type                        | Name          | Description                                          |
+|-----------------------------|---------------|------------------------------------------------------|
+| NetworkedListEvent&lt;T&gt; | \*changeEvent | Struct containing information about the change event |

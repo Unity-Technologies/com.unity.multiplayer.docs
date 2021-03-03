@@ -3,27 +3,27 @@ id: MLAPI.Configuration.NetworkConfig
 title: MLAPI.Configuration.NetworkConfig  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The configuration object used to start server, client and hosts
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,16 +83,16 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Configuration_NetworkConfig_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkConfig
 
 ## Fields
 
-### AllowRuntimeSceneChanges [MLAPI_Configuration_NetworkConfig_AllowRuntimeSceneChanges]
+### AllowRuntimeSceneChanges
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not runtime scene changes should be allowed and expected. If
 this is true, clients with different initial configurations will not
@@ -100,167 +100,167 @@ work together.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     [Tooltip("Whether or not runtime scene changes should be allowed and expected.\n If this is true, clients with different initial configurations will not work together.")]
     public bool AllowRuntimeSceneChanges
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### ClientConnectionBufferTimeout [MLAPI_Configuration_NetworkConfig_ClientConnectionBufferTimeout]
+### ClientConnectionBufferTimeout
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of seconds to wait for handshake to complete before timing
 out a client
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     [Tooltip("The amount of seconds to wait for the handshake to complete before the client times out")]
     public int ClientConnectionBufferTimeout
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ConnectionApproval [MLAPI_Configuration_NetworkConfig_ConnectionApproval]
+### ConnectionApproval
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to use connection approval
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     [Tooltip("Whether or not to force clients to be approved before they connect")]
     public bool ConnectionApproval
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### ConnectionData [MLAPI_Configuration_NetworkConfig_ConnectionData]
+### ConnectionData
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The data to send during connection which can be used to decide on if a
 client should get accepted
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     [Tooltip("The connection data sent along with connection requests")]
     public byte[] ConnectionData
 
-#### Field Value [field-value-3]
+#### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | System.Byte\[\] |             |
 
-### CreatePlayerPrefab [MLAPI_Configuration_NetworkConfig_CreatePlayerPrefab]
+### CreatePlayerPrefab
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not a player object should be created by default. This value
 can be overriden on a case by case basis with ConnectionApproval.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     [Tooltip("Whether or not a player object should be created by default. This value can be overriden on a case by case basis with ConnectionApproval.")]
     public bool CreatePlayerPrefab
 
-#### Field Value [field-value-4]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableEncryption [MLAPI_Configuration_NetworkConfig_EnableEncryption]
+### EnableEncryption
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to enable the ECDHE key exchange to allow for encryption
 and authentication of messages
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     [Tooltip("Whether or not to enable the ECDHE key exchange to allow for encryption and authentication of messages")]
     public bool EnableEncryption
 
-#### Field Value [field-value-5]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableMessageBuffering [MLAPI_Configuration_NetworkConfig_EnableMessageBuffering]
+### EnableMessageBuffering
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not message buffering should be enabled. This will resolve
 most out of order messages during spawn.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     [Tooltip("Whether or not message buffering should be enabled. This will resolve most out of order messages during spawn")]
     public bool EnableMessageBuffering
 
-#### Field Value [field-value-6]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableNetworkedVar [MLAPI_Configuration_NetworkConfig_EnableNetworkedVar]
+### EnableNetworkedVar
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to enable the NetworkedVar system. This system runs in
 the Update loop and will degrade performance, but it can be a huge
@@ -269,46 +269,46 @@ system.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     [Tooltip("Whether or not to enable the NetworkedVar system")]
     public bool EnableNetworkedVar
 
-#### Field Value [field-value-7]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableNetworkLogs [MLAPI_Configuration_NetworkConfig_EnableNetworkLogs]
+### EnableNetworkLogs
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to enable network logs.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public bool EnableNetworkLogs
 
-#### Field Value [field-value-8]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableSceneManagement [MLAPI_Configuration_NetworkConfig_EnableSceneManagement]
+### EnableSceneManagement
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Enables scene management. This will allow network scene switches and
 automatic scene diff corrections upon connect. SoftSynced scene objects
@@ -317,24 +317,24 @@ also enables PrefabSync.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-9]
+#### Declaration
 
     [Tooltip("Enables scene management. This will allow network scene switches and automatic scene diff corrections upon connect.\nSoftSynced scene objects wont work with this disabled. That means that disabling SceneManagement also enables PrefabSync.")]
     public bool EnableSceneManagement
 
-#### Field Value [field-value-9]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableTimeResync [MLAPI_Configuration_NetworkConfig_EnableTimeResync]
+### EnableTimeResync
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 If your logic uses the NetworkedTime, this should probably be turned
 off. If however it's needed to maximize accuracy, this is recommended to
@@ -342,24 +342,24 @@ be turned on
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-10]
+#### Declaration
 
     [Tooltip("Enable this to resync the NetworkedTime after the initial sync")]
     public bool EnableTimeResync
 
-#### Field Value [field-value-10]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnsureNetworkedVarLengthSafety [MLAPI_Configuration_NetworkConfig_EnsureNetworkedVarLengthSafety]
+### EnsureNetworkedVarLengthSafety
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to ensure that NetworkedVars can be read even if a client
 accidentally writes where its not allowed to. This costs some CPU and
@@ -367,72 +367,72 @@ bandwdith.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-11]
+#### Declaration
 
     [Tooltip("Ensures that NetworkedVars can be read even if a client accidental writes where its not allowed to. This will cost some CPU time and bandwidth")]
     public bool EnsureNetworkedVarLengthSafety
 
-#### Field Value [field-value-11]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EventTickrate [MLAPI_Configuration_NetworkConfig_EventTickrate]
+### EventTickrate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of times per second internal frame events will occur,
 examples include SyncedVar send checking.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-12]
+#### Declaration
 
     [Tooltip("The amount of times per second the internal event loop will run. This includes for example NetworkedVar checking and LagCompensation tracking")]
     public int EventTickrate
 
-#### Field Value [field-value-12]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ForceSamePrefabs [MLAPI_Configuration_NetworkConfig_ForceSamePrefabs]
+### ForceSamePrefabs
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not the MLAPI should check for differences in the prefabs at
 connection. If you dynamically add prefabs at runtime, turn this OFF
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     [Tooltip("Whether or not the MLAPI should check for differences in the prefab lists at connection")]
     public bool ForceSamePrefabs
 
-#### Field Value [field-value-13]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### LoadSceneTimeOut [MLAPI_Configuration_NetworkConfig_LoadSceneTimeOut]
+### LoadSceneTimeOut
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of seconds to wait on all clients to load requested scene
 before the SwitchSceneProgress onComplete callback, that waits for all
@@ -440,24 +440,24 @@ clients to complete loading, is called anyway.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-14]
+#### Declaration
 
     [Tooltip("The amount of seconds to wait for all clients to load a requested scene")]
     public int LoadSceneTimeOut
 
-#### Field Value [field-value-14]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxObjectUpdatesPerTick [MLAPI_Configuration_NetworkConfig_MaxObjectUpdatesPerTick]
+### MaxObjectUpdatesPerTick
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The maximum amount of NetworkedObject's to process per tick. This is
 useful to prevent the MLAPI from hanging a frame Set this to less than
@@ -465,354 +465,354 @@ or equal to 0 for unlimited
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-15]
+#### Declaration
 
     [FormerlySerializedAs("MaxBehaviourUpdatesPerTick")]
     [Tooltip("The maximum amount of NetworkedObject SyncedVars to process per Event tick. This is to prevent freezing")]
     public int MaxObjectUpdatesPerTick
 
-#### Field Value [field-value-15]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxReceiveEventsPerTickRate [MLAPI_Configuration_NetworkConfig_MaxReceiveEventsPerTickRate]
+### MaxReceiveEventsPerTickRate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The max amount of messages to process per ReceiveTickrate. This is to
 prevent flooding.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-16]
+#### Declaration
 
     [Tooltip("The maximum amount of Receive events to poll per Receive tick. This is to prevent flooding and freezing on the server")]
     public int MaxReceiveEventsPerTickRate
 
-#### Field Value [field-value-16]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MessageBufferTimeout [MLAPI_Configuration_NetworkConfig_MessageBufferTimeout]
+### MessageBufferTimeout
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of time a message should be buffered for without being
 consumed. If it is not consumed within this time, it will be dropped.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     [Tooltip("The amount of time a message should be buffered for without being consumed. If it is not consumed within this time, it will be dropped")]
     public float MessageBufferTimeout
 
-#### Field Value [field-value-17]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### NetworkedPrefabs [MLAPI_Configuration_NetworkConfig_NetworkedPrefabs]
+### NetworkedPrefabs
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A list of spawnable prefabs
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-18]
+#### Declaration
 
     [Tooltip("The prefabs that can be spawned across the network")]
     public List<NetworkedPrefab> NetworkedPrefabs
 
-#### Field Value [field-value-18]
+#### Field Value
 
-| Type                                               | Description |
-|----------------------------------------------------|-------------|
-| System.Collections.Generic.List\<NetworkedPrefab\> |             |
+| Type                                                   | Description |
+|--------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;NetworkedPrefab&gt; |             |
 
-### NetworkIdRecycleDelay [MLAPI_Configuration_NetworkConfig_NetworkIdRecycleDelay]
+### NetworkIdRecycleDelay
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of seconds a NetworkId has to be unused in order for it to be
 reused.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-19]
+#### Declaration
 
     [Tooltip("The amount of seconds a NetworkId has to unused in order for it to be reused")]
     public float NetworkIdRecycleDelay
 
-#### Field Value [field-value-19]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### NetworkTransport [MLAPI_Configuration_NetworkConfig_NetworkTransport]
+### NetworkTransport
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The transport hosts the sever uses
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-20]
+#### Declaration
 
     [Tooltip("The NetworkTransport to use")]
     public Transport NetworkTransport
 
-#### Field Value [field-value-20]
+#### Field Value
 
 | Type      | Description |
 |-----------|-------------|
 | Transport |             |
 
-### ProtocolVersion [MLAPI_Configuration_NetworkConfig_ProtocolVersion]
+### ProtocolVersion
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The protocol version. Different versions doesn't talk to each other.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-21]
+#### Declaration
 
     [Tooltip("Use this to make two builds incompatible with each other")]
     public ushort ProtocolVersion
 
-#### Field Value [field-value-21]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### ReceiveTickrate [MLAPI_Configuration_NetworkConfig_ReceiveTickrate]
+### ReceiveTickrate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Amount of times per second the receive queue is emptied and all messages
 inside are processed.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-22]
+#### Declaration
 
     [Tooltip("The amount of times per second the receive queue is emptied from pending incoming messages")]
     public int ReceiveTickrate
 
-#### Field Value [field-value-22]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RecycleNetworkIds [MLAPI_Configuration_NetworkConfig_RecycleNetworkIds]
+### RecycleNetworkIds
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 If true, NetworkIds will be reused after the NetworkIdRecycleDelay.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-23]
+#### Declaration
 
     [Tooltip("If true, NetworkIds will be reused after the NetworkIdRecycleDelay")]
     public bool RecycleNetworkIds
 
-#### Field Value [field-value-23]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### RegisteredScenes [MLAPI_Configuration_NetworkConfig_RegisteredScenes]
+### RegisteredScenes
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 A list of SceneNames that can be used during networked games.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-24]
+#### Declaration
 
     [Tooltip("The Scenes that can be switched to by the server")]
     public List<string> RegisteredScenes
 
-#### Field Value [field-value-24]
+#### Field Value
 
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| System.Collections.Generic.List\<System.String\> |             |
+| Type                                                 | Description |
+|------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;System.String&gt; |             |
 
-### RpcHashSize [MLAPI_Configuration_NetworkConfig_RpcHashSize]
+### RpcHashSize
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Decides how many bytes to use for Rpc messaging. Leave this to 2 bytes
 unless you are facing hash collisions
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-25]
+#### Declaration
 
     [Tooltip("The maximum amount of bytes to use for RPC messages. Leave this to 2 unless you are facing hash collisions")]
     public HashSize RpcHashSize
 
-#### Field Value [field-value-25]
+#### Field Value
 
 | Type     | Description |
 |----------|-------------|
 | HashSize |             |
 
-### SecondsHistory [MLAPI_Configuration_NetworkConfig_SecondsHistory]
+### SecondsHistory
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of seconds to keep a lag compensation position history
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-26]
+#### Declaration
 
     [Tooltip("The amount of seconds to keep lag compensation position history")]
     public int SecondsHistory
 
-#### Field Value [field-value-26]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ServerBase64PfxCertificate [MLAPI_Configuration_NetworkConfig_ServerBase64PfxCertificate]
+### ServerBase64PfxCertificate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Pfx file in base64 encoding containing private and public key
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-27]
+#### Declaration
 
     [Tooltip("The certificate in base64 encoded PFX format")]
     [TextArea]
     public string ServerBase64PfxCertificate
 
-#### Field Value [field-value-27]
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### SignKeyExchange [MLAPI_Configuration_NetworkConfig_SignKeyExchange]
+### SignKeyExchange
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Whether or not to enable signed diffie hellman key exchange.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-28]
+#### Declaration
 
     [Tooltip("Whether or not to sign the diffie hellman key exchange to prevent MITM attacks on")]
     public bool SignKeyExchange
 
-#### Field Value [field-value-28]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### TimeResyncInterval [MLAPI_Configuration_NetworkConfig_TimeResyncInterval]
+### TimeResyncInterval
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 If time resync is turned on, this specifies the interval between syncs
 in seconds.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-29]
+#### Declaration
 
     [Tooltip("The amount of seconds between resyncs of NetworkedTime, if enabled")]
     public int TimeResyncInterval
 
-#### Field Value [field-value-29]
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### UsePrefabSync [MLAPI_Configuration_NetworkConfig_UsePrefabSync]
+### UsePrefabSync
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 If true, all NetworkedObject's need to be prefabs and all scene objects
 will be replaced on server side which causes all serialization to be
@@ -823,16 +823,16 @@ time. Useful for single projects
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-30]
+#### Declaration
 
     [Tooltip("If true, all NetworkedObject's need to be prefabs and all scene objects will be replaced on server side which causes all serialization to be lost. Useful for multi project setups\nIf false, Only non scene objects have to be prefabs. Scene objects will be matched using their PrefabInstanceId which can be precomputed globally for a scene at build time. Useful for single projects")]
     public bool UsePrefabSync
 
-#### Field Value [field-value-30]
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
@@ -840,46 +840,46 @@ time. Useful for single projects
 
 ## Properties 
 
-### ServerX509Certificate [MLAPI_Configuration_NetworkConfig_ServerX509Certificate]
+### ServerX509Certificate
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the currently in use certificate
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-31]
+#### Declaration
 
     public X509Certificate2 ServerX509Certificate { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type                                                           | Description |
 |----------------------------------------------------------------|-------------|
 | System.Security.Cryptography.X509Certificates.X509Certificate2 |             |
 
-### ServerX509CertificateBytes [MLAPI_Configuration_NetworkConfig_ServerX509CertificateBytes]
+### ServerX509CertificateBytes
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the cached binary representation of the server certificate that's
 used for handshaking
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-32]
+#### Declaration
 
     public byte[] ServerX509CertificateBytes { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
@@ -887,102 +887,102 @@ used for handshaking
 
 ## Methods 
 
-### CompareConfig(UInt64) [MLAPI_Configuration_NetworkConfig_CompareConfig_System_UInt64_]
+### CompareConfig(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Compares a SHA256 hash with the current NetworkingConfiguration
 instances hash
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-33]
+#### Declaration
 
     public bool CompareConfig(ulong hash)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name | Description |
 |---------------|------|-------------|
 | System.UInt64 | hash |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### FromBase64(String) [MLAPI_Configuration_NetworkConfig_FromBase64_System_String_]
+### FromBase64(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Sets the NetworkConfig data with that from a base64 encoded version
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-34]
+#### Declaration
 
     public void FromBase64(string base64)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type          | Name   | Description                |
 |---------------|--------|----------------------------|
 | System.String | base64 | The base64 encoded version |
 
-### GetConfig(Boolean) [MLAPI_Configuration_NetworkConfig_GetConfig_System_Boolean_]
+### GetConfig(Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets a SHA256 hash of parts of the NetworkingConfiguration instance
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-35]
+#### Declaration
 
     public ulong GetConfig(bool cache = true)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type           | Name  | Description |
 |----------------|-------|-------------|
 | System.Boolean | cache |             |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ToBase64() [MLAPI_Configuration_NetworkConfig_ToBase64]
+### ToBase64()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Returns a base64 encoded version of the config
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-36]
+#### Declaration
 
     public string ToBase64()
 
-#### Returns [returns-2]
+#### Returns
 
 | Type          | Description |
 |---------------|-------------|

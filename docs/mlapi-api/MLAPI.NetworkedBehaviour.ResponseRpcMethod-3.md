@@ -3,11 +3,11 @@ id: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3
 title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -15,24 +15,24 @@ title: MLAPI.NetworkedBehaviour.ResponseRpcMethod-3
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedBehaviour_ResponseRpcMethod_3_syntax]
+##### Syntax
 
     public delegate TResult ResponseRpcMethod<TResult, T1, T2>(T1 t1, T2 t2);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T1   | \*t1 |             |
 | T2   | \*t2 |             |
 
-##### Returns [returns]
+##### Returns
 
 | Type    | Description |
 |---------|-------------|
 | TResult |             |
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name    | Description |
 |---------|-------------|

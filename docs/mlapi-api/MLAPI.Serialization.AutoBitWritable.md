@@ -3,28 +3,28 @@ id: MLAPI.Serialization.AutoBitWritable
 title: MLAPI.Serialization.AutoBitWritable  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 AutoBitWritable implements IBitWritable and automatically serializes
 fields using reflection
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -32,11 +32,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 IBitWritable
 
@@ -44,47 +44,47 @@ IBitWritable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -96,59 +96,59 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_AutoBitWritable_syntax]
+##### Syntax
 
     public abstract class AutoBitWritable : IBitWritable
 
 ## Methods 
 
-### Read(Stream) [MLAPI_Serialization_AutoBitWritable_Read_System_IO_Stream_]
+### Read(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads the contents from the stream and applies it to the type instance
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public virtual void Read(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description             |
 |------------------|--------|-------------------------|
 | System.IO.Stream | stream | The stream to read from |
 
-### Write(Stream) [MLAPI_Serialization_AutoBitWritable_Write_System_IO_Stream_]
+### Write(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the contents of the type instance to the stream
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public virtual void Write(Stream stream)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | System.IO.Stream | stream | The stream to write to |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 IBitWritable
 

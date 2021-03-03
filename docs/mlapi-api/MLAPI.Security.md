@@ -3,17 +3,17 @@ id: MLAPI.Security
 title: MLAPI.Security  
 ---
 
-## Namespace MLAPI.Security [MLAPI_Security]
+## Namespace MLAPI.Security
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Security
 
 ### MLAPI.Security.CryptographyHelper
 
-<div class="section" markdown="1">
+<div class="section">
 
 Helper class for encryption purposes
 
@@ -31,7 +31,7 @@ Helper class for encryption purposes
 
 ### MLAPI.Security.SecuritySendFlags
 
-<div class="section" markdown="1">
+<div class="section">
 
 The security operations of a payload
 
@@ -41,7 +41,7 @@ The security operations of a payload
 
 ### MLAPI.Security.CryptographyHelper.VerifyCertificateDelegate
 
-<div class="section" markdown="1">
+<div class="section">
 
 The delegate type used to validate certificates
 

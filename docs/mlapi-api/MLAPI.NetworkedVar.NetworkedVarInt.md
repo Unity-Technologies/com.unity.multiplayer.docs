@@ -3,33 +3,33 @@ id: MLAPI.NetworkedVar.NetworkedVarInt
 title: MLAPI.NetworkedVar.NetworkedVarInt  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A NetworkedVar that holds ints and support serialization
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -37,11 +37,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -49,137 +49,137 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.isDirty"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.Settings"
+NetworkedVar&lt;Int32&gt;.isDirty"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.LastSyncedTime"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.OnValueChanged"
+NetworkedVar&lt;Int32&gt;.Settings"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.Value"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.ResetDirty()"
+NetworkedVar&lt;Int32&gt;.LastSyncedTime"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.IsDirty()"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.CanClientRead(UInt64)"
+NetworkedVar&lt;Int32&gt;.OnValueChanged"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.WriteDelta(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.CanClientWrite(UInt64)"
+NetworkedVar&lt;Int32&gt;.Value"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.ReadDelta(Stream, Boolean)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.SetNetworkedBehaviour(NetworkedBehaviour)"
+NetworkedVar&lt;Int32&gt;.ResetDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.ReadField(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Int32\>.WriteField(Stream)"
+NetworkedVar&lt;Int32&gt;.IsDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Int32\>.GetChannel()"
+NetworkedVar&lt;Int32&gt;.CanClientRead(UInt64)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+NetworkedVar&lt;Int32&gt;.WriteDelta(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Int32&gt;.CanClientWrite(UInt64)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Int32&gt;.ReadDelta(Stream, Boolean)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Int32&gt;.SetNetworkedBehaviour(NetworkedBehaviour)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Int32&gt;.ReadField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Int32&gt;.WriteField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Int32&gt;.GetChannel()"
+
+</div>
+
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -191,91 +191,91 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarInt_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkedVarInt : NetworkedVar<int>, INetworkedVar
 
 ## Constructors 
 
-### NetworkedVarInt() [MLAPI_NetworkedVar_NetworkedVarInt__ctor]
+### NetworkedVarInt()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarInt()
 
-### NetworkedVarInt(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarInt__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedVarInt(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarInt(NetworkedVarSettings settings)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 
-### NetworkedVarInt(NetworkedVarSettings, Int32) [MLAPI_NetworkedVar_NetworkedVarInt__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Int32_]
+### NetworkedVarInt(NetworkedVarSettings, Int32)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarInt(NetworkedVarSettings settings, int value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 | System.Int32         | value    |             |
 
-### NetworkedVarInt(Int32) [MLAPI_NetworkedVar_NetworkedVarInt__ctor_System_Int32_]
+### NetworkedVarInt(Int32)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarInt(int value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | value |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

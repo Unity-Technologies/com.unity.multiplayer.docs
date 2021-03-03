@@ -3,17 +3,17 @@ id: MLAPI.Exceptions
 title: MLAPI.Exceptions  
 ---
 
-## Namespace MLAPI.Exceptions [MLAPI_Exceptions]
+## Namespace MLAPI.Exceptions
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Exceptions
 
 ### MLAPI.Exceptions.NetworkConfigurationException
 
-<div class="section" markdown="1">
+<div class="section">
 
 Exception thrown when the operation can only be done on the server
 
@@ -29,7 +29,7 @@ Exception thrown when the operation can only be done on the server
 
 ### MLAPI.Exceptions.NotListeningException
 
-<div class="section" markdown="1">
+<div class="section">
 
 Exception thrown when the operation require NetworkingManager to be
 listening.
@@ -38,7 +38,7 @@ listening.
 
 ### MLAPI.Exceptions.NotServerException
 
-<div class="section" markdown="1">
+<div class="section">
 
 Exception thrown when the operation can only be done on the server
 
@@ -46,7 +46,7 @@ Exception thrown when the operation can only be done on the server
 
 ### MLAPI.Exceptions.SpawnStateException
 
-<div class="section" markdown="1">
+<div class="section">
 
 Exception thrown when an object is not yet spawned
 
@@ -54,7 +54,7 @@ Exception thrown when an object is not yet spawned
 
 ### MLAPI.Exceptions.VisibilityChangeException
 
-<div class="section" markdown="1">
+<div class="section">
 
 Exception thrown when a visibility change fails
 

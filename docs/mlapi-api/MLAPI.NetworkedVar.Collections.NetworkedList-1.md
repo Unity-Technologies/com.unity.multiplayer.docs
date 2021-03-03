@@ -3,27 +3,27 @@ id: MLAPI.NetworkedVar.Collections.NetworkedList-1
 title: MLAPI.NetworkedVar.Collections.NetworkedList-1  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Event based networkedVar container for syncing Lists
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,35 +31,35 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
-System.Collections.Generic.IList\<T\>
-
-</div>
-
-<div markdown="1">
-
-System.Collections.Generic.ICollection\<T\>
+System.Collections.Generic.IList&lt;T&gt;
 
 </div>
 
-<div markdown="1">
+<div>
 
-System.Collections.Generic.IEnumerable\<T\>
+System.Collections.Generic.ICollection&lt;T&gt;
 
 </div>
 
-<div markdown="1">
+<div>
+
+System.Collections.Generic.IEnumerable&lt;T&gt;
+
+</div>
+
+<div>
 
 System.Collections.IEnumerable
 
 </div>
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -67,47 +67,47 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -119,11 +119,11 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_Collections_NetworkedList_1_syntax]
+##### Syntax
 
     public class NetworkedList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, INetworkedVar
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description           |
 |------|-----------------------|
@@ -131,108 +131,108 @@ Object.ToString()
 
 ## Constructors 
 
-### NetworkedList() [MLAPI_NetworkedVar_Collections_NetworkedList_1__ctor]
+### NetworkedList()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedList with the default value and settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public NetworkedList()
 
-### NetworkedList(NetworkedVarSettings) [MLAPI_NetworkedVar_Collections_NetworkedList_1__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedList(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedList with the default value and custom settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public NetworkedList(NetworkedVarSettings settings)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                 | Name     | Description                               |
 |----------------------|----------|-------------------------------------------|
 | NetworkedVarSettings | settings | The settings to use for the NetworkedList |
 
-### NetworkedList(NetworkedVarSettings, IList\<T\>) [MLAPI_NetworkedVar_Collections_NetworkedList_1__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Collections_Generic_IList__0__]
+### NetworkedList(NetworkedVarSettings, IList&lt;T&gt;)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedList with a custom value and custom settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public NetworkedList(NetworkedVarSettings settings, IList<T> value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
-| Type                                  | Name     | Description                                    |
-|---------------------------------------|----------|------------------------------------------------|
-| NetworkedVarSettings                  | settings | The settings to use for the NetworkedList      |
-| System.Collections.Generic.IList\<T\> | value    | The initial value to use for the NetworkedList |
+| Type                                      | Name     | Description                                    |
+|-------------------------------------------|----------|------------------------------------------------|
+| NetworkedVarSettings                      | settings | The settings to use for the NetworkedList      |
+| System.Collections.Generic.IList&lt;T&gt; | value    | The initial value to use for the NetworkedList |
 
-### NetworkedList(IList\<T\>) [MLAPI_NetworkedVar_Collections_NetworkedList_1__ctor_System_Collections_Generic_IList__0__]
+### NetworkedList(IList&lt;T&gt;)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedList with a custom value and the default settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public NetworkedList(IList<T> value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
-| Type                                  | Name  | Description                                    |
-|---------------------------------------|-------|------------------------------------------------|
-| System.Collections.Generic.IList\<T\> | value | The initial value to use for the NetworkedList |
+| Type                                      | Name  | Description                                    |
+|-------------------------------------------|-------|------------------------------------------------|
+| System.Collections.Generic.IList&lt;T&gt; | value | The initial value to use for the NetworkedList |
 
 ## Fields
 
-### Settings [MLAPI_NetworkedVar_Collections_NetworkedList_1_Settings]
+### Settings
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The settings for this container
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public readonly NetworkedVarSettings Settings
 
-#### Field Value [field-value]
+#### Field Value
 
 | Type                 | Description |
 |----------------------|-------------|
@@ -240,89 +240,89 @@ The settings for this container
 
 ## Properties 
 
-### Count [MLAPI_NetworkedVar_Collections_NetworkedList_1_Count]
+### Count
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-5]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public int Count { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### IsReadOnly [MLAPI_NetworkedVar_Collections_NetworkedList_1_IsReadOnly]
+### IsReadOnly
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-6]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool IsReadOnly { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Item\[Int32\] [MLAPI_NetworkedVar_Collections_NetworkedList_1_Item_System_Int32_]
+### Item\[Int32\]
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-7]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public T this[int index] { get; set; }
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | index |             |
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-### LastSyncedTime [MLAPI_NetworkedVar_Collections_NetworkedList_1_LastSyncedTime]
+### LastSyncedTime
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the last time the variable was synced
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public float LastSyncedTime { get; }
 
-#### Property Value [property-value-3]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -330,402 +330,402 @@ Gets the last time the variable was synced
 
 ## Methods 
 
-### Add(T) [MLAPI_NetworkedVar_Collections_NetworkedList_1_Add__0_]
+### Add(T)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-9]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void Add(T item)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-### CanClientRead(UInt64) [MLAPI_NetworkedVar_Collections_NetworkedList_1_CanClientRead_System_UInt64_]
+### CanClientRead(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-10]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool CanClientRead(ulong clientId)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### CanClientWrite(UInt64) [MLAPI_NetworkedVar_Collections_NetworkedList_1_CanClientWrite_System_UInt64_]
+### CanClientWrite(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-11]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool CanClientWrite(ulong clientId)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Clear() [MLAPI_NetworkedVar_Collections_NetworkedList_1_Clear]
+### Clear()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-12]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void Clear()
 
-### Contains(T) [MLAPI_NetworkedVar_Collections_NetworkedList_1_Contains__0_]
+### Contains(T)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-13]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool Contains(T item)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### CopyTo(T\[\], Int32) [MLAPI_NetworkedVar_Collections_NetworkedList_1_CopyTo__0___System_Int32_]
+### CopyTo(T\[\], Int32)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-14]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void CopyTo(T[] array, int arrayIndex)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type         | Name       | Description |
 |--------------|------------|-------------|
 | T\[\]        | array      |             |
 | System.Int32 | arrayIndex |             |
 
-### GetChannel() [MLAPI_NetworkedVar_Collections_NetworkedList_1_GetChannel]
+### GetChannel()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-15]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public string GetChannel()
 
-#### Returns [returns-3]
+#### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### GetEnumerator() [MLAPI_NetworkedVar_Collections_NetworkedList_1_GetEnumerator]
+### GetEnumerator()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-16]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public IEnumerator<T> GetEnumerator()
 
-#### Returns [returns-4]
+#### Returns
 
-| Type                                        | Description |
-|---------------------------------------------|-------------|
-| System.Collections.Generic.IEnumerator\<T\> |             |
+| Type                                            | Description |
+|-------------------------------------------------|-------------|
+| System.Collections.Generic.IEnumerator&lt;T&gt; |             |
 
-### IndexOf(T) [MLAPI_NetworkedVar_Collections_NetworkedList_1_IndexOf__0_]
+### IndexOf(T)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-17]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public int IndexOf(T item)
 
-#### Parameters [parameters-9]
+#### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-#### Returns [returns-5]
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Insert(Int32, T) [MLAPI_NetworkedVar_Collections_NetworkedList_1_Insert_System_Int32__0_]
+### Insert(Int32, T)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-18]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void Insert(int index, T item)
 
-#### Parameters [parameters-10]
+#### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | index |             |
 | T            | item  |             |
 
-### IsDirty() [MLAPI_NetworkedVar_Collections_NetworkedList_1_IsDirty]
+### IsDirty()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-19]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool IsDirty()
 
-#### Returns [returns-6]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### ReadDelta(Stream, Boolean) [MLAPI_NetworkedVar_Collections_NetworkedList_1_ReadDelta_System_IO_Stream_System_Boolean_]
+### ReadDelta(Stream, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-20]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void ReadDelta(Stream stream, bool keepDirtyDelta)
 
-#### Parameters [parameters-11]
+#### Parameters
 
 | Type             | Name           | Description |
 |------------------|----------------|-------------|
 | System.IO.Stream | stream         |             |
 | System.Boolean   | keepDirtyDelta |             |
 
-### ReadField(Stream) [MLAPI_NetworkedVar_Collections_NetworkedList_1_ReadField_System_IO_Stream_]
+### ReadField(Stream)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-21]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void ReadField(Stream stream)
 
-#### Parameters [parameters-12]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
 | System.IO.Stream | stream |             |
 
-### Remove(T) [MLAPI_NetworkedVar_Collections_NetworkedList_1_Remove__0_]
+### Remove(T)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-22]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool Remove(T item)
 
-#### Parameters [parameters-13]
+#### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-#### Returns [returns-7]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### RemoveAt(Int32) [MLAPI_NetworkedVar_Collections_NetworkedList_1_RemoveAt_System_Int32_]
+### RemoveAt(Int32)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-23]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void RemoveAt(int index)
 
-#### Parameters [parameters-14]
+#### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | index |             |
 
-### ResetDirty() [MLAPI_NetworkedVar_Collections_NetworkedList_1_ResetDirty]
+### ResetDirty()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-24]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void ResetDirty()
 
-### SetNetworkedBehaviour(NetworkedBehaviour) [MLAPI_NetworkedVar_Collections_NetworkedList_1_SetNetworkedBehaviour_MLAPI_NetworkedBehaviour_]
+### SetNetworkedBehaviour(NetworkedBehaviour)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-25]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void SetNetworkedBehaviour(NetworkedBehaviour behaviour)
 
-#### Parameters [parameters-15]
+#### Parameters
 
 | Type               | Name      | Description |
 |--------------------|-----------|-------------|
 | NetworkedBehaviour | behaviour |             |
 
-### WriteDelta(Stream) [MLAPI_NetworkedVar_Collections_NetworkedList_1_WriteDelta_System_IO_Stream_]
+### WriteDelta(Stream)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-26]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void WriteDelta(Stream stream)
 
-#### Parameters [parameters-16]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
 | System.IO.Stream | stream |             |
 
-### WriteField(Stream) [MLAPI_NetworkedVar_Collections_NetworkedList_1_WriteField_System_IO_Stream_]
+### WriteField(Stream)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-27]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void WriteField(Stream stream)
 
-#### Parameters [parameters-17]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
@@ -733,77 +733,77 @@ Gets the last time the variable was synced
 
 ## Events
 
-### OnListChanged [MLAPI_NetworkedVar_Collections_NetworkedList_1_OnListChanged]
+### OnListChanged
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback to be invoked when the list gets changed
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-28]
+#### Declaration
 
     public event NetworkedList<T>.OnListChangedDelegate OnListChanged
 
-#### Event Type [event-type]
+#### Event Type
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| NetworkedList.OnListChangedDelegate\<\> |             |
+| Type                                        | Description |
+|---------------------------------------------|-------------|
+| NetworkedList.OnListChangedDelegate&lt;&gt; |             |
 
-## Explicit Interface Implementations  [eii]
+## Explicit Interface Implementations 
 
-### IEnumerable.GetEnumerator() [MLAPI_NetworkedVar_Collections_NetworkedList_1_System_Collections_IEnumerable_GetEnumerator]
+### IEnumerable.GetEnumerator()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-29]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     IEnumerator IEnumerable.GetEnumerator()
 
-#### Returns [returns-8]
+#### Returns
 
 | Type                           | Description |
 |--------------------------------|-------------|
 | System.Collections.IEnumerator |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
-System.Collections.Generic.IList\<T\>
-
-</div>
-
-<div markdown="1">
-
-System.Collections.Generic.ICollection\<T\>
+System.Collections.Generic.IList&lt;T&gt;
 
 </div>
 
-<div markdown="1">
+<div>
 
-System.Collections.Generic.IEnumerable\<T\>
+System.Collections.Generic.ICollection&lt;T&gt;
 
 </div>
 
-<div markdown="1">
+<div>
+
+System.Collections.Generic.IEnumerable&lt;T&gt;
+
+</div>
+
+<div>
 
 System.Collections.IEnumerable
 
 </div>
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

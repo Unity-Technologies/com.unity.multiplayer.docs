@@ -3,27 +3,27 @@ id: MLAPI.Serialization.Pooled.BitWriterPool
 title: MLAPI.Serialization.Pooled.BitWriterPool  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Static class containing PooledBitWriters
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,57 +83,57 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Serialization_Pooled_BitWriterPool_syntax]
+##### Syntax
 
     public static class BitWriterPool
 
 ## Methods 
 
-### GetWriter(Stream) [MLAPI_Serialization_Pooled_BitWriterPool_GetWriter_System_IO_Stream_]
+### GetWriter(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Retrieves a PooledBitWriter
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public static PooledBitWriter GetWriter(Stream stream)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type             | Name   | Description                           |
 |------------------|--------|---------------------------------------|
 | System.IO.Stream | stream | The stream the writer should write to |
 
-#### Returns [returns]
+#### Returns
 
 | Type            | Description       |
 |-----------------|-------------------|
 | PooledBitWriter | A PooledBitWriter |
 
-### PutBackInPool(PooledBitWriter) [MLAPI_Serialization_Pooled_BitWriterPool_PutBackInPool_MLAPI_Serialization_Pooled_PooledBitWriter_]
+### PutBackInPool(PooledBitWriter)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Puts a PooledBitWriter back into the pool
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public static void PutBackInPool(PooledBitWriter writer)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type            | Name   | Description                   |
 |-----------------|--------|-------------------------------|

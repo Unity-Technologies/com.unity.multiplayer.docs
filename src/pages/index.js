@@ -73,7 +73,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl('docs/getting-started/about-mlapi')}>
               Get Started
             </Link>
           </div>

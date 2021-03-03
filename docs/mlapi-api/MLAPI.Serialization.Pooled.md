@@ -3,17 +3,17 @@ id: MLAPI.Serialization.Pooled
 title: MLAPI.Serialization.Pooled  
 ---
 
-## Namespace MLAPI.Serialization.Pooled [MLAPI_Serialization_Pooled]
+## Namespace MLAPI.Serialization.Pooled
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.Serialization.Pooled
 
 ### MLAPI.Serialization.Pooled.BitReaderPool
 
-<div class="section" markdown="1">
+<div class="section">
 
 Static class containing PooledBitReaders
 
@@ -29,7 +29,7 @@ Static class containing PooledBitReaders
 
 ### MLAPI.Serialization.Pooled.BitStreamPool
 
-<div class="section" markdown="1">
+<div class="section">
 
 Static class containing PooledBitStreams
 
@@ -37,7 +37,7 @@ Static class containing PooledBitStreams
 
 ### MLAPI.Serialization.Pooled.BitWriterPool
 
-<div class="section" markdown="1">
+<div class="section">
 
 Static class containing PooledBitWriters
 
@@ -45,7 +45,7 @@ Static class containing PooledBitWriters
 
 ### MLAPI.Serialization.Pooled.PooledBitReader
 
-<div class="section" markdown="1">
+<div class="section">
 
 Disposable BitReader that returns the Reader to the BitReaderPool when
 disposed
@@ -54,7 +54,7 @@ disposed
 
 ### MLAPI.Serialization.Pooled.PooledBitStream
 
-<div class="section" markdown="1">
+<div class="section">
 
 Disposable BitStream that returns the Stream to the BitStreamPool when
 disposed
@@ -63,7 +63,7 @@ disposed
 
 ### MLAPI.Serialization.Pooled.PooledBitWriter
 
-<div class="section" markdown="1">
+<div class="section">
 
 Disposable BitWriter that returns the Writer to the BitWriterPool when
 disposed

@@ -3,33 +3,33 @@ id: MLAPI.NetworkedVar.NetworkedVarDouble
 title: MLAPI.NetworkedVar.NetworkedVarDouble  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A NetworkedVar that holds doubles and support serialization
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -37,11 +37,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -49,137 +49,137 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.isDirty"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.Settings"
+NetworkedVar&lt;Double&gt;.isDirty"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.LastSyncedTime"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.OnValueChanged"
+NetworkedVar&lt;Double&gt;.Settings"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.Value"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.ResetDirty()"
+NetworkedVar&lt;Double&gt;.LastSyncedTime"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.IsDirty()"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.CanClientRead(UInt64)"
+NetworkedVar&lt;Double&gt;.OnValueChanged"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.WriteDelta(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.CanClientWrite(UInt64)"
+NetworkedVar&lt;Double&gt;.Value"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.ReadDelta(Stream, Boolean)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.SetNetworkedBehaviour(NetworkedBehaviour)"
+NetworkedVar&lt;Double&gt;.ResetDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.ReadField(Stream)"
-
-</div>
-
-<div markdown="1">
-
-NetworkedVar\<Double\>.WriteField(Stream)"
+NetworkedVar&lt;Double&gt;.IsDirty()"
 
 </div>
 
-<div markdown="1">
+<div>
 
-NetworkedVar\<Double\>.GetChannel()"
+NetworkedVar&lt;Double&gt;.CanClientRead(UInt64)"
 
 </div>
 
-<div markdown="1">
+<div>
+
+NetworkedVar&lt;Double&gt;.WriteDelta(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Double&gt;.CanClientWrite(UInt64)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Double&gt;.ReadDelta(Stream, Boolean)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Double&gt;.SetNetworkedBehaviour(NetworkedBehaviour)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Double&gt;.ReadField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Double&gt;.WriteField(Stream)"
+
+</div>
+
+<div>
+
+NetworkedVar&lt;Double&gt;.GetChannel()"
+
+</div>
+
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -191,91 +191,91 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVarDouble_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkedVarDouble : NetworkedVar<double>, INetworkedVar
 
 ## Constructors 
 
-### NetworkedVarDouble() [MLAPI_NetworkedVar_NetworkedVarDouble__ctor]
+### NetworkedVarDouble()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarDouble()
 
-### NetworkedVarDouble(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVarDouble__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedVarDouble(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-1]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarDouble(NetworkedVarSettings settings)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 
-### NetworkedVarDouble(NetworkedVarSettings, Double) [MLAPI_NetworkedVar_NetworkedVarDouble__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_System_Double_]
+### NetworkedVarDouble(NetworkedVarSettings, Double)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-2]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarDouble(NetworkedVarSettings settings, double value)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                 | Name     | Description |
 |----------------------|----------|-------------|
 | NetworkedVarSettings | settings |             |
 | System.Double        | value    |             |
 
-### NetworkedVarDouble(Double) [MLAPI_NetworkedVar_NetworkedVarDouble__ctor_System_Double_]
+### NetworkedVarDouble(Double)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-3]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public NetworkedVarDouble(double value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.Double | value |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

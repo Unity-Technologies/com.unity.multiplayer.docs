@@ -3,141 +3,141 @@ id: MLAPI.NetworkedVar.NetworkedVar-1
 title: MLAPI.NetworkedVar.NetworkedVar-1  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 A variable that can be synchronized over the network.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -145,11 +145,11 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 
@@ -157,47 +157,47 @@ INetworkedVar
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -209,12 +209,12 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_NetworkedVar_1_syntax]
+##### Syntax
 
     [Serializable]
     public class NetworkedVar<T> : INetworkedVar
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description |
 |------|-------------|
@@ -222,83 +222,83 @@ Object.ToString()
 
 ## Constructors 
 
-### NetworkedVar() [MLAPI_NetworkedVar_NetworkedVar_1__ctor]
+### NetworkedVar()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedVar with the default value and settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public NetworkedVar()
 
-### NetworkedVar(T) [MLAPI_NetworkedVar_NetworkedVar_1__ctor__0_]
+### NetworkedVar(T)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedVar with a custom value and the default settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public NetworkedVar(T value)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type | Name  | Description                                   |
 |------|-------|-----------------------------------------------|
 | T    | value | The initial value to use for the NetworkedVar |
 
-### NetworkedVar(NetworkedVarSettings) [MLAPI_NetworkedVar_NetworkedVar_1__ctor_MLAPI_NetworkedVar_NetworkedVarSettings_]
+### NetworkedVar(NetworkedVarSettings)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedVar with the default value and custom settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public NetworkedVar(NetworkedVarSettings settings)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type                 | Name     | Description                              |
 |----------------------|----------|------------------------------------------|
 | NetworkedVarSettings | settings | The settings to use for the NetworkedVar |
 
-### NetworkedVar(NetworkedVarSettings, T) [MLAPI_NetworkedVar_NetworkedVar_1__ctor_MLAPI_NetworkedVar_NetworkedVarSettings__0_]
+### NetworkedVar(NetworkedVarSettings, T)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a NetworkedVar with a custom value and custom settings
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public NetworkedVar(NetworkedVarSettings settings, T value)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type                 | Name     | Description                                   |
 |----------------------|----------|-----------------------------------------------|
@@ -307,45 +307,45 @@ Creates a NetworkedVar with a custom value and custom settings
 
 ## Fields
 
-### OnValueChanged [MLAPI_NetworkedVar_NetworkedVar_1_OnValueChanged]
+### OnValueChanged
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The callback to be invoked when the value gets changed
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public NetworkedVar<T>.OnValueChangedDelegate OnValueChanged
 
-#### Field Value [field-value]
+#### Field Value
 
-| Type                                    | Description |
-|-----------------------------------------|-------------|
-| NetworkedVar.OnValueChangedDelegate\<\> |             |
+| Type                                        | Description |
+|---------------------------------------------|-------------|
+| NetworkedVar.OnValueChangedDelegate&lt;&gt; |             |
 
-### Settings [MLAPI_NetworkedVar_NetworkedVar_1_Settings]
+### Settings
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The settings for this var
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public readonly NetworkedVarSettings Settings
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type                 | Description |
 |----------------------|-------------|
@@ -353,67 +353,67 @@ The settings for this var
 
 ## Properties 
 
-### isDirty [MLAPI_NetworkedVar_NetworkedVar_1_isDirty]
+### isDirty
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets or sets Whether or not the variable needs to be delta synced
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-6]
+#### Declaration
 
     public bool isDirty { get; set; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### LastSyncedTime [MLAPI_NetworkedVar_NetworkedVar_1_LastSyncedTime]
+### LastSyncedTime
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the last time the variable was synced
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-7]
+#### Declaration
 
     public float LastSyncedTime { get; }
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### Value [MLAPI_NetworkedVar_NetworkedVar_1_Value]
+### Value
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The value of the NetworkedVar container
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-8]
+#### Declaration
 
     public T Value { get; set; }
 
-#### Property Value [property-value-2]
+#### Property Value
 
 | Type | Description |
 |------|-------------|
@@ -421,220 +421,220 @@ The value of the NetworkedVar container
 
 ## Methods 
 
-### CanClientRead(UInt64) [MLAPI_NetworkedVar_NetworkedVar_1_CanClientRead_System_UInt64_]
+### CanClientRead(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-9]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool CanClientRead(ulong clientId)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns [returns]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### CanClientWrite(UInt64) [MLAPI_NetworkedVar_NetworkedVar_1_CanClientWrite_System_UInt64_]
+### CanClientWrite(UInt64)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-10]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool CanClientWrite(ulong clientId)
 
-#### Parameters [parameters-4]
+#### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetChannel() [MLAPI_NetworkedVar_NetworkedVar_1_GetChannel]
+### GetChannel()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-11]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public string GetChannel()
 
-#### Returns [returns-2]
+#### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### IsDirty() [MLAPI_NetworkedVar_NetworkedVar_1_IsDirty]
+### IsDirty()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-12]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public bool IsDirty()
 
-#### Returns [returns-3]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### ReadDelta(Stream, Boolean) [MLAPI_NetworkedVar_NetworkedVar_1_ReadDelta_System_IO_Stream_System_Boolean_]
+### ReadDelta(Stream, Boolean)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Reads value from the reader and applies it
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-13]
+#### Declaration
 
     public void ReadDelta(Stream stream, bool keepDirtyDelta)
 
-#### Parameters [parameters-5]
+#### Parameters
 
 | Type             | Name           | Description                                                                             |
 |------------------|----------------|-----------------------------------------------------------------------------------------|
 | System.IO.Stream | stream         | The stream to read the value from                                                       |
 | System.Boolean   | keepDirtyDelta | Whether or not the container should keep the dirty delta, or mark the delta as consumed |
 
-### ReadField(Stream) [MLAPI_NetworkedVar_NetworkedVar_1_ReadField_System_IO_Stream_]
+### ReadField(Stream)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-14]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void ReadField(Stream stream)
 
-#### Parameters [parameters-6]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
 | System.IO.Stream | stream |             |
 
-### ResetDirty() [MLAPI_NetworkedVar_NetworkedVar_1_ResetDirty]
+### ResetDirty()
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-15]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void ResetDirty()
 
-### SetNetworkedBehaviour(NetworkedBehaviour) [MLAPI_NetworkedVar_NetworkedVar_1_SetNetworkedBehaviour_MLAPI_NetworkedBehaviour_]
+### SetNetworkedBehaviour(NetworkedBehaviour)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-16]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void SetNetworkedBehaviour(NetworkedBehaviour behaviour)
 
-#### Parameters [parameters-7]
+#### Parameters
 
 | Type               | Name      | Description |
 |--------------------|-----------|-------------|
 | NetworkedBehaviour | behaviour |             |
 
-### WriteDelta(Stream) [MLAPI_NetworkedVar_NetworkedVar_1_WriteDelta_System_IO_Stream_]
+### WriteDelta(Stream)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Writes the variable to the writer
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-17]
+#### Declaration
 
     public void WriteDelta(Stream stream)
 
-#### Parameters [parameters-8]
+#### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
 | System.IO.Stream | stream | The stream to write the value to |
 
-### WriteField(Stream) [MLAPI_NetworkedVar_NetworkedVar_1_WriteField_System_IO_Stream_]
+### WriteField(Stream)
 
-<div class="markdown level1 summary" markdown="1">
-
-</div>
-
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 summary">
 
 </div>
 
-#### Declaration [declaration-18]
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
     public void WriteField(Stream stream)
 
-#### Parameters [parameters-9]
+#### Parameters
 
 | Type             | Name   | Description |
 |------------------|--------|-------------|
 | System.IO.Stream | stream |             |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 INetworkedVar
 

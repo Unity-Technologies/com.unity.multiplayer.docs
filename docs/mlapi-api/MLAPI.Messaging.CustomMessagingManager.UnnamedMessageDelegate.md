@@ -3,13 +3,13 @@ id: MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate
 title: MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate used for incoming unnamed messages
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,11 +17,11 @@ Delegate used for incoming unnamed messages
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Messaging_CustomMessagingManager_UnnamedMessageDelegate_syntax]
+##### Syntax
 
     public delegate void UnnamedMessageDelegate(ulong clientId, Stream stream);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type             | Name       | Description                            |
 |------------------|------------|----------------------------------------|

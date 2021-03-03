@@ -3,14 +3,14 @@ id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMetho
 title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 The method to use to distribute the transport connectionIds in a fixed
 size 64 bit integer.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -18,7 +18,7 @@ size 64 bit integer.
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Transports_Multiplex_MultiplexTransportAdapter_ConnectionIdSpreadMethod_syntax]
+##### Syntax
 
     public enum ConnectionIdSpreadMethod
 

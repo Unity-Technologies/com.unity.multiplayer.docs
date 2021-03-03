@@ -3,27 +3,27 @@ id: MLAPI.Collections.FixedQueue-1
 title: MLAPI.Collections.FixedQueue-1  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Queue with a fixed size
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
@@ -31,47 +31,47 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ToString()
 
@@ -83,11 +83,11 @@ Object.ToString()
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Collections_FixedQueue_1_syntax]
+##### Syntax
 
     public sealed class FixedQueue<T>
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name | Description           |
 |------|-----------------------|
@@ -95,23 +95,23 @@ Object.ToString()
 
 ## Constructors 
 
-### FixedQueue(Int32) [MLAPI_Collections_FixedQueue_1__ctor_System_Int32_]
+### FixedQueue(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Creates a new FixedQueue with a given size
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public FixedQueue(int maxSize)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type         | Name    | Description           |
 |--------------|---------|-----------------------|
@@ -119,51 +119,51 @@ Creates a new FixedQueue with a given size
 
 ## Properties 
 
-### Count [MLAPI_Collections_FixedQueue_1_Count]
+### Count
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The amount of enqueued objects
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public int Count { get; }
 
-#### Property Value [property-value]
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Item\[Int32\] [MLAPI_Collections_FixedQueue_1_Item_System_Int32_]
+### Item\[Int32\]
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the element at a given virtual index
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public T this[int index] { get; }
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type         | Name  | Description                            |
 |--------------|-------|----------------------------------------|
 | System.Int32 | index | The virtual index to get the item from |
 
-#### Property Value [property-value-1]
+#### Property Value
 
 | Type | Description                      |
 |------|----------------------------------|
@@ -171,79 +171,79 @@ Gets the element at a given virtual index
 
 ## Methods 
 
-### Dequeue() [MLAPI_Collections_FixedQueue_1_Dequeue]
+### Dequeue()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Dequeues an object
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-3]
+#### Declaration
 
     public T Dequeue()
 
-#### Returns [returns]
+#### Returns
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-### ElementAt(Int32) [MLAPI_Collections_FixedQueue_1_ElementAt_System_Int32_]
+### ElementAt(Int32)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Gets the element at a given virtual index
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-4]
+#### Declaration
 
     public T ElementAt(int index)
 
-#### Parameters [parameters-2]
+#### Parameters
 
 | Type         | Name  | Description                            |
 |--------------|-------|----------------------------------------|
 | System.Int32 | index | The virtual index to get the item from |
 
-#### Returns [returns-1]
+#### Returns
 
 | Type | Description                      |
 |------|----------------------------------|
 | T    | The element at the virtual index |
 
-### Enqueue(T) [MLAPI_Collections_FixedQueue_1_Enqueue__0_]
+### Enqueue(T)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Enqueues an object
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-5]
+#### Declaration
 
     public bool Enqueue(T t)
 
-#### Parameters [parameters-3]
+#### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | t    |             |
 
-#### Returns [returns-2]
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|

@@ -3,17 +3,17 @@ id: MLAPI.Transports.UNET
 title: MLAPI.Transports.UNET  
 ---
 
-## Namespace MLAPI.Transports.UNET [MLAPI_Transports_UNET]
+## Namespace MLAPI.Transports.UNET
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,18 +21,18 @@ title: MLAPI.Transports.UNET
 
 ### MLAPI.Transports.UNET.InvalidConfigException
 
-<div class="section" markdown="1">
+<div class="section">
 
 </div>
 
 ### MLAPI.Transports.UNET.RelayTransport
 
-<div class="section" markdown="1">
+<div class="section">
 
 </div>
 
 ### MLAPI.Transports.UNET.UnetTransport
 
-<div class="section" markdown="1">
+<div class="section">
 
 </div>

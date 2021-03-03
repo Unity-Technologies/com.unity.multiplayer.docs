@@ -3,17 +3,17 @@ id: MLAPI.LagCompensation
 title: MLAPI.LagCompensation  
 ---
 
-## Namespace MLAPI.LagCompensation [MLAPI_LagCompensation]
+## Namespace MLAPI.LagCompensation
 
-<div class="markdown level0 summary" markdown="1">
-
-</div>
-
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 summary">
 
 </div>
 
-<div class="markdown level0 remarks" markdown="1">
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="markdown level0 remarks">
 
 </div>
 
@@ -21,7 +21,7 @@ title: MLAPI.LagCompensation
 
 ### MLAPI.LagCompensation.LagCompensationManager
 
-<div class="section" markdown="1">
+<div class="section">
 
 The main class for controlling lag compensation
 
@@ -29,7 +29,7 @@ The main class for controlling lag compensation
 
 ### MLAPI.LagCompensation.TrackedObject
 
-<div class="section" markdown="1">
+<div class="section">
 
 A component used for lag compensation. Each object with this component
 will get tracked

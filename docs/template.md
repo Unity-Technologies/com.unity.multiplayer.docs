@@ -1,10 +1,9 @@
 ---
 id: template
-title: Markdown Style Guide
-sidebar_label: Markdown Style Guide
+title: Doc Template
 ---
 
-This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
 ## Markdown Syntax
 
@@ -113,6 +112,113 @@ Reference-style: ![alt text][logo]
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
 ![img](/img/example-img.png)
+
+## Tabs
+
+Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.
+
+At the bottom of the Markdown file, add the following code:
+
+```markdown
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+For each set of tabs, use the following code:
+
+```markdown
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Tab 1', value: 'tab1'},
+    {label: 'Tab 2', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+Add content here for first tab.
+
+</TabItem>
+<TabItem value="tab2">
+
+Add content here for second tab.
+
+</TabItem>
+</Tabs>
+```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+See the following tabbed code examples:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="unet"
+  values={[
+    {label: 'UNet Example', value: 'unet'},
+    {label: 'MLAPI Example', value: 'mlapi'},
+  ]}>
+
+<TabItem value="unet">
+
+```csharp
+   public class MyUnetClass : NetworkBehaviour
+   {
+      [SyncVar]
+      public float MySyncFloat;
+      public void Start()
+      {
+         if (isClient)
+         {
+               CmdExample(10f);
+         }
+         else if (isServer)
+         {
+               RpcExample(10f);
+         }
+      }
+      [Command]
+      public void CmdExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRpc]
+      public void RpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+  <TabItem value="mlapi">
+
+```csharp
+  public class MyMLAPIExample : NetworkedBehaviour
+   {
+      public NetworkedVar<float> MyNetworkedVar;
+      public override void NetworkedStart()
+      {
+         InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
+         InvokeServerRpc(ServerRpcExample, 10f);
+      }
+      [ServerRPC]
+      public void ServerRpcExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRPC]
+      public void ClientRpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+</Tabs>
 
 ## Code
 
@@ -243,45 +349,41 @@ Add an admonition using three colons, the type, and closing content with colons:
 ```markdown title="Markdown Code"
 :::note
 
-This is a note
+This is a note.
 
 :::
 ```
 
 :::note
-
-This is a note
-
+This is a note.
 :::
 
 :::tip
-
-This is a tip
-
+This is a tip.
 :::
 
 :::important
-
-This is important
-
+This is important.
 :::
 
 :::caution
-
-This is a caution
-
+This is a caution.
 :::
 
 :::warning
-
-This is a warning
-
+This is a warning.
 :::
 
 :::contribution Community Contribution
-
 Thank you to [Unity](https://unity3d.com/) for this tutorial! This contribution is a great help to the community.
+:::
 
+:::funfact Fun Fact
+Use for helpful facts and info.
+:::
+
+:::bestpractice Best Practice
+Highlight best practices and recommendations.
 :::
 
 ## Mermaid Charts

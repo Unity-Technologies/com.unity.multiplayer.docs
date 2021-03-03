@@ -3,13 +3,13 @@ id: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate
 title: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Delegate for when a scene switch has been initiated
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
@@ -17,11 +17,11 @@ Delegate for when a scene switch has been initiated
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_SceneManagement_NetworkSceneManager_SceneSwitchStartedDelegate_syntax]
+##### Syntax
 
     public delegate void SceneSwitchStartedDelegate(AsyncOperation operation);
 
-##### Parameters [parameters]
+##### Parameters
 
 | Type                       | Name        | Description |
 |----------------------------|-------------|-------------|

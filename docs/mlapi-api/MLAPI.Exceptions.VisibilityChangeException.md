@@ -3,33 +3,33 @@ id: MLAPI.Exceptions.VisibilityChangeException
 title: MLAPI.Exceptions.VisibilityChangeException  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Exception thrown when a visibility change fails
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritance" markdown="1">
+<div class="inheritance">
 
 ##### Inheritance
 
-<div class="level0" markdown="1">
+<div class="level0">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level1" markdown="1">
+<div class="level1">
 
 System.Dynamic.ExpandoObject
 
 </div>
 
-<div class="level2" markdown="1">
+<div class="level2">
 
 System.Dynamic.ExpandoObject
 
@@ -37,17 +37,17 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-<div markdown="1" classs="implements">
+<div classs="implements">
 
 ##### Implements
 
-<div markdown="1">
+<div>
 
 System.Runtime.InteropServices.\_Exception
 
 </div>
 
-<div markdown="1">
+<div>
 
 System.Runtime.Serialization.ISerializable
 
@@ -55,107 +55,107 @@ System.Runtime.Serialization.ISerializable
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 Exception.GetBaseException()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.GetObjectData(SerializationInfo, StreamingContext)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.Data
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.HelpLink
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.HResult
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.InnerException
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.Message
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.Source
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.StackTrace
 
 </div>
 
-<div markdown="1">
+<div>
 
 Exception.TargetSite
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.MemberwiseClone()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -167,83 +167,83 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_Exceptions_VisibilityChangeException_syntax]
+##### Syntax
 
     public class VisibilityChangeException : Exception, _Exception, ISerializable
 
 ## Constructors 
 
-### VisibilityChangeException() [MLAPI_Exceptions_VisibilityChangeException__ctor]
+### VisibilityChangeException()
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Constructs a VisibilityChangeException
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public VisibilityChangeException()
 
-### VisibilityChangeException(String) [MLAPI_Exceptions_VisibilityChangeException__ctor_System_String_]
+### VisibilityChangeException(String)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Constructs a VisibilityChangeException with a message
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public VisibilityChangeException(string message)
 
-#### Parameters [parameters]
+#### Parameters
 
 | Type          | Name    | Description           |
 |---------------|---------|-----------------------|
 | System.String | message | The exception message |
 
-### VisibilityChangeException(String, Exception) [MLAPI_Exceptions_VisibilityChangeException__ctor_System_String_System_Exception_]
+### VisibilityChangeException(String, Exception)
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Constructs a VisibilityChangeException with a message and a inner
 exception
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public VisibilityChangeException(string message, Exception inner)
 
-#### Parameters [parameters-1]
+#### Parameters
 
 | Type             | Name    | Description           |
 |------------------|---------|-----------------------|
 | System.String    | message | The exception message |
 | System.Exception | inner   | The inner exception   |
 
-### Implements [implements]
+### Implements
 
-<div markdown="1">
+<div>
 
 System.Runtime.InteropServices.\_Exception
 
 </div>
 
-<div markdown="1">
+<div>
 
 System.Runtime.Serialization.ISerializable
 

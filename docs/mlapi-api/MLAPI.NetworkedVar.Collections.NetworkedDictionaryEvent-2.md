@@ -3,52 +3,52 @@ id: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2
 title: MLAPI.NetworkedVar.Collections.NetworkedDictionaryEvent-2  
 ---
 
-<div class="markdown level0 summary" markdown="1">
+<div class="markdown level0 summary">
 
 Struct containing event information about changes to a
 NetworkedDictionary.
 
 </div>
 
-<div class="markdown level0 conceptual" markdown="1">
+<div class="markdown level0 conceptual">
 
 </div>
 
-<div class="inheritedMembers" markdown="1">
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
-<div markdown="1">
+<div>
 
 ValueType.Equals(Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 ValueType.GetHashCode()
 
 </div>
 
-<div markdown="1">
+<div>
 
 ValueType.ToString()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.Equals(Object, Object)
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.GetType()
 
 </div>
 
-<div markdown="1">
+<div>
 
 Object.ReferenceEquals(Object, Object)
 
@@ -60,11 +60,11 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Assembly**: MLAPI.dll
 
-##### Syntax [MLAPI_NetworkedVar_Collections_NetworkedDictionaryEvent_2_syntax]
+##### Syntax
 
     public struct NetworkedDictionaryEvent<TKey, TValue>
 
-##### Type Parameters [type-parameters]
+##### Type Parameters
 
 | Name   | Description                                               |
 |--------|-----------------------------------------------------------|
@@ -73,67 +73,67 @@ Object.ReferenceEquals(Object, Object)
 
 ## Fields
 
-### eventType [MLAPI_NetworkedVar_Collections_NetworkedDictionaryEvent_2_eventType]
+### eventType
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 Enum representing the operation made to the dictionary.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration]
+#### Declaration
 
     public NetworkedDictionaryEvent<TKey, TValue>.NetworkedListEventType eventType
 
-#### Field Value [field-value]
+#### Field Value
 
-| Type                                                | Description |
-|-----------------------------------------------------|-------------|
-| NetworkedDictionaryEvent.NetworkedListEventType\<\> |             |
+| Type                                                    | Description |
+|---------------------------------------------------------|-------------|
+| NetworkedDictionaryEvent.NetworkedListEventType&lt;&gt; |             |
 
-### key [MLAPI_NetworkedVar_Collections_NetworkedDictionaryEvent_2_key]
+### key
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 the key changed, added or removed if available.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-1]
+#### Declaration
 
     public TKey key
 
-#### Field Value [field-value-1]
+#### Field Value
 
 | Type | Description |
 |------|-------------|
 | TKey |             |
 
-### value [MLAPI_NetworkedVar_Collections_NetworkedDictionaryEvent_2_value]
+### value
 
-<div class="markdown level1 summary" markdown="1">
+<div class="markdown level1 summary">
 
 The value changed, added or removed if available.
 
 </div>
 
-<div class="markdown level1 conceptual" markdown="1">
+<div class="markdown level1 conceptual">
 
 </div>
 
-#### Declaration [declaration-2]
+#### Declaration
 
     public TValue value
 
-#### Field Value [field-value-2]
+#### Field Value
 
 | Type   | Description |
 |--------|-------------|
