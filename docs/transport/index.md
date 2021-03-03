@@ -6,7 +6,7 @@ title: About Unity.Networking.Transport
 Use the `com.unity.transport` package to add multiplayer and network features to your project.
 
 :::unity Content Licenses
-All Transport code and documentation is covered by Unity Companion License. See [Liceses](../license.md) for more information.
+All Transport code and documentation is covered by Unity Companion License. See [Licenses](../license.md) for more information.
 :::
 
 ## Overview
