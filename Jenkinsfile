@@ -14,7 +14,7 @@ pipeline {
             }
          }
          steps {
-            echo 'Not sandbox branch'
+            echo 'Not sandbox branch :: ' + env.GIT_BRANCH
          }
       }
       stage('Verify branch name not equal') {
