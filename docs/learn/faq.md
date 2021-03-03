@@ -2,9 +2,8 @@
 id: faq
 title: Frequently Asked Questions
 ---
-const FAQ = ({ children }) => <h3 className="faq">{children}</h3>
-<MDXProvider components={{ h3: FAQ }}>
-</MDXProvider>
+
+<div id="faq">
 
 ### How can you get more information for ClientRPC errors?
 
@@ -54,3 +53,4 @@ We recommend the following:
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
 
+</div>

@@ -905,16 +905,21 @@ span.languagekeyword{
 }
 
 // FAQ
-.faq {
+// FAQ
+
+#faq h3 {
   border-top: 1px solid #3578e5;
   display: flex;
   padding-top: 10px;
   color: #3578e5;
   vertical-align: middle;
+}
+
+#faq .markdown > h3 {
   font-size: 1.10rem !important;
 }
 
-.faq::before {
+#faq h3::before {
   background-color: transparent;
   content: "";
   width: 24px;
