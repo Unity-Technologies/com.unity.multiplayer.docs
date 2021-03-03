@@ -53,7 +53,7 @@ def sync_bucket(BUCKET, CREDS) {
       sh label: '', script: """
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
-      echo "User-agent: * Disallow: /" > build/robots.txt
+      echo "User-agent: *\nDisallow: /" > build/robots.txt
       gsutil -m rsync -r -d build/ gs://${BUCKET}
       """
      }
