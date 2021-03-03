@@ -14,7 +14,7 @@ pipeline {
             }
          }
          steps {
-            echo 'Not sandbox branch :: ' + env.GIT_BRANCH
+            echo 'Not sandbox branch :: ' + env.BRANCH_NAME
          }
       }
       stage('Verify branch name not equal') {
@@ -23,6 +23,9 @@ pipeline {
          }
          steps {
            echo 'branch sandbox'
+           currentBuild.result = 'ABORTED'
+           echo 'Aborting here'
+           return
          }
       }
       stage('Install nodejs and yarn') {
