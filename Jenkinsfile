@@ -10,7 +10,7 @@ pipeline {
       stage('Verify branchname equal') {
          when {
             expression {
-                return env.BRANCH_NAME != 'sandbox';
+                return env.BRANCH_NAME != 'origin/sandbox';
             }
          }
          steps {
@@ -19,7 +19,7 @@ pipeline {
       }
       stage('Verify branch name not equal') {
          when {
-             branch 'sandbox'
+             branch 'origin/sandbox'
          }
          steps {
            echo 'branch sandbox'
@@ -47,7 +47,7 @@ pipeline {
       }
       stage('Sync with bucket and purge Akamai') {
          when {
-             branch 'sandbox'
+             branch 'origin/sandbox'
          }
          steps {
             script{
