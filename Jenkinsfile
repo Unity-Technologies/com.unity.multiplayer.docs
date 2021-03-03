@@ -7,6 +7,24 @@ pipeline {
    }
 
     stages {
+      stage('Verify branchname equal') {
+         when {
+            expression {
+                return env.BRANCH_NAME != 'sandbox';
+            }
+         }
+         steps {
+            echo 'Not sandbox branch'
+         }
+      }
+      stage('Verify branch name not equal') {
+         when {
+             branch 'sandbox'
+         }
+         steps {
+           echo 'branch sandbox'
+         }
+      }
       stage('Install nodejs and yarn') {
          steps {
             sh 'curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -'
@@ -29,7 +47,7 @@ pipeline {
       }
       stage('Sync with bucket and purge Akamai') {
          when {
-             expression { env.BRANCH_NAME == 'sandbox' }
+             branch 'sandbox'
          }
          steps {
             script{
