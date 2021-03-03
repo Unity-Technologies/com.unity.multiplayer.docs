@@ -15,7 +15,7 @@ To initialize the library. You have three options.
 
 ### Host mode
 
-This mode runs a Server and a virtual Client connected to its own server. The virtual client has no real network connection to the server, but instead just talk via message queues. This makes the host both a Server and a Client in the same process.
+This mode runs a Server and a virtual Client connected to its own server. The virtual client has no real network connection to the server, but instead just talks via message queues. This makes the host both a Server and a Client in the same process.
 
 Usage:
 
