@@ -1,9 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 import java.text.SimpleDateFormat
 
-def BUCKET_NAME ="mp-docs-unity-it-fileshare-test"
-def AKAMAI_URL ="docs-multiplayer-sandbox.unity3d.com"
-
 pipeline {
    agent {
       label "iit-jenkins-slave"
@@ -30,17 +27,14 @@ pipeline {
             sh 'yarn build'
          }
       }
-      stage('Sync with bucket') {
-         steps {
-            script{
-               sync_bucket(BUCKET_NAME, "sa-mp-docs")
-            }
+      stage('Sync with bucket and purge Akamai') {
+         when {
+             expression { env.BRANCH_NAME == 'sandbox' }
          }
-      }
-      stage('Akamai CDN purge data') {
          steps {
             script{
-               akamai_purge(AKAMAI_URL, "akamai-api-token")
+               sync_bucket("mp-docs-unity-it-fileshare-test", "sa-mp-docs")
+               akamai_purge("docs-multiplayer-sandbox.unity3d.com", "akamai-api-token")
             }
          }
       }
