@@ -77,7 +77,7 @@ def akamai_purge(CREDS) {
           ;;
         "origin/staging")
           echo "Staging branch"
-          ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer-staging.unity3d.com/
+          ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer-stg.unity3d.com/
           ;;
         "origin/sandbox")
           echo "Sandbox branch"
