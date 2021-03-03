@@ -10,11 +10,12 @@ pipeline {
       stage('Verify branchname equal') {
          when {
             expression {
-                return env.BRANCH_NAME != 'origin/sandbox';
+                return env.GIT_BRANCH != 'origin/sandbox';
             }
          }
          steps {
             echo 'Not sandbox branch :: ' + env.BRANCH_NAME
+            echo "ENV" + env
             script {
               currentBuild.result = 'ABORTED'
               error "Stop pipeline"
@@ -24,7 +25,9 @@ pipeline {
       }
       stage('Verify branch name not equal') {
          when {
-             branch 'origin/sandbox'
+            expression {
+                env.GIT_BRANCH == 'origin/sandbox';
+            }
          }
          steps {
            echo 'branch sandbox'
