@@ -7,32 +7,6 @@ pipeline {
    }
 
     stages {
-      stage('Verify branchname equal') {
-         when {
-            expression {
-                return env.GIT_BRANCH != 'origin/sandbox';
-            }
-         }
-         steps {
-            echo 'Not sandbox branch :: ' + env.BRANCH_NAME
-            echo "ENV" + env
-            script {
-              currentBuild.result = 'ABORTED'
-              error "Stop pipeline"
-              return
-            }
-         }
-      }
-      stage('Verify branch name not equal') {
-         when {
-            expression {
-                env.GIT_BRANCH == 'origin/sandbox';
-            }
-         }
-         steps {
-           echo 'branch sandbox'
-         }
-      }
       stage('Install nodejs and yarn') {
          steps {
             sh 'curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -'
@@ -55,7 +29,7 @@ pipeline {
       }
       stage('Sync with bucket and purge Akamai') {
          when {
-             branch 'origin/sandbox'
+            expression { env.GIT_BRANCH == 'origin/sandbox' }
          }
          steps {
             script{
@@ -73,6 +47,13 @@ def sync_bucket(BUCKET, CREDS) {
       sh label: '', script: """
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
+      if ( "${env.GIT_BRANCH}" == "origin/sandbox" ); then
+        echo "Branch set"
+        env
+      else
+        echo "Branch not set"
+        env
+      fi
       echo "User-agent: *\nDisallow: /" > build/robots.txt
       gsutil -m rsync -r -d build/ gs://${BUCKET}
       """
