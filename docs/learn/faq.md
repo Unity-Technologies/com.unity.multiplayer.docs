@@ -3,6 +3,8 @@ id: faq
 title: Frequently Asked Questions
 ---
 
+The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
+
 <div id="faq">
 
 ### How can you get more information for ClientRPC errors?
