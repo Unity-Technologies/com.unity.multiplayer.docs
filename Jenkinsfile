@@ -28,68 +28,63 @@ pipeline {
          }
       }
       stage('Sync with bucket and purge Akamai') {
-         parallel {
-           stage('sandbox') {
-             when {
-                expression { env.GIT_BRANCH == 'origin/sandbox' }
-             }
-             steps {
-                script{
-                   sync_bucket("mp-docs-unity-it-fileshare-test", "sa-mp-docs")
-                   akamai_purge("docs-multiplayer-sandbox.unity3d.com", "akamai-api-token")
-                }
-             }
-           }
-           stage('staging') {
-             when {
-                expression { env.GIT_BRANCH == 'origin/staging' }
-             }
-             steps {
-                script{
-                   sync_bucket("mp-docs-stg-unity-it-fileshare-test", "sa-mp-docs")
-                   akamai_purge("docs-multiplayer-staging.unity3d.com", "akamai-api-token")
-                }
-             }
-           }
-           stage('master') {
-             when {
-                expression { env.GIT_BRANCH == 'origin/master' }
-             }
-             steps {
-                script{
-                   sync_bucket("mp-docs-unity-it-fileshare-prd", "sa-mp-docs")
-                   akamai_purge("docs-multiplayer.unity3d.com", "akamai-api-token")
-                }
-             }
-           }
+         steps {
+            script{
+               sync_bucket("sa-mp-docs")
+               akamai_purge("akamai-api-token")
+            }
          }
       }
    }
 }
 
-def sync_bucket(BUCKET, CREDS) {
+def sync_bucket(CREDS) {
     /* gsutil rsync -d will delete everything in the bucket that is not in the build dir and will update everything else */
     withCredentials([file(credentialsId: CREDS, variable: 'SERVICEACCOUNT')]) {
       sh label: '', script: """#!/bin/bash -xe
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
-      if [ "${env.GIT_BRANCH}" == "origin/master" ]; then
-        echo "Master branch - not adding a robots.txt file"
-      else
-        echo "Branch not master, adding robots.txt file"
-        echo "User-agent: *\nDisallow: /" > build/robots.txt
-      fi
+      case ${env.GIT_BRANCH} in
+        "origin/master")
+          echo "Master branch - not adding a robots.txt file"
+          BUCKET="mp-docs-unity-it-fileshare-prd"
+          ;;
+        "origin/staging")
+          echo "Staging branch, adding robots.txt file"
+          echo "User-agent: *\nDisallow: /" > build/robots.txt
+          BUCKET="mp-docs-stg-unity-it-fileshare-test"
+          ;;
+        "origin/sandbox")
+          echo "Sandbox branch, adding robots.txt file"
+          echo "User-agent: *\nDisallow: /" > build/robots.txt
+          BUCKET="mp-docs-unity-it-fileshare-test"
+          ;;
+      esac
       gsutil -m rsync -r -d build/ gs://${BUCKET}
       """
      }
 }
 
-def akamai_purge(AKAMAI_URL, CREDS) {
+def akamai_purge(CREDS) {
     withCredentials([file(credentialsId: CREDS, variable: 'EDGERC')]) {
       writeFile file: '/tmp/edgerc', text: readFile(EDGERC)
-      sh label: '', script: """
+      sh label: '', script: """#!/bin/bash -xe
       curl -sL https://github.com/akamai/cli-purge/releases/download/1.0.1/akamai-purge-1.0.1-linuxamd64 -o akamai
       chmod +x akamai
+      case ${env.GIT_BRANCH} in
+        "origin/master")
+          echo "Master branch"
+          AKAMAI_URL="docs-multiplayer.unity3d.com"
+          ;;
+        "origin/staging")
+          echo "Staging branch"
+          AKAMAI_URL="docs-multiplayer-staging.unity3d.com"
+          ;;
+        "origin/sandbox")
+          echo "Sandbox branch"
+          AKAMAI_URL="docs-multiplayer-sandbox.unity3d.com"
+          ;;
+      esac
       ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://${AKAMAI_URL}/
       """
      }
