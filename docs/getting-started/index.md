@@ -35,8 +35,6 @@ This table compares MLAPI and the deprecated UNET library features.
 | Network Time | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Send Channels | <i class="fp-check"></i> | <i class="fp-check"></i> |
 | Custom RPC Parameter Types | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| RPC Return Values | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| Custom RPC Return Types | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | RPC Overloads | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Incremental Update Loop | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Custom Messaging System (Unnamed) | <i class="fp-check"></i> | <i class="fp-x"></i> |
@@ -44,10 +42,7 @@ This table compares MLAPI and the deprecated UNET library features.
 | Per Client RPC | <i class="fp-check"></i> | <i class="fp-check"></i> |
 | Bulk Client RPC | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Connection Approval | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| KeyExchange | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| Message Encryption | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Message Authentication | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| TLS Certificates | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Custom Tickrate | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Synced / Networked Vars | <i class="fp-check"></i> | <i class="fp-check"></i> |
 | Custom Sync Structures | <i class="fp-check"></i> | <i class="fp-x"></i> |
