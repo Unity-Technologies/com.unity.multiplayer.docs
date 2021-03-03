@@ -44,13 +44,13 @@ pipeline {
 def sync_bucket(BUCKET, CREDS) {
     /* gsutil rsync -d will delete everything in the bucket that is not in the build dir and will update everything else */
     withCredentials([file(credentialsId: CREDS, variable: 'SERVICEACCOUNT')]) {
-      sh label: '', script: """
+      sh label: '', script: """#!/bin/bash
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
-      if [ \"${env.GIT_BRANCH}\" == \"origin/sandbox\" ]; then
-        echo "Master branch - not adding a robots.txt file"
+      if [ ${env.GIT_BRANCH} == origin/sandbox ]; then
+      echo "Master branch - not adding a robots.txt file"
       else
-        echo "Branch not set"
+      echo "Branch not set"
       fi
       echo "User-agent: *\nDisallow: /" > build/robots.txt
       gsutil -m rsync -r -d build/ gs://${BUCKET}
