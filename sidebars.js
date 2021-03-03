@@ -262,41 +262,6 @@ module.exports = {
       }
     ]
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Glossary",
-    "items": [
-      /* {
-        "type": "doc",
-        "id": "reference/glossary/general-terms"
-      } */
-      {
-        "type": "doc",
-        "id": "reference/glossary/high-level-terminology"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-latency-management"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-models"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-terms"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/prioritization"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/relevancy"
-      },
-    ]
-  }
 ],
 transport: [
   {
@@ -387,34 +352,7 @@ transport: [
       "type": "doc",
       "id": "tutorials/introduction"
     },
-    {
-    "collapsed": true,
-    "type": "category",
-    "label": "Managing Lag with Unity",
-    "items": [
-        {
-        "type": "doc",
-        "id": "tutorials/lagandpacketloss"
-        },
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Artichitecture for creating multiplayer games",
-    "items": [
-
-      {
-        "type": "doc",
-        "id": "tutorials/multiplayergamearhitectureintroduction"
-        },
-        {
-        "type": "doc",
-        "id": "tutorials/listenserverhostarchitecture"
-        },
-    ]
-  },
- ],
+  ],
   releasenotes: [
     {
       "type": "doc",
