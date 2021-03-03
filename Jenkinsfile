@@ -47,20 +47,19 @@ def sync_bucket(CREDS) {
       case ${env.GIT_BRANCH} in
         "origin/master")
           echo "Master branch - not adding a robots.txt file"
-          BUCKET="mp-docs-unity-it-fileshare-prd"
+          gsutil -m rsync -r -d build/ gs://mp-docs-unity-it-fileshare-prd
           ;;
         "origin/staging")
           echo "Staging branch, adding robots.txt file"
           echo "User-agent: *\nDisallow: /" > build/robots.txt
-          BUCKET="mp-docs-stg-unity-it-fileshare-test"
+          gsutil -m rsync -r -d build/ gs://mp-docs-stg-unity-it-fileshare-test
           ;;
         "origin/sandbox")
           echo "Sandbox branch, adding robots.txt file"
           echo "User-agent: *\nDisallow: /" > build/robots.txt
-          BUCKET="mp-docs-unity-it-fileshare-test"
+          gsutil -m rsync -r -d build/ gs://mp-docs-unity-it-fileshare-test
           ;;
       esac
-      gsutil -m rsync -r -d build/ gs://${BUCKET}
       """
      }
 }
@@ -74,18 +73,17 @@ def akamai_purge(CREDS) {
       case ${env.GIT_BRANCH} in
         "origin/master")
           echo "Master branch"
-          AKAMAI_URL="docs-multiplayer.unity3d.com"
+          ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer.unity3d.com/
           ;;
         "origin/staging")
           echo "Staging branch"
-          AKAMAI_URL="docs-multiplayer-staging.unity3d.com"
+          ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer-staging.unity3d.com/
           ;;
         "origin/sandbox")
           echo "Sandbox branch"
-          AKAMAI_URL="docs-multiplayer-sandbox.unity3d.com"
+          ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer-sandbox.unity3d.com/
           ;;
       esac
-      ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://${AKAMAI_URL}/
       """
      }
 }
