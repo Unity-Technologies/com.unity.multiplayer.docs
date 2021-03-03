@@ -3,6 +3,8 @@ id: faq
 title: Frequently Asked Questions
 ---
 
+<div id="faq">
+
 ### How can you get more information for ClientRPC errors?
 
 If you receive ClientRPC errors like the following, you may have difficulty debugging:
@@ -51,4 +53,4 @@ We recommend the following:
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
 
-import styles from '../../src/theme/faq.scss';
+</div>
