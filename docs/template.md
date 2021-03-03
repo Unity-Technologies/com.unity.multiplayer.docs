@@ -1,10 +1,9 @@
 ---
 id: template
-title: Markdown Style Guide
-sidebar_label: Markdown Style Guide
+title: Doc Template
 ---
 
-This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
 ## Markdown Syntax
 
@@ -92,7 +91,17 @@ Or leave it empty and use the [link text itself].
 
 ## Images
 
-Here's our logo (hover to see the title text):
+To include images, save PNG (.png) files to the `/static/img` folder. Add an image to a markdown file using the following format:
+
+```markdown title="Markdown for displaying images"
+![alt text](/img/filename.png)
+```
+
+```markdown title="Markdown for website image"
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
+```
+
+See the following examples:
 
 Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
 
@@ -104,7 +113,118 @@ Images from any folder can be used by providing path to file. Path should be rel
 
 ![img](/img/example-img.png)
 
+## Tabs
+
+Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.
+
+At the bottom of the Markdown file, add the following code:
+
+```markdown
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+For each set of tabs, use the following code:
+
+```markdown
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Tab 1', value: 'tab1'},
+    {label: 'Tab 2', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+Add content here for first tab.
+
+</TabItem>
+<TabItem value="tab2">
+
+Add content here for second tab.
+
+</TabItem>
+</Tabs>
+```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+See the following tabbed code examples:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="unet"
+  values={[
+    {label: 'UNet Example', value: 'unet'},
+    {label: 'MLAPI Example', value: 'mlapi'},
+  ]}>
+
+<TabItem value="unet">
+
+```csharp
+   public class MyUnetClass : NetworkBehaviour
+   {
+      [SyncVar]
+      public float MySyncFloat;
+      public void Start()
+      {
+         if (isClient)
+         {
+               CmdExample(10f);
+         }
+         else if (isServer)
+         {
+               RpcExample(10f);
+         }
+      }
+      [Command]
+      public void CmdExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRpc]
+      public void RpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+  <TabItem value="mlapi">
+
+```csharp
+  public class MyMLAPIExample : NetworkedBehaviour
+   {
+      public NetworkedVar<float> MyNetworkedVar;
+      public override void NetworkedStart()
+      {
+         InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
+         InvokeServerRpc(ServerRpcExample, 10f);
+      }
+      [ServerRPC]
+      public void ServerRpcExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRPC]
+      public void ClientRpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+</Tabs>
+
 ## Code
+
+:::important
+All code samples should meet coding standard guidelines and requirements for Unity. They should be tested, functioning, and provide live examples that developers can reuse easily.
+:::
 
 To add code inline, use single ticks:
 
@@ -131,6 +251,17 @@ function highlightMe() {
   console.log('This line can be highlighted!');
 }
 ```
+### Embedding Code from a Repository
+
+To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
+
+This code references a JavaScript file: ` ```js reference`, for example:
+
+```js reference
+https://github.com/saucelabs/docusaurus-theme-github-codeblock/blob/main/src/theme/ReferenceCodeBlock/index.tsx#L105-L108
+```
+
+You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
 
 ## Tables
 
@@ -218,45 +349,41 @@ Add an admonition using three colons, the type, and closing content with colons:
 ```markdown title="Markdown Code"
 :::note
 
-This is a note
+This is a note.
 
 :::
 ```
 
 :::note
-
-This is a note
-
+This is a note.
 :::
 
 :::tip
-
-This is a tip
-
+This is a tip.
 :::
 
 :::important
-
-This is important
-
+This is important.
 :::
 
 :::caution
-
-This is a caution
-
+This is a caution.
 :::
 
 :::warning
-
-This is a warning
-
+This is a warning.
 :::
 
 :::contribution Community Contribution
-
 Thank you to [Unity](https://unity3d.com/) for this tutorial! This contribution is a great help to the community.
+:::
 
+:::funfact Fun Fact
+Use for helpful facts and info.
+:::
+
+:::bestpractice Best Practice
+Highlight best practices and recommendations.
 :::
 
 ## Mermaid Charts
