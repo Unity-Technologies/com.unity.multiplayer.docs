@@ -28,14 +28,40 @@ pipeline {
          }
       }
       stage('Sync with bucket and purge Akamai') {
-         when {
-            expression { env.GIT_BRANCH == 'origin/sandbox' }
-         }
-         steps {
-            script{
-               sync_bucket("mp-docs-unity-it-fileshare-test", "sa-mp-docs")
-               akamai_purge("docs-multiplayer-sandbox.unity3d.com", "akamai-api-token")
-            }
+         parallel {
+           stage('sandbox') {
+             when {
+                expression { env.GIT_BRANCH == 'origin/sandbox' }
+             }
+             steps {
+                script{
+                   sync_bucket("mp-docs-unity-it-fileshare-test", "sa-mp-docs")
+                   akamai_purge("docs-multiplayer-sandbox.unity3d.com", "akamai-api-token")
+                }
+             }
+           }
+           stage('staging') {
+             when {
+                expression { env.GIT_BRANCH == 'origin/staging' }
+             }
+             steps {
+                script{
+                   sync_bucket("mp-docs-stg-unity-it-fileshare-test", "sa-mp-docs")
+                   akamai_purge("docs-multiplayer-staging.unity3d.com", "akamai-api-token")
+                }
+             }
+           }
+           stage('master') {
+             when {
+                expression { env.GIT_BRANCH == 'origin/master' }
+             }
+             steps {
+                script{
+                   sync_bucket("mp-docs-unity-it-fileshare-prd", "sa-mp-docs")
+                   akamai_purge("docs-multiplayer.unity3d.com", "akamai-api-token")
+                }
+             }
+           }
          }
       }
    }
@@ -44,15 +70,15 @@ pipeline {
 def sync_bucket(BUCKET, CREDS) {
     /* gsutil rsync -d will delete everything in the bucket that is not in the build dir and will update everything else */
     withCredentials([file(credentialsId: CREDS, variable: 'SERVICEACCOUNT')]) {
-      sh label: '', script: """#!/bin/bash
+      sh label: '', script: """#!/bin/bash -xe
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
-      if [ ${env.GIT_BRANCH} == origin/sandbox ]; then
-      echo "Master branch - not adding a robots.txt file"
+      if [ "${env.GIT_BRANCH}" == "origin/master" ]; then
+        echo "Master branch - not adding a robots.txt file"
       else
-      echo "Branch not set"
+        echo "Branch not master, adding robots.txt file"
+        echo "User-agent: *\nDisallow: /" > build/robots.txt
       fi
-      echo "User-agent: *\nDisallow: /" > build/robots.txt
       gsutil -m rsync -r -d build/ gs://${BUCKET}
       """
      }
