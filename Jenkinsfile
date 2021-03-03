@@ -47,7 +47,7 @@ def sync_bucket(BUCKET, CREDS) {
       sh label: '', script: """
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
-      if [ "${env.GIT_BRANCH}" == "origin/sandbox" ]; then
+      if [ \"${env.GIT_BRANCH}\" == \"origin/sandbox\" ]; then
         echo "Master branch - not adding a robots.txt file"
       else
         echo "Branch not set"
