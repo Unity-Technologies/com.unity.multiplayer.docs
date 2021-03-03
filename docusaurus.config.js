@@ -37,14 +37,14 @@ module.exports = {
       }
     },
     navbar: {
-      title: 'Unity Multiplayer Technology',
+      title: 'Unity Multiplayer Documentation',
       logo: {
         alt: 'Unity',
         src: 'img/logo.png',
       },
       items: [
         {
-          label: 'Guides',
+          label: 'Docs',
           position: 'left',
           items: [
             {
@@ -113,11 +113,11 @@ module.exports = {
           //label: 'Community',
           className: 'navbar-grid-menu',
           items: [
-            {
+            /*{
               type: 'doc',
               to: 'docs/roadmap',
               label: 'Multiplayer Roadmap',
-            },
+            },*/
             { 
               label: 'Discord',
               href: 'http://discord.mlapi.network/',
@@ -181,11 +181,11 @@ module.exports = {
         {
           title: 'Contact',
           items: [
-            {
+            /*{
               type: 'doc',
               to: 'docs/roadmap',
               label: 'Multiplayer Roadmap',
-            },
+            },*/
             {
               label: 'Unity Blog',
               href: 'https://blogs.unity3d.com/',
