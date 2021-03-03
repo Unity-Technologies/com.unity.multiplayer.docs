@@ -44,7 +44,7 @@ module.exports = {
       },
       items: [
         {
-          label: 'Guides',
+          label: 'Docs',
           position: 'left',
           items: [
             {
