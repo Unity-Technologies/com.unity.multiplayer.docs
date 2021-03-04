@@ -40,6 +40,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "mlapi-basics/networkedbehavior"
+      },
+      {
+        "type": "doc",
         "id": "mlapi-basics/object-spawning"
       },
       {
@@ -81,10 +85,6 @@ module.exports = {
         "type": "doc",
         "id": "core-components/trackedobject"
       },
-      {
-        "type": "doc",
-        "id": "core-components/networkedbehavior"
-      }
     ]
   },
   {
