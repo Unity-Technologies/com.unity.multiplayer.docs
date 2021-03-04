@@ -40,10 +40,6 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/messaging-system"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/object-spawning"
       },
       {
@@ -107,6 +103,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/message-encryption"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/messaging-system"
       },
       {
         "type": "doc",
