@@ -19,7 +19,7 @@ Finally to register your prefab as a networked prefab, add it to the `NetworkedP
 MLAPI uses a server authorative networking model so spawning objects can only be done on the server/host.
 To spawn an object first instantiate the object from your prefab and then invoke the spawn method on the `NetworkedObject` component that should be attached to the prefab.
 This should only be done on the server as the object will automatically replicate on the other clients.
-By default a newly spawned object is owned by the server. You can learn more about ownership [here] (TODO LINK "MLAPI Basics/Object Ownership")
+By default a newly spawned object is owned by the server. You can learn more about ownership [here] (TODO LINK "MLAPI Basics/NetworkedObject/Object Ownership")
 
 The following is an example to spawn an object (with server ownership):
 
@@ -43,6 +43,12 @@ public void Spawn(Stream spawnPayload = null, bool destroyWithScene = false);
 
 When a spawned object gets destroyed on the server/host, MLAPI will automatically destroy it on all clients as well.
 
+To despawn a networked object on all clients but keep it on the server call `NetworkedObject.Despawn` on the server. An unspawned object can also later be spawned again with another spawn call if needed.
+
+A client should never call destroy on a networked object itself. That's not supported. To destroy an object with client authority have the client send an RPC to the server and let the server destroy the object.
+
+You cannot unspawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility] (TODO LINK).
+
 ## Scene Objects
 
 Any objects in the scene with NetworkedObject components will get automatically replicated by MLAPI. There is no need to manually spawn them.
@@ -59,7 +65,7 @@ This allows scene objects to be non prefabs and they will not be replaced, thus 
 
 ### PrefabSync
 
-PrefabSync can be manually enable in the `NetworkingManager` by ticking the `Use Prefab Sync` checkbox.
+PrefabSync can be manually enabled in the `NetworkingManager` by ticking the `Use Prefab Sync` checkbox. Prefab sync will also be used if SceneManagement is disabled.
 
 If it's enabled, every scene object with a `NetworkedObject` component has to be a prefab and must be registered in the `NetworkedPrefabs` list. When a client starts, MLAPI will destroy all existing scene objects with a `NetworkedObject` component on them and spawn a corresponding prefab from the `NetworkedPrefabs` list instead. This means that serialized data gets lost on the clients. It's thus recommended to place serialized data in NetworkedVars.
 **PrefabSync is ONLY recommended for multi project setups**.
