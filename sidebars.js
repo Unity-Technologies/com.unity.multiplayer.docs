@@ -44,10 +44,6 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/object-behavior-relation"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/modularity"
       },
       {
@@ -57,10 +53,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "mlapi-basics/scene-management"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-ownership"
       },
       {
         "type": "doc",
