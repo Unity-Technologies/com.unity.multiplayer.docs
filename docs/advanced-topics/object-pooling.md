@@ -3,9 +3,13 @@ id: object-pooling
 title: Object Pooling
 ---
 
-The MLAPI has built-in support for Object Pooling. This is useful for frequently used objects such as bullets. This can be achieved by registering custom spawn and destroy handlers.
+The MLAPI has built-in support for Object Pooling. Object pooling allows to overide the default destroy and spawn handlers of MLAPI with your own logic.
+This allows you to store destroyed network objects in a pool to reuse them later. This is useful for frequently used objects such as bullets and can be used to overall increase the applications performance.
+You can learn more about the importance of pooling objects [here](https://learn.unity.com/tutorial/introduction-to-object-pooling).
 
-## SpawnHandler
+## SpawnHandlers
+
+You can register your own spawn handlers. If you do so MLAPI won't use the default ones (instantiating/destroying objects).
 
 ```csharp
 SpawnManager.RegisterCustomSpawnHandler(SpawnManager.GetPrefabHash("myPrefabName"), (position, rotation, disabled) =>
@@ -21,3 +25,8 @@ SpawnManager.RegisterCustomDestroyHandler(SpawnManager.GetPrefabHash("myPrefabNa
     // Called when the MLAPI want's to destroy the given NetworkedObject
 });
 ```
+
+Registering your own spawnhandlers will allow you to pool all networked objects on clients as they are destroyed and spawned on your clients.
+
+To pool objects on the server side don't use `Destroy` to destroy them but rather us `NetworkedObject.Despawn` first and then manually pool the object.
+

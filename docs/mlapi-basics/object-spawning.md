@@ -49,6 +49,8 @@ A client should never call destroy on a networked object itself. That's not supp
 
 You cannot unspawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility] (TODO LINK).
 
+To get more control about object the object lifecycle MLAPI has built in object pooling you can learn more about that [here](TODO LINK advanced-topics/object-pooling).
+
 ## Scene Objects
 
 Any objects in the scene with NetworkedObject components will get automatically replicated by MLAPI. There is no need to manually spawn them.
