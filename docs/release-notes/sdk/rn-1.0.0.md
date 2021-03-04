@@ -1,8 +1,13 @@
-// Use this template for package changelog. See release-notes.md for website.
+---
+title:
+id: rn-version
+description: Release notes for Multiplayer v1.0.0, including new features, updates, bug fixes, known issues, and information to help you upgrade.
+---
 
-# Change log
+The release of Multiplayer v1.0.0 contains features, updates, and bug fixes for the SDK.
 
-## [#.#.#] - yyyy-mm-dd
+## 1.0.0 - 2021-03-23
+
 ### New features
 * Add a bullet per new feature, such as new endpoints, processes, etc.
 
@@ -14,8 +19,6 @@
 
 ### Known issues
 You may need to include this section if you have known issues with the release that may affect integrations and usage.
-
-### Backwards incompatible changes
 
 ### Upgrade guide
 Provide steps and information to upgrade to this release version. Provide numbered instructions or bullets as needed, code in blocks using ticket (```).
