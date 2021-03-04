@@ -1,14 +1,22 @@
+---
+title: Documentation and Code Licenses
+id: license
+---
 The following Licenses cover all documentation and sample code in [this repository](https://github.com/Unity-Technologies/com.unity.multiplayer.docs) and website. 
 
 ## Documentation License
 
-All documentation is bound by the license of the code it describes. As new content and code is added, licenses will be added to this page. Licenses are noted in the documentation as needed.
+All documentation is bound by the license of the code it describes. As new content and code is added, licenses will be added to this page.
 
 | Documentation | License |
 | -- | -- |
 | MLAPI Docs | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
 | Transport Docs | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
 | Learn | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) |
+
+:::unity License Information
+Sections in this site may include license links and information depending on code samples and product.
+:::
 
 ## MLAPI License
 

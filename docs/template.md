@@ -348,9 +348,7 @@ Add an admonition using three colons, the type, and closing content with colons:
 
 ```markdown title="Markdown Code"
 :::note
-
 This is a note.
-
 :::
 ```
 
@@ -384,6 +382,10 @@ Use for helpful facts and info.
 
 :::bestpractice Best Practice
 Highlight best practices and recommendations.
+:::
+
+:::unity
+Information specific to Unity, for example license information.
 :::
 
 ## Mermaid Charts
