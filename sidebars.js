@@ -416,10 +416,6 @@ transport: [
     "type": "doc",
     "id": "learn/faq"
   },
-  {
-    "type": "doc",
-    "id": "learn/faq"
-  },
  ],
   releasenotes: [
     {
