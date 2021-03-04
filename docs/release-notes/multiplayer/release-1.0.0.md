@@ -1,6 +1,6 @@
 ---
-title:
-id: rn-version
+title: Multiplayer v1.0.0
+id: release1-0-0
 description: Release notes for Multiplayer v1.0.0, including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
@@ -9,7 +9,7 @@ The release of Multiplayer v1.0.0 contains features, updates, and bug fixes for 
 ## 1.0.0 - 2021-03-23
 
 ### New features
-* Add a bullet per new feature, such as new endpoints, processes, etc.
+* Network Transform property synchronization with Interpolation support
 
 ### Changes
 * Updates and changes to features, such as modified endpoints, deprecated endpoints with new endpoints to use, processes, data, error messages, etc.
