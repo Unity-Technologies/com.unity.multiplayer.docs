@@ -56,6 +56,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "mlapi-basics/syncedvar"
+      },
+      {
+        "type": "doc",
         "id": "mlapi-basics/scene-management"
       },
       {
