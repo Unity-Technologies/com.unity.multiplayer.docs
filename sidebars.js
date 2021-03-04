@@ -36,6 +36,10 @@ module.exports = {
     "items": [
       {
         "type": "doc",
+        "id": "mlapi-basics/networkedobject"
+      },
+      {
+        "type": "doc",
         "id": "mlapi-basics/messaging-system"
       },
       {
@@ -53,10 +57,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "mlapi-basics/networkedvar"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/syncedvar"
       },
       {
         "type": "doc",
@@ -92,10 +92,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "core-components/trackedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedobject"
       },
       {
         "type": "doc",
