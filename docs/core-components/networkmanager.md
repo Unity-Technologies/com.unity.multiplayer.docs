@@ -16,7 +16,7 @@ NetworkManager.Singleton.StartHost();        //or
 NetworkManager.Singleton.StartClient();
 ```
 :::note
- When starting a Server or joining a running session as client, the `NetworkManager` will spawn a "Player Object" belonging to that Player. You can choose which prefab shall be spawned as "Player Object" in the `NetworkManager` Component under `NetworkedPrefabs`. Simply tick the corresponding `Default Player Prefab` checkbox there.
+ When starting a Server or joining a running session as client, the `NetworkManager` will spawn a "Player Object" belonging to that Player. You can choose which prefab shall be spawned as "Player Object" in the `NetworkManager` Component under `NetworkPrefabs`. Simply tick the corresponding `Default Player Prefab` checkbox there.
 :::
 Only the "Player Object" will return true for `IsLocalPlayer` on the corresponding machine, use `IsOwner` for non Player Objects instead.
 

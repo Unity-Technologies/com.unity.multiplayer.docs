@@ -36,7 +36,7 @@ The builtin types that are handled by default are:
 * Quaternion
 * Char
 * Enums
-* GameObject (Only if the GameObject has a NetworkedObject component that is spawned)
+* GameObject (Only if the GameObject has a NetworkObject component that is spawned)
 * NetworkObject (Only if spawned)
 * NetworkBehaviour (Only if spawned)
 

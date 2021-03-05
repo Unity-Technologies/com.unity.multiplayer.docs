@@ -3,7 +3,7 @@ id: library-initialization
 title: Library Initialization
 ---
 
-Initializing the MLAPI is fairly simple. You need a GameObject with the NetworkingManager component added to it. The NetworkingManager class has a static singleton reference to itself making it easy to access from anywhere. The first configuration you have to do is to set the Transport. You can read more about Transports on the [Custom Transports](../advanced-topics/custom-transports.md) page. 
+Initializing the MLAPI is fairly simple. You need a `GameObject` with the `NetworkManager` component added to it. The `NetworkManager` class has a static singleton reference to itself making it easy to access from anywhere. The first configuration you have to do is to set the [`Transport`](../advanced-topics/custom-transports.md). 
 
 First add the MLAPI library to your using declarations.
 
@@ -22,7 +22,6 @@ Usage:
 ```csharp
 NetworkManager.Singleton.StartHost();
 ```
-
 
 ### Client mode
 

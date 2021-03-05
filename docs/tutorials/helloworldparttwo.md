@@ -11,13 +11,13 @@ This guide follows on from the work completed in [Your First Networking Game "He
 1. Select **Game Object**.
 1. Select **UI**.
 1. Create a Canvas object inside of our scene.
-    ![Create a canvas Object](/img/createcanvas.gif)
+  ![Create a canvas Object](/img/createcanvas.gif)
 1. Click the Assets folder.
 1. Create a new Folder and call it **Scripts**.
 1. Create an empty GameObject rename it **HelloWorldManager**.
 1. Create a script called `HelloWorldManager`.
 1. Add the `HelloWorldManager` script as a component.
-    ![Create a Hellowowrldscriptt](/img/helloworldcreatescript.gif)
+  ![Create a Hellowowrldscriptt](/img/helloworldcreatescript.gif)
 1. Open the `HelloWorldManager.cs` script.
 1. Edit the `HellowWorldManager.cs` script to match the following.
 

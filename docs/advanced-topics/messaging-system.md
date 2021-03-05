@@ -100,7 +100,7 @@ private void OnGUI()
     {
         if (IsServer)
         {
-            using (PooledBitStream stream = PooledBitStream.Get())
+            using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
             {
                 using (PooledBitWriter writer = PooledBitWriter.Get(stream))
                 {
@@ -112,7 +112,7 @@ private void OnGUI()
         }
         else
         {
-            using (PooledBitStream stream = PooledBitStream.Get())
+            using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
             {
                 using (PooledBitWriter writer = PooledBitWriter.Get(stream))
                 {
@@ -162,7 +162,7 @@ Both will work the same way, but the bottom one obviously can't do type checking
 
 ### Targeting
 
-The Invoke methods can ONLY invoke RPC's that are on the same NetworkedBehaviour instance as the Invoke method. 
+The Invoke methods can ONLY invoke RPC's that are on the same `NetworkBehaviour` instance as the Invoke method. 
 
 This does not work:
 
