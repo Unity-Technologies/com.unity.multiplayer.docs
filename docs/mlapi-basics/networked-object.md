@@ -42,8 +42,11 @@ If you want a client to control multiple objects use the ownership model instead
 
 MLAPI can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkingManager`, then MLAPI will spawn the prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
 
-To manually spawn an object as player object use `SpawnAsPlayerObject` instead of the regular `Spawn` method to spawn the object. This will replace the old player object with the new one.
-(The old object will still exists and will be an object owned by the client instead)
+To manually spawn an object as player object, use `SpawnAsPlayerObject` instead of the regular `Spawn` method. This replaces the old player object with the new one.
+
+:::note
+The old object will still exist and will be an object owned by the client instead.
+:::
 
 ### Finding Player Objects
 
