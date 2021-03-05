@@ -40,7 +40,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+)
    
     ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
 
-You have now installed MLAPI
+You have now installed MLAPI.
 
 ## Create the Basic Components
 
