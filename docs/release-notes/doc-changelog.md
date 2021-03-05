@@ -1,6 +1,6 @@
 ---
-title: Documentation Changelog
 id: doc-changelog
+title: Documentation Changelog
 description: Learn more about major documentation updates, contribution notes, and site development for Unity Multiplayer.
 ---
 
@@ -16,7 +16,7 @@ The changelog tracks major changes to documentation, such as removed pages, adde
 
 | Feature | Date | Description |
 | -- | -- | -- |
-| New Content | March 2021 | Numerous new sections of content have been added to support new MLAPI features for [v1.0.0](multiplayer/release-1.0.0.md) and community feedback. <!-- add Multiplayer Sample Coop when ready --> |
+| New Content | March 2021 | Numerous new sections of content have been added to support new MLAPI features for [v1.0.0](release-1-0-0.md) and community feedback. <!-- add Multiplayer Sample Coop when ready --> |
 
 ## Site enhancements
 
