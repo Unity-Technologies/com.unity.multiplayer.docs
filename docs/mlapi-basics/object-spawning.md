@@ -54,7 +54,7 @@ To despawn a networked object on all clients but keep it on the server call `Net
 
 A client should never call destroy on a networked object itself (this is not supported).  To destroy an object with client authority, have the client send an RPC to the server, which allows the server to destroy the object.
 
-You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility] (TODO LINK).
+You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility] (/object-visibility.md).
 
 To get more control about the object lifecycle, MLAPI has built in object pooling. See [Object Pooling](../advanced-topics/object-pooling.md) to learn more.
 
