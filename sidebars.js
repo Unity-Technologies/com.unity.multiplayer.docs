@@ -56,10 +56,6 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/syncedvar"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/scene-management"
       },
       {
@@ -91,10 +87,6 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "core-components/trackedobject"
-      },
-      {
-        "type": "doc",
         "id": "core-components/networkedobject"
       },
       {
@@ -110,15 +102,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "advanced-topics/message-encryption"
-      },
-      {
-        "type": "doc",
         "id": "advanced-topics/object-pooling"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/lag-compensation"
       },
       {
         "type": "doc",
