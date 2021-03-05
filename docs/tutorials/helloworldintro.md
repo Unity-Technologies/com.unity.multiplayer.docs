@@ -94,7 +94,7 @@ When you select the **Default Player Prefab** , you are telling the library that
 :::
 
 7. Inside scene, create a "Plane GameObject", centered at (0,0,0).
-8. Click Play
+8. Click **Play**.
 9. Click "Start Host" under NetworkingManager 
 
     ![firstnetworkgame](/img/firstnetworkgame.gif)
