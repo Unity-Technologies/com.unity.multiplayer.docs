@@ -3,9 +3,11 @@ id: object-pooling
 title: Object Pooling
 ---
 
-The MLAPI has built-in support for Object Pooling. Object pooling allows to overide the default destroy and spawn handlers of MLAPI with your own logic.
-This allows you to store destroyed network objects in a pool to reuse them later. This is useful for frequently used objects such as bullets and can be used to overall increase the applications performance.
-You can learn more about the importance of pooling objects [here](https://learn.unity.com/tutorial/introduction-to-object-pooling).
+The MLAPI provides built-in support for Object Pooling, which allows you to override the default MLAPI destroy and spawn handlers with your own logic.
+
+This allows you to store destroyed network objects in a pool to reuse later. This is useful for frequently used objects, such as bullets, and can be used to increase the application's overall performance.
+
+See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.
 
 ## SpawnHandlers
 
