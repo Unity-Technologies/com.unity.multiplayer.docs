@@ -11,7 +11,7 @@ For an object to be replicated across the network it needs to have a NetworkedOb
 Each object which uses components networking functinality like NetworkTransfor or NetworkBehaviours with NetworkVariables or RPCs needs a `NetworkedObject` component on the same GameObject or in a parent.
 When a NetworkedObject is considered "Spawned", it's replicated across the network so that everyone has their own version of the object. Each NetworkedObject gets assigned a NetworkId at runtime which is used to associate two NetworkedObjects across the network. Ex: One peer can say, Send this RPC to the object with the NetworkId 103 and everyone knows what object that is.
 
-To add custom code logic to your NetworkedObjects use [NetworkedBehaviours](TODO LINK).
+To add custom code logic to your `NetworkedObjects`, use [NetworkedBehaviours](networked-behaviour.md).
 
 ## Ownership
 
