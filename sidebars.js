@@ -259,6 +259,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "troubleshooting/troubleshooting"
+      },
+      {
+        "type": "doc",
+        "id": "troubleshooting/errormessages"
       }
     ]
   },
@@ -341,16 +345,14 @@ transport: [
     ]
   },
 ],
-  tools: [
+  learn: [
     {
       "type": "doc",
-      "id": "tools/introduction"
+      "id": "learn/introduction"
     },
-  ],
-  tutorials: [
     {
       "type": "doc",
-      "id": "tutorials/introduction"
+      "id": "learn/faq"
     },
   ],
   releasenotes: [
