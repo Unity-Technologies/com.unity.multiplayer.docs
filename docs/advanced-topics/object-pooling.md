@@ -14,7 +14,7 @@ See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introducti
 You can register your own spawn handlers. MLAPI will use them in place of default spawn handlers to instantiate and destroy objects.
 
 ```csharp
-SpawnManager.RegisterCustomSpawnHandler(SpawnManager.GetPrefabHash("myPrefabName"), (position, rotation, disabled) =>
+NetworkSpawnManager.RegisterCustomSpawnHandler(NetworkSpawnManager.GetPrefabHash("myPrefabName"), (position, rotation, disabled) =>
 {
     // Called when the MLAPI want's to spawn a prefab with the name "myPrefabName"
 });
@@ -22,12 +22,12 @@ SpawnManager.RegisterCustomSpawnHandler(SpawnManager.GetPrefabHash("myPrefabName
 ## DestroyHandler
 
 ```csharp
-SpawnManager.RegisterCustomDestroyHandler(SpawnManager.GetPrefabHash("myPrefabName"), (networkedObject) =>
+NetworkSpawnManager.RegisterCustomDestroyHandler(NetworkSpawnManager.GetPrefabHash("myPrefabName"), (networkObject) =>
 {
-    // Called when the MLAPI want's to destroy the given NetworkedObject
+    // Called when the MLAPI want's to destroy the given NetworkObject
 });
 ```
 
 Registering your own spawn handlers allows you to pool all networked objects on clients as they are destroyed and spawned on your clients.
 
-To pool objects on the server side, do not use `Destroy`. Use `NetworkedObject.Despawn` first, then manually pool the object.
+To pool objects on the server side, do not use `Destroy`. Use `NetworkObject.Despawn` first, then manually pool the object.
