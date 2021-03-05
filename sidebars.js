@@ -44,11 +44,11 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/networkedobject"
+        "id": "mlapi-basics/networkobject"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkedbehavior"
+        "id": "mlapi-basics/networkbehavior"
       },
       {
         "type": "doc",
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkedvar"
+        "id": "mlapi-basics/networkvariable"
       },
       {
         "type": "doc",
@@ -87,7 +87,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "core-components/networkingmanager"
+        "id": "core-components/networkmanager"
       }
     ]
   },
@@ -102,7 +102,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/bitwriter-bitreader-bitstream"
+        "id": "advanced-topics/bitwriter-bitreader-networkbuffer"
       },
       {
         "type": "doc",
