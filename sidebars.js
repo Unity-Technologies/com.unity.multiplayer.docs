@@ -36,15 +36,15 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/messaging-system"
+        "id": "mlapi-basics/networkedobject"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/networkedbehavior"
       },
       {
         "type": "doc",
         "id": "mlapi-basics/object-spawning"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-behavior-relation"
       },
       {
         "type": "doc",
@@ -57,10 +57,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "mlapi-basics/scene-management"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-ownership"
       },
       {
         "type": "doc",
