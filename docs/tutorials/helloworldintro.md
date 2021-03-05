@@ -7,7 +7,7 @@ sidebar_label: Your First Networked Game "Hello World"
 
 ## Create a new project in Unity
 
-1. Open the Unity Hub, 
+1. Open the Unity Hub. 
 1. Click New. 
 1. Select type ‘3D’
 1. Rename the project "Hello World"
@@ -20,13 +20,13 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+)
 
 :::
 
- ![Open Unity create new project](../../static/img/openunity.gif)
+ ![Open Unity create new project](/img/openunity.gif)
    
 
 ## Import Package via URL
 
 1. Open the package manager by navigating to Window > Package Manager on Unity’s main menu.
-1. Click ![Add](../../static/img/add.png) in the status bar.
+1. Click ![Add](/img/add.png) in the status bar.
 
     the following options are displayed
 
@@ -38,7 +38,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+)
 1. Enter the Git URL https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#develop
 1. Click **Add**
    
-    ![installing MLAPI from Git URL](../../static/img/installingmlapiurl.gif)
+    ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
 
 You have now installed MLAPI
 
@@ -48,7 +48,7 @@ You have now installed MLAPI
 1. Select **Create Empty**
 1. Rename the GameObject "NetworkManager"
    
-    ![create gameobject](../../static/img/creategameobject.gif) 
+    ![create gameobject](/img/creategameobject.gif) 
 
 :::tip
 We renamed the GameObject because:  
@@ -68,7 +68,7 @@ You have now created a new GameObject called "NetworkManager".
 1. Click "Select Transport" 
 1. Select `UnetTransport`.
 
-    ![selecttransaportani](../../static/img/selectingtransport.gif)
+    ![selecttransaportani](/img/selectingtransport.gif)
 
 1. Create 3D Object->Capsule (name it Player). 
 2. Add a `NetworkObject` component.
@@ -76,29 +76,29 @@ You have now created a new GameObject called "NetworkManager".
 1. Create a  new Folder and call it **Prefabs**
 3. Make this Player scene object a prefab by draging it to Prefab folder you jsut created.
 
-    ![createplayer prefab](../../static/img/createprefab.gif)
+    ![createplayer prefab](/img/createprefab.gif)
 
 4. Delete Player in scene.
 
 :::tip
-We remove the Player scene object, because we will be using the network library to spawn the player.  The library cannot track objects that start in the scene
+We remove the Player scene object, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene
 :::
 
 5. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManger` 
 6. Select **Default Player Prefab.**
 
-    ![addingdefaultprefab](../../static/img/defaultplayerprefab.gif)
+    ![addingdefaultprefab](/img/defaultplayerprefab.gif)
 
 :::tip
-When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client.  If you do not have the default selected for any prefab the game will crash on client connect
+When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect
 :::
 
 7. Inside scene, create a "Plane GameObject", centered at (0,0,0).
 8. Click Play
 9. Click "Start Host" under NetworkingManager 
 
-    ![firstnetworkgame](../../static/img/firstnetworkgame.gif)
+    ![firstnetworkgame](/img/firstnetworkgame.gif)
 
-:::note Congrats   !!!!
-Congratulations you have created a networked game.  It is not a very flashy game  but it's a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
+:::note Congrats!!!!
+Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
 :::
