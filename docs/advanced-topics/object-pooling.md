@@ -9,7 +9,7 @@ You can learn more about the importance of pooling objects [here](https://learn.
 
 ## SpawnHandlers
 
-You can register your own spawn handlers. If you do so MLAPI won't use the default ones (instantiating/destroying objects).
+You can register your own spawn handlers. MLAPI will use them in place of default spawn handlers to instantiate and destroy objects.
 
 ```csharp
 SpawnManager.RegisterCustomSpawnHandler(SpawnManager.GetPrefabHash("myPrefabName"), (position, rotation, disabled) =>
@@ -29,4 +29,3 @@ SpawnManager.RegisterCustomDestroyHandler(SpawnManager.GetPrefabHash("myPrefabNa
 Registering your own spawnhandlers will allow you to pool all networked objects on clients as they are destroyed and spawned on your clients.
 
 To pool objects on the server side don't use `Destroy` to destroy them but rather us `NetworkedObject.Despawn` first and then manually pool the object.
-
