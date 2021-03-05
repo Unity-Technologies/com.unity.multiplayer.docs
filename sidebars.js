@@ -247,6 +247,14 @@ transport: [
       "type": "doc",
       "id": "release-notes/introduction"
     },
+    {
+      "type": "doc",
+      "id": "release-notes/release"
+    },
+    {
+      "type": "doc",
+      "id": "release-notes/doc-changelog"
+    },
   ],
   api: [
     {

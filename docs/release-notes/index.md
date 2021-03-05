@@ -10,8 +10,8 @@ This section includes release notes, hotfixes, and updates for all Unity Multipl
 
 | Release | Status | Date |
 | -- | -- |
-| [v1.0.0](multiplayer/release-1.0.0.md) | Experimental | March 23, 2021 |
+| [v1.0.0](release-1-0-0.md) | Experimental | March 23, 2021 |
 
 ## Documentation
 
-See the [Documentation changelog]() for major updates to content and site development.
+See the [Documentation changelog](doc-changelog.md) for major updates to content and site development.
