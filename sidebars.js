@@ -151,7 +151,7 @@ module.exports = {
           },
         ]
       },
-      {}
+      {
         "type": "doc",
         "id": "mlapi-basics/networkedobject"
       },

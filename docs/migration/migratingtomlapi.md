@@ -30,7 +30,7 @@ See [Installation](../getting-started/installation.md) for more information.
 ### Invoking
 Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkedBehaviour`` instead of calling the method directly like in UNET.
 
-See [NetworkedBehaviour](../core-components/networked-behaviour.md) for more information.
+See [NetworkedBehaviour](../mlapi-basics/networked-behaviour.md) for more information.
 
 ### Replace NetworkManager 
 
@@ -220,7 +220,7 @@ public class MyMLAPIExample : NetworkedBehaviour
 
 
 
-See [NetworkedBehaviour](../core-components/networked-behaviour.md) for more information. 
+See [NetworkedBehaviour](../mlapi-basics/networked-behaviour.md) for more information. 
 
 ### Add callback registration in `Awake` or Init methods
 <Tabs
