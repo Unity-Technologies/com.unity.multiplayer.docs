@@ -147,7 +147,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
         }
 ```
 
-`NetworkManager` implements the singleton pattern as it declares it's singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established. These will be used shortly.
+`NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
 
 We will call these methods inside of `OnGUI()`:
 
