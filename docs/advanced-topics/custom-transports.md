@@ -11,7 +11,7 @@ This layer enables the host to send and receive error-corrected data, packets or
 
 ## Community Contribution
 
-The MLAPI has support for community contribution Transport implementations which you can use. Click [here](https://github.com/Unity-Technologies/MLAPI.Transports) for the MLAPI Community Contribution repository. 
+The MLAPI supports community contributions for Transport implementations. See the [MLAPI Community Contributions](https://github.com/Unity-Technologies/mlapi-community-contributions)  repository to learn more.
 
 To use a Transport, download the ZIP file you want from the CI server, export it into your assets folder, and it will show up automatically in the NetworkingManager.
 
