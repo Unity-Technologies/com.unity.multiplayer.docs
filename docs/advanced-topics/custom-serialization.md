@@ -3,7 +3,7 @@ id: custom-serialization
 title: Custom Serialization
 ---
 
-When using RPC's, NetworkedVar's or any other MLAPI related task that requires serialization. The MLAPI uses a default serialization pipeline that looks like this:
+When using `RPC`'s, `NetworkVariable`'s or any other MLAPI related task that requires serialization. The MLAPI uses a default serialization pipeline that looks like this:
 
 ``
 Custom Types => Built In Types => IBitWritable
@@ -37,8 +37,8 @@ The builtin types that are handled by default are:
 * Char
 * Enums
 * GameObject (Only if the GameObject has a NetworkedObject component that is spawned)
-* NetworkedObject (Only if spawned)
-* NetworkedBehaviour (Only if spawned)
+* NetworkObject (Only if spawned)
+* NetworkBehaviour (Only if spawned)
 
 With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types.
 

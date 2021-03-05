@@ -5,7 +5,7 @@ sidebar_label: Building on "Hello World"
 ---
 
 :::note
-This guide follows on from the work completed in [Your First Networking Game "Hello World"](helloworldparttwo.md). You should complete that guide before starting this one.
+This guide follows on from the work completed in [Your First Networking Game "Hello World"](helloworldintro.md). You should complete that guide before starting this one.
 :::
 1. Right click in the Hierarchy tab of the Main Unity Window.
 1. Select **Game Object**.
@@ -29,6 +29,7 @@ You can copy the script from here and paste it into your file.
 :::
 
 ```csharp
+
 using MLAPI;
 using UnityEngine;
 
@@ -36,8 +37,6 @@ namespace HelloWorld
 {
     public class HelloWorldManager : MonoBehaviour
     {
-        static string s_NameToEdit = string.Empty;
-
         void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
@@ -64,10 +63,10 @@ namespace HelloWorld
 
         static void StatusLabels()
         {
-            var mode = NetworkManager.Singleton.IsHost ? 
+            var mode = NetworkManager.Singleton.IsHost ?
                 "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
 
-            GUILayout.Label("Transport: " + 
+            GUILayout.Label("Transport: " +
                 NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
             GUILayout.Label("Mode: " + mode);
         }
@@ -87,34 +86,6 @@ namespace HelloWorld
                 }
             }
         }
-
-        static void ModifyName()
-        {
-            s_NameToEdit = GUILayout.TextField(s_NameToEdit, 25);
-        }
-
-        void SubmitName()
-        {
-            if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Change Name" : "Request Name Change"))
-            {
-                if (NetworkManager.Singleton.ConnectedClients.TryGetValue(NetworkManager.Singleton.LocalClientId,
-                    out var networkedClient))
-                {
-                    var player = networkedClient.PlayerObject.GetComponent<HelloWorldPlayer>();
-                    if (player)
-                    {
-                        if (NetworkManager.Singleton.IsServer)
-                        {
-                            player.NameTag.Value = s_NameToEdit;
-                        }
-                        else
-                        {
-                            player.SubmitName(s_NameToEdit);
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 ```
@@ -123,12 +94,12 @@ Inside the `HellowWorldMAnager.cs` script, we will define two methods which mimi
 
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs#L27-L42
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs#L25-L40
 
 ```
 -->
 ```csharp
-        static void StartButtons()
+ static void StartButtons()
         {
             if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
             if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
@@ -137,10 +108,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
         static void StatusLabels()
         {
-            var mode = NetworkManager.Singleton.IsHost ? 
+            var mode = NetworkManager.Singleton.IsHost ?
                 "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
 
-            GUILayout.Label("Transport: " + 
+            GUILayout.Label("Transport: " +
                 NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
             GUILayout.Label("Mode: " + mode);
         }
@@ -152,14 +123,14 @@ We will call these methods inside of `OnGUI()`.
 
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs#L10-L25
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs#L8-L23
 
 ```
 -->
 
 ```csharp
 
- void OnGUI()
+void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
             if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
@@ -175,6 +146,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
             GUILayout.EndArea();
         }
+
 ```
 :::note
 You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
@@ -187,6 +159,7 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
 
 ```csharp
+
 using MLAPI;
 using MLAPI.Messaging;
 using MLAPI.NetworkVariable;
@@ -196,14 +169,12 @@ namespace HelloWorld
 {
     public class HelloWorldPlayer : NetworkBehaviour
     {
-        public NetworkVariableString NameTag = new NetworkVariableString();
-        
         public NetworkVariableVector3 Position = new NetworkVariableVector3(new NetworkVariableSettings
         {
             WritePermission = NetworkVariablePermission.ServerOnly,
             ReadPermission = NetworkVariablePermission.Everyone
         });
-        
+
         public override void NetworkStart()
         {
             Move();
@@ -222,7 +193,7 @@ namespace HelloWorld
                 SubmitPositionRequestServerRpc();
             }
         }
-        
+
         [ServerRpc]
         void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
         {
@@ -238,20 +209,8 @@ namespace HelloWorld
         {
             transform.position = Position.Value;
         }
-        
-        public void SubmitName(string nameTag)
-        {
-            SubmitNameServerRpc(nameTag);
-        }
-        
-        [ServerRpc]
-        void SubmitNameServerRpc(string nameTag, ServerRpcParams rpcParams = default)
-        {
-            NameTag.Value = nameTag;
-        }
     }
 }
-
 ```
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
@@ -261,17 +220,17 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 `-->
 
 ```csharp
-    public class HelloWorldPlayer : NetworkBehaviour
+     public class HelloWorldPlayer : NetworkBehaviour
+
 ```
 
 Inside this class we will define a `NetworkVariable` to represent this player's networked position.
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L12-L16
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L10-L14
 ```
 -->
 ```csharp
-
         public NetworkVariableVector3 Position = new NetworkVariableVector3(new NetworkVariableSettings
         {
             WritePermission = NetworkVariablePermission.ServerOnly,
@@ -284,7 +243,7 @@ We introduce the concept of ownership on a `NetworkVariable` (read and write per
 `HelloWorldPlayer` overrides `NetworkStart`.
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L18-L21
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L16-L19
 ```
 -->
 
@@ -303,7 +262,7 @@ This can be overriden on any `NetworkBehaviour`.
 On both client and server instances of this player, we call the `Move()` method, which will simply do the following.
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L23-L40
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L21-L33
 ```
 -->
 
@@ -327,7 +286,7 @@ If this player is a server-owned player, at `NetworkStart()` we can immediately 
 
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L32-L34
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L23-L28
 ```
 -->
 
@@ -339,7 +298,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
  If we are a client, we call a server RPC.
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L42-L46
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L29-L32
 ```
 -->
 
@@ -353,7 +312,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 This server RPC simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L48-L51
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L35-L39
 ```
 -->
 ```csharp
@@ -367,7 +326,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 The server instance of this player has just modified the Position NetworkVariable, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L53-L56
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L46-L49
 ```
 -->
 ```csharp
@@ -382,7 +341,7 @@ We can now go back to `HelloWorldManager.cs` and define the contents of `SubmitN
 
 <!---
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldMAnager.cs#L44-L58
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldMAnager.cs#L42-L56
 ```
 -->
 ```csharp

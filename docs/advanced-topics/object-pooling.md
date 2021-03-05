@@ -30,4 +30,4 @@ SpawnManager.RegisterCustomDestroyHandler(SpawnManager.GetPrefabHash("myPrefabNa
 
 Registering your own spawn handlers allows you to pool all networked objects on clients as they are destroyed and spawned on your clients.
 
-To pool objects on the server side, do not use `Destroy`. Use `NetworkedObject.Despawn` first, then manually pool the object.
+To pool objects on the server side, do not use `Destroy`. Use `NetworkObject.Despawn` first, then manually pool the object.

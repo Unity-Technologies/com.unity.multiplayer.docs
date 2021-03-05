@@ -78,7 +78,6 @@ You have now created a new GameObject called **NetworkManager**.
     ![createplayer prefab](/img/createprefab.gif)
 
 4. Delete **Player** from scene.
-
 :::tip
 We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
 :::
@@ -87,7 +86,6 @@ We remove **Player**, because we will be using the network library to spawn the 
 6. Select **Default Player Prefab.**
 
     ![addingdefaultprefab](/img/defaultplayerprefab.gif)
-
 :::tip
 When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect
 :::

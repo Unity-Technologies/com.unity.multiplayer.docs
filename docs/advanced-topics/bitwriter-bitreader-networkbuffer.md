@@ -1,20 +1,20 @@
 ---
-id: bitwriter-bitreader-bitstream
-title: BitWriter, BitReader, and BitStream
-sidebar_label: BitWriter, BitReader, & BitStream
+id: bitwriter-bitreader-networkbuffer
+title: BitWriter, BitReader, and NetworkBuffer
+sidebar_label: BitWriter, BitReader, & NetworkBuffer
 ---
 
 Internally, the MLAPI uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in MemoryStreams which don't create any garbage.
 
 The MLAPI does have its own prefered Stream that is used internally. It's called the BitStream.
 
-## BitStream
+## NetworkBuffer
 
-The BitStream is a Stream implementation that functions in a similar way as the MemoryStream. The main difference is that the BitStream have methods for operating on the Bit level rather than the Byte level.
+The `NetworkBuffer` is a Stream implementation that functions in a similar way as the MemoryStream. The main difference is that the `NetworkBuffer`  has methods for operating on the Bit level rather than the Byte level.
 
 ### PooledBitStream
 
-Creating resizable BitStreams allocates a byte array to back it, just like a MemoryStream. To not create any allocations, the MLAPI has a built in Pool of BitStreams which is recommended to be used instead.
+Creating resizable `NetworkBuffer`s allocates a byte array to back it, just like a MemoryStream. To not create any allocations, the MLAPI has a built in Pool of `NetworkBuffer`s  which is recommended to be used instead.
 
 ```csharp
 using (PooledBitStream stream = PooledBitStream.Get())
@@ -27,7 +27,7 @@ using (PooledBitStream stream = PooledBitStream.Get())
 
 While the BinaryWriter class built into .NET is great for reading and writing binary data, it's not very compact or efficient and doesn't offer a ton of flexibility. The BitWriter and BitReader solves this.
 
-The BitWriter and BitReader can operate at the bit level when used with a BitStream. It also has many fancy write methods for compacting data.
+The BitWriter and BitReader can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
 
 Some of it's key features include the following.
 

@@ -20,7 +20,7 @@ This mode runs a Server and a virtual Client connected to its own server. The vi
 Usage:
 
 ```csharp
-NetworkingManager.Singleton.StartHost();
+NetworkManager.Singleton.StartHost();
 ```
 
 
@@ -31,7 +31,7 @@ This mode runs a Client that connects to a Server or Host.
 Usage:
 
 ```csharp
-NetworkingManager.Singleton.StartClient();
+NetworkManager.Singleton.StartClient();
 ```
 
 ### Server mode
@@ -41,5 +41,5 @@ This mode runs a Server which other Clients can connect to. It has no own client
 Usage:
 
 ```csharp
-NetworkingManager.Singleton.StartServer();
+NetworkManager.Singleton.StartServer();
 ```

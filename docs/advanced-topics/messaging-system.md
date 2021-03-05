@@ -8,7 +8,7 @@ The MLAPI has two parts to it's messaging system. RPC messages and Custom Messag
 
 ## RPC Messages
 
-RPC messages are the most common and easy to use type of message. There are two types of RPC messages. ServerRPC and ClientRPC. ServerRPC methods are invoked by clients (or host if there is no dedicated server) and runs on the Server and ClientRPC methods are invoked by the server but ran on one or more clients.
+RPC messages are the most common and easy to use type of message. There are two types of RPC messages. `ServerRPC` and `ClientRPC`. `ServerRPC` methods are invoked by clients (or host if there is no dedicated server) and runs on the Server and `ClientRPC` methods are invoked by the server but ran on one or more clients.
 
 ### Modes
 
@@ -16,7 +16,7 @@ The RPC methods can be used in two "modes". One is a performance mode where the 
 
 ### Ownership Checking
 
-By default, ServerRPC's can only be called if the local client owns the object the ServerRPC sits on. 
+By default, `ServerRPC`'s can only be called if the local client owns the object the `ServerRPC` sits on. 
 
 This can be disabled like this:
 
@@ -31,7 +31,7 @@ void MyMethod(int myInt)
 #### Convenience Example
 
 ```csharp
-public class Example : NetworkedBehaviour
+public class Example : NetworkBehaviour
 {
   private void OnGUI()
   {
@@ -167,19 +167,19 @@ The Invoke methods can ONLY invoke RPC's that are on the same NetworkedBehaviour
 This does not work:
 
 ```csharp
-InvokeClientRpc(MyOtherNetworkedBehaviour.MyRPCMethod, myInt);
+InvokeClientRpc(MyOtherNetworkBehaviour.MyRPCMethod, myInt);
 ```
 Instead, this can be done:
 
 ```csharp
-MyOtherNetworkedBehaviour.InvokeClientRpc(MyOtherNetworkedBehaviour.MyRPCMethod, myInt);
+MyOtherNetworkBehaviour.InvokeClientRpc(MyOtherNetworkBehaviour.MyRPCMethod, myInt);
 ```
 
 ### Host
 
-When the server has a local client (Host), ServerRPC's can be executed by that client (Even though, technically, he already is the server).
+When the server has a local client (Host), `ServerRPC`'s can be executed by that client (Even though, technically, he already is the server).
 
-ClientRPC's function the same way. When they are invoked, they are also invoked on the Host. This allows you to write the same code for the host and normal players.
+``ClientRPC``'s function the same way. When they are invoked, they are also invoked on the Host. This allows you to write the same code for the host and normal players.
 
 ## Custom Messages
 If you don't want to use the MLAPI's messaging. You don't have to. You can use a thin layer called "Custom Messages" (these can be used in combination with RPC messages as well). Custom messages allows you to implement your own behaviour and add custom targeting etc. Custom messages are messages unbound to any game object.
