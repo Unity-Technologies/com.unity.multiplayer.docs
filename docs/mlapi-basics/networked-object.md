@@ -15,7 +15,7 @@ To add custom code logic to your NetworkedObjects use [NetworkedBehaviours](TODO
 
 ## Ownership
 
-Each NetworkedObject is owned by a specific client. This can be any client or the server.
+Each `NetworkedObject` is owned by a specific client. This can be any client or the server.
 
 Give ownership of an object using the following:
 
