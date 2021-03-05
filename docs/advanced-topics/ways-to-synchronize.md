@@ -1,4 +1,4 @@
----
+`---
 id: ways-synchronize
 title: Ways To Synchronize
 ---
@@ -11,6 +11,6 @@ For starters, the messaing system can be used. This provides sending any data. T
 
 ## INetworkedVar
 
-The second way is to use the NetworkedVar system. This allows data to be synced by the library rather than by the developer. The NetworkedVar system supports syncing of data to new users in the spawn call automatically and delta compression. 
+The second way is to use the NetworkVariable system. This allows data to be synced by the library rather than by the developer. The NetworkVariable system supports syncing of data to new users in the spawn call automatically and delta compression. 
 
-See [NetworkedVar](../mlapi-basics/networkedvar.md) for details.
+See [NetworkVariable](../mlapi-basics/networkvariable.md) for details.
