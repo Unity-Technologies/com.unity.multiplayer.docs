@@ -151,13 +151,17 @@ module.exports = {
           },
         ]
       },
-      {
+      {}
         "type": "doc",
-        "id": "mlapi-basics/object-spawning"
+        "id": "mlapi-basics/networkedobject"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/object-behavior-relation"
+        "id": "mlapi-basics/networkedbehavior"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/object-spawning"
       },
       {
         "type": "doc",
@@ -169,15 +173,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/syncedvar"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/scene-management"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-ownership"
       },
       {
         "type": "doc",
@@ -201,18 +197,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "core-components/networkingmanager"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/trackedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedbehavior"
       }
     ]
   },
@@ -223,15 +207,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "advanced-topics/message-encryption"
-      },
-      {
-        "type": "doc",
         "id": "advanced-topics/object-pooling"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/lag-compensation"
       },
       {
         "type": "doc",
