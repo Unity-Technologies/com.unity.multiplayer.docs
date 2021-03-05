@@ -28,7 +28,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+)
 1. Open the package manager by navigating to Window > Package Manager on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar.
 
-    the following options are displayed
+    The following options are displayed:
 
      - Add package from disk...
      - Add package from tarball...
