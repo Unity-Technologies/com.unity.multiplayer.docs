@@ -8,10 +8,14 @@ In Unity, you typically creating a new game object using the `Instantiate` funct
 
 ### Registering a Networked Prefab
 
-To spawn an object it must first be registered as a networked prefab. First create a prefab out of the object you want to spawn.
-Then make sure the object has a `NetworkedObject` component on it. The `NetworkedObject` component has a `PrefabHash` this is a unique name
-which is used by MLAPI to find the right object to spawn on the clients. By default this is the name of the object but it can be changed if needed.
-Finally to register your prefab as a networked prefab, add it to the `NetworkedPrefabs` list of the `NetworkingManager`.
+To spawn an object, it must first be registered as a networked prefab:
+
+1. Create a prefab out of the object you want to spawn.
+1. Make sure the object has a `NetworkedObject` component on it. 
+
+  The `NetworkedObject` component has a `PrefabHash` this is a unique name used by MLAPI to find the right object to spawn on the clients. By default this is the name of the object but it can be changed if needed.
+  
+1. Add your prefab to the `NetworkedPrefabs` list of the `NetworkingManager`.
 
 ### Spawning a Networked Prefab
 
