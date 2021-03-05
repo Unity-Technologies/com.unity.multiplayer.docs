@@ -6,18 +6,6 @@
 
 module.exports = {
   mlapi: [
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Migration from Unet to MLAPI",
-      "items": [
-                {
-          "type": "doc",
-          "id": "migration/migratingtomlapi"
-        },
-        
-      ]
-    },
   {
     "collapsed": true,
     "type": "category",
@@ -41,7 +29,11 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "getting-started/helloworldintro"
+        "id": "tutorials/helloworldintro"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/helloworldtwo"
       }
     ]
   },
@@ -50,107 +42,6 @@ module.exports = {
     "type": "category",
     "label": "MLAPI Basics",
     "items": [
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Messaging System",
-        "items": [
-          {
-            "type": "doc",
-            "id": "mlapi-basics/messaging-system/introduction"
-          },
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Network Update Loop System",
-            "items": [
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/network-update-loop-system/introduction"
-              },
-             {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/network-update-loop-system/network-update-loop-reference"
-              },
-            ]
-            },
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "RPC Remote Procedure Call",
-            "items": [
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/clientrpc"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/serverrpc"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/reliability"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/execution-table"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/rpc-params"
-              },
-              {
-              "collapsed": true,
-              "type": "category",
-              "label": "Serialization",
-              "items": [
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/messaging-system/serialization/serialization-intro"                                                                                                                                                                                                                 
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/cprimitives"
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/unity-primitives"
-                },   {
-                  "type": "doc",
-                  "id": "mlapi-basics/enum_types"
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/static-arrays"
-                },  
-                { 
-                  "type": "doc",
-                  "id": "mlapi-basics/inetworkserializable-bitserializer"
-                  
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/serializable-reference"
-                },
-              
-              ]
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/backward-compatibility"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/cross-compatibility"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/deprecation-of-return-values"
-              },
-            ]
-          },
-        ]
-      },
       {
         "type": "doc",
         "id": "mlapi-basics/networkedobject"
@@ -241,41 +132,6 @@ module.exports = {
         "id": "troubleshooting/errormessages"
       }
     ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Glossary",
-    "items": [
-      /* {
-        "type": "doc",
-        "id": "reference/glossary/general-terms"
-      } */
-      {
-        "type": "doc",
-        "id": "reference/glossary/high-level-terminology"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-latency-management"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-models"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-terms"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/prioritization"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/relevancy"
-      },
-    ]
   }
 ],
 transport: [
@@ -360,39 +216,12 @@ transport: [
     {
       "type": "doc",
       "id": "learn/introduction"
-    },    
+    },
     {
-    "collapsed": true,
-    "type": "category",
-    "label": "Managing Lag with Unity",
-    "items": [
-        {
-        "type": "doc",
-        "id": "tutorials/lagandpacketloss"
-        },
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Artichitecture for creating multiplayer games",
-    "items": [
-
-      {
-        "type": "doc",
-        "id": "tutorials/multiplayergamearhitectureintroduction"
-        },
-        {
-        "type": "doc",
-        "id": "tutorials/listenserverhostarchitecture"
-        },
-    ]
-  },
-  {
-    "type": "doc",
-    "id": "learn/faq"
-  },
- ],
+      "type": "doc",
+      "id": "learn/faq"
+    },
+  ],
   releasenotes: [
     {
       "type": "doc",
