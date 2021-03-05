@@ -105,7 +105,7 @@ function DocItem(props) {
                       </a>}
                   </div>
                   <div className="col feedback-issue">
-                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=type:feedback&template=bug_report.md&title=Feedback%20for%20' + mdPath }  target="_blank">
+                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=type:feedback&template=feedback.md&title=Feedback%20for%20' + mdPath }  target="_blank">
                     <IconBug />
                     Log an issue</a>}
                   </div>
