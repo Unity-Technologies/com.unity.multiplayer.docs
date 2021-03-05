@@ -49,7 +49,7 @@ When a client disconnects, all objects owned by that client will be destroyed. I
 
 To despawn a networked object on all clients but keep it on the server call `NetworkedObject.Despawn` on the server. An despawned object can also later be spawned again with another spawn call if needed.
 
-A client should never call destroy on a networked object itself. That's not supported. To destroy an object with client authority have the client send an RPC to the server and let the server destroy the object.
+A client should never call destroy on a networked object itself (this is not supported).  To destroy an object with client authority, have the client send an RPC to the server, which allows the server to destroy the object.
 
 You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility] (TODO LINK).
 
