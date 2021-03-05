@@ -3,7 +3,7 @@ id: networkedobject
 title: NetworkedObject
 ---
 
-The MLAPI's high level components (The RPC system and the Object Spawning System) relies on two concepts. One of them is the concept of NetworkedObjects, and the other one is the concept of NetworkedBehaviours.
+The MLAPI's high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkedObject`s and `NetworkedBehaviour`s.
 
 ## NetworkedObject
 
