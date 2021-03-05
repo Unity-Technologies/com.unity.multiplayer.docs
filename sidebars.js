@@ -26,6 +26,14 @@ module.exports = {
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/helloworldintro"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/helloworldtwo"
       }
     ]
   },
