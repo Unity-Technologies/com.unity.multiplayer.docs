@@ -14,11 +14,8 @@ The Multiplayer v1.0.0 release contains features, updates, bug fixes, and refact
 
 This release provides the following new features and APIs:
 
-* Added functionality and usability to [`NetworkVariable`](../../mlapi-basics/networkedvar.md), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
-
-* Added a tick system where a `NetworkTick` value incrementally tracks time through network interactions. See [Network Tick System](LINK) for more information.<!-- add link to doc when ready --><!-- MTT-241, RFC #12-->
-
-* Network Transform property synchronization with Interpolation support
+* Added a new `NetworkTickSystem` to track time through network interactions and enable better client-side interpolation, lag compensation, replay and rollback, and in the future provide the required flexibility for new systems. The system evaluates and incrementally updates local and remote tick values through synced `NetworkVariable`s. See [Network Tick System](LINK) for more information.<!-- add link to doc when ready --><!-- MTT-241, RFC #12-->
+* 
 
 ## Changes
 
@@ -49,6 +46,7 @@ For users of previous versions of MLAPI, this release renames APIs due to refact
 
 This release includes the following updates to existing features:
 
+* Added functionality and usability to [`NetworkVariable`](../../mlapi-basics/networkedvar.md), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
 * Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRPC` and `ClientRPC` to execute login on the server and client-side. See [RPC](LINK) for details. <!-- add link to doc when ready --><!-- MTT-233-->
 
 With a new release of MLAPI in Unity, some features have been removed, moved, or deprecated. See the following list of affected features:
