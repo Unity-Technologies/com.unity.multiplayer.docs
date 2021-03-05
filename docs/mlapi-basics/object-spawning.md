@@ -71,7 +71,7 @@ This allows scene objects to be non prefabs and they will not be replaced, thus 
 
 ### PrefabSync
 
-PrefabSync can be manually enabled in the `NetworkingManager` by ticking the `Use Prefab Sync` checkbox. Prefab sync will also be used if SceneManagement is disabled.
+PrefabSync can be manually enabled in the `NetworkingManager` by ticking the *Use Prefab Sync* checkbox. Prefab sync will also be used if `SceneManagement` is disabled.
 
 If it's enabled, every scene object with a `NetworkedObject` component has to be a prefab and must be registered in the `NetworkedPrefabs` list. When a client starts, MLAPI will destroy all existing scene objects with a `NetworkedObject` component on them and spawn a corresponding prefab from the `NetworkedPrefabs` list instead. This means that serialized data gets lost on the clients. It's thus recommended to place serialized data in NetworkedVars.
 **PrefabSync is ONLY recommended for multi project setups**.
