@@ -3,9 +3,9 @@ id: connection-approval
 title: Connection Approval
 ---
 
-During every new connection the MLAPI performs a handshake on top of the one(s) done by the transport. This is to ensure that the NetworkConfig's match up between the Client and Server. In the NetworkConfig you can specify to enable ConnectionApproval. Connection approval will let you decide on a per connection basis if the connection should be allowed. Connection approval also lets you specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
+During every new connection the MLAPI performs a handshake on top of the one(s) done by the transport. This is to ensure that the `NetworkConfig`'s match up between the Client and Server. In the `NetworkConfig` you can specify to enable `ConnectionApproval`. Connection approval will let you decide on a per connection basis if the connection should be allowed. Connection approval also lets you specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
 
-However, when ConnectionApproval is true you are also required to provide a callback where you put your approval logic inside. 
+However, when `ConnectionApproval` is true you are also required to provide a callback where you put your approval logic inside. 
 
 Server-only example:
 
@@ -15,18 +15,18 @@ using MLAPI.Spawning;
 
 private void Setup() 
 {
-    NetworkingManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
-    NetworkingManager.Singleton.StartHost();
+    NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+    NetworkManager.Singleton.StartHost();
 }
 
-private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkingManager.ConnectionApprovedDelegate callback)
+private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkManager.ConnectionApprovedDelegate callback)
 {
     //Your logic here
     bool approve = true;
     bool createPlayerObject = true;
 
     // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkedPrefabs field of your NetworkingManager object in the scene
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = SpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
@@ -36,15 +36,15 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.Networki
 
 ## Connection data
 
-The connectionData parameter is any custom data of your choice that the client should send to the server. Usually, this should be some sort of ticket, room password or similar that will decide if a connection should be approved or not. The connectionData is specified on the Client side in the NetworkingConfig supplied when connecting.
+The `connectionData` parameter is any custom data of your choice that the client should send to the server. Usually, this should be some sort of ticket, room password or similar that will decide if a connection should be approved or not. The `connectionData` is specified on the Client side in the `NetworkingConfig` supplied when connecting.
 
 Example:
 
 ```csharp
 using MLAPI;
 
-NetworkingManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASCII.GetBytes("room password");
-NetworkingManager.Singleton.StartClient();
+NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASCII.GetBytes("room password");
+NetworkManager.Singleton.StartClient();
 ```
 The ConnectionData will then be passed to the server and it will decide if the client will be approved or not.
 

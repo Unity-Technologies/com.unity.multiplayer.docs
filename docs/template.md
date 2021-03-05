@@ -196,9 +196,9 @@ See the following tabbed code examples:
   <TabItem value="mlapi">
 
 ```csharp
-  public class MyMLAPIExample : NetworkedBehaviour
+  public class MyMLAPIExample : NetworkBehaviour
    {
-      public NetworkedVar<float> MyNetworkedVar;
+      public NetworkVariable<float> MyNetworkVariable;
       public override void NetworkedStart()
       {
          InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
