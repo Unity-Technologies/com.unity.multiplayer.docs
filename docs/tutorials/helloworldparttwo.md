@@ -280,7 +280,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
         });
 ```
 
-We introduce the concept of ownership on a `NetworkVariable` (aka read & write permissions). For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
+We introduce the concept of ownership on a `NetworkVariable` (read and write permissions). For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
 
 HelloWorldPlayer overrides NetworkStart:
 <!---
