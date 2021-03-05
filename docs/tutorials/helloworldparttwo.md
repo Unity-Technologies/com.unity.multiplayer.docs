@@ -262,9 +262,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 `-->
 
 ```csharp
-
     public class HelloWorldPlayer : NetworkBehaviour
-
 ```
 
 Inside this class we will define a `NetworkVariable` to represent this player's networked position: 
