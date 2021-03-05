@@ -39,7 +39,7 @@ public void Spawn(Stream spawnPayload = null, bool destroyWithScene = false);
 
 | Parameter | Description |
 | -- | -- |
-| `spawnPayload` | A System.IO.Stream and can be retrieved in the `NetworkStart()` to sync values once when spawning this object. The payload data is only available for already connected clients. If a client connects later they won't get the payload data. |
+| `spawnPayload` | A `System.IO.Stream` and can be retrieved in `NetworkStart()` to sync values once when spawning this object. The payload data is only available for already connected clients. If a client connects later they will not get the payload data. |
 | `destroyWithScene` | If set to true, the object will be destroyed on scene switching. This can only be set inside the spawn call. |
 
 ## Destroying / Despawning
