@@ -6,18 +6,6 @@
 
 module.exports = {
   mlapi: [
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Migration from Unet to MLAPI",
-      "items": [
-                {
-          "type": "doc",
-          "id": "migration/migratingtomlapi"
-        },
-        
-      ]
-    },
   {
     "collapsed": true,
     "type": "category",
@@ -47,113 +35,16 @@ module.exports = {
     "label": "MLAPI Basics",
     "items": [
       {
-        "collapsed": true,
-        "type": "category",
-        "label": "Messaging System",
-        "items": [
-          {
-            "type": "doc",
-            "id": "mlapi-basics/messaging-system/introduction"
-          },
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Network Update Loop System",
-            "items": [
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/network-update-loop-system/introduction"
-              },
-             {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/network-update-loop-system/network-update-loop-reference"
-              },
-            ]
-            },
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "RPC Remote Procedure Call",
-            "items": [
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/clientrpc"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/serverrpc"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/reliability"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/execution-table"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/rpc-params"
-              },
-              {
-              "collapsed": true,
-              "type": "category",
-              "label": "Serialization",
-              "items": [
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/messaging-system/serialization/serialization-intro"                                                                                                                                                                                                                 
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/cprimitives"
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/unity-primitives"
-                },   {
-                  "type": "doc",
-                  "id": "mlapi-basics/enum_types"
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/static-arrays"
-                },  
-                { 
-                  "type": "doc",
-                  "id": "mlapi-basics/inetworkserializable-bitserializer"
-                  
-                },
-                {
-                  "type": "doc",
-                  "id": "mlapi-basics/serializable-reference"
-                },
-              
-              ]
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/backward-compatibility"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/cross-compatibility"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-basics/messaging-system/deprecation-of-return-values"
-              },
-            ]
-          },
-        ]
+        "type": "doc",
+        "id": "mlapi-basics/networkedobject"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/networkedbehavior"
       },
       {
         "type": "doc",
         "id": "mlapi-basics/object-spawning"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-behavior-relation"
       },
       {
         "type": "doc",
@@ -165,15 +56,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/syncedvar"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/scene-management"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-ownership"
       },
       {
         "type": "doc",
@@ -197,18 +80,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "core-components/networkingmanager"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/trackedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedbehavior"
       }
     ]
   },
@@ -219,15 +90,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "advanced-topics/message-encryption"
-      },
-      {
-        "type": "doc",
         "id": "advanced-topics/object-pooling"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/lag-compensation"
       },
       {
         "type": "doc",
@@ -260,41 +123,6 @@ module.exports = {
         "type": "doc",
         "id": "troubleshooting/errormessages"
       }
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Glossary",
-    "items": [
-      /* {
-        "type": "doc",
-        "id": "reference/glossary/general-terms"
-      } */
-      {
-        "type": "doc",
-        "id": "reference/glossary/high-level-terminology"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-latency-management"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-models"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-terms"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/prioritization"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/relevancy"
-      },
     ]
   }
 ],
@@ -385,7 +213,7 @@ transport: [
       "type": "doc",
       "id": "learn/faq"
     },
- ],
+  ],
   releasenotes: [
     {
       "type": "doc",
