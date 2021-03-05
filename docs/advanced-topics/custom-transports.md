@@ -5,7 +5,8 @@ title: Custom Transports
 
 The MLAPI utilises Unity’s [uNET Transport Layer API](https://docs.unity3d.com/Manual/UNetUsingTransport.html) by default and has support for custom Transports. 
 
-A Transport is a library that collects message segments from applications and transmits them into the network. The Transport layer is also responsible for managing error correction, providing quality and reliability to the end-user.
+A Transport collects messages from the application and transmits them over the network. 
+The Transport layer is also responsible for making sure that all packets arrive and that they arrive in order if needed. Transports also make sure that your data won't get corrupted when it's sent over the network.
 
 This layer enables the host to send and receive error-corrected data, packets or messages over a network.
 
