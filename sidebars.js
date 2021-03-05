@@ -80,14 +80,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "core-components/networkingmanager"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedbehavior"
       }
     ]
   },
