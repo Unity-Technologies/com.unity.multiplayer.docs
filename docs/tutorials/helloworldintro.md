@@ -42,7 +42,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+)
 
 You have now installed MLAPI
 
-## Create the Basic Components.
+## Create the Basic Components
 
 1. Right click in the Hierarchy tab of the Main Unity Window
 1. Select **Create Empty**
