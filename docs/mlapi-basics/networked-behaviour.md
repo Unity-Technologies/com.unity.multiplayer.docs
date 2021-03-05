@@ -12,4 +12,4 @@ You can have multiple `NetworkedBehavior`s on the same object and on any child o
 
 `NetworkStart` is called on each behavior related to the `NetworkedObject`.
 
-Inside a `NetworkedBehaviour` you can use [NetworkVariables](/networkedvar.md) and `RPC`s to synchronize state and send messages over the network.
+Inside a `NetworkedBehaviour` you can use [NetworkVariables](networkedvar.md) and `RPC`s to synchronize state and send messages over the network.
