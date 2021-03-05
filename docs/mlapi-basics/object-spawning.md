@@ -43,7 +43,7 @@ public void Spawn(Stream spawnPayload = null, bool destroyWithScene = false);
 
 When a spawned object gets destroyed on the server/host, MLAPI will automatically destroy it on all clients as well.
 
-When a client disconnects, all objects owned by that client will be destroyed. If you don't want that to happen for an object set the `DontDestroyWithOwner` field on `NetworkObject` to true.
+When a client disconnects, all objects owned by that client will be destroyed. If you do not want that to happen for an object set the `DontDestroyWithOwner` field on `NetworkObject` to true.
 
 ### Despawning
 
