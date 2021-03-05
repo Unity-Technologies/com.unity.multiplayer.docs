@@ -32,6 +32,7 @@ Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkedB
 
 See [NetworkedBehaviour](../core-components/networked-behaviour.md) for more information.
 
+<!---
 ### Replace NetworkManager 
 
 UNET’s `NetworkManager` is called `NetworkingManager` in the MLAPI and works in a similar way.
@@ -69,6 +70,7 @@ NetworkingManager.Singleton.StartClient();
 </Tabs>
 
 See [NetworkingManager](../core-components/networking-manager.md) for more information.
+--->
 ### Replace NetworkManagerHUD 
 
 Currently MLAPI offers no replacment for the NetworkMangerHUD. 
@@ -97,6 +99,7 @@ UNET’s `NetworkIdentity` is called `NetworkedObject` in the MLAPI and works in
 </Tabs>
 
 
+<!--- 
 ### Replace UNet NetworkTransform => NetworkedTransform
 
 UNET’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and works in a similar way.
@@ -222,6 +225,7 @@ public class MyMLAPIExample : NetworkedBehaviour
 
 See [NetworkedBehaviour](../core-components/networked-behaviour.md) for more information. 
 
+--->
 ### Add callback registration in `Awake` or Init methods
 <Tabs
   className="unique-tabs"
@@ -527,11 +531,11 @@ using MLAPI.Spawning;
 
 private void Setup() 
 {
-    NetworkingManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
-    NetworkingManager.Singleton.StartHost();
+    NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+    NetworkManager.Singleton.StartHost();
 }
 
-private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkingManager.ConnectionApprovedDelegate callback)
+private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkManager.ConnectionApprovedDelegate callback)
 {
     //Your logic here
     bool approve = true;
@@ -539,7 +543,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.Networki
 
     // The prefab hash. Use null to use the default player prefab
     // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkedPrefabs field of your NetworkingManager object in the scene
-    ulong? prefabHash = SpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
+    ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
     callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
@@ -551,9 +555,9 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.Networki
 
 See [Connection Approval](../getting-started/connection-approval.md) for more information.
 
-### Replace NetworkServer.Spawn => NetworkingManager.Spawn
+### Replace NetworkServer.Spawn => NetworkManager.Spawn
 
-Replace `NetworkServer.spawn`  with `NetworkingManager.spawn` everywhere in your project. 
+Replace `NetworkServer.spawn`  with `NetworkManager.spawn` everywhere in your project. 
 
 <Tabs
   className="unique-tabs"
@@ -593,7 +597,7 @@ public class Example : NetworkBehaviour
 
 ```csharp
 GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
-go.GetComponent<NetworkedObject>().Spawn();
+go.GetComponent<NetworkObject>().Spawn();
 ```
 </TabItem>
 
@@ -683,7 +687,7 @@ public void Start(){
     });
 }
 
-public bool IsVisibleToPlayer(NetworkedObject networkedObject, NetworkedClient client){
+public bool IsVisibleToPlayer(NetworkObject networkedObject, NetworkClient client){
     // Any promimity function.
     return true;
 }

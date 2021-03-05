@@ -41,8 +41,13 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "getting-started/helloworldintro"
-      }
+        "id": "tutorials/helloworldintro"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/helloworldtwo"
+      },
+      
     ]
   },
   {
@@ -354,6 +359,8 @@ transport: [
       "type": "doc",
       "id": "learn/faq"
     },
+
+
   ],
   releasenotes: [
     {
