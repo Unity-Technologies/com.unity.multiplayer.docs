@@ -53,7 +53,7 @@ A client should never call destroy on a networked object itself. That's not supp
 
 You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility] (TODO LINK).
 
-To get more control about object the object lifecycle MLAPI has built in object pooling you can learn more about that [here](TODO LINK advanced-topics/object-pooling).
+To get more control about the object lifecycle, MLAPI has built in object pooling. See [Object Pooling](../advanced-topics/object-pooling.md) to learn more.
 
 ## Scene Objects
 
