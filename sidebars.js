@@ -227,6 +227,14 @@ transport: [
       "type": "doc",
       "id": "release-notes/introduction"
     },
+    {
+      "type": "doc",
+      "id": "release-notes/multiplayer/mlapi-0-1-0"
+    },
+    {
+      "type": "doc",
+      "id": "release-notes/doc-changelog"
+    },
   ],
   api: [
     {
