@@ -7,7 +7,7 @@ To get started with the MLAPI. You need to install the library. The easiest way 
 
 ![Video showing the install process](https://i.imgur.com/zN63DlJ.gif)
 
-Once imported into the Unity Engine, you will be able to use the components that it offers. To get started, you need a GameObject with the NetworkingManager component. Once you have that, use the [Library Initialization](library-initialization.md) article to continue.
+Once imported into the Unity Engine, you will be able to use the components that it offers. To get started, you need a GameObject with the `NetworkManager` component. Once you have that, use the [Library Initialization](library-initialization.md) article to continue.
 
 
 ## Files
