@@ -61,7 +61,7 @@ You could rename this object to give it a more relevant name but for the purpose
 5. Add Player prefab to NetworkedPrefabs list inside of NetworkingManger 
 6. tick "Default Player Prefab".
 
-    ![addingdefaultprefab](/img/defaultplayerprefab.gif)
+    ![addingdefaultprefab](/img/default-player-prefab.gif)
 7. Inside scene, create a Plane GameObject, centered at (0,0,0).
 8. Click Play
 9. Click "Start Host" under NetworkingManager 

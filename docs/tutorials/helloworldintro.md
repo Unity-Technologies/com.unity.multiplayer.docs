@@ -80,7 +80,7 @@ You have now installed MLAPI.
 1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManger`.
 1. Select **Default Player Prefab.**
 
-  ![addingdefaultprefab](/img/defaultplayerprefab.gif)
+  ![addingdefaultprefab](/img/default-player-prefab.gif)
 
   :::tip
   When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect
