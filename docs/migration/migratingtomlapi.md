@@ -30,7 +30,7 @@ See [Installation](../getting-started/installation.md) for more information.
 ### Invoking
 Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkedBehaviour`` instead of calling the method directly like in UNET.
 
-See [NetworkedBehaviour](../mlapi-basics/networked-behaviour.md) for more information.
+See [NetworkedBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
 
 ### Replace NetworkManager 
 
@@ -68,7 +68,7 @@ NetworkingManager.Singleton.StartClient();
 
 </Tabs>
 
-See [NetworkingManager](../core-components/networking-manager.md) for more information.
+See [NetworkingManager](../core-components/networkmanager.md) for more information.
 ### Replace NetworkManagerHUD 
 
 Currently MLAPI offers no replacment for the NetworkMangerHUD. 
@@ -220,7 +220,7 @@ public class MyMLAPIExample : NetworkedBehaviour
 
 
 
-See [NetworkedBehaviour](../mlapi-basics/networked-behaviour.md) for more information. 
+See [NetworkedBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
 
 ### Add callback registration in `Awake` or Init methods
 <Tabs
@@ -370,7 +370,7 @@ void OnChangeHealth(int oldHealth, int newHealth){
 </Tabs>
 
 
-See [NetworkedVar](../mlapi-basics/networkedvar.md) for more information.
+See [NetworkedVar](../mlapi-basics/networkvariable.md) for more information.
 
 
 ### Replace SyncList => NetworkedList

@@ -61,7 +61,7 @@ You have now installed MLAPI.
 1. Click "Select Transport".
 1. Select `UnetTransport`.
 
-  ![selecttransaportani](/img/selectingtransport.gif)
+  ![selecttransaportani](/img/selecting-transport.gif)
 
 1. Create 3D Object->Capsule (name it **Player**). 
 1. Add a `NetworkObject` component.
