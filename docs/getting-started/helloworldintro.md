@@ -24,7 +24,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+)
 1. Enter the Git URL https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#develop
 1. Click **Add**
    
-    ![installing MLAPI from Git URL](/img/instllingMLAPIURL.gif)
+    ![installing MLAPI from Git URL](/img/instlling-mlapi-url.gif)
 
 You have now installed MLAPI
 
@@ -50,7 +50,7 @@ You could rename this object to give it a more relevant name but for the purpose
 1. click "Select Transport" 
 1. Select UnetTransport.
 
-    ![selecttransaportani](/img/Selectingtransport.gif)
+    ![selecttransaportani](/img/selecting-transport.gif)
 
 1. Create 3D Object->Capsule (name it Player). 
 2. Add a NetworkedObject component.
@@ -61,7 +61,7 @@ You could rename this object to give it a more relevant name but for the purpose
 5. Add Player prefab to NetworkedPrefabs list inside of NetworkingManger 
 6. tick "Default Player Prefab".
 
-    ![addingdefaultprefab](/img/Defaultplayerprefab.gif)
+    ![addingdefaultprefab](/img/defaultplayerprefab.gif)
 7. Inside scene, create a Plane GameObject, centered at (0,0,0).
 8. Click Play
 9. Click "Start Host" under NetworkingManager 
