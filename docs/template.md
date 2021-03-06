@@ -9,6 +9,10 @@ This template displays all options available for writing topics in this site. Yo
 
 To serve as an example page when styling markdown based Docusaurus sites.
 
+:::important About File Names
+The doc site requires all file names in lowercase, no spaces, with dashes used as needed. This includes Markdown, images, videos, and downloadable files.
+:::
+
 ## Headers
 
 Use hashtags `#` to indicate the heading level. You should not use H1, this is automatically used for the page title when building the site. Link anchors automatically also generate.
@@ -67,13 +71,15 @@ You can configure your editor to always use this format for lists. For Visual St
 See the following example code for Markdown links.
 
 ```markdown title="Markdown Link Examples"
+See [Page Name](filename.md) to link to Markdown site pages.
+
+See [Page Name](filename.md#header-name) to link to a section in the Markdown site pages.
+
 [I'm an inline-style link](https://www.google.com/)
 
 [I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
 
 [I'm a reference-style link][arbitrary case-insensitive reference text]
-
-See [Page Name](filename.md) to link to Markdown site pages.
 ```
 
 URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
