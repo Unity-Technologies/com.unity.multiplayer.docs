@@ -26,6 +26,14 @@ module.exports = {
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/helloworldintro"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/helloworldtwo"
       }
     ]
   },
@@ -36,7 +44,11 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/messaging-system"
+        "id": "mlapi-basics/networkobject"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/networkbehavior"
       },
       {
         "type": "doc",
@@ -44,27 +56,15 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/object-behavior-relation"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/modularity"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkedvar"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/syncedvar"
+        "id": "mlapi-basics/networkvariable"
       },
       {
         "type": "doc",
         "id": "mlapi-basics/scene-management"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-ownership"
       },
       {
         "type": "doc",
@@ -87,19 +87,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "core-components/networkingmanager"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/trackedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedbehavior"
+        "id": "core-components/networkmanager"
       }
     ]
   },
@@ -110,19 +98,11 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "advanced-topics/message-encryption"
-      },
-      {
-        "type": "doc",
         "id": "advanced-topics/object-pooling"
       },
       {
         "type": "doc",
-        "id": "advanced-topics/lag-compensation"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/bitwriter-bitreader-bitstream"
+        "id": "advanced-topics/bitwriter-bitreader-networkbuffer"
       },
       {
         "type": "doc",
