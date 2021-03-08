@@ -291,7 +291,8 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-              {
+            else
+            {
                 SubmitPositionRequestServerRpc();
             }
 ```
@@ -316,9 +317,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        void Update()
+  [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
         {
-            transform.position = Position.Value;
+            Position.Value = GetRandomPositionOnPlane();
         }
 ```
 
@@ -330,9 +332,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        public void SubmitName(string nameTag)
+ void Update()
         {
-            SubmitNameServerRpc(nameTag);
+            transform.position = Position.Value;
         }
 ```
 
