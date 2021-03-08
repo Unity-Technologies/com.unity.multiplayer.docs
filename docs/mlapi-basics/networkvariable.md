@@ -14,7 +14,7 @@ Since the `NetworkVariable` container is a wrapper container around the value, t
 You must remember to add the `NetworkObject` component to the game object to which your script belongs.
 :::
 
-To create your own `NetworkVariable` container, simply create a class with the `INetworkVariable` interface and declare it as a field of a `NetworkBehaviour`. To learn how to write your own containers for more complex structures, see the `NetworkVariable` implementation. To learn how to do custom delta encoding on complex structures. See the `NetworkDictonary` and `NetworkList` implementations.
+To create your own `NetworkVariable` container, simply create a class with the `INetworkVariable` interface and declare it as a field of a `NetworkBehaviour`. To learn how to write your own containers for more complex structures, see the `NetworkVariable` implementation. To learn how to do custom delta encoding on complex structures. See the `NetworkDictionary` and `NetworkList` implementations.
 
 ### Permissions
 By default `NetworkVariable` and its subclasses can only be written to by the server (`NetworkVariable`ermission.ServerOnly). To change that set the permission to the desired value during initialization:
