@@ -247,6 +247,10 @@ module.exports = {
     ],
   ],
   plugins: [
+      [require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'GTM-5V25JL6', // GTM Container ID
+      }],
       'plugin-image-zoom',
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock'
