@@ -15,10 +15,10 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 
 This release provides the following new features and APIs:
 
-* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRPC` and `ClientRPC` to execute login on the server and client-side. <!-- See RPC (link TBD) for details. add link to doc when ready --><!-- MTT-233-->
+* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. <!-- See RPC (link TBD) for details. add link to doc when ready --><!-- MTT-233-->
 * Added a new `NetworkTickSystem` to track time through network interactions and enable better client-side interpolation, lag compensation, replay and rollback, and in the future provide the required flexibility for new systems. The system evaluates and incrementally updates local and remote tick values through synced `NetworkVariable`s. <!-- See Network Tick System (link TBD) for more information. add link to doc when ready --><!-- MTT-241, RFC #12-->
 <!--IN RFC - MAY COME BACK * Extended `Transport` to expose `NetworkAddress` and `NetworkPort` properties, used to change the address and port which an MLAPI client connects to at runtime or change the port on which a server gets hosted. This change promotes cleaner code and implementations, and makes it more interchangeable in both user code and library extensions.  -->
-* Added message batching to handle consecutive RPC requests sent to the same client. `MessageBatcher` sends batches based on requests from the `RPCQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
+* Added message batching to handle consecutive RPC requests sent to the same client. `MessageBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
 * Integrated MLAPI with the Unity Profiler for versions 2020.2 and later.
 * Added a Network Update Loop infrastructure that aids Netcode system to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. <!-- add link to docs --> <!-- MTT-498 RFC #8 -->
 
@@ -73,7 +73,7 @@ With a new release of MLAPI in Unity, some features have been removed:
 * Lag compensation systems and `TrackedObject` have moved to the new [MLAPI Community Contributions](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) repo.
 * Encryption has been removed from MLAPI. The `Encryption` option in `NetworkConfig` on the `NetworkingManager` is not available in this release. This change will not block game creation or running. A current replacement for this functionality is not available, and may be developed in future releases. <!-- MTT-516-->
 * Removed the previous MLAPI Profiler editor window from Unity versions 2020.2 and later.
-* Removed previous MLAPI Convenience and Performance RPCs with a new standrd for RPCs. <!-- RFC#1 -->
+* Removed previous MLAPI Convenience and Performance RPC APIs with the new standard RPC API. <!-- RFC#1 -->
 
 ## Fixes
 
