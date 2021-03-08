@@ -57,7 +57,7 @@ You have now installed MLAPI.
 1. Click **Add Component** in the Inspector Tab.
 1. Select **MLAPI** from the list shown.
 1. Select `NetworkManager` Component from the list displayed.
-1. Inside the `NetworkManger` component tab, locate the  `NetworkTransport` field. 
+1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. 
 1. Click "Select Transport".
 1. Select `UnetTransport`.
 
