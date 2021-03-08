@@ -27,6 +27,24 @@ module.exports = {
         "type": "doc",
         "id": "getting-started/connection-approval"
       },
+    ]
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Migrating to MLAPI",
+    "items": [
+          {
+        "type": "doc",
+        "id": "getting-started/migratingtomlapi"
+      },
+    ],
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "First Steps with MLAPI",
+    "items": [
       {
         "type": "doc",
         "id": "tutorials/helloworldintro"
@@ -34,8 +52,8 @@ module.exports = {
       {
         "type": "doc",
         "id": "tutorials/helloworldtwo"
-      }
-    ]
+      },
+    ],
   },
   {
     "collapsed": true,

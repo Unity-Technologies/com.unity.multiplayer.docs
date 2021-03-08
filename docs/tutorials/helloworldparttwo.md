@@ -291,7 +291,8 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-              {
+            else
+            {
                 SubmitPositionRequestServerRpc();
             }
 ```
@@ -316,9 +317,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        void Update()
+  [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
         {
-            transform.position = Position.Value;
+            Position.Value = GetRandomPositionOnPlane();
         }
 ```
 
@@ -330,9 +332,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        public void SubmitName(string nameTag)
+ void Update()
         {
-            SubmitNameServerRpc(nameTag);
+            transform.position = Position.Value;
         }
 ```
 
@@ -369,7 +371,7 @@ You can now create a build which will demonstrate the concepts outlined above.
 Make sure **SampleScene** is included in **BuildSettings**.
 :::
 
-One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position NetworkVariable. That client will apply that NetworkVariable position inside of it's Update() method.
+One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
 
 :::note Congrats!!!!
 Congratulations you have learnt the basics of a networked game 
