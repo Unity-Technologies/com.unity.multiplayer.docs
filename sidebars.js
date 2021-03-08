@@ -116,6 +116,10 @@ module.exports = {
     "items": [
       {
         "type": "doc",
+        "id": "advanced-topics/messaging-system"
+      },
+      {
+        "type": "doc",
         "id": "advanced-topics/object-pooling"
       },
       {
