@@ -45,10 +45,9 @@ This table compares MLAPI and the deprecated UNET library features.
 | Custom Tickrate | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Synced / Networked Vars | <i class="fp-check"></i> | <i class="fp-check"></i> |
 | Custom Sync Structures | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| SyncedList | <i class="fp-check"></i> | <i class="fp-check"></i> |
-| SyncedSet | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| SyncedDictionary | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| SyncedEvent | <i class="fp-x"></i> | <i class="fp-check"></i> |
+| SyncedList | <i class="fp-check"></i> NetworkList  | <i class="fp-check"></i> |
+| SyncedDictionary | <i class="fp-check"></i> NetworkDictionary | <i class="fp-x"></i> |
+| SyncedSet | <i class="fp-x"></i> NetworkSet | <i class="fp-check"></i> |
 | Unlimited Networked Vars | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Duplex Networked Vars | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | NetworkedVar SyncToOwner | <i class="fp-check"></i> | <i class="fp-x"></i> |
