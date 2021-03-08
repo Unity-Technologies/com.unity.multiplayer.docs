@@ -45,7 +45,7 @@ You could rename this object to give it a more relevant name but for the purpose
 1. Click **Add Component** in the Inspector Tab
 1. Select MLAPI from the list shown
 1. Select NetworkManager Component from the list displayed.
-1. Inside the NetworkManger component tab,
+1. Inside the NetworkManager component tab,
 1. Locate the  NetworkTransport field. 
 1. click "Select Transport" 
 1. Select UnetTransport.
