@@ -11,11 +11,6 @@ module.exports = {
   organizationName: 'unity', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-    //gtag: {
-      //trackingID: 'UA-123456789-1',
-      // Optional fields.
-      //anonymizeIP: true, // Should IPs be anonymized?
-    //},
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -242,23 +237,13 @@ module.exports = {
               }
             }
           },
-          /*remarkPlugins: [
-            [ remarkCustomBlocks, { options: {
-                columns: {
-                  classes: 'columns-table',
-                  title: 'optional',
-                },
-            },
-          },
-          ]
-          ]*/
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.scss'),
           
         },
         sitemap: {
-          cacheTime: 600 * 1000, // 600 sec - cache purge period
+          cacheTime: 600 * 1000,
           changefreq: 'weekly',
           priority: 0.5,
           trailingSlash: false,
@@ -267,7 +252,10 @@ module.exports = {
     ],
   ],
   plugins: [
-    //'@docusaurus/plugin-google-gtag'
+    [require.resolve('docusaurus-gtm-plugin'),
+    {
+      id: 'GTM-5V25JL6', // GTM Container ID
+    }],
       'plugin-image-zoom',
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock'
