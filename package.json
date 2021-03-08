@@ -20,6 +20,7 @@
     "@mdx-js/react": "^1.6.21",
     "@saucelabs/theme-github-codeblock": "0.0.3",
     "clsx": "^1.1.1",
+    "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-sass": "^0.1.11",
     "mermaid": "^8.9.1",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
