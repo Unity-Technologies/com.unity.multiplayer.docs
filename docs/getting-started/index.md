@@ -41,7 +41,6 @@ This table compares MLAPI and the deprecated UNET library features.
 | Per Client RPC | <i class="fp-check"></i> | <i class="fp-check"></i> |
 | Bulk Client RPC | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Connection Approval | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| Message Authentication | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Custom Tickrate | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Synced / Networked Vars | <i class="fp-check"></i> NetworkVariable | <i class="fp-check"></i> |
 | Custom Sync Structures | <i class="fp-check"></i> | <i class="fp-x"></i> |
@@ -54,10 +53,8 @@ This table compares MLAPI and the deprecated UNET library features.
 | NetworkedVar Custom Write Targets | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | NetworkedVar Custom Read Targets | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Multi-project Support | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| Built-in Lag Compensation | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | BitStream | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | BitWriter/BitReader (or similar packer) | <i class="fp-check"></i> | <i class="fp-x"></i> |
-| Network Profiler | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | Relay | <i class="fp-check"></i> |  <i class="fp-check"></i>|
 | Pooled Memory Management (Internal) | <i class="fp-check"></i> | <i class="fp-x"></i> |
 | P2P | <i class="fp-x"></i> | <i class="fp-x"></i> |

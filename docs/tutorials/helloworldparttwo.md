@@ -291,9 +291,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-            else
+            if (NetworkManager.Singleton.IsServer)
             {
-                SubmitPositionRequestServerRpc();
+                var randomPosition = GetRandomPositionOnPlane();
+                transform.position = randomPosition;
+                Position.Value = randomPosition;
             }
 ```
  If we are a client, we call a server RPC.
@@ -304,10 +306,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-        static Vector3 GetRandomPositionOnPlane()
-        {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
-        }
+            else
+            {
+                SubmitPositionRequestServerRpc();
+            }
+
 ```
 
 This server RPC simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
@@ -317,7 +320,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-  [ServerRpc]
+        [ServerRpc]
         void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
         {
             Position.Value = GetRandomPositionOnPlane();
@@ -332,7 +335,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
- void Update()
+        void Update()
         {
             transform.position = Position.Value;
         }
@@ -347,7 +350,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
- static void SubmitNewPosition()
+        static void SubmitNewPosition()
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
             {
