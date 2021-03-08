@@ -44,8 +44,8 @@ You could rename this object to give it a more relevant name but for the purpose
 1. Select the new Gameobject
 1. Click **Add Component** in the Inspector Tab
 1. Select MLAPI from the list shown
-1. Select NetworkingManager Component from the list displayed.
-1. Inside the NetworkingManger component tab,
+1. Select NetworkManager Component from the list displayed.
+1. Inside the NetworkManger component tab,
 1. Locate the  NetworkTransport field. 
 1. click "Select Transport" 
 1. Select UnetTransport.
@@ -53,7 +53,7 @@ You could rename this object to give it a more relevant name but for the purpose
     ![selecttransaportani](/img/selecting-transport.gif)
 
 1. Create 3D Object->Capsule (name it Player). 
-2. Add a NetworkedObject component.
+2. Add a NetworkObject component.
 3. Make this Player scene object a prefab.
 
     ![createplayer prefab](/img/createprefab.gif)
