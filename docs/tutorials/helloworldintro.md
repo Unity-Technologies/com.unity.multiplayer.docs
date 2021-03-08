@@ -77,7 +77,7 @@ You have now installed MLAPI.
   We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
   :::
 
-1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManger`.
+1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.
 1. Select **Default Player Prefab.**
 
   ![addingdefaultprefab](/img/default-player-prefab.gif)
