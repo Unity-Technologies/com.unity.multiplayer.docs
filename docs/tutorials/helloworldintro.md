@@ -67,7 +67,7 @@ You have now installed MLAPI.
 1. Add a `NetworkObject` component.
 1. Click the Assets folder.
 1. Create a new Folder and call it **Prefabs**.
-1. Make **Player** a prefab by draging it to **Prefabs** folder you jsut created.
+1. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
 
   ![createplayer prefab](/img/createprefab.gif)
 
