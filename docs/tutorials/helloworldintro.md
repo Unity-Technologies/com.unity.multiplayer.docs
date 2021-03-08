@@ -57,7 +57,7 @@ You have now installed MLAPI.
 1. Click **Add Component** in the Inspector Tab.
 1. Select **MLAPI** from the list shown.
 1. Select `NetworkManager` Component from the list displayed.
-1. Inside the `NetworkManger` component tab, locate the  `NetworkTransport` field. 
+1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. 
 1. Click "Select Transport".
 1. Select `UnetTransport`.
 
@@ -67,7 +67,7 @@ You have now installed MLAPI.
 1. Add a `NetworkObject` component.
 1. Click the Assets folder.
 1. Create a new Folder and call it **Prefabs**.
-1. Make **Player** a prefab by draging it to **Prefabs** folder you jsut created.
+1. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
 
   ![createplayer prefab](/img/createprefab.gif)
 
@@ -77,7 +77,7 @@ You have now installed MLAPI.
   We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
   :::
 
-1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManger`.
+1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.
 1. Select **Default Player Prefab.**
 
   ![addingdefaultprefab](/img/default-player-prefab.gif)
