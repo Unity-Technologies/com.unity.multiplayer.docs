@@ -15,12 +15,19 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 
 This release provides the following new features and APIs:
 
-* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRPC` and `ClientRPC` to execute login on the server and client-side. <!-- See RPC (link TBD) for details. add link to doc when ready --><!-- MTT-233-->
-* Added a new `NetworkTickSystem` to track time through network interactions and enable better client-side interpolation, lag compensation, replay and rollback, and in the future provide the required flexibility for new systems. The system evaluates and incrementally updates local and remote tick values through synced `NetworkVariable`s. <!-- See Network Tick System (link TBD) for more information. add link to doc when ready --><!-- MTT-241, RFC #12-->
+* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. <!-- See RPC (link TBD) for details. add link to doc when ready --><!-- MTT-233-->
+* Added standarized serialization types, including built-in and custom serialization flows. See [RFC #2](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/master/text/0002-serializable-types.md) for details.<!-- add link to docs --> 
+* `INetworkSerializable` interface replaces `IBitWritable`.
+* Added a Network Update Loop infrastructure that aids Netcode systems to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. See [RFC #8](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/master/text/0008-network-update-loop.md) and the following details: <!-- add link to docs --> <!-- MTT-498 RFC #8 -->
+
+  * It uses Unity's [low-level Player Loop API](https://docs.unity3d.com/ScriptReference/LowLevel.PlayerLoop.html) and allows for registering `INetworkUpdateSystem`s with `NetworkUpdate` methods to be executed at specific `NetworkUpdateStage`s, which may also be before or after `MonoBehaviour`-driven game logic execution.
+  * You will typically interact with `NetworkUpdateLoop` for registration and `INetworkUpdateSystem` for implementation.
+  * `NetworkTickSystem` tracks time through network interactions and syncs `NetworkVariable`s, used in this update loop. <!-- See Network Tick System (link TBD) for more information. add link to doc when ready --><!-- MTT-241, RFC #12-->
+
 <!--IN RFC - MAY COME BACK * Extended `Transport` to expose `NetworkAddress` and `NetworkPort` properties, used to change the address and port which an MLAPI client connects to at runtime or change the port on which a server gets hosted. This change promotes cleaner code and implementations, and makes it more interchangeable in both user code and library extensions.  -->
-* Added message batching to handle consecutive RPC requests sent to the same client. `MessageBatcher` sends batches based on requests from the `RPCQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
+* Added message batching to handle consecutive RPC requests sent to the same client. `MessageBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
+* [GitHub 494](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/494): Added a constraint to allow one `NetworkObject` per `GameObject`, set through the `DisallowMultipleComponent` attribute.
 * Integrated MLAPI with the Unity Profiler for versions 2020.2 and later.
-* Added a Network Update Loop infrastructure that aids Netcode system to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. <!-- add link to docs --> <!-- MTT-498 RFC #8 -->
 
 :::tip
 A test project is available for building and experimenting with MLAPI features. This project is located in the package `testproject` folder ([GitHub folder](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/release/0.1.0/testproject)). 
@@ -32,15 +39,15 @@ We also provide a new [Hello World example](../../tutorials/helloworldintro.md) 
 
 ## Changes
 
-This release includes the following updates to existing features:
+This release includes the following updates:
 
 * MLAPI now uses the Unity Package Manager for installation management. <!-- PR 520-->
 * Added functionality and usability to [`NetworkVariable`](../../mlapi-basics/networkvariable.md), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
-* Updated the [Unity MLAPI public repository](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) with new issue templates to better receive feedback, feature requests, issues, other work and labels to clearly communicate the status of an issue and pull request.
+* [GitHub 507](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/507): Reimplemented `NetworkAnimator`, which synchronizes animation states for networked objects. 
 
 ### Refactored API names
 
-For users of previous versions of MLAPI, this release renames APIs due to refactoring. All obsolete marked APIs have been removed. <!-- more coming from Fatih -->
+For users of previous versions of MLAPI, this release renames APIs due to refactoring. All obsolete marked APIs have been removed as per [GitHub 513](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/513). <!-- more coming from Fatih -->
 
 | Previous MLAPI Versions | V 0.1.0 Name |
 | -- | -- |
@@ -65,15 +72,33 @@ For users of previous versions of MLAPI, this release renames APIs due to refact
 | `NetworkedSet` | `NetworkSet` |
 | `MLAPIConstants` | `NetworkConstants` |
 
+Refactoring includes the following changes:
+
+* GitHub [444](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/444) and [455](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/455): Channels are now represented as bytes instead of strings.
+* [GitHub 514](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/514): Refactored and updated code to use the following:
+
+  * Apply Unity C# standards across the entire MLAPI framework.
+  * Use string interpolation over string concatenation with + (plus) operator.
+  * Use `var` instead of full types when it is obvious from the right side of the statement. For example: `var targetScript = scriptProperty.objectReferenceValue as MonoScript;` instead of `MonoScript targetScript`
+  * Use `nameof` operator when possible. For example: `Debug.LogError($"{nameof(ILPostProcessor)} Error - {message.MessageData} {message.File}:{message.Line}");`
+  * Use explicit access modifiers.
+
 ### Removed features
 
 With a new release of MLAPI in Unity, some features have been removed:
 
 * SyncVars have been removed from MLAPI. Use `NetworkVariable`s in place of this functionality. <!-- MTT54 -->
-* Lag compensation systems and `TrackedObject` have moved to the new [MLAPI Community Contributions](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) repo.
-* Encryption has been removed from MLAPI. The `Encryption` option in `NetworkConfig` on the `NetworkingManager` is not available in this release. This change will not block game creation or running. A current replacement for this functionality is not available, and may be developed in future releases. <!-- MTT-516-->
+* [GitHub 527](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/527): Lag compensation systems and `TrackedObject` have moved to the new [MLAPI Community Contributions](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) repo.
+* [GitHub 509](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/509): Encryption has been removed from MLAPI. The `Encryption` option in `NetworkConfig` on the `NetworkingManager` is not available in this release. This change will not block game creation or running. A current replacement for this functionality is not available, and may be developed in future releases. See the following changes: <!-- MTT-516-->
+
+    * Removed `SecuritySendFlags` from all APIs.
+    * Revmoed encryption, cryptography, and certificate configurationss from APIs including `NetworkManager` and `NetworkConfig`.
+    * Removed "hail handshake", including `NetworkManager` implementation and `MLAPIConstants` entries.
+    * Modified `RpcQueue` and `RpcBatcher` internals to remove encryption and authentication from reading and writing.
+
 * Removed the previous MLAPI Profiler editor window from Unity versions 2020.2 and later.
-* Removed previous MLAPI Convenience and Performance RPCs with a new standrd for RPCs. <!-- RFC#1 -->
+* Removed previous MLAPI Convenience and Performance RPC APIs with the new standard RPC API. <!-- RFC#1 -->
+* [GitHub 520](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/520): Remvoed the MLAPI Installer.
 
 ## Fixes
 
@@ -82,6 +107,11 @@ This release includes the following issue fixes:
 * [GitHub 460](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/460): Fixed an issue for RPC where the host-server was not receiving RPCs from the host-client and vice versa without the loopback flag set in NetworkingManager.  <!-- MTT466 -->
 * Fixed an issue where data in the Profiler was incorrectly aggregated and drawn, which caused the profiler data to increment indefinitely instead of resetting each frame. <!-- MTT-526-->
 * Fixed an issue the client soft-synced causing PlayMode client-only scene transition issues, caused when running the client in the editor and the host as a release build. Users may have encountered a soft sync of `NetworkedInstanceId` issues in the `SpawnManager.ClientCollectSoftSyncSceneObjectSweep` method. <!--MTT-505 -->
+* [GitHub 458](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/458): Fixed serialization issues in `NetworkList` and `NetworkDictionary` when running in Server mode.
+* [GitHub 498](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/498): Fixed numerical precision issues to prevent not a number (NaN) quaternions.
+* Fixed issues with scene management.
+* [GitHub 438](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/438): Fixed booleans by reaching or writing bytes instead of bits.
+* [GitHub 519](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/519): Fixed an issue where calling `Shutdown()` before making `NetworkManager.Singleton = null` is null on `NetworkManager.OnDestroy()`.
 
 <!--## Known issues
 You may need to include this section if you have known issues with the release that may affect integrations and usage.
