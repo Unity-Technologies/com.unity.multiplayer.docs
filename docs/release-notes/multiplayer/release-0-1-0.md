@@ -98,20 +98,20 @@ With a new release of MLAPI in Unity, some features have been removed:
 
 * Removed the previous MLAPI Profiler editor window from Unity versions 2020.2 and later.
 * Removed previous MLAPI Convenience and Performance RPC APIs with the new standard RPC API. <!-- RFC#1 -->
-* [GitHub 520](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/520): Remvoed the MLAPI Installer.
+* [GitHub 520](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/520): Removed the MLAPI Installer.
 
 ## Fixes
 
 This release includes the following issue fixes:
 
-* [GitHub 460](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/460): Fixed an issue for RPC where the host-server was not receiving RPCs from the host-client and vice versa without the loopback flag set in NetworkingManager.  <!-- MTT466 -->
+* [GitHub 460](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/460): Fixed an issue for RPC where the host-server was not receiving RPCs from the host-client and vice versa without the loopback flag set in `NetworkingManager`.  <!-- MTT466 -->
 * Fixed an issue where data in the Profiler was incorrectly aggregated and drawn, which caused the profiler data to increment indefinitely instead of resetting each frame. <!-- MTT-526-->
 * Fixed an issue the client soft-synced causing PlayMode client-only scene transition issues, caused when running the client in the editor and the host as a release build. Users may have encountered a soft sync of `NetworkedInstanceId` issues in the `SpawnManager.ClientCollectSoftSyncSceneObjectSweep` method. <!--MTT-505 -->
 * [GitHub 458](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/458): Fixed serialization issues in `NetworkList` and `NetworkDictionary` when running in Server mode.
 * [GitHub 498](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/498): Fixed numerical precision issues to prevent not a number (NaN) quaternions.
-* Fixed issues with scene management.
 * [GitHub 438](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/438): Fixed booleans by reaching or writing bytes instead of bits.
 * [GitHub 519](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/519): Fixed an issue where calling `Shutdown()` before making `NetworkManager.Singleton = null` is null on `NetworkManager.OnDestroy()`.
+* Fixed issues with scene management. <!-- more info coming -->
 
 <!--## Known issues
 You may need to include this section if you have known issues with the release that may affect integrations and usage.
