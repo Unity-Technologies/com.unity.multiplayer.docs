@@ -2,13 +2,25 @@ The following Licenses cover all documentation and sample code in [this reposito
 
 ## Documentation License
 
-All documentation is bound by the license of the code it describes. As new content and code is added, licenses will be added to this page. Licenses are noted in the documentation as needed.
+All documentation sections have licenses covering content for those Unity features and code:
 
 | Documentation | License |
 | -- | -- |
-| MLAPI Docs | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
-| Transport Docs | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
-| Learn | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) |
+| [MLAPI](https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
+| [Transport](https://docs-multiplayer.unity3d.com/docs/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
+| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) |
+
+Documentation site files and markdown content outside of these features is covered under the MIT License:
+
+MIT License
+
+Copyright (c) 2021 Unity Technologies
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## MLAPI License
 

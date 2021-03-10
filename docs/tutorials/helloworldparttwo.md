@@ -7,11 +7,7 @@ sidebar_label: Building on "Hello World"
 :::note
 This guide follows on from the work completed in [Your First Networking Game "Hello World"](helloworldintro.md). You should complete that guide before starting this one.
 :::
-1. Right click in the Hierarchy tab of the Main Unity Window.
-1. Select **Game Object**.
-1. Select **UI**.
-1. Create a Canvas object inside of our scene.
-  ![Create a canvas Object](/img/createcanvas.gif)
+
 1. Click the Assets folder.
 1. Create a new Folder and call it **Scripts**.
 1. Create an empty GameObject rename it **HelloWorldManager**.
@@ -153,7 +149,8 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 :::
 
 13. Create a new script `HelloWorldPlayer`.
-1. Add the script `HelloWorldPlayer` to the Player Prefab.
+1. Select the Player Prefab
+1. Add the script `HelloWorldPlayer` script as a component.
 ![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif)
 1. Open the `HelloWorldPlayer.cs` script.
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
