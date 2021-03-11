@@ -77,7 +77,7 @@ You have now installed MLAPI.
   We must remove the **Player** object from the scene after we create the prefab.  As we will see shortly, we will configure the library to automatically spawn this prefab for each player that connects.  If we left **Player** in the scene, then when running the game the library would (as desired) spawn a **Player** for each connected player but also Unity - as it does for all scene objects - would place an extra, unwanted **Player** in the scene.  Note, MLAPI can and will track scene objects defined in this way (say for server-controlled elements).
   :::
 
-1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.
+1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.  You will first need to click the `+` to create a slot, then drag in your prefab.
 1. Select **Default Player Prefab.**
 
   ![addingdefaultprefab](/img/default-player-prefab.gif)
