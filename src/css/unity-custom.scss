@@ -213,6 +213,10 @@ h1, h2, h3, h4, h5, h6, .text-break {
   }
 }
 
+html[data-theme='dark'] code {
+  background-color: #292D3E !important;
+}
+
 // ADMONITIONS
 // NOTE
 html[data-theme='dark'] .alert--secondary {
