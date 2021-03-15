@@ -1,9 +1,9 @@
 // Docusaurus v2, see package.json for versions
 //const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
-  title: 'Unity Multiplayer',
+  title: 'Unity MLAPI',
   tagline: 'Build multiplayer games in Unity',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docs-multiplayer.unity3d.com/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,6 +11,16 @@ module.exports = {
   organizationName: 'unity', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
+
+    announcementBar: {
+      id: 'prerelease', // Any value that will identify this message.
+      content:
+        'This documentation site is in-progress for the experimental release of Unity MLAPI. Content and features subject to change.',
+      backgroundColor: '#3578e5', // Defaults to `#fff`.
+      textColor: '#ffffff', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
+
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -32,7 +42,7 @@ module.exports = {
       }
     },
     navbar: {
-      title: 'Unity Multiplayer Documentation',
+      title: 'Unity MLAPI Documentation',
       logo: {
         alt: 'Unity',
         src: 'img/logo.png',
@@ -102,11 +112,10 @@ module.exports = {
           //label: 'Community',
           className: 'navbar-grid-menu',
           items: [
-            /*{
-              type: 'doc',
-              to: 'docs/roadmap',
+            {
               label: 'Multiplayer Roadmap',
-            },*/
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+            },
             { 
               label: 'Discord',
               href: 'http://discord.mlapi.network/',
@@ -147,7 +156,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Multiplayer',
+          title: 'Multiplayer Networking',
           items: [
             {
               label: 'Licenses',
@@ -175,6 +184,10 @@ module.exports = {
         {
           title: 'Contact',
           items: [
+            {
+              label: 'Multiplayer Roadmap',
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+            },
             {
               label: 'Unity Blog',
               href: 'https://blogs.unity3d.com/',
