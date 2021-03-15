@@ -9,23 +9,22 @@ import styles from './styles.module.scss';
 const features = [
   {
     title: 'Develop with MLAPI',
-    imageUrl: 'img/land-feature1.jpg',
+    imageUrl: 'img/land-feature1b.jpg',
     description: (
       <>
-        Unity Multiplayer now includes MLAPI, one of the oldest and most actively developed game networking
-        library out there. It is designed to work with any game, including high-performance, large scale 
-        and small co-op games. MLAPI is open source.
+        We’re evolving our solution in the open to become a netcode foundation that you can depend on – 
+        customizable and extensible to meet the needs of many multiplayer game types.
       </>
     ),
     link: (
       <>
-      <a href="docs/getting-started/about-mlapi" class="land-link">Learn more about MLAPI</a>
+      <a href="docs/tutorials/helloworldintro" class="land-link">Learn more about MLAPI</a>
       </>
     ),
   },
   {
     title: 'Transport Features',
-    imageUrl: 'img/land-feature2.jpg',
+    imageUrl: 'img/land-feature2b.jpg',
     description: (
       <>
         Use the <code>com.unity.transport</code> package to add multiplayer and network features to your project. Documentation
@@ -43,9 +42,8 @@ const features = [
     imageUrl: 'img/land-feature3.jpg',
     description: (
       <>
-        Getting started with Hello World and continue with code samples and turorials for creating multiplayer games.
-        All tutorials use Boss Room game samples, with concepts, code, and videos to walk through game design from 
-        start to finish. Great for all levels of developer experience.
+        <a href="https://unity.com/demos/small-scale-coop-sample">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
     link: (
