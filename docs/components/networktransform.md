@@ -2,7 +2,7 @@
 id: networktransform
 title: NetworkTransform
 ---
-A `NetworkObject's` position and rotation is normally only synchronized when that object get spawned. To sychronize position and rotation at realtime during the game a `NetworkTransform` component is needed. `NetworkTransform` sychnronizes the transform of the owner of the network object to all other clients.
+The  position and rotation of a `NetworkObject` is normally only synchronized when that object is spawned. To synchronize position and rotation at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the owner of the network object to all other clients.
 
 :::note
 `NetworkTansform` does not sync the scale of the object.
