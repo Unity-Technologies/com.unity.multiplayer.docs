@@ -238,7 +238,6 @@ module.exports = {
           
         },
         sitemap: {
-          cacheTime: 600 * 1000,
           changefreq: 'weekly',
           priority: 0.5,
           trailingSlash: false,
