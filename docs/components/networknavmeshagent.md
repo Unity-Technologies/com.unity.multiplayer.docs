@@ -8,7 +8,7 @@ The `NetworkNavMeshAgent` component synchronizes a `NavMeshAgent` accross the ne
 With `NetworkNavMeshAgent` the owner of the `NetworkObject` has the authority over the agent. If the owner sets a new target all other peers will start moving towards that target as well. If a client without ownership tries to set the position of the agent nothing happens.
 
 :::note
-The `NetworkNavMeshAgent` only synchronizes velocity and targets. Because the NavMesh is not deterministic this sometimes results in different movements on other clients. If high precision movement is needed for an object use [`NetworkTransform`](/NetworkTransform.md) instead.
+The `NetworkNavMeshAgent` only synchronizes velocity and targets. Because the NavMesh is not deterministic this sometimes results in different movements on other clients. If high precision movement is needed for an object use [`NetworkTransform`](networktransform.md) instead.
 :::
 
 ## Configuration
