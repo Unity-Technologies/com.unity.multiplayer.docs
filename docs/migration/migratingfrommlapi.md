@@ -1,3 +1,11 @@
+---
+id: migratingfrommlapi
+title: Upgrade Guide
+sidebar_label: Upgrade Guide
+---
+
+
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -38,6 +46,18 @@ Manually upgrading from the dll version installed by MLAPI to the new package ve
 
 To start upgrading add the upgrade tool to your project by using the `Add package from git URL..` option in the package manager window and using the following url: TODO url
 
+Open the MLAPI patcher window by selecting `Window > MLAPI Patcher` in the menu bar. The Patcher will lead you through a 4 step process of upgrading your project.
+
+1. **Cache Script References**
+This step captures the existing guid links to MLAPI components in a temporary json file.
+1. **Upgrade to package version**
+This step removes the existing dll version of MLAPI by **deleting** the `Assets/MLAPI` and `Assets/Editor/MLAPI` folder and then installing the package version of MLAPI. After running this process you should see the MLAPI package in the installed packages list of the package manager.
+1. **Update Script References**
+After switching to the package version of MLAPI all references to MLAPI components on your prefabs and scenes will point to missing scripts. This process fixes the references in your project by using the captured references in step 1 to upgrade your project. After running this step 
+1. **Auto update type names in scripts.**
+This is a voluntary step. It performs a string replace over all the .cs files in your project to upgrade many of the type names which got changed by our recent API changes. If you are familiar with replacing things on a project level in an IDE you can do this process by yourself.
+
+After following the steps in the patcher you will most likely still have a few error messages in the console. Please follow the rest of the content in this guide to figure out how to patch them up.
 
 
 </TabItem>
@@ -64,7 +84,7 @@ SyncVars don't longer exist in MLAPI. Convert your existing SyncVars into [Netwo
 
 ### The type or namespace name 'MLAPI' could not be found
 
-This error will pop up if your project uses Assembly definition (.asmdef) files. To have your assemblies
+This error will pop up if your project uses Assembly definition (.asmdef) files. After switching to the package version your assembly definition files will need to reference `com.unity.multiplayer.mlapi.runtime`.
 
 ### The type or namespace name 'NetworkedBehaviour' could not be found
 
