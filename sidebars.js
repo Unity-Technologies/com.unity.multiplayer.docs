@@ -6,29 +6,10 @@
 
 module.exports = {
   mlapi: [
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Getting Started",
-    "items": [
-      {
-        "type": "doc",
-        "id": "getting-started/about-mlapi"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/installation"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/library-initialization"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/connection-approval"
-      },
-    ]
-  },
+    {
+      "type": "doc",
+      "id": "getting-started/about-mlapi"
+    },
   {
     "collapsed": true,
     "type": "category",
@@ -60,6 +41,10 @@ module.exports = {
     "type": "category",
     "label": "MLAPI Basics",
     "items": [
+      {
+        "type": "doc",
+        "id": "getting-started/connection-approval"
+      },
       {
         "type": "doc",
         "id": "mlapi-basics/networkobject"
