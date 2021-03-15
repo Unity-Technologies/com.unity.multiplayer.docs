@@ -11,5 +11,5 @@ The  position and rotation of a `NetworkObject` is normally only synchronized wh
 While `NetworkTransform` works out of the box for simple position synchronization, it is not a one size fits all solution. In case you experience stuttering with `NetworkTransform`, you can try increasing `Fixed Sends Per Second` and decreasing `Min Meters` values.
 
 :::tip
-You can have multiple `NetworkTransform` components of child objects of your network object to synchronize individual positions of child objects.
+You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.
 :::
