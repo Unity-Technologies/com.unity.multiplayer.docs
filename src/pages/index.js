@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/land-feature1b.jpg',
     description: (
       <>
-        We’re evolving our solution in the open to become a netcode foundation that you can depend on – 
+        We’re evolving our solution, built on MLAPI, in the open to become a netcode foundation that you can depend on – 
         customizable and extensible to meet the needs of many multiplayer game types.
       </>
     ),
@@ -23,7 +23,7 @@ const features = [
     ),
   },
   {
-    title: 'Transport Features',
+    title: 'Leverage Transport Features',
     imageUrl: 'img/land-feature2b.jpg',
     description: (
       <>
@@ -42,13 +42,13 @@ const features = [
     imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
-        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank" >Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
         designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
     link: (
       <>
-      <a href="docs/learn/introduction">Learn more with Unity</a>
+      <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Learn more about Boss Room</a>
       </>
     )
   },
