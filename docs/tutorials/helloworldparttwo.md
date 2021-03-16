@@ -149,9 +149,7 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 :::
 
 13. Create a new script `HelloWorldPlayer`.
-1. Select the Player Prefab
-1. Add the script `HelloWorldPlayer` script as a component.
-![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif)
+
 1. Open the `HelloWorldPlayer.cs` script.
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
 
@@ -209,6 +207,9 @@ namespace HelloWorld
     }
 }
 ```
+16. Select the Player Prefab
+1. Add the script `HelloWorldPlayer` script as a component.
+![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif) 
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
 <!---
