@@ -5,13 +5,11 @@ title: Getting Started with MLAPI
 
 Unity MLAPI is a high level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and the MLAPI collaborators. MLAPI is open source with no attached costs or limitations, giving you the opportunity to develop features alongside Unity.
 
-
-
 <div class="table-columns-plain">
 
 | Unity MLAPI | Previous versions of MLAPI |
 | -- | -- |
-| See this guide to install Unity MLAPI, set up your project, and get started with your first networked game.<br/><br/><a href="../tutorials/helloworldintro" class="button1">First Steps with Unity MLAPI</a> | See this guide to install and use previous versions of MLAPI. These versions will be replaced with Unity MLAPI.<br/><br/><a href="https://mlapi.network/" class="button1">Previous Version Guide</a>  |
+| See this guide to install Unity MLAPI, set up your project, and get started with your first networked game.<br/><br/><a href="../tutorials/helloworldintro" class="button1">First Steps with Unity MLAPI</a> | See this guide to install and use previous versions of MLAPI. These versions will be replaced with Unity MLAPI.<br/><br/><a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi" target="_blank" class="button1">Previous Version Guide</a>  |
 
 </div>
 
