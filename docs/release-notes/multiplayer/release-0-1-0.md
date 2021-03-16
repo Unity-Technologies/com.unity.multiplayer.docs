@@ -64,7 +64,6 @@ For users of previous versions of MLAPI, this release renames APIs due to refact
 | `NetworkedNavMeshAgent` | `NetworkNavMeshAgent` |
 | `SpawnManager` | `NetworkSpawnManager` |
 | `BitStream` | `NetworkBuffer` |
-| `BitStream` | `NetworkBuffer` |
 | `BitReader` | `NetworkReader` |
 | `BitWriter` | `NetworkWriter` |
 | `NetEventType` | `NetworkEventType` |
@@ -115,12 +114,25 @@ This release includes the following issue fixes:
 * [GitHub 498](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/498): Fixed numerical precision issues to prevent not a number (NaN) quaternions.
 * [GitHub 438](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/438): Fixed booleans by reaching or writing bytes instead of bits.
 * [GitHub 519](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/519): Fixed an issue where calling `Shutdown()` before making `NetworkManager.Singleton = null` is null on `NetworkManager.OnDestroy()`.
-* Fixed issues with scene management. <!-- more info coming -->
+* Fixed an issue with NetworkSceneManager, where users received a “soft synch” exception typically followed by a `null reference` exception on the client side when the host or server invoked the `NetworkSceneManager.SwitchScene` method. Transitioning between in-game session scenes, where the scene being transitioned into contains one or more manually placed `GameObject`(s) with the `NetworkObject` component attached, should no longer cause MLAPI to throw exceptions. This fix should improve the overall stability of scene-to-scene transitions for the user.
 
-<!--## Known issues
-You may need to include this section if you have known issues with the release that may affect integrations and usage.
+## Known issues
 
-## Upgrade guide
+Review the following known issues with this release:
+
+* `NetworkNavMeshAgent` does not synchronize mesh data, Agent Size, Steering, Obstacle Avoidance, or Path Finding settings. It only synchronizes the destination and velocity, not the path to the destination.
+* For `RPC`, methods with a `ClientRpc` or `ServerRpc` suffix which are not marked with [ServerRpc] or [ClientRpc] will cause a compiler error.
+* For `NetworkAnimator`, Animator Overrides are not supported. Triggers do not work.
+* For `NetworkVariable`, the `NetworkDictionary` `List` and `Set` must use the `reliableSequenced` channel.
+* `NetworkObjects`s are supported but when spawning a prefab with nested child network objects you have to manually call spawn on them
+* `NetworkTransform` have the following issues:
+  * Replicated objects may have jitter. 
+  * The owner is always authoritative about the object's position.
+  * Scale is not synchronized.
+* Connection Approval is not called on the host client.
+* For `NamedMessages`, always use `NetworkBuffer` as the underlying stream for sending named and unnamed messages.
+* For `NetworkManager`, connection management is limited. Use `IsServer`, `IsClient`, `IsConnectedClient`, or other code to check if MLAPI connected correctly.
+<!-- ## Upgrade guide
 Provide steps and information to upgrade to this release version. Provide numbered instructions or bullets as needed, code in blocks using ticket (```).-->
 
 ## Learn more
