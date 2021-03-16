@@ -1,9 +1,9 @@
 // Docusaurus v2, see package.json for versions
 //const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
-  title: 'Unity Multiplayer',
+  title: 'Unity Multiplayer Networking',
   tagline: 'Build multiplayer games in Unity',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docs-multiplayer.unity3d.com/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,11 +11,16 @@ module.exports = {
   organizationName: 'unity', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-    //gtag: {
-      //trackingID: 'UA-123456789-1',
-      // Optional fields.
-      //anonymizeIP: true, // Should IPs be anonymized?
-    //},
+
+    announcementBar: {
+      id: 'prerelease', // Any value that will identify this message.
+      content:
+        'This documentation site is in-progress for the forthcoming experimental release of Unity MLAPI. Content and features subject to change.',
+      backgroundColor: '#3578e5', // Defaults to `#fff`.
+      textColor: '#ffffff', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
+
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -37,7 +42,7 @@ module.exports = {
       }
     },
     navbar: {
-      title: 'Unity Multiplayer Documentation',
+      title: 'Unity Multiplayer Networking Documentation',
       logo: {
         alt: 'Unity',
         src: 'img/logo.png',
@@ -107,11 +112,10 @@ module.exports = {
           //label: 'Community',
           className: 'navbar-grid-menu',
           items: [
-            /*{
-              type: 'doc',
-              to: 'docs/roadmap',
-              label: 'Multiplayer Roadmap',
-            },*/
+            {
+              label: 'Product Roadmap',
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+            },
             { 
               label: 'Discord',
               href: 'http://discord.mlapi.network/',
@@ -152,7 +156,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Multiplayer',
+          title: 'Multiplayer Networking',
           items: [
             {
               label: 'Licenses',
@@ -160,8 +164,8 @@ module.exports = {
               to: 'docs/license',
             },
             {
-              label: 'Releases',
-              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+              label: 'Product Roadmap',
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
             },
             {
               label: 'GitHub - Code',
@@ -172,6 +176,10 @@ module.exports = {
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
             },
             {
+              label: 'Releases',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+            },
+            {
               label: 'Multiplayer RFCs',
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs',
             },
@@ -180,11 +188,6 @@ module.exports = {
         {
           title: 'Contact',
           items: [
-            /*{
-              type: 'doc',
-              to: 'docs/roadmap',
-              label: 'Multiplayer Roadmap',
-            },*/
             {
               label: 'Unity Blog',
               href: 'https://blogs.unity3d.com/',
@@ -242,23 +245,12 @@ module.exports = {
               }
             }
           },
-          /*remarkPlugins: [
-            [ remarkCustomBlocks, { options: {
-                columns: {
-                  classes: 'columns-table',
-                  title: 'optional',
-                },
-            },
-          },
-          ]
-          ]*/
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.scss'),
           
         },
         sitemap: {
-          cacheTime: 600 * 1000, // 600 sec - cache purge period
           changefreq: 'weekly',
           priority: 0.5,
           trailingSlash: false,
@@ -267,7 +259,10 @@ module.exports = {
     ],
   ],
   plugins: [
-    //'@docusaurus/plugin-google-gtag'
+    [require.resolve('docusaurus-gtm-plugin'),
+    {
+      id: 'GTM-5V25JL6', // GTM Container ID
+    }],
       'plugin-image-zoom',
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock'

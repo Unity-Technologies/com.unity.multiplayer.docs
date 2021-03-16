@@ -9,23 +9,22 @@ import styles from './styles.module.scss';
 const features = [
   {
     title: 'Develop with MLAPI',
-    imageUrl: 'img/land-feature1.jpg',
+    imageUrl: 'img/land-feature1b.jpg',
     description: (
       <>
-        Unity Multiplayer now includes MLAPI, one of the oldest and most actively developed game networking
-        library out there. It is designed to work with any game, including high-performance, large scale 
-        and small co-op games. MLAPI is open source.
+        We’re evolving our solution, built on MLAPI, in the open to become a netcode foundation that you can depend on – 
+        customizable and extensible to meet the needs of many multiplayer game types.
       </>
     ),
     link: (
       <>
-      <a href="docs/getting-started/about-mlapi" class="land-link">Learn more about MLAPI</a>
+      <a href="docs/tutorials/helloworldintro" class="land-link">Learn more about MLAPI</a>
       </>
     ),
   },
   {
-    title: 'Transport Features',
-    imageUrl: 'img/land-feature2.jpg',
+    title: 'Leverage Transport Features',
+    imageUrl: 'img/land-feature2b.jpg',
     description: (
       <>
         Use the <code>com.unity.transport</code> package to add multiplayer and network features to your project. Documentation
@@ -39,18 +38,17 @@ const features = [
     ),
   },
   {
-    title: 'Learn with Unity',
-    imageUrl: 'img/land-feature3.jpg',
+    title: 'Learn with Boss Room',
+    imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
-        Getting started with Hello World and continue with code samples and turorials for creating multiplayer games.
-        All tutorials use Boss Room game samples, with concepts, code, and videos to walk through game design from 
-        start to finish. Great for all levels of developer experience.
+        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
     link: (
       <>
-      <a href="docs/learn/introduction">Learn more with Unity</a>
+      <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Learn more about Boss Room</a>
       </>
     )
   },
@@ -62,7 +60,7 @@ function Feature({imageUrl, title, description, link}) {
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
         <div className="text--center land-feature">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+          <img className="featureImage" src={imgUrl} alt={title} />
         </div>
       )}
       <h3>{title}</h3>
@@ -79,11 +77,11 @@ function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="This site provides Unity Multiplayer documentation, references, and sample code tutorials.">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero hero--primary hero-banner')}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
+          <div className="buttons-pages">
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',

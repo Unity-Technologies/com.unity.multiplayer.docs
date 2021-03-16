@@ -6,27 +6,26 @@
 
 module.exports = {
   mlapi: [
+    {
+      "type": "doc",
+      "id": "getting-started/about-mlapi"
+    },
   {
     "collapsed": true,
     "type": "category",
-    "label": "Getting Started",
+    "label": "Migrating to MLAPI",
     "items": [
-      {
+          {
         "type": "doc",
-        "id": "getting-started/about-mlapi"
+        "id": "getting-started/migratingtomlapi"
       },
-      {
-        "type": "doc",
-        "id": "getting-started/installation"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/library-initialization"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/connection-approval"
-      },
+    ],
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "First Steps with MLAPI",
+    "items": [
       {
         "type": "doc",
         "id": "tutorials/helloworldintro"
@@ -34,14 +33,18 @@ module.exports = {
       {
         "type": "doc",
         "id": "tutorials/helloworldtwo"
-      }
-    ]
+      },
+    ],
   },
   {
     "collapsed": true,
     "type": "category",
     "label": "MLAPI Basics",
     "items": [
+      {
+        "type": "doc",
+        "id": "getting-started/connection-approval"
+      },
       {
         "type": "doc",
         "id": "mlapi-basics/networkobject"
@@ -96,6 +99,10 @@ module.exports = {
     "type": "category",
     "label": "Advanced Topics",
     "items": [
+      {
+        "type": "doc",
+        "id": "advanced-topics/messaging-system"
+      },
       {
         "type": "doc",
         "id": "advanced-topics/object-pooling"

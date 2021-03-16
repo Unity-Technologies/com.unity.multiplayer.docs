@@ -57,7 +57,7 @@ You have now installed MLAPI.
 1. Click **Add Component** in the Inspector Tab.
 1. Select **MLAPI** from the list shown.
 1. Select `NetworkManager` Component from the list displayed.
-1. Inside the `NetworkManger` component tab, locate the  `NetworkTransport` field. 
+1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. 
 1. Click "Select Transport".
 1. Select `UnetTransport`.
 
@@ -67,7 +67,7 @@ You have now installed MLAPI.
 1. Add a `NetworkObject` component.
 1. Click the Assets folder.
 1. Create a new Folder and call it **Prefabs**.
-1. Make **Player** a prefab by draging it to **Prefabs** folder you jsut created.
+1. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
 
   ![createplayer prefab](/img/createprefab.gif)
 
@@ -77,7 +77,7 @@ You have now installed MLAPI.
   We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
   :::
 
-1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManger`.
+1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.
 1. Select **Default Player Prefab.**
 
   ![addingdefaultprefab](/img/default-player-prefab.gif)
@@ -85,10 +85,17 @@ You have now installed MLAPI.
   :::tip
   When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect
   :::
+  :::note
+   You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab` Once you have completed the above steps you can clear the error by doing the following:
+   1. Select the Console tab.
+   1. Select Clear.
+   
+    ![Clear Console errors](../../static/img/clearconsoleerrors.gif)
+  :::
 
 1. Create a GameObject->Plane, centered at (0,0,0).
 1. Click **Play**.
-1. Click **Start Host** under **NetworkingManager**. 
+1. Click **Start Host** under **NetworkManager**. 
 
   ![firstnetworkgame](/img/firstnetworkgame.gif)
 
