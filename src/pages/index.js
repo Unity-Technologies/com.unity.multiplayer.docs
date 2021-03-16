@@ -38,7 +38,7 @@ const features = [
     ),
   },
   {
-    title: 'Learn with Unity',
+    title: 'Learn with Boss Room',
     imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
