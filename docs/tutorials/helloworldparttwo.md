@@ -207,7 +207,7 @@ namespace HelloWorld
     }
 }
 ```
-16. Select the Player Prefab
+16. Select the Player Prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
 ![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif) 
 
