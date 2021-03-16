@@ -26,7 +26,7 @@ This release provides the following new features and APIs:
   * `NetworkTickSystem` tracks time through network interactions and syncs `NetworkVariable`s, used in this update loop. <!-- See Network Tick System (link TBD) for more information. add link to doc when ready --><!-- MTT-241, RFC #12-->
 
 <!--IN RFC - MAY COME BACK * Extended `Transport` to expose `NetworkAddress` and `NetworkPort` properties, used to change the address and port which an MLAPI client connects to at runtime or change the port on which a server gets hosted. This change promotes cleaner code and implementations, and makes it more interchangeable in both user code and library extensions.  -->
-* Added message batching to handle consecutive RPC requests sent to the same client. `MessageBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
+* Added message batching to handle consecutive RPC requests sent to the same client. `RpcBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
 * [GitHub 494](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/494): Added a constraint to allow one `NetworkObject` per `GameObject`, set through the `DisallowMultipleComponent` attribute.
 * Integrated MLAPI with the Unity Profiler for versions 2020.2 and later.
 
@@ -95,13 +95,14 @@ With a new release of MLAPI in Unity, some features have been removed:
 * [GitHub 509](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/509): Encryption has been removed from MLAPI. The `Encryption` option in `NetworkConfig` on the `NetworkingManager` is not available in this release. This change will not block game creation or running. A current replacement for this functionality is not available, and may be developed in future releases. See the following changes: <!-- MTT-516-->
 
     * Removed `SecuritySendFlags` from all APIs.
-    * Revmoed encryption, cryptography, and certificate configurationss from APIs including `NetworkManager` and `NetworkConfig`.
-    * Removed "hail handshake", including `NetworkManager` implementation and `MLAPIConstants` entries.
+    * Removed encryption, cryptography, and certificate configurations from APIs including `NetworkManager` and `NetworkConfig`.
+    * Removed "hail handshake", including `NetworkManager` implementation and `NetworkConstants` entries.
     * Modified `RpcQueue` and `RpcBatcher` internals to remove encryption and authentication from reading and writing.
 
 * Removed the previous MLAPI Profiler editor window from Unity versions 2020.2 and later.
 * Removed previous MLAPI Convenience and Performance RPC APIs with the new standard RPC API. <!-- RFC#1 -->
 * [GitHub 520](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/520): Removed the MLAPI Installer.
+* Fixed an issue with NetworkSceneManager, where users received a “soft synch” exception typically followed by a `null reference` exception on the client side when the host or server invoked the `NetworkSceneManager.SwitchScene` method. Transitioning between in-game session scenes, where the scene being transitioned into contains one or more manually placed `GameObject`(s) with the `NetworkObject` component attached, should no longer cause MLAPI to throw exceptions. This fix should improve the overall stability of scene-to-scene transitions for the user.
 
 ## Fixes
 
