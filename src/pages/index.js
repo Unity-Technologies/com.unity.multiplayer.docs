@@ -42,7 +42,7 @@ const features = [
     imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
-        <a href="https://unity.com/demos/small-scale-coop-sample">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank" >Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
         designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
