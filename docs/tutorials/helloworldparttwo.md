@@ -7,11 +7,7 @@ sidebar_label: Building on "Hello World"
 :::note
 This guide follows on from the work completed in [Your First Networking Game "Hello World"](helloworldintro.md). You should complete that guide before starting this one.
 :::
-1. Right click in the Hierarchy tab of the Main Unity Window.
-1. Select **Game Object**.
-1. Select **UI**.
-1. Create a Canvas object inside of our scene.
-  ![Create a canvas Object](/img/createcanvas.gif)
+
 1. Click the Assets folder.
 1. Create a new Folder and call it **Scripts**.
 1. Create an empty GameObject rename it **HelloWorldManager**.
@@ -153,8 +149,7 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 :::
 
 13. Create a new script `HelloWorldPlayer`.
-1. Add the script `HelloWorldPlayer` to the Player Prefab.
-![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif)
+
 1. Open the `HelloWorldPlayer.cs` script.
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
 
@@ -212,6 +207,9 @@ namespace HelloWorld
     }
 }
 ```
+16. Select the Player Prefab.
+1. Add the script `HelloWorldPlayer` script as a component.
+![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif) 
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
 <!---
@@ -291,8 +289,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-              {
-                SubmitPositionRequestServerRpc();
+            if (NetworkManager.Singleton.IsServer)
+            {
+                var randomPosition = GetRandomPositionOnPlane();
+                transform.position = randomPosition;
+                Position.Value = randomPosition;
             }
 ```
  If we are a client, we call a server RPC.
@@ -303,10 +304,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-        static Vector3 GetRandomPositionOnPlane()
-        {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
-        }
+            else
+            {
+                SubmitPositionRequestServerRpc();
+            }
+
 ```
 
 This server RPC simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
@@ -316,9 +318,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        void Update()
+        [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
         {
-            transform.position = Position.Value;
+            Position.Value = GetRandomPositionOnPlane();
         }
 ```
 
@@ -330,9 +333,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        public void SubmitName(string nameTag)
+        void Update()
         {
-            SubmitNameServerRpc(nameTag);
+            transform.position = Position.Value;
         }
 ```
 
@@ -345,7 +348,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
- static void SubmitNewPosition()
+        static void SubmitNewPosition()
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
             {
@@ -369,7 +372,7 @@ You can now create a build which will demonstrate the concepts outlined above.
 Make sure **SampleScene** is included in **BuildSettings**.
 :::
 
-One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position NetworkVariable. That client will apply that NetworkVariable position inside of it's Update() method.
+One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
 
 :::note Congrats!!!!
 Congratulations you have learnt the basics of a networked game 
