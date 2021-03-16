@@ -39,7 +39,7 @@ const features = [
   },
   {
     title: 'Learn with Unity',
-    imageUrl: 'img/land-feature3.jpg',
+    imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
         <a href="https://unity.com/demos/small-scale-coop-sample">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
