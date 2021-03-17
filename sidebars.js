@@ -92,10 +92,10 @@ module.exports = {
         "type": "doc",
         "id": "components/networktransform"
       },
-      /*{
+      {
         "type": "doc",
         "id": "components/networkanimator"
-      },*/
+      },
       {
         "type": "doc",
         "id": "components/networknavmeshagent"
