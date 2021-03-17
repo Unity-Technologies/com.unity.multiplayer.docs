@@ -1,9 +1,9 @@
 // Docusaurus v2, see package.json for versions
 //const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
-  title: 'Unity Multiplayer Technology',
-  tagline: 'MLAPI and MTT Guides',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Unity Multiplayer Networking',
+  tagline: 'Build multiplayer games in Unity',
+  url: 'https://docs-multiplayer.unity3d.com/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,11 +11,16 @@ module.exports = {
   organizationName: 'unity', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-    //gtag: {
-      //trackingID: 'UA-123456789-1',
-      // Optional fields.
-      //anonymizeIP: true, // Should IPs be anonymized?
-    //},
+
+    announcementBar: {
+      id: 'prerelease', // Any value that will identify this message.
+      content:
+        'This documentation site is in-progress for the forthcoming experimental release of Unity MLAPI. Content and features subject to change.',
+      backgroundColor: '#3578e5', // Defaults to `#fff`.
+      textColor: '#ffffff', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
+
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -37,7 +42,7 @@ module.exports = {
       }
     },
     navbar: {
-      title: 'Unity Multiplayer Documentation',
+      title: 'Unity Multiplayer Networking Documentation',
       logo: {
         alt: 'Unity',
         src: 'img/logo.png',
@@ -67,14 +72,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'tools/introduction',
-          label: 'Tools',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'tutorials/introduction',
-          label: 'Tutorials',
+          docId: 'learn/introduction',
+          label: 'Learn',
           position: 'left',
         },
         {
@@ -113,11 +112,10 @@ module.exports = {
           //label: 'Community',
           className: 'navbar-grid-menu',
           items: [
-            /*{
-              type: 'doc',
-              to: 'docs/roadmap',
-              label: 'Multiplayer Roadmap',
-            },*/
+            {
+              label: 'Product Roadmap',
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+            },
             { 
               label: 'Discord',
               href: 'http://discord.mlapi.network/',
@@ -158,11 +156,16 @@ module.exports = {
           ],
         },
         {
-          title: 'Multiplayer',
+          title: 'Multiplayer Networking',
           items: [
             {
-              label: 'Releases',
-              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+              label: 'Licenses',
+              type: 'doc',
+              to: 'docs/license',
+            },
+            {
+              label: 'Product Roadmap',
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
             },
             {
               label: 'GitHub - Code',
@@ -173,6 +176,10 @@ module.exports = {
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
             },
             {
+              label: 'Releases',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+            },
+            {
               label: 'Multiplayer RFCs',
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs',
             },
@@ -181,11 +188,6 @@ module.exports = {
         {
           title: 'Contact',
           items: [
-            /*{
-              type: 'doc',
-              to: 'docs/roadmap',
-              label: 'Multiplayer Roadmap',
-            },*/
             {
               label: 'Unity Blog',
               href: 'https://blogs.unity3d.com/',
@@ -230,29 +232,37 @@ module.exports = {
                 keyword: `bestpractice`,
                 infima: true,
                 svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-10 5h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>'
+              },
+              faq: {
+                keyword: `faq`,
+                infima: true,
+                svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>'
+              },
+              unity: {
+                keyword: `unity`,
+                infima: true,
+                svg: '<svg width="25px" height="24px" viewBox="0 0 507 506" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="unity-logo-black" fill="#757575" fill-rule="nonzero"><path d="M451.009018,0.49163636 L244.575273,54.2842182 L214.027491,106.713018 L152.028945,106.261527 L0.92378182,253.214836 L152.028945,400.135564 L213.994909,399.684073 L244.612509,452.080291 L451.009018,505.872873 L506.305018,305.192145 L474.886836,253.214836 L506.305018,201.237527 L451.009018,0.49163636 Z M218.998545,115.151709 L376.908655,75.6811636 L286.261382,228.387491 L104.943564,228.387491 L218.998545,115.151709 Z M218.998545,391.240727 L104.943564,278.0096 L286.261382,278.0096 L376.908655,430.711273 L218.998545,391.240727 Z M421.098909,405.888582 L330.419055,253.214836 L421.098909,100.475927 L464.884218,253.214836 L421.098909,405.888582 L421.098909,405.888582 Z" id="Fill-1"></path></g></g></svg>'
               }
             }
           },
-          /*remarkPlugins: [
-            [ remarkCustomBlocks, { options: {
-                columns: {
-                  classes: 'columns-table',
-                  title: 'optional',
-                },
-            },
-          },
-          ]
-          ]*/
         },
         theme: {
           customCss: require.resolve('./src/css/unity-custom.scss'),
           
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
+        },
       },
     ],
   ],
   plugins: [
-    //'@docusaurus/plugin-google-gtag'
+    [require.resolve('docusaurus-gtm-plugin'),
+    {
+      id: 'GTM-5V25JL6', // GTM Container ID
+    }],
       'plugin-image-zoom',
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock'

@@ -6,28 +6,35 @@
 
 module.exports = {
   mlapi: [
+    {
+      "type": "doc",
+      "id": "getting-started/about-mlapi"
+    },
   {
     "collapsed": true,
     "type": "category",
-    "label": "Getting Started",
+    "label": "Migrating to MLAPI",
+    "items": [
+          {
+        "type": "doc",
+        "id": "getting-started/migratingtomlapi"
+      },
+    ],
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "First Steps with MLAPI",
     "items": [
       {
         "type": "doc",
-        "id": "getting-started/about-mlapi"
+        "id": "tutorials/helloworldintro"
       },
       {
         "type": "doc",
-        "id": "getting-started/installation"
+        "id": "tutorials/helloworldtwo"
       },
-      {
-        "type": "doc",
-        "id": "getting-started/library-initialization"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/connection-approval"
-      }
-    ]
+    ],
   },
   {
     "collapsed": true,
@@ -36,7 +43,15 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/messaging-system"
+        "id": "getting-started/connection-approval"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/networkobject"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/networkbehavior"
       },
       {
         "type": "doc",
@@ -44,27 +59,15 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/object-behavior-relation"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/modularity"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkedvar"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/syncedvar"
+        "id": "mlapi-basics/networkvariable"
       },
       {
         "type": "doc",
         "id": "mlapi-basics/scene-management"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/object-ownership"
       },
       {
         "type": "doc",
@@ -87,19 +90,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "core-components/networkingmanager"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/trackedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedobject"
-      },
-      {
-        "type": "doc",
-        "id": "core-components/networkedbehavior"
+        "id": "core-components/networkmanager"
       }
     ]
   },
@@ -110,7 +101,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "advanced-topics/message-encryption"
+        "id": "advanced-topics/messaging-system"
       },
       {
         "type": "doc",
@@ -118,11 +109,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/lag-compensation"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/bitwriter-bitreader-bitstream"
+        "id": "advanced-topics/bitwriter-bitreader-networkbuffer"
       },
       {
         "type": "doc",
@@ -146,6 +133,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "troubleshooting/troubleshooting"
+      },
+      {
+        "type": "doc",
+        "id": "troubleshooting/errormessages"
       }
     ]
   },
@@ -263,16 +254,14 @@ transport: [
     ]
   },
 ],
-  tools: [
+  learn: [
     {
       "type": "doc",
-      "id": "tools/introduction"
+      "id": "learn/introduction"
     },
-  ],
-  tutorials: [
     {
       "type": "doc",
-      "id": "tutorials/introduction"
+      "id": "learn/faq"
     },
     {
     "collapsed": true,
