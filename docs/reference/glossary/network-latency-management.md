@@ -15,7 +15,7 @@ This is where Network Latency Management comes in. Due to these delays, you woul
 The server uses the latency of the player (including any inherent delay due to interpolation) to rewind time by an appropriate amount in order to determine what the shooting client saw at the time the shot was fired.
  
 
-## Interpolation
+## Snapshot Interpolation
 
 A ------> B
 
