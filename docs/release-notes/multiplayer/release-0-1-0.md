@@ -15,7 +15,7 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 
 This release provides the following new features and APIs:
 
-* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. <!-- See RPC (link TBD) for details. add link to doc when ready --><!-- MTT-233-->
+* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing MLAPI Convenience and Performance RPC (see [here](#removed-features)).
 * Added standarized serialization types, including built-in and custom serialization flows. See [RFC #2](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/master/text/0002-serializable-types.md) for details.<!-- add link to docs --> 
 * `INetworkSerializable` interface replaces `IBitWritable`.
 * Added `NetworkSerializer`..., which is the main aggregator that implements serialization code for built-in supported types and holds `NetworkReader` and `NetworkWriter` instances internally.
@@ -31,7 +31,7 @@ This release provides the following new features and APIs:
 * Integrated MLAPI with the Unity Profiler for versions 2020.2 and later.
 
 :::tip
-A test project is available for building and experimenting with MLAPI features. This project is located in the package `testproject` folder ([GitHub folder](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/release/0.1.0/testproject)). 
+A test project is available for building and experimenting with MLAPI features. This project is available in the MLAPI GitHub [testproject folder](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/release/0.1.0/testproject). 
 
 We also provide a new [Hello World example](../../tutorials/helloworldintro.md) to walk through installation to building your first networked game.
 :::
