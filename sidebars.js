@@ -236,7 +236,7 @@ transport: [
       "type": "doc",
       "id": "learn/faq"
     },
-  ],
+  
     {
     "collapsed": true,
     "type": "category",
