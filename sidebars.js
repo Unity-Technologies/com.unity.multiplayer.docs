@@ -82,15 +82,23 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Core Components",
+    "label": "Components",
     "items": [
       {
         "type": "doc",
-        "id": "core-components/core-components"
+        "id": "components/networkmanager"
       },
       {
         "type": "doc",
-        "id": "core-components/networkmanager"
+        "id": "components/networktransform"
+      },
+      {
+        "type": "doc",
+        "id": "components/networkanimator"
+      },
+      {
+        "type": "doc",
+        "id": "components/networknavmeshagent"
       }
     ]
   },
