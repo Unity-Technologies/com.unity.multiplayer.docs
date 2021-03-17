@@ -48,6 +48,10 @@ Often the host can forward a public port on his router to a machine in his local
 2. Users won't always have access to their routers. For instance if they use a mobile device or are using a corporate network or public WIFI.
 These limitations make port forwarding often not a viable option for a released game but it can be a useful tool for development.  You can learn more about how to port forward here: https://portforward.com/
 
+:::caution
+There are risks associated port forwarding. If you  open ports, then you are opening direct lines for hackers and malware attacks. It is recommended that you close the ports when you have completed your session.
+:::
+
 ### (Option b) Relay server
 
 Players will always be able to connect to a dedicated server which has ports already forwarded. This servers could run in the cloud or in a data center.
