@@ -13,9 +13,9 @@ This guide follows on from the work completed in [Your First Networking Game "He
 1. Create an empty GameObject rename it **HelloWorldManager**.
 1. Create a script called `HelloWorldManager`.
 1. Add the `HelloWorldManager` script as a component.
-  ![Create a Hellowowrldscriptt](/img/helloworldcreatescript.gif)
+  ![Create a Helloworldscript](/img/helloworldcreatescript.gif)
 1. Open the `HelloWorldManager.cs` script.
-1. Edit the `HellowWorldManager.cs` script to match the following.
+1. Edit the `HelloWorldManager.cs` script to match the following.
 
 :::tip 
 You can copy the script from here and paste it into your file.
@@ -86,7 +86,7 @@ namespace HelloWorld
 }
 ```
 
-Inside the `HellowWorldMAnager.cs` script, we will define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
+Inside the `HelloWorldManager.cs` script, we will define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
 
 <!---
 ```csharp reference
@@ -209,7 +209,7 @@ namespace HelloWorld
 ```
 16. Select the Player Prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
-![Create a Hellowowrldplayer script](/img/helloworldcreateplayerscript.gif) 
+![Create a Helloworldplayer script](/img/helloworldcreateplayerscript.gif) 
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
 <!---
