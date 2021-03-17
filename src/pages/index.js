@@ -8,50 +8,64 @@ import styles from './styles.module.scss';
 
 const features = [
   {
-    title: 'Dependable Solution',
-    imageUrl: 'img/dependable.png',
+    title: 'Develop with MLAPI',
+    imageUrl: 'img/land-feature1b.jpg',
     description: (
       <>
-        The MLAPI is one of the oldest and most actively developed game networking
-        library out there. As a direct result of this, it offers many more
-        features than other libraries.
+        We’re evolving our solution, built on MLAPI, in the open to become a netcode foundation that you can depend on – 
+        customizable and extensible to meet the needs of many multiplayer game types.
+      </>
+    ),
+    link: (
+      <>
+      <a href="docs/tutorials/helloworldintro" class="land-link">Learn more about MLAPI</a>
       </>
     ),
   },
   {
-    title: 'Open Source',
-    imageUrl: 'img/opensource.png',
+    title: 'Leverage Transport Features',
+    imageUrl: 'img/land-feature2b.jpg',
     description: (
       <>
-        The MLAPI is completeley free and open source, this means that it comes with 
-        no hidden CCU's or other limitations. Just a great networking library for you to use.
+        Use the <code>com.unity.transport</code> package to add multiplayer and network features to your project. Documentation
+        includes workflows for minimal and jobified client and server setups, pipeline information, events, and more.
+      </>
+    ),
+    link: (
+      <>
+      <a href="docs/transport/introduction">Learn more about Transport</a>
       </>
     ),
   },
   {
-    title: 'General Purpose',
-    imageUrl: 'img/purpose.png',
+    title: 'Learn with Boss Room',
+    imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
-        The MLAPI is a general purpose networking library designed to work with any game.
-        It supports high-performance, large scale and small co-op games. Dedicated server 
-        applications or player hosted? The MLAPI does it all.
+        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
+    link: (
+      <>
+      <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Learn more about Boss Room</a>
+      </>
+    )
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({imageUrl, title, description, link}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+        <div className="text--center land-feature">
+          <img className="featureImage" src={imgUrl} alt={title} />
         </div>
       )}
       <h3>{title}</h3>
-      <p>{description}</p>
+      <div class="land-box"><p>{description}</p></div>
+      <p class="land-link">{link}</p>
     </div>
   );
 }
@@ -62,12 +76,12 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="This site provides Unity Multiplayer Tech documentation, references, and tutorials.">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      description="This site provides Unity Multiplayer documentation, references, and sample code tutorials.">
+      <header className={clsx('hero hero--primary hero-banner')}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
+          <div className="buttons-pages">
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
