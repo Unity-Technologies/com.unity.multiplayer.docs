@@ -28,7 +28,10 @@ This release provides the following new features and APIs:
 <!--IN RFC - MAY COME BACK * Extended `Transport` to expose `NetworkAddress` and `NetworkPort` properties, used to change the address and port which an MLAPI client connects to at runtime or change the port on which a server gets hosted. This change promotes cleaner code and implementations, and makes it more interchangeable in both user code and library extensions.  -->
 * Added message batching to handle consecutive RPC requests sent to the same client. `RpcBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs -->
 * [GitHub 494](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/494): Added a constraint to allow one `NetworkObject` per `GameObject`, set through the `DisallowMultipleComponent` attribute.
-* Integrated MLAPI with the Unity Profiler for versions 2020.2 and later.
+* Integrated MLAPI with the Unity Profiler for versions 2020.2 and later:
+
+  * Added new profiler modules for MLAPI that report important network data.
+  * Attached the profiler to a remote player to view network data over the wire.
 
 :::tip
 A test project is available for building and experimenting with MLAPI features. This project is available in the MLAPI GitHub [testproject folder](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/release/0.1.0/testproject). 
