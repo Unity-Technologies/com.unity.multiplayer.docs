@@ -1,7 +1,7 @@
 // Docusaurus v2, see package.json for versions
 //const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
-  title: 'Unity MLAPI',
+  title: 'Unity Multiplayer Networking',
   tagline: 'Build multiplayer games in Unity',
   url: 'https://docs-multiplayer.unity3d.com/',
   baseUrl: '/',
@@ -42,7 +42,7 @@ module.exports = {
       }
     },
     navbar: {
-      title: 'Unity MLAPI Documentation',
+      title: 'Unity Multiplayer Networking Documentation',
       logo: {
         alt: 'Unity',
         src: 'img/logo.png',
@@ -113,7 +113,7 @@ module.exports = {
           className: 'navbar-grid-menu',
           items: [
             {
-              label: 'Multiplayer Roadmap',
+              label: 'Product Roadmap',
               href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
             },
             { 
@@ -164,8 +164,8 @@ module.exports = {
               to: 'docs/license',
             },
             {
-              label: 'Releases',
-              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+              label: 'Product Roadmap',
+              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
             },
             {
               label: 'GitHub - Code',
@@ -176,6 +176,10 @@ module.exports = {
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
             },
             {
+              label: 'Releases',
+              href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+            },
+            {
               label: 'Multiplayer RFCs',
               href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs',
             },
@@ -184,10 +188,6 @@ module.exports = {
         {
           title: 'Contact',
           items: [
-            {
-              label: 'Multiplayer Roadmap',
-              href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
-            },
             {
               label: 'Unity Blog',
               href: 'https://blogs.unity3d.com/',
