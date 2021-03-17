@@ -3,7 +3,7 @@ id: template
 title: Doc Template
 ---
 
-This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
+This template ([GitHub file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md)) displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
 ## Markdown Syntax
 
@@ -196,9 +196,9 @@ See the following tabbed code examples:
   <TabItem value="mlapi">
 
 ```csharp
-  public class MyMLAPIExample : NetworkedBehaviour
+  public class MyMLAPIExample : NetworkBehaviour
    {
-      public NetworkedVar<float> MyNetworkedVar;
+      public NetworkVariable<float> MyNetworkVariable;
       public override void NetworkedStart()
       {
          InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
@@ -348,9 +348,7 @@ Add an admonition using three colons, the type, and closing content with colons:
 
 ```markdown title="Markdown Code"
 :::note
-
 This is a note.
-
 :::
 ```
 
@@ -384,6 +382,10 @@ Use for helpful facts and info.
 
 :::bestpractice Best Practice
 Highlight best practices and recommendations.
+:::
+
+:::unity
+Information specific to Unity, for example license information.
 :::
 
 ## Mermaid Charts
