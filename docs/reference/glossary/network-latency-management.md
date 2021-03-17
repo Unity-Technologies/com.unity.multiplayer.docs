@@ -10,9 +10,9 @@ This is where Network Latency Management comes in. Due to these delays, you woul
 
 
 
-## Server rewind
+## Lag Compensation 
 
-The server uses the latency of the player (including any inherent delay due to interpolation) to rewind time by an appropriate amount in order to determine what the shooting client saw at the time the shot was fired.
+The server rewinds time by an appropriate amount in order to determine what the shooting client saw at the time the shot was fired.
  
 
 ## Snapshot Interpolation
@@ -32,24 +32,15 @@ Extrapolation is an attempt to estimate a future game state. On receipt of a pac
 
 The client will normally assume that a moving object will continue in the same direction. When a new packet is received, the position may be updated.
 
-## Action casting
+## Deterministic lockstep:**
+A method of networking a system from one computer to another by sending only the inputs that control that system, rather than the state of that system
 
-Server driven action, but with client-side “casting” animations and sounds that respond to client inputs. This is to get responsiveness while still keeping the action server driven.
+## Deterministic rollback:**
+ An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup enables a more responsive game than lockstep. It’s relatively inexpensive.
 
-## Client prediction:
-
-- **Deterministic lockstep:**
-  A method of networking a system from one computer to another by sending only the inputs that control that system, rather than the state of that system
-
-- **Deterministic rollback:**
-  An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup is more complex but enables a more responsive game than lockstep. It’s relatively inexpensive and secure, but with very complex determinism and simulation.
-
-- **Input prediction:**
-  (and reconciliation to correct differences between client and server) TODO
-
-- **Ghost prediction**
-  Client side prediction where input isn’t involved. For example, knowing an AI’s state at frame i, we can predict its state at time i+1 assuming it’s deterministic enough to run the same both client side and server side.
-     
+## Client Side prediction**
+ Client side prediction where input isn’t involved. For example, knowing an AI’s state at frame i, we can predict its state at time i+1 assuming it’s deterministic enough to run the same both client side and server side.
+    
 
 ## Latency
 
@@ -65,7 +56,11 @@ Perception felt by an end user that there are delays to their inputs, often caus
 
 The rate at which ping changes over a period of time (otherwise known as 'ping spikes' or 'stuttering'). 'Jittering' is essentially the fluctuation or variation of latency over time
 
-## RTT
+:::note 
+**Round Trip Time** and **Ping** are interchangeable  the following sections should be taken as a general guide to their meanings and should not be considered a hard defination.
+:::
+
+## Round Trip Time (RTT)
 
 Latency A → B + frame calculation time + B → A
 
@@ -84,6 +79,9 @@ When a PC or console "pings" the server, it sends an ICMP (Internet Control Mess
 The time between sending the request and receiving the answer is your ping to the game server. This means that with a ping of 20ms, it takes data 10ms to travel from the client to the server, as the ping is the round-trip time of your data.
 
 Higher ping values mean that there is more delay or lag, which is why you want to play on servers with very low pings, as that is the basic prerequisite for games to feel snappy and responsive.
+
+
+
 
 ## Update Rate
 

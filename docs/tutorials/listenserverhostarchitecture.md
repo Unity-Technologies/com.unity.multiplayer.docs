@@ -7,13 +7,14 @@ sidebar_label: Create a game with a listen server / host architecture.
 
 ## What is a listen server
 
-Listen servers run in the same process as a game client. They function like dedicated servers.
+A listen server is hosted on one of the player's machine. It acts both as a server and as a client. This means one of the players will both play and own the game world and other players will connect to it. This has performance, security and cost considerations.
 
 ### Disadvantages
 
-- Performance  is impacted by having to communicate with remote players over the residential internet connection of the host player.  
-- Performance may also be reduced because the machine running the server is also generating an output image. ,
-- Listen servers grant the host player a large latency advantage over other players 
+- Network Performance  is impacted by having to communicate with remote players over the residential internet connection of the host player.  
+- Network Performance may also be reduced because the machine running the server is also generating an output image. 
+- Listen servers grant the host player a large latency advantage over other players.
+- The hosting client has access to all the world's information, making it easier to cheat for that player. 
 - The server will cease to exist when host player leaves the game.
 
 ### Advantages 
@@ -23,15 +24,26 @@ Listen servers run in the same process as a game client. They function like dedi
 
 ## When to use a listen server architecture
 
-The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (> 12) and for games which don't need persistent worlds because the game state is often tied to the host. Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authorative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.
+The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (< 12) and for games which don't need persistent worlds because the game state is often tied to the host. 
+:::info
+Persistent world in netcode usually means "persistent online world' E.g. the game state is not bound to a player or a session
+:::
+Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authorative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.
+:::note
+You will still have to setup matchmaking to get your players to join together. You can't just  launch a listen server game and get players playing together, you still have to redirect players to those client-hosted servers.
+:::
+
+:::funfact
+Valheim is a listen server game with a persistent world. The host has a save game when a group of friends want to play together the host needs to start the world from that save. It's not ideal, but it works.
+:::
 
 ## Connecting to a listen server
 
-Connecting to someone elses computer is often not as straight forward as one would think. Computers are hidden behind NATs (Network Address Translation divecs) and routers. Personal Computers are hidden behind those devices and usually not directly accessible. There are multiple options available to still create a connection to them.
+Connecting to someone elses computer is often not as straight forward as one would think. Computers are hidden behind NATs (Network Address Translation devices) and routers. Personal Computers are hidden behind those devices and usually not directly accessible. There are multiple options available to still create a connection to them.
 
 ### (Option a) Port Forwarding
 
-Often the host can forward a public port on his router to a machine in his local network and thus allow someone from the outside to connect to a listen server. While this approach works fine it comes with a few cavheats.
+Often the host can forward a public port on his router to a machine in his local network and thus allow someone from the outside to connect to a listen server. While this approach works fine it comes with a few caveats.
 1. Users need to manually open ports on their router and there is quite a bit of technical knowledge needed to do so.
 2. Users won't always have access to their routers. For instance if they use a mobile device or are using a corporate network or public WIFI.
 These limitations make port forwarding often not a viable option for a released game but it can be a useful tool for development.  You can learn more about how to port forward here: https://portforward.com/
@@ -45,7 +57,7 @@ The advantages of doing this compared to a direct connection is that connecting 
 
 ### (Option c) NAT Punchthrough
 
-The idea behind NAT Punchthrough is to open a direct connection between clients without having one of them do portforwarding. There are multiple ways to do NAT punchthrough such as [STUN](https://en.wikipedia.org/wiki/STUN), [ICE](https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment) or [UDP hole punching](https://en.wikipedia.org/wiki/UDP_hole_punching). When NAT punching suceeds clients will have a direct connection open between them and can send packets to each other. Often NAT punching can fail this depends on the type of NATs which is between the clients. Since most games want everyone to be able to play their games, NAT Punchthrough is not a popular option and is mostly only used with a fallback relay which is the next described option.
+The idea behind NAT Punchthrough is to open a direct connection between clients without having one of them do portforwarding. There are multiple ways to do NAT punchthrough such as [STUN](../reference/glossary/network-terms.md#session-traversal-utilities-for-nat-stun), [ICE](../reference/glossary/network-terms.md#interactive-connectivity-establishment-ice) or [UDP hole punching](../reference/glossary/network-terms.md#udp-hole-punching). When NAT punching suceeds clients will have a direct connection open between them and can send packets to each other. Often NAT punching can fail this depends on the type of NATs which is between the clients. Since most games want everyone to be able to play their games, NAT Punchthrough is not a popular option and is mostly only used with a fallback relay which is the next described option.
 
 ### (Option d) NAT Punch + Relay Fallback
 

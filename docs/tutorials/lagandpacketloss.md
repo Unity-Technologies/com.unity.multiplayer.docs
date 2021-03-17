@@ -15,7 +15,7 @@ It is important to mention that there are different game genres and platforms th
   (values up to 500ms can be acceptable and not degrade the overall experience.
 :::
 
-## Latency
+## [Latency](../reference/glossary/network-latency-management.md#latency)
 
 One of these factors is Latency, which in the context of games means the amount of time between cause and it's visible effect. An example can be a click on a button and a message popping up in response to said click.
 
@@ -66,18 +66,19 @@ All in all a sum of non-network latency contributors can be called Input Lag - t
 
 Non-network latency is a serious issue and can eat up a large chunk of our ~200ms latency budget. This means that for online games input lag, and specifically the part that is largely under our control (render pipeline related lag) should be minimized.
 
-In the context of networking it is valuable to consider the combination of network latency factors which is typically referred to as Ping or Round Trip Time (RTT).
+In the context of networking it is valuable to consider the combination of network latency factors which is typically referred to as **Ping** or **Round Trip Time (RTT)**.
 
-## Round Trip Time
+## [Round Trip Time (RTT)](../reference/glossary/network-latency-management.md#round-trip-time-rtt)
 RTT is the time it takes for a packet to travel from one host to another and then for a response packet to travel back. This ends up including not only the two-way sum of network latency factors, but also the frame rate of the remote host, as it contributes to how quickly the server can send out a response.
 
 Since the traffic is unlikely to travel at the same speed in each direction, the RTT is rarely exactly the time it takes for a packet to go from one host to another. Regardless, it is a very common practice to approximate one-way travel time by dividing RTT by 2.
 
-Another complication arises from the fact that for any two hosts, the RTT time between them is not a constant. It varies over time, normally hovering around a certain average value. But, since the components of network latency can vary over time themselves, the RTT could deviate from the expected value. This deviation is called Jitter.
+Another complication arises from the fact that for any two hosts, the RTT time between them is not a constant. It varies over time, normally hovering around a certain average value. But, since the components of network latency can vary over time themselves, the RTT could deviate from the expected value. This deviation is called **Jitter**.
 
-## Jitter
+## [Jitter](../reference/glossary/network-latency-management.md#jitter)
 
 Jitter can affect RTT mitigation and it can also make packets arrive out of order if the router chooses to send packets via different routes and the one sent later actually arrives prior to the packet that was supposed to come before it.
+
 
 ## Packet Loss
 

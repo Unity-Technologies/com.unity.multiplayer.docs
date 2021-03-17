@@ -1,7 +1,7 @@
 ---
 id: network-models
-title: Network Models or Topologies
-sidebar_label: Network Models or Topologies
+title: Network Topologies
+sidebar_label: Network Topologies
 ---
 
 ## Local or couch multiplayer
@@ -35,11 +35,6 @@ Listen servers run in the same process as a game client.
 :::note
 They function like dedicated servers, but typically have the disadvantage of having to communicate with remote players over the residential internet connection of the hosting player. Performance is also reduced by the simple fact that the machine running the server is also generating an output image. 
 :::
-
-
-
-## Client server host with a relay 
-
 
 ## Dedicated Game Server (DGS)
 

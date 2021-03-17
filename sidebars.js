@@ -159,7 +159,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "reference/glossary/network-models"
+        "id": "reference/glossary/network-topologies"
       },
       {
         "type": "doc",
@@ -277,7 +277,7 @@ transport: [
   {
     "collapsed": true,
     "type": "category",
-    "label": "Artichitecture for creating multiplayer games",
+    "label": "Architecture for creating multiplayer games",
     "items": [
 
       {
