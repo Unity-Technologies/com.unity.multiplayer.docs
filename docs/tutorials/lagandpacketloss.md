@@ -24,7 +24,7 @@ While we can minimize the perceived impact of latency, we can not get rid of it 
 :::
 There are both network and non-network related components of latency.
 
-## Non-network latency:
+### Non-network Latency
 
 - **Input sampling delay**: The time it takes for the input device to recognize that it has been activated and the time it takes for the game to detect that change
 - **Render pipeline delay**: GPUs do not perform draw commands immediately, instead they batch them to be performed later on
