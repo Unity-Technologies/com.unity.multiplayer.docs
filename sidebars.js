@@ -235,7 +235,7 @@ transport: [
     "items": [
         {
         "type": "doc",
-        "id": "tutorials/lagandpacketloss"
+        "id": "learn/lagandpacketloss"
         },
     ]
   },
