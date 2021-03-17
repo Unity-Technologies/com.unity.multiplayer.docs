@@ -26,7 +26,7 @@ This release provides the following new features and APIs:
   * `NetworkTickSystem` tracks time through network interactions and syncs `NetworkVariable`s, used in this update loop. <!-- See Network Tick System (link TBD) for more information. add link to doc when ready --><!-- MTT-241, RFC #12-->
 
 <!--IN RFC - MAY COME BACK * Extended `Transport` to expose `NetworkAddress` and `NetworkPort` properties, used to change the address and port which an MLAPI client connects to at runtime or change the port on which a server gets hosted. This change promotes cleaner code and implementations, and makes it more interchangeable in both user code and library extensions.  -->
-* Added message batching to handle consecutive RPC requests sent to the same client. `RpcBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs --> <!-- MTT-193 file:///Users/lori.krell/Downloads/rpc_batching.pdf -->
+* Added message batching to handle consecutive RPC requests sent to the same client. `RpcBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs -->
 * [GitHub 494](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/494): Added a constraint to allow one `NetworkObject` per `GameObject`, set through the `DisallowMultipleComponent` attribute.
 * Integrated MLAPI with the Unity Profiler for versions 2020.2 and later.
 
