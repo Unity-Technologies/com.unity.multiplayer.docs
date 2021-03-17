@@ -274,7 +274,7 @@ transport: [
     {
       "collapsed": true,
       "type": "category",
-      "label": "Architecture for creating multiplayer games",
+      "label": "Multiplayer Game Architecture",
       "items": [
   
         {
