@@ -19,7 +19,7 @@ The server uses the latency of the player (including any inherent delay due to i
 
 A ------> B
 
-Interpolation works by essentially buffering a game state and rendering the game state to the player with a small, constant delay. When a packet from the server arrives, before immediately updating the position of an object , the client will interpolate the position, starting from the last known position. 
+When a snapshot from the server arrives, instead of immediately updating the position of an object, the client buffers the state. Snapshot Interpolation is the process of interpolating between the last two received game states to provide a visually smooth representation. 
 
 Over an interpolation interval, the object will be rendered  smoothly  moving between the two positions. 
 
