@@ -239,6 +239,22 @@ transport: [
         },
     ]
     },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Architecture for creating multiplayer games",
+      "items": [
+  
+        {
+          "type": "doc",
+          "id": "learn/multiplayergamearhitectureintroduction"
+          },
+          {
+          "type": "doc",
+          "id": "learn/listenserverhostarchitecture"
+          },
+      ]
+    },
   ],
   releasenotes: [
     {
