@@ -36,7 +36,11 @@ Is a server which is the authoritative source of events in a multiplayer video g
 
 This is how a shooter determines if your shot hit something. 
 
-There are two forms of hit registration.
+There are two main forms of hit registration.
+
+:::note
+ There are more than just two cases. The non physics version of bullets via raycast is often also used for weapons with travel time such as snipers. Parabolas of bullets can be calculated without the need of a physics simulation.
+:::
 
 1. Games where bullet travel time is not a factor in close quarters combat can use a simple and fast formwhere bullets have no travel time. 
 
@@ -44,11 +48,6 @@ There are two forms of hit registration.
 
 Hit registration can be done by your game client (client side), which then tells the server (or in p2p, the other clients) that you hit something. 
 
-:::tip
-If a game does client side hit registration then it’s important that the server checks for every reported hit (client side, server authoritative).
-::: 
-
-The most usual 'hit registration' method is to have the server do it. The client basically tells the server in which direction you fired a shot, and the server then figures out if that shot hit something. 
 
 ## Asymmetrical multiplayer
 
