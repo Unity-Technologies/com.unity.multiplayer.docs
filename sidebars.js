@@ -82,23 +82,15 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Components",
+    "label": "Core Components",
     "items": [
       {
         "type": "doc",
-        "id": "components/networkmanager"
+        "id": "core-components/core-components"
       },
       {
         "type": "doc",
-        "id": "components/networktransform"
-      },
-      {
-        "type": "doc",
-        "id": "components/networkanimator"
-      },
-      {
-        "type": "doc",
-        "id": "components/networknavmeshagent"
+        "id": "core-components/networkmanager"
       }
     ]
   },
@@ -146,6 +138,38 @@ module.exports = {
         "type": "doc",
         "id": "troubleshooting/errormessages"
       }
+    ]
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Glossary",
+    "items": [
+
+      {
+        "type": "doc",
+        "id": "reference/glossary/high-level-terminology"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-latency-management"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-topologies"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-terms"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/prioritization"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/relevancy"
+      },
     ]
   }
 ],
@@ -236,7 +260,6 @@ transport: [
       "type": "doc",
       "id": "learn/faq"
     },
-  
     {
     "collapsed": true,
     "type": "category",
@@ -247,8 +270,24 @@ transport: [
         "id": "learn/lagandpacketloss"
         },
     ]
-  },
- ],
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Multiplayer Game Architecture",
+      "items": [
+  
+        {
+          "type": "doc",
+          "id": "learn/multiplayergamearhitectureintroduction"
+          },
+          {
+          "type": "doc",
+          "id": "learn/listenserverhostarchitecture"
+          },
+      ]
+    },
+  ],
   releasenotes: [
     {
       "type": "doc",
