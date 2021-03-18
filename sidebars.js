@@ -38,6 +38,10 @@ module.exports = {
         "type": "doc",
         "id": "getting-started/migratingtomlapi"
       },
+      {
+        "type": "doc",
+        "id": "migration/migratingfrommlapi"
+      },
     ],
   },
   {
