@@ -17,7 +17,11 @@ The server rewinds time by an appropriate amount in order to determine what the 
 
 ## Snapshot Interpolation
 
-A ------> B
+import Mermaid from '@theme/Mermaid';
+<Mermaid chart={`
+	graph LR;
+		A-->B;
+`}/>
 
 When a snapshot from the server arrives, instead of immediately updating the position of an object, the client buffers the state. Snapshot Interpolation is the process of interpolating between the last two received game states to provide a visually smooth representation. 
 
@@ -26,7 +30,10 @@ Over an interpolation interval, the object will be rendered  smoothly  moving be
 ## Extrapolation
 
 
-A ---- B -----> 
+<Mermaid chart={`
+	graph LR;
+		A-->B;
+`}/>
 
 Extrapolation is an attempt to estimate a future game state. On receipt of a packet from the server, the position of an object is updated to the new position. Awaiting the next update, the next position is extrapolated based on the current position and the movement at the time of the update. 
 
@@ -74,7 +81,7 @@ Round Trip Time without frame calculation.
 
 When a PC or console "pings" the server, it sends an ICMP (Internet Control Message Protocol) echo request to the game server, which then answers this request by returning an ICMP echo reply.
 
-![Ping example animation](../../../static/img/ping-animation.gif)
+![Ping example animation](/img/ping-animation.gif)
 
 The time between sending the request and receiving the answer is your ping to the game server. This means that with a ping of 20ms, it takes data 10ms to travel from the client to the server, as the ping is the round-trip time of your data.
 
@@ -87,7 +94,7 @@ Higher ping values mean that there is more delay or lag, which is why you want t
 
 What adds an extra delay on top of the travel time of our data (ping), is how frequently a game sends and receives that data.When a game sends and receives updates at 30Hz (30 updates per second), then there is more time between updates than when it sends and receives updates at 60Hz.
 
-![Update rates](../../../static/img/update-rates.png)
+![Update rates](/img/update-rates.png)
 
 Low update rates do not only affect the network delay; they also cause issues like "super bullets," where a single hit from a gun deals more damage than it should be able to deal. 
 
@@ -95,7 +102,7 @@ Let’s say that the game server sends 10 updates per second. At this update rat
 
 But many shooters have guns which fire 750 rounds per minute or more. As a result, we then run out of updates and so the game has to send multiple bullets with one update. If two bullets hit a player, then the damage of thesetwo hits will be sent in a single update, and so the receiving player will get the experience that he got hit by a "super bullet" that dealt more damage than a single hit should be able to deal.
 
-![RPM update rates](../../../static/img/rpm_update_rates.png)
+![RPM update rates](/img/rpm_update_rates.png)
 
 ## Tick or Simulation Rate
 
@@ -103,7 +110,7 @@ The tick rate, or simulation rate, tells us how many times per second the game p
 
 At the beginning of a tick, the server starts to process the data it received and runs its simulations. Then it sends the result to the clients and sleeps until the next tick happens. The faster the server finishes a tick the earlier the clients will receive new data from the server, which reduces the delay between player and server. That leads to a more responsive hit registration. 
 
-![Tick rate](../../../static/img/tick_rate.png)
+![Tick rate](/img/tick_rate.png)
 
 A tick or simulation rate of 60Hz will cause less delay than a tick rate of 30Hz, as it decreases the time between the simulation steps. A tick rate of 60Hz will also allow the server to send 60 updates per second, which compared to 30Hz reduces the round trip delay between the client and the server by about 33ms (-16ms from the client to the server, and another -16ms from the server to the client).
 

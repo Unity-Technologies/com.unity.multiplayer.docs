@@ -18,7 +18,7 @@ Usually hosted server on site
 
 A peer-to-peer network is created when two or more PCs are connected and share resources without going through a separate server computer. 
 
-![](../../../static/img/peer2peer_1.jpg)
+![](/img/peer2peer_1.jpg)
 
 A P2P network can be:
 - An ad hoc connection—a couple of computers connected via a Universal Serial Bus to transfer files.
@@ -30,7 +30,7 @@ A P2P network can be:
 
 Listen servers run in the same process as a game client. 
 
-![](../../../static/img/client-hosted.jpg)
+![](/img/client-hosted.jpg)
 
 :::note
 They function like dedicated servers, but typically have the disadvantage of having to communicate with remote players over the residential internet connection of the hosting player. Performance is also reduced by the simple fact that the machine running the server is also generating an output image. 
@@ -38,10 +38,9 @@ They function like dedicated servers, but typically have the disadvantage of hav
 
 ## Dedicated Game Server (DGS)
 
-![](../../../static/img/ded_server.jpg)
+![](/img/ded_server.jpg)
 
 Dedicated servers simulate game worlds without supporting direct input or output, except that required for their administration. Players must connect to the server with separate client programs in order to see and interact with the game.
-
 
 
 
