@@ -44,7 +44,9 @@ A data packet travels at a more or less fixed speed, so a player's ping is direc
 
 Another factor that affects the data travel time is the number of stops (or hops) that your data packet must make on its way. Every additional hop also increases the risk that you lose a data packet.
 
-![Datagram relay](/img/data-relay.jpg)
+<ImageSwitcher 
+lightImageSrc="/img/data-relay-light.png?text=LightMode"
+darkImageSrc="/img/data-relay-dark.png?text=DarkMode"/>
 
 **Packet loss** — where did my data go?
 
@@ -72,4 +74,4 @@ UDP hole punching establishes connectivity between two hosts communicating acros
 
 *Network address translation (NAT)* is a method of mapping an *IP address* space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.
 
-
+import ImageSwitcher from '../../../src/ImageSwitcher.js';
