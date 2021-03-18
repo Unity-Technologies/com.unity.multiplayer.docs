@@ -2,6 +2,7 @@
 id: migratingfrommlapi
 title: Updating to the Unity Package
 sidebar_label: Updating to the Unity Package
+description: Learn how to upgrade your current MLAPI installation to the Unity MLAPI package.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,7 +13,7 @@ This upgrade guide targets project using the MLAPI version which was installed b
 If your project uses a Package Manager version of MLAPI then this guide is not relevant.
 :::
 
-The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity eco system we are turning it in a Unity package.
+The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity ecosystem, we are providing it in a Unity package.
 
 What this means for you is:
 - MLAPI will be easily accessible from the Unity Editor in the Package Manager window.
@@ -20,30 +21,44 @@ What this means for you is:
 - You will have full access to the MLAPI source in your project making it easier to debug and inspect MLAPI.
 - Upgrading from the last MLAPI version to the new package version is a bit complicated. We are sorry for that.
 
-# First, Backup your Project!
-:::important
-This step is **not** optional. Upgrading to the package version of MLAPI can screw up your project. Backup your project by either creating a copy of your entire project folder or by using source control software like Git. Best do both to be safe.
+## Backup your project
+
+:::important Required
+This step is **required**: Upgrading to the package version of MLAPI can cause issues with your current project. The new version modifies files and locations that will be drastically different than previous MLAPI versions.
 :::
 
+Backup your project using the following recommended methods:
 
-# Upgrading
+* Create a copy of your entire project folder.
+* Use source control software, like Git. 
+
+:::bestpractice
+We recommend using both methods to backup your project. This gives you a copied project and tracking through committed changes and history.
+:::
+
+##  Upgrade to Unity MLAPI
 
 Manually upgrading from the dll version installed by MLAPI to the new package version breaks all MLAPI component references in your scenes and prefabs. This is the case because MLAPI references components via GUIDs and those GUIDs work differently for packages then for DLLs. To allow you to upgrade smoothly to the new version of MLAPI we have created an upgrade tool.
 
-To start upgrading add the upgrade tool to your project by using the `Add package from git URL..` option in the package manager window and using the following url: https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher
+To start upgrading, add the upgrade tool to your project by using the **Add package from git URL..** option in the Package Manager window. Use the following URL: 
+
+`https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher`
+
 
 After installing the patcher package you are good to go. Follow the following steps to upgrade.
 
 ## 1.**Install the MLAPI Package**
 Follow the [installation guide](TODO how can I easily link to something telling the user how to install MLApI?) for installing the package version of MLAPI.
 
-After installing the package you will have error messages in the console because a lot of MLAPI types now exist twice in your project. This is expected behavior.
+After installing the package, you will have error messages in the console, which is expected behavior. MLAPI uses and includes numerous new types, about double of your existing project's types.
 
 ## 2.**Updating Script References**
 
-Open the MLAPI patcher window by selecting `Window > MLAPI Patcher` in the menu bar. The patcher will ask you whether you are using the `Installer` version of MLAPI or the `Source` version. Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
+Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version. 
 
-In the Patcher window press the respective `Installer` or `Source` button.
+Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
+
+In the Patcher window, select *Installer** or *Source** button:
 
 <Tabs
   className="unique-tabs"
@@ -55,35 +70,39 @@ In the Patcher window press the respective `Installer` or `Source` button.
 
 <TabItem value="tab1">
 
-After pressing the `Installer` button, press the `Update Script References` button.
+1. Select **Installer**.
+1. Select **Update Script References**.
 
 </TabItem>
 <TabItem value="tab2">
 
-After pressing the `Source` button, the window will ask you to link a MLAPI source directory. Take the directory in your project containing the MLAPI source and drop it into the field. After that press the `Update Script References` button.
+1. Select **Source**. 
+1. The window prompts you to link a MLAPI source directory. 
+1. Take the directory in your project containing the MLAPI source and drop it into the field. 
+1. Select **Update Script References**.
 
 </TabItem>
 </Tabs>
 
-After you went through the `Update Script References` process of the patcher the MLAPI components on your Prefabs and GameObjects should have been updated to their new names. You can check whether that's the case by checking whether the `NetworkingManager` component is now called `NetworkManager`.
+After you complete the **Update Script References** process of the patcher, the MLAPI components on your `Prefabs` and `GameObject`s should have been updated to their new names. You can verify by checking if the `NetworkingManager` component is now called `NetworkManager`.
 
 Most likely at this point you will get a warning telling you that the script cannot be loaded. No need to panic, this is expected and your serialized data won't be lost. As soon as you finish up migrating and clean up all error messages your data will appear again.
 
  ![NetworkManager component after upgrading](/img/upgrade-guide/networkmanager-component.png)
 
 
-There is also a `Replace Type Names` button in the Patcher window. This step is optional, what it does is automatically rename old type names in your scripts to the API changes we made saving you some time to manually rename it. What it does is just a simple global replace of some of the type names. You might want to manually do this process instead if you want more finegrained control.
+There is also a **Replace Type Names** button in the Patcher window. This step is optional. It automatically renames old type names in your scripts to the API changes made in Unity MLAPI, saving you some time to manually rename it. It performs a simple global replace of some of the type names. You may want to manually do this process instead if you want more control over changes.
 
-## 3.**Removing the old MLAPI**
+## 3.**Remove older MLAPI versions**
 
 Remove all the folders containing the existing non-package version of MLAPI from your project. Usually this means removing the `Assets/MLAPI` and `Assets/Editor/MLAPI` folders from the project.
 
 ## 4.**Upgrade your code to the new MLAPI APIs**
 
-With our latest release we introduced a lot of breaking API changes. We took the switch to Unity Packages as a chance to clean of the code base and provide an API which is easier to understand and use. We understand that upgrading to a new version with many breaking changes can be frustrating and we are sorry for that.
+With our latest release we introduced a number of breaking API changes. With the move to Unity Packages, we took this chance to clean up the code base and provide an API that is easier to understand and use. We understand that upgrading to a new version with many breaking changes can be frustrating, and we are sorry for that.
 
-### Upgrading to new MLAPI API
-Check our [changelog](TODO link doesn't exit yet?) for a list of name changes we did and to get an overall idea of what changed.
+### Review changes and release notes
+See the [MLAPI Release Notes](../release-notes/release-0-1-0.md) for a list of all new features, refactored name changes, issue fixes, and more.
 
 ### Upgrade RPCs
 
@@ -108,4 +127,4 @@ If you get an error message like this (or for another MLAPI type than `Networked
 
 
 ## 5.**Removing the Patcher Package**
-After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the package manager as it is no longer needed.
+After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.
