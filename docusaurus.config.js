@@ -228,7 +228,7 @@ module.exports = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           // Edit this page repo domain URL
-          editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/',
+          editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/sandbox/',
           admonitions: {
             customTypes: {
               contribution: {

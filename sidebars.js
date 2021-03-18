@@ -82,15 +82,23 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Core Components",
+    "label": "Components",
     "items": [
       {
         "type": "doc",
-        "id": "components/core-components"
+        "id": "components/networkmanager"
       },
       {
         "type": "doc",
-        "id": "components/networkmanager"
+        "id": "components/networktransform"
+      },
+      {
+        "type": "doc",
+        "id": "components/networkanimator"
+      },
+      {
+        "type": "doc",
+        "id": "components/networknavmeshagent"
       }
     ]
   },
@@ -138,6 +146,38 @@ module.exports = {
         "type": "doc",
         "id": "troubleshooting/errormessages"
       }
+    ]
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Glossary",
+    "items": [
+
+      {
+        "type": "doc",
+        "id": "reference/glossary/high-level-terminology"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-latency-management"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-topologies"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-terms"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/prioritization"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/relevancy"
+      },
     ]
   }
 ],
@@ -235,55 +275,36 @@ transport: [
     "items": [
         {
         "type": "doc",
-        "id": "tutorials/lagandpacketloss"
+        "id": "learn/lagandpacketloss"
         },
     ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Artichitecture for creating multiplayer games",
-    "items": [
-
-      {
-        "type": "doc",
-        "id": "tutorials/multiplayergamearhitectureintroduction"
-        },
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Multiplayer Game Architecture",
+      "items": [
+  
         {
-        "type": "doc",
-        "id": "tutorials/listenserverhostarchitecture"
-        },
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "What are RPCs and when to use them",
-    "items": [
-
-      {
-        "type": "doc",
-        "id": "tutorials/rpcvnetvar",
-        },
-        
+          "type": "doc",
+          "id": "learn/multiplayergamearhitectureintroduction"
+          },
           {
           "type": "doc",
-          "id": "tutorials/rpcnetvarexamples",
+          "id": "learn/listenserverhostarchitecture"
           },
-          
       ]
-      
-  },
- ],
+    },
+  ],
   releasenotes: [
     {
       "type": "doc",
       "id": "release-notes/introduction"
     },
-    /*{
+    {
       "type": "doc",
       "id": "release-notes/multiplayer/mlapi-0-1-0"
-    }, */
+    },
     {
       "type": "doc",
       "id": "release-notes/doc-changelog"

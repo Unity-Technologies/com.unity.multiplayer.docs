@@ -10,10 +10,6 @@ By default, the MLAPI comes with three different containers. `NetworkList`, `Net
 
 Since the `NetworkVariable` container is a wrapper container around the value, the value has be accessed via the .Value property.
 
-:::warning
-Disclaimer: The `NetworkVariable`, `NetworkList` and `NetworkDictionary` implementations are **primarily** designed as samples showing how to create `INetworkVariable` structures. The `NetworkVariable` container is however considered production ready for simple types.
-:::
-
 :::note
 You must remember to add the `NetworkObject` component to the game object to which your script belongs.
 :::
@@ -21,7 +17,7 @@ You must remember to add the `NetworkObject` component to the game object to whi
 To create your own `NetworkVariable` container, simply create a class with the `INetworkVariable` interface and declare it as a field of a `NetworkBehaviour`. To learn how to write your own containers for more complex structures, see the `NetworkVariable` implementation. To learn how to do custom delta encoding on complex structures. See the `NetworkDictionary` and `NetworkList` implementations.
 
 ### Permissions
-By default `NetworkVariable` and it's subclasses can only be wrote to by the server (`NetworkVariable`ermission.ServerOnly). To change that set the permission to the desired value during initialization:
+By default `NetworkVariable` and its subclasses can only be written to by the server (`NetworkVariable`ermission.ServerOnly). To change that set the permission to the desired value during initialization:
 
 ```csharp
 private NetworkVariable<float> myFloat = new NetworkVariable<float>(new NetworkVariableSettings {WritePermission = NetworkVariablePermission.OwnerOnly}, 5);
@@ -53,4 +49,4 @@ If you want values to be synced only once (at spawn), the built-in containers se
 ### Serialization
 Since the `NetworkVariable` class is a generic, editor serialization is NOT supported, it's only avalible through editor scripts for viewing the values. To get proper serialization. A clone of the `NetworkVariable` implementation has to be done for each type you wish to use. Ex: `NetworkVariableInt` where you replace all the usages of T with int.
 
-The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariableTYPE>` where `<TYPE>` is the type.
+The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariable<TYPE>` where `<TYPE>` is the type.
