@@ -3,11 +3,15 @@ id: template
 title: Doc Template
 ---
 
-This template displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
+This template ([GitHub file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md)) displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
 ## Markdown Syntax
 
 To serve as an example page when styling markdown based Docusaurus sites.
+
+:::important About File Names
+The doc site requires all file names in lowercase, no spaces, with dashes used as needed. This includes Markdown, images, videos, and downloadable files.
+:::
 
 ## Headers
 
@@ -67,13 +71,15 @@ You can configure your editor to always use this format for lists. For Visual St
 See the following example code for Markdown links.
 
 ```markdown title="Markdown Link Examples"
+See [Page Name](filename.md) to link to Markdown site pages.
+
+See [Page Name](filename.md#header-name) to link to a section in the Markdown site pages.
+
 [I'm an inline-style link](https://www.google.com/)
 
 [I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
 
 [I'm a reference-style link][arbitrary case-insensitive reference text]
-
-See [Page Name](filename.md) to link to Markdown site pages.
 ```
 
 URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
@@ -112,6 +118,113 @@ Reference-style: ![alt text][logo]
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
 ![img](/img/example-img.png)
+
+## Tabs
+
+Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.
+
+At the bottom of the Markdown file, add the following code:
+
+```markdown
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+For each set of tabs, use the following code:
+
+```markdown
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Tab 1', value: 'tab1'},
+    {label: 'Tab 2', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+Add content here for first tab.
+
+</TabItem>
+<TabItem value="tab2">
+
+Add content here for second tab.
+
+</TabItem>
+</Tabs>
+```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+See the following tabbed code examples:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="unet"
+  values={[
+    {label: 'UNet Example', value: 'unet'},
+    {label: 'MLAPI Example', value: 'mlapi'},
+  ]}>
+
+<TabItem value="unet">
+
+```csharp
+   public class MyUnetClass : NetworkBehaviour
+   {
+      [SyncVar]
+      public float MySyncFloat;
+      public void Start()
+      {
+         if (isClient)
+         {
+               CmdExample(10f);
+         }
+         else if (isServer)
+         {
+               RpcExample(10f);
+         }
+      }
+      [Command]
+      public void CmdExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRpc]
+      public void RpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+  <TabItem value="mlapi">
+
+```csharp
+  public class MyMLAPIExample : NetworkBehaviour
+   {
+      public NetworkVariable<float> MyNetworkVariable;
+      public override void NetworkedStart()
+      {
+         InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
+         InvokeServerRpc(ServerRpcExample, 10f);
+      }
+      [ServerRPC]
+      public void ServerRpcExample(float x)
+      {
+         Debug.Log(“Runs on server”);
+      }
+      [ClientRPC]
+      public void ClientRpcExample(float x)
+      {
+         Debug.Log(“Runs on clients”);
+      }
+   }
+```
+
+  </TabItem>
+</Tabs>
 
 ## Code
 
@@ -241,9 +354,7 @@ Add an admonition using three colons, the type, and closing content with colons:
 
 ```markdown title="Markdown Code"
 :::note
-
 This is a note.
-
 :::
 ```
 
@@ -277,6 +388,10 @@ Use for helpful facts and info.
 
 :::bestpractice Best Practice
 Highlight best practices and recommendations.
+:::
+
+:::unity
+Information specific to Unity, for example license information.
 :::
 
 ## Mermaid Charts

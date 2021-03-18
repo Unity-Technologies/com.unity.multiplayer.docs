@@ -1,3 +1,5 @@
+// Use this template for package changelog. See release-notes.md for website.
+
 # Change log
 
 ## [#.#.#] - yyyy-mm-dd
@@ -12,6 +14,8 @@
 
 ### Known issues
 You may need to include this section if you have known issues with the release that may affect integrations and usage.
+
+### Backwards incompatible changes
 
 ### Upgrade guide
 Provide steps and information to upgrade to this release version. Provide numbered instructions or bullets as needed, code in blocks using ticket (```).

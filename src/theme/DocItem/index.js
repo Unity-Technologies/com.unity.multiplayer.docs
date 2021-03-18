@@ -98,18 +98,18 @@ function DocItem(props) {
             </article>
             {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-vert--xl">
                 <div className="row">
-                  <div className="col">
+                  <div className="col feedback-edit">
                     {editUrl && <a href={editUrl} target="_blank" rel="noreferrer noopener">
                         <IconEdit />
                         Edit this page
                       </a>}
                   </div>
-                  <div className="col center">
-                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
+                  <div className="col feedback-issue">
+                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=type:feedback&template=feedback.md&title=Feedback%20for%20' + mdPath }  target="_blank">
                     <IconBug />
                     Log an issue</a>}
                   </div>
-                  {(lastUpdatedAt || lastUpdatedBy) && <div className="col text--right">
+                  {(lastUpdatedAt || lastUpdatedBy) && <div className="col feedback-update">
                       <em>
                         <small>
                           Last updated{' '}
