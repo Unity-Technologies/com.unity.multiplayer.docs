@@ -86,11 +86,11 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "core-components/core-components"
+        "id": "components/core-components"
       },
       {
         "type": "doc",
-        "id": "core-components/networkmanager"
+        "id": "components/networkmanager"
       }
     ]
   },
@@ -265,12 +265,12 @@ transport: [
         "type": "doc",
         "id": "tutorials/rpcvnetvar",
         },
-        [
+        
           {
           "type": "doc",
           "id": "tutorials/rpcnetvarexamples",
           },
-         ] 
+          
       ]
       
   },
