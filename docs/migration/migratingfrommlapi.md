@@ -52,7 +52,7 @@ After installing the patcher package you are good to go. Follow the following st
 ## 1.**Install the MLAPI Package**
 Follow the [installation guide](TODO how can I easily link to something telling the user how to install MLApI?) for installing the package version of MLAPI.
 
-After installing the package, you will have error messages in the console, which is expected behavior. MLAPI uses and includes numerous new types, about double of your existing project's types.
+After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
 ## 2.**Updating Script References**
 
