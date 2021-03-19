@@ -54,6 +54,10 @@ Follow the [installation guide](TODO how can I easily link to something telling 
 
 After installing the package, you will have error messages in the console, which is expected behavior. MLAPI uses and includes numerous new types, about double of your existing project's types.
 
+:::warning
+Don't remove the old version of MLAPI yet. It will still be used in the next step.
+:::
+
 ## 2.**Updating Script References**
 
 Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version. 
@@ -130,7 +134,6 @@ If you get an error message like this (or for another MLAPI type than `Networked
 #### SerializedObjectNotCreatableException: Object at index 0 is null
 
 If this appears whenever you enter playmode or save a scene, close the Unity Editor and open it again and this should be gone.
-
 
 ## 5.**Removing the Patcher Package**
 After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.
