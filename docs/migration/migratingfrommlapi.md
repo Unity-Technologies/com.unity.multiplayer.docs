@@ -38,7 +38,9 @@ We recommend using both methods to backup your project. This gives you a copied 
 
 ##  Upgrade to Unity MLAPI
 
-Manually upgrading from the dll version installed by MLAPI to the new package version breaks all MLAPI component references in your scenes and prefabs. This is the case because MLAPI references components via GUIDs and those GUIDs work differently for packages then for DLLs. To allow you to upgrade smoothly to the new version of MLAPI we have created an upgrade tool.
+Manually upgrading from the `.dll` version installed by MLAPI to the new package version breaks all MLAPI component references in your scenes and prefabs. This is the case because MLAPI references components using GUIDs, which work differently for packages than for `.dll`s. 
+
+To smoothly upgrade you to the new version of MLAPI, we have created an upgrade tool.
 
 To start upgrading, add the upgrade tool to your project by using the **Add package from git URL..** option in the Package Manager window. Use the following URL: 
 
