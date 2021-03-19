@@ -3,7 +3,7 @@ id: rpcnetvarexamples
 title: RPCs vs NetworkVariables Examples
 sidebar_label: RPCs vs NetworkVariables Examples
 ---
-
+This page contains examples of how `RPC`s or `NetworkVariable`s have been used in the Small Coop Sample (Boss Room Project.) It should provide some guidance on when to use `RPC`s or `NetworkVariable`s in your own projects.
 
 
 ## Boss Room uses RPCs to send movement inputs.
