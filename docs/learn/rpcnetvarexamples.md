@@ -419,11 +419,10 @@ Sending from server to client `RecvPerformHitReactionClient`
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/d09330434d864de384db0ce144aa30e5a20aeb3c/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L174
  --->
 ```csharp 
-            InvokeClientRpcOnEveryone(RecvPerformHitReactionClient);
-
+InvokeClientRpcOnEveryone(RecvPerformHitReactionClient);
 ```
 
-The "ouch" `RPC` mentioned for `NetworkCharacterState` in PR62 is interesting and worth mentioning for optimization purposes. You would normally want to have only one `RPC` for the action and let the client decide who should play the "ouch" animation. Here, since this is a long running action over multiple frames, you do not know yet when sending the initial `RPC` which characters will be affected by that action. you want this to be dynamic as the boss is hitting targets. So multiple `RPC`s will be sent for each hit character.
+For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCharacterState` is interesting for optimization purposes. You would normally want to have only one `RPC` for an action and let the client decide who should play the associated animation. Due to "ouch" being a long running action over multiple frames, you do not know yet when sending the initial `RPC` which characters will be affected by that action. You want this to be dynamic as the boss is hitting targets. As a result, multiple `RPC`s will be sent for each hit character.
 
 ## Arrow's GameObject vs Fireball's VFX
 
@@ -721,8 +720,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/58
 
  --->
 ```csharp 
-        public NetworkedVar<LifeState> NetworkLifeState { get; } = new NetworkedVar<LifeState>(LifeState.Alive);
-
+public NetworkedVar<LifeState> NetworkLifeState { get; } = new NetworkedVar<LifeState>(LifeState.Alive);
 ```
 
 The animation change:
@@ -732,16 +730,12 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/58
 
  --->
 ```csharp 
-            m_NetState.NetworkLifeState.OnValueChanged += OnLifeStateChanged;
-
+m_NetState.NetworkLifeState.OnValueChanged += OnLifeStateChanged;
 ```
         
-:::tip
+:::tip Lesson Learned
 
-Lesson learned: Error when connecting after imps have died. 
-
-The following is a small gotcha we encountered while developing Boss Room. Using `NetworkVariable`s is not magical. If you use `OnValueChanged`, you still need to make sure you're initializing your values when spawning for the first time. `OnValueChanged` will not be called when connecting for the first time, only for the subsequent value changes.
-
+**Error when connecting after imps have died**: The following is a small gotcha we encountered while developing Boss Room. Using `NetworkVariable`s is not magical. If you use `OnValueChanged`, you still need to make sure you initialize your values when spawning for the first time. `OnValueChanged` will not be called when connecting for the first time, only for the subsequent value changes.
 
 ![imp not appearing dead](/img/01_imp_not_appearing_dead.png) 
 
@@ -1026,10 +1020,11 @@ namespace BossRoom.Visual
     }
 }
 ```
-PR to fix issue: https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/pull/76
 
 :::
 
 ## Position
         
-All our replicated object's position is synced through `NetworkVariable`s. If this was done through `RPC`s, this would mean we would need to keep a list of `RPC`s to send to connecting players, so they would get the latest position values for each objects. Keeping a list of `RPC`s for each objects so we could send those `RPC`s on connectiong would be a maintainability nightmare. We're letting the SDK do the work :)
+All of our replicated object's position is synced through `NetworkVariable`s, easily collecting and providing data.
+
+If this was done through `RPC`s, we would need to keep a list of `RPC`s to send to connecting players to ensure they get the latest position values for each object. Keeping a list of `RPC`s for each object to send to those `RPC`s on connecting would be a maintainability nightmare. By using `RPC`s, we let the SDK do the work for us.
