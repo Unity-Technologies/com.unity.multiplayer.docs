@@ -66,6 +66,10 @@ Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the
 
 Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
 
+:::tip
+If you are not sure which way of MLAPI you are using check whether you have the `Assets/MLAPI/Lib/MLAPI.dll` file in your project. If that's the case you are using the `Installer` version.
+:::
+
 In the Patcher window, select **Installer** or **Source** button:
 
 <Tabs
