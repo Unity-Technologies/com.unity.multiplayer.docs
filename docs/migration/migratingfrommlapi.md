@@ -44,27 +44,30 @@ To smoothly upgrade you to the new version of MLAPI, we have created an upgrade 
 
 To start upgrading, add the upgrade tool to your project by using the **Add package from git URL..** option in the Package Manager window. Use the following URL: 
 
-`https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher`
+```html
+https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher
+```
 
 
 After installing the patcher package you are good to go. Follow the following steps to upgrade.
 
-## 1.**Install the MLAPI Package**
-Follow the [installation guide](TODO how can I easily link to something telling the user how to install MLApI?) for installing the package version of MLAPI.
+## 1. **Install the MLAPI Package**
+
+Follow the [Install MLAPI](installation.md) guide to install the package version of MLAPI.
 
 After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
 :::warning
-Don't remove the old version of MLAPI yet. It will still be used in the next step.
+Do not remove the old version of MLAPI yet. It will still be used in the next step.
 :::
 
-## 2.**Updating Script References**
+## 2. **Updating Script References**
 
 Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version. 
 
 Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
 
-In the Patcher window, select *Installer** or *Source** button:
+In the Patcher window, select **Installer** or **Source** button:
 
 <Tabs
   className="unique-tabs"
@@ -99,16 +102,16 @@ Most likely at this point you will get a warning telling you that the script can
 
 There is also a **Replace Type Names** button in the Patcher window. This step is optional. It automatically renames old type names in your scripts to the API changes made in Unity MLAPI, saving you some time to manually rename it. It performs a simple global replace of some of the type names. You may want to manually do this process instead if you want more control over changes.
 
-## 3.**Remove older MLAPI versions**
+## 3. **Remove older MLAPI versions**
 
 Remove all the folders containing the existing non-package version of MLAPI from your project. Usually this means removing the `Assets/MLAPI` and `Assets/Editor/MLAPI` folders from the project.
 
-## 4.**Upgrade your code to the new MLAPI APIs**
+## 4. **Upgrade your code to the new MLAPI APIs**
 
 With our latest release we introduced a number of breaking API changes. With the move to Unity Packages, we took this chance to clean up the code base and provide an API that is easier to understand and use. We understand that upgrading to a new version with many breaking changes can be frustrating, and we are sorry for that.
 
 ### Review changes and release notes
-See the [MLAPI Release Notes](../release-notes/release-0-1-0.md) for a list of all new features, refactored name changes, issue fixes, and more.
+See the [MLAPI Release Notes](../release-notes/multiplayer/release-0-1-0.md) for a list of all new features, refactored name changes, issue fixes, and more.
 
 ### Upgrade RPCs
 
@@ -116,24 +119,24 @@ The way RPCs are invoked has changed with this version of MLAPI. Please read our
 
 ### Serialization
 
-We replaced the old `IBitSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different, check our [docs page] (TODO link doesn't exist yet?)
+We replaced the old `IBitSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different, check our [docs page]<!-- LINK coming soon!-->.
 
 ### SyncVars
-SyncVars don't longer exist in MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
+SyncVars no longer exist in MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
 
 ### Troubleshooting
 
 #### The type or namespace name 'MLAPI' could not be found
 
-This error will pop up if your project uses Assembly definition (.asmdef) files. After switching to the package version your assembly definition files will need to reference `com.unity.multiplayer.mlapi.runtime`.
+This error will pop up if your project uses Assembly definition (`.asmdef`) files. After switching to the package version your assembly definition files will need to reference `com.unity.multiplayer.mlapi.runtime`.
 
 #### The type or namespace name 'NetworkedBehaviour' could not be found
 
-If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the [changelog](TODO link doesn't exist yet?).
+If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the [release notes](../release-notes/multiplayer/release-0-1-0.md).
 
 #### SerializedObjectNotCreatableException: Object at index 0 is null
 
 If this appears whenever you enter playmode or save a scene, close the Unity Editor and open it again and this should be gone.
 
-## 5.**Removing the Patcher Package**
+## 5. **Removing the Patcher Package**
 After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.

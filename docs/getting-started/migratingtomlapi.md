@@ -25,7 +25,7 @@ It is recommended that you back up your project before proceeding with the migra
 
 ### Install MLAPI and restart Unity.
 
-See [Installation](../getting-started/installation.md) for more information.
+See [Installation](../migration/installation.md) for more information.
 
 ### Invoking
 Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkBehaviour`` instead of calling the method directly like in UNET.

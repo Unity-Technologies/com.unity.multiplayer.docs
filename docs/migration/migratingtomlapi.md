@@ -1,10 +1,7 @@
 ---
 id: migratingtomlapi
-title: Migration Guide
-sidebar_label: Migration Guide
+title: Migrating From UNet to MLAPI
 ---
-
-
 
 This guide is intended to provide a step by step guide to migrating your project from Unet to MLAPI. 
 
@@ -28,79 +25,17 @@ It is recommended that you back up your project before proceeding with the migra
 See [Installation](../getting-started/installation.md) for more information.
 
 ### Invoking
-Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkedBehaviour`` instead of calling the method directly like in UNET.
+Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkBehaviour`` instead of calling the method directly like in UNET.
 
-See [NetworkedBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
+See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
 
-### Replace NetworkManager 
-
-UNET’s `NetworkManager` is called `NetworkingManager` in the MLAPI and works in a similar way.
-
-:::note
- You cannot  sub-class `NetworkingManager`, which was a **RECOMMENDED** pattern in UNET. 
-:::
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-
-
-```csharp
-NetworkManager.Singleton.StartServer();      //or
-NetworkManager.Singleton.StartHost();        //or
-NetworkManager.Singleton.StartClient();
-```
-</TabItem>
-<TabItem value="tab2">
-
-```csharp
-NetworkingManager.Singleton.StartServer();      //or
-NetworkingManager.Singleton.StartHost();        //or
-NetworkingManager.Singleton.StartClient();
-```
-</TabItem>
-
-</Tabs>
-
-See [NetworkingManager](../core-components/networkmanager.md) for more information.
 ### Replace NetworkManagerHUD 
 
 Currently MLAPI offers no replacment for the NetworkMangerHUD. 
 
-### Replace NetworkIdentity => NetworkedObject
+### Replace NetworkIdentity => NetworkObject
 
-UNET’s `NetworkIdentity` is called `NetworkedObject` in the MLAPI and works in a similar way.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-
-
-</TabItem>
-<TabItem value="tab2">
-
-
-</TabItem>
-
-</Tabs>
-
-
-### Replace UNet NetworkTransform => NetworkedTransform
-
-UNET’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and works in a similar way.
-
+UNET’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a similar way.
 
 <Tabs
   className="unique-tabs"
@@ -120,107 +55,6 @@ UNET’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and work
 </TabItem>
 
 </Tabs>
-
-### Replace  UNet NetworkAnimator => NetworkedAnimator
-
-Replace  `NetworkAnimator` with `NetworkedAnimator` everywhere in your project.
-
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-
-
-</TabItem>
-<TabItem value="tab2">
-
-
-</TabItem>
-
-</Tabs>
-
-### Replace NetworkBehaviour
-
-Replace `NetworkBehaviour` with `NetworkedBehaviour` everywhere in your project.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-
-
-```csharp
-public class MyUnetClass : NetworkBehaviour
-{
-    [SyncVar]
-    public float MySyncFloat;
-    public void Start()
-    {
-        if (isClient)
-        {
-            CmdExample(10f);
-        }
-        else if (isServer)
-        {
-            RpcExample(10f);
-        }
-    }
-    [Command]
-    public void CmdExample(float x)
-    {
-        Debug.Log(“Runs on server”);
-    }
-    [ClientRpc]
-    public void RpcExample(float x)
-    {
-        Debug.Log(“Runs on clients”);
-    }
-}
-```
-</TabItem>
-<TabItem value="tab2">
-
-
-```csharp
-public class MyMLAPIExample : NetworkedBehaviour
-{
-    public NetworkedVar<float> MyNetworkedVar;
-    public override void NetworkedStart()
-    {
-        InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
-        InvokeServerRpc(ServerRpcExample, 10f);
-    }
-    [ServerRPC]
-    public void ServerRpcExample(float x)
-    {
-        Debug.Log(“Runs on server”);
-    }
-    [ClientRPC]
-    public void ClientRpcExample(float x)
-    {
-        Debug.Log(“Runs on clients”);
-    }
-}
-```
-</TabItem>
-
-</Tabs>
-
-
-
-
-See [NetworkedBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
 
 ### Add callback registration in `Awake` or Init methods
 <Tabs
@@ -279,7 +113,7 @@ See [NetworkedBehaviour](../mlapi-basics/networkbehaviour.md) for more informati
 </Tabs>
 
 ### NetworkedStart
-In the MLAPI, RPCs, VarChanges etc will not be replicated if they are done before the `NetworkedStart` method is called. The `NetworkedStart` method is called when the `NetworkedObject` is replicated.
+In the MLAPI, RPCs, VarChanges etc will not be replicated if they are done before the `NetworkedStart` method is called. The `NetworkedStart` method is called when the `NetworkObject` is replicated.
 
 <Tabs
   className="unique-tabs"
@@ -291,7 +125,7 @@ In the MLAPI, RPCs, VarChanges etc will not be replicated if they are done befor
 <TabItem value="tab1">
 
 ```csharp
-public class MyMLAPIExample : NetworkedBehaviour
+public class MyMLAPIExample : NetworkBehaviour
 {
     public override NetworkedStart()
     {
@@ -308,9 +142,9 @@ public class MyMLAPIExample : NetworkedBehaviour
 
 ### Replace SyncVar 
 
-Replace  `SyncVar`  with  `NetworkedVar` everywhere in your project.
+Replace  `SyncVar`  with  `NetworkVariable` everywhere in your project.
 
-To achieve equivalent functionality of `SyncVar` hooks in MLAPI subscribe a function to the `OnValueChanged` callback of the `NetworkedVar`. A noteable difference between the UNet hooks and the MLAPI `OnValueChanged` callback is that MLAPI gives you both the old and the newly changed value while UNet provides you only with the old value.
+To achieve equivalent functionality of `SyncVar` hooks in MLAPI subscribe a function to the `OnValueChanged` callback of the `NetworkVariable`. A noteable difference between the UNet hooks and the MLAPI `OnValueChanged` callback is that MLAPI gives you both the old and the newly changed value while UNet provides you only with the old value.
 
 
 <Tabs
@@ -344,18 +178,18 @@ public class SpaceShip : NetworkBehaviour
 
 
 ```csharp
-// Don't forget to initialize NetworkedVar with a value.
-public NetworkedVar<string> PlayerName = new NetworkedVar<string>();
+// Don't forget to initialize NetworkVariable with a value.
+public NetworkVariable<string> PlayerName = new NetworkVariable<string>();
 
-public NetworkedVar<int> Health = new NetworkedVar<int>(42);
+public NetworkVariable<int> Health = new NetworkVariable<int>(42);
 
-// This how you update the value of a Networkedvar, you can also use .Value to access the current value of a NetworkedVar.
+// This how you update the value of a NetworkVariable, you can also use .Value to access the current value of a NetworkVariable.
 void MyUpdate()
 {
     Health.Value += 30;
 }
 
-// Call this is in Awake or Start to subscribe to changes of the Networkedvar.
+// Call this is in Awake or Start to subscribe to changes of the NetworkVariable.
 void ListenChanges()
 {
     Health.OnValueChanged += OnChangeHealth;
@@ -370,12 +204,12 @@ void OnChangeHealth(int oldHealth, int newHealth){
 </Tabs>
 
 
-See [NetworkedVar](../mlapi-basics/networkvariable.md) for more information.
+See [NetworkVariable](../mlapi-basics/networkvariable.md) for more information.
 
 
-### Replace SyncList => NetworkedList
+### Replace SyncList => NetworkList
 
-Replace `SyncList<T>` with `NetworkedList<T>` everywhere in your project. `NetworkedList` has a `OnListChanged` event which is similar to UNet's `Callback`.
+Replace `SyncList<T>` with `NetworkList<T>` everywhere in your project. `NetworkList` has a `OnListChanged` event which is similar to UNet's `Callback`.
 
 <Tabs
   className="unique-tabs"
@@ -405,16 +239,16 @@ public override void OnStartClient()
 <TabItem value="tab2">
 
 ```csharp
-NetworkedList<int> m_ints = new NetworkedList<int>();
+NetworkList<int> m_ints = new NetworkList<int>();
 
-// Call this is in Awake or Start to subscribe to changes of the NetworkedList.
+// Call this is in Awake or Start to subscribe to changes of the NetworkList.
 void ListenChanges()
 {
     m_ints.OnListChanged += OnIntChanged;
 }
 
-// The NetworkedListEvent contains information about the operation and index of the change.
-void OnIntChanged(NetworkedListEvent<int> changeEvent)
+// The NetworkListEvent contains information about the operation and index of the change.
+void OnIntChanged(NetworkListEvent<int> changeEvent)
 {
 
 }
@@ -480,7 +314,7 @@ UNET’s `Command/ClientRPC` is replaced with  `Server/ClientRPC `in the MLAPI w
 
 
 
-See [Messaging System](../mlapi-basics/messaging-system/Introduction.md) for more information.
+See [Messaging System](../advanced-topics/messaging-system.md) for more information.
 
 ### Replace OnServerAddPlayer  
 
@@ -527,19 +361,19 @@ using MLAPI.Spawning;
 
 private void Setup() 
 {
-    NetworkingManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
-    NetworkingManager.Singleton.StartHost();
+    NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+    NetworkManager.Singleton.StartHost();
 }
 
-private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkingManager.ConnectionApprovedDelegate callback)
+private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkManager.ConnectionApprovedDelegate callback)
 {
     //Your logic here
     bool approve = true;
     bool createPlayerObject = true;
 
     // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkedPrefabs field of your NetworkingManager object in the scene
-    ulong? prefabHash = SpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
+    ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
     callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
@@ -551,9 +385,9 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.Networki
 
 See [Connection Approval](../getting-started/connection-approval.md) for more information.
 
-### Replace NetworkServer.Spawn => NetworkingManager.Spawn
+### Replace NetworkServer.Spawn => NetworkManager.Spawn
 
-Replace `NetworkServer.spawn`  with `NetworkingManager.spawn` everywhere in your project. 
+Replace `NetworkServer.spawn`  with `NetworkManager.spawn` everywhere in your project. 
 
 <Tabs
   className="unique-tabs"
@@ -593,7 +427,7 @@ public class Example : NetworkBehaviour
 
 ```csharp
 GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
-go.GetComponent<NetworkedObject>().Spawn();
+go.GetComponent<NetworkObject>().Spawn();
 ```
 </TabItem>
 
@@ -678,12 +512,12 @@ public bool IsVisibleToPlayer(NetworkIdentity identity, NetworkConnection conn){
 
 ```csharp
 public void Start(){
-    NetworkedObject.CheckObjectVisibility = ((clientId) => {
-        return IsVisibleToPlayer(NetworkedObject, NetworkingManager.Singleton.ConnectedClients[clientId]);
+    NetworkObject.CheckObjectVisibility = ((clientId) => {
+        return IsVisibleToPlayer(NetworkObject, NetworkManager.Singleton.ConnectedClients[clientId]);
     });
 }
 
-public bool IsVisibleToPlayer(NetworkedObject networkedObject, NetworkedClient client){
+public bool IsVisibleToPlayer(NetworkObject networkObject, NetworkClient client){
     // Any promimity function.
     return true;
 }
