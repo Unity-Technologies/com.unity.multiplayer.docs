@@ -261,22 +261,11 @@ transport: [
 ],
   learn:
   [ 
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Learn",
-      "items":[
-        { 
-        "type": "doc",
-        "id": "learn/introduction",
-        },  
-             
+    { 
+      "type": "doc",
+      "id": "learn/introduction",
+      },     
           {
-            "collapsed": true,
-            "type": "category",
-            "label": "Educational Material",
-            "items": [
-              {
               "collapsed": true,
               "type": "category",
               "label": "What are RPCs and when to use them",
@@ -292,14 +281,6 @@ transport: [
                   },
                 ],
               },
-            ]
-          },    
-      {
-      "type": "doc",
-       "id": "learn/faq"
-      },
-    ]
-    },
     {
     "collapsed": true,
     "type": "category",
@@ -327,6 +308,10 @@ transport: [
           },
       ]
     },
+    {
+      "type": "doc",
+       "id": "learn/faq"
+      },
   ],
   releasenotes: [
     {
