@@ -19,11 +19,11 @@ title: MLAPI.Connection
 
 ## Classes
 
-### MLAPI.Connection.NetworkedClient
+### MLAPI.Connection.NetworkClient
 
 <div class="section">
 
-A NetworkedClient
+A NetworkClient
 
 </div>
 
