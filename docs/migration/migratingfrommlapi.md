@@ -17,7 +17,7 @@ The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts
 
 What this means for you is:
 - MLAPI will be easily accessible from the Unity Editor in the Package Manager window.
-- Updating MLAPI in the future will work directly from the package manager.
+- Updating MLAPI in the future will work directly from the Package Manager.
 - You will have full access to the MLAPI source in your project making it easier to debug and inspect MLAPI.
 - Upgrading from the last MLAPI version to the new package version is a bit complicated. We are sorry for that.
 
@@ -52,7 +52,7 @@ After installing the patcher package you are good to go. Follow the following st
 ## 1.**Install the MLAPI Package**
 Follow the [installation guide](TODO how can I easily link to something telling the user how to install MLApI?) for installing the package version of MLAPI.
 
-After installing the package, you will have error messages in the console, which is expected behavior. MLAPI uses and includes numerous new types, about double of your existing project's types.
+After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
 :::warning
 Don't remove the old version of MLAPI yet. It will still be used in the next step.
