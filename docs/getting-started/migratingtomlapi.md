@@ -1,7 +1,7 @@
 ---
 id: migratingtomlapi
-title: Migrating From Unet to MLAPI
-sidebar_label: Migrating From Unet to MLAPI
+title: Migrating From UNet to MLAPI
+sidebar_label: Migrating From UNet to MLAPI
 ---
 
 
