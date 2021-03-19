@@ -11,7 +11,8 @@ The FAQ provides immediate answers for questions collected from the Community on
 
 If you receive `ClientRPC` errors like the following, you may have difficulty debugging:
 
-![](/img/faq/clientrpc-error.png)
+> :warning: [MLAPI] ClientRPC message received for a non existant object with id: 16. This message will be buffered and might be recovered.
+UnityEngine.Debug:LogWarning(object)
 
 You can set *Enable Message Buffering* to `true` in `NetworkManager`. It will store those RPCs and apply them later once the object spawns.
 
