@@ -1,13 +1,14 @@
 ---  
-id: MLAPI.Messaging.ServerRPCAttribute  
-title: MLAPI.Messaging.ServerRPCAttribute  
+id: MLAPI.Messaging.ServerRpcAttribute  
+title: MLAPI.Messaging.ServerRpcAttribute  
 ---
 
 <div class="markdown level0 summary">
 
-Attribute used on methods to me marked as ServerRPC ServerRPC methods
-can be requested from a client and will execute on the server Remember
-that a host is a server and a client
+Marks a method as ServerRpc.
+
+A ServerRpc marked method will be fired by a client but executed on the
+server.
 
 </div>
 
@@ -60,6 +61,12 @@ System.Runtime.InteropServices.\_Attribute
 <div class="inheritedMembers">
 
 ##### Inherited Members
+
+<div>
+
+RpcAttribute.Delivery
+
+</div>
 
 <div>
 
@@ -347,8 +354,8 @@ Object.ToString()
 
 ##### Syntax
 
-    [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class ServerRPCAttribute : RPCAttribute, _Attribute
+    [AttributeUsage(AttributeTargets.Method)]
+    public class ServerRpcAttribute : RpcAttribute, _Attribute
 
 ## Fields
 
@@ -356,7 +363,7 @@ Object.ToString()
 
 <div class="markdown level1 summary">
 
-Whether or not the ServerRPC should only be run if executed by the owner
+Whether or not the ServerRpc should only be run if executed by the owner
 of the object
 
 </div>

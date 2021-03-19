@@ -7,9 +7,9 @@ label:
 
 The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixes, and refactoring for the first release of MLAPI for Unity.
 
-| Product | Version | Status | Release Date |
-| -- | -- | -- | -- |
-| MLAPI | 0.1.0 | Experimental | March 23, 2021 |
+| Product | Version | Status | Release Date | Supported Unity Versions |
+| -- | -- | -- | -- | -- |
+| MLAPI | 0.1.0 | Experimental | March 23, 2021 | 2019.4 and later |
 
 ## New features
 
