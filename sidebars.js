@@ -256,17 +256,49 @@ transport: [
         "type": "doc",
         "id": "transport/samples/jobifiedserverbehavior"
       },
-    ]
+            ]
   },
 ],
-  learn: [
+  learn:
+  [ 
     {
+      "collapsed": true,
+      "type": "category",
+      "label": "Learn",
+      "items":[
+        { 
+        "type": "doc",
+        "id": "learn/introduction",
+        },  
+             
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Educational Material",
+            "items": [
+              {
+              "collapsed": true,
+              "type": "category",
+              "label": "What are RPCs and when to use them",
+              "items": 
+                [  
+                  {
+                  "type": "doc",
+                  "id": "learn/rpcvnetvar",
+                  },
+                  {
+                  "type": "doc",
+                  "id": "learn/rpcnetvarexamples",
+                  },
+                ],
+              },
+            ]
+          },    
+      {
       "type": "doc",
-      "id": "learn/introduction"
-    },
-    {
-      "type": "doc",
-      "id": "learn/faq"
+       "id": "learn/faq"
+      },
+    ]
     },
     {
     "collapsed": true,
@@ -301,10 +333,10 @@ transport: [
       "type": "doc",
       "id": "release-notes/introduction"
     },
-    {
+    /*{
       "type": "doc",
       "id": "release-notes/multiplayer/mlapi-0-1-0"
-    },
+    }, */
     {
       "type": "doc",
       "id": "release-notes/doc-changelog"
