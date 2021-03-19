@@ -127,6 +127,10 @@ This error will pop up if your project uses Assembly definition (.asmdef) files.
 
 If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the [changelog](TODO link doesn't exist yet?).
 
+#### SerializedObjectNotCreatableException: Object at index 0 is null
+
+If this appears whenever you enter playmode or save a scene, close the Unity Editor and open it again and this should be gone.
+
 
 ## 5.**Removing the Patcher Package**
 After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.
