@@ -8,9 +8,13 @@ This section includes release notes, hotfixes, and updates for all Unity Multipl
 
 ## MLAPI SDK
 
+Release notes will be available on release day. 
+
+<!--
 | Release | Status | Date |
 | -- | -- |
 | [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 |
+-->
 
 ## Documentation
 
