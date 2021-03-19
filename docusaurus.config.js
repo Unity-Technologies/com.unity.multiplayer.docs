@@ -14,7 +14,7 @@ module.exports = {
     announcementBar: {
       id: 'prerelease', // Any value that will identify this message.
       content:
-        'This documentation site is in-progress for the forthcoming, fully supported experimental release of Unity MLAPI. Content and features subject to change.',
+        'This documentation site is in-progress for the forthcoming release of Unity MLAPI. Content and features subject to change.',
       backgroundColor: '#3578e5', // Defaults to `#fff`.
       textColor: '#ffffff', // Defaults to `#000`.
       isCloseable: false, // Defaults to `true`.
