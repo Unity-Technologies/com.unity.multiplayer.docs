@@ -100,9 +100,91 @@ module.exports = {
     "label": "Advanced Topics",
     "items": [
       {
-        "type": "doc",
-        "id": "advanced-topics/messaging-system"
+        "collapsed": true,
+        "type": "category",
+        "label": "Messaging System",
+        "items": [
+          {
+            "type": "doc",
+            "id": "advanced-topics/introduction"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "RPC Remote Procedure Call",
+            "items": [
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/clientrpc"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/serverrpc"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/reliability"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/execution-table"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/rpc-params"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/serialization"
+              },
+
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/backward-compatibility"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/cross-compatibility"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/message-system/deprecation-of-return-values"
+              },
+            ]
+          },
+        ]
       },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Serialization",
+        "items": [
+          {
+            "type": "doc",
+            "id": "advanced-topics/serialization/serialization-intro"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/serialization/cprimitives"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/serialization/unity-primitives"
+          },   {
+            "type": "doc",
+            "id": "advanced-topics/serialization/enum_types"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/serialization/static-arrays"
+          },  
+          { 
+            "type": "doc",
+            "id": "advanced-topics/serialization/inetworkserializable-bitserializer"
+
+          },
+        ]
+        },
       {
         "type": "doc",
         "id": "advanced-topics/object-pooling"
