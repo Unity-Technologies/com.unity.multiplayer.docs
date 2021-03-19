@@ -6,7 +6,8 @@ sidebar_label: RPCs vs NetworkVariables Examples
 This page contains examples of how `RPC`s or `NetworkVariable`s have been used in the Small Coop Sample (Boss Room Project.) It should provide some guidance on when to use `RPC`s or `NetworkVariable`s in your own projects.
 
 
-## Boss Room uses RPCs to send movement inputs.
+## RPCs for movement
+Boss Room uses RPCs to send movement inputs.
 
 <!---```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Character/ClientInputSender.cs
@@ -425,7 +426,7 @@ The "ouch" `RPC` mentioned for `NetworkCharacterState` in PR62 is interesting an
 
 ## Arrow's GameObject vs Fireball's VFX
 
-The archer's arrows uses a standalone GameObject that's then replicated over time. Since this object's movements are slow moving, we made the choice to use state to replicate this ability's status, in case a client connected while the arrow was flying. 
+The archer's arrows uses a standalone `GameObject` that is replicated over time. Since this object's movements are slow moving, we made the choice to use state to replicate this ability's status, in case a client connected while the arrow was flying. 
 <!---```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Server/Game/Entity/ServerProjectileLogic.cs
  --->
@@ -598,7 +599,7 @@ namespace BossRoom.Server
 
 ```
 
-We could have used an `RPC` instead, like for the Mage's projectile attack. In that case, since it's expected for that projectile to be quick, we don't mind the few milliseconds where a newly connected client could miss the projectile and we save on bandwidth having to manage a replicated object. Instead a single RPC is sent to trigger the FX client side.
+We could have used an `RPC` instead, for example the Mage's projectile attack. Since it is expected for that projectile to be quick, we are not affected by the few milliseconds where a newly connected client could miss the projectile and we save on bandwidth having to manage a replicated object. Instead a single RPC is sent to trigger the FX client side.
 
 
 <!---```csharp reference
@@ -712,7 +713,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/de
 
 ## Character life state
 
-We could have used a "kill" `RPC` to set a character as dead and play the appropriate animations. Applying our "should that information be replicated when a player joins the game mid-game" rule of thumb, we used `NetworkVariable`s instead. We used the "OnValueChanged" callback on those values to play our state changes animation.
+We could have used a "kill" `RPC` to set a character as dead and play the appropriate animations. Applying our "should that information be replicated when a player joins the game mid-game" rule of thumb, we used `NetworkVariable`s instead. We used the `OnValueChanged` callback on those values to play our state changes animation.
 
 <!---```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/5832b697a790595bc7d9afd3d5cc418c7318ccb8/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L63

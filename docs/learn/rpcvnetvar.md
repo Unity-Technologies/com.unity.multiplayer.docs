@@ -18,11 +18,11 @@ If you call an `RPC` method on your side, it will execute on a different machine
 
 ## NetworkVariables
 
-At a high level, a `NetworkVariable` is a  variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initialy to a host, all relevant `NetworkVariable` latest values "state'  will be replicated to that new client. Your state  gets updated at regular intervals.
+At a high level, a `NetworkVariable` is a  variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initially to a host, all relevant `NetworkVariable` latest values "state"  will be replicated to that new client. Your state gets updated at regular intervals.
 
 `NetworkVariable` can be referenced as "state" or as "Netvars" or as replicated vars.
 
-If I change my variable's value on my side, you'll see the latest value on your side.
+If you change your variable's value on your side, others will see the latest value on their side.
 
 
 ## How to choose between NetworkVariables vs RPCs
@@ -66,7 +66,7 @@ It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the d
 
 `RPC`s are simpler.
 
-If you have a temporary event like an explosion, you don't need a replicated state for this. It wouldn't make sense. You'd have an "unexploded" state that would need to be synced everytime a new player connected? From a design perspective, you might not want to represent these events as state.
+If you have a temporary event like an explosion, you don't need a replicated state for this. It would not make sense. You would have an "unexploded" state that would need to be synced everytime a new player connected? From a design perspective, you might not want to represent these events as state.
 
 An explosion could use an `RPC` for the event, but the effect of the explosion should be using `NetworkVariable`s (player's knockback, health decrease, etc). A newly connected player doesn't care about an explosion that happened 5 seconds ago. They do care about the current health of the players around that explosion though.
   
@@ -288,7 +288,6 @@ If you change `NetworkVariable` "a" and "b", there's no guarantee they'll both b
 
 `NetworkVariable`s are great for managing state, to make sure everyone has the latest value. Use them when you want to make sure newly connected players get an up to date world state.
 `RPC`s are great for sending transient events. Use them when transmiting short lived events.
-
 
 
 
