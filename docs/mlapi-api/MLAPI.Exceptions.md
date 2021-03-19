@@ -19,6 +19,12 @@ title: MLAPI.Exceptions
 
 ## Classes
 
+### MLAPI.Exceptions.InvalidChannelException
+
+<div class="section">
+
+</div>
+
 ### MLAPI.Exceptions.NetworkConfigurationException
 
 <div class="section">
@@ -31,7 +37,7 @@ Exception thrown when the operation can only be done on the server
 
 <div class="section">
 
-Exception thrown when the operation require NetworkingManager to be
+Exception thrown when the operation require NetworkManager to be
 listening.
 
 </div>

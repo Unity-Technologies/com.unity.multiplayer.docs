@@ -210,30 +210,6 @@ can be overriden on a case by case basis with ConnectionApproval.
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableEncryption
-
-<div class="markdown level1 summary">
-
-Whether or not to enable the ECDHE key exchange to allow for encryption
-and authentication of messages
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("Whether or not to enable the ECDHE key exchange to allow for encryption and authentication of messages")]
-    public bool EnableEncryption
-
-#### Field Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
 ### EnableMessageBuffering
 
 <div class="markdown level1 summary">
@@ -258,32 +234,6 @@ most out of order messages during spawn.
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableNetworkedVar
-
-<div class="markdown level1 summary">
-
-Whether or not to enable the NetworkedVar system. This system runs in
-the Update loop and will degrade performance, but it can be a huge
-convenience. Only turn it off if you have no need for the NetworkedVar
-system.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("Whether or not to enable the NetworkedVar system")]
-    public bool EnableNetworkedVar
-
-#### Field Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
 ### EnableNetworkLogs
 
 <div class="markdown level1 summary">
@@ -299,6 +249,32 @@ Whether or not to enable network logs.
 #### Declaration
 
     public bool EnableNetworkLogs
+
+#### Field Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+### EnableNetworkVariable
+
+<div class="markdown level1 summary">
+
+Whether or not to enable the NetworkVariable system. This system runs in
+the Update loop and will degrade performance, but it can be a huge
+convenience. Only turn it off if you have no need for the
+NetworkVariable system.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    [Tooltip("Whether or not to enable the NetworkVariable system")]
+    public bool EnableNetworkVariable
 
 #### Field Value
 
@@ -336,9 +312,9 @@ also enables PrefabSync.
 
 <div class="markdown level1 summary">
 
-If your logic uses the NetworkedTime, this should probably be turned
-off. If however it's needed to maximize accuracy, this is recommended to
-be turned on
+If your logic uses the NetworkTime, this should probably be turned off.
+If however it's needed to maximize accuracy, this is recommended to be
+turned on
 
 </div>
 
@@ -348,7 +324,7 @@ be turned on
 
 #### Declaration
 
-    [Tooltip("Enable this to resync the NetworkedTime after the initial sync")]
+    [Tooltip("Enable this to resync the NetworkTime after the initial sync")]
     public bool EnableTimeResync
 
 #### Field Value
@@ -357,13 +333,13 @@ be turned on
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnsureNetworkedVarLengthSafety
+### EnsureNetworkVariableLengthSafety
 
 <div class="markdown level1 summary">
 
-Whether or not to ensure that NetworkedVars can be read even if a client
-accidentally writes where its not allowed to. This costs some CPU and
-bandwdith.
+Whether or not to ensure that NetworkVariables can be read even if a
+client accidentally writes where its not allowed to. This costs some CPU
+and bandwdith.
 
 </div>
 
@@ -373,8 +349,8 @@ bandwdith.
 
 #### Declaration
 
-    [Tooltip("Ensures that NetworkedVars can be read even if a client accidental writes where its not allowed to. This will cost some CPU time and bandwidth")]
-    public bool EnsureNetworkedVarLengthSafety
+    [Tooltip("Ensures that NetworkVariables can be read even if a client accidental writes where its not allowed to. This will cost some CPU time and bandwidth")]
+    public bool EnsureNetworkVariableLengthSafety
 
 #### Field Value
 
@@ -386,8 +362,8 @@ bandwdith.
 
 <div class="markdown level1 summary">
 
-The amount of times per second internal frame events will occur,
-examples include SyncedVar send checking.
+The amount of times per second internal frame events will occur, e.g.
+send checking.
 
 </div>
 
@@ -397,7 +373,7 @@ examples include SyncedVar send checking.
 
 #### Declaration
 
-    [Tooltip("The amount of times per second the internal event loop will run. This includes for example NetworkedVar checking and LagCompensation tracking")]
+    [Tooltip("The amount of times per second the internal event loop will run. This includes for example NetworkVariable checking.")]
     public int EventTickrate
 
 #### Field Value
@@ -455,32 +431,6 @@ clients to complete loading, is called anyway.
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxObjectUpdatesPerTick
-
-<div class="markdown level1 summary">
-
-The maximum amount of NetworkedObject's to process per tick. This is
-useful to prevent the MLAPI from hanging a frame Set this to less than
-or equal to 0 for unlimited
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [FormerlySerializedAs("MaxBehaviourUpdatesPerTick")]
-    [Tooltip("The maximum amount of NetworkedObject SyncedVars to process per Event tick. This is to prevent freezing")]
-    public int MaxObjectUpdatesPerTick
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
 ### MaxReceiveEventsPerTickRate
 
 <div class="markdown level1 summary">
@@ -529,29 +479,6 @@ consumed. If it is not consumed within this time, it will be dropped.
 |---------------|-------------|
 | System.Single |             |
 
-### NetworkedPrefabs
-
-<div class="markdown level1 summary">
-
-A list of spawnable prefabs
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("The prefabs that can be spawned across the network")]
-    public List<NetworkedPrefab> NetworkedPrefabs
-
-#### Field Value
-
-| Type                                                   | Description |
-|--------------------------------------------------------|-------------|
-| System.Collections.Generic.List&lt;NetworkedPrefab&gt; |             |
-
 ### NetworkIdRecycleDelay
 
 <div class="markdown level1 summary">
@@ -576,6 +503,53 @@ reused.
 |---------------|-------------|
 | System.Single |             |
 
+### NetworkPrefabs
+
+<div class="markdown level1 summary">
+
+A list of spawnable prefabs
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    [Tooltip("The prefabs that can be spawned across the network")]
+    [FormerlySerializedAs("NetworkedPrefabs")]
+    public List<NetworkPrefab> NetworkPrefabs
+
+#### Field Value
+
+| Type                                                 | Description |
+|------------------------------------------------------|-------------|
+| System.Collections.Generic.List&lt;NetworkPrefab&gt; |             |
+
+### NetworkTickIntervalSec
+
+<div class="markdown level1 summary">
+
+Duration in seconds between network ticks.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    [Tooltip("Duration in seconds between network ticks")]
+    public float NetworkTickIntervalSec
+
+#### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
+
 ### NetworkTransport
 
 <div class="markdown level1 summary">
@@ -591,13 +565,13 @@ The transport hosts the sever uses
 #### Declaration
 
     [Tooltip("The NetworkTransport to use")]
-    public Transport NetworkTransport
+    public NetworkTransport NetworkTransport
 
 #### Field Value
 
-| Type      | Description |
-|-----------|-------------|
-| Transport |             |
+| Type             | Description |
+|------------------|-------------|
+| NetworkTransport |             |
 
 ### ProtocolVersion
 
@@ -716,76 +690,6 @@ unless you are facing hash collisions
 |----------|-------------|
 | HashSize |             |
 
-### SecondsHistory
-
-<div class="markdown level1 summary">
-
-The amount of seconds to keep a lag compensation position history
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("The amount of seconds to keep lag compensation position history")]
-    public int SecondsHistory
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### ServerBase64PfxCertificate
-
-<div class="markdown level1 summary">
-
-Pfx file in base64 encoding containing private and public key
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("The certificate in base64 encoded PFX format")]
-    [TextArea]
-    public string ServerBase64PfxCertificate
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.String |             |
-
-### SignKeyExchange
-
-<div class="markdown level1 summary">
-
-Whether or not to enable signed diffie hellman key exchange.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("Whether or not to sign the diffie hellman key exchange to prevent MITM attacks on")]
-    public bool SignKeyExchange
-
-#### Field Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
 ### TimeResyncInterval
 
 <div class="markdown level1 summary">
@@ -801,7 +705,7 @@ in seconds.
 
 #### Declaration
 
-    [Tooltip("The amount of seconds between resyncs of NetworkedTime, if enabled")]
+    [Tooltip("The amount of seconds between resyncs of NetworkTime, if enabled")]
     public int TimeResyncInterval
 
 #### Field Value
@@ -814,7 +718,7 @@ in seconds.
 
 <div class="markdown level1 summary">
 
-If true, all NetworkedObject's need to be prefabs and all scene objects
+If true, all NetworkObjects need to be prefabs and all scene objects
 will be replaced on server side which causes all serialization to be
 lost. Useful for multi project setups If false, Only non scene objects
 have to be prefabs. Scene objects will be matched using their
@@ -829,7 +733,7 @@ time. Useful for single projects
 
 #### Declaration
 
-    [Tooltip("If true, all NetworkedObject's need to be prefabs and all scene objects will be replaced on server side which causes all serialization to be lost. Useful for multi project setups\nIf false, Only non scene objects have to be prefabs. Scene objects will be matched using their PrefabInstanceId which can be precomputed globally for a scene at build time. Useful for single projects")]
+    [Tooltip("If true, all NetworkObjects need to be prefabs and all scene objects will be replaced on server side which causes all serialization to be lost. Useful for multi project setups\nIf false, Only non scene objects have to be prefabs. Scene objects will be matched using their PrefabInstanceId which can be precomputed globally for a scene at build time. Useful for single projects")]
     public bool UsePrefabSync
 
 #### Field Value
@@ -838,61 +742,13 @@ time. Useful for single projects
 |----------------|-------------|
 | System.Boolean |             |
 
-## Properties 
-
-### ServerX509Certificate
-
-<div class="markdown level1 summary">
-
-Gets the currently in use certificate
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public X509Certificate2 ServerX509Certificate { get; }
-
-#### Property Value
-
-| Type                                                           | Description |
-|----------------------------------------------------------------|-------------|
-| System.Security.Cryptography.X509Certificates.X509Certificate2 |             |
-
-### ServerX509CertificateBytes
-
-<div class="markdown level1 summary">
-
-Gets the cached binary representation of the server certificate that's
-used for handshaking
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public byte[] ServerX509CertificateBytes { get; }
-
-#### Property Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.Byte\[\] |             |
-
 ## Methods 
 
 ### CompareConfig(UInt64)
 
 <div class="markdown level1 summary">
 
-Compares a SHA256 hash with the current NetworkingConfiguration
-instances hash
+Compares a SHA256 hash with the current NetworkConfig instances hash
 
 </div>
 
@@ -942,7 +798,7 @@ Sets the NetworkConfig data with that from a base64 encoded version
 
 <div class="markdown level1 summary">
 
-Gets a SHA256 hash of parts of the NetworkingConfiguration instance
+Gets a SHA256 hash of parts of the NetworkConfig instance
 
 </div>
 

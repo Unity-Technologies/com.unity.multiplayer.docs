@@ -6,7 +6,7 @@ title: MLAPI.Messaging.CustomMessagingManager
 <div class="markdown level0 summary">
 
 The manager class to manage custom messages, note that this is different
-from the NetworkingManager custom messages. These are named and are much
+from the NetworkManager custom messages. These are named and are much
 easier to use.
 
 </div>
@@ -114,7 +114,7 @@ Registers a named message handler delegate.
 | System.String                                     | name     | Name of the message.                                  |
 | CustomMessagingManager.HandleNamedMessageDelegate | callback | The callback to run when a named message is received. |
 
-### SendNamedMessage(String, List&lt;UInt64&gt;, Stream, String, SecuritySendFlags)
+### SendNamedMessage(String, List&lt;UInt64&gt;, Stream, NetworkChannel)
 
 <div class="markdown level1 summary">
 
@@ -128,19 +128,18 @@ Sends the named message
 
 #### Declaration
 
-    public static void SendNamedMessage(string name, List<ulong> clientIds, Stream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
+    public static void SendNamedMessage(string name, List<ulong> clientIds, Stream stream, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
-| Type                                                 | Name      | Description                                       |
-|------------------------------------------------------|-----------|---------------------------------------------------|
-| System.String                                        | name      | The message name to send                          |
-| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds | The clients to send to, sends to everyone if null |
-| System.IO.Stream                                     | stream    | The message stream containing the data            |
-| System.String                                        | channel   | The channel to send the data on                   |
-| SecuritySendFlags                                    | security  | The security settings to apply to the message     |
+| Type                                                 | Name           | Description                                       |
+|------------------------------------------------------|----------------|---------------------------------------------------|
+| System.String                                        | name           | The message name to send                          |
+| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds      | The clients to send to, sends to everyone if null |
+| System.IO.Stream                                     | stream         | The message stream containing the data            |
+| NetworkChannel                                       | networkChannel | The channel to send the data on                   |
 
-### SendNamedMessage(String, UInt64, Stream, String, SecuritySendFlags)
+### SendNamedMessage(String, UInt64, Stream, NetworkChannel)
 
 <div class="markdown level1 summary">
 
@@ -154,19 +153,18 @@ Sends a named message
 
 #### Declaration
 
-    public static void SendNamedMessage(string name, ulong clientId, Stream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
+    public static void SendNamedMessage(string name, ulong clientId, Stream stream, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
-| Type              | Name     | Description                                   |
-|-------------------|----------|-----------------------------------------------|
-| System.String     | name     | The message name to send                      |
-| System.UInt64     | clientId | The client to send the message to             |
-| System.IO.Stream  | stream   | The message stream containing the data        |
-| System.String     | channel  | The channel to send the data on               |
-| SecuritySendFlags | security | The security settings to apply to the message |
+| Type             | Name           | Description                            |
+|------------------|----------------|----------------------------------------|
+| System.String    | name           | The message name to send               |
+| System.UInt64    | clientId       | The client to send the message to      |
+| System.IO.Stream | stream         | The message stream containing the data |
+| NetworkChannel   | networkChannel | The channel to send the data on        |
 
-### SendUnnamedMessage(List&lt;UInt64&gt;, BitStream, String, SecuritySendFlags)
+### SendUnnamedMessage(List&lt;UInt64&gt;, NetworkBuffer, NetworkChannel)
 
 <div class="markdown level1 summary">
 
@@ -180,18 +178,17 @@ Sends unnamed message to a list of clients
 
 #### Declaration
 
-    public static void SendUnnamedMessage(List<ulong> clientIds, BitStream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
+    public static void SendUnnamedMessage(List<ulong> clientIds, NetworkBuffer buffer, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
-| Type                                                 | Name      | Description                                       |
-|------------------------------------------------------|-----------|---------------------------------------------------|
-| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds | The clients to send to, sends to everyone if null |
-| BitStream                                            | stream    | The message stream containing the data            |
-| System.String                                        | channel   | The channel to send the data on                   |
-| SecuritySendFlags                                    | security  | The security settings to apply to the message     |
+| Type                                                 | Name           | Description                                       |
+|------------------------------------------------------|----------------|---------------------------------------------------|
+| System.Collections.Generic.List&lt;System.UInt64&gt; | clientIds      | The clients to send to, sends to everyone if null |
+| NetworkBuffer                                        | buffer         | The message stream containing the data            |
+| NetworkChannel                                       | networkChannel | The channel to send the data on                   |
 
-### SendUnnamedMessage(UInt64, BitStream, String, SecuritySendFlags)
+### SendUnnamedMessage(UInt64, NetworkBuffer, NetworkChannel)
 
 <div class="markdown level1 summary">
 
@@ -205,16 +202,15 @@ Sends a unnamed message to a specific client
 
 #### Declaration
 
-    public static void SendUnnamedMessage(ulong clientId, BitStream stream, string channel = null, SecuritySendFlags security = SecuritySendFlags.None)
+    public static void SendUnnamedMessage(ulong clientId, NetworkBuffer buffer, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
-| Type              | Name     | Description                                   |
-|-------------------|----------|-----------------------------------------------|
-| System.UInt64     | clientId | The client to send the message to             |
-| BitStream         | stream   | The message stream containing the data        |
-| System.String     | channel  | The channel tos end the data on               |
-| SecuritySendFlags | security | The security settings to apply to the message |
+| Type           | Name           | Description                            |
+|----------------|----------------|----------------------------------------|
+| System.UInt64  | clientId       | The client to send the message to      |
+| NetworkBuffer  | buffer         | The message stream containing the data |
+| NetworkChannel | networkChannel | The channel tos end the data on        |
 
 ### UnregisterNamedMessageHandler(String)
 

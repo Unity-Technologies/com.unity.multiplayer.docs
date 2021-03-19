@@ -27,46 +27,44 @@ Arithmetic helper class
 
 </div>
 
-### MLAPI.Serialization.AutoBitWritable
+### MLAPI.Serialization.AutoNetworkSerializable
 
 <div class="section">
 
-AutoBitWritable implements IBitWritable and automatically serializes
-fields using reflection
+AutoBitWritable implements INetworkSerializable and automatically
+serializes fields using reflection
 
 </div>
 
-### MLAPI.Serialization.BitReader
+### MLAPI.Serialization.NetworkBuffer
+
+<div class="section">
+
+A buffer that can be used at the bit level
+
+</div>
+
+### MLAPI.Serialization.NetworkReader
 
 <div class="section">
 
 A BinaryReader that can do bit wise manipulation when backed by a
-BitStream
+NetworkBuffer
 
 </div>
 
-### MLAPI.Serialization.BitStream
+### MLAPI.Serialization.NetworkSerializer
 
 <div class="section">
 
-A stream that can be used at the bit level
-
 </div>
 
-### MLAPI.Serialization.BitWriter
+### MLAPI.Serialization.NetworkWriter
 
 <div class="section">
 
 A BinaryWriter that can do bit wise manipulation when backed by a
-BitStream
-
-</div>
-
-### MLAPI.Serialization.EndianHelper
-
-<div class="section">
-
-Binary helper class
+NetworkBuffer
 
 </div>
 
@@ -80,11 +78,9 @@ Helper class to manage the MLAPI serialization.
 
 ## Interfaces
 
-### MLAPI.Serialization.IBitWritable
+### MLAPI.Serialization.INetworkSerializable
 
 <div class="section">
-
-Interface for serializable classes and structs
 
 </div>
 
