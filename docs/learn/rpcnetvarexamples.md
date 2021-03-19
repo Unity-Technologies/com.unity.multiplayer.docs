@@ -3,8 +3,9 @@ id: rpcnetvarexamples
 title: RPCs vs NetworkVariables Examples
 sidebar_label: RPCs vs NetworkVariables Examples
 ---
-This page contains examples of how `RPC`s or `NetworkVariable`s have been used in the Small Coop Sample (Boss Room Project.) It should provide some guidance on when to use `RPC`s or `NetworkVariable`s in your own projects.
+This page contains examples of how `RPC`s or `NetworkVariable`s have been used in the Small Coop Sample (Boss Room Project). It should provide some guidance on when to use `RPC`s or `NetworkVariable`s in your own projects.
 
+See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 
 ## RPCs for movement
 Boss Room uses RPCs to send movement inputs.
@@ -407,7 +408,7 @@ namespace BossRoom.Client
 
 ```
 
-We want the full history of inputs sent, not just the latest value. There's no need for `NetworkVariable`s, you just want to blast your inputs to the server. Since Boss Room is not a twitch shooter, we're sending inputs as reliable `RPC`s, we don't care about the additional latency an input loss would add. 
+We want the full history of inputs sent, not just the latest value. There is no need for `NetworkVariable`s, you just want to blast your inputs to the server. Since Boss Room is not a twitch shooter, we send inputs as reliable `RPC`s without worrying about the additional latency an input loss would add. 
    
 
 ## Sending action inputs RPCs
@@ -422,7 +423,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/d0
 
 ```
 
-The "ouch" `RPC` mentioned for `NetworkCharacterState` in PR62 is interesting and worth mentioning for optimization purposes. You'd normally want to have only one `RPC` for the action and let the client decide who should play the "ouch" animation. Here, since this is a long running action over multiple frames, you don't know yet when sending the initial `RPC` which characters will be affected by that action. you want this to be dynamic as the boss is hitting targets. So multiple `RPC`s will be sent for each hit character.
+The "ouch" `RPC` mentioned for `NetworkCharacterState` in PR62 is interesting and worth mentioning for optimization purposes. You would normally want to have only one `RPC` for the action and let the client decide who should play the "ouch" animation. Here, since this is a long running action over multiple frames, you do not know yet when sending the initial `RPC` which characters will be affected by that action. you want this to be dynamic as the boss is hitting targets. So multiple `RPC`s will be sent for each hit character.
 
 ## Arrow's GameObject vs Fireball's VFX
 
@@ -739,10 +740,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/58
 
 Lesson learned: Error when connecting after imps have died. 
 
-Here's a small gotcha we encountered while developing Boss Room. Using `NetworkVariable`s is not magical. If you use `OnValueChanged`, you still need to make sure you're initializing your values when spawning for the first time. `OnValueChanged` won't be called when connecting for the first time, only for the subsequent value changes.
+The following is a small gotcha we encountered while developing Boss Room. Using `NetworkVariable`s is not magical. If you use `OnValueChanged`, you still need to make sure you're initializing your values when spawning for the first time. `OnValueChanged` will not be called when connecting for the first time, only for the subsequent value changes.
 
 
-![imp not appearing dead](../../static/img/01_imp_not_appearing_dead.png) 
+![imp not appearing dead](/img/01_imp_not_appearing_dead.png) 
 
 <!---```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs !       
