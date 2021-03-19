@@ -1,12 +1,11 @@
 ---
 id: serverrpc
 title: ServerRpc
-sidebar_label: ServerRpc
 ---
 
 A `ServerRpc` can be invoked by a client to be executed on the server.
 
-Developers can declare a `ServerRpc`by marking a method with `[ServerRpc]` attribute and making sure to have `ServerRpc` suffix in the method name.
+Developers can declare a `ServerRpc` by marking a method with `[ServerRpc]` attribute and making sure to have `ServerRpc` suffix in the method name.
 
 ```csharp
 [ServerRpc]
@@ -24,7 +23,7 @@ void Update()
 }
 ```
 
-Marking method with `[ServerRpc]` attribute and putting `ServerRpc` suffix to the method name are required, otherwise it will prompt error messages:
+Marking a method with the `[ServerRpc]` attribute and putting `ServerRpc` suffix to the method name are required, otherwise it will prompt error messages:
 
 ```csharp
 // Error: Invalid, missing 'ServerRpc' suffix in the method name
@@ -35,7 +34,7 @@ void Ping(int somenumber, string sometext) { /* ... */ }
 void PingServerRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-`[ServerRpc]` attribute and matching `...ServerRpc` suffix in the method name are there to make it crystal clear for RPC call sites to know when they are executing an RPC, it will be replicated and executed on the server-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it is a `ServerRpc` or [ClientRpc](clientrpc.md):
+`[ServerRpc]` attribute and matching `...ServerRpc` suffix in the method name are there to make it crystal clear for RPC call sites to know when they are executing an RPC, it will be replicated and executed on the server-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it is a `ServerRpc` or [`ClientRpc`](clientrpc.md):
 
 ```csharp
 Ping(somenumber, sometext); // Is this an RPC call?

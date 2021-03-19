@@ -119,11 +119,12 @@ class BitSerializer
     // ...
 }
 ```
+
 ## Conditional Serialization
 
 As you have more control over serialization of a struct, you might implement conditional serialization at runtime.
 
-More advanced use-cases are explored in the examples below:
+More advanced use-cases are explored in following examples.
 
 ### Example: Array
 
@@ -157,6 +158,7 @@ public struct MyCustomStruct : INetworkSerializable
     }
 }
 ```
+
 **Reading:**
 
 - (De)serialize `length` back from the stream
@@ -202,9 +204,8 @@ public struct MyMoveStruct : INetworkSerializable
         }
     }
 }
-
-
 ```
+
 **Reading:**
 
 - (De)serialize `Position` back from the stream
@@ -213,7 +214,6 @@ public struct MyMoveStruct : INetworkSerializable
 - Check if `SyncVelocity` is set to true, if so:
   - (De)serialize `LinearVelocity` back from the stream
   - (De)serialize `AngularVelocity` back from the stream
-
 
 **Writing:**
 
@@ -224,7 +224,8 @@ public struct MyMoveStruct : INetworkSerializable
   -  Serialize `LinearVelocity` into the stream
   -  Serialize `AngularVelocity` into the stream
 
-Unlike the [Array](#example-array) example above,  in this example we do not use `BitSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.  So:
+Unlike the [Array](#example-array) example above, in this example we do not use `BitSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.
+
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.
 
@@ -232,7 +233,7 @@ Unlike the [Array](#example-array) example above,  in this example we do not use
 
 It is possible to recursively serialize nested members with `INetworkSerializable` interface down in the hierachy tree.
 
-Let's have a look at the example below:
+Review the following example:
 
 ```csharp
 
@@ -261,17 +262,16 @@ public struct MyStructB : INetworkSerializable
         serializer.Serialize(ref StructA);
     }
 }
-
 ```
 
-If we were to serialize `MyStructA` alone, it would serialize `Position`and `Rotation`into the stream via BitSerializer.
+If we were to serialize `MyStructA` alone, it would serialize `Position` and `Rotation` into the stream using `BitSerializer`.
 
-However, if we were to serialize `MyStructB`, it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA `by calling `MyStructA`'s `void NetworkSerialize(BitSerializer)` method which serializes `Position` and `Rotation` into the same stream.
+However, if we were to serialize `MyStructB`, it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA` by calling `MyStructA`'s `void NetworkSerialize(BitSerializer)` method, which serializes `Position` and `Rotation` into the same stream.
 
 :::note
- Technically, there is no hard-limit on how many `INetworkSerializable` fields you can serialize down the tree hierachy but in practice, there are some memory and bandwidth boundaries to be considered.
+Technically, there is no hard-limit on how many `INetworkSerializable` fields you can serialize down the tree hierachy. In practice, consider memory and bandwidth boundaries for best performance.
 :::
 
 :::tip
-You can conditionally serialize in recursive nested serialization scenario and make use of both features! 
+You can conditionally serialize in recursive nested serialization scenario and make use of both features.
 :::

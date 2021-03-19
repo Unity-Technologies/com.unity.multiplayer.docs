@@ -106,7 +106,7 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "advanced-topics/introduction"
+            "id": "advanced-topics/messaging-system"
           },
           {
             "collapsed": true,

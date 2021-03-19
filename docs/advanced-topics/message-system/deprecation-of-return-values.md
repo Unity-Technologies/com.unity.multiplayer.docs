@@ -1,8 +1,6 @@
 ---
 id: deprecation-of-return-values
 title: Deprecation of Return Values
-sidebar_label: Deprecation of Return Values
-
 ---
 
 MLAPI supports RPC return values on convenience RPCs.

@@ -1,12 +1,11 @@
 ---
 id: enum_types
-title: Enum Types 
-sidebar_label: Enum Types
+title: Enum Types
 ---
+
 A user-defined enum type will be serialized by built-in serialization code (with underlying integer type).
 
 ```csharp
-
 enum SmallEnum : byte
 {
     A,

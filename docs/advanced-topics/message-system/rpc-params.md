@@ -1,18 +1,18 @@
 ---
 id: rpc-params
-title: RPC Params 
-sidebar_label: RPC Params  
+title: RPC Params
 ---
 
+Both `ServerRpc` and `ClientRpc` methods can be configured either by `[ServerRpc]` and `[ClientRpc]` attributes at compile-time and `ServerRpcParams` and `ClientRpcParams` at runtime.
 
-Both `ServerRpc` and `ClientRpc` methods can be configured either by [ServerRpc]/[ClientRpc] attributes at compile-time and/or `ServerRpcParams`/`ClientRpcParams` at runtime.
-
-Developers can put `ServerRpcParams`/`ClientRpcParams` as the last parameter (optionally) and they could be used for a consolidated space for `XXXRpcReceiveParams` and `XXXRpcSendParams`.
+Developers can put `ServerRpcParams` and `ClientRpcParams` as the last parameter (optionally). They can also be used for a consolidated space for `XXXRpcReceiveParams` and `XXXRpcSendParams`.
 
 The network framework will inject the corresponding `XXXRpcReceiveParams` to what the user had declared in code when invoked by network receive handling (framework code) and will consume `XXXRpcSendParams` when invoked by RPC send call (user code).
 
 
 ## ServerRpc Params
+
+See the following for `ServerRpc` params:
 
 ``` csharp
 struct ServerRpcSendParams
@@ -42,6 +42,8 @@ void XyzwServerRpc(int somenumber, ServerRpcParams rpcParams = default) { /* ...
 ```
 
 ## ClientRpc Params
+
+See the following for `ClientRpc` params:
 
 ```csharp
 struct ClientRpcSendParams
