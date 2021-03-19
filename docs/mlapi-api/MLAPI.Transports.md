@@ -19,13 +19,23 @@ title: MLAPI.Transports
 
 ## Classes
 
-### MLAPI.Transports.Transport
+### MLAPI.Transports.NetworkTransport
 
 <div class="section">
 
 A network transport
 
 </div>
+
+### MLAPI.Transports.UNetChannel
+
+<div class="section">
+
+A transport channel used by the MLAPI
+
+</div>
+
+## Structs
 
 ### MLAPI.Transports.TransportChannel
 
@@ -35,17 +45,15 @@ A transport channel used by the MLAPI
 
 </div>
 
-### MLAPI.Transports.UnetChannel
+## Enums
+
+### MLAPI.Transports.NetworkChannel
 
 <div class="section">
 
-A transport channel used by the MLAPI
-
 </div>
 
-## Enums
-
-### MLAPI.Transports.ChannelType
+### MLAPI.Transports.NetworkDelivery
 
 <div class="section">
 
@@ -53,7 +61,7 @@ Delivery methods
 
 </div>
 
-### MLAPI.Transports.NetEventType
+### MLAPI.Transports.NetworkEvent
 
 <div class="section">
 
@@ -63,7 +71,7 @@ Represents a netEvent when polling
 
 ## Delegates
 
-### MLAPI.Transports.Transport.RequestChannelsDelegate
+### MLAPI.Transports.NetworkTransport.RequestChannelsDelegate
 
 <div class="section">
 
@@ -71,7 +79,7 @@ Delegate used to request channels on the underlying transport.
 
 </div>
 
-### MLAPI.Transports.Transport.TransportEventDelegate
+### MLAPI.Transports.NetworkTransport.TransportEventDelegate
 
 <div class="section">
 

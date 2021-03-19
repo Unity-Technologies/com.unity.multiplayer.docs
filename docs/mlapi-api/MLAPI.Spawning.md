@@ -19,7 +19,7 @@ title: MLAPI.Spawning
 
 ## Classes
 
-### MLAPI.Spawning.SpawnManager
+### MLAPI.Spawning.NetworkSpawnManager
 
 <div class="section">
 
@@ -29,18 +29,18 @@ Class that handles object spawning
 
 ## Delegates
 
-### MLAPI.Spawning.SpawnManager.DestroyHandlerDelegate
+### MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate
 
 <div class="section">
 
-The delegate used when destroying networked objects
+The delegate used when destroying NetworkObjects
 
 </div>
 
-### MLAPI.Spawning.SpawnManager.SpawnHandlerDelegate
+### MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate
 
 <div class="section">
 
-The delegate used when spawning a networked object
+The delegate used when spawning a NetworkObject
 
 </div>

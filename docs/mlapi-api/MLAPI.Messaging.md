@@ -19,13 +19,14 @@ title: MLAPI.Messaging
 
 ## Classes
 
-### MLAPI.Messaging.ClientRPCAttribute
+### MLAPI.Messaging.ClientRpcAttribute
 
 <div class="section">
 
-Attribute used on methods to me marked as ClientRPC ClientRPC methods
-can be requested from the server and will execute on a client Remember
-that a host is a server and a client
+Marks a method as ClientRpc.
+
+A ClientRpc marked method will be fired by the server but executed on
+clients.
 
 </div>
 
@@ -34,44 +35,97 @@ that a host is a server and a client
 <div class="section">
 
 The manager class to manage custom messages, note that this is different
-from the NetworkingManager custom messages. These are named and are much
+from the NetworkManager custom messages. These are named and are much
 easier to use.
 
 </div>
 
-### MLAPI.Messaging.RPCAttribute
+### MLAPI.Messaging.RpcAttribute
 
 <div class="section">
 
-Generic supertype of Client and Server RPC Attributes. Do not use
-directly.
+Represents the common base class for Rpc attributes.
 
 </div>
 
-### MLAPI.Messaging.RpcResponse-1
+### MLAPI.Messaging.RpcQueueHistoryFrame
 
 <div class="section">
 
-The RpcResponse class exposed by the API. Represents a network
-Request/Response operation with a result
+QueueHistoryFrame Used by the RpcQueueContainer to hold queued RPCs All
+queued Rpcs end up in a PooledNetworkBuffer within a QueueHistoryFrame
+instance.
 
 </div>
 
-### MLAPI.Messaging.RpcResponseBase
+### MLAPI.Messaging.ServerRpcAttribute
 
 <div class="section">
 
-Abstract base class for RpcResponse
+Marks a method as ServerRpc.
+
+A ServerRpc marked method will be fired by a client but executed on the
+server.
 
 </div>
 
-### MLAPI.Messaging.ServerRPCAttribute
+## Structs
+
+### MLAPI.Messaging.\_\_RpcParams
 
 <div class="section">
 
-Attribute used on methods to me marked as ServerRPC ServerRPC methods
-can be requested from a client and will execute on the server Remember
-that a host is a server and a client
+</div>
+
+### MLAPI.Messaging.ClientRpcParams
+
+<div class="section">
+
+</div>
+
+### MLAPI.Messaging.ClientRpcReceiveParams
+
+<div class="section">
+
+</div>
+
+### MLAPI.Messaging.ClientRpcSendParams
+
+<div class="section">
+
+</div>
+
+### MLAPI.Messaging.ServerRpcParams
+
+<div class="section">
+
+</div>
+
+### MLAPI.Messaging.ServerRpcReceiveParams
+
+<div class="section">
+
+</div>
+
+### MLAPI.Messaging.ServerRpcSendParams
+
+<div class="section">
+
+</div>
+
+## Enums
+
+### MLAPI.Messaging.RpcDelivery
+
+<div class="section">
+
+RPC delivery types
+
+</div>
+
+### MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType
+
+<div class="section">
 
 </div>
 
@@ -90,13 +144,5 @@ Delegate used to handle named messages
 <div class="section">
 
 Delegate used for incoming unnamed messages
-
-</div>
-
-### MLAPI.Messaging.RpcDelegate
-
-<div class="section">
-
-Delegate definition for performance RPC's.
 
 </div>
