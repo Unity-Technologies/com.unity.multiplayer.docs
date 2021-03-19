@@ -3,39 +3,42 @@ id: migratingtomlapi
 title: Migrating From UNet to MLAPI
 ---
 
-This guide is intended to provide a step by step guide to migrating your project from Unet to MLAPI. 
+This guide is intended to provide a step-by-step guide to migrating your project from UNet to MLAPI. Sample code is provided as available. We also recommend reviewing the latest [MLAPI Release Notes](../release-notes/index.md).
 
+:::note
+If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
+:::
 
 ## Current Limitations
 
-- `CommandAttribute` → `ServerRPCAttribute` and `ClientRPCAttribute` → `ClientRPCAttribute` naming constraints may cause issues (Unet tended to prefix methods with `Cmd` or `Rpc`, MLAPI requires postfix. Means either complicated multi-line regex find/replace, or a ton of manual effort
+- `CommandAttribute` → `ServerRPCAttribute` and `ClientRPCAttribute` → `ClientRPCAttribute` naming constraints may cause issues (UNet tended to prefix methods with `Cmd` or `Rpc`, MLAPI requires postfix. Means either complicated multi-line regex find/replace, or a ton of manual effort
 - Errors about RPC postfix naming pattern do not show up in IDE. 
 - MLAPI RPCs do not support arrays yet
-- Client & Server have separate representations in UNET. There's a number of callbacks in UNET that don't exist for MLAPI 
+- Client & Server have separate representations in UNet. There's a number of callbacks in UNet that don't exist for MLAPI 
 - Prefabs need to be added to the prefab registration list for MLAPI
 - Connection callbacks do not happen in single player / host mode 
 - Matchmaking
 
-### Backup
+## Backup
 
 It is recommended that you back up your project before proceeding with the migration.
 
-### Install MLAPI and restart Unity.
+## Install MLAPI and restart Unity
 
-See [Installation](../getting-started/installation.md) for more information.
+See [Installation](installation.md) for more information.
 
-### Invoking
-Invoking in the MLAPI is done by calling the `Invoke` method on the ``NetworkBehaviour`` instead of calling the method directly like in UNET.
+## Invoking
+Invoking in the MLAPI is done by calling the `Invoke` method on the `NetworkBehaviour` instead of calling the method directly like in UNet.
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
 
-### Replace NetworkManagerHUD 
+## Replace NetworkManager 
 
-Currently MLAPI offers no replacment for the NetworkMangerHUD. 
+UNET’s `NetworkManager` is called `NetworkingManager` in the MLAPI and works in a similar way.
 
-### Replace NetworkIdentity => NetworkObject
-
-UNET’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a similar way.
+:::note
+You cannot sub-class `NetworkingManager`, which was a **recommended** pattern in UNET. 
+:::
 
 <Tabs
   className="unique-tabs"
@@ -47,16 +50,77 @@ UNET’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a
 
 <TabItem value="tab1">
 
+```csharp
+NetworkManager.Singleton.StartServer();      //or
+NetworkManager.Singleton.StartHost();        //or
+NetworkManager.Singleton.StartClient();
+```
 
 </TabItem>
 <TabItem value="tab2">
 
+```csharp
+NetworkingManager.Singleton.StartServer();      //or
+NetworkingManager.Singleton.StartHost();        //or
+NetworkingManager.Singleton.StartClient();
+```
 
 </TabItem>
 
 </Tabs>
 
-### Add callback registration in `Awake` or Init methods
+## Replace NetworkManagerHUD 
+
+Currently MLAPI offers no replacment for the NetworkMangerHUD. 
+
+## Replace NetworkIdentity with NetworkObject
+
+UNet’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a similar way.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'UNET Example', value: 'tab1'},
+    {label: 'MLAPI Example', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+</TabItem>
+<TabItem value="tab2">
+
+</TabItem>
+
+</Tabs>
+
+## Replace UNet NetworkTransform with NetworkedTransform
+
+UNet’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and works in a similar way.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'UNET Example', value: 'tab1'},
+    {label: 'MLAPI Example', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+</TabItem>
+<TabItem value="tab2">
+
+</TabItem>
+
+</Tabs>
+
+## Replace  UNet NetworkAnimator with NetworkedAnimator
+
+Replace `NetworkAnimator` with `NetworkedAnimator` everywhere in your project.
+
+## Add callback registration in `Awake` or `Init` methods
+
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -66,13 +130,14 @@ UNET’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a
 
 <TabItem value="tab1">
 
-
 </TabItem>
-
 
 </Tabs>
 
-### Replace postfix increment/decrement usages
+## Update NetworkBehaviour
+
+Replace `NetworkBehaviour` with MLAPI `NetworkBehaviour` everywhere in your project.
+
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -83,16 +148,69 @@ UNET’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a
 
 <TabItem value="tab1">
 
+```csharp
+public class MyUnetClass : NetworkBehaviour
+{
+    [SyncVar]
+    public float MySyncFloat;
+    public void Start()
+    {
+        if (isClient)
+        {
+            CmdExample(10f);
+        }
+        else if (isServer)
+        {
+            RpcExample(10f);
+        }
+    }
+    [Command]
+    public void CmdExample(float x)
+    {
+        Debug.Log(“Runs on server”);
+    }
+    [ClientRpc]
+    public void RpcExample(float x)
+    {
+        Debug.Log(“Runs on clients”);
+    }
+}
+```
 
 </TabItem>
 <TabItem value="tab2">
 
-
+```csharp
+public class MyMLAPIExample : NetworkBehaviour
+{
+    public NetworkVariable<float> MyNetworkVariable;
+    public override void NetworkedStart()
+    {
+        InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
+        InvokeServerRpc(ServerRpcExample, 10f);
+    }
+    [ServerRPC]
+    public void ServerRpcExample(float x)
+    {
+        Debug.Log(“Runs on server”);
+    }
+    [ClientRPC]
+    public void ClientRpcExample(float x)
+    {
+        Debug.Log(“Runs on clients”);
+    }
+}
+```
 </TabItem>
 
 </Tabs>
 
-### Update callback method signatures to new format (MLAPI passes oldvalue & newvalue, unet only passed newvalue)
+See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
+
+## Replace postfix increment/decrement usages
+
+Replace all postfix increment and decrement usages in your project.
+
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -103,17 +221,37 @@ UNET’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a
 
 <TabItem value="tab1">
 
-
 </TabItem>
 <TabItem value="tab2">
-
 
 </TabItem>
 
 </Tabs>
 
-### NetworkedStart
-In the MLAPI, RPCs, VarChanges etc will not be replicated if they are done before the `NetworkedStart` method is called. The `NetworkedStart` method is called when the `NetworkObject` is replicated.
+## Update callback method signatures
+
+Callback method signatures use a new format. MLAPI passes `oldvalue` and `newvalue`, where UNet only passed `newvalue`.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'UNET Example', value: 'tab1'},
+    {label: 'MLAPI Example', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+</TabItem>
+<TabItem value="tab2">
+
+</TabItem>
+
+</Tabs>
+
+## NetworkedStart
+
+In the MLAPI, `RPC`s and `VarChanges` will not be replicated if they are done before the `NetworkedStart` method is called. The `NetworkedStart` method is called when the `NetworkObject` is replicated.
 
 <Tabs
   className="unique-tabs"
@@ -135,17 +273,13 @@ public class MyMLAPIExample : NetworkBehaviour
 ```
 </TabItem>
 
-
 </Tabs>
 
+## Replace SyncVar 
 
-
-### Replace SyncVar 
-
-Replace  `SyncVar`  with  `NetworkVariable` everywhere in your project.
+Replace `SyncVar` with `NetworkVariable` everywhere in your project.
 
 To achieve equivalent functionality of `SyncVar` hooks in MLAPI subscribe a function to the `OnValueChanged` callback of the `NetworkVariable`. A noteable difference between the UNet hooks and the MLAPI `OnValueChanged` callback is that MLAPI gives you both the old and the newly changed value while UNet provides you only with the old value.
-
 
 <Tabs
   className="unique-tabs"
@@ -175,7 +309,6 @@ public class SpaceShip : NetworkBehaviour
 
 </TabItem>
 <TabItem value="tab2">
-
 
 ```csharp
 // Don't forget to initialize NetworkVariable with a value.
@@ -207,7 +340,7 @@ void OnChangeHealth(int oldHealth, int newHealth){
 See [NetworkVariable](../mlapi-basics/networkvariable.md) for more information.
 
 
-### Replace SyncList => NetworkList
+## Replace SyncList with NetworkList
 
 Replace `SyncList<T>` with `NetworkList<T>` everywhere in your project. `NetworkList` has a `OnListChanged` event which is similar to UNet's `Callback`.
 
@@ -258,13 +391,9 @@ void OnIntChanged(NetworkListEvent<int> changeEvent)
 
 </Tabs>
 
+## Replace Command/ClientRPC 
 
-
-
-
-### Replace Command/ClientRPC 
-
-UNET’s `Command/ClientRPC` is replaced with  `Server/ClientRPC `in the MLAPI which works in a similar way.
+UNet’s `Command/ClientRPC` is replaced with `Server/ClientRPC` in the MLAPI which works in a similar way.
 
 <Tabs
   className="unique-tabs"
@@ -275,7 +404,6 @@ UNET’s `Command/ClientRPC` is replaced with  `Server/ClientRPC `in the MLAPI w
   ]}>
 
 <TabItem value="tab1">
-
 
 ```csharp
     [Command]
@@ -289,11 +417,9 @@ UNET’s `Command/ClientRPC` is replaced with  `Server/ClientRPC `in the MLAPI w
         Debug.Log(“Runs on clients”);
     }
 ```
+
 </TabItem>
 <TabItem value="tab2">
-
-
-
 
 ```csharp
     [ServerRPC]
@@ -307,18 +433,16 @@ UNET’s `Command/ClientRPC` is replaced with  `Server/ClientRPC `in the MLAPI w
         Debug.Log(“Runs on clients”);
     }
 ```
+
 </TabItem>
 
 </Tabs>
 
-
-
-
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
 
-### Replace OnServerAddPlayer  
+## Replace OnServerAddPlayer  
 
-Replace  `OnServerAddPlayer` with  `ConnectionApproval` everywhere in your project.
+Replace `OnServerAddPlayer` with `ConnectionApproval` everywhere in your project.
 
 <Tabs
   className="unique-tabs"
@@ -348,8 +472,8 @@ class MyManager : NetworkManager
     }
 }
 ```
-</TabItem>
 
+</TabItem>
 
 <TabItem value="tab2">
 
@@ -385,7 +509,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 
 See [Connection Approval](../getting-started/connection-approval.md) for more information.
 
-### Replace NetworkServer.Spawn => NetworkManager.Spawn
+## Replace NetworkServer.Spawn with NetworkManager.Spawn
 
 Replace `NetworkServer.spawn`  with `NetworkManager.spawn` everywhere in your project. 
 
@@ -422,42 +546,22 @@ public class Example : NetworkBehaviour
 ```
 </TabItem>
 
-
 <TabItem value="tab2">
 
 ```csharp
 GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
 go.GetComponent<NetworkObject>().Spawn();
 ```
+
 </TabItem>
 
 </Tabs>
 
 See [Object Spawning](../mlapi-basics/object-spawning.md) for more information.
 
-### Custom Spawn Handlers
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
+## Custom Spawn Handlers
 
 
-</TabItem>
-<TabItem value="tab2">
-
-
-</TabItem>
-
-</Tabs>
-
-### NetworkContextProperties
-
-The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNETs `isLocalPlayer`, `isClient` and `isServer`. In the MLAPI each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNETs ``hasAuthority``.
 
 <Tabs
   className="unique-tabs"
@@ -478,9 +582,9 @@ The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UN
 
 </Tabs>
 
-### Network Proximity Checker/ OnCheckObserver => MLAPI visibility
+## NetworkContextProperties
 
-There is no direct equivalent to the `NetworkPromimityChecker` UNet component in MLAPI. Network visiblilty for clients works similar as in UNET. MLAPI does not have an equivalent to the `ObjectHide` message from UNEt. In MLAPI networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to MLAPI by using `NetworkedObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for MLAPIs visibilty system.
+The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In the MLAPI each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
 
 <Tabs
   className="unique-tabs"
@@ -492,6 +596,28 @@ There is no direct equivalent to the `NetworkPromimityChecker` UNet component in
 
 <TabItem value="tab1">
 
+
+</TabItem>
+<TabItem value="tab2">
+
+
+</TabItem>
+
+</Tabs>
+
+## Network Proximity Checker/ OnCheckObserver with MLAPI visibility
+
+There is no direct equivalent to the `NetworkPromimityChecker` UNet component in MLAPI. Network visiblilty for clients works similar as in UNet. MLAPI does not have an equivalent to the `ObjectHide` message from UNet. In MLAPI networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to MLAPI by using `NetworkedObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for MLAPIs visibilty system.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'UNET Example', value: 'tab1'},
+    {label: 'MLAPI Example', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
 
 ```csharp
 public override bool OnCheckObserver(NetworkConnection conn)
@@ -526,11 +652,11 @@ public bool IsVisibleToPlayer(NetworkObject networkObject, NetworkClient client)
 
 </Tabs>
 
-To learn more about MLAPIs network visiblity check this: TODO link to visibilty page.
+See [Object Visbility](../mlapi-basics/object-visibility.md) to learn more about MLAPIs network visiblity check.
 
-### SceneManagement
+## SceneManagement
 
-In MLAPI scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
+In MLAPI, scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
 
 <Tabs
   className="unique-tabs"
@@ -562,7 +688,7 @@ public void ChangeScene()
 
 </Tabs>
 
-### ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
+## ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
 
 MLAPI currently does not offer a replacement for marking a function with an attribute so that it only
 runs on the server or the client. You can manually return out of the function instead.
@@ -603,10 +729,9 @@ public void MyClientOnlyFunction()
 </Tabs>
 
 
-### SyncEvent
+## SyncEvent
 
-MLAPI does not provide an equivalent for SyncEvent. To port SyncEvent code from UNet to MLAPI send an
-RPC to invoke the event on the other side.
+MLAPI does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to MLAPI send an RPC to invoke the event on the other side.
 
 <Tabs
   className="unique-tabs"
@@ -662,7 +787,8 @@ public class DamageClass : NetworkBehaviour
 
 </Tabs>
 
-### Network Discovery
+## Network Discovery
+
 MLAPI does not provide Network Discovery. The UNet Network Discovery is a standalone component that can be used with any networking solution. You can use the UNet Network Discovery to discover a broadcasting MLAPI host and then connect to it with MLAPI.
 
 import Tabs from '@theme/Tabs';
