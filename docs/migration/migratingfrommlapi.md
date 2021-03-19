@@ -105,6 +105,10 @@ Remove all the folders containing the existing non-package version of MLAPI from
 
 ## 4. **Upgrade your code to the new MLAPI APIs**
 
+:::info
+Upgrading your code is a manual and long process. If you run into difficulties while upgrading please join our [Discord](https://discord.gg/buMxnnPvTb) and we will support you.
+:::
+
 With our latest release we introduced a number of breaking API changes. With the move to Unity Packages, we took this chance to clean up the code base and provide an API that is easier to understand and use. We understand that upgrading to a new version with many breaking changes can be frustrating, and we are sorry for that.
 
 ### Review changes and release notes
