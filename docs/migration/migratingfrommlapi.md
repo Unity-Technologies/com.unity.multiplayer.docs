@@ -17,7 +17,7 @@ The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts
 
 What this means for you is:
 - MLAPI will be easily accessible from the Unity Editor in the Package Manager window.
-- Updating MLAPI in the future will work directly from the package manager.
+- Updating MLAPI in the future will work directly from the Package Manager.
 - You will have full access to the MLAPI source in your project making it easier to debug and inspect MLAPI.
 - Upgrading from the last MLAPI version to the new package version is a bit complicated. We are sorry for that.
 
