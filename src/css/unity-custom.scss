@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6, .text-break {
   background-image: 
     linear-gradient(rgba(0,0,0,0.1),
     rgba(0,0,0,0.65)),
-    url("../../static/img/hero-scifi.jpg") !important;
+    url("../../static/img/hero-boss1.jpg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -150,11 +150,7 @@ h1, h2, h3, h4, h5, h6, .text-break {
   align-items: flex-start !important;
 }
 
-.heroBanner_src-pages- {
-  text-align: left !important;
-}
-
-.heroBanner_2Wl1 {
+.hero-banner {
   text-align: left !important;
 }
 
@@ -162,11 +158,7 @@ h1, h2, h3, h4, h5, h6, .text-break {
   color:rgb(255, 255, 255);
 }
 
-.buttons_src-pages- {
-  justify-content: left !important;
-}
-
-.buttons_2sHG {
+.buttons-pages {
   justify-content: left !important;
 }
 
@@ -183,15 +175,7 @@ h1, h2, h3, h4, h5, h6, .text-break {
   margin-bottom: 10px;
 }
 
-.featureImage_src-pages- {
-  height: 100% !important;
-  width: 100% !important;
-  max-width:100%;
-  max-height:100%;
-  border-radius: 10px 10px 0 0 ;
-}
-
-.featureImage_28zy {
+.featureImage {
   height: 100% !important;
   width: 100% !important;
   max-width:100%;
@@ -203,11 +187,7 @@ h1, h2, h3, h4, h5, h6, .text-break {
   .land-box {
     height: auto;
   }
-  .featureImage_src-pages- {
-    object-fit: cover;
-    border-radius: 10px 10px 0 0 ;
-  }
-  .featureImage_28zy {
+  .featureImage {
     object-fit: cover;
     border-radius: 10px 10px 0 0 ;
   }
@@ -799,6 +779,97 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
   }
 }
 
+.table-columns-plain { 
+  table {
+    table-layout: fixed;
+    //border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    empty-cells: hide;
+    overflow: hidden;
+    border: 0px;
+    tr {
+        background-color: transparent !important;
+    }
+    th {
+        //border: 0px !important;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    th:hover {
+        background-color: #e59700 !important;
+        a {
+            color: white;
+            text-decoration: solid underline white 2px;
+            }
+    }
+    th:nth-child(1) {
+        background-color: #4c78d9;
+        color: white;
+    }
+    th:nth-child(2) {
+        background-color: #5a5959;
+        color: white;
+    }
+    th:nth-child(3) {
+        background-color: #3657b6;
+        color: white;
+    }
+    th:nth-child(4) {
+        background-color: #2a428c;
+        color: white;
+    }
+    th:nth-child(5) {
+        background-color: #16234d;
+        color: white;
+    }
+    th:nth-child(6) {
+        background-color: #0e1a3e;
+        color: white;
+    }
+    th:nth-child(7) {
+        background-color: #081029;
+        color: white;
+    }
+    tbody {
+        background-color: transparent !important;
+    }
+  }
+}
+
+.info-table {
+
+  table {
+    
+    thead {
+        display: none;
+    }
+    tr:nth-child(2n) {
+        background-color: transparent !important;
+    }
+    td:nth-child(1) {
+        background-color: #313233;
+        color: white;
+        }
+  }
+}
+
+.info-plain {
+  img {
+    max-width: 100px;
+  }
+  table { 
+    thead {
+        display: none !important;
+    }
+    tr:nth-child(even) {
+        background-color: transparent !important;
+    }
+  }
+}
+
 // API CSS - DOCFX
 
 .inheritance .level0:before,
@@ -851,6 +922,20 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
     p {
       display:inline;
     }
+}
+
+.inheritance .level6 {
+  margin-left: 6em;
+  p {
+    display:inline;
+  }
+}
+
+.inheritance .level7 {
+  margin-left: 7em;
+  p {
+    display:inline;
+  }
 }
 
 .level0.summary {
@@ -909,7 +994,6 @@ span.languagekeyword{
 }
 
 // FAQ
-// FAQ
 
 #faq h3 {
   border-top: 1px solid #3578e5;
@@ -932,4 +1016,72 @@ span.languagekeyword{
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233578e5' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   padding-right: 5px;
+}
+
+//BUTTON 
+
+a.button1{
+  display:block;
+  padding:0.35em 1.2em;
+  border:0.15em solid #4c78d9;
+  margin:auto;
+  border-radius:.5em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#4c78d9;
+  text-align:center;
+  transition: all 0.2s;
+}
+a.button1:hover{
+  color:#ffffff;
+  background-color:#4c78d9;
+}
+@media all and (max-width:30em){
+a.button1{
+  display:block;
+  margin:0.4em auto;
+}
+}
+
+//ALGOLIA
+html[data-theme='light'] .DocSearch {
+  /* --docsearch-primary-color: var(--ifm-color-primary); */
+  /* --docsearch-text-color: var(--ifm-font-color-base); */
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(94, 100, 112, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-color-secondary);
+  --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-white);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-color-white);
+}
+
+html[data-theme='dark'] .DocSearch {
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(47, 55, 69, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-background-color);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-background-color);
+  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
 }

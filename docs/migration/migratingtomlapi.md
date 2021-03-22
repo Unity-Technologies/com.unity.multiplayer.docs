@@ -40,8 +40,6 @@ See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information
 
 ## Replace NetworkManager 
 
-UNET’s `NetworkManager` is called `NetworkingManager` in the MLAPI and works in a similar way.
-
 :::note
 You cannot sub-class `NetworkingManager`, which was a **recommended** pattern in UNET. 
 :::
@@ -614,13 +612,11 @@ The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UN
 <TabItem value="tab1">
 
 
-</TabItem>
-<TabItem value="tab2">
+## Custom Spawn Handlers
 
+## NetworkContextProperties
 
-</TabItem>
-
-</Tabs>
+The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In the MLAPI each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
 
 ## Network Proximity Checker and OnCheckObserver with MLAPI visibility
 
@@ -743,7 +739,6 @@ public void MyClientOnlyFunction()
 </TabItem>
 
 </Tabs>
-
 
 ## Replace SyncEvent with RPC event
 

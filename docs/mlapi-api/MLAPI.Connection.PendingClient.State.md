@@ -30,7 +30,3 @@ Description
 PendingConnection
 
 Client is in the process of doing the connection handshake
-
-PendingHail
-
-Client is in the process of doing the hail handshake

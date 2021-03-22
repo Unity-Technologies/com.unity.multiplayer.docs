@@ -1,21 +1,29 @@
 ---
 id: about-mlapi
-title: About MLAPI
+title: Getting Started with MLAPI
 ---
 
-MLAPI is a high level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and the MLAPI collaborators. The MLAPI is open source with no attached costs or limitations.
+Unity MLAPI is a high level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and the MLAPI collaborators. MLAPI is open source with no attached costs or limitations, giving you the opportunity to develop features alongside Unity.
 
-The MLAPI is one of the oldest and most actively developed game networking library out there. As a direct result of this, it offers many more features than other libraries. The MLAPI's focus is to make networking simple and let you focus on what matters most for your game.
+<div class="table-columns-plain">
 
-[![GitHub Release](https://img.shields.io/github/release/MidLevel/MLAPI.svg?logo=github)](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/latest)
-[![Github All Releases](https://img.shields.io/github/downloads/MidLevel/MLAPI/total.svg?logo=github&color=informational)](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases)
-[![Forums](https://img.shields.io/badge/unity--forums-multiplayer-blue)](https://forum.unity.com/forums/multiplayer.26/)
-[![Discord](https://img.shields.io/discord/449263083769036810.svg?label=discord&logo=discord&color=informational)](https://discord.gg/FM8SE9E)
+| Unity MLAPI | Previous versions of MLAPI |
+| -- | -- |
+| See this guide to install Unity MLAPI, set up your project, and get started with your first networked game.<br/><br/><a href="../tutorials/helloworldintro" class="button1">First Steps with Unity MLAPI</a> | See this guide to install and use previous versions of MLAPI. These versions will be replaced with Unity MLAPI.<br/><br/><a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi" target="_blank" class="button1">Previous Version Guide</a>  |
+
+</div>
+
+:::note
+Unity MLAPI will be an experimental release, open source, and available soon from Unity. We will post updates on this site, including guides, API references, release notes, and tutorials using Boss Room samples.
+:::
 
 :::unity Content Licenses
 All MLAPI code and documentation is covered by MIT license. See [Licenses](../license.md) for more information. Sample code may include links to GitHub code repositories.
 :::
 
+
+
+<!--
 ## Features
 
 This table compares MLAPI and the deprecated UNET library features.
@@ -60,3 +68,4 @@ This table compares MLAPI and the deprecated UNET library features.
 | P2P | <i class="fp-x"></i> | <i class="fp-x"></i> |
 | Area Of Interest | <i class="fp-check"></i> | <i class="fp-check"></i> |
 </div>
+-->

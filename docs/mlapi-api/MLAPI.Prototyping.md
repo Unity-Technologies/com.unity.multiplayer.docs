@@ -19,7 +19,7 @@ title: MLAPI.Prototyping
 
 ## Classes
 
-### MLAPI.Prototyping.NetworkedAnimator
+### MLAPI.Prototyping.NetworkAnimator
 
 <div class="section">
 
@@ -27,15 +27,15 @@ A prototype component for syncing animations
 
 </div>
 
-### MLAPI.Prototyping.NetworkedNavMeshAgent
+### MLAPI.Prototyping.NetworkNavMeshAgent
 
 <div class="section">
 
-A prototype component for syncing navmeshagents
+A prototype component for syncing NavMeshAgents
 
 </div>
 
-### MLAPI.Prototyping.NetworkedTransform
+### MLAPI.Prototyping.NetworkTransform
 
 <div class="section">
 
@@ -45,7 +45,7 @@ A prototype component for syncing transforms
 
 ## Delegates
 
-### MLAPI.Prototyping.NetworkedTransform.MoveValidationDelegate
+### MLAPI.Prototyping.NetworkTransform.MoveValidationDelegate
 
 <div class="section">
 
