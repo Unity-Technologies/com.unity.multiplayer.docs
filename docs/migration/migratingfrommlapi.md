@@ -52,7 +52,7 @@ https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/co
 After installing the patcher package you are good to go. Follow the following steps to upgrade.
 
 ## 1. **Install the MLAPI Package**
-Follow the [installation guide](../getting-started/installation.md) for installing the package version of MLAPI.
+Follow the [installation guide](installation.md) for installing the package version of MLAPI.
 
 After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
