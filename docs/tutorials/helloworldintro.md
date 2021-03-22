@@ -1,9 +1,8 @@
 ---
 id: helloworldintro
 title: Your First Networked Game "Hello World"
-sidebar_label: Your First Networked Game "Hello World"
 ---
-
+This "Hello World" guide walks you through creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 
 ## Create a new project in Unity
 
@@ -21,22 +20,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
 ## Import MLAPI Package via URL
 
-1. Open the package manager by navigating to Window > Package Manager on Unity’s main menu.
-1. Click ![Add](/img/add.png) in the status bar.
-
-  The following options are displayed:
-
-   - Add package from disk...
-   - Add package from tarball...
-   - Add package from git URL...
-
-1. Select **Add** package from git URL...
-1. Enter the Git URL https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#develop.
-1. Click **Add**.
-   
-    ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
-
-You have now installed MLAPI.
+See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI package and restart Unity.
 
 ## Create the Basic Components
 
