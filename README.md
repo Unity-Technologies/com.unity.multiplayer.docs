@@ -1,6 +1,6 @@
 # Unity Multiplayer Docs
 
-Welcome to the Unity Multiplayer Technology (MTT) Documentation. This site includes MLAPI, Multipie, and other tools and features supporting MTT.
+Welcome to the Unity Multiplayer Technology (MTT) Documentation. This site includes the MLAPI, Unity Transport Package, and other tools and features supporting MTT.
 
 The documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/). 
 
