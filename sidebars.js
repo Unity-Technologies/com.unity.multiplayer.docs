@@ -10,6 +10,10 @@ module.exports = {
       "type": "doc",
       "id": "getting-started/about-mlapi"
     },
+    {
+      "type": "doc",
+      "id": "migration/install"
+    },
   {
     "collapsed": true,
     "type": "category",
@@ -17,7 +21,11 @@ module.exports = {
     "items": [
           {
         "type": "doc",
-        "id": "getting-started/migratingtomlapi"
+        "id": "migration/migratingtomlapi"
+      },
+      {
+        "type": "doc",
+        "id": "migration/migratingfrommlapi"
       },
     ],
   },
