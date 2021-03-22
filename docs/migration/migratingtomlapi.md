@@ -614,11 +614,13 @@ The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UN
 <TabItem value="tab1">
 
 
-## Custom Spawn Handlers
+</TabItem>
+<TabItem value="tab2">
 
-## NetworkContextProperties
 
-The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In the MLAPI each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
+</TabItem>
+
+</Tabs>
 
 ## Network Proximity Checker and OnCheckObserver with MLAPI visibility
 
@@ -742,7 +744,6 @@ public void MyClientOnlyFunction()
 
 </Tabs>
 
-## Replace SyncEvent with RPC event
 
 ## Replace SyncEvent with RPC event
 

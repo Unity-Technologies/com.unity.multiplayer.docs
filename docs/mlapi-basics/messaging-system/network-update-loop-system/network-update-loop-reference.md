@@ -6,7 +6,7 @@ sidebar_label: Network Update Loop Reference
 
 Injecting NetworkUpdateLoop Systems Into PlayerLoop
 
-![Injecting NetworkUpdateLoop Systems Into PlayerLoop](../../../../static/img/injecting-networkupdatesloop.svg)
+![Injecting NetworkUpdateLoop Systems Into PlayerLoop](/img/injecting-networkupdatesloop.svg)
 
 <details>
   <summary>UML Source</summary>
@@ -204,7 +204,7 @@ group PostLateUpdate
         NetworkUpdateLoop <-- INetworkUpdateSystem
     end
     PlayerLoop <-- NetworkUpdateLoop
-end
+ends
 ```
 </details>
 
@@ -382,7 +382,7 @@ public static class NetworkUpdateLoop
 
 ## NetworkUpdateLoop Running INetworkUpdateSystem Updates
 
-![NetworkUpdateLoop Running INetworkUpdateSystem Updates](../../../../static/img/runninginetworkupdatesystemupdates.svg)
+![NetworkUpdateLoop Running INetworkUpdateSystem Updates](/img/runninginetworkupdatesystemupdates.svg)
 
 <details>
   <summary>UML Source</summary>
