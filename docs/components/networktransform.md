@@ -2,7 +2,7 @@
 id: networktransform
 title: NetworkTransform
 ---
-The  position and rotation of a `NetworkObject` is normally only synchronized when that object is spawned. To synchronize position and rotation at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the owner of the network object to all other clients.
+The  position and rotation of a [`NetworkObject`](../mlapi-api/MLAPI.Prototyping.NetworkTransform.md) is normally only synchronized when that object is spawned. To synchronize position and rotation at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the owner of the network object to all other clients.
 
 :::note
 `NetworkTansform` does not sync the scale of the object.
@@ -13,3 +13,11 @@ While `NetworkTransform` works out of the box for simple position synchronizatio
 :::tip
 You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.
 :::
+
+## Extrapolation
+
+When enabled, extrapolation estimates the time between when a tick advances in server-side animation and the update of the frame completes on the client-side. The game object extrapolates the next frame's values based on the ratio. For sequential missing frames, the extrapolation is reduced on a curve. For example: 0 is no extrapolation, .5 is evenly dampened, and 1 full extrapolation (extrapolates until the frame arrives or is destroyed due to disconnection).
+
+## Interpolation
+
+When enabled, indicates the calculated interval between receiving and updating the position between two positions. It smoothes positions through calculations, for example EnableRange allows the position to update and return without causing snapping.
