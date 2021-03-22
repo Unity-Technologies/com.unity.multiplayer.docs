@@ -1,9 +1,9 @@
 ---
 id: cprimitives
-title: C# Primitives 
-sidebar_label: C# Primitives 
+title: C# Primitives
 ---
-C# Primitive  `bool`, `char`, `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, `string` types will be serialized by built-in serialization code.
+
+C# Primitive types will be serialized by built-in serialization code. These types include `bool`, `char`, `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, and `string`.
 
 ```csharp
 [ServerRpc]

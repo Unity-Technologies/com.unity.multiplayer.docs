@@ -1,7 +1,6 @@
 ---
 id: lagandpacketloss
 title: Lag and Packet Loss
-sidebar_label: Lag and Packet Loss
 ---
 A multiplayer game operating over the internet has to deal with several adverse factors that are not present when developing single-player or LAN-only multiplayer games.
 
@@ -73,7 +72,7 @@ Another complication arises from the fact that for any two hosts, the RTT time b
 
 ## Jitter
 
-Jitter The rate at which ping changes over a period of time.  It can affect RTT mitigation and also make packets arrive out of order if it causes  the router to send packets through different routes, which can cause an older packet to arrive prior to a newer packet.
+Jitter is the rate at which ping changes over a period of time.  It can affect RTT mitigation and also make packets arrive out of order if it causes  the router to send packets through different routes, which can cause an older packet to arrive prior to a newer packet.
 
 ## Packet Loss
 

@@ -2,8 +2,7 @@
 id: helloworldintro
 title: Your First Networked Game "Hello World"
 ---
-
-This "Hello World" guide walks you through creating a project, installing the MLAPI pacjage, and creating the basic components for your first networked game.
+This "Hello World" guide walks you through creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 
 ## Create a new project in Unity
 
@@ -62,13 +61,13 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
   We must remove the **Player** object from the scene after we create the prefab.  As we will see shortly, we will configure the library to automatically spawn this prefab for each player that connects.  If we left **Player** in the scene, then when running the game the library would (as desired) spawn a **Player** for each connected player but also Unity - as it does for all scene objects - would place an extra, unwanted **Player** in the scene.  Note, MLAPI can and will track scene objects defined in this way (say for server-controlled elements).
   :::
 
-1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.  You will first need to click the `+` to create a slot, then drag in your prefab.
-1. Select **Default Player Prefab.**
+1. Add Player prefab to `NetworkPrefabs` list inside of `NetworkManager`.
+1. Select **Default Player Prefab**.
 
   ![addingdefaultprefab](/img/default-player-prefab.gif)
 
   :::tip
-  When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect
+  When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect.
   :::
   :::note
    You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab`. Once you have completed the above steps you can clear the error.
@@ -80,6 +79,6 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
   ![firstnetworkgame](/img/firstnetworkgame.gif)
 
-:::note Congrats!!!!
+:::note Congrats!
 Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
 :::

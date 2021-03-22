@@ -40,6 +40,8 @@ See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information
 
 ## Replace NetworkManager 
 
+UNET’s `NetworkManager` is called `NetworkingManager` in the MLAPI and works in a similar way.
+
 :::note
 You cannot sub-class `NetworkingManager`, which was a **recommended** pattern in UNET. 
 :::
@@ -739,6 +741,8 @@ public void MyClientOnlyFunction()
 </TabItem>
 
 </Tabs>
+
+## Replace SyncEvent with RPC event
 
 ## Replace SyncEvent with RPC event
 

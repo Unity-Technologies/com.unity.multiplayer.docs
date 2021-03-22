@@ -117,7 +117,6 @@ Upgrading your code is a manual and long process. If you run into difficulties w
 With our latest release we introduced a number of breaking API changes. With the move to Unity Packages, we took this chance to clean up the code base and provide an API that is easier to understand and use. We understand that upgrading to a new version with many breaking changes can be frustrating, and we are sorry for that.
 
 ### Review changes and release notes
-
 See the [MLAPI Release Notes](../release-notes/index.md) for a list of all new features, refactored name changes, issue fixes, and more.
 
 ### Upgrade RPCs
@@ -130,7 +129,6 @@ We replaced the old `IBitSerializable` interface with a new `INetworkSerializabl
 
 ### SyncVars
 SyncVars no longer exist in MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
-
 
 ## 4.5 Troubleshooting
 
@@ -148,4 +146,3 @@ If this appears whenever you enter playmode or save a scene, close the Unity Edi
 
 ## 5. **Removing the Patcher Package**
 After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.
-
