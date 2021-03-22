@@ -123,7 +123,7 @@ See the [MLAPI Release Notes](../release-notes/multiplayer/release-0-1-0.md) for
 
 ### Upgrade RPCs
 
-The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about RMLAPI Messaging Systems](../advanced-topics/messaging-system.md) and replace your existing RPCs with the new system.
+The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about MLAPI Messaging Systems](../advanced-topics/messaging-system.md) and replace your existing RPCs with the new system.
 
 ### Serialization
 
