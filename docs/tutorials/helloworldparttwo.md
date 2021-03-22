@@ -374,6 +374,6 @@ Make sure **SampleScene** is included in **BuildSettings**.
 
 One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
 
-:::note Congrats!!!!
+:::note Congrats!
 Congratulations you have learnt the basics of a networked game 
 :::

@@ -9,13 +9,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 :::important
-This upgrade guide targets project using the MLAPI version which was installed by the MLAPI installer or by cloning the source code from Github.
+This upgrade guide targets projects using the MLAPI version which was installed by the MLAPI installer or by cloning the source code from Github.
 If your project uses a Package Manager version of MLAPI then this guide is not relevant.
 :::
 
 The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity ecosystem, we are providing it in a Unity package.
 
 What this means for you is:
+
 - MLAPI will be easily accessible from the Unity Editor in the Package Manager window.
 - Updating MLAPI in the future will work directly from the Package Manager.
 - You will have full access to the MLAPI source in your project making it easier to debug and inspect MLAPI.
@@ -48,11 +49,10 @@ To start upgrading, add the upgrade tool to your project by using the **Add pack
 https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher
 ```
 
-
-After installing the patcher package you are good to go. Follow the following steps to upgrade.
+After installing the patcher package you are good to go. Complete the following steps to upgrade.
 
 ## 1. **Install the MLAPI Package**
-Follow the [installation guide](../getting-started/installation.md) for installing the package version of MLAPI.
+Follow the [installation guide](installation.md) for installing the package version of MLAPI.
 
 After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
@@ -118,20 +118,20 @@ Upgrading your code is a manual and long process. If you run into difficulties w
 With our latest release we introduced a number of breaking API changes. With the move to Unity Packages, we took this chance to clean up the code base and provide an API that is easier to understand and use. We understand that upgrading to a new version with many breaking changes can be frustrating, and we are sorry for that.
 
 ### Review changes and release notes
-See the [MLAPI Release Notes](../release-notes/multiplayer/release-0-1-0.md) for a list of all new features, refactored name changes, issue fixes, and more.
+See the [MLAPI Release Notes](../release-notes/index.md) for a list of all new features, refactored name changes, issue fixes, and more.
 
 ### Upgrade RPCs
 
-The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about MLAPI Messaging Systems](../advanced-topics/messaging-system.md) and replace your existing RPCs with the new system.
+The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about RPCs](TODO link?) and replace your existing RPCs with the new system.
 
 ### Serialization
 
-We replaced the old `IBitSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different, see our [docs page]
+We replaced the old `IBitSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [INetworkSerializable and BitSerializer](../advanced-topics/serialization/inetworkserializable-bitserializer.md).
 
 ### SyncVars
 SyncVars no longer exist in MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
 
-:::warning Troubleshooting
+## 4.5 Troubleshooting
 
 #### The type or namespace name 'MLAPI' could not be found
 
@@ -139,12 +139,11 @@ This error will pop up if your project uses Assembly definition (`.asmdef`) file
 
 #### The type or namespace name 'NetworkedBehaviour' could not be found
 
-If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the [release notes](../release-notes/multiplayer/release-0-1-0.md).
+If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the [release notes](../release-notes/index.md).
 
 #### SerializedObjectNotCreatableException: Object at index 0 is null
 
 If this appears whenever you enter playmode or save a scene, close the Unity Editor and open it again and this should be gone.
-:::
 
 ## 5. **Removing the Patcher Package**
 After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.

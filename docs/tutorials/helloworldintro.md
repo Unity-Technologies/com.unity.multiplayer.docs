@@ -83,6 +83,6 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
   ![firstnetworkgame](/img/firstnetworkgame.gif)
 
-:::note Congrats!!!!
+:::note Congrats!
 Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
 :::
