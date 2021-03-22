@@ -24,7 +24,7 @@ Typically you will interact with `NetworkUpdateLoop` for registration and `INetw
 
 After injection, the player loops follows these stages. The player loop executes the `Initialization` stage and that invokes `NetworkUpdateLoop`'s `RunNetworkInitialization` method which iterates over registered `INetworkUpdateSystems` in `m_Initialization_Array` and calls `INetworkUpdateSystem.NetworkUpdate(UpdateStage)` on them.
 
-In all stages, it iterates over a static array and calls the `NetworkUpdate` method over `INetworkUpdateSystem` interface, and the pattern is repeated.
+In all `NetworkUpdateStages`, it iterates over a static array and calls the `NetworkUpdate` method over `INetworkUpdateSystem` interface, and the pattern is repeated.
 
 <Mermaid chart={`
 	graph LR;
