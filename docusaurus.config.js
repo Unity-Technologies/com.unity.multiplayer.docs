@@ -1,5 +1,4 @@
 // Docusaurus v2, see package.json for versions
-//const remarkCustomBlocks = require('remark-custom-blocks');
 module.exports = {
   title: 'Unity Multiplayer Networking',
   tagline: 'Build multiplayer games in Unity',
@@ -15,10 +14,24 @@ module.exports = {
     announcementBar: {
       id: 'prerelease', // Any value that will identify this message.
       content:
-        'This documentation site is in-progress for the forthcoming experimental release of Unity MLAPI. Content and features subject to change.',
+        'This documentation site is in-progress for the forthcoming release of Unity MLAPI. Content and features subject to change.',
       backgroundColor: '#3578e5', // Defaults to `#fff`.
       textColor: '#ffffff', // Defaults to `#000`.
       isCloseable: false, // Defaults to `true`.
+    },
+
+    algolia: {
+      apiKey: 'dd157a25931bf7948bfc08e79fbe2c8c',
+      appId: '42DEOQD6E7',
+      indexName: 'MultiplayerDocs',
+
+      // Optional: for versioned docs
+      //contextualSearch: false,
+
+      // Optional: Algolia search parameters
+      //searchParameters: {},
+
+      //... other Algolia params
     },
 
     colorMode: {
@@ -253,7 +266,7 @@ module.exports = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: false,
+          trailingSlash: true, //do not change, search requires
         },
       },
     ],

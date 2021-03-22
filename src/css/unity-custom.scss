@@ -839,6 +839,37 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
   }
 }
 
+.info-table {
+
+  table {
+    
+    thead {
+        display: none;
+    }
+    tr:nth-child(2n) {
+        background-color: transparent !important;
+    }
+    td:nth-child(1) {
+        background-color: #313233;
+        color: white;
+        }
+  }
+}
+
+.info-plain {
+  img {
+    max-width: 100px;
+  }
+  table { 
+    thead {
+        display: none !important;
+    }
+    tr:nth-child(even) {
+        background-color: transparent !important;
+    }
+  }
+}
+
 // API CSS - DOCFX
 
 .inheritance .level0:before,
@@ -998,4 +1029,45 @@ a.button1{
   display:block;
   margin:0.4em auto;
 }
+}
+
+//ALGOLIA
+html[data-theme='light'] .DocSearch {
+  /* --docsearch-primary-color: var(--ifm-color-primary); */
+  /* --docsearch-text-color: var(--ifm-font-color-base); */
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(94, 100, 112, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-color-secondary);
+  --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-white);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-color-white);
+}
+
+html[data-theme='dark'] .DocSearch {
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(47, 55, 69, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-background-color);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-background-color);
+  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
 }
