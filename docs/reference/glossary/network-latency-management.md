@@ -34,7 +34,7 @@ Extrapolation is an attempt to estimate a future game state. On receipt of a pac
 
 The client will normally assume that a moving object will continue in the same direction. When a new packet is received, the position may be updated.
 
-For MLAPI, extrapolation is used in [`NetworkTransform`](/../../mlapi-api/MLAPI.Prototyping.NetworkTransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. For sequential missing frames, the extrapolation is reduced on a curve. For example: 0 is no extrapolation, .5 is evenly dampened, and 1 full extrapolation (extrapolates until the frame arrives or is destroyed due to disconnection).
+For MLAPI, extrapolation is used in [`NetworkTransform`](../../mlapi-api/MLAPI.Prototyping.NetworkTransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. For sequential missing frames, the extrapolation is reduced on a curve. For example: 0 is no extrapolation, .5 is evenly dampened, and 1 full extrapolation (extrapolates until the frame arrives or is destroyed due to disconnection).
 
 ## Deterministic lockstep
 
