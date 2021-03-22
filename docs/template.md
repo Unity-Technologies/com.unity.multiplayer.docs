@@ -13,11 +13,31 @@ To serve as an example page when styling markdown based Docusaurus sites.
 The doc site requires all file names in lowercase, no spaces, with dashes used as needed. This includes Markdown, images, videos, and downloadable files.
 :::
 
+## Markdown Frontmatter
+
+All Markdown files require some information at the top of every file indicating the title, id, and other attributes as needed.
+
+Copy, paste, and fill out the following in the first lines of your Markdown file:
+
+```markdown
+---
+id: installation
+title: Installation
+---
+```
+
+See the following options for frontmatter fields:
+
+|Frontmatter Fields | Description |
+| -- | -- |
+| `id:` | Used for the navigation. Recommend only using lowercase and dashes.
+| `title:` | Displays as the page name and as the H1. |
+| `description:` | Metadata description for the page for search engines. By default, search engines will pull the first X amount of words from the page as a description.|
+| `sidebar_label:` | Shorter name for the side nav for the page, if the title is very long this can help for viewing and formatting. |
+
 ## Headers
 
 Use hashtags `#` to indicate the heading level. You should not use H1, this is automatically used for the page title when building the site. Link anchors automatically also generate.
-
-# H1 - Create the best documentation
 
 ## H2 - Create the best documentation
 
@@ -118,6 +138,34 @@ Reference-style: ![alt text][logo]
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
 ![img](/img/example-img.png)
+
+### Images for Dark and Light Mode
+
+You can save diagrams, animations, and images for dark and light mode to provide the best look for all users. 
+
+At the bottom of your markdown file, add this code:
+
+```javascript
+import ImageSwitcher from '../../../src/ImageSwitcher.js';
+```
+
+:::note
+Depending on the location of your Markdown file, you may need more or less `../`.
+:::
+
+Save your light image with a background color of white (`#ffffff`) or charcoal (`#18191a`). Save your images to the */static/img* folder and add the image using the following code:
+
+```javascript
+<ImageSwitcher 
+lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+```
+
+For example:
+
+<ImageSwitcher 
+lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
 
 ## Tabs
 
@@ -434,3 +482,4 @@ I can write **Markdown** alongside my _JSX_!
 
 <!-- On page code -->
 import Mermaid from '@theme/Mermaid';
+import ImageSwitcher from '../src/ImageSwitcher.js';
