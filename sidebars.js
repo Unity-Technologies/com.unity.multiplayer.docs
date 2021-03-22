@@ -256,17 +256,33 @@ transport: [
         "type": "doc",
         "id": "transport/samples/jobifiedserverbehavior"
       },
-    ]
+            ]
   },
 ],
-  learn: [
+  learn:
+  [ 
+    { 
+      "type": "doc",
+      "id": "learn/introduction",
+      }, 
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "What are RPCs and when to use them",
+      "items": [  
+        {
+          "type": "doc",
+          "id": "learn/rpcvnetvar",
+        },
+        {
+          "type": "doc",
+          "id": "learn/rpcnetvarexamples",
+        },
+      ],
+    },  
     {
       "type": "doc",
-      "id": "learn/introduction"
-    },
-    {
-      "type": "doc",
-      "id": "learn/faq"
+       "id": "learn/faq"
     },
     {
     "collapsed": true,
