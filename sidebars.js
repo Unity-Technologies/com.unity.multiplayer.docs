@@ -152,6 +152,21 @@ module.exports = {
               },
             ]
           },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Network Update Loop",
+            "items": [
+              {
+                "type": "doc",
+                "id": "advanced-topics/network-update-loop-system/about-network-update-loop"
+              },
+              {
+                "type": "doc",
+                "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
+              },
+            ]
+          },
         ]
       },
       {
