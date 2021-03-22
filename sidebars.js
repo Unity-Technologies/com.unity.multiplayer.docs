@@ -15,11 +15,19 @@ module.exports = {
       "id": "migration/install"
     },
   {
+    "type": "doc",
+    "id": "getting-started/about-mlapi"
+  },
+  {
+    "type": "doc",
+    "id": "migration/install"
+  },
+  {
     "collapsed": true,
     "type": "category",
     "label": "Migrating to MLAPI",
     "items": [
-          {
+      {
         "type": "doc",
         "id": "migration/migratingtomlapi"
       },
