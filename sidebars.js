@@ -140,10 +140,6 @@ module.exports = {
 
               {
                 "type": "doc",
-                "id": "advanced-topics/message-system/backward-compatibility"
-              },
-              {
-                "type": "doc",
                 "id": "advanced-topics/message-system/cross-compatibility"
               },
               {
