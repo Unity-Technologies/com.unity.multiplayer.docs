@@ -27,6 +27,36 @@ NetworkProfiler for profiling network traffic
 
 </div>
 
+### MLAPI.Profiling.PerformanceTickData
+
+<div class="section">
+
+</div>
+
+### MLAPI.Profiling.ProfilerConstants
+
+<div class="section">
+
+</div>
+
+### MLAPI.Profiling.ProfilerIncStat
+
+<div class="section">
+
+</div>
+
+### MLAPI.Profiling.ProfilerStat
+
+<div class="section">
+
+</div>
+
+### MLAPI.Profiling.ProfilerStatManager
+
+<div class="section">
+
+</div>
+
 ### MLAPI.Profiling.ProfilerTick
 
 <div class="section">
@@ -35,11 +65,33 @@ A tick in used for the Profiler
 
 </div>
 
+### MLAPI.Profiling.ProfilingDataStore
+
+<div class="section">
+
+</div>
+
 ### MLAPI.Profiling.TickEvent
 
 <div class="section">
 
 A event that can occur during a Event
+
+</div>
+
+## Structs
+
+### MLAPI.Profiling.Sample
+
+<div class="section">
+
+</div>
+
+## Interfaces
+
+### MLAPI.Profiling.ITransportProfilerData
+
+<div class="section">
 
 </div>
 

@@ -1,6 +1,6 @@
 ---  
-id: MLAPI.Transports.UNET.UnetTransport  
-title: MLAPI.Transports.UNET.UnetTransport  
+id: MLAPI.Transports.UNET.UNetTransport  
+title: MLAPI.Transports.UNET.UNetTransport  
 ---
 
 <div class="markdown level0 summary">
@@ -59,31 +59,50 @@ System.Dynamic.ExpandoObject
 
 </div>
 
+<div classs="implements">
+
+##### Implements
+
+<div>
+
+ITransportProfilerData
+
+</div>
+
+</div>
+
 <div class="inheritedMembers">
 
 ##### Inherited Members
 
 <div>
 
-Transport.OnChannelRegistration
+NetworkTransport.OnChannelRegistration
 
 </div>
 
 <div>
 
-Transport.IsSupported
+NetworkTransport.IsSupported
 
 </div>
 
 <div>
 
-Transport.MLAPI\_CHANNELS
+NetworkTransport.MLAPI\_CHANNELS
 
 </div>
 
 <div>
 
-Transport.OnTransportEvent
+NetworkTransport.OnTransportEvent
+
+</div>
+
+<div>
+
+NetworkTransport.InvokeOnTransportEvent(NetworkEvent, UInt64,
+NetworkChannel, ArraySegment&lt;Byte&gt;, Single)
 
 </div>
 
@@ -755,7 +774,7 @@ Object.ReferenceEquals(Object, Object)
 
 ##### Syntax
 
-    public class UnetTransport : Transport
+    public class UNetTransport : NetworkTransport, ITransportProfilerData
 
 ## Fields
 
@@ -771,13 +790,13 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public List<UnetChannel> Channels
+    public List<UNetChannel> Channels
 
 #### Field Value
 
 | Type                                               | Description |
 |----------------------------------------------------|-------------|
-| System.Collections.Generic.List&lt;UnetChannel&gt; |             |
+| System.Collections.Generic.List&lt;UNetChannel&gt; |             |
 
 ### ConnectAddress
 
@@ -839,6 +858,26 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
+### MaxSentMessageQueueSize
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public int MaxSentMessageQueueSize
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
 ### MessageBufferSize
 
 <div class="markdown level1 summary">
@@ -858,6 +897,26 @@ Object.ReferenceEquals(Object, Object)
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+### MessageSendMode
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public UNetTransport.SendMode MessageSendMode
+
+#### Field Value
+
+| Type                   | Description |
+|------------------------|-------------|
+| UNetTransport.SendMode |             |
 
 ### MLAPIRelayAddress
 
@@ -898,6 +957,26 @@ Object.ReferenceEquals(Object, Object)
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+### ProfilerEnabled
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public static bool ProfilerEnabled
+
+#### Field Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### ServerListenPort
 
@@ -1005,13 +1084,13 @@ Object.ReferenceEquals(Object, Object)
 
 <div>
 
-Transport.ServerClientId
+NetworkTransport.ServerClientId
 
 </div>
 
 ## Methods 
 
-### AddMLAPIChannel(ChannelType, ConnectionConfig)
+### AddMLAPIChannel(NetworkDelivery, ConnectionConfig)
 
 <div class="markdown level1 summary">
 
@@ -1023,13 +1102,13 @@ Transport.ServerClientId
 
 #### Declaration
 
-    public int AddMLAPIChannel(ChannelType type, ConnectionConfig config)
+    public int AddMLAPIChannel(NetworkDelivery type, ConnectionConfig config)
 
 #### Parameters
 
 | Type                                    | Name   | Description |
 |-----------------------------------------|--------|-------------|
-| ChannelType                             | type   |             |
+| NetworkDelivery                         | type   |             |
 | UnityEngine.Networking.ConnectionConfig | config |             |
 
 #### Returns
@@ -1065,6 +1144,20 @@ Transport.ServerClientId
 |--------------|-------------|
 | System.Int32 |             |
 
+### BeginNewTick()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public void BeginNewTick()
+
 ### DisconnectLocalClient()
 
 <div class="markdown level1 summary">
@@ -1083,7 +1176,7 @@ Transport.ServerClientId
 
 <div>
 
-Transport.DisconnectLocalClient()
+NetworkTransport.DisconnectLocalClient()
 
 </div>
 
@@ -1111,7 +1204,7 @@ Transport.DisconnectLocalClient()
 
 <div>
 
-Transport.DisconnectRemoteClient(UInt64)
+NetworkTransport.DisconnectRemoteClient(UInt64)
 
 </div>
 
@@ -1165,7 +1258,7 @@ Transport.DisconnectRemoteClient(UInt64)
 
 <div>
 
-Transport.GetCurrentRtt(UInt64)
+NetworkTransport.GetCurrentRtt(UInt64)
 
 </div>
 
@@ -1197,7 +1290,7 @@ Transport.GetCurrentRtt(UInt64)
 |---------------|-------------|
 | System.UInt64 |             |
 
-### GetUnetConnectionDetails(UInt64, out Byte, out UInt16)
+### GetTransportProfilerData()
 
 <div class="markdown level1 summary">
 
@@ -1209,7 +1302,27 @@ Transport.GetCurrentRtt(UInt64)
 
 #### Declaration
 
-    public void GetUnetConnectionDetails(ulong clientId, out byte hostId, out ushort connectionId)
+    public IReadOnlyDictionary<string, int> GetTransportProfilerData()
+
+#### Returns
+
+| Type                                                   | Description |
+|--------------------------------------------------------|-------------|
+| IReadOnlyDictionary&lt;System.String, System.Int32&gt; |             |
+
+### GetUNetConnectionDetails(UInt64, out Byte, out UInt16)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public void GetUNetConnectionDetails(ulong clientId, out byte hostId, out ushort connectionId)
 
 #### Parameters
 
@@ -1237,11 +1350,11 @@ Transport.GetCurrentRtt(UInt64)
 
 <div>
 
-Transport.Init()
+NetworkTransport.Init()
 
 </div>
 
-### PollEvent(out UInt64, out String, out ArraySegment&lt;Byte&gt;, out Single)
+### LateUpdate()
 
 <div class="markdown level1 summary">
 
@@ -1253,33 +1366,47 @@ Transport.Init()
 
 #### Declaration
 
-    public override NetEventType PollEvent(out ulong clientId, out string channelName, out ArraySegment<byte> payload, out float receiveTime)
+    protected void LateUpdate()
+
+### PollEvent(out UInt64, out NetworkChannel, out ArraySegment&lt;Byte&gt;, out Single)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public override NetworkEvent PollEvent(out ulong clientId, out NetworkChannel networkChannel, out ArraySegment<byte> payload, out float receiveTime)
 
 #### Parameters
 
-| Type                                   | Name        | Description |
-|----------------------------------------|-------------|-------------|
-| System.UInt64                          | clientId    |             |
-| System.String                          | channelName |             |
-| System.ArraySegment&lt;System.Byte&gt; | payload     |             |
-| System.Single                          | receiveTime |             |
+| Type                                   | Name           | Description |
+|----------------------------------------|----------------|-------------|
+| System.UInt64                          | clientId       |             |
+| NetworkChannel                         | networkChannel |             |
+| System.ArraySegment&lt;System.Byte&gt; | payload        |             |
+| System.Single                          | receiveTime    |             |
 
 #### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| NetEventType |             |
+| NetworkEvent |             |
 
 #### Overrides
 
 <div>
 
-Transport.PollEvent(out UInt64, out String, out
+NetworkTransport.PollEvent(out UInt64, out NetworkChannel, out
 ArraySegment&lt;Byte&gt;, out Single)
 
 </div>
 
-### Send(UInt64, ArraySegment&lt;Byte&gt;, String)
+### Send(UInt64, ArraySegment&lt;Byte&gt;, NetworkChannel)
 
 <div class="markdown level1 summary">
 
@@ -1291,23 +1418,43 @@ ArraySegment&lt;Byte&gt;, out Single)
 
 #### Declaration
 
-    public override void Send(ulong clientId, ArraySegment<byte> data, string channelName)
+    public override void Send(ulong clientId, ArraySegment<byte> data, NetworkChannel networkChannel)
 
 #### Parameters
 
-| Type                                   | Name        | Description |
-|----------------------------------------|-------------|-------------|
-| System.UInt64                          | clientId    |             |
-| System.ArraySegment&lt;System.Byte&gt; | data        |             |
-| System.String                          | channelName |             |
+| Type                                   | Name           | Description |
+|----------------------------------------|----------------|-------------|
+| System.UInt64                          | clientId       |             |
+| System.ArraySegment&lt;System.Byte&gt; | data           |             |
+| NetworkChannel                         | networkChannel |             |
 
 #### Overrides
 
 <div>
 
-Transport.Send(UInt64, ArraySegment&lt;Byte&gt;, String)
+NetworkTransport.Send(UInt64, ArraySegment&lt;Byte&gt;, NetworkChannel)
 
 </div>
+
+### SendQueued(UInt64)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public void SendQueued(ulong clientId)
+
+#### Parameters
+
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
 ### Shutdown()
 
@@ -1327,7 +1474,7 @@ Transport.Send(UInt64, ArraySegment&lt;Byte&gt;, String)
 
 <div>
 
-Transport.Shutdown()
+NetworkTransport.Shutdown()
 
 </div>
 
@@ -1355,7 +1502,7 @@ Transport.Shutdown()
 
 <div>
 
-Transport.StartClient()
+NetworkTransport.StartClient()
 
 </div>
 
@@ -1383,6 +1530,14 @@ Transport.StartClient()
 
 <div>
 
-Transport.StartServer()
+NetworkTransport.StartServer()
+
+</div>
+
+### Implements
+
+<div>
+
+ITransportProfilerData
 
 </div>

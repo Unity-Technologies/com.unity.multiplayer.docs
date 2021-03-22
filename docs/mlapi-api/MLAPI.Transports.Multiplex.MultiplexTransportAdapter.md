@@ -67,19 +67,26 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Transport.OnChannelRegistration
+NetworkTransport.OnChannelRegistration
 
 </div>
 
 <div>
 
-Transport.MLAPI\_CHANNELS
+NetworkTransport.MLAPI\_CHANNELS
 
 </div>
 
 <div>
 
-Transport.OnTransportEvent
+NetworkTransport.OnTransportEvent
+
+</div>
+
+<div>
+
+NetworkTransport.InvokeOnTransportEvent(NetworkEvent, UInt64,
+NetworkChannel, ArraySegment&lt;Byte&gt;, Single)
 
 </div>
 
@@ -751,7 +758,7 @@ Object.ReferenceEquals(Object, Object)
 
 ##### Syntax
 
-    public class MultiplexTransportAdapter : Transport
+    public class MultiplexTransportAdapter : NetworkTransport
 
 ## Fields
 
@@ -787,13 +794,13 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public Transport[] Transports
+    public NetworkTransport[] Transports
 
 #### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| Transport\[\] |             |
+| Type                 | Description |
+|----------------------|-------------|
+| NetworkTransport\[\] |             |
 
 ## Properties 
 
@@ -821,7 +828,7 @@ Object.ReferenceEquals(Object, Object)
 
 <div>
 
-Transport.IsSupported
+NetworkTransport.IsSupported
 
 </div>
 
@@ -849,7 +856,7 @@ Transport.IsSupported
 
 <div>
 
-Transport.ServerClientId
+NetworkTransport.ServerClientId
 
 </div>
 
@@ -873,7 +880,7 @@ Transport.ServerClientId
 
 <div>
 
-Transport.DisconnectLocalClient()
+NetworkTransport.DisconnectLocalClient()
 
 </div>
 
@@ -901,7 +908,7 @@ Transport.DisconnectLocalClient()
 
 <div>
 
-Transport.DisconnectRemoteClient(UInt64)
+NetworkTransport.DisconnectRemoteClient(UInt64)
 
 </div>
 
@@ -935,7 +942,7 @@ Transport.DisconnectRemoteClient(UInt64)
 
 <div>
 
-Transport.GetCurrentRtt(UInt64)
+NetworkTransport.GetCurrentRtt(UInt64)
 
 </div>
 
@@ -1027,11 +1034,11 @@ Transport.GetCurrentRtt(UInt64)
 
 <div>
 
-Transport.Init()
+NetworkTransport.Init()
 
 </div>
 
-### PollEvent(out UInt64, out String, out ArraySegment&lt;Byte&gt;, out Single)
+### PollEvent(out UInt64, out NetworkChannel, out ArraySegment&lt;Byte&gt;, out Single)
 
 <div class="markdown level1 summary">
 
@@ -1043,33 +1050,33 @@ Transport.Init()
 
 #### Declaration
 
-    public override NetEventType PollEvent(out ulong clientId, out string channelName, out ArraySegment<byte> payload, out float receiveTime)
+    public override NetworkEvent PollEvent(out ulong clientId, out NetworkChannel networkChannel, out ArraySegment<byte> payload, out float receiveTime)
 
 #### Parameters
 
-| Type                                   | Name        | Description |
-|----------------------------------------|-------------|-------------|
-| System.UInt64                          | clientId    |             |
-| System.String                          | channelName |             |
-| System.ArraySegment&lt;System.Byte&gt; | payload     |             |
-| System.Single                          | receiveTime |             |
+| Type                                   | Name           | Description |
+|----------------------------------------|----------------|-------------|
+| System.UInt64                          | clientId       |             |
+| NetworkChannel                         | networkChannel |             |
+| System.ArraySegment&lt;System.Byte&gt; | payload        |             |
+| System.Single                          | receiveTime    |             |
 
 #### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| NetEventType |             |
+| NetworkEvent |             |
 
 #### Overrides
 
 <div>
 
-Transport.PollEvent(out UInt64, out String, out
+NetworkTransport.PollEvent(out UInt64, out NetworkChannel, out
 ArraySegment&lt;Byte&gt;, out Single)
 
 </div>
 
-### Send(UInt64, ArraySegment&lt;Byte&gt;, String)
+### Send(UInt64, ArraySegment&lt;Byte&gt;, NetworkChannel)
 
 <div class="markdown level1 summary">
 
@@ -1081,21 +1088,21 @@ ArraySegment&lt;Byte&gt;, out Single)
 
 #### Declaration
 
-    public override void Send(ulong clientId, ArraySegment<byte> data, string channelName)
+    public override void Send(ulong clientId, ArraySegment<byte> data, NetworkChannel networkChannel)
 
 #### Parameters
 
-| Type                                   | Name        | Description |
-|----------------------------------------|-------------|-------------|
-| System.UInt64                          | clientId    |             |
-| System.ArraySegment&lt;System.Byte&gt; | data        |             |
-| System.String                          | channelName |             |
+| Type                                   | Name           | Description |
+|----------------------------------------|----------------|-------------|
+| System.UInt64                          | clientId       |             |
+| System.ArraySegment&lt;System.Byte&gt; | data           |             |
+| NetworkChannel                         | networkChannel |             |
 
 #### Overrides
 
 <div>
 
-Transport.Send(UInt64, ArraySegment&lt;Byte&gt;, String)
+NetworkTransport.Send(UInt64, ArraySegment&lt;Byte&gt;, NetworkChannel)
 
 </div>
 
@@ -1117,7 +1124,7 @@ Transport.Send(UInt64, ArraySegment&lt;Byte&gt;, String)
 
 <div>
 
-Transport.Shutdown()
+NetworkTransport.Shutdown()
 
 </div>
 
@@ -1145,7 +1152,7 @@ Transport.Shutdown()
 
 <div>
 
-Transport.StartClient()
+NetworkTransport.StartClient()
 
 </div>
 
@@ -1173,6 +1180,6 @@ Transport.StartClient()
 
 <div>
 
-Transport.StartServer()
+NetworkTransport.StartServer()
 
 </div>

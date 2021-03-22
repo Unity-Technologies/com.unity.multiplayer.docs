@@ -13,31 +13,25 @@ A transport channel used by the MLAPI
 
 </div>
 
-<div class="inheritance">
-
-##### Inheritance
-
-<div class="level0">
-
-System.Dynamic.ExpandoObject
-
-</div>
-
-<div class="level1">
-
-System.Dynamic.ExpandoObject
-
-</div>
-
-</div>
-
 <div class="inheritedMembers">
 
 ##### Inherited Members
 
 <div>
 
-Object.Equals(Object)
+ValueType.Equals(Object)
+
+</div>
+
+<div>
+
+ValueType.GetHashCode()
+
+</div>
+
+<div>
+
+ValueType.ToString()
 
 </div>
 
@@ -49,31 +43,13 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetHashCode()
-
-</div>
-
-<div>
-
 Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
-
-</div>
-
-<div>
-
 Object.ReferenceEquals(Object, Object)
-
-</div>
-
-<div>
-
-Object.ToString()
 
 </div>
 
@@ -86,15 +62,38 @@ Object.ToString()
 ##### Syntax
 
     [Serializable]
-    public class TransportChannel
+    public struct TransportChannel
+
+## Constructors 
+
+### TransportChannel(NetworkChannel, NetworkDelivery)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public TransportChannel(NetworkChannel channel, NetworkDelivery delivery)
+
+#### Parameters
+
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkChannel  | channel  |             |
+| NetworkDelivery | delivery |             |
 
 ## Fields
 
-### Name
+### Channel
 
 <div class="markdown level1 summary">
 
-The name of the channel
+Channel identifier
 
 </div>
 
@@ -104,19 +103,19 @@ The name of the channel
 
 #### Declaration
 
-    public string Name
+    public NetworkChannel Channel
 
 #### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| System.String |             |
+| Type           | Description |
+|----------------|-------------|
+| NetworkChannel |             |
 
-### Type
+### Delivery
 
 <div class="markdown level1 summary">
 
-The type of channel
+Delivery type
 
 </div>
 
@@ -126,10 +125,10 @@ The type of channel
 
 #### Declaration
 
-    public ChannelType Type
+    public NetworkDelivery Delivery
 
 #### Field Value
 
-| Type        | Description |
-|-------------|-------------|
-| ChannelType |             |
+| Type            | Description |
+|-----------------|-------------|
+| NetworkDelivery |             |

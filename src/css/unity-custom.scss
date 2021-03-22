@@ -586,8 +586,13 @@ html[data-theme='dark'] .node polygon {
 }
 
 img {
-  max-width: 600px;
+  max-width: 700px;
 }
+
+.imgwhite {
+  background-color: #ffffff;
+}
+
 //.medium-zoom-image
 
 // FOOTER
@@ -922,6 +927,20 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
     p {
       display:inline;
     }
+}
+
+.inheritance .level6 {
+  margin-left: 6em;
+  p {
+    display:inline;
+  }
+}
+
+.inheritance .level7 {
+  margin-left: 7em;
+  p {
+    display:inline;
+  }
 }
 
 .level0.summary {
