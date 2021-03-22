@@ -1,6 +1,6 @@
 ---
 id: migratingtomlapi
-title: Migrating From UNet to MLAPI
+title: Migrating from UNet to MLAPI
 ---
 
 This guide is intended to provide a step-by-step guide to migrating your project from UNet to MLAPI. Sample code is provided as available. We also recommend reviewing the latest [MLAPI Release Notes](../release-notes/index.md).

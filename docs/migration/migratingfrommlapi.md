@@ -52,7 +52,7 @@ https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/co
 After installing the patcher package you are good to go. Follow the following steps to upgrade.
 
 ## 1. **Install the MLAPI Package**
-Follow the [installation guide](TODO how can I easily link to something telling the user how to install MLApI?) for installing the package version of MLAPI.
+Follow the [installation guide](../getting-started/installation.md) for installing the package version of MLAPI.
 
 After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
@@ -122,7 +122,7 @@ See the [MLAPI Release Notes](../release-notes/multiplayer/release-0-1-0.md) for
 
 ### Upgrade RPCs
 
-The way RPCs are invoked has changed with this version of MLAPI. Please read our new documentation about RPCs and replace your existing RPCs with the new system.
+The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about MLAPI Messaging Systems](../advanced-topics/messaging-system.md) and replace your existing RPCs with the new system.
 
 ### Serialization
 
