@@ -3,31 +3,37 @@ id: migratingtomlapi
 title: Migrating From UNet to MLAPI
 ---
 
-This guide is intended to provide a step-by-step guide to migrating your project from UNet to MLAPI. Sample code is provided as available. We also recommend reviewing the latest [MLAPI Release Notes](../release-notes/index.md).
+Use this step-by-step guide to migrate your project from UNet to MLAPI. Sample code is provided as available. We also recommend reviewing the latest [MLAPI Release Notes](../release-notes/index.md).
 
 :::note
 If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
 :::
 
-## Current Limitations
+## Current limitations
 
-- `CommandAttribute` → `ServerRPCAttribute` and `ClientRPCAttribute` → `ClientRPCAttribute` naming constraints may cause issues (UNet tended to prefix methods with `Cmd` or `Rpc`, MLAPI requires postfix. Means either complicated multi-line regex find/replace, or a ton of manual effort
-- Errors about RPC postfix naming pattern do not show up in IDE. 
-- MLAPI RPCs do not support arrays yet
-- Client & Server have separate representations in UNet. There's a number of callbacks in UNet that don't exist for MLAPI 
-- Prefabs need to be added to the prefab registration list for MLAPI
-- Connection callbacks do not happen in single player / host mode 
-- Matchmaking
+Review the following limitations for upgrade and migrations from previous versions of MLAPI to Unity MLAPI:
 
-## Backup
+- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRPCAttribute` and `ClientRPCAttribute` has been renamed `ClientRPCAttribute`.
+- Errors for RPC postfix naming patterns do not show in your IDE. 
+- MLAPI RPCs do not support arrays yet.
+- Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for MLAPI.
+- Prefabs need to be added to the prefab registration list for MLAPI.
+- Connection callbacks do not happen in single player or host mode.
+- Matchmaking is not available in MLAPI at this time.
 
-It is recommended that you back up your project before proceeding with the migration.
+## Backup your project
+
+It is recommended that you back up your project before proceeding with the migration. For example:
+
+* Create a copy of your entire project folder.
+* Use source control software, like Git. 
 
 ## Install MLAPI and restart Unity
 
 See [Installation](installation.md) for more information.
 
-## Invoking
+## Update Invoking
+
 Invoking in the MLAPI is done by calling the `Invoke` method on the `NetworkBehaviour` instead of calling the method directly like in UNet.
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
@@ -71,12 +77,13 @@ NetworkingManager.Singleton.StartClient();
 
 ## Replace NetworkManagerHUD 
 
-Currently MLAPI offers no replacment for the NetworkMangerHUD. 
+Currently MLAPI offers no replacment for the `NetworkMangerHUD`. 
 
 ## Replace NetworkIdentity with NetworkObject
 
 UNet’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a similar way.
 
+<!--
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -93,11 +100,13 @@ UNet’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a
 </TabItem>
 
 </Tabs>
+-->
 
 ## Replace UNet NetworkTransform with NetworkedTransform
 
-UNet’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and works in a similar way.
+UNet’s `NetworkTransform` is called `NetworkTransform` in the MLAPI and works in a similar way.
 
+<!--
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -114,13 +123,16 @@ UNet’s `NetworkTransform` is called `NetworkedTransform` in the MLAPI and work
 </TabItem>
 
 </Tabs>
+-->
 
-## Replace  UNet NetworkAnimator with NetworkedAnimator
+## Replace UNet NetworkAnimator with NetworkAnimator
 
-Replace `NetworkAnimator` with `NetworkedAnimator` everywhere in your project.
+Replace `NetworkAnimator` with `NetworkAnimator` everywhere in your project.
 
-## Add callback registration in `Awake` or `Init` methods
+## Add callback registration
 
+Add callback registration in `Awake` or `Init` methods.
+<!--
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -133,10 +145,11 @@ Replace `NetworkAnimator` with `NetworkedAnimator` everywhere in your project.
 </TabItem>
 
 </Tabs>
+-->
 
 ## Update NetworkBehaviour
 
-Replace `NetworkBehaviour` with MLAPI `NetworkBehaviour` everywhere in your project.
+Replace UNet `NetworkBehaviour` with MLAPI `NetworkBehaviour` everywhere in your project.
 
 <Tabs
   className="unique-tabs"
@@ -207,10 +220,11 @@ public class MyMLAPIExample : NetworkBehaviour
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
 
-## Replace postfix increment/decrement usages
+## Replace postfix increment and decrement usages
 
 Replace all postfix increment and decrement usages in your project.
 
+<!--
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -227,11 +241,13 @@ Replace all postfix increment and decrement usages in your project.
 </TabItem>
 
 </Tabs>
+-->
 
 ## Update callback method signatures
 
 Callback method signatures use a new format. MLAPI passes `oldvalue` and `newvalue`, where UNet only passed `newvalue`.
 
+<!--
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -248,8 +264,9 @@ Callback method signatures use a new format. MLAPI passes `oldvalue` and `newval
 </TabItem>
 
 </Tabs>
+-->
 
-## NetworkedStart
+## Order for NetworkedStart
 
 In the MLAPI, `RPC`s and `VarChanges` will not be replicated if they are done before the `NetworkedStart` method is called. The `NetworkedStart` method is called when the `NetworkObject` is replicated.
 
@@ -582,7 +599,7 @@ See [Object Spawning](../mlapi-basics/object-spawning.md) for more information.
 
 </Tabs>
 
-## NetworkContextProperties
+## Replace NetworkContextProperties
 
 The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In the MLAPI each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
 
@@ -605,7 +622,7 @@ The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UN
 
 </Tabs>
 
-## Network Proximity Checker/ OnCheckObserver with MLAPI visibility
+## Network Proximity Checker and OnCheckObserver with MLAPI visibility
 
 There is no direct equivalent to the `NetworkPromimityChecker` UNet component in MLAPI. Network visiblilty for clients works similar as in UNet. MLAPI does not have an equivalent to the `ObjectHide` message from UNet. In MLAPI networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to MLAPI by using `NetworkedObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for MLAPIs visibilty system.
 
@@ -654,7 +671,7 @@ public bool IsVisibleToPlayer(NetworkObject networkObject, NetworkClient client)
 
 See [Object Visbility](../mlapi-basics/object-visibility.md) to learn more about MLAPIs network visiblity check.
 
-## SceneManagement
+## Update SceneManagement
 
 In MLAPI, scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
 
@@ -688,10 +705,9 @@ public void ChangeScene()
 
 </Tabs>
 
-## ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
+## Update ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
 
-MLAPI currently does not offer a replacement for marking a function with an attribute so that it only
-runs on the server or the client. You can manually return out of the function instead.
+MLAPI currently does not offer a replacement for marking a function with an attribute so that it only runs on the server or the client. You can manually return out of the function instead.
 
 <Tabs
   className="unique-tabs"
@@ -729,9 +745,9 @@ public void MyClientOnlyFunction()
 </Tabs>
 
 
-## SyncEvent
+## Replace SyncEvent with RPC event
 
-MLAPI does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to MLAPI send an RPC to invoke the event on the other side.
+MLAPI does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to MLAPI, send an RPC to invoke the event on the other side.
 
 <Tabs
   className="unique-tabs"
@@ -790,6 +806,13 @@ public class DamageClass : NetworkBehaviour
 ## Network Discovery
 
 MLAPI does not provide Network Discovery. The UNet Network Discovery is a standalone component that can be used with any networking solution. You can use the UNet Network Discovery to discover a broadcasting MLAPI host and then connect to it with MLAPI.
+
+## See Also
+
+For more information, see the following:
+
+* [MLAPI Release Notes](../release-notes/index.md)
+* [API Reference](../mlapi-api/introduction.md)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
