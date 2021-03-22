@@ -70,11 +70,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
   When you select the **Default Player Prefab** , you are telling the library that when a client connect to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect
   :::
   :::note
-   You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab` Once you have completed the above steps you can clear the error by doing the following:
-   1. Select the Console tab.
-   1. Select Clear.
-   
-    ![Clear Console errors](../../static/img/clearconsoleerrors.gif)
+   You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab`. Once you have completed the above steps you can clear the error.
   :::
 
 1. Create a GameObject->Plane, centered at (0,0,0).
