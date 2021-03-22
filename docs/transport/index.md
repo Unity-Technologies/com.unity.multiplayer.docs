@@ -27,13 +27,3 @@ This version of `com.unity.transport` is compatible with the following versions 
 
 * 2020.1.2 and later
 * All platforms supported by Unity are supported by the transport
-
-## Package contents
-
-The following table shows the package folder contents:
-
-| Location | Description |
-| --- | --- |
-| `Documentation` | Contains manual part of the documentation (script reference is inline using xmldoc). |
-| `Runtime` | Contains the implementation. |
-| `Tests` | Contains all the tests. |

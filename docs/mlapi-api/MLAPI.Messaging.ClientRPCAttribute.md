@@ -1,13 +1,14 @@
 ---  
-id: MLAPI.Messaging.ClientRPCAttribute  
-title: MLAPI.Messaging.ClientRPCAttribute  
+id: MLAPI.Messaging.ClientRpcAttribute  
+title: MLAPI.Messaging.ClientRpcAttribute  
 ---
 
 <div class="markdown level0 summary">
 
-Attribute used on methods to me marked as ClientRPC ClientRPC methods
-can be requested from the server and will execute on a client Remember
-that a host is a server and a client
+Marks a method as ClientRpc.
+
+A ClientRpc marked method will be fired by the server but executed on
+clients.
 
 </div>
 
@@ -60,6 +61,12 @@ System.Runtime.InteropServices.\_Attribute
 <div class="inheritedMembers">
 
 ##### Inherited Members
+
+<div>
+
+RpcAttribute.Delivery
+
+</div>
 
 <div>
 
@@ -347,8 +354,8 @@ Object.ToString()
 
 ##### Syntax
 
-    [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class ClientRPCAttribute : RPCAttribute, _Attribute
+    [AttributeUsage(AttributeTargets.Method)]
+    public class ClientRpcAttribute : RpcAttribute, _Attribute
 
 ### Implements
 

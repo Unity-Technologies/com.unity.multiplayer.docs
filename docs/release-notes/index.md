@@ -10,11 +10,9 @@ This section includes release notes, hotfixes, and updates for all Unity Multipl
 
 Release notes will be available on release day. 
 
-<!--
-| Release | Status | Date |
+| Release | Status | Date | Supported Unity Versions |
 | -- | -- |
-| [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 |
--->
+| [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 | 2019.4 and later |
 
 ## Documentation
 

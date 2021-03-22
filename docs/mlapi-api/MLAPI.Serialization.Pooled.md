@@ -19,53 +19,53 @@ title: MLAPI.Serialization.Pooled
 
 ## Classes
 
-### MLAPI.Serialization.Pooled.BitReaderPool
+### MLAPI.Serialization.Pooled.NetworkBufferPool
 
 <div class="section">
 
-Static class containing PooledBitReaders
+Static class containing PooledNetworkBuffers
 
 </div>
 
-### MLAPI.Serialization.Pooled.BitStreamPool
+### MLAPI.Serialization.Pooled.NetworkReaderPool
 
 <div class="section">
 
-Static class containing PooledBitStreams
+Static class containing PooledNetworkReaders
 
 </div>
 
-### MLAPI.Serialization.Pooled.BitWriterPool
+### MLAPI.Serialization.Pooled.NetworkWriterPool
 
 <div class="section">
 
-Static class containing PooledBitWriters
+Static class containing PooledNetworkWriters
 
 </div>
 
-### MLAPI.Serialization.Pooled.PooledBitReader
+### MLAPI.Serialization.Pooled.PooledNetworkBuffer
 
 <div class="section">
 
-Disposable BitReader that returns the Reader to the BitReaderPool when
+Disposable NetworkBuffer that returns back to the NetworkBufferPool when
 disposed
 
 </div>
 
-### MLAPI.Serialization.Pooled.PooledBitStream
+### MLAPI.Serialization.Pooled.PooledNetworkReader
 
 <div class="section">
 
-Disposable BitStream that returns the Stream to the BitStreamPool when
-disposed
+Disposable NetworkReader that returns the Reader to the
+NetworkReaderPool when disposed
 
 </div>
 
-### MLAPI.Serialization.Pooled.PooledBitWriter
+### MLAPI.Serialization.Pooled.PooledNetworkWriter
 
 <div class="section">
 
-Disposable BitWriter that returns the Writer to the BitWriterPool when
-disposed
+Disposable NetworkWriter that returns the Writer to the
+NetworkWriterPool when disposed
 
 </div>
