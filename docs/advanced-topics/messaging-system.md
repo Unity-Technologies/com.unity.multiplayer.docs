@@ -1,6 +1,6 @@
 ---
 id: messaging-system
-title: About Messaging System
+title: Introduction to the Messaging System 
 ---
 
 The multiplayer framework provides two main network constructs to execute logic on either server-side or client-side: [`ServerRpc`](message-system/serverrpc.md) and [`ClientRpc`](message-system/clientrpc.md). This concept is often called Remote Procedure Call (RPC) and has wide adoption across the industry.
