@@ -147,6 +147,38 @@ module.exports = {
         "id": "troubleshooting/errormessages"
       }
     ]
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Glossary",
+    "items": [
+
+      {
+        "type": "doc",
+        "id": "reference/glossary/high-level-terminology"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-latency-management"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-topologies"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/network-terms"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/prioritization"
+      },
+      {
+        "type": "doc",
+        "id": "reference/glossary/relevancy"
+      },
+    ]
   }
 ],
 transport: [
@@ -235,6 +267,33 @@ transport: [
     {
       "type": "doc",
       "id": "learn/faq"
+    },
+    {
+    "collapsed": true,
+    "type": "category",
+    "label": "Managing Lag with Unity",
+    "items": [
+        {
+        "type": "doc",
+        "id": "learn/lagandpacketloss"
+        },
+    ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Multiplayer Game Architecture",
+      "items": [
+  
+        {
+          "type": "doc",
+          "id": "learn/multiplayergamearhitectureintroduction"
+          },
+          {
+          "type": "doc",
+          "id": "learn/listenserverhostarchitecture"
+          },
+      ]
     },
   ],
   releasenotes: [
