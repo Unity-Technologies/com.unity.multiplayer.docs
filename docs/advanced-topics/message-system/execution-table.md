@@ -1,20 +1,18 @@
 ---
 id: execution-table
-title: Execution Table 
-sidebar_label: Execution Table 
+title: Execution Table
 ---
 
+The following table details the execution of `ServerRPC` and `ClientRpc` functions:
 
-
-||Server	|Client	|Host (Server+Client)|
+| Function | Server | Client | Host (Server+Client) |
 |---|:---:|:---:|:---:|
-|ServerRpc Send	|❌|✅|✅|
-|ServerRpc Execute|✅|❌|✅|
-|ClientRpc Send	|✅|❌|✅|
-|ClientRpc Execute|❌|✅|✅|
+| ServerRpc Send | <i class="fp-x"></i> | <i class="fp-check"></i> | <i class="fp-check"></i> |
+| ServerRpc Execute | <i class="fp-check"></i> | <i class="fp-x"></i> | <i class="fp-check"></i> |
+| ClientRpc Send | <i class="fp-check"></i> | <i class="fp-x"></i> | <i class="fp-check"></i> |
+| ClientRpc Execute | <i class="fp-x"></i> | <i class="fp-check"></i> | <i class="fp-check"></i> |
 
-
-An RPC function **NEVER** executes its body immediately since the function call really is a stand-in for a network transmission. Even a `ServerRpc` called by a host (an instance that is a client and the server at the same time, aka listen-server) will not be executed immediately but instead, follow the regular network frame staging first and queued-up to be executed locally in the next network frame.
+An RPC function **never** executes its body immediately since the function call really is a stand-in for a network transmission. Even a `ServerRpc` called by a host (an instance that is a client and the server at the same time, or listen-server) will not be executed immediately. It will instead follow the regular network frame staging first and queued-up to be executed locally in the next network frame.
 
 Structure of a typical `ServerRpc`:
 

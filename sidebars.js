@@ -15,18 +15,14 @@ module.exports = {
       "id": "migration/install"
     },
   {
-    "type": "doc",
-    "id": "getting-started/about-mlapi"
-  },
-  {
-    "type": "doc",
-    "id": "migration/install"
-  },
-  {
     "collapsed": true,
     "type": "category",
     "label": "Migrating to MLAPI",
     "items": [
+      {
+        "type": "doc",
+        "id": "migration/migratingtomlapi"
+      },
       {
         "type": "doc",
         "id": "migration/migratingtomlapi"
@@ -130,7 +126,7 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "advanced-topics/introduction"
+            "id": "advanced-topics/messaging-system"
           },
           {
             "collapsed": true,
@@ -162,10 +158,6 @@ module.exports = {
                 "id": "advanced-topics/message-system/serialization"
               },
 
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/backward-compatibility"
-              },
               {
                 "type": "doc",
                 "id": "advanced-topics/message-system/cross-compatibility"
@@ -362,23 +354,26 @@ transport: [
     { 
       "type": "doc",
       "id": "learn/introduction",
-      },     
-          {
-              "collapsed": true,
-              "type": "category",
-              "label": "What are RPCs and when to use them",
-              "items": 
-                [  
-                  {
-                  "type": "doc",
-                  "id": "learn/rpcvnetvar",
-                  },
-                  {
-                  "type": "doc",
-                  "id": "learn/rpcnetvarexamples",
-                  },
-                ],
-              },
+      }, 
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "What are RPCs and when to use them",
+      "items": [  
+        {
+          "type": "doc",
+          "id": "learn/rpcvnetvar",
+        },
+        {
+          "type": "doc",
+          "id": "learn/rpcnetvarexamples",
+        },
+      ],
+    },  
+    {
+      "type": "doc",
+       "id": "learn/faq"
+    },
     {
     "collapsed": true,
     "type": "category",
