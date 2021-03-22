@@ -148,11 +148,7 @@ module.exports = {
 
               {
                 "type": "doc",
-                "id": "advanced-topics/message-system/cross-compatibility"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/deprecation-of-return-values"
+                "id": "advanced-topics/message-system/rpc-compatibility"
               },
             ]
           },
@@ -395,10 +391,10 @@ transport: [
       "type": "doc",
       "id": "release-notes/introduction"
     },
-    /*{
+    {
       "type": "doc",
       "id": "release-notes/multiplayer/mlapi-0-1-0"
-    }, */
+    },
     {
       "type": "doc",
       "id": "release-notes/doc-changelog"

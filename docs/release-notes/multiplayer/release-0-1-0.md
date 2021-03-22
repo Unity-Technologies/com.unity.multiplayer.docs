@@ -15,8 +15,8 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 
 This release provides the following new features and APIs:
 
-* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing MLAPI Convenience and Performance RPC (see [here](#removed-features)).
-* Added standarized serialization types, including built-in and custom serialization flows. See [RFC #2](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/master/text/0002-serializable-types.md) for details.
+* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing MLAPI Convenience and Performance RPC (see [here](#removed-features)). For information on compatibility and deprecations, see [RPC Migration and Compatibility](../../advanced-topics/message-system/rpc-compatibility.md).
+* Added standarized serialization types, including built-in and custom serialization flows. See [About Serialization](../../advanced-topics/serialization/serialization-intro.md) for details.
 * `INetworkSerializable` interface replaces `IBitWritable`.
 * Added `NetworkSerializer`..., which is the main aggregator that implements serialization code for built-in supported types and holds `NetworkReader` and `NetworkWriter` instances internally.
 * Added a Network Update Loop infrastructure that aids Netcode systems to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. See [RFC #8](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/master/text/0008-network-update-loop.md) and the following details: <!-- MTT-498 RFC #8 -->
@@ -126,7 +126,7 @@ Review the following known issues with this release:
 
 * `NetworkNavMeshAgent` does not synchronize mesh data, Agent Size, Steering, Obstacle Avoidance, or Path Finding settings. It only synchronizes the destination and velocity, not the path to the destination.
 * For `RPC`, methods with a `ClientRpc` or `ServerRpc` suffix which are not marked with [ServerRpc] or [ClientRpc] will cause a compiler error.
-* For `NetworkAnimator`, Animator Overrides are not supported. Triggers do not work.
+* For `NetworkAnimator`, Animator Overrides are not supported. Mechanism trigger parameters (such as auto resetting tools) do not work.
 * For `NetworkVariable`, the `NetworkDictionary` `List` and `Set` must use the `reliableSequenced` channel.
 * `NetworkObjects`s are supported but when spawning a prefab with nested child network objects you have to manually call spawn on them
 * `NetworkTransform` has the following issues:
