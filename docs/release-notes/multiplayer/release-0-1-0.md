@@ -19,19 +19,19 @@ This release provides the following new features and APIs:
 * Added standarized serialization types, including built-in and custom serialization flows. See [About Serialization](../../advanced-topics/serialization/serialization-intro.md) for details.
 * `INetworkSerializable` interface replaces `IBitWritable`.
 * Added `NetworkSerializer`..., which is the main aggregator that implements serialization code for built-in supported types and holds `NetworkReader` and `NetworkWriter` instances internally.
-* Added a Network Update Loop infrastructure that aids Netcode systems to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. See [RFC #8](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/master/text/0008-network-update-loop.md) and the following details: <!-- MTT-498 RFC #8 -->
-
+* Added a Network Update Loop infrastructure that aids Netcode systems to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. See [Network Update Loop](../../advanced-topics/network-update-loop-system/index.md) and the following details: <!-- MTT-498 RFC #8 -->
   * It uses Unity's [low-level Player Loop API](https://docs.unity3d.com/ScriptReference/LowLevel.PlayerLoop.html) and allows for registering `INetworkUpdateSystem`s with `NetworkUpdate` methods to be executed at specific `NetworkUpdateStage`s, which may also be before or after `MonoBehaviour`-driven game logic execution.
   * You will typically interact with `NetworkUpdateLoop` for registration and `INetworkUpdateSystem` for implementation.
   * `NetworkTickSystem` tracks time through network interactions and syncs `NetworkVariable`s, used in this update loop. <!-- MTT-241, RFC #12-->
-
 <!--IN RFC - MAY COME BACK * Extended `Transport` to expose `NetworkAddress` and `NetworkPort` properties, used to change the address and port which an MLAPI client connects to at runtime or change the port on which a server gets hosted. This change promotes cleaner code and implementations, and makes it more interchangeable in both user code and library extensions.  -->
 * Added message batching to handle consecutive RPC requests sent to the same client. `RpcBatcher` sends batches based on requests from the `RpcQueueProcessing`, by batch size threshold or immediately. <!-- add link to docs -->
 * [GitHub 494](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/494): Added a constraint to allow one `NetworkObject` per `GameObject`, set through the `DisallowMultipleComponent` attribute.
 * Integrated MLAPI with the Unity Profiler for versions 2020.2 and later:
-
   * Added new profiler modules for MLAPI that report important network data.
   * Attached the profiler to a remote player to view network data over the wire.
+  * When installed you will see the following modules in the Unity UI:
+
+    ![](/img/profiler-modules.png)
 
 :::tip
 A test project is available for building and experimenting with MLAPI features. This project is available in the MLAPI GitHub [testproject folder](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/release/0.1.0/testproject). 
@@ -136,11 +136,14 @@ Review the following known issues with this release:
 * Connection Approval is not called on the host client.
 * For `NamedMessages`, always use `NetworkBuffer` as the underlying stream for sending named and unnamed messages.
 * `NetworkManager` have the following issues:
-
   * Connection management is limited. Use `IsServer`, `IsClient`, `IsConnectedClient`, or other code to check if MLAPI connected correctly.
   * Adding a `GameObject` with a `NetworkObject` component as a child to a `GameObject` that is assigned the `NetworkManager` component will cause a soft synchronization error. Avoid assigning `NetworkObject`s to a `GameObject` with the `NetworkManager`.
-<!-- ## Upgrade guide
-Provide steps and information to upgrade to this release version. Provide numbered instructions or bullets as needed, code in blocks using ticket (```).-->
+
+## Upgrade guide
+
+If using UNet, see the [Migrating From UNet to MLAPI](../../migration/migratingtomlapi.md).
+
+If using previous versions of MLAPI, see [Updating to the Unity Package](../../migration/migratingfrommlapi.md).
 
 ## Learn more
 
