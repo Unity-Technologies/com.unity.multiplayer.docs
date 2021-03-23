@@ -31,8 +31,7 @@ Arithmetic helper class
 
 <div class="section">
 
-AutoBitWritable implements INetworkSerializable and automatically
-serializes fields using reflection
+AutoNetworkSerializable implements INetworkSerializable and automatically serializes fields using reflection
 
 </div>
 

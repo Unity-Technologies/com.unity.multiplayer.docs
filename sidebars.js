@@ -203,9 +203,10 @@ module.exports = {
           },  
           { 
             "type": "doc",
-            "id": "advanced-topics/serialization/inetworkserializable-bitserializer"
+            "id": "advanced-topics/serialization/inetworkserializable"
 
           },
+
         ]
         },
       {
@@ -214,7 +215,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/bitwriter-bitreader-networkbuffer"
+        "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
       },
       {
         "type": "doc",
@@ -227,7 +228,12 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      } 
+      }, 
+      { 
+        "type": "doc",
+        "id": "advanced-topics/ways-synchronize"
+
+      },
     ]
   },
   {
