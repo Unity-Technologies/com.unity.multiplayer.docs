@@ -258,6 +258,44 @@ void OnChangeHealth(int oldHealth, int newHealth){
 
 </Tabs>
 
+Replace all postfix increment and decrement usages of SyncVar in your project. MLAPI's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement is not supported.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'UNET Example', value: 'tab1'},
+    {label: 'MLAPI Example', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+```csharp
+
+public int Health = 42;
+
+public void Update(){
+  Health++;
+}
+
+
+```
+
+</TabItem>
+<TabItem value="tab2">
+
+```csharp
+
+public NetworkVariable<int> Health = new NetworkVariable<int>(42);
+
+public void Update(){
+  Health.Value = Health.Value + 1;
+}
+```
+</TabItem>
+
+</Tabs>
+
 See [NetworkVariable](../mlapi-basics/networkvariable.md) for more information.
 
 
