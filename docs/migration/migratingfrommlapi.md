@@ -122,7 +122,7 @@ See the [MLAPI Release Notes](../release-notes/index.md) for a list of all new f
 
 ### Upgrade RPCs
 
-The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about RPCs](TODO link?) and replace your existing RPCs with the new system.
+The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about RPCs](../advanced-topics/messaging-system.md) and replace your existing RPCs with the new system.
 
 ### Serialization
 
