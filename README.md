@@ -13,10 +13,10 @@ See the [Contribution Guide](https://github.com/Unity-Technologies/com.unity.mul
 
 ## Installation
 
-The first time you clone the repo, run the following command to install in the local cloned directory. You only need to run this once.
+The first time you clone the repo, run the following command to install required node modules into the local cloned directory. You only need to run this once.
 
 ```console
-yarn install
+npm install
 ```
 
 ## Building on Local
