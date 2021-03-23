@@ -206,6 +206,7 @@ module.exports = {
             "id": "advanced-topics/serialization/inetworkserializable"
 
           },
+
         ]
         },
       {
@@ -227,7 +228,12 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      } 
+      }, 
+      { 
+        "type": "doc",
+        "id": "advanced-topics/ways-synchronize"
+
+      },
     ]
   },
   {

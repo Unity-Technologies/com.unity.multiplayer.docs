@@ -1,4 +1,4 @@
-`---
+---
 id: ways-synchronize
 title: Ways To Synchronize
 ---
