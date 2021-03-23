@@ -101,12 +101,12 @@ UNet’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a
 
 </Tabs>
 -->
-
+<!--
 ## Replace UNet NetworkTransform with NetworkedTransform
 
 UNet’s `NetworkTransform` is called `NetworkTransform` in the MLAPI and works in a similar way.
 
-<!--
+
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
