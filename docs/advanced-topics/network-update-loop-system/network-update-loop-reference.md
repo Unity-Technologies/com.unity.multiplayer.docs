@@ -3,7 +3,7 @@ id: network-update-loop-reference
 title: Network Update Loop Reference 
 ---
 
-The following diagrams and code provide insight into the Network Update Loop process and APIs.
+The following diagrams provide insight into the Network Update Loop process and APIs.
 
 ## Injecting NetworkUpdateLoop Systems Into PlayerLoop
 
