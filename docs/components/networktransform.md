@@ -16,7 +16,7 @@ You can have multiple `NetworkTransform` components on child objects of your net
 
 ## Extrapolation
 
-When enabled, extrapolation estimates the time between when a tick advances in server-side animation and the update of the frame completes on the client-side. The game object extrapolates the next frame's values based on the ratio. For sequential missing frames, the extrapolation is reduced on a curve. For example: 0 is no extrapolation, .5 is evenly dampened, and 1 full extrapolation (extrapolates until the frame arrives or is destroyed due to disconnection).
+When enabled, extrapolation estimates the time between when a tick advances in server-side animation and the update of the frame completes on the client-side. The game object extrapolates the next frame's values based on the ratio. 
 
 ## Interpolation
 
