@@ -160,11 +160,22 @@ module.exports = {
 
               {
                 "type": "doc",
-                "id": "advanced-topics/message-system/cross-compatibility"
+                "id": "advanced-topics/message-system/rpc-compatibility"
+              },
+            ]
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Network Update Loop",
+            "items": [
+              {
+                "type": "doc",
+                "id": "advanced-topics/network-update-loop-system/about-network-update-loop"
               },
               {
                 "type": "doc",
-                "id": "advanced-topics/message-system/deprecation-of-return-values"
+                "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
               },
             ]
           },
@@ -411,10 +422,10 @@ transport: [
       "type": "doc",
       "id": "release-notes/introduction"
     },
-    /*{
+    {
       "type": "doc",
       "id": "release-notes/multiplayer/mlapi-0-1-0"
-    }, */
+    },
     {
       "type": "doc",
       "id": "release-notes/doc-changelog"

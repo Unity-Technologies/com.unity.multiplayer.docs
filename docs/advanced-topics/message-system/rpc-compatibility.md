@@ -1,9 +1,13 @@
 ---
-id: cross-compatibility
-title: Cross-Compatibility
+id: rpc-compatibility
+title: RPC migration and compatibility
 ---
 
-In this section, we will be focusing on the Standard RPC API's cross-compatibility only, not the framework as a whole. A method marked as RPC will be statically registered with its assembly-scoped method signature hash.
+This section provides information on compatibility and support for Unity MLAPI features compared to previous MLAPI versions. See the [release notes](../../release-notes/index.md) for more information.
+
+## Cross-Compatibility
+
+Learn more about standard RPC API's cross-compatibility only, not the framework as a whole. A method marked as RPC will be statically registered with its assembly-scoped method signature hash.
 
 A typical assembly-scoped method signature sample:
 
@@ -34,3 +38,51 @@ A change in the RPC signature will lead into a different send/receive codepath w
 | Cross-Build Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different builds. |
 | Cross-Version Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different versions. |
 | Cross-Project Compatibility | <i class="fp-x"></i> | Since project name or any project-specific token is not being a part of RPC signature, it is possible to have the exact same RPC method signature defined in different builds and they are not necessarily going to be compatible with each other. |
+
+## Deprecation of return values
+
+MLAPI supports RPC return values on convenience RPCs.
+
+Example:
+
+```csharp
+public IEnumerator MyRpcCoroutine()
+{
+    RpcResponse<float> response = InvokeServerRpc(MyRpcWithReturnValue, Random.Range(0f, 100f), Random.Range(0f, 100f));
+
+    while (!response.IsDone)
+    {
+        yield return null;
+    }
+
+    Debug.LogFormat("The final result was {0}!", response.Value);
+}
+
+[ServerRPC]
+public float MyRpcWithReturnValue(float x, float y)
+{
+    return x * y;
+}
+
+```
+
+To achieve similar functionality, use the following:
+
+```csharp
+void MyRpcInvoker()
+{
+    MyRpcWithReturnValueRequestServerRpc(Random.Range(0f, 100f)), Random.Range(0f, 100f)));
+}
+
+[ServerRpc]
+void MyRpcWithReturnValueRequestServerRpc(float x, float y)
+{
+    MyRpcWithReturnValueResponseClientRpc(x * y);
+}
+
+[ClientRpc]
+void MyRpcWithReturnValueResponseClientRpc(float result)
+{
+    Debug.LogFormat("The final result was {0}!", result);
+}
+```
