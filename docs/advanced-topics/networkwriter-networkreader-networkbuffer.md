@@ -25,9 +25,9 @@ using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
 
 ## Writer and Reader
 
-While the BinaryWriter class built into .NET is great for reading and writing binary data, it's not very compact or efficient and doesn't offer a ton of flexibility. The NetworkWriter and NetworkReader solves this.
+While the `BinaryWriter` class built into .NET is great for reading and writing binary data, it's not very compact or efficient and doesn't offer a ton of flexibility. The `NetworkWriter` and `NetworkReader` solves this.
 
-The NetworkWriter and NetworkReader can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
+The `NetworkWriter` and `NetworkReader` can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
 
 Some of it's key features include the following.
 
@@ -41,11 +41,11 @@ When using the "Diff" versions of an array write or read, the output will be the
 
 ### Unity Types
 
-The NetworkWriter and NetworkReader support many data types by default such as Vector3, Vector2, Ray, Quaternion and more.
+The `NetworkWriter` and `NetworkReader` support many data types by default such as Vector3, Vector2, Ray, Quaternion and more.
 
 ### BitWise Writing
 
-If you for example have an enum with 5 values. All those values could fit into 3 bits. With the NetworkWriter, this can be done like this:
+If you for example have an enum with 5 values. All those values could fit into 3 bits. With the `NetworkWriter`, this can be done like this:
 
 ```csharp
 writer.WriteBits((byte)MyEnum.MyEnumValue, 3);
@@ -54,7 +54,7 @@ MyEnum value = (Myenum)reader.ReadBits(3);
 
 ### Performance consideration
 
-When the stream is not aligned, (BitAligned == false, this occurs when writing bits that do fill the whole byte, or when writing bools as they are written as bits), performance is decreased for each write and read. This is only a big concern if you are about to write a large amount of data after not being aligned. To solve this, the NetworkWriter allows you to "WritePadBits" and the NetworkReader then lets you skip those bits with "SkipPadBits" to align the stream to the nearest byte.
+When the stream is not aligned, (BitAligned == false, this occurs when writing bits that do fill the whole byte, or when writing bools as they are written as bits), performance is decreased for each write and read. This is only a big concern if you are about to write a large amount of data after not being aligned. To solve this, the `NetworkWriter` allows you to "WritePadBits" and the `NetworkReader` then lets you skip those bits with "SkipPadBits" to align the stream to the nearest byte.
 
 ```csharp
 writer.WriteBool(true); //Now the stream is no longer aligned. Every byte has to be offset by 1 bit.
