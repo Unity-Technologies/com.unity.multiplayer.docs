@@ -9,6 +9,8 @@ The documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
 ## Contributing Content
 
+Always cut branches from **master** branch. 
+
 See the [Contribution Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details. A [template file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md) (/docs/template.md) is included in the repo to understand markdown formatting and options.
 
 ## Installation
