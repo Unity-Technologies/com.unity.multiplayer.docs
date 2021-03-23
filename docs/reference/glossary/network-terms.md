@@ -38,6 +38,10 @@ User Datagram Protocol (UDP) uses a simple connectionless communication model wi
 
 UDP is suitable for purposes where error checking and correction are either not necessary or are performed in the application; UDP avoids the overhead of such processing in the protocol stack. Time-sensitive applications often use UDP because dropping packets is preferable to waiting for packets delayed due to retransmission, which may not be an option in a real-time system.
 
+## Reliable User Datagram Protocol (RUDP)
+
+Reliable User Datagram Protocol (RUDP) provides a solution where UDP is too primitive because guaranteed-order packet delivery is desirable, but TCP adds too much complexity and overhead. It provides real-time, reliability and algorithm simplicity of embedded systems, both requirements for RCP and UDP. In order for RUDP to gain higher quality of service, RUDP implements features that are similar to TCP with less overhead.
+
 ## Routing
 
 A data packet travels at a more or less fixed speed, so a player's ping is directly affected by the distance between the player and the server. However, the copper and fiber optic cables do not take a direct path to the data center, so the path, or route, to a data center that's physically farther away could actually end up being shorter than a route a data center that's physically closer to you.
