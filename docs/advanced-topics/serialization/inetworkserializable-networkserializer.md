@@ -32,7 +32,7 @@ struct MyComplexStruct : INetworkSerializable
 
 ```
 
-All types supporting serialization are supported by `NetworkSerializer` with `NetworkSerializer::Serialize(ref int value)` variant methods and templated `NetworkSerializer::Serialize<T>(ref T value) where T : INetSerializable` method.
+All types supporting serialization are supported by `NetworkSerializer` with `NetworkSerializer::Serialize(ref int value)` variant methods and templated `NetworkSerializer::Serialize<T>(ref T value) where T : INetworkSerializable` method.
 
 ```csharp
 
@@ -43,7 +43,7 @@ class NetworkSerializer
     void Serialize(ref int value) { /* ... */ }
     void Serialize(ref float value) { /* ... */ }
     // ...
-    void Serialize<T>(ref T value) where T : INetSerializable { /* ... */ }
+    void Serialize<T>(ref T value) where T : INetworkSerializable { /* ... */ }
 }
 
 interface INetworkSerializable
