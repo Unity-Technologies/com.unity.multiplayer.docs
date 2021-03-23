@@ -5,7 +5,7 @@ title: MLAPI.Exceptions.NotListeningException
 
 <div class="markdown level0 summary">
 
-Exception thrown when the operation require NetworkingManager to be
+Exception thrown when the operation require NetworkManager to be
 listening.
 
 </div>

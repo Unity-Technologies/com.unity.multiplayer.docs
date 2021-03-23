@@ -1,12 +1,11 @@
 ---  
-id: MLAPI.Messaging.RPCAttribute  
-title: MLAPI.Messaging.RPCAttribute  
+id: MLAPI.Messaging.RpcAttribute  
+title: MLAPI.Messaging.RpcAttribute  
 ---
 
 <div class="markdown level0 summary">
 
-Generic supertype of Client and Server RPC Attributes. Do not use
-directly.
+Represents the common base class for Rpc attributes.
 
 </div>
 
@@ -352,7 +351,31 @@ Object.ToString()
 
 ##### Syntax
 
-    public abstract class RPCAttribute : Attribute, _Attribute
+    public abstract class RpcAttribute : Attribute, _Attribute
+
+## Fields
+
+### Delivery
+
+<div class="markdown level1 summary">
+
+Type of RPC delivery method
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public RpcDelivery Delivery
+
+#### Field Value
+
+| Type        | Description |
+|-------------|-------------|
+| RpcDelivery |             |
 
 ### Implements
 
