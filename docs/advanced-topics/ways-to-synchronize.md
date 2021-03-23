@@ -7,7 +7,7 @@ Synchronization can be done in multiple ways in the MLAPI. Each method has a dif
 
 ## Messaging System
 
-For starters, the messaing system can be used. This provides sending any data. The parameters supported include most primitives and any classes and structures that implement the IBitWritable interface. This allows for custom types to be serialized easily. This way, custom types can be sent in RPC's without extra work. For more information, see the Messaging System wiki.
+For starters, the messaing system can be used. This provides sending any data. The parameters supported include most primitives and any classes and structures that implement the INetworkSerializable interface. This allows for custom types to be serialized easily. This way, custom types can be sent in RPC's without extra work. For more information, see the Messaging System wiki.
 
 ## INetworkedVar
 

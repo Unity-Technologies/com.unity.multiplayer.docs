@@ -1,7 +1,7 @@
 ---
-id: bitwriter-bitreader-networkbuffer
-title: BitWriter, BitReader, and NetworkBuffer
-sidebar_label: BitWriter, BitReader, & NetworkBuffer
+id: networkwriter-networkreader-networkbuffer
+title: NetworkWriter, NetworkReader and NetworkBuffer
+sidebar_label: NetworkWriter, NetworkReader, & NetworkBuffer
 ---
 
 Internally, the MLAPI uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in MemoryStreams which don't create any garbage.
@@ -25,9 +25,9 @@ using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
 
 ## Writer and Reader
 
-While the BinaryWriter class built into .NET is great for reading and writing binary data, it's not very compact or efficient and doesn't offer a ton of flexibility. The BitWriter and BitReader solves this.
+While the BinaryWriter class built into .NET is great for reading and writing binary data, it's not very compact or efficient and doesn't offer a ton of flexibility. The NetworkWriter and NetworkReader solves this.
 
-The BitWriter and BitReader can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
+The NetworkWriter and NetworkReader can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
 
 Some of it's key features include the following.
 
@@ -41,11 +41,11 @@ When using the "Diff" versions of an array write or read, the output will be the
 
 ### Unity Types
 
-The BitWriter and BitReader support many data types by default such as Vector3, Vector2, Ray, Quaternion and more.
+The NetworkWriter and NetworkReader support many data types by default such as Vector3, Vector2, Ray, Quaternion and more.
 
 ### BitWise Writing
 
-If you for example have an enum with 5 values. All those values could fit into 3 bits. With the BitWriter, this can be done like this:
+If you for example have an enum with 5 values. All those values could fit into 3 bits. With the NetworkWriter, this can be done like this:
 
 ```csharp
 writer.WriteBits((byte)MyEnum.MyEnumValue, 3);
@@ -54,7 +54,7 @@ MyEnum value = (Myenum)reader.ReadBits(3);
 
 ### Performance consideration
 
-When the stream is not aligned, (BitAligned == false, this occurs when writing bits that do fill the whole byte, or when writing bools as they are written as bits), performance is decreased for each write and read. This is only a big concern if you are about to write a large amount of data after not being aligned. To solve this, the BitWriter allows you to "WritePadBits" and the BitReader then lets you skip those bits with "SkipPadBits" to align the stream to the nearest byte.
+When the stream is not aligned, (BitAligned == false, this occurs when writing bits that do fill the whole byte, or when writing bools as they are written as bits), performance is decreased for each write and read. This is only a big concern if you are about to write a large amount of data after not being aligned. To solve this, the NetworkWriter allows you to "WritePadBits" and the NetworkReader then lets you skip those bits with "SkipPadBits" to align the stream to the nearest byte.
 
 ```csharp
 writer.WriteBool(true); //Now the stream is no longer aligned. Every byte has to be offset by 1 bit.
@@ -67,17 +67,17 @@ reader.SkipPadBits();
 reader.ReadByteArray(myOutputArray, 1024);
 ```
 
-## Pooled BitReader/Writer
+## Pooled NetworkReader/NetworkWriter
 
 The writer and reader also has pooled versions to avoid allocating the classes themselves. You might as well use them.
 
 ```csharp
-using (PooledBitReader reader = PooledBitReader.Get(myStreamToReadFrom))
+using (var reader = PooledNetworkReader.Get(myStreamToReadFrom))
 {
     // Read here
 }
 
-using (PooledBitWriter writer = PooledBitWriter.Get(myStreamToWriteTo))
+using (var writer = PooledNetworkWriter.Get(myStreamToWriteTo))
 {
     // Write here
 }

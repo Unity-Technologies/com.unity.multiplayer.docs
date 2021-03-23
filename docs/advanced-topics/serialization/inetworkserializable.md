@@ -81,23 +81,23 @@ void Update()
 }
 ```
 
-`NetworkSerializer` will both serialize and deserialize fields based on its serialization mode indicated by `IsReading` flag using its internal `BitReader` and `BitWriter` instances.
+`NetworkSerializer` will both serialize and deserialize fields based on its serialization mode indicated by `IsReading` flag using its internal `NetworkReader` and `NetworkWriter` instances.
 
 ```csharp
 class NetworkSerializer
 {
-    BitReader m_Reader;
-    BitWriter m_Writer;
+    NetworkReader m_Reader;
+    NetworkWriter m_Writer;
 
     bool IsReading { get; }
 
-    NetworkSerializer(BitReader reader)
+    NetworkSerializer(NetworkReader reader)
     {
         IsReading = true;
         m_Reader = reader;
     }
 
-    NetworkSerializer(BitWriter writer)
+    NetworkSerializer(NetworkWriter writer)
     {
         IsReading = false;
         m_Writer = writer;

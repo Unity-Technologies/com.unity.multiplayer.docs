@@ -214,7 +214,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/bitwriter-bitreader-networkbuffer"
+        "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
       },
       {
         "type": "doc",
