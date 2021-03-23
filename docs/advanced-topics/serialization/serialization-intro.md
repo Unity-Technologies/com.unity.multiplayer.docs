@@ -11,4 +11,4 @@ See the following sections:
 * [Unity Primitives](unity-primatives.md)
 * [Enum Types](enum-types.md)
 * [Static Arrays](serializationstatic-arrays.md)
-* [INetworkSerializable and BitSerializer](inetworkserializable-bitserializer.md)
+* [INetworkSerializable](inetworkserializable.md)

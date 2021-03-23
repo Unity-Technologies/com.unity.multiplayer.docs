@@ -203,7 +203,7 @@ module.exports = {
           },  
           { 
             "type": "doc",
-            "id": "advanced-topics/serialization/inetworkserializable-networkserializer"
+            "id": "advanced-topics/serialization/inetworkserializable"
 
           },
         ]

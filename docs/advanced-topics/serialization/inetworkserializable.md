@@ -1,7 +1,7 @@
 ---
-id: inetworkserializable-networkserializer
-title: INetworkSerializable & NetworkSerializer
-sidebar_label: INetworkSerializable & NetworkSerializer
+id: inetworkserializable
+title: INetworkSerializable
+sidebar_label: INetworkSerializable
 ---
 
 Complex user-defined types that implements `INetworkSerializable` interface are serialized by user provided serialization code.
