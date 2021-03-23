@@ -3,7 +3,7 @@ id: execution-table
 title: Execution Table
 ---
 
-The following table details the execution of `ServerRPC` and `ClientRpc` functions:
+The following table details the execution of `ServerRpc` and `ClientRpc` functions:
 
 | Function | Server | Client | Host (Server+Client) |
 |---|:---:|:---:|:---:|
