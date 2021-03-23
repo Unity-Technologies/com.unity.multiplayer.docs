@@ -126,7 +126,7 @@ The way RPCs are invoked has changed with this version of MLAPI. Please read our
 
 ### Serialization
 
-We replaced the old `IBitSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [INetworkSerializable and BitSerializer](../advanced-topics/serialization/inetworkserializable-bitserializer.md).
+We replaced the old `INetworkSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md).
 
 ### SyncVars
 SyncVars no longer exist in MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
