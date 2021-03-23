@@ -1,6 +1,6 @@
 ---  
-id: MLAPI.Transports.UnetChannel  
-title: MLAPI.Transports.UnetChannel  
+id: MLAPI.Transports.UNetChannel  
+title: MLAPI.Transports.UNetChannel  
 ---
 
 <div class="markdown level0 summary">
@@ -86,11 +86,11 @@ Object.ToString()
 ##### Syntax
 
     [Serializable]
-    public class UnetChannel
+    public class UNetChannel
 
 ## Fields
 
-### Name
+### Id
 
 <div class="markdown level1 summary">
 
@@ -104,13 +104,13 @@ The name of the channel
 
 #### Declaration
 
-    public string Name
+    public NetworkChannel Id
 
 #### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| System.String |             |
+| Type           | Description |
+|----------------|-------------|
+| NetworkChannel |             |
 
 ### Type
 

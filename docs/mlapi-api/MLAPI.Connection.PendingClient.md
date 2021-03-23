@@ -90,28 +90,6 @@ Object.ToString()
 
 ## Fields
 
-### AesKey
-
-<div class="markdown level1 summary">
-
-The current AesKey
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public byte[] AesKey
-
-#### Field Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.Byte\[\] |             |
-
 ### ClientId
 
 <div class="markdown level1 summary">

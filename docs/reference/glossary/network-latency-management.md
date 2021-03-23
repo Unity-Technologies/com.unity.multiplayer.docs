@@ -20,7 +20,7 @@ The server rewinds time by an appropriate amount in order to determine what the 
 
 When a snapshot from the server arrives, instead of immediately updating the position of an object, the client buffers the state. Snapshot Interpolation is the process of interpolating between the last two received game states to provide a visually smooth representation. 
 
-Over an interpolation interval, the object will be rendered  smoothly  moving between the two positions. 
+Over an interpolation interval, the object will be rendered smoothly moving between the two positions. 
 
 ## Extrapolation
 
@@ -33,6 +33,8 @@ Over an interpolation interval, the object will be rendered  smoothly  moving be
 Extrapolation is an attempt to estimate a future game state. On receipt of a packet from the server, the position of an object is updated to the new position. Awaiting the next update, the next position is extrapolated based on the current position and the movement at the time of the update. 
 
 The client will normally assume that a moving object will continue in the same direction. When a new packet is received, the position may be updated.
+
+For MLAPI, extrapolation is used in [`NetworkTransform`](../../mlapi-api/MLAPI.Prototyping.NetworkTransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
 
 ## Deterministic lockstep
 
