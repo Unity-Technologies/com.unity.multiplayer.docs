@@ -30,7 +30,7 @@ private NetworkVariable<float> myFloat = new NetworkVariable<float>(new NetworkV
 For example:
 
 ```csharp
-private NetworkVariable<float> myFloat = new NetworkVariablekedVar<float>(5.0f);
+private NetworkVariable<float> myFloat = new NetworkVariable<float>(5.0f);
 
 void MyUpdate()
 {
