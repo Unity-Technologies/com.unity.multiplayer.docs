@@ -12,13 +12,13 @@ Reliability configuration can be specified for both `ServerRpc` and `ClientRpc` 
 [ServerRpc]
 void MyReliableServerRpc() { /* ... */ }
 
-[ServerRpc(IsReliable = false)]
+[ServerRpc(Delivery = RpcDelivery.Unreliable)]
 void MyUnreliableServerRpc() { /* ... */ }
 
 [ClientRpc]
 void MyReliableClientRpc() { /* ... */ }
 
-[ClientRpc(IsReliable = false)]
+[ClientRpc(Delivery = RpcDelivery.Unreliable)]
 void MyUnreliableClientRpc() { /* ... */ }
 ```
 
