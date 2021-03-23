@@ -1,7 +1,7 @@
 ---
-id: inetworkserializable-bitserializer
-title: INetworkSerializable & BitSerializer
-sidebar_label: INetworkSerializable & BitSerializer
+id: inetworkserializable-networkserializer
+title: INetworkSerializable & NetworkSerializer
+sidebar_label: INetworkSerializable & NetworkSerializer
 ---
 
 Complex user-defined types that implements `INetworkSerializable` interface are serialized by user provided serialization code.
@@ -9,11 +9,11 @@ Complex user-defined types that implements `INetworkSerializable` interface are 
 ```csharp
 interface INetworkSerializable
 {
-    void NetworkSerialize(BitSerializer serializer);
+    void NetworkSerialize(NetworkSerializer serializer);
 }
 
 ```
-An instance of `BitSerializer` is passed into the `INetworkSerializable::NetworkSerialize(BitSerializer)` method which is used to easily serialize fields by reference.
+An instance of `NetworkSerializer` is passed into the `INetworkSerializable::NetworkSerialize(NetworkSerializer)` method which is used to easily serialize fields by reference.
 
 ```csharp
 struct MyComplexStruct : INetworkSerializable
@@ -22,7 +22,7 @@ struct MyComplexStruct : INetworkSerializable
     public Quaternion Rotation;
 
     // INetworkSerializable
-    public NetworkSerialize(BitSerializer serializer)
+    public NetworkSerialize(NetworkSerializer serializer)
     {
         serializer.Serialize(ref Position);
         serializer.Serialize(ref Rotation);
@@ -32,11 +32,11 @@ struct MyComplexStruct : INetworkSerializable
 
 ```
 
-All types supporting serialization are supported by `BitSerializer` with `BitSerializer::Serialize(ref int value)` variant methods and templated `BitSerializer::Serialize<T>(ref T value) where T : INetSerializable` method.
+All types supporting serialization are supported by `NetworkSerializer` with `NetworkSerializer::Serialize(ref int value)` variant methods and templated `NetworkSerializer::Serialize<T>(ref T value) where T : INetSerializable` method.
 
 ```csharp
 
-class BitSerializer
+class NetworkSerializer
 {
     bool IsReading { get; }
 
@@ -48,7 +48,7 @@ class BitSerializer
 
 interface INetworkSerializable
 {
-    void NetworkSerialize(BitSerializer serializer);
+    void NetworkSerialize(NetworkSerializer serializer);
 }
 
 struct MyComplexStruct : INetworkSerializable
@@ -57,7 +57,7 @@ struct MyComplexStruct : INetworkSerializable
     public Quaternion Rotation;
 
     // INetworkSerializable
-    public NetworkSerialize(BitSerializer serializer)
+    public NetworkSerialize(NetworkSerializer serializer)
     {
         serializer.Serialize(ref Position);
         serializer.Serialize(ref Rotation);
@@ -82,23 +82,23 @@ void Update()
 }
 ```
 
-`BitSerializer` will both serialize and deserialize fields based on its serialization mode indicated by `IsReading` flag using its internal `BitReader` and `BitWriter` instances.
+`NetworkSerializer` will both serialize and deserialize fields based on its serialization mode indicated by `IsReading` flag using its internal `BitReader` and `BitWriter` instances.
 
 ```csharp
-class BitSerializer
+class NetworkSerializer
 {
     BitReader m_Reader;
     BitWriter m_Writer;
 
     bool IsReading { get; }
 
-    BitSerializer(BitReader reader)
+    NetworkSerializer(BitReader reader)
     {
         IsReading = true;
         m_Reader = reader;
     }
 
-    BitSerializer(BitWriter writer)
+    NetworkSerializer(BitWriter writer)
     {
         IsReading = false;
         m_Writer = writer;
@@ -134,7 +134,7 @@ public struct MyCustomStruct : INetworkSerializable
 {
     public int[] Array;
 
-    public void NetworkSerialize(BitSerializer serializer)
+    public void NetworkSerialize(NetworkSerializer serializer)
     {
         // Length
         int length = 0;
@@ -173,7 +173,7 @@ public struct MyCustomStruct : INetworkSerializable
 - Serialize value from Array[n] element into the stream
 
 
-The `BitSerializer.IsReading` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream.
+The `NetworkSerializer.IsReading` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream.
 
 
 ### Example: Move
@@ -189,7 +189,7 @@ public struct MyMoveStruct : INetworkSerializable
     public Vector3 LinearVelocity;
     public Vector3 AngularVelocity;
 
-    public void NetworkSerialize(BitSerializer serializer)
+    public void NetworkSerialize(NetworkSerializer serializer)
     {
         // Position & Rotation
         serializer.Serialize(ref Position);
@@ -224,7 +224,7 @@ public struct MyMoveStruct : INetworkSerializable
   -  Serialize `LinearVelocity` into the stream
   -  Serialize `AngularVelocity` into the stream
 
-Unlike the [Array](#example-array) example above, in this example we do not use `BitSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.
+Unlike the [Array](#example-array) example above, in this example we do not use `NetworkSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.
 
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.
@@ -242,7 +242,7 @@ public struct MyStructA : INetworkSerializable
     public Vector3 Position;
     public Quaternion Rotation;
 
-    public void NetworkSerialize(BitSerializer serializer)
+    public void NetworkSerialize(NetworkSerializer serializer)
     {
         serializer.Serialize(ref Position);
         serializer.Serialize(ref Rotation);
@@ -255,7 +255,7 @@ public struct MyStructB : INetworkSerializable
     public string SomeText;
     public MyStructA StructA;
     
-    public void NetworkSerialize(BitSerializer serializer)
+    public void NetworkSerialize(NetworkSerializer serializer)
     {
         serializer.Serialize(ref SomeNumber);
         serializer.Serialize(ref SomeText);
@@ -264,9 +264,9 @@ public struct MyStructB : INetworkSerializable
 }
 ```
 
-If we were to serialize `MyStructA` alone, it would serialize `Position` and `Rotation` into the stream using `BitSerializer`.
+If we were to serialize `MyStructA` alone, it would serialize `Position` and `Rotation` into the stream using `NetworkSerializer`.
 
-However, if we were to serialize `MyStructB`, it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA` by calling `MyStructA`'s `void NetworkSerialize(BitSerializer)` method, which serializes `Position` and `Rotation` into the same stream.
+However, if we were to serialize `MyStructB`, it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA` by calling `MyStructA`'s `void NetworkSerialize(NetworkSerializer)` method, which serializes `Position` and `Rotation` into the same stream.
 
 :::note
 Technically, there is no hard-limit on how many `INetworkSerializable` fields you can serialize down the tree hierachy. In practice, consider memory and bandwidth boundaries for best performance.
