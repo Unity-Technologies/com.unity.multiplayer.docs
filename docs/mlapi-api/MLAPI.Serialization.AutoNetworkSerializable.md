@@ -5,7 +5,7 @@ title: MLAPI.Serialization.AutoNetworkSerializable
 
 <div class="markdown level0 summary">
 
-AutoBitWritable implements INetworkSerializable and automatically
+AutoNetworkSerializable implements INetworkSerializable and automatically
 serializes fields using reflection
 
 </div>
