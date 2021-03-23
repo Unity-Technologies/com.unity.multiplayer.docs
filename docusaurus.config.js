@@ -14,10 +14,10 @@ module.exports = {
     announcementBar: {
       id: 'prerelease', // Any value that will identify this message.
       content:
-        'This documentation site is in-progress for the forthcoming release of Unity MLAPI. Content and features subject to change.',
+        '⭐️ If you like our documentation, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/Unity-Technologies/com.unity.multiplayer.docs">GitHub</a> and <a target="_blank" rel="noopener noreferrer" href="https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki">contribute</a>! ⭐️',
       backgroundColor: '#3578e5', // Defaults to `#fff`.
       textColor: '#ffffff', // Defaults to `#000`.
-      isCloseable: false, // Defaults to `true`.
+      isCloseable: true, // Defaults to `true`.
     },
 
     algolia: {
@@ -131,7 +131,7 @@ module.exports = {
             },
             { 
               label: 'Discord',
-              href: 'http://discord.mlapi.network/',
+              href: 'https://discord.gg/buMxnnPvTb',
             },
             {
               label: 'Unity Multiplayer Forum',
@@ -211,7 +211,7 @@ module.exports = {
             },
             {
               label: 'Discord',
-              href: 'http://discord.mlapi.network/',
+              href: 'https://discord.gg/buMxnnPvTb',
             },
           ],
         },
