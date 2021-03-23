@@ -13,15 +13,9 @@ Unity MLAPI is a high level networking library built for the Unity game engine t
 
 </div>
 
-:::note
-Unity MLAPI will be an experimental release, open source, and available soon from Unity. We will post updates on this site, including guides, API references, release notes, and tutorials using Boss Room samples.
-:::
-
 :::unity Content Licenses
 All MLAPI code and documentation is covered by MIT license. See [Licenses](../license.md) for more information. Sample code may include links to GitHub code repositories.
 :::
-
-
 
 <!--
 ## Features
