@@ -26,7 +26,8 @@
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-iframe": "^1.8.0"
+    "react-iframe": "^1.8.0",
+    "ssri": "^8.0.1"
   },
   "browserslist": {
     "production": [
