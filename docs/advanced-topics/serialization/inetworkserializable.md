@@ -22,7 +22,7 @@ struct MyComplexStruct : INetworkSerializable
     public Quaternion Rotation;
 
     // INetworkSerializable
-    public NetworkSerialize(NetworkSerializer serializer)
+    public void NetworkSerialize(NetworkSerializer serializer)
     {
         serializer.Serialize(ref Position);
         serializer.Serialize(ref Rotation);
@@ -56,7 +56,7 @@ struct MyComplexStruct : INetworkSerializable
     public Quaternion Rotation;
 
     // INetworkSerializable
-    public NetworkSerialize(NetworkSerializer serializer)
+    public void NetworkSerialize(NetworkSerializer serializer)
     {
         serializer.Serialize(ref Position);
         serializer.Serialize(ref Rotation);
