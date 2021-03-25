@@ -7,10 +7,10 @@ Multiple methods are available to install the MLAPI package.
 
 To install MLAPI, use the Unity Package Manager passing a git URL to the MLAPI release:
 
-1. Install Git if you dont have it on your PC.
+1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC.
 
-2. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-2. Click ![Add](/img/add.png) in the status bar.
+1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
+1. Click ![Add](/img/add.png) in the status bar.
 
   You have the following options:
 
@@ -18,8 +18,8 @@ To install MLAPI, use the Unity Package Manager passing a git URL to the MLAPI r
    - Add package from tarball...
    - Add package from git URL...
 
-3. Select **Add package from git URL...**
-3. Enter the Git URL to the MLAPI release package. For example, for version 0.1.0, use this link:
+1. Select **Add package from git URL...**
+1. Enter the Git URL to the MLAPI release package. For example, for version 0.1.0, use this link:
 
   ```html
   https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#0.1.0
@@ -28,7 +28,7 @@ To install MLAPI, use the Unity Package Manager passing a git URL to the MLAPI r
 We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
 :::
 
-4. Click **Add**.
+1. Click **Add**.
 
    The following example walks through the Package Manager. Provide the correct release branch URL.
     ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
