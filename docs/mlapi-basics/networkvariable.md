@@ -53,4 +53,4 @@ If you want values to be synced only once (at spawn), the built-in containers se
 ### Serialization
 Since the `NetworkVariable` class is a generic, editor serialization is NOT supported, it's only avalible through editor scripts for viewing the values. To get proper serialization a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. Ex: `NetworkVariableInt` where you replace all the usages of T with int.
 
-The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariable<TYPE>` where `<TYPE>` is the type.
+The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariable<T>` where `T` is the type.
