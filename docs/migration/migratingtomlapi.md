@@ -11,7 +11,7 @@ If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buM
 
 ## Current limitations
 
-Review the following limitations for upgrade and migrations from previous versions of MLAPI to Unity MLAPI:
+Review the following limitations for upgrade and migrations from previous versions of UNet to Unity MLAPI:
 
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
 - Errors for RPC postfix naming patterns do not show in your IDE. 
