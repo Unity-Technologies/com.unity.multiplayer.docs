@@ -9,6 +9,11 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'unity', // Usually your GitHub org/user name.
     projectName: 'docusaurus', // Usually your repo name.
+    scripts: [{
+        src: 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', 
+        async: true,
+        'data-domain-script': '6e91be4c-3145-4ea2-aa64-89d716064836'
+    }],
     themeConfig: {
   
       announcementBar: {
@@ -142,6 +147,8 @@ module.exports = {
         ],
       },
       prism: {
+        theme: require('prism-react-renderer/themes/vsLight'),
+        darkTheme: require('prism-react-renderer/themes/vsDark'),
         additionalLanguages: ['csharp', 'powershell', 'java', 'markdown'],
       },
       footer: {
