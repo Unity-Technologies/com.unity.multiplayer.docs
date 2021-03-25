@@ -121,11 +121,11 @@ See the [MLAPI Release Notes](../release-notes/index.md) for a list of all new f
 
 ### Upgrade RPCs
 
-The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about RPCs](TODO link?) and replace your existing RPCs with the new system.
+The way RPCs are invoked has changed with this version of MLAPI. Please read our new [documentation about RPCs](../advanced-topics/messaging-system.md) and replace your existing RPCs with the new system.
 
 ### Serialization
 
-We replaced the old `IBitSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [INetworkSerializable and BitSerializer](../advanced-topics/serialization/inetworkserializable-bitserializer.md).
+We replaced the old `INetworkSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md).
 
 ### SyncVars
 SyncVars no longer exist in MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).

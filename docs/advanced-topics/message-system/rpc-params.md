@@ -32,13 +32,13 @@ struct ServerRpcParams
 }
 
 
-// Both ServerRPC methods below are fine, `ServerRpcParams` is completely optional
+// Both ServerRpc methods below are fine, `ServerRpcParams` is completely optional
 
 [ServerRpc]
 void AbcdServerRpc(int somenumber) { /* ... */ }
 
 [ServerRpc]
-void XyzwServerRpc(int somenumber, ServerRpcParams rpcParams = default) { /* ... */ }
+void XyzwServerRpc(int somenumber, ServerRpcParams serverRpcParams = default) { /* ... */ }
 ```
 
 ## ClientRpc Params
@@ -63,11 +63,15 @@ struct ClientRpcParams
 }
 
 
-// Both ClientRPC methods below are fine, `ClientRpcParams` is completely optional
+// Both ClientRpc methods below are fine, `ClientRpcParams` is completely optional
 
 [ClientRpc]
 void AbcdClientRpc(int framekey) { /* ... */ }
 
 [ClientRpc]
-void XyzwClientRpc(int framekey, ClientRpcParams rpcParams = default) { /* ... */ }
+void XyzwClientRpc(int framekey, ClientRpcParams clientRpcParams = default) { /* ... */ }
 ```
+
+:::tip
+`ClientRpcSendParams`'s `TargetClientIds` property is a `ulong[]` which means everytime you try to specify a subset of target clients or even a single client target, you will have to allocate a `new ulong[]`. This pattern could quickly lead into lots of heap allocations and pressure GC which would cause GC spikes at runtime. We suggest developers to cache their `ulong[]` variables or use an array pool to cycle `ulong[]` instances so that it would cause less heap allocations.
+:::
