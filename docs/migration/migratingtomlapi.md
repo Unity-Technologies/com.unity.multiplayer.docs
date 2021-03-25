@@ -150,7 +150,7 @@ public class MyMLAPIExample : NetworkBehaviour
         InvokeClientRpcOnEveryone(ExampleClientRpc, 10f);
         InvokeServerRpc(ExampleServerRpc, 10f);
     }
-    [ServerRPC]
+    [ServerRpc]
     public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
