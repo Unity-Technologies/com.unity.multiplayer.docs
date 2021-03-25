@@ -13,7 +13,7 @@ If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buM
 
 Review the following limitations for upgrade and migrations from previous versions of MLAPI to Unity MLAPI:
 
-- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRPCAttribute` and `ClientRPCAttribute` has been renamed `ClientRPCAttribute`.
+- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRPCAttribute` and `ClientRPCAttribute`.
 - Errors for RPC postfix naming patterns do not show in your IDE. 
 - MLAPI RPCs do not support arrays yet.
 - Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for MLAPI.
