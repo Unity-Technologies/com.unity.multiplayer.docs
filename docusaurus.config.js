@@ -285,6 +285,7 @@ module.exports = {
       }],
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
-        '@saucelabs/theme-github-codeblock'
+        '@saucelabs/theme-github-codeblock',
+        'react-iframe'
     ],
   };
