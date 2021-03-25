@@ -147,16 +147,16 @@ public class MyMLAPIExample : NetworkBehaviour
     public NetworkVariable<float> MyNetworkVariable = new NetworkVariable<float>();
     public override void NetworkStart()
     {
-        InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
-        InvokeServerRpc(ServerRpcExample, 10f);
+        InvokeClientRpcOnEveryone(ExampleClientRpc, 10f);
+        InvokeServerRpc(ExampleServerRpc, 10f);
     }
     [ServerRPC]
-    public void ServerRpcExample(float x)
+    public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
     }
     [ClientRPC]
-    public void ClientRpcExample(float x)
+    public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
     }
@@ -397,7 +397,7 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the MLAPI wh
 
 
 :::note
-In MLAPI RPC function names must end with a `Client/ServerRpc` suffix.
+In MLAPI RPC function names must end with a `ClientRpc/ServerRpc` suffix.
 :::
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
