@@ -147,8 +147,8 @@ public class MyMLAPIExample : NetworkBehaviour
     public NetworkVariable<float> MyNetworkVariable = new NetworkVariable<float>();
     public override void NetworkStart()
     {
-        InvokeClientRpcOnEveryone(ExampleClientRpc, 10f);
-        InvokeServerRpc(ExampleServerRpc, 10f);
+        ExampleClientRpc(10f);
+        ExampleServerRpc(10f);
     }
     [ServerRpc]
     public void ExampleServerRpc(float x)
