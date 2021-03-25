@@ -155,7 +155,7 @@ public class MyMLAPIExample : NetworkBehaviour
     {
         Debug.Log(“Runs on server”);
     }
-    [ClientRPC]
+    [ClientRpc]
     public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
