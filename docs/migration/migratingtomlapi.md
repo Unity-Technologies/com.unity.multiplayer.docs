@@ -13,7 +13,7 @@ If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buM
 
 Review the following limitations for upgrade and migrations from previous versions of MLAPI to Unity MLAPI:
 
-- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRPCAttribute` and `ClientRPCAttribute` has been renamed `ClientRPCAttribute`.
+- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
 - Errors for RPC postfix naming patterns do not show in your IDE. 
 - MLAPI RPCs do not support arrays yet.
 - Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for MLAPI.
@@ -147,16 +147,16 @@ public class MyMLAPIExample : NetworkBehaviour
     public NetworkVariable<float> MyNetworkVariable = new NetworkVariable<float>();
     public override void NetworkStart()
     {
-        InvokeClientRpcOnEveryone(ClientRpcExample, 10f);
-        InvokeServerRpc(ServerRpcExample, 10f);
+        ExampleClientRpc(10f);
+        ExampleServerRpc(10f);
     }
-    [ServerRPC]
-    public void ServerRpcExample(float x)
+    [ServerRpc]
+    public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
     }
-    [ClientRPC]
-    public void ClientRpcExample(float x)
+    [ClientRpc]
+    public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
     }
@@ -397,7 +397,7 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the MLAPI wh
 
 
 :::note
-In MLAPI RPC function names must end with a `Client/ServerRpc` suffix.
+In MLAPI RPC function names must end with a `ClientRpc/ServerRpc` suffix.
 :::
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.

@@ -16,7 +16,7 @@ See the [Contribution Guide](https://github.com/Unity-Technologies/com.unity.mul
 
 ## Tools Used
 
-Our site uses Docusaurus with Yarn commands. Always use Yarn commands, to update, build, and serve the server locally. If you need a preview without building locally, the Unity Doc Team can get you a preview!****
+Our site uses Docusaurus with Yarn commands. Always use Yarn commands, to update, build, and serve the server locally. If you need a preview without building locally, the Unity Doc Team can get you a preview!
 
 ## Installation
 
