@@ -26,6 +26,11 @@
   --ifm-h5-font-size: 0.875rem;
   --ifm-h6-font-size: 0.85rem;
   --ifm-font-family-headings: Roboto, 'Segoe UI';
+  --doc-sidebar-width: 260px !important;
+}
+
+.menu__link {
+  font-size: 90%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -520,10 +525,6 @@ html[data-theme='light'] .admonition-unity {
     font-size: 1rem !important;
   }
 
-  img {
-    max-width: 350px !important;
-  }
-
   .margin-vert--xl {
     margin-bottom: 2rem !important;
     margin-top: 2rem !important;
@@ -585,10 +586,6 @@ html[data-theme='dark'] .node polygon {
   opacity: .8 !important;
 }
 
-img {
-  max-width: 700px;
-}
-
 .imgwhite {
   background-color: #ffffff;
 }
@@ -635,7 +632,14 @@ img {
   text-align: right;
 }
 
-/* CUSTOM BLOCKS */
+/* TABLES */
+
+table {
+  img {
+    max-width: 150px !important;
+    height: auto !important;
+  }
+}
 
 .table-rows { 
   table {
@@ -1089,4 +1093,17 @@ html[data-theme='dark'] .DocSearch {
     var(--ifm-color-emphasis-200) 0%,
     var(--ifm-color-emphasis-100) 100%
   );
+}
+
+// TOP NAV RESPONSIVE
+
+@media (max-width: 1011px) {
+  .navbar__toggle {
+    display: inherit
+}
+
+.navbar__item {
+    display: none
+}
+
 }
