@@ -7,6 +7,8 @@ Multiple methods are available to install the MLAPI package.
 
 To install MLAPI, use the Unity Package Manager passing a git URL to the MLAPI release:
 
+1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC.
+
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar.
 
