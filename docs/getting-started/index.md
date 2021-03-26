@@ -20,7 +20,7 @@ All MLAPI code and documentation is covered by MIT license. See [Licenses](../li
 
 :::important Legacy Docs
 
-For those Looking for the MLAPi Documetation pre 0.1.0 Unity release.
+For those looking for the MLAPi Documetation pre 0.1.0 Unity release.
 
 
  <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/custom-serialization.md" target="_blank" class="button1">MLAPI pre-0.1.0 release documentation </a>   
