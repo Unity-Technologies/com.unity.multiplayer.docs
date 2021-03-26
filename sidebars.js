@@ -372,6 +372,10 @@ transport: [
       "type": "doc",
       "id": "learn/introduction",
       }, 
+      {
+        "type": "doc",
+         "id": "learn/dapper-video"
+      },
     {
       "collapsed": true,
       "type": "category",
@@ -386,10 +390,6 @@ transport: [
           "id": "learn/rpcnetvarexamples",
         },
       ],
-    },  
-    {
-      "type": "doc",
-       "id": "learn/faq"
     },
     {
     "collapsed": true,
@@ -421,7 +421,7 @@ transport: [
     {
       "type": "doc",
        "id": "learn/faq"
-      },
+    },
   ],
   releasenotes: [
     {
