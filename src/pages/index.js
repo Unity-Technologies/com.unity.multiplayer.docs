@@ -77,7 +77,7 @@ function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="This site provides Unity Multiplayer documentation, references, and sample code tutorials.">
-      <header className={clsx('hero hero--primary hero-banner')}>
+      <header className="hero hero--primary hero-banner">
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
@@ -106,6 +106,27 @@ function Home() {
           </section>
         )}
       </main>
+      <div className="hero blog--primary hero-banner">
+      <div className="container">
+      <div className="row">
+        
+        <div className="col col--6">
+          <h1 className="blog-title">Get the latest news!</h1>
+          <p className="blog-subtitle">New releases, tips and tricks, contribution news, and much more...see the blog! Every month we highlight releases, new content, and community news. </p>
+          <div className="buttons-pages">
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('blog')}>
+              See the Blog
+            </Link>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
     </Layout>
   );
 }
