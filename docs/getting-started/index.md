@@ -9,13 +9,25 @@ Unity MLAPI is a high level networking library built for the Unity game engine t
 
 | Unity MLAPI | Previous versions of MLAPI |
 | -- | -- |
-| See this guide to install Unity MLAPI, set up your project, and get started with your first networked game.<br/><br/><a href="../tutorials/helloworldintro" class="button1">First Steps with Unity MLAPI</a> | See this guide to install and use previous versions of MLAPI. These versions will be replaced with Unity MLAPI.<br/><br/><a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi" target="_blank" class="button1">Previous Version Guide</a> If looking  mlapi  pre-0.1.0 release documentation see <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/custom-serialization.md" target="_blank" class="button1">Previous Version Documentation</a>    |
-
+| See this guide to install Unity MLAPI, set up your project, and get started with your first networked game.<br/><br/><a href="../tutorials/helloworldintro" class="button1">First Steps with Unity MLAPI</a> | See this guide to install and use previous versions of MLAPI. These versions will be replaced with Unity MLAPI.<br/><br/><a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi" target="_blank" class="button1">Previous Version Guide</a> |
 </div>
+
+
 
 :::unity Content Licenses
 All MLAPI code and documentation is covered by MIT license. See [Licenses](../license.md) for more information. Sample code may include links to GitHub code repositories.
 :::
+
+:::important Legacy Docs
+
+For those Looking for the MLAPi Documetation pre 0.1.0 Unity release.
+
+
+ <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/custom-serialization.md" target="_blank" class="button1">MLAPI pre-0.1.0 release documentation </a>   
+
+:::
+
+
 
 <!--
 ## Features
