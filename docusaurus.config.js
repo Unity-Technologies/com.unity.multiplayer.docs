@@ -10,12 +10,14 @@ module.exports = {
     organizationName: 'unity', // Usually your GitHub org/user name.
     projectName: 'docusaurus', // Usually your repo name.
     scripts: [{
+      //OneTrust Cookie required by Unity web team
         src: 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', 
         async: true,
         'data-domain-script': '6e91be4c-3145-4ea2-aa64-89d716064836'
     }],
     themeConfig: {
-  
+      //button on sidebar
+      hideableSidebar: true,
       announcementBar: {
         id: 'prerelease', // Any value that will identify this message.
         content:
@@ -24,7 +26,6 @@ module.exports = {
         textColor: '#ffffff', // Defaults to `#000`.
         isCloseable: true, // Defaults to `true`.
       },
-  
       algolia: {
         apiKey: 'dd157a25931bf7948bfc08e79fbe2c8c',
         appId: '42DEOQD6E7',
@@ -60,7 +61,7 @@ module.exports = {
         }
       },
       navbar: {
-        title: 'Unity Multiplayer Networking Documentation',
+        title: 'Unity Multiplayer Networking',
         logo: {
           alt: 'Unity',
           src: 'img/logo.png',
@@ -100,7 +101,7 @@ module.exports = {
             label: 'Release Notes',
             position: 'left',
           },
-          {to: 'blog', label: 'Blog', position: 'right'},
+          
           { 
             className: 'navbar-github-link',
             position: 'right',
@@ -130,6 +131,7 @@ module.exports = {
             //label: 'Community',
             className: 'navbar-grid-menu',
             items: [
+              {to: 'blog', label: 'Blog', position: 'right'},
               {
                 label: 'Product Roadmap',
                 href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
@@ -266,9 +268,17 @@ module.exports = {
               }
             },
           },
+          blog: {
+            postsPerPage: 3,
+            feedOptions: {
+              type: 'all',
+              copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+              },
+            blogSidebarCount: 'ALL',
+            blogSidebarTitle: 'All our posts',
+          },
           theme: {
             customCss: require.resolve('./src/css/unity-custom.scss'),
-            
           },
           sitemap: {
             changefreq: 'weekly',
