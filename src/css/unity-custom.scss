@@ -151,12 +151,31 @@ h1, h2, h3, h4, h5, h6, .text-break {
   background-position: center center;
 }
 
+.blog--primary {
+  --ifm-hero-text-color: rgb(255, 255, 255) !important;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.3),
+    rgba(0,0,0,0.75)),
+    url("../../static/img/hero-blog.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .hero {
   align-items: flex-start !important;
 }
 
 .hero-banner {
   text-align: left !important;
+}
+
+.blog-title {
+  font-size: 2rem;
+}
+
+.blog-subtitle {
+  font-size: 1rem;
 }
 
 .button.button--secondary.button--outline:not(.button--active):not(:hover) {
@@ -444,10 +463,10 @@ html[data-theme='light'] .admonition-unity {
     color: #fff !important;
   }
   .button--secondary {
-    --ifm-button-border-color: #80aaef;
+    --ifm-button-border-color: #fff;
   }
   .button.button--secondary {
-    color: #fff;
+    color: #000;
   }
   .button--secondary:not(.button--outline) {
   --ifm-button-background-color: #3578e5;
