@@ -378,23 +378,32 @@ Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
-## Inline HTML
+## Embed Files
 
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
+We support embedding using the [react-iframe](https://github.com/svenanders/react-iframe) plugin. You can use this feature for YouTube videos, Google Slides and Docs, and much more.
 
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
+Add the following code once in the Markdown file:
 
-## Line Breaks
+```javascript
+import Iframe from 'react-iframe'
+```
 
-Here's a line for us to start with.
+### Embedding Youtube
 
-This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
+To embed a YouTube, use the following code with a YouTube link:
 
-This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
+```html title="YouTube Embed"
+<Iframe url="YOUTUBE LINK HERE"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        />
+```
 
 ## Admonitions
 
