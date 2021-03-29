@@ -269,7 +269,7 @@ Write bits to stream.
 
 <div class="markdown level1 summary">
 
-Write s certain amount of bits to the stream.
+Write a certain amount of bits to the stream.
 
 </div>
 
