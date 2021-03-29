@@ -148,7 +148,7 @@ void OnGUI()
 You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
 :::
 
-13. Create a new script `HelloWorldPlayer`.
+8. Create a new script `HelloWorldPlayer`.
 
 1. Open the `HelloWorldPlayer.cs` script.
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
@@ -207,7 +207,7 @@ namespace HelloWorld
     }
 }
 ```
-16. Select the Player Prefab.
+11. Select the Player Prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
 ![Create a Helloworldplayer script](/img/helloworldcreateplayerscript.gif) 
 
