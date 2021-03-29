@@ -38,7 +38,7 @@ Invoking in the MLAPI is done by calling the `Invoke` method on the `NetworkBeha
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
 
-## Replace NetworkManager 
+##  NetworkManager 
 
 UNET’s `NetworkManager` is also called `NetworkManager` in the MLAPI and works in a similar way.
 
@@ -46,34 +46,6 @@ UNET’s `NetworkManager` is also called `NetworkManager` in the MLAPI and works
 You cannot inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET. 
 :::
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-
-```csharp
-NetworkManager.Singleton.StartServer();      //or
-NetworkManager.Singleton.StartHost();        //or
-NetworkManager.Singleton.StartClient();
-```
-
-</TabItem>
-<TabItem value="tab2">
-
-```csharp
-NetworkingManager.Singleton.StartServer();      //or
-NetworkingManager.Singleton.StartHost();        //or
-NetworkingManager.Singleton.StartClient();
-```
-
-</TabItem>
-
-</Tabs>
 
 ## Replace NetworkManagerHUD 
 
