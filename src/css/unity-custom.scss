@@ -26,6 +26,11 @@
   --ifm-h5-font-size: 0.875rem;
   --ifm-h6-font-size: 0.85rem;
   --ifm-font-family-headings: Roboto, 'Segoe UI';
+  --doc-sidebar-width: 260px !important;
+}
+
+.menu__link {
+  font-size: 90%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -146,12 +151,31 @@ h1, h2, h3, h4, h5, h6, .text-break {
   background-position: center center;
 }
 
+.blog--primary {
+  --ifm-hero-text-color: rgb(255, 255, 255) !important;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.3),
+    rgba(0,0,0,0.75)),
+    url("../../static/img/hero-blog.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .hero {
   align-items: flex-start !important;
 }
 
 .hero-banner {
   text-align: left !important;
+}
+
+.blog-title {
+  font-size: 2rem;
+}
+
+.blog-subtitle {
+  font-size: 1rem;
 }
 
 .button.button--secondary.button--outline:not(.button--active):not(:hover) {
@@ -439,10 +463,10 @@ html[data-theme='light'] .admonition-unity {
     color: #fff !important;
   }
   .button--secondary {
-    --ifm-button-border-color: #80aaef;
+    --ifm-button-border-color: #fff;
   }
   .button.button--secondary {
-    color: #fff;
+    color: #000;
   }
   .button--secondary:not(.button--outline) {
   --ifm-button-background-color: #3578e5;
@@ -520,10 +544,6 @@ html[data-theme='light'] .admonition-unity {
     font-size: 1rem !important;
   }
 
-  img {
-    max-width: 350px !important;
-  }
-
   .margin-vert--xl {
     margin-bottom: 2rem !important;
     margin-top: 2rem !important;
@@ -585,10 +605,6 @@ html[data-theme='dark'] .node polygon {
   opacity: .8 !important;
 }
 
-img {
-  max-width: 700px;
-}
-
 .imgwhite {
   background-color: #ffffff;
 }
@@ -635,7 +651,14 @@ img {
   text-align: right;
 }
 
-/* CUSTOM BLOCKS */
+/* TABLES */
+
+table {
+  img {
+    max-width: 150px !important;
+    height: auto !important;
+  }
+}
 
 .table-rows { 
   table {
@@ -1089,6 +1112,18 @@ html[data-theme='dark'] .DocSearch {
     var(--ifm-color-emphasis-200) 0%,
     var(--ifm-color-emphasis-100) 100%
   );
+}
+
+// TOP NAV RESPONSIVE
+
+@media (max-width: 1011px) {
+  .navbar__toggle {
+    display: inherit
+  }
+
+.navbar__item {
+    display: none
+  }
 }
 
 // VIDEO
