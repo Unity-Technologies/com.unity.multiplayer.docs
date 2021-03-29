@@ -1114,6 +1114,18 @@ html[data-theme='dark'] .DocSearch {
   );
 }
 
+// TOP NAV RESPONSIVE
+
+@media (max-width: 1011px) {
+  .navbar__toggle {
+    display: inherit
+  }
+
+.navbar__item {
+    display: none
+  }
+}
+
 // VIDEO
 
 .video-container {
