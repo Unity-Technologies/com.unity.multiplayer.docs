@@ -4,11 +4,11 @@ title: Unity Multiplayer Release Notes
 sidebar_label: Release Notes
 ---
 
-This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes the  MLAPI SDK, tools, sample coop code, and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
+This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes Unity MLAPI, tools, samples co-op code (Boss Room), and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
 
-## MLAPI SDK
+## MUnity MLAPI
 
-Release notes will be available on release day. 
+See the following release notes for Unity MLAPI.
 
 | Release | Status | Date | Supported Unity Versions |
 | -- | -- |
@@ -21,6 +21,18 @@ For Unity experimental releases:
 * Expect no SLA on timeline to ship patches and fixes to releases, as we are still establishing our test and release cadence.
 * Expect these releases to move towards a fuller Release.
 * Expect us to answer questions for early adopters on [Discord](https://discord.gg/buMxnnPvTb) and [Forums](https://forum.unity.com/forums/multiplayer.26/). We welcome all feedback and issues logged! 
+:::
+
+## Multiplayer Samples Co-op
+
+See the following packages including sample project, code, and assets for Boss Room.
+
+| Release | Status | Date | Supported Unity Versions |
+| -- | -- |
+| [v0.1.0](samples/release-0-1-0.md) | Experimental | April 7, 2021 | 2019.4 and later |
+
+:::important
+Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
 :::
 
 ## Documentation
