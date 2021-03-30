@@ -388,6 +388,17 @@ transport: [
       ],
     },
     {
+      "collapsed": true,
+      "type": "category",
+      "label": "Learn with Boss Room",
+      "items": [
+          {
+          "type": "doc",
+          "id": "learn/bossroom"
+          },
+      ]
+      },
+    {
     "collapsed": true,
     "type": "category",
     "label": "Managing Lag with Unity",
