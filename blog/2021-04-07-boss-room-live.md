@@ -11,11 +11,13 @@ You [saved the date](https://unity.com/demos/small-scale-coop-sample), and now B
 
 The new Unity Multiplayer Samples Co-op release provides a Boss Room small-scale cooperative game sample project. It gives you a sample project with all project files and assets to run a multiplayer game for up to 8 characters to defeat enemies and a boss. It is built on top of the new experimental netcode library – designed to be used in its entirety to help you explore the concepts and patterns behind a multiplayer game flow.
 
+![Boss Room](/img/blog/boss-room.png)
+
 To support this release, we provide getting started, tutorials, release notes, and more!
 
 * [Multiplayer Samples Co-op Release Notes](/docs/release-notes/samples/samples-0-1-0)
 * [Getting started with Boss Room]
 
-The  GitHub repository is also public. https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop
+Visit and ⭐️ the Unity Multiplayer Samples Co-op [GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) to watch for updates, provide feedback, and contribute to the project.
 
 If you have questions and want to connect, join us on [Discord](https://discord.gg/buMxnnPvTb). We have channels for announcements, support, development, and co-op samples.
