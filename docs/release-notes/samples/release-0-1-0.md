@@ -8,7 +8,7 @@ The Multiplayer Samples Co-op v0.1.0 release provides new sample code, project f
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Multiplayer Samples Co-op | 0.1.0 |  | April 7, 2021 | 2020LTS |
+| Multiplayer Samples Co-op | 0.1.0 | Early Release | April 7, 2021 | 2020LTS |
 
 :::important
 Multiplayer Samples Co-op always requires the latest version of [Unity MLAPI](../index.md).
