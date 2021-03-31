@@ -28,7 +28,7 @@ This Unity Multiplayer Networking tutorial will teach you all about the new offi
 
 This Unity Multiplayer tutorial will teach you how to implement connection approval so that clients have to send the correct password to be able to connect to the server.
 
-<Iframe url="https://www.youtube.com/watch?v=Pe2LVZGTK20"
+<Iframe url="https://www.youtube.com/embed/Pe2LVZGTK20"
         width="854px"
         height="480px"
         id="myId"
