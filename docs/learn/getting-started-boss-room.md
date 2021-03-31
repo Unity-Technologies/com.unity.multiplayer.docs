@@ -113,7 +113,7 @@ Running the game over internet currently requires setting up a Photon Transport 
 
 Photon Transport uses Photon relay server to facilitate communication between clients and server living on different networks.
 
-:::unity Photon-Realtime Setup Guide
+:::unity Learn More
 [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Documentation/Photon-Realtime/Readme.md)
 :::
 
