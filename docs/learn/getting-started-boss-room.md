@@ -73,7 +73,7 @@ In order to see the multiplayer functionality in action we can either run multip
 ---------------
 ### Local multiplayer setup
 
-#### Build an Excutable.
+#### Build an Executable.
 
 1. Click File.
 2. Click Build Settings.
