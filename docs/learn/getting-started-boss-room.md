@@ -6,21 +6,21 @@ title: Getting Started with BossRoom
 
 
 ![Banner](../../static/img/banner.png)
-# BossRoom - co-op multiplayer RPG built with Unity MLAPI
+# BossRoom - Multiplayer Samples Co-op built with Unity MLAPI
 
 
 :::important
 This project is currently experimental.
 :::
 
-BossRoom is a fully functional co-op multiplayer RPG made in Unity and MLAPI. It is built to serve as an educational sample that showcases certain typical gameplay patterns that are frequently featured in similar games.
+BossRoom is a fully functional Multiplayer Samples Co-op made in Unity and MLAPI. It is built to serve as an educational sample that showcases certain typical gameplay patterns that are frequently featured in similar games.
 
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
 ## To get the project
  - A release version can be downloaded from the [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page. 
  - Unzip the archive file.
- - You are now ready to Add the project to Unity Hub.
+ - You are now ready to add the project to Unity Hub.
 
 :::important Compatability
 - The MLAPI supports all major Unity platforms. To use the WebGL platform a custom WebGL transport based on web sockets is needed.
@@ -29,9 +29,10 @@ The intention is that you can use everything in this project as a starting point
 :::
 
 ## To add the project with Unity Hub
-1. Open Unty Hub
-1. Click **Add** 
+1. Open Unity Hub.
+1. Click **Add**..
 1. Select the root folder of the downloaded project.
+
 :::note
 The first time you open the project Unity will import all assets, which will take longer than usual - it is normal.
 :::
@@ -40,8 +41,8 @@ The first time you open the project Unity will import all assets, which will tak
 
 
 Once the editor is ready, 
-1. navigate to the _Project_ window 
-1. open the _Project/Startup_ scene.
+1. Navigate to the _Project_ window 
+1. Open the _Project/Startup_ scene.
 1. Click  **Play**
 
 
@@ -54,11 +55,12 @@ Once the editor is ready,
 In order to see the multiplayer functionality in action we can either run multiple instances of the game locally on our computer or choose to connect to a friend over the internet.
 
 ---------------
-### Local multiplayer setup**
+### Local multiplayer setup
 
-First we would need a built executable.
+#### Build an Excutable.
 
-To make a build in the menu bar press _File/Build Settings_ and then press **Build**.
+Click  _File/Build Settings_ 
+Click **Build**.
 ![](../../static/img/buildproject.png)
 
 After the build has completed you can launch several instances of the built executable to be able to both host and join a game.
@@ -66,6 +68,7 @@ After the build has completed you can launch several instances of the built exec
 :::important Mac Users
 To run multiple instances of the same app, you need to use the command line.
 > Run `open -n BossRoom.app`
+:::
 
 
 
