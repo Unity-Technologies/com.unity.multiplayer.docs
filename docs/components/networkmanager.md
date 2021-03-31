@@ -27,8 +27,8 @@ When Starting a Client, the `NetworkManager` uses the IP and the Port provided i
 You can use different transports and have to replace the type inside the following `GetComponent< >` accordingly, but for UNET transport it looks like this:
 
 ```csharp
-NetworkManager.Singleton.GetComponent<UnetTransport>().ConnectAddress = "127.0.0.1"; //takes string
-NetworkManager.Singleton.GetComponent<UnetTransport>().ConnectPort = 12345;          //takes integer
+NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "127.0.0.1"; //takes string
+NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectPort = 12345;          //takes integer
 ```
 
 ## Disconnecting
