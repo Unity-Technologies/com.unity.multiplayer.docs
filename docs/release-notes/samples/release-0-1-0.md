@@ -4,11 +4,11 @@ title: Multiplayer Samples Co-op 0.1.0 - 2021-04-07
 description: Release notes for Multiplayer Samples Co-op v0.1.0, the first release of the Boss Room sample project for Unity MLAPI.
 ---
 
-The Multiplayer Samples Co-op v0.1.0 Experimental release provides new sample code, project files, assets, and features for the Boss Room cooperative game sample project. 
+The Multiplayer Samples Co-op v0.1.0 release provides new sample code, project files, assets, and features for the Boss Room cooperative game sample project. 
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Multiplayer Samples Co-op | 0.1.0 | Experimental | April 7, 2021 | 2019.4 and later |
+| Multiplayer Samples Co-op | 0.1.0 |  | April 7, 2021 | 2020LTS |
 
 :::important
 Multiplayer Samples Co-op always requires the latest version of [Unity MLAPI](../index.md).
@@ -31,7 +31,6 @@ Review the following known issues with this release:
 * After a round of Boss Room completes and a party member returns to the menu, it pulls all players and leader to menu. <!-- GOMPS-431 -->
 * The welcome player message in the lobby indicates P2 (player 2) regardless of your player number. <!-- GOMPS-428 -->
 * When multiple players select the same character and click **Ready** at the same time, it defaults to host and prevents the game from starting.<!-- GOMPS-390 -->
-* [GitHub 146](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues/146): The Boss Room game may get stuck after both players click **Ready**. This may be due to a Unity MLAPI exception. <!-- GOMPS-386 -->
 
 ## Learn more
 
