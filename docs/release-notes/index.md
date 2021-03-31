@@ -6,7 +6,7 @@ sidebar_label: Release Notes
 
 This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes Unity MLAPI, tools, samples co-op code (Boss Room), and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
 
-## MUnity MLAPI
+## Unity MLAPI
 
 See the following release notes for Unity MLAPI.
 
@@ -14,7 +14,7 @@ See the following release notes for Unity MLAPI.
 | -- | -- |
 | [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 | 2019.4 and later |
 
-:::unity About Releases
+:::unity About Experimental
 For Unity experimental releases:
 
 * Expect breaking API changes - using this early has risks! See release notes for extensive information and links to additional content.
@@ -29,10 +29,14 @@ See the following packages including sample project, code, and assets for Boss R
 
 | Release | Status | Date | Supported Unity Versions |
 | -- | -- |
-| [v0.1.0](samples/release-0-1-0.md) | Experimental | April 7, 2021 | 2019.4 and later |
+| [v0.1.0](samples/release-0-1-0.md) | Early Release | April 7, 2021 | 2019.4 and later |
 
 :::important
 Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
+:::
+
+:::unity About Early Release
+This release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the Unity MLAPI Discord.
 :::
 
 ## Documentation
