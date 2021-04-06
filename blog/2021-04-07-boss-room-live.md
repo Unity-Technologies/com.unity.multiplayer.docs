@@ -16,7 +16,7 @@ The new Unity Multiplayer Samples Co-op release provides a Boss Room small-scale
 To support this release, we provide getting started, tutorials, release notes, and more!
 
 * [Multiplayer Samples Co-op Release Notes](/docs/release-notes/samples/samples-0-1-0)
-* [Getting started with Boss Room]
+* [Getting started with Boss Room](/docs/learn/bossroom)
 
 Visit and ⭐️ the Unity Multiplayer Samples Co-op [GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) to watch for updates, provide feedback, and contribute to the project.
 
