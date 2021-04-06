@@ -29,7 +29,7 @@ See the following project releases for Boss Room.
 
 | Release | Status | Date | Supported Unity Versions |
 | -- | -- |
-| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | 2019.4 and later |
+| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | 2020.3 and later |
 
 :::important
 Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
