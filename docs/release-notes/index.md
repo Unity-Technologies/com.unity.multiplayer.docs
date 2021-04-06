@@ -29,13 +29,13 @@ See the following packages including sample project, code, and assets for Boss R
 
 | Release | Status | Date | Supported Unity Versions |
 | -- | -- |
-| [v0.1.0](samples/release-0-1-0.md) | Early Release | April 7, 2021 | 2019.4 and later |
+| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | 2019.4 and later |
 
 :::important
 Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
 :::
 
-:::unity About Early Release
+:::unity About Early Access
 This release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the Unity MLAPI Discord.
 :::
 
