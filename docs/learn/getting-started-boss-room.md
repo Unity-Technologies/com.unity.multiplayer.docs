@@ -15,13 +15,22 @@ Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity an
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
 ## To get the project
+
+### Install Git LFS
+This project uses Git Large Files Support (LFS), which ensures all large assets required locally are handled for the project. See [Git LFS installation options for Windows and Mac instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
+
+### Get the Project
+
  - A release version can be downloaded from the [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page. 
  - Unzip the archive file.
+:::note Windows users
+Using Windows' built-in extracting tool may generate a "Error 0x80010135: Path too long" error window which can invalidate the extraction process. A workaround for this is to shorten the zip file to a single character (eg. "c.zip") and move it to the shortest path on your computer (most often right at C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using 7zip.
+:::
  - You are now ready to add the project to Unity Hub.
 
 :::important Compatibility
-- The MLAPI supports all major Unity platforms. To use the WebGL platform a custom WebGL transport based on web sockets is needed.
-- MLAPI is compatible with Unity 2020.3.0f1.
+- Boss Room supports all major Unity platforms. To use the WebGL platform a custom WebGL transport based on web sockets is needed.
+- Boss Room is compatible with Unity 2020.3.0f1.
 - Make sure to include standalone support for Windows/Mac in your installation. 
 :::
 
@@ -59,11 +68,10 @@ https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/
 
 
 
-## Testing multiplayer
+##  Test multiplayer
 
-In order to see the multiplayer functionality in action we can either run multiple instances of the game locally on our computer or choose to connect ver the internet.
+In order to see the multiplayer functionality in action we can either run multiple instances of the game locally on our computer or choose to connect over the internet.
 
----------------
 ### Local multiplayer setup
 
 #### Build an Executable.
@@ -92,11 +100,12 @@ In contrast to running a local setup, when playing over internet we don't necces
 :::
 
 
-Running the game over internet currently requires setting up a Photon Transport for MLAPI or Alternatively you can use Port Forwarding
+Running the game over internet currently requires either setting up a [Photon Transport for MLAPI](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) or using Port Forwarding
 
 #### Photon Transport
 
 Photon Transport uses Photon relay server to facilitate communication between clients and server living on different networks.
+
 
 :::unity Learn More
 [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Documentation/Photon-Realtime/Readme.md)
