@@ -53,10 +53,10 @@ The MLAPI v0.1.0 package will be installed with Boss Room.
 
 1. In Unity Hub double click the project.
 1. Navigate to the Project window. 
-1. Open the *Assets* folder
-1. Open the *Scene* Folder
+1. Open the *Assets* folder.
+1. Open the *Scene* folder.
 1. Click the *Startup* scene.
-1. Click  **Play**
+1. Click  **Play**.
 
 
 <iframe src="https://www.youtube.com/embed/OSSBWOJq6gI?playlist=OSSBWOJq6gI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
