@@ -107,17 +107,16 @@ module.exports = {
             position: 'right',
             items: [
               {
-                label: 'GitHub Doc Repo',
+                label: 'Doc Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'GitHub Code Repo',
+                label: 'MLAPI Code Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
               },
               {
                 label: 'Contribution Guide',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki',
-  
               },
               {
                 type: 'doc',
@@ -198,7 +197,11 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'Releases',
+                label: 'MLAPI Releases',
+                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+              },
+              {
+                label: 'Boss Room Release',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {

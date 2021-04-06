@@ -20,4 +20,6 @@ To support this release, we provide getting started, tutorials, release notes, a
 
 Visit and ⭐️ the Unity Multiplayer Samples Co-op [GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) to watch for updates, provide feedback, and contribute to the project.
 
+When downloading, always get the [latest from GitHub](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest).
+
 If you have questions and want to connect, join us on [Discord](https://discord.gg/buMxnnPvTb). We have channels for announcements, support, development, and co-op samples.
