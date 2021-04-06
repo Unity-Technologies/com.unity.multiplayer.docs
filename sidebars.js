@@ -385,6 +385,7 @@ transport: [
             "type": "doc",
             "id": "learn/bossroom"
             },
+
         ]
         },
     {
@@ -443,6 +444,10 @@ transport: [
     {
       "type": "doc",
       "id": "release-notes/multiplayer/mlapi-0-1-0"
+    },
+    {
+      "type": "doc",
+      "id": "release-notes/samples/samples-0-1-0"
     },
     {
       "type": "doc",
