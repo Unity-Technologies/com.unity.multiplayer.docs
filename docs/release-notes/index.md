@@ -25,7 +25,7 @@ For Unity experimental releases:
 
 ## Multiplayer Samples Co-op
 
-See the following packages including sample project, code, and assets for Boss Room.
+See the following project releases for Boss Room.
 
 | Release | Status | Date | Supported Unity Versions |
 | -- | -- |
@@ -36,7 +36,7 @@ Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
 :::
 
 :::unity About Early Access
-This release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the Unity MLAPI Discord.
+This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
 :::
 
 ## Documentation
