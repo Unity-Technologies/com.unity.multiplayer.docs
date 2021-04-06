@@ -31,7 +31,6 @@ Review the following known issues with this release:
 * After a round of Boss Room completes and a party member returns to the menu, it pulls all players and leader to menu. <!-- GOMPS-431 -->
 * The welcome player message in the lobby indicates P2 (player 2) regardless of your player number. <!-- GOMPS-428 -->
 * When multiple players select the same character and click **Ready** at the same time, it defaults to host and prevents the game from starting. This may be due to Unity MLAPI exceptions, requiring additional messaging to expose the information to the user and developer.<!-- GOMPS-390 important issue, regardless of closed GH issue-->
-<!--* Photon warning logs on execution - need more info GOMPS-453 -->
 
 ## Learn more
 
