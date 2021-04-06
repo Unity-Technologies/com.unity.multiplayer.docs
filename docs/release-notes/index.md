@@ -36,7 +36,7 @@ Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
 :::
 
 :::unity About Early Access
-This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
+This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Unity MLAPI [Discord](https://discord.gg/buMxnnPvTb).
 :::
 
 ## Documentation
