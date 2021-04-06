@@ -87,7 +87,7 @@ function Footer() {
       </div>
       <script type="text/javascript">
         function OptanonWrapper() { }
-      </script> 
+      </script>
     </footer>;
 }
 
