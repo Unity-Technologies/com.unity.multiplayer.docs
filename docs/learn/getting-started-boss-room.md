@@ -7,10 +7,10 @@ title: Getting Started with Boss Room
 # Boss Room - Multiplayer Samples Co-op built with Unity MLAPI
 
 :::important
-This project is currently experimental.
+This project is currently in early-access.
 :::
 
-Boss Room is a fully functional Multiplayer Samples Co-op made in Unity and MLAPI. It is built to serve as an educational sample that showcases certain typical gameplay patterns that are frequently featured in similar games.
+Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and MLAPI. We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
 
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
@@ -19,7 +19,7 @@ The intention is that you can use everything in this project as a starting point
  - Unzip the archive file.
  - You are now ready to add the project to Unity Hub.
 
-:::important Compatability
+:::important Compatibility
 - The MLAPI supports all major Unity platforms. To use the WebGL platform a custom WebGL transport based on web sockets is needed.
 - MLAPI is compatible with Unity 2020.3.0f1.
 - Make sure to include standalone support for Windows/Mac in your installation. 
@@ -34,6 +34,7 @@ The intention is that you can use everything in this project as a starting point
 
 :::note
 The first time you open the project Unity will import all assets, which will take longer than usual - it is normal.
+The MLAPI v0.1.0 package will be installed with Boss Room.
 
 **Issues with importing due to parental control software**
 
@@ -52,17 +53,9 @@ https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/
 1. Click the *Startup* scene.
 1. Click  **Play**
 
-<Iframe url="https://www.youtube.com/embed/OSSBWOJq6gI"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-        />
 
+<iframe src="https://www.youtube.com/embed/OSSBWOJq6gI?playlist=OSSBWOJq6gI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
 
@@ -88,17 +81,9 @@ To run multiple instances of the same app, you need to use the command line.
 > Run `open -n BossRoom.app`
 :::
 
-<Iframe url="https://www.youtube.com/embed/27Ikr0t7vzg"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-        />
 
+<iframe src="https://www.youtube.com/embed/27Ikr0t7vzg?playlist=27Ikr0t7vzg&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ### Multiplayer over internet
 
