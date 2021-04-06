@@ -37,25 +37,8 @@ If we sent an `RPC` to all clients, then all players connecting mid game after t
 
 In that case, it is preferable to use `NetworkVariable`s like shown here.
 
-<!---```csharp reference
-
+```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/NetworkDoorState.cs
-
---->
-```csharp
-using MLAPI;
-using MLAPI.NetworkVariable;
-using System.Collections;
-using UnityEngine;
-
-/// <summary>
-/// Network state for a door which can be opened by pressing on a floor switch.
-/// </summary>
-public class NetworkDoorState : NetworkBehaviour
-{
-    public NetworkVariableBool IsOpen { get; } = new NetworkVariableBool();
-}
-
 ```
 
 It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the door and a player connects after this, the host will replicate all the world's information to that new player, including the door's state.
@@ -73,203 +56,22 @@ Actions in Boss Room are a great example for this. The area of effect action (`A
    
 `AoeActionInput.cs` Shows the input being updated client side and not waiting for the server. It then calls an `RPC` when clicking on the area to affect.
 
-<!---```csharp reference
+```csharp reference
     https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionInput.cs
- --->
-```csharp   
-    
-using UnityEngine;
-
-namespace BossRoom.Visual
-{
-    /// <summary>
-    /// This class is the first step in AoE ability. It will update the initial input visuals' position and will be in charge
-    /// of tracking the user inputs. Once the ability
-    /// is confirmed and the mouse is clicked, it'll send the appropriate RPC to the server, triggering the AoE serer side gameplay logic.
-    /// The server side gameplay action will then trigger the client side resulting FX.
-    /// This action's flow is this: (Client) AoEActionInput --> (Server) AoEAction --> (Client) AoEActionFX
-    /// </summary>
-    public class AoeActionInput : BaseActionInput
-    {
-        [SerializeField]
-        private GameObject m_InRangeVisualization;
-
-        [SerializeField]
-        private GameObject m_OutOfRangeVisualization;
-
-        Camera m_Camera;
-        int m_GroundLayerMask;
-        Vector3 m_Origin;
-
-        RaycastHit[] m_UpdateResult = new RaycastHit[1];
-
-        void Start()
-        {
-            var radius = GameDataSource.Instance.ActionDataByType[m_ActionType].Radius;
-            transform.localScale = new Vector3(radius * 2, radius * 2, radius * 2);
-            m_Camera = Camera.main;
-            m_GroundLayerMask = LayerMask.GetMask("Ground");
-            m_Origin = m_PlayerOwner.transform.position;
-        }
-
-        void Update()
-        {
-            if (Physics.RaycastNonAlloc(
-                ray: m_Camera.ScreenPointToRay(Input.mousePosition),
-                results: m_UpdateResult,
-                maxDistance: float.PositiveInfinity,
-                layerMask: m_GroundLayerMask) > 0)
-            {
-                transform.position = m_UpdateResult[0].point;
-            }
-
-            float range = GameDataSource.Instance.ActionDataByType[m_ActionType].Range;
-            bool isInRange = (m_Origin - transform.position).sqrMagnitude <= range * range;
-            m_InRangeVisualization.SetActive(isInRange);
-            m_OutOfRangeVisualization.SetActive(!isInRange);
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (isInRange)
-                {
-                    var data = new ActionRequestData
-                    {
-                        Position = transform.position,
-                        ActionTypeEnum = m_ActionType,
-                        ShouldQueue = false,
-                        TargetIds = null
-                    };
-                    m_PlayerOwner.RecvDoActionServerRPC(data);
-                }
-                Destroy(gameObject);
-                return;
-            }
-        }
-    }
-}
 
 ```
 
 `AOEAction.cs` Server side logic detecting enemies inside the area and applying damage. It then broadcasts an `RPC` to tell all clients to play the VFX at the appropriate position. Character's state will automatically update with their respective `NetworkVariable`s update (health and alive status for example).
 
 
-<!---```csharp reference
+```csharp reference
     https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Server/Game/Action/AOEAction.cs
---->
-```csharp
-using BossRoom;
-using BossRoom.Server;
-using MLAPI;
-using MLAPI.Spawning;
-using System.Collections.Generic;
-using UnityEngine;
-
-/// <summary>
-/// Area-of-effect attack Action. The attack is centered on a point provided by the client.
-/// </summary>
-public class AoeAction : Action
-{
-    /// <summary>
-    /// Cheat prevention: to ensure that players don't perform AoEs outside of their attack range,
-    /// we ensure that the target is less than Range meters away from the player, plus this "fudge
-    /// factor" to accomodate miscellaneous minor movement.
-    /// </summary>
-    const float k_MaxDistanceDivergence = 1;
-
-    bool m_DidAoE;
-
-    public AoeAction(ServerCharacter parent, ref ActionRequestData data)
-        : base(parent, ref data) { }
-
-    public override bool Start()
-    {
-        float distanceAway = Vector3.Distance(m_Parent.transform.position, Data.Position);
-        if (distanceAway > Description.Range+k_MaxDistanceDivergence)
-        {
-            Debug.LogError($"Hacking detected?! (Object ID {m_Parent.NetworkObjectId}) {Description.ActionTypeEnum}'s AoE range is {Description.Range} but we were given a point that's {distanceAway} away from us. Canceling AoE");
-            return ActionConclusion.Stop;
-        }
-
-        // broadcasting to all players including myself.
-        // We don't know our actual targets for this attack until it triggers, so the client can't use the TargetIds list (and we clear it out for clarity).
-        // This means we are responsible for triggering reaction-anims ourselves, which we do in PerformAoe()
-        Data.TargetIds = new ulong[0];
-        m_Parent.NetState.RecvDoActionClientRPC(Data);
-        return ActionConclusion.Continue;
-    }
-
-    public override bool Update()
-    {
-        if (TimeRunning >= Description.ExecTimeSeconds && !m_DidAoE)
-        {
-            // actually perform the AoE attack
-            m_DidAoE = true;
-            PerformAoE();
-        }
-        return ActionConclusion.Continue;
-    }
-
-    private void PerformAoE()
-    {
-        // Note: could have a non alloc version of this overlap sphere where we statically store our collider array, but since this is a self
-        // destroyed object, the complexity added to have a static pool of colliders that could be called by multiplayer players at the same time
-        // doesn't seem worth it for now.
-        var colliders = Physics.OverlapSphere(m_Data.Position, Description.Radius, LayerMask.GetMask("NPCs"));
-        for (var i = 0; i < colliders.Length; i++)
-        {
-            var enemy = colliders[i].GetComponent<IDamageable>();
-            if (enemy != null)
-            {
-                // make the target "flinch", assuming they're a living enemy
-                var networkObject = NetworkSpawnManager.SpawnedObjects[enemy.NetworkObjectId];
-                if (networkObject)
-                {
-                    var state = networkObject.GetComponent<NetworkCharacterState>();
-                    if (state)
-                    {
-                        state.RecvPerformHitReactionClientRPC();
-                    }
-                }
-
-                // actually deal the damage
-                enemy.ReceiveHP(m_Parent, -Description.Amount);
-            }
-        }
-    }
-}
 ```
 
 `AoeActionFX.cs` is triggered by an `RPC` coming from the server
 
-<!---```csharp reference
+```csharp reference
     https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionFX.cs
---->
-```csharp
-using System;
-using UnityEngine;
-
-namespace BossRoom.Visual
-{
-    /// Final step in the AoE action flow. Please see AoEActionInput for the first step and more details on overall flow
-    public class AoeActionFX : ActionFX
-    {
-        public AoeActionFX(ref ActionRequestData data, ClientCharacterVisualization parent)
-            : base(ref data, parent) { }
-
-        public override bool Start()
-        {
-            m_Parent.OurAnimator.SetTrigger(Description.Anim);
-            GameObject.Instantiate(Description.Spawns[0], m_Data.Position, Quaternion.identity);
-            return ActionConclusion.Stop;
-        }
-
-        public override bool Update()
-        {
-            throw new Exception("This should not execute");
-        }
-    }
-}
-
 ```
 
 :::tip
