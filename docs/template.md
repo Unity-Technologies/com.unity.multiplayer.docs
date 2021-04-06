@@ -13,6 +13,10 @@ To serve as an example page when styling markdown based Docusaurus sites.
 The doc site requires all file names in lowercase, no spaces, with dashes used as needed. This includes Markdown, images, videos, and downloadable files.
 :::
 
+## Simple Template
+
+If you need a simple template to start a new page, see the [*/template/markdown.md*](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/templates/markdown.md) file in your local cloned files. This file gives you simple Markdown to get started. For more Markdown formats, see this page's code.
+
 ## Markdown Frontmatter
 
 All Markdown files require some information at the top of every file indicating the title, id, and other attributes as needed.
