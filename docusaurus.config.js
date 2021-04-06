@@ -115,6 +115,10 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
               },
               {
+                label: 'Boss Room Repo',
+                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop',
+              },
+              {
                 label: 'Contribution Guide',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki',
               },
@@ -202,7 +206,7 @@ module.exports = {
               },
               {
                 label: 'Boss Room Release',
-                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest',
               },
               {
                 label: 'Multiplayer RFCs',
