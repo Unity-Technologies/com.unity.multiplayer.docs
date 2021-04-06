@@ -78,7 +78,7 @@ After the build has completed you can launch several instances of the built exec
 
 :::important Mac Users
 To run multiple instances of the same app, you need to use the command line.
-> Run `open -n BossRoom.app`
+`> Run open -n BossRoom.app`
 :::
 
 
