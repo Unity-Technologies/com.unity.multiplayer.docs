@@ -4,7 +4,6 @@ title: Getting Started with Boss Room
 ---
 
 ![Banner](/img/banner.png)
-# Boss Room - Multiplayer Samples Co-op built with Unity MLAPI
 
 :::important
 This project is currently in early-access.
@@ -53,7 +52,9 @@ https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/
 
 :::
 
-## To open the project for the first time
+## Open the project
+
+### To open the project for the first time:
 
 1. In Unity Hub double click the project.
 1. Navigate to the Project window. 
@@ -70,7 +71,7 @@ https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/
 
 ##  Test multiplayer
 
-In order to see the multiplayer functionality in action we can either run multiple instances of the game locally on our computer or choose to connect over the internet.
+In order to see the multiplayer functionality in action, you can either run multiple instances of the game locally on your computer or choose to connect through the internet.
 
 ### Local multiplayer setup
 
