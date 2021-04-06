@@ -381,10 +381,7 @@ transport: [
             "type": "doc",
             "id": "learn/bossroom"
             },
-            {
-              "type": "doc",
-              "id": "learn/photonsetup"
-              },
+
         ]
         },
     {
