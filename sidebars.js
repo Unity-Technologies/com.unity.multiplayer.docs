@@ -372,6 +372,18 @@ transport: [
         "type": "doc",
          "id": "learn/dapper-video"
       },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Learn with Boss Room",
+        "items": [
+            {
+            "type": "doc",
+            "id": "learn/bossroom"
+            },
+
+        ]
+        },
     {
       "collapsed": true,
       "type": "category",
@@ -387,6 +399,7 @@ transport: [
         },
       ],
     },
+
     {
     "collapsed": true,
     "type": "category",
