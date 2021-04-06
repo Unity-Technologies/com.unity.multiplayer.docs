@@ -10,7 +10,7 @@ title: Getting Started with Boss Room
 This project is currently in early-access.
 :::
 
-Boss Room is a fully functional Multiplayer Samples Co-op made in Unity and MLAPI. It is built to serve as an educational sample that showcases certain typical gameplay patterns that are frequently featured in similar games.
+Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and MLAPI. We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
 
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
