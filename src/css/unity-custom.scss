@@ -80,6 +80,21 @@ h1, h2, h3, h4, h5, h6, .text-break {
   padding: 0 var(--ifm-pre-padding);
 }
 
+.copyButton_2e3i, .copyButton, .copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock- {
+  background: rgba(0, 139, 178, 0.5);
+  border: none;
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-white);
+  cursor: pointer;
+  opacity: 0;
+  user-select: none;
+  padding: 0.4rem 0.5rem;
+  position: absolute;
+  right: calc(var(--ifm-pre-padding) / 2);
+  top: calc(var(--ifm-pre-padding) / 2);
+  transition: opacity 200ms ease-in-out;
+}
+
 /* FontAwesome - find icons here https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
  * Add new entry using the following as examples.
 */
