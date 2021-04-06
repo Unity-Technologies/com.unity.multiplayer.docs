@@ -18,7 +18,7 @@
     "@docusaurus/preset-classic": "2.0.0-alpha.72",
     "@docusaurus/theme-common": "^2.0.0-alpha.72",
     "@mdx-js/react": "^1.6.21",
-    "@saucelabs/theme-github-codeblock": "0.0.3",
+    "@saucelabs/theme-github-codeblock": "^0.0.4",
     "clsx": "^1.1.1",
     "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-sass": "^0.1.12",
