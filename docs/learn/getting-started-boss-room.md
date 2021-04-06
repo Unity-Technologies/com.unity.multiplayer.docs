@@ -44,11 +44,7 @@ Using Windows' built-in extracting tool may generate a "Error 0x80010135: Path t
 The first time you open the project Unity will import all assets, which will take longer than usual - it is normal.
 The MLAPI v0.1.0 package will be installed with Boss Room.
 
-**Issues with importing due to parental control software**
-
-If you have issues with importing you may want to check your DNS settigns as some ISP parental controls  may block GitHub access.
-
-https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/td-p/4279652
+**Issues with importing due to parental control software**: If you have issues with importing you may want to check your DNS settings as some ISP parental controls  may block GitHub access. For example, see this information on [WebSafe](https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/td-p/4279652).
 
 :::
 
@@ -58,10 +54,10 @@ https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/
 
 1. In Unity Hub double click the project.
 1. Navigate to the Project window. 
-1. Open the *Assets* folder
-1. Open the *Scene* Folder
+1. Open the *Assets* folder.
+1. Open the *Scene* folder.
 1. Click the *Startup* scene.
-1. Click  **Play**
+1. Click  **Play**.
 
 
 <iframe src="https://www.youtube.com/embed/OSSBWOJq6gI?playlist=OSSBWOJq6gI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -109,7 +105,7 @@ Photon Transport uses Photon relay server to facilitate communication between cl
 
 
 :::unity Learn More
-[Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Documentation/Photon-Realtime/Readme.md)
+See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Documentation/Photon-Realtime/Readme.md) for details.
 :::
 
 #### Port Forwarding
