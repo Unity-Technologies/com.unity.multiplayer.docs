@@ -45,12 +45,12 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Multiplayer Sample Coop License
+## Multiplayer Samples Co-op License
 
-The [Multiplayer Sample Coop respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
+The [Multiplayer Samples Co-op respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
 
 UCL License
-Boss Room: Multiplayer Simple Coop © 2021 Unity Technologies
+Boss Room: Multiplayer Sample Co-op © 2021 Unity Technologies
 
 Licensed under the Unity Companion License for Unity-dependent projects (see https://unity3d.com/legal/licenses/unity_companion_license); otherwise licensed under the Unity Package Distribution License (see https://unity3d.com/legal/licenses/Unity_Package_Distribution_License).
 
