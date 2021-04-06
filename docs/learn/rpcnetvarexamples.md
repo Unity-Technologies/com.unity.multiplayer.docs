@@ -11,7 +11,7 @@ See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 Boss Room uses RPCs to send movement inputs.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Character/ClientInputSender.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Assets/BossRoom/Scripts/Client/Game/Character/ClientInputSender.cs
 
 ```
 
