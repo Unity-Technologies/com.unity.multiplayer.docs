@@ -11,6 +11,10 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 | -- | -- | -- | -- | -- |
 | MLAPI | 0.1.0 | Experimental | March 23, 2021 | 2019.4 and later |
 
+:::note
+Unity MLAPI supports Windows and MacOS versions of Unity Editor and Player.
+:::
+
 ## New features
 
 This release provides the following new features and APIs:
