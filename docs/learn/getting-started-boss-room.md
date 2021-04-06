@@ -88,7 +88,7 @@ To run multiple instances of the same app, you need to use the command line.
 ### Multiplayer over internet
 
 :::tip
-In contrast to running a local setup, when playing over internet we don't neccessarily need a built executable. We can just run the game in editor.
+In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
 :::
 
 
