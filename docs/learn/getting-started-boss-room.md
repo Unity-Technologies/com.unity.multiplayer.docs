@@ -104,7 +104,7 @@ Photon Transport uses Photon relay server to facilitate communication between cl
 
 
 :::unity Learn More
-[Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Documentation/Photon-Realtime/Readme.md)
+See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/release/v0.1.0-experimental/Documentation/Photon-Realtime/Readme.md) for details.
 :::
 
 #### Port Forwarding
