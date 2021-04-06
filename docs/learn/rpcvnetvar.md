@@ -38,7 +38,7 @@ If we sent an `RPC` to all clients, then all players connecting mid game after t
 In that case, it is preferable to use `NetworkVariable`s like shown here.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/NetworkDoorState.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Shared/NetworkDoorState.cs
 ```
 
 It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the door and a player connects after this, the host will replicate all the world's information to that new player, including the door's state.
@@ -57,27 +57,26 @@ Actions in Boss Room are a great example for this. The area of effect action (`A
 `AoeActionInput.cs` Shows the input being updated client side and not waiting for the server. It then calls an `RPC` when clicking on the area to affect.
 
 ```csharp reference
-    https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionInput.cs
-
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionInput.cs
 ```
 
 `AOEAction.cs` Server side logic detecting enemies inside the area and applying damage. It then broadcasts an `RPC` to tell all clients to play the VFX at the appropriate position. Character's state will automatically update with their respective `NetworkVariable`s update (health and alive status for example).
 
 
 ```csharp reference
-    https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Server/Game/Action/AOEAction.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Server/Game/Action/AOEAction.cs
 ```
 
 `AoeActionFX.cs` is triggered by an `RPC` coming from the server
 
 ```csharp reference
-    https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionFX.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionFX.cs
 ```
 
 :::tip
 If you want to make sure two variables are received at the same time, `RPC`s are great for that. 
 
-If you change `NetworkVariable` "a" and "b", there's no guarantee they'll both be received client side at the same time. Sending them as two parameters in the same `RPC` allows to make sure they'll be received at the same time client side.
+If you change `NetworkVariable` "a" and "b", there is no guarantee they will both be received client side at the same time. Sending them as two parameters in the same `RPC` allows to make sure they will be received at the same time client side.
 :::
 
 `NetworkVariable`s are great when you only care about the latest value.
@@ -88,6 +87,4 @@ If you change `NetworkVariable` "a" and "b", there's no guarantee they'll both b
 `NetworkVariable`s are great for managing state, to make sure everyone has the latest value. Use them when you want to make sure newly connected players get an up to date world state.
 
 `RPC`s are great for sending transient events. Use them when transmiting short lived events.
-
-
 
