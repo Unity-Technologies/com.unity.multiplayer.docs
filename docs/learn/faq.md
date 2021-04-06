@@ -56,4 +56,27 @@ We recommend the following:
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
 
+### Why do I get path too long errors with Boss Room on Windows?
+
+Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. 
+
+As a workaround, shorten the zip file to a single character (for example "c.zip") and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+
+### Why do I get unidentified developer errors with Boss Room?
+
+If you attempt to run a build on OSX and receive a warning dialog mentioning an "unidentified developer", you may need to override your security settings for this application:
+
+1. In the Finder on your Mac, locate the application you want to open.
+  
+  :::note
+  Do use Launchpad, it does not allow you to access the shortcut menu.
+  :::
+
+1. Control-click the app icon, then choose **Open** from the shortcut menu.
+1. Click **Open**.
+1. The app is saved as an exception to your security settings. You can open it in the future by double-clicking it just as you can any registered app.
+
+
+See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac) for details.
+
 </div>
