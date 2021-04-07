@@ -27,6 +27,8 @@ You can copy the script from here and paste it into your file.
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs
 ```
 
+
+
 Inside the `HelloWorldManager.cs` script, we will define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
 
 
