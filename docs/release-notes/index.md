@@ -23,7 +23,7 @@ For Unity experimental releases:
 * Expect us to answer questions for early adopters on [Discord](https://discord.gg/buMxnnPvTb) and [Forums](https://forum.unity.com/forums/multiplayer.26/). We welcome all feedback and issues logged! 
 :::
 
-## Multiplayer Samples Co-op
+## Boss Room: Small Scale Co-op Sample
 
 See the following project releases for Boss Room.
 
@@ -32,7 +32,7 @@ See the following project releases for Boss Room.
 | [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | 2020.3 and later |
 
 :::important
-Multiplayer Samples Co-op always requires the latest version of Unity MLAPI.
+Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI.
 :::
 
 :::unity About Early Access
