@@ -7,6 +7,8 @@ description: Welcome to the first release of the Unity Multiplayer Samples Co-op
 hide_table_of_contents: false
 ---
 
+**⭐️ BOSS ROOM LIVE APRIL 7th! ⭐️**
+
 You [saved the date](https://unity.com/demos/small-scale-coop-sample), and now Boss Room is public and live!
 
 Boss Room leverages the new experimental netcode package to bring up to eight players together to defeat imps and a boss in this adorable vertical slice of a cooperative RPG dungeon. This small-scale cooperative game is built to teach you the underlying networking patterns and concepts behind a multiplayer game of its genre. 

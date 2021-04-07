@@ -21,7 +21,8 @@ module.exports = {
       announcementBar: {
         id: 'prerelease', // Any value that will identify this message.
         content:
-          '⭐️ If you like our documentation, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/Unity-Technologies/com.unity.multiplayer.docs">GitHub</a> and <a target="_blank" rel="noopener noreferrer" href="https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki">contribute</a>! ⭐️',
+          '⭐️ Boss Room is live April 7th 2021! See our <a href="https://docs-multiplayer.unity3d.com/blog/2021/04/07/boss-room-live">pre-release docs!</a> ⭐️',
+          //'⭐️ If you like our documentation, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/Unity-Technologies/com.unity.multiplayer.docs">GitHub</a> and <a target="_blank" rel="noopener noreferrer" href="https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki">contribute</a>! ⭐️',
         backgroundColor: '#3578e5', // Defaults to `#fff`.
         textColor: '#ffffff', // Defaults to `#000`.
         isCloseable: true, // Defaults to `true`.
