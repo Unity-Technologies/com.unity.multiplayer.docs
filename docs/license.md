@@ -45,14 +45,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Multiplayer Samples Co-op License
+## Boss Room: Small Scale Co-op Sample License
 
-The [Multiplayer Samples Co-op respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
+The [Boss Room: Small Scale Co-op Sample respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
 
-UCL License
-Boss Room: Multiplayer Sample Co-op © 2021 Unity Technologies
+Boss Room: Small Scale Co-op Sample © 2021 Unity Technologies
 
-Licensed under the Unity Companion License for Unity-dependent projects (see https://unity3d.com/legal/licenses/unity_companion_license); otherwise licensed under the Unity Package Distribution License (see https://unity3d.com/legal/licenses/Unity_Package_Distribution_License).
+Licensed under the Unity Companion License for [Unity-dependent projects](https://unity3d.com/legal/licenses/unity_companion_license); otherwise licensed under the [Unity Package Distribution License](https://unity3d.com/legal/licenses/Unity_Package_Distribution_License).
 
 Unless expressly provided otherwise, the Software under this license is made available strictly on an “AS IS” BASIS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. Please review the license for details on these and other terms and conditions.
 
