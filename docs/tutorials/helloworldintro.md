@@ -73,7 +73,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
    You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab`. Once you have completed the above steps you can clear the error.
   :::
 
-1. Create a GameObject->Plane, centered at (0,0,0).
+1. Create a 3D Object->Plane, centered at (0,0,0).
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 
 
