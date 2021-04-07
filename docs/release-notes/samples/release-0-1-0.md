@@ -1,17 +1,17 @@
 ---
 id: samples-0-1-0
-title: Multiplayer Samples Co-op 0.1.0 - 2021-04-07
-description: Release notes for Multiplayer Samples Co-op v0.1.0, the first release of the Boss Room sample project for Unity MLAPI.
+title: Boss Room Small Scale Co-op Sample 0.1.0 - 2021-04-07
+description: Release notes for Boss Room Small Scale Co-op Sample v0.1.0, the first release of the Boss Room sample project for Unity MLAPI.
 ---
 
-The Multiplayer Samples Co-op v0.1.0 release provides new sample code, assets, and features for the Boss Room cooperative game sample project. 
+The Boss Room: Small Scale Co-op Sample v0.1.0 release provides new sample code, assets, and features for the Boss Room cooperative game sample project. 
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Multiplayer Samples Co-op | 0.1.0 | Early Access | April 7, 2021 | 2020.3 and later |
+| Boss Room: Small Scale Co-op Sample | 0.1.0 | Early Access | April 7, 2021 | 2020.3 and later |
 
 :::important
-Multiplayer Samples Co-op always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
+Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
 :::
 
 ## [0.1.0] - 2021-04-07
