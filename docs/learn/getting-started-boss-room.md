@@ -28,7 +28,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 - You are now ready to add the project to Unity Hub.
 
 :::important Compatibility
-- Boss Room supports all major Unity platforms. To use the WebGL platform a custom WebGL transport based on web sockets is needed.
+- Boss Room supports those platforms supported by MLAPI (Windows and Mac).
 - Boss Room is compatible with Unity 2020.3 and later.
 - Make sure to include standalone support for Windows/Mac in your installation. 
 :::
