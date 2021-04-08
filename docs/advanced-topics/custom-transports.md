@@ -12,7 +12,7 @@ The Transport layer is also responsible for making sure that all packets arrive 
 
 The MLAPI supports community contributions for Transport implementations. See the [MLAPI Community Contributions](https://github.com/Unity-Technologies/mlapi-community-contributions)  repository to learn more.
 
-To use a Transport, follow the [Community Transport Installation Guide](https://github.com/Unity-Technologies/mlapi-community-contributions/blob/master/Transports/README.md).
+To use a Transport, follow the [Community Transport Installation Guide](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports).
 
 ## Writing Your Own
 
