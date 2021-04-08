@@ -24,6 +24,8 @@ This Unity Multiplayer Networking tutorial will teach you all about the new offi
         allowfullscreen
         />
 
+Video published 25th Mar 2021
+
 ## Lobby Password
 
 This Unity Multiplayer tutorial will teach you how to implement connection approval so that clients have to send the correct password to be able to connect to the server.
@@ -39,8 +41,27 @@ This Unity Multiplayer tutorial will teach you how to implement connection appro
         allowfullscreen
         />
 
+Video published 30th Mar 2021
+
+## Boss Room Sample
+
+This Unity Multiplayer tutorial will teach you all about the new official Unity multiplayer solution and how to get set up with the brand new Boss Room sample project!
+
+<Iframe url="https://www.youtube.com/embed/CmwZPYV-a1o"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        />
+
+Video published 8th April 2021
+
 :::contribution Community Contribution
-Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for this tutorial! This contribution is a great help to the community.
+Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for these video tutorials! These contributions is a great help to the community.
 :::
 
 import Iframe from 'react-iframe'
