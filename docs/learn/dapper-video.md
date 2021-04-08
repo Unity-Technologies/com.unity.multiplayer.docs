@@ -47,7 +47,7 @@ Video published 30th Mar 2021
 
 This Unity Multiplayer tutorial will teach you all about the new official Unity multiplayer solution and how to get set up with the brand new Boss Room sample project!
 
-<Iframe url="https://www.youtube.com/watch?v=CmwZPYV-a1o"
+<Iframe url="https://www.youtube.com/embed/CmwZPYV-a1o"
         width="854px"
         height="480px"
         id="myId"
