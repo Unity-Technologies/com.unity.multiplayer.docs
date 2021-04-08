@@ -20,7 +20,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
 ## Import MLAPI Package via URL
 
-See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI package and restart Unity.
+See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI package.
 
 ## Create the Basic Components
 
