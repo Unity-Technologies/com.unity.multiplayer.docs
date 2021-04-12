@@ -16,7 +16,7 @@ Roslyn Analyzers provide immediate feedback within the IDE, without jumping back
 * `Cannot find pending soft sync object. Is the projects the same? UnityEngine.Debug:LogError(Object)`
 * `ArgumentNullException: Cannot spawn null object  Parameter name: netObject`
 
-This exception should only occur if your scenes are not the same, for example if the scene of your server contains a `NetworkObject` which is not present in the client scene. Verify the scene objects work correctly by entering playmode in both editors. This will add an `InstanceId` field to your `NetworkObject`s. These IDs should match on both projects.
+This exception should only occur if your scenes are not the same, for example if the scene of your server contains a `NetworkObject` which is not present in the client scene. Verify the scene objects work correctly by entering playmode in both editors.
 
 ## ServerRPC errors
 
