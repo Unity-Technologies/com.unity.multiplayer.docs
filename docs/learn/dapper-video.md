@@ -61,7 +61,7 @@ This Unity Multiplayer tutorial will teach you all about the new official Unity 
 Video published 8th April 2021
 
 :::contribution Community Contribution
-Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for these video tutorials! These contributions is a great help to the community.
+Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for the video tutorials! These contributions are a fantastic help to the community.
 :::
 
 import Iframe from 'react-iframe'
