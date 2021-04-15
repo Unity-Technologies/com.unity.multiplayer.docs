@@ -150,7 +150,7 @@ You can save diagrams, animations, and images for dark and light mode to provide
 At the bottom of your markdown file, add this code:
 
 ```javascript
-import ImageSwitcher from '../../../src/ImageSwitcher.js';
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 ```
 
 :::note
@@ -495,4 +495,4 @@ I can write **Markdown** alongside my _JSX_!
 
 <!-- On page code -->
 import Mermaid from '@theme/Mermaid';
-import ImageSwitcher from '../src/ImageSwitcher.js';
+import ImageSwitcher from '@site/src/ImageSwitcher.js';

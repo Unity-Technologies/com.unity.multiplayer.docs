@@ -68,20 +68,16 @@ module.exports = {
         },
         items: [
           {
-            label: 'Docs',
+            type: 'doc',
+            docId: 'getting-started/about-mlapi',
+            label: 'MLAPI',
             position: 'left',
-            items: [
-              {
-                type: 'doc',
-                to: 'docs/getting-started/about-mlapi',
-                label: 'MLAPI',
-              },
-              {
-                type: 'doc',
-                to: 'docs/transport/introduction',
-                label: 'Transport',
-              },
-            ]
+          },
+          {
+            type: 'doc',
+            docId: 'transport/introduction',
+            label: 'Transport',
+            position: 'left',
           },
           {
             type: 'doc',
@@ -101,7 +97,22 @@ module.exports = {
             label: 'Release Notes',
             position: 'left',
           },
-          
+          {
+            to: '/community/template',
+            label: 'Community',
+            position: 'left',
+            activeBaseRegex: `/community/`,
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            // Add additional dropdown items at the beginning/end of the dropdown.
+            //dropdownItemsBefore: [],
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // Do not add the link active class when browsing docs.
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'default',
+          },
           { 
             className: 'navbar-github-link',
             position: 'right',
@@ -122,11 +133,11 @@ module.exports = {
                 label: 'Contribution Guide',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki',
               },
-              {
-                type: 'doc',
-                to: 'docs/template',
-                label: 'Doc Template',
-              },
+              //{
+              //  type: 'doc',
+              //  to: 'docs/template',
+              //  label: 'Doc Template',
+              //},
             ]
           },
           {
@@ -186,7 +197,7 @@ module.exports = {
               {
                 label: 'Licenses',
                 type: 'doc',
-                to: 'docs/license',
+                to: 'community/license',
               },
               {
                 label: 'Product Roadmap',
@@ -240,11 +251,30 @@ module.exports = {
         '@docusaurus/preset-classic',
         {
           docs: {
+            path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,
             showLastUpdateTime: true,
             // Edit this page repo domain URL
-            editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/',
+            //editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/',
+            editUrl: function ({
+              versionDocsDirPath,
+              docPath,
+            }) {
+              return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
+            },
+            includeCurrentVersion: true,
+            lastVersion: '0.1.0',
+            versions: {
+              current: {
+                label: 'develop',
+                path: 'develop',
+              },
+              //'0.1.0': {
+               // label: '0.1.0',
+              //  path: '',
+              //},
+            },
             admonitions: {
               customTypes: {
                 contribution: {
@@ -296,6 +326,21 @@ module.exports = {
       ],
     ],
     plugins: [
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'community',
+          path: 'community',
+          editUrl: ({versionDocsDirPath, docPath}) => {
+            return `https://github.com/facebook/docusaurus/edit/master/website/${versionDocsDirPath}/${docPath}`;
+          },
+          editCurrentVersion: true,
+          routeBasePath: 'community',
+          sidebarPath: require.resolve('./sidebarsCommunity.js'),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+        },
+      ],
       [require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-5V25JL6', // GTM Container ID
