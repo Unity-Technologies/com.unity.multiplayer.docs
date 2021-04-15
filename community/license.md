@@ -1,6 +1,6 @@
 ---
-title: Documentation and Code Licenses
 id: license
+title: Documentation and Code Licenses
 ---
 The following Licenses cover all documentation and sample code in [this repository](https://github.com/Unity-Technologies/com.unity.multiplayer.docs) and website. 
 

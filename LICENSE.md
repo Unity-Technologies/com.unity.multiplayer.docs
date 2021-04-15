@@ -6,9 +6,9 @@ All documentation sections have licenses covering content for those Unity featur
 
 | Documentation | License |
 | -- | -- |
-| [MLAPI](https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
-| [Transport](https://docs-multiplayer.unity3d.com/docs/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
-| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/LICENSE.md) |
+| [MLAPI](@site/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
+| [Transport](@site/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
+| [Learn](@site/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/LICENSE.md) |
 
 Documentation site files and markdown content outside of these features is covered under the MIT License:
 
