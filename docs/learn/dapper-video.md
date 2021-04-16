@@ -60,8 +60,25 @@ This Unity Multiplayer tutorial will teach you all about the new official Unity 
 
 Video published 8th April 2021
 
+## RPCs
+
+This Unity Multiplayer tutorial will teach you how to implement Remote Procedure Calls (RPCs) to communicate between Clients and the Server.
+
+<Iframe url="https://www.youtube.com/embed/6zBsPSww2u4"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        />
+
+Video published 15th April 2021
+
 :::contribution Community Contribution
-Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for these video tutorials! These contributions is a great help to the community.
+Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for the video tutorials! These contributions are a fantastic help to the community.
 :::
 
 import Iframe from 'react-iframe'
