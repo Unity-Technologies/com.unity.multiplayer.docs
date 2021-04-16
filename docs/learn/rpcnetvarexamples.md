@@ -72,4 +72,4 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
         
 All of our replicated object's position is synced through `NetworkVariable`s, easily collecting and providing data.
 
-If this was done through `RPC`s, we would need to keep a list of `RPC`s to send to connecting players to ensure they get the latest position values for each object. Keeping a list of `RPC`s for each object to send to those `RPC`s on connecting would be a maintainability nightmare. By using `RPC`s, we let the SDK do the work for us.
+If this was done through `RPC`s, we would need to keep a list of `RPC`s to send to connecting players to ensure they get the latest position values for each object. Keeping a list of `RPC`s for each object to send to those `RPC`s on connecting would be a maintainability nightmare. By using `NetworkVariable`s, we let the SDK do the work for us.
