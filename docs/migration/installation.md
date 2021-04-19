@@ -42,3 +42,14 @@ See the following content to continue your journey using MLAPI:
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
 * [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
+
+## Troubleshooting
+
+**Errors adding package**
+
+MacOS users may receive the following errors:
+
+* `Cannot perform upm operation: Unable to add package... Error when executing git command. xcrun: error: invalid active developer path`
+* `Error adding package...`
+
+These are common errors for MacOS users that have not installed or updated Xcode or Xcode developer tools. You may need to upgrade your Xcode installation. In a terminal, use this command: `xcode-select --install`.
