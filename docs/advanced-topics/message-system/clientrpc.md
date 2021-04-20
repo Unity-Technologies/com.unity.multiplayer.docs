@@ -5,7 +5,7 @@ title: ClientRpc
 
 A `ClientRpc` can be invoked by the server to be executed on a client.
 
-## Declaring
+## Declare a ClientRpc
 Developers can declare a `ClientRpc` by marking a method with `[ClientRpc]` attribute and making sure to have `ClientRpc` suffix in the method name.
 
 ```csharp
@@ -13,7 +13,7 @@ Developers can declare a `ClientRpc` by marking a method with `[ClientRpc]` attr
 void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-## Invoking
+## Invoke a ClientRpc
 
 Developers can invoke a `ClientRpc` by making a direct function call with parameters:
 
@@ -46,4 +46,41 @@ Pong(somenumber, sometext); // Is this an RPC call?
 PongRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
 
 PongClientRpc(somenumber, sometext); // This is clearly a ClientRpc call
+```
+
+## Use ClientRpcSendParameters
+
+The following code provides an example of using `ClientRpcSendParameters`, which will allow you to send a `ClientRpc` to a specific Client connection(s) whereas the default MLAPI's behavior is to broadcast to every single client.
+
+```csharp
+private void DoSomethingServerSide(int clientId)
+    {
+        // If is not the Server/Host then we should early return here!
+        if (!IsServer) return;
+
+
+        // NOTE! In case you know a list of ClientId's ahead of time, that does not need change,
+        // Then please consider caching this (as a member variable), to avoid Allocating Memory every time you run this function
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[clientId];
+            }
+        };
+
+        // Let's imagine that you need to compute a Random integer and want to send that to a client
+        const int maxValue = 4;
+        int randomInteger = Random.Range(0, maxValue);
+        DoSomethingClientRPC(randomInteger, clientRpcParams);
+    }
+
+    [ClientRpc]
+    private void DoSomethingClientRPC(int randomInteger, ClientRpcParams clientRpcParams = default)
+    {
+        if (IsOwner) return;
+
+        // Run your client-side logic here!!
+        Debug.LogFormat("GameObject: {0} has received a randomInteger with value: {1}", gameObject.name, randomInteger);
+    }
 ```
