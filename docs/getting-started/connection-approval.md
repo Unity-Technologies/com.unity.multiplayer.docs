@@ -27,7 +27,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 
     // The prefab hash. Use null to use the default player prefab
     // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
-    ulong? prefabHash = SpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
+    ulong? prefabHash = NetworkSpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
     callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
