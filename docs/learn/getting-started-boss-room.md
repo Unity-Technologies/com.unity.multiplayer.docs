@@ -117,7 +117,7 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 1. In the Finder on your Mac, locate the application you want to open.
   
   :::note
-  Do use Launchpad, it does not allow you to access the shortcut menu.
+  Do not use Launchpad, it does not allow you to access the shortcut menu.
   :::
 
 1. Control-click the app icon, then choose **Open** from the shortcut menu.
