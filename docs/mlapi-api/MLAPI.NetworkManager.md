@@ -1376,8 +1376,9 @@ on the server and on the local client that connects.
 
 <div class="markdown level1 summary">
 
-The callback to invoke when a client disconnects. This callback is only
-ran on the server and on the local client that disconnects.
+The callback to invoke when a client disconnects. This callback is invoked on a client when the server shuts down or disconnects the client. It is only run on the server and the local client that disconnects.
+
+The callback is not invoked on the client when the client-side invokes the `NetworkManager.StopClient` method or when the client side application shuts down abruptly (for example, no graceful disconnection where server or client notified it was exiting).
 
 </div>
 
