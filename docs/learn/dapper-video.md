@@ -79,9 +79,9 @@ Video published 15th April 2021
 
 ## NetworkVariables
 
-insert description
+This Unity Multiplayer tutorial will teach you how to implement Network Variables to sync data between Clients and the Server.
 
-<Iframe url="addlink"
+<Iframe url="https://www.youtube.com/embed/iQDGLaSI3Cg"
         width="854px"
         height="480px"
         id="myId"
@@ -92,7 +92,7 @@ insert description
         allowfullscreen
         />
 
-Video published add date
+Video published 22nd April 2021
 
 :::contribution Community Contribution
 Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for the video tutorials! These contributions are a fantastic help to the community.
