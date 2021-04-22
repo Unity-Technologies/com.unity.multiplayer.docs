@@ -21,13 +21,13 @@ Each `NetworkObject` is owned by a specific client. This can be any client or th
 Give ownership of an object using the following:
 
 ```csharp
-GetComponent<NetworkObject>().ChangeOwnership(clientId);
+GetComponent<NetworkedObject>().ChangeOwnership(clientId);
 ```
 
 The default behavior is that an object is owned by the server. To give ownership back to the server, you can use the `RemoveOwnership` call:
 
 ```csharp
-GetComponent<NetworkObject>().RemoveOwnership();
+GetComponent<NetworkedObject>().RemoveOwnership();
 ```
 
 When you are owner of an object, you can check for `IsOwner` in any `NetworkBehaviour`, similar to how player objects can do `IsLocalPlayer`.
