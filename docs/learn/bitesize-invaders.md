@@ -4,7 +4,7 @@ title: Invaders Sample
 description: Learn more about game flow, modes, unconventional movement networked, and a shared timer using MLAPI.
 ---
 
-The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders) to understand game flow amd modes with Unity MLAPI using Scene Management, unconventional movement networked, and a shared timer between clients in a client-sided predicted way.
+The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders) to understand the game flow and modes with Unity MLAPI using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients in a client-side predicted way.
 
 ## Game Flows
 
@@ -14,7 +14,7 @@ The logic and transitions are a specified game flow. To transition in a smooth m
 
 Invaders implements this game-flow by creating different controller classes that handle each Game Mode such as MainMenu, a simple Networked Lobby and InGame modes, and other support classes that help with the transition from one Game Mode to another.
 
-The backbones of the flow/system mentioned above is consisting of 2 main components:
+The backbones of the flow/system mentioned above is consisting of two main components:
 
 * `SceneTransitionHandler`
 * `SceneState` 
@@ -22,7 +22,7 @@ The backbones of the flow/system mentioned above is consisting of 2 main compone
 
 ### SceneTransitionHandler
 
-A `SceneTransitionHandler` with a lightweight state machine allows you to track clients' progress in regards to Scene Loading. It notifies the server when clients finish loading, so that the other listeners are informed, by encapsulating the `SceneSwitchProgress` or creating a wrapper around it that others can subscribe to.
+A `SceneTransitionHandler` with a lightweight state machine allows you to track clients' progress in regards to Scene Loading. It notifies the server when clients finish loading so that the other listeners are informed, by encapsulating the `SceneSwitchProgress` or creating a wrapper around it that others can subscribe to.
 
 You track that progress by subscribing to the MLAPI's `SceneSwitchProgress`, which is created when you call `NetworkSceneManager.SwitchScene` in the [SceneTransitionHandler.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs):
 
@@ -52,7 +52,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ### SceneState
 
-At the same time, you have implemented a light State Machine to keep track of the current `SceneState`. For example, the `SceneState` could indicate if players are in the Init or Bootstrap scene, Start or Lobbry, or InGame. You can run a different Behavior, or in this case a different `UpdateLoop` function, for each state.
+At the same time, you have implemented a light State Machine to keep track of the current `SceneState`. For example, the `SceneState` could indicate if players are in the Init or Bootstrap scene, Start or Lobby, or InGame. You can run a different Behavior or in this case a different `UpdateLoop` function, for each state.
 
 ```csharp
 /// <summary>
@@ -74,7 +74,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 One example of how to update the current `SceneState` is in *[InvadersGame.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs)*, in the `NetworkStart` function.
 
 :::note
-This class has the same roll as the Lobby Controller, it acts as a Manager, for a specific part of the game.
+This class has the same role as the Lobby Controller, it acts as a Manager, for a specific part of the game.
 :::
 
 ```csharp
@@ -89,7 +89,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ### Lobby Controller
 
-A Lobby Controller is the manager for the lobby. This is where we applied a simple Mediator Design Pattern that restricts direct communications between the objects and forces them to collaborate only using a moderator object. In this case, the *[LobbyControl.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs)* handles Lobby interactions and state. This works hand-in-hand with the `SceneTransitionHandler`, by subscribing to the `OnClientLoadedScene` of that class in `Awake`.
+A Lobby Controller is a Manager for the lobby. This is where we applied a simple Mediator Design Pattern that restricts direct communications between the objects and forces them to collaborate only using a moderator object. In this case, the *[LobbyControl.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs)* handles Lobby interactions and state. This works hand-in-hand with the `SceneTransitionHandler`, by subscribing to the `OnClientLoadedScene` of that class in `Awake`.
 
 ```csharp
 //If we are hosting, then handle the server side for detecting when clients have connected
@@ -108,7 +108,7 @@ if (IsServer)
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L40-L49
 ``` -->
 
-Whenever the `OnClientLoadedScene` callback is called, the custom `ClientLoadedScene` function is also called. And that is the location where you add the new Player to a container that just loaded the Lobby Scene, generate user stats for it (which is just a random name), and then later send an update to the rest of the users notifying them that someone new has joined the Lobby. (line 102119
+Whenever the `OnClientLoadedScene` callback is called, the custom `ClientLoadedScene` function is also called. And that is the location where you add the new Player to a container that just loaded the Lobby Scene, generates user stats for it (which is just a random name), and then later sends an update to the rest of the users notifying them that someone new has joined the Lobby.
 
 ```csharp
 /// <summary>
@@ -135,7 +135,7 @@ private void ClientLoadedScene(ulong clientId)
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L102-L119
 ``` -->
 
-When the players join this Lobby, they all need to click **Ready** before the game can progress to the next scene (before the Host can start the game). After players click Ready, you send a `ServerRPC` `OnClientIsReadyServerRpc` (inside the `PlayerIsReady` function). When it arrives server-side, it marks the client state as a ready based on its `ClientId` (line 218. You keep track if a client is ready in the `m_ClientsInLobby` `Dictionary`.
+When the players join this Lobby, they all need to click **Ready** before the game can progress to the next scene (before the Host can start the game). After players click Ready, you send a `ServerRPC` called `OnClientIsReadyServerRpc` (inside the `PlayerIsReady` function). When it arrives server-side, it marks the client state as ready based on its `ClientId`. You keep track of if a client is ready in the `m_ClientsInLobby` `Dictionary`.
 
 ```csharp
 /// <summary>
@@ -159,7 +159,7 @@ private void OnClientIsReadyServerRpc(ulong clientid)
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L208-L222
 ``` -->
 
-At the same time that you sync the Clients to update their UI, send a ClientRpc to update the other players' ready state. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
+At the same time, in order to sync up with the rest of the clients and update their UI, we send a ClientRpc. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
 
 ```csharp
 /// <summary>
@@ -228,7 +228,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ## Unconventional Networked Movement
 
-Invaders has an easy movement type - moving only on one (horizontal) axis - which allows you to only modify the transform client-side. Modify *[PlayerControl.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/PlayerControl.cs)* in the `InGameUpdate` function with the help of a [`NetworkTransform`](../components/networktransform.md) that is attached directly to the Player Game Object and automatically syncs up the Transform with the other clients. It will smooth out by interpolating or extrapolating for all of them.
+Invaders has an easy movement type - moving only on one (horizontal) axis - which allows you to only modify the transform client-side without waiting for server-side validation. You can find where we perform the move logic in *[PlayerControl.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/PlayerControl.cs)* in the `InGameUpdate` function . With the help of a [`NetworkTransform`](../components/networktransform.md) that is attached directly to the Player Game Object, it will automatically sync up the Transform with the other clients. At the same time, it will smooth out the movement by interpolating or extrapolating for all of them.
 
 ```csharp
 private void InGameUpdate()
@@ -256,13 +256,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ## Shared Start/Round Timer with Client-Side Prediction
 
-Games commonly have timers to display in the UI such as Start Timer, Round Timer, and Cooldowns. Invaders also has a shared timer to ensure all players start the game at the same time. Otherwise, players with higher end devices and better network access may have an unfair advantage by loading scenes and maps faster.
+Games commonly have timers to display in the UI such as Start Timer, Round Timer, and Cooldowns. Invaders also have a shared timer to ensure all players start the game at the same time. Otherwise, players with higher-end devices and better network access may have an unfair advantage by loading scenes and maps faster.
 
-When you implement this kind of timer, usually you would use a `NetworkVariableFloat` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwith and some minimal CPU resources.
+When you implement this kind of timer, usually you would use a `NetworkVariableFloat` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
 
 You have two options:
 
-* The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients are not able to modify the `NetworkVariable` directly.
+* The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients cannot modify the `NetworkVariable` directly.
 * A fair solution is to set the `SendTickRate` of that timer `NetworkVariableFloat`, so that the server only sends an update once every second, without no additional work.
 
 In Invaders and the current state of MLAPI, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
