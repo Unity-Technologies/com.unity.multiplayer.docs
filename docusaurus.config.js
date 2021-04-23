@@ -1,4 +1,6 @@
 // Docusaurus v2, see package.json for versions
+//const LATEST_VERSION = 'v0.1.0'
+
 module.exports = {
     title: 'Unity Multiplayer Networking',
     tagline: 'Build multiplayer games in Unity',
@@ -68,32 +70,22 @@ module.exports = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'getting-started/about-mlapi',
-            label: 'MLAPI',
+            label: 'Docs',
+            to: '/getting-started/about-mlapi',
             position: 'left',
+            items: [
+              {
+                to: 'getting-started/about-mlapi',
+                label: 'Unity MLAPI',
+              },
+              {
+                to: 'transport/introduction',
+                label: 'Unity Transport',
+              },
+            ]
           },
           {
-            type: 'doc',
-            docId: 'transport/introduction',
-            label: 'Transport',
-            position: 'left',
-          },
-          {
-            type: 'doc',
-            docId: 'mlapi-api/introduction',
-            label: 'API',
-            position: 'left',
-          },
-          {
-            type: 'doc',
-            docId: 'learn/introduction',
-            label: 'Learn',
-            position: 'left',
-          },
-          {
-            type: 'doc',
-            docId: 'release-notes/introduction',
+            to: '/release-notes/introduction',
             label: 'Release Notes',
             position: 'left',
           },
@@ -255,8 +247,7 @@ module.exports = {
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,
             showLastUpdateTime: true,
-            // Edit this page repo domain URL
-            //editUrl: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/',
+            // Edit URL for version
             editUrl: function ({
               versionDocsDirPath,
               docPath,
