@@ -42,6 +42,10 @@ module.exports = {
         "type": "doc",
         "id": "tutorials/helloworldtwo"
       },
+      {
+        "type": "doc",
+        "id": "tutorials/goldenpath"
+      },
     ],
   },
   {
