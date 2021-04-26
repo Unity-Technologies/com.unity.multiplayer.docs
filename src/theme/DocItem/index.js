@@ -18,6 +18,13 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import { useActivePlugin, useVersions, useActiveVersion } from '@theme/hooks/useDocs';
 
+//Components
+import ShareButton from '../../components/DocItem/ShareButton';
+
+//Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPrint } from '@fortawesome/free-solid-svg-icons'
+
 function DocItem(props) {
   const {
     siteConfig
@@ -92,48 +99,67 @@ function DocItem(props) {
               {!hideTitle && <header>
                   <h1 className={styles.docTitle}>{title}</h1>
                 </header>}
-              <div className="markdown">
-                <DocContent />
-              </div>
-            </article>
-            {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-vert--xl">
-                <div className="row">
-                  <div className="col feedback-edit">
+                {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-bottom--lg margin-top-md">
+              <div className="row margin-left--none navbar__inner">
+              
+                {/* Last Updated at */}
+                <div className="user-options">
+                  {(lastUpdatedAt || lastUpdatedBy) &&
+                    <div className="text--left avatar">
+                      <div className={styles.docLastUpdatedAt}>Last updated{' '}</div>
+                      {lastUpdatedAt && <>
+                        :&nbsp;{' '}
+                        <time dateTime={new Date(lastUpdatedAt * 1000).toISOString()}>
+                          {new Date(lastUpdatedAt * 1000).toLocaleDateString()}
+                        </time>
+                        {lastUpdatedBy && ' '}
+                        {<>&nbsp; |</>}
+                      </>}
+                      {lastUpdatedBy && <>
+                        by <strong>{lastUpdatedBy}</strong>
+                      </>}
+                  </div>}
+                </div>
+
+                {/* Open Doc Button*/}
+                <div className="user-options">
+                  {/* PDF Button*/}
+                  <div className="margin-right--md pointer display-flex" style={{ display: 'flex' }}>
+                    {editUrl && <a onClick={()=>window.print()} > {/* href={openIssueURL} target="_blank" rel="noreferrer noopener"*/}
+                      <FontAwesomeIcon icon={ faPrint } /><>&nbsp;</>
+                        PDF
+                      </a>}
+                  </div>
+
+                  {/* Edit URL */}
+                  <div>
                     {editUrl && <a href={editUrl} target="_blank" rel="noreferrer noopener">
                         <IconEdit />
                         Edit this page
                       </a>}
+                      <>&nbsp;&nbsp;&nbsp;</>
                   </div>
-                  <div className="col feedback-issue">
-                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
+
+                {/* Open Doc Button*/}
+                <div className="margin-right--md display-flex" style={{ display: 'flex' }}>
+                {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
                     <IconBug />
-                    Log an issue</a>}
-                  </div>
-                  {(lastUpdatedAt || lastUpdatedBy) && <div className="col feedback-update">
-                      <em>
-                        <small>
-                          Last updated{' '}
-                          {lastUpdatedAt && <>
-                              on{' '}
-                              <time dateTime={new Date(lastUpdatedAt * 1000).toISOString()} className={styles.docLastUpdatedAt}>
-                                {new Date(lastUpdatedAt * 1000).toLocaleDateString()}
-                              </time>
-                              {lastUpdatedBy && ' '}
-                            </>}
-                          {lastUpdatedBy && <>
-                              by <strong>{lastUpdatedBy}</strong>
-                            </>}
-                          {process.env.NODE_ENV === 'development' && <div>
-                              <small>
-                                {' '}
-                                (Simulated during dev for better perf)
-                              </small>
-                            </div>}
-                        </small>
-                      </em>
-                    </div>}
+                    Log an issue</a>} 
                 </div>
-              </div>}
+  
+                </div>  
+
+                
+
+                </div>
+              </div>} 
+
+
+              <div className="markdown">
+                <DocContent />
+              </div>
+            </article>
+            
             <div className="margin-vert--lg">
               <DocPaginator metadata={metadata} />
             </div>

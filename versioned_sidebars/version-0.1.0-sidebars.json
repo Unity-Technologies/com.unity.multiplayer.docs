@@ -418,24 +418,6 @@
       "id": "version-0.1.0/learn/faq"
     }
   ],
-  "version-0.1.0/releasenotes": [
-    {
-      "type": "doc",
-      "id": "version-0.1.0/release-notes/introduction"
-    },
-    {
-      "type": "doc",
-      "id": "version-0.1.0/release-notes/multiplayer/mlapi-0-1-0"
-    },
-    {
-      "type": "doc",
-      "id": "version-0.1.0/release-notes/samples/samples-0-1-0"
-    },
-    {
-      "type": "doc",
-      "id": "version-0.1.0/release-notes/doc-changelog"
-    }
-  ],
   "version-0.1.0/api": [
     {
       "type": "doc",
