@@ -95,7 +95,6 @@ module.exports = {
           },
           {
             to: '/introduction',
-            //prependBaseUrlToHref: true,
             label: 'Release Notes',
             docsPluginId: 'releases',
             position: 'left',
@@ -103,10 +102,12 @@ module.exports = {
               {
                 to: 'introduction',
                 label: 'Multiplayer Releases',
+                docsPluginId: 'releases',
               },
               {
                 to: 'doc-changelog',
                 label: 'Docs Changelog',
+                docsPluginId: 'releases',
               },
             ]
           },
