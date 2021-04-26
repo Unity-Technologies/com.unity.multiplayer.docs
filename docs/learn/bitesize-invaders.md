@@ -18,7 +18,7 @@ The backbones of the flow/system mentioned above is consisting of two main compo
 
 * `SceneTransitionHandler`
 * `SceneState` 
-* Lobby Controller
+* `Lobby Controller`
 
 ### SceneTransitionHandler
 
