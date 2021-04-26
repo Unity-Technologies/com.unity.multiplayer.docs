@@ -1251,6 +1251,22 @@
     url-loader "^4.1.1"
     webpack "^4.44.1"
 
+"@docusaurus/plugin-client-redirects@^2.0.0-alpha.73":
+  version "2.0.0-alpha.73"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-client-redirects/-/plugin-client-redirects-2.0.0-alpha.73.tgz#f47e63d3ba5d99703b7d7539e73723f0516d2e99"
+  integrity sha512-/+e8TLVuITo/glWyBtlH6QvxOqMfRCljXko5SwQVvxShTPXJG3tIVG7OZn4CSsIcz85TpWJLYI/QpS6uKeOhiA==
+  dependencies:
+    "@docusaurus/core" "2.0.0-alpha.73"
+    "@docusaurus/types" "2.0.0-alpha.73"
+    "@docusaurus/utils" "2.0.0-alpha.73"
+    "@docusaurus/utils-validation" "2.0.0-alpha.73"
+    chalk "^3.0.0"
+    eta "^1.11.0"
+    fs-extra "^9.1.0"
+    globby "^11.0.2"
+    lodash "^4.17.20"
+    tslib "^2.1.0"
+
 "@docusaurus/plugin-content-blog@2.0.0-alpha.73":
   version "2.0.0-alpha.73"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-2.0.0-alpha.73.tgz#3e297aebd271866e05d9a9fe65021b8e28a4137f"
@@ -1481,6 +1497,39 @@
     eval "^0.1.4"
     url "^0.11.0"
     webpack-sources "^1.4.3"
+
+"@fortawesome/fontawesome-common-types@^0.2.35":
+  version "0.2.35"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.35.tgz#01dd3d054da07a00b764d78748df20daf2b317e9"
+  integrity sha512-IHUfxSEDS9dDGqYwIW7wTN6tn/O8E0n5PcAHz9cAaBoZw6UpG20IG/YM3NNLaGPwPqgjBAFjIURzqoQs3rrtuw==
+
+"@fortawesome/fontawesome-svg-core@^1.2.35":
+  version "1.2.35"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.35.tgz#85aea8c25645fcec88d35f2eb1045c38d3e65cff"
+  integrity sha512-uLEXifXIL7hnh2sNZQrIJWNol7cTVIzwI+4qcBIq9QWaZqUblm0IDrtSqbNg+3SQf8SMGHkiSigD++rHmCHjBg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/free-brands-svg-icons@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.15.3.tgz#bec2821d23b9c667be1d192a6c5bfb2667e588eb"
+  integrity sha512-1hirPcbjj72ZJtFvdnXGPbAbpn3Ox6mH3g5STbANFp3vGSiE5u5ingAKV06mK6ZVqNYxUPlh4DlTnaIvLtF2kw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/free-solid-svg-icons@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.3.tgz#52eebe354f60dc77e0bde934ffc5c75ffd04f9d8"
+  integrity sha512-XPeeu1IlGYqz4VWGRAT5ukNMd4VHUEEJ7ysZ7pSSgaEtNvSo+FLurybGJVmiqkQdK50OkSja2bfZXOeyMGRD8Q==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/react-fontawesome@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.14.tgz#bf28875c3935b69ce2dc620e1060b217a47f64ca"
+  integrity sha512-4wqNb0gRLVaBm/h+lGe8UfPPivcbuJ6ecI4hIgW0LjI7kzpYB9FkN0L9apbVzg+lsBdcTf0AlBtODjcSX5mmKA==
+  dependencies:
+    prop-types "^15.7.2"
 
 "@hapi/hoek@^9.0.0":
   version "9.1.1"
@@ -2915,6 +2964,14 @@ chalk@^1.1.1:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
+
+chalk@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-3.0.0.tgz#3f73c2bf526591f574cc492c51e2456349f844e4"
+  integrity sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
 
 chalk@^4.1.0:
   version "4.1.0"
@@ -4490,7 +4547,7 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-eta@^1.12.1:
+eta@^1.11.0, eta@^1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/eta/-/eta-1.12.1.tgz#d985766591676c323f02dfc48a67539212745937"
   integrity sha512-H8npoci2J/7XiPnVcCVulBSPsTNGvGaINyMjQDU8AFqp9LGsEYS88g2CiU+d01Sg44WtX7o4nb8wUJ9vnI+tiA==

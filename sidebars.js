@@ -432,24 +432,6 @@ transport: [
        "id": "learn/faq"
     },
   ],
-  releasenotes: [
-    {
-      "type": "doc",
-      "id": "release-notes/introduction"
-    },
-    {
-      "type": "doc",
-      "id": "release-notes/multiplayer/mlapi-0-1-0"
-    },
-    {
-      "type": "doc",
-      "id": "release-notes/samples/samples-0-1-0"
-    },
-    {
-      "type": "doc",
-      "id": "release-notes/doc-changelog"
-    },
-  ],
   api: [
     {
       "type": "doc",
