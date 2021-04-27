@@ -430,19 +430,6 @@ module.exports = {
           },
         },
       ],
-      [
-      '@docusaurus/plugin-client-redirects',
-      {
-        fromExtensions: ['html'],
-        createRedirects: function (existingPath) {
-          // redirect to /releases from /docs/releases
-          if (existingPath === '/docs/releases') {
-            return ['releases'];
-          }
-        },
-        
-      },
-      ],
       [require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-5V25JL6', // GTM Container ID
