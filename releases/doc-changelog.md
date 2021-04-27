@@ -16,10 +16,12 @@ The changelog tracks major changes to documentation, such as removed pages, adde
 
 | Feature | Date | Description |
 | -- | -- | -- |
+| New Content | April 2021 | Released Boss Room content. |
 | New Content | March 2021 | Numerous new sections of content have been added to support new MLAPI features for v0.1.0 and community feedback. |
 
 ## Site enhancements
 
 | Feature | Date | Description |
 | -- | -- | -- |
+| Versioning | April 2021 | Versioning added to the site, including multi-instances for non-versioned content. |
 | Site Live | March 2021 | Initial Unity Multiplayer documentation site released live to the public. Features include content, blog, embedded GitHub code support, embedded video support, feedback per page, edit viewed page, and light/dark mode. For details, see [our blog](/blog/2021/02/11/welcome). |

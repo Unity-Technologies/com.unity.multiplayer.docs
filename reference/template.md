@@ -1,9 +1,9 @@
 ---
 id: template
-title: Doc Template
+title: Markdown Guide and Code
 ---
 
-This template ([GitHub file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md)) displays all options available for writing topics in this site. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
+This guide details how to use Markdown and custom features available for this site. You can review Markdown code in this [GitHub file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/reference/template.md) or in local cloned files in the */reference/template.md* file. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
 ## Markdown Syntax
 
@@ -15,7 +15,7 @@ The doc site requires all file names in lowercase, no spaces, with dashes used a
 
 ## Simple Template
 
-If you need a simple template to start a new page, see the [*/template/markdown.md*](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/templates/markdown.md) file in your local cloned files. This file gives you simple Markdown to get started. For more Markdown formats, see this page's code.
+If you need a simple template to start a new page, see the [*/reference/templates/markdown.md*](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/reference/templates/markdown.md) file in your local cloned files. This file gives you simple Markdown to get started. For more Markdown formats, see this page's code.
 
 ## Markdown Frontmatter
 
