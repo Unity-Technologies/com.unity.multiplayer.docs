@@ -209,7 +209,7 @@ module.exports = {
               {
                 label: 'Licenses',
                 type: 'doc',
-                to: 'license',
+                to: '/reference/license',
                 docsPluginId: 'reference',
               },
               {
