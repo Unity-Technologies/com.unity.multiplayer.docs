@@ -12,7 +12,7 @@ All documentation sections have licenses covering content for those Unity featur
 | -- | -- |
 | [MLAPI](https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
 | [Transport](https://docs-multiplayer.unity3d.com/docs/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
-| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) |
+| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [Boss Room UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop)<br/><br/>[Bitsize Samples UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) |
 
 
 :::unity License Information
@@ -47,11 +47,21 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Boss Room: Small Scale Co-op Sample License
 
-The [Boss Room: Small Scale Co-op Sample respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
+The [Boss Room: Small Scale Co-op Sample repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
 
 Boss Room: Small Scale Co-op Sample © 2021 Unity Technologies
 
 Licensed under the Unity Companion License for [Unity-dependent projects](https://unity3d.com/legal/licenses/unity_companion_license); otherwise licensed under the [Unity Package Distribution License](https://unity3d.com/legal/licenses/Unity_Package_Distribution_License).
+
+Unless expressly provided otherwise, the Software under this license is made available strictly on an “AS IS” BASIS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. Please review the license for details on these and other terms and conditions.
+
+## Multiplayer Bitesize Samples License
+
+The [Multiplayer Bitesize Samples repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) and code are under a UCL License.
+
+Multiplayer Bitesize Samples Repository © 2021 Unity Technologies
+
+Licensed under the Unity Companion License for Unity-dependent projects (see https://unity3d.com/legal/licenses/unity_companion_license).
 
 Unless expressly provided otherwise, the Software under this license is made available strictly on an “AS IS” BASIS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. Please review the license for details on these and other terms and conditions.
 

@@ -1,5 +1,5 @@
 ---
-title: A cool title!
+title: Template - Blog post
 author: Your name or team name
 author_title: Unity, title
 tags: [tag]
@@ -21,4 +21,4 @@ How to create a blog:
 1. Save it in the */blog* root folder in this repo.
 1. Save any images to */static/img/blog*.
 
-Need a format? See */docs/template.md*.
+For example Markdown formatting, embedding media, and more, see other blog files in */blog*.
