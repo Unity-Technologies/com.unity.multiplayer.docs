@@ -265,13 +265,15 @@ You have two options:
 * The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients cannot modify the `NetworkVariable` directly.
 * A fair solution is to set the `SendTickRate` of that timer `NetworkVariableFloat`, so that the server only sends an update once every second, without any additional work.
 
-In Invaders and the current state of MLAPI, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
+In Invaders and the current state of Unity MLAPI, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
 
-As a workaround, you have to wait for all clients to be connected before setting the `SendTickRate` to '-1' for `m_ReplicatedTimeRemaining` `NetworkVariableFloat`. The code that checks if you need to set this is inside the `ShouldStartCountDown` method in *InvadersGame.cs*, lines ('186213'). 
+As a workaround, you have to wait for all clients to be connected before setting the `SendTickRate` to '-1' for `m_ReplicatedTimeRemaining` `NetworkVariableFloat`. The code that checks if you need to set this is inside the `ShouldStartCountDown` method in *InvadersGame.cs*. 
 
 :::important
-As soon as MLAPI evolves and fixes this problem, you can just set `SendTickRate` in the `NetworkStart` and most of the code inside `ShouldStartCountDown` will be obsolete.
+As soon as MLAPI evolves and fixes this problem, you can just set `SendTickRate` in the `NetworkStart` and most of the code inside `ShouldStartCountDown` will become obsolete.
 :::
+
+Example code to start the countdown:
 
 ```csharp
 /// <summary>
@@ -304,6 +306,8 @@ private bool ShouldStartCountDown()
 }
 ```
 
-<!-- ```csharp reference
+```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L186-L213
-``` -->
+```
+
+
