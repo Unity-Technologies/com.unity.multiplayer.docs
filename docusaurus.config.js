@@ -157,7 +157,7 @@ module.exports = {
             //label: 'Community',
             className: 'navbar-grid-menu',
             items: [
-              {to: 'blog', label: 'Blog', position: 'right'},
+              {href: 'blog', label: 'Blog', position: 'right'},
               {
                 label: 'Product Roadmap',
                 href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
