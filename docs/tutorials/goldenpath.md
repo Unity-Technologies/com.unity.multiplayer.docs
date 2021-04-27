@@ -1,20 +1,22 @@
 ---
 id: goldenpath
 title:  Hello World to Goldenpath
+description: Tutorial that explains adding a command line handler, network variables (client and server-controlled), network transforms for auto-movement, and RPC introduction.
 ---
 
-:::important
-This tutorial requires an MLAPI-supported version of Unity (2019.4+).
-:::
 
 In this guide we will build on the work we have already done in Hello World and add in a few more features, we will be covering the following:
 
-- Adding a command line handler (to make launching easier), some
+- Adding a command line handler (to make launching easier)
 - Network variables (client and server-controlled) 
 - Network transforms
 - RPCs
 
-As there are some minor differences between this turorial and the hello world one we will be starting afresh.
+As there are some minor differences between this tutorial and the hello world one we will be starting afresh.
+
+:::important
+This tutorial requires an MLAPI-supported version of Unity (2019.4+).
+:::
 
 ## Create a new project in Unity
 
@@ -25,8 +27,11 @@ As there are some minor differences between this turorial and the hello world on
 1. Select the location to save the project.
 
 :::important
-You will need to remember this path for later in the [guide](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide our path was `/dev/mlapi-golden-path/`
+You will need to remember this path for later in the [guide](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide our path was `users/dev/mlapi-golden-path/`
 :::
+
+<iframe src="https://www.youtube.com/embed/I_VOV836FDA?playlist=I_VOV836FDA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
 ## Import MLAPI Package via URL
@@ -42,7 +47,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
   :::tip
   We renamed the GameObject because:
     * It makes it  easier to refer to later.
-    * There is one and only one **NetworkManager**, this is the object that contains the  `NetworkManager` component.
+    * There should only be one **NetworkManager**, this is the object that contains the  `NetworkManager` component.
   :::
 
   You have now created a new GameObject called **NetworkManager**.
@@ -56,7 +61,14 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 1. Select `UnetTransport`.
 1. Save your scene.
 
+
+<iframe src="https://www.youtube.com/embed/vuGdyjNlkTI?playlist=vuGdyjNlkTI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+
+
 ## Creating an object to spawn for each connected player
+
 1. Create 3D Object->Capsule (name it **Player**). 
 1. Add a `NetworkObject` component.
 1. Click the Assets folder.
@@ -84,8 +96,11 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 1. Create a 3D Object->Plane, centered at (0,0,0).
 1. Save your scene
 
+<iframe src="https://www.youtube.com/embed/TzAVJym6PpU?playlist=TzAVJym6PpU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-:::tip Optional
+
+### Testing the basic network building blocks
 
 1. To do a quick test you can click play.  
 1. The Editor will start, and you will just see the plane.  
@@ -93,7 +108,10 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 1. In the `NetworkManager` inspector scroll down and find the `Start Host` button.  
 1. If you click it, you will see the player capsule spawn. 
 1. Stop the player.
-:::
+
+<iframe src="https://www.youtube.com/embed/iLb00icvRMs?playlist=iLb00icvRMs&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 ## Creating a command line helper
 This command line helper will help us launch our project from a command line.
@@ -282,7 +300,7 @@ public class NetworkVariableTest : NetworkBehaviour
 </details>
 
 
-Testing Server-controlled Network Variables 
+### Testing Server-controlled Network Variables 
 
 1. Select **File > Build and Run**. 
 1. Stop the player 
@@ -338,6 +356,8 @@ public class NetworkTransformTest : NetworkBehaviour
 }
 ```
 </details>
+
+### Testing Network Transform
 
 1. Select **File > Build and Run**. 
 1. Stop the player 
@@ -400,6 +420,8 @@ public class RpcTest : NetworkBehaviour
 }
 ```
 </details>
+
+### Testing RPCs
 
 1. Select **File > Build and Run**. 
 1. Stop the player 
