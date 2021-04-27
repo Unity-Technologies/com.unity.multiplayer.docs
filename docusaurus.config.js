@@ -430,6 +430,25 @@ module.exports = {
           },
         },
       ],
+      [
+        'docusaurus-plugin-includes',
+        // https://github.com/simologos/docusaurus-plugin-includes#readme
+        {
+          sharedFolders: [
+            // Embed a markdown file from a folder. Source and target path are defined relative to the root where docusaurus.config.js is located.
+            //{ source: '../../_shared', target: '../docs/shared'},
+          ],
+
+          // Deletes the shared folder from generated site, not needed
+          postBuildDeletedFolders: ['shared'],
+  
+          replacements: [
+            // Variable names, short lines
+            { key: '{MLAPI}', value: 'Unity MLAPI' },
+            { key: '{BossRoom}', value: 'Boss Room: ' },
+          ],
+        },
+      ],
       [require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-5V25JL6', // GTM Container ID
