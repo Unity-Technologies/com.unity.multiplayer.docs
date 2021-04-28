@@ -3,17 +3,32 @@ id: helloworldtwo
 title: Building on "Hello World"
 sidebar_label: Building on "Hello World"
 ---
+In this guide we will build on the work we have already done in Hello World and add in a few more features, we will be covering the following:
 
-:::note
-This guide follows on from the work completed in [Your First Networking Game "Hello World"](helloworldintro.md). You should complete that guide before starting this one.
+- Adding scripts to your objects
+- Adding editor modes inside your game  (Host Server and Client)
+- Basic Player Movement
+- Object ownership
+- Basic RPC use
+
+
+We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
+
+:::contribution Special Thanks
+
+ This guide would not have been possible without the hard work and support of Fernando Cortez. 
 :::
+
+## Adding Scripts to Hello World
 
 1. Click the Assets folder.
 1. Create a new Folder and call it **Scripts**.
 1. Create an empty GameObject rename it **HelloWorldManager**.
 1. Create a script called `HelloWorldManager`.
 1. Add the `HelloWorldManager` script as a component.
-  ![Create a Helloworldscript](/img/helloworldcreatescript.gif)
+<iframe src="https://www.youtube.com/embed/wdzkZbG2-18?playlist=wdzkZbG2-18&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 1. Open the `HelloWorldManager.cs` script.
 1. Edit the `HelloWorldManager.cs` script to match the following.
 
@@ -23,6 +38,9 @@ You can copy the script from here and paste it into your file.
    1. Click **Copy** in the top right corner.
    1. Paste it into your code editor.
 :::
+
+<details open>
+<summary>Click to show/hide the Code.</summary>
 
 ```csharp
 
@@ -85,8 +103,16 @@ namespace HelloWorld
     }
 }
 ```
+</details>
 
-Inside the `HelloWorldManager.cs` script, we will define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
+## Adding Editor Modes to Hello World
+
+Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
 
 <!---
 ```csharp reference
@@ -112,10 +138,15 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             GUILayout.Label("Mode: " + mode);
         }
 ```
+</details>
 
 `NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
 
-We will call these methods inside of `OnGUI()`.
+We call these methods inside of `OnGUI()`.
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
 
 <!---
 ```csharp reference
@@ -144,14 +175,21 @@ void OnGUI()
         }
 
 ```
+</details>
+
 :::note
 You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
 :::
 
-8. Create a new script `HelloWorldPlayer`.
-
+## Adding basic movement to the Player object 
+1. Create a new script `HelloWorldPlayer`.
 1. Open the `HelloWorldPlayer.cs` script.
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
 
 ```csharp
 
@@ -207,11 +245,20 @@ namespace HelloWorld
     }
 }
 ```
-11. Select the Player Prefab.
+
+</details>
+
+4. Select the Player Prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
-![Create a Helloworldplayer script](/img/helloworldcreateplayerscript.gif) 
+<iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L8
@@ -221,8 +268,15 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
      public class HelloWorldPlayer : NetworkBehaviour
 
 ```
+</details>
 
-Inside this class we will define a `NetworkVariable` to represent this player's networked position.
+Inside this class we  Nowdefine a `NetworkVariable` to represent this player's networked position.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L10-L14
@@ -235,10 +289,19 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             ReadPermission = NetworkVariablePermission.Everyone
         });
 ```
+</details>
 
-We introduce the concept of ownership on a `NetworkVariable` (read and write permissions). For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
+### Introducing the concept of Ownership 
+
+ In the `HelloWorldPlayer.cs `Script we  introduce the concept of ownership on a `NetworkVariable` (read and write permissions). For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
 
 `HelloWorldPlayer` overrides `NetworkStart`.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L16-L19
@@ -251,6 +314,8 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             Move();
         }
 ```
+</details>
+
 Any `MonoBehaviour` implementing `NetworkBehaviour` can override the MLAPI method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
 
 :::note
@@ -258,6 +323,12 @@ This can be overriden on any `NetworkBehaviour`.
 :::
 
 On both client and server instances of this player, we call the `Move()` method, which will simply do the following.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L21-L33
@@ -279,8 +350,16 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             }
         }
 ```
+</details>
+
+### Some simple RPC use
 
 If this player is a server-owned player, at `NetworkStart()` we can immediately move this player, as suggested in the following code.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
 
 <!---
 ```csharp reference
@@ -296,7 +375,16 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
                 Position.Value = randomPosition;
             }
 ```
+
+</details>
+
  If we are a client, we call a server RPC.
+
+ <details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L29-L32
@@ -310,8 +398,15 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             }
 
 ```
+</details>
 
 This server RPC simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L35-L39
@@ -324,9 +419,14 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             Position.Value = GetRandomPositionOnPlane();
         }
 ```
-
+</details>
 
 The server instance of this player has just modified the Position NetworkVariable, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 <!---
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L46-L49
@@ -338,9 +438,14 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             transform.position = Position.Value;
         }
 ```
-
+</details>
 
 We can now go back to `HelloWorldManager.cs` and define the contents of `SubmitNewPosition()`.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
 
 <!---
 ```csharp reference
@@ -364,6 +469,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             }
         }
 ```
+</details>
 
 Whenever you press the GUI button (which is contextual depending on if you are server or a client), you find your local player and simply call `Move()`.
 
@@ -373,6 +479,10 @@ Make sure **SampleScene** is included in **BuildSettings**.
 :::
 
 One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
+
+<iframe src="https://www.youtube.com/embed/khZh7lZPzqc?playlist=khZh7lZPzqc&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 :::note Congrats!
 Congratulations you have learnt the basics of a networked game 
