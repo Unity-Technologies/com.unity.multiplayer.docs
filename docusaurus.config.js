@@ -158,10 +158,9 @@ module.exports = {
           },
           {
             position: 'right',
-            //label: 'Community',
             className: 'navbar-grid-menu',
             items: [
-              { href: 'blog', label: 'Blog', position: 'right',},
+              {href: '/blog', label: 'Blog', position: 'right', },
               {
                 label: 'Product Roadmap',
                 href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
@@ -326,7 +325,6 @@ module.exports = {
             },
           },
           blog: {
-            path: '/blog',
             postsPerPage: 3,
             feedOptions: {
               type: 'all',
