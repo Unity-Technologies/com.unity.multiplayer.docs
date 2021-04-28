@@ -27,7 +27,7 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 1. Select the location to save the project.
 
 :::important
-You will need to remember this path for later in the [guide](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide our path was `users/dev/mlapi-golden-path/`
+You will need to remember this path for later in the [guide](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide our path was `/dev/mlapi-golden-path/`
 :::
 
 <iframe src="https://www.youtube.com/embed/I_VOV836FDA?playlist=I_VOV836FDA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -205,8 +205,10 @@ public class NetworkCommandLine : MonoBehaviour
    If you are on a Pro Unity license, you may want to disable the splash screen
 :::
 
+<iframe src="https://www.youtube.com/embed/2swybHUigM8?playlist=2swybHUigM8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 ### Testing the command line helper
-1. Let's do a build and test.  
 1. Select **File > Build and Run**. 
 1. Create a folder called `Build`.
 1. Name the binary `GoldenPath`.  
