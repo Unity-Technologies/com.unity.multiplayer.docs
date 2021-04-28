@@ -17,9 +17,10 @@ import IconBug from '@theme/IconBug';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { useActivePlugin, useVersions, useActiveVersion } from '@theme/hooks/useDocs';
+import Link from '@docusaurus/Link';
 
 //Components
-import ShareButton from '../../components/DocItem/ShareButton';
+//import ShareButton from '../../components/DocItem/ShareButton';
 
 //Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -92,9 +93,9 @@ function DocItem(props) {
           <div className={styles.docItemContainer}>
             <article>
               {showVersionBadge && <div>
-                  <span className="badge badge--secondary">
+                  <Link to={useBaseUrl ('/reference/version-matrix') }><span className="badge badge--secondary">
                     Version: {version.label}
-                  </span>
+                  </span></Link>
                 </div>}
               {!hideTitle && <header>
                   <h1 className={styles.docTitle}>{title}</h1>

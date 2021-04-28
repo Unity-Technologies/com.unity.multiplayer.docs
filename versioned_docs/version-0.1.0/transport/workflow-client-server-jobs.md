@@ -5,9 +5,9 @@ title: Create jobified client and server
 
 In the workflow [Creating a minimal client and server](workflow-client-server.md), the client should look like this [code example](samples/clientbehaviour.cs.md).
 
-:::note
-Before reading this workflow, review how the [C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) works.
-:::
+## Requirements
+
+Before reading and using this workflow, you should understand how the [C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) works. Review that information, then continue.
 
 ## Create a Jobified Client
 
@@ -25,7 +25,7 @@ struct ClientUpdateJob: IJob
 ```
 
 :::note
-The data inside the ClientUpdateJob is **copied**. If you want to use the data after the job is completed, you need to have your data in a shared container, such as a [NativeContainer](https://docs.unity3d.com/Manual/JobSystemNativeContainer.html).
+The data inside the `ClientUpdateJob` is **copied**. If you want to use the data after the job is completed, you need to have your data in a shared container, such as a [NativeContainer](https://docs.unity3d.com/Manual/JobSystemNativeContainer.html).
 :::
 
 You may want to update the `NetworkConnection` and the `done` variables inside your job as you may receive a disconnect message. Verify you can share the data between the job and the caller. In this case, use a [NativeArray](https://docs.unity3d.com/ScriptReference/Unity.Collections.NativeArray_1.html).

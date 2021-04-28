@@ -74,6 +74,10 @@ module.exports = {
             position: 'left',
             items: [
               {
+                to: 'getting-started/about-netcode',
+                label: 'Unity Netcode',
+              },
+              {
                 to: 'getting-started/about-mlapi',
                 label: 'Unity MLAPI',
               },
@@ -157,7 +161,7 @@ module.exports = {
             //label: 'Community',
             className: 'navbar-grid-menu',
             items: [
-              {href: 'blog', label: 'Blog', position: 'right'},
+              { href: 'blog', label: 'Blog', position: 'right',},
               {
                 label: 'Product Roadmap',
                 href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
@@ -322,6 +326,7 @@ module.exports = {
             },
           },
           blog: {
+            path: '/blog',
             postsPerPage: 3,
             feedOptions: {
               type: 'all',
@@ -445,7 +450,7 @@ module.exports = {
           replacements: [
             // Variable names, short lines
             { key: '{MLAPI}', value: 'Unity MLAPI' },
-            { key: '{BossRoom}', value: 'Boss Room: ' },
+            { key: '{BossRoom}', value: 'Boss Room: Small Scale Co-op Sample' },
           ],
         },
       ],

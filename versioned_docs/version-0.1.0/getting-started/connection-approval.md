@@ -3,9 +3,13 @@ id: connection-approval
 title: Connection Approval
 ---
 
-During every new connection the MLAPI performs a handshake on top of the one(s) done by the transport. This is to ensure that the `NetworkConfig`'s match up between the Client and Server. In the `NetworkConfig` you can specify to enable `ConnectionApproval`. Connection approval will let you decide on a per connection basis if the connection should be allowed. Connection approval also lets you specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
+With every new connection, Unity MLAPI performs a handshake in addition to handshakes done by the transport. This is to ensure that the `NetworkConfig`s match between the Client and Server. In the `NetworkConfig`, you can specify to enable `ConnectionApproval`. 
 
-However, when `ConnectionApproval` is true you are also required to provide a callback where you put your approval logic inside. 
+Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
+
+## Callback for approval logic
+
+When `ConnectionApproval` is `true`, you are also required to provide a callback where you put your approval logic inside. 
 
 Server-only example:
 
@@ -27,7 +31,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 
     // The prefab hash. Use null to use the default player prefab
     // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
-    ulong? prefabHash = SpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
+    ulong? prefabHash = NetworkSpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
     callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
@@ -36,7 +40,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 
 ## Connection data
 
-The `connectionData` parameter is any custom data of your choice that the client should send to the server. Usually, this should be some sort of ticket, room password or similar that will decide if a connection should be approved or not. The `connectionData` is specified on the Client side in the `NetworkingConfig` supplied when connecting.
+The `connectionData` parameter takes any custom data of your choice that the client should send to the server. Usually, this data should be some sort of ticket, room password, or similar that will decide if a connection should be approved or not. The `connectionData` is specified on the Client-side in the `NetworkingConfig` supplied when connecting.
 
 Example:
 
@@ -56,10 +60,10 @@ The MLAPI uses a callback system in order to allow for external validation. For 
 
 If connection approval is enabled. Any messages sent before a connection is setup are silently ignored.
 
-### Connection Data
+### Connection data Security
 
 If Encryption is enabled, the connection handshake with the buffer will be encrypted AND authenticated. (AES-256 encryption and HMAC-SHA-256 authentication). 
 
 :::note
-If the key exchange is not signed, a man in the middle attack can be done. If you plan on sending authentication tokens such as steam tickets. It's strongly suggested that you sign the handshake.
+If the key exchange is not signed, a man in the middle attack can be done. If you plan on sending authentication tokens such as steam tickets. It is strongly suggested that you sign the handshake.
 :::

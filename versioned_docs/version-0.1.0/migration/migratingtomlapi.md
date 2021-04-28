@@ -1,9 +1,9 @@
 ---
 id: migratingtomlapi
-title: Migrating From UNet to MLAPI
+title: Migrating From UNet to Unity MLAPI
 ---
 
-Use this step-by-step guide to migrate your project from UNet to MLAPI. Sample code is provided as available. We also recommend reviewing the latest [MLAPI Release Notes](../release-notes/index.md).
+Use this step-by-step guide to migrate your projects from Unity UNet to Unity MLAPI. Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link>.
 
 :::note
 If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
@@ -11,7 +11,7 @@ If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buM
 
 ## Current limitations
 
-Review the following limitations for upgrade and migrations from previous versions of UNet to Unity MLAPI:
+Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Unity MLAPI:
 
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
 - Errors for RPC postfix naming patterns do not show in your IDE. 
@@ -28,13 +28,21 @@ It is recommended that you back up your project before proceeding with the migra
 * Create a copy of your entire project folder.
 * Use source control software, like Git. 
 
+:::bestpractice
+We recommend using both methods to backup your project. This gives you a copied project and tracking through committed changes and history.
+:::
+
 ## Install MLAPI and restart Unity
 
-See [Installation](installation.md) for more information.
+See [Installation](installation.md) for more information. 
+
+:::note
+If you install Git for the first time, you will need to restart your system.
+:::
 
 ## Update Invoking
 
-Invoking in the MLAPI is done by calling the `Invoke` method on the `NetworkBehaviour` instead of calling the method directly like in UNet.
+Use the `Invoke` method on the `NetworkBehaviour` to invoke MLAPI, instead of calling the method directly like in UNet.
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
 
@@ -45,7 +53,6 @@ UNET’s `NetworkManager` is also called `NetworkManager` in the MLAPI and works
 :::note
 You cannot inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET. 
 :::
-
 
 ## Replace NetworkManagerHUD 
 
@@ -653,6 +660,7 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
+
 </TabItem>
 
 
@@ -678,6 +686,7 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -690,8 +699,10 @@ MLAPI does not provide Network Discovery. The UNet Network Discovery is a standa
 
 For more information, see the following:
 
-* [MLAPI Release Notes](../release-notes/index.md)
+* <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
 * [API Reference](../mlapi-api/introduction.md)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
