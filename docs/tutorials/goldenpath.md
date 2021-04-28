@@ -14,27 +14,33 @@ In this guide we will build on the work we have already done in Hello World and 
 
 As there are some minor differences between this tutorial and the hello world one we will be starting afresh.
 
+
+
+:::contribution Special Thanks
+
+ This guide would not have been possible without the hard work and support of Matt Walsh. 
+:::
+## Create a new project in Unity
 :::important
 This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 :::
 
-## Create a new project in Unity
-
 1. Open the Unity Hub.
 1. Click New. 
 1. Select type ‘3D’
-1. Rename the project **Golden Path**.
+1. Rename the project **GoldenPath**.
 1. Select the location to save the project.
 
-:::important
-You will need to remember this path for later in the [guide](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide our path was `/dev/mlapi-golden-path/`
+:::note
+You will need to remember this path for later in the [guide](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide our path was `~/dev/mlapi-golden-path/`
 :::
 
-<iframe src="https://www.youtube.com/embed/I_VOV836FDA?playlist=I_VOV836FDA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/AOZE-b9Q8R8?playlist=AOZE-b9Q8R8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
 ## Import MLAPI Package via URL
+
 
 See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI package.
 
@@ -62,7 +68,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 1. Save your scene.
 
 
-<iframe src="https://www.youtube.com/embed/vuGdyjNlkTI?playlist=vuGdyjNlkTI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/ZYEUWzsXEoY?playlist=ZYEUWzsXEoY&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
@@ -96,7 +102,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 1. Create a 3D Object->Plane, centered at (0,0,0).
 1. Save your scene
 
-<iframe src="https://www.youtube.com/embed/TzAVJym6PpU?playlist=TzAVJym6PpU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/B_FWb4J1Pxw?playlist=B_FWb4J1Pxw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
@@ -104,7 +110,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
 1. To do a quick test you can click play.  
 1. The Editor will start, and you will just see the plane.  
-1. Without stopping the editor's play mode, navigate to the `NetworkManager` componet in the Hierarchy tab (it will be underneath `DontDestroyOnLoad`).  
+1. Without stopping the editor's play mode, navigate to the `NetworkManager` component in the Hierarchy tab (it will be underneath `DontDestroyOnLoad`).  
 1. In the `NetworkManager` inspector scroll down and find the `Start Host` button.  
 1. If you click it, you will see the player capsule spawn. 
 1. Stop the player.
@@ -119,11 +125,11 @@ This command line helper will help us launch our project from a command line.
 1. Click the Assets folder.
 1. Create a new Folder and call it **Scripts**.
 1. Create a script called `NetworkCommandLine`.
-
-
 1. Right click on the `NetworkManager` in the hierarchy view.
 1. Create an empty GameObject underneath it.
 1. Rename it `NetworkCommandLine`.
+1. In inspector  for `NetworkCommandLine` Click **Add Component** 
+1. Click **Scripts** and add the `NetworkCommandLine.cs` script you created earlier.
 1. Open the `NetworkCommandLine.cs` script.
 1. Edit the `NetworkCommandLine.cs` script to match the following.
 
@@ -200,6 +206,8 @@ public class NetworkCommandLine : MonoBehaviour
 
 1. Select  **File > Build Settings > Player Settings...**
 1. Change `Full Screen` mode into `Windowed` mode.  
+1. Save your scene.
+
    
 :::tip
    If you are on a Pro Unity license, you may want to disable the splash screen
@@ -216,6 +224,8 @@ public class NetworkCommandLine : MonoBehaviour
 1. Quit your app.
 1. Let's launch from the command line.  
    
+#### For Windows
+
 #### For Mac
 
 1. Open terminal
@@ -223,19 +233,19 @@ public class NetworkCommandLine : MonoBehaviour
 
 You should see two players spawn.  Both should show a plane and a capsule (the capsule being the single player that was spawned)  
 
-#### For Windows
+<iframe src="https://www.youtube.com/embed/84wxdetXUQw?playlist=84wxdetXUQw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 
 
 ## Introducing a Server-controlled Network Variable 
-
-1. Right click **Player** prefab
-1. Add a new script component
-1. Rename it `NetworkVariableTest`
-
-:::tip Handy Hint
-This will create the script in the Scripts folder you created earlier
-:::
+ 
+1. Open the Scripts Folder.
+1. Create a script called `NetworkVariableTest`.
+1. Click the **Player** prefab.
+1. In inspector for the **Player** prefab click **Add Component** 
+1. Click **Scripts** and add the `NetworkVariableTest.cs` script you created earlier
 1. Open the `NetworkVariableTest.cs` script.
 1. Edit the `NetworkVariableTest.cs` script to match the following.
 
@@ -301,6 +311,11 @@ public class NetworkVariableTest : NetworkBehaviour
 ```
 </details>
 
+1. Save your scene.
+
+<iframe src="https://www.youtube.com/embed/JsEVE6UaBIU?playlist=JsEVE6UaBIU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 ### Testing Server-controlled Network Variables 
 
@@ -323,15 +338,21 @@ Server set its var to: 6.099997, has client var at: 5.599997
 Since the printing doesn't happen on every tick, the numbers won't match up perfectly.
 :::
 
+<iframe src="https://www.youtube.com/embed/cUvZ3m0idpM?playlist=cUvZ3m0idpM&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 ## Introducing Network Transform
 
-1. Right Click **Player** prefab. 
-1. Select `Add Component` in the inspector tab.
+1. Click **Player** prefab. 
+1. Click **Add Component** in the Inspector Tab.
+1. Select **MLAPI** from the list shown.
 1. Select `Network Transform` from the list shown.
-1. Right Click **Player** prefab.  
-1. Add a new script component
-1. Rename it `NetworkTransformTest`
+1. Open the Scripts Folder.
+1. Create a script called `NetworkTransformTest`.
+1. Click the **Player** prefab.
+1. In inspector for the **Player** prefab click **Add Component** 
+1. Click **Scripts** and add the `NetworkTransformTest.cs` script you created earlier
 1. Open the `NetworkTransformTest.cs` script.
 1. Edit the `NetworkTransformTest.cs` script to match the following.
 
@@ -359,20 +380,33 @@ public class NetworkTransformTest : NetworkBehaviour
 ```
 </details>
 
+1. Save your scene.
+
+<iframe src="https://www.youtube.com/embed/TJkK3YTIkUs?playlist=TJkK3YTIkUs&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+
 ### Testing Network Transform
 
 1. Select **File > Build and Run**. 
 1. Stop the player 
 1. Launch the client & server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn. 
-1. You should Itto see the player capsule moving in a circle on both the client and the server
-5. This will take you to the `network transform added` commit in the project
+1. You should see the player capsule moving in a circle on both the client and the server
+
+<iframe src="https://www.youtube.com/embed/CQN_YUqdPfU?playlist=CQN_YUqdPfU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+
 
 ## Introducing RPCs
 
+1. Open the Scripts Folder.
+1. Create a script called `RpcTest`.
+1. Click the **Player** prefab.
+1. In inspector for the **Player** prefab click **Add Component** 
+1. Click **Scripts** and add the `RpcTest.cs` script you created earlier
 1. Right Click **Player** prefab. 
-1. Add a new script component
-1. Rename it `RpcTest`
 1. Open the `RpcTest.cs` script.
 1. Edit the `RpcTest.cs` script to match the following.
 
@@ -422,6 +456,12 @@ public class RpcTest : NetworkBehaviour
 }
 ```
 </details>
+1. Save your scene.
+
+<iframe src="https://www.youtube.com/embed/UEYj16CouLE?playlist=UEYj16CouLE&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+
 
 ### Testing RPCs
 
@@ -442,6 +482,16 @@ Server Received the RPC #3
 Client Received the RPC #3
 ...
 ```
+<iframe src="https://www.youtube.com/embed/0mSciPQauyw?playlist=0mSciPQauyw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
+
+:::note Congrats!
+Congratulations you have learnt how to use some of the basic building blocks of Multiplayer game creation. For more information on the relevant concepts intorduced here please refer to the following sections of the documentaiton:
+
+- [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
+- [Network transforms](../components/networktransform.md)
+- [RPCs](../advanced-topics/message-system/about-rpc.md)
+:::
 

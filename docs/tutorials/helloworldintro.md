@@ -4,6 +4,11 @@ title: Your First Networked Game "Hello World"
 ---
 This "Hello World" guide walks you through creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 
+:::contribution Special Thanks
+
+ This guide would not have been possible without the hard work and support of Fernando Cortez. 
+:::
+
 ## Create a new project in Unity
 
 1. Open the Unity Hub.
@@ -16,7 +21,8 @@ This "Hello World" guide walks you through creating a project, installing the ML
 This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 :::
 
- ![Open Unity create new project](/img/openunity.gif)
+<iframe src="https://www.youtube.com/embed/NsfwlWaZ0ng?playlist=NsfwlWaZ0ng&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ## Import MLAPI Package via URL
 
@@ -50,7 +56,7 @@ In this section we will create the basic building blocks of a multiplayer game
 1. Save your scene.
 
 
-<iframe src="https://www.youtube.com/embed/vuGdyjNlkTI?playlist=vuGdyjNlkTI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/ZYEUWzsXEoY?playlist=ZYEUWzsXEoY&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
@@ -84,15 +90,18 @@ In this section we will create the basic building blocks of a multiplayer game
 1. Create a 3D Object->Plane, centered at (0,0,0).
 1. Save your scene
 
-<iframe src="https://www.youtube.com/embed/TzAVJym6PpU?playlist=TzAVJym6PpU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/B_FWb4J1Pxw?playlist=B_FWb4J1Pxw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
+### Testing Hello World
 
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 
 
-  ![firstnetworkgame](/img/firstnetworkgame.gif)
+<iframe src="https://www.youtube.com/embed/Ee3t0xNF0n8?playlist=Ee3t0xNF0n8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 :::note Congrats!
 Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
