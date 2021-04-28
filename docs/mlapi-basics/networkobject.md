@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-The MLAPI's high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and `NetworkBehaviour`s.
+The MLAPI's high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
 
 ## NetworkObject
 

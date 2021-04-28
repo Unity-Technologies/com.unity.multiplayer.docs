@@ -5,21 +5,58 @@
 */
 
 module.exports = {
+  netcode: [
+    {
+      "type": "doc",
+      "id": "getting-started/about-netcode"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Networking Concepts",
+      "items": [
+        {
+          "type": "doc",
+          "id": "reference/glossary/high-level-terminology"
+        },
+        {
+          "type": "doc",
+          "id": "reference/glossary/network-latency-management"
+        },
+        {
+          "type": "doc",
+          "id": "reference/glossary/network-topologies"
+        },
+        {
+          "type": "doc",
+          "id": "reference/glossary/network-terms"
+        },
+        {
+          "type": "doc",
+          "id": "reference/glossary/prioritization"
+        },
+        {
+          "type": "doc",
+          "id": "reference/glossary/relevancy"
+        },
+      ]
+    }
+  ],
   mlapi: [
     {
       "type": "doc",
       "id": "getting-started/about-mlapi"
     },
     {
-      "type": "doc",
-      "id": "migration/install"
-    },
-  {
     "collapsed": true,
     "type": "category",
-    "label": "Migrating to MLAPI",
+    "label": "Installation and Migration",
     "items": [
-          {
+      {
+        "type": "doc",
+        "id": "migration/install"
+      },
+      {
         "type": "doc",
         "id": "migration/migratingtomlapi"
       },
@@ -47,7 +84,7 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "MLAPI Basics",
+    "label": "Networking",
     "items": [
       {
         "type": "doc",
@@ -83,8 +120,8 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/logging"
-      }
+        "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
+      },
     ]
   },
   {
@@ -113,134 +150,124 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Advanced Topics",
+    "label": "Messaging System",
     "items": [
       {
+        "type": "doc",
+        "id": "advanced-topics/messaging-system"
+      },
+      {
         "collapsed": true,
         "type": "category",
-        "label": "Messaging System",
+        "label": "RPC Remote Procedure Call",
         "items": [
           {
             "type": "doc",
-            "id": "advanced-topics/messaging-system"
+            "id": "advanced-topics/message-system/clientrpc"
           },
           {
-            "collapsed": true,
-            "type": "category",
-            "label": "RPC Remote Procedure Call",
-            "items": [
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/clientrpc"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/serverrpc"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/reliability"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/execution-table"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/rpc-params"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/serialization"
-              },
-
-              {
-                "type": "doc",
-                "id": "advanced-topics/message-system/rpc-compatibility"
-              },
-            ]
+            "type": "doc",
+            "id": "advanced-topics/message-system/serverrpc"
           },
           {
-            "collapsed": true,
-            "type": "category",
-            "label": "Network Update Loop",
-            "items": [
-              {
-                "type": "doc",
-                "id": "advanced-topics/network-update-loop-system/about-network-update-loop"
-              },
-              {
-                "type": "doc",
-                "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
-              },
-            ]
+            "type": "doc",
+            "id": "advanced-topics/message-system/reliability"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/message-system/execution-table"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/message-system/rpc-params"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/message-system/serialization"
+          },
+          {
+            "type": "doc",
+            "id": "advanced-topics/message-system/rpc-compatibility"
           },
         ]
       },
       {
         "collapsed": true,
         "type": "category",
-        "label": "Serialization",
+        "label": "Network Update Loop",
         "items": [
           {
             "type": "doc",
-            "id": "advanced-topics/serialization/serialization-intro"
+            "id": "advanced-topics/network-update-loop-system/about-network-update-loop"
           },
           {
             "type": "doc",
-            "id": "advanced-topics/serialization/cprimitives"
+            "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
           },
-          {
-            "type": "doc",
-            "id": "advanced-topics/serialization/unity-primitives"
-          },   {
-            "type": "doc",
-            "id": "advanced-topics/serialization/enum_types"
-          },
-          {
-            "type": "doc",
-            "id": "advanced-topics/serialization/static-arrays"
-          },  
-          { 
-            "type": "doc",
-            "id": "advanced-topics/serialization/inetworkserializable"
-
-          },
-
         ]
-        },
-      {
-        "type": "doc",
-        "id": "advanced-topics/object-pooling"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/custom-transports"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/networkprofiler-window"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/custom-serialization"
-      }, 
-      { 
-        "type": "doc",
-        "id": "advanced-topics/ways-synchronize"
-
       },
     ]
   },
   {
     "collapsed": true,
     "type": "category",
-    "label": "Troubleshooting",
+    "label": "Serialization",
     "items": [
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/serialization-intro"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/cprimitives"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/unity-primitives"
+      },   
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/enum_types"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/static-arrays"
+      },  
+      { 
+        "type": "doc",
+        "id": "advanced-topics/serialization/inetworkserializable"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/custom-serialization"
+      }, 
+    ]
+    },
+  {
+    "type": "doc",
+    "id": "advanced-topics/object-pooling"
+  },
+  {
+    "type": "doc",
+    "id": "advanced-topics/custom-transports"
+  },
+  {
+    "type": "doc",
+    "id": "advanced-topics/networkprofiler-window"
+  },
+  { 
+    "type": "doc",
+    "id": "advanced-topics/ways-synchronize"
+  },
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Debugging",
+    "items": [
+      {
+        "type": "doc",
+        "id": "mlapi-basics/logging"
+      },
       {
         "type": "doc",
         "id": "troubleshooting/troubleshooting"
@@ -251,38 +278,6 @@ module.exports = {
       }
     ]
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Glossary",
-    "items": [
-
-      {
-        "type": "doc",
-        "id": "reference/glossary/high-level-terminology"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-latency-management"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-topologies"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/network-terms"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/prioritization"
-      },
-      {
-        "type": "doc",
-        "id": "reference/glossary/relevancy"
-      },
-    ]
-  }
 ],
 transport: [
   {
@@ -359,7 +354,7 @@ transport: [
         "type": "doc",
         "id": "transport/samples/jobifiedserverbehavior"
       },
-            ]
+    ]
   },
 ],
   learn:
@@ -367,69 +362,66 @@ transport: [
     { 
       "type": "doc",
       "id": "learn/introduction",
-      }, 
-      {
-        "type": "doc",
-         "id": "learn/dapper-video"
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Learn with Boss Room",
-        "items": [
-            {
-            "type": "doc",
-            "id": "learn/bossroom"
-            },
-
-        ]
-        },
+    }, 
     {
       "collapsed": true,
       "type": "category",
-      "label": "What are RPCs and when to use them",
-      "items": [  
-        {
-          "type": "doc",
-          "id": "learn/rpcvnetvar",
-        },
-        {
-          "type": "doc",
-          "id": "learn/rpcnetvarexamples",
-        },
-      ],
-    },
-
-    {
-    "collapsed": true,
-    "type": "category",
-    "label": "Managing Lag with Unity",
-    "items": [
-        {
-        "type": "doc",
-        "id": "learn/lagandpacketloss"
-        },
-    ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Multiplayer Game Architecture",
+      "label": "Networking",
       "items": [
-  
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Multiplayer Game Architecture",
+          "items": [
+            {
+              "type": "doc",
+              "id": "learn/multiplayergamearhitectureintroduction"
+            },
+            {
+              "type": "doc",
+              "id": "learn/listenserverhostarchitecture"
+            },
+          ]
+        },
         {
           "type": "doc",
-          "id": "learn/multiplayergamearhitectureintroduction"
-          },
-          {
-          "type": "doc",
-          "id": "learn/listenserverhostarchitecture"
-          },
+          "id": "learn/lagandpacketloss"
+        },
       ]
     },
     {
-      "type": "doc",
-       "id": "learn/faq"
+      "collapsed": true,
+      "type": "category",
+      "label": "Unity MLAPI",
+      "items": [
+        {
+          "type": "doc",
+          "id": "learn/bossroom"
+          },
+        {
+          "type": "doc",
+          "id": "learn/dapper-video"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "What are RPCs and when to use them",
+          "items": [  
+            {
+              "type": "doc",
+              "id": "learn/rpcvnetvar"
+            },
+            {
+              "type": "doc",
+              "id": "learn/rpcnetvarexamples"
+            },
+          ],
+        },
+        {
+          "type": "doc",
+           "id": "learn/faq"
+        },
+      ]
     },
   ],
   api: [

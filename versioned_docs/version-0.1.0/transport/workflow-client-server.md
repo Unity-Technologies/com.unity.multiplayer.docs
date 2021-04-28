@@ -3,7 +3,7 @@ id: minimal-workflow
 title: Create minimal client and server
 ---
 
-This workflow helps you create a sample project that highlights how to use the `com.unity.transport` API to:
+This Transport workflow covers all aspects of the `Unity.Networking.Transport` package and helps you create a sample project that highlights how to use the `com.unity.transport` API to:
 
 * Configure
 * Connect
@@ -13,13 +13,9 @@ This workflow helps you create a sample project that highlights how to use the `
 * Disconnect
 * Timeout a connection
 
-:::note
-This workflow covers all aspects of the `Unity.Networking.Transport` package.
-:::
-
 The goal is to make a remote `add` function. The flow will be: a client connects to the server, and sends a number, this number is then received by the server that adds another number to it and sends it back to the client. The client, upon receiving the number, disconnects and quits.
 
-Using the `NetworkDriver` to write client and server code is pretty similar between clients and servers, there are a few subtle differences that you can see demonstrated below.
+Using the `NetworkDriver` to write client and server code is similar between clients and servers; there are a few subtle differences demonstrated in this guide.
 
 ## Creating a Server
 
@@ -225,7 +221,9 @@ For each connection we want to call `PopEventForConnection` while there are more
     {
 ```
 
-> **Note**: There is also the `NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader slice)` method call, that returns the first available event, the `NetworkConnection` that its for and possibly a `DataStreamReader`.
+:::note
+There is also the `NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader slice)` method call, that returns the first available event, the `NetworkConnection` that its for and possibly a `DataStreamReader`.
+:::
 
 We are now ready to process events. Lets start with the `Data` event.
 
@@ -254,7 +252,9 @@ After you have written your updated number to your stream, you call the `EndSend
     }
 ```
 
-> One thing to note here is that we are `NetworkPipeline.Null`, to the `BeginSend` function. This way we say to the driver to use the unreliable pipeline to send our data. It is also possible to not specify a pipeline.
+:::note
+We are `NetworkPipeline.Null`, to the `BeginSend` function. This way we say to the driver to use the unreliable pipeline to send our data. It is also possible to not specify a pipeline.
+:::
 
 Finally, you need to handle the disconnect case. This is pretty straight forward, if you receive a disconnect message you need to reset that connection to a `default(NetworkConnection)`. As you might remember, the next time the `Update` loop runs you will clean up after yourself.
 
@@ -270,7 +270,7 @@ Finally, you need to handle the disconnect case. This is pretty straight forward
 
 ```
 
-That's the whole server. Here is the full source code to [_ServerBehaviour.cs_](samples/serverbehaviour.cs.md).
+That is the whole server. See [_ServerBehaviour.cs_](samples/serverbehaviour.cs.md) for the full source code.
 
 ## Creating a Client
 
@@ -278,7 +278,7 @@ The client code looks pretty similar to the server code at first glance, but the
 
 ### ClientBehaviour.cs
 
-You still define a `NetworkDriver` but instead of having a list of connections we now only have one. There is a `Done` flag to indicate when we are done, or in case you have issues with a connection, you can exit quick.
+You still define a `NetworkDriver` but instead of having a list of connections we now only have one. There is a `Done` flag to indicate when we are done, or in case you have issues with a connection, you can exit quickly.
 
 **Filename**: [_Assets\Scripts\ClientBehaviour.cs_](samples/clientbehaviour.cs.md)
 
@@ -300,6 +300,7 @@ public class ClientBehaviour : MonoBehaviour {
 ### Creating and Connecting a Client
 
 Start by creating a driver for the client and an address for the server.
+
 ```csharp
 void Start () {
     m_Driver = NetworkDriver.Create();
@@ -310,6 +311,7 @@ void Start () {
     m_Connection = m_Driver.Connect(endpoint);
 }
 ```
+
 Then call the `Connect` method on your driver.
 
 Cleaning up this time is a bit easier because you don’t need a `NativeList` to hold your connections, so it simply just becomes:
@@ -350,7 +352,9 @@ You should recognize the code below, but if you look closely you can see that th
 Now you encounter a new event you have not seen yet: a `NetworkEvent.Type.Connect` event.
 This event tells you that you have received a `ConnectionAccept` message and you are now connected to the remote peer.
 
-> **Note**: In this case, the server that is listening on port `9000` on `NetworkEndPoint.LoopbackIpv4` is more commonly known as `127.0.0.1`.
+:::note
+In this case, the server that is listening on port `9000` on `NetworkEndPoint.LoopbackIpv4` is more commonly known as `127.0.0.1`.
+:::
 
 ```
     if (cmd == NetworkEvent.Type.Connect)
@@ -384,7 +388,7 @@ A good pattern is to always set your `NetworkConnection` to `default(NetworkConn
 
 ```
 
-Lastly we just want to make sure we handle the case that a server disconnects us for some reason.
+Lastly, we need to handle potential server disconnects:
 
 ```csharp
 
@@ -397,17 +401,18 @@ Lastly we just want to make sure we handle the case that a server disconnects us
     }
 ```
 
-See the full source code for the [_ClientBehaviour.cs_](samples/clientbehaviour.cs.md).
+See [_ClientBehaviour.cs_](samples/clientbehaviour.cs.md) for the full source code.
 
-## Putting it all together.
+## Putting it all together
 
-To take this for a test run, you can simply add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to our **Scene**.
+To take this for a test run, you can add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to our **Scene**.
 
 ![GameObject Added](/img/transport/game-object.PNG)
 
-Add add both of our behaviours to it.
+Add add both of our behaviours to it:
+
 ![Inspector](/img/transport/inspector.PNG)
 
-Press **Play**. Five log messages should load in your **Console** window:
+Click **Play**. Five log messages should load in your **Console** window:
 
 ![Console](/img/transport/console-view.PNG)

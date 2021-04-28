@@ -71,7 +71,7 @@ To achieve similar functionality, use the following:
 ```csharp
 void MyRpcInvoker()
 {
-    MyRpcWithReturnValueRequestServerRpc(Random.Range(0f, 100f)), Random.Range(0f, 100f)));
+    MyRpcWithReturnValueRequestServerRpc(Random.Range(0f, 100f), Random.Range(0f, 100f));
 }
 
 [ServerRpc]
