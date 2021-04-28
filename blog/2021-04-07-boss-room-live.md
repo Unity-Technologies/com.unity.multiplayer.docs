@@ -17,7 +17,7 @@ The Boss Room project equips you with all the project files and assets you need 
 
 To support this release, we provide getting started, tutorials, release notes, and more!
 
-* [Boss Room: Small Scale Co-op Sample Release Notes](/docs/release-notes/samples/samples-0-1-0)
+* [Boss Room: Small Scale Co-op Sample Release Notes](/releases/introduction) 
 * [Getting started with Boss Room](/docs/learn/bossroom)
 
 Visit and ⭐️ the Boss Room: Small Scale Co-op Sample [GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest). When downloading, always get the [latest release from GitHub](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest). The project also welcomes [contribution](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/CONTRIBUTING.md).
