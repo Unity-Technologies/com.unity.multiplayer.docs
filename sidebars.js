@@ -5,43 +5,6 @@
 */
 
 module.exports = {
-  netcode: [
-    {
-      "type": "doc",
-      "id": "getting-started/about-netcode"
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Networking Concepts",
-      "items": [
-        {
-          "type": "doc",
-          "id": "reference/glossary/high-level-terminology"
-        },
-        {
-          "type": "doc",
-          "id": "reference/glossary/network-latency-management"
-        },
-        {
-          "type": "doc",
-          "id": "reference/glossary/network-topologies"
-        },
-        {
-          "type": "doc",
-          "id": "reference/glossary/network-terms"
-        },
-        {
-          "type": "doc",
-          "id": "reference/glossary/prioritization"
-        },
-        {
-          "type": "doc",
-          "id": "reference/glossary/relevancy"
-        },
-      ]
-    }
-  ],
   mlapi: [
     {
       "type": "doc",
@@ -100,19 +63,11 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/object-spawning"
-      },
-      {
-        "type": "doc",
         "id": "mlapi-basics/modularity"
       },
       {
         "type": "doc",
         "id": "mlapi-basics/networkvariable"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/scene-management"
       },
       {
         "type": "doc",
@@ -122,6 +77,14 @@ module.exports = {
         "type": "doc",
         "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
       },
+      {
+        "type": "doc",
+        "id": "advanced-topics/custom-transports"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/networkprofiler-window"
+      }
     ]
   },
   {
@@ -150,11 +113,30 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
+    "label": "Objects",
+    "items": [
+      {
+        "type": "doc",
+        "id": "mlapi-basics/object-spawning"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/object-pooling"
+      }
+    ]
+  },
+  {
+    "collapsed": true,
+    "type": "category",
     "label": "Messaging System",
     "items": [
       {
         "type": "doc",
         "id": "advanced-topics/messaging-system"
+      },
+      { 
+        "type": "doc",
+        "id": "advanced-topics/ways-synchronize"
       },
       {
         "collapsed": true,
@@ -244,20 +226,15 @@ module.exports = {
     ]
     },
   {
-    "type": "doc",
-    "id": "advanced-topics/object-pooling"
-  },
-  {
-    "type": "doc",
-    "id": "advanced-topics/custom-transports"
-  },
-  {
-    "type": "doc",
-    "id": "advanced-topics/networkprofiler-window"
-  },
-  { 
-    "type": "doc",
-    "id": "advanced-topics/ways-synchronize"
+    "collapsed": true,
+    "type": "category",
+    "label": "Scenes",
+    "items": [
+      {
+        "type": "doc",
+        "id": "mlapi-basics/scene-management"
+      },
+    ]
   },
   {
     "collapsed": true,
@@ -366,8 +343,39 @@ transport: [
     {
       "collapsed": true,
       "type": "category",
-      "label": "Networking",
+      "label": "Multiplayer Networking",
       "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Multiplayer Networking Concepts",
+          "items": [
+            {
+              "type": "doc",
+              "id": "reference/glossary/high-level-terminology"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/network-latency-management"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/network-topologies"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/network-terms"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/prioritization"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/relevancy"
+            },
+          ]
+        },
         {
           "collapsed": true,
           "type": "category",
@@ -399,10 +407,6 @@ transport: [
           "id": "learn/bossroom"
           },
         {
-          "type": "doc",
-          "id": "learn/dapper-video"
-        },
-        {
           "collapsed": true,
           "type": "category",
           "label": "What are RPCs and when to use them",
@@ -423,6 +427,17 @@ transport: [
         },
       ]
     },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Community Contributions",
+      "items": [
+        {
+          "type": "doc",
+          "id": "learn/dapper-video"
+        }
+      ]
+    }
   ],
   api: [
     {
