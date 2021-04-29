@@ -92,41 +92,24 @@ function DocItem(props) {
           <DocVersionSuggestions />
           <div className={styles.docItemContainer}>
             <article>
-              {showVersionBadge && <div>
+              
+              {!hideTitle && <header>
+                  <h1 className={styles.docTitle}>{title}</h1>
+                </header>}
+                
+              <div className="row margin-left--none navbar__inner liner">
+
+                {/* Open Doc Button*/}
+                {showVersionBadge && <div>
                   <Link to={useBaseUrl ('/reference/version-matrix') }><span className="badge badge--secondary">
                     Version: {version.label}
                   </span></Link>
                 </div>}
-              {!hideTitle && <header>
-                  <h1 className={styles.docTitle}>{title}</h1>
-                </header>}
-                {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-bottom--lg margin-top-md">
-              <div className="row margin-left--none navbar__inner">
-              
-                {/* Last Updated at */}
-                <div className="user-options">
-                  {(lastUpdatedAt || lastUpdatedBy) &&
-                    <div className="text--left avatar">
-                      <div className={styles.docLastUpdatedAt}>Last updated{' '}</div>
-                      {lastUpdatedAt && <>
-                        :&nbsp;{' '}
-                        <time dateTime={new Date(lastUpdatedAt * 1000).toISOString()}>
-                          {new Date(lastUpdatedAt * 1000).toLocaleDateString()}
-                        </time>
-                        {lastUpdatedBy && ' '}
-                        {<>&nbsp; |</>}
-                      </>}
-                      {lastUpdatedBy && <>
-                        by <strong>{lastUpdatedBy}</strong>
-                      </>}
-                  </div>}
-                </div>
 
-                {/* Open Doc Button*/}
                 <div className="user-options">
                   {/* PDF Button*/}
                   <div className="margin-right--md pointer display-flex" style={{ display: 'flex' }}>
-                    {editUrl && <a onClick={()=>window.print()} > {/* href={openIssueURL} target="_blank" rel="noreferrer noopener"*/}
+                    {editUrl && <a onClick={()=>window.print()}> {/* href={openIssueURL} target="_blank" rel="noreferrer noopener"*/}
                       <FontAwesomeIcon icon={ faPrint } /><>&nbsp;</>
                         PDF
                       </a>}
@@ -149,18 +132,40 @@ function DocItem(props) {
                 </div>
   
                 </div>  
-
-                
-
-                </div>
-              </div>} 
+                </div> 
 
 
               <div className="markdown">
                 <DocContent />
               </div>
             </article>
-            
+            {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-vert--xl">
+                <div className="row">                  
+                  {(lastUpdatedAt || lastUpdatedBy) && <div className="col feedback-update">
+                      <em>
+                        <small>
+                          Last updated{' '}
+                          {lastUpdatedAt && <>
+                              on{' '}
+                              <time dateTime={new Date(lastUpdatedAt * 1000).toISOString()} className={styles.docLastUpdatedAt}>
+                                {new Date(lastUpdatedAt * 1000).toLocaleDateString()}
+                              </time>
+                              {lastUpdatedBy && ' '}
+                            </>}
+                          {lastUpdatedBy && <>
+                              by <strong>{lastUpdatedBy}</strong>
+                            </>}
+                          {process.env.NODE_ENV === 'development' && <div>
+                              <small>
+                                {' '}
+                                (Simulated during dev for better perf)
+                              </small>
+                            </div>}
+                        </small>
+                      </em>
+                    </div>}
+                    </div>
+              </div>}
             <div className="margin-vert--lg">
               <DocPaginator metadata={metadata} />
             </div>

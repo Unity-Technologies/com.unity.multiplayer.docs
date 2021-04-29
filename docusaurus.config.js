@@ -74,10 +74,6 @@ module.exports = {
             position: 'left',
             items: [
               {
-                to: 'getting-started/about-netcode',
-                label: 'Unity Netcode',
-              },
-              {
                 to: 'getting-started/about-mlapi',
                 label: 'Unity MLAPI',
               },
