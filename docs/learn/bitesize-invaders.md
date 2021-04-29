@@ -119,7 +119,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ### Update game timer Client-Side
 
-On the client-side, use the `UpdateGameTimer` to update the `gameTimer`. The server only needs to be contacted once to check if the game has started (`m_HasGameStared` is true) and the `m_TimeRemaining` amount. When met, it predictively calculates and updates the `gameTimer` reducing the remaining time on the client-side for all players. When `m_TimeRemaining` reaches 0.0, the timer is up.
+On the client-side, use the `UpdateGameTimer` to predictively calculate and update the `gameTimer`. The server only needs to be contacted once to check if the game has started (`m_HasGameStared` is true) and the `m_TimeRemaining` amount, recieved by `ShouldStartCountDown`. When met, it predictively calculates and updates the `gameTimer` reducing the remaining time on the client-side for all players. When `m_TimeRemaining` reaches 0.0, the timer is up.
 
 Example code to update the game timer:
 
