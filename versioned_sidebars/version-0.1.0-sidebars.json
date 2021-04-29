@@ -1,41 +1,4 @@
 {
-  "version-0.1.0/netcode": [
-    {
-      "type": "doc",
-      "id": "version-0.1.0/getting-started/about-netcode"
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Networking Concepts",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-0.1.0/reference/glossary/high-level-terminology"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/reference/glossary/network-latency-management"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/reference/glossary/network-topologies"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/reference/glossary/network-terms"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/reference/glossary/prioritization"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/reference/glossary/relevancy"
-        }
-      ]
-    }
-  ],
   "version-0.1.0/mlapi": [
     {
       "type": "doc",
@@ -94,10 +57,6 @@
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/object-spawning"
-        },
-        {
-          "type": "doc",
           "id": "version-0.1.0/mlapi-basics/modularity"
         },
         {
@@ -106,15 +65,19 @@
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/scene-management"
-        },
-        {
-          "type": "doc",
           "id": "version-0.1.0/mlapi-basics/object-visibility"
         },
         {
           "type": "doc",
           "id": "version-0.1.0/advanced-topics/networkwriter-networkreader-networkbuffer"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/advanced-topics/custom-transports"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/advanced-topics/networkprofiler-window"
         }
       ]
     },
@@ -141,6 +104,21 @@
         }
       ]
     },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Objects",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.1.0/mlapi-basics/object-spawning"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/advanced-topics/object-pooling"
+        }
+      ]
+    },
       {
         "collapsed": true,
         "type": "category",
@@ -149,6 +127,10 @@
           {
             "type": "doc",
             "id": "version-0.1.0/advanced-topics/messaging-system"
+          },
+          {
+            "type": "doc",
+            "id": "version-0.1.0/advanced-topics/ways-synchronize"
           },
           {
             "collapsed": true,
@@ -238,20 +220,15 @@
         ]
       },
       {
-        "type": "doc",
-        "id": "version-0.1.0/advanced-topics/object-pooling"
-      },
-      {
-        "type": "doc",
-        "id": "version-0.1.0/advanced-topics/custom-transports"
-      },
-      {
-        "type": "doc",
-        "id": "version-0.1.0/advanced-topics/networkprofiler-window"
-      },
-      {
-        "type": "doc",
-        "id": "version-0.1.0/advanced-topics/ways-synchronize"
+        "collapsed": true,
+        "type": "category",
+        "label": "Scenes",
+        "items": [
+          {
+            "type": "doc",
+            "id": "version-0.1.0/mlapi-basics/scene-management"
+          }
+        ]
       },
     {
       "collapsed": true,
@@ -359,8 +336,39 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Networking",
+      "label": "Multiplayer Networking",
       "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Multiplayer Networking Concepts",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-0.1.0/reference/glossary/high-level-terminology"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/reference/glossary/network-latency-management"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/reference/glossary/network-topologies"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/reference/glossary/network-terms"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/reference/glossary/prioritization"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/reference/glossary/relevancy"
+            }
+          ]
+        },
         {
           "collapsed": true,
           "type": "category",
@@ -391,10 +399,7 @@
           "type": "doc",
           "id": "version-0.1.0/learn/bossroom"
           },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/learn/dapper-video"
-        },
+        
         {
           "collapsed": true,
           "type": "category",
@@ -413,6 +418,17 @@
         {
           "type": "doc",
            "id": "version-0.1.0/learn/faq"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Community Contributions",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper-video"
         }
       ]
     }

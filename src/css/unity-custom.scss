@@ -41,8 +41,19 @@ h1, h2, h3, h4, h5, h6, .text-break {
   font-family: var(--ifm-font-family-headings);
 }
 
-.docTitle_src-theme-DocItem- {
-  font-size: 2rem !important;
+.liner {
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+  border-bottom: 1pt solid #646464;
+  .a {
+    color: rgb(156, 220, 254);
+  }
+}
+
+.badge--secondary {
+  background-color: var(--ifm-link-color);
+  border-color: var(--ifm-link-color);
+  color: white;
 }
 
 .blogPostTitle_3-lP {
@@ -53,9 +64,6 @@ h1, h2, h3, h4, h5, h6, .text-break {
   font-size: 2rem !important;
 }
 
-.markdown > h1 {
-  font-size: 2rem !important;
-}
 
 .markdown > h2 {
   font-size: 1.5rem !important;
@@ -766,6 +774,7 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
     border: 0px;
     tr {
         background-color: transparent !important;
+        vertical-align: top;
     }
     th {
         //border: 0px !important;
@@ -815,6 +824,9 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
     td {
         position: relative;
         width: auto;
+        br {
+          padding-bottom: 3px;
+        }
         &:hover {
             &:before {
                 content: "";

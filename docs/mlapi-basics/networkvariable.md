@@ -21,7 +21,7 @@ You must remember to add the `NetworkObject` component to the game object to whi
 To create your own `NetworkVariable` container, simply create a class with the `INetworkVariable` interface and declare it as a field of a `NetworkBehaviour`. To learn how to write your own containers for more complex structures, see the `NetworkVariable` implementation. To learn how to do custom delta encoding on complex structures. See the `NetworkDictionary` and `NetworkList` implementations.
 
 ### Permissions
-By default `NetworkVariable` and its subclasses can only be wrote to by the server (`NetworkVariablePermission.ServerOnly`). To change that set the permission to the desired value during initialization:
+By default `NetworkVariable` and its subclasses can only be written to by the server (`NetworkVariablePermission.ServerOnly`). To change that set the permission to the desired value during initialization:
 
 ```csharp
 private NetworkVariable<float> myFloat = new NetworkVariable<float>(new NetworkVariableSettings {WritePermission = NetworkVariablePermission.OwnerOnly}, 5);
@@ -48,10 +48,10 @@ void valueChanged(float prevF, float newF){
 ```
 
 ### Single Sync Values
-If you want values to be synced only once (at spawn), the built-in containers send rate can be set to a negative value.
+If you want values to be synced only once (at spawn), the built-in container's send rate can be set to a negative value.
 
 ### Serialization
-Since the `NetworkVariable` class is a generic, editor serialization is NOT supported, it is only avalible through editor scripts for viewing the values. To get proper serialization a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
+Since the `NetworkVariable` class is a generic, editor serialization is NOT supported, it is only available through editor scripts for viewing the values. To get proper serialization, a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
 
 The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariable<T>` where `T` is the type.
 
@@ -76,7 +76,7 @@ namespace DefaultNamespace
         void OnEnable()
         {
             // Subscribe for when Health value changes
-            // This usually get's triggered when the server modifies that variable
+            // This usually gets triggered when the server modifies that variable
             // and is later replicated down to clients
             Health.OnValueChanged += OnHealthChanged;
         }
