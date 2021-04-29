@@ -32,7 +32,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
   :::tip
   We renamed the GameObject because:
     * It makes it  easier to refer to later.
-    * There is one and only one **NetworkManager**, this is the object that contains the  `NetworkManager` component.
+    * There should be one and only one **NetworkManager**, this is the object that contains the  `NetworkManager` component.
   :::
 
   You have now created a new GameObject called **NetworkManager**.

@@ -15,23 +15,6 @@ The network framework will inject the corresponding `XXXRpcReceiveParams` to wha
 See the following for `ServerRpc` params:
 
 ``` csharp
-struct ServerRpcSendParams
-{
-}
-
-struct ServerRpcReceiveParams
-{
-    // who sent the RPC?
-    ulong SenderClientId;
-}
-
-struct ServerRpcParams
-{
-    ServerRpcSendParams Send;
-    ServerRpcReceiveParams Receive;
-}
-
-
 // Both ServerRpc methods below are fine, `ServerRpcParams` is completely optional
 
 [ServerRpc]
@@ -46,23 +29,6 @@ void XyzwServerRpc(int somenumber, ServerRpcParams serverRpcParams = default) { 
 See the following for `ClientRpc` params:
 
 ```csharp
-struct ClientRpcSendParams
-{
-    // who are the target clients?
-    ulong[] TargetClientIds;
-}
-
-struct ClientRpcReceiveParams
-{
-}
-
-struct ClientRpcParams
-{
-    ClientRpcSendParams Send;
-    ClientRpcReceiveParams Receive;
-}
-
-
 // Both ClientRpc methods below are fine, `ClientRpcParams` is completely optional
 
 [ClientRpc]
