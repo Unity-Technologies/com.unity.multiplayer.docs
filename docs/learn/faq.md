@@ -13,7 +13,7 @@ See the [Multiplayer Networking Public Roadmap](https://resources.unity.com/unit
 
 ### Implement a Dedicated Server vs a Listen Server, would I need to make changes to the codebase?
 
-MLAPI is designed in a way that works with both a Listen Server and a Dedicated Server model. You will just have to be careful that you are using things like `IsServer`, `IsHost` correctly etc.
+MLAPI is designed in a way that works with both a Listen Server and a Dedicated Server model. You will just have to be careful that you are using things like `IsServer` and `IsHost` correctly.
 
 ### Does MLAPI have any Matchmaking functionality?
 
