@@ -17,7 +17,7 @@ MLAPI is designed in a way that works with both a Listen Server and a Dedicated 
 
 ### Does MLAPI have any Matchmaking functionality?
 
-Matchmaking would have to be implemented via 3rd party matchmaking services. MLAPI has no matchmaking functionality, currently.
+Matchmaking would have to be implemented using 3rd party matchmaking services. MLAPI has no matchmaking functionality, currently.
 
 ### How can you get more information for ClientRPC errors?
 
