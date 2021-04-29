@@ -6,6 +6,18 @@ title: Frequently Asked Questions
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
 
 <div id="faq">
+   
+### Does MLAPI have a Public Roadmap?
+
+[MLAPI Public Roadmap](https://resources.unity.com/unity-engine-roadmap/multiplayer#roadmap)
+
+### Implement a Dedicated Server vs a Listen Server, would I need to make changes to the codebase?
+
+MLAPI is designed in a way that works with both a Listen Server and a Dedicated Server model. You will just have to be careful that you are using things like `IsServer`, `IsHost` correctly etc.
+
+### Does MLAPI have any Matchmaking functionality?
+
+Matchmaking would have to be implemented via 3rd party matchmaking services. MLAPI has no matchmaking functionality, currently.
 
 ### How can you get more information for ClientRPC errors?
 
