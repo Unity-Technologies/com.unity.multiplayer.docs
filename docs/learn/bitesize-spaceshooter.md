@@ -20,14 +20,9 @@ This method of running physics makes sure that there are no desyncs or other phy
 
 For example:
 
-```csharp
-GUI.color = Color.green;
-GUI.DrawTexture(new Rect(pos.x - 25, Screen.height - pos.y + 21, Health.Value / 2, 5), m_Box);
-```
-
-<!-- ```csharp reference
+```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L431-L433
-``` -->
+```
 
 ## Power-ups and Status Effects
 
@@ -37,18 +32,9 @@ The power-ups themselves are server authorative. On the server they check if a p
 
 The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You could also use regular floats for timers. By using `NetworkVariable`s, the client could use this information to display different graphics based on active buffs to players. Such as double shot and triple shot effects.
 
-```csharp
-public NetworkVariableFloat SpeedBuffTimer = new NetworkVariableFloat(0);
-public NetworkVariableFloat RotateBuffTimer = new NetworkVariableFloat(0);
-public NetworkVariableFloat TripleShotTimer = new NetworkVariableFloat(0);
-public NetworkVariableFloat DoubleShotTimer = new NetworkVariableFloat(0);
-public NetworkVariableFloat QuadDamageTimer = new NetworkVariableFloat(0);
-public NetworkVariableFloat BounceTimer = new NetworkVariableFloat(0);
-```
-
-<!-- ```csharp reference
+```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L50-L55
-``` -->
+```
 
 ## NetworkObject Pooling
 
@@ -56,7 +42,7 @@ The `2DSpaceShooter` object creates many objects dynamically at runtime includin
 
 2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository. 
 
-![pool img](img/bitesize/invader-networkobjectpool.png)
+![pool img](/img/bitesize/invader-networkobjectpool.png)
 
 All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause MLAPI to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically be returned to the pool instead of getting destroyed.
 
