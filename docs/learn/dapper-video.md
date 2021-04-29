@@ -77,6 +77,40 @@ This Unity Multiplayer tutorial will teach you how to implement Remote Procedure
 
 Video published 15th April 2021
 
+## NetworkVariables
+
+This Unity Multiplayer tutorial will teach you how to implement Network Variables to sync data between Clients and the Server.
+
+<Iframe url="https://www.youtube.com/embed/iQDGLaSI3Cg"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        />
+
+Video published 22nd April 2021
+
+## Object Spawning
+
+This Unity Multiplayer tutorial will teach you how to spawn and destroy objects over the network as well as assigning client authority.
+
+<Iframe url="https://www.youtube.com/embed/j6XPp_RHI9Q"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        />
+
+Video published 29th April 2021
+
 :::contribution Community Contribution
 Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for the video tutorials! These contributions are a fantastic help to the community.
 :::
