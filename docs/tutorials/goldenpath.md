@@ -228,16 +228,20 @@ public class NetworkCommandLine : MonoBehaviour
 #### For Windows
 
 1. Open CMD
-1. Enter the following:
-   
-    Server: 
-    ```
-    <path to project>/Build/GoldenPath.exe -mlapi server
-    ```
-    Client: 
-    ```
-    <path to project>/Build/GoldenPath.exe -mlapi client
-    ```
+1. Enter the following:  
+
+  Server: 
+
+  ```
+  <path to project>/Build/GoldenPath.exe -mlapi server
+  ```
+  
+  Client:
+  
+  ```
+  <path to project>/Build/GoldenPath.exe -mlapi client
+  ```
+
 :::note
 You may get a UAC prompt requesting prermission for the binary to run you should allow it.
 :::
