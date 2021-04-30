@@ -30,7 +30,9 @@ We recommend that you use the **Copy** function in the code block above to copy 
 
 1. Click **Add**.
 
-    ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
+<iframe src="https://www.youtube.com/embed/a1rq0MqNd2Y?playlist=a1rq0MqNd2Y&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 
 :::unity Congratulations
 You have successfully installed MLAPI.
