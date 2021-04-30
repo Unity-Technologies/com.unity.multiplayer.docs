@@ -30,11 +30,13 @@ We recommend that you use the **Copy** function in the code block above to copy 
 
 1. Click **Add**.
 
-   The following example walks through the Package Manager. Provide the correct release branch URL.
-    ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
+<iframe src="https://www.youtube.com/embed/a1rq0MqNd2Y?playlist=a1rq0MqNd2Y&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-You have now installed MLAPI.
 
+:::unity Congratulations
+You have successfully installed MLAPI.
+:::
 ## Next Steps
 
 See the following content to continue your journey using MLAPI:

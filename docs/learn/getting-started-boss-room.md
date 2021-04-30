@@ -39,7 +39,8 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 1. Click **Add**.
 1. Select the root folder of the downloaded project.
 
-  ![adding project to unity](/img/addbossroom.gif)
+<iframe src="https://www.youtube.com/embed/PwPUcj3qwtI?playlist=PwPUcj3qwtI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 :::note
 The first time you open the project, Unity will import all assets, which will take longer than usual - this is normal. The Unity MLAPI v0.1.0 package will also be installed with Boss Room.
@@ -73,8 +74,10 @@ In order to see the multiplayer functionality in action, you can either run mult
 1. Click File.
 2. Click Build Settings.
 2. Click **Build**.
+1. Name the binary Boss Room.
 
-![building the project](/img/buildbossroom.gif)
+<iframe src="https://www.youtube.com/embed/eZGofxiuAgA?playlist=eZGofxiuAgA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 After the build has completed you can launch several instances of the built executable to be able to both host and join a game.
 
