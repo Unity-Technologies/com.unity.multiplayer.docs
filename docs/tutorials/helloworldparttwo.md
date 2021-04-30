@@ -20,8 +20,9 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
 
 
-
 ## Adding Scripts to Hello World
+
+This section will add some scripts to Hello World which will contain the new features we will be covering in the tutorial.
 
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
@@ -184,6 +185,9 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 :::
 
 ## Adding basic movement to the Player object 
+
+This script adds some basic movement to the Hello World player.
+
 1. Create a new script `HelloWorldPlayer`.
 1. Open the `HelloWorldPlayer.cs` script.
 1. Edit the `HelloWorldPlayer.cs` script to match the following.

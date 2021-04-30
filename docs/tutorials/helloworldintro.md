@@ -36,6 +36,8 @@ In this section we will create the basic building blocks of a multiplayer game.
 
 ### Creating Network Manager and selecting the Transport
 
+In this section we will add a Network Manager and add a Transport to our project.
+
 1. Right click in the Hierarchy tab of the Main Unity Window.
 1. Select **Create Empty**.
 1. Rename the `GameObject` **NetworkManager**.
@@ -62,8 +64,9 @@ In this section we will create the basic building blocks of a multiplayer game.
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
-
 ## Creating an object to spawn for each connected player
+
+This section adds in a player object and spawns it for each connected player.
 
 1. Create a **3D Object->Capsule**
 1. Rename it **Player**. 
@@ -98,6 +101,8 @@ In this section we will create the basic building blocks of a multiplayer game.
 
 
 ### Testing Hello World
+
+Now we will test to see if evereything works as expected.
 
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 

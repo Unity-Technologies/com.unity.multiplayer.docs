@@ -24,14 +24,16 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
 ## Create a new project in Unity
 
+Now we will create a new project in Unity.
+
 1. Open the Unity Hub.
-1. Click New. 
+1. Click **New**. 
 1. Select type ‘3D’
 1. Rename the project **GoldenPath**.
 1. Select the location to save the project.
 
 :::note
-Make note of this path. You will need it  later in the [tutorial](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide we used a MAC and our path was `~/dev/mlapi-golden-path/` on a MAC your path may be slightly different.
+Make note of this path. You will need it  later in the [tutorial](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
 :::
 
 <iframe src="https://www.youtube.com/embed/AOZE-b9Q8R8?playlist=AOZE-b9Q8R8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -43,6 +45,8 @@ Make note of this path. You will need it  later in the [tutorial](#creating-a-co
 See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI package.
 
 ## Creating Network Manager and selecting the Transport
+
+In this section we will add a Network Manager and add a Transport to our project.
 
 1. Right click in the Hierarchy tab of the Main Unity Window.
 1. Select **Create Empty**.
@@ -72,6 +76,8 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
 
 ## Creating an object to spawn for each connected player
+
+This section adds in a player object and spawns it for each connected player.
 
 1. Create a **3D Object->Capsule**
 1. Rename it **Player**. 
@@ -107,7 +113,9 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
 ### Testing the basic network building blocks
 
-1. To do a quick test you can click play.  
+Now we run a test to check what we have built so far.
+
+1. Click **Play**.  
 1. The Editor will start, and you will just see the plane.  
 1. Without stopping the editor's play mode, navigate to the `NetworkManager` component in the Hierarchy tab (it will be underneath `DontDestroyOnLoad`).  
 1. Inside the `NetworkManager` Inspector tab. scroll down and find the `Start Host` button.  
@@ -119,7 +127,8 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
 
 ## Creating a command line helper
-This command line helper will help us launch our project from a command line.
+
+This command line helper will launch our project outside Unity and make testing builds easier.
 
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
@@ -129,7 +138,7 @@ This command line helper will help us launch our project from a command line.
    This will create an  empty `GameObject` with `NetworkManager` as its parent.
 
 1. Rename this child `GameObject` `NetworkCommandLine`.
-1. Inside the `NetworkCommandLine` Inspector tab., click **Add Component** 
+1. Inside the `NetworkCommandLine` Inspector tab., click **Add Component**. 
 1. Click **Scripts** and add the `NetworkCommandLine.cs` script you created earlier.
 1. Open the `NetworkCommandLine.cs` script.
 1. Edit the `NetworkCommandLine.cs` script to match the following.
@@ -211,23 +220,28 @@ public class NetworkCommandLine : MonoBehaviour
 
    
 :::tip
-   If you are on a Pro Unity license, you may want to disable the splash screen
+   If you are on a Pro Unity license, you may want to disable the splash screen.
 :::
 
 <iframe src="https://www.youtube.com/embed/2swybHUigM8?playlist=2swybHUigM8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ### Testing the command line helper
+
+Now we will test that the command line helper script works.
+
 1. Select **File > Build and Run**. 
 1. Create a folder called `Build`.
 1. Name the binary `GoldenPath`.  
 1. Your project will build, and it will launch, and you should see the plane.  
 1. Quit your app.
-1. Let's launch from the command line.  
+1. Launch from the command line.  
    
 #### For Windows
 
-1. Open CMD
+For Windows you should do the following:
+
+1. Open CMD.
 1. Enter the following:  
 
   Server: 
@@ -248,8 +262,11 @@ You may get a UAC prompt requesting prermission for the binary to run you should
 
 #### For Mac
 
-1. Open Terminal
-1. Enter the following
+For Mac you should do the following:
+
+1. Open Terminal.
+1. Enter the following.
+
    ```
    ~/dev/mlapi-golden-path/GoldenPath/Build/GoldenPath.app/Contents/MacOS/GoldenPath -mlapi server -logfile - & ; ~/dev/mlapi-golden-path/GoldenPath/Build/GoldenPath.app/Contents/MacOS/GoldenPath -mlapi client -logfile -
    ```
@@ -261,13 +278,14 @@ Both should show a plane and a capsule (the capsule being the single player that
 
 
 
-
 ## Introducing a Server-controlled Network Variable 
+
+This section adds a Server-controlled Network Variable to the project.
  
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkVariableTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab., click **Add Component**. 
+1. In the **Player** prefab Inspector tab, click **Add Component**. 
 1. Click **Scripts**, and add the `NetworkVariableTest.cs` script you created earlier.
 1. Open the `NetworkVariableTest.cs` script.
 1. Edit the `NetworkVariableTest.cs` script to match the following.
@@ -342,6 +360,8 @@ public class NetworkVariableTest : NetworkBehaviour
 
 ### Testing Server-controlled Network Variables 
 
+Now we will test the Server-controlled Network Variable works as we intended.
+
 1. Select **File > Build and Run**. 
 1. Stop the player.
 1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
@@ -358,7 +378,7 @@ Client set its var to: 3.099999, has server var at: 3.199999
 Server set its var to: 6.099997, has client var at: 5.599997
 ```
 :::note
-Since the printing to the terminal  does not happen on every tick, the numbers will not match up perfectly.
+Since the printing to the terminal does not happen on every tick, the numbers will not match up perfectly.
 :::
 
 <iframe src="https://www.youtube.com/embed/cUvZ3m0idpM?playlist=cUvZ3m0idpM&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -366,6 +386,8 @@ Since the printing to the terminal  does not happen on every tick, the numbers w
 
 
 ## Introducing Network Transform
+
+This section adds a Network Transform component that will move the player.
 
 1. Click **Player** prefab. 
 1. Click **Add Component** in the Inspector Tab.
@@ -375,7 +397,7 @@ Since the printing to the terminal  does not happen on every tick, the numbers w
 1. Create a script called `NetworkTransformTest`.
 1. Click the **Player** prefab.
 1. In the **Player** prefab Inspector tab, click **Add Component** 
-1. Click **Scripts**, and add the `NetworkTransformTest.cs` script you created earlier
+1. Click **Scripts**, and add the `NetworkTransformTest.cs` script you created earlier.
 1. Open the `NetworkTransformTest.cs` script.
 1. Edit the `NetworkTransformTest.cs` script to match the following.
 
@@ -411,6 +433,8 @@ public class NetworkTransformTest : NetworkBehaviour
 
 ### Testing Network Transform
 
+Now we check that the Network Transform functions correctly.
+
 1. Select **File > Build and Run**. 
 1. Stop the player. 
 1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
@@ -424,11 +448,13 @@ public class NetworkTransformTest : NetworkBehaviour
 
 ## Introducing RPCs
 
+This section adds some basic RPCs to the project.
+
 1. Open the **Scripts** Folder.
 1. Create a script called `RpcTest`.
 1. Click the **Player** prefab.
-1. In the  **Player** prefab Inspector tab, click **Add Component** 
-1. Click **Scripts**, and add the `RpcTest.cs` script you created earlier
+1. In the  **Player** prefab Inspector tab, click **Add Component**.
+1. Click **Scripts**, and add the `RpcTest.cs` script you created earlier.
 1. Right Click **Player** prefab. 
 1. Open the `RpcTest.cs` script.
 1. Edit the `RpcTest.cs` script to match the following.
@@ -488,6 +514,9 @@ public class RpcTest : NetworkBehaviour
 
 
 ### Testing RPCs
+
+Now we will test that the client and server are both recieving the RPCs correctly.
+
 
 1. Select **File > Build and Run**. 
 1. Stop the player.
