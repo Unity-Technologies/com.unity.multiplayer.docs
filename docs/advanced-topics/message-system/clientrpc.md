@@ -65,7 +65,7 @@ private void DoSomethingServerSide(int clientId)
         {
             Send = new ClientRpcSendParams
             {
-                TargetClientIds = new ulong[clientId];
+                TargetClientIds = new ulong[]{clientId};
             }
         };
 

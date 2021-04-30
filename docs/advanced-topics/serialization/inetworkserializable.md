@@ -4,16 +4,7 @@ title: INetworkSerializable
 sidebar_label: INetworkSerializable
 ---
 
-Complex user-defined types that implements `INetworkSerializable` interface are serialized by user provided serialization code.
-
-```csharp
-interface INetworkSerializable
-{
-    void NetworkSerialize(NetworkSerializer serializer);
-}
-
-```
-An instance of `NetworkSerializer` is passed into the `INetworkSerializable::NetworkSerialize(NetworkSerializer)` method which is used to easily serialize fields by reference.
+The `INetworkSerializable` interface can be used to define custom serializable types.
 
 ```csharp
 struct MyComplexStruct : INetworkSerializable
@@ -32,37 +23,9 @@ struct MyComplexStruct : INetworkSerializable
 
 ```
 
-All types supporting serialization are supported by `NetworkSerializer` with `NetworkSerializer::Serialize(ref int value)` variant methods.
+Types implementing `INetworkSerializable` are supported by `NetworkSerializer`, `RPC`s and `NetworkVariable`s.
 
 ```csharp
-
-class NetworkSerializer
-{
-    bool IsReading { get; }
-
-    void Serialize(ref int value) { /* ... */ }
-    void Serialize(ref float value) { /* ... */ }
-    // ...
-}
-
-interface INetworkSerializable
-{
-    void NetworkSerialize(NetworkSerializer serializer);
-}
-
-struct MyComplexStruct : INetworkSerializable
-{
-    public Vector3 Position;
-    public Quaternion Rotation;
-
-    // INetworkSerializable
-    public void NetworkSerialize(NetworkSerializer serializer)
-    {
-        serializer.Serialize(ref Position);
-        serializer.Serialize(ref Rotation);
-    }
-    // ~INetworkSerializable
-}
 
 [ServerRpc]
 void MyServerRpc(MyComplexStruct myStruct) { /* ... */ }
@@ -78,44 +41,6 @@ void Update()
                 Rotation = transform.rotation
             }); // Client -> Server
     }
-}
-```
-
-`NetworkSerializer` will both serialize and deserialize fields based on its serialization mode indicated by `IsReading` flag using its internal `NetworkReader` and `NetworkWriter` instances.
-
-```csharp
-class NetworkSerializer
-{
-    NetworkReader m_Reader;
-    NetworkWriter m_Writer;
-
-    bool IsReading { get; }
-
-    NetworkSerializer(NetworkReader reader)
-    {
-        IsReading = true;
-        m_Reader = reader;
-    }
-
-    NetworkSerializer(NetworkWriter writer)
-    {
-        IsReading = false;
-        m_Writer = writer;
-    }
-
-    void Serialize(ref int value)
-    {
-        if (IsReading)
-        {
-            value = m_Reader.ReadInt32Packed();
-        }
-        else
-        {
-            m_Writer.WriteInt32Packed(value);
-        }
-    }
-
-    // ...
 }
 ```
 
