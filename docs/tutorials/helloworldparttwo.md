@@ -2,28 +2,29 @@
 id: helloworldtwo
 title: Building on "Hello World"
 sidebar_label: Building on "Hello World"
+description: Tutorial that explains adding scripts to objects, editor modes (Host Server and Client), basic player movement,Permissions and basic RPC use.
 ---
 In this guide we will build on the work we have already done in Hello World and add in a few more features, we will be covering the following:
 
 - Adding scripts to your objects
 - Adding editor modes inside your game  (Host Server and Client)
 - Basic Player Movement
-- Object ownership
+- Permissions
 - Basic RPC use
 
 
+## Requirements
+
+This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
 
-:::contribution Special Thanks
 
- This guide would not have been possible without the hard work and support of Fernando Cortez. 
-:::
 
 ## Adding Scripts to Hello World
 
-1. Click the Assets folder.
+1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
-1. Create an empty GameObject rename it **HelloWorldManager**.
+1. Create an empty `GameObject` rename it **HelloWorldManager**.
 1. Create a script called `HelloWorldManager`.
 1. Add the `HelloWorldManager` script as a component.
 <iframe src="https://www.youtube.com/embed/wdzkZbG2-18?playlist=wdzkZbG2-18&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -248,7 +249,7 @@ namespace HelloWorld
 
 </details>
 
-4. Select the Player Prefab.
+4. Select the **Player** prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
 <iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
@@ -270,7 +271,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Inside this class we  Nowdefine a `NetworkVariable` to represent this player's networked position.
+Inside this class we  now define a `NetworkVariable` to represent this player's networked position.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -291,9 +292,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-### Introducing the concept of Ownership 
+### Introducing permissions
 
- In the `HelloWorldPlayer.cs `Script we  introduce the concept of ownership on a `NetworkVariable` (read and write permissions). For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
+In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable` . For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
 
 `HelloWorldPlayer` overrides `NetworkStart`.
 
@@ -485,5 +486,10 @@ One build instance can create a host. Another client can join the host's game. B
 
 
 :::note Congrats!
-Congratulations you have learnt the basics of a networked game 
+Congratulations you have learned the basics of a networked game 
+:::
+
+:::contribution Special Thanks
+
+ This guide would not have been possible without the hard work and support of Fernando Cortez, Unity. 
 :::
