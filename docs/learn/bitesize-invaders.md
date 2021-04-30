@@ -121,6 +121,8 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 On the client-side, use the `UpdateGameTimer` to predictively calculate and update the `gameTimer`. The server only needs to be contacted once to check if the game has started (`m_HasGameStared` is true) and the `m_TimeRemaining` amount, recieved by `ShouldStartCountDown`. When met, it predictively calculates and updates the `gameTimer` reducing the remaining time on the client-side for all players. When `m_TimeRemaining` reaches 0.0, the timer is up.
 
+When all the players are connected, we will get one last update for `m_TimeRemaining`, so that it will sync up with the server `m_ReplicatedTimeRemaining` value on line 151, then, as long as the game did not start, or the `m_TimeRemaining` did not reach 0.0, we predictively set the `m_TimeRemaining` and update the UI with the result.
+
 Example code to update the game timer:
 
 ```csharp reference
