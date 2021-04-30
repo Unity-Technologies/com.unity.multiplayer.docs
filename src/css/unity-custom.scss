@@ -1175,4 +1175,16 @@ html[data-theme='dark'] .DocSearch {
     display: none
 }
 
+// DETAILS SUMMARY for long code
+
+details {
+  ::marker {
+    color:rgb(38, 127, 153);
+  }
+}
+
+summary {
+  font-weight: bold;
+  color:rgb(38, 127, 153);
+  cursor: pointer;
 }
