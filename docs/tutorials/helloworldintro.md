@@ -32,7 +32,7 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
 ## Create the Basic Components
 
-In this section we will create the basic building blocks of a multiplayer game
+In this section we will create the basic building blocks of a multiplayer game.
 
 ### Creating Network Manager and selecting the Transport
 

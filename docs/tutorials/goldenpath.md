@@ -238,6 +238,9 @@ public class NetworkCommandLine : MonoBehaviour
     ```
     <path to project>/Build/GoldenPath.exe -mlapi client
     ```
+:::note
+You may get a UAC prompt requesting prermission for the binary to run you should allow it.
+:::
 
 #### For Mac
 
@@ -488,7 +491,7 @@ public class RpcTest : NetworkBehaviour
 1. After a brief delay, the client and server will spawn.  
 1. In the console, you should expect to see the client and server sending RPC messages to each other. 
 1. The client kicks off the exchange in its `Update` call the first time with a counter value of 0.  
-1. It then makes an RPC call to the server with the next value.  The server receives this and calls the client, etc.  In the console view, you will see:
+1. It then makes an RPC call to the server with the next value.  The server receives this and calls the client.  In the console view, you will see:
 
 ```
 Server Received the RPC #1
@@ -505,12 +508,16 @@ Client Received the RPC #3
 
 
 :::note Congrats!
-Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation. For more information on the relevant concepts intorduced here please refer to the following sections of the documentaiton:
+Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation. 
+:::
+
+## Next Steps
+
+For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
 - [Network transforms](../components/networktransform.md)
 - [RPCs](../advanced-topics/message-system/about-rpc.md)
-:::
 
 :::contribution Special Thanks
 
