@@ -126,5 +126,5 @@ When all the players are connected, we will get one last update for `m_TimeRemai
 Example code to update the game timer:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L239-267
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L239-L267
 ```
