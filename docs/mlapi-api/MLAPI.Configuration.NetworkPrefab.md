@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Configuration.NetworkPrefab  
-title: MLAPI.Configuration.NetworkPrefab  
+title: MLAPI.Configuration.NetworkPrefab
+sidebar_label: NetworkPrefab
 ---
 
 <div class="markdown level0 summary">

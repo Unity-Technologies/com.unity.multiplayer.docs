@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Serialization.NetworkWriter  
-title: MLAPI.Serialization.NetworkWriter  
+title: MLAPI.Serialization.NetworkWriter
+sidebar_label: NetworkWriter
 ---
 
 <div class="markdown level0 summary">

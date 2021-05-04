@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Serialization.INetworkSerializable  
-title: MLAPI.Serialization.INetworkSerializable  
+title: MLAPI.Serialization.INetworkSerializable
+sidebar_label: INetworkSerializable
 ---
 
 <div class="markdown level0 summary">

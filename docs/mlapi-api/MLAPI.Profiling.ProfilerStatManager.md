@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Profiling.ProfilerStatManager  
-title: MLAPI.Profiling.ProfilerStatManager  
+title: MLAPI.Profiling.ProfilerStatManager
+sidebar_label: ProfilerStatManager
 ---
 
 <div class="markdown level0 summary">

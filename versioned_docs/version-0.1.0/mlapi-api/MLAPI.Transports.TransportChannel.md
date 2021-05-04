@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Transports.TransportChannel  
-title: MLAPI.Transports.TransportChannel  
+title: MLAPI.Transports.TransportChannel
+sidebar_label: TransportChannel
 ---
 
 <div class="markdown level0 summary">

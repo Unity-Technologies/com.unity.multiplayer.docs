@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Serialization.NetworkSerializer  
-title: MLAPI.Serialization.NetworkSerializer  
+title: MLAPI.Serialization.NetworkSerializer
+sidebar_label: NetworkSerializer
 ---
 
 <div class="markdown level0 summary">

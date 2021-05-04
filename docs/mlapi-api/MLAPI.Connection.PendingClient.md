@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Connection.PendingClient  
-title: MLAPI.Connection.PendingClient  
+title: MLAPI.Connection.PendingClient
+sidebar_label: PendingClient
 ---
 
 <div class="markdown level0 summary">

@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkManager.PerformanceDataEventHandler  
-title: MLAPI.NetworkManager.PerformanceDataEventHandler  
+title: MLAPI.NetworkManager.PerformanceDataEventHandler
+sidebar_label: PerformanceDataEventHandler
 ---
 
 <div class="markdown level0 summary">

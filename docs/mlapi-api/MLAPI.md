@@ -1,6 +1,6 @@
 ---  
 id: MLAPI  
-title: MLAPI  
+title: MLAPI APIs
 ---
 
 ## Namespace MLAPI

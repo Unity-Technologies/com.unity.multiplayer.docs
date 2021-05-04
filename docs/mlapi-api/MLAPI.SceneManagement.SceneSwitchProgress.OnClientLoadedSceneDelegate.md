@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate  
-title: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate  
+title: MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate
+sidebar_label: OnClientLoadedSceneDelegate
 ---
 
 <div class="markdown level0 summary">

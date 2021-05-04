@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Prototyping.NetworkTransform.MoveValidationDelegate  
-title: MLAPI.Prototyping.NetworkTransform.MoveValidationDelegate  
+title: MLAPI.Prototyping.NetworkTransform.MoveValidationDelegate
+sidebar_label: MoveValidationDelegate
 ---
 
 <div class="markdown level0 summary">

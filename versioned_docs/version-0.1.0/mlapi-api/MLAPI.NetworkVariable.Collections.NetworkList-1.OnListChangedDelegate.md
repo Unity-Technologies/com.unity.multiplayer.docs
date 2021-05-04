@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate  
-title: MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate  
+title: MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate
+sidebar_label: OnListChangedDelegate
 ---
 
 <div class="markdown level0 summary">

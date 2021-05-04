@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Messaging  
-title: MLAPI.Messaging  
+title: MLAPI.Messaging
+sidebar_label: Messaging
 ---
 
 ## Namespace MLAPI.Messaging

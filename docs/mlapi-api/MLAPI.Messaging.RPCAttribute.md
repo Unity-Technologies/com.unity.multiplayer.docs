@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Messaging.RpcAttribute  
-title: MLAPI.Messaging.RpcAttribute  
+title: MLAPI.Messaging.RpcAttribute
+sidebar_label: RpcAttribute
 ---
 
 <div class="markdown level0 summary">
