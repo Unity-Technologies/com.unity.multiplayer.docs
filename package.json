@@ -24,6 +24,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@mdx-js/react": "^1.6.21",
     "@saucelabs/theme-github-codeblock": "^0.0.4",
+    "chokidar": "^3.0.0",
     "clsx": "^1.1.1",
     "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-includes": "^1.0.4",
@@ -37,8 +38,7 @@
     "sass": "^1.30.0",
     "sass-loader": "^10.1.1",
     "ssri": "^8.0.1",
-    "webpack": "^5.0.0",
-    "chokidar": "^3.0.0"
+    "webpack": "^5.0.0"
   },
   "browserslist": {
     "production": [
