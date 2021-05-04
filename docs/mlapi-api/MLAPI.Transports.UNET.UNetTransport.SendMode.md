@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Transports.UNET.UNetTransport.SendMode  
-title: MLAPI.Transports.UNET.UNetTransport.SendMode  
+title: MLAPI.Transports.UNET.UNetTransport.SendMode
+sidebar_label: SendMode
 ---
 
 <div class="markdown level0 summary">

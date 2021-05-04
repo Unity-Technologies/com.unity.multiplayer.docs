@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Configuration  
-title: MLAPI.Configuration  
+title: MLAPI.Configuration
+sidebar_label: Configuration
 ---
 
 ## Namespace MLAPI.Configuration

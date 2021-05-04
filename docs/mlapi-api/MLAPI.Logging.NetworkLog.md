@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Logging.NetworkLog  
-title: MLAPI.Logging.NetworkLog  
+title: MLAPI.Logging.NetworkLog
+sidebar_label: NetworkLog
 ---
 
 <div class="markdown level0 summary">

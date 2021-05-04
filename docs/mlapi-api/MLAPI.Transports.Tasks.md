@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Transports.Tasks  
-title: MLAPI.Transports.Tasks  
+title: MLAPI.Transports.Tasks
+sidebar_label: Tasks
 ---
 
 ## Namespace MLAPI.Transports.Tasks

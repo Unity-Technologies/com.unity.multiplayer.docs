@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableColor  
-title: MLAPI.NetworkVariable.NetworkVariableColor  
+title: MLAPI.NetworkVariable.NetworkVariableColor
+sidebar_label: NetworkVariableColor
 ---
 
 <div class="markdown level0 summary">

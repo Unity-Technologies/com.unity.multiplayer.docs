@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Serialization.Pooled.NetworkWriterPool  
-title: MLAPI.Serialization.Pooled.NetworkWriterPool  
+title: MLAPI.Serialization.Pooled.NetworkWriterPool
+sidebar_label: NetworkWriterPool
 ---
 
 <div class="markdown level0 summary">

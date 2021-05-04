@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkUpdateStage  
-title: MLAPI.NetworkUpdateStage  
+title: MLAPI.NetworkUpdateStage
+sidebar_label: NetworkUpdateStage
 ---
 
 <div class="markdown level0 summary">

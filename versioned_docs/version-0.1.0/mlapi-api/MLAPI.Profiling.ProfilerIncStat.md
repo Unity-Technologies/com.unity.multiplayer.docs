@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Profiling.ProfilerIncStat  
-title: MLAPI.Profiling.ProfilerIncStat  
+title: MLAPI.Profiling.ProfilerIncStat
+sidebar_label: ProfilerIncStat
 ---
 
 <div class="markdown level0 summary">

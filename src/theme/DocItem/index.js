@@ -101,7 +101,7 @@ function DocItem(props) {
 
                 {/* Open Doc Button*/}
                 {showVersionBadge && <div>
-                  <Link to={useBaseUrl ('/reference/version-matrix') }><span className="badge badge--secondary">
+                  <Link to={useBaseUrl ('/reference/version-matrix') } target='_blank'><span className="badge badge--secondary">
                     Version: {version.label}
                   </span></Link>
                 </div>}

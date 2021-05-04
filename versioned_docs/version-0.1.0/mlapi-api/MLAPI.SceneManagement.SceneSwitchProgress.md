@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.SceneManagement.SceneSwitchProgress  
-title: MLAPI.SceneManagement.SceneSwitchProgress  
+title: MLAPI.SceneManagement.SceneSwitchProgress
+sidebar_label: SceneSwitchProgress
 ---
 
 <div class="markdown level0 summary">

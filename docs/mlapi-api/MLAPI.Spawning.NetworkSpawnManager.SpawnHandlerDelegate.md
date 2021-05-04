@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate  
-title: MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate  
+title: MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate
+sidebar_label: SpawnHandlerDelegate
 ---
 
 <div class="markdown level0 summary">

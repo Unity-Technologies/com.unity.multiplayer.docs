@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.RuntimeTests.RpcQueueTests  
-title: MLAPI.RuntimeTests.RpcQueueTests  
+title: MLAPI.RuntimeTests.RpcQueueTests
+sidebar_label: RpcQueueTests
 ---
 
 <div class="markdown level0 summary">

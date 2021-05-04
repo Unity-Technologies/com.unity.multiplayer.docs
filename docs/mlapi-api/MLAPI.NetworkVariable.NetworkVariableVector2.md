@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableVector2  
-title: MLAPI.NetworkVariable.NetworkVariableVector2  
+title: MLAPI.NetworkVariable.NetworkVariableVector2
+sidebar_label: NetworkVariableVector2
 ---
 
 <div class="markdown level0 summary">
