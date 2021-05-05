@@ -35,6 +35,10 @@
         {
           "type": "doc",
           "id": "version-0.1.0/tutorials/helloworldtwo"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/tutorials/goldenpath"
         }
       ]
     },
@@ -428,16 +432,16 @@
       "items": [
           {
           "type": "doc",
-          "id": "learn/bitesize-introduction"
+          "id": "version-0.1.0/learn/bitesize-introduction"
           },
           {
             "type": "doc",
-            "id": "learn/bitesize-invaders"
+            "id": "version-0.1.0/learn/bitesize-invaders"
             },
           {
           "type": "doc",
-          "id": "learn/bitesize-spaceshooter"
-          },
+          "id": "version-0.1.0/learn/bitesize-spaceshooter"
+          }
       ]
       },
     {
