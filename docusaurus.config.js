@@ -97,19 +97,7 @@ module.exports = {
             to: '/introduction',
             label: 'Release Notes',
             docsPluginId: 'releases',
-            position: 'left',
-            items: [
-              {
-                to: 'introduction',
-                label: 'Multiplayer Releases',
-                docsPluginId: 'releases',
-              },
-              {
-                to: 'doc-changelog',
-                label: 'Docs Changelog',
-                docsPluginId: 'releases',
-              },
-            ]
+            position: 'left'
           },
           {
             type: 'docsVersionDropdown',
