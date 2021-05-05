@@ -6,9 +6,9 @@ All documentation sections have licenses covering content for those Unity featur
 
 | Documentation | License |
 | -- | -- |
-| [MLAPI](@site/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
-| [Transport](@site/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
-| [Learn](@site/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/LICENSE.md) |
+| [MLAPI](https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
+| [Transport](https://docs-multiplayer.unity3d.com/docs/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
+| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/LICENSE.md) |
 
 Documentation site files and markdown content outside of these features is covered under the MIT License:
 
@@ -36,14 +36,25 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Multiplayer Sample Coop License
+## Multiplayer Sample Co-op License
 
-The [Multiplayer Sample Coop respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
+The [Multiplayer Sample Co-op respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) and code are under a UCL License. 
 
 UCL License
-Boss Room: Multiplayer Simple Coop © 2021 Unity Technologies
+Boss Room: Multiplayer Sample Co-op © 2021 Unity Technologies
 
-Licensed under the Unity Companion License for Unity-dependent projects (see https://unity3d.com/legal/licenses/unity_companion_license); otherwise licensed under the Unity Package Distribution License (see https://unity3d.com/legal/licenses/Unity_Package_Distribution_License).
+Licensed under the Unity Companion License for Unity-dependent projects (see https://unity3d.com/legal/licenses/unity_companion_license).
+
+Unless expressly provided otherwise, the Software under this license is made available strictly on an “AS IS” BASIS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. Please review the license for details on these and other terms and conditions.
+
+## Multiplayer Bitesize Sample License
+
+The [Multiplayer Bitesize Sample respository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) and code are under a UCL License. 
+
+UCL License
+Boss Room: Multiplayer Bitesize Sample© 2021 Unity Technologies
+
+Licensed under the Unity Companion License for Unity-dependent projects (see https://unity3d.com/legal/licenses/unity_companion_license).
 
 Unless expressly provided otherwise, the Software under this license is made available strictly on an “AS IS” BASIS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. Please review the license for details on these and other terms and conditions.
 

@@ -20,7 +20,7 @@ To support this release, we provide getting started, tutorials, release notes, a
 * [Boss Room: Small Scale Co-op Sample Release Notes](/releases/introduction) 
 * [Getting started with Boss Room](/docs/learn/bossroom)
 
-Visit and ⭐️ the Boss Room: Small Scale Co-op Sample [GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest). When downloading, always get the [latest release from GitHub](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest). The project also welcomes [contribution](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/CONTRIBUTING.md).
+Visit and ⭐️ the Boss Room: Small Scale Co-op Sample [GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest). When downloading, always get the [latest release from GitHub](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest). The project also welcomes [contribution](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md).
 
 If you have questions and want to connect, check out the Unity Multiplayer forum or join us on [Discord](https://discord.gg/buMxnnPvTb). We have channels for announcements, support, documentation, and #dev-samples.
 
