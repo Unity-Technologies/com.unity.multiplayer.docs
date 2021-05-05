@@ -862,27 +862,20 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
             text-decoration: none;
         }
     }
-    th:hover {
-        background-color: #e59700 !important;
-        a {
-            color: white;
-            text-decoration: solid underline white 2px;
-            }
-    }
     th:nth-child(1) {
         background-color: #4c78d9;
         color: white;
     }
     th:nth-child(2) {
-        background-color: #5a5959;
-        color: white;
-    }
-    th:nth-child(3) {
         background-color: #3657b6;
         color: white;
     }
-    th:nth-child(4) {
+    th:nth-child(3) {
         background-color: #2a428c;
+        color: white;
+    }
+    th:nth-child(4) {
+        background-color: #223879;
         color: white;
     }
     th:nth-child(5) {
