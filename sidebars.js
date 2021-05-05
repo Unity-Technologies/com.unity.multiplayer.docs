@@ -42,6 +42,10 @@ module.exports = {
         "type": "doc",
         "id": "tutorials/helloworldtwo"
       },
+      {
+        "type": "doc",
+        "id": "tutorials/goldenpath"
+      },
     ],
   },
   {
@@ -427,6 +431,25 @@ transport: [
         },
       ]
     },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Bitesize Code Samples",
+      "items": [
+          {
+          "type": "doc",
+          "id": "learn/bitesize-introduction"
+          },
+          {
+            "type": "doc",
+            "id": "learn/bitesize-invaders"
+            },
+          {
+          "type": "doc",
+          "id": "learn/bitesize-spaceshooter"
+          },
+      ]
+      },
     {
       "collapsed": true,
       "type": "category",

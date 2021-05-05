@@ -11,7 +11,7 @@ See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 Boss Room uses RPCs to send movement inputs.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Client/Game/Character/ClientInputSender.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientInputSender.cs
 ```
 
 We want the full history of inputs sent, not just the latest value. There is no need for `NetworkVariable`s, you just want to blast your inputs to the server. Since Boss Room is not a twitch shooter, we send inputs as reliable `RPC`s without worrying about the additional latency an input loss would add. 
@@ -22,7 +22,7 @@ We want the full history of inputs sent, not just the latest value. There is no 
 Sending from server to client `RecvPerformHitReactionClient` 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L235-L239
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L235-L239
 ```
 
 For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCharacterState` is interesting for optimization purposes. You would normally want to have only one `RPC` for an action and let the client decide who should play the associated animation. Due to "ouch" being a long running action over multiple frames, you do not know yet when sending the initial `RPC` which characters will be affected by that action. You want this to be dynamic as the boss is hitting targets. As a result, multiple `RPC`s will be sent for each hit character.
@@ -32,14 +32,14 @@ For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCha
 The archer's arrows uses a standalone `GameObject` that is replicated over time. Since this object's movements are slow moving, we made the choice to use state to replicate this ability's status, in case a client connected while the arrow was flying. 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Server/Game/Entity/ServerProjectileLogic.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Server/Game/Entity/ServerProjectileLogic.cs
 ```
 
 We could have used an `RPC` instead, for example the Mage's projectile attack. Since it is expected for that projectile to be quick, we are not affected by the few milliseconds where a newly connected client could miss the projectile and we save on bandwidth having to manage a replicated object. Instead a single RPC is sent to trigger the FX client side.
 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Server/Game/Action/FXProjectileTargetedAction.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Server/Game/Action/FXProjectileTargetedAction.cs
 ```
 
 ## Character life state
@@ -47,13 +47,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 We could have used a "kill" `RPC` to set a character as dead and play the appropriate animations. Applying our "should that information be replicated when a player joins the game mid-game" rule of thumb, we used `NetworkVariable`s instead. We used the `OnValueChanged` callback on those values to play our state changes animation.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L93
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L93
 ```
 
 The animation change:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L78
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L78
 ```
         
 :::tip Lesson Learned
@@ -63,7 +63,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 ![imp not appearing dead](/img/01_imp_not_appearing_dead.png) 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs
 ```
 
 :::
