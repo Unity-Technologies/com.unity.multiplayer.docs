@@ -3,7 +3,7 @@ id: migratingtomlapi
 title: Migrating From UNet to Unity MLAPI
 ---
 
-Use this step-by-step guide to migrate your projects from Unity UNet to Unity MLAPI. Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link>.
+Use this step-by-step guide to migrate your projects from Unity UNet to Unity MLAPI. Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 :::note
 If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
@@ -660,7 +660,6 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
-
 </TabItem>
 
 
@@ -686,7 +685,6 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
-
 </TabItem>
 
 </Tabs>
@@ -700,7 +698,8 @@ MLAPI does not provide Network Discovery. The UNet Network Discovery is a standa
 For more information, see the following:
 
 * <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
-* [API Reference](../mlapi-api/introduction.md)
+* [API Reference](../mlapi-api/introduction.md) - Review available APIs.
+* Guides and tutorials - Review guides for MLAPI and check [tutorials](../learn/index.md).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
