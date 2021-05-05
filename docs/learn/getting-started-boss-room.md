@@ -1,6 +1,7 @@
 ---
 id: bossroom
 title: Getting Started with Boss Room
+description: Learn more about installing and running the Boss Room game sample.
 ---
 
 ![Banner](/img/banner.png)
@@ -18,12 +19,16 @@ The intention is that you can use everything in this project as a starting point
 ### Install Git LFS
 This project uses Git Large Files Support (LFS), which ensures all large assets required locally are handled for the project. See [Git LFS installation options for Windows and Mac instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
 
+:::note
+After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
+:::
+
 ### Get the project files
 
 - A release version can be downloaded from the [Latest Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) at GitHub. 
 - Unzip the archive file.
 :::note Windows users
-Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example "c.zip") and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
 :::
 - You are now ready to add the project to Unity Hub.
 
@@ -113,7 +118,15 @@ import Iframe from 'react-iframe'
 
 ## Troubleshooting
 
-**Run builds on Mac OSX:**
+**Errors finding Git installation**
+
+If you receive an OS or Unity error trying to locate Git after updating or installing Git, you need to fully restart your computer. Restarting only Unity may not fully update system information to correctly locate the install.
+
+**Windows Error 0x80010135: Path too long**
+
+Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+
+**Run builds on Mac OSX gives "unidentified developer"**
 
 If you attempt to run a build on OSX and receive a warning dialog mentioning an "unidentified developer", you may need to override your security settings for this application:
 
