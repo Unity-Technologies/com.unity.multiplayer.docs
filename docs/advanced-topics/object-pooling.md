@@ -19,7 +19,7 @@ You can register your own spawn handlers by including the `INetworkPrefabInstanc
         void HandleNetworkPrefabDestroy(NetworkObject networkObject);
     }
 ```
-MLAPI will use the HandleNetworkPrefabSpawn and HandleNetworkPrefabDestroy methods in place of default spawn handlers for the NetworkObject used during the registration process.  In the below implementation example, the m_OriginalPrefab property is the prefab we wish to replace with the m_TargetPrefabToSpawn.  As such, we register the CustomPrefabHandlerExample class (that implements the INetworkPrefabInstanceHandler interface) using the m_OriginalPrefab's NetworkObject with a reference to the current instance of CustomPrefabHandlerExample.
+MLAPI will use the 'HandleNetworkPrefabSpawn' and 'HandleNetworkPrefabDestroy' methods in place of default spawn handlers for the 'NetworkObject' used during the registration process.  In the following implementation example, the 'm_OriginalPrefab' property is the prefab we will replace with the 'm_TargetPrefabToSpawn'.  As such, we register the `CustomPrefabHandlerExample` class (that implements the `INetworkPrefabInstanceHandler` interface) using the `m_OriginalPrefab`'s `NetworkObject` with a reference to the current instance of `CustomPrefabHandlerExample`.
 
 ```csharp
 using System.Collections.Generic;
