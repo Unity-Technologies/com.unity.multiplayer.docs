@@ -854,6 +854,7 @@ html[data-theme='light'] tr:nth-child(even) {background-color: rgba(210, 235, 25
     border: 0px;
     tr {
         background-color: transparent !important;
+        vertical-align: top;
     }
     th {
         //border: 0px !important;
