@@ -3,7 +3,7 @@ id: rpc-compatibility
 title: RPC migration and compatibility
 ---
 
-This section provides information on compatibility and support for Unity MLAPI features compared to previous MLAPI versions. See the [release notes](../../release-notes/index.md) for more information.
+This section provides information on compatibility and support for Unity MLAPI features compared to previous MLAPI versions. See the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> for more information.
 
 ## Cross-Compatibility
 
@@ -86,3 +86,6 @@ void MyRpcWithReturnValueResponseClientRpc(float result)
     Debug.LogFormat("The final result was {0}!", result);
 }
 ```
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
