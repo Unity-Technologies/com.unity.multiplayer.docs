@@ -17,6 +17,14 @@ import IconBug from '@theme/IconBug';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { useActivePlugin, useVersions, useActiveVersion } from '@theme/hooks/useDocs';
+import Link from '@docusaurus/Link';
+
+//Components
+//import ShareButton from '../../components/DocItem/ShareButton';
+
+//Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPrint } from '@fortawesome/free-solid-svg-icons'
 
 function DocItem(props) {
   const {
@@ -84,31 +92,55 @@ function DocItem(props) {
           <DocVersionSuggestions />
           <div className={styles.docItemContainer}>
             <article>
-              {showVersionBadge && <div>
-                  <span className="badge badge--secondary">
-                    Version: {version.label}
-                  </span>
-                </div>}
+              
               {!hideTitle && <header>
                   <h1 className={styles.docTitle}>{title}</h1>
                 </header>}
+                
+              <div className="row margin-left--none navbar__inner liner">
+
+                {/* Open Doc Button*/}
+                {showVersionBadge && <div>
+                  <Link to={useBaseUrl ('/reference/version-matrix') } target='_blank'><span className="badge badge--secondary">
+                    Version: {version.label}
+                  </span></Link>
+                </div>}
+
+                <div className="user-options">
+                  {/* PDF Button*/}
+                  <div className="margin-right--md pointer display-flex" style={{ display: 'flex' }}>
+                    {editUrl && <a onClick={()=>window.print()}> {/* href={openIssueURL} target="_blank" rel="noreferrer noopener"*/}
+                      <FontAwesomeIcon icon={ faPrint } /><>&nbsp;</>
+                        PDF
+                      </a>}
+                  </div>
+
+                  {/* Edit URL */}
+                  <div>
+                    {editUrl && <a href={editUrl} target="_blank" rel="noreferrer noopener">
+                        <IconEdit />
+                        Edit this page
+                      </a>}
+                      <>&nbsp;&nbsp;&nbsp;</>
+                  </div>
+
+                {/* Open Doc Button*/}
+                <div className="margin-right--md display-flex" style={{ display: 'flex' }}>
+                {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
+                    <IconBug />
+                    Log an issue</a>} 
+                </div>
+  
+                </div>  
+                </div> 
+
+
               <div className="markdown">
                 <DocContent />
               </div>
             </article>
             {(editUrl || lastUpdatedAt || lastUpdatedBy) && <div className="margin-vert--xl">
-                <div className="row">
-                  <div className="col feedback-edit">
-                    {editUrl && <a href={editUrl} target="_blank" rel="noreferrer noopener">
-                        <IconEdit />
-                        Edit this page
-                      </a>}
-                  </div>
-                  <div className="col feedback-issue">
-                  {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
-                    <IconBug />
-                    Log an issue</a>}
-                  </div>
+                <div className="row">                  
                   {(lastUpdatedAt || lastUpdatedBy) && <div className="col feedback-update">
                       <em>
                         <small>
@@ -132,7 +164,7 @@ function DocItem(props) {
                         </small>
                       </em>
                     </div>}
-                </div>
+                    </div>
               </div>}
             <div className="margin-vert--lg">
               <DocPaginator metadata={metadata} />
