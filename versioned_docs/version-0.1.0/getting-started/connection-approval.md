@@ -62,8 +62,4 @@ If connection approval is enabled. Any messages sent before a connection is setu
 
 ### Connection data Security
 
-If Encryption is enabled, the connection handshake with the buffer will be encrypted AND authenticated. (AES-256 encryption and HMAC-SHA-256 authentication). 
-
-:::note
-If the key exchange is not signed, a man in the middle attack can be done. If you plan on sending authentication tokens such as steam tickets. It is strongly suggested that you sign the handshake.
-:::
+The connection data is not encrypted or authenticated. A man in the middle attack can be done. It is strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
