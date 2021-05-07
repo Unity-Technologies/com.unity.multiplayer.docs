@@ -5,8 +5,11 @@ title: Frequently Asked Questions
 
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
 
+## Unity MLAPI
+
 <div id="faq">
-   
+
+
 ### Does MLAPI have a Public Roadmap?
 
 See the [Multiplayer Networking Public Roadmap](https://resources.unity.com/unity-engine-roadmap/multiplayer#roadmap) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
@@ -24,7 +27,7 @@ Matchmaking would have to be implemented using 3rd party matchmaking services. M
 If you receive `ClientRPC` errors like the following, you may have difficulty debugging:
 
 > :warning: [MLAPI] ClientRPC message received for a non existant object with id: 16. This message will be buffered and might be recovered.
-UnityEngine.Debug:LogWarning(object)
+`UnityEngine.Debug:LogWarning(object)`
 
 You can set *Enable Message Buffering* to `true` in `NetworkManager`. It will store those RPCs and apply them later once the object spawns.
 
@@ -51,6 +54,12 @@ We recommend the following:
 
 Yes, but you need to ensure that all your clients add the same object to their configs as well. You cannot only add it on the host.
 
+### How do I join from two devices on the same network?
+
+The client will need to use the local IPv4 address of your server. On Windows, you can find that address by opening the command prompt and typing `ipconfig`. Search for the IPv4 Address value on the server's machine. 
+
+Your client will need an input field to input the server's IP. If you just need something for prototyping, you can use this [NetworkManagerHud](https://github.com/Unity-Technologies/mlapi-community-contributions/blob/main/com.mlapi.contrib.extensions/Runtime/NetworkManagerHud/NetworkManagerHud.cs). This code should be attached to the `NetworkManager` `GameObject`.
+
 ### What is the best method for spawning?
 
 Spawning can always be done on the host/server. If you want to give a client control over spawning objects, you need to implement a server RPC that you call on the client to spawn the object.
@@ -67,6 +76,12 @@ We recommend the following:
 ### How do you implement on Steam?
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
+
+</div>
+
+## Boss Room and Bitesize Samples
+
+<div id="faq">
 
 ### Why do I get path too long errors with Boss Room on Windows?
 
@@ -88,7 +103,12 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 1. Click **Open**.
 1. The app is saved as an exception to your security settings. You can open it in the future by double-clicking it just as you can any registered app.
 
-
 See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac) for details.
+
+### Why is there an `InitBootStrap` scene as the startup scene for Boss Room and Bitesize Samples?
+
+The initial reason is that in Unity MLAPI the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
+
+The Bootstrap scene ensures that the `NetworkManager` and other singletons are initialized first and will be there when you get back to main menu.
 
 </div>
