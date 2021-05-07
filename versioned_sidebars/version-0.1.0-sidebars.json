@@ -400,14 +400,9 @@
       "label": "Unity MLAPI",
       "items": [
         {
-          "type": "doc",
-          "id": "version-0.1.0/learn/bossroom"
-          },
-        
-        {
           "collapsed": true,
           "type": "category",
-          "label": "What are RPCs and when to use them",
+          "label": "RPCs",
           "items": [  
             {
               "type": "doc",
@@ -418,13 +413,13 @@
               "id": "version-0.1.0/learn/rpcnetvarexamples"
             }
           ]
-        },
-        {
-          "type": "doc",
-           "id": "version-0.1.0/learn/faq"
         }
       ]
     },
+    {
+      "type": "doc",
+      "id": "version-0.1.0/learn/bossroom"
+      },
     {
       "collapsed": true,
       "type": "category",
@@ -454,6 +449,10 @@
           "id": "version-0.1.0/learn/dapper-video"
         }
       ]
+    },
+    {
+      "type": "doc",
+       "id": "version-0.1.0/learn/faq"
     }
   ],
   "version-0.1.0/api": [

@@ -4,7 +4,7 @@ title: INetworkSerializable
 sidebar_label: INetworkSerializable
 ---
 
-The `INetworkSerializable` interface can be used to define custom serializable types.
+The `INetworkSerializable` interface can be used to define custom serializable types. 
 
 ```csharp
 struct MyComplexStruct : INetworkSerializable
@@ -20,7 +20,6 @@ struct MyComplexStruct : INetworkSerializable
     }
     // ~INetworkSerializable
 }
-
 ```
 
 Types implementing `INetworkSerializable` are supported by `NetworkSerializer`, `RPC`s and `NetworkVariable`s.
@@ -43,6 +42,15 @@ void Update()
     }
 }
 ```
+
+## Nested serial types
+
+Nested serial types will be `null` unless you initilize following one of these methods:
+
+* Manually before calling `Serialize` if `serializer.IsReading` (or something like that)
+* Initialize in the default constructor
+
+This is by design. You may see the values as null until properly initialized. The serializer is not deserializing them, the `null` value is simply applied before it can be serialized.
 
 ## Conditional Serialization
 
