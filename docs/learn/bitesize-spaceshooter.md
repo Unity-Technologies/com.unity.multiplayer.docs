@@ -67,3 +67,4 @@ powerUp.GetComponent<NetworkObject>().Spawn(null, true);
 :::tip
 If you are using Unity 2021, you can use the built-in [Object Pooling API](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.ObjectPool_1.html) instead to build your own object pools.
 :::
+

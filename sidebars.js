@@ -407,13 +407,9 @@ transport: [
       "label": "Unity MLAPI",
       "items": [
         {
-          "type": "doc",
-          "id": "learn/bossroom"
-          },
-        {
           "collapsed": true,
           "type": "category",
-          "label": "What are RPCs and when to use them",
+          "label": "RPCs",
           "items": [  
             {
               "type": "doc",
@@ -424,12 +420,12 @@ transport: [
               "id": "learn/rpcnetvarexamples"
             },
           ],
-        },
-        {
-          "type": "doc",
-           "id": "learn/faq"
-        },
+        }
       ]
+    },
+    {
+      "type": "doc",
+      "id": "learn/bossroom"
     },
     {
       "collapsed": true,
@@ -460,6 +456,10 @@ transport: [
           "id": "learn/dapper-video"
         }
       ]
+    },
+    {
+      "type": "doc",
+       "id": "learn/faq"
     }
   ],
   api: [
