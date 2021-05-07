@@ -44,6 +44,16 @@ void Update()
 }
 ```
 
+## Nested serial types
+
+Nested serial types will be `null` unless you initilize following one of these methods:
+
+* Manually before calling `Serialize` if `serializer.IsReading` (or something like that)
+* Initialize in the default constructor
+
+This is by design. You may see the values as null until properly initialized. The serializer is not deserializing them, the `null` value is simply applied before it can be serialized.
+
+
 ## Conditional Serialization
 
 As you have more control over serialization of a struct, you might implement conditional serialization at runtime.

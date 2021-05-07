@@ -23,21 +23,6 @@ const features = [
     ),
   },
   {
-    title: 'Leverage Transport Features',
-    imageUrl: 'img/land-feature2b.jpg',
-    description: (
-      <>
-        Use the <code>com.unity.transport</code> package to add multiplayer and network features to your project. Documentation
-        includes workflows for minimal and jobified client and server setups, pipeline information, events, and more.
-      </>
-    ),
-    link: (
-      <>
-      <a href="docs/transport/introduction">Learn more about Transport</a>
-      </>
-    ),
-  },
-  {
     title: 'Learn with Boss Room',
     imageUrl: 'img/land-feature3b.jpg',
     description: (
@@ -51,6 +36,20 @@ const features = [
       <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Learn more about Boss Room</a>
       </>
     )
+  },
+  {
+    title: 'Leverage Bitesize Samples',
+    imageUrl: 'img/land-feature2b.jpg',
+    description: (
+      <>
+        <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize" target="_blank">Bitesize Sample</a> projects give you modular features to learn more about MLAPI and add to your multiplayer games. See what features are available including status effects, health tracking, game timers, and more.
+      </>
+    ),
+    link: (
+      <>
+      <a href="docs/learn/bitesize-introduction">Learn more about Bitesize</a>
+      </>
+    ),
   },
 ];
 
