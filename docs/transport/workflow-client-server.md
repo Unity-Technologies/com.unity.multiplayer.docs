@@ -194,7 +194,7 @@ Under "Accept new connections" below, we add a connection while there are new co
 ```csharp
     // Accept new connections
     NetworkConnection c;
-    while ((c = m_Driver.Accept()) != default(NetworkConnection))
+    while ((c = m_Driver.Accept()) != default)
     {
         m_Connections.Add(c);
         Debug.Log("Accepted a connection");
@@ -246,7 +246,7 @@ After you have written your updated number to your stream, you call the `EndSend
 ```csharp
     number +=2;
 
-    var writer = m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i]);
+    m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i], out DataStreamWriter writer);
     writer.WriteUInt(number);
     m_Driver.EndSend(writer);
     }
@@ -256,13 +256,13 @@ After you have written your updated number to your stream, you call the `EndSend
 We are `NetworkPipeline.Null`, to the `BeginSend` function. This way we say to the driver to use the unreliable pipeline to send our data. It is also possible to not specify a pipeline.
 :::
 
-Finally, you need to handle the disconnect case. This is pretty straight forward, if you receive a disconnect message you need to reset that connection to a `default(NetworkConnection)`. As you might remember, the next time the `Update` loop runs you will clean up after yourself.
+Finally, you need to handle the disconnect case. This is pretty straight forward, if you receive a disconnect message you need to reset that connection to a `default`. As you might remember, the next time the `Update` loop runs you will clean up after yourself.
 
 ```csharp
                 else if (cmd == NetworkEvent.Type.Disconnect)
                 {
                     Debug.Log("Client disconnected from server");
-                    m_Connections[i] = default(NetworkConnection);
+                    m_Connections[i] = default;
                 }
             }
         }
@@ -304,7 +304,7 @@ Start by creating a driver for the client and an address for the server.
 ```csharp
 void Start () {
     m_Driver = NetworkDriver.Create();
-    m_Connection = default(NetworkConnection);
+    m_Connection = default;
 
     var endpoint = NetworkEndPoint.LoopbackIpv4;
     endpoint.Port = 9000;
@@ -356,7 +356,7 @@ This event tells you that you have received a `ConnectionAccept` message and you
 In this case, the server that is listening on port `9000` on `NetworkEndPoint.LoopbackIpv4` is more commonly known as `127.0.0.1`.
 :::
 
-```
+```csharp
     if (cmd == NetworkEvent.Type.Connect)
     {
         Debug.Log("We are now connected to the server");
@@ -373,7 +373,7 @@ When you establish a connection between the client and the server, you send a nu
 When the `NetworkEvent` type is `Data`, as below, you read the `value` back that you received from the server and then call the `Disconnect` method.
 
 :::note
-A good pattern is to always set your `NetworkConnection` to `default(NetworkConnection)` to avoid stale references.
+A good pattern is to always set your `NetworkConnection` to `default` to avoid stale references.
 :::
 
 ```csharp
@@ -383,7 +383,7 @@ A good pattern is to always set your `NetworkConnection` to `default(NetworkConn
         Debug.Log("Got the value = " + value + " back from the server");
         Done = true;
         m_Connection.Disconnect(m_Driver);
-        m_Connection = default(NetworkConnection);
+        m_Connection = default;
     }
 
 ```
@@ -395,7 +395,7 @@ Lastly, we need to handle potential server disconnects:
             else if (cmd == NetworkEvent.Type.Disconnect)
             {
                 Debug.Log("Client got disconnected from server");
-                m_Connection = default(NetworkConnection);
+                m_Connection = default;
             }
         }
     }
