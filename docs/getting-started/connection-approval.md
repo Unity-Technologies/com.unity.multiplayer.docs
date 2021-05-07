@@ -9,7 +9,8 @@ Connection approval allows you to decide on a per connection basis if the connec
 
 ## Callback for approval logic
 
-When `ConnectionApproval` is `true`, you are also required to provide a callback where you put your approval logic inside. 
+When `ConnectionApproval` is `true`, you are also required to provide a callback where you put your approval logic inside. `ConnectionApprovalCallback` is called by the Client host.
+
 
 Server-only example:
 
