@@ -254,84 +254,6 @@
       ]
     }
   ],
-  "version-0.1.0/transport": [
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Overview",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/introduction"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/install"
-        }
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Workflows",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/minimal-workflow"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/jobs"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/pipelines"
-        }
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Additional information",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/update"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/connection-state"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/events"
-        }
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Sample code",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/samples/clientbehavior"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/samples/serverbehavior"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/samples/jobifiedclientbehavior"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/transport/samples/jobifiedserverbehavior"
-        }
-      ]
-    }
-  ],
   "version-0.1.0/learn": [
     {
       "type": "doc",
@@ -423,7 +345,7 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Bitesize Code Samples",
+      "label": "Using Bitesize Samples",
       "items": [
           {
           "type": "doc",
