@@ -1,6 +1,7 @@
 ---  
-id: MLAPI.INetworkUpdateSystem  
-title: MLAPI.INetworkUpdateSystem  
+id: MLAPI.INetworkUpdateSystem
+title: MLAPI.INetworkUpdateSystem
+sidebar_label: INetworkUpdateSystem
 ---
 
 <div class="markdown level0 summary">

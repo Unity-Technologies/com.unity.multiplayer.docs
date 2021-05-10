@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkObject  
-title: MLAPI.NetworkObject  
+title: MLAPI.NetworkObject
+sidebar_label: NetworkObject
 ---
 
 <div class="markdown level0 summary">

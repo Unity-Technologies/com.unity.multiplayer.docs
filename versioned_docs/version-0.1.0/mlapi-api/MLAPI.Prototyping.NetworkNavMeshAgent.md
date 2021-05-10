@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Prototyping.NetworkNavMeshAgent  
-title: MLAPI.Prototyping.NetworkNavMeshAgent  
+title: MLAPI.Prototyping.NetworkNavMeshAgent
+sidebar_label: NetworkNavMeshAgent
 ---
 
 <div class="markdown level0 summary">

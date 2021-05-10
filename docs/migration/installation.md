@@ -21,7 +21,7 @@ To install MLAPI, use the Unity Package Manager passing a git URL to the MLAPI r
 1. Select **Add package from git URL...**
 1. Enter the Git URL to the MLAPI release package. For example, for version 0.1.0, use this link:
 
-  ```html
+  ```html Copy this URL
   https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
   ```
 :::info How to Copy
@@ -30,11 +30,13 @@ We recommend that you use the **Copy** function in the code block above to copy 
 
 1. Click **Add**.
 
-   The following example walks through the Package Manager. Provide the correct release branch URL.
-    ![installing MLAPI from Git URL](/img/installingmlapiurl.gif)
+<iframe src="https://www.youtube.com/embed/a1rq0MqNd2Y?playlist=a1rq0MqNd2Y&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-You have now installed MLAPI.
 
+:::unity Congratulations
+You have successfully installed MLAPI.
+:::
 ## Next Steps
 
 See the following content to continue your journey using MLAPI:
@@ -44,6 +46,12 @@ See the following content to continue your journey using MLAPI:
 * [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
+
+**Errors with incorrect package loading**
+
+If you receive a different package than Unity MLAPI when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
+
+Hover over the URL to copy, click the **Copy** function in the code block, and use this when adding the package from a Git URL in Unity Hub.
 
 **Errors adding package**
 
@@ -55,3 +63,7 @@ MacOS users may receive the following errors:
 These are common errors for MacOS users that have not installed or updated Xcode or Xcode developer tools. You may need to upgrade your Xcode installation. In a terminal, use this command: `xcode-select --install`.
 
 If you newly installed or updated Git, you may also need to restart your system. Restarting Unity may not be enough if you added Git and could receive a package loading error.
+
+**Errors finding Git installation**
+
+If you receive an OS or Unity error trying to locate Git after updating or installing Git, you need to fully restart your computer. Restarting only Unity may not fully update system information to correctly locate the install.

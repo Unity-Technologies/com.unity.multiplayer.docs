@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate  
-title: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate  
+title: MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate
+sidebar_label: HandleNamedMessageDelegate
 ---
 
 <div class="markdown level0 summary">

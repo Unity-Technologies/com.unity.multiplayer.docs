@@ -1,6 +1,7 @@
 ---  
-id: MLAPI.Exceptions.NotListeningException  
-title: MLAPI.Exceptions.NotListeningException  
+id: MLAPI.Exceptions.NotListeningException
+title: MLAPI.Exceptions.NotListeningException
+sidebar_label: NotListeningException
 ---
 
 <div class="markdown level0 summary">

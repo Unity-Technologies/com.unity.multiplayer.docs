@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Spawning  
-title: MLAPI.Spawning  
+title: MLAPI.Spawning
+sidebar_label: Spawning
 ---
 
 ## Namespace MLAPI.Spawning

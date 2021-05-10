@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.SceneManagement.NetworkSceneManager  
-title: MLAPI.SceneManagement.NetworkSceneManager  
+title: MLAPI.SceneManagement.NetworkSceneManager
+sidebar_label: NetworkSceneManager
 ---
 
 <div class="markdown level0 summary">

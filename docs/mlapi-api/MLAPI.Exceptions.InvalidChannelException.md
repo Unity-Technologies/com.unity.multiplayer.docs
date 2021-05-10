@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Exceptions.InvalidChannelException  
-title: MLAPI.Exceptions.InvalidChannelException  
+title: MLAPI.Exceptions.InvalidChannelException
+sidebar_label: InvalidChannelException
 ---
 
 <div class="markdown level0 summary">

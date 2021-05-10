@@ -1,6 +1,7 @@
 ---  
-id: MLAPI.Exceptions.SpawnStateException  
-title: MLAPI.Exceptions.SpawnStateException  
+id: MLAPI.Exceptions.SpawnStateException
+title: MLAPI.Exceptions.SpawnStateException
+sidebar_label: SpawnStateException
 ---
 
 <div class="markdown level0 summary">

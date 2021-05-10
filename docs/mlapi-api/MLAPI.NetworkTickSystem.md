@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkTickSystem  
-title: MLAPI.NetworkTickSystem  
+title: MLAPI.NetworkTickSystem
+sidebar_label: NetworkTickSystem
 ---
 
 <div class="markdown level0 summary">
