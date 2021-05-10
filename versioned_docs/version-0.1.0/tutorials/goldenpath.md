@@ -368,6 +368,11 @@ Now we will test the Server-controlled Network Variable works as we intended.
 1. After a brief delay, the client and server will spawn.  
 1. You should see the following in the console, showing that the server and client are sharing the variable:
 
+:::important
+On Windows, no standard out stream exists by default, so you will have to view the Debug.log file to see the outputs. You can find the Debug.log  files in:
+C:\Documents and Settings\User_Name\Local Settings\Application Data\Unity\Editor
+:::
+
 ```
 Server's var initialized to: 0
 Client's var initialized to: 0
