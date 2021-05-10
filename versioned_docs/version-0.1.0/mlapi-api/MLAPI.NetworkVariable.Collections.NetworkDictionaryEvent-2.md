@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2  
-title: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2  
+title: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2
+sidebar_label: NetworkDictionaryEvent-2
 ---
 
 <div class="markdown level0 summary">

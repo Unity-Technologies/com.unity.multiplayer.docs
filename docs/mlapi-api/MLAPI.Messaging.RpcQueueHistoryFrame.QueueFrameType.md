@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType  
-title: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType  
+title: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType
+sidebar_label: QueueFrameType
 ---
 
 <div class="markdown level0 summary">

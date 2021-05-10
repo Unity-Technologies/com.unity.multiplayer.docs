@@ -1,6 +1,7 @@
 ---  
-id: MLAPI.Collections.FixedQueue-1  
-title: MLAPI.Collections.FixedQueue-1  
+id: MLAPI.Collections.FixedQueue-1
+title: MLAPI.Collections.FixedQueue-1
+sidebar_label: FixedQueue-1
 ---
 
 <div class="markdown level0 summary">

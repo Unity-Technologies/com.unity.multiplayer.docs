@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.RuntimeTests  
-title: MLAPI.RuntimeTests  
+title: MLAPI.RuntimeTests
+sidebar_label: RuntimeTests
 ---
 
 ## Namespace MLAPI.RuntimeTests

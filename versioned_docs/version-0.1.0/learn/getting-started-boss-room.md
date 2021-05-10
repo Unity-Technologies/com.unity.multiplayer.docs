@@ -1,6 +1,7 @@
 ---
 id: bossroom
 title: Getting Started with Boss Room
+description: Learn more about installing and running the Boss Room game sample.
 ---
 
 ![Banner](/img/banner.png)
@@ -18,12 +19,16 @@ The intention is that you can use everything in this project as a starting point
 ### Install Git LFS
 This project uses Git Large Files Support (LFS), which ensures all large assets required locally are handled for the project. See [Git LFS installation options for Windows and Mac instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
 
+:::note
+After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
+:::
+
 ### Get the project files
 
 - A release version can be downloaded from the [Latest Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) at GitHub. 
 - Unzip the archive file.
 :::note Windows users
-Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example "c.zip") and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
 :::
 - You are now ready to add the project to Unity Hub.
 
@@ -39,7 +44,8 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 1. Click **Add**.
 1. Select the root folder of the downloaded project.
 
-  ![adding project to unity](/img/addbossroom.gif)
+<iframe src="https://www.youtube.com/embed/PwPUcj3qwtI?playlist=PwPUcj3qwtI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 :::note
 The first time you open the project, Unity will import all assets, which will take longer than usual - this is normal. The Unity MLAPI v0.1.0 package will also be installed with Boss Room.
@@ -71,10 +77,12 @@ In order to see the multiplayer functionality in action, you can either run mult
 #### Build an Executable
 
 1. Click File.
-2. Click Build Settings.
-2. Click **Build**.
+1. Click Build Settings.
+1. Click **Build**.
+1. Name the binary Boss Room.
 
-![building the project](/img/buildbossroom.gif)
+<iframe src="https://www.youtube.com/embed/eZGofxiuAgA?playlist=eZGofxiuAgA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 After the build has completed you can launch several instances of the built executable to be able to both host and join a game.
 
@@ -99,7 +107,7 @@ Running the game over internet currently requires either setting up a [Photon Tr
 [Photon Transport for MLAPI](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
 
 :::unity Learn More
-See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/master/Documentation/Photon-Realtime/Readme.md) for details.
+See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/Photon-Realtime/Readme.md) for details.
 :::
 
 #### Port Forwarding
@@ -110,7 +118,15 @@ import Iframe from 'react-iframe'
 
 ## Troubleshooting
 
-**Run builds on Mac OSX:**
+**Errors finding Git installation**
+
+If you receive an OS or Unity error trying to locate Git after updating or installing Git, you need to fully restart your computer. Restarting only Unity may not fully update system information to correctly locate the install.
+
+**Windows Error 0x80010135: Path too long**
+
+Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+
+**Run builds on Mac OSX gives "unidentified developer"**
 
 If you attempt to run a build on OSX and receive a warning dialog mentioning an "unidentified developer", you may need to override your security settings for this application:
 

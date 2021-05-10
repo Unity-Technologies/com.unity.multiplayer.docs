@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Messaging.RpcDelivery  
-title: MLAPI.Messaging.RpcDelivery  
+title: MLAPI.Messaging.RpcDelivery
+sidebar_label: RpcDelivery
 ---
 
 <div class="markdown level0 summary">

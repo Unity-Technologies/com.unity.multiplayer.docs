@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Transports.Tasks.SocketTask  
-title: MLAPI.Transports.Tasks.SocketTask  
+title: MLAPI.Transports.Tasks.SocketTask
+sidebar_label: SocketTask
 ---
 
 <div class="markdown level0 summary">

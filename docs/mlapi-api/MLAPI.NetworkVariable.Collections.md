@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkVariable.Collections  
-title: MLAPI.NetworkVariable.Collections  
+title: MLAPI.NetworkVariable.Collections
+sidebar_label: Collections
 ---
 
 ## Namespace MLAPI.NetworkVariable.Collections

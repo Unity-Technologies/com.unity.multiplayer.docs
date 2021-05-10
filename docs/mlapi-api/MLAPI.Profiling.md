@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Profiling  
-title: MLAPI.Profiling  
+title: MLAPI.Profiling
+sidebar_label: Profiling
 ---
 
 ## Namespace MLAPI.Profiling

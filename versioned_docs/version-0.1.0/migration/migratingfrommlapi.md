@@ -128,6 +128,9 @@ The way RPCs are invoked has changed with this version of MLAPI. Please read our
 
 We replaced the old `INetworkSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md).
 
+The page also includes information on nested serial types.
+
+
 ### SyncVars
 
 SyncVars have been removed in Unity MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
@@ -140,7 +143,7 @@ This error will pop up if your project uses Assembly definition (`.asmdef`) file
 
 **Error: The type or namespace name 'NetworkedBehaviour' could not be found**
 
-If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link>.
+If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 

@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate  
-title: MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate  
+title: MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate
+sidebar_label: DestroyHandlerDelegate
 ---
 
 <div class="markdown level0 summary">

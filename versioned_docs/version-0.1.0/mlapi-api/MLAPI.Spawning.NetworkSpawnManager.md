@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.Spawning.NetworkSpawnManager  
-title: MLAPI.Spawning.NetworkSpawnManager  
+title: MLAPI.Spawning.NetworkSpawnManager
+sidebar_label: NetworkSpawnManager
 ---
 
 <div class="markdown level0 summary">

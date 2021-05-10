@@ -1,6 +1,7 @@
 ---  
 id: MLAPI.NetworkVariable.INetworkVariable  
-title: MLAPI.NetworkVariable.INetworkVariable  
+title: MLAPI.NetworkVariable.INetworkVariable
+sidebar_label: INetworkVariable
 ---
 
 <div class="markdown level0 summary">

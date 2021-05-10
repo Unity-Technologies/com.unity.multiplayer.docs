@@ -1,6 +1,7 @@
 ---  
-id: MLAPI.Collections  
-title: MLAPI.Collections  
+id: MLAPI.Collections
+title: MLAPI.Collections
+sidebar_label: Collections
 ---
 
 ## Namespace MLAPI.Collections

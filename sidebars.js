@@ -42,6 +42,10 @@ module.exports = {
         "type": "doc",
         "id": "tutorials/helloworldtwo"
       },
+      {
+        "type": "doc",
+        "id": "tutorials/goldenpath"
+      },
     ],
   },
   {
@@ -256,90 +260,12 @@ module.exports = {
     ]
   },
 ],
-transport: [
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Overview",
-    "items": [
-      {
-        "type": "doc",
-        "id": "transport/introduction"
-      },
-      {
-        "type": "doc",
-        "id": "transport/install"
-      },
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Workflows",
-    "items": [
-      {
-        "type": "doc",
-        "id": "transport/minimal-workflow"
-      },
-      {
-        "type": "doc",
-        "id": "transport/jobs"
-      },
-      {
-        "type": "doc",
-        "id": "transport/pipelines"
-      },
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Additional information",
-    "items": [
-      {
-        "type": "doc",
-        "id": "transport/update"
-      },
-      {
-        "type": "doc",
-        "id": "transport/connection-state"
-      },
-      {
-        "type": "doc",
-        "id": "transport/events"
-      },
-    ]
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Sample code",
-    "items": [
-      {
-        "type": "doc",
-        "id": "transport/samples/clientbehavior"
-      },
-      {
-        "type": "doc",
-        "id": "transport/samples/serverbehavior"
-      },
-      {
-        "type": "doc",
-        "id": "transport/samples/jobifiedclientbehavior"
-      },
-      {
-        "type": "doc",
-        "id": "transport/samples/jobifiedserverbehavior"
-      },
-    ]
-  },
-],
   learn:
   [ 
     { 
       "type": "doc",
       "id": "learn/introduction",
-    }, 
+    },
     {
       "collapsed": true,
       "type": "category",
@@ -403,13 +329,9 @@ transport: [
       "label": "Unity MLAPI",
       "items": [
         {
-          "type": "doc",
-          "id": "learn/bossroom"
-          },
-        {
           "collapsed": true,
           "type": "category",
-          "label": "What are RPCs and when to use them",
+          "label": "RPCs",
           "items": [  
             {
               "type": "doc",
@@ -420,13 +342,32 @@ transport: [
               "id": "learn/rpcnetvarexamples"
             },
           ],
-        },
-        {
-          "type": "doc",
-           "id": "learn/faq"
-        },
+        }
       ]
     },
+    {
+      "type": "doc",
+      "id": "learn/bossroom"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Using Bitesize Samples",
+      "items": [
+          {
+          "type": "doc",
+          "id": "learn/bitesize-introduction"
+          },
+          {
+            "type": "doc",
+            "id": "learn/bitesize-invaders"
+            },
+          {
+          "type": "doc",
+          "id": "learn/bitesize-spaceshooter"
+          },
+      ]
+      },
     {
       "collapsed": true,
       "type": "category",
@@ -437,6 +378,10 @@ transport: [
           "id": "learn/dapper-video"
         }
       ]
+    },
+    {
+      "type": "doc",
+       "id": "learn/faq"
     }
   ],
   api: [
@@ -503,7 +448,7 @@ transport: [
      {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Collections",
+        "label": "Collections",
         "items": [
           {
             "type": "doc",
@@ -518,7 +463,7 @@ transport: [
        {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Configuration",
+        "label": "Configuration",
         "items": [
           {
             "type": "doc",
@@ -541,7 +486,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Connection",
+        "label": "Connection",
         "items": [
           {
             "type": "doc",
@@ -564,7 +509,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Exceptions",
+        "label": "Exceptions",
         "items": [
           {
             "type": "doc",
@@ -599,7 +544,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Logging",
+        "label": "Logging",
         "items": [
           {
             "type": "doc",
@@ -618,7 +563,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Messaging",
+        "label": "Messaging",
         "items": [
           {
             "type": "doc",
@@ -693,7 +638,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.NetworkManager",
+        "label": "NetworkManager",
         "items": [
           {
             "type": "doc",
@@ -712,7 +657,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.NetworkVariable",
+        "label": "NetworkVariable",
         "items": [
           {
             "type": "doc",
@@ -818,55 +763,55 @@ transport: [
             "type": "doc",
             "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector4"
           },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "NetworkVariable.Collections",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1.EventType"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1"
+              },
+            ]
+          },
         ]
       },
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.NetworkVariable.Collections",
-        "items": [
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1.EventType"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1"
-          },
-        ]
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "MLAPI.Profiling",
+        "label": "Profiling",
         "items": [
           {
             "type": "doc",
@@ -925,7 +870,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Prototyping",
+        "label": "Prototyping",
         "items": [
           {
             "type": "doc",
@@ -952,7 +897,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.SceneManagement",
+        "label": "SceneManagement",
         "items": [
           {
             "type": "doc",
@@ -983,7 +928,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Serialization",
+        "label": "Serialization",
         "items": [
           {
             "type": "doc",
@@ -1020,7 +965,7 @@ transport: [
           {
             "collapsed": true,
             "type": "category",
-            "label": "MLAPI.Serialization.Pooled",
+            "label": "Serialization.Pooled",
             "items": [
               {
                 "type": "doc",
@@ -1055,7 +1000,7 @@ transport: [
           {
             "collapsed": true,
             "type": "category",
-            "label": "MLAPI.Serialization.SerializationManager",
+            "label": "Serialization.SerializationManager",
             "items": [
               {
                 "type": "doc",
@@ -1076,7 +1021,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Spawning",
+        "label": "Spawning",
         "items": [
           {
             "type": "doc",
@@ -1099,7 +1044,7 @@ transport: [
       {
         "collapsed": true,
         "type": "category",
-        "label": "MLAPI.Transports",
+        "label": "Transports",
         "items": [
           {
             "type": "doc",
@@ -1108,7 +1053,7 @@ transport: [
           {
             "collapsed": true,
             "type": "category",
-            "label": "MLAPI.Transports.Multiplex",
+            "label": "Transports.Multiplex",
             "items": [
               {
                 "type": "doc",
@@ -1139,7 +1084,7 @@ transport: [
           {
             "collapsed": true,
             "type": "category",
-            "label": "MLAPI.Transports.NetworkTransport",
+            "label": "Transports.NetworkTransport",
             "items": [
               {
                 "type": "doc",
@@ -1158,7 +1103,7 @@ transport: [
           {
             "collapsed": true,
             "type": "category",
-            "label": "MLAPI.Transports.Tasks",
+            "label": "Transports.Tasks",
             "items": [
               {
                 "type": "doc",
@@ -1181,7 +1126,7 @@ transport: [
           {
             "collapsed": true,
             "type": "category",
-            "label": "MLAPI.Transports.UNET",
+            "label": "Transports.UNET",
             "items": [
               {
                 "type": "doc",
