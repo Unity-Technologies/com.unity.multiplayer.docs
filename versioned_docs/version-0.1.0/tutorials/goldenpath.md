@@ -264,7 +264,7 @@ You may get a UAC prompt requesting prermission for the binary to run you should
 On Windows, no standard out stream exists by default, so you will need to view the Debug.log file to see the outputs. You can find the Debug.log  files in:
 C:\Documents and Settings\User_Name\Local Settings\Application Data\Unity\Editor
 
-Alternatively you can modify the Windows commands to create a log.txt file in the same folder as the exe which maybe more convenient.
+Alternatively you can modify the Windows commands to create a log.txt file in the same folder as the .exe which might be more convenient.
 
 Modify the commands as follows:
 
