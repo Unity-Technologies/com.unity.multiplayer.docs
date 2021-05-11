@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Exceptions.InvalidChannelException  
-title: MLAPI.Exceptions.InvalidChannelException
+title: MLAPI.Exceptions.InvalidChannelException  
 ---
 
 <div class="markdown level0 summary">

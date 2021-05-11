@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Logging  
-title: MLAPI.Logging
+title: MLAPI.Logging  
 ---
 
 ## Namespace MLAPI.Logging

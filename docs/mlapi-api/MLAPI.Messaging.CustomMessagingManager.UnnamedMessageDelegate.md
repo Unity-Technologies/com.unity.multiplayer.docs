@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate  
-title: MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate
+title: MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate  
 ---
 
 <div class="markdown level0 summary">

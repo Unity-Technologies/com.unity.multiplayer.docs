@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable  
-title: MLAPI.NetworkVariable
+title: MLAPI.NetworkVariable  
 ---
 
 ## Namespace MLAPI.NetworkVariable

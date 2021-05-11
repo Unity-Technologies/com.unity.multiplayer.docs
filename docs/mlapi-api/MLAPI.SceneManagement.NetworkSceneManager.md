@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.SceneManagement.NetworkSceneManager  
-title: MLAPI.SceneManagement.NetworkSceneManager
+title: MLAPI.SceneManagement.NetworkSceneManager  
 ---
 
 <div class="markdown level0 summary">
@@ -85,7 +85,7 @@ Object.ToString()
 
 ##### Syntax
 
-    public static class NetworkSceneManager
+    public class NetworkSceneManager
 
 ## Methods 
 
@@ -104,7 +104,7 @@ same across all instances.
 
 #### Declaration
 
-    public static void AddRuntimeSceneName(string sceneName, uint index)
+    public void AddRuntimeSceneName(string sceneName, uint index)
 
 #### Parameters
 
@@ -113,7 +113,7 @@ same across all instances.
 | System.String | sceneName | Scene name. |
 | System.UInt32 | index     | Index.      |
 
-### SwitchScene(String)
+### SwitchScene(String, LoadSceneMode)
 
 <div class="markdown level1 summary">
 
@@ -127,21 +127,95 @@ Switches to a scene with a given name. Can only be called from Server
 
 #### Declaration
 
-    public static SceneSwitchProgress SwitchScene(string sceneName)
+    public SceneSwitchProgress SwitchScene(string sceneName, LoadSceneMode loadSceneMode = LoadSceneMode.Single)
 
 #### Parameters
 
-| Type          | Name      | Description                        |
-|---------------|-----------|------------------------------------|
-| System.String | sceneName | The name of the scene to switch to |
+| Type                                      | Name          | Description                                     |
+|-------------------------------------------|---------------|-------------------------------------------------|
+| System.String                             | sceneName     | The name of the scene to switch to              |
+| UnityEngine.SceneManagement.LoadSceneMode | loadSceneMode | The mode to load the scene (Additive vs Single) |
 
 #### Returns
 
-| Type                | Description |
-|---------------------|-------------|
-| SceneSwitchProgress |             |
+| Type                | Description         |
+|---------------------|---------------------|
+| SceneSwitchProgress | SceneSwitchProgress |
 
 ## Events
+
+### OnNotifyClientAllClientsLoadedScene
+
+<div class="markdown level1 summary">
+
+Event that is invoked on the clients after all clients have successfully
+completed scene transition or timed out. This event happens after
+OnNotifyServerAllClientsLoadedScene fires on the server and the
+MLAPI.Configuration.NetworkConstants.ALL\_CLIENTS\_LOADED\_SCENE message
+is sent to the clients. It relies on MessageSender, which doesn't send
+events from the server to itself (which is the case for a Host client).
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public event NetworkSceneManager.NotifyClientAllClientsLoadedSceneDelegate OnNotifyClientAllClientsLoadedScene
+
+#### Event Type
+
+| Type                                                          | Description |
+|---------------------------------------------------------------|-------------|
+| NetworkSceneManager.NotifyClientAllClientsLoadedSceneDelegate |             |
+
+### OnNotifyServerAllClientsLoadedScene
+
+<div class="markdown level1 summary">
+
+Event that is invoked on the server when all clients have reported that
+they have completed scene transition
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public event NetworkSceneManager.NotifyServerAllClientsLoadedSceneDelegate OnNotifyServerAllClientsLoadedScene
+
+#### Event Type
+
+| Type                                                          | Description |
+|---------------------------------------------------------------|-------------|
+| NetworkSceneManager.NotifyServerAllClientsLoadedSceneDelegate |             |
+
+### OnNotifyServerClientLoadedScene
+
+<div class="markdown level1 summary">
+
+Event that is invoked on the server when a client completes scene
+transition
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public event NetworkSceneManager.NotifyServerClientLoadedSceneDelegate OnNotifyServerClientLoadedScene
+
+#### Event Type
+
+| Type                                                      | Description |
+|-----------------------------------------------------------|-------------|
+| NetworkSceneManager.NotifyServerClientLoadedSceneDelegate |             |
 
 ### OnSceneSwitched
 
@@ -157,7 +231,7 @@ Event that is invoked when the scene is switched
 
 #### Declaration
 
-    public static event NetworkSceneManager.SceneSwitchedDelegate OnSceneSwitched
+    public event NetworkSceneManager.SceneSwitchedDelegate OnSceneSwitched
 
 #### Event Type
 
@@ -179,7 +253,7 @@ Event that is invoked when a local scene switch has started
 
 #### Declaration
 
-    public static event NetworkSceneManager.SceneSwitchStartedDelegate OnSceneSwitchStarted
+    public event NetworkSceneManager.SceneSwitchStartedDelegate OnSceneSwitchStarted
 
 #### Event Type
 

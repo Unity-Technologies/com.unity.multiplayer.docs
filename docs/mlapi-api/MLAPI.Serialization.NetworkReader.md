@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Serialization.NetworkReader  
-title: MLAPI.Serialization.NetworkReader
+title: MLAPI.Serialization.NetworkReader  
 ---
 
 <div class="markdown level0 summary">

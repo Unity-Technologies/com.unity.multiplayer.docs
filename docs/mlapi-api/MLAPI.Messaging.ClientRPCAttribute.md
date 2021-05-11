@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Messaging.ClientRpcAttribute  
-title: MLAPI.Messaging.ClientRpcAttribute
+title: MLAPI.Messaging.ClientRpcAttribute  
 ---
 
 <div class="markdown level0 summary">

@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariablePermission  
-title: MLAPI.NetworkVariable.NetworkVariablePermission
+title: MLAPI.NetworkVariable.NetworkVariablePermission  
 ---
 
 <div class="markdown level0 summary">

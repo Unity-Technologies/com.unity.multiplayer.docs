@@ -1,6 +1,6 @@
 ---  
-id: MLAPI.NetworkManager.PerformanceDataEventHandler  
-title: MLAPI.NetworkManager.PerformanceDataEventHandler
+id: MLAPI.Profiling.ProfilerNotifier.PerformanceDataEventHandler  
+title: MLAPI.Profiling.ProfilerNotifier.PerformanceDataEventHandler  
 ---
 
 <div class="markdown level0 summary">

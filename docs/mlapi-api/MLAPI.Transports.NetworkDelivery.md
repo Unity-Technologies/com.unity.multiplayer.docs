@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkDelivery  
-title: MLAPI.Transports.NetworkDelivery
+title: MLAPI.Transports.NetworkDelivery  
 ---
 
 <div class="markdown level0 summary">

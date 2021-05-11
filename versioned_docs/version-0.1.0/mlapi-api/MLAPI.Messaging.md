@@ -71,7 +71,7 @@ server.
 
 ## Structs
 
-### MLAPI.Messaging.\_\_RpcParams
+### MLAPI.Messaging.RpcParams
 
 <div class="section">
 

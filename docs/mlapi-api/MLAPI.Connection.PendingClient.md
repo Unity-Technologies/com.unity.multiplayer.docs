@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Connection.PendingClient  
-title: MLAPI.Connection.PendingClient
+title: MLAPI.Connection.PendingClient  
 ---
 
 <div class="markdown level0 summary">
@@ -88,7 +88,7 @@ Object.ToString()
 
     public class PendingClient
 
-## Fields
+## Properties 
 
 ### ClientId
 
@@ -104,9 +104,9 @@ The ClientId of the client
 
 #### Declaration
 
-    public ulong ClientId
+    public ulong ClientId { get; }
 
-#### Field Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
@@ -126,9 +126,9 @@ The state of the connection process for the client
 
 #### Declaration
 
-    public PendingClient.State ConnectionState
+    public PendingClient.State ConnectionState { get; }
 
-#### Field Value
+#### Property Value
 
 | Type                | Description |
 |---------------------|-------------|

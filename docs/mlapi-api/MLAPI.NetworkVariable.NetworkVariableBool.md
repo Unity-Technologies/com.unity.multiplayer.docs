@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableBool  
-title: MLAPI.NetworkVariable.NetworkVariableBool
+title: MLAPI.NetworkVariable.NetworkVariableBool  
 ---
 
 <div class="markdown level0 summary">

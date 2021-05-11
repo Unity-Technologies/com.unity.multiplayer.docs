@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Exceptions.NotServerException  
-title: MLAPI.Exceptions.NotServerException
+title: MLAPI.Exceptions.NotServerException  
 ---
 
 <div class="markdown level0 summary">

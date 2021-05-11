@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkObject.VisibilityDelegate  
-title: MLAPI.NetworkObject.VisibilityDelegate
+title: MLAPI.NetworkObject.VisibilityDelegate  
 ---
 
 <div class="markdown level0 summary">

@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkList-1  
-title: MLAPI.NetworkVariable.Collections.NetworkList-1
+title: MLAPI.NetworkVariable.Collections.NetworkList-1  
 ---
 
 <div class="markdown level0 summary">
