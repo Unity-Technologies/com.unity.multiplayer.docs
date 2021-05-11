@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.NetworkProfiler  
 title: MLAPI.Profiling.NetworkProfiler
-sidebar_label: NetworkProfiler
 ---
 
 <div class="markdown level0 summary">

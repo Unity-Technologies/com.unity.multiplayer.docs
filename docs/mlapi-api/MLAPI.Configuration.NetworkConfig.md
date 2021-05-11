@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Configuration.NetworkConfig  
 title: MLAPI.Configuration.NetworkConfig
-sidebar_label: NetworkConfig
 ---
 
 <div class="markdown level0 summary">

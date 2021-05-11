@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization.Pooled.PooledNetworkBuffer  
 title: MLAPI.Serialization.Pooled.PooledNetworkBuffer
-sidebar_label: PooledNetworkBuffer
 ---
 
 <div class="markdown level0 summary">

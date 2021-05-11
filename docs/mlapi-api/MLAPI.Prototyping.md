@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Prototyping  
 title: MLAPI.Prototyping
-sidebar_label: Prototyping
 ---
 
 ## Namespace MLAPI.Prototyping

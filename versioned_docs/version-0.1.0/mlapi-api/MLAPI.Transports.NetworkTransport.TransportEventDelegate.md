@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkTransport.TransportEventDelegate  
 title: MLAPI.Transports.NetworkTransport.TransportEventDelegate
-sidebar_label: TransportEventDelegate
 ---
 
 <div class="markdown level0 summary">

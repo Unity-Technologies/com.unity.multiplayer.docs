@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.RuntimeTests.NetworkUpdateLoopTests  
 title: MLAPI.RuntimeTests.NetworkUpdateLoopTests
-sidebar_label: NetworkUpdateLoopTests
 ---
 
 <div class="markdown level0 summary">
