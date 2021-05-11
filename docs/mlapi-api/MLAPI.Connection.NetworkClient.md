@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Connection.NetworkClient  
-title: MLAPI.Connection.NetworkClient
+title: MLAPI.Connection.NetworkClient  
 ---
 
 <div class="markdown level0 summary">

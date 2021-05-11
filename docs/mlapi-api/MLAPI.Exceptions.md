@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Exceptions  
-title: MLAPI.Exceptions
+title: MLAPI.Exceptions  
 ---
 
 ## Namespace MLAPI.Exceptions

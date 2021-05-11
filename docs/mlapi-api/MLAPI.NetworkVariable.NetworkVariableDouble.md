@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableDouble  
-title: MLAPI.NetworkVariable.NetworkVariableDouble
+title: MLAPI.NetworkVariable.NetworkVariableDouble  
 ---
 
 <div class="markdown level0 summary">

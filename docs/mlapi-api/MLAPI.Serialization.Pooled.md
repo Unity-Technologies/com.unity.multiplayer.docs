@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Serialization.Pooled  
-title: MLAPI.Serialization.Pooled
+title: MLAPI.Serialization.Pooled  
 ---
 
 ## Namespace MLAPI.Serialization.Pooled

@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkUpdateLoop  
-title: MLAPI.NetworkUpdateLoop
+title: MLAPI.NetworkUpdateLoop  
 ---
 
 <div class="markdown level0 summary">

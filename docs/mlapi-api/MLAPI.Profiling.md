@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Profiling  
-title: MLAPI.Profiling
+title: MLAPI.Profiling  
 ---
 
 ## Namespace MLAPI.Profiling
@@ -45,6 +45,12 @@ NetworkProfiler for profiling network traffic
 
 </div>
 
+### MLAPI.Profiling.ProfilerNotifier
+
+<div class="section">
+
+</div>
+
 ### MLAPI.Profiling.ProfilerStat
 
 <div class="section">
@@ -79,15 +85,13 @@ A event that can occur during a Event
 
 </div>
 
-## Structs
+## Interfaces
 
-### MLAPI.Profiling.Sample
+### MLAPI.Profiling.IProfilableTransportProvider
 
 <div class="section">
 
 </div>
-
-## Interfaces
 
 ### MLAPI.Profiling.ITransportProfilerData
 
@@ -102,5 +106,19 @@ A event that can occur during a Event
 <div class="section">
 
 The type of Tick
+
+</div>
+
+## Delegates
+
+### MLAPI.Profiling.ProfilerNotifier.NoTickDataHandler
+
+<div class="section">
+
+</div>
+
+### MLAPI.Profiling.ProfilerNotifier.PerformanceDataEventHandler
+
+<div class="section">
 
 </div>

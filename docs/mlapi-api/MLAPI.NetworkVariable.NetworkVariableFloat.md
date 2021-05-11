@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableFloat  
-title: MLAPI.NetworkVariable.NetworkVariableFloat
+title: MLAPI.NetworkVariable.NetworkVariableFloat  
 ---
 
 <div class="markdown level0 summary">

@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkChannel  
-title: MLAPI.Transports.NetworkChannel
+title: MLAPI.Transports.NetworkChannel  
 ---
 
 <div class="markdown level0 summary">
@@ -37,9 +37,13 @@ NavAgentCorrection
 
 NavAgentState
 
+NetworkVariable
+
 PositionUpdate
 
 ReliableRpc
+
+SnapshotExchange
 
 SyncChannel
 

@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Transports.UNetChannel  
-title: MLAPI.Transports.UNetChannel
+title: MLAPI.Transports.UNetChannel  
 ---
 
 <div class="markdown level0 summary">
@@ -104,13 +104,13 @@ The name of the channel
 
 #### Declaration
 
-    public NetworkChannel Id
+    public byte Id
 
 #### Field Value
 
-| Type           | Description |
-|----------------|-------------|
-| NetworkChannel |             |
+| Type        | Description |
+|-------------|-------------|
+| System.Byte |             |
 
 ### Type
 

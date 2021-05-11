@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Profiling.ProfilerConstants  
-title: MLAPI.Profiling.ProfilerConstants
+title: MLAPI.Profiling.ProfilerConstants  
 ---
 
 <div class="markdown level0 summary">

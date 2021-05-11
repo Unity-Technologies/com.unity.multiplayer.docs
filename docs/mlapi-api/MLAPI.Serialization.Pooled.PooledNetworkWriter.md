@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Serialization.Pooled.PooledNetworkWriter  
-title: MLAPI.Serialization.Pooled.PooledNetworkWriter
+title: MLAPI.Serialization.Pooled.PooledNetworkWriter  
 ---
 
 <div class="markdown level0 summary">

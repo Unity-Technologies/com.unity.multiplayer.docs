@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType  
-title: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType
+title: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType  
 ---
 
 <div class="markdown level0 summary">

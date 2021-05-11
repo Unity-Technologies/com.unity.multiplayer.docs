@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableQuaternion  
-title: MLAPI.NetworkVariable.NetworkVariableQuaternion
+title: MLAPI.NetworkVariable.NetworkVariableQuaternion  
 ---
 
 <div class="markdown level0 summary">

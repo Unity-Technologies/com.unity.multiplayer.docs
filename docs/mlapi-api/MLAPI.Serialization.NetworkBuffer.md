@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Serialization.NetworkBuffer  
-title: MLAPI.Serialization.NetworkBuffer
+title: MLAPI.Serialization.NetworkBuffer  
 ---
 
 <div class="markdown level0 summary">

@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.NetworkObject.SpawnDelegate  
-title: MLAPI.NetworkObject.SpawnDelegate
+title: MLAPI.NetworkObject.SpawnDelegate  
 ---
 
 <div class="markdown level0 summary">

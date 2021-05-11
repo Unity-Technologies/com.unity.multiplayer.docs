@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1  
-title: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1
+title: MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1  
 ---
 
 <div class="markdown level0 summary">

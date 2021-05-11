@@ -340,7 +340,7 @@ module.exports = {
             {
               "type": "doc",
               "id": "learn/rpcnetvarexamples"
-            },
+            }
           ],
         }
       ]
@@ -365,7 +365,7 @@ module.exports = {
           {
           "type": "doc",
           "id": "learn/bitesize-spaceshooter"
-          },
+          }
       ]
       },
     {
@@ -438,7 +438,7 @@ module.exports = {
           "type": "doc",
           "id": "mlapi-api/MLAPI.NetworkUpdateStage",
           "label": "NetworkUpdateStage"
-        },
+        }
       ]
     },
       
@@ -478,12 +478,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Configuration.NetworkConfig",
             "label": "NetworkConfig"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Configuration.NetworkPrefab",
-            "label": "NetworkPrefab"
-          },
+          }
         ]
       },
       {
@@ -510,7 +505,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Connection.PendingClient.State",
             "label": "PendingClient.State"
-          },
+          }
         ]
       },
       {
@@ -552,7 +547,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Exceptions.VisibilityChangeException",
             "label": "VisibilityChangeException"
-          },
+          }
         ]
       },
       {
@@ -574,7 +569,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Logging.NetworkLog",
             "label": "NetworkLog"
-          },
+          }
         ]
       },
       {
@@ -626,7 +621,7 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate",
                 "label": "UnnamedMessageDelegate"
-              },
+              }
             ]
           },
           {
@@ -673,7 +668,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Messaging.ServerRpcSendParams",
             "label": "ServerRpcSendParams"
-          },
+          }
         ]
       },
       {
@@ -690,12 +685,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate",
             "label": "ConnectionApprovedDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkManager.PerformanceDataEventHandler",
-            "label": "PerformanceDataEventHandler"
-          },
+          }
         ]
       },
       {
@@ -867,7 +857,7 @@ module.exports = {
                   "type": "doc",
                   "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType",
                   "label": "EventType"
-                },
+                }
                 ]
               },
               {
@@ -884,7 +874,7 @@ module.exports = {
                   "type": "doc",
                   "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate",
                   "label": "OnListChangedDelegate"
-                },
+                }
                 ]
               },
               {
@@ -901,7 +891,7 @@ module.exports = {
                     "type": "doc",
                     "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1.EventType",
                     "label": "EventType"
-                  },
+                  }
                 ]
               }
             ]
@@ -917,6 +907,11 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Profiling",
             "label": "Profiling"
+          },
+          {
+            "type": "doc",
+            "id": "mlapi-api/MLAPI.Profiling.IProfilableTransportProvider",
+            "label": "IProfilableTransportProvider"
           },
           {
             "type": "doc",
@@ -960,11 +955,6 @@ module.exports = {
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.Sample",
-            "label": "Sample"
-          },
-          {
-            "type": "doc",
             "id": "mlapi-api/MLAPI.Profiling.TickEvent",
             "label": "TickEvent"
           },
@@ -973,38 +963,28 @@ module.exports = {
             "id": "mlapi-api/MLAPI.Profiling.TickType",
             "label": "TickType"
           },
-        ]
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Prototyping",
-        "items": [
           {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping",
-            "label": "Prototyping"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkAnimator",
-            "label": "NetworkAnimator"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkNavMeshAgent",
-            "label": "NetworkNavMeshAgent"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkTransform",
-            "label": "NetworkTransform"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkTransform.MoveValidationDelegate",
-            "label": "MoveValidationDelegate"
-          },
+            "collapsed": true,
+            "type": "category",
+            "label": "ProfilerNotifier",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Profiling.ProfilerNotifier",
+                "label": "ProfilerNotifier"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Profiling.ProfilerNotifier.NoTickDataHandler",
+                "label": "NoTickDataHandler"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Profiling.ProfilerNotifier.PerformanceDataEventHandler",
+                "label": "PerformanceDataEventHandler"
+              },
+            ]
+          }
         ]
       },
       {
@@ -1018,9 +998,31 @@ module.exports = {
             "label": "SceneManagement"
           },
           {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager",
-            "label": "NetworkSceneManager"
+            "collapsed": true,
+            "type": "category",
+            "label": "NetworkSceneManager",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager",
+                "label": "NetworkSceneManager"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.NotifyClientAllClientsLoadedSceneDelegate",
+                "label": "NotifyClientAllClientsLoadedSceneDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.NotifyServerAllClientsLoadedSceneDelegate",
+                "label": "NotifyServerAllClientsLoadedSceneDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.NotifyServerClientLoadedSceneDelegate",
+                "label": "NotifyServerAllClientsLoadedSceneDelegate"
+              },
+            ]
           },
           {
             "type": "doc",
@@ -1041,7 +1043,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.SceneManagement.SceneSwitchProgress.OnCompletedDelegate",
             "label": "OnCompletedDelegate"
-          },
+          }
         ]
       },
       {
@@ -1128,7 +1130,7 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkWriter",
                 "label": "PooledNetworkWriter"
-              },
+              }
             ]
           },
           {
@@ -1150,10 +1152,15 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1",
                 "label": "CustomSerializationDelegate-1"
-              },
+              }
             ]
           },
         ]
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-api/MLAPI.SnapshotSystem",
+        "label": "SnapshotSystem"
       },
       {
         "collapsed": true,
@@ -1169,17 +1176,7 @@ module.exports = {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager",
             "label": "NetworkSpawnManager"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate",
-            "label": "DestroyHandlerDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate",
-            "label": "SpawnHandlerDelegate"
-          },
+          }
         ]
       },
       {
@@ -1211,7 +1208,7 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod",
                 "label": "ConnectionIdSpreadMethod"
-              },
+              }
             ]
           },
           {
@@ -1248,7 +1245,7 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Transports.NetworkTransport.TransportEventDelegate",
                 "label": "TransportEventDelegate"
-              },
+              }
             ]
           },
           {
@@ -1270,7 +1267,7 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Transports.Tasks.SocketTasks",
                 "label": "SocketTasks"
-              },
+              }
             ]
           },
           {
@@ -1307,14 +1304,14 @@ module.exports = {
                 "type": "doc",
                 "id": "mlapi-api/MLAPI.Transports.UNET.UNetTransport",
                 "label": "UNetTransport"
-              },
+              }
             ]
           },
           {
             "type": "doc",
             "id": "mlapi-api/MLAPI.Transports.UNetChannel",
             "label": "UNetChannel"
-          },
+          }
         ]
       },
   ] 

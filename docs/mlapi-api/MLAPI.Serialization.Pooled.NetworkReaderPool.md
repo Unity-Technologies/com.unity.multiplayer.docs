@@ -1,6 +1,6 @@
 ---  
 id: MLAPI.Serialization.Pooled.NetworkReaderPool  
-title: MLAPI.Serialization.Pooled.NetworkReaderPool
+title: MLAPI.Serialization.Pooled.NetworkReaderPool  
 ---
 
 <div class="markdown level0 summary">
