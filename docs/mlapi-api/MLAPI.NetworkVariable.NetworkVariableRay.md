@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableRay  
 title: MLAPI.NetworkVariable.NetworkVariableRay
-sidebar_label: NetworkVariableRay
 ---
 
 <div class="markdown level0 summary">
