@@ -1314,5 +1314,24 @@ module.exports = {
           }
         ]
       },
-  ] 
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Transport UTP Wrapper",
+        "items": [
+          {
+            "type": "doc",
+            "id": "transport-api/introduction"
+          },
+          {
+            "type": "doc",
+            "id": "transport-api/Assets.Scripts.Transport"
+          },
+          {
+            "type": "doc",
+            "id": "transport-api/Assets.Scripts.Transport.Utilities"
+          }
+        ]
+      }
+  ]
 }

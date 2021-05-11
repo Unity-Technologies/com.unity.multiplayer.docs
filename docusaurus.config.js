@@ -85,9 +85,20 @@ module.exports = {
             ]
           },
           {
-            to: '/mlapi-api/introduction',
+            to: '/api-introduction',
             label: 'API',
             position: 'left',
+            items: [
+              {
+                to: 'mlapi-api/introduction',
+                label: 'Unity MLAPI',
+              },
+              //{
+              //  to: 'api',
+              //  label: 'Unity Transport',
+              //  docsPluginId: 'transport',
+              //},
+            ]
           },
           {
             to: '/learn/introduction',
