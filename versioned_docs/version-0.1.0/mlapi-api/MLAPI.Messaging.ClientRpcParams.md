@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging.ClientRpcParams  
 title: MLAPI.Messaging.ClientRpcParams
-sidebar_label: ClientRpcParams
 ---
 
 <div class="markdown level0 summary">

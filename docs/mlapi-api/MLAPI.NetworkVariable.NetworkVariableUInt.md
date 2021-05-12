@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableUInt  
-title: MLAPI.NetworkVariable.NetworkVariableUInt
-sidebar_label: NetworkVariableUInt
+title: MLAPI.NetworkVariable.NetworkVariableUInt  
 ---
 
 <div class="markdown level0 summary">

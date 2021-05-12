@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.UNET.UNetTransport  
-title: MLAPI.Transports.UNET.UNetTransport
-sidebar_label: UNetTransport
+title: MLAPI.Transports.UNET.UNetTransport  
 ---
 
 <div class="markdown level0 summary">

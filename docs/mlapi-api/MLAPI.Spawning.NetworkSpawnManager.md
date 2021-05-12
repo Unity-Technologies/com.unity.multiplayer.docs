@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Spawning.NetworkSpawnManager  
-title: MLAPI.Spawning.NetworkSpawnManager
-sidebar_label: NetworkSpawnManager
+title: MLAPI.Spawning.NetworkSpawnManager  
 ---
 
 <div class="markdown level0 summary">
@@ -86,7 +85,7 @@ Object.ToString()
 
 ##### Syntax
 
-    public static class NetworkSpawnManager
+    public class NetworkSpawnManager
 
 ## Fields
 
@@ -104,7 +103,7 @@ The currently spawned objects
 
 #### Declaration
 
-    public static readonly Dictionary<ulong, NetworkObject> SpawnedObjects
+    public readonly Dictionary<ulong, NetworkObject> SpawnedObjects
 
 #### Field Value
 
@@ -126,13 +125,37 @@ A list of the spawned objects
 
 #### Declaration
 
-    public static readonly HashSet<NetworkObject> SpawnedObjectsList
+    public readonly HashSet<NetworkObject> SpawnedObjectsList
 
 #### Field Value
 
 | Type                                                    | Description |
 |---------------------------------------------------------|-------------|
 | System.Collections.Generic.HashSet&lt;NetworkObject&gt; |             |
+
+## Properties 
+
+### NetworkManager
+
+<div class="markdown level1 summary">
+
+Gets the NetworkManager associated with this SpawnManager.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public NetworkManager NetworkManager { get; }
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| NetworkManager |             |
 
 ## Methods 
 
@@ -150,41 +173,13 @@ Returns the local player object or null if one does not exist
 
 #### Declaration
 
-    public static NetworkObject GetLocalPlayerObject()
+    public NetworkObject GetLocalPlayerObject()
 
 #### Returns
 
 | Type          | Description                                           |
 |---------------|-------------------------------------------------------|
 | NetworkObject | The local player object or null if one does not exist |
-
-### GetNetworkPrefabIndexOfHash(UInt64)
-
-<div class="markdown level1 summary">
-
-Gets the prefab index of a given prefab hash
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static int GetNetworkPrefabIndexOfHash(ulong hash)
-
-#### Parameters
-
-| Type          | Name | Description            |
-|---------------|------|------------------------|
-| System.UInt64 | hash | The hash of the prefab |
-
-#### Returns
-
-| Type         | Description             |
-|--------------|-------------------------|
-| System.Int32 | The index of the prefab |
 
 ### GetPlayerNetworkObject(UInt64)
 
@@ -201,7 +196,7 @@ exist
 
 #### Declaration
 
-    public static NetworkObject GetPlayerNetworkObject(ulong clientId)
+    public NetworkObject GetPlayerNetworkObject(ulong clientId)
 
 #### Parameters
 
@@ -214,151 +209,3 @@ exist
 | Type          | Description                                                           |
 |---------------|-----------------------------------------------------------------------|
 | NetworkObject | The player object with a given clientId or null if one does not exist |
-
-### GetPrefabHashFromGenerator(String)
-
-<div class="markdown level1 summary">
-
-Returns the prefab hash for a given prefab hash generator
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static ulong GetPrefabHashFromGenerator(string generator)
-
-#### Parameters
-
-| Type          | Name      | Description               |
-|---------------|-----------|---------------------------|
-| System.String | generator | The prefab hash generator |
-
-#### Returns
-
-| Type          | Description                      |
-|---------------|----------------------------------|
-| System.UInt64 | The hash for the given generator |
-
-### GetPrefabHashFromIndex(Int32)
-
-<div class="markdown level1 summary">
-
-Returns the prefab hash for the NetworkPrefab with a given index
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static ulong GetPrefabHashFromIndex(int index)
-
-#### Parameters
-
-| Type         | Name  | Description             |
-|--------------|-------|-------------------------|
-| System.Int32 | index | The NetworkPrefab index |
-
-#### Returns
-
-| Type          | Description                                |
-|---------------|--------------------------------------------|
-| System.UInt64 | The prefab hash for the given prefab index |
-
-### RegisterDestroyHandler(UInt64, NetworkSpawnManager.DestroyHandlerDelegate)
-
-<div class="markdown level1 summary">
-
-Registers a delegate for destroying NetworkObjects, useful for object
-pooling
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static void RegisterDestroyHandler(ulong prefabHash, NetworkSpawnManager.DestroyHandlerDelegate handler)
-
-#### Parameters
-
-| Type                                       | Name       | Description                |
-|--------------------------------------------|------------|----------------------------|
-| System.UInt64                              | prefabHash | The prefab hash to destroy |
-| NetworkSpawnManager.DestroyHandlerDelegate | handler    | The delegate handler       |
-
-### RegisterSpawnHandler(UInt64, NetworkSpawnManager.SpawnHandlerDelegate)
-
-<div class="markdown level1 summary">
-
-Registers a delegate for spawning NetworkPrefabs, useful for object
-pooling
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static void RegisterSpawnHandler(ulong prefabHash, NetworkSpawnManager.SpawnHandlerDelegate handler)
-
-#### Parameters
-
-| Type                                     | Name       | Description              |
-|------------------------------------------|------------|--------------------------|
-| System.UInt64                            | prefabHash | The prefab hash to spawn |
-| NetworkSpawnManager.SpawnHandlerDelegate | handler    | The delegate handler     |
-
-### UnregisterDestroyHandler(UInt64)
-
-<div class="markdown level1 summary">
-
-Unregisters the custom destroy handler for a specific prefab hash
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static void UnregisterDestroyHandler(ulong prefabHash)
-
-#### Parameters
-
-| Type          | Name       | Description                                                         |
-|---------------|------------|---------------------------------------------------------------------|
-| System.UInt64 | prefabHash | The prefab hash of the prefab destroy handler that is to be removed |
-
-### UnregisterSpawnHandler(UInt64)
-
-<div class="markdown level1 summary">
-
-Unregisters the custom spawn handler for a specific prefab hash
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static void UnregisterSpawnHandler(ulong prefabHash)
-
-#### Parameters
-
-| Type          | Name       | Description                                                       |
-|---------------|------------|-------------------------------------------------------------------|
-| System.UInt64 | prefabHash | The prefab hash of the prefab spawn handler that is to be removed |
