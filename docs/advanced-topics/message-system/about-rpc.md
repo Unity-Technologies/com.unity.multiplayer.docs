@@ -20,3 +20,5 @@ See the following information:
 
 :::note Migration and Compatibility
 See [RPC Migration and Compatibility](rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
+
+:::
