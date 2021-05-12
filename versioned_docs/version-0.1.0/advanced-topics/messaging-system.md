@@ -1,7 +1,12 @@
 ---
 id: messaging-system
 title: Messaging System and RPCs
+description: An introduction to PRCs and custom messages in MLAPI
 ---
+
+The MLAPI has two parts to it's messaging system. Remote Procedure Call (RPC) messages and Custom Messages. Both types have sub types that change their behaviour, functionality and performance.
+
+## RPC Remote Procedure Call
 
 The multiplayer framework provides two main network constructs to execute logic on either server-side or client-side: [`ServerRpc`](message-system/serverrpc.md) and [`ClientRpc`](message-system/clientrpc.md). This concept is often called Remote Procedure Call (RPC) and has wide adoption across the industry.
 
