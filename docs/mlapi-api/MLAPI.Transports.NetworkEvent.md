@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkEvent  
-title: MLAPI.Transports.NetworkEvent
-sidebar_label: NetworkEvent
+title: MLAPI.Transports.NetworkEvent  
 ---
 
 <div class="markdown level0 summary">

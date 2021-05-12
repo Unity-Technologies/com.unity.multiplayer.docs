@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.PerformanceTickData  
-title: MLAPI.Profiling.PerformanceTickData
-sidebar_label: PerformanceTickData
+title: MLAPI.Profiling.PerformanceTickData  
 ---
 
 <div class="markdown level0 summary">

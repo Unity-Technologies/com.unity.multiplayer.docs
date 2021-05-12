@@ -6,7 +6,7 @@ title: API Overview
 The MLAPI API reference provides information for availble classes, methods, delegates, and more. All content is generated from [source code](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) using tools including [DocFX](https://dotnet.github.io/docfx/) and custom filters with [Pandoc](https://pandoc.org/) to convert to Markdown.
 
 :::unity Content Licenses
-All MLAPI code and documentation is covered by MIT license. See [Licenses](/community/license) for more information.
+All MLAPI code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information.
 :::
 
 :::note

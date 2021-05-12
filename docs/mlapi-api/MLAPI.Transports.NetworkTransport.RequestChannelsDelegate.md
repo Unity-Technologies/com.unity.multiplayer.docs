@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkTransport.RequestChannelsDelegate  
-title: MLAPI.Transports.NetworkTransport.RequestChannelsDelegate
-sidebar_label: RequestChannelsDelegate
+title: MLAPI.Transports.NetworkTransport.RequestChannelsDelegate  
 ---
 
 <div class="markdown level0 summary">

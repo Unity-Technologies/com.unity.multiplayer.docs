@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Exceptions  
 title: MLAPI.Exceptions
-sidebar_label: Exceptions
 ---
 
 ## Namespace MLAPI.Exceptions

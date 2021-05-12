@@ -1,14 +1,11 @@
 ---  
 id: MLAPI.Messaging.RpcQueueHistoryFrame  
-title: MLAPI.Messaging.RpcQueueHistoryFrame
-sidebar_label: RpcQueueHistoryFrame
+title: MLAPI.Messaging.RpcQueueHistoryFrame  
 ---
 
 <div class="markdown level0 summary">
 
-QueueHistoryFrame Used by the RpcQueueContainer to hold queued RPCs All
-queued Rpcs end up in a PooledNetworkBuffer within a QueueHistoryFrame
-instance.
+Used by the RpcQueueContainer to hold queued RPCs
 
 </div>
 
@@ -92,7 +89,7 @@ Object.ToString()
 
 ## Constructors 
 
-### RpcQueueHistoryFrame(RpcQueueHistoryFrame.QueueFrameType, NetworkUpdateStage, Int32)
+### RpcQueueHistoryFrame(RpcQueueHistoryFrame.QueueFrameType, NetworkUpdateStage, Int32, Int32)
 
 <div class="markdown level1 summary">
 
@@ -106,15 +103,16 @@ QueueHistoryFrame Constructor
 
 #### Declaration
 
-    public RpcQueueHistoryFrame(RpcQueueHistoryFrame.QueueFrameType queueType, NetworkUpdateStage updateStage, int maxClients = 512)
+    public RpcQueueHistoryFrame(RpcQueueHistoryFrame.QueueFrameType queueType, NetworkUpdateStage updateStage, int maxClients = 512, int maxStreamBounds = 1048576)
 
 #### Parameters
 
-| Type                                | Name        | Description                                    |
-|-------------------------------------|-------------|------------------------------------------------|
-| RpcQueueHistoryFrame.QueueFrameType | queueType   | type of queue history frame (Inbound/Outbound) |
-| NetworkUpdateStage                  | updateStage |                                                |
-| System.Int32                        | maxClients  |                                                |
+| Type                                | Name            | Description                                                          |
+|-------------------------------------|-----------------|----------------------------------------------------------------------|
+| RpcQueueHistoryFrame.QueueFrameType | queueType       | Inbound or Outbound                                                  |
+| NetworkUpdateStage                  | updateStage     | Network Update Stage this RpcQueueHistoryFrame is assigned to        |
+| System.Int32                        | maxClients      | maximum number of clients                                            |
+| System.Int32                        | maxStreamBounds | maximum size of the message stream an RPC can have (defaults to 1MB) |
 
 ## Fields
 
@@ -284,10 +282,10 @@ QueueHistoryFrame Constructor
 
 <div class="markdown level1 summary">
 
-CloseQueue Should be called once all processing of the current frame is
-complete. This only closes the m\_CurrentQueueItem's stream which is
-used as a "middle-man" (currently) for delivering the RPC message to the
-method requesting a queue item from a frame.
+Should be called once all processing of the current frame is complete.
+This only closes the m\_CurrentQueueItem's stream which is used as a
+"middle-man" (currently) for delivering the RPC message to the method
+requesting a queue item from a frame.
 
 </div>
 
@@ -325,7 +323,7 @@ Returns the current position that was marked (to track size of RPC msg)
 
 <div class="markdown level1 summary">
 
-GetQueueFrameType Returns whether this is an inbound or outbound frame
+Returns whether this is an inbound or outbound frame
 
 </div>
 
@@ -347,8 +345,7 @@ GetQueueFrameType Returns whether this is an inbound or outbound frame
 
 <div class="markdown level1 summary">
 
-MarkCurrentStreamSize Marks the current size of the stream (used
-primarily for sanity checks)
+Marks the current size of the stream (used primarily for sanity checks)
 
 </div>
 
