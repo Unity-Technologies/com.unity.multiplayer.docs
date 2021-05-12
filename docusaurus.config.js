@@ -93,11 +93,11 @@ module.exports = {
                 to: 'mlapi-api/introduction',
                 label: 'Unity MLAPI',
               },
-              //{
-              //  to: 'api',
-              //  label: 'Unity Transport',
-              //  docsPluginId: 'transport',
-              //},
+              {
+                to: 'api/introduction',
+                label: 'Unity Transport',
+                docsPluginId: 'transport',
+              },
             ]
           },
           {
