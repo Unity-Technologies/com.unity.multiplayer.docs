@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization.Pooled.PooledNetworkReader  
-title: MLAPI.Serialization.Pooled.PooledNetworkReader
-sidebar_label: PooledNetworkReader
+title: MLAPI.Serialization.Pooled.PooledNetworkReader  
 ---
 
 <div class="markdown level0 summary">

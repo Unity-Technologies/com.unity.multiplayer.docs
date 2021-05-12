@@ -1,6 +1,6 @@
 ---  
 id: MLAPI  
-title: MLAPI APIs
+title: MLAPI  
 ---
 
 ## Namespace MLAPI
@@ -58,6 +58,12 @@ in Unity.
 
 </div>
 
+### MLAPI.SnapshotSystem
+
+<div class="section">
+
+</div>
+
 ## Interfaces
 
 ### MLAPI.INetworkUpdateSystem
@@ -87,12 +93,6 @@ Defines network update stages being executed by the network update loop.
 
 Delegate type called when connection has been approved. This only has to
 be set on the server.
-
-</div>
-
-### MLAPI.NetworkManager.PerformanceDataEventHandler
-
-<div class="section">
 
 </div>
 

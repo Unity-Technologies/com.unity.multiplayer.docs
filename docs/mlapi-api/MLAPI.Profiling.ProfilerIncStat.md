@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.ProfilerIncStat  
-title: MLAPI.Profiling.ProfilerIncStat
-sidebar_label: ProfilerIncStat
+title: MLAPI.Profiling.ProfilerIncStat  
 ---
 
 <div class="markdown level0 summary">
@@ -43,30 +42,6 @@ System.Dynamic.ExpandoObject
 <div>
 
 ProfilerStat.PrettyPrintName
-
-</div>
-
-<div>
-
-ProfilerStat.MaxSamples
-
-</div>
-
-<div>
-
-ProfilerStat.Data
-
-</div>
-
-<div>
-
-ProfilerStat.LastCount
-
-</div>
-
-<div>
-
-ProfilerStat.LastTime
 
 </div>
 
