@@ -30,6 +30,10 @@ module.exports = {
         id: 'bitesize/bitesize-changelog',
       },
       {
+        type: 'doc',
+        id: 'transport/transport-changelog',
+      },
+      {
         type: "doc",
         id: 'doc-changelog',
       },
