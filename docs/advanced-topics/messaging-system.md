@@ -1,7 +1,7 @@
 ---
 id: messaging-system
 title: Messaging System and RPCs
-description: An introdution to the messaging system in MLAPI covering RPC's and Custom Messages
+description: An introduction to the messaging system in Unity MLAPI, including RPC's and Custom Messages.
 ---
 
 
