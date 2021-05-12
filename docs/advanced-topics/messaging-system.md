@@ -37,9 +37,6 @@ A typical framework user (Unity developer) can declare multiple RPCs under a `Ne
 
 A method turned into an RPC is no longer a regular method, it will have its own implications on direct calls and in the network pipeline. See [Execution Table](message-system/execution-table.md).
 
-## Network Update Loop
-
-See [Network Update Loop](network-update-loop-system/index.md) for information on the update infrastructure.
 
 ## Custom Messages
 
