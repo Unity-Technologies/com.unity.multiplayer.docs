@@ -5,7 +5,7 @@ description: An introdution to the messaging system in MLAPI covering RPC's and 
 ---
 
 
-The MLAPI has two parts to it's messaging system. [RPC messages](about-rpc.md) and [Custom Messages](custom-messages.md). Both types have sub types that change their behaviour, functionality and performance.
+The MLAPI has two parts to its messaging system: [RPC messages](about-rpc.md) and [Custom Messages](custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
 
 ## RPC Messages
 
