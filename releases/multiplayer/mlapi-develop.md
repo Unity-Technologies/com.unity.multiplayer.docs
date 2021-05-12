@@ -53,10 +53,10 @@ The following APIs have been added:
 
 This release includes the following updates:
 
-* NetworkPrefabs now use [UnityEditor.GlobalObjectId](https://docs.unity3d.com/ScriptReference/GlobalObjectId.html) to best identify and link NetworkPrefabs (Prefab assets with `NetworkObject` component on its root) in the project attached to `NetworkManager` between server and clients. The usage of `GlobalObjectId` including the following changes: <!-- MTT-611 MTT-610 MTT-612 -->
+* NetworkPrefabs updated to use `GlobalObjectIdHash` (internal Unity value) to best identify and link NetworkPrefabs  in the project attached to `NetworkManager` between server and clients. The usage of `GlobalObjectId` including the following changes: <!-- MTT-611 MTT-610 MTT-612 -->
 
-  * NetworkObjects now use UnityEditor.GlobalObjectID for identification. This removes the need for `NetworkInstanceId` (removed).
-  * When a NetworkPrefab is registered with `NetworkManager`, it can be spawned on the network at runtime dynamically. The server assigns a unique ID. and replicates it to connected clients for synchronization. This removes the need for `UsePrefabSync` (removed).
+  * `NetworkInstanceId` was removed in favor of `GlobalObjectIdHash`, which is not exposed to public APIs. `GlobalObjectIdHash` is meant for MLAPI framework internals (specifically NetworkObject and NetworkPrefab linking layer) and is not intended for users.
+  * When a NetworkPrefab is registered with `NetworkManager`, it can be spawned dynamically on the network at runtime. The server assigns a unique ID, and replicates it to connected clients for synchronization. This removes the need for `UsePrefabSync` (removed).
   * Custom spawn and destroy APIs were refactored without affecting functionality.
 
 * Completed code maintenance and updates to better support testing. <!-- MTT-601 determine how much should be documented in this ticket "internal work" -->
@@ -70,8 +70,8 @@ The following APIs have been removed due to refactoring:
 * `MLAPI.Profiling.Sample` 
 * `MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate`
 * `MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate`
-* `UsePrefabSync`, `PrefabHash`, and `PrefabHashGenerator`: `UnityEditor.GlobalObjectId` and `GlobalObjectHashId` now used.
-* `NetworkInstanceId` and `NetworkScenePostProcessor`: `UnityEditor.GlobalObjectId` now used.
+* `UsePrefabSync`, `PrefabHash`, and `PrefabHashGenerator`
+* `NetworkInstanceId` and `NetworkScenePostProcessor`
 
 ## Fixes
 
