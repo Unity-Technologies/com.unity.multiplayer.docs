@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod  
-title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod
-sidebar_label: ConnectionIdSpreadMethod
+title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod  
 ---
 
 <div class="markdown level0 summary">

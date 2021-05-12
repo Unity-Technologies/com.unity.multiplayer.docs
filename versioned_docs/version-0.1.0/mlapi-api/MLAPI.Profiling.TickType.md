@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.TickType  
 title: MLAPI.Profiling.TickType
-sidebar_label: TickType
 ---
 
 <div class="markdown level0 summary">
