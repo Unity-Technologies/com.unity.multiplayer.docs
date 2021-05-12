@@ -9,7 +9,7 @@ If you don't want to use the MLAPI's messaging, you don't have to. You can use a
 Custom messages comes in two forms: named and unnamed.
 
 ## Unnamed Messages
-
+ Unnamed messages can be thought of as a single sending channel. A message sent has one receive handler, this is useful for building your own custom messaging system. 
 **Usage**
 
 ```csharp
