@@ -40,4 +40,4 @@ A method turned into an RPC is no longer a regular method, it will have its own 
 
 ## Custom Messages
 
-See [Custom Messages](custom-messages.md) for information on tCustom Messages.
+See [Custom Messages](custom-messages.md) for information on Custom Messages.
