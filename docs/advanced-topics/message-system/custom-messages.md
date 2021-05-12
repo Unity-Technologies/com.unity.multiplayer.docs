@@ -30,7 +30,7 @@ private void Start()
 
 ```
 ## Named Messages
-
+If you want a completed messaging system, you can use named messages. The receiver registers one listen handler for each message type, and the sender can choose what type to send.
 **Usage**
 
 ```csharp
