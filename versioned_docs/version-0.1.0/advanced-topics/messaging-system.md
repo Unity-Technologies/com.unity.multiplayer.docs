@@ -1,7 +1,7 @@
 ---
 id: messaging-system
 title: Messaging System and RPCs
-description: An introduction to PRCs and custom messages in MLAPI
+description: An introduction to the messaging system in Unity MLAPI, including RPC's and Custom Messages.
 ---
 
 The MLAPI has two parts to it's messaging system. Remote Procedure Call (RPC) messages and Custom Messages. Both types have sub types that change their behaviour, functionality and performance.
