@@ -4,7 +4,7 @@ title: Custom Messages
 description: A brief explaination of Custom Message use in MLAPI coveing Named and Unnames messages.
 ---
 
-If you don't want to use the MLAPI's messaging. You don't have to. You can use a thin layer called "Custom Messages" (these can be used in combination with [RPC messages](about-rpc.md) as well). Custom messages allows you to implement your own behaviour and add custom targeting etc. Custom messages are messages unbound to any game object.
+If you don't want to use the MLAPI's messaging, you don't have to. You can use a thin layer called "Custom Messages" to implement your own behaviour and add custom targeting. They are unbound to any game object. Custom messages can be used in combination with [RPC messages](about-rpc.md). 
 
 Custom messages comes in two forms, named and unnamed. Unnamed messages can be thought of as a single sending channel. A message sent has one receive handler, this is useful for building your own custom messaging system. If you want a completed messaging system, you can use named messages. The receiver registers one listen handler for each message type, and the sender can choose what type to send.
 
