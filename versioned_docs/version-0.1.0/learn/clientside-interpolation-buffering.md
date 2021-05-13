@@ -1,6 +1,6 @@
 ---
 id: clientsideinterpolationbuffering
-title:  Clientside interpolation and buffering
+title:  Clientside interpolation
 description: Tutorial that covers the basics of lag mitigation and a way to produce smooth gameplay.
 ---
 
