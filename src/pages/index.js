@@ -105,6 +105,27 @@ function Home() {
           </section>
         )}
       </main>
+      <div className="hero-faq faq--primary hero-banner">
+      <div className="container">
+      <div className="row">
+        <div className="col col--6">
+          <h1 className="blog-title">I have a question!</h1>
+          <p className="blog-subtitle">Check the FAQ, that's frequently asked questions. If you don't find what you need, use search or contact us on <a href="https://discord.gg/buMxnnPvTb" target="_blank"><strong>Discord</strong></a>! </p>
+          <div className="buttons-pages">
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/learn/faq')}>
+              See the FAQ
+            </Link>
+            
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
       <div className="hero blog--primary hero-banner">
       <div className="container">
       <div className="row">
