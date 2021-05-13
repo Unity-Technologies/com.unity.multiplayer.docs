@@ -242,7 +242,11 @@ Now we will test that the command line helper script works.
 For Windows you should do the following:
 
 1. Open CMD.
-1. Enter the following:  
+1. Enter the following: 
+   
+:::note
+You may get a UAC prompt requesting prermission for the binary to run you should allow it.
+:::
 
   Server: 
 
@@ -256,9 +260,32 @@ For Windows you should do the following:
   <path to project>/Build/GoldenPath.exe -mlapi client
   ```
 
-:::note
-You may get a UAC prompt requesting prermission for the binary to run you should allow it.
+:::important
+On Windows, no standard out stream exists by default, so you will need to view the Debug.log file to see the outputs. You can find the Debug.log  files in:
+
+`C:\Users\username\AppData\LocalLow\CompanyName\ProductName\Player.log`
+
+Where the `CompanyName` should default to `DefaultCompany` for a new project and  `ProductName` should be equal to the project's name.
+
+Alternatively you can modify the Windows commands to create a log.txt file in the same folder as the .exe which maybe more convenient.
+
+Modify the commands as follows:
+
+  Server: 
+
+  ```
+  <path to project>/Build/GoldenPath.exe -logfile log-server.txt -mlapi server 
+  ```
+  
+  Client:
+  
+  ```
+  <path to project>/Build/GoldenPath.exe  -logfile log-client.txt -mlapi client
+  ```
+
 :::
+
+
 
 #### For Mac
 
@@ -367,6 +394,7 @@ Now we will test the Server-controlled Network Variable works as we intended.
 1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn.  
 1. You should see the following in the console, showing that the server and client are sharing the variable:
+
 
 ```
 Server's var initialized to: 0
