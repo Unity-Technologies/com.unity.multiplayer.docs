@@ -1,13 +1,14 @@
 ---
 id: install
 title: Install MLAPI
+description: Learn how to install the MLAPI package on Unity, including instructions for 2019.4+, 2020.x, and 2021.x. The package installs as MLAPI Networking Library.
 ---
 
 Multiple methods are available to install the MLAPI package, listed as the MLAPI Networking Library in your package list. The following instructions include installations on Unity 2021.x, 2020.x, and 2019.4+.
 
-## Unity 2021
+## Unity 2021.x
 
-To install MLAPI on Unity 2021.x, use the Unity Package Manager passing a git URL to the MLAPI release:
+To install MLAPI on Unity 2021.x, use the Unity Package Manager selecting the package from the registry:
 
 1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
@@ -60,6 +61,7 @@ See the following content to continue your journey using MLAPI:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
+* [Building Golden Path](../tutorials/goldenpath.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
