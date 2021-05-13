@@ -103,6 +103,12 @@ h1, h2, h3, h4, h5, h6, .text-break {
   transition: opacity 200ms ease-in-out;
 }
 
+// Top Nav Version
+
+.nav-break {
+  border-left: 1px solid rgb(156, 156, 156);
+}
+
 /* FontAwesome - find icons here https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
  * Add new entry using the following as examples.
 */
@@ -238,6 +244,11 @@ h1, h2, h3, h4, h5, h6, .text-break {
     object-fit: cover;
     border-radius: 10px 10px 0 0 ;
   }
+  .nav-break {
+    border-top: 1px solid rgb(156, 156, 156);
+    border-left: 0px;
+  }
+
 }
 
 html[data-theme='dark'] code {
@@ -489,6 +500,7 @@ html[data-theme='light'] .admonition-unity {
   .navbar-sidebar {
     .menu__link, .menu__link:hover {
       color: #fff !important;
+      border-radius: 0rem;
     }
   }
   .navbar__toggle {

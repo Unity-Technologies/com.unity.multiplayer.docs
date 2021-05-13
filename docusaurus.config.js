@@ -69,40 +69,61 @@ module.exports = {
         },
         items: [
           {
-            label: 'Docs',
+            label: 'MLAPI',
             to: '/getting-started/about-mlapi',
             position: 'left',
             items: [
               {
                 to: 'getting-started/about-mlapi',
-                label: 'Unity MLAPI',
+                label: 'Documentation',
               },
               {
+                to: 'mlapi-api/introduction',
+                label: 'API Reference',
+              },
+            ]
+          },
+          {
+            //MLAPI VERSIONS
+            type: 'docsVersionDropdown',
+            position: 'left',
+            // Add additional dropdown items at the beginning/end of the dropdown.
+            //dropdownItemsBefore: [],
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // Do not add the link active class when browsing docs.
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'default',
+          },
+          {
+            to: '/api-introduction',
+            label: 'Transport',
+            position: 'left',
+            className: 'nav-break',
+            items: [
+              {
                 to: 'introduction',
-                label: 'Unity Transport',
+                label: 'Documentation',
+                docsPluginId: 'transport',
+              },
+              
+              {
+                to: 'api/introduction',
+                label: 'API Reference',
                 docsPluginId: 'transport',
               },
             ]
           },
           {
-            to: '/api-introduction',
-            label: 'API',
+            //TRANSPORT VERSIONS
+            type: 'docsVersionDropdown',
             position: 'left',
-            items: [
-              {
-                to: 'mlapi-api/introduction',
-                label: 'Unity MLAPI',
-              },
-              {
-                to: 'api/introduction',
-                label: 'Unity Transport',
-                docsPluginId: 'transport',
-              },
-            ]
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'transport'
           },
           {
             to: '/learn/introduction',
             label: 'Learn',
+            className: 'nav-break',
             position: 'left',
           },
           {
@@ -110,16 +131,6 @@ module.exports = {
             label: 'Release Notes',
             docsPluginId: 'releases',
             position: 'left'
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            // Add additional dropdown items at the beginning/end of the dropdown.
-            //dropdownItemsBefore: [],
-            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            // Do not add the link active class when browsing docs.
-            dropdownActiveClassDisabled: true,
-            docsPluginId: 'default',
           },
           { 
             className: 'navbar-github-link',
@@ -438,9 +449,20 @@ module.exports = {
         {
           id: 'transport',
           path: 'transport',
-          editUrl: ({docPath}) => {
-            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${docPath}`;
+          editUrl: function ({
+            versionDocsDirPath,
+            docPath,
+          }) {
+            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
           },
+          includeCurrentVersion: true,
+            lastVersion: '0.9.0',
+            versions: {
+              current: {
+                label: 'develop',
+                path: 'develop',
+              },
+            },
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
