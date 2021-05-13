@@ -70,9 +70,15 @@ module.exports = {
         items: [
           {
             label: 'MLAPI',
+            className: 'nav-break',
             to: '/getting-started/about-mlapi',
             position: 'left',
             items: [
+              {
+                to: '/introduction',
+                label: 'Release Notes',
+                docsPluginId: 'releases'
+              },
               {
                 to: 'getting-started/about-mlapi',
                 label: 'Documentation',
@@ -87,6 +93,7 @@ module.exports = {
             //MLAPI VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
+            className: 'version',
             // Add additional dropdown items at the beginning/end of the dropdown.
             //dropdownItemsBefore: [],
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
@@ -95,11 +102,17 @@ module.exports = {
             docsPluginId: 'default',
           },
           {
-            to: '/api-introduction',
+            to: 'introduction',
             label: 'Transport',
             position: 'left',
+            docsPluginId: 'transport',
             className: 'nav-break',
             items: [
+              {
+                to: '/transport/transport-changelog',
+                label: 'Release Notes',
+                docsPluginId: 'releases'
+              },
               {
                 to: 'introduction',
                 label: 'Documentation',
@@ -116,6 +129,7 @@ module.exports = {
           {
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
+            className: 'version',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
@@ -126,18 +140,23 @@ module.exports = {
             className: 'nav-break',
             position: 'left',
           },
-          {
-            to: '/introduction',
-            label: 'Release Notes',
-            docsPluginId: 'releases',
-            position: 'left'
-          },
+          //{
+          //  to: '/introduction',
+          //  label: 'Release Notes',
+          //  docsPluginId: 'releases',
+          //  position: 'left'
+         // },
           { 
             className: 'navbar-github-link',
             position: 'right',
             to: 'contribute',
             docsPluginId: 'reference',
             items: [
+              {
+                to: '/introduction',
+                label: 'Release Notes',
+                docsPluginId: 'releases'
+              },
               {
                 label: 'Doc Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
@@ -243,7 +262,7 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {
-                label: 'Boss Room Release',
+                label: 'Boss Room Releases',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest',
               },
               {
@@ -264,7 +283,11 @@ module.exports = {
                 href: 'https://blogs.unity3d.com/',
               },
               {
-                label: 'Forums',
+                label: 'Unity Multiplayer Forum',
+                href: 'https://forum.unity.com/forums/multiplayer.26/',
+              },
+              {
+                label: 'Unity Forums',
                 href: 'https://forum.unity.com/',
               },
               {
