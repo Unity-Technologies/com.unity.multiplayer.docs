@@ -142,6 +142,7 @@ module.exports = {
         "type": "doc",
         "id": "advanced-topics/ways-synchronize"
       },
+
       {
         "collapsed": true,
         "type": "category",
@@ -176,7 +177,8 @@ module.exports = {
             "id": "advanced-topics/message-system/rpc-compatibility"
           },
         ]
-      },
+         },
+
       {
         "collapsed": true,
         "type": "category",
@@ -191,6 +193,10 @@ module.exports = {
             "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
           },
         ]
+      },
+      { 
+        "type": "doc",
+        "id": "advanced-topics/message-system/custom-messages"
       },
     ]
   },
