@@ -8,16 +8,26 @@ Multiple methods are available to install the MLAPI package, listed as the MLAPI
 
 ## Unity 2021.x
 
-To install MLAPI on Unity 2021.x, use the Unity Package Manager selecting the package from the registry:
+To install MLAPI on Unity 2021.x, use the Unity Package Manager to add the package by name:
 
 1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-1. Select Unity Registry.
+1. Click ![Add](/img/add.png) in the status bar and select **Add package by name...** (due to the package being experimental).
 
-  ![Select Unity Registry](/img/install/install-unity-registry.png)
+  ![Select Name Options](/img/install/install-name.png)
 
-1. Locate and select the MLAPI Networking Library, then click **Install**.
+1. Enter the Git URL to the MLAPI release package (below) and click **Add**. You can click the Copy option in that codeblock and paste it in the Package Manager. The Package Manage auto-detects from the repository.
+
+  ```html
+  com.unity.multiplayer.mlapi
+  ```
+
+  ![Package Installed](/img/install/install-0-1-0-2021-name.png)
+
+  :::info How to Copy
+  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+  :::
 
 1. The package installs, shown as MLAPI Networking Library 0.1.0 with an Exp (experimental) label.
 
@@ -30,13 +40,7 @@ To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Pa
 1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-1. Click ![Add](/img/add.png) in the status bar.
-
-  You have the following options:
-
-   - Add package from disk...
-   - Add package from tarball...
-   - Add package from git URL...
+1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
 
   ![Select Git URL Option](/img/install/install-git.png)
 
