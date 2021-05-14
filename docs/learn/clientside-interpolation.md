@@ -1,6 +1,6 @@
 ---
-id: clientsideinterpolationbuffering
-title:  Clientside interpolation
+id: clientside_interpolation
+title:  Clientside Interpolation
 description: Tutorial that covers the basics of lag mitigation and a way to produce smooth gameplay.
 ---
 
@@ -11,7 +11,7 @@ If we just accept the fact that latency exists, but chose not to do anything abo
  - send inputs from Clients to the Server
  - receive the resulting state from the Server and render it appropritely
 
-This is a conservative approach that makes no attempt to mitigate delay, but also never shows an incorrect user state. The problems with this approach is that not only will the user feel the latency, the frequency of updates from the server would dictate how choppy our gameplay experience is for the clients. In effect, regardless of the potential framerate that the client could achieve, the game would only run at the cadence the server (with its limiting networking factors) is capable of.  This could reduce a good 60 FPS experience into a  bad 15 FPS experience with perceivable input lag.
+This is a conservative approach that makes no attempt to mitigate delay, but also never shows an incorrect user state. The problems with this approach is that not only will the user feel the latency, the frequency of updates from the server would dictate how choppy our gameplay experience is for the clients. In effect, regardless of the potential framerate that the client could achieve, the game would only run at the cadence the server (with its limiting networking factors) is capable of. This could reduce a good 60 FPS experience into a  bad 15 FPS experience with perceivable input lag.
 
 Not only does this approach cause some unresponsiveness (which may be acceptable in certain game genres), it also makes it more difficult to aim at other players. The non-up-to-date rendering of the world forces the player to aim ahead of their target to compensate for lag. As a worst case scenario, the player could be legitimately aiming at the enemy player, but due to the fact that the enemy was actually a 100-150ms "ahead" (as in forward in time, not necessarily ahead in a positional sense) of what is being rendered, they may be unable to hit the enemy unless he runs predictably in a straight line. 
 
@@ -40,9 +40,8 @@ Snapshot Interpolation is not implemented in MLAPI at this time.
 # Boss Room Example 
 
 
-This technique is implemented in the [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/). A brief implementation description is as follows (with further documentation available on the Boss Room GitHub page):
+This technique is implemented in the (BossRoom sample)[https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/]. A brief implementation description is as follows (with further documentation available on the BossRoom GitHub page):
 
-All players and imps are comprised of two logically tied `GameObject`s:
-
-* The first one updates its position to match the one sent from the server as soon as we receive a new state
-* The second one smoothly follows the first `GameObject`
+ - all players and Imps are comprised of two logically tied GameObjects:
+    - the first one is updating it's position to match the one sent from the server as soon as we recieve new state
+    - the second one smoothly follows the first GameObject
