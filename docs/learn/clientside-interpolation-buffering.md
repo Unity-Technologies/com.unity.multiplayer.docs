@@ -25,7 +25,7 @@ Visual choppiness is caused by infrequent (in comparison to the speed at which c
 
 In client side Interpolation instead of just snapping objects to their positions that are transmitted from the server the client smoothly interpolates to this state over time. This approach is still conservative - the client just smoothens out the transition between valid states that were sent from the server. 
 
-Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for clientside interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect our latency would increase by our [Interpolation Period](../reference/glossary/network-latency-management#interpolation-period)  In order to avoid stutter we want that period to be less than the P[acket Sending Period](../reference/glossary/network-latency-management#packet-sending-period).  GThis will mean that when the client is done interpolating to the previous state - it would always have received new state to repeat the process. 
+Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for client-side interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect, our latency would increase by our [Interpolation Period](../reference/glossary/network-latency-management#interpolation-period).  In order to avoid stutter, we want that period to be less than the [Packet Sending Period](../reference/glossary/network-latency-management#packet-sending-period).  When the client is done interpolating to the previous state, it would always have received a new state to repeat the process. 
 
 
 :::unity Future MLAPI Feature
@@ -45,5 +45,4 @@ This technique is implemented in the (BossRoom sample)[https://github.com/Unity-
  - all players and Imps are comprised of two logically tied GameObjects:
     - the first one is updating it's position to match the one sent from the server as soon as we recieve new state
     - the second one smoothly follows the first GameObject
-
 
