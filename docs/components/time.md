@@ -4,7 +4,7 @@ title: Network Time System
 description: An explanation of the new network time system that replaces the old NetworkTime. This system will form the foundation for building other systems such as snapshoots, commands and p[redictions
 ---
 
-## Deprecations / Removals
+<!---## Deprecations / Removals
 
 ### NetworkManager Settings
 
@@ -32,6 +32,23 @@ var time = NetworkManager.Singleton.PredictedTime.Time;
 
 ## New Features
 
+-->
+
+There are different ways to define time in multiplayer scenarios. A multiplayer game connects multiple peers together where each peer has a different game engine time `Time.time` and potentially a different system time. This means there is a lack of a consistent time systems between peers and we need a time system that addresses this problem of running multiple peers connected to each other in controlled manner while keeping latency in mind.  
+
+## Networking Topologies and Time
+
+Networking topology affects how we think about the concept of time. MLAPI always uses a [listen server](../reference/glossary/network-topologies.md#client-hosted-listen-server) or **star topology** where all clients connect to a single server/host. This server contains and broadcasts state to all other clients. It does not necessarily hold authority over the state.
+
+The possibilities of expressing times comes down to the following:
+
+1. **Shared Time** A shared time between all peers. This time is used to ensure that all peers can display something at the same real world time.
+
+1. **Local Time** As a single peer I have my own local time and base my gameplay around that time.
+
+1. **Receive Time** When a peer-A receives state from peer-B, the `receive time` is based on the `local time` that Peer-B had when sending the message. This time can be used to smoothly interpolate received data.
+
+The **star topology** allows us to reduce the amount of receive time each peer needs to keep track of. Since a client only receives state from the server it only has a single receive time, the `Server Time`. In addition it has one `local time` which it uses to send state to the server. The server can then map that time to `server time` when relaying the state to other clients. That way not all clients need to know about the time of other clients.
 
 ### Server Time
 A client receives regular state updates from the server containing data about the game state. This state could for instance be a position. Because time passes as packets travel between the server and clients this state is in a different position in time then the state of a locally controlled player character. `ServerTime.Time` can be used to interact with logic in this time space.
@@ -48,7 +65,19 @@ public class MovingPlatform : MonoBehaviour
     }
 }
 ```
-<img src="0014-network-time/platform_1.gif" width="640" height="360">
+
+### Simplifying Star Topology Time
+
+When a client sends state to the server the server needs to somehow convert the `local time` of the client into `server time`. This can cause a few problems:
+
+- The server must somehow keep track of all the times of every single connected client.
+- The difference between the `erver Time` and the `local time` of a client is based on `RTT`. `RTT` can vary a lot between individual packets.
+- Since the server is in control of the conversion from `local times` to `server time` it must let the client know about changes. The notifications for this changes will be delayed by `RTT / 2` or more if packets are dropped. In addition the server does not know much about a clients situation so forcing a change onto a client could lead into oscillation of the offset between `server time` and `client time`
+
+To solve all the problems listed above MLAPI uses a different way of handling `local time`. The server will not deal with any time conversions. It will send out state in `server time` and  it expects to receive state from clients in `server time` as well.
+
+To ensure that the client send state arrives in `server time` on the server, the client adjsuts `local time` so that it matches `server time` when it arrives on the server. MLAPI does this by predicting the time at which the packet will arrive on the server. Since the client knows about the time when the last server packet arrived it can add the `RTT` + a bit of buffering to  its `local time` and use that as the new `local time`.  We call this concept of adjusting `local time` to the server `predicted time`.
+
 
 ### Predicted Time
 When moving your own player character locally, the character is ahead of time compared to all other NetworkObjects. This is the case because any changes to state will first need to be sent to the server and then back to all clients. `PredictedTime.Time` can be used to access this time. Most of the time `PredictedTime` should be used instead of `ServerTime` when implementing gameplay code.
@@ -73,11 +102,13 @@ public class NetworkChat : NetworkBehaviour
     }
 }
 ```
-*note: this is a stupid example :)*
 
 ### Time on the Host/Server
-Since there is 0 latency when making a change to an object on the Host/Server `PredictedTime` will always be the same as `ServerTime` on the Server/Host. When implementing gameplay code using `PredictedTime` is recommended as it allows to potentially re-use the code on a client.
+Since there is zero latency when making a change to an object on the Host/Server `PredictedTime` will always be the same as `ServerTime` on the Server/Host. 
 
+:::note
+When implementing gameplay code using `PredictedTime` is recommended as it allows to potentially re-use the code on a client.
+:::
 
 ### Network Ticks
 
@@ -86,14 +117,22 @@ MLAPI sends, receives and processes data at fixed tick intervals. It is importan
 MLAPI exposes multiple APIs to allow developers to do so.
 
 - `NetworkManager.Singleton.NetworkTimeSystem.OnNetworkTick` can be subscribed to to run code every tick.
-- Code running in Update or FixedUpdate could check for the current tick using `NetworkManager.Singleton.NetworkTime.PredictedTime.Tick`.
-- In the future we will expose more convenient ways to run logic during the network tick via a `NetworkFixedUpdate` in `NetworkBehaviour`.
+- Code running in `Update` or FixedUpdate could check for the current tick using `NetworkManager.Singleton.NetworkTime.PredictedTime.Tick`.
+  
+<!-- 
+In the future we will expose more convenient ways to run logic during the network tick via a `NetworkFixedUpdate` in `NetworkBehaviour`.
+-->
 
 ### INetworkTimeProvider
 
-While the built in `NetworkTimeSystem` provides a good starting point for a variety of games, sometimes more control over time is needed. `INetworkTimeProvider` is an interface which allows to override the root calculation of all network time. Note that this is an advanced feature, a faulty implementation of `INetworkTimeProvider` can result in a variety of issues.
+The built in `NetworkTimeSystem` provides a good starting point for a variety of games, however sometimes more control over time is needed. `INetworkTimeProvider` is an interface which allows to override the root calculation of all network time. 
+
+:::note
+This is an advanced feature, a faulty implementation of `INetworkTimeProvider` can result in a variety of issues.
+:::
 
 Here is an example implementation of a very simple custom `INetworkTimeProvider`:
+
 ```csharp
 public class SampleNetworkTimeProvider : INetworkTimeProvider
 {
@@ -117,46 +156,21 @@ This `INetworkTimeProvider` is a very simple provider which increments `ServerTi
 
 When calculating time MLAPI adds additional buffering to delay messages further to smooth out the data stream. The default buffer values are `1f / Tickrate` when the client receives and `2f / Tickrate` when the server receives.
 
-Buffering will only apply on NetworkVariable changes. RPCs, NetworkObject spawns etc. are unaffected.
+:::note
+Buffering will only apply on `NetworkVariable` changes. `RPC`s, `NetworkObject` spawns etc. are unaffected.
+:::
 
-Buffer time can be manually changed in code to for instance use different buffer sizes for different platforms. `NetworkManager.Singleton.NetworkTimeSystem.ClientBufferTime` and `NetworkManager.Singleton.NetworkTimeSystem.ServerBufferTime` can be used to adjust the time. Note these settings should only be adjusted on a client. The server does not apply any buffering.
+Buffer time can be manually changed in code to, for instance, use different buffer sizes for different platforms. `NetworkManager.Singleton.NetworkTimeSystem.ClientBufferTime` and `NetworkManager.Singleton.NetworkTimeSystem.ServerBufferTime` can be used to adjust the time. 
 
-# Reference-level explanation
-[reference-level-explanation]: #reference-level-explanation
-
-## Multiplayer and Time
-
-There are different ways to define time in multiplayer scenarios. A multiplayer game connects multiple peers together where each peer has a different game engine time `Time.time` and potentially a different system time. This means there is a lack of a consistent time systems between peers and we need to introduce our our concept.
-
+:::note
+These settings should only be adjusted on a client. The server does not apply any buffering.
+:::
 
 
-### Networking Topologies
-
-Networking topology affects how we think about the concept of time. In a p2p model where each client broadcasts state to all other clients there might be a need to establish a common time between all clients.
-
-MLAPI always uses a listen server or `star topology` where all clients connect to a single server/host. This server contains and broadcasts state to all other clients. It does not necessarily hold authority over the state.
-
-The possibilities of expressing times boil down to the following
-
-- 1. **Shared Time** A common concept of a shared time between all peers. This time could be used to ensure that all peers can display something at the same real world time.
-
-- 2. **Local Time** As a single peer I can have my own local time and base my gameplay around that time.
-
-- 3. **Receive Time** When a peer receives state from another peer, the receive time is based on the `local time` that peer had when sending the message. This time can be used to smoothly interpolate received data.
-
-The star topology allows us to reduce the amount of receive time each peer needs to keep track of. Since a client only receives state from the server it only has a single receive time, the `Server Time`. In addition it has one `local time` which it uses to send state to the server. The server can then map that time to `server time` when relaying the state to other clients. That way not all clients need to know about the time of other clients.
 
 
-### Simplifying Star Topology Time
 
-When a client sends state to the server the server needs to somehow convert the `local time` of the client into `server time`. This is problematic in a few ways:
-- The server must somehow keep track of all the times of every single connected client.
-- The difference between the `Server Time` and the `local time` of a client is based on `RTT`. `RTT` can vary a lot between individual packets.
-- Since the server is in control of the conversion from `local times` to `server time` it must let the client know about changes. The notifications for this changes will be delayed by `RTT / 2` or more if packets are dropped. In addition the server does not know much about a clients situation so forcing a change onto a client could lead into oscillation of the offset between `server time` and `client time`
 
-To solve all the problems listed above a different way of handling `local time` will be used in MLAPI. In this new model the server will not deal with any time conversions. It will send out state in `server time` and expects to receive state from clients in `server time` as well.
-
-How can the client send state so that it arrives in `server time` on the server? The client has to adjust `local time` so that it matches `server time` on arrival on the server. This is done by predicting the time at which the packet will arrive on the server. The client knows about the time when the last server packet arrived. To predict its `local time` it can add the `RTT` + a bit of buffering to that time and use that as the new `local time`. This concept of adjusting `local time` to the server is what we call `predicted time` from now on.
 
 
 
@@ -539,56 +553,8 @@ public void AdvanceNetworkTime(float deltaTime)
 
 There is one challenge in the implementation of `AdvanceNetworkTime`. It is not clear how to handle the relation ship between `PredictedTime` and `ServerTime` if multiple ticks have passed in the same advance step. The current solution expects that `PredictedTime` and `ServerTime` advanced at roughly the same pace which is true for most of the cases but not always. The alternative to solve this problem would be to have a more fine grained `INetworkTimeProvider` but this approach was not chosen to keep the interface simple.
 
-## Removal of TimeSync
+<!--## Removal of TimeSync
 
 The `TimeSync` message and all associated code has been removed from MLAPI. The concept of re-syncing time is not needed if we apply the learnings from the chapter above as all peers will always advance real time at the same pace. RTT and other factors will affect the `NetworkTime` but the client will be in control over adjusting time without the need of server input.
+-->
 
-## RFC 12: Synced Networked Variables
-
-This RFC evolves some of the concepts introduced in [RFC-12](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/pull/12). It does not change the fundamental principles introduced with the RFC. It just adjusts them to work better with the new time system.
-
-## Serializing Ticks
-
-Ticks are stored as int instead of ushort. This allows us to to theoretically run a server for many (414) days while keeping time accurate. The negative range of int is reserved to describe invalid tick values.
-
-NetworkTickWrapping as described in RFC-12 will be removed. To save bandwidth when sending ticks future features like the snapshot system will provide a way to delta compress tick values inside a snapshot packet against the header tick of the snapshot.
-
-### NetworkVariable Writes
-
-NetworkVariable will no longer carry two ticks. Instead of a `local tick` and a `remote tick` there will be only a `last modified tick`. This change is done because there is no longer a need for multiple ticks. Writing NetworkVariables always happens in `PredictedTime` while receiving NetworkVariables happens in `ServerTime`.
-
-How NetworkVariable writes will be changed internally with the time system proposed in this RFC. INetworkVariable will expose a LastModifiedTick value.
-```csharp
-int LastModifiedTick { get; }
-```
-
-The setter of NetworkVariable will set `LastModifiedTick` to predicted tick:
-```csharp
-/// <summary>
-/// The value of the NetworkVariable container
-/// </summary>
-public T Value
-{
-    get => m_InternalValue;
-    set
-    {
-        if (EqualityComparer<T>.Default.Equals(m_InternalValue, value))
-        {
-            return;
-        }
-        
-        LastModifiedTick = NetworkManager.Singleton.PredictedTime.Tick;
-
-        m_IsDirty = true;
-        T previousValue = m_InternalValue;
-        m_InternalValue = value;
-        OnValueChanged?.Invoke(previousValue, m_InternalValue);
-    }
-}
-```
-
-When serializing a NetworkVariable the `LastModifiedTick` will be included.
-
-This change does not yet introduce any changes to how NetworkVariables work. This is base infrastructure which will later be used by the snapshot system.
-
-In the future we might introduce buffering for client NetworkVariable writes. The server will buffer incoming NetworkVariable changes until  `PredictedTick` matches the `LastModifiedTick` in the packet.
