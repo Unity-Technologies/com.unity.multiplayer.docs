@@ -40,10 +40,10 @@ An improvement that produces even smoother gameplay at the cost of even more add
 # Boss Room Example 
 
 
-This technique is implemented in the (BossRoom sample)[https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/]. A brief implementation description is as follows (with further documentation available on the BossRoom GitHub page):
+This technique is implemented in the [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/). A brief implementation description is as follows (with further documentation available on the Boss Room GitHub page):
 
- - all players and Imps are comprised of two logically tied GameObjects:
-    - the first one is updating it's position to match the one sent from the server as soon as we recieve new state
-    - the second one smoothly follows the first GameObject
+All players and imps are comprised of two logically tied `GameObject`s:
 
+* The first one updates its position to match the one sent from the server as soon as we receive a new state
+* The second one smoothly follows the first `GameObject`
 
