@@ -185,6 +185,10 @@
                 "id": "version-0.1.0/advanced-topics/network-update-loop-system/network-update-loop-reference"
               }
             ]
+          },
+          { 
+            "type": "doc",
+            "id": "version-0.1.0/advanced-topics/message-system/custom-messages"
           }
         ]
       },
