@@ -111,7 +111,21 @@ module.exports = {
       {
         "type": "doc",
         "id": "components/networknavmeshagent"
-      }
+      },
+
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Network Time",
+        "items": [
+          {
+            "type": "doc",
+            "id": "components/time"          },
+          {
+            "type": "doc",
+            "id": "components/time-reference"          },
+        ]
+      },
     ]
   },
   {
@@ -142,6 +156,7 @@ module.exports = {
         "type": "doc",
         "id": "advanced-topics/ways-synchronize"
       },
+
       {
         "collapsed": true,
         "type": "category",
@@ -176,7 +191,8 @@ module.exports = {
             "id": "advanced-topics/message-system/rpc-compatibility"
           },
         ]
-      },
+         },
+
       {
         "collapsed": true,
         "type": "category",
@@ -191,6 +207,10 @@ module.exports = {
             "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
           },
         ]
+      },
+      { 
+        "type": "doc",
+        "id": "advanced-topics/message-system/custom-messages"
       },
     ]
   },
