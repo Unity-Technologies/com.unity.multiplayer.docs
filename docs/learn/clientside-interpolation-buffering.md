@@ -29,11 +29,11 @@ Normally a client in a server-authoritative topology, barring any additional tri
 
 
 :::unity Future MLAPI Feature
-This implementation of Clientside Interpolation provides some improvement to the choppiness problem, but it doesn't completely solve the issues caused by jitter.
+This implementation of Client-side Interpolation provides some improvement to the choppiness problem, but it does not completely solve the issues caused by jitter.
 
-An improvement that produces even smoother gameplay at the cost of even more added latency is Snapshot Interpolation, where instead of interpolating towards the most up-to-date state we introduce a buffer that keeps several snapshots of incoming state and interpolates through them. This technique provides better handling of Jitter, but, again, it introduces slight additional latency on top of what we had in Clientside Interpolation.
+An improvement that produces even smoother gameplay at the cost of even more added latency is Snapshot Interpolation, where instead of interpolating towards the most up-to-date state, we introduce a buffer that keeps several snapshots of incoming state and interpolates through them. This technique provides better handling of Jitter, but, again, it introduces slight additional latency on top of what we had in Clientside Interpolation.
 
-!!! Snapshot Interpolation - this is not implemented in MLAPI yet, but it's planned
+Snapshot Interpolation is not implemented in MLAPI at this time.
 :::
 
 
@@ -45,4 +45,3 @@ This technique is implemented in the (BossRoom sample)[https://github.com/Unity-
  - all players and Imps are comprised of two logically tied GameObjects:
     - the first one is updating it's position to match the one sent from the server as soon as we recieve new state
     - the second one smoothly follows the first GameObject
-
