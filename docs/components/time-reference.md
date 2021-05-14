@@ -54,12 +54,34 @@ void Update()
 ```
 
 After applying the changes, it will look like this:
+  
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Client', value: 'tab1'},
+    {label: 'Host', value: 'tab2'},
+  ]}>
 
-![Elevator Problem Client ](/img/platform_3.1.gif) ![Elevator Problem Host ](/img/platform_3.2.gif)
+<TabItem value="tab1">
 
+![Elevator Problem Client Final Example](/img/platform_3.1.gif)
 
 _**Client** RTT = 200ms, `Own Player` = aligned, `Server NPC` = 200ms behind, `Other Player` = 200ms behind_\
+
+</TabItem>
+
+<TabItem value="tab2">
+
+![Elevator Problem Host Final Example](/img/platform_3.2.gif)
+
 _**Host** RTT = 200ms, `Own Player` = aligned, `Server NPC` = aligned, `Other Player` = aligned_
+</TabItem>
+</Tabs>
+  
+
+
+
 
 It might seem like predicting the platform only makes the situation worse because now on clients also the server controlled objects are delayed. But there is an important difference to the last model. On the Host all objects are perfectly aligned to the platform because they are in the same time space.
 
@@ -377,3 +399,6 @@ public void AdvanceNetworkTime(float deltaTime)
 ```
 
 There is one challenge in the implementation of `AdvanceNetworkTime`. It is not clear how to handle the relation ship between `PredictedTime` and `ServerTime` if multiple ticks have passed in the same advance step. The current solution expects that `PredictedTime` and `ServerTime` advanced at roughly the same pace which is true for most of the cases but not always. The alternative to solve this problem would be to have a more fine grained `INetworkTimeProvider` but this approach was not chosen to keep the interface simple.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';

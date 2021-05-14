@@ -111,7 +111,21 @@ module.exports = {
       {
         "type": "doc",
         "id": "components/networknavmeshagent"
-      }
+      },
+
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Network Time",
+        "items": [
+          {
+            "type": "doc",
+            "id": "components/time"          },
+          {
+            "type": "doc",
+            "id": "components/time-reference"          },
+        ]
+      },
     ]
   },
   {
