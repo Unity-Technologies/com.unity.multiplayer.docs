@@ -13,9 +13,9 @@ If we just accept the fact that latency exists, but chose not to do anything abo
 
 This is a conservative approach that makes no attempt to mitigate delay, but also never shows an incorrect user state. The problems with this approach is that not only will the user feel the latency, the frequency of updates from the server would dictate how choppy our gameplay experience is for the clients. In effect, regardless of the potential framerate that the client could achieve, the game would only run at the cadence the server (with its limiting networking factors) is capable of. This could reduce a good 60 FPS experience into a  bad 15 FPS experience with perceivable input lag.
 
-Not only does this  approach cause some unresponsiveness (which may be acceptable in certain game genres,) it also makes it more difficult to aim at other players - the non-up-to-date rendering of the world forces the player to aim ahead of their target to compensate for lag. Worst case scenario - they could be legitimately aiming at the enemy player, but due to the fact that the enemy was actually a 100-150ms "ahead" (as in forward in time, not neccessarily ahead in a positional sense) of what is being rendered - they have no chance to hit the enemy unless he just runs predictably in a straight line. 
+Not only does this approach cause some unresponsiveness (which may be acceptable in certain game genres), it also makes it more difficult to aim at other players. The non-up-to-date rendering of the world forces the player to aim ahead of their target to compensate for lag. As a worst case scenario, the player could be legitimately aiming at the enemy player, but due to the fact that the enemy was actually a 100-150ms "ahead" (as in forward in time, not necessarily ahead in a positional sense) of what is being rendered, they may be unable to hit the enemy unless he runs predictably in a straight line. 
 
-Now throw in some chaos by means of [RTT fluctuations](lagandpacketloss#round-trip-time-rtt) / [Jitter](lagandpacketloss#jitter) and we're getting into an unacceptable gameplay experience..
+Now throw in some chaos by means of [RTT fluctuations](lagandpacketloss#round-trip-time-rtt) and [Jitter](lagandpacketloss#jitter), and we are getting into an unacceptable gameplay experience.
 
 Fortunately we can mitigate the effects of latency and jitter.
 
