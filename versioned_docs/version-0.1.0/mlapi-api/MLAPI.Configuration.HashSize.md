@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Configuration.HashSize  
 title: MLAPI.Configuration.HashSize
-sidebar_label: HashSize
 ---
 
 <div class="markdown level0 summary">

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Connection  
 title: MLAPI.Connection
-sidebar_label: Connection
 ---
 
 ## Namespace MLAPI.Connection

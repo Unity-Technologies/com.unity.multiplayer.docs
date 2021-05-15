@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization.SerializationManager  
-title: MLAPI.Serialization.SerializationManager
-sidebar_label: SerializationManager
+title: MLAPI.Serialization.SerializationManager  
 ---
 
 <div class="markdown level0 summary">

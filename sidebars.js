@@ -346,7 +346,7 @@ module.exports = {
             {
               "type": "doc",
               "id": "learn/rpcnetvarexamples"
-            },
+            }
           ],
         }
       ]
@@ -371,7 +371,7 @@ module.exports = {
           {
           "type": "doc",
           "id": "learn/bitesize-spaceshooter"
-          },
+          }
       ]
       },
     {
@@ -402,52 +402,49 @@ module.exports = {
       "items": [
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI"
+          "id": "mlapi-api/MLAPI",
+          "label": "MLAPI APIs",
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.INetworkUpdateSystem"
+          "id": "mlapi-api/MLAPI.INetworkUpdateSystem",
+          "label": "INetworkUpdateSystem"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkBehaviour"
+          "id": "mlapi-api/MLAPI.NetworkBehaviour",
+          "label": "NetworkBehaviour"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkManager"
+          "id": "mlapi-api/MLAPI.NetworkObject",
+          "label": "NetworkObject"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate"
+          "id": "mlapi-api/MLAPI.NetworkObject.SpawnDelegate",
+          "label": "SpawnDelegate"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkManager.PerformanceDataEventHandler"
+          "id": "mlapi-api/MLAPI.NetworkObject.VisibilityDelegate",
+          "label": "VisibilityDelegate"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkObject"
+          "id": "mlapi-api/MLAPI.NetworkTickSystem",
+          "label": "NetworkTickSystem"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkObject.SpawnDelegate"
+          "id": "mlapi-api/MLAPI.NetworkUpdateLoop",
+          "label": "NetworkUpdateLoop"
         },
         {
           "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkObject.VisibilityDelegate"
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkTickSystem"
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkUpdateLoop"
-        },
-        {
-          "type": "doc",
-          "id": "mlapi-api/MLAPI.NetworkUpdateStage"
-        },
+          "id": "mlapi-api/MLAPI.NetworkUpdateStage",
+          "label": "NetworkUpdateStage"
+        }
       ]
     },
       
@@ -458,11 +455,13 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Collections"
+            "id": "mlapi-api/MLAPI.Collections",
+            "label": "Collections"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Collections.FixedQueue-1"
+            "id": "mlapi-api/MLAPI.Collections.FixedQueue-1",
+            "label": "FixedQueue-1"
           },
         ]
       },
@@ -473,20 +472,19 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Configuration"
+            "id": "mlapi-api/MLAPI.Configuration",
+            "label": "Configuration"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Configuration.HashSize"
+            "id": "mlapi-api/MLAPI.Configuration.HashSize",
+            "label": "HashSize"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Configuration.NetworkConfig"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Configuration.NetworkPrefab"
-          },
+            "id": "mlapi-api/MLAPI.Configuration.NetworkConfig",
+            "label": "NetworkConfig"
+          }
         ]
       },
       {
@@ -496,20 +494,24 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Connection"
+            "id": "mlapi-api/MLAPI.Connection",
+            "label": "Connection"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Connection.NetworkClient"
+            "id": "mlapi-api/MLAPI.Connection.NetworkClient",
+            "label": "NetworkClientNetworkClient"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Connection.PendingClient"
+            "id": "mlapi-api/MLAPI.Connection.PendingClient",
+            "label": "PendingClient"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Connection.PendingClient.State"
-          },
+            "id": "mlapi-api/MLAPI.Connection.PendingClient.State",
+            "label": "PendingClient.State"
+          }
         ]
       },
       {
@@ -519,32 +521,39 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions"
+            "id": "mlapi-api/MLAPI.Exceptions",
+            "label": "Exceptions"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions.InvalidChannelException"
+            "id": "mlapi-api/MLAPI.Exceptions.InvalidChannelException",
+            "label": "InvalidChannelException"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions.NetworkConfigurationException"
+            "id": "mlapi-api/MLAPI.Exceptions.NetworkConfigurationException",
+            "label": "NetworkConfigurationException"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions.NotListeningException"
+            "id": "mlapi-api/MLAPI.Exceptions.NotListeningException",
+            "label": "NotListeningException"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions.NotServerException"
+            "id": "mlapi-api/MLAPI.Exceptions.NotServerException",
+            "label": "NotServerException"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions.SpawnStateException"
+            "id": "mlapi-api/MLAPI.Exceptions.SpawnStateException",
+            "label": "SpawnStateException"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Exceptions.VisibilityChangeException"
-          },
+            "id": "mlapi-api/MLAPI.Exceptions.VisibilityChangeException",
+            "label": "VisibilityChangeException"
+          }
         ]
       },
       {
@@ -554,16 +563,19 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Logging"
+            "id": "mlapi-api/MLAPI.Logging",
+            "label": "Logging"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Logging.LogLevel"
+            "id": "mlapi-api/MLAPI.Logging.LogLevel",
+            "label": "LogLevel"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Logging.NetworkLog"
-          },
+            "id": "mlapi-api/MLAPI.Logging.NetworkLog",
+            "label": "NetworkLog"
+          }
         ]
       },
       {
@@ -573,72 +585,96 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging"
+            "id": "mlapi-api/MLAPI.Messaging",
+            "label": "Messaging"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ClientRpcAttribute"
+            "id": "mlapi-api/MLAPI.Messaging.ClientRpcAttribute",
+            "label": "ClientRpcAttribute"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ClientRpcParams"
+            "id": "mlapi-api/MLAPI.Messaging.ClientRpcParams",
+            "label": "ClientRpcParams"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ClientRpcReceiveParams"
+            "id": "mlapi-api/MLAPI.Messaging.ClientRpcReceiveParams",
+            "label": "ClientRpcReceiveParams"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ClientRpcSendParams"
+            "id": "mlapi-api/MLAPI.Messaging.ClientRpcSendParams",
+            "label": "ClientRpcSendParams"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "CustomMessagingManager",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager",
+                "label": "CustomMessagingManager"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate",
+                "label": "HandleNamedMessageDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate",
+                "label": "UnnamedMessageDelegate"
+              }
+            ]
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager"
+            "id": "mlapi-api/MLAPI.Messaging.RpcAttribute",
+            "label": "RpcAttribute"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager.HandleNamedMessageDelegate"
+            "id": "mlapi-api/MLAPI.Messaging.RpcParams",
+            "label": "RpcParams"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.CustomMessagingManager.UnnamedMessageDelegate"
+            "id": "mlapi-api/MLAPI.Messaging.RpcDelivery",
+            "label": "RpcDelivery"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.RpcAttribute"
+            "id": "mlapi-api/MLAPI.Messaging.RpcQueueHistoryFrame",
+            "label": "RpcQueueHistoryFrame"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.RpcParams"
+            "id": "mlapi-api/MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType",
+            "label": "QueueFrameType"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.RpcDelivery"
+            "id": "mlapi-api/MLAPI.Messaging.ServerRpcAttribute",
+            "label": "ServerRpcAttribute"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.RpcQueueHistoryFrame"
+            "id": "mlapi-api/MLAPI.Messaging.ServerRpcParams",
+            "label": "ServerRpcParams"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType"
+            "id": "mlapi-api/MLAPI.Messaging.ServerRpcReceiveParams",
+            "label": "ServerRpcReceiveParams"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ServerRpcAttribute"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ServerRpcParams"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ServerRpcReceiveParams"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Messaging.ServerRpcSendParams"
-          },
+            "id": "mlapi-api/MLAPI.Messaging.ServerRpcSendParams",
+            "label": "ServerRpcSendParams"
+          }
         ]
       },
       {
@@ -648,16 +684,14 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkManager"
+            "id": "mlapi-api/MLAPI.NetworkManager",
+            "label": "NetworkManager"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkManager.PerformanceDataEventHandler"
-          },
+            "id": "mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate",
+            "label": "ConnectionApprovedDelegate"
+          }
         ]
       },
       {
@@ -667,107 +701,133 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable"
+            "id": "mlapi-api/MLAPI.NetworkVariable",
+            "label": "NetworkVariable"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.INetworkVariable"
+            "id": "mlapi-api/MLAPI.NetworkVariable.INetworkVariable",
+            "label": "INetworkVariable"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariable-1"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariable-1",
+            "label": "NetworkVariable-1"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariable-1.OnValueChangedDelegate"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariable-1.OnValueChangedDelegate",
+            "label": "OnValueChangedDelegate"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableBool"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableBool",
+            "label": "NetworkVariableBool"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableByte"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableByte",
+            "label": "NetworkVariableByte"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableColor"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableColor",
+            "label": "NetworkVariableColor"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableColor32"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableColor32",
+            "label": "NetworkVariableColor32"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableDouble"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableDouble",
+            "label": "NetworkVariableDouble"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableFloat"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableFloat",
+            "label": "NetworkVariableFloat"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableInt"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableInt",
+            "label": "NetworkVariableInt"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableLong"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableLong",
+            "label": "NetworkVariableLong"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariablePermission"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariablePermission",
+            "label": "NetworkVariablePermission"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariablePermissionsDelegate"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariablePermissionsDelegate",
+            "label": "NetworkVariablePermissionsDelegate"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableQuaternion"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableQuaternion",
+            "label": "NetworkVariableQuaternion"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableRay"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableRay",
+            "label": "NetworkVariableRay"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableSByte"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableSByte",
+            "label": "NetworkVariableSByte"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableSettings"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableSettings",
+            "label": "NetworkVariableSettings"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableShort"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableShort",
+            "label": "NetworkVariableShort"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableString"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableString",
+            "label": "NetworkVariableString"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableUInt"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableUInt",
+            "label": "NetworkVariableUInt"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableULong"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableULong",
+            "label": "NetworkVariableULong"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableUShort"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableUShort",
+            "label": "NetworkVariableUShort"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector2"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector2",
+            "label": "NetworkVariableVector2"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector3"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector3",
+            "label": "NetworkVariableVector3"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector4"
+            "id": "mlapi-api/MLAPI.NetworkVariable.NetworkVariableVector4",
+            "label": "NetworkVariableVector4"
           },
           {
             "collapsed": true,
@@ -776,40 +836,70 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections"
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections",
+                "label": "Collections"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2"
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2",
+                "label": "NetworkDictionary-2"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate"
+                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate",
+                "label": "OnDictionaryChangedDelegate"
               },
               {
-                "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType"
+                "collapsed": true,
+                "type": "category",
+                "label": "NetworkDictionaryEvent-2",
+                "items": [
+                {
+                  "type": "doc",
+                  "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2",
+                  "label": "NetworkDictionaryEvent-2"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType",
+                  "label": "EventType"
+                }
+                ]
               },
               {
-                "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2"
+                "collapsed": true,
+                "type": "category",
+                "label": "NetworkList-1",
+                "items": [
+                {
+                  "type": "doc",
+                  "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1",
+                  "label": "NetworkList-1"
+                },
+                {
+                  "type": "doc",
+                  "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate",
+                  "label": "OnListChangedDelegate"
+                }
+                ]
               },
               {
-                "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkList-1.OnListChangedDelegate"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1.EventType"
-              },
-              {
-                "type": "doc",
-                "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1"
-              },
+                "collapsed": true,
+                "type": "category",
+                "label": "NetworkListEvent-1",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1",
+                    "label": "NetworkListEvent-1"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "mlapi-api/MLAPI.NetworkVariable.Collections.NetworkListEvent-1.EventType",
+                    "label": "EventType"
+                  }
+                ]
+              }
             ]
           },
         ]
@@ -821,83 +911,86 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling"
+            "id": "mlapi-api/MLAPI.Profiling",
+            "label": "Profiling"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.PerformanceTickData"
+            "id": "mlapi-api/MLAPI.Profiling.IProfilableTransportProvider",
+            "label": "IProfilableTransportProvider"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilerConstants"
+            "id": "mlapi-api/MLAPI.Profiling.NetworkProfiler",
+            "label": "NetworkProfiler"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilerIncStat"
+            "id": "mlapi-api/MLAPI.Profiling.PerformanceTickData",
+            "label": "PerformanceTickData"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.NetworkProfiler"
+            "id": "mlapi-api/MLAPI.Profiling.ProfilerConstants",
+            "label": "ProfilerConstants"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilerTick"
+            "id": "mlapi-api/MLAPI.Profiling.ProfilerIncStat",
+            "label": "ProfilerIncStat"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilerStat"
+            "id": "mlapi-api/MLAPI.Profiling.ProfilerTick",
+            "label": "ProfilerTick"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilerStat"
+            "id": "mlapi-api/MLAPI.Profiling.ProfilerStat",
+            "label": "ProfilerStat"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilerStatManager"
+            "id": "mlapi-api/MLAPI.Profiling.ProfilerStatManager",
+            "label": "ProfilerStatManager"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.ProfilingDataStore"
+            "id": "mlapi-api/MLAPI.Profiling.ProfilingDataStore",
+            "label": "ProfilingDataStore"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.Sample"
+            "id": "mlapi-api/MLAPI.Profiling.TickEvent",
+            "label": "TickEvent"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.TickEvent"
+            "id": "mlapi-api/MLAPI.Profiling.TickType",
+            "label": "TickType"
           },
           {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Profiling.TickType"
-          },
-        ]
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Prototyping",
-        "items": [
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkAnimator"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkNavMeshAgent"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkTransform"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Prototyping.NetworkTransform.MoveValidationDelegate"
-          },
+            "collapsed": true,
+            "type": "category",
+            "label": "ProfilerNotifier",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Profiling.ProfilerNotifier",
+                "label": "ProfilerNotifier"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Profiling.ProfilerNotifier.NoTickDataHandler",
+                "label": "NoTickDataHandler"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.Profiling.ProfilerNotifier.PerformanceDataEventHandler",
+                "label": "PerformanceDataEventHandler"
+              },
+            ]
+          }
         ]
       },
       {
@@ -907,28 +1000,56 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement"
+            "id": "mlapi-api/MLAPI.SceneManagement",
+            "label": "SceneManagement"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "NetworkSceneManager",
+            "items": [
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager",
+                "label": "NetworkSceneManager"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.NotifyClientAllClientsLoadedSceneDelegate",
+                "label": "NotifyClientAllClientsLoadedSceneDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.NotifyServerAllClientsLoadedSceneDelegate",
+                "label": "NotifyServerAllClientsLoadedSceneDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.NotifyServerClientLoadedSceneDelegate",
+                "label": "NotifyServerAllClientsLoadedSceneDelegate"
+              },
+            ]
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager"
+            "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchedDelegate",
+            "label": "SceneSwitchedDelegate"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchedDelegate"
+            "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate",
+            "label": "SceneSwitchStartedDelegate"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchStartedDelegate"
+            "id": "mlapi-api/MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate",
+            "label": "OnClientLoadedSceneDelegate"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement.SceneSwitchProgress.OnClientLoadedSceneDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.SceneManagement.SceneSwitchProgress.OnCompletedDelegate"
-          },
+            "id": "mlapi-api/MLAPI.SceneManagement.SceneSwitchProgress.OnCompletedDelegate",
+            "label": "OnCompletedDelegate"
+          }
         ]
       },
       {
@@ -938,35 +1059,43 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization"
+            "id": "mlapi-api/MLAPI.Serialization",
+            "label": "Serialization"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.Arithmetic"
+            "id": "mlapi-api/MLAPI.Serialization.Arithmetic",
+            "label": "Arithmetic"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.AutoNetworkSerializable"
+            "id": "mlapi-api/MLAPI.Serialization.AutoNetworkSerializable",
+            "label": "AutoNetworkSerializable"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.INetworkSerializable"
+            "id": "mlapi-api/MLAPI.Serialization.INetworkSerializable",
+            "label": "INetworkSerializable"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.NetworkBuffer"
+            "id": "mlapi-api/MLAPI.Serialization.NetworkBuffer",
+            "label": "NetworkBuffer"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.NetworkReader"
+            "id": "mlapi-api/MLAPI.Serialization.NetworkReader",
+            "label": "NetworkReader"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.NetworkSerializer"
+            "id": "mlapi-api/MLAPI.Serialization.NetworkSerializer",
+            "label": "NetworkSerializer"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Serialization.NetworkWriter"
+            "id": "mlapi-api/MLAPI.Serialization.NetworkWriter",
+            "label": "NetworkWriter"
           },
           {
             "collapsed": true,
@@ -975,32 +1104,39 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled"
+                "id": "mlapi-api/MLAPI.Serialization.Pooled",
+                "label": "Pooled"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled.NetworkBufferPool"
+                "id": "mlapi-api/MLAPI.Serialization.Pooled.NetworkBufferPool",
+                "label": "NetworkBufferPool"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled.NetworkReaderPool"
+                "id": "mlapi-api/MLAPI.Serialization.Pooled.NetworkReaderPool",
+                "label": "NetworkReaderPool"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled.NetworkWriterPool"
+                "id": "mlapi-api/MLAPI.Serialization.Pooled.NetworkWriterPool",
+                "label": "NetworkWriterPool"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkBuffer"
+                "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkBuffer",
+                "label": "PooledNetworkBuffer"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkReader"
+                "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkReader",
+                "label": "PooledNetworkReader"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkWriter"
-              },
+                "id": "mlapi-api/MLAPI.Serialization.Pooled.PooledNetworkWriter",
+                "label": "PooledNetworkWriter"
+              }
             ]
           },
           {
@@ -1010,19 +1146,27 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.SerializationManager"
+                "id": "mlapi-api/MLAPI.Serialization.SerializationManager",
+                "label": "SerializationManager"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1"
+                "id": "mlapi-api/MLAPI.Serialization.SerializationManager.CustomDeserializationDelegate-1",
+                "label": "CustomDeserializationDelegate-1"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1"
-              },
+                "id": "mlapi-api/MLAPI.Serialization.SerializationManager.CustomSerializationDelegate-1",
+                "label": "CustomSerializationDelegate-1"
+              }
             ]
           },
         ]
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-api/MLAPI.SnapshotSystem",
+        "label": "SnapshotSystem"
       },
       {
         "collapsed": true,
@@ -1031,20 +1175,14 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Spawning"
+            "id": "mlapi-api/MLAPI.Spawning",
+            "label": "Spawning"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate"
-          },
-          {
-            "type": "doc",
-            "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate"
-          },
+            "id": "mlapi-api/MLAPI.Spawning.NetworkSpawnManager",
+            "label": "NetworkSpawnManager"
+          }
         ]
       },
       {
@@ -1054,7 +1192,8 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Transports"
+            "id": "mlapi-api/MLAPI.Transports",
+            "label": "Transports"
           },
           {
             "collapsed": true,
@@ -1063,29 +1202,35 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.Multiplex"
+                "id": "mlapi-api/MLAPI.Transports.Multiplex",
+                "label": "Multiplex"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod"
+                "id": "mlapi-api/MLAPI.Transports.Multiplex.MultiplexTransportAdapter",
+                "label": "MultiplexTransportAdapter"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.Multiplex.MultiplexTransportAdapter"
-              },
+                "id": "mlapi-api/MLAPI.Transports.Multiplex.MultiplexTransportAdapter.ConnectionIdSpreadMethod",
+                "label": "ConnectionIdSpreadMethod"
+              }
             ]
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Transports.NetworkChannel"
+            "id": "mlapi-api/MLAPI.Transports.NetworkChannel",
+            "label": "NetworkChannel"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Transports.NetworkDelivery"
+            "id": "mlapi-api/MLAPI.Transports.NetworkDelivery",
+            "label": "NetworkDelivery"
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Transports.NetworkEvent"
+            "id": "mlapi-api/MLAPI.Transports.NetworkEvent",
+            "label": "NetworkEvent"
           },
           {
             "collapsed": true,
@@ -1094,16 +1239,19 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.NetworkTransport"
+                "id": "mlapi-api/MLAPI.Transports.NetworkTransport",
+                "label": "NetworkTransport"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.NetworkTransport.RequestChannelsDelegate"
+                "id": "mlapi-api/MLAPI.Transports.NetworkTransport.RequestChannelsDelegate",
+                "label": "RequestChannelsDelegate"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.NetworkTransport.TransportEventDelegate"
-              },
+                "id": "mlapi-api/MLAPI.Transports.NetworkTransport.TransportEventDelegate",
+                "label": "TransportEventDelegate"
+              }
             ]
           },
           {
@@ -1113,21 +1261,25 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.Tasks"
+                "id": "mlapi-api/MLAPI.Transports.Tasks",
+                "label": "Tasks"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.Tasks.SocketTask"
+                "id": "mlapi-api/MLAPI.Transports.Tasks.SocketTask",
+                "label": "SocketTask"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.Tasks.SocketTasks"
-              },
+                "id": "mlapi-api/MLAPI.Transports.Tasks.SocketTasks",
+                "label": "SocketTasks"
+              }
             ]
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Transports.TransportChannel"
+            "id": "mlapi-api/MLAPI.Transports.TransportChannel",
+            "label": "TransportChannel"
           },
           {
             "collapsed": true,
@@ -1136,31 +1288,56 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.UNET"
+                "id": "mlapi-api/MLAPI.Transports.UNET",
+                "label": "UNET"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.UNET.InvalidConfigException"
+                "id": "mlapi-api/MLAPI.Transports.UNET.InvalidConfigException",
+                "label": "InvalidConfigException"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.UNET.ProfilerConstants"
+                "id": "mlapi-api/MLAPI.Transports.UNET.ProfilerConstants",
+                "label": "ProfilerConstants"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.UNET.UNetTransport.SendMode"
+                "id": "mlapi-api/MLAPI.Transports.UNET.UNetTransport.SendMode",
+                "label": "SendMode"
               },
               {
                 "type": "doc",
-                "id": "mlapi-api/MLAPI.Transports.UNET.UNetTransport"
-              },
+                "id": "mlapi-api/MLAPI.Transports.UNET.UNetTransport",
+                "label": "UNetTransport"
+              }
             ]
           },
           {
             "type": "doc",
-            "id": "mlapi-api/MLAPI.Transports.UNetChannel"
-          },
+            "id": "mlapi-api/MLAPI.Transports.UNetChannel",
+            "label": "UNetChannel"
+          }
         ]
       },
-  ] 
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Transport UTP Wrapper",
+        "items": [
+          {
+            "type": "doc",
+            "id": "transport-api/introduction"
+          },
+          {
+            "type": "doc",
+            "id": "transport-api/Assets.Scripts.Transport"
+          },
+          {
+            "type": "doc",
+            "id": "transport-api/Assets.Scripts.Transport.Utilities"
+          }
+        ]
+      }
+  ]
 }

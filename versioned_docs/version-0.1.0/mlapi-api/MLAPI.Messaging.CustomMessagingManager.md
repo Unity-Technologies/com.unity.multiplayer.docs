@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging.CustomMessagingManager  
 title: MLAPI.Messaging.CustomMessagingManager
-sidebar_label: CustomMessagingManager
 ---
 
 <div class="markdown level0 summary">

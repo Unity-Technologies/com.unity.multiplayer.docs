@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariablePermissionsDelegate  
 title: MLAPI.NetworkVariable.NetworkVariablePermissionsDelegate
-sidebar_label: NetworkVariablePermissionsDelegate
 ---
 
 <div class="markdown level0 summary">

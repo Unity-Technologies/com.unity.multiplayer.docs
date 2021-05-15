@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkTransport  
-title: MLAPI.Transports.NetworkTransport
-sidebar_label: NetworkTransport
+title: MLAPI.Transports.NetworkTransport  
 ---
 
 <div class="markdown level0 summary">

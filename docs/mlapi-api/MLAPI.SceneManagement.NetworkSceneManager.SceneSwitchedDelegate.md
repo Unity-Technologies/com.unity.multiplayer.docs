@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchedDelegate  
-title: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchedDelegate
-sidebar_label: SceneSwitchedDelegate
+title: MLAPI.SceneManagement.NetworkSceneManager.SceneSwitchedDelegate  
 ---
 
 <div class="markdown level0 summary">
