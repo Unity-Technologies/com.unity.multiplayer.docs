@@ -93,7 +93,6 @@ module.exports = {
             //MLAPI VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
-            className: 'version',
             // Add additional dropdown items at the beginning/end of the dropdown.
             //dropdownItemsBefore: [],
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
@@ -129,7 +128,6 @@ module.exports = {
           {
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
-            className: 'version',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
@@ -158,12 +156,16 @@ module.exports = {
                 docsPluginId: 'releases'
               },
               {
-                label: 'Doc Repo',
+                label: 'Docs Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Code Repo',
+                label: 'MLAPI Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+              },
+              {
+                label: 'MLAPI Community Contributions',
+                href: 'https://github.com/Unity-Technologies/mlapi-community-contributions',
               },
               {
                 label: 'Boss Room Repo',
@@ -323,10 +325,10 @@ module.exports = {
                 label: 'develop',
                 path: 'develop',
               },
-              //'0.1.0': {
-               // label: '0.1.0',
-              //  path: '',
-              //},
+              '0.1.0': {
+               label: 'v. 0.1.0',
+                path: '',
+              },
             },
             admonitions: {
               customTypes: {
@@ -481,11 +483,20 @@ module.exports = {
           includeCurrentVersion: true,
             lastVersion: '0.9.0',
             versions: {
-              current: {
-                label: 'develop',
-                path: 'develop',
+              //current: {
+              //  label: 'Next',
+              //  path: 'next',
+              //},
+              '0.9.0': {
+               label: 'v. 0.9.0',
+                path: '',
               },
+              '0.8.0': {
+                label: 'v. 0.8.0',
+                 path: '0.8.0',
+               },
             },
+          onlyIncludeVersions: ["0.8.0", "0.9.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
