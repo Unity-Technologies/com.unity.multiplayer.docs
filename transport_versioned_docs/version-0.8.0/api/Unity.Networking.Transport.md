@@ -265,7 +265,7 @@ Default NetworkParameter Constants.
 
 </div>
 
-### Unity.Networking.Transport.TransportFunctionPointer\`1
+### Unity.Networking.Transport.TransportFunctionPointer-1
 
 <div class="section">
 

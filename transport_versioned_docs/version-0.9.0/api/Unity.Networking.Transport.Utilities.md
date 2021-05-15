@@ -39,7 +39,7 @@ title: Unity.Networking.Transport.Utilities
 
 </div>
 
-### Unity.Networking.Transport.Utilities.NativeMultiQueue\`1
+### Unity.Networking.Transport.Utilities.NativeMultiQueue-1
 
 <div class="section">
 
