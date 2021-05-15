@@ -29,7 +29,7 @@ After download, unzip the archive file. You are now ready to add the project to 
 1. Navigate to the unzipped folder. select the `Basic/2dSpaceShooter` or `Basic/Invaders` folder to add the respective project.
 
 :::important Compatibility
-- The Bitesize Samples have been built for a specific Unity version. You can see the version after adding a sample to the Unity Hub or in the description of the [repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize). We recommend using the same Unity version to avoid potential issues.
+The Bitesize Samples have been built for a specific Unity version. You can see the version after adding a sample to the Unity Hub or in the description of the [repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize). We recommend using the same Unity version to avoid potential issues.
 :::
 
 ## Troubleshooting
