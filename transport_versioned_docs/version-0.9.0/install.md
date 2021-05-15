@@ -23,10 +23,10 @@ You need Unity Editor version 2020.1.2f1 or later.
    - Add package from git URL...
 
 1. Select **Add package from git URL...**
-1. Enter the Git URL to the release package: For the latest version use this link:
+1. Enter the Git URL to the release package. For the latest version use the following. It loads as Unity Transport.
 
   ```html
-  com.unity.transport@0.6.0-preview.7 
+  com.unity.transport
   ```
 
 :::note
