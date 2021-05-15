@@ -19,10 +19,11 @@ For a users view into Unity MLAPI, see [Learn](../learn/index.md) content includ
 All MLAPI code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information. Sample code may include links to GitHub code repositories.
 :::
 
-:::important MLAPI Previous Versions and Legacy Docs
+:::important MLAPI Previous Versions and Docs
 For those looking for the MLAPI releases and documentation v. 12.x and earlier, see the following:
 
 * [Previous MLAPI Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases)
-* [MLAPI pre-0.1.0 release documentation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/) 
+* [MLAPI v12.1.7 documentation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/)
+* [MLAPI blog posts](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/v12.1.7/docs/_posts)
 :::
 
