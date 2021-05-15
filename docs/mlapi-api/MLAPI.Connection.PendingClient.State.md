@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Connection.PendingClient.State  
-title: MLAPI.Connection.PendingClient.State
-sidebar_label: State
+title: MLAPI.Connection.PendingClient.State  
 ---
 
 <div class="markdown level0 summary">
@@ -28,6 +27,10 @@ Name
 
 Description
 
+PendingApproval
+
+Waiting for client connection request to be approved
+
 PendingConnection
 
-Client is in the process of doing the connection handshake
+Waiting for client to send it's initial connection request

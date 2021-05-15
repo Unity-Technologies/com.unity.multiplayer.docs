@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports  
-title: MLAPI.Transports
-sidebar_label: Transports
+title: MLAPI.Transports  
 ---
 
 ## Namespace MLAPI.Transports
