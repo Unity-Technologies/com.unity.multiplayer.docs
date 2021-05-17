@@ -341,6 +341,10 @@ module.exports = {
           "type": "doc",
           "id": "learn/lagandpacketloss"
         },
+        {
+          "type": "doc",
+          "id": "learn/clientside_interpolation"
+        },
       ]
     },
     {
