@@ -11,7 +11,8 @@ This section includes release notes, hotfixes, and updates for all Unity Multipl
 See the following release notes for Unity MLAPI.
 
 | Release | Status | Date | Supported Unity Versions |
-| -- | -- |
+| -- | -- | -- | -- |
+| [In Development](multiplayer/mlapi-develop.md) | Not Released | N/A | 2019.4 and later |
 | [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 | 2019.4 and later |
 
 :::unity About Experimental
@@ -28,7 +29,7 @@ For Unity experimental releases:
 See the following project releases for Boss Room.
 
 | Release | Status | Date | Supported Unity Versions |
-| -- | -- |
+| -- | -- | -- | -- |
 | [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | 2020.3 and later |
 
 :::important
@@ -38,6 +39,14 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 :::unity About Early Access
 This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Unity MLAPI [Discord](https://discord.gg/buMxnnPvTb).
 :::
+
+## Bitesize Samples
+
+See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all release information on these projects.
+
+## Unity Transport
+
+See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific MLAPI implementations are documented in Unity MLAPI release notes.
 
 ## Documentation
 

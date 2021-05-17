@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Prototyping.NetworkAnimator  
 title: MLAPI.Prototyping.NetworkAnimator
-sidebar_label: NetworkAnimator
 ---
 
 <div class="markdown level0 summary">

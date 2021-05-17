@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging  
 title: MLAPI.Messaging
-sidebar_label: Messaging
 ---
 
 ## Namespace MLAPI.Messaging
@@ -72,7 +71,7 @@ server.
 
 ## Structs
 
-### MLAPI.Messaging.\_\_RpcParams
+### MLAPI.Messaging.RpcParams
 
 <div class="section">
 

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableByte  
 title: MLAPI.NetworkVariable.NetworkVariableByte
-sidebar_label: NetworkVariableByte
 ---
 
 <div class="markdown level0 summary">

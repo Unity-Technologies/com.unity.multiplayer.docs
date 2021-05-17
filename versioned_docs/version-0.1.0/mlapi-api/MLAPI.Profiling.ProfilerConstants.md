@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.ProfilerConstants  
 title: MLAPI.Profiling.ProfilerConstants
-sidebar_label: ProfilerConstants
 ---
 
 <div class="markdown level0 summary">

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkBehaviour  
 title: MLAPI.NetworkBehaviour
-sidebar_label: NetworkBehaviour
 ---
 
 <div class="markdown level0 summary">

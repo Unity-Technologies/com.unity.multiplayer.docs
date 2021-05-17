@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Exceptions.NetworkConfigurationException  
-title: MLAPI.Exceptions.NetworkConfigurationException
-sidebar_label: NetworkConfigurationException
+title: MLAPI.Exceptions.NetworkConfigurationException  
 ---
 
 <div class="markdown level0 summary">

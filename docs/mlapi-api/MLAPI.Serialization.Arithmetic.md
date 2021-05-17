@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization.Arithmetic  
-title: MLAPI.Serialization.Arithmetic
-sidebar_label: Arithmetic
+title: MLAPI.Serialization.Arithmetic  
 ---
 
 <div class="markdown level0 summary">

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization  
-title: MLAPI.Serialization
-sidebar_label: Serialization
+title: MLAPI.Serialization  
 ---
 
 ## Namespace MLAPI.Serialization
@@ -32,7 +31,8 @@ Arithmetic helper class
 
 <div class="section">
 
-AutoNetworkSerializable implements INetworkSerializable and automatically serializes fields using reflection
+AutoBitWritable implements INetworkSerializable and automatically
+serializes fields using reflection
 
 </div>
 
