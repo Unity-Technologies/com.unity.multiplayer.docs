@@ -60,7 +60,7 @@ To get more control about the object lifecycle, MLAPI has built in object poolin
 
 ## Scene Objects
 
-Any objects in the scene with `NetworkObject` components will get automatically replicated by MLAPI. There is no need to manually spawn them.
+Any objects in the scene with active  `NetworkObject` components will get automatically replicated by MLAPI. There is no need to manually spawn them.
 
 There are **two** modes that define how scene objects are synchronized.
 
