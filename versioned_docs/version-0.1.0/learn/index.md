@@ -8,5 +8,5 @@ This section includes helpful references, resources, and content to get started 
 Most tutorials and sample code use the Small Scale Coop Sample Boss Room project.
 
 :::unity Content Licenses
-Content for this section may include Small Scale Coop Sample Boss Room project and MLAPI code. See [Licenses](/community/license) for more information. Sample code may include links to GitHub code repositories.
+Content for this section may include Small Scale Coop Sample Boss Room project and MLAPI code. See [Licenses](/reference/license) for more information. Sample code may include links to GitHub code repositories.
 :::

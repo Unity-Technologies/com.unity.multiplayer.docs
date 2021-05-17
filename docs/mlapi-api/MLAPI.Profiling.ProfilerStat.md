@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.ProfilerStat  
-title: MLAPI.Profiling.ProfilerStat
-sidebar_label: ProfilerStat
+title: MLAPI.Profiling.ProfilerStat  
 ---
 
 <div class="markdown level0 summary">
@@ -115,86 +114,6 @@ Object.ToString()
 | System.String | name |             |
 
 ## Fields
-
-### Data
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    protected LinkedList<Sample> Data
-
-#### Field Value
-
-| Type                                                | Description |
-|-----------------------------------------------------|-------------|
-| System.Collections.Generic.LinkedList&lt;Sample&gt; |             |
-
-### LastCount
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    protected float LastCount
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Single |             |
-
-### LastTime
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    protected float LastTime
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Single |             |
-
-### MaxSamples
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    protected int MaxSamples
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
 ### PrettyPrintName
 

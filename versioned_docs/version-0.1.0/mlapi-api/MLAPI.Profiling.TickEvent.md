@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.TickEvent  
 title: MLAPI.Profiling.TickEvent
-sidebar_label: TickEvent
 ---
 
 <div class="markdown level0 summary">
