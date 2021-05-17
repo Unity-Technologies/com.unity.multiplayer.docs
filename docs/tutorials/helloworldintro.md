@@ -86,7 +86,7 @@ This section adds in a player object and spawns it for each connected player.
 1. Drag this player prefab from above into the new empty slot
 
   :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect.
+  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as `Default Player Prefab` the game will crash on client connect.
   :::
 
   :::note
