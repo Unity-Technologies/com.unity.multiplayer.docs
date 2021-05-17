@@ -43,12 +43,12 @@ Snapshot Interpolation is not implemented in MLAPI at this time.
 This technique is implemented in the [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/). A brief implementation description is as follows (with further documentation available on the Boss Room GitHub page):
 :::
 
-Before we dive into code, let's define the GameObject composition model for player characers, and similarly AI characters, inside BossRoom:
+Before we dive into code, let's define the `GameObject` composition model for player characers, and similarly AI characters, inside BossRoom:
 - the first, a non-visual, `NetworkObject`. This `NetworkObject` contains both server and client `NetworkBehaviour` components, namely `ServerCharacterMovement.cs` and `ClientGenericMovement.cs.`
-(We'll refer to this `GameObject` as PC)
-- the second, a visual `GameObject`. This `GameObject` will display the character's model & play animations. This is the `GameObject` which performs client-side interpolation (We'll refer to this as Graphics).
+(We'll refer to this `GameObject` as "PC")
+- the second, a visual `GameObject`. This `GameObject` will display the character's model & play animations. This is the `GameObject` which performs client-side interpolation (We'll refer to this as "Graphics").
 - 
-We first take a look at `NetworkCharacterState.cs`, a `NetworkBehaviour` component attached to a PC:
+We first take a look at `NetworkCharacterState.cs`, a `NetworkBehaviour` component attached to a "PC":
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L28-L36
@@ -69,21 +69,21 @@ The first thing to point out is that this is done inside `FixedUpdate()`, with B
 This is the maximum possible frequency of updates of position and rotation. We highlight this because a server will not send a `NetworkVariable` update if the value is unchanged.
 
 We'll next take a look at client-side code, which interprets what to do with this `NetworkVariable` data.
-A PC's position and rotation are modified inside of `ClientGenericMovement.cs`'s *Update()* method:
+A PC's position and rotation are modified inside the *Update()* method of `ClientGenericMovement.cs`:
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientGenericMovement.cs#L35-L48
 ```
 
-This is a what we refered to as a "dumb terminal". Position and rotation data are applied as quickly as the client can render them.
-Let's take a look at what Graphics does to smoothen the transition of valid position & rotation data. Attached to the Graphics `GameObject` is the `ClientCharacterVisualizaton.cs`component, which modifies Graphics' transform inside of it's *Update()* method:
+This is what we refered to as a "dumb terminal". Position and rotation data are applied as quickly as the client can render them.
+Let's see how "Graphics" smoothes  the transition of valid position & rotation data. The `ClientCharacterVisualizaton.cs`component is attached to the "Graphics" `GameObject`. The  "Graphics"' transform is modified inside the *Update()* method of `ClientCharacterVisualizaton.cs`:
 
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L276-L299
 ```
 
-Lastly, we'll to take a look at what `VisualUtils.SmoothMove(...)`  actually does
+Lastly, we will examine what `VisualUtils.SmoothMove(...)`  actually does
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Utils/VisualUtils.cs#L22-L64
