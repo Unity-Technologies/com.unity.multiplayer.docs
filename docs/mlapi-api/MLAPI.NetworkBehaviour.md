@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkBehaviour  
-title: MLAPI.NetworkBehaviour
-sidebar_label: NetworkBehaviour
+title: MLAPI.NetworkBehaviour  
 ---
 
 <div class="markdown level0 summary">
@@ -49,30 +48,6 @@ System.Dynamic.ExpandoObject
 </div>
 
 <div class="level5">
-
-System.Dynamic.ExpandoObject
-
-</div>
-
-<div class="level6">
-
-System.Dynamic.ExpandoObject
-
-</div>
-
-<div class="level6">
-
-System.Dynamic.ExpandoObject
-
-</div>
-
-<div class="level6">
-
-System.Dynamic.ExpandoObject
-
-</div>
-
-<div class="level6">
 
 System.Dynamic.ExpandoObject
 
@@ -928,7 +903,7 @@ Gets if we are executing as server
 
 #### Declaration
 
-    protected static bool IsServer { get; }
+    protected bool IsServer { get; }
 
 #### Property Value
 

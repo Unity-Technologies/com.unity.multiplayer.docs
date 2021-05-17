@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.UNET.InvalidConfigException  
-title: MLAPI.Transports.UNET.InvalidConfigException
-sidebar_label: InvalidConfigException
+title: MLAPI.Transports.UNET.InvalidConfigException  
 ---
 
 <div class="markdown level0 summary">

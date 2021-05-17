@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkListEvent-1  
-title: MLAPI.NetworkVariable.Collections.NetworkListEvent-1
-sidebar_label: NetworkListEvent-1
+title: MLAPI.NetworkVariable.Collections.NetworkListEvent-1  
 ---
 
 <div class="markdown level0 summary">

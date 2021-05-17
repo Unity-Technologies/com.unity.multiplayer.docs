@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Configuration.HashSize  
-title: MLAPI.Configuration.HashSize
-sidebar_label: HashSize
+title: MLAPI.Configuration.HashSize  
 ---
 
 <div class="markdown level0 summary">
@@ -37,7 +36,3 @@ Eight byte hash
 VarIntFourBytes
 
 Four byte hash
-
-VarIntTwoBytes
-
-Two byte hash
