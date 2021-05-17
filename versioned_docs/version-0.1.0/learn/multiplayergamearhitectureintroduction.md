@@ -1,7 +1,6 @@
 ---
-id: multiplayergamearhitectureintroduction
-title: Introduction
-sidebar_label: Introduction
+id: multiplayer-game-arhitecture
+title: Architecture Introduction
 ---
 
 There are many different architectures for creating multiplayer games. Your game can run on

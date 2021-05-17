@@ -28,9 +28,10 @@ For Unity experimental releases:
 
 See the following project releases for Boss Room.
 
-| Release | Status | Date | Supported Unity Versions |
+| Release | Status | Date | Supported MLAPI | Supported Unity |
 | -- | -- | -- | -- |
-| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | 2020.3 and later |
+| [v0.2.0](samples/release-0-2-0.md) | Early Access | May 20, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | 2020.3 and later |
+| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | 2020.3 and later |
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI.
