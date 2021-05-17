@@ -39,9 +39,57 @@ Snapshot Interpolation is not implemented in MLAPI at this time.
 
 # Boss Room Example 
 
+:::unity
+This technique is implemented in the [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/). A brief implementation description is as follows (with further documentation available on the Boss Room GitHub page):
+:::
 
-This technique is implemented in the (BossRoom sample)[https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/]. A brief implementation description is as follows (with further documentation available on the BossRoom GitHub page):
+Before we dive into code, let's define the GameObject composition model for player characers, and similarly AI characters, inside BossRoom:
+- the first, a non-visual, `NetworkObject`. This `NetworkObject` contains both server and client `NetworkBehaviour` components, namely `ServerCharacterMovement.cs` and `ClientGenericMovement.cs.`
+(We'll refer to this `GameObject` as PC)
+- the second, a visual `GameObject`. This `GameObject` will display the character's model & play animations. This is the `GameObject` which performs client-side interpolation (We'll refer to this as Graphics).
+- 
+We first take a look at `NetworkCharacterState.cs`, a `NetworkBehaviour` component attached to a PC:
 
- - all players and Imps are comprised of two logically tied GameObjects:
-    - the first one is updating it's position to match the one sent from the server as soon as we recieve new state
-    - the second one smoothly follows the first GameObject
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L28-L36
+```
+
+
+`NetworkCharacterState`, a `NetworkBehaviour`, defines two `NetworkVariables`, `NetworkPosition` and `NetworkRotationY`.
+These two `NetworkVariables` are defined with default permissions, meaning that only the server is able to modify the values of these `NetworkVariables`.
+You'll also notice that they're also initialized with a particular `SendChannel`, namely `MLAPI.Transports.NetworkChannel.PositionUpdate`.
+
+We'll now look at the place in code where these `NetworkVariables` are modified on the server. This is done inside `ServerCharacterMovement.cs`:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Server/Game/Character/ServerCharacterMovement.cs#L131-L141
+```
+
+The first thing to point out is that this is done inside `FixedUpdate()`, with Boss Room's `FixedTimestep` (found under **ProjectSettings->Time**) set to 0.02s.
+This is the maximum possible frequency of updates of position and rotation. We highlight this because a server will not send a `NetworkVariable` update if the value is unchanged.
+
+We'll next take a look at client-side code, which interprets what to do with this `NetworkVariable` data.
+A PC's position and rotation are modified inside of `ClientGenericMovement.cs`'s *Update()* method:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientGenericMovement.cs#L35-L48
+```
+
+This is a what we refered to as a "dumb terminal". Position and rotation data are applied as quickly as the client can render them.
+Let's take a look at what Graphics does to smoothen the transition of valid position & rotation data. Attached to the Graphics `GameObject` is the `ClientCharacterVisualizaton.cs`component, which modifies Graphics' transform inside of it's *Update()* method:
+
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L276-L299
+```
+
+Lastly, we'll to take a look at what `VisualUtils.SmoothMove(...)`  actually does
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Utils/VisualUtils.cs#L22-L64
+```
+
+- For position syncing, the Graphics transform is moved in the direction of the PC transform by an amount that is proportional to the distance between the two transforms, until the positions are identical.
+- For rotation syncing, the Graphics transform is rotated towards the PC transform by a minimum amount every frame, until the rotations are identical.
+
+As mentioned, these calculations introduce additional latency. However, interpolation is what effectively masks jitter and makes the player movement "feel" smooth
