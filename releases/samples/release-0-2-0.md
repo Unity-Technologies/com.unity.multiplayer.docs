@@ -107,7 +107,7 @@ This release includes the following issue fixes:
 * Fixed a Null reference for `RoomNameBox` that potentially caused a "NullReferenceExceltion: Object reference not set to an instance of an object". <!-- GOMPS-458 -->
 * Fixed collision wall settings, fixing an issues where the boss knock-back ability sent players through walls. <!-- GOMPS-289 -->
 * Resolved an issue where any players leaving the lobby sent all players to the lobby. <!-- GOMPS-431 -->
-* Fixed the smoke animation for destroyed imps. <!-- GOMPS-500 -->
+* Fixed animations for enemies including the smoke animation for destroyed imps and the boss helmet when crying. <!-- GOMPS-500, 463 -->
 
 ## Known issues
 
