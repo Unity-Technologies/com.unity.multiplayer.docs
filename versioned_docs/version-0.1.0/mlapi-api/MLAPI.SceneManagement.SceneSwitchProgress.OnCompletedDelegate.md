@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.SceneManagement.SceneSwitchProgress.OnCompletedDelegate  
 title: MLAPI.SceneManagement.SceneSwitchProgress.OnCompletedDelegate
-sidebar_label: OnCompletedDelegate
 ---
 
 <div class="markdown level0 summary">

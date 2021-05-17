@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization  
 title: MLAPI.Serialization
-sidebar_label: Serialization
 ---
 
 ## Namespace MLAPI.Serialization

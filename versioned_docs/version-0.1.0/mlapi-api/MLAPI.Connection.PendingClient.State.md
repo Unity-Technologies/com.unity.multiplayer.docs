@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Connection.PendingClient.State  
 title: MLAPI.Connection.PendingClient.State
-sidebar_label: State
 ---
 
 <div class="markdown level0 summary">

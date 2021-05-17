@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.ProfilerTick  
 title: MLAPI.Profiling.ProfilerTick
-sidebar_label: ProfilerTick
 ---
 
 <div class="markdown level0 summary">

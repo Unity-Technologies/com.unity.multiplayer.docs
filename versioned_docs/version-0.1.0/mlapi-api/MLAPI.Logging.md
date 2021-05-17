@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Logging  
 title: MLAPI.Logging
-sidebar_label: Logging
 ---
 
 ## Namespace MLAPI.Logging

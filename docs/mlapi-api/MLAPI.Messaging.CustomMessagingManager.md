@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging.CustomMessagingManager  
-title: MLAPI.Messaging.CustomMessagingManager
-sidebar_label: CustomMessagingManager
+title: MLAPI.Messaging.CustomMessagingManager  
 ---
 
 <div class="markdown level0 summary">
@@ -88,7 +87,7 @@ Object.ToString()
 
 ##### Syntax
 
-    public static class CustomMessagingManager
+    public class CustomMessagingManager
 
 ## Methods 
 
@@ -106,7 +105,7 @@ Registers a named message handler delegate.
 
 #### Declaration
 
-    public static void RegisterNamedMessageHandler(string name, CustomMessagingManager.HandleNamedMessageDelegate callback)
+    public void RegisterNamedMessageHandler(string name, CustomMessagingManager.HandleNamedMessageDelegate callback)
 
 #### Parameters
 
@@ -129,7 +128,7 @@ Sends the named message
 
 #### Declaration
 
-    public static void SendNamedMessage(string name, List<ulong> clientIds, Stream stream, NetworkChannel networkChannel = NetworkChannel.Internal)
+    public void SendNamedMessage(string name, List<ulong> clientIds, Stream stream, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
@@ -154,7 +153,7 @@ Sends a named message
 
 #### Declaration
 
-    public static void SendNamedMessage(string name, ulong clientId, Stream stream, NetworkChannel networkChannel = NetworkChannel.Internal)
+    public void SendNamedMessage(string name, ulong clientId, Stream stream, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
@@ -179,7 +178,7 @@ Sends unnamed message to a list of clients
 
 #### Declaration
 
-    public static void SendUnnamedMessage(List<ulong> clientIds, NetworkBuffer buffer, NetworkChannel networkChannel = NetworkChannel.Internal)
+    public void SendUnnamedMessage(List<ulong> clientIds, NetworkBuffer buffer, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
@@ -203,7 +202,7 @@ Sends a unnamed message to a specific client
 
 #### Declaration
 
-    public static void SendUnnamedMessage(ulong clientId, NetworkBuffer buffer, NetworkChannel networkChannel = NetworkChannel.Internal)
+    public void SendUnnamedMessage(ulong clientId, NetworkBuffer buffer, NetworkChannel networkChannel = NetworkChannel.Internal)
 
 #### Parameters
 
@@ -227,7 +226,7 @@ Unregisters a named message handler.
 
 #### Declaration
 
-    public static void UnregisterNamedMessageHandler(string name)
+    public void UnregisterNamedMessageHandler(string name)
 
 #### Parameters
 
@@ -251,7 +250,7 @@ Event invoked when unnamed messages arrive
 
 #### Declaration
 
-    public static event CustomMessagingManager.UnnamedMessageDelegate OnUnnamedMessage
+    public event CustomMessagingManager.UnnamedMessageDelegate OnUnnamedMessage
 
 #### Event Type
 

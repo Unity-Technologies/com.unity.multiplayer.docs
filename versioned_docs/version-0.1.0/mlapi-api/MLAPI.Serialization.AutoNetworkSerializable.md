@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization.AutoNetworkSerializable  
 title: MLAPI.Serialization.AutoNetworkSerializable
-sidebar_label: AutoNetworkSerializable
 ---
 
 <div class="markdown level0 summary">

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Logging.LogLevel  
-title: MLAPI.Logging.LogLevel
-sidebar_label: LogLevel
+title: MLAPI.Logging.LogLevel  
 ---
 
 <div class="markdown level0 summary">

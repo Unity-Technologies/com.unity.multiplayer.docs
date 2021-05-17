@@ -1,48 +1,85 @@
 ---
 id: install
 title: Install MLAPI
+description: Install the on-going development version of Unity MLAPI from a cloned respository. 
 ---
 
-Multiple methods are available to install the MLAPI package.
+Multiple methods are available to install the MLAPI package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Unity MLAPI.
 
-To install MLAPI, use the Unity Package Manager passing a git URL to the MLAPI release:
+:::important In-Progress Development
+All features and code available in the *develop* branch is in-progress and not final. All cloned code may change daily or weekly, depending on submitted pull requests. All documentation and release notes for the *develop* version are not final.
+:::
 
-1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
+## Clone the repo
 
-1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-1. Click ![Add](/img/add.png) in the status bar.
+You need to clone the code repo locally to work with in-development code.
 
-  You have the following options:
+First, install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
-   - Add package from disk...
-   - Add package from tarball...
-   - Add package from git URL...
+Next, decide on how you want to clone: command line or application.
 
-1. Select **Add package from git URL...**
-1. Enter the Git URL to the MLAPI release package. For example, for version 0.1.0, use this link:
+### Git Commands
+To clone with Git commands:
 
-  ```html Copy this URL
-  https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
+1. Open a command line terminal.
+1. Change directory to a location on your local.
+1. Enter a command to clone. Example commands:
+  
+    * Git CLI: `git clone https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi`
+    * GitHub CLI: `gh repo clone Unity-Technologies/com.unity.multiplayer.mlapi`
+
+1. All files clone locally.
+
+### GitHub Desktop
+
+To clone with GitHub Desktop:
+
+1. Install [GitHub Desktop](https://desktop.github.com/).
+1. Through the GitHub repository, select **Code** > **Open with GitHub Desktop** option.
+1. Select a location to clone to and complete cloning.
+
+To clone directory through GitHub Desktop:
+
+1. Open the application. 
+1. Click **File** > **Clone** Repository.
+1. Select the URL tab, copy and paste the repository URL:
+
+  ```html
+  https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi
   ```
-:::info How to Copy
-We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+1. Click **Clone**.
+
+## Open the develop branch
+
+To run the develop branch of MLAPI:
+
+1. Checkout the develop branch of MLAPI using Git commands or application like GitHub Desktop.
+1. Open Unity Hub and click **Add**.
+1. Navigate to the cloned GitHub repository and select the testproject folder.
+1. When opened, click **File** > **Open Scene**.
+1. Navigate to and select *testproject/Assets/MainMenu.unity*. All scenes load.
+
+  ![Load Scene](/img/install/develop-scene.png)
+
+  You should see **Custom** installed packages available in *develop*, such as MLAPI Networking Library and Unity Transport for MLAPI.
+
+  ![Packages](/img/install/develop-packages.png)
+
+:::tip Updated Local Code
+We recommend updating your local clone often from the MLAPI repository. This branch is constantly updated with new and updated features, fixed issues, and more.
 :::
 
-1. Click **Add**.
-
-<iframe src="https://www.youtube.com/embed/a1rq0MqNd2Y?playlist=a1rq0MqNd2Y&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
-:::unity Congratulations
-You have successfully installed MLAPI.
+:::note Branching
+If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [MLAPI Contributing](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/master/CONTRIBUTING.md) guidelines.
 :::
+
 ## Next Steps
 
 See the following content to continue your journey using MLAPI:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
+* [Building Golden Path](../tutorials/goldenpath.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
