@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.Multiplex.MultiplexTransportAdapter  
-title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter
-sidebar_label: MultiplexTransportAdapter
+title: MLAPI.Transports.Multiplex.MultiplexTransportAdapter  
 ---
 
 <div class="markdown level0 summary">

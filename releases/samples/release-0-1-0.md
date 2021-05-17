@@ -1,6 +1,7 @@
 ---
 id: samples-0-1-0
 title: Boss Room Small Scale Co-op Sample 0.1.0 - 2021-04-07
+sidebar_label: Boss Room 0.1.x
 description: Release notes for Boss Room Small Scale Co-op Sample v0.1.0, the first release of the Boss Room sample project for Unity MLAPI.
 ---
 

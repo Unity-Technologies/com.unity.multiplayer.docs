@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging  
-title: MLAPI.Messaging
-sidebar_label: Messaging
+title: MLAPI.Messaging  
 ---
 
 ## Namespace MLAPI.Messaging
@@ -53,9 +52,7 @@ Represents the common base class for Rpc attributes.
 
 <div class="section">
 
-QueueHistoryFrame Used by the RpcQueueContainer to hold queued RPCs All
-queued Rpcs end up in a PooledNetworkBuffer within a QueueHistoryFrame
-instance.
+Used by the RpcQueueContainer to hold queued RPCs
 
 </div>
 
@@ -72,7 +69,7 @@ server.
 
 ## Structs
 
-### MLAPI.Messaging.\_\_RpcParams
+### MLAPI.Messaging.RpcParams
 
 <div class="section">
 
