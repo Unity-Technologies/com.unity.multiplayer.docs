@@ -329,7 +329,7 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "learn/clientsideinterpolationbuffering"
+          "id": "learn/clientside_interpolation"
         },
       ]
     },
