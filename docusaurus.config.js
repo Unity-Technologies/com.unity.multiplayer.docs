@@ -556,9 +556,20 @@ module.exports = {
       {
         id: 'GTM-5V25JL6', // GTM Container ID
       }],
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/docs/advanced-topics/messaging-system',
+              from: '/docs/advanced-topics/messaging-system/about-rpc',
+            },
+          ]
+        },
+      ],
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
         '@saucelabs/theme-github-codeblock',
         'react-iframe'
-    ],
+      ]
   };
