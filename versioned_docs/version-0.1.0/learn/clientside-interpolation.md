@@ -69,14 +69,14 @@ The first thing to point out is that this is done inside `FixedUpdate()`, with B
 This is the maximum possible frequency of updates of position and rotation. We highlight this because a server will not send a `NetworkVariable` update if the value is unchanged.
 
 We'll next take a look at client-side code, which interprets what to do with this `NetworkVariable` data.
-A PC's position and rotation are modified inside of `ClientGenericMovement.cs`'s *Update()* method:
+A PC's position and rotation are modified inside the *Update()* method of `ClientGenericMovement.cs`:
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientGenericMovement.cs#L35-L48
 ```
 
 This is a what we refered to as a "dumb terminal". Position and rotation data are applied as quickly as the client can render them.
-Let's take a look at what Graphics does to smoothen the transition of valid position & rotation data. Attached to the Graphics `GameObject` is the `ClientCharacterVisualizaton.cs`component, which modifies Graphics' transform inside of it's *Update()* method:
+Let's take a look at what Graphics does to smoothen the transition of valid position & rotation data. Attached to the Graphics `GameObject` is the `ClientCharacterVisualizaton.cs`component. The  Graphics' transform is modified inside the *Update()* method of `ClientCharacterVisualizaton.cs`:
 
 
 ```csharp reference
