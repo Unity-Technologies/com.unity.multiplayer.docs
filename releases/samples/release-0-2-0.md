@@ -59,7 +59,7 @@ This release includes the following new features and additions
 
 This release includes the following updates:
 
-* Updated the Photon Setup Guide, indicating you need only only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 -->
+* Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 -->
 * Removed Singleton usage, allowing multiple instances of MLAPI networking stack to start up in the same process. 
 * Removed a duplicated `GameObject` from the MainMenu scene. <!-- GOMPS-474 -->
 * Reviewed and revised code to better following quality standards. <!-- GOMPS-203, GOMPS-218, GOMPS-223 -->
@@ -80,8 +80,15 @@ This release includes the following updates:
   * Additional errors including a full server and player ID (GUID) already playing
   * Player connection if they experience a game-level connection failure
 
-* Updated code to allow hosts to specify a port to listen to, removing the hard-coded port. <!-- GOMPS-270 -->
-* Updated the Boss Room UI to only show skill and ability buttons for character abilities. Empty buttons no longer load for characters. <!-- GOMPS-356 -->
+* Updated code to allow hosts to specify a port to listen to,removing the hard-coded port. <!-- GOMPS-270 -->
+* Refactored Action Bar code including the following: <!-- commits https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/commit/579c710fb64c2fc51e6b52c0483f0fe81b9d65f8-->
+
+  * Removed the `ButtonID` from `UIHudButton`
+  * Removed hard-coded values from `HeroActionBar`
+  * Removed switch statements
+  * Completed minor code cleanup
+  * Verify and only show skill and ability buttons for character abilities. Empty buttons no longer load for characters. <!-- GOMPS-356 -->
+
 * Added a call to warm up shaders when the project starts to ensure animations issues do not occur. <!-- GOMPS-367 -->
 * Removed collision from objects that have a Broken (dead) state. <!-- GOMPS-461 -->
 * Implemented a better cooldown solution and calculations for tracking and managing character, imp, and boss actions. <!-- GOMPS-468 PR 309-->
@@ -104,7 +111,6 @@ This release includes the following issue fixes:
 * On Wizards, fixed issue with imp spawners not respawning new imps after exploring the room. <!-- GOMPS-353-->
 * Fixed an issue where the door state does not reflect the existing state when players connect late to a game, for example if other players open the door and a player joins late the door displays as closed. <!-- GOMPS-409 -->
 * Removed a previous work-around for character selections when host replays a completed game. The issue was resolved, allowing players to see character selections during replay. <!-- GOMPS-444 -->
-* Fixed a Null reference for `RoomNameBox` that potentially caused a "NullReferenceExceltion: Object reference not set to an instance of an object". <!-- GOMPS-458 -->
 * Fixed collision wall settings, fixing an issues where the boss knock-back ability sent players through walls. <!-- GOMPS-289 -->
 * Resolved an issue where any players leaving the lobby sent all players to the lobby. <!-- GOMPS-431 -->
 * Fixed animations for enemies including the smoke animation for destroyed imps and the boss helmet when crying. <!-- GOMPS-500, 463 -->
