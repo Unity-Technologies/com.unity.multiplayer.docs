@@ -24,10 +24,12 @@ This release includes the following new features and additions
 * Introduced static scene `NetworkObject`s to Boss Room including the following updates:<!-- GOMPS-381 PR 292-->
 
     * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.
+    * Added `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component. This feature can be expanded for other events, such as characters deaths.
     * Added a custom editor for GameEvents to fire in the editor (greatly enhances testing).
     * The `LifeState` NetworkVariable was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
     * Cleaned up and removed old spawn prefab collections and spawner scripts (NetSpawnPoint).
 
+* 
 * Updated the user interface including the following:
 
   * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message "Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
@@ -49,9 +51,8 @@ This release includes the following new features and additions
 * Updated and added various hero abilities:
 
   * Added a cooldown to Archer's PowerShot. <!-- GOMPS-483 -->
-  * Used generic actions to implement Rogue's Dagger skill. <!--  GOMPS-16 -->
-  * Used generic actions to implement Rogue's Sneak skill using local stealth, applying a graphical effect to the stealthy character while still sending all network events normally. <!--  GOMPS-64 -->
-  * Used generic actions to implement Rogue's Dash skill. <!--  GOMPS-65 -->
+  * Added the Rogue's Dagger and Dash skills. <!--  GOMPS-16 GOMPS-65 -->
+  * Added the Rogue's Sneak skill using local stealth, applying a graphical effect to the stealthy character while still sending all network events normally. <!--  GOMPS-64 -->
   * Properly display Heal abilities when targeting a fallen ally character. <!-- GOMPS-454 -->
   * Character attack actions properly support Hold to charge options. <!-- GOMPS-455 -->
 
@@ -65,6 +66,16 @@ This release includes the following new features and additions
 ## Changes
 
 This release includes the following updates:
+
+* Refactored and updated Boss Room code and architecture for increased performance and better resource management: <!-- GOMPS-539-->
+
+  * Disabled GPU Skinning to optimize GPU usage and FPS.
+  * Lowered quality of ambient occlusion from high to medium.
+  * Switched SMAA High to FXAA (fast mode) reducing GPU cost.
+  * Modified GPU Instancing on imps, heroes, and the boss to significantly reduce the number of draw calls.
+  * Turned off Cast Shadows on Imp and Imp Boss.
+  * Disabled mesh colliders of lava, which is more decorative than interactive.
+  * Removed the S_SimpleDissolve shader which consumed most import time.
 
 * Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 --> 
 * Removed a duplicated `GameObject` from the MainMenu scene. <!-- GOMPS-474 -->
@@ -89,11 +100,11 @@ This release includes the following updates:
 * Updated code to allow hosts to specify a port to listen to,removing the hard-coded port. <!-- GOMPS-270 -->
 * Refactored Action Bar code including the following: <!-- commits https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/commit/579c710fb64c2fc51e6b52c0483f0fe81b9d65f8-->
 
-  * Removed the `ButtonID` from `UIHudButton`
-  * Removed hard-coded values from `HeroActionBar`
-  * Removed switch statements
-  * Completed minor code cleanup
-  * Verify and only show skill and ability buttons for character abilities. Empty buttons no longer load for characters. <!-- GOMPS-356 -->
+  * Removed the `ButtonID` from `UIHudButton`.
+  * Removed hard-coded values from `HeroActionBar`.
+  * Removed switch statements.
+  * Completed minor code cleanup.
+  * Added verification to only show skill and ability buttons for available character abilities. Empty buttons no longer load for characters. <!-- GOMPS-356 -->
 
 * Added a call to warm up shaders when the project starts to ensure animations issues do not occur. <!-- GOMPS-367 -->
 * Removed collision from objects that have a Broken (dead) state. <!-- GOMPS-461 -->
@@ -113,8 +124,8 @@ This release includes the following issue fixes:
 * Fixed issue to correctly allow one player to receive a character when two players in the Character Select click **Ready** for the same hero at the same time. Character Select is no longer blocked.  <!-- GOMPS-390 -->
 * Fixed an issue with boss collisions with a Pillar correctly applying a stun effect and shattering the pillar when using the Trample attack. <!-- PR #206 gomps-330 -->
 * Fixed the lobby welcome messages to correctly list the player names, including a previous issues for P1 and P2. <!-- GOMPS-428 --> 
-* On Windows, investigated and fixed issues with visible effects for character actions including mage freeze attack<!-- GOMPS-347-->, rogue dash<!-- GOMPS-348-->
-* On Wizards, fixed issue with imp spawners not respawning new imps after exploring the room. <!-- GOMPS-353-->
+* On Windows, investigated and fixed issues with visible effects for character actions including mage freeze attack.<!-- GOMPS-347-->
+* On Windows, fixed issue with imp spawners not respawning new imps after exploring the room. <!-- GOMPS-353-->
 * Fixed an issue where the door state does not reflect the existing state when players connect late to a game, for example if other players open the door and a player joins late the door displays as closed. <!-- GOMPS-409 -->
 * Removed a previous work-around for character selections when host replays a completed game. The issue was resolved, allowing players to see character selections during replay. <!-- GOMPS-444 -->
 * Fixed collision wall settings, fixing an issues where the boss knock-back ability sent players through walls. <!-- GOMPS-289 -->
