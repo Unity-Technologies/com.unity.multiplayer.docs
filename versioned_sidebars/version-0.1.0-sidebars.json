@@ -317,6 +317,10 @@
         {
           "type": "doc",
           "id": "version-0.1.0/learn/lagandpacketloss"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/learn/clientside_interpolation"
         }
       ]
     },
