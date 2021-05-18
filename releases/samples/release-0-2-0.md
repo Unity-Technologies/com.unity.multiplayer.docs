@@ -9,7 +9,7 @@ The Boss Room: Small Scale Co-op Sample v0.2.0 release provides new sample code,
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Boss Room: Small Scale Co-op Sample | 0.2.0 | Early Access | May 18, 2021 | 2020.3 and later |
+| Boss Room: Small Scale Co-op Sample | 0.2.0 | Early Access | May 18, 2021 | v2020.3.8f1 LTS |
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
@@ -21,9 +21,16 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 
 This release includes the following new features and additions
 
+* Introduced static scene `NetworkObject`s to Boss Room including the following updates:<!-- GOMPS-381 PR 292-->
+
+    * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.
+    * Added a custom editor for GameEvents to fire in the editor (greatly enhances testing).
+    * The `LifeState` NetworkVariable was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
+    * Cleaned up and removed old spawn prefab collections and spawner scripts (NetSpawnPoint).
+
 * Updated the user interface including the following:
 
-  * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message " Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
+  * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message "Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
   * Added an option to leave the lobby after joining it. You no longer have to restart the game to leave the lobby. <!-- GOMPS-375 -->
   * Added option to cancel the game after clicking **Ready**. <!-- GOMPS-293 -->
   * Added a gear icon for accessing and modifying app settings. <!-- GOMPS-421 -->
@@ -48,8 +55,8 @@ This release includes the following new features and additions
   * Properly display Heal abilities when targeting a fallen ally character. <!-- GOMPS-454 -->
   * Character attack actions properly support Hold to charge options. <!-- GOMPS-455 -->
 
-* To show how UI elements and game objects can be networked, added networked functionality using `INetworkSerializable` for UI elements on the Character Selection screen including networked mouse cursors. <!-- GOMPS-174 GOMPS-201 -->
-* Added a Photon filter for host room names not to allow profanity, racial slurs, and additionsl socially acceptable words. <!-- GOMPS-433 -->
+* To show how UI elements and game objects can be networked, added networked functionality using `INetworkSerializable` in the `CharSelect` screen to network player's selected character on the Character Selection screen. <!-- GOMPS-174 -->
+* Added a Photon filter to remove any invisible characters introduced by Zoom when copy-pasting room names. <!-- GOMPS-433 -->
 * Boss Room now uses the [UnityToonShader](https://github.com/IronWarrior/UnityToonShader) for rendering the 3D surfaces to emulate 2D, flat surfaces. <!-- GOMPS-442 -->
 * Added disconnection error message to load when a player or host disconnects due to limited or no network connectivity. Client logic was also updated to detect Host disconnection scenarios, such as losting connectivity. <!-- GOMPS-448 GOMPS-470 -->
 * Balanced hero and enemy stats, spawners, trigger areas, and enemy detetction areas. <!-- GOMPS-249, 251 -->
@@ -59,14 +66,13 @@ This release includes the following new features and additions
 
 This release includes the following updates:
 
-* Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 -->
-* Removed Singleton usage, allowing multiple instances of MLAPI networking stack to start up in the same process. 
+* Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 --> 
 * Removed a duplicated `GameObject` from the MainMenu scene. <!-- GOMPS-474 -->
 * Reviewed and revised code to better following quality standards. <!-- GOMPS-203, GOMPS-218, GOMPS-223 -->
 * Updated the mage character base attack to better support the new enqueuing ability and handle game behaviors. Updates include:<!-- https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/pull/60 GOMPS-228 GOMPS-379 GOMPS-417 -->
 
-  * Actions being non-blocking allowing other actions while a mage-bolt is in flight
-  * Sending actions in `ActionSequence` groups to better handle actions when players spam click enemies
+  * Actions being non-blocking now allow other actions while a mage-bolt is in flight
+  * Actions send in `ActionSequence` groups to better handle actions when players spam click enemies
   * Timing issues with animations, actions, and character location
   * Bolt animation for legitimate hits
   * Updated attacks not to knock rogues out of stealth <!-- GOMPS-423 -->
@@ -120,6 +126,7 @@ This release includes the following issue fixes:
 The following issues may occur for access and games:
 
 * An MLAPI soft sync error on cleanup between scene transitions may break the game, for example imps do not spawn and pots are intangible.  <!-- GOMPS-535, MTT-772-->
+* The game can be initiated while a second player is connecting to the host in `CharSelect`. Players may join without selected characters spawning and in an unresponsive state.<!-- GOMPS-534 -->
 * Sometimes after completing a match and the host starts a new match from the Victory or Loss screen, connected players may have no visible interactions to join or select characters. A work-around is implemented to not block entry into the game. <!-- GOMPS-464 GOMPS-506 still an issue -->
 
 ## Learn more
