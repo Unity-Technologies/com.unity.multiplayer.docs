@@ -1,7 +1,7 @@
 ---
 id: clientside_interpolation
 title:  Clientside Interpolation
-description: Tutorial that covers the basics of lag mitigation and a way to produce smooth gameplay.
+description: Guide covering the basics of lag mitigation and a way to produce smooth gameplay.
 ---
 
 As we discussed in [Lag and Packet Loss](lagandpacketloss.md) - latency is our enemy, with [Jitter](lagandpacketloss#jitter) being the chaotic element that adds complexity to our task of producing "smooth" gameplay experience.
