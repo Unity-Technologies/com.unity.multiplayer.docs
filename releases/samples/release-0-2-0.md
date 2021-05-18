@@ -24,7 +24,7 @@ This release includes the following new features and additions
 * Introduced static scene `NetworkObject`s to Boss Room including the following updates:<!-- GOMPS-381 PR 292-->
 
     * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.
-    * Added `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component. This feature can be expanded for other events, such as characters deaths.
+    * Added `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
     * Added a custom editor for GameEvents to fire in the editor (greatly enhances testing).
     * The `LifeState` NetworkVariable was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
     * Cleaned up and removed old spawn prefab collections and spawner scripts (NetSpawnPoint).
@@ -67,7 +67,7 @@ This release includes the following new features and additions
 
 This release includes the following updates:
 
-* Refactored and updated Boss Room code and architecture for increased performance and better resource management: <!-- GOMPS-539-->
+* Updated Boss Room per asset and project settings for increased performance and better resource management: <!-- GOMPS-539-->
 
   * Disabled GPU Skinning to optimize GPU usage and FPS.
   * Lowered quality of ambient occlusion from high to medium.
@@ -75,7 +75,7 @@ This release includes the following updates:
   * Modified GPU Instancing on imps, heroes, and the boss to significantly reduce the number of draw calls.
   * Turned off Cast Shadows on Imp and Imp Boss.
   * Disabled mesh colliders of lava, which is more decorative than interactive.
-  * Removed the S_SimpleDissolve shader which consumed most import time.
+  * Refactored the S_SimpleDissolve shader which consumed most import time.
 
 * Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 --> 
 * Removed a duplicated `GameObject` from the MainMenu scene. <!-- GOMPS-474 -->
