@@ -6,7 +6,7 @@ description: Tutorial that covers the basics of lag mitigation and a way to prod
 
 As we discussed in [Lag and Packet Loss](lagandpacketloss.md) - latency is our enemy, with [Jitter](lagandpacketloss#jitter) being the chaotic element that adds complexity to our task of producing "smooth" gameplay experience.
 
-If we just accept the fact that latency exists, but chose not to do anything about it - we would implement what is known as "dumb terminal". Dumb Terminals don't need to understand anything about the simulation they are visualizing for the client - all they do is:
+If we just accept the fact that latency exists, but chose not to do anything about it - we would implement what is known as "dumb terminal". Dumb Terminals do not need to understand anything about the simulation they are visualizing for the client - all they do is:
 
  - send inputs from Clients to the Server
  - receive the resulting state from the Server and render it appropritely
