@@ -120,7 +120,7 @@ Now we run a test to check what we have built so far.
 1. Without stopping the editor's play mode, navigate to the `NetworkManager` component in the Hierarchy tab (it will be underneath `DontDestroyOnLoad`).  
 1. Inside the `NetworkManager` Inspector tab. scroll down and find the `Start Host` button.  
 1. If you click it, you will see the player capsule spawn. 
-1. Stop the player.
+1. Stop play mode.
 
 <iframe src="https://www.youtube.com/embed/iLb00icvRMs?playlist=iLb00icvRMs&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
@@ -214,7 +214,7 @@ public class NetworkCommandLine : MonoBehaviour
 
 </details>
 
-10. Select  **File > Build Settings > Player Settings...**
+10. Back in the Editor, select **File > Build Settings > Player Settings...**.
 1. In the **Resolution and Presentation** tab change `Fullscreen Window` mode into `Windowed` mode.    
 1. Save your scene.
 
@@ -298,12 +298,10 @@ For Mac you should do the following:
    ~/dev/mlapi-golden-path/GoldenPath/Build/GoldenPath.app/Contents/MacOS/GoldenPath -mlapi server -logfile - & ; ~/dev/mlapi-golden-path/GoldenPath/Build/GoldenPath.app/Contents/MacOS/GoldenPath -mlapi client -logfile -
    ```
 
-Both should show a plane and a capsule (the capsule being the single player that was spawned). 
-
 <iframe src="https://www.youtube.com/embed/84wxdetXUQw?playlist=84wxdetXUQw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-
+Both windows should show a plane and a capsule (the capsule being the single player that was spawned). 
 
 ## Introducing a Server-controlled Network Variable 
 
