@@ -1,7 +1,7 @@
 ---
 id: install
 title: Install Transport
-description: Install Unity Transport, com.unity.transport package, using the Package Manager. These instructions include the package URL.
+description: Install Unity Transport, com.unity.transport package, using the Package Manager.
 ---
 
 Follow these instructions to install Com.Unity.Transport.

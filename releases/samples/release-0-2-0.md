@@ -1,6 +1,6 @@
 ---
 id: samples-0-2-0
-title: Boss Room Small Scale Co-op Sample 0.2.0 - 2021-05-18
+title: Boss Room Small Scale Co-op Sample 0.2.0 - 2021-05-19
 sidebar_label: Boss Room 0.2.x
 description: Release notes for Boss Room Small Scale Co-op Sample v0.2.0, the first release of the Boss Room sample project for Unity MLAPI.
 ---
@@ -23,13 +23,12 @@ This release includes the following new features and additions
 
 * Introduced static scene `NetworkObject`s to Boss Room including the following updates:<!-- GOMPS-381 PR 292-->
 
+    * Implemented a `ScriptableObject` based event system to encapsulate events inside assets. These objects include a `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
     * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.
-    * Added `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
     * Added a custom editor for GameEvents to fire in the editor (greatly enhances testing).
-    * The `LifeState` NetworkVariable was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
-    * Cleaned up and removed old spawn prefab collections and spawner scripts (NetSpawnPoint).
+    * The `LifeState` `NetworkVariable` was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
+    * Cleaned up and removed old spawn prefab collections and spawner scripts (`NetSpawnPoint`).
 
-* 
 * Updated the user interface including the following:
 
   * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message "Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
@@ -50,14 +49,13 @@ This release includes the following new features and additions
 
 * Updated and added various hero abilities:
 
-  * Added a cooldown to Archer's PowerShot. <!-- GOMPS-483 -->
-  * Added the Rogue's Dagger and Dash skills. <!--  GOMPS-16 GOMPS-65 -->
-  * Added the Rogue's Sneak skill using local stealth, applying a graphical effect to the stealthy character while still sending all network events normally. <!--  GOMPS-64 -->
+  * Added new Hero abilities including Archer’s PowerShot and Rogue's Dagger and Dash skills. <!-- GOMPS-483 GOMPS-16 GOMPS-65 -->
+  * Updated the Rogue's Sneak skill using local stealth, applying a graphical effect to the stealthy character while still sending all network events normally. <!--  GOMPS-64 -->
   * Properly display Heal abilities when targeting a fallen ally character. <!-- GOMPS-454 -->
   * Character attack actions properly support Hold to charge options. <!-- GOMPS-455 -->
 
 * To show how UI elements and game objects can be networked, added networked functionality using `INetworkSerializable` in the `CharSelect` screen to network player's selected character on the Character Selection screen. <!-- GOMPS-174 -->
-* Added a Photon filter to remove any invisible characters introduced by Zoom when copy-pasting room names. <!-- GOMPS-433 -->
+* Added a Photon filter to remove any invisible characters introduced by Zoom when copy-pasting room names, IP addresses, or ports. <!-- GOMPS-433 -->
 * Boss Room now uses the [UnityToonShader](https://github.com/IronWarrior/UnityToonShader) for rendering the 3D surfaces to emulate 2D, flat surfaces. <!-- GOMPS-442 -->
 * Added disconnection error message to load when a player or host disconnects due to limited or no network connectivity. Client logic was also updated to detect Host disconnection scenarios, such as losting connectivity. <!-- GOMPS-448 GOMPS-470 -->
 * Balanced hero and enemy stats, spawners, trigger areas, and enemy detetction areas. <!-- GOMPS-249, 251 -->
@@ -80,7 +78,7 @@ This release includes the following updates:
 * Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 --> 
 * Removed a duplicated `GameObject` from the MainMenu scene. <!-- GOMPS-474 -->
 * Reviewed and revised code to better following quality standards. <!-- GOMPS-203, GOMPS-218, GOMPS-223 -->
-* Updated the mage character base attack to better support the new enqueuing ability and handle game behaviors. Updates include:<!-- https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/pull/60 GOMPS-228 GOMPS-379 GOMPS-417 -->
+* Updated the Mage character base attack to better support the new enqueuing ability and handle game behaviors. Updates include:<!-- https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/pull/60 GOMPS-228 GOMPS-379 GOMPS-417 -->
 
   * Actions being non-blocking now allow other actions while a mage-bolt is in flight
   * Actions send in `ActionSequence` groups to better handle actions when players spam click enemies
@@ -109,7 +107,7 @@ This release includes the following updates:
 * Added a call to warm up shaders when the project starts to ensure animations issues do not occur. <!-- GOMPS-367 -->
 * Removed collision from objects that have a Broken (dead) state. <!-- GOMPS-461 -->
 * Implemented a better cooldown solution and calculations for tracking and managing character, imp, and boss actions. <!-- GOMPS-468 PR 309-->
-* Fixed the ignored health amount (HP parameter) for revived characters. The correct value correctly sets the revived character to a lower amount than maximum. <!-- GOMPS-498 GOMPS-485 PR 267-->
+* Updated event registration and unregistration code to be symmetrical across the project.<!-- GOMPS-471 -->
 
 ## Fixes
 
@@ -130,7 +128,9 @@ This release includes the following issue fixes:
 * Removed a previous work-around for character selections when host replays a completed game. The issue was resolved, allowing players to see character selections during replay. <!-- GOMPS-444 -->
 * Fixed collision wall settings, fixing an issues where the boss knock-back ability sent players through walls. <!-- GOMPS-289 -->
 * Resolved an issue where any players leaving the lobby sent all players to the lobby. <!-- GOMPS-431 -->
+* Fixed the ignored health amount (HP parameter) for revived characters. The correct value correctly sets the revived character to a lower amount than maximum. <!-- GOMPS-498 GOMPS-485 PR 267-->
 * Fixed animations for enemies including the smoke animation for destroyed imps and the boss helmet when crying. <!-- GOMPS-500, 463 -->
+* Fixed loading of the game skybox before the menu loaded.<!-- GOMPS-459 -->
 
 ## Known issues
 
@@ -139,6 +139,7 @@ The following issues may occur for access and games:
 * An MLAPI soft sync error on cleanup between scene transitions may break the game, for example imps do not spawn and pots are intangible.  <!-- GOMPS-535, MTT-772-->
 * The game can be initiated while a second player is connecting to the host in `CharSelect`. Players may join without selected characters spawning and in an unresponsive state.<!-- GOMPS-534 -->
 * Sometimes after completing a match and the host starts a new match from the Victory or Loss screen, connected players may have no visible interactions to join or select characters. A work-around is implemented to not block entry into the game. <!-- GOMPS-464 GOMPS-506 still an issue -->
+* Sometimes the client may be disconnected from Photon which causes a timeout and `PhotonRealtimeTransport` to be in a bad state after the shutdown. An exception is developed that fires every frame. <!-- GOMPS-525 GOMPS-532 MLAPI GH 70 -->
 
 ## Learn more
 
