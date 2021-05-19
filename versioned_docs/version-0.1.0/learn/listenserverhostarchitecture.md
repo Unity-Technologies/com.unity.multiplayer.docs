@@ -1,6 +1,8 @@
 ---
-id: listenserverhostarchitecture
+id: listen-server-host-architecture
 title: Create a game with a listen server / host architecture
+sidebar_label: Listen server and host architecture
+description: Learn more about creating a game with a listen server and host architecture.
 ---
 
 ## What is a listen server
