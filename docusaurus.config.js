@@ -205,6 +205,14 @@ module.exports = {
                 label: 'Unity Multiplayer Forum',
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
               },
+              {
+                label: 'MLAPI Forum',
+                href: 'https://forum.unity.com/forums/mlapi.661/',
+              },
+              {
+                label: 'Unity Transport Forum',
+                href: 'https://forum.unity.com/forums/unity-transport.664/',
+              },
             ]
             },
         ],
