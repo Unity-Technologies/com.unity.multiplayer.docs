@@ -306,17 +306,21 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/multiplayergamearhitectureintroduction"
+              "id": "version-0.1.0/learn/multiplayer-game-arhitecture"
             },
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/listenserverhostarchitecture"
+              "id": "version-0.1.0/learn/listen-server-host-architecture"
             }
           ]
         },
         {
           "type": "doc",
           "id": "version-0.1.0/learn/lagandpacketloss"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/learn/clientside_interpolation"
         }
       ]
     },

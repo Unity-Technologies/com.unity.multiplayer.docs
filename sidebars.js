@@ -315,17 +315,21 @@ module.exports = {
           "items": [
             {
               "type": "doc",
-              "id": "learn/multiplayergamearhitectureintroduction"
+              "id": "learn/multiplayer-game-arhitecture"
             },
             {
               "type": "doc",
-              "id": "learn/listenserverhostarchitecture"
+              "id": "learn/listen-server-host-architecture"
             },
           ]
         },
         {
           "type": "doc",
           "id": "learn/lagandpacketloss"
+        },
+        {
+          "type": "doc",
+          "id": "learn/clientside_interpolation"
         },
       ]
     },
