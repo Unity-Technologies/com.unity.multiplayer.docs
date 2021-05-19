@@ -9,7 +9,7 @@ The Boss Room: Small Scale Co-op Sample v0.1.0 release provides new sample code,
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Boss Room: Small Scale Co-op Sample | 0.1.0 | Early Access | April 7, 2021 | 2020.3 and later |
+| Boss Room: Small Scale Co-op Sample | 0.1.0 | Early Access | April 7, 2021 | 2020.3.0f1 |
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
@@ -65,7 +65,7 @@ v0.1.1 is a hotfix for an Early Access release for Boss Room: Small Scale Co-op 
 The following issues may occur for access and games:
 
 * Sometimes when the host leaves the Boss Room, not all clients will return to the Main Menu, but will remain stuck in the Boss Room scene. <!-- GOMPS-439-->
-* Sometimes after completing a match and the host starts a new match from the Victory or Loss screen, connected players may have no visible interactions to join or select characters. <!-- GOMPS-464 -->
+* Sometimes after completing a match and the host starts a new match from the Victory or Loss screen, connected players may have no visible interactions to join or select characters. <!-- GOMPS-464 GOMPS-506 -->
 * A player may encounter a rare exception when the Tank character uses her Shield Aura ability. This issue may be due to intercepting the Boss charge attack. <!-- GOMPS-435 -->
 * If two players in the Character Select **Ready** for the same hero at the same time, the UI will update to *Readied* on both clients, but only one will have actually selected the hero on the Host. This issue blocks Character Select from proceeding.  <!-- GOMPS-390 -->
 * Any player that plays the game and then returns to the Main Menu may be unable to Start or Join properly again, requiring you to restart the client. <!-- GOMPS-355 -->
@@ -82,6 +82,6 @@ The following issues may occur for access and games:
 
 ## Learn more
 
-See [Getting Started with Boss Room](../../learn/getting-started-boss-room.md) to install and get started with Boss Room.
+See [Getting Started with Boss Room](/docs/learn/bossroom) to install and get started with Boss Room.
 
 To provide feedback and content on documentation, see the links at the bottom of each page.
