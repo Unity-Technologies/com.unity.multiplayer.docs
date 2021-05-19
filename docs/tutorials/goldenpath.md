@@ -301,6 +301,7 @@ For Mac you should do the following:
 
 <iframe src="https://www.youtube.com/embed/84wxdetXUQw?playlist=84wxdetXUQw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 Both windows should show a plane and a capsule (the capsule being the single player that was spawned). 
 
 
