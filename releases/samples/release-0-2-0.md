@@ -9,13 +9,13 @@ The Boss Room: Small Scale Co-op Sample v0.2.0 release provides new sample code,
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Boss Room: Small Scale Co-op Sample | 0.2.0 | Early Access | May 18, 2021 | v2020.3.8f1 LTS |
+| Boss Room: Small Scale Co-op Sample | 0.2.0 | Early Access | May 19, 2021 | v2020.3.8f1 LTS |
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
 :::
 
-## [0.2.0] - 2021-05-18
+## [0.2.0] - 2021-05-19
 
 ## New features
 
