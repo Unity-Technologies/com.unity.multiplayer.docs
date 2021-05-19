@@ -36,6 +36,14 @@ The client will normally assume that a moving object will continue in the same d
 
 For MLAPI, extrapolation is used in [`NetworkTransform`](../../mlapi-api/MLAPI.Prototyping.NetworkTransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
 
+## Interpolation Period
+
+A period of time it takes to smoothly transition from old state to the new state.
+
+## Packet Sending Period 
+
+The time the server waits between sending packets to clients.
+
 ## Deterministic lockstep
 
 A method of networking a system from one computer to another by sending only the inputs that control that system, rather than the state of that system
