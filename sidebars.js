@@ -329,11 +329,11 @@ module.exports = {
           "items": [
             {
               "type": "doc",
-              "id": "learn/multiplayergamearhitectureintroduction"
+              "id": "learn/multiplayer-game-arhitecture"
             },
             {
               "type": "doc",
-              "id": "learn/listenserverhostarchitecture"
+              "id": "learn/listen-server-host-architecture"
             },
           ]
         },
