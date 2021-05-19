@@ -19,9 +19,9 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 
 ## New features
 
-This release includes the following new features and additions
+This release includes the following new features and additions:
 
-* Introduced static scene `NetworkObject`s to Boss Room including the following updates:<!-- GOMPS-381 PR 292-->
+* Introduced static scene `NetworkObject`s to BossRoom scene including the following updates:<!-- GOMPS-381 PR 292-->
 
     * Implemented a `ScriptableObject` based event system to encapsulate events inside assets. These objects include a `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
     * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.
@@ -29,39 +29,38 @@ This release includes the following new features and additions
     * The `LifeState` `NetworkVariable` was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
     * Cleaned up and removed old spawn prefab collections and spawner scripts (`NetSpawnPoint`).
 
-* Updated the user interface including the following:
-
-  * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message "Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
-  * Added an option to leave the lobby after joining it. You no longer have to restart the game to leave the lobby. <!-- GOMPS-375 -->
-  * Added option to cancel the game after clicking **Ready**. <!-- GOMPS-293 -->
-  * Added a gear icon for accessing and modifying app settings. <!-- GOMPS-421 -->
-  * The UI now tracks and displays player has arrived, number of connected players in the lobby, and player status. <!-- GOMPS-292 GOMPS-351 -->
-
+* Added ramp-up animation for hero movement and actions <!-- GOMPS-122 GOMPS-472-->
 * Added F/X and animation assets for the game including:
 
   * Audio files for boss sound effects <!--  GOMPS-110 -->
-  * Ramp-up animation for hero movement and actions <!-- GOMPS-122 GOMPS-472-->
   * Visual effects and particles for Tank charge skill <!-- GOMPS-237 GOMPS-238 -->
   * Art assets to wave spawner, including animations for ReceiveDamage, Broken (died), and Revive <!-- GOMPS-123 -->
-  * Game music <!-- GOMPS-128 -->
 
-* Added audiomixer to Boss Room for separate audio channels and a master mixer. <!-- GOMPS-352 -->
-
+* Added Boss fight theme. <!-- GOMPS-128 -->
 * Updated and added various hero abilities:
 
-  * Added new Hero abilities including Archer’s PowerShot and Rogue's Dagger and Dash skills. <!-- GOMPS-483 GOMPS-16 GOMPS-65 -->
-  * Updated the Rogue's Sneak skill using local stealth, applying a graphical effect to the stealthy character while still sending all network events normally. <!--  GOMPS-64 -->
+  * Added a cooldown to Archer's PowerShot.
+  * Added the Rogue's Dagger and Dash skills. The dash skill shows an instinct teleport (using an RPC) instead of a charge like the boss' (which updates its position over time). <!-- GOMPS-483 GOMPS-16 GOMPS-65 -->
+  * Added the Rogue's Sneak skill using local stealth, applying a graphical effect to the stealthy character while still sending all network events normally. <!--  GOMPS-64 -->
   * Properly display Heal abilities when targeting a fallen ally character. <!-- GOMPS-454 -->
   * Character attack actions properly support Hold to charge options. <!-- GOMPS-455 -->
 
 * To show how UI elements and game objects can be networked, added networked functionality using `INetworkSerializable` in the `CharSelect` screen to network player's selected character on the Character Selection screen. <!-- GOMPS-174 -->
-* Added a Photon filter to remove any invisible characters introduced by Zoom when copy-pasting room names, IP addresses, or ports. <!-- GOMPS-433 -->
-* Boss Room now uses the [UnityToonShader](https://github.com/IronWarrior/UnityToonShader) for rendering the 3D surfaces to emulate 2D, flat surfaces. <!-- GOMPS-442 -->
-* Added disconnection error message to load when a player or host disconnects due to limited or no network connectivity. Client logic was also updated to detect Host disconnection scenarios, such as losting connectivity. <!-- GOMPS-448 GOMPS-470 -->
+* Added input sanitization to remove any invisible characters introduced by other chat programs when copy-pasting room names, IP addresses, or ports. (Useful when sharing with friends.)
+* Added disconnection error message to load when a player or host disconnects. Client logic was also updated to detect Host disconnection scenarios, such as losting connectivity. <!-- GOMPS-448 GOMPS-470 -->
 * Balanced hero and enemy stats, spawners, trigger areas, and enemy detetction areas. <!-- GOMPS-249, 251 -->
 * Added healthbars to display when damaged and properly track imp health locally and across clients. <!-- GOMPS-450 -->
 
 ## Changes
+
+* The Boss Room project now loads MLAPI 0.1.0-experimental package through the Unity Package Manager Registry. See the [MLAPI install guide](/docs/migration/install) for details.
+* Updated the user interface including the following:
+
+  * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message "Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
+  * Added an option to leave the lobby after joining it. You no longer have to restart the game to leave the lobby. <!-- GOMPS-375 -->
+  * Added option to cancel my selection after clicking **Ready**. <!-- GOMPS-293 -->
+  * Added a gear icon for accessing and modifying app settings. <!-- GOMPS-421 -->
+  * The UI now tracks and displays player has arrived, number of connected players in the lobby, and player status. <!-- GOMPS-292 GOMPS-351 -->
 
 This release includes the following updates:
 
@@ -75,7 +74,6 @@ This release includes the following updates:
   * Disabled mesh colliders of lava, which is more decorative than interactive.
   * Refactored the S_SimpleDissolve shader which consumed most import time.
 
-* Updated the Photon Setup Guide, indicating you need only app ID when playing with friends. For users connecting across regions, you may need to hard code a region in your app settings by using the room code and region instead of just the room code sharing in game. <!-- GOMPS-88 --> 
 * Removed a duplicated `GameObject` from the MainMenu scene. <!-- GOMPS-474 -->
 * Reviewed and revised code to better following quality standards. <!-- GOMPS-203, GOMPS-218, GOMPS-223 -->
 * Updated the Mage character base attack to better support the new enqueuing ability and handle game behaviors. Updates include:<!-- https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/pull/60 GOMPS-228 GOMPS-379 GOMPS-417 -->
@@ -93,7 +91,6 @@ This release includes the following updates:
 
   * Per-connection state on client disconnect
   * Additional errors including a full server and player ID (GUID) already playing
-  * Player connection if they experience a game-level connection failure
 
 * Updated code to allow hosts to specify a port to listen to,removing the hard-coded port. <!-- GOMPS-270 -->
 * Refactored Action Bar code including the following: <!-- commits https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/commit/579c710fb64c2fc51e6b52c0483f0fe81b9d65f8-->
@@ -128,7 +125,7 @@ This release includes the following issue fixes:
 * Removed a previous work-around for character selections when host replays a completed game. The issue was resolved, allowing players to see character selections during replay. <!-- GOMPS-444 -->
 * Fixed collision wall settings, fixing an issues where the boss knock-back ability sent players through walls. <!-- GOMPS-289 -->
 * Resolved an issue where any players leaving the lobby sent all players to the lobby. <!-- GOMPS-431 -->
-* Fixed the ignored health amount (HP parameter) for revived characters. The correct value correctly sets the revived character to a lower amount than maximum. <!-- GOMPS-498 GOMPS-485 PR 267-->
+* Fixed the ignored health amount (HP parameter) for revived characters. The correct value correctly sets the revived character to a lower amount than maximum. <!-- GOMPS-498 GOMPS-485 PR 267 GH 267-->
 * Fixed animations for enemies including the smoke animation for destroyed imps and the boss helmet when crying. <!-- GOMPS-500, 463 -->
 * Fixed loading of the game skybox before the menu loaded.<!-- GOMPS-459 -->
 
