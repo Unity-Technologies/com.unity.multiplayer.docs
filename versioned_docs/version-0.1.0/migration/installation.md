@@ -59,6 +59,11 @@ To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Pa
 
   ![Package Installed](/img/install/install-0-1-0-git.png)
 
+## Preview Packages
+To include preview packages in the Package Manager, select the ![Gear Icon](/img/gear.png) then Advanced Project Settings. Select the **Enable Preview Packages** option and approve the message that displays.
+
+![Enable Preview Packages](/img/install/install-preview-pkg.png)
+
 ## Next Steps
 
 See the following content to continue your journey using MLAPI:

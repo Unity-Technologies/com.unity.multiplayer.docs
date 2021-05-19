@@ -8,8 +8,8 @@ The [Unity Transport](/transport/introduction) `com.unity.transport` package res
 ## [0.9.0] - 2021-05-10
 
 ### New features
-* Added support for long serialization and delta compression
-* Upgraded collections to 1.0.0
+* Added support for long serialization and delta compression.
+* Upgraded collections to 1.0.0.
 
 ### Changes
 * Minimum required Unity version has changed to 2020.3.0f1.

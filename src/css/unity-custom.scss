@@ -103,6 +103,16 @@ h1, h2, h3, h4, h5, h6, .text-break {
   transition: opacity 200ms ease-in-out;
 }
 
+// Top Nav Version
+
+.nav-break {
+  border-left: 1px solid rgb(156, 156, 156);
+}
+
+.version::before {
+  content: "v. ";
+}
+
 /* FontAwesome - find icons here https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
  * Add new entry using the following as examples.
 */
@@ -174,6 +184,21 @@ h1, h2, h3, h4, h5, h6, .text-break {
   background-position: center center;
 }
 
+.faq--primary {
+  --ifm-hero-text-color: rgb(255, 255, 255) !important;
+  background-image: 
+    linear-gradient(to right, rgba(15, 10, 78, 1.0),
+    rgba(0,0,0,0.25)),
+    url("../../static/img/hero-treasure.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero-faq {
+  padding: 1rem 1rem;
+}
+
 .blog--primary {
   --ifm-hero-text-color: rgb(255, 255, 255) !important;
   background-image: 
@@ -230,14 +255,36 @@ h1, h2, h3, h4, h5, h6, .text-break {
   border-radius: 10px 10px 0 0 ;
 }
 
+.land-highlight {
+  height: 170px;
+  margin-bottom: 10px;
+}
+
+.highlightImage {
+  height: auto !important;
+  width: 100% !important;
+  max-width:100%;
+  max-height:100%;
+  object-fit: cover;
+  border-radius: 10px 10px 10px 10px;
+}
+.highlight-box {
+  min-height: 75px;
+}
+
 @media screen and (max-width: 996px) {
-  .land-box {
+  .land-box, .highlight-box {
     height: auto;
   }
-  .featureImage {
+  .featureImage, .highlightImage {
     object-fit: cover;
     border-radius: 10px 10px 0 0 ;
   }
+  .nav-break {
+    border-top: 1px solid rgb(156, 156, 156);
+    border-left: 0px;
+  }
+
 }
 
 html[data-theme='dark'] code {
@@ -489,6 +536,7 @@ html[data-theme='light'] .admonition-unity {
   .navbar-sidebar {
     .menu__link, .menu__link:hover {
       color: #fff !important;
+      border-radius: 0rem;
     }
   }
   .navbar__toggle {
@@ -536,6 +584,11 @@ html[data-theme='light'] .admonition-unity {
   .feedback-update {
     text-align: left !important;
   }
+
+  .version::before {
+    content: unset !important;
+  }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -1057,21 +1110,22 @@ span.languagekeyword{
   border-top: 1px solid #3578e5;
   display: flex;
   padding-top: 10px;
-  color: #3578e5;
+  //color: #3578e5;
   vertical-align: middle;
+  --ifm-h3-font-size: 1rem;
 }
 
 #faq .markdown > h3 {
-  font-size: 1.10rem !important;
+  font-size: 1rem !important;
 }
 
 #faq h3::before {
   background-color: transparent;
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: flex;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233578e5' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233578e5' width='20px' height='20px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   padding-right: 5px;
 }

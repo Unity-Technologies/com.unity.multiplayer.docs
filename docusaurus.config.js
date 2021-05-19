@@ -69,51 +69,30 @@ module.exports = {
         },
         items: [
           {
-            label: 'Docs',
+            label: 'MLAPI',
+            className: 'nav-break',
             to: '/getting-started/about-mlapi',
             position: 'left',
             items: [
               {
-                to: 'getting-started/about-mlapi',
-                label: 'Unity MLAPI',
+                to: '/introduction',
+                label: 'Release Notes',
+                docsPluginId: 'releases'
               },
               {
-                to: 'introduction',
-                label: 'Unity Transport',
-                docsPluginId: 'transport',
+                to: 'getting-started/about-mlapi',
+                label: 'Documentation',
               },
-            ]
-          },
-          {
-            to: '/api-introduction',
-            label: 'API',
-            position: 'left',
-            items: [
               {
                 to: 'mlapi-api/introduction',
-                label: 'Unity MLAPI',
-              },
-              {
-                to: 'api/introduction',
-                label: 'Unity Transport',
-                docsPluginId: 'transport',
+                label: 'API Reference',
               },
             ]
           },
           {
-            to: '/learn/introduction',
-            label: 'Learn',
-            position: 'left',
-          },
-          {
-            to: '/introduction',
-            label: 'Release Notes',
-            docsPluginId: 'releases',
-            position: 'left'
-          },
-          {
+            //MLAPI VERSIONS
             type: 'docsVersionDropdown',
-            position: 'right',
+            position: 'left',
             // Add additional dropdown items at the beginning/end of the dropdown.
             //dropdownItemsBefore: [],
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
@@ -121,6 +100,50 @@ module.exports = {
             dropdownActiveClassDisabled: true,
             docsPluginId: 'default',
           },
+          {
+            to: 'introduction',
+            label: 'Transport',
+            position: 'left',
+            docsPluginId: 'transport',
+            className: 'nav-break',
+            items: [
+              {
+                to: '/transport/transport-changelog',
+                label: 'Release Notes',
+                docsPluginId: 'releases'
+              },
+              {
+                to: 'introduction',
+                label: 'Documentation',
+                docsPluginId: 'transport',
+              },
+              
+              {
+                to: 'api/introduction',
+                label: 'API Reference',
+                docsPluginId: 'transport',
+              },
+            ]
+          },
+          {
+            //TRANSPORT VERSIONS
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'transport'
+          },
+          {
+            to: '/learn/introduction',
+            label: 'Learn',
+            className: 'nav-break',
+            position: 'left',
+          },
+          //{
+          //  to: '/introduction',
+          //  label: 'Release Notes',
+          //  docsPluginId: 'releases',
+          //  position: 'left'
+         // },
           { 
             className: 'navbar-github-link',
             position: 'right',
@@ -128,12 +151,21 @@ module.exports = {
             docsPluginId: 'reference',
             items: [
               {
-                label: 'Doc Repo',
+                to: '/introduction',
+                label: 'Release Notes',
+                docsPluginId: 'releases'
+              },
+              {
+                label: 'Docs Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Code Repo',
+                label: 'MLAPI Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+              },
+              {
+                label: 'MLAPI Community Contributions',
+                href: 'https://github.com/Unity-Technologies/mlapi-community-contributions',
               },
               {
                 label: 'Boss Room Repo',
@@ -172,6 +204,14 @@ module.exports = {
               {
                 label: 'Unity Multiplayer Forum',
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
+              },
+              {
+                label: 'MLAPI Forum',
+                href: 'https://forum.unity.com/forums/mlapi.661/',
+              },
+              {
+                label: 'Unity Transport Forum',
+                href: 'https://forum.unity.com/forums/unity-transport.664/',
               },
             ]
             },
@@ -232,7 +272,7 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {
-                label: 'Boss Room Release',
+                label: 'Boss Room Releases',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest',
               },
               {
@@ -253,7 +293,11 @@ module.exports = {
                 href: 'https://blogs.unity3d.com/',
               },
               {
-                label: 'Forums',
+                label: 'Unity Multiplayer Forum',
+                href: 'https://forum.unity.com/forums/multiplayer.26/',
+              },
+              {
+                label: 'Unity Forums',
                 href: 'https://forum.unity.com/',
               },
               {
@@ -289,10 +333,10 @@ module.exports = {
                 label: 'develop',
                 path: 'develop',
               },
-              //'0.1.0': {
-               // label: '0.1.0',
-              //  path: '',
-              //},
+              '0.1.0': {
+               label: 'v. 0.1.0',
+                path: '',
+              },
             },
             admonitions: {
               customTypes: {
@@ -438,9 +482,29 @@ module.exports = {
         {
           id: 'transport',
           path: 'transport',
-          editUrl: ({docPath}) => {
-            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${docPath}`;
+          editUrl: function ({
+            versionDocsDirPath,
+            docPath,
+          }) {
+            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
           },
+          includeCurrentVersion: true,
+            lastVersion: '0.8.0',
+            versions: {
+              //current: {
+              //  label: 'Next',
+              //  path: 'next',
+              //},
+              '0.9.0': {
+               label: 'v. 0.9.0preview',
+                path: '0.9.0',
+              },
+              '0.8.0': {
+                label: 'v. 0.8.0preview',
+                 path: '0.8.0',
+               },
+            },
+          onlyIncludeVersions: ["0.8.0", "0.9.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
@@ -500,9 +564,20 @@ module.exports = {
       {
         id: 'GTM-5V25JL6', // GTM Container ID
       }],
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/docs/advanced-topics/messaging-system',
+              from: '/docs/advanced-topics/messaging-system/about-rpc',
+            },
+          ]
+        },
+      ],
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
         '@saucelabs/theme-github-codeblock',
         'react-iframe'
-    ],
+      ]
   };
