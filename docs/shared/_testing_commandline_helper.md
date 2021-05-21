@@ -1,5 +1,3 @@
-### Testing the command line helper
-
 Now we will test that the command line helper script works.
 
 1. Select **File > Build and Run**. 

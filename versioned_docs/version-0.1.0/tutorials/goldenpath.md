@@ -4,10 +4,6 @@ title:  Building Golden Path
 description: Tutorial that explains adding a command line handler, network variables (client and server-controlled), network transforms for auto-movement, and RPC introduction.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-
 In this tutorial we will build on the work we have already done in Hello World and add in a few more features. As there are some minor differences between this tutorial and the Hello World series we will be starting afresh. You do not have to have completed either of the Hello World tutorials to complete this one, however, if you are new to Unity then we recommended that you  complete them in order to familiarise yourself with Unity. 
 
 We will be covering the following:
@@ -18,7 +14,6 @@ We will be covering the following:
 - RPCs
 
 :::funfact
-
 In the context of software or information modelling, a Golden Path (sometimes called happy path) is a default scenario featuring no exceptional or error conditions.
 :::
 
@@ -32,7 +27,7 @@ Now we will create a new project in Unity.
 
 1. Open the Unity Hub.
 1. Click **New**. 
-1. Select type ‘3D’
+1. Select type *3D*.
 1. Rename the project **GoldenPath**.
 1. Select the location to save the project.
 
@@ -50,277 +45,33 @@ See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI
 
 ## Creating Network Manager and selecting the Transport
 
-In this section we will add a Network Manager and add a Transport to our project.
+import NetworkMgr from '../shared/_create_networkmanager_and_transport.md';
 
-1. Right click in the Hierarchy tab of the Main Unity Window.
-1. Select **Create Empty**.
-1. Rename the `GameObject` **NetworkManager**.
-   
-  :::tip
-  We renamed the `GameObject` because:
-    * It makes it  easier to refer to later.
-    * There should only be one **NetworkManager**, this is the object that contains the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
-  :::
-
-  You have now created a new `GameObject` called **NetworkManager**.
-
-1. Select **NetworkManager**.
-1. Click **Add Component** in the Inspector tab.
-1. Select **MLAPI** from the list shown.
-1. Select **NetworkManager** component from the list displayed.
-1. Inside the **NetworkManager** Component tab, locate the  `NetworkTransport` field. 
-1. Click "Select Transport".
-1. Select `UnetTransport`.
-1. Save your scene.
-
-
-<iframe src="https://www.youtube.com/embed/ZYEUWzsXEoY?playlist=ZYEUWzsXEoY&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
+<NetworkMgr/>
 
 ## Creating an object to spawn for each connected player
 
-This section adds in a player object and spawns it for each connected player.
+import Spawn from '../shared/_create_spawn_for_player.md';
 
-1. Create a **3D Object->Capsule**
-1. Rename it **Player**. 
-1. Add a `NetworkObject` component.
-1. Click the **Assets** folder.
-1. Create a new Folder and call it **Prefabs**.
-1. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
-1. Delete **Player** from scene.
-
-  :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
-  :::
-
-1. Select **NetworkManager**.
-1. Inside the **NetworkManager** Component tab, locate the  `NetworkPrefabs` field. 
-1. Click `+` to create a slot
-1. Drag this player prefab from above into the new empty slot
-
-  :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect.
-  :::
-
-  :::note
-   You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab`. Once you have completed the above steps you can clear the error.
-  :::
-
-1. Create a **3D Object->Plane**, centered at (0,0,0).
-1. Save your scene.
-
-<iframe src="https://www.youtube.com/embed/B_FWb4J1Pxw?playlist=B_FWb4J1Pxw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
+<Spawn/>
 
 ### Testing the basic network building blocks
 
-Now we run a test to check what we have built so far.
+import SpawnTest from '../shared/_test_spawn_for_player.md';
 
-1. Click **Play**.  
-1. The Editor will start, and you will just see the plane.  
-1. Without stopping the editor's play mode, navigate to the `NetworkManager` component in the Hierarchy tab (it will be underneath `DontDestroyOnLoad`).  
-1. Inside the `NetworkManager` Inspector tab. scroll down and find the `Start Host` button.  
-1. If you click it, you will see the player capsule spawn. 
-1. Stop the player.
-
-<iframe src="https://www.youtube.com/embed/iLb00icvRMs?playlist=iLb00icvRMs&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
+<SpawnTest/>
 
 ## Creating a command line helper
 
-This command line helper will launch our project outside Unity and make testing builds easier.
+import CLIhelper from '../shared/_create_commandline_helper.md';
 
-1. Click the **Assets** folder.
-1. Create a new Folder and call it **Scripts**.
-1. Create a script called `NetworkCommandLine`.
-1. Right click on the `NetworkManager` in the hierarchy view and choose **Create Empty**.
-   
-   This will create an  empty `GameObject` with `NetworkManager` as its parent.
-
-1. Rename this child `GameObject` `NetworkCommandLine`.
-1. Inside the `NetworkCommandLine` Inspector tab., click **Add Component**. 
-1. Click **Scripts** and add the `NetworkCommandLine.cs` script you created earlier.
-1. Open the `NetworkCommandLine.cs` script.
-1. Edit the `NetworkCommandLine.cs` script to match the following.
-
-:::tip 
-You can copy the script from here and paste it into your file.
-1. Select the code sample.
-1. Click **Copy** in the top right corner.
-1. Paste it into your code editor.
-:::
-
-<details open>
-<summary>Click to show/hide the Code.
-
-</summary>
-
-``` csharp
-using System.Collections.Generic;
-using MLAPI;
-using UnityEngine;
-
-public class NetworkCommandLine : MonoBehaviour
-{
-   private NetworkManager netManager;
-
-   void Start()
-   {
-       netManager = GetComponentInParent<NetworkManager>();
-
-       if (Application.isEditor) return;
-
-       var args = GetCommandlineArgs();
-
-       if (args.TryGetValue("-mlapi", out string mlapiValue))
-       {
-           switch (mlapiValue)
-           {
-               case "server":
-                   netManager.StartServer();
-                   break;
-               case "host":
-                   netManager.StartHost();
-                   break;
-               case "client":
-         
-                   netManager.StartClient();
-                   break;
-           }
-       }
-   }
-
-   private Dictionary<string, string> GetCommandlineArgs()
-   {
-       Dictionary<string, string> argDictionary = new Dictionary<string, string>();
-
-       var args = System.Environment.GetCommandLineArgs();
-
-       for (int i = 0; i < args.Length; ++i)
-       {
-           var arg = args[i].ToLower();
-           if (arg.StartsWith("-"))
-           {
-               var value = i < args.Length - 1 ? args[i + 1].ToLower() : null;
-               value = (value?.StartsWith("-") ?? false) ? null : value;
-
-               argDictionary.Add(arg, value);
-           }
-       }
-       return argDictionary;
-   }
-}
-```
-
-</details>
-
-10. Select  **File > Build Settings > Player Settings...**
-1. In the **Resolution and Presentation** tab change `Fullscreen Window` mode into `Windowed` mode.    
-1. Save your scene.
-
-   
-:::tip
-   If you are on a Pro Unity license, you may want to disable the splash screen.
-:::
-
-<iframe src="https://www.youtube.com/embed/2swybHUigM8?playlist=2swybHUigM8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+<CLIhelper/>
 
 ### Testing the command line helper
 
-Now we will test that the command line helper script works.
+import Testhelper from '../shared/_testing_commandline_helper.md';
 
-1. Select **File > Build and Run**. 
-1. Create a folder called `Build`.
-1. Name the binary `GoldenPath`.  
-1. Your project will build, and it will launch, and you should see the plane.  
-1. Quit your app.
-1. Launch from the command line.  
-
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'For Windows:', value: 'tab1'},
-    {label: 'For Mac', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-  
-For Windows you should do the following:  
-
-
-1. Open CMD.
-1. Enter the following: 
-   
-:::note
-You may get a UAC prompt requesting prermission for the binary to run you should allow it.
-:::
-
-  Server: 
-
-  ```
-  <path to project>/Build/GoldenPath.exe -mlapi server
-  ```
-  
-  Client:
-  
-  ```
-  <path to project>/Build/GoldenPath.exe -mlapi client
-  ```
-
-:::important
-On Windows, no standard out stream exists by default, so you will need to view the Debug.log file to see the outputs. You can find the Debug.log  files in:
-
-`C:\Users\username\AppData\LocalLow\CompanyName\ProductName\Player.log`
-
-Where the `CompanyName` should default to `DefaultCompany` for a new project and  `ProductName` should be equal to the project's name.
-
-Alternatively you can modify the Windows commands to create a log.txt file in the same folder as the .exe which maybe more convenient.
-
-Modify the commands as follows:
-
-  Server: 
-
-  ```
-  <path to project>/Build/GoldenPath.exe -logfile log-server.txt -mlapi server 
-  ```
-  
-  Client:
-  
-  ```
-  <path to project>/Build/GoldenPath.exe  -logfile log-client.txt -mlapi client
-  ```
-
-:::
-
-
-</TabItem>
-<TabItem value="tab2">
-
-For Mac you should do the following:
-
-1. Open Terminal.
-1. Enter the following.
-
-   ```
-   ~/dev/mlapi-golden-path/GoldenPath/Build/GoldenPath.app/Contents/MacOS/GoldenPath -mlapi server -logfile - & ; ~/dev/mlapi-golden-path/GoldenPath/Build/GoldenPath.app/Contents/MacOS/GoldenPath -mlapi client -logfile -
-   ```
-
-Both should show a plane and a capsule (the capsule being the single player that was spawned). 
-
-<iframe src="https://www.youtube.com/embed/84wxdetXUQw?playlist=84wxdetXUQw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-</TabItem>
-</Tabs>
-
-
+<Testhelper/>
 
 ## Next Steps
 
@@ -331,6 +82,8 @@ For more information on the relevant concepts introduced here please refer to th
 - [RPCs](../advanced-topics/message-system/about-rpc.md)
 
 :::contribution Special Thanks
-
- This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
+This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
 :::
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
