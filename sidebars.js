@@ -43,8 +43,15 @@ module.exports = {
         "id": "tutorials/helloworldtwo"
       },
       {
-        "type": "doc",
-        "id": "tutorials/goldenpath"
+        "collapsed": true,
+        "type": "category",
+        "label": "GoldenPath",
+        "items": [
+          {
+            "type": "doc",
+            "id": "tutorials/goldenpath"
+          },
+        ],
       },
     ],
   },
