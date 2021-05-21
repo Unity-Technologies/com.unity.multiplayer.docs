@@ -1,5 +1,3 @@
-## Creating a command line helper
-
 This command line helper will launch our project outside Unity and make testing builds easier.
 
 1. Click the **Assets** folder.

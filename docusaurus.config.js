@@ -539,7 +539,7 @@ module.exports = {
         {
           sharedFolders: [
             // Embed a markdown file from a folder. Source and target path are defined relative to the root where docusaurus.config.js is located.
-            //{ source: '../../_shared', target: '../docs/shared'},
+            { source: '../../_shared', target: '../docs/shared'},
           ],
 
           // Deletes the shared folder from generated site, not needed
