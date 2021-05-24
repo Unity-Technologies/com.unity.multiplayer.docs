@@ -125,13 +125,13 @@ module.exports = {
               },
             ]
           },
-          {
+          /*{
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
-          },
+          },*/
           {
             to: '/learn/introduction',
             label: 'Learn',
@@ -487,24 +487,23 @@ module.exports = {
             docPath,
           }) {
             return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
-          },
-          includeCurrentVersion: true,
+          },includeCurrentVersion: true,
             lastVersion: '0.8.0',
             versions: {
               //current: {
               //  label: 'Next',
               //  path: 'next',
               //},
-              '0.9.0': {
+              /*'0.9.0': {
                label: 'v. 0.9.0preview',
                 path: '0.9.0',
-              },
+              },*/
               '0.8.0': {
                 label: 'v. 0.8.0preview',
                  path: '0.8.0',
                },
             },
-          onlyIncludeVersions: ["0.8.0", "0.9.0"],
+          //onlyIncludeVersions: ["0.8.0", "0.9.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
@@ -541,25 +540,6 @@ module.exports = {
           },
         },
       ],
-      [
-        'docusaurus-plugin-includes',
-        // https://github.com/simologos/docusaurus-plugin-includes#readme
-        {
-          sharedFolders: [
-            // Embed a markdown file from a folder. Source and target path are defined relative to the root where docusaurus.config.js is located.
-            //{ source: '../../_shared', target: '../docs/shared'},
-          ],
-
-          // Deletes the shared folder from generated site, not needed
-          postBuildDeletedFolders: ['shared'],
-  
-          replacements: [
-            // Variable names, short lines
-            { key: '{MLAPI}', value: 'Unity MLAPI' },
-            { key: '{BossRoom}', value: 'Boss Room: Small Scale Co-op Sample' },
-          ],
-        },
-      ],
       [require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-5V25JL6', // GTM Container ID
@@ -571,6 +551,10 @@ module.exports = {
             {
               to: '/docs/advanced-topics/messaging-system',
               from: '/docs/advanced-topics/messaging-system/about-rpc',
+            },
+            {
+              to: '/docs/advanced-topics/messaging-system',
+              from: '/docs/advanced-topics/message-system/serialization',
             },
           ]
         },
