@@ -142,6 +142,7 @@ Review the following known issues with this release:
 * `NetworkManager` have the following issues:
   * Connection management is limited. Use `IsServer`, `IsClient`, `IsConnectedClient`, or other code to check if MLAPI connected correctly.
   * Adding a `GameObject` with a `NetworkObject` component as a child to a `GameObject` that is assigned the `NetworkManager` component will cause a soft synchronization error. Avoid assigning `NetworkObject`s to a `GameObject` with the `NetworkManager`.
+* `NetworkBehaviourILPP` does not iterate over all types. To have ServerRPC start from ClientRPC, your scripts should directly derive from `NetworkBehaviour` with RPCs. Otherwise, you will encounter errors and issues. <!-- PR 803 -->
 
 ## Upgrade guide
 

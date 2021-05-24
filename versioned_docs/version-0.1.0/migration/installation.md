@@ -95,3 +95,7 @@ If you newly installed or updated Git, you may also need to restart your system.
 **Errors finding Git installation**
 
 If you receive an OS or Unity error trying to locate Git after updating or installing Git, you need to fully restart your computer. Restarting only Unity may not fully update system information to correctly locate the install.
+
+**VPN or Proxy Errors**
+
+If you use VPN or proxy software from international locations, you may encounter access issues. Use the registry option for installing MLAPI. Also consider turning off your VPN service or selecting a different location.

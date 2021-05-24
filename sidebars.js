@@ -138,11 +138,6 @@ module.exports = {
         "type": "doc",
         "id": "advanced-topics/messaging-system"
       },
-      { 
-        "type": "doc",
-        "id": "advanced-topics/ways-synchronize"
-      },
-
       {
         "collapsed": true,
         "type": "category",
@@ -170,15 +165,14 @@ module.exports = {
           },
           {
             "type": "doc",
-            "id": "advanced-topics/message-system/serialization"
-          },
-          {
-            "type": "doc",
             "id": "advanced-topics/message-system/rpc-compatibility"
           },
         ]
-         },
-
+      },
+      { 
+        "type": "doc",
+        "id": "advanced-topics/ways-synchronize"
+      },
       {
         "collapsed": true,
         "type": "category",
