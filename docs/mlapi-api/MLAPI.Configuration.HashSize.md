@@ -25,14 +25,7 @@ encoding It just says how many bytes the maximum will be
 
 ## Fields
 
-Name
-
-Description
-
-VarIntEightBytes
-
-Eight byte hash
-
-VarIntFourBytes
-
-Four byte hash
+| Name             | Description     |
+|------------------|-----------------|
+| VarIntEightBytes | Eight byte hash |
+| VarIntFourBytes  | Four byte hash  |
