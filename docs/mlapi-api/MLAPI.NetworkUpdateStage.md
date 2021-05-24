@@ -23,20 +23,12 @@ Defines network update stages being executed by the network update loop.
 
 ## Fields
 
-Name
-
-Description
-
-EarlyUpdate
-
-FixedUpdate
-
-Initialization
-
-PostLateUpdate
-
-PreLateUpdate
-
-PreUpdate
-
-Update
+| Name           | Description |
+|----------------|-------------|
+| EarlyUpdate    |             |
+| FixedUpdate    |             |
+| Initialization |             |
+| PostLateUpdate |             |
+| PreLateUpdate  |             |
+| PreUpdate      |             |
+| Update         |             |

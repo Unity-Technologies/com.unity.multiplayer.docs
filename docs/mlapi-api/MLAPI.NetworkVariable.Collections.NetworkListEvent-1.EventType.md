@@ -24,30 +24,11 @@ event.
 
 ## Fields
 
-Name
-
-Description
-
-Add
-
-Add
-
-Clear
-
-Clear
-
-Insert
-
-Insert
-
-Remove
-
-Remove
-
-RemoveAt
-
-Remove at
-
-Value
-
-Value changed
+| Name     | Description   |
+|----------|---------------|
+| Add      | Add           |
+| Clear    | Clear         |
+| Insert   | Insert        |
+| Remove   | Remove        |
+| RemoveAt | Remove at     |
+| Value    | Value changed |
