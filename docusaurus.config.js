@@ -46,7 +46,7 @@ module.exports = {
         disableSwitch: false,
         respectPrefersColorScheme: true,
   
-        switchConfig: {
+        /*switchConfig: {
           // CSS to apply to dark icon,
           // React inline style object
           // see https://reactjs.org/docs/dom-elements.html#style
@@ -59,7 +59,7 @@ module.exports = {
           lightIconStyle: {
             marginLeft: '1px',
           },
-        }
+        }*/
       },
       navbar: {
         title: 'Unity Multiplayer Networking',
