@@ -8,6 +8,7 @@ This page contains examples of how `RPC`s or `NetworkVariable`s have been used i
 See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 
 ## RPCs for movement
+
 Boss Room uses RPCs to send movement inputs.
 
 ```csharp reference
@@ -19,10 +20,10 @@ We want the full history of inputs sent, not just the latest value. There is no 
 
 ## Sending action inputs RPCs
 
-Sending from server to client `RecvPerformHitReactionClient` 
+The following `RecvPerformHitReactionClient`  call sends actions from server to client:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L235-L239
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L263-L267
 ```
 
 For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCharacterState` is interesting for optimization purposes. You would normally want to have only one `RPC` for an action and let the client decide who should play the associated animation. Due to "ouch" being a long running action over multiple frames, you do not know yet when sending the initial `RPC` which characters will be affected by that action. You want this to be dynamic as the boss is hitting targets. As a result, multiple `RPC`s will be sent for each hit character.
@@ -47,13 +48,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 We could have used a "kill" `RPC` to set a character as dead and play the appropriate animations. Applying our "should that information be replicated when a player joins the game mid-game" rule of thumb, we used `NetworkVariable`s instead. We used the `OnValueChanged` callback on those values to play our state changes animation.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L93
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L109
 ```
 
 The animation change:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L78
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L90
 ```
         
 :::tip Lesson Learned

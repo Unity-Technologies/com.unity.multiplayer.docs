@@ -21,10 +21,7 @@ title: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType
 
 ## Fields
 
-Name
-
-Description
-
-Inbound
-
-Outbound
+| Name     | Description |
+|----------|-------------|
+| Inbound  |             |
+| Outbound |             |
