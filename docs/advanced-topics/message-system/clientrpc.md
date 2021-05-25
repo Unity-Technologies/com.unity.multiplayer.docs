@@ -84,3 +84,8 @@ private void DoSomethingServerSide(int clientId)
         Debug.LogFormat("GameObject: {0} has received a randomInteger with value: {1}", gameObject.name, randomInteger);
     }
 ```
+
+## See also
+
+* [ServerRpc](serverrpc.md)
+* [RPC Params](rpc-params.md)

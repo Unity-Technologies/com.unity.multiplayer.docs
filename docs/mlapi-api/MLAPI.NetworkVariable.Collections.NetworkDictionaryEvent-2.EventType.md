@@ -24,26 +24,10 @@ event.
 
 ## Fields
 
-Name
-
-Description
-
-Add
-
-Add
-
-Clear
-
-Clear
-
-Remove
-
-Remove
-
-RemovePair
-
-Remove pair
-
-Value
-
-Value changed
+| Name       | Description   |
+|------------|---------------|
+| Add        | Add           |
+| Clear      | Clear         |
+| Remove     | Remove        |
+| RemovePair | Remove pair   |
+| Value      | Value changed |
