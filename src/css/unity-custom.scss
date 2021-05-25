@@ -64,6 +64,9 @@ h1, h2, h3, h4, h5, h6, .text-break {
   font-size: 2rem !important;
 }
 
+h1 {
+  font-size: 2rem !important;
+}
 
 .markdown > h2 {
   font-size: 1.5rem !important;
@@ -1093,7 +1096,7 @@ span.languagekeyword{
 
 // Blog Styles
 .blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-BlogPostItem- {
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 
 .avatar__intro {

@@ -8,8 +8,12 @@ If you don't want to use MLAPI's messaging system, you don't have to. You can us
 
 Custom messages comes in two forms: named and unnamed.
 
+To send messages from client to client, server to client, and client to server through the provided `clientId`. For example, from client to server provide `NetworkManager.Singleton.ServerClientId` as the `clientId`.
+
 ## Unnamed Messages
- Unnamed messages can be thought of as a single sending channel. A message sent has one receive handler, this is useful for building your own custom messaging system. 
+
+Unnamed messages can be thought of as a single sending channel. A message sent has one receive handler, this is useful for building your own custom messaging system. 
+
 **Usage**
 
 ```csharp
@@ -29,8 +33,11 @@ private void Start()
 }
 
 ```
+
 ## Named Messages
+
 If you want a completed messaging system, you can use named messages. The receiver registers one listen handler for each message type, and the sender can choose what type to send.
+
 **Usage**
 
 ```csharp

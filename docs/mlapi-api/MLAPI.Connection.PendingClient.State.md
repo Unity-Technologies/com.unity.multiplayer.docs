@@ -23,14 +23,7 @@ The states of a connection
 
 ## Fields
 
-Name
-
-Description
-
-PendingApproval
-
-Waiting for client connection request to be approved
-
-PendingConnection
-
-Waiting for client to send it's initial connection request
+| Name              | Description                                                |
+|-------------------|------------------------------------------------------------|
+| PendingApproval   | Waiting for client connection request to be approved       |
+| PendingConnection | Waiting for client to send it's initial connection request |
