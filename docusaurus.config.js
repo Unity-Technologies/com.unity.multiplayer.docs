@@ -369,7 +369,7 @@ module.exports = {
             },
           },
           blog: {
-            postsPerPage: 3,
+            //postsPerPage: 3,
             feedOptions: {
               type: 'all',
               copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
