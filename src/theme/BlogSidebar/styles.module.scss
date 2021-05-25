@@ -19,8 +19,20 @@
 
 .sidebarItemTitle {
   margin-bottom: 0.5rem;
-  color: var(--subtle);
+  color: #7a7a7a;
   padding-left: 12px;
+  a {
+  color: #7a7a7a;
+  text-decoration: none;
+  }
+  :hover {
+    color: var(--ifm-menu-color-active);
+  }
+}
+
+h4.sidebarItemTitle {
+  color: #7a7a7a;
+  border-bottom: 1px solid #7a7a7a;
 }
 
 .sidebarItemList {
