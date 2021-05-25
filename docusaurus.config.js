@@ -375,7 +375,7 @@ module.exports = {
               copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
               },
             blogSidebarCount: 'ALL',
-            blogSidebarTitle: 'All our posts',
+            blogSidebarTitle: 'All Blog Posts',
           },
           theme: {
             customCss: require.resolve('./src/css/unity-custom.scss'),
