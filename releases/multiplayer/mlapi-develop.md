@@ -79,3 +79,4 @@ This release includes the following issue fixes:
 
 * [GitHub 367](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/367): `OnClientConnectedCallback` is now properly called when `StartHost` is called. This affects `NetworkManager` `OnClientConnectedCallback` and `ConnectionApproval` `ConnectionApprovalCallback`. <!-- MTT-566 -->
 * [GitHub 664](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/issues/664): Updates the `drawElementCallback` to assure there is only one default player prefab. This resolves an issue where adding a new Prefab in **NetworkPrefabs** automatically marked it as default. <!-- MTT-537 -->
+* [GitHub 803](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/803) : Switched from `ModuleDefinition.Types` to `ModuleDefinition.GetTypes()` API. `NetworkBehaviourILPP` now iterates over all types and filters for `NetworkBehaviour` derived types and leaving no one outside from ILPP.
