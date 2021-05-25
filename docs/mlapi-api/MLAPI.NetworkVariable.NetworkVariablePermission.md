@@ -23,22 +23,9 @@ Permission type
 
 ## Fields
 
-Name
-
-Description
-
-Custom
-
-Custom delegate
-
-Everyone
-
-Everyone
-
-OwnerOnly
-
-Owner-ownly
-
-ServerOnly
-
-Server-only operation
+| Name       | Description           |
+|------------|-----------------------|
+| Custom     | Custom delegate       |
+| Everyone   | Everyone              |
+| OwnerOnly  | Owner-ownly           |
+| ServerOnly | Server-only operation |

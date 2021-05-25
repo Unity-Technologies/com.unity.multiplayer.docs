@@ -30,6 +30,7 @@ See the following information:
 
 :::note Migration and Compatibility
 See [RPC Migration and Compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
+:::
 
 ## RPC method calls
 
@@ -37,6 +38,11 @@ A typical framework user (Unity developer) can declare multiple RPCs under a `Ne
 
 A method turned into an RPC is no longer a regular method, it will have its own implications on direct calls and in the network pipeline. See [Execution Table](message-system/execution-table.md).
 
+## Serialization Types and RPCs
+
+Instances of Serializable Types are passed into an RPC as parameters and are serialized and replicated to the remote side.
+
+See [Serialization](serialization/serialization-intro.md) for more information.
 
 ## Custom Messages
 

@@ -133,10 +133,6 @@
             "id": "version-0.1.0/advanced-topics/messaging-system"
           },
           {
-            "type": "doc",
-            "id": "version-0.1.0/advanced-topics/ways-synchronize"
-          },
-          {
             "collapsed": true,
             "type": "category",
             "label": "RPC Remote Procedure Call",
@@ -163,13 +159,13 @@
               },
               {
                 "type": "doc",
-                "id": "version-0.1.0/advanced-topics/message-system/serialization"
-              },
-              {
-                "type": "doc",
                 "id": "version-0.1.0/advanced-topics/message-system/rpc-compatibility"
               }
             ]
+          },
+          {
+            "type": "doc",
+            "id": "version-0.1.0/advanced-topics/ways-synchronize"
           },
           {
             "collapsed": true,
@@ -317,6 +313,10 @@
         {
           "type": "doc",
           "id": "version-0.1.0/learn/lagandpacketloss"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.1.0/learn/clientside_interpolation"
         }
       ]
     },
