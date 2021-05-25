@@ -7,7 +7,7 @@
  import React from 'react';
  import Link from '@docusaurus/Link';
  
- import styles from './styles.module.css';
+ import styles from './styles.module.scss';
  
  export default function BlogSidebar({sidebar}) {
    if (sidebar.items.length === 0) {
@@ -18,7 +18,7 @@
  
    return (
      <div className={styles.sidebar}>
-       <h3 className={styles.sidebarItemTitle}>{sidebar.title}</h3>
+       <h3 className={styles.sidebarItemTitle}><a href="/blog">{sidebar.title}</a></h3>
        <ul className={styles.sidebarItemList}>
          {sidebar.items.map(item => {
            const postYear = item.permalink.split('/')[2];
