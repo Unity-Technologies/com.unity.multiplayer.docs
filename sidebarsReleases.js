@@ -19,7 +19,6 @@ module.exports = {
           },
         ]
       },
-      
       {
         "collapsed": true,
         "type": "category",

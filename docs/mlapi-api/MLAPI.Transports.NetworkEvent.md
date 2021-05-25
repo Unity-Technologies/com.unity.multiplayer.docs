@@ -23,22 +23,9 @@ Represents a netEvent when polling
 
 ## Fields
 
-Name
-
-Description
-
-Connect
-
-A client is connected, or client connected to server
-
-Data
-
-New data is received
-
-Disconnect
-
-A client disconnected, or client disconnected from server
-
-Nothing
-
-No new event
+| Name       | Description                                               |
+|------------|-----------------------------------------------------------|
+| Connect    | A client is connected, or client connected to server      |
+| Data       | New data is received                                      |
+| Disconnect | A client disconnected, or client disconnected from server |
+| Nothing    | No new event                                              |
