@@ -26,6 +26,7 @@
     "@saucelabs/theme-github-codeblock": "^0.0.4",
     "chokidar": "^3.0.0",
     "clsx": "^1.1.1",
+    "dns-packet": "^5.2.2",
     "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-sass": "^0.1.14",
     "mermaid": "^8.9.1",
