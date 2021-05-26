@@ -1,12 +1,26 @@
+---
+id: goldenpath_one
+title: Golden Path One
+description: First of the Golden Path  tutorials covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
+---
 
+This is the first of the golden path tutorials,  you should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial.
 
 
 
 We will be covering the following:
 
-Network variables (client and server-controlled)
-Network transforms
-RPCs
+- Network variables (client and server-controlled)
+- Network transforms
+- RPCs
+
+
+## Create a Golden Path One project
+
+We  create a clone of the Glden Path foundation project that you created, this will let you leanr about new features and concepts without having to repeat your previous work.
+
+Open the Goldenpath Project you saved at the end of the foundation module. 
+
 
 ## Introducing a Server-controlled Network Variable 
 
@@ -273,4 +287,20 @@ Client Received the RPC #3
 
 :::note Congrats!
 Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation. 
+:::
+
+ ## Next Steps
+
+[Return to Golden Path Introduction](goldenpath.md)
+
+
+For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
+
+- [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
+- [Network transforms](../components/networktransform.md)
+- [RPCs](../advanced-topics/message-system/about-rpc.md)
+
+
+:::contribution Special Thanks
+This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
 :::
