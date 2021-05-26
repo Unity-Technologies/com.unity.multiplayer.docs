@@ -18,7 +18,7 @@ YOu should start by following the [GoldenPath Foundation Module](../../tutorials
 
 <div class="table-columns-plain">
 
-| [GoldenPath Foundation Module](../../tutorials/goldenpath_series/goldenpath_foundation_module.md)<br/> Covering| [GoldenPath Module One](gp_server_controlled_network_variable.md)<br/> Covering|GoldenPath Module Two <br/> Covering|
+| [GoldenPath Foundation Module](../../tutorials/goldenpath_series/goldenpath_foundation_module.md)<br/> Covering| [GoldenPath Module One](gp_module_one.md)<br/> Covering|GoldenPath Module Two <br/> Covering|
 | -- | -- | -- |
 | Creating a new project<br/>  Installing MLAPI<br/>   Creating and testing the basic networking building blocks<br/>  and creating and testing a commandline helper. |   Network variables (client and server-controlled)<br/> Network transforms <br/> RPCs  | -- |
 <br/> 

@@ -1,6 +1,6 @@
 ---
 id: goldenpath_foundation_module
-title:  Golden Path Foundation 
+title:  Golden Path Foundation Module
 description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing MLAPI,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
@@ -71,7 +71,7 @@ You should  now save the golden path foundation project as you will be building 
 
 <div class="table-columns-plain">
 
-| [GoldenPath Module One](gp_server_controlled_network_variable.md)<br/> Covering|GoldenPath Module Two <br/> Covering|
+| [GoldenPath Module One](gp_module_one.md)v)<br/> Covering|GoldenPath Module Two <br/> Covering|
 | -- | -- | 
 |   Network variables (client and server-controlled)<br/> Network transforms <br/> RPCs  | -- | 
 <br/> 
