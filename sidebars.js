@@ -49,7 +49,7 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "tutorials/goldenpath"
+            "id": "tutorials/goldenpath_series/goldenpath"
           },
         ],
       },

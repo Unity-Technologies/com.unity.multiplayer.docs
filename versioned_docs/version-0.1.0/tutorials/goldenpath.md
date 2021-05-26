@@ -75,6 +75,16 @@ import Testhelper from '../shared/_testing_commandline_helper.md';
 
 ## Next Steps
 
+GOlden Path is intended as a series of guides tyhat will help intoriducee MLAPI features both old and new. We have designed it to be modular so that you can jump directly to thise sections that will be of interest to you. 
+
+<div class="table-columns-plain">
+
+| Installation | Getting Started | Learning More | Debugging |
+| -- | -- | -- | -- |
+| [Install Unity MLAPI](../migration/installation.md)<br/>[Migration from UNet to MLAPI](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity MLAPI Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworldintro.md)<br/>[Building on First Steps](../tutorials/helloworldparttwo.md) | [Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../mlapi-basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../mlapi-basics/scene-management.md) | [Logging](../mlapi-basics/logging.md)<br/>[Troublshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) |
+
+</div>
+
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
