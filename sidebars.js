@@ -51,6 +51,14 @@ module.exports = {
             "type": "doc",
             "id": "tutorials/goldenpath_series/goldenpath"
           },
+          {
+            "type": "doc",
+            "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+          },
+          {
+            "type": "doc",
+            "id": "tutorials/goldenpath_series/goldenpath_one"
+          },
         ],
       },
     ],

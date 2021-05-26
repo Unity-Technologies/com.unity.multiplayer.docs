@@ -1,12 +1,10 @@
 ---
 id: goldenpath_one
-title: Golden Path One
-description: First of the Golden Path  tutorials covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
+title: Golden Path Module One
+description: First of the Golden Path  modules covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
 ---
 
-This is the first of the golden path tutorials,  you should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial.
-
-
+This is the first of the golden path modules,  you should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial.
 
 We will be covering the following:
 
@@ -14,12 +12,42 @@ We will be covering the following:
 - Network transforms
 - RPCs
 
+## Requirements
 
-## Create a Golden Path One project
+You should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial..
 
-We  create a clone of the Glden Path foundation project that you created, this will let you leanr about new features and concepts without having to repeat your previous work.
+## Create a 'GoldenPath_One' project
 
-Open the Goldenpath Project you saved at the end of the foundation module. 
+We  create a clone of the Golden Path foundation project that you created, if you have not yet created a GoldenPath project then you should follow the steps [here](goldenpath_foundation_module.md) to create one.
+
+:::tip
+ Working from a clone of the initial project will help you learn about new features and concepts without having to repeat  previous work.
+:::
+ 
+### Create a clone of GoldenPath
+
+1. Navigate to where you Golden Path project is stored. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
+1. Right Click the `Goldenpath` folder.
+1. Select **Copy**.
+1. Select the folder containg your Golden Path project.
+1. Select **Paste**.
+    A copy of the GoldenPath project should be created. You may be asked to confirm that you want to create a copy and not overwrite you original folder, confirm that you want to create a copy.
+1. Rename the `GoldenPath_Copy` to `Golden Path_One`.
+
+### Add the clone to Unity Hub
+
+1. Open Unity Hub.
+1. Click **Add**.
+1. Navigate to where the clone was saved.
+1. Select `Golden Path_One`.
+1. Click **Open**.
+
+The Clone should now appear in the project list of Unity Hub as `GoldenPath_One`.
+
+## Open GoldenPath_One
+
+1. Open Unity Hub.
+1. Select `GoldenPath_One` from the list of projects displayed.
 
 
 ## Introducing a Server-controlled Network Variable 
@@ -290,8 +318,6 @@ Congratulations you have learned how to use some of the basic building blocks of
 :::
 
  ## Next Steps
-
-[Return to Golden Path Introduction](goldenpath.md)
 
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
