@@ -1,6 +1,6 @@
 ---
 id: goldenpath_foundation_module
-title:  Golden Path Foundation Module
+title:  Golden Path Foundation 
 description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing MLAPI,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
@@ -23,6 +23,8 @@ Now we will create a new project in Unity.
 
 :::note
 Make note of this path. You will need it  later in the [tutorial](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
+
+You will also need it when you create a clone of the Project for future modules.
 :::
 
 <iframe src="https://www.youtube.com/embed/AOZE-b9Q8R8?playlist=AOZE-b9Q8R8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -69,9 +71,9 @@ You should  now save the golden path foundation project as you will be building 
 
 <div class="table-columns-plain">
 
-| [Golden Path 1](gp_server_controlled_network_variable.md) | | Golden Path 2|
-| -- | -- | -- |
-|   Network variables (client and server-controlled)<br/> Network transforms <br/> RPCs  | -- | -- |
+| [GoldenPath Module One](gp_server_controlled_network_variable.md)<br/> Covering|GoldenPath Module Two <br/> Covering|
+| -- | -- | 
+|   Network variables (client and server-controlled)<br/> Network transforms <br/> RPCs  | -- | 
 <br/> 
 
 </div>
