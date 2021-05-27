@@ -556,6 +556,10 @@ module.exports = {
               to: '/docs/advanced-topics/messaging-system',
               from: '/docs/advanced-topics/message-system/serialization',
             },
+            {
+              to: '/docs/develop/transport-utp/about-transport-utp',
+              from: '/docs/transport-utp/about-transport-utp',
+            },
           ]
         },
       ],
