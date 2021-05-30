@@ -17,9 +17,9 @@ To install MLAPI on Unity 2021.x, use the Unity Package Manager to add the packa
 
   ![Select Name Options](/img/install/install-name.png)
 
-1. Enter the Git URL to the MLAPI release package (below) and click **Add**. You can click the Copy option in that codeblock and paste it in the Package Manager. The Package Manage auto-detects from the repository.
+1. Enter the MLAPI release package name (below) and click **Add**. You can click the Copy option in that codeblock and paste it in the Package Manager. The Package Manage auto-detects from the repository.
 
-  ```html
+  ```
   com.unity.multiplayer.mlapi
   ```
 
@@ -47,8 +47,8 @@ To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Pa
 1. Select **Add package from git URL...**
 1. Enter the Git URL to the MLAPI release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager. The Package Manage auto-detects from the repository.
 
-  ```html
-  com.unity.multiplayer.mlapi
+  ```
+  https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
   ```
 
   :::info How to Copy
