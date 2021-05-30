@@ -42,6 +42,10 @@ You can copy the script from here and paste it into your file.
    1. Paste it into your code editor.
 :::
 
+::::tip
+Note that you will need to follow the steps for creating `HelloWorldPlayer` before the game will run after adding this `HelloWorldManager` code to your project.
+::::
+
 <details open>
 <summary>Click to show/hide the Code.</summary>
 
@@ -255,6 +259,10 @@ namespace HelloWorld
 </details>
 
 4. Select the **Player** prefab.
+1. Add the Network Object component to the Player prefab.  
+        1. Click Add Component in the Inspector Tab.  
+        2. Select `MLAPI` from the list shown.  
+        3. Select `NetworkObject` Component from the list displayed.  
 1. Add the script `HelloWorldPlayer` script as a component.
 <iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
