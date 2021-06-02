@@ -3,7 +3,11 @@ id: introduction
 title: About Unity Transport
 ---
 
-Unity Transport provides the `com.unity.transport` package, used to add multiplayer and network features to your project.
+The Unity Transport Package is Unity’s next transport-level library. Also known as UTP, this package is netcode-agnostic, meaning it is intended to work with any netcode. 
+
+The Unity Transport Package is responsible for abstracting platform-specific network socket libraries so that customized protocols for gaming can be utilized to send and receive network messages across the Wire, including having those messages be encrypted, guaranteed, and/or in-order.
+
+The Unity Transport package is known as and listed in Unity as `com.unity.transport`.
 
 :::note
 This package should not be confused with Unity MLAPI Transport. See [Custom Transports](/docs/advanced-topics/custom-transports) for more information.
