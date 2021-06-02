@@ -50,17 +50,18 @@ using MLAPI;
 NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASCII.GetBytes("room password");
 NetworkManager.Singleton.StartClient();
 ```
-The ConnectionData will then be passed to the server and it will decide if the client will be approved or not.
+
+The `ConnectionData` will then be passed to the server and it will decide if the client will be approved or not.
 
 ## Timeout
 
-The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the ConnectionData (encrypted and authenticated by the MLAPI) that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
+The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` (encrypted and authenticated by the MLAPI) that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
 
 ## Security
 
 If connection approval is enabled. Any messages sent before a connection is setup are silently ignored.
 
-### Connection data Security
+### Connection data security
 
 The connection data is not encrypted or authenticated. 
 
