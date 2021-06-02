@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Configuration.NetworkConfig  
-title: MLAPI.Configuration.NetworkConfig
-sidebar_label: NetworkConfig
+title: MLAPI.Configuration.NetworkConfig  
 ---
 
 <div class="markdown level0 summary">
@@ -187,30 +186,6 @@ client should get accepted
 |-----------------|-------------|
 | System.Byte\[\] |             |
 
-### CreatePlayerPrefab
-
-<div class="markdown level1 summary">
-
-Whether or not a player object should be created by default. This value
-can be overriden on a case by case basis with ConnectionApproval.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("Whether or not a player object should be created by default. This value can be overriden on a case by case basis with ConnectionApproval.")]
-    public bool CreatePlayerPrefab
-
-#### Field Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
 ### EnableMessageBuffering
 
 <div class="markdown level1 summary">
@@ -288,9 +263,9 @@ NetworkVariable system.
 <div class="markdown level1 summary">
 
 Enables scene management. This will allow network scene switches and
-automatic scene diff corrections upon connect. SoftSynced scene objects
-wont work with this disabled. That means that disabling SceneManagement
-also enables PrefabSync.
+automatic scene difference corrections upon connect. SoftSynced scene
+objects wont work with this disabled. That means that disabling
+SceneManagement also enables PrefabSync.
 
 </div>
 
@@ -300,7 +275,7 @@ also enables PrefabSync.
 
 #### Declaration
 
-    [Tooltip("Enables scene management. This will allow network scene switches and automatic scene diff corrections upon connect.\nSoftSynced scene objects wont work with this disabled. That means that disabling SceneManagement also enables PrefabSync.")]
+    [Tooltip("Enables scene management. This will allow network scene switches and automatic scene difference corrections upon connect.\nSoftSynced scene objects wont work with this disabled. That means that disabling SceneManagement also enables PrefabSync.")]
     public bool EnableSceneManagement
 
 #### Field Value
@@ -325,7 +300,7 @@ turned on
 
 #### Declaration
 
-    [Tooltip("Enable this to resync the NetworkTime after the initial sync")]
+    [Tooltip("Enable this to re-sync the NetworkTime after the initial sync")]
     public bool EnableTimeResync
 
 #### Field Value
@@ -340,7 +315,7 @@ turned on
 
 Whether or not to ensure that NetworkVariables can be read even if a
 client accidentally writes where its not allowed to. This costs some CPU
-and bandwdith.
+and bandwidth.
 
 </div>
 
@@ -504,30 +479,6 @@ reused.
 |---------------|-------------|
 | System.Single |             |
 
-### NetworkPrefabs
-
-<div class="markdown level1 summary">
-
-A list of spawnable prefabs
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("The prefabs that can be spawned across the network")]
-    [FormerlySerializedAs("NetworkedPrefabs")]
-    public List<NetworkPrefab> NetworkPrefabs
-
-#### Field Value
-
-| Type                                                 | Description |
-|------------------------------------------------------|-------------|
-| System.Collections.Generic.List&lt;NetworkPrefab&gt; |             |
-
 ### NetworkTickIntervalSec
 
 <div class="markdown level1 summary">
@@ -573,6 +524,29 @@ The transport hosts the sever uses
 | Type             | Description |
 |------------------|-------------|
 | NetworkTransport |             |
+
+### PlayerPrefab
+
+<div class="markdown level1 summary">
+
+The default player prefab
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    [Tooltip("When set, NetworkManager will automatically create and spawn the assigned player prefab. This can be overridden by adding it to the NetworkPrefabs list and selecting override.")]
+    public GameObject PlayerPrefab
+
+#### Field Value
+
+| Type                   | Description |
+|------------------------|-------------|
+| UnityEngine.GameObject |             |
 
 ### ProtocolVersion
 
@@ -682,7 +656,7 @@ unless you are facing hash collisions
 
 #### Declaration
 
-    [Tooltip("The maximum amount of bytes to use for RPC messages. Leave this to 2 unless you are facing hash collisions")]
+    [Tooltip("The maximum amount of bytes to use for RPC messages.")]
     public HashSize RpcHashSize
 
 #### Field Value
@@ -695,7 +669,7 @@ unless you are facing hash collisions
 
 <div class="markdown level1 summary">
 
-If time resync is turned on, this specifies the interval between syncs
+If time re-sync is turned on, this specifies the interval between syncs
 in seconds.
 
 </div>
@@ -706,7 +680,7 @@ in seconds.
 
 #### Declaration
 
-    [Tooltip("The amount of seconds between resyncs of NetworkTime, if enabled")]
+    [Tooltip("The amount of seconds between re-syncs of NetworkTime, if enabled")]
     public int TimeResyncInterval
 
 #### Field Value
@@ -714,34 +688,6 @@ in seconds.
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
-
-### UsePrefabSync
-
-<div class="markdown level1 summary">
-
-If true, all NetworkObjects need to be prefabs and all scene objects
-will be replaced on server side which causes all serialization to be
-lost. Useful for multi project setups If false, Only non scene objects
-have to be prefabs. Scene objects will be matched using their
-PrefabInstanceId which can be precomputed globally for a scene at build
-time. Useful for single projects
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    [Tooltip("If true, all NetworkObjects need to be prefabs and all scene objects will be replaced on server side which causes all serialization to be lost. Useful for multi project setups\nIf false, Only non scene objects have to be prefabs. Scene objects will be matched using their PrefabInstanceId which can be precomputed globally for a scene at build time. Useful for single projects")]
-    public bool UsePrefabSync
-
-#### Field Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
 
 ## Methods 
 
@@ -827,7 +773,7 @@ Gets a SHA256 hash of parts of the NetworkConfig instance
 
 <div class="markdown level1 summary">
 
-Returns a base64 encoded version of the config
+Returns a base64 encoded version of the configuration
 
 </div>
 

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Serialization.NetworkWriter  
-title: MLAPI.Serialization.NetworkWriter
-sidebar_label: NetworkWriter
+title: MLAPI.Serialization.NetworkWriter  
 ---
 
 <div class="markdown level0 summary">
@@ -270,7 +269,7 @@ Write bits to stream.
 
 <div class="markdown level1 summary">
 
-Write a certain amount of bits to the stream.
+Write s certain amount of bits to the stream.
 
 </div>
 

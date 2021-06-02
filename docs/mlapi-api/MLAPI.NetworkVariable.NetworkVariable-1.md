@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariable-1  
-title: MLAPI.NetworkVariable.NetworkVariable-1
-sidebar_label: NetworkVariable-1
+title: MLAPI.NetworkVariable.NetworkVariable-1  
 ---
 
 <div class="markdown level0 summary">
@@ -354,51 +353,6 @@ The settings for this var
 
 ## Properties 
 
-### LocalTick
-
-<div class="markdown level1 summary">
-
-The last time the variable was written to locally
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public ushort LocalTick { get; }
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
-
-### RemoteTick
-
-<div class="markdown level1 summary">
-
-The last time the variable was written to remotely. Uses the remote
-timescale
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public ushort RemoteTick { get; }
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
-
 ### Value
 
 <div class="markdown level1 summary">
@@ -523,7 +477,7 @@ Gets Whether or not the container is dirty
 |----------------|---------------------------------------|
 | System.Boolean | Whether or not the container is dirty |
 
-### ReadDelta(Stream, Boolean, UInt16, UInt16)
+### ReadDelta(Stream, Boolean)
 
 <div class="markdown level1 summary">
 
@@ -537,7 +491,7 @@ Reads value from the reader and applies it
 
 #### Declaration
 
-    public void ReadDelta(Stream stream, bool keepDirtyDelta, ushort localTick, ushort remoteTick)
+    public void ReadDelta(Stream stream, bool keepDirtyDelta)
 
 #### Parameters
 
@@ -545,10 +499,8 @@ Reads value from the reader and applies it
 |------------------|----------------|-----------------------------------------------------------------------------------------|
 | System.IO.Stream | stream         | The stream to read the value from                                                       |
 | System.Boolean   | keepDirtyDelta | Whether or not the container should keep the dirty delta, or mark the delta as consumed |
-| System.UInt16    | localTick      |                                                                                         |
-| System.UInt16    | remoteTick     |                                                                                         |
 
-### ReadField(Stream, UInt16, UInt16)
+### ReadField(Stream)
 
 <div class="markdown level1 summary">
 
@@ -562,15 +514,13 @@ Reads the complete state from the reader and applies it
 
 #### Declaration
 
-    public void ReadField(Stream stream, ushort localTick, ushort remoteTick)
+    public void ReadField(Stream stream)
 
 #### Parameters
 
-| Type             | Name       | Description                                                                         |
-|------------------|------------|-------------------------------------------------------------------------------------|
-| System.IO.Stream | stream     | The stream to read the state from                                                   |
-| System.UInt16    | localTick  | The local network tick at which this var was written, on the machine it was written |
-| System.UInt16    | remoteTick | The remote network tick at which this var was sent by the host                      |
+| Type             | Name   | Description                       |
+|------------------|--------|-----------------------------------|
+| System.IO.Stream | stream | The stream to read the state from |
 
 ### ResetDirty()
 

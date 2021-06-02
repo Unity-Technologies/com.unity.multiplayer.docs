@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate  
-title: MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate
-sidebar_label: OnDictionaryChangedDelegate
+title: MLAPI.NetworkVariable.Collections.NetworkDictionary-2.OnDictionaryChangedDelegate  
 ---
 
 <div class="markdown level0 summary">

@@ -23,21 +23,6 @@ const features = [
     ),
   },
   {
-    title: 'Leverage Transport Features',
-    imageUrl: 'img/land-feature2b.jpg',
-    description: (
-      <>
-        Use the <code>com.unity.transport</code> package to add multiplayer and network features to your project. Documentation
-        includes workflows for minimal and jobified client and server setups, pipeline information, events, and more.
-      </>
-    ),
-    link: (
-      <>
-      <a href="docs/transport/introduction">Learn more about Transport</a>
-      </>
-    ),
-  },
-  {
     title: 'Learn with Boss Room',
     imageUrl: 'img/land-feature3b.jpg',
     description: (
@@ -49,6 +34,51 @@ const features = [
     link: (
       <>
       <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Learn more about Boss Room</a>
+      </>
+    )
+  },
+  {
+    title: 'Leverage Bitesize Samples',
+    imageUrl: 'img/land-feature2b.jpg',
+    description: (
+      <>
+        <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize" target="_blank">Bitesize Sample</a> projects give you modular features to learn more about MLAPI and add to your multiplayer games. See what features are available including status effects, health tracking, game timers, and more.
+      </>
+    ),
+    link: (
+      <>
+      <a href="docs/learn/bitesize-introduction">Learn more about Bitesize</a>
+      </>
+    ),
+  },
+];
+
+const highlights = [
+  {
+    title: 'Have a question?',
+    imageUrl: 'img/hilight-question.jpg',
+    description: (
+      <>
+        Check the FAQ, that's frequently asked questions. If you don't find what you need, use search or contact us on <a href="https://discord.gg/buMxnnPvTb" target="_blank"><strong>Discord</strong></a>!
+      </>
+    ),
+    link: (
+      <>
+      <a href="docs/learn/faq" class="land-link">See the FAQ</a>
+      </>
+    ),
+  },
+  {
+    title: 'Unity Transport and MLAPI',
+    imageUrl: 'img/hilight-code.jpg',
+    description: (
+      <>
+        Unity Transport provides a new wrapper for Unity MLAPI! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/0.8.0/api/introduction">com.unity.transport</a>.
+      </>
+    ),
+    link: (
+      <>
+      <a href="transport/0.8.0/introduction" class="land-link">See Transport</a>
       </>
     )
   },
@@ -65,6 +95,22 @@ function Feature({imageUrl, title, description, link}) {
       )}
       <h3>{title}</h3>
       <div class="land-box"><p>{description}</p></div>
+      <p class="land-link">{link}</p>
+    </div>
+  );
+}
+
+function Highlight({imageUrl, title, description, link}) {
+  const imgUrl = useBaseUrl(imageUrl);
+  return (
+    <div className={clsx('col col--6', styles.feature)}>
+      {imgUrl && (
+        <div className="text--center land-highlight">
+          <img className="highlightImage" src={imgUrl} alt={title} />
+        </div>
+      )}
+      <h3>{title}</h3>
+      <div class="highlight-box"><p>{description}</p></div>
       <p class="land-link">{link}</p>
     </div>
   );
@@ -106,6 +152,21 @@ function Home() {
           </section>
         )}
       </main>
+
+      <main>
+        {highlights && highlights.length > 0 && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="row">
+                {highlights.map((props, idx) => (
+                  <Highlight key={idx} {...props} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </main>
+
       <div className="hero blog--primary hero-banner">
       <div className="container">
       <div className="row">

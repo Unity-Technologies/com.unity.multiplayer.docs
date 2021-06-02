@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkObject.VisibilityDelegate  
-title: MLAPI.NetworkObject.VisibilityDelegate
-sidebar_label: VisibilityDelegate
+title: MLAPI.NetworkObject.VisibilityDelegate  
 ---
 
 <div class="markdown level0 summary">

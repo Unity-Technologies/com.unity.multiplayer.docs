@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.Multiplex  
-title: MLAPI.Transports.Multiplex
-sidebar_label: Multiplex
+title: MLAPI.Transports.Multiplex  
 ---
 
 ## Namespace MLAPI.Transports.Multiplex

@@ -3,14 +3,14 @@ id: introduction
 title: API Overview
 ---
 
-The MLAPI API reference provides information for availble classes, methods, delegates, and more. All content is generated from [source code](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) using tools including [DocFX](https://dotnet.github.io/docfx/) and custom filters with [Pandoc](https://pandoc.org/) to convert to Markdown.
+The MLAPI API reference provides information for availble classes, methods, delegates, and more for the `com.unity.multiplayer.mlapi` package.
 
 :::unity Content Licenses
-All MLAPI code and documentation is covered by MIT license. See [Licenses](/community/license) for more information.
+All MLAPI code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information.
 :::
 
 :::note
-See [Document your code with XML comments](https://docs.microsoft.com/en-us/dotnet/csharp/codedoc) for guidance and examples. DocFX generates documentation using these comments.
+All content is generated from [source code](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) using tools including [DocFX](https://dotnet.github.io/docfx/) and custom filters with [Pandoc](https://pandoc.org/) to convert to Markdown. See [Document your code with XML comments](https://docs.microsoft.com/en-us/dotnet/csharp/codedoc) for guidance and examples. DocFX generates documentation using these comments. 
 :::
 
 To document APIs, developers should add comments in code. For example:

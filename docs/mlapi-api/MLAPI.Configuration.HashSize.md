@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Configuration.HashSize  
-title: MLAPI.Configuration.HashSize
-sidebar_label: HashSize
+title: MLAPI.Configuration.HashSize  
 ---
 
 <div class="markdown level0 summary">
@@ -26,18 +25,7 @@ encoding It just says how many bytes the maximum will be
 
 ## Fields
 
-Name
-
-Description
-
-VarIntEightBytes
-
-Eight byte hash
-
-VarIntFourBytes
-
-Four byte hash
-
-VarIntTwoBytes
-
-Two byte hash
+| Name             | Description     |
+|------------------|-----------------|
+| VarIntEightBytes | Eight byte hash |
+| VarIntFourBytes  | Four byte hash  |

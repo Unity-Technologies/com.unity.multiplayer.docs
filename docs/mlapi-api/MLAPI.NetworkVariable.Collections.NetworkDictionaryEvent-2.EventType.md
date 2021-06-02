@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType  
-title: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType
-sidebar_label: NetworkDictionaryEvent-2.EventType
+title: MLAPI.NetworkVariable.Collections.NetworkDictionaryEvent-2.EventType  
 ---
 
 <div class="markdown level0 summary">
@@ -25,26 +24,10 @@ event.
 
 ## Fields
 
-Name
-
-Description
-
-Add
-
-Add
-
-Clear
-
-Clear
-
-Remove
-
-Remove
-
-RemovePair
-
-Remove pair
-
-Value
-
-Value changed
+| Name       | Description   |
+|------------|---------------|
+| Add        | Add           |
+| Clear      | Clear         |
+| Remove     | Remove        |
+| RemovePair | Remove pair   |
+| Value      | Value changed |

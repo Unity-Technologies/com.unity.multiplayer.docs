@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.TickType  
-title: MLAPI.Profiling.TickType
-sidebar_label: TickType
+title: MLAPI.Profiling.TickType  
 ---
 
 <div class="markdown level0 summary">
@@ -24,18 +23,8 @@ The type of Tick
 
 ## Fields
 
-Name
-
-Description
-
-Event
-
-Event tick. During EventTick NetworkVars are flushed etc
-
-Receive
-
-Receive tick. During ReceiveTick data is received from the transport
-
-Send
-
-Send tick. During Send data is sent from Transport queue
+| Name    | Description                                                          |
+|---------|----------------------------------------------------------------------|
+| Event   | Event tick. During EventTick NetworkVars are flushed etc             |
+| Receive | Receive tick. During ReceiveTick data is received from the transport |
+| Send    | Send tick. During Send data is sent from Transport queue             |

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType  
-title: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType
-sidebar_label: QueueFrameType
+title: MLAPI.Messaging.RpcQueueHistoryFrame.QueueFrameType  
 ---
 
 <div class="markdown level0 summary">
@@ -22,10 +21,7 @@ sidebar_label: QueueFrameType
 
 ## Fields
 
-Name
-
-Description
-
-Inbound
-
-Outbound
+| Name     | Description |
+|----------|-------------|
+| Inbound  |             |
+| Outbound |             |

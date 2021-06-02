@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkManager.ConnectionApprovedDelegate  
 title: MLAPI.NetworkManager.ConnectionApprovedDelegate
-sidebar_label: ConnectionApprovedDelegate
 ---
 
 <div class="markdown level0 summary">

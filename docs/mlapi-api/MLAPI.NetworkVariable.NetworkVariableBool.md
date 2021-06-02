@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableBool  
-title: MLAPI.NetworkVariable.NetworkVariableBool
-sidebar_label: NetworkVariableBool
+title: MLAPI.NetworkVariable.NetworkVariableBool  
 ---
 
 <div class="markdown level0 summary">
@@ -62,18 +61,6 @@ NetworkVariable&lt;Boolean&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;Boolean&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;Boolean&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;Boolean&gt;.OnValueChanged"
 
 </div>
@@ -122,8 +109,7 @@ NetworkVariable&lt;Boolean&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;Boolean&gt;.ReadDelta(Stream, Boolean, UInt16,
-UInt16)"
+NetworkVariable&lt;Boolean&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -135,7 +121,7 @@ NetworkVariable&lt;Boolean&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;Boolean&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;Boolean&gt;.ReadField(Stream)"
 
 </div>
 
