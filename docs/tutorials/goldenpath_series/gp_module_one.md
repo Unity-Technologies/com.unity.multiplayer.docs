@@ -18,6 +18,10 @@ You should have completed the foundation module [here](goldenpath_foundation_mod
 
 ## Create a 'GoldenPath_One' project
 
+:::important
+the clone doe not support rollback so it will only work on the unity version that it was originaly created for. appempting to open the clone on a newer or older version of Unity may cause unexpected funcationality
+:::
+
 We  create a clone of the Golden Path foundation project that you created, if you have not yet created a GoldenPath project then you should follow the steps [here](goldenpath_foundation_module.md) to create one.
 
 :::tip
@@ -27,12 +31,19 @@ We  create a clone of the Golden Path foundation project that you created, if yo
 ### Create a clone of GoldenPath
 
 1. Navigate to where you Golden Path project is stored. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
-1. Right Click the `Goldenpath` folder.
+1. Create a new folder.
+1. Rename the new folder  `Golden Path_One`.
+1. Open the `Goldenpath` folder.
 1. Select **Copy**.
 1. Select the folder containg your Golden Path project.
 1. Select **Paste**.
-    A copy of the GoldenPath project should be created. You may be asked to confirm that you want to create a copy and not overwrite you original folder, confirm that you want to create a copy.
-1. Rename the `GoldenPath_Copy` to `Golden Path_One`.
+
+:::tip
+I moved my new folder to keep my file structure clean its not a required step, but it does look nice.
+:::
+
+<iframe src="https://www.youtube.com/embed/xbJiYNx1uNg?playlist=xbJiYNx1uNg&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ### Add the clone to Unity Hub
 
@@ -49,6 +60,9 @@ The Clone should now appear in the project list of Unity Hub as `GoldenPath_One`
 1. Open Unity Hub.
 1. Select `GoldenPath_One` from the list of projects displayed.
 
+
+<iframe src="https://www.youtube.com/embed/kl5gzvGiXHk?playlist=kl5gzvGiXHk&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ## Introducing a Server-controlled Network Variable 
 
