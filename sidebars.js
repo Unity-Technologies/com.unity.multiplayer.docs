@@ -61,7 +61,7 @@ module.exports = {
         {
           "collapsed": true,
           "type": "category",
-          "label": "GoldenPath",
+          "label": "Golden Path",
           "items": [
             {
               "type": "doc",
