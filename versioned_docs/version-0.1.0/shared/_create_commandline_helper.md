@@ -84,7 +84,7 @@ public class NetworkCommandLine : MonoBehaviour
 
 </details>
 
-10. Select  **File > Build Settings > Player Settings...**
+10. Back in the Editor, select **File > Build Settings > Player Settings...**
 1. In the **Resolution and Presentation** tab change `Fullscreen Window` mode into `Windowed` mode.    
 1. Save your scene.
 
@@ -95,4 +95,3 @@ public class NetworkCommandLine : MonoBehaviour
 
 <iframe src="https://www.youtube.com/embed/2swybHUigM8?playlist=2swybHUigM8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
