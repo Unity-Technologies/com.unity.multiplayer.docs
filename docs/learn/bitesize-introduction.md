@@ -12,9 +12,25 @@ The Bitesize Samples repository provides a series of sample code as modules to u
 
 You need Unity and Unity MLAPI installed to work with these samples. See [Install MLAPI](../migration/installation.md) for details.
 
-## Get the packages
+## Get the samples
 
-You can download the projects from the [Bitesize Samples GitHub](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repo, adding them to your project and code.
+### Get the project files
+
+Download the project files from the [Bitesize Samples Repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize)
+
+![how to download](/img/bitesize/bitesize-download.png)
+
+After download, unzip the archive file. You are now ready to add the project to Unity Hub.
+
+### Add a sample to the Unity Hub
+
+1. Open Unity Hub.
+1. Click **Add**.
+1. Navigate to the unzipped folder. select the `Basic/2dSpaceShooter` or `Basic/Invaders` folder to add the respective project.
+
+:::important Compatibility
+The Bitesize Samples have been built for a specific Unity version. You can see the version after adding a sample to the Unity Hub or in the description of the [repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize). We recommend using the same Unity version to avoid potential issues.
+:::
 
 ## Troubleshooting
 

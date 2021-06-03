@@ -21,32 +21,18 @@ title: MLAPI.Transports.NetworkChannel
 
 ## Fields
 
-Name
-
-Description
-
-AnimationUpdate
-
-ChannelUnused
-
-DefaultMessage
-
-Internal
-
-NavAgentCorrection
-
-NavAgentState
-
-NetworkVariable
-
-PositionUpdate
-
-ReliableRpc
-
-SnapshotExchange
-
-SyncChannel
-
-TimeSync
-
-UnreliableRpc
+| Name               | Description |
+|--------------------|-------------|
+| AnimationUpdate    |             |
+| ChannelUnused      |             |
+| DefaultMessage     |             |
+| Internal           |             |
+| NavAgentCorrection |             |
+| NavAgentState      |             |
+| NetworkVariable    |             |
+| PositionUpdate     |             |
+| ReliableRpc        |             |
+| SnapshotExchange   |             |
+| SyncChannel        |             |
+| TimeSync           |             |
+| UnreliableRpc      |             |
