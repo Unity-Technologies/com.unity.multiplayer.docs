@@ -23,12 +23,11 @@ These tutorials requires an MLAPI-supported version of Unity (2019.4+).
 <div class="table-columns-plain">
 
 | [GoldenPath Foundation Module<br/> Covering](../../tutorials/goldenpath_series/goldenpath_foundation_module.md) |[GoldenPath Module One<br/> Covering](gp_module_one.md)|
-| -- | -- | -- |
+| -- | -- |
 | Creating a new project<br/>  Installing MLAPI<br/>   Creating and testing the basic networking building blocks<br/>  Creating and testing a commandline helper. |   Network variables (client and server-controlled)<br/> Network transforms <br/> RPCs  |
 <br/> 
 
 </div>
-
 
 
 

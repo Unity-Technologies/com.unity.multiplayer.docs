@@ -1,12 +1,68 @@
+---
+id: goldenpath_one
+title: Golden Path Module One
+description: First of the Golden Path  modules covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
+---
 
-
-
+This is the first of the golden path modules,  you should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial.
 
 We will be covering the following:
 
-Network variables (client and server-controlled)
-Network transforms
-RPCs
+- Network variables (client and server-controlled)
+- Network transforms
+- RPCs
+
+## Requirements
+
+You should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial..
+
+## Create a 'GoldenPath_One' project
+
+:::important
+the clone doe not support rollback so it will only work on the unity version that it was originaly created for. appempting to open the clone on a newer or older version of Unity may cause unexpected funcationality
+:::
+
+We  create a clone of the Golden Path foundation project that you created, if you have not yet created a GoldenPath project then you should follow the steps [here](goldenpath_foundation_module.md) to create one.
+
+:::tip
+ Working from a clone of the initial project will help you learn about new features and concepts without having to repeat  previous work.
+:::
+ 
+### Create a clone of GoldenPath
+
+1. Navigate to where you Golden Path project is stored. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
+1. Create a new folder.
+1. Rename the new folder  `Golden Path_One`.
+1. Open the `Goldenpath` folder.
+1. Select **Copy**.
+1. Select the folder containg your Golden Path project.
+1. Select **Paste**.
+
+:::tip
+I moved my new folder to keep my file structure clean its not a required step, but it does look nice.
+:::
+
+<iframe src="https://www.youtube.com/embed/xbJiYNx1uNg?playlist=xbJiYNx1uNg&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+### Add the clone to Unity Hub
+
+1. Open Unity Hub.
+1. Click **Add**.
+1. Navigate to where the clone was saved.
+1. Select `Golden Path_One`.
+1. Click **Open**.
+
+The Clone should now appear in the project list of Unity Hub as `GoldenPath_One`.
+
+## Open GoldenPath_One
+
+1. Open Unity Hub.
+1. Select `GoldenPath_One` from the list of projects displayed.
+
+
+<iframe src="https://www.youtube.com/embed/kl5gzvGiXHk?playlist=kl5gzvGiXHk&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ## Introducing a Server-controlled Network Variable 
 
@@ -273,4 +329,18 @@ Client Received the RPC #3
 
 :::note Congrats!
 Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation. 
+:::
+
+ ## Next Steps
+
+
+For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
+
+- [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
+- [Network transforms](../components/networktransform.md)
+- [RPCs](../advanced-topics/message-system/about-rpc.md)
+
+
+:::contribution Special Thanks
+This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
 :::
