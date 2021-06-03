@@ -23,26 +23,10 @@ Delivery methods
 
 ## Fields
 
-Name
-
-Description
-
-Reliable
-
-Reliable message
-
-ReliableFragmentedSequenced
-
-A reliable message with guaranteed order with fragmentation support
-
-ReliableSequenced
-
-Reliable message where messages are guaranteed to be in the right order
-
-Unreliable
-
-Unreliable message
-
-UnreliableSequenced
-
-Unreliable with sequencing
+| Name                        | Description                                                             |
+|-----------------------------|-------------------------------------------------------------------------|
+| Reliable                    | Reliable message                                                        |
+| ReliableFragmentedSequenced | A reliable message with guaranteed order with fragmentation support     |
+| ReliableSequenced           | Reliable message where messages are guaranteed to be in the right order |
+| Unreliable                  | Unreliable message                                                      |
+| UnreliableSequenced         | Unreliable with sequencing                                              |

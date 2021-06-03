@@ -50,4 +50,4 @@ For full building content, see [Building Locally](https://github.com/Unity-Techn
 
 ## Connect with Unity 
 
-Connect with the Unity Multitplayer team and community on the [MLAPI by Unity](http://discord.mlapi.network/) Discord using channel #documentation. You can also raise threads on the [Unity Multiplayer Forum](https://forum.unity.com/forums/multiplayer.26/)
+Connect with the Unity Multiplayer team and community on the [MLAPI by Unity](http://discord.mlapi.network/) Discord using channel #documentation. You can also raise threads on the [Unity Multiplayer Forum](https://forum.unity.com/forums/multiplayer.26/)

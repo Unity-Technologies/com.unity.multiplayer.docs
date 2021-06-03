@@ -21,10 +21,7 @@ title: MLAPI.Transports.UNET.UNetTransport.SendMode
 
 ## Fields
 
-Name
-
-Description
-
-Immediately
-
-Queued
+| Name        | Description |
+|-------------|-------------|
+| Immediately |             |
+| Queued      |             |

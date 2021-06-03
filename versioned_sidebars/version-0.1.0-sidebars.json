@@ -166,10 +166,6 @@
             "id": "version-0.1.0/advanced-topics/messaging-system"
           },
           {
-            "type": "doc",
-            "id": "version-0.1.0/advanced-topics/ways-synchronize"
-          },
-          {
             "collapsed": true,
             "type": "category",
             "label": "RPC Remote Procedure Call",
@@ -196,13 +192,13 @@
               },
               {
                 "type": "doc",
-                "id": "version-0.1.0/advanced-topics/message-system/serialization"
-              },
-              {
-                "type": "doc",
                 "id": "version-0.1.0/advanced-topics/message-system/rpc-compatibility"
               }
             ]
+          },
+          {
+            "type": "doc",
+            "id": "version-0.1.0/advanced-topics/ways-synchronize"
           },
           {
             "collapsed": true,
@@ -339,11 +335,11 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/multiplayergamearhitectureintroduction"
+              "id": "version-0.1.0/learn/multiplayer-game-arhitecture"
             },
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/listenserverhostarchitecture"
+              "id": "version-0.1.0/learn/listen-server-host-architecture"
             }
           ]
         },
