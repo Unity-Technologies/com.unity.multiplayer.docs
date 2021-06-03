@@ -1,7 +1,7 @@
 ---
 id: helloworldintro
 title: Introducing Hello World
-description: Introduction the the Golden Path series, explaining the undeerliying aim of the series. 
+description: Learn more about the Hello World tutorial and get started learning MLAPI.
 ---
 
 A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
