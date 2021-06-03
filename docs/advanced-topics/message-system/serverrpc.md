@@ -5,12 +5,17 @@ title: ServerRpc
 
 A `ServerRpc` can be invoked by a client to be executed on the server.
 
+## Declare a ServerRpc
+
 Developers can declare a `ServerRpc` by marking a method with `[ServerRpc]` attribute and making sure to have `ServerRpc` suffix in the method name.
 
 ```csharp
 [ServerRpc]
 void PingServerRpc(int somenumber, string sometext) { /* ... */ }
 ```
+
+## Invoke a ServerRpc
+
 Developers can invoke a `ServerRpc` by making a direct function call with parameters:
 
 ```csharp
@@ -43,3 +48,8 @@ PingRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
 
 PingServerRpc(somenumber, sometext); // This is clearly a ServerRpc call
 ```
+
+## See also
+
+* [ClientRpc](clientrpc.md)
+* [RPC Params](rpc-params.md)

@@ -21,31 +21,6 @@ Interface for network value containers
 
     public interface INetworkVariable
 
-## Properties 
-
-### RemoteTick
-
-<div class="markdown level1 summary">
-
-Accessor for the RemoteTick stored in the networkVariable, list, set or
-dictionary
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    ushort RemoteTick { get; }
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
-
 ## Methods 
 
 ### CanClientRead(UInt64)
@@ -148,7 +123,7 @@ Gets Whether or not the container is dirty
 |----------------|---------------------------------------|
 | System.Boolean | Whether or not the container is dirty |
 
-### ReadDelta(Stream, Boolean, UInt16, UInt16)
+### ReadDelta(Stream, Boolean)
 
 <div class="markdown level1 summary">
 
@@ -162,18 +137,16 @@ Reads delta from the reader and applies them to the internal value
 
 #### Declaration
 
-    void ReadDelta(Stream stream, bool keepDirtyDelta, ushort localTick, ushort remoteTick)
+    void ReadDelta(Stream stream, bool keepDirtyDelta)
 
 #### Parameters
 
-| Type             | Name           | Description                                                                         |
-|------------------|----------------|-------------------------------------------------------------------------------------|
-| System.IO.Stream | stream         | The stream to read the delta from                                                   |
-| System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed                        |
-| System.UInt16    | localTick      | The local network tick at which this var was written, on the machine it was written |
-| System.UInt16    | remoteTick     | The remote network tick at which this var was sent by the host                      |
+| Type             | Name           | Description                                                  |
+|------------------|----------------|--------------------------------------------------------------|
+| System.IO.Stream | stream         | The stream to read the delta from                            |
+| System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed |
 
-### ReadField(Stream, UInt16, UInt16)
+### ReadField(Stream)
 
 <div class="markdown level1 summary">
 
@@ -187,15 +160,13 @@ Reads the complete state from the reader and applies it
 
 #### Declaration
 
-    void ReadField(Stream stream, ushort localTick, ushort remoteTick)
+    void ReadField(Stream stream)
 
 #### Parameters
 
-| Type             | Name       | Description                                                                         |
-|------------------|------------|-------------------------------------------------------------------------------------|
-| System.IO.Stream | stream     | The stream to read the state from                                                   |
-| System.UInt16    | localTick  | The local network tick at which this var was written, on the machine it was written |
-| System.UInt16    | remoteTick | The remote network tick at which this var was sent by the host                      |
+| Type             | Name   | Description                       |
+|------------------|--------|-----------------------------------|
+| System.IO.Stream | stream | The stream to read the state from |
 
 ### ResetDirty()
 
