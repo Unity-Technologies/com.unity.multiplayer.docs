@@ -132,7 +132,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
             if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
         }
 
-        static void StatusLabels()
+static void StatusLabels()
         {
             var mode = NetworkManager.Singleton.IsHost ?
                 "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
