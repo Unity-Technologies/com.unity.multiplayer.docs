@@ -61,18 +61,6 @@ NetworkVariable&lt;Double&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;Double&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;Double&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;Double&gt;.OnValueChanged"
 
 </div>
@@ -121,8 +109,7 @@ NetworkVariable&lt;Double&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;Double&gt;.ReadDelta(Stream, Boolean, UInt16,
-UInt16)"
+NetworkVariable&lt;Double&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -134,7 +121,7 @@ NetworkVariable&lt;Double&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;Double&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;Double&gt;.ReadField(Stream)"
 
 </div>
 

@@ -73,12 +73,12 @@ const highlights = [
     imageUrl: 'img/hilight-code.jpg',
     description: (
       <>
-        Unity Transport provides a new wrapper for Unity MLAPI! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/api/introduction">com.unity.transport</a>.
+        Unity Transport provides a new wrapper for Unity MLAPI! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/0.8.0/api/introduction">com.unity.transport</a>.
       </>
     ),
     link: (
       <>
-      <a href="transport/introduction" class="land-link">See Transport</a>
+      <a href="transport/0.8.0/introduction" class="land-link">See Transport</a>
       </>
     )
   },

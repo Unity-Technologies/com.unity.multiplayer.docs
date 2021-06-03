@@ -1,6 +1,7 @@
 ---
 id: install
 title: Install Transport
+description: Install Unity Transport, com.unity.transport package, using the Package Manager.
 ---
 
 Follow these instructions to install Com.Unity.Transport.
@@ -21,6 +22,8 @@ You need Unity Editor version 2020.1.2f1 or later.
    - Add package from disk...
    - Add package from tarball...
    - Add package from git URL...
+
+  ![Select Git URL Option](/img/install/install-git.png)
 
 1. Select **Add package from git URL...**
 1. Enter the Git URL to the release package. For the latest version use the following. It loads as Unity Transport.
