@@ -29,10 +29,6 @@
   --doc-sidebar-width: 290px !important;
 }
 
-.blogPostTitle_src-theme-BlogPostItem- {
-  font-size: 2rem !important;
-}
-
 .menu__link {
   font-size: 87%;
 }
@@ -1255,4 +1251,18 @@ summary {
   font-weight: bold;
   color:rgb(38, 127, 153);
   cursor: pointer;
+}
+
+//question and answer
+#q-n-a {
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+    border-bottom: 1pt solid #646464;
+  }
+  h5 {
+    font-size: 1rem;
+  }
 }
