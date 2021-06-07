@@ -62,7 +62,7 @@ Players will always be able to connect to a dedicated server which has ports alr
 
 The relay server approach uses this to send data between two players. In a listen server scenario, the host and all clients would connect to the same listen server. The clients would then send packets to each other by sending them to the relay server and telling it to redirect it to the right client.
 
-The advantages of doing this compared to a direct connection is that connecting to a relay server should always for any client another advantage is that the relay server can know when the host client disconnects and inform other clients about that or start a host migration process. If clients are directly to the host they won't be able if it is their internet or the hosts internet which caused the disconnect. The disavantages are that you'll have to pay for your relay server and the round trip times for messages could be higher because messages have to go over the relay instead of to the other client directly.
+The advantages of doing this compared to a direct connection is that connecting to a relay server should always work for any client another advantage is that the relay server can know when the host client disconnects and inform other clients about that or start a host migration process. If clients are directly to the host they won't be able if it is their internet or the hosts internet which caused the disconnect. The disavantages are that you'll have to pay for your relay server and the round trip times for messages could be higher because messages have to go over the relay instead of to the other client directly.
 
 ### Option C: NAT Punchthrough
 
