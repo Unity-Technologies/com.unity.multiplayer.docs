@@ -2,6 +2,7 @@
 id: goldenpath
 title:  Introducing The Golden Path Series
 description: Introduction the the Golden Path series, explaining the undeerliying aim of the series. 
+
 ---
 
 In the Golden path series of tutorials we will build on the work we have already done in Hello World. We have made the series modular so that you can work on the areas that interest you. Where possible we have minimised to steps that need to be repeated.

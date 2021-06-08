@@ -1,6 +1,6 @@
 ---
 id: mlapi_starting_out
-title:  Introduction to learning with MLAPI
+title:  Learning with MLAPI Introduction
 description: Introduction to the Hello world and Golden Path series, explaining the underliying aim of the series 
 ---
 
