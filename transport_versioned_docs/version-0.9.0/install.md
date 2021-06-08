@@ -19,11 +19,16 @@ You need Unity Editor version 2020.1.2f1 or later.
 
   ![Select Git URL Option](/img/install/install-git.png)
 
-1. Enter the Git URL to the release package. It loads as Unity Transport.
+1. Select **Add package from git URL...**
+1. Enter the Git URL to the release package. Use the following to load Unity Transport v0.9.0-preview:
 
+  ```html
+  com.unity.transport@0.9.0-preview.1
   ```
-  com.unity.transport
-  ```
+
+  :::unity
+  The next v0.9.0 preview version will include UTP with Relay Protocol support.
+  :::
 
 :::note
 If you encounter errors, [report an issue](https://unity3d.com/unity/qa/bug-reporting) with the Unity Bug Reporter or on the forums.

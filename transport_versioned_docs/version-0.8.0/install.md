@@ -15,10 +15,11 @@ Follow these instructions to install the Unity Transport Package, com.unity.tran
 
   ![Select Git URL Option](/img/install/install-git.png)
 
-1. Enter the Git URL to the release package. It loads as Unity Transport.
+1. Select **Add package from git URL...**
+1. Enter the Git URL to the release package. Use the following to load Unity Transport v0.8.0-preview:
 
-  ```
-  com.unity.transport
+  ```html
+  com.unity.transport@0.8.0-preview.8
   ```
 
 :::note
