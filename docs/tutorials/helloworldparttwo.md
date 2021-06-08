@@ -18,7 +18,7 @@ In this guide we will build on the work we have already done in Hello World and 
 This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
 :::important
-As this tutorial builds directly on the work that you completed in the [Your First Networking Game "Hello World"](helloworldintro.md) guide you **must** complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
+you **must** complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
 :::
 
 ## Adding Scripts to Hello World
