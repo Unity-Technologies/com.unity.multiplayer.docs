@@ -1,4 +1,3 @@
-
 1. Open the Unity Hub.
 1. Click New. 
 1. Select type ‘3D’.
