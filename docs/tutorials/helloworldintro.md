@@ -12,15 +12,6 @@ While we are not going to output the message "Hello World" we will be taking you
 Veteran software developers know the "Hello World" program as the first step in learning to code. The program, which normaly outputs some variant of “Hello, World!” on a device’s display, can be created in most languages, making it some of the most basic syntax involved in the coding process. In fact, a recent project at the Association for Computing Machinery (ACM) at Louisiana Tech found opens in new windowthat there are at least 204 versions of the program.
 :::
 
-{{@include: productname}}
-{@include: productname}
-
-{BossRoom}
-
-{@include: shared/test.md}
-
-{@include: ../shared/test.md}
-
 ## Requirements
 
 These tutorials require an MLAPI-supported version of Unity (2019.4+).
