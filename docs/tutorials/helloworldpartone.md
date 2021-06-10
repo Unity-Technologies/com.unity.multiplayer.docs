@@ -16,9 +16,10 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
 ## Create a new project in Unity
 
-import CreatePro from '../shared/_create_new_project.md';
+<!-- import CreatePro from '../shared/_create_new_project.md'; 
+<CreatePro/>-->
 
-<CreatePro/>
+{@include: ../shared/_create_new_project.md}
 
 <iframe src="https://www.youtube.com/embed/NsfwlWaZ0ng?playlist=NsfwlWaZ0ng&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
