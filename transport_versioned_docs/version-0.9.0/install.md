@@ -23,7 +23,7 @@ You need Unity Editor version 2020.1.2f1 or later.
 1. Enter the Git URL to the release package. Use the following to load Unity Transport v0.9.0-preview:
 
   ```html
-  com.unity.transport@0.9.0-preview.1
+  com.unity.transport@0.9.0-preview.2
   ```
 
   :::unity
