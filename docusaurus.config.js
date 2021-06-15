@@ -488,22 +488,22 @@ module.exports = {
           }) {
             return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
           },includeCurrentVersion: true,
-            lastVersion: '0.8.0',
+            lastVersion: '0.9.0',
             versions: {
               //current: {
               //  label: 'Next',
               //  path: 'next',
               //},
-              /*'0.9.0': {
-               label: 'v. 0.9.0preview',
+              '0.9.0': {
+               label: 'v. 0.9.0-preview',
                 path: '0.9.0',
-              },*/
+              },
               '0.8.0': {
-                label: 'v. 0.8.0preview',
+                label: 'v. 0.8.0-preview',
                  path: '0.8.0',
                },
             },
-          //onlyIncludeVersions: ["0.8.0", "0.9.0"],
+          onlyIncludeVersions: ["0.8.0", "0.9.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
