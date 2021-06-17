@@ -41,8 +41,6 @@ Data sent and received by the `NetworkDriver`:
 * ThreadIndex - If collections enabled, indicates the job's index to calculate time in the queue and when it will start
 * PendingBeginSend - If collections enabled, indicates the location in the collection queue for connections and data sending 
 
-<!-- potential example code could be gleaned from https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/develop/com.unity.multiplayer.transport.utp/Runtime/UTPTransport.cs but it is still in development-->
-
 ## ProtocolInterface
 
 By default, UTP is used as the protocol. You can send a custom protocol interface, for example Unity Relay. The wrapper will implement the interface with data for Relay, creating a strut with function pointers containing code for the project.
@@ -69,3 +67,8 @@ All messages have a standard a header and a message-specific message body and in
 
 <!-- info on Relay Message https://github.com/Unity-Technologies/mp-relay/blob/main/pkg/protocol/README.md and general closed beta doc https://docs.google.com/document/d/13VKxagyKsImbMX7gJGMvGKCImBFoHyIo6Av6df3cxfc -->
 <!-- need to link out to Relay content here -->
+
+## Example Wrapper
+<!-- potential example code could be gleaned from https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/develop/com.unity.multiplayer.transport.utp/Runtime/UTPTransport.cs but it is still in development-->
+
+[MLAPI UTP wrapper](/docs/develop/transport-api/introduction) is an in-progress example of a UTP wrapper.
