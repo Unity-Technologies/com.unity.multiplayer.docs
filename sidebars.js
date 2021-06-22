@@ -161,6 +161,10 @@ module.exports = {
         "items": [
           {
             "type": "doc",
+            "id": "advanced-topics/message-system/about-rpc"
+          },
+          {
+            "type": "doc",
             "id": "advanced-topics/message-system/clientrpc"
           },
           {
