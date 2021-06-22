@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Exceptions.VisibilityChangeException  
+id: MLAPI.Exceptions.VisibilityChangeException
 title: MLAPI.Exceptions.VisibilityChangeException
 ---
 

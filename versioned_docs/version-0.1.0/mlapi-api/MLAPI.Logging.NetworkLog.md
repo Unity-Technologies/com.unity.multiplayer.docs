@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Logging.NetworkLog  
+id: MLAPI.Logging.NetworkLog
 title: MLAPI.Logging.NetworkLog
 ---
 

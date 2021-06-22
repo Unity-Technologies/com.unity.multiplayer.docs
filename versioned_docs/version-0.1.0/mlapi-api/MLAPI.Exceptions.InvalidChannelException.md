@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Exceptions.InvalidChannelException  
+id: MLAPI.Exceptions.InvalidChannelException
 title: MLAPI.Exceptions.InvalidChannelException
 ---
 

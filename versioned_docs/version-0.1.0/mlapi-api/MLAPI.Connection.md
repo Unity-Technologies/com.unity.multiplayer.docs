@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Connection  
+id: MLAPI.Connection
 title: MLAPI.Connection
 ---
 

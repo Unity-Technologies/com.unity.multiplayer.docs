@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Collections  
+id: MLAPI.Collections
 title: MLAPI.Collections
 ---
 

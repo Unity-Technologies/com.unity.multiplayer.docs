@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Configuration.NetworkConfig  
+id: MLAPI.Configuration.NetworkConfig
 title: MLAPI.Configuration.NetworkConfig
 ---
 

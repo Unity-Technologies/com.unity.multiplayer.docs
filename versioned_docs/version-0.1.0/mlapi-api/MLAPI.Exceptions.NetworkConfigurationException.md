@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Exceptions.NetworkConfigurationException  
+id: MLAPI.Exceptions.NetworkConfigurationException
 title: MLAPI.Exceptions.NetworkConfigurationException
 ---
 

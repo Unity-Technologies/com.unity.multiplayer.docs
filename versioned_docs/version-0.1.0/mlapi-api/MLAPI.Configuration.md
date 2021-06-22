@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Configuration  
+id: MLAPI.Configuration
 title: MLAPI.Configuration
 ---
 

@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Configuration.HashSize  
+id: MLAPI.Configuration.HashSize
 title: MLAPI.Configuration.HashSize
 ---
 

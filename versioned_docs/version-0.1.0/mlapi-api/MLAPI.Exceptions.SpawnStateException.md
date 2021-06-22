@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Exceptions.SpawnStateException  
+id: MLAPI.Exceptions.SpawnStateException
 title: MLAPI.Exceptions.SpawnStateException
 ---
 

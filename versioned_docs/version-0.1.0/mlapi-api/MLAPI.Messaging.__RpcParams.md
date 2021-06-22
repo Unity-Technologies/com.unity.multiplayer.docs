@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Messaging.RpcParams  
+id: MLAPI.Messaging.RpcParams
 title: MLAPI.Messaging.RpcParams
 ---
 

@@ -130,6 +130,7 @@ We replaced the old `INetworkSerializable` interface with a new `INetworkSeriali
 
 The page also includes information on nested serial types.
 
+
 ### SyncVars
 
 SyncVars have been removed in Unity MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
