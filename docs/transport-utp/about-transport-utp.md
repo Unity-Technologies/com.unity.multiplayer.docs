@@ -1,16 +1,14 @@
 ---
 id: about-transport-utp
-title: About the Transport UTP Wrapper
-description: Unity Transport provides a UTP wrapper for the MLAPI NetworkTransport interface.
+title: MLAPI Transport Wrapper
+description: MLAPI provides a UTP wrapper for Unity Transport. To implement, install the package to access and use the wrapper.
 ---
 
-Unity Transport provides a wrapper of the MLAPI NetworkTransport interface in the [`com.unity.multiplayer.transport.utp`](../transport-api/introduction.md) package.
+The Unity Transport Package `com.unity.transport` is Unity’s next transport-level library that is netcode-agnostic and also known as UTP. It is responsible for abstracting platform-specific network socket libraries so that customized protocols for gaming can be utilized to send and receive network messages across the Wire, including having those messages be encrypted, guaranteed, and/or in-order.
 
-The MLAPI.Transports.NetworkTransport abstract class interface can be implemented by any networking transport. It is the skeleton needed by transport library authors to code for and to implement in order to make their transport libraries compatible with what we’ve called MLAPI’s Transport Interface Contract. Technically, this is an implementation of MLAPI’s NetworkTransport’s interface. Essentially, transport library developers derive a class of the abstract class defined by `MLAPI.Transports.NetworkTransport` and implement it for usage.
-
-Additional information will be provided as we continue development.
+Unity Transport provides a wrapper of the MLAPI `NetworkTransport` interface in the [`com.unity.multiplayer.transport.utp`](../transport-api/introduction.md) package. The wrapper contains a [`NetworkDriver`](/transport/api/Unity.Networking.Transport.NetworkDriver.md) provided `by com.unity.transport`. When using an implementation of the wrapper, you can select between the available protocols: UTP protocol or a Relay protocol.
 
 See the following information:
 
-* [Install](install.md)
-* [`com.unity.multiplayer.transport.utp`](../transport-api/introduction.md) API
+* [Install the package](install.md)
+* [`com.unity.multiplayer.transport.utp`](../transport-api/introduction.md) wrapper API reference

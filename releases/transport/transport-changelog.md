@@ -5,14 +5,15 @@ id: transport-changelog
 
 The [Unity Transport](/transport/introduction) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
-<!--## [0.9.0] - 2021-05-10
+## [0.9.0] - 2021-05-10
 
 ### New features
+* Added protocol support for `NetworkDriver` and wrappers.
 * Added support for long serialization and delta compression.
 * Upgraded collections to 1.0.0.
 
 ### Changes
-* Minimum required Unity version has changed to 2020.3.0f1. -->
+* Minimum required Unity version has changed to 2020.3.0f1.
 
 ## [0.8.0] - 2021-03-23
 
