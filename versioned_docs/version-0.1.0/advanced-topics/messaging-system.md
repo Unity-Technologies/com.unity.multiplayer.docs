@@ -5,7 +5,7 @@ description: An introduction to the messaging system in Unity MLAPI, including R
 ---
 
 
-The MLAPI has two parts to its messaging system: [RPC messages](/about-rpc.md) and [Custom Messages](/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
+The MLAPI has two parts to its messaging system: [RPC messages](message-system/about-rpc.md) and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
 
 ## RPC Messages
 
@@ -46,4 +46,4 @@ See [Serialization](serialization/serialization-intro.md) for more information.
 
 ## Custom Messages
 
-See [Custom Messages](custom-messages.md) for information on Custom Messages.
+See [Custom Messages](message-system/custom-messages.md) for information on Custom Messages.
