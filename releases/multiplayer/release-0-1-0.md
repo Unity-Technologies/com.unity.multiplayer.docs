@@ -15,6 +15,16 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 Unity MLAPI supports Windows and MacOS versions of Unity Editor and Player.
 :::
 
+## [0.1.1] - 2021-06-01
+
+This is hotfix v0.1.1 for the initial experimental Unity MLAPI Package.
+
+### Changes
+
+* Fixed issue with the Unity Registry package version missing some fixes from the v0.1.0 release.
+
+## [0.1.0] - 2021-03-23
+
 ## New features
 
 This release provides the following new features and APIs:
