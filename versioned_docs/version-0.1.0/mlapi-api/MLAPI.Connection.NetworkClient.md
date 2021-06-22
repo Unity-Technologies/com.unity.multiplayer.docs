@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Connection.NetworkClient  
+id: MLAPI.Connection.NetworkClient
 title: MLAPI.Connection.NetworkClient
 ---
 

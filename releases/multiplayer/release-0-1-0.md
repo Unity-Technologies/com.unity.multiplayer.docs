@@ -55,7 +55,7 @@ This release includes the following updates:
 
 ### Refactored API names
 
-For users of previous versions of MLAPI, this release renames APIs due to refactoring. All obsolete marked APIs have been removed as per [GitHub 513](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/513). <!-- more coming from Fatih -->
+For users of previous versions of MLAPI, this release renames APIs due to refactoring. All obsolete marked APIs have been removed as per [GitHub 513](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/513). 
 
 | Previous MLAPI Versions | V 0.1.0 Name |
 | -- | -- |

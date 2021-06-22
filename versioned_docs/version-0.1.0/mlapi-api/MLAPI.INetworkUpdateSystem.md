@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.INetworkUpdateSystem  
+id: MLAPI.INetworkUpdateSystem
 title: MLAPI.INetworkUpdateSystem
 ---
 

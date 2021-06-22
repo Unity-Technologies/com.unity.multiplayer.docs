@@ -77,6 +77,7 @@ The Steam transport should be quite straightforward to use. Just add it to your 
 
 <div id="faq">
 
+
 ### Why do I get path too long errors with Boss Room on Windows?
 
 Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. 
@@ -100,11 +101,11 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 
 See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac) for details.
 
+
 ### Why is there an `InitBootStrap` scene as the startup scene for Boss Room and Bitesize Samples?
 
 The initial reason is that in Unity MLAPI the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
 
 The Bootstrap scene ensures that the `NetworkManager` and other singletons are initialized first and will be there when you get back to main menu.
-
 
 </div>

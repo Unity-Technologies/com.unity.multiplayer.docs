@@ -563,6 +563,27 @@ module.exports = {
           ]
         },
       ],
+      [
+        'docusaurus-plugin-includes',
+        // https://github.com/simologos/docusaurus-plugin-includes#readme
+        {
+          sharedFolders: [
+            // Indicates the location of files when using CLI commands.
+            { source: '../../shared', target: '/shared'},
+          ],
+
+          // Deletes the shared folder from generated site, not needed
+          postBuildDeletedFolders: ['shared'],
+          
+
+          replacements: [
+            // Variable names, short lines
+            { key: '{MLAPI}', value: 'Unity MLAPI' },
+            { key: '{BossRoom}', value: 'Boss Room: Small Scale Co-op Sample' },
+            { key: '{productname}', value: 'TEST' },
+          ],
+        },
+      ],
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
         '@saucelabs/theme-github-codeblock',

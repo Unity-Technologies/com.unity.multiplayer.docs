@@ -32,21 +32,54 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "First Steps with MLAPI",
+    "label": "Learning with MLAPI",
     "items": [
       {
         "type": "doc",
-        "id": "tutorials/helloworldintro"
+        "id": "tutorials/mlapi_starting_out"
       },
-      {
-        "type": "doc",
-        "id": "tutorials/helloworldtwo"
-      },
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath"
-      },
+      
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Hello World",
+          "items": [
+            {
+              "type": "doc",
+              "id": "tutorials/helloworldintro"
+            },
+            {
+              "type": "doc",
+              "id": "tutorials/helloworldone"
+            },
+            {
+              "type": "doc",
+              "id": "tutorials/helloworldtwo"
+            },
+          ],
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Golden Path",
+          "items": [
+            {
+              "type": "doc",
+              "id": "tutorials/goldenpath_series/goldenpath"
+            },
+            {
+              "type": "doc",
+              "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+            },
+            {
+              "type": "doc",
+              "id": "tutorials/goldenpath_series/goldenpath_one"
+            },
+          ],
+        }
+      
     ],
+   
   },
   {
     "collapsed": true,
@@ -127,7 +160,21 @@ module.exports = {
       {
         "type": "doc",
         "id": "components/networknavmeshagent"
-      }
+      },
+
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Network Time",
+        "items": [
+          {
+            "type": "doc",
+            "id": "components/time"          },
+          {
+            "type": "doc",
+            "id": "components/time-reference"          },
+        ]
+      },
     ]
   },
   {

@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Configuration.NetworkPrefab  
+id: MLAPI.Configuration.NetworkPrefab
 title: MLAPI.Configuration.NetworkPrefab
 ---
 

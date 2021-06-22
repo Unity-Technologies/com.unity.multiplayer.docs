@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Logging  
+id: MLAPI.Logging
 title: MLAPI.Logging
 ---
 

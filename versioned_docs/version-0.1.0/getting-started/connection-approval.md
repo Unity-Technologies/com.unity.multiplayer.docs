@@ -44,7 +44,6 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 StartHost (positionToSpawnAt, rotationToSpawnWith, createPlayerObject, prefabHash);
 ```
 
-
 ## Connection data
 
 The `connectionData` parameter takes any custom data of your choice that the client should send to the server. Usually, this data should be some sort of ticket, room password, or similar that will decide if a connection should be approved or not. The `connectionData` is specified on the Client-side in the `NetworkingConfig` supplied when connecting.

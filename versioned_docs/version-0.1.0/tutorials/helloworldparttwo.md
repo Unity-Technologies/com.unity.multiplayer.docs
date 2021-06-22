@@ -17,8 +17,9 @@ In this guide we will build on the work we have already done in Hello World and 
 
 This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
-We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
-
+:::important
+As this tutorial builds directly on the work that you completed in the [Your First Networking Game "Hello World"](helloworldintro.md) guide you **must** complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
+:::
 
 ## Adding Scripts to Hello World
 
@@ -124,7 +125,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
- static void StartButtons()
+        static void StartButtons()
         {
             if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
             if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();

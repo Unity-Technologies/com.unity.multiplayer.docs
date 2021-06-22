@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Exceptions.NotServerException  
+id: MLAPI.Exceptions.NotServerException
 title: MLAPI.Exceptions.NotServerException
 ---
 

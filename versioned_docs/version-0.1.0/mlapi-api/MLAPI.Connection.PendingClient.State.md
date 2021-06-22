@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Connection.PendingClient.State  
+id: MLAPI.Connection.PendingClient.State
 title: MLAPI.Connection.PendingClient.State
 ---
 

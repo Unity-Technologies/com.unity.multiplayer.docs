@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Logging.LogLevel  
+id: MLAPI.Logging.LogLevel
 title: MLAPI.Logging.LogLevel
 ---
 

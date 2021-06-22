@@ -26,21 +26,54 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "First Steps with MLAPI",
+      "label": "Learning with MLAPI",
       "items": [
         {
           "type": "doc",
-          "id": "version-0.1.0/tutorials/helloworldintro"
+          "id": "version-0.1.0/tutorials/mlapi_starting_out"
         },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/tutorials/helloworldtwo"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/tutorials/goldenpath"
-        }
+        
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Hello World",
+            "items": [
+              {
+                "type": "doc",
+                "id": "version-0.1.0/tutorials/helloworldintro"
+              },
+              {
+                "type": "doc",
+                "id": "version-0.1.0/tutorials/helloworldone"
+              },
+              {
+                "type": "doc",
+                "id": "version-0.1.0/tutorials/helloworldtwo"
+              }
+            ]
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Golden Path",
+            "items": [
+              {
+                "type": "doc",
+                "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath"
+              },
+              {
+                "type": "doc",
+                "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_foundation_module"
+              },
+              {
+                "type": "doc",
+                "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_one"
+              }
+            ]
+          }
+        
       ]
+     
     },
     {
       "collapsed": true,

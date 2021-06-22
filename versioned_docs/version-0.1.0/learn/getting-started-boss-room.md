@@ -77,8 +77,8 @@ In order to see the multiplayer functionality in action, you can either run mult
 #### Build an Executable
 
 1. Click File.
-2. Click Build Settings.
-2. Click **Build**.
+1. Click Build Settings.
+1. Click **Build**.
 1. Name the binary Boss Room.
 
 <iframe src="https://www.youtube.com/embed/eZGofxiuAgA?playlist=eZGofxiuAgA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"

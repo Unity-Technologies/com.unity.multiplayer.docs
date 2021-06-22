@@ -1,5 +1,5 @@
 ---  
-id: MLAPI.Messaging.ClientRpcAttribute  
+id: MLAPI.Messaging.ClientRpcAttribute
 title: MLAPI.Messaging.ClientRpcAttribute
 ---
 
