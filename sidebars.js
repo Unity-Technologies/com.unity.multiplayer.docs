@@ -159,7 +159,6 @@ module.exports = {
         "type": "category",
         "label": "RPC Remote Procedure Call",
         "items": [
- 
           {
             "type": "doc",
             "id": "advanced-topics/message-system/clientrpc"
