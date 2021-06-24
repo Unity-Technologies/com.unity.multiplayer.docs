@@ -4,7 +4,6 @@ title: Messaging System and RPCs
 description: An introduction to the messaging system in Unity MLAPI, including RPC's and Custom Messages.
 ---
 
-
 The MLAPI has two parts to its messaging system: RPC messages and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
 
 ## RPC Messages
