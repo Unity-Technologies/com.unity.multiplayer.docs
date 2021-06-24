@@ -257,7 +257,7 @@ module.exports = {
               },
               {
                 label: 'Product Roadmap',
-                href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+                href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
               },
               {
                 label: 'GitHub - Code',
