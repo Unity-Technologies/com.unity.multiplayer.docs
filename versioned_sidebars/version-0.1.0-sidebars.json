@@ -172,10 +172,6 @@
             "items": [
               {
                 "type": "doc",
-                "id": "version-0.1.0/advanced-topics/message-system/about-rpc"
-              },
-              {
-                "type": "doc",
                 "id": "version-0.1.0/advanced-topics/message-system/clientrpc"
               },
               {

@@ -12,7 +12,7 @@ The FAQ provides immediate answers for questions collected from the Community on
 
 ### Does MLAPI have a Public Roadmap?
 
-See the [Multiplayer Networking Public Roadmap](https://resources.unity.com/unity-engine-roadmap/multiplayer#roadmap) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
+See the [Multiplayer Networking Public Roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
 
 ### Implement a Dedicated Server vs a Listen Server, would I need to make changes to the codebase?
 

@@ -1,6 +1,6 @@
 ---
 id: wrapper
-title: Create a UTP Wrapper
+title: Create a custom UTP Wrapper for MLAPI.
 ---
 
 To use UTP with some services, you may need to create a wrapper implementing [`NetworkDriver`](api/Unity.Networking.Transport.NetworkDriver.md), which implements virtual connections over any transport.
@@ -68,7 +68,5 @@ All messages have a standard a header and a message-specific message body and in
 <!-- info on Relay Message https://github.com/Unity-Technologies/mp-relay/blob/main/pkg/protocol/README.md and general closed beta doc https://docs.google.com/document/d/13VKxagyKsImbMX7gJGMvGKCImBFoHyIo6Av6df3cxfc -->
 <!-- need to link out to Relay content here -->
 
-## Example Wrapper
-<!-- potential example code could be gleaned from https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/develop/com.unity.multiplayer.transport.utp/Runtime/UTPTransport.cs but it is still in development-->
-
-[MLAPI UTP wrapper](/docs/develop/transport-api/introduction) is an in-progress example of a UTP wrapper.
+<!-- ## Example Wrapper
+potential example code could be gleaned from https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/develop/com.unity.multiplayer.transport.utp/Runtime/UTPTransport.cs but it is still in development-->
