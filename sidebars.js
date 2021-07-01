@@ -92,12 +92,15 @@ module.exports = {
           },
           {
             "type": "doc",
-            "id": "transport-utp/about-transport-utp"
+            "id": "transport-utp/install"
           },
           {
             "type": "doc",
-            "id": "transport-utp/install"
-          }
+            "id": "transport-utp/wrapper"
+          },          {
+            "type": "doc",
+            "id": "transport-utp/about-transport-utp"
+          },
         ]
       },
       
