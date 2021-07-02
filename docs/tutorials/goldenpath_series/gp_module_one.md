@@ -511,10 +511,10 @@ Congratulations you have learned the basics of a networked game
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [NetworkManager](../components/networkmanager)
-- [NetworkBehaviour](../mlapi-basics/networkbehaviour)
-- [Networkvariable](../mlapi-basics/networkvariable)
-- [RPC](../advanced-topics/message-system/about-rpc)
+- [NetworkManager](../../components/networkmanager)
+- [NetworkBehaviour](../../mlapi-basics/networkbehavior)
+- [Networkvariable](../../mlapi-basics/networkvariable)
+- [RPC](../../advanced-topics/messaging-system)
 
 
 :::contribution Special Thanks
