@@ -36,48 +36,20 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "tutorials/mlapi_starting_out"
+        "id": "tutorials/goldenpath_series/mlapi_starting_out"
+      },       
+      {
+        "type": "doc",
+        "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
       },
-      
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Hello World",
-          "items": [
-            {
-              "type": "doc",
-              "id": "tutorials/helloworldintro"
-            },
-            {
-              "type": "doc",
-              "id": "tutorials/helloworldone"
-            },
-            {
-              "type": "doc",
-              "id": "tutorials/helloworldtwo"
-            },
-          ],
-        },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Golden Path",
-          "items": [
-            {
-              "type": "doc",
-              "id": "tutorials/goldenpath_series/goldenpath"
-            },
-            {
-              "type": "doc",
-              "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
-            },
-            {
-              "type": "doc",
-              "id": "tutorials/goldenpath_series/goldenpath_one"
-            },
-          ],
-        }
-      
+       {
+        "type": "doc",
+        "id": "tutorials/goldenpath_series/goldenpath_one"
+      },    
+      {
+        "type": "doc",
+        "id": "tutorials/goldenpath_series/goldenpath_two"
+      },  
     ],
    
   },

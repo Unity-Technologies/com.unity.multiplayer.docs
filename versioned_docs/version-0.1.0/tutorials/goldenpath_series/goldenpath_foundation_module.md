@@ -13,13 +13,10 @@ This tutorial requires an MLAPI-supported version of Unity (2019.4+).
 
 ## Create a new project in Unity
 
-Now we will create a new project in Unity.
+              
+import CreatePro from '../../shared/_create_new_project.md';
 
-1. Open the Unity Hub.
-1. Click **New**. 
-1. Select type *3D*.
-1. Rename the project **GoldenPath**.
-1. Select the location to save the project.
+<CreatePro/>
 
 :::note
 Make note of this path. You will need it  later in the [tutorial](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
@@ -33,7 +30,7 @@ You will also need it when you create a clone of the Project for future modules.
 
 ## Import MLAPI Package via URL
 
-See the [Install MLAPI](../migration/installation.md) guide to install the MLAPI package.
+See the [Install MLAPI](../../migration/installation.md) guide to install the MLAPI package.
 
 ## Creating Network Manager and selecting the Transport
 
@@ -69,15 +66,11 @@ import Testhelper from '../../shared/_testing_commandline_helper.md';
 
 You should  now save the golden path foundation project as you will be building on it in future modules.
 
-<div class="table-columns-plain">
+For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-| [GoldenPath Module One<br/> Covering](gp_module_one.md)|
-| -- |
-|   Network variables (client and server-controlled)<br/> Network transforms <br/> RPCs  | -- | 
-<br/> 
-
-</div>
-
+- [Network Manager](../mlapi-basics/networkvariable.md)
+- [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
+- [Network Object](../mlapi-basics/networkobect.md)
 
 
 

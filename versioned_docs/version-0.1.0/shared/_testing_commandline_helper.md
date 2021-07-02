@@ -85,3 +85,6 @@ Both windows should show a plane and a capsule (the capsule being the single pla
 
 </TabItem>
 </Tabs>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
