@@ -195,7 +195,7 @@ module.exports = {
               {href: '/blog', label: 'Blog', position: 'right', },
               {
                 label: 'Product Roadmap',
-                href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+                href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
               },
               { 
                 label: 'Discord',
@@ -257,7 +257,7 @@ module.exports = {
               },
               {
                 label: 'Product Roadmap',
-                href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+                href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
               },
               {
                 label: 'GitHub - Code',
