@@ -30,51 +30,22 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.1.0/tutorials/mlapi_starting_out"
+          "id": "version-0.1.0/tutorials/goldenpath_series/mlapi_starting_out"
+        },       
+        {
+          "type": "doc",
+          "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_foundation_module"
         },
-        
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Hello World",
-            "items": [
-              {
-                "type": "doc",
-                "id": "version-0.1.0/tutorials/helloworldintro"
-              },
-              {
-                "type": "doc",
-                "id": "version-0.1.0/tutorials/helloworldone"
-              },
-              {
-                "type": "doc",
-                "id": "version-0.1.0/tutorials/helloworldtwo"
-              }
-            ]
-          },
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Golden Path",
-            "items": [
-              {
-                "type": "doc",
-                "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath"
-              },
-              {
-                "type": "doc",
-                "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_foundation_module"
-              },
-              {
-                "type": "doc",
-                "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_one"
-              }
-            ]
-          }
-        
+         {
+          "type": "doc",
+          "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_one"
+        },    
+        {
+          "type": "doc",
+          "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_two"
+        }
       ]
-     
-    },
+    },  
     {
       "collapsed": true,
       "type": "category",
