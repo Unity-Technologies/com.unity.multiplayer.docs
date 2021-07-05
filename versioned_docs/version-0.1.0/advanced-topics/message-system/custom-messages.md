@@ -22,7 +22,7 @@ private void Start()
     //Receiving
     CustomMessagingManager.OnUnnamedMessage += ((senderClientId, stream) =>
     {
-        using (PooledBitReader reader = PooledBitReader.Get(stream))
+        using (NetworkReader reader = NetworkReader.Get(stream))
         {
             string message = reader.ReadString(); //Example
         }
@@ -47,7 +47,7 @@ private void Start()
     //Receiving
     CustomMessagingManager.RegisterNamedMessageHandler("myMessageName", (senderClientId, stream) =>
     {
-        using (PooledBitReader reader = PooledBitReader.Get(stream))
+        using (NetworkReader reader = NetworkReader.Get(stream))
         {
             StringBuilder stringBuilder = reader.ReadString(); //Example
             string message = stringBuilder.ToString();
