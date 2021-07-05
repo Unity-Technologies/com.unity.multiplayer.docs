@@ -134,7 +134,7 @@ module.exports = {
           },*/
           {
             to: '/learn/introduction',
-            label: 'Learn',
+            label: 'Unity Multiplayer Resources',
             className: 'nav-break',
             position: 'left',
           },
