@@ -31,6 +31,11 @@ See the following information:
 * [RPC Params](message-system/rpc-params.md)
 * [Serialization Types and RPCs](message-system/serialization.md)
 
+There is also some additional information on RPC's and some usage examples  on the following pages:
+
+* [RPC vs NetworkVariable](../learn/rpcvnetvar.md)
+* [RPC vs NewtorkVariables Examples](../learn/rpcnetvarexamples.md)
+
 :::note Migration and Compatibility
 See [RPC Migration and Compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
 :::
