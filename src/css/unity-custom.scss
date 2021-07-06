@@ -64,6 +64,9 @@ h1, h2, h3, h4, h5, h6, .text-break {
   font-size: 2rem !important;
 }
 
+h1 {
+  font-size: 2rem !important;
+}
 
 .markdown > h2 {
   font-size: 1.5rem !important;
@@ -1093,14 +1096,14 @@ span.languagekeyword{
 
 // Blog Styles
 .blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-BlogPostItem- {
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 
 .avatar__intro {
-  border-bottom: 1px solid #757575;
-  color: #757575;
+  border-bottom: 1px solid #7a7a7a;
+  color: #7a7a7a;
   .avatar__name, a {
-    color: #757575;
+    color: #7a7a7a;
   }
 }
 
@@ -1248,4 +1251,18 @@ summary {
   font-weight: bold;
   color:rgb(38, 127, 153);
   cursor: pointer;
+}
+
+//question and answer
+#q-n-a {
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+    border-bottom: 1pt solid #646464;
+  }
+  h5 {
+    font-size: 1rem;
+  }
 }

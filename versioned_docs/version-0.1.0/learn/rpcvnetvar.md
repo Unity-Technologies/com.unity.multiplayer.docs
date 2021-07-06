@@ -16,6 +16,8 @@ When calling an `RPC`, you call a method remotely on an object that could be any
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
+For more information on RPC's see [Messaging System and RPCs](../advanced-topics/messaging-system.md)
+
 ## NetworkVariables
 
 At a high level, a `NetworkVariable` is a variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initially to a host, all relevant `NetworkVariable` latest values "state" will be replicated to that new client. Your state gets updated at regular intervals.
@@ -23,6 +25,8 @@ At a high level, a `NetworkVariable` is a variable with its value tracked by the
 `NetworkVariable` can be referenced as "state" or as "Netvars" or as replicated vars.
 
 If you change your variable's value on your side, others will see the latest value on their side.
+
+For more information on `NetworkVariable`s see [NetworkVariable](../mlapi-basics/networkvariable.md)
 
 ## Choosing between NetworkVariables or RPCs
 

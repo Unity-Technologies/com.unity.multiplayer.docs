@@ -102,7 +102,7 @@ This section adds in a player object and spawns it for each connected player.
 
 ### Testing Hello World
 
-Now we will test to see if everything works as expected.
+Now we will test to see if evereything works as expected.
 
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 
