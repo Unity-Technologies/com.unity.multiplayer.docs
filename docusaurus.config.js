@@ -46,7 +46,7 @@ module.exports = {
         disableSwitch: false,
         respectPrefersColorScheme: true,
   
-        switchConfig: {
+        /*switchConfig: {
           // CSS to apply to dark icon,
           // React inline style object
           // see https://reactjs.org/docs/dom-elements.html#style
@@ -59,7 +59,7 @@ module.exports = {
           lightIconStyle: {
             marginLeft: '1px',
           },
-        }
+        }*/
       },
       navbar: {
         title: 'Unity Multiplayer Networking',
@@ -125,16 +125,16 @@ module.exports = {
               },
             ]
           },
-          {
+          /*{
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
-          },
+          },*/
           {
             to: '/learn/introduction',
-            label: 'Learn',
+            label: 'Unity Multiplayer Resources',
             className: 'nav-break',
             position: 'left',
           },
@@ -195,7 +195,7 @@ module.exports = {
               {href: '/blog', label: 'Blog', position: 'right', },
               {
                 label: 'Product Roadmap',
-                href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+                href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
               },
               { 
                 label: 'Discord',
@@ -204,6 +204,14 @@ module.exports = {
               {
                 label: 'Unity Multiplayer Forum',
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
+              },
+              {
+                label: 'MLAPI Forum',
+                href: 'https://forum.unity.com/forums/mlapi.661/',
+              },
+              {
+                label: 'Unity Transport Forum',
+                href: 'https://forum.unity.com/forums/unity-transport.664/',
               },
             ]
             },
@@ -249,7 +257,7 @@ module.exports = {
               },
               {
                 label: 'Product Roadmap',
-                href: 'https://resources.unity.com/unity-engine-roadmap/multiplayer',
+                href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
               },
               {
                 label: 'GitHub - Code',
@@ -361,13 +369,13 @@ module.exports = {
             },
           },
           blog: {
-            postsPerPage: 3,
+            //postsPerPage: 3,
             feedOptions: {
               type: 'all',
               copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
               },
             blogSidebarCount: 'ALL',
-            blogSidebarTitle: 'All our posts',
+            blogSidebarTitle: 'All Blog Posts',
           },
           theme: {
             customCss: require.resolve('./src/css/unity-custom.scss'),
@@ -479,24 +487,23 @@ module.exports = {
             docPath,
           }) {
             return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
-          },
-          includeCurrentVersion: true,
-            lastVersion: '0.9.0',
+          },includeCurrentVersion: true,
+            lastVersion: '0.8.0',
             versions: {
               //current: {
               //  label: 'Next',
               //  path: 'next',
               //},
-              '0.9.0': {
-               label: 'v. 0.9.0',
-                path: '',
-              },
+              /*'0.9.0': {
+               label: 'v. 0.9.0preview',
+                path: '0.9.0',
+              },*/
               '0.8.0': {
-                label: 'v. 0.8.0',
+                label: 'v. 0.8.0preview',
                  path: '0.8.0',
                },
             },
-          onlyIncludeVersions: ["0.8.0", "0.9.0"],
+          //onlyIncludeVersions: ["0.8.0", "0.9.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
@@ -533,32 +540,32 @@ module.exports = {
           },
         },
       ],
-      [
-        'docusaurus-plugin-includes',
-        // https://github.com/simologos/docusaurus-plugin-includes#readme
-        {
-          sharedFolders: [
-            // Embed a markdown file from a folder. Source and target path are defined relative to the root where docusaurus.config.js is located.
-            //{ source: '../../_shared', target: '../docs/shared'},
-          ],
-
-          // Deletes the shared folder from generated site, not needed
-          postBuildDeletedFolders: ['shared'],
-  
-          replacements: [
-            // Variable names, short lines
-            { key: '{MLAPI}', value: 'Unity MLAPI' },
-            { key: '{BossRoom}', value: 'Boss Room: Small Scale Co-op Sample' },
-          ],
-        },
-      ],
       [require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-5V25JL6', // GTM Container ID
       }],
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/docs/advanced-topics/messaging-system',
+              from: '/docs/advanced-topics/messaging-system/about-rpc',
+            },
+            {
+              to: '/docs/advanced-topics/messaging-system',
+              from: '/docs/advanced-topics/message-system/serialization',
+            },
+            {
+              to: '/docs/develop/transport-utp/about-transport-utp',
+              from: '/docs/transport-utp/about-transport-utp',
+            },
+          ]
+        },
+      ],
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
         '@saucelabs/theme-github-codeblock',
         'react-iframe'
-    ],
+      ]
   };

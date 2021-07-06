@@ -186,7 +186,7 @@ Returns the local player object or null if one does not exist
 <div class="markdown level1 summary">
 
 Returns the player object with a given clientId or null if one does not
-exist
+exist. This is only valid server side.
 
 </div>
 

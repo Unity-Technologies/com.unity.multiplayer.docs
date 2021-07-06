@@ -3,10 +3,10 @@ id: introduction
 title: Transport UTP API Overview
 ---
 
-The Multiplayer Networking Transport UTP API reference provides information for wrapper classes, methods, delegates, and more for the `com.unity.multiplayer.transport.utp` package.
+This section documents the Unity Transport wrapper of the MLAPI `NetworkTransport` interface in the [`com.unity.multiplayer.transport.utp`](../transport-utp/about-transport-utp.md) package. 
 
 :::important Unity Transport
-These APIs are wrappers for Transport capabilities for MLAPI. For additional information on the `com.unity.trasport` package, see [Unity Transport](/transport/index.md) and the API reference.
+These APIs are wrappers for Transport capabilities for MLAPI. For additional information on the `com.unity.transport` package, see [Unity Transport](/transport/index.md) and the API reference.
 :::
 
 :::note

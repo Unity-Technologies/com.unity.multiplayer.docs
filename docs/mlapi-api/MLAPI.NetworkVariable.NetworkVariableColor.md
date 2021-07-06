@@ -61,18 +61,6 @@ NetworkVariable&lt;Color&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;Color&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;Color&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;Color&gt;.OnValueChanged"
 
 </div>
@@ -121,7 +109,7 @@ NetworkVariable&lt;Color&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;Color&gt;.ReadDelta(Stream, Boolean, UInt16, UInt16)"
+NetworkVariable&lt;Color&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -133,7 +121,7 @@ NetworkVariable&lt;Color&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;Color&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;Color&gt;.ReadField(Stream)"
 
 </div>
 

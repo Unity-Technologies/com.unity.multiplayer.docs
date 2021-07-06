@@ -558,10 +558,7 @@ to track the next packet we need to resume.
 
 <div class="markdown level1 summary">
 
-Write packet, packet header and tracking information to the given buffer
-space. This buffer should contain the reliability Context at the front,
-that contains the capacity of the buffer and pointer offsets needed to
-find the slots we can copy the packet to.
+Write packet, packet header and tracking information to the given buffer space. This buffer should contain the reliability Context at the front that contains the capacity of the buffer and pointer offsets needed to find the slots we can copy the packet to.
 
 </div>
 
