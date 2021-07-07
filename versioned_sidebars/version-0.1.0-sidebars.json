@@ -20,28 +20,47 @@
         {
           "type": "doc",
           "id": "version-0.1.0/migration/migratingfrommlapi"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Hello World",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-0.1.0/tutorials/helloworld/helloworldintro"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/tutorials/helloworld/helloworldtwo"
+            }     
+          ]
         }
       ]
     },
     {
       "collapsed": true,
       "type": "category",
-      "label": "First Steps with MLAPI",
+      "label": "Learning  MLAPI with Goldenpath",
       "items": [
         {
           "type": "doc",
-          "id": "version-0.1.0/tutorials/helloworldintro"
-        },
+          "id": "version-0.1.0/tutorials/goldenpath_series/mlapi_starting_out"
+        },       
         {
           "type": "doc",
-          "id": "version-0.1.0/tutorials/helloworldtwo"
+          "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_foundation_module"
         },
+         {
+          "type": "doc",
+          "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_one"
+        },    
         {
           "type": "doc",
-          "id": "version-0.1.0/tutorials/goldenpath"
+          "id": "version-0.1.0/tutorials/goldenpath_series/goldenpath_two"
         }
       ]
-    },
+    },  
     {
       "collapsed": true,
       "type": "category",
@@ -254,7 +273,7 @@
       ]
     }
   ],
-  "version-0.1.0/learn": [
+  "version-0.1.0/Multiplayer": [
     {
       "type": "doc",
       "id": "version-0.1.0/learn/introduction"
@@ -262,7 +281,7 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Multiplayer Networking",
+      "label": "Reference Material",
       "items": [
         {
           "collapsed": true,
@@ -274,13 +293,26 @@
               "id": "version-0.1.0/reference/glossary/high-level-terminology"
             },
             {
+              
+              "collapsed": true,
+              "type": "category",
+              "label": "Latency Management",
+              "items": [
+            {
               "type": "doc",
               "id": "version-0.1.0/reference/glossary/network-latency-management"
             },
             {
               "type": "doc",
-              "id": "version-0.1.0/reference/glossary/network-topologies"
+              "id": "version-0.1.0/learn/lagandpacketloss"
             },
+            {
+              "type": "doc",
+              "id": "version-0.1.0/learn/clientside_interpolation"
+            }
+          ]
+        },
+
             {
               "type": "doc",
               "id": "version-0.1.0/reference/glossary/network-terms"
@@ -306,50 +338,53 @@
             },
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/listen-server-host-architecture"
-            }
-          ]
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/learn/lagandpacketloss"
-        },
-        {
-          "type": "doc",
-          "id": "version-0.1.0/learn/clientside_interpolation"
-        }
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Unity MLAPI",
-      "items": [
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "RPCs",
-          "items": [  
-            {
-              "type": "doc",
-              "id": "version-0.1.0/learn/rpcvnetvar"
+              "id": "version-0.1.0/reference/glossary/network-topologies"
             },
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/rpcnetvarexamples"
+              "id": "version-0.1.0/learn/listen-server-host-architecture"
             }
           ]
         }
+   
       ]
     },
     {
-      "type": "doc",
-      "id": "version-0.1.0/learn/bossroom"
-      },
-    {
       "collapsed": true,
       "type": "category",
-      "label": "Using Bitesize Samples",
+      "label": "Educational Material",
+      "items": [
+        {
+          
+            "collapsed": true,
+            "type": "category",
+            "label": "Boss Room",
+            "items": [
+              {
+                "type": "doc",
+                "id": "version-0.1.0/learn/bossroom"
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Boss Room and RPCs",
+                "items": [  
+                  {
+                    "type": "doc",
+                    "id": "version-0.1.0/learn/rpcvnetvar"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "version-0.1.0/learn/rpcnetvarexamples"
+                  }
+                ]
+              }
+            ]
+          },
+      {
+      "collapsed": true,
+      "type": "category",
+      "label": "Bitesize Samples",
       "items": [
           {
           "type": "doc",
@@ -364,17 +399,56 @@
           "id": "version-0.1.0/learn/bitesize-spaceshooter"
           }
       ]
-      },
+      }
+    ]
+    },
     {
       "collapsed": true,
       "type": "category",
       "label": "Community Contributions",
       "items": [
         {
+        "collapsed": true,
+        "type": "category",
+        "label": "Dapper Dino Tutorials",
+        "items": [
+          {
           "type": "doc",
-          "id": "version-0.1.0/learn/dapper-video"
+          "id": "version-0.1.0/learn/dapper/dapper-video"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/makeamultiplayergame"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/lobbypassword"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/bossroomsample"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/dapper-rpcs"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/dapper-networkvariables"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/dapper-objectspawning"
+          },
+          {
+          "type": "doc",
+          "id": "version-0.1.0/learn/dapper/dapper-playernames"
+          }
+
+
+                ]
         }
-      ]
+              ]
     },
     {
       "type": "doc",

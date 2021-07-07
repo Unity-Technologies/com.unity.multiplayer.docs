@@ -3,9 +3,12 @@ id: messaging-system
 title: Messaging System and RPCs
 description: An introduction to the messaging system in Unity MLAPI, including RPC's and Custom Messages.
 ---
+ :::contribution Community Contribution
 
+There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
+:::
 
-The MLAPI has two parts to its messaging system: [RPC messages](about-rpc.md) and [Custom Messages](custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
+The MLAPI has two parts to its messaging system: RPC messages and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
 
 ## RPC Messages
 
@@ -28,6 +31,11 @@ See the following information:
 * [RPC Params](message-system/rpc-params.md)
 * [Serialization Types and RPCs](message-system/serialization.md)
 
+There is also some additional information on RPC's and some usage examples  on the following pages:
+
+* [RPC vs NetworkVariable](../learn/rpcvnetvar.md)
+* [RPC vs NewtorkVariables Examples](../learn/rpcnetvarexamples.md)
+
 :::note Migration and Compatibility
 See [RPC Migration and Compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
 :::
@@ -46,4 +54,4 @@ See [Serialization](serialization/serialization-intro.md) for more information.
 
 ## Custom Messages
 
-See [Custom Messages](custom-messages.md) for information on Custom Messages.
+See [Custom Messages](message-system/custom-messages.md) for information on Custom Messages.
