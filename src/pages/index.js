@@ -18,7 +18,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="docs/tutorials/helloworldintro" class="land-link">Learn more about MLAPI</a>
+      <a href="docs/tutorials/helloworld/helloworldintro" class="land-link">Learn more about MLAPI</a>
       </>
     ),
   },

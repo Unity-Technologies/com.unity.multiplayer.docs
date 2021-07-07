@@ -1,10 +1,10 @@
 ---
-id: helloworldtwo
-title: Building on "Hello World"
-sidebar_label: Building on "Hello World"
+id: goldenpath_one
+title: Golden Path Module One
 description: Tutorial that explains adding scripts to objects, editor modes (Host Server and Client), basic player movement,Permissions and basic RPC use.
 ---
-In this guide we will build on the work we have already done in Hello World and add in a few more features, we will be covering the following:
+
+In this guide we will be covering the following:
 
 - Adding scripts to your objects
 - Adding editor modes inside your game  (Host Server and Client)
@@ -15,14 +15,26 @@ In this guide we will build on the work we have already done in Hello World and 
 
 ## Requirements
 
-This tutorial requires an MLAPI-supported version of Unity (2019.4+).
+You should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial..
 
-We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
+## Create a Clone 'GoldenPath' project
+
+import Createclone from '../../shared/_create_clone_goldenpath.md';
+
+<Createclone/>
 
 
-## Adding Scripts to Hello World
+## Open GoldenPath_One
 
-This section will add some scripts to Hello World which will contain the new features we will be covering in the tutorial.
+1. Open Unity Hub.
+1. Select `GoldenPath_One` from the list of projects displayed.
+   
+<iframe src="https://www.youtube.com/embed/kl5gzvGiXHk?playlist=kl5gzvGiXHk&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+## Adding Scripts to Goldenpath
+
+This section will add some scripts to Goilden Path  which will contain the new features we will be covering in this module.
 
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
@@ -124,7 +136,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
- static void StartButtons()
+        static void StartButtons()
         {
             if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
             if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
@@ -493,6 +505,17 @@ One build instance can create a host. Another client can join the host's game. B
 :::note Congrats!
 Congratulations you have learned the basics of a networked game 
 :::
+
+## Next Steps
+
+
+For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
+
+- [NetworkManager](../../components/networkmanager)
+- [NetworkBehaviour](../../mlapi-basics/networkbehavior)
+- [Networkvariable](../../mlapi-basics/networkvariable)
+- [RPC](../../advanced-topics/messaging-system)
+
 
 :::contribution Special Thanks
 This guide would not have been possible without the hard work and support of Fernando Cortez, Unity. 

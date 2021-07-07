@@ -4,6 +4,11 @@ title: Object Spawning
 sidebar_label: Object Spawning
 ---
 
+:::contribution Community Contribution
+
+There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/objectspawning.md)
+:::
+
 In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in MLAPI means to create an object which is shared between all clients and the server.
 
 ### Registering a Networked Prefab
