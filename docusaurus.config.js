@@ -1,12 +1,10 @@
-// Docusaurus v2, see package.json for versions
-
 module.exports = {
     title: 'Unity Multiplayer Networking',
     tagline: 'Build multiplayer games in Unity',
     url: 'https://docs-multiplayer.unity3d.com/',
     baseUrl: '/',
-    onBrokenLinks: 'ignore',
-    onBrokenMarkdownLinks: 'ignore',
+    onBrokenLinks: 'ignore', // due to custom code for versioned drop downs
+    onBrokenMarkdownLinks: 'ignore', // due to custom code for versioned drop downs
     favicon: 'img/favicon.ico',
     organizationName: 'unity', // Usually your GitHub org/user name.
     projectName: 'docusaurus', // Usually your repo name.
@@ -19,6 +17,7 @@ module.exports = {
     themeConfig: {
       //button on sidebar
       hideableSidebar: true,
+      // Announcement across entire site at top of pages
       announcementBar: {
         id: 'prerelease', // Any value that will identify this message.
         content:
@@ -45,21 +44,6 @@ module.exports = {
         defaultMode: 'dark',
         disableSwitch: false,
         respectPrefersColorScheme: true,
-  
-        /*switchConfig: {
-          // CSS to apply to dark icon,
-          // React inline style object
-          // see https://reactjs.org/docs/dom-elements.html#style
-          darkIcon: '\u{1F319}',
-          darkIconStyle: {
-            marginLeft: '1px',
-          },
-          lightIcon: '\u{1F324}',
-  
-          lightIconStyle: {
-            marginLeft: '1px',
-          },
-        }*/
       },
       navbar: {
         title: 'Unity Multiplayer Networking',
@@ -134,16 +118,10 @@ module.exports = {
           },*/
           {
             to: '/learn/introduction',
-            label: 'Learn',
+            label: 'Unity Multiplayer Resources',
             className: 'nav-break',
             position: 'left',
           },
-          //{
-          //  to: '/introduction',
-          //  label: 'Release Notes',
-          //  docsPluginId: 'releases',
-          //  position: 'left'
-         // },
           { 
             className: 'navbar-github-link',
             position: 'right',
@@ -217,11 +195,13 @@ module.exports = {
             },
         ],
       },
+      // Code block themes and languages
       prism: {
         theme: require('prism-react-renderer/themes/vsLight'),
         darkTheme: require('prism-react-renderer/themes/vsDark'),
         additionalLanguages: ['csharp', 'powershell', 'java', 'markdown'],
       },
+      // FOOTER links and content
       footer: {
         style: 'dark',
         links: [
@@ -312,6 +292,7 @@ module.exports = {
     },
     presets: [
       [
+        // Configs for MLAPI versioned content
         '@docusaurus/preset-classic',
         {
           docs: {
@@ -390,6 +371,7 @@ module.exports = {
     ],
     plugins: [
       [
+        // Configs for Release Note unversioned content
         '@docusaurus/plugin-content-docs',
         {
           id: 'releases',
@@ -434,6 +416,7 @@ module.exports = {
         },
       ],
       [
+        // Configs for Reference unversioned content
         '@docusaurus/plugin-content-docs',
         {
           id: 'reference',
@@ -478,6 +461,7 @@ module.exports = {
         },
       ],
       [
+        // Configs for Transport versioned content
         '@docusaurus/plugin-content-docs',
         {
           id: 'transport',

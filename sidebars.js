@@ -27,26 +27,47 @@ module.exports = {
         "type": "doc",
         "id": "migration/migratingfrommlapi"
       },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Hello World",
+        "items": [
+          {
+            "type": "doc",
+            "id": "tutorials/helloworld/helloworldintro"
+          },
+          {
+            "type": "doc",
+            "id": "tutorials/helloworld/helloworldtwo"
+          }     
+        ]
+      },
+
     ],
   },
   {
     "collapsed": true,
     "type": "category",
-    "label": "First Steps with MLAPI",
+    "label": "Learning MLAPI with Goldenpath",
     "items": [
       {
         "type": "doc",
-        "id": "tutorials/helloworldintro"
-      },
+        "id": "tutorials/goldenpath_series/mlapi_starting_out"
+      },       
       {
         "type": "doc",
-        "id": "tutorials/helloworldtwo"
+        "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
       },
+       {
+        "type": "doc",
+        "id": "tutorials/goldenpath_series/goldenpath_one"
+      },    
       {
         "type": "doc",
-        "id": "tutorials/goldenpath"
-      },
+        "id": "tutorials/goldenpath_series/goldenpath_two"
+      },  
     ],
+   
   },
   {
     "collapsed": true,
@@ -276,7 +297,7 @@ module.exports = {
     ]
   },
 ],
-  learn:
+  Multiplayer :
   [ 
     { 
       "type": "doc",
@@ -285,7 +306,7 @@ module.exports = {
     {
       "collapsed": true,
       "type": "category",
-      "label": "Multiplayer Networking",
+      "label": "Reference Material",
       "items": [
         {
           "collapsed": true,
@@ -297,13 +318,26 @@ module.exports = {
               "id": "reference/glossary/high-level-terminology"
             },
             {
-              "type": "doc",
+              
+                "collapsed": true,
+                "type": "category",
+                "label": "Latency Management",
+                "items": [
+                  {
+                  "type": "doc",
               "id": "reference/glossary/network-latency-management"
             },
             {
               "type": "doc",
-              "id": "reference/glossary/network-topologies"
+              "id": "learn/lagandpacketloss"
+                },
+            {
+              "type": "doc",
+              "id": "learn/clientside_interpolation"
+                },
+              ],
             },
+
             {
               "type": "doc",
               "id": "reference/glossary/network-terms"
@@ -316,7 +350,8 @@ module.exports = {
               "type": "doc",
               "id": "reference/glossary/relevancy"
             },
-          ]
+          ],
+      
         },
         {
           "collapsed": true,
@@ -329,50 +364,54 @@ module.exports = {
             },
             {
               "type": "doc",
-              "id": "learn/listen-server-host-architecture"
+              "id": "reference/glossary/network-topologies"
             },
+
+            {
+              "type": "doc",
+              "id": "learn/listen-server-host-architecture"
+            }
           ]
         },
-        {
-          "type": "doc",
-          "id": "learn/lagandpacketloss"
-        },
-        {
-          "type": "doc",
-          "id": "learn/clientside_interpolation"
-        },
-      ]
+    
+        
+      ],
     },
     {
       "collapsed": true,
       "type": "category",
-      "label": "Unity MLAPI",
+      "label": "Educational Material",
       "items": [
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "RPCs",
-          "items": [  
-            {
-              "type": "doc",
-              "id": "learn/rpcvnetvar"
-            },
-            {
-              "type": "doc",
-              "id": "learn/rpcnetvarexamples"
-            }
-          ],
-        }
-      ]
-    },
-    {
-      "type": "doc",
-      "id": "learn/bossroom"
-    },
-    {
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Boss Room",
+            "items": [
+              {
+                "type": "doc",
+                "id": "learn/bossroom"
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Boss Room and RPCs",
+                "items": [  
+                  {
+                    "type": "doc",
+                    "id": "learn/rpcvnetvar"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "learn/rpcnetvarexamples"
+                  },
+                ],
+              }, 
+            ],
+          },
+      {
       "collapsed": true,
       "type": "category",
-      "label": "Using Bitesize Samples",
+      "label": "Bitesize Samples",
       "items": [
           {
           "type": "doc",
@@ -388,23 +427,65 @@ module.exports = {
           }
       ]
       },
+    ],
+    },
     {
       "collapsed": true,
       "type": "category",
       "label": "Community Contributions",
       "items": [
         {
+        "collapsed": true,
+        "type": "category",
+        "label": "Dapper Dino Tutorials",
+        "items": [
+          {
           "type": "doc",
-          "id": "learn/dapper-video"
-        }
-      ]
+          "id": "learn/dapper/dapper-video"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/makeamultiplayergame"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/lobbypassword"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/bossroomsample"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-rpcs"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-networkvariables"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-objectspawning"
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-playernames"
+          },
+
+
+                ]
+        },
+              ],
     },
     {
       "type": "doc",
        "id": "learn/faq"
-    }
+    },
   ],
-  api: [
+
+  
+  api :
+  [
     {
       "type": "doc",
       "id": "mlapi-api/introduction"
