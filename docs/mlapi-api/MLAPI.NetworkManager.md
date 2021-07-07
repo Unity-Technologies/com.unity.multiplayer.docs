@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkManager  
-title: MLAPI.NetworkManager
-sidebar_label: NetworkManager
+title: MLAPI.NetworkManager  
 ---
 
 <div class="markdown level0 summary">
@@ -63,6 +62,12 @@ System.Dynamic.ExpandoObject
 <div>
 
 INetworkUpdateSystem
+
+</div>
+
+<div>
+
+IProfilableTransportProvider
 
 </div>
 
@@ -741,7 +746,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
     [AddComponentMenu("MLAPI/NetworkManager", -100)]
-    public class NetworkManager : MonoBehaviour, INetworkUpdateSystem
+    public class NetworkManager : MonoBehaviour, INetworkUpdateSystem, IProfilableTransportProvider
 
 ## Fields
 
@@ -930,6 +935,26 @@ The current hostname we are connected to, used to validate certificate
 |---------------|-------------|
 | System.String |             |
 
+### CustomMessagingManager
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public CustomMessagingManager CustomMessagingManager { get; }
+
+#### Property Value
+
+| Type                   | Description |
+|------------------------|-------------|
+| CustomMessagingManager |             |
+
 ### IsClient
 
 <div class="markdown level1 summary">
@@ -1086,6 +1111,46 @@ application started. Is replicated across all clients
 |---------------|-------------|
 | System.Single |             |
 
+### PrefabHandler
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public NetworkPrefabHandler PrefabHandler { get; }
+
+#### Property Value
+
+| Type                 | Description |
+|----------------------|-------------|
+| NetworkPrefabHandler |             |
+
+### SceneManager
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public NetworkSceneManager SceneManager { get; }
+
+#### Property Value
+
+| Type                | Description |
+|---------------------|-------------|
+| NetworkSceneManager |             |
+
 ### ServerClientId
 
 <div class="markdown level1 summary">
@@ -1129,6 +1194,48 @@ The singleton instance of the NetworkManager
 | Type           | Description |
 |----------------|-------------|
 | NetworkManager |             |
+
+### SpawnManager
+
+<div class="markdown level1 summary">
+
+Gets the SpawnManager for this NetworkManager
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public NetworkSpawnManager SpawnManager { get; }
+
+#### Property Value
+
+| Type                | Description |
+|---------------------|-------------|
+| NetworkSpawnManager |             |
+
+### Transport
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public ITransportProfilerData Transport { get; }
+
+#### Property Value
+
+| Type                   | Description |
+|------------------------|-------------|
+| ITransportProfilerData |             |
 
 ## Methods 
 
@@ -1224,7 +1331,7 @@ Starts a client
 |-------------|-------------|
 | SocketTasks |             |
 
-### StartHost(Nullable&lt;Vector3&gt;, Nullable&lt;Quaternion&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;UInt64&gt;, Stream)
+### StartHost()
 
 <div class="markdown level1 summary">
 
@@ -1238,17 +1345,7 @@ Starts a Host
 
 #### Declaration
 
-    public SocketTasks StartHost(Vector3? position = default(Vector3? ), Quaternion? rotation = default(Quaternion? ), bool? createPlayerObject = default(bool? ), ulong? prefabHash = default(ulong? ), Stream payloadStream = null)
-
-#### Parameters
-
-| Type                                          | Name               | Description |
-|-----------------------------------------------|--------------------|-------------|
-| System.Nullable&lt;UnityEngine.Vector3&gt;    | position           |             |
-| System.Nullable&lt;UnityEngine.Quaternion&gt; | rotation           |             |
-| System.Nullable&lt;System.Boolean&gt;         | createPlayerObject |             |
-| System.Nullable&lt;System.UInt64&gt;          | prefabHash         |             |
-| System.IO.Stream                              | payloadStream      |             |
+    public SocketTasks StartHost()
 
 #### Returns
 
@@ -1377,9 +1474,8 @@ on the server and on the local client that connects.
 
 <div class="markdown level1 summary">
 
-The callback to invoke when a client disconnects. This callback is invoked on a client when the server shuts down or disconnects the client. It is only run on the server and the local client that disconnects.
-
-The callback is not invoked on the client when the client-side invokes the `NetworkManager.StopClient` method or when the client side application shuts down abruptly (for example, no graceful disconnection where server or client notified it was exiting).
+The callback to invoke when a client disconnects. This callback is only
+ran on the server and on the local client that disconnects.
 
 </div>
 
@@ -1396,26 +1492,6 @@ The callback is not invoked on the client when the client-side invokes the `Netw
 | Type                               | Description |
 |------------------------------------|-------------|
 | System.Action&lt;System.UInt64&gt; |             |
-
-### OnPerformanceDataEvent
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public static event NetworkManager.PerformanceDataEventHandler OnPerformanceDataEvent
-
-#### Event Type
-
-| Type                                       | Description |
-|--------------------------------------------|-------------|
-| NetworkManager.PerformanceDataEventHandler |             |
 
 ### OnServerStarted
 
@@ -1444,6 +1520,12 @@ The callback to invoke once the server is ready
 <div>
 
 INetworkUpdateSystem
+
+</div>
+
+<div>
+
+IProfilableTransportProvider
 
 </div>
 

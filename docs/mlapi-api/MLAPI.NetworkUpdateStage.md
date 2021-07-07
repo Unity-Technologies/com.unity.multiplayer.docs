@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkUpdateStage  
-title: MLAPI.NetworkUpdateStage
-sidebar_label: NetworkUpdateStage
+title: MLAPI.NetworkUpdateStage  
 ---
 
 <div class="markdown level0 summary">
@@ -24,20 +23,12 @@ Defines network update stages being executed by the network update loop.
 
 ## Fields
 
-Name
-
-Description
-
-EarlyUpdate
-
-FixedUpdate
-
-Initialization
-
-PostLateUpdate
-
-PreLateUpdate
-
-PreUpdate
-
-Update
+| Name           | Description |
+|----------------|-------------|
+| EarlyUpdate    |             |
+| FixedUpdate    |             |
+| Initialization |             |
+| PostLateUpdate |             |
+| PreLateUpdate  |             |
+| PreUpdate      |             |
+| Update         |             |

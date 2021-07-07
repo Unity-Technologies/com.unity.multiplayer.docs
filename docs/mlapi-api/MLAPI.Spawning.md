@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Spawning  
-title: MLAPI.Spawning
-sidebar_label: Spawning
+title: MLAPI.Spawning  
 ---
 
 ## Namespace MLAPI.Spawning
@@ -20,6 +19,15 @@ sidebar_label: Spawning
 
 ## Classes
 
+### MLAPI.Spawning.NetworkPrefabHandler
+
+<div class="section">
+
+Primary handler to add or remove customized spawn and destroy handlers
+for a network prefab (i.e. a prefab with a NetworkObject component)
+
+</div>
+
 ### MLAPI.Spawning.NetworkSpawnManager
 
 <div class="section">
@@ -28,20 +36,13 @@ Class that handles object spawning
 
 </div>
 
-## Delegates
+## Interfaces
 
-### MLAPI.Spawning.NetworkSpawnManager.DestroyHandlerDelegate
-
-<div class="section">
-
-The delegate used when destroying NetworkObjects
-
-</div>
-
-### MLAPI.Spawning.NetworkSpawnManager.SpawnHandlerDelegate
+### MLAPI.Spawning.INetworkPrefabInstanceHandler
 
 <div class="section">
 
-The delegate used when spawning a NetworkObject
+Interface for customizing asset spawn and destroy handlers NOTE: Custom
+spawn and destroy handlers are only invoked on clients
 
 </div>

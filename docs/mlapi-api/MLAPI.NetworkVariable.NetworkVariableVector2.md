@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableVector2  
-title: MLAPI.NetworkVariable.NetworkVariableVector2
-sidebar_label: NetworkVariableVector2
+title: MLAPI.NetworkVariable.NetworkVariableVector2  
 ---
 
 <div class="markdown level0 summary">
@@ -62,18 +61,6 @@ NetworkVariable&lt;Vector2&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;Vector2&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;Vector2&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;Vector2&gt;.OnValueChanged"
 
 </div>
@@ -122,8 +109,7 @@ NetworkVariable&lt;Vector2&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;Vector2&gt;.ReadDelta(Stream, Boolean, UInt16,
-UInt16)"
+NetworkVariable&lt;Vector2&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -135,7 +121,7 @@ NetworkVariable&lt;Vector2&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;Vector2&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;Vector2&gt;.ReadField(Stream)"
 
 </div>
 

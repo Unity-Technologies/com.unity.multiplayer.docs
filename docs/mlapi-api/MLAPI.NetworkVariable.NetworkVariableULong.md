@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableULong  
-title: MLAPI.NetworkVariable.NetworkVariableULong
-sidebar_label: NetworkVariableULong
+title: MLAPI.NetworkVariable.NetworkVariableULong  
 ---
 
 <div class="markdown level0 summary">
@@ -62,18 +61,6 @@ NetworkVariable&lt;UInt64&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;UInt64&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;UInt64&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;UInt64&gt;.OnValueChanged"
 
 </div>
@@ -122,8 +109,7 @@ NetworkVariable&lt;UInt64&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;UInt64&gt;.ReadDelta(Stream, Boolean, UInt16,
-UInt16)"
+NetworkVariable&lt;UInt64&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -135,7 +121,7 @@ NetworkVariable&lt;UInt64&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;UInt64&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;UInt64&gt;.ReadField(Stream)"
 
 </div>
 

@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Prototyping.NetworkTransform  
 title: MLAPI.Prototyping.NetworkTransform
-sidebar_label: NetworkTransform
 ---
 
 <div class="markdown level0 summary">

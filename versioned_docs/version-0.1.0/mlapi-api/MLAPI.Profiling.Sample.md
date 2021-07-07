@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.Sample  
 title: MLAPI.Profiling.Sample
-sidebar_label: Sample
 ---
 
 <div class="markdown level0 summary">

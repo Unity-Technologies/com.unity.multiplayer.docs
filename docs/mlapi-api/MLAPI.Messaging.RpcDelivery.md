@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Messaging.RpcDelivery  
-title: MLAPI.Messaging.RpcDelivery
-sidebar_label: RpcDelivery
+title: MLAPI.Messaging.RpcDelivery  
 ---
 
 <div class="markdown level0 summary">
@@ -24,14 +23,7 @@ RPC delivery types
 
 ## Fields
 
-Name
-
-Description
-
-Reliable
-
-Reliable delivery
-
-Unreliable
-
-Unreliable delivery
+| Name       | Description         |
+|------------|---------------------|
+| Reliable   | Reliable delivery   |
+| Unreliable | Unreliable delivery |

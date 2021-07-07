@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkManager  
 title: MLAPI.NetworkManager
-sidebar_label: NetworkManager
 ---
 
 <div class="markdown level0 summary">

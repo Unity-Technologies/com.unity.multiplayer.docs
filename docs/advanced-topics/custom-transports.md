@@ -3,7 +3,7 @@ id: custom-transports
 title: Custom Transports
 ---
 
-The MLAPI uses Unity’s [UNet Transport Layer API](https://docs.unity3d.com/Manual/UNetUsingTransport.html) by default and has support for custom Transports. 
+The MLAPI uses Unity’s [UNet Transport Layer API ](https://docs.unity3d.com/Manual/UNetUsingTransport.html) by default and has support for custom Transports. 
 
 A Transport collects messages from the application and transmits them over the network. 
 The Transport layer is also responsible for making sure that all packets arrive and that they arrive in order if needed. Transports also make sure that your data won't get corrupted when it's sent over the network.

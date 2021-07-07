@@ -14,16 +14,8 @@ Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity an
 
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
-## Get the project
 
-### Install Git LFS
-This project uses Git Large Files Support (LFS), which ensures all large assets required locally are handled for the project. See [Git LFS installation options for Windows and Mac instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
-
-:::note
-After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
-:::
-
-### Get the project files
+## Get the project files
 
 - A release version can be downloaded from the [Latest Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) at GitHub. 
 - Unzip the archive file.

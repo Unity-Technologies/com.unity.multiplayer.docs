@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.ProfilingDataStore  
-title: MLAPI.Profiling.ProfilingDataStore
-sidebar_label: ProfilingDataStore
+title: MLAPI.Profiling.ProfilingDataStore  
 ---
 
 <div class="markdown level0 summary">

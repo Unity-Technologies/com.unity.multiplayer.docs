@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.UNetChannel  
 title: MLAPI.Transports.UNetChannel
-sidebar_label: UNetChannel
 ---
 
 <div class="markdown level0 summary">

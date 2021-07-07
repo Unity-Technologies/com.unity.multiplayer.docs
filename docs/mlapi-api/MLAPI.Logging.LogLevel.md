@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Logging.LogLevel  
-title: MLAPI.Logging.LogLevel
-sidebar_label: LogLevel
+title: MLAPI.Logging.LogLevel  
 ---
 
 <div class="markdown level0 summary">
@@ -24,22 +23,9 @@ Log level
 
 ## Fields
 
-Name
-
-Description
-
-Developer
-
-Developer logging level, most verbose
-
-Error
-
-Error logging level, very quiet
-
-Normal
-
-Normal logging level, medium verbose
-
-Nothing
-
-Nothing logging level, no logging will be done
+| Name      | Description                                    |
+|-----------|------------------------------------------------|
+| Developer | Developer logging level, most verbose          |
+| Error     | Error logging level, very quiet                |
+| Normal    | Normal logging level, medium verbose           |
+| Nothing   | Nothing logging level, no logging will be done |

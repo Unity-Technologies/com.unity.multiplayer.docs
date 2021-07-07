@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableRay  
-title: MLAPI.NetworkVariable.NetworkVariableRay
-sidebar_label: NetworkVariableRay
+title: MLAPI.NetworkVariable.NetworkVariableRay  
 ---
 
 <div class="markdown level0 summary">
@@ -62,18 +61,6 @@ NetworkVariable&lt;Ray&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;Ray&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;Ray&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;Ray&gt;.OnValueChanged"
 
 </div>
@@ -122,7 +109,7 @@ NetworkVariable&lt;Ray&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;Ray&gt;.ReadDelta(Stream, Boolean, UInt16, UInt16)"
+NetworkVariable&lt;Ray&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -134,7 +121,7 @@ NetworkVariable&lt;Ray&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;Ray&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;Ray&gt;.ReadField(Stream)"
 
 </div>
 

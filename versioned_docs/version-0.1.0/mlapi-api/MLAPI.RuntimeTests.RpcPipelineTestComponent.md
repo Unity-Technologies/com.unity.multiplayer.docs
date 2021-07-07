@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.RuntimeTests.RpcPipelineTestComponent  
 title: MLAPI.RuntimeTests.RpcPipelineTestComponent
-sidebar_label: RpcPipelineTestComponent
 ---
 
 <div class="markdown level0 summary">
