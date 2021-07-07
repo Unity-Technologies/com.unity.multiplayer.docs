@@ -7,8 +7,10 @@
 
 /* You can override the default Infima variables here. */
 
+// Font Awesome css
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
+// Primary colors and sizes for the entire site
 :root {
   --ifm-color-primary: #3578e5;
   --ifm-color-primary-dark: #1d68e1;
@@ -29,12 +31,15 @@
   --doc-sidebar-width: 290px !important;
 }
 
+// Sidebar font size
 .menu__link {
   font-size: 87%;
 }
 
+// Roboto Font
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+// Headings and Titles
 h1, h2, h3, h4, h5, h6, .text-break {
   word-wrap: break-word;
   word-break: break-word;
@@ -84,6 +89,7 @@ h1 {
   --ifm-footer-background-color: #000000 !important;
 }
 
+// Code Block and Inline changes
 .docusaurus-highlight-code-line {
   background-color: rgb(0, 0, 0);
   display: block;
@@ -106,6 +112,24 @@ h1 {
   transition: opacity 200ms ease-in-out;
 }
 
+html[data-theme='dark'] code {
+  background-color: #292D3E !important;
+}
+
+// DETAILS SUMMARY for long code
+
+details {
+  ::marker {
+    color:rgb(38, 127, 153);
+  }
+}
+
+summary {
+  font-weight: bold;
+  color:rgb(38, 127, 153);
+  cursor: pointer;
+}
+
 // Top Nav Version
 
 .nav-break {
@@ -116,7 +140,9 @@ h1 {
   content: "v. ";
 }
 
-/* FontAwesome - find icons here https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
+/* 
+ * Font Awesome icons for content. To use in content, enter <i class="fp-name"></i>
+ * FontAwesome - find icons here https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
  * Add new entry using the following as examples.
 */
 
@@ -174,7 +200,7 @@ h1 {
   color: #3578e5;
 }
 
-//LANDING
+//Landing Page CSS
 
 .hero--primary {
   --ifm-hero-text-color: rgb(255, 255, 255) !important;
@@ -290,11 +316,8 @@ h1 {
 
 }
 
-html[data-theme='dark'] code {
-  background-color: #292D3E !important;
-}
-
-// ADMONITIONS
+// ADMONITIONS - Custom Admonition CSS - Add one for dark and light themes when adding a new custom
+// admonition to docusaurus.config.js
 // NOTE
 html[data-theme='dark'] .alert--secondary {
   --ifm-alert-background-color: transparent;
@@ -459,7 +482,7 @@ html[data-theme='light'] .admonition-unity {
   text-decoration: var(--ifm-link-decoration);
 }
 
-//VERSIONING
+// VERSIONING
 .user-options {
   display: flex;
   align-items: center;
@@ -519,7 +542,7 @@ html[data-theme='light'] .admonition-unity {
   margin-left: -5px !important;
 }
 
-// Responsive
+// Responsive Media Queries
 @media screen and (max-width: 996px) { 
   .navbar-github-link, .navbar-github-link:before {
     content: "GitHub";
@@ -697,8 +720,6 @@ html[data-theme='dark'] .node polygon {
   background-color: #ffffff;
 }
 
-//.medium-zoom-image
-
 // FOOTER
 
 .footerLogoLink {
@@ -739,7 +760,9 @@ html[data-theme='dark'] .node polygon {
   text-align: right;
 }
 
-/* TABLES */
+/* TABLES 
+   To use these in markdown, wrap the entire table with a <div class="classname"> markdown table </div>
+*/
 
 table {
   img {
@@ -1217,7 +1240,7 @@ html[data-theme='dark'] .DocSearch {
   padding: 5px !important;
 }
 
-// VIDEO
+// VIDEO embedding CSS
 
 .video-container {
     overflow: hidden;
@@ -1237,20 +1260,6 @@ html[data-theme='dark'] .DocSearch {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-// DETAILS SUMMARY for long code
-
-details {
-  ::marker {
-    color:rgb(38, 127, 153);
-  }
-}
-
-summary {
-  font-weight: bold;
-  color:rgb(38, 127, 153);
-  cursor: pointer;
 }
 
 //question and answer
