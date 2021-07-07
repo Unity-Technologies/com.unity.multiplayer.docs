@@ -4,6 +4,11 @@ title: NetworkVariable
 sidebar_label: NetworkVariable
 ---
 
+:::contribution Community Contribution
+
+There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
+:::
+
 `NetworkVariable` is the way data can be synchronized between peers in abstracted ways. The data can be custom containers and complex structures such as inventory structs.
 
 By default, the MLAPI comes with three different containers. `NetworkList`, `NetworkDictionary` and `NetworkVariable`. The `NetworkVariable` container is built to store simple data types such as `float`s and `int`s. The List and Dictionary implementations are wrappers around the .NET equivalents. They are event-driven and have a list of events to be synced. The default implementations come with flexibility in terms of settings. Containers can be setup to sync Client To Server, Server To Client, or Bidirectional. It can also be set to target specific clients using custom delegates.
