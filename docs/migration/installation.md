@@ -108,3 +108,10 @@ If you receive an OS or Unity error trying to locate Git after updating or insta
 **VPN or Proxy Errors**
 
 If you use VPN or proxy software from international locations, you may encounter access issues. Consider turning off your VPN service or selecting a different location.
+
+**Package Resolution Error when using a Git Dependancy referencing an Annotated Tag in its Git URL**
+
+For more information on this error please refer to [Unity Issue Tracker.](https://issuetracker.unity3d.com/issues/package-resolution-error-when-using-a-git-dependency-referencing-an-annotated-tag-in-its-git-url)
+
+
+
