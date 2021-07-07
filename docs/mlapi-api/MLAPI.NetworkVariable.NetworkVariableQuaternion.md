@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariableQuaternion  
-title: MLAPI.NetworkVariable.NetworkVariableQuaternion
-sidebar_label: NetworkVariableQuaternion
+title: MLAPI.NetworkVariable.NetworkVariableQuaternion  
 ---
 
 <div class="markdown level0 summary">
@@ -62,18 +61,6 @@ NetworkVariable&lt;Quaternion&gt;.Settings"
 
 <div>
 
-NetworkVariable&lt;Quaternion&gt;.LocalTick"
-
-</div>
-
-<div>
-
-NetworkVariable&lt;Quaternion&gt;.RemoteTick"
-
-</div>
-
-<div>
-
 NetworkVariable&lt;Quaternion&gt;.OnValueChanged"
 
 </div>
@@ -122,8 +109,7 @@ NetworkVariable&lt;Quaternion&gt;.CanClientWrite(UInt64)"
 
 <div>
 
-NetworkVariable&lt;Quaternion&gt;.ReadDelta(Stream, Boolean, UInt16,
-UInt16)"
+NetworkVariable&lt;Quaternion&gt;.ReadDelta(Stream, Boolean)"
 
 </div>
 
@@ -135,7 +121,7 @@ NetworkVariable&lt;Quaternion&gt;.SetNetworkBehaviour(NetworkBehaviour)"
 
 <div>
 
-NetworkVariable&lt;Quaternion&gt;.ReadField(Stream, UInt16, UInt16)"
+NetworkVariable&lt;Quaternion&gt;.ReadField(Stream)"
 
 </div>
 

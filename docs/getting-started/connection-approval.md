@@ -9,7 +9,7 @@ Connection approval allows you to decide on a per connection basis if the connec
 
 ## Callback for approval logic
 
-When `ConnectionApproval` is `true`, you are also required to provide a callback where you put your approval logic inside. 
+When `ConnectionApproval` is `true`, you are also required to provide a callback where you put your approval logic inside. `ConnectionApprovalCallback` is called by the Client host.
 
 Server-only example:
 
@@ -50,20 +50,21 @@ using MLAPI;
 NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASCII.GetBytes("room password");
 NetworkManager.Singleton.StartClient();
 ```
-The ConnectionData will then be passed to the server and it will decide if the client will be approved or not.
+
+The `ConnectionData` will then be passed to the server and it will decide if the client will be approved or not.
 
 ## Timeout
 
-The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the ConnectionData (encrypted and authenticated by the MLAPI) that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
+The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` (encrypted and authenticated by the MLAPI) that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
 
 ## Security
 
 If connection approval is enabled. Any messages sent before a connection is setup are silently ignored.
 
-### Connection data Security
+### Connection data security
 
-If Encryption is enabled, the connection handshake with the buffer will be encrypted AND authenticated. (AES-256 encryption and HMAC-SHA-256 authentication). 
+The connection data is not encrypted or authenticated. 
 
-:::note
-If the key exchange is not signed, a man in the middle attack can be done. If you plan on sending authentication tokens such as steam tickets. It is strongly suggested that you sign the handshake.
+:::important
+A man in the middle attack can be done. It is strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
 :::

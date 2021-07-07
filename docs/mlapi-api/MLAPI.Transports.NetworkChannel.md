@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Transports.NetworkChannel  
-title: MLAPI.Transports.NetworkChannel
-sidebar_label: NetworkChannel
+title: MLAPI.Transports.NetworkChannel  
 ---
 
 <div class="markdown level0 summary">
@@ -22,28 +21,18 @@ sidebar_label: NetworkChannel
 
 ## Fields
 
-Name
-
-Description
-
-AnimationUpdate
-
-ChannelUnused
-
-DefaultMessage
-
-Internal
-
-NavAgentCorrection
-
-NavAgentState
-
-PositionUpdate
-
-ReliableRpc
-
-SyncChannel
-
-TimeSync
-
-UnreliableRpc
+| Name               | Description |
+|--------------------|-------------|
+| AnimationUpdate    |             |
+| ChannelUnused      |             |
+| DefaultMessage     |             |
+| Internal           |             |
+| NavAgentCorrection |             |
+| NavAgentState      |             |
+| NetworkVariable    |             |
+| PositionUpdate     |             |
+| ReliableRpc        |             |
+| SnapshotExchange   |             |
+| SyncChannel        |             |
+| TimeSync           |             |
+| UnreliableRpc      |             |

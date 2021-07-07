@@ -2,9 +2,9 @@
 title: Boss Room docs are live!
 author: Lori Krell
 author_title: Unity, Senior Tech Writer
+authorImageURL: 'https://avatars.githubusercontent.com/u/76010626?v=4'
 tags: [releases, bossroom]
 description: Welcome to the first release of the Unity Boss Room Small Scale Co-op Sample documentation content. Learn more about Unity MLAPI through the sample co-op Boss Room game and project.
-hide_table_of_contents: false
 ---
 
 You [saved the date](https://unity.com/demos/small-scale-coop-sample), and now Boss Room is public and live April 7, 2021!

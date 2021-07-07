@@ -5,11 +5,14 @@ title: Frequently Asked Questions
 
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
 
+## Unity MLAPI
+
 <div id="faq">
-   
+
+
 ### Does MLAPI have a Public Roadmap?
 
-See the [Multiplayer Networking Public Roadmap](https://resources.unity.com/unity-engine-roadmap/multiplayer#roadmap) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
+See the [Multiplayer Networking Public Roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
 
 ### Implement a Dedicated Server vs a Listen Server, would I need to make changes to the codebase?
 
@@ -24,7 +27,7 @@ Matchmaking would have to be implemented using 3rd party matchmaking services. M
 If you receive `ClientRPC` errors like the following, you may have difficulty debugging:
 
 > :warning: [MLAPI] ClientRPC message received for a non existant object with id: 16. This message will be buffered and might be recovered.
-UnityEngine.Debug:LogWarning(object)
+`UnityEngine.Debug:LogWarning(object)`
 
 You can set *Enable Message Buffering* to `true` in `NetworkManager`. It will store those RPCs and apply them later once the object spawns.
 
@@ -68,6 +71,12 @@ We recommend the following:
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
 
+</div>
+
+## Boss Room and Bitesize Samples
+
+<div id="faq">
+
 ### Why do I get path too long errors with Boss Room on Windows?
 
 Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. 
@@ -90,5 +99,12 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 
 
 See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac) for details.
+
+### Why is there an `InitBootStrap` scene as the startup scene for Boss Room and Bitesize Samples?
+
+The initial reason is that in Unity MLAPI the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
+
+The Bootstrap scene ensures that the `NetworkManager` and other singletons are initialized first and will be there when you get back to main menu.
+
 
 </div>

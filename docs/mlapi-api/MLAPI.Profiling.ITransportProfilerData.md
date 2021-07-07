@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.Profiling.ITransportProfilerData  
-title: MLAPI.Profiling.ITransportProfilerData
-sidebar_label: ITransportProfilerData
+title: MLAPI.Profiling.ITransportProfilerData  
 ---
 
 <div class="markdown level0 summary">

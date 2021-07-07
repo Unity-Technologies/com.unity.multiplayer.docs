@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.RuntimeTests.TickSystemTests  
 title: MLAPI.RuntimeTests.TickSystemTests
-sidebar_label: TickSystemTests
 ---
 
 <div class="markdown level0 summary">

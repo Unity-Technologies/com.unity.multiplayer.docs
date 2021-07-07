@@ -1,12 +1,11 @@
 ---  
 id: MLAPI.Serialization.AutoNetworkSerializable  
-title: MLAPI.Serialization.AutoNetworkSerializable
-sidebar_label: AutoNetworkSerializable
+title: MLAPI.Serialization.AutoNetworkSerializable  
 ---
 
 <div class="markdown level0 summary">
 
-AutoNetworkSerializable implements INetworkSerializable and automatically
+AutoBitWritable implements INetworkSerializable and automatically
 serializes fields using reflection
 
 </div>

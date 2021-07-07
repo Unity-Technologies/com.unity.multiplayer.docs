@@ -1,7 +1,6 @@
 ---  
 id: MLAPI.NetworkVariable.NetworkVariablePermission  
-title: MLAPI.NetworkVariable.NetworkVariablePermission
-sidebar_label: NetworkVariablePermission
+title: MLAPI.NetworkVariable.NetworkVariablePermission  
 ---
 
 <div class="markdown level0 summary">
@@ -24,22 +23,9 @@ Permission type
 
 ## Fields
 
-Name
-
-Description
-
-Custom
-
-Custom delegate
-
-Everyone
-
-Everyone
-
-OwnerOnly
-
-Owner-ownly
-
-ServerOnly
-
-Server-only operation
+| Name       | Description           |
+|------------|-----------------------|
+| Custom     | Custom delegate       |
+| Everyone   | Everyone              |
+| OwnerOnly  | Owner-ownly           |
+| ServerOnly | Server-only operation |

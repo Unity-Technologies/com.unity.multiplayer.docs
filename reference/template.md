@@ -493,6 +493,26 @@ export const Highlight = ({children, color}) => ( <span style={{
 
 I can write **Markdown** alongside my _JSX_!
 
+### Import Markdown Files
+
+Using MDX, you can create markdown files with a section of content that can be imported to multiple files. For example, you may have the same notation or install instructions across multiple files. 
+
+Save your files with a file name starting with an underscore (_) in a shared folder (available in each version folder). These files will be included in generated versions.
+
+Currently, any headings will not build in the on-page navigation (on the right). You can add a heading to the page then import the file.
+
+Use the following code with an absolute path to the shared folder file.
+
+```markdown
+
+## Heading
+
+import Alias from '../shared/_file-name.md';
+
+<Alias/>
+
+```
+
 <!-- On page code -->
 import Mermaid from '@theme/Mermaid';
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
