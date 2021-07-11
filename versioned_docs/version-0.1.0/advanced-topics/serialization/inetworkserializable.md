@@ -4,9 +4,10 @@ title: INetworkSerializable
 sidebar_label: INetworkSerializable
 ---
 
-The `INetworkSerializable` interface can be used to define custom serializable types.
+The `INetworkSerializable` interface in `MLAPI.Serialization` can be used to define custom serializable types.
 
 ```csharp
+
 struct MyComplexStruct : INetworkSerializable
 {
     public Vector3 Position;
