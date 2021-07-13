@@ -64,8 +64,8 @@ See the following content to continue your journey using MLAPI:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
-* [Building Golden Path](../tutorials/goldenpath.md) to get started from install to project creation
-* [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
+* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
+* [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
 
