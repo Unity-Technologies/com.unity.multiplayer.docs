@@ -19,11 +19,11 @@ Unity MLAPI supports Windows and MacOS versions of Unity Editor and Player.
 
 This release provides the following new features and APIs:
 
-* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing MLAPI Convenience and Performance RPC (see [here](#removed-features)). For information on compatibility and deprecations, see [RPC Migration and Compatibility](../../advanced-topics/message-system/rpc-compatibility.md).
-* Added standarized serialization types, including built-in and custom serialization flows. See [About Serialization](../../advanced-topics/serialization/serialization-intro.md) for details.
+* Refactored a new standard for Remote Procedure Call (RPC) in MLAPI which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing MLAPI Convenience and Performance RPC (see [here](#removed-features)). For information on compatibility and deprecations, see [RPC Migration and Compatibility](../../docs/advanced-topics/message-system/rpc-compatibility).
+* Added standarized serialization types, including built-in and custom serialization flows. See [About Serialization](../../docs/advanced-topics/serialization/serialization-intro) for details.
 * `INetworkSerializable` interface replaces `IBitWritable`.
 * Added `NetworkSerializer`..., which is the main aggregator that implements serialization code for built-in supported types and holds `NetworkReader` and `NetworkWriter` instances internally.
-* Added a Network Update Loop infrastructure that aids Netcode systems to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. See [Network Update Loop](../../advanced-topics/network-update-loop-system/index.md) and the following details: <!-- MTT-498 RFC #8 -->
+* Added a Network Update Loop infrastructure that aids Netcode systems to update (such as RPC queue and transport) outside of the standard `MonoBehaviour` event cycle. See [Network Update Loop](../../docs/advanced-topics/network-update-loop-system/about-network-update-loop) and the following details: <!-- MTT-498 RFC #8 -->
   * It uses Unity's [low-level Player Loop API](https://docs.unity3d.com/ScriptReference/LowLevel.PlayerLoop.html) and allows for registering `INetworkUpdateSystem`s with `NetworkUpdate` methods to be executed at specific `NetworkUpdateStage`s, which may also be before or after `MonoBehaviour`-driven game logic execution.
   * You will typically interact with `NetworkUpdateLoop` for registration and `INetworkUpdateSystem` for implementation.
   * `NetworkTickSystem` tracks time through network interactions and syncs `NetworkVariable`s, used in this update loop. <!-- MTT-241, RFC #12-->
@@ -40,7 +40,7 @@ This release provides the following new features and APIs:
 :::tip
 A test project is available for building and experimenting with MLAPI features. This project is available in the MLAPI GitHub [testproject folder](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/release/0.1.0/testproject). 
 
-We also provide a new [Hello World example](../../tutorials/helloworldintro.md) to walk through installation to building your first networked game.
+We also provide a new [Hello World example](../../docs/tutorials/helloworld/helloworldintro) to walk through installation to building your first networked game.
 :::
 
 [MLAPI Community Contributions](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) is a new GitHub repository open to the MLAPI community for extensions. Current extensions include moved MLAPI features for lag compensation (useful for Server Authoritative actions) and `TrackedObject`.
@@ -50,7 +50,7 @@ We also provide a new [Hello World example](../../tutorials/helloworldintro.md) 
 This release includes the following updates:
 
 * MLAPI now uses the Unity Package Manager for installation management. <!-- PR 520-->
-* Added functionality and usability to [`NetworkVariable`](../../mlapi-basics/networkvariable.md), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
+* Added functionality and usability to [`NetworkVariable`](../../docs/mlapi-basics/networkvariable), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
 * [GitHub 507](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/507): Reimplemented `NetworkAnimator`, which synchronizes animation states for networked objects. 
 
 ### Refactored API names
@@ -146,9 +146,9 @@ Review the following known issues with this release:
 
 ## Upgrade guide
 
-If using UNet, see the [Migrating From UNet to MLAPI](../../migration/migratingtomlapi.md).
+If using UNet, see the [Migrating From UNet to MLAPI](../../docs/migration/migratingtomlapi).
 
-If using previous versions of MLAPI, see [Updating to the Unity Package](../../migration/migratingfrommlapi.md).
+If using previous versions of MLAPI, see [Updating to the Unity Package](../../docs/migration/migratingfrommlapi).
 
 ## Learn more
 

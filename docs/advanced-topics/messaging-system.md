@@ -30,7 +30,7 @@ See the following information:
 * [Reliability](message-system/reliabilty.md)
 * [Execution Table](message-system/execution-table.md)
 * [RPC Params](message-system/rpc-params.md)
-* [Serialization Types and RPCs](message-system/serialization.md)
+* * [Serialization Types and RPCs](message-system/../serialization/serialization-intro.md)
 
 There is also some additional information on RPC's and some usage examples  on the following pages:
 
