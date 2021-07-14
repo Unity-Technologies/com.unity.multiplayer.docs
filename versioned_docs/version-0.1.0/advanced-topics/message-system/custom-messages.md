@@ -47,7 +47,7 @@ private void Start()
     //Receiving
     CustomMessagingManager.RegisterNamedMessageHandler("myMessageName", (senderClientId, stream) =>
     {
-        using (NetworkReader reader = NetworkReader.Get(stream))
+        using (PooledNetworkReader reader = PooledNetworkReader.Get(stream))
         {
             StringBuilder stringBuilder = reader.ReadString(); //Example
             string message = stringBuilder.ToString();
