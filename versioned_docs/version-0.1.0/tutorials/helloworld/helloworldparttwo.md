@@ -124,7 +124,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
- static void StartButtons()
+        static void StartButtons()
         {
             if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
             if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
@@ -384,7 +384,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 </details>
 
- If we are a client, we call a server RPC.
+ If we are a client, we call a `ServerRpc`. A `ServerRpc` can be invoked by a client to be executed on the server.
 
  <details open>
 <summary>Click to show/hide the Code.
@@ -406,7 +406,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-This server RPC simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
+This `ServerRpc` simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -427,7 +427,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-The server instance of this player has just modified the Position NetworkVariable, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
+The server instance of this player has just modified the Position `NetworkVariable`, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
 <details open>
 <summary>Click to show/hide the Code.
 
