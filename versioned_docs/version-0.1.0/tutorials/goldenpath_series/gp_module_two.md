@@ -298,9 +298,10 @@ Congratulations you have learned how to use some of the basic building blocks of
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
-- [Network transforms](../components/networktransform.md)
-- [RPCs](../advanced-topics/message-system/about-rpc.md)
+- [Network variables (client and server-controlled)](../../mlapi-basics/networkvariable.md)
+- [Network transforms](../../components/networktransform.md)
+- [RPCs](../../advanced-topics/messaging-system.md)
+
 
 
 :::contribution Special Thanks

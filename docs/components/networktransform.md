@@ -2,7 +2,7 @@
 id: networktransform
 title: NetworkTransform
 ---
-The  position and rotation of a [`NetworkObject`](../mlapi-api/MLAPI.Prototyping.NetworkTransform.md) is normally only synchronized when that object is spawned. To synchronize position and rotation at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the owner of the network object to all other clients.
+The  position and rotation of a [`NetworkObject`](../mlapi-basics/networkobject.md) is normally only synchronized when that object is spawned. To synchronize position and rotation at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the owner of the network object to all other clients.
 
 :::note
 `NetworkTansform` does not sync the scale of the object.
