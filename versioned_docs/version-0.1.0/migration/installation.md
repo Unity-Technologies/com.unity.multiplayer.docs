@@ -58,8 +58,8 @@ See the following content to continue your journey using MLAPI:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
-* [Building Golden Path](../tutorials/goldenpath.md) to get started from install to project creation
-* [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
+* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
+* [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
 
@@ -87,3 +87,7 @@ If you receive an OS or Unity error trying to locate Git after updating or insta
 **VPN or Proxy Errors**
 
 If you use VPN or proxy software from international locations, you may encounter access issues. Use the registry option for installing MLAPI. Also consider turning off your VPN service or selecting a different location.
+
+**Package Resolution Error when using a Git Dependancy referencing an Annotated Tag in its Git URL**
+
+For more information on this error please refer to [Unity Issue Tracker.](https://issuetracker.unity3d.com/issues/package-resolution-error-when-using-a-git-dependency-referencing-an-annotated-tag-in-its-git-url)
