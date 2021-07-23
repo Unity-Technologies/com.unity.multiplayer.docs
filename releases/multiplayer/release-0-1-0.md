@@ -12,7 +12,7 @@ The Multiplayer v0.1.0 Experimental release contains features, updates, bug fixe
 | MLAPI | 0.1.0 | Experimental | March 23, 2021 | 2019.4 and later |
 
 :::note
-Unity MLAPI supports Windows, MacOS,Ubuntu 20.4 LTS, Ubuntu 18.04 LTS and CentOS 7 versions of Unity Editor and Player.
+Unity MLAPI supports Windows, MacOS, Ubuntu 20.4 LTS, Ubuntu 18.04 LTS and CentOS 7 versions of Unity Editor and Player.
 :::
 
 ## New features
