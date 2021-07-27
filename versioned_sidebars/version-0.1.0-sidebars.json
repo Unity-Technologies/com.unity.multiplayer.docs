@@ -443,7 +443,11 @@
           {
           "type": "doc",
           "id": "version-0.1.0/learn/dapper/dapper-playernames"
-          }
+          },
+          {
+            "type": "doc",
+            "id": "version-0.1.0/learn/dapper/lobbycreation"
+              }
 
 
                 ]

@@ -471,6 +471,10 @@ module.exports = {
           "type": "doc",
           "id": "learn/dapper/dapper-playernames"
           },
+          {
+          "type": "doc",
+          "id": "learn/dapper/lobbycreation"
+            },
 
 
                 ]
