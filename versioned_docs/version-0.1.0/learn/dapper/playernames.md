@@ -20,6 +20,8 @@ This Unity Multiplayer tutorial  will teach you how to implement player names.
 
 Video published 17 June 2021
 
+For project files access, check out the repository here: https://github.com/DapperDino/Unity-Multiplayer-Tutorials
+
 :::contribution Community Contribution
 Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for the video tutorials! These contributions are a fantastic help to the community.
 :::
