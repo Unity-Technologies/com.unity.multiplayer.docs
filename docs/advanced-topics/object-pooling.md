@@ -153,8 +153,15 @@ using UnityEngine;
 using MLAPI;
 using MLAPI.Spawning;
 using MLAPI.Serialization;
-using MLAPI.Serialization.Pooled;
 
+/// <summary>
+/// This is an example of using more than one Network Prefab override when using a custom handler
+/// USAGE NOTE: When using more than one network prefab, it is important to understand that each
+/// client determines what prefab they will be using and will not be synchronized across other clients.
+/// This feature is primarily to be used for things like platform specific Network Prefabs where
+/// things like collision models or graphics related assets might need to vary between platforms.
+/// The usage of different visual assets used is strictly for example purposes only.
+/// </summary>
 public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetworkPrefabInstanceHandler
 {
     private GameObject m_ObjectToPool;
@@ -167,9 +174,6 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
 
     [SerializeField]
     private int m_ObjectPoolSize = 15;
-
-    [SerializeField]
-    private bool m_SynchronizeOverrides;
 
     [SerializeField]
     [Range(1, 5)]
@@ -277,12 +281,6 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
         networkWriter.WriteInt32Packed(genericObjectPooledBehaviour.SyncrhonizedObjectTypeIndex);
     }
 
-    private int m_UseSynchronizedIndexValue = -1;
-    public void OnSynchronizeRead(NetworkReader networkReader)
-    {
-        m_UseSynchronizedIndexValue = networkReader.ReadInt32Packed();
-    }
-
     public NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rotation)
     {
         var gameObject = GetNextSpawnObject();
@@ -316,15 +314,6 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
 
         var entitySpawnUpdateRate = 1.0f;
 
-        var networkBuffer = (NetworkBuffer)null;
-        var networkWriter = (PooledNetworkWriter)null;
-
-        if(m_SynchronizeOverrides)
-        {
-            networkBuffer = new NetworkBuffer(2);
-            networkWriter = PooledNetworkWriter.Get(networkBuffer);
-        }
-
         while (m_IsSpawningObjects)
         {
             entitySpawnUpdateRate = 1.0f / (float)m_SpawnsPerSecond;
@@ -341,22 +330,10 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
                 var no = go.GetComponent<NetworkObject>();
                 if (!no.IsSpawned)
                 {
-                    if (m_SynchronizeOverrides)
-                    {
-                        networkBuffer.Position = 0;
-                        var genericObjectPooledBehaviour = no.GetComponent<GenericPooledObjectBehaviour>();
-                        networkWriter.WriteInt32Packed(genericObjectPooledBehaviour.SyncrhonizedObjectTypeIndex);
-                    }
-                    no.Spawn(networkBuffer, true);
+                    no.Spawn(null,true);
                 }
             }
             yield return new WaitForSeconds(entitySpawnUpdateRate);
-        }
-
-        if (m_SynchronizeOverrides)
-        {
-            NetworkWriterPool.PutBackInPool(networkWriter);
-            networkBuffer.Dispose();
         }
     }
 }
