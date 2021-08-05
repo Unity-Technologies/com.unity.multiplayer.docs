@@ -14,7 +14,7 @@ You can register your own spawn handlers by including the `INetworkPrefabInstanc
     public interface INetworkPrefabInstanceHandler
     {
         NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rotation);
-        void Destroy(NetworkObject networkObject);
+        bool Destroy(NetworkObject networkObject);
     }
 ```
 MLAPI will use the `Instantiate` and `Destroy` methods in place of default spawn handlers for the `NetworkObject` used during spawning and despawning.  Because the message to instantiate a new `NetworkObject` originates from a Host or Server, both will not have the Instantiate method invoked. All clients (excluding a Host) will have the instantiate method invoked if the `INetworkPrefabInstanceHandler` implementation is  registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject`.
@@ -24,8 +24,7 @@ In the following basic pooling example, the `m_ObjectToPool` property is the pre
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MLAPI;
-using MLAPI.Spawning;
+using Unity.Netcode;
 
 public class NetworkPrefabHandlerObjectPool : NetworkBehaviour, INetworkPrefabInstanceHandler
 {
@@ -100,12 +99,13 @@ public class NetworkPrefabHandlerObjectPool : NetworkBehaviour, INetworkPrefabIn
         return gameObject.GetComponent<NetworkObject>();
     }
 
-    public void Destroy(NetworkObject networkObject)
+    public bool Destroy(NetworkObject networkObject)
     {
         if (m_ObjectsPool.Contains(networkObject.gameObject))
         {
             networkObject.gameObject.SetActive(false);
         }
+        return false;
     }
 
     private IEnumerator SpawnObjects()
@@ -135,7 +135,7 @@ public class NetworkPrefabHandlerObjectPool : NetworkBehaviour, INetworkPrefabIn
                 var no = go.GetComponent<NetworkObject>();
                 if (!no.IsSpawned)
                 {
-                    no.Spawn(null, true);
+                    no.Spawn(true);
                 }
             }
             yield return new WaitForSeconds(entitySpawnUpdateRate);
@@ -150,9 +150,7 @@ In the next more advanced example, the `m_ObjectToOverride` property is the pref
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MLAPI;
-using MLAPI.Spawning;
-using MLAPI.Serialization;
+using Unity.Netcode;
 
 /// <summary>
 /// This is an example of using more than one Network Prefab override when using a custom handler
@@ -290,12 +288,14 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
         return gameObject.GetComponent<NetworkObject>();
     }
 
-    public void Destroy(NetworkObject networkObject)
+    public bool Destroy(NetworkObject networkObject)
     {
         if (m_NameValidation.Contains(networkObject.gameObject.name))
         {
             networkObject.gameObject.SetActive(false);
         }
+
+        return false;
     }
 
     /// <summary>
@@ -330,7 +330,7 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
                 var no = go.GetComponent<NetworkObject>();
                 if (!no.IsSpawned)
                 {
-                    no.Spawn(null,true);
+                    no.Spawn(true);
                 }
             }
             yield return new WaitForSeconds(entitySpawnUpdateRate);
