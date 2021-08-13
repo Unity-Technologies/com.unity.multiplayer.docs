@@ -4,10 +4,9 @@ title: Limiting the maximium number of players
 ---
 
 
-MLAPI provides a way to implement a connection approval delegate that can reject incoming connections based on custom logic.
+MLAPI provides a way to implement a [connection approval delegate](../mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate.md) that can reject incoming connections based on custom logic.
 ​
-This topic is related to [Connection Approval](connection-approval.md).
-​
+
 
 Boss Room provides an example of such delegate
 
@@ -26,7 +25,8 @@ if( m_ClientData.Count >= CharSelectData.k_MaxLobbyPlayers )
 ​
 :::tip**SUIBJECT TO CHANGE:**
 ​
-In connection approval delefate MLAPI does not support an ability to send anything more than a boolean back. 
+In connection approval delegate MLAPI does not support an ability to send anything more than a boolean back. 
 Boss Room demonstrates a way to provide meaningful error code to the client by invoking a client RPC in the same channel that MLAPI uses for its connection callback.
 This will become unneccessary in the future.
 :::
+
