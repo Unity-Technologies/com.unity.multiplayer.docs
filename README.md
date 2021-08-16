@@ -1,6 +1,6 @@
 # Unity Multiplayer Networking Docs
 
-Welcome to the Unity Multiplayer Networking Documentation. This site includes the MLAPI, Unity Transport Package, Boss Room Sample Coop, and other tools and features.
+Welcome to the Unity Multiplayer Networking Documentation. This site includes the MLAPI, Unity Transport, Boss Room Sample Co-op, Bitesize samples, and other tools and features.
 
 The documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/) using [Yarn](https://yarnpkg.com/en/) and [Node.js](https://nodejs.org/en/download/). 
 
@@ -14,23 +14,13 @@ Always cut branches from **master** branch.
 
 See the [Contribution Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) to learn about writing and submitting content, our GitHub labels, and more. A [template file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/docs/template.md) (/docs/template.md) is included in the repo to understand markdown formatting and options.
 
-## Tools Used
-
-Our site uses Docusaurus with Yarn commands. Always use Yarn commands, to update, build, and serve the server locally. If you need a preview without building locally, the Unity Doc Team can get you a preview!
-
 ## Installation
 
-The first time you clone the repo, run the following command to install required node modules into the local cloned directory. You only need to run this once.
+You can install and build docs on Mac and Windows environments. The doc site is built on Docusaurus, which requires NodeJS and Yarn installed for your OS.
 
-```console
-yarn install
-```
-
-If you need to update packages and local plugins, use:
-
-```console
-yarn upgrade
-```
+1. Install [NodeJS](https://nodejs.org/en/download/).
+1. Install [Yarn](https://yarnpkg.com/en/).
+1. Install Docusaurus to a temp location: `yarn global add docusaurus-init`. You can delete the temp project.
 
 ## Building on Local
 
@@ -51,3 +41,7 @@ For full building content, see [Building Locally](https://github.com/Unity-Techn
 ## Connect with Unity 
 
 Connect with the Unity Multiplayer team and community on the [MLAPI by Unity](http://discord.mlapi.network/) Discord using channel #documentation. You can also raise threads on the [Unity Multiplayer Forum](https://forum.unity.com/forums/multiplayer.26/)
+
+## Tools Used
+
+Our site uses [Docusaurus](https://docusaurus.io/) with Yarn commands. Always use Yarn commands, to update, build, and serve the server locally. Our search uses Algolia for Open Source. For details on tools, see this [blog post](https://docs-multiplayer.unity3d.com/blog/2021/02/11/welcome). If you need a preview without building locally, the Unity Doc Team can get you a preview!
