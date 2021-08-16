@@ -3,7 +3,7 @@ id: rpc-compatibility
 title: RPC migration and compatibility
 ---
 
-This section provides information on compatibility and support for Unity MLAPI features compared to previous MLAPI versions. See the [release notes](../../release-notes/index.md) for more information.
+This section provides information on compatibility and support for Unity MLAPI features compared to previous MLAPI versions. See the [Release Notes](../../../../releases/introduction) for more information.
 
 ## Cross-Compatibility
 
