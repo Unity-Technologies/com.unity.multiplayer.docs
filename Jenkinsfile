@@ -13,7 +13,7 @@ pipeline {
             sh 'echo "deb https://dl.yarnpkg.com/debian/ buster main" | tee /etc/apt/sources.list.d/yarn.list'
             sh 'curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -'
             sh 'curl -fsSL https://deb.nodesource.com/setup_14.x | bash -'
-            sh 'apt-get update && apt-get install -y nodejs yarn'
+            sh 'apt-get update --allow-releaseinfo-change && apt-get install -y nodejs yarn'
          }
       }
       stage('prepare env and install docusaurus') {
