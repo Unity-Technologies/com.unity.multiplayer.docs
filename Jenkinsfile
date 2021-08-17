@@ -9,6 +9,7 @@ pipeline {
     stages {
       stage('Install nodejs and yarn') {
          steps {
+            sh 'apt-get update --allow-releaseinfo-change'
             sh 'curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -'
             sh 'echo "deb https://dl.yarnpkg.com/debian/ buster main" | tee /etc/apt/sources.list.d/yarn.list'
             sh 'curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -'
