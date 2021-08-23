@@ -41,7 +41,12 @@ We use ParrelSync for local iteration in [BossRoom sample](https://github.com/Un
 ### Usage
  - Open the `ParrelSync->Preferences` menu in the menu bar to open the preferences window
  - Verify that your settings are set to the following: ![parrelsync-preferences](/static/img/parrelsync-preferences.png)
- > By default ParrelSync prevents asset serialization in all clone instances and changes can only be made from the original project editor. This is a **very important setting** that prevents issues with multiple editors accessing the same `Library` folder (which is not supported and breaks basic assumptions in Unity design).
+:::important
+
+By default ParrelSync prevents asset serialization in all clone instances and changes can only be made from the original project editor. This is a **very important setting** that prevents issues with multiple editors accessing the same `Library` folder (which is not supported and breaks basic assumptions in Unity design).
+
+:::
+
  - Open the `ParrelSync->Clones Manager` from which you can launch, create and remove clone editors.
 	 - Advanced usage is to utilize ParrelSync's capability of passing [Arguments](https://github.com/VeriorPies/ParrelSync/wiki/Argument) to clones, thus allowing to run custom logic on a per-clone basis.
 
