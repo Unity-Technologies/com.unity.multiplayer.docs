@@ -72,6 +72,17 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
+    "label": "Local Iteration Tutorials",
+    "items": [
+      {
+        "type": "doc",
+        "id": "local_iteration_testing_locally"
+      }
+    ],
+  },
+  {
+    "collapsed": true,
+    "type": "category",
     "label": "Networking",
     "items": [
       {
