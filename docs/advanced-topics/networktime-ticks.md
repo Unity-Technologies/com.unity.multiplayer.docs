@@ -12,22 +12,23 @@ Netcode for Gameobjects uses a star topology. That means all communications happ
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
+  
 
-```mermaid
-sequenceDiagram;
+
+<Mermaid chart={`
+sequenceDiagram
     participant Owner as Client LocalTime
     participant Server as Server ServerTime & LocalTime
     participant Receiver as Client ServerTime
-
     Note over Owner: Send message to server at LocalTime.
     Owner->>Server: Delay when sending message
     Note over Server: Message arrives at ServerTime.
     Note over Server: On server: ServerTime == LocalTime.
-
     Note over Server: Send message to clients at LocalTime.
     Server->>Receiver: Delay when sending message
     Note over Receiver: Message arrives at ServerTime.
-```
+`}/>
+
 
 
 
@@ -118,29 +119,25 @@ public class SyncedEventExample : NetworkBehaviour
 }
 ```
 
-```mermaid
+<Mermaid chart={`
 sequenceDiagram
     participant Owner as Owner
     participant Server as Server
     participant Receiver as Other Client
-
     Note over Owner: LocalTime = 10.0
     Note over Owner: ClientCreateSyncedEffect()
     Note over Owner: Instantiate effect immediately (LocalTime = 10)
     Owner->>Server: CreateSyncedEffectServerRpc
-
     Server->>Receiver: CreateSyncedEffectClientRpc
-
     Note over Server: ServerTime = 9.95 #38; timeToWait = 0.05
     Note over Server: StartCoroutine(WaitAndSpawnSyncedEffect(0.05))
     Server->>Server: WaitForSeconds(0.05);
     Note over Server: Instantiate effect at ServerTime = 10.0
-
     Note over Receiver: ServerTime = 9.93 #38; timeToWait = 0.07
     Note over Receiver: StartCoroutine(WaitAndSpawnSyncedEffect(0.07))
     Receiver->>Receiver: WaitForSeconds(0.07);
     Note over Receiver: Instantiate effect at ServerTime = 10.0
-```
+`}/>
 
 
 
