@@ -52,11 +52,11 @@ By default ParrelSync prevents asset serialization in all clone instances and ch
 
 ### Known issues and workarounds
  - An important nuance is that ParrelSync does not sync changes made to packages. `Packages` folder is synced on clone opening, so if you made package changes - you should close and re-open your clones.
- - If you encounter an error that mentions `soft sync` - that generally means that prefabs or scenes are not in sync between editors. You should save the project in the main editor via `File->Save Project` and refresh the projects in the clone editors by pressing `Ctrl + R` (which is by default done automatically) or reimport networked prefabs in the main editor.
+ - If you encounter a Netcode error that mentions `soft sync` - that generally means that prefabs or scenes are not in sync between editors. You should save the project in the main editor via `File->Save Project` and refresh the projects in the clone editors by pressing `Ctrl + R` (which is by default done automatically) or reimport networked prefabs in the main editor.
  - More information and general ParrelSync FAQ: https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs
  - The ultimate workaround in case nothing helps - deleting and re-creating the clone instance via `ParrelSync->Clones Manager` window.
 
 ## General tips
  - Bigger screens or multi-screen setups allow for more screen real estate, which is handy when one has to have multiple instances of an app opened at the same time.
  - ParrelSync has to copy and update separate `Packages` and `Library` folders for every clone, and in certain cases a fix for misbehaving clone is re-creation - a good SSD makes this process quite a bit faster.
- - Creating a fork of any git repository that your project relies upon in production could help avoid bad surprises if the repo gets taken down or introduces an undesirable change.
+ - Creating a fork of any git repository that your project relies upon in production could help avoid bad surprises if the repo gets taken down or introduces an undesirable change. You should fork ParrelSync before using it in your live project.
