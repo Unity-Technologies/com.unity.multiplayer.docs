@@ -14,7 +14,7 @@ You can register your own spawn handlers by including the `INetworkPrefabInstanc
     public interface INetworkPrefabInstanceHandler
     {
         NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rotation);
-        bool Destroy(NetworkObject networkObject);
+        void Destroy(NetworkObject networkObject);
     }
 ```
 MLAPI will use the `Instantiate` and `Destroy` methods in place of default spawn handlers for the `NetworkObject` used during spawning and despawning.  Because the message to instantiate a new `NetworkObject` originates from a Host or Server, both will not have the Instantiate method invoked. All clients (excluding a Host) will have the instantiate method invoked if the `INetworkPrefabInstanceHandler` implementation is  registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject`.
@@ -99,13 +99,20 @@ public class NetworkPrefabHandlerObjectPool : NetworkBehaviour, INetworkPrefabIn
         return gameObject.GetComponent<NetworkObject>();
     }
 
-    public bool Destroy(NetworkObject networkObject)
+    private void OnDisable()
+    {
+        if (NetworkManager && NetworkManager.PrefabHandler != null)
+        {
+            NetworkManager.PrefabHandler.RemoveHandler(m_ObjectToPool);
+        }
+    }
+
+    public void Destroy(NetworkObject networkObject)
     {
         if (m_ObjectsPool.Contains(networkObject.gameObject))
         {
             networkObject.gameObject.SetActive(false);
         }
-        return false;
     }
 
     private IEnumerator SpawnObjects()
@@ -142,6 +149,7 @@ public class NetworkPrefabHandlerObjectPool : NetworkBehaviour, INetworkPrefabIn
         }
     }
 }
+
 ```
 
 In the next more advanced example, the `m_ObjectToOverride` property is the prefab we will replace with one of the `m_ObjectOverrides` prefabs.  As such, we register the `CustomPrefabHandlerObjectPoolOverride` class (that implements the `INetworkPrefabInstanceHandler` interface) using the `m_ObjectToOverride` with a reference to the current instance of `CustomPrefabHandlerObjectPoolOverride`.  We then have to handle a special case scenario.  Since a Host is actually both a client and a server, we need to pre-register the link (association) between the `m_ObjectToOverride` prefab and the `m_ObjectOverrides` prefabs.  We do this by calling `NetworkManager.PrefabHandler.RegisterHostGlobalObjectIdHashValues` and passing in the `m_ObjectToOverride` and the `m_ObjectOverrides` list.  For both the Client and Host, we will create a pool for each prefab type in the m_ObjectOverrides list. If we are just a server (i.e. not a Host), then we only need to create a large pool containing only one prefab type:  `m_ObjectToOverride`.  We included this example in order to show that the common link between all instances is the `m_ObjectToOverride`'s GlobalObjectIdHash value.  The `m_ObjectToOverride`'s GlobalObjectIdHash value is always used to signal the creation or destruction for all messages pertaining this prefab handler override.      
@@ -288,14 +296,12 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
         return gameObject.GetComponent<NetworkObject>();
     }
 
-    public bool Destroy(NetworkObject networkObject)
+    public void Destroy(NetworkObject networkObject)
     {
         if (m_NameValidation.Contains(networkObject.gameObject.name))
         {
             networkObject.gameObject.SetActive(false);
         }
-
-        return false;
     }
 
     /// <summary>
@@ -339,7 +345,7 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
 }
 ```
 
-Using `INetworkPrefabInstanceHandler` implementations simplifies object pooling while also providing the ability to have different versions for the same NetworkObject instance as it is viewed by Clients (including the Host). Additionally, you do not need to register the network prefabs assigned to the `m_ObjectOverrides` list with the NetworkManager since each local overriding prefab instance is linked by the `NetworkObject.NetworkObjectId`.  However, you **do** need to register the prefab to be overridden (i.e. `m_ObjectToOverride` in the above example).  While this provides many possibilities, you must take caution when using multiple prefabs as overrides by making sure that every variation has the same associated `NetworkVariables` and `RPC` implementations as all variations **must be identical** in this regard when it comes to anything that could be communicated between the client(s) and server.  Otherwise, you could end up with messages being sent to override instances that don't know how to handle them!  
+Using `INetworkPrefabInstanceHandler` implementations simplifies object pooling while also providing the ability to have different versions for the same NetworkObject instance as it is viewed by Clients (including the Host). Additionally, you do not need to register the network prefabs assigned to the `m_ObjectOverrides` list with the NetworkManager since each local overriding prefab instance is linked by the `NetworkObject.NetworkObjectId`.  However, you **do** need to register the prefab to be overridden (i.e. `m_ObjectToOverride` in the above example).  While this provides many possibilities, you must take caution when using multiple prefabs as overrides by making sure that every variation has the same associated `NetworkVariables` and `RPC` implementations as all variations **must be identical** in this regard when it comes to anything that could be communicated between the client(s) and server. Otherwise, you could end up with messages being sent to override instances that don't know how to handle them!  
 
 When using more than one network prefab, it is important to understand that each client determines what prefab they will be using and will not be synchronized across other clients. This feature is primarily to be used for things like platform specific Network Prefabs where things like collision models or graphics related assets might need to vary between platforms.
 
