@@ -113,15 +113,12 @@ module.exports = {
           },
           {
             "type": "doc",
-            "id": "transport-utp/install"
+            "id": "transport-utp/about-transport-utp"
           },
           {
             "type": "doc",
-            "id": "transport-utp/wrapper"
-          },          {
-            "type": "doc",
-            "id": "transport-utp/about-transport-utp"
-          },
+            "id": "transport-utp/install"
+          }
         ]
       },
       
@@ -151,21 +148,7 @@ module.exports = {
       {
         "type": "doc",
         "id": "components/networknavmeshagent"
-      },
-
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Network Time",
-        "items": [
-          {
-            "type": "doc",
-            "id": "components/time"          },
-          {
-            "type": "doc",
-            "id": "components/time-reference"          },
-        ]
-      },
+      }
     ]
   },
   {

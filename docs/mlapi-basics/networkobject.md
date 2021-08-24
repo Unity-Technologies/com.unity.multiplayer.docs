@@ -54,10 +54,7 @@ The old object will still exist and will be an object owned by the client instea
 To find a player object for a specific client id you can use the following:
 
 ```csharp
-NetworkSpawnManager.GetPlayerNetworkObject(cliendId);
+NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
 ```
 
-To find your own player object as a client use:
-```csharp
-NetworkSpawnManager.GetLocalPlayerObject();
-```
+To find your own player object just pass `NetworkManager.Singleton.LocalClientId` as the clientId in the sample above.
