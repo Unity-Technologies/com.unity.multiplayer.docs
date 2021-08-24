@@ -100,7 +100,7 @@ public NetworkDriver m_Driver;
 private NativeList<NetworkConnection> m_Connections;
 ```
 
-You need to declare a `NetworkDriver`. You also need to create a [NativeList](http://native-list-info) to hold our connections.
+You need to declare a `NetworkDriver`. You also need to create a [NativeList](https://docs.unity3d.com/Packages/com.unity.collections@1.0/api/Unity.Collections.NativeList-1.html) to hold our connections.
 
 ### Start method
 
