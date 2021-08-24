@@ -128,9 +128,7 @@ The way RPCs are invoked has changed with this version of MLAPI. Please read our
 
 We replaced the old `INetworkSerializable` interface with a new `INetworkSerializable` interface. The interface works a bit different. See [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md).
 
-
 The page also includes information on nested serial types.
-
 
 ### SyncVars
 

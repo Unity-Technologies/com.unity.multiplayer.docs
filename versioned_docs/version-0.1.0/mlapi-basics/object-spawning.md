@@ -27,9 +27,7 @@ To spawn an object, it must first be registered as a networked prefab:
 MLAPI uses a server authorative networking model so spawning objects can only be done on the server/host.
 To spawn an object first instantiate the object from your prefab and then invoke the spawn method on the `NetworkObject` component that should be attached to the prefab.
 This should only be done on the server as the object will automatically replicate on the other clients.
-
 By default a newly spawned object is owned by the server. See [Ownership](networkobject.md#ownership) for more information.
-
 
 The following is an example to spawn an object (with server ownership):
 

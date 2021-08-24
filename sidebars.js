@@ -113,15 +113,12 @@ module.exports = {
           },
           {
             "type": "doc",
-            "id": "transport-utp/install"
+            "id": "transport-utp/about-transport-utp"
           },
           {
             "type": "doc",
-            "id": "transport-utp/wrapper"
-          },          {
-            "type": "doc",
-            "id": "transport-utp/about-transport-utp"
-          },
+            "id": "transport-utp/install"
+          }
         ]
       },
       
@@ -474,6 +471,10 @@ module.exports = {
           "type": "doc",
           "id": "learn/dapper/dapper-playernames"
           },
+          {
+          "type": "doc",
+          "id": "learn/dapper/lobbycreation"
+            },
 
 
                 ]

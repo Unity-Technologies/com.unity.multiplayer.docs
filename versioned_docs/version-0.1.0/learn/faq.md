@@ -9,6 +9,7 @@ The FAQ provides immediate answers for questions collected from the Community on
 
 <div id="faq">
 
+
 ### Does MLAPI have a Public Roadmap?
 
 See the [Multiplayer Networking Public Roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
@@ -104,5 +105,6 @@ See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from
 The initial reason is that in Unity MLAPI the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
 
 The Bootstrap scene ensures that the `NetworkManager` and other singletons are initialized first and will be there when you get back to main menu.
+
 
 </div>
