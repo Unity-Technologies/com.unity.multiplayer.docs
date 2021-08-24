@@ -15,14 +15,6 @@ The Boss Room: Small Scale Co-op Sample v0.2.0 release provides new sample code,
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
 :::
 
-## [0.2.2] - 2021-06-02
-
-v0.2.2 is a hotfix for an Early Access release for Boss Room: Small Scale Co-op Sample.
-
-### Fixes
-
-* Updated the Boss Room sample to use the updated MLAPI registry version 0.1.1.
-
 ## [0.2.1] - 2021-05-27
 
 v0.2.1 is a hotfix for an Early Access release for Boss Room: Small Scale Co-op Sample.

@@ -44,6 +44,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 StartHost (positionToSpawnAt, rotationToSpawnWith, createPlayerObject, prefabHash);
 ```
 
+
 ## Connection data
 
 The `connectionData` parameter takes any custom data of your choice that the client should send to the server. Usually, this data should be some sort of ticket, room password, or similar that will decide if a connection should be approved or not. The `connectionData` is specified on the Client-side in the `NetworkingConfig` supplied when connecting.
@@ -61,7 +62,7 @@ The `ConnectionData` will then be passed to the server and it will decide if the
 
 ## Timeout
 
-The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` (encrypted and authenticated by the MLAPI) that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
+The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
 
 ## Security
 

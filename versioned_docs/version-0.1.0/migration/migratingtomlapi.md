@@ -660,7 +660,6 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
-
 </TabItem>
 
 
@@ -686,7 +685,6 @@ public class DamageClass : NetworkBehaviour
     }
 }
 ```
-
 </TabItem>
 
 </Tabs>
@@ -702,7 +700,6 @@ For more information, see the following:
 * <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
 * [API Reference](../mlapi-api/introduction.md) - Review available APIs.
 * Guides and tutorials - Review guides for MLAPI and check [tutorials](../learn/index.md).
-
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

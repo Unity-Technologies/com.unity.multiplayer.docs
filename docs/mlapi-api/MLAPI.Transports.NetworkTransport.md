@@ -5,7 +5,7 @@ title: MLAPI.Transports.NetworkTransport
 
 <div class="markdown level0 summary">
 
-This is an MLAPI abstract class interface that any networking transport can implement. This class is the skeleton needed by transport library authors to code for and to implement in order to make their transport libraries compatible with what we call MLAPI’s Transport Interface Contract, which is tehnically an implementation of MLAPI’s NetworkTransport’s interface. Essentially, transport library developers derive a class of the abstract class defined by MLAPI.Transports.NetworkTransport and implement it for usage.
+A network transport
 
 </div>
 
