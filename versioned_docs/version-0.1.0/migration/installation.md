@@ -11,7 +11,6 @@ Multiple methods are available to install the MLAPI package, listed as the MLAPI
 To install MLAPI on Unity 2021.x, use the Unity Package Manager to add the package by name:
 
 1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
-
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
 1. Enter the Git URL to the MLAPI release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
@@ -33,7 +32,6 @@ To install MLAPI on Unity 2021.x, use the Unity Package Manager to add the packa
 To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Package Manager passing a git URL to the MLAPI release:
 
 1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
-
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
 
@@ -42,12 +40,8 @@ To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Pa
 1. Enter the Git URL to the MLAPI release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
 
   ```
-  https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
+  com.unity.multiplayer.mlapi
   ```
-
-  :::info How to Copy
-  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
-  :::
 
 1. Click **Add**. The package installs, shown as MLAPI Networking Library 0.1.0 with a Preview label.
 
