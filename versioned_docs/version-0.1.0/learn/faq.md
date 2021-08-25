@@ -24,7 +24,7 @@ Matchmaking would have to be implemented using 3rd party matchmaking services. M
 
 ### How can you provide the server address or any connection information before starting the client?
    
-MLAPI does not deal with IP addresses or any connection informations (e.g. Photon region and room name). This is the role of your transport layer. To provide such information, the best way to do it is to get your transport component (e.g. UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
+MLAPI does not deal with IP addresses or any connection informations (e.g. relay region and room name). This is the role of your transport layer. To provide such information, the best way to do it is to get your transport component (e.g. UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
    
 ```csharp
 UNetTransport transport = MLAPI.NetworkManager.Singleton.GetComponent<UNetTransport>();
