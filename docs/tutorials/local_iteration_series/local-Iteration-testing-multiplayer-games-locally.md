@@ -25,7 +25,7 @@ It is also possible to run the builds along with an editor that produced said bu
 This approach, though functional, is somewhat inconvenient and slow - thus we list another option - ParrelSync.
 
 ## ParrelSync
-![parrelsync-bossroom-demo](/static/img/parrelsync-bossroom-demo.gif)
+![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
 
 [ParrelSync](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
 
@@ -40,7 +40,7 @@ We use ParrelSync for local iteration in [BossRoom sample](https://github.com/Un
 
 ### Usage
  - Open the `ParrelSync->Preferences` menu in the menu bar to open the preferences window
- - Verify that your settings are set to the following: ![parrelsync-preferences](/static/img/parrelsync-preferences.png)
+ - Verify that your settings are set to the following: ![parrelsync-preferences](../../../static/img/parrelsync-preferences.png)
 :::important
 
 By default ParrelSync prevents asset serialization in all clone instances and changes can only be made from the original project editor. This is a **very important setting** that prevents issues with multiple editors accessing the same `Library` folder (which is not supported and breaks basic assumptions in Unity design).
