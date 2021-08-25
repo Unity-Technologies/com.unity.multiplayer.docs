@@ -3,11 +3,16 @@ id: local_iteration_testing_locally
 title: Local Iteration - Testing multiplayer games locally
 description: Guide covering the available workflows for testing multiplayer games locally.
 ---
+- [Player Builds](#player-builds)
+- [ParrelSync](#parrelsync)
+	- [Installation](#installation)
+	- [Usage](#usage)
+	- [Known issues and workarounds](#known-issues-and-workarounds)
+- [General tips](#general-tips)
 
-Testing a multiplayer game presents unique challenges to developers. 
+Testing a multiplayer game presents unique challenges to developers.
+
 Currently Unity does not have a first-party streamlined solution to the problem of local iteration while developing a multiplayer game. Developers have to either repeatedly create player builds, or they have to use a symbolic link solution which comes with a set of drawbacks and is not officially supported by Unity.
-
-In lieu of a first-party solution we document the practices that can be used today, along with call-outs for specific risks and things to watch out for.
 
 Our goal here is to document the approaches for managing multiplayer development/testing on a local machine that should be "safe enough", meaning that the project integrity is maintained regardless of the workflow and work progress is not lost.
 
@@ -33,14 +38,22 @@ ParrelSync works by making a copy of the original project folder and creating sy
 
 We use ParrelSync for local iteration in [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
 
+:::important
+
+ParrelSync relies on symbolic links and partial copies of the original project folder structure - generally it is completely safe. 
+
+Yet, just to be sure that no bug in any of the software you use can destroy your work - it's a good idea to consistently backup your project or use a version control system such as [Git](https://git-scm.com/), [SVN](https://subversion.apache.org/), [Plastic](https://www.plasticscm.com/) or any other.
+
+:::
+
 ### Installation
-1.  Backup your project folder or use a version control system such as [Git](https://git-scm.com/), [SVN](https://subversion.apache.org/), [Plastic](https://www.plasticscm.com/) or any other.
-2.  Download .unitypackage from the [latest release](https://github.com/VeriorPies/ParrelSync/releases) and import it to your project.
-3.  ParrelSync should appear in the menu item bar after it has imported
+
+Follow the installation instructions on ParrelSync repo [page](https://github.com/VeriorPies/ParrelSync#installation)
 
 ### Usage
  - Open the `ParrelSync->Preferences` menu in the menu bar to open the preferences window
  - Verify that your settings are set to the following: ![parrelsync-preferences](../../../static/img/parrelsync-preferences.png)
+
 :::important
 
 By default ParrelSync prevents asset serialization in all clone instances and changes can only be made from the original project editor. This is a **very important setting** that prevents issues with multiple editors accessing the same `Library` folder (which is not supported and breaks basic assumptions in Unity design).
