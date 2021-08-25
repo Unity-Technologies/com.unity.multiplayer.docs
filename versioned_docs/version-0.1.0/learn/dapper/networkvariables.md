@@ -20,6 +20,8 @@ This Unity Multiplayer tutorial will teach you how to implement Network Variable
 
 Video published 22nd April 2021
 
+For project files access, check out the repository here: https://github.com/DapperDino/Unity-Multiplayer-Tutorials
+
 For more information on `NetworkVariable` see [NettworkVariable](../../mlapi-basics/networkvariable.md) in the main MLAPI documentation.
 
 :::contribution Community Contribution
