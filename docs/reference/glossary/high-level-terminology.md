@@ -41,7 +41,7 @@ This is how a shooter determines if your shot hit something. There are two main 
 There are more than just two cases. The non physics version of bullets via raycast is often also used for weapons with travel time such as snipers. Parabolas of bullets can be calculated without the need of a physics simulation.
 :::
 
-1. Games where bullet travel time is not a factor in close quarters combat can use a simple and fast formwhere bullets have no travel time. 
+1. Games where bullet travel time is not a factor in close quarters combat can use a simple and fast form where bullets have no travel time. 
 
 1. Games where you need more complex and demanding bullet physics simulations for hit registration. Every projectile has a travel speed and trajectory, affected by various factors.
 
