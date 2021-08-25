@@ -52,4 +52,3 @@ In all `NetworkUpdateStages`, it iterates over a static array and calls the `Net
 
 See [Network Update Loop Reference](network-update-loop-reference.md) for process flow diagrams and code.
 
-import Mermaid from '@theme/Mermaid';
