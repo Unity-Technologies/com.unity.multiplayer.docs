@@ -25,8 +25,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 - You are now ready to add the project to Unity Hub.
 
 :::important Compatibility
-
-- Boss Room supports those platforms supported by MLAPI (Windows, MacOS, Ubuntu 20.4 LTS, Ubuntu 18.04 LTS and CentOS 7).
+- Boss Room supports those platforms supported by MLAPI.
 - Boss Room is compatible with Unity 2020.3 and later.
 - Make sure to include standalone support for Windows/Mac/Linux in your installation. 
 :::
