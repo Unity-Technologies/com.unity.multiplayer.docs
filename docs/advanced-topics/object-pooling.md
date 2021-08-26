@@ -3,7 +3,7 @@ id: object-pooling
 title: Object Pooling
 ---
 
-Object pooling is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.  Netcode for GameObjects (Netcode) provides built-in support for Object Pooling where a NetworkObject's default destroy and instantiate handlers can be overridden.  *See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.
+Object pooling is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.  Netcode for GameObjects (Netcode) provides built-in support for Object Pooling where a NetworkObject's default destroy and instantiate handlers can be overridden.  *See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.*
 
 ## NetworkPrefabInstanceHandler
 
