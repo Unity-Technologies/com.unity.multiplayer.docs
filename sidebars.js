@@ -21,6 +21,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "migration/supportedversions"
+      },
+      {
+        "type": "doc",
         "id": "migration/migratingtomlapi"
       },
       {
