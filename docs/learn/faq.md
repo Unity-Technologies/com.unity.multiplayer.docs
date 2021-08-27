@@ -77,6 +77,17 @@ We recommend the following:
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
 
+### Can I use Netcode for GameObjects with WebGL?
+
+Netcode for GameObjects does not support the WebGL platform. This is the case because WebGL does not allow access to IP Sockets.
+
+There are third party transports provided by the community which should allow you to use Netcode on WebGL platforms. A list of these transports can be found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
+
+A few notes on using Netcode on WebGL:
+- WebGL is not a platform we officially support, you might encounter bugs and issues while using it and we will not prioritize fixing those issues.
+- The server or host cannot be a WebGL client but must be a Desktop or Mobile build.
+- You might experience increased latency and jitter due to the TCP protocol used by WebSockets
+
 </div>
 
 ## Boss Room and Bitesize Samples
@@ -110,5 +121,14 @@ See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from
 The initial reason is that in Unity MLAPI the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
 
 The Bootstrap scene ensures that the `NetworkManager` and other singletons are initialized first and will be there when you get back to main menu.
+
+</div>
+
+## Unity Transport Package
+
+<div id="faq">
+
+### Can I use the Unity Transport Package with WebGL?
+The Unity Transport Package does currently not support WebGL.
 
 </div>
