@@ -9,7 +9,7 @@ sidebar_label: Object Spawning
 There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/objectspawning.md)
 :::
 
-In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in MLAPI means to create an object which is shared between all clients and the server.
+In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in Netcode for Gameobjects (Netcode) means to create an object which is shared between all clients and the server.
 
 ### Registering a Networked Prefab
 
@@ -18,13 +18,13 @@ To spawn an object, it must first be registered as a networked prefab:
 1. Create a prefab out of the object you want to spawn.
 1. Make sure the object has a `NetworkObject` component on it. 
 
-  The `NetworkObject` component has a `PrefabHash` this is a unique name used by MLAPI to find the right object to spawn on the clients. By default this is the name of the object but it can be changed if needed.
+  The `NetworkObject` component has a `PrefabHash` this is a unique name used by Netcode to find the right object to spawn on the clients. By default this is the name of the object but it can be changed if needed.
   
 1. Add your prefab to the `NetworkPrefabs` list of the `NetworkManager`.
 
 ### Spawning a Networked Prefab
 
-MLAPI uses a server authorative networking model so spawning objects can only be done on the server/host.
+Netcode uses a server authorative networking model so spawning objects can only be done on the server/host.
 To spawn an object first instantiate the object from your prefab and then invoke the spawn method on the `NetworkObject` component that should be attached to the prefab.
 This should only be done on the server as the object will automatically replicate on the other clients.
 By default a newly spawned object is owned by the server. See [Ownership](networkobject.md#ownership) for more information.
@@ -49,7 +49,7 @@ public void Spawn(Stream spawnPayload = null, bool destroyWithScene = false);
 
 ## Destroying / Despawning
 
-When a spawned object gets destroyed on the server/host, MLAPI will automatically destroy it on all clients as well.
+When a spawned object gets destroyed on the server/host, Netcode will automatically destroy it on all clients as well.
 
 When a client disconnects, all objects owned by that client will be destroyed. If you do not want that to happen for an object set the `DontDestroyWithOwner` field on `NetworkObject` to true.
 
@@ -61,11 +61,11 @@ A client should never call destroy on a networked object itself (this is not sup
 
 You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility](object-visibility.md).
 
-To get more control about the object lifecycle, MLAPI has built in object pooling. See [Object Pooling](../advanced-topics/object-pooling.md) to learn more.
+To get more control about the object lifecycle, Netcode has built in object pooling. See [Object Pooling](../advanced-topics/object-pooling.md) to learn more.
 
 ## Scene Objects
 
-Any objects in the scene with  active `NetworkObject` components will get automatically replicated by MLAPI. There is no need to manually spawn them.
+Any objects in the scene with  active `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them.
 
 There are **two** modes that define how scene objects are synchronized.
 
@@ -73,7 +73,7 @@ There are **two** modes that define how scene objects are synchronized.
 
 `SoftSync` is the default and recommended mode for synchronizing scene objects.
 
-When using `SoftSync` MLAPI will just synchronize existing scene objects with each other.
+When using `SoftSync` Netcode will just synchronize existing scene objects with each other.
 This allows scene objects to be non prefabs and they will not be replaced, thus keeping their serialized data.
 
 
@@ -81,7 +81,7 @@ This allows scene objects to be non prefabs and they will not be replaced, thus 
 
 `PrefabSync` can be manually enabled in the `NetworkManager` by ticking the *Use Prefab Sync* checkbox. Prefab sync will also be used if `SceneManagement` is disabled.
 
-If it's enabled, every scene object with a `NetworkObject` component has to be a prefab and must be registered in the `NetworkPrefabs` list. When a client starts, MLAPI will destroy all existing scene objects with a `NetworkObject` component on them and spawn a corresponding prefab from the `NetworkPrefabs` list instead. This means that serialized data gets lost on the clients. It's thus recommended to place serialized data in `NetworkVariable`'s.
+If it's enabled, every scene object with a `NetworkObject` component has to be a prefab and must be registered in the `NetworkPrefabs` list. When a client starts, Netcode will destroy all existing scene objects with a `NetworkObject` component on them and spawn a corresponding prefab from the `NetworkPrefabs` list instead. This means that serialized data gets lost on the clients. It's thus recommended to place serialized data in `NetworkVariable`'s.
 **PrefabSync is ONLY recommended for multi project setups**.
 
 

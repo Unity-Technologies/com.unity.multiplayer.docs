@@ -3,7 +3,7 @@ id: ways-synchronize
 title: Ways To Synchronize
 ---
 
-Achieve Synchronization with multiple methods in the MLAPI. Each method has a different optimal use case and supports various features.
+Achieve Synchronization with multiple methods in Netcode for Gameobjects (Netcode). Each method has a different optimal use case and supports various features.
 
 ## Messaging System
 
