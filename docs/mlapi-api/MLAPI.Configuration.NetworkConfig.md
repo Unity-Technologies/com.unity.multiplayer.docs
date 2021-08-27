@@ -506,7 +506,7 @@ Duration in seconds between network ticks.
 
 <div class="markdown level1 summary">
 
-The transport hosts the sever uses
+The transport hosts the server uses
 
 </div>
 
