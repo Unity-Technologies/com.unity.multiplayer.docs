@@ -8,7 +8,7 @@ Starting with MLAPI version 6.0.0, clients have no explicit knowledge of all obj
 
 This allows you to only show a subset of objects to any client at any given time. To allow this, a visibility API was introduced to the `NetworkObject` component and consists of four parts.
 
-The first part is a callback that gets invoked when new clients connect or when the object is about to get spawned. It askes whether the object should be shown to a specific client, if you do not register this callback, it will default to true, meaning visible.
+The first part is a callback that gets invoked when new clients connect or when the object is about to get spawned. It asks whether the object should be shown to a specific client. If you do not register this callback, it will default to true, meaning visible.
 
 ```csharp
 NetworkObject netObject = GetComponent<NetworkObject>();
