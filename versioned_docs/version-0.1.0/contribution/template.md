@@ -494,5 +494,5 @@ export const Highlight = ({children, color}) => ( <span style={{
 I can write **Markdown** alongside my _JSX_!
 
 <!-- On page code -->
-import Mermaid from '@theme/Mermaid';
+
 import ImageSwitcher from '@site/src/ImageSwitcher.js';

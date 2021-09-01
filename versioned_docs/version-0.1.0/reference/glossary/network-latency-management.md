@@ -152,5 +152,5 @@ A tick or simulation rate of 60Hz will cause less delay than a tick rate of 30Hz
 
 When a server gets close to the limit, or even fails to process a tick inside that timeframe, then you will instantly notice the results: all sorts of strange gameplay issues like rubber banding, players teleporting, hits getting rejected, and physics failing.
 
-import Mermaid from '@theme/Mermaid';
+
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
