@@ -34,7 +34,7 @@ import Createclone from '../../shared/_create_clone_goldenpath.md';
 
 ## Adding Scripts to Goldenpath
 
-This section will add some scripts to Goilden Path  which will contain the new features we will be covering in this module.
+This section will add some scripts to Golden Path  which will contain the new features we will be covering in this module.
 
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
