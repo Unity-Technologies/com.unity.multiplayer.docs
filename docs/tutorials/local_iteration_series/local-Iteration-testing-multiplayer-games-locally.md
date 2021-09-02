@@ -18,7 +18,7 @@ Testing a multiplayer game presents unique challenges to developers:
 
 Currently, Unity does not provide any workflow that covers all of these requirements. 
 
-There will always be a need to validate our work in the target distribution format (ie. on platform) and the way to do it is by creating player builds. 
+There will always be a need to validate our work in the target distribution format (ie. on platform) and the way to do it is by creating [Player Builds](#player-builds). 
 
 However, player builds do not meet the requirement of quick iteration and easy debuggability using editor tools. As such our current recommended workflow for local iteration [ParrelSync](#parrelsync).
 
