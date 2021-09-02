@@ -3,11 +3,14 @@ id: object-pooling
 title: Object Pooling
 ---
 
-Object pooling is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.  Netcode for GameObjects (Netcode) provides built-in support for Object Pooling where a NetworkObject's default destroy and instantiate handlers can be overridden.  *See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.*
+Object pooling is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.  Netcode for Gameobjects (Netcode) provides built-in support for Object Pooling where a `NetworkObject`'s default destroy and instantiate handlers can be overridden.  
+
+See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.
 
 ## NetworkPrefabInstanceHandler
 
 You can create your own spawn handler by implementing the `INetworkPrefabInstanceHandler` interface and registering it with the `NetworkPrefabHandler`.
+
 ```csharp
     public interface INetworkPrefabInstanceHandler
     {
@@ -15,9 +18,18 @@ You can create your own spawn handler by implementing the `INetworkPrefabInstanc
         void Destroy(NetworkObject networkObject);
     }
 ```
-Once your implementation is registered, Netcode will use your implementation's `Instantiate` and `Destroy` methods in place of the default spawn handlers for the `NetworkObject` prefab you specify during the registration process. Your NetworkObject prefab is uniquely identified by its `GlobalObjectIdHash` value. Because a Server (or host) controls the spawning and despawning of NetworkObjects, the instantiate method will not be invoked.  All clients (excluding a Host) will have the instantiate method invoked if the `INetworkPrefabInstanceHandler` implementation is registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject` that is uniquely identified by its `GlobalObjectIdHash` value.
+
+Once your implementation is registered, Netcode will use your implementation's `Instantiate` and `Destroy` methods in place of the default spawn handlers for the `NetworkObject` prefab you specify during the registration process. Your NetworkObject prefab is uniquely identified by its `GlobalObjectIdHash` value. Because a Server (or host) controls the spawning and despawning of NetworkObjects, the instantiate method will not be invoked.  All clients (excluding a Host) will have the `Instantiate` method invoked if the `INetworkPrefabInstanceHandler` implementation is registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject` that is uniquely identified by its `GlobalObjectIdHash` value.
+
+## Basic Pooling Example
 
 In the following basic pooling example, the `m_ObjectToPool` property is the prefab we want to pool.  We register the `NetworkPrefabHandlerObjectPool` class (that implements the `INetworkPrefabInstanceHandler` interface) using the `m_ObjectToPool`'s `GameObject` with a reference to the current instance of `NetworkPrefabHandlerObjectPool`.  We also take into account any `NetworkManager` defined `NetworkPreab` overrides by calling `NetworkManager.GetNetworkPrefabOverride` while both assigning and passing in our `m_ObjectToPool`.  
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 ```csharp
 using System.Collections;
 using System.Collections.Generic;
@@ -149,8 +161,21 @@ public class NetworkPrefabHandlerObjectPool : NetworkBehaviour, INetworkPrefabIn
 }
 
 ```
+</details>
 
-The next example is a bit more advanced.  The `m_ObjectToOverride` property is the prefab we will replace with one of the `m_ObjectOverrides` prefabs.  As such, we register the `NetworkPrefabHandlerObjectPoolOverride` class (that implements the `INetworkPrefabInstanceHandler` interface) using the `m_ObjectToOverride`.  We then have to handle a special case scenario.  Since a Host is actually both a client and a server, we need to pre-register the link (association) between the `m_ObjectToOverride` prefab and the `m_ObjectOverrides` prefabs.  We do this by calling `NetworkManager.PrefabHandler.RegisterHostGlobalObjectIdHashValues` and passing in the `m_ObjectToOverride` and the `m_ObjectOverrides` list.  For both the Client and Host, we will create a pool for each prefab type in the m_ObjectOverrides list. If we are just a server (i.e. not a Host), then we only need to create a large pool containing only one prefab type:  `m_ObjectToOverride`.  We included this example in order to show that the common link between all instances is the `m_ObjectToOverride`'s GlobalObjectIdHash value.  The `m_ObjectToOverride`'s GlobalObjectIdHash value is always used to signal the creation or destruction for all messages pertaining this prefab handler override.      
+## Advanced Pooling Example
+
+The next example is more advanced.  The `m_ObjectToOverride` property is the prefab we will replace with one of the `m_ObjectOverrides` prefabs.  As such, we register the `NetworkPrefabHandlerObjectPoolOverride` class (that implements the `INetworkPrefabInstanceHandler` interface) using the `m_ObjectToOverride`.  We then have to handle a special case scenario.  
+
+Since a Host is actually both a client and a server, we need to pre-register the link (association) between the `m_ObjectToOverride` prefab and the `m_ObjectOverrides` prefabs.  We do this by calling `NetworkManager.PrefabHandler.RegisterHostGlobalObjectIdHashValues` and passing in the `m_ObjectToOverride` and the `m_ObjectOverrides` list.  For both the Client and Host, we will create a pool for each prefab type in the m_ObjectOverrides list. If we are just a server (i.e. not a Host), then we only need to create a large pool containing only one prefab type:  `m_ObjectToOverride`. 
+
+ We included this example in order to show that the common link between all instances is the `m_ObjectToOverride`'s GlobalObjectIdHash value.  The `m_ObjectToOverride`'s GlobalObjectIdHash value is always used to signal the creation or destruction for all messages pertaining this prefab handler override.      
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
 
 ```csharp
 using System.Collections;
@@ -334,10 +359,11 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
     }
 }
 ```
+</details>
 
 Registering `INetworkPrefabInstanceHandler` implementations with the NetworkPrefabHandler simplifies object pooling.  It also provides the option to have different versions for the same NetworkObject instance as it is viewed by Clients (including the Host). Additionally, you do not need to register the network prefabs assigned to the `m_ObjectOverrides` list with the NetworkManager since each local overriding prefab instance is linked by the `NetworkObject.NetworkObjectId`.  However, you **do** need to register the prefab to be overridden (i.e. `m_ObjectToOverride` in the above example).  While this provides many possibilities, you must take caution when using multiple prefabs as overrides by making sure that every variation has the same associated `NetworkVariables` and `RPC` implementations as all variations **must be identical** in this regard when it comes to anything that could be communicated between the client(s) and server. Otherwise, you could end up with messages being sent to override instances that don't know how to handle them!  
 
 When using more than one network prefab, it is important to understand that each client determines what prefab they will be using and will not be synchronized across other clients. This feature is primarily to be used for things like platform specific Network Prefabs where things like collision models or graphics related assets might need to vary between platforms.
 
-You can find full working versions of the above two examples in the [testproject/Assets/Samples/PrefabPool](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/master/testproject/Assets/Samples/PrefabPool) repository directory.
+You can find full working versions of the above two examples in the [testproject/Assets/Samples/PrefabPool](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop/testproject/Assets/Samples/PrefabPool) repository directory.
 
