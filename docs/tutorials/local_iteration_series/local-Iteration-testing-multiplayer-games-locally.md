@@ -4,21 +4,35 @@ title: Local Iteration - Testing multiplayer games locally
 description: Guide covering the available workflows for testing multiplayer games locally.
 ---
 - [Player Builds](#player-builds)
+	- [Local iteration using Player Builds](#local-iteration-using-player-builds)
 - [ParrelSync](#parrelsync)
 	- [Installation](#installation)
 	- [Usage](#usage)
 	- [Known issues and workarounds](#known-issues-and-workarounds)
 - [General tips](#general-tips)
 
-Testing a multiplayer game presents unique challenges to developers.
+Testing a multiplayer game presents unique challenges to developers:
+ - We need to run multiple instances of the game in order to test multiplayer scenarios. 
+ - We also need to iterate quickly on our custom code and asset changes and validate our work in a multiplayer scenario.
+ - We need to be able to debug our work in a multiplayer scenario using editor tools.
 
-Currently Unity does not have a first-party streamlined solution to the problem of local iteration while developing a multiplayer game. Developers have to either repeatedly create player builds, or they have to use a symbolic link solution which comes with a set of drawbacks and is not officially supported by Unity.
+Currently, Unity does not provide any workflow that covers all of these requirements. 
 
-Our goal here is to document the approaches for managing multiplayer development/testing on a local machine that should be "safe enough", meaning that the project integrity is maintained regardless of the workflow and work progress is not lost.
+There will always be a need to validate our work in the target distribution format (ie. on platform) and the way to do it is by creating player builds. However, player builds do not meet the requirement of quick iteration and easy debuggability using Editor Tools. As such our current recommended workflow for local iteration [ParrelSync](#parrelsync).
 
 ## Player Builds
 
+:::hint
+
+This approach is great when we need to verify our work on the target platform or with a wider group of testers.
+
+:::
+
 First we need to build an executable. The default way of doing that is via  `File->Build Settings` in the menu bar, and then pressing `Build` button.
+
+Then the build can be shared among the testers.
+
+### Local iteration using Player Builds
 
 Once the build has completed you can launch several instances of the built executable in order to both host and join a game.
 
@@ -27,7 +41,11 @@ It is also possible to run the builds along with an editor that produced said bu
 > Mac users: to run multiple instances of the same app, you need to use the command line.
 > Run `open -n YourAppName.app`
 
-This approach, though functional, is somewhat inconvenient and slow - thus we list another option - ParrelSync.
+:::hint
+
+Though functional, we find this approach to be somewhat slow for the purposes of local iteration. Head on to the [ParrelSync](#parrelsync) section for our suggested workflow for local iteration.
+
+:::
 
 ## ParrelSync
 ![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
