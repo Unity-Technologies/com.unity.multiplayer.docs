@@ -9,7 +9,7 @@ This guide uses Unity 2021.2 beta. On 2021.1 and below, the profiler outputs onl
 
 Profiling is the process of measuring the performance of your game while it is running. It allows you to check your optimization points and control that your enhancements make a real difference. Consequently, it is good to profile every time you make a new feature or refactoring an old one. Hence, you always have a baseline for further optimizations.
 
-In multiplayer game programming, you have three primary resources you need to keep under control : 
+In multiplayer game programming, you have three primary resources you need to keep under control: 
 - Bandwidth consumption
 - CPU
 - Latency
@@ -18,7 +18,7 @@ Those three resources are the three vertices of a triangle with a constant area.
 
 ## Requirements
 
-Unity profiler starting from Unity 2021.1 comes with the ability to extends its features. Netcode for GameObjects (simply NetCode from now on) implements such an extension to allow you to profile your game in the same tool you are already using for CPU, GPU, and memory.
+Unity profiler starting from Unity 2021.1 comes with the ability to extends its features. Netcode for GameObjects [NetCode] implements such an extension to allow you to profile your game in the same tool you are already using for CPU, GPU, and memory.
 
 To enable profiling support for NetCode, install the `com.unity.multiplayer.tools` package from the Unity Package Manager. From then, you should see three additional sections in your profiler (Window -> Analysis -> Profiler) : 
 - Netcode Profiler Messages
@@ -32,7 +32,7 @@ Pay attention to the fact that Netcode for GameObject does not update the legacy
 :::
 
 :::note
-The network profiler samples its data at the Network Tick Rate. Hence,  you may find the graphs a little spiky.
+The network profiler samples its data at the Network Tick Rate. Hence, you may find the graphs a little spiky.
 :::
 
 ## Netcode Profiler Messages
@@ -49,7 +49,7 @@ The Netcode Profiler RPC module is probably the most important. It shows every R
 
 ![Netcode Profiler RPC](/img/profiler-rpc.png)
 
-Detailed bandwidth information appears underneath the graph if you click on one frame (for example, on one spike). Take this example from Boss Room : 
+Detailed bandwidth information appears underneath the graph if you click on one frame (for example, on one spike). Take this example from Boss Room: 
 
 ![Boss Room Details Profiler RPC](/img/boss-room-details-profiler-rpc.png)
 
@@ -60,11 +60,16 @@ Under server, you have three subsections that are each representing a specific N
 
 ## Advanced Search
 
-- t: type
-- dir: direction (in/out)
-- b>N all events with bytes greater than N
-- b<N all events with bytes less than N
+You can use the following filter rules to narrow your search results:
 
-You can combine them 
+| Rule | Description |
+| -- | -- |
+| t: | Populates by type |
+| dir:in | Populates anything with bytes received |
+| dir:out | Populates anything with bytes sent |
+| b>N | Populates all events with bytes greater than N (N being an integer) |
+| b<N | Populates all events with bytes less than N (N being an integer) |
+
+You can combine these rules to continue narrowing your results. 
 
 Double click on an element shows it in the Unity hierarchy
