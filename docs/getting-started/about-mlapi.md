@@ -1,17 +1,15 @@
 ---
 id: about-mlapi
-title: Getting Started with MLAPI
+title: Getting Started with Netcode for GameObjects (Netcode)
 ---
 
 Unity MLAPI is a mid-level networking library built for the Unity game engine to abstract networking. This allows you, the developer to focus on your game rather than low-level protocols and networking frameworks.
-
-After you complete **Getting Started**, use **Hello World** to test your installation, then follow the **GoldenPath** to learn common features and implementations of MLAPI. For additional hands-on learning, check out the samples, Boss Room tutorials, and community contributions (such as Dapper Dino's video series).
 
 <div class="table-columns-plain" >
 
 | Getting Started | Hello World | Golden Path |
 | -- | -- | -- |
-| [Install Unity MLAPI](../migration/installation.md)<br/>[Migration from UNet to MLAPI](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity MLAPI Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](../tutorials/helloworld/helloworldtwo) | [Foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](../tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](../tutorials/goldenpath_series/gp_module_two.md)<br/>|
+| [Install Unity Netcode](../migration/installation.md)<br/>[Migration from UNet to Netcode](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity Netcode Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](../tutorials/helloworld/helloworldtwo) | [Foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](../tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](../tutorials/goldenpath_series/gp_module_two.md)<br/>|
 
 </div>
 
