@@ -1,15 +1,23 @@
 ---
 id: about-mlapi
-title: Getting Started with MLAPI
+title: Getting Started with Netcode for GameObjects (Netcode)
 ---
 
 Netcode for Gameobjects (Netcode) is a mid-level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and  Netcode collaborators. Netcode is open source with no attached costs or limitations, giving you the opportunity to develop features alongside Unity.
 
-<div class="table-columns-plain">
+<div class="table-columns-plain" >
 
-| Installation | Hello World |Golden Path| Learning More | Debugging |
-| -- | -- | -- | -- | -- |
-| [Install Unity Netcode](../migration/installation.md)<br/>[Migration from UNet to Netcode](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity Netcode Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](../tutorials/helloworld/helloworldtwo) |[Foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](../tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](../tutorials/goldenpath_series/gp_module_two.md)<br/>|[Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../mlapi-basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../mlapi-basics/scene-management.md) | [Logging](../mlapi-basics/logging.md)<br/>[Troublshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) |
+| Getting Started | Hello World | Golden Path |
+| -- | -- | -- |
+| [Install Unity Netcode](../migration/installation.md)<br/>[Migration from UNet to Netcode](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity Netcode Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](../tutorials/helloworld/helloworldtwo) | [Foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](../tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](../tutorials/goldenpath_series/gp_module_two.md)<br/>|
+
+</div>
+
+<div class="table-columns-plain" >
+
+| Core Concepts | Debugging | Learn More |
+| -- | -- | -- |
+| [Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../mlapi-basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../mlapi-basics/scene-management.md) | [Logging](../mlapi-basics/logging.md)<br/>[Troublshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) | [References](../learn/index.md)<br/>[Boss Room](../learn/getting-started-boss-room.md)<br/>[Bite Size Samples](../learn/bitesize-introduction.md)<br/>[Dapper Dino Tutorials](../learn/dapper/dapper-video.md)<br/>[FAQs](../learn/faq.md) |
 
 </div>
 
