@@ -373,3 +373,6 @@ When using more than one network prefab, it is important to understand that each
 
 You can find full working versions of the above two examples in the [testproject/Assets/Samples/PrefabPool](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop/testproject/Assets/Samples/PrefabPool) repository directory.
 
+:::contribution Special Thanks
+This guide would not have been possible without the hard work and support of Noel Stephens, Unity. 
+:::
