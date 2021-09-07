@@ -83,7 +83,7 @@ Replace UNet `NetworkBehaviour` with Netcode's `NetworkBehaviour` everywhere in 
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -155,7 +155,7 @@ In Netcode, `RPC`s and `NetworkVariable` changes will not be replicated if they 
   className="unique-tabs"
   defaultValue="tab1"
   values={[
-      {label: 'Netcode for Gameobjects's Example', value: 'tab1'},
+      {label: 'Netcode for Gameobjects Example', value: 'tab1'},
   ]}>
 
 <TabItem value="tab1">
@@ -184,7 +184,7 @@ To achieve equivalent functionality of `SyncVar` hooks in Netcode subscribe a fu
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -244,7 +244,7 @@ Replace all postfix increment and decrement usages of SyncVar in your project. N
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -287,7 +287,7 @@ Replace `SyncList<T>` with `NetworkList<T>` everywhere in your project. `Network
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -338,7 +338,7 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the Netcodex
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -390,7 +390,7 @@ Replace `OnServerAddPlayer` with `ConnectionApproval` everywhere in your project
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -459,7 +459,7 @@ Replace `NetworkServer.Spawn`  with `NetworkObject.Spawn` everywhere in your pro
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -517,7 +517,7 @@ There is no direct equivalent to the `NetworkPromimityChecker` UNet component in
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -566,7 +566,7 @@ In MLAPI, scene management is not done over the `NetworkManager` like in UNet. T
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -600,7 +600,7 @@ MLAPI currently does not offer a replacement for marking a function with an attr
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -640,7 +640,7 @@ MLAPI does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code f
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'Netcode for Gameobjects's Example', value: 'tab2'},
+    {label: 'Netcode for Gameobjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
