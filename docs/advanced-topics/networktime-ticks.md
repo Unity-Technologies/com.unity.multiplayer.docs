@@ -8,7 +8,7 @@ sidebar_label: NetworkTime & Ticks
 
 Why are there two different time values and which one should be used?
 
-Netcode for Gameobjects uses a star topology, see [Network Topologies for more information](../reference/glossary/network-topologies.md). That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows users to use time while considering those transmission delays.
+Netcode for Gameobjects (Netcode) uses a star topology, see [Network Topologies for more information](../reference/glossary/network-topologies.md). That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows users to use time while considering those transmission delays.
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
@@ -134,7 +134,7 @@ sequenceDiagram
     Note over Owner: ClientCreateSyncedEffect()
     Note over Owner: Instantiate effect immediately (LocalTime = 10)
     Owner->>Server: CreateSyncedEffectServerRpc
-    Server->>Receiver: CreateSyncedEffectClientRpc 
+    Server->>Receiver: CreateSyncedEffectClientRpc
     Note over Server: ServerTime = 9.95 #38; timeToWait = 0.05
     Note over Server: StartCoroutine(WaitAndSpawnSyncedEffect(0.05))
     Server->>Server: WaitForSeconds(0.05);

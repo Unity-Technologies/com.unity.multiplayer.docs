@@ -140,7 +140,7 @@ This section adds a Network Transform component that will move the player.
 
 1. Click **Player** prefab. 
 1. Click **Add Component** in the Inspector Tab.
-1. Select **MLAPI** from the list shown.
+1. Select **Netcode for Gameobjects** from the list shown.
 1. Select the **Network Transform** component from the list shown.
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkTransformTest`.
