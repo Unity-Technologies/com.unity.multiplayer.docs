@@ -201,3 +201,7 @@ The way network time gets calculated can be configured in the `NetworkTimeSystem
 
 <!-- On page code -->
 import { Mermaid } from 'mdx-mermaid/Mermaid';
+
+:::contribution Special Thanks
+This guide would not have been possible without the hard work and support of Luke Stampfli, Unity. 
+:::
