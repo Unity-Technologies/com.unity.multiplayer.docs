@@ -27,12 +27,12 @@ In client-side Interpolation instead of just snapping objects to their positions
 
 Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for client-side interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect, our latency would increase by our [Interpolation Period](../reference/glossary/network-latency-management#interpolation-period). In order to avoid stutter, we want that period to be less than the [Packet Sending Period](../reference/glossary/network-latency-management#packet-sending-period). When the client is done interpolating to the previous state, it would always have received a new state to repeat the process. 
 
-:::unity Future MLAPI Feature
+:::unity Future Netcode for Gameobjects (Netcode) Feature
 This implementation of Client-side Interpolation provides some improvement to the choppiness problem, but it does not completely solve the issues caused by jitter.
 
 An improvement that produces even smoother gameplay at the cost of even more added latency is Snapshot Interpolation, where instead of interpolating towards the most up-to-date state, we introduce a buffer that keeps several snapshots of incoming state and interpolates through them. This technique provides better handling of Jitter, but, again, it introduces slight additional latency on top of what we had in Clientside Interpolation.
 
-Snapshot Interpolation is not implemented in MLAPI at this time.
+Snapshot Interpolation is not implemented in Netcode at this time.
 :::
 
 ## Boss Room Example 

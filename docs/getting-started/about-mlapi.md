@@ -54,7 +54,7 @@ Use with caution:
 This is free under the permissive MIT [Licenses](/reference/license) by Unity and the MLAPI collaborators. MLAPI is open source with no attached costs or limitations, so you can develop features alongside Unity.
 :::
 
-:::important MLAPI Previous Versions and Docs
+:::important Previous Versions and Docs
 For those looking for the MLAPI releases and documentation v. 12.x and earlier, see the following:
 
 * [Previous MLAPI Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases)
