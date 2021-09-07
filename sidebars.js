@@ -48,7 +48,7 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Learning MLAPI with Goldenpath",
+    "label": "Learning Netcode with Goldenpath",
     "items": [
       {
         "type": "doc",
