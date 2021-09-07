@@ -53,7 +53,7 @@ module.exports = {
         },
         items: [
           {
-            label: 'MLAPI',
+            label: 'Netcode for GameObjects',
             className: 'nav-break',
             to: '/getting-started/about-mlapi',
             position: 'left',
@@ -138,11 +138,11 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Repo',
+                label: 'Netcode for GameObjects Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
               },
               {
-                label: 'MLAPI Community Contributions',
+                label: 'Netcode for GameObjects Community Contributions',
                 href: 'https://github.com/Unity-Technologies/mlapi-community-contributions',
               },
               {
@@ -184,7 +184,7 @@ module.exports = {
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
               },
               {
-                label: 'MLAPI Forum',
+                label: 'Netcode for GameObjects Forum',
                 href: 'https://forum.unity.com/forums/mlapi.661/',
               },
               {
@@ -248,7 +248,7 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Releases',
+                label: 'Netcode for GameObjects Releases',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {
