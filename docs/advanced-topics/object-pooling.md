@@ -3,7 +3,7 @@ id: object-pooling
 title: Object Pooling
 ---
 
-Object pooling is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.  Netcode for Gameobjects (Netcode) provides built-in support for Object Pooling where a `NetworkObject`'s default destroy and instantiate handlers can be overridden.  
+Object pooling is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.  Netcode for GameObjects (Netcode) provides built-in support for Object Pooling where a `NetworkObject`'s default destroy and instantiate handlers can be overridden.  
 
 See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.
 
@@ -19,7 +19,7 @@ You can create your own spawn handler by implementing the `INetworkPrefabInstanc
     }
 ```
 
-Once your implementation is registered, Netcode will use your implementation's `Instantiate` and `Destroy` methods in place of the default spawn handlers for the `NetworkObject` prefab you specify during the registration process. Your NetworkObject prefab is uniquely identified by its `GlobalObjectIdHash` value. Because a Server (or host) controls the spawning and despawning of NetworkObjects, the instantiate method will not be invoked.  All clients (excluding a Host) will have the `Instantiate` method invoked if the `INetworkPrefabInstanceHandler` implementation is registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject` that is uniquely identified by its `GlobalObjectIdHash` value.
+Once your implementation is registered, Netcode will use your implementation's `Instantiate` and `Destroy` methods in place of the default spawn handlers for the `NetworkObject` prefab you specify during the registration process. Your `NetworkObject` prefab is uniquely identified by its `GlobalObjectIdHash` value. Because a Server (or host) controls the spawning and despawning of `NetworkObject`s, the instantiate method will not be invoked.  All clients (excluding a Host) will have the `Instantiate` method invoked if the `INetworkPrefabInstanceHandler` implementation is registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject` that is uniquely identified by its `GlobalObjectIdHash` value.
 
 ## Basic Pooling Example
 
@@ -361,7 +361,13 @@ public class NetworkPrefabHandlerObjectPoolOverride : NetworkBehaviour, INetwork
 ```
 </details>
 
-Registering `INetworkPrefabInstanceHandler` implementations with the NetworkPrefabHandler simplifies object pooling.  It also provides the option to have different versions for the same NetworkObject instance as it is viewed by Clients (including the Host). Additionally, you do not need to register the network prefabs assigned to the `m_ObjectOverrides` list with the NetworkManager since each local overriding prefab instance is linked by the `NetworkObject.NetworkObjectId`.  However, you **do** need to register the prefab to be overridden (i.e. `m_ObjectToOverride` in the above example).  While this provides many possibilities, you must take caution when using multiple prefabs as overrides by making sure that every variation has the same associated `NetworkVariables` and `RPC` implementations as all variations **must be identical** in this regard when it comes to anything that could be communicated between the client(s) and server. Otherwise, you could end up with messages being sent to override instances that don't know how to handle them!  
+Registering `INetworkPrefabInstanceHandler` implementations with the `NetworkPrefabHandler` simplifies object pooling.  It also provides the option to have different versions for the same `NetworkObject` instance as it is viewed by Clients (including the Host). Additionally, you do not need to register the network prefabs assigned to the `m_ObjectOverrides` list with the `NetworkManager` since each local overriding prefab instance is linked by the `NetworkObject.NetworkObjectId`.  
+
+:::caution
+
+You **must** register the prefab to be overridden (i.e. `m_ObjectToOverride` in the above example).  While this provides many possibilities, you must also take caution when using multiple prefabs as overrides by making sure that every variation has the same associated `NetworkVariables` and `RPC` implementations as all variations **must be identical** in this regard when it comes to anything that could be communicated between the client(s) and server. Otherwise, you could end up with messages being sent to override instances that don't know how to handle them!  
+
+:::
 
 When using more than one network prefab, it is important to understand that each client determines what prefab they will be using and will not be synchronized across other clients. This feature is primarily to be used for things like platform specific Network Prefabs where things like collision models or graphics related assets might need to vary between platforms.
 
