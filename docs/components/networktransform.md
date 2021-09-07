@@ -10,8 +10,6 @@ While `NetworkTransform` works out of the box for simple position synchronizatio
 You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.
 :::
 
-<!--- Image/graphic visualizing the difference between extrapolation and interpolation. --->
-
 ## Extrapolation
 
 When enabled, extrapolation estimates the time between when a tick advances in server-side animation and the update of the frame completes on the client-side. The game object extrapolates the next frame's values based on the ratio. 
