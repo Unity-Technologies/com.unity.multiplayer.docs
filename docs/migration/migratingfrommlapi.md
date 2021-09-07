@@ -1,6 +1,6 @@
 ---
 id: migratingfrommlapi
-title: Update MLAPI to the Netcode for Gameobjects  Package
+title: Update MLAPI to the Netcode Package
 description: Learn how to upgrade your current MLAPI installation to the Netcode for Gameobjects package.
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: install
-title: Install Netcode for Gameobjects
+title: Install Netcode
 description: Install the on-going development version of Unity Netcode for Gameobjects from a cloned respository. 
 ---
 
