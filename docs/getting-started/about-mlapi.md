@@ -3,7 +3,7 @@ id: about-mlapi
 title: Getting Started with Netcode for GameObjects (Netcode)
 ---
 
-Netcode for Gameobjects (Netcode) is a mid-level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and  Netcode collaborators. Netcode is open source with no attached costs or limitations, giving you the opportunity to develop features alongside Unity.
+Netcode is a mid-level networking library built for the Unity game engine to abstract networking. This allows you, the developer to focus on your game rather than low-level protocols and networking frameworks.
 
 <div class="table-columns-plain" >
 
@@ -21,10 +21,32 @@ Netcode for Gameobjects (Netcode) is a mid-level networking library built for th
 
 </div>
 
-For a users view into Netcode, see [Learn](../learn/index.md) content including sample code, Boss Room tutorials, and community contributions including Dapper Dino's video series.
+
+## Before you begin
+
+Netcode supports the following versions:
+* Unity 2020.3, 2021.1, and 2021.2
+* Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+
+Netcode supports the following platforms:
+* Windows, MacOS, and Linux
+* iOS and Android
+* XR platforms running on Windows, Android, and iOS operating systems
+* Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact us for more information about specific closed platforms.
+
+:::caution Using WebGL
+Netcode does not support the WebGL platform because it does not allow access to IP Sockets.
+
+There are third party transports provided by the community that may enable you to use Netcode on WebGL platforms. A list of these transports are found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
+
+Use with caution:
+* You may encounter bugs and issues while using Netcode on WebGL, and we will not prioritize fixing those issues.
+* The server or host cannot be a WebGL client, but a Desktop or Mobile build.
+* You may experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
+:::
 
 :::unity Content Licenses
-All Netcode code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information. Sample code may include links to GitHub code repositories.
+This is free under the permissive MIT [Licenses](/reference/license) by Unity and the Netcode collaborators. Netcode is open source with no attached costs or limitations, so you can develop features alongside Unity.
 :::
 
 :::important Previous Versions and Docs
@@ -34,4 +56,5 @@ For those looking for the MLAPI releases and documentation v. 12.x and earlier, 
 * [MLAPI v12.1.7 documentation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/)
 * [MLAPI blog posts](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/v12.1.7/docs/_posts)
 :::
+
 
