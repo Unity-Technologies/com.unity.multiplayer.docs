@@ -51,4 +51,3 @@ In all `NetworkUpdateStages`, it iterates over a static array and calls the `Net
 ## References
 
 See [Network Update Loop Reference](network-update-loop-reference.md) for process flow diagrams and code.
-
