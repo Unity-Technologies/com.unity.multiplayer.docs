@@ -49,21 +49,16 @@ To clone directory through GitHub Desktop:
   ```
 1. Click **Clone**.
 
-## Open the develop branch
+## Open the Unity Project you want to use with Netcode for GameObjects 
 
-To run the develop branch of MLAPI:
+go to the Package Manager, 
+hit + then 
+choose add package from disk, 
+then navigate to where they cloned NGO and 
+open the packages.json, 
 
-1. Checkout the develop branch of MLAPI using Git commands or application like GitHub Desktop.
-1. Open Unity Hub and click **Add**.
-1. Navigate to the cloned GitHub repository and select the testproject folder.
-1. When opened, click **File** > **Open Scene**.
-1. Navigate to and select *testproject/Assets/MainMenu.unity*. All scenes load.
 
-  ![Load Scene](/img/install/develop-scene.png)
 
-  You should see **Custom** installed packages available in *develop*, such as MLAPI Networking Library and Unity Transport for MLAPI.
-
-  ![Packages](/img/install/develop-packages.png)
 
 :::tip Updated Local Code
 We recommend updating your local clone often from the MLAPI repository. This branch is constantly updated with new and updated features, fixed issues, and more.
