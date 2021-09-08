@@ -3,6 +3,8 @@ id: install
 title: Install MLAPI
 description: Install the on-going development version of Netcode for GameObjects (Netcode) from a cloned respository. 
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Multiple methods are available to install the Netcode for GameObjects (Netcode) package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Unity MLAPI.
 
@@ -18,19 +20,33 @@ First, install [Git](https://git-scm.com/) if you do not have it installed on yo
 
 Next, decide on how you want to clone: command line or application.
 
-### Git Commands
-To clone with Git commands:
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Git CLI', value: 'tab1'},
+    {label: 'Github Desktop', value: 'tab2'},
+  ]}>
+
+<TabItem value="tab1">
+
+To clone with Git CLI:
 
 1. Open a command line terminal.
 1. Change directory to a location on your local.
-1. Enter a command to clone. Example commands:
-  
-    * Git CLI: `git clone https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop`
-    * GitHub CLI: `gh repo clone Unity-Technologies/com.unity.netcode.gameobjects/tree/develop`
+1. Enter the following 
 
+  ```html
+   git clone https://github.com/Unity-Technologies/com.unity.netcode.gameobjects
+  ```  
 1. All files clone locally.
 
-### GitHub Desktop
+  <iframe src="https://www.youtube.com/embed/Ib0fZrd55gQ?playlist=Ib0fZrd55gQ&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px" height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+
+ 
+</TabItem>
+<TabItem value="tab2">
 
 To clone with GitHub Desktop:
 
@@ -48,6 +64,14 @@ To clone directory through GitHub Desktop:
   https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi
   ```
 1. Click **Clone**.
+1. Click Current Branch 
+1. Select Develop
+1. Fetch origin to ensure you have the latest version
+   
+   <iframe src="https://www.youtube.com/embed/Iv7AV_R96Dw?playlist=Iv7AV_R96Dw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px" height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+</TabItem>
+</Tabs>
 
 ## Open the Unity Project you want to use with Netcode  
 
@@ -57,9 +81,6 @@ To clone directory through GitHub Desktop:
 1. Navigate to where you cloned the Netcode repo.
 1. Open the packages.json  file 
 1. The package installs, shown as MLAPI Networking Library 0.1.1.
-
-
-
 
 
 
@@ -75,10 +96,10 @@ If you want to make changes to *develop* code and content, you may want to creat
 
 See the following content to continue your journey using Netcode:
 
-* [Migrating From UNet to Netcode](migratingtomlapi.md) for UNet users
-* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
-* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
-* [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
+* [Migrating From UNet to Netcode](migratingtomlapi.md) for UNet users.
+* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity Netcode.
+* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation.
+* [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation.
 
 ## Troubleshooting
 
@@ -113,3 +134,6 @@ For more information on this error please refer to [Unity Issue Tracker.](https:
 
 
 
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
