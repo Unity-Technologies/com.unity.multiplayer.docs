@@ -73,16 +73,15 @@ To clone directory through GitHub Desktop:
 </TabItem>
 </Tabs>
 
-## Open the Unity Project you want to use with Netcode  
+## Adding Netcode to your Unity Project
 
-1. Open the Unity Project you want to use with Netcode.
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click [Add](/img/add.png) in the status bar and select **Add package from disk...** (due to the package being experimental).
 1. Navigate to where you cloned the Netcode repo.
-1. Open the packages.json  file 
+1. Open the packages.json file 
 1. The package installs, shown as MLAPI Networking Library 0.1.1.
 
-
+   <iframe src="https://www.youtube.com/embed/Lx1Shqn9DiM?playlist=Lx1Shqn9DiM&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px" height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 :::tip Updated Local Code
 We recommend updating your local clone often from the Netcode repository. This branch is constantly updated with new and updated features, fixed issues, and more.
