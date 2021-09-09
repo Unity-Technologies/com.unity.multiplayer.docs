@@ -8,7 +8,6 @@ A **Hello World** program is a computer program that outputs or displays the mes
 
 This **Hello World** tutorial walks you through creating a project, installing the Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game. You can then continue using this project to learn more about Netcode through the multiple Golden Path series.
 
-
 ## Prerequisites
 
 A Netcode-supported version of Unity (2019.4+)

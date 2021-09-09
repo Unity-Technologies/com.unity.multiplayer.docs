@@ -29,7 +29,6 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.
 :::info How to Copy
 We recommend that you use the **Copy** function in our code blocks to reduce errors when copying and pasting content. Hover over the block and select the **Copy** button that appears in the upper-right corner of the code block.
 :::
-
 1. Click **Add**. The package installs and shows MLAPI Networking Library 0.1.0 under **Other** in the **Package Manager**.
 
 ## Next Steps

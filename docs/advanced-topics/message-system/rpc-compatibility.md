@@ -3,7 +3,7 @@ id: rpc-compatibility
 title: RPC migration and compatibility
 ---
 
-This section provides information on compatibility and support for Unity MLAPI features compared to previous MLAPI versions. See the [Release Notes](../../../../releases/introduction) for more information.
+This section provides information on compatibility and support for Unity Netcode for Gameobjects (Netcode) features compared to previous Netcode versions. See the [Release Notes](../../../../releases/introduction) for more information.
 
 ## Cross-Compatibility
 
@@ -41,7 +41,7 @@ A change in the RPC signature will lead into a different send/receive codepath w
 
 ## Deprecation of return values
 
-MLAPI supports RPC return values on convenience RPCs.
+Netcode supports RPC return values on convenience RPCs.
 
 Example:
 
