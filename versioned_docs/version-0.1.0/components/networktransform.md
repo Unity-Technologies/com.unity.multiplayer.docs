@@ -2,13 +2,9 @@
 id: networktransform
 title: NetworkTransform
 ---
-The  position and rotation of a [`NetworkObject`](../mlapi-basics/networkobject.md) is normally only synchronized when that object is spawned. To synchronize position and rotation at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the owner of the network object to all other clients.
+The  position and rotation of a [`NetworkObject`](../mlapi-basics/networkobject.md) is normally only synchronized when that object is spawned. To synchronize position, rotation, and scale at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the GameObject it's attached to. This replicates that data to all other players.
 
-:::note
-`NetworkTransform` does not sync the scale of the object.
-:::
-
-While `NetworkTransform` works out of the box for simple position synchronization, it is not a one size fits all solution. In case you experience stuttering with `NetworkTransform`, you can try increasing `Fixed Sends Per Second` and decreasing `Min Meters` values.
+While `NetworkTransform` works out of the box for simple position synchronization, it is not a one size fits all solution. In case you experience stuttering with `NetworkTransform`, you can try enabling interpolation, increasing `Fixed Sends Per Second`, and decreasing `Thresholds` values.
 
 :::tip
 You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.
@@ -20,4 +16,4 @@ When enabled, extrapolation estimates the time between when a tick advances in s
 
 ## Interpolation
 
-When enabled, indicates the calculated interval between receiving and updating the position between two positions. It smoothes positions through calculations, for example EnableRange allows the position to update and return without causing snapping.
+Interpolation creates a smooth object transition by using two known, historical positions to predict an object's path during the interval between receiving and updating positional data for that object. This is a buffer for the network to sync between object input and rendering, and reduces object jitter or position snapping.
