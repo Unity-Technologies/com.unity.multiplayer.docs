@@ -447,7 +447,11 @@
           {
             "type": "doc",
             "id": "version-0.1.0/learn/dapper/lobbycreation"
-              }
+              },
+              {
+                "type": "doc",
+                "id": "version-0.1.0/learn/dapper/dapper-variable-permissions"
+                }
 
 
                 ]
