@@ -24,7 +24,7 @@ However, player builds do not meet the requirement of quick iteration and easy d
 
 ## Player Builds
 
-:::hint
+:::tip hint
 
 This approach is great when we need to verify our work on the target platform or with a wider group of testers.
 
@@ -40,10 +40,12 @@ Once the build has completed you can launch several instances of the built execu
 
 It is also possible to run the builds along with an editor that produced said build, which could be useful during iterations.
 
-> Mac users: to run multiple instances of the same app, you need to use the command line.
-> Run `open -n YourAppName.app`
+:::unity Mac USers
+Mac users: to run multiple instances of the same app, you need to use the command line.
+Run `open -n YourAppName.app`
+:::
 
-:::hint
+:::tip hint
 
 Though functional, we find this approach to be somewhat slow for the purposes of local iteration. Head on to the [ParrelSync](#parrelsync) section for our suggested workflow for local iteration.
 
@@ -94,7 +96,8 @@ By default **ParrelSync** prevents asset serialization in all clone instances an
  - Bigger screens or multi-screen setups allow for more screen real estate, which is handy when one has to have multiple instances of an app opened at the same time.
  - **ParrelSync** has to copy and update separate `Packages` and `Library` folders for every clone, and in certain cases a fix for misbehaving clone is re-creation - a good SSD makes this process quite a bit faster.
  - Creating a fork of any git repository that your project relies upon in production could help avoid bad surprises if the repo gets taken down or introduces an undesirable change. You should fork **ParrelSync** before using it in your live project.
- - 
+
+
 :::contribution Special Thanks
 This guide would not have been possible without the hard work and support of Philipp Deschain, Unity. 
 :::
