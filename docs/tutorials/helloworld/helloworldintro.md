@@ -76,7 +76,9 @@ This section adds in a player object and spawns it for each connected player.
 6. Right-click and delete **Player** from the scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
+  We remove **Player**, because we will be using the built-in functionality of the NetworkManager to spawn the player. Doing so will make the NetworkManager spawn a player object for each connecting client and automatically give that client ownership over their player object.
+
+  If you do not remove **Player**, a player object will exist at scene load that doesn't react with the NetworkManager.
   :::
 1. Select your `NetworkManager` object from the **Hierarchy** tab.
 2. Go to the **Inspector** tab > **NetworkManager** component > **NetworkPrefabs**. 
@@ -101,7 +103,7 @@ This section adds in a player object and spawns it for each connected player.
 
 ### Testing Hello World
 
-Now we will test to see if evereything works as expected.
+Now we will test to see if everything works as expected.
 
 1. Click **Play**. A **DontDestroyOnLoad** scene will appear on the **Hierarchy** tab.
 1. Select the **NetworkManager** object under **DontDestroyOnLoad**. Then click **Start Host** under **NetworkManager** component on the **Inspector** tab. A **Player(Clone)** object will appear under your sample scene on the **Hierarchy** tab.

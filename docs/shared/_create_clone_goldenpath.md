@@ -1,6 +1,6 @@
 
 :::important
-The clone does not support rollback so it will only work on the unity version that it was originaly created for. Attempting to open the clone on a newer or older version of Unity may cause unexpected funcationality.
+Cloning your Foundation **GoldenPath** project does not support rollback, so it will only work on the Unity version that it was originally created for. Attempting to open the clone on a newer or older version of Unity may cause unexpected funcationality.
 :::
 
 We  create a clone of the Golden Path foundation project that you created, if you have not yet created a `GoldenPath` project then you should follow the steps [here](goldenpath_foundation_module) to create one.

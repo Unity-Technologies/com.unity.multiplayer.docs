@@ -4,7 +4,7 @@ title: Golden Path Module One
 description: Tutorial that explains adding scripts to objects, editor modes (Host Server and Client), basic player movement,Permissions and basic RPC use.
 ---
 
-In this guide we will be covering the following:
+In this guide we cover the following:
 
 - Adding scripts to your objects
 - Adding editor modes inside your game  (Host Server and Client)
@@ -13,9 +13,9 @@ In this guide we will be covering the following:
 - Basic RPC use
 
 
-## Requirements
+## Prerequisites
 
-You should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial..
+You should have completed the [Golden Path Foundation module](goldenpath_foundation_module.md) before starting this tutorial.
 
 ## Create a Clone 'GoldenPath' project
 
