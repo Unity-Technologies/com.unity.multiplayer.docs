@@ -91,6 +91,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "getting-started/max-players"
+      },
+      {
+        "type": "doc",
         "id": "mlapi-basics/networkobject"
       },
       {
@@ -112,6 +116,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/networktime-ticks"
       },
       {
         "collapsed": true,
