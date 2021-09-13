@@ -91,6 +91,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "getting-started/max-players"
+      },
+      {
+        "type": "doc",
         "id": "mlapi-basics/networkobject"
       },
       {
