@@ -4,10 +4,10 @@ Welcome to the Unity Multiplayer Networking Documentation. This site includes th
 
 The documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/) using [Yarn](https://yarnpkg.com/en/) and [Node.js](https://nodejs.org/en/download/). 
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdocs-multiplayer.unity3d.com%2F)](https://docs-multiplayer.unity3d.com/)
-[![Build Status](https://jenkins-iaas.prd.it.unity3d.com/buildStatus/icon?job=Multiplay%2FMultiplay-docs-prd)](https://jenkins-iaas.prd.it.unity3d.com/job/Multiplay/job/Multiplay-docs-prd/)
-[![Forums](https://img.shields.io/badge/unity--forums-multiplayer-blue)](https://forum.unity.com/forums/multiplayer.26/)
-[![Discord](https://img.shields.io/discord/449263083769036810.svg?label=discord&logo=discord&color=informational)](https://discord.gg/FM8SE9E)
+[[Website](https://img.shields.io/website?url=https%3A%2F%2Fdocs-multiplayer.unity3d.com%2F)](https://docs-multiplayer.unity3d.com/)
+[[Build Status](https://jenkins-iaas.prd.it.unity3d.com/buildStatus/icon?job=Multiplay%2FMultiplay-docs-prd)](https://jenkins-iaas.prd.it.unity3d.com/job/Multiplay/job/Multiplay-docs-prd/)
+[[Forums](https://img.shields.io/badge/unity--forums-multiplayer-blue)](https://forum.unity.com/forums/multiplayer.26/)
+[[Discord](https://img.shields.io/discord/449263083769036810.svg?label=discord&logo=discord&color=informational)](https://discord.gg/FM8SE9E)
 
 ## Contributing Content
 
