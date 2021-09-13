@@ -7,7 +7,7 @@ Call the driver's `ScheduleUpdate` method on every frame. This allows you to upd
 
 The `Update` loop of the driver is simple, and may look daunting at first glance. If you strip out all of the job system dependencies, you will see the following:
 
-![FlowchartUpdate](/img/transport/com.unity.transport.driver.png)
+[FlowchartUpdate](/img/transport/com.unity.transport.driver.png)
 
 * Start by calling `InternalUpdate`, this call is where you clean up any stale connections, clear buffers, and finally check timeouts on connections.
 * The chain is running the `ReceiveJob` for reading and parsing the data from the socket.
