@@ -118,6 +118,10 @@ module.exports = {
         "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
       },
       {
+        "type": "doc",
+        "id": "advanced-topics/networktime-ticks"
+      },
+      {
         "collapsed": true,
         "type": "category",
         "label": "Transports",
