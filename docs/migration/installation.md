@@ -1,12 +1,12 @@
 ---
 id: install
-title: Install Netcode
-description: Install the on-going development version of Unity Netcode for Gameobjects from a cloned respository. 
+title: Install MLAPI
+description: Install the on-going development version of Netcode for GameObjects (Netcode) from a cloned respository. 
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Multiple methods are available to install the Netcode for Gameobjects (Netcode) package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Netcode.
+Multiple methods are available to install the Netcode for GameObjects (Netcode) package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Unity MLAPI.
 
 :::important In-Progress Development
 All features and code available in the *develop* branch is in-progress and not final. All cloned code may change daily or weekly, depending on submitted pull requests. All documentation and release notes for the *develop* version are not final.
