@@ -20,7 +20,7 @@ To install MLAPI on Unity 2021.x, 2020.x, or 2019.4+, use the **Unity Package Ma
 
 1. Open your **Unity Hub** and select the **Project** you are presently working on.
 1. From the menu bar, navigate to **Window** > **Package Manager**.
-1. Click the plus sign (![Add](/img/add.png)) in the **Package Manager** status bar and select **Add pack from git URL...**.
+1. Click the plus sign ([Add](/img/add.png)) in the **Package Manager** status bar and select **Add pack from git URL...**.
 1. Copy and paste the following Git URL to the MLAPI release package in the pop-up window:
 ```
 https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
@@ -45,9 +45,9 @@ See the following content to continue your journey using MLAPI:
 You may come across different errors when installing MLAPI. The following troubleshooting tips should help you with the most common issues.
 
 ### Preview Packages
-To include preview packages in the Package Manager, select the ![Gear Icon](/img/gear.png) then Advanced Project Settings. Select the **Enable Preview Packages** option and approve the message that displays.
+To include preview packages in the Package Manager, select the [Gear Icon](/img/gear.png) then Advanced Project Settings. Select the **Enable Preview Packages** option and approve the message that displays.
 
-![Enable Preview Packages](/img/install/install-preview-pkg.png)
+[Enable Preview Packages](/img/install/install-preview-pkg.png)
 
 ### Errors with incorrect package loading
 
