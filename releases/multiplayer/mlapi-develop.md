@@ -17,7 +17,7 @@ The following release notes document in-progress features, changes, bug fixes, a
 -->
 
 :::note
-Unity MLAPI supports Windows and MacOS versions of Unity Editor and Player.
+Unity MLAPI supports Windows, MacOS, Ubuntu 20.4 LTS and Ubuntu 18.04 LTS versions of Unity Editor and Player.
 :::
 
 ## New features
