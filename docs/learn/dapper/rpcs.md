@@ -20,6 +20,8 @@ This Unity Multiplayer tutorial will teach you how to implement Remote Procedure
 
 Video published 15th April 2021
 
+For project files access, check out the repository here: https://github.com/DapperDino/Unity-Multiplayer-Tutorials
+
 For more information  on RPC's see [Messaging System](../../advanced-topics/messaging-system.md) in the main MLAPI documentation.
 
 :::contribution Community Contribution

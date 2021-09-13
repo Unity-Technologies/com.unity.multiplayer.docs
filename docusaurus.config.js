@@ -296,6 +296,7 @@ module.exports = {
         '@docusaurus/preset-classic',
         {
           docs: {
+            remarkPlugins: [require('mdx-mermaid')],
             path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,
