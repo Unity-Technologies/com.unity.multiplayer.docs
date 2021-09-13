@@ -493,7 +493,7 @@ You can now [create a build](https://docs.unity3d.com/Manual/PublishingBuilds.ht
 
 
 :::note Congrats!
-Congratulations, you have learned the basics of a networked game! Considered using our [Golden Path series](../goldenpath_series/mlapi_starting-out.md) to learn more about the different features of Netcode next.
+Congratulations, you have learned the basics of a networked game! Consider using our [Golden Path series](../goldenpath_series/mlapi_starting-out.md) to learn more about the different features of Netcode next.
 :::
 
 :::contribution Special Thanks

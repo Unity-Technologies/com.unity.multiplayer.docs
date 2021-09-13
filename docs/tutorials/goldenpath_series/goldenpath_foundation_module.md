@@ -4,12 +4,12 @@ title:  Golden Path Foundation Module
 description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing Netcode for Gameobjects ,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
-In this tutorial we will build on the work we have already done in Hello World and add in a few more features. As there are some minor differences between this tutorial and the Hello World series we will be starting afresh. You do not have to have completed either of the Hello World tutorials to complete this one, however, if you are new to Unity then we recommended that you complete them in order to familiarise yourself with Unity.
+If you have already completed the Hello World guide, these steps may seem familiar. However, there are some minor differences, and this guide is what further Golden Path modules consider the foundation to build on. We recommend starting a new project as your Golden Path instead of using your Hello World project because of these small differences.
 
 
-## Requirements
+## Prerequisites
 
-This tutorial requires an Netcode for Gameobjects (Netcode)-supported version of Unity (2019.4+).
+A Netcode for Gameobjects (Netcode)-supported version of Unity (2019.4+)
 
 ## Create a new project in Unity
 
@@ -19,9 +19,13 @@ import CreatePro from '../../shared/_create_new_project.md';
 <CreatePro/>
 
 :::note
-Make note of this path. You will need it  later in the [tutorial](#creating-a-command-line-helper), when you are testing building the project from the command line. For this guide we used a Mac and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
+Remember this path. You will need it later in the [tutorial](#creating-a-command-line-helper), when you test building the project from the command line. For the video guide we used a Mac, and our path was `~/dev/mlapi-golden-path/`. On a Windows machine your path may be slightly different.
 
-You will also need it when you create a clone of the Project for future modules.
+As one of our writer's stepped through the process in both Mac and Windows, these are her comparative paths:
+* Mac: `~ GoldenPath`
+* Windows: `C:\Users\sarao\GoldenPath`
+
+You will also need your path when you create a clone of the Project for future modules.
 :::
 
 <iframe src="https://www.youtube.com/embed/AOZE-b9Q8R8?playlist=AOZE-b9Q8R8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -30,7 +34,7 @@ You will also need it when you create a clone of the Project for future modules.
 
 ## Import Netcode Package via URL
 
-See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package.
+See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package, if you haven't already.
 
 ## Creating Network Manager and selecting the Transport
 
@@ -64,16 +68,13 @@ import Testhelper from '../../shared/_testing_commandline_helper.md';
 
 ## Next Steps with Goldenpath
 
-You should  now save the golden path foundation project as you will be building on it in future modules.
+You should now save the Golden Path Foundation project to build on it in future modules.
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [Network Manager](../../components/networkmanager.md)
 - [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
 - [Network Object](../../mlapi-basics/networkobject.md)
-
-
-
 
 :::contribution Special Thanks
 This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 

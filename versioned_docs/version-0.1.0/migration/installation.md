@@ -8,11 +8,11 @@ To install the MLAPI Networking Library package, you can use a variety of method
 
 ## Prerequisites
 
-Each of these instructions assume that you already have:
+This guide assumes that you already have:
   * Git installed on your PC. If you don't already have it, download [Git](https://git-scm.com/) and restart your system. A full restart is required to update Git or you may receive an error adding packages.
   * An active Unity account with a valid license.
   * A current installation of Unity.
-  * An existing Unity project. If you haven't created a project yet, we recommend using the [Hello World](../tutorials/helloworld/helloworldintro.md)  example to begin.
+  * An existing Unity project. If you haven't created a project yet, we recommend using the [Hello World](../tutorials/helloworld/helloworldintro.md) example to begin.
 
 ## Installation
 
