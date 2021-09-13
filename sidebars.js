@@ -72,11 +72,26 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
+    "label": "Local Iteration ",
+    "items": [
+      {
+        "type": "doc",
+        "id": "tutorials/local_iteration_series/local_iteration_testing_locally"
+      }
+    ],
+  },
+  {
+    "collapsed": true,
+    "type": "category",
     "label": "Networking",
     "items": [
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/max-players"
       },
       {
         "type": "doc",
