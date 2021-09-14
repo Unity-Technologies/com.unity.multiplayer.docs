@@ -4,9 +4,9 @@ title: NetworkWriter, NetworkReader and NetworkBuffer
 sidebar_label: NetworkWriter, NetworkReader, & NetworkBuffer
 ---
 
-Internally, the MLAPI uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in MemoryStreams which don't create any garbage.
+Internally, Netcode for Gameobjects (Netcode) uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in `MemoryStream`s which don't create any garbage.
 
-The MLAPI does have its own prefered Stream that is used internally called `NetworkBuffer`.
+Netcode does have its own prefered Stream that is used internally called `NetworkBuffer`.
 
 ## NetworkBuffer
 
@@ -14,7 +14,7 @@ The `NetworkBuffer` is a Stream implementation that functions in a similar way a
 
 ### PooledNetworkBuffer
 
-Creating resizable `NetworkBuffer`s allocates a byte array to back it, just like a `MemoryStream`. To not create any allocations, the MLAPI has a built in Pool of `NetworkBuffer`s  which is recommended to be used instead.
+Creating resizable `NetworkBuffer`s allocates a byte array to back it, just like a `MemoryStream`. To not create any allocations, Netcode has a built in Pool of `NetworkBuffer`s  which is recommended to be used instead.
 
 ```csharp
 using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
@@ -45,7 +45,7 @@ The `NetworkWriter` and `NetworkReader` support many data types by default such 
 
 ### BitWise Writing
 
-If you for example have an enum with 5 values. All those values could fit into 3 bits. With the `NetworkWriter`, this can be done like this:
+If you for example have an enum with five values. All those values could fit into three bits. With the `NetworkWriter`, this can be done like this:
 
 ```csharp
 writer.WriteBits((byte)MyEnum.MyEnumValue, 3);

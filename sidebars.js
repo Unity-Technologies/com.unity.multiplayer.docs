@@ -72,26 +72,11 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Local Iteration ",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/local_iteration_series/local_iteration_testing_locally"
-      }
-    ],
-  },
-  {
-    "collapsed": true,
-    "type": "category",
     "label": "Networking",
     "items": [
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/max-players"
       },
       {
         "type": "doc",
@@ -116,10 +101,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
-      },
-      {
-        "type": "doc",
-        "id": "advanced-topics/networktime-ticks"
       },
       {
         "collapsed": true,
@@ -493,11 +474,8 @@ module.exports = {
           {
           "type": "doc",
           "id": "learn/dapper/lobbycreation"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-variable-permissions"
-          },
+            },
+
 
                 ]
         },
