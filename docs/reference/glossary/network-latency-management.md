@@ -34,7 +34,7 @@ Extrapolation is an attempt to estimate a future game state. On receipt of a pac
 
 The client will normally assume that a moving object will continue in the same direction. When a new packet is received, the position may be updated.
 
-For MLAPI, extrapolation is used in [`NetworkTransform`](../../components/networktransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
+For Netcode for Gameobjects (Netcode), extrapolation is used in [`NetworkTransform`](../../components/networktransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
 
 ## Interpolation Period
 
@@ -151,5 +151,6 @@ Tick rate: Simulation, tick processing:
 A tick or simulation rate of 60Hz will cause less delay than a tick rate of 30Hz, as it decreases the time between the simulation steps. A tick rate of 60Hz will also allow the server to send 60 updates per second, which compared to 30Hz reduces the round trip delay between the client and the server by about 33ms (-16ms from the client to the server, and another -16ms from the server to the client).
 
 When a server gets close to the limit, or even fails to process a tick inside that timeframe, then you will instantly notice the results: all sorts of strange gameplay issues like rubber banding, players teleporting, hits getting rejected, and physics failing.
+
 
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
