@@ -68,9 +68,9 @@ You should  now save the golden path foundation project as you will be building 
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [Network Manager](../mlapi-basics/networkvariable.md)
+- [Network Manager](../../components/networkmanager.md)
 - [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
-- [Network Object](../mlapi-basics/networkobect.md)
+- [Network Object](../../mlapi-basics/networkobject.md)
 
 
 

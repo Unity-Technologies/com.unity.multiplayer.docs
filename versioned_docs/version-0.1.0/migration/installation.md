@@ -35,7 +35,7 @@ To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Pa
 1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
+1. Click [Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
 
   ![Select Git URL Option](/img/install/install-git.png)
 
@@ -64,8 +64,8 @@ See the following content to continue your journey using MLAPI:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
-* [Building Golden Path](../tutorials/goldenpath.md) to get started from install to project creation
-* [Your First Networked Game "Hello World"](../tutorials/helloworldintro.md) to get started from install to project creation
+* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
+* [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
 
