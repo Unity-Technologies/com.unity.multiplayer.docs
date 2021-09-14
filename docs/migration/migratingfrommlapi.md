@@ -156,7 +156,7 @@ After you are done upgrading your project, you can remove the MLAPI Patcher pack
 After migrating and updating to the Unity MLAPI package, we recommend looking into the following:
 
 * <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
-* [First Steps with MLAPI](../tutorials/helloworldintro.md) - Learn how to create your first networked game with a Hello World sample. If you have existing projects or are new to Unity MLAPI, this will give you an initial review of MLAPI projects.
+* [First Steps with MLAPI](../tutorials/helloworld/helloworldintro.md) - Learn how to create your first networked game with a Hello World sample. If you have existing projects or are new to Unity MLAPI, this will give you an initial review of MLAPI projects.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';

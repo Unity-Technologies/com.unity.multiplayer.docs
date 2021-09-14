@@ -22,6 +22,17 @@ MLAPI is designed in a way that works with both a Listen Server and a Dedicated 
 
 Matchmaking would have to be implemented using 3rd party matchmaking services. MLAPI has no matchmaking functionality, currently.
 
+### How can you provide the server address or any connection information before starting the client?
+   
+MLAPI does not deal with IP addresses or any connection informations (e.g. relay region and room name). This is the role of your transport layer. To provide such information, the best way to do it is to get your transport component (e.g. UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
+   
+```csharp
+UNetTransport transport = MLAPI.NetworkManager.Singleton.GetComponent<UNetTransport>();
+transport.ConnectAddress = serverIP;
+transport.ConnectPort = serverPort;
+MLAPI.NetworkManager.Singleton.StartClient();
+```
+   
 ### How can you get more information for ClientRPC errors?
 
 If you receive `ClientRPC` errors like the following, you may have difficulty debugging:

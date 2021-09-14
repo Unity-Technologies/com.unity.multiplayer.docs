@@ -12,7 +12,7 @@ In this Guide e will be covering the following:
 
 ## Requirements
 
-You should have completed the foundation module [here](goldenpath_foundation_module.md) before starting this tutorial..
+You should have completed the foundation module [here](goldenpath_foundation_module) before starting this tutorial..
 
 ## Create a Clone 'GoldenPath' project
 
@@ -112,7 +112,7 @@ Now we will test the Server-controlled Network Variable works as we intended.
 
 1. Select **File > Build and Run**. 
 1. Stop the player.
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](goldenpath_foundation_module.md#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn.  
 1. You should see the following in the console, showing that the server and client are sharing the variable:
 
@@ -186,7 +186,7 @@ Now we check that the Network Transform functions correctly.
 
 1. Select **File > Build and Run**. 
 1. Stop the player. 
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](goldenpath_foundation_module.md#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn. 
 1. You should see the player capsule moving in a circle on both the client and the server.
 
@@ -269,7 +269,7 @@ Now we will test that the client and server are both recieving the RPCs correctl
 
 1. Select **File > Build and Run**. 
 1. Stop the player.
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](goldenpath_foundation_module.md#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn.  
 1. In the console, you should expect to see the client and server sending RPC messages to each other. 
 1. The client kicks off the exchange in its `Update` call the first time with a counter value of 0.  
@@ -298,9 +298,9 @@ Congratulations you have learned how to use some of the basic building blocks of
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [Network variables (client and server-controlled)](../mlapi-basics/networkvariable.md)
-- [Network transforms](../components/networktransform.md)
-- [RPCs](../advanced-topics/message-system/about-rpc.md)
+- [Network variables (client and server-controlled)](../../mlapi-basics/networkvariable.md)
+- [Network transforms](../../components/networktransform.md)
+- [RPCs](../../advanced-topics/messaging-system.md)
 
 
 :::contribution Special Thanks

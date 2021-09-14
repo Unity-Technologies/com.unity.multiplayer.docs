@@ -20,6 +20,8 @@ This Unity Multiplayer tutorial will teach you how to spawn and destroy objects 
 
 Video published 29th April 2021
 
+For project files access, check out the repository here: https://github.com/DapperDino/Unity-Multiplayer-Tutorials
+
 For more information  on Object Spawning see [Object Spawning](../../mlapi-basics/object-spawning.md) in the main MLAPI documentation.
 
 :::contribution Community Contribution
