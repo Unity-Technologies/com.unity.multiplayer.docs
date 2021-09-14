@@ -496,8 +496,11 @@ module.exports = {
           {
           "type": "doc",
           "id": "learn/dapper/lobbycreation"
-            },
-
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-variable-permissions"
+          },
 
                 ]
         },
