@@ -76,7 +76,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "tutorials/local_iteration_series/local_iteration_testing_locally"
+        "id": "tutorials/local_iteration_series/testing_locally"
       }
     ],
   },
