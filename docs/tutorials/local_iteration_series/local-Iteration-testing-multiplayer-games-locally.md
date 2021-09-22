@@ -40,8 +40,10 @@ Once the build has completed you can launch several instances of the built execu
 
 It is also possible to run the builds along with an editor that produced said build, which could be useful during iterations.
 
-> Mac users: to run multiple instances of the same app, you need to use the command line.
-> Run `open -n YourAppName.app`
+:::unity Mac USers
+Mac users: to run multiple instances of the same app, you need to use the command line.
+Run `open -n YourAppName.app`
+:::
 
 :::tip hint
 

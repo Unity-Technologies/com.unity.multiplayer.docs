@@ -101,7 +101,7 @@ This section adds in a player object and spawns it for each connected player.
 
 ### Testing Hello World
 
-Now we will test to see if evereything works as expected.
+Now we will test to see if everything works as expected.
 
 1. Click **Play**. A **DontDestroyOnLoad** scene will appear on the **Hierarchy** tab.
 1. Select the **NetworkManager** object under **DontDestroyOnLoad**. Then click **Start Host** under **NetworkManager** component on the **Inspector** tab. A **Player(Clone)** object will appear under your sample scene on the **Hierarchy** tab.
