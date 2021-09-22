@@ -48,7 +48,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the door and a player connects after this, the host will replicate all the world's information to that new player, including the door's state.
 
 
-## Why not use NetworkVariabless for everything?
+## Why not use NetworkVariables for everything?
 
 `RPC`s are simpler.
 
