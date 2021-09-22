@@ -1,5 +1,5 @@
 ---
-id: mlapi_starting_out
+id: netcode_starting_out
 title:  Learning with Golden Path Introduction
 description: Introduction to the Golden Path series, explaining the underliying aim of the series 
 ---
