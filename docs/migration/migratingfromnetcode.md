@@ -1,7 +1,7 @@
 ---
-id: migratingfrommlapi
-title: Update MLAPI to the Netcode Package
-description: Learn how to upgrade your current MLAPI installation to the Netcode for Gameobjects package.
+id: migratingfromnetcode
+title: Update MLAPI to the Netcode for GameObjects package.
+description: Learn how to upgrade your current MLAPI installation to the Netcode for GameObjects package.
 ---
 
 import Tabs from '@theme/Tabs';

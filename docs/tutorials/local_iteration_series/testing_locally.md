@@ -1,5 +1,5 @@
 ---
-id: local_iteration_testing_locally
+id: testing_locally
 title: Local Iteration - Testing multiplayer games locally
 description: Guide covering the available workflows for testing multiplayer games locally.
 ---
