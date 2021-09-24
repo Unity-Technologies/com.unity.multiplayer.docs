@@ -71,11 +71,13 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NativeMultiQueue<T> : IDisposable where T : struct
+``` lang-csharp
+public struct NativeMultiQueue<T> : IDisposable where T : struct
+```
 
 ##### Type Parameters
 
@@ -83,7 +85,7 @@ Object.ReferenceEquals(Object, Object)
 |------|-------------|
 | T    |             |
 
-## Constructors 
+## 
 
 ### NativeMultiQueue(Int32)
 
@@ -102,7 +104,9 @@ increase the number of items for each bucket.
 
 #### Declaration
 
-    public NativeMultiQueue(int initialMessageCapacity)
+``` lang-csharp
+public NativeMultiQueue(int initialMessageCapacity)
+```
 
 #### Parameters
 
@@ -110,7 +114,7 @@ increase the number of items for each bucket.
 |--------------|------------------------|-------------|
 | System.Int32 | initialMessageCapacity |             |
 
-## Properties 
+## 
 
 ### IsCreated
 
@@ -124,7 +128,9 @@ increase the number of items for each bucket.
 
 #### Declaration
 
-    public bool IsCreated { get; }
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
 
 #### Property Value
 
@@ -132,7 +138,7 @@ increase the number of items for each bucket.
 |----------------|-------------|
 | System.Boolean |             |
 
-## Methods 
+## 
 
 ### Clear(Int32)
 
@@ -149,7 +155,9 @@ the call will not do anything.
 
 #### Declaration
 
-    public void Clear(int bucket)
+``` lang-csharp
+public void Clear(int bucket)
+```
 
 #### Parameters
 
@@ -172,7 +180,9 @@ if the bucket is empty the call will fail and return false.
 
 #### Declaration
 
-    public bool Dequeue(int bucket, out T value)
+``` lang-csharp
+public bool Dequeue(int bucket, out T value)
+```
 
 #### Parameters
 
@@ -199,7 +209,9 @@ if the bucket is empty the call will fail and return false.
 
 #### Declaration
 
-    public void Dispose()
+``` lang-csharp
+public void Dispose()
+```
 
 ### Enqueue(Int32, T)
 
@@ -217,7 +229,9 @@ the number of items for each bucket will be increased.
 
 #### Declaration
 
-    public void Enqueue(int bucket, T value)
+``` lang-csharp
+public void Enqueue(int bucket, T value)
+```
 
 #### Parameters
 
@@ -241,7 +255,9 @@ if the bucket is empty the call will fail and return false.
 
 #### Declaration
 
-    public bool Peek(int bucket, out T value)
+``` lang-csharp
+public bool Peek(int bucket, out T value)
+```
 
 #### Parameters
 

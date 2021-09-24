@@ -79,13 +79,15 @@ Object.ToString()
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public static class RandomHelpers
+``` lang-csharp
+public static class RandomHelpers
+```
 
-## Methods 
+## 
 
 ### GetRandomUShort()
 
@@ -99,7 +101,9 @@ Object.ToString()
 
 #### Declaration
 
-    public static ushort GetRandomUShort()
+``` lang-csharp
+public static ushort GetRandomUShort()
+```
 
 #### Returns
 

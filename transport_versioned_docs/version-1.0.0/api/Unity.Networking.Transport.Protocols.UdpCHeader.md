@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct UdpCHeader
+``` lang-csharp
+public struct UdpCHeader
+```
 
-## Fields
+## 
 
 ### Data
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *Data
+``` lang-csharp
+public byte *Data
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public UdpCHeader.HeaderFlags Flags
+``` lang-csharp
+public UdpCHeader.HeaderFlags Flags
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public const int Length = 4
+``` lang-csharp
+public const int Length = 4
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort SessionToken
+``` lang-csharp
+public ushort SessionToken
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte Type
+``` lang-csharp
+public byte Type
+```
 
 #### Field Value
 

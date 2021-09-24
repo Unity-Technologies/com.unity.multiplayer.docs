@@ -3,7 +3,7 @@ id: Unity.Networking.Transport.Utilities
 title: Unity.Networking.Transport.Utilities  
 ---
 
-## Namespace Unity.Networking.Transport.Utilities
+## 
 
 <div class="markdown level0 summary">
 
@@ -17,7 +17,19 @@ title: Unity.Networking.Transport.Utilities
 
 </div>
 
-## Classes
+## 
+
+### Unity.Networking.Transport.Utilities.FixedStringHexExt
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.Utilities.NativeListExt
+
+<div class="section">
+
+</div>
 
 ### Unity.Networking.Transport.Utilities.RandomHelpers
 
@@ -25,7 +37,13 @@ title: Unity.Networking.Transport.Utilities
 
 </div>
 
-## Structs
+### Unity.Networking.Transport.Utilities.SequenceHelpers
+
+<div class="section">
+
+</div>
+
+## 
 
 ### Unity.Networking.Transport.Utilities.FragmentationUtility
 
@@ -39,7 +57,7 @@ title: Unity.Networking.Transport.Utilities
 
 </div>
 
-### Unity.Networking.Transport.Utilities.NativeMultiQueue-1
+### Unity.Networking.Transport.Utilities.NativeMultiQueue\`1
 
 <div class="section">
 
@@ -121,12 +139,6 @@ items pushed and popped individually.
 
 </div>
 
-### Unity.Networking.Transport.Utilities.SequenceHelpers
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.Utilities.SimulatorUtility
 
 <div class="section">
@@ -153,7 +165,7 @@ Configuration parameters for the simulator pipeline stage.
 
 </div>
 
-## Enums
+## 
 
 ### Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
 

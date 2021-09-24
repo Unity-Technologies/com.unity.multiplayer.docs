@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Statistics
+``` lang-csharp
+public struct Statistics
+```
 
-## Fields
+## 
 
 ### PacketsDropped
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsDropped
+``` lang-csharp
+public int PacketsDropped
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsDuplicated
+``` lang-csharp
+public int PacketsDuplicated
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsOutOfOrder
+``` lang-csharp
+public int PacketsOutOfOrder
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsReceived
+``` lang-csharp
+public int PacketsReceived
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsResent
+``` lang-csharp
+public int PacketsResent
+```
 
 #### Field Value
 
@@ -175,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsSent
+``` lang-csharp
+public int PacketsSent
+```
 
 #### Field Value
 
@@ -195,7 +209,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsStale
+``` lang-csharp
+public int PacketsStale
+```
 
 #### Field Value
 

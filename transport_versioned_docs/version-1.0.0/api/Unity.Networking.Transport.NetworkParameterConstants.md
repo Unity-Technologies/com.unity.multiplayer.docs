@@ -57,13 +57,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkParameterConstants
+``` lang-csharp
+public struct NetworkParameterConstants
+```
 
-## Fields
+## 
 
 ### ConnectTimeoutMS
 
@@ -80,7 +82,9 @@ the NetworkConfigParameter
 
 #### Declaration
 
-    public const int ConnectTimeoutMS = 1000
+``` lang-csharp
+public const int ConnectTimeoutMS = 1000
+```
 
 #### Field Value
 
@@ -103,7 +107,9 @@ overridden using the NetworkConfigParameter
 
 #### Declaration
 
-    public const int DisconnectTimeoutMS = 30000
+``` lang-csharp
+public const int DisconnectTimeoutMS = 30000
+```
 
 #### Field Value
 
@@ -126,7 +132,9 @@ using the NetworkConfigParameter.
 
 #### Declaration
 
-    public const int DriverDataStreamSize = 65536
+``` lang-csharp
+public const int DriverDataStreamSize = 65536
+```
 
 #### Field Value
 
@@ -148,7 +156,9 @@ The default size of the event queue.
 
 #### Declaration
 
-    public const int InitialEventQueueSize = 100
+``` lang-csharp
+public const int InitialEventQueueSize = 100
+```
 
 #### Field Value
 
@@ -168,7 +178,9 @@ The default size of the event queue.
 
 #### Declaration
 
-    public const int InvalidConnectionId = -1
+``` lang-csharp
+public const int InvalidConnectionId = -1
+```
 
 #### Field Value
 
@@ -191,7 +203,9 @@ using the NetworkConfigParameter
 
 #### Declaration
 
-    public const int MaxConnectAttempts = 60
+``` lang-csharp
+public const int MaxConnectAttempts = 60
+```
 
 #### Field Value
 
@@ -211,7 +225,9 @@ using the NetworkConfigParameter
 
 #### Declaration
 
-    public const int MTU = 1400
+``` lang-csharp
+public const int MTU = 1400
+```
 
 #### Field Value
 

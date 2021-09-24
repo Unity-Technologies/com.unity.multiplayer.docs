@@ -70,13 +70,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkConfigParameter : INetworkParameter
+``` lang-csharp
+public struct NetworkConfigParameter : INetworkParameter
+```
 
-## Fields
+## 
 
 ### connectTimeoutMS
 
@@ -93,7 +95,9 @@ a new connection attempt.
 
 #### Declaration
 
-    public int connectTimeoutMS
+``` lang-csharp
+public int connectTimeoutMS
+```
 
 #### Field Value
 
@@ -116,7 +120,9 @@ event, before we disconnect the socket.
 
 #### Declaration
 
-    public int disconnectTimeoutMS
+``` lang-csharp
+public int disconnectTimeoutMS
+```
 
 #### Field Value
 
@@ -148,7 +154,9 @@ This is used instead of a clock.
 
 #### Declaration
 
-    public int fixedFrameTimeMS
+``` lang-csharp
+public int fixedFrameTimeMS
+```
 
 #### Field Value
 
@@ -180,7 +188,9 @@ disconnecting.
 
 #### Declaration
 
-    public int maxConnectAttempts
+``` lang-csharp
+public int maxConnectAttempts
+```
 
 #### Field Value
 
@@ -202,7 +212,9 @@ The maximum amount of time a single frame can advance timeout values.
 
 #### Declaration
 
-    public int maxFrameTimeMS
+``` lang-csharp
+public int maxFrameTimeMS
+```
 
 #### Field Value
 

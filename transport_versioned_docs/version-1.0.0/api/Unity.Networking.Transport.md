@@ -3,7 +3,7 @@ id: Unity.Networking.Transport
 title: Unity.Networking.Transport  
 ---
 
-## Namespace Unity.Networking.Transport
+## 
 
 <div class="markdown level0 summary">
 
@@ -17,7 +17,19 @@ title: Unity.Networking.Transport
 
 </div>
 
-## Classes
+## 
+
+### Unity.Networking.Transport.Base64
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.HMACSHA256
+
+<div class="section">
+
+</div>
 
 ### Unity.Networking.Transport.NetworkPipelineStageCollection
 
@@ -25,7 +37,13 @@ title: Unity.Networking.Transport
 
 </div>
 
-## Structs
+### Unity.Networking.Transport.SHA256
+
+<div class="section">
+
+</div>
+
+## 
 
 ### Unity.Networking.Transport.BaselibNetworkInterface
 
@@ -181,7 +199,17 @@ GenericNetworkDriver.
 <div class="section">
 
 The NetworkPacketReceiver is an interface for handling received packets,
-needed by the INetworkInterface
+needed by the INetworkInterface It either can be used in two main
+scenarios:
+
+1.  Your API requires a pointer to memory that you own. Then you should
+    use AllocateMemory(ref Int32), write to the memory and then
+    AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
+    NetworkPacketReceiver.AppendPacketMode) with NoCopyNeeded. You don't
+    need to deallocate the memory
+2.  Your API gives you a pointer that you don't own. In this case you
+    should use AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
+    NetworkPacketReceiver.AppendPacketMode) with None (default)
 
 </div>
 
@@ -265,7 +293,7 @@ Default NetworkParameter Constants.
 
 </div>
 
-### Unity.Networking.Transport.TransportFunctionPointer-1
+### Unity.Networking.Transport.TransportFunctionPointer\`1
 
 <div class="section">
 
@@ -277,7 +305,7 @@ Default NetworkParameter Constants.
 
 </div>
 
-## Interfaces
+## 
 
 ### Unity.Networking.Transport.INetworkInterface
 
@@ -299,7 +327,7 @@ The interface for NetworkParameters
 
 </div>
 
-## Enums
+## 
 
 ### Unity.Networking.Transport.NetworkConnection.State
 
@@ -326,9 +354,24 @@ NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
+### Unity.Networking.Transport.NetworkPacketReceiver.AppendPacketMode
+
+<div class="section">
+
+</div>
+
 ### Unity.Networking.Transport.NetworkPipelineStage.Requests
 
 <div class="section">
+
+</div>
+
+### Unity.Networking.Transport.ProcessPacketCommandType
+
+<div class="section">
+
+The type of commands that the NetworkDriver can process from a received
+packet after it is proccessed by the protocol.
 
 </div>
 
@@ -338,7 +381,7 @@ NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
-## Delegates
+## 
 
 ### Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDelegate
 

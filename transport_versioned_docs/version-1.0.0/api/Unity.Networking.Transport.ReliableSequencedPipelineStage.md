@@ -67,13 +67,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct ReliableSequencedPipelineStage : INetworkPipelineStage
+``` lang-csharp
+public struct ReliableSequencedPipelineStage : INetworkPipelineStage
+```
 
-## Properties 
+## 
 
 ### StaticSize
 
@@ -87,7 +89,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int StaticSize { get; }
+``` lang-csharp
+public readonly int StaticSize { get; }
+```
 
 #### Property Value
 
@@ -95,7 +99,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### StaticInitialize(Byte\*, Int32, INetworkParameter\[\])
 
@@ -109,7 +113,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] netParams)
+``` lang-csharp
+public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] netParams)
+```
 
 #### Parameters
 

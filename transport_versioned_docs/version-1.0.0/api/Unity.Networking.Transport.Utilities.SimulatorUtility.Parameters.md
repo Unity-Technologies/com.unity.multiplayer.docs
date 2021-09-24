@@ -69,13 +69,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Parameters : INetworkParameter
+``` lang-csharp
+public struct Parameters : INetworkParameter
+```
 
-## Fields
+## 
 
 ### FuzzFactor
 
@@ -95,7 +97,9 @@ percent chance to get flipped.
 
 #### Declaration
 
-    public int FuzzFactor
+``` lang-csharp
+public int FuzzFactor
+```
 
 #### Field Value
 
@@ -119,7 +123,9 @@ only fuzz a part of the packet.
 
 #### Declaration
 
-    public int FuzzOffset
+``` lang-csharp
+public int FuzzOffset
+```
 
 #### Field Value
 
@@ -143,7 +149,9 @@ processing buffer and can be later brought back.
 
 #### Declaration
 
-    public int MaxPacketCount
+``` lang-csharp
+public int MaxPacketCount
+```
 
 #### Field Value
 
@@ -166,7 +174,9 @@ exceeds this size it will bypass the simulator.
 
 #### Declaration
 
-    public int MaxPacketSize
+``` lang-csharp
+public int MaxPacketSize
+```
 
 #### Field Value
 
@@ -188,7 +198,9 @@ Fixed delay to apply to all packets which pass through.
 
 #### Declaration
 
-    public int PacketDelayMs
+``` lang-csharp
+public int PacketDelayMs
+```
 
 #### Field Value
 
@@ -212,7 +224,9 @@ PacketDropInterval is 5 every 5th packet is dropped.
 
 #### Declaration
 
-    public int PacketDropInterval
+``` lang-csharp
+public int PacketDropInterval
+```
 
 #### Field Value
 
@@ -237,7 +251,9 @@ should be dropped or not. A percentage of 5 means approximately every
 
 #### Declaration
 
-    public int PacketDropPercentage
+``` lang-csharp
+public int PacketDropPercentage
+```
 
 #### Field Value
 
@@ -260,7 +276,9 @@ subtracts amount from fixed delay.
 
 #### Declaration
 
-    public int PacketJitterMs
+``` lang-csharp
+public int PacketJitterMs
+```
 
 #### Field Value
 
@@ -284,7 +302,9 @@ that are dependant on the random number generator.
 
 #### Declaration
 
-    public uint RandomSeed
+``` lang-csharp
+public uint RandomSeed
+```
 
 #### Field Value
 

@@ -13,18 +13,20 @@ title: Unity.Networking.Transport.Protocols.UdpCProtocol
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum UdpCProtocol
+``` lang-csharp
+public enum UdpCProtocol
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| ConnectionAccept | |
-| ConnectionReject | |
-| ConnectionRequest | |
-| Data | |
-| Disconnect | |
+| Name              | Description |
+|-------------------|-------------|
+| ConnectionAccept  |             |
+| ConnectionReject  |             |
+| ConnectionRequest |             |
+| Data              |             |
+| Disconnect        |             |

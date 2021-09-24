@@ -43,35 +43,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkEndPoint
+``` lang-csharp
+public struct NetworkEndPoint
+```
 
-## Fields
-
-### length
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int length
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-## Properties 
+## 
 
 ### Address
 
@@ -85,7 +65,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public string Address { get; }
+``` lang-csharp
+public readonly string Address { get; }
+```
 
 #### Property Value
 
@@ -105,7 +87,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static NetworkEndPoint AnyIpv4 { get; }
+``` lang-csharp
+public static readonly NetworkEndPoint AnyIpv4 { get; }
+```
 
 #### Property Value
 
@@ -125,7 +109,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static NetworkEndPoint AnyIpv6 { get; }
+``` lang-csharp
+public static readonly NetworkEndPoint AnyIpv6 { get; }
+```
 
 #### Property Value
 
@@ -145,7 +131,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkFamily Family { get; set; }
+``` lang-csharp
+public NetworkFamily Family { get; set; }
+```
 
 #### Property Value
 
@@ -165,7 +153,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool IsAny { get; }
+``` lang-csharp
+public readonly bool IsAny { get; }
+```
 
 #### Property Value
 
@@ -185,7 +175,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool IsLoopback { get; }
+``` lang-csharp
+public readonly bool IsLoopback { get; }
+```
 
 #### Property Value
 
@@ -205,13 +197,37 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool IsValid { get; }
+``` lang-csharp
+public readonly bool IsValid { get; }
+```
 
 #### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### Length
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly int Length { get; }
+```
+
+#### Property Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### LoopbackIpv4
 
@@ -225,7 +241,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static NetworkEndPoint LoopbackIpv4 { get; }
+``` lang-csharp
+public static readonly NetworkEndPoint LoopbackIpv4 { get; }
+```
 
 #### Property Value
 
@@ -245,7 +263,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static NetworkEndPoint LoopbackIpv6 { get; }
+``` lang-csharp
+public static readonly NetworkEndPoint LoopbackIpv6 { get; }
+```
 
 #### Property Value
 
@@ -265,7 +285,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort Port { get; set; }
+``` lang-csharp
+public ushort Port { get; set; }
+```
 
 #### Property Value
 
@@ -285,7 +307,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort RawPort { get; set; }
+``` lang-csharp
+public ushort RawPort { get; set; }
+```
 
 #### Property Value
 
@@ -293,7 +317,7 @@ Object.ReferenceEquals(Object, Object)
 |---------------|-------------|
 | System.UInt16 |             |
 
-## Methods 
+## 
 
 ### Equals(Object)
 
@@ -307,7 +331,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public override bool Equals(object other)
+``` lang-csharp
+public override bool Equals(object other)
+```
 
 #### Parameters
 
@@ -341,7 +367,9 @@ System.ValueType.Equals(System.Object)
 
 #### Declaration
 
-    public override int GetHashCode()
+``` lang-csharp
+public override int GetHashCode()
+```
 
 #### Returns
 
@@ -369,13 +397,15 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public NativeArray<byte> GetRawAddressBytes()
+``` lang-csharp
+public NativeArray<byte> GetRawAddressBytes()
+```
 
 #### Returns
 
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; |             |
+| Type                       | Description |
+|----------------------------|-------------|
+| NativeArray\&lt;System.Byte&gt; |             |
 
 ### Parse(String, UInt16, NetworkFamily)
 
@@ -389,7 +419,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily family = NetworkFamily.Ipv4)
+``` lang-csharp
+public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily family = NetworkFamily.Ipv4)
+```
 
 #### Parameters
 
@@ -405,7 +437,7 @@ System.ValueType.GetHashCode()
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### SetRawAddressBytes(NativeArray&lt;Byte&gt;, NetworkFamily)
+### SetRawAddressBytes(NativeArray\&lt;Byte&gt;, NetworkFamily)
 
 <div class="markdown level1 summary">
 
@@ -417,14 +449,16 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public void SetRawAddressBytes(NativeArray<byte> bytes, NetworkFamily family = NetworkFamily.Ipv4)
+``` lang-csharp
+public void SetRawAddressBytes(NativeArray<byte> bytes, NetworkFamily family = NetworkFamily.Ipv4)
+```
 
 #### Parameters
 
-| Type                                             | Name   | Description |
-|--------------------------------------------------|--------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | bytes  |             |
-| NetworkFamily                                    | family |             |
+| Type                       | Name   | Description |
+|----------------------------|--------|-------------|
+| NativeArray\&lt;System.Byte&gt; | bytes  |             |
+| NetworkFamily              | family |             |
 
 ### TryParse(String, UInt16, out NetworkEndPoint, NetworkFamily)
 
@@ -438,7 +472,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool TryParse(string address, ushort port, out NetworkEndPoint endpoint, NetworkFamily family = NetworkFamily.Ipv4)
+``` lang-csharp
+public static bool TryParse(string address, ushort port, out NetworkEndPoint endpoint, NetworkFamily family = NetworkFamily.Ipv4)
+```
 
 #### Parameters
 
@@ -467,7 +503,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public NetworkEndPoint WithPort(ushort port)
+``` lang-csharp
+public NetworkEndPoint WithPort(ushort port)
+```
 
 #### Parameters
 
@@ -481,7 +519,7 @@ System.ValueType.GetHashCode()
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-## Operators 
+## 
 
 ### Equality(NetworkEndPoint, NetworkEndPoint)
 
@@ -495,7 +533,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool operator ==(NetworkEndPoint lhs, NetworkEndPoint rhs)
+``` lang-csharp
+public static bool operator ==(NetworkEndPoint lhs, NetworkEndPoint rhs)
+```
 
 #### Parameters
 
@@ -522,7 +562,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool operator !=(NetworkEndPoint lhs, NetworkEndPoint rhs)
+``` lang-csharp
+public static bool operator !=(NetworkEndPoint lhs, NetworkEndPoint rhs)
+```
 
 #### Parameters
 

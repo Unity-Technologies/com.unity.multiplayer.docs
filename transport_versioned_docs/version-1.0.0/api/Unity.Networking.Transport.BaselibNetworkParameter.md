@@ -67,13 +67,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct BaselibNetworkParameter : INetworkParameter
+``` lang-csharp
+public struct BaselibNetworkParameter : INetworkParameter
+```
 
-## Fields
+## 
 
 ### maximumPayloadSize
 
@@ -87,7 +89,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint maximumPayloadSize
+``` lang-csharp
+public uint maximumPayloadSize
+```
 
 #### Field Value
 
@@ -107,7 +111,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int receiveQueueCapacity
+``` lang-csharp
+public int receiveQueueCapacity
+```
 
 #### Field Value
 
@@ -127,7 +133,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int sendQueueCapacity
+``` lang-csharp
+public int sendQueueCapacity
+```
 
 #### Field Value
 

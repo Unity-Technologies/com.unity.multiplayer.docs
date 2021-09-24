@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Concurrent
+``` lang-csharp
+public struct Concurrent
+```
 
-## Methods 
+## 
 
 ### PopEventForConnection(Int32, out Int32, out Int32)
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size)
+```
 
 #### Parameters
 
@@ -103,7 +107,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size, out int pipelineId)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size, out int pipelineId)
+```
 
 #### Parameters
 

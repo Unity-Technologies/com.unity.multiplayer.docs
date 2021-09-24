@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkEvent
+``` lang-csharp
+public struct NetworkEvent
+```
 
-## Fields
+## 
 
 ### connectionId
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int connectionId
+``` lang-csharp
+public int connectionId
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int offset
+``` lang-csharp
+public int offset
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public short pipelineId
+``` lang-csharp
+public short pipelineId
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int size
+``` lang-csharp
+public int size
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int status
+``` lang-csharp
+public int status
+```
 
 #### Field Value
 
@@ -175,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type type
+``` lang-csharp
+public NetworkEvent.Type type
+```
 
 #### Field Value
 

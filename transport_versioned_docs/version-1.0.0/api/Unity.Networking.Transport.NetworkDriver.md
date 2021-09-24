@@ -74,19 +74,19 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkDriver : IDisposable
+``` lang-csharp
+public struct NetworkDriver : IDisposable
+```
 
-## Constructors 
+## 
 
 ### NetworkDriver(INetworkInterface, INetworkParameter\[\])
 
 <div class="markdown level1 summary">
-
-Constructor for NetworkDriver.
 
 </div>
 
@@ -96,22 +96,40 @@ Constructor for NetworkDriver.
 
 #### Declaration
 
-    public NetworkDriver(INetworkInterface netIf, params INetworkParameter[] param)
+``` lang-csharp
+public NetworkDriver(INetworkInterface netIf, params INetworkParameter[] param)
+```
 
 #### Parameters
 
-| Type                  | Name  | Description                                                                                                                                   |
-|-----------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| INetworkInterface     | netIf |                                                                                                                                               |
-| INetworkParameter\[\] | param | An array of INetworkParameter. There are currently only two INetworkParameter, the NetworkDataStreamParameter and the NetworkConfigParameter. |
+| Type                  | Name  | Description |
+|-----------------------|-------|-------------|
+| INetworkInterface     | netIf |             |
+| INetworkParameter\[\] | param |             |
 
-#### Exceptions
+## 
 
-| Type                     | Condition                                                                     |
-|--------------------------|-------------------------------------------------------------------------------|
-| System.ArgumentException | Thrown if the value for NetworkDataStreamParameter.size is smaller then zero. |
+### Bound
 
-## Properties 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly bool Bound { get; }
+```
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsCreated
 
@@ -125,7 +143,9 @@ Constructor for NetworkDriver.
 
 #### Declaration
 
-    public bool IsCreated { get; }
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
 
 #### Property Value
 
@@ -145,7 +165,9 @@ Constructor for NetworkDriver.
 
 #### Declaration
 
-    public long LastUpdateTime { get; }
+``` lang-csharp
+public readonly long LastUpdateTime { get; }
+```
 
 #### Property Value
 
@@ -165,7 +187,9 @@ Constructor for NetworkDriver.
 
 #### Declaration
 
-    public bool Listening { get; }
+``` lang-csharp
+public bool Listening { get; }
+```
 
 #### Property Value
 
@@ -185,7 +209,9 @@ Constructor for NetworkDriver.
 
 #### Declaration
 
-    public int ReceiveErrorCode { get; }
+``` lang-csharp
+public int ReceiveErrorCode { get; }
+```
 
 #### Property Value
 
@@ -193,7 +219,7 @@ Constructor for NetworkDriver.
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### AbortSend(DataStreamWriter)
 
@@ -207,7 +233,9 @@ Constructor for NetworkDriver.
 
 #### Declaration
 
-    public void AbortSend(DataStreamWriter writer)
+``` lang-csharp
+public void AbortSend(DataStreamWriter writer)
+```
 
 #### Parameters
 
@@ -229,13 +257,47 @@ Checks to see if there are any new connections to Accept.
 
 #### Declaration
 
-    public NetworkConnection Accept()
+``` lang-csharp
+public NetworkConnection Accept()
+```
 
 #### Returns
 
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | NetworkConnection | If accept fails it returnes a default NetworkConnection. |
+
+### AllocateMemory(ref Int32)
+
+<div class="markdown level1 summary">
+
+Allocates temporary memory in NetworkDriver's data stream. You don't
+need to deallocate it If you need to call this function several times -
+use PinMemoryTillUpdate(Int32) to move 'head'
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public IntPtr AllocateMemory(ref int dataLen)
+```
+
+#### Parameters
+
+| Type         | Name    | Description                                       |
+|--------------|---------|---------------------------------------------------|
+| System.Int32 | dataLen | Size of memory to allocate in bytes. Must be \> 0 |
+
+#### Returns
+
+| Type          | Description                                                                                                                                                                        |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.IntPtr | Pointer to allocated memory or IntPtr.Zero if there is no space left (this function doesn't set ReceiveErrorCode! caller should decide if this is Out of memory or something else) |
 
 ### BeginSend(NetworkConnection, out DataStreamWriter, Int32)
 
@@ -249,7 +311,9 @@ Checks to see if there are any new connections to Accept.
 
 #### Declaration
 
-    public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+``` lang-csharp
+public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+```
 
 #### Parameters
 
@@ -277,7 +341,9 @@ Checks to see if there are any new connections to Accept.
 
 #### Declaration
 
-    public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+``` lang-csharp
+public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+```
 
 #### Parameters
 
@@ -308,7 +374,9 @@ Bind the driver to a endpoint.
 
 #### Declaration
 
-    public int Bind(NetworkEndPoint endpoint)
+``` lang-csharp
+public int Bind(NetworkEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -344,7 +412,9 @@ Connects the driver to a endpoint
 
 #### Declaration
 
-    public NetworkConnection Connect(NetworkEndPoint endpoint)
+``` lang-csharp
+public NetworkConnection Connect(NetworkEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -378,7 +448,9 @@ Helper function for creating a NetworkDriver.
 
 #### Declaration
 
-    public static NetworkDriver Create(params INetworkParameter[] param)
+``` lang-csharp
+public static NetworkDriver Create(params INetworkParameter[] param)
+```
 
 #### Parameters
 
@@ -412,7 +484,9 @@ Create a new pipeline.
 
 #### Declaration
 
-    public NetworkPipeline CreatePipeline(params Type[] stages)
+``` lang-csharp
+public NetworkPipeline CreatePipeline(params Type[] stages)
+```
 
 #### Parameters
 
@@ -447,7 +521,9 @@ Disconnects a NetworkConnection
 
 #### Declaration
 
-    public int Disconnect(NetworkConnection id)
+``` lang-csharp
+public int Disconnect(NetworkConnection id)
+```
 
 #### Parameters
 
@@ -473,7 +549,9 @@ Disconnects a NetworkConnection
 
 #### Declaration
 
-    public void Dispose()
+``` lang-csharp
+public void Dispose()
+```
 
 ### EndSend(DataStreamWriter)
 
@@ -487,7 +565,9 @@ Disconnects a NetworkConnection
 
 #### Declaration
 
-    public int EndSend(DataStreamWriter writer)
+``` lang-csharp
+public int EndSend(DataStreamWriter writer)
+```
 
 #### Parameters
 
@@ -513,7 +593,9 @@ Disconnects a NetworkConnection
 
 #### Declaration
 
-    public NetworkConnection.State GetConnectionState(NetworkConnection con)
+``` lang-csharp
+public NetworkConnection.State GetConnectionState(NetworkConnection con)
+```
 
 #### Parameters
 
@@ -531,7 +613,7 @@ Disconnects a NetworkConnection
 
 <div class="markdown level1 summary">
 
-Returns the size of the eventqueue for a specific connection
+Returns the size of the EventQueue for a specific connection
 
 </div>
 
@@ -541,7 +623,9 @@ Returns the size of the eventqueue for a specific connection
 
 #### Declaration
 
-    public int GetEventQueueSizeForConnection(NetworkConnection connectionId)
+``` lang-csharp
+public int GetEventQueueSizeForConnection(NetworkConnection connectionId)
+```
 
 #### Parameters
 
@@ -555,7 +639,7 @@ Returns the size of the eventqueue for a specific connection
 |--------------|-------------------------------------------------------------------------------------------|
 | System.Int32 | If the connection is valid it returns the size of the event queue otherwise it returns 0. |
 
-### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray&lt;Byte&gt;, out NativeArray&lt;Byte&gt;, out NativeArray&lt;Byte&gt;)
+### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray\&lt;Byte&gt;, out NativeArray\&lt;Byte&gt;, out NativeArray\&lt;Byte&gt;)
 
 <div class="markdown level1 summary">
 
@@ -569,18 +653,20 @@ Returns the PipelineBuffers for a specific pipeline and stage.
 
 #### Declaration
 
-    public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId stageId, NetworkConnection connection, out NativeArray<byte> readProcessingBuffer, out NativeArray<byte> writeProcessingBuffer, out NativeArray<byte> sharedBuffer)
+``` lang-csharp
+public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId stageId, NetworkConnection connection, out NativeArray<byte> readProcessingBuffer, out NativeArray<byte> writeProcessingBuffer, out NativeArray<byte> sharedBuffer)
+```
 
 #### Parameters
 
-| Type                                             | Name                  | Description |
-|--------------------------------------------------|-----------------------|-------------|
-| NetworkPipeline                                  | pipeline              |             |
-| NetworkPipelineStageId                           | stageId               |             |
-| NetworkConnection                                | connection            |             |
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | readProcessingBuffer  |             |
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | writeProcessingBuffer |             |
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | sharedBuffer          |             |
+| Type                       | Name                  | Description |
+|----------------------------|-----------------------|-------------|
+| NetworkPipeline            | pipeline              |             |
+| NetworkPipelineStageId     | stageId               |             |
+| NetworkConnection          | connection            |             |
+| NativeArray\&lt;System.Byte&gt; | readProcessingBuffer  |             |
+| NativeArray\&lt;System.Byte&gt; | writeProcessingBuffer |             |
+| NativeArray\&lt;System.Byte&gt; | sharedBuffer          |             |
 
 #### Exceptions
 
@@ -602,7 +688,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public int Listen()
+``` lang-csharp
+public int Listen()
+```
 
 #### Returns
 
@@ -630,7 +718,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public NetworkEndPoint LocalEndPoint()
+``` lang-csharp
+public NetworkEndPoint LocalEndPoint()
+```
 
 #### Returns
 
@@ -650,7 +740,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public int MaxHeaderSize(NetworkPipeline pipe)
+``` lang-csharp
+public int MaxHeaderSize(NetworkPipeline pipe)
+```
 
 #### Parameters
 
@@ -664,6 +756,40 @@ Set the driver to Listen for incomming connections
 |--------------|-------------|
 | System.Int32 |             |
 
+### PinMemoryTillUpdate(Int32)
+
+<div class="markdown level1 summary">
+
+Moves 'head' of allocator for 'length' bytes. Use this to 'pin' memory
+in till the next update. If you don't call it - it is 'pinned' till the
+next call to AllocateMemory(ref Int32) Means every time you call
+AllocateMemory(ref Int32) without PinMemoryTillUpdate(Int32) memory is
+overriden
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int PinMemoryTillUpdate(int length)
+```
+
+#### Parameters
+
+| Type         | Name   | Description   |
+|--------------|--------|---------------|
+| System.Int32 | length | Bytes to move |
+
+#### Returns
+
+| Type         | Description                   |
+|--------------|-------------------------------|
+| System.Int32 | Returns head of pinned memory |
+
 ### PopEvent(out NetworkConnection, out DataStreamReader)
 
 <div class="markdown level1 summary">
@@ -676,7 +802,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader reader)
+``` lang-csharp
+public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader reader)
+```
 
 #### Parameters
 
@@ -703,7 +831,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader reader, out NetworkPipeline pipeline)
+``` lang-csharp
+public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader reader, out NetworkPipeline pipeline)
+```
 
 #### Parameters
 
@@ -731,7 +861,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader)
+```
 
 #### Parameters
 
@@ -758,7 +890,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
+```
 
 #### Parameters
 
@@ -786,7 +920,9 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
+``` lang-csharp
+public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
+```
 
 #### Parameters
 
@@ -812,19 +948,21 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public JobHandle ScheduleFlushSend(JobHandle dep)
+``` lang-csharp
+public JobHandle ScheduleFlushSend(JobHandle dep)
+```
 
 #### Parameters
 
-| Type                 | Name | Description |
-|----------------------|------|-------------|
-| Unity.Jobs.JobHandle | dep  |             |
+| Type      | Name | Description |
+|-----------|------|-------------|
+| JobHandle | dep  |             |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| Unity.Jobs.JobHandle |             |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
 ### ScheduleUpdate(JobHandle)
 
@@ -838,19 +976,21 @@ Set the driver to Listen for incomming connections
 
 #### Declaration
 
-    public JobHandle ScheduleUpdate(JobHandle dep = default(JobHandle))
+``` lang-csharp
+public JobHandle ScheduleUpdate(JobHandle dep = null)
+```
 
 #### Parameters
 
-| Type                 | Name | Description |
-|----------------------|------|-------------|
-| Unity.Jobs.JobHandle | dep  |             |
+| Type      | Name | Description |
+|-----------|------|-------------|
+| JobHandle | dep  |             |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| Unity.Jobs.JobHandle |             |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
 ### ToConcurrent()
 
@@ -866,7 +1006,9 @@ Create a Concurrent Copy of the NetworkDriver.
 
 #### Declaration
 
-    public NetworkDriver.Concurrent ToConcurrent()
+``` lang-csharp
+public NetworkDriver.Concurrent ToConcurrent()
+```
 
 #### Returns
 

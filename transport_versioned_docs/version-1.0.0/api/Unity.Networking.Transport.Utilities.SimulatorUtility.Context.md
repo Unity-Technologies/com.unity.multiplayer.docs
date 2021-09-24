@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Context
+``` lang-csharp
+public struct Context
+```
 
-## Fields
+## 
 
 ### FuzzFactor
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int FuzzFactor
+``` lang-csharp
+public int FuzzFactor
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int FuzzOffset
+``` lang-csharp
+public int FuzzOffset
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int MaxPacketCount
+``` lang-csharp
+public int MaxPacketCount
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int MaxPacketSize
+``` lang-csharp
+public int MaxPacketSize
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long NextPacketTime
+``` lang-csharp
+public long NextPacketTime
+```
 
 #### Field Value
 
@@ -175,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketCount
+``` lang-csharp
+public int PacketCount
+```
 
 #### Field Value
 
@@ -195,7 +209,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketDelayMs
+``` lang-csharp
+public int PacketDelayMs
+```
 
 #### Field Value
 
@@ -215,7 +231,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketDrop
+``` lang-csharp
+public int PacketDrop
+```
 
 #### Field Value
 
@@ -235,7 +253,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketDropCount
+``` lang-csharp
+public int PacketDropCount
+```
 
 #### Field Value
 
@@ -255,7 +275,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketJitterMs
+``` lang-csharp
+public int PacketJitterMs
+```
 
 #### Field Value
 
@@ -275,7 +297,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public Mathematics.Random Random
+``` lang-csharp
+public Mathematics.Random Random
+```
 
 #### Field Value
 
@@ -295,7 +319,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint RandomSeed
+``` lang-csharp
+public uint RandomSeed
+```
 
 #### Field Value
 
@@ -315,7 +341,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int ReadyPackets
+``` lang-csharp
+public int ReadyPackets
+```
 
 #### Field Value
 
@@ -335,7 +363,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long StatsTime
+``` lang-csharp
+public long StatsTime
+```
 
 #### Field Value
 
@@ -355,7 +385,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int WaitingPackets
+``` lang-csharp
+public int WaitingPackets
+```
 
 #### Field Value
 

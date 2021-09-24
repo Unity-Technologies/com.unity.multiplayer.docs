@@ -47,13 +47,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkConnection
+``` lang-csharp
+public struct NetworkConnection
+```
 
-## Properties 
+## 
 
 ### InternalId
 
@@ -67,7 +69,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int InternalId { get; }
+``` lang-csharp
+public readonly int InternalId { get; }
+```
 
 #### Property Value
 
@@ -89,7 +93,9 @@ Check to see if a NetworkConnection is Created.
 
 #### Declaration
 
-    public bool IsCreated { get; }
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
 
 #### Property Value
 
@@ -97,7 +103,7 @@ Check to see if a NetworkConnection is Created.
 |----------------|--------------------------------------------------------------------------------------------------------------|
 | System.Boolean | `true` if the NetworkConnection has been correctly created by a call to Accept() or Connect(NetworkEndPoint) |
 
-## Methods 
+## 
 
 ### Close(NetworkDriver)
 
@@ -113,7 +119,9 @@ Close an active NetworkConnection, similar to .
 
 #### Declaration
 
-    public int Close(NetworkDriver driver)
+``` lang-csharp
+public int Close(NetworkDriver driver)
+```
 
 #### Parameters
 
@@ -142,7 +150,9 @@ connection will be removed on next the next frame.
 
 #### Declaration
 
-    public int Disconnect(NetworkDriver driver)
+``` lang-csharp
+public int Disconnect(NetworkDriver driver)
+```
 
 #### Parameters
 
@@ -168,7 +178,9 @@ connection will be removed on next the next frame.
 
 #### Declaration
 
-    public override bool Equals(object o)
+``` lang-csharp
+public override bool Equals(object o)
+```
 
 #### Parameters
 
@@ -202,7 +214,9 @@ System.ValueType.Equals(System.Object)
 
 #### Declaration
 
-    public bool Equals(NetworkConnection o)
+``` lang-csharp
+public bool Equals(NetworkConnection o)
+```
 
 #### Parameters
 
@@ -228,7 +242,9 @@ System.ValueType.Equals(System.Object)
 
 #### Declaration
 
-    public override int GetHashCode()
+``` lang-csharp
+public override int GetHashCode()
+```
 
 #### Returns
 
@@ -256,7 +272,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public NetworkConnection.State GetState(NetworkDriver driver)
+``` lang-csharp
+public NetworkConnection.State GetState(NetworkDriver driver)
+```
 
 #### Parameters
 
@@ -285,7 +303,9 @@ returns Empty, even if the socket is disconnected.
 
 #### Declaration
 
-    public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader stream)
+``` lang-csharp
+public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader stream)
+```
 
 #### Parameters
 
@@ -312,7 +332,9 @@ returns Empty, even if the socket is disconnected.
 
 #### Declaration
 
-    public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader stream, out NetworkPipeline pipeline)
+``` lang-csharp
+public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader stream, out NetworkPipeline pipeline)
+```
 
 #### Parameters
 
@@ -328,7 +350,7 @@ returns Empty, even if the socket is disconnected.
 |-------------------|-------------|
 | NetworkEvent.Type |             |
 
-## Operators 
+## 
 
 ### Equality(NetworkConnection, NetworkConnection)
 
@@ -342,7 +364,9 @@ returns Empty, even if the socket is disconnected.
 
 #### Declaration
 
-    public static bool operator ==(NetworkConnection lhs, NetworkConnection rhs)
+``` lang-csharp
+public static bool operator ==(NetworkConnection lhs, NetworkConnection rhs)
+```
 
 #### Parameters
 
@@ -369,7 +393,9 @@ returns Empty, even if the socket is disconnected.
 
 #### Declaration
 
-    public static bool operator !=(NetworkConnection lhs, NetworkConnection rhs)
+``` lang-csharp
+public static bool operator !=(NetworkConnection lhs, NetworkConnection rhs)
+```
 
 #### Parameters
 

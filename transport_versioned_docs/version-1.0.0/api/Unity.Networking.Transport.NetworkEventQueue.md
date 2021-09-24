@@ -67,13 +67,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkEventQueue : IDisposable
+``` lang-csharp
+public struct NetworkEventQueue : IDisposable
+```
 
-## Constructors 
+## 
 
 ### NetworkEventQueue(Int32)
 
@@ -87,7 +89,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEventQueue(int queueSizePerConnection)
+``` lang-csharp
+public NetworkEventQueue(int queueSizePerConnection)
+```
 
 #### Parameters
 
@@ -95,7 +99,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------|------------------------|-------------|
 | System.Int32 | queueSizePerConnection |             |
 
-## Methods 
+## 
 
 ### Dispose()
 
@@ -109,7 +113,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public void Dispose()
+``` lang-csharp
+public void Dispose()
+```
 
 ### GetCountForConnection(Int32)
 
@@ -123,7 +129,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int GetCountForConnection(int connectionId)
+``` lang-csharp
+public int GetCountForConnection(int connectionId)
+```
 
 #### Parameters
 
@@ -149,7 +157,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type PopEvent(out int id, out int offset, out int size)
+``` lang-csharp
+public NetworkEvent.Type PopEvent(out int id, out int offset, out int size)
+```
 
 #### Parameters
 
@@ -177,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type PopEvent(out int id, out int offset, out int size, out int pipelineId)
+``` lang-csharp
+public NetworkEvent.Type PopEvent(out int id, out int offset, out int size, out int pipelineId)
+```
 
 #### Parameters
 
@@ -206,7 +218,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size)
+```
 
 #### Parameters
 
@@ -234,7 +248,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size, out int pipelineId)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size, out int pipelineId)
+```
 
 #### Parameters
 
@@ -263,7 +279,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public void PushEvent(NetworkEvent ev)
+``` lang-csharp
+public void PushEvent(NetworkEvent ev)
+```
 
 #### Parameters
 
@@ -283,7 +301,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEventQueue.Concurrent ToConcurrent()
+``` lang-csharp
+public NetworkEventQueue.Concurrent ToConcurrent()
+```
 
 #### Returns
 

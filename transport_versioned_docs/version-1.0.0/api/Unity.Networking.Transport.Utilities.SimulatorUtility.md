@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct SimulatorUtility
+``` lang-csharp
+public struct SimulatorUtility
+```
 
-## Constructors 
+## 
 
 ### SimulatorUtility(Int32, Int32, Int32, Int32)
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public SimulatorUtility(int packetCount, int maxPacketSize, int packetDelayMs, int packetJitterMs)
+``` lang-csharp
+public SimulatorUtility(int packetCount, int maxPacketSize, int packetDelayMs, int packetJitterMs)
+```
 
 #### Parameters
 
@@ -86,7 +90,7 @@ Object.ReferenceEquals(Object, Object)
 | System.Int32 | packetDelayMs  |             |
 | System.Int32 | packetJitterMs |             |
 
-## Methods 
+## 
 
 ### DelayPacket(ref NetworkPipelineContext, InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
 
@@ -100,7 +104,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool DelayPacket(ref NetworkPipelineContext ctx, InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, long timestamp)
+``` lang-csharp
+public bool DelayPacket(ref NetworkPipelineContext ctx, InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, long timestamp)
+```
 
 #### Parameters
 
@@ -129,7 +135,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public void FuzzPacket(SimulatorUtility.Context*ctx, ref InboundSendBuffer inboundBuffer)
+``` lang-csharp
+public void FuzzPacket(SimulatorUtility.Context*ctx, ref InboundSendBuffer inboundBuffer)
+```
 
 #### Parameters
 
@@ -150,7 +158,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool GetDelayedPacket(ref NetworkPipelineContext ctx, ref InboundSendBuffer delayedPacket, ref NetworkPipelineStage.Requests requests, long currentTimestamp)
+``` lang-csharp
+public bool GetDelayedPacket(ref NetworkPipelineContext ctx, ref InboundSendBuffer delayedPacket, ref NetworkPipelineStage.Requests requests, long currentTimestamp)
+```
 
 #### Parameters
 
@@ -179,7 +189,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool GetEmptyDataSlot(byte *processBufferPtr, ref int packetPayloadOffset, ref int packetDataOffset)
+``` lang-csharp
+public bool GetEmptyDataSlot(byte *processBufferPtr, ref int packetPayloadOffset, ref int packetDataOffset)
+```
 
 #### Parameters
 
@@ -207,7 +219,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static void InitializeContext(SimulatorUtility.Parameters param, byte *sharedProcessBuffer)
+``` lang-csharp
+public static void InitializeContext(SimulatorUtility.Parameters param, byte *sharedProcessBuffer)
+```
 
 #### Parameters
 
@@ -228,7 +242,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool ShouldDropPacket(SimulatorUtility.Context*ctx, SimulatorUtility.Parameters param, long timestamp)
+``` lang-csharp
+public bool ShouldDropPacket(SimulatorUtility.Context*ctx, SimulatorUtility.Parameters param, long timestamp)
+```
 
 #### Parameters
 

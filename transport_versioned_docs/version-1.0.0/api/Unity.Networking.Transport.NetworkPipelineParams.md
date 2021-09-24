@@ -67,13 +67,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkPipelineParams : INetworkParameter
+``` lang-csharp
+public struct NetworkPipelineParams : INetworkParameter
+```
 
-## Fields
+## 
 
 ### initialCapacity
 
@@ -87,7 +89,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int initialCapacity
+``` lang-csharp
+public int initialCapacity
+```
 
 #### Field Value
 
@@ -95,7 +99,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### ValidateParameters(INetworkParameter\[\])
 
@@ -109,8 +113,10 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    [Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
-    public static void ValidateParameters(params INetworkParameter[] param)
+``` lang-csharp
+[Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
+public static void ValidateParameters(params INetworkParameter[] param)
+```
 
 #### Parameters
 

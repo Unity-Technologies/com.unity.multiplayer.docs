@@ -69,11 +69,13 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkDataStreamParameter : INetworkParameter
+``` lang-csharp
+public struct NetworkDataStreamParameter : INetworkParameter
+```
 
 ##### **Remarks**
 
@@ -83,7 +85,7 @@ The DataStreamWriter will grow on demand if the size is set to zero.
 
 </div>
 
-## Fields
+## 
 
 ### size
 
@@ -99,7 +101,9 @@ Size of the default DataStreamWriter
 
 #### Declaration
 
-    public int size
+``` lang-csharp
+public int size
+```
 
 #### Field Value
 

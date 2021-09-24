@@ -13,16 +13,18 @@ title: Unity.Networking.Transport.Protocols.UdpCHeader.HeaderFlags
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    [Flags]
-    public enum HeaderFlags : byte
+``` lang-csharp
+[Flags]
+public enum HeaderFlags : byte
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| HasConnectToken |  |
-| HasPipeline |  |
+| Name            | Description |
+|-----------------|-------------|
+| HasConnectToken |             |
+| HasPipeline     |             |
