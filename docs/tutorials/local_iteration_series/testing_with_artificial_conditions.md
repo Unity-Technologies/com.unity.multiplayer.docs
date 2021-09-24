@@ -144,8 +144,8 @@ To test the builds with Clumsy:
 #### Settings quickstart
  - Lag - that's our primary lever to control artifical latency
  - Drop - that's our packet loss
- - Throttle, Out of Order, Duplicate, Tamper - these will manifest as additional latency but would be automatically handled for us by Netcode. 
-   - Since Clumsy doesn't have Jitter functionality - we can emulate jitter (inconsistnent latency over time) by playing with these parameters. Their cumulative effect would in effect produce artifical latency fluctuations.
+ - Throttle, Out of Order, Duplicate, Tamper - these will manifest as additional latency but should be automatically handled for us by Netcode. 
+   - Since Clumsy doesn't have Jitter functionality - we can emulate jitter (inconsistnent latency over time) by playing with these parameters. Their cumulative effect would produce artifical latency fluctuations.
 
 For further reading please refer to the Details section of the [Clumsy Webpage](https://jagt.github.io/clumsy/) - the settings explanation there goes more into the actual mechanics of each individual setting.
 
