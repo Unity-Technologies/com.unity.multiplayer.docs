@@ -4,7 +4,7 @@ title: Golden Path Module Two
 description: Tutorial covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
 ---
 
-In this Guide e will be covering the following:
+In this Guide we will be covering the following:
 
 - Network variables (client and server-controlled)
 - Network transforms
