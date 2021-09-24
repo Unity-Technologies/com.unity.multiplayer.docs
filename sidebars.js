@@ -307,6 +307,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "mlapi-basics/profiling"
+      },
+      {
+        "type": "doc",
         "id": "troubleshooting/troubleshooting"
       },
       {
