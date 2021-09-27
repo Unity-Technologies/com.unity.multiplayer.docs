@@ -35,7 +35,7 @@ For testing development builds with built-in artificial latency we suggest using
 
 For testing release builds we suggest using either [Clumsy](#clumsy-on-windows) if you're on Windows, and [Network Link Conditioner](#network-link-conditioner-on-osx) if you're on Mac OS.
 
-## General advice
+## How much lag/packet loss/jitter should we use? 
 
 It's not immediately obvious what the values and options we should enable in our network conditioning tools. All of them allow us to alter various aspects of network conditions such as latency, jitter and packet loss, though the names for concepts and the specific functionality varies between tools.
 
@@ -73,7 +73,7 @@ In this case we would want to have an ability to set artifical conditions on a p
 
 ## Unity Transport - Simulator Tools
 
-[Unity Transport for Necode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop/com.unity.netcode.adapter.utp)comes with it's own tool for simulating artificial adverse network conditions - the Simulator Tools window.
+[Unity Transport for Necode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop/com.unity.netcode.adapter.utp) comes with it's own tool for simulating artificial adverse network conditions - the Simulator Tools window.
 
 It allows the developer to set latency, jitter and packet loss percentage:
 ![[simulator-tools.png]]
@@ -126,7 +126,7 @@ These tools are useful when we want to test builds as opposed to running multipl
 
 The solutions described below share some common features:
  - They do not support latency variability over time, so in effect we can't imitate artificial jitter with them.
- - They are system-wide, thus all the lcoal instances of our game would run under the same network conditions.
+ - They are system-wide, thus all the local instances of our game would run under the same network conditions.
  - Both allow to control the settings for sending and receiving separately.
 
 :::
