@@ -35,24 +35,33 @@ For testing development builds with built-in artificial latency we suggest using
 
 For testing release builds we suggest using either [Clumsy](#clumsy-on-windows) if you're on Windows, and [Network Link Conditioner](#network-link-conditioner-on-osx) if you're on Mac OS.
 
+
+:::important
+
+While artificial latency is great for simulating network conditions during development - it will not accurately emulate real world conditions. We recommend to test your game frequently on the targeted platforms and real live networking conditions.
+
+:::
+
 ## How much lag/packet loss/jitter should we use? 
 
 It's not immediately obvious what the values and options we should enable in our network conditioning tools. All of them allow us to alter various aspects of network conditions such as latency, jitter and packet loss, though the names for concepts and the specific functionality varies between tools.
 
-The values we would use would be different depending on the exact debugging goal, but generally we want our artificial conditions to somewhat match up to what our users would be dealing with in reality.
+First we need to find out what latency value range to use.
 
-So how do we reason about what our lag threshold is? 
 To answer this question we can look for information regarding typical and acceptable delays for our game genre (Fighting games, First Person Shooters etc are on one side of the spectrum - these games require fast reaction times and as such have less of an acceptable threshold for lag, whereas the Realtime Strategy games are on the other side of the spectrum, generally being tolerant of much higher delays).
 
-Secondly, to determine how much chaos we want to introduce we can imagine the situations in which people will be playing the game:
- - Are they playing from their homes (with good internet connections, but a possibility of a WiFi network)?
- - Are they playing from their phones, using mobile networks of varying quality?
+The values we would use would be different depending on the exact debugging goal. If we're emulating a typical use-case, then we should select our industry-standard value and work towards being responsive at that value. If the debugging goal is to see how the application would behave beyond our normal operting thresholds - the values would be higher.
 
-This question tells us if our users are likely to experience more jitter and packet loss - mobile networks are notorious for having widely varying quality of connection.
+Next we should determine how much chaos we want to introduce - that's largely based on the target platform and the typical network conditions that our users would experience:
+ - Is the game meant to be played from a good broadband internet connection?
+ - Is the game meant to run on mobile networks?
+
+This question tells us if our users are likely to experience more jitter and packet loss - mobile networks are notorious for having widely varying quality of connection. Mobile users also could experience frequent network changes during active application usage, and even though [UTP has reconnection mechanism](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/rfc/device-reconnection/text/0000-device-reconnection.md), it still requires our applicaton to factor in the possibility of an occasional lag burst.
 
 What's important here is that testing purely with added delay and no packet loss and jitter is extremely unrealistic. These values shouldn't be high - the baseline scenario is not what we would call stress-testing, but they should be non-zero.
 
 Adding jitter to the base delay value adds a layer of chaotic unreliability that would make our peers behave in a more natural way, allowing us to tweak our interpolation, buffering and other techniques to compensate for these instabilities.
+
 Adding packet loss, apart from introducing even more effective delay to our system could also wreak havoc on our unreliable messages, thus allowing us to explore if we need more defensive logic surrounding our unreliable messages or if we should opt for a reliable message instead.
 
 Testing Boss Room on desktop, we've used artificial lag between 80ms and 120ms with 5%-10% packet loss.
