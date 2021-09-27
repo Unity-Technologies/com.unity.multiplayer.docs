@@ -3,34 +3,29 @@ id: testing_locally
 title: Local Iteration - Testing multiplayer games locally
 description: Guide covering the available workflows for testing multiplayer games locally.
 ---
-- [Player Builds](#player-builds)
-	- [Local iteration using Player Builds](#local-iteration-using-player-builds)
-- [ParrelSync](#parrelsync)
-	- [Installation](#installation)
-	- [Usage](#usage)
-	- [Known issues and workarounds](#known-issues-and-workarounds)
-- [General tips](#general-tips)
-
-Testing a multiplayer game presents unique challenges to developers:
- - We need to run multiple instances of the game in order to test multiplayer scenarios. 
- - We also need to iterate quickly on our custom code and asset changes and validate our work in a multiplayer scenario.
- - We need to be able to debug our work in a multiplayer scenario using editor tools.
+Testing a multiplayer game presents unique challenges:
+ - You need to run multiple instances of the game in order to test multiplayer scenarios. 
+ - You also need to iterate quickly on  custom code and asset changes and validate  work in a multiplayer scenario.
+ - You need to be able to debug  work in a multiplayer scenario using editor tools.
 
 Currently, Unity does not provide any workflow that covers all of these requirements. (See our [roadmap here](https://unity.com/roadmap/unity-platform/multiplayer-networking))
 
-There will always be a need to validate our work in the target distribution format (ie. on platform) and the way to do it is by creating [Player Builds](#player-builds). 
+There will always be a need to validate work in the target distribution format (ie. on platform) and the way to do it is by creating [Player Builds](#player-builds). 
 
-However, player builds do not meet the requirement of quick iteration and easy debuggability using editor tools. As such our current recommended workflow for local iteration [ParrelSync](#parrelsync).
+:::important
+Player builds do not meet the quick iteration and easy debuggability using editor tools requirement. As such the current recommended workflow for local iteration is [ParrelSync](#parrelsync).
+:::
 
 ## Player Builds
 
 :::tip hint
-
-This approach is great when we need to verify our work on the target platform or with a wider group of testers.
-
+This approach is great when we need to verify work on the target platform or with a wider group of testers.
 :::
 
-First we need to build an executable. The default way of doing that is via  `File->Build Settings` in the menu bar, and then pressing `Build` button.
+First step is to build an executable. 
+
+1. Navigate to  `File->Build Settings` in the menu bar.
+1. Click `Build`.
 
 Then the build can be shared among the testers.
 
@@ -40,7 +35,7 @@ Once the build has completed you can launch several instances of the built execu
 
 It is also possible to run the builds along with an editor that produced said build, which could be useful during iterations.
 
-:::unity Mac USers
+:::unity For Mac
 Mac users: to run multiple instances of the same app, you need to use the command line.
 Run `open -n YourAppName.app`
 :::
@@ -64,7 +59,10 @@ We use **ParrelSync** for local iteration in [BossRoom sample](https://github.co
 
 **ParrelSync** relies on symbolic links and partial copies of the original project folder structure - generally it is completely safe. 
 
-Yet, just to be sure that no bug in any of the software you use can destroy your work - it's a good idea to consistently backup your project or use a version control system such as [Git](https://git-scm.com/), [SVN](https://subversion.apache.org/), [Plastic](https://www.plasticscm.com/) or any other.
+To ensure that no bug in any of the software you use can destroy your work - it is recommended that you consistently backup your project or use a version control system. Some common examples are:
+- [Git](https://git-scm.com/)
+- [SVN](https://subversion.apache.org/)
+- [Plastic](https://www.plasticscm.com/)
 
 :::
 
@@ -73,8 +71,10 @@ Yet, just to be sure that no bug in any of the software you use can destroy your
 Follow the installation instructions on **ParrelSync** repo [page](https://github.com/VeriorPies/ParrelSync#installation)
 
 ### Usage
- - Open the `ParrelSync->Preferences` menu in the menu bar to open the preferences window
- - Verify that your settings are set to the following: ![parrelsync-preferences](../../../static/img/parrelsync-preferences.png)
+ - Navigate to `ParrelSync->Preferences` in the menu bar to open the preferences window.
+ - Ensure that both Options are selected as shown below
+  
+[parrelsync-preferences](../)
 
 :::important
 

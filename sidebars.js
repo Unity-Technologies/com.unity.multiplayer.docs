@@ -45,41 +45,7 @@ module.exports = {
 
     ],
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Learning Netcode with Goldenpath",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/netcode_starting_out"
-      },       
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
-      },
-       {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_one"
-      },    
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_two"
-      },  
-    ],
-   
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Local Iteration ",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/local_iteration_series/testing_locally"
-      }
-    ],
-  },
+ 
   {
     "collapsed": true,
     "type": "category",
@@ -296,6 +262,21 @@ module.exports = {
       },
     ]
   },
+    {
+    "collapsed": true,
+    "type": "category",
+    "label": "Testing ",
+    "items": [
+      {
+        "type": "doc",
+        "id": "tutorials/testing/testing_locally"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/testing/testing_with_artificial_conditions"
+      },
+    ]
+  },
   {
     "collapsed": true,
     "type": "category",
@@ -315,7 +296,41 @@ module.exports = {
       }
     ]
   },
-],
+
+  {
+  "collapsed": true,
+  "type": "category",
+  "label": "Tutorials",
+  "items": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Learning Netcode with Goldenpath",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/netcode_starting_out"
+                  },       
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/goldenpath_one"
+                  },    
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/goldenpath_two"
+                  },  
+                ],
+              
+              },
+
+            ]
+  }, 
+],         
+
   Multiplayer :
   [ 
     { 
