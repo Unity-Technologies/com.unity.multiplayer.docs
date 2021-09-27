@@ -52,7 +52,7 @@ This question tells us if our users are likely to experience more jitter and pac
 
 What's important here is that testing purely with added delay and no packet loss and jitter is extremely unrealistic. These values shouldn't be high - the baseline scenario is not what we would call stress-testing, but they should be non-zero.
 
-Adding jitter to the base delay value adds a layer of chaotic unreliability that would make our peers behave in a more natural way.
+Adding jitter to the base delay value adds a layer of chaotic unreliability that would make our peers behave in a more natural way, allowing us to tweak our interpolation, buffering and other techniques to compensate for these instabilities.
 Adding packet loss, apart from introducing even more effective delay to our system could also wreak havoc on our unreliable messages, thus allowing us to explore if we need more defensive logic surrounding our unreliable messages or if we should opt for a reliable message instead.
 
 ### Different network conditions for different peers
