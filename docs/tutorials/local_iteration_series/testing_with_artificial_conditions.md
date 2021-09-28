@@ -150,7 +150,19 @@ The solutions described below share some common features:
 
 There are some inherent limitations that come with the system-wide level of application of these tools - they are not ideal for local testing of more than two peers because we can't have peers with different network conditions between them (if that is important for the test ofcourse).
 
-### Clumsy on Windows
+:::important
+
+Some consoles offer similar functionality at the native SDK level.  Check their documentation for details.
+
+:::
+
+### Clumsy (Windows)
+
+:::note
+
+dummynet is another option that can be used on Windows, however there are known issues when running it on Windows 10 related to signed driver enforcement setting. As such we recommend Clumsy as a good default option on Windows.
+
+:::
 
 Follow the installation instructions on the official [Clumsy Webpage](https://jagt.github.io/clumsy/).
 
@@ -161,6 +173,7 @@ To test the builds with Clumsy:
  - At any point you can adjust Clumsy settings and observe the changes in gameplay fidelity
 
 #### Settings quickstart
+
  - Lag - that's our primary lever to control artifical latency
  - Drop - that's our packet loss
  - Throttle, Out of Order, Duplicate, Tamper - these will manifest as additional latency but should be automatically handled for us by Netcode. 
@@ -169,7 +182,7 @@ To test the builds with Clumsy:
 For further reading please refer to the Details section of the [Clumsy Webpage](https://jagt.github.io/clumsy/) - the settings explanation there goes more into the actual mechanics of each individual setting.
 
 
-### Network Link Conditioner on OSX
+### Network Link Conditioner (Mac OS)
 
 Apple's Network Link Conditioner can be downloaded from the [Additional Tools for XCode page](https://developer.apple.com/download/all/?q=Additional%20Tools). This page requires logging in with Apple developer account.
 Download the version that's appropriate for your XCode version and then run the .dmg file. Navigate to the `Hardware` folder and install the Network Link Conditioner panel. 
@@ -190,3 +203,9 @@ In order to get to the settings we need to go into the `Manage Profiles` menu an
  - Downlink and Uplink Bandwidth are useful for testing how our game would behave if it's starved for bandwidth, but generally tightening it too much would gradually degrade any networked game.
  - Downlink and Uplink Packets Dropped % is exactly what it seems - packet loss percentage. 
  - Downlink and Uplink Delay are our levers for controling artificial latency
+
+### Network Link Conditioner (iOS)
+
+Apple's iOS also has it's version of Network Link Conditioner.
+
+Your iOS device needs to be enabled for development, then you'd be able to find Network Link Conditioner in Settings > Developer > Network Link Conditioner.
