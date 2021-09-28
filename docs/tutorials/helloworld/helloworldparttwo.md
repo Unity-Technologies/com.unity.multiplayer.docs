@@ -185,7 +185,7 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method,  `SubmitNewPosition()`, which we will be using later. 
+You will notice the introduction of a new method, `SubmitNewPosition()`, which we will be using later. 
 :::
 
 ## Adding basic movement to the Player object 
@@ -281,7 +281,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Inside this class we now define a `NetworkVariable` to represent this player's networked position.
+Inside this class, we now define a `NetworkVariable` to represent this player's networked position.
 
 <details open>
 <summary>Click to show/hide the Code.

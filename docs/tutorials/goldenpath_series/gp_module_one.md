@@ -7,7 +7,7 @@ description: Tutorial that explains adding scripts to objects, editor modes (Hos
 In this guide we cover the following:
 
 - Adding scripts to your objects
-- Adding editor modes inside your game  (Host Server and Client)
+- Adding editor modes inside your game  (Host, Server, and Client)
 - Basic Player Movement
 - Permissions
 - Basic RPC use
@@ -15,7 +15,7 @@ In this guide we cover the following:
 
 ## Prerequisites
 
-You should have completed the [Golden Path Foundation module](goldenpath_foundation_module.md) before starting this tutorial.
+You should have completed the [Golden Path Foundation module](goldenpath_foundation_module.md) before starting this tutorial. We use the Foundation module as the base for this and other Golden Path modules.
 
 ## Create a Clone 'GoldenPath' project
 
@@ -32,26 +32,20 @@ import Createclone from '../../shared/_create_clone_goldenpath.md';
 <iframe src="https://www.youtube.com/embed/kl5gzvGiXHk?playlist=kl5gzvGiXHk&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-## Adding Scripts to Goldenpath
+## Adding Scripts to GoldenPath
 
-This section will add some scripts to Golden Path  which will contain the new features we will be covering in this module.
+This section will add some scripts to Golden Path similar to part two of the Hello World guide that contain the new features we will be covering in this module.
 
-1. Click the **Assets** folder.
-1. Create a new Folder and call it **Scripts**.
-1. Create an empty `GameObject` rename it **HelloWorldManager**.
-1. Create a script called `HelloWorldManager`.
-1. Add the `HelloWorldManager` script as a component.
+1. In the **Hierarchy** menu, right-click and select **Create Empty** to create an empty `GameObject` that you should name `HelloWorldManager`.
+2. Right-click on the **Scripts** folder under **Project** tab > **Assets**, and **Create** a new **C# Script**. Name this script `HelloWorldManager`.
+3. Add the `HelloWorldManager` script as a component to your recently created `HelloWorldManager` GameObject. To do this, select the `HelloWorldManager` GameObject, click **Add Component** under the **Inspector** tab, and select **Scripts** > **HelloWorldManager**.
 <iframe src="https://www.youtube.com/embed/wdzkZbG2-18?playlist=wdzkZbG2-18&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-1. Open the `HelloWorldManager.cs` script.
-1. Edit the `HelloWorldManager.cs` script to match the following.
+4. Open the `HelloWorldManager.cs` script in a text editor of your choice to edit it to match the following code block.
 
-:::tip 
-You can copy the script from here and paste it into your file.
-   1. Select the code sample.
-   1. Click **Copy** in the top right corner.
-   1. Paste it into your code editor.
+:::info How to Copy
+We recommend that you use the **Copy** function in our code blocks to reduce errors when copying and pasting content. Hover over the block and select the **Copy** button that appears in the upper-right corner of the code block. Then paste the content as needed.
 :::
 
 <details open>
@@ -120,13 +114,17 @@ namespace HelloWorld
 ```
 </details>
 
-## Adding Editor Modes to Hello World
+5. **Save** your code in your text editor and return to Unity. Unity may take a moment to compile your changes.
+   :::note
+   You may see an error about `HelloWorldPlayer` not being found. This is okay; we will be addressing this error in a later section.
+   :::
 
-Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
+## Editor Modes to Golden Path (The HelloWorldManager Script)
+
+Inside the `HelloWorldManager.cs` script, we define two methods that mimic the editor buttons inside of the **NetworkManager** during Play mode.
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -155,12 +153,18 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-`NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
+`NetworkManager` implements the singleton pattern as it declares `Singleton`. This is defined when the `MonoBehaviour` is enabled.
 
-We call these methods inside of `OnGUI()`.
+This component also contains very useful properties:
+* `IsClient` - For whether or not a client is running
+* `IsServer` - For whether or not a server is running
+* `IsLocalClient` - For whether the server calls a local client or not
+
+`IsClient` and `IsServer` are already established to dictate the connection state.
+
+We call these methods inside `OnGUI()`.
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -193,20 +197,20 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
+You will notice the introduction of a new method, `SubmitNewPosition()`, which we will be using later. 
 :::
 
 ## Adding basic movement to the Player object 
 
-This script adds some basic movement to the Hello World player.
-
-1. Create a new script `HelloWorldPlayer`.
-1. Open the `HelloWorldPlayer.cs` script.
-1. Edit the `HelloWorldPlayer.cs` script to match the following.
+1. Under your **Project** tab, right-click on your **Scripts** folder. Hover over **Create** and select **C# Script** that you rename `HelloWorldPlayer`.
+2. Right-click and **Open** or double-click the `HelloWorldPlayer.cs` script from your **Scripts** folder in the **Project** tab. It will open in your text editor.
+3. Copy and paste the following code block into your `HelloWorldPlayer.cs` script, overwriting the autogenerated content. **Save** your changes. The error you may have seen from updating `HelloWorldManger.cs` should be resolved now.
+    :::info How to Copy
+    We recommend that you use the **Copy** function in our code blocks to reduce errors when copying and pasting content. Hover over the block and select the **Copy** button that appears in the upper-right corner of the code block. Then paste the content as needed.
+    :::
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 ```csharp
@@ -266,15 +270,14 @@ namespace HelloWorld
 
 </details>
 
-4. Select the **Player** prefab.
-1. Add the script `HelloWorldPlayer` script as a component.
+4. Select the **Player** prefab from **Project** tab > **Assets** > **Prefabs**.
+1. From the **Inspector** tab, scroll to the bottom to click on **Add Component**. Select **Scripts** > **HelloWorld** > `HelloWorldPlayer` to add the script as a component.
 <iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
+This class inherits from `NetworkBehaviour` instead of `MonoBehaviour`.
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -288,11 +291,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Inside this class we  now define a `NetworkVariable` to represent this player's networked position.
+Inside this class, we now define a `NetworkVariable` to represent this player's networked position.
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -311,7 +313,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 ### Introducing permissions
 
-In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable` . For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
+In the `HelloWorldPlayer.cs` script, we introduce *read* and *write* permissions on a `NetworkVariable`. For the purposes of this guide, the server is authoritative on the `NetworkVariable` representing position. However, all clients are able to read the value.
 
 `HelloWorldPlayer` overrides `NetworkStart`.
 
@@ -334,13 +336,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode for Gameobjects method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
 
 :::note
 This can be overriden on any `NetworkBehaviour`.
 :::
 
-On both client and server instances of this player, we call the `Move()` method, which will simply do the following.
+On both client and server instances of this player, we call the `Move()` method to do the following:
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -396,7 +398,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 </details>
 
- If we are a client, we call a server RPC.
+If we are a client, we call a `ServerRpc`. A [`ServerRpc`](../advanced-topics/../../advanced-topics/message-system/serverrpc.md) can be invoked by a client to be executed on the server.
 
  <details open>
 <summary>Click to show/hide the Code.
@@ -418,7 +420,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-This server RPC simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
+This `ServerRpc` simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -439,7 +441,8 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-The server instance of this player has just modified the Position NetworkVariable, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
+The server instance of this player has just modified the Position `NetworkVariable`. This means that if we are a client, we need to apply this position locally inside of our `Update` loop. 
+
 <details open>
 <summary>Click to show/hide the Code.
 
@@ -458,7 +461,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-We can now go back to `HelloWorldManager.cs` and define the contents of `SubmitNewPosition()`.
+We can now go back to `HelloWorldManager.cs` and define the contents of `SubmitNewPosition()`. The following code is already saved in your script if you copied and pasted the `HelloWorldManager` codeblock in the previous section.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -491,23 +494,27 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 Whenever you press the GUI button (which is contextual depending on if you are server or a client), you find your local player and simply call `Move()`.
 
-You can now create a build which will demonstrate the concepts outlined above. 
+You can now [create a build](https://docs.unity3d.com/Manual/PublishingBuilds.html) that will demonstrate the concepts outlined above. We are going to create two build instances so you can see players move around each other in your Hello World game.
+
 :::tip
 Make sure **SampleScene** is included in **BuildSettings**.
 :::
 
-One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
+1. Go to **File** > **Build Settings** and select **Add Open Scenes**. This should add **Scenes/SampleScene** to **Scenes In Build**.
+2. Select **Build And Run** and save this first instance as **HelloWorld**.
+3. Select **Build And Run** again, but save this second instance as **HelloWorld2**.
+4. Select one of your build instances as **Host** mode and the other as **Client** mode.
+5. Click the **Move**/**Request Position Change** in your instances to watch your players move around each other. As you press the GUI button, the server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
 
 <iframe src="https://www.youtube.com/embed/khZh7lZPzqc?playlist=khZh7lZPzqc&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
 :::note Congrats!
-Congratulations you have learned the basics of a networked game 
+Congratulations you have learned the basics of a networked game!
 :::
 
 ## Next Steps
-
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
@@ -516,6 +523,9 @@ For more information on the relevant concepts introduced here please refer to th
 - [Networkvariable](../../mlapi-basics/networkvariable)
 - [RPC](../../advanced-topics/messaging-system)
 
+import continuelearning from '../../shared/_continue_learning_goldenpath.md';
+
+<continuelearning/>
 
 :::contribution Special Thanks
 This guide would not have been possible without the hard work and support of Fernando Cortez, Unity. 
