@@ -52,7 +52,7 @@ However, deciding what experience degradation is acceptable is dependant on game
 
 What latency value to use for general development?
 
-A good rule of thumb to start with is to use 100ms or 200ms latency.
+To test Boss Room, we used around 100ms-150ms for desktop platforms and around 200ms-300ms for mobile platforms. These are just what we used, the actual values you should test with will depend on your target platform and region.
 
 :::important
 
