@@ -3,16 +3,19 @@ id: testing_with_artificial_conditions
 title: Local Iteration - Testing multiplayer games with artificial network conditions
 description: Guide covering the available tools for local testing of multiplayer games with artificial latency, jitter and packet loss .
 ---
-- [General advice](#general-advice)
+- [How much lag/packet loss/jitter should we use?](#how-much-lagpacket-lossjitter-should-we-use)
 	- [Different network conditions for different peers](#different-network-conditions-for-different-peers)
 - [Unity Transport - Simulator Tools](#unity-transport---simulator-tools)
 	- [Clone-based workflow (ParrelSync)](#clone-based-workflow-parrelsync)
 	- [Debug Builds](#debug-builds)
 - [System-wide network conditioners](#system-wide-network-conditioners)
-	- [Clumsy on Windows](#clumsy-on-windows)
+	- [Clumsy (Windows)](#clumsy-windows)
 		- [Settings quickstart](#settings-quickstart)
-	- [Network Link Conditioner on OSX](#network-link-conditioner-on-osx)
+	- [Network Link Conditioner (Mac OS)](#network-link-conditioner-mac-os)
 		- [Settings quickstart](#settings-quickstart-1)
+	- [Network Link Conditioner (iOS)](#network-link-conditioner-ios)
+	- [dummynet, dnctl and pftcl (Mac OS)](#dummynet-dnctl-and-pftcl-mac-os)
+		- [Settings quickstart](#settings-quickstart-2)
 
 
 When we are developing a multiplayer game that is intended to operate over the internet we inevitably have to deal with the reality of poor network conditions.
@@ -33,7 +36,7 @@ For testing locally within the editor we suggest using [Unity Transport - Simula
 
 For testing development builds with built-in artificial latency we suggest using [Unity Transport Simulator Tools with some custom code to inject artifical conditions into the build](#debug-builds).
 
-For testing release builds we suggest using either [Clumsy](#clumsy-on-windows) if you're on Windows, and [Network Link Conditioner](#network-link-conditioner-on-osx) if you're on Mac OS or iOS. A scriptable alternative to Network Link Conditioner on Mac OS is [dummynet](), which offers great control and comes packaged with the operating system.
+For testing release builds we suggest using [Clumsy](#clumsy-windows) if you're on Windows and Network Link Conditioner if you're on [Mac OS](#network-link-conditioner-mac-os) or [iOS](#network-link-conditioner-ios). A scriptable alternative to Network Link Conditioner on Mac OS is [dummynet](#dummynet-dnctl-and-pftcl-mac-os), which offers great control and comes packaged with the operating system.
 
 :::important
 
@@ -75,7 +78,7 @@ Adding packet loss, apart from introducing even more effective delay to our syst
 
 :::important
 
-[Clumsy](#clumsy-on-windows) and [Network Link Conditioner](#network-link-conditioner-on-osx) are introducing changes on OS level, thus all the instances of the game that we open on our local machine would run under the same network conditions. 
+[Clumsy](#clumsy-on-windows), [Network Link Conditioner](#network-link-conditioner-mac-os) and [dummynet](#dummynet-dnctl-and-pftcl-mac-os) are introducing changes on OS level, thus all the instances of the game that we open on our local machine would run under the same network conditions. 
  
 QA teams run playtests with multiple people, each with their own system-wide conditioning settings settings. We can imitate this workflow locally by setting different per-peer network conditions. This approach is not as reflective of reality as good QA tests on different machines, but it allows us to test these more peculiar scenarios locally. 
 
@@ -90,7 +93,7 @@ In this case we would want to have an ability to set artifical conditions on a p
 [Unity Transport for Necode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop/com.unity.netcode.adapter.utp) comes with it's own tool for simulating artificial adverse network conditions - the Simulator Tools window.
 
 It allows the developer to set latency, jitter and packet loss percentage:
-![[simulator-tools.png]]
+![simulator-tools.png]
 
 To use the Simulator Tools:
  - install the [Unity Transport for Necode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop/com.unity.netcode.adapter.utp) package via Package Manager
