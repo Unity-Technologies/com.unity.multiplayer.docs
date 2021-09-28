@@ -209,3 +209,55 @@ In order to get to the settings we need to go into the `Manage Profiles` menu an
 Apple's iOS also has it's version of Network Link Conditioner.
 
 Your iOS device needs to be enabled for development, then you'd be able to find Network Link Conditioner in Settings > Developer > Network Link Conditioner.
+
+### dummynet, dnctl and pftcl (Mac OS)
+
+**[dummynet](https://manpagez.com/man/8/dnctl/)** is a traffic shaper, delay and bandwidth manager utility that comes standard with the Mac OS. 
+
+ - **dnctl** is the command-line interface to operate the `dummynet` utiity.
+ - **pfctl** is the control interface for the internal firewall, which we can make obey dummynet rules, thus creating artificial network conditions on our host.
+
+To enable artificial conditions we need to create a `pf.conf` file in our user home directory with the following contents:
+```
+#Testing udp, such as most realtime games and audio-video calls 
+dummynet in proto udp from any to any pipe 1
+dummynet out proto udp from any to any pipe 1
+```
+
+Then we need to run the following commands in the console:
+```
+sudo dnctl pipe 1 config delay 40 plr 0.1
+sudo dnctl show
+
+sudo pfctl -e
+sudo pfctl -f pf.conf
+```
+
+:::warning
+
+This set of commands enables dummynet, but when we are done testing - we should disable it, otherwise our system would continue to experience these artificial network conditions!
+
+:::
+
+To disable dummynet execute the following:
+
+```
+sudo dnctl -q flush
+sudo dnctl show
+
+sudo pfctl -e
+sudo pfctl -f /etc/pf.conf
+```
+
+After you start dummynet, testing the builds is as easy as launching several instances of your game.
+
+#### Settings quickstart
+ - `bw` -  this parameter controls bandwidth.
+  - `dnctl pipe 1 config bw 40Kbit/s` will set our bandwidth to 40 Kbit per second.
+ - `delay` - this parameter is our artifical latency.
+  - `dnctl pipe 1 config delay 100` will set our artifical latecny to 100 ms.
+ - `plr` - this parameter is our packet loss percentage.
+  - `dnctl pipe 1 config plr 0.1` will set our packet loss percetage to 10%
+
+You can chain these parameters to achieve a combination of these settings that will apply all of them at once:
+`dnctl pipe 1 config bw 40Kbit/s delay 100 plr 0.1`
