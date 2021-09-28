@@ -56,7 +56,7 @@ A good rule of thumb to start with is to use 100ms or 200ms latency.
 
 :::important
 
-It's valuable to test at 100ms, 200ms, 500ms, 1000ms and potentially even higher to make sure that we don't have weird race conditions that present at different latency ranges. The users in the wild WILL have those latencies.
+It's valuable to test at 100ms, 200ms, 500ms, even 1000ms and potentially higher to make sure that we don't have weird race conditions that present at different latency ranges. The users in the wild WILL have those latencies.
 
 :::
 
