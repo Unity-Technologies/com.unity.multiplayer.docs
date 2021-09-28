@@ -22,6 +22,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@unity-technologies/docs-web-components": "^0.0.13",
     "@mdx-js/react": "^1.6.21",
     "@saucelabs/theme-github-codeblock": "^0.0.4",
     "chokidar": "^3.0.0",
