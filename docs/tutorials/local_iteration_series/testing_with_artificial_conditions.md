@@ -46,11 +46,19 @@ While artificial latency is great for simulating network conditions during devel
 
 It's not immediately obvious what the values and options we should enable in our network conditioning tools. All of them allow us to alter various aspects of network conditions such as latency, jitter and packet loss, though the names for concepts and the specific functionality varies between tools.
 
-First we need to find out what latency value range to use.
+Determining which network conditions to test with is about what your users will encounter while playing your game, which will vary by region and by platform. 
 
-To answer this question we can look for information regarding typical and acceptable delays for our game genre (Fighting games, First Person Shooters etc are on one side of the spectrum - these games require fast reaction times and as such have less of an acceptable threshold for lag, whereas the Realtime Strategy games are on the other side of the spectrum, generally being tolerant of much higher delays).
+However, deciding what experience degradation is acceptable is dependant on game genre and on your game design decisions and other requirements. It's up to you to determine what's acceptable, there's no single rule for this.
 
-The values we would use would be different depending on the exact debugging goal. If we're emulating a typical use-case, then we should select our industry-standard value and work towards being responsive at that value. If the debugging goal is to see how the application would behave beyond our normal operting thresholds - the values would be higher.
+What latency value to use for general development?
+
+A good rule of thumb to start with is to use 100ms or 200ms latency.
+
+:::important
+
+It's valuable to test at 100ms, 200ms, 500ms, 1000ms and potentially even higher to make sure that we don't have weird race conditions that present at different latency ranges. The users in the wild WILL have those latencies.
+
+:::
 
 Next we should determine how much chaos we want to introduce - that's largely based on the target platform and the typical network conditions that our users would experience:
  - Is the game meant to be played from a good broadband internet connection?
@@ -58,7 +66,7 @@ Next we should determine how much chaos we want to introduce - that's largely ba
 
 This question tells us if our users are likely to experience more jitter and packet loss - mobile networks are notorious for having widely varying quality of connection. Mobile users also could experience frequent network changes during active application usage, and even though [UTP has reconnection mechanism](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/rfc/device-reconnection/text/0000-device-reconnection.md), it still requires our applicaton to factor in the possibility of an occasional lag burst.
 
-What's important here is that testing purely with added delay and no packet loss and jitter is extremely unrealistic. These values shouldn't be high - the baseline scenario is not what we would call stress-testing, but they should be non-zero.
+What's important here is that testing purely with added delay and no packet loss and jitter is unrealistic. These values shouldn't be high - the baseline scenario is not what we would call stress-testing, but they should be non-zero.
 
 Adding jitter to the base delay value adds a layer of chaotic unreliability that would make our peers behave in a more natural way, allowing us to tweak our interpolation, buffering and other techniques to compensate for these instabilities.
 
