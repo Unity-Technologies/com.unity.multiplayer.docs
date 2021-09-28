@@ -33,8 +33,7 @@ For testing locally within the editor we suggest using [Unity Transport - Simula
 
 For testing development builds with built-in artificial latency we suggest using [Unity Transport Simulator Tools with some custom code to inject artifical conditions into the build](#debug-builds).
 
-For testing release builds we suggest using either [Clumsy](#clumsy-on-windows) if you're on Windows, and [Network Link Conditioner](#network-link-conditioner-on-osx) if you're on Mac OS.
-
+For testing release builds we suggest using either [Clumsy](#clumsy-on-windows) if you're on Windows, and [Network Link Conditioner](#network-link-conditioner-on-osx) if you're on Mac OS or iOS. A scriptable alternative to Network Link Conditioner on Mac OS is [dummynet](), which offers great control and comes packaged with the operating system.
 
 :::important
 
