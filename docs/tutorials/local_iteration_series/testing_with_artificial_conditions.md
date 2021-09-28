@@ -52,7 +52,7 @@ However, deciding what experience degradation is acceptable is dependant on game
 
 What latency value to use for general development?
 
-To test Boss Room, we used around 100ms-150ms for desktop platforms and around 200ms-300ms for mobile platforms. These are just what we used, the actual values you should test with will depend on your target platform and region.
+To test Boss Room, we used around 100ms-150ms for desktop platforms and around 200ms-300ms for mobile platforms and 5%-10% packet loss. These are just the values we used, the actual values you should test with will depend on your target platform and region.
 
 :::important
 
@@ -71,8 +71,6 @@ What's important here is that testing purely with added delay and no packet loss
 Adding jitter to the base delay value adds a layer of chaotic unreliability that would make our peers behave in a more natural way, allowing us to tweak our interpolation, buffering and other techniques to compensate for these instabilities.
 
 Adding packet loss, apart from introducing even more effective delay to our system could also wreak havoc on our unreliable messages, thus allowing us to explore if we need more defensive logic surrounding our unreliable messages or if we should opt for a reliable message instead.
-
-Testing Boss Room on desktop, we've used artificial lag between 80ms and 120ms with 5%-10% packet loss.
 
 ### Different network conditions for different peers
 
