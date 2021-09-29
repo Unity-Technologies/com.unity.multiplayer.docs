@@ -1,0 +1,3 @@
+library 'docs-pipeline-lib'
+
+docsPipeline(madcapBuild: false, slackChannel: "doc-landing-page", redirectPath:"multiplayer")
