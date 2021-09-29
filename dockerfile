@@ -3,7 +3,6 @@ FROM node:current-alpine as build
 WORKDIR /app
 COPY . . 
 RUN apk add git
-RUN ls -l
 RUN yarn install
 RUN yarn build
 # production environment
