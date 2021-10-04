@@ -2,7 +2,7 @@
 FROM node:current-alpine as build
 WORKDIR /app
 COPY . . 
-RUN apk add git
+RUN apk add --no-cache git
 RUN yarn install
 RUN yarn build
 # production environment
