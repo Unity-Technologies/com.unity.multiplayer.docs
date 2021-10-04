@@ -11,10 +11,10 @@ description: Guide covering the available tools for local testing of multiplayer
 - [System-wide network conditioners](#system-wide-network-conditioners)
 	- [Clumsy (Windows)](#clumsy-windows)
 		- [Settings quickstart](#settings-quickstart)
-	- [Network Link Conditioner (Mac OS)](#network-link-conditioner-mac-os)
+	- [Network Link Conditioner (macOS)](#network-link-conditioner-macos)
 		- [Settings quickstart](#settings-quickstart-1)
 	- [Network Link Conditioner (iOS)](#network-link-conditioner-ios)
-	- [dummynet, dnctl and pftcl (Mac OS)](#dummynet-dnctl-and-pftcl-mac-os)
+	- [dummynet, dnctl and pftcl (macOS)](#dummynet-dnctl-and-pftcl-macos)
 		- [Settings quickstart](#settings-quickstart-2)
 
 
@@ -36,7 +36,7 @@ For testing locally within the editor we suggest using [Unity Transport - Simula
 
 For testing development builds with built-in artificial latency we suggest using [Unity Transport Simulator Tools with some custom code to inject artifical conditions into the build](#debug-builds).
 
-For testing release builds we suggest using [Clumsy](#clumsy-windows) if you're on Windows and Network Link Conditioner if you're on [Mac OS](#network-link-conditioner-mac-os) or [iOS](#network-link-conditioner-ios). A scriptable alternative to Network Link Conditioner on Mac OS is [dummynet](#dummynet-dnctl-and-pftcl-mac-os), which offers great control and comes packaged with the operating system.
+For testing release builds we suggest using [Clumsy](#clumsy-windows) if you're on Windows and Network Link Conditioner if you're on [macOS](#network-link-conditioner-mac-os) or [iOS](#network-link-conditioner-ios). A scriptable alternative to Network Link Conditioner on macOS is [dummynet](#dummynet-dnctl-and-pftcl-mac-os), which offers great control and comes packaged with the operating system.
 
 :::important
 
@@ -182,7 +182,7 @@ To test the builds with Clumsy:
 For further reading please refer to the Details section of the [Clumsy Webpage](https://jagt.github.io/clumsy/) - the settings explanation there goes more into the actual mechanics of each individual setting.
 
 
-### Network Link Conditioner (Mac OS)
+### Network Link Conditioner (macOS)
 
 Apple's Network Link Conditioner can be downloaded from the [Additional Tools for XCode page](https://developer.apple.com/download/all/?q=Additional%20Tools). This page requires logging in with Apple developer account.
 Download the version that's appropriate for your XCode version and then run the .dmg file. Navigate to the `Hardware` folder and install the Network Link Conditioner panel. 
@@ -210,9 +210,9 @@ Apple's iOS also has it's version of Network Link Conditioner.
 
 Your iOS device needs to be enabled for development, then you'd be able to find Network Link Conditioner in Settings > Developer > Network Link Conditioner.
 
-### dummynet, dnctl and pftcl (Mac OS)
+### dummynet, dnctl and pftcl (macOS)
 
-**[dummynet](https://manpagez.com/man/8/dnctl/)** is a traffic shaper, delay and bandwidth manager utility that comes standard with the Mac OS. 
+**[dummynet](https://manpagez.com/man/8/dnctl/)** is a traffic shaper, delay and bandwidth manager utility that comes standard with the macOS. 
 
  - **dnctl** is the command-line interface to operate the `dummynet` utiity.
  - **pfctl** is the control interface for the internal firewall, which we can make obey dummynet rules, thus creating artificial network conditions on our host.
