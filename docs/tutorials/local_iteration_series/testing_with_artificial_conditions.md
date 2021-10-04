@@ -79,6 +79,8 @@ Adding packet loss, apart from introducing even more effective delay to our syst
 :::important
 
 [Clumsy](#clumsy-on-windows), [Network Link Conditioner](#network-link-conditioner-mac-os) and [dummynet](#dummynet-dnctl-and-pftcl-mac-os) are introducing changes on OS level, thus all the instances of the game that we open on our local machine would run under the same network conditions. 
+
+Do not forget to disable it once you're done debugging, else your network connection will feel slow!
  
 QA teams run playtests with multiple people, each with their own system-wide conditioning settings settings. We can imitate this workflow locally by setting different per-peer network conditions. This approach is not as reflective of reality as good QA tests on different machines, but it allows us to test these more peculiar scenarios locally. 
 
@@ -160,7 +162,7 @@ Some consoles offer similar functionality at the native SDK level.  Check their 
 
 :::note
 
-dummynet is another option that can be used on Windows, however there are known issues when running it on Windows 10 related to signed driver enforcement setting. As such we recommend Clumsy as a good default option on Windows.
+dummynet is another option that can be used on Windows, however there are known issues when running it on Windows 10 related to signed driver enforcement setting. As such we found Clumsy to be a good default option on Windows.
 
 :::
 
