@@ -1,3 +1,3 @@
-library 'docs-pipeline-lib'
+library 'docs-pipeline-lib@multiplayer-github'
 
-docsPipeline(siteName: "mp-dev-test", madcapBuild: false, slackChannel: "doc-landing-page", redirectPath:"multiplayer")
+docsPipeline(siteName: "mpnetworking", madcapBuild: false, slackChannel: "doc-landing-page", redirectPath:"multiplayer")

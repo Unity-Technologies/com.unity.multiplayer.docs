@@ -2485,7 +2485,7 @@
     styled-components "^5.1.1"
     styled-react-modal "^2.0.1"
     tailwindcss "^1.8.12"
-    unity-core "git+ssh://git@github.com:Unity-Technologies/web-ui-core.git#semver:^3.2.0"
+    unity-core "git+ssh://git@github.com/Unity-Technologies/web-ui-core.git#semver:^3.2.0"
     url-loader "^4.1.1"
     web-ui-design-tokens "git+ssh://git@github.com/Unity-Technologies/web-ui-design-tokens.git#semver:^0.5.1"
 
