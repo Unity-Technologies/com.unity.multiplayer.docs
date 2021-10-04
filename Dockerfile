@@ -1,8 +1,7 @@
 # build environment
-FROM node:current-alpine as build
+FROM node:current as build
 WORKDIR /app
 COPY . . 
-RUN apk add --no-cache --quiet --no-progress git
 RUN yarn install
 RUN yarn build
 # production environment
