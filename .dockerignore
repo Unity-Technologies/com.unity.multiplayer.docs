@@ -1,5 +1,5 @@
 .docusaurus
 build
+.github
 /node_modules/*
-!/node_modules/unity-core
-!/node_modules/web-ui-design-tokens
+
