@@ -1,6 +1,6 @@
 ---
 id: testing_locally
-title: Local Iteration - Testing multiplayer games locally
+title: Testing multiplayer games locally
 description: Guide covering the available workflows for testing multiplayer games locally.
 ---
 Testing a multiplayer game presents unique challenges:
@@ -41,9 +41,7 @@ Run `open -n YourAppName.app`
 :::
 
 :::tip hint
-
 Though functional, we find this approach to be somewhat slow for the purposes of local iteration. Head on to the [ParrelSync](#parrelsync) section for our suggested workflow for local iteration.
-
 :::
 
 ## ParrelSync

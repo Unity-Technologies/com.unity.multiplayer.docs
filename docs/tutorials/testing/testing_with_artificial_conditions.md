@@ -1,39 +1,49 @@
 ---
 id: testing_with_artificial_conditions
-title: Local Iteration - Testing multiplayer games with artificial network conditions
+title: Testing multiplayer games with artificial network conditions
 description: Guide covering the available tools for local testing of multiplayer games with artificial latency, jitter and packet loss .
 ---
 
-When we are developing a multiplayer game that is intended to operate over the internet we inevitably have to deal with the reality of poor network conditions.
+When developing a multiplayer game that is intended to operate over the internet you  have to deal with the reality of poor network conditions.
 
 Adverse network factors, such as [latency, jitter and packet loss](lagandpacketloss.md) all have to be taken into account during development and the tolerance thresholds for these should not be an afterthought or something relegated to an "optimization pass". 
 
 :::warning
-
 Not testing with artificial network conditions makes it significantly more likely to have unexpected behaviors when the game is running over the internet.
-
 :::
 
-This is challenging when we are [iterating on our game locally](local-Iteration-testing-multiplayer-games-locally.md) - after all, all of the game instances are still running on the same network interface. It's reasonable to expect that there will be little to no latency between the clients, which is no good for our purposes - we want the network to **misbehave**. 
+This is challenging when you are [iterating on our game locally](testing_locally.md) - becasue all of the game instances are still running on the same network interface. It's reasonable to expect that there will be little to no latency between the clients, which is no good for testing in this case you want the network to **misbehave**. 
 
 Thankfully there are a number of tools that can simulate adverse network conditions.
 
+**Testing Locally**  
+
 For testing locally within the editor we suggest using [Unity Transport - Simulator Tools](#unity-transport---simulator-tools) along with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync).
 
+**Testing Development Builds**
+
 For testing development builds with built-in artificial latency we suggest using [Unity Transport Simulator Tools with some custom code to inject artifical conditions into the build](#debug-builds).
+
+
+**Testing Release Builds**
 
 For testing release builds we suggest using either [Clumsy](#clumsy-on-windows) if you're on Windows, and [Network Link Conditioner](#network-link-conditioner-on-osx) if you're on Mac OS.
 
 ## General advice
 
-It's not immediately obvious what the values and options we should enable in our network conditioning tools. All of them allow us to alter various aspects of network conditions such as latency, jitter and packet loss, though the names for concepts and the specific functionality varies between tools.
+It's not immediately obvious what the values and options you should enable in network conditioning tools. All of them allow you to alter various aspects of network conditions such as [latency, jitter and packet loss](lagandpacketloss.md), though the names for concepts and the specific functionality varies between tools.
 
-The values we would use would be different depending on the exact debugging goal, but generally we want our artificial conditions to somewhat match up to what our users would be dealing with in reality.
+The values you use will be different depending on the exact debugging goal, but generally you want the artificial conditions to  match up to what your users will deal with in reality.
 
-So how do we reason about what our lag threshold is? 
-To answer this question we can look for information regarding typical and acceptable delays for our game genre (Fighting games, First Person Shooters etc are on one side of the spectrum - these games require fast reaction times and as such have less of an acceptable threshold for lag, whereas the Realtime Strategy games are on the other side of the spectrum, generally being tolerant of much higher delays).
+### So how do you reason about what our lag threshold is? 
 
-Secondly, to determine how much chaos we want to introduce we can imagine the situations in which people will be playing the game:
+In order to answer this question you need to look for information regarding typical and acceptable delays for our game genre.
+
+:::info
+Fighting games, First Person Shooters etc are on one side of the spectrum - they require fast reaction times and as such have less of an acceptable threshold for lag, whereas the Realtime Strategy games are on the other side of the spectrum, they are in general tolerant of much higher delays.
+:::
+
+Then, to determine how much chaos you want to introduce you need to imagine the situations in which people will be playing the game:
  - Are they playing from their homes (with good internet connections, but a possibility of a WiFi network)?
  - Are they playing from their phones, using mobile networks of varying quality?
 
