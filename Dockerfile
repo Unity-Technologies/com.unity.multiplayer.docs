@@ -1,14 +1,11 @@
 # build environment
 FROM node:current as build
 
-ARG GITHUB_ACCESS_TOKEN
-
 WORKDIR /app
 COPY . .
 
-# Authenticating with GitHub using the GITHUB_ACCESS_TOKEN environment variable
-RUN test -n "$GITHUB_ACCESS_TOKEN"
-RUN git config --global --add url."https://x-access-token:$GITHUB_ACCESS_TOKEN@github.com".insteadOf "ssh://git@github.com"
+# Fetch the Github Personal Access Token from the .npmrc authentication and configure Git for the build
+RUN grep "//npm.pkg.github.com/:_authToken=" .npmrc | awk '{split($0,a,"="); print a[2]}' | xargs -I {} git config --global --add url."https://x-access-token:{}@github.com".insteadOf "ssh://git@github.com"
 
 RUN yarn install
 RUN yarn build
