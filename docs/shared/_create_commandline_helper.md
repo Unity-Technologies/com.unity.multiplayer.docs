@@ -1,23 +1,19 @@
 This command line helper will launch our project outside Unity and make testing builds easier.
 
-1. Click the **Assets** folder.
-1. Create a new Folder and call it **Scripts**.
-1. Create a script called `NetworkCommandLine`.
-1. Right click on the `NetworkManager` in the hierarchy view and choose **Create Empty**.
+1. Right-click the **Assets** folder and create a new folder by hovering over **Create** and selecting **Folder**. Name it **Scripts**.
+2. Create a script called `NetworkCommandLine` by right-clicking on your **Scripts** folder, hovering over **Create** and selecting **C# Script**.
+3. In the **Hierarchy** menu, right-click on the `NetworkManager` and choose **Create Empty**.
    
    This will create an  empty `GameObject` with `NetworkManager` as its parent.
 
-1. Rename this child `GameObject` `NetworkCommandLine`.
-1. Inside the `NetworkCommandLine` Inspector tab., click **Add Component**. 
-1. Click **Scripts** and add the `NetworkCommandLine.cs` script you created earlier.
-1. Open the `NetworkCommandLine.cs` script.
-1. Edit the `NetworkCommandLine.cs` script to match the following.
+4. Rename this child `GameObject` `NetworkCommandLine`.
+5. With the new `NetworkCommandLine` object selected, click **Add Component** from the **Inspector** tab. 
+6. Select **Scripts** from the drop-down and click on the `NetworkCommandLine.cs` script you created earlier.
+7. Open the `NetworkCommandLine.cs` script by double-clicking from the **Project** tab > **Assets** > **Scripts**. It will open in your text editor
+8. Edit the `NetworkCommandLine.cs` script to match the following:
 
-:::tip 
-You can copy the script from here and paste it into your file.
-1. Select the code sample.
-1. Click **Copy** in the top right corner.
-1. Paste it into your code editor.
+:::info How to Copy
+We recommend that you use the **Copy** function in our code blocks to reduce errors when copying and pasting content. Hover over the block and select the **Copy** button that appears in the upper-right corner of the code block.
 :::
 
 <details open>
@@ -84,13 +80,15 @@ public class NetworkCommandLine : MonoBehaviour
 
 </details>
 
-10. Back in the Editor, select **File > Build Settings > Player Settings...**
-1. In the **Resolution and Presentation** tab change `Fullscreen Window` mode into `Windowed` mode.    
-1. Save your scene.
+9. Paste the copied code into your code editor.
+1. Save your changes. Your script will reload in the Unity Editor.
+1. Back in the Editor, select **File** > **Build Settings** > **Player Settings...**. Beneath **Settings for PC, Mac, & Linux Standalone**, click **Resolution and Presebtation** to open the section options.
+1. From **Resolution** > **Fullscreen Mode**, change `Fullscreen Window` to `Windowed`.    
+1. Back to the Editor main window, save your scene.
 
    
 :::tip
-   If you are on a Pro Unity license, you may want to disable the splash screen.
+   If you are using a Pro Unity license, you may want to disable the splash screen by unchecking **Splash Image** > **Splash Screen** > **Show Splash Screen**.
 :::
 
 <iframe src="https://www.youtube.com/embed/2swybHUigM8?playlist=2swybHUigM8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"

@@ -12,13 +12,20 @@ Multiple methods are available to install the Netcode for GameObjects (Netcode) 
 All features and code available in the *develop* branch is in-progress and not final. All cloned code may change daily or weekly, depending on submitted pull requests. All documentation and release notes for the *develop* version are not final.
 :::
 
+## Prerquisites
+
+This guide assumes that you already have:
+  * Git installed on your PC. If you don't already have it, download [Git](https://git-scm.com/) and restart your system. A full restart is required to update Git or you may receive an error adding packages.
+  * An active Unity account with a valid license.
+  * A current installation of Unity.
+  * An existing Unity project. If you haven't created a project yet, we recommend using the [Hello World](../tutorials/helloworld/helloworldintro.md) example or the [Golden Path foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) to begin.
+
+
 ## Clone the repo
 
 You need to clone the code repo locally to work with in-development code.
 
-First, install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
-
-Next, decide on how you want to clone: command line or application.
+First, decide on how you want to clone: command line or application.
 
 <Tabs
   className="unique-tabs"
@@ -33,8 +40,8 @@ Next, decide on how you want to clone: command line or application.
 To clone with Git CLI:
 
 1. Open a command line terminal.
-1. Change directory to a location on your local.
-1. Enter the following 
+2. Change directory to a location on your local.
+3. Enter the following 
 
   ```html
    git clone https://github.com/Unity-Technologies/com.unity.netcode.gameobjects
@@ -75,11 +82,12 @@ To clone directory through GitHub Desktop:
 
 ## Adding Netcode to your Unity Project
 
-1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-1. Click [Add](/img/add.png) in the status bar and select **Add package from disk...** (due to the package being experimental).
-1. Navigate to where you cloned the Netcode repo.
-1. Open the packages.json file 
-1. The package installs, shown as MLAPI Networking Library 0.1.1.
+1. Open your **Unity Hub** and the **Project** you want to include Netcode with.
+2. From the menu bar, navigate to **Window** > **Package Manager**.
+3. Click [Add](/img/add.png) in the status bar and select **Add package from disk...** (because the package is experimental).
+4. Navigate to where you cloned the Netcode repo.
+5. Open the `packages.json` file (It may be within the **com.unity.netcode.gameobjects** > **com.unity.multiplayer.mlapi** folder) 
+6. The package installs, shown as MLAPI Networking Library 0.1.1.
 
    <iframe src="https://www.youtube.com/embed/Lx1Shqn9DiM?playlist=Lx1Shqn9DiM&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px" height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
