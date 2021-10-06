@@ -1,18 +1,16 @@
 ---
 id: goldenpath_foundation_module
 title:  Golden Path Foundation Module
-description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing Netcode for Gameobjects ,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
+description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, installing Netcode for Gameobjects , creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
 If you have already completed the Hello World guide, these steps may seem familiar. However, there are some minor differences, and this guide is what further Golden Path modules consider the foundation to build on. We recommend starting a new project as your Golden Path instead of using your Hello World project because of these small differences.
-
 
 ## Prerequisites
 
 A Netcode for Gameobjects (Netcode)-supported version of Unity (2019.4+)
 
 ## Create a new project in Unity
-
               
 import CreatePro from '../../shared/_create_new_project.md';
 
