@@ -53,6 +53,7 @@ To add your clone project in Unity Hub version 3.0.0+:
 The clone project should now appear in your projects list of the Unity Hub as `GoldenPath_<modulenumber>`.
   
 </TabItem>
+
 <TabItem value="tab2">
  
 To add your clone project in previous Unity Hub versions:
