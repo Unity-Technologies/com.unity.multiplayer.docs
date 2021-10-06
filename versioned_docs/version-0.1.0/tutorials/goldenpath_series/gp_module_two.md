@@ -4,7 +4,7 @@ title: Golden Path Module Two
 description: Tutorial covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
 ---
 
-In this Guide e will be covering the following:
+In this Guide we will be covering the following:
 
 - Network variables (client and server-controlled)
 - Network transforms
@@ -145,7 +145,7 @@ This section adds a Network Transform component that will move the player.
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkTransformTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab, click **Add Component** 
+1. In the **Player** prefab Inspector tab, click **Add Component**. 
 1. Click **Scripts**, and add the `NetworkTransformTest.cs` script you created earlier.
 1. Open the `NetworkTransformTest.cs` script.
 1. Edit the `NetworkTransformTest.cs` script to match the following.

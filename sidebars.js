@@ -69,6 +69,7 @@ module.exports = {
     ],
    
   },
+  
   {
     "collapsed": true,
     "type": "category",
@@ -105,6 +106,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
+      },
+      {
+        "type": "doc",
+        "id": "advanced-topics/networktime-ticks"
       },
       {
         "collapsed": true,
@@ -289,6 +294,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "mlapi-basics/logging"
+      },
+      {
+        "type": "doc",
+        "id": "mlapi-basics/profiling"
       },
       {
         "type": "doc",
@@ -478,8 +487,11 @@ module.exports = {
           {
           "type": "doc",
           "id": "learn/dapper/lobbycreation"
-            },
-
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-variable-permissions"
+          },
 
                 ]
         },

@@ -8,11 +8,11 @@ sidebar_label: NetworkTime & Ticks
 
 Why are there two different time values and which one should be used?
 
-Netcode for Gameobjects (Netcode) uses a star topology. That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows to use time while considering those transmission delays.
+Netcode for Gameobjects uses a star topology, see [Network Topologies for more information](../reference/glossary/network-topologies.md). That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows users to use time while considering those transmission delays.
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
-  
+
 
 
 <Mermaid chart={`
@@ -197,7 +197,11 @@ For games with short play sessions casting the time to float is safe or `TimeAsF
 The properties of the `NetworkTimeSystem` should be left untouched on the server/host. Changing the values on the client is sufficient to change the behavior of the time system.
 :::
 
-The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the API docs (TODO LINK) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values could be increased for a player with a bad connection.
+The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the [API docs](../mlapi-api/MLAPI.NetworkTickSystem.md) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values could be increased for a player with a bad connection.
 
 <!-- On page code -->
 
+
+:::contribution Special Thanks
+This guide would not have been possible without the hard work and support of Luke Stampfli, Unity.
+:::
