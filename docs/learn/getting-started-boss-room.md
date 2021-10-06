@@ -12,19 +12,19 @@ This project is currently in early-access.
 
 Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and Netcode for GameObjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
 
-You can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
+You can use everything in this project as a starting point or as bits and pieces in your own Unity games.
 
 
 ## Download the project files
 
-1. Go to the Multiplayer Samples Co-Op [Latest Release](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) on GitHub. 
+1. Go to the Multiplayer Samples Co-Op [Latest Release](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) on GitHub.
 1. Click on `Project.zip` to automatically start downloading the folder.
 1. Unzip the Project zip file. It unzips a folder named `com.unity.multiplayer.samples.coop-<version>`.
 :::note Windows users
 Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
 :::
 1. You may choose to move your unzipped folder to a new location. My default location is my `Downloads` folder that I regularly clean out, so I moved the folder to my desktop.
-1. You can now ready add the Boss Room project to your Unity Hub.
+1. You can now add the Boss Room project to your Unity Hub.
 
 :::important Compatibility
 - Boss Room supports platforms supported by Netcode.
@@ -52,7 +52,7 @@ The first time you open the project, Unity will import all assets, which will ta
 To open the project for the first time:
 
 1. In Unity Hub, double-click the project.
-1. Navigate to the Project window. 
+1. Navigate to the Project window.
 1. Open the *Assets* folder.
 1. Open the *Scene* folder.
 1. Click the *Startup* scene.
@@ -81,7 +81,7 @@ In order to see the multiplayer functionality in action, you can either run mult
 After the build has completed you can launch several instances of the built executable to be able to both host and join a game.
 
 :::important Mac Users
-To run multiple instances of the same app, you need to use the command line: 
+To run multiple instances of the same app, you need to use the command line:
 `> Run open -n BossRoom.app`
 :::
 
@@ -125,7 +125,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 If you attempt to run a build on OSX and receive a warning dialog mentioning an "unidentified developer", you may need to override your security settings for this application:
 
 1. In the Finder on your Mac, locate the application you want to open.
-  
+
   :::note
   Do not use Launchpad, it does not allow you to access the shortcut menu.
   :::
