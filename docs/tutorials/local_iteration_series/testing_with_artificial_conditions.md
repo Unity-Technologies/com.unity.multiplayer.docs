@@ -146,7 +146,7 @@ These tools are useful when we want to test builds as opposed to running multipl
 The solutions described below share some common features:
  - They do not support latency variability over time, so in effect we can't imitate artificial jitter with them.
  - They are system-wide, thus all the local instances of our game would run under the same network conditions.
- - Both allow to control the settings for sending and receiving separately.
+ - They allow to control the settings for sending and receiving separately.
 
 :::
 
