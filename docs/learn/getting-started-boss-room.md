@@ -10,24 +10,26 @@ description: Learn more about installing and running the Boss Room game sample.
 This project is currently in early-access.
 :::
 
-Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and Netcode for Gameobjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
+Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and Netcode for GameObjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
 
-The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
+You can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
 
-## Get the project files
+## Download the project files
 
-- A release version can be downloaded from the [Latest Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) at GitHub. 
-- Unzip the archive file.
+1. Go to the Multiplayer Samples Co-Op [Latest Release](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) on GitHub. 
+1. Click on `Project.zip` to automatically start downloading the folder.
+1. Unzip the Project zip file. It unzips a folder named `com.unity.multiplayer.samples.coop-<version>`.
 :::note Windows users
 Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
 :::
-- You are now ready to add the project to Unity Hub.
+1. You may choose to move your unzipped folder to a new location. My default location is my `Downloads` folder that I regularly clean out, so I moved the folder to my desktop.
+1. You can now add the Boss Room project to your Unity Hub.
 
 :::important Compatibility
-- Boss Room supports those platforms supported by Netcode.
+- Boss Room supports platforms supported by Netcode.
 - Boss Room is compatible with Unity 2020.3 and later.
-- Make sure to include standalone support for Windows/Mac/Linux in your installation. 
+- Ensure your Unity installation includes the build support [module components](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html) for your OS.
 :::
 
 ## Add the project with Unity Hub
