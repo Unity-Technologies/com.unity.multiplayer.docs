@@ -55,7 +55,7 @@ Similar to Ownership, only the server (or host, which is both a server and a cli
 
 Clients however, can send RPCs to server and execute a logic server-side that ultimately makes server to reparent a `NetworkObject`.
 
-### Only Reparenting Under A NetworkObject (Or To The Root) Is Valid
+### Only Reparenting Under A `NetworkObject` (Or To The Root) Is Valid
 
 A `NetworkObject` can only be reparented under another `NetworkObject` (`GameObject` with `NetworkObject` component attached). Only exception is moving a `NetworkObject` to the root of the scene hierarchy.
 
@@ -68,7 +68,7 @@ A `NetworkObject` can only be reparented while networking, in other terms you ca
 If you allowed moves while not networking, you would be desynced immediately upon switching to networking. Also reparenting a `NetworkObject` under a non-`NetworkObject` while not networking would sound valid but that would not be replicable on the remote-side since Netcode does not cover full scene hierarchy synchronization.
 
 
-### Invalid Reparenting Will Move NetworkObject Back To Its Original Location
+### Invalid Reparenting Will Move `NetworkObject` Back To Its Original Location
 
 If an invalid/unsupported `NetworkObject` parenting happens, Netcode will immediately pop it back to its previous location to keep things in sync and also will provide relevant error/warning messages to indicate the issue.
 
