@@ -3,7 +3,7 @@ id: networkobject-parenting
 title:  NetworkObject Parenting
 ---
 
-We want to offer `NetworkObject` reparenting solution within Netcode for GameObjects (Netcode)  to help developers synchronizing transform parent-child relationships of `NetworkObjects`.
+A `NetworkObject` reparenting solution within Netcode for GameObjects (Netcode)  to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
 
 :::important Opt-OUT
 This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can can opt-out from it if you want to implement your oen solution
