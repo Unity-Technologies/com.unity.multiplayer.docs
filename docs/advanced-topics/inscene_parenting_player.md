@@ -5,7 +5,7 @@ description: In-scene NetworkObject parenting of players a realworld example.
 ---
 
 
-We received the following issue in Github 
+We received the following issue in Github. 
 
 ## Issue:
 
