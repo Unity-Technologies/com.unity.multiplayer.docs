@@ -1,7 +1,7 @@
 ---
 id: physics
 title: Physics
-Description: Brief explination on using Physics in Netcode for GameObjects
+Description: Brief explanation on using Physics in Netcode for GameObjects
 ---
 
 There are many different ways to do physics in multiplayer games. Netcode for GameObjects (Netcode) has a built in approach which allows for server authoritative physics where the physics simulation is only run on the server. To enable network physics add a `NetworkRigidbody` component to your object.
