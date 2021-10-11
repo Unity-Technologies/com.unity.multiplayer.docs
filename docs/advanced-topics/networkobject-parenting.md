@@ -51,7 +51,7 @@ Rules outlined below are applied and enforced even while not networking (not hos
 
 ### Only A Server (or A Host) Can Reparent
 
-Similar to [Ownership](../mlapi-basics/networkobject.md#ownership), only the server (or host, which is both a server and a client at the same time) can control reparenting of a `NetworkObject` in the network.
+Similar to [Ownership](../mlapi-basics/networkobject.md), only the server (or host, which is both a server and a client at the same time) can control reparenting of a `NetworkObject` in the network.
 
 Clients however, can send RPCs to server and execute a logic server-side that ultimately makes server to reparent a `NetworkObject`.
 
