@@ -38,7 +38,7 @@ You need to consider two main code paths when synchronizing `NetworkObject` pare
     - When a valid `NetworkObject` reparenting happens during networked gameplay on the server-side, it is replicated across the network to the connected clients to sync
     - Write `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and send that over to all connected clients with `PARENT_SYNC` message type on `MLAPI_INTERNAL` channel
 
-Transform parent synchronization relies on initial formation of transforms in the scene hierarchy being identical on all standalone instances.
+Transform parent synchronization relies on the initial formation of transforms in the scene hierarchy being identical on all standalone instances.
 
 ## NetworkObject Reparenting Rules
 
