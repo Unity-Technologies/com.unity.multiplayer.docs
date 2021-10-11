@@ -44,6 +44,11 @@ Transform parent synchronization relies on initial formation of transforms in th
 
 A few basic `NetworkObject` reparenting rules are listed below.
 
+:::warning Limiting Non-Networked NetworkObject Transform Parenting
+Rules outlined below are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try reparenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
+:::
+
+
 ### Only A Server (or A Host) Can Reparent
 
 Similar to Ownership, only the server (or host, which is both a server and a client at the same time) can control reparenting of a `NetworkObject` in the network.
@@ -165,7 +170,4 @@ Axe (NetworkObject) [to] <──┘
 ```
 
 
-:::important Limiting Non-Networked NetworkObject Transform Parenting
-Rules outlined above are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try reparenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
-:::
 
