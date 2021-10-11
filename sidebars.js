@@ -89,6 +89,11 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "advanced-topics/networkobject-parenting"
+      },
+
+      {
+        "type": "doc",
         "id": "mlapi-basics/networkbehavior"
       },
       {
