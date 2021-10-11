@@ -28,7 +28,7 @@ A new virtual methodWe has been added ainto `NetworkBehaviour`:
 virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject) { }
 ```
 
-You need to consider two main codepaths  when sychronizing `NetworkObject` parenting:
+You need to consider two main code paths when synchronizing `NetworkObject` parenting:
 
 1. At Object Spawn
     - Client spawns objects including static scene objects and dynamic spawned objects on join.
