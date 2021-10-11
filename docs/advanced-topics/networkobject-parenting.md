@@ -74,7 +74,7 @@ If an invalid/unsupported `NetworkObject` parenting happens, Netcode will immedi
 
 ### In-scene NetworkObject parenting of players
 
-In-scene NetworkObject parenting of players requires waiting for the client side `NetworkSceneManager` generated `SceneEventType.SynchronizeComplete` message to be received and processed as an event on the server in order for the server to make the connected player a child of an in-scene placed `NetworkObject`. ( For a more detailed  real world example of this please see [Real world In-scene NetworkObject parenting of players example](inscene_parenting_player.md)
+In-scene NetworkObject parenting of players requires waiting for the client side `NetworkSceneManager` generated `SceneEventType.SynchronizeComplete` message to be received and processed as an event on the server in order for the server to make the connected player a child of an in-scene placed `NetworkObject`. ( For a more detailed  real world example of this please see [Real world In-scene NetworkObject parenting of players solution](inscene_parenting_player.md)
 
 
 ## (Re)Parenting Move Examples
