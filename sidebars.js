@@ -100,6 +100,12 @@ module.exports = {
       {
         "type": "doc",
         "id": "netcode-basics/networkbehavior"
+        
+      },
+
+      {
+        "type": "doc",
+        "id": "advanced-topics/networkobject-parenting"
       },
       {
         "type": "doc",
