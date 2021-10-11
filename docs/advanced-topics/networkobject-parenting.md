@@ -11,7 +11,7 @@ This feature is behind a bool flag that can be toggled on the `NetworkObject` in
 
  [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) under `NetworkObject`  is utilized to catch `transform.parent` changes.
 
-Three additional state variables  are stored in `NetworkObject`:
+Three additional state variables are stored in `NetworkObject`:
 
 ```cs
 bool m_IsReparented; // did parent change compared to initial scene hierarchy?
