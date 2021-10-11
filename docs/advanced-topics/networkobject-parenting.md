@@ -166,6 +166,6 @@ Axe (NetworkObject) [to] <──┘
 
 
 :::important Limiting Non-Networked NetworkObject Transform Parenting
-Rules outlined above are applied and enforced even while not networking (not hosting or connected). More specifically, if you were to try reparenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
+Rules outlined above are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try reparenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
 :::
 
