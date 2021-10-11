@@ -287,6 +287,10 @@ module.exports = {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
       }, 
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/networkobject-serialization"
+      }, 
     ]
     },
   {
