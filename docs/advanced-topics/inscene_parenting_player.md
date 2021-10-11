@@ -1,7 +1,7 @@
 ---
 id: inscene-parenting-players
-title:   Real world In-scene NetworkObject parenting of players example
-description: In-scene NetworkObject parenting of players a realworld example.
+title:   Real world In-scene NetworkObject parenting of players solution
+description: In-scene NetworkObject parenting of players Solution
 ---
 
 
