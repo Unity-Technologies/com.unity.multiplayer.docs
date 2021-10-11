@@ -13,7 +13,7 @@ This feature is behind a bool flag that can be toggled on the `NetworkObject` in
 
 Three additional state variables are stored in `NetworkObject`:
 
-```cs
+```csharp
 bool m_IsReparented; // did parent change compared to initial scene hierarchy?
 ulong? m_LatestParent; // who (NetworkObjectId) is our latest (current) parent if we changed our parent?
 Transform m_CachedParent; // who (Transform) was our previously assigned parent?
@@ -21,7 +21,7 @@ Transform m_CachedParent; // who (Transform) was our previously assigned parent?
 
 A new virtual methodWe has been added ainto `NetworkBehaviour`:
 
-```cs
+```csharp
 /// <summary>
 /// Gets called when the parent NetworkObject of this NetworkBehaviour's NetworkObject has changed
 /// </summary>
@@ -71,6 +71,11 @@ If you allowed moves while not networking, you would be desynced immediately upo
 ### Invalid Reparenting Will Move `NetworkObject` Back To Its Original Location
 
 If an invalid/unsupported `NetworkObject` parenting happens, Netcode will immediately pop it back to its previous location to keep things in sync and also will provide relevant error/warning messages to indicate the issue.
+
+### In-scene NetworkObject parenting of players
+
+In-scene NetworkObject parenting of players requires waiting for the client side `NetworkSceneManager` generated `SceneEventType.SynchronizeComplete` message to be received and processed as an event on the server in order for the server to make the connected player a child of an in-scene placed `NetworkObject`. ( For a more detailed  real world example of this please see [Real world In-scene NetworkObject parenting of players example](inscene_parenting_player.md)
+
 
 ## (Re)Parenting Move Examples
 
