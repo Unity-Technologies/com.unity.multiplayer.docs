@@ -6,12 +6,12 @@ description: A `NetworkObject` reparenting solution within Netcode for GameObjec
 ---
 
 :::important Opt-OUT
-This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can can opt-out from it if you want to implement your oen solution
+This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can can opt-out from it if you want to implement your own solution
 :::
 
-We utilize [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) under `NetworkObject` to catch `transform.parent` changes.
+ [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) under `NetworkObject`  is utilized to catch `transform.parent` changes.
 
-We store three additional state variables in `NetworkObject`:
+Three additional state variables  are stored in `NetworkObject`:
 
 ```cs
 bool m_IsReparented; // did parent change compared to initial scene hierarchy?
@@ -19,7 +19,7 @@ ulong? m_LatestParent; // who (NetworkObjectId) is our latest (current) parent i
 Transform m_CachedParent; // who (Transform) was our previously assigned parent?
 ```
 
-We also add another new virtual method into `NetworkBehaviour`:
+A new virtual methodWe has been added ainto `NetworkBehaviour`:
 
 ```cs
 /// <summary>
@@ -28,21 +28,21 @@ We also add another new virtual method into `NetworkBehaviour`:
 virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject) { }
 ```
 
-There are two main codepaths we need to consider when sychronizing `NetworkObject` parenting:
+You need to consider two main codepaths  when sychronizing `NetworkObject` parenting:
 
 1. At Object Spawn
     - Client spawns objects including static scene objects and dynamic spawned objects on join.
-    - We serialize `NetworkObject`s with their payloads (such as `NetworkBehaviour`s etc.)
-    - We will also write `m_IsReparented` and `m_LatestParent` fields to sync on the client-side
+    - Serialize `NetworkObject`s with their payloads (such as `NetworkBehaviour`s etc.)
+    - Write `m_IsReparented` and `m_LatestParent` fields to sync on the client-side
 2. During Gameplay
-    - When a valid `NetworkObject` reparenting happens during networked gameplay on the server-side, it will be replicated across the network to the connected clients to sync
-    - We will write `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and send that over to all connected clients with `PARENT_SYNC` message type on `MLAPI_INTERNAL` channel
+    - When a valid `NetworkObject` reparenting happens during networked gameplay on the server-side, it is replicated across the network to the connected clients to sync
+    - Write `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and send that over to all connected clients with `PARENT_SYNC` message type on `MLAPI_INTERNAL` channel
 
-Transform parent synchronization will rely on initial formation of transforms in the scene hierarchy being identical on all standalone instances.
+Transform parent synchronization relies on initial formation of transforms in the scene hierarchy being identical on all standalone instances.
 
 ## NetworkObject Reparenting Rules
 
-Let's list a few basic `NetworkObject` reparenting rules below.
+A few basic `NetworkObject` reparenting rules are listed below.
 
 ### Only A Server (or A Host) Can Reparent
 
@@ -60,13 +60,12 @@ This is simply due to the fact that MLAPI would not be able to identify & locate
 
 A `NetworkObject` can only be reparented while networking, in other terms you can only reparent while listening/running as a server.
 
-If we were to allow moves while not networking, we would be desynced immediately when we switch to networking. Also reparenting a `NetworkObject` under a non-`NetworkObject` while not networking would sound valid but that would not be replicable on the remote-side since MLAPI does not cover full scene hierarchy synchronization (and this might be a good thing, hence server vs client scene hierarchies).
+If you allowed moves while not networking, you would be desynced immediately upon switching to networking. Also reparenting a `NetworkObject` under a non-`NetworkObject` while not networking would sound valid but that would not be replicable on the remote-side since Netcode does not cover full scene hierarchy synchronization.
 
-In short, we have to keep initial `NetworkObject` formation in the scene hierarchy identical between instances so that we could rely on initial states to be in sync as reference points.
 
 ### Invalid Reparenting Will Move NetworkObject Back To Its Original Location
 
-If an invalid/unsupported `NetworkObject` parenting happens, MLAPI will immediately pop it back to its previous location to keep things in sync and also will print relevant error/warning messages to indicate the issue.
+If an invalid/unsupported `NetworkObject` parenting happens, Netcode will immediately pop it back to its previous location to keep things in sync and also will provide relevant error/warning messages to indicate the issue.
 
 ## (Re)Parenting Move Examples
 
