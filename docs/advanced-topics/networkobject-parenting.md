@@ -6,12 +6,12 @@ description: A `NetworkObject` reparenting solution within Netcode for GameObjec
 ---
 
 :::important Opt-OUT
-This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can can opt-out from it if you want to implement your own solution
+This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can opt-out from it if you want to implement your own solution
 :::
 
  [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) under `NetworkObject`  is utilized to catch `transform.parent` changes.
 
-Three additional state variables  are stored in `NetworkObject`:
+Three additional state variables are stored in `NetworkObject`:
 
 ```cs
 bool m_IsReparented; // did parent change compared to initial scene hierarchy?
@@ -28,7 +28,7 @@ A new virtual methodWe has been added ainto `NetworkBehaviour`:
 virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject) { }
 ```
 
-You need to consider two main codepaths  when sychronizing `NetworkObject` parenting:
+You need to consider two main code paths when synchronizing `NetworkObject` parenting:
 
 1. At Object Spawn
     - Client spawns objects including static scene objects and dynamic spawned objects on join.
@@ -38,7 +38,7 @@ You need to consider two main codepaths  when sychronizing `NetworkObject` paren
     - When a valid `NetworkObject` reparenting happens during networked gameplay on the server-side, it is replicated across the network to the connected clients to sync
     - Write `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and send that over to all connected clients with `PARENT_SYNC` message type on `MLAPI_INTERNAL` channel
 
-Transform parent synchronization relies on initial formation of transforms in the scene hierarchy being identical on all standalone instances.
+Transform parent synchronization relies on the initial formation of transforms in the scene hierarchy being identical on all standalone instances.
 
 ## NetworkObject Reparenting Rules
 
@@ -148,7 +148,7 @@ Invalid parenting, NetworkObject moved under a non-NetworkObject parent
 
 ### RightHand/Axe → SceneRoot/Axe
 
-This is a **valid** move because `Axe (NetworkObject)` is being moved to the scene root (no parent). Even though there is no `NetworkObjectId` to sync, empty/null parent _can_ be synced across the network on the clients.
+This is a **valid** move because `Axe (NetworkObject)` is being moved to the scene root (no parent). So even though there is no `NetworkObjectId` to sync, empty/null parent _can_ be synced across the network on the clients.
 
 Our up-to-date hierarchy is now looking like this:
 
