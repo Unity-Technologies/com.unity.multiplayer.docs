@@ -90,7 +90,7 @@ module.exports = {
 
       {
         "type": "doc",
-        "id": "netcode-basics/networkbehavior"
+        "id": "mlapi-basics/networkbehavior"
       },
       {
         "type": "doc",
