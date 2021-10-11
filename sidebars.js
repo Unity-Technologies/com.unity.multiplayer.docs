@@ -89,6 +89,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "advanced-topics/inscene-parenting-players"
+      },
+      {
+        "type": "doc",
         "id": "mlapi-basics/networkbehavior"
       },
       {
