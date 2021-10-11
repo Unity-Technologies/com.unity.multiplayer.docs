@@ -148,7 +148,7 @@ Invalid parenting, NetworkObject moved under a non-NetworkObject parent
 
 ### RightHand/Axe → SceneRoot/Axe
 
-This is a **valid** move because `Axe (NetworkObject)` is being moved to the scene root (no parent). Even though there is no `NetworkObjectId` to sync, empty/null parent _can_ be synced across the network on the clients.
+This is a **valid** move because `Axe (NetworkObject)` is being moved to the scene root (no parent). So even though there is no `NetworkObjectId` to sync, empty/null parent _can_ be synced across the network on the clients.
 
 Our up-to-date hierarchy is now looking like this:
 
