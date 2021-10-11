@@ -1,18 +1,19 @@
 ---
 id: networkobject-serialization
 title: NetworkObject & NetworkBehaviour
+description: Brief explamnation on using NetworkObject & NetworkBehaviour in Network for GameObjects
 ---
 
 `GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPCs` or `NetworkVariables` by default.
 
-There are two convenience wrappers which can be used to send a reference to a NetworkObject or a NetworkBehaviour over RPCs or NetworkVariables.
+There are two convenience wrappers which can be used to send a reference to a `NetworkObject` or a `NetworkBehaviour` over RPCs or `NetworkVariables`.
 
 ## NetworkObjectReference
 
 `NetworkObjectReference` can be used to serialize a reference to a `NetworkObject`. It can only be used on already spawned `NetworkObjects`.
 
 Here is an example of using `NetworkObject` reference to send a target `NetworkObject` over an RPC:
-```cs
+```csharp
 public class Weapon : NetworkBehaviour
 {
     public void ShootTarget(GameObject target)
@@ -39,7 +40,7 @@ public class Weapon : NetworkBehaviour
 ### Implicit Operators
 
 There are also implicit operators which convert from/to `NetworkObject/GameObject` which can be used to simplify code. For instance the above example can also be written in the following way:
-```cs
+```csharp
 public class Weapon : NetworkBehaviour
 {
     public void ShootTarget(GameObject target)
@@ -89,6 +90,6 @@ public class Weapon : NetworkBehaviour
 
 ## How NetworkObjectReference & NetworkBehaviourReference work
 
-`NetworkObjectReference` and `NetworkBehaviourReference` are convenience wrappers which serialize the id of a `NetworkObject` when being sent and on the receiving end retrieve the corresponding NetworkObject with that id. `NetworkBehaviourReference` sends an additional index which is used to find the right `NetworkBehaviour` on the `NetworkObject`.
+`NetworkObjectReference` and `NetworkBehaviourReference` are convenience wrappers which serialize the id of a `NetworkObject` when being sent and on the receiving end retrieve the corresponding ` ` with that id. `NetworkBehaviourReference` sends an additional index which is used to find the right `NetworkBehaviour` on the `NetworkObject`.
 
 Both of them are structs implementing the `INetworkSerializable` interface.
