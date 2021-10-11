@@ -1,7 +1,7 @@
 ---
 id: networkobject-serialization
 title: NetworkObject & NetworkBehaviour
-description: Brief explamnation on using NetworkObject & NetworkBehaviour in Network for GameObjects
+description: Brief explanation on using NetworkObject & NetworkBehaviour in Network for GameObjects
 ---
 
 `GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPCs` or `NetworkVariables` by default.
