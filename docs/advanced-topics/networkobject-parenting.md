@@ -6,7 +6,7 @@ description: A `NetworkObject` reparenting solution within Netcode for GameObjec
 ---
 
 :::important Opt-OUT
-This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can can opt-out from it if you want to implement your own solution
+This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can opt-out from it if you want to implement your own solution
 :::
 
  [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) under `NetworkObject`  is utilized to catch `transform.parent` changes.
