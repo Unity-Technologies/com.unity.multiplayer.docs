@@ -87,13 +87,10 @@ module.exports = {
         "type": "doc",
         "id": "mlapi-basics/networkobject"
       },
+
       {
         "type": "doc",
-        "id": "advanced-topics/inscene-parenting-players"
-      },
-      {
-        "type": "doc",
-        "id": "mlapi-basics/networkbehavior"
+        "id": "netcode-basics/networkbehavior"
       },
       {
         "type": "doc",
@@ -311,7 +308,18 @@ module.exports = {
         "type": "doc",
         "id": "troubleshooting/errormessages"
       }
-    ]
+        ]
+  },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Solutions",
+      "items": [
+    {
+      "type": "doc",
+      "id": "advanced-topics/inscene-parenting-players"
+    },
+  ]
   },
 ],
   Multiplayer :
