@@ -8,7 +8,7 @@ module.exports = {
   mlapi: [
     {
       "type": "doc",
-      "id": "getting-started/about-mlapi"
+      "id": "getting-started/about"
     },
     {
     "collapsed": true,
@@ -48,11 +48,11 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Learning MLAPI with Goldenpath",
+    "label": "Learning with Goldenpath",
     "items": [
       {
         "type": "doc",
-        "id": "tutorials/goldenpath_series/mlapi_starting_out"
+        "id": "tutorials/goldenpath_series/starting_out"
       },       
       {
         "type": "doc",
@@ -80,23 +80,23 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkobject"
+        "id": "basics/networkobject"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkbehavior"
+        "id": "basics/networkbehavior"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/modularity"
+        "id": "basics/modularity"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/networkvariable"
+        "id": "basics/networkvariable"
       },
       {
         "type": "doc",
-        "id": "mlapi-basics/object-visibility"
+        "id": "basics/object-visibility"
       },
       {
         "type": "doc",
@@ -158,7 +158,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/object-spawning"
+        "id": "basics/object-spawning"
       },
       {
         "type": "doc",
@@ -273,7 +273,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/scene-management"
+        "id": "basics/scene-management"
       },
     ]
   },
@@ -283,8 +283,8 @@ module.exports = {
     "label": "Debugging",
     "items": [
       {
-        "type": "doc",
-        "id": "mlapi-basics/logging"
+        "type":"doc",
+        "id": "basics/logging"
       },
       {
         "type": "doc",

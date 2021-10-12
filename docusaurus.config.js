@@ -53,9 +53,9 @@ module.exports = {
         },
         items: [
           {
-            label: 'MLAPI',
+            label: 'Netcode for GameObjects',
             className: 'nav-break',
-            to: '/getting-started/about-mlapi',
+            to: '/getting-started/about',
             position: 'left',
             items: [
               {
@@ -64,7 +64,7 @@ module.exports = {
                 docsPluginId: 'releases'
               },
               {
-                to: 'getting-started/about-mlapi',
+                to: 'getting-started/about',
                 label: 'Documentation',
               },
               {
