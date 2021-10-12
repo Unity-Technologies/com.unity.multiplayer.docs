@@ -24,7 +24,7 @@ Netcode extends the Unity profiler features to include Netcode Profiler Messages
 
 <!-- Confirm these steps for how it will work at release since package is presently internal
 
-1. From the top bar of your Unity editor, go to **Window** > **Package Manager**.
+1. From the menu bar of your Unity editor, go to **Window** > **Package Manager**.
 2. In the Package Manager window, click on the plus sign (+) near the top to select **Add package by name...**.
 3. Enter {PACKAGE NAME} in the popup window and click **Add**.
 4. You may need to manually resolve your packages by either:
@@ -35,7 +35,11 @@ Netcode extends the Unity profiler features to include Netcode Profiler Messages
 
 ## Using the profiler tool
 
-After enabling profiler support for Netcode, you can find the profiler tool in the top bar of your Unity editor > **Window** > **Analysis** > **Profiler**. The
+After enabling profiler support for Netcode, you can find the profiler tool in the menu bar of your Unity editor > **Window** > **Analysis** > **Profiler**. The **Netcode Profiler Messages**, **Netcode Profiler Operation**, and **Netcode Profiler RPC** modules are visible in the side panel, if they are not, you can choose to [show/hide profiler modules](#hide-unnecessary-content) from the dropdown.
+
+For the purpose of this tutorial, we are [profiling inside the Unity editor](#profiling-inside-the-unity-editor) so we can quickly see changes in performance. However, you may choose to [profile a development build of your game](#profiling-a-development-build-of-your-game) for more accurate results.
+
+
 
 ## Best practices
 
@@ -49,7 +53,7 @@ For descriptions of the messages, operations, and RPCs the Netcode profiler coun
 
 You can hide profiler data to focus only on information you are interested in.
 
-1. In the Profiler window, select the dropdown arrow for **Profiler Modules** and check only the modules you would like to focus on. For example, the **Netcode Profiler Messages**, **Netcode Profiler Operation**, and **Netcode Profiler RPC**.
+1. In the Profiler window, select the dropdown arrow for **Profiler Modules** and check only the modules you would like to focus on. For example, the **Netcode Profiler Messages**, **Netcode Profiler Operation**, and **Netcode Profiler RPC** modules.
 
 ### Profiling a development build of your game
 
@@ -71,8 +75,8 @@ When it is more useful to have a broader sense of performance quickly than high 
 
 To profile inside the Unity editor:
 
-1. Open project
-2. Open Profiler window by Window > Analysis > Profiler
+1. Open your Unity project.
+2. Open Profiler window by **Window** > Analysis > Profiler
 3. In the tools section at top of Profiler window, ensure that Record is selected.
 4. Enter Play Mode. Data will gather and display in real-time as you interact with the game
 
