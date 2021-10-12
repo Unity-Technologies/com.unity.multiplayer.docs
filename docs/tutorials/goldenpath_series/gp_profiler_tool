@@ -1,0 +1,55 @@
+---
+id: goldenpath_profiler
+title: Golden Path - The Profiling Tool
+description: Tutorial to walk you through the capabilities and use cases of the profiling tool regarding multiplayer games.
+---
+
+This Golden Path is a standalone experience and does not require completion of the Golden Path Foundation module.
+
+In this guide, we cover how to use profiling data to optimize performance and balance enhancements in your multiplayer game to determine the most efficient build strategy. For multiplayer games, the three primary resources you should monitor and control are bandwidth consumption, CPU, and packet delivery latency (not network latency).
+
+For more information about CPU usage profiling, see the [Unity manual](https://docs.unity3d.com/Manual/ProfilerCPU.html).
+
+## Prerequisites
+
+Before working with the profiler tool, take time to familiarize yourself with the Netcode for GameObjects (Netcode) [profiling overview](../mlapi-basics/../../mlapi-basics/profiling.md). You may also want to review how to [profile your application](https://docs.unity3d.com/Manual/profiler-profiling-applications.html) from the Unity manual.
+
+For this Golden Path, we use the Boss Room sample to provide enough data to examine and analyze. If you don't already have Boss Room installed, follow the steps in the [Getting Started](../learn/../../learn/getting-started-boss-room.md).
+
+Be sure you are using Unity 2021.1+ to use the profiler with Netcode data.
+
+## Enabling profiling support for Netcode
+
+Netcode extends the Unity profiler features to include Netcode Profiler Messages, Netcode Profiler Operations, and Netcode Profiler RPCs. To enable this support, install the `com.unity.multiplayer.tools` package from the [Unity Package Manager](../../migration/installation.md) on your installation of the Boss Room project.
+
+## Creating data for the profiler
+
+## Using the profiler tool
+
+## Best practices
+
+The profiler tool is capable of provider a lot of information and can be intimidating to determine the best strategy for optimization. Use the following best practices to make your optimization process easier.
+
+### Hide unnecessary content
+
+You can hide profiler data 
+
+### Profiling a development build of your game
+
+For the most accurate results, you want to profile your game as a development build on the target hardware whenever possible. 
+
+To profile a development build of your game on Windows, OS X, Linux, and WebGL:
+
+For iOS and Android, see [Profiling on mobile devices](https://docs.unity3d.com/Manual/profiler-profiling-applications.html).
+
+### Profiling inside the Unity editor
+
+When it is more useful to have a broader sense of performance quickly than high accuracy, you want to profile inside the Unity editor. For example, you may try enabling and disabling multiple GameObjects at runtime to determine the culprit for a performance problem.
+
+To profile inside the Unity editor:
+
+### Iterate your optimization
+
+Every time you make  new feature or refactor an old one, profile your game. This allows you to compare each change with your performance to adjust for peak efficiency.
+
+There are no definite rules with performance optimization. Profile your game regularly, investigate the nature of your optimization problems, experiment with different solutions, and measure the results of your changes.
