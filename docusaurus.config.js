@@ -46,7 +46,7 @@ module.exports = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Unity Multiplayer Networking',
+        title: 'Multiplayer Networking',
         logo: {
           alt: 'Unity',
           src: 'img/logo.png',

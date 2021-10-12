@@ -145,7 +145,7 @@ This section adds a Network Transform component that will move the player.
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkTransformTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab, click **Add Component** 
+1. In the **Player** prefab Inspector tab, click **Add Component**. 
 1. Click **Scripts**, and add the `NetworkTransformTest.cs` script you created earlier.
 1. Open the `NetworkTransformTest.cs` script.
 1. Edit the `NetworkTransformTest.cs` script to match the following.
