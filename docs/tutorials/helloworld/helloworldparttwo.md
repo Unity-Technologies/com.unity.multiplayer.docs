@@ -15,7 +15,7 @@ In this guide we will build on the work we have already done in Hello World and 
 
 ## Requirements
 
-This tutorial requires an Netcode for Gameobjects (Netcode)-supported version of Unity (2019.4+).
+This tutorial requires an  Netcode for GameObjects (Netcode)-supported version of Unity (2019.4+).
 
 We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
 

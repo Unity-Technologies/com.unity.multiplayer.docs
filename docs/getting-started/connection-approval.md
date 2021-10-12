@@ -3,7 +3,7 @@ id: connection-approval
 title: Connection Approval
 ---
 
-With every new connection, Netcode for Gameobjects (Netcode) performs a handshake in addition to handshakes done by the transport. This is to ensure that the `NetworkConfig`s match between the Client and Server. In the `NetworkConfig`, you can specify to enable `ConnectionApproval`. 
+With every new connection,  Netcode for GameObjects (Netcode) performs a handshake in addition to handshakes done by the transport. This is to ensure that the `NetworkConfig`s match between the Client and Server. In the `NetworkConfig`, you can specify to enable `ConnectionApproval`. 
 
 Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
 

@@ -3,9 +3,9 @@ id: faq
 title: Frequently Asked Questions
 ---
 
-The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including Netcode for Gameobjects (Netcode), Transport, and more.
+The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including  Netcode for GameObjects (Netcode), Transport, and more.
 
-## Unity Netcode for Gameobjects (Netcode)
+## Unity  Netcode for GameObjects (Netcode)
 
 <div id="faq">
 

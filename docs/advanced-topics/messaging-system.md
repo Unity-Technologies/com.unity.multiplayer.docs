@@ -9,7 +9,7 @@ description: An introduction to the messaging system in Unity MLAPI, including R
 There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
 :::
 
- Netcode for Gameobjects (Netcode) has two parts to its messaging system: RPC messages and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
+ Netcode for GameObjects (Netcode) has two parts to its messaging system: RPC messages and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
 
 ## RPC Messages
 

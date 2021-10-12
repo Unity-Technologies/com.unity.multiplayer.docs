@@ -4,7 +4,7 @@ title:  Learning with Golden Path Introduction
 description: Introduction to the Golden Path series, explaining the underliying aim of the series 
 ---
 
-These sections are intended to help guide you through the features of Netcode for Gameobjects (Netcode), they will provide  examples of how Netcode implements common  Multiplayer features. We will continue to add and update this section with more materials as we grow Netcode.  
+These sections are intended to help guide you through the features of  Netcode for GameObjects (Netcode), they will provide  examples of how Netcode implements common  Multiplayer features. We will continue to add and update this section with more materials as we grow Netcode.  
 
 :::tip
 You do not have to have completed either of the [Hello World tutorials](../helloworld/helloworldintro.md) to complete this one, however, if you are new to Unity then we recommended that you complete them in order to familiarise yourself with Unity.

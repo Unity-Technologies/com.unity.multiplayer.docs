@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-Netcode for Gameobjects' high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
+ Netcode for GameObjects' high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
 
 ## NetworkObject
 

@@ -3,7 +3,7 @@ id: object-pooling
 title: Object Pooling
 ---
 
-Netcode for Gameobjects (Netcode) provides built-in support for Object Pooling, which allows you to override the default Netcode destroy and spawn handlers with your own logic.  This allows you to store destroyed network objects in a pool to reuse later. This is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.
+Netcode for GameObjects (Netcode) provides built-in support for Object Pooling, which allows you to override the default Netcode destroy and spawn handlers with your own logic.  This allows you to store destroyed network objects in a pool to reuse later. This is useful for frequently used objects, such as projectiles, and is a way to increase the application's overall performance by decreasing the amount of objects being created over time.
 
 See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.
 
