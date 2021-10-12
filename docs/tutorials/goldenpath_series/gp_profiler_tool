@@ -20,25 +20,48 @@ Be sure you are using Unity 2021.1+ to use the profiler with Netcode data.
 
 ## Enabling profiling support for Netcode
 
-Netcode extends the Unity profiler features to include Netcode Profiler Messages, Netcode Profiler Operations, and Netcode Profiler RPCs. To enable this support, install the `com.unity.multiplayer.tools` package from the [Unity Package Manager](../../migration/installation.md) on your installation of the Boss Room project.
+Netcode extends the Unity profiler features to include Netcode Profiler Messages, Netcode Profiler Operations, and Netcode Profiler RPCs. To enable this support, install the `com.unity.multiplayer.tools` package from the Unity Package Manager on your installation of the Boss Room project.
 
-## Creating data for the profiler
+<!-- Confirm these steps for how it will work at release since package is presently internal
+
+1. From the top bar of your Unity editor, go to **Window** > **Package Manager**.
+2. In the Package Manager window, click on the plus sign (+) near the top to select **Add package by name...**.
+3. Enter {PACKAGE NAME} in the popup window and click **Add**.
+4. You may need to manually resolve your packages by either:
+   1. In the Package Manager, click the dropdown arrow then **Manual resolve** in the bottom bar of the window.
+   2. Closing out of the Unity project and reopening.
+
+-->
 
 ## Using the profiler tool
+
+After enabling profiler support for Netcode, you can find the profiler tool in the top bar of your Unity editor > **Window** > **Analysis** > **Profiler**. The
 
 ## Best practices
 
 The profiler tool is capable of provider a lot of information and can be intimidating to determine the best strategy for optimization. Use the following best practices to make your optimization process easier.
 
+### Module elements and filtering results
+
+For descriptions of the messages, operations, and RPCs the Netcode profiler counts and filter rules you can use to narrow search results, see the [Profiling](../../mlapi-basics/profiling.md) overview.
+
 ### Hide unnecessary content
 
-You can hide profiler data 
+You can hide profiler data to focus only on information you are interested in.
+
+1. In the Profiler window, select the dropdown arrow for **Profiler Modules** and check only the modules you would like to focus on. For example, the **Netcode Profiler Messages**, **Netcode Profiler Operation**, and **Netcode Profiler RPC**.
 
 ### Profiling a development build of your game
 
 For the most accurate results, you want to profile your game as a development build on the target hardware whenever possible. 
 
 To profile a development build of your game on Windows, OS X, Linux, and WebGL:
+
+1. Open project. Open Profiler. Ensure Record is selected.
+2. Open the Build Settings window by File > Build Settings
+3. Ensure Development Build is checked
+4. Ensure that the Autoconnect Profiler is checked
+5. Click Build and Run.
 
 For iOS and Android, see [Profiling on mobile devices](https://docs.unity3d.com/Manual/profiler-profiling-applications.html).
 
@@ -47,6 +70,11 @@ For iOS and Android, see [Profiling on mobile devices](https://docs.unity3d.com/
 When it is more useful to have a broader sense of performance quickly than high accuracy, you want to profile inside the Unity editor. For example, you may try enabling and disabling multiple GameObjects at runtime to determine the culprit for a performance problem.
 
 To profile inside the Unity editor:
+
+1. Open project
+2. Open Profiler window by Window > Analysis > Profiler
+3. In the tools section at top of Profiler window, ensure that Record is selected.
+4. Enter Play Mode. Data will gather and display in real-time as you interact with the game
 
 ### Iterate your optimization
 
