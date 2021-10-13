@@ -69,17 +69,7 @@ module.exports = {
     ],
    
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Local Iteration ",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/local_iteration_series/testing_locally"
-      }
-    ],
-  },
+  
     {
     "collapsed": true,
     "type": "category",
@@ -92,10 +82,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "basics/networkobject"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/max-players"
       },
       {
         "type": "doc",
