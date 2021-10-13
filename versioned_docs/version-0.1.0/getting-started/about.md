@@ -7,17 +7,9 @@ MLAPI is a mid-level networking library built for the Unity game engine to abstr
 
 <div class="table-columns-plain">
 
-| Getting Started | Hello World | Golden Path |
-| -- | -- | -- |
-| [Install Unity MLAPI](../migration/installation.md)<br/>[Migration from UNet to MLAPI](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity MLAPI Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](../tutorials/helloworld/helloworldtwo) | [Foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](../tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](../tutorials/goldenpath_series/gp_module_two.md)<br/>|
-
-</div>
-
-<div class="table-columns-plain">
-
-| Core Concepts | Debugging | Learn More |
-| -- | -- | -- |
-| [Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../mlapi-basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../mlapi-basics/scene-management.md) | [Logging](../mlapi-basics/logging.md)<br/>[Troublshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) | [References](../learn/index.md)<br/>[Boss Room](../learn/getting-started-boss-room.md)<br/>[Bite Size Samples](../learn/bitesize-introduction.md)<br/>[Dapper Dino Tutorials](../learn/dapper/dapper-video.md)<br/>[FAQs](../learn/faq.md) |
+| Installation | Hello World |Golden Path| Learning More | Debugging |
+| -- | -- | -- | -- | -- |
+| [Install Unity MLAPI](../migration/installation.md)<br/>[Migration from UNet to MLAPI](../migration/migratingtomlapi.md)<br/>[Upgrade to Unity MLAPI Package](../migration/migratingfrommlapi.md) | [Your First Networked Game](../tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](../tutorials/helloworld/helloworldtwo) |[Foundation module](../tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](../tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](../tutorials/goldenpath_series/gp_module_two.md)<br/>|[Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../mlapi-basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../mlapi-basics/scene-management.md) | [Logging](../mlapi-basics/logging.md)<br/>[Troublshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) |
 
 </div>
 
@@ -35,3 +27,4 @@ For those looking for the MLAPI releases and documentation v. 12.x and earlier, 
 * [MLAPI v12.1.7 documentation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/)
 * [MLAPI blog posts](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/v12.1.7/docs/_posts)
 :::
+

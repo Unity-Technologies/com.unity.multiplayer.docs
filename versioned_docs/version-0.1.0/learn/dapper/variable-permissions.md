@@ -1,7 +1,7 @@
 ---
 id: dapper-variable-permissions
 title:  Variable Permissions
-description: I teach you how to make data private for specific clientss
+description: Teaches you how to make data private for specific clientss
 ---
 
 

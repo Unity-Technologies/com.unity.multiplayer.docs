@@ -68,7 +68,7 @@ module.exports = {
                 label: 'Documentation',
               },
               {
-                to: 'netcode-api/introduction',
+                to: 'api/introduction',
                 label: 'API Reference',
               },
             ]
@@ -109,13 +109,13 @@ module.exports = {
               },
             ]
           },
-          {
+          /*{
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
-          },
+          },*/
           {
             to: '/learn/introduction',
             label: 'Unity Multiplayer Resources',
@@ -138,11 +138,11 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'Netcode for GameObjects Repo',
+                label: 'MLAPI Repo',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
               },
               {
-                label: 'Netcode for GameObjects Community Contributions',
+                label: 'MLAPI Community Contributions',
                 href: 'https://github.com/Unity-Technologies/mlapi-community-contributions',
               },
               {
@@ -184,7 +184,7 @@ module.exports = {
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
               },
               {
-                label: 'Netcode for GameObjects Forum',
+                label: 'MLAPI Forum',
                 href: 'https://forum.unity.com/forums/mlapi.661/',
               },
               {
@@ -248,7 +248,7 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'Netcode for GameObjects Releases',
+                label: ' Netcode for GameObjects Releases',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {
@@ -296,7 +296,6 @@ module.exports = {
         '@docusaurus/preset-classic',
         {
           docs: {
-            remarkPlugins: [require('mdx-mermaid')],
             path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,
@@ -473,22 +472,22 @@ module.exports = {
           }) {
             return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
           },includeCurrentVersion: true,
-            lastVersion: '1.0.0',
+            lastVersion: '0.8.0',
             versions: {
               //current: {
               //  label: 'Next',
               //  path: 'next',
               //},
-              '1.0.0': {
-               label: 'v. 1.0.0',
-                path: '1.0.0',
-              },
+              /*'0.9.0': {
+               label: 'v. 0.9.0preview',
+                path: '0.9.0',
+              },*/
               '0.8.0': {
                 label: 'v. 0.8.0preview',
                  path: '0.8.0',
                },
             },
-          onlyIncludeVersions: ["0.8.0", "1.0.0"],
+          //onlyIncludeVersions: ["0.8.0", "0.9.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),

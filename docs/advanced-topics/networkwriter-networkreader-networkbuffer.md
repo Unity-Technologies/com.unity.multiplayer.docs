@@ -4,7 +4,7 @@ title: NetworkWriter, NetworkReader and NetworkBuffer
 sidebar_label: NetworkWriter, NetworkReader, & NetworkBuffer
 ---
 
-Internally, Netcode for Gameobjects (Netcode) uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in `MemoryStream`s which don't create any garbage.
+Internally, Netcode for GameObjects (Netcode) uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in `MemoryStream`s which don't create any garbage.
 
 Netcode does have its own prefered Stream that is used internally called `NetworkBuffer`.
 

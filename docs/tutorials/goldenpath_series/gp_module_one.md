@@ -53,7 +53,7 @@ We recommend that you use the **Copy** function in our code blocks to reduce err
 
 ```csharp
 
-using MLAPI;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace HelloWorld
@@ -215,9 +215,9 @@ You will notice the introduction of a new method, `SubmitNewPosition()`, which w
 
 ```csharp
 
-using MLAPI;
-using MLAPI.Messaging;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.Messaging;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace HelloWorld
@@ -336,7 +336,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the  Netcode for GameObjects method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
 
 :::note
 This can be overriden on any `NetworkBehaviour`.
@@ -519,8 +519,8 @@ Congratulations you have learned the basics of a networked game!
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [NetworkManager](../../components/networkmanager)
-- [NetworkBehaviour](../../mlapi-basics/networkbehavior)
-- [Networkvariable](../../mlapi-basics/networkvariable)
+- [NetworkBehaviour](../../basics/networkbehavior)
+- [Networkvariable](../../basics/networkvariable)
 - [RPC](../../advanced-topics/messaging-system)
 
 import continuelearning from '../../shared/_continue_learning_goldenpath.md';
