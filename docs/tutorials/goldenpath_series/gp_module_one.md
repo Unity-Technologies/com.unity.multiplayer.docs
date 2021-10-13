@@ -59,7 +59,7 @@ You can copy the script from here and paste it into your file.
 
 ```csharp
 
-using MLAPI;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace HelloWorld
@@ -211,9 +211,9 @@ This script adds some basic movement to the Hello World player.
 
 ```csharp
 
-using MLAPI;
-using MLAPI.Messaging;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.Messaging;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace HelloWorld
@@ -512,8 +512,8 @@ Congratulations you have learned the basics of a networked game
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [NetworkManager](../../components/networkmanager)
-- [NetworkBehaviour](../../mlapi-basics/networkbehavior)
-- [Networkvariable](../../mlapi-basics/networkvariable)
+- [NetworkBehaviour](../../basics/networkbehavior)
+- [Networkvariable](../../basics/networkvariable)
 - [RPC](../../advanced-topics/messaging-system)
 
 

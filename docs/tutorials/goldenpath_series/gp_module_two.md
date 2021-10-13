@@ -45,8 +45,8 @@ This section adds a Server-controlled Network Variable to the project.
 </summary>
 
 ``` csharp
-using MLAPI;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 public class NetworkVariableTest : NetworkBehaviour
@@ -157,7 +157,7 @@ This section adds a Network Transform component that will move the player.
 
 ```csharp
 using System;
-using MLAPI;
+using Unity.Netcode;
 using UnityEngine;
 
 public class NetworkTransformTest : NetworkBehaviour
@@ -214,8 +214,8 @@ This section adds some basic RPCs to the project.
 </summary>
 
 ```csharp
-using MLAPI;
-using MLAPI.Messaging;
+using Unity.Netcode;
+using Unity.Netcode.Messaging;
 using UnityEngine;
 
 public class RpcTest : NetworkBehaviour

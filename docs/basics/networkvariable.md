@@ -65,8 +65,8 @@ The MLAPI provides a few default serializable implementations of the `NetworkVar
 The following example uses network replication variables and detects the change in a unit's health and notifies the client. You can perform a [`NetworkStart`](networkbehaviour.md) `Start` or `Awake` to subscribe the `OnValueChanged` of the health variable, then unsubscribe `OnDestroy`. The example exposes a `NetworkVariable` to other classes so that they can hook into Health's `OnValueChange` delegate or event, since `m_Health` is a private field.
 
 ```csharp
-using MLAPI;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace DefaultNamespace

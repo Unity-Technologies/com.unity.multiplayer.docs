@@ -47,7 +47,7 @@ You can copy the script from here and paste it into your file.
 
 ```csharp
 
-using MLAPI;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace HelloWorld
@@ -199,9 +199,9 @@ This script adds some basic movement to the Hello World player.
 
 ```csharp
 
-using MLAPI;
-using MLAPI.Messaging;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.Messaging;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace HelloWorld

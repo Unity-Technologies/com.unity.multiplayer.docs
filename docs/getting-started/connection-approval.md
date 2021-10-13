@@ -14,8 +14,8 @@ When `ConnectionApproval` is `true`, you are also required to provide a callback
 Server-only example:
 
 ```csharp
-using MLAPI;
-using MLAPI.Spawning;
+using Unity.Netcode;
+using Unity.Netcode.Spawning;
 
 private void Setup() 
 {
@@ -45,7 +45,7 @@ The `connectionData` parameter takes any custom data of your choice that the cli
 Example:
 
 ```csharp
-using MLAPI;
+using Unity.Netcode;
 
 NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASCII.GetBytes("room password");
 NetworkManager.Singleton.StartClient();

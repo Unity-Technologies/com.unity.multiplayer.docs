@@ -16,7 +16,7 @@ All content is generated from [source code](https://github.com/Unity-Technologie
 To document APIs, developers should add comments in code. For example:
 
 ```csharp
-namespace MLAPI.Collections
+namespace Unity.Netcode.Collections
 {
     /// <summary>
     /// Queue with a fixed size

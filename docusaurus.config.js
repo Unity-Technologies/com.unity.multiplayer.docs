@@ -68,7 +68,7 @@ module.exports = {
                 label: 'Documentation',
               },
               {
-                to: 'mlapi-api/introduction',
+                to: 'api/introduction',
                 label: 'API Reference',
               },
             ]

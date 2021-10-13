@@ -70,7 +70,7 @@ For more information on the relevant concepts introduced here please refer to th
 
 - [Network Manager](../../components/networkmanager.md)
 - [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
-- [Network Object](../../mlapi-basics/networkobject.md)
+- [Network Object](../../basics/networkobject.md)
 
 
 
