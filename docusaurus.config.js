@@ -109,13 +109,13 @@ module.exports = {
               },
             ]
           },
-          /*{
+          {
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
-          },*/
+          },
           {
             to: '/learn/introduction',
             label: 'Unity Multiplayer Resources',
