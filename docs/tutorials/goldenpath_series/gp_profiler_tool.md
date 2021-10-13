@@ -12,7 +12,7 @@ For more information about CPU usage profiling, see the [Unity manual](https://d
 
 ## Prerequisites
 
-Before working with the profiler tool, take time to familiarize yourself with the Netcode for GameObjects (Netcode) [profiling overview](../mlapi-basics/../../mlapi-basics/profiling.md). You may also want to review how to [profile your application](https://docs.unity3d.com/Manual/profiler-profiling-applications.html) from the Unity manual.
+Before working with the profiler tool, take time to familiarize yourself with the Netcode for GameObjects (Netcode) [profiling overview](../../basics/profiling.md). You may also want to review how to [profile your application](https://docs.unity3d.com/Manual/profiler-profiling-applications.html) from the Unity manual.
 
 For this Golden Path, we use the Boss Room sample to provide enough data to examine and analyze. If you don't already have Boss Room installed, follow the steps in the [Getting Started](../learn/../../learn/getting-started-boss-room.md).
 
@@ -47,7 +47,7 @@ The profiler tool is capable of provider a lot of information and can be intimid
 
 ### Module elements and filtering results
 
-For descriptions of the messages, operations, and RPCs the Netcode profiler counts and filter rules you can use to narrow search results, see the [Profiling](../../mlapi-basics/profiling.md) overview.
+For descriptions of the messages, operations, and RPCs the Netcode profiler counts and filter rules you can use to narrow search results, see the [Profiling](../../basics/profiling.md) overview.
 
 ### Hide unnecessary content
 

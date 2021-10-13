@@ -287,6 +287,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "basics/profiling"
+      },
+      {
+        "type": "doc",
         "id": "troubleshooting/troubleshooting"
       },
       {
