@@ -45,30 +45,6 @@ module.exports = {
 
     ],
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Learning Netcode with Goldenpath",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/starting_out"
-      },       
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
-      },
-       {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_one"
-      },    
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_two"
-      },  
-    ],
-   
-  },
   
     {
     "collapsed": true,
@@ -78,6 +54,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/max-players"
       },
       {
         "type": "doc",
@@ -329,7 +309,7 @@ module.exports = {
                 "items": [
                   {
                     "type": "doc",
-                    "id": "tutorials/goldenpath_series/netcode_starting_out"
+                    "id": "tutorials/goldenpath_series/starting_out"
                   },       
                   {
                     "type": "doc",
