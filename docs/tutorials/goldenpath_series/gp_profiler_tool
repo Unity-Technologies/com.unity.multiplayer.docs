@@ -39,7 +39,7 @@ After enabling profiler support for Netcode, you can find the profiler tool in t
 
 For the purpose of this tutorial, we are [profiling inside the Unity editor](#profiling-inside-the-unity-editor) so we can quickly see changes in performance. However, you may choose to [profile a development build of your game](#profiling-a-development-build-of-your-game) for more accurate results.
 
-
+1. While in your Boss Room project,
 
 ## Best practices
 
