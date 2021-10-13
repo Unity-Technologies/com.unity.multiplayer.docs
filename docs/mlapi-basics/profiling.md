@@ -9,6 +9,8 @@ This guide uses Unity 2021.2 beta. On 2021.1 and below, the profiler outputs onl
 
 Profiling is the process of measuring the performance of your game while it is running. It allows you to check your optimization points and control that your enhancements make a real difference. 
 
+For a walk-through of the Netcode profiler tool features with Boss Room, see the [Profiler Tool Golden Path](../tutorials/goldenpath_series/gp_profiler_tool.md).
+
 :::bestpractice Best Practice
 Profile every time you make a new feature or refactor an old one. This way you always have a baseline for further optimizations.
 :::
@@ -112,4 +114,4 @@ You can use the following filter rules to narrow your search results:
 
 You can combine these rules to continue narrowing your results. 
 
-Double click on an element shows it in the Unity hierarchy
+Double-clicking on an element shows it in the Unity hierarchy tab.

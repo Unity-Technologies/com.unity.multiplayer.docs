@@ -1,5 +1,5 @@
 ---
-id: goldenpath_profiler
+id: gp_profiler
 title: Golden Path - The Profiling Tool
 description: Tutorial to walk you through the capabilities and use cases of the profiling tool regarding multiplayer games.
 ---
@@ -39,7 +39,7 @@ After enabling profiler support for Netcode, you can find the profiler tool in t
 
 For the purpose of this tutorial, we are [profiling inside the Unity editor](#profiling-inside-the-unity-editor) so we can quickly see changes in performance. However, you may choose to [profile a development build of your game](#profiling-a-development-build-of-your-game) for more accurate results.
 
-1. While in your Boss Room project,
+1. While in your Boss Room project, {we going to run the profiler tool, examine the data, note possible changes/adjustments and what they do}
 
 ## Best practices
 
@@ -57,8 +57,9 @@ You can hide profiler data to focus only on information you are interested in.
 
 ### Profiling a development build of your game
 
-For the most accurate results, you want to profile your game as a development build on the target hardware whenever possible. 
+For the most accurate results, you want to profile your game as a development build on the target hardware whenever possible. To profile a development build of your game on Windows, OS X, Linux, or WebGL, see [Profile your application on a target platform](https://docs.unity3d.com/Manual/profiler-profiling-applications.html) for more information.
 
+<!-- Link to Unity docs about this. Steps written here for my use while writing.
 To profile a development build of your game on Windows, OS X, Linux, and WebGL:
 
 1. Open project. Open Profiler. Ensure Record is selected.
@@ -66,19 +67,22 @@ To profile a development build of your game on Windows, OS X, Linux, and WebGL:
 3. Ensure Development Build is checked
 4. Ensure that the Autoconnect Profiler is checked
 5. Click Build and Run.
-
+--->
 For iOS and Android, see [Profiling on mobile devices](https://docs.unity3d.com/Manual/profiler-profiling-applications.html).
 
 ### Profiling inside the Unity editor
 
 When it is more useful to have a broader sense of performance quickly than high accuracy, you want to profile inside the Unity editor. For example, you may try enabling and disabling multiple GameObjects at runtime to determine the culprit for a performance problem.
 
+To profile inside the Unity editor, see [Profiling in the Unity Editor](https://docs.unity3d.com/Manual/profiler-profiling-applications.html) for more information.
+<!-- Link to Unity docs about this. Steps written here for my use while writing.
 To profile inside the Unity editor:
 
 1. Open your Unity project.
 2. Open Profiler window by **Window** > Analysis > Profiler
 3. In the tools section at top of Profiler window, ensure that Record is selected.
 4. Enter Play Mode. Data will gather and display in real-time as you interact with the game
+--->
 
 ### Iterate your optimization
 
