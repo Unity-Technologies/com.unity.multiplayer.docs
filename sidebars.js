@@ -95,23 +95,23 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "netcode-basics/networkobject"
+        "id": "basics/networkobject"
       },
       {
         "type": "doc",
-        "id": "netcode-basics/networkbehavior"
+        "id": "basics/networkbehavior"
       },
       {
         "type": "doc",
-        "id": "netcode-basics/modularity"
+        "id": "basics/modularity"
       },
       {
         "type": "doc",
-        "id": "netcode-basics/networkvariable"
+        "id": "basics/networkvariable"
       },
       {
         "type": "doc",
-        "id": "netcode-basics/object-visibility"
+        "id": "basics/object-visibility"
       },
       {
         "type": "doc",
@@ -177,7 +177,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "netcode-basics/object-spawning"
+        "id": "basics/object-spawning"
       },
       {
         "type": "doc",
@@ -292,7 +292,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "netcode-basics/scene-management"
+        "id": "basics/scene-management"
       },
     ]
   },
@@ -303,7 +303,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "netcode-basics/logging"
+        "id": "basics/logging"
       },
       {
         "type": "doc",
@@ -514,7 +514,7 @@ module.exports = {
   [
     {
       "type": "doc",
-      "id": "netcode-api/introduction"
+      "id": "api/introduction"
     },
     {
       "collapsed": true,
@@ -523,88 +523,88 @@ module.exports = {
       "items": [
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode",
+          "id": "api/Unity.Netcode",
           "label": "Netcode APIs",
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.INetworkUpdateSystem",
+          "id": "api/Unity.Netcode.INetworkUpdateSystem",
           "label": "INetworkUpdateSystem"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkBehaviour",
+          "id": "api/Unity.Netcode.NetworkBehaviour",
           "label": "NetworkBehaviour"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkBehaviourUpdater",
+          "id": "api/Unity.Netcode.NetworkBehaviourUpdater",
           "label": "NetworkBehaviourUpdater"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkObject",
+          "id": "api/Unity.Netcode.NetworkObject",
           "label": "NetworkObject"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkObject.SpawnDelegate",
+          "id": "api/Unity.Netcode.NetworkObject.SpawnDelegate",
           "label": "SpawnDelegate"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkObject.VisibilityDelegate",
+          "id": "api/Unity.Netcode.NetworkObject.VisibilityDelegate",
           "label": "VisibilityDelegate"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkTickSystem",
+          "id": "api/Unity.Netcode.NetworkTickSystem",
           "label": "NetworkTickSystem"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkUpdateLoop",
+          "id": "api/Unity.Netcode.NetworkUpdateLoop",
           "label": "NetworkUpdateLoop"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkUpdateStage",
+          "id": "api/Unity.Netcode.NetworkUpdateStage",
           "label": "NetworkUpdateStage"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.IHasUpdateStage",
+          "id": "api/Unity.Netcode.IHasUpdateStage",
           "label": "IHasUpdateStage"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.INetworkPrefabInstanceHandler",
+          "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
           "label": "INetworkPrefabInstanceHandler"
         },
      
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.INetworkStreamDriverConstructor",
+          "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
           "label": "INetworkStreamDriverConstructor"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkDelivery",
+          "id": "api/Unity.Netcode.NetworkDelivery",
           "label": "NetworkDelivery"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkEvent",
+          "id": "api/Unity.Netcode.NetworkEvent",
           "label": "NetworkEvent"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.NetworkPrefabHandler",
+          "id": "api/Unity.Netcode.NetworkPrefabHandler",
           "label": "NetworkPrefabHandler"
         },
         {
           "type": "doc",
-          "id": "netcode-api/Unity.Netcode.StreamExtensions",
+          "id": "api/Unity.Netcode.StreamExtensions",
           "label": "StreamExtensions"
         },
 
@@ -619,12 +619,12 @@ module.exports = {
        
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkTime",
+            "id": "api/Unity.Netcode.NetworkTime",
             "label": "NetworkTime"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkTimeSystem",
+            "id": "api/Unity.Netcode.NetworkTimeSystem",
             "label": "NetworkTimeSystem"
           },
         ],
@@ -637,7 +637,7 @@ module.exports = {
        
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.FixedQueue-1",
+            "id": "api/Unity.Netcode.FixedQueue-1",
             "label": "FixedQueue-1"
           },
         ]
@@ -649,12 +649,12 @@ module.exports = {
         "items": [
                 {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.HashSize",
+            "id": "api/Unity.Netcode.HashSize",
             "label": "HashSize"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkConfig",
+            "id": "api/Unity.Netcode.NetworkConfig",
             "label": "NetworkConfig"
           }
         ]
@@ -667,17 +667,17 @@ module.exports = {
  
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkClient",
+            "id": "api/Unity.Netcode.NetworkClient",
             "label": "NetworkClient"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.PendingClient",
+            "id": "api/Unity.Netcode.PendingClient",
             "label": "PendingClient"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.PendingClient.State",
+            "id": "api/Unity.Netcode.PendingClient.State",
             "label": "PendingClient.State"
           }
         ]
@@ -690,37 +690,37 @@ module.exports = {
    
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.InvalidChannelException",
+            "id": "api/Unity.Netcode.InvalidChannelException",
             "label": "InvalidChannelException"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.InvalidParentException",
+            "id": "api/Unity.Netcode.InvalidParentException",
             "label": "InvalidParentException"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkConfigurationException",
+            "id": "api/Unity.Netcode.NetworkConfigurationException",
             "label": "NetworkConfigurationException"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NotListeningException",
+            "id": "api/Unity.Netcode.NotListeningException",
             "label": "NotListeningException"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NotServerException",
+            "id": "api/Unity.Netcode.NotServerException",
             "label": "NotServerException"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.SpawnStateException",
+            "id": "api/Unity.Netcode.SpawnStateException",
             "label": "SpawnStateException"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.VisibilityChangeException",
+            "id": "api/Unity.Netcode.VisibilityChangeException",
             "label": "VisibilityChangeException"
           }
         ]
@@ -733,12 +733,12 @@ module.exports = {
  
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.LogLevel",
+            "id": "api/Unity.Netcode.LogLevel",
             "label": "LogLevel"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkLog",
+            "id": "api/Unity.Netcode.NetworkLog",
             "label": "NetworkLog"
           }
         ]
@@ -751,22 +751,22 @@ module.exports = {
  
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ClientRpcAttribute",
+            "id": "api/Unity.Netcode.ClientRpcAttribute",
             "label": "ClientRpcAttribute"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ClientRpcParams",
+            "id": "api/Unity.Netcode.ClientRpcParams",
             "label": "ClientRpcParams"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ClientRpcReceiveParams",
+            "id": "api/Unity.Netcode.ClientRpcReceiveParams",
             "label": "ClientRpcReceiveParams"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ClientRpcSendParams",
+            "id": "api/Unity.Netcode.ClientRpcSendParams",
             "label": "ClientRpcSendParams"
           },
           {
@@ -776,49 +776,49 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.CustomMessagingManager",
+                "id": "api/Unity.Netcode.CustomMessagingManager",
                 "label": "CustomMessagingManager"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate",
+                "id": "api/Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate",
                 "label": "HandleNamedMessageDelegate"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate",
+                "id": "api/Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate",
                 "label": "UnnamedMessageDelegate"
               }
             ]
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.RpcAttribute",
+            "id": "api/Unity.Netcode.RpcAttribute",
             "label": "RpcAttribute"
           },
                {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.RpcDelivery",
+            "id": "api/Unity.Netcode.RpcDelivery",
             "label": "RpcDelivery"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ServerRpcAttribute",
+            "id": "api/Unity.Netcode.ServerRpcAttribute",
             "label": "ServerRpcAttribute"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ServerRpcParams",
+            "id": "api/Unity.Netcode.ServerRpcParams",
             "label": "ServerRpcParams"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ServerRpcReceiveParams",
+            "id": "api/Unity.Netcode.ServerRpcReceiveParams",
             "label": "ServerRpcReceiveParams"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.ServerRpcSendParams",
+            "id": "api/Unity.Netcode.ServerRpcSendParams",
             "label": "ServerRpcSendParams"
           }
         ]
@@ -830,12 +830,12 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkManager",
+            "id": "api/Unity.Netcode.NetworkManager",
             "label": "NetworkManager"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
+            "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
             "label": "ConnectionApprovedDelegate"
           }
         ]
@@ -848,23 +848,23 @@ module.exports = {
           
                 {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkVariableBase",
+            "id": "api/Unity.Netcode.NetworkVariableBase",
             "label": "NetworkVariableBase"
           },
        
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkVariable-1",
+            "id": "api/Unity.Netcode.NetworkVariable-1",
             "label": "NetworkVariable-1"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate",
+            "id": "api/Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate",
             "label": "OnValueChangedDelegate"
           },
                 {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkVariableReadPermission",
+            "id": "api/Unity.Netcode.NetworkVariableReadPermission",
             "label": "NetworkVariableReadPermission"
           },
         ],
@@ -882,12 +882,12 @@ module.exports = {
                 "items": [
                 {
                   "type": "doc",
-                  "id": "netcode-api/Unity.Netcode.NetworkList-1",
+                  "id": "api/Unity.Netcode.NetworkList-1",
                   "label": "NetworkList-1"
                 },
                 {
                   "type": "doc",
-                  "id": "netcode-api/Unity.Netcode.NetworkList-1.OnListChangedDelegate",
+                  "id": "api/Unity.Netcode.NetworkList-1.OnListChangedDelegate",
                   "label": "OnListChangedDelegate"
                 }
                 ]
@@ -899,12 +899,12 @@ module.exports = {
                 "items": [
                   {
                     "type": "doc",
-                    "id": "netcode-api/Unity.Netcode.NetworkListEvent-1",
+                    "id": "api/Unity.Netcode.NetworkListEvent-1",
                     "label": "NetworkListEvent-1"
                   },
                   {
                     "type": "doc",
-                    "id": "netcode-api/Unity.Netcode.NetworkListEvent-1.EventType",
+                    "id": "api/Unity.Netcode.NetworkListEvent-1.EventType",
                     "label": "EventType"
                   }
                 ]
@@ -920,22 +920,22 @@ module.exports = {
                 
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SceneEvent",
+                "id": "api/Unity.Netcode.SceneEvent",
                 "label": "SceneEvent"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SceneEventData",
+                "id": "api/Unity.Netcode.SceneEventData",
                 "label": "SceneEventData"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SceneEventData.SceneEventTypes",
+                "id": "api/Unity.Netcode.SceneEventData.SceneEventTypes",
                 "label": "SceneEventData.SceneEventTypes"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SceneEventProgressStatus",
+                "id": "api/Unity.Netcode.SceneEventProgressStatus",
                 "label": "SceneEventProgressStatus"
               },
       ]
@@ -949,17 +949,17 @@ module.exports = {
                
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.NetworkSceneManager",
+                "id": "api/Unity.Netcode.NetworkSceneManager",
                 "label": "NetworkSceneManager"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.NetworkSceneManager.SceneEventDelegate",
+                "id": "api/Unity.Netcode.NetworkSceneManager.SceneEventDelegate",
                 "label": "SceneEventDelegate"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler",
+                "id": "api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler",
                 "label": "VerifySceneBeforeLoadingDelegateHandler"
               },
       ]
@@ -972,12 +972,12 @@ module.exports = {
                
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SocketTask",
+                "id": "api/Unity.Netcode.SocketTask",
                 "label": "SocketTask"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SocketTasks",
+                "id": "api/Unity.Netcode.SocketTasks",
                 "label": "SocketTasks"
               },
   
@@ -991,66 +991,66 @@ module.exports = {
         "items": [
            {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.Arithmetic",
+            "id": "api/Unity.Netcode.Arithmetic",
             "label": "Arithmetic"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.AutoNetworkSerializable",
+            "id": "api/Unity.Netcode.AutoNetworkSerializable",
             "label": "AutoNetworkSerializable"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.INetworkSerializable",
+            "id": "api/Unity.Netcode.INetworkSerializable",
             "label": "INetworkSerializable"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkBuffer",
+            "id": "api/Unity.Netcode.NetworkBuffer",
             "label": "NetworkBuffer"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkReader",
+            "id": "api/Unity.Netcode.NetworkReader",
             "label": "NetworkReader"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkSerializer",
+            "id": "api/Unity.Netcode.NetworkSerializer",
             "label": "NetworkSerializer"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkWriter",
+            "id": "api/Unity.Netcode.NetworkWriter",
             "label": "NetworkWriter"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkWriterPool",
+            "id": "api/Unity.Netcode.NetworkWriterPool",
             "label": "NetworkWriterPool"
           },
          
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkBufferPool",
+            "id": "api/Unity.Netcode.NetworkBufferPool",
             "label": "NetworkBufferPool"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkReaderPool",
+            "id": "api/Unity.Netcode.NetworkReaderPool",
             "label": "NetworkReaderPool"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.PooledNetworkBuffer",
+            "id": "api/Unity.Netcode.PooledNetworkBuffer",
             "label": "PooledNetworkBuffer"
           },  {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.PooledNetworkReader",
+            "id": "api/Unity.Netcode.PooledNetworkReader",
             "label": "PooledNetworkReader"
           },  {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.PooledNetworkWriter",
+            "id": "api/Unity.Netcode.PooledNetworkWriter",
             "label": "PooledNetworkWriter"
           },     
          
@@ -1061,17 +1061,17 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SerializationManager",
+                "id": "api/Unity.Netcode.SerializationManager",
                 "label": "SerializationManager"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SerializationManager.CustomDeserializationDelegate-1",
+                "id": "api/Unity.Netcode.SerializationManager.CustomDeserializationDelegate-1",
                 "label": "CustomDeserializationDelegate-1"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.SerializationManager.CustomSerializationDelegate-1",
+                "id": "api/Unity.Netcode.SerializationManager.CustomSerializationDelegate-1",
                 "label": "CustomSerializationDelegate-1"
               }
             ]
@@ -1085,7 +1085,7 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkSpawnManager",
+            "id": "api/Unity.Netcode.NetworkSpawnManager",
             "label": "NetworkSpawnManager"
           }
         ]
@@ -1097,12 +1097,12 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.NetworkTransport",
+            "id": "api/Unity.Netcode.NetworkTransport",
             "label": "NetworkTransport"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.UnityTransport.ProtocolType",
+            "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
             "label": "UnityTransport.ProtocolType"
           }
         ]
@@ -1115,12 +1115,12 @@ module.exports = {
         "items": [
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.UnityTransport",
+            "id": "api/Unity.Netcode.UnityTransport",
             "label": "UnityTransport"
           },
           {
             "type": "doc",
-            "id": "netcode-api/Unity.Netcode.UnityTransport.ProtocolType",
+            "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
             "label": "ProtocolType"
           },
          
@@ -1131,23 +1131,23 @@ module.exports = {
             "items": [
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.Transports.UNET",
+                "id": "api/Unity.Netcode.Transports.UNET",
                 "label": "UNET"
               },
                     
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.Transports.UNET.UNetChannel",
+                "id": "api/Unity.Netcode.Transports.UNET.UNetChannel",
                 "label": "UNetChannel"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.Transports.UNET.UNetTransport",
+                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport",
                 "label": "UNetTransport"
               },
               {
                 "type": "doc",
-                "id": "netcode-api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode",
+                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode",
                 "label": "UNetTransport.SendMode"
               },
             ],
