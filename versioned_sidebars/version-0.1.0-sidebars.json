@@ -72,23 +72,23 @@
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/networkobject"
+          "id": "version-0.1.0/basics/networkobject"
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/networkbehavior"
+          "id": "version-0.1.0/basics/networkbehavior"
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/modularity"
+          "id": "version-0.1.0/basics/modularity"
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/networkvariable"
+          "id": "version-0.1.0/basics/networkvariable"
         },
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/object-visibility"
+          "id": "version-0.1.0/basics/object-visibility"
         },
         {
           "type": "doc",
@@ -134,7 +134,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/object-spawning"
+          "id": "version-0.1.0/basics/object-spawning"
         },
         {
           "type": "doc",
@@ -249,7 +249,7 @@
         "items": [
           {
             "type": "doc",
-            "id": "version-0.1.0/mlapi-basics/scene-management"
+            "id": "version-0.1.0/basics/scene-management"
           }
         ]
       },
@@ -260,7 +260,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.1.0/mlapi-basics/logging"
+          "id": "version-0.1.0/basics/logging"
         },
         {
           "type": "doc",
@@ -334,7 +334,7 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/multiplayer-game-arhitecture"
+              "id": "version-0.1.0/learn/multiplayer-game-architecture"
             },
             {
               "type": "doc",
@@ -447,7 +447,11 @@
           {
             "type": "doc",
             "id": "version-0.1.0/learn/dapper/lobbycreation"
-              }
+              },
+              {
+                "type": "doc",
+                "id": "version-0.1.0/learn/dapper/dapper-variable-permissions"
+                }
 
 
                 ]
