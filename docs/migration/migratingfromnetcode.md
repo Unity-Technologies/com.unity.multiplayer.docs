@@ -1,7 +1,7 @@
 ---
-id: migratingfromnetcode
-title: Update MLAPI to the Netcode for GameObjects package.
-description: Learn how to upgrade your current MLAPI installation to the Netcode for GameObjects package.
+id: migratingfrommlapi
+title: Update MLAPI to the  Netcode for GameObjects  Package
+description: Learn how to upgrade your current MLAPI installation to the  Netcode for GameObjects package.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 This upgrade guide targets projects using the MLAPI version 12.1.7 and earlier that were installed by the MLAPI installer or by cloning the source code from Github.
 
 :::important
-If your project uses a Package Manager version of Netcode for Gameobjects (Netcode), this guide is not relevant. Continue to getting started and 
+If your project uses a Package Manager version of  Netcode for GameObjects (Netcode), this guide is not relevant. 
 :::
 
 The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity ecosystem, we are providing it in a Unity package.
@@ -100,7 +100,7 @@ After you complete the **Update Script References** process of the patcher, the 
 
 Most likely at this point you will get a warning telling you that the script cannot be loaded. No need to panic, this is expected and your serialized data won't be lost. As soon as you finish up migrating and clean up all error messages your data will appear again.
 
- [NetworkManager component after upgrading](/img/upgrade-guide/networkmanager-component.png)
+ ![NetworkManager component after upgrading](/img/upgrade-guide/networkmanager-component.png)
 
 
 There is also a **Replace Type Names** button in the Patcher window. This step is optional. It automatically renames old type names in your scripts to the API changes made in Netcode, saving you some time to manually rename it. It performs a simple global replace of some of the type names. You may want to manually do this process instead if you want more control over changes.
@@ -156,7 +156,7 @@ After you are done upgrading your project, you can remove the Netcode Patcher pa
 After migrating and updating to the Netcode package, we recommend looking into the following:
 
 * <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
-* [First Steps with Netcode for Gameobjects](../tutorials/helloworld/helloworldintro.md) - Learn how to create your first networked game with a Hello World sample. If you have existing projects or are new to Netcode, this will give you an initial review of Netcode projects.
+* [First Steps with  Netcode for GameObjects](../tutorials/helloworld/helloworldintro.md) - Learn how to create your first networked game with a Hello World sample. If you have existing projects or are new to Netcode, this will give you an initial review of Netcode projects.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';

@@ -3,7 +3,7 @@ id: custom-serialization
 title: Custom Serialization
 ---
 
-When using `RPC`'s, `NetworkVariable`'s or any other Netcode for Gameobjects (Netcode) related task that requires serialization. The Netcode uses a default serialization pipeline that looks like this:
+When using `RPC`'s, `NetworkVariable`'s or any other Netcode for GameObjects (Netcode) related task that requires serialization. The Netcode uses a default serialization pipeline that looks like this:
 
 ``
 Custom Types => Built In Types => INetworkSerializable
@@ -45,7 +45,7 @@ With this flow, you can override **ALL** serialization for **ALL** types, even b
 To register a custom type, or override an already handeld type you need to register a handler pair.
 
 ```csharp
-// Tells the  Netcode how to serialize and deserialize Url in the future.
+// Tells the Netcode how to serialize and deserialize Url in the future.
 SerializationManager.RegisterSerializationHandlers<Url>((Stream stream, Url instance) =>
 {
     // This delegate gets ran when the Netcode want's to serialize a Url type to the stream.

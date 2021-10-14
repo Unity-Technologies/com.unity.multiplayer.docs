@@ -4,13 +4,13 @@ title: Getting Started with Boss Room
 description: Learn more about installing and running the Boss Room game sample.
 ---
 
-[Banner](/img/banner.png)
+![Banner](/img/banner.png)
 
 :::important
 This project is currently in early-access.
 :::
 
-Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and Netcode for Gameobjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
+Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and  Netcode for GameObjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
 
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
@@ -96,7 +96,7 @@ Running the game over internet currently requires either setting up a [Photon Tr
 
 #### Photon Transport
 
-[Photon Transport for Netcode](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
+[Photon Transport for Netcode for GameObjects](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
 
 :::unity Learn More
 See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/Photon-Realtime/Readme.md) for details.

@@ -46,7 +46,7 @@ module.exports = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Unity Multiplayer Networking',
+        title: 'Multiplayer Networking',
         logo: {
           alt: 'Unity',
           src: 'img/logo.png',
@@ -68,7 +68,7 @@ module.exports = {
                 label: 'Documentation',
               },
               {
-                to: 'netcode-api/introduction',
+                to: 'api/introduction',
                 label: 'API Reference',
               },
             ]
@@ -248,7 +248,7 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'Netcode for GameObjects Releases',
+                label: ' Netcode for GameObjects Releases',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {
@@ -296,7 +296,6 @@ module.exports = {
         '@docusaurus/preset-classic',
         {
           docs: {
-            remarkPlugins: [require('mdx-mermaid')],
             path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,
