@@ -9,7 +9,7 @@ description: An introduction to the messaging system in Unity MLAPI, including R
 There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
 :::
 
-The MLAPI has two parts to its messaging system: RPC messages and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
+ Netcode for GameObjects (Netcode) has two parts to its messaging system: RPC messages and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance.
 
 ## RPC Messages
 
@@ -21,7 +21,7 @@ For more information see the wikipedia entry on [Remote Procedure Call's](https:
 
 ## RPCs
 
-Unity MLAPI provides a refactored Remote Procedure Call (RPC) which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. MLAPI RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing previous MLAPI Convenience and Performance RPC.
+Unity Netcode provides a refactored Remote Procedure Call (RPC) which provides increased performance, significantly reduced boilerplate code, and extensibility for future-proofed code. Netcode RPC includes `ServerRpc` and `ClientRpc` to execute logic on the server and client-side. This provides a single performant unified RPC solution, replacing previous Netcode Convenience and Performance RPC's.
 
 See the following information:
 

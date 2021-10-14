@@ -4,7 +4,7 @@ title: RPC vs NetworkVariable
 sidebar_label: RPC vs NetworkVariable
 ---
 
-MLAPI has two main methods of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
+ Netcode for GameObjects (Netcode) has two main methods of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
 
 ## RPCs
 
