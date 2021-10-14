@@ -48,9 +48,9 @@ To add your clone project in Unity Hub version 3.0.0+:
  
 1. Open Unity Hub.
 1. From the dropdown arrow between **Open** and **New project**, click **Add project from disk**.
-1. Navigate to where the clone folder is saved, select `GoldenPath_<modulenumber>`, and click **Open**/**Select Folder**.
+1. Navigate to where the clone folder is saved, select `GoldenPath_&lt;modulenumber&gt;`, and click **Open**/**Select Folder**.
 
-The clone project should now appear in your projects list of the Unity Hub as `GoldenPath_<modulenumber>`.
+The clone project should now appear in your projects list of the Unity Hub as `GoldenPath_&lt;modulenumber&gt;`.
   
 </TabItem>
 
@@ -60,8 +60,8 @@ To add your clone project in previous Unity Hub versions:
  
 1. Open Unity Hub.
 2. Click **Add**.
-3. Navigate to where the clone folder is saved, select `GoldenPath_<modulenumber>`, and click **Open**/**Select Folder**.
+3. Navigate to where the clone folder is saved, select `GoldenPath_&lt;modulenumber&gt;`, and click **Open**/**Select Folder**.
 
-The clone project should now appear in your projects list of the Unity Hub as `GoldenPath_<modulenumber>`.
+The clone project should now appear in your projects list of the Unity Hub as `GoldenPath_&lt;modulenumber&gt;`.
 </TabItem>
 </Tabs>
