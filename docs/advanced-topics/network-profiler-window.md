@@ -3,7 +3,7 @@ id: networkprofiler-window
 title: NetworkProfiler Window
 ---
 
-The Netcode for Gameobjects (Netcode) `NetworkProfiler` is an Editor window for profiling bandwidth usage for a game. It uses the public Netcode `NetworkProfiler` API. The Editor Window is included in the Editor unityasset starting with version v1.3.0
+The Netcode for GameObjects (Netcode) `NetworkProfiler` is an Editor window for profiling bandwidth usage for a game. It uses the public Netcode `NetworkProfiler` API. The Editor Window is included in the Editor unityasset starting with version v1.3.0
 
 [Network Profiler Window](https://i.imgur.com/VwTLPGB.png)
 

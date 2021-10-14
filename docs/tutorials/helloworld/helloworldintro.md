@@ -1,16 +1,17 @@
 ---
 id: helloworldintro
-title: Your First Networked Game - Hello World
-description: Tutorial that explains creating a project, installing the Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game.
+title: Your First Networked Game "Hello World"
+description: Tutorial that explains creating a project, installing the  Netcode for GameObjects package, and creating the basic components for your first networked game.
 ---
 
 A **Hello World** program is a computer program that outputs or displays the message "Hello, World!". Normally, it is  the first program written by people learning to code. It is also used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
 
-This **Hello World** tutorial walks you through creating a project, installing the Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game. You can then continue using this project to learn more about Netcode through the multiple Golden Path series.
+This "Hello World" tutorial walks you through creating a project, installing the  Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game.
 
-## Prerequisites
+## Requirements
 
-A Netcode-supported version of Unity (2019.4+)
+This tutorial requires an Netcode-supported version of Unity (2019.4+).
+
 
 ## Create a new project in Unity
 
@@ -24,9 +25,9 @@ A Netcode-supported version of Unity (2019.4+)
 <iframe src="https://www.youtube.com/embed/NsfwlWaZ0ng?playlist=NsfwlWaZ0ng&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-## Add the Netcode package to your project
+## Import Netcode Package via URL
 
-Check the guides to [install](../../migration/installation.md), [migrate](../../migration/migratingtomlapi.md), or [update](../../migration/migratingfrommlapi.md) to the current Netcode package.
+See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package.
 
 ## The Basic Components of Netcode
 

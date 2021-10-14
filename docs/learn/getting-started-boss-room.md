@@ -10,7 +10,7 @@ description: Learn more about installing and running the Boss Room game sample.
 This project is currently in early-access.
 :::
 
-Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and Netcode for GameObjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
+Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and  Netcode for GameObjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
 
 You can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
@@ -27,7 +27,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 1. You can now add the Boss Room project to your Unity Hub.
 
 :::important Compatibility
-- Boss Room supports platforms supported by Netcode.
+- Boss Room supports those platforms supported by Netcode.
 - Boss Room is compatible with Unity 2020.3 and later.
 - Ensure your Unity installation includes the build support [module components](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html) for your OS.
 :::
@@ -42,7 +42,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 :::note
-The first time you open the project, Unity imports all assets, which will take longer than usual - this is normal. The Unity MLAPI v0.1.0 Netcodepackage is also installed with Boss Room.
+The first time you open the project, Unity will import all assets, which will take longer than usual - this is normal. The Unity MLAPI v0.1.0 Netcodepackage will also be installed with Boss Room.
 
 **Issues with importing due to parental control software**: If you have issues with importing you may want to check your DNS settings as some ISP parental controls  may block GitHub access. For example, see this information on [WebSafe](https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/td-p/4279652).
 :::
@@ -93,7 +93,7 @@ Running the game over internet currently requires either setting up a [Photon Tr
 
 #### Photon Transport
 
-[Photon Transport for Netcode](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
+[Photon Transport for Netcode for GameObjects](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
 
 :::unity Learn More
 See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/Photon-Realtime/Readme.md) for details.

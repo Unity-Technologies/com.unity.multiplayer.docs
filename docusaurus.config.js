@@ -46,7 +46,7 @@ module.exports = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Unity Multiplayer Networking',
+        title: 'Multiplayer Networking',
         logo: {
           alt: 'Unity',
           src: 'img/logo.png',
@@ -55,7 +55,7 @@ module.exports = {
           {
             label: 'Netcode for GameObjects',
             className: 'nav-break',
-            to: '/getting-started/about-mlapi',
+            to: '/getting-started/about',
             position: 'left',
             items: [
               {
@@ -64,11 +64,11 @@ module.exports = {
                 docsPluginId: 'releases'
               },
               {
-                to: 'getting-started/about-mlapi',
+                to: 'getting-started/about',
                 label: 'Documentation',
               },
               {
-                to: 'mlapi-api/introduction',
+                to: 'api/introduction',
                 label: 'API Reference',
               },
             ]
@@ -296,7 +296,6 @@ module.exports = {
         '@docusaurus/preset-classic',
         {
           docs: {
-            remarkPlugins: [require('mdx-mermaid')],
             path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,

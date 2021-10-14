@@ -12,12 +12,13 @@ This guide builds on the work we have already done in [Hello World](helloworldin
 - Permissions
 - Basic RPC use
 
-## Prerequisites
 
-* A Netcode-supported version of Unity (2019.4+)
-* A text editor that you use for writing code, such as VS Code, Atom, or Sublime.
-* This guide assumes you completed the [Your First Networking Game - Hello World](helloworldintro.md) guide before starting this one.
-* Have your **Hello World** project open in Unity, if you haven't already.
+## Requirements
+
+This tutorial requires an  Netcode for GameObjects (Netcode)-supported version of Unity (2019.4+).
+
+We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
+
 
 ## Adding Scripts to Hello World
 
@@ -41,7 +42,8 @@ This section adds scripts to Hello World that will contain the new features cove
 <summary>Click the arrow icon to show/hide the code.</summary>
 
 ```csharp
-using MLAPI;
+
+using Unity.Netcode;
 using UnityEngine;
 
 namespace HelloWorld
@@ -205,9 +207,10 @@ Now we will add some basic movement to the Hello World player we created in the 
 </summary>
 
 ```csharp
-using MLAPI;
-using MLAPI.Messaging;
-using MLAPI.NetworkVariable;
+
+using Unity.Netcode;
+using Unity.Netcode.Messaging;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace HelloWorld

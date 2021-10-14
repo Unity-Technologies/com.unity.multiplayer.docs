@@ -1,7 +1,7 @@
 ---
 id: goldenpath_foundation_module
 title:  Golden Path Foundation Module
-description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, installing Netcode for Gameobjects , creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
+description: Tutorial that explains how to create the foundation for all the future Golden path modules, the foundation module includes, creating a new project, Installing  Netcode for GameObjects ,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
 If you have already completed the Hello World guide, these steps may seem familiar. However, there are some minor differences, and this guide is what further Golden Path modules consider the foundation to build on. We recommend starting a new project as your Golden Path instead of using your Hello World project because of these small differences.
@@ -32,7 +32,7 @@ You will also need your path when you create a clone of the Project for future m
 
 ## Import Netcode Package via URL
 
-See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package, if you haven't already.
+See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package.
 
 ## Creating Network Manager and selecting the Transport
 
@@ -72,7 +72,7 @@ For more information on the relevant concepts introduced here please refer to th
 
 - [Network Manager](../../components/networkmanager.md)
 - [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
-- [Network Object](../../mlapi-basics/networkobject.md)
+- [Network Object](../../basics/networkobject.md)
 
 :::contribution Special Thanks
 This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 

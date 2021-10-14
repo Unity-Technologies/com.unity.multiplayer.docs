@@ -16,7 +16,7 @@ const features = [
     imageUrl: 'img/land-feature1b.jpg',
     description: (
       <>
-        We’re evolving our solution, Netcode for GameObjects, in the open to become a netcode foundation that you can depend on – 
+        We’re evolving our solution, built on Netcode for GameObjects, in the open to become a netcode foundation that you can depend on – 
         customizable and extensible to meet the needs of many multiplayer game types.
       </>
     ),
@@ -46,7 +46,7 @@ const features = [
     imageUrl: 'img/land-feature2b.jpg',
     description: (
       <>
-        <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize" target="_blank">Bitesize Sample</a> projects give you modular features to learn more about MLAPI and add to your multiplayer games. See what features are available including status effects, health tracking, game timers, and more.
+        <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize" target="_blank">Bitesize Sample</a> projects give you modular features to learn more about Netcode for GameObjects and add to your multiplayer games. See what features are available including status effects, health tracking, game timers, and more.
       </>
     ),
     link: (
