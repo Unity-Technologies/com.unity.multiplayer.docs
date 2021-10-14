@@ -13,7 +13,7 @@ Netcode for GameObjects (Netcode) is a mid-level networking library built for th
 
 </div>
 
-For a users view into Netcode, see [Learn](../learn/index.md) content including sample code, Boss Room tutorials, and community contributions including Dapper Dino's video series.
+For a users view into Netcode, see [Unity Multiplayer Resources](../learn/index.md) content including sample code, Boss Room tutorials, and community contributions including Dapper Dino's video series.
 
 :::unity Content Licenses
 All Netcode code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information. Sample code may include links to GitHub code repositories.
