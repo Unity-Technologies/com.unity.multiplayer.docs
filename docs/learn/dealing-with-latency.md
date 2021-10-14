@@ -216,6 +216,7 @@ This is where "reconciliation" (or "correction") comes in play. The client keeps
 This way, clients can stay server authoritative while still be reactive.
 
 <!-- TODO LATER -->
+<!-- I'm not adding more info on this until we have discussed this further SDK side. -->
 <!-- (NOTE SAM: this is a 1000 feet overview, this will need it's own page) -->
 <!-- TODO Harder to implement, need to take this into account in most of your gameplay code 
 Advanced games will have most of their world predicted, allowing the client and server to run simulations in parallel with the server correcting clients once in a while. -->
@@ -225,9 +226,10 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO Need determinism, else lots of corrections -->
 <!-- TODO Tentacular, if interract with other server driven elements, need these elements to be predicted as well -->
  <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
- 
+
+:::info
 There's no prediction implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
- 
+:::
 
 ### Action casting/anticipation
 There's multiple reasons for not having server authoritative gameplay code run both client side (with [prediction](#prediction)) and server side. For example, your simulation could be not deterministic enough to trust that the same action client side would happen the same server side. If I throw a grenade client side, I want to make sure the grenade's trajectory is the same server side. This often happens with world objects with a longer life duration, with greater chances of desyncing. In this case, the safest approach would be a server authoritative grenade, to make sure everyone has the same trajectory. But how do you make sure the throw feels responsive and that your client doesn't have to wait for a full RTT before seeing anything react to their input?
@@ -237,11 +239,23 @@ This is referenced as action casting or action anticipation. You're "casting" yo
 For your grenade, a client side "arm throw" animation could run, but the client would wait for the grenade to be spawned by the server. With normal latencies, this usually feels responsive. With higher abnormal latencies, you could run into the arm animating and no grenade appearing yet, but it would still feel responsive to users. It would feel strange, but at least it would feel responsive and less frustrating.
 In Boss Room for example, our movements use a small "jump" animation as soon as you click somewhere to make your character move. 
 <!-- todo gif/video -->
-The client then waits for the server to send position updates. The game still feels reactive, even though the character's movements are server driven. 
-<!-- (TODO code link for action anticipation) -->
+The client then waits for the server to send position updates. The game still feels reactive, even though the character's movements are server driven.
+
+:::info
+For example, Boss Room plays an animation on [Melee action](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Action/MeleeActionFX.cs) client side while waiting for the server to confirm the swing. If the server doesn't confirm, worst comes to worst we've played an animation for nothing and nothing else is desynced. Your players will be none the wiser.
+:::
+
 This is also useful for any action that needs to interract with the world. An ability that makes you invulnerable would need to be on the same time as other server events. If I predict my invulnerability, but a sniper headshots me before my input has reached the server, I'll see my invulnerable animation, but will still get killed. This is pretty frustrating for users. Instead, I could play a "getting invulnerable" animation with the character playing an animation, wait for the server to tell me "you're invulnerable now" and then display my invulnerable status. This way, if a sniper shoots me, the client will receive both the sniper shot and the invulnerability messages on the same timeline, without any desync. 
-<!-- TODO do a graphic on this. TODO this should be explored more in FPS sample.  -->
-<!-- TODO examples in boss room, with gifs comparing low and high latency (show don't tell) -->
+<!-- TODO do a sequence diagram for prediction vs action anticipation. TODO this should be explored more in FPS sample.  -->
+
+::info
+Top: player with zero artificial latency, doing a jump and moving almost instantly.
+Bottom: player with 1000ms RTT, doing the same. A jump (action anticipation) and moving when the server tells it too, a full RTT later.
+<!-- TODO Add side by side video for movement action anticipation, need to upload video -->
+
+Players don't have to wait for their mouse movements to be synced for AOE. They are independant. The click will trigger a server RPC (you can see the added delay on the bottom video)
+<!-- TODO Add side by side video for AOE, need to upload video -->
+:::
 
 ### Server side rewind 
 <!-- (todo right name vs source engine's lag compensation?) -->
@@ -249,9 +263,10 @@ This is also useful for any action that needs to interract with the world. An ab
 Server rewind is a security check on a client driven feature to make sure we stay server authoritative. A common usecase is snipers.
 If I aim at an enemy, I'm actually aiming at a ghost representation of that enemy that's RTT/2 ms late. If I click its head, the input sent to the server will take another RTT/2 ms to get to the server. That's a full RTT to miss my shot and is very frustrating.
 The solution for this is to use server rewind by "favoring the attacker". Psychology 101: it's way more frustrating for an attacker to always miss their shots than for a target to get shot behind a wall once in a while. The client sends along with its input a message telling the server "I have hit my target at time t". The server when receiving this at time t+RTT/2 will rewind its simulation at time t-RTT, validate the shot and correct the world at the latest time (ie kill the target). This allows for the player to feel like the world is consistent (my shots are hitting what they are supposed to hit) while still remaining secure and server authoritative.
-Note: the server rewind is done in the same frame.
+Note: the server rewind of the game's state is done all in the same frame, this is invisible to players.
 This is a server side check that allows validating a client telling you what to do.
 <!-- 
+I'm not adding more info on this until we have discussed this further SDK side.
 TODO shot behind a wall issue.  rewind limit to make it less bad
 TODO talk about mixing this with extrapolation to help the "shot behind a wall" issue
 TODO rocket league (https://www.youtube.com/watch?v=ueEmiDM94IE) uses this too, should see how that can change the teachings to be less FPS/sniper centric.
@@ -260,5 +275,6 @@ This causes a "correction" for the target, since they predicted wrong that they 
 TODO server rewind conflict resolution using buffering (see rocket league talk)
 TODO server rewind not necessary with cloud gaming 
 -->
-
+:::info
 There's no server side rewind implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
+:::
