@@ -325,7 +325,7 @@ module.exports = {
               
                 "collapsed": true,
                 "type": "category",
-                "label": "Latency Management",
+                "label": "ticks and update rate",
                 "items": [
                   {
                   "type": "doc",

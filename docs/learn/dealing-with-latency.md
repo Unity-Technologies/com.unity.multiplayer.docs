@@ -4,18 +4,22 @@ title: Tricks and patterns to deal with latency
 sidebar_label: Dealing with Latency
 description: Tricks and patterns to hide latency, what's acceptable to manage client side with client authority before sending it to the server, prediction, server rewind, action anticipation, etc.
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-:::info
-# TLDR
 
+## TLDR
+
+<!-- :::info -->
 Issue to solve | How to solve it
 --- | ---
 Security | Server authority
 Responsiveness | Prediction, action casting, client authority
 Accuracy/consistency | server rewind, server authority
-:::
+<!-- ::: -->
 
-We saw in our [latency page](lagandpacketloss.md) how waiting for your server's response makes your game feel unresponsive.
+---
+
+We saw in our [latency](lagandpacketloss.md) and [tick](../reference/glossary/ticks-and-update-rates) pages how waiting for your server's response makes your game feel unresponsive.
 Latency will destroy your gameplay experience and make your game frustrating. It doesn't take much to make a multiplayer game unplayable. Add 200ms between your inputs and what you see on your screen and you'll want to throw your computer through the window.
 <!-- todo add jil drawing for latency frustrating -->
 
@@ -42,16 +46,16 @@ This means any interactions I'm making on that object will see a delayed effect.
 In summary, you want: Accuracy, Security and Responsiveness
 :::
 
-# Authority
-## Server authoritative games
+## Authority
+### Server authoritative games
 The authority is who has the right to make final gameplay decisions over objects. A server authoritative game has all its final gameplay decisions executed by the server.
 
-### Good for world consistency
+#### Good for world consistency
 An advantage of server authoritative games is your world's consistency. Since all gameplay decisions (ex: a player opens a door, a bot shoots the player) are made by the same node on the network (the server), you're sure these decisions are made at the same time. A client authoritative game would have decisions made on client A and other decisions on client B, with both being separated by RTT ms of internet lag. Player A killing player B while player B was already hiding behind cover would cause consistency issues. Having all this gameplay logic on one single node (the server) makes these kinds of considerations irrelevant, since everything happens in the same execution context.
 
 <!-- TODO jil drawing for client vs server authority desync -->
 
-### Good for security
+#### Good for security
 Critical data (like your character health or position for example) could be **server authoritative**, so cheaters can't mess with it. In that instance, the server will have the final say on that data's value. You wouldn't want players on their clients being able set their health (or even worst, other player's health) at will.
 
 :::info
@@ -67,20 +71,20 @@ Note here an input from a client can be anything, from a user interacting with a
 Let's assume our game is server authoritative for now 
 :::
 
-### Issue: reactivity
+#### Issue: reactivity
 An issue with server authority is you're waiting for your server to tell you to update your world. This means that if you send an input to the server and wait for the server to tell you your position change, you'll need to wait for a full **RTT** before you see the effect. There are [patterns](#patterns-to-solve-these-issues) you can use to solve this issue while still remaining server authoritative.
 
-## Client authority
+### Client authority
 In a **client authoritative** (or **client driven**) game using Netcode for GameObjects, you still have a server that's used to share world state, but clients will own and impose their reality.
 
-### Good for reactivity
+#### Good for reactivity
 This can often be used when you trust your users or their devices. For example, you could have a client tell the server "I killed player x" instead of *"I clicked in that direction" and have the server simulate that action to return the result*. This way, your client could show the death animation for your ennemy as soon as you clicked, since the death would already be confirmed and owned by your client. The server would only relay that information back to other users.
 
-### Issue: world consistency
+#### Issue: world consistency
 There's possible sync issues with client authoritative games. If your character moves client side thinking everything is ok and an enemy has stunned it in the meantime, that enemy will have stunned you earlier on a different version of the world as the one you're seeing. Let's remember what we saw in our [latency page](lagandpacketloss.md). If I let my client make an authoritative decision using outdated information, you'll run into desyncs, overlapping physics objects, and the such.
 
 :::info
-### Owner authority vs All clients authority
+#### Owner authority vs All clients authority
 Having multiple clients having the ability to affect the same shared object can become a mess real fast.
 <!-- todo jil drawing -->
 To avoid this, it's highly recommended to use client **owner** authority, which would allow only the owner of an object to affect it. Since ownership is controlled server side in Netcode, there's no possibility of two clients running into a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software). To allow two clients to affect the same object, you'd need to ask the server for ownership, wait for it, then execute the client authoritative logic you want.
@@ -88,21 +92,19 @@ To avoid this, it's highly recommended to use client **owner** authority, which 
 
 <!-- todo jil drawings -->
 
-### Issue: Security
+#### Issue: Security
 Client authority is a pretty dangerous door to leave open on your server, since any malicious player could forge messages to say "kill player a, b, c, d, e, f, g" and win the game. It is pretty useful though for reactivity. Since the client is taking all the important gameplay decisions, it can display the result of user inputs as soon as they happen instead of waiting a few hundred milliseconds.
 When you don't think there's any reason for your players to cheat, client authority can be a great way to have reactivity without some of the complexity added with techniques like [input prediction](#prediction). 
 <!-- (NOTE sam: I'll write on client prediction, even though it's tech that's not available in Netcode. This has the potential to confuse users, but at least they'll know it's there). -->
 Another way of solving this issue in a client authoritative game is using soft validation server side. Instead of completely doing a simulation server side, the server will only do basic validation. It could for example do range checks to make sure a player isn't teleporting to places it shouldn't. This would usually be acceptable in a [PvE](https://en.wikipedia.org/wiki/Player_versus_environment) game. However any [PvP](https://en.wikipedia.org/wiki/Player_versus_player) will usually require server authority.
 <!-- (Note sam: there's way more stuff to write about this with MMOs and the such. Should talk about how client authority allows to reduce load on server and spread load on clients) -->
 
-:::info
  Summary | -
  --- | ---
  Server authority | More secure. Less reactive. No sync issues.
  Client authority | Less secure. More reactive. Possible sync issues.
-:::
 
-## Boss Room's authority
+### Boss Room's authority
 <!-- todo jil drawings for different actions -->
 
 Boss Room's [actions](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Assets/BossRoom/Scripts/Server/Game/Action) uses a server authoritative model. The client sends inputs (mouse clicks for the character's destination) and the server sends back positions. This way, every features in the world are on the same world time. If the Boss charges and bumps you, you'll see your character fly away as soon as the boss touches you, not pass through you and then see you fly away. 
@@ -136,7 +138,7 @@ Rule of thumb: A good way to think about your game architecture at first is to h
 A pattern we've seen that helped when not sure about using client or server authority is to implement your game behaviour not by server/client, but authoritative/non-authoritative. By abstracting this to authority instead of isServer/isClient, your code can easily be swapped to client or server authority without too many refactors.
 
 ```cs
-// swap
+// before
 if (isServer)
 { 
     // take an authoritative decision
@@ -147,7 +149,7 @@ if (isClient) // each of these need to be swapped if switching authority
     // ... 
 }
 
-// for
+// after
 bool HasAuthority => isServer; // can be set for your whole class or even project
 // ...
 if (HasAuthority)
@@ -162,14 +164,14 @@ if (!HasAuthority)
 ```
 :::
 
-# Patterns to solve latency issues in a server authoritative game:
+## Patterns to solve latency issues in a server authoritative game:
 
- Summary | -  
- --- | ---
- Client authority | Less secure. More reactive. Possible sync issues.
- Action anticipation | More secure. Somewhat reactive. Possible visual sync issues.
- Prediction | More secure. More reactive. Correction on sync issues. Complex and tentacular.
- Server side rewind | More secure. More accurate by favoring the attacker. Shot behind a wall issue.
+Summary | 
+--- | ---
+Client authority | Less secure. More reactive. Possible sync issues.
+Action anticipation | More secure. Somewhat reactive. Possible visual sync issues.
+Prediction | More secure. More reactive. Correction on sync issues. Complex and tentacular.
+Server side rewind | More secure. More accurate by favoring the attacker. Shot behind a wall issue.
 
 ### Allow low impact client authority
 
@@ -194,19 +196,19 @@ If a player selects an imp, the selection circle will be client driven, it won't
 :::note
 The above examples are atomic actions. They happen on click.
 To do continuous client driven actions, there's a few more considerations to take.
-You need to keep a local variable to keep track of your client authoritative data. You then need to make sure you don't send ServerRpcs (containing your authoritative state) when no data has changed and do dirty checks. You'd need to send it on tick or at worst on FixedUpdate. Sending on Update() would spam your connection.
+- You need to keep a local variable to keep track of your client authoritative data. 
+- You then need to make sure you don't send ServerRpcs (containing your authoritative state) when no data has changed and do dirty checks. 
+- You'd need to send it on tick or at worst on FixedUpdate. Sending on Update() would spam your connection.
+
+
 A sample for a ClientNetworkTransform (can be found in com.unity.netcode.gameobjects/Samples/ClientNetworkTransform/Scripts/ClientNetworkTransform.cs) has been created, so you don't have to reimplement this yourself for transform updates. A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) has been created on how to use it. See [movement script](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/main/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs).
 :::
 
 :::info
-A rule of thumb here is to ask yourself: 
-
-**could the server correct me on this?**
-
-If it can, use server authority.
+A rule of thumb here is to ask yourself: ```Could the server correct me on this?```. If it can, use server authority.
 :::
 
-### Prediction
+### Client Side Prediction
 Predicting what the server will send you.
 
 Prediction is a very common way of making an educated "guess" as to what the server will send you. Your game can stay server authoritative, but instead of waiting a full RTT for your action results, your client can simulate and run gameplay code of what it thinks will happen as soon as your players trigger inputs. For example, instead of waiting a full RTT for the server to tell me where I moved, I can directly update my movements according to my inputs. This is very close to client authority, except with this technique you can be corrected:
@@ -214,6 +216,20 @@ The world (and especially the internet) is messy. A client could guess wrong. An
 With the movement example, I could have an enemy come and stun me while I thought I could still move. 200 ms latency is enough time for a stun to happen and create a discrepancy between the move I "predicted" client side and what really happened server side.
 This is where "reconciliation" (or "correction") comes in play. The client keeps a history of the positions it predicted. Being still server authoritative, the client still receives (outdated by x ms of latency) positions coming from the server. The client will validate whether the positions it predicted in the past fits with the old positions coming from the server. The client can then detect discrepancies and "correct" its position according to the server's authoritative position.
 This way, clients can stay server authoritative while still be reactive.
+
+:::info
+#### Input Prediction vs World Prediction vs Extrapolation
+Local input prediction will predict your state using your local player's inputs. 
+
+You can also predict other objects in your world by predicting from the last server data your received.
+Knowing an AI’s state at frame i, we can predict its state at time i+1 assuming it’s deterministic enough to run the same both client side and server side.
+
+Extrapolation is an attempt to estimate a future game state, without taking into account latency. On receipt of a packet from the server, the position of an object is updated to the new position. Awaiting the next update, the next position is extrapolated based on the current position and the movement at the time of the update. 
+
+The client will normally assume that a moving object will continue in the same direction. When a new packet is received, the position may be updated.
+
+For Netcode for gameobjects (Netcode), a basic extrapolation implementation has been provided in [`NetworkTransform`](../../components/networktransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
+:::
 
 <!-- TODO LATER -->
 <!-- I'm not adding more info on this until we have discussed this further SDK side. -->
@@ -225,14 +241,14 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO correction can be teleport or interpolation. -->
 <!-- TODO Need determinism, else lots of corrections -->
 <!-- TODO Tentacular, if interract with other server driven elements, need these elements to be predicted as well -->
- <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
+<!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
 
 :::info
 There's no prediction implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
 :::
 
-### Action casting/anticipation
-There's multiple reasons for not having server authoritative gameplay code run both client side (with [prediction](#prediction)) and server side. For example, your simulation could be not deterministic enough to trust that the same action client side would happen the same server side. If I throw a grenade client side, I want to make sure the grenade's trajectory is the same server side. This often happens with world objects with a longer life duration, with greater chances of desyncing. In this case, the safest approach would be a server authoritative grenade, to make sure everyone has the same trajectory. But how do you make sure the throw feels responsive and that your client doesn't have to wait for a full RTT before seeing anything react to their input?
+### Action Anticipation
+There's multiple reasons for not having server authoritative gameplay code run both client side (with [prediction](#client-side-prediction)) and server side. For example, your simulation could be not deterministic enough to trust that the same action client side would happen the same server side. If I throw a grenade client side, I want to make sure the grenade's trajectory is the same server side. This often happens with world objects with a longer life duration, with greater chances of desyncing. In this case, the safest approach would be a server authoritative grenade, to make sure everyone has the same trajectory. But how do you make sure the throw feels responsive and that your client doesn't have to wait for a full RTT before seeing anything react to their input?
 For a lot of games, when triggering an action, you'll see an animation/VFX/sound trigger before the action is actually executed. A trick often used for lag hiding is to trigger a non-gameplay impacting animation/sound/VFX on player input (immediately), but still wait for the server authoritative gameplay elements to drive the rest of the action. If the server has a different state (your action was cancelled server side for some reason), the worst that happens client side is you've played a useless quick animation. It's easy to just let the animation finish or cancel it.
 This is referenced as action casting or action anticipation. You're "casting" your action client side while waiting for the server to send the gameplay information you need.
 <!-- todo jil drawing -->
@@ -248,7 +264,7 @@ For example, Boss Room plays an animation on [Melee action](https://github.com/U
 This is also useful for any action that needs to interract with the world. An ability that makes you invulnerable would need to be on the same time as other server events. If I predict my invulnerability, but a sniper headshots me before my input has reached the server, I'll see my invulnerable animation, but will still get killed. This is pretty frustrating for users. Instead, I could play a "getting invulnerable" animation with the character playing an animation, wait for the server to tell me "you're invulnerable now" and then display my invulnerable status. This way, if a sniper shoots me, the client will receive both the sniper shot and the invulnerability messages on the same timeline, without any desync. 
 <!-- TODO do a sequence diagram for prediction vs action anticipation. TODO this should be explored more in FPS sample.  -->
 
-::info
+:::info
 Top: player with zero artificial latency, doing a jump and moving almost instantly.
 Bottom: player with 1000ms RTT, doing the same. A jump (action anticipation) and moving when the server tells it too, a full RTT later.
 <!-- TODO Add side by side video for movement action anticipation, need to upload video -->
@@ -257,8 +273,7 @@ Players don't have to wait for their mouse movements to be synced for AOE. They 
 <!-- TODO Add side by side video for AOE, need to upload video -->
 :::
 
-### Server side rewind 
-<!-- (todo right name vs source engine's lag compensation?) -->
+### Server Side Rewind (also called Lag Compensation)
 
 Server rewind is a security check on a client driven feature to make sure we stay server authoritative. A common usecase is snipers.
 If I aim at an enemy, I'm actually aiming at a ghost representation of that enemy that's RTT/2 ms late. If I click its head, the input sent to the server will take another RTT/2 ms to get to the server. That's a full RTT to miss my shot and is very frustrating.
@@ -278,3 +293,12 @@ TODO server rewind not necessary with cloud gaming
 :::info
 There's no server side rewind implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
 :::
+
+**Other syncing techniques not relevant to Netcode for GameObjects**
+Deterministic lockstep
+
+A method of networking a system from one computer to another by sending only the inputs that control that system, rather than the state of that system. This allows for a big amount of entities to be synced (think RTS with hundreds of units)
+
+Deterministic rollback
+
+An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup enables a more responsive game than lockstep. It’s relatively inexpensive.
