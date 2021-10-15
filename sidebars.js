@@ -339,7 +339,11 @@ module.exports = {
               "type": "doc",
               "id": "learn/clientside_interpolation"
                 },
-              ],
+            {
+              "type": "doc",
+              "id": "learn/dealing-with-latency"
+                },
+          ],
             },
 
             {
