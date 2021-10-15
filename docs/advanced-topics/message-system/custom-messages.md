@@ -1,10 +1,10 @@
 ---
 id: custom-messages
 title: Custom Messages 
-description: A brief explanation of Custom Messages use in MLAPI covering Named and Unnamed messages.
+description: A brief explanation of Custom Messages use in Netcode for GameObjects (Netcode) covering Named and Unnamed messages.
 ---
 
-If you do not want to use MLAPI's messaging system, you do not have to. You can use a thin layer called "Custom Messages" to implement your own behaviour and add custom targeting. They are unbound to any game object. Custom messages can be used in combination with [RPC messages](../messaging-system.md). 
+If you do not want to use the Netcode for GameObjects (Netcode) messaging system, you do not have to. You can use a thin layer called "Custom Messages" to implement your own behaviour and add custom targeting. They are unbound to any game object. Custom messages can be used in combination with [RPC messages](../messaging-system.md). 
 
 Custom messages comes in two forms: named and unnamed. 
 
