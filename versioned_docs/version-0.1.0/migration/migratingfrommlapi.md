@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 This upgrade guide targets projects using the MLAPI version 12.1.7 and earlier that were installed by the MLAPI installer or by cloning the source code from Github.
 
 :::important
-If your project uses a Package Manager version of Unity MLAPI, this guide is not relevant. Continue to getting started and 
+If your project uses a Package Manager version of Unity MLAPI, this guide is not relevant. 
 :::
 
 The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity ecosystem, we are providing it in a Unity package.
