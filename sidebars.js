@@ -329,7 +329,7 @@ module.exports = {
                 "items": [
                   {
                   "type": "doc",
-              "id": "reference/glossary/network-latency-management"
+              "id": "reference/glossary/ticks-and-update-rates"
             },
             {
               "type": "doc",

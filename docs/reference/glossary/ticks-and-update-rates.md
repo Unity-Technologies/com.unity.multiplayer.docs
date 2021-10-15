@@ -1,6 +1,6 @@
 ---
-id: network-latency-management
-title: Network Latency Management
+id: ticks-and-update-rates
+title: Ticks and update rates
 ---
 
 Every player is affected by a certain amount of latency, which is the result of the distance to the server or host, the number of hops a packet has to make, and the server's tick rate and update rate.
