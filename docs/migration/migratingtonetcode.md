@@ -3,10 +3,10 @@ id: migratingtonetcode
 title: Migrating From UNet to  Netcode for GameObjects
 ---
 
-Use this step-by-step guide to migrate your projects from Unity UNet to  Netcode for GameObjects (Netcode) Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
+Use this step-by-step guide to migrate your projects from Unity UNet to Netcode for GameObjects (Netcode) Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 :::note
-If you need help, contact us in the [Unity Netcode Discord](https://discord.gg/buMxnnPvTb).
+If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
 :::
 
 ## Current limitations
@@ -15,10 +15,8 @@ Review the following limitations for upgrade and migrations from previous versio
 
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
 - Errors for RPC postfix naming patterns do not show in your IDE. 
-- Netcode RPCs do not support arrays yet.
 - Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for Netcode.
 - Prefabs need to be added to the prefab registration list for Netcode.
-- Connection callbacks do not happen in single player or host mode.
 - Matchmaking is not available in Netcode at this time.
 
 ## Backup your project
@@ -40,25 +38,23 @@ See [Installation](installation.md) for more information.
 If you install Git for the first time, you will need to restart your system.
 :::
 
-## Update Invoking
+## RPC Invoking
 
-Use the `Invoke` method on the `NetworkBehaviour` to invoke Netcode, instead of calling the method directly like in UNet.
-
-See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
+Invoking an RPC works the same way as in UNet. Just call the function and it will send an RPC.
 
 ##  NetworkManager 
 
 UNET’s `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
 
 :::note
-You cannot inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET. 
+We recommend you don't inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET. 
 :::
 
 ## Replace NetworkManagerHUD 
 
 Currently Netcode offers no replacment for the NetworkMangerHUD.
 
-The [Community Contributions Extension Package](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
+The [Community Contributions Extension Package](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.community.netcode.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
 
 ## Replace NetworkIdentity with NetworkObject
 
@@ -124,7 +120,7 @@ public class MyUnetClass : NetworkBehaviour
 public class MyMLAPIExample : NetworkBehaviour
 {
     public NetworkVariable<float> MyNetworkVariable = new NetworkVariable<float>();
-    public override void NetworkStart()
+    public override void OnNetworkSpawn()
     {
         ExampleClientRpc(10f);
         ExampleServerRpc(10f);
@@ -146,32 +142,6 @@ public class MyMLAPIExample : NetworkBehaviour
 </Tabs>
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
-
-## NetworkStart
-
-In Netcode, `RPC`s and `NetworkVariable` changes will not be replicated if they are done before the `NetworkStart` method is called. The `NetworkStart` method is called when the `NetworkObject` is ready for network use.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-      {label: ' Netcode for GameObjects Example', value: 'tab1'},
-  ]}>
-
-<TabItem value="tab1">
-
-```csharp
-public class MyMLAPIExample : NetworkBehaviour
-{
-    public override NetworkStart()
-    {
-        // This object is now spawned across the network and RPC's can be sent.
-    }
-}
-```
-</TabItem>
-
-</Tabs>
 
 ## Replace SyncVar 
 
@@ -331,7 +301,7 @@ void OnIntChanged(NetworkListEvent<int> changeEvent)
 
 ## Replace Command/ClientRPC 
 
-UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the Netcodex which works in a similar way.
+UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode which works in a similar way.
 
 <Tabs
   className="unique-tabs"
@@ -376,7 +346,7 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the Netcodex
 
 
 :::note
-In Netcode RPC function names must end with a `ClientRpc/ServerRpc` suffix.
+In Netcode, RPC function names must end with a `ClientRpc/ServerRpc` suffix.
 :::
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
@@ -422,7 +392,6 @@ Server-only example:
 
 ```csharp
 using Unity.Netcode;
-using Unity.Netcode.Spawning;
 
 private void Setup() 
 {
@@ -430,7 +399,7 @@ private void Setup()
     NetworkManager.Singleton.StartHost();
 }
 
-private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkManager.ConnectionApprovedDelegate callback)
+private void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager.ConnectionApprovedDelegate callback)
 {
     //Your logic here
     bool approve = true;
@@ -559,7 +528,7 @@ See [Object Visbility](../mlapi-basics/object-visibility.md) to learn more about
 
 ## Update SceneManagement
 
-In MLAPI, scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
+In Netcode, scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
 
 <Tabs
   className="unique-tabs"
@@ -584,7 +553,7 @@ public void ChangeScene()
 ```csharp
 public void ChangeScene()
 {
-    NetworkSceneManager.SwitchScene("MyNewScene");
+    NetworkSceneManager.LoadScene("MyNewScene", LoadSceneMode.Single);
 }
 ```
 </TabItem>
@@ -593,7 +562,7 @@ public void ChangeScene()
 
 ## Update ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
 
-MLAPI currently does not offer a replacement for marking a function with an attribute so that it only runs on the server or the client. You can manually return out of the function instead.
+Netcode currently does not offer a replacement for marking a function with an attribute so that it only runs on the server or the client. You can manually return out of the function instead.
 
 <Tabs
   className="unique-tabs"
@@ -691,7 +660,7 @@ public class DamageClass : NetworkBehaviour
 
 ## Network Discovery
 
-Netcode does not provide Network Discovery. The UNet Network Discovery is a standalone component that can be used with any networking solution. You can use the UNet Network Discovery to discover a broadcasting Netcode host and then connect to it with MLNetcodeAPI.
+Netcode does not provide Network Discovery. The Contributions repository provides an example implementation for [NetworkDiscovery] (https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/com.community.netcode.extensions/Runtime/NetworkDiscovery).
 
 ## See Also
 
