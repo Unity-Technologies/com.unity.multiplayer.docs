@@ -7,6 +7,84 @@ The serialization and deserialization is done via `FastBufferWriter` and `FastBu
 
 There's a trade-off of CPU usage vs bandwidth in using this: Writing individual fields is slower (especially when it includes operations on unaligned memory), but allows the buffer to be filled more efficiently.
 
+
+**Example**
+
+```csharp
+struct Message
+{
+    private float f;
+    private bool b;
+    private int i;
+
+    void Serialize(ref FastBufferWriter writer);
+}
+```
+
+Serialize can be implemented in two ways:
+
+```csharp
+void Serialize(ref FastBufferWriter writer)
+{
+    writer.WriteSingle(f);
+    writer.WriteBool(b);
+    writer.WriteInt32(i);
+}
+```
+
+```csharp
+void Serialize(ref FastBufferWriter writer)
+{
+    writer.WriteValue(this);
+}
+```
+This creates efficiently packed data in the message, and can be further optimized by using `WriteSinglePacked()` and `WriteInt32Packed()`, but it has two downsides:
+- First, it involves more method calls and more instructions, making it slower. 
+- Second, that it creates a greater opportunity for the serialize and deserialize code to become misaligned, since they must contain the same operations in the same order.
+
+The latter can also be improved by optimizing the struct itself for alignment and optimizing the size of the values themselves, changing the definition to:
+
+```csharp
+struct Message
+{
+    private float f;
+    private short i;
+    private bool b;
+
+    void Serialize(ref FastBufferWriter writer);
+}
+```
+
+This will result in a more efficiently-packed buffer, though still not quite as efficient as using packed values.
+
+You can also use a hybrid approach if you have a few values that will need to be packed and several that won't:
+
+```C#
+struct Message
+{
+    struct Embedded
+    {
+        private byte a;
+        private byte b;
+        private byte c;
+        private byte d;
+    }
+    public Embedded embedded;
+    public float f;
+    public short i;
+
+    void Serialize(ref FastBufferWriter writer)
+    {
+        writer.WriteValue(embedded);
+        writer.WriteSinglePacked(f);
+        writer.WriteInt32Packed(i);
+    }
+}
+```
+
+This allows the four bytes of the embedded struct to be rapidly serialized as a single action, then adds the compacted data at the end, resulting in better bandwidth usage than serializing the whole struct as-is, but better performance than serializing it one byte at a time.
+
+
 ## FastBufferWriter and FastBufferReader
 
 `FastBufferWriter` and `FastBufferReader` are replacements for the old `NetworkWriter` and `NetworkReader`. They have much the same interface, but there are some critical differences:
