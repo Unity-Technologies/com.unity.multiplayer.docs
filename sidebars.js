@@ -109,6 +109,18 @@ module.exports = {
       {
         "collapsed": true,
         "type": "category",
+        "label": "Relay",
+        "items": [
+          {
+            "type": "doc",
+            "id": "relay/relay"
+          },
+        ]
+      },
+
+      {
+        "collapsed": true,
+        "type": "category",
         "label": "Transports",
         "items": [
           {
