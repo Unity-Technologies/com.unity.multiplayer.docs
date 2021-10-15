@@ -1,5 +1,5 @@
 ---
-id: about-mlapi
+id: about
 title: Getting Started with MLAPI
 ---
 

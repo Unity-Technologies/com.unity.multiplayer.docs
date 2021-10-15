@@ -1,6 +1,6 @@
 ---
-id: mlapi_starting_out
-title:  Learning with MLAPI Introduction
+id: starting_out
+title:  Learning with Golden Path Introduction
 description: Introduction to the Golden Path series, explaining the underliying aim of the series 
 ---
 
@@ -22,11 +22,9 @@ In the context of software or information modelling, a Golden Path (sometimes ca
 These tutorials requires an MLAPI-supported version of Unity (2019.4+).
 
 
-
 <div class="table-columns-plain">
 
  
-
 |<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_foundation_module">Golden Path Foundation Module</a></div>| <div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_one"> Golden Path Module One</a></div>| 
 | --- | --- |
 | Creating a new project<br/>  Installing MLAPI<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement<br/>Permissions <br/>Basic RPC use  |
