@@ -5,7 +5,7 @@
 */
 
 module.exports = {
-  mlapi: [
+  Netcode: [
     {
       "type": "doc",
       "id": "getting-started/about"
@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "migration/migratingtomlapi"
+        "id": "migration/migratingtonetcode"
       },
       {
         "type": "doc",
@@ -48,7 +48,7 @@ module.exports = {
   {
     "collapsed": true,
     "type": "category",
-    "label": "Learning MLAPI with Goldenpath",
+    "label": "Learning Netcode with Goldenpath",
     "items": [
       {
         "type": "doc",
@@ -69,18 +69,7 @@ module.exports = {
     ],
    
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Local Iteration ",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/local_iteration_series/local_iteration_testing_locally"
-      }
-    ],
-  },
-  {
+    {
     "collapsed": true,
     "type": "category",
     "label": "Networking",
@@ -88,10 +77,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/max-players"
       },
       {
         "type": "doc",
@@ -292,7 +277,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/scene-management"
+        "id": "basics/scene-management"
       },
     ]
   },
@@ -303,7 +288,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "mlapi-basics/logging"
+        "id": "basics/logging"
       },
       {
         "type": "doc",
@@ -493,8 +478,11 @@ module.exports = {
           {
           "type": "doc",
           "id": "learn/dapper/lobbycreation"
-            },
-
+          },
+          {
+          "type": "doc",
+          "id": "learn/dapper/dapper-variable-permissions"
+          },
 
                 ]
         },
@@ -506,4 +494,651 @@ module.exports = {
     },
   ],
 
+  
+  api :
+  [
+    {
+      "type": "doc",
+      "id": "api/introduction"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Netcode",
+      "items": [
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode",
+          "label": "Netcode APIs",
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.INetworkUpdateSystem",
+          "label": "INetworkUpdateSystem"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkBehaviour",
+          "label": "NetworkBehaviour"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkBehaviourUpdater",
+          "label": "NetworkBehaviourUpdater"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkObject",
+          "label": "NetworkObject"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkObject.SpawnDelegate",
+          "label": "SpawnDelegate"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkObject.VisibilityDelegate",
+          "label": "VisibilityDelegate"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkTickSystem",
+          "label": "NetworkTickSystem"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkUpdateLoop",
+          "label": "NetworkUpdateLoop"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkUpdateStage",
+          "label": "NetworkUpdateStage"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.IHasUpdateStage",
+          "label": "IHasUpdateStage"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
+          "label": "INetworkPrefabInstanceHandler"
+        },
+     
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
+          "label": "INetworkStreamDriverConstructor"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkDelivery",
+          "label": "NetworkDelivery"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkEvent",
+          "label": "NetworkEvent"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.NetworkPrefabHandler",
+          "label": "NetworkPrefabHandler"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.StreamExtensions",
+          "label": "StreamExtensions"
+        },
+
+        
+      ],
+    },
+    {
+    "collapsed": true,
+        "type": "category",
+        "label": "Time",
+        "items": [
+       
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkTime",
+            "label": "NetworkTime"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkTimeSystem",
+            "label": "NetworkTimeSystem"
+          },
+        ],
+    },
+     {
+        "collapsed": true,
+        "type": "category",
+        "label": "Collections",
+        "items": [
+       
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.FixedQueue-1",
+            "label": "FixedQueue-1"
+          },
+        ]
+      },
+       {
+        "collapsed": true,
+        "type": "category",
+        "label": "Configuration",
+        "items": [
+                {
+            "type": "doc",
+            "id": "api/Unity.Netcode.HashSize",
+            "label": "HashSize"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkConfig",
+            "label": "NetworkConfig"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Connection",
+        "items": [
+ 
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkClient",
+            "label": "NetworkClient"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.PendingClient",
+            "label": "PendingClient"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.PendingClient.State",
+            "label": "PendingClient.State"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Exceptions",
+        "items": [
+   
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.InvalidChannelException",
+            "label": "InvalidChannelException"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.InvalidParentException",
+            "label": "InvalidParentException"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkConfigurationException",
+            "label": "NetworkConfigurationException"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NotListeningException",
+            "label": "NotListeningException"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NotServerException",
+            "label": "NotServerException"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.SpawnStateException",
+            "label": "SpawnStateException"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.VisibilityChangeException",
+            "label": "VisibilityChangeException"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Logging",
+        "items": [
+ 
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.LogLevel",
+            "label": "LogLevel"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkLog",
+            "label": "NetworkLog"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Messaging",
+        "items": [
+ 
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ClientRpcAttribute",
+            "label": "ClientRpcAttribute"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ClientRpcParams",
+            "label": "ClientRpcParams"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ClientRpcReceiveParams",
+            "label": "ClientRpcReceiveParams"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ClientRpcSendParams",
+            "label": "ClientRpcSendParams"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "CustomMessagingManager",
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.CustomMessagingManager",
+                "label": "CustomMessagingManager"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate",
+                "label": "HandleNamedMessageDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate",
+                "label": "UnnamedMessageDelegate"
+              }
+            ]
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.RpcAttribute",
+            "label": "RpcAttribute"
+          },
+               {
+            "type": "doc",
+            "id": "api/Unity.Netcode.RpcDelivery",
+            "label": "RpcDelivery"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ServerRpcAttribute",
+            "label": "ServerRpcAttribute"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ServerRpcParams",
+            "label": "ServerRpcParams"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ServerRpcReceiveParams",
+            "label": "ServerRpcReceiveParams"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.ServerRpcSendParams",
+            "label": "ServerRpcSendParams"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "NetworkManager",
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkManager",
+            "label": "NetworkManager"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
+            "label": "ConnectionApprovedDelegate"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "NetworkVariable",
+        "items": [
+          
+                {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkVariableBase",
+            "label": "NetworkVariableBase"
+          },
+       
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkVariable-1",
+            "label": "NetworkVariable-1"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate",
+            "label": "OnValueChangedDelegate"
+          },
+                {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkVariableReadPermission",
+            "label": "NetworkVariableReadPermission"
+          },
+        ],
+      },
+       {
+            "collapsed": true,
+            "type": "category",
+            "label": "NetworkList-1",
+            "items": [
+             
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "NetworkList-1",
+                "items": [
+                {
+                  "type": "doc",
+                  "id": "api/Unity.Netcode.NetworkList-1",
+                  "label": "NetworkList-1"
+                },
+                {
+                  "type": "doc",
+                  "id": "api/Unity.Netcode.NetworkList-1.OnListChangedDelegate",
+                  "label": "OnListChangedDelegate"
+                }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "NetworkListEvent-1",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/Unity.Netcode.NetworkListEvent-1",
+                    "label": "NetworkListEvent-1"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/Unity.Netcode.NetworkListEvent-1.EventType",
+                    "label": "EventType"
+                  }
+                ]
+              }
+            ]
+          },
+        
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "SceneEvent",
+        "items": [
+                
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SceneEvent",
+                "label": "SceneEvent"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SceneEventData",
+                "label": "SceneEventData"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SceneEventData.SceneEventTypes",
+                "label": "SceneEventData.SceneEventTypes"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SceneEventProgressStatus",
+                "label": "SceneEventProgressStatus"
+              },
+      ]
+      },
+      
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "SceneManagement",
+        "items": [
+               
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager",
+                "label": "NetworkSceneManager"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.SceneEventDelegate",
+                "label": "SceneEventDelegate"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler",
+                "label": "VerifySceneBeforeLoadingDelegateHandler"
+              },
+      ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "ScoketTask",
+        "items": [
+               
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SocketTask",
+                "label": "SocketTask"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SocketTasks",
+                "label": "SocketTasks"
+              },
+  
+        
+      ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Serialization",
+        "items": [
+           {
+            "type": "doc",
+            "id": "api/Unity.Netcode.Arithmetic",
+            "label": "Arithmetic"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.AutoNetworkSerializable",
+            "label": "AutoNetworkSerializable"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.INetworkSerializable",
+            "label": "INetworkSerializable"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkBuffer",
+            "label": "NetworkBuffer"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkReader",
+            "label": "NetworkReader"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkSerializer",
+            "label": "NetworkSerializer"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkWriter",
+            "label": "NetworkWriter"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkWriterPool",
+            "label": "NetworkWriterPool"
+          },
+         
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkBufferPool",
+            "label": "NetworkBufferPool"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkReaderPool",
+            "label": "NetworkReaderPool"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.PooledNetworkBuffer",
+            "label": "PooledNetworkBuffer"
+          },  {
+            "type": "doc",
+            "id": "api/Unity.Netcode.PooledNetworkReader",
+            "label": "PooledNetworkReader"
+          },  {
+            "type": "doc",
+            "id": "api/Unity.Netcode.PooledNetworkWriter",
+            "label": "PooledNetworkWriter"
+          },     
+         
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Serialization.SerializationManager",
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SerializationManager",
+                "label": "SerializationManager"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SerializationManager.CustomDeserializationDelegate-1",
+                "label": "CustomDeserializationDelegate-1"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SerializationManager.CustomSerializationDelegate-1",
+                "label": "CustomSerializationDelegate-1"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Spawning",
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkSpawnManager",
+            "label": "NetworkSpawnManager"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "NetworkTransport",
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkTransport",
+            "label": "NetworkTransport"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
+            "label": "UnityTransport.ProtocolType"
+          }
+        ]
+      },
+
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Transports",
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.UnityTransport",
+            "label": "UnityTransport"
+          },
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
+            "label": "ProtocolType"
+          },
+         
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Transports.UNET",
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.Transports.UNET",
+                "label": "UNET"
+              },
+                    
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.Transports.UNET.UNetChannel",
+                "label": "UNetChannel"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport",
+                "label": "UNetTransport"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode",
+                "label": "UNetTransport.SendMode"
+              },
+            ],
+          }
+        ]
+      }
+      
+  ]
 }

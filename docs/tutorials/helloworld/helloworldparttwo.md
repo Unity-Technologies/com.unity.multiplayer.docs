@@ -15,7 +15,7 @@ In this guide we will build on the work we have already done in Hello World and 
 
 ## Requirements
 
-This tutorial requires an MLAPI-supported version of Unity (2019.4+).
+This tutorial requires an  Netcode for GameObjects (Netcode)-supported version of Unity (2019.4+).
 
 We recommend that you  complete the [Your First Networking Game "Hello World"](helloworldintro.md) guide before starting this one.
 
@@ -47,7 +47,7 @@ You can copy the script from here and paste it into your file.
 
 ```csharp
 
-using MLAPI;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace HelloWorld
@@ -199,9 +199,9 @@ This script adds some basic movement to the Hello World player.
 
 ```csharp
 
-using MLAPI;
-using MLAPI.Messaging;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.Messaging;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace HelloWorld
@@ -322,7 +322,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the MLAPI method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
 
 :::note
 This can be overriden on any `NetworkBehaviour`.

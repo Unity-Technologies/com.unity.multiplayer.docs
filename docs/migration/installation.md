@@ -1,10 +1,10 @@
 ---
 id: install
-title: Install MLAPI
-description: Install the on-going development version of Unity MLAPI from a cloned respository. 
+title: Install  Netcode for GameObjects
+description: Install the on-going development version of Unity  Netcode for GameObjects from a cloned respository. 
 ---
 
-Multiple methods are available to install the MLAPI package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Unity MLAPI.
+Multiple methods are available to install the  Netcode for GameObjects (Netcode) package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Netcode.
 
 :::important In-Progress Development
 All features and code available in the *develop* branch is in-progress and not final. All cloned code may change daily or weekly, depending on submitted pull requests. All documentation and release notes for the *develop* version are not final.
@@ -51,9 +51,9 @@ To clone directory through GitHub Desktop:
 
 ## Open the develop branch
 
-To run the develop branch of MLAPI:
+To run the develop branch of Netcode:
 
-1. Checkout the develop branch of MLAPI using Git commands or application like GitHub Desktop.
+1. Checkout the develop branch of Netcode using Git commands or application like GitHub Desktop.
 1. Open Unity Hub and click **Add**.
 1. Navigate to the cloned GitHub repository and select the testproject folder.
 1. When opened, click **File** > **Open Scene**.
@@ -61,24 +61,24 @@ To run the develop branch of MLAPI:
 
   ![Load Scene](/img/install/develop-scene.png)
 
-  You should see **Custom** installed packages available in *develop*, such as MLAPI Networking Library and Unity Transport for MLAPI.
+  You should see **Custom** installed packages available in *develop*, such as Netcode Networking Library and Unity Transport for Netcode.
 
   ![Packages](/img/install/develop-packages.png)
 
 :::tip Updated Local Code
-We recommend updating your local clone often from the MLAPI repository. This branch is constantly updated with new and updated features, fixed issues, and more.
+We recommend updating your local clone often from the Netcode repository. This branch is constantly updated with new and updated features, fixed issues, and more.
 :::
 
 :::note Branching
-If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [MLAPI Contributing](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/master/CONTRIBUTING.md) guidelines.
+If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [Netcode Contributing](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/master/CONTRIBUTING.md) guidelines.
 :::
 
 ## Next Steps
 
-See the following content to continue your journey using MLAPI:
+See the following content to continue your journey using Netcode:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
-* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
+* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Netcode
 * [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
@@ -86,7 +86,7 @@ See the following content to continue your journey using MLAPI:
 
 **Errors with incorrect package loading**
 
-If you receive a different package than Unity MLAPI when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
+If you receive a different package than Netcode when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
 
 Hover over the URL to copy, click the **Copy** function in the code block, and use this when adding the package from a Git URL in Unity Hub.
 
