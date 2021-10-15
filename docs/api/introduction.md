@@ -3,10 +3,10 @@ id: introduction
 title: API Overview
 ---
 
-The MLAPI API reference provides information for availble classes, methods, delegates, and more for the `com.unity.multiplayer.mlapi` package.
+The Netcode for GameObjects (Netcode) API reference provides information for availble classes, methods, delegates, and more for the `com.unity.multiplayer.mlapi` package.
 
 :::unity Content Licenses
-All MLAPI code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information.
+All Netcode code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information.
 :::
 
 :::note
@@ -16,7 +16,7 @@ All content is generated from [source code](https://github.com/Unity-Technologie
 To document APIs, developers should add comments in code. For example:
 
 ```csharp
-namespace MLAPI.Collections
+namespace Unity.Netcode.Collections
 {
     /// <summary>
     /// Queue with a fixed size

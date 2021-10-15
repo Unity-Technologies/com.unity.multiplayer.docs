@@ -1,25 +1,25 @@
 ---
 id: migratingtonetcode
-title: Migrating From UNet to Netcode for Gameobjects (Netcode)
+title: Migrating From UNet to  Netcode for GameObjects
 ---
 
-Use this step-by-step guide to migrate your projects from Unity UNet to Unity MLAPI. Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
+Use this step-by-step guide to migrate your projects from Unity UNet to  Netcode for GameObjects (Netcode) Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 :::note
-If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buMxnnPvTb).
+If you need help, contact us in the [Unity Netcode Discord](https://discord.gg/buMxnnPvTb).
 :::
 
 ## Current limitations
 
-Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Unity MLAPI:
+Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Netcode:
 
-- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
+- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
 - Errors for RPC postfix naming patterns do not show in your IDE. 
-- MLAPI RPCs do not support arrays yet.
-- Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for MLAPI.
-- Prefabs need to be added to the prefab registration list for MLAPI.
+- Netcode RPCs do not support arrays yet.
+- Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for Netcode.
+- Prefabs need to be added to the prefab registration list for Netcode.
 - Connection callbacks do not happen in single player or host mode.
-- Matchmaking is not available in MLAPI at this time.
+- Matchmaking is not available in Netcode at this time.
 
 ## Backup your project
 
@@ -32,7 +32,7 @@ It is recommended that you back up your project before proceeding with the migra
 We recommend using both methods to backup your project. This gives you a copied project and tracking through committed changes and history.
 :::
 
-## Install MLAPI and restart Unity
+## Install Netcode and restart Unity
 
 See [Installation](installation.md) for more information. 
 
@@ -42,48 +42,48 @@ If you install Git for the first time, you will need to restart your system.
 
 ## Update Invoking
 
-Use the `Invoke` method on the `NetworkBehaviour` to invoke MLAPI, instead of calling the method directly like in UNet.
+Use the `Invoke` method on the `NetworkBehaviour` to invoke Netcode, instead of calling the method directly like in UNet.
 
 See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
 
 ##  NetworkManager 
 
-UNET’s `NetworkManager` is also called `NetworkManager` in the MLAPI and works in a similar way.
+UNET’s `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
 
 :::note
-You cannot inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET. 
+You cannot inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET. 
 :::
 
 ## Replace NetworkManagerHUD 
 
-Currently MLAPI offers no replacment for the NetworkMangerHUD.
+Currently Netcode offers no replacment for the NetworkMangerHUD.
 
 The [Community Contributions Extension Package](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
 
 ## Replace NetworkIdentity with NetworkObject
 
-UNet’s `NetworkIdentity` is called `NetworkObject` in the MLAPI and works in a similar way.
+UNet’s `NetworkIdentity` is called `NetworkObject` in Netcode and works in a similar way.
 
-## Replace UNet NetworkTransform with MLAPI NetworkTransform
+## Replace UNet NetworkTransform with Netcode NetworkTransform
 
-UNet’s `NetworkTransform` is also called `NetworkTransform` in the MLAPI and works in a similar way.
+UNet’s `NetworkTransform` is also called `NetworkTransform` in Netcode and works in a similar way.
 
 The `NetworkTransform` does not have full feature parity with UNET's `NetworkTransform`. It lacks features like position synchronizing for rigidbodies.
 
-## Replace UNet NetworkAnimator with MLAPI NetworkAnimator
+## Replace UNet NetworkAnimator with Netcode NetworkAnimator
 
-Replace UNEt's `NetworkAnimator` with MLAPI's `NetworkAnimator` component everywhere in your project.
+Replace UNEt's `NetworkAnimator` with Netcode's `NetworkAnimator` component everywhere in your project.
 
 ## Update NetworkBehaviour
 
-Replace UNet `NetworkBehaviour` with MLAPI `NetworkBehaviour` everywhere in your project.
+Replace UNet `NetworkBehaviour` with Netcode's `NetworkBehaviour` everywhere in your project.
 
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -149,13 +149,13 @@ See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information
 
 ## NetworkStart
 
-In the MLAPI, `RPC`s and `NetworkVariable` changes will not be replicated if they are done before the `NetworkStart` method is called. The `NetworkStart` method is called when the `NetworkObject` is ready for network use.
+In Netcode, `RPC`s and `NetworkVariable` changes will not be replicated if they are done before the `NetworkStart` method is called. The `NetworkStart` method is called when the `NetworkObject` is ready for network use.
 
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
   values={[
-      {label: 'MLAPI Example', value: 'tab1'},
+      {label: ' Netcode for GameObjects Example', value: 'tab1'},
   ]}>
 
 <TabItem value="tab1">
@@ -177,14 +177,14 @@ public class MyMLAPIExample : NetworkBehaviour
 
 Replace `SyncVar` with `NetworkVariable` everywhere in your project.
 
-To achieve equivalent functionality of `SyncVar` hooks in MLAPI subscribe a function to the `OnValueChanged` callback of the `NetworkVariable`. A noteable difference between the UNet hooks and the MLAPI `OnValueChanged` callback is that MLAPI gives you both the old and the newly changed value while UNet provides you only with the old value. With UNet, you also had to manually assign the value of the SyncVar.
+To achieve equivalent functionality of `SyncVar` hooks in Netcode subscribe a function to the `OnValueChanged` callback of the `NetworkVariable`. A noteable difference between the UNet hooks and Netcode's `OnValueChanged` callback is that Netcode gives you both the old and the newly changed value while UNet provides you only with the old value. With UNet, you also had to manually assign the value of the SyncVar.
 
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -237,14 +237,14 @@ void OnChangeHealth(int oldHealth, int newHealth){
 
 </Tabs>
 
-Replace all postfix increment and decrement usages of SyncVar in your project. MLAPI's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement is not supported.
+Replace all postfix increment and decrement usages of SyncVar in your project. Netcode's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement is not supported.
 
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -287,7 +287,7 @@ Replace `SyncList<T>` with `NetworkList<T>` everywhere in your project. `Network
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -331,14 +331,14 @@ void OnIntChanged(NetworkListEvent<int> changeEvent)
 
 ## Replace Command/ClientRPC 
 
-UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the MLAPI which works in a similar way.
+UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the Netcodex which works in a similar way.
 
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -376,7 +376,7 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the MLAPI wh
 
 
 :::note
-In MLAPI RPC function names must end with a `ClientRpc/ServerRpc` suffix.
+In Netcode RPC function names must end with a `ClientRpc/ServerRpc` suffix.
 :::
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
@@ -390,7 +390,7 @@ Replace `OnServerAddPlayer` with `ConnectionApproval` everywhere in your project
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -421,8 +421,8 @@ class MyManager : NetworkManager
 Server-only example:
 
 ```csharp
-using MLAPI;
-using MLAPI.Spawning;
+using Unity.Netcode;
+using Unity.Netcode.Spawning;
 
 private void Setup() 
 {
@@ -459,7 +459,7 @@ Replace `NetworkServer.Spawn`  with `NetworkObject.Spawn` everywhere in your pro
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -502,22 +502,22 @@ See [Object Spawning](../mlapi-basics/object-spawning.md) for more information.
 
 ## Custom Spawn Handlers
 
-MLAPI has `Custom Spawn Handlers` to replace UNet's `Custom Spawn Functions`. See [Object Pooling](../advanced-topics/object-pooling) for more information.
+Netcode has `Custom Spawn Handlers` to replace UNet's `Custom Spawn Functions`. See [Object Pooling](../advanced-topics/object-pooling) for more information.
 
 ## Replace NetworkContextProperties
 
-The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In the MLAPI each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
+Netcode has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In Netcode each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
 
-## Network Proximity Checker/ OnCheckObserver with MLAPI visibility
+## Network Proximity Checker/ OnCheckObserver with Netcode visibility
 
-There is no direct equivalent to the `NetworkPromimityChecker` UNet component in MLAPI. Network visiblilty for clients works similar as in UNet. MLAPI does not have an equivalent to the `ObjectHide` message from UNet. In MLAPI networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to MLAPI by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for MLAPIs visibilty system.
+There is no direct equivalent to the `NetworkPromimityChecker` UNet component in Netcode. Network visiblilty for clients works similar as in UNet. Netcode does not have an equivalent to the `ObjectHide` message from UNet. In Netcode networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to Netcode by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for Netcode visibilty system.
 
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -566,7 +566,7 @@ In MLAPI, scene management is not done over the `NetworkManager` like in UNet. T
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -600,7 +600,7 @@ MLAPI currently does not offer a replacement for marking a function with an attr
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -640,7 +640,7 @@ MLAPI does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code f
   defaultValue="tab1"
   values={[
     {label: 'UNET Example', value: 'tab1'},
-    {label: 'MLAPI Example', value: 'tab2'},
+    {label: ' Netcode for GameObjects Example', value: 'tab2'},
   ]}>
 
 <TabItem value="tab1">
@@ -691,15 +691,15 @@ public class DamageClass : NetworkBehaviour
 
 ## Network Discovery
 
-MLAPI does not provide Network Discovery. The UNet Network Discovery is a standalone component that can be used with any networking solution. You can use the UNet Network Discovery to discover a broadcasting MLAPI host and then connect to it with MLAPI.
+Netcode does not provide Network Discovery. The UNet Network Discovery is a standalone component that can be used with any networking solution. You can use the UNet Network Discovery to discover a broadcasting Netcode host and then connect to it with MLNetcodeAPI.
 
 ## See Also
 
 For more information, see the following:
 
 * <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
-* [API Reference](../mlapi-api/introduction.md) - Review available APIs.
-* Guides and tutorials - Review guides for MLAPI and check [tutorials](../learn/index.md).
+* [API Reference](../api/introduction.md) - Review available APIs.
+* Guides and tutorials - Review guides for Netcodev and check [tutorials](../learn/index.md).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

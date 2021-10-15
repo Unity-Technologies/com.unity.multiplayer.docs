@@ -52,7 +52,7 @@ module.exports = {
     "items": [
       {
         "type": "doc",
-        "id": "tutorials/goldenpath_series/netcode_starting_out"
+        "id": "tutorials/goldenpath_series/starting_out"
       },       
       {
         "type": "doc",
@@ -69,18 +69,7 @@ module.exports = {
     ],
    
   },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Local Iteration ",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/local_iteration_series/testing_locally"
-      }
-    ],
-  },
-  {
+    {
     "collapsed": true,
     "type": "category",
     "label": "Networking",
@@ -88,10 +77,6 @@ module.exports = {
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
-      },
-      {
-        "type": "doc",
-        "id": "getting-started/max-players"
       },
       {
         "type": "doc",

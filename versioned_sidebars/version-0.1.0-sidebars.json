@@ -45,7 +45,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.1.0/tutorials/goldenpath_series/mlapi_starting_out"
+          "id": "version-0.1.0/tutorials/goldenpath_series/starting_out"
         },       
         {
           "type": "doc",
@@ -334,7 +334,7 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-0.1.0/learn/multiplayer-game-arhitecture"
+              "id": "version-0.1.0/learn/multiplayer-game-architecture"
             },
             {
               "type": "doc",

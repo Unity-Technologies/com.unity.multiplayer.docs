@@ -8,7 +8,7 @@ sidebar_label: NetworkTime & Ticks
 
 Why are there two different time values and which one should be used?
 
-Netcode for Gameobjects uses a star topology, see [Network Topologies for more information](../reference/glossary/network-topologies.md). That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows users to use time while considering those transmission delays.
+Netcode for GameObjects (Netcode) uses a star topology. That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows to use time while considering those transmission delays.
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
@@ -38,8 +38,8 @@ sequenceDiagram
 
 `ServerTime`:
 - For player objects with server authority (E.g. by sending inputs to the server via RPCs)
-- In sync with position updates of NetworkTransform for all NetworkObjects where the client is not authoritative over the transform.
-- For everything on non client controlled NetworkObjects.
+- In sync with position updates of `NetworkTransform` for all `NetworkObjects` where the client is not authoritative over the transform.
+- For everything on non client controlled `NetworkObjects`.
 
 ## Examples
 
@@ -67,11 +67,6 @@ public class MovingPlatform : MonoBehaviour
 ### Example 2: Using network time to create a synced event
 
 Most of the time aligning an effect precisely to time is not needed. But in some cases for important effects or gameplay events it can help to improve consistency especially for clients with bad network connections.
-
-<details open>
-<summary>Click to show/hide the Code.
-
-</summary>
 
 ```csharp
 using System.Collections;
@@ -123,7 +118,6 @@ public class SyncedEventExample : NetworkBehaviour
     }
 }
 ```
-</details>
 
 <Mermaid chart={`
 sequenceDiagram
@@ -134,16 +128,18 @@ sequenceDiagram
     Note over Owner: ClientCreateSyncedEffect()
     Note over Owner: Instantiate effect immediately (LocalTime = 10)
     Owner->>Server: CreateSyncedEffectServerRpc
-    Server->>Receiver: CreateSyncedEffectClientRpc 
+    Server->>Receiver: CreateSyncedEffectClientRpc
     Note over Server: ServerTime = 9.95 #38; timeToWait = 0.05
     Note over Server: StartCoroutine(WaitAndSpawnSyncedEffect(0.05))
     Server->>Server: WaitForSeconds(0.05);
+    Note over Server: Instantiate effect at ServerTime = 10.0
     Note over Receiver: ServerTime = 9.93 #38; timeToWait = 0.07
     Note over Receiver: StartCoroutine(WaitAndSpawnSyncedEffect(0.07))
     Receiver->>Receiver: WaitForSeconds(0.07);
     Note over Receiver: Instantiate effect at ServerTime = 10.0
-  
 `}/>
+
+
 
 :::note
 Some components such as `NetworkTransform` add additional buffering. When trying to align an RPC event like in this example, an additional delay would need to be added.
@@ -201,11 +197,7 @@ For games with short play sessions casting the time to float is safe or `TimeAsF
 The properties of the `NetworkTimeSystem` should be left untouched on the server/host. Changing the values on the client is sufficient to change the behavior of the time system.
 :::
 
-The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the [API docs](../mlapi-api/MLAPI.NetworkTickSystem.md) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values could be increased for a player with a bad connection.
+The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the API docs (TODO LINK) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values could be increased for a player with a bad connection.
 
 <!-- On page code -->
 
-
-:::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Luke Stampfli, Unity. 
-:::
