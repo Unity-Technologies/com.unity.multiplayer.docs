@@ -1,84 +1,64 @@
 ---
-id: networkwriter-networkreader-networkbuffer
-title: NetworkWriter, NetworkReader and NetworkBuffer
-sidebar_label: NetworkWriter, NetworkReader, & NetworkBuffer
+id: fastbufferwriter-fastbufferreader
+title: FastBufferWriter and FastBufferReader
+sidebar_label: FastBufferWriter and FastBufferReader
 ---
+The serialization and deserialization is done via `FastBufferWriter` and `FastBufferReader`. These have methods for serializing individual types and methods for serializing packed numbers, but in particular provide a high-performance method called `WriteValue()/ReadValue()` (for Writers and Readers, respectively) that can extremely quickly write an entire unmanaged struct to a buffer. 
 
-Internally, Netcode for GameObjects (Netcode) uses Streams for it's data. This gives a ton of flexibility for the end user. If the end user for example doesn't want to use Streams but rather just byte arrays at their own level. They can do so by wrapping their arrays in `MemoryStream`s which don't create any garbage.
+There's a trade-off of CPU usage vs bandwidth in using this: Writing individual fields is slower (especially when it includes operations on unaligned memory), but allows the buffer to be filled more efficiently.
 
-Netcode does have its own prefered Stream that is used internally called `NetworkBuffer`.
+## FastBufferWriter and FastBufferReader
 
-## NetworkBuffer
+`FastBufferWriter` and `FastBufferReader` are replacements for the old `NetworkWriter` and `NetworkReader`. They have much the same interface, but there are some critical differences:
 
-The `NetworkBuffer` is a Stream implementation that functions in a similar way as the `MemoryStream`. The main difference is that the `NetworkBuffer`  has methods for operating on the Bit level rather than the Byte level.
+- `FastBufferWriter` and `FastBufferReader` are **structs**, not **classes**. This means they can be constructed and destructed without allocations if necessary.
+- `FastBufferWriter` and `FastBufferReader` both wrap `NativeArray<byte>`, allowing us to take advantage of extremely fast `Allocator.Temp` and `Allocator.TempJob` allocations to create temporary buffers.
+- Neither `FastBufferReader` nor `FastBufferWriter` inherits from nor contains a `Stream`. Any code that currently operates on streams will have to be rewritten.
+- `FastBufferReader` and `FastBufferWriter` are heavily optimized for speed, using aggressive inlining and unsafe code to achieve the fastest possible buffer storage and retrieval.
+- `FastBufferReader` and `FastBufferWriter` use unsafe typecasts and `UnsafeUtility.MemCpy` operations on `byte*` values, achieving native memory copy performance with no need to iterate or do bitwise shifts and masks.
+- `FastBufferReader` and `FastBufferWriter` are intended to make data easier to debug - one such thing to support will be a `#define MLAPI_FAST_BUFFER_UNPACK_ALL` that will disable all packing operations to make the buffers for messages that use them easier to read.
 
-### PooledNetworkBuffer
+A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general we will never need them for more than a frame, but this does give us a very efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
 
-Creating resizable `NetworkBuffer`s allocates a byte array to back it, just like a `MemoryStream`. To not create any allocations, Netcode has a built in Pool of `NetworkBuffer`s  which is recommended to be used instead.
+:::note
+`FastBufferReader` and `FastBufferWriter` are **fixed size** buffers. They cannot grow.
+:::
+
+## Bounds Checking
+
+For performance reasons, `FastBufferReader` and `FastBufferWriter` **do not do bounds checking** on each write. Rather, they require the use of specific bounds checking functions - `VerifyCanRead(int amount)` and `VerifyCanWrite(int amount, bool canGrow = false, Allocator growthAllocator)`, respectively. This improves performance by allowing you to verify the space exists for the data being read or written in blocks, rather than doing that check on every single operation.
+
+
+:::info
+**In editor mode and development builds**, calling these functions records a watermark point, and any attempt to read or write past the watermark point will throw an exception. This ensures these functions are used properly, while avoiding the performance cost of per-operation checking in production builds.
+:::
+
+## Bitwise Reading and Writing
+
+Writing values in sizes measured in bits rather than bytes comes with a cost 
+- First, it comes with a cost of having to track bitwise lengths and convert them to bytewise lenghts.
+- Second, it comes with a cost of having to remember to add padding after your bitwise writes and reads to ensure the next bytewise write or read functions correctly, and to make sure the buffer length includes any trailing bits.
+
+To address that, `FastBufferReader` and `FastBufferWriter` do not, themselves, have bitwise operations. When needed, however, you can create a `BitwiseWriter` or `BitwiseReader` instance, which is an IDisposable to ensure that no unaligned bits are left at the end - from the perspective of `FastBufferReader` and `FastBufferWriter`, only bytes are allowed. `BitwiseWriter` and `BitwiseReader` operate directly on the underlying buffer, so calling non-bitwise operations within a bitwise context is an error (and will raise an exception in non-production builds).
 
 ```csharp
-using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
+FastBufferWriter writer = new FastBufferWriter(256, Allocator.TempJob);
+using(var bitWriter = writer.EnterBitwiseContext())
 {
-    // Do stuff with the Pooled Stream. This stream is reset and ready for use, it will auto resize to fit all your data.
-}
+	bitWriter.WriteBit(a);
+	bitWriter.WriteBits(b, 5);
+} // Dispose automatically adds 2 more 0 bits to pad to the next byte.
 ```
 
-## Writer and Reader
+## INetworkSerializable
 
-While the `BinaryWriter` class built into .NET is great for reading and writing binary data, it's not very compact or efficient and doesn't offer a ton of flexibility. The `NetworkWriter` and `NetworkReader` solves this.
+A new `BufferSerializer` class wrapping `FastBufferReader` and `FastBufferWriter` will replace the existing `NetworkSerializer` to provide the same two-way interface as the existing `NetworkSerializer`, and is rewritten as a **ref struct** so that no allocation overhead is incurred in calling the `INetworkSerializable`'s `Serialize()` method. 
 
-The `NetworkWriter` and `NetworkReader` can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
+A **ref struct** is chosen instead of a normal struct to avoid the pitfalls associated with having mutable structs and forgetting to pass them with the ref keyword - we can manage this with `FastBufferReader` and `FastBufferWriter` because those are internal and we can rely on our ability to understand the implications of using them as structs, but our end users may be less experienced and may inadvertently pass this forward to calls that do not take the value by ref. 
 
-Some of it's key features include the following.
+A `ref struct` is always passed by reference rather than copied, but does have the disadvantage of being limited to the stack frame - so we can't use it for `FastBufferWriter` and `FastBufferReader` because we persist those.
 
-### Value VarInt
+`BufferSerializer` has an additional advantage (or disadvantage, depending on your viewpoint) compared to `FastBufferWriter` and `FastBufferReader`: since it's intended to be used by our end users, it performs bounds checking on every operation and throws exceptions if attempting to read or write out of bounds. 
 
-When using the "Packed" versions of a write or read, the output will be VarInted. That is, smaller values will take less space. If you write the value 50 as a ulong in the packed format, it will only take one byte in the output.
+This, combined with the `IsReader` if-checks, will make `BufferSerializer` slower than `FastBufferReader` and `FastBufferWriter` - but for advanced users, we can expose `FastBufferReader` and `FastBufferWriter` and allow the user to use them directly if they choose (with all appropriate warnings about them delivered).
 
-### Diff Arrays
-
-When using the "Diff" versions of an array write or read, the output will be the diff between two arrays, allowing for delta encoding.
-
-### Unity Types
-
-The `NetworkWriter` and `NetworkReader` support many data types by default such as Vector3, Vector2, Ray, Quaternion and more.
-
-### BitWise Writing
-
-If you for example have an enum with five values. All those values could fit into three bits. With the `NetworkWriter`, this can be done like this:
-
-```csharp
-writer.WriteBits((byte)MyEnum.MyEnumValue, 3);
-MyEnum value = (Myenum)reader.ReadBits(3);
-```
-
-### Performance consideration
-
-When the stream is not aligned, (BitAligned == false, this occurs when writing bits that do fill the whole byte, or when writing bools as they are written as bits), performance is decreased for each write and read. This is only a big concern if you are about to write a large amount of data after not being aligned. To solve this, the `NetworkWriter` allows you to "WritePadBits" and the `NetworkReader` then lets you skip those bits with "SkipPadBits" to align the stream to the nearest byte.
-
-```csharp
-writer.WriteBool(true); //Now the stream is no longer aligned. Every byte has to be offset by 1 bit.
-writer.WritePadBits(); //Writes 7 empty bits to make the stream aligned.
-writer.WriteByteArray(myLargeArray, 1024); //Writes 1024 bytes without any bit adjustments
-
-
-reader.ReadBool();
-reader.SkipPadBits();
-reader.ReadByteArray(myOutputArray, 1024);
-```
-
-## Pooled NetworkReader/NetworkWriter
-
-The writer and reader also has pooled versions to avoid allocating the classes themselves. You might as well use them.
-
-```csharp
-using (var reader = PooledNetworkReader.Get(myStreamToReadFrom))
-{
-    // Read here
-}
-
-using (var writer = PooledNetworkWriter.Get(myStreamToWriteTo))
-{
-    // Write here
-}
-```
