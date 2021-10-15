@@ -5,62 +5,55 @@ sidebar_label: FastBufferWriter and FastBufferReader
 ---
 The serialization and deserialization is done via `FastBufferWriter` and `FastBufferReader`. These have methods for serializing individual types and methods for serializing packed numbers, but in particular provide a high-performance method called `WriteValue()/ReadValue()` (for Writers and Readers, respectively) that can extremely quickly write an entire unmanaged struct to a buffer. 
 
-There's a trade-off of CPU usage vs bandwidth in using this: Writing individual fields is slower (especially when it includes operations on unaligned memory), but allows the buffer to be filled more efficiently.
+There's a trade-off of CPU usage vs bandwidth in using this: Writing individual fields is slower (especially when it includes operations on unaligned memory), but allows the buffer to be filled more efficiently, both because it avoids padding for alignment in structs, and because it allows you to use `BytePacker.WriteValuePacked()`/`ByteUnpacker.ReadValuePacked()` and `BytePacker.WriteValueBitPacked()`/`ByteUnpacker.ReadValueBitPacked()`. The difference between these two is that the BitPacked variants pack more efficiently, but they reduce the valid range of values. See the section below for details on packing.
 
 
 **Example**
 
 ```csharp
-struct Message
+struct ExampleStruct
 {
     private float f;
     private bool b;
     private int i;
 
-    void Serialize(ref FastBufferWriter writer);
+    void Serialize(FastBufferWriter writer);
 }
 ```
 
-Serialize can be implemented in two ways:
+In this example struct, `Serialize` can be implemented in two ways:
 
 ```csharp
-void Serialize(ref FastBufferWriter writer)
+void Serialize(FastBufferWriter writer)
 {
-    writer.WriteSingle(f);
-    writer.WriteBool(b);
-    writer.WriteInt32(i);
+    if(!writer.TryBeginWrite(sizeof(float) + sizeof(bool) + sizeof(i)))
+    {
+		throw new OverflowException("Not enough space in the buffer");
+    }
+    writer.WriteValue(f);
+    writer.WriteValue(b);
+    writer.WriteValue(i);
 }
 ```
 
 ```csharp
-void Serialize(ref FastBufferWriter writer)
+void Serialize(FastBufferWriter writer)
 {
+    if(!writer.TryBeginWrite(sizeof(ExampleStruct)))
+    {
+		throw new OverflowException("Not enough space in the buffer");
+    }
     writer.WriteValue(this);
 }
 ```
-This creates efficiently packed data in the message, and can be further optimized by using `WriteSinglePacked()` and `WriteInt32Packed()`, but it has two downsides:
+This creates efficiently packed data in the message, and can be further optimized by using `BytePacker.WriteValuePacked()` and `BytePacker.WriteValueBitPacked()`, but it has two downsides:
 - First, it involves more method calls and more instructions, making it slower. 
 - Second, that it creates a greater opportunity for the serialize and deserialize code to become misaligned, since they must contain the same operations in the same order.
-
-The latter can also be improved by optimizing the struct itself for alignment and optimizing the size of the values themselves, changing the definition to:
-
-```csharp
-struct Message
-{
-    private float f;
-    private short i;
-    private bool b;
-
-    void Serialize(ref FastBufferWriter writer);
-}
-```
-
-This will result in a more efficiently-packed buffer, though still not quite as efficient as using packed values.
 
 You can also use a hybrid approach if you have a few values that will need to be packed and several that won't:
 
 ```C#
-struct Message
+struct ExampleStruct
 {
     struct Embedded
     {
@@ -73,11 +66,11 @@ struct Message
     public float f;
     public short i;
 
-    void Serialize(ref FastBufferWriter writer)
+    void Serialize(FastBufferWriter writer)
     {
         writer.WriteValue(embedded);
-        writer.WriteSinglePacked(f);
-        writer.WriteInt32Packed(i);
+        BytePacker.WriteValuePacked(writer, f);
+        BytePacker.WriteValuePacked(writer, i);
     }
 }
 ```
@@ -87,29 +80,50 @@ This allows the four bytes of the embedded struct to be rapidly serialized as a 
 
 ## FastBufferWriter and FastBufferReader
 
-`FastBufferWriter` and `FastBufferReader` are replacements for the old `NetworkWriter` and `NetworkReader`. They have much the same interface, but there are some critical differences:
+`FastBufferWriter` and `FastBufferReader` are replacements for the old `NetworkWriter` and `NetworkReader`. For those familiar with the old classes, there are some key differences:
 
-- `FastBufferWriter` and `FastBufferReader` are **structs**, not **classes**. This means they can be constructed and destructed without allocations if necessary.
-- `FastBufferWriter` and `FastBufferReader` both wrap `NativeArray<byte>`, allowing us to take advantage of extremely fast `Allocator.Temp` and `Allocator.TempJob` allocations to create temporary buffers.
-- Neither `FastBufferReader` nor `FastBufferWriter` inherits from nor contains a `Stream`. Any code that currently operates on streams will have to be rewritten.
+- `FastBufferWriter` and `FastBufferReader` use `WriteValue()` as the name of the method for all types *except* [`INetworkSerializable`](inetworkserializable.md) types, which are serialized through `WriteNetworkSerializable()`
+- `FastBufferWriter` and `FastBufferReader` outsource packed writes and reads to `BytePacker` and `ByteUnpacker`, respectively.
+- `FastBufferWriter` and `FastBufferReader` are **structs**, not **classes**. This means they can be constructed and destructed without GC allocations.
+- `FastBufferWriter` and `FastBufferReader` both use the same allocation scheme as Native Containers, allowing the internal buffers to be created and resized without creating any garbage and with the use of `Allocator.Temp` or `Allocator.TempJob`.
+- `FastBufferReader` can be instantiated using `Allocator.None` to operate on an existing buffer with no allocations and no copies.
+- Neither `FastBufferReader` nor `FastBufferWriter` inherits from nor contains a `Stream`.
 - `FastBufferReader` and `FastBufferWriter` are heavily optimized for speed, using aggressive inlining and unsafe code to achieve the fastest possible buffer storage and retrieval.
 - `FastBufferReader` and `FastBufferWriter` use unsafe typecasts and `UnsafeUtility.MemCpy` operations on `byte*` values, achieving native memory copy performance with no need to iterate or do bitwise shifts and masks.
 - `FastBufferReader` and `FastBufferWriter` are intended to make data easier to debug - one such thing to support will be a `#define MLAPI_FAST_BUFFER_UNPACK_ALL` that will disable all packing operations to make the buffers for messages that use them easier to read.
+- `FastBufferReader` and `FastBufferWriter` do not support runtime type discovery - there is no `WriteObject` or `ReadObject` implementation. All types must be known at compile time. This is to avoid garbage and boxing allocations.
 
-A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general we will never need them for more than a frame, but this does give us a very efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
+A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general they are rarely if ever needed for more than a frame, but this does provide a very efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
 
-:::note
-`FastBufferReader` and `FastBufferWriter` are **fixed size** buffers. They cannot grow.
-:::
+## Creating and Disposing FastBufferWriters and FastBufferReaders
+
+To create your own `FastBufferWriter`s and `FastBufferReader`s, it's important to note that struct default/parameterless constructors cannot be removed or overridden, but `FastBufferWriter` and `FastBufferReader` require constructor behavior to be functional. 
+
+`FastBufferWriter` always owns its internal buffer and must be constructed with an initial size, an allocator, and a maximum size. If the maximum size is not provided or is less than or equal to the initial size, the `FastBufferWriter` cannot expand.
+
+`FastBufferReader` can be constructed to either own its buffer or reference an existing one via `Allocator.None`. Not all types are compatible with `Allocator.None` - only `byte*`, `NativeArray<byte>`, and `FastBufferWriter` input types can provide `Allocator.None`. You can obtain a `byte*` from a `byte[]` using the following method:
+
+```c#
+byte[] byteArray;
+fixed(byte* bytePtr = byteArray)
+{
+    // use bytePtr here
+}
+```
+
+It's important to note with `Allocator.None` that the `FastBufferReader` will be directly referencing a position in memory, which means the `FastBufferReader` must not live longer than the input buffer it references - and if the input buffer is a `byte[]`, the `FastBufferReader` must not live longer than the `fixed()` statement, because outside of that statement, the garbage collector is free to move that memory, which will cause random and unpredictable errors.
+
+Regardless which allocator you use (including `Allocator.None`), `FastBufferWriter` and `FastBufferReader` must always have `Dispose()` called on them when you're done with them. The best practice is to use them within `using` blocks.
 
 ## Bounds Checking
 
-For performance reasons, `FastBufferReader` and `FastBufferWriter` **do not do bounds checking** on each write. Rather, they require the use of specific bounds checking functions - `VerifyCanRead(int amount)` and `VerifyCanWrite(int amount, bool canGrow = false, Allocator growthAllocator)`, respectively. This improves performance by allowing you to verify the space exists for the data being read or written in blocks, rather than doing that check on every single operation.
-
+For performance reasons, by default, `FastBufferReader` and `FastBufferWriter` **do not do bounds checking** on each write. Rather, they require the use of specific bounds checking functions - `TryBeginRead(int amount)` and `TryBeginWrite(int amount)`, respectively. This improves performance by allowing you to verify the space exists for the multiple values in a single call, rather than doing that check on every single operation.
 
 :::info
-**In editor mode and development builds**, calling these functions records a watermark point, and any attempt to read or write past the watermark point will throw an exception. This ensures these functions are used properly, while avoiding the performance cost of per-operation checking in production builds.
+**In editor mode and development builds**, calling these functions records a watermark point, and any attempt to read or write past the watermark point will throw an exception. This ensures these functions are used properly, while avoiding the performance cost of per-operation checking in production builds. In production builds, attempting to read or write past the end of the buffer will cause undefined behavior, likely program instability and/or crashes.
 :::
+
+For convenience, every `WriteValue()` and `ReadValue()` method has an equivalent `WriteValueSafe()` and `ReadValueSafe()` that does bounds checking for you, throwing `OverflowException` if the boundary is exceeded. Additionally, some methods, such as arrays (where the amount of data being read can't be known until the size value is read) and [`INetworkSerializable`](inetworkserializable.md) values (where the size can't be predicted outside the implementation) will always do bounds checking internally.
 
 ## Bitwise Reading and Writing
 
@@ -117,7 +131,7 @@ Writing values in sizes measured in bits rather than bytes comes with a cost
 - First, it comes with a cost of having to track bitwise lengths and convert them to bytewise lenghts.
 - Second, it comes with a cost of having to remember to add padding after your bitwise writes and reads to ensure the next bytewise write or read functions correctly, and to make sure the buffer length includes any trailing bits.
 
-To address that, `FastBufferReader` and `FastBufferWriter` do not, themselves, have bitwise operations. When needed, however, you can create a `BitwiseWriter` or `BitwiseReader` instance, which is an IDisposable to ensure that no unaligned bits are left at the end - from the perspective of `FastBufferReader` and `FastBufferWriter`, only bytes are allowed. `BitwiseWriter` and `BitwiseReader` operate directly on the underlying buffer, so calling non-bitwise operations within a bitwise context is an error (and will raise an exception in non-production builds).
+To address that, `FastBufferReader` and `FastBufferWriter` do not, themselves, have bitwise operations. When needed, however, you can create a `BitWriter` or `BitReader` instance, which is used ensure that no unaligned bits are left at the end - from the perspective of `FastBufferReader` and `FastBufferWriter`, only bytes are allowed. `BitWriter` and `BitReader` operate directly on the underlying buffer, so calling non-bitwise operations within a bitwise context is an error (and will raise an exception in non-production builds).
 
 ```csharp
 FastBufferWriter writer = new FastBufferWriter(256, Allocator.TempJob);
@@ -128,15 +142,21 @@ using(var bitWriter = writer.EnterBitwiseContext())
 } // Dispose automatically adds 2 more 0 bits to pad to the next byte.
 ```
 
-## INetworkSerializable
+## Packing
 
-A new `BufferSerializer` class wrapping `FastBufferReader` and `FastBufferWriter` will replace the existing `NetworkSerializer` to provide the same two-way interface as the existing `NetworkSerializer`, and is rewritten as a **ref struct** so that no allocation overhead is incurred in calling the `INetworkSerializable`'s `Serialize()` method. 
+Packing values is done using the utility classes `BytePacker` and `ByteUnpacker`. These generally offer two different ways of packing values:
 
-A **ref struct** is chosen instead of a normal struct to avoid the pitfalls associated with having mutable structs and forgetting to pass them with the ref keyword - we can manage this with `FastBufferReader` and `FastBufferWriter` because those are internal and we can rely on our ability to understand the implications of using them as structs, but our end users may be less experienced and may inadvertently pass this forward to calls that do not take the value by ref. 
+- `BytePacker.WriteValuePacked()`/`ByteUnpacker.ReadValuePacked()` are the most versatile. They can write any range of values that fit into the type, and also have special built-in methods for many common Unity types that can automatically pack the values contained within.
 
-A `ref struct` is always passed by reference rather than copied, but does have the disadvantage of being limited to the stack frame - so we can't use it for `FastBufferWriter` and `FastBufferReader` because we persist those.
+- `BytePacker.WriteValueBitPacked()`/`ByteUnpacker.ReadValueBitPacked()` offer tighter/more optimal packing (the data in the buffer will never exceed `sizeof(type)`, which can happen with very large values using `WriteValuePacked()`, and will usually be one byte smaller than with `WriteValuePacked()` except for values <= 240, which will be one byte with both methods), but come with the limitations that they can only be used on integral types, and they use some bits of the type to encode length information, meaning that they reduce the usable size of the type. The sizes allowed by these functions are as follows:
 
-`BufferSerializer` has an additional advantage (or disadvantage, depending on your viewpoint) compared to `FastBufferWriter` and `FastBufferReader`: since it's intended to be used by our end users, it performs bounds checking on every operation and throws exceptions if attempting to read or write out of bounds. 
+  | Type   | Usable Size                                                  |
+  | ------ | ------------------------------------------------------------ |
+  | short  | 14 bits + sign bit (-16,384 to 16,383)                       |
+  | ushort | 15 bits (0 to 32,767)                                        |
+  | int    | 29 bits + sign bit (-536,870,912 to 536,870,911)             |
+  | uint   | 30 bits (0 to 1,073,741,824)                                 |
+  | long   | 60 bits + sign bit (-1,152,921,504,606,846,976 to 1,152,921,504,606,846,975) |
+  | ulong  | 61 bits (0 to 2,305,843,009,213,693,952)                     |
 
-This, combined with the `IsReader` if-checks, will make `BufferSerializer` slower than `FastBufferReader` and `FastBufferWriter` - but for advanced users, we can expose `FastBufferReader` and `FastBufferWriter` and allow the user to use them directly if they choose (with all appropriate warnings about them delivered).
-
+  

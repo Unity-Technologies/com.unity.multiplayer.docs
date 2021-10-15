@@ -13,10 +13,10 @@ struct MyComplexStruct : INetworkSerializable
     public Quaternion Rotation;
 
     // INetworkSerializable
-    public void NetworkSerialize(NetworkSerializer serializer)
+    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
-        serializer.Serialize(ref Position);
-        serializer.Serialize(ref Rotation);
+        serializer.SerializeValue(ref Position);
+        serializer.SerializeValue(ref Rotation);
     }
     // ~INetworkSerializable
 }
@@ -47,7 +47,7 @@ void Update()
 
 Nested serial types will be `null` unless you initilize following one of these methods:
 
-* Manually before calling `Serialize` if `serializer.IsReading` (or something like that)
+* Manually before calling `SerializeValue` if `serializer.IsReader` (or something like that)
 * Initialize in the default constructor
 
 This is by design. You may see the values as null until properly initialized. The serializer is not deserializing them, the `null` value is simply applied before it can be serialized.
@@ -66,26 +66,26 @@ public struct MyCustomStruct : INetworkSerializable
 {
     public int[] Array;
 
-    public void NetworkSerialize(NetworkSerializer serializer)
+    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         // Length
         int length = 0;
-        if (!serializer.IsReading)
+        if (!serializer.IsReader)
         {
             length = Array.Length;
         }
 
-        serializer.Serialize(ref length);
+        serializer.SerializeValue(ref length);
 
         // Array
-        if (serializer.IsReading)
+        if (serializer.IsReader)
         {
             Array = new int[length];
         }
 
         for (int n = 0; n < length; ++n)
         {
-            serializer.Serialize(ref Array[n]);
+            serializer.SerializeValue(ref Array[n]);
         }
     }
 }
@@ -105,7 +105,7 @@ public struct MyCustomStruct : INetworkSerializable
 - Serialize value from Array[n] element into the stream
 
 
-The `NetworkSerializer.IsReading` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream.
+The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`
 
 
 ### Example: Move
@@ -121,18 +121,18 @@ public struct MyMoveStruct : INetworkSerializable
     public Vector3 LinearVelocity;
     public Vector3 AngularVelocity;
 
-    public void NetworkSerialize(NetworkSerializer serializer)
+    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         // Position & Rotation
-        serializer.Serialize(ref Position);
-        serializer.Serialize(ref Rotation);
+        serializer.SerializeValue(ref Position);
+        serializer.SerializeValue(ref Rotation);
         
         // LinearVelocity & AngularVelocity
-        serializer.Serialize(ref SyncVelocity);
+        serializer.SerializeValue(ref SyncVelocity);
         if (SyncVelocity)
         {
-            serializer.Serialize(ref LinearVelocity);
-            serializer.Serialize(ref AngularVelocity);
+            serializer.SerializeValue(ref LinearVelocity);
+            serializer.SerializeValue(ref AngularVelocity);
         }
     }
 }
@@ -156,7 +156,7 @@ public struct MyMoveStruct : INetworkSerializable
   -  Serialize `LinearVelocity` into the stream
   -  Serialize `AngularVelocity` into the stream
 
-Unlike the [Array](#example-array) example above, in this example we do not use `NetworkSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.
+Unlike the [Array](#example-array) example above, in this example we do not use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
 
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.
@@ -174,10 +174,10 @@ public struct MyStructA : INetworkSerializable
     public Vector3 Position;
     public Quaternion Rotation;
 
-    public void NetworkSerialize(NetworkSerializer serializer)
+    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
-        serializer.Serialize(ref Position);
-        serializer.Serialize(ref Rotation);
+        serializer.SerializeValue(ref Position);
+        serializer.SerializeValue(ref Rotation);
     }
 }
 
@@ -187,10 +187,10 @@ public struct MyStructB : INetworkSerializable
     public string SomeText;
     public MyStructA StructA;
     
-    public void NetworkSerialize(NetworkSerializer serializer)
+    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
-        serializer.Serialize(ref SomeNumber);
-        serializer.Serialize(ref SomeText);
+        serializer.SerializeValue(ref SomeNumber);
+        serializer.SerializeValue(ref SomeText);
         StructA.NetworkSerialize(serializer);
     }
 }
