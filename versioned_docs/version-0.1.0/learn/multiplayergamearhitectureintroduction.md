@@ -1,5 +1,5 @@
 ---
-id: multiplayer-game-arhitecture
+id: multiplayer-game-architecture
 title: Architecture Introduction
 ---
 

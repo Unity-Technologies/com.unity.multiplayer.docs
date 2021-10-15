@@ -3,7 +3,7 @@ id: deprecation-of-return-values
 title: Deprecation of Return Values
 ---
 
-MLAPI supports RPC return values on convenience RPCs.
+Netcode for GameObjects (Netcode) supports RPC return values on convenience RPCs.
 
 Example:
 

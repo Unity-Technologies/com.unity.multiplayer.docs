@@ -3,7 +3,7 @@ id: troubleshooting
 title: Troubleshooting
 ---
 
-See the following information for common troubleshooting for MLAPI.
+See the following information for common troubleshooting for Netcode for GameObjects.
 
 ## NullReferenceException when trying to start a server/host/client
 
