@@ -1,6 +1,6 @@
 ---
 id: lagandpacketloss
-title: Lag and Packet Loss
+title: Latency and Packet Loss
 ---
 A multiplayer game operating over the internet has to deal with several adverse factors that are not present when developing single-player or LAN-only multiplayer games.
 
