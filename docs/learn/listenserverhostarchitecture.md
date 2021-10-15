@@ -81,7 +81,7 @@ Many platforms come with platform specific networking solutions. They usually us
 
 There are companies which provide relay servers in your cloud ready for your game to use such as Playfab Party or Photon Realtime. They usually charge a cost based on the CCU (conccurrent users).
 
-## MLAPI and listen servers
+##  Netcode for GameObjects (Netcode) and listen servers
 
-MLAPI modular transport system supports all the options above. Most regular transports will allow you to connect to them
-via port forwarding. MLAPI can support platform specific relays via Transport. You can find implementations in the mlapi-community-contributions repository. MLAPI also supports cross platform listen servers by integrating a third party relay service via transport. You can also write your own relay server or NAT punch server for MLAPI.
+Netcode modular transport system supports all the options above. Most regular transports will allow you to connect to them
+via port forwarding. Netcode can support platform specific relays via Transport. You can find implementations in the Netcode-community-contributions repository. Netcode also supports cross platform listen servers by integrating a third party relay service via transport. You can also write your own relay server or NAT punch server for Netcode.

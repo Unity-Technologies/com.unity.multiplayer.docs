@@ -27,7 +27,7 @@ You can copy the script from here and paste it into your file.
 
 ``` csharp
 using System.Collections.Generic;
-using MLAPI;
+using Unity.Netcode;
 using UnityEngine;
 
 public class NetworkCommandLine : MonoBehaviour

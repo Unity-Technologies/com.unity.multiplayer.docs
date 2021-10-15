@@ -8,17 +8,17 @@ import styles from './styles.module.scss';
 
 const features = [
   {
-    title: 'Develop with MLAPI',
+    title: 'Develop with Netcode for GameObjects',
     imageUrl: 'img/land-feature1b.jpg',
     description: (
       <>
-        We’re evolving our solution, built on MLAPI, in the open to become a netcode foundation that you can depend on – 
+        We’re evolving our solution, built on Netcode for GameObjects, in the open to become a netcode foundation that you can depend on – 
         customizable and extensible to meet the needs of many multiplayer game types.
       </>
     ),
     link: (
       <>
-      <a href="docs/tutorials/helloworld/helloworldintro" class="land-link">Learn more about MLAPI</a>
+      <a href="docs/tutorials/helloworld/helloworldintro" class="land-link">Learn more about Netcode for GameObjects</a>
       </>
     ),
   },
@@ -42,7 +42,7 @@ const features = [
     imageUrl: 'img/land-feature2b.jpg',
     description: (
       <>
-        <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize" target="_blank">Bitesize Sample</a> projects give you modular features to learn more about MLAPI and add to your multiplayer games. See what features are available including status effects, health tracking, game timers, and more.
+        <a href="https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize" target="_blank">Bitesize Sample</a> projects give you modular features to learn more about Netcode for GameObjects and add to your multiplayer games. See what features are available including status effects, health tracking, game timers, and more.
       </>
     ),
     link: (
@@ -69,11 +69,11 @@ const highlights = [
     ),
   },
   {
-    title: 'Unity Transport and MLAPI',
+    title: 'Unity Transport and Netcode for GameObjects',
     imageUrl: 'img/hilight-code.jpg',
     description: (
       <>
-        Unity Transport provides a new wrapper for Unity MLAPI! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/0.8.0/api/introduction">com.unity.transport</a>.
+        Unity Transport provides a new wrapper for Netcode for GameObjects! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/0.8.0/api/introduction">com.unity.transport</a>.
       </>
     ),
     link: (

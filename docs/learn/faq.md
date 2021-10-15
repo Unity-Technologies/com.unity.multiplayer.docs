@@ -3,30 +3,30 @@ id: faq
 title: Frequently Asked Questions
 ---
 
-The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
+The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including  Netcode for GameObjects (Netcode), Transport, and more.
 
-## Unity MLAPI
+## Unity  Netcode for GameObjects (Netcode)
 
 <div id="faq">
 
 
-### Does MLAPI have a Public Roadmap?
+### Does Netcode have a Public Roadmap?
 
-See the [Multiplayer Networking Public Roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) to review, suggest, and vote on features for all Multiplayer Networking, MLAPI, and documentation.
+See the [Multiplayer Networking Public Roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) to review, suggest, and vote on features for all Multiplayer Networking, Netcode, and documentation.
 
 ### Implement a Dedicated Server vs a Listen Server, would I need to make changes to the codebase?
 
-MLAPI is designed in a way that works with both a Listen Server and a Dedicated Server model. You will just have to be careful that you are using things like `IsServer` and `IsHost` correctly.
+Netcode is designed in a way that works with both a Listen Server and a Dedicated Server model. You will just have to be careful that you are using things like `IsServer` and `IsHost` correctly.
 
-### Does MLAPI have any Matchmaking functionality?
+### Does Netcode have any Matchmaking functionality?
 
-Matchmaking would have to be implemented using 3rd party matchmaking services. MLAPI has no matchmaking functionality, currently.
+Matchmaking would have to be implemented using 3rd party matchmaking services. Netcode has no matchmaking functionality, currently.
 
 ### How can you get more information for ClientRPC errors?
 
 If you receive `ClientRPC` errors like the following, you may have difficulty debugging:
 
-> :warning: [MLAPI] ClientRPC message received for a non existant object with id: 16. This message will be buffered and might be recovered.
+> :warning: [Netcode] ClientRPC message received for a non existant object with id: 16. This message will be buffered and might be recovered.
 `UnityEngine.Debug:LogWarning(object)`
 
 You can set *Enable Message Buffering* to `true` in `NetworkManager`. It will store those RPCs and apply them later once the object spawns.
@@ -41,12 +41,12 @@ We recommend the following:
    It should work just like over LAN you just have to connect to the public IP itself. Make sure to open UDP on the router. Many forward ports tutorials are available to review, including this option https://portforward.com/.
 1. Use a relay. 
    
-   There is an [unofficial MLAPI relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You could also use MLAPI's list server to browse through all hosts.
+   There is an [unofficial Netcode relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You could also use Netcode's list server to browse through all hosts.
    
    The other option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
 
   :::note About Relays
-  We know there is a high demand for an out-of-the-box relay solution for MLAPI, and have plans to resolve in the future.
+  We know there is a high demand for an out-of-the-box relay solution for Netcode, and have plans to resolve in the future.
   :::
 
 
@@ -64,9 +64,9 @@ Your client will need an input field to input the server's IP. If you just need 
 
 Spawning can always be done on the host/server. If you want to give a client control over spawning objects, you need to implement a server RPC that you call on the client to spawn the object.
 
-### What are best practices for handing physics with MLAPI?
+### What are best practices for handing physics with Netcode?
 
-Networked physics is complicated, with many different ways to handle them. Currently, physics can be a little difficult to handle with MLAPI and the built-in `NetworkTransform`. 
+Networked physics is complicated, with many different ways to handle them. Currently, physics can be a little difficult to handle with Netcode and the built-in `NetworkTransform`. 
 
 We recommend the following:
 
@@ -76,17 +76,6 @@ We recommend the following:
 ### How do you implement on Steam?
 
 The Steam transport should be quite straightforward to use. Just add it to your project and set the `ConnectToSteamID` in the transport on the client to connect to the host that's all you need.
-
-### Can I use Netcode for GameObjects with WebGL?
-
-Netcode for GameObjects does not support the WebGL platform. This is the case because WebGL does not allow access to IP Sockets.
-
-There are third party transports provided by the community which should allow you to use Netcode on WebGL platforms. A list of these transports can be found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
-
-A few notes on using Netcode on WebGL:
-- WebGL is not a platform we officially support, you might encounter bugs and issues while using it and we will not prioritize fixing those issues.
-- The server or host cannot be a WebGL client but must be a Desktop or Mobile build.
-- You might experience increased latency and jitter due to the TCP protocol used by WebSockets
 
 </div>
 
@@ -118,17 +107,8 @@ See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from
 
 ### Why is there an `InitBootStrap` scene as the startup scene for Boss Room and Bitesize Samples?
 
-The initial reason is that in Unity MLAPI the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
+The initial reason is that in Netcode the `NetworkManager` is a singleton class. We initially created it in the main menu, but when the host was leaving the in-game/networked scene, the Network Manager was getting destroyed, which led to not being able to host a game again without restarting the game instance.
 
 The Bootstrap scene ensures that the `NetworkManager` and other singletons are initialized first and will be there when you get back to main menu.
-
-</div>
-
-## Unity Transport Package
-
-<div id="faq">
-
-### Can I use the Unity Transport Package with WebGL?
-The Unity Transport Package does currently not support WebGL.
 
 </div>

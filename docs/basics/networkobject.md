@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-The MLAPI's high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
+ Netcode for GameObjects' high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
 
 :::note
 `GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPC`s or `NetworkVariables` by default. For infromation on how to send  a reference to a `NetworkObject` over `RPC`s or `NetworkVariables` see [NetworkObject &NetworkBehaviour](../advanced-topics/serialization/networkobject-serialization.md).
@@ -39,13 +39,13 @@ When you are owner of an object, you can check for `IsOwner` in any `NetworkBeha
 
 ## Player Objects
 
-Player objects are an optional feature in MLAPI which can be used to assign a networked object to a specific client. A client can always only have at most one player object.
+Player objects are an optional feature in Netcode which can be used to assign a networked object to a specific client. A client can always only have at most one player object.
 
 If you want a client to control multiple objects use the ownership model instead.
 
 ### Creating a Player Object
 
-MLAPI can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkManager`, then MLAPI will spawn the prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
+Netcode can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkManager`, then Netcode will spawn the prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
 
 To manually spawn an object as player object, use `SpawnAsPlayerObject` instead of the regular `Spawn` method. This replaces the old player object with the new one.
 
