@@ -19,6 +19,18 @@ You can register your own spawn handlers by including the `INetworkPrefabInstanc
 ```
 Netcode will use the `Instantiate` and `Destroy` methods in place of default spawn handlers for the `NetworkObject` used during spawning and despawning.  Because the message to instantiate a new `NetworkObject` originates from a Host or Server, both will not have the Instantiate method invoked. All clients (excluding a Host) will have the instantiate method invoked if the `INetworkPrefabInstanceHandler` implementation is  registered with `NetworkPrefabHanlder` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject`.
 
+The following example is from the Bossroom Sample. It shows how object pooling is used to handle the different projectile objects. In that example, the class `NetworkObjectPool` is the datastructure containing the pooled objects and the class `PooledPrefabInstanceHandler` is the handler implementing `INetworkPrefabInstanceHandler`.
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Net/NetworkObjectPool.cs#L1-L216
+```
+
+Let's have a look at `NetworkObjectPool` first. `PooledPrefabsList` contains a list of prefabs to handle, with an initial number of instances to spawn for each. In the `Start` method, it initialises the different pools for each prefab as queues inside the `pooledObjects` dictionary. It also instantiates the handlers for each prefab and registers them. To use these objects, a user then needs to use the `GetNetworkObject` method before spawning it, then return the object to the pool after use with `ReturnNetworkObject` before despawning it. This only needs to be done on the server, as the `PooledPrefabInstanceHandler` will handle it on the client(s) when the network object's `Spawn` or `Despawn` method is called, via its `Instantiate` and `Destroy` methods. Inside thos methods, the `PooledPrefabInstanceHandler` simply calls the pool to get the corresponding object, or to return it. 
+
+```
+-----------------------------------------------------------------------------------------------------------------
+```
+
 In the following basic pooling example, the `m_ObjectToPool` property is the prefab we want to pool.  We register the `NetworkPrefabHandlerObjectPool` class (that implements the `INetworkPrefabInstanceHandler` interface) using the `m_ObjectToPool`'s `GameObject` with a reference to the current instance of `NetworkPrefabHandlerObjectPool`.  We also take into account any `NetworkManager` defined `NetworkPreab` overrides by calling `NetworkManager.GetNetworkPrefabOverride` while both assigning and passing in our `m_ObjectToPool`.  
 
 ```csharp
