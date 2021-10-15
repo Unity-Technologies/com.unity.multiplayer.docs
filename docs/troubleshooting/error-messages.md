@@ -1,6 +1,6 @@
 ---
 id: errormessages
-title: MLAPI Error Messages
+title: Netcode for GameObjects (Netcode) Error Messages
 ---
 
 Learn more about Unity error messages, including error collecting, issues that cause them, and how to handle.
@@ -23,7 +23,7 @@ This exception should only occur if your scenes are not the same, for example if
 ## ServerRPC errors
 
 **Error:** 
-* Server: `[MLAPI] Only owner can invoke ServerRPC that is marked to require ownership`
+* Server: `[Netcode] Only owner can invoke ServerRPC that is marked to require ownership`
 * Host: `KeyNotFoundException: The given key was not present in the dictionary.`
 
 The ServerRPC should only be used on the server. Make sure to add `isServer` check before calling.
