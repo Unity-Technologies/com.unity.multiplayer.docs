@@ -398,7 +398,7 @@ module.exports = {
               {
                 "collapsed": true,
                 "type": "category",
-                "label": "Boss Room and RPCs",
+                "label": "RPCs vs NetworkVariables",
                 "items": [  
                   {
                     "type": "doc",

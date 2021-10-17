@@ -2,6 +2,7 @@
 id: deprecation-of-return-values
 title: Deprecation of Return Values
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 Netcode for GameObjects (Netcode) supports RPC return values on convenience RPCs.
 

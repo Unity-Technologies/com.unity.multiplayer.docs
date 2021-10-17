@@ -2,10 +2,20 @@
 id: clientrpc
 title: ClientRpc
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
+
 
 A `ClientRpc` can be invoked by the server to be executed on a client.
 
-## Declare a ClientRpc
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs.png?text=DarkMode"/>
+</figure>
+
+
+
+## Declaring a ClientRpc
 Developers can declare a `ClientRpc` by marking a method with `[ClientRpc]` attribute and making sure to have `ClientRpc` suffix in the method name.
 
 ```csharp
@@ -13,7 +23,7 @@ Developers can declare a `ClientRpc` by marking a method with `[ClientRpc]` attr
 void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-## Invoke a ClientRpc
+## Invoking a ClientRpc
 
 Developers can invoke a `ClientRpc` by making a direct function call with parameters:
 
@@ -48,7 +58,7 @@ PongRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
 PongClientRpc(somenumber, sometext); // This is clearly a ClientRpc call
 ```
 
-## Use ClientRpcSendParameters
+## To Send to One Client, use ClientRpcSendParameters
 
 The following code provides an example of using `ClientRpcSendParameters`, which will allow you to send a `ClientRpc` to a specific Client connection(s) whereas the default Netcode for GameObjects's behavior is to broadcast to every single client.
 
@@ -84,6 +94,29 @@ private void DoSomethingServerSide(int clientId)
         Debug.LogFormat("GameObject: {0} has received a randomInteger with value: {1}", gameObject.name, randomInteger);
     }
 ```
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients.png?text=DarkMode"/>
+ <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
+</figure>
+
+## Invoking a Client RPC from the Host.
+As the host is both a client and a server, if a host invokes a Client RPC, that RPC will be executed on the host too in addition to other clients.
+
+
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=DarkMode"/>
+ <figcaption>Client Hosts can invoke Client RPCs on Network Objects. The RPC will be placed in the local queue and then, after a short delay the client RPC will be executed on the Client Host, and sent to the other clients. When client RPC is received by the client - it is executed on the Client's version of the same Network Object.</figcaption>
+</figure>
+
+See examples of how these were used in Boss Room.
+<!-- TODO insert link to page here, remind me about this in my PR if I forget -->
+
 
 ## See also
 

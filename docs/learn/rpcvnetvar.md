@@ -4,25 +4,9 @@ title: RPC vs NetworkVariable
 sidebar_label: RPC vs NetworkVariable
 ---
 
- Netcode for GameObjects (Netcode) has two main methods of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
+ Netcode for GameObjects (Netcode) has two main ways of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
 
-## RPCs
-
-The concept of an `RPC` is common not only in video games but in the software industry in general. They are ways to call methods on objects that are not in the same executable. 
-
-At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters. 
-
-When calling an `RPC`, you call a method remotely on an object that could be anywhere in the world. They are "events" you can trigger when needed. 
-
-If you call an `RPC` method on your side, it will execute on a different machine.
-
-## NetworkVariables
-
-At a high level, a `NetworkVariable` is a variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initially to a host, all relevant `NetworkVariable` latest values "state" will be replicated to that new client. Your state gets updated at regular intervals.
-
-`NetworkVariable` can be referenced as "state" or as "Netvars" or as replicated vars.
-
-If you change your variable's value on your side, others will see the latest value on their side.
+See [RPC](../advanced-topics/messaging-system) and [NetworkVariable](../basics/networkvariable) for more details.
 
 ## Choosing between NetworkVariables or RPCs
 

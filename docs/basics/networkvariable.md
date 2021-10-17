@@ -9,7 +9,13 @@ sidebar_label: NetworkVariable
 There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
 :::
 
-`NetworkVariable` is the way data can be synchronized between peers in abstracted ways. The data can be custom containers and complex structures such as inventory structs.
+At a high level, a `NetworkVariable` is a variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initially to a host, all relevant `NetworkVariable` latest values "state" will be replicated to that new client. Your state gets updated at regular intervals.
+
+`NetworkVariable` can be referenced in this doc as "state" or as "Netvars" or as replicated vars.
+
+If you change your variable's value on your side, others will see the latest value on their side.
+
+The data can be custom containers and complex structures such as inventory structs.
 
 By default, Netcode comes with three different containers. `NetworkList`, `NetworkDictionary` and `NetworkVariable`. The `NetworkVariable` container is built to store simple data types such as `float`s and `int`s. The List and Dictionary implementations are wrappers around the .NET equivalents. They are event-driven and have a list of events to be synced. The default implementations come with flexibility in terms of settings. Containers can be setup to sync Client To Server, Server To Client, or Bidirectional. It can also be set to target specific clients using custom delegates.
 
