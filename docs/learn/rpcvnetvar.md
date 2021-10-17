@@ -3,8 +3,9 @@ id: rpcvnetvar
 title: RPC vs NetworkVariable
 sidebar_label: RPC vs NetworkVariable
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
- Netcode for GameObjects (Netcode) has two main ways of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
+Netcode for GameObjects (Netcode) has two main ways of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
 
 See [RPC](../advanced-topics/messaging-system) and [NetworkVariable](../basics/networkvariable) for more details.
 
@@ -58,12 +59,30 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 ```
 
 :::tip
-If you want to make sure two variables are received at the same time, `RPC`s are great for that. 
+If you want to make sure two variables are received at the same time, `RPC`s are great for this. 
 
-If you change `NetworkVariable` "a" and "b", there is no guarantee they will both be received client side at the same time. Sending them as two parameters in the same `RPC` allows to make sure they will be received at the same time client side.
+If you change `NetworkVariables` "a" and "b", there is no guarantee they will both be received client side at the same time. 
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates.png?text=DarkMode"/>
+ <figcaption>Different Network Variables updated within the same tick are not guranteed to be delivered to the clients at the same time. </figcaption>
+</figure>
+
+Sending them as two parameters in the same `RPC` allows to make sure they will be received at the same time client side.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs.png?text=DarkMode"/>
+ <figcaption>To ensure that several different Network Variables are all synchronized at the same exact time we can use client RPC to join these value changes together.</figcaption>
+</figure>
+
 :::
 
 `NetworkVariable`s are great when you only care about the latest value.
+
 
 
 ## Summary
