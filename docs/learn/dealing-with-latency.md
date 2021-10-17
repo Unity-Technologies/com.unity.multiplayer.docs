@@ -21,7 +21,7 @@ Accuracy/consistency | server rewind, server authority
 
 We saw in our [latency](lagandpacketloss.md) and [tick](../reference/glossary/ticks-and-update-rates) pages how waiting for your server's response makes your game feel unresponsive.
 Latency will destroy your gameplay experience and make your game frustrating. It doesn't take much to make a multiplayer game unplayable. Add 200ms between your inputs and what you see on your screen and you'll want to throw your computer through the window.
-<!-- todo add jil drawing for latency frustrating -->
+<!-- TODO NOW add jil drawing for latency frustrating -->
 
 Trying to deal with lag naively can introduce security and consistency issues. This page will help you get started with these techniques.
 
@@ -36,7 +36,7 @@ Even if you specify in your client logic that you can't kill an imp if it's more
 In addition to responsiveness, the accuracy of your simulation is important. Not only will it break your player's immersion, competitive games often have prize pools of multiple millions of dollars where you want to make sure when your user is targeting something on their screen, it actually hits.
 With latency, what a client receives from the server is RTT/2 ms late. The information available isn't the "live" one, it's the one that was sent over the internet some time earlier (for example 200ms ago). This means if my local player collides with a server driven networked object, I'll see my collider overlap with it before the server reacts and tells it to move. 
 
-<!-- (TODO Jil drawing for server rewind. could do a gif of this, this kind of overlapping is pretty cool to visualize).  -->
+<!-- (TODO LATER Jil drawing for server rewind. could do a gif of this, this kind of overlapping is pretty cool to visualize).  -->
 
 This also means if I shoot a target's head, my shot will be targeting a head that's RTT/2 ms behind and will reach the server RTT/2 ms later (meaning you have a full RTT ms of desync between your shot and the actual hit)
 This means any interactions I'm making on that object will see a delayed effect.
@@ -50,10 +50,20 @@ In summary, you want: Accuracy, Security and Responsiveness
 ### Server authoritative games
 The authority is who has the right to make final gameplay decisions over objects. A server authoritative game has all its final gameplay decisions executed by the server.
 
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority.png?text=DarkMode"/>
+<figcaption>The server gets to make the final gameplay decisions</figcaption>
+</figure>
+
+<!-- TODO NOW improve this diagram, not clear what is sent where -->
+
+
 #### Good for world consistency
 An advantage of server authoritative games is your world's consistency. Since all gameplay decisions (ex: a player opens a door, a bot shoots the player) are made by the same node on the network (the server), you're sure these decisions are made at the same time. A client authoritative game would have decisions made on client A and other decisions on client B, with both being separated by RTT ms of internet lag. Player A killing player B while player B was already hiding behind cover would cause consistency issues. Having all this gameplay logic on one single node (the server) makes these kinds of considerations irrelevant, since everything happens in the same execution context.
 
-<!-- TODO jil drawing for client vs server authority desync -->
+<!-- TODO create more drawings for client vs server authority desync -->
 
 #### Good for security
 Critical data (like your character health or position for example) could be **server authoritative**, so cheaters can't mess with it. In that instance, the server will have the final say on that data's value. You wouldn't want players on their clients being able set their health (or even worst, other player's health) at will.
@@ -77,6 +87,15 @@ An issue with server authority is you're waiting for your server to tell you to 
 ### Client authority
 In a **client authoritative** (or **client driven**) game using Netcode for GameObjects, you still have a server that's used to share world state, but clients will own and impose their reality.
 
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority.png?text=DarkMode"/>
+<figcaption>The client gets to make the final gameplay decisions</figcaption>
+</figure>
+
+<!-- TODO NOW improve this diagram, not clear what is sent where -->
+
 #### Good for reactivity
 This can often be used when you trust your users or their devices. For example, you could have a client tell the server "I killed player x" instead of *"I clicked in that direction" and have the server simulate that action to return the result*. This way, your client could show the death animation for your ennemy as soon as you clicked, since the death would already be confirmed and owned by your client. The server would only relay that information back to other users.
 
@@ -86,11 +105,24 @@ There's possible sync issues with client authoritative games. If your character 
 :::info
 #### Owner authority vs All clients authority
 Having multiple clients having the ability to affect the same shared object can become a mess real fast.
-<!-- todo jil drawing -->
-To avoid this, it's highly recommended to use client **owner** authority, which would allow only the owner of an object to affect it. Since ownership is controlled server side in Netcode, there's no possibility of two clients running into a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software). To allow two clients to affect the same object, you'd need to ask the server for ownership, wait for it, then execute the client authoritative logic you want.
-:::
 
-<!-- todo jil drawings -->
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue.png?text=DarkMode"/>
+<figcaption>Multiple clients trying to impose their reality on a shared object.</figcaption>
+</figure>
+
+
+To avoid this, it's recommended to use client **owner** authority, which would allow only the owner of an object to interact with it. Since ownership is controlled server side in Netcode, there's no possibility of two clients running into a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software). To allow two clients to affect the same object, you'd need to ask the server for ownership, wait for it, then execute the client authoritative logic you want.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix.png?text=DarkMode"/>
+<figcaption>Multiple clients ASKING to interact with a shared object.</figcaption>
+</figure>
+:::
 
 #### Issue: Security
 Client authority is a pretty dangerous door to leave open on your server, since any malicious player could forge messages to say "kill player a, b, c, d, e, f, g" and win the game. It is pretty useful though for reactivity. Since the client is taking all the important gameplay decisions, it can display the result of user inputs as soon as they happen instead of waiting a few hundred milliseconds.
@@ -105,7 +137,7 @@ Another way of solving this issue in a client authoritative game is using soft v
  Client authority | Less secure. More reactive. Possible sync issues.
 
 ### Boss Room's authority
-<!-- todo jil drawings for different actions -->
+<!-- TODO NOW jil drawings for different actions when it's merged -->
 
 Boss Room's [actions](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Assets/BossRoom/Scripts/Server/Game/Action) uses a server authoritative model. The client sends inputs (mouse clicks for the character's destination) and the server sends back positions. This way, every features in the world are on the same world time. If the Boss charges and bumps you, you'll see your character fly away as soon as the boss touches you, not pass through you and then see you fly away. 
 <!-- (TODO we don't have an example of client authoritative character where we could show the overlap effect of this, but that's coming https://jira.unity3d.com/browse/MTT-985) -->
@@ -188,10 +220,10 @@ TODO show example -->
 If a player selects an imp, the selection circle will be client driven, it won't wait for the server to tell us we've selected the imp.
 
 <!-- TODO AOE selection isn't really client authoritative, but should still be talked about -->
-<!-- todo show jil drawing -->
+<!-- TODO NOW show jil drawing -->
 [Click](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientInputSender.cs) is client driven, [AOE selection](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Action/AoeActionInput.cs) is client driven. AOE's distance check is client driven. However the distance check is done [server side too](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Server/Game/Action/AOEAction.cs). This way if there's too much latency between a client click and the server side position, the server will do a sanity check to make sure that for its own state, the click is within the allowed range.
         
-<!-- TODO talk about rogue stealth? how it can be super simple client side logic to hide? could also not be part of this section. -->
+<!-- TODO NOW talk about rogue stealth? how it can be super simple client side logic to hide? could also not be part of this section. -->
 
 :::note
 The above examples are atomic actions. They happen on click.
@@ -251,10 +283,9 @@ There's no prediction implementation right now in Netcode for GameObjects, but y
 There's multiple reasons for not having server authoritative gameplay code run both client side (with [prediction](#client-side-prediction)) and server side. For example, your simulation could be not deterministic enough to trust that the same action client side would happen the same server side. If I throw a grenade client side, I want to make sure the grenade's trajectory is the same server side. This often happens with world objects with a longer life duration, with greater chances of desyncing. In this case, the safest approach would be a server authoritative grenade, to make sure everyone has the same trajectory. But how do you make sure the throw feels responsive and that your client doesn't have to wait for a full RTT before seeing anything react to their input?
 For a lot of games, when triggering an action, you'll see an animation/VFX/sound trigger before the action is actually executed. A trick often used for lag hiding is to trigger a non-gameplay impacting animation/sound/VFX on player input (immediately), but still wait for the server authoritative gameplay elements to drive the rest of the action. If the server has a different state (your action was cancelled server side for some reason), the worst that happens client side is you've played a useless quick animation. It's easy to just let the animation finish or cancel it.
 This is referenced as action casting or action anticipation. You're "casting" your action client side while waiting for the server to send the gameplay information you need.
-<!-- todo jil drawing -->
+<!-- TODO NOW jil drawing for action anticipation -->
 For your grenade, a client side "arm throw" animation could run, but the client would wait for the grenade to be spawned by the server. With normal latencies, this usually feels responsive. With higher abnormal latencies, you could run into the arm animating and no grenade appearing yet, but it would still feel responsive to users. It would feel strange, but at least it would feel responsive and less frustrating.
 In Boss Room for example, our movements use a small "jump" animation as soon as you click somewhere to make your character move. 
-<!-- todo gif/video -->
 The client then waits for the server to send position updates. The game still feels reactive, even though the character's movements are server driven.
 
 :::info
@@ -262,15 +293,15 @@ For example, Boss Room plays an animation on [Melee action](https://github.com/U
 :::
 
 This is also useful for any action that needs to interract with the world. An ability that makes you invulnerable would need to be on the same time as other server events. If I predict my invulnerability, but a sniper headshots me before my input has reached the server, I'll see my invulnerable animation, but will still get killed. This is pretty frustrating for users. Instead, I could play a "getting invulnerable" animation with the character playing an animation, wait for the server to tell me "you're invulnerable now" and then display my invulnerable status. This way, if a sniper shoots me, the client will receive both the sniper shot and the invulnerability messages on the same timeline, without any desync. 
-<!-- TODO do a sequence diagram for prediction vs action anticipation. TODO this should be explored more in FPS sample.  -->
+<!-- TODO LATER do a sequence diagram for prediction vs action anticipation. TODO this should be explored more in FPS sample.  -->
 
 :::info
 Top: player with zero artificial latency, doing a jump and moving almost instantly.
 Bottom: player with 1000ms RTT, doing the same. A jump (action anticipation) and moving when the server tells it too, a full RTT later.
-<!-- TODO Add side by side video for movement action anticipation, need to upload video -->
+<!-- TODO NOW Add side by side video for movement action anticipation, need to upload video -->
 
 Players don't have to wait for their mouse movements to be synced for AOE. They are independant. The click will trigger a server RPC (you can see the added delay on the bottom video)
-<!-- TODO Add side by side video for AOE, need to upload video -->
+<!-- TODO NOW Add side by side video for AOE, need to upload video -->
 :::
 
 ### Server Side Rewind (also called Lag Compensation)
@@ -281,7 +312,7 @@ The solution for this is to use server rewind by "favoring the attacker". Psycho
 Note: the server rewind of the game's state is done all in the same frame, this is invisible to players.
 This is a server side check that allows validating a client telling you what to do.
 <!-- 
-I'm not adding more info on this until we have discussed this further SDK side.
+TODO LATER I'm not adding more info on this until we have discussed this further SDK side.
 TODO shot behind a wall issue.  rewind limit to make it less bad
 TODO talk about mixing this with extrapolation to help the "shot behind a wall" issue
 TODO rocket league (https://www.youtube.com/watch?v=ueEmiDM94IE) uses this too, should see how that can change the teachings to be less FPS/sniper centric.

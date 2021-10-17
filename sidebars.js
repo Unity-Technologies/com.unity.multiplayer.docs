@@ -322,28 +322,27 @@ module.exports = {
               "id": "reference/glossary/high-level-terminology"
             },
             {
-              
-                "collapsed": true,
-                "type": "category",
-                "label": "ticks and update rate",
-                "items": [
+              "collapsed": true,
+              "type": "category",
+              "label": "Lag",
+              "items": [
                   {
-                  "type": "doc",
-              "id": "reference/glossary/ticks-and-update-rates"
-            },
-            {
-              "type": "doc",
-              "id": "learn/lagandpacketloss"
-                },
-            {
-              "type": "doc",
-              "id": "learn/clientside_interpolation"
-                },
-            {
-              "type": "doc",
-              "id": "learn/dealing-with-latency"
-                },
-          ],
+                    "type": "doc",
+                    "id": "reference/glossary/ticks-and-update-rates"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "learn/lagandpacketloss"
+                      },
+                  {
+                    "type": "doc",
+                    "id": "learn/clientside_interpolation"
+                      },
+                  {
+                    "type": "doc",
+                    "id": "learn/dealing-with-latency"
+                  },
+              ],
             },
 
             {
