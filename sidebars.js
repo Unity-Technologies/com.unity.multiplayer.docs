@@ -205,6 +205,21 @@ module.exports = {
             "id": "advanced-topics/message-system/rpc-params"
           },
           {
+            "collapsed": true,
+            "type": "category",
+            "label": "RPCs vs NetworkVariables",
+            "items": [  
+              {
+                "type": "doc",
+                "id": "learn/rpcvnetvar"
+              },
+              {
+                "type": "doc",
+                "id": "learn/rpcnetvarexamples"
+              },
+            ],
+          },
+          {
             "type": "doc",
             "id": "advanced-topics/message-system/rpc-compatibility"
           },
@@ -395,42 +410,28 @@ module.exports = {
                 "type": "doc",
                 "id": "learn/bossroom"
               },
-              {
-                "collapsed": true,
-                "type": "category",
-                "label": "RPCs vs NetworkVariables",
-                "items": [  
-                  {
-                    "type": "doc",
-                    "id": "learn/rpcvnetvar"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "learn/rpcnetvarexamples"
-                  },
-                ],
-              }, 
+               
             ],
           },
-      {
-      "collapsed": true,
-      "type": "category",
-      "label": "Bitesize Samples",
-      "items": [
           {
-          "type": "doc",
-          "id": "learn/bitesize-introduction"
+          "collapsed": true,
+          "type": "category",
+          "label": "Bitesize Samples",
+          "items": [
+              {
+              "type": "doc",
+              "id": "learn/bitesize-introduction"
+              },
+              {
+                "type": "doc",
+                "id": "learn/bitesize-invaders"
+                },
+              {
+              "type": "doc",
+              "id": "learn/bitesize-spaceshooter"
+              }
+          ]
           },
-          {
-            "type": "doc",
-            "id": "learn/bitesize-invaders"
-            },
-          {
-          "type": "doc",
-          "id": "learn/bitesize-spaceshooter"
-          }
-      ]
-      },
     ],
     },
     {
