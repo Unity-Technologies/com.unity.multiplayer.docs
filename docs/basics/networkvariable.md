@@ -124,3 +124,5 @@ namespace DefaultNamespace
     }
 }
 ```
+
+See [examples](../../learn/bossroom-examples/bossroom-actions) of how these were used in Boss Room.

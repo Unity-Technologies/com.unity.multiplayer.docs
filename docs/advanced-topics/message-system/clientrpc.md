@@ -114,8 +114,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientH
  <figcaption>Client Hosts can invoke Client RPCs on Network Objects. The RPC will be placed in the local queue and then, after a short delay the client RPC will be executed on the Client Host, and sent to the other clients. When client RPC is received by the client - it is executed on the Client's version of the same Network Object.</figcaption>
 </figure>
 
-See examples of how these were used in Boss Room.
-<!-- TODO insert link to page here, remind me about this in my PR if I forget -->
+See [examples](../../learn/bossroom-examples/bossroom-actions) of how these were used in Boss Room.
 
 
 ## See also

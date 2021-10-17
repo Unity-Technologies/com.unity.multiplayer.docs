@@ -78,3 +78,4 @@ PingServerRpc(somenumber, sometext); // This is clearly a ServerRpc call
 
 * [ClientRpc](clientrpc.md)
 * [RPC Params](rpc-params.md)
+* See [examples](../../learn/bossroom-examples/bossroom-actions) of how these were used in Boss Room.
