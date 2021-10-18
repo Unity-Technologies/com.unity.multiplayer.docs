@@ -26,7 +26,13 @@ Using the Boss Room's door as an example. A player's client needs to receive the
 
 If we sent an `RPC` to all clients, then all players connecting mid game after that `RPC` are sent will miss that information and have the wrong visual on their clients.
 
-<!-- TODO Jil diagram for the above (late joining with RPCs) -->
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin.png?text=DarkMode"/>
+<figcaption>Sending state with RPCs will not be transmitted to late joining clients.</figcaption>
+</figure>
+
 
 In that case, it is preferable to use `NetworkVariable`s like shown here.
 
