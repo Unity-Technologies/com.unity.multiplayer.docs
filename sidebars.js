@@ -84,7 +84,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
+        "id": "advanced-topics/fastbufferwriter-fastbufferreader"
       },
       {
         "type": "doc",
