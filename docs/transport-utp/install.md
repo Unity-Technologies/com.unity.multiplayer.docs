@@ -59,11 +59,11 @@ To run the develop branch of Netcode:
 1. When opened, click **File** > **Open Scene**.
 1. Navigate to and select *testproject/Assets/MainMenu.unity*. All scenes load.
 
-  ![Load Scene](/img/install/develop-scene.png)
+  [Load Scene](/img/install/develop-scene.png)
 
   You should see **Custom** installed packages available in *develop*, such as MLAPI Networking Library and Unity Transport for MLAPI.
 
-  ![Packages](/img/install/develop-packages.png)
+  [Packages](/img/install/develop-packages.png)
 
 :::tip Updated Local Code
 We recommend updating your local clone often from the Netcode repository. This branch is constantly updated with new and updated features, fixed issues, and more.

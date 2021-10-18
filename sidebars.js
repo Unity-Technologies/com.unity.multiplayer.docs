@@ -11,6 +11,10 @@ module.exports = {
       "id": "getting-started/about"
     },
     {
+      "type": "doc",
+      "id": "getting-started/whats-new"
+    },
+    {
     "collapsed": true,
     "type": "category",
     "label": "Installation and Migration",
@@ -39,36 +43,12 @@ module.exports = {
           {
             "type": "doc",
             "id": "tutorials/helloworld/helloworldtwo"
-          }     
+          }
         ]
       },
 
     ],
-  },
-  {
-    "collapsed": true,
-    "type": "category",
-    "label": "Learning Netcode with Goldenpath",
-    "items": [
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/starting_out"
-      },       
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
-      },
-       {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_one"
-      },    
-      {
-        "type": "doc",
-        "id": "tutorials/goldenpath_series/goldenpath_two"
-      },  
-    ],
-   
-  },
+  },  
     {
     "collapsed": true,
     "type": "category",
@@ -77,6 +57,10 @@ module.exports = {
       {
         "type": "doc",
         "id": "getting-started/connection-approval"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/max-players"
       },
       {
         "type": "doc",
@@ -125,7 +109,7 @@ module.exports = {
           }
         ]
       },
-      
+
       {
         "type": "doc",
         "id": "advanced-topics/networkprofiler-window"
@@ -210,7 +194,7 @@ module.exports = {
           },
         ]
       },
-      { 
+      {
         "type": "doc",
         "id": "advanced-topics/ways-synchronize"
       },
@@ -229,7 +213,7 @@ module.exports = {
           },
         ]
       },
-      { 
+      {
         "type": "doc",
         "id": "advanced-topics/message-system/custom-messages"
       },
@@ -251,7 +235,7 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/serialization/unity-primitives"
-      },   
+      },
       {
         "type": "doc",
         "id": "advanced-topics/serialization/enum_types"
@@ -259,15 +243,15 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/serialization/static-arrays"
-      },  
-      { 
+      },
+      {
         "type": "doc",
         "id": "advanced-topics/serialization/inetworkserializable"
       },
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      }, 
+      },
     ]
     },
   {
@@ -278,6 +262,21 @@ module.exports = {
       {
         "type": "doc",
         "id": "basics/scene-management"
+      },
+    ]
+  },
+    {
+    "collapsed": true,
+    "type": "category",
+    "label": "Testing ",
+    "items": [
+      {
+        "type": "doc",
+        "id": "tutorials/testing/testing_locally"
+      },
+      {
+        "type": "doc",
+        "id": "tutorials/testing/testing_with_artificial_conditions"
       },
     ]
   },
@@ -292,6 +291,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "basics/profiling"
+      },
+      {
+        "type": "doc",
         "id": "troubleshooting/troubleshooting"
       },
       {
@@ -300,10 +303,48 @@ module.exports = {
       }
     ]
   },
+
+  {
+  "collapsed": true,
+  "type": "category",
+  "label": "Tutorials",
+  "items": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Learning Netcode with Goldenpath",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/starting_out"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/goldenpath_one"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/goldenpath_two"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/goldenpath_series/gp_profiler"
+                  },
+                ],
+
+              },
+
+            ]
+  },
 ],
+
   Multiplayer :
-  [ 
-    { 
+  [
+    {
       "type": "doc",
       "id": "learn/introduction",
     },
@@ -322,7 +363,7 @@ module.exports = {
               "id": "reference/glossary/high-level-terminology"
             },
             {
-              
+
                 "collapsed": true,
                 "type": "category",
                 "label": "Latency Management",
@@ -355,7 +396,7 @@ module.exports = {
               "id": "reference/glossary/relevancy"
             },
           ],
-      
+
         },
         {
           "collapsed": true,
@@ -377,8 +418,8 @@ module.exports = {
             }
           ]
         },
-    
-        
+
+
       ],
     },
     {
@@ -399,7 +440,7 @@ module.exports = {
                 "collapsed": true,
                 "type": "category",
                 "label": "Boss Room and RPCs",
-                "items": [  
+                "items": [
                   {
                     "type": "doc",
                     "id": "learn/rpcvnetvar"
@@ -409,7 +450,7 @@ module.exports = {
                     "id": "learn/rpcnetvarexamples"
                   },
                 ],
-              }, 
+              },
             ],
           },
       {
@@ -494,7 +535,7 @@ module.exports = {
     },
   ],
 
-  
+
   api :
   [
     {
@@ -566,7 +607,7 @@ module.exports = {
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
           "label": "INetworkPrefabInstanceHandler"
         },
-     
+
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
@@ -593,7 +634,7 @@ module.exports = {
           "label": "StreamExtensions"
         },
 
-        
+
       ],
     },
     {
@@ -601,7 +642,7 @@ module.exports = {
         "type": "category",
         "label": "Time",
         "items": [
-       
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.NetworkTime",
@@ -619,7 +660,7 @@ module.exports = {
         "type": "category",
         "label": "Collections",
         "items": [
-       
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.FixedQueue-1",
@@ -649,7 +690,7 @@ module.exports = {
         "type": "category",
         "label": "Connection",
         "items": [
- 
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.NetworkClient",
@@ -672,7 +713,7 @@ module.exports = {
         "type": "category",
         "label": "Exceptions",
         "items": [
-   
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.InvalidChannelException",
@@ -715,7 +756,7 @@ module.exports = {
         "type": "category",
         "label": "Logging",
         "items": [
- 
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.LogLevel",
@@ -733,7 +774,7 @@ module.exports = {
         "type": "category",
         "label": "Messaging",
         "items": [
- 
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.ClientRpcAttribute",
@@ -830,13 +871,13 @@ module.exports = {
         "type": "category",
         "label": "NetworkVariable",
         "items": [
-          
+
                 {
             "type": "doc",
             "id": "api/Unity.Netcode.NetworkVariableBase",
             "label": "NetworkVariableBase"
           },
-       
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.NetworkVariable-1",
@@ -859,7 +900,7 @@ module.exports = {
             "type": "category",
             "label": "NetworkList-1",
             "items": [
-             
+
               {
                 "collapsed": true,
                 "type": "category",
@@ -896,13 +937,13 @@ module.exports = {
               }
             ]
           },
-        
+
       {
         "collapsed": true,
         "type": "category",
         "label": "SceneEvent",
         "items": [
-                
+
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.SceneEvent",
@@ -925,13 +966,13 @@ module.exports = {
               },
       ]
       },
-      
+
       {
         "collapsed": true,
         "type": "category",
         "label": "SceneManagement",
         "items": [
-               
+
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager",
@@ -954,7 +995,7 @@ module.exports = {
         "type": "category",
         "label": "ScoketTask",
         "items": [
-               
+
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.SocketTask",
@@ -965,8 +1006,8 @@ module.exports = {
                 "id": "api/Unity.Netcode.SocketTasks",
                 "label": "SocketTasks"
               },
-  
-        
+
+
       ]
       },
       {
@@ -1014,7 +1055,7 @@ module.exports = {
             "id": "api/Unity.Netcode.NetworkWriterPool",
             "label": "NetworkWriterPool"
           },
-         
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.NetworkBufferPool",
@@ -1037,8 +1078,8 @@ module.exports = {
             "type": "doc",
             "id": "api/Unity.Netcode.PooledNetworkWriter",
             "label": "PooledNetworkWriter"
-          },     
-         
+          },
+
           {
             "collapsed": true,
             "type": "category",
@@ -1108,7 +1149,7 @@ module.exports = {
             "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
             "label": "ProtocolType"
           },
-         
+
           {
             "collapsed": true,
             "type": "category",
@@ -1119,7 +1160,7 @@ module.exports = {
                 "id": "api/Unity.Netcode.Transports.UNET",
                 "label": "UNET"
               },
-                    
+
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.Transports.UNET.UNetChannel",
@@ -1139,6 +1180,6 @@ module.exports = {
           }
         ]
       }
-      
+
   ]
 }

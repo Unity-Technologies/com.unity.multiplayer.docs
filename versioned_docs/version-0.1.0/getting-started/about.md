@@ -3,7 +3,7 @@ id: about
 title: Getting Started with MLAPI
 ---
 
-Unity MLAPI is a mid-level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and the MLAPI collaborators. MLAPI is open source with no attached costs or limitations, giving you the opportunity to develop features alongside Unity.
+MLAPI is a mid-level networking library built for the Unity game engine to abstract networking. This allows developers to focus on the game rather than low level protocols and networking frameworks. All this is provided for free under the permissive MIT Licence by Unity and the MLAPI collaborators. MLAPI is open source with no attached costs or limitations, giving you the opportunity to develop features alongside Unity.
 
 <div class="table-columns-plain">
 
@@ -26,4 +26,3 @@ For those looking for the MLAPI releases and documentation v. 12.x and earlier, 
 * [MLAPI v12.1.7 documentation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/)
 * [MLAPI blog posts](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/v12.1.7/docs/_posts)
 :::
-
