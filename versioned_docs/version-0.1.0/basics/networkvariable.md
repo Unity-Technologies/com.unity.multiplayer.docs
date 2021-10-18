@@ -11,7 +11,7 @@ There is a  Video Tutorial covering some of the concepts covered in this page [h
 
 `NetworkVariable` is the way data can be synchronized between peers in abstracted ways. The data can be custom containers and complex structures such as inventory structs.
 
-By default, MLAPI comes with three different containers. `NetworkList`, `NetworkDictionary` and `NetworkVariable`. The `NetworkVariable` container is built to store simple data types such as `float`s and `int`s. The List and Dictionary implementations are wrappers around the .NET equivalents. They are event-driven and have a list of events to be synced. The default implementations come with flexibility in terms of settings. Containers can be setup to sync Client To Server, Server To Client, or Bidirectional. It can also be set to target specific clients using custom delegates.
+By default, Netcode comes with three different containers. `NetworkList`, `NetworkDictionary` and `NetworkVariable`. The `NetworkVariable` container is built to store simple data types such as `float`s and `int`s. The List and Dictionary implementations are wrappers around the .NET equivalents. They are event-driven and have a list of events to be synced. The default implementations come with flexibility in terms of settings. Containers can be setup to sync Client To Server, Server To Client, or Bidirectional. It can also be set to target specific clients using custom delegates.
 
 Since the `NetworkVariable` container is a wrapper container around the value, the value has be accessed using the `.Value` property.
 
@@ -65,8 +65,8 @@ The MLAPI provides a few default serializable implementations of the `NetworkVar
 The following example uses network replication variables and detects the change in a unit's health and notifies the client. You can perform a [`NetworkStart`](networkbehaviour.md) `Start` or `Awake` to subscribe the `OnValueChanged` of the health variable, then unsubscribe `OnDestroy`. The example exposes a `NetworkVariable` to other classes so that they can hook into Health's `OnValueChange` delegate or event, since `m_Health` is a private field.
 
 ```csharp
-using MLAPI;
-using MLAPI.NetworkVariable;
+using Unity.Netcode;
+using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace DefaultNamespace
