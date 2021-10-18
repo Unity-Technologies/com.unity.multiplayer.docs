@@ -20,16 +20,15 @@ Unnamed messages can be thought of as a single sending channel. A message sent h
 private void Start()
 {
     //Receiving
-    CustomMessagingManager.OnUnnamedMessage += ((senderClientId, stream) =>
+    CustomMessagingManager.OnUnnamedMessage += ((senderClientId, reader) =>
     {
-        using (PooledNetworkReader reader = PooledNetworkReader.Get(stream))
-        {
-            string message = reader.ReadString(); //Example
-        }
+        reader.ReadValueSafe(out string message); //Example
     });
 
     //Sending
-    CustomMessagingManager.SendUnnamedMessage(clientId, myStream, "myCustomChannel"); //Channel is optional.
+    using FastBufferWriter writer = new FastBufferWriter(maxSize, Allocator.Temp);
+    writer.WriteValueSafe(message);
+    CustomMessagingManager.SendUnnamedMessage(clientId, writer, NetworkDelivery.Reliable); //NetworkDelivery is optional.
 }
 
 ```
@@ -44,16 +43,14 @@ If you want a completed messaging system, you can use named messages. The receiv
 private void Start()
 {
     //Receiving
-    CustomMessagingManager.RegisterNamedMessageHandler("myMessageName", (senderClientId, stream) =>
+    CustomMessagingManager.RegisterNamedMessageHandler("myMessageName", (senderClientId, reader) =>
     {
-        using (PooledNetworkReader reader = PooledNetworkReader.Get(stream))
-        {
-            StringBuilder stringBuilder = reader.ReadString(); //Example
-            string message = stringBuilder.ToString();
-        }
+        reader.ReadValueSafe(out string message); //Example
     });
 
     //Sending
-    CustomMessagingManager.SendNamedMessage("myMessageName", clientId, myStream, "myCustomChannel"); //Channel is optional.
+    using FastBufferWriter writer = new FastBufferWriter(maxSize, Allocator.Temp);
+    writer.WriteValueSafe(message);
+    CustomMessagingManager.SendNamedMessage("myMessageName", clientId, writer, NetworkDelivery.Reliable); //NetworkDelivery is optional.
 }
 ```
