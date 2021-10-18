@@ -2,6 +2,7 @@
 id: rpc-compatibility
 title: RPC migration and compatibility
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 This section provides information on compatibility and support for Unity Netcode for GameObjects (Netcode) features compared to previous Netcode versions. See the [Release Notes](../../../../releases/introduction) for more information.
 
