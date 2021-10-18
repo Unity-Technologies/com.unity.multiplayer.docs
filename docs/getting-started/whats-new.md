@@ -44,7 +44,7 @@ For our October 2021 release, the following major features were released:
 * Improved [scene management](../basics/scene-management.md) which includes additive scene workflows support
 * Support for [network animations](../components/networkanimator.md)
 * Improved [network transforms](../components/networktransform.md) with interpolation support
-* Network [object parenting]() support
+* Network [object parenting](link) support
 
 [Netcode install guide](../migration/installation.md)
 
@@ -56,9 +56,9 @@ Profiler support for Netcode. The new [network profiler modules](../basics/profi
 
 #### UTP
 
-* Enabled [Relay Service](link)
-* Includes [DTLS encryption](link) (required for console support)
-* [OSS UTP Adapter](link) for Netcode
+* Enabled Relay Service
+* Includes DTLS encryption (required for console support)
+* OSS UTP Adapter for Netcode
 
 [UTP Transport install guide](../transport-utp/install.md)
 
