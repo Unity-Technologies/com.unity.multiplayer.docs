@@ -19,7 +19,7 @@ In the context of software or information modelling, a Golden Path (sometimes ca
 
 ## Requirements
 
-These tutorials requires an Netcode-supported version of Unity (2019.4+).
+These tutorials requires an Netcode-supported version of Unity (2020.3+).
 
 
 <div class="table-columns-plain">

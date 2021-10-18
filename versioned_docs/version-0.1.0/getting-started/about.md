@@ -13,8 +13,7 @@ MLAPI is a mid-level networking library built for the Unity game engine to abstr
 
 </div>
 
-
-For a users view into Unity MLAPI, see [Learn](../learn/index.md) content including sample code, Boss Room tutorials, and community contributions including Dapper Dino's video series.
+For a users view into Unity MLAPI, see [Unity Multiplayer Resources](../learn/index.md) content including sample code, Boss Room tutorials, and community contributions including Dapper Dino's video series.
 
 :::unity Content Licenses
 All MLAPI code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information. Sample code may include links to GitHub code repositories.
@@ -27,4 +26,3 @@ For those looking for the MLAPI releases and documentation v. 12.x and earlier, 
 * [MLAPI v12.1.7 documentation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/v12.1.7/docs/_docs/)
 * [MLAPI blog posts](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/v12.1.7/docs/_posts)
 :::
-
