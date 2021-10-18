@@ -25,8 +25,8 @@ To clone with Git commands:
 1. Change directory to a location on your local.
 1. Enter a command to clone. Example commands:
   
-    * Git CLI: `git clone https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi`
-    * GitHub CLI: `gh repo clone Unity-Technologies/com.unity.multiplayer.mlapi`
+    * Git CLI: `git clone https://github.com/Unity-Technologies/com.unity.netcode.gameobjects`
+    * GitHub CLI: `gh repo clone Unity-Technologies/com.unity.netcode.gameobjects`
 
 1. All files clone locally.
 
@@ -45,7 +45,7 @@ To clone directory through GitHub Desktop:
 1. Select the URL tab, copy and paste the repository URL:
 
   ```html
-  https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi
+  https://github.com/Unity-Technologies/com.unity.netcode.gameobjects
   ```
 1. Click **Clone**.
 
@@ -70,7 +70,7 @@ We recommend updating your local clone often from the Netcode repository. This b
 :::
 
 :::note Branching
-If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [Netcode Contributing](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/master/CONTRIBUTING.md) guidelines.
+If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [Netcode Contributing](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/develop/CONTRIBUTING.md) guidelines.
 :::
 
 ## Next Steps
