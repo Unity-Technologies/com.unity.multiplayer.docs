@@ -1005,7 +1005,7 @@ module.exports = {
       {
         "collapsed": true,
         "type": "category",
-        "label": "ScoketTask",
+        "label": "SocketTask",
         "items": [
 
               {
