@@ -263,9 +263,9 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/serialization/static-arrays"
-      },
-      {
+        "id": "advanced-topics/serialization/arrays"
+      },  
+      { 
         "type": "doc",
         "id": "advanced-topics/serialization/inetworkserializable"
       },
