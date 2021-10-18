@@ -1,33 +1,33 @@
 This section adds in a player object and spawns it for each connected player.
 
-1. Create a **3D Object->Capsule**
-1. Rename it **Player**. 
-1. Add a `NetworkObject` component.
-1. Click the **Assets** folder.
-1. Create a new Folder and call it **Prefabs**.
-1. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
-1. Delete **Player** from scene.
+1. Right-click in the **Hierarchy** tab of your Unity Project Window.
+2. Select **3D Object** > **Capsule**, and rename it **Player**.
+3. While **Player** is selected, add a `NetworkObject` component by clicking **Add Component** in the **Inspector** tab, select **MLAPI**, then **NetworkObject**.
+4. From the **Projects** tab, right-click the **Assets** folder, hover over **Create**, and select **Folder**. Name this folder **Prefabs**.
+5. Drag your recently created **Player** object to your new **Prefabs** folder. This makes the **Player** object a [prefab](https://docs.unity3d.com/Manual/Prefabs.html).
+6. Right-click and delete **Player** from the scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
-  :::
+  We remove **Player**, because we will be using the built-in functionality of the NetworkManager to spawn the player. Doing so will make the NetworkManager spawn a player object for each connecting client and automatically give that client ownership over their player object.
 
-1. Select **NetworkManager**.
-1. Inside the **NetworkManager** Component tab, locate the  `NetworkPrefabs` field. 
-1. Click `+` to create a slot.
-1. Drag this player prefab from above into the new empty slot.
-1. Select **Default Player Prefab**.
+  If you do not remove **Player**, a player object will exist at scene load that doesn't react with the NetworkManager.
+  :::
+1. Select your `NetworkManager` object from the **Hierarchy** tab.
+2. Go to the **Inspector** tab > **NetworkManager** component > **NetworkPrefabs**. 
+3. Click `+` to create a slot.
+4. Drag the **Player** prefab from **Assets** > **Prefabs** to the new empty slot, and select the **Default Player Prefab** checkbox. You may need to expand your project window to see the **Prefab** space.
 
   :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect.
+  When you select the **Default Player Prefab** checkbox, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as `Default Player Prefab`, the game will crash on client connect.
   :::
 
   :::note
-   You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab`. Once you have completed the above steps you can clear the error.
+   You may see the following error on your **Console** tab: `There is no NetworkPrefab Marked as a PlayerPrefab`.
+   
+   Once you have completed the above steps, you can **Clear** the error.
   :::
-
-1. Create a **3D Object->Plane**, centered at (0,0,0).
-1. Save your scene.
+5. Finish this section by right-clicking in the **Hierarchy** tab, hover over **3D Object**, select **Plane**.
+6. Save your scene.
 
 <iframe src="https://www.youtube.com/embed/B_FWb4J1Pxw?playlist=B_FWb4J1Pxw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>

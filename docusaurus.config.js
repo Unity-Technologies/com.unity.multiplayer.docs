@@ -109,13 +109,13 @@ module.exports = {
               },
             ]
           },
-          /*{
+          {
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
-          },*/
+          },
           {
             to: '/learn/introduction',
             label: 'Unity Multiplayer Resources',
@@ -474,20 +474,17 @@ module.exports = {
           },includeCurrentVersion: true,
             lastVersion: '0.8.0',
             versions: {
-              //current: {
-              //  label: 'Next',
-              //  path: 'next',
-              //},
-              /*'0.9.0': {
-               label: 'v. 0.9.0preview',
-                path: '0.9.0',
-              },*/
+             
+              '1.0.0': {
+               label: 'v. 1.0.0',
+                path: '1.0.0',
+              },
               '0.8.0': {
                 label: 'v. 0.8.0preview',
                  path: '0.8.0',
                },
             },
-          //onlyIncludeVersions: ["0.8.0", "0.9.0"],
+          onlyIncludeVersions: ["0.8.0", "1.0.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),

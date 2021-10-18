@@ -3,7 +3,11 @@ id: networkobject
 title: NetworkObject
 ---
 
- Netcode for GameObjects' high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
+Netcode for Gameobjects' high level components, the RPC system and the Object Spawning System, rely on two concepts: `NetworkObject`s and [`NetworkBehaviour`s](networkbehaviour.md).
+
+:::note
+`GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPC`s or `NetworkVariables` by default. For infromation on how to send  a reference to a `NetworkObject` over `RPC`s or `NetworkVariables` see [NetworkObject &NetworkBehaviour](../advanced-topics/serialization/networkobject-serialization.md).
+:::
 
 ## NetworkObject
 
@@ -16,7 +20,7 @@ To add custom code logic to your `NetworkObjects`, use [NetworkBehaviours](netwo
 
 ## Ownership
 
-Each `NetworkObject` is owned by a specific client. This can be any client or the server.
+Each `NetworkObject` is owned by a specific client. This can be any client of the server.
 
 Give ownership of an object using the following:
 
