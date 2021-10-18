@@ -1,10 +1,8 @@
 ---
-id: whatsnew
+id: whats-new
 title: What's New in Netcode for GameObjects (Netcode)
 sidebar_label: What's New
 ---
-
-Add to sidebars.js
 
 The following are the high-level features and changes for each release. For a detailed change list, see the lastest changelog [here](link).
 
