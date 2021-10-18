@@ -189,3 +189,6 @@ You can now call the method `SetRelayServerData` on the retrieved transport with
 6. **If you are joining a game**: the host connection data retrieved during your call to join. Make special attention since the host connection data is an optional parameter but must be pass in case of join.
 
 Your transport is now correctly configured. You can call `StartClient` or `StartHost` and use the Netcode library as usual.
+
+
+For more information on Unty relay see [Here](https://docs.unity.com/relay)
