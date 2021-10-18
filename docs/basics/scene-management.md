@@ -12,8 +12,6 @@ You can either *enable* or *disable* Netcode's Scene Management process.
 
 To enable or disable scene management, check the **Enable Scene Management** box from the **NetworkManager** component of a **GameObject**. By default, scene management is *enabled*.
 
-![Screenshot of the Enable Scene Management checkbox from the NetworkManager component of a GameObject](/img/enable-scene-management.png)
-
 ## Netcode Scene Management
 
 Netcode scene management is handled by the [`NetworkSceneManager`](../api/Unity.Netcode.NetworkSceneManager.md) class.
