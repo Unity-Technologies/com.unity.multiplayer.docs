@@ -53,9 +53,9 @@ module.exports = {
         },
         items: [
           {
-            label: 'MLAPI',
+            label: 'Netcode for GameObjects',
             className: 'nav-break',
-            to: '/getting-started/about-mlapi',
+            to: '/getting-started/about',
             position: 'left',
             items: [
               {
@@ -64,11 +64,11 @@ module.exports = {
                 docsPluginId: 'releases'
               },
               {
-                to: 'getting-started/about-mlapi',
+                to: 'getting-started/about',
                 label: 'Documentation',
               },
               {
-                to: 'mlapi-api/introduction',
+                to: 'api/introduction',
                 label: 'API Reference',
               },
             ]
@@ -248,7 +248,7 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Releases',
+                label: ' Netcode for GameObjects Releases',
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
               },
               {
@@ -296,7 +296,6 @@ module.exports = {
         '@docusaurus/preset-classic',
         {
           docs: {
-            remarkPlugins: [require('mdx-mermaid')],
             path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
             showLastUpdateAuthor: true,
@@ -544,6 +543,14 @@ module.exports = {
             {
               to: '/docs/develop/transport-utp/about-transport-utp',
               from: '/docs/transport-utp/about-transport-utp',
+            },
+            {
+              to: '/docs/getting-started/about',
+              from: '/docs/getting-started/about-mlapi',
+            },
+            {
+              to: '/docs/develop/getting-started/about',
+              from: '/docs/develop/getting-started/about-mlapi',
             },
           ]
         },

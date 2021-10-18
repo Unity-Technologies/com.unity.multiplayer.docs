@@ -1,7 +1,7 @@
 ---
 id: goldenpath_foundation_module
 title:  Golden Path Foundation Module
-description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing MLAPI,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
+description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing  Netcode for GameObjects ,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
 In this tutorial we will build on the work we have already done in Hello World and add in a few more features. As there are some minor differences between this tutorial and the Hello World series we will be starting afresh. You do not have to have completed either of the Hello World tutorials to complete this one, however, if you are new to Unity then we recommended that you complete them in order to familiarise yourself with Unity.
@@ -9,7 +9,7 @@ In this tutorial we will build on the work we have already done in Hello World a
 
 ## Requirements
 
-This tutorial requires an MLAPI-supported version of Unity (2019.4+).
+This tutorial requires an  Netcode for GameObjects (Netcode)-supported version of Unity (2019.4+).
 
 ## Create a new project in Unity
 
@@ -28,9 +28,9 @@ You will also need it when you create a clone of the Project for future modules.
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
-## Import MLAPI Package via URL
+## Import Netcode Package via URL
 
-See the [Install MLAPI](../../migration/installation.md) guide to install the MLAPI package.
+See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package.
 
 ## Creating Network Manager and selecting the Transport
 
@@ -70,7 +70,7 @@ For more information on the relevant concepts introduced here please refer to th
 
 - [Network Manager](../../components/networkmanager.md)
 - [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
-- [Network Object](../../mlapi-basics/networkobject.md)
+- [Network Object](../../basics/networkobject.md)
 
 
 

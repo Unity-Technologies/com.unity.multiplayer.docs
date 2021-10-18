@@ -3,7 +3,7 @@ id: library-initialization
 title: Library Initialization
 ---
 
-Initializing Unity MLAPI is fairly simple. You need a `GameObject` with the `NetworkManager` component added to it. The `NetworkManager` class has a static singleton reference to itself making it easy to access from anywhere. The first configuration you have to do is to set the [`Transport`](../advanced-topics/custom-transports.md). 
+Initializing  Netcode for GameObjects (Netcode) is fairly simple. You need a `GameObject` with the `NetworkManager` component added to it. The `NetworkManager` class has a static singleton reference to itself making it easy to access from anywhere. The first configuration you have to do is to set the [`Transport`](../advanced-topics/custom-transports.md). 
 
 ## Add MLAPI library
 

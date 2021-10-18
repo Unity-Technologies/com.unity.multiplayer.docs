@@ -50,7 +50,7 @@ PongClientRpc(somenumber, sometext); // This is clearly a ClientRpc call
 
 ## Use ClientRpcSendParameters
 
-The following code provides an example of using `ClientRpcSendParameters`, which will allow you to send a `ClientRpc` to a specific Client connection(s) whereas the default MLAPI's behavior is to broadcast to every single client.
+The following code provides an example of using `ClientRpcSendParameters`, which will allow you to send a `ClientRpc` to a specific Client connection(s) whereas the default Netcode for GameObjects's behavior is to broadcast to every single client.
 
 ```csharp
 private void DoSomethingServerSide(int clientId)
