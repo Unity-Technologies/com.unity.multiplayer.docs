@@ -1,11 +1,13 @@
 ---
 id: lagandpacketloss
-title: Lag and Packet Loss
+title: Latency and Packet Loss
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
+
 A multiplayer game operating over the internet has to deal with several adverse factors that are not present when developing single-player or LAN-only multiplayer games.
 
 :::important
- According to wikipedia, 200 ms of input lag is the upper threshold at which people typically notice lag.
+ According to wikipedia, 200 ms of input lag is the lower threshold at which people typically notice lag.
 
 Different game genres and platforms allow for different acceptable latency budgets: 
 
@@ -13,6 +15,32 @@ Different game genres and platforms allow for different acceptable latency budge
 * Fighting games and shooter games with twitchy gameplay are the next most sensitive: 16-150ms latency before the user starts noticing lag regardless of frame rate.
 * RTS games are on the other side of the latency tolerance spectrum: values up to 500ms can be acceptable and not degrade the overall experience.
 :::
+
+## Ping
+
+Round Trip Time without frame calculation:
+
+<Mermaid chart={`
+	graph LR;
+		A(A)
+		B(B)
+		C(B)
+		D(A)
+		E(+)
+		A --> B --> E --> C
+		C --> D
+`}/>
+
+When a PC or console "pings" the server, it sends an ICMP (Internet Control Message Protocol) echo request to the game server, which then answers this request by returning an ICMP echo reply.
+
+<ImageSwitcher 
+lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+
+The time between sending the request and receiving the answer is your ping to the game server. This means that with a ping of 20ms, it takes data 10ms to travel from the client to the server, as the ping is the round-trip time of your data.
+
+Higher ping values mean that there is more delay or lag, which is why you want to play on servers with very low pings, as that is the basic prerequisite for games to feel snappy and responsive.
+
 
 ## Latency
 
