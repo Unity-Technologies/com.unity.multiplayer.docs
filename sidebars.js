@@ -639,7 +639,6 @@ module.exports = {
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
           "label": "INetworkPrefabInstanceHandler"
         },
-
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
