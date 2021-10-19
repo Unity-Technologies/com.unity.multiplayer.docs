@@ -424,10 +424,14 @@ module.exports = {
           {
             "type": "doc",
             "id": "learn/bitesize-invaders"
-            },
+                },
           {
           "type": "doc",
           "id": "learn/bitesize-spaceshooter"
+          },
+          {
+            "type": "doc",
+            "id": "learn/bitesize-clientdriven"
           }
       ]
       },
