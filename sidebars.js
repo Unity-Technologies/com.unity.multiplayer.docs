@@ -25,6 +25,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "migration/upgrade-guide",
+      },
+      {
+        "type": "doc",
         "id": "migration/migratingtonetcode"
       },
       {
