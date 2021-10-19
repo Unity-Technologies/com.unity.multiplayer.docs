@@ -268,7 +268,8 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "tutorials/testing/testing_with_artificial_conditions"},
+        "id": "tutorials/testing/testing_with_artificial_conditions"
+      },
     ]
   },
   {
@@ -280,7 +281,10 @@ module.exports = {
         "type": "doc",
         "id": "basics/logging"
       },
-      
+      {
+        "type": "doc",
+        "id": "tutorials/local_iteration_series/techniques_and_tricks_for_debugging_multiplayer_games"
+      },
       {
         "type": "doc",
         "id": "troubleshooting/troubleshooting"
