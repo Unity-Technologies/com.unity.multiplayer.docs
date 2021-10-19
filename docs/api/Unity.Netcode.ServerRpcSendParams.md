@@ -11,18 +11,6 @@ title: Unity.Netcode.ServerRpcSendParams
 
 </div>
 
-<div classs="implements">
-
-##### Implements
-
-<div>
-
-IHasUpdateStage
-
-</div>
-
-</div>
-
 <div class="inheritedMembers">
 
 ##### Inherited Members
@@ -72,37 +60,5 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct ServerRpcSendParams : IHasUpdateStage
+public struct ServerRpcSendParams
 ```
-
-## 
-
-### UpdateStage
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public NetworkUpdateStage UpdateStage { get; set; }
-```
-
-#### Property Value
-
-| Type               | Description |
-|--------------------|-------------|
-| NetworkUpdateStage |             |
-
-### Implements
-
-<div>
-
-IHasUpdateStage
-
-</div>

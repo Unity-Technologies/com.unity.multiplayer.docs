@@ -20,7 +20,7 @@ Delegate used for incoming unnamed messages
 ##### Syntax
 
 ``` lang-csharp
-public delegate void UnnamedMessageDelegate(ulong clientId, Stream stream);
+public delegate void UnnamedMessageDelegate(ulong clientId, FastBufferReader reader);
 ```
 
 ##### Parameters
@@ -28,4 +28,4 @@ public delegate void UnnamedMessageDelegate(ulong clientId, Stream stream);
 | Type             | Name       | Description                            |
 |------------------|------------|----------------------------------------|
 | System.UInt64    | \*clientId | The clientId that sent the message     |
-| System.IO.Stream | \*stream   | The stream containing the message data |
+| FastBufferReader | \*reader   | The stream containing the message data |

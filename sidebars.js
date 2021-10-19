@@ -596,9 +596,10 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "api/Unity.Netcode.NetworkObject",
-          "label": "NetworkObject"
+          "id": "api/Unity.Netcode.NetworkObjectReference",
+          "label": "NetworkObjectReference"
         },
+
         {
           "type": "doc",
           "id": "api/Unity.Netcode.NetworkObject.SpawnDelegate",
@@ -624,11 +625,7 @@ module.exports = {
           "id": "api/Unity.Netcode.NetworkUpdateStage",
           "label": "NetworkUpdateStage"
         },
-        {
-          "type": "doc",
-          "id": "api/Unity.Netcode.IHasUpdateStage",
-          "label": "IHasUpdateStage"
-        },
+  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
@@ -660,6 +657,52 @@ module.exports = {
           "id": "api/Unity.Netcode.StreamExtensions",
           "label": "StreamExtensions"
         },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BitCounter",
+          "label": "BitCounter"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BitReader",
+          "label": "BitReader"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BitWriter",
+          "label": "BitWriter"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BufferSerializer-1",
+          "label": "BufferSerializer-1"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BytePacker",
+          "label": "BytePacker"
+        }, 
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.ByteUnpacker",
+          "label": "ByteUnpacker"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.ErrorUtilities",
+          "label": "ErrorUtilities"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.FastBufferReader",
+          "label": "FastBufferReader"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.FastBufferWriter",
+          "label": "ByteUnpFastBufferWriteracker"
+        },
+
 
 
       ],
@@ -978,18 +1021,13 @@ module.exports = {
               },
               {
                 "type": "doc",
-                "id": "api/Unity.Netcode.SceneEventData",
-                "label": "SceneEventData"
-              },
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SceneEventData.SceneEventTypes",
-                "label": "SceneEventData.SceneEventTypes"
-              },
-              {
-                "type": "doc",
                 "id": "api/Unity.Netcode.SceneEventProgressStatus",
                 "label": "SceneEventProgressStatus"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SceneEventType",
+                "label": "SceneEventType"
               },
       ]
       },
@@ -1015,29 +1053,45 @@ module.exports = {
                 "id": "api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler",
                 "label": "VerifySceneBeforeLoadingDelegateHandler"
               },
-      ]
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "SocketTask",
-        "items": [
-
               {
                 "type": "doc",
-                "id": "api/Unity.Netcode.SocketTask",
-                "label": "SocketTask"
-              },
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler",
+                "label": "OnEventCompletedDelegateHandler"
+              }, 
               {
                 "type": "doc",
-                "id": "api/Unity.Netcode.SocketTasks",
-                "label": "SocketTasks"
-              },
-
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler",
+                "label": "OnLoadCompleteDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler",
+                "label": "OnLoadDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler",
+                "label": "OnSynchronizeCompleteDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler",
+                "label": "OnSynchronizeDelegateHandler"
+              }, 
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler",
+                "label": "OnUnloadCompleteDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler",
+                "label": "OnUnloadDelegateHandler"
+              },  
 
       ]
       },
-      {
+            {
         "collapsed": true,
         "type": "category",
         "label": "Serialization",
@@ -1047,89 +1101,15 @@ module.exports = {
             "id": "api/Unity.Netcode.Arithmetic",
             "label": "Arithmetic"
           },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.AutoNetworkSerializable",
-            "label": "AutoNetworkSerializable"
-          },
+        
           {
             "type": "doc",
             "id": "api/Unity.Netcode.INetworkSerializable",
             "label": "INetworkSerializable"
           },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkBuffer",
-            "label": "NetworkBuffer"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkReader",
-            "label": "NetworkReader"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkSerializer",
-            "label": "NetworkSerializer"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkWriter",
-            "label": "NetworkWriter"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkWriterPool",
-            "label": "NetworkWriterPool"
-          },
-
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkBufferPool",
-            "label": "NetworkBufferPool"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkReaderPool",
-            "label": "NetworkReaderPool"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.PooledNetworkBuffer",
-            "label": "PooledNetworkBuffer"
-          },  {
-            "type": "doc",
-            "id": "api/Unity.Netcode.PooledNetworkReader",
-            "label": "PooledNetworkReader"
-          },  {
-            "type": "doc",
-            "id": "api/Unity.Netcode.PooledNetworkWriter",
-            "label": "PooledNetworkWriter"
-          },
-
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Serialization.SerializationManager",
-            "items": [
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SerializationManager",
-                "label": "SerializationManager"
-              },
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SerializationManager.CustomDeserializationDelegate-1",
-                "label": "CustomDeserializationDelegate-1"
-              },
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SerializationManager.CustomSerializationDelegate-1",
-                "label": "CustomSerializationDelegate-1"
-              }
-            ]
-          },
-        ]
+     
+          
+          ]
       },
       {
         "collapsed": true,

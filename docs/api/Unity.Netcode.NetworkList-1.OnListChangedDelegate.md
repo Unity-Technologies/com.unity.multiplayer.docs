@@ -27,4 +27,4 @@ public delegate void OnListChangedDelegate(NetworkListEvent<T> changeEvent);
 
 | Type                 | Name          | Description                                          |
 |----------------------|---------------|------------------------------------------------------|
-| NetworkListEvent&lt;T&gt;| \*changeEvent | Struct containing information about the change event |
+| NetworkListEvent\&lt;T&gt; | \*changeEvent | Struct containing information about the change event |

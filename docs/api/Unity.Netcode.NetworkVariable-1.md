@@ -318,7 +318,7 @@ public virtual T Value { get; set; }
 
 ## 
 
-### ReadDelta(Stream, Boolean)
+### ReadDelta(FastBufferReader, Boolean)
 
 <div class="markdown level1 summary">
 
@@ -333,25 +333,25 @@ Reads value from the reader and applies it
 #### Declaration
 
 ``` lang-csharp
-public override void ReadDelta(Stream stream, bool keepDirtyDelta)
+public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
 ```
 
 #### Parameters
 
 | Type             | Name           | Description                                                                             |
 |------------------|----------------|-----------------------------------------------------------------------------------------|
-| System.IO.Stream | stream         | The stream to read the value from                                                       |
+| FastBufferReader | reader         | The stream to read the value from                                                       |
 | System.Boolean   | keepDirtyDelta | Whether or not the container should keep the dirty delta, or mark the delta as consumed |
 
 #### Overrides
 
 <div>
 
-NetworkVariableBase.ReadDelta(Stream, Boolean)
+NetworkVariableBase.ReadDelta(FastBufferReader, Boolean)
 
 </div>
 
-### ReadField(Stream)
+### ReadField(FastBufferReader)
 
 <div class="markdown level1 summary">
 
@@ -366,24 +366,24 @@ Reads the complete state from the reader and applies it
 #### Declaration
 
 ``` lang-csharp
-public override void ReadField(Stream stream)
+public override void ReadField(FastBufferReader reader)
 ```
 
 #### Parameters
 
 | Type             | Name   | Description                       |
 |------------------|--------|-----------------------------------|
-| System.IO.Stream | stream | The stream to read the state from |
+| FastBufferReader | reader | The stream to read the state from |
 
 #### Overrides
 
 <div>
 
-NetworkVariableBase.ReadField(Stream)
+NetworkVariableBase.ReadField(FastBufferReader)
 
 </div>
 
-### WriteDelta(Stream)
+### WriteDelta(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
@@ -398,24 +398,24 @@ Writes the variable to the writer
 #### Declaration
 
 ``` lang-csharp
-public override void WriteDelta(Stream stream)
+public override void WriteDelta(FastBufferWriter writer)
 ```
 
 #### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
-| System.IO.Stream | stream | The stream to write the value to |
+| FastBufferWriter | writer | The stream to write the value to |
 
 #### Overrides
 
 <div>
 
-NetworkVariableBase.WriteDelta(Stream)
+NetworkVariableBase.WriteDelta(FastBufferWriter)
 
 </div>
 
-### WriteField(Stream)
+### WriteField(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
@@ -430,20 +430,20 @@ Writes the complete state of the variable to the writer
 #### Declaration
 
 ``` lang-csharp
-public override void WriteField(Stream stream)
+public override void WriteField(FastBufferWriter writer)
 ```
 
 #### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
-| System.IO.Stream | stream | The stream to write the state to |
+| FastBufferWriter | writer | The stream to write the state to |
 
 #### Overrides
 
 <div>
 
-NetworkVariableBase.WriteField(Stream)
+NetworkVariableBase.WriteField(FastBufferWriter)
 
 </div>
 

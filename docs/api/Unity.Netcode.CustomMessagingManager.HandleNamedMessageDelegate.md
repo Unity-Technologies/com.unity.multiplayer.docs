@@ -20,7 +20,7 @@ Delegate used to handle named messages
 ##### Syntax
 
 ``` lang-csharp
-public delegate void HandleNamedMessageDelegate(ulong senderClientId, Stream messagePayload);
+public delegate void HandleNamedMessageDelegate(ulong senderClientId, FastBufferReader messagePayload);
 ```
 
 ##### Parameters
@@ -28,4 +28,4 @@ public delegate void HandleNamedMessageDelegate(ulong senderClientId, Stream mes
 | Type             | Name             | Description |
 |------------------|------------------|-------------|
 | System.UInt64    | \*senderClientId |             |
-| System.IO.Stream | \*messagePayload |             |
+| FastBufferReader | \*messagePayload |             |

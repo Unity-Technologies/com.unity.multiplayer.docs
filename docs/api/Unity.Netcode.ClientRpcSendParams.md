@@ -11,18 +11,6 @@ title: Unity.Netcode.ClientRpcSendParams
 
 </div>
 
-<div classs="implements">
-
-##### Implements
-
-<div>
-
-IHasUpdateStage
-
-</div>
-
-</div>
-
 <div class="inheritedMembers">
 
 ##### Inherited Members
@@ -72,7 +60,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct ClientRpcSendParams : IHasUpdateStage
+public struct ClientRpcSendParams
 ```
 
 ## 
@@ -81,6 +69,11 @@ public struct ClientRpcSendParams : IHasUpdateStage
 
 <div class="markdown level1 summary">
 
+IEnumerable version of target id list - use either this OR
+TargetClientIdsNativeArray Note: Even if you provide a value type such
+as NativeArray, enumerating it will cause boxing. If you want to avoid
+boxing, use TargetClientIdsNativeArray
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,20 +83,22 @@ public struct ClientRpcSendParams : IHasUpdateStage
 #### Declaration
 
 ``` lang-csharp
-public ulong[] TargetClientIds
+public IReadOnlyList<ulong> TargetClientIds
 ```
 
 #### Field Value
 
-| Type              | Description |
-|-------------------|-------------|
-| System.UInt64\[\] |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| IReadOnlyList\&lt;System.UInt64&gt;|             |
 
-## 
-
-### UpdateStage
+### TargetClientIdsNativeArray
 
 <div class="markdown level1 summary">
+
+NativeArray version of target id list - use either this OR
+TargetClientIds This option avoids any GC allocations but is a bit
+trickier to use.
 
 </div>
 
@@ -114,19 +109,11 @@ public ulong[] TargetClientIds
 #### Declaration
 
 ``` lang-csharp
-public NetworkUpdateStage UpdateStage { get; set; }
+public NativeArray<ulong>? TargetClientIdsNativeArray
 ```
 
-#### Property Value
+#### Field Value
 
-| Type               | Description |
-|--------------------|-------------|
-| NetworkUpdateStage |             |
-
-### Implements
-
-<div>
-
-IHasUpdateStage
-
-</div>
+| Type                                            | Description |
+|-------------------------------------------------|-------------|
+| System.Nullable\<NativeArray\&lt;System.UInt64&gt;\> |             |

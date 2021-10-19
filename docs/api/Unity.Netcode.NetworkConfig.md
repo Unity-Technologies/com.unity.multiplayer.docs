@@ -550,14 +550,14 @@ runs user code and sends out data.
 #### Declaration
 
 ``` lang-csharp
-public int TickRate
+public uint TickRate
 ```
 
 #### Field Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
 
 ### TimeResyncInterval
 
@@ -615,8 +615,8 @@ public int SnapshotMaxSpawnUsage { get; }
 
 <div class="markdown level1 summary">
 
-Whether or not to enable Snapshot System for variable updates. Currently
-unsupported.
+Whether or not to enable Snapshot System for variable updates. Not
+supported in this version.
 
 </div>
 
@@ -641,7 +641,7 @@ public bool UseSnapshotDelta { get; }
 <div class="markdown level1 summary">
 
 Whether or not to enable Snapshot System for spawn and despawn commands.
-Working but experimental.
+Not supported in this version.
 
 </div>
 

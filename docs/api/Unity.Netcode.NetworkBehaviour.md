@@ -213,6 +213,32 @@ protected bool IsServer { get; }
 |----------------|-------------|
 | System.Boolean |             |
 
+### IsSpawned
+
+<div class="markdown level1 summary">
+
+Used to determine if it is safe to access NetworkObject and
+NetworkManager from within a NetworkBehaviour component Primarily useful
+when checking NetworkObject/NetworkManager properties within FixedUpate
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool IsSpawned { get; }
+```
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### NetworkBehaviourId
 
 <div class="markdown level1 summary">
@@ -241,7 +267,9 @@ public ushort NetworkBehaviourId { get; }
 
 <div class="markdown level1 summary">
 
-Gets the NetworkManager that owns this NetworkBehaviour instance
+Gets the NetworkManager that owns this NetworkBehaviour instance See
+note around `NetworkObject` for how there is a chicken / egg problem
+when we are not initialized
 
 </div>
 
@@ -265,7 +293,16 @@ public NetworkManager NetworkManager { get; }
 
 <div class="markdown level1 summary">
 
-Gets the NetworkObject that owns this NetworkBehaviour instance
+Gets the NetworkObject that owns this NetworkBehaviour instance TODO:
+this needs an overhaul. It's expensive, it's ja little naive in how it
+looks for networkObject in its parent and worst, it creates a puzzle if
+you are a NetworkBehaviour wanting to see if you're live or not (e.g.
+editor code). All you want to do is find out if NetworkManager is null,
+but to do that you need NetworkObject, but if you try and grab
+NetworkObject and NetworkManager isn't up you'll get the warning below.
+This is why IsBehaviourEditable had to be created. Matt was going to
+re-do how NetworkObject works but it was close to the release and too
+risky to change
 
 </div>
 
@@ -409,7 +446,7 @@ protected NetworkObject GetNetworkObject(ulong networkId)
 #### Declaration
 
 ``` lang-csharp
-public void OnDestroy()
+public virtual void OnDestroy()
 ```
 
 ### OnGainedOwnership()

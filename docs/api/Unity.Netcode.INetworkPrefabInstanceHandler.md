@@ -72,7 +72,7 @@ NetworkPrefabHandler, this method will be called every time a Network
 Prefab associated NetworkObject is spawned on clients
 
 Note On Hosts: Use the RegisterHostGlobalObjectIdHashValues(GameObject,
-List&lt;GameObject&gt;) method to register all targeted NetworkPrefab
+List\&lt;GameObject&gt;) method to register all targeted NetworkPrefab
 overrides manually since the host will be acting as both a server and
 client.
 

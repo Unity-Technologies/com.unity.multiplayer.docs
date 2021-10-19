@@ -1,12 +1,9 @@
 ---  
-id: Unity.Netcode.AutoNetworkSerializable  
-title: Unity.Netcode.AutoNetworkSerializable  
+id: Unity.Netcode.ErrorUtilities  
+title: Unity.Netcode.ErrorUtilities  
 ---
 
 <div class="markdown level0 summary">
-
-AutoBitWritable implements INetworkSerializable and automatically
-serializes fields using reflection
 
 </div>
 
@@ -27,18 +24,6 @@ System.Dynamic.ExpandoObject
 <div class="level1">
 
 System.Dynamic.ExpandoObject
-
-</div>
-
-</div>
-
-<div classs="implements">
-
-##### Implements
-
-<div>
-
-INetworkSerializable
 
 </div>
 
@@ -99,12 +84,12 @@ Object.ToString()
 ##### Syntax
 
 ``` lang-csharp
-public abstract class AutoNetworkSerializable : INetworkSerializable
+public static class ErrorUtilities
 ```
 
 ## 
 
-### NetworkSerialize(NetworkSerializer)
+### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
 
 <div class="markdown level1 summary">
 
@@ -117,19 +102,18 @@ public abstract class AutoNetworkSerializable : INetworkSerializable
 #### Declaration
 
 ``` lang-csharp
-public void NetworkSerialize(NetworkSerializer serializer)
+public static string ErrorToString(Networking.Transport.Error.StatusCode error, ulong connectionId)
 ```
 
 #### Parameters
 
-| Type              | Name       | Description |
-|-------------------|------------|-------------|
-| NetworkSerializer | serializer |             |
+| Type                                  | Name         | Description |
+|---------------------------------------|--------------|-------------|
+| Networking.Transport.Error.StatusCode | error        |             |
+| System.UInt64                         | connectionId |             |
 
-### Implements
+#### Returns
 
-<div>
-
-INetworkSerializable
-
-</div>
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
