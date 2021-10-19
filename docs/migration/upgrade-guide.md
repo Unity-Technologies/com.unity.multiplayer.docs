@@ -33,12 +33,21 @@ Unity renamed MLAPI into Netcode for GameObjects. This renaming has an impact on
 
 Unity Multiplayer Teams tried to keep most of the MLAPI intact in NetCode. However, a successful compilation still requires some changes.
 
-### NetworkVariable changes
+### `NetworkVariable` changes
 
 `NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members.
 
 ### Scene Management changes
 
+The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it like so : 
+
+```csharp
+var sceneManager = NetworkManager.Singleton.SceneManager;
+```
+
+Next, there is now only one scene event instead of many: `OnSceneEvent`. You can subscribe to it and get scene events information from the `SceneEvent` class. In this class, you will find the `SceneEventType`, which will give you precisions on what type of event is coming from the Scene Manager. Finally, the primary function to switch between scenes has changed to match the Unity Scene Manager. Instead of `SwitchScene`, you now call `LoadScene` with two parameters: the scene name and the `LoadSceneMode`, which is the standard way to load a scene in Unity.
+
+### `NetworkBehavior` changes
 
 `NetworkStart` becomes `OnNetworkSpawn`
 `Destroy` needs to be overridden since NetworkBehavior uses it
