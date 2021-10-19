@@ -3,7 +3,7 @@ id: upgrade-guide
 title: Upgrade Guide
 ---
 
-This guide is a simple recipe to upgrade from MLAPI to the new NetCode for GameObjects (NetCode in this document). This document will help you kickstart your upgrade process. It will probably not fix everything but should guide you in the overall process.
+This guide is a simple recipe to upgrade from MLAP 0.1.0 to Netcode for GameObjects (Netcode) 1.0.0. This document will help you kickstart your upgrade process. It may not fix everything, but it should guide you in the overall process.
 
 ## General overview of the upgrade process
 
