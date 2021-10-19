@@ -330,6 +330,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
+      },
+      {
+        "type": "doc",
         "id": "troubleshooting/troubleshooting"
       },
       {
