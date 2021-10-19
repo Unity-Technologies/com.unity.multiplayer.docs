@@ -35,7 +35,7 @@ Unity Multiplayer Teams tried to keep most of the MLAPI intact in NetCode. Howev
 
 ### `NetworkVariable` changes
 
-`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members.
+`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream. 
 
 ### Scene Management changes
 
@@ -50,3 +50,7 @@ Next, there is now only one scene event instead of many: `OnSceneEvent`. You can
 ### `NetworkBehavior` changes
 
 There are two main changes in `NetworkBehavior`. First, the `NetworkStart` method becomes `OnNetworkSpawn`, and we introduced `OnNetworkDespawn` to keep things symmetrical. Second, `OnDestroy` now needs to be overridden since NetworkBehavior already uses it.
+
+## Changes in behaviour
+
+We tried to keep the behaviour changes minimal put two changes may cause errors in your scripts. First, the `NetworkManager` now does its connection shut down when the application quits. If you were doing it by yourself, you would end up with an error saying that you tried to disconnect twice. Second, the library now fires all the `OnValueChanged` events from the `NetworkVariable` **after** the `OnNetworkSpawn` (previously known as `NetworkStart`) method has returned. You will need to refactor any scripts depending on this order accordingly.
