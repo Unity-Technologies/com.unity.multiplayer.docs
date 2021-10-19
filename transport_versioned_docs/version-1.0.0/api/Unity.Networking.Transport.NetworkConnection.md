@@ -5,10 +5,6 @@ title: Unity.Networking.Transport.NetworkConnection
 
 <div class="markdown level0 summary">
 
-The NetworkConnection is a struct that hold all information needed by
-the driver to link it with a virtual connection. The NetworkConnection
-is a public representation of a connection.
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -61,6 +57,8 @@ public struct NetworkConnection
 
 <div class="markdown level1 summary">
 
+Gets the value of the connection's internal ID.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -83,8 +81,6 @@ public readonly int InternalId { get; }
 
 <div class="markdown level1 summary">
 
-Check to see if a NetworkConnection is Created.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -99,17 +95,15 @@ public readonly bool IsCreated { get; }
 
 #### Property Value
 
-| Type           | Description                                                                                                  |
-|----------------|--------------------------------------------------------------------------------------------------------------|
-| System.Boolean | `true` if the NetworkConnection has been correctly created by a call to Accept() or Connect(NetworkEndPoint) |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ## 
 
 ### Close(NetworkDriver)
 
 <div class="markdown level1 summary">
-
-Close an active NetworkConnection, similar to .
 
 </div>
 
@@ -125,9 +119,9 @@ public int Close(NetworkDriver driver)
 
 #### Parameters
 
-| Type          | Name   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| NetworkDriver | driver | The driver that owns the virtual connection. |
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| NetworkDriver | driver |             |
 
 #### Returns
 
@@ -138,9 +132,6 @@ public int Close(NetworkDriver driver)
 ### Disconnect(NetworkDriver)
 
 <div class="markdown level1 summary">
-
-Disconnects a virtual connection and marks it for deletion. This
-connection will be removed on next the next frame.
 
 </div>
 
@@ -156,9 +147,9 @@ public int Disconnect(NetworkDriver driver)
 
 #### Parameters
 
-| Type          | Name   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| NetworkDriver | driver | The driver that owns the virtual connection. |
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| NetworkDriver | driver |             |
 
 #### Returns
 
@@ -292,9 +283,6 @@ public NetworkConnection.State GetState(NetworkDriver driver)
 
 <div class="markdown level1 summary">
 
-Receive an event for this specific connection. Should be called until it
-returns Empty, even if the socket is disconnected.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -309,10 +297,10 @@ public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader str
 
 #### Parameters
 
-| Type             | Name   | Description                                  |
-|------------------|--------|----------------------------------------------|
-| NetworkDriver    | driver | The driver that owns the virtual connection. |
-| DataStreamReader | stream |                                              |
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| NetworkDriver    | driver |             |
+| DataStreamReader | stream |             |
 
 #### Returns
 

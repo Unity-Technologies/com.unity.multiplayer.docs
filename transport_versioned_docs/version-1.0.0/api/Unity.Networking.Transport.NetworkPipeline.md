@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkPipeline
 
 <div class="markdown level0 summary">
 
+The network pipeline
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -56,6 +58,8 @@ public struct NetworkPipeline
 ### Null
 
 <div class="markdown level1 summary">
+
+Returns default unreliable Null NetworkPipeline
 
 </div>
 

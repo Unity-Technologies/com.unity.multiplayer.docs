@@ -5,6 +5,9 @@ title: Unity.Networking.Transport.BaselibNetworkParameter
 
 <div class="markdown level0 summary">
 
+Network Parameters used to set queue and payload sizes for
+BaselibNetworkInterface
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -81,6 +84,8 @@ public struct BaselibNetworkParameter : INetworkParameter
 
 <div class="markdown level1 summary">
 
+The maximum payload size.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -103,6 +108,9 @@ public uint maximumPayloadSize
 
 <div class="markdown level1 summary">
 
+The maximum number of receiving packets that the BaselibNetworkInterface
+can process in a single update iteration.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -124,6 +132,9 @@ public int receiveQueueCapacity
 ### sendQueueCapacity
 
 <div class="markdown level1 summary">
+
+The maximum number of sending packets that the BaselibNetworkInterface
+can process in a single update iteration.
 
 </div>
 

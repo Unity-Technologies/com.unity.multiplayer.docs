@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.Utilities.RandomHelpers
 
 <div class="markdown level0 summary">
 
+A simple method to obtain a random ushort provided by the class.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -89,6 +91,28 @@ public static class RandomHelpers
 
 ## 
 
+### GetRandomULong()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static ulong GetRandomULong()
+```
+
+#### Returns
+
+| Type          | Description                                |
+|---------------|--------------------------------------------|
+| System.UInt64 | a ushort in \[1..uint.MaxValue - 1\] range |
+
 ### GetRandomUShort()
 
 <div class="markdown level1 summary">
@@ -107,6 +131,6 @@ public static ushort GetRandomUShort()
 
 #### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
+| Type          | Description                                  |
+|---------------|----------------------------------------------|
+| System.UInt16 | a ushort in \[1..ushort.MaxValue - 1\] range |

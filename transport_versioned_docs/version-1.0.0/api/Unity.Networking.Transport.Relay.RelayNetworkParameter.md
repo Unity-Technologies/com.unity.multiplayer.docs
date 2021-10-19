@@ -5,6 +5,10 @@ title: Unity.Networking.Transport.Relay.RelayNetworkParameter
 
 <div class="markdown level0 summary">
 
+Relay protocol network parementers used to connect to the Unity Relay
+service. This data must be provided to the Create(INetworkParameter\[\])
+function in order to be able to use connect to Relay.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -81,6 +85,9 @@ public struct RelayNetworkParameter : INetworkParameter
 
 <div class="markdown level1 summary">
 
+The timeout in milliseconds after which a ping message is sent to the
+Relay Server to keep the connection alive.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -102,6 +109,8 @@ public int RelayConnectionTimeMS
 ### ServerData
 
 <div class="markdown level1 summary">
+
+The data that is used to describe the connection to the Relay Server.
 
 </div>
 

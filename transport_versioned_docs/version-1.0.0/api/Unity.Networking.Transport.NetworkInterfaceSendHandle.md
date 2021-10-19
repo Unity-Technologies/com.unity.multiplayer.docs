@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkInterfaceSendHandle
 
 <div class="markdown level0 summary">
 
+A handle to data that's going to be sent on an interface.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -69,6 +71,8 @@ public struct NetworkInterfaceSendHandle
 
 <div class="markdown level1 summary">
 
+Maximum capacity of the data buffer.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,6 +94,8 @@ public int capacity
 ### data
 
 <div class="markdown level1 summary">
+
+Pointer to the data buffer.
 
 </div>
 
@@ -113,6 +119,8 @@ public IntPtr data
 
 <div class="markdown level1 summary">
 
+Internal flags used by the driver (tracks who allocated the memory).
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -135,6 +143,8 @@ public SendHandleFlags flags
 
 <div class="markdown level1 summary">
 
+Internal ID for this handle.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -156,6 +166,8 @@ public int id
 ### size
 
 <div class="markdown level1 summary">
+
+Actual size of the data in the buffer.
 
 </div>
 

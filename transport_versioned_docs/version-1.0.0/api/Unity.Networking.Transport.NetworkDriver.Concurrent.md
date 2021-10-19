@@ -6,7 +6,7 @@ title: Unity.Networking.Transport.NetworkDriver.Concurrent
 <div class="markdown level0 summary">
 
 The Concurrent struct is used to create an Concurrent instance of the
-GenericNetworkDriver.
+NetworkDriver.
 
 </div>
 
@@ -223,6 +223,8 @@ public int EndSend(DataStreamWriter writer)
 
 <div class="markdown level1 summary">
 
+Gets the connection state using the specified id
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -237,19 +239,21 @@ public NetworkConnection.State GetConnectionState(NetworkConnection id)
 
 #### Parameters
 
-| Type              | Name | Description |
-|-------------------|------|-------------|
-| NetworkConnection | id   |             |
+| Type              | Name | Description       |
+|-------------------|------|-------------------|
+| NetworkConnection | id   | The connection id |
 
 #### Returns
 
-| Type                    | Description |
-|-------------------------|-------------|
-| NetworkConnection.State |             |
+| Type                    | Description                  |
+|-------------------------|------------------------------|
+| NetworkConnection.State | The network connection state |
 
 ### MaxHeaderSize(NetworkPipeline)
 
 <div class="markdown level1 summary">
+
+Max headersize including a NetworkPipeline
 
 </div>
 
@@ -265,19 +269,21 @@ public int MaxHeaderSize(NetworkPipeline pipe)
 
 #### Parameters
 
-| Type            | Name | Description |
-|-----------------|------|-------------|
-| NetworkPipeline | pipe |             |
+| Type            | Name | Description                                             |
+|-----------------|------|---------------------------------------------------------|
+| NetworkPipeline | pipe | The pipeline with which to get the maximum header size. |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description     |
+|--------------|-----------------|
+| System.Int32 | The header size |
 
 ### PopEventForConnection(NetworkConnection, out DataStreamReader)
 
 <div class="markdown level1 summary">
+
+Pops events for a connection using the specified connection id
 
 </div>
 
@@ -293,20 +299,22 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### Parameters
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
-| DataStreamReader  | reader       |             |
+| Type              | Name         | Description                         |
+|-------------------|--------------|-------------------------------------|
+| NetworkConnection | connectionId | The connection id                   |
+| DataStreamReader  | reader       | Stream reader for the event's data. |
 
 #### Returns
 
-| Type              | Description |
-|-------------------|-------------|
-| NetworkEvent.Type |             |
+| Type              | Description            |
+|-------------------|------------------------|
+| NetworkEvent.Type | The network event type |
 
 ### PopEventForConnection(NetworkConnection, out DataStreamReader, out NetworkPipeline)
 
 <div class="markdown level1 summary">
+
+Pops events for a connection using the specified connection id
 
 </div>
 
@@ -322,14 +330,14 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### Parameters
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
-| DataStreamReader  | reader       |             |
-| NetworkPipeline   | pipeline     |             |
+| Type              | Name         | Description                                    |
+|-------------------|--------------|------------------------------------------------|
+| NetworkConnection | connectionId | The connection id                              |
+| DataStreamReader  | reader       | Stream reader for the event's data.            |
+| NetworkPipeline   | pipeline     | Pipeline on which the data event was received. |
 
 #### Returns
 
 | Type              | Description |
 |-------------------|-------------|
-| NetworkEvent.Type |             |
+| NetworkEvent.Type | The type    |

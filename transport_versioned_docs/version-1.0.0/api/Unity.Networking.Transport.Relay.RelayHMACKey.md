@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.Relay.RelayHMACKey
 
 <div class="markdown level0 summary">
 
+Used to represent the HMACKey for the Relay Service
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -69,6 +71,8 @@ public struct RelayHMACKey
 
 <div class="markdown level1 summary">
 
+The length in bytes of the RelayHMACKey.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,6 +94,8 @@ public const int k_Length = 64
 ### Value
 
 <div class="markdown level1 summary">
+
+The raw data of the HMAC key.
 
 </div>
 
@@ -115,6 +121,8 @@ public byte *Value
 
 <div class="markdown level1 summary">
 
+Converts a byte pointer to a RelayHMACKey.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -129,13 +137,19 @@ public static RelayHMACKey FromBytePointer(byte *data, int length)
 
 #### Parameters
 
-| Type          | Name   | Description |
-|---------------|--------|-------------|
-| System.Byte\* | data   |             |
-| System.Int32  | length |             |
+| Type          | Name   | Description                                   |
+|---------------|--------|-----------------------------------------------|
+| System.Byte\* | data   | The pointer to the data of the Allocation Id. |
+| System.Int32  | length | The length of the data.                       |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| RelayHMACKey |             |
+| Type         | Description                                                |
+|--------------|------------------------------------------------------------|
+| RelayHMACKey | Returns a RelayHMACKey constructed from the provided data. |
+
+#### Exceptions
+
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |

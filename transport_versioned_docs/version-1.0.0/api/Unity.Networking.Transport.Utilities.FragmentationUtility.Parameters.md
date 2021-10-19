@@ -81,6 +81,8 @@ public struct Parameters : INetworkParameter
 
 <div class="markdown level1 summary">
 
+Maximum payload size that can be fragmented.
+
 </div>
 
 <div class="markdown level1 conceptual">

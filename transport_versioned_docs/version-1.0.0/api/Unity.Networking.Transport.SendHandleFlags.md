@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.SendHandleFlags
 
 <div class="markdown level0 summary">
 
+The send handle flags enum
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -24,6 +26,6 @@ public enum SendHandleFlags
 
 ## 
 
-| Name              | Description |
-|-------------------|-------------|
-| AllocatedByDriver |             |
+| Name              | Description                                         |
+|-------------------|-----------------------------------------------------|
+| AllocatedByDriver | This SendHandle has been allocated by NetworkDriver |

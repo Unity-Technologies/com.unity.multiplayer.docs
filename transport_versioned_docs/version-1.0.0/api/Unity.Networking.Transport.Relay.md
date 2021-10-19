@@ -19,14 +19,6 @@ title: Unity.Networking.Transport.Relay
 
 ## 
 
-### Unity.Networking.Transport.Relay.RelayMessageBind
-
-<div class="section">
-
-</div>
-
-## 
-
 ### Unity.Networking.Transport.Relay.RelayAllocationId
 
 <div class="section">
@@ -42,7 +34,8 @@ address of the client.
 <div class="section">
 
 This is the encrypted data that the Relay server uses for describing a
-connection. Used mainly in the connection stablishing process (Binding)
+connection. Used mainly in the connection establishing process
+(Binding).
 
 </div>
 
@@ -50,41 +43,7 @@ connection. Used mainly in the connection stablishing process (Binding)
 
 <div class="section">
 
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageAccepted
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageConnectRequest
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageDisconnect
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageHeader
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessagePing
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageRelay
-
-<div class="section">
+Used to represent the HMACKey for the Relay Service
 
 </div>
 
@@ -92,18 +51,17 @@ connection. Used mainly in the connection stablishing process (Binding)
 
 <div class="section">
 
+Relay protocol network parementers used to connect to the Unity Relay
+service. This data must be provided to the Create(INetworkParameter\[\])
+function in order to be able to use connect to Relay.
+
 </div>
 
 ### Unity.Networking.Transport.Relay.RelayServerData
 
 <div class="section">
 
-</div>
-
-## 
-
-### Unity.Networking.Transport.Relay.RelayMessageType
-
-<div class="section">
+Used by the Relay Protocol to describe how to connect to the Relay
+Service.
 
 </div>

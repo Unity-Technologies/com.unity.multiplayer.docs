@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.Utilities.FixedStringHexExt
 
 <div class="markdown level0 summary">
 
+Provides Extension methods for FixedStrings
+
 </div>
 
 <div class="markdown level0 conceptual">

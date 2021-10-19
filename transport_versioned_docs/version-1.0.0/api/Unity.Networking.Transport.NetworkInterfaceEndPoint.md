@@ -63,6 +63,8 @@ public struct NetworkInterfaceEndPoint : IEquatable<NetworkInterfaceEndPoint>
 
 <div class="markdown level1 summary">
 
+Raw representation of the interface endpoint.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -85,6 +87,8 @@ public byte *data
 
 <div class="markdown level1 summary">
 
+Actual length of the interface endpoint's raw representation.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -106,6 +110,8 @@ public int dataLength
 ### k_MaxLength
 
 <div class="markdown level1 summary">
+
+Maximum length of the interface endpoint's raw representation.
 
 </div>
 
@@ -130,6 +136,8 @@ public const int k_MaxLength = 56
 ### IsValid
 
 <div class="markdown level1 summary">
+
+Whether the interface endpoint is valid or not.
 
 </div>
 
@@ -248,6 +256,8 @@ System.ValueType.GetHashCode()
 ### ToFixedString()
 
 <div class="markdown level1 summary">
+
+Returns the NetworkInterfaceEndPoint as a .
 
 </div>
 

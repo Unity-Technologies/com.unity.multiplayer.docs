@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkPipelineStage.SendDelegate
 
 <div class="markdown level0 summary">
 
+The send delegate
+
 </div>
 
 <div class="markdown level0 conceptual">

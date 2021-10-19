@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkSendQueueHandle
 
 <div class="markdown level0 summary">
 
+The network send queue handle
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -68,6 +70,8 @@ public struct NetworkSendQueueHandle
 ### FromHandle()
 
 <div class="markdown level1 summary">
+
+Create from the internal handle
 
 </div>
 

@@ -1,13 +1,9 @@
 ---  
-id: Unity.Networking.Transport.Relay.RelayAllocationId  
-title: Unity.Networking.Transport.Relay.RelayAllocationId  
+id: Unity.Networking.Transport.SessionIdToken  
+title: Unity.Networking.Transport.SessionIdToken  
 ---
 
 <div class="markdown level0 summary">
-
-Allocation Id is a unique identifier for a connected client/host to a
-Relay server. This identifier is used by the Relay protocol as the
-address of the client.
 
 </div>
 
@@ -21,13 +17,13 @@ address of the client.
 
 <div>
 
-System.IEquatable\&lt;RelayAllocationId&gt;
+System.IEquatable\<SessionIdToken\>
 
 </div>
 
 <div>
 
-System.IComparable\&lt;RelayAllocationId&gt;
+System.IComparable\<SessionIdToken\>
 
 </div>
 
@@ -70,7 +66,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<RelayAllocationId>
+public struct SessionIdToken : IEquatable<SessionIdToken>, IComparable<SessionIdToken>
 ```
 
 ## 
@@ -78,8 +74,6 @@ public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<Rel
 ### k_Length
 
 <div class="markdown level1 summary">
-
-The length in bytes of the Allocation Id.
 
 </div>
 
@@ -90,7 +84,7 @@ The length in bytes of the Allocation Id.
 #### Declaration
 
 ``` lang-csharp
-public const int k_Length = 16
+public const int k_Length = 8
 ```
 
 #### Field Value
@@ -102,8 +96,6 @@ public const int k_Length = 16
 ### Value
 
 <div class="markdown level1 summary">
-
-The raw data of the Allocation Id.
 
 </div>
 
@@ -125,7 +117,7 @@ public byte *Value
 
 ## 
 
-### CompareTo(RelayAllocationId)
+### CompareTo(SessionIdToken)
 
 <div class="markdown level1 summary">
 
@@ -138,14 +130,14 @@ public byte *Value
 #### Declaration
 
 ``` lang-csharp
-public int CompareTo(RelayAllocationId other)
+public int CompareTo(SessionIdToken other)
 ```
 
 #### Parameters
 
-| Type              | Name  | Description |
-|-------------------|-------|-------------|
-| RelayAllocationId | other |             |
+| Type           | Name  | Description |
+|----------------|-------|-------------|
+| SessionIdToken | other |             |
 
 #### Returns
 
@@ -189,7 +181,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(RelayAllocationId)
+### Equals(SessionIdToken)
 
 <div class="markdown level1 summary">
 
@@ -202,57 +194,20 @@ System.ValueType.Equals(System.Object)
 #### Declaration
 
 ``` lang-csharp
-public bool Equals(RelayAllocationId other)
+public bool Equals(SessionIdToken other)
 ```
 
 #### Parameters
 
-| Type              | Name  | Description |
-|-------------------|-------|-------------|
-| RelayAllocationId | other |             |
+| Type           | Name  | Description |
+|----------------|-------|-------------|
+| SessionIdToken | other |             |
 
 #### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
-
-### FromBytePointer(Byte\*, Int32)
-
-<div class="markdown level1 summary">
-
-Converts a byte pointer to a RelayAllocationId.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
-```
-
-#### Parameters
-
-| Type          | Name    | Description                                   |
-|---------------|---------|-----------------------------------------------|
-| System.Byte\* | dataPtr | The pointer to the data of the Allocation Id. |
-| System.Int32  | length  | The length of the data.                       |
-
-#### Returns
-
-| Type              | Description                                                     |
-|-------------------|-----------------------------------------------------------------|
-| RelayAllocationId | Returns a RelayAllocationId constructed from the provided data. |
-
-#### Exceptions
-
-| Type                     | Condition                                                                   |
-|--------------------------|-----------------------------------------------------------------------------|
-| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
 
 ### GetHashCode()
 
@@ -286,7 +241,7 @@ System.ValueType.GetHashCode()
 
 ## 
 
-### Equality(RelayAllocationId, RelayAllocationId)
+### Equality(SessionIdToken, SessionIdToken)
 
 <div class="markdown level1 summary">
 
@@ -299,15 +254,15 @@ System.ValueType.GetHashCode()
 #### Declaration
 
 ``` lang-csharp
-public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
+public static bool operator ==(SessionIdToken lhs, SessionIdToken rhs)
 ```
 
 #### Parameters
 
-| Type              | Name | Description |
-|-------------------|------|-------------|
-| RelayAllocationId | lhs  |             |
-| RelayAllocationId | rhs  |             |
+| Type           | Name | Description |
+|----------------|------|-------------|
+| SessionIdToken | lhs  |             |
+| SessionIdToken | rhs  |             |
 
 #### Returns
 
@@ -315,7 +270,7 @@ public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(RelayAllocationId, RelayAllocationId)
+### Inequality(SessionIdToken, SessionIdToken)
 
 <div class="markdown level1 summary">
 
@@ -328,15 +283,15 @@ public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 #### Declaration
 
 ``` lang-csharp
-public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
+public static bool operator !=(SessionIdToken lhs, SessionIdToken rhs)
 ```
 
 #### Parameters
 
-| Type              | Name | Description |
-|-------------------|------|-------------|
-| RelayAllocationId | lhs  |             |
-| RelayAllocationId | rhs  |             |
+| Type           | Name | Description |
+|----------------|------|-------------|
+| SessionIdToken | lhs  |             |
+| SessionIdToken | rhs  |             |
 
 #### Returns
 
@@ -348,12 +303,12 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 <div>
 
-System.IEquatable\&lt;T&gt;
+System.IEquatable\&lt;T&gt; 
 
 </div>
 
 <div>
 
-System.IComparable\&lt;T&gt;
+System.IComparable\&lt;T&gt; 
 
 </div>

@@ -30,3 +30,5 @@ public enum UdpCProtocol
 | ConnectionRequest |             |
 | Data              |             |
 | Disconnect        |             |
+| Ping              |             |
+| Pong              |             |

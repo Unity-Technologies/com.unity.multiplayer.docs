@@ -88,7 +88,7 @@ public DataStreamWriter(NativeArray<byte> data)
 
 | Type                       | Name | Description                                           |
 |----------------------------|------|-------------------------------------------------------|
-| NativeArray\&lt;System.Byte&gt | data | The buffer we want to attach to our DataStreamWriter. |
+| NativeArray\&lt;System.Byte&gt; | data | The buffer we want to attach to our DataStreamWriter. |
 
 ### DataStreamWriter(Byte\*, Int32)
 

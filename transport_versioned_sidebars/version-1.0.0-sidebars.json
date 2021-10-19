@@ -129,8 +129,8 @@
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.ProcessPacketCommandType",
-          "label": "DataStreamWriter"
+          "id": "version-1.0.0/api/Unity.Networking.Transport.SessionIdToken",
+          "label": "SessionIdToken"
         },
         {
           "collapsed": true,
@@ -454,46 +454,13 @@
           "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayHMACKey",
           "label": "RelayHMACKey"
         },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageAccepted",
-          "label": "RelayMessageAccepted"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageBind",
-          "label": "RelayMessageBind"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageConnectRequest",
-          "label": "RelayMessageConnectRequest"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageDisconnect",
-          "label": "RelayMessageDisconnect"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageHeader",
-          "label": "RelayMessageHeader"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessagePing",
-          "label": "RelayMessagePing"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageRelay",
-          "label": "RelayMessageRelay"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageType",
-          "label": "RelayMessageType"
-        },
+
+
+
+
+ 
+
+
         {
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayNetworkParameter",

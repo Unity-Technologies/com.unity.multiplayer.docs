@@ -81,6 +81,8 @@ public struct FragmentationPipelineStage : INetworkPipelineStage
 
 <div class="markdown level1 summary">
 
+Gets the value of the static size
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -105,6 +107,8 @@ public readonly int StaticSize { get; }
 
 <div class="markdown level1 summary">
 
+Statics the initialize using the specified static instance buffer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -119,17 +123,23 @@ public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int sta
 
 #### Parameters
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | netParams                  |             |
+| Type                  | Name                       | Description                       |
+|-----------------------|----------------------------|-----------------------------------|
+| System.Byte\*         | staticInstanceBuffer       | The static instance buffer        |
+| System.Int32          | staticInstanceBufferLength | The static instance buffer length |
+| INetworkParameter\[\] | netParams                  | The net params                    |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkPipelineStage |             |
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkPipelineStage | The network pipeline stage |
+
+#### Exceptions
+
+| Type                             | Condition                                                                                                                          |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| System.InvalidOperationException | Please specify a FragmentationUtility.Parameters with a PayloadCapacity greater than MTU, which is {NetworkParameterConstants.MTU} |
 
 ### Implements
 

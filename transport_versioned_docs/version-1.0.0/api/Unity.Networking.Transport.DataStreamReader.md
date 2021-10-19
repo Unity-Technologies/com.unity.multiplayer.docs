@@ -116,7 +116,7 @@ public DataStreamReader(NativeArray<byte> array)
 
 | Type                       | Name  | Description |
 |----------------------------|-------|-------------|
-| NativeArray\&lt;System.Byte&gt | array |             |
+| NativeArray\&lt;System.Byte&gt; | array |             |
 
 ### DataStreamReader(Byte\*, Int32)
 
@@ -327,7 +327,7 @@ public void ReadBytes(NativeArray<byte> array)
 
 | Type                       | Name  | Description |
 |----------------------------|-------|-------------|
-| NativeArray\&lt;System.Byte&gt  | array |             |
+| NativeArray\&lt;System.Byte&gt;  | array |             |
 
 ### ReadBytes(Byte\*, Int32)
 
@@ -565,6 +565,28 @@ public int ReadIntNetworkByteOrder()
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+### ReadLong()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public long ReadLong()
+```
+
+#### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
 
 ### ReadPackedFixedString128Delta(FixedString128Bytes, NetworkCompressionModel)
 

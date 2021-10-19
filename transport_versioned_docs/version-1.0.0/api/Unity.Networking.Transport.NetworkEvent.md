@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkEvent
 
 <div class="markdown level0 summary">
 
+Represents an event on a connection.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -69,6 +71,8 @@ public struct NetworkEvent
 
 <div class="markdown level1 summary">
 
+Internal ID of the connection.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,6 +94,8 @@ public int connectionId
 ### offset
 
 <div class="markdown level1 summary">
+
+Offset of the event's data in the internal data stream.
 
 </div>
 
@@ -113,6 +119,8 @@ public int offset
 
 <div class="markdown level1 summary">
 
+The pipeline on which the event was received (for Data events).
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -134,6 +142,8 @@ public short pipelineId
 ### size
 
 <div class="markdown level1 summary">
+
+Size of the event's data.
 
 </div>
 
@@ -157,6 +167,8 @@ public int size
 
 <div class="markdown level1 summary">
 
+Status of the event. Used to store the Disconnect reason.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -178,6 +190,8 @@ public int status
 ### type
 
 <div class="markdown level1 summary">
+
+The type of the event.
 
 </div>
 

@@ -23,6 +23,8 @@ title: Unity.Networking.Transport.Utilities
 
 <div class="section">
 
+Provides Extension methods for FixedStrings
+
 </div>
 
 ### Unity.Networking.Transport.Utilities.NativeListExt
@@ -34,6 +36,8 @@ title: Unity.Networking.Transport.Utilities
 ### Unity.Networking.Transport.Utilities.RandomHelpers
 
 <div class="section">
+
+A simple method to obtain a random ushort provided by the class.
 
 </div>
 
@@ -62,7 +66,7 @@ title: Unity.Networking.Transport.Utilities
 <div class="section">
 
 A NativeMultiQueue is a set of several FIFO queues split into buckets.
-Each bucket has its own first and last item and each bucket can have
+Each bucket has its own first and last item, and each bucket can have
 items pushed and popped individually.
 
 </div>
