@@ -19,7 +19,7 @@ The host of your game needs to allocate a Relay first. This process will create 
 
 ### How do I enable Relay for my project?
 
-The first thing that needs to be understood is that Relay is a Unity service. Thus, you need to add it to your organization in the Unity Dashboard (under the multiplayer section). After that, link your project to your organization  (Project Settings -> Services). 
+The first thing that needs to be understood is that Relay is a Unity service. Thus, you first need to link your project to your organization. To do so, go to Project Settings, then Services, and link your project. After, go to your [Unity Dashboard](https://dashboard.unity3d.com/), select your project, go to the Relay service in the Multiplayer Section, and turn the toggle button to **On**.
 
 ### How do I allocate a server?
 
