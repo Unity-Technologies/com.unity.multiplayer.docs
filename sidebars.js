@@ -489,7 +489,12 @@ module.exports = {
               },
             ],
           },
-          {
+      {
+              "collapsed": true,
+              "type": "category",
+              "label": "Bitesize Samples",
+              "items": [
+              {
             "type": "doc",
             "id": "learn/bitesize-introduction"
           },
