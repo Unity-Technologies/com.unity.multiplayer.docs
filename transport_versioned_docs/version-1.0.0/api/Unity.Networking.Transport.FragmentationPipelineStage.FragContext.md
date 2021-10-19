@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.FragmentationPipelineStage.FragContext
 
 <div class="markdown level0 summary">
 
+The fragmentation stage's internal context.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -69,6 +71,8 @@ public struct FragContext
 
 <div class="markdown level1 summary">
 
+Ending index.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,6 +94,8 @@ public int endIndex
 ### packetError
 
 <div class="markdown level1 summary">
+
+Whether there's an error with a packet.
 
 </div>
 
@@ -113,6 +119,8 @@ public bool packetError
 
 <div class="markdown level1 summary">
 
+Sequence number.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -134,6 +142,8 @@ public int sequence
 ### startIndex
 
 <div class="markdown level1 summary">
+
+Starting index.
 
 </div>
 

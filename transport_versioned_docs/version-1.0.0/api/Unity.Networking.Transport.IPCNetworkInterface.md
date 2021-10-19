@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.IPCNetworkInterface
 
 <div class="markdown level0 summary">
 
+The ipc network interface
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -87,6 +89,8 @@ public struct IPCNetworkInterface : INetworkInterface, IDisposable
 
 <div class="markdown level1 summary">
 
+Gets the value of the local end point
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -111,6 +115,8 @@ public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
 
 <div class="markdown level1 summary">
 
+Binds the medium to a specific endpoint.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -125,19 +131,21 @@ public int Bind(NetworkInterfaceEndPoint endpoint)
 
 #### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
+| Type                     | Name     | Description                       |
+|--------------------------|----------|-----------------------------------|
+| NetworkInterfaceEndPoint | endpoint | A valid NetworkInterfaceEndPoint. |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description  |
+|--------------|--------------|
+| System.Int32 | 0 on Success |
 
 ### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
+
+Creates an interface end point. Only available for loopback addresses.
 
 </div>
 
@@ -153,20 +161,22 @@ public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterface
 
 #### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkEndPoint          | address  |             |
-| NetworkInterfaceEndPoint | endpoint |             |
+| Type                     | Name     | Description      |
+|--------------------------|----------|------------------|
+| NetworkEndPoint          | address  | Loopback address |
+| NetworkInterfaceEndPoint | endpoint | The endpoint     |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                                       |
+|--------------|---------------------------------------------------|
+| System.Int32 | The status code of the result, 0 being a success. |
 
 ### CreateSendInterface()
 
 <div class="markdown level1 summary">
+
+Creates the send interface
 
 </div>
 
@@ -182,13 +192,15 @@ public NetworkSendInterface CreateSendInterface()
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkSendInterface |             |
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkSendInterface | The network send interface |
 
 ### Dispose()
 
 <div class="markdown level1 summary">
+
+Cleans up both the local end point and the IPCManager instance.
 
 </div>
 
@@ -206,6 +218,8 @@ public void Dispose()
 
 <div class="markdown level1 summary">
 
+Retrieves an already created endpoint with port or creates one.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -220,19 +234,21 @@ public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 
 #### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
+| Type                     | Name     | Description           |
+|--------------------------|----------|-----------------------|
+| NetworkInterfaceEndPoint | endpoint | The loopback endpoint |
 
 #### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+| Type            | Description     |
+|-----------------|-----------------|
+| NetworkEndPoint | NetworkEndPoint |
 
 ### Initialize(INetworkParameter\[\])
 
 <div class="markdown level1 summary">
+
+Initializes the interface passing in optional INetworkParameter
 
 </div>
 
@@ -250,17 +266,20 @@ public int Initialize(params INetworkParameter[] param)
 
 | Type                  | Name  | Description |
 |-----------------------|-------|-------------|
-| INetworkParameter\[\] | param |             |
+| INetworkParameter\[\] | param | The param   |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                                       |
+|--------------|---------------------------------------------------|
+| System.Int32 | The status code of the result, 0 being a success. |
 
 ### Listen()
 
 <div class="markdown level1 summary">
+
+Start listening for incoming connections. This is normally a no-op for
+real UDP sockets.
 
 </div>
 
@@ -276,13 +295,16 @@ public int Listen()
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description  |
+|--------------|--------------|
+| System.Int32 | 0 on Success |
 
 ### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedule a ReceiveJob. This is used to read data from your supported
+medium and pass it to the AppendData function supplied by NetworkDriver
 
 </div>
 
@@ -298,20 +320,23 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 
 #### Parameters
 
-| Type                  | Name     | Description |
-|-----------------------|----------|-------------|
-| NetworkPacketReceiver | receiver |             |
-| JobHandle             | dep      |             |
+| Type                  | Name     | Description                                      |
+|-----------------------|----------|--------------------------------------------------|
+| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
+| JobHandle             | dep      | A to any dependency we might have.               |
 
 #### Returns
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+| Type      | Description                                 |
+|-----------|---------------------------------------------|
+| JobHandle | A to our newly created ScheduleReceive Job. |
 
-### ScheduleSend(NativeQueue\&lt;System.Byte&gt;, JobHandle)
+### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedule a SendJob. This is used to flush send queues to your supported
+medium
 
 </div>
 
@@ -327,16 +352,16 @@ public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandl
 
 #### Parameters
 
-| Type                             | Name      | Description |
-|----------------------------------|-----------|-------------|
-| NativeQueue\&lt;System.Byte&gt; | sendQueue |             |
-| JobHandle                        | dep       |             |
+| Type                             | Name      | Description                                                |
+|----------------------------------|-----------|------------------------------------------------------------|
+| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue | The send queue which can be used to emulate parallel send. |
+| JobHandle                        | dep       | A to any dependency we might have.                         |
 
 #### Returns
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+| Type      | Description                              |
+|-----------|------------------------------------------|
+| JobHandle | A to our newly created ScheduleSend Job. |
 
 ### Implements
 

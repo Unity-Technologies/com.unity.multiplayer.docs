@@ -5,7 +5,7 @@ title: Unity.Netcode.NetworkConfigurationException
 
 <div class="markdown level0 summary">
 
-Exception thrown when the operation can only be done on the server
+Exception thrown when a change to a configuration is wrong
 
 </div>
 

@@ -6,8 +6,7 @@ title: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
 <div class="markdown level0 summary">
 
 The delegate callback definition for scene event notifications For more
-details review over SceneEvent and
-Unity.Netcode.NetworkSceneManager.SceneEventData
+details review over SceneEvent and Unity.Netcode.SceneEventData
 
 </div>
 

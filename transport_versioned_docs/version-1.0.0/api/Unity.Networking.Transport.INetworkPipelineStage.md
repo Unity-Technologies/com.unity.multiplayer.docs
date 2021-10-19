@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.INetworkPipelineStage
 
 <div class="markdown level0 summary">
 
+The network pipeline stage interface
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -26,6 +28,8 @@ public interface INetworkPipelineStage
 ### StaticSize
 
 <div class="markdown level1 summary">
+
+Gets the value of the static size
 
 </div>
 
@@ -51,6 +55,8 @@ int StaticSize { get; }
 
 <div class="markdown level1 summary">
 
+Statics the initialize using the specified static instance buffer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -65,14 +71,14 @@ NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInst
 
 #### Parameters
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | param                      |             |
+| Type                  | Name                       | Description                       |
+|-----------------------|----------------------------|-----------------------------------|
+| System.Byte\*         | staticInstanceBuffer       | The static instance buffer        |
+| System.Int32          | staticInstanceBufferLength | The static instance buffer length |
+| INetworkParameter\[\] | param                      | The param                         |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkPipelineStage |             |
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkPipelineStage | The network pipeline stage |

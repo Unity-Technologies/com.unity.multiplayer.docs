@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkPipelineStage
 
 <div class="markdown level0 summary">
 
+The network pipeline stage
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -65,9 +67,13 @@ public struct NetworkPipelineStage
 
 ## 
 
-### NetworkPipelineStage(TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt;, TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt;, TransportFunctionPointer&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt;, Int32, Int32, Int32, Int32, Int32)
+### NetworkPipelineStage(TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt; , TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt; , TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; , Int32, Int32, Int32, Int32, Int32)
+
+&lt;System.Byte&gt; 
 
 <div class="markdown level1 summary">
+
+Initializes a new instance of the NetworkPipelineStage class
 
 </div>
 
@@ -83,22 +89,24 @@ public NetworkPipelineStage(TransportFunctionPointer<NetworkPipelineStage.Receiv
 
 #### Parameters
 
-| Type                                                                          | Name                 | Description |
-|-------------------------------------------------------------------------------|----------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;            | Receive              |             |
-| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt;               | Send                 |             |
-| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt;| InitializeConnection |             |
-| System.Int32                                                                  | ReceiveCapacity      |             |
-| System.Int32                                                                  | SendCapacity         |             |
-| System.Int32                                                                  | HeaderCapacity       |             |
-| System.Int32                                                                  | SharedStateCapacity  |             |
-| System.Int32                                                                  | PayloadCapacity      |             |
+| Type                                                                          | Name                 | Description               |
+|-------------------------------------------------------------------------------|----------------------|---------------------------|
+| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;            | Receive              | The receive               |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt;                 | Send                 | The send                  |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; | InitializeConnection | The initialize connection |
+| System.Int32                                                                  | ReceiveCapacity      | The receive capacity      |
+| System.Int32                                                                  | SendCapacity         | The send capacity         |
+| System.Int32                                                                  | HeaderCapacity       | The header capacity       |
+| System.Int32                                                                  | SharedStateCapacity  | The shared state capacity |
+| System.Int32                                                                  | PayloadCapacity      | The payload capacity      |
 
 ## 
 
 ### HeaderCapacity
 
 <div class="markdown level1 summary">
+
+The header capacity
 
 </div>
 
@@ -122,6 +130,8 @@ public readonly int HeaderCapacity
 
 <div class="markdown level1 summary">
 
+InitializeConnection function pointer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -143,6 +153,8 @@ public TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegat
 ### PayloadCapacity
 
 <div class="markdown level1 summary">
+
+The payload capacity
 
 </div>
 
@@ -166,6 +178,8 @@ public readonly int PayloadCapacity
 
 <div class="markdown level1 summary">
 
+Receive function pointer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -187,6 +201,8 @@ public TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive
 ### ReceiveCapacity
 
 <div class="markdown level1 summary">
+
+The receive capacity
 
 </div>
 
@@ -210,6 +226,8 @@ public readonly int ReceiveCapacity
 
 <div class="markdown level1 summary">
 
+Send function pointer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -226,11 +244,13 @@ public TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send
 
 | Type                                                          | Description |
 |---------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt; |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt;|             |
 
 ### SendCapacity
 
 <div class="markdown level1 summary">
+
+The send capacity
 
 </div>
 
@@ -253,6 +273,8 @@ public readonly int SendCapacity
 ### SharedStateCapacity
 
 <div class="markdown level1 summary">
+
+The shared state capacity
 
 </div>
 

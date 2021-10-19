@@ -137,7 +137,7 @@ public readonly HashSet<NetworkObject> SpawnedObjectsList
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
-| System.Collections.Generic.HashSet&lt;NetworkObject&gt; |             |
+| System.Collections.Generic.HashSet\&lt;NetworkObject&gt;|             |
 
 ## 
 

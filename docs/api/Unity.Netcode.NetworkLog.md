@@ -91,6 +91,32 @@ public static class NetworkLog
 
 ## 
 
+### CurrentLogLevel
+
+<div class="markdown level1 summary">
+
+Gets the current log level.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static LogLevel CurrentLogLevel { get; }
+```
+
+#### Property Value
+
+| Type     | Description            |
+|----------|------------------------|
+| LogLevel | The current log level. |
+
+## 
+
 ### LogErrorServer(String)
 
 <div class="markdown level1 summary">

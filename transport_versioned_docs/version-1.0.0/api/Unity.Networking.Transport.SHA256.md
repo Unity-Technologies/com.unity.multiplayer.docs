@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.SHA256
 
 <div class="markdown level0 summary">
 
+Utility class that provides the ability to generate a SHA256 Hash
+
 </div>
 
 <div class="markdown level0 conceptual">

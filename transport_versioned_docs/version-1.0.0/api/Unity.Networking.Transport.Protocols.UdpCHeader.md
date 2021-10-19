@@ -65,28 +65,6 @@ public struct UdpCHeader
 
 ## 
 
-### Data
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public byte *Data
-```
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Byte\* |             |
-
 ### Flags
 
 <div class="markdown level1 summary">
@@ -122,7 +100,7 @@ public UdpCHeader.HeaderFlags Flags
 #### Declaration
 
 ``` lang-csharp
-public const int Length = 4
+public const int Length = 10
 ```
 
 #### Field Value
@@ -144,14 +122,14 @@ public const int Length = 4
 #### Declaration
 
 ``` lang-csharp
-public ushort SessionToken
+public SessionIdToken SessionToken
 ```
 
 #### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
+| Type           | Description |
+|----------------|-------------|
+| SessionIdToken |             |
 
 ### Type
 

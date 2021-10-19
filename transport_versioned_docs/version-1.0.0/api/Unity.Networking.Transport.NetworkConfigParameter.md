@@ -109,8 +109,8 @@ public int connectTimeoutMS
 
 <div class="markdown level1 summary">
 
-A timeout in milliseconds indicating how long we will wait for a socket
-event, before we disconnect the socket.
+A timeout in milliseconds indicating how long we will wait for a
+connection event, before we disconnect it.
 
 </div>
 
@@ -135,7 +135,9 @@ public int disconnectTimeoutMS
 <div class="markdown level1 remarks">
 
 The connection needs to receive data from the connected endpoint within
-this timeout.
+this timeout. Note that with heartbeats enabled (heartbeatTimeoutMS \>
+0), simply not sending any data will not be enough to trigger this
+timeout (since heartbeats count as connection events).
 
 </div>
 
@@ -172,6 +174,31 @@ The main use for this parameter is tests where determinism is more
 important than correctness.
 
 </div>
+
+### heartbeatTimeoutMS
+
+<div class="markdown level1 summary">
+
+A timeout in milliseconds after which a heartbeat is sent if there is no
+activity.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int heartbeatTimeoutMS
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### maxConnectAttempts
 

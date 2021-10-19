@@ -55,55 +55,6 @@ public class NetworkManager : MonoBehaviour, INetworkUpdateSystem
 
 ## 
 
-### ConnectedClients
-
-<div class="markdown level1 summary">
-
-Gets a dictionary of connected clients and their clientId keys. This is
-only populated on the server.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public readonly Dictionary<ulong, NetworkClient> ConnectedClients
-```
-
-#### Field Value
-
-| Type                                                                  | Description |
-|-----------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\<System.UInt64, NetworkClient\> |             |
-
-### ConnectedClientsList
-
-<div class="markdown level1 summary">
-
-Gets a list of connected clients. This is only populated on the server.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public readonly List<NetworkClient> ConnectedClientsList
-```
-
-#### Field Value
-
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| System.Collections.Generic.List\<NetworkClient\> |             |
-
 ### DontDestroy
 
 <div class="markdown level1 summary">
@@ -200,7 +151,7 @@ public readonly Dictionary<ulong, PendingClient> PendingClients
 
 | Type                                                                  | Description |
 |-----------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\<System.UInt64, PendingClient\> |             |
+| System.Collections.Generic.Dictionary\&lt;System.UInt64, PendingClient&gt; |             |
 
 ### RunInBackground
 
@@ -228,11 +179,12 @@ public bool RunInBackground
 
 ## 
 
-### ConnectedClientsIds
+### ConnectedClients
 
 <div class="markdown level1 summary">
 
-Gets a list of just the IDs of all connected clients.
+Gets a dictionary of connected clients and their clientId keys. This is
+only accessible on the server.
 
 </div>
 
@@ -243,14 +195,63 @@ Gets a list of just the IDs of all connected clients.
 #### Declaration
 
 ``` lang-csharp
-public ulong[] ConnectedClientsIds { get; }
+public IReadOnlyDictionary<ulong, NetworkClient> ConnectedClients { get; }
 ```
 
 #### Property Value
 
-| Type              | Description |
-|-------------------|-------------|
-| System.UInt64\[\] |             |
+| Type                                                | Description |
+|-----------------------------------------------------|-------------|
+| IReadOnlyDictionary\&lt;System.UInt64, NetworkClient&lt; |             |
+
+### ConnectedClientsIds
+
+<div class="markdown level1 summary">
+
+Gets a list of just the IDs of all connected clients. This is only
+accessible on the server.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public IReadOnlyList<ulong> ConnectedClientsIds { get; }
+```
+
+#### Property Value
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| IReadOnlyList\&lt;System.UInt64&lt; |             |
+
+### ConnectedClientsList
+
+<div class="markdown level1 summary">
+
+Gets a list of connected clients. This is only accessible on the server.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public IReadOnlyList<NetworkClient> ConnectedClientsList { get; }
+```
+
+#### Property Value
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| IReadOnlyList\&lt; NetworkClient&lt; |             |
 
 ### ConnectedHostname
 
@@ -417,6 +418,30 @@ public bool IsServer { get; }
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### LocalClient
+
+<div class="markdown level1 summary">
+
+Gets the local NetworkClient for this client.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkClient LocalClient { get; }
+```
+
+#### Property Value
+
+| Type          | Description |
+|---------------|-------------|
+| NetworkClient |             |
 
 ### LocalClientId
 
@@ -779,14 +804,14 @@ Starts a client
 #### Declaration
 
 ``` lang-csharp
-public SocketTasks StartClient()
+public bool StartClient()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### StartHost()
 
@@ -803,14 +828,14 @@ Starts a Host
 #### Declaration
 
 ``` lang-csharp
-public SocketTasks StartHost()
+public bool StartHost()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### StartServer()
 
@@ -827,14 +852,14 @@ Starts a server
 #### Declaration
 
 ``` lang-csharp
-public SocketTasks StartServer()
+public bool StartServer()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ## 
 

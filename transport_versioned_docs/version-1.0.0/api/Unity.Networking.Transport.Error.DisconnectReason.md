@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.Error.DisconnectReason
 
 <div class="markdown level0 summary">
 
-DisconnectReason enumerates all disconnect reasons.
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -25,10 +23,10 @@ public enum DisconnectReason : byte
 
 ## 
 
-| Name                  | Description                                                                           |
-|-----------------------|---------------------------------------------------------------------------------------|
-| ClosedByRemote        | Indicates the connection was closed remotely.                                         |
-| Count                 | Used only for count. Keep last and don't assign explicit values                       |
-| Default               | Indicates a normal disconnection as a result of calling Disconnect on the connection. |
-| MaxConnectionAttempts | Indicates the connection failed to establish a connection after maxConnectAttempts.   |
-| Timeout               | Indicates the connection timed out.                                                   |
+| Name                  | Description                                                                                           |
+|-----------------------|-------------------------------------------------------------------------------------------------------|
+| ClosedByRemote        |                                                                                                       |
+| Count                 | Used internally to track the number of reasons. Keep last.                                            |
+| Default               |                                                                                                       |
+| MaxConnectionAttempts | Indicates the connection failed to establish after too many failed attempts (see maxConnectAttempts). |
+| Timeout               |                                                                                                       |

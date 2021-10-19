@@ -454,7 +454,7 @@ all connected clients.
 #### Declaration
 
 ``` lang-csharp
-public void Despawn(bool destroy = false)
+public void Despawn(bool destroy = true)
 ```
 
 #### Parameters
@@ -539,7 +539,7 @@ public static void NetworkHide(List<NetworkObject> networkObjects, ulong clientI
 
 | Type                                             | Name           | Description                         |
 |--------------------------------------------------|----------------|-------------------------------------|
-| System.Collections.Generic.List&lt;NetworkObject&gt; | networkObjects | The objects to hide                 |
+| System.Collections.Generic.List\&lt;NetworkObject&gt;| networkObjects | The objects to hide                 |
 | System.UInt64                                    | clientId       | The client to hide the objects from |
 
 ### NetworkHide(UInt64)
@@ -588,7 +588,7 @@ public static void NetworkShow(List<NetworkObject> networkObjects, ulong clientI
 
 | Type                                             | Name           | Description                       |
 |--------------------------------------------------|----------------|-----------------------------------|
-| System.Collections.Generic.List&lt;NetworkObject&gt; | networkObjects | The NetworkObjects to show        |
+| System.Collections.Generic.List\&lt;NetworkObject&gt; | networkObjects | The NetworkObjects to show        |
 | System.UInt64                                    | clientId       | The client to show the objects to |
 
 ### NetworkShow(UInt64)

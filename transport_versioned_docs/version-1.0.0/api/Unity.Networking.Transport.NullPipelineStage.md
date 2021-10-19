@@ -5,6 +5,9 @@ title: Unity.Networking.Transport.NullPipelineStage
 
 <div class="markdown level0 summary">
 
+The NullPipelineStage is the default pipeline stage and used to send
+packets unreliably
+
 </div>
 
 <div class="markdown level0 conceptual">

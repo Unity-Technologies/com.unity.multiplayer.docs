@@ -5,6 +5,11 @@ title: Unity.Networking.Transport.ReliableSequencedPipelineStage
 
 <div class="markdown level0 summary">
 
+The ReliableSequencedPipelineStage is used to send packets reliably and
+retain the order in which they are sent. This PipelineStage has a
+hardcoded WindowSize of 32 inflight packets and will drop packets if its
+unable to track them.
+
 </div>
 
 <div class="markdown level0 conceptual">

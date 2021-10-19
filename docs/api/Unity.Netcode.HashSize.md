@@ -22,7 +22,7 @@ encoding It just says how many bytes the maximum will be
 ##### Syntax
 
 ``` lang-csharp
-public enum HashSize
+public enum HashSize : byte
 ```
 
 ## 

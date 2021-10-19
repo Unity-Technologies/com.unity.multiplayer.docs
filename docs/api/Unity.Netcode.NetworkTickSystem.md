@@ -89,7 +89,7 @@ public class NetworkTickSystem
 
 ## 
 
-### NetworkTickSystem(Int32, Double, Double)
+### NetworkTickSystem(UInt32, Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -104,14 +104,14 @@ Creates a new instance of the NetworkTickSystem class.
 #### Declaration
 
 ``` lang-csharp
-public NetworkTickSystem(int tickRate, double localTimeSec, double serverTimeSec)
+public NetworkTickSystem(uint tickRate, double localTimeSec, double serverTimeSec)
 ```
 
 #### Parameters
 
 | Type          | Name          | Description                          |
 |---------------|---------------|--------------------------------------|
-| System.Int32  | tickRate      | The tick rate                        |
+| System.UInt32 | tickRate      | The tick rate                        |
 | System.Double | localTimeSec  | The initial local time to start at.  |
 | System.Double | serverTimeSec | The initial server time to start at. |
 
@@ -212,16 +212,41 @@ fixed network tick is run.
 #### Declaration
 
 ``` lang-csharp
-public int TickRate { get; }
+public uint TickRate { get; }
 ```
 
 #### Property Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
 
 ## 
+
+### Reset(Double, Double)
+
+<div class="markdown level1 summary">
+
+Resets the tick system to the given network time.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public void Reset(double localTimeSec, double serverTimeSec)
+```
+
+#### Parameters
+
+| Type          | Name          | Description                 |
+|---------------|---------------|-----------------------------|
+| System.Double | localTimeSec  | The local time in seconds.  |
+| System.Double | serverTimeSec | The server time in seconds. |
 
 ### UpdateTick(Double, Double)
 

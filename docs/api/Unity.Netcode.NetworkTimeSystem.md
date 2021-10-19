@@ -225,7 +225,8 @@ public double LocalTime { get; }
 Gets or sets the amount of the time in seconds the client should buffer
 incoming messages from the server. This increases server time. A higher
 value increases latency but makes the game look more smooth in bad
-networking conditions.
+networking conditions. This value must be higher than the tick length
+client side.
 
 </div>
 

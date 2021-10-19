@@ -70,7 +70,7 @@ public struct NetworkTime
 
 ## 
 
-### NetworkTime(Int32)
+### NetworkTime(UInt32)
 
 <div class="markdown level1 summary">
 
@@ -85,16 +85,16 @@ Creates a new instance of the NetworkTime struct.
 #### Declaration
 
 ``` lang-csharp
-public NetworkTime(int tickRate)
+public NetworkTime(uint tickRate)
 ```
 
 #### Parameters
 
-| Type         | Name     | Description   |
-|--------------|----------|---------------|
-| System.Int32 | tickRate | The tickrate. |
+| Type          | Name     | Description   |
+|---------------|----------|---------------|
+| System.UInt32 | tickRate | The tickrate. |
 
-### NetworkTime(Int32, Double)
+### NetworkTime(UInt32, Double)
 
 <div class="markdown level1 summary">
 
@@ -109,17 +109,17 @@ Creates a new instance of the NetworkTime struct.
 #### Declaration
 
 ``` lang-csharp
-public NetworkTime(int tickRate, double timeSec)
+public NetworkTime(uint tickRate, double timeSec)
 ```
 
 #### Parameters
 
 | Type          | Name     | Description                |
 |---------------|----------|----------------------------|
-| System.Int32  | tickRate | The tickrate.              |
+| System.UInt32 | tickRate | The tickrate.              |
 | System.Double | timeSec  | The time value as a float. |
 
-### NetworkTime(Int32, Int32, Double)
+### NetworkTime(UInt32, Int32, Double)
 
 <div class="markdown level1 summary">
 
@@ -134,14 +134,14 @@ Creates a new instance of the NetworkTime struct.
 #### Declaration
 
 ``` lang-csharp
-public NetworkTime(int tickRate, int tick, double tickOffset = 0)
+public NetworkTime(uint tickRate, int tick, double tickOffset = 0)
 ```
 
 #### Parameters
 
 | Type          | Name       | Description                                                                                                  |
 |---------------|------------|--------------------------------------------------------------------------------------------------------------|
-| System.Int32  | tickRate   | The tickrate.                                                                                                |
+| System.UInt32 | tickRate   | The tickrate.                                                                                                |
 | System.Int32  | tick       | The time will be created with a value where this many tick have already passed.                              |
 | System.Double | tickOffset | Can be used to create a NetworkTime with a non fixed time value by adding an offset to the given tick value. |
 
@@ -250,7 +250,7 @@ public readonly double TickOffset { get; }
 
 <div class="markdown level1 summary">
 
-Gets the tickrate of the system of this NetworkTime.
+Gets the tickrate of the system of this NetworkTime. Ticks per second.
 
 </div>
 
@@ -261,14 +261,14 @@ Gets the tickrate of the system of this NetworkTime.
 #### Declaration
 
 ``` lang-csharp
-public readonly int TickRate { get; }
+public readonly uint TickRate { get; }
 ```
 
 #### Property Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
 
 ### Time
 
@@ -319,6 +319,34 @@ public readonly float TimeAsFloat { get; }
 | System.Single |             |
 
 ## 
+
+### TimeTicksAgo(Int32)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkTime TimeTicksAgo(int ticks)
+```
+
+#### Parameters
+
+| Type         | Name  | Description |
+|--------------|-------|-------------|
+| System.Int32 | ticks |             |
+
+#### Returns
+
+| Type        | Description |
+|-------------|-------------|
+| NetworkTime |             |
 
 ### ToFixedTime()
 

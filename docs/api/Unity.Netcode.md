@@ -1,6 +1,6 @@
 ---  
 id: Unity.Netcode  
-title: Unity.Netcode  
+title: Unity.Netcode
 ---
 
 ## 
@@ -27,12 +27,23 @@ Arithmetic helper class
 
 </div>
 
-### Unity.Netcode.AutoNetworkSerializable
+### Unity.Netcode.BitCounter
 
 <div class="section">
 
-AutoBitWritable implements INetworkSerializable and automatically
-serializes fields using reflection
+</div>
+
+### Unity.Netcode.BytePacker
+
+<div class="section">
+
+Utility class for packing values in serialization.
+
+</div>
+
+### Unity.Netcode.ByteUnpacker
+
+<div class="section">
 
 </div>
 
@@ -54,6 +65,12 @@ clients.
 The manager class to manage custom messages, note that this is different
 from the NetworkManager custom messages. These are named and are much
 easier to use.
+
+</div>
+
+### Unity.Netcode.ErrorUtilities
+
+<div class="section">
 
 </div>
 
@@ -94,22 +111,6 @@ The base class to override to write network code. Inherits MonoBehaviour
 
 </div>
 
-### Unity.Netcode.NetworkBuffer
-
-<div class="section">
-
-A buffer that can be used at the bit level
-
-</div>
-
-### Unity.Netcode.NetworkBufferPool
-
-<div class="section">
-
-Static class containing PooledNetworkBuffers
-
-</div>
-
 ### Unity.Netcode.NetworkClient
 
 <div class="section">
@@ -130,7 +131,7 @@ The configuration object used to start server, client and hosts
 
 <div class="section">
 
-Exception thrown when the operation can only be done on the server
+Exception thrown when a change to a configuration is wrong
 
 </div>
 
@@ -177,38 +178,13 @@ INetworkPrefabInstanceHandler interface.
 
 </div>
 
-### Unity.Netcode.NetworkReader
-
-<div class="section">
-
-A BinaryReader that can do bit wise manipulation when backed by a
-NetworkBuffer
-
-</div>
-
-### Unity.Netcode.NetworkReaderPool
-
-<div class="section">
-
-Static class containing PooledNetworkReaders
-
-</div>
-
 ### Unity.Netcode.NetworkSceneManager
 
 <div class="section">
 
 Main class for managing network scenes when EnableSceneManagement is
-enabled. Uses the
-Unity.Netcode.MessageQueueContainer.MessageType.SceneEvent message to
-communicate Unity.Netcode.NetworkSceneManager.SceneEventData between the
-server and client(s)
-
-</div>
-
-### Unity.Netcode.NetworkSerializer
-
-<div class="section">
+enabled. Uses the Unity.Netcode.SceneEventMessage message to communicate
+Unity.Netcode.SceneEventData between the server and client(s)
 
 </div>
 
@@ -267,23 +243,6 @@ Interface for network value containers
 
 </div>
 
-### Unity.Netcode.NetworkWriter
-
-<div class="section">
-
-A BinaryWriter that can do bit wise manipulation when backed by a
-NetworkBuffer
-
-</div>
-
-### Unity.Netcode.NetworkWriterPool
-
-<div class="section">
-
-Static class containing PooledNetworkWriters
-
-</div>
-
 ### Unity.Netcode.NotListeningException
 
 <div class="section">
@@ -310,33 +269,6 @@ connecting
 
 </div>
 
-### Unity.Netcode.PooledNetworkBuffer
-
-<div class="section">
-
-Disposable NetworkBuffer that returns back to the NetworkBufferPool when
-disposed
-
-</div>
-
-### Unity.Netcode.PooledNetworkReader
-
-<div class="section">
-
-Disposable NetworkReader that returns the Reader to the
-NetworkReaderPool when disposed
-
-</div>
-
-### Unity.Netcode.PooledNetworkWriter
-
-<div class="section">
-
-Disposable NetworkWriter that returns the Writer to the
-NetworkWriterPool when disposed
-
-</div>
-
 ### Unity.Netcode.RpcAttribute
 
 <div class="section">
@@ -355,24 +287,6 @@ to provide scene event status/state.
 
 </div>
 
-### Unity.Netcode.SceneEventData
-
-<div class="section">
-
-Used by NetworkSceneManager for
-Unity.Netcode.MessageQueueContainer.MessageType.SceneEvent messages
-Note: This is only when EnableSceneManagement is enabled
-
-</div>
-
-### Unity.Netcode.SerializationManager
-
-<div class="section">
-
-Helper class to manage the netcode serialization
-
-</div>
-
 ### Unity.Netcode.ServerRpcAttribute
 
 <div class="section">
@@ -381,22 +295,6 @@ Marks a method as ServerRpc.
 
 A ServerRpc marked method will be fired by a client but executed on the
 server.
-
-</div>
-
-### Unity.Netcode.SocketTask
-
-<div class="section">
-
-A single socket task.
-
-</div>
-
-### Unity.Netcode.SocketTasks
-
-<div class="section">
-
-Represents one or more socket tasks.
 
 </div>
 
@@ -430,6 +328,56 @@ Exception thrown when a visibility change fails
 
 ## 
 
+### Unity.Netcode.BitReader
+
+<div class="section">
+
+Helper class for doing bitwise reads for a FastBufferReader. Ensures all
+bitwise reads end on proper byte alignment so FastBufferReader doesn't
+have to be concerned with misaligned reads.
+
+</div>
+
+### Unity.Netcode.BitWriter
+
+<div class="section">
+
+Helper class for doing bitwise writes for a FastBufferWriter. Ensures
+all bitwise writes end on proper byte alignment so FastBufferWriter
+doesn't have to be concerned with misaligned writes.
+
+</div>
+
+### Unity.Netcode.BufferSerializer-1
+
+<div class="section">
+
+Two-way serializer wrapping FastBufferReader or FastBufferWriter.
+
+Implemented as a ref struct for two reasons:
+
+1.  The BufferSerializer cannot outlive the FBR/FBW it wraps or using it
+    will cause a crash
+2.  The BufferSerializer must always be passed by reference and can't be
+    copied
+
+Ref structs help enforce both of those rules: they can't out live the
+stack context in which they were created, and they're always passed by
+reference no matter what.
+
+BufferSerializer doesn't wrapp FastBufferReader or FastBufferWriter
+directly because it can't. ref structs can't implement interfaces, and
+in order to be able to have two different implementations with the same
+interface (which allows us to avoid an "if(IsReader)" on every call),
+the thing directly wrapping the struct has to implement an interface. So
+IReaderWriter exists as the interface, which is implemented by a normal
+struct, while the ref struct wraps the normal one to enforce the two
+above requirements. (Allowing direct access to the IReaderWriter struct
+would allow dangerous things to happen because the struct's lifetime
+could outlive the Reader/Writer's.)
+
+</div>
+
 ### Unity.Netcode.ClientRpcParams
 
 <div class="section">
@@ -448,11 +396,42 @@ Exception thrown when a visibility change fails
 
 </div>
 
+### Unity.Netcode.FastBufferReader
+
+<div class="section">
+
+</div>
+
+### Unity.Netcode.FastBufferWriter
+
+<div class="section">
+
+</div>
+
+### Unity.Netcode.NetworkBehaviourReference
+
+<div class="section">
+
+A helper struct for serializing NetworkBehaviours over the network. Can
+be used in RPCs and NetworkVariable\&lt;T&gt;. Note: network ids get recycled
+by the NetworkManager after a while. So a reference pointing to
+
+</div>
+
 ### Unity.Netcode.NetworkListEvent-1
 
 <div class="section">
 
 Struct containing event information about changes to a NetworkList.
+
+</div>
+
+### Unity.Netcode.NetworkObjectReference
+
+<div class="section">
+
+A helper struct for serializing NetworkObjects over the network. Can be
+used in RPCs and NetworkVariable\&lt;T&gt;.
 
 </div>
 
@@ -485,13 +464,13 @@ gameplay.
 
 </div>
 
-## 
-
-### Unity.Netcode.IHasUpdateStage
+### Unity.Netcode.UnityTransport.ConnectionAddressData
 
 <div class="section">
 
 </div>
+
+## 
 
 ### Unity.Netcode.INetworkPrefabInstanceHandler
 
@@ -505,6 +484,8 @@ Prefabs Used by NetworkPrefabHandler
 ### Unity.Netcode.INetworkSerializable
 
 <div class="section">
+
+Interface for implementing custom serializable types.
 
 </div>
 
@@ -523,6 +504,12 @@ drivers and pipelines
 
 Defines the required interface of a network update system being executed
 by the network update loop.
+
+</div>
+
+### Unity.Netcode.IReaderWriter
+
+<div class="section">
 
 </div>
 
@@ -603,16 +590,6 @@ RPC delivery types
 
 </div>
 
-### Unity.Netcode.SceneEventData.SceneEventTypes
-
-<div class="section">
-
-The different types of scene events communicated between a server and
-client. Scene event types can be: A Server To Client Event (S2C) A
-Client to Server Event (C2S)
-
-</div>
-
 ### Unity.Netcode.SceneEventProgressStatus
 
 <div class="section">
@@ -623,6 +600,17 @@ Unity.Netcode.SceneEventProgress.Status property. Note: This was
 formally known as SwitchSceneProgress which contained the . All s are
 now delivered by the OnSceneEvent event handler via the SceneEvent
 parameter.
+
+</div>
+
+### Unity.Netcode.SceneEventType
+
+<div class="section">
+
+The different types of scene events communicated between a server and
+client. Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
+messages Note: This is only when EnableSceneManagement is enabled See
+also: SceneEvent
 
 </div>
 
@@ -683,19 +671,86 @@ Delegate type for checking visibility
 
 </div>
 
+### Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnLoadEventCompleted and
+OnUnloadEventCompleted events View LoadEventCompleted for more
+information View UnloadEventCompleted for more information
+
+</div>
+
+### Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnLoadComplete event View LoadComplete for
+more information
+
+</div>
+
+### Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnLoad event View Load for more information
+
+</div>
+
+### Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnSynchronizeComplete event View
+SynchronizeComplete for more information
+
+</div>
+
+### Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnSynchronize event View Synchronize for
+more information
+
+</div>
+
+### Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnUnloadComplete event View UnloadComplete
+for more information
+
+</div>
+
+### Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler
+
+<div class="section">
+
+Delegate declaration for the OnUnload event View Unload for more
+information
+
+</div>
+
 ### Unity.Netcode.NetworkSceneManager.SceneEventDelegate
 
 <div class="section">
 
 The delegate callback definition for scene event notifications For more
-details review over SceneEvent and
-Unity.Netcode.NetworkSceneManager.SceneEventData
+details review over SceneEvent and Unity.Netcode.SceneEventData
 
 </div>
 
 ### Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
 
 <div class="section">
+
+Delegate declaration for the VerifySceneBeforeLoading handler that
+provides an additional level of scene loading security and/or validation
+to assure the scene being loaded is valid scene to be loaded in the
+LoadSceneMode specified.
 
 </div>
 
@@ -712,21 +767,5 @@ Delegate for transport network events
 <div class="section">
 
 Delegate type for value changed event
-
-</div>
-
-### Unity.Netcode.SerializationManager.CustomDeserializationDelegate-1
-
-<div class="section">
-
-The delegate used when registering custom deserialization for a type.
-
-</div>
-
-### Unity.Netcode.SerializationManager.CustomSerializationDelegate-1
-
-<div class="section">
-
-The delegate used when registering custom serialization for a type.
 
 </div>

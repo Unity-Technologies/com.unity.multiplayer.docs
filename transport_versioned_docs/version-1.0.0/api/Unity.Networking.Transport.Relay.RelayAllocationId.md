@@ -79,6 +79,8 @@ public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<Rel
 
 <div class="markdown level1 summary">
 
+The length in bytes of the Allocation Id.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -100,6 +102,8 @@ public const int k_Length = 16
 ### Value
 
 <div class="markdown level1 summary">
+
+The raw data of the Allocation Id.
 
 </div>
 
@@ -217,6 +221,8 @@ public bool Equals(RelayAllocationId other)
 
 <div class="markdown level1 summary">
 
+Converts a byte pointer to a RelayAllocationId.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -231,16 +237,22 @@ public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 
 #### Parameters
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
+| Type          | Name    | Description                                   |
+|---------------|---------|-----------------------------------------------|
+| System.Byte\* | dataPtr | The pointer to the data of the Allocation Id. |
+| System.Int32  | length  | The length of the data.                       |
 
 #### Returns
 
-| Type              | Description |
-|-------------------|-------------|
-| RelayAllocationId |             |
+| Type              | Description                                                     |
+|-------------------|-----------------------------------------------------------------|
+| RelayAllocationId | Returns a RelayAllocationId constructed from the provided data. |
+
+#### Exceptions
+
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
 
 ### GetHashCode()
 

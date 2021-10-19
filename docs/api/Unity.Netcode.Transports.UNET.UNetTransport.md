@@ -498,14 +498,14 @@ NetworkTransport.Shutdown()
 #### Declaration
 
 ``` lang-csharp
-public override SocketTasks StartClient()
+public override bool StartClient()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 #### Overrides
 
@@ -528,14 +528,14 @@ NetworkTransport.StartClient()
 #### Declaration
 
 ``` lang-csharp
-public override SocketTasks StartServer()
+public override bool StartServer()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 #### Overrides
 

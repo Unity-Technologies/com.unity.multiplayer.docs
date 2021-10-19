@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkEndPoint
 
 <div class="markdown level0 summary">
 
+Describes a raw network endpoint (typically IP and port number).
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -79,6 +81,9 @@ public readonly string Address { get; }
 
 <div class="markdown level1 summary">
 
+Gets an IPv4 endpoint that can be used to bind to any address available
+(0.0.0.0:0).
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -100,6 +105,9 @@ public static readonly NetworkEndPoint AnyIpv4 { get; }
 ### AnyIpv6
 
 <div class="markdown level1 summary">
+
+Gets an IPv6 endpoint that can be used to bind to any address available
+(\[::0\]:0).
 
 </div>
 
@@ -123,6 +131,8 @@ public static readonly NetworkEndPoint AnyIpv6 { get; }
 
 <div class="markdown level1 summary">
 
+Gets or sets NetworkFamily of the endpoint.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -144,6 +154,8 @@ public NetworkFamily Family { get; set; }
 ### IsAny
 
 <div class="markdown level1 summary">
+
+Whether the endpoint is using an "any" address.
 
 </div>
 
@@ -167,6 +179,8 @@ public readonly bool IsAny { get; }
 
 <div class="markdown level1 summary">
 
+Whether the endpoint is using a loopback address.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -188,6 +202,8 @@ public readonly bool IsLoopback { get; }
 ### IsValid
 
 <div class="markdown level1 summary">
+
+Whether the endpoint is valid or not.
 
 </div>
 
@@ -211,6 +227,8 @@ public readonly bool IsValid { get; }
 
 <div class="markdown level1 summary">
 
+Returns the length of the raw network endpoint in bytes.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -232,6 +250,8 @@ public readonly int Length { get; }
 ### LoopbackIpv4
 
 <div class="markdown level1 summary">
+
+Gets an IPv4 loopback endpoint (127.0.0.1:0).
 
 </div>
 
@@ -255,6 +275,8 @@ public static readonly NetworkEndPoint LoopbackIpv4 { get; }
 
 <div class="markdown level1 summary">
 
+Gets an IPv6 loopback endpoint (\[::1\]:0).
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -277,6 +299,8 @@ public static readonly NetworkEndPoint LoopbackIpv6 { get; }
 
 <div class="markdown level1 summary">
 
+Gets or sets port number of the endpoint.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -298,6 +322,8 @@ public ushort Port { get; set; }
 ### RawPort
 
 <div class="markdown level1 summary">
+
+Gets or sets the value of the raw port number.
 
 </div>
 
@@ -389,6 +415,8 @@ System.ValueType.GetHashCode()
 
 <div class="markdown level1 summary">
 
+Gets the raw bytes for the endpoint.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -403,9 +431,9 @@ public NativeArray<byte> GetRawAddressBytes()
 
 #### Returns
 
-| Type                       | Description |
-|----------------------------|-------------|
-| NativeArray\&lt;System.Byte&gt; |             |
+| Type                       | Description                                                        |
+|----------------------------|--------------------------------------------------------------------|
+| NativeArray\&lt;System.Byte&gt; | Native array containing the raw bytes (uses temporary allocation). |
 
 ### Parse(String, UInt16, NetworkFamily)
 
@@ -441,6 +469,9 @@ public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily f
 
 <div class="markdown level1 summary">
 
+Directly sets the raw bytes of the endpoint using the specified bytes
+and family.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -455,10 +486,16 @@ public void SetRawAddressBytes(NativeArray<byte> bytes, NetworkFamily family = N
 
 #### Parameters
 
-| Type                       | Name   | Description |
-|----------------------------|--------|-------------|
-| NativeArray\&lt;System.Byte&gt; | bytes  |             |
-| NetworkFamily              | family |             |
+| Type                       | Name   | Description                        |
+|----------------------------|--------|------------------------------------|
+| NativeArray\&lt;System.Byte&gt; | bytes  | Raw bytes to use for the endpoint. |
+| NetworkFamily              | family | Endpoint's address family.         |
+
+#### Exceptions
+
+| Type                             | Condition                             |
+|----------------------------------|---------------------------------------|
+| System.InvalidOperationException | Length of bytes doesn't match family. |
 
 ### TryParse(String, UInt16, out NetworkEndPoint, NetworkFamily)
 
@@ -495,6 +532,8 @@ public static bool TryParse(string address, ushort port, out NetworkEndPoint end
 
 <div class="markdown level1 summary">
 
+Use the given port number for this endpoint.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -509,15 +548,15 @@ public NetworkEndPoint WithPort(ushort port)
 
 #### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| System.UInt16 | port |             |
+| Type          | Name | Description      |
+|---------------|------|------------------|
+| System.UInt16 | port | The port number. |
 
 #### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+| Type            | Description          |
+|-----------------|----------------------|
+| NetworkEndPoint | The endpoint (this). |
 
 ## 
 

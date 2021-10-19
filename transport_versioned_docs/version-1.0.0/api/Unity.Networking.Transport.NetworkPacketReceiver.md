@@ -82,6 +82,8 @@ public struct NetworkPacketReceiver
 
 <div class="markdown level1 summary">
 
+Gets the value of the last update time.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -103,6 +105,8 @@ public readonly long LastUpdateTime { get; }
 ### ReceiveErrorCode
 
 <div class="markdown level1 summary">
+
+Sets the value of the receive error code
 
 </div>
 

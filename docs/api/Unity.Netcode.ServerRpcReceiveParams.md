@@ -11,18 +11,6 @@ title: Unity.Netcode.ServerRpcReceiveParams
 
 </div>
 
-<div classs="implements">
-
-##### Implements
-
-<div>
-
-IHasUpdateStage
-
-</div>
-
-</div>
-
 <div class="inheritedMembers">
 
 ##### Inherited Members
@@ -72,7 +60,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct ServerRpcReceiveParams : IHasUpdateStage
+public struct ServerRpcReceiveParams
 ```
 
 ## 
@@ -98,35 +86,3 @@ public ulong SenderClientId
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
-
-## 
-
-### UpdateStage
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public NetworkUpdateStage UpdateStage { get; set; }
-```
-
-#### Property Value
-
-| Type               | Description |
-|--------------------|-------------|
-| NetworkUpdateStage |             |
-
-### Implements
-
-<div>
-
-IHasUpdateStage
-
-</div>

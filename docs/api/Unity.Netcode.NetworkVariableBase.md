@@ -284,7 +284,7 @@ public virtual bool IsDirty()
 |----------------|---------------------------------------|
 | System.Boolean | Whether or not the container is dirty |
 
-### ReadDelta(Stream, Boolean)
+### ReadDelta(FastBufferReader, Boolean)
 
 <div class="markdown level1 summary">
 
@@ -299,17 +299,17 @@ Reads delta from the reader and applies them to the internal value
 #### Declaration
 
 ``` lang-csharp
-public abstract void ReadDelta(Stream stream, bool keepDirtyDelta)
+public abstract void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
 ```
 
 #### Parameters
 
 | Type             | Name           | Description                                                  |
 |------------------|----------------|--------------------------------------------------------------|
-| System.IO.Stream | stream         | The stream to read the delta from                            |
+| FastBufferReader | reader         | The stream to read the delta from                            |
 | System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed |
 
-### ReadField(Stream)
+### ReadField(FastBufferReader)
 
 <div class="markdown level1 summary">
 
@@ -324,14 +324,14 @@ Reads the complete state from the reader and applies it
 #### Declaration
 
 ``` lang-csharp
-public abstract void ReadField(Stream stream)
+public abstract void ReadField(FastBufferReader reader)
 ```
 
 #### Parameters
 
 | Type             | Name   | Description                       |
 |------------------|--------|-----------------------------------|
-| System.IO.Stream | stream | The stream to read the state from |
+| FastBufferReader | reader | The stream to read the state from |
 
 ### ResetDirty()
 
@@ -404,7 +404,7 @@ public virtual bool ShouldWrite(ulong clientId, bool isServer)
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteDelta(Stream)
+### WriteDelta(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
@@ -420,16 +420,16 @@ last dirty, to the writer
 #### Declaration
 
 ``` lang-csharp
-public abstract void WriteDelta(Stream stream)
+public abstract void WriteDelta(FastBufferWriter writer)
 ```
 
 #### Parameters
 
 | Type             | Name   | Description                              |
 |------------------|--------|------------------------------------------|
-| System.IO.Stream | stream | The stream to write the dirty changes to |
+| FastBufferWriter | writer | The stream to write the dirty changes to |
 
-### WriteField(Stream)
+### WriteField(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
@@ -444,14 +444,14 @@ Writes the complete state of the variable to the writer
 #### Declaration
 
 ``` lang-csharp
-public abstract void WriteField(Stream stream)
+public abstract void WriteField(FastBufferWriter writer)
 ```
 
 #### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
-| System.IO.Stream | stream | The stream to write the state to |
+| FastBufferWriter | writer | The stream to write the state to |
 
 ### Implements
 

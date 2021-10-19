@@ -81,6 +81,8 @@ public struct NetworkEventQueue : IDisposable
 
 <div class="markdown level1 summary">
 
+Initializes a new instance of a NetworkEventQueue.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -95,15 +97,17 @@ public NetworkEventQueue(int queueSizePerConnection)
 
 #### Parameters
 
-| Type         | Name                   | Description |
-|--------------|------------------------|-------------|
-| System.Int32 | queueSizePerConnection |             |
+| Type         | Name                   | Description                    |
+|--------------|------------------------|--------------------------------|
+| System.Int32 | queueSizePerConnection | The queue size per connection. |
 
 ## 
 
 ### Dispose()
 
 <div class="markdown level1 summary">
+
+Disposes of the queue.
 
 </div>
 
@@ -121,6 +125,8 @@ public void Dispose()
 
 <div class="markdown level1 summary">
 
+Get the number of events in the queue for a given connection.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -135,15 +141,15 @@ public int GetCountForConnection(int connectionId)
 
 #### Parameters
 
-| Type         | Name         | Description |
-|--------------|--------------|-------------|
-| System.Int32 | connectionId |             |
+| Type         | Name         | Description                                     |
+|--------------|--------------|-------------------------------------------------|
+| System.Int32 | connectionId | The ID of the connection to get event count of. |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                              |
+|--------------|------------------------------------------|
+| System.Int32 | The number of events for the connection. |
 
 ### PopEvent(out Int32, out Int32, out Int32)
 

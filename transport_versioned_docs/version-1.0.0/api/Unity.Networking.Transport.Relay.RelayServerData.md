@@ -5,6 +5,9 @@ title: Unity.Networking.Transport.Relay.RelayServerData
 
 <div class="markdown level0 summary">
 
+Used by the Relay Protocol to describe how to connect to the Relay
+Service.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -69,6 +72,8 @@ public struct RelayServerData
 
 <div class="markdown level1 summary">
 
+Initializes a new instance of the RelayServerData class
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -83,19 +88,21 @@ public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, RelayAllocati
 
 #### Parameters
 
-| Type              | Name               | Description |
-|-------------------|--------------------|-------------|
-| NetworkEndPoint   | endpoint           |             |
-| System.UInt16     | nonce              |             |
-| RelayAllocationId | allocationId       |             |
-| System.String     | connectionData     |             |
-| System.String     | hostConnectionData |             |
-| System.String     | key                |             |
-| System.Boolean    | isSecure           |             |
+| Type              | Name               | Description              |
+|-------------------|--------------------|--------------------------|
+| NetworkEndPoint   | endpoint           | The endpoint             |
+| System.UInt16     | nonce              | The nonce                |
+| RelayAllocationId | allocationId       | The allocation id        |
+| System.String     | connectionData     | The connection data      |
+| System.String     | hostConnectionData | The host connection data |
+| System.String     | key                | The key                  |
+| System.Boolean    | isSecure           | The is secure            |
 
 ### RelayServerData(ref NetworkEndPoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
 
 <div class="markdown level1 summary">
+
+Initializes a new instance of the RelayServerData class
 
 </div>
 
@@ -111,21 +118,23 @@ public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, ref RelayAllo
 
 #### Parameters
 
-| Type                | Name               | Description |
-|---------------------|--------------------|-------------|
-| NetworkEndPoint     | endpoint           |             |
-| System.UInt16       | nonce              |             |
-| RelayAllocationId   | allocationId       |             |
-| RelayConnectionData | connectionData     |             |
-| RelayConnectionData | hostConnectionData |             |
-| RelayHMACKey        | key                |             |
-| System.Boolean      | isSecure           |             |
+| Type                | Name               | Description              |
+|---------------------|--------------------|--------------------------|
+| NetworkEndPoint     | endpoint           | The endpoint             |
+| System.UInt16       | nonce              | The nonce                |
+| RelayAllocationId   | allocationId       | The allocation id        |
+| RelayConnectionData | connectionData     | The connection data      |
+| RelayConnectionData | hostConnectionData | The host connection data |
+| RelayHMACKey        | key                | The key                  |
+| System.Boolean      | isSecure           | The is secure            |
 
 ## 
 
 ### AllocationId
 
 <div class="markdown level1 summary">
+
+The unique identifier of the client on the Relay Server.
 
 </div>
 
@@ -149,6 +158,8 @@ public RelayAllocationId AllocationId
 
 <div class="markdown level1 summary">
 
+The data that describes the client presence on the Relay Server.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -171,6 +182,8 @@ public RelayConnectionData ConnectionData
 
 <div class="markdown level1 summary">
 
+The Session Id for the connection with the Relay Server.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -180,18 +193,20 @@ public RelayConnectionData ConnectionData
 #### Declaration
 
 ``` lang-csharp
-public ushort ConnectionSessionId
+public SessionIdToken ConnectionSessionId
 ```
 
 #### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
+| Type           | Description |
+|----------------|-------------|
+| SessionIdToken |             |
 
 ### Endpoint
 
 <div class="markdown level1 summary">
+
+The endpoint of the Relay Server.
 
 </div>
 
@@ -215,6 +230,8 @@ public NetworkEndPoint Endpoint
 
 <div class="markdown level1 summary">
 
+The computed HMAC.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -236,6 +253,8 @@ public byte *HMAC
 ### HMACKey
 
 <div class="markdown level1 summary">
+
+The HMAC key for the connection.
 
 </div>
 
@@ -259,6 +278,8 @@ public RelayHMACKey HMACKey
 
 <div class="markdown level1 summary">
 
+The connection data of the host client on the Relay Server.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -281,6 +302,8 @@ public RelayConnectionData HostConnectionData
 
 <div class="markdown level1 summary">
 
+A byte that identifies the connection as secured.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -302,6 +325,8 @@ public readonly byte IsSecure
 ### Nonce
 
 <div class="markdown level1 summary">
+
+The Nonce value used to stablish the connection with the Relay Server.
 
 </div>
 
@@ -326,6 +351,8 @@ public ushort Nonce
 ### ComputeNewNonce()
 
 <div class="markdown level1 summary">
+
+Computes the new nonce, this must be called one time!
 
 </div>
 

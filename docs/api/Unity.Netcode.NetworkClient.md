@@ -137,7 +137,7 @@ public readonly List<NetworkObject> OwnedObjects
 
 | Type                                             | Description |
 |--------------------------------------------------|-------------|
-| System.Collections.Generic.List&lt;NetworkObject&gt; |             |
+| System.Collections.Generic.List\&lt;NetworkObject&gt;  |             |
 
 ### PlayerObject
 

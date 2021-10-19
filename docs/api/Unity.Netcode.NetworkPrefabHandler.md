@@ -216,7 +216,7 @@ public void RegisterHostGlobalObjectIdHashValues(GameObject sourceNetworkPrefab,
 | Type                                          | Name                   | Description                                                                   |
 |-----------------------------------------------|------------------------|-------------------------------------------------------------------------------|
 | GameObject                                    | sourceNetworkPrefab    | source NetworkPrefab to be overridden                                         |
-| System.Collections.Generic.List<GameObject\> | networkPrefabOverrides | one or more NetworkPrefabs could be used to override the source NetworkPrefab |
+| System.Collections.Generic.List\&lt;GameObject&gt; | networkPrefabOverrides | one or more NetworkPrefabs could be used to override the source NetworkPrefab |
 
 ### RemoveHandler(GameObject)
 
@@ -271,9 +271,9 @@ public bool RemoveHandler(uint globalObjectIdHash)
 
 #### Parameters
 
-| Type          | Name               | Description |
-|---------------|--------------------|-------------|
-| System.UInt32 | globalObjectIdHash |             |
+| Type          | Name               | Description                                                                                          |
+|---------------|--------------------|------------------------------------------------------------------------------------------------------|
+| System.UInt32 | globalObjectIdHash | Unity.Netcode.NetworkObject.GlobalObjectIdHash of the source NetworkPrefab that was being overridden |
 
 #### Returns
 

@@ -5,6 +5,9 @@ title: Unity.Networking.Transport.NetworkCompressionModel
 
 <div class="markdown level0 summary">
 
+Used to provide Huffman compression when using packed DataStream
+functions
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -81,6 +84,8 @@ public struct NetworkCompressionModel : IDisposable
 
 <div class="markdown level1 summary">
 
+Initializes a new instance of the NetworkCompressionModel class
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -95,105 +100,17 @@ public NetworkCompressionModel(Allocator allocator)
 
 #### Parameters
 
-| Type      | Name      | Description |
-|-----------|-----------|-------------|
-| Allocator | allocator |             |
-
-## 
-
-### bucketOffsets
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public uint *bucketOffsets
-```
-
-#### Field Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.UInt32\* |             |
-
-### bucketSizes
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public byte *bucketSizes
-```
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Byte\* |             |
-
-### decodeTable
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public ushort *decodeTable
-```
-
-#### Field Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.UInt16\* |             |
-
-### encodeTable
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public ushort *encodeTable
-```
-
-#### Field Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.UInt16\* |             |
+| Type      | Name      | Description   |
+|-----------|-----------|---------------|
+| Allocator | allocator | The allocator |
 
 ## 
 
 ### CalculateBucket(UInt32)
 
 <div class="markdown level1 summary">
+
+Calculates the bucket using the specified value
 
 </div>
 
@@ -211,17 +128,19 @@ public int CalculateBucket(uint value)
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
-| System.UInt32 | value |             |
+| System.UInt32 | value | The value   |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description      |
+|--------------|------------------|
+| System.Int32 | The bucket index |
 
 ### Dispose()
 
 <div class="markdown level1 summary">
+
+Disposes this instance
 
 </div>
 

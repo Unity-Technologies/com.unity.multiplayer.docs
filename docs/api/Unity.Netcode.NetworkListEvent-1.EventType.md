@@ -21,16 +21,17 @@ event.
 ##### Syntax
 
 ``` lang-csharp
-public enum EventType
+public enum EventType : byte
 ```
 
 ## 
 
-| Name     | Description   |
-|----------|---------------|
-| Add      | Add           |
-| Clear    | Clear         |
-| Insert   | Insert        |
-| Remove   | Remove        |
-| RemoveAt | Remove at     |
-| Value    | Value changed |
+| Name     | Description       |
+|----------|-------------------|
+| Add      | Add               |
+| Clear    | Clear             |
+| Full     | Full list refresh |
+| Insert   | Insert            |
+| Remove   | Remove            |
+| RemoveAt | Remove at         |
+| Value    | Value changed     |

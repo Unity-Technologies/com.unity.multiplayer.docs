@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkPipelineParams
 
 <div class="markdown level0 summary">
 
+The network pipeline params
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -81,6 +83,8 @@ public struct NetworkPipelineParams : INetworkParameter
 
 <div class="markdown level1 summary">
 
+The initial capacity
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -105,6 +109,8 @@ public int initialCapacity
 
 <div class="markdown level1 summary">
 
+Validates the parameters using the specified params
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -122,7 +128,13 @@ public static void ValidateParameters(params INetworkParameter[] param)
 
 | Type                  | Name  | Description |
 |-----------------------|-------|-------------|
-| INetworkParameter\[\] | param |             |
+| INetworkParameter\[\] | param | The param   |
+
+#### Exceptions
+
+| Type                     | Condition                                                                 |
+|--------------------------|---------------------------------------------------------------------------|
+| System.ArgumentException | Value for NetworkPipelineParams.initialCapacity must be larger then zero. |
 
 ### Implements
 

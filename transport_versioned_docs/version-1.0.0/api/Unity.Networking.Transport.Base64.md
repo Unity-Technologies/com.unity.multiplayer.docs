@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.Base64
 
 <div class="markdown level0 summary">
 
+Utility class used to Decode a base64 string
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -109,14 +111,14 @@ public static int FromBase64String(string base64, byte *dest, int destMaxLength)
 
 #### Parameters
 
-| Type          | Name          | Description                                               |
-|---------------|---------------|-----------------------------------------------------------|
-| System.String | base64        | Input base64 string to decode                             |
-| System.Byte\* | dest          | Decoded base64 will be written here                       |
-| System.Int32  | destMaxLength | Max length that dest can handle. Will throw if not enough |
+| Type          | Name          | Description                         |
+|---------------|---------------|-------------------------------------|
+| System.String | base64        | Input base64 string to decode       |
+| System.Byte\* | dest          | Decoded base64 will be written here |
+| System.Int32  | destMaxLength | Max length that dest can handle.    |
 
 #### Returns
 
-| Type         | Description                                                                   |
-|--------------|-------------------------------------------------------------------------------|
-| System.Int32 | Actual length of data that was written to dest. Less or equal than destLength |
+| Type         | Description                                                                                                                                                               |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.Int32 | Actual length of data that was written to dest. Less or equal than destLength. On error, will throw if ENABLE_UNITY_COLLECTIONS_CHECK is defined, or return -1 otherwise. |

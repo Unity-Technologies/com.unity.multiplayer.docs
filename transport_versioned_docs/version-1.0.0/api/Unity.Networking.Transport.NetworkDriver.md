@@ -10,7 +10,7 @@ transport.
 
 Basic usage:
 
-    var driver = new NetworkDriver.Create();
+    var driver = NetworkDriver.Create();
 
 </div>
 
@@ -135,6 +135,8 @@ public readonly bool Bound { get; }
 
 <div class="markdown level1 summary">
 
+Returns if NetworkDriver has been created
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -156,6 +158,8 @@ public readonly bool IsCreated { get; }
 ### LastUpdateTime
 
 <div class="markdown level1 summary">
+
+Gets the value of the last update time
 
 </div>
 
@@ -179,6 +183,8 @@ public readonly long LastUpdateTime { get; }
 
 <div class="markdown level1 summary">
 
+Gets or sets if the driver is Listening
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -200,6 +206,8 @@ public bool Listening { get; }
 ### ReceiveErrorCode
 
 <div class="markdown level1 summary">
+
+Gets or sets Receive Error Code
 
 </div>
 
@@ -225,6 +233,8 @@ public int ReceiveErrorCode { get; }
 
 <div class="markdown level1 summary">
 
+Aborts a asynchronous send.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -239,9 +249,16 @@ public void AbortSend(DataStreamWriter writer)
 
 #### Parameters
 
-| Type             | Name   | Description |
-|------------------|--------|-------------|
-| DataStreamWriter | writer |             |
+| Type             | Name   | Description                                       |
+|------------------|--------|---------------------------------------------------|
+| DataStreamWriter | writer | If you require the payload to be of certain size. |
+
+#### Exceptions
+
+| Type                             | Condition                                                            |
+|----------------------------------|----------------------------------------------------------------------|
+| System.InvalidOperationException | If endsend is called with a matching BeginSend call.                 |
+| System.InvalidOperationException | If the connection got closed between the call of being and end send. |
 
 ### Accept()
 
@@ -263,9 +280,9 @@ public NetworkConnection Accept()
 
 #### Returns
 
-| Type              | Description                                              |
-|-------------------|----------------------------------------------------------|
-| NetworkConnection | If accept fails it returnes a default NetworkConnection. |
+| Type              | Description                                             |
+|-------------------|---------------------------------------------------------|
+| NetworkConnection | If accept fails it returns a default NetworkConnection. |
 
 ### AllocateMemory(ref Int32)
 
@@ -303,6 +320,8 @@ public IntPtr AllocateMemory(ref int dataLen)
 
 <div class="markdown level1 summary">
 
+Acquires a DataStreamWriter for starting a asynchronous send.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -317,21 +336,32 @@ public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requ
 
 #### Parameters
 
-| Type              | Name                | Description |
-|-------------------|---------------------|-------------|
-| NetworkConnection | id                  |             |
-| DataStreamWriter  | writer              |             |
-| System.Int32      | requiredPayloadSize |             |
+| Type              | Name                | Description                                      |
+|-------------------|---------------------|--------------------------------------------------|
+| NetworkConnection | id                  | The NetworkConnection id to write through        |
+| DataStreamWriter  | writer              | A DataStreamWriter to write to                   |
+| System.Int32      | requiredPayloadSize | If you require the payload to be of certain size |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                                                                                    |
+|--------------|------------------------------------------------------------------------------------------------|
+| System.Int32 | Returns Success on a successful acquire. Otherwise returns an StatusCode indicating the error. |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Will throw a System.InvalidOperationException if the connection is in a
+Connecting state.
+
+</div>
 
 ### BeginSend(NetworkPipeline, NetworkConnection, out DataStreamWriter, Int32)
 
 <div class="markdown level1 summary">
+
+Acquires a DataStreamWriter for starting a asynchronous send.
 
 </div>
 
@@ -347,18 +377,27 @@ public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamW
 
 #### Parameters
 
-| Type              | Name                | Description |
-|-------------------|---------------------|-------------|
-| NetworkPipeline   | pipe                |             |
-| NetworkConnection | id                  |             |
-| DataStreamWriter  | writer              |             |
-| System.Int32      | requiredPayloadSize |             |
+| Type              | Name                | Description                                      |
+|-------------------|---------------------|--------------------------------------------------|
+| NetworkPipeline   | pipe                | The NetworkPipeline to write through             |
+| NetworkConnection | id                  | The NetworkConnection id to write through        |
+| DataStreamWriter  | writer              | A DataStreamWriter to write to                   |
+| System.Int32      | requiredPayloadSize | If you require the payload to be of certain size |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                                                                                    |
+|--------------|------------------------------------------------------------------------------------------------|
+| System.Int32 | Returns Success on a successful acquire. Otherwise returns an StatusCode indicating the error. |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Will throw a System.InvalidOperationException if the connection is in a
+Connecting state.
+
+</div>
 
 ### Bind(NetworkEndPoint)
 
@@ -557,6 +596,8 @@ public void Dispose()
 
 <div class="markdown level1 summary">
 
+Ends a asynchronous send.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -571,19 +612,28 @@ public int EndSend(DataStreamWriter writer)
 
 #### Parameters
 
-| Type             | Name   | Description |
-|------------------|--------|-------------|
-| DataStreamWriter | writer |             |
+| Type             | Name   | Description                                       |
+|------------------|--------|---------------------------------------------------|
+| DataStreamWriter | writer | If you require the payload to be of certain size. |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                                          |
+|--------------|------------------------------------------------------|
+| System.Int32 | The length of the buffer sent if nothing went wrong. |
+
+#### Exceptions
+
+| Type                             | Condition                                                            |
+|----------------------------------|----------------------------------------------------------------------|
+| System.InvalidOperationException | If endsend is called with a matching BeginSend call.                 |
+| System.InvalidOperationException | If the connection got closed between the call of being and end send. |
 
 ### GetConnectionState(NetworkConnection)
 
 <div class="markdown level1 summary">
+
+Gets the connection state using the specified NetworkConnection
 
 </div>
 
@@ -599,15 +649,15 @@ public NetworkConnection.State GetConnectionState(NetworkConnection con)
 
 #### Parameters
 
-| Type              | Name | Description |
-|-------------------|------|-------------|
-| NetworkConnection | con  |             |
+| Type              | Name | Description    |
+|-------------------|------|----------------|
+| NetworkConnection | con  | The connection |
 
 #### Returns
 
-| Type                    | Description |
-|-------------------------|-------------|
-| NetworkConnection.State |             |
+| Type                    | Description                  |
+|-------------------------|------------------------------|
+| NetworkConnection.State | The network connection state |
 
 ### GetEventQueueSizeForConnection(NetworkConnection)
 
@@ -629,9 +679,9 @@ public int GetEventQueueSizeForConnection(NetworkConnection connectionId)
 
 #### Parameters
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
+| Type              | Name         | Description                                       |
+|-------------------|--------------|---------------------------------------------------|
+| NetworkConnection | connectionId | Connection for which to get the event queue size. |
 
 #### Returns
 
@@ -659,14 +709,14 @@ public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId 
 
 #### Parameters
 
-| Type                       | Name                  | Description |
-|----------------------------|-----------------------|-------------|
-| NetworkPipeline            | pipeline              |             |
-| NetworkPipelineStageId     | stageId               |             |
-| NetworkConnection          | connection            |             |
-| NativeArray\&lt;System.Byte&gt; | readProcessingBuffer  |             |
-| NativeArray\&lt;System.Byte&gt; | writeProcessingBuffer |             |
-| NativeArray\&lt;System.Byte&gt; | sharedBuffer          |             |
+| Type                       | Name                  | Description                                                     |
+|----------------------------|-----------------------|-----------------------------------------------------------------|
+| NetworkPipeline            | pipeline              | Pipeline for which to get the buffers.                          |
+| NetworkPipelineStageId     | stageId               | Pipeline for which to get the buffers.                          |
+| NetworkConnection          | connection            | Connection for which to the buffers.                            |
+| NativeArray\&lt;System.Byte&gt;  | readProcessingBuffer  | The buffer used to process read (receive) operations.           |
+| NativeArray\&lt;System.Byte&gt;  | writeProcessingBuffer | The buffer used to process write (send) operations.             |
+| NativeArray\&lt;System.Byte&gt; | sharedBuffer          | The buffer containing the internal state of the pipeline stage. |
 
 #### Exceptions
 
@@ -678,7 +728,7 @@ public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId 
 
 <div class="markdown level1 summary">
 
-Set the driver to Listen for incomming connections
+Set the driver to Listen for incoming connections
 
 </div>
 
@@ -710,6 +760,8 @@ public int Listen()
 
 <div class="markdown level1 summary">
 
+Returns local NetworkEndPoint
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -724,13 +776,15 @@ public NetworkEndPoint LocalEndPoint()
 
 #### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+| Type            | Description           |
+|-----------------|-----------------------|
+| NetworkEndPoint | The network end point |
 
 ### MaxHeaderSize(NetworkPipeline)
 
 <div class="markdown level1 summary">
+
+Max headersize including optional NetworkPipeline
 
 </div>
 
@@ -746,15 +800,15 @@ public int MaxHeaderSize(NetworkPipeline pipe)
 
 #### Parameters
 
-| Type            | Name | Description |
-|-----------------|------|-------------|
-| NetworkPipeline | pipe |             |
+| Type            | Name | Description                                            |
+|-----------------|------|--------------------------------------------------------|
+| NetworkPipeline | pipe | The pipeline for which to get the maximum header size. |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description              |
+|--------------|--------------------------|
+| System.Int32 | The maximum header size. |
 
 ### PinMemoryTillUpdate(Int32)
 
@@ -823,6 +877,8 @@ public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReade
 
 <div class="markdown level1 summary">
 
+Pops an event
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -837,17 +893,17 @@ public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReade
 
 #### Parameters
 
-| Type              | Name     | Description |
-|-------------------|----------|-------------|
-| NetworkConnection | con      |             |
-| DataStreamReader  | reader   |             |
-| NetworkPipeline   | pipeline |             |
+| Type              | Name     | Description                               |
+|-------------------|----------|-------------------------------------------|
+| NetworkConnection | con      | Connection on which the event occured.    |
+| DataStreamReader  | reader   | Stream reader for the event's data.       |
+| NetworkPipeline   | pipeline | Pipeline on which the event was received. |
 
 #### Returns
 
-| Type              | Description |
-|-------------------|-------------|
-| NetworkEvent.Type |             |
+| Type              | Description      |
+|-------------------|------------------|
+| NetworkEvent.Type | The event's type |
 
 ### PopEventForConnection(NetworkConnection, out DataStreamReader)
 
@@ -882,6 +938,8 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 <div class="markdown level1 summary">
 
+Pops an event for a specific connection
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -896,17 +954,17 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### Parameters
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
-| DataStreamReader  | reader       |             |
-| NetworkPipeline   | pipeline     |             |
+| Type              | Name         | Description                                 |
+|-------------------|--------------|---------------------------------------------|
+| NetworkConnection | connectionId | Connection for which to pop the next event. |
+| DataStreamReader  | reader       | Stream reader for the event's data.         |
+| NetworkPipeline   | pipeline     | Pipeline on which the event was received.   |
 
 #### Returns
 
-| Type              | Description |
-|-------------------|-------------|
-| NetworkEvent.Type |             |
+| Type              | Description      |
+|-------------------|------------------|
+| NetworkEvent.Type | The event's type |
 
 ### RemoteEndPoint(NetworkConnection)
 
@@ -940,6 +998,10 @@ public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
 
 <div class="markdown level1 summary">
 
+Schedules flushing the sendqueue. Should be called in cases where you
+want the driver to send before the next ScheduleUpdate(JobHandle) is
+called.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -954,19 +1016,21 @@ public JobHandle ScheduleFlushSend(JobHandle dep)
 
 #### Parameters
 
-| Type      | Name | Description |
-|-----------|------|-------------|
-| JobHandle | dep  |             |
+| Type      | Name | Description             |
+|-----------|------|-------------------------|
+| JobHandle | dep  | Job on which to depend. |
 
 #### Returns
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+| Type      | Description    |
+|-----------|----------------|
+| JobHandle | The job handle |
 
 ### ScheduleUpdate(JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedules update for driver. This should be called once a frame.
 
 </div>
 
@@ -982,15 +1046,15 @@ public JobHandle ScheduleUpdate(JobHandle dep = null)
 
 #### Parameters
 
-| Type      | Name | Description |
-|-----------|------|-------------|
-| JobHandle | dep  |             |
+| Type      | Name | Description             |
+|-----------|------|-------------------------|
+| JobHandle | dep  | Job on which to depend. |
 
 #### Returns
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+| Type      | Description             |
+|-----------|-------------------------|
+| JobHandle | The update job's handle |
 
 ### ToConcurrent()
 

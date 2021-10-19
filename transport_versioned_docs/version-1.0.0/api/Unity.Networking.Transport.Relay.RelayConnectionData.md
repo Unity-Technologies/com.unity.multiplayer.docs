@@ -6,7 +6,8 @@ title: Unity.Networking.Transport.Relay.RelayConnectionData
 <div class="markdown level0 summary">
 
 This is the encrypted data that the Relay server uses for describing a
-connection. Used mainly in the connection stablishing process (Binding)
+connection. Used mainly in the connection establishing process
+(Binding).
 
 </div>
 
@@ -72,6 +73,8 @@ public struct RelayConnectionData
 
 <div class="markdown level1 summary">
 
+The length in bytes of the Connection Data.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -93,6 +96,8 @@ public const int k_Length = 255
 ### Value
 
 <div class="markdown level1 summary">
+
+The raw data of the Connection Data
 
 </div>
 
@@ -118,6 +123,8 @@ public byte *Value
 
 <div class="markdown level1 summary">
 
+Converts a byte pointer to a RelayConnectionData.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -132,13 +139,19 @@ public static RelayConnectionData FromBytePointer(byte *dataPtr, int length)
 
 #### Parameters
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
+| Type          | Name    | Description                                     |
+|---------------|---------|-------------------------------------------------|
+| System.Byte\* | dataPtr | The pointer to the data of the Connection Data. |
+| System.Int32  | length  | The length of the data.                         |
 
 #### Returns
 
-| Type                | Description |
-|---------------------|-------------|
-| RelayConnectionData |             |
+| Type                | Description                                                       |
+|---------------------|-------------------------------------------------------------------|
+| RelayConnectionData | Returns a RelayConnectionData constructed from the provided data. |
+
+#### Exceptions
+
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |

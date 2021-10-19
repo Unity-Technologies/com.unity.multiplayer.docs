@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.HMACSHA256
 
 <div class="markdown level0 summary">
 
+Utility class used to compute HMACSHA256 hash
+
 </div>
 
 <div class="markdown level0 conceptual">

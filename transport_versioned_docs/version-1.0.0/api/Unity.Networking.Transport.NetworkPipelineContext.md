@@ -5,6 +5,8 @@ title: Unity.Networking.Transport.NetworkPipelineContext
 
 <div class="markdown level0 summary">
 
+The network pipeline context
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -69,6 +71,8 @@ public struct NetworkPipelineContext
 
 <div class="markdown level1 summary">
 
+The accumulated header capacity
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,6 +94,8 @@ public int accumulatedHeaderCapacity
 ### header
 
 <div class="markdown level1 summary">
+
+The header
 
 </div>
 
@@ -113,6 +119,8 @@ public DataStreamWriter header
 
 <div class="markdown level1 summary">
 
+The internal process buffer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -134,6 +142,8 @@ public byte *internalProcessBuffer
 ### internalProcessBufferLength
 
 <div class="markdown level1 summary">
+
+The internal process buffer length
 
 </div>
 
@@ -157,6 +167,8 @@ public int internalProcessBufferLength
 
 <div class="markdown level1 summary">
 
+The internal shared process buffer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -178,6 +190,8 @@ public byte *internalSharedProcessBuffer
 ### internalSharedProcessBufferLength
 
 <div class="markdown level1 summary">
+
+The internal shared process buffer length
 
 </div>
 
@@ -201,6 +215,8 @@ public int internalSharedProcessBufferLength
 
 <div class="markdown level1 summary">
 
+The static instance buffer
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -223,6 +239,8 @@ public byte *staticInstanceBuffer
 
 <div class="markdown level1 summary">
 
+The static instance buffer length
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -244,6 +262,8 @@ public int staticInstanceBufferLength
 ### timestamp
 
 <div class="markdown level1 summary">
+
+The timestamp
 
 </div>
 
