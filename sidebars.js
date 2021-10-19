@@ -322,7 +322,6 @@ module.exports = {
               "id": "reference/glossary/high-level-terminology"
             },
             {
-              
                 "collapsed": true,
                 "type": "category",
                 "label": "Latency Management",
@@ -570,7 +569,6 @@ module.exports = {
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
           "label": "INetworkPrefabInstanceHandler"
         },
-     
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
