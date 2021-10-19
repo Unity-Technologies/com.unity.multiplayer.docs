@@ -177,7 +177,7 @@ Now that you have an allocation (either by joining or hosting), you need to make
 
 ```csharp
 //Retrieve the Unity transport used by the NetworkManager
-UnityTransport transport = NetworkManager.Singleton.gameObject.GetComponent<UnityTransport>();
+UnityTransport transport = NetworkManager.Singleton.NetworkConfig.NetworkTransport as UnityTransport;
 ```
 
 You can now call the method `SetRelayServerData` on the retrieved transport with all the allocation parameters in this order : 
