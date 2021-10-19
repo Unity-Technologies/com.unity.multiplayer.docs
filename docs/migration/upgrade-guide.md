@@ -49,5 +49,4 @@ Next, there is now only one scene event instead of many: `OnSceneEvent`. You can
 
 ### `NetworkBehavior` changes
 
-`NetworkStart` becomes `OnNetworkSpawn`
-`Destroy` needs to be overridden since NetworkBehavior uses it
+There are two main changes in `NetworkBehavior`. First, the `NetworkStart` method becomes `OnNetworkSpawn`, and we introduced `OnNetworkDespawn` to keep things symmetrical. Second, `OnDestroy` now needs to be overridden since NetworkBehavior already uses it.
