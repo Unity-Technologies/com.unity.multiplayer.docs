@@ -1,4 +1,3 @@
-+6
 ---
 id: networkobject
 title: NetworkObject
