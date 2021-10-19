@@ -52,7 +52,7 @@ public class ClientBehaviour : MonoBehaviour
                 Debug.Log("We are now connected to the server");
 
                 uint value = 1;
-                var writer = m_Driver.BeginSend(m_Connection);
+                m_Driver.BeginSend(m_Connection, out var writer);
                 writer.WriteUInt(value);
                 m_Driver.EndSend(writer);
             }
