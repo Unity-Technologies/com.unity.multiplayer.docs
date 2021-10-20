@@ -49,8 +49,6 @@ The `develop` branch is considered experimental and supports Unity versions 2020
 
 Use the [Netcode install guide](../migration/installation.md) for your first installation of Netcode and follow the [upgrade guide](../docs/migration/upgrade-guide.md) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
 
-#### Known Issues for this Release
-
 :::unity About Experimental Releases
 For Unity experimental releases:
 
@@ -59,6 +57,11 @@ For Unity experimental releases:
 * Expect these releases to move towards a fuller Release.
 * Expect us to answer questions for early adopters on [Discord](https://discord.gg/buMxnnPvTb) and [Forums](https://forum.unity.com/forums/multiplayer.26/). We welcome all feedback and issues logged! 
 :::
+
+### Known Issues for this Release
+
+* The first time you install Netcode and UTP together, you may get an error. UTP has Burst as a dependency that requires you to restart your editor to properly enable.
+* To implement `NetworkSerialize` functionality, you may need to override `WriteField/WriteDelta/ReadField/ReadDelta` as a current workaround.
 
 ### Tools
 
@@ -106,6 +109,6 @@ See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all rel
 
 Use the [BiteSize install guide](../learn/bitesize-introduction.md) to begin using the different BiteSize sample projects.
 
-## Documentation
+### Documentation
 
 See the [Documentation changelog](doc-changelog.md) for major updates to content and site development.
