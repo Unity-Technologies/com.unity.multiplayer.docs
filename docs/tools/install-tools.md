@@ -1,8 +1,8 @@
---
+---
 id: install-tools
 title: Install Tools for Netcode for GameObjects (Netcode)
 sidebar_label: Install Netcode Tools
---
+---
 
 To use Netcode tools, such as the [profiler](../basics/profiling.md), in your project, you need to install the tools package by name.
 
