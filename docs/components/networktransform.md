@@ -20,7 +20,12 @@ When enabled, extrapolation estimates the time between when a tick advances in s
 
 Interpolation creates a smooth object transition by using two known, historical positions to predict an object's path during the interval between receiving and updating positional data for that object. This is a buffer for the network to sync between object input and rendering, and reduces object jitter or position snapping.
 
-![Graphic of a buffered tick between the server and a client (i.e. interpolation)](../../static/img/BufferedTick.png)
+<figure>
+<ImageSwitcher
+lightImageSrc="/img/BufferedTick.png?text=LightMode"
+darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
+  <figcaption>Graphic of a buffered tick between the server and a client (i.e. interpolation)</figcaption>
+</figure>
 
 You can select the best interpolation algorithm for the `GameObject` you want to sync. However, you still need to [interpolate your authoritative objects](../learn/clientside-interpolation.md).
 
