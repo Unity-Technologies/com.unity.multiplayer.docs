@@ -21,6 +21,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "tools/install-tools",
+      },
+      {
+        "type": "doc",
         "id": "migration/upgrade-guide",
       },
       {
