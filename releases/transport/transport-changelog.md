@@ -1,5 +1,5 @@
 ---
-title: Unity Transport Changelog
+title: Unity Transport
 id: transport-changelog
 ---
 
