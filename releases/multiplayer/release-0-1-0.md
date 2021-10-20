@@ -1,5 +1,5 @@
 ---
-id: mlapi-0-1-0
+id: release-0-1-0
 title: MLAPI 0.1.0 - 2021-03-23
 description: Release notes for Multiplayer v0.1.0, including new features, updates, bug fixes, known issues, and information to help you upgrade.
 label: 
@@ -50,7 +50,7 @@ We also provide a new [Hello World example](../../docs/tutorials/helloworld/hell
 This release includes the following updates:
 
 * MLAPI now uses the Unity Package Manager for installation management. <!-- PR 520-->
-* Added functionality and usability to [`NetworkVariable`](../../docs/mlapi-basics/networkvariable), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
+* Added functionality and usability to [`NetworkVariable`](../../docs/basics/networkvariable), previously called `NetworkVar`. Updates enhance options and fully replace the need for `SyncedVar`s. 
 * [GitHub 507](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/pull/507): Reimplemented `NetworkAnimator`, which synchronizes animation states for networked objects. 
 
 ### Refactored API names

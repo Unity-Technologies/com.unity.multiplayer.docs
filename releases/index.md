@@ -4,15 +4,16 @@ title: Unity Multiplayer Release Notes
 sidebar_label: Release Notes
 ---
 
-This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes Unity MLAPI, tools, samples co-op code (Boss Room), and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
+This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes Unity Netcode for GameObjects (Netcode), tools, samples co-op code (Boss Room), and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
 
-## Unity MLAPI
+## Unity Netcode
 
-See the following release notes for Unity MLAPI.
+See the following release notes for  Netcode.
 
 | Release | Status | Date | Supported Unity Versions |
 | -- | -- | -- | -- |
-| [In Development](multiplayer/mlapi-develop.md) | Not Released | N/A | 2019.4 and later |
+| [In Development](multiplayer/develop.md) | Not Released | N/A | 2020.3 and later |
+| [v1.0.0](multiplayer/release-1-0-0.md) | Pre Release | October 21, 2021 | 2020.3 and later |
 | [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 | 2019.4 and later |
 
 :::unity About Experimental
@@ -28,17 +29,17 @@ For Unity experimental releases:
 
 See the following project releases for Boss Room.
 
-| Release | Status | Date | Supported MLAPI | Supported Unity |
+| Release | Status | Date | Supported Netcode | Supported Unity |
 | -- | -- | -- | -- |
 | [v0.2.0](samples/release-0-2-0.md) | Early Access | May 19, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | v2020.3.8f1 LTS |
 | [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | 2020.3.0f1 LTS |
 
 :::important
-Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI.
+Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
 :::
 
 :::unity About Early Access
-This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Unity MLAPI [Discord](https://discord.gg/buMxnnPvTb).
+This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Netcode[Discord](https://discord.gg/buMxnnPvTb).
 :::
 
 ## Bitesize Samples
@@ -47,7 +48,7 @@ See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all rel
 
 ## Unity Transport
 
-See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific MLAPI implementations are documented in Unity MLAPI release notes.
+See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
 
 ## Documentation
 

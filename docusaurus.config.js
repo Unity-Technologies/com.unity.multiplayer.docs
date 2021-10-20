@@ -138,12 +138,12 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Repo',
-                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+                label: 'Netcode for GameObjects Repo',
+                href: 'https://github.com/Unity-Technologies/com.unity.netcode.gameobjects',
               },
               {
-                label: 'MLAPI Community Contributions',
-                href: 'https://github.com/Unity-Technologies/mlapi-community-contributions',
+                label: 'Multiplayer Community Contributions',
+                href: 'https://github.com/Unity-Technologies/multiplayer-community-contributions',
               },
               {
                 label: 'Boss Room Repo',
@@ -184,8 +184,8 @@ module.exports = {
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
               },
               {
-                label: 'MLAPI Forum',
-                href: 'https://forum.unity.com/forums/mlapi.661/',
+                label: 'Netcode for GameObjects Forum',
+                href: 'https://forum.unity.com/forums/netcode-for-gameobjects.661/',
               },
               {
                 label: 'Unity Transport Forum',
@@ -249,7 +249,7 @@ module.exports = {
               },
               {
                 label: ' Netcode for GameObjects Releases',
-                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+                href: 'https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases',
               },
               {
                 label: 'Boss Room Releases',

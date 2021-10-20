@@ -16,6 +16,7 @@ The changelog tracks major changes to documentation, such as removed pages, adde
 
 | Feature | Date | Description |
 | -- | -- | -- |
+| New Content | Oct 2021 | Added in-development content for Netcode for Gameobjects and Transport, including release notes and installation guides. All in-progress content is available through a *develop* version on the site. |
 | New Content | May 2021 | Added in-development content for MLAPI and Transport, including release notes and installation guides. All in-progress content is available through a *develop* version on the site. |
 | New Content | May 2021 | Added Unity Transport and versioned content. |
 | New Content | April 2021 | Released Bitesize Samples content. |
