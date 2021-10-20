@@ -31,7 +31,7 @@ Unity renamed MLAPI into Netcode for GameObjects. This renaming has an impact on
 
 ## Changes in the API
 
-Unity Multiplayer Teams tried to keep most of the MLAPI intact in NetCode. However, a successful compilation still requires some changes.
+Unity Multiplayer Teams tried to keep most of the MLAPI intact in Netcode. However, a successful compilation still requires some changes.
 
 ### `NetworkVariable` changes
 
