@@ -17,13 +17,13 @@ Learn more about what versions of applications and packages are support by Unity
 
 See what is compatible by Unity MLAPI/Netcode for GameObjects versions:
 
-| Unity | 1.0.0 Pre-Release|0.1.0-experimental | develop |
+| Unity | 1.0.0 Pre|0.1.0-experimental | develop |
 | -- |  :--: | :--: | :--: |
 | Unity 2019.4.x | |<i class="fp-check"></i> | <i class="fp-check"></i> |
 | Unity 2020.x | 2020.3.x|<i class="fp-check"></i> | <i class="fp-check"></i> |
 | Unity 2021.x | <i class="fp-check"></i> |<i class="fp-check"></i> | <i class="fp-check"></i> |
 
-| Boss Room |1.0.0  |0.1.0 | develop |
+| Boss Room |1.0.0 Pre  |0.1.0 | develop |
 | -- |:--: | :--: | :--: |
 | Unity 2019.4.x |  |  | |
 | Unity 2020.3.x | <i class="fp-check"></i> |<i class="fp-check"></i> | <i class="fp-check"></i> |
@@ -38,7 +38,7 @@ See what is compatible by Unity versions:
 
 | Unity | Unity 2019.4.x | Unity 2020.x | Unity 2021.x |
 | -- | :--: | :--: | :--: |
-| Netcode for GameObjects 1.0.0 Pre-Release |  | 2020.3.x | <i class="fp-check"></i> |
+| Netcode for GameObjects 1.0.0 Pre |  | 2020.3.x | <i class="fp-check"></i> |
 | MLAPI 0.1.0-experimental | <i class="fp-check"></i> | <i class="fp-check"></i> | <i class="fp-check"></i> |
 | MLAPI develop |   | 2020.3.x | <i class="fp-check"></i> |
 | Boss Room |  | 2020.3.x | <i class="fp-check"></i> |
