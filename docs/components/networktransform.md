@@ -2,9 +2,11 @@
 id: networktransform
 title: NetworkTransform
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
+
 The position, rotation, and scale of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized once when that object is spawned. To synchronize position, rotation, and scale at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform from server object to the clients.
 
-While `NetworkTransform` works out of the box for simple position synchronization, it is not a one size fits all solution. In case you experience stuttering with `NetworkTransform`, you can try enabling interpolation, increasing `Fixed Sends Per Second`, and decreasing `Thresholds` values.
+`NetworkTransform` covers most use cases for synchronizing transforms. For some special cases such as really fast paced games a custom implementation with a different interpolation algorithm might be better.
 
 :::tip
 You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.
@@ -14,11 +16,26 @@ You can have multiple `NetworkTransform` components on child objects of your net
 
 Quite often not all transform values of a GameObject need to be synchronized over the network. For instance if the scale of the GameObject never changes it can be deactivated in the `syncing scale` row in the inspector. Currently deactivating synchronization only saves on CPU costs but in the future it will also reduce the bandwidth used by NetworkTransform`.
 
-When enabled, extrapolation estimates the time between when a tick advances in server-side animation and the update of the frame completes on the client-side. The game object extrapolates the next frame's values based on the ratio.
+## Thresholds
+
+The threshold values can be used to set a minimum threshold value. Changes to position, rotation or scale below the threshold will not be synchronized  That way minor changes to a value will not trigger a position synchronization which can help to reduce bandwidth.
+
+:::note
+Many small changes below the threshold will still result in a synchronization of the values as soon as all the accumulative changes cross the threshold.
+:::
+
+## Local Space
+
+By default `NetworkTransform` synchronizes the transform of an object in world space. The `In Local Space` configuration option allows to switch to synchronizing the transform in local space instead.
+
+Using `local space` can improve the synchronization of the transform when the object gets re-parented because the re-parenting will not change the `local space` transform of the object but would modify the `global space` position.
 
 ## Interpolation
 
-Interpolation creates a smooth object transition by using two known, historical positions to predict an object's path during the interval between receiving and updating positional data for that object. This is a buffer for the network to sync between object input and rendering, and reduces object jitter or position snapping.
+Check the `Interpolate` setting to enabled interpolation. Interpolation is enabled by default and is highly recommended. With interpolation enabled the `NetworkTransform` smoothly interpolates incoming changes to position, rotation and scale. In addition interpolation buffers the incoming data with a slight delay and applies additional smoothing to the values. All these factors combined result in a much smoother transform synchronization.
+
+When `Interpolate` is disabled changes to the transform are applied immediately resulting in a less smooth position and more jitter.
+
 
 <figure>
 <ImageSwitcher
@@ -27,28 +44,8 @@ darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
   <figcaption>Graphic of a buffered tick between the server and a client (i.e. interpolation)</figcaption>
 </figure>
 
-You can select the best interpolation algorithm for the `GameObject` you want to sync. However, you still need to [interpolate your authoritative objects](../learn/clientside-interpolation.md).
+### ClientNetworkTransform
 
-Our default interpolation algorithm is `BufferedLinearInterpolator`. This buffers values before making them available to the `NetworkTransform` value to update. `NetworkTransform` is able to accumulate jittered network values without affecting the transform state and then consume them at regular intervals.
+`NetworkTransform` always synchronizes positions from the server to the clients and position changes on the clients are not allowed. Netcode for GameObjects comes with a sample containing a `ClientNetworkTransform`. This transform synchronizes the position of the owner client to the server and all other client allowing for client authoritative gameplay.
 
-You can set global buffering by using:
-
-```csharp
-NetworkManager.Singleton.NetworkTimeSystem.ServerBufferSec = 0.2f;
-```
-
-:::note
-Use `BufferedLinearInterpolator` carefully to avoid excessive latency in your game! Although it will smooth transforms on jittery connections, it adds more latency to your transform updates.
-
-When targeting mobile platforms, you’ll want to use bigger buffer values while keeping interpolation times lower for platforms with more stable connections by keeping buffer time low.
-:::
-
-### Implementing Interpolation for NetworkTransform
-
-Use the `IInterpolator` interface to create your own custom interpolator and override the different interpolators in the `NetworkTransform` interpolator. The interpolator you implement must keep its own state and is given new values every time there are new values available to `NetworkTransform`'s `OnValueChanged`.
-
-### Best Practices
-
-To ensure all your objects are in sync, use the same interpolator with the same configuration for the same types of `NetworkTransform`.
-
-For example, a car would be interpolated differently than a character. So your interpolator configuration should be the same for all cars, but you could use a different interpolator configuration for your characters walking around. Therefore, a car with 300ms of added latency (due to buffering) bumps with other cars at their same synced time, but another car at 100ms of buffering would be desynced.
+To install the `ClientNetworkTransform` sample into your project open the `Package Manager` window in the Unity Editor and select the `Netcode for GameObjects` package. In the description of the package you can find a list of package samples. Press the `Install` button next to the `ClientNetworkTransform` sample to install it into your existing Unity project.
