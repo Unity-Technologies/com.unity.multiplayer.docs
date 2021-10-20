@@ -1,5 +1,5 @@
 ---
-id: whats-new
+id: whatsnew
 title: What's New in Netcode for GameObjects (Netcode)
 sidebar_label: What's New
 ---
