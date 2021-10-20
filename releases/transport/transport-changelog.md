@@ -5,14 +5,36 @@ id: transport-changelog
 
 The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
-<!--## [0.9.0] - 2021-05-10
+
+
+## [1.0.0] - 2021-10-21
 
 ### New features
-* Added support for long serialization and delta compression.
-* Upgraded collections to 1.0.0.
+- Added support for long serialization and delta compression.
+- Upgraded collections to 1.0.0.
 
-### Changes
-* Minimum required Unity version has changed to 2020.3.0f1. -->
+### Added
+
+- Support for Unity Relay [#887](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/887?w=1)
+- New SetConnectionData function that takes in a NetworkEndpoint
+
+### Changed 
+
+- Minimum required Unity version has changed to 2020.3.0f1.
+- No longer use coroutines when connecting to relay
+- Consolidated the Send/Recv queue properties as they always needed to be the same.
+- Consolidated the Fragmentation/Queue size as they always needed to be the same.
+- Updated Unity Transport package to 1.0.0-pre.6
+
+### Fixed
+
+- Fixed an issue where OnClientDisconnectCallback was not being called [#1243](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1243?w=1)
+- Flush the UnityTransport send queue on shutdown [#1234](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1234?w=1)
+- Exposed a way to set ip and port from code [#1208](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1208?w=1)
+- Possible Editor crash when trying to read a batched packet where the size of the packet was larger than the max packet size.
+- Removed the requirement that MaxPacketSize needs to be the same size as the batched/fragmentation buffer size.
+
+
 
 ## [0.8.0] - 2021-03-23
 
