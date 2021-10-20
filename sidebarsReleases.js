@@ -5,6 +5,11 @@ module.exports = {
         id: 'introduction',
       },
       {
+        "collapsed": false,
+        "type": "category",
+        "label": "Release Notes",
+        "items": [
+      {
         "collapsed": true,
         "type": "category",
         "label": "Unity Netcode for GameObjects",
@@ -31,6 +36,10 @@ module.exports = {
         "items": [
           {
             type: 'doc',
+            id: 'samples/samples-1-0-0-pre',
+          },
+          {
+            type: 'doc',
             id: 'samples/samples-0-2-0',
           },
           {
@@ -51,5 +60,7 @@ module.exports = {
         type: "doc",
         id: 'doc-changelog',
       },
+    ],
+  },
     ],
   };

@@ -1,90 +1,57 @@
 ---
 id: introduction
-title: Unity Multiplayer Release Notes
+title: Unity Multiplayer What's New
 sidebar_label: Release Notes
 ---
 
-The following are the high-level features and changes for each release. For a detailed change list, see the lastest changelog [here](link).
-
-## 2021
+Here are the new high-level features and changes for each release. For a detailed change list, see the release notes for each section.
 
 <!-- Release Template
-### {Month}
+## {Year - Month}
 
 For our {Month Year} release, the following major features were released:
 
-#### Netcode for GameObjects
+### Netcode for GameObjects
 
 {Content}
 
-#### Tools
+### Tools
 
 {Content}
 
-#### UTP
+### UTP
 
 {Content}
 
-#### Boss Room
+### Boss Room
 
 {Content}
 
-#### BiteSize
+### BiteSize
 
 {Content}
 -->
 
-### October
+## 2021 - October
 
 For our October 2021 release, the following major features were released:
 
-#### Netcode for GameObjects (Netcode)
+### Netcode for GameObjects (Netcode)
+
+[v1.0.0 Netcode release](/releases/multiplayer/release-1-0-0.md) supports Unity versions 2020.3 and later
+The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
 
 * Streamlined RPC layer with support for [serialization of custom data types](../advanced-topics/custom-serialization.md)
 * Improved [scene management](../basics/scene-management.md) which includes additive scene workflows support
 * Support for [network animations](../components/networkanimator.md)
 * Improved [network transforms](../components/networktransform.md) with interpolation support
-* Network [object parenting](link) support
+* Network [object parenting](../docs/advanced-topics/networkobject-parenting.md) support
 
-[Netcode install guide](../migration/installation.md)
+Use the [Netcode install guide](../migration/installation.md) for your first installation of Netcode and follow the [upgrade guide](../docs/migration/upgrade-guide.md) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
 
-#### Tools
+#### Known Issues for this Release
 
-Profiler support for Netcode. The new [network profiler modules](../basics/profiling.md) enable you to inspect detailed information about the network activity performed on a given frame.
-
-[Tools install guide](link)
-
-#### UTP
-
-* Enabled Relay Service
-* Includes DTLS encryption (required for console support)
-* OSS UTP Adapter for Netcode
-
-[UTP Transport install guide](../transport-utp/install.md)
-
-#### Boss room
-
-[Boss Room install guide](../learn/getting-started-boss-room.md)
-
-#### BiteSize
-
-[BiteSize install guide](../learn/bitesize-introduction.md)
-
-
-
-This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes Unity Netcode for GameObjects (Netcode), tools, samples co-op code (Boss Room), and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
-
-## Unity Netcode
-
-See the following release notes for  Netcode.
-
-| Release | Status | Date | Supported Unity Versions |
-| -- | -- | -- | -- |
-| [In Development](multiplayer/develop.md) | Not Released | N/A | 2020.3 and later |
-| [v1.0.0](multiplayer/release-1-0-0.md) | Pre Release | October 21, 2021 | 2020.3 and later |
-| [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 | 2019.4 and later |
-
-:::unity About Experimental
+:::unity About Experimental Releases
 For Unity experimental releases:
 
 * Expect breaking API changes - using this early has risks! See release notes for extensive information and links to additional content.
@@ -93,30 +60,49 @@ For Unity experimental releases:
 * Expect us to answer questions for early adopters on [Discord](https://discord.gg/buMxnnPvTb) and [Forums](https://forum.unity.com/forums/multiplayer.26/). We welcome all feedback and issues logged! 
 :::
 
-## Boss Room: Small Scale Co-op Sample
+### Tools
 
-See the following project releases for Boss Room.
+We added profiler support for Netcode. The new [network profiler modules](../basics/profiling.md) enables you to inspect detailed information about the network activity performed on a given frame.
 
-| Release | Status | Date | Supported Netcode | Supported Unity |
-| -- | -- | -- | -- |
-| [v0.2.0](samples/release-0-2-0.md) | Early Access | May 19, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | v2020.3.8f1 LTS |
-| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | 2020.3.0f1 LTS |
+### Unity Transport (UTP)
+
+* Enabled [Relay Service](https://docs.unity.com/relay/Content/introduction.htm)
+* Includes DTLS encryption (required for console support)
+* OSS UTP Adapter for Netcode
+
+See the [UTP Transport install guide](../transport-utp/install.md) to install Unity transport with your project.
+
+See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+
+### Boss room
+
+The Boss Room Co-Op Sample is now in [pre-release](../releases/samples/release-1.0.0-pre.md) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
+
+#### New Features
+* Player persistence hierarchical modifications to Netcode's Player Prefab
+* Archer's base attack & charged shot 1-3 replicated via NetworkTransform
+* NetworkTransform handles players' movement syncing
+* Adding ParrelSync
+* NetworkAnimator added to boss door & floor switch with server-authority
+* Integrating Unity Transport and Relay into Boss Room
+* NetworkObject pool (arrows are pooled)
+* Server-authoritative character NetworkAnimator
+
+Use the [Boss Room install guide](../learn/getting-started-boss-room.md) to start using Boss Room today!
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
 :::
 
-:::unity About Early Access
-This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Netcode[Discord](https://discord.gg/buMxnnPvTb).
+:::unity About Pre-release
+This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Netcode [Discord](https://discord.gg/buMxnnPvTb).
 :::
 
-## Bitesize Samples
+### BiteSize
 
 See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all release information on these projects.
 
-## Unity Transport
-
-See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+Use the [BiteSize install guide](../learn/bitesize-introduction.md) to begin using the different BiteSize sample projects.
 
 ## Documentation
 
