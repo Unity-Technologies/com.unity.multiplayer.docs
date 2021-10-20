@@ -1,10 +1,10 @@
 ---
 id: bitesize-invaders
 title: Invaders Sample
-description: Learn more about game flow, modes, unconventional movement networked, and a shared timer using MLAPI.
+description: Learn more about game flow, modes, unconventional movement networked, and a shared timer using Netcode for GameObjects.
 ---
 
-The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders) to understand the game flow and modes with Unity MLAPI using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients in a client-side predicted way.
+The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders) to understand the game flow and modes with  Netcode for GameObjects (Netcode) using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients in a client-side predicted way.
 
 ## Game Flows
 
@@ -24,7 +24,7 @@ The backbones of the flow/system mentioned above is consisting of two main compo
 
 A `SceneTransitionHandler` with a lightweight state machine allows you to track clients' progress in regards to Scene Loading. It notifies the server when clients finish loading so that the other listeners are informed, by encapsulating the `SceneSwitchProgress` or creating a wrapper around it that others can subscribe to.
 
-You track that progress by subscribing to the MLAPI's `SceneSwitchProgress`, which is created when you call `NetworkSceneManager.SwitchScene` in the [SceneTransitionHandler.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs):
+You track that progress by subscribing to the Netcode's `SceneSwitchProgress`, which is created when you call `NetworkSceneManager.SwitchScene` in the [SceneTransitionHandler.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs):
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs#L89-L105
@@ -99,12 +99,12 @@ You have two options:
 * The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients cannot modify the `NetworkVariable` directly.
 * A fair solution is to set the `SendTickRate` of that timer `NetworkVariableFloat`, so that the server only sends an update once every second, without any additional work.
 
-In Invaders and the current state of Unity MLAPI, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
+In Invaders and the current state of  Netcode, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
 
 As a workaround, you have to wait for all clients to be connected before setting the `SendTickRate` to '-1' for `m_ReplicatedTimeRemaining` `NetworkVariableFloat`. The code that checks if you need to set this is inside the `ShouldStartCountDown` method in *InvadersGame.cs*. 
 
 :::important
-As soon as MLAPI evolves and fixes this problem, you can just set `SendTickRate` in the `NetworkStart` and most of the code inside `ShouldStartCountDown` will become obsolete.
+As Netcode evolves and fixes this problem, you can just set `SendTickRate` in the `NetworkStart` and most of the code inside `ShouldStartCountDown` will become obsolete.
 :::
 
 ### Start the game timer
