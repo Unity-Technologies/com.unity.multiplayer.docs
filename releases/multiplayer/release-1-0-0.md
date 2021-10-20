@@ -10,10 +10,10 @@ This release contains features, updates, bug fixes, and refactoring for the  Net
 
 | Product | Version | Status | Release Date | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Netcode for GameObjects | 01.0.0| Pre-Release | October 21, 2021 | 2020.3 and later |
+| Netcode for GameObjects | 1.0.0| Pre-Release | October 21, 2021 | 2020.3 and later |
 
 :::note
-Unity MLAPI supports Windows, MacOS, Ubuntu 20.4 LTS and Ubuntu 18.04 LTS versions of Unity Editor and Player
+Netcode for GameObjects supports Windows, MacOS, Ubuntu 20.4 LTS and Ubuntu 18.04 LTS versions of Unity Editor and Player
 :::
 ### Added
 
@@ -109,3 +109,12 @@ Unity MLAPI supports Windows, MacOS, Ubuntu 20.4 LTS and Ubuntu 18.04 LTS versio
 - Fixed #915 - clients are receiving data from objects not visible to them [#1099](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1099?w=1)
 - Fixed `NetworkTransform`'s "late join" issues, `NetworkTransform` now uses `NetworkVariable`s instead of RPCs [#826](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/826?w=1)
 - Throw an exception for silent failure when a client tries to get another player's `PlayerObject`, it is now only allowed on the server-side [#844](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/844?w=1)
+
+### Known Issues
+
+- `NetworkVariable` does not serialize `INetworkSerializable` types through their `NetworkSerialize` implementation
+- `NetworkObjects` marked as `DontDestroyOnLoad` are disabled during some network scene transitions
+- `NetworkTransform` interpolates from the origin when switching Local Space synchronization
+- Exceptions thrown in `OnNetworkSpawn` user code for an object will prevent the callback in other objects
+- Cannot send an array of `INetworkSerializable` in RPCs
+- ILPP generation fails with special characters in project path
