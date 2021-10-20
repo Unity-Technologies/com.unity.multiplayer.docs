@@ -18,7 +18,7 @@ A quick way to choose which to use is to ask yourself: "Should a player joining 
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_LateJoinClient.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_LateJoinClient.png?text=DarkMode"/>
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_LateJoinClient_Dark.png?text=DarkMode"/>
 <figcaption>Network Variables allow to seamlessly catch up late joining clients by sending the current state as soon as the tick happens.</figcaption>
 </figure>
 
@@ -26,7 +26,13 @@ Using the Boss Room's door as an example. A player's client needs to receive the
 
 If we sent an `RPC` to all clients, then all players connecting mid game after that `RPC` are sent will miss that information and have the wrong visual on their clients.
 
-<!-- TODO Jil diagram for the above (late joining with RPCs) -->
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin_Dark.png?text=DarkMode"/>
+<figcaption>Sending state with RPCs will not be transmitted to late joining clients.</figcaption>
+</figure>
+
 
 In that case, it is preferable to use `NetworkVariable`s like shown here.
 
@@ -40,7 +46,7 @@ NetworkVariables are eventually consistent. This means not all value changes wil
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables.png?text=DarkMode"/>
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_Dark.png?text=DarkMode"/>
 <figcaption>Network Variables can be updated multiple times between ticks, but only the latest will be synced to other peers.</figcaption>
 </figure>
 
@@ -84,7 +90,7 @@ If you change `NetworkVariables` "a" and "b", there is no guarantee they will bo
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates.png?text=DarkMode"/>
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates_Dark.png?text=DarkMode"/>
  <figcaption>Different Network Variables updated within the same tick are not guranteed to be delivered to the clients at the same time. </figcaption>
 </figure>
 
@@ -93,7 +99,7 @@ Sending them as two parameters in the same `RPC` allows to make sure they will b
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs.png?text=DarkMode"/>
+darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs_Dark.png?text=DarkMode"/>
  <figcaption>To ensure that several different Network Variables are all synchronized at the same exact time we can use client RPC to join these value changes together.</figcaption>
 </figure>
 
