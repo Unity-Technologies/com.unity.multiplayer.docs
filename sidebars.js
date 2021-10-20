@@ -11,10 +11,6 @@ module.exports = {
       "id": "getting-started/about"
     },
     {
-      "type": "doc",
-      "id": "getting-started/whats-new"
-    },
-    {
     "collapsed": true,
     "type": "category",
     "label": "Installation and Migration",

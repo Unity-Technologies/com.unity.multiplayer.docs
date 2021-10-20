@@ -1,6 +1,6 @@
 ---
 id: doc-changelog
-title: Documentation Changelog
+title: Documentation
 description: Learn more about major documentation updates, contribution notes, and site development for Unity Multiplayer.
 ---
 

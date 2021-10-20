@@ -2,8 +2,13 @@ module.exports = {
     releases: [
       {
         type: 'doc',
-        id: 'introduction',
+        id: 'whats-new',
       },
+      {
+        "collapsed": false,
+        "type": "category",
+        "label": "Release Notes",
+        "items": [
       {
         "collapsed": true,
         "type": "category",
@@ -52,4 +57,5 @@ module.exports = {
         id: 'doc-changelog',
       },
     ],
-  };
+  }
+]};
