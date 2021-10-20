@@ -2,7 +2,7 @@
 id: networktransform
 title: NetworkTransform
 ---
-The  position, rotation and scale of a [`NetworkObject`](../mlapi-basics/networkobject.md) is normally only synchronized once when that object is spawned. To synchronize position, rotation and scale at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform from server object to the clients.
+The position, rotation, and scale of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized once when that object is spawned. To synchronize position, rotation, and scale at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform from server object to the clients.
 
 `NetworkTransform` covers most use cases for synchronizing transforms. For some special cases such as really fast paced games a custom implementation with a different interpolation algorithm might be better.
 
