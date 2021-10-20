@@ -47,7 +47,7 @@ public class Client
     public void SendMessage(NativeArray<byte> someData)
     {
         // Send using the pipeline created in Configure()
-        var writer = m_DriverHandle.BeginSend(m_Pipeline, m_ConnectionToServer);
+        m_DriverHandle.BeginSend(m_Pipeline, m_ConnectionToServer, out var writer);
         writer.WriteBytes(someData);
         m_DriverHandle.EndSend(writer);
     }
@@ -127,7 +127,7 @@ var reliableStageId = NetworkPipelineStageCollection.GetStageId(typeof(ReliableS
 m_ServerDriver.GetPipelineBuffers(serverPipe, reliableStageId, serverToClient, out var tmpReceiveBuffer, out var tmpSendBuffer, out var serverReliableBuffer);
 var serverReliableCtx = (ReliableUtility.SharedContext*) serverReliableBuffer.GetUnsafePtr();
 
-var strm = m_ServerDriver.BeginSend(serverPipe, serverToClient);
+m_ServerDriver.BeginSend(serverPipe, serverToClient, out var strm);
 m_ServerDriver.EndSend(strm);
 if (serverReliableCtx->errorCode != 0)
 {

@@ -59,7 +59,7 @@ struct ServerUpdateJob : IJobParallelForDefer
                 Debug.Log("Got " + number + " from the Client adding + 2 to it.");
                 number +=2;
 
-                var writer = driver.BeginSend(connections[index]);
+                driver.BeginSend(connections[index], out var writer);
                 writer.WriteUInt(number);
                 driver.EndSend(writer);
             }
