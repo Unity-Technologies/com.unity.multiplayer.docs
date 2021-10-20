@@ -2,6 +2,8 @@
 id: networktransform
 title: NetworkTransform
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
+
 The  position and rotation of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized when that object is spawned. To synchronize position, rotation, and scale at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform of the GameObject it's attached to. This replicates that data to all other players.
 
 While `NetworkTransform` works out of the box for simple position synchronization, it is not a one size fits all solution. In case you experience stuttering with `NetworkTransform`, you can try enabling interpolation, increasing `Fixed Sends Per Second`, and decreasing `Thresholds` values.
@@ -20,7 +22,12 @@ When enabled, extrapolation estimates the time between when a tick advances in s
 
 Interpolation creates a smooth object transition by using two known, historical positions to predict an object's path during the interval between receiving and updating positional data for that object. This is a buffer for the network to sync between object input and rendering, and reduces object jitter or position snapping.
 
-![Graphic of a buffered tick between the server and a client (i.e. interpolation)](../../static/img/BufferedTick.png)
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/BufferedTick.png?text=LightMode"
+darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
+  <figcaption>Graphic of a buffered tick between the server and a client (i.e. interpolation)</figcaption>
+</figure>
 
 You can select the best interpolation algorithm for the `GameObject` you want to sync. However, you still need to [interpolate your authoritative objects](../learn/clientside-interpolation.md).
 
