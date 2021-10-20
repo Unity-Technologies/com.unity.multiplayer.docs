@@ -5,7 +5,7 @@ module.exports = {
         id: 'whats-new',
       },
       {
-        "collapsed": false,
+        "collapsed": true,
         "type": "category",
         "label": "Release Notes",
         "items": [
