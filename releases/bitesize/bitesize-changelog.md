@@ -8,8 +8,35 @@ The [Multiplayer Bitesize Samples](https://github.com/Unity-Technologies/com.uni
 
 | Product | Version |  Release Date | Supported Netcode for GameObject Versions | Supported Unity Versions |
 | -- | -- | -- | -- | -- |
-| Boss Room: Small Scale Co-op Sample | 0.1.0 | Early Access | April 7, 2021 | 0.1.0 Experimental | 2020.3 and later |
+| BiteSize Samples | 1.0.0 | October 21, 2021 | 1.0.0 | 2020.3 and later |
 
+## [1.0.0] - 2021-10-21
+
+### Invaders
+
+#### Changes
+
+* Updated to Netcode for GameObjects 1.0.0.
+* Player now use `ClientNetworkTransform` for client driven movement
+* Network Manager now uses Unity Transport instead of UNet
+* `SceneTransitionHandler` : now uses the new Scene Manager and Scene Loading events
+* InvadersGame : replicated time remaining now uses a RPC instead of a one time synchonized `NetworkVariable`
+
+#### Fixes
+
+* Network behaviour in `OnDestroy` was moved to `OnNetworkDespawn`
+
+### 2DSpaceShooter
+
+#### Changes
+
+* Updated to Netcode for GameObjects 1.0.0.
+* Player name is no longer static but based on the `client id`.
+
+#### Fixes
+
+* Fixed a bug where explosions from bullet impacts where only visible on the host.
+* Fixed a bug where setting the hosts port in the UI wouldn't change the port on which the server was hosted.
 
 ## [0.2.0] - 2021-07-21
 
