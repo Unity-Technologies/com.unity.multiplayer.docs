@@ -18,7 +18,7 @@ There are five main steps in the upgrade process.
 This step is the easiest one. First, uninstall the old MLAPI package. For that, go to your package manager (Windows -> Package Manager) and uninstall MLAPI. After that, still in the package manager, install the package: `com.unity.netcode.gameobjects`. You now have plenty of compilation errors since there are quite some changes between the two libraries. 
 Installing the Netcode package will also install three other packages : 
 - `Unity Transport` : the low-level transport layer recommended for Netcode
-- `Netcode adapter for UTP`: the NetCode adapter created by Unity for Unity Transport
+- `Netcode adapter for UTP`: the Netcode adapter created by Unity for Unity Transport
 - `Burst`: a requirement for Unity Transport
 
 You must note that the `Burst` package requires an Editor restart. So restart your Unity after the installation. Unity will ask you to enter Fail Safe mode at the next boot, which is normal behaviour since all your network code is not compiling anymore.
