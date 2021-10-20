@@ -2,7 +2,7 @@ module.exports = {
     releases: [
       {
         type: 'doc',
-        id: 'whatsnew',
+        id: 'introduction',
       },
       {
         "collapsed": true,
