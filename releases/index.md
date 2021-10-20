@@ -1,7 +1,7 @@
 ---
 id: introduction
 title: Unity Multiplayer What's New
-sidebar_label: Release Notes
+sidebar_label: What's New
 ---
 
 Here are the new high-level features and changes for each release. For a detailed change list, see the release notes for each section.
@@ -63,6 +63,8 @@ For Unity experimental releases:
 ### Tools
 
 We added profiler support for Netcode. The new [network profiler modules](../basics/profiling.md) enables you to inspect detailed information about the network activity performed on a given frame.
+
+To install the tools package in your project, see the [install tools](../docs/tools/install-tools.md) guide.
 
 ### Unity Transport (UTP)
 
