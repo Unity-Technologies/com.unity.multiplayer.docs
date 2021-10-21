@@ -27,9 +27,10 @@ This guide assumes that you already have:
 ```
 com.unity.netcode.gameobjects
 ```
-  :::info How to Copy
-  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
-  :::
+:::info How to Copy
+We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+:::
+
 5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
   ![Package Installed](/img/install/2021-x-installed.png)
