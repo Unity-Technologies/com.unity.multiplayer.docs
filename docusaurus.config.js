@@ -320,7 +320,7 @@ module.exports = {
                },
               '0.1.0': {
                label: 'v. 0.1.0',
-                path: '',
+                path: '0.1.0',
               },
             },
             admonitions: {
