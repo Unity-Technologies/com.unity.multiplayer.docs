@@ -77,7 +77,7 @@ To install the tools package in your project, see the [install tools](/docs/tool
 
 See the [UTP Transport install guide](/docs/transport-utp/install) to install Unity transport with your project.
 
-See the [Transport changelog](transport/transport-changelog) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
 
 ### Boss room
 
