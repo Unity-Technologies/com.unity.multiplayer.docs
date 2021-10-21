@@ -45,7 +45,7 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 :::
 
 ## ParrelSync
-![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
+![parrelsync-bossroom-demo](/static/img/parrelsync-bossroom-demo.gif)
 
 [**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
 
