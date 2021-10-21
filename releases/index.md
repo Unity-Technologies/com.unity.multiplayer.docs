@@ -38,16 +38,16 @@ For our October 2021 release, the following major features were released:
 
 ### Netcode for GameObjects (Netcode)
 
-[v1.0.0 Netcode release](/releases/multiplayer/release-1-0-0)) supports Unity versions 2020.3 and later
+[v1.0.0 Netcode release](/releases/multiplayer/release-1-0-0.md) supports Unity versions 2020.3 and later
 The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
 
-* Streamlined RPC layer with support for [serialization of custom data types](/versioned_docs/version-1.0.0/advanced-topics/custom-serialization)
-* Improved [scene management](/versioned_docs/version-1.0.0/basics/scene-management) which includes additive scene workflows support
-* Support for [network animations](/versioned_docs/version-1.0.0/components/networkanimator)
-* Improved [network transforms](/versioned_docs/version-1.0.0/components/networktransform) with interpolation support
-* Network [object parenting](/versioned_docs/version-1.0.0/advanced-topics/networkobject-parenting) support
+* Streamlined RPC layer with support for [serialization of custom data types](/docs/advanced-topics/custom-serialization.md)
+* Improved [scene management](/docs/basics/scene-management.md) which includes additive scene workflows support
+* Support for [network animations](/docs/components/networkanimator.md)
+* Improved [network transforms](/docs/components/networktransform.md) with interpolation support
+* Network [object parenting](/docs/advanced-topics/networkobject-parenting.md) support
 
-Use the [Netcode install guide](/versioned_docs/version-1.0.0/migration/installation) for your first installation of Netcode and follow the [upgrade guide](/versioned_docs/version-1.0.0/migration/upgrade-guide) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
+Use the [Netcode install guide](/docs/migration/installation.md) for your first installation of Netcode and follow the [upgrade guide](/docs/migration/upgrade-guide.md) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
 
 :::unity About Experimental Releases
 For Unity experimental releases:
@@ -65,9 +65,9 @@ For Unity experimental releases:
 
 ### Tools
 
-We added profiler support for Netcode. The new [network profiler modules](/versioned_docs/version-1.0.0/basics/profiling) enables you to inspect detailed information about the network activity performed on a given frame.
+We added profiler support for Netcode. The new [network profiler modules](/docs/basics/profiling.md) enables you to inspect detailed information about the network activity performed on a given frame.
 
-To install the tools package in your project, see the [install tools](/versioned_docs/version-1.0.0/tools/install-tools) guide.
+To install the tools package in your project, see the [install tools](/docs/tools/install-tools) guide.
 
 ### Unity Transport (UTP)
 
@@ -75,7 +75,7 @@ To install the tools package in your project, see the [install tools](/versioned
 * Includes DTLS encryption (required for console support)
 * OSS UTP Adapter for Netcode
 
-See the [UTP Transport install guide](/versioned_docs/version-1.0.0/transport-utp/install) to install Unity transport with your project.
+See the [UTP Transport install guide](/docs/transport-utp/install) to install Unity transport with your project.
 
 See the [Transport changelog](transport/transport-changelog) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
 
@@ -93,7 +93,7 @@ The Boss Room Co-Op Sample is now in [pre-release](../releases/samples/release-1
 * NetworkObject pool (arrows are pooled)
 * Server-authoritative character NetworkAnimator
 
-Use the [Boss Room install guide](/versioned_docs/version-1.0.0/learn/getting-started-boss-room) to start using Boss Room today!
+Use the [Boss Room install guide](/docs/learn/getting-started-boss-room.md) to start using Boss Room today!
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
@@ -107,7 +107,7 @@ This project release is available for use. Support for this release is limited. 
 
 See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all release information on these projects.
 
-Use the [BiteSize install guide](../learn/bitesize-introduction.md) to begin using the different BiteSize sample projects.
+Use the [BiteSize install guide](/docs/learn/bitesize-introduction.md) to begin using the different BiteSize sample projects.
 
 ### Documentation
 
