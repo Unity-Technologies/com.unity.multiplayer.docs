@@ -200,4 +200,4 @@ The properties of the `NetworkTimeSystem` should be left untouched on the server
 The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the API docs (TODO LINK) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values could be increased for a player with a bad connection.
 
 <!-- On page code -->
-
+import Mermaid from '@theme/Mermaid';
