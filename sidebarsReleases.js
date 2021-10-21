@@ -16,10 +16,6 @@ module.exports = {
         "items": [
           {
             type: 'doc',
-            id: 'multiplayer/develop',
-          },
-          {
-            type: 'doc',
             id: 'multiplayer/release-1.0.0',
           },
           {
