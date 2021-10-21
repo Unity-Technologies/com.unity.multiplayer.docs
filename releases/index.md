@@ -1,21 +1,55 @@
 ---
 id: introduction
-title: Unity Multiplayer Release Notes
-sidebar_label: Release Notes
+title: Unity Multiplayer What's New
+sidebar_label: What's New
 ---
 
-This section includes release notes, hotfixes, and updates for all Unity Multiplayer releases. This information includes Unity MLAPI, tools, samples co-op code (Boss Room), and this documentation site. Learn more about new features, updates, bug fixes, known issues, and upgrades by version.
+Here are the new high-level features and changes for each release. For a detailed change list, see the release notes for each section.
 
-## Unity MLAPI
+<!-- Release Template
+## {Year - Month}
 
-See the following release notes for Unity MLAPI.
+For our {Month Year} release, the following major features were released:
 
-| Release | Status | Date | Supported Unity Versions |
-| -- | -- | -- | -- |
-| [In Development](multiplayer/mlapi-develop.md) | Not Released | N/A | 2019.4 and later |
-| [v0.1.0](multiplayer/release-0-1-0.md) | Experimental | March 23, 2021 | 2019.4 and later |
+### Netcode for GameObjects
 
-:::unity About Experimental
+{Content}
+
+### Tools
+
+{Content}
+
+### UTP
+
+{Content}
+
+### Boss Room
+
+{Content}
+
+### BiteSize
+
+{Content}
+-->
+
+## 2021 - October
+
+For our October 2021 release, the following major features were released:
+
+### Netcode for GameObjects (Netcode)
+
+[v1.0.0 Netcode release](/releases/multiplayer/release-1-0-0.md) supports Unity versions 2020.3 and later
+The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
+
+* Streamlined RPC layer with support for [serialization of custom data types](../advanced-topics/custom-serialization.md)
+* Improved [scene management](../basics/scene-management.md) which includes additive scene workflows support
+* Support for [network animations](../components/networkanimator.md)
+* Improved [network transforms](../components/networktransform.md) with interpolation support
+* Network [object parenting](../docs/advanced-topics/networkobject-parenting.md) support
+
+Use the [Netcode install guide](../migration/installation.md) for your first installation of Netcode and follow the [upgrade guide](../docs/migration/upgrade-guide.md) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
+
+:::unity About Experimental Releases
 For Unity experimental releases:
 
 * Expect breaking API changes - using this early has risks! See release notes for extensive information and links to additional content.
@@ -24,31 +58,57 @@ For Unity experimental releases:
 * Expect us to answer questions for early adopters on [Discord](https://discord.gg/buMxnnPvTb) and [Forums](https://forum.unity.com/forums/multiplayer.26/). We welcome all feedback and issues logged! 
 :::
 
-## Boss Room: Small Scale Co-op Sample
+### Known Issues for this Release
 
-See the following project releases for Boss Room.
+* The first time you install Netcode and UTP together, you may get an error. UTP has Burst as a dependency that requires you to restart your editor to properly enable.
+* To implement `NetworkSerialize` functionality, you may need to override `WriteField/WriteDelta/ReadField/ReadDelta` as a current workaround.
 
-| Release | Status | Date | Supported MLAPI | Supported Unity |
-| -- | -- | -- | -- |
-| [v0.2.0](samples/release-0-2-0.md) | Early Access | May 19, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | v2020.3.8f1 LTS |
-| [v0.1.0](samples/release-0-1-0.md) | Early Access | April 7, 2021 | [0.1.0](multiplayer/release-0-1-0.md) | 2020.3.0f1 LTS |
+### Tools
+
+We added profiler support for Netcode. The new [network profiler modules](../basics/profiling.md) enables you to inspect detailed information about the network activity performed on a given frame.
+
+To install the tools package in your project, see the [install tools](../docs/tools/install-tools.md) guide.
+
+### Unity Transport (UTP)
+
+* Enabled [Relay Service](https://docs.unity.com/relay/Content/introduction.htm)
+* Includes DTLS encryption (required for console support)
+* OSS UTP Adapter for Netcode
+
+See the [UTP Transport install guide](../transport-utp/install.md) to install Unity transport with your project.
+
+See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+
+### Boss room
+
+The Boss Room Co-Op Sample is now in [pre-release](../releases/samples/release-1.0.0-pre.md) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
+
+#### New Features
+* Player persistence hierarchical modifications to Netcode's Player Prefab
+* Archer's base attack & charged shot 1-3 replicated via NetworkTransform
+* NetworkTransform handles players' movement syncing
+* Adding ParrelSync
+* NetworkAnimator added to boss door & floor switch with server-authority
+* Integrating Unity Transport and Relay into Boss Room
+* NetworkObject pool (arrows are pooled)
+* Server-authoritative character NetworkAnimator
+
+Use the [Boss Room install guide](../learn/getting-started-boss-room.md) to start using Boss Room today!
 
 :::important
-Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI.
+Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
 :::
 
-:::unity About Early Access
-This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Unity MLAPI [Discord](https://discord.gg/buMxnnPvTb).
+:::unity About Pre-release
+This project release is available for use. Support for this release is limited. We recommend asking questions and connecting with development through the #dev-samples channel on the Netcode [Discord](https://discord.gg/buMxnnPvTb).
 :::
 
-## Bitesize Samples
+### BiteSize
 
 See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all release information on these projects.
 
-## Unity Transport
+Use the [BiteSize install guide](../learn/bitesize-introduction.md) to begin using the different BiteSize sample projects.
 
-See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific MLAPI implementations are documented in Unity MLAPI release notes.
-
-## Documentation
+### Documentation
 
 See the [Documentation changelog](doc-changelog.md) for major updates to content and site development.

@@ -109,13 +109,13 @@ module.exports = {
               },
             ]
           },
-          /*{
+          {
             //TRANSPORT VERSIONS
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
-          },*/
+          },
           {
             to: '/learn/introduction',
             label: 'Unity Multiplayer Resources',
@@ -138,12 +138,12 @@ module.exports = {
                 href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.docs',
               },
               {
-                label: 'MLAPI Repo',
-                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi',
+                label: 'Netcode for GameObjects Repo',
+                href: 'https://github.com/Unity-Technologies/com.unity.netcode.gameobjects',
               },
               {
-                label: 'MLAPI Community Contributions',
-                href: 'https://github.com/Unity-Technologies/mlapi-community-contributions',
+                label: 'Multiplayer Community Contributions',
+                href: 'https://github.com/Unity-Technologies/multiplayer-community-contributions',
               },
               {
                 label: 'Boss Room Repo',
@@ -184,8 +184,8 @@ module.exports = {
                 href: 'https://forum.unity.com/forums/multiplayer.26/',
               },
               {
-                label: 'MLAPI Forum',
-                href: 'https://forum.unity.com/forums/mlapi.661/',
+                label: 'Netcode for GameObjects Forum',
+                href: 'https://forum.unity.com/forums/netcode-for-gameobjects.661/',
               },
               {
                 label: 'Unity Transport Forum',
@@ -249,7 +249,7 @@ module.exports = {
               },
               {
                 label: ' Netcode for GameObjects Releases',
-                href: 'https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/releases/',
+                href: 'https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases',
               },
               {
                 label: 'Boss Room Releases',
@@ -308,15 +308,19 @@ module.exports = {
               return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
             },
             includeCurrentVersion: true,
-            lastVersion: '0.1.0',
+            lastVersion: '1.0.0',
             versions: {
               current: {
                 label: 'develop',
                 path: 'develop',
               },
+              '1.0.0': {
+                label: 'v. 1.0.0',
+                 path: '',
+               },
               '0.1.0': {
                label: 'v. 0.1.0',
-                path: '',
+                path: '0.1.0',
               },
             },
             admonitions: {
@@ -474,20 +478,17 @@ module.exports = {
           },includeCurrentVersion: true,
             lastVersion: '0.8.0',
             versions: {
-              //current: {
-              //  label: 'Next',
-              //  path: 'next',
-              //},
-              /*'0.9.0': {
-               label: 'v. 0.9.0preview',
-                path: '0.9.0',
-              },*/
+             
+              '1.0.0': {
+               label: 'v. 1.0.0',
+                path: '1.0.0',
+              },
               '0.8.0': {
                 label: 'v. 0.8.0preview',
                  path: '0.8.0',
                },
             },
-          //onlyIncludeVersions: ["0.8.0", "0.9.0"],
+          onlyIncludeVersions: ["0.8.0", "1.0.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
