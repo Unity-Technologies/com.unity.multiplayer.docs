@@ -38,7 +38,7 @@ For our October 2021 release, the following major features were released:
 
 ### Netcode for GameObjects (Netcode)
 
-[v1.0.0 Netcode release](/releases/multiplayer/release-1-0-0) supports Unity versions 2020.3 and later
+[v1.0.0 Netcode release](/releases/multiplayer/release-1.0.0) supports Unity versions 2020.3 and later
 The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
 
 * Streamlined RPC layer with support for [serialization of custom data types](/docs/advanced-topics/custom-serialization)
@@ -47,7 +47,7 @@ The `develop` branch is considered experimental and supports Unity versions 2020
 * Improved [network transforms](/docs/components/networktransform) with interpolation support
 * Network [object parenting](/docs/advanced-topics/networkobject-parenting) support
 
-Use the [Netcode install guide](/docs/migration/installation) for your first installation of Netcode and follow the [upgrade guide](/docs/migration/upgrade-guide) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
+Use the [Netcode install guide](/docs/migration/install) for your first installation of Netcode and follow the [upgrade guide](/docs/migration/upgrade-guide) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
 
 :::unity About Experimental Releases
 For Unity experimental releases:
@@ -81,7 +81,7 @@ See the [Transport changelog](transport/transport-changelog) for all release not
 
 ### Boss room
 
-The Boss Room Co-Op Sample is now in [pre-release](../releases/samples/release-1.0.0-pre) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
+The Boss Room Co-Op Sample is now in [pre-release](/releases/samples/samples-1-0-0-pre) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
 
 #### New Features
 * Player persistence hierarchical modifications to Netcode's Player Prefab
@@ -93,7 +93,7 @@ The Boss Room Co-Op Sample is now in [pre-release](../releases/samples/release-1
 * NetworkObject pool (arrows are pooled)
 * Server-authoritative character NetworkAnimator
 
-Use the [Boss Room install guide](/docs/learn/getting-started-boss-room) to start using Boss Room today!
+Use the [Boss Room install guide](/docs/learn/bossroom) to start using Boss Room today!
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
@@ -107,7 +107,7 @@ This project release is available for use. Support for this release is limited. 
 
 See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all release information on these projects.
 
-Use the [BiteSize install guide](/docs/learn/bitesize-introduction.md) to begin using the different BiteSize sample projects.
+Use the [BiteSize install guide](/docs/learn/bitesize-introduction) to begin using the different BiteSize sample projects.
 
 ### Documentation
 
