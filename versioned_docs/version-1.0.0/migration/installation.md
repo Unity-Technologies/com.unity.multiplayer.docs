@@ -1,92 +1,86 @@
 ---
 id: install
 title: Install  Netcode for GameObjects
-description: Install the on-going development version of Unity  Netcode for GameObjects from a cloned respository. 
+description: Install 1.0.0 version of Unity  Netcode for GameObjects. 
 ---
 
-Multiple methods are available to install the  Netcode for GameObjects (Netcode) package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Netcode.
+This guide details how to install Unity  Netcode for GameObjects (Netcode) via the Unity Hub.
 
-:::important In-Progress Development
-All features and code available in the *develop* branch is in-progress and not final. All cloned code may change daily or weekly, depending on submitted pull requests. All documentation and release notes for the *develop* version are not final.
+
+
+
+This guide assumes that you already have:
+  * An active Unity account with a valid license.
+  * A current installation of Unity.
+  * An existing Unity project. If you haven't created a project yet, we recommend using the [Hello World](../tutorials/helloworld/helloworldintro.md) example to begin.
+
+
+## Unity 2021.x+
+
+1. Open your **Unity Hub** and select the **Project** you are presently working on.
+1. From the menu bar, navigate to **Window** > **Package Manager**.
+1. Click the plus sign ([Add](/img/add.png)) in the **Package Manager** status bar and select **Add pack from name..**.
+
+ ![Package Installed](/img/install/addbyname.png)
+
+1. Copy and paste the following in the pop-up window:
+```
+com.unity.netcode.gameobjects
+```
+:::info How to Copy
+We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
 :::
 
-## Clone the repo
+5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
-You need to clone the code repo locally to work with in-development code.
+  ![Package Installed](/img/install/2021-x-installed.png)
 
-First, install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
-Next, decide on how you want to clone: command line or application.
+## Unity 2020.3.x
 
-### Git Commands
-To clone with Git commands:
+To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager passing a git URL to the Netcode release:
 
-1. Open a command line terminal.
-1. Change directory to a location on your local.
-1. Enter a command to clone. Example commands:
-  
-    * Git CLI: `git clone https://github.com/Unity-Technologies/com.unity.netcode.gameobjects`
-    * GitHub CLI: `gh repo clone Unity-Technologies/com.unity.netcode.gameobjects`
+1. Open your **Unity Hub** and select the **Project** you are presently working on.
+1. From the menu bar, navigate to **Window** > **Package Manager**.
+1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
+1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** 
 
-1. All files clone locally.
+  ![Select Git URL Option](/img/install/install-git.png)
 
-### GitHub Desktop
+1. Enter the Git URL to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
 
-To clone with GitHub Desktop:
-
-1. Install [GitHub Desktop](https://desktop.github.com/).
-1. Through the GitHub repository, select **Code** > **Open with GitHub Desktop** option.
-1. Select a location to clone to and complete cloning.
-
-To clone directory through GitHub Desktop:
-
-1. Open the application. 
-1. Click **File** > **Clone** Repository.
-1. Select the URL tab, copy and paste the repository URL:
-
-  ```html
-  https://github.com/Unity-Technologies/com.unity.netcode.gameobjects
   ```
-1. Click **Clone**.
+  com.unity.netcode.gameobjects
+  ```
 
-## Open the develop branch
+  :::info How to Copy
+  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+  :::
 
-To run the develop branch of Netcode:
+1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
-1. Checkout the develop branch of Netcode using Git commands or application like GitHub Desktop.
-1. Open Unity Hub and click **Add**.
-1. Navigate to the cloned GitHub repository and select the testproject folder.
-1. When opened, click **File** > **Open Scene**.
-1. Navigate to and select *testproject/Assets/MainMenu.unity*. All scenes load.
+  ![Package Installed](/img/install/1-0-0install.png)
 
-  ![Load Scene](/img/install/develop-scene.png)
 
-  You should see **Custom** installed packages available in *develop*, such as Netcode Networking Library and Unity Transport for Netcode.
-
-  ![Packages](/img/install/develop-packages.png)
-
-:::tip Updated Local Code
-We recommend updating your local clone often from the Netcode repository. This branch is constantly updated with new and updated features, fixed issues, and more.
-:::
-
-:::note Branching
-If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [Netcode Contributing](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/develop/CONTRIBUTING.md) guidelines.
-:::
 
 ## Next Steps
 
 See the following content to continue your journey using Netcode:
 
 * [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
-* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Netcode
+* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
 * [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
 
-**Errors with incorrect package loading**
+You may come across different errors when installing Netcode. The following troubleshooting tips should help you with the most common issues.
 
-If you receive a different package than Netcode when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
+
+### Errors with incorrect package loading
+
+
+If you receive a different package than  Netcode for GameObjects Version 1.0.0-pre.2  when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
 
 Hover over the URL to copy, click the **Copy** function in the code block, and use this when adding the package from a Git URL in Unity Hub.
 
@@ -107,11 +101,8 @@ If you receive an OS or Unity error trying to locate Git after updating or insta
 
 **VPN or Proxy Errors**
 
-If you use VPN or proxy software from international locations, you may encounter access issues. Consider turning off your VPN service or selecting a different location.
+If you use VPN or proxy software from international locations, you may encounter access issues. Use the registry option for installing MLAPI. Also consider turning off your VPN service or selecting a different location.
 
 **Package Resolution Error when using a Git Dependancy referencing an Annotated Tag in its Git URL**
 
 For more information on this error please refer to [Unity Issue Tracker.](https://issuetracker.unity3d.com/issues/package-resolution-error-when-using-a-git-dependency-referencing-an-annotated-tag-in-its-git-url)
-
-
-
