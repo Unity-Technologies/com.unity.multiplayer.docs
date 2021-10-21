@@ -23,11 +23,11 @@ Installing the Netcode package will also install three other packages :
 
 You must note that the `Burst` package requires an Editor restart. So restart your Unity after the installation. Unity will ask you to enter Fail Safe mode at the next boot, which is normal behaviour since all your network code is not compiling anymore.
 
-Unity also recommends installing the multiplayer tools package: `com.unity.multiplayer.tools`. This package will enable the Unity profiler to understand the NetCode library and add counters for network traffic.
+Unity also recommends installing the multiplayer tools package: `com.unity.multiplayer.tools`. This package will enable the Unity profiler to understand the Netcode library and add counters for network traffic.
 
 ## Changes in the naming
 
-Unity renamed MLAPI into Netcode for GameObjects. This renaming has an impact on library and namespace naming. First, go to all your ASMDEF files referencing MLAPI and change the reference for `Unity.Netcode.Runtime`. Next, you can upgrade your using namespaces `using namespace MLAPI` to `using namespace Unity.NetCode`. Change this namespace in code to if you are not using `using` syntax.
+Unity renamed MLAPI into Netcode for GameObjects. This renaming has an impact on library and namespace naming. First, go to all your ASMDEF files referencing MLAPI and change the reference for `Unity.Netcode.Runtime`. Next, you can upgrade your using namespaces `using namespace MLAPI` to `using namespace Unity.Netcode`. Change this namespace in code to if you are not using `using` syntax.
 
 ## Changes in the API
 
