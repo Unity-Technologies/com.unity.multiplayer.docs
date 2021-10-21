@@ -27,7 +27,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 1. You can now add the Boss Room project to your Unity Hub.
 
 :::important Compatibility
-- Boss Room supports those platforms supported by Netcode.
+- Boss Room has been developed and tested on these Platforms (Windows, Mac, iOS, and Android).
 - Boss Room is compatible with Unity 2020.3 and later.
 - Ensure your Unity installation includes the build support [module components](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html) for your OS.
 :::
