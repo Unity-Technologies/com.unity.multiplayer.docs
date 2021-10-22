@@ -8,18 +8,19 @@ Multiple methods are available to install the MLAPI package, listed as the MLAPI
 
 ## Unity 2021.x
 
-To install MLAPI on Unity 2021.x, use the Unity Package Manager to add the package by name:
+This guide assumes that you already have:
+  * Git installed on your PC. If you don't already have it, download [Git](https://git-scm.com/) and restart your system. A full restart is required to update Git or you may receive an error adding packages.
+  * An active Unity account with a valid license.
+  * A current installation of Unity.
+  * An existing Unity project. If you haven't created a project yet, we recommend using the [Hello World](../tutorials/helloworld/helloworldintro.md) example to begin.
 
-1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
-
-1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
-1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
-1. Enter the Git URL to the MLAPI release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
-
-  ```
-  https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
-  ```
-
+1. Open your **Unity Hub** and select the **Project** you are presently working on.
+1. From the menu bar, navigate to **Window** > **Package Manager**.
+1. Click the plus sign ([Add](/img/add.png)) in the **Package Manager** status bar and select **Add pack from git URL...**.
+1. Copy and paste the following Git URL to the MLAPI release package in the pop-up window:
+```
+https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
+```
   :::info How to Copy
   We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
   :::
@@ -69,7 +70,15 @@ See the following content to continue your journey using MLAPI:
 
 ## Troubleshooting
 
-**Errors with incorrect package loading**
+You may come across different errors when installing MLAPI. The following troubleshooting tips should help you with the most common issues.
+
+### Preview Packages
+To include preview packages in the Package Manager, select the [Gear Icon](/img/gear.png) then Advanced Project Settings. Select the **Enable Preview Packages** option and approve the message that displays.
+
+[Enable Preview Packages](/img/install/install-preview-pkg.png)
+
+### Errors with incorrect package loading
+
 
 If you receive a different package than Unity MLAPI when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
 

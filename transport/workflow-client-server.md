@@ -246,14 +246,14 @@ After you have written your updated number to your stream, you call the `EndSend
 ```csharp
     number +=2;
 
-    var writer = m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i]);
+    m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i], out var writer);
     writer.WriteUInt(number);
     m_Driver.EndSend(writer);
     }
 ```
 
 :::note
-We are `NetworkPipeline.Null`, to the `BeginSend` function. This way we say to the driver to use the unreliable pipeline to send our data. It is also possible to not specify a pipeline.
+We are passing `NetworkPipeline.Null` to the `BeginSend` function. This way we say to the driver to use the unreliable pipeline to send our data. It is also possible to not specify a pipeline.
 :::
 
 Finally, you need to handle the disconnect case. This is pretty straight forward, if you receive a disconnect message you need to reset that connection to a `default(NetworkConnection)`. As you might remember, the next time the `Update` loop runs you will clean up after yourself.
@@ -356,13 +356,13 @@ This event tells you that you have received a `ConnectionAccept` message and you
 In this case, the server that is listening on port `9000` on `NetworkEndPoint.LoopbackIpv4` is more commonly known as `127.0.0.1`.
 :::
 
-```
+```csharp
     if (cmd == NetworkEvent.Type.Connect)
     {
         Debug.Log("We are now connected to the server");
 
         uint value = 1;
-        var writer = m_Driver.BeginSend(m_Connection);
+        m_Driver.BeginSend(m_Connection, out var writer);
         writer.WriteUInt(value);
         m_Driver.EndSend(writer);
     }
@@ -407,12 +407,12 @@ See [_ClientBehaviour.cs_](samples/clientbehaviour.cs.md) for the full source co
 
 To take this for a test run, you can add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to our **Scene**.
 
-![GameObject Added](/img/transport/game-object.PNG)
+[GameObject Added](/img/transport/game-object.PNG)
 
 Add add both of our behaviours to it:
 
-![Inspector](/img/transport/inspector.PNG)
+[Inspector](/img/transport/inspector.PNG)
 
 Click **Play**. Five log messages should load in your **Console** window:
 
-![Console](/img/transport/console-view.PNG)
+[Console](/img/transport/console-view.PNG)
