@@ -158,11 +158,7 @@ module.exports = {
         "type": "doc",
         "id": "components/networkanimator"
       },
-      {
-        "type": "doc",
-        "id": "components/networknavmeshagent"
-      }
-    ]
+      ]
   },
   {
     "collapsed": true,

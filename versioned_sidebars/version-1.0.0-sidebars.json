@@ -143,11 +143,8 @@
         {
           "type": "doc",
           "id": "version-1.0.0/components/networkanimator"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/components/networknavmeshagent"
         }
+   
       ]
     },
     {
