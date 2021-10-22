@@ -298,6 +298,7 @@ module.exports = {
           docs: {
             path: 'docs',
             sidebarPath: require.resolve('./sidebars.js'),
+            remarkPlugins: [require('mdx-mermaid')],
             showLastUpdateAuthor: true,
             showLastUpdateTime: true,
             // Edit URL for version

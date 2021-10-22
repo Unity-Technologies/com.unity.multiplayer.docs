@@ -25,7 +25,7 @@ Video published 29th April 2021
 
 For project files access, check out the repository here: https://github.com/DapperDino/Unity-Multiplayer-Tutorials
 
-For more information  on Object Spawning see [Object Spawning](../../mlapi-basics/object-spawning.md) in the main MLAPI documentation.
+For more information  on Object Spawning see [Object Spawning](../../basics/object-spawning.md) in the main MLAPI documentation.
 
 :::contribution Community Contribution
 Thank you to [DapperDino](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) for the video tutorials! These contributions are a fantastic help to the community.
