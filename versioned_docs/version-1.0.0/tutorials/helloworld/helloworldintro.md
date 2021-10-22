@@ -77,8 +77,7 @@ This section adds in a player object and spawns it for each connected player.
 1. Delete **Player** from scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
-  :::
+  We remove **Player**, because we will be using the network library to spawn the player.
 
 1. Select `NetworkManager`.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkPrefabs` field. 
