@@ -267,7 +267,7 @@ Congratulations you have learned how to use some of the basic building blocks of
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [Network variables (server-controlled)](../../mlapi-basics/networkvariable.md)
+- [Network variables (server-controlled)](../../basics/networkvariable.md)
 - [Network transforms](../../components/networktransform.md)
 - [RPCs](../../advanced-topics/messaging-system.md)
 
