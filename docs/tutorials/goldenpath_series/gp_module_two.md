@@ -46,29 +46,19 @@ This section adds a Server-controlled Network Variable to the project.
 
 ``` csharp
 using Unity.Netcode;
-using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 public class NetworkVariableTest : NetworkBehaviour
 {
     private NetworkVariable<float> ServerNetworkVariable = new NetworkVariable<float>();
-    private NetworkVariable<float> ClientNetworkVariable = new NetworkVariable<float>();
     private float last_t = 0.0f;
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
-        ClientNetworkVariable.Settings.WritePermission = NetworkVariablePermission.OwnerOnly;
-        ClientNetworkVariable.Settings.ReadPermission = NetworkVariablePermission.ServerOnly;
-
         if (IsServer)
         {
             ServerNetworkVariable.Value = 0.0f;
             Debug.Log("Server's var initialized to: " + ServerNetworkVariable.Value);
-        }
-        else if (IsClient)
-        {
-            ClientNetworkVariable.Value = 0.0f;
-            Debug.Log("Client's var initialized to: " + ClientNetworkVariable.Value);
         }
     }
 
@@ -83,16 +73,6 @@ public class NetworkVariableTest : NetworkBehaviour
                 last_t = t_now;
                 Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: "  + 
                     ClientNetworkVariable.Value);
-            }
-        }
-        else if (IsClient)
-        {
-            ClientNetworkVariable.Value = ClientNetworkVariable.Value + 0.1f;
-            if (t_now - last_t > 0.5f)
-            {
-                last_t = t_now;
-                Debug.Log("Client set its var to: " + ClientNetworkVariable.Value + ", has server var at: "  + 
-                    ServerNetworkVariable.Value);
             }
         }
     }
@@ -119,11 +99,8 @@ Now we will test the Server-controlled Network Variable works as we intended.
 
 ```
 Server's var initialized to: 0
-Client's var initialized to: 0
 Server set its var to: 0.1, has client var at: 0
-Client set its var to: 0.1, has server var at: 0.2
 Server set its var to: 3.099999, has client var at: 2.6
-Client set its var to: 3.099999, has server var at: 3.199999
 Server set its var to: 6.099997, has client var at: 5.599997
 ```
 :::note
@@ -164,7 +141,7 @@ public class NetworkTransformTest : NetworkBehaviour
 {
     void Update()
     {
-        if (IsClient)
+        if (IsServer)
         {
             float theta = Time.frameCount / 10.0f;
             transform.position = new Vector3((float) Math.Cos(theta), 0.0f, (float) Math.Sin(theta));
@@ -215,12 +192,17 @@ This section adds some basic RPCs to the project.
 
 ```csharp
 using Unity.Netcode;
-using Unity.Netcode.Messaging;
 using UnityEngine;
 
 public class RpcTest : NetworkBehaviour
 {
-    private bool firstTime = true;
+    public override void OnNetworkSpawn()
+    {
+        if (IsClient)
+        {
+            TestServerRpc(0);
+        }
+    }
 
     [ClientRpc]
     void TestClientRpc(int value)
@@ -235,21 +217,8 @@ public class RpcTest : NetworkBehaviour
     [ServerRpc]
     void TestServerRpc(int value)
     {
-        if (IsServer)
-        {
-            Debug.Log("Server Received the RPC #" + value);
-            TestClientRpc(value);
-        }
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (IsClient && firstTime)
-        {
-            firstTime = false;
-            TestServerRpc(0);
-        }
+        Debug.Log("Server Received the RPC #" + value);
+        TestClientRpc(value);
     }
 }
 ```
@@ -298,7 +267,7 @@ Congratulations you have learned how to use some of the basic building blocks of
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [Network variables (client and server-controlled)](../../mlapi-basics/networkvariable.md)
+- [Network variables (server-controlled)](../../basics/networkvariable.md)
 - [Network transforms](../../components/networktransform.md)
 - [RPCs](../../advanced-topics/messaging-system.md)
 

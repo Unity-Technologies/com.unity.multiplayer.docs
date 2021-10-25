@@ -13,7 +13,7 @@ Boss Room leverages the new experimental netcode package to bring up to eight pl
 
 The Boss Room project equips you with all the project files and assets you need to explore the creation of a small-scale cooperative game packed with playable characters, enemies, and a boss. As Boss Room is being developed, tutorials on the different aspects of networking the sample will be written for developers right here on our live documentation site – so stay tuned!
 
-![Boss Room](/img/blog/boss-room.png)
+[Boss Room](/img/blog/boss-room.png)
 
 To support this release, we provide getting started, tutorials, release notes, and more!
 

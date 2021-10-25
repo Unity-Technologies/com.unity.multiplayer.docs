@@ -1,6 +1,6 @@
 # Unity Multiplayer Networking Docs
 
-Welcome to the Unity Multiplayer Networking Documentation. This site includes the MLAPI, Unity Transport, Boss Room Sample Co-op, Bitesize samples, and other tools and features.
+Welcome to the Unity Multiplayer Networking Documentation. This site includes the Netcode for GameObjects, Unity Transport, Boss Room Sample Co-op, Bitesize samples, and other tools and features.
 
 The documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/) using [Yarn](https://yarnpkg.com/en/) and [Node.js](https://nodejs.org/en/download/). 
 
@@ -40,7 +40,7 @@ For full building content, see [Building Locally](https://github.com/Unity-Techn
 
 ## Connect with Unity 
 
-Connect with the Unity Multiplayer team and community on the [MLAPI by Unity](http://discord.mlapi.network/) Discord using channel #documentation. You can also raise threads on the [Unity Multiplayer Forum](https://forum.unity.com/forums/multiplayer.26/)
+Connect with the Unity Multiplayer Solution Architect team and community on the [Unity Multiplayer Networking](http://discord.gg/unity-multiplayer-network) and for documentation team using channel #documentation. You can also raise threads on the [Unity Multiplayer Forum](https://forum.unity.com/forums/multiplayer.26/)
 
 ## Tools Used
 

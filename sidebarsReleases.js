@@ -5,18 +5,24 @@ module.exports = {
         id: 'introduction',
       },
       {
+        "collapsed": false,
+        "type": "category",
+        "label": "Release Notes",
+        "items": [
+      {
         "collapsed": true,
         "type": "category",
-        "label": "Unity MLAPI",
+        "label": "Unity Netcode for GameObjects",
         "items": [
           {
             type: 'doc',
-            id: 'multiplayer/mlapi-develop',
+            id: 'multiplayer/release-1.0.0',
           },
           {
             type: 'doc',
-            id: 'multiplayer/mlapi-0-1-0',
+            id: 'multiplayer/release-0-1-0',
           },
+      
         ]
       },
       {
@@ -24,6 +30,10 @@ module.exports = {
         "type": "category",
         "label": "Boss Room Samples",
         "items": [
+          {
+            type: 'doc',
+            id: 'samples/samples-1-0-0-pre',
+          },
           {
             type: 'doc',
             id: 'samples/samples-0-2-0',
@@ -46,5 +56,7 @@ module.exports = {
         type: "doc",
         id: 'doc-changelog',
       },
+    ],
+  },
     ],
   };
