@@ -23,7 +23,7 @@ private void Setup()
     NetworkManager.Singleton.StartHost();
 }
 
-private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkManager.ConnectionApprovedDelegate callback)
+private void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager.ConnectionApprovedDelegate callback)
 {
     //Your logic here
     bool approve = true;
