@@ -46,7 +46,7 @@ To smoothly upgrade you to the new version of Netcode, we have created an upgrad
 To start upgrading, add the upgrade tool to your project by using the **Add package from git URL..** option in the Package Manager window. Use the following URL: 
 
 ```html
-https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher
+https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher#release-0.1.0
 ```
 
 After installing the patcher package you are good to go. Complete the following steps to upgrade.
