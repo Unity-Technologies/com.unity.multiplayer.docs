@@ -117,7 +117,7 @@ public class MyUnetClass : NetworkBehaviour
 <TabItem value="tab2">
 
 ```csharp
-public class MyMLAPIExample : NetworkBehaviour
+public class MyNetcodeExample : NetworkBehaviour
 {
     public NetworkVariable<float> MyNetworkVariable = new NetworkVariable<float>();
     public override void OnNetworkSpawn()
