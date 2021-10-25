@@ -71,8 +71,7 @@ public class NetworkVariableTest : NetworkBehaviour
             if (t_now - last_t > 0.5f)
             {
                 last_t = t_now;
-                Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: "  + 
-                    ClientNetworkVariable.Value);
+                Debug.Log("Server set its var to: " + ServerNetworkVariable.Value);
             }
         }
     }
