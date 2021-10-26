@@ -52,7 +52,7 @@ module.exports = {
       },
 
     ],
-  },
+  },  
     {
     "collapsed": true,
     "type": "category",
@@ -74,11 +74,6 @@ module.exports = {
         "type": "doc",
         "id": "basics/networkbehavior"
       },
-      {
-        "type": "doc",
-        "id": "advanced-topics/networkobject-parenting"
-      },
-
       {
         "type": "doc",
         "id": "basics/modularity"
@@ -213,7 +208,7 @@ module.exports = {
             "collapsed": true,
             "type": "category",
             "label": "RPCs vs NetworkVariables",
-            "items": [
+            "items": [  
               {
                 "type": "doc",
                 "id": "learn/rpcvnetvar"
@@ -279,19 +274,19 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/serialization/arrays"
-      },
-      {
+      },  
+      { 
         "type": "doc",
         "id": "advanced-topics/serialization/inetworkserializable"
       },
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      },
+      }, 
       {
         "type": "doc",
         "id": "advanced-topics/serialization/networkobject-serialization"
-      },
+      }, 
     ]
     },
   {
@@ -485,29 +480,25 @@ module.exports = {
               },
             ],
           },
-      {
-              "collapsed": true,
-              "type": "category",
-              "label": "Bitesize Samples",
-              "items": [
+          {
+          "collapsed": true,
+          "type": "category",
+          "label": "Bitesize Samples",
+          "items": [
               {
-            "type": "doc",
-            "id": "learn/bitesize-introduction"
+              "type": "doc",
+              "id": "learn/bitesize-introduction"
+              },
+              {
+                "type": "doc",
+                "id": "learn/bitesize-invaders"
+                },
+              {
+              "type": "doc",
+              "id": "learn/bitesize-spaceshooter"
+              }
+          ]
           },
-          {
-            "type": "doc",
-            "id": "learn/bitesize-invaders"
-          },
-          {
-            "type": "doc",
-            "id": "learn/bitesize-spaceshooter"
-          },
-          {
-            "type": "doc",
-            "id": "learn/bitesize-clientdriven"
-          }
-      ]
-      },
     ],
     },
     {
@@ -634,12 +625,13 @@ module.exports = {
           "id": "api/Unity.Netcode.NetworkUpdateStage",
           "label": "NetworkUpdateStage"
         },
-
+  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
           "label": "INetworkPrefabInstanceHandler"
         },
+
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
@@ -669,27 +661,27 @@ module.exports = {
           "type": "doc",
           "id": "api/Unity.Netcode.BitCounter",
           "label": "BitCounter"
-        },
+        },  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BitReader",
           "label": "BitReader"
-        },
+        },  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BitWriter",
           "label": "BitWriter"
-        },
+        },  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BufferSerializer-1",
           "label": "BufferSerializer-1"
-        },
+        },  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BytePacker",
           "label": "BytePacker"
-        },
+        }, 
         {
           "type": "doc",
           "id": "api/Unity.Netcode.ByteUnpacker",
@@ -1065,37 +1057,37 @@ module.exports = {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler",
                 "label": "OnEventCompletedDelegateHandler"
-              },
+              }, 
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler",
                 "label": "OnLoadCompleteDelegateHandler"
-              },
+              },  
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler",
                 "label": "OnLoadDelegateHandler"
-              },
+              },  
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler",
                 "label": "OnSynchronizeCompleteDelegateHandler"
-              },
+              },  
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler",
                 "label": "OnSynchronizeDelegateHandler"
-              },
+              }, 
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler",
                 "label": "OnUnloadCompleteDelegateHandler"
-              },
+              },  
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler",
                 "label": "OnUnloadDelegateHandler"
-              },
+              },  
 
       ]
       },
@@ -1109,14 +1101,14 @@ module.exports = {
             "id": "api/Unity.Netcode.Arithmetic",
             "label": "Arithmetic"
           },
-
+        
           {
             "type": "doc",
             "id": "api/Unity.Netcode.INetworkSerializable",
             "label": "INetworkSerializable"
           },
-
-
+     
+          
           ]
       },
       {

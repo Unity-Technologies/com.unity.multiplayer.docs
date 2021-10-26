@@ -38,7 +38,7 @@ When `Interpolate` is disabled changes to the transform are applied immediately 
 
 
 <figure>
-<ImageSwitcher
+<ImageSwitcher 
 lightImageSrc="/img/BufferedTick.png?text=LightMode"
 darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
   <figcaption>Graphic of a buffered tick between the server and a client (i.e. interpolation)</figcaption>
@@ -48,4 +48,4 @@ darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
 
 `NetworkTransform` always synchronizes positions from the server to the clients and position changes on the clients are not allowed. Netcode for GameObjects comes with a sample containing a `ClientNetworkTransform`. This transform synchronizes the position of the owner client to the server and all other client allowing for client authoritative gameplay.
 
-To install the `ClientNetworkTransform` sample into your project open the `Package Manager` window in the Unity Editor and select the `Netcode for GameObjects` package. In the description of the package you can find a list of package samples. Press the `Install` button next to the `ClientNetworkTransform` sample to install it into your existing Unity project.
+To install the `ClientNetworkTransform` sample into your project open the `Package Manager` window in the Unity Editor and select the `Netcode for GameObjects` package. In the description of the package you can find a list of package samples. Press the `Install` button next to the `ClientNetworkTransform` sample to install it into your existing Unity project. 

@@ -15,7 +15,7 @@ All Transport code and documentation is covered by Unity Companion License. See 
 
 ## Overview
 
-[Transport Overview](/img/transport/layercake.png)
+![Transport Overview](/img/transport/layercake.png)
 
 ## Installing Transport
 

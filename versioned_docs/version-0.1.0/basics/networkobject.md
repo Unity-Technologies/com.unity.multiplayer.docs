@@ -16,7 +16,7 @@ To add custom code logic to your `NetworkObjects`, use [NetworkBehaviours](netwo
 
 ## Ownership
 
-Each `NetworkObject` has a specific owner which can be any client or the server itself.
+Each `NetworkObject` is owned by a specific client. This can be any client or the server.
 
 Give ownership of an object using the following:
 
