@@ -11,7 +11,7 @@ This "Hello World" tutorial walks you through creating a project, installing the
 
 ## Requirements
 
-This tutorial requires an Netcode-supported version of Unity (2019.4+).
+This tutorial requires an Netcode-supported version of Unity (2020.3+).
 
 
 ## Create a new project in Unity
