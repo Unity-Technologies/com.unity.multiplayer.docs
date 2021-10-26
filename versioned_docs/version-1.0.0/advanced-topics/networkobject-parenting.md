@@ -19,7 +19,7 @@ ulong? m_LatestParent; // who (NetworkObjectId) is our latest (current) parent i
 Transform m_CachedParent; // who (Transform) was our previously assigned parent?
 ```
 
-A new virtual methodWe has been added ainto `NetworkBehaviour`:
+A new virtual methodWe has been added into `NetworkBehaviour`:
 
 ```csharp
 /// <summary>
