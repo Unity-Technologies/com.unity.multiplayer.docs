@@ -19,7 +19,7 @@ This guide assumes that you already have:
 
 1. Open your **Unity Hub** and select the **Project** you are presently working on.
 1. From the menu bar, navigate to **Window** > **Package Manager**.
-1. Click the plus sign ([Add](/img/add.png)) in the **Package Manager** status bar and select **Add pack from name..**.
+1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add pack from name..**.
 
  ![Package Installed](/img/install/addbyname.png)
 
@@ -67,9 +67,9 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 
 See the following content to continue your journey using Netcode:
 
-* [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
+* [Migrating From UNet to MLAPI](migratingtonetcode.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
-* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
+* [Building Golden Path](../tutorials/goldenpath_series/starting-out.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
