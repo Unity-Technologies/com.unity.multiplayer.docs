@@ -15,6 +15,6 @@ See the following sections:
 * [C# Primitives](cprimatives.md)
 * [Unity Primitives](unity-primatives.md)
 * [Enum Types](enum-types.md)
-* [Static Arrays](serializationstatic-arrays.md)
+* [Arrays](serialization-arrays.md)
 * [INetworkSerializable](inetworkserializable.md)
 * [NetworkObjects & NetworkBehaviours](networkobject-serialization.md)

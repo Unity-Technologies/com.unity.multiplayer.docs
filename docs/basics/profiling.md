@@ -26,9 +26,13 @@ Regarding latency, it is a whole topic in itself, but remember that we are talki
 
 Starting from Unity 2021.1, the Unity profiler can extend its features with Netcode for GameObjects [NetCode]. Netcode enables you to profile your game in the same tool you are already using for CPU, GPU, and memory.
 
-To enable profiling support for Netcode, install the `com.unity.multiplayer.tools` package from the [Unity Package Manager](../migration/installation.md). Then, you should see two additional modules in your profiler (**Window** > **Analysis** > **Profiler**):
+To enable profiling support for Netcode, install the `com.unity.multiplayer.tools` package from the [Unity Package Manager](../tools/install-tools.md). Then, you should see two additional modules in your profiler (**Window** > **Analysis** > **Profiler**):
 * Messages - Network messages sent to the transport
 * Objects - Activity related to, and grouped by, network objects
+
+:::important
+If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the moduels to appear.
+:::
 
 :::caution
 Netcode for GameObjects does not update the legacy profiler modules **Network Messages** and **Network Operations**.
@@ -46,10 +50,10 @@ The following table includes the Messages the Netcode Profiler counts:
 | -- | -- |
 | Total Bytes Sent | Total number of bytes sent during this frame |
 | Total Bytes Received | Total number of bytes received during this frame |
-| Named Message Bytes Sent | Total number of named messages sent to any connection in this frame |
-| Named Message Bytes Received | Total number of named messages received in this frame |
-| Unnamed Message Bytes Sent | Total number of unnamed messages sent to any connection in this frame |
-| Unnamed Message Bytes Received | Total number of unnamed messages received in this frame |
+| Named Message Bytes Sent | Total number of named message bytes sent to any connection in this frame |
+| Named Message Bytes Received | Total number of named message bytes received in this frame |
+| Unnamed Message Bytes Sent | Total number of unnamed message bytes sent to any connection in this frame |
+| Unnamed Message Bytes Received | Total number of unnamed message bytes received in this frame |
 | Scene Event Bytes Sent | Total number of scene event bytes sent during this frame |
 | Scene Event Bytes Received | Total number of scene event bytes received during this frame |
 
@@ -82,7 +86,7 @@ The following table includes the Objects the Netcode Profiler counts:
 
 ## Best Practices
 
-The profiler tool is capable of provider a lot of information and can be intimidating to determine the best strategy for optimization. Use the following best practices to make your optimization process easier.
+The profiler tool is capable of providing a lot of information and can be intimidating to determine the best strategy for optimization. Use the following best practices to make your optimization process easier.
 
 ### Module elements and filtering results
 
@@ -90,11 +94,11 @@ You can use the following filter rules to narrow your search results:
 
 | Rule | Description |
 | -- | -- |
-| t: | Populates by type |
-| dir:in | Populates anything with bytes received |
-| dir:out | Populates anything with bytes sent |
-| b>N | Populates all events with bytes greater than N (N being an integer) |
-| b<N | Populates all events with bytes less than N (N being an integer) |
+| t: | Filters by type |
+| dir:in | Filters anything with bytes received |
+| dir:out | Filters anything with bytes sent |
+| b>N | Filters all events with bytes greater than N (N being an integer) |
+| b<N | Filters all events with bytes less than N (N being an integer) |
 
 You can combine these rules to continue narrowing your results.
 

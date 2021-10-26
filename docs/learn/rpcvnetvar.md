@@ -3,26 +3,10 @@ id: rpcvnetvar
 title: RPC vs NetworkVariable
 sidebar_label: RPC vs NetworkVariable
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
- Netcode for GameObjects (Netcode) has two main methods of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
-
-## RPCs
-
-The concept of an `RPC` is common not only in video games but in the software industry in general. They are ways to call methods on objects that are not in the same executable. 
-
-At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters. 
-
-When calling an `RPC`, you call a method remotely on an object that could be anywhere in the world. They are "events" you can trigger when needed. 
-
-If you call an `RPC` method on your side, it will execute on a different machine.
-
-## NetworkVariables
-
-At a high level, a `NetworkVariable` is a variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initially to a host, all relevant `NetworkVariable` latest values "state" will be replicated to that new client. Your state gets updated at regular intervals.
-
-`NetworkVariable` can be referenced as "state" or as "Netvars" or as replicated vars.
-
-If you change your variable's value on your side, others will see the latest value on their side.
+Choosing the wrong data syncing mecanism can create bugs, generate too much bandwidth and add too much complexity to your code.
+Netcode for GameObjects (Netcode) has two main ways of syncing information between players. `RPC` ([Remote Procedure Call](../advanced-topics/messaging-system)) and replicated state [(NetworkVariable)](../basics/networkvariable). They both send messages over the network. The logic and your design around how they send messages is what will make you choose one over the other. 
 
 ## Choosing between NetworkVariables or RPCs
 
@@ -31,9 +15,24 @@ If you change your variable's value on your side, others will see the latest val
 
 A quick way to choose which to use is to ask yourself: "Should a player joining mid-game get that information?"
 
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_LateJoinClient.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_LateJoinClient_Dark.png?text=DarkMode"/>
+<figcaption>Network Variables allow to seamlessly catch up late joining clients by sending the current state as soon as the tick happens.</figcaption>
+</figure>
+
 Using the Boss Room's door as an example. A player's client needs to receive the information that the door is open to play the right animations.
 
 If we sent an `RPC` to all clients, then all players connecting mid game after that `RPC` are sent will miss that information and have the wrong visual on their clients.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin_Dark.png?text=DarkMode"/>
+<figcaption>Sending state with RPCs will not be transmitted to late joining clients.</figcaption>
+</figure>
+
 
 In that case, it is preferable to use `NetworkVariable`s like shown here.
 
@@ -43,8 +42,18 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 
 It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the door and a player connects after this, the host will replicate all the world's information to that new player, including the door's state.
 
+NetworkVariables are eventually consistent. This means not all value changes will be synced, contrary to RPCs, where 5 calls to an RPC will produce 5 RPC sends on the network.
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetworkVariables_Dark.png?text=DarkMode"/>
+<figcaption>Network Variables can be updated multiple times between ticks, but only the latest will be synced to other peers.</figcaption>
+</figure>
 
-## Why not use NetworkVariabless for everything?
+NetworkVariables will save on bandwidth for you, making sure to only send values when the data has changed. However, if you want all value changes, RPCs might be best.
+
+
+## Why not use NetworkVariables for everything?
 
 `RPC`s are simpler.
 
@@ -74,12 +83,29 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 ```
 
 :::tip
-If you want to make sure two variables are received at the same time, `RPC`s are great for that. 
+If you want to make sure two variables are received at the same time, `RPC`s are great for this. 
 
-If you change `NetworkVariable` "a" and "b", there is no guarantee they will both be received client side at the same time. Sending them as two parameters in the same `RPC` allows to make sure they will be received at the same time client side.
-:::
+If you change `NetworkVariables` "a" and "b", there is no guarantee they will both be received client side at the same time. 
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariable/NetVarDataUpdates_Dark.png?text=DarkMode"/>
+ <figcaption>Different Network Variables updated within the same tick are not guranteed to be delivered to the clients at the same time. </figcaption>
+</figure>
+
+Sending them as two parameters in the same `RPC` allows to make sure they will be received at the same time client side.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs_Dark.png?text=DarkMode"/>
+ <figcaption>To ensure that several different Network Variables are all synchronized at the same exact time we can use client RPC to join these value changes together.</figcaption>
+</figure>
 
 `NetworkVariable`s are great when you only care about the latest value.
+
+:::
 
 
 ## Summary

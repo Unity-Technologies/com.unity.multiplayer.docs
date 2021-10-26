@@ -1,9 +1,3 @@
----
-id: gp_profiler
-title: Golden Path - The Profiling Tool
-description: Tutorial to walk you through the capabilities and use cases of the profiling tool regarding multiplayer games.
----
-
 This Golden Path is a standalone experience and does not require completion of the Golden Path Foundation module.
 
 In this guide, we cover how to use profiling data to optimize performance and balance enhancements in your multiplayer game to determine the most efficient build strategy. For multiplayer games, the three primary resources you should monitor and control are bandwidth consumption, CPU, and packet delivery latency (not network latency).

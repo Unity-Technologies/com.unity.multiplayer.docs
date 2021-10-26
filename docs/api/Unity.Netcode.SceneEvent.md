@@ -97,8 +97,8 @@ public class SceneEvent
 
 <div class="markdown level1 summary">
 
-If applicable, this will be set to the returned by load scene and unload
-scene asynchronous methods.
+The returned by This is set for the following SceneEventTypes: Load
+Unload
 
 </div>
 
@@ -122,16 +122,17 @@ public AsyncOperation AsyncOperation
 
 <div class="markdown level1 summary">
 
-Events that always set ClientId to the local client identifier and only
-triggered locally: S2C_Load S2C_Unload S2C_Sync S2C_ReSync
+Events that always set the ClientId to the local client identifier, are
+initiated (and processed locally) by the server-host, and sent to all
+clients to be processed: Load Unload Synchronize ReSynchronize
 
-Events that always set ClientId to the local client identifier, are
-triggered locally, and a host or server will trigger externally
-generated scene event message types (i.e. sent by a client):
-C2S_UnloadComplete C2S_LoadComplete C2S_SyncComplete
+Events that always set the ClientId to the local client identifier, are
+initiated (and processed locally) by a client or server-host, and if
+initiated by a client will always be sent to and processed on the
+server-host: LoadComplete UnloadComplete SynchronizeComplete
 
-Events that always set ClientId to the ServerId: S2C_LoadComplete
-S2C_UnLoadComplete
+Events that always set the ClientId to the ServerId: LoadEventCompleted
+UnloadEventCompleted
 
 </div>
 
@@ -155,8 +156,9 @@ public ulong ClientId
 
 <div class="markdown level1 summary">
 
-List of clients that completed a loading or unloading event Applies only
-to: S2C_LoadComplete S2C_UnLoadComplete
+List of clients that completed a loading or unloading event This is set
+for the following SceneEventTypes: LoadEventCompleted
+UnloadEventCompleted
 
 </div>
 
@@ -180,8 +182,9 @@ public List<ulong> ClientsThatCompleted
 
 <div class="markdown level1 summary">
 
-List of clients that timed out during a loading or unloading event
-Applies only to: S2C_LoadComplete S2C_UnLoadComplete
+List of clients that timed out during a loading or unloading event This
+is set for the following SceneEventTypes: LoadEventCompleted
+UnloadEventCompleted
 
 </div>
 
@@ -206,8 +209,8 @@ public List<ulong> ClientsThatTimedOut
 <div class="markdown level1 summary">
 
 If applicable, this reflects the type of scene loading or unloading that
-is occurring. Unlike , scene unload events will have the original
-LoadSceneMode applied when the scene was loaded.
+is occurring. This is set for the following SceneEventTypes: Load Unload
+LoadComplete UnloadComplete LoadEventCompleted UnloadEventCompleted
 
 </div>
 
@@ -231,7 +234,8 @@ public LoadSceneMode LoadSceneMode
 
 <div class="markdown level1 summary">
 
-When a scene is loaded, the Scene structure is returned.
+When a scene is loaded, the Scene structure is returned. This is set for
+the following SceneEventTypes: LoadComplete
 
 </div>
 
@@ -255,9 +259,7 @@ public Scene Scene
 
 <div class="markdown level1 summary">
 
-Will always be set to the current scene event type
-(SceneEventData.SceneEventTypes) this scene event notification pertains
-to
+Will always be set to the current SceneEventType
 
 </div>
 
@@ -268,21 +270,22 @@ to
 #### Declaration
 
 ``` lang-csharp
-public SceneEventData.SceneEventTypes SceneEventType
+public SceneEventType SceneEventType
 ```
 
 #### Field Value
 
-| Type                           | Description |
-|--------------------------------|-------------|
-| SceneEventData.SceneEventTypes |             |
+| Type           | Description |
+|----------------|-------------|
+| SceneEventType |             |
 
 ### SceneName
 
 <div class="markdown level1 summary">
 
-Excluding and This will be set to the scene name that the event pertains
-to.
+This will be set to the scene name that the event pertains to. This is
+set for the following SceneEventTypes: Load Unload LoadComplete
+UnloadComplete LoadEventCompleted UnloadEventCompleted
 
 </div>
 

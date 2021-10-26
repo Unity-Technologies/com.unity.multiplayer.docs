@@ -1,10 +1,10 @@
 ---
 id: bitesize-spaceshooter
 title: 2D Space Shooter Sample
-description: Learn more about physics movement and status effects using MLAPI NetworkVariables and ObjectPooling using MLAPI.
+description: Learn more about physics movement and status effects using Netcode for GameObjects (Netcode) NetworkVariables and ObjectPooling .
 ---
 
-The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Unity MLAPI. Technical features include `NetworkVariable` and `ObjectPooling`. 
+The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Netcode for GameObjects (Netcode). Technical features include `NetworkVariable` and `ObjectPooling`. 
 
 ## Server Authorative Physics Movement
 
@@ -12,7 +12,7 @@ The movement in 2DSpaceShooter is physics based. The player object is a dynamic 
 
 The client sends inputs in the form of RPCs to the server. The server then uses those inputs to adjust the throttle and turn values of the player.
 
-This method of running physics makes sure that there are no desyncs or other physics issues between the client and server, but it introduces more latency. With future prediction support of MLAPI, the latency will no longer be an issue which makes this the best choice of a movement model for a game like this.
+This method of running physics makes sure that there are no desyncs or other physics issues between the client and server, but it introduces more latency. With future prediction support of Netcode, the latency will no longer be an issue which makes this the best choice of a movement model for a game like this.
 
 ## Player Health
 
@@ -40,11 +40,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 The `2DSpaceShooter` object creates many objects dynamically at runtime including bullets, asteroids, and pickups. 2DSpaceShooter uses object pooling to avoid performance issues of instantiating and destroying Unity Objects all the time and creating allocations in the process.
 
-2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository. 
+2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository. 
 
 [pool img](/img/bitesize/invader-networkobjectpool.png)
 
-All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause MLAPI to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically be returned to the pool instead of getting destroyed.
+All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically be returned to the pool instead of getting destroyed.
 
 Adding the `NetworkObjectPool` to the scene will not yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
 

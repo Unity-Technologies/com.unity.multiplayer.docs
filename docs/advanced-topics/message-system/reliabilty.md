@@ -2,6 +2,7 @@
 id: reliability
 title: Reliability
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 RPCs are reliable by default which means they are guaranteed to be executed on the remote side. However, sometimes developers might want to opt-out reliability, which is often the case for non-critical events such as particle effects, sounds effects etc.
 

@@ -11,10 +11,6 @@ module.exports = {
       "id": "getting-started/about"
     },
     {
-      "type": "doc",
-      "id": "getting-started/whats-new"
-    },
-    {
     "collapsed": true,
     "type": "category",
     "label": "Installation and Migration",
@@ -22,6 +18,14 @@ module.exports = {
       {
         "type": "doc",
         "id": "migration/install"
+      },
+      {
+        "type": "doc",
+        "id": "tools/install-tools",
+      },
+      {
+        "type": "doc",
+        "id": "migration/upgrade-guide",
       },
       {
         "type": "doc",
@@ -84,12 +88,28 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/networkwriter-networkreader-networkbuffer"
+        "id": "advanced-topics/fastbufferwriter-fastbufferreader"
       },
       {
         "type": "doc",
         "id": "advanced-topics/networktime-ticks"
       },
+      {
+        "type": "doc",
+        "id": "advanced-topics/physics"
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Relay",
+        "items": [
+          {
+            "type": "doc",
+            "id": "relay/relay"
+          },
+        ]
+      },
+
       {
         "collapsed": true,
         "type": "category",
@@ -133,11 +153,7 @@ module.exports = {
         "type": "doc",
         "id": "components/networkanimator"
       },
-      {
-        "type": "doc",
-        "id": "components/networknavmeshagent"
-      }
-    ]
+      ]
   },
   {
     "collapsed": true,
@@ -187,6 +203,21 @@ module.exports = {
           {
             "type": "doc",
             "id": "advanced-topics/message-system/rpc-params"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "RPCs vs NetworkVariables",
+            "items": [  
+              {
+                "type": "doc",
+                "id": "learn/rpcvnetvar"
+              },
+              {
+                "type": "doc",
+                "id": "learn/rpcnetvarexamples"
+              },
+            ],
           },
           {
             "type": "doc",
@@ -242,16 +273,20 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "advanced-topics/serialization/static-arrays"
-      },
-      {
+        "id": "advanced-topics/serialization/arrays"
+      },  
+      { 
         "type": "doc",
         "id": "advanced-topics/serialization/inetworkserializable"
       },
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      },
+      }, 
+      {
+        "type": "doc",
+        "id": "advanced-topics/serialization/networkobject-serialization"
+      }, 
     ]
     },
   {
@@ -295,6 +330,10 @@ module.exports = {
       },
       {
         "type": "doc",
+        "id": "tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
+      },
+      {
+        "type": "doc",
         "id": "troubleshooting/troubleshooting"
       },
       {
@@ -330,10 +369,6 @@ module.exports = {
                     "type": "doc",
                     "id": "tutorials/goldenpath_series/goldenpath_two"
                   },
-                  {
-                    "type": "doc",
-                    "id": "tutorials/goldenpath_series/gp_profiler"
-                  },
                 ],
 
               },
@@ -363,23 +398,26 @@ module.exports = {
               "id": "reference/glossary/high-level-terminology"
             },
             {
-
-                "collapsed": true,
-                "type": "category",
-                "label": "Latency Management",
-                "items": [
+              "collapsed": true,
+              "type": "category",
+              "label": "Lag",
+              "items": [
                   {
-                  "type": "doc",
-              "id": "reference/glossary/network-latency-management"
-            },
-            {
-              "type": "doc",
-              "id": "learn/lagandpacketloss"
-                },
-            {
-              "type": "doc",
-              "id": "learn/clientside_interpolation"
-                },
+                    "type": "doc",
+                    "id": "reference/glossary/ticks-and-update-rates"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "learn/lagandpacketloss"
+                      },
+                  {
+                    "type": "doc",
+                    "id": "learn/clientside_interpolation"
+                      },
+                  {
+                    "type": "doc",
+                    "id": "learn/dealing-with-latency"
+                  },
               ],
             },
 
@@ -437,41 +475,30 @@ module.exports = {
                 "id": "learn/bossroom"
               },
               {
-                "collapsed": true,
-                "type": "category",
-                "label": "Boss Room and RPCs",
-                "items": [
-                  {
-                    "type": "doc",
-                    "id": "learn/rpcvnetvar"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "learn/rpcnetvarexamples"
-                  },
-                ],
+              "type": "doc",
+              "id": "learn/bossroom-examples/bossroom-actions"
               },
             ],
           },
-      {
-      "collapsed": true,
-      "type": "category",
-      "label": "Bitesize Samples",
-      "items": [
           {
-          "type": "doc",
-          "id": "learn/bitesize-introduction"
+          "collapsed": true,
+          "type": "category",
+          "label": "Bitesize Samples",
+          "items": [
+              {
+              "type": "doc",
+              "id": "learn/bitesize-introduction"
+              },
+              {
+                "type": "doc",
+                "id": "learn/bitesize-invaders"
+                },
+              {
+              "type": "doc",
+              "id": "learn/bitesize-spaceshooter"
+              }
+          ]
           },
-          {
-            "type": "doc",
-            "id": "learn/bitesize-invaders"
-            },
-          {
-          "type": "doc",
-          "id": "learn/bitesize-spaceshooter"
-          }
-      ]
-      },
     ],
     },
     {
@@ -569,9 +596,10 @@ module.exports = {
         },
         {
           "type": "doc",
-          "id": "api/Unity.Netcode.NetworkObject",
-          "label": "NetworkObject"
+          "id": "api/Unity.Netcode.NetworkObjectReference",
+          "label": "NetworkObjectReference"
         },
+
         {
           "type": "doc",
           "id": "api/Unity.Netcode.NetworkObject.SpawnDelegate",
@@ -597,11 +625,7 @@ module.exports = {
           "id": "api/Unity.Netcode.NetworkUpdateStage",
           "label": "NetworkUpdateStage"
         },
-        {
-          "type": "doc",
-          "id": "api/Unity.Netcode.IHasUpdateStage",
-          "label": "IHasUpdateStage"
-        },
+  
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
@@ -633,6 +657,52 @@ module.exports = {
           "id": "api/Unity.Netcode.StreamExtensions",
           "label": "StreamExtensions"
         },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BitCounter",
+          "label": "BitCounter"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BitReader",
+          "label": "BitReader"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BitWriter",
+          "label": "BitWriter"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BufferSerializer-1",
+          "label": "BufferSerializer-1"
+        },  
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.BytePacker",
+          "label": "BytePacker"
+        }, 
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.ByteUnpacker",
+          "label": "ByteUnpacker"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.ErrorUtilities",
+          "label": "ErrorUtilities"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.FastBufferReader",
+          "label": "FastBufferReader"
+        },
+        {
+          "type": "doc",
+          "id": "api/Unity.Netcode.FastBufferWriter",
+          "label": "ByteUnpFastBufferWriteracker"
+        },
+
 
 
       ],
@@ -951,18 +1021,13 @@ module.exports = {
               },
               {
                 "type": "doc",
-                "id": "api/Unity.Netcode.SceneEventData",
-                "label": "SceneEventData"
-              },
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SceneEventData.SceneEventTypes",
-                "label": "SceneEventData.SceneEventTypes"
-              },
-              {
-                "type": "doc",
                 "id": "api/Unity.Netcode.SceneEventProgressStatus",
                 "label": "SceneEventProgressStatus"
+              },
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.SceneEventType",
+                "label": "SceneEventType"
               },
       ]
       },
@@ -988,29 +1053,45 @@ module.exports = {
                 "id": "api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler",
                 "label": "VerifySceneBeforeLoadingDelegateHandler"
               },
-      ]
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "ScoketTask",
-        "items": [
-
               {
                 "type": "doc",
-                "id": "api/Unity.Netcode.SocketTask",
-                "label": "SocketTask"
-              },
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler",
+                "label": "OnEventCompletedDelegateHandler"
+              }, 
               {
                 "type": "doc",
-                "id": "api/Unity.Netcode.SocketTasks",
-                "label": "SocketTasks"
-              },
-
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler",
+                "label": "OnLoadCompleteDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler",
+                "label": "OnLoadDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler",
+                "label": "OnSynchronizeCompleteDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler",
+                "label": "OnSynchronizeDelegateHandler"
+              }, 
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler",
+                "label": "OnUnloadCompleteDelegateHandler"
+              },  
+              {
+                "type": "doc",
+                "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler",
+                "label": "OnUnloadDelegateHandler"
+              },  
 
       ]
       },
-      {
+            {
         "collapsed": true,
         "type": "category",
         "label": "Serialization",
@@ -1020,89 +1101,15 @@ module.exports = {
             "id": "api/Unity.Netcode.Arithmetic",
             "label": "Arithmetic"
           },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.AutoNetworkSerializable",
-            "label": "AutoNetworkSerializable"
-          },
+        
           {
             "type": "doc",
             "id": "api/Unity.Netcode.INetworkSerializable",
             "label": "INetworkSerializable"
           },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkBuffer",
-            "label": "NetworkBuffer"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkReader",
-            "label": "NetworkReader"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkSerializer",
-            "label": "NetworkSerializer"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkWriter",
-            "label": "NetworkWriter"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkWriterPool",
-            "label": "NetworkWriterPool"
-          },
-
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkBufferPool",
-            "label": "NetworkBufferPool"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.NetworkReaderPool",
-            "label": "NetworkReaderPool"
-          },
-          {
-            "type": "doc",
-            "id": "api/Unity.Netcode.PooledNetworkBuffer",
-            "label": "PooledNetworkBuffer"
-          },  {
-            "type": "doc",
-            "id": "api/Unity.Netcode.PooledNetworkReader",
-            "label": "PooledNetworkReader"
-          },  {
-            "type": "doc",
-            "id": "api/Unity.Netcode.PooledNetworkWriter",
-            "label": "PooledNetworkWriter"
-          },
-
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Serialization.SerializationManager",
-            "items": [
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SerializationManager",
-                "label": "SerializationManager"
-              },
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SerializationManager.CustomDeserializationDelegate-1",
-                "label": "CustomDeserializationDelegate-1"
-              },
-              {
-                "type": "doc",
-                "id": "api/Unity.Netcode.SerializationManager.CustomSerializationDelegate-1",
-                "label": "CustomSerializationDelegate-1"
-              }
-            ]
-          },
-        ]
+     
+          
+          ]
       },
       {
         "collapsed": true,

@@ -1,6 +1,6 @@
 ---  
-id: Unity.Netcode.Arithmetic  
-title: Unity.Netcode.Arithmetic  
+id: Unity.Netcode.Arithmetic
+title: Unity.Netcode.Arithmetic
 ---
 
 <div class="markdown level0 summary">

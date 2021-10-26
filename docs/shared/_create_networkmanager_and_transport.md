@@ -12,7 +12,7 @@ You have created a new `GameObject` called **NetworkManager**. Now we will add t
 
 1. Select **NetworkManager**.
 1. Click **Add Component** in the **Inspector** tab.
-1. Select **MLAPI** from the list.
+1. Select **Netcode* from the list.
 1. Select `NetworkManager` component.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. It may have a warning icon stating that a transport is required for Netcode to work. 
 1. From the **Select Transport...** dropdown, select `UnetTransport`.

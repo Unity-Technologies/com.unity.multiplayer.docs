@@ -53,7 +53,7 @@ public class UnityTransport : NetworkTransport, INetworkStreamDriverConstructor
 
 ## 
 
-### MaximumMessageLength
+### ConnectionData
 
 <div class="markdown level1 summary">
 
@@ -66,7 +66,51 @@ public class UnityTransport : NetworkTransport, INetworkStreamDriverConstructor
 #### Declaration
 
 ``` lang-csharp
-public const int MaximumMessageLength = 6144
+public UnityTransport.ConnectionAddressData ConnectionData
+```
+
+#### Field Value
+
+| Type                                 | Description |
+|--------------------------------------|-------------|
+| UnityTransport.ConnectionAddressData |             |
+
+### InitialBatchQueueSize
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int InitialBatchQueueSize = 6144
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### InitialMaxPacketSize
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int InitialMaxPacketSize = default(int)
 ```
 
 #### Field Value
@@ -329,6 +373,59 @@ public override void Send(ulong clientId, ArraySegment<byte> payload, NetworkDel
 | System.ArraySegment\&lt;System.Byte&gt; | payload         |             |
 | NetworkDelivery                    | networkDelivery |             |
 
+### SetConnectionData(NetworkEndPoint)
+
+<div class="markdown level1 summary">
+
+Sets IP and Port information. This will be ignored if using the Unity
+Relay and you should call SetRelayServerData(String, UInt16, Byte\[\],
+Byte\[\], Byte\[\], Byte\[\], Boolean)
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public void SetConnectionData(NetworkEndPoint endPoint)
+```
+
+#### Parameters
+
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkEndPoint | endPoint |             |
+
+### SetConnectionData(String, UInt16)
+
+<div class="markdown level1 summary">
+
+Sets IP and Port information. This will be ignored if using the Unity
+Relay and you should call SetRelayServerData(String, UInt16, Byte\[\],
+Byte\[\], Byte\[\], Byte\[\], Boolean)
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public void SetConnectionData(string ipv4Address, ushort port)
+```
+
+#### Parameters
+
+| Type          | Name        | Description |
+|---------------|-------------|-------------|
+| System.String | ipv4Address |             |
+| System.UInt16 | port        |             |
+
 ### SetRelayServerData(String, UInt16, Byte\[\], Byte\[\], Byte\[\], Byte\[\], Boolean)
 
 <div class="markdown level1 summary">
@@ -386,14 +483,14 @@ public override void Shutdown()
 #### Declaration
 
 ``` lang-csharp
-public override SocketTasks StartClient()
+public override bool StartClient()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### StartServer()
 
@@ -408,14 +505,14 @@ public override SocketTasks StartClient()
 #### Declaration
 
 ``` lang-csharp
-public override SocketTasks StartServer()
+public override bool StartServer()
 ```
 
 #### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| SocketTasks |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Implements
 
