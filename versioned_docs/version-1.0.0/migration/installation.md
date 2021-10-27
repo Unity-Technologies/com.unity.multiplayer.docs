@@ -50,7 +50,7 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 1. Enter the Git URL to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
 
   ```
-  com.unity.netcode.gameobjects
+  https://github.com/Unity-Technologies/com.unity.netcode.gameobjects.git
   ```
 
   :::info How to Copy
