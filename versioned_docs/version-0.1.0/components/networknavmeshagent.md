@@ -12,7 +12,7 @@ The `NetworkNavMeshAgent` only synchronizes velocity and targets. Because the Na
 :::
 
 ## Configuration
-`NetworkNavMeshAgent` does not synchronize any configuration values of the `NavMeshAgent` component. It is expected that settings like Agent Size or Path Finding settings match on all instances of the network object. If you need to change the settings of an agent at runtime, use [`RPC`s](../advanced-topics/messaging-system.md) or [`NetworkVariable`](../mlapi-basics/networkvariable.md) on a custom `NetworkBehaviour`.
+`NetworkNavMeshAgent` does not synchronize any configuration values of the `NavMeshAgent` component. It is expected that settings like Agent Size or Path Finding settings match on all instances of the network object. If you need to change the settings of an agent at runtime, use [`RPC`s](../advanced-topics/messaging-system.md) or [`NetworkVariable`](../basics/networkvariable.md) on a custom `NetworkBehaviour`.
 
 :::note
 The navigation mesh itself also is not synchronized. You must make sure that all clients and the server are using the same navigation mesh. This should be the case under normal circumstances if they are using the same scene.

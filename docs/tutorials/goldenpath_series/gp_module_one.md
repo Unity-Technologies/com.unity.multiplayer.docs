@@ -27,7 +27,7 @@ import Createclone from '../../shared/_create_clone_goldenpath.md';
 
 1. Open Unity Hub.
 1. Select `GoldenPath_One` from the list of projects displayed.
-   
+
 <iframe src="https://www.youtube.com/embed/kl5gzvGiXHk?playlist=kl5gzvGiXHk&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
@@ -189,10 +189,10 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method, `SubmitNewPosition()`, which we will be using later. 
+You will notice the introduction of a new method, `SubmitNewPosition()`, which we will be using later.
 :::
 
-## Adding basic movement to the Player object 
+## Adding basic movement to the Player object
 
 1. Under your **Project** tab, right-click on your **Scripts** folder. Hover over **Create** and select **C# Script** that you rename `HelloWorldPlayer`.
 2. Right-click and **Open** or double-click the `HelloWorldPlayer.cs` script from your **Scripts** folder in the **Project** tab. It will open in your text editor.
@@ -314,7 +314,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the  Netcode for GameObjects method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned and the networking is setup. We override `OnNetworkSpawn` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the  Netcode for GameObjects method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned and the networking is setup. We override `OnNetworkSpawn` since a client and a server will run different logic here.
 
 :::note
 This can be overriden on any `NetworkBehaviour`.
@@ -419,7 +419,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-The server instance of this player has just modified the Position `NetworkVariable`. This means that if we are a client, we need to apply this position locally inside of our `Update` loop. 
+The server instance of this player has just modified the Position `NetworkVariable`. This means that if we are a client, we need to apply this position locally inside of our `Update` loop.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -492,7 +492,7 @@ For more information on the relevant concepts introduced here please refer to th
 
 - [NetworkManager](../../components/networkmanager)
 - [NetworkBehaviour](../../basics/networkbehavior)
-- [Networkvariable](../../basics/networkvariable)
+- [Networkvariable](../../basics/networkvariable.md)
 - [RPC](../../advanced-topics/messaging-system)
 
 import continuelearning from '../../shared/_continue_learning_goldenpath.md';
@@ -500,5 +500,5 @@ import continuelearning from '../../shared/_continue_learning_goldenpath.md';
 <continuelearning/>
 
 :::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Fernando Cortez, Unity. 
+This guide would not have been possible without the hard work and support of Fernando Cortez, Unity.
 :::

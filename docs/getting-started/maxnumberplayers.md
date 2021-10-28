@@ -4,7 +4,7 @@ title: Limiting the maximum number of players
 ---
 
 
-Netcode for Gameobjects (Netcode) provides a way to implement a [connection approval delegate](../mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate.md) that can reject incoming connections based on custom logic.
+Netcode for Gameobjects (Netcode) provides a way to implement a [connection approval delegate](../api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate.md) that can reject incoming connections based on custom logic.
 ​
 
 
@@ -26,8 +26,7 @@ if( m_ClientData.Count >= CharSelectData.k_MaxLobbyPlayers )
 
 :::tip**SUIBJECT TO CHANGE:**
 ​
-In connection approval delegate Netcode does not support an ability to send anything more than a boolean back. 
+In connection approval delegate Netcode does not support an ability to send anything more than a boolean back.
 Boss Room demonstrates a way to provide meaningful error code to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
 
 :::
-

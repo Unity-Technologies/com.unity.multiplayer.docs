@@ -28,7 +28,7 @@ import Createclone from '../../shared/_create_clone_goldenpath.md';
 
 1. Open Unity Hub.
 1. Select `GoldenPath_One` from the list of projects displayed.
-   
+
 <iframe src="https://www.youtube.com/embed/kl5gzvGiXHk?playlist=kl5gzvGiXHk&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
@@ -47,7 +47,7 @@ This section will add some scripts to Goilden Path  which will contain the new f
 1. Open the `HelloWorldManager.cs` script.
 1. Edit the `HelloWorldManager.cs` script to match the following.
 
-:::tip 
+:::tip
 You can copy the script from here and paste it into your file.
    1. Select the code sample.
    1. Click **Copy** in the top right corner.
@@ -193,10 +193,10 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
+You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later.
 :::
 
-## Adding basic movement to the Player object 
+## Adding basic movement to the Player object
 
 This script adds some basic movement to the Hello World player.
 
@@ -334,7 +334,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the MLAPI method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the MLAPI method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here.
 
 :::note
 This can be overriden on any `NetworkBehaviour`.
@@ -439,7 +439,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-The server instance of this player has just modified the Position NetworkVariable, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
+The server instance of this player has just modified the Position NetworkVariable, meaning that if we are a client, we need to apply this position locally inside of our Update loop.
 <details open>
 <summary>Click to show/hide the Code.
 
@@ -491,7 +491,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 Whenever you press the GUI button (which is contextual depending on if you are server or a client), you find your local player and simply call `Move()`.
 
-You can now create a build which will demonstrate the concepts outlined above. 
+You can now create a build which will demonstrate the concepts outlined above.
 :::tip
 Make sure **SampleScene** is included in **BuildSettings**.
 :::
@@ -503,7 +503,7 @@ One build instance can create a host. Another client can join the host's game. B
 
 
 :::note Congrats!
-Congratulations you have learned the basics of a networked game 
+Congratulations you have learned the basics of a networked game
 :::
 
 ## Next Steps
@@ -512,11 +512,11 @@ Congratulations you have learned the basics of a networked game
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [NetworkManager](../../components/networkmanager)
-- [NetworkBehaviour](../../mlapi-basics/networkbehavior)
-- [Networkvariable](../../mlapi-basics/networkvariable)
+- [NetworkBehaviour](../../basics/networkbehavior)
+- [Networkvariable](../../basics/networkvariable)
 - [RPC](../../advanced-topics/messaging-system)
 
 
 :::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Fernando Cortez, Unity. 
+This guide would not have been possible without the hard work and support of Fernando Cortez, Unity.
 :::

@@ -14,7 +14,7 @@ If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buM
 Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Unity MLAPI:
 
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
-- Errors for RPC postfix naming patterns do not show in your IDE. 
+- Errors for RPC postfix naming patterns do not show in your IDE.
 - MLAPI RPCs do not support arrays yet.
 - Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for MLAPI.
 - Prefabs need to be added to the prefab registration list for MLAPI.
@@ -26,7 +26,7 @@ Review the following limitations for upgrade and migrations from previous versio
 It is recommended that you back up your project before proceeding with the migration. For example:
 
 * Create a copy of your entire project folder.
-* Use source control software, like Git. 
+* Use source control software, like Git.
 
 :::bestpractice
 We recommend using both methods to backup your project. This gives you a copied project and tracking through committed changes and history.
@@ -34,7 +34,7 @@ We recommend using both methods to backup your project. This gives you a copied 
 
 ## Install MLAPI and restart Unity
 
-See [Installation](installation.md) for more information. 
+See [Installation](installation.md) for more information.
 
 :::note
 If you install Git for the first time, you will need to restart your system.
@@ -44,17 +44,17 @@ If you install Git for the first time, you will need to restart your system.
 
 Use the `Invoke` method on the `NetworkBehaviour` to invoke MLAPI, instead of calling the method directly like in UNet.
 
-See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information.
+See [NetworkBehaviour](../basics/networkbehaviour.md) for more information.
 
-##  NetworkManager 
+##  NetworkManager
 
 UNET’s `NetworkManager` is also called `NetworkManager` in the MLAPI and works in a similar way.
 
 :::note
-You cannot inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET. 
+You cannot inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET.
 :::
 
-## Replace NetworkManagerHUD 
+## Replace NetworkManagerHUD
 
 Currently MLAPI offers no replacment for the NetworkMangerHUD.
 
@@ -145,7 +145,7 @@ public class MyMLAPIExample : NetworkBehaviour
 
 </Tabs>
 
-See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
+See [NetworkBehaviour](../basics/networkbehaviour.md) for more information.
 
 ## NetworkStart
 
@@ -173,7 +173,7 @@ public class MyMLAPIExample : NetworkBehaviour
 
 </Tabs>
 
-## Replace SyncVar 
+## Replace SyncVar
 
 Replace `SyncVar` with `NetworkVariable` everywhere in your project.
 
@@ -275,7 +275,7 @@ public void Update(){
 
 </Tabs>
 
-See [NetworkVariable](../mlapi-basics/networkvariable.md) for more information.
+See [NetworkVariable](../basics/networkvariable.md) for more information.
 
 
 ## Replace SyncList with NetworkList
@@ -329,7 +329,7 @@ void OnIntChanged(NetworkListEvent<int> changeEvent)
 
 </Tabs>
 
-## Replace Command/ClientRPC 
+## Replace Command/ClientRPC
 
 UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in the MLAPI which works in a similar way.
 
@@ -381,7 +381,7 @@ In MLAPI RPC function names must end with a `ClientRpc/ServerRpc` suffix.
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
 
-## Replace OnServerAddPlayer  
+## Replace OnServerAddPlayer
 
 Replace `OnServerAddPlayer` with `ConnectionApproval` everywhere in your project.
 
@@ -424,7 +424,7 @@ Server-only example:
 using MLAPI;
 using MLAPI.Spawning;
 
-private void Setup() 
+private void Setup()
 {
     NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
     NetworkManager.Singleton.StartHost();
@@ -439,7 +439,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
     // The prefab hash. Use null to use the default player prefab
     // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
-    
+
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
     callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
 }
@@ -452,7 +452,7 @@ See [Connection Approval](../getting-started/connection-approval.md) for more in
 
 ## Replace NetworkServer.Spawn with NetworkObject.Spawn
 
-Replace `NetworkServer.Spawn`  with `NetworkObject.Spawn` everywhere in your project. 
+Replace `NetworkServer.Spawn`  with `NetworkObject.Spawn` everywhere in your project.
 
 <Tabs
   className="unique-tabs"
@@ -498,7 +498,7 @@ go.GetComponent<NetworkObject>().Spawn();
 
 </Tabs>
 
-See [Object Spawning](../mlapi-basics/object-spawning.md) for more information.
+See [Object Spawning](../basics/object-spawning.md) for more information.
 
 ## Custom Spawn Handlers
 
@@ -555,7 +555,7 @@ public bool IsVisibleToPlayer(NetworkObject networkObject, NetworkClient client)
 
 </Tabs>
 
-See [Object Visbility](../mlapi-basics/object-visibility.md) to learn more about MLAPIs network visiblity check.
+See [Object Visbility](../basics/object-visibility.md) to learn more about MLAPIs network visiblity check.
 
 ## Update SceneManagement
 

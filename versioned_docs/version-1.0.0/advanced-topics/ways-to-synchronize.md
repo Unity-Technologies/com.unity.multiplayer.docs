@@ -11,6 +11,6 @@ For starters, utilizing the messaging system. The messaging system provides send
 
 ## INetworkedVar
 
-Another method is to use the `NetworkVariable` system to be synced by the library rather than by the developer. The `NetworkVariable` system supports syncing of data to new users in the spawn call automatically and delta compression. 
+Another method is to use the `NetworkVariable` system to be synced by the library rather than by the developer. The `NetworkVariable` system supports syncing of data to new users in the spawn call automatically and delta compression.
 
-See [NetworkVariable](../mlapi-basics/networkvariable.md) for details.
+See [NetworkVariable](../basics/networkvariable.md) for details.

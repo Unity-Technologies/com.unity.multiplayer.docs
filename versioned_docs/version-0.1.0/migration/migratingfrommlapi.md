@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 This upgrade guide targets projects using the MLAPI version 12.1.7 and earlier that were installed by the MLAPI installer or by cloning the source code from Github.
 
 :::important
-If your project uses a Package Manager version of Unity MLAPI, this guide is not relevant. 
+If your project uses a Package Manager version of Unity MLAPI, this guide is not relevant.
 :::
 
 The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity ecosystem, we are providing it in a Unity package.
@@ -31,7 +31,7 @@ This step is **required**: Upgrading to the package version of MLAPI can cause i
 Backup your project using the following recommended methods:
 
 * Create a copy of your entire project folder.
-* Use source control software, like Git. 
+* Use source control software, like Git.
 
 :::bestpractice
 We recommend using both methods to backup your project. This gives you a copied project and tracking through committed changes and history.
@@ -39,11 +39,11 @@ We recommend using both methods to backup your project. This gives you a copied 
 
 ##  Upgrade to Unity MLAPI
 
-Manually upgrading from the `.dll` version installed by MLAPI to the new package version breaks all MLAPI component references in your scenes and prefabs. This is the case because MLAPI references components using GUIDs, which work differently for packages than for `.dll`s. 
+Manually upgrading from the `.dll` version installed by MLAPI to the new package version breaks all MLAPI component references in your scenes and prefabs. This is the case because MLAPI references components using GUIDs, which work differently for packages than for `.dll`s.
 
 To smoothly upgrade you to the new version of MLAPI, we have created an upgrade tool.
 
-To start upgrading, add the upgrade tool to your project by using the **Add package from git URL..** option in the Package Manager window. Use the following URL: 
+To start upgrading, add the upgrade tool to your project by using the **Add package from git URL..** option in the Package Manager window. Use the following URL:
 
 ```html
 https://github.com/Unity-Technologies/mlapi-community-contributions.git?path=/com.unity.multiplayer.mlapi-patcher
@@ -62,7 +62,7 @@ Do not remove the old version of MLAPI yet. It will still be used in the next st
 
 ## 2. Updating Script References
 
-Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version. 
+Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version.
 
 Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
 
@@ -88,9 +88,9 @@ In the Patcher window, select **Installer** or **Source** button:
 </TabItem>
 <TabItem value="tab2">
 
-1. Select **Source**. 
-1. The window prompts you to link a MLAPI source directory. 
-1. Take the directory in your project containing the MLAPI source and drop it into the field. 
+1. Select **Source**.
+1. The window prompts you to link a MLAPI source directory.
+1. Take the directory in your project containing the MLAPI source and drop it into the field.
 1. Select **Update Script References**.
 
 </TabItem>
@@ -132,7 +132,7 @@ The page also includes information on nested serial types.
 
 ### SyncVars
 
-SyncVars have been removed in Unity MLAPI. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
+SyncVars have been removed in Unity MLAPI. Convert your existing SyncVars into [NetworkVariables](../basics/networkvariable).
 
 ## 4.5 Troubleshooting
 

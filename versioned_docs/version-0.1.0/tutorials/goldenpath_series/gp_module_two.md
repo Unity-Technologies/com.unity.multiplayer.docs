@@ -1,7 +1,7 @@
 ---
 id: goldenpath_two
 title: Golden Path Module Two
-description: Tutorial covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
+description: Tutorial covering, Network variables (client and server-controlled), Network transforms, and RPCs.
 ---
 
 In this Guide we will be covering the following:
@@ -26,14 +26,14 @@ import Createclone from '../../shared/_create_clone_goldenpath.md';
 1. Open Unity Hub.
 1. Select `GoldenPath_Two` from the list of projects displayed.
 
-## Introducing a Server-controlled Network Variable 
+## Introducing a Server-controlled Network Variable
 
 This section adds a Server-controlled Network Variable to the project.
- 
+
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkVariableTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab, click **Add Component**. 
+1. In the **Player** prefab Inspector tab, click **Add Component**.
 1. Click **Scripts**, and add the `NetworkVariableTest.cs` script you created earlier.
 1. Open the `NetworkVariableTest.cs` script.
 1. Edit the `NetworkVariableTest.cs` script to match the following.
@@ -81,7 +81,7 @@ public class NetworkVariableTest : NetworkBehaviour
             if (t_now - last_t > 0.5f)
             {
                 last_t = t_now;
-                Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: "  + 
+                Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: "  +
                     ClientNetworkVariable.Value);
             }
         }
@@ -91,7 +91,7 @@ public class NetworkVariableTest : NetworkBehaviour
             if (t_now - last_t > 0.5f)
             {
                 last_t = t_now;
-                Debug.Log("Client set its var to: " + ClientNetworkVariable.Value + ", has server var at: "  + 
+                Debug.Log("Client set its var to: " + ClientNetworkVariable.Value + ", has server var at: "  +
                     ServerNetworkVariable.Value);
             }
         }
@@ -106,14 +106,14 @@ public class NetworkVariableTest : NetworkBehaviour
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
-### Testing Server-controlled Network Variables 
+### Testing Server-controlled Network Variables
 
 Now we will test the Server-controlled Network Variable works as we intended.
 
-1. Select **File > Build and Run**. 
+1. Select **File > Build and Run**.
 1. Stop the player.
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
-1. After a brief delay, the client and server will spawn.  
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper).
+1. After a brief delay, the client and server will spawn.
 1. You should see the following in the console, showing that the server and client are sharing the variable:
 
 
@@ -138,14 +138,14 @@ Since the printing to the terminal does not happen on every tick, the numbers wi
 
 This section adds a Network Transform component that will move the player.
 
-1. Click **Player** prefab. 
+1. Click **Player** prefab.
 1. Click **Add Component** in the Inspector Tab.
 1. Select **MLAPI** from the list shown.
 1. Select the **Network Transform** component from the list shown.
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkTransformTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab, click **Add Component**. 
+1. In the **Player** prefab Inspector tab, click **Add Component**.
 1. Click **Scripts**, and add the `NetworkTransformTest.cs` script you created earlier.
 1. Open the `NetworkTransformTest.cs` script.
 1. Edit the `NetworkTransformTest.cs` script to match the following.
@@ -184,10 +184,10 @@ public class NetworkTransformTest : NetworkBehaviour
 
 Now we check that the Network Transform functions correctly.
 
-1. Select **File > Build and Run**. 
-1. Stop the player. 
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
-1. After a brief delay, the client and server will spawn. 
+1. Select **File > Build and Run**.
+1. Stop the player.
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper).
+1. After a brief delay, the client and server will spawn.
 1. You should see the player capsule moving in a circle on both the client and the server.
 
 <iframe src="https://www.youtube.com/embed/CQN_YUqdPfU?playlist=CQN_YUqdPfU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
@@ -204,7 +204,7 @@ This section adds some basic RPCs to the project.
 1. Click the **Player** prefab.
 1. In the  **Player** prefab Inspector tab, click **Add Component**.
 1. Click **Scripts**, and add the `RpcTest.cs` script you created earlier.
-1. Right Click **Player** prefab. 
+1. Right Click **Player** prefab.
 1. Open the `RpcTest.cs` script.
 1. Edit the `RpcTest.cs` script to match the following.
 
@@ -241,7 +241,7 @@ public class RpcTest : NetworkBehaviour
             TestClientRpc(value);
         }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -267,12 +267,12 @@ public class RpcTest : NetworkBehaviour
 Now we will test that the client and server are both recieving the RPCs correctly.
 
 
-1. Select **File > Build and Run**. 
+1. Select **File > Build and Run**.
 1. Stop the player.
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
-1. After a brief delay, the client and server will spawn.  
-1. In the console, you should expect to see the client and server sending RPC messages to each other. 
-1. The client kicks off the exchange in its `Update` call the first time with a counter value of 0.  
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper).
+1. After a brief delay, the client and server will spawn.
+1. In the console, you should expect to see the client and server sending RPC messages to each other.
+1. The client kicks off the exchange in its `Update` call the first time with a counter value of 0.
 1. It then makes an RPC call to the server with the next value.  The server receives this and calls the client.  In the console view, you will see:
 
 ```
@@ -290,7 +290,7 @@ Client Received the RPC #3
 
 
 :::note Congrats!
-Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation. 
+Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation.
 :::
 
 ## Next Steps
@@ -298,12 +298,12 @@ Congratulations you have learned how to use some of the basic building blocks of
 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
-- [Network variables (client and server-controlled)](../../mlapi-basics/networkvariable.md)
+- [Network variables (client and server-controlled)](../../basics/networkvariable.md)
 - [Network transforms](../../components/networktransform.md)
 - [RPCs](../../advanced-topics/messaging-system.md)
 
 
 
 :::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
+This guide would not have been possible without the hard work and support of Matt Walsh, Unity.
 :::

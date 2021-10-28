@@ -4,15 +4,15 @@ title: RPC vs NetworkVariable
 sidebar_label: RPC vs NetworkVariable
 ---
 
-MLAPI has two main methods of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other. 
+MLAPI has two main methods of syncing information between players. `RPC` (Remote Procedure Call) and replicated state (`NetworkVariable`). They both send messages over the network. The logic and your design considerations around how they send messages is what will make you choose one over the other.
 
 ## RPCs
 
-The concept of an `RPC` is common not only in video games but in the software industry in general. They are ways to call methods on objects that are not in the same executable. 
+The concept of an `RPC` is common not only in video games but in the software industry in general. They are ways to call methods on objects that are not in the same executable.
 
-At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters. 
+At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters.
 
-When calling an `RPC`, you call a method remotely on an object that could be anywhere in the world. They are "events" you can trigger when needed. 
+When calling an `RPC`, you call a method remotely on an object that could be anywhere in the world. They are "events" you can trigger when needed.
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
@@ -26,7 +26,7 @@ At a high level, a `NetworkVariable` is a variable with its value tracked by the
 
 If you change your variable's value on your side, others will see the latest value on their side.
 
-For more information on `NetworkVariable`s see [NetworkVariable](../mlapi-basics/networkvariable.md)
+For more information on `NetworkVariable`s see [NetworkVariable](../basics/networkvariable.md)
 
 ## Choosing between NetworkVariables or RPCs
 
@@ -55,9 +55,9 @@ It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the d
 If you have a temporary event like an explosion, you do not need a replicated state for this. It would not make sense. You would have an "unexploded" state that would need to be synced everytime a new player connected? From a design perspective, you might not want to represent these events as state.
 
 An explosion could use an `RPC` for the event, but the effect of the explosion should be using `NetworkVariable`s ( for example player's knockback and health decrease). A newly connected player doesn't care about an explosion that happened 5 seconds ago. They do care about the current health of the players around that explosion though.
-  
+
 Actions in Boss Room are a great example for this. The area of effect action (`AoeAction`) triggers an `RPC` when the action is activated (showing a VFX around the affected area). The imp's health (`NetworkVariable`s) is updated. If a new player connects, they will see the damaged imps. We would not care about the area of effect ability's VFX, which works great with a transient `RPC`.
-   
+
 `AoeActionInput.cs` Shows the input being updated client side and not waiting for the server. It then calls an `RPC` when clicking on the area to affect.
 
 ```csharp reference
@@ -78,7 +78,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 ```
 
 :::tip
-If you want to make sure two variables are received at the same time, `RPC`s are great for that. 
+If you want to make sure two variables are received at the same time, `RPC`s are great for that.
 
 If you change `NetworkVariable` "a" and "b", there is no guarantee they will both be received client side at the same time. Sending them as two parameters in the same `RPC` allows to make sure they will be received at the same time client side.
 :::
@@ -91,4 +91,3 @@ If you change `NetworkVariable` "a" and "b", there is no guarantee they will bot
 `NetworkVariable`s are great for managing state, to make sure everyone has the latest value. Use them when you want to make sure newly connected players get an up to date world state.
 
 `RPC`s are great for sending transient events. Use them when transmiting short lived events.
-
