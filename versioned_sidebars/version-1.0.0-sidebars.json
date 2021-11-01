@@ -120,10 +120,6 @@
               "id": "version-1.0.0/transport-utp/install"
             }
           ]
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/advanced-topics/networkprofiler-window"
         }
       ]
     },
