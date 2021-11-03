@@ -22,7 +22,7 @@ Unnamed messages can be thought of as a single sending channel. A message sent h
 private void Start()
 {
     //Receiving
-    CustomMessagingManager.OnUnnamedMessage += ((senderClientId, reader) =>
+    NetworkManager.CustomMessagingManager.OnUnnamedMessage += ((senderClientId, reader) =>
     {
         reader.ReadValueSafe(out string message); //Example
     });
@@ -30,7 +30,7 @@ private void Start()
     //Sending
     using FastBufferWriter writer = new FastBufferWriter(maxSize, Allocator.Temp);
     writer.WriteValueSafe(message);
-    CustomMessagingManager.SendUnnamedMessage(clientId, writer, NetworkDelivery.Reliable); //NetworkDelivery is optional.
+    NetworkManager.CustomMessagingManager.SendUnnamedMessage(clientId, writer, NetworkDelivery.Reliable); //NetworkDelivery is optional.
 }
 
 ```
@@ -45,7 +45,7 @@ If you want a completed messaging system, you can use named messages. The receiv
 private void Start()
 {
     //Receiving
-    CustomMessagingManager.RegisterNamedMessageHandler("myMessageName", (senderClientId, reader) =>
+    NetworkManager.CustomMessagingManager.RegisterNamedMessageHandler("myMessageName", (senderClientId, reader) =>
     {
         reader.ReadValueSafe(out string message); //Example
     });
@@ -53,6 +53,6 @@ private void Start()
     //Sending
     using FastBufferWriter writer = new FastBufferWriter(maxSize, Allocator.Temp);
     writer.WriteValueSafe(message);
-    CustomMessagingManager.SendNamedMessage("myMessageName", clientId, writer, NetworkDelivery.Reliable); //NetworkDelivery is optional.
+    NetworkManager.CustomMessagingManager.SendNamedMessage("myMessageName", clientId, writer, NetworkDelivery.Reliable); //NetworkDelivery is optional.
 }
 ```
