@@ -558,6 +558,10 @@ module.exports = {
               to: '/docs/0.1.0/getting-started/about',
               from: '/docs/0.1.0/getting-started/about-mlapi.',
             },
+            {
+              to: `/docs/tools/install-tools`,
+              from: `/docs/tools-install-tooltip`,
+            },
       
     
           ]
