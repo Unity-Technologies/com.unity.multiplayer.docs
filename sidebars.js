@@ -128,11 +128,6 @@ module.exports = {
             "id": "transport-utp/install"
           }
         ]
-      },
-
-      {
-        "type": "doc",
-        "id": "advanced-topics/networkprofiler-window"
       }
     ]
   },

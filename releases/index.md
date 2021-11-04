@@ -38,7 +38,7 @@ For our October 2021 release, the following major features were released:
 
 ### Netcode for GameObjects (Netcode)
 
-[v1.0.0 Netcode release](/releases/multiplayer/release-1.0.0) supports Unity versions 2020.3 and later
+[v1.0.0 Netcode pre-release](/releases/multiplayer/1.0.0) supports Unity versions 2020.3 and later
 The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
 
 * Streamlined RPC layer with support for [serialization of custom data types](/docs/advanced-topics/custom-serialization)
