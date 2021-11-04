@@ -1,16 +1,44 @@
 ---
 id: about-transport-utp
-title: About the Transport UTP Wrapper
-description: Unity Transport provides a UTP wrapper for the Netcode for GameObjects NetworkTransport interface.
+title: Transports
+description: A transport collects messages from your application and transmits them safely over the network. It ensures that all packets arrive and in order, if needed.
 ---
 
-Unity Transport provides a wrapper of the Netcode for GameObjects (Netcode) NetworkTransport interface in the [`com.unity.multiplayer.transport.utp`](../transport-api/introduction.md) package.
+Netcode for GameObjects (Netcode) uses [Unity’s UNet Transport Layer API](https://docs.unity3d.com/Manual/UNetUsingTransport.html) by default and can support the [Unity Transport Package (UTP)](#unity-transport-package-utp) or [custom transports with the UTP wrapper](#the-utp-wrapper-and-custom-transports) as alternatives. UNet is a deprecated solution, so we recommend considering UTP or custom alternatives.
 
-The `Unity.Netcode.NetworkTransport` abstract class interface can be implemented by any networking transport. It is the skeleton needed by transport library authors to code for and to implement in order to make their transport libraries compatible with what we’ve called Netcode’s Transport Interface Contract. Technically, this is an implementation of Netcode’s NetworkTransport’s interface. Essentially, transport library developers derive a class of the abstract class defined by `Unity.Netcode.NetworkTransport` and implement it for usage.
+## So what is a transport layer?
 
-Additional information will be provided as we continue development.
+The transport layer establishes communication between your application and different hosts in a network.
 
-See the following information:
+A transport layer can provide:
+* *Connection-oriented communication* to ensure a robust connection before exchanging data with a handshake protocol.
+* *Maintain order delivery* for your packets to fix any discrepancies from the network layer in case of packet drops or device interruption.
+* *Ensure data integrity* by requesting retransmission of missing or corrupted data through using checksums.
+* *Control the data flow* in a network connection to avoid buffer overflow or underflow--causing unnecessary network performance issues.
+* *Manage network congestion* by mediating flow rates and node overloads.
+* *Adjust data streams* to transmit as byte streams or packets.
 
-* [Install](install.md)
-* [API](../transport-api/introduction.md) 
+## Unity’s UNet Transport Layer API
+
+Although it is deprecated, [UNet](https://docs.unity3d.com/Manual/UNetUsingTransport.html) is the current default transport solution for Netcode. As UTP continues to become more robust, it will be the future default transport solution for Netcode.
+
+## Unity Transport Package (UTP)
+
+The Unity Transport Package (UTP) is an entire transport layer (unlike the UTP wrapper) that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](https://docs-multiplayer.unity3d.com/transport/1.0.0/introduction) for more information and how to [install](https://docs-multiplayer.unity3d.com/transport/1.0.0/install).
+
+## The UTP Wrapper and Custom Transports
+
+The UTP wrapper enables any networking transport to work with Netcode. It is the skeleton other transport libraries need to become compatible with the Netcode Transport Interface by using the `Unity.Netcode.NetworkTransport` abstract class.
+
+<!-- Link to [API reference](../transport-api/introduction.md) and incorporate better into content.
+
+To implement the UTP wrapper with your transport solution, follow these steps:
+[Add steps here] -->
+
+### Community Transports or Writing Your Own
+
+You can use any of the community contributed custom transport implementations or write your own.
+
+The community transports are interchangeable transport layers for Netcode and can be installed with the Unity Package Manager. After installation, the transport package will appear in the **Select Transport** dropdown of the `NetworkManager`. Check out the [Netcode community contributed transports](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/Transports) for more information.
+
+To start writing your own and contributing to the community, check out the [Netcode community contribution repository](https://github.com/Unity-Technologies/multiplayer-community-contributions) for starting points and how to add your content.

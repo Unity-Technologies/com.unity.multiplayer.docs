@@ -99,6 +99,10 @@ module.exports = {
         "id": "advanced-topics/physics"
       },
       {
+        "type": "doc",
+        "id": "transport-utp/about-transport-utp"
+      },
+      {
         "collapsed": true,
         "type": "category",
         "label": "Relay",
@@ -109,26 +113,6 @@ module.exports = {
           },
         ]
       },
-
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Transports",
-        "items": [
-          {
-            "type": "doc",
-            "id": "advanced-topics/custom-transports"
-          },
-          {
-            "type": "doc",
-            "id": "transport-utp/about-transport-utp"
-          },
-          {
-            "type": "doc",
-            "id": "transport-utp/install"
-          }
-        ]
-      }
     ]
   },
   {
