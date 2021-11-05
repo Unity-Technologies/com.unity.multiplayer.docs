@@ -4,7 +4,7 @@ title: Limiting the maximum number of players
 ---
 
 
-Netcode for Gameobjects (Netcode) provides a way to implement a [connection approval delegate](../mlapi-api/MLAPI.NetworkManager.ConnectionApprovedDelegate.md) that can reject incoming connections based on custom logic.
+Netcode for Gameobjects (Netcode) provides a way to implement a [connection approval delegate](../api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate) that can reject incoming connections based on custom logic.
 ​
 
 

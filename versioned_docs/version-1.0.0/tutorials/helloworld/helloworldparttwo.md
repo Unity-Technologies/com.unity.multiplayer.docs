@@ -203,7 +203,10 @@ namespace HelloWorld
 
         public override void OnNetworkSpawn()
         {
-            Move();
+            if (IsOwner)
+            {
+                Move();
+            }
         }
 
         public void Move()
@@ -296,7 +299,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```csharp
         public override void OnNetworkSpawn()
         {
-            Move();
+            if (IsOwner)
+            {
+                Move();
+            }
         }
 ```
 </details>

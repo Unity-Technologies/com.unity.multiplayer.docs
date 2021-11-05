@@ -16,11 +16,11 @@ module.exports = {
         "items": [
           {
             type: 'doc',
-            id: 'multiplayer/release-1.0.0',
+            id: 'multiplayer/1.0.0',
           },
           {
             type: 'doc',
-            id: 'multiplayer/release-0-1-0',
+            id: 'multiplayer/0-1-0',
           },
       
         ]

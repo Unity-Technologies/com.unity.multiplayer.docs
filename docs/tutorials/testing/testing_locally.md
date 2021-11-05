@@ -4,13 +4,13 @@ title: Testing multiplayer games locally
 description: Guide covering the available workflows for testing multiplayer games locally.
 ---
 Testing a multiplayer game presents unique challenges:
- - You need to run multiple instances of the game in order to test multiplayer scenarios. 
+ - You need to run multiple instances of the game in order to test multiplayer scenarios.
  - You also need to iterate quickly on  custom code and asset changes and validate  work in a multiplayer scenario.
  - You need to be able to debug  work in a multiplayer scenario using editor tools.
 
 Currently, Unity does not provide any workflow that covers all of these requirements. (See our [roadmap here](https://unity.com/roadmap/unity-platform/multiplayer-networking))
 
-There will always be a need to validate work in the target distribution format (ie. on platform) and the way to do it is by creating [Player Builds](#player-builds). 
+There will always be a need to validate work in the target distribution format (ie. on platform) and the way to do it is by creating [Player Builds](#player-builds).
 
 :::important
 Player builds do not meet the quick iteration and easy debuggability using editor tools requirement. As such the current recommended workflow for local iteration is [ParrelSync](#parrelsync).
@@ -22,7 +22,7 @@ Player builds do not meet the quick iteration and easy debuggability using edito
 This approach is great when we need to verify work on the target platform or with a wider group of testers.
 :::
 
-First step is to build an executable. 
+First step is to build an executable.
 
 1. Navigate to  `File->Build Settings` in the menu bar.
 1. Click `Build`.
@@ -47,15 +47,15 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 ## ParrelSync
 ![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
 
-[**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
+[**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project.
 
 **ParrelSync** works by making a copy of the original project folder and creating symbolic links to the `Asset` and `Project Settings` folders back from the original project.
 
-We use **ParrelSync** for local iteration in [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
+We use **ParrelSync** for local iteration in [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
 
 :::important
 
-**ParrelSync** relies on symbolic links and partial copies of the original project folder structure - generally it is completely safe. 
+**ParrelSync** relies on symbolic links and partial copies of the original project folder structure - generally it is completely safe.
 
 To ensure that no bug in any of the software you use can destroy your work - it is recommended that you consistently backup your project or use a version control system. Some common examples are:
 - [Git](https://git-scm.com/)
@@ -71,7 +71,7 @@ Follow the installation instructions on **ParrelSync** repo [page](https://githu
 ### Usage
  - Navigate to `ParrelSync->Preferences` in the menu bar to open the preferences window.
  - Ensure that both Options are selected as shown below
-  
+
 [parrelsync-preferences](../)
 
 :::important
@@ -96,5 +96,5 @@ By default **ParrelSync** prevents asset serialization in all clone instances an
  - Creating a fork of any git repository that your project relies upon in production could help avoid bad surprises if the repo gets taken down or introduces an undesirable change. You should fork **ParrelSync** before using it in your live project.
 
 :::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Philipp Deschain, Unity. 
+This guide would not have been possible without the hard work and support of Philipp Deschain, Unity.
 :::

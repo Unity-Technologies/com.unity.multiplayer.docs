@@ -51,7 +51,7 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 
 **ParrelSync** works by making a copy of the original project folder and creating symbolic links to the `Asset` and `Project Settings` folders back from the original project.
 
-We use **ParrelSync** for local iteration in [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
+We use **ParrelSync** for local iteration in [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
 
 :::important
 

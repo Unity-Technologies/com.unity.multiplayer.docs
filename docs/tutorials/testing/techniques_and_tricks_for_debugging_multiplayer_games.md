@@ -4,21 +4,21 @@ title: Techniques and tricks for debugging multiplayer games
 description: Guide covering some of the techniques that are either specific to or are useful when debugging multiplayer games.
 ---
 
-When debugging games, multiplayer games included, it helps to know the toolbag that we have at our disposal. 
+When debugging games, multiplayer games included, it helps to know the toolbag that we have at our disposal.
 
 All the conventional game development wisdom applies, however certain scenarios that are typical to multiplayer game development call for special tricks and approaches.
 
-Below is a list of practices and techniques that we use daily when working on the Boss Room sample. These recommendations, we find, compound into a more comfortable working experience when developing multiplayer games with Unity. 
+Below is a list of practices and techniques that we use daily when working on the Boss Room sample. These recommendations, we find, compound into a more comfortable working experience when developing multiplayer games with Unity.
 
 ## Debugging tricks for multiplayer games
 
-### 1) Use ParrelSync clone-based workflow during development.
+### Use ParrelSync clone-based workflow during development.
 
 [ParrelSync workflow](testing_locally.md#parrelsync) is faster than creating builds and it allows you to debug the separate editor instances via separate IDE debuggers.
 
 Use ParrelSync to run separate editor instances for your Host/Server and Client.
- 
-### 3) Use debug drawing techniques extensively.
+
+### Use debug drawing techniques extensively.
 
 Unity engine has two debug rendering APIs that are very useful for the purposes of multiplayer game debugging:
  - [Debug.DrawRay](https://docs.unity3d.com/ScriptReference/Debug.DrawRay.html)
@@ -44,13 +44,13 @@ public class UsingLineRendererForDebugging : MonoBehaviour
 {
     LineRenderer m_lineRenderer;
     Vector3 m_positions;
-    
+
     void Awake()
     {
         //we would want to cache our reference to the line renderer component to avoid having to do expensive component lookup
         m_lineRenderer = gameObject.AddComponent<LineRenderer>();
 
-        //we know that we're going to be drawing a line between two points, so we need 
+        //we know that we're going to be drawing a line between two points, so we need
         m_positions = new Vector3[2];
     }
 
@@ -73,12 +73,12 @@ public class UsingLineRendererForDebugging : MonoBehaviour
 }
 ```
 
-### 5) Use debug logging for situations where visual debugging is not appropriate.
+### Use debug logging for situations where visual debugging is not appropriate.
 
 Text-based logging is valuable for tracking down non-visual events (such as RPCs) and information.
 It is a good idea to include network tick and client id in log messages so that it's easier to build a timeline when reading the logs.
 
-### 6) Use the artificial network conditioning tools.
+### Use the artificial network conditioning tools.
 
 The options that are currently available to us are covered in the related [article on artificial network conditioning tools](testing_with_artificial_conditions.md).
 
@@ -86,11 +86,11 @@ Of particular interest to us is the application-level network conditioning provi
 
 Artificial network conditions allow the errors and oddities that are hidden by nigh-absence of lag when running your instances locally to show up, and it's a good thing!
 
-### 7) Capturing screen recordings of the game instances.
+### Capturing screen recordings of the game instances.
 
 First of all, it is very valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
-When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls. 
+When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls.
 
 In debug builds it's a great idea to show the Peer ID and the current frame number somewhere in the corner of the screen - this way there is a visual reference to the number of the frame we're currently observing on the recording.
 

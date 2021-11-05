@@ -103,27 +103,8 @@
           ]
         },
         {
-          "collapsed": true,
-          "type": "category",
-          "label": "Transports",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0.0/advanced-topics/custom-transports"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/transport-utp/about-transport-utp"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/transport-utp/install"
-            }
-          ]
-        },
-        {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/networkprofiler-window"
+          "id": "version-1.0.0/transport-utp/about-transport-utp"
         }
       ]
     },

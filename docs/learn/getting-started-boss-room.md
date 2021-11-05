@@ -53,7 +53,7 @@ To open the project for the first time:
 
 1. In your Unity Hub, double-click the project.
 1. Navigate to the Editor window.
-2. Then under the **Project** tab, go to **Assets** > **BossRoom** > **Scenes** and double-click on the **Startup** scene.
+2. Then under the **Project** tab, go to **Assets** > **Boss Room** > **Scenes** and double-click on the **Startup** scene.
 3. Click **Play**. The Boss Room menu scene loads.
 
 
