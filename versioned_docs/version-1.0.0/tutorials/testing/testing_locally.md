@@ -72,7 +72,7 @@ Follow the installation instructions on **ParrelSync** repo [page](https://githu
  - Navigate to `ParrelSync->Preferences` in the menu bar to open the preferences window.
  - Ensure that both Options are selected as shown below
   
-[parrelsync-preferences](../)
+![parrelsync-preferences](/img/parrelsync-preferences.png)
 
 :::important
 
