@@ -19,7 +19,7 @@ These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0.  For imfor
 
 <div class="table-columns-plain">
 
-|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="playercontroller">Player Controller</a></div>| 
+|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="corefeatures">Core Features</a></div>| 
 | --- | 
 Dilmer teaches you many more features available in this package: 
 - NetworkVariable types and how to use them 
