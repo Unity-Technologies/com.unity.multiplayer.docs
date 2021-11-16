@@ -512,55 +512,28 @@ module.exports = {
       "label": "Community Contributions",
       "items": [
         {
-        "collapsed": true,
-        "type": "category",
-        "label": "Dapper Dino Tutorials",
-        "items": [
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-video"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/makeamultiplayergame"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/lobbypassword"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/bossroomsample"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-rpcs"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-networkvariables"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-objectspawning"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-playernames"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/lobbycreation"
-          },
-          {
-          "type": "doc",
-          "id": "learn/dapper/dapper-variable-permissions"
-          },
-
-                ]
+      
+              "collapsed": true,
+              "type": "category",
+              "label": "Dimer Tutorials",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "learn/dilmer/dilmer-video"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dilmer/project-setup"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dilmer/corefeatures"
+                }
+              ]
+            }
+          ]
         },
-              ],
-    },
+  
     {
       "type": "doc",
        "id": "learn/faq"

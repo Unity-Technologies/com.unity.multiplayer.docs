@@ -17,7 +17,7 @@ Netcode is a mid-level networking library built for the Unity game engine to abs
 
 | Core Concepts | Debugging | Learn More |
 | -- | -- | -- |
-| [Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../basics/scene-management.md) | [Logging](../basics/logging.md)<br/>[Troubleshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) | [References](../learn/index.md)<br/>[Boss Room](../learn/getting-started-boss-room.md)<br/>[Bite Size Samples](../learn/bitesize-introduction.md)<br/>[Dapper Dino Tutorials](../learn/dapper/dapper-video.md)<br/>[FAQs](../learn/faq.md) |
+| [Networking](../getting-started/connection-approval.md)<br/>[Components](../components/networkmanager.md)<br/>[Objects](../basics/object-spawning.md)<br/>[Messaging System](../advanced-topics/messaging-system.md)<br/>[Serialization](../advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](../basics/scene-management.md) | [Logging](../basics/logging.md)<br/>[Troubleshooting](../troubleshooting/troubleshooting.md)<br/>[Error Messages](../troubleshooting/error-messages.md) | [References](../learn/index.md)<br/>[Boss Room](../learn/getting-started-boss-room.md)<br/>[Bite Size Samples](../learn/bitesize-introduction.md)<br/>[Dilmer Tutorials](../learn/dimer/dilmet-video.md)<br/>[FAQs](../learn/faq.md) |
 
 </div>
 
