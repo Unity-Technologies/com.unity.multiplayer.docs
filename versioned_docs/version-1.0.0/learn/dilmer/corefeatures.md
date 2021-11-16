@@ -5,8 +5,7 @@ description: Introduction to how to utilise the core features of the Netcode for
 ---
 
 :::important
-These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease. For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
-:::
+These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease. 
 
 This Unity Multiplayer tutorial will teach you how to implement:
 - NetworkVariable types and how to use them 
@@ -15,7 +14,7 @@ This Unity Multiplayer tutorial will teach you how to implement:
 - Player client controller and Network Behaviors 
 - How and why should you use ServerRpc (Remote Procedure Calls)
 
-<Iframe url="<https://www.youtube.com/embed/rFCFMkzFaog"
+<Iframe url="https://www.youtube.com/embed/rFCFMkzFaog"
         width="854px"
         height="480px"
         id="myId"
