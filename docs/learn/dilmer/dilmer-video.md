@@ -12,7 +12,7 @@ These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0.  For imfor
 
 <div class="table-columns-plain">
 
-|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="projectsetup">How To Make A Game With Unity Multiplayer Netcode - Project Setup</a></div>| 
+|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="project-setup">How To Make A Game With Unity Multiplayer Netcode - Project Setup</a></div>| 
 | --- | 
 |Dilmer teaches you all about the new official Unity multiplayer solution and how to get it set up quickly in your own project with Unity 2021.1.f1 and 2020.3.x| 
 </div>
