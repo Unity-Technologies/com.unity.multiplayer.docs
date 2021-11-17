@@ -515,7 +515,7 @@ module.exports = {
       
               "collapsed": true,
               "type": "category",
-              "label": "Dimer Tutorials",
+              "label": "Dilmer Tutorials",
               "items": [
                 {
                   "type": "doc",

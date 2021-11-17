@@ -6,6 +6,7 @@ description: Introduction to how to utilise the core features of the Netcode for
 
 :::important
 These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease. 
+:::
 
 This Unity Multiplayer tutorial will teach you how to implement:
 - NetworkVariable types and how to use them 
