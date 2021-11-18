@@ -5,11 +5,6 @@ description: An introduction to the messaging system in Unity MLAPI, including R
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-:::contribution Community Contribution
-
-There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
-:::
-
 Netcode for GameObjects (Netcode) has two parts to its messaging system: RPCs and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance. This page will focus on RPCs.
 
 ## RPC: Remote Procedure Call
@@ -47,17 +42,17 @@ For more information see the wikipedia entry on [Remote Procedure Call's](https:
 
 See the following pages for more information:
 
-* [ClientRpc](message-system/clientrpc.md)
-* [ServerRpc](message-system/serverrpc.md)
-* [Reliability](message-system/reliabilty.md)
-* [Execution Table](message-system/execution-table.md)
-* [RPC Params](message-system/rpc-params.md)
-* * [Serialization Types and RPCs](message-system/../serialization/serialization-intro.md)
+- [ClientRpc](message-system/clientrpc.md)
+- [ServerRpc](message-system/serverrpc.md)
+- [Reliability](message-system/reliabilty.md)
+- [Execution Table](message-system/execution-table.md)
+- [RPC Params](message-system/rpc-params.md)
+  - [Serialization Types and RPCs](message-system/../serialization/serialization-intro.md)
 
 There is also some additional design advice on RPC's and some usage examples on the following pages:
 
-* [RPC vs NetworkVariable](../learn/rpcvnetvar.md)
-* [RPC vs NewtorkVariables Examples](../learn/rpcnetvarexamples.md)
+- [RPC vs NetworkVariable](../learn/rpcvnetvar.md)
+- [RPC vs NewtorkVariables Examples](../learn/rpcnetvarexamples.md)
 
 :::note Migration and Compatibility
 See [RPC Migration and Compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.

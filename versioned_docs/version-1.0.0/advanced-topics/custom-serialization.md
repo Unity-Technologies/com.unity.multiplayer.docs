@@ -37,7 +37,7 @@ The code generation for RPCs will automatically pick up and use these functions,
 
 You can also optionally use the same method to add support for `BufferSerializer<TReaderWriter>.SerializeValue()`, if you wish, which will make this type readily available within [`INetworkSerializable`](inetworkserializable.md) types:
 
-```c#
+```csharp
 // The class name doesn't matter here.
 public static class SerializationExtensions
 {  

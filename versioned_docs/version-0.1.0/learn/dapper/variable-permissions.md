@@ -5,7 +5,7 @@ description: Teaches you how to make data private for specific clientss
 ---
 
 :::important
-These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For imformation on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
 :::
 
 
