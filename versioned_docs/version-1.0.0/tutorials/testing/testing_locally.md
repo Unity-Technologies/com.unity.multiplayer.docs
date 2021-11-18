@@ -45,6 +45,13 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 :::
 
 ## ParrelSync
+
+:::caution
+
+ParallelSync is **not** supported by Unity.  More information on its usage is available [here](https://github.com/VeriorPies/ParrelSync). Troubleshooting information can be found [here](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs)
+
+:::
+
 ![parrelsync-bossroom-demo](/img/parrelsync-bossroom-demo.gif)
 
 [**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
