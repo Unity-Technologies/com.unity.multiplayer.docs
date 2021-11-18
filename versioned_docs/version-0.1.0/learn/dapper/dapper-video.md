@@ -6,7 +6,7 @@ title: MLAPI Tutorial Videos
 This section aims to collate a series of Multiplayer Unity Networking tutorial videos that teach various concepts of the new Unity Official Multiplayer solution MLAPI, all made by Dapper Dino. Learn more about Dapper Dino and his [Youtube channel](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) and don't forget to click the subscribe button.
 
 :::important
-These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For imformation on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
 :::
 
 
