@@ -9,7 +9,7 @@ These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease.
 :::
 
 
-This Unity Multiplayer tutorial will teach you how to implement connection approval so that clients have to send the correct password to be able to connect to the server.
+Dilmer teaches you all about the new official Unity multiplayer solution and how to get it set up quickly in your own project with Unity 2021.1.f1 and 2020.3.x
 
 <Iframe url="https://www.youtube.com/embed/d1FpS5hYlVE"
         width="854px"
