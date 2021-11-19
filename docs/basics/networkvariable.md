@@ -3,12 +3,6 @@ id: networkvariable
 title: NetworkVariable
 sidebar_label: NetworkVariable
 ---
-
-:::contribution Community Contribution
-
-There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
-:::
-
 At a high level, a `NetworkVariable` is a variable with its value tracked by the SDK. Its values are replicated to other nodes in your network regularly. When a client connects initially to a host, all relevant `NetworkVariable` latest values "state" will be replicated to that new client. Your state gets updated at regular intervals.
 
 `NetworkVariable` can be referenced in this doc as "state" or as "Netvars" or as replicated vars.
