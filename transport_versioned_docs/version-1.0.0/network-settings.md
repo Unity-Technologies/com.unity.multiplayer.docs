@@ -1,6 +1,6 @@
 ---
 id: network-settings
-title: Newtork Settings
+title: Network Settings
 ---
 
 The configuration of the `NetworkDriver` is defined using the `NetworkSettings` API. It might be required to change some of the default values of the parameters, that can be done as in the following example.
