@@ -505,6 +505,22 @@
               "id": "version-1.0.0/learn/dilmer/networkanimator"
             }
           ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Dapper Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dapper/dapper-video"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dapper/dapper-upgrade"
+            }
+          
+          ]
         }
       ]
     },

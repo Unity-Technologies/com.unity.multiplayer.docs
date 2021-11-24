@@ -524,6 +524,23 @@ module.exports = {
                   "id": "learn/dilmer/networkanimator"
                 }
               ]
+            },
+            {
+      
+              "collapsed": true,
+              "type": "category",
+              "label": "Dapper Tutorials",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "learn/dapper/dapper-video"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dapper/dapper-upgrade"
+                },
+              
+              ]
             }
           ]
         },
