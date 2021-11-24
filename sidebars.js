@@ -528,6 +528,10 @@ module.exports = {
                 {
                   "type": "doc",
                   "id": "learn/dilmer/corefeatures"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dilmer/networkanimator"
                 }
               ]
             }

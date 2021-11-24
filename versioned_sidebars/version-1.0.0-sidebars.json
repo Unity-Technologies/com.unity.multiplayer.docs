@@ -511,6 +511,9 @@
             {
               "type": "doc",
               "id": "version-1.0.0/learn/dilmer/corefeatures"
+            },           {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/networkanimator"
             }
           ]
         }

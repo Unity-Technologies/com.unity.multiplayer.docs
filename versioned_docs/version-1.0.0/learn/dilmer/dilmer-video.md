@@ -24,7 +24,20 @@ These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0.
 | Dilmer teaches you many more features available in this package: <ul><li> NetworkVariable types and how to use them </li><li>  Network Transforms to synchronize player position across the network</li><li>  Synchronization of Player HUD over many clients  </li><li>  Player client controller and Network Behaviors </li><li>  How and why should you use ServerRpc (Remote Procedure Calls)</li></ul>|
 </div>
 
+<div class="table-columns-plain">
 
+|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="networkanimator">Network Animator</a></div>| 
+| --- |
+| Dilmer takes a look at the Network Animator component and how you can synchronise animation states with other clients connected to the server or client-host. Features covered: 
+<ul>
+<li> NetworkAnimator component</li>
+<li> NetworkVariables Vector3 and permissions</li>
+<li> NetworkVariables with enum type for player state</li>
+<li>Using CharacterController to control the player</li>
+<li>Using ServerRpc to keep track of player state</li>
+<li>Animation state based on NetworkVariable player state</li>
+</ul>|
+</div>
 
 :::contribution Community Contribution
 Thank you to Dilmer Valecillos and his [Youtube channel](https://www.youtube.com/channel/UCHM37DnT_QGJT5Zyl4EmqcA) for the video tutorials! These contributions are a fantastic help to the community.
