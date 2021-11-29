@@ -487,47 +487,22 @@
         {
           "collapsed": true,
           "type": "category",
-          "label": "Dapper Dino Tutorials",
+          "label": "Dilmer Tutorials",
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-video"
+              "id": "version-1.0.0/learn/dilmer/dilmer-video"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/makeamultiplayergame"
+              "id": "version-1.0.0/learn/dilmer/project-setup"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/lobbypassword"
-            },
-            {
+              "id": "version-1.0.0/learn/dilmer/corefeatures"
+            },           {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/bossroomsample"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-rpcs"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-networkvariables"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-objectspawning"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-playernames"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/lobbycreation"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-variable-permissions"
+              "id": "version-1.0.0/learn/dilmer/networkanimator"
             }
           ]
         }
