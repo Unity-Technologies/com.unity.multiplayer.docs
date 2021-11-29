@@ -5,11 +5,6 @@ description: An introduction to the messaging system in Unity MLAPI, including R
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-:::contribution Community Contribution
-
-There is a  Video Tutorial covering some of the concepts covered in this page [here](../learn/dapper/networkvariables.md)
-:::
-
 Netcode for GameObjects (Netcode) has two parts to its messaging system: RPCs and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance. This page will focus on RPCs.
 
 ## RPC: Remote Procedure Call

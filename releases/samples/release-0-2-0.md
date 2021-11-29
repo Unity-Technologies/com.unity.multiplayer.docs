@@ -29,7 +29,7 @@ v0.2.1 is a hotfix for an Early Access release for Boss Room: Small Scale Co-op 
 
 This release includes the following new features and additions:
 
-* Introduced static scene `NetworkObject`s to BossRoom scene including the following updates:<!-- GOMPS-381 PR 292-->
+* Introduced static scene `NetworkObject`s to Boss Room scene including the following updates:<!-- GOMPS-381 PR 292-->
 
     * Implemented a `ScriptableObject` based event system to encapsulate events inside assets. These objects include a `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
     * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.

@@ -10,7 +10,7 @@ module.exports = {
     projectName: 'docusaurus', // Usually your repo name.
     scripts: [{
       //OneTrust Cookie required by Unity web team
-        src: 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', 
+        src: 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js',
         async: true,
         'data-domain-script': '6e91be4c-3145-4ea2-aa64-89d716064836'
     }],
@@ -30,16 +30,16 @@ module.exports = {
         apiKey: 'dd157a25931bf7948bfc08e79fbe2c8c',
         appId: '42DEOQD6E7',
         indexName: 'MultiplayerDocs',
-  
+
         // Optional: for versioned docs
         //contextualSearch: false,
-  
+
         // Optional: Algolia search parameters
         //searchParameters: {},
-  
+
         //... other Algolia params
       },
-  
+
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -101,7 +101,7 @@ module.exports = {
                 label: 'Documentation',
                 docsPluginId: 'transport',
               },
-              
+
               {
                 to: 'api/introduction',
                 label: 'API Reference',
@@ -122,7 +122,7 @@ module.exports = {
             className: 'nav-break',
             position: 'left',
           },
-          { 
+          {
             className: 'navbar-github-link',
             position: 'right',
             to: 'contribute',
@@ -175,7 +175,7 @@ module.exports = {
                 label: 'Product Roadmap',
                 href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
               },
-              { 
+              {
                 label: 'Discord',
                 href: 'https://discord.gg/buMxnnPvTb',
               },
@@ -479,7 +479,7 @@ module.exports = {
           },includeCurrentVersion: true,
             lastVersion: '1.0.0',
             versions: {
-             
+
               '1.0.0': {
                label: 'v. 1.0.0',
                 path: '1.0.0',
@@ -558,8 +558,10 @@ module.exports = {
               to: '/docs/0.1.0/getting-started/about',
               from: '/docs/0.1.0/getting-started/about-mlapi.',
             },
-      
-    
+            {
+              to: `/docs/tools/install-tools`,
+              from: `/docs/tools-install-tooltip`,
+            },
           ]
         },
       ],
