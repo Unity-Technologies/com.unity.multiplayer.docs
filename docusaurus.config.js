@@ -563,7 +563,7 @@ module.exports = {
               from: `/docs/tools-install-tooltip`,
             },
             {
-              to: `/netcoderesources`,
+              to: `/blog/netcoderesources`,
               from: `/blog/2021/11/30/webinar`,
             },
 
