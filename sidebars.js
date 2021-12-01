@@ -132,10 +132,6 @@ module.exports = {
 
       {
         "type": "doc",
-        "id": "advanced-topics/networkprofiler-window"
-      },
-      {
-        "type": "doc",
         "id": "advanced-topics/session-management"
       }
     ]
