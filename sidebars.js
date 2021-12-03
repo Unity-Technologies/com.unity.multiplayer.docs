@@ -522,6 +522,10 @@ module.exports = {
                 {
                   "type": "doc",
                   "id": "learn/dilmer/networkanimator"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dilmer/relay-service-setup"
                 }
               ]
             },

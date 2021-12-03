@@ -503,6 +503,10 @@
             },           {
               "type": "doc",
               "id": "version-1.0.0/learn/dilmer/networkanimator"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/relay-service-setup"
             }
           ]
         },
