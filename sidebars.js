@@ -522,7 +522,28 @@ module.exports = {
                 {
                   "type": "doc",
                   "id": "learn/dilmer/networkanimator"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dilmer/relay-service-setup"
                 }
+              ]
+            },
+            {
+      
+              "collapsed": true,
+              "type": "category",
+              "label": "Dapper Tutorials",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "learn/dapper/dapper-video"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/dapper/dapper-upgrade"
+                },
+              
               ]
             }
           ]
