@@ -33,6 +33,7 @@ Netcode supports the following platforms:
 * iOS and Android
 * XR platforms running on Windows, Android, and iOS operating systems
 * Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact us for more information about specific closed platforms.
+  * When working with PlayStation consoles, Sony has a few Netcode-specific policies while testing and before launching your game live. Refer to Sony's internal documentation for more information. This content is protected by Sony's NDA.
 
 :::caution Using WebGL
 Netcode does not support the WebGL platform because it does not allow access to IP Sockets.
