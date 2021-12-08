@@ -44,6 +44,10 @@ transport: [
           "type": "doc",
           "id": "events"
         },
+        {
+          "type": "doc",
+          "id": "network-settings"
+        },
       ]
     },
     {

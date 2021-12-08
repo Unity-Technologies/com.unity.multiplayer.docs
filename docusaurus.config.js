@@ -480,10 +480,6 @@ module.exports = {
           includeCurrentVersion: true,
             lastVersion: '1.0.0',
             versions: {
-              current: {
-                label: 'develop',
-                path: 'transport',
-              },
               '1.0.0': {
                label: 'v. 1.0.0',
                 path: '1.0.0',
