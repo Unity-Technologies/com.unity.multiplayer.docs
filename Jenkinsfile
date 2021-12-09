@@ -45,17 +45,17 @@ def sync_bucket(CREDS) {
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
       case ${env.GIT_BRANCH} in
-        "origin/master")
-          echo "Master branch - not adding a robots.txt file"
+        "origin/main")
+          echo "Main branch - not adding a robots.txt file"
           gsutil -m rsync -r -d build/ gs://mp-docs-unity-it-fileshare-prd
           ;;
-        "origin/staging")
-          echo "Staging branch, adding robots.txt file"
+        "origin/develop")
+          echo "Develop branch, adding robots.txt file"
           echo "User-agent: *\nDisallow: /" > build/robots.txt
           gsutil -m rsync -r -d build/ gs://mp-docs-stg-unity-it-fileshare-test
           ;;
-        "origin/sandbox")
-          echo "Sandbox branch, adding robots.txt file"
+        "origin/testing")
+          echo "Testing branch, adding robots.txt file"
           echo "User-agent: *\nDisallow: /" > build/robots.txt
           gsutil -m rsync -r -d build/ gs://mp-docs-unity-it-fileshare-test
           ;;
