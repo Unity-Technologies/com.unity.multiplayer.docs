@@ -45,9 +45,13 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** 
 
+:::note
+In Unity 2020.3.x the ability to add packages by name was integrated into the  **Add package from git URL...**  UI option.
+:::
+
   ![Select Git URL Option](/img/install/install-git.png)
 
-1. Enter the Git URL to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
+1. Enter the package name to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
 
   ```
   com.unity.netcode.gameobjects
@@ -60,8 +64,6 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
   ![Package Installed](/img/install/1-0-0install.png)
-
-
 
 ## Next Steps
 
