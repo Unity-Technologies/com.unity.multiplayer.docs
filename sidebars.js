@@ -52,7 +52,7 @@ module.exports = {
       },
 
     ],
-  },  
+  },
     {
     "collapsed": true,
     "type": "category",
@@ -99,6 +99,36 @@ module.exports = {
         "id": "advanced-topics/physics"
       },
       {
+        "type": "doc",
+        "id": "transport-utp/about-transport-utp"
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Transport UTP Wrapper APIs",
+        "items": [
+          {
+            "type": "doc",
+            "id": "transport-api/introduction"
+          },
+          {
+            "type": "doc",
+            "id": "transport-api/Assets.Scripts.Transport",
+            "label": "Assets.Scripts.Transport",
+          },
+          {
+            "type": "doc",
+            "id": "transport-api/Assets.Scripts.Transport.Utilities",
+            "label": "Assets.Scripts.Transport.Utilities",
+          },
+          {
+            type: 'link',
+            label: 'Unity Transport for Netcode APIs', // The link label
+            href: 'https://docs.unity3d.com/Packages/com.unity.netcode.adapter.utp@1.0/api/Unity.Netcode.html', // The external URL
+          },
+        ]
+      },
+      {
         "collapsed": true,
         "type": "category",
         "label": "Relay",
@@ -109,26 +139,6 @@ module.exports = {
           },
         ]
       },
-
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Transports",
-        "items": [
-          {
-            "type": "doc",
-            "id": "advanced-topics/custom-transports"
-          },
-          {
-            "type": "doc",
-            "id": "transport-utp/about-transport-utp"
-          },
-          {
-            "type": "doc",
-            "id": "transport-utp/install"
-          }
-        ]
-      }
     ]
   },
   {
@@ -203,7 +213,7 @@ module.exports = {
             "collapsed": true,
             "type": "category",
             "label": "RPCs vs NetworkVariables",
-            "items": [  
+            "items": [
               {
                 "type": "doc",
                 "id": "learn/rpcvnetvar"
@@ -269,19 +279,19 @@ module.exports = {
       {
         "type": "doc",
         "id": "advanced-topics/serialization/arrays"
-      },  
-      { 
+      },
+      {
         "type": "doc",
         "id": "advanced-topics/serialization/inetworkserializable"
       },
       {
         "type": "doc",
         "id": "advanced-topics/custom-serialization"
-      }, 
+      },
       {
         "type": "doc",
         "id": "advanced-topics/serialization/networkobject-serialization"
-      }, 
+      },
     ]
     },
   {
@@ -618,7 +628,7 @@ module.exports = {
           "id": "api/Unity.Netcode.NetworkUpdateStage",
           "label": "NetworkUpdateStage"
         },
-  
+
         {
           "type": "doc",
           "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
@@ -654,27 +664,27 @@ module.exports = {
           "type": "doc",
           "id": "api/Unity.Netcode.BitCounter",
           "label": "BitCounter"
-        },  
+        },
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BitReader",
           "label": "BitReader"
-        },  
+        },
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BitWriter",
           "label": "BitWriter"
-        },  
+        },
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BufferSerializer-1",
           "label": "BufferSerializer-1"
-        },  
+        },
         {
           "type": "doc",
           "id": "api/Unity.Netcode.BytePacker",
           "label": "BytePacker"
-        }, 
+        },
         {
           "type": "doc",
           "id": "api/Unity.Netcode.ByteUnpacker",
@@ -1050,37 +1060,37 @@ module.exports = {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler",
                 "label": "OnEventCompletedDelegateHandler"
-              }, 
+              },
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler",
                 "label": "OnLoadCompleteDelegateHandler"
-              },  
+              },
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler",
                 "label": "OnLoadDelegateHandler"
-              },  
+              },
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler",
                 "label": "OnSynchronizeCompleteDelegateHandler"
-              },  
+              },
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler",
                 "label": "OnSynchronizeDelegateHandler"
-              }, 
+              },
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler",
                 "label": "OnUnloadCompleteDelegateHandler"
-              },  
+              },
               {
                 "type": "doc",
                 "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler",
                 "label": "OnUnloadDelegateHandler"
-              },  
+              },
 
       ]
       },
@@ -1094,14 +1104,14 @@ module.exports = {
             "id": "api/Unity.Netcode.Arithmetic",
             "label": "Arithmetic"
           },
-        
+
           {
             "type": "doc",
             "id": "api/Unity.Netcode.INetworkSerializable",
             "label": "INetworkSerializable"
           },
-     
-          
+
+
           ]
       },
       {
