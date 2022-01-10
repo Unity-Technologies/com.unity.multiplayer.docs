@@ -53,7 +53,7 @@ There are two main changes in `NetworkBehavior`. First, the `NetworkStart` metho
 
 ## Changes in behaviour
 
-We tried to keep the behaviour changes minimal but two changes may cause errors in your scripts. First, the `NetworkManager` now does its connection shut down when the application quits. If you were doing it by yourself, you would end up with an error saying that you tried to disconnect twice. Second, the library now fires all the `OnValueChanged` events from the `NetworkVariable` **after** the `OnNetworkSpawn` (previously known as `NetworkStart`) method has returned. You will need to refactor any scripts depending on this order accordingly.
+We tried to keep the behaviour changes minimal put two changes may cause errors in your scripts. First, the `NetworkManager` now does its connection shut down when the application quits. If you were doing it by yourself, you would end up with an error saying that you tried to disconnect twice. Second, the library now fires all the `OnValueChanged` events from the `NetworkVariable` **after** the `OnNetworkSpawn` (previously known as `NetworkStart`) method has returned. You will need to refactor any scripts depending on this order accordingly.
 
 ## Next Steps
 

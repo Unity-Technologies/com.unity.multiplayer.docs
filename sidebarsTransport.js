@@ -1,20 +1,13 @@
 module.exports = {
 transport: [
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Overview",
-      "items": [
-        {
-          "type": "doc",
-          "id": "introduction"
-        },
-        {
-          "type": "doc",
-          "id": "install"
-        },
-      ]
-    },
+  {
+    "type": "doc",
+    "id": "introduction"
+  },
+  {
+    "type": "doc",
+    "id": "install"
+  },
     {
       "collapsed": true,
       "type": "category",
@@ -50,6 +43,10 @@ transport: [
         {
           "type": "doc",
           "id": "events"
+        },
+        {
+          "type": "doc",
+          "id": "network-settings"
         },
       ]
     },
