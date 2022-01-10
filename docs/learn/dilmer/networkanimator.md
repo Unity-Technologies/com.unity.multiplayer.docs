@@ -16,7 +16,7 @@ Dilmer takes a look at the Network Animator component and how you can synchronis
 <li>Using CharacterController to control the player</li>
 <li>Using ServerRpc to keep track of player state</li>
 <li>Animation state based on NetworkVariable player state</li>
-</ul>|
+</ul>
 
 <Iframe url="https://www.youtube.com/embed/GOtE96OKyVA"
         width="854px"
