@@ -4,6 +4,11 @@ title:  Make a Multiplayer Game
 description: Introduction to the new official Unity multiplayer solution and how to get set up with the brand new Boss Room sample project!
 ---
 
+:::important
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingtonetcode.md)
+:::
+
+
 
 This Unity Multiplayer tutorial will teach you all about the new official Unity multiplayer solution and how to get set up with the brand new Boss Room sample project!
 

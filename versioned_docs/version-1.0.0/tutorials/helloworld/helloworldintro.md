@@ -11,7 +11,7 @@ This "Hello World" tutorial walks you through creating a project, installing the
 
 ## Requirements
 
-This tutorial requires an Netcode-supported version of Unity (2019.4+).
+This tutorial requires an Netcode-supported version of Unity (2020.3+).
 
 
 ## Create a new project in Unity
@@ -52,7 +52,7 @@ In this section we will add a Network Manager and add a Transport to our project
 
 1. Select **NetworkManager**.
 1. Click **Add Component** in the Inspector Tab.
-1. Select **MLAPI** from the list shown.
+1. Select **Netcode** from the list shown.
 1. Select `NetworkManager` Component from the list displayed.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. 
 1. Click "Select Transport".
@@ -77,20 +77,16 @@ This section adds in a player object and spawns it for each connected player.
 1. Delete **Player** from scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
-  :::
+  We remove **Player**, because we will be using the network library to spawn the player.
 
 1. Select `NetworkManager`.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkPrefabs` field. 
 1. Click `+` to create a slot.
 1. Drag this player prefab from above into the new empty slot
+1. Drag the prefab also into the `Player Prefab` slot. 
 
   :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as `Default Player Prefab` the game will crash on client connect.
-  :::
-
-  :::note
-   You may see the following error reported `There is no NetworkPrefab Marked as a PlayerPrefab`. Once you have completed the above steps you can clear the error.
+  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as the `Player Prefab` no player object will be spawned.
   :::
 
 1. Create a **3D Object->Plane**, centered at (0,0,0).
@@ -102,7 +98,7 @@ This section adds in a player object and spawns it for each connected player.
 
 ### Testing Hello World
 
-Now we will test to see if evereything works as expected.
+Now we will test to see if everything works as expected.
 
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 

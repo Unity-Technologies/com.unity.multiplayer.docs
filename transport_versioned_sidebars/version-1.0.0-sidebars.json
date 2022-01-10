@@ -50,6 +50,10 @@
         {
           "type": "doc",
           "id": "version-1.0.0/events"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/network-settings"
         }
       ]
     },

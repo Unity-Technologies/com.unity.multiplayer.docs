@@ -5,9 +5,27 @@ id: transport-changelog
 
 The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
+## [1.0.0-pre.4] - 2022-01-04
 
+### Added
 
-## [1.0.0] - 2021-10-21
+- Added new 'Max Send Queue Size' configuration field in the inspector. This controls the size of the send queue that is used to accumulate small sends together and also acts as an overflow queue when there are too many in-flight packets or when other internal queues are full. [#1491](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1491)
+
+### Changed
+
+- Updated Netcode for GameObjects dependency to 1.0.0-pre.4 [#1562](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1562)
+- Removed 'Maximum Packet Size' configuration field in the inspector. This would cause confusion since the maximum packet size is in effect always the MTU (1400 bytes on most platforms). [#1403](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1403)
+- Updated com.unity.transport to 1.0.0-pre.10 [#1501](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1501)
+- The 'Send Queue Batch Size' configuration field now controls the size of the send queue, rather than the size of a single batch of messages. Consequently, it should be set much higher than it was previously. [#1491](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1491)
+- All delivery methods now support fragmentation, meaning the 'Send Queue Batch Size' setting (which controls the maximum payload size) now applies to all delivery methods, not just reliable ones. [#1512](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1512)
+
+### Fixed
+
+- Fixed packet overflow errors when sending payloads too close to the MTU (was mostly visible when using Relay). [#1403](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1403)
+- Don't throw an exception when the host disconnects (issue 1439 on GitHub). [#1441](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1441)
+- Avoid "too many inflight packets" errors by queueing packets in a queue when the limit of inflight packets is reached in UTP. The size of this queue can be controlled with the 'Max Send Queue Size' configuration field. [#1491](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/1491)
+
+## [1.0.0-pre.3] - 2021-10-21
 
 ### New features
 - Added support for long serialization and delta compression.

@@ -4,6 +4,11 @@ title:  Variable Permissions
 description: Teaches you how to make data private for specific clientss
 ---
 
+:::important
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+:::
+
+
 
 This Unity Multiplayer tutorial will teach you how to make data private for specific clients which is useful in many cases, such as keeping your hand hidden in a card game.
 

@@ -4,6 +4,11 @@ title:  NetworkVariables
 description: Introduction to how to implement Network Variables to sync data between Clients and the Server.
 ---
 
+:::important
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+:::
+
+
 
 This Unity Multiplayer tutorial will teach you how to implement Network Variables to sync data between Clients and the Server.
 

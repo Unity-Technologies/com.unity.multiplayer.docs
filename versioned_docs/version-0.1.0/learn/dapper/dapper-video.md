@@ -6,8 +6,9 @@ title: MLAPI Tutorial Videos
 This section aims to collate a series of Multiplayer Unity Networking tutorial videos that teach various concepts of the new Unity Official Multiplayer solution MLAPI, all made by Dapper Dino. Learn more about Dapper Dino and his [Youtube channel](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw) and don't forget to click the subscribe button.
 
 :::important
-These tutorials use Unity v2021.1. Future versions of Unity, Unity MLAPI, and Boss Room may have changes and updates to APIs and features.
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
 :::
+
 
 <div class="table-columns-plain">
 
@@ -31,8 +32,6 @@ These tutorials use Unity v2021.1. Future versions of Unity, Unity MLAPI, and Bo
 |Dapper teaches you how to implement Remote Procedure Calls (RPCs) to communicate between Clients and the Server.| Dapper teaches you how to implement Network Variables to sync data between Clients and the Server.| Dapper teaches you how to implement player names. |
 
 </div>
-
-
 
 <div class="table-columns-plain">
 

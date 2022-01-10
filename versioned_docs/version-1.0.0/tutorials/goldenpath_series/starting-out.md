@@ -27,7 +27,7 @@ These tutorials requires an Netcode-supported version of Unity (2020.3+).
  
 |<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_foundation_module">Golden Path Foundation Module</a></div>| <div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_one"> Golden Path Module One</a></div>| 
 | --- | --- |
-| Creating a new project<br/>  Installing Netcode<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement<br/>Permissions <br/>Basic RPC use  |
+| Creating a new project<br/>  Installing Netcode<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement<br/>Basic RPC use  |
 </div>
 <div class="table-columns-plain">
 

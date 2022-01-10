@@ -4,6 +4,10 @@ title:  Lobby Creation
 description: Introduction to how to implement connection approval so that clients have to send the correct password to be able to connect to the server.
 ---
 
+:::important
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+:::
+
 
 This Unity Multiplayer tutorial will teach you how to create your own lobby where players can join and ready up before starting a match.
 

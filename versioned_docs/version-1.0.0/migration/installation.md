@@ -10,7 +10,7 @@ This guide details how to install Unity  Netcode for GameObjects (Netcode) via t
 
 
 This guide assumes that you already have:
-  * Git installed on your PC. If you don't already have it, download [Git](https://git-scm.com/) and restart your system. A full restart is required to update Git or you may receive an error adding packages.
+
   * An active Unity account with a valid license.
   * A current installation of Unity.
   * An existing Unity project. If you haven't created a project yet, we recommend using the [Hello World](../tutorials/helloworld/helloworldintro.md) example to begin.
@@ -20,7 +20,8 @@ This guide assumes that you already have:
 
 1. Open your **Unity Hub** and select the **Project** you are presently working on.
 1. From the menu bar, navigate to **Window** > **Package Manager**.
-1. Click the plus sign ([Add](/img/add.png)) in the **Package Manager** status bar and select **Add pack from name..**.
+1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add pack from name..**.
+
 
  ![Package Installed](/img/install/addbyname.png)
 
@@ -29,6 +30,7 @@ This guide assumes that you already have:
 com.unity.netcode.gameobjects
 ```
 :::info How to Copy
+
 We recommend that you use the **Copy** function in the code block above to copy the content as other methods may result in errors. Just hover and click.
 :::
 5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
@@ -62,6 +64,39 @@ The **Add pack from name..** option is integrated with the **Add package from gi
 
 1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
+=======
+We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+:::
+
+5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
+
+  ![Package Installed](/img/install/2021-x-installed.png)
+
+
+## Unity 2020.3.x
+
+To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager passing a git URL to the Netcode release:
+
+1. Open your **Unity Hub** and select the **Project** you are presently working on.
+1. From the menu bar, navigate to **Window** > **Package Manager**.
+1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
+1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** 
+
+  ![Select Git URL Option](/img/install/install-git.png)
+
+1. Enter the Git URL to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
+
+  ```
+  com.unity.netcode.gameobjects
+  ```
+
+  :::info How to Copy
+  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+  :::
+
+1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
+
+
   ![Package Installed](/img/install/1-0-0install.png)
 
 
@@ -70,9 +105,10 @@ The **Add pack from name..** option is integrated with the **Add package from gi
 
 See the following content to continue your journey using Netcode:
 
-* [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
+
+* [Migrating From UNet to MLAPI](migratingtonetcode.md) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Unity MLAPI
-* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
+* [Building Golden Path](../tutorials/goldenpath_series/starting-out.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting

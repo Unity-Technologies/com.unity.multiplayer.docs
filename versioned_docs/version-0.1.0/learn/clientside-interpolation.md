@@ -38,10 +38,10 @@ Snapshot Interpolation is not implemented in MLAPI at this time.
 ## Boss Room Example 
 
 :::unity
-This technique is implemented in the [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/). A brief implementation description is as follows (with further documentation available on the Boss Room GitHub page):
+This technique is implemented in the [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/). A brief implementation description is as follows (with further documentation available on the Boss Room GitHub page):
 :::
 
-Before reviewing into code, define the `GameObject` composition model for player characers, and similarly AI characters, inside BossRoom:
+Before reviewing into code, define the `GameObject` composition model for player characers, and similarly AI characters, inside Boss Room:
 
 * The first, a non-visual, `NetworkObject`: Contains both server and client `NetworkBehaviour` components, namely *ServerCharacterMovement.cs* and *ClientGenericMovement.cs*. We refer to this `GameObject` as "PC".
 * The second, a visual `GameObject`: Displays the character's model and play animations. This is the `GameObject` which performs client-side interpolation. We refer to this as "Graphics".

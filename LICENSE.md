@@ -6,7 +6,7 @@ All documentation sections have licenses covering content for those Unity featur
 
 | Documentation | License |
 | -- | -- |
-| [MLAPI](https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
+| [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/docs/getting-started/about) | [MIT License](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) |
 | [Transport](https://docs-multiplayer.unity3d.com/docs/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
 | [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/LICENSE.md) |
 
@@ -22,9 +22,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## MLAPI License
+## Netcode for GameObjects License
 
-The [MLAPI repository](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) and code are under the MIT License.
+The [Netcode for GameObjects repository](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) and code are under the MIT License.
 
 MIT License
 

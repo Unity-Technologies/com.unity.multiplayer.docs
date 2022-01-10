@@ -4,7 +4,7 @@ title: Getting Started with Boss Room
 description: Learn more about installing and running the Boss Room game sample.
 ---
 
-[Banner](/img/banner.png)
+![Boss Room banner](/img/banner.png)
 
 :::important
 This project is currently in early-access.
@@ -53,7 +53,7 @@ To open the project for the first time:
 
 1. In your Unity Hub, double-click the project.
 1. Navigate to the Editor window.
-2. Then under the **Project** tab, go to **Assets** > **BossRoom** > **Scenes** and double-click on the **Startup** scene.
+2. Then under the **Project** tab, go to **Assets** > **Boss Room** > **Scenes** and double-click on the **Startup** scene.
 3. Click **Play**. The Boss Room menu scene loads.
 
 

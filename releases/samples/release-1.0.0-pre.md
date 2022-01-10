@@ -17,6 +17,43 @@ It requires and supports Unity v2020.3 LTS and Netcode for GameObjects (Netcode)
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity Netcode. See [Unity Netcode](../index.md) for more information on those features, fixes, and known issues.
 :::
 
+[1.0.1-pre] - 2021-11-18
+
+### Changes
+
+* Updated Photon version 
+* Ported the game to URP 
+* Updated to Unity 2020.3.21f1 
+* Updated Boss Room banner image 
+* Small update to platform support on the readme 
+* Replace MLAPI references with NGO 
+* Adding utilities asmdef. 
+* Visual improvements:
+    * Touched up the character select background prefab 
+    * A matte around the border of the map to block the camera from seeing lava, edges of meshes, particles, etc
+    * Lighting changes and optimizations
+    * Reduced number of realtime lights to 4 (from 27)
+    * Baked 3x1024 and 1x128 lightmaps (about 4MB), these are for area lights to make the lava glow more convincing
+    * Added little blob shadows to characters (a plane with a transparent soft black circle attached to the physics object in the character prefab)
+    * Changed the lights for the enemy spawners from point lights to spot lights (still not shadow casting)
+    * Rotated all of the little pots to be in different directions so they don't look so copy-pasted
+    * Tightened radii of the torch lights and reduced the amount of realtime lights for each torch from 2 to 1
+    * Also added a couple of extra torches
+    * Upped the contrast and adjusted the ambient lighting of the scene to be a more saturated blue
+
+### Fixes
+
+* Fixed pathfinding issues with doors 
+* Invincibility counter reset on cancel, animator invincibility parameter reset 
+* Changed ready button text to UNREADY when player is locked in 
+* Fixed arrows despawning error while switching scenes 
+* Fixed a bug involving the NetworkObjectPool's GlobalObjectIdHash
+* Fixed missing Boss Room title in the main menu screen for mac builds (same fix as before, but this time for the URP version of the main menu)
+* NGO-pre.3 asset fixes for NetworkAnimator
+* Fixed arrows not spawning on second playthrough on client side
+
+[1.0.0-pre] - 2021-10-21
+
 ## New features and changes
 
 This release includes the following new features:

@@ -1,6 +1,6 @@
 ---
 id: testing_with_artificial_conditions
-title: Local Iteration - Testing multiplayer games with artificial network conditions
+title: Testing multiplayer games with artificial network conditions
 description: Guide covering the available tools for local testing of multiplayer games with artificial latency, jitter and packet loss .
 ---
 
@@ -82,6 +82,12 @@ To use the Simulator Tools:
 	 - When using ParrelSync workflow for local iteration - we'd have to set these values in each separate clone editor
 
 ### Clone-based workflow (ParrelSync)
+
+:::caution
+
+ParallelSync is **not** supported by Unity.  More information on its usage is available [here](https://github.com/VeriorPies/ParrelSync). Troubleshooting information can be found [here](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs)
+
+:::
 
 Simulator Tools effects only apply to editor instances and to [debug builds](#debug-builds), as such it matches really well with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync). 
 

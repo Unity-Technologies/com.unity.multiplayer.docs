@@ -4,6 +4,10 @@ title:  Make a Multiplayer Game with MLAPI
 description: Introduction to the new official Unity multiplayer solution and how to get it set up quickly in your own project!
 ---
 
+:::important
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For information on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+:::
+
 
 This Unity Multiplayer Networking tutorial will teach you all about the new official Unity multiplayer solution and how to get it set up quickly in your own project!
 

@@ -92,15 +92,9 @@ namespace HelloWorld
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
             {
-                if (NetworkManager.Singleton.ConnectedClients.TryGetValue(NetworkManager.Singleton.LocalClientId,
-                    out var networkedClient))
-                {
-                    var player = networkedClient.PlayerObject.GetComponent<HelloWorldPlayer>();
-                    if (player)
-                    {
-                        player.Move();
-                    }
-                }
+                var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+                var player = playerObject.GetComponent<HelloWorldPlayer>();
+                player.Move();
             }
         }
     }
@@ -198,25 +192,21 @@ This script adds some basic movement to the Hello World player.
 </summary>
 
 ```csharp
-
 using Unity.Netcode;
-using Unity.Netcode.Messaging;
-using Unity.Netcode.NetworkVariable;
 using UnityEngine;
 
 namespace HelloWorld
 {
     public class HelloWorldPlayer : NetworkBehaviour
     {
-        public NetworkVariableVector3 Position = new NetworkVariableVector3(new NetworkVariableSettings
-        {
-            WritePermission = NetworkVariablePermission.ServerOnly,
-            ReadPermission = NetworkVariablePermission.Everyone
-        });
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
 
-        public override void NetworkStart()
+        public override void OnNetworkSpawn()
         {
-            Move();
+            if (IsOwner)
+            {
+                Move();
+            }
         }
 
         public void Move()
@@ -289,19 +279,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        public NetworkVariableVector3 Position = new NetworkVariableVector3(new NetworkVariableSettings
-        {
-            WritePermission = NetworkVariablePermission.ServerOnly,
-            ReadPermission = NetworkVariablePermission.Everyone
-        });
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
 ```
 </details>
 
-### Introducing permissions
-
-In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable` . For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
-
-`HelloWorldPlayer` overrides `NetworkStart`.
+`HelloWorldPlayer` overrides `OnNetworkSpawn`.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -315,14 +297,17 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 -->
 
 ```csharp
-        public override void NetworkStart()
+        public override void OnNetworkSpawn()
         {
-            Move();
+            if (IsOwner)
+            {
+                Move();
+            }
         }
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `NetworkStart()`. This method is fired when message handlers are ready to be registered and the networking is setup. We override `NetworkStart` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned and the networking is setup. We override `OnNetworkSpawn` since a client and a server will run different logic here. 
 
 :::note
 This can be overriden on any `NetworkBehaviour`.
@@ -360,7 +345,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 ### Some simple RPC use
 
-If this player is a server-owned player, at `NetworkStart()` we can immediately move this player, as suggested in the following code.
+If this player is a server-owned player, at `OnNetworkSpawn()` we can immediately move this player, as suggested in the following code.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -463,15 +448,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
             {
-                if (NetworkManager.Singleton.ConnectedClients.TryGetValue(NetworkManager.Singleton.LocalClientId,
-                    out var networkedClient))
-                {
-                    var player = networkedClient.PlayerObject.GetComponent<HelloWorldPlayer>();
-                    if (player)
-                    {
-                        player.Move();
-                    }
-                }
+                var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+                var player = playerObject.GetComponent<HelloWorldPlayer>();
+                player.Move();
             }
         }
 ```
