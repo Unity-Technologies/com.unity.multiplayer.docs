@@ -28,9 +28,9 @@ This guide assumes that you already have:
 ```
 com.unity.netcode.gameobjects
 ```
-  :::info How to Copy
-  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
-  :::
+:::info How to Copy
+We recommend that you use the **Copy** function in the code block above to copy the content as other methods may result in errors. Just hover and click.
+:::
 5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
   ![Package Installed](/img/install/2021-x-installed.png)
@@ -45,16 +45,19 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** 
 
+:::note
+The **Add pack from name..** option is integrated with the **Add package from git URL...** in Unity 2020.3.x versions.
+:::
+
   ![Select Git URL Option](/img/install/install-git.png)
 
-1. Enter the Git URL to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
-
+1. Copy and paste the following in the pop-up window: 
   ```
   com.unity.netcode.gameobjects
   ```
 
   :::info How to Copy
-  We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
+  We recommend that you use the **Copy** function in the code block above to copy the content as other methods may result in errors. Just hover and click.
   :::
 
 1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
