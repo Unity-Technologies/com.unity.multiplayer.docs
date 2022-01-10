@@ -22,7 +22,6 @@ This guide assumes that you already have:
 1. From the menu bar, navigate to **Window** > **Package Manager**.
 1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add pack from name..**.
 
-
  ![Package Installed](/img/install/addbyname.png)
 
 1. Copy and paste the following in the pop-up window:
@@ -63,12 +62,6 @@ The **Add pack from name..** option is integrated with the **Add package from gi
   :::
 
 1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
-
-=======
-We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
-:::
-
-5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
 
   ![Package Installed](/img/install/2021-x-installed.png)
 
