@@ -37,7 +37,7 @@ struct ClientUpdateJob : IJob
                 Debug.Log("We are now connected to the server");
 
                 uint value = 1;
-                var writer = driver.BeginSend(connection[0]);
+                driver.BeginSend(connection[0], out var writer);
                 writer.WriteUInt(value);
                 driver.EndSend(writer);
             }
