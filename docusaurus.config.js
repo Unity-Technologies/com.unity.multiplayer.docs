@@ -306,7 +306,7 @@ module.exports = {
               versionDocsDirPath,
               docPath,
             }) {
-              return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
+              return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
             },
             includeCurrentVersion: true,
             lastVersion: '1.0.0',
@@ -382,7 +382,7 @@ module.exports = {
           id: 'releases',
           path: 'releases',
           editUrl: ({docPath}) => {
-            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${docPath}`;
+            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${docPath}`;
           },
           editCurrentVersion: true,
           routeBasePath: 'releases',
@@ -427,7 +427,7 @@ module.exports = {
           id: 'reference',
           path: 'reference',
           editUrl: ({docPath}) => {
-            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${docPath}`;
+            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${docPath}`;
           },
           editCurrentVersion: true,
           routeBasePath: 'reference',
@@ -475,7 +475,7 @@ module.exports = {
             versionDocsDirPath,
             docPath,
           }) {
-            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/master/${versionDocsDirPath}/${docPath}`;
+            return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
           includeCurrentVersion: true,
             lastVersion: '1.0.0',
