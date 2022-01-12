@@ -23,15 +23,76 @@ We recommend that you  complete the [Your First Networking Game "Hello World"](h
 ## Adding Scripts to Hello World
 
 This section will add some scripts to Hello World which will contain the new features we will be covering in the tutorial.
-
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
-1. Create an empty `GameObject` rename it **HelloWorldManager**.
-1. Create a script called `HelloWorldManager`.
-1. Add the `HelloWorldManager` script as a component.
-<iframe src="https://www.youtube.com/embed/wdzkZbG2-18?playlist=wdzkZbG2-18&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
+### Adding the `HellowWorldPlayer.cs` script
+
+1. Create a new script `HelloWorldPlayer`.
+1. Open the `HelloWorldPlayer.cs` script.
+1. Edit the `HelloWorldPlayer.cs` script to match the following.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
+```csharp
+using Unity.Netcode;
+using UnityEngine;
+
+namespace HelloWorld
+{
+    public class HelloWorldPlayer : NetworkBehaviour
+    {
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                Move();
+            }
+        }
+
+        public void Move()
+        {
+            if (NetworkManager.Singleton.IsServer)
+            {
+                var randomPosition = GetRandomPositionOnPlane();
+                transform.position = randomPosition;
+                Position.Value = randomPosition;
+            }
+            else
+            {
+                SubmitPositionRequestServerRpc();
+            }
+        }
+
+        [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        {
+            Position.Value = GetRandomPositionOnPlane();
+        }
+
+        static Vector3 GetRandomPositionOnPlane()
+        {
+            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+        }
+
+        void Update()
+        {
+            transform.position = Position.Value;
+        }
+    }
+}
+```
+
+</details>
+
+### Adding the `HelloWorldManager.cs` script
+
+1. Create an empty `GameObject` rename it **HelloWorldManager**.
 1. Open the `HelloWorldManager.cs` script.
 1. Edit the `HelloWorldManager.cs` script to match the following.
 
@@ -102,8 +163,13 @@ namespace HelloWorld
 ```
 </details>
 
+
+
 ## Adding Editor Modes to Hello World
 
+1. Create a script called `HelloWorldManager`.
+1. Add the `HelloWorldManager` script as a component.
+   
 Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
 
 <details open>
@@ -180,71 +246,10 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 
 ## Adding basic movement to the Player object 
 
-This script adds some basic movement to the Hello World player.
+The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World player.
 
-1. Create a new script `HelloWorldPlayer`.
-1. Open the `HelloWorldPlayer.cs` script.
-1. Edit the `HelloWorldPlayer.cs` script to match the following.
 
-<details open>
-<summary>Click to show/hide the Code.
-
-</summary>
-
-```csharp
-using Unity.Netcode;
-using UnityEngine;
-
-namespace HelloWorld
-{
-    public class HelloWorldPlayer : NetworkBehaviour
-    {
-        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-
-        public override void OnNetworkSpawn()
-        {
-            if (IsOwner)
-            {
-                Move();
-            }
-        }
-
-        public void Move()
-        {
-            if (NetworkManager.Singleton.IsServer)
-            {
-                var randomPosition = GetRandomPositionOnPlane();
-                transform.position = randomPosition;
-                Position.Value = randomPosition;
-            }
-            else
-            {
-                SubmitPositionRequestServerRpc();
-            }
-        }
-
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
-        {
-            Position.Value = GetRandomPositionOnPlane();
-        }
-
-        static Vector3 GetRandomPositionOnPlane()
-        {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
-        }
-
-        void Update()
-        {
-            transform.position = Position.Value;
-        }
-    }
-}
-```
-
-</details>
-
-4. Select the **Player** prefab.
+1. Select the **Player** prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
 <iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
