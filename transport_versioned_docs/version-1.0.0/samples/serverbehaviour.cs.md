@@ -72,7 +72,7 @@ public class ServerBehaviour : MonoBehaviour
                     Debug.Log("Got " + number + " from the Client adding + 2 to it.");
                     number +=2;
 
-                    var writer = m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i]);
+                    m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i], out var writer);
                     writer.WriteUInt(number);
                     m_Driver.EndSend(writer);
                 }
