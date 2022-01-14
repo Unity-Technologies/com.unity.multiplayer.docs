@@ -89,10 +89,15 @@ namespace HelloWorld
 ```
 
 </details>
+<iframe src="https://www.youtube.com/embed/DMfQMGUe_sI?playlist=DMfQMGUe_sI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
+
 
 ### Adding the `HelloWorldManager.cs` script
 
 1. Create an empty `GameObject` rename it **HelloWorldManager**.
+1. Create a script called `HelloWorldManager`.
 1. Open the `HelloWorldManager.cs` script.
 1. Edit the `HelloWorldManager.cs` script to match the following.
 
@@ -164,11 +169,14 @@ namespace HelloWorld
 </details>
 
 
+1. Add the `HelloWorldManager` script as a component.
+
+<iframe src="https://www.youtube.com/embed/_L6AvD_6FKU?playlist=_L6AvD_6FKU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ## Adding Editor Modes to Hello World
 
-1. Create a script called `HelloWorldManager`.
-1. Add the `HelloWorldManager` script as a component.
+
    
 Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
 
@@ -251,7 +259,7 @@ The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World pla
 
 1. Select the **Player** prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
-<iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/8-hR6ElBY-Y?playlist=8-hR6ElBY-Y&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
@@ -470,7 +478,7 @@ Make sure **SampleScene** is included in **BuildSettings**.
 
 One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
 
-<iframe src="https://www.youtube.com/embed/khZh7lZPzqc?playlist=khZh7lZPzqc&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/2FTSAMbNXow?playlist=2FTSAMbNXow&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 
