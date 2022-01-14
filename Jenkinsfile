@@ -45,17 +45,17 @@ def sync_bucket(CREDS) {
       gcloud auth activate-service-account --key-file ${SERVICEACCOUNT}
       echo "uptimecheck" > build/uptimecheck.html
       case ${env.GIT_BRANCH} in
-        "origin/master")
-          echo "Master branch - not adding a robots.txt file"
+        "origin/main")
+          echo "Main branch - not adding a robots.txt file"
           gsutil -m rsync -r -d build/ gs://mp-docs-unity-it-fileshare-prd
           ;;
-        "origin/staging")
-          echo "Staging branch, adding robots.txt file"
+        "origin/develop")
+          echo "Develop branch, adding robots.txt file"
           echo "User-agent: *\nDisallow: /" > build/robots.txt
           gsutil -m rsync -r -d build/ gs://mp-docs-stg-unity-it-fileshare-test
           ;;
-        "origin/sandbox")
-          echo "Sandbox branch, adding robots.txt file"
+        "origin/testing")
+          echo "Testing branch, adding robots.txt file"
           echo "User-agent: *\nDisallow: /" > build/robots.txt
           gsutil -m rsync -r -d build/ gs://mp-docs-unity-it-fileshare-test
           ;;
@@ -71,16 +71,16 @@ def akamai_purge(CREDS) {
       curl -sL https://github.com/akamai/cli-purge/releases/download/1.0.1/akamai-purge-1.0.1-linuxamd64 -o akamai
       chmod +x akamai
       case ${env.GIT_BRANCH} in
-        "origin/master")
-          echo "Master branch"
+        "origin/main")
+          echo "Main branch"
           ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer.unity3d.com/
           ;;
-        "origin/staging")
-          echo "Staging branch"
+        "origin/develop")
+          echo "Develop branch"
           ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer-stg.unity3d.com/
           ;;
-        "origin/sandbox")
-          echo "Sandbox branch"
+        "origin/testing")
+          echo "Testing branch"
           ./akamai --section ccu --edgerc "/tmp/edgerc" invalidate https://docs-multiplayer-sandbox.unity3d.com/
           ;;
       esac
