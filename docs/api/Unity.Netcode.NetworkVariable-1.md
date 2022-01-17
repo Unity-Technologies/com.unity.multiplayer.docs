@@ -1,6 +1,6 @@
 ---  
-id: Unity.Netcode.NetworkVariable-1  
-title: Unity.Netcode.NetworkVariable-1  
+id: Unity.Netcode.NetworkVariable\`1  
+title: Unity.Netcode.NetworkVariable\`1  
 ---
 
 <div class="markdown level0 summary">

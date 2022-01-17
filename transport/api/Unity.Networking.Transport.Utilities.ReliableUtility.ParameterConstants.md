@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct ParameterConstants
+``` lang-csharp
+public struct ParameterConstants
+```
 
-## Fields
+## 
 
 ### WindowSize
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public const int WindowSize = 32
+``` lang-csharp
+public const int WindowSize = 32
+```
 
 #### Field Value
 

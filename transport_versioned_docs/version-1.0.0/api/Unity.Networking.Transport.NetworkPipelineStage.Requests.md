@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.NetworkPipelineStage.Requests
 
 <div class="markdown level0 summary">
 
-The requests enum
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -26,10 +24,10 @@ public enum Requests
 
 ## 
 
-| Name       | Description              |
-|------------|--------------------------|
-| Error      | The error requests       |
-| None       | The none requests        |
-| Resume     | The resume requests      |
-| SendUpdate | The send update requests |
-| Update     | The update requests      |
+| Name       | Description |
+|------------|-------------|
+| Error      |             |
+| None       |             |
+| Resume     |             |
+| SendUpdate |             |
+| Update     |             |

@@ -55,8 +55,10 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct FragmentationUtility
+``` lang-csharp
+public struct FragmentationUtility
+```

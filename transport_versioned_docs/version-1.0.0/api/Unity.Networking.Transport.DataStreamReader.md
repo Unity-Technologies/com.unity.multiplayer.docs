@@ -96,7 +96,7 @@ See the DataStreamWriter class for more information and examples.
 
 ## 
 
-### DataStreamReader(NativeArray\&lt;Byte&gt)
+### DataStreamReader(NativeArray\&lt;Byte&gt;)
 
 <div class="markdown level1 summary">
 
@@ -116,7 +116,7 @@ public DataStreamReader(NativeArray<byte> array)
 
 | Type                       | Name  | Description |
 |----------------------------|-------|-------------|
-| NativeArray\&lt;System.Byte&gt; | array |             |
+| NativeArray\&lt;System.Byte&gt;  | array |             |
 
 ### DataStreamReader(Byte\*, Int32)
 
@@ -304,7 +304,7 @@ public byte ReadByte()
 |-------------|-------------|
 | System.Byte |             |
 
-### ReadBytes(NativeArray\&lt;Byte&gt)
+### ReadBytes(NativeArray\&lt;Byte&gt; )
 
 <div class="markdown level1 summary">
 

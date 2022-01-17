@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkInterfaceSendHandle
+``` lang-csharp
+public struct NetworkInterfaceSendHandle
+```
 
-## Fields
+## 
 
 ### capacity
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int capacity
+``` lang-csharp
+public int capacity
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public IntPtr data
+``` lang-csharp
+public IntPtr data
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public SendHandleFlags flags
+``` lang-csharp
+public SendHandleFlags flags
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int id
+``` lang-csharp
+public int id
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int size
+``` lang-csharp
+public int size
+```
 
 #### Field Value
 
