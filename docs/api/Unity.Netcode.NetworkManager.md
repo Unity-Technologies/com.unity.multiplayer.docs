@@ -200,7 +200,7 @@ public IReadOnlyDictionary<ulong, NetworkClient> ConnectedClients { get; }
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
-| IReadOnlyDictionary\&lt;System.UInt64, NetworkClient&lt; |             |
+| IReadOnlyDictionary\&lt;System.UInt64, NetworkClient&gt;  |             |
 
 ### ConnectedClientsIds
 
@@ -225,7 +225,7 @@ public IReadOnlyList<ulong> ConnectedClientsIds { get; }
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| IReadOnlyList\&lt;System.UInt64&lt; |             |
+| IReadOnlyList\&lt;System.UInt64&gt;  |             |
 
 ### ConnectedClientsList
 
@@ -249,7 +249,7 @@ public IReadOnlyList<NetworkClient> ConnectedClientsList { get; }
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| IReadOnlyList\&lt; NetworkClient&lt; |             |
+| IReadOnlyList\&lt; NetworkClient&gt;  |             |
 
 ### ConnectedHostname
 
@@ -317,7 +317,7 @@ public InterestManager<NetworkObject> InterestManager { get; }
 
 | Type                             | Description |
 |----------------------------------|-------------|
-| InterestManager\&lt; NetworkObject&lt; |             |
+| InterestManager\&lt; NetworkObject&gt;  |             |
 
 ### IsClient
 

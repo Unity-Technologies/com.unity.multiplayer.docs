@@ -198,6 +198,6 @@ public bool QueryFor(NetworkObject clientNetworkObject, NetworkObject obj)
 
 <div>
 
-IInterestKernel &lt;TObject&gt;
+IInterestKernel\&lt;TObject&gt;
 
 </div>

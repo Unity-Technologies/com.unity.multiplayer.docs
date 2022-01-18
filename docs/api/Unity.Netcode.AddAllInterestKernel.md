@@ -35,7 +35,7 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-IInterestKernel&lt;NetworkObject&gt; 
+IInterestKernel\&lt;NetworkObject&gt; 
 
 </div>
 
@@ -134,6 +134,6 @@ public bool QueryFor(NetworkObject clientNetworkObject, NetworkObject obj)
 
 <div>
 
-IInterestKernel&lt;TObject&gt;
+IInterestKernel\&lt;TObject&gt;
 
 </div>
