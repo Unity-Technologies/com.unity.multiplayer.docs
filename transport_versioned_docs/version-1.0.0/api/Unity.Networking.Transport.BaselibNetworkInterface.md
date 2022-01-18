@@ -363,7 +363,7 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 |-----------|-------------|
 | JobHandle |             |
 
-### ScheduleSend(NativeQueue\<QueuedSendMessage>, JobHandle)
+### ScheduleSend(NativeQueue&lt;QueuedSendMessage&gt;, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -383,7 +383,7 @@ public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandl
 
 | Type                             | Name      | Description |
 |----------------------------------|-----------|-------------|
-| NativeQueue\&lt;QueuedSendMessage&gt;| sendQueue |             |
+| NativeQueue&lt;QueuedSendMessage&gt;| sendQueue |             |
 | JobHandle                        | dep       |             |
 
 #### Returns

@@ -35,7 +35,7 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-IInterestNode\<TObject>
+IInterestNode&lt;TObject&gt;
 
 </div>
 
@@ -125,7 +125,7 @@ public InterestNodeStatic()
 
 ## 
 
-### AddAdditiveKernel(IInterestKernel\<TObject>)
+### AddAdditiveKernel(IInterestKernel &lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -145,7 +145,7 @@ public void AddAdditiveKernel(IInterestKernel<TObject> kernel)
 
 | Type                      | Name   | Description |
 |---------------------------|--------|-------------|
-| IInterestKernel\<TObject> | kernel |             |
+| IInterestKernel &lt;TObject&gt; | kernel |             |
 
 ### AddObject(TObject)
 
@@ -169,7 +169,7 @@ public void AddObject(TObject obj)
 |---------|------|-------------|
 | TObject | obj  |             |
 
-### AddSubtractiveKernel(IInterestKernel\<TObject>)
+### AddSubtractiveKernel(IInterestKernel &lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -189,9 +189,9 @@ public void AddSubtractiveKernel(IInterestKernel<TObject> kernel)
 
 | Type                      | Name   | Description |
 |---------------------------|--------|-------------|
-| IInterestKernel\<TObject> | kernel |             |
+| IInterestKernel &lt;TObject&gt; | kernel |             |
 
-### QueryFor(TObject, HashSet\<TObject>)
+### QueryFor(TObject, HashSet &lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -212,7 +212,7 @@ public void QueryFor(TObject client, HashSet<TObject> results)
 | Type                                         | Name    | Description |
 |----------------------------------------------|---------|-------------|
 | TObject                                      | client  |             |
-| System.Collections.Generic.HashSet\<TObject> | results |             |
+| System.Collections.Generic.HashSet &lt;TObject&gt; | results |             |
 
 ### RemoveObject(TObject)
 
@@ -262,6 +262,6 @@ public void UpdateObject(TObject obj)
 
 <div>
 
-IInterestNode\<TObject>
+IInterestNode &lt;TObject&gt;>
 
 </div>

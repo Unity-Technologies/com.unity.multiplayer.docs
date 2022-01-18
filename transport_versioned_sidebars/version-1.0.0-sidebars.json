@@ -98,7 +98,7 @@
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/aapi/Unity.Networking.Transport.NetworkSettings",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.NetworkSettings",
           "label": "NetworkSettings"
         },
         {

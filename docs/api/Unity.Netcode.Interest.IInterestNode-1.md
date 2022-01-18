@@ -29,7 +29,7 @@ public interface IInterestNode<TObject>
 
 ## 
 
-### AddAdditiveKernel(IInterestKernel\<TObject>)
+### AddAdditiveKernel(IInterestKernel\&lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -49,7 +49,7 @@ void AddAdditiveKernel(IInterestKernel<TObject> kernel)
 
 | Type                      | Name   | Description |
 |---------------------------|--------|-------------|
-| IInterestKernel\<TObject> | kernel |             |
+| IInterestKernel\&lt;TObject&gt; | kernel |             |
 
 ### AddObject(TObject)
 
@@ -73,7 +73,7 @@ void AddObject(TObject obj)
 |---------|------|-------------|
 | TObject | obj  |             |
 
-### AddSubtractiveKernel(IInterestKernel\<TObject>)
+### AddSubtractiveKernel(IInterestKernel\&lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -93,9 +93,9 @@ void AddSubtractiveKernel(IInterestKernel<TObject> kernel)
 
 | Type                      | Name   | Description |
 |---------------------------|--------|-------------|
-| IInterestKernel\<TObject> | kernel |             |
+| IInterestKernel\&lt;TObject&gt; | kernel |             |
 
-### QueryFor(TObject, HashSet\<TObject>)
+### QueryFor(TObject, HashSet\&lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -116,7 +116,7 @@ void QueryFor(TObject client, HashSet<TObject> results)
 | Type                                         | Name    | Description |
 |----------------------------------------------|---------|-------------|
 | TObject                                      | client  |             |
-| System.Collections.Generic.HashSet\<TObject> | results |             |
+| System.Collections.Generic.HashSet\&lt;TObject&gt; | results |             |
 
 ### RemoveObject(TObject)
 

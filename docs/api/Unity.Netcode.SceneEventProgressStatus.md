@@ -30,47 +30,14 @@ public enum SceneEventProgressStatus
 
 ## 
 
-<table class="table table-bordered table-striped table-condensed">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td id="Unity_Netcode_SceneEventProgressStatus_InternalNetcodeError">InternalNetcodeError</td>
-<td><p>This is used for internal error notifications.<br />
-If you receive this event then it is most likely due to a bug (<em>please open a GitHub issue with steps to replicate</em>).<br />
-</p></td>
-</tr>
-<tr class="even">
-<td id="Unity_Netcode_SceneEventProgressStatus_InvalidSceneName">InvalidSceneName</td>
-<td><p>Returned if the scene name used with LoadScene(String, LoadSceneMode) or UnloadScene(Scene)is invalid.</p></td>
-</tr>
-<tr class="odd">
-<td id="Unity_Netcode_SceneEventProgressStatus_None">None</td>
-<td><p>No scene event progress status can be used to initialize a variable that will be checked over time.</p></td>
-</tr>
-<tr class="even">
-<td id="Unity_Netcode_SceneEventProgressStatus_SceneEventInProgress">SceneEventInProgress</td>
-<td><p>Returned if you try to start a new scene event before a previous one is finished.</p></td>
-</tr>
-<tr class="odd">
-<td id="Unity_Netcode_SceneEventProgressStatus_SceneFailedVerification">SceneFailedVerification</td>
-<td><p>Server side: Returned if the VerifySceneBeforeLoading delegate handler returns false (<em>i.e. scene is considered not valid/safe to load</em>).</p></td>
-</tr>
-<tr class="even">
-<td id="Unity_Netcode_SceneEventProgressStatus_SceneNotLoaded">SceneNotLoaded</td>
-<td><p>Returned if you try to unload a scene that was not yet loaded.</p></td>
-</tr>
-<tr class="odd">
-<td id="Unity_Netcode_SceneEventProgressStatus_Started">Started</td>
-<td><p>The scene event was successfully started.</p></td>
-</tr>
-</tbody>
-</table>
+| Name          | Description |
+|---------------|-------------|
+| InternalNetcodeError|       This is used for internal error notifications.If you receive this event then it is most likely due to a bug (*please open a GitHub issue with steps to replicate*).      |
+|InvalidSceneName|Returned if the scene name used with LoadScene(String, LoadSceneMode) or UnloadScene(Scene)is invalid.|
+|None|No scene event progress status can be used to initialize a variable that will be checked over time.|
+|SceneEventInProgress|Returned if you try to start a new scene event before a previous one is finished.|
+|SceneFailedVerification|Server side: Returned if the VerifySceneBeforeLoading delegate handler returns false (*i.e. scene is considered not valid/safe to load*).|
+|SceneNotLoaded|Returned if you try to unload a scene that was not yet loaded.|
+|Started|The scene event was successfully started.|
+
+

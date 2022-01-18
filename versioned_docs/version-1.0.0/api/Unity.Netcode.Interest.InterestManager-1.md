@@ -159,7 +159,7 @@ public void AddDefaultInterestNode(TObject obj)
 |---------|------|-------------|
 | TObject | obj  |             |
 
-### AddInterestNode(ref TObject, IInterestNode\<TObject>)
+### AddInterestNode(ref TObject, IInterestNode&lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -180,7 +180,7 @@ public void AddInterestNode(ref TObject obj, IInterestNode<TObject> node)
 | Type                    | Name | Description |
 |-------------------------|------|-------------|
 | TObject                 | obj  |             |
-| IInterestNode\<TObject> | node |             |
+| IInterestNode&lt;TObject&gt; | node |             |
 
 ### AddObject(ref TObject)
 
@@ -204,7 +204,7 @@ public void AddObject(ref TObject obj)
 |---------|------|-------------|
 | TObject | obj  |             |
 
-### QueryFor(ref TObject, ref HashSet\<TObject>)
+### QueryFor(ref TObject, ref HashSet&lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -225,9 +225,9 @@ public void QueryFor(ref TObject client, ref HashSet<TObject> results)
 | Type                                         | Name    | Description |
 |----------------------------------------------|---------|-------------|
 | TObject                                      | client  |             |
-| System.Collections.Generic.HashSet\<TObject> | results |             |
+| System.Collections.Generic.HashSet&lt;TObject&gt; | results |             |
 
-### RemoveInterestNode(ref TObject, IInterestNode\<TObject>)
+### RemoveInterestNode(ref TObject, IInterestNode\&lt;TObject&gt;)
 
 <div class="markdown level1 summary">
 
@@ -248,7 +248,7 @@ public void RemoveInterestNode(ref TObject obj, IInterestNode<TObject> node)
 | Type                    | Name | Description |
 |-------------------------|------|-------------|
 | TObject                 | obj  |             |
-| IInterestNode\<TObject> | node |             |
+| IInterestNode&lt;TObject&gt; | node |             |
 
 ### RemoveObject(ref TObject)
 

@@ -65,7 +65,7 @@ public struct NetworkPipelineStage
 
 ## 
 
-### NetworkPipelineStage(TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate>, TransportFunctionPointer\<NetworkPipelineStage.SendDelegate>, TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate>, Int32, Int32, Int32, Int32, Int32)
+### NetworkPipelineStage(TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt; , TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt; , TransportFunctionPointerlt;NetworkPipelineStage.InitializeConnectionDelegate&gt;
 
 <div class="markdown level1 summary">
 
@@ -85,9 +85,9 @@ public NetworkPipelineStage(TransportFunctionPointer<NetworkPipelineStage.Receiv
 
 | Type                                                                          | Name                 | Description |
 |-------------------------------------------------------------------------------|----------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;              | Receive              |             |
-| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt;                  | Send                 |             |
-| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; | InitializeConnection |             |
+| TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt;              | Receive              |             |
+| TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt;                  | Send                 |             |
+| TransportFunctionPointer&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; | InitializeConnection |             |
 | System.Int32                                                                  | ReceiveCapacity      |             |
 | System.Int32                                                                  | SendCapacity         |             |
 | System.Int32                                                                  | HeaderCapacity       |             |
