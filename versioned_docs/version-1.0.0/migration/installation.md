@@ -19,7 +19,7 @@ This guide assumes that you already have:
 
 1. Open your **Unity Hub** and select the **Project** you are presently working on.
 1. From the menu bar, navigate to **Window** > **Package Manager**.
-1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add package from name..**.
+1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add package by name..**.
 
  ![Package Installed](/img/install/addbyname.png)
 
@@ -46,7 +46,7 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** 
 
 :::note
-The **Add package from name..** option is integrated with the **Add package from git URL...** in Unity 2020.3.x versions. 
+The **Add package by name..** option is integrated with the **Add package from git URL...** in Unity 2020.3.x versions. 
 :::
 
   ![Select Git URL Option](/img/install/install-git.png)
