@@ -29,9 +29,9 @@ In cases where we use don't use the Player Object approach and instead manually 
 Here is an example from the Boss Room sample, showing some simple session management. The game uses the Player Object approach and a GUID to identify unique players.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/SessionManager.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs
 ```
 
-This class allows BossRoom to handle player session data, by providing mechanisms to initialize, obtain and edit that data, and to associate it to a specific player. It also handles the clearing of data that is no longer used and the reinitialization of data between sessions.
+This class allows BossRoom to handle player session data, represented by a struct `T` implementing the `ISessionPlayerData` interface, by providing mechanisms to initialize, obtain and edit that data, and to associate it to a specific player. It also handles the clearing of data that is no longer used and the reinitialization of data between sessions.
 
 In this case, since game sessions are quite short, the session data is only cleared for disconnected players when a session ends, and when a new one begins. This makes sure that if a player disconnects during a session and then reconnects during the next session, the game properly treats it as a new connection. The definition of when a session ends and when a session starts might vary from game to game, but in BossRoom a session is considered to start after character selection and end when the players win or loose the game and enter the post-game scene. In other cases, one might want to add a timeout to session data and clear it after a specified time instead.
