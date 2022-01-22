@@ -38,18 +38,7 @@ Disconnecting is rather simple, but you have to remember, that you cannot use th
 ```csharp
 public void Disconnect()
 {
-    if (IsHost) 
-    {
-        NetworkManager.Singleton.StopHost();
-    }
-    else if (IsClient) 
-    {
-        NetworkManager.Singleton.StopClient();
-    }
-    else if (IsServer) 
-    {
-        NetworkManager.Singleton.StopServer();
-    }
+    NetworkManager.Singleton.Shutdown();
     
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 }
