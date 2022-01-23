@@ -26,7 +26,7 @@ This section will add some scripts to Hello World which will contain the new fea
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
 
-### Adding the `HellowWorldPlayer.cs` script
+### Adding the `HelloWorldPlayer.cs` script
 
 1. Create a new script `HelloWorldPlayer`.
 1. Open the `HelloWorldPlayer.cs` script.
