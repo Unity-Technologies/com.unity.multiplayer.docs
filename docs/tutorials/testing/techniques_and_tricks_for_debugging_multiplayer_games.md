@@ -97,3 +97,7 @@ In debug builds it's a great idea to show the Peer ID and the current frame numb
 Sometimes, despite us using good debug rendering and logging it's still hard to understand what's going on even when going through the frames one by one. Increasing our FixedTimeStep setting to a ridiculous value (something as high as `0.2`) helps to have more time to really see what’s going on.
 
 The same applies to very high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
+
+### Increase time before timeout when using breakpoints to debug a Client or Server
+
+Using breakpoints is a very common way of debugging a game, but, as it pauses the game, it can result in the connection timing out if you stay too long in this mode. To avoid this, you can temporarily increase the timeout value. If you are using the [UTP adapter for Netcode](../../transport-api/introduction.md) you can edit the `DisconnectTimeout` field of the `UnityTransport` script used by your `NetworkManager`. However, make sure that you reset this value afterwards when you're no longer debugging.
