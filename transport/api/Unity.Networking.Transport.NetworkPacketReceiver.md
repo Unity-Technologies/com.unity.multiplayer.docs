@@ -6,7 +6,17 @@ title: Unity.Networking.Transport.NetworkPacketReceiver
 <div class="markdown level0 summary">
 
 The NetworkPacketReceiver is an interface for handling received packets,
-needed by the INetworkInterface
+needed by the INetworkInterface It either can be used in two main
+scenarios:
+
+1.  Your API requires a pointer to memory that you own. Then you should
+    use AllocateMemory(ref Int32), write to the memory and then
+    AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
+    NetworkPacketReceiver.AppendPacketMode) with NoCopyNeeded. You don't
+    need to deallocate the memory
+2.  Your API gives you a pointer that you don't own. In this case you
+    should use AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
+    NetworkPacketReceiver.AppendPacketMode) with None (default)
 
 </div>
 
@@ -58,15 +68,17 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkPacketReceiver
+``` lang-csharp
+public struct NetworkPacketReceiver
+```
 
-## Properties 
+## 
 
-### ReceiveCount
+### LastUpdateTime
 
 <div class="markdown level1 summary">
 
@@ -78,13 +90,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int ReceiveCount { get; set; }
+``` lang-csharp
+public readonly long LastUpdateTime { get; }
+```
 
 #### Property Value
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 |             |
+| System.Int64 |             |
 
 ### ReceiveErrorCode
 
@@ -98,7 +112,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int ReceiveErrorCode { set; }
+``` lang-csharp
+public int ReceiveErrorCode { set; }
+```
 
 #### Property Value
 
@@ -106,14 +122,13 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
-### AppendPacket(NetworkInterfaceEndPoint, UdpCHeader, Int32)
+### AllocateMemory(ref Int32)
 
 <div class="markdown level1 summary">
 
-AppendPacket is where we parse the data from the network into easy to
-handle events.
+Calls NetworkDriver's AllocateMemory(ref Int32)
 
 </div>
 
@@ -123,28 +138,28 @@ handle events.
 
 #### Declaration
 
-    public int AppendPacket(NetworkInterfaceEndPoint address, UdpCHeader header, int dataLen)
+``` lang-csharp
+public IntPtr AllocateMemory(ref int dataLen)
+```
 
 #### Parameters
 
-| Type                     | Name    | Description                                                                            |
-|--------------------------|---------|----------------------------------------------------------------------------------------|
-| NetworkInterfaceEndPoint | address | The address of the endpoint we received data from.                                     |
-| UdpCHeader               | header  | The header data indicating what type of packet it is. UdpCHeader for more information. |
-| System.Int32             | dataLen | The size of the payload, if any.                                                       |
+| Type         | Name    | Description                                       |
+|--------------|---------|---------------------------------------------------|
+| System.Int32 | dataLen | Size of memory to allocate in bytes. Must be \> 0 |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type          | Description                                                                                                                                                                        |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.IntPtr | Pointer to allocated memory or IntPtr.Zero if there is no space left (this function doesn't set ReceiveErrorCode! caller should decide if this is Out of memory or something else) |
 
-### DynamicDataStreamSize()
+### AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32, NetworkPacketReceiver.AppendPacketMode)
 
 <div class="markdown level1 summary">
 
-Check if the DataStreamWriter uses dynamic allocations to automatically
-resize the buffers or not.
+When data is received this function should be called to pass it inside
+NetworkDriver
 
 </div>
 
@@ -154,19 +169,32 @@ resize the buffers or not.
 
 #### Declaration
 
-    public bool DynamicDataStreamSize()
+``` lang-csharp
+public bool AppendPacket(IntPtr data, ref NetworkInterfaceEndPoint address, int dataLen, NetworkPacketReceiver.AppendPacketMode mode = NetworkPacketReceiver.AppendPacketMode.None)
+```
+
+#### Parameters
+
+| Type                                   | Name    | Description                                                                                                                     |
+|----------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
+| System.IntPtr                          | data    | Pointer to the data. If it is pointer to data that was received with AllocateMemory(ref Int32) make sure mode is NoCopyNeeded\> |
+| NetworkInterfaceEndPoint               | address | Address where data was received from                                                                                            |
+| System.Int32                           | dataLen | Length of in bytes                                                                                                              |
+| NetworkPacketReceiver.AppendPacketMode | mode    | Extra flags, like NoCopyNeeded that means - no copy is needed, data is already in NetworkDriver's data stream                   |
 
 #### Returns
 
-| Type           | Description                                           |
-|----------------|-------------------------------------------------------|
-| System.Boolean | True if its dynamically resizing the DataStreamWriter |
+| Type           | Description       |
+|----------------|-------------------|
+| System.Boolean | True if no errors |
 
-### GetDataStream()
+### IsAddressUsed(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
-Get the datastream associated with this Receiver.
+Check if an address is currently associated with a valid connection.
+This is mostly useful to keep interface internal lists of connections in
+sync with the correct state.
 
 </div>
 
@@ -176,30 +204,18 @@ Get the datastream associated with this Receiver.
 
 #### Declaration
 
-    public NativeList<byte> GetDataStream()
+``` lang-csharp
+public bool IsAddressUsed(NetworkInterfaceEndPoint address)
+```
+
+#### Parameters
+
+| Type                     | Name    | Description |
+|--------------------------|---------|-------------|
+| NetworkInterfaceEndPoint | address |             |
 
 #### Returns
 
-| Type                          | Description                   |
-|-------------------------------|-------------------------------|
-| NativeList&lt;System.Byte&gt; | Returns a NativeList of bytes |
-
-### GetDataStreamSize()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int GetDataStreamSize()
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

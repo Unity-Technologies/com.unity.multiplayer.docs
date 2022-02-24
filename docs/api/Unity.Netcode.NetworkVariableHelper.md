@@ -1,11 +1,9 @@
 ---  
-id: Unity.Networking.Transport.SHA256  
-title: Unity.Networking.Transport.SHA256  
+id: Unity.Netcode.NetworkVariableHelper  
+title: Unity.Netcode.NetworkVariableHelper  
 ---
 
 <div class="markdown level0 summary">
-
-Utility class that provides the ability to generate a SHA256 Hash
 
 </div>
 
@@ -81,10 +79,10 @@ Object.ToString()
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+##### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
 ``` lang-csharp
-public static class SHA256
+public class NetworkVariableHelper
 ```

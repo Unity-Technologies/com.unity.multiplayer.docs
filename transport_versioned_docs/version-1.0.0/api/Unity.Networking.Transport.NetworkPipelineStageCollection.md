@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.NetworkPipelineStageCollection
 
 <div class="markdown level0 summary">
 
-The network pipeline stage collection class
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -95,8 +93,6 @@ public static class NetworkPipelineStageCollection
 
 <div class="markdown level1 summary">
 
-Gets the stage id using the specified stage type
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -111,27 +107,19 @@ public static NetworkPipelineStageId GetStageId(Type stageType)
 
 #### Parameters
 
-| Type        | Name      | Description    |
-|-------------|-----------|----------------|
-| System.Type | stageType | The stage type |
+| Type        | Name      | Description |
+|-------------|-----------|-------------|
+| System.Type | stageType |             |
 
 #### Returns
 
-| Type                   | Description                   |
-|------------------------|-------------------------------|
-| NetworkPipelineStageId | The network pipeline stage id |
-
-#### Exceptions
-
-| Type                             | Condition                                    |
-|----------------------------------|----------------------------------------------|
-| System.InvalidOperationException | Pipeline stage {stageType} is not registered |
+| Type                   | Description |
+|------------------------|-------------|
+| NetworkPipelineStageId |             |
 
 ### RegisterPipelineStage(INetworkPipelineStage)
 
 <div class="markdown level1 summary">
-
-Registers the pipeline stage using the specified stage
 
 </div>
 
@@ -149,4 +137,4 @@ public static void RegisterPipelineStage(INetworkPipelineStage stage)
 
 | Type                  | Name  | Description |
 |-----------------------|-------|-------------|
-| INetworkPipelineStage | stage | The stage   |
+| INetworkPipelineStage | stage |             |
