@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct PacketTimers
+``` lang-csharp
+public struct PacketTimers
+```
 
-## Fields
+## 
 
 ### Padding
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort Padding
+``` lang-csharp
+public ushort Padding
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort ProcessingTime
+``` lang-csharp
+public ushort ProcessingTime
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long ReceiveTime
+``` lang-csharp
+public long ReceiveTime
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long SentTime
+``` lang-csharp
+public long SentTime
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int SequenceId
+``` lang-csharp
+public int SequenceId
+```
 
 #### Field Value
 

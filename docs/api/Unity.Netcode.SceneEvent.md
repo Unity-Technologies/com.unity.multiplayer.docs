@@ -7,7 +7,10 @@ title: Unity.Netcode.SceneEvent
 
 Used for local notifications of various scene events. The OnSceneEvent
 of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-to provide scene event status/state.
+to provide scene event status.  
+*Note: This is only when EnableSceneManagement is enabled.*  
+See also:  
+SceneEventType
 
 </div>
 
@@ -97,8 +100,11 @@ public class SceneEvent
 
 <div class="markdown level1 summary">
 
-The returned by This is set for the following SceneEventTypes: Load
-Unload
+The returned by  
+This is set for the following SceneEventTypes:
+
+-   Load
+-   Unload
 
 </div>
 
@@ -122,17 +128,26 @@ public AsyncOperation AsyncOperation
 
 <div class="markdown level1 summary">
 
-Events that always set the ClientId to the local client identifier, are
-initiated (and processed locally) by the server-host, and sent to all
-clients to be processed: Load Unload Synchronize ReSynchronize
+The client identifier can vary depending upon the following
+conditions:  
 
-Events that always set the ClientId to the local client identifier, are
-initiated (and processed locally) by a client or server-host, and if
-initiated by a client will always be sent to and processed on the
-server-host: LoadComplete UnloadComplete SynchronizeComplete
-
-Events that always set the ClientId to the ServerId: LoadEventCompleted
-UnloadEventCompleted
+1.  SceneEventTypes that always set the ClientId to the local client
+    identifier, are initiated (and processed locally) by the
+    server-host, and sent to all clients to be processed.  
+    -   Load
+    -   Unload
+    -   Synchronize
+    -   ReSynchronize
+2.  Events that always set the ClientId to the local client identifier,
+    are initiated (and processed locally) by a client or server-host,
+    and if initiated by a client will always be sent to and processed on
+    the server-host:
+    -   LoadComplete
+    -   UnloadComplete
+    -   SynchronizeComplete
+3.  Events that always set the ClientId to the ServerId:
+    -   LoadEventCompleted
+    -   UnloadEventCompleted
 
 </div>
 
@@ -156,9 +171,11 @@ public ulong ClientId
 
 <div class="markdown level1 summary">
 
-List of clients that completed a loading or unloading event This is set
-for the following SceneEventTypes: LoadEventCompleted
-UnloadEventCompleted
+List of clients that completed a loading or unloading event.  
+This is set for the following SceneEventTypes:
+
+-   LoadEventCompleted
+-   UnloadEventCompleted
 
 </div>
 
@@ -182,9 +199,11 @@ public List<ulong> ClientsThatCompleted
 
 <div class="markdown level1 summary">
 
-List of clients that timed out during a loading or unloading event This
-is set for the following SceneEventTypes: LoadEventCompleted
-UnloadEventCompleted
+List of clients that timed out during a loading or unloading event.  
+This is set for the following SceneEventTypes:
+
+-   LoadEventCompleted
+-   UnloadEventCompleted
 
 </div>
 
@@ -209,8 +228,15 @@ public List<ulong> ClientsThatTimedOut
 <div class="markdown level1 summary">
 
 If applicable, this reflects the type of scene loading or unloading that
-is occurring. This is set for the following SceneEventTypes: Load Unload
-LoadComplete UnloadComplete LoadEventCompleted UnloadEventCompleted
+is occurring.  
+This is set for the following SceneEventTypes:
+
+-   Load
+-   Unload
+-   LoadComplete
+-   UnloadComplete
+-   LoadEventCompleted
+-   UnloadEventCompleted
 
 </div>
 
@@ -234,8 +260,10 @@ public LoadSceneMode LoadSceneMode
 
 <div class="markdown level1 summary">
 
-When a scene is loaded, the Scene structure is returned. This is set for
-the following SceneEventTypes: LoadComplete
+When a scene is loaded, the Scene structure is returned.  
+This is set for the following SceneEventTypes:
+
+-   LoadComplete
 
 </div>
 
@@ -283,9 +311,15 @@ public SceneEventType SceneEventType
 
 <div class="markdown level1 summary">
 
-This will be set to the scene name that the event pertains to. This is
-set for the following SceneEventTypes: Load Unload LoadComplete
-UnloadComplete LoadEventCompleted UnloadEventCompleted
+This will be set to the scene name that the event pertains to.  
+This is set for the following SceneEventTypes:
+
+-   Load
+-   Unload
+-   LoadComplete
+-   UnloadComplete
+-   LoadEventCompleted
+-   UnloadEventCompleted
 
 </div>
 

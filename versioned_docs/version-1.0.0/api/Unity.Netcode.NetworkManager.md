@@ -55,30 +55,6 @@ public class NetworkManager : MonoBehaviour, INetworkUpdateSystem
 
 ## 
 
-### DontDestroy
-
-<div class="markdown level1 summary">
-
-Gets or sets if the NetworkManager should be marked as DontDestroyOnLoad
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public bool DontDestroy
-```
-
-#### Field Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
 ### LogLevel
 
 <div class="markdown level1 summary">
@@ -151,7 +127,7 @@ public readonly Dictionary<ulong, PendingClient> PendingClients
 
 | Type                                                                  | Description |
 |-----------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\&lt;System.UInt64, PendingClient&gt; |             |
+| System.Collections.Generic.Dictionary\&lt;System.UInt64, PendingClient&gt;  |             |
 
 ### RunInBackground
 
@@ -176,6 +152,28 @@ public bool RunInBackground
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### ServerClientId
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly ulong ServerClientId
+```
+
+#### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
 ## 
 
@@ -298,6 +296,28 @@ public CustomMessagingManager CustomMessagingManager { get; }
 | Type                   | Description |
 |------------------------|-------------|
 | CustomMessagingManager |             |
+
+### InterestManager
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public InterestManager<NetworkObject> InterestManager { get; }
+```
+
+#### Property Value
+
+| Type                             | Description |
+|----------------------------------|-------------|
+| InterestManager\&lt; NetworkObject&lt; |             |
 
 ### IsClient
 
@@ -577,30 +597,6 @@ public NetworkSceneManager SceneManager { get; }
 |---------------------|-------------|
 | NetworkSceneManager |             |
 
-### ServerClientId
-
-<div class="markdown level1 summary">
-
-Gets the networkId of the server
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public ulong ServerClientId { get; }
-```
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.UInt64 |             |
-
 ### ServerTime
 
 <div class="markdown level1 summary">
@@ -622,6 +618,28 @@ public NetworkTime ServerTime { get; }
 | Type        | Description |
 |-------------|-------------|
 | NetworkTime |             |
+
+### ShutdownInProgress
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool ShutdownInProgress { get; }
+```
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Singleton
 
@@ -770,7 +788,7 @@ public void NetworkUpdate(NetworkUpdateStage updateStage)
 public void SetSingleton()
 ```
 
-### Shutdown()
+### Shutdown(Boolean)
 
 <div class="markdown level1 summary">
 
@@ -786,8 +804,14 @@ stops server if running.
 #### Declaration
 
 ``` lang-csharp
-public void Shutdown()
+public void Shutdown(bool discardMessageQueue = false)
 ```
+
+#### Parameters
+
+| Type           | Name                | Description                                                                                                                                                                                                                                                                           |
+|----------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.Boolean | discardMessageQueue | If false, any messages that are currently in the incoming queue will be handled, and any messages in the outgoing queue will be sent, before the shutdown is processed. If true, NetworkManager will shut down immediately, and any unprocessed or unsent messages will be discarded. |
 
 ### StartClient()
 
@@ -885,7 +909,7 @@ public event Action<byte[], ulong, NetworkManager.ConnectionApprovedDelegate> Co
 
 | Type                                                                                       | Description |
 |--------------------------------------------------------------------------------------------|-------------|
-| System.Action\<System.Byte\[\], System.UInt64, NetworkManager.ConnectionApprovedDelegate\> |             |
+| System.Action\&lt;System.Byte\[\], System.UInt64, NetworkManager.ConnectionApprovedDelegate&gt;  |             |
 
 ### OnClientConnectedCallback
 
@@ -910,7 +934,7 @@ public event Action<ulong> OnClientConnectedCallback
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| System.Action\<System.UInt64\> |             |
+| System.Action\&lt;System.UInt64&gt;  |             |
 
 ### OnClientDisconnectCallback
 
@@ -935,7 +959,7 @@ public event Action<ulong> OnClientDisconnectCallback
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| System.Action\<System.UInt64\> |             |
+| System.Action\&lt;System.UInt64&gt;  |             |
 
 ### OnServerStarted
 

@@ -87,7 +87,7 @@ Object.ToString()
 
 ## Methods 
 
-### DeserializeUnmanaged&lt;T&gt;(Byte\[\])
+### DeserializeUnmanaged\&lt;T&gt;(Byte\[\])
 
 <div class="markdown level1 summary">
 
@@ -120,7 +120,7 @@ Object.ToString()
 |------|-------------|
 | T    |             |
 
-### DeserializeUnmanaged&lt;T&gt;(ref NativeSlice&lt;Byte&gt;)
+### DeserializeUnmanaged\&lt;T&gt;(ref NativeSlice\&lt;Byte&gt;)
 
 <div class="markdown level1 summary">
 
@@ -139,7 +139,7 @@ Object.ToString()
 
 | Type                                             | Name   | Description |
 |--------------------------------------------------|--------|-------------|
-| Unity.Collections.NativeSlice&lt;System.Byte&gt; | buffer |             |
+| Unity.Collections.NativeSlice\&lt;System.Byte&gt; | buffer |             |
 
 #### Returns
 
@@ -153,7 +153,7 @@ Object.ToString()
 |------|-------------|
 | T    |             |
 
-### SerializeUnmanaged&lt;T&gt;(ref T)
+### SerializeUnmanaged\&lt;T&gt;(ref T)
 
 <div class="markdown level1 summary">
 

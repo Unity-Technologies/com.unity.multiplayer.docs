@@ -59,11 +59,13 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct DataStreamReader
+``` lang-csharp
+public struct DataStreamReader
+```
 
 ##### **Remarks**
 
@@ -92,9 +94,9 @@ See the DataStreamWriter class for more information and examples.
 
 </div>
 
-## Constructors 
+## 
 
-### DataStreamReader(NativeArray&lt;Byte&gt;)
+### DataStreamReader(NativeArray\&lt;Byte&gt;)
 
 <div class="markdown level1 summary">
 
@@ -106,15 +108,40 @@ See the DataStreamWriter class for more information and examples.
 
 #### Declaration
 
-    public DataStreamReader(NativeArray<byte> array)
+``` lang-csharp
+public DataStreamReader(NativeArray<byte> array)
+```
 
 #### Parameters
 
-| Type                                             | Name  | Description |
-|--------------------------------------------------|-------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | array |             |
+| Type                       | Name  | Description |
+|----------------------------|-------|-------------|
+| NativeArray\&lt;System.Byte&gt;  | array |             |
 
-## Properties 
+### DataStreamReader(Byte\*, Int32)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public DataStreamReader(byte *data, int length)
+```
+
+#### Parameters
+
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| System.Byte\* | data   |             |
+| System.Int32  | length |             |
+
+## 
 
 ### HasFailedReads
 
@@ -128,7 +155,9 @@ See the DataStreamWriter class for more information and examples.
 
 #### Declaration
 
-    public bool HasFailedReads { get; }
+``` lang-csharp
+public readonly bool HasFailedReads { get; }
+```
 
 #### Property Value
 
@@ -151,7 +180,31 @@ be false if the reader was created with no arguments.
 
 #### Declaration
 
-    public bool IsCreated { get; }
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+### IsLittleEndian
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly bool IsLittleEndian { get; }
+```
 
 #### Property Value
 
@@ -173,7 +226,9 @@ The total size of the buffer space this reader is working with.
 
 #### Declaration
 
-    public int Length { get; }
+``` lang-csharp
+public readonly int Length { get; }
+```
 
 #### Property Value
 
@@ -181,7 +236,7 @@ The total size of the buffer space this reader is working with.
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### GetBitsRead()
 
@@ -195,7 +250,9 @@ The total size of the buffer space this reader is working with.
 
 #### Declaration
 
-    public int GetBitsRead()
+``` lang-csharp
+public int GetBitsRead()
+```
 
 #### Returns
 
@@ -215,7 +272,9 @@ The total size of the buffer space this reader is working with.
 
 #### Declaration
 
-    public int GetBytesRead()
+``` lang-csharp
+public int GetBytesRead()
+```
 
 #### Returns
 
@@ -235,13 +294,40 @@ The total size of the buffer space this reader is working with.
 
 #### Declaration
 
-    public byte ReadByte()
+``` lang-csharp
+public byte ReadByte()
+```
 
 #### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | System.Byte |             |
+
+### ReadBytes(NativeArray\&lt;Byte&gt; )
+
+<div class="markdown level1 summary">
+
+Read and copy data into the given NativeArray of bytes, an exception
+will be thrown if not enough bytes are available.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public void ReadBytes(NativeArray<byte> array)
+```
+
+#### Parameters
+
+| Type                       | Name  | Description |
+|----------------------------|-------|-------------|
+| NativeArray\&lt;System.Byte&gt;  | array |             |
 
 ### ReadBytes(Byte\*, Int32)
 
@@ -258,7 +344,9 @@ be thrown if it does not fit.
 
 #### Declaration
 
-    public void ReadBytes(byte *data, int length)
+``` lang-csharp
+public void ReadBytes(byte *data, int length)
+```
 
 #### Parameters
 
@@ -273,29 +361,6 @@ be thrown if it does not fit.
 |------------------------------------|----------------------------------------------------------------------------------------------------|
 | System.ArgumentOutOfRangeException | Thrown if the length will put the reader out of bounds based on the current read pointer position. |
 
-### ReadBytes(NativeArray&lt;Byte&gt;)
-
-<div class="markdown level1 summary">
-
-Read and copy data into the given NativeArray of bytes, an exception
-will be thrown if not enough bytes are available.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public void ReadBytes(NativeArray<byte> array)
-
-#### Parameters
-
-| Type                                             | Name  | Description |
-|--------------------------------------------------|-------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | array |             |
-
 ### ReadFixedString(Byte\*, Int32)
 
 <div class="markdown level1 summary">
@@ -308,7 +373,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ushort ReadFixedString(byte *data, int maxLength)
+``` lang-csharp
+public ushort ReadFixedString(byte *data, int maxLength)
+```
 
 #### Parameters
 
@@ -335,13 +402,15 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString128 ReadFixedString128()
+``` lang-csharp
+public FixedString128Bytes ReadFixedString128()
+```
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString128 |             |
+| Type                | Description |
+|---------------------|-------------|
+| FixedString128Bytes |             |
 
 ### ReadFixedString32()
 
@@ -355,13 +424,15 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString32 ReadFixedString32()
+``` lang-csharp
+public FixedString32Bytes ReadFixedString32()
+```
 
 #### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString32 |             |
+| Type               | Description |
+|--------------------|-------------|
+| FixedString32Bytes |             |
 
 ### ReadFixedString4096()
 
@@ -375,13 +446,15 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString4096 ReadFixedString4096()
+``` lang-csharp
+public FixedString4096Bytes ReadFixedString4096()
+```
 
 #### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| FixedString4096 |             |
+| Type                 | Description |
+|----------------------|-------------|
+| FixedString4096Bytes |             |
 
 ### ReadFixedString512()
 
@@ -395,13 +468,15 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString512 ReadFixedString512()
+``` lang-csharp
+public FixedString512Bytes ReadFixedString512()
+```
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString512 |             |
+| Type                | Description |
+|---------------------|-------------|
+| FixedString512Bytes |             |
 
 ### ReadFixedString64()
 
@@ -415,13 +490,15 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString64 ReadFixedString64()
+``` lang-csharp
+public FixedString64Bytes ReadFixedString64()
+```
 
 #### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString64 |             |
+| Type               | Description |
+|--------------------|-------------|
+| FixedString64Bytes |             |
 
 ### ReadFloat()
 
@@ -435,7 +512,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public float ReadFloat()
+``` lang-csharp
+public float ReadFloat()
+```
 
 #### Returns
 
@@ -455,7 +534,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public int ReadInt()
+``` lang-csharp
+public int ReadInt()
+```
 
 #### Returns
 
@@ -475,7 +556,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public int ReadIntNetworkByteOrder()
+``` lang-csharp
+public int ReadIntNetworkByteOrder()
+```
 
 #### Returns
 
@@ -483,7 +566,7 @@ will be thrown if not enough bytes are available.
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReadPackedFixedString128Delta(FixedString128, NetworkCompressionModel)
+### ReadLong()
 
 <div class="markdown level1 summary">
 
@@ -495,22 +578,17 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString128 ReadPackedFixedString128Delta(FixedString128 baseline, NetworkCompressionModel model)
-
-#### Parameters
-
-| Type                    | Name     | Description |
-|-------------------------|----------|-------------|
-| FixedString128          | baseline |             |
-| NetworkCompressionModel | model    |             |
+``` lang-csharp
+public long ReadLong()
+```
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString128 |             |
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
 
-### ReadPackedFixedString32Delta(FixedString32, NetworkCompressionModel)
+### ReadPackedFixedString128Delta(FixedString128Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -522,22 +600,24 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString32 ReadPackedFixedString32Delta(FixedString32 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public FixedString128Bytes ReadPackedFixedString128Delta(FixedString128Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString32           | baseline |             |
+| FixedString128Bytes     | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString32 |             |
+| Type                | Description |
+|---------------------|-------------|
+| FixedString128Bytes |             |
 
-### ReadPackedFixedString4096Delta(FixedString4096, NetworkCompressionModel)
+### ReadPackedFixedString32Delta(FixedString32Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -549,22 +629,24 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString4096 ReadPackedFixedString4096Delta(FixedString4096 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public FixedString32Bytes ReadPackedFixedString32Delta(FixedString32Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString4096         | baseline |             |
+| FixedString32Bytes      | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| FixedString4096 |             |
+| Type               | Description |
+|--------------------|-------------|
+| FixedString32Bytes |             |
 
-### ReadPackedFixedString512Delta(FixedString512, NetworkCompressionModel)
+### ReadPackedFixedString4096Delta(FixedString4096Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -576,22 +658,24 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString512 ReadPackedFixedString512Delta(FixedString512 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public FixedString4096Bytes ReadPackedFixedString4096Delta(FixedString4096Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString512          | baseline |             |
+| FixedString4096Bytes    | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString512 |             |
+| Type                 | Description |
+|----------------------|-------------|
+| FixedString4096Bytes |             |
 
-### ReadPackedFixedString64Delta(FixedString64, NetworkCompressionModel)
+### ReadPackedFixedString512Delta(FixedString512Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -603,20 +687,51 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public FixedString64 ReadPackedFixedString64Delta(FixedString64 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public FixedString512Bytes ReadPackedFixedString512Delta(FixedString512Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString64           | baseline |             |
+| FixedString512Bytes     | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString64 |             |
+| Type                | Description |
+|---------------------|-------------|
+| FixedString512Bytes |             |
+
+### ReadPackedFixedString64Delta(FixedString64Bytes, NetworkCompressionModel)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public FixedString64Bytes ReadPackedFixedString64Delta(FixedString64Bytes baseline, NetworkCompressionModel model)
+```
+
+#### Parameters
+
+| Type                    | Name     | Description |
+|-------------------------|----------|-------------|
+| FixedString64Bytes      | baseline |             |
+| NetworkCompressionModel | model    |             |
+
+#### Returns
+
+| Type               | Description |
+|--------------------|-------------|
+| FixedString64Bytes |             |
 
 ### ReadPackedFixedStringDelta(Byte\*, Int32, Byte\*, UInt16, NetworkCompressionModel)
 
@@ -630,7 +745,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ushort ReadPackedFixedStringDelta(byte *data, int maxLength, byte *baseData, ushort baseLength, NetworkCompressionModel model)
+``` lang-csharp
+public ushort ReadPackedFixedStringDelta(byte *data, int maxLength, byte *baseData, ushort baseLength, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -660,7 +777,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public float ReadPackedFloat(NetworkCompressionModel model)
+``` lang-csharp
+public float ReadPackedFloat(NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -686,7 +805,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public float ReadPackedFloatDelta(float baseline, NetworkCompressionModel model)
+``` lang-csharp
+public float ReadPackedFloatDelta(float baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -713,7 +834,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public int ReadPackedInt(NetworkCompressionModel model)
+``` lang-csharp
+public int ReadPackedInt(NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -739,7 +862,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public int ReadPackedIntDelta(int baseline, NetworkCompressionModel model)
+``` lang-csharp
+public int ReadPackedIntDelta(int baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -766,7 +891,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public long ReadPackedLong(NetworkCompressionModel model)
+``` lang-csharp
+public long ReadPackedLong(NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -792,7 +919,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public long ReadPackedLongDelta(long baseline, NetworkCompressionModel model)
+``` lang-csharp
+public long ReadPackedLongDelta(long baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -819,7 +948,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public uint ReadPackedUInt(NetworkCompressionModel model)
+``` lang-csharp
+public uint ReadPackedUInt(NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -845,7 +976,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public uint ReadPackedUIntDelta(uint baseline, NetworkCompressionModel model)
+``` lang-csharp
+public uint ReadPackedUIntDelta(uint baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -872,7 +1005,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ulong ReadPackedULong(NetworkCompressionModel model)
+``` lang-csharp
+public ulong ReadPackedULong(NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -898,7 +1033,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ulong ReadPackedULongDelta(ulong baseline, NetworkCompressionModel model)
+``` lang-csharp
+public ulong ReadPackedULongDelta(ulong baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -925,7 +1062,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public uint ReadRawBits(int numbits)
+``` lang-csharp
+public uint ReadRawBits(int numbits)
+```
 
 #### Parameters
 
@@ -951,7 +1090,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public short ReadShort()
+``` lang-csharp
+public short ReadShort()
+```
 
 #### Returns
 
@@ -971,7 +1112,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public short ReadShortNetworkByteOrder()
+``` lang-csharp
+public short ReadShortNetworkByteOrder()
+```
 
 #### Returns
 
@@ -991,7 +1134,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public uint ReadUInt()
+``` lang-csharp
+public uint ReadUInt()
+```
 
 #### Returns
 
@@ -1011,7 +1156,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public uint ReadUIntNetworkByteOrder()
+``` lang-csharp
+public uint ReadUIntNetworkByteOrder()
+```
 
 #### Returns
 
@@ -1031,7 +1178,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ulong ReadULong()
+``` lang-csharp
+public ulong ReadULong()
+```
 
 #### Returns
 
@@ -1051,7 +1200,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ushort ReadUShort()
+``` lang-csharp
+public ushort ReadUShort()
+```
 
 #### Returns
 
@@ -1071,7 +1222,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public ushort ReadUShortNetworkByteOrder()
+``` lang-csharp
+public ushort ReadUShortNetworkByteOrder()
+```
 
 #### Returns
 
@@ -1091,7 +1244,9 @@ will be thrown if not enough bytes are available.
 
 #### Declaration
 
-    public void SeekSet(int pos)
+``` lang-csharp
+public void SeekSet(int pos)
+```
 
 #### Parameters
 

@@ -13,19 +13,21 @@ title: Unity.Networking.Transport.NetworkPipelineStage.Requests
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    [Flags]
-    public enum Requests
+``` lang-csharp
+[Flags]
+public enum Requests
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| Error |  |
-| None |  |
-| Resume |  |
-| SendUpdate |  |
-| Update |  |
+| Name       | Description |
+|------------|-------------|
+| Error      |             |
+| None       |             |
+| Resume     |             |
+| SendUpdate |             |
+| Update     |             |

@@ -3,7 +3,7 @@ id: introduction
 title: API Overview
 ---
 
-The Netcode for GameObjects (Netcode) API reference provides information for availble classes, methods, delegates, and more for the `com.unity.netcode.gameobjects` package.
+The Netcode for GameObjects (Netcode) API reference provides information for availble classes, methods, delegates, and more for the `com.unity.netcode.gameobjects`package.
 
 :::unity Content Licenses
 All Netcode code and documentation is covered by MIT license. See [Licenses](/reference/license) for more information.

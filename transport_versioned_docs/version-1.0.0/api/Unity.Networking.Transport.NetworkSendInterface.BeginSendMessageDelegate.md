@@ -1,12 +1,9 @@
----   
+---  
 id: Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate  
 title: Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate  
 ---
 
 <div class="markdown level0 summary">
-
-Invoked from the lower level library at the beginning of the message
-sending routine.
 
 </div>
 
