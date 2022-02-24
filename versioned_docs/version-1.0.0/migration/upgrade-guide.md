@@ -7,7 +7,7 @@ This guide is a simple recipe to upgrade from MLAPI 0.1.0 to Netcode for GameObj
 
 ## General overview of the upgrade process
 
-There are five main steps in the upgrade process.
+There are five main steps in the upgrade process. 
 1. Install the new package
 2. Changes in the naming
 3. Changes in the API
@@ -15,8 +15,8 @@ There are five main steps in the upgrade process.
 
 ## Installing the new package
 
-This step is the easiest one. First, uninstall the old MLAPI package. For that, go to your package manager (Windows -> Package Manager) and uninstall MLAPI. After that, still in the package manager, install the package: `com.unity.netcode.gameobjects`. You now have plenty of compilation errors since there are quite some changes between the two libraries.
-Installing the Netcode package will also install three other packages :
+This step is the easiest one. First, uninstall the old MLAPI package. For that, go to your package manager (Windows -> Package Manager) and uninstall MLAPI. After that, still in the package manager, install the package: `com.unity.netcode.gameobjects`. You now have plenty of compilation errors since there are quite some changes between the two libraries. 
+Installing the Netcode package will also install three other packages : 
 - `Unity Transport` : the low-level transport layer recommended for Netcode
 - `Netcode adapter for UTP`: the Netcode adapter created by Unity for Unity Transport
 - `Burst`: a requirement for Unity Transport
@@ -35,11 +35,11 @@ Unity Multiplayer Teams tried to keep most of the MLAPI intact in Netcode. Howev
 
 ### `NetworkVariable` changes
 
-`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream.
+`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream. 
 
 ### Scene Management changes
 
-The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it like so :
+The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it like so : 
 
 ```csharp
 var sceneManager = NetworkManager.Singleton.SceneManager;

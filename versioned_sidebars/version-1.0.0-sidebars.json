@@ -92,6 +92,36 @@
           "id": "version-1.0.0/advanced-topics/physics"
         },
         {
+          "type": "doc",
+          "id": "version-1.0.0/transport-utp/about-transport-utp"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Transport UTP Wrapper APIs",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/transport-api/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/transport-api/Assets.Scripts.Transport",
+              "label": "Assets.Scripts.Transport"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/transport-api/Assets.Scripts.Transport.Utilities",
+              "label": "Assets.Scripts.Transport.Utilities"
+            },
+            {
+              "type": "link",
+              "label": "Unity Transport for Netcode APIs",
+              "href": "https://docs.unity3d.com/Packages/com.unity.netcode.adapter.utp@1.0/api/Unity.Netcode.html"
+            }
+          ]
+        },
+        {
           "collapsed": true,
           "type": "category",
           "label": "Relay",
@@ -99,25 +129,6 @@
             {
               "type": "doc",
               "id": "version-1.0.0/relay/relay"
-            }
-          ]
-        },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Transports",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0.0/advanced-topics/custom-transports"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/transport-utp/about-transport-utp"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/transport-utp/install"
             }
           ]
         }
@@ -503,7 +514,27 @@
             },           {
               "type": "doc",
               "id": "version-1.0.0/learn/dilmer/networkanimator"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/relay-service-setup"
             }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Dapper Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dapper/dapper-video"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dapper/dapper-upgrade"
+            }
+          
           ]
         }
       ]
