@@ -26,7 +26,7 @@ The first thing that needs to be understood is that Relay is a Unity service. Th
 To create an allocation on a Relay, you need to make an authenticated call to Unity backend using their SDK. On the host, call the ```CreateAllocationAsync``` method with the maximum number of expected peers. For example, a host requesting a maximum of 3 peer connections will reserve 4 slots for a 4 player game. This function can throw exceptions, and catching them can give you hints about the underlying error.
 
 ```csharp
-//Ask Unity Services to allocate a Relay server that will handle eight players (including host)
+//Ask Unity Services to allocate a Relay server that will handle up to eight players: seven peers and the host.
 Allocation allocation = await Unity.Services.Relay.Relay.Instance.CreateAllocationAsync(7);
 ```
 
