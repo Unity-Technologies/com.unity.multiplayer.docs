@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct FragContext
+``` lang-csharp
+public struct FragContext
+```
 
-## Fields
+## 
 
 ### endIndex
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int endIndex
+``` lang-csharp
+public int endIndex
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool packetError
+``` lang-csharp
+public bool packetError
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int sequence
+``` lang-csharp
+public int sequence
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int startIndex
+``` lang-csharp
+public int startIndex
+```
 
 #### Field Value
 

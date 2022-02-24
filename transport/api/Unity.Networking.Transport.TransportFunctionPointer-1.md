@@ -55,12 +55,14 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct TransportFunctionPointer<T>
-        where T : Delegate
+``` lang-csharp
+public struct TransportFunctionPointer<T>
+    where T : Delegate
+```
 
 ##### Type Parameters
 
@@ -68,7 +70,7 @@ Object.ReferenceEquals(Object, Object)
 |------|-------------|
 | T    |             |
 
-## Constructors 
+## 
 
 ### TransportFunctionPointer(T)
 
@@ -82,10 +84,116 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer(T executeDelegate)
+``` lang-csharp
+public TransportFunctionPointer(T executeDelegate)
+```
 
 #### Parameters
 
 | Type | Name            | Description |
 |------|-----------------|-------------|
 | T    | executeDelegate |             |
+
+### TransportFunctionPointer(FunctionPointer\&lt;T&gt;)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public TransportFunctionPointer(FunctionPointer<T> Pointer)
+```
+
+#### Parameters
+
+| Type                | Name    | Description |
+|---------------------|---------|-------------|
+| FunctionPointer&lt;T&gt; | Pointer |             |
+
+## 
+
+### Ptr
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly FunctionPointer<T> Ptr
+```
+
+#### Field Value
+
+| Type                | Description |
+|---------------------|-------------|
+| FunctionPointer&lt;T&gt;|             |
+
+## 
+
+### Burst(T)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static TransportFunctionPointer<T> Burst(T burstCompilableDelegate)
+```
+
+#### Parameters
+
+| Type | Name                    | Description |
+|------|-------------------------|-------------|
+| T    | burstCompilableDelegate |             |
+
+#### Returns
+
+| Type                         | Description |
+|------------------------------|-------------|
+| TransportFunctionPointer&lt;T&gt;|             |
+
+### Managed(T)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static TransportFunctionPointer<T> Managed(T managedDelegate)
+```
+
+#### Parameters
+
+| Type | Name            | Description |
+|------|-----------------|-------------|
+| T    | managedDelegate |             |
+
+#### Returns
+
+| Type                         | Description |
+|------------------------------|-------------|
+| TransportFunctionPointer&lt;T&gt; |             |

@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.INetworkInterface
 
 <div class="markdown level0 summary">
 
-Interface for implementing a low-level networking interface see
-BaselibNetworkInterface as an example
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -41,8 +38,6 @@ public interface INetworkInterface : IDisposable
 ### LocalEndPoint
 
 <div class="markdown level1 summary">
-
-Gets the value of the local end point
 
 </div>
 
@@ -98,8 +93,6 @@ int Bind(NetworkInterfaceEndPoint endpoint)
 
 <div class="markdown level1 summary">
 
-Creates the interface end point using the specified address
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -114,22 +107,20 @@ int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoin
 
 #### Parameters
 
-| Type                     | Name     | Description  |
-|--------------------------|----------|--------------|
-| NetworkEndPoint          | address  | The address  |
-| NetworkInterfaceEndPoint | endpoint | The endpoint |
+| Type                     | Name     | Description |
+|--------------------------|----------|-------------|
+| NetworkEndPoint          | address  |             |
+| NetworkInterfaceEndPoint | endpoint |             |
 
 #### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 | The int     |
+| System.Int32 |             |
 
 ### CreateSendInterface()
 
 <div class="markdown level1 summary">
-
-Creates the send interface
 
 </div>
 
@@ -145,15 +136,13 @@ NetworkSendInterface CreateSendInterface()
 
 #### Returns
 
-| Type                 | Description                |
-|----------------------|----------------------------|
-| NetworkSendInterface | The network send interface |
+| Type                 | Description |
+|----------------------|-------------|
+| NetworkSendInterface |             |
 
 ### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
-
-Gets the generic end point using the specified endpoint
 
 </div>
 
@@ -169,21 +158,19 @@ NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 
 #### Parameters
 
-| Type                     | Name     | Description  |
-|--------------------------|----------|--------------|
-| NetworkInterfaceEndPoint | endpoint | The endpoint |
+| Type                     | Name     | Description |
+|--------------------------|----------|-------------|
+| NetworkInterfaceEndPoint | endpoint |             |
 
 #### Returns
 
-| Type            | Description           |
-|-----------------|-----------------------|
-| NetworkEndPoint | The network end point |
+| Type            | Description |
+|-----------------|-------------|
+| NetworkEndPoint |             |
 
-### Initialize(INetworkParameter\[\])
+### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
-
-Initializes the interfacing passing in optional INetworkParameter
 
 </div>
 
@@ -194,20 +181,20 @@ Initializes the interfacing passing in optional INetworkParameter
 #### Declaration
 
 ``` lang-csharp
-int Initialize(params INetworkParameter[] param)
+int Initialize(NetworkSettings settings)
 ```
 
 #### Parameters
 
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkParameter\[\] | param | The param   |
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkSettings | settings |             |
 
 #### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 | The int     |
+| System.Int32 |             |
 
 ### Listen()
 
@@ -297,15 +284,3 @@ JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
 | Type      | Description                              |
 |-----------|------------------------------------------|
 | JobHandle | A to our newly created ScheduleSend Job. |
-
-### See Also
-
-<div class="seealso">
-
-<div>
-
-System.IDisposable
-
-</div>
-
-</div>
