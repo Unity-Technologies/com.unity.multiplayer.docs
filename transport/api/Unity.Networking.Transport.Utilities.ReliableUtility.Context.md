@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Context
+``` lang-csharp
+public struct Context
+```
 
-## Fields
+## 
 
 ### Capacity
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Capacity
+``` lang-csharp
+public int Capacity
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int DataPtrOffset
+``` lang-csharp
+public int DataPtrOffset
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int DataStride
+``` lang-csharp
+public int DataStride
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Delivered
+``` lang-csharp
+public int Delivered
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int IndexPtrOffset
+``` lang-csharp
+public int IndexPtrOffset
+```
 
 #### Field Value
 
@@ -175,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int IndexStride
+``` lang-csharp
+public int IndexStride
+```
 
 #### Field Value
 
@@ -195,7 +209,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long LastSentTime
+``` lang-csharp
+public long LastSentTime
+```
 
 #### Field Value
 
@@ -215,7 +231,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long PreviousTimestamp
+``` lang-csharp
+public long PreviousTimestamp
+```
 
 #### Field Value
 
@@ -235,7 +253,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Resume
+``` lang-csharp
+public int Resume
+```
 
 #### Field Value
 

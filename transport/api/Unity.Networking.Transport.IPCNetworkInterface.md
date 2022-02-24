@@ -73,13 +73,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct IPCNetworkInterface : INetworkInterface, IDisposable
+``` lang-csharp
+public struct IPCNetworkInterface : INetworkInterface, IDisposable
+```
 
-## Properties 
+## 
 
 ### LocalEndPoint
 
@@ -93,7 +95,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkInterfaceEndPoint LocalEndPoint { get; }
+``` lang-csharp
+public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
+```
 
 #### Property Value
 
@@ -101,7 +105,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------------------|-------------|
 | NetworkInterfaceEndPoint |             |
 
-## Methods 
+## 
 
 ### Bind(NetworkInterfaceEndPoint)
 
@@ -115,7 +119,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Bind(NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+public int Bind(NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -141,7 +147,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -168,7 +176,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkSendInterface CreateSendInterface()
+``` lang-csharp
+public NetworkSendInterface CreateSendInterface()
+```
 
 #### Returns
 
@@ -188,7 +198,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public void Dispose()
+``` lang-csharp
+public void Dispose()
+```
 
 ### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
@@ -202,7 +214,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -216,7 +230,7 @@ Object.ReferenceEquals(Object, Object)
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### Initialize(INetworkParameter\[\])
+### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -228,13 +242,37 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Initialize(params INetworkParameter[] param)
+``` lang-csharp
+public int Initialize(NetworkSettings settings)
+```
 
 #### Parameters
 
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkParameter\[\] | param |             |
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkSettings | settings |             |
+
+#### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### Listen()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int Listen()
+```
 
 #### Returns
 
@@ -254,22 +292,24 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+``` lang-csharp
+public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+```
 
 #### Parameters
 
 | Type                  | Name     | Description |
 |-----------------------|----------|-------------|
 | NetworkPacketReceiver | receiver |             |
-| Unity.Jobs.JobHandle  | dep      |             |
+| JobHandle             | dep      |             |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| Unity.Jobs.JobHandle |             |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
-### ScheduleSend(NativeQueue&lt;QueuedSendMessage&gt;, JobHandle)
+### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -281,20 +321,22 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+``` lang-csharp
+public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+```
 
 #### Parameters
 
-| Type                                 | Name      | Description |
-|--------------------------------------|-----------|-------------|
-| NativeQueue&lt;QueuedSendMessage&gt; | sendQueue |             |
-| Unity.Jobs.JobHandle                 | dep       |             |
+| Type                             | Name      | Description |
+|----------------------------------|-----------|-------------|
+| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue |             |
+| JobHandle                        | dep       |             |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| Unity.Jobs.JobHandle |             |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
 ### Implements
 

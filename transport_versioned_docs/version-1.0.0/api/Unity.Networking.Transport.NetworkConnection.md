@@ -5,6 +5,10 @@ title: Unity.Networking.Transport.NetworkConnection
 
 <div class="markdown level0 summary">
 
+The NetworkConnection is a struct that hold all information needed by
+the driver to link it with a virtual connection. The NetworkConnection
+is a public representation of a connection.
+
 </div>
 
 <div class="markdown level0 conceptual">
@@ -14,12 +18,6 @@ title: Unity.Networking.Transport.NetworkConnection
 <div class="inheritedMembers">
 
 ##### Inherited Members
-
-<div>
-
-ValueType.ToString()
-
-</div>
 
 <div>
 
@@ -57,8 +55,6 @@ public struct NetworkConnection
 
 <div class="markdown level1 summary">
 
-Gets the value of the connection's internal ID.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -81,6 +77,8 @@ public readonly int InternalId { get; }
 
 <div class="markdown level1 summary">
 
+Check to see if a NetworkConnection is Created.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -95,15 +93,39 @@ public readonly bool IsCreated { get; }
 
 #### Property Value
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                                                                  |
+|----------------|--------------------------------------------------------------------------------------------------------------|
+| System.Boolean | `true` if the NetworkConnection has been correctly created by a call to Accept() or Connect(NetworkEndPoint) |
+
+### Version
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly int Version { get; }
+```
+
+#### Property Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ## 
 
 ### Close(NetworkDriver)
 
 <div class="markdown level1 summary">
+
+Close an active NetworkConnection, similar to .
 
 </div>
 
@@ -119,9 +141,9 @@ public int Close(NetworkDriver driver)
 
 #### Parameters
 
-| Type          | Name   | Description |
-|---------------|--------|-------------|
-| NetworkDriver | driver |             |
+| Type          | Name   | Description                                  |
+|---------------|--------|----------------------------------------------|
+| NetworkDriver | driver | The driver that owns the virtual connection. |
 
 #### Returns
 
@@ -132,6 +154,9 @@ public int Close(NetworkDriver driver)
 ### Disconnect(NetworkDriver)
 
 <div class="markdown level1 summary">
+
+Disconnects a virtual connection and marks it for deletion. This
+connection will be removed on next the next frame.
 
 </div>
 
@@ -147,9 +172,9 @@ public int Disconnect(NetworkDriver driver)
 
 #### Parameters
 
-| Type          | Name   | Description |
-|---------------|--------|-------------|
-| NetworkDriver | driver |             |
+| Type          | Name   | Description                                  |
+|---------------|--------|----------------------------------------------|
+| NetworkDriver | driver | The driver that owns the virtual connection. |
 
 #### Returns
 
@@ -283,6 +308,9 @@ public NetworkConnection.State GetState(NetworkDriver driver)
 
 <div class="markdown level1 summary">
 
+Receive an event for this specific connection. Should be called until it
+returns Empty, even if the socket is disconnected.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -297,10 +325,10 @@ public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader str
 
 #### Parameters
 
-| Type             | Name   | Description |
-|------------------|--------|-------------|
-| NetworkDriver    | driver |             |
-| DataStreamReader | stream |             |
+| Type             | Name   | Description                                  |
+|------------------|--------|----------------------------------------------|
+| NetworkDriver    | driver | The driver that owns the virtual connection. |
+| DataStreamReader | stream |                                              |
 
 #### Returns
 
@@ -337,6 +365,36 @@ public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader str
 | Type              | Description |
 |-------------------|-------------|
 | NetworkEvent.Type |             |
+
+### ToString()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public override string ToString()
+```
+
+#### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
+
+#### Overrides
+
+<div>
+
+System.ValueType.ToString()
+
+</div>
 
 ## 
 

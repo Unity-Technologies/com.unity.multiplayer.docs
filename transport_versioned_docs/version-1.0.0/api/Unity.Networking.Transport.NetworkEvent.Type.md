@@ -5,7 +5,7 @@ title: Unity.Networking.Transport.NetworkEvent.Type
 
 <div class="markdown level0 summary">
 
-The different types of events that can be returned for a connection.
+NetworkEvent.Type enumerates available network events for this driver.
 
 </div>
 
@@ -25,9 +25,9 @@ public enum Type : short
 
 ## 
 
-| Name       | Description                                   |
-|------------|-----------------------------------------------|
-| Connect    | The connection is now established.            |
-| Data       | Data was received on the connection.          |
-| Disconnect | The connection is now closed.                 |
-| Empty      | No event actually occured. Should be ignored. |
+| Name       | Description |
+|------------|-------------|
+| Connect    |             |
+| Data       |             |
+| Disconnect |             |
+| Empty      |             |

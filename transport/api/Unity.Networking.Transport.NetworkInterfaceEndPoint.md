@@ -11,15 +11,21 @@ title: Unity.Networking.Transport.NetworkInterfaceEndPoint
 
 </div>
 
-<div class="inheritedMembers">
+<div classs="implements">
 
-##### Inherited Members
+##### Implements
 
 <div>
 
-ValueType.ToString()
+System.IEquatable\<NetworkInterfaceEndPoint\>
 
 </div>
+
+</div>
+
+<div class="inheritedMembers">
+
+##### Inherited Members
 
 <div>
 
@@ -43,13 +49,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkInterfaceEndPoint
+``` lang-csharp
+public struct NetworkInterfaceEndPoint : IEquatable<NetworkInterfaceEndPoint>
+```
 
-## Fields
+## 
 
 ### data
 
@@ -63,7 +71,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *data
+``` lang-csharp
+public byte *data
+```
 
 #### Field Value
 
@@ -83,7 +93,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int dataLength
+``` lang-csharp
+public int dataLength
+```
 
 #### Field Value
 
@@ -91,7 +103,29 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Properties 
+### k_MaxLength
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int k_MaxLength = 56
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+## 
 
 ### IsValid
 
@@ -105,7 +139,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool IsValid { get; }
+``` lang-csharp
+public readonly bool IsValid { get; }
+```
 
 #### Property Value
 
@@ -113,7 +149,7 @@ Object.ReferenceEquals(Object, Object)
 |----------------|-------------|
 | System.Boolean |             |
 
-## Methods 
+## 
 
 ### Equals(Object)
 
@@ -127,7 +163,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public override bool Equals(object other)
+``` lang-csharp
+public override bool Equals(object other)
+```
 
 #### Parameters
 
@@ -149,6 +187,34 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
+### Equals(NetworkInterfaceEndPoint)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Equals(NetworkInterfaceEndPoint other)
+```
+
+#### Parameters
+
+| Type                     | Name  | Description |
+|--------------------------|-------|-------------|
+| NetworkInterfaceEndPoint | other |             |
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### GetHashCode()
 
 <div class="markdown level1 summary">
@@ -161,7 +227,9 @@ System.ValueType.Equals(System.Object)
 
 #### Declaration
 
-    public override int GetHashCode()
+``` lang-csharp
+public override int GetHashCode()
+```
 
 #### Returns
 
@@ -177,7 +245,59 @@ System.ValueType.GetHashCode()
 
 </div>
 
-## Operators 
+### ToFixedString()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public FixedString64Bytes ToFixedString()
+```
+
+#### Returns
+
+| Type               | Description |
+|--------------------|-------------|
+| FixedString64Bytes |             |
+
+### ToString()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public override string ToString()
+```
+
+#### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
+
+#### Overrides
+
+<div>
+
+System.ValueType.ToString()
+
+</div>
+
+## 
 
 ### Equality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
 
@@ -191,7 +311,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool operator ==(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
+``` lang-csharp
+public static bool operator ==(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
+```
 
 #### Parameters
 
@@ -218,7 +340,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool operator !=(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
+``` lang-csharp
+public static bool operator !=(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
+```
 
 #### Parameters
 
@@ -232,3 +356,11 @@ System.ValueType.GetHashCode()
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### Implements
+
+<div>
+
+System.IEquatable\&lt;T&gt;
+
+</div>

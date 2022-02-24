@@ -13,17 +13,19 @@ title: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum ErrorCodes
+``` lang-csharp
+public enum ErrorCodes
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| Duplicated\_Packet | |
-| InsufficientMemory | |
-| OutgoingQueueIsFull | |
-| Stale\_Packet | |
+| Name                | Description |
+|---------------------|-------------|
+| Duplicated_Packet   |             |
+| InsufficientMemory  |             |
+| OutgoingQueueIsFull |             |
+| Stale_Packet        |             |

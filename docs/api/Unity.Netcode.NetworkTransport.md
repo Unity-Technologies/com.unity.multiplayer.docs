@@ -190,7 +190,7 @@ Initializes the transport
 public abstract void Initialize()
 ```
 
-### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\&lt;Byte&gt; Single)
+### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\&lt;Byte&gt;, Single)
 
 <div class="markdown level1 summary">
 
@@ -215,7 +215,7 @@ protected void InvokeOnTransportEvent(NetworkEvent eventType, ulong clientId, Ar
 |------------------------------------|-------------|----------------------------------------------------------------------------|
 | NetworkEvent                       | eventType   | The event type                                                             |
 | System.UInt64                      | clientId    | The clientId this event is for                                             |
-| System.ArraySegment\\&lt;System.Byte&gt;| payload     | The incoming data payload                                                  |
+| System.ArraySegment\&lt;System.Byte&gt; | payload     | The incoming data payload                                                  |
 | System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
 ### PollEvent(out UInt64, out ArraySegment\&lt;Byte&gt;, out Single)
@@ -242,7 +242,7 @@ public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte
 | Type                               | Name        | Description                                                                |
 |------------------------------------|-------------|----------------------------------------------------------------------------|
 | System.UInt64                      | clientId    | The clientId this event is for                                             |
-| System.ArraySegment\&lt;System.Byte&gt;  | payload     | The incoming data payload                                                  |
+| System.ArraySegment\&lt;System.Byte&gt; | payload     | The incoming data payload                                                  |
 | System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
 #### Returns
@@ -251,7 +251,7 @@ public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte
 |--------------|------------------------|
 | NetworkEvent | Returns the event type |
 
-### Send(UInt64, ArraySegment\&lt;Byte&gt;, NetworkDelivery)
+### Send(UInt64, ArraySegment\&lt;Byte&gt; NetworkDelivery)
 
 <div class="markdown level1 summary">
 

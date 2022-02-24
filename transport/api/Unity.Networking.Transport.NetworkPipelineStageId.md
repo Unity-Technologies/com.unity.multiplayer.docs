@@ -55,8 +55,10 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkPipelineStageId
+``` lang-csharp
+public struct NetworkPipelineStageId
+```

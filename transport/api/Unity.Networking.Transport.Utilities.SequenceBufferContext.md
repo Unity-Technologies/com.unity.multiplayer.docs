@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct SequenceBufferContext
+``` lang-csharp
+public struct SequenceBufferContext
+```
 
-## Fields
+## 
 
 ### Acked
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Acked
+``` lang-csharp
+public int Acked
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint AckMask
+``` lang-csharp
+public uint AckMask
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint LastAckMask
+``` lang-csharp
+public uint LastAckMask
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int Sequence
+``` lang-csharp
+public int Sequence
+```
 
 #### Field Value
 

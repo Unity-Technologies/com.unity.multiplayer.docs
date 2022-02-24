@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.NetworkPipelineParams
 
 <div class="markdown level0 summary">
 
-The network pipeline params
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -20,6 +18,12 @@ The network pipeline params
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>
 
@@ -74,7 +78,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkPipelineParams : INetworkParameter
+public struct NetworkPipelineParams : INetworkParameter, IValidatableNetworkParameter
 ```
 
 ## 
@@ -82,8 +86,6 @@ public struct NetworkPipelineParams : INetworkParameter
 ### initialCapacity
 
 <div class="markdown level1 summary">
-
-The initial capacity
 
 </div>
 
@@ -105,11 +107,9 @@ public int initialCapacity
 
 ## 
 
-### ValidateParameters(INetworkParameter\[\])
+### Validate()
 
 <div class="markdown level1 summary">
-
-Validates the parameters using the specified params
 
 </div>
 
@@ -120,26 +120,25 @@ Validates the parameters using the specified params
 #### Declaration
 
 ``` lang-csharp
-[Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
-public static void ValidateParameters(params INetworkParameter[] param)
+public bool Validate()
 ```
 
-#### Parameters
+#### Returns
 
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkParameter\[\] | param | The param   |
-
-#### Exceptions
-
-| Type                     | Condition                                                                 |
-|--------------------------|---------------------------------------------------------------------------|
-| System.ArgumentException | Value for NetworkPipelineParams.initialCapacity must be larger then zero. |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>
