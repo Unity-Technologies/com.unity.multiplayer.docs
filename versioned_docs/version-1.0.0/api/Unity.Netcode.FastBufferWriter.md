@@ -899,7 +899,7 @@ public void WriteNetworkSerializable<T>(in T value)
 |------|-------------|
 | T    |             |
 
-### WriteNetworkSerializable\&lt;T&gt;(INetworkSerializable\[\], Int32, Int32)
+### WriteNetworkSerializable\&lt;T&gt;(T\[\], Int32, Int32)
 
 <div class="markdown level1 summary">
 
@@ -914,17 +914,17 @@ Write an array of INetworkSerializables
 #### Declaration
 
 ``` lang-csharp
-public void WriteNetworkSerializable<T>(INetworkSerializable[] array, int count = -1, int offset = 0)
+public void WriteNetworkSerializable<T>(T[] array, int count = -1, int offset = 0)
     where T : INetworkSerializable
 ```
 
 #### Parameters
 
-| Type                     | Name   | Description        |
-|--------------------------|--------|--------------------|
-| INetworkSerializable\[\] | array  | The value to write |
-| System.Int32             | count  |                    |
-| System.Int32             | offset |                    |
+| Type         | Name   | Description        |
+|--------------|--------|--------------------|
+| T\[\]        | array  | The value to write |
+| System.Int32 | count  |                    |
+| System.Int32 | offset |                    |
 
 #### Type Parameters
 

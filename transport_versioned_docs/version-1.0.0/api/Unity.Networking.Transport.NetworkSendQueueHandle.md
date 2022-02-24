@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.NetworkSendQueueHandle
 
 <div class="markdown level0 summary">
 
-The network send queue handle
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -71,8 +69,6 @@ public struct NetworkSendQueueHandle
 
 <div class="markdown level1 summary">
 
-Create from the internal handle
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -89,4 +85,4 @@ public NativeQueue<QueuedSendMessage>.ParallelWriter FromHandle()
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| NativeQueue.ParallelWriter\<\> |             |
+| NativeQueue.ParallelWriter&lt;&gt; |             |

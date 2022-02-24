@@ -65,7 +65,7 @@ public struct DataStreamWriter
 
 ## 
 
-### DataStreamWriter(NativeArray\&lt;Byte&gt;)
+### DataStreamWriter(NativeArray\&lt;Byte&gt; )
 
 <div class="markdown level1 summary">
 
@@ -88,7 +88,7 @@ public DataStreamWriter(NativeArray<byte> data)
 
 | Type                       | Name | Description                                           |
 |----------------------------|------|-------------------------------------------------------|
-| NativeArray\&lt;System.Byte&gt; | data | The buffer we want to attach to our DataStreamWriter. |
+| NativeArray\&lt;System.Byte&gt;  | data | The buffer we want to attach to our DataStreamWriter. |
 
 ### DataStreamWriter(Byte\*, Int32)
 
@@ -307,7 +307,7 @@ public NativeArray<byte> AsNativeArray()
 
 | Type                       | Description |
 |----------------------------|-------------|
-| NativeArray\&lt;System.Byte&gt; |             |
+| NativeArray\&lt;System.Byte&gt;  |             |
 
 ### Clear()
 
@@ -371,7 +371,7 @@ public bool WriteByte(byte value)
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteBytes(NativeArray\&lt;Byte&gt;)
+### WriteBytes(NativeArray\&lt;Byte&gt; )
 
 <div class="markdown level1 summary">
 
@@ -393,7 +393,7 @@ public bool WriteBytes(NativeArray<byte> value)
 
 | Type                       | Name  | Description       |
 |----------------------------|-------|-------------------|
-| NativeArray\&lt;System.Byte&gt;| value | Source byte array |
+| NativeArray\&lt;System.Byte&gt;  | value | Source byte array |
 
 #### Returns
 

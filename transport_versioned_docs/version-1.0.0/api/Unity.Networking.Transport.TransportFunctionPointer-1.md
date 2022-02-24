@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.TransportFunctionPointer-1
 
 <div class="markdown level0 summary">
 
-Represents a wrapper around burst compatible function pointers in a
-portable way
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -79,8 +76,6 @@ public struct TransportFunctionPointer<T>
 
 <div class="markdown level1 summary">
 
-Initializes a new instance of the class
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -95,15 +90,13 @@ public TransportFunctionPointer(T executeDelegate)
 
 #### Parameters
 
-| Type | Name            | Description          |
-|------|-----------------|----------------------|
-| T    | executeDelegate | The execute delegate |
+| Type | Name            | Description |
+|------|-----------------|-------------|
+| T    | executeDelegate |             |
 
 ### TransportFunctionPointer(FunctionPointer\&lt;T&gt;)
 
 <div class="markdown level1 summary">
-
-Initializes a new instance of the class
 
 </div>
 
@@ -121,15 +114,13 @@ public TransportFunctionPointer(FunctionPointer<T> Pointer)
 
 | Type                | Name    | Description |
 |---------------------|---------|-------------|
-| FunctionPointer\&lt;T&gt; | Pointer | The pointer |
+| FunctionPointer&lt;T&gt; | Pointer |             |
 
 ## 
 
 ### Ptr
 
 <div class="markdown level1 summary">
-
-Returns Burst
 
 </div>
 
@@ -147,15 +138,13 @@ public readonly FunctionPointer<T> Ptr
 
 | Type                | Description |
 |---------------------|-------------|
-| FunctionPointer\&lt;T&gt; |             |
+| FunctionPointer&lt;T&gt;|             |
 
 ## 
 
 ### Burst(T)
 
 <div class="markdown level1 summary">
-
-returns a wrapped Burst compiled function pointer
 
 </div>
 
@@ -171,21 +160,19 @@ public static TransportFunctionPointer<T> Burst(T burstCompilableDelegate)
 
 #### Parameters
 
-| Type | Name                    | Description                   |
-|------|-------------------------|-------------------------------|
-| T    | burstCompilableDelegate | The burst compilable delegate |
+| Type | Name                    | Description |
+|------|-------------------------|-------------|
+| T    | burstCompilableDelegate |             |
 
 #### Returns
 
-| Type                         | Description                       |
-|------------------------------|-----------------------------------|
-| TransportFunctionPointer\&lt;T&gt; | A transport function pointer of t |
+| Type                         | Description |
+|------------------------------|-------------|
+| TransportFunctionPointer&lt;T&gt;|             |
 
 ### Managed(T)
 
 <div class="markdown level1 summary">
-
-Returns a wrapped managed function pointer
 
 </div>
 
@@ -201,12 +188,12 @@ public static TransportFunctionPointer<T> Managed(T managedDelegate)
 
 #### Parameters
 
-| Type | Name            | Description          |
-|------|-----------------|----------------------|
-| T    | managedDelegate | The managed delegate |
+| Type | Name            | Description |
+|------|-----------------|-------------|
+| T    | managedDelegate |             |
 
 #### Returns
 
-| Type                         | Description                       |
-|------------------------------|-----------------------------------|
-| TransportFunctionPointer\&lt;T&gt; | A transport function pointer of t |
+| Type                         | Description |
+|------------------------------|-------------|
+| TransportFunctionPointer&lt;T&gt; |             |

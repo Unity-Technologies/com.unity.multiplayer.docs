@@ -147,7 +147,7 @@ public const int DriverDataStreamSize = 65536
 <div class="markdown level1 summary">
 
 The default inactivity timeout after which a heartbeat is sent. This
-This value can be overridden using the NetworkConfigParameter
+value can be overridden using the NetworkConfigParameter
 
 </div>
 
@@ -194,8 +194,6 @@ public const int InitialEventQueueSize = 100
 ### InvalidConnectionId
 
 <div class="markdown level1 summary">
-
-The invalid connection id
 
 </div>
 
@@ -244,8 +242,6 @@ public const int MaxConnectAttempts = 60
 
 <div class="markdown level1 summary">
 
-The max size of any packet that can be sent
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -256,6 +252,32 @@ The max size of any packet that can be sent
 
 ``` lang-csharp
 public const int MTU = 1400
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### ReconnectionTimeoutMS
+
+<div class="markdown level1 summary">
+
+The default inactivity timeout after which re-establishing the
+connection is attempted. This value can be overridden using the
+NetworkConfigParameter.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int ReconnectionTimeoutMS = 2000
 ```
 
 #### Field Value

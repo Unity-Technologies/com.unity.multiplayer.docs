@@ -24,6 +24,12 @@ INetworkParameter
 
 </div>
 
+<div>
+
+IValidatableNetworkParameter
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
@@ -75,7 +81,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkConfigParameter : INetworkParameter
+public struct NetworkConfigParameter : INetworkParameter, IValidatableNetworkParameter
 ```
 
 ## 
@@ -258,10 +264,65 @@ spikes when both endpoints lives in the same process.
 
 </div>
 
+### reconnectionTimeoutMS
+
+<div class="markdown level1 summary">
+
+A timeout in milliseconds after which reconnection is attempted if there
+is no activity.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int reconnectionTimeoutMS
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>
