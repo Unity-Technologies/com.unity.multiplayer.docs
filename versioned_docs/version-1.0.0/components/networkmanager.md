@@ -39,7 +39,7 @@ Disconnecting is rather simple, but you have to remember, that you cannot use th
 public void Disconnect()
 {
     NetworkManager.Singleton.Shutdown();
-    
+
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 }
 ```
