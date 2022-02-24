@@ -67,22 +67,18 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+##### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-``` lang-csharp
-public struct NetworkEventQueue : IDisposable
-```
+    public struct NetworkEventQueue : IDisposable
 
-## 
+## Constructors 
 
 ### NetworkEventQueue(Int32)
 
 <div class="markdown level1 summary">
 
-Initializes a new instance of a NetworkEventQueue.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -91,24 +87,20 @@ Initializes a new instance of a NetworkEventQueue.
 
 #### Declaration
 
-``` lang-csharp
-public NetworkEventQueue(int queueSizePerConnection)
-```
+    public NetworkEventQueue(int queueSizePerConnection)
 
 #### Parameters
 
-| Type         | Name                   | Description                    |
-|--------------|------------------------|--------------------------------|
-| System.Int32 | queueSizePerConnection | The queue size per connection. |
+| Type         | Name                   | Description |
+|--------------|------------------------|-------------|
+| System.Int32 | queueSizePerConnection |             |
 
-## 
+## Methods 
 
 ### Dispose()
 
 <div class="markdown level1 summary">
 
-Disposes of the queue.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -117,16 +109,12 @@ Disposes of the queue.
 
 #### Declaration
 
-``` lang-csharp
-public void Dispose()
-```
+    public void Dispose()
 
 ### GetCountForConnection(Int32)
 
 <div class="markdown level1 summary">
 
-Get the number of events in the queue for a given connection.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -135,21 +123,19 @@ Get the number of events in the queue for a given connection.
 
 #### Declaration
 
-``` lang-csharp
-public int GetCountForConnection(int connectionId)
-```
+    public int GetCountForConnection(int connectionId)
 
 #### Parameters
 
-| Type         | Name         | Description                                     |
-|--------------|--------------|-------------------------------------------------|
-| System.Int32 | connectionId | The ID of the connection to get event count of. |
+| Type         | Name         | Description |
+|--------------|--------------|-------------|
+| System.Int32 | connectionId |             |
 
 #### Returns
 
-| Type         | Description                              |
-|--------------|------------------------------------------|
-| System.Int32 | The number of events for the connection. |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### PopEvent(out Int32, out Int32, out Int32)
 
@@ -163,9 +149,7 @@ public int GetCountForConnection(int connectionId)
 
 #### Declaration
 
-``` lang-csharp
-public NetworkEvent.Type PopEvent(out int id, out int offset, out int size)
-```
+    public NetworkEvent.Type PopEvent(out int id, out int offset, out int size)
 
 #### Parameters
 
@@ -193,9 +177,7 @@ public NetworkEvent.Type PopEvent(out int id, out int offset, out int size)
 
 #### Declaration
 
-``` lang-csharp
-public NetworkEvent.Type PopEvent(out int id, out int offset, out int size, out int pipelineId)
-```
+    public NetworkEvent.Type PopEvent(out int id, out int offset, out int size, out int pipelineId)
 
 #### Parameters
 
@@ -224,9 +206,7 @@ public NetworkEvent.Type PopEvent(out int id, out int offset, out int size, out 
 
 #### Declaration
 
-``` lang-csharp
-public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size)
-```
+    public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size)
 
 #### Parameters
 
@@ -254,9 +234,7 @@ public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset,
 
 #### Declaration
 
-``` lang-csharp
-public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size, out int pipelineId)
-```
+    public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset, out int size, out int pipelineId)
 
 #### Parameters
 
@@ -285,9 +263,7 @@ public NetworkEvent.Type PopEventForConnection(int connectionId, out int offset,
 
 #### Declaration
 
-``` lang-csharp
-public void PushEvent(NetworkEvent ev)
-```
+    public void PushEvent(NetworkEvent ev)
 
 #### Parameters
 
@@ -307,9 +283,7 @@ public void PushEvent(NetworkEvent ev)
 
 #### Declaration
 
-``` lang-csharp
-public NetworkEventQueue.Concurrent ToConcurrent()
-```
+    public NetworkEventQueue.Concurrent ToConcurrent()
 
 #### Returns
 

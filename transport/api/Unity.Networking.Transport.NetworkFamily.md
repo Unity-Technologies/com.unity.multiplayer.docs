@@ -15,16 +15,18 @@ NetworkFamily indicates what type of underlying medium we are using.
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum NetworkFamily
+``` lang-csharp
+public enum NetworkFamily
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| Invalid |  |
-| Ipv4 |  |
-| Ipv6 |  |
+| Name    | Description |
+|---------|-------------|
+| Invalid |             |
+| Ipv4    |             |
+| Ipv6    |             |

@@ -113,7 +113,7 @@ public readonly Dictionary<ulong, NetworkObject> SpawnedObjects
 
 | Type                                                                  | Description |
 |-----------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\&lt;System.UInt64, NetworkObject&gt; |             |
+| System.Collections.Generic.Dictionary\<System.UInt64, NetworkObject\> |             |
 
 ### SpawnedObjectsList
 
@@ -137,7 +137,7 @@ public readonly HashSet<NetworkObject> SpawnedObjectsList
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
-| System.Collections.Generic.HashSet\&lt;NetworkObject&gt;|             |
+| System.Collections.Generic.HashSet\<NetworkObject\> |             |
 
 ## 
 
