@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkSendInterface
+``` lang-csharp
+public struct NetworkSendInterface
+```
 
-## Fields
+## 
 
 ### AbortSendMessage
 
@@ -75,13 +77,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> AbortSendMessage
+``` lang-csharp
+public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> AbortSendMessage
+```
 
 #### Field Value
 
-| Type                                                                          | Description |
-|-------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkSendInterface.AbortSendMessageDelegate&gt; |             |
+| Type                                                                      | Description |
+|---------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\&lt;NetworkSendInterface.AbortSendMessageDelegate&gt; |             |
 
 ### BeginSendMessage
 
@@ -95,13 +99,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> BeginSendMessage
+``` lang-csharp
+public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> BeginSendMessage
+```
 
 #### Field Value
 
-| Type                                                                          | Description |
-|-------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkSendInterface.BeginSendMessageDelegate&gt; |             |
+| Type                                                                      | Description |
+|---------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\&lt;NetworkSendInterface.BeginSendMessageDelegate&gt; |             |
 
 ### EndSendMessage
 
@@ -115,13 +121,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> EndSendMessage
+``` lang-csharp
+public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> EndSendMessage
+```
 
 #### Field Value
 
-| Type                                                                        | Description |
-|-----------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkSendInterface.EndSendMessageDelegate&gt; |             |
+| Type                                                                    | Description |
+|-------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\&lt;NetworkSendInterface.EndSendMessageDelegate&gt; |             |
 
 ### UserData
 
@@ -135,8 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    [NativeDisableUnsafePtrRestriction]
-    public IntPtr UserData
+``` lang-csharp
+public IntPtr UserData
+```
 
 #### Field Value
 

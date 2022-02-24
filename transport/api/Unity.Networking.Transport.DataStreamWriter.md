@@ -55,13 +55,66 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct DataStreamWriter
+``` lang-csharp
+public struct DataStreamWriter
+```
 
-## Constructors 
+## 
+
+### DataStreamWriter(NativeArray\&lt;Byte&gt; )
+
+<div class="markdown level1 summary">
+
+Initializes a new instance of the DataStreamWriter struct with a
+NativeArray{byte}
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public DataStreamWriter(NativeArray<byte> data)
+```
+
+#### Parameters
+
+| Type                       | Name | Description                                           |
+|----------------------------|------|-------------------------------------------------------|
+| NativeArray\&lt;System.Byte&gt;  | data | The buffer we want to attach to our DataStreamWriter. |
+
+### DataStreamWriter(Byte\*, Int32)
+
+<div class="markdown level1 summary">
+
+Initializes a new instance of the DataStreamWriter struct with a memory
+we don't own
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public DataStreamWriter(byte *data, int length)
+```
+
+#### Parameters
+
+| Type          | Name   | Description         |
+|---------------|--------|---------------------|
+| System.Byte\* | data   | Pointer to the data |
+| System.Int32  | length | Length of the data  |
 
 ### DataStreamWriter(Int32, Allocator)
 
@@ -77,36 +130,18 @@ Initializes a new instance of the DataStreamWriter struct.
 
 #### Declaration
 
-    public DataStreamWriter(int length, Allocator allocator)
+``` lang-csharp
+public DataStreamWriter(int length, Allocator allocator)
+```
 
 #### Parameters
 
-| Type                        | Name      | Description                                                  |
-|-----------------------------|-----------|--------------------------------------------------------------|
-| System.Int32                | length    | The length of the buffer.                                    |
-| Unity.Collections.Allocator | allocator | The Unity.Collections.Allocator used to allocate the memory. |
+| Type         | Name      | Description                      |
+|--------------|-----------|----------------------------------|
+| System.Int32 | length    | The length of the buffer.        |
+| Allocator    | allocator | The used to allocate the memory. |
 
-### DataStreamWriter(NativeArray&lt;Byte&gt;)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public DataStreamWriter(NativeArray<byte> data)
-
-#### Parameters
-
-| Type                                             | Name | Description |
-|--------------------------------------------------|------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | data |             |
-
-## Properties 
+## 
 
 ### Capacity
 
@@ -123,7 +158,9 @@ in the buffer.
 
 #### Declaration
 
-    public int Capacity { get; }
+``` lang-csharp
+public readonly int Capacity { get; }
+```
 
 #### Property Value
 
@@ -143,7 +180,9 @@ in the buffer.
 
 #### Declaration
 
-    public bool HasFailedWrites { get; }
+``` lang-csharp
+public readonly bool HasFailedWrites { get; }
+```
 
 #### Property Value
 
@@ -166,7 +205,31 @@ writer was created with no arguments.
 
 #### Declaration
 
-    public bool IsCreated { get; }
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+### IsLittleEndian
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static readonly bool IsLittleEndian { get; }
+```
 
 #### Property Value
 
@@ -188,7 +251,9 @@ The size of the buffer used. See Capacity for the total size.
 
 #### Declaration
 
-    public int Length { get; }
+``` lang-csharp
+public readonly int Length { get; }
+```
 
 #### Property Value
 
@@ -210,7 +275,9 @@ The size of the buffer used in bits. See Length for the length in bytes.
 
 #### Declaration
 
-    public int LengthInBits { get; }
+``` lang-csharp
+public readonly int LengthInBits { get; }
+```
 
 #### Property Value
 
@@ -218,7 +285,7 @@ The size of the buffer used in bits. See Length for the length in bytes.
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### AsNativeArray()
 
@@ -232,13 +299,15 @@ The size of the buffer used in bits. See Length for the length in bytes.
 
 #### Declaration
 
-    public NativeArray<byte> AsNativeArray()
+``` lang-csharp
+public NativeArray<byte> AsNativeArray()
+```
 
 #### Returns
 
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; |             |
+| Type                       | Description |
+|----------------------------|-------------|
+| NativeArray\&lt;System.Byte&gt;  |             |
 
 ### Clear()
 
@@ -254,7 +323,9 @@ Moves the write position to the start of the data buffer used.
 
 #### Declaration
 
-    public void Clear()
+``` lang-csharp
+public void Clear()
+```
 
 ### Flush()
 
@@ -268,7 +339,9 @@ Moves the write position to the start of the data buffer used.
 
 #### Declaration
 
-    public void Flush()
+``` lang-csharp
+public void Flush()
+```
 
 ### WriteByte(Byte)
 
@@ -282,13 +355,45 @@ Moves the write position to the start of the data buffer used.
 
 #### Declaration
 
-    public bool WriteByte(byte value)
+``` lang-csharp
+public bool WriteByte(byte value)
+```
 
 #### Parameters
 
 | Type        | Name  | Description |
 |-------------|-------|-------------|
 | System.Byte | value |             |
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+### WriteBytes(NativeArray\&lt;Byte&gt; )
+
+<div class="markdown level1 summary">
+
+Copy NativeArray of bytes into the writers data buffer.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool WriteBytes(NativeArray<byte> value)
+```
+
+#### Parameters
+
+| Type                       | Name  | Description       |
+|----------------------------|-------|-------------------|
+| NativeArray\&lt;System.Byte&gt;  | value | Source byte array |
 
 #### Returns
 
@@ -308,7 +413,9 @@ Moves the write position to the start of the data buffer used.
 
 #### Declaration
 
-    public bool WriteBytes(byte *data, int bytes)
+``` lang-csharp
+public bool WriteBytes(byte *data, int bytes)
+```
 
 #### Parameters
 
@@ -323,11 +430,9 @@ Moves the write position to the start of the data buffer used.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteBytes(NativeArray&lt;Byte&gt;)
+### WriteFixedString128(FixedString128Bytes)
 
 <div class="markdown level1 summary">
-
-Copy NativeArray of bytes into the writers data buffer.
 
 </div>
 
@@ -337,13 +442,15 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteBytes(NativeArray<byte> value)
+``` lang-csharp
+public bool WriteFixedString128(FixedString128Bytes str)
+```
 
 #### Parameters
 
-| Type                                             | Name  | Description       |
-|--------------------------------------------------|-------|-------------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | value | Source byte array |
+| Type                | Name | Description |
+|---------------------|------|-------------|
+| FixedString128Bytes | str  |             |
 
 #### Returns
 
@@ -351,7 +458,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteFixedString128(FixedString128)
+### WriteFixedString32(FixedString32Bytes)
 
 <div class="markdown level1 summary">
 
@@ -363,13 +470,15 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteFixedString128(FixedString128 str)
+``` lang-csharp
+public bool WriteFixedString32(FixedString32Bytes str)
+```
 
 #### Parameters
 
-| Type           | Name | Description |
-|----------------|------|-------------|
-| FixedString128 | str  |             |
+| Type               | Name | Description |
+|--------------------|------|-------------|
+| FixedString32Bytes | str  |             |
 
 #### Returns
 
@@ -377,7 +486,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteFixedString32(FixedString32)
+### WriteFixedString4096(FixedString4096Bytes)
 
 <div class="markdown level1 summary">
 
@@ -389,13 +498,15 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteFixedString32(FixedString32 str)
+``` lang-csharp
+public bool WriteFixedString4096(FixedString4096Bytes str)
+```
 
 #### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| FixedString32 | str  |             |
+| Type                 | Name | Description |
+|----------------------|------|-------------|
+| FixedString4096Bytes | str  |             |
 
 #### Returns
 
@@ -403,7 +514,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteFixedString4096(FixedString4096)
+### WriteFixedString512(FixedString512Bytes)
 
 <div class="markdown level1 summary">
 
@@ -415,13 +526,15 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteFixedString4096(FixedString4096 str)
+``` lang-csharp
+public bool WriteFixedString512(FixedString512Bytes str)
+```
 
 #### Parameters
 
-| Type            | Name | Description |
-|-----------------|------|-------------|
-| FixedString4096 | str  |             |
+| Type                | Name | Description |
+|---------------------|------|-------------|
+| FixedString512Bytes | str  |             |
 
 #### Returns
 
@@ -429,7 +542,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WriteFixedString512(FixedString512)
+### WriteFixedString64(FixedString64Bytes)
 
 <div class="markdown level1 summary">
 
@@ -441,39 +554,15 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteFixedString512(FixedString512 str)
+``` lang-csharp
+public bool WriteFixedString64(FixedString64Bytes str)
+```
 
 #### Parameters
 
-| Type           | Name | Description |
-|----------------|------|-------------|
-| FixedString512 | str  |             |
-
-#### Returns
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-### WriteFixedString64(FixedString64)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public bool WriteFixedString64(FixedString64 str)
-
-#### Parameters
-
-| Type          | Name | Description |
-|---------------|------|-------------|
-| FixedString64 | str  |             |
+| Type               | Name | Description |
+|--------------------|------|-------------|
+| FixedString64Bytes | str  |             |
 
 #### Returns
 
@@ -493,7 +582,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteFloat(float value)
+``` lang-csharp
+public bool WriteFloat(float value)
+```
 
 #### Parameters
 
@@ -519,7 +610,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteInt(int value)
+``` lang-csharp
+public bool WriteInt(int value)
+```
 
 #### Parameters
 
@@ -545,7 +638,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteIntNetworkByteOrder(int value)
+``` lang-csharp
+public bool WriteIntNetworkByteOrder(int value)
+```
 
 #### Parameters
 
@@ -571,7 +666,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteLong(long value)
+``` lang-csharp
+public bool WriteLong(long value)
+```
 
 #### Parameters
 
@@ -585,7 +682,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WritePackedFixedString128Delta(FixedString128, FixedString128, NetworkCompressionModel)
+### WritePackedFixedString128Delta(FixedString128Bytes, FixedString128Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -597,14 +694,16 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFixedString128Delta(FixedString128 str, FixedString128 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFixedString128Delta(FixedString128Bytes str, FixedString128Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString128          | str      |             |
-| FixedString128          | baseline |             |
+| FixedString128Bytes     | str      |             |
+| FixedString128Bytes     | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
@@ -613,7 +712,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WritePackedFixedString32Delta(FixedString32, FixedString32, NetworkCompressionModel)
+### WritePackedFixedString32Delta(FixedString32Bytes, FixedString32Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -625,14 +724,16 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFixedString32Delta(FixedString32 str, FixedString32 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFixedString32Delta(FixedString32Bytes str, FixedString32Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString32           | str      |             |
-| FixedString32           | baseline |             |
+| FixedString32Bytes      | str      |             |
+| FixedString32Bytes      | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
@@ -641,7 +742,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WritePackedFixedString4096Delta(FixedString4096, FixedString4096, NetworkCompressionModel)
+### WritePackedFixedString4096Delta(FixedString4096Bytes, FixedString4096Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -653,14 +754,16 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFixedString4096Delta(FixedString4096 str, FixedString4096 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFixedString4096Delta(FixedString4096Bytes str, FixedString4096Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString4096         | str      |             |
-| FixedString4096         | baseline |             |
+| FixedString4096Bytes    | str      |             |
+| FixedString4096Bytes    | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
@@ -669,7 +772,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WritePackedFixedString512Delta(FixedString512, FixedString512, NetworkCompressionModel)
+### WritePackedFixedString512Delta(FixedString512Bytes, FixedString512Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -681,14 +784,16 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFixedString512Delta(FixedString512 str, FixedString512 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFixedString512Delta(FixedString512Bytes str, FixedString512Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString512          | str      |             |
-| FixedString512          | baseline |             |
+| FixedString512Bytes     | str      |             |
+| FixedString512Bytes     | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
@@ -697,7 +802,7 @@ Copy NativeArray of bytes into the writers data buffer.
 |----------------|-------------|
 | System.Boolean |             |
 
-### WritePackedFixedString64Delta(FixedString64, FixedString64, NetworkCompressionModel)
+### WritePackedFixedString64Delta(FixedString64Bytes, FixedString64Bytes, NetworkCompressionModel)
 
 <div class="markdown level1 summary">
 
@@ -709,14 +814,16 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFixedString64Delta(FixedString64 str, FixedString64 baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFixedString64Delta(FixedString64Bytes str, FixedString64Bytes baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString64           | str      |             |
-| FixedString64           | baseline |             |
+| FixedString64Bytes      | str      |             |
+| FixedString64Bytes      | baseline |             |
 | NetworkCompressionModel | model    |             |
 
 #### Returns
@@ -737,7 +844,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFloat(float value, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFloat(float value, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -764,7 +873,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedFloatDelta(float value, float baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedFloatDelta(float value, float baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -792,7 +903,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedInt(int value, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedInt(int value, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -819,7 +932,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedIntDelta(int value, int baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedIntDelta(int value, int baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -847,7 +962,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedLong(long value, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedLong(long value, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -874,7 +991,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedLongDelta(long value, long baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedLongDelta(long value, long baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -902,7 +1021,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedUInt(uint value, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedUInt(uint value, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -929,7 +1050,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedUIntDelta(uint value, uint baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedUIntDelta(uint value, uint baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -957,7 +1080,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedULong(ulong value, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedULong(ulong value, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -984,7 +1109,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WritePackedULongDelta(ulong value, ulong baseline, NetworkCompressionModel model)
+``` lang-csharp
+public bool WritePackedULongDelta(ulong value, ulong baseline, NetworkCompressionModel model)
+```
 
 #### Parameters
 
@@ -1012,7 +1139,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteRawBits(uint value, int numbits)
+``` lang-csharp
+public bool WriteRawBits(uint value, int numbits)
+```
 
 #### Parameters
 
@@ -1039,7 +1168,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteShort(short value)
+``` lang-csharp
+public bool WriteShort(short value)
+```
 
 #### Parameters
 
@@ -1065,7 +1196,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteShortNetworkByteOrder(short value)
+``` lang-csharp
+public bool WriteShortNetworkByteOrder(short value)
+```
 
 #### Parameters
 
@@ -1091,7 +1224,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteUInt(uint value)
+``` lang-csharp
+public bool WriteUInt(uint value)
+```
 
 #### Parameters
 
@@ -1117,7 +1252,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteUIntNetworkByteOrder(uint value)
+``` lang-csharp
+public bool WriteUIntNetworkByteOrder(uint value)
+```
 
 #### Parameters
 
@@ -1143,7 +1280,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteULong(ulong value)
+``` lang-csharp
+public bool WriteULong(ulong value)
+```
 
 #### Parameters
 
@@ -1169,7 +1308,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteUShort(ushort value)
+``` lang-csharp
+public bool WriteUShort(ushort value)
+```
 
 #### Parameters
 
@@ -1195,7 +1336,9 @@ Copy NativeArray of bytes into the writers data buffer.
 
 #### Declaration
 
-    public bool WriteUShortNetworkByteOrder(ushort value)
+``` lang-csharp
+public bool WriteUShortNetworkByteOrder(ushort value)
+```
 
 #### Parameters
 

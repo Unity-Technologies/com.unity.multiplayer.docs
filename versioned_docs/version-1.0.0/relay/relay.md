@@ -142,7 +142,7 @@ public struct RelayJoinData
 /// </summary>
 /// <param name="joinCode">The join code generated on the host or server</param>
 /// <returns>All the necessary data to connect</returns>
-public static async Task<RelayData> JoinGame(string joinCode)
+public static async Task<RelayJoinData> JoinGame(string joinCode)
 {
     //Initialize the Unity Services engine
     await UnityServices.InitializeAsync();

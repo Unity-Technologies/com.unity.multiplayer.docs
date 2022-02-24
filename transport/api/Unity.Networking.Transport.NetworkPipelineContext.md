@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkPipelineContext
+``` lang-csharp
+public struct NetworkPipelineContext
+```
 
-## Fields
+## 
 
 ### accumulatedHeaderCapacity
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int accumulatedHeaderCapacity
+``` lang-csharp
+public int accumulatedHeaderCapacity
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public DataStreamWriter header
+``` lang-csharp
+public DataStreamWriter header
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *internalProcessBuffer
+``` lang-csharp
+public byte *internalProcessBuffer
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int internalProcessBufferLength
+``` lang-csharp
+public int internalProcessBufferLength
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *internalSharedProcessBuffer
+``` lang-csharp
+public byte *internalSharedProcessBuffer
+```
 
 #### Field Value
 
@@ -175,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int internalSharedProcessBufferLength
+``` lang-csharp
+public int internalSharedProcessBufferLength
+```
 
 #### Field Value
 
@@ -195,7 +209,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *staticInstanceBuffer
+``` lang-csharp
+public byte *staticInstanceBuffer
+```
 
 #### Field Value
 
@@ -215,7 +231,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int staticInstanceBufferLength
+``` lang-csharp
+public int staticInstanceBufferLength
+```
 
 #### Field Value
 
@@ -235,7 +253,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long timestamp
+``` lang-csharp
+public long timestamp
+```
 
 #### Field Value
 

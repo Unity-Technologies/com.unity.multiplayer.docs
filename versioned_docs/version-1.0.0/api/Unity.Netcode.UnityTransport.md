@@ -97,7 +97,7 @@ public const int InitialBatchQueueSize = 6144
 |--------------|-------------|
 | System.Int32 |             |
 
-### InitialMaxPacketSize
+### InitialMaxPacketQueueSize
 
 <div class="markdown level1 summary">
 
@@ -110,7 +110,29 @@ public const int InitialBatchQueueSize = 6144
 #### Declaration
 
 ``` lang-csharp
-public const int InitialMaxPacketSize = default(int)
+public const int InitialMaxPacketQueueSize = 128
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### InitialMaxSendQueueSize
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int InitialMaxSendQueueSize = 98304
 ```
 
 #### Field Value
@@ -224,18 +246,18 @@ public override ulong ServerClientId { get; }
 #### Declaration
 
 ``` lang-csharp
-public void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableSequencedPipeline, out NetworkPipeline reliableSequencedPipeline, out NetworkPipeline reliableSequencedFragmentedPipeline)
+public void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableFragmentedPipeline, out NetworkPipeline unreliableSequencedFragmentedPipeline, out NetworkPipeline reliableSequencedFragmentedPipeline)
 ```
 
 #### Parameters
 
-| Type            | Name                                | Description |
-|-----------------|-------------------------------------|-------------|
-| UnityTransport  | transport                           |             |
-| NetworkDriver   | driver                              |             |
-| NetworkPipeline | unreliableSequencedPipeline         |             |
-| NetworkPipeline | reliableSequencedPipeline           |             |
-| NetworkPipeline | reliableSequencedFragmentedPipeline |             |
+| Type            | Name                                  | Description |
+|-----------------|---------------------------------------|-------------|
+| UnityTransport  | transport                             |             |
+| NetworkDriver   | driver                                |             |
+| NetworkPipeline | unreliableFragmentedPipeline          |             |
+| NetworkPipeline | unreliableSequencedFragmentedPipeline |             |
+| NetworkPipeline | reliableSequencedFragmentedPipeline   |             |
 
 ### DisconnectLocalClient()
 

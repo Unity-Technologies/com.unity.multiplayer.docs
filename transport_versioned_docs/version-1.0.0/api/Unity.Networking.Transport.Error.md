@@ -23,12 +23,12 @@ title: Unity.Networking.Transport.Error
 
 <div class="section">
 
+DisconnectReason enumerates all disconnect reasons.
+
 </div>
 
 ### Unity.Networking.Transport.Error.StatusCode
 
 <div class="section">
-
-Status code returned by many functions in the API.
 
 </div>
