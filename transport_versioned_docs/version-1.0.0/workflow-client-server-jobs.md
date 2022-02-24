@@ -58,7 +58,7 @@ public void Execute()
             Debug.Log("We are now connected to the server");
 
             var value = 1;
-            var writer = driver.BeginSend(connection[0]);
+            driver.BeginSend(connection[0], out var writer);
             writer.WriteUInt(value);
             driver.EndSend(writer);
         }
@@ -268,7 +268,7 @@ public void Execute(int index)
             Debug.Log("Got " + number + " from the Client adding + 2 to it.");
             number +=2;
 
-            var writer = driver.BeginSend(connections[index]);
+            driver.BeginSend(connections[index], out var writer);
             writer.WriteUInt(number);
             driver.EndSend(writer);
         }

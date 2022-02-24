@@ -23,15 +23,81 @@ We recommend that you  complete the [Your First Networking Game "Hello World"](h
 ## Adding Scripts to Hello World
 
 This section will add some scripts to Hello World which will contain the new features we will be covering in the tutorial.
-
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Scripts**.
-1. Create an empty `GameObject` rename it **HelloWorldManager**.
-1. Create a script called `HelloWorldManager`.
-1. Add the `HelloWorldManager` script as a component.
-<iframe src="https://www.youtube.com/embed/wdzkZbG2-18?playlist=wdzkZbG2-18&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+
+### Adding the `HellowWorldPlayer.cs` script
+
+1. Create a new script `HelloWorldPlayer`.
+1. Open the `HelloWorldPlayer.cs` script.
+1. Edit the `HelloWorldPlayer.cs` script to match the following.
+
+<details open>
+<summary>Click to show/hide the Code.
+
+</summary>
+
+```csharp
+using Unity.Netcode;
+using UnityEngine;
+
+namespace HelloWorld
+{
+    public class HelloWorldPlayer : NetworkBehaviour
+    {
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                Move();
+            }
+        }
+
+        public void Move()
+        {
+            if (NetworkManager.Singleton.IsServer)
+            {
+                var randomPosition = GetRandomPositionOnPlane();
+                transform.position = randomPosition;
+                Position.Value = randomPosition;
+            }
+            else
+            {
+                SubmitPositionRequestServerRpc();
+            }
+        }
+
+        [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        {
+            Position.Value = GetRandomPositionOnPlane();
+        }
+
+        static Vector3 GetRandomPositionOnPlane()
+        {
+            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+        }
+
+        void Update()
+        {
+            transform.position = Position.Value;
+        }
+    }
+}
+```
+
+</details>
+<iframe src="https://www.youtube.com/embed/DMfQMGUe_sI?playlist=DMfQMGUe_sI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
+
+
+### Adding the `HelloWorldManager.cs` script
+
+1. Create an empty `GameObject` rename it **HelloWorldManager**.
+1. Create a script called `HelloWorldManager`.
 1. Open the `HelloWorldManager.cs` script.
 1. Edit the `HelloWorldManager.cs` script to match the following.
 
@@ -88,13 +154,21 @@ namespace HelloWorld
             GUILayout.Label("Mode: " + mode);
         }
 
-        static void SubmitNewPosition()
+static void SubmitNewPosition()
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
             {
-                var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
-                var player = playerObject.GetComponent<HelloWorldPlayer>();
-                player.Move();
+                if (NetworkManager.Singleton.IsServer && !NetworkManager.Singleton.IsClient )
+                {
+                    foreach (ulong uid in NetworkManager.Singleton.ConnectedClientsIds)
+                        NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(uid).GetComponent<HelloWorldPlayer>().Move();
+                }
+                else
+                {
+                    var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+                    var player = playerObject.GetComponent<HelloWorldPlayer>();
+                    player.Move();
+                }
             }
         }
     }
@@ -102,8 +176,16 @@ namespace HelloWorld
 ```
 </details>
 
+
+1. Add the `HelloWorldManager` script as a component.
+
+<iframe src="https://www.youtube.com/embed/_L6AvD_6FKU?playlist=_L6AvD_6FKU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+
 ## Adding Editor Modes to Hello World
 
+
+   
 Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
 
 <details open>
@@ -180,70 +262,12 @@ You will notice the introduction of a new method,  `SubmitNewPosition()`; which 
 
 ## Adding basic movement to the Player object 
 
-This script adds some basic movement to the Hello World player.
+The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World player.
 
-1. Create a new script `HelloWorldPlayer`.
-1. Open the `HelloWorldPlayer.cs` script.
-1. Edit the `HelloWorldPlayer.cs` script to match the following.
 
-<details open>
-<summary>Click to show/hide the Code.
-
-</summary>
-
-```csharp
-using Unity.Netcode;
-using UnityEngine;
-
-namespace HelloWorld
-{
-    public class HelloWorldPlayer : NetworkBehaviour
-    {
-        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-
-        public override void OnNetworkSpawn()
-        {
-            Move();
-        }
-
-        public void Move()
-        {
-            if (NetworkManager.Singleton.IsServer)
-            {
-                var randomPosition = GetRandomPositionOnPlane();
-                transform.position = randomPosition;
-                Position.Value = randomPosition;
-            }
-            else
-            {
-                SubmitPositionRequestServerRpc();
-            }
-        }
-
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
-        {
-            Position.Value = GetRandomPositionOnPlane();
-        }
-
-        static Vector3 GetRandomPositionOnPlane()
-        {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
-        }
-
-        void Update()
-        {
-            transform.position = Position.Value;
-        }
-    }
-}
-```
-
-</details>
-
-4. Select the **Player** prefab.
+1. Select the **Player** prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
-<iframe src="https://www.youtube.com/embed/Ui8fRj-mK1k?playlist=Ui8fRj-mK1k&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/8-hR6ElBY-Y?playlist=8-hR6ElBY-Y&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
@@ -296,7 +320,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```csharp
         public override void OnNetworkSpawn()
         {
-            Move();
+            if (IsOwner)
+            {
+                Move();
+            }
         }
 ```
 </details>
@@ -459,7 +486,7 @@ Make sure **SampleScene** is included in **BuildSettings**.
 
 One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
 
-<iframe src="https://www.youtube.com/embed/khZh7lZPzqc?playlist=khZh7lZPzqc&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
+<iframe src="https://www.youtube.com/embed/2FTSAMbNXow?playlist=2FTSAMbNXow&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 

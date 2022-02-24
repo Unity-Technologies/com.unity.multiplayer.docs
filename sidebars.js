@@ -139,6 +139,10 @@ module.exports = {
           },
         ]
       },
+      {
+        "type": "doc",
+        "id": "advanced-topics/session-management"
+      }
     ]
   },
   {
