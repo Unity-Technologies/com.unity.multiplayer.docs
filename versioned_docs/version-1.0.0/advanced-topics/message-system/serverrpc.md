@@ -73,6 +73,16 @@ PingRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
 
 PingServerRpc(somenumber, sometext); // This is clearly a ServerRpc call
 ```
+## ServerRpc calls and Ownership
+
+By default `ServerRpc` calls are only allowed to be invoked by the owner of the [`Network Object`](../../basics/networkobject.md). You can allow any object regardless of the owner to invoke the call by setting the `ServerRpc Attribute` `RequireOwnership` to false. `RequireOwnership` defaults to true.
+
+```csharp
+// Call can be invoked by any `NetworkObject` regardless of the owner.
+[ServerRpc(RequireOwnership = false)]
+void PingServerRpc(int somenumber, string sometext) { /* ... */ }
+```
+
 
 ## See also
 
