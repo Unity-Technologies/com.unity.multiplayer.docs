@@ -13,15 +13,17 @@ title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketType
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum PacketType : ushort
+``` lang-csharp
+public enum PacketType : ushort
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| Ack |  |
-| Payload |  |
+| Name    | Description |
+|---------|-------------|
+| Ack     |             |
+| Payload |             |

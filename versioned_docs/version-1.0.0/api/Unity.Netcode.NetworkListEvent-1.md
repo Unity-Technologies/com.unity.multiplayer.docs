@@ -97,6 +97,30 @@ public int Index
 |--------------|-------------|
 | System.Int32 |             |
 
+### PreviousValue
+
+<div class="markdown level1 summary">
+
+The previous value when "Value" has changed, if available.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public T PreviousValue
+```
+
+#### Field Value
+
+| Type | Description |
+|------|-------------|
+| T    |             |
+
 ### Type
 
 <div class="markdown level1 summary">

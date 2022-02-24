@@ -25,13 +25,15 @@ IDisposable.Dispose()
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public interface INetworkInterface : IDisposable
+``` lang-csharp
+public interface INetworkInterface : IDisposable
+```
 
-## Properties 
+## 
 
 ### LocalEndPoint
 
@@ -45,7 +47,9 @@ IDisposable.Dispose()
 
 #### Declaration
 
-    NetworkInterfaceEndPoint LocalEndPoint { get; }
+``` lang-csharp
+NetworkInterfaceEndPoint LocalEndPoint { get; }
+```
 
 #### Property Value
 
@@ -53,7 +57,7 @@ IDisposable.Dispose()
 |--------------------------|-------------|
 | NetworkInterfaceEndPoint |             |
 
-## Methods 
+## 
 
 ### Bind(NetworkInterfaceEndPoint)
 
@@ -69,7 +73,9 @@ Binds the medium to a specific endpoint.
 
 #### Declaration
 
-    int Bind(NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+int Bind(NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -95,7 +101,9 @@ Binds the medium to a specific endpoint.
 
 #### Declaration
 
-    int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -122,7 +130,9 @@ Binds the medium to a specific endpoint.
 
 #### Declaration
 
-    NetworkSendInterface CreateSendInterface()
+``` lang-csharp
+NetworkSendInterface CreateSendInterface()
+```
 
 #### Returns
 
@@ -142,7 +152,9 @@ Binds the medium to a specific endpoint.
 
 #### Declaration
 
-    NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -156,7 +168,7 @@ Binds the medium to a specific endpoint.
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### Initialize(INetworkParameter\[\])
+### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -168,19 +180,46 @@ Binds the medium to a specific endpoint.
 
 #### Declaration
 
-    int Initialize(params INetworkParameter[] param)
+``` lang-csharp
+int Initialize(NetworkSettings settings)
+```
 
 #### Parameters
 
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkParameter\[\] | param |             |
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkSettings | settings |             |
 
 #### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+### Listen()
+
+<div class="markdown level1 summary">
+
+Start listening for incoming connections. This is normally a no-op for
+real UDP sockets.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+int Listen()
+```
+
+#### Returns
+
+| Type         | Description  |
+|--------------|--------------|
+| System.Int32 | 0 on Success |
 
 ### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
@@ -197,22 +236,24 @@ medium and pass it to the AppendData function supplied by NetworkDriver
 
 #### Declaration
 
-    JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+``` lang-csharp
+JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+```
 
 #### Parameters
 
-| Type                  | Name     | Description                                             |
-|-----------------------|----------|---------------------------------------------------------|
-| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received.        |
-| Unity.Jobs.JobHandle  | dep      | A Unity.Jobs.JobHandle to any dependency we might have. |
+| Type                  | Name     | Description                                      |
+|-----------------------|----------|--------------------------------------------------|
+| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
+| JobHandle             | dep      | A to any dependency we might have.               |
 
 #### Returns
 
-| Type                 | Description                                                      |
-|----------------------|------------------------------------------------------------------|
-| Unity.Jobs.JobHandle | A Unity.Jobs.JobHandle to our newly created ScheduleReceive Job. |
+| Type      | Description                                 |
+|-----------|---------------------------------------------|
+| JobHandle | A to our newly created ScheduleReceive Job. |
 
-### ScheduleSend(NativeQueue&lt;QueuedSendMessage&gt;, JobHandle)
+### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -227,17 +268,19 @@ medium
 
 #### Declaration
 
-    JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+``` lang-csharp
+JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+```
 
 #### Parameters
 
-| Type                                 | Name      | Description                                                |
-|--------------------------------------|-----------|------------------------------------------------------------|
-| NativeQueue&lt;QueuedSendMessage&gt; | sendQueue | The send queue which can be used to emulate parallel send. |
-| Unity.Jobs.JobHandle                 | dep       | A Unity.Jobs.JobHandle to any dependency we might have.    |
+| Type                             | Name      | Description                                                |
+|----------------------------------|-----------|------------------------------------------------------------|
+| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue | The send queue which can be used to emulate parallel send. |
+| JobHandle                        | dep       | A to any dependency we might have.                         |
 
 #### Returns
 
-| Type                 | Description                                                   |
-|----------------------|---------------------------------------------------------------|
-| Unity.Jobs.JobHandle | A Unity.Jobs.JobHandle to our newly created ScheduleSend Job. |
+| Type      | Description                              |
+|-----------|------------------------------------------|
+| JobHandle | A to our newly created ScheduleSend Job. |

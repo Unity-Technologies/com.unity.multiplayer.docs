@@ -5,7 +5,9 @@ title: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnLoad event View Load for more information
+Delegate declaration for the OnLoad event.  
+See also:  
+Loadfor more information
 
 </div>
 

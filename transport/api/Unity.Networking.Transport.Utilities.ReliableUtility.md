@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct ReliableUtility
+``` lang-csharp
+public struct ReliableUtility
+```
 
-## Fields
+## 
 
 ### DefaultMinimumResendTime
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public const int DefaultMinimumResendTime = 64
+``` lang-csharp
+public const int DefaultMinimumResendTime = 64
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public const int MaximumResendTime = 200
+``` lang-csharp
+public const int MaximumResendTime = 200
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public const int NullEntry = -1
+``` lang-csharp
+public const int NullEntry = -1
+```
 
 #### Field Value
 
@@ -123,7 +131,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### CalculateProcessingTime(Byte\*, UInt16, Int64)
 
@@ -137,7 +145,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static ushort CalculateProcessingTime(byte *sharedBuffer, ushort sequenceId, long timestamp)
+``` lang-csharp
+public static ushort CalculateProcessingTime(byte *sharedBuffer, ushort sequenceId, long timestamp)
+```
 
 #### Parameters
 
@@ -165,7 +175,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static ReliableUtility.PacketTimers*GetLocalPacketTimer(byte *sharedBuffer, ushort sequenceId)
+``` lang-csharp
+public static ReliableUtility.PacketTimers*GetLocalPacketTimer(byte *sharedBuffer, ushort sequenceId)
+```
 
 #### Parameters
 
@@ -192,7 +204,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static ReliableUtility.Packet*GetPacket(byte *self, int sequence)
+``` lang-csharp
+public static ReliableUtility.Packet*GetPacket(byte *self, int sequence)
+```
 
 #### Parameters
 
@@ -219,7 +233,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static ReliableUtility.PacketInformation*GetPacketInformation(byte *self, int sequence)
+``` lang-csharp
+public static ReliableUtility.PacketInformation*GetPacketInformation(byte *self, int sequence)
+```
 
 #### Parameters
 
@@ -246,7 +262,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static ReliableUtility.PacketTimers*GetRemotePacketTimer(byte *sharedBuffer, ushort sequenceId)
+``` lang-csharp
+public static ReliableUtility.PacketTimers*GetRemotePacketTimer(byte *sharedBuffer, ushort sequenceId)
+```
 
 #### Parameters
 
@@ -273,7 +291,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static ReliableUtility.SharedContext InitializeContext(byte *sharedBuffer, int sharedBufferLength, byte *sendBuffer, int sendBufferLength, byte *recvBuffer, int recvBufferLength, ReliableUtility.Parameters param)
+``` lang-csharp
+public static ReliableUtility.SharedContext InitializeContext(byte *sharedBuffer, int sharedBufferLength, byte *sendBuffer, int sendBufferLength, byte *recvBuffer, int recvBufferLength, ReliableUtility.Parameters param)
+```
 
 #### Parameters
 
@@ -305,7 +325,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static int InitializeProcessContext(byte *buffer, int bufferLength, ReliableUtility.Parameters param)
+``` lang-csharp
+public static int InitializeProcessContext(byte *buffer, int bufferLength, ReliableUtility.Parameters param)
+```
 
 #### Parameters
 
@@ -333,7 +355,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static int ProcessCapacityNeeded(ReliableUtility.Parameters param)
+``` lang-csharp
+public static int ProcessCapacityNeeded(ReliableUtility.Parameters param)
+```
 
 #### Parameters
 
@@ -367,7 +391,9 @@ shared context.
 
 #### Declaration
 
-    public static int Read(NetworkPipelineContext context, ReliableUtility.PacketHeader header)
+``` lang-csharp
+public static int Read(NetworkPipelineContext context, ReliableUtility.PacketHeader header)
+```
 
 #### Parameters
 
@@ -394,7 +420,9 @@ shared context.
 
 #### Declaration
 
-    public static void ReadAckPacket(NetworkPipelineContext context, ReliableUtility.PacketHeader header)
+``` lang-csharp
+public static void ReadAckPacket(NetworkPipelineContext context, ReliableUtility.PacketHeader header)
+```
 
 #### Parameters
 
@@ -415,7 +443,9 @@ shared context.
 
 #### Declaration
 
-    public static void Release(byte *self, int sequence)
+``` lang-csharp
+public static void Release(byte *self, int sequence)
+```
 
 #### Parameters
 
@@ -436,15 +466,17 @@ shared context.
 
 #### Declaration
 
-    public static void Release(byte *self, int start_sequence, int count)
+``` lang-csharp
+public static void Release(byte *self, int start_sequence, int count)
+```
 
 #### Parameters
 
-| Type          | Name            | Description |
-|---------------|-----------------|-------------|
-| System.Byte\* | self            |             |
-| System.Int32  | start\_sequence |             |
-| System.Int32  | count           |             |
+| Type          | Name           | Description |
+|---------------|----------------|-------------|
+| System.Byte\* | self           |             |
+| System.Int32  | start_sequence |             |
+| System.Int32  | count          |             |
 
 ### ReleaseOrResumePackets(NetworkPipelineContext)
 
@@ -466,7 +498,9 @@ to resend yet.
 
 #### Declaration
 
-    public static bool ReleaseOrResumePackets(NetworkPipelineContext context)
+``` lang-csharp
+public static bool ReleaseOrResumePackets(NetworkPipelineContext context)
+```
 
 #### Parameters
 
@@ -499,7 +533,9 @@ after.
 
 #### Declaration
 
-    public static InboundRecvBuffer ResumeReceive(NetworkPipelineContext context, int startSequence, ref bool needsResume)
+``` lang-csharp
+public static InboundRecvBuffer ResumeReceive(NetworkPipelineContext context, int startSequence, ref bool needsResume)
+```
 
 #### Parameters
 
@@ -532,7 +568,9 @@ to track the next packet we need to resume.
 
 #### Declaration
 
-    public static InboundSendBuffer ResumeSend(NetworkPipelineContext context, out ReliableUtility.PacketHeader header, ref bool needsResume)
+``` lang-csharp
+public static InboundSendBuffer ResumeSend(NetworkPipelineContext context, out ReliableUtility.PacketHeader header, ref bool needsResume)
+```
 
 #### Parameters
 
@@ -550,15 +588,18 @@ to track the next packet we need to resume.
 
 #### Exceptions
 
-| Type                        | Condition |
-|-----------------------------|-----------|
-| System.ApplicationException |           |
+| Type                             | Condition |
+|----------------------------------|-----------|
+| System.InvalidOperationException |           |
 
 ### SetHeaderAndPacket(Byte\*, Int32, ReliableUtility.PacketHeader, InboundSendBuffer, Int64)
 
 <div class="markdown level1 summary">
 
-Write packet, packet header and tracking information to the given buffer space. This buffer should contain the reliability Context at the front that contains the capacity of the buffer and pointer offsets needed to find the slots we can copy the packet to.
+Write packet, packet header and tracking information to the given buffer
+space. This buffer should contain the reliability Context at the front,
+that contains the capacity of the buffer and pointer offsets needed to
+find the slots we can copy the packet to.
 
 </div>
 
@@ -568,7 +609,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void SetHeaderAndPacket(byte *self, int sequence, ReliableUtility.PacketHeader header, InboundSendBuffer data, long timestamp)
+``` lang-csharp
+public static void SetHeaderAndPacket(byte *self, int sequence, ReliableUtility.PacketHeader header, InboundSendBuffer data, long timestamp)
+```
 
 #### Parameters
 
@@ -598,7 +641,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void SetMinimumResendTime(int value, NetworkDriver driver, NetworkPipeline pipeline, NetworkConnection con)
+``` lang-csharp
+public static void SetMinimumResendTime(int value, NetworkDriver driver, NetworkPipeline pipeline, NetworkConnection con)
+```
 
 #### Parameters
 
@@ -621,7 +666,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void SetPacket(byte *self, int sequence, void *data, int length)
+``` lang-csharp
+public static void SetPacket(byte *self, int sequence, void *data, int length)
+```
 
 #### Parameters
 
@@ -644,7 +691,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void SetPacket(byte *self, int sequence, InboundRecvBuffer data)
+``` lang-csharp
+public static void SetPacket(byte *self, int sequence, InboundRecvBuffer data)
+```
 
 #### Parameters
 
@@ -666,7 +715,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static int SharedCapacityNeeded(ReliableUtility.Parameters param)
+``` lang-csharp
+public static int SharedCapacityNeeded(ReliableUtility.Parameters param)
+```
 
 #### Parameters
 
@@ -692,7 +743,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static bool ShouldSendAck(NetworkPipelineContext ctx)
+``` lang-csharp
+public static bool ShouldSendAck(NetworkPipelineContext ctx)
+```
 
 #### Parameters
 
@@ -718,7 +771,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void StoreReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp, ushort processingTime)
+``` lang-csharp
+public static void StoreReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp, ushort processingTime)
+```
 
 #### Parameters
 
@@ -741,7 +796,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void StoreRemoteReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp)
+``` lang-csharp
+public static void StoreRemoteReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp)
+```
 
 #### Parameters
 
@@ -763,7 +820,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static void StoreTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp)
+``` lang-csharp
+public static void StoreTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp)
+```
 
 #### Parameters
 
@@ -785,7 +844,9 @@ Write packet, packet header and tracking information to the given buffer space. 
 
 #### Declaration
 
-    public static bool TryAquire(byte *self, int sequence)
+``` lang-csharp
+public static bool TryAquire(byte *self, int sequence)
+```
 
 #### Parameters
 
@@ -816,7 +877,9 @@ from remote with ackmask.
 
 #### Declaration
 
-    public static int Write(NetworkPipelineContext context, InboundSendBuffer inboundBuffer, ref ReliableUtility.PacketHeader header)
+``` lang-csharp
+public static int Write(NetworkPipelineContext context, InboundSendBuffer inboundBuffer, ref ReliableUtility.PacketHeader header)
+```
 
 #### Parameters
 
@@ -848,7 +911,9 @@ routine.
 
 #### Declaration
 
-    public static void WriteAckPacket(NetworkPipelineContext context, ref ReliableUtility.PacketHeader header)
+``` lang-csharp
+public static void WriteAckPacket(NetworkPipelineContext context, ref ReliableUtility.PacketHeader header)
+```
 
 #### Parameters
 

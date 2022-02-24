@@ -93,10 +93,6 @@ public static class SequenceHelpers
 
 <div class="markdown level1 summary">
 
-Calculate the difference between two sequence IDs, taking integer
-overflow/underflow into account. For example, both AbsDistance(65535, 0)
-and AbsDistance(0, 65535) will return 1, not 65535.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -111,24 +107,20 @@ public static int AbsDistance(ushort lhs, ushort rhs)
 
 #### Parameters
 
-| Type          | Name | Description                                         |
-|---------------|------|-----------------------------------------------------|
-| System.UInt16 | lhs  | The first sequence ID. Compared against the second. |
-| System.UInt16 | rhs  | The second sequence ID. Compared against the first. |
+| Type          | Name | Description |
+|---------------|------|-------------|
+| System.UInt16 | lhs  |             |
+| System.UInt16 | rhs  |             |
 
 #### Returns
 
-| Type         | Description                                                      |
-|--------------|------------------------------------------------------------------|
-| System.Int32 | An integer value equal to the distance between the sequence IDs. |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### BitMaskToString(UInt32)
 
 <div class="markdown level1 summary">
-
-Converts a bitmask integer to a string representation of its binary
-expression, e.g. a mask value of 4 will return a string with the 3rd bit
-set: 00000000000000000000000000000100
 
 </div>
 
@@ -144,23 +136,19 @@ public static string BitMaskToString(uint mask)
 
 #### Parameters
 
-| Type          | Name | Description                    |
-|---------------|------|--------------------------------|
-| System.UInt32 | mask | The bitmask in integer format. |
+| Type          | Name | Description |
+|---------------|------|-------------|
+| System.UInt32 | mask |             |
 
 #### Returns
 
-| Type          | Description                           |
-|---------------|---------------------------------------|
-| System.String | A string that represents the bitmask. |
+| Type          | Description |
+|---------------|-------------|
+| System.String |             |
 
 ### GreaterThan16(UInt16, UInt16)
 
 <div class="markdown level1 summary">
-
-Describes whether the non-wrapping difference between two sequenceIDs is
-less than 2^15 (or 0x8000, or 32768). (The "16" seems to be the 16th bit
-in a 16-bit integer.)
 
 </div>
 
@@ -176,25 +164,20 @@ public static bool GreaterThan16(ushort lhs, ushort rhs)
 
 #### Parameters
 
-| Type          | Name | Description         |
-|---------------|------|---------------------|
-| System.UInt16 | lhs  | The first operand.  |
-| System.UInt16 | rhs  | The second operand. |
+| Type          | Name | Description |
+|---------------|------|-------------|
+| System.UInt16 | lhs  |             |
+| System.UInt16 | rhs  |             |
 
 #### Returns
 
-| Type           | Description                                                                                                   |
-|----------------|---------------------------------------------------------------------------------------------------------------|
-| System.Boolean | Whether or not the non-wrapping difference between the two operands is less than or equal to unsigned 0x7FFF. |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### IsNewer(UInt32, UInt32)
 
 <div class="markdown level1 summary">
-
-This method was originally added in February 2019, but does not seem to
-be used anywhere currently. Its original context seems to have been
-intended for a very simple version of checking whether a packet's
-sequence ID was equal to or newer than the last received packet.
 
 </div>
 
@@ -210,24 +193,20 @@ public static bool IsNewer(uint current, uint old)
 
 #### Parameters
 
-| Type          | Name    | Description                                        |
-|---------------|---------|----------------------------------------------------|
-| System.UInt32 | current | The sequence ID of a newly-arrived packet to check |
-| System.UInt32 | old     | The sequence ID of a previously received packet    |
+| Type          | Name    | Description |
+|---------------|---------|-------------|
+| System.UInt32 | current |             |
+| System.UInt32 | old     |             |
 
 #### Returns
 
-| Type           | Description                       |
-|----------------|-----------------------------------|
-| System.Boolean | true if current is newer than old |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### LessThan16(UInt16, UInt16)
 
 <div class="markdown level1 summary">
-
-Describes whether the non-absolute difference between two sequenceIDs is
-greater than or equal to 2^15 (or 0x8000, or 32768). (The "16" seems to
-be the 16th bit in a 16-bit integer.)
 
 </div>
 
@@ -243,23 +222,20 @@ public static bool LessThan16(ushort lhs, ushort rhs)
 
 #### Parameters
 
-| Type          | Name | Description         |
-|---------------|------|---------------------|
-| System.UInt16 | lhs  | The first operand.  |
-| System.UInt16 | rhs  | The second operand. |
+| Type          | Name | Description |
+|---------------|------|-------------|
+| System.UInt16 | lhs  |             |
+| System.UInt16 | rhs  |             |
 
 #### Returns
 
-| Type           | Description                                                                                          |
-|----------------|------------------------------------------------------------------------------------------------------|
-| System.Boolean | Whether or not the non-wrapping difference between the two operands is greater than unsigned 0x7FFF. |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### StalePacket(UInt16, UInt16, UInt16)
 
 <div class="markdown level1 summary">
-
-Describes whether a packet is stale in the context of sequenced
-pipelines.
 
 </div>
 
@@ -275,14 +251,14 @@ public static bool StalePacket(ushort sequence, ushort oldSequence, ushort windo
 
 #### Parameters
 
-| Type          | Name        | Description                  |
-|---------------|-------------|------------------------------|
-| System.UInt16 | sequence    | The more recent sequence ID. |
-| System.UInt16 | oldSequence | The older sequence ID.       |
-| System.UInt16 | windowSize  | The window size              |
+| Type          | Name        | Description |
+|---------------|-------------|-------------|
+| System.UInt16 | sequence    |             |
+| System.UInt16 | oldSequence |             |
+| System.UInt16 | windowSize  |             |
 
 #### Returns
 
-| Type           | Description                                                                                                                   |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------|
-| System.Boolean | A boolean value containing the results of LessThan16(UInt16, UInt16) where lhs = sequence and rhs = oldSequence - windowSize. |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |

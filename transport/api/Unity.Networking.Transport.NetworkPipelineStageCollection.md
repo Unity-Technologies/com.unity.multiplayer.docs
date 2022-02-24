@@ -79,13 +79,15 @@ Object.ToString()
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public static class NetworkPipelineStageCollection
+``` lang-csharp
+public static class NetworkPipelineStageCollection
+```
 
-## Methods 
+## 
 
 ### GetStageId(Type)
 
@@ -99,7 +101,9 @@ Object.ToString()
 
 #### Declaration
 
-    public static NetworkPipelineStageId GetStageId(Type stageType)
+``` lang-csharp
+public static NetworkPipelineStageId GetStageId(Type stageType)
+```
 
 #### Parameters
 
@@ -125,7 +129,9 @@ Object.ToString()
 
 #### Declaration
 
-    public static void RegisterPipelineStage(INetworkPipelineStage stage)
+``` lang-csharp
+public static void RegisterPipelineStage(INetworkPipelineStage stage)
+```
 
 #### Parameters
 

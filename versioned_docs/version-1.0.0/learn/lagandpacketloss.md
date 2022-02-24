@@ -100,7 +100,7 @@ Another complication arises from the fact that for any two hosts, the RTT time b
 
 ## Jitter
 
-Jitter is the rate at which ping changes over a period of time.  It can affect RTT mitigation and also make packets arrive out of order if it causes  the router to send packets through different routes, which can cause an older packet to arrive prior to a newer packet.
+Jitter is the rate at which ping changes over a period of time.  It can affect RTT mitigation and also make packets arrive out of order if it causes  the router to send packets through different routes, which can cause a newer packet to arrive prior to an older packet.
 
 ## Packet Loss
 
