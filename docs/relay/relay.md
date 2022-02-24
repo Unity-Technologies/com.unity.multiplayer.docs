@@ -15,7 +15,7 @@ Netcode does not offer tools to help you do a successful punch through a NAT. Bu
 
 You need to install the Unity Relay SDK if you want to interact with the service. To install it, add `com.unity.services.relay` package to your project.
 
-The host of your game needs to request a Relay allocation first. This process will reserve capacity on a Relay server that will allow the clients to bind to it. Once done, you will be able to get a join code for the allocation. It is a random string that your clients will provide to the SDK to join the correct server and allocation.
+The host of your game needs to request a Relay allocation first. This process will reserve capacity on a Relay server that will allow the clients to bind to it. Once done, you will be able to get a join code for the allocation. The join code is a random string that your clients will provide to the SDK to join the correct server and allocation.
 
 ### How do I enable Relay for my project?
 
