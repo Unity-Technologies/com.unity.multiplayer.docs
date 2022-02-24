@@ -23,7 +23,11 @@ title: Unity.Networking.Transport.Utilities
 
 <div class="section">
 
-Provides Extension methods for FixedStrings
+</div>
+
+### Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions
+
+<div class="section">
 
 </div>
 
@@ -37,11 +41,27 @@ Provides Extension methods for FixedStrings
 
 <div class="section">
 
-A simple method to obtain a random ushort provided by the class.
+</div>
+
+### Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions
+
+<div class="section">
 
 </div>
 
 ### Unity.Networking.Transport.Utilities.SequenceHelpers
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.Utilities.SimulatorUtility
 
 <div class="section">
 
@@ -58,16 +78,6 @@ A simple method to obtain a random ushort provided by the class.
 ### Unity.Networking.Transport.Utilities.FragmentationUtility.Parameters
 
 <div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Utilities.NativeMultiQueue\`1
-
-<div class="section">
-
-A NativeMultiQueue is a set of several FIFO queues split into buckets.
-Each bucket has its own first and last item, and each bucket can have
-items pushed and popped individually.
 
 </div>
 
@@ -143,12 +153,6 @@ items pushed and popped individually.
 
 </div>
 
-### Unity.Networking.Transport.Utilities.SimulatorUtility
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.Utilities.SimulatorUtility.Context
 
 <div class="section">
@@ -170,6 +174,12 @@ Configuration parameters for the simulator pipeline stage.
 </div>
 
 ## 
+
+### Unity.Networking.Transport.Utilities.ApplyMode
+
+<div class="section">
+
+</div>
 
 ### Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
 

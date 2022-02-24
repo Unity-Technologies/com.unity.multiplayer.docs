@@ -55,93 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Context
+``` lang-csharp
+public struct Context
+```
 
-## Fields
-
-### FuzzFactor
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int FuzzFactor
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### FuzzOffset
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int FuzzOffset
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### MaxPacketCount
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int MaxPacketCount
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### MaxPacketSize
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int MaxPacketSize
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+## 
 
 ### NextPacketTime
 
@@ -155,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long NextPacketTime
+``` lang-csharp
+public long NextPacketTime
+```
 
 #### Field Value
 
@@ -175,47 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketCount
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### PacketDelayMs
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int PacketDelayMs
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### PacketDrop
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int PacketDrop
+``` lang-csharp
+public int PacketCount
+```
 
 #### Field Value
 
@@ -235,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketDropCount
+``` lang-csharp
+public int PacketDropCount
+```
 
 #### Field Value
 
@@ -243,7 +131,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketJitterMs
+### PacketDuplicatedCount
 
 <div class="markdown level1 summary">
 
@@ -255,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketJitterMs
+``` lang-csharp
+public int PacketDuplicatedCount
+```
 
 #### Field Value
 
@@ -275,33 +165,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public Mathematics.Random Random
+``` lang-csharp
+public Mathematics.Random Random
+```
 
 #### Field Value
 
 | Type                     | Description |
 |--------------------------|-------------|
 | Unity.Mathematics.Random |             |
-
-### RandomSeed
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public uint RandomSeed
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.UInt32 |             |
 
 ### ReadyPackets
 
@@ -315,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int ReadyPackets
+``` lang-csharp
+public int ReadyPackets
+```
 
 #### Field Value
 
@@ -335,7 +209,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long StatsTime
+``` lang-csharp
+public long StatsTime
+```
 
 #### Field Value
 
@@ -355,7 +231,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int WaitingPackets
+``` lang-csharp
+public int WaitingPackets
+```
 
 #### Field Value
 

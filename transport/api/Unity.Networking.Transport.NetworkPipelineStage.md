@@ -55,15 +55,17 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkPipelineStage
+``` lang-csharp
+public struct NetworkPipelineStage
+```
 
-## Constructors 
+## 
 
-### NetworkPipelineStage(TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt;, TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt;, TransportFunctionPointer&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt;, Int32, Int32, Int32, Int32, Int32)
+### NetworkPipelineStage(TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt; , TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt; , TransportFunctionPointerlt;NetworkPipelineStage.InitializeConnectionDelegate&gt;
 
 <div class="markdown level1 summary">
 
@@ -75,22 +77,24 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkPipelineStage(TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive, TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send, TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegate> InitializeConnection, int ReceiveCapacity, int SendCapacity, int HeaderCapacity, int SharedStateCapacity, int PayloadCapacity = 0)
+``` lang-csharp
+public NetworkPipelineStage(TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive, TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send, TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegate> InitializeConnection, int ReceiveCapacity, int SendCapacity, int HeaderCapacity, int SharedStateCapacity, int PayloadCapacity = 0)
+```
 
 #### Parameters
 
-| Type                                                                              | Name                 | Description |
-|-----------------------------------------------------------------------------------|----------------------|-------------|
+| Type                                                                          | Name                 | Description |
+|-------------------------------------------------------------------------------|----------------------|-------------|
 | TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt;              | Receive              |             |
-| TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt;                 | Send                 |             |
+| TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt;                  | Send                 |             |
 | TransportFunctionPointer&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; | InitializeConnection |             |
-| System.Int32                                                                      | ReceiveCapacity      |             |
-| System.Int32                                                                      | SendCapacity         |             |
-| System.Int32                                                                      | HeaderCapacity       |             |
-| System.Int32                                                                      | SharedStateCapacity  |             |
-| System.Int32                                                                      | PayloadCapacity      |             |
+| System.Int32                                                                  | ReceiveCapacity      |             |
+| System.Int32                                                                  | SendCapacity         |             |
+| System.Int32                                                                  | HeaderCapacity       |             |
+| System.Int32                                                                  | SharedStateCapacity  |             |
+| System.Int32                                                                  | PayloadCapacity      |             |
 
-## Fields
+## 
 
 ### HeaderCapacity
 
@@ -104,7 +108,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public readonly int HeaderCapacity
+``` lang-csharp
+public readonly int HeaderCapacity
+```
 
 #### Field Value
 
@@ -124,13 +130,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegate> InitializeConnection
+``` lang-csharp
+public TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegate> InitializeConnection
+```
 
 #### Field Value
 
-| Type                                                                              | Description |
-|-----------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; |             |
+| Type                                                                          | Description |
+|-------------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt;  |             |
 
 ### PayloadCapacity
 
@@ -144,7 +152,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public readonly int PayloadCapacity
+``` lang-csharp
+public readonly int PayloadCapacity
+```
 
 #### Field Value
 
@@ -164,13 +174,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive
+``` lang-csharp
+public TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive
+```
 
 #### Field Value
 
-| Type                                                                 | Description |
-|----------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt; |             |
+| Type                                                             | Description |
+|------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;|             |
 
 ### ReceiveCapacity
 
@@ -184,7 +196,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public readonly int ReceiveCapacity
+``` lang-csharp
+public readonly int ReceiveCapacity
+```
 
 #### Field Value
 
@@ -204,13 +218,15 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send
+``` lang-csharp
+public TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send
+```
 
 #### Field Value
 
-| Type                                                              | Description |
-|-------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt; |             |
+| Type                                                          | Description |
+|---------------------------------------------------------------|-------------|
+| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt; |             |
 
 ### SendCapacity
 
@@ -224,7 +240,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public readonly int SendCapacity
+``` lang-csharp
+public readonly int SendCapacity
+```
 
 #### Field Value
 
@@ -244,7 +262,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public readonly int SharedStateCapacity
+``` lang-csharp
+public readonly int SharedStateCapacity
+```
 
 #### Field Value
 

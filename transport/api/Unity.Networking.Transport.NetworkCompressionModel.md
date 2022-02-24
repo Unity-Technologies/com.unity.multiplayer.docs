@@ -67,13 +67,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkCompressionModel : IDisposable
+``` lang-csharp
+public struct NetworkCompressionModel : IDisposable
+```
 
-## Constructors 
+## 
 
 ### NetworkCompressionModel(Allocator)
 
@@ -87,15 +89,17 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkCompressionModel(Allocator allocator)
+``` lang-csharp
+public NetworkCompressionModel(Allocator allocator)
+```
 
 #### Parameters
 
-| Type                        | Name      | Description |
-|-----------------------------|-----------|-------------|
-| Unity.Collections.Allocator | allocator |             |
+| Type      | Name      | Description |
+|-----------|-----------|-------------|
+| Allocator | allocator |             |
 
-## Fields
+## 
 
 ### bucketOffsets
 
@@ -109,7 +113,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint *bucketOffsets
+``` lang-csharp
+public uint *bucketOffsets
+```
 
 #### Field Value
 
@@ -129,7 +135,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *bucketSizes
+``` lang-csharp
+public byte *bucketSizes
+```
 
 #### Field Value
 
@@ -149,7 +157,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort *decodeTable
+``` lang-csharp
+public ushort *decodeTable
+```
 
 #### Field Value
 
@@ -169,7 +179,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort *encodeTable
+``` lang-csharp
+public ushort *encodeTable
+```
 
 #### Field Value
 
@@ -177,7 +189,7 @@ Object.ReferenceEquals(Object, Object)
 |-----------------|-------------|
 | System.UInt16\* |             |
 
-## Methods 
+## 
 
 ### CalculateBucket(UInt32)
 
@@ -191,7 +203,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int CalculateBucket(uint value)
+``` lang-csharp
+public int CalculateBucket(uint value)
+```
 
 #### Parameters
 
@@ -217,7 +231,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public void Dispose()
+``` lang-csharp
+public void Dispose()
+```
 
 ### Implements
 

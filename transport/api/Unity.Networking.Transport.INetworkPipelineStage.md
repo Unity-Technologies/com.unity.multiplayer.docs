@@ -13,13 +13,15 @@ title: Unity.Networking.Transport.INetworkPipelineStage
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public interface INetworkPipelineStage
+``` lang-csharp
+public interface INetworkPipelineStage
+```
 
-## Properties 
+## 
 
 ### StaticSize
 
@@ -33,7 +35,9 @@ title: Unity.Networking.Transport.INetworkPipelineStage
 
 #### Declaration
 
-    int StaticSize { get; }
+``` lang-csharp
+int StaticSize { get; }
+```
 
 #### Property Value
 
@@ -41,9 +45,9 @@ title: Unity.Networking.Transport.INetworkPipelineStage
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
-### StaticInitialize(Byte\*, Int32, INetworkParameter\[\])
+### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -55,15 +59,17 @@ title: Unity.Networking.Transport.INetworkPipelineStage
 
 #### Declaration
 
-    NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] param)
+``` lang-csharp
+NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings settings)
+```
 
 #### Parameters
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | param                      |             |
+| Type            | Name                       | Description |
+|-----------------|----------------------------|-------------|
+| System.Byte\*   | staticInstanceBuffer       |             |
+| System.Int32    | staticInstanceBufferLength |             |
+| NetworkSettings | settings                   |             |
 
 #### Returns
 

@@ -23,6 +23,12 @@ INetworkParameter
 
 </div>
 
+<div>
+
+IValidatableNetworkParameter
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
@@ -74,7 +80,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkDataStreamParameter : INetworkParameter
+public struct NetworkDataStreamParameter : INetworkParameter, IValidatableNetworkParameter
 ```
 
 ##### **Remarks**
@@ -111,10 +117,40 @@ public int size
 |--------------|-------------|
 | System.Int32 |             |
 
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>

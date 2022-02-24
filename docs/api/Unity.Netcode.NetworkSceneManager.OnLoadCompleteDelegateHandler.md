@@ -5,8 +5,9 @@ title: Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnLoadComplete event View LoadComplete for
-more information
+Delegate declaration for the OnLoadComplete event.  
+See also:  
+LoadComplete for more information
 
 </div>
 

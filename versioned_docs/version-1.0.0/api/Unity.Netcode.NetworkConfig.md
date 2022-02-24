@@ -586,31 +586,6 @@ public int TimeResyncInterval
 
 ## 
 
-### SnapshotMaxSpawnUsage
-
-<div class="markdown level1 summary">
-
-When Snapshot System spawn is enabled: max size of Snapshot Messages.
-Meant to fit MTU.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int SnapshotMaxSpawnUsage { get; }
-```
-
-#### Property Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
 ### UseSnapshotDelta
 
 <div class="markdown level1 summary">
@@ -628,31 +603,6 @@ supported in this version.
 
 ``` lang-csharp
 public bool UseSnapshotDelta { get; }
-```
-
-#### Property Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-### UseSnapshotSpawn
-
-<div class="markdown level1 summary">
-
-Whether or not to enable Snapshot System for spawn and despawn commands.
-Not supported in this version.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public bool UseSnapshotSpawn { get; }
 ```
 
 #### Property Value

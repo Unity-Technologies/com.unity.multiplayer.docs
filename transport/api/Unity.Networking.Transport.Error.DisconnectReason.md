@@ -15,18 +15,20 @@ DisconnectReason enumerates all disconnect reasons.
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum DisconnectReason : byte
+``` lang-csharp
+public enum DisconnectReason : byte
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| ClosedByRemote | Indicates the connection was closed remotely. |
-| Count | Used only for count. Keep last and don't assign explicit values |
-| Default | Indicates a normal disconnection as a result of calling Disconnect on the connection. |
-| MaxConnectionAttempts | Indicates the connection failed to establish a connection after maxConnectAttempts. |
-| Timeout | Indicates the connection timed out. |
+| Name                  | Description                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------|
+| ClosedByRemote        | Indicates the connection was closed remotely.                                         |
+| Count                 | Used only for count. Keep last and don't assign explicit values                       |
+| Default               | Indicates a normal disconnection as a result of calling Disconnect on the connection. |
+| MaxConnectionAttempts | Indicates the connection failed to establish a connection after maxConnectAttempts.   |
+| Timeout               | Indicates the connection timed out.                                                   |

@@ -93,7 +93,7 @@ Running the game over internet currently requires either setting up a [Photon Tr
 
 #### Photon Transport
 
-[Photon Transport for Netcode for GameObjects](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
+[Photon Transport for Netcode for GameObjects](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/Transports/com.community.netcode.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
 
 :::unity Learn More
 See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/Photon-Realtime/Readme.md) for details.
