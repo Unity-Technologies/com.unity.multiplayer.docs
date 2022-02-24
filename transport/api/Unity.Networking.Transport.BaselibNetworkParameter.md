@@ -21,6 +21,12 @@ INetworkParameter
 
 </div>
 
+<div>
+
+IValidatableNetworkParameter
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
@@ -67,13 +73,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct BaselibNetworkParameter : INetworkParameter
+``` lang-csharp
+public struct BaselibNetworkParameter : INetworkParameter, IValidatableNetworkParameter
+```
 
-## Fields
+## 
 
 ### maximumPayloadSize
 
@@ -87,7 +95,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint maximumPayloadSize
+``` lang-csharp
+public uint maximumPayloadSize
+```
 
 #### Field Value
 
@@ -107,7 +117,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int receiveQueueCapacity
+``` lang-csharp
+public int receiveQueueCapacity
+```
 
 #### Field Value
 
@@ -127,7 +139,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int sendQueueCapacity
+``` lang-csharp
+public int sendQueueCapacity
+```
 
 #### Field Value
 
@@ -135,10 +149,40 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>

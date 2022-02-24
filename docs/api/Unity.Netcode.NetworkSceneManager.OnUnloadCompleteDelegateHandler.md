@@ -5,8 +5,9 @@ title: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnUnloadComplete event View UnloadComplete
-for more information
+Delegate declaration for the OnUnloadComplete event.  
+See also:  
+UnloadComplete for more information
 
 </div>
 

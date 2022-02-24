@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct InboundRecvBuffer
+``` lang-csharp
+public struct InboundRecvBuffer
+```
 
-## Fields
+## 
 
 ### buffer
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *buffer
+``` lang-csharp
+public byte *buffer
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int bufferLength
+``` lang-csharp
+public int bufferLength
+```
 
 #### Field Value
 
@@ -103,7 +109,7 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
 ### Slice(Int32)
 
@@ -117,7 +123,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public InboundRecvBuffer Slice(int offset)
+``` lang-csharp
+public InboundRecvBuffer Slice(int offset)
+```
 
 #### Parameters
 
