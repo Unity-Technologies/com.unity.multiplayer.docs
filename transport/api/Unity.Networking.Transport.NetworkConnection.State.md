@@ -16,17 +16,18 @@ have.
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum State
+``` lang-csharp
+public enum State
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| AwaitingResponse | Indicates the connection is waiting for a connection response. |
-| Connected | Indicates the connection is connected. |
-| Connecting | Indicates the connection is trying to connect. |
-| Disconnected | Indicates the connection is disconnected. |
+| Name         | Description                                    |
+|--------------|------------------------------------------------|
+| Connected    | Indicates the connection is connected..        |
+| Connecting   | Indicates the connection is trying to connect. |
+| Disconnected | Indicates the connection is disconnected       |

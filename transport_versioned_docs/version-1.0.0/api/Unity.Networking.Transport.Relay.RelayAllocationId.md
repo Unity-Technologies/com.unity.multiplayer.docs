@@ -21,13 +21,13 @@ address of the client.
 
 <div>
 
-System.IEquatable\&lt;RelayAllocationId&gt;
+System.IEquatable\<RelayAllocationId\>
 
 </div>
 
 <div>
 
-System.IComparable\&lt;RelayAllocationId&gt;
+System.IComparable\<RelayAllocationId\>
 
 </div>
 
@@ -79,8 +79,6 @@ public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<Rel
 
 <div class="markdown level1 summary">
 
-The length in bytes of the Allocation Id.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -102,8 +100,6 @@ public const int k_Length = 16
 ### Value
 
 <div class="markdown level1 summary">
-
-The raw data of the Allocation Id.
 
 </div>
 
@@ -221,8 +217,6 @@ public bool Equals(RelayAllocationId other)
 
 <div class="markdown level1 summary">
 
-Converts a byte pointer to a RelayAllocationId.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -237,22 +231,16 @@ public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 
 #### Parameters
 
-| Type          | Name    | Description                                   |
-|---------------|---------|-----------------------------------------------|
-| System.Byte\* | dataPtr | The pointer to the data of the Allocation Id. |
-| System.Int32  | length  | The length of the data.                       |
+| Type          | Name    | Description |
+|---------------|---------|-------------|
+| System.Byte\* | dataPtr |             |
+| System.Int32  | length  |             |
 
 #### Returns
 
-| Type              | Description                                                     |
-|-------------------|-----------------------------------------------------------------|
-| RelayAllocationId | Returns a RelayAllocationId constructed from the provided data. |
-
-#### Exceptions
-
-| Type                     | Condition                                                                   |
-|--------------------------|-----------------------------------------------------------------------------|
-| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
+| Type              | Description |
+|-------------------|-------------|
+| RelayAllocationId |             |
 
 ### GetHashCode()
 
@@ -348,12 +336,12 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 <div>
 
-System.IEquatable\&lt;T&gt;
+System.IEquatable&lt;T&gt;
 
 </div>
 
 <div>
 
-System.IComparable\&lt;T&gt;
+System.IComparable&lt;T&gt;
 
 </div>

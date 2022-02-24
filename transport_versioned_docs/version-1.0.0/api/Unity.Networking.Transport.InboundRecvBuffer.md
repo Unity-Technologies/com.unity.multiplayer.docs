@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.InboundRecvBuffer
 
 <div class="markdown level0 summary">
 
-The inbound recv buffer
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -71,8 +69,6 @@ public struct InboundRecvBuffer
 
 <div class="markdown level1 summary">
 
-The buffer
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -94,8 +90,6 @@ public byte *buffer
 ### bufferLength
 
 <div class="markdown level1 summary">
-
-The buffer length
 
 </div>
 
@@ -121,8 +115,6 @@ public int bufferLength
 
 <div class="markdown level1 summary">
 
-Slices the offset
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -139,10 +131,10 @@ public InboundRecvBuffer Slice(int offset)
 
 | Type         | Name   | Description |
 |--------------|--------|-------------|
-| System.Int32 | offset | The offset  |
+| System.Int32 | offset |             |
 
 #### Returns
 
 | Type              | Description |
 |-------------------|-------------|
-| InboundRecvBuffer | The slice   |
+| InboundRecvBuffer |             |

@@ -11,25 +11,31 @@ title: Unity.Networking.Transport.Utilities.SimulatorUtility
 
 </div>
 
+<div class="inheritance">
+
+##### Inheritance
+
+<div class="level0">
+
+System.Dynamic.ExpandoObject
+
+</div>
+
+<div class="level1">
+
+System.Dynamic.ExpandoObject
+
+</div>
+
+</div>
+
 <div class="inheritedMembers">
 
 ##### Inherited Members
 
 <div>
 
-ValueType.Equals(Object)
-
-</div>
-
-<div>
-
-ValueType.GetHashCode()
-
-</div>
-
-<div>
-
-ValueType.ToString()
+Object.Equals(Object)
 
 </div>
 
@@ -41,7 +47,19 @@ Object.Equals(Object, Object)
 
 <div>
 
+Object.GetHashCode()
+
+</div>
+
+<div>
+
 Object.GetType()
+
+</div>
+
+<div>
+
+Object.MemberwiseClone()
 
 </div>
 
@@ -51,44 +69,27 @@ Object.ReferenceEquals(Object, Object)
 
 </div>
 
+<div>
+
+Object.ToString()
+
+</div>
+
 </div>
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct SimulatorUtility
+``` lang-csharp
+public static class SimulatorUtility
+```
 
-## Constructors 
+## 
 
-### SimulatorUtility(Int32, Int32, Int32, Int32)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public SimulatorUtility(int packetCount, int maxPacketSize, int packetDelayMs, int packetJitterMs)
-
-#### Parameters
-
-| Type         | Name           | Description |
-|--------------|----------------|-------------|
-| System.Int32 | packetCount    |             |
-| System.Int32 | maxPacketSize  |             |
-| System.Int32 | packetDelayMs  |             |
-| System.Int32 | packetJitterMs |             |
-
-## Methods 
-
-### DelayPacket(ref NetworkPipelineContext, InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
+### FuzzPacket(SimulatorUtility.Context\*, ref SimulatorUtility.Parameters, ref InboundSendBuffer)
 
 <div class="markdown level1 summary">
 
@@ -100,43 +101,17 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool DelayPacket(ref NetworkPipelineContext ctx, InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, long timestamp)
+``` lang-csharp
+public static void FuzzPacket(SimulatorUtility.Context*ctx, ref SimulatorUtility.Parameters param, ref InboundSendBuffer inboundBuffer)
+```
 
 #### Parameters
 
-| Type                          | Name          | Description |
-|-------------------------------|---------------|-------------|
-| NetworkPipelineContext        | ctx           |             |
-| InboundSendBuffer             | inboundBuffer |             |
-| NetworkPipelineStage.Requests | requests      |             |
-| System.Int64                  | timestamp     |             |
-
-#### Returns
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-### FuzzPacket(SimulatorUtility.Context\*, ref InboundSendBuffer)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public void FuzzPacket(SimulatorUtility.Context*ctx, ref InboundSendBuffer inboundBuffer)
-
-#### Parameters
-
-| Type                       | Name          | Description |
-|----------------------------|---------------|-------------|
-| SimulatorUtility.Context\* | ctx           |             |
-| InboundSendBuffer          | inboundBuffer |             |
+| Type                        | Name          | Description |
+|-----------------------------|---------------|-------------|
+| SimulatorUtility.Context\*  | ctx           |             |
+| SimulatorUtility.Parameters | param         |             |
+| InboundSendBuffer           | inboundBuffer |             |
 
 ### GetDelayedPacket(ref NetworkPipelineContext, ref InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
 
@@ -150,7 +125,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool GetDelayedPacket(ref NetworkPipelineContext ctx, ref InboundSendBuffer delayedPacket, ref NetworkPipelineStage.Requests requests, long currentTimestamp)
+``` lang-csharp
+public static bool GetDelayedPacket(ref NetworkPipelineContext ctx, ref InboundSendBuffer delayedPacket, ref NetworkPipelineStage.Requests requests, long currentTimestamp)
+```
 
 #### Parameters
 
@@ -167,7 +144,7 @@ Object.ReferenceEquals(Object, Object)
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetEmptyDataSlot(Byte\*, ref Int32, ref Int32)
+### GetEmptyDataSlot(NetworkPipelineContext, Byte\*, ref Int32, ref Int32)
 
 <div class="markdown level1 summary">
 
@@ -179,15 +156,18 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool GetEmptyDataSlot(byte *processBufferPtr, ref int packetPayloadOffset, ref int packetDataOffset)
+``` lang-csharp
+public static bool GetEmptyDataSlot(NetworkPipelineContext ctx, byte *processBufferPtr, ref int packetPayloadOffset, ref int packetDataOffset)
+```
 
 #### Parameters
 
-| Type          | Name                | Description |
-|---------------|---------------------|-------------|
-| System.Byte\* | processBufferPtr    |             |
-| System.Int32  | packetPayloadOffset |             |
-| System.Int32  | packetDataOffset    |             |
+| Type                   | Name                | Description |
+|------------------------|---------------------|-------------|
+| NetworkPipelineContext | ctx                 |             |
+| System.Byte\*          | processBufferPtr    |             |
+| System.Int32           | packetPayloadOffset |             |
+| System.Int32           | packetDataOffset    |             |
 
 #### Returns
 
@@ -207,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static void InitializeContext(SimulatorUtility.Parameters param, byte *sharedProcessBuffer)
+``` lang-csharp
+public static void InitializeContext(SimulatorUtility.Parameters param, byte *sharedProcessBuffer)
+```
 
 #### Parameters
 
@@ -228,7 +210,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool ShouldDropPacket(SimulatorUtility.Context*ctx, SimulatorUtility.Parameters param, long timestamp)
+``` lang-csharp
+public static bool ShouldDropPacket(SimulatorUtility.Context*ctx, SimulatorUtility.Parameters param, long timestamp)
+```
 
 #### Parameters
 
@@ -243,3 +227,102 @@ Object.ReferenceEquals(Object, Object)
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### ShouldDuplicatePacket(SimulatorUtility.Context\*, ref SimulatorUtility.Parameters)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static bool ShouldDuplicatePacket(SimulatorUtility.Context*ctx, ref SimulatorUtility.Parameters param)
+```
+
+#### Parameters
+
+| Type                        | Name  | Description |
+|-----------------------------|-------|-------------|
+| SimulatorUtility.Context\*  | ctx   |             |
+| SimulatorUtility.Parameters | param |             |
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+### TryDelayPacket(ref NetworkPipelineContext, ref SimulatorUtility.Parameters, ref InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
+
+<div class="markdown level1 summary">
+
+Storing it twice will trigger a resend.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static bool TryDelayPacket(ref NetworkPipelineContext ctx, ref SimulatorUtility.Parameters param, ref InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, long timestamp)
+```
+
+#### Parameters
+
+| Type                          | Name          | Description |
+|-------------------------------|---------------|-------------|
+| NetworkPipelineContext        | ctx           |             |
+| SimulatorUtility.Parameters   | param         |             |
+| InboundSendBuffer             | inboundBuffer |             |
+| NetworkPipelineStage.Requests | requests      |             |
+| System.Int64                  | timestamp     |             |
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+### TrySkipDelayingPacket(ref SimulatorUtility.Parameters, ref NetworkPipelineStage.Requests, SimulatorUtility.Context\*)
+
+<div class="markdown level1 summary">
+
+Optimization. We want to skip TryDelayPacket(ref NetworkPipelineContext,
+ref SimulatorUtility.Parameters, ref InboundSendBuffer, ref
+NetworkPipelineStage.Requests, Int64) in the case where we have no delay
+to avoid mem-copies. Also ensures requests are updated if there are
+other packets in the store.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static bool TrySkipDelayingPacket(ref SimulatorUtility.Parameters param, ref NetworkPipelineStage.Requests requests, SimulatorUtility.Context*simCtx)
+```
+
+#### Parameters
+
+| Type                          | Name     | Description |
+|-------------------------------|----------|-------------|
+| SimulatorUtility.Parameters   | param    |             |
+| NetworkPipelineStage.Requests | requests |             |
+| SimulatorUtility.Context\*    | simCtx   |             |
+
+#### Returns
+
+| Type           | Description                               |
+|----------------|-------------------------------------------|
+| System.Boolean | True if we can skip delaying this packet. |

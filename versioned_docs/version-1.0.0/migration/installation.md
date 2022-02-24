@@ -31,7 +31,7 @@ com.unity.netcode.gameobjects
 We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
 :::
 
-5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
+5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.5.
 
   ![Package Installed](/img/install/2021-x-installed.png)
 
@@ -61,7 +61,7 @@ The **Add package by name..** option is integrated with the **Add package from g
   We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
   :::
 
-1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
+1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.5.
 
   ![Package Installed](/img/install/1-0-0install.png)
 

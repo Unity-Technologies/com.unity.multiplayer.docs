@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct QueuedSendMessage
+``` lang-csharp
+public struct QueuedSendMessage
+```
 
-## Fields
+## 
 
 ### Data
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *Data
+``` lang-csharp
+public byte *Data
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int DataLength
+``` lang-csharp
+public int DataLength
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkInterfaceEndPoint Dest
+``` lang-csharp
+public NetworkInterfaceEndPoint Dest
+```
 
 #### Field Value
 

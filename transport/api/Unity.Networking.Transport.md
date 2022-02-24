@@ -3,7 +3,7 @@ id: Unity.Networking.Transport
 title: Unity.Networking.Transport  
 ---
 
-## Namespace Unity.Networking.Transport
+## 
 
 <div class="markdown level0 summary">
 
@@ -17,7 +17,25 @@ title: Unity.Networking.Transport
 
 </div>
 
-## Classes
+## 
+
+### Unity.Networking.Transport.BaselibNetworkParameterExtensions
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.CommonNetworkParametersExtensions
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.NetworkPipelineParametersExtensions
+
+<div class="section">
+
+</div>
 
 ### Unity.Networking.Transport.NetworkPipelineStageCollection
 
@@ -25,7 +43,7 @@ title: Unity.Networking.Transport
 
 </div>
 
-## Structs
+## 
 
 ### Unity.Networking.Transport.BaselibNetworkInterface
 
@@ -152,18 +170,6 @@ GenericNetworkDriver.
 
 </div>
 
-### Unity.Networking.Transport.NetworkEventQueue
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.NetworkEventQueue.Concurrent
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.NetworkInterfaceEndPoint
 
 <div class="section">
@@ -181,7 +187,17 @@ GenericNetworkDriver.
 <div class="section">
 
 The NetworkPacketReceiver is an interface for handling received packets,
-needed by the INetworkInterface
+needed by the INetworkInterface It either can be used in two main
+scenarios:
+
+1.  Your API requires a pointer to memory that you own. Then you should
+    use AllocateMemory(ref Int32), write to the memory and then
+    AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
+    NetworkPacketReceiver.AppendPacketMode) with NoCopyNeeded. You don't
+    need to deallocate the memory
+2.  Your API gives you a pointer that you don't own. In this case you
+    should use AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
+    NetworkPacketReceiver.AppendPacketMode) with None (default)
 
 </div>
 
@@ -235,6 +251,14 @@ Default NetworkParameter Constants.
 
 </div>
 
+### Unity.Networking.Transport.NetworkSettings
+
+<div class="section">
+
+A list of the parameters that describe the network configuration.
+
+</div>
+
 ### Unity.Networking.Transport.NullPipelineStage
 
 <div class="section">
@@ -277,7 +301,13 @@ Default NetworkParameter Constants.
 
 </div>
 
-## Interfaces
+### Unity.Networking.Transport.WebSocketNetworkInterface
+
+<div class="section">
+
+</div>
+
+## 
 
 ### Unity.Networking.Transport.INetworkInterface
 
@@ -299,7 +329,15 @@ The interface for NetworkParameters
 
 </div>
 
-## Enums
+### Unity.Networking.Transport.IValidatableNetworkParameter
+
+<div class="section">
+
+Interface for adding validation capabilities to the INetworkParameter.
+
+</div>
+
+## 
 
 ### Unity.Networking.Transport.NetworkConnection.State
 
@@ -326,6 +364,12 @@ NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
+### Unity.Networking.Transport.NetworkPacketReceiver.AppendPacketMode
+
+<div class="section">
+
+</div>
+
 ### Unity.Networking.Transport.NetworkPipelineStage.Requests
 
 <div class="section">
@@ -338,7 +382,7 @@ NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
-## Delegates
+## 
 
 ### Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDelegate
 
