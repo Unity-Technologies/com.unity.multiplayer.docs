@@ -7,7 +7,7 @@ title: Assets.Scripts.Transport
 
 <div class="markdown level0 summary">
 
-Provides a Unity Transport wrapper for Unity MLAPI. 
+Provides a Unity Transport wrapper for Netcode for GameObjects. 
 
 </div>
 
