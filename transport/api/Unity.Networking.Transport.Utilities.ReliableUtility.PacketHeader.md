@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct PacketHeader
+``` lang-csharp
+public struct PacketHeader
+```
 
-## Fields
+## 
 
 ### AckedSequenceId
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort AckedSequenceId
+``` lang-csharp
+public ushort AckedSequenceId
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public uint AckMask
+``` lang-csharp
+public uint AckMask
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort ProcessingTime
+``` lang-csharp
+public ushort ProcessingTime
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort SequenceId
+``` lang-csharp
+public ushort SequenceId
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort Type
+``` lang-csharp
+public ushort Type
+```
 
 #### Field Value
 

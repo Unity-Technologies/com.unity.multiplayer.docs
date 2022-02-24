@@ -67,13 +67,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct SimulatorPipelineStage : INetworkPipelineStage
+``` lang-csharp
+public struct SimulatorPipelineStage : INetworkPipelineStage
+```
 
-## Properties 
+## 
 
 ### StaticSize
 
@@ -87,7 +89,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int StaticSize { get; }
+``` lang-csharp
+public readonly int StaticSize { get; }
+```
 
 #### Property Value
 
@@ -95,9 +99,9 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
-### StaticInitialize(Byte\*, Int32, INetworkParameter\[\])
+### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -109,15 +113,17 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] netParams)
+``` lang-csharp
+public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings settings)
+```
 
 #### Parameters
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | netParams                  |             |
+| Type            | Name                       | Description |
+|-----------------|----------------------------|-------------|
+| System.Byte\*   | staticInstanceBuffer       |             |
+| System.Int32    | staticInstanceBufferLength |             |
+| NetworkSettings | settings                   |             |
 
 #### Returns
 

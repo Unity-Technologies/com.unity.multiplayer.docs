@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDeleg
 
 <div class="markdown level0 summary">
 
-The initialize connection delegate
-
 </div>
 
 <div class="markdown level0 conceptual">
