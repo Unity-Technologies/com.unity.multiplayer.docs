@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate
 
 <div class="markdown level0 summary">
 
-Invoked from the lower level library at the end of the message sending
-routine.
-
 </div>
 
 <div class="markdown level0 conceptual">

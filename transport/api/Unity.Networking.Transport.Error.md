@@ -3,7 +3,7 @@ id: Unity.Networking.Transport.Error
 title: Unity.Networking.Transport.Error  
 ---
 
-## Namespace Unity.Networking.Transport.Error
+## 
 
 <div class="markdown level0 summary">
 
@@ -17,7 +17,7 @@ title: Unity.Networking.Transport.Error
 
 </div>
 
-## Enums
+## 
 
 ### Unity.Networking.Transport.Error.DisconnectReason
 

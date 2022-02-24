@@ -43,13 +43,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkPipeline
+``` lang-csharp
+public struct NetworkPipeline
+```
 
-## Properties 
+## 
 
 ### Null
 
@@ -63,7 +65,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static NetworkPipeline Null { get; }
+``` lang-csharp
+public static readonly NetworkPipeline Null { get; }
+```
 
 #### Property Value
 
@@ -71,7 +75,7 @@ Object.ReferenceEquals(Object, Object)
 |-----------------|-------------|
 | NetworkPipeline |             |
 
-## Methods 
+## 
 
 ### Equals(Object)
 
@@ -85,7 +89,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public override bool Equals(object compare)
+``` lang-csharp
+public override bool Equals(object compare)
+```
 
 #### Parameters
 
@@ -119,7 +125,9 @@ System.ValueType.Equals(System.Object)
 
 #### Declaration
 
-    public bool Equals(NetworkPipeline connection)
+``` lang-csharp
+public bool Equals(NetworkPipeline connection)
+```
 
 #### Parameters
 
@@ -145,7 +153,9 @@ System.ValueType.Equals(System.Object)
 
 #### Declaration
 
-    public override int GetHashCode()
+``` lang-csharp
+public override int GetHashCode()
+```
 
 #### Returns
 
@@ -161,7 +171,7 @@ System.ValueType.GetHashCode()
 
 </div>
 
-## Operators 
+## 
 
 ### Equality(NetworkPipeline, NetworkPipeline)
 
@@ -175,7 +185,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool operator ==(NetworkPipeline lhs, NetworkPipeline rhs)
+``` lang-csharp
+public static bool operator ==(NetworkPipeline lhs, NetworkPipeline rhs)
+```
 
 #### Parameters
 
@@ -202,7 +214,9 @@ System.ValueType.GetHashCode()
 
 #### Declaration
 
-    public static bool operator !=(NetworkPipeline lhs, NetworkPipeline rhs)
+``` lang-csharp
+public static bool operator !=(NetworkPipeline lhs, NetworkPipeline rhs)
+```
 
 #### Parameters
 

@@ -184,6 +184,28 @@ public int MaxPacketSize
 |--------------|-------------|
 | System.Int32 |             |
 
+### Mode
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public ApplyMode Mode
+```
+
+#### Field Value
+
+| Type      | Description |
+|-----------|-------------|
+| ApplyMode |             |
+
 ### PacketDelayMs
 
 <div class="markdown level1 summary">
@@ -238,10 +260,9 @@ public int PacketDropInterval
 
 <div class="markdown level1 summary">
 
-Use a drop percentage when deciding when to drop packet. For every
-packet a random number generator is used to determine if the packet
-should be dropped or not. A percentage of 5 means approximately every
-20th packet will be dropped.
+0 - 100, denotes the percentage of packets that will be dropped (i.e.
+deleted unprocessed). E.g. "5" means approximately every 20th packet
+will be dropped. RandomSeed to change random seed values.
 
 </div>
 
@@ -253,6 +274,33 @@ should be dropped or not. A percentage of 5 means approximately every
 
 ``` lang-csharp
 public int PacketDropPercentage
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### PacketDuplicationPercentage
+
+<div class="markdown level1 summary">
+
+0 - 100, denotes the percentage of packets that will be duplicated once.
+E.g. "5" means approximately every 20th packet will be duplicated once.
+RandomSeed to change random seed values. Note: Skipped if the packet is
+dropped.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int PacketDuplicationPercentage
 ```
 
 #### Field Value

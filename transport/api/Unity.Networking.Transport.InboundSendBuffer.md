@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct InboundSendBuffer
+``` lang-csharp
+public struct InboundSendBuffer
+```
 
-## Fields
+## 
 
 ### buffer
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *buffer
+``` lang-csharp
+public byte *buffer
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int bufferLength
+``` lang-csharp
+public int bufferLength
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *bufferWithHeaders
+``` lang-csharp
+public byte *bufferWithHeaders
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int bufferWithHeadersLength
+``` lang-csharp
+public int bufferWithHeadersLength
+```
 
 #### Field Value
 
@@ -155,7 +165,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int headerPadding
+``` lang-csharp
+public int headerPadding
+```
 
 #### Field Value
 
@@ -163,9 +175,9 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+## 
 
-### SetBufferFrombufferWithHeaders()
+### SetBufferFromBufferWithHeaders()
 
 <div class="markdown level1 summary">
 
@@ -177,4 +189,6 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public void SetBufferFrombufferWithHeaders()
+``` lang-csharp
+public void SetBufferFromBufferWithHeaders()
+```

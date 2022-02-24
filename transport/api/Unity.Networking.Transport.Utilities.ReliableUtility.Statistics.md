@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Statistics
+``` lang-csharp
+public struct Statistics
+```
 
-## Fields
+## 
 
 ### PacketsDropped
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsDropped
+``` lang-csharp
+public int PacketsDropped
+```
 
 #### Field Value
 
@@ -87,6 +91,12 @@ Object.ReferenceEquals(Object, Object)
 
 <div class="markdown level1 summary">
 
+Note that the reliability pipeline does not (and cannot) make the
+distinction between a packet 'actually duplicated by the network', and a
+packet 'resent by the remote connection as a form of reliability'. To do
+so would require increasing the ReliableUtility.PacketHeader to include
+unique packet ID's. Thus, be aware that this field records both.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -95,7 +105,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsDuplicated
+``` lang-csharp
+public int PacketsDuplicated
+```
 
 #### Field Value
 
@@ -115,7 +127,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsOutOfOrder
+``` lang-csharp
+public int PacketsOutOfOrder
+```
 
 #### Field Value
 
@@ -127,6 +141,8 @@ Object.ReferenceEquals(Object, Object)
 
 <div class="markdown level1 summary">
 
+The Total. Thus, includes out of order, stale, and duplicate packets.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -135,7 +151,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsReceived
+``` lang-csharp
+public int PacketsReceived
+```
 
 #### Field Value
 
@@ -155,7 +173,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsResent
+``` lang-csharp
+public int PacketsResent
+```
 
 #### Field Value
 
@@ -175,7 +195,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsSent
+``` lang-csharp
+public int PacketsSent
+```
 
 #### Field Value
 
@@ -195,7 +217,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PacketsStale
+``` lang-csharp
+public int PacketsStale
+```
 
 #### Field Value
 

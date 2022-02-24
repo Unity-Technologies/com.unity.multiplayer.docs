@@ -19,7 +19,7 @@ This guide assumes that you already have:
 
 1. Open your **Unity Hub** and select the **Project** you are presently working on.
 1. From the menu bar, navigate to **Window** > **Package Manager**.
-1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add pack from name..**.
+1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add package by name..**.
 
  ![Package Installed](/img/install/addbyname.png)
 
@@ -31,7 +31,7 @@ com.unity.netcode.gameobjects
 We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
 :::
 
-5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
+5. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.5.
 
   ![Package Installed](/img/install/2021-x-installed.png)
 
@@ -45,6 +45,10 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** 
 
+:::note
+The **Add package by name..** option is integrated with the **Add package from git URL...** in Unity 2020.3.x versions. 
+:::
+
   ![Select Git URL Option](/img/install/install-git.png)
 
 1. Enter the Git URL to the Netcode release package (below). You can click the Copy option in that codeblock and paste it in the Package Manager.
@@ -57,7 +61,7 @@ To install Netcode on Unity versions 2020.3.x, use the Unity Package Manager pas
   We recommend that you use the **Copy** function in the code block above to copy the URL as other methods may result in errors. Just hover and click.
   :::
 
-1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.2.
+1. Click **Add**. The package installs, shown as Netcode for GameObjects Version 1.0.0-pre.5.
 
   ![Package Installed](/img/install/1-0-0install.png)
 

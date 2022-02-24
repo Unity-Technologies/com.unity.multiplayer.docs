@@ -19,35 +19,27 @@ title: Unity.Networking.Transport
 
 ## 
 
-### Unity.Networking.Transport.Base64
+### Unity.Networking.Transport.BaselibNetworkParameterExtensions
 
 <div class="section">
-
-Utility class used to Decode a base64 string
 
 </div>
 
-### Unity.Networking.Transport.HMACSHA256
+### Unity.Networking.Transport.CommonNetworkParametersExtensions
 
 <div class="section">
 
-Utility class used to compute HMACSHA256 hash
+</div>
+
+### Unity.Networking.Transport.NetworkPipelineParametersExtensions
+
+<div class="section">
 
 </div>
 
 ### Unity.Networking.Transport.NetworkPipelineStageCollection
 
 <div class="section">
-
-The network pipeline stage collection class
-
-</div>
-
-### Unity.Networking.Transport.SHA256
-
-<div class="section">
-
-Utility class that provides the ability to generate a SHA256 Hash
 
 </div>
 
@@ -57,18 +49,11 @@ Utility class that provides the ability to generate a SHA256 Hash
 
 <div class="section">
 
-Default NetworkInterface implementation based on Unity's internal
-Baselib UDP sockets this is ensure to work on all platforms except for
-Unity's WebGL.
-
 </div>
 
 ### Unity.Networking.Transport.BaselibNetworkParameter
 
 <div class="section">
-
-Network Parameters used to set queue and payload sizes for
-BaselibNetworkInterface
 
 </div>
 
@@ -98,15 +83,11 @@ was prepared with it.
 
 <div class="section">
 
-The fragmentation stage's internal context.
-
 </div>
 
 ### Unity.Networking.Transport.InboundRecvBuffer
 
 <div class="section">
-
-The inbound recv buffer
 
 </div>
 
@@ -114,24 +95,17 @@ The inbound recv buffer
 
 <div class="section">
 
-The inbound send buffer
-
 </div>
 
 ### Unity.Networking.Transport.IPCNetworkInterface
 
 <div class="section">
 
-The ipc network interface
-
 </div>
 
 ### Unity.Networking.Transport.NetworkCompressionModel
 
 <div class="section">
-
-Used to provide Huffman compression when using packed DataStream
-functions
 
 </div>
 
@@ -147,6 +121,10 @@ driver uses.
 ### Unity.Networking.Transport.NetworkConnection
 
 <div class="section">
+
+The NetworkConnection is a struct that hold all information needed by
+the driver to link it with a virtual connection. The NetworkConnection
+is a public representation of a connection.
 
 </div>
 
@@ -167,7 +145,7 @@ transport.
 
 Basic usage:
 
-    var driver = NetworkDriver.Create();
+    var driver = new NetworkDriver.Create();
 
 </div>
 
@@ -176,7 +154,7 @@ Basic usage:
 <div class="section">
 
 The Concurrent struct is used to create an Concurrent instance of the
-NetworkDriver.
+GenericNetworkDriver.
 
 </div>
 
@@ -184,25 +162,9 @@ NetworkDriver.
 
 <div class="section">
 
-Describes a raw network endpoint (typically IP and port number).
-
 </div>
 
 ### Unity.Networking.Transport.NetworkEvent
-
-<div class="section">
-
-Represents an event on a connection.
-
-</div>
-
-### Unity.Networking.Transport.NetworkEventQueue
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.NetworkEventQueue.Concurrent
 
 <div class="section">
 
@@ -217,8 +179,6 @@ Represents an event on a connection.
 ### Unity.Networking.Transport.NetworkInterfaceSendHandle
 
 <div class="section">
-
-A handle to data that's going to be sent on an interface.
 
 </div>
 
@@ -253,15 +213,11 @@ Default NetworkParameter Constants.
 
 <div class="section">
 
-The network pipeline
-
 </div>
 
 ### Unity.Networking.Transport.NetworkPipelineContext
 
 <div class="section">
-
-The network pipeline context
 
 </div>
 
@@ -269,15 +225,11 @@ The network pipeline context
 
 <div class="section">
 
-The network pipeline params
-
 </div>
 
 ### Unity.Networking.Transport.NetworkPipelineStage
 
 <div class="section">
-
-The network pipeline stage
 
 </div>
 
@@ -291,25 +243,25 @@ The network pipeline stage
 
 <div class="section">
 
-The network send interface used to pass around function pointers to the
-actual INetworkInterface
-
 </div>
 
 ### Unity.Networking.Transport.NetworkSendQueueHandle
 
 <div class="section">
 
-The network send queue handle
+</div>
+
+### Unity.Networking.Transport.NetworkSettings
+
+<div class="section">
+
+A list of the parameters that describe the network configuration.
 
 </div>
 
 ### Unity.Networking.Transport.NullPipelineStage
 
 <div class="section">
-
-The NullPipelineStage is the default pipeline stage and used to send
-packets unreliably
 
 </div>
 
@@ -323,27 +275,11 @@ packets unreliably
 
 <div class="section">
 
-The ReliableSequencedPipelineStage is used to send packets reliably and
-retain the order in which they are sent. This PipelineStage has a
-hardcoded WindowSize of 32 inflight packets and will drop packets if its
-unable to track them.
-
-</div>
-
-### Unity.Networking.Transport.SessionIdToken
-
-<div class="section">
-
 </div>
 
 ### Unity.Networking.Transport.SimulatorPipelineStage
 
 <div class="section">
-
-The SimulatorPipelineStage could be added on either the client or server
-to simulate bad network conditions. It's best to add it as the last
-stage in the pipeline, then it will either drop the packet or add a
-delay right before it would go on the wire.
 
 </div>
 
@@ -351,16 +287,11 @@ delay right before it would go on the wire.
 
 <div class="section">
 
-The simulator pipeline stage in send
-
 </div>
 
-### Unity.Networking.Transport.TransportFunctionPointer\`1
+### Unity.Networking.Transport.TransportFunctionPointer-1
 
 <div class="section">
-
-Represents a wrapper around burst compatible function pointers in a
-portable way
 
 </div>
 
@@ -368,8 +299,11 @@ portable way
 
 <div class="section">
 
-The UnreliableSequencedPipelineStage is used to send unreliable packets
-in order.
+</div>
+
+### Unity.Networking.Transport.WebSocketNetworkInterface
+
+<div class="section">
 
 </div>
 
@@ -378,9 +312,6 @@ in order.
 ### Unity.Networking.Transport.INetworkInterface
 
 <div class="section">
-
-Interface for implementing a low-level networking interface see
-BaselibNetworkInterface as an example
 
 </div>
 
@@ -396,7 +327,13 @@ The interface for NetworkParameters
 
 <div class="section">
 
-The network pipeline stage interface
+</div>
+
+### Unity.Networking.Transport.IValidatableNetworkParameter
+
+<div class="section">
+
+Interface for adding validation capabilities to the INetworkParameter.
 
 </div>
 
@@ -406,7 +343,8 @@ The network pipeline stage interface
 
 <div class="section">
 
-Connection States
+ConnectionState enumerates available connection states a connection can
+have.
 
 </div>
 
@@ -414,7 +352,7 @@ Connection States
 
 <div class="section">
 
-The different types of events that can be returned for a connection.
+NetworkEvent.Type enumerates available network events for this driver.
 
 </div>
 
@@ -422,8 +360,7 @@ The different types of events that can be returned for a connection.
 
 <div class="section">
 
-Indicates the protocol family of the address (analogous of AF\_\* in
-sockets API).
+NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
@@ -431,24 +368,17 @@ sockets API).
 
 <div class="section">
 
-Permits choosing between two ways of appending packets: via a copy or
-not.
-
 </div>
 
 ### Unity.Networking.Transport.NetworkPipelineStage.Requests
 
 <div class="section">
 
-The requests enum
-
 </div>
 
 ### Unity.Networking.Transport.SendHandleFlags
 
 <div class="section">
-
-The send handle flags enum
 
 </div>
 
@@ -458,15 +388,11 @@ The send handle flags enum
 
 <div class="section">
 
-The initialize connection delegate
-
 </div>
 
 ### Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate
 
 <div class="section">
-
-The receive delegate
 
 </div>
 
@@ -474,16 +400,11 @@ The receive delegate
 
 <div class="section">
 
-The send delegate
-
 </div>
 
 ### Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
 
 <div class="section">
-
-Will be invoked from the lower level library if sending a message was
-aborted.
 
 </div>
 
@@ -491,16 +412,10 @@ aborted.
 
 <div class="section">
 
-Invoked from the lower level library at the beginning of the message
-sending routine.
-
 </div>
 
 ### Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate
 
 <div class="section">
-
-Invoked from the lower level library at the end of the message sending
-routine.
 
 </div>

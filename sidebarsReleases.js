@@ -53,6 +53,10 @@ module.exports = {
         id: 'transport/transport-changelog',
       },
       {
+        type: 'doc',
+        id: 'transport/transport-wrapper-changelog',
+      },
+      {
         type: "doc",
         id: 'doc-changelog',
       },
