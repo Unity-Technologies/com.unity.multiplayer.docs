@@ -15,8 +15,10 @@ The interface for NetworkParameters
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public interface INetworkParameter
+``` lang-csharp
+public interface INetworkParameter
+```

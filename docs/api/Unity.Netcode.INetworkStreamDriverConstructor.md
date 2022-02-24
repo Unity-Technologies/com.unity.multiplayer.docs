@@ -39,15 +39,15 @@ public interface INetworkStreamDriverConstructor
 #### Declaration
 
 ``` lang-csharp
-void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableSequencedPipeline, out NetworkPipeline reliableSequencedPipeline, out NetworkPipeline reliableSequencedFragmentedPipeline)
+void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableFragmentedPipeline, out NetworkPipeline unreliableSequencedFragmentedPipeline, out NetworkPipeline reliableSequencedFragmentedPipeline)
 ```
 
 #### Parameters
 
-| Type            | Name                                | Description |
-|-----------------|-------------------------------------|-------------|
-| UnityTransport  | transport                           |             |
-| NetworkDriver   | driver                              |             |
-| NetworkPipeline | unreliableSequencedPipeline         |             |
-| NetworkPipeline | reliableSequencedPipeline           |             |
-| NetworkPipeline | reliableSequencedFragmentedPipeline |             |
+| Type            | Name                                  | Description |
+|-----------------|---------------------------------------|-------------|
+| UnityTransport  | transport                             |             |
+| NetworkDriver   | driver                                |             |
+| NetworkPipeline | unreliableFragmentedPipeline          |             |
+| NetworkPipeline | unreliableSequencedFragmentedPipeline |             |
+| NetworkPipeline | reliableSequencedFragmentedPipeline   |             |

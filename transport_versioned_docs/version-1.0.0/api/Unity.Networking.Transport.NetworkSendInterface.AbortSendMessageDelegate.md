@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
 
 <div class="markdown level0 summary">
 
-Will be invoked from the lower level library if sending a message was
-aborted.
-
 </div>
 
 <div class="markdown level0 conceptual">

@@ -32,7 +32,14 @@ Using `local space` can improve the synchronization of the transform when the ob
 
 ## Interpolation
 
-Check the `Interpolate` setting to enabled interpolation. Interpolation is enabled by default and is highly recommended. With interpolation enabled the `NetworkTransform` smoothly interpolates incoming changes to position, rotation and scale. In addition interpolation buffers the incoming data with a slight delay and applies additional smoothing to the values. All these factors combined result in a much smoother transform synchronization.
+Check the `Interpolate` setting to enabled interpolation. Interpolation is enabled by default and is highly recommended. With interpolation enabled the `NetworkTransform` smoothly interpolates incoming changes to position, rotation and scale. In addition interpolation buffers the incoming data with a slight delay and applies additional smoothing to the values. This buffer delay can be configured using
+
+``` lang-csharp
+NetworkManager.Singleton.NetworkTimeSystem.ServerBufferSec = 0.2f;
+```
+You'd want to make this bigger if your game requires less reactive, smooth gameplay with unstable network conditions.
+
+All these factors combined result in a much smoother transform synchronization.
 
 When `Interpolate` is disabled changes to the transform are applied immediately resulting in a less smooth position and more jitter.
 

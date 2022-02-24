@@ -1,9 +1,13 @@
 ---  
-id: Unity.Networking.Transport.SessionIdToken  
-title: Unity.Networking.Transport.SessionIdToken  
+id: Unity.Networking.Transport.Relay.RelayAllocationId  
+title: Unity.Networking.Transport.Relay.RelayAllocationId  
 ---
 
 <div class="markdown level0 summary">
+
+Allocation Id is a unique identifier for a connected client/host to a
+Relay server. This identifier is used by the Relay protocol as the
+address of the client.
 
 </div>
 
@@ -17,13 +21,13 @@ title: Unity.Networking.Transport.SessionIdToken
 
 <div>
 
-System.IEquatable\<SessionIdToken\>
+System.IEquatable\<RelayAllocationId\>
 
 </div>
 
 <div>
 
-System.IComparable\<SessionIdToken\>
+System.IComparable\<RelayAllocationId\>
 
 </div>
 
@@ -66,7 +70,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct SessionIdToken : IEquatable<SessionIdToken>, IComparable<SessionIdToken>
+public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<RelayAllocationId>
 ```
 
 ## 
@@ -84,7 +88,7 @@ public struct SessionIdToken : IEquatable<SessionIdToken>, IComparable<SessionId
 #### Declaration
 
 ``` lang-csharp
-public const int k_Length = 8
+public const int k_Length = 16
 ```
 
 #### Field Value
@@ -117,7 +121,7 @@ public byte *Value
 
 ## 
 
-### CompareTo(SessionIdToken)
+### CompareTo(RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -130,14 +134,14 @@ public byte *Value
 #### Declaration
 
 ``` lang-csharp
-public int CompareTo(SessionIdToken other)
+public int CompareTo(RelayAllocationId other)
 ```
 
 #### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| SessionIdToken | other |             |
+| Type              | Name  | Description |
+|-------------------|-------|-------------|
+| RelayAllocationId | other |             |
 
 #### Returns
 
@@ -181,7 +185,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(SessionIdToken)
+### Equals(RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -194,20 +198,49 @@ System.ValueType.Equals(System.Object)
 #### Declaration
 
 ``` lang-csharp
-public bool Equals(SessionIdToken other)
+public bool Equals(RelayAllocationId other)
 ```
 
 #### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| SessionIdToken | other |             |
+| Type              | Name  | Description |
+|-------------------|-------|-------------|
+| RelayAllocationId | other |             |
 
 #### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### FromBytePointer(Byte\*, Int32)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
+```
+
+#### Parameters
+
+| Type          | Name    | Description |
+|---------------|---------|-------------|
+| System.Byte\* | dataPtr |             |
+| System.Int32  | length  |             |
+
+#### Returns
+
+| Type              | Description |
+|-------------------|-------------|
+| RelayAllocationId |             |
 
 ### GetHashCode()
 
@@ -241,7 +274,7 @@ System.ValueType.GetHashCode()
 
 ## 
 
-### Equality(SessionIdToken, SessionIdToken)
+### Equality(RelayAllocationId, RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -254,15 +287,15 @@ System.ValueType.GetHashCode()
 #### Declaration
 
 ``` lang-csharp
-public static bool operator ==(SessionIdToken lhs, SessionIdToken rhs)
+public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
 #### Parameters
 
-| Type           | Name | Description |
-|----------------|------|-------------|
-| SessionIdToken | lhs  |             |
-| SessionIdToken | rhs  |             |
+| Type              | Name | Description |
+|-------------------|------|-------------|
+| RelayAllocationId | lhs  |             |
+| RelayAllocationId | rhs  |             |
 
 #### Returns
 
@@ -270,7 +303,7 @@ public static bool operator ==(SessionIdToken lhs, SessionIdToken rhs)
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(SessionIdToken, SessionIdToken)
+### Inequality(RelayAllocationId, RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -283,15 +316,15 @@ public static bool operator ==(SessionIdToken lhs, SessionIdToken rhs)
 #### Declaration
 
 ``` lang-csharp
-public static bool operator !=(SessionIdToken lhs, SessionIdToken rhs)
+public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
 #### Parameters
 
-| Type           | Name | Description |
-|----------------|------|-------------|
-| SessionIdToken | lhs  |             |
-| SessionIdToken | rhs  |             |
+| Type              | Name | Description |
+|-------------------|------|-------------|
+| RelayAllocationId | lhs  |             |
+| RelayAllocationId | rhs  |             |
 
 #### Returns
 
@@ -303,12 +336,12 @@ public static bool operator !=(SessionIdToken lhs, SessionIdToken rhs)
 
 <div>
 
-System.IEquatable\&lt;T&gt; 
+System.IEquatable&lt;T&gt;
 
 </div>
 
 <div>
 
-System.IComparable\&lt;T&gt; 
+System.IComparable&lt;T&gt;
 
 </div>

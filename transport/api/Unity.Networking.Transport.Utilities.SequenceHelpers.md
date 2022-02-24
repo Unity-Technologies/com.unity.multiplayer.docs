@@ -11,25 +11,31 @@ title: Unity.Networking.Transport.Utilities.SequenceHelpers
 
 </div>
 
+<div class="inheritance">
+
+##### Inheritance
+
+<div class="level0">
+
+System.Dynamic.ExpandoObject
+
+</div>
+
+<div class="level1">
+
+System.Dynamic.ExpandoObject
+
+</div>
+
+</div>
+
 <div class="inheritedMembers">
 
 ##### Inherited Members
 
 <div>
 
-ValueType.Equals(Object)
-
-</div>
-
-<div>
-
-ValueType.GetHashCode()
-
-</div>
-
-<div>
-
-ValueType.ToString()
+Object.Equals(Object)
 
 </div>
 
@@ -41,7 +47,19 @@ Object.Equals(Object, Object)
 
 <div>
 
+Object.GetHashCode()
+
+</div>
+
+<div>
+
 Object.GetType()
+
+</div>
+
+<div>
+
+Object.MemberwiseClone()
 
 </div>
 
@@ -51,17 +69,25 @@ Object.ReferenceEquals(Object, Object)
 
 </div>
 
+<div>
+
+Object.ToString()
+
+</div>
+
 </div>
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct SequenceHelpers
+``` lang-csharp
+public static class SequenceHelpers
+```
 
-## Methods 
+## 
 
 ### AbsDistance(UInt16, UInt16)
 
@@ -75,7 +101,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static int AbsDistance(ushort lhs, ushort rhs)
+``` lang-csharp
+public static int AbsDistance(ushort lhs, ushort rhs)
+```
 
 #### Parameters
 
@@ -102,7 +130,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static string BitMaskToString(uint mask)
+``` lang-csharp
+public static string BitMaskToString(uint mask)
+```
 
 #### Parameters
 
@@ -128,7 +158,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static bool GreaterThan16(ushort lhs, ushort rhs)
+``` lang-csharp
+public static bool GreaterThan16(ushort lhs, ushort rhs)
+```
 
 #### Parameters
 
@@ -155,7 +187,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static bool IsNewer(uint current, uint old)
+``` lang-csharp
+public static bool IsNewer(uint current, uint old)
+```
 
 #### Parameters
 
@@ -182,7 +216,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static bool LessThan16(ushort lhs, ushort rhs)
+``` lang-csharp
+public static bool LessThan16(ushort lhs, ushort rhs)
+```
 
 #### Parameters
 
@@ -209,7 +245,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static bool StalePacket(ushort sequence, ushort oldSequence, ushort windowSize)
+``` lang-csharp
+public static bool StalePacket(ushort sequence, ushort oldSequence, ushort windowSize)
+```
 
 #### Parameters
 

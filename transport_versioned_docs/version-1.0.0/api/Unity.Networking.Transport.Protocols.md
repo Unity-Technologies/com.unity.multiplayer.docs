@@ -3,7 +3,7 @@ id: Unity.Networking.Transport.Protocols
 title: Unity.Networking.Transport.Protocols  
 ---
 
-## 
+## Namespace Unity.Networking.Transport.Protocols
 
 <div class="markdown level0 summary">
 
@@ -17,7 +17,7 @@ title: Unity.Networking.Transport.Protocols
 
 </div>
 
-## 
+## Structs
 
 ### Unity.Networking.Transport.Protocols.UdpCHeader
 
@@ -25,7 +25,7 @@ title: Unity.Networking.Transport.Protocols
 
 </div>
 
-## 
+## Enums
 
 ### Unity.Networking.Transport.Protocols.UdpCHeader.HeaderFlags
 

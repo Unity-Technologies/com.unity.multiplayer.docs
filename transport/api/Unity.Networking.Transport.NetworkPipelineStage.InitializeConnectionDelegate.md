@@ -13,11 +13,13 @@ title: Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDeleg
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public delegate void InitializeConnectionDelegate(byte *staticInstanceBuffer, int staticInstanceBufferLength, byte *sendProcessBuffer, int sendProcessBufferLength, byte *recvProcessBuffer, int recvProcessBufferLength, byte *sharedProcessBuffer, int sharedProcessBufferLength);
+``` lang-csharp
+public delegate void InitializeConnectionDelegate(byte *staticInstanceBuffer, int staticInstanceBufferLength, byte *sendProcessBuffer, int sendProcessBufferLength, byte *recvProcessBuffer, int recvProcessBufferLength, byte *sharedProcessBuffer, int sharedProcessBufferLength);
+```
 
 ##### Parameters
 
