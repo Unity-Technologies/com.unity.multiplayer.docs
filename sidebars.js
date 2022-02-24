@@ -139,6 +139,10 @@ module.exports = {
           },
         ]
       },
+      {
+        "type": "doc",
+        "id": "advanced-topics/session-management"
+      }
     ]
   },
   {
@@ -584,9 +588,15 @@ module.exports = {
         },
         {
           "type": "doc",
+          "id": "api/Unity.Netcode.AddAllInterestKernel",
+          "label": "AddAllInterestKernel"
+        },
+        {
+          "type": "doc",
           "id": "api/Unity.Netcode.INetworkUpdateSystem",
           "label": "INetworkUpdateSystem"
         },
+
         {
           "type": "doc",
           "id": "api/Unity.Netcode.NetworkBehaviour",
@@ -710,6 +720,48 @@ module.exports = {
 
       ],
     },
+    {
+      "collapsed": true,
+          "type": "category",
+          "label": "Interest",
+          "items": [
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.Interest",
+              "label": "Interest"
+            },
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.AddAllInterestKernel",
+              "label": "AddAllInterestKernel"
+            },
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.Interest.IInterestKernel-1",
+              "label": "IInterestKernel-1"
+            },
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.Interest.IInterestNode-1",
+              "label": "IInterestNode-1"
+            },
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.Interest.InterestManager-1",
+              "label": "InterestManager-1"
+            },
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.Interest.InterestNodeStatic-1",
+              "label": "InterestNodeStatic-1"
+            },
+            {
+              "type": "doc",
+              "id": "api/Unity.Netcode.RadiusInterestKernel",
+              "label": "RadiusInterestKernel"
+            },
+          ],
+      },
     {
     "collapsed": true,
         "type": "category",
@@ -950,7 +1002,11 @@ module.exports = {
             "id": "api/Unity.Netcode.NetworkVariableBase",
             "label": "NetworkVariableBase"
           },
-
+          {
+            "type": "doc",
+            "id": "api/Unity.Netcode.NetworkVariableHelper",
+            "label": "NetworkVariableHelper"
+          },
           {
             "type": "doc",
             "id": "api/Unity.Netcode.NetworkVariable-1",

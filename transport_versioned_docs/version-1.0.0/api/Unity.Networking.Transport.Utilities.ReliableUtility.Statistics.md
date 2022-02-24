@@ -91,6 +91,12 @@ public int PacketsDropped
 
 <div class="markdown level1 summary">
 
+Note that the reliability pipeline does not (and cannot) make the
+distinction between a packet 'actually duplicated by the network', and a
+packet 'resent by the remote connection as a form of reliability'. To do
+so would require increasing the ReliableUtility.PacketHeader to include
+unique packet ID's. Thus, be aware that this field records both.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -134,6 +140,8 @@ public int PacketsOutOfOrder
 ### PacketsReceived
 
 <div class="markdown level1 summary">
+
+The Total. Thus, includes out of order, stale, and duplicate packets.
 
 </div>
 

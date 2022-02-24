@@ -98,18 +98,8 @@
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.HMACSHA256",
-          "label": "HMACSHA256 "
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.SHA256",
-          "label": "SHA256 "
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.Base64",
-          "label": "Base64 "
+          "id": "version-1.0.0/api/Unity.Networking.Transport.NetworkSettings",
+          "label": "NetworkSettings"
         },
         {
           "type": "doc",
@@ -123,6 +113,16 @@
         },
         {
           "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.BaselibNetworkParameterExtensions",
+          "label": "BaselibNetworkParameterExtensions"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.CommonNetworkParametersExtensions",
+          "label": "CommonNetworkParametersExtensions"
+        },
+        {
+          "type": "doc",
           "id": "version-1.0.0/api/Unity.Networking.Transport.DataStreamReader",
           "label": "DataStreamReader"
         },
@@ -133,8 +133,8 @@
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Networking.Transport.SessionIdToken",
-          "label": "SessionIdToken"
+          "id": "version-1.0.0/api/Unity.Networking.Transport.WebSocketNetworkInterface",
+          "label": "WebSocketNetworkInterface"
         },
         {
           "collapsed": true,
@@ -182,6 +182,11 @@
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Networking.Transport.IPCNetworkInterface",
           "label": "IPCNetworkInterface"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.IValidatableNetworkParameter",
+          "label": "IValidatableNetworkParameter"
         },
         {
           "type": "doc",
@@ -316,6 +321,11 @@
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Networking.Transport.NetworkPipelineParams",
           "label": "NetworkPipelineParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.NetworkPipelineParametersExtensions",
+          "label": "NetworkPipelineParametersExtensions"
         },
         {
           "collapsed": true,
@@ -458,17 +468,56 @@
           "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayHMACKey",
           "label": "RelayHMACKey"
         },
-
-
-
-
- 
-
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageAccepted",
+          "label": "RelayMessageAccepted"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageBind",
+          "label": "RelayMessageBind"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageConnectRequest",
+          "label": "RelayMessageConnectRequest"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageDisconnect",
+          "label": "RelayMessageDisconnect"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageHeader",
+          "label": "RelayMessageHeader"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessagePing",
+          "label": "RelayMessagePing"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageRelay",
+          "label": "RelayMessageRelay"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayMessageType",
+          "label": "RelayMessageType"
+        },
 
         {
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayNetworkParameter",
           "label": "RelayNetworkParameter"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Relay.RelayParameterExtensions",
+          "label": "RelayParameterExtensions"
         },
         {
           "type": "doc",
@@ -657,11 +706,19 @@
           "label": "SequenceHelpers"
         },
         {
-          "collapsed": true,
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions",
+          "label": "ReliableStageParameterExtensions"
+        },
+        {
           "type": "category",
-          "label": "SimulatorUtility",
+          "label": "Utility",
           "items": [
             {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions",
+              "label": "SimulatorStageParameterExtensions"
+            },{
               "type": "doc",
               "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.SimulatorUtility",
               "label": "SimulatorUtility"
@@ -680,6 +737,45 @@
               "type": "doc",
               "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.SimulatorUtility.Parameters",
               "label": "Parameters"
+            },     {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.ApplyMode",
+              "label": "ApplyMode"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.FixedStringHexExt",
+              "label": "FixedStringHexExt"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions",
+              "label": "FragmentationStageParameterExtensions"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.NativeMultiQueue-1",
+              "label": "NativeMultiQueue-1 "
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.RandomHelpers",
+              "label": "RandomHelpers"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.SequenceBufferContext",
+              "label": "SequenceBufferContext"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.SequenceHelpers",
+              "label": "SequenceHelpers"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Networking.Transport.Utilities.NativeListExt",
+              "label": "NativeListExt"
             }
           ]
         }
