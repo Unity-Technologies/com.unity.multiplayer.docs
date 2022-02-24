@@ -15,17 +15,19 @@ NetworkEvent.Type enumerates available network events for this driver.
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum Type : short
+``` lang-csharp
+public enum Type : short
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| Connect |  |
-| Data |  |
-| Disconnect |  |
-| Empty |  |
+| Name       | Description |
+|------------|-------------|
+| Connect    |             |
+| Data       |             |
+| Disconnect |             |
+| Empty      |             |

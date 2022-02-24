@@ -560,6 +560,10 @@
         },
         {
           "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.AddAllInterestKernel"
+        },
+        {
+          "type": "doc",
           "id": "version-1.0.0/api/Unity.Netcode.INetworkUpdateSystem"
         },
         {
@@ -656,6 +660,48 @@
         }
       ]
     },
+    {
+      "collapsed": true,
+          "type": "category",
+          "label": "Interest",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest"
+             
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.AddAllInterestKernel"
+             
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.IInterestKernel-1"
+            
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.IInterestNode-1"
+           
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.InterestManager-1"
+         
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.InterestNodeStatic-1"
+             
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.RadiusInterestKernel"
+         
+            }
+          ]
+      },
     {
       "collapsed": true,
       "type": "category",
@@ -855,6 +901,11 @@
         {
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableBase"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableHelper"
+          
         },
         {
           "type": "doc",

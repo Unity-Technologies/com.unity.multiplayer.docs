@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.NetworkSendInterface
 
 <div class="markdown level0 summary">
 
-The network send interface used to pass around function pointers to the
-actual INetworkInterface
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -72,8 +69,6 @@ public struct NetworkSendInterface
 
 <div class="markdown level1 summary">
 
-The abort send message function pointer
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -90,13 +85,11 @@ public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> A
 
 | Type                                                                      | Description |
 |---------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\<NetworkSendInterface.AbortSendMessageDelegate\> |             |
+| TransportFunctionPointer\&lt;NetworkSendInterface.AbortSendMessageDelegate&gt; |             |
 
 ### BeginSendMessage
 
 <div class="markdown level1 summary">
-
-The begin send message function pointer
 
 </div>
 
@@ -114,13 +107,11 @@ public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> B
 
 | Type                                                                      | Description |
 |---------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\<NetworkSendInterface.BeginSendMessageDelegate\> |             |
+| TransportFunctionPointer\&lt;NetworkSendInterface.BeginSendMessageDelegate&gt; |             |
 
 ### EndSendMessage
 
 <div class="markdown level1 summary">
-
-The end send message function pointer
 
 </div>
 
@@ -138,13 +129,11 @@ public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> End
 
 | Type                                                                    | Description |
 |-------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\<NetworkSendInterface.EndSendMessageDelegate\> |             |
+| TransportFunctionPointer\&lt;NetworkSendInterface.EndSendMessageDelegate&gt; |             |
 
 ### UserData
 
 <div class="markdown level1 summary">
-
-The user data
 
 </div>
 

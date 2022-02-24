@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.NullPipelineStage
 
 <div class="markdown level0 summary">
 
-The NullPipelineStage is the default pipeline stage and used to send
-packets unreliably
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -104,7 +101,7 @@ public readonly int StaticSize { get; }
 
 ## 
 
-### StaticInitialize(Byte\*, Int32, INetworkParameter\[\])
+### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -117,16 +114,16 @@ public readonly int StaticSize { get; }
 #### Declaration
 
 ``` lang-csharp
-public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] netParams)
+public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings netParams)
 ```
 
 #### Parameters
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | netParams                  |             |
+| Type            | Name                       | Description |
+|-----------------|----------------------------|-------------|
+| System.Byte\*   | staticInstanceBuffer       |             |
+| System.Int32    | staticInstanceBufferLength |             |
+| NetworkSettings | netParams                  |             |
 
 #### Returns
 

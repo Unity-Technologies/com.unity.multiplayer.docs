@@ -13,23 +13,25 @@ title: Unity.Networking.Transport.Error.StatusCode
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public enum StatusCode
+``` lang-csharp
+public enum StatusCode
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| NetworkArgumentMismatch | |
-| NetworkDriverParallelForErr | |
-| NetworkHeaderInvalid | |
-| NetworkIdMismatch | |
-| NetworkPacketOverflow | |
-| NetworkSendHandleInvalid | |
-| NetworkSendQueueFull | |
-| NetworkStateMismatch | |
-| NetworkVersionMismatch | |
-| Success | |
+| Name                        | Description |
+|-----------------------------|-------------|
+| NetworkArgumentMismatch     |             |
+| NetworkDriverParallelForErr |             |
+| NetworkHeaderInvalid        |             |
+| NetworkIdMismatch           |             |
+| NetworkPacketOverflow       |             |
+| NetworkSendHandleInvalid    |             |
+| NetworkSendQueueFull        |             |
+| NetworkStateMismatch        |             |
+| NetworkVersionMismatch      |             |
+| Success                     |             |

@@ -5,9 +5,6 @@ title: Unity.Networking.Transport.BaselibNetworkParameter
 
 <div class="markdown level0 summary">
 
-Network Parameters used to set queue and payload sizes for
-BaselibNetworkInterface
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -21,6 +18,12 @@ BaselibNetworkInterface
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>
 
@@ -75,7 +78,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct BaselibNetworkParameter : INetworkParameter
+public struct BaselibNetworkParameter : INetworkParameter, IValidatableNetworkParameter
 ```
 
 ## 
@@ -83,8 +86,6 @@ public struct BaselibNetworkParameter : INetworkParameter
 ### maximumPayloadSize
 
 <div class="markdown level1 summary">
-
-The maximum payload size.
 
 </div>
 
@@ -108,9 +109,6 @@ public uint maximumPayloadSize
 
 <div class="markdown level1 summary">
 
-The maximum number of receiving packets that the BaselibNetworkInterface
-can process in a single update iteration.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -133,9 +131,6 @@ public int receiveQueueCapacity
 
 <div class="markdown level1 summary">
 
-The maximum number of sending packets that the BaselibNetworkInterface
-can process in a single update iteration.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -154,10 +149,40 @@ public int sendQueueCapacity
 |--------------|-------------|
 | System.Int32 |             |
 
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>

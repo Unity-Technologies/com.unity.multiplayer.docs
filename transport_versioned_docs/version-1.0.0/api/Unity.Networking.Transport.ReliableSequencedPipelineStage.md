@@ -5,11 +5,6 @@ title: Unity.Networking.Transport.ReliableSequencedPipelineStage
 
 <div class="markdown level0 summary">
 
-The ReliableSequencedPipelineStage is used to send packets reliably and
-retain the order in which they are sent. This PipelineStage has a
-hardcoded WindowSize of 32 inflight packets and will drop packets if its
-unable to track them.
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -106,7 +101,7 @@ public readonly int StaticSize { get; }
 
 ## 
 
-### StaticInitialize(Byte\*, Int32, INetworkParameter\[\])
+### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -119,16 +114,16 @@ public readonly int StaticSize { get; }
 #### Declaration
 
 ``` lang-csharp
-public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] netParams)
+public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings settings)
 ```
 
 #### Parameters
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | netParams                  |             |
+| Type            | Name                       | Description |
+|-----------------|----------------------------|-------------|
+| System.Byte\*   | staticInstanceBuffer       |             |
+| System.Int32    | staticInstanceBufferLength |             |
+| NetworkSettings | settings                   |             |
 
 #### Returns
 

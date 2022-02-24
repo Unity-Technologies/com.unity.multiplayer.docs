@@ -5,8 +5,7 @@ title: Unity.Networking.Transport.NetworkFamily
 
 <div class="markdown level0 summary">
 
-Indicates the protocol family of the address (analogous of AF\_\* in
-sockets API).
+NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
@@ -26,8 +25,8 @@ public enum NetworkFamily
 
 ## 
 
-| Name    | Description                   |
-|---------|-------------------------------|
-| Invalid | Invalid network family.       |
-| Ipv4    | IPv4 (analogous to AF_INET).  |
-| Ipv6    | IPv6 (analogous to AF_INET6). |
+| Name    | Description |
+|---------|-------------|
+| Invalid |             |
+| Ipv4    |             |
+| Ipv6    |             |

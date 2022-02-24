@@ -13,11 +13,13 @@ title: Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public delegate void AbortSendMessageDelegate(ref NetworkInterfaceSendHandle handle, IntPtr userData);
+``` lang-csharp
+public delegate void AbortSendMessageDelegate(ref NetworkInterfaceSendHandle handle, IntPtr userData);
+```
 
 ##### Parameters
 

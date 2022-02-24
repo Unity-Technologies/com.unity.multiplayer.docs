@@ -55,15 +55,33 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+##### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-``` lang-csharp
-public struct UdpCHeader
-```
+    public struct UdpCHeader
 
-## 
+## Fields
+
+### Data
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+    public byte *Data
+
+#### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.Byte\* |             |
 
 ### Flags
 
@@ -77,9 +95,7 @@ public struct UdpCHeader
 
 #### Declaration
 
-``` lang-csharp
-public UdpCHeader.HeaderFlags Flags
-```
+    public UdpCHeader.HeaderFlags Flags
 
 #### Field Value
 
@@ -99,9 +115,7 @@ public UdpCHeader.HeaderFlags Flags
 
 #### Declaration
 
-``` lang-csharp
-public const int Length = 10
-```
+    public const int Length = 4
 
 #### Field Value
 
@@ -121,15 +135,13 @@ public const int Length = 10
 
 #### Declaration
 
-``` lang-csharp
-public SessionIdToken SessionToken
-```
+    public ushort SessionToken
 
 #### Field Value
 
-| Type           | Description |
-|----------------|-------------|
-| SessionIdToken |             |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
 
 ### Type
 
@@ -143,9 +155,7 @@ public SessionIdToken SessionToken
 
 #### Declaration
 
-``` lang-csharp
-public byte Type
-```
+    public byte Type
 
 #### Field Value
 
