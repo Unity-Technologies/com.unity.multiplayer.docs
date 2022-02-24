@@ -5,7 +5,8 @@ title: Unity.Networking.Transport.NetworkConnection.State
 
 <div class="markdown level0 summary">
 
-Connection States
+ConnectionState enumerates available connection states a connection can
+have.
 
 </div>
 
@@ -27,6 +28,6 @@ public enum State
 
 | Name         | Description                                    |
 |--------------|------------------------------------------------|
-| Connected    | Indicates the connection is connected.         |
-| Connecting   | Indicates the connection is being established. |
-| Disconnected | Indicates the connection is disconnected.      |
+| Connected    | Indicates the connection is connected..        |
+| Connecting   | Indicates the connection is trying to connect. |
+| Disconnected | Indicates the connection is disconnected       |

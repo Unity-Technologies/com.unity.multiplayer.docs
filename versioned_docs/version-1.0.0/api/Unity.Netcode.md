@@ -1,5 +1,5 @@
 ---  
-id: Unity.Netcode  
+id: Unity.Netcode
 title: Unity.Netcode
 ---
 
@@ -18,6 +18,12 @@ title: Unity.Netcode
 </div>
 
 ## 
+
+### Unity.Netcode.AddAllInterestKernel
+
+<div class="section">
+
+</div>
 
 ### Unity.Netcode.Arithmetic
 
@@ -71,14 +77,6 @@ easier to use.
 ### Unity.Netcode.ErrorUtilities
 
 <div class="section">
-
-</div>
-
-### Unity.Netcode.FixedQueue-1
-
-<div class="section">
-
-Queue with a fixed size
 
 </div>
 
@@ -243,6 +241,12 @@ Interface for network value containers
 
 </div>
 
+### Unity.Netcode.NetworkVariableHelper
+
+<div class="section">
+
+</div>
+
 ### Unity.Netcode.NotListeningException
 
 <div class="section">
@@ -269,6 +273,12 @@ connecting
 
 </div>
 
+### Unity.Netcode.RadiusInterestKernel
+
+<div class="section">
+
+</div>
+
 ### Unity.Netcode.RpcAttribute
 
 <div class="section">
@@ -283,7 +293,10 @@ Represents the common base class for Rpc attributes.
 
 Used for local notifications of various scene events. The OnSceneEvent
 of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-to provide scene event status/state.
+to provide scene event status.  
+*Note: This is only when EnableSceneManagement is enabled.*  
+See also:  
+SceneEventType
 
 </div>
 
@@ -303,12 +316,6 @@ server.
 <div class="section">
 
 Exception thrown when an object is not yet spawned
-
-</div>
-
-### Unity.Netcode.StreamExtensions
-
-<div class="section">
 
 </div>
 
@@ -348,7 +355,7 @@ doesn't have to be concerned with misaligned writes.
 
 </div>
 
-### Unity.Netcode.BufferSerializer-1
+### Unity.Netcode.BufferSerializer\`1
 
 <div class="section">
 
@@ -596,10 +603,10 @@ RPC delivery types
 
 Used by NetworkSceneManager to determine if a server invoked scene event
 has started. The returned status is stored in the
-Unity.Netcode.SceneEventProgress.Status property. Note: This was
-formally known as SwitchSceneProgress which contained the . All s are
-now delivered by the OnSceneEvent event handler via the SceneEvent
-parameter.
+Unity.Netcode.SceneEventProgress.Status property.  
+*Note: This was formally known as SwitchSceneProgress which contained
+the . All s are now delivered by the OnSceneEvent event handler via the
+SceneEvent parameter.*
 
 </div>
 
@@ -608,9 +615,12 @@ parameter.
 <div class="section">
 
 The different types of scene events communicated between a server and
-client. Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
-messages Note: This is only when EnableSceneManagement is enabled See
-also: SceneEvent
+client.  
+Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
+messages.  
+*Note: This is only when EnableSceneManagement is enabled.*  
+See also:  
+SceneEvent
 
 </div>
 
@@ -676,8 +686,10 @@ Delegate type for checking visibility
 <div class="section">
 
 Delegate declaration for the OnLoadEventCompleted and
-OnUnloadEventCompleted events View LoadEventCompleted for more
-information View UnloadEventCompleted for more information
+OnUnloadEventCompleted events.  
+See also:  
+LoadEventCompleted  
+UnloadEventCompleted
 
 </div>
 
@@ -685,8 +697,9 @@ information View UnloadEventCompleted for more information
 
 <div class="section">
 
-Delegate declaration for the OnLoadComplete event View LoadComplete for
-more information
+Delegate declaration for the OnLoadComplete event.  
+See also:  
+LoadComplete for more information
 
 </div>
 
@@ -694,7 +707,9 @@ more information
 
 <div class="section">
 
-Delegate declaration for the OnLoad event View Load for more information
+Delegate declaration for the OnLoad event.  
+See also:  
+Loadfor more information
 
 </div>
 
@@ -702,7 +717,8 @@ Delegate declaration for the OnLoad event View Load for more information
 
 <div class="section">
 
-Delegate declaration for the OnSynchronizeComplete event View
+Delegate declaration for the OnSynchronizeComplete event.  
+See also:  
 SynchronizeComplete for more information
 
 </div>
@@ -711,8 +727,9 @@ SynchronizeComplete for more information
 
 <div class="section">
 
-Delegate declaration for the OnSynchronize event View Synchronize for
-more information
+Delegate declaration for the OnSynchronize event.  
+See also:  
+Synchronize for more information
 
 </div>
 
@@ -720,8 +737,9 @@ more information
 
 <div class="section">
 
-Delegate declaration for the OnUnloadComplete event View UnloadComplete
-for more information
+Delegate declaration for the OnUnloadComplete event.  
+See also:  
+UnloadComplete for more information
 
 </div>
 
@@ -729,8 +747,9 @@ for more information
 
 <div class="section">
 
-Delegate declaration for the OnUnload event View Unload for more
-information
+Delegate declaration for the OnUnload event.  
+See also:  
+Unload for more information
 
 </div>
 
@@ -738,8 +757,10 @@ information
 
 <div class="section">
 
-The delegate callback definition for scene event notifications For more
-details review over SceneEvent and Unity.Netcode.SceneEventData
+The delegate callback definition for scene event notifications.  
+See also:  
+SceneEvent  
+Unity.Netcode.SceneEventData
 
 </div>
 
@@ -762,7 +783,7 @@ Delegate for transport network events
 
 </div>
 
-### Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
+### Unity.Netcode.NetworkVariable\`1.OnValueChangedDelegate
 
 <div class="section">
 

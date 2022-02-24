@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate
 
 <div class="markdown level0 summary">
 
-The receive delegate
-
 </div>
 
 <div class="markdown level0 conceptual">

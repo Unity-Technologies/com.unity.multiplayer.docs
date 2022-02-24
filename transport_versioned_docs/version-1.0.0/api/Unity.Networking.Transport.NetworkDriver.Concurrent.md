@@ -6,7 +6,7 @@ title: Unity.Networking.Transport.NetworkDriver.Concurrent
 <div class="markdown level0 summary">
 
 The Concurrent struct is used to create an Concurrent instance of the
-NetworkDriver.
+GenericNetworkDriver.
 
 </div>
 
@@ -223,8 +223,6 @@ public int EndSend(DataStreamWriter writer)
 
 <div class="markdown level1 summary">
 
-Gets the connection state using the specified id
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -239,21 +237,19 @@ public NetworkConnection.State GetConnectionState(NetworkConnection id)
 
 #### Parameters
 
-| Type              | Name | Description       |
-|-------------------|------|-------------------|
-| NetworkConnection | id   | The connection id |
+| Type              | Name | Description |
+|-------------------|------|-------------|
+| NetworkConnection | id   |             |
 
 #### Returns
 
-| Type                    | Description                  |
-|-------------------------|------------------------------|
-| NetworkConnection.State | The network connection state |
+| Type                    | Description |
+|-------------------------|-------------|
+| NetworkConnection.State |             |
 
 ### MaxHeaderSize(NetworkPipeline)
 
 <div class="markdown level1 summary">
-
-Max headersize including a NetworkPipeline
 
 </div>
 
@@ -269,21 +265,19 @@ public int MaxHeaderSize(NetworkPipeline pipe)
 
 #### Parameters
 
-| Type            | Name | Description                                             |
-|-----------------|------|---------------------------------------------------------|
-| NetworkPipeline | pipe | The pipeline with which to get the maximum header size. |
+| Type            | Name | Description |
+|-----------------|------|-------------|
+| NetworkPipeline | pipe |             |
 
 #### Returns
 
-| Type         | Description     |
-|--------------|-----------------|
-| System.Int32 | The header size |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### PopEventForConnection(NetworkConnection, out DataStreamReader)
 
 <div class="markdown level1 summary">
-
-Pops events for a connection using the specified connection id
 
 </div>
 
@@ -299,22 +293,20 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### Parameters
 
-| Type              | Name         | Description                         |
-|-------------------|--------------|-------------------------------------|
-| NetworkConnection | connectionId | The connection id                   |
-| DataStreamReader  | reader       | Stream reader for the event's data. |
+| Type              | Name         | Description |
+|-------------------|--------------|-------------|
+| NetworkConnection | connectionId |             |
+| DataStreamReader  | reader       |             |
 
 #### Returns
 
-| Type              | Description            |
-|-------------------|------------------------|
-| NetworkEvent.Type | The network event type |
+| Type              | Description |
+|-------------------|-------------|
+| NetworkEvent.Type |             |
 
 ### PopEventForConnection(NetworkConnection, out DataStreamReader, out NetworkPipeline)
 
 <div class="markdown level1 summary">
-
-Pops events for a connection using the specified connection id
 
 </div>
 
@@ -330,14 +322,14 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### Parameters
 
-| Type              | Name         | Description                                    |
-|-------------------|--------------|------------------------------------------------|
-| NetworkConnection | connectionId | The connection id                              |
-| DataStreamReader  | reader       | Stream reader for the event's data.            |
-| NetworkPipeline   | pipeline     | Pipeline on which the data event was received. |
+| Type              | Name         | Description |
+|-------------------|--------------|-------------|
+| NetworkConnection | connectionId |             |
+| DataStreamReader  | reader       |             |
+| NetworkPipeline   | pipeline     |             |
 
 #### Returns
 
 | Type              | Description |
 |-------------------|-------------|
-| NetworkEvent.Type | The type    |
+| NetworkEvent.Type |             |

@@ -5,10 +5,6 @@ title: Unity.Networking.Transport.BaselibNetworkInterface
 
 <div class="markdown level0 summary">
 
-Default NetworkInterface implementation based on Unity's internal
-Baselib UDP sockets this is ensure to work on all platforms except for
-Unity's WebGL.
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -91,8 +87,6 @@ public struct BaselibNetworkInterface : INetworkInterface, IDisposable
 
 <div class="markdown level1 summary">
 
-Default Parameters for BaselibNetworkInterface
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -117,8 +111,6 @@ public static BaselibNetworkParameter DefaultParameters
 
 <div class="markdown level1 summary">
 
-Gets if the interface has been created.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -141,7 +133,7 @@ public readonly bool IsCreated { get; }
 
 <div class="markdown level1 summary">
 
-Returns the local endpoint the BaselibNetworkInterface is bound to.
+Returns the local endpoint.
 
 </div>
 
@@ -167,7 +159,7 @@ public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
 
 <div class="markdown level1 summary">
 
-Binds the medium to a specific endpoint.
+Binds the BaselibNetworkInterface to the endpoint passed.
 
 </div>
 
@@ -183,22 +175,21 @@ public int Bind(NetworkInterfaceEndPoint endpoint)
 
 #### Parameters
 
-| Type                     | Name     | Description                       |
-|--------------------------|----------|-----------------------------------|
-| NetworkInterfaceEndPoint | endpoint | A valid NetworkInterfaceEndPoint. |
+| Type                     | Name     | Description                  |
+|--------------------------|----------|------------------------------|
+| NetworkInterfaceEndPoint | endpoint | A valid ipv4 or ipv6 address |
 
 #### Returns
 
-| Type         | Description           |
-|--------------|-----------------------|
-| System.Int32 | Returns 0 on success. |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 | int         |
 
 ### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
-Converts a generic NetworkEndPoint to its NetworkInterfaceEndPoint
-version for the BaselibNetworkInterface.
+Creates a interface endpoint.
 
 </div>
 
@@ -214,22 +205,20 @@ public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterface
 
 #### Parameters
 
-| Type                     | Name     | Description                              |
-|--------------------------|----------|------------------------------------------|
-| NetworkEndPoint          | address  | The NetworkEndPoint endpoint to convert. |
-| NetworkInterfaceEndPoint | endpoint |                                          |
+| Type                     | Name     | Description |
+|--------------------------|----------|-------------|
+| NetworkEndPoint          | address  |             |
+| NetworkInterfaceEndPoint | endpoint |             |
 
 #### Returns
 
-| Type         | Description                                                |
-|--------------|------------------------------------------------------------|
-| System.Int32 | returns 0 on success and sets the converted endpoint value |
+| Type         | Description              |
+|--------------|--------------------------|
+| System.Int32 | NetworkInterfaceEndPoint |
 
 ### CreateSendInterface()
 
 <div class="markdown level1 summary">
-
-Creates the send interface
 
 </div>
 
@@ -245,15 +234,13 @@ public NetworkSendInterface CreateSendInterface()
 
 #### Returns
 
-| Type                 | Description                |
-|----------------------|----------------------------|
-| NetworkSendInterface | The network send interface |
+| Type                 | Description |
+|----------------------|-------------|
+| NetworkSendInterface |             |
 
 ### Dispose()
 
 <div class="markdown level1 summary">
-
-Disposes this instance
 
 </div>
 
@@ -271,9 +258,6 @@ public void Dispose()
 
 <div class="markdown level1 summary">
 
-Converts a NetworkInterfaceEndPoint to its generic NetworkEndPoint
-version.
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -288,17 +272,17 @@ public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 
 #### Parameters
 
-| Type                     | Name     | Description                                       |
-|--------------------------|----------|---------------------------------------------------|
-| NetworkInterfaceEndPoint | endpoint | The NetworkInterfaceEndPoint endpoint to convert. |
+| Type                     | Name     | Description |
+|--------------------------|----------|-------------|
+| NetworkInterfaceEndPoint | endpoint |             |
 
 #### Returns
 
-| Type            | Description                           |
-|-----------------|---------------------------------------|
-| NetworkEndPoint | Returns the converted endpoint value. |
+| Type            | Description |
+|-----------------|-------------|
+| NetworkEndPoint |             |
 
-### Initialize(INetworkParameter\[\])
+### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -313,27 +297,24 @@ Initializes a instance of the BaselibNetworkInterface struct.
 #### Declaration
 
 ``` lang-csharp
-public int Initialize(params INetworkParameter[] param)
+public int Initialize(NetworkSettings settings)
 ```
 
 #### Parameters
 
-| Type                  | Name  | Description                                                                                                 |
-|-----------------------|-------|-------------------------------------------------------------------------------------------------------------|
-| INetworkParameter\[\] | param | An array of INetworkParameter. If there is no BaselibNetworkParameter present, the default values are used. |
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkSettings | settings |             |
 
 #### Returns
 
-| Type         | Description           |
-|--------------|-----------------------|
-| System.Int32 | Returns 0 on succees. |
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
 ### Listen()
 
 <div class="markdown level1 summary">
-
-Listens on the socket, currently this Interface doesn't support
-listening as its UDP based.
 
 </div>
 
@@ -351,14 +332,11 @@ public int Listen()
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 | Returns 0   |
+| System.Int32 |             |
 
 ### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
 <div class="markdown level1 summary">
-
-Schedule a ReceiveJob. This is used to read data from your supported
-medium and pass it to the AppendData function supplied by NetworkDriver
 
 </div>
 
@@ -374,23 +352,20 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 
 #### Parameters
 
-| Type                  | Name     | Description                                      |
-|-----------------------|----------|--------------------------------------------------|
-| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
-| JobHandle             | dep      | A to any dependency we might have.               |
+| Type                  | Name     | Description |
+|-----------------------|----------|-------------|
+| NetworkPacketReceiver | receiver |             |
+| JobHandle             | dep      |             |
 
 #### Returns
 
-| Type      | Description                                 |
-|-----------|---------------------------------------------|
-| JobHandle | A to our newly created ScheduleReceive Job. |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
-### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
+### ScheduleSend(NativeQueue&lt;QueuedSendMessage&gt;, JobHandle)
 
 <div class="markdown level1 summary">
-
-Schedule a SendJob. This is used to flush send queues to your supported
-medium
 
 </div>
 
@@ -406,16 +381,16 @@ public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandl
 
 #### Parameters
 
-| Type                             | Name      | Description                                                |
-|----------------------------------|-----------|------------------------------------------------------------|
-| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue | The send queue which can be used to emulate parallel send. |
-| JobHandle                        | dep       | A to any dependency we might have.                         |
+| Type                             | Name      | Description |
+|----------------------------------|-----------|-------------|
+| NativeQueue&lt;QueuedSendMessage&gt;| sendQueue |             |
+| JobHandle                        | dep       |             |
 
 #### Returns
 
-| Type      | Description                              |
-|-----------|------------------------------------------|
-| JobHandle | A to our newly created ScheduleSend Job. |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
 ### Implements
 

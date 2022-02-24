@@ -73,13 +73,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct BaselibNetworkInterface : INetworkInterface, IDisposable
+``` lang-csharp
+public struct BaselibNetworkInterface : INetworkInterface, IDisposable
+```
 
-## Fields
+## 
 
 ### DefaultParameters
 
@@ -93,7 +95,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public static BaselibNetworkParameter DefaultParameters
+``` lang-csharp
+public static BaselibNetworkParameter DefaultParameters
+```
 
 #### Field Value
 
@@ -101,7 +105,7 @@ Object.ReferenceEquals(Object, Object)
 |-------------------------|-------------|
 | BaselibNetworkParameter |             |
 
-## Properties 
+## 
 
 ### IsCreated
 
@@ -115,7 +119,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public bool IsCreated { get; }
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
 
 #### Property Value
 
@@ -137,7 +143,9 @@ Returns the local endpoint.
 
 #### Declaration
 
-    public NetworkInterfaceEndPoint LocalEndPoint { get; }
+``` lang-csharp
+public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
+```
 
 #### Property Value
 
@@ -145,7 +153,7 @@ Returns the local endpoint.
 |--------------------------|--------------------------|
 | NetworkInterfaceEndPoint | NetworkInterfaceEndPoint |
 
-## Methods 
+## 
 
 ### Bind(NetworkInterfaceEndPoint)
 
@@ -161,7 +169,9 @@ Binds the BaselibNetworkInterface to the endpoint passed.
 
 #### Declaration
 
-    public int Bind(NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+public int Bind(NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -189,7 +199,9 @@ Creates a interface endpoint.
 
 #### Declaration
 
-    public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -216,7 +228,9 @@ Creates a interface endpoint.
 
 #### Declaration
 
-    public NetworkSendInterface CreateSendInterface()
+``` lang-csharp
+public NetworkSendInterface CreateSendInterface()
+```
 
 #### Returns
 
@@ -236,7 +250,9 @@ Creates a interface endpoint.
 
 #### Declaration
 
-    public void Dispose()
+``` lang-csharp
+public void Dispose()
+```
 
 ### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
@@ -250,7 +266,9 @@ Creates a interface endpoint.
 
 #### Declaration
 
-    public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+``` lang-csharp
+public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+```
 
 #### Parameters
 
@@ -264,7 +282,7 @@ Creates a interface endpoint.
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### Initialize(INetworkParameter\[\])
+### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -278,13 +296,37 @@ Initializes a instance of the BaselibNetworkInterface struct.
 
 #### Declaration
 
-    public int Initialize(params INetworkParameter[] param)
+``` lang-csharp
+public int Initialize(NetworkSettings settings)
+```
 
 #### Parameters
 
-| Type                  | Name  | Description                                                                                        |
-|-----------------------|-------|----------------------------------------------------------------------------------------------------|
-| INetworkParameter\[\] | param | An array of INetworkParameter. There is currently only BaselibNetworkParameter that can be passed. |
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkSettings | settings |             |
+
+#### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### Listen()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int Listen()
+```
 
 #### Returns
 
@@ -304,20 +346,22 @@ Initializes a instance of the BaselibNetworkInterface struct.
 
 #### Declaration
 
-    public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+``` lang-csharp
+public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+```
 
 #### Parameters
 
 | Type                  | Name     | Description |
 |-----------------------|----------|-------------|
 | NetworkPacketReceiver | receiver |             |
-| Unity.Jobs.JobHandle  | dep      |             |
+| JobHandle             | dep      |             |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| Unity.Jobs.JobHandle |             |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
 ### ScheduleSend(NativeQueue&lt;QueuedSendMessage&gt;, JobHandle)
 
@@ -331,20 +375,22 @@ Initializes a instance of the BaselibNetworkInterface struct.
 
 #### Declaration
 
-    public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+``` lang-csharp
+public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+```
 
 #### Parameters
 
-| Type                                 | Name      | Description |
-|--------------------------------------|-----------|-------------|
-| NativeQueue&lt;QueuedSendMessage&gt; | sendQueue |             |
-| Unity.Jobs.JobHandle                 | dep       |             |
+| Type                             | Name      | Description |
+|----------------------------------|-----------|-------------|
+| NativeQueue&lt;QueuedSendMessage&gt;| sendQueue |             |
+| JobHandle                        | dep       |             |
 
 #### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| Unity.Jobs.JobHandle |             |
+| Type      | Description |
+|-----------|-------------|
+| JobHandle |             |
 
 ### Implements
 
