@@ -13,16 +13,19 @@ title: Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public delegate void ReceiveDelegate(ref NetworkPipelineContext ctx, ref InboundRecvBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests);
+``` lang-csharp
+public delegate void ReceiveDelegate(ref NetworkPipelineContext ctx, ref InboundRecvBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, int systemHeadersSize);
+```
 
 ##### Parameters
 
-| Type                          | Name            | Description |
-|-------------------------------|-----------------|-------------|
-| NetworkPipelineContext        | \*ctx           |             |
-| InboundRecvBuffer             | \*inboundBuffer |             |
-| NetworkPipelineStage.Requests | \*requests      |             |
+| Type                          | Name                | Description |
+|-------------------------------|---------------------|-------------|
+| NetworkPipelineContext        | \*ctx               |             |
+| InboundRecvBuffer             | \*inboundBuffer     |             |
+| NetworkPipelineStage.Requests | \*requests          |             |
+| System.Int32                  | \*systemHeadersSize |             |

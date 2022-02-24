@@ -6,7 +6,7 @@ title: Unity.Networking.Transport.Utilities.NativeMultiQueue-1
 <div class="markdown level0 summary">
 
 A NativeMultiQueue is a set of several FIFO queues split into buckets.
-Each bucket has its own first and last item, and each bucket can have
+Each bucket has its own first and last item and each bucket can have
 items pushed and popped individually.
 
 </div>
@@ -71,13 +71,11 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+##### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-``` lang-csharp
-public struct NativeMultiQueue<T> : IDisposable where T : struct
-```
+    public struct NativeMultiQueue<T> : IDisposable where T : struct
 
 ##### Type Parameters
 
@@ -85,17 +83,16 @@ public struct NativeMultiQueue<T> : IDisposable where T : struct
 |------|-------------|
 | T    |             |
 
-## 
+## Constructors 
 
 ### NativeMultiQueue(Int32)
 
 <div class="markdown level1 summary">
 
-Instantiates a new NativeMultiQueue which has a single bucket and the
-specified capacity for the number of items for that bucket. Accessing
-buckets out of range will grow the number of buckets, and pushing more
-items than the initial capacity will increase the number of items for
-each bucket.
+New NativeMultiQueue has a single bucket and the specified number of
+items for that bucket. Accessing buckets out of range will grow the
+number of buckets and pushing more items than the initial capacity will
+increase the number of items for each bucket.
 
 </div>
 
@@ -105,9 +102,7 @@ each bucket.
 
 #### Declaration
 
-``` lang-csharp
-public NativeMultiQueue(int initialMessageCapacity)
-```
+    public NativeMultiQueue(int initialMessageCapacity)
 
 #### Parameters
 
@@ -115,13 +110,11 @@ public NativeMultiQueue(int initialMessageCapacity)
 |--------------|------------------------|-------------|
 | System.Int32 | initialMessageCapacity |             |
 
-## 
+## Properties 
 
 ### IsCreated
 
 <div class="markdown level1 summary">
-
-Whether this queue has been allocated (and not yet deallocated).
 
 </div>
 
@@ -131,23 +124,21 @@ Whether this queue has been allocated (and not yet deallocated).
 
 #### Declaration
 
-``` lang-csharp
-public readonly bool IsCreated { get; }
-```
+    public bool IsCreated { get; }
 
 #### Property Value
 
-| Type           | Description                                                      |
-|----------------|------------------------------------------------------------------|
-| System.Boolean | True if this queue has been allocated (and not yet deallocated). |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-## 
+## Methods 
 
 ### Clear(Int32)
 
 <div class="markdown level1 summary">
 
-Remove all items from a specific bucket. If the bucket does not exist,
+Remove all items from a specific bucket. If the bucket does not exist
 the call will not do anything.
 
 </div>
@@ -158,9 +149,7 @@ the call will not do anything.
 
 #### Declaration
 
-``` lang-csharp
-public void Clear(int bucket)
-```
+    public void Clear(int bucket)
 
 #### Parameters
 
@@ -172,8 +161,8 @@ public void Clear(int bucket)
 
 <div class="markdown level1 summary">
 
-Dequeue an item from a specific bucket. If the bucket does not exist, or
-if the bucket is empty, the call will fail and return false.
+Dequeue an item from a specific bucket. If the bucket does not exist or
+if the bucket is empty the call will fail and return false.
 
 </div>
 
@@ -183,9 +172,7 @@ if the bucket is empty, the call will fail and return false.
 
 #### Declaration
 
-``` lang-csharp
-public bool Dequeue(int bucket, out T value)
-```
+    public bool Dequeue(int bucket, out T value)
 
 #### Parameters
 
@@ -204,8 +191,6 @@ public bool Dequeue(int bucket, out T value)
 
 <div class="markdown level1 summary">
 
-Releases all resources (memory and safety handles).
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -214,18 +199,15 @@ Releases all resources (memory and safety handles).
 
 #### Declaration
 
-``` lang-csharp
-public void Dispose()
-```
+    public void Dispose()
 
 ### Enqueue(Int32, T)
 
 <div class="markdown level1 summary">
 
-Enqueue a new item to a specific bucket. If the specified bucket is
-larger than the current amount of buckets, the queue's number of buckets
-will be increased to match. If enqueueing the item would exceed the
-queue's capacity, the queue's capacity will be increased.
+Enqueue a new item to a specific bucket. If the bucket does not yet
+exist the number of buckets will be increased and if the queue is full
+the number of items for each bucket will be increased.
 
 </div>
 
@@ -235,9 +217,7 @@ queue's capacity, the queue's capacity will be increased.
 
 #### Declaration
 
-``` lang-csharp
-public void Enqueue(int bucket, T value)
-```
+    public void Enqueue(int bucket, T value)
 
 #### Parameters
 
@@ -250,8 +230,8 @@ public void Enqueue(int bucket, T value)
 
 <div class="markdown level1 summary">
 
-Peek the next item in a specific bucket. If the bucket does not exist,
-or if the bucket is empty, the call will fail and return false.
+Peek the next item in a specific bucket. If the bucket does not exist or
+if the bucket is empty the call will fail and return false.
 
 </div>
 
@@ -261,9 +241,7 @@ or if the bucket is empty, the call will fail and return false.
 
 #### Declaration
 
-``` lang-csharp
-public bool Peek(int bucket, out T value)
-```
+    public bool Peek(int bucket, out T value)
 
 #### Parameters
 

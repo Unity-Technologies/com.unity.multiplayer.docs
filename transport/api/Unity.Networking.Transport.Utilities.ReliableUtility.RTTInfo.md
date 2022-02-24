@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct RTTInfo
+``` lang-csharp
+public struct RTTInfo
+```
 
-## Fields
+## 
 
 ### LastRtt
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int LastRtt
+``` lang-csharp
+public int LastRtt
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int ResendTimeout
+``` lang-csharp
+public int ResendTimeout
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public float SmoothedRtt
+``` lang-csharp
+public float SmoothedRtt
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public float SmoothedVariance
+``` lang-csharp
+public float SmoothedVariance
+```
 
 #### Field Value
 

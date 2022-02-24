@@ -5,8 +5,9 @@ title: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnSynchronize event View Synchronize for
-more information
+Delegate declaration for the OnSynchronize event.  
+See also:  
+Synchronize for more information
 
 </div>
 

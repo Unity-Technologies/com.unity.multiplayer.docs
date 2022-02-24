@@ -69,13 +69,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Parameters : INetworkParameter
+``` lang-csharp
+public struct Parameters : INetworkParameter
+```
 
-## Fields
+## 
 
 ### FuzzFactor
 
@@ -95,7 +97,9 @@ percent chance to get flipped.
 
 #### Declaration
 
-    public int FuzzFactor
+``` lang-csharp
+public int FuzzFactor
+```
 
 #### Field Value
 
@@ -119,7 +123,9 @@ only fuzz a part of the packet.
 
 #### Declaration
 
-    public int FuzzOffset
+``` lang-csharp
+public int FuzzOffset
+```
 
 #### Field Value
 
@@ -143,7 +149,9 @@ processing buffer and can be later brought back.
 
 #### Declaration
 
-    public int MaxPacketCount
+``` lang-csharp
+public int MaxPacketCount
+```
 
 #### Field Value
 
@@ -166,13 +174,37 @@ exceeds this size it will bypass the simulator.
 
 #### Declaration
 
-    public int MaxPacketSize
+``` lang-csharp
+public int MaxPacketSize
+```
 
 #### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+### Mode
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public ApplyMode Mode
+```
+
+#### Field Value
+
+| Type      | Description |
+|-----------|-------------|
+| ApplyMode |             |
 
 ### PacketDelayMs
 
@@ -188,7 +220,9 @@ Fixed delay to apply to all packets which pass through.
 
 #### Declaration
 
-    public int PacketDelayMs
+``` lang-csharp
+public int PacketDelayMs
+```
 
 #### Field Value
 
@@ -212,7 +246,9 @@ PacketDropInterval is 5 every 5th packet is dropped.
 
 #### Declaration
 
-    public int PacketDropInterval
+``` lang-csharp
+public int PacketDropInterval
+```
 
 #### Field Value
 
@@ -224,10 +260,9 @@ PacketDropInterval is 5 every 5th packet is dropped.
 
 <div class="markdown level1 summary">
 
-Use a drop percentage when deciding when to drop packet. For every
-packet a random number generator is used to determine if the packet
-should be dropped or not. A percentage of 5 means approximately every
-20th packet will be dropped.
+0 - 100, denotes the percentage of packets that will be dropped (i.e.
+deleted unprocessed). E.g. "5" means approximately every 20th packet
+will be dropped. RandomSeed to change random seed values.
 
 </div>
 
@@ -237,7 +272,36 @@ should be dropped or not. A percentage of 5 means approximately every
 
 #### Declaration
 
-    public int PacketDropPercentage
+``` lang-csharp
+public int PacketDropPercentage
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### PacketDuplicationPercentage
+
+<div class="markdown level1 summary">
+
+0 - 100, denotes the percentage of packets that will be duplicated once.
+E.g. "5" means approximately every 20th packet will be duplicated once.
+RandomSeed to change random seed values. Note: Skipped if the packet is
+dropped.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int PacketDuplicationPercentage
+```
 
 #### Field Value
 
@@ -260,7 +324,9 @@ subtracts amount from fixed delay.
 
 #### Declaration
 
-    public int PacketJitterMs
+``` lang-csharp
+public int PacketJitterMs
+```
 
 #### Field Value
 
@@ -284,7 +350,9 @@ that are dependant on the random number generator.
 
 #### Declaration
 
-    public uint RandomSeed
+``` lang-csharp
+public uint RandomSeed
+```
 
 #### Field Value
 

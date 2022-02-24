@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Packet
+``` lang-csharp
+public struct Packet
+```
 
-## Fields
+## 
 
 ### Buffer
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public byte *Buffer
+``` lang-csharp
+public byte *Buffer
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ReliableUtility.PacketHeader Header
+``` lang-csharp
+public ReliableUtility.PacketHeader Header
+```
 
 #### Field Value
 

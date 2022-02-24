@@ -24,6 +24,12 @@ INetworkParameter
 
 </div>
 
+<div>
+
+IValidatableNetworkParameter
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
@@ -70,13 +76,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkConfigParameter : INetworkParameter
+``` lang-csharp
+public struct NetworkConfigParameter : INetworkParameter, IValidatableNetworkParameter
+```
 
-## Fields
+## 
 
 ### connectTimeoutMS
 
@@ -93,7 +101,9 @@ a new connection attempt.
 
 #### Declaration
 
-    public int connectTimeoutMS
+``` lang-csharp
+public int connectTimeoutMS
+```
 
 #### Field Value
 
@@ -105,8 +115,8 @@ a new connection attempt.
 
 <div class="markdown level1 summary">
 
-A timeout in milliseconds indicating how long we will wait for a socket
-event, before we disconnect the socket.
+A timeout in milliseconds indicating how long we will wait for a
+connection event, before we disconnect it.
 
 </div>
 
@@ -116,7 +126,9 @@ event, before we disconnect the socket.
 
 #### Declaration
 
-    public int disconnectTimeoutMS
+``` lang-csharp
+public int disconnectTimeoutMS
+```
 
 #### Field Value
 
@@ -129,7 +141,9 @@ event, before we disconnect the socket.
 <div class="markdown level1 remarks">
 
 The connection needs to receive data from the connected endpoint within
-this timeout.
+this timeout. Note that with heartbeats enabled (heartbeatTimeoutMS \>
+0), simply not sending any data will not be enough to trigger this
+timeout (since heartbeats count as connection events).
 
 </div>
 
@@ -148,7 +162,9 @@ This is used instead of a clock.
 
 #### Declaration
 
-    public int fixedFrameTimeMS
+``` lang-csharp
+public int fixedFrameTimeMS
+```
 
 #### Field Value
 
@@ -165,6 +181,31 @@ important than correctness.
 
 </div>
 
+### heartbeatTimeoutMS
+
+<div class="markdown level1 summary">
+
+A timeout in milliseconds after which a heartbeat is sent if there is no
+activity.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int heartbeatTimeoutMS
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
 ### maxConnectAttempts
 
 <div class="markdown level1 summary">
@@ -180,7 +221,9 @@ disconnecting.
 
 #### Declaration
 
-    public int maxConnectAttempts
+``` lang-csharp
+public int maxConnectAttempts
+```
 
 #### Field Value
 
@@ -202,7 +245,9 @@ The maximum amount of time a single frame can advance timeout values.
 
 #### Declaration
 
-    public int maxFrameTimeMS
+``` lang-csharp
+public int maxFrameTimeMS
+```
 
 #### Field Value
 
@@ -219,10 +264,65 @@ spikes when both endpoints lives in the same process.
 
 </div>
 
+### reconnectionTimeoutMS
+
+<div class="markdown level1 summary">
+
+A timeout in milliseconds after which reconnection is attempted if there
+is no activity.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int reconnectionTimeoutMS
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>

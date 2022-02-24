@@ -13,19 +13,22 @@ title: Unity.Networking.Transport.NetworkPipelineStage.SendDelegate
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public delegate int SendDelegate(ref NetworkPipelineContext ctx, ref InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests);
+``` lang-csharp
+public delegate int SendDelegate(ref NetworkPipelineContext ctx, ref InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, int systemHeadersSize);
+```
 
 ##### Parameters
 
-| Type                          | Name            | Description |
-|-------------------------------|-----------------|-------------|
-| NetworkPipelineContext        | \*ctx           |             |
-| InboundSendBuffer             | \*inboundBuffer |             |
-| NetworkPipelineStage.Requests | \*requests      |             |
+| Type                          | Name                | Description |
+|-------------------------------|---------------------|-------------|
+| NetworkPipelineContext        | \*ctx               |             |
+| InboundSendBuffer             | \*inboundBuffer     |             |
+| NetworkPipelineStage.Requests | \*requests          |             |
+| System.Int32                  | \*systemHeadersSize |             |
 
 ##### Returns
 

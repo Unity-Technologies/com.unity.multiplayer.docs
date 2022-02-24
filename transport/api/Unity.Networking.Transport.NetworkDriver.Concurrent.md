@@ -58,13 +58,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Concurrent
+``` lang-csharp
+public struct Concurrent
+```
 
-## Methods 
+## 
 
 ### AbortSend(DataStreamWriter)
 
@@ -80,7 +82,9 @@ Aborts a asynchronous send.
 
 #### Declaration
 
-    public void AbortSend(DataStreamWriter writer)
+``` lang-csharp
+public void AbortSend(DataStreamWriter writer)
+```
 
 #### Parameters
 
@@ -109,7 +113,9 @@ Acquires a DataStreamWriter for starting a asynchronous send.
 
 #### Declaration
 
-    public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+``` lang-csharp
+public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+```
 
 #### Parameters
 
@@ -148,7 +154,9 @@ Acquires a DataStreamWriter for starting a asynchronous send.
 
 #### Declaration
 
-    public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+``` lang-csharp
+public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
+```
 
 #### Parameters
 
@@ -188,7 +196,9 @@ Ends a asynchronous send.
 
 #### Declaration
 
-    public int EndSend(DataStreamWriter writer)
+``` lang-csharp
+public int EndSend(DataStreamWriter writer)
+```
 
 #### Parameters
 
@@ -221,7 +231,9 @@ Ends a asynchronous send.
 
 #### Declaration
 
-    public NetworkConnection.State GetConnectionState(NetworkConnection id)
+``` lang-csharp
+public NetworkConnection.State GetConnectionState(NetworkConnection id)
+```
 
 #### Parameters
 
@@ -247,7 +259,9 @@ Ends a asynchronous send.
 
 #### Declaration
 
-    public int MaxHeaderSize(NetworkPipeline pipe)
+``` lang-csharp
+public int MaxHeaderSize(NetworkPipeline pipe)
+```
 
 #### Parameters
 
@@ -273,7 +287,9 @@ Ends a asynchronous send.
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader)
+```
 
 #### Parameters
 
@@ -300,7 +316,9 @@ Ends a asynchronous send.
 
 #### Declaration
 
-    public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
+``` lang-csharp
+public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
+```
 
 #### Parameters
 
