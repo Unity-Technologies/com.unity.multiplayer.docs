@@ -160,7 +160,7 @@ public static async Task<RelayJoinData> JoinGame(string joinCode)
     //Populate the joining data
     RelayJoinData data = new RelayJoinData
     {
-        // WARNING allocation.RelayServer is deprecated
+        // WARNING allocation.RelayServer is deprecated. It's best to read from ServerEndpoints.
         IPv4Address = allocation.RelayServer.IpV4
         Port = (ushort) allocation.RelayServer.Port,
 
