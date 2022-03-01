@@ -3,7 +3,7 @@ id: pipelines
 title: Use pipelines
 ---
 
-Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. This could work with any type of socket interface which has been implemented for use in the driver.
+Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. This could work with any type of UDP socket interface which has been implemented for use in the driver.
 
 ## How it works
 
@@ -14,6 +14,10 @@ For example the first stage might compress a packet and a second stage could add
 ![PipelineStagesDiagram](/img/transport/pipeline-stages.png)
 
 The pipeline stages are gathered together in a collection. This is the interface between the pipeline processor in the driver to the pipeline stages you might be using. Here the pipeline stages are initialized and so on. There is a default collection provided in the driver which has all the built in pipeline stages already configured. It's possible to just use that and use a custom collection if you have your own pipeline stage you need to add to the collection.
+
+:::note
+It is highly recommended to use the same pipelines, in the same order for both the client and the server.
+:::
 
 ## Example usage
 
