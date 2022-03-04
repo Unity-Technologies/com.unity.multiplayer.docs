@@ -5,12 +5,22 @@ id: transport-changelog
 
 The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
-## [Unreleased]
+## [1.0.0-pre.14] - 2022-03-01
+
+### Changes
+* `IValidatableNetworkParameter.Validate()` method is now part of `INetworkParameter`.
+* Added: `NetworkDriver.Create<>()` generic methods.
+
+### Fixes
+* Fixed compilation on WebGL. Note that the platform is still unsupported, but at least including the package in a WebGL project will not create compilation errors anymore. Creating a `NetworkDriver` in WebGL projects will now produce a warning.
+
+## [1.0.0-pre.13] - 2022-02-14
 
 ### New features
 * When using the Relay protocol, error messages sent by the Relay server are now properly captured and logged.
 
 ### Fixes
+
 * Fixed: Issue where an overflow of the `ReliableSequencedPipelineStage` sequence numbers would not be handled properly.
 
 ## [1.0.0-pre.12] - 2022-01-24
