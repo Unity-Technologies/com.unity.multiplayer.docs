@@ -5,6 +5,27 @@ id: transport-wrapper-changelog
 
 The [Unity Transport Wrapper](../../docs/transport-utp/about-transport-utp.md) `com.unity.netcode.adapter.utp` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
+## [1.0.0-pre.6] - 2022-03-02
+
+### Added
+
+- New parameters are available to simulate network conditions (delay, jitter, packet loss) in the editor and in development builds. The parameters are available under the 'Debug Simulator' section of the 'Unity Transport' component, or can be set with the `SetDebugSimulatorParameters` call. (#1745)
+- `GetCurrentRtt` is now properly implemented. (#1755)
+
+### Changed
+
+- Updated Unity Transport package to 1.0.0-pre.14. (#1760)
+- Updated Netcode for GameObjects dependency to 1.0.0-pre.6 (#1771)
+- Overflowing the reliable send queue of a connection will now result in the connection being closed, rather than spamming the log with errors about not being able to send a payload. It is deemed better to close the connection than to lose reliable traffic (which could cause all sorts of weird synchronization issues). (#1747)
+
+### Fixed
+
+- Fixed issue where disconnecting from the server with data still in the queue would result in an error message about a stale connection. (#1649)
+- Fixed issue where the server `NetworkEndPoint` would fail to be created when 'Server Listen Address' is empty. (#1636)
+- Fixed issue with native collections not all being disposed of when destroying the component without shutting it down properly. This would result in errors in the console and memory leaks. (#1640)
+- Fixed an issue where packets causing errors would not be removed from the send queue, which would cause the error message to be spammed on every frame as the adapter would try to resend the packet. (#1648)
+- Fixed and issue where a server would fail to disconnect a client if another client had previously disconnected itself. (#1673)
+
 ## [1.0.0-pre.5] - 2022-01-28
 
 ### Added
