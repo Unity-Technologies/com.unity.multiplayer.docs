@@ -18,7 +18,7 @@ Below is a list of practices and techniques that we use daily when working on th
 
 Use ParrelSync to run separate editor instances for your Host/Server and Client.
  
-### Use debug drawing techniques extensively.
+### Use debug drawing techniques extensively
 
 Unity engine has two debug rendering APIs that are very useful for the purposes of multiplayer game debugging:
  - [Debug.DrawRay](https://docs.unity3d.com/ScriptReference/Debug.DrawRay.html)
@@ -98,6 +98,8 @@ Sometimes, despite us using good debug rendering and logging it's still hard to 
 
 The same applies to very high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
 
-### Increase time before timeout when using breakpoints to debug a Client or Server
+### Using breakpoints to debug a Client or Server
 
-Using breakpoints is a very common way of debugging a game, but, as it pauses the game, it can result in the connection timing out if you stay too long in this mode. To avoid this, you can temporarily increase the timeout value. If you are using the [UTP adapter for Netcode](../../transport-api/introduction.md) you can edit the `DisconnectTimeout` field of the `UnityTransport` script used by your `NetworkManager`. However, make sure that you reset this value afterwards when you're no longer debugging.
+You can use breakpoints to debug a game, but your connection may time out if you stay too long in this mode. Since it pauses your game, you can temporarily increase the timeout value to avoid disconnecting. 
+
+If you are using the [UTP adapter for Netcode](../../transport-api/introduction.md) edit the `DisconnectTimeout` field of the `UnityTransport` script used by your `NetworkManager`. Make sure that you reset this value when you are no longer debugging.
