@@ -3,7 +3,7 @@ id: pipelines
 title: Use pipelines
 ---
 
-Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. This could work with any type of UDP socket interface which has been implemented for use in the driver.
+Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. 
 
 ## How it works
 
