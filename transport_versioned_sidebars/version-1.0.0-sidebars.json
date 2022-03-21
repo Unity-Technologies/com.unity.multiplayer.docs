@@ -72,6 +72,14 @@
         },
         {
           "type": "doc",
+          "id": "version-1.0.0/samples/clientSecurebehavior"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/samples/serverSecurebehavior"
+        },
+        {
+          "type": "doc",
           "id": "version-1.0.0/samples/jobifiedclientbehavior"
         },
         {
