@@ -4,7 +4,7 @@ title: Create jobified client and server
 ---
 The unity transport protocol can be configure to encrypt the connection between the server and the client while ensuring the server's/client's authenticity.
 This secure connection relies on UnityTLS and is available with the following editor versions:
-`2020.3, 2021.2+, 2022.1+`
+`2020.3.24f1+, 2021.2+, 2022.1+`
 
 ## Server authentication
 
