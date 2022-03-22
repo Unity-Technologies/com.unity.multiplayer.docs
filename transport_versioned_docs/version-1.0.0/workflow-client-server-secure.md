@@ -3,18 +3,25 @@ id: jobs
 title: Create jobified client and server
 ---
 The unity transport protocol can be configure to encrypt the connection between the server and the client while ensuring the server's/client's authenticity.
+This secure connection relies on UnityTLS and is available with the following editor versions:
+`2020.3, 2021.2+, 2022.1+`
 
 ## Server authentication
 
 ### High level authentication process
 In this configuration, the server will provide a certificate to the client (`rsa`)
-The client will then validate the provided certificate against the one its root certificate (`pem`) and will subsequently validate the server identity.
-Once its identity confirmed, the server will then use the private key (`rsaKey`) to encrypt the messages targeting the client.
+The client will then validate the provided certificate against its own root certificate (`pem`) which confirms the server identity.
+:::note
+Root certificate is also sometimes referred as CA certificate.
+:::
+Once its identity confirmed, the server will then use the private key (`rsaKey`) to establish the secure communication.
 
 ### Requirements
 To use the client server secure workflow, you need a valid certificate and the root certificate it has been generated from. You also need the private key that has been used to create the certificate.
 * Samples root certificate, private key and certificate are provided with the sample project. Please do not use them for production. 
 * It is of the upmost importance for you to have your own certificates. The procedure to generate them using OpenSSL is detailed hereafter. 
+
+
 
 ### Generating the required keys and certificates with OpenSSL
 
@@ -23,7 +30,7 @@ It is assumed to you have openSSL installed on your machine.
 #### Generate the Certification Authority root certificate. 
 First thing first is to generate a private key for that will help to generate the certification authority root certificate. 
 ```shell
-openssl genrsa -des3 -out clientPrivateKeyForRootCA.key 2048
+openssl genrsa -out clientPrivateKeyForRootCA.key 2048
 ```
 You will have to provide a passphrase. Remember it as you will need it later on.
 
@@ -34,6 +41,7 @@ openssl req -x509 -new -nodes -key clientPrivateKeyForRootCA.key -sha256 days 10
 ```
 You will be prompted to answer several questions. Most of the answers are not that important within the present context. 
 It is however useful to use a `common name` that makes sense for you as it is useful to identify the certificate amongst others.
+Ideally, you would want to use your domain name if you have one.
 
 
 #### Generate the CA-signed certificate to use with the server
@@ -59,11 +67,7 @@ You should have now generated a total of five files. Out of these, only will be 
 
 ### Boiler Plate file holding the secure parameters
 Create a `SecureParameters.cs` script file to hold your the certificates and the private key. Place it in the same folder as the minimal server and minimal client scripts.
-Start by enabling Unity TLS with : 
-```cs 
-#define ENABLE_MANAGED_UNITYTLS
-```
-and add the following dependencies: 
+Add the following dependencies: 
 ```cs
 using Unity.Collections;
 using Unity.Networking.Transport.TLS;
@@ -72,19 +76,21 @@ Then declare the secureParameters class and the boilerplate code that will hold 
 ```cs
 public static class SecureParameters
 {
-        public static FixedString32Bytes commonName = new FixedString32Bytes("common-name");  // Use the common name you used to define the server certificate. 
-        public static FixedString4096Bytes myGameClientCA = new FixedString4096Bytes(
-        @"-----BEGIN CERTIFICATE-----
-                     ---                  
-          -----END CERTIFICATE-----"); // This should contain the content of myGameClientCA.pem 
-        public static FixedString4096Bytes myGameServerCertificate = new FixedString4096Bytes(
-        @"-----BEGIN CERTIFICATE-----
-                    ---
-          -----END CERTIFICATE-----"); // This should contain the content of myGameServerCertificate.pem  
-        public static FixedString4096Bytes myGameServerPrivate = new FixedString4096Bytes(
-        @"-----BEGIN RSA PRIVATE KEY-----
-                       ---
-          -----END RSA PRIVATE KEY-----"); // This should contain the content of myGameServerPrivate.key  
+        public static FixedString32Bytes CommonName = new FixedString32Bytes("common-name");  // Use the common name you used to define the server certificate. 
+        public static FixedString4096Bytes MyGameClientCA = new FixedString4096Bytes(
+@"-----BEGIN CERTIFICATE-----
+            ***   
+ -----END CERTIFICATE-----"); // This should contain the content of myGameClientCA.pem 
+ 
+        public static FixedString4096Bytes MyGameServerCertificate = new FixedString4096Bytes(
+@"-----BEGIN CERTIFICATE-----     
+            ***   
+-----END CERTIFICATE-----");; // This should contain the content of myGameServerCertificate.pem  
+
+        public static FixedString4096Bytes MyGameServerPrivate = new FixedString4096Bytes(
+@"-----BEGIN RSA PRIVATE KEY----- 
+                ***  
+-----END RSA PRIVATE KEY-----"); // This should contain the content of myGameServerPrivate.key  
 }
 ```  
 
@@ -102,12 +108,10 @@ Within the `start()` method, configure this `NetworkSettings` as following:
 void Start ()
     {
         settings.WithSecureParameters(
-            hostname: ref SecureParameters.commonName,                    // Use the common name you used to generate `myGameServerCertificate.crt`
-            sslHandshakeTimeoutMin: 500,    // Duration in ms
-            sslHandshakeTimeoutMax: 2000,   // Duration in ms
+            hostname: ref SecureParameters.CommonName,                    // Use the common name you used to generate `myGameServerCertificate.crt`
             pem:null,
-            rsa: ref SecureParameters.myGameServerCertificate,      // The content of the `myGameServerCertificate.crt`           
-            rsaKey: ref SecureParameters.myGameServerPrivate // The content of `myGameServerPrivate.key`
+            rsa: ref SecureParameters.MyGameServerCertificate,      // The content of the `myGameServerCertificate.crt`           
+            rsaKey: ref SecureParameters.MyGameServerPrivate // The content of `myGameServerPrivate.key`
         );
 ```
 Call create method of the network driver but this time, integrate the `NetworkSettings` object.
@@ -130,9 +134,7 @@ void Start ()
     {
         settings.WithSecureParameters(
             hostname: null,       
-            sslHandshakeTimeoutMin: 500,    // Duration in ms
-            sslHandshakeTimeoutMax: 2000,   // Duration in ms
-            pem: ref SecureParameters.myGameClientCA,  // Use the content of myGameClientCA.pem
+            pem: ref SecureParameters.MyGameClientCA,  // Use the content of myGameClientCA.pem
         );
 ```
 Finally, call the `create` method of the network driver but this time, integrate the `NetworkSettings` object.
