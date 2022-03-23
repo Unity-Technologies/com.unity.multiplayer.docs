@@ -106,7 +106,7 @@ Within the `start()` method, configure this `NetworkSettings` as following:
 ```cs
 void Start ()
     {
-        settings.WithSecureClientParameters(
+        settings.WithSecureServerParameters(
             certificate: ref SecureParameters.MyGameServerCertificate,            // The content of the `myGameServerCertificate.crt`           
             privateKey: ref SecureParameters.MyGameServerPrivate                  // The content of `myGameServerPrivate.key`
         );
