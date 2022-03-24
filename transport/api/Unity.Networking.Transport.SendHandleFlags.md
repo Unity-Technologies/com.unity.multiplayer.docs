@@ -13,15 +13,17 @@ title: Unity.Networking.Transport.SendHandleFlags
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    [Flags]
-    public enum SendHandleFlags
+``` lang-csharp
+[Flags]
+public enum SendHandleFlags
+```
 
-## Fields
+## 
 
-| Name | Description |
-| -- | -- |
-| AllocatedByDriver |  |
+| Name              | Description |
+|-------------------|-------------|
+| AllocatedByDriver |             |

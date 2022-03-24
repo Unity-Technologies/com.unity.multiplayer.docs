@@ -12,13 +12,13 @@ Below is a list of practices and techniques that we use daily when working on th
 
 ## Debugging tricks for multiplayer games
 
-### 1) Use ParrelSync clone-based workflow during development.
+### Use ParrelSync clone-based workflow during development.
 
 [ParrelSync workflow](testing_locally.md#parrelsync) is faster than creating builds and it allows you to debug the separate editor instances via separate IDE debuggers.
 
 Use ParrelSync to run separate editor instances for your Host/Server and Client.
  
-### 3) Use debug drawing techniques extensively.
+### Use debug drawing techniques extensively
 
 Unity engine has two debug rendering APIs that are very useful for the purposes of multiplayer game debugging:
  - [Debug.DrawRay](https://docs.unity3d.com/ScriptReference/Debug.DrawRay.html)
@@ -73,12 +73,12 @@ public class UsingLineRendererForDebugging : MonoBehaviour
 }
 ```
 
-### 5) Use debug logging for situations where visual debugging is not appropriate.
+### Use debug logging for situations where visual debugging is not appropriate.
 
 Text-based logging is valuable for tracking down non-visual events (such as RPCs) and information.
 It is a good idea to include network tick and client id in log messages so that it's easier to build a timeline when reading the logs.
 
-### 6) Use the artificial network conditioning tools.
+### Use the artificial network conditioning tools.
 
 The options that are currently available to us are covered in the related [article on artificial network conditioning tools](testing_with_artificial_conditions.md).
 
@@ -86,7 +86,7 @@ Of particular interest to us is the application-level network conditioning provi
 
 Artificial network conditions allow the errors and oddities that are hidden by nigh-absence of lag when running your instances locally to show up, and it's a good thing!
 
-### 7) Capturing screen recordings of the game instances.
+### Capturing screen recordings of the game instances.
 
 First of all, it is very valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
@@ -97,3 +97,9 @@ In debug builds it's a great idea to show the Peer ID and the current frame numb
 Sometimes, despite us using good debug rendering and logging it's still hard to understand what's going on even when going through the frames one by one. Increasing our FixedTimeStep setting to a ridiculous value (something as high as `0.2`) helps to have more time to really see what’s going on.
 
 The same applies to very high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
+
+### Using breakpoints to debug a Client or Server
+
+You can use breakpoints to debug a game, but your connection may time out if you stay too long in this mode. Since it pauses your game, you can temporarily increase the timeout value to avoid disconnecting. 
+
+If you are using the [UTP adapter for Netcode](../../transport-api/introduction.md) edit the `DisconnectTimeout` field of the `UnityTransport` script used by your `NetworkManager`. Make sure that you reset this value when you are no longer debugging.

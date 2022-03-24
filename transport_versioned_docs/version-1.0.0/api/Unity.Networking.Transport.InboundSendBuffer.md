@@ -5,8 +5,6 @@ title: Unity.Networking.Transport.InboundSendBuffer
 
 <div class="markdown level0 summary">
 
-The inbound send buffer
-
 </div>
 
 <div class="markdown level0 conceptual">
@@ -71,8 +69,6 @@ public struct InboundSendBuffer
 
 <div class="markdown level1 summary">
 
-The buffer
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -94,8 +90,6 @@ public byte *buffer
 ### bufferLength
 
 <div class="markdown level1 summary">
-
-The buffer length
 
 </div>
 
@@ -119,8 +113,6 @@ public int bufferLength
 
 <div class="markdown level1 summary">
 
-The buffer with headers
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -142,8 +134,6 @@ public byte *bufferWithHeaders
 ### bufferWithHeadersLength
 
 <div class="markdown level1 summary">
-
-The buffer with headers length
 
 </div>
 
@@ -167,8 +157,6 @@ public int bufferWithHeadersLength
 
 <div class="markdown level1 summary">
 
-The header padding
-
 </div>
 
 <div class="markdown level1 conceptual">
@@ -189,11 +177,9 @@ public int headerPadding
 
 ## 
 
-### SetBufferFrombufferWithHeaders()
+### SetBufferFromBufferWithHeaders()
 
 <div class="markdown level1 summary">
-
-Sets the buffer frombuffer with headers
 
 </div>
 
@@ -204,5 +190,5 @@ Sets the buffer frombuffer with headers
 #### Declaration
 
 ``` lang-csharp
-public void SetBufferFrombufferWithHeaders()
+public void SetBufferFromBufferWithHeaders()
 ```

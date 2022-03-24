@@ -23,6 +23,12 @@ INetworkParameter
 
 </div>
 
+<div>
+
+IValidatableNetworkParameter
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
@@ -69,11 +75,13 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkDataStreamParameter : INetworkParameter
+``` lang-csharp
+public struct NetworkDataStreamParameter : INetworkParameter, IValidatableNetworkParameter
+```
 
 ##### **Remarks**
 
@@ -83,7 +91,7 @@ The DataStreamWriter will grow on demand if the size is set to zero.
 
 </div>
 
-## Fields
+## 
 
 ### size
 
@@ -99,7 +107,9 @@ Size of the default DataStreamWriter
 
 #### Declaration
 
-    public int size
+``` lang-csharp
+public int size
+```
 
 #### Field Value
 
@@ -107,10 +117,40 @@ Size of the default DataStreamWriter
 |--------------|-------------|
 | System.Int32 |             |
 
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>

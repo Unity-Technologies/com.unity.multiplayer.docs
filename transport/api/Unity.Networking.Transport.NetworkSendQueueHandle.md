@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct NetworkSendQueueHandle
+``` lang-csharp
+public struct NetworkSendQueueHandle
+```
 
-## Methods 
+## 
 
 ### FromHandle()
 
@@ -75,10 +77,12 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public NativeQueue<QueuedSendMessage>.ParallelWriter FromHandle()
+``` lang-csharp
+public NativeQueue<QueuedSendMessage>.ParallelWriter FromHandle()
+```
 
 #### Returns
 
-| Type                               | Description |
-|------------------------------------|-------------|
+| Type                           | Description |
+|--------------------------------|-------------|
 | NativeQueue.ParallelWriter&lt;&gt; |             |

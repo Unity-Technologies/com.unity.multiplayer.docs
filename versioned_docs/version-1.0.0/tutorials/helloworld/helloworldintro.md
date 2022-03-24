@@ -11,7 +11,7 @@ This "Hello World" tutorial walks you through creating a project, installing the
 
 ## Requirements
 
-This tutorial requires an Netcode-supported version of Unity (2019.4+).
+This tutorial requires an Netcode-supported version of Unity (2020.3+).
 
 
 ## Create a new project in Unity
@@ -98,7 +98,7 @@ This section adds in a player object and spawns it for each connected player.
 
 ### Testing Hello World
 
-Now we will test to see if evereything works as expected.
+Now we will test to see if everything works as expected.
 
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 

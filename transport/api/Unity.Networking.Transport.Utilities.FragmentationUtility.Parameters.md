@@ -21,6 +21,12 @@ INetworkParameter
 
 </div>
 
+<div>
+
+IValidatableNetworkParameter
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
@@ -67,13 +73,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct Parameters : INetworkParameter
+``` lang-csharp
+public struct Parameters : INetworkParameter, IValidatableNetworkParameter
+```
 
-## Fields
+## 
 
 ### PayloadCapacity
 
@@ -87,7 +95,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int PayloadCapacity
+``` lang-csharp
+public int PayloadCapacity
+```
 
 #### Field Value
 
@@ -95,10 +105,40 @@ Object.ReferenceEquals(Object, Object)
 |--------------|-------------|
 | System.Int32 |             |
 
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+<div>
+
+IValidatableNetworkParameter
 
 </div>

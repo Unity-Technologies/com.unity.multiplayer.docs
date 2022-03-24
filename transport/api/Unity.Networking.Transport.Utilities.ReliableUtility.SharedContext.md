@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct SharedContext
+``` lang-csharp
+public struct SharedContext
+```
 
-## Fields
+## 
 
 ### errorCode
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ReliableUtility.ErrorCodes errorCode
+``` lang-csharp
+public ReliableUtility.ErrorCodes errorCode
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int MinimumResendTime
+``` lang-csharp
+public int MinimumResendTime
+```
 
 #### Field Value
 
@@ -119,7 +125,9 @@ peer in the header when sending.
 
 #### Declaration
 
-    public SequenceBufferContext ReceivedPackets
+``` lang-csharp
+public SequenceBufferContext ReceivedPackets
+```
 
 #### Field Value
 
@@ -139,7 +147,9 @@ peer in the header when sending.
 
 #### Declaration
 
-    public int RemoteTimerDataOffset
+``` lang-csharp
+public int RemoteTimerDataOffset
+```
 
 #### Field Value
 
@@ -159,7 +169,9 @@ peer in the header when sending.
 
 #### Declaration
 
-    public int RemoteTimerDataStride
+``` lang-csharp
+public int RemoteTimerDataStride
+```
 
 #### Field Value
 
@@ -179,7 +191,9 @@ peer in the header when sending.
 
 #### Declaration
 
-    public ReliableUtility.RTTInfo RttInfo
+``` lang-csharp
+public ReliableUtility.RTTInfo RttInfo
+```
 
 #### Field Value
 
@@ -203,7 +217,9 @@ This is used when determining if a resend is needed.
 
 #### Declaration
 
-    public SequenceBufferContext SentPackets
+``` lang-csharp
+public SequenceBufferContext SentPackets
+```
 
 #### Field Value
 
@@ -223,7 +239,9 @@ This is used when determining if a resend is needed.
 
 #### Declaration
 
-    public ReliableUtility.Statistics stats
+``` lang-csharp
+public ReliableUtility.Statistics stats
+```
 
 #### Field Value
 
@@ -243,7 +261,9 @@ This is used when determining if a resend is needed.
 
 #### Declaration
 
-    public int TimerDataOffset
+``` lang-csharp
+public int TimerDataOffset
+```
 
 #### Field Value
 
@@ -263,7 +283,9 @@ This is used when determining if a resend is needed.
 
 #### Declaration
 
-    public int TimerDataStride
+``` lang-csharp
+public int TimerDataStride
+```
 
 #### Field Value
 
@@ -283,7 +305,9 @@ This is used when determining if a resend is needed.
 
 #### Declaration
 
-    public int WindowSize
+``` lang-csharp
+public int WindowSize
+```
 
 #### Field Value
 

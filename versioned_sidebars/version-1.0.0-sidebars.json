@@ -92,6 +92,36 @@
           "id": "version-1.0.0/advanced-topics/physics"
         },
         {
+          "type": "doc",
+          "id": "version-1.0.0/transport-utp/about-transport-utp"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Transport UTP Wrapper APIs",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/transport-api/introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/transport-api/Assets.Scripts.Transport",
+              "label": "Assets.Scripts.Transport"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/transport-api/Assets.Scripts.Transport.Utilities",
+              "label": "Assets.Scripts.Transport.Utilities"
+            },
+            {
+              "type": "link",
+              "label": "Unity Transport for Netcode APIs",
+              "href": "https://docs.unity3d.com/Packages/com.unity.netcode.adapter.utp@1.0/api/Unity.Netcode.html"
+            }
+          ]
+        },
+        {
           "collapsed": true,
           "type": "category",
           "label": "Relay",
@@ -101,29 +131,6 @@
               "id": "version-1.0.0/relay/relay"
             }
           ]
-        },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Transports",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0.0/advanced-topics/custom-transports"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/transport-utp/about-transport-utp"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/transport-utp/install"
-            }
-          ]
-        },
-        {
-          "type": "doc",
-          "id": "version-1.0.0/advanced-topics/networkprofiler-window"
         }
       ]
     },
@@ -491,7 +498,33 @@
         {
           "collapsed": true,
           "type": "category",
-          "label": "Dapper Dino Tutorials",
+          "label": "Dilmer Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/dilmer-video"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/project-setup"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/corefeatures"
+            },           {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/networkanimator"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/relay-service-setup"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Dapper Tutorials",
           "items": [
             {
               "type": "doc",
@@ -499,40 +532,9 @@
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/makeamultiplayergame"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/lobbypassword"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/bossroomsample"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-rpcs"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-networkvariables"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-objectspawning"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-playernames"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/lobbycreation"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-variable-permissions"
+              "id": "version-1.0.0/learn/dapper/dapper-upgrade"
             }
+          
           ]
         }
       ]
@@ -555,6 +557,10 @@
         {
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Netcode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.AddAllInterestKernel"
         },
         {
           "type": "doc",
@@ -654,6 +660,48 @@
         }
       ]
     },
+    {
+      "collapsed": true,
+          "type": "category",
+          "label": "Interest",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest"
+             
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.AddAllInterestKernel"
+             
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.IInterestKernel-1"
+            
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.IInterestNode-1"
+           
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.InterestManager-1"
+         
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.Interest.InterestNodeStatic-1"
+             
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.RadiusInterestKernel"
+         
+            }
+          ]
+      },
     {
       "collapsed": true,
       "type": "category",
@@ -853,6 +901,11 @@
         {
           "type": "doc",
           "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableBase"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableHelper"
+          
         },
         {
           "type": "doc",

@@ -55,13 +55,15 @@ Object.ReferenceEquals(Object, Object)
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-    public struct DelayedPacket
+``` lang-csharp
+public struct DelayedPacket
+```
 
-## Fields
+## 
 
 ### delayUntil
 
@@ -75,7 +77,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public long delayUntil
+``` lang-csharp
+public long delayUntil
+```
 
 #### Field Value
 
@@ -95,7 +99,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort packetHeaderPadding
+``` lang-csharp
+public ushort packetHeaderPadding
+```
 
 #### Field Value
 
@@ -115,7 +121,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public ushort packetSize
+``` lang-csharp
+public ushort packetSize
+```
 
 #### Field Value
 
@@ -135,7 +143,9 @@ Object.ReferenceEquals(Object, Object)
 
 #### Declaration
 
-    public int processBufferOffset
+``` lang-csharp
+public int processBufferOffset
+```
 
 #### Field Value
 

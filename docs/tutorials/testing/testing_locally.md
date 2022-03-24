@@ -45,13 +45,19 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 :::
 
 ## ParrelSync
+:::caution
+
+ParallelSync is **not** supported by Unity.  More information on its usage is available [here](https://github.com/VeriorPies/ParrelSync). Troubleshooting information can be found [here](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs)
+
+:::
+
 ![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
 
 [**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
 
 **ParrelSync** works by making a copy of the original project folder and creating symbolic links to the `Asset` and `Project Settings` folders back from the original project.
 
-We use **ParrelSync** for local iteration in [BossRoom sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
+We use **ParrelSync** for local iteration in [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
 
 :::important
 
@@ -72,7 +78,7 @@ Follow the installation instructions on **ParrelSync** repo [page](https://githu
  - Navigate to `ParrelSync->Preferences` in the menu bar to open the preferences window.
  - Ensure that both Options are selected as shown below
   
-[parrelsync-preferences](../)
+![parrelsync-preferences](/img/parrelsync-preferences.png)
 
 :::important
 

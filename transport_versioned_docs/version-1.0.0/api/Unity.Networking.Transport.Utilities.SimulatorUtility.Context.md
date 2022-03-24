@@ -65,94 +65,6 @@ public struct Context
 
 ## 
 
-### FuzzFactor
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int FuzzFactor
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### FuzzOffset
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int FuzzOffset
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### MaxPacketCount
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int MaxPacketCount
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### MaxPacketSize
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int MaxPacketSize
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
 ### NextPacketTime
 
 <div class="markdown level1 summary">
@@ -197,50 +109,6 @@ public int PacketCount
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDelayMs
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int PacketDelayMs
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### PacketDrop
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int PacketDrop
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
 ### PacketDropCount
 
 <div class="markdown level1 summary">
@@ -263,7 +131,7 @@ public int PacketDropCount
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketJitterMs
+### PacketDuplicatedCount
 
 <div class="markdown level1 summary">
 
@@ -276,7 +144,7 @@ public int PacketDropCount
 #### Declaration
 
 ``` lang-csharp
-public int PacketJitterMs
+public int PacketDuplicatedCount
 ```
 
 #### Field Value
@@ -306,28 +174,6 @@ public Mathematics.Random Random
 | Type                     | Description |
 |--------------------------|-------------|
 | Unity.Mathematics.Random |             |
-
-### RandomSeed
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public uint RandomSeed
-```
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.UInt32 |             |
 
 ### ReadyPackets
 
