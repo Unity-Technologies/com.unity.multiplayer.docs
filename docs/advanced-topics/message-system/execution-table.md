@@ -13,7 +13,7 @@ The following table details the execution of `ServerRpc` and `ClientRpc` functio
 | ClientRpc Send | <i class="fp-check"></i> | <i class="fp-x"></i> | <i class="fp-check"></i> |
 | ClientRpc Execute | <i class="fp-x"></i> | <i class="fp-check"></i> | <i class="fp-check"></i> |
 
-An RPC function **never** executes its body immediately since the function call really is a stand-in for a network transmission. Even a `ServerRpc` called by a host (an instance that is a client and the server at the same time, or listen-server) will not be executed immediately. It will instead follow the regular network frame staging first and queued-up to be executed locally in the next network frame.
+An RPC function typically doesn't execute its body immediately since the function call really is a stand-in for a network transmission. Since the host is both a client and a server, local RPCs targeting the host-server or host-client are invoked immediately.  As such, avoid nesting RPCs when running in host mode as a ServerRpc method that invokes a ClientRpc method that invokes the same ServerRpc method (and repeat...) could cause a stack overflow.
 
 Structure of a typical `ServerRpc`:
 
