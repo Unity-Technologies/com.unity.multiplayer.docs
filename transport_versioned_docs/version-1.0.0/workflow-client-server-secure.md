@@ -10,32 +10,33 @@ This secure connection relies on UnityTLS and is available with the following ed
 
 ### High level authentication process
 In this configuration, the server will provide a certificate to the client (`certificate`) containing the server host name.
-The client will compare the server hostname to the one it knows (`serverName`) and will then validate the provided certificate against its own root certificate (`caCertificate`) which confirms the server identity.
+The client will compare the server hostname to the one it knows (`serverName`) and will then validate the provided certificate against its own root certificate (`caCertificate`) confirming the server identity.
+
 :::note
 Root certificate is also sometimes referred as CA Certificate.
 :::
+
 Once its identity confirmed, the server will then use the private key (`privateKey`) to establish the secure communication.
 
 ### Requirements
-To use the client server secure workflow, you need a valid certificate and the root certificate it has been generated from. You also need the private key that has been used to create the certificate.
-* Samples root certificate, private key and certificate are provided with the sample project. Please do not use them for production. 
-* It is of the upmost importance for you to have your own certificates. The procedure to generate them using OpenSSL is detailed hereafter. 
+To use the client server secure workflow, you need a `valid certificate` and the `root certificate` it has been generated from. You also need the `private key` that has been used to create the certificate.
+If you don't have these, they can be generated using OpenSSL. The procedure is detailed hereafter. 
 
 
 
 ### Generating the required keys and certificates with OpenSSL
 
-It is assumed to you have openSSL installed on your machine.
+It is assumed that you have [OpenSSL](https://www.openssl.org/) installed on your machine.
 
 #### Generate the Certification Authority root certificate. 
-First thing first is to generate a private key for that will help to generate the certification authority root certificate. 
+First thing first is to generate a private key. We will use it later on to generate the Certification Authority root certificate. 
 ```shell
 openssl genrsa -out clientPrivateKeyForRootCA.pem 2048
 ```
 Now that you have a private key, you can now generate the root certificate.
 
 ```shell
-openssl req -x509 -new -nodes -key clientPrivateKeyForRootCA.pem -sha256 days 1095 -out myGameClientCA.pem
+openssl req -x509 -new -nodes -key clientPrivateKeyForRootCA.pem -sha256 -days 1095 -out myGameClientCA.pem
 ```
 You will be prompted to answer several questions. Most of the answers are not that important within the present context. 
 It is however useful to use a `common name` that makes sense for you to identify this certificate amongst others.
@@ -89,7 +90,7 @@ public static class SecureParameters
         public static FixedString4096Bytes MyGameServerPrivate = new FixedString4096Bytes(
 @"-----BEGIN RSA PRIVATE KEY----- 
                 ***  
------END RSA PRIVATE KEY-----"); // This should contain the content of myGameServerPrivate.key  
+-----END RSA PRIVATE KEY-----"); // This should contain the content of myGameServerPrivate.pem  
 }
 ```  
 
@@ -107,8 +108,8 @@ Within the `start()` method, configure this `NetworkSettings` as following:
 void Start ()
     {
         settings.WithSecureServerParameters(
-            certificate: ref SecureParameters.MyGameServerCertificate,            // The content of the `myGameServerCertificate.crt`           
-            privateKey: ref SecureParameters.MyGameServerPrivate                  // The content of `myGameServerPrivate.key`
+            certificate: ref SecureParameters.MyGameServerCertificate,            // The content of the `myGameServerCertificate.pem`           
+            privateKey: ref SecureParameters.MyGameServerPrivate                  // The content of `myGameServerPrivate.pem`
         );
 ```
 Call create method of the network driver but this time, integrate the `NetworkSettings` object.
@@ -142,5 +143,5 @@ and that's it !
 You should now have a secure connection between the server and its clients.
 
 :::note 
-If you create clients for multiple platform, it is important for all of these to use the same Root Certificate to communicate with the same server.
+If you create clients for multiple platform, it is important for all of these to use the same Root Certificate if they communicate with the same server.
 :::
