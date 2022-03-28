@@ -1,5 +1,5 @@
 ---
-   id: secureclientbehaviour
+id: secureclientbehaviour
 title: SecureClientBehaviour
 ---
 

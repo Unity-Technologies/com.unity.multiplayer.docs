@@ -1,9 +1,9 @@
 ---
-id: serverbehavior
-title: ServerBehavior
+id: serverbehaviour
+title: ServerBehaviour
 ---
 
-Sample code for `ServerBehavior`:
+Sample code for `ServerBehaviour`:
 
 ```csharp
 using UnityEngine;

@@ -1,9 +1,9 @@
 ---
-id: clientbehavior
-title: ClientBehavior
+id: secureserverbehaviour
+title: SecureServerBehaviour
 ---
 
-Sample code for `SecureServerBehavior`:
+Sample code for `SecureServerBehaviour`:
 ```cs
 using UnityEngine;
 using UnityEngine.Assertions;

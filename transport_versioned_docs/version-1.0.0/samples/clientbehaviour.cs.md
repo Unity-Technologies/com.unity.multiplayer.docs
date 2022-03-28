@@ -1,9 +1,9 @@
 ---
-id: clientbehavior
-title: ClientBehavior
+id: clientbehaviour
+title: ClientBehaviour
 ---
 
-Sample code for `ClientBehavior`:
+Sample code for `ClientBehaviour`:
 
 ```csharp
 using UnityEngine;

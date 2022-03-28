@@ -1,5 +1,5 @@
 ---
-    id: secureparameters
+id: secureparameters
 title: SecureParameters
 ---
 
