@@ -52,10 +52,3 @@ while ((c = m_Driver.Accept()) != default(NetworkConnection))
 | Connect    | The `Connect` event signals that a new connection has been established.<br/><br/>This event is only available if the `NetworkDriver` is **not** in the `Listening` state. |
 | Disconnect | The `Disconnect` event is received if:<br/> 1. `Disconnect` packet was received (calling `NetworkConnection::Disconnect` will trigger this.)<br/> 2. A *socket timeout* occurred.<br/> 3. Maximum connect attempts on the `NetworkConnection` exceeded.<br/><br/>If you call `Disconnect` on your `NetworkConnection`, this will **not** trigger an `Disconnect` event on your local `NetworkDriver`. |
 
-Reviewing this table, note the following:
-
-* The `Connect` event is only available if the `NetworkDriver` is **not** `Listening`.
-  
-  To receive any `Connect` events on a `NetworkDriver` that is in the `Listening` state, call the special function `Accept` just as we did in the *Creating a Server* section in the [Creating a minimal client and server](workflow-client-server.md) workflow page.
-
-* If you call `Disconnect` on a `NetworkConnection`, this will not trigger an event inside your own driver.
