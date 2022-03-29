@@ -66,7 +66,7 @@ You should have now generated a total of five files. Out of these, only three wi
 * `myGameServerCertificate.pem` will be used by the `certificate` parameter on the server end. 
 
 ### Boiler Plate file holding the secure parameters
-Create a `SecureParameters.cs` script file to hold your the certificates and the private key. Place it in the same folder as the minimal server and minimal client scripts.
+Create a `SecureParameters.cs` script file to hold your certificates and the private key. Place it in the same folder as the minimal server and minimal client scripts.
 Add the following dependencies: 
 ```cs
 using Unity.Collections;
