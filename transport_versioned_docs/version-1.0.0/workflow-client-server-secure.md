@@ -60,7 +60,7 @@ Finally, using the different files generated, we can create the certificate file
 ```shell
 openssl.exe x509 -req -in myGameServerCertificateSigningRequest.pem -CA myGameClientCA.pem -CAkey clientPrivateKeyForRootCA.pem -CAcreateserial -out myGameServerCertificate.pem -days 365 -sha256
 ```
-You should have now generated a total of five files. Out of these, only will be used later on : 
+You should have now generated a total of five files. Out of these, only three will be used later on : 
 * The content of the `myGameClientCA.pem` file, will be used client side as the `caCertificate` parameter.
 * On the server end, `myGameServerPrivate.pem` file content will be used for the `privateKey` parameter.
 * `myGameServerCertificate.pem` will be used by the `certificate` parameter on the server end. 
