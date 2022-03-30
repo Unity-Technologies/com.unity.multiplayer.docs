@@ -60,19 +60,27 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/samples/clientbehavior"
+          "id": "version-1.0.0/samples/clientbehaviour"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/samples/serverbehavior"
+          "id": "version-1.0.0/samples/serverbehaviour"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/samples/jobifiedclientbehavior"
+          "id": "version-1.0.0/samples/jobifiedclientbehaviour"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/samples/jobifiedserverbehavior"
+          "id": "version-1.0.0/samples/jobifiedserverbehaviour"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/samples/secureserverbehaviour"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/samples/secureclientbehaviour"
         }
       ]
     }
