@@ -76,10 +76,6 @@
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/samples/secureparameter"
-        },
-        {
-          "type": "doc",
           "id": "version-1.0.0/samples/secureserverbehaviour"
         },
         {
