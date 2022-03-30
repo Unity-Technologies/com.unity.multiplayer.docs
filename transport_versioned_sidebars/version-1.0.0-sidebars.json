@@ -41,10 +41,6 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/update"
-        },
-        {
-          "type": "doc",
           "id": "version-1.0.0/connection-state"
         },
         {
