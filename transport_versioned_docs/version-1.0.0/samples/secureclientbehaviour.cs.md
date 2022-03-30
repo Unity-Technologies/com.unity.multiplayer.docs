@@ -1,28 +1,31 @@
 ---
-id: clientbehaviour
-title: ClientBehaviour
+id: secureclientbehaviour
+title: SecureClientBehaviour
 ---
 
-Sample code for `ClientBehaviour`:
+Sample code for `SecureClient`:
 
 ```csharp
 using UnityEngine;
-
 using Unity.Networking.Transport;
-
-public class ClientBehaviour : MonoBehaviour
+using Unity.Networking.Transport.TLS;
+public class SecureClientBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
     public NetworkConnection m_Connection;
     public bool m_Done;
-
+    private NetworkSettings settings = new NetworkSettings();
     void Start ()
     {
-        m_Driver = NetworkDriver.Create();
-        m_Connection = default(NetworkConnection);
+         settings.WithSecureClientParameters(
+            serverName: ref SecureParameters.ServerCommonName,       
+            caCertificate: ref SecureParameters.MyGameClientCA  // Use the content of myGameClientCA.pem
+        );
+        m_Driver = NetworkDriver.Create(settings);
+        m_Connection = default(NetworkConnection);  
 
         var endpoint = NetworkEndPoint.LoopbackIpv4;
-        endpoint.Port = 9000;
+        endpoint.Port = 9001; 
         m_Connection = m_Driver.Connect(endpoint);
     }
 
@@ -72,4 +75,3 @@ public class ClientBehaviour : MonoBehaviour
         }
     }
 }
-```

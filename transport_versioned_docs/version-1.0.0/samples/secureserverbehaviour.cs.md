@@ -1,27 +1,31 @@
 ---
-id: serverbehaviour
-title: ServerBehaviour
+id: secureserverbehaviour
+title: SecureServerBehaviour
 ---
 
-Sample code for `ServerBehaviour`:
-
-```csharp
+Sample code for `SecureServerBehaviour`:
+```cs
 using UnityEngine;
 using UnityEngine.Assertions;
-
 using Unity.Collections;
 using Unity.Networking.Transport;
-
-public class ServerBehaviour : MonoBehaviour
+using Unity.Networking.Transport.TLS;
+public class SecureServerBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
     private NativeList<NetworkConnection> m_Connections;
-
+    private NetworkSettings settings;
+    
+    
     void Start ()
     {
-        m_Driver = NetworkDriver.Create();
-        var endpoint = NetworkEndPoint.AnyIpv4; // The local address to which the client will connect to is 127.0.0.1
-        endpoint.Port = 9000;
+        settings.WithSecureServerParameters(
+            certificate: ref SecureParameters.MyGameServerCertificate,            // The content of the `myGameServerCertificate.pem`           
+            privateKey: ref SecureParameters.MyGameServerPrivate                  // The content of `myGameServerPrivate.pem`
+        );
+        m_Driver = NetworkDriver.Create(settings);
+        var endpoint = NetworkEndPoint.AnyIpv4;
+        endpoint.Port = 9001;
         if (m_Driver.Bind(endpoint) != 0)
             Debug.Log("Failed to bind to port 9000");
         else
@@ -60,6 +64,8 @@ public class ServerBehaviour : MonoBehaviour
         DataStreamReader stream;
         for (int i = 0; i < m_Connections.Length; i++)
         {
+            Assert.IsTrue(m_Connections[i].IsCreated);
+
             NetworkEvent.Type cmd;
             while ((cmd = m_Driver.PopEventForConnection(m_Connections[i], out stream)) != NetworkEvent.Type.Empty)
             {
