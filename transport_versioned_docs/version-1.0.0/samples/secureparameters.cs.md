@@ -1,6 +1,6 @@
 ---
 id: secureparameters
-title: SecureParameters
+title: SecureParameters Sample
 ---
 
 Sample code for `SecureParameters`:

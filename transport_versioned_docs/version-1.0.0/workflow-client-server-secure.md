@@ -1,6 +1,6 @@
 ---
-id: jobs
-title: Create jobified client and server
+id: secure-connection
+title: Create secure client and server
 ---
 The unity transport protocol can be configure to encrypt the connection between the server and the client while ensuring the server's/client's authenticity.
 This secure connection relies on UnityTLS and is available with the following editor versions:
@@ -21,8 +21,6 @@ Once its identity confirmed, the server will then use the private key (`privateK
 ### Requirements
 To use the client server secure workflow, you need a `valid certificate` and the `root certificate` it has been generated from. You also need the `private key` that has been used to create the certificate.
 If you don't have these, they can be generated using OpenSSL. The procedure is detailed hereafter. 
-
-
 
 ### Generating the required keys and certificates with OpenSSL
 
