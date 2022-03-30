@@ -30,6 +30,10 @@
         },
         {
           "type": "doc",
+          "id": "version-1.0.0/secure-connection"
+        },
+        {
+          "type": "doc",
           "id": "version-1.0.0/pipelines"
         }
       ]
@@ -73,6 +77,10 @@
         {
           "type": "doc",
           "id": "version-1.0.0/samples/jobifiedserverbehaviour"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/samples/secureparameters"
         },
         {
           "type": "doc",
