@@ -15,21 +15,11 @@ That can be done by extending the `NetworkSettings` API so the custom Network In
 
 ### INetworkParameter
 By implementing the `INetworkParameter` interface, any unmanaged struct can be identified as a network parameter that can be assigned to the `NetworkDriver` settings.
-```markdown title="INetworkParameter example"
-public struct MyCustomParameter : INetworkParameter
-{
-    public int MyCustomInt;
-    public float MyCustomFloat;
-}
-```
-
-### IValidatableNetworkParameter
-The `IValidatableNetworkParameter` interface can be implemented if any validation is required for a `INetworkParameter`.
 
 The `NetworkSettings` will automatically call the `Validate()` method and will throw an exception if `false` is returned.
 
-```markdown title="IValidatableNetworkParameter example"
-public struct MyCustomParameter : INetworkParameter, IValidatableNetworkParameter
+```markdown title="INetworkParameter example"
+public struct MyCustomParameter : INetworkParameter
 {
     public int MyCustomInt;
     public float MyCustomFloat;
