@@ -32,6 +32,31 @@ For our {Month Year} release, the following major features were released:
 {Content}
 -->
 
+## 2022 - March
+
+For our March 2022 UTP 1.0.0 release, the following major features were released:
+
+### UTP
+
+* Multi-platform, custom-wrapped UDP based transport
+* Event-driven design
+* Network Pipelines Framework including pipelines for:
+  * Reliability
+  * Sequencing
+  * Fragmentation
+  * Network Condition Simulation
+* Scheduled Jobs support for multi-threading
+* End-to-end encryption support via DTLS
+* Unity Relay support 
+* Huffman encoded datastreams
+* Support for raw, bit-level read and writes from the datastream
+* Keep-alive heartbeat message support
+
+
+See the [UTP Transport install guide](/docs/transport-utp/install) to install Unity transport with your project.
+
+See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+
 ## 2021 - October
 
 For our October 2021 release, the following major features were released:
