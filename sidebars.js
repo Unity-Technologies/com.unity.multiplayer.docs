@@ -100,33 +100,7 @@ module.exports = {
       },
       {
         "type": "doc",
-        "id": "transport-utp/about-transport-utp"
-      },
-      {
-        "collapsed": true,
-        "type": "category",
-        "label": "Transport UTP Wrapper APIs",
-        "items": [
-          {
-            "type": "doc",
-            "id": "transport-api/introduction"
-          },
-          {
-            "type": "doc",
-            "id": "transport-api/Assets.Scripts.Transport",
-            "label": "Assets.Scripts.Transport",
-          },
-          {
-            "type": "doc",
-            "id": "transport-api/Assets.Scripts.Transport.Utilities",
-            "label": "Assets.Scripts.Transport.Utilities",
-          },
-          {
-            type: 'link',
-            label: 'Unity Transport for Netcode APIs', // The link label
-            href: 'https://docs.unity3d.com/Packages/com.unity.netcode.adapter.utp@1.0/api/Unity.Netcode.html', // The external URL
-          },
-        ]
+        "id": "advanced-topics/transports"
       },
       {
         "collapsed": true,
