@@ -101,5 +101,3 @@ The same applies to very high latencies (1000ms) - these stress the lag hiding t
 ### Using breakpoints to debug a Client or Server
 
 You can use breakpoints to debug a game, but your connection may time out if you stay too long in this mode. Since it pauses your game, you can temporarily increase the timeout value to avoid disconnecting. 
-
-If you are using the [UTP adapter for Netcode](../../transport-api/introduction.md) edit the `DisconnectTimeout` field of the `UnityTransport` script used by your `NetworkManager`. Make sure that you reset this value when you are no longer debugging.

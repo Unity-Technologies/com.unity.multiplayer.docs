@@ -94,16 +94,6 @@ We added profiler support for Netcode. The new [network profiler modules](/docs/
 
 To install the tools package in your project, see the [install tools](/docs/tools/install-tools) guide.
 
-### Unity Transport (UTP)
-
-* Enabled [Relay Service](https://docs.unity.com/relay/Content/introduction.htm)
-* Includes DTLS encryption (required for console support)
-* OSS UTP Adapter for Netcode
-
-See the [UTP Transport install guide](/docs/transport-utp/install) to install Unity transport with your project.
-
-See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
-
 ### Boss room
 
 The Boss Room Co-Op Sample is now in [pre-release](/releases/samples/samples-1-0-0-pre) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
