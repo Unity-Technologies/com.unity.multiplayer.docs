@@ -309,7 +309,7 @@ module.exports = {
               return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
             },
             includeCurrentVersion: true,
-            lastVersion: '1.0.0',
+            lastVersion: "current",
             versions: {
               current: {
                 label: '1.0.0',
@@ -477,7 +477,7 @@ module.exports = {
 
           },
           includeCurrentVersion: true,
-            lastVersion: `1.0.0`,
+            lastVersion: `current`,
             versions: {
               current: {
                 label: '1.0.0',
