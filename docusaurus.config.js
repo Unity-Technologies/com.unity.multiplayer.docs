@@ -488,7 +488,7 @@ module.exports = {
                  path: '0.8.0',
                },
             },
-          onlyIncludeVersions: ["0.8.0", "current"],
+          onlyIncludeVersions: ["0.8.0", "1.0.0"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
@@ -534,28 +534,8 @@ module.exports = {
         {
           redirects: [
             {
-              to: '/docs/advanced-topics/messaging-system',
-              from: '/docs/advanced-topics/messaging-system/about-rpc',
-            },
-            {
-              to: '/docs/advanced-topics/messaging-system',
-              from: '/docs/advanced-topics/message-system/serialization',
-            },
-            {
-              to: '/docs/getting-started/about',
-              from: '/docs/getting-started/about-mlapi.',
-            },
-            {
-              to: '/docs/develop/getting-started/about',
-              from: '/docs/develop/getting-started/about-mlapi.',
-            },
-            {
-              to: '/docs/0.1.0/getting-started/about',
-              from: '/docs/0.1.0/getting-started/about-mlapi.',
-            },
-            {
-              to: `/docs/tools/install-tools`,
-              from: `/docs/tools-install-tooltip`,
+              to: '',
+              from: '',
             },
           ]
         },
