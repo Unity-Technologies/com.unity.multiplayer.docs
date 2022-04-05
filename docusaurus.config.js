@@ -477,14 +477,14 @@ module.exports = {
 
           },
           includeCurrentVersion: true,
-            lastVersion: current,
+            lastVersion: `1.0.0`,
             versions: {
               current: {
-                label: 'v. 1.0.0',
+                label: '1.0.0',
                 path: 'transport',
               },
               '0.8.0': {
-                label: 'v. 0.8.0 preview',
+                label: '0.8.0 preview',
                  path: '0.8.0',
                },
             },
