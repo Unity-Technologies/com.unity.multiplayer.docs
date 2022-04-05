@@ -528,7 +528,7 @@ module.exports = {
       {
         id: 'GTM-5V25JL6', // GTM Container ID
       }],
-      [
+      /*[
         '@docusaurus/plugin-client-redirects',
         {
           redirects: [
@@ -538,7 +538,7 @@ module.exports = {
             },
           ]
         },
-      ],
+      ],*/
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
         '@saucelabs/theme-github-codeblock',
