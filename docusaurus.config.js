@@ -309,16 +309,12 @@ module.exports = {
               return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
             },
             includeCurrentVersion: true,
-            lastVersion: '1.0.0',
+            lastVersion: current,
             versions: {
               current: {
-                label: 'develop',
+                label: '1.0.0',
                 path: 'develop',
               },
-              '1.0.0': {
-                label: 'v. 1.0.0',
-                 path: '',
-               },
               '0.1.0': {
                label: 'v. 0.1.0',
                 path: '0.1.0',
@@ -481,15 +477,11 @@ module.exports = {
 
           },
           includeCurrentVersion: true,
-            lastVersion: '1.0.0',
+            lastVersion: current,
             versions: {
               current: {
-                label: 'develop',
+                label: 'v. 1.0.0',
                 path: 'transport',
-              },
-              '1.0.0': {
-               label: 'v. 1.0.0',
-                path: '1.0.0',
               },
               '0.8.0': {
                 label: 'v. 0.8.0 preview',

@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: Getting Started with the Unity Transport Package (UTP)
+title: About Unity Transport
 ---
 
 Unity Transport provides the `com.unity.transport` package, used to add multiplayer and network features to your project.
@@ -15,7 +15,7 @@ All Transport code and documentation is covered by Unity Companion License. See 
 
 ## Overview
 
-[Transport Overview](/img/transport/layercake.png)
+![Transport Overview](/img/transport/layercake.png)
 
 ## Installing Transport
 
@@ -27,7 +27,7 @@ To learn how to use the `com.unity.transport` package in your own project, revie
 
 ##  Requirements
 
-This version of `com.unity.transport` is compatible with the following versions of the Unity Editor:
+This version of com.unity.transport is compatible with the following Unity versions and platforms:
 
-* 2020.1.2 and later
-* All platforms supported by Unity are supported by the transport
+* 2020.1.2 and later.
+* All platforms supported by Unity are supported, except WebGL.

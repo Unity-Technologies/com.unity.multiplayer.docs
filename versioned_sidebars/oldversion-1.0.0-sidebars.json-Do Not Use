@@ -1,8 +1,8 @@
 {
-  "version-1.0.0/Netcode": [
+  "oldversion-1.0.0-Do Not Use/Netcode": [
     {
       "type": "doc",
-      "id": "version-1.0.0/getting-started/about"
+      "id": "oldversion-1.0.0-Do Not Use/getting-started/about"
     },
     {
       "collapsed": true,
@@ -11,23 +11,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/migration/install"
+          "id": "oldversion-1.0.0-Do Not Use/migration/install"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/tools/install-tools"
+          "id": "oldversion-1.0.0-Do Not Use/tools/install-tools"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/migration/upgrade-guide"
+          "id": "oldversion-1.0.0-Do Not Use/migration/upgrade-guide"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/migration/migratingtonetcode"
+          "id": "oldversion-1.0.0-Do Not Use/migration/migratingtonetcode"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/migration/migratingfrommlapi"
+          "id": "oldversion-1.0.0-Do Not Use/migration/migratingfrommlapi"
         },
         {
           "collapsed": true,
@@ -36,11 +36,11 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/tutorials/helloworld/helloworldintro"
+              "id": "oldversion-1.0.0-Do Not Use/tutorials/helloworld/helloworldintro"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/tutorials/helloworld/helloworldtwo"
+              "id": "oldversion-1.0.0-Do Not Use/tutorials/helloworld/helloworldtwo"
             }
           ]
         }
@@ -53,47 +53,47 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/getting-started/connection-approval"
+          "id": "oldversion-1.0.0-Do Not Use/getting-started/connection-approval"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/getting-started/max-players"
+          "id": "oldversion-1.0.0-Do Not Use/getting-started/max-players"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/networkobject"
+          "id": "oldversion-1.0.0-Do Not Use/basics/networkobject"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/networkbehavior"
+          "id": "oldversion-1.0.0-Do Not Use/basics/networkbehavior"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/modularity"
+          "id": "oldversion-1.0.0-Do Not Use/basics/modularity"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/networkvariable"
+          "id": "oldversion-1.0.0-Do Not Use/basics/networkvariable"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/object-visibility"
+          "id": "oldversion-1.0.0-Do Not Use/basics/object-visibility"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/fastbufferwriter-fastbufferreader"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/fastbufferwriter-fastbufferreader"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/networktime-ticks"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/networktime-ticks"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/physics"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/physics"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/transport-utp/about-transport-utp"
+          "id": "oldversion-1.0.0-Do Not Use/transport-utp/about-transport-utp"
         },
         {
           "collapsed": true,
@@ -102,16 +102,16 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/transport-api/introduction"
+              "id": "oldversion-1.0.0-Do Not Use/transport-api/introduction"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/transport-api/Assets.Scripts.Transport",
+              "id": "oldversion-1.0.0-Do Not Use/transport-api/Assets.Scripts.Transport",
               "label": "Assets.Scripts.Transport"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/transport-api/Assets.Scripts.Transport.Utilities",
+              "id": "oldversion-1.0.0-Do Not Use/transport-api/Assets.Scripts.Transport.Utilities",
               "label": "Assets.Scripts.Transport.Utilities"
             },
             {
@@ -128,7 +128,7 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/relay/relay"
+              "id": "oldversion-1.0.0-Do Not Use/relay/relay"
             }
           ]
         }
@@ -141,15 +141,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/components/networkmanager"
+          "id": "oldversion-1.0.0-Do Not Use/components/networkmanager"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/components/networktransform"
+          "id": "oldversion-1.0.0-Do Not Use/components/networktransform"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/components/networkanimator"
+          "id": "oldversion-1.0.0-Do Not Use/components/networkanimator"
         }
    
       ]
@@ -161,11 +161,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/object-spawning"
+          "id": "oldversion-1.0.0-Do Not Use/basics/object-spawning"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/object-pooling"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/object-pooling"
         }
       ]
     },
@@ -176,7 +176,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/messaging-system"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/messaging-system"
         },
         {
           "collapsed": true,
@@ -185,23 +185,23 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/message-system/clientrpc"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/clientrpc"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/message-system/serverrpc"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/serverrpc"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/message-system/reliability"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/reliability"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/message-system/execution-table"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/execution-table"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/message-system/rpc-params"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/rpc-params"
             },
             {
               "collapsed": true,
@@ -210,23 +210,23 @@
               "items": [
                 {
                   "type": "doc",
-                  "id": "version-1.0.0/learn/rpcvnetvar"
+                  "id": "oldversion-1.0.0-Do Not Use/learn/rpcvnetvar"
                 },
                 {
                   "type": "doc",
-                  "id": "version-1.0.0/learn/rpcnetvarexamples"
+                  "id": "oldversion-1.0.0-Do Not Use/learn/rpcnetvarexamples"
                 }
               ]
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/message-system/rpc-compatibility"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/rpc-compatibility"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/ways-synchronize"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/ways-synchronize"
         },
         {
           "collapsed": true,
@@ -235,17 +235,17 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/network-update-loop-system/about-network-update-loop"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/network-update-loop-system/about-network-update-loop"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/advanced-topics/network-update-loop-system/network-update-loop-reference"
+              "id": "oldversion-1.0.0-Do Not Use/advanced-topics/network-update-loop-system/network-update-loop-reference"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/message-system/custom-messages"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/message-system/custom-messages"
         }
       ]
     },
@@ -256,35 +256,35 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/serialization-intro"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/serialization-intro"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/cprimitives"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/cprimitives"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/unity-primitives"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/unity-primitives"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/enum_types"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/enum_types"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/arrays"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/arrays"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/inetworkserializable"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/inetworkserializable"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/custom-serialization"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/custom-serialization"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/advanced-topics/serialization/networkobject-serialization"
+          "id": "oldversion-1.0.0-Do Not Use/advanced-topics/serialization/networkobject-serialization"
         }
       ]
     },
@@ -295,7 +295,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/scene-management"
+          "id": "oldversion-1.0.0-Do Not Use/basics/scene-management"
         }
       ]
     },
@@ -306,11 +306,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/tutorials/testing/testing_locally"
+          "id": "oldversion-1.0.0-Do Not Use/tutorials/testing/testing_locally"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/tutorials/testing/testing_with_artificial_conditions"
+          "id": "oldversion-1.0.0-Do Not Use/tutorials/testing/testing_with_artificial_conditions"
         }
       ]
     },
@@ -321,23 +321,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/logging"
+          "id": "oldversion-1.0.0-Do Not Use/basics/logging"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/basics/profiling"
+          "id": "oldversion-1.0.0-Do Not Use/basics/profiling"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
+          "id": "oldversion-1.0.0-Do Not Use/tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/troubleshooting/troubleshooting"
+          "id": "oldversion-1.0.0-Do Not Use/troubleshooting/troubleshooting"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/troubleshooting/errormessages"
+          "id": "oldversion-1.0.0-Do Not Use/troubleshooting/errormessages"
         }
       ]
     },
@@ -353,29 +353,29 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/tutorials/goldenpath_series/starting_out"
+              "id": "oldversion-1.0.0-Do Not Use/tutorials/goldenpath_series/starting_out"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/tutorials/goldenpath_series/goldenpath_foundation_module"
+              "id": "oldversion-1.0.0-Do Not Use/tutorials/goldenpath_series/goldenpath_foundation_module"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/tutorials/goldenpath_series/goldenpath_one"
+              "id": "oldversion-1.0.0-Do Not Use/tutorials/goldenpath_series/goldenpath_one"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/tutorials/goldenpath_series/goldenpath_two"
+              "id": "oldversion-1.0.0-Do Not Use/tutorials/goldenpath_series/goldenpath_two"
             }
           ]
         }
       ]
     }
   ],
-  "version-1.0.0/Multiplayer": [
+  "oldversion-1.0.0-Do Not Use/Multiplayer": [
     {
       "type": "doc",
-      "id": "version-1.0.0/learn/introduction"
+      "id": "oldversion-1.0.0-Do Not Use/learn/introduction"
     },
     {
       "collapsed": true,
@@ -389,7 +389,7 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/reference/glossary/high-level-terminology"
+              "id": "oldversion-1.0.0-Do Not Use/reference/glossary/high-level-terminology"
             },
             {
               "collapsed": true,
@@ -398,33 +398,33 @@
               "items": [
                 {
                   "type": "doc",
-                  "id": "version-1.0.0/reference/glossary/ticks-and-update-rates"
+                  "id": "oldversion-1.0.0-Do Not Use/reference/glossary/ticks-and-update-rates"
                 },
                 {
                   "type": "doc",
-                  "id": "version-1.0.0/learn/lagandpacketloss"
+                  "id": "oldversion-1.0.0-Do Not Use/learn/lagandpacketloss"
                 },
                 {
                   "type": "doc",
-                  "id": "version-1.0.0/learn/clientside_interpolation"
+                  "id": "oldversion-1.0.0-Do Not Use/learn/clientside_interpolation"
                 },
                 {
                   "type": "doc",
-                  "id": "version-1.0.0/learn/dealing-with-latency"
+                  "id": "oldversion-1.0.0-Do Not Use/learn/dealing-with-latency"
                 }
               ]
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/reference/glossary/network-terms"
+              "id": "oldversion-1.0.0-Do Not Use/reference/glossary/network-terms"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/reference/glossary/prioritization"
+              "id": "oldversion-1.0.0-Do Not Use/reference/glossary/prioritization"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/reference/glossary/relevancy"
+              "id": "oldversion-1.0.0-Do Not Use/reference/glossary/relevancy"
             }
           ]
         },
@@ -435,15 +435,15 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/multiplayer-game-arhitecture"
+              "id": "oldversion-1.0.0-Do Not Use/learn/multiplayer-game-arhitecture"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/reference/glossary/network-topologies"
+              "id": "oldversion-1.0.0-Do Not Use/reference/glossary/network-topologies"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/listen-server-host-architecture"
+              "id": "oldversion-1.0.0-Do Not Use/learn/listen-server-host-architecture"
             }
           ]
         }
@@ -461,11 +461,11 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/bossroom"
+              "id": "oldversion-1.0.0-Do Not Use/learn/bossroom"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/bossroom-examples/bossroom-actions"
+              "id": "oldversion-1.0.0-Do Not Use/learn/bossroom-examples/bossroom-actions"
             }
           ]
         },
@@ -476,15 +476,15 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/bitesize-introduction"
+              "id": "oldversion-1.0.0-Do Not Use/learn/bitesize-introduction"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/bitesize-invaders"
+              "id": "oldversion-1.0.0-Do Not Use/learn/bitesize-invaders"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/bitesize-spaceshooter"
+              "id": "oldversion-1.0.0-Do Not Use/learn/bitesize-spaceshooter"
             }
           ]
         }
@@ -502,22 +502,22 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dilmer/dilmer-video"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dilmer/dilmer-video"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dilmer/project-setup"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dilmer/project-setup"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dilmer/corefeatures"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dilmer/corefeatures"
             },           {
               "type": "doc",
-              "id": "version-1.0.0/learn/dilmer/networkanimator"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dilmer/networkanimator"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dilmer/relay-service-setup"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dilmer/relay-service-setup"
             }
           ]
         },
@@ -528,11 +528,11 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-video"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dapper/dapper-video"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/learn/dapper/dapper-upgrade"
+              "id": "oldversion-1.0.0-Do Not Use/learn/dapper/dapper-upgrade"
             }
           
           ]
@@ -541,13 +541,13 @@
     },
     {
       "type": "doc",
-      "id": "version-1.0.0/learn/faq"
+      "id": "oldversion-1.0.0-Do Not Use/learn/faq"
     }
   ],
-  "version-1.0.0/api": [
+  "oldversion-1.0.0-Do Not Use/api": [
     {
       "type": "doc",
-      "id": "version-1.0.0/api/introduction"
+      "id": "oldversion-1.0.0-Do Not Use/api/introduction"
     },
     {
       "collapsed": true,
@@ -556,107 +556,107 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.AddAllInterestKernel"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.AddAllInterestKernel"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.INetworkUpdateSystem"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.INetworkUpdateSystem"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkBehaviour"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkBehaviour"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkBehaviourUpdater"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkBehaviourUpdater"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkObjectReference"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkObjectReference"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkObject.SpawnDelegate"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkObject.SpawnDelegate"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkObject.VisibilityDelegate"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkObject.VisibilityDelegate"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkTickSystem"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkTickSystem"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkUpdateLoop"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkUpdateLoop"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkUpdateStage"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkUpdateStage"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.INetworkPrefabInstanceHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.INetworkPrefabInstanceHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.INetworkStreamDriverConstructor"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.INetworkStreamDriverConstructor"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkDelivery"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkDelivery"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkEvent"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkEvent"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkPrefabHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkPrefabHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.StreamExtensions"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.StreamExtensions"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.BitCounter"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.BitCounter"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.BitReader"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.BitReader"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.BitWriter"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.BitWriter"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.BufferSerializer-1"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.BufferSerializer-1"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.BytePacker"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.BytePacker"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ByteUnpacker"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ByteUnpacker"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ErrorUtilities"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ErrorUtilities"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.FastBufferReader"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.FastBufferReader"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.FastBufferWriter"
         }
       ]
     },
@@ -667,37 +667,37 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Interest"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Interest"
              
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.AddAllInterestKernel"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.AddAllInterestKernel"
              
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Interest.IInterestKernel-1"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Interest.IInterestKernel-1"
             
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Interest.IInterestNode-1"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Interest.IInterestNode-1"
            
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Interest.InterestManager-1"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Interest.InterestManager-1"
          
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Interest.InterestNodeStatic-1"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Interest.InterestNodeStatic-1"
              
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.RadiusInterestKernel"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.RadiusInterestKernel"
          
             }
           ]
@@ -709,11 +709,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkTime"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkTime"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkTimeSystem"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkTimeSystem"
         }
       ]
     },
@@ -724,7 +724,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.FixedQueue-1"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.FixedQueue-1"
         }
       ]
     },
@@ -735,11 +735,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.HashSize"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.HashSize"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkConfig"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkConfig"
         }
       ]
     },
@@ -750,15 +750,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkClient"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkClient"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.PendingClient"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.PendingClient"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.PendingClient.State"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.PendingClient.State"
         }
       ]
     },
@@ -769,31 +769,31 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.InvalidChannelException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.InvalidChannelException"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.InvalidParentException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.InvalidParentException"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkConfigurationException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkConfigurationException"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NotListeningException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NotListeningException"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NotServerException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NotServerException"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.SpawnStateException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.SpawnStateException"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.VisibilityChangeException"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.VisibilityChangeException"
         }
       ]
     },
@@ -804,11 +804,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.LogLevel"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.LogLevel"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkLog"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkLog"
         }
       ]
     },
@@ -819,19 +819,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcAttribute"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ClientRpcAttribute"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcParams"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ClientRpcParams"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcReceiveParams"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ClientRpcReceiveParams"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcSendParams"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ClientRpcSendParams"
         },
         {
           "collapsed": true,
@@ -840,41 +840,41 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.CustomMessagingManager"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.CustomMessagingManager"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.RpcAttribute"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.RpcAttribute"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.RpcDelivery"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.RpcDelivery"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcAttribute"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ServerRpcAttribute"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcParams"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ServerRpcParams"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcReceiveParams"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ServerRpcReceiveParams"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcSendParams"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.ServerRpcSendParams"
         }
       ]
     },
@@ -885,11 +885,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkManager"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkManager"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate"
         }
       ]
     },
@@ -900,24 +900,24 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableBase"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkVariableBase"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableHelper"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkVariableHelper"
           
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariable-1"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkVariable-1"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableReadPermission"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkVariableReadPermission"
         }
       ]
     },
@@ -933,11 +933,11 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.NetworkList-1"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkList-1"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.NetworkList-1.OnListChangedDelegate"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkList-1.OnListChangedDelegate"
             }
           ]
         },
@@ -948,11 +948,11 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.NetworkListEvent-1"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkListEvent-1"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.NetworkListEvent-1.EventType"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkListEvent-1.EventType"
             }
           ]
         }
@@ -965,15 +965,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.SceneEvent"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.SceneEvent"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.SceneEventProgressStatus"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.SceneEventProgressStatus"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.SceneEventType"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.SceneEventType"
         }
       ]
     },
@@ -984,43 +984,43 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.SceneEventDelegate"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.SceneEventDelegate"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler"
         }
       ]
     },
@@ -1031,11 +1031,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.Arithmetic"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Arithmetic"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.INetworkSerializable"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.INetworkSerializable"
         }
       ]
     },
@@ -1046,7 +1046,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkSpawnManager"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkSpawnManager"
         }
       ]
     },
@@ -1057,11 +1057,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.NetworkTransport"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.NetworkTransport"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.UnityTransport.ProtocolType"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.UnityTransport.ProtocolType"
         }
       ]
     },
@@ -1072,11 +1072,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.UnityTransport"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.UnityTransport"
         },
         {
           "type": "doc",
-          "id": "version-1.0.0/api/Unity.Netcode.UnityTransport.ProtocolType"
+          "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.UnityTransport.ProtocolType"
         },
         {
           "collapsed": true,
@@ -1085,19 +1085,19 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Transports.UNET"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Transports.UNET"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Transports.UNET.UNetChannel"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Transports.UNET.UNetChannel"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Transports.UNET.UNetTransport"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Transports.UNET.UNetTransport"
             },
             {
               "type": "doc",
-              "id": "version-1.0.0/api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode"
+              "id": "oldversion-1.0.0-Do Not Use/api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode"
             }
           ]
         }
