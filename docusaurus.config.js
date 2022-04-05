@@ -488,7 +488,7 @@ module.exports = {
                  path: '0.8.0',
                },
             },
-          onlyIncludeVersions: ["0.8.0", "1.0.0"],
+          onlyIncludeVersions: ["0.8.0", "current"],
           editCurrentVersion: true,
           routeBasePath: 'transport',
           sidebarPath: require.resolve('./sidebarsTransport.js'),
