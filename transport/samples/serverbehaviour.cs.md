@@ -1,9 +1,9 @@
 ---
-id: serverbehavior
-title: ServerBehavior
+id: serverbehaviour
+title: ServerBehaviour
 ---
 
-Sample code for `ServerBehavior`:
+Sample code for `ServerBehaviour`:
 
 ```csharp
 using UnityEngine;
@@ -20,7 +20,7 @@ public class ServerBehaviour : MonoBehaviour
     void Start ()
     {
         m_Driver = NetworkDriver.Create();
-        var endpoint = NetworkEndPoint.AnyIpv4;
+        var endpoint = NetworkEndPoint.AnyIpv4; // The local address to which the client will connect to is 127.0.0.1
         endpoint.Port = 9000;
         if (m_Driver.Bind(endpoint) != 0)
             Debug.Log("Failed to bind to port 9000");
@@ -60,8 +60,6 @@ public class ServerBehaviour : MonoBehaviour
         DataStreamReader stream;
         for (int i = 0; i < m_Connections.Length; i++)
         {
-            Assert.IsTrue(m_Connections[i].IsCreated);
-
             NetworkEvent.Type cmd;
             while ((cmd = m_Driver.PopEventForConnection(m_Connections[i], out stream)) != NetworkEvent.Type.Empty)
             {

@@ -425,4 +425,4 @@ If you are having trouble with the `serverUpdateJob.Schedule(m_Connections, 1, S
 
 You should now have a fully functional [jobified server](samples/jobifiedserverbehaviour.cs.md).
 
-You can download all examples from [here](https://oc.unity3d.com/index.php/s/PHaNZP79Va2YOLT).
+
