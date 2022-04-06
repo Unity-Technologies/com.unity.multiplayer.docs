@@ -6,7 +6,7 @@ title: About Unity Transport
 Unity Transport provides the `com.unity.transport` package, used to add multiplayer and network features to your project.
 
 :::note
-This package should not be confused with Unity MLAPI Transport. See [Custom Transports](/docs/advanced-topics/custom-transports) for more information.
+This package should not be confused with Unity Netcode's `NetworkTransport` abstraction. Please see Netcode's [Transports](/netcode/current/advanced-topics/transports) section for more information.
 :::
 
 :::unity Content Licenses

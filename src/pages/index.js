@@ -18,7 +18,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="docs/tutorials/helloworld/helloworldintro" class="land-link">Learn more about Netcode for GameObjects</a>
+      <a href="netcode/current/tutorials/helloworld/helloworldintro" class="land-link">Learn more about Netcode for GameObjects</a>
       </>
     ),
   },
@@ -47,7 +47,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="docs/learn/bitesize-introduction">Learn more about Bitesize</a>
+      <a href="netcode/current/learn/bitesize-introduction">Learn more about Bitesize</a>
       </>
     ),
   },
@@ -64,7 +64,7 @@ const highlights = [
     ),
     link: (
       <>
-      <a href="docs/learn/faq" class="land-link">See the FAQ</a>
+      <a href="netcode/current/learn/faq" class="land-link">See the FAQ</a>
       </>
     ),
   },
@@ -73,12 +73,12 @@ const highlights = [
     imageUrl: 'img/hilight-code.jpg',
     description: (
       <>
-        Unity Transport provides a new wrapper for Netcode for GameObjects! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/0.8.0/api/introduction">com.unity.transport</a>.
+        Unity Netcode for GameObject uses Unity Transport by default!
       </>
     ),
     link: (
       <>
-      <a href="transport/0.8.0/introduction" class="land-link">See Transport</a>
+      <a href="transport/current/introduction" class="land-link">See Unity Transport</a>
       </>
     )
   },
