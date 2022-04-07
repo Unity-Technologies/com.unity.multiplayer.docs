@@ -64,7 +64,7 @@ To open the project for the first time:
 
 To see the multiplayer functionality in action, you can either run multiple instances of the game [locally on your computer](#local-multiplayer-setup) or choose to [connect through the internet](#multiplayer-over-internet).
 
-### Local multiplayer setup
+## Local multiplayer setup
 
 For a local multiplayer setup, you must build an executable and launch several instances of this executable to both host and join a game.
 
@@ -85,17 +85,104 @@ To run multiple instances of the same app, you need to use the command line:
 <iframe src="https://www.youtube.com/embed/27Ikr0t7vzg?playlist=27Ikr0t7vzg&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
-### Multiplayer over internet
+## Multiplayer over internet
 
 In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
 
-Running the game over internet currently requires using [Port Forwarding](#port-forwarding).
+Running the game over internet currently requires using [Port Forwarding](#port-forwarding) or [Integrating Boss Room with Unity Gameing Services](#integrating-boss-room-with-unity-gaming-services).
 
-#### Port Forwarding
+### Port Forwarding
 
 The [Portforward Site](https://portforward.com/) has guides on how to enable port forwarding on a huge number of routers. Boss Room uses UDP and needs a 9998 external port to be open.
 
 import Iframe from 'react-iframe'
+
+### Integrating Boss Room with Unity Gaming Services
+
+With the release of Boss Room 1.1.0, Boss Room integrated with Unity Gaming Services (UGS): [Authentication](https://docs.unity.com/authentication/IntroUnityAuthentication.html), [Relay](https://docs.unity.com/relay/introduction.html), and [Lobby](https://docs.unity.com/lobby/unity-lobby-service-overview.html). These services  make it easy for players to host and join games that are playable over the internet, without the need for port forwarding or out-of-game coordination.
+
+#### Authentication
+
+To interact with the rest of UGS, the user must be authenticated. Therefore, authentication is kicked off as soon as the game launches and the main menu scene loads.
+
+:::note
+The Authentication service supports [anonymous sign-in](https://docs.unity.com/authentication/UsingAnonSignIn.html) and doesn't require any additional input from the player.
+:::
+
+The Authentication API doesn't distinguish multiple instances of the same project running on the same machine and logs in the same user in all those different instances. Both ParrelSync clones and actual game builds are affected and can mess up testing the game locally.
+
+However, Authentication supports [Profiles](https://docs.unity.com/authentication/ProfileManagement.html) that allows different users existing on the same physical machine. To test locally, we need both builds and editor players to be able to switch to different Profiles.
+
+The [`ProfileManager`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/ProfileManager.cs) class wraps the logic for deciding what Profile you should be using, if any. In builds, the command-line argument `-AuthProfile` specifies the new profile id. When iterating in the editor, ParrelSync can use its `CloneManager` custom arguments to decide what user profile to use.
+
+`ProfileManager.Profile` generates the custom `InitializationOptions`:
+
+```
+var unityAuthenticationInitOptions = new InitializationOptions();
+var profile = ProfileManager.Profile;
+
+
+if (profile.Length > 0)
+{
+    unityAuthenticationInitOptions.SetProfile(profile);
+}
+
+```
+ 
+The code that executes profile switch and sign-in logic itself is as follows:
+
+```
+async Task TrySignIn(InitializationOptions initializationOptions)
+{
+    await Unity.Services.Core.UnityServices.InitializeAsync(initializationOptions);
+    
+    if (!AuthenticationService.Instance.IsSignedIn)
+    {
+   	 await AuthenticationService.Instance.SignInAnonymouslyAsync();
+    }
+}
+```
+
+Next is lobby and relay.
+
+#### Lobby and Relay
+
+##### The Lobby Host Flow
+
+1. The would-be host enters the lobby name, specifies if it's public or private and hits the **Create** button.
+1. The [Lobby creation API](https://docs.unity.com/lobby/creating-a-lobby.html) call is made. The newly created lobby is **locked** (i.e prevented from appearing in the list of publicly available, fully set up games that are ready to be joined) until we successfully complete the relay allocation and Netcode startup steps below.
+1. The host requests a relay allocation from the [Relay service](https://docs.unity.com/relay/introduction.html).
+2. [UTP](../../transport/index.md) starts and the host is switches to the character selection scene. The lobby itself is now considered unlocked and is available for other clients to join.
+
+##### The Lobby Client Flow
+* There are several ways to connect to a lobby:
+  * Choose one of the public lobbies regularly fetched from the Lobby service
+  * [Quickjoin](https://docs.unity.com/lobby/quick-join.html): Randomly selects a public lobby
+  * Using a [lobby key](https://docs.unity.com/lobby/joining-lobbies.html), shared through out-of-game means. This works for both public and private lobbies.
+* After joining a lobby, the [relay join code passes through lobby metadata](https://docs.unity.com/lobby/relay-integrations.html) to connect to the host via UTP Relay transport.
+* The host receives a request to approve the connecting client, and the host would server-authoritatively switch the player to the appropriate scene.
+
+Currently, the Lobby service has to be [polled for updates](https://docs.unity.com/lobby/polling-for-lobby-state.html). This is not ideal for a responsive feel to character selection; however, when there is an option to get real time updates from the Lobby service, it would be a good alternative way to implement something like this.
+
+##### Disconnection and Reconnection
+
+Handling player disconnections and reconnections is a necessity in a multiplayer game.
+
+Boss Room uses a [session management](https://docs-multiplayer.unity3d.com/docs/develop/advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)). 
+
+The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ServerGameNetPortal.cs)).
+
+:::important
+It's important to promptly remove disconnected players from the lobby. Otherwise, the disconnected player cannot rejoin the lobby because they are still considered in it.
+:::
+
+When a player [disconnects from Relay](https://docs.unity.com/relay/disconnection.html), eventually the Lobby and Relay service integration (necessary before we run UTP connection) kicks out the disconnected players. However, the timeout for disconnect is quite long (~2 minutes), and we do not rely solely on this mechanism.
+
+To make the process of leaving lobby more reliable, there are several additional cleanup mechanisms:
+* The client code contains application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/ApplicationController.cs)) that sends a request to remove the player from the lobby
+* The host has special logic that removes the disconnected player from the lobby as soon as the host knows about it (`NetworkManager.OnClientDisconnectCallback`). This is helpful when the client has crashed and couldn't send a "leave lobby" request.
+  * For this to work, the host uses `SessionManager` to store the mapping between UGS playerId and their NGO clientId. You can find this logic in [ServerGameNetPortal.cs - OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ServerGameNetPortal.cs).
+* Lastly, the client contains checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ClientGameNetPortal.cs).
 
 ## Troubleshooting
 
