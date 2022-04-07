@@ -531,8 +531,8 @@ module.exports = {
           {
             redirects: [
               {
-                to: 'https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom',
-                from: 'https://docs-multiplayer.unity3d.com/docs/learn/bossroom/index.html',
+                to: '/netcode/current/learn/bossroom',
+                from: '/docs/learn/bossroom/index.html',
               },
             ]
           },
