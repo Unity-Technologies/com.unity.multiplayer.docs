@@ -89,15 +89,7 @@ To run multiple instances of the same app, you need to use the command line:
 
 In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
 
-Running the game over internet currently requires either setting up a [Photon Transport for Netcode](#photon-transport) or using [Port Forwarding](#port-forwarding).
-
-#### Photon Transport
-
-[Photon Transport for Netcode for GameObjects](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/Transports/com.mlapi.contrib.transport.photon-realtime) uses Photon relay server to facilitate communication between clients and server living on different networks.
-
-:::unity Learn More
-See the [Boss Room Photon Setup Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/Photon-Realtime/Readme.md) for details.
-:::
+Running the game over internet currently requires using [Port Forwarding](#port-forwarding).
 
 #### Port Forwarding
 
