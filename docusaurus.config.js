@@ -526,17 +526,17 @@ module.exports = {
         {
             id: 'GTM-5V25JL6', // GTM Container ID
         }],
-        /*[
+        [
           '@docusaurus/plugin-client-redirects',
           {
             redirects: [
               {
-                to: '',
-                from: '',
+                to: 'https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom',
+                from: 'https://docs-multiplayer.unity3d.com/docs/learn/bossroom/index.html',
               },
             ]
           },
-        ],*/
+        ],
         'plugin-image-zoom',
         'docusaurus-plugin-sass',
         '@saucelabs/theme-github-codeblock',
