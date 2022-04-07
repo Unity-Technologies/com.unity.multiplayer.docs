@@ -1,9 +1,9 @@
 ---
-id: jobifiedserverbehavior
-title: JobifiedServerBehavior
+id: jobifiedserverbehaviour
+title: JobifiedServerBehaviour
 ---
 
-Sample code for `JobifiedServerBehavior`:
+Sample code for `JobifiedServerBehaviour`:
 
 ```csharp
 using UnityEngine;

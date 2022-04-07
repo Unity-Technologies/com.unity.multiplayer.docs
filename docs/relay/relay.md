@@ -27,19 +27,19 @@ To create an allocation on a Relay, you need to make an authenticated call to Un
 
 ```csharp
 //Ask Unity Services to allocate a Relay server that will handle up to eight players: seven peers and the host.
-Allocation allocation = await Unity.Services.Relay.Relay.Instance.CreateAllocationAsync(7);
+Allocation allocation = await Unity.Services.Relay.RelayService.Instance.CreateAllocationAsync(7);
 ```
 
 The `Allocation` class represents all the necessary data for a Host player to start hosting using the specific Relay server allocated. You don't need to understand each part of this allocation. You will feed them to your chosen transport that will handle the relay communication on its own. For the more curious and for reference, here is a simple overview of those parameters :
 - A `RelayServer` class containing the IP and port of your allocation's server
-- The allocation ID in a Base64 form and GUID form referred to as `AllocationIDBytes` and `AllocationID`
+- The allocation ID in a Base64 form and GUID form referred to as `AllocationIdBytes` and `AllocationId`
 A blob of encrypted bytes representing the connection data (known as `ConnectionData`) allows users to connect to this host.
 - A Base64 encoded `Key` for message signature.
 
 Each allocation creates a unique join code which is a short string suitable for sharing over instant messages or other means. This join code will allow your clients to join your game. You can retrieve it by calling the Relay SDK like so : 
 
 ```csharp
-string joinCode = await Unity.Services.Relay.Relay.Instance.GetJoinCodeAsync(allocation.AllocationID);
+string joinCode = await Unity.Services.Relay.RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 ```
 
 With those two calls, you now have your Relay allocation ready and the associated join code. Pass the allocation parameters to your host transport and send the join code (a simple string) over the Internet by the mean of your choice to your clients. Finally, remember always to authenticate your users before using SDK methods. The easiest way is the anonymous one (shown in the following code snippet), but you can use more advanced techniques. 
@@ -89,7 +89,7 @@ public static async Task<RelayHostData> HostGame(int maxConn)
     }
 
     //Ask Unity Services to allocate a Relay server
-    Allocation allocation = await Unity.Services.Relay.Relay.Instance.CreateAllocationAsync(maxConn);
+    Allocation allocation = await Unity.Services.Relay.RelayService.Instance.CreateAllocationAsync(maxConn);
 
     //Populate the hosting data
     RelayHostData data = new RelayHostData
@@ -105,7 +105,7 @@ public static async Task<RelayHostData> HostGame(int maxConn)
     };
 
     //Retrieve the Relay join code for our clients to join our party
-    data.JoinCode = await Unity.Services.Relay.Relay.Instance.GetJoinCodeAsync(data.AllocationID);
+    data.JoinCode = await Unity.Services.Relay.RelayService.Instance.GetJoinCodeAsync(data.AllocationID);
 
     return data;
 }
@@ -117,7 +117,7 @@ The host of your game created a Relay allocation, and your client has received i
 
 ```csharp
 //Ask Unity Services to join a Relay allocation based on our join code
-JoinAllocation allocation = await Unity.Services.Relay.Relay.Instance.JoinAllocationAsync(joinCode);
+JoinAllocation allocation = await Unity.Services.Relay.RelayService.Instance.JoinAllocationAsync(joinCode);
 ```
 
 The `JoinAllocation` type is similar to the `Allocation` one used before with the host. This type includes an additional blob of bytes which is the `HostConnectionData` that you will need to give to the transport of your choice so you can connect to the host. Finally, like for the hosting part, always remember to authenticate your user beforehand. Here is the code often used to join a Relay : 
@@ -155,7 +155,7 @@ public static async Task<RelayJoinData> JoinGame(string joinCode)
     }
     
     //Ask Unity Services for allocation data based on a join code
-    JoinAllocation allocation = await Unity.Services.Relay.Relay.Instance.JoinAllocationAsync(joinCode);
+    JoinAllocation allocation = await Unity.Services.Relay.RelayService.Instance.JoinAllocationAsync(joinCode);
     
     //Populate the joining data
     RelayJoinData data = new RelayJoinData

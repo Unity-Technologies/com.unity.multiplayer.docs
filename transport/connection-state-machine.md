@@ -5,7 +5,7 @@ title: Understand the Connection State Machine
 
 It's important to at least understand how transitions occur in the connection state machine so you make decisions depending on what triggered each state. And to understand the subtle differences depending if you are `Connecting` to another host or if you simply want to Listen for incoming connections. As you can see below the state machine for the `NetworkConnection` is pretty simple.
 
-[ConnectionState](/img/transport/com.unity.transport.connection.png)
+![ConnectionState](/img/transport/com.unity.transport.connection.png)
 
 All connections start in `Disconnected` state.
 

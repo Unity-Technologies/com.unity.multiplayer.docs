@@ -3,17 +3,25 @@ id: pipelines
 title: Use pipelines
 ---
 
-Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. This could work with any type of socket interface which has been implemented for use in the driver.
+Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. 
 
 ## How it works
 
-The way it works is that you can add any number of pipeline stages to your transport driver. So when you send a packet it will go to the first stage, then the next and so on until it's sent on the wire. On the receiving side the stages are then processed in reverse order, so the packet is correctly "unpacked" by the stages.
+The way it works is that you can add any number of pipelines (each with any number of stages) to your transport driver. The pipelines are chained together in the order defined by the user. Each pipeline input will the output of the previous pipeline. In other terms, when you send a packet it will go to the first stage, then the second one and so on until it's sent on the wire. On the receiving side the stages are then processed in reverse order, so the packet is correctly "unpacked" by the stages.
 
 For example the first stage might compress a packet and a second stage could add a sequence number (just the packets header). When receiving the packet is first passed through the sequence stage and then decompressed. The sequence stage could drop the packet if it's out of order in which case it leaves the pipeline and doesn't continue to the decompression.
 
-[PipelineStagesDiagram](/img/transport/pipeline-stages.png)
+:::note
+* The order in which the pipelines are defined is extremely important. For instance, a pipeline created with ```CreatePipeline(typeof(ReliableSequencedPipelineStage), typeof(SimulatorPipelineStage))``` is different from a pipeline created with the same stages but in the reverse order.
+ In that example, putting the simulator pipeline stage first would result in packets being dropped/delayed before there can be any reliability added to them, which is likely not the desired outcome.
+* It is highly recommended to use the same pipelines, in the same order for both the client and the server.
+:::
+
+![PipelineStagesDiagram](/img/transport/pipeline-stages.png)
 
 The pipeline stages are gathered together in a collection. This is the interface between the pipeline processor in the driver to the pipeline stages you might be using. Here the pipeline stages are initialized and so on. There is a default collection provided in the driver which has all the built in pipeline stages already configured. It's possible to just use that and use a custom collection if you have your own pipeline stage you need to add to the collection.
+
+
 
 ## Example usage
 

@@ -5,6 +5,31 @@ id: transport-changelog
 
 The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
+## [1.0.0] - 2022-03-28
+
+### Changes
+* Changed version to 1.0.0.
+
+## [1.0.0-pre.16] - 2022-03-24
+
+### Changes
+* Don't warn when overwriting settings in `NetworkSettings` (e.g. when calling the same `WithFooParameters` method twice).
+* Added new methods to set security parameters: `NetworkSettings.WithSecureClientParameters` and `NetworkSettings.WithSecureServerParameters`. These replace the existing `WithSecureParameters`, which is now obsolete.
+* Updated Collections dependency to 1.2.3.
+
+### Fixes
+* Fixed client certificate not being passed to UnityTLS on secure connections. This prevented client authentication from properly working.
+* Fixed: Reliable pipeline drop statistics inaccurate.
+
+## [1.0.0-pre.15] - 2022-03-11
+
+### Changes
+* An error is now logged if failing to decrypt a DTLS message when using Relay.
+* Decreased default Relay keep-alive period to 3 seconds (was 9 seconds). The value can still be configured through the `relayConnectionTimeMS` parameter of `NetworkSettings.WithRelayParameters`.
+
+### Fixes
+* Updated Relay sample to the most recent Relay SDK APIs (would fail to compile with latest packages).
+
 ## [1.0.0-pre.14] - 2022-03-01
 
 ### Changes

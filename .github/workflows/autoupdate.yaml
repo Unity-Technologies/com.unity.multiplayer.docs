@@ -2,7 +2,7 @@ name: auto-update
 on:
   push:
     branches:
-      - develop
+      - main
 jobs:
   autoupdate:
     name: auto-update
