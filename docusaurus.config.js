@@ -55,7 +55,7 @@ module.exports = {
                 {
                     label: 'Netcode for GameObjects',
                     className: 'nav-break',
-                    to: '/getting-started/about',
+                    to: 'about',
                     position: 'left',
                     items: [
                         {
@@ -64,7 +64,7 @@ module.exports = {
                             docsPluginId: 'releases'
                         },
                         {
-                            to: 'getting-started/about',
+                            to: 'about',
                             label: 'Documentation',
                         },
                         {
@@ -85,7 +85,7 @@ module.exports = {
                     docsPluginId: 'default',
                 },
                 {
-                    to: 'introduction',
+                    to: 'about',
                     label: 'Transport',
                     position: 'left',
                     docsPluginId: 'transport',
@@ -97,7 +97,7 @@ module.exports = {
                             docsPluginId: 'releases'
                         },
                         {
-                            to: 'introduction',
+                            to: 'about',
                             label: 'Documentation',
                             docsPluginId: 'transport',
                         },

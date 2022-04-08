@@ -1,14 +1,8 @@
-/*
-* This file creates the left navigation table of contents for the site.
-* types: category (section of content), doc (markdown file), ref (markdown page, no navigation), link (webpage)
-* id: id of the markdown file, includes subdirectory names
-*/
-
 module.exports = {
-    Netcode: [
+    "netcode": [
         {
             "type": "doc",
-            "id": "getting-started/about"
+            "id": "about"
         },
         {
             "collapsed": true,
