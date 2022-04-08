@@ -1,6 +1,6 @@
 ---
 id: install
-title: Install Transport
+title: Install Unity Transport
 description: Install Unity Transport, com.unity.transport package, using the Package Manager.
 ---
 
