@@ -1,5 +1,7 @@
+---
 id: custom-serialization
 title: Custom Serialization
+---
 
 When using `RPC`'s, `NetworkVariable`'s or any other Netcode for GameObjects (Netcode) related task that requires serialization. The Netcode uses a default serialization pipeline that looks like this:
 

@@ -1,7 +1,7 @@
 ---
 id: networkobject-parenting
 title:  NetworkObject Parenting
-description: A `NetworkObject` reparenting solution within Netcode for GameObjects (Netcode)  to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
+description: A `NetworkObject` reparenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
 
 ---
 
