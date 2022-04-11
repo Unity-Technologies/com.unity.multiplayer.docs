@@ -32,7 +32,7 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
-                            id: 'samples/release-1.1.0-pre',
+                            id: 'samples/samples-1-1-0-pre',
                         },
                         {
                             type: 'doc',
@@ -53,8 +53,19 @@ module.exports = {
                     id: 'bitesize/bitesize-changelog',
                 },
                 {
-                    type: 'doc',
-                    id: 'transport/transport-changelog',
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Transport (UTP)",
+                    "items": [
+                        {
+                            type: 'doc',
+                            id: 'transport/transport-1-0-0',
+                        },
+                        {
+                            type: 'doc',
+                            id: 'transport/transport-0-8-0',
+                        },
+                    ]
                 },
                 {
                     type: "doc",
