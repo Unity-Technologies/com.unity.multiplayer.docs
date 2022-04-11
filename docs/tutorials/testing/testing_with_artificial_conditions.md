@@ -99,9 +99,10 @@ To set the latency, jitter and packet-loss percentage values for develop builds 
 
 ```
 #if DEVELOPMENT_BUILD && !UNITY_EDITOR
-        UnityTransport.ClientPacketDelayMs = 120;
-        UnityTransport.ClientPacketJitterMs = 5;
-        UnityTransport.ClientPacketDropRate = 3;
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetDebugSimulatorParameters(
+            packetDelay: 120,
+            packetJitter: 5,
+            dropRate: 3);
 #endif
 ```
 
