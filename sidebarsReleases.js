@@ -32,6 +32,10 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
+                            id: 'samples/samples-1-1-0-pre',
+                        },
+                        {
+                            type: 'doc',
                             id: 'samples/samples-1-0-0-pre',
                         },
                         {
