@@ -133,7 +133,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/about.md')}>
+              to={useBaseUrl('netcode/current/about')}>
               Get Started
             </Link>
           </div>
