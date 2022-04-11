@@ -29,7 +29,7 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 :::important Compatibility
 - Boss Room supports those platforms supported by Netcode.
 - Boss Room is compatible with Unity 2020.3 and later.
-- Ensure your Unity installation includes the build support [module components](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html) for your OS.
+- Ensure your Unity installation includes the build support module components for your OS.
 :::
 
 ## Add the project with Unity Hub
@@ -89,7 +89,7 @@ To run multiple instances of the same app, you need to use the command line:
 
 In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
 
-Running the game over internet currently requires using [Port Forwarding](#port-forwarding) or [Integrating Boss Room with Unity Gameing Services](#integrating-boss-room-with-unity-gaming-services).
+Running the game over internet currently requires using [Port Forwarding](#port-forwarding) or [Integrating Boss Room with Unity Gaming Services](#integrating-boss-room-with-unity-gaming-services).
 
 ### Port Forwarding
 
