@@ -27,7 +27,7 @@ const features = [
     imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
-        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        Boss Room is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
         designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
@@ -78,7 +78,7 @@ const highlights = [
     ),
     link: (
       <>
-      <a href="transport/current/introduction" class="land-link">See Unity Transport</a>
+      <a href="transport/current/about" class="land-link">See Unity Transport</a>
       </>
     )
   },
@@ -133,7 +133,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/getting-started/about')}>
+              to={useBaseUrl('netcode/current/about')}>
               Get Started
             </Link>
           </div>

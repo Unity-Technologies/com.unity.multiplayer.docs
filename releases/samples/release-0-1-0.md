@@ -82,6 +82,4 @@ The following issues may occur for access and games:
 
 ## Learn more
 
-See [Getting Started with Boss Room](/docs/learn/bossroom) to install and get started with Boss Room.
-
-To provide feedback and content on documentation, see the links at the bottom of each page.
+See [Getting Started with Boss Room](../../netcode/current/learn/bossroom) to install and get started with Boss Room.
