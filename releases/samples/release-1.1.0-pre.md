@@ -1,7 +1,7 @@
-id: samples-1-1-0-pre
+id: bossroom-1-1-0-pre
 title: Boss Room Small Scale Co-op Sample 1.1.0-pre+
 sidebar_label: Boss Room 1.1.0-pre+
-description: Release notes for Boss Room Small Scale Co-op Sample v1.1.0-pre.
+description: Release notes for Boss Room Small Scale Co-op Sample v1.1.0-pre+
 ---
 
 The Boss Room: Small Scale Co-op Sample v1.1.0-pre is a pre-release release for Multiplayer Samples Co-op.
