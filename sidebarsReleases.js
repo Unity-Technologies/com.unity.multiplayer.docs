@@ -32,7 +32,7 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
-                            id: 'samples/bossroom-1-1-0-pre',
+                            id: 'samples/release-1.1.0-pre',
                         },
                         {
                             type: 'doc',
