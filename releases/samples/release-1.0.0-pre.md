@@ -178,4 +178,4 @@ This release includes the following fixes:
 
 ## Learn more
 
-See [Getting Started with Boss Room](../../docs/learn/getting-started-boss-room.md) to install and get started with Boss Room.
+See [Getting Started with Boss Room](netcode/current/learn/bossroom) to install and get started with Boss Room.
