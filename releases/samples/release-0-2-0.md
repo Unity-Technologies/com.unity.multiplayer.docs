@@ -148,4 +148,4 @@ The following issues may occur for access and games:
 
 ## Learn more
 
-See [Getting Started with Boss Room](netcode/current/learn/bossroom) to install and get started with Boss Room.
+See [Getting Started with Boss Room](../../netcode/current/learn/bossroom) to install and get started with Boss Room.
