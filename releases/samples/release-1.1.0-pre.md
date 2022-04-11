@@ -97,3 +97,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Controls modal does not scale with the window
 * Walk is triggered when trying to hit emotes on mobile
 * Late join clients have green names
+
+## Learn more
+
+See [Getting Started with Boss Room](docs/learn/getting-started-boss-room) to install and get started with Boss Room.
