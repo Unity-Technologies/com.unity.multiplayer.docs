@@ -1,6 +1,6 @@
 ---
 id: serverbehaviour
-title: ServerBehaviour
+title: ServerBehaviour Sample
 ---
 
 Sample code for `ServerBehaviour`:

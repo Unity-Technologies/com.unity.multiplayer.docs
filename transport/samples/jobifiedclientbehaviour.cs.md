@@ -1,6 +1,6 @@
 ---
 id: jobifiedclientbehaviour
-title: JobifiedClientBehaviour
+title: JobifiedClientBehaviour Sample
 ---
 
 Sample code for `JobifiedClientBehaviour`:

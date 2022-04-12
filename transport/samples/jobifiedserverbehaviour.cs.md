@@ -1,6 +1,6 @@
 ---
 id: jobifiedserverbehaviour
-title: JobifiedServerBehaviour
+title: JobifiedServerBehaviour Sample
 ---
 
 Sample code for `JobifiedServerBehaviour`:
