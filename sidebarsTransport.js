@@ -11,7 +11,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Workflows",
+            "label": "Minimal Client and Server",
             "items": [
                 {
                     "type": "doc",
@@ -19,17 +19,64 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "jobs"
+                    "id": "samples/clientbehaviour"
+                },
+                {
+                    "type": "doc",
+                    "id": "samples/serverbehaviour"
                 },
                 {
                     "type": "doc",
                     "id": "secure-connection"
                 },
+            ]
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Jobified Client and Server",
+            "items": [
                 {
                     "type": "doc",
-                    "id": "pipelines"
-                }
+                    "id": "jobs",
+                },
+                {
+                    "type": "doc",
+                    "id": "samples/jobifiedclientbehaviour"
+                },
+                {
+                    "type": "doc",
+                    "id": "samples/jobifiedserverbehaviour"
+                },
+                
             ]
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Secure Client and Server",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "secure-connection",
+                },
+                {
+                    "type": "doc",
+                    "id": "samples/secureparameters"
+                },
+                {
+                    "type": "doc",
+                    "id": "samples/secureserverbehaviour"
+                },
+                {
+                    "type": "doc",
+                    "id": "samples/secureclientbehaviour"
+                },
+            ]
+        },
+        {
+            "type": "doc",
+            "id": "pipelines"
         },
         {
             "collapsed": true,
@@ -50,41 +97,6 @@ module.exports = {
                 }
             ]
         },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Sample code",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "samples/clientbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/serverbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/jobifiedclientbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/jobifiedserverbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureparameters"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureserverbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureclientbehaviour"
-                }
-            ]
-        }
     ],
     "api": [
         {
