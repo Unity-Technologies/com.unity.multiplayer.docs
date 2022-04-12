@@ -25,10 +25,6 @@ module.exports = {
                     "type": "doc",
                     "id": "samples/serverbehaviour"
                 },
-                {
-                    "type": "doc",
-                    "id": "secure-connection"
-                },
             ]
         },
         {

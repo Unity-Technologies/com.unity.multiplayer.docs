@@ -8,6 +8,10 @@ This secure connection relies on UnityTLS and is available with the following ed
 
 ## Server authentication
 
+:::warning Warning
+Be sure private keys are not included in your code base or client builds.
+:::
+
 ### High level authentication process
 In this configuration, the server will provide a certificate to the client (`certificate`) containing the server host name.
 The client will compare the server hostname to the one it knows (`serverName`) and will then validate the provided certificate against its own root certificate (`caCertificate`) confirming the server identity.

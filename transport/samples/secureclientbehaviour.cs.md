@@ -1,6 +1,6 @@
 ---
 id: secureclientbehaviour
-title: SecureClientBehaviour
+title: SecureClientBehaviour Sample
 ---
 
 Sample code for `SecureClient`:
