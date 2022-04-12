@@ -1,6 +1,6 @@
 ---
 id: clientbehaviour
-title: ClientBehaviour Sample
+title: ClientBehaviour sample
 ---
 
 Sample code for `ClientBehaviour`:
