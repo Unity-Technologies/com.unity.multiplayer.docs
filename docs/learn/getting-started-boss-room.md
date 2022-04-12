@@ -47,6 +47,10 @@ The first time you open the project, Unity will import all assets, which will ta
 **Issues with importing due to parental control software**: If you have issues with importing you may want to check your DNS settings as some ISP parental controls  may block GitHub access. For example, see this information on [WebSafe](https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/td-p/4279652).
 :::
 
+## Register the project with Unity Gaming Services
+
+This project leverages several services from UGS to facilitate connectivity between players. In order to use these services inside your project, you must first [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside Unity Dashboard, and enable both the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services.
+
 ## Open the project
 
 To open the project for the first time:
