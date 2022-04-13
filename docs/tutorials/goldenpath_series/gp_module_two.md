@@ -51,6 +51,10 @@ using UnityEngine;
 public class NetworkVariableTest : NetworkBehaviour
 {
     private NetworkVariable<float> ServerNetworkVariable = new NetworkVariable<float>();
+    // This Code block is missing `ClientNetworkVariable`. Since it is not defined unity throws following error:
+    //`Assets/Scripts/NetworkVariableTest.cs(28,19): error CS0103: The name 'ClientNetworkVariable' does not exist in the current context`
+    private NetworkVariable<float> ClientNetworkVariable = new NetworkVariable<float>();
+
     private float last_t = 0.0f;
 
     public override void OnNetworkSpawn()
@@ -74,6 +78,10 @@ public class NetworkVariableTest : NetworkBehaviour
                 Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: "  + 
                     ClientNetworkVariable.Value);
             }
+        }
+        else
+        {
+            ClientNetworkVariable.Value = last_t;
         }
     }
 }
