@@ -17,6 +17,34 @@ It requires and supports Unity v2020.3 LTS and Netcode for GameObjects (Netcode)
 Boss Room: Small Scale Co-op Sample always requires the latest version of Unity Netcode. See [Unity Netcode](../index.md) for more information on those features, fixes, and known issues.
 :::
 
+## [1.1.1-pre] - 2022-04-13
+### Changes
+* Adding relay auto region selection using the QoS package #617 (This should reduce ping times for people not in US-Central)
+* Loading screen (#427)
+* Added popup that tells users to set up project id if it's not set up [MTT-3265][MTT-3237] (#607)
+* Message to clients when host ends game session intentionally [MTT-3202] (#594)
+
+### Dependencies
+* "com.unity.netcode.gameobjects": "1.0.0-pre.7",
+* "com.unity.services.authentication": "1.0.0-pre.4",
+* "com.unity.multiplayer.tools": "1.0.0-pre.6",
+* "com.unity.services.lobby": "1.0.0-pre.6",
+* "com.unity.services.relay": "1.0.1-pre.5",
+* "com.veriorpies.parrelsync": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync#bb3d5067e49e403d8b8ba15c036d313b4dd2c696",
+* Editor is 2020.3.33f1
+
+### Fixes:
+* Alpha4 input press opens emote drawer (#599)
+* Add Unity Gaming Services info to readmes [MTT-3263] (#608)
+* General Project Clean Up, Reduction of Import Times, Minor Material Bug MTT-2737] [MTT-3116] (#606)
+* Only server finds navigation object, asserts refactored [MTT-3248] (#602)
+* Relogin when auth token is stale [MTT-3253] (#604)
+* Scene loading issue when shutting down [MTT-2828] (#610)
+* Silencing errors that are not errors [MTT-2930] [MTT-3249] (#597)
+* Chore: bump to latest tools version, so we get the awesome new perf improvements (#614)
+* Chore: bumping package version and cleaning up dependencies for boss room package (#600)
+* Chore: upgrade to 2020.3.33f1 (#615)
+
 ## [1.1.0-pre] - 2022-04-07
 ### Changes
 * Adding Lobby service integration and removing Photon (#480 (#567) (#486) (#547) (#585) (#525) (#566) (#511) (#494) (#506) (#510) (#526) (#595) (#551) (#556) (#515) (#553) (#544) (#522) (#524) (#539) (#565) (#550) (#592) (#505) (#518) (#596))
