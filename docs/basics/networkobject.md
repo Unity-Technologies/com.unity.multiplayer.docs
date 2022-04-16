@@ -10,7 +10,7 @@ Netcode for Gameobjects' high level components, the RPC system and the Object Sp
 :::
 
 :::note
-`GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPC`s or `NetworkVariables` by default. For infromation on how to send  a reference to a `NetworkObject` over `RPC`s or `NetworkVariables` see [NetworkObject &NetworkBehaviour](../advanced-topics/serialization/networkobject-serialization.md).
+`GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPC`s or `NetworkVariables` by default. For information on how to send  a reference to a `NetworkObject` over `RPC`s or `NetworkVariables` see [NetworkObject &NetworkBehaviour](../advanced-topics/serialization/networkobject-serialization.md).
 :::
 
 ## NetworkObject
