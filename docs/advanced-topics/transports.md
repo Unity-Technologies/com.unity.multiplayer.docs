@@ -20,7 +20,7 @@ A transport layer can provide:
 
 ## Unity Transport Package (UTP)
 
-Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](transport/current/about.md) for more information and how to [install](/transport/current/install.md).
+Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](../../transport/current/about) for more information and how to [install](transport/current/install).
 
 ## Unity’s UNet Transport Layer API
 
