@@ -4,7 +4,7 @@ title: Transports
 description: A transport collects messages from your application and transmits them safely over the network. It ensures that all packets arrive and in order, if needed.
 ---
 
-Unity Netcode for GameObjects (Netcode) uses Unity Transport by default and also supports UNet Transport (deprecated) up to Unity 2022.2 version.
+Unity Netcode for GameObjects (Netcode) uses Unity Transport by default and supports UNet Transport (deprecated) up to Unity 2022.2 version.
 
 ## So what is a transport layer?
 
@@ -20,7 +20,7 @@ A transport layer can provide:
 
 ## Unity Transport Package (UTP)
 
-Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](../current/transport/about.md) for more information and how to [install](../current/transport/install.md).
+Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](netcode/current/transport/about.md) for more information and how to [install](/transport/install.md).
 
 ## Unity’s UNet Transport Layer API
 
