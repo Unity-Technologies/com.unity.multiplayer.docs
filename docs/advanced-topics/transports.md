@@ -20,11 +20,11 @@ A transport layer can provide:
 
 ## Unity Transport Package (UTP)
 
-Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](https://docs-multiplayer.unity3d.com/transport/1.0.0/introduction) for more information and how to [install](https://docs-multiplayer.unity3d.com/transport/1.0.0/install).
+Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](../../transport/about.md) for more information and how to [install](../../transport/install.md).
 
 ## Unity’s UNet Transport Layer API
 
-Although it is deprecated, [UNet](https://docs.unity3d.com/Manual/UNetUsingTransport.html) transport is integrated into the Netcode and will be supported up to Unity 2022.2 where it is no longer available. As Unity Transport (UTP) became the default transport for the Netcode, we highly recommend sticking with it instead of UNet for the long term.
+UNet is a deprecated solution that is no longer supported after Unity 2022.2. Unity Transport Package (UTP) is the default transport for Netcode for GameObjects. We recommend transitioning to UTP as soon as possible.
 
 ### Community Transports or Writing Your Own
 
