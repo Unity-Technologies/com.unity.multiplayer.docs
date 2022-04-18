@@ -1,6 +1,6 @@
 ---
 id: secureserverbehaviour
-title: SecureServerBehaviour Sample
+title: SecureServerBehaviour sample
 ---
 
 Sample code for `SecureServerBehaviour`:
