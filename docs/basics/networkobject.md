@@ -28,7 +28,7 @@ Give ownership of an object using the following:
 GetComponent<NetworkObject>().ChangeOwnership(clientId);
 ```
 
-The default behavior is that an object is owned by the server. To give ownership back to the server, you can use the `RemoveOwnership` call:
+The default behavior is that an object is owned by the client. To give ownership back to the server, you can use the `RemoveOwnership` call:
 
 ```csharp
 GetComponent<NetworkObject>().RemoveOwnership();
