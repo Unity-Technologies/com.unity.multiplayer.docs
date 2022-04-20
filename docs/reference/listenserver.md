@@ -5,6 +5,16 @@ sidebar_label: Listen server and host architecture
 description: Learn more about creating a game with a listen server and host architecture.
 ---
 
+## Client hosted (Listen server)
+
+Listen servers run in the same process as a game client. 
+
+![Client Hosted](/img/client-hosted.png)
+
+:::note
+They function like dedicated servers, but typically have the disadvantage of having to communicate with remote players over the residential internet connection of the hosting player. Performance is also reduced by the simple fact that the machine running the server is also generating an output image. 
+:::
+
 ## What is a listen server
 
 A listen server is hosted on one of the player's machine. It acts both as a server and as a client. This means one of the players will both play and own the game world and other players will connect to it. This has performance, security and cost considerations.
