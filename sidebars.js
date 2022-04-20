@@ -7,6 +7,78 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
+            "label": "Multiplayer Networking Overview",
+            "items": [
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Multiplayer Networking Concepts",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "reference/high-level-terminology"
+                        },
+                        {
+                            "collapsed": true,
+                            "type": "category",
+                            "label": "Lag",
+                            "items": [
+                                {
+                                    "type": "doc",
+                                    "id": "reference/ticks-and-update-rates"
+                                },
+                                {
+                                    "type": "doc",
+                                    "id": "reference/lagandpacketloss"
+                                },
+                                {
+                                    "type": "doc",
+                                    "id": "reference/clientside_interpolation"
+                                },
+                                {
+                                    "type": "doc",
+                                    "id": "reference/dealing-with-latency"
+                                },
+                            ],
+                        },
+                        {
+                            "type": "doc",
+                            "id": "reference/network-terms"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "reference/prioritization"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "reference/relevancy"
+                        },
+                    ],
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Multiplayer Game Architecture",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "reference/game-arch-intro",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "reference/listen-server",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "reference/dedicated-server",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
             "label": "Installation and Migration",
             "items": [
                 {
@@ -192,11 +264,11 @@ module.exports = {
                             "items": [
                                 {
                                     "type": "doc",
-                                    "id": "learn/rpcvnetvar"
+                                    "id": "reference/rpcvnetvar"
                                 },
                                 {
                                     "type": "doc",
-                                    "id": "learn/rpcnetvarexamples"
+                                    "id": "reference/rpcnetvarexamples"
                                 },
                             ],
                         },
@@ -363,83 +435,6 @@ module.exports = {
             {
                 "type": "doc",
                 "id": "learn/introduction",
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Reference Material",
-                "items": [
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Networking Concepts",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/high-level-terminology"
-                            },
-                            {
-                                "collapsed": true,
-                                "type": "category",
-                                "label": "Lag",
-                                "items": [
-                                    {
-                                        "type": "doc",
-                                        "id": "reference/glossary/ticks-and-update-rates"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/lagandpacketloss"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/clientside_interpolation"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/dealing-with-latency"
-                                    },
-                                ],
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-terms"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/prioritization"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/relevancy"
-                            },
-                        ],
-
-                    },
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Game Architecture",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/multiplayer-game-arhitecture"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-topologies"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "learn/listen-server-host-architecture"
-                            }
-                        ]
-                    },
-
-
-                ],
             },
             {
                 "collapsed": true,

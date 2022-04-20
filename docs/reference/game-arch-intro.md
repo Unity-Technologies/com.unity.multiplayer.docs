@@ -1,5 +1,5 @@
 ---
-id: multiplayer-game-arhitecture
+id: game-arch-intro
 title: Introduction
 sidebar_label: Introduction
 ---

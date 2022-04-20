@@ -1,5 +1,5 @@
 ---
-id: listen-server-host-architecture
+id: listen-server
 title: Create a game with a listen server / host architecture
 sidebar_label: Listen server and host architecture
 description: Learn more about creating a game with a listen server and host architecture.
@@ -66,7 +66,7 @@ The advantages of doing this compared to a direct connection is that connecting 
 
 ### Option C: NAT Punchthrough
 
-The idea behind NAT Punchthrough is to open a direct connection between clients without having one of them do portforwarding. There are multiple ways to do NAT punchthrough such as [STUN](../reference/glossary/network-terms.md#session-traversal-utilities-for-nat-stun), [ICE](../reference/glossary/network-terms.md#interactive-connectivity-establishment-ice) or [UDP hole punching](../reference/glossary/network-terms.md#udp-hole-punching). When NAT punching suceeds clients will have a direct connection open between them and can send packets to each other. Often NAT punching can fail this depends on the type of NATs which is between the clients. Since most games want everyone to be able to play their games, NAT Punchthrough is not a popular option and is mostly only used with a fallback relay which is the next described option.
+The idea behind NAT Punchthrough is to open a direct connection between clients without having one of them do portforwarding. There are multiple ways to do NAT punchthrough such as [STUN](../reference/network-terms.md#session-traversal-utilities-for-nat-stun), [ICE](../reference/network-terms.md#interactive-connectivity-establishment-ice) or [UDP hole punching](../reference/network-terms.md#udp-hole-punching). When NAT punching suceeds clients will have a direct connection open between them and can send packets to each other. Often NAT punching can fail this depends on the type of NATs which is between the clients. Since most games want everyone to be able to play their games, NAT Punchthrough is not a popular option and is mostly only used with a fallback relay which is the next described option.
 
 ### Option D: NAT Punch and Relay Fallback
 
