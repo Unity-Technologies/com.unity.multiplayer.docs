@@ -6,6 +6,7 @@ module.exports = {
         },
         {
             "collapsed": true,
+            "type": "category",
             "label": "Multiplayer Networking Overview",
             "items": [
                 {
