@@ -77,9 +77,9 @@ If you want to make changes to *develop* code and content, you may want to creat
 
 See the following content to continue your journey using Netcode:
 
-* [Migrating From UNet to MLAPI](migratingtomlapi.md) for UNet users
+* [Migrating From UNet to MLAPI](migratingtonetcode) for UNet users
 * [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Netcode
-* [Building Golden Path](../tutorials/goldenpath_series/mlapi_starting-out.md) to get started from install to project creation
+* [Building Golden Path](../tutorials/goldenpath_series/starting-out.md) to get started from install to project creation
 * [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
 
 ## Troubleshooting
