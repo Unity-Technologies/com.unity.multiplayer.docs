@@ -7,15 +7,11 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Installation and Migration",
+            "label": "Getting Started",
             "items": [
                 {
                     "type": "doc",
                     "id": "migration/install"
-                },
-                {
-                    "type": "doc",
-                    "id": "tools/install-tools",
                 },
                 {
                     "type": "doc",
@@ -101,15 +97,8 @@ module.exports = {
                     "id": "advanced-topics/transports"
                 },
                 {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Relay",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "relay/relay"
-                        },
-                    ]
+                    "type": "doc",
+                    "id": "relay/relay"
                 },
                 {
                     "type": "doc",
@@ -303,15 +292,26 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
+            "label": "Tools",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "tools/install-tools",
+                },
+                {
+                    "type": "doc",
+                    "id": "basics/profiling",
+                },
+            ]
+        },
+        {
+            "collapsed": true,
+            "type": "category",
             "label": "Debugging",
             "items": [
                 {
                     "type": "doc",
                     "id": "basics/logging"
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/profiling"
                 },
                 {
                     "type": "doc",
@@ -331,7 +331,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Tutorials",
+            "label": "Walk-Throughs",
             "items": [
                 {
                     "collapsed": true,
