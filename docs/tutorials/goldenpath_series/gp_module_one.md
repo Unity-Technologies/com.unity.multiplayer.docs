@@ -376,7 +376,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 </details>
 
-If we are a client, we call a `ServerRpc`. A [`ServerRpc`](../advanced-topics/../../advanced-topics/message-system/serverrpc.md) can be invoked by a client to be executed on the server.
+If we are a client, we call a `ServerRpc`. A [`ServerRpc`](../../advanced-topics/message-system/serverrpc) can be invoked by a client to be executed on the server.
 
  <details open>
 <summary>Click to show/hide the Code.
