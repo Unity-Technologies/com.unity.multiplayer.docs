@@ -294,6 +294,10 @@ module.exports = {
                     "type": "doc",
                     "id": "tutorials/testing/testing_with_artificial_conditions"
                 },
+                {
+                    "type": "doc",
+                    "id": "tutorials/testing/testing_client_connection_management"
+                },
             ]
         },
         {
