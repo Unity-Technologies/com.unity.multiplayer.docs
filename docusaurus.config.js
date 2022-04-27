@@ -92,7 +92,7 @@ module.exports = {
                     className: 'nav-break',
                     items: [
                         {
-                            to: '/transport/transport-changelog',
+                            to: '/transport/transport-1-0-0',
                             label: 'Release Notes',
                             docsPluginId: 'releases'
                         },

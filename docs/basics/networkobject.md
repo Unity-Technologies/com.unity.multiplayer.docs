@@ -9,10 +9,6 @@ Netcode for Gameobjects' high level components, the RPC system and the Object Sp
 `GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPC`s or `NetworkVariables` by default. For infromation on how to send  a reference to a `NetworkObject` over `RPC`s or `NetworkVariables` see [NetworkObject &NetworkBehaviour](../advanced-topics/serialization/networkobject-serialization.md).
 :::
 
-:::note
-`GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPC`s or `NetworkVariables` by default. For infromation on how to send  a reference to a `NetworkObject` over `RPC`s or `NetworkVariables` see [NetworkObject &NetworkBehaviour](../advanced-topics/serialization/networkobject-serialization.md).
-:::
-
 ## NetworkObject
 
 For an object to be replicated across the network, it needs to have a `NetworkObject` component.
@@ -32,7 +28,7 @@ Give ownership of an object using the following:
 GetComponent<NetworkObject>().ChangeOwnership(clientId);
 ```
 
-The default behavior is that an object is owned by the server. To give ownership back to the server, you can use the `RemoveOwnership` call:
+The default behavior is that an object is owned by the client. To give ownership back to the server, you can use the `RemoveOwnership` call:
 
 ```csharp
 GetComponent<NetworkObject>().RemoveOwnership();
