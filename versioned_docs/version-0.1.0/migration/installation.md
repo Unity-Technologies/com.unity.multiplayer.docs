@@ -73,9 +73,9 @@ See the following content to continue your journey using MLAPI:
 You may come across different errors when installing MLAPI. The following troubleshooting tips should help you with the most common issues.
 
 ### Preview Packages
-To include preview packages in the Package Manager, select the [Gear Icon](/img/gear.png) then Advanced Project Settings. Select the **Enable Preview Packages** option and approve the message that displays.
+To include preview packages in the Package Manager, select the ![Gear Icon](/img/gear.png) then Advanced Project Settings. Select the **Enable Preview Packages** option and approve the message that displays.
 
-[Enable Preview Packages](/img/install/install-preview-pkg.png)
+![Enable Preview Packages](/img/install/install-preview-pkg.png)
 
 ### Errors with incorrect package loading
 

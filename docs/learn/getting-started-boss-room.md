@@ -156,7 +156,7 @@ Next is lobby and relay.
 1. The would-be host enters the lobby name, specifies if it's public or private and hits the **Create** button.
 1. The [Lobby creation API](https://docs.unity.com/lobby/creating-a-lobby.html) call is made. The newly created lobby is **locked** (i.e prevented from appearing in the list of publicly available, fully set up games that are ready to be joined) until we successfully complete the relay allocation and Netcode startup steps below.
 1. The host requests a relay allocation from the [Relay service](https://docs.unity.com/relay/introduction.html).
-2. [UTP](../../transport/index.md) starts and the host is switches to the character selection scene. The lobby itself is now considered unlocked and is available for other clients to join.
+2. [UTP](../../../transport/current/about) starts and the host is switches to the character selection scene. The lobby itself is now considered unlocked and is available for other clients to join.
 
 ##### The Lobby Client Flow
 * There are several ways to connect to a lobby:
@@ -172,7 +172,7 @@ Currently, the Lobby service has to be [polled for updates](https://docs.unity.c
 
 Handling player disconnections and reconnections is a necessity in a multiplayer game.
 
-Boss Room uses a [session management](https://docs-multiplayer.unity3d.com/docs/develop/advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)). 
+Boss Room uses a [session management](../advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)). 
 
 The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ServerGameNetPortal.cs)).
 
