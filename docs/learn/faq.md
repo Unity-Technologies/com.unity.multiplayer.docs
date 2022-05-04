@@ -43,6 +43,8 @@ We recommend the following:
    
     [Unity Relay](https://docs.unity.com/relay/introduction.html) offers a way for game developers to securely provide increased connectivity between players by using a join code style workflow without needing to invest in a third-party solution. The Relay service enables developers to connect players together using a listen server. Instead of using dedicated game servers (DGS), the Relay service provides connectivity through a universal Relay server acting as a proxy.
 
+    Another option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
+
 
 ### Is it good for add Spawnable object into NetworkConfig after start host? 
 
