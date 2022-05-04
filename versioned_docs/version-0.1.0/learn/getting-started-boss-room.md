@@ -4,7 +4,7 @@ title: Getting Started with Boss Room
 description: Learn more about installing and running the Boss Room game sample.
 ---
 
-[Banner](/img/banner.png)
+![Banner](/img/banner.png)
 
 :::important
 This project is currently in early-access.

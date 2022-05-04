@@ -132,7 +132,7 @@ The page also includes information on nested serial types.
 
 ### SyncVars
 
-SyncVars have been removed in Netcode. Convert your existing SyncVars into [NetworkVariables](../mlapi-basics/networkvariable).
+SyncVars have been removed in Netcode. Convert your existing SyncVars into [NetworkVariables](../basics/networkvariable).
 
 ## 4.5 Troubleshooting
 

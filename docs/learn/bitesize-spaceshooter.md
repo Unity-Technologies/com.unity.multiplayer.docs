@@ -40,9 +40,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 The `2DSpaceShooter` object creates many objects dynamically at runtime including bullets, asteroids, and pickups. 2DSpaceShooter uses object pooling to avoid performance issues of instantiating and destroying Unity Objects all the time and creating allocations in the process.
 
-2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository. 
+2DSpaceShooter uses the NetworkObjectPool script, which can be found in the Community Contributions Repository. 
 
-[pool img](/img/bitesize/invader-networkobjectpool.png)
+![pool img](/img/bitesize/invader-networkobjectpool.png)
 
 All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically be returned to the pool instead of getting destroyed.
 

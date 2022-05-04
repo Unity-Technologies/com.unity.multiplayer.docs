@@ -100,7 +100,7 @@ After you complete the **Update Script References** process of the patcher, the 
 
 Most likely at this point you will get a warning telling you that the script cannot be loaded. No need to panic, this is expected and your serialized data won't be lost. As soon as you finish up migrating and clean up all error messages your data will appear again.
 
- [NetworkManager component after upgrading](/img/upgrade-guide/networkmanager-component.png)
+ ![NetworkManager component after upgrading](/img/upgrade-guide/networkmanager-component.png)
 
 
 There is also a **Replace Type Names** button in the Patcher window. This step is optional. It automatically renames old type names in your scripts to the API changes made in Unity MLAPI, saving you some time to manually rename it. It performs a simple global replace of some of the type names. You may want to manually do this process instead if you want more control over changes.

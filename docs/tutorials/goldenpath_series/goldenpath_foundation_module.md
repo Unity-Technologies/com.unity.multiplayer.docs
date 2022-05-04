@@ -69,7 +69,7 @@ You should  now save the golden path foundation project as you will be building 
 For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
 
 - [Network Manager](../../components/networkmanager.md)
-- [Transport](../advanced-topics/../../advanced-topics/custom-transports.md)
+- [Transport](../../advanced-topics/transports.md)
 - [Network Object](../../basics/networkobject.md)
 
 

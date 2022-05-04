@@ -100,7 +100,7 @@ public NetworkDriver m_Driver;
 private NativeList<NetworkConnection> m_Connections;
 ```
 
-You need to declare a `NetworkDriver`. You also need to create a [NativeList](http://native-list-info) to hold our connections.
+You need to declare a `NetworkDriver`. You also need to create a NativeList to hold our connections.
 
 ### Start method
 
