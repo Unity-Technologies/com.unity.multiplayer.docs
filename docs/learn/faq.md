@@ -41,13 +41,9 @@ We recommend the following:
    It should work just like over LAN you just have to connect to the public IP itself. Make sure to open UDP on the router. Many forward ports tutorials are available to review, including this option https://portforward.com/.
 1. Use a relay. 
    
-   There is an [unofficial Netcode relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You could also use Netcode's list server to browse through all hosts.
-   
-   The other option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
+    [Unity Relay](https://docs.unity.com/relay/introduction.html) offers a way for game developers to securely provide increased connectivity between players by using a join code style workflow without needing to invest in a third-party solution. The Relay service enables developers to connect players together using a listen server. Instead of using dedicated game servers (DGS), the Relay service provides connectivity through a universal Relay server acting as a proxy.
 
-  :::note About Relays
-  We know there is a high demand for an out-of-the-box relay solution for Netcode, and have plans to resolve in the future.
-  :::
+    Another option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
 
 
 ### Is it good for add Spawnable object into NetworkConfig after start host? 

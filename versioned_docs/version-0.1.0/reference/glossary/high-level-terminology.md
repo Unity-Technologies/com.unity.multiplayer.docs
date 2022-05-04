@@ -11,7 +11,7 @@ The transport layer collects message segments from applications, and transmits t
 
 This layer enables the host to send and receive error corrected data, packets or messages over a network 
 
-[](/img/networking-transport.png)
+![](/img/networking-transport.png)
 
 ## Client Runtime
 

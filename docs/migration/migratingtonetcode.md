@@ -141,7 +141,7 @@ public class MyNetcodeExample : NetworkBehaviour
 
 </Tabs>
 
-See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information. 
+See [NetworkBehaviour](../basics/networkbehaviour.md) for more information. 
 
 ## Replace SyncVar 
 
@@ -170,7 +170,7 @@ public class SpaceShip : NetworkBehaviour
     public int Health = 42;
 
     void OnChangeHealth(int newHealth){
-        Health = newHealth; //This is no longer necessary in MLAPI.
+        Health = newHealth; //This is no longer necessary in Netcode.
         Debug.Log($"My new health is {newHealth}.");
     }
 }
@@ -199,7 +199,7 @@ void Awake()
 }
 
 void OnChangeHealth(int oldHealth, int newHealth){
-    //There is no need anymore to manually assign the value of the variable here with MLAPI. This is done automatically by MLAPI for you.
+    //There is no need anymore to manually assign the value of the variable here with Netcode. This is done automatically by Netcode for you.
     Debug.Log($"My new health is {newHealth}. Before my health was {oldHealth}");
 }
 ```
@@ -245,7 +245,7 @@ public void Update(){
 
 </Tabs>
 
-See [NetworkVariable](../mlapi-basics/networkvariable.md) for more information.
+See [NetworkVariable](../basics/networkvariable.md) for more information.
 
 
 ## Replace SyncList with NetworkList
@@ -467,7 +467,7 @@ go.GetComponent<NetworkObject>().Spawn();
 
 </Tabs>
 
-See [Object Spawning](../mlapi-basics/object-spawning.md) for more information.
+See [Object Spawning](../basics/object-spawning.md) for more information.
 
 ## Custom Spawn Handlers
 
@@ -524,7 +524,7 @@ public bool IsVisibleToPlayer(NetworkObject networkObject, NetworkClient client)
 
 </Tabs>
 
-See [Object Visbility](../mlapi-basics/object-visibility.md) to learn more about MLAPIs network visiblity check.
+See [Object Visbility](../basics/object-visibility.md) to learn more about Netcodes network visiblity check.
 
 ## Update SceneManagement
 
@@ -602,7 +602,7 @@ public void MyClientOnlyFunction()
 
 ## Replace SyncEvent with RPC event
 
-MLAPI does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to MLAPI, send an RPC to invoke the event on the other side.
+Netcode does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to Netcode, send an RPC to invoke the event on the other side.
 
 <Tabs
   className="unique-tabs"
@@ -660,13 +660,13 @@ public class DamageClass : NetworkBehaviour
 
 ## Network Discovery
 
-Netcode does not provide Network Discovery. The Contributions repository provides an example implementation for [NetworkDiscovery] (https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/com.community.netcode.extensions/Runtime/NetworkDiscovery).
+Netcode does not provide Network Discovery. The Contributions repository provides an example implementation for [NetworkDiscovery](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/com.community.netcode.extensions/Runtime/NetworkDiscovery).
 
 ## See Also
 
 For more information, see the following:
 
-* <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity MLAPI.
+* <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity Netcode.
 * [API Reference](../api/introduction.md) - Review available APIs.
 * Guides and tutorials - Review guides for Netcodev and check [tutorials](../learn/index.md).
 
