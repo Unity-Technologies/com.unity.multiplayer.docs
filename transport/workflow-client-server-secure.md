@@ -82,7 +82,7 @@ public static class SecureParameters
         public static FixedString4096Bytes MyGameClientCA = new FixedString4096Bytes(
 @"-----BEGIN CERTIFICATE-----
             ***   
- -----END CERTIFICATE-----"); // This should contain the content of myGameClientCA.pem 
+-----END CERTIFICATE-----"); // This should contain the content of myGameClientCA.pem 
  
         public static FixedString4096Bytes MyGameServerCertificate = new FixedString4096Bytes(
 @"-----BEGIN CERTIFICATE-----     
