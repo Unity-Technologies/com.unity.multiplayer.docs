@@ -4,7 +4,7 @@ title: Create secure client and server
 ---
 The unity transport protocol can be configure to encrypt the connection between the server and the client while ensuring the server's/client's authenticity.
 This secure connection relies on UnityTLS and is available with the following editor versions:
-`2020.3.24f1+, 2021.2+, 2022.1+`
+`2020.3 (2020.3.34 minimum and above),  2021.3 (2021.3.1f1 minimum and above) and 2022.1 (2022.1.0b16 minimum and above)`
 
 ## Server authentication
 
@@ -82,7 +82,7 @@ public static class SecureParameters
         public static FixedString4096Bytes MyGameClientCA = new FixedString4096Bytes(
 @"-----BEGIN CERTIFICATE-----
             ***   
- -----END CERTIFICATE-----"); // This should contain the content of myGameClientCA.pem 
+-----END CERTIFICATE-----"); // This should contain the content of myGameClientCA.pem 
  
         public static FixedString4096Bytes MyGameServerCertificate = new FixedString4096Bytes(
 @"-----BEGIN CERTIFICATE-----     
