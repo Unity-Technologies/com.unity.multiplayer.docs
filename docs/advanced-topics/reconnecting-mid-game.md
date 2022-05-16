@@ -21,3 +21,8 @@ To make the experience smoother for the players, you can have clients automatica
 You could also want to implement the following features, depending on your game:
 - Include multiple reconnection attempts, so it retries if an attempt fails. You'll have to define how many attempts there should be, and make sure that the `NetworkManager` properly shuts down between each attempt and that the client's state is properly reset if needed.
 - Give an option for players to cancel the process. This could be especially useful in cases where there are a lot of reconnection attempts, or if each attempt takes a long time.
+
+
+### Automatic reconnection example
+
+To see an example of how to implement automatic reconnection, you can have a look at the Boss Room sample. The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Game/ConnectionManagement/ClientGameNetPortal.cs). Boss Room's implementation uses a coroutine (`TryToReconnect`) that attempts to reconnect a few times one after the other, until it either succeeds of goes beyond the maximum number of attempts. The coroutine is triggered when a client disconnects, depending on the reason of that disconnect (see `OnDisconnectOrTimeout`) and is stopped when a succesfull connection occurs, or when a user cancels it (see `OnConnectFinished` and `OnUserDisconnectRequest`). Another thing of note in this sample is that in the case where the connection is done through the Lobby and Relay services, the client has to make sure that it has properly left the lobby before each reconnection attempt.
