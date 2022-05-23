@@ -48,4 +48,7 @@ darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
 
 `NetworkTransform` always synchronizes positions from the server to the clients and position changes on the clients are not allowed. Netcode for GameObjects comes with a sample containing a `ClientNetworkTransform`. This transform synchronizes the position of the owner client to the server and all other client allowing for client authoritative gameplay.
 
-To install the `ClientNetworkTransform` sample into your project open the `Package Manager` window in the Unity Editor and select the `Netcode for GameObjects` package. In the description of the package you can find a list of package samples. Press the `Install` button next to the `ClientNetworkTransform` sample to install it into your existing Unity project. 
+The `ClientNetworkTransform` lives inside the Multiplayer Samples Utilities package. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"
+
+Or you can directly add this line to your `manifest.json` file:
+ "com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"

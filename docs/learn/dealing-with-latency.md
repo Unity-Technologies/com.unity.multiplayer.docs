@@ -233,7 +233,7 @@ To do continuous client driven actions, there's a few more considerations to tak
 - You'd need to send it on tick or at worst on FixedUpdate. Sending on Update() would spam your connection.
 
 
-A sample for a ClientNetworkTransform (can be found in com.unity.netcode.gameobjects/Samples/ClientNetworkTransform/Scripts/ClientNetworkTransform.cs) has been created, so you don't have to reimplement this yourself for transform updates. A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) has been created on how to use it. See [movement script](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/main/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs).
+A sample for a [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) has been created, so you don't have to reimplement this yourself for transform updates. A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) has been created on how to use it. See [movement script](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/main/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs).
 :::
 
 :::info
