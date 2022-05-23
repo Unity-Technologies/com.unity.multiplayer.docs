@@ -2,8 +2,10 @@
 id: dedicated-server
 title: Dedicated Game Server (DGS)
 sidebar_label: Dedicated Game Server
-description: NEW DESCRIPTION
+description: Dedicated game servers creates a stable, more enjoyable gaming experience for your players.
 ---
+
+<!-- Doc Note to self: Include content from Sam's DGS comments in Slack. See DM from him.-->
 
 ## What is a dedicated server?
 
@@ -11,23 +13,24 @@ A dedicated server is a standalone, headless platform build optimized for runnin
 
 ![Dedicated Server](/img/ded_server.png)
 
-Many multiplayer games rely on a client-host (a listen server setup) as both the client and server. Because it relies on the host machine's internet connection and hardware capabilities, its simplistic setup can cause performance issues such as lag, slow loading times, crashes, loss of save files, and dropped games. A dedicated server is often a more stable and enjoyable gaming experience.
+Many multiplayer games rely on a client-host (a [listen server setup](listenserver.md)) as both the client and server. Because it relies on the host machine's internet connection and hardware capabilities, its simplistic setup can cause performance issues such as lag, slow loading times, crashes, loss of save files, and dropped games. A dedicated server is often a more stable and enjoyable gaming experience. And it can reduce some cheating concerns and unfair advantages by separating the server from a host player.
 
-A dedicated server manages all hosting duties, such as: player locations and activity, games rules, physics, weapons, and equipment. However, the dedicated server does not run the game engine or render anything. These functions (such as graphics, game controls, and sound) is responsible on the client's machine. The dedicated server _instructs_ the client machines on what to render and when.
+A dedicated server manages all hosting duties, depending on your particular game: player locations and activity, games rules, physics, weapons, and equipment. However, the dedicated server does not run the game engine or render anything. These functions (such as graphics, game controls, and sound) is responsible on the client's machine. The dedicated server _instructs_ the client machines on what to render and when.
 
 ## Advantages
 
 * Greater processing, memory, and storage capabilities relative to other hosting solutions
 * Facilitates a reliable, stable, and faster connection
 * Often eliminates lag, crashes, or glitches
+* Reduces some cheating and unfair advantage concerns
 * Can handle high traffic
 * Less prone to corrupt save files
 * Higher levels of security based on admin login definitions and the server's sole purpose to run the game
 
 ## Disadvantages
 
-* Setup is more complex than other network topologies
-* Requires regular maintenance of both the hardware and software of the server device
+* Setup is more complex to manage the separate projects for the server and the client 
+* Can require regular maintenance of both the hardware and software of the server device; although this disadvantage is not as problematic when hosting your server in the cloud
 * Higher expenses to invest in effective hardware and electricity draw
 
 ## Real life examples
@@ -40,50 +43,56 @@ A dedicated server manages all hosting duties, such as: player locations and act
 
 ## When to use
 
-Popular to create a stable online environment for players
+Popular to create a stable online environment for players when a listen server setup provides a less enjoyable gaming experience
 
-## Options/how to use
+## How to use Unity's Dedicated Server Module
 
-### Option A: Unity's Dedicated Server Module
+You can use the Dedicated Server module from the Unity Hub to implement your own dedicated game server.
 
-You can install the Dedicated Server module from the Unity Hub to implement
+The default optimization for the Unity Dedicated Server module makes the following adjustments:
+* Removes the audio subsystem
+* Removes lighting threads
+* Removes some player loop callbacks
+  * Disables player update loop registration of `SendMouseEvents`
+  * Disables player update loop registration of `UpdateAllRenderers`
+  * Disables player update loop registration of `PlayerUpdateCanvases`
+* Removes GPU-only assets (such as textures and meshes), but not assets with CPU **Read/Write** enabled
+* Does not remove items located in the resource directory
 
-~~~~~~~~ [Johann's original content that I'm going to finess here]
-Some of these optimizations are automatically implemented as default while some additional ones are left for the user to specify as they are innately related to the game implementation.
-Current default optimization
+### Additional optimizations to consider
 
-Removal of the Audio subsystem.
-Lighting threads are removed. 
-Some player loop callbacks are removed 
-player update loop registration of SendMouseEvents is disabled.
-player update loop registration of UpdateAllRenderers is disabled.
-player update loop registration of PlayerUpdateCanvases is disabled.
-GPU-only assets (textures and meshes) are removed by default while assets with CPU Read/Write enabled are not removed.Items located in the resource directory are protected from removal. 
-User specific additional optimization
+* Use `#define UNITY_SERVER` for an item to present uniquely on the server <!-- I'd like to expand on how to do this-->
+* Use different class implementations to separate player-specific code from server-specific code
+* Use APIs to remove some items from the player loop <!--I'd like to add some specifics about this as well -->
 
-Usage of the #define UNITY_SERVER for an item to be present uniquely on the server.
-Separate Player specific code vs Server specific through different class implementations.
-API to remove some items from the player loop 
-Creating a dedicated server 
+### Creating a dedicated server
+
+<!--Prerequisites to consider-->
+
+#### From the Unity editor
 From the upper menu of the editor, select File→ Build Settings 
 Within the pop up window, select `Dedicated server (see pic)` 
 
-To Build from a script use BuildPlayerOptions.subtarget
-Additional settings
+Additional settings <!--Do these settings apply to both methods (editor and script?)-->
 The additional server settings are found through `Player settings` 
 
+#### Build with a script
 
+To Build from a script use BuildPlayerOptions.subtarget
 
-Advanced functionalities and CLI
+Advanced functionalities and CLI 
 Creating a server from the build command line should be:
 -buildTarget Linux64 -standaloneBuildSubtarget Server
 
 Additional information
 In case of build for Linux, users can find the toolchain package here.
-~~~~~~~~
+
+<!--
+Documentation note: Limiting the following content until we determine as a product to provide options outside of a Unity provided option.
 
 ### Option B: A Dedicated Gaming Server Provider
 
 ### Option C: Custom Dedicated Server
 
 ## Netcode and dedicated servers
+-->
