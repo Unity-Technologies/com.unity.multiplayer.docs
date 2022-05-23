@@ -28,8 +28,23 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
+                    "label": "Netcode Tools",
+                    "items": [
+                        {
+                            type: 'doc',
+                            id: 'tools/tools-1-0-0-pre',
+                        },
+                    ]
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
                     "label": "Boss Room Samples",
                     "items": [
+                        {
+                            type: 'doc',
+                            id: 'samples/samples-1-2-0-pre',
+                        },
                         {
                             type: 'doc',
                             id: 'samples/samples-1-1-0-pre',
