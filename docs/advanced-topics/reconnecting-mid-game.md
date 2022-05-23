@@ -3,26 +3,49 @@ id: reconnecting-mid-game
 title: Reconnecting Mid-Game
 ---
 
-In a multiplayer game, it is possible that a client gets disconnected from the server, for example if they have network issues, or if their application or device crashes. When it happens, you might want to give the ability to your players to reconnect to the game.
+In a multiplayer game, clients may get disconnected from the server for a variety of reasons (network issues, application/device crashes, etc). For those reasons, you may want to allow your players to reconnect to the game.
 
-To allow clients to reconnect in the middle of an active game, there are some considerations to have in mind.
-- If clients have a specific state and some in-game data associated with them and you want them to reconnect with that same state and that same data, you should implement a mechanism to keep that state in memory and associate it to that client when they reconnect (see [Session Management](./session-management.md))
-- If using scene management, keep in mind that connecting to a game launches the synchronization process. If you're using additive scenes, this means that if the client's active main scene is the same as the server's, it will load all additive scenes that are currently loaded on the server, without unloading anything on the client. If that is a behavior you do not want, you can unload those scenes on the client when they disconnect, or before attempting to reconnect, or you can use the `NetworkSceneManager.VerifySceneBeforeLoading` callback to prevent loading scenes that are already loaded on the client.
-- If your game requires it, you should make sure that the client's state is properly reset and ready to connect before attempting to reconnect. This could require resetting some external services, for example.
+## Considerations
+
+Review the following considerations before allowing clients to reconnect in the middle of an active game:
+
+- Clients may have specific state and in-game data associated with them. If you want them to reconnect with that same state and data, implement a mechanism to maintain the association of state and data with the client for when they reconnect. See [Session Management](session-management.md) for more information.
+- When using [scene management](../basics/scene-management.md), remember that the synchronization process launches when connecting to a game. Therefore, all additive scenes currently loaded on the server will load without unloading anything on the client when the client's active main scene is the same as the server's. <!-- What is the negative affect of this? Like is it slower loading/initial lag, etc? Or is it just cleaner and better practice? -->
+  - If you want to avoid this behavior, you can
+    - Unload those scenes when a client disconnects
+    - Unload those scenes when a client reconnects
+    - Use the `NetworkSceneManager.VerifySceneBeforeLoading` callback to prevent loading scenes already loaded on the client
+- Depending on your game's requirements, make sure the client's state is properly reset and ready to connect before attempting reconnection. This may require resetting some external services.
 
 
-### Reconnecting automatically
+## Automatic reconnection
 
-To make the experience smoother for the players, you can have clients automatically attempt to reconnect to a game when losing connection unexpectedly. To implement this, you'll have to do the following:
-- Define what triggers this process and when it starts. For example, it could be the `NetworkManager.OnClientDisconnectCallback` callback.
-- Wait for `NetworkManager` to properly shut down before attempting to reconnect. You can use the `NetworkManager.ShutdownInProgress` property for this.
-- Make sure the automatic reconnection does not trigger when you don't want it too. For example, if a client quits a game purposefully, if the server shuts down normally as the game session ends, if a client gets kicked from a game or if they get denied during connection approval.
+For a smoother experience for your players, clients can automatically attempt to reconnect to a game when connection is lost unexpectedly.
 
-You could also want to implement the following features, depending on your game:
-- Include multiple reconnection attempts, so it retries if an attempt fails. You'll have to define how many attempts there should be, and make sure that the `NetworkManager` properly shuts down between each attempt and that the client's state is properly reset if needed.
-- Give an option for players to cancel the process. This could be especially useful in cases where there are a lot of reconnection attempts, or if each attempt takes a long time.
+To implement automatic reconnection: <!-- Does order matter for these steps -->
+- Define what will trigger the reconnection process and when it will start. <!-- I'm assuming the user is making this definition for the automatic reconnection vs finding something already existing the triggers the disconnect/reconnect process. Tried to clarify that difference. it was a little ambiguous before. --> For example, the `NetworkManager.OnClientDisconnectCallback` callback.
+- Ensure the `NetworkManager` properly shuts down before attempting any reconnection. You can use the `NetworkManager.ShutdownInProgress` property to manage this.
+- Ensure automatic reconnection does not trigger when you do not want it.
+  - Examples
+    - A client purposefully quits a game
+    - The server shuts down as expected when the game session ends
+    - A client gets kicked from a game
+    - A client is denied during connection approval
 
+Depending on your game, you may want to add the following featurs as well:
+- Include multiple reconnection attempts in case of failure. You need to define how many attempts these should be, ensure that `NetworkManager` properly shuts down between each attempt, and reset the client's state (if needed).
+- Provide an option for players to cancel the reconnection process. This may be useful when there are a lot of reconnection attempts or each attempts takes a long time.
 
 ### Automatic reconnection example
 
-To see an example of how to implement automatic reconnection, you can have a look at the Boss Room sample. The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Game/ConnectionManagement/ClientGameNetPortal.cs). Boss Room's implementation uses a coroutine (`TryToReconnect`) that attempts to reconnect a few times one after the other, until it either succeeds of goes beyond the maximum number of attempts. The coroutine is triggered when a client disconnects, depending on the reason of that disconnect (see `OnDisconnectOrTimeout`) and is stopped when a succesfull connection occurs, or when a user cancels it (see `OnConnectFinished` and `OnUserDisconnectRequest`). Another thing of note in this sample is that in the case where the connection is done through the Lobby and Relay services, the client has to make sure that it has properly left the lobby before each reconnection attempt.
+Check out our [Boss Room sample](../learn/getting-started-boss-room.md) for an example implementation of automatic reconnection.
+
+The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Game/ConnectionManagement/ClientGameNetPortal.cs). Boss Room's implementation uses a coroutine (`TryToReconnect`) that attempts to reconnect a few times sequentially, until it either succeeds or surpasses the defined maximum number of attempts.
+
+The coroutine is triggered when a client disconnects, depending on the reason of that disconnect (see `OnDisconnectOrTimeout`) and is stopped when a succesfull reconnection occurs, or when a user cancels it (see `OnConnectFinished` and `OnUserDisconnectRequest`). 
+
+:::note
+This sample connects with [Lobby](https://docs.unity.com/lobby/unity-lobby-service-overview.html) and [Relay](https://docs.unity.com/relay/get-started.html) services, so the client must make sure it has properly left the lobby before each reconnection attempt.
+
+For more information about how Boss Room leverages Lobby and Relay, see [Getting Started with Boss Room](../learn/getting-started-boss-room.md#register-the-project-with-unity-gaming-services-ugs)
+:::
