@@ -26,7 +26,7 @@ If there is a need for a gameplay event to happen on a collision you can listen 
 
 ## NetworkRigidbody & ClientNetworkTransform
 
-`NetworkRigidbody` can be used in combination with the `ClientNetworkTransform` package sample to allow the owner client of a `NetworkObject` to move it authoritatively. In this mode collisions will only result in realistic dynamic collisions if the object is colliding with other `NetworkObjects` which are owned by the same client.
+`NetworkRigidbody` can be used in combination with the [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a `NetworkObject` to move it authoritatively. In this mode collisions will only result in realistic dynamic collisions if the object is colliding with other `NetworkObjects` which are owned by the same client.
 
 :::note
 Add the `ClientNetworkTransform` component first to your `GameObject` else the `NetworkRigidbody` will automatically add a regular `NetworkTransform`.
