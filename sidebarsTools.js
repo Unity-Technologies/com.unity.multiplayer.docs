@@ -6,7 +6,11 @@ module.exports = {
         },
         {
             "type": "doc",
-            "id": "install"
+            "id": "install-tools"
+        },
+        {
+            "type": "doc",
+            "id": "profiling",
         },
        /* {
             "collapsed": true,
