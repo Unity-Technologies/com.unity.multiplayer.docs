@@ -117,6 +117,38 @@ module.exports = {
                     docsPluginId: 'transport'
                 },
                 {
+                    to: 'about',
+                    label: 'Tools',
+                    position: 'left',
+                    docsPluginId: 'transport',
+                    className: 'nav-break',
+                    items: [
+                        {
+                            to: '/tools/tools-1-0-0-pre',
+                            label: 'Release Notes',
+                            docsPluginId: 'releases'
+                        },
+                        {
+                            to: 'about',
+                            label: 'Documentation',
+                            docsPluginId: 'transport',
+                        },
+
+                        {
+                            to: 'api/introduction',
+                            label: 'API Reference',
+                            docsPluginId: 'transport',
+                        },
+                    ]
+                },
+                {
+                    //TOOLS VERSIONS
+                    type: 'docsVersionDropdown',
+                    position: 'left',
+                    dropdownActiveClassDisabled: true,
+                    docsPluginId: 'transport'
+                },
+                {
                     to: '/learn/introduction',
                     label: 'Unity Multiplayer Resources',
                     className: 'nav-break',
