@@ -12,89 +12,27 @@ module.exports = {
             "type": "doc",
             "id": "profiling",
         },
+        {
+            "type": "doc",
+            "id": "runtimestatsmonitor",
+        },
        /* {
             "collapsed": true,
             "type": "category",
-            "label": "Minimal Client and Server",
+            "label": "Label",
             "items": [
                 {
                     "type": "doc",
-                    "id": "minimal-workflow"
+                    "id": "docID"
                 },
                 {
                     "type": "doc",
-                    "id": "samples/clientbehaviour"
+                    "id": "docID"
                 },
                 {
                     "type": "doc",
-                    "id": "samples/serverbehaviour"
+                    "id": "docID"
                 },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Jobified Client and Server",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "jobs",
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/jobifiedclientbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/jobifiedserverbehaviour"
-                },
-                
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Secure Client and Server",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "secure-connection",
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureparameters"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureserverbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureclientbehaviour"
-                },
-            ]
-        },
-        {
-            "type": "doc",
-            "id": "pipelines"
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Additional information",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "connection-state"
-                },
-                {
-                    "type": "doc",
-                    "id": "events"
-                },
-                {
-                    "type": "doc",
-                    "id": "network-settings"
-                }
             ]
         },*/
     ],
