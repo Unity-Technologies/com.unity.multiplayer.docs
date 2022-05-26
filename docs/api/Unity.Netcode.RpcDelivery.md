@@ -9,23 +9,26 @@ RPC delivery types
 
 </div>
 
-<div class="markdown level0 conceptual">
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum RpcDelivery
 ```
 
-## 
+</div>
 
-| Name       | Description         |
-|------------|---------------------|
-| Reliable   | Reliable delivery   |
-| Unreliable | Unreliable delivery |
+### Fields
+
+Name
+
+Description
+
+Reliable
+
+Reliable delivery
+
+Unreliable
+
+Unreliable delivery

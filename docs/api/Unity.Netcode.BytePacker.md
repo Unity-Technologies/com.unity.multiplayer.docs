@@ -2,7 +2,6 @@
 id: Unity.Netcode.BytePacker  
 title: Unity.Netcode.BytePacker  
 ---
-
 <div class="markdown level0 summary">
 
 Utility class for packing values in serialization.
@@ -19,13 +18,13 @@ Utility class for packing values in serialization.
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+BytePacker
 
 </div>
 
@@ -37,61 +36,299 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class BytePacker
 ```
 
-## 
+</div>
 
-### WriteValueBitPacked(FastBufferWriter, Int16)
+### Fields
+
+#### BitPackedIntMax
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const int BitPackedIntMax = 536870911
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### BitPackedIntMin
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const int BitPackedIntMin = -536870912
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### BitPackedLongMax
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const long BitPackedLongMax = 1152921504606846975L
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
+
+#### BitPackedLongMin
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const long BitPackedLongMin = -1152921504606846976L
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
+
+#### BitPackedShortMax
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const short BitPackedShortMax = 16383
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int16 |             |
+
+#### BitPackedShortMin
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const short BitPackedShortMin = -16384
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int16 |             |
+
+#### BitPackedUintMax
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const uint BitPackedUintMax = 1073741823U
+```
+
+</div>
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
+
+#### BitPackedULongMax
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const ulong BitPackedULongMax = 2305843009213693951UL
+```
+
+</div>
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
+
+#### BitPackedUshortMax
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const ushort BitPackedUshortMax = 32767
+```
+
+</div>
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
+
+### Methods
+
+#### WriteValueBitPacked(FastBufferWriter, Int16)
 
 <div class="markdown level1 summary">
 
@@ -109,20 +346,24 @@ bits after zig-zag encoding.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValueBitPacked(FastBufferWriter writer, short value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Int16     | value  | The value to pack      |
 
-### WriteValueBitPacked(FastBufferWriter, Int32)
+#### WriteValueBitPacked(FastBufferWriter, Int32)
 
 <div class="markdown level1 summary">
 
@@ -140,20 +381,24 @@ significant bits after zig-zag encoding.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValueBitPacked(FastBufferWriter writer, int value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Int32     | value  | The value to pack      |
 
-### WriteValueBitPacked(FastBufferWriter, Int64)
+#### WriteValueBitPacked(FastBufferWriter, Int64)
 
 <div class="markdown level1 summary">
 
@@ -171,20 +416,24 @@ its four most significant bits after zig-zag encoding.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValueBitPacked(FastBufferWriter writer, long value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Int64     | value  | The value to pack      |
 
-### WriteValueBitPacked(FastBufferWriter, UInt16)
+#### WriteValueBitPacked(FastBufferWriter, UInt16)
 
 <div class="markdown level1 summary">
 
@@ -201,20 +450,24 @@ significant bit.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValueBitPacked(FastBufferWriter writer, ushort value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.UInt16    | value  | The value to pack      |
 
-### WriteValueBitPacked(FastBufferWriter, UInt32)
+#### WriteValueBitPacked(FastBufferWriter, UInt32)
 
 <div class="markdown level1 summary">
 
@@ -231,20 +484,24 @@ losing its two most significant bits.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValueBitPacked(FastBufferWriter writer, uint value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.UInt32    | value  | The value to pack      |
 
-### WriteValueBitPacked(FastBufferWriter, UInt64)
+#### WriteValueBitPacked(FastBufferWriter, UInt64)
 
 <div class="markdown level1 summary">
 
@@ -261,20 +518,24 @@ truncated by losing its three most significant bits.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValueBitPacked(FastBufferWriter writer, ulong value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.UInt64    | value  | The value to pack      |
 
-### WriteValuePacked(FastBufferWriter, Color)
+#### WriteValuePacked(FastBufferWriter, Color)
 
 <div class="markdown level1 summary">
 
@@ -287,20 +548,24 @@ buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Color color)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | Color            | color  | Color to write         |
 
-### WriteValuePacked(FastBufferWriter, Color32)
+#### WriteValuePacked(FastBufferWriter, Color32)
 
 <div class="markdown level1 summary">
 
@@ -313,20 +578,24 @@ buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Color32 color)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | Color32          | color  | Color to write         |
 
-### WriteValuePacked(FastBufferWriter, Quaternion)
+#### WriteValuePacked(FastBufferWriter, Quaternion)
 
 <div class="markdown level1 summary">
 
@@ -338,20 +607,24 @@ Writes the rotation to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Quaternion rotation)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name     | Description            |
 |------------------|----------|------------------------|
 | FastBufferWriter | writer   | The writer to write to |
 | Quaternion       | rotation | Rotation to write      |
 
-### WriteValuePacked(FastBufferWriter, Ray)
+#### WriteValuePacked(FastBufferWriter, Ray)
 
 <div class="markdown level1 summary">
 
@@ -364,20 +637,24 @@ buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Ray ray)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | Ray              | ray    | Ray to write           |
 
-### WriteValuePacked(FastBufferWriter, Ray2D)
+#### WriteValuePacked(FastBufferWriter, Ray2D)
 
 <div class="markdown level1 summary">
 
@@ -390,20 +667,24 @@ buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Ray2D ray2d)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | Ray2D            | ray2d  | Ray2D to write         |
 
-### WriteValuePacked(FastBufferWriter, Boolean)
+#### WriteValuePacked(FastBufferWriter, Boolean)
 
 <div class="markdown level1 summary">
 
@@ -415,20 +696,24 @@ Write a bool to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, bool value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Boolean   | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Byte)
+#### WriteValuePacked(FastBufferWriter, Byte)
 
 <div class="markdown level1 summary">
 
@@ -440,20 +725,24 @@ Write a byte to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, byte value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Byte      | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Char)
+#### WriteValuePacked(FastBufferWriter, Char)
 
 <div class="markdown level1 summary">
 
@@ -468,20 +757,24 @@ Only use this if you're certain your value will be small.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, char c)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Char      | c      | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Double)
+#### WriteValuePacked(FastBufferWriter, Double)
 
 <div class="markdown level1 summary">
 
@@ -493,20 +786,24 @@ Write double-precision floating point value to the buffer as a varint
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, double value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Double    | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Int16)
+#### WriteValuePacked(FastBufferWriter, Int16)
 
 <div class="markdown level1 summary">
 
@@ -522,20 +819,24 @@ small.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, short value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Int16     | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Int32)
+#### WriteValuePacked(FastBufferWriter, Int32)
 
 <div class="markdown level1 summary">
 
@@ -547,20 +848,24 @@ Write a signed int (Int32) as a ZigZag encoded varint to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, int value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Int32     | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Int64)
+#### WriteValuePacked(FastBufferWriter, Int64)
 
 <div class="markdown level1 summary">
 
@@ -572,20 +877,24 @@ Write a signed long (Int64) as a ZigZag encoded varint to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, long value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Int64     | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, SByte)
+#### WriteValuePacked(FastBufferWriter, SByte)
 
 <div class="markdown level1 summary">
 
@@ -597,20 +906,24 @@ Write a signed byte to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, sbyte value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.SByte     | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Single)
+#### WriteValuePacked(FastBufferWriter, Single)
 
 <div class="markdown level1 summary">
 
@@ -622,20 +935,24 @@ Write single-precision floating point value to the buffer as a varint
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, float value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.Single    | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, String)
+#### WriteValuePacked(FastBufferWriter, String)
 
 <div class="markdown level1 summary">
 
@@ -647,20 +964,24 @@ Writes a string in a packed format
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, string s)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.String    | s      | The value to pack      |
 
-### WriteValuePacked(FastBufferWriter, UInt16)
+#### WriteValuePacked(FastBufferWriter, UInt16)
 
 <div class="markdown level1 summary">
 
@@ -675,20 +996,24 @@ Only use this if you're certain your value will be small.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, ushort value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.UInt16    | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, UInt32)
+#### WriteValuePacked(FastBufferWriter, UInt32)
 
 <div class="markdown level1 summary">
 
@@ -700,20 +1025,24 @@ Write an unsigned int (UInt32) to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, uint value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.UInt32    | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, UInt64)
+#### WriteValuePacked(FastBufferWriter, UInt64)
 
 <div class="markdown level1 summary">
 
@@ -725,20 +1054,24 @@ Write an unsigned long (UInt64) to the buffer.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, ulong value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | System.UInt64    | value  | Value to write         |
 
-### WriteValuePacked(FastBufferWriter, Vector2)
+#### WriteValuePacked(FastBufferWriter, Vector2)
 
 <div class="markdown level1 summary">
 
@@ -751,20 +1084,24 @@ buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Vector2 vector2)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name    | Description            |
 |------------------|---------|------------------------|
 | FastBufferWriter | writer  | The writer to write to |
 | Vector2          | vector2 | Vector to write        |
 
-### WriteValuePacked(FastBufferWriter, Vector3)
+#### WriteValuePacked(FastBufferWriter, Vector3)
 
 <div class="markdown level1 summary">
 
@@ -777,20 +1114,24 @@ the buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Vector3 vector3)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name    | Description            |
 |------------------|---------|------------------------|
 | FastBufferWriter | writer  | The writer to write to |
 | Vector3          | vector3 | Vector to write        |
 
-### WriteValuePacked(FastBufferWriter, Vector4)
+#### WriteValuePacked(FastBufferWriter, Vector4)
 
 <div class="markdown level1 summary">
 
@@ -803,20 +1144,24 @@ buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked(FastBufferWriter writer, Vector4 vector4)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name    | Description            |
 |------------------|---------|------------------------|
 | FastBufferWriter | writer  | The writer to write to |
 | Vector4          | vector4 | Vector to write        |
 
-### WriteValuePacked\&lt;TEnum&gt;(FastBufferWriter, TEnum)
+#### WriteValuePacked\<TEnum\>(FastBufferWriter, TEnum)
 
 <div class="markdown level1 summary">
 
@@ -828,22 +1173,28 @@ Write a packed enum value.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteValuePacked<TEnum>(FastBufferWriter writer, TEnum value)
     where TEnum : struct, Enum
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description            |
 |------------------|--------|------------------------|
 | FastBufferWriter | writer | The writer to write to |
 | TEnum            | value  | The value to write     |
 
-#### Type Parameters
+##### Type Parameters
 
 | Name  | Description  |
 |-------|--------------|
 | TEnum | An enum type |
+
+ 

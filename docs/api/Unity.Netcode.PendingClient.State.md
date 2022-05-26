@@ -9,23 +9,26 @@ The states of a connection
 
 </div>
 
-<div class="markdown level0 conceptual">
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum State
 ```
 
-## 
+</div>
 
-| Name              | Description                                                |
-|-------------------|------------------------------------------------------------|
-| PendingApproval   | Waiting for client connection request to be approved       |
-| PendingConnection | Waiting for client to send it's initial connection request |
+### Fields
+
+Name
+
+Description
+
+PendingApproval
+
+Waiting for client connection request to be approved
+
+PendingConnection
+
+Waiting for client to send it's initial connection request

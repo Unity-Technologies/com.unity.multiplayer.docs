@@ -24,13 +24,13 @@ SceneEventType
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+SceneEvent
 
 </div>
 
@@ -42,61 +42,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class SceneEvent
 ```
 
-## 
+</div>
 
-### AsyncOperation
+### Fields
+
+#### AsyncOperation
 
 <div class="markdown level1 summary">
 
@@ -112,19 +114,23 @@ This is set for the following SceneEventTypes:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public AsyncOperation AsyncOperation
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | AsyncOperation |             |
 
-### ClientId
+#### ClientId
 
 <div class="markdown level1 summary">
 
@@ -155,19 +161,23 @@ conditions:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ulong ClientId
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ClientsThatCompleted
+#### ClientsThatCompleted
 
 <div class="markdown level1 summary">
 
@@ -183,19 +193,23 @@ This is set for the following SceneEventTypes:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public List<ulong> ClientsThatCompleted
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                             | Description |
 |--------------------------------------------------|-------------|
 | System.Collections.Generic.List\<System.UInt64\> |             |
 
-### ClientsThatTimedOut
+#### ClientsThatTimedOut
 
 <div class="markdown level1 summary">
 
@@ -211,19 +225,23 @@ This is set for the following SceneEventTypes:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public List<ulong> ClientsThatTimedOut
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                             | Description |
 |--------------------------------------------------|-------------|
 | System.Collections.Generic.List\<System.UInt64\> |             |
 
-### LoadSceneMode
+#### LoadSceneMode
 
 <div class="markdown level1 summary">
 
@@ -244,19 +262,23 @@ This is set for the following SceneEventTypes:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public LoadSceneMode LoadSceneMode
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | LoadSceneMode |             |
 
-### Scene
+#### Scene
 
 <div class="markdown level1 summary">
 
@@ -271,19 +293,23 @@ This is set for the following SceneEventTypes:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public Scene Scene
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type  | Description |
 |-------|-------------|
 | Scene |             |
 
-### SceneEventType
+#### SceneEventType
 
 <div class="markdown level1 summary">
 
@@ -295,19 +321,23 @@ Will always be set to the current SceneEventType
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public SceneEventType SceneEventType
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | SceneEventType |             |
 
-### SceneName
+#### SceneName
 
 <div class="markdown level1 summary">
 
@@ -327,14 +357,20 @@ This is set for the following SceneEventTypes:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public string SceneName
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
+
+ 

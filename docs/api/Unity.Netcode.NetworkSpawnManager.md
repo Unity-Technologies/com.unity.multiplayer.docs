@@ -19,13 +19,13 @@ Class that handles object spawning
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkSpawnManager
 
 </div>
 
@@ -37,61 +37,94 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkSpawnManager
 ```
 
-## 
+</div>
 
-### SpawnedObjects
+### Fields
+
+#### OwnershipToObjectsTable
+
+<div class="markdown level1 summary">
+
+Use to get all NetworkObjects owned by a client Ownership to Objects
+Table Format: \[ClientId\]\[NetworkObjectId\]\[NetworkObject\] Server:
+Keeps track of all clients' ownership Client: Keeps track of only its
+ownership
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public readonly Dictionary<ulong, Dictionary<ulong, NetworkObject>> OwnershipToObjectsTable
+```
+
+</div>
+
+##### Field Value
+
+| Type                                                                                                                          | Description |
+|-------------------------------------------------------------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary\<System.UInt64, System.Collections.Generic.Dictionary\<System.UInt64, NetworkObject\>\> |             |
+
+#### SpawnedObjects
 
 <div class="markdown level1 summary">
 
@@ -103,19 +136,23 @@ The currently spawned objects
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly Dictionary<ulong, NetworkObject> SpawnedObjects
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                                                  | Description |
 |-----------------------------------------------------------------------|-------------|
 | System.Collections.Generic.Dictionary\<System.UInt64, NetworkObject\> |             |
 
-### SpawnedObjectsList
+#### SpawnedObjectsList
 
 <div class="markdown level1 summary">
 
@@ -127,21 +164,25 @@ A list of the spawned objects
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly HashSet<NetworkObject> SpawnedObjectsList
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
 | System.Collections.Generic.HashSet\<NetworkObject\> |             |
 
-## 
+### Properties
 
-### NetworkManager
+#### NetworkManager
 
 <div class="markdown level1 summary">
 
@@ -153,21 +194,59 @@ Gets the NetworkManager associated with this SpawnManager.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkManager NetworkManager { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | NetworkManager |             |
 
-## 
+### Methods
 
-### GetLocalPlayerObject()
+#### GetClientOwnedObjects(UInt64)
+
+<div class="markdown level1 summary">
+
+Returns a list of all NetworkObjects that belong to a client.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public List<NetworkObject> GetClientOwnedObjects(ulong clientId)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name     | Description                   |
+|---------------|----------|-------------------------------|
+| System.UInt64 | clientId | the client's id LocalClientId |
+
+##### Returns
+
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkObject\> |             |
+
+#### GetLocalPlayerObject()
 
 <div class="markdown level1 summary">
 
@@ -179,19 +258,23 @@ Returns the local player object or null if one does not exist
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObject GetLocalPlayerObject()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type          | Description                                           |
 |---------------|-------------------------------------------------------|
 | NetworkObject | The local player object or null if one does not exist |
 
-### GetPlayerNetworkObject(UInt64)
+#### GetPlayerNetworkObject(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -204,20 +287,26 @@ exist. This is only valid server side.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObject GetPlayerNetworkObject(ulong clientId)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description |
 |---------------|----------|-------------|
 | System.UInt64 | clientId |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description                                                           |
 |---------------|-----------------------------------------------------------------------|
 | NetworkObject | The player object with a given clientId or null if one does not exist |
+
+ 

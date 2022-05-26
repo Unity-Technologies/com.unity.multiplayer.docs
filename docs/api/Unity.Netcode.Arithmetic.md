@@ -19,13 +19,13 @@ Arithmetic helper class
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+Arithmetic
 
 </div>
 
@@ -37,61 +37,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class Arithmetic
 ```
 
-## 
+</div>
 
-### VarIntSize(UInt64)
+### Methods
+
+#### VarIntSize(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -103,25 +105,29 @@ Gets the output size in bytes after VarInting a unsigned integer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static int VarIntSize(ulong value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description                              |
 |---------------|-------|------------------------------------------|
 | System.UInt64 | value | The unsigned integer whose length to get |
 
-#### Returns
+##### Returns
 
 | Type         | Description         |
 |--------------|---------------------|
 | System.Int32 | The amount of bytes |
 
-### ZigZagDecode(UInt64)
+#### ZigZagDecode(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -133,25 +139,29 @@ Decides a ZigZag encoded integer back to a signed integer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static long ZigZagDecode(ulong value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description          |
 |---------------|-------|----------------------|
 | System.UInt64 | value | The unsigned integer |
 
-#### Returns
+##### Returns
 
 | Type         | Description                       |
 |--------------|-----------------------------------|
 | System.Int64 | The signed version of the integer |
 
-### ZigZagEncode(Int64)
+#### ZigZagEncode(Int64)
 
 <div class="markdown level1 summary">
 
@@ -163,20 +173,26 @@ ZigZag encodes a signed integer and maps it to a unsigned integer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static ulong ZigZagEncode(long value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type         | Name  | Description                  |
 |--------------|-------|------------------------------|
 | System.Int64 | value | The signed integer to encode |
 
-#### Returns
+##### Returns
 
 | Type          | Description                             |
 |---------------|-----------------------------------------|
 | System.UInt64 | A ZigZag encoded version of the integer |
+
+ 

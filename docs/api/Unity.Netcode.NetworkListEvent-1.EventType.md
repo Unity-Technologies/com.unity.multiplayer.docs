@@ -10,28 +10,47 @@ event.
 
 </div>
 
-<div class="markdown level0 conceptual">
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum EventType : byte
 ```
 
-## 
+</div>
 
-| Name     | Description       |
-|----------|-------------------|
-| Add      | Add               |
-| Clear    | Clear             |
-| Full     | Full list refresh |
-| Insert   | Insert            |
-| Remove   | Remove            |
-| RemoveAt | Remove at         |
-| Value    | Value changed     |
+### Fields
+
+Name
+
+Description
+
+Add
+
+Add
+
+Clear
+
+Clear
+
+Full
+
+Full list refresh
+
+Insert
+
+Insert
+
+Remove
+
+Remove
+
+RemoveAt
+
+Remove at
+
+Value
+
+Value changed
+

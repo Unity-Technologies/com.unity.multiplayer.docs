@@ -13,19 +13,23 @@ Delegate type for value changed event
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnValueChangedDelegate(T previousValue, T newValue);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type | Name            | Description                 |
-|------|-----------------|-----------------------------|
-| T    | \*previousValue | The value before the change |
-| T    | \*newValue      | The new value               |
+| Type | Name          | Description                 |
+|------|---------------|-----------------------------|
+| T    | previousValue | The value before the change |
+| T    | newValue      | The new value               |
+
+ 

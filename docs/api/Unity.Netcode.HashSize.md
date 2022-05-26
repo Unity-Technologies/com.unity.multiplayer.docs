@@ -15,19 +15,28 @@ encoding It just says how many bytes the maximum will be
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum HashSize : byte
 ```
 
-## 
+</div>
 
-| Name             | Description     |
-|------------------|-----------------|
-| VarIntEightBytes | Eight byte hash |
-| VarIntFourBytes  | Four byte hash  |
+### Fields
+
+Name
+
+Description
+
+VarIntEightBytes
+
+Eight byte hash
+
+VarIntFourBytes
+
+Four byte hash
+
+

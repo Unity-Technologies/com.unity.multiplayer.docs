@@ -13,19 +13,23 @@ Delegate used for incoming unnamed messages
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void UnnamedMessageDelegate(ulong clientId, FastBufferReader reader);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type             | Name       | Description                            |
-|------------------|------------|----------------------------------------|
-| System.UInt64    | \*clientId | The clientId that sent the message     |
-| FastBufferReader | \*reader   | The stream containing the message data |
+| Type             | Name     | Description                            |
+|------------------|----------|----------------------------------------|
+| System.UInt64    | clientId | The clientId that sent the message     |
+| FastBufferReader | reader   | The stream containing the message data |
+
+ 

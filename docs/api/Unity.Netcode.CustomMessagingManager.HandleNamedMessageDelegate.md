@@ -13,19 +13,23 @@ Delegate used to handle named messages
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void HandleNamedMessageDelegate(ulong senderClientId, FastBufferReader messagePayload);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type             | Name             | Description |
-|------------------|------------------|-------------|
-| System.UInt64    | \*senderClientId |             |
-| FastBufferReader | \*messagePayload |             |
+| Type             | Name           | Description |
+|------------------|----------------|-------------|
+| System.UInt64    | senderClientId |             |
+| FastBufferReader | messagePayload |             |
+
+ 

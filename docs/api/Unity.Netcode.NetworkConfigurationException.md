@@ -19,19 +19,19 @@ Exception thrown when a change to a configuration is wrong
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+System.Exception
 
 </div>
 
 <div class="level2">
 
-System.Dynamic.ExpandoObject
+NetworkConfigurationException
 
 </div>
 
@@ -61,121 +61,124 @@ System.Runtime.Serialization.ISerializable
 
 <div>
 
-Exception.GetBaseException()
+System.Exception.GetBaseException()
 
 </div>
 
 <div>
 
-Exception.GetObjectData(SerializationInfo, StreamingContext)
+System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,
+System.Runtime.Serialization.StreamingContext)
 
 </div>
 
 <div>
 
-Exception.GetType()
+System.Exception.GetType()
 
 </div>
 
 <div>
 
-Exception.ToString()
+System.Exception.ToString()
 
 </div>
 
 <div>
 
-Exception.Data
+System.Exception.Data
 
 </div>
 
 <div>
 
-Exception.HelpLink
+System.Exception.HelpLink
 
 </div>
 
 <div>
 
-Exception.HResult
+System.Exception.HResult
 
 </div>
 
 <div>
 
-Exception.InnerException
+System.Exception.InnerException
 
 </div>
 
 <div>
 
-Exception.Message
+System.Exception.Message
 
 </div>
 
 <div>
 
-Exception.Source
+System.Exception.Source
 
 </div>
 
 <div>
 
-Exception.StackTrace
+System.Exception.StackTrace
 
 </div>
 
 <div>
 
-Exception.TargetSite
+System.Exception.TargetSite
 
 </div>
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkConfigurationException : Exception, _Exception, ISerializable
 ```
 
-## 
+</div>
 
-### NetworkConfigurationException()
+### Constructors
+
+#### NetworkConfigurationException()
 
 <div class="markdown level1 summary">
 
@@ -187,13 +190,17 @@ Constructs a NetworkConfigurationException
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConfigurationException()
 ```
 
-### NetworkConfigurationException(String)
+</div>
+
+#### NetworkConfigurationException(String)
 
 <div class="markdown level1 summary">
 
@@ -205,19 +212,23 @@ Constructs a NetworkConfigurationException with a message
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConfigurationException(string message)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name    | Description           |
 |---------------|---------|-----------------------|
 | System.String | message | The exception message |
 
-### NetworkConfigurationException(String, Exception)
+#### NetworkConfigurationException(String, Exception)
 
 <div class="markdown level1 summary">
 
@@ -230,13 +241,17 @@ exception
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConfigurationException(string message, Exception inner)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name    | Description           |
 |------------------|---------|-----------------------|
@@ -256,3 +271,5 @@ System.Runtime.InteropServices.\_Exception
 System.Runtime.Serialization.ISerializable
 
 </div>
+
+ 

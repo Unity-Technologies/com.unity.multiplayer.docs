@@ -1,15 +1,7 @@
----  
-id: Unity.Netcode.ErrorUtilities  
-title: Unity.Netcode.ErrorUtilities  
 ---
-
-<div class="markdown level0 summary">
-
-</div>
-
-<div class="markdown level0 conceptual">
-
-</div>
+id: Unity.Netcode.Transports.UTP.ErrorUtilities
+title: Unity.Netcode.Transports.UTP.ErrorUtilities
+---
 
 <div class="inheritance">
 
@@ -17,13 +9,13 @@ title: Unity.Netcode.ErrorUtilities
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+ErrorUtilities
 
 </div>
 
@@ -35,61 +27,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class ErrorUtilities
 ```
 
-## 
+</div>
 
-### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
+### Methods
+
+#### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
 
 <div class="markdown level1 summary">
 
@@ -99,21 +93,27 @@ public static class ErrorUtilities
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static string ErrorToString(Networking.Transport.Error.StatusCode error, ulong connectionId)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                                  | Name         | Description |
 |---------------------------------------|--------------|-------------|
 | Networking.Transport.Error.StatusCode | error        |             |
 | System.UInt64                         | connectionId |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
+
+ 

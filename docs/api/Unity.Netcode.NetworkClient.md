@@ -19,13 +19,13 @@ A NetworkClient
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkClient
 
 </div>
 
@@ -37,61 +37,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkClient
 ```
 
-## 
+</div>
 
-### ClientId
+### Fields
+
+#### ClientId
 
 <div class="markdown level1 summary">
 
@@ -103,43 +105,23 @@ The ClientId of the NetworkClient
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ulong ClientId
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### OwnedObjects
-
-<div class="markdown level1 summary">
-
-The NetworkObject's owned by this Client
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public readonly List<NetworkObject> OwnedObjects
-```
-
-#### Field Value
-
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| System.Collections.Generic.List\&lt;NetworkObject&gt;  |             |
-
-### PlayerObject
+#### PlayerObject
 
 <div class="markdown level1 summary">
 
@@ -151,14 +133,50 @@ The PlayerObject of the Client
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObject PlayerObject
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkObject |             |
+
+### Properties
+
+#### OwnedObjects
+
+<div class="markdown level1 summary">
+
+The NetworkObject's owned by this Client
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public List<NetworkObject> OwnedObjects { get; }
+```
+
+</div>
+
+##### Property Value
+
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkObject\> |             |
+
+ 

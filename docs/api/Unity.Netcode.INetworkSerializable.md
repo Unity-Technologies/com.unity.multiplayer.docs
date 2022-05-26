@@ -13,19 +13,21 @@ Interface for implementing custom serializable types.
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public interface INetworkSerializable
 ```
 
-## 
+</div>
 
-### NetworkSerialize\&lt;T&gt;(BufferSerializer\&lt;T&gt;)
+### Methods
+
+#### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
 <div class="markdown level1 summary">
 
@@ -38,21 +40,27 @@ to serialize this type.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 void NetworkSerialize<T>(BufferSerializer<T> serializer)
     where T : IReaderWriter
 ```
 
-#### Parameters
+</div>
 
-| Type                 | Name       | Description                                       |
-|----------------------|------------|---------------------------------------------------|
-| BufferSerializer\&lt;T&gt; | serializer | The serializer to use to read and write the data. |
+##### Parameters
 
-#### Type Parameters
+| Type                  | Name       | Description                                       |
+|-----------------------|------------|---------------------------------------------------|
+| BufferSerializer\<T\> | serializer | The serializer to use to read and write the data. |
+
+##### Type Parameters
 
 | Name | Description                                                                                                              |
 |------|--------------------------------------------------------------------------------------------------------------------------|
 | T    | Either BufferSerializerReader or BufferSerializerWriter, depending whether the serializer is in read mode or write mode. |
+
+ 

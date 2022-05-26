@@ -14,19 +14,21 @@ Prefabs Used by NetworkPrefabHandler
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public interface INetworkPrefabInstanceHandler
 ```
 
-## 
+</div>
 
-### Destroy(NetworkObject)
+### Methods
+
+#### Destroy(NetworkObject)
 
 <div class="markdown level1 summary">
 
@@ -51,19 +53,23 @@ common approach is to make the NetworkObject inactive by calling .
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 void Destroy(NetworkObject networkObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                       |
 |---------------|---------------|-----------------------------------|
 | NetworkObject | networkObject | The NetworkObject being destroyed |
 
-### Instantiate(UInt64, Vector3, Quaternion)
+#### Instantiate(UInt64, Vector3, Quaternion)
 
 <div class="markdown level1 summary">
 
@@ -72,7 +78,7 @@ NetworkPrefabHandler, this method will be called every time a Network
 Prefab associated NetworkObject is spawned on clients
 
 Note On Hosts: Use the RegisterHostGlobalObjectIdHashValues(GameObject,
-List\&lt;GameObject&gt;) method to register all targeted NetworkPrefab
+List\<GameObject\>) method to register all targeted NetworkPrefab
 overrides manually since the host will be acting as both a server and
 client.
 
@@ -85,13 +91,17 @@ make the NetworkObject active via the method.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rotation)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                                                           |
 |---------------|---------------|-----------------------------------------------------------------------|
@@ -99,8 +109,10 @@ NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rota
 | Vector3       | position      | the initial/default position for the NetworkObject to be instantiated |
 | Quaternion    | rotation      | the initial/default rotation for the NetworkObject to be instantiated |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkObject |             |
+
+ 

@@ -19,13 +19,13 @@ The configuration object used to start server, client and hosts
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkConfig
 
 </div>
 
@@ -37,67 +37,72 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 [Serializable]
 public class NetworkConfig
 ```
 
-## 
+</div>
 
-### ClientConnectionBufferTimeout
+### Fields
+
+#### ClientConnectionBufferTimeout
 
 <div class="markdown level1 summary">
 
-The amount of seconds to wait for handshake to complete before timing
-out a client
+The amount of seconds for the server to wait for the connection approval
+handshake to complete before the client is disconnected.
+
+If the timeout is reached before approval is completed the client will
+be disconnected.
 
 </div>
 
@@ -105,19 +110,41 @@ out a client
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int ClientConnectionBufferTimeout
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ConnectionApproval
+##### Remarks
+
+<div class="markdown level1 remarks">
+
+The period begins after the Connect is received on the server. The
+period ends once the server finishes processing a
+Unity.Netcode.ConnectionRequestMessage from the client.
+
+This setting is independent of any Transport-level timeouts that may be
+in effect. It covers the time between the connection being established
+on the Transport layer, the client sending a
+Unity.Netcode.ConnectionRequestMessage, and the server processing that
+message through ConnectionApproval.
+
+This setting is server-side only.
+
+</div>
+
+#### ConnectionApproval
 
 <div class="markdown level1 summary">
 
@@ -129,19 +156,23 @@ Whether or not to use connection approval
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool ConnectionApproval
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### ConnectionData
+#### ConnectionData
 
 <div class="markdown level1 summary">
 
@@ -154,19 +185,23 @@ client should get accepted
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte[] ConnectionData
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | System.Byte\[\] |             |
 
-### EnableNetworkLogs
+#### EnableNetworkLogs
 
 <div class="markdown level1 summary">
 
@@ -178,19 +213,23 @@ Whether or not to enable network logs.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool EnableNetworkLogs
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableSceneManagement
+#### EnableSceneManagement
 
 <div class="markdown level1 summary">
 
@@ -205,19 +244,23 @@ SceneManagement also enables PrefabSync.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool EnableSceneManagement
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnableTimeResync
+#### EnableTimeResync
 
 <div class="markdown level1 summary">
 
@@ -231,19 +274,23 @@ turned on
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool EnableTimeResync
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### EnsureNetworkVariableLengthSafety
+#### EnsureNetworkVariableLengthSafety
 
 <div class="markdown level1 summary">
 
@@ -257,19 +304,23 @@ and bandwidth.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool EnsureNetworkVariableLengthSafety
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### ForceSamePrefabs
+#### ForceSamePrefabs
 
 <div class="markdown level1 summary">
 
@@ -282,19 +333,23 @@ at connection. If you dynamically add prefabs at runtime, turn this OFF
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool ForceSamePrefabs
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### LoadSceneTimeOut
+#### LoadSceneTimeOut
 
 <div class="markdown level1 summary">
 
@@ -307,44 +362,23 @@ requested scene
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int LoadSceneTimeOut
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MessageBufferTimeout
-
-<div class="markdown level1 summary">
-
-The amount of time a message should be buffered for without being
-consumed. If it is not consumed within this time, it will be dropped.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public float MessageBufferTimeout
-```
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Single |             |
-
-### NetworkIdRecycleDelay
+#### NetworkIdRecycleDelay
 
 <div class="markdown level1 summary">
 
@@ -357,19 +391,23 @@ reused.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public float NetworkIdRecycleDelay
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### NetworkTransport
+#### NetworkTransport
 
 <div class="markdown level1 summary">
 
@@ -381,19 +419,23 @@ The transport hosts the sever uses
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTransport NetworkTransport
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type             | Description |
 |------------------|-------------|
 | NetworkTransport |             |
 
-### PlayerPrefab
+#### PlayerPrefab
 
 <div class="markdown level1 summary">
 
@@ -405,19 +447,23 @@ The default player prefab
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public GameObject PlayerPrefab
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type       | Description |
 |------------|-------------|
 | GameObject |             |
 
-### ProtocolVersion
+#### ProtocolVersion
 
 <div class="markdown level1 summary">
 
@@ -429,19 +475,23 @@ The protocol version. Different versions doesn't talk to each other.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ushort ProtocolVersion
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### RecycleNetworkIds
+#### RecycleNetworkIds
 
 <div class="markdown level1 summary">
 
@@ -453,19 +503,23 @@ If true, NetworkIds will be reused after the NetworkIdRecycleDelay.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool RecycleNetworkIds
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### RpcHashSize
+#### RpcHashSize
 
 <div class="markdown level1 summary">
 
@@ -478,19 +532,23 @@ unless you are facing hash collisions
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public HashSize RpcHashSize
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type     | Description |
 |----------|-------------|
 | HashSize |             |
 
-### RttAverageSamples
+#### RttAverageSamples
 
 <div class="markdown level1 summary">
 
@@ -500,19 +558,23 @@ public HashSize RpcHashSize
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int RttAverageSamples = 5
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RttWindowSize
+#### RttWindowSize
 
 <div class="markdown level1 summary">
 
@@ -522,19 +584,53 @@ public const int RttAverageSamples = 5
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int RttWindowSize = 64
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### TickRate
+#### SpawnTimeout
+
+<div class="markdown level1 summary">
+
+The amount of time a message should be buffered if the asset or object
+needed to process it doesn't exist yet. If the asset is not added/object
+is not spawned within this time, it will be dropped.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public float SpawnTimeout
+```
+
+</div>
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.Single |             |
+
+#### TickRate
 
 <div class="markdown level1 summary">
 
@@ -547,19 +643,23 @@ runs user code and sends out data.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public uint TickRate
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### TimeResyncInterval
+#### TimeResyncInterval
 
 <div class="markdown level1 summary">
 
@@ -572,48 +672,25 @@ in seconds.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int TimeResyncInterval
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### UseSnapshotDelta
-
-<div class="markdown level1 summary">
-
-Whether or not to enable Snapshot System for variable updates. Not
-supported in this version.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public bool UseSnapshotDelta { get; }
-```
-
-#### Property Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-## 
-
-### CompareConfig(UInt64)
+#### CompareConfig(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -625,25 +702,29 @@ Compares a SHA256 hash with the current NetworkConfig instances hash
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool CompareConfig(ulong hash)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name | Description |
 |---------------|------|-------------|
 | System.UInt64 | hash |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### FromBase64(String)
+#### FromBase64(String)
 
 <div class="markdown level1 summary">
 
@@ -655,19 +736,23 @@ Sets the NetworkConfig data with that from a base64 encoded version
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void FromBase64(string base64)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name   | Description                |
 |---------------|--------|----------------------------|
 | System.String | base64 | The base64 encoded version |
 
-### GetConfig(Boolean)
+#### GetConfig(Boolean)
 
 <div class="markdown level1 summary">
 
@@ -679,25 +764,29 @@ Gets a SHA256 hash of parts of the NetworkConfig instance
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ulong GetConfig(bool cache = true)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type           | Name  | Description |
 |----------------|-------|-------------|
 | System.Boolean | cache |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ToBase64()
+#### ToBase64()
 
 <div class="markdown level1 summary">
 
@@ -709,14 +798,20 @@ Returns a base64 encoded version of the configuration
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public string ToBase64()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
+
+ 

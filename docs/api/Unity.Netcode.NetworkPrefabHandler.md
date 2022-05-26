@@ -22,13 +22,13 @@ INetworkPrefabInstanceHandler interface.
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkPrefabHandler
 
 </div>
 
@@ -40,61 +40,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkPrefabHandler
 ```
 
-## 
+</div>
 
-### AddHandler(GameObject, INetworkPrefabInstanceHandler)
+### Methods
+
+#### AddHandler(GameObject, INetworkPrefabInstanceHandler)
 
 <div class="markdown level1 summary">
 
@@ -107,26 +109,30 @@ INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool AddHandler(GameObject networkPrefabAsset, INetworkPrefabInstanceHandler instanceHandler)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                          | Name               | Description                                                                        |
 |-------------------------------|--------------------|------------------------------------------------------------------------------------|
 | GameObject                    | networkPrefabAsset | the of the network prefab asset to be overridden                                   |
 | INetworkPrefabInstanceHandler | instanceHandler    | class that implements the INetworkPrefabInstanceHandler interface to be registered |
 
-#### Returns
+##### Returns
 
 | Type           | Description                                  |
 |----------------|----------------------------------------------|
 | System.Boolean | true (registered) false (failed to register) |
 
-### AddHandler(UInt32, INetworkPrefabInstanceHandler)
+#### AddHandler(UInt32, INetworkPrefabInstanceHandler)
 
 <div class="markdown level1 summary">
 
@@ -140,26 +146,30 @@ NetworkPrefabHandler
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool AddHandler(uint globalObjectIdHash, INetworkPrefabInstanceHandler instanceHandler)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                          | Name               | Description                                                                                           |
 |-------------------------------|--------------------|-------------------------------------------------------------------------------------------------------|
 | System.UInt32                 | globalObjectIdHash | the Unity.Netcode.NetworkObject.GlobalObjectIdHash value of the network prefab asset being overridden |
 | INetworkPrefabInstanceHandler | instanceHandler    | a class that implements the INetworkPrefabInstanceHandler interface                                   |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### AddHandler(NetworkObject, INetworkPrefabInstanceHandler)
+#### AddHandler(NetworkObject, INetworkPrefabInstanceHandler)
 
 <div class="markdown level1 summary">
 
@@ -172,26 +182,30 @@ INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool AddHandler(NetworkObject prefabAssetNetworkObject, INetworkPrefabInstanceHandler instanceHandler)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                          | Name                     | Description                                                                            |
 |-------------------------------|--------------------------|----------------------------------------------------------------------------------------|
 | NetworkObject                 | prefabAssetNetworkObject | the NetworkObject of the network prefab asset to be overridden                         |
 | INetworkPrefabInstanceHandler | instanceHandler          | the class that implements the INetworkPrefabInstanceHandler interface to be registered |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### RegisterHostGlobalObjectIdHashValues(GameObject, List\&lt;GameObject&gt;)
+#### RegisterHostGlobalObjectIdHashValues(GameObject, List\<GameObject\>)
 
 <div class="markdown level1 summary">
 
@@ -205,20 +219,24 @@ potential target overrides that have the NetworkObject component.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void RegisterHostGlobalObjectIdHashValues(GameObject sourceNetworkPrefab, List<GameObject> networkPrefabOverrides)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                                          | Name                   | Description                                                                   |
 |-----------------------------------------------|------------------------|-------------------------------------------------------------------------------|
 | GameObject                                    | sourceNetworkPrefab    | source NetworkPrefab to be overridden                                         |
-| System.Collections.Generic.List\&lt;GameObject&gt; | networkPrefabOverrides | one or more NetworkPrefabs could be used to override the source NetworkPrefab |
+| System.Collections.Generic.List\<GameObject\> | networkPrefabOverrides | one or more NetworkPrefabs could be used to override the source NetworkPrefab |
 
-### RemoveHandler(GameObject)
+#### RemoveHandler(GameObject)
 
 <div class="markdown level1 summary">
 
@@ -231,25 +249,29 @@ class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool RemoveHandler(GameObject networkPrefabAsset)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type       | Name               | Description                                           |
 |------------|--------------------|-------------------------------------------------------|
 | GameObject | networkPrefabAsset | of the network prefab asset that was being overridden |
 
-#### Returns
+##### Returns
 
 | Type           | Description                       |
 |----------------|-----------------------------------|
 | System.Boolean | true (success) or false (failure) |
 
-### RemoveHandler(UInt32)
+#### RemoveHandler(UInt32)
 
 <div class="markdown level1 summary">
 
@@ -263,25 +285,29 @@ INetworkPrefabInstanceHandler interface.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool RemoveHandler(uint globalObjectIdHash)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name               | Description                                                                                          |
 |---------------|--------------------|------------------------------------------------------------------------------------------------------|
 | System.UInt32 | globalObjectIdHash | Unity.Netcode.NetworkObject.GlobalObjectIdHash of the source NetworkPrefab that was being overridden |
 
-#### Returns
+##### Returns
 
 | Type           | Description                       |
 |----------------|-----------------------------------|
 | System.Boolean | true (success) or false (failure) |
 
-### RemoveHandler(NetworkObject)
+#### RemoveHandler(NetworkObject)
 
 <div class="markdown level1 summary">
 
@@ -295,20 +321,26 @@ interface.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool RemoveHandler(NetworkObject networkObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                                                         |
 |---------------|---------------|---------------------------------------------------------------------|
 | NetworkObject | networkObject | NetworkObject of the source NetworkPrefab that was being overridden |
 
-#### Returns
+##### Returns
 
 | Type           | Description                       |
 |----------------|-----------------------------------|
 | System.Boolean | true (success) or false (failure) |
+
+ 
