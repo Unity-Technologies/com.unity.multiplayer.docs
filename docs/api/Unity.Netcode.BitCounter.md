@@ -17,13 +17,13 @@ title: Unity.Netcode.BitCounter
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+BitCounter
 
 </div>
 
@@ -35,61 +35,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class BitCounter
 ```
 
-## 
+</div>
 
-### GetUsedBitCount(UInt32)
+### Methods
+
+#### GetUsedBitCount(UInt32)
 
 <div class="markdown level1 summary">
 
@@ -101,25 +103,29 @@ Get the minimum number of bits required to represent the given value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetUsedBitCount(uint value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt32 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                 |
 |--------------|-----------------------------|
 | System.Int32 | The number of bits required |
 
-### GetUsedBitCount(UInt64)
+#### GetUsedBitCount(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -131,25 +137,29 @@ Get the minimum number of bits required to represent the given value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetUsedBitCount(ulong value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt64 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                 |
 |--------------|-----------------------------|
 | System.Int32 | The number of bits required |
 
-### GetUsedByteCount(UInt32)
+#### GetUsedByteCount(UInt32)
 
 <div class="markdown level1 summary">
 
@@ -161,25 +171,29 @@ Get the minimum number of bytes required to represent the given value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetUsedByteCount(uint value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt32 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                  |
 |--------------|------------------------------|
 | System.Int32 | The number of bytes required |
 
-### GetUsedByteCount(UInt64)
+#### GetUsedByteCount(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -191,20 +205,26 @@ Get the minimum number of bytes required to represent the given value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetUsedByteCount(ulong value)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt64 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                  |
 |--------------|------------------------------|
 | System.Int32 | The number of bytes required |
+
+ 

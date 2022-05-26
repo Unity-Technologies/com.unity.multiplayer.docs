@@ -16,26 +16,30 @@ LoadSceneMode specified.
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate bool VerifySceneBeforeLoadingDelegateHandler(int sceneIndex, string sceneName, LoadSceneMode loadSceneMode);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type          | Name            | Description                                            |
-|---------------|-----------------|--------------------------------------------------------|
-| System.Int32  | \*sceneIndex    | Build Settings Scenes in Build List index of the scene |
-| System.String | \*sceneName     | Name of the scene                                      |
-| LoadSceneMode | \*loadSceneMode | LoadSceneMode the scene is going to be loaded          |
+| Type          | Name          | Description                                            |
+|---------------|---------------|--------------------------------------------------------|
+| System.Int32  | sceneIndex    | Build Settings Scenes in Build List index of the scene |
+| System.String | sceneName     | Name of the scene                                      |
+| LoadSceneMode | loadSceneMode | LoadSceneMode the scene is going to be loaded          |
 
 ##### Returns
 
 | Type           | Description                       |
 |----------------|-----------------------------------|
 | System.Boolean | true (valid) or false (not valid) |
+
+ 

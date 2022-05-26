@@ -13,18 +13,22 @@ Delegate type for list changed event
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnListChangedDelegate(NetworkListEvent<T> changeEvent);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type                 | Name          | Description                                          |
-|----------------------|---------------|------------------------------------------------------|
-| NetworkListEvent\&lt;T&gt; | \*changeEvent | Struct containing information about the change event |
+| Type                  | Name        | Description                                          |
+|-----------------------|-------------|------------------------------------------------------|
+| NetworkListEvent\<T\> | changeEvent | Struct containing information about the change event |
+
+ 

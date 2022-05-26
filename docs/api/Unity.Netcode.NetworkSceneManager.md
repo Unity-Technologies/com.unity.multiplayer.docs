@@ -21,13 +21,13 @@ Unity.Netcode.SceneEventData between the server and client(s)
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkSceneManager
 
 </div>
 
@@ -51,61 +51,63 @@ System.IDisposable
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkSceneManager : IDisposable
 ```
 
-## 
+</div>
 
-### VerifySceneBeforeLoading
+### Fields
+
+#### VerifySceneBeforeLoading
 
 <div class="markdown level1 summary">
 
@@ -124,21 +126,25 @@ SceneEventProgressStatus.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler VerifySceneBeforeLoading
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                                        | Description |
 |-------------------------------------------------------------|-------------|
 | NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler |             |
 
-## 
+### Properties
 
-### ClientSynchronizationMode
+#### ClientSynchronizationMode
 
 <div class="markdown level1 summary">
 
@@ -156,21 +162,25 @@ VerifySceneBeforeLoading method.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public LoadSceneMode ClientSynchronizationMode { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | LoadSceneMode |             |
 
-## 
+### Methods
 
-### DisableValidationWarnings(Boolean)
+#### DisableValidationWarnings(Boolean)
 
 <div class="markdown level1 summary">
 
@@ -183,19 +193,23 @@ being invalidated.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void DisableValidationWarnings(bool disabled)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type           | Name     | Description |
 |----------------|----------|-------------|
 | System.Boolean | disabled | true/false  |
 
-### Dispose()
+#### Dispose()
 
 <div class="markdown level1 summary">
 
@@ -207,13 +221,17 @@ Handle NetworkSeneManager clean up
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-### LoadScene(String, LoadSceneMode)
+</div>
+
+#### LoadScene(String, LoadSceneMode)
 
 <div class="markdown level1 summary">
 
@@ -227,26 +245,30 @@ via OnSceneEvent
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public SceneEventProgressStatus LoadScene(string sceneName, LoadSceneMode loadSceneMode)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                        |
 |---------------|---------------|------------------------------------|
 | System.String | sceneName     | the name of the scene to be loaded |
 | LoadSceneMode | loadSceneMode |                                    |
 
-#### Returns
+##### Returns
 
 | Type                     | Description                                                |
 |--------------------------|------------------------------------------------------------|
 | SceneEventProgressStatus | SceneEventProgressStatus (Started means it was successful) |
 
-### SetClientSynchronizationMode(LoadSceneMode)
+#### SetClientSynchronizationMode(LoadSceneMode)
 
 <div class="markdown level1 summary">
 
@@ -265,19 +287,23 @@ VerifySceneBeforeLoading method.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SetClientSynchronizationMode(LoadSceneMode mode)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name | Description                        |
 |---------------|------|------------------------------------|
 | LoadSceneMode | mode | for initial client synchronization |
 
-### UnloadScene(Scene)
+#### UnloadScene(Scene)
 
 <div class="markdown level1 summary">
 
@@ -291,27 +317,31 @@ delivered within the SceneEvent via the OnSceneEvent
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public SceneEventProgressStatus UnloadScene(Scene scene)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type  | Name  | Description |
 |-------|-------|-------------|
 | Scene | scene |             |
 
-#### Returns
+##### Returns
 
 | Type                     | Description                                                |
 |--------------------------|------------------------------------------------------------|
 | SceneEventProgressStatus | SceneEventProgressStatus (Started means it was successful) |
 
-## 
+### Events
 
-### OnLoad
+#### OnLoad
 
 <div class="markdown level1 summary">
 
@@ -325,19 +355,23 @@ notification.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnLoadDelegateHandler OnLoad
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                      | Description |
 |-------------------------------------------|-------------|
 | NetworkSceneManager.OnLoadDelegateHandler |             |
 
-### OnLoadComplete
+#### OnLoadComplete
 
 <div class="markdown level1 summary">
 
@@ -352,19 +386,23 @@ server.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnLoadCompleteDelegateHandler OnLoadComplete
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                              | Description |
 |---------------------------------------------------|-------------|
 | NetworkSceneManager.OnLoadCompleteDelegateHandler |             |
 
-### OnLoadEventCompleted
+#### OnLoadEventCompleted
 
 <div class="markdown level1 summary">
 
@@ -381,19 +419,23 @@ scene (single or additive mode)*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnEventCompletedDelegateHandler OnLoadEventCompleted
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
 | NetworkSceneManager.OnEventCompletedDelegateHandler |             |
 
-### OnSceneEvent
+#### OnSceneEvent
 
 <div class="markdown level1 summary">
 
@@ -425,19 +467,23 @@ individually via the following events:
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.SceneEventDelegate OnSceneEvent
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                   | Description |
 |----------------------------------------|-------------|
 | NetworkSceneManager.SceneEventDelegate |             |
 
-### OnSynchronize
+#### OnSynchronize
 
 <div class="markdown level1 summary">
 
@@ -455,19 +501,23 @@ approved client basis.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnSynchronizeDelegateHandler OnSynchronize
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                             | Description |
 |--------------------------------------------------|-------------|
 | NetworkSceneManager.OnSynchronizeDelegateHandler |             |
 
-### OnSynchronizeComplete
+#### OnSynchronizeComplete
 
 <div class="markdown level1 summary">
 
@@ -484,19 +534,23 @@ synchronized all NetworkObjects.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnSynchronizeCompleteDelegateHandler OnSynchronizeComplete
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                                     | Description |
 |----------------------------------------------------------|-------------|
 | NetworkSceneManager.OnSynchronizeCompleteDelegateHandler |             |
 
-### OnUnload
+#### OnUnload
 
 <div class="markdown level1 summary">
 
@@ -510,19 +564,23 @@ notification.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnUnloadDelegateHandler OnUnload
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                        | Description |
 |---------------------------------------------|-------------|
 | NetworkSceneManager.OnUnloadDelegateHandler |             |
 
-### OnUnloadComplete
+#### OnUnloadComplete
 
 <div class="markdown level1 summary">
 
@@ -538,19 +596,23 @@ server.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnUnloadCompleteDelegateHandler OnUnloadComplete
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
 | NetworkSceneManager.OnUnloadCompleteDelegateHandler |             |
 
-### OnUnloadEventCompleted
+#### OnUnloadEventCompleted
 
 <div class="markdown level1 summary">
 
@@ -568,13 +630,17 @@ scene. The will always be for this event.*
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnEventCompletedDelegateHandler OnUnloadEventCompleted
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
@@ -587,3 +653,5 @@ public event NetworkSceneManager.OnEventCompletedDelegateHandler OnUnloadEventCo
 System.IDisposable
 
 </div>
+
+ 

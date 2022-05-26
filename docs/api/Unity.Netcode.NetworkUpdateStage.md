@@ -9,29 +9,35 @@ Defines network update stages being executed by the network update loop.
 
 </div>
 
-<div class="markdown level0 conceptual">
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum NetworkUpdateStage : byte
 ```
 
-## 
+</div>
 
-| Name           | Description |
-|----------------|-------------|
-| EarlyUpdate    |             |
-| FixedUpdate    |             |
-| Initialization |             |
-| PostLateUpdate |             |
-| PreLateUpdate  |             |
-| PreUpdate      |             |
-| Unset          |             |
-| Update         |             |
+### Fields
+
+Name
+
+Description
+
+EarlyUpdate
+
+FixedUpdate
+
+Initialization
+
+PostLateUpdate
+
+PreLateUpdate
+
+PreUpdate
+
+Unset
+
+Update
+

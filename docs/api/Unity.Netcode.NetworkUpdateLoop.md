@@ -20,13 +20,13 @@ in Unity.
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkUpdateLoop
 
 </div>
 
@@ -38,61 +38,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class NetworkUpdateLoop
 ```
 
-## 
+</div>
 
-### UpdateStage
+### Fields
+
+#### UpdateStage
 
 <div class="markdown level1 summary">
 
@@ -104,21 +106,25 @@ The current network update stage being executed.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkUpdateStage UpdateStage
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type               | Description |
 |--------------------|-------------|
 | NetworkUpdateStage |             |
 
-## 
+### Methods
 
-### RegisterAllNetworkUpdates(INetworkUpdateSystem)
+#### RegisterAllNetworkUpdates(INetworkUpdateSystem)
 
 <div class="markdown level1 summary">
 
@@ -131,19 +137,23 @@ stages.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void RegisterAllNetworkUpdates(this INetworkUpdateSystem updateSystem)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                 | Name         | Description |
 |----------------------|--------------|-------------|
 | INetworkUpdateSystem | updateSystem |             |
 
-### RegisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
+#### RegisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
 
 <div class="markdown level1 summary">
 
@@ -156,20 +166,24 @@ update stage.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void RegisterNetworkUpdate(this INetworkUpdateSystem updateSystem, NetworkUpdateStage updateStage = NetworkUpdateStage.Update)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                 | Name         | Description |
 |----------------------|--------------|-------------|
 | INetworkUpdateSystem | updateSystem |             |
 | NetworkUpdateStage   | updateStage  |             |
 
-### UnregisterAllNetworkUpdates(INetworkUpdateSystem)
+#### UnregisterAllNetworkUpdates(INetworkUpdateSystem)
 
 <div class="markdown level1 summary">
 
@@ -181,19 +195,23 @@ Unregisters a network update system from all network update stages.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void UnregisterAllNetworkUpdates(this INetworkUpdateSystem updateSystem)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                 | Name         | Description |
 |----------------------|--------------|-------------|
 | INetworkUpdateSystem | updateSystem |             |
 
-### UnregisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
+#### UnregisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
 
 <div class="markdown level1 summary">
 
@@ -206,15 +224,21 @@ stage.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void UnregisterNetworkUpdate(this INetworkUpdateSystem updateSystem, NetworkUpdateStage updateStage = NetworkUpdateStage.Update)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                 | Name         | Description |
 |----------------------|--------------|-------------|
 | INetworkUpdateSystem | updateSystem |             |
 | NetworkUpdateStage   | updateStage  |             |
+
+ 

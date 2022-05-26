@@ -13,24 +13,28 @@ Delegate type for checking spawn options
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate bool SpawnDelegate(ulong clientId);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type          | Name       | Description                             |
-|---------------|------------|-----------------------------------------|
-| System.UInt64 | \*clientId | The clientId to check spawn options for |
+| Type          | Name     | Description                             |
+|---------------|----------|-----------------------------------------|
+| System.UInt64 | clientId | The clientId to check spawn options for |
 
 ##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+ 

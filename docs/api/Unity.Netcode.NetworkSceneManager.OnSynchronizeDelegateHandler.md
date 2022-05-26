@@ -15,18 +15,22 @@ Synchronize for more information
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnSynchronizeDelegateHandler(ulong clientId);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type          | Name       | Description                                                                                                        |
-|---------------|------------|--------------------------------------------------------------------------------------------------------------------|
-| System.UInt64 | \*clientId | the client that is processing this event (the server will receive all of these events for every client and itself) |
+| Type          | Name     | Description                                                                                                        |
+|---------------|----------|--------------------------------------------------------------------------------------------------------------------|
+| System.UInt64 | clientId | the client that is processing this event (the server will receive all of these events for every client and itself) |
+
+ 

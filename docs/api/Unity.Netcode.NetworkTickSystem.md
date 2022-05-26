@@ -17,13 +17,13 @@ title: Unity.Netcode.NetworkTickSystem
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkTickSystem
 
 </div>
 
@@ -35,61 +35,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkTickSystem
 ```
 
-## 
+</div>
 
-### NetworkTickSystem(UInt32, Double, Double)
+### Constructors
+
+#### NetworkTickSystem(UInt32, Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -101,13 +103,17 @@ Creates a new instance of the NetworkTickSystem class.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTickSystem(uint tickRate, double localTimeSec, double serverTimeSec)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                          |
 |---------------|---------------|--------------------------------------|
@@ -115,9 +121,9 @@ public NetworkTickSystem(uint tickRate, double localTimeSec, double serverTimeSe
 | System.Double | localTimeSec  | The initial local time to start at.  |
 | System.Double | serverTimeSec | The initial server time to start at. |
 
-## 
+### Fields
 
-### NoTick
+#### NoTick
 
 <div class="markdown level1 summary">
 
@@ -129,21 +135,25 @@ Special value to indicate "No tick information"
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int NoTick = -2147483648
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Properties
 
-### LocalTime
+#### LocalTime
 
 <div class="markdown level1 summary">
 
@@ -157,19 +167,23 @@ or during the Tick event but does not work correctly for FixedUpdate.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime LocalTime { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type        | Description |
 |-------------|-------------|
 | NetworkTime |             |
 
-### ServerTime
+#### ServerTime
 
 <div class="markdown level1 summary">
 
@@ -184,19 +198,23 @@ work correctly for FixedUpdate.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime ServerTime { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type        | Description |
 |-------------|-------------|
 | NetworkTime |             |
 
-### TickRate
+#### TickRate
 
 <div class="markdown level1 summary">
 
@@ -209,21 +227,25 @@ fixed network tick is run.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public uint TickRate { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-## 
+### Methods
 
-### Reset(Double, Double)
+#### Reset(Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -235,20 +257,24 @@ Resets the tick system to the given network time.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Reset(double localTimeSec, double serverTimeSec)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                 |
 |---------------|---------------|-----------------------------|
 | System.Double | localTimeSec  | The local time in seconds.  |
 | System.Double | serverTimeSec | The server time in seconds. |
 
-### UpdateTick(Double, Double)
+#### UpdateTick(Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -261,22 +287,26 @@ difference in time.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void UpdateTick(double localTimeSec, double serverTimeSec)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description |
 |---------------|---------------|-------------|
 | System.Double | localTimeSec  |             |
 | System.Double | serverTimeSec |             |
 
-## 
+### Events
 
-### Tick
+#### Tick
 
 <div class="markdown level1 summary">
 
@@ -288,14 +318,20 @@ Gets invoked before every network tick.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event Action Tick
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type          | Description |
 |---------------|-------------|
 | System.Action |             |
+
+ 

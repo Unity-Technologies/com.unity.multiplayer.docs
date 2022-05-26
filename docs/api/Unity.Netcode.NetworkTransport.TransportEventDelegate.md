@@ -13,21 +13,25 @@ Delegate for transport network events
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void TransportEventDelegate(NetworkEvent eventType, ulong clientId, ArraySegment<byte> payload, float receiveTime);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type                               | Name          | Description |
-|------------------------------------|---------------|-------------|
-| NetworkEvent                       | \*eventType   |             |
-| System.UInt64                      | \*clientId    |             |
-| System.ArraySegment\<System.Byte\> | \*payload     |             |
-| System.Single                      | \*receiveTime |             |
+| Type                               | Name        | Description |
+|------------------------------------|-------------|-------------|
+| NetworkEvent                       | eventType   |             |
+| System.UInt64                      | clientId    |             |
+| System.ArraySegment\<System.Byte\> | payload     |             |
+| System.Single                      | receiveTime |             |
+
+ 

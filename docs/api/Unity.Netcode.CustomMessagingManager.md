@@ -21,13 +21,13 @@ easier to use.
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+CustomMessagingManager
 
 </div>
 
@@ -39,61 +39,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class CustomMessagingManager
 ```
 
-## 
+</div>
 
-### RegisterNamedMessageHandler(String, CustomMessagingManager.HandleNamedMessageDelegate)
+### Methods
+
+#### RegisterNamedMessageHandler(String, CustomMessagingManager.HandleNamedMessageDelegate)
 
 <div class="markdown level1 summary">
 
@@ -105,20 +107,24 @@ Registers a named message handler delegate.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void RegisterNamedMessageHandler(string name, CustomMessagingManager.HandleNamedMessageDelegate callback)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                                              | Name     | Description                                           |
 |---------------------------------------------------|----------|-------------------------------------------------------|
 | System.String                                     | name     | Name of the message.                                  |
 | CustomMessagingManager.HandleNamedMessageDelegate | callback | The callback to run when a named message is received. |
 
-### SendNamedMessage(String, IReadOnlyList\&lt;UInt64&gt;, FastBufferWriter, NetworkDelivery)
+#### SendNamedMessage(String, IReadOnlyList\<UInt64\>, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -130,22 +136,26 @@ Sends the named message
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SendNamedMessage(string messageName, IReadOnlyList<ulong> clientIds, FastBufferWriter messageStream, NetworkDelivery networkDelivery = NetworkDelivery.ReliableSequenced)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                           | Name            | Description                                       |
 |--------------------------------|-----------------|---------------------------------------------------|
 | System.String                  | messageName     | The message name to send                          |
-| IReadOnlyList\&lt;System.UInt64&gt; | clientIds       | The clients to send to, sends to everyone if null |
+| IReadOnlyList\<System.UInt64\> | clientIds       | The clients to send to, sends to everyone if null |
 | FastBufferWriter               | messageStream   | The message stream containing the data            |
 | NetworkDelivery                | networkDelivery | The delivery type (QoS) to send data with         |
 
-### SendNamedMessage(String, UInt64, FastBufferWriter, NetworkDelivery)
+#### SendNamedMessage(String, UInt64, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -157,13 +167,17 @@ Sends a named message
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SendNamedMessage(string messageName, ulong clientId, FastBufferWriter messageStream, NetworkDelivery networkDelivery = NetworkDelivery.ReliableSequenced)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name            | Description                               |
 |------------------|-----------------|-------------------------------------------|
@@ -172,7 +186,7 @@ public void SendNamedMessage(string messageName, ulong clientId, FastBufferWrite
 | FastBufferWriter | messageStream   | The message stream containing the data    |
 | NetworkDelivery  | networkDelivery | The delivery type (QoS) to send data with |
 
-### SendNamedMessageToAll(String, FastBufferWriter, NetworkDelivery)
+#### SendNamedMessageToAll(String, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -184,13 +198,17 @@ Sends a named message to all clients
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SendNamedMessageToAll(string messageName, FastBufferWriter messageStream, NetworkDelivery networkDelivery = NetworkDelivery.ReliableSequenced)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name            | Description                               |
 |------------------|-----------------|-------------------------------------------|
@@ -198,7 +216,7 @@ public void SendNamedMessageToAll(string messageName, FastBufferWriter messageSt
 | FastBufferWriter | messageStream   | The message stream containing the data    |
 | NetworkDelivery  | networkDelivery | The delivery type (QoS) to send data with |
 
-### SendUnnamedMessage(IReadOnlyList\&lt;UInt64&gt;, FastBufferWriter, NetworkDelivery)
+#### SendUnnamedMessage(IReadOnlyList\<UInt64\>, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -210,21 +228,25 @@ Sends unnamed message to a list of clients
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SendUnnamedMessage(IReadOnlyList<ulong> clientIds, FastBufferWriter messageBuffer, NetworkDelivery networkDelivery = NetworkDelivery.ReliableSequenced)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                           | Name            | Description                                       |
 |--------------------------------|-----------------|---------------------------------------------------|
-| IReadOnlyList\&lt;System.UInt64&gt; | clientIds       | The clients to send to, sends to everyone if null |
+| IReadOnlyList\<System.UInt64\> | clientIds       | The clients to send to, sends to everyone if null |
 | FastBufferWriter               | messageBuffer   | The message stream containing the data            |
 | NetworkDelivery                | networkDelivery | The delivery type (QoS) to send data with         |
 
-### SendUnnamedMessage(UInt64, FastBufferWriter, NetworkDelivery)
+#### SendUnnamedMessage(UInt64, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -236,13 +258,17 @@ Sends a unnamed message to a specific client
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SendUnnamedMessage(ulong clientId, FastBufferWriter messageBuffer, NetworkDelivery networkDelivery = NetworkDelivery.ReliableSequenced)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name            | Description                               |
 |------------------|-----------------|-------------------------------------------|
@@ -250,7 +276,7 @@ public void SendUnnamedMessage(ulong clientId, FastBufferWriter messageBuffer, N
 | FastBufferWriter | messageBuffer   | The message stream containing the data    |
 | NetworkDelivery  | networkDelivery | The delivery type (QoS) to send data with |
 
-### SendUnnamedMessageToAll(FastBufferWriter, NetworkDelivery)
+#### SendUnnamedMessageToAll(FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -262,20 +288,24 @@ Sends unnamed message to all clients
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void SendUnnamedMessageToAll(FastBufferWriter messageBuffer, NetworkDelivery networkDelivery = NetworkDelivery.ReliableSequenced)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name            | Description                               |
 |------------------|-----------------|-------------------------------------------|
 | FastBufferWriter | messageBuffer   | The message stream containing the data    |
 | NetworkDelivery  | networkDelivery | The delivery type (QoS) to send data with |
 
-### UnregisterNamedMessageHandler(String)
+#### UnregisterNamedMessageHandler(String)
 
 <div class="markdown level1 summary">
 
@@ -287,21 +317,25 @@ Unregisters a named message handler.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void UnregisterNamedMessageHandler(string name)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name | Description              |
 |---------------|------|--------------------------|
 | System.String | name | The name of the message. |
 
-## 
+### Events
 
-### OnUnnamedMessage
+#### OnUnnamedMessage
 
 <div class="markdown level1 summary">
 
@@ -313,14 +347,20 @@ Event invoked when unnamed messages arrive
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event CustomMessagingManager.UnnamedMessageDelegate OnUnnamedMessage
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                          | Description |
 |-----------------------------------------------|-------------|
 | CustomMessagingManager.UnnamedMessageDelegate |             |
+
+ 

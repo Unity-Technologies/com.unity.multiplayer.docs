@@ -14,19 +14,21 @@ by the network update loop.
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public interface INetworkUpdateSystem
 ```
 
-## 
+</div>
 
-### NetworkUpdate(NetworkUpdateStage)
+### Methods
+
+#### NetworkUpdate(NetworkUpdateStage)
 
 <div class="markdown level1 summary">
 
@@ -36,13 +38,17 @@ public interface INetworkUpdateSystem
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 void NetworkUpdate(NetworkUpdateStage updateStage)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type               | Name        | Description |
 |--------------------|-------------|-------------|
@@ -75,3 +81,5 @@ NetworkUpdateLoop.UnregisterNetworkUpdate(INetworkUpdateSystem,
 NetworkUpdateStage)
 
 </div>
+
+ 

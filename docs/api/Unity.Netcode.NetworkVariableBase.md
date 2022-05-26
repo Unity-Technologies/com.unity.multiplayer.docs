@@ -19,25 +19,19 @@ Interface for network value containers
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkVariableBase
 
 </div>
 
 <div class="level2">
 
-System.Dynamic.ExpandoObject
-
-</div>
-
-<div class="level2">
-
-System.Dynamic.ExpandoObject
+NetworkVariableSerialization\<T\>
 
 </div>
 
@@ -61,61 +55,63 @@ System.IDisposable
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract class NetworkVariableBase : IDisposable
 ```
 
-## 
+</div>
 
-### NetworkVariableBase(NetworkVariableReadPermission)
+### Constructors
+
+#### NetworkVariableBase(NetworkVariableReadPermission, NetworkVariableWritePermission)
 
 <div class="markdown level1 summary">
 
@@ -125,21 +121,78 @@ public abstract class NetworkVariableBase : IDisposable
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
-protected NetworkVariableBase(NetworkVariableReadPermission readPermIn = NetworkVariableReadPermission.Everyone)
+protected NetworkVariableBase(NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server)
 ```
 
-#### Parameters
+</div>
 
-| Type                          | Name       | Description |
-|-------------------------------|------------|-------------|
-| NetworkVariableReadPermission | readPermIn |             |
+##### Parameters
 
-## 
+| Type                           | Name      | Description |
+|--------------------------------|-----------|-------------|
+| NetworkVariableReadPermission  | readPerm  |             |
+| NetworkVariableWritePermission | writePerm |             |
 
-### ReadPerm
+### Fields
+
+#### DefaultReadPerm
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const NetworkVariableReadPermission DefaultReadPerm = NetworkVariableReadPermission.Everyone
+```
+
+</div>
+
+##### Field Value
+
+| Type                          | Description |
+|-------------------------------|-------------|
+| NetworkVariableReadPermission |             |
+
+#### DefaultWritePerm
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public const NetworkVariableWritePermission DefaultWritePerm = NetworkVariableWritePermission.Server
+```
+
+</div>
+
+##### Field Value
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| NetworkVariableWritePermission |             |
+
+#### ReadPerm
 
 <div class="markdown level1 summary">
 
@@ -151,21 +204,51 @@ The read permission for this var
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly NetworkVariableReadPermission ReadPerm
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                          | Description |
 |-------------------------------|-------------|
 | NetworkVariableReadPermission |             |
 
-## 
+#### WritePerm
 
-### Name
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public readonly NetworkVariableWritePermission WritePerm
+```
+
+</div>
+
+##### Field Value
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| NetworkVariableWritePermission |             |
+
+### Properties
+
+#### Name
 
 <div class="markdown level1 summary">
 
@@ -178,25 +261,27 @@ where it was declared.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public string Name { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-## 
+### Methods
 
-### CanClientRead(UInt64)
+#### CanClientRead(UInt64)
 
 <div class="markdown level1 summary">
-
-Gets Whether or not a specific client can read to the varaible
 
 </div>
 
@@ -204,25 +289,29 @@ Gets Whether or not a specific client can read to the varaible
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool CanClientRead(ulong clientId)
 ```
 
-#### Parameters
+</div>
 
-| Type          | Name     | Description                       |
-|---------------|----------|-----------------------------------|
-| System.UInt64 | clientId | The clientId of the remote client |
+##### Parameters
 
-#### Returns
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
 
-| Type           | Description                                        |
-|----------------|----------------------------------------------------|
-| System.Boolean | Whether or not the client can read to the variable |
+##### Returns
 
-### Dispose()
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+#### CanClientWrite(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -232,13 +321,49 @@ public bool CanClientRead(ulong clientId)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public bool CanClientWrite(ulong clientId)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name     | Description |
+|---------------|----------|-------------|
+| System.UInt64 | clientId |             |
+
+##### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+#### Dispose()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void Dispose()
 ```
 
-### Initialize(NetworkBehaviour)
+</div>
+
+#### Initialize(NetworkBehaviour)
 
 <div class="markdown level1 summary">
 
@@ -248,19 +373,23 @@ public virtual void Dispose()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Initialize(NetworkBehaviour networkBehaviour)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name             | Description |
 |------------------|------------------|-------------|
 | NetworkBehaviour | networkBehaviour |             |
 
-### IsDirty()
+#### IsDirty()
 
 <div class="markdown level1 summary">
 
@@ -272,19 +401,23 @@ Gets Whether or not the container is dirty
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual bool IsDirty()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type           | Description                           |
 |----------------|---------------------------------------|
 | System.Boolean | Whether or not the container is dirty |
 
-### ReadDelta(FastBufferReader, Boolean)
+#### ReadDelta(FastBufferReader, Boolean)
 
 <div class="markdown level1 summary">
 
@@ -296,20 +429,24 @@ Reads delta from the reader and applies them to the internal value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name           | Description                                                  |
 |------------------|----------------|--------------------------------------------------------------|
 | FastBufferReader | reader         | The stream to read the delta from                            |
 | System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed |
 
-### ReadField(FastBufferReader)
+#### ReadField(FastBufferReader)
 
 <div class="markdown level1 summary">
 
@@ -321,19 +458,23 @@ Reads the complete state from the reader and applies it
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void ReadField(FastBufferReader reader)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description                       |
 |------------------|--------|-----------------------------------|
 | FastBufferReader | reader | The stream to read the state from |
 
-### ResetDirty()
+#### ResetDirty()
 
 <div class="markdown level1 summary">
 
@@ -345,13 +486,17 @@ Resets the dirty state and marks the variable as synced / clean
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void ResetDirty()
 ```
 
-### SetDirty(Boolean)
+</div>
+
+#### SetDirty(Boolean)
 
 <div class="markdown level1 summary">
 
@@ -363,48 +508,23 @@ Sets whether or not the variable needs to be delta synced
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void SetDirty(bool isDirty)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type           | Name    | Description |
 |----------------|---------|-------------|
 | System.Boolean | isDirty |             |
 
-### ShouldWrite(UInt64, Boolean)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public virtual bool ShouldWrite(ulong clientId, bool isServer)
-```
-
-#### Parameters
-
-| Type           | Name     | Description |
-|----------------|----------|-------------|
-| System.UInt64  | clientId |             |
-| System.Boolean | isServer |             |
-
-#### Returns
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-### WriteDelta(FastBufferWriter)
+#### WriteDelta(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
@@ -417,19 +537,23 @@ last dirty, to the writer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void WriteDelta(FastBufferWriter writer)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description                              |
 |------------------|--------|------------------------------------------|
 | FastBufferWriter | writer | The stream to write the dirty changes to |
 
-### WriteField(FastBufferWriter)
+#### WriteField(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
@@ -441,13 +565,17 @@ Writes the complete state of the variable to the writer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void WriteField(FastBufferWriter writer)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
@@ -460,3 +588,5 @@ public abstract void WriteField(FastBufferWriter writer)
 System.IDisposable
 
 </div>
+
+ 

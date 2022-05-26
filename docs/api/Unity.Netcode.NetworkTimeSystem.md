@@ -21,13 +21,13 @@ and a server time. The local time is based on
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkTimeSystem
 
 </div>
 
@@ -39,61 +39,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkTimeSystem
 ```
 
-## 
+</div>
 
-### NetworkTimeSystem(Double, Double, Double, Double)
+### Constructors
+
+#### NetworkTimeSystem(Double, Double, Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -103,13 +105,17 @@ public class NetworkTimeSystem
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTimeSystem(double localBufferSec, double serverBufferSec, double hardResetThresholdSec, double adjustmentRatio = 0.01)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name                  | Description |
 |---------------|-----------------------|-------------|
@@ -118,9 +124,9 @@ public NetworkTimeSystem(double localBufferSec, double serverBufferSec, double h
 | System.Double | hardResetThresholdSec |             |
 | System.Double | adjustmentRatio       |             |
 
-## 
+### Properties
 
-### AdjustmentRatio
+#### AdjustmentRatio
 
 <div class="markdown level1 summary">
 
@@ -133,19 +139,23 @@ down time.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public double AdjustmentRatio { get; set; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-### HardResetThresholdSec
+#### HardResetThresholdSec
 
 <div class="markdown level1 summary">
 
@@ -158,19 +168,23 @@ network time.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public double HardResetThresholdSec { get; set; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-### LocalBufferSec
+#### LocalBufferSec
 
 <div class="markdown level1 summary">
 
@@ -184,19 +198,23 @@ and server time so that messages arrive earlier on the server.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public double LocalBufferSec { get; set; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-### LocalTime
+#### LocalTime
 
 <div class="markdown level1 summary">
 
@@ -206,19 +224,23 @@ public double LocalBufferSec { get; set; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public double LocalTime { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-### ServerBufferSec
+#### ServerBufferSec
 
 <div class="markdown level1 summary">
 
@@ -234,19 +256,23 @@ client side.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public double ServerBufferSec { get; set; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-### ServerTime
+#### ServerTime
 
 <div class="markdown level1 summary">
 
@@ -256,21 +282,25 @@ public double ServerBufferSec { get; set; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public double ServerTime { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-## 
+### Methods
 
-### Advance(Double)
+#### Advance(Double)
 
 <div class="markdown level1 summary">
 
@@ -283,25 +313,29 @@ once per frame with Time.deltaTime or similar.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Advance(double deltaTimeSec)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name         | Description                                                                               |
 |---------------|--------------|-------------------------------------------------------------------------------------------|
 | System.Double | deltaTimeSec | The amount of time to advance. The delta time which passed since Advance was last called. |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Reset(Double, Double)
+#### Reset(Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -313,20 +347,24 @@ Resets the time system to a time based on the given network parameters.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Reset(double serverTimeSec, double rttSec)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                                                    |
 |---------------|---------------|----------------------------------------------------------------|
 | System.Double | serverTimeSec | The most recent server time value received in seconds.         |
 | System.Double | rttSec        | The current RTT in seconds. Can be an averaged or a raw value. |
 
-### ServerTimeSystem()
+#### ServerTimeSystem()
 
 <div class="markdown level1 summary">
 
@@ -340,19 +378,23 @@ local time equals server time.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkTimeSystem ServerTimeSystem()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type              | Description   |
 |-------------------|---------------|
 | NetworkTimeSystem | The instance. |
 
-### Sync(Double, Double)
+#### Sync(Double, Double)
 
 <div class="markdown level1 summary">
 
@@ -365,15 +407,21 @@ not change any time values or advance the time.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Sync(double serverTimeSec, double rttSec)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                                                    |
 |---------------|---------------|----------------------------------------------------------------|
 | System.Double | serverTimeSec | The most recent server time value received in seconds.         |
 | System.Double | rttSec        | The current RTT in seconds. Can be an averaged or a raw value. |
+
+ 

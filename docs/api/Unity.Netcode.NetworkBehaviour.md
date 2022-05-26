@@ -19,31 +19,33 @@ The base class to override to write network code. Inherits MonoBehaviour
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkBehaviour
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract class NetworkBehaviour : MonoBehaviour
 ```
 
-## 
+</div>
 
-### HasNetworkObject
+### Properties
+
+#### HasNetworkObject
 
 <div class="markdown level1 summary">
 
@@ -56,19 +58,23 @@ owner.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool HasNetworkObject { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsClient
+#### IsClient
 
 <div class="markdown level1 summary">
 
@@ -80,19 +86,23 @@ Gets if we are executing as client
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 protected bool IsClient { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsHost
+#### IsHost
 
 <div class="markdown level1 summary">
 
@@ -104,23 +114,29 @@ Gets if we are executing as Host, I.E Server and Client
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 protected bool IsHost { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsLocalPlayer
+#### IsLocalPlayer
 
 <div class="markdown level1 summary">
 
-Gets if the object is the the personal clients player object
+If a NetworkObject is assigned, it will return whether or not this
+NetworkObject is the local player object. If no NetworkObject is
+assigned it will always return false.
 
 </div>
 
@@ -128,19 +144,23 @@ Gets if the object is the the personal clients player object
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsLocalPlayer { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsOwnedByServer
+#### IsOwnedByServer
 
 <div class="markdown level1 summary">
 
@@ -152,19 +172,23 @@ Gets Whether or not the object has a owner
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsOwnedByServer { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsOwner
+#### IsOwner
 
 <div class="markdown level1 summary">
 
@@ -177,19 +201,23 @@ local player object
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsOwner { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsServer
+#### IsServer
 
 <div class="markdown level1 summary">
 
@@ -201,19 +229,23 @@ Gets if we are executing as server
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 protected bool IsServer { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsSpawned
+#### IsSpawned
 
 <div class="markdown level1 summary">
 
@@ -227,19 +259,23 @@ when checking NetworkObject/NetworkManager properties within FixedUpate
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsSpawned { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### NetworkBehaviourId
+#### NetworkBehaviourId
 
 <div class="markdown level1 summary">
 
@@ -251,19 +287,23 @@ Gets NetworkId for this NetworkBehaviour from the owner NetworkObject
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ushort NetworkBehaviourId { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### NetworkManager
+#### NetworkManager
 
 <div class="markdown level1 summary">
 
@@ -277,19 +317,23 @@ when we are not initialized
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkManager NetworkManager { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | NetworkManager |             |
 
-### NetworkObject
+#### NetworkObject
 
 <div class="markdown level1 summary">
 
@@ -310,19 +354,23 @@ risky to change
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObject NetworkObject { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkObject |             |
 
-### NetworkObjectId
+#### NetworkObjectId
 
 <div class="markdown level1 summary">
 
@@ -334,19 +382,23 @@ Gets the NetworkId of the NetworkObject that owns this NetworkBehaviour
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ulong NetworkObjectId { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### OwnerClientId
+#### OwnerClientId
 
 <div class="markdown level1 summary">
 
@@ -358,21 +410,25 @@ Gets the ClientId that owns the NetworkObject
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ulong OwnerClientId { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+### Methods
 
-### GetNetworkBehaviour(UInt16)
+#### GetNetworkBehaviour(UInt16)
 
 <div class="markdown level1 summary">
 
@@ -385,25 +441,29 @@ NetworkObject
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 protected NetworkBehaviour GetNetworkBehaviour(ushort behaviourId)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name        | Description               |
 |---------------|-------------|---------------------------|
 | System.UInt16 | behaviourId | The behaviourId to return |
 
-#### Returns
+##### Returns
 
 | Type             | Description                                     |
 |------------------|-------------------------------------------------|
 | NetworkBehaviour | Returns NetworkBehaviour with given behaviourId |
 
-### GetNetworkObject(UInt64)
+#### GetNetworkObject(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -415,25 +475,29 @@ Gets the local instance of a object with a given NetworkId
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 protected NetworkObject GetNetworkObject(ulong networkId)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name      | Description |
 |---------------|-----------|-------------|
 | System.UInt64 | networkId |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkObject |             |
 
-### OnDestroy()
+#### OnDestroy()
 
 <div class="markdown level1 summary">
 
@@ -443,13 +507,17 @@ protected NetworkObject GetNetworkObject(ulong networkId)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void OnDestroy()
 ```
 
-### OnGainedOwnership()
+</div>
+
+#### OnGainedOwnership()
 
 <div class="markdown level1 summary">
 
@@ -461,13 +529,17 @@ Gets called when the local client gains ownership of this object
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void OnGainedOwnership()
 ```
 
-### OnLostOwnership()
+</div>
+
+#### OnLostOwnership()
 
 <div class="markdown level1 summary">
 
@@ -479,13 +551,17 @@ Gets called when we loose ownership of this object
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void OnLostOwnership()
 ```
 
-### OnNetworkDespawn()
+</div>
+
+#### OnNetworkDespawn()
 
 <div class="markdown level1 summary">
 
@@ -498,13 +574,17 @@ server and clients.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void OnNetworkDespawn()
 ```
 
-### OnNetworkObjectParentChanged(NetworkObject)
+</div>
+
+#### OnNetworkObjectParentChanged(NetworkObject)
 
 <div class="markdown level1 summary">
 
@@ -517,19 +597,23 @@ NetworkObject has changed
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name                | Description |
 |---------------|---------------------|-------------|
 | NetworkObject | parentNetworkObject |             |
 
-### OnNetworkSpawn()
+#### OnNetworkSpawn()
 
 <div class="markdown level1 summary">
 
@@ -542,8 +626,14 @@ ready to be registered and the network is setup.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual void OnNetworkSpawn()
 ```
+
+</div>
+
+ 

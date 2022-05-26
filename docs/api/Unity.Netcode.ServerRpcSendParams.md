@@ -3,62 +3,58 @@ id: Unity.Netcode.ServerRpcSendParams
 title: Unity.Netcode.ServerRpcSendParams  
 ---
 
-<div class="markdown level0 summary">
-
-</div>
-
-<div class="markdown level0 conceptual">
-
-</div>
-
 <div class="inheritedMembers">
 
 ##### Inherited Members
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct ServerRpcSendParams
 ```
+
+</div>
+
+ 
