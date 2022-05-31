@@ -16,18 +16,22 @@ Unity.Netcode.SceneEventData
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void SceneEventDelegate(SceneEvent sceneEvent);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type       | Name         | Description |
-|------------|--------------|-------------|
-| SceneEvent | \*sceneEvent |             |
+| Type       | Name       | Description |
+|------------|------------|-------------|
+| SceneEvent | sceneEvent |             |
+
+ 

@@ -13,21 +13,34 @@ Represents a netEvent when polling
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum NetworkEvent
 ```
 
-## 
+</div>
 
-| Name       | Description                                               |
-|------------|-----------------------------------------------------------|
-| Connect    | A client is connected, or client connected to server      |
-| Data       | New data is received                                      |
-| Disconnect | A client disconnected, or client disconnected from server |
-| Nothing    | No new event                                              |
+### Fields
+
+Name
+
+Description
+
+Connect
+
+A client is connected, or client connected to server
+
+Data
+
+New data is received
+
+Disconnect
+
+A client disconnected, or client disconnected from server
+
+Nothing
+
+No new event

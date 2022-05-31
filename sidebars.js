@@ -296,21 +296,6 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Tools",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "tools/install-tools",
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/profiling",
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
             "label": "Debugging",
             "items": [
                 {
@@ -568,11 +553,6 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.AddAllInterestKernel",
-                        "label": "AddAllInterestKernel"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.INetworkUpdateSystem",
                         "label": "INetworkUpdateSystem"
                     },
@@ -618,17 +598,10 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkUpdateStage",
                         "label": "NetworkUpdateStage"
                     },
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
                         "label": "INetworkPrefabInstanceHandler"
-                    },
-
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
-                        "label": "INetworkStreamDriverConstructor"
                     },
                     {
                         "type": "doc",
@@ -644,11 +617,6 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkPrefabHandler",
                         "label": "NetworkPrefabHandler"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.StreamExtensions",
-                        "label": "StreamExtensions"
                     },
                     {
                         "type": "doc",
@@ -682,63 +650,63 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.ErrorUtilities",
-                        "label": "ErrorUtilities"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferReader",
                         "label": "FastBufferReader"
                     },
                     {
                         "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForEnums",
+                        "label": "FastBufferWriter.ForEnums"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForNetworkSerializable",
+                        "label": "FastBufferWriter.ForNetworkSerializable"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForPrimitives",
+                        "label": "FastBufferWriter.ForPrimitives"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForStructs",
+                        "label": "FastBufferWriter.ForStructs"
+                    },
+                    {
+                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferWriter",
-                        "label": "ByteUnpFastBufferWriteracker"
-                    },
-
-
-
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Interest",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.Interest",
-                        "label": "Interest"
+                        "label": "FastBufferWriter"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.AddAllInterestKernel",
-                        "label": "AddAllInterestKernel"
+                        "id": "api/Unity.Netcode.INetworkSerializeByMemcpy",
+                        "label": "INetworkSerializeByMemcpy"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.IInterestKernel-1",
-                        "label": "IInterestKernel-1"
+                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy",
+                        "label": "ForceNetworkSerializeByMemcpy"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.IInterestNode-1",
-                        "label": "IInterestNode-1"
+                        "id": "api/Unity.Netcode.VariableSerialization-1",
+                        "label": "VariableSerialization-1"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.InterestManager-1",
-                        "label": "InterestManager-1"
+                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.ReadDelegate-1",
+                        "label": "NetworkVariableSerialization-1.ReadDelegate-1"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.InterestNodeStatic-1",
-                        "label": "InterestNodeStatic-1"
+                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.WriteDelegate-1",
+                        "label": "NetworkVariableSerialization-1.WriteDelegate-1"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.RadiusInterestKernel",
-                        "label": "RadiusInterestKernel"
+                        "id": "api/Unity.Netcode.NetworkVariableWritePermission",
+                        "label": "NetworkVariableWritePermission"
                     },
                 ],
             },
@@ -747,7 +715,6 @@ module.exports = {
                 "type": "category",
                 "label": "Time",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkTime",
@@ -759,19 +726,6 @@ module.exports = {
                         "label": "NetworkTimeSystem"
                     },
                 ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Collections",
-                "items": [
-
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.FixedQueue-1",
-                        "label": "FixedQueue-1"
-                    },
-                ]
             },
             {
                 "collapsed": true,
@@ -795,7 +749,6 @@ module.exports = {
                 "type": "category",
                 "label": "Connection",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkClient",
@@ -818,7 +771,6 @@ module.exports = {
                 "type": "category",
                 "label": "Exceptions",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.InvalidChannelException",
@@ -861,7 +813,6 @@ module.exports = {
                 "type": "category",
                 "label": "Logging",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.LogLevel",
@@ -879,7 +830,6 @@ module.exports = {
                 "type": "category",
                 "label": "Messaging",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.ClientRpcAttribute",
@@ -1009,7 +959,6 @@ module.exports = {
                 "type": "category",
                 "label": "NetworkList-1",
                 "items": [
-
                     {
                         "collapsed": true,
                         "type": "category",
@@ -1046,7 +995,6 @@ module.exports = {
                     }
                 ]
             },
-
             {
                 "collapsed": true,
                 "type": "category",
@@ -1070,7 +1018,6 @@ module.exports = {
                     },
                 ]
             },
-
             {
                 "collapsed": true,
                 "type": "category",
@@ -1127,7 +1074,6 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler",
                         "label": "OnUnloadDelegateHandler"
                     },
-
                 ]
             },
             {
@@ -1140,14 +1086,11 @@ module.exports = {
                         "id": "api/Unity.Netcode.Arithmetic",
                         "label": "Arithmetic"
                     },
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.INetworkSerializable",
                         "label": "INetworkSerializable"
                     },
-
-
                 ]
             },
             {
@@ -1172,60 +1115,54 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkTransport",
                         "label": "NetworkTransport"
                     },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
-                        "label": "UnityTransport.ProtocolType"
-                    }
                 ]
             },
-
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Transports",
+                "label": "Transports.UTP",
                 "items": [
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.UnityTransport",
-                        "label": "UnityTransport"
+                        "id": "api/Unity.Netcode.Transports.UTP.ErrorUtilities",
+                        "label": "Transports.UTP.ErrorUtilities"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
-                        "label": "ProtocolType"
+                        "id": "api/Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor",
+                        "label": "Transports.UTP.INetworkStreamDriverConstructor"
                     },
-
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Transports.UNET",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET",
-                                "label": "UNET"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET.UNetChannel",
-                                "label": "UNetChannel"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport",
-                                "label": "UNetTransport"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode",
-                                "label": "UNetTransport.SendMode"
-                            },
-                        ],
-                    }
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP",
+                        "label": "Transports.UTP"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.NetworkMetricsContext",
+                        "label": "Transports.UTP.NetworkMetricsContext"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData",
+                        "label": "Transports.UTP.UnityTransport.ConnectionAddressData"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport",
+                        "label": "Transports.UTP.UnityTransport"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport.ProtocolType",
+                        "label": "Transports.UTP.UnityTransport.ProtocolType"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters",
+                        "label": "Transports.UTP.UnityTransport.SimulatorParameters"
+                    },
                 ]
-            }
-
+            },
         ]
 }

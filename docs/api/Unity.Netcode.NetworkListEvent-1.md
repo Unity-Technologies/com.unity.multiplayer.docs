@@ -19,51 +19,53 @@ Struct containing event information about changes to a NetworkList.
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkListEvent<T>
 ```
+
+</div>
 
 ##### Type Parameters
 
@@ -71,9 +73,9 @@ public struct NetworkListEvent<T>
 |------|-----------------------------------------------|
 | T    | The type for the list that the event is about |
 
-## 
+### Fields
 
-### Index
+#### Index
 
 <div class="markdown level1 summary">
 
@@ -85,19 +87,23 @@ the index changed, added or removed if available
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Index
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PreviousValue
+#### PreviousValue
 
 <div class="markdown level1 summary">
 
@@ -109,19 +115,23 @@ The previous value when "Value" has changed, if available.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public T PreviousValue
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-### Type
+#### Type
 
 <div class="markdown level1 summary">
 
@@ -133,19 +143,23 @@ Enum representing the operation made to the list.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkListEvent<T>.EventType Type
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                           | Description |
 |--------------------------------|-------------|
 | NetworkListEvent.EventType\<\> |             |
 
-### Value
+#### Value
 
 <div class="markdown level1 summary">
 
@@ -157,14 +171,20 @@ The value changed, added or removed if available.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public T Value
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
+
+ 

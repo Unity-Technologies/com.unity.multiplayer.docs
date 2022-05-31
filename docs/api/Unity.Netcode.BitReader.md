@@ -21,55 +21,57 @@ have to be concerned with misaligned reads.
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ref struct BitReader
 ```
 
-## 
+</div>
 
-### BitAligned
+### Properties
+
+#### BitAligned
 
 <div class="markdown level1 summary">
 
@@ -82,21 +84,25 @@ whether or not the BitPosition is at a byte boundary.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool BitAligned { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+### Methods
 
-### Dispose()
+#### Dispose()
 
 <div class="markdown level1 summary">
 
@@ -109,13 +115,17 @@ the reader
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-### ReadBit(out Boolean)
+</div>
+
+#### ReadBit(out Boolean)
 
 <div class="markdown level1 summary">
 
@@ -127,19 +137,23 @@ Read a single bit from the buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void ReadBit(out bool bit)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type           | Name | Description                                                 |
 |----------------|------|-------------------------------------------------------------|
 | System.Boolean | bit  | Out value of the bit. True represents 1, False represents 0 |
 
-### ReadBits(out Byte, UInt32)
+#### ReadBits(out Byte, UInt32)
 
 <div class="markdown level1 summary">
 
@@ -151,20 +165,24 @@ Read bits from stream.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void ReadBits(out byte value, uint bitCount)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description               |
 |---------------|----------|---------------------------|
 | System.Byte   | value    | Value to store bits into. |
 | System.UInt32 | bitCount | Amount of bits to read.   |
 
-### ReadBits(out UInt64, UInt32)
+#### ReadBits(out UInt64, UInt32)
 
 <div class="markdown level1 summary">
 
@@ -176,20 +194,24 @@ Read a certain amount of bits from the stream.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void ReadBits(out ulong value, uint bitCount)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description               |
 |---------------|----------|---------------------------|
 | System.UInt64 | value    | Value to store bits into. |
 | System.UInt32 | bitCount | Amount of bits to read    |
 
-### TryBeginReadBits(UInt32)
+#### TryBeginReadBits(UInt32)
 
 <div class="markdown level1 summary">
 
@@ -205,20 +227,26 @@ exception. In release builds, attempting to do so will read junk memory.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryBeginReadBits(uint bitCount)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description                               |
 |---------------|----------|-------------------------------------------|
 | System.UInt32 | bitCount | Number of bits you want to read, in total |
 
-#### Returns
+##### Returns
 
 | Type           | Description                                                    |
 |----------------|----------------------------------------------------------------|
 | System.Boolean | True if you can read, false if that would exceed buffer bounds |
+
+ 

@@ -13,24 +13,28 @@ Delegate type for checking visibility
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public delegate bool VisibilityDelegate(ulong clientId);
 ```
 
+</div>
+
 ##### Parameters
 
-| Type          | Name       | Description                          |
-|---------------|------------|--------------------------------------|
-| System.UInt64 | \*clientId | The clientId to check visibility for |
+| Type          | Name     | Description                          |
+|---------------|----------|--------------------------------------|
+| System.UInt64 | clientId | The clientId to check visibility for |
 
 ##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+ 

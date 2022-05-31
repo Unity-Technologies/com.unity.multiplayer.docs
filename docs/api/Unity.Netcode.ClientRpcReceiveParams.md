@@ -17,48 +17,52 @@ title: Unity.Netcode.ClientRpcReceiveParams
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct ClientRpcReceiveParams
 ```
+
+</div>
+
+ 

@@ -3,8 +3,6 @@ id: Unity.Netcode
 title: Unity.Netcode
 ---
 
-## 
-
 <div class="markdown level0 summary">
 
 </div>
@@ -17,15 +15,9 @@ title: Unity.Netcode
 
 </div>
 
-## 
+### Classes
 
-### Unity.Netcode.AddAllInterestKernel
-
-<div class="section">
-
-</div>
-
-### Unity.Netcode.Arithmetic
+#### Arithmetic
 
 <div class="section">
 
@@ -33,13 +25,13 @@ Arithmetic helper class
 
 </div>
 
-### Unity.Netcode.BitCounter
+#### BitCounter
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.BytePacker
+#### BytePacker
 
 <div class="section">
 
@@ -47,13 +39,13 @@ Utility class for packing values in serialization.
 
 </div>
 
-### Unity.Netcode.ByteUnpacker
+#### ByteUnpacker
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.ClientRpcAttribute
+#### ClientRpcAttribute
 
 <div class="section">
 
@@ -64,7 +56,7 @@ clients.
 
 </div>
 
-### Unity.Netcode.CustomMessagingManager
+#### CustomMessagingManager
 
 <div class="section">
 
@@ -74,19 +66,13 @@ easier to use.
 
 </div>
 
-### Unity.Netcode.ErrorUtilities
+#### InvalidChannelException
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.InvalidChannelException
-
-<div class="section">
-
-</div>
-
-### Unity.Netcode.InvalidParentException
+#### InvalidParentException
 
 <div class="section">
 
@@ -95,7 +81,7 @@ not valid
 
 </div>
 
-### Unity.Netcode.NetworkBehaviour
+#### NetworkBehaviour
 
 <div class="section">
 
@@ -103,13 +89,13 @@ The base class to override to write network code. Inherits MonoBehaviour
 
 </div>
 
-### Unity.Netcode.NetworkBehaviourUpdater
+#### NetworkBehaviourUpdater
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.NetworkClient
+#### NetworkClient
 
 <div class="section">
 
@@ -117,7 +103,7 @@ A NetworkClient
 
 </div>
 
-### Unity.Netcode.NetworkConfig
+#### NetworkConfig
 
 <div class="section">
 
@@ -125,7 +111,7 @@ The configuration object used to start server, client and hosts
 
 </div>
 
-### Unity.Netcode.NetworkConfigurationException
+#### NetworkConfigurationException
 
 <div class="section">
 
@@ -133,7 +119,7 @@ Exception thrown when a change to a configuration is wrong
 
 </div>
 
-### Unity.Netcode.NetworkList-1
+#### NetworkList\<T\>
 
 <div class="section">
 
@@ -141,7 +127,7 @@ Event based NetworkVariable container for syncing Lists
 
 </div>
 
-### Unity.Netcode.NetworkLog
+#### NetworkLog
 
 <div class="section">
 
@@ -149,7 +135,7 @@ Helper class for logging
 
 </div>
 
-### Unity.Netcode.NetworkManager
+#### NetworkManager
 
 <div class="section">
 
@@ -157,7 +143,7 @@ The main component of the library
 
 </div>
 
-### Unity.Netcode.NetworkObject
+#### NetworkObject
 
 <div class="section">
 
@@ -165,7 +151,7 @@ A component used to identify that a GameObject in the network
 
 </div>
 
-### Unity.Netcode.NetworkPrefabHandler
+#### NetworkPrefabHandler
 
 <div class="section">
 
@@ -176,7 +162,7 @@ INetworkPrefabInstanceHandler interface.
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager
+#### NetworkSceneManager
 
 <div class="section">
 
@@ -186,7 +172,7 @@ Unity.Netcode.SceneEventData between the server and client(s)
 
 </div>
 
-### Unity.Netcode.NetworkSpawnManager
+#### NetworkSpawnManager
 
 <div class="section">
 
@@ -194,13 +180,13 @@ Class that handles object spawning
 
 </div>
 
-### Unity.Netcode.NetworkTickSystem
+#### NetworkTickSystem
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.NetworkTimeSystem
+#### NetworkTimeSystem
 
 <div class="section">
 
@@ -210,13 +196,13 @@ and a server time. The local time is based on
 
 </div>
 
-### Unity.Netcode.NetworkTransport
+#### NetworkTransport
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.NetworkUpdateLoop
+#### NetworkUpdateLoop
 
 <div class="section">
 
@@ -225,7 +211,7 @@ in Unity.
 
 </div>
 
-### Unity.Netcode.NetworkVariable-1
+#### NetworkVariable\<T\>
 
 <div class="section">
 
@@ -233,7 +219,7 @@ A variable that can be synchronized over the network.
 
 </div>
 
-### Unity.Netcode.NetworkVariableBase
+#### NetworkVariableBase
 
 <div class="section">
 
@@ -241,13 +227,19 @@ Interface for network value containers
 
 </div>
 
-### Unity.Netcode.NetworkVariableHelper
+#### NetworkVariableHelper
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.NotListeningException
+#### NetworkVariableSerialization\<T\>
+
+<div class="section">
+
+</div>
+
+#### NotListeningException
 
 <div class="section">
 
@@ -256,7 +248,7 @@ listening.
 
 </div>
 
-### Unity.Netcode.NotServerException
+#### NotServerException
 
 <div class="section">
 
@@ -264,7 +256,7 @@ Exception thrown when the operation can only be done on the server
 
 </div>
 
-### Unity.Netcode.PendingClient
+#### PendingClient
 
 <div class="section">
 
@@ -273,13 +265,7 @@ connecting
 
 </div>
 
-### Unity.Netcode.RadiusInterestKernel
-
-<div class="section">
-
-</div>
-
-### Unity.Netcode.RpcAttribute
+#### RpcAttribute
 
 <div class="section">
 
@@ -287,7 +273,7 @@ Represents the common base class for Rpc attributes.
 
 </div>
 
-### Unity.Netcode.SceneEvent
+#### SceneEvent
 
 <div class="section">
 
@@ -300,7 +286,7 @@ SceneEventType
 
 </div>
 
-### Unity.Netcode.ServerRpcAttribute
+#### ServerRpcAttribute
 
 <div class="section">
 
@@ -311,7 +297,7 @@ server.
 
 </div>
 
-### Unity.Netcode.SpawnStateException
+#### SpawnStateException
 
 <div class="section">
 
@@ -319,13 +305,7 @@ Exception thrown when an object is not yet spawned
 
 </div>
 
-### Unity.Netcode.UnityTransport
-
-<div class="section">
-
-</div>
-
-### Unity.Netcode.VisibilityChangeException
+#### VisibilityChangeException
 
 <div class="section">
 
@@ -333,9 +313,9 @@ Exception thrown when a visibility change fails
 
 </div>
 
-## 
+### Structs
 
-### Unity.Netcode.BitReader
+#### BitReader
 
 <div class="section">
 
@@ -345,7 +325,7 @@ have to be concerned with misaligned reads.
 
 </div>
 
-### Unity.Netcode.BitWriter
+#### BitWriter
 
 <div class="section">
 
@@ -355,7 +335,7 @@ doesn't have to be concerned with misaligned writes.
 
 </div>
 
-### Unity.Netcode.BufferSerializer\`1
+#### BufferSerializer\<TReaderWriter\>
 
 <div class="section">
 
@@ -368,7 +348,7 @@ Implemented as a ref struct for two reasons:
 2.  The BufferSerializer must always be passed by reference and can't be
     copied
 
-Ref structs help enforce both of those rules: they can't out live the
+Ref structs help enforce both of those rules: they can't ref live the
 stack context in which they were created, and they're always passed by
 reference no matter what.
 
@@ -385,47 +365,81 @@ could outlive the Reader/Writer's.)
 
 </div>
 
-### Unity.Netcode.ClientRpcParams
+#### ClientRpcParams
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.ClientRpcReceiveParams
+#### ClientRpcReceiveParams
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.ClientRpcSendParams
+#### ClientRpcSendParams
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.FastBufferReader
+#### FastBufferReader
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.FastBufferWriter
+#### FastBufferWriter
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.NetworkBehaviourReference
+#### FastBufferWriter.ForEnums
+
+<div class="section">
+
+</div>
+
+#### FastBufferWriter.ForNetworkSerializable
+
+<div class="section">
+
+</div>
+
+#### FastBufferWriter.ForPrimitives
+
+<div class="section">
+
+</div>
+
+#### FastBufferWriter.ForStructs
+
+<div class="section">
+
+</div>
+
+#### ForceNetworkSerializeByMemcpy\<T\>
+
+<div class="section">
+
+This is a wrapper that adds `INetworkSerializeByMemcpy` support to
+existing structs that the developer doesn't have the ability to modify
+(for example, external structs like `Guid`).
+
+</div>
+
+#### NetworkBehaviourReference
 
 <div class="section">
 
 A helper struct for serializing NetworkBehaviours over the network. Can
-be used in RPCs and NetworkVariable\&lt;T&gt;. Note: network ids get recycled
+be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled
 by the NetworkManager after a while. So a reference pointing to
 
 </div>
 
-### Unity.Netcode.NetworkListEvent-1
+#### NetworkListEvent\<T\>
 
 <div class="section">
 
@@ -433,16 +447,16 @@ Struct containing event information about changes to a NetworkList.
 
 </div>
 
-### Unity.Netcode.NetworkObjectReference
+#### NetworkObjectReference
 
 <div class="section">
 
 A helper struct for serializing NetworkObjects over the network. Can be
-used in RPCs and NetworkVariable\&lt;T&gt;.
+used in RPCs and NetworkVariable\<T\>.
 
 </div>
 
-### Unity.Netcode.NetworkTime
+#### NetworkTime
 
 <div class="section">
 
@@ -453,33 +467,27 @@ gameplay.
 
 </div>
 
-### Unity.Netcode.ServerRpcParams
+#### ServerRpcParams
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.ServerRpcReceiveParams
+#### ServerRpcReceiveParams
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.ServerRpcSendParams
+#### ServerRpcSendParams
 
 <div class="section">
 
 </div>
 
-### Unity.Netcode.UnityTransport.ConnectionAddressData
+### Interfaces
 
-<div class="section">
-
-</div>
-
-## 
-
-### Unity.Netcode.INetworkPrefabInstanceHandler
+#### INetworkPrefabInstanceHandler
 
 <div class="section">
 
@@ -488,7 +496,7 @@ Prefabs Used by NetworkPrefabHandler
 
 </div>
 
-### Unity.Netcode.INetworkSerializable
+#### INetworkSerializable
 
 <div class="section">
 
@@ -496,16 +504,13 @@ Interface for implementing custom serializable types.
 
 </div>
 
-### Unity.Netcode.INetworkStreamDriverConstructor
+#### INetworkSerializeByMemcpy
 
 <div class="section">
 
-Provides an interface that overrides the ability to create your own
-drivers and pipelines
-
 </div>
 
-### Unity.Netcode.INetworkUpdateSystem
+#### INetworkUpdateSystem
 
 <div class="section">
 
@@ -514,15 +519,15 @@ by the network update loop.
 
 </div>
 
-### Unity.Netcode.IReaderWriter
+#### IReaderWriter
 
 <div class="section">
 
 </div>
 
-## 
+### Enums
 
-### Unity.Netcode.HashSize
+#### HashSize
 
 <div class="section">
 
@@ -532,7 +537,7 @@ encoding It just says how many bytes the maximum will be
 
 </div>
 
-### Unity.Netcode.LogLevel
+#### LogLevel
 
 <div class="section">
 
@@ -540,7 +545,7 @@ Log level
 
 </div>
 
-### Unity.Netcode.NetworkDelivery
+#### NetworkDelivery
 
 <div class="section">
 
@@ -548,7 +553,7 @@ Delivery methods
 
 </div>
 
-### Unity.Netcode.NetworkEvent
+#### NetworkEvent
 
 <div class="section">
 
@@ -556,7 +561,7 @@ Represents a netEvent when polling
 
 </div>
 
-### Unity.Netcode.NetworkListEvent-1.EventType
+#### NetworkListEvent\<T\>.EventType
 
 <div class="section">
 
@@ -565,7 +570,7 @@ event.
 
 </div>
 
-### Unity.Netcode.NetworkUpdateStage
+#### NetworkUpdateStage
 
 <div class="section">
 
@@ -573,15 +578,19 @@ Defines network update stages being executed by the network update loop.
 
 </div>
 
-### Unity.Netcode.NetworkVariableReadPermission
+#### NetworkVariableReadPermission
 
 <div class="section">
 
-Permission type
+</div>
+
+#### NetworkVariableWritePermission
+
+<div class="section">
 
 </div>
 
-### Unity.Netcode.PendingClient.State
+#### PendingClient.State
 
 <div class="section">
 
@@ -589,7 +598,7 @@ The states of a connection
 
 </div>
 
-### Unity.Netcode.RpcDelivery
+#### RpcDelivery
 
 <div class="section">
 
@@ -597,7 +606,7 @@ RPC delivery types
 
 </div>
 
-### Unity.Netcode.SceneEventProgressStatus
+#### SceneEventProgressStatus
 
 <div class="section">
 
@@ -610,7 +619,7 @@ SceneEvent parameter.*
 
 </div>
 
-### Unity.Netcode.SceneEventType
+#### SceneEventType
 
 <div class="section">
 
@@ -624,15 +633,9 @@ SceneEvent
 
 </div>
 
-### Unity.Netcode.UnityTransport.ProtocolType
+### Delegates
 
-<div class="section">
-
-</div>
-
-## 
-
-### Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate
+#### CustomMessagingManager.HandleNamedMessageDelegate
 
 <div class="section">
 
@@ -640,7 +643,7 @@ Delegate used to handle named messages
 
 </div>
 
-### Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate
+#### CustomMessagingManager.UnnamedMessageDelegate
 
 <div class="section">
 
@@ -648,7 +651,7 @@ Delegate used for incoming unnamed messages
 
 </div>
 
-### Unity.Netcode.NetworkList-1.OnListChangedDelegate
+#### NetworkList\<T\>.OnListChangedDelegate
 
 <div class="section">
 
@@ -656,7 +659,7 @@ Delegate type for list changed event
 
 </div>
 
-### Unity.Netcode.NetworkManager.ConnectionApprovedDelegate
+#### NetworkManager.ConnectionApprovedDelegate
 
 <div class="section">
 
@@ -665,7 +668,7 @@ be set on the server.
 
 </div>
 
-### Unity.Netcode.NetworkObject.SpawnDelegate
+#### NetworkObject.SpawnDelegate
 
 <div class="section">
 
@@ -673,7 +676,7 @@ Delegate type for checking spawn options
 
 </div>
 
-### Unity.Netcode.NetworkObject.VisibilityDelegate
+#### NetworkObject.VisibilityDelegate
 
 <div class="section">
 
@@ -681,7 +684,7 @@ Delegate type for checking visibility
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler
+#### NetworkSceneManager.OnEventCompletedDelegateHandler
 
 <div class="section">
 
@@ -693,7 +696,7 @@ UnloadEventCompleted
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler
+#### NetworkSceneManager.OnLoadCompleteDelegateHandler
 
 <div class="section">
 
@@ -703,7 +706,7 @@ LoadComplete for more information
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
+#### NetworkSceneManager.OnLoadDelegateHandler
 
 <div class="section">
 
@@ -713,7 +716,7 @@ Loadfor more information
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
+#### NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
 
 <div class="section">
 
@@ -723,7 +726,7 @@ SynchronizeComplete for more information
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
+#### NetworkSceneManager.OnSynchronizeDelegateHandler
 
 <div class="section">
 
@@ -733,7 +736,7 @@ Synchronize for more information
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
+#### NetworkSceneManager.OnUnloadCompleteDelegateHandler
 
 <div class="section">
 
@@ -743,7 +746,7 @@ UnloadComplete for more information
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler
+#### NetworkSceneManager.OnUnloadDelegateHandler
 
 <div class="section">
 
@@ -753,7 +756,7 @@ Unload for more information
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.SceneEventDelegate
+#### NetworkSceneManager.SceneEventDelegate
 
 <div class="section">
 
@@ -764,7 +767,7 @@ Unity.Netcode.SceneEventData
 
 </div>
 
-### Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+#### NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
 
 <div class="section">
 
@@ -775,7 +778,7 @@ LoadSceneMode specified.
 
 </div>
 
-### Unity.Netcode.NetworkTransport.TransportEventDelegate
+#### NetworkTransport.TransportEventDelegate
 
 <div class="section">
 
@@ -783,10 +786,24 @@ Delegate for transport network events
 
 </div>
 
-### Unity.Netcode.NetworkVariable\`1.OnValueChangedDelegate
+#### NetworkVariable\<T\>.OnValueChangedDelegate
 
 <div class="section">
 
 Delegate type for value changed event
 
 </div>
+
+#### NetworkVariableSerialization\<T\>.ReadDelegate\<TForMethod\>
+
+<div class="section">
+
+</div>
+
+#### NetworkVariableSerialization\<T\>.WriteDelegate\<TForMethod\>
+
+<div class="section">
+
+</div>
+
+ 

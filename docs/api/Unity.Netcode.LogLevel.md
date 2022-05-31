@@ -13,21 +13,35 @@ Log level
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public enum LogLevel
 ```
 
-## 
+</div>
 
-| Name      | Description                                    |
-|-----------|------------------------------------------------|
-| Developer | Developer logging level, most verbose          |
-| Error     | Error logging level, very quiet                |
-| Normal    | Normal logging level, medium verbose           |
-| Nothing   | Nothing logging level, no logging will be done |
+### Fields
+
+Name
+
+Description
+
+Developer
+
+Developer logging level, most verbose
+
+Error
+
+Error logging level, very quiet
+
+Normal
+
+Normal logging level, medium verbose
+
+Nothing
+
+Nothing logging level, no logging will be done
+

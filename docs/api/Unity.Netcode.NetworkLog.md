@@ -19,13 +19,13 @@ Helper class for logging
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkLog
 
 </div>
 
@@ -37,61 +37,63 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class NetworkLog
 ```
 
-## 
+</div>
 
-### CurrentLogLevel
+### Properties
+
+#### CurrentLogLevel
 
 <div class="markdown level1 summary">
 
@@ -103,21 +105,51 @@ Gets the current log level.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static LogLevel CurrentLogLevel { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type     | Description            |
 |----------|------------------------|
 | LogLevel | The current log level. |
 
-## 
+### Methods
 
-### LogErrorServer(String)
+#### LogError(String)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public static void LogError(string message)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name    | Description |
+|---------------|---------|-------------|
+| System.String | message |             |
+
+#### LogErrorServer(String)
 
 <div class="markdown level1 summary">
 
@@ -129,19 +161,49 @@ Logs an error log locally and on the server if possible.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void LogErrorServer(string message)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
 
-### LogInfoServer(String)
+#### LogInfo(String)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public static void LogInfo(string message)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name    | Description |
+|---------------|---------|-------------|
+| System.String | message |             |
+
+#### LogInfoServer(String)
 
 <div class="markdown level1 summary">
 
@@ -153,19 +215,49 @@ Logs an info log locally and on the server if possible.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void LogInfoServer(string message)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
 
-### LogWarningServer(String)
+#### LogWarning(String)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public static void LogWarning(string message)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name    | Description |
+|---------------|---------|-------------|
+| System.String | message |             |
+
+#### LogWarningServer(String)
 
 <div class="markdown level1 summary">
 
@@ -177,14 +269,20 @@ Logs a warning log locally and on the server if possible.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static void LogWarningServer(string message)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
+
+ 

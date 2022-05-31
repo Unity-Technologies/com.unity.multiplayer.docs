@@ -21,55 +21,57 @@ doesn't have to be concerned with misaligned writes.
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ref struct BitWriter
 ```
 
-## 
+</div>
 
-### BitAligned
+### Properties
+
+#### BitAligned
 
 <div class="markdown level1 summary">
 
@@ -82,21 +84,25 @@ whether or not the BitPosition is at a byte boundary.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool BitAligned { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+### Methods
 
-### Dispose()
+#### Dispose()
 
 <div class="markdown level1 summary">
 
@@ -109,13 +115,17 @@ to the writer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-### TryBeginWriteBits(Int32)
+</div>
+
+#### TryBeginWriteBits(Int32)
 
 <div class="markdown level1 summary">
 
@@ -139,25 +149,29 @@ including instability and crashes.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryBeginWriteBits(int bitCount)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type         | Name     | Description                                |
 |--------------|----------|--------------------------------------------|
 | System.Int32 | bitCount | Number of bits you want to write, in total |
 
-#### Returns
+##### Returns
 
 | Type           | Description                                                     |
 |----------------|-----------------------------------------------------------------|
 | System.Boolean | True if you can write, false if that would exceed buffer bounds |
 
-### WriteBit(Boolean)
+#### WriteBit(Boolean)
 
 <div class="markdown level1 summary">
 
@@ -169,19 +183,23 @@ Write a single bit to the buffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBit(bool bit)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type           | Name | Description                                             |
 |----------------|------|---------------------------------------------------------|
 | System.Boolean | bit  | Value of the bit. True represents 1, False represents 0 |
 
-### WriteBits(Byte, UInt32)
+#### WriteBits(Byte, UInt32)
 
 <div class="markdown level1 summary">
 
@@ -193,20 +211,24 @@ Write bits to stream.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBits(byte value, uint bitCount)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description              |
 |---------------|----------|--------------------------|
 | System.Byte   | value    | Value to get bits from.  |
 | System.UInt32 | bitCount | Amount of bits to write. |
 
-### WriteBits(UInt64, UInt32)
+#### WriteBits(UInt64, UInt32)
 
 <div class="markdown level1 summary">
 
@@ -218,15 +240,21 @@ Write s certain amount of bits to the stream.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBits(ulong value, uint bitCount)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description             |
 |---------------|----------|-------------------------|
 | System.UInt64 | value    | Value to get bits from. |
 | System.UInt32 | bitCount | Amount of bits to write |
+
+ 

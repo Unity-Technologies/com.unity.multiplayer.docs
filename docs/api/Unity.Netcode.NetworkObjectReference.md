@@ -6,7 +6,7 @@ title: Unity.Netcode.NetworkObjectReference
 <div class="markdown level0 summary">
 
 A helper struct for serializing NetworkObjects over the network. Can be
-used in RPCs and NetworkVariable\&lt;T&gt;.
+used in RPCs and NetworkVariable\<T\>.
 
 </div>
 
@@ -26,7 +26,7 @@ INetworkSerializable
 
 <div>
 
-System.IEquatable\&lt;NetworkObjectReference&gt;
+System.IEquatable\<NetworkObjectReference\>
 
 </div>
 
@@ -38,43 +38,45 @@ System.IEquatable\&lt;NetworkObjectReference&gt;
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkObjectReference : INetworkSerializable, IEquatable<NetworkObjectReference>
 ```
 
-## 
+</div>
 
-### NetworkObjectReference(GameObject)
+### Constructors
+
+#### NetworkObjectReference(GameObject)
 
 <div class="markdown level1 summary">
 
@@ -86,26 +88,30 @@ Creates a new instance of the NetworkObjectReference struct.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObjectReference(GameObject gameObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type       | Name       | Description                                                               |
 |------------|------------|---------------------------------------------------------------------------|
 | GameObject | gameObject | The GameObject from which the NetworkObject component will be referenced. |
 
-#### Exceptions
+##### Exceptions
 
 | Type                         | Condition |
 |------------------------------|-----------|
 | System.ArgumentNullException |           |
 | System.ArgumentException     |           |
 
-### NetworkObjectReference(NetworkObject)
+#### NetworkObjectReference(NetworkObject)
 
 <div class="markdown level1 summary">
 
@@ -117,28 +123,32 @@ Creates a new instance of the NetworkObjectReference struct.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObjectReference(NetworkObject networkObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description                     |
 |---------------|---------------|---------------------------------|
 | NetworkObject | networkObject | The NetworkObject to reference. |
 
-#### Exceptions
+##### Exceptions
 
 | Type                         | Condition |
 |------------------------------|-----------|
 | System.ArgumentNullException |           |
 | System.ArgumentException     |           |
 
-## 
+### Properties
 
-### NetworkObjectId
+#### NetworkObjectId
 
 <div class="markdown level1 summary">
 
@@ -150,21 +160,25 @@ The NetworkObjectId of the referenced NetworkObject.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ulong NetworkObjectId { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+### Methods
 
-### Equals(Object)
+#### Equals(Object)
 
 <div class="markdown level1 summary">
 
@@ -174,25 +188,29 @@ public ulong NetworkObjectId { get; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object obj)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name | Description |
 |---------------|------|-------------|
 | System.Object | obj  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -200,7 +218,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(NetworkObjectReference)
+#### Equals(NetworkObjectReference)
 
 <div class="markdown level1 summary">
 
@@ -210,25 +228,29 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(NetworkObjectReference other)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                   | Name  | Description |
 |------------------------|-------|-------------|
 | NetworkObjectReference | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetHashCode()
+#### GetHashCode()
 
 <div class="markdown level1 summary">
 
@@ -238,19 +260,23 @@ public bool Equals(NetworkObjectReference other)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -258,7 +284,7 @@ System.ValueType.GetHashCode()
 
 </div>
 
-### NetworkSerialize\&lt;T&gt;(BufferSerializer\&lt;T&gt;)
+#### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
 <div class="markdown level1 summary">
 
@@ -271,26 +297,30 @@ to serialize this type.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void NetworkSerialize<T>(BufferSerializer<T> serializer)
     where T : IReaderWriter
 ```
 
-#### Parameters
+</div>
 
-| Type                 | Name       | Description                                       |
-|----------------------|------------|---------------------------------------------------|
-| BufferSerializer\&lt;T&gt; | serializer | The serializer to use to read and write the data. |
+##### Parameters
 
-#### Type Parameters
+| Type                  | Name       | Description                                       |
+|-----------------------|------------|---------------------------------------------------|
+| BufferSerializer\<T\> | serializer | The serializer to use to read and write the data. |
+
+##### Type Parameters
 
 | Name | Description                                                                                                              |
 |------|--------------------------------------------------------------------------------------------------------------------------|
 | T    | Either BufferSerializerReader or BufferSerializerWriter, depending whether the serializer is in read mode or write mode. |
 
-### TryGet(out NetworkObject, NetworkManager)
+#### TryGet(out NetworkObject, NetworkManager)
 
 <div class="markdown level1 summary">
 
@@ -302,28 +332,32 @@ Tries to get the NetworkObject referenced by this reference.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryGet(out NetworkObject networkObject, NetworkManager networkManager = null)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type           | Name           | Description                                                     |
 |----------------|----------------|-----------------------------------------------------------------|
 | NetworkObject  | networkObject  | The NetworkObject which was found. Null if no object was found. |
 | NetworkManager | networkManager | The networkmanager. Uses Singleton to resolve if null.          |
 
-#### Returns
+##### Returns
 
 | Type           | Description                                                                                                                                                                                               |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System.Boolean | True if the NetworkObject was found; False if the NetworkObject was not found. This can happen if the NetworkObject has not been spawned yet. you can try getting the reference at a later point in time. |
 
-## 
+### Operators
 
-### Implicit(GameObject to NetworkObjectReference)
+#### Implicit(GameObject to NetworkObjectReference)
 
 <div class="markdown level1 summary">
 
@@ -333,25 +367,29 @@ public bool TryGet(out NetworkObject networkObject, NetworkManager networkManage
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkObjectReference(GameObject gameObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type       | Name       | Description |
 |------------|------------|-------------|
 | GameObject | gameObject |             |
 
-#### Returns
+##### Returns
 
 | Type                   | Description |
 |------------------------|-------------|
 | NetworkObjectReference |             |
 
-### Implicit(NetworkObject to NetworkObjectReference)
+#### Implicit(NetworkObject to NetworkObjectReference)
 
 <div class="markdown level1 summary">
 
@@ -361,25 +399,29 @@ public static implicit operator NetworkObjectReference(GameObject gameObject)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkObjectReference(NetworkObject networkObject)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name          | Description |
 |---------------|---------------|-------------|
 | NetworkObject | networkObject |             |
 
-#### Returns
+##### Returns
 
 | Type                   | Description |
 |------------------------|-------------|
 | NetworkObjectReference |             |
 
-### Implicit(NetworkObjectReference to GameObject)
+#### Implicit(NetworkObjectReference to GameObject)
 
 <div class="markdown level1 summary">
 
@@ -389,25 +431,29 @@ public static implicit operator NetworkObjectReference(NetworkObject networkObje
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator GameObject(NetworkObjectReference networkObjectRef)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                   | Name             | Description |
 |------------------------|------------------|-------------|
 | NetworkObjectReference | networkObjectRef |             |
 
-#### Returns
+##### Returns
 
 | Type       | Description |
 |------------|-------------|
 | GameObject |             |
 
-### Implicit(NetworkObjectReference to NetworkObject)
+#### Implicit(NetworkObjectReference to NetworkObject)
 
 <div class="markdown level1 summary">
 
@@ -417,19 +463,23 @@ public static implicit operator GameObject(NetworkObjectReference networkObjectR
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkObject(NetworkObjectReference networkObjectRef)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                   | Name             | Description |
 |------------------------|------------------|-------------|
 | NetworkObjectReference | networkObjectRef |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
@@ -445,6 +495,8 @@ INetworkSerializable
 
 <div>
 
-System.IEquatable\&lt;T&gt;
+System.IEquatable\<T\>
 
 </div>
+
+ 

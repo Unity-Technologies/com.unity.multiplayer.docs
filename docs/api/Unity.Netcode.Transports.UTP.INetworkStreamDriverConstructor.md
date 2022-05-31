@@ -1,6 +1,6 @@
----  
-id: Unity.Netcode.INetworkStreamDriverConstructor  
-title: Unity.Netcode.INetworkStreamDriverConstructor  
+---
+id: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor
+title: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor
 ---
 
 <div class="markdown level0 summary">
@@ -14,19 +14,21 @@ drivers and pipelines
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public interface INetworkStreamDriverConstructor
 ```
 
-## 
+</div>
 
-### CreateDriver(UnityTransport, out NetworkDriver, out NetworkPipeline, out NetworkPipeline, out NetworkPipeline)
+### Methods
+
+#### CreateDriver(UnityTransport, out NetworkDriver, out NetworkPipeline, out NetworkPipeline, out NetworkPipeline)
 
 <div class="markdown level1 summary">
 
@@ -36,13 +38,17 @@ public interface INetworkStreamDriverConstructor
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
-void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableFragmentedPipeline, out NetworkPipeline unreliableSequencedFragmentedPipeline, out NetworkPipeline reliableSequencedFragmentedPipeline)
+void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableFragmentedPipeline, out NetworkPipeline unreliableSequencedFragmentedPipeline, out NetworkPipeline reliableSequencedPipeline)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name                                  | Description |
 |-----------------|---------------------------------------|-------------|
@@ -50,4 +56,6 @@ void CreateDriver(UnityTransport transport, out NetworkDriver driver, out Networ
 | NetworkDriver   | driver                                |             |
 | NetworkPipeline | unreliableFragmentedPipeline          |             |
 | NetworkPipeline | unreliableSequencedFragmentedPipeline |             |
-| NetworkPipeline | reliableSequencedFragmentedPipeline   |             |
+| NetworkPipeline | reliableSequencedPipeline             |             |
+
+ 

@@ -17,37 +17,39 @@ title: Unity.Netcode.NetworkTransport
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+NetworkTransport
 
 </div>
 
 <div class="level2">
 
-System.Dynamic.ExpandoObject
+UnityTransport
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
+ 
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract class NetworkTransport : MonoBehaviour
 ```
 
-## 
+</div>
 
-### IsSupported
+### Properties
+
+#### IsSupported
 
 <div class="markdown level1 summary">
 
@@ -60,19 +62,23 @@ the current runtime context This is used by multiplex adapters
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public virtual bool IsSupported { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description                                 |
 |----------------|---------------------------------------------|
 | System.Boolean | `true` if is supported; otherwise, `false`. |
 
-### ServerClientId
+#### ServerClientId
 
 <div class="markdown level1 summary">
 
@@ -86,21 +92,25 @@ that means "the server"
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract ulong ServerClientId { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+### Methods
 
-### DisconnectLocalClient()
+#### DisconnectLocalClient()
 
 <div class="markdown level1 summary">
 
@@ -112,13 +122,17 @@ Disconnects the local client from the server
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void DisconnectLocalClient()
 ```
 
-### DisconnectRemoteClient(UInt64)
+</div>
+
+#### DisconnectRemoteClient(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -130,19 +144,23 @@ Disconnects a client from the server
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void DisconnectRemoteClient(ulong clientId)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description                |
 |---------------|----------|----------------------------|
 | System.UInt64 | clientId | The clientId to disconnect |
 
-### GetCurrentRtt(UInt64)
+#### GetCurrentRtt(UInt64)
 
 <div class="markdown level1 summary">
 
@@ -154,25 +172,29 @@ Gets the round trip time for a specific client. This method is optional
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract ulong GetCurrentRtt(ulong clientId)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name     | Description                      |
 |---------------|----------|----------------------------------|
 | System.UInt64 | clientId | The clientId to get the RTT from |
 
-#### Returns
+##### Returns
 
 | Type          | Description                                 |
 |---------------|---------------------------------------------|
 | System.UInt64 | Returns the round trip time in milliseconds |
 
-### Initialize()
+#### Initialize(NetworkManager)
 
 <div class="markdown level1 summary">
 
@@ -184,13 +206,23 @@ Initializes the transport
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
-public abstract void Initialize()
+public abstract void Initialize(NetworkManager networkManager = null)
 ```
 
-### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\&lt;Byte&gt;, Single)
+</div>
+
+##### Parameters
+
+| Type           | Name           | Description                       |
+|----------------|----------------|-----------------------------------|
+| NetworkManager | networkManager | optionally pass in NetworkManager |
+
+#### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\<Byte\>, Single)
 
 <div class="markdown level1 summary">
 
@@ -203,22 +235,26 @@ thread in the Update loop.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 protected void InvokeOnTransportEvent(NetworkEvent eventType, ulong clientId, ArraySegment<byte> payload, float receiveTime)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                               | Name        | Description                                                                |
 |------------------------------------|-------------|----------------------------------------------------------------------------|
 | NetworkEvent                       | eventType   | The event type                                                             |
 | System.UInt64                      | clientId    | The clientId this event is for                                             |
-| System.ArraySegment\&lt;System.Byte&gt; | payload     | The incoming data payload                                                  |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                  |
 | System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
-### PollEvent(out UInt64, out ArraySegment\&lt;Byte&gt;, out Single)
+#### PollEvent(out UInt64, out ArraySegment\<Byte\>, out Single)
 
 <div class="markdown level1 summary">
 
@@ -231,27 +267,31 @@ precise time the event was received.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte> payload, out float receiveTime)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                               | Name        | Description                                                                |
 |------------------------------------|-------------|----------------------------------------------------------------------------|
 | System.UInt64                      | clientId    | The clientId this event is for                                             |
-| System.ArraySegment\&lt;System.Byte&gt; | payload     | The incoming data payload                                                  |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                  |
 | System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
-#### Returns
+##### Returns
 
 | Type         | Description            |
 |--------------|------------------------|
 | NetworkEvent | Returns the event type |
 
-### Send(UInt64, ArraySegment\&lt;Byte&gt; NetworkDelivery)
+#### Send(UInt64, ArraySegment\<Byte\>, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -263,21 +303,25 @@ Send a payload to the specified clientId, data and channelName.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void Send(ulong clientId, ArraySegment<byte> payload, NetworkDelivery networkDelivery)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                               | Name            | Description                               |
 |------------------------------------|-----------------|-------------------------------------------|
 | System.UInt64                      | clientId        | The clientId to send to                   |
-| System.ArraySegment\&lt;System.Byte&gt; | payload         | The data to send                          |
+| System.ArraySegment\<System.Byte\> | payload         | The data to send                          |
 | NetworkDelivery                    | networkDelivery | The delivery type (QoS) to send data with |
 
-### Shutdown()
+#### Shutdown()
 
 <div class="markdown level1 summary">
 
@@ -289,13 +333,17 @@ Shuts down the transport
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void Shutdown()
 ```
 
-### StartClient()
+</div>
+
+#### StartClient()
 
 <div class="markdown level1 summary">
 
@@ -307,19 +355,23 @@ Connects client to the server
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract bool StartClient()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### StartServer()
+#### StartServer()
 
 <div class="markdown level1 summary">
 
@@ -331,21 +383,25 @@ Starts to listening for incoming clients
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public abstract bool StartServer()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+### Events
 
-### OnTransportEvent
+#### OnTransportEvent
 
 <div class="markdown level1 summary">
 
@@ -359,14 +415,20 @@ to occur on the Unity thread in the Update loop.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkTransport.TransportEventDelegate OnTransportEvent
 ```
 
-#### Event Type
+</div>
+
+##### Event Type
 
 | Type                                    | Description |
 |-----------------------------------------|-------------|
 | NetworkTransport.TransportEventDelegate |             |
+
+ 
