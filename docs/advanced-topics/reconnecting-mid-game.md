@@ -10,31 +10,35 @@ In a multiplayer game, clients may get disconnected from the server for a variet
 Review the following considerations before allowing clients to reconnect in the middle of an active game:
 
 - Clients may have specific state and in-game data associated with them. If you want them to reconnect with that same state and data, implement a mechanism to maintain the association of state and data with the client for when they reconnect. See [Session Management](session-management.md) for more information.
-- When using [scene management](../basics/scene-management.md), remember that the synchronization process launches when connecting to a game. Therefore, all additive scenes currently loaded on the server will load without unloading anything on the client when the client's active main scene is the same as the server's. <!-- What is the negative affect of this? Like is it slower loading/initial lag, etc? Or is it just cleaner and better practice? -->
-  - If you want to avoid this behavior, you can
-    - Unload those scenes when a client disconnects
-    - Unload those scenes when a client reconnects
-    - Use the `NetworkSceneManager.VerifySceneBeforeLoading` callback to prevent loading scenes already loaded on the client
 - Depending on your game's requirements, make sure the client's state is properly reset and ready to connect before attempting reconnection. This may require resetting some external services.
+- When using [scene management](../basics/scene-management.md) and multiple additive scenes, there is a specific case to keep in mind. During the synchronization process, which launches when connecting to a game, if the client's active main scene is the same as the server's, it will not initiate a scene load in single mode for that scene, but it will load all additive scenes that are currently loaded on the server. This means that if the client has additive scenes currently loaded, it will not unload them like it would if the client's main scene was different than the server's.
+  - For example, if during a game, the server loads the main scene A, then additively loads scenes B and C, the client will have all three loaded. If the client then disconnects and reconnects without changing scenes, the scene synchronization process will recognize that the main scene A is already loaded on the client, and will then simply proceed to load the server's additive scenes. In that case, that would mean the client will load the scenes B and C a second time, and will then have two copies of those scenes loaded. On the other hand, if, while the client is disconnected, the server loads or unloads a scene additively, there will also be a mismatch between the scenes loaded on the client and on the server. For example, if the server unloads scene C and loads scene D, the client will load scene D when synchronizing, but won't unload scene C, so the client will currently have loaded scenes A, B (twice), C, and D, while the server will only have loaded scenes A, B, and D.
+  - If you want to avoid this behavior, you can
+    - Load a different scene in single mode on the client when disconnecting
+    - Unload additive scenes on the client when disconnecting
+    - Unload additive scenes on the client when reconnecting
+    - Use the `NetworkSceneManager.VerifySceneBeforeLoading` callback to prevent loading scenes already loaded on the client. However, this will not handle unloading scenes that were unloaded by the server between the time the client disconnected and reconnected.
 
 
 ## Automatic reconnection
 
 For a smoother experience for your players, clients can automatically attempt to reconnect to a game when connection is lost unexpectedly.
 
-To implement automatic reconnection: <!-- Does order matter for these steps -->
-- Define what will trigger the reconnection process and when it will start. <!-- I'm assuming the user is making this definition for the automatic reconnection vs finding something already existing the triggers the disconnect/reconnect process. Tried to clarify that difference. it was a little ambiguous before. --> For example, the `NetworkManager.OnClientDisconnectCallback` callback.
-- Ensure the `NetworkManager` properly shuts down before attempting any reconnection. You can use the `NetworkManager.ShutdownInProgress` property to manage this.
-- Ensure automatic reconnection does not trigger when you do not want it.
+To implement automatic reconnection:
+- Define what will trigger the reconnection process and when it will start.
+  - For example, you can use the `NetworkManager.OnClientDisconnectCallback` callback, or some other unique event depending on your game.
+- Ensure the `NetworkManager` properly shuts down before attempting any reconnection.
+  - You can use the `NetworkManager.ShutdownInProgress` property to manage this.
+- Add additional checks to ensure automatic reconnection does not trigger under the wrong conditions.
   - Examples
     - A client purposefully quits a game
     - The server shuts down as expected when the game session ends
     - A client gets kicked from a game
     - A client is denied during connection approval
 
-Depending on your game, you may want to add the following featurs as well:
+Depending on your game, you may want to add the following features as well:
 - Include multiple reconnection attempts in case of failure. You need to define how many attempts these should be, ensure that `NetworkManager` properly shuts down between each attempt, and reset the client's state (if needed).
-- Provide an option for players to cancel the reconnection process. This may be useful when there are a lot of reconnection attempts or each attempts takes a long time.
+- Provide an option for players to cancel the reconnection process. This may be useful when there are a lot of reconnection attempts or when each attempt lasts a long duration.
 
 ### Automatic reconnection example
 
