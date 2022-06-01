@@ -360,6 +360,103 @@ module.exports = {
 
             ]
         },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Educational Material",
+            "items": [
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Boss Room",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom-actions"
+                        },
+                    ],
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Bitesize Samples",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-introduction"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-invaders"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-spaceshooter"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-clientdriven"
+                        },
+                    ]
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Community Contributions",
+            "items": [
+                {
+
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Dilmer Tutorials",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/dilmer-video"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/project-setup"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/corefeatures"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/networkanimator"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/relay-service-setup"
+                        }
+                    ]
+                },
+                {
+
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Dapper Tutorials",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/dapper/dapper-video"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dapper/dapper-upgrade"
+                        },
+
+                    ]
+                }
+            ]
+        },
     ],
 
     Multiplayer:
@@ -445,100 +542,6 @@ module.exports = {
 
                 ],
             },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Educational Material",
-                "items": [
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Boss Room",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/bossroom"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/bossroom-examples/bossroom-actions"
-                            },
-                        ],
-                    },
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Bitesize Samples",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/bitesize-introduction"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/bitesize-invaders"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/bitesize-spaceshooter"
-                            }
-                        ]
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Community Contributions",
-                "items": [
-                    {
-
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Dilmer Tutorials",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/dilmer-video"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/project-setup"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/corefeatures"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/networkanimator"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/relay-service-setup"
-                            }
-                        ]
-                    },
-                    {
-
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Dapper Tutorials",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/dapper/dapper-video"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dapper/dapper-upgrade"
-                            },
-
-                        ]
-                    }
-                ]
-            },
-
             {
                 "type": "doc",
                 "id": "learn/faq"
