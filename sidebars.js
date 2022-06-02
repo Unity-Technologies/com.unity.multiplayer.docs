@@ -363,7 +363,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Educational Material",
+            "label": "Educational Samples",
             "items": [
                 {
                     "collapsed": true,
