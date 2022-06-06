@@ -14,11 +14,10 @@ public class SecureServerBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
     private NativeList<NetworkConnection> m_Connections;
-    private NetworkSettings settings;
-    
     
     void Start ()
     {
+        var settings = new NetworkSettings();
         settings.WithSecureServerParameters(
             certificate: ref SecureParameters.MyGameServerCertificate,            // The content of the `myGameServerCertificate.pem`           
             privateKey: ref SecureParameters.MyGameServerPrivate                  // The content of `myGameServerPrivate.pem`
@@ -36,8 +35,11 @@ public class SecureServerBehaviour : MonoBehaviour
 
     public void OnDestroy()
     {
-        m_Driver.Dispose();
-        m_Connections.Dispose();
+        if (m_Driver.IsCreated)
+        {
+            m_Driver.Dispose();
+            m_Connections.Dispose();
+        }
     }
 
     void Update ()

@@ -32,8 +32,11 @@ public class ServerBehaviour : MonoBehaviour
 
     public void OnDestroy()
     {
-        m_Driver.Dispose();
-        m_Connections.Dispose();
+        if (m_Driver.IsCreated)
+        {
+            m_Driver.Dispose();
+            m_Connections.Dispose();
+        }
     }
 
     void Update ()
