@@ -90,3 +90,9 @@ NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
 ```
 
 To find your own player object just pass `NetworkManager.Singleton.LocalClientId` as the clientId in the sample above.
+
+### Network Prefabs
+Network prefabs (NetworkPrefabs) are prefabs that contain a GameObject with a `NetworkObject` component.  As an example, if you wanted to create a prefab to be the default player prefab, then you would create a prefab that at the root GameObject included a `NetworkObject` component and any additional player specific `NetworkBehabiour` components.  You can then assign that prefab to the `NetworkManager` Player Prefab property to be used when a player is connected and approved.  Each connected player will have a unique instance spawned on all connected clients (including the server).
+:::Note
+  You can only have one `NetworkObject` at the root of a prefab.  This means do not create prefabs with nested `NetworkObjects`!
+:::
