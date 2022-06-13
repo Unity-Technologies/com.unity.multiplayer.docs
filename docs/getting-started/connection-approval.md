@@ -14,7 +14,9 @@ This class represents the client-to-server request that contains:
 - **Payload**: any additional user defined connection data
 
 ### NetworkManager.ConnectionApprovalResponse
-This is how the connection approval response is formed by user code.  This class contains all of the connection approval response required to authorize or reject a player attempting to connect.  It also contains additional properties to further define:
+This is how the connection approval response is formed by user code.  On the server side, this class contains all of the connection approval response information  required to either authorize or reject a player attempting to connect.  It also contains additional properties to further define:
+- **Approved**: When `true` the player is approved and `false` the player is denied.
+- **CreatePlayerObject**: When `true` the server will spawn a player prefab for the connecting player.  The default player prefab is defined in NetworkManager.  In order to specify a player prefab other than the default use the `PlayerPrefabHash` property.
 - **PlayerPrefabHash**: The type of player prefab to use for the authorized player (_if this is null it uses the default `NetworkManager` defined player prefab_)
 - **Position** and **Rotation**: The position and rotation of the player when spawned
 - **Pending**: Provides the ability to mark the approval "pending" to delay the authorization until other user-specific code finishes the approval process.
@@ -45,10 +47,10 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
     // The prefab hash value of the NetworkPrefab, if null the default NetworkManager player prefab is used
     response.PlayerPrefabHash = null;
 
-    // Position to spawn the player object at (default is Vector3.zero)
+    // Position to spawn the player object (if null it uses default of Vector3.zero)
     response.Position = Vector3.zero;
 
-    // Rotation to spawn the player object at (default is Quaternion.identity)   
+    // Rotation to spawn the player object (if null it uses the default of Quaternion.identity)
     response.Rotation = Quaternion.identity;
 
     // If additional approval steps are needed, set this to true until the additional steps are complete
@@ -70,7 +72,7 @@ NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASC
 NetworkManager.Singleton.StartClient();
 ```
 
-The `ConnectionData` will then be passed to the server as the payload of the connection message that the server-side code will then determine if the client is approved or not.
+The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, will then sent passed to the server as part of the `Payload` of the connection request message that will be used on the server-side to determine if the client is approved or not.  The connetion data is completely optional and the connection approval process can be used to simply assign player's unique prefabs, other than the default, as well as facilitates the ability to spawn players at various locations (without requiring the client to send any form of connection data).
 
 ## Timeout
 
