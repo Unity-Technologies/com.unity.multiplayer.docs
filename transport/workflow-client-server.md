@@ -153,10 +153,15 @@ Add the following code to the `OnDestroy` method on your [MonoBehaviour](https:/
 ```csharp
 public void OnDestroy()
 {
-    m_Driver.Dispose();
-    m_Connections.Dispose();
+    if (m_Driver.IsCreated)
+    {
+        m_Driver.Dispose();
+        m_Connections.Dispose();
+    }
 }
 ```
+
+The check for `m_Driver.IsCreated` ensures we don't dispose of the memory if it hasn't been allocated (e.g. if the component is disabled).
 
 ### Server Update loop
 

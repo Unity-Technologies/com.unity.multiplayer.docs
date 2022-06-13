@@ -36,4 +36,6 @@ This class allows BossRoom to handle player session data, represented by a struc
 
 In this case, since game sessions are quite short, the session data is only cleared for disconnected players when a session ends, or if a player leaves before a session starts. This makes sure that if a player disconnects during a session and then reconnects during the next session, the game properly treats it as a new connection. The definition of when a session ends and when a session starts might vary from game to game, but in BossRoom a session is considered to start after character selection and end when the players win or loose the game and enter the post-game scene. In other cases, one might want to add a timeout to session data and clear it after a specified time instead.
 
-This code is in Boss Room's utilities package so it can be easily reused.
+This code is in Boss Room's utilities package so it can be easily reused. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"
+
+Or you can directly add this line to your `manifest.json` file: "com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"
