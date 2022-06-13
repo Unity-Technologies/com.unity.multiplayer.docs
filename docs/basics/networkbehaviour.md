@@ -73,7 +73,7 @@ For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **a
 `OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it is de-spawned.  This is where all netcode "despawn cleanup code" should occur, but is not to be confused with destroying.  Despawning occurs before anything is destroyed.
 
 ### Destroying
-Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden to handle clean up that needs to occur when you know the `NetworkBehaviour` is being destroyed.
+Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden to handle clean up that needs to occur when you know the `NetworkBehaviour` is being destroyed.<br>
 :::note
 !Important! If you override the virtual 'OnDestroy' method it is important to alway invoke the base like such:
 ```csharp
