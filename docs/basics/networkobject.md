@@ -15,9 +15,9 @@ For `NetworkBehaviour`s use the [NetworkBehaviourReference](NO API LINK AVAILABL
 
 ## NetworkObject
 
-In order to replicate any netcode aware properties, replicate state, or send/receive RPCs a `GameObject` must have a `NetworkObject` component and at least one `NetworkBehaviour` component.  Any netcode related component, like `NetworkTransform` or a `NetworkBehaviour` with one or more `NetworkVariable`s or `RPC`s, requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` in question.
+In order to replicate any netcode aware properties or send/receive RPCs a `GameObject` must have a `NetworkObject` component and at least one `NetworkBehaviour` component.  Any netcode related component, like `NetworkTransform` or a `NetworkBehaviour` with one or more `NetworkVariable`s or `RPC`s, requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` in question.
 
-When spawning a `NetworkObject`, the NetowrkObject.GlobalObjectIdHash value is used to initially identify the associatd network prefab asset clients will instantiate to create a client-local clone/copy.  Each `NetworkObject` gets assigned a `NetworkObjectId` at runtime, which is used to associate two `NetworkObject`s across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103", and everyone knows what object that is. A `NetworkObject` is considered "Spawned" on a client is when it has been instatiated and assigned a unique `NetworkObjectId`. <br>
+When spawning a `NetworkObject`, the NetowrkObject.GlobalObjectIdHash value is used to initially identify the associatd network prefab asset clients will instantiate to create a client-local clone/copy.  Once instantiated locally, each `NetworkObject` is assigned a `NetworkObjectId` that is used to associate `NetworkObject`s across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103", and everyone knows what object that is. A `NetworkObject` is considered "Spawned" on a client is when it has been instatiated and assigned a unique `NetworkObjectId`. <br>
 
 [NetworkBehaviours](networkbehaviour.md) provide users with the ability to add their own custom netcode logic to the associated `NetworkObject`.
 
