@@ -67,10 +67,10 @@ public class MyNetworkBehaviour : NetworkBehaviour
 ```
 
 #### In-Scene Placed NetworkObjects
-For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Awake` and `Start` methods since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example demonstrates how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them.
+For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Awake` and `Start` methods since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example demonstrates how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`.  It all depends upon what usage pattern works best for your project.
 
 ### De-Spawning
-`OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it is de-spawned.  This is where all netcode "despawn cleanup code" should occur, but is not to be confused with destroying.  Despawning occurs before anything is destroyed
+`OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it is de-spawned.  This is where all netcode "despawn cleanup code" should occur, but is not to be confused with destroying.  Despawning occurs before anything is destroyed.
 
 ### Destroying
 Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden to handle clean up that needs to occur when you know the `NetworkBehaviour` is being destroyed.
