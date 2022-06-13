@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-Netcode for Gameobjects' high level components, [the RPC system](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/messaging-system), [object spawning]([https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSpawnManager](https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning)), and [NetworkVariable](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkvariable)s all rely on there being at least two netcode components added to a `GameObject`: 
+Netcode for Gameobjects' high level components, [the RPC system](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/messaging-system), [object spawning](https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning), and [NetworkVariable](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkvariable)s all rely on there being at least two netcode components added to a `GameObject`: 
 1. `NetworkObject` (this document)
 2. [`NetworkBehaviour`](networkbehaviour.md)
 
