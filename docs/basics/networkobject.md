@@ -51,6 +51,10 @@ To determine if the local client is the owner of a NetworkObject you can check t
 <br>
 To determine if the NetworkObject is owned by the server you can check the [`NetworkBehaviour.IsOwnedByServer`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour#isownedbyserver) property.<br>
 
+:::note
+When you want to despawn and destroy the owner but you don't want a specific `NetworkObject` to be destroyed along with the owner, then you can set the `NetworkObject.DontDestroyWithOwner` property to `true` which will assure that when the owner is destroyed the owned `NetworkObject`is not destroyed.
+:::
+
 ## Player Objects
 
 Player objects are an optional feature in Netcode which can be used to assign a networked object to a specific client. A client can always only have at most one player object.<br>
