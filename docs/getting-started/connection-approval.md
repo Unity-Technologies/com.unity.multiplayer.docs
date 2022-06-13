@@ -13,7 +13,7 @@ Contains the connecting client identifier and additional connection data (if any
 
 ### NetworkManager.ConnectionApprovalResponse
 This is how the connection approval response is formed by user code.  This class contains all of the connection approval response required to authorize or reject a player attempting to connect.  It also contains additional properties to further define:
-- The type of player prefab to use for the authorized player
+- The type of player prefab to use for the authorized player (if this is null it uses the default NetworkManager defined player prefab)
 - The position and rotation of the player when spawned
 - The ability to mark the approval "pending" to delay the authorization until other user-specific code finishes the approval process.
 
