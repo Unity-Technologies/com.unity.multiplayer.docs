@@ -9,11 +9,13 @@ With every new connection,  Netcode for GameObjects (Netcode) performs a handsha
 Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.  By setting `ConnectionApproval` property of the `NetworkManager` to `true` Netcode will then check to make sure the `NetworkManager.ConnectionApprovalCallback' has been assigned.  If it has been assigned, then Netcode will invoke the connection approval process for connecting clients.  _If not set, then it will automatically authorize the user and assign the default player prefab!_
 
 ### NetworkManager.ConnectionApprovalRequest
-Contains the connecting client identifier and additional connection data (if any is provided).
+This class represents the client-to-server request that contains:
+- ClientNetworkId: the connecting client identifier
+- Payload: any additional user defined connection data
 
 ### NetworkManager.ConnectionApprovalResponse
 This is how the connection approval response is formed by user code.  This class contains all of the connection approval response required to authorize or reject a player attempting to connect.  It also contains additional properties to further define:
-- The type of player prefab to use for the authorized player (if this is null it uses the default NetworkManager defined player prefab)
+- The type of player prefab to use for the authorized player (_if this is null it uses the default `NetworkManager` defined player prefab_)
 - The position and rotation of the player when spawned
 - The ability to mark the approval "pending" to delay the authorization until other user-specific code finishes the approval process.
 
@@ -55,7 +57,7 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
 }
 ```
 
-## Connection data  (_NetworkManager.ConnectionApprovalRequest.Payload_)
+## Connection data  (_`NetworkManager.ConnectionApprovalRequest.Payload`_)
 
 The `ConnectionApprovalRequest.Payload` parameter takes any custom data of your choice that the client should send to the server. Usually, this data should be some sort of ticket, room password, or similar that will decide if a connection should be approved or not. The `connectionData` is specified on the Client-side in the `NetworkingConfig` supplied when connecting.
 
