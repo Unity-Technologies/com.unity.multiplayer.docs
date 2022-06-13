@@ -60,6 +60,7 @@ When you want to despawn and destroy the owner but you don't want a specific `Ne
 Player objects are an optional feature in Netcode which can be used to assign a networked object to a specific client. A client can always only have at most one player object.<br>
 :::note
 If you want a client to control multiple objects, then use the ownership methods described above under the ownership section.
+If you want to be able to assign a unique player prefab on a per client connection basis, use client [Connection Approval](https://docs-multiplayer.unity3d.com/netcode/current/getting-started/connection-approval).
 :::
 
 ### Creating a Player Object
