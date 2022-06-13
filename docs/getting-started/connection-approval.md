@@ -10,14 +10,14 @@ Connection approval allows you to decide on a per connection basis if the connec
 
 ### NetworkManager.ConnectionApprovalRequest
 This class represents the client-to-server request that contains:
-- ClientNetworkId: the connecting client identifier
-- Payload: any additional user defined connection data
+- **ClientNetworkId**: the connecting client identifier
+- **Payload**: any additional user defined connection data
 
 ### NetworkManager.ConnectionApprovalResponse
 This is how the connection approval response is formed by user code.  This class contains all of the connection approval response required to authorize or reject a player attempting to connect.  It also contains additional properties to further define:
-- The type of player prefab to use for the authorized player (_if this is null it uses the default `NetworkManager` defined player prefab_)
-- The position and rotation of the player when spawned
-- The ability to mark the approval "pending" to delay the authorization until other user-specific code finishes the approval process.
+- **PlayerPrefabHash**: The type of player prefab to use for the authorized player (_if this is null it uses the default `NetworkManager` defined player prefab_)
+- **Position** and **Rotation**: The position and rotation of the player when spawned
+- **Pending**: Provides the ability to mark the approval "pending" to delay the authorization until other user-specific code finishes the approval process.
 
 ## Server Side Connection Approval Example:
 
