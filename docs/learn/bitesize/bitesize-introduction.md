@@ -11,7 +11,7 @@ The Bitesize Samples repository provides a series of sample code as modules to u
 
 ## Requirements
 
-You need Unity and Unity MLAPI installed to work with these samples. See [Install  Netcode for GameObjects ](../migration/installation.md) for details.
+You need Unity and Netcode for GameObjects installed to work with these samples. See [Install  Netcode for GameObjects ](../migration/installation.md) for details.
 
 ## Get the samples
 
@@ -27,7 +27,7 @@ After download, unzip the archive file. You are now ready to add the project to 
 
 1. Open Unity Hub.
 1. Click **Add**.
-1. Navigate to the unzipped folder. select the `Basic/2dSpaceShooter` or `Basic/Invaders` folder to add the respective project.
+1. Navigate to the unzipped folder. select the one of the projects in the `Basic` folder to add the respective project.
 
 :::important Compatibility
 The Bitesize Samples have been built for a specific Unity version. You can see the version after adding a sample to the Unity Hub or in the description of the [repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize). We recommend using the same Unity version to avoid potential issues.
