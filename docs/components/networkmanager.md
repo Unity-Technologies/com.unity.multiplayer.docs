@@ -35,7 +35,7 @@ In order to perform any netcode related action that involves sending messages, y
 
 ```csharp
 NetworkManager.Singleton.StartServer();      // Starts the NetworkManager as just a server (i.e. no local client).
-NetworkManager.Singleton.StartHost();        // Starts the NetworkManager as both a server and a client (i.e. player hosting a game on their system)
+NetworkManager.Singleton.StartHost();        // Starts the NetworkManager as both a server and a client (i.e. has local client)
 NetworkManager.Singleton.StartClient();      // Starts the NetworkManager as just a client.
 ```
 **Do not start a NetworkManager within a NetworkBehaviour's Awake method as this can lead to undesirable results depending upon your project's settings!**
@@ -59,7 +59,7 @@ NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectPort = 12345;     
 
 ## Disconnecting
 
-Disconnecting is rather simple, but you have to remember, that you cannot use the `NetworkSceneManager` once the `NetworkManager` is stopped because it will no longer be available (and should only be used for network session scene loading and unloading).  When outside of a network session and once you have stopped the `NetworkManager`, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.
+Disconnecting is rather simple, but you have to remember, that you cannot use the `NetworkSceneManager` once the `NetworkManager` is stopped because it will no longer be available and should only be used for network session scene loading, unloading, and late-joining client synchronization.  When no network session is active and the `NetworkManager` has been stopped, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.
 
 ```csharp
 public void Disconnect()
