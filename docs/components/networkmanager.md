@@ -50,13 +50,13 @@ NetworkManager.Singleton.StartClient();      // Starts the NetworkManager as jus
 :::
 
 ## Connecting
-When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting.
+When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
-You can use different transports and have to replace the type inside the following `GetComponent< >` accordingly, but for UNET transport it looks like this:
+If you are using [Unity Transport](https://docs-multiplayer.unity3d.com/transport/current/about) it would look like this:
 
 ```csharp
-NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "127.0.0.1"; //takes string
-NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectPort = 12345;          //takes integer
+NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = "127.0.0.1"; //takes string
+NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionDat.Port = 12345;           //takes integer
 ```
 
 ## Disconnecting
