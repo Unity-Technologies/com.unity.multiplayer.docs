@@ -62,23 +62,12 @@ NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionDat.Port = 123
 
 ## Disconnecting
 
-Disconnecting is rather simple, but you have to remember, that you cannot use the `NetworkSceneManager` once the `NetworkManager` is stopped because it will no longer be available and should only be used for network session scene loading, unloading, and late-joining client synchronization.  When no network session is active and the `NetworkManager` has been stopped, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.
+Disconnecting is rather simple, but you have to remember, that you cannot use the `NetworkSceneManager` once the `NetworkManager` is stopped because it will no longer be available and should only be used for network session scene loading, unloading, and late-joining client synchronization.  When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.  
 
 ```csharp
 public void Disconnect()
 {
-    if (IsHost) 
-    {
-        NetworkManager.Singleton.StopHost();
-    }
-    else if (IsClient) 
-    {
-        NetworkManager.Singleton.StopClient();
-    }
-    else if (IsServer) 
-    {
-        NetworkManager.Singleton.StopServer();
-    }
+    NetworkManager.Shutdown();
     // At this point we must use the UnityEngine's SceneManager to switch back to the MainMenu
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 }
