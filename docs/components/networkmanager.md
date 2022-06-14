@@ -3,7 +3,7 @@ id: networkmanager
 title: NetworkManager
 ---
 
-The `NetworkManager` is a required Netcode for GameObjects (Netcode) component that contains all of your project's netcode related settings.  It can be thought of as the "central netcode hub" for your netcode enabled project.  It is also where you will find references to other Netcode related systems for spawn, scene, network time, and other netcode management related systems.  
+The `NetworkManager` is a required Netcode for GameObjects (Netcode) component that contains all of your project's netcode related settings.  It can be thought of as the "central netcode hub" for your netcode enabled project.  
 
 ### `NetworkManager` Properties
 - **LogLevel**:  Sets the network logging level 
@@ -21,8 +21,10 @@ The `NetworkManager` is a required Netcode for GameObjects (Netcode) component t
 - **Rpc Hash Size**: !!!(UNITY TW ATTENTION) _This is only used for Custom Messages now and could stand to use a refresh on its tool tip text_!!!
 - **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
-
+  
 ### `NetworkManager` Sub-Systems
+`NetworkManager` is also where you can find references to other Netcode related management systems:
+
 - NetworkManager.PrefabHandler: This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
 - NetworkManager.SceneManager: When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
 - NetworkManager.SpawnManager: This handles NetworkObject spawn related functionality.
