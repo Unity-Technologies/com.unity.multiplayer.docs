@@ -25,9 +25,9 @@ The `NetworkManager` is a required Netcode for GameObjects (Netcode) component t
 ### `NetworkManager` Sub-Systems
 `NetworkManager` is also where you can find references to other Netcode related management systems:
 
-- NetworkManager.PrefabHandler: This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
-- NetworkManager.SceneManager: When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
-- NetworkManager.SpawnManager: This handles NetworkObject spawn related functionality.
+- [NetworkManager.PrefabHandler](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/object-pooling): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
+- [NetworkManager.SceneManager](https://docs-multiplayer.unity3d.com/netcode/current/basics/scene-management): When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
+- [NetworkManager.SpawnManager](https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning): This handles NetworkObject spawn related functionality.
 - [NetworkManager.NetworkTimeSystem](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/networktime-ticks): a synchronized time that can be used to handle issues with latency between a client and the server.
 - [NetworkManager.NetworkTickSystem](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/networktime-ticks#network-ticks): Use this to adjust the frequency of when NetworkVariables are updated.
 - [NetworkManager.CustomMessagingManager](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/message-system/custom-messages): Use this system to create and send custom messages.
