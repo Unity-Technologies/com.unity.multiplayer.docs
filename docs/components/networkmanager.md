@@ -67,7 +67,7 @@ Disconnecting is rather simple, but you have to remember, that you cannot use th
 ```csharp
 public void Disconnect()
 {
-    NetworkManager.Shutdown();
+    NetworkManager.Singleton.Shutdown();
     // At this point we must use the UnityEngine's SceneManager to switch back to the MainMenu
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 }
