@@ -11,25 +11,25 @@ A network prefab is any unity prefab asset that has one `NetworkObject` componen
 - any child or children of the `GameObject` that the `NetworkObject` is attached to.  
 
 :::note
-A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested 'NetworkObject' components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this.
+A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this.
 :::
 
 **Network prefabs can be used as:**
-- the default player object when assigned to the [`NetworkManager`'s Player Prefab property](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager) 
+- a player object (when assigned to the [`NetworkManager`'s Player Prefab property](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager))
 - a dynamically spawned `NetworkObject`
-- an in-scene placed `NetworkObject` (i.e. drag and drop a network prefab into a scene from within the editor) 
+- an in-scene placed `NetworkObject` (i.e. drag and drop a network prefab into a scene from within the editor)
 
 ### Registering a Network Prefab
 
 One of the requirements to be able to spawn a network prefab instance is that it must be registered with the `NetworkManager` in the Network Prefabs list property.
-The following are the steps to register a network prefab with `NetworkManager`: 
+The two steps to registering a network prefab with `NetworkManager`: 
 
 1. Create a network prefab by creating a prefab with a `NetworkObject` component attached to the root `GameObject`   
 1. Add your network prefab to the Network Prefabs list poperty of the `NetworkManager`.
 
 ### Spawning a Network Prefab (Overview)
 
-Netcode uses a server authorative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, first instantiate an instance of the network prefab and then invoke the spawn method on the `NetworkObject` component attached to a `GameObject` in the network prefab.  Typically this is the root `GameObject` since a `NetworkObject` will only be assigned `NetworkBehaviour` components that are on the same `GameObject` that the `NetworkObject` component is attached to or any nested child `GameObject`.   _In most cases, you will want to keep the `NetworkObject` component attached to the root `GameObject` of the network prefab.  _
+Netcode uses a server authorative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, you must first instantiate an instance of the network prefab and then invoke the spawn method on the `NetworkObject` component. Typically this is the root `GameObject` since a `NetworkObject` will only be assigned `NetworkBehaviour` components that are on the same `GameObject` that the `NetworkObject` component is attached to or any nested child `GameObject`.  _In most cases, you will want to keep the `NetworkObject` component attached to the root `GameObject` of the network prefab.  _
 
 By default a newly spawned network prefab instance is owned by the server. <br>See [Ownership](networkobject.md#ownership) for more information.<br>
 
@@ -39,14 +39,14 @@ GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
 go.GetComponent<NetworkObject>().Spawn();
 ```
 <br>
-The `.Spawn()` method takes 1 optional parameter that defaults to `true`:<br>
+The `NetworkObject.Spawn` method takes 1 optional parameter that defaults to `true`:<br>
 ```csharp
 public void Spawn(bool destroyWithScene = true);
 ```
 
 ## Destroying / Despawning
 
-When a spawned network prefab instance gets destroyed on the server/host, Netcode will automatically destroy it on all clients as well.
+By default, a spawned network prefab instance that is destroyed on the server/host will be automatically destroyed on all clients.
 
 When a client disconnects, all network prefab instances created during the network session and owned by that client will be destroyed by default. If you do not want that to happen, set the `DontDestroyWithOwner` field on `NetworkObject` to true before despawning.<br>
 
@@ -56,7 +56,7 @@ m_SpawnedNetworkObject.DontDestroyWithOwner = true;
 m_SpawnedNetworkObject.Despawn();
 ```
 
-To make this the default in the editor:
+To make this the default from the editor insepctor view:
 ![image](https://user-images.githubusercontent.com/73188597/173940589-79405020-2d95-4b77-91fb-c2928116fafe.png)
 As an alternative way, you can make the `NetworkObject.DontDestroyWithOwner` property default to `true` by setting it on the `NetworkObject` itself like in the above screenshot.
 
@@ -64,7 +64,7 @@ As an alternative way, you can make the `NetworkObject.DontDestroyWithOwner` pro
 
 To despawn a networked object on all clients but keep it on the server call `NetworkObject.Despawn` on the server. An despawned object can also later be spawned again with another spawn call if needed.
 
-A client should never call destroy on a networked object itself (this is not supported).  To destroy an object with client authority, have the client send an RPC to the server, which allows the server to destroy the object.
+A client should never call destroy on a networked object itself (this is not supported and will throw an exception).  If you want to use a more client authority model, have the client with ownership invoke a ServerRpc to defer the despawning on server side.
 
 You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility](object-visibility.md).
 
