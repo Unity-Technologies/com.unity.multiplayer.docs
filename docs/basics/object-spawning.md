@@ -6,40 +6,39 @@ sidebar_label: Object Spawning
 In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in  Netcode for GameObjects (Netcode) means to create an object which is shared between all clients and the server. 
 
 ## Network Prefabs
-A network prefab is any unity prefab asset that has one `NetworkObject` component assigned to a `GameObject` within the prefab. More commonly, the `NetworkObject` component is assigned to the root `GameObject` of the prefab asset.  Placing the `NetworkObjet` component on the root `GameObject` is typically the more common configuration because this allows any child `GameObject` to have a `NetworkBehaviour` assigned to it.  The reason for this is that a `NetworkObject` component assigned to a `GameObject` will be associated with any `NetworkBehaviour` components on:
-- the same `GameObject` that the `NetworkObject` component is assigned to
-- any child or children of the `GameObject` that the `NetworkObject` is assigned to.  
+A network prefab is any unity prefab asset that has one `NetworkObject` component attached to a `GameObject` within the prefab. More commonly, the `NetworkObject` component is attached to the root `GameObject` of the prefab asset.  Attaching the `NetworkObject` component on the root `GameObject` is typically the more common configuration because this allows any child `GameObject` to have a `NetworkBehaviour` automatically assigned to the `NetworkObject`.  The reason for this is that a `NetworkObject` component attached to a `GameObject` will be assigned (associated with) any `NetworkBehaviour` components on:
+- the same `GameObject` that the `NetworkObject` component is attached to
+- any child or children of the `GameObject` that the `NetworkObject` is attached to.  
 
 :::note
-The caveat to how `NetworkObject`s are associated with NetworkBehaviours is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested 'NetworkObject' components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this. 
+A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested 'NetworkObject' components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this.
 :::
 
 **Network prefabs can be used as:**
-- the player object when assigned to the [`NetworkManager`'s Player Prefab property](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager) 
+- the default player object when assigned to the [`NetworkManager`'s Player Prefab property](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager) 
 - a dynamically spawned `NetworkObject`
-- an in-scene placed `NetworkObject` (i.e. drag and drop a network prefab into a scene) 
+- an in-scene placed `NetworkObject` (i.e. drag and drop a network prefab into a scene from within the editor) 
 
 ### Registering a Network Prefab
 
-One of the requirements to be able to spawn a network prefab instance is that it must be registered with the `NetworkManager` in the Network Prefabs list.
-The following are the steps to register a network prefab with a `NetworkManager`: 
+One of the requirements to be able to spawn a network prefab instance is that it must be registered with the `NetworkManager` in the Network Prefabs list property.
+The following are the steps to register a network prefab with `NetworkManager`: 
 
 1. Create a network prefab by creating a prefab with a `NetworkObject` component attached to the root `GameObject`   
 1. Add your network prefab to the Network Prefabs list poperty of the `NetworkManager`.
 
-### Spawning a Networked Prefab (Overview)
+### Spawning a Network Prefab (Overview)
 
-Netcode uses a server authorative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, first instantiate an instance of the network prefab and then invoke the spawn method on the `NetworkObject` component within your network prefab.  Typically this is the root `GameObject`, but while you cannot nest `NetworkObjects` in a network prefab you can nest `GameObject`s.  Since a `NetworkObject` will only be assigned to `NetworkBehaviour` components on the same `GameObject` that the `NetworkObject` component is attached to or any nested child `GameObject`, in most cases you would want to keep the `NetworkObject` component attached to the root `GameObject` of the network prefab.  
+Netcode uses a server authorative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, first instantiate an instance of the network prefab and then invoke the spawn method on the `NetworkObject` component attached to a `GameObject` in the network prefab.  Typically this is the root `GameObject` since a `NetworkObject` will only be assigned `NetworkBehaviour` components that are on the same `GameObject` that the `NetworkObject` component is attached to or any nested child `GameObject`.   _In most cases, you will want to keep the `NetworkObject` component attached to the root `GameObject` of the network prefab.  _
 
 By default a newly spawned network prefab instance is owned by the server. <br>See [Ownership](networkobject.md#ownership) for more information.<br>
 
-The following is a basic example of how to spawn a network prefab instance (with the default server ownership):
-
+The following is a basic example of how to spawn a network prefab instance (with the default server ownership):<br>
 ```csharp
 GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
 go.GetComponent<NetworkObject>().Spawn();
 ```
-
+<br>
 The `.Spawn()` method takes 1 optional parameter that defaults to `true`:<br>
 ```csharp
 public void Spawn(bool destroyWithScene = true);
