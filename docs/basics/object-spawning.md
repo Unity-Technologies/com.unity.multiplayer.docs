@@ -6,13 +6,14 @@ sidebar_label: Object Spawning
 In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in  Netcode for GameObjects (Netcode) means to create an object which is shared between all clients and the server. 
 
 ## Network Prefabs
-A network prefab is a any unity prefab asset that has one NetworkObject component assigned to a `GameObject` within the prefab. More commonly, the `NetworkObject` component is assigned to the root `GameObject` of the prefab asset.  Placing the `NetworkObjet` component on the root `GameObject` is typically the more common configuration because this allows any child `GameObject` to have a `NetworkBehaviour` assigned to it.  The reason for this is that a `NetworkObject` component assigned to a `GameObject` will be associated with any `NetworkBehaviour` components on:
+A network prefab is any unity prefab asset that has one NetworkObject component assigned to a `GameObject` within the prefab. More commonly, the `NetworkObject` component is assigned to the root `GameObject` of the prefab asset.  Placing the `NetworkObjet` component on the root `GameObject` is typically the more common configuration because this allows any child `GameObject` to have a `NetworkBehaviour` assigned to it.  The reason for this is that a `NetworkObject` component assigned to a `GameObject` will be associated with any `NetworkBehaviour` components on:
 - the same `GameObject` that the `NetworkObject` component is assigned to
 - any child or children of the `GameObject` that the `NetworkObject` is assigned to.  
 
 :::note
-The caveat to how `NetworkObject`s are associated with NetworkBehaviours is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects").  However, nested `NetworkObject` components cannot be applied to a network prefab.  
+The caveat to how `NetworkObject`s are associated with NetworkBehaviours is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested 'NetworkObject' components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetowrkObject` to a prefab and will not allow it. 
 :::
+
 **Network prefabs can be used as:**
 - the player object when assigned to the [`NetworkManager`'s Player Prefab property](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager) 
 - a dynamically spawned `NetworkObject`
