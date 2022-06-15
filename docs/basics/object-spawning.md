@@ -29,28 +29,37 @@ The following are the steps to register a network prefab with a `NetworkManager`
 
 ### Spawning a Networked Prefab (Overview)
 
-Netcode uses a server authorative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, first instantiate the an instance of the network prefab and then invoke the spawn method on the `NetworkObject` component attached to a `GameObject` within your network prefab.  Typically this is the root `GameObject`, but while you cannot nest `NetworkObjects` in a network prefab you can nest `GameObject`s.  Since a `NetworkObject` will only be assigned to `NetworkBehaviour` components on the same `GameObject` that the `NetworkObject` component is attached to or any nested child `GameObject`, in most cases you would want to keep the `NetworkObject` component attached to the root `GameObject` of the network prefab.  
+Netcode uses a server authorative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, first instantiate an instance of the network prefab and then invoke the spawn method on the `NetworkObject` component within your network prefab.  Typically this is the root `GameObject`, but while you cannot nest `NetworkObjects` in a network prefab you can nest `GameObject`s.  Since a `NetworkObject` will only be assigned to `NetworkBehaviour` components on the same `GameObject` that the `NetworkObject` component is attached to or any nested child `GameObject`, in most cases you would want to keep the `NetworkObject` component attached to the root `GameObject` of the network prefab.  
 
-By default a newly spawned object is owned by the server. See [Ownership](networkobject.md#ownership) for more information.
+By default a newly spawned network prefab instance is owned by the server. <br>See [Ownership](networkobject.md#ownership) for more information.<br>
 
-The following is an example to spawn an object (with server ownership):
+The following is a basic example of how to spawn a network prefab instance (with the default server ownership):
 
 ```csharp
 GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
 go.GetComponent<NetworkObject>().Spawn();
 ```
 
-The `.Spawn()` method takes 1 optional parameter that defaults to `true`:
-
+The `.Spawn()` method takes 1 optional parameter that defaults to `true`:<br>
 ```csharp
 public void Spawn(bool destroyWithScene = true);
 ```
 
 ## Destroying / Despawning
 
-When a spawned object gets destroyed on the server/host, Netcode will automatically destroy it on all clients as well.
+When a spawned network prefab instance gets destroyed on the server/host, Netcode will automatically destroy it on all clients as well.
 
-When a client disconnects, all objects owned by that client will be destroyed. If you do not want that to happen for an object set the `DontDestroyWithOwner` field on `NetworkObject` to true.
+When a client disconnects, all network prefab instances created during the network session and owned by that client will be destroyed by default. If you do not want that to happen, set the `DontDestroyWithOwner` field on `NetworkObject` to true before despawning.<br>
+
+To do this at runtime:
+```csharp
+m_SpawnedNetworkObject.DontDestroyWithOwner = true;
+m_SpawnedNetworkObject.Despawn();
+```
+
+To make this the default in the editor:
+![image](https://user-images.githubusercontent.com/73188597/173940589-79405020-2d95-4b77-91fb-c2928116fafe.png)
+As an alternative way, you can make the `NetworkObject.DontDestroyWithOwner` property default to `true` by setting it on the `NetworkObject` itself like in the above screenshot.
 
 ### Despawning
 
