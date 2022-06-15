@@ -3,16 +3,33 @@ id: object-spawning
 title: Object Spawning
 sidebar_label: Object Spawning
 ---
-In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in  Netcode for GameObjects (Netcode) means to create an object which is shared between all clients and the server.
+In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on that player's local machine. `Spawning` in  Netcode for GameObjects (Netcode) means to create an object which is shared between all clients and the server. 
 
-### Registering a Networked Prefab
+## Network Prefabs
+A network prefab is a any unity prefab asset that has one NetworkObject component assigned to a `GameObject` within the prefab. More commonly, the `NetworkObject` component is assigned to the root `GameObject` of the prefab asset.  Placing the `NetworkObjet` component on the root `GameObject` is typically the more common configuration because this allows any child `GameObject` to have a `NetworkBehaviour` assigned to it.  The reason for this is that a `NetworkObject` component assigned to a `GameObject` will be associated with any `NetworkBehaviour` components on:
+- the same `GameObject` that the `NetworkObject` component is assigned to
+- any child or children of the `GameObject` that the `NetworkObject` is assigned to.  
 
-To spawn an object, it must first be registered as a networked prefab:
+:::note
+The caveat to how `NetworkObject`s are associated with NetworkBehaviours is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects").  However, nested `NetworkObject` components cannot be applied to a network prefab.  
+:::
+**Network prefabs can be used as:**
+- the player object when assigned to the [`NetworkManager`'s Player Prefab property](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager) 
+- a dynamically spawned `NetworkObject`
+- an in-scene placed `NetworkObject` (i.e. drag and drop a network prefab into a scene) 
+
+
+## Dynamically Spawned
+Netcode for GameObjects uses the term "dynamically spawned" to convey that the `NetworkObject` is being spawned via user specific code.  Whereas a player or in-scene placed `NetworkObject` (with scene management enabled) is spawned by Netcode for GameObjects.   
+
+### Registering a Network Prefab
+
+To spawn an object, it must first be registered with the `NetworkManager` as a network prefab:
 
 1. Create a prefab out of the object you want to spawn.
 1. Make sure the object has a `NetworkObject` component on it. 
 
-  The `NetworkObject` component has a `PrefabHash` this is a unique name used by Netcode to find the right object to spawn on the clients. By default this is the name of the object but it can be changed if needed.
+  All `NetworkObject` components assigned to a GameObject will have a `GlobalObjectIdHash` value assigned to it.  
   
 1. Add your prefab to the `NetworkPrefabs` list of the `NetworkManager`.
 
