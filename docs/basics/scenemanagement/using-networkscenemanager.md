@@ -4,34 +4,38 @@ title: Using NetworkSceneManager
 sidebar_label: Using NetworkSceneManager
 ---
 
-## Netcode for GameObjects Scene Management
-
+## Netcode for GameObjects Integrated Scene Management
 Netcode scene management provides you with:
-- an existing framework that generically suppots both the bootstrap and scene transitioning scene management usage patterns
-- automatic client synchronization that occurs when a client is connected and approved  
-  - all scenes loaded via `NetworkSceneManager` will be considered during client synchronization
+- An existing framework that suppots both the bootstrap and scene transitioning scene management usage patterns
+- Automatic client synchronization that occurs when a client is connected and approved  
+  - all scenes loaded via `NetworkSceneManager` will be synchronized with clients during client synchronization.
     - Later in this document, you will learn more about using scene validation to control this on either the client or server side
-  - All spawned netcode objects are synchronized
-- scene event notifications   
-  - scene event progress tracking
-    - the server keeps track of the clients that have finished processing a scene event
-  - this is covered in detail under the scene event notification section of this document
- - in-scene placed `NetworkObject` soft synchronization
+  - all spawned netcode objects are synchronized with clients during client synchronization.
+- Scene Event Notifications 
+  - provides scene loading, unloading, and client synchronization events ("Scene Events") that can be tracked on both the client and server
+    - the server is notified of all scene events (including the clients')
+      - the server tracks each client's scene event progress (scene event progress tracking)
+    - clients are notified locally of scene events
+      - _clients are not aware of other clients' scene events_
+ - In-Scene Placed NetworkObject Synchronization
   
-In order to start using the built-in Netcode scene management, there are a few concepts one must be aware of before using it.  
+All of these scene management features (and more) are handled by the [`NetworkSceneManager`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSceneManager).
 
 ### Accessing `NetworkSceneManager`
-The first place to start is understanding how to access the [`NetworkSceneManager`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSceneManager).  `NetworkSceneManage` can be accessed in the following ways:
+The `NetworkSceneManager` lives within the `NetworkManager` and is instantiated when the `NetworkManager` is started. 
+`NetworkSceneManager` can be accessed in the following ways:
 -  From within a `NetworkBehaviour` derived component, you can access it by using `NetworkManager.SceneManager`
--  From anything else that does not already have a reference to `NetworkManager`, you can access it using `NetworkManager.Singleton.SceneManager.
+-  From anything else that does not already have a reference to `NetworkManager`, you can access it using `NetworkManager.Singleton.SceneManager`.
 
-Here are some genral rules about accessing and using `NetworkSceneManager`:
+**Here are some genral rules about accessing and using `NetworkSceneManager`:**
 - Do not try to access the `NetworkSceneManager` when the `NetworkManager` is shutdown (it won't exist).
   - The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.
 - As a server:
   -  Any scene you want clients to synchronize (i.e. load and spawn any netcode objects), you **must** use the `NetworkSceneManager`
-    - If you use the `UnityEngine.SceneManagement.SceneManager` during a netcode enabled game session, then those scenes will not be synchronized with clients (currently connected or late joining)
-  -  you don't need to wait for a client to connect before you start loading scenes using the `NetworkSceneManager`
+    - If you use the `UnityEngine.SceneManagement.SceneManager` during a netcode enabled game session, then those scenes will not be synchronized with currently connected or late joining clients.
+      - A "late joining client" is a client that joins a game session that has already been started and there are already one or more clients connected
+        - _All netcode aware objects spawned prior to a late joining client connecting needs to be synchronized with the late joining client._
+  -  It doesn't have to wait for a client to connect before it starts loading scenes via the `NetworkSceneManager`
     - any scene loaded via `NetworkSceneManager` will always default to being synchronized with clients
       - _there are ways to control this explained later in this document_
 
@@ -40,38 +44,103 @@ Do not try to access the `NetworkSceneManager` when the `NetworkManager` is shut
 :::
 
 ### Loading a Scene
+In order to load a scene, there are four requirements:
+1. The `NetworkManager` must be started in host or server mode 
+2. The `NetworkSceneManager.Load` method is invoked on the server side
+3. The scene being loaded must be registered with your project's [build settings scenes in build list](https://docs.unity3d.com/Manual/BuildSettings.html)
+4. There cannot already be a Scene Event in progress
 
-- 
+#### Basic Scene Loading Example
+Imagine that you have an in-scene placed NetworkObject, let's call it "ProjectSceneManager", that handles your project's scene management using the `NetworkSceneManager` and you wanted your server to load a scene when the ProjectSceneManager is spawned.  
+It could look something like this (in its simplest form):
+```csharp
+    public class ProjectSceneManager : NetworkBehaviour
+    {
+        [HideInInspector]
+        public string SceneName;
+#if UNITY_EDITOR
+        public UnityEditor.SceneAsset SceneAsset;
+        private void OnValidate()
+        {
+            if (SceneAsset != null)
+            {
+                SceneName = SceneAsset.name;
+            }
+        }
+#endif
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer && !string.IsNullOrEmpty(SceneName))
+            {
+                var status = NetworkManager.SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
+                if (status != SceneEventProgressStatus.Started)
+                {
+                    Debug.LogWarning($"Failed to load {SceneName} with a {nameof(SceneEventProgressStatus)}: {status}");
+                }
+            }
+            base.OnNetworkSpawn();
+        }
+    }
+```
+In the above code snippet, we have a `NetworkBehaviour` derrived class, `ProjectSceneManager`, that has a public `SceneAsset` property (editor only) that is used to simplify the process of configuring which scene we want to load where the name of the scene to be loaded is applied to our hidden `SceneName` property that is used to load the scene.  In the `OnNetworkSpawn` method, we make sure that only the server loads the scene and we compare the `SceneEventProgressStatus` returned by the `NetworkSceneManager.Load` method to the `SceneEventProgressStatus.Started` status.  If we received any other status, then typically the name of the status provides you with a reasonable clue as to what the issue might be.
 
-`NetworkManager.EnableSceneManagement` property. A [scene](https://docs.unity3d.com/2021.1/Documentation/Manual/CreatingScenes.html) consists of the assets for all or part of your game. While simple games may only consist of one scene, your game may contain many scenes that require synchronization for loading and unloading as users play.
+### Scene Events and Scene Event Progress
+The term "Scene Event" refers to the entire sequence of events that transpire as a server and client progress through the sequences.  For example, a server might load a scene additively while clients are connected. The following is a high-level overview of everything that occurs for a `SceneEventType.Load`:
+- Server starts a `SceneEventType.Load` event 
+  - The server begins to asynchronously load the scene additively
+    - If the server is listening to all events or the load event, the server will receive a local notification that the scene loading event is started
+  - Once the scene is loaded, the server spawns any in-scene placed `NetworkObjects` locally
+    - After spawning, the server will send the `SceneEventType.Load` message to all connected clients
+- The clients receive the `SceneEventType.Load` message
+  - If the clients are monitoring scene event notifications, then they will receive a notification for the scene load event
+  - As each client finishes loading the scene, they will generate a `SceneEventType.LoadComplete` event 
+    - The client sends this event message to the server
+    - If the client is listening for this scene event type, then the client is notified locally that it finished loading and synchronizing the scene
+- The server receives the `SceneEventType.LoadComplete` events from the client
+  - When all `SceneEventType.LoadComplete` events have been received by the clients, the server then generates a `SceneEventType.LoadEventCompleted` notification
+    - This notification is triggered locally on the server
+    - The server sends this scene event type to the clients
+- Each client is finally notified that all clients have completed the `SceneEventType.Load` event.
 
-You can either *enable* or *disable* Netcode's Scene Management process.
-* When **enabled** (*recommended*): Netcode handles the scene management process
-* When **disabled**: Scene management is 100% up to you. Only advanced user should consider this option, and it would be worth exploring what features already exist before starting this from scratch.
-
-To enable or disable scene management, check the **Enable Scene Management** box from the **NetworkManager** component of a **GameObject**. By default, scene management is *enabled*.
-
-## Netcode Scene Management
-
-Netcode scene management is handled by the [`NetworkSceneManager`](../api/Unity.Netcode.NetworkSceneManager.md) class.
-
-:::bestpractice Best Practice
-NetworkObjects saved in a specific scene should not be:
-* Moved into other scenes
-* Used to parent under dynamically [spawned](object-spawning.md) NetworkObjects
+:::warning
+Because the `NetworkSceneManager` still has additional tasks to complete once a scene is loaded, it is not recommended to use 'UnityEngine.SceneManagement.SceneManager.sceneLoaded' or 'UnityEngine.SceneManagement.SceneManager.sceneUnloaded' as a way to know when a scene event has completed.  These two callbacks will occur before `NetworkSceneManager` has finished the final processing after a scene is loaded or unloaded and you could run into timing related issues. If you are using the netcode integrated scene management, then it is highly recommended to subscribe to the `NetworkSceneManagers` scene event notifications.
 :::
 
-The `NetworkSceneManager` supports two types of loading modes:
+#### Scene Event Notifications
+You can be notified of scene events by registering in one of two ways:
+1. Receive all scene event notification types
+2. Receive only a specific scene event notification type
+:::info
+A scene event notification type does not change how a server or client receives the notifications. A server will still receive notifications for itself and all clients while clients only receive notifications for the initial scene event commands sent by the server and the proceeding local notifications as the client progresses through the scene event.
+:::
 
-### Single Scene Loading
-Single scene loading is nearly self-explanatory: only a single scene is loaded at one time. When a new scene loads, all existing scenes unload.
+**Receiving All Scene Event Notifications**
+Typically, this is used on the server side in order to receive notifications for every scene event notification type for both the server and the client. You can receive all scene event type notifications by subscribing to the `NetworkSceneManager.OnSceneEvent` callback handler.
 
-For example, a dungeon crawler game has individual scenes for each room. The entire scene loads at entry, and once your character moves to the next room, the previous room completely disappears. Returning to the previous room would cause the current room to unload and the previous room your character enters reloads, but your character cannot exist between both rooms at once. Each scene has a defined transition.
+**Receiving A Specific Scene Event Notification**
+Typically, this is used with clients or components that might only need to be notified of a specific scene event type.  There are 9 scene event types and each one has a corrisponding "single event type" callback handler.  As an example, you might want to register for the `SceneEventType.LoadEventCompleted` scene event type to know, from a client perspective, that the server and all other clients have finished loading the scene (_useful to know that you could start accessing the newly loaded and spawned `NetworkObject`s on a client_).
 
-### Additive Scene Loading
+#### Scene Event Progress Status
+As we discussed in the above example, it is important to check the status returned by `NetworkSceneManager.Load` to make sure your scene loading event has started.  The following is a list of all [SceneEventProgressStatus]([https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/develop/com.unity.netcode.gameobjects/Runtime/SceneManagement/SceneEventProgress.cs#L17](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.SceneEventProgressStatus)) values with some additional helpful information:
+- Started
+  - The scene event has started (success)
+- SceneNotLoaded
+  - This is returned when you attempt to unload a scene that is not loaded (or no longer is loaded) 
+- SceneEventInProgress
+  - This is returned if you attempt to start a new scene event (loading or unloading) while one is still in progress
+- InvalidSceneName
+  - This can happen for one of the two reasons:
+    - The scene name is not spelled correctly or the name of the scene changed
+    - The scene name is not in your project's scenes in build list
+- SceneFailedVerification
+  - This is returned if you fail scene verification on the server side (more about scene verification later)
+- InternalNetcodeError
+  - Currently, this error will only happen if the scene you are trying to unload was never loaded by the `NetworkSceneManager`.
 
-Additive scene loading adds new scenes without unloading existing scenes. The scenes build on each other and can be thought of as pieces to a larger environment. The same additive scene can load multiple times, if needed.
+([Learn More About Scene Events](scene-events.md))
 
-It may help to think of this mode as games that have expansive levels or an open-world feel. The entire level doesn’t load at once, but builds as the character explores. And since the previous scenes don’t unload, the character can return to previous scenes without reloading. A character is able to move from scene to scene with almost no transition.
+### Unloading a Scene
+(WIP)
+
 
 <!-- Explore the [Netcode Scene Management Golden Path](link) for step-by-step examples of additive scene loading and management. -->
