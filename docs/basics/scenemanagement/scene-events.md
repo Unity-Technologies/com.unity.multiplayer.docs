@@ -3,6 +3,13 @@ id: scene-events
 title: Scene Events
 sidebar_label: Scene Events
 ---
+## Scene Events
+
+
+
+![image](https://user-images.githubusercontent.com/73188597/175427071-c9f54556-a97a-408c-9a67-e20a0fdf1db1.png)
+
+
 
 ### The Client Synchronization Process
 (Quick blurb about client synchronization and its association with scene events and NetworkSceneManager)
