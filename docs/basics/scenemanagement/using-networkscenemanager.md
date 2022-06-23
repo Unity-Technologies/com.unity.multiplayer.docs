@@ -40,7 +40,7 @@ The `NetworkSceneManager` lives within the `NetworkManager` and is instantiated 
       - _Scene validation is explained later in this document_
 
 :::warning
-Do not try to access the `NetworkSceneManager` when the `NetworkManager` is shutdown.  The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.  As a server you don't need to wait for a client to connet to start loading scenes
+Do not try to access the `NetworkSceneManager` when the `NetworkManager` is shutdown.  The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.  
 :::
 
 ### Loading a Scene
