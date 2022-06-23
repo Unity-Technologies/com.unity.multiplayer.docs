@@ -31,13 +31,13 @@ The `NetworkSceneManager` lives within the `NetworkManager` and is instantiated 
 - Do not try to access the `NetworkSceneManager` when the `NetworkManager` is shutdown (it won't exist).
   - The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.
 - As a server:
-  -  Any scene you want clients to synchronize (i.e. load and spawn any netcode objects), you **must** use the `NetworkSceneManager`
+  -  Any scene you want synchronized with currently connected or late joining clients **must** be loaded via the `NetworkSceneManager`
     - If you use the `UnityEngine.SceneManagement.SceneManager` during a netcode enabled game session, then those scenes will not be synchronized with currently connected or late joining clients.
       - A "late joining client" is a client that joins a game session that has already been started and there are already one or more clients connected
         - _All netcode aware objects spawned prior to a late joining client need to be synchronized with the late joining client._
-  -  It doesn't have to wait for a client to connect before it starts loading scenes via the `NetworkSceneManager`
+  -  The server is not required any clients to be currently connected before it starts loading scenes via the `NetworkSceneManager`
     - any scene loaded via `NetworkSceneManager` will always default to being synchronized with clients
-      - _there are ways to control this explained later in this document_
+      - _Scene validation is explained later in this document_
 
 :::warning
 Do not try to access the `NetworkSceneManager` when the `NetworkManager` is shutdown.  The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.  As a server you don't need to wait for a client to connet to start loading scenes
@@ -109,7 +109,7 @@ The term "Scene Event" refers to the sequence of associated events that transpir
 The purpose behind the above outline is to demonstrate that a Scene Event can lead to other scene event types being generated and that the entire sequence of events that transpire occur over a longer period of time than if you were loading a scene in a single player game. 
 
 :::warning
-Because the `NetworkSceneManager` still has additional tasks to complete once a scene is loaded, it is not recommended to use 'UnityEngine.SceneManagement.SceneManager.sceneLoaded' or 'UnityEngine.SceneManagement.SceneManager.sceneUnloaded' as a way to know when a scene event has completed.  These two callbacks will occur before `NetworkSceneManager` has finished the final processing after a scene is loaded or unloaded and you could run into timing related issues. If you are using the netcode integrated scene management, then it is highly recommended to subscribe to the `NetworkSceneManagers` scene event notifications.
+Because the `NetworkSceneManager` still has additional tasks to complete once a scene is loaded, it is not recommended to use `UnityEngine.SceneManagement.SceneManager.sceneLoaded` or `UnityEngine.SceneManagement.SceneManager.sceneUnloaded` as a way to know when a scene event has completed.  These two callbacks will occur before `NetworkSceneManager` has finished the final processing after a scene is loaded or unloaded and you could run into timing related issues. If you are using the netcode integrated scene management, then it is highly recommended to subscribe to the `NetworkSceneManagers` scene event notifications.
 :::
 
 #### Scene Event Notifications
