@@ -301,6 +301,56 @@ Really, if you take away the debug logging code the major differences are:
 - We store the Scene loaded when the server receives its local `SceneEventType.SceneEventType.LoadComplete` notification
 - When the `ProjectSceneManager.UnloadScene` method is invoked (_assuming this occurs outside of this class_) the `ProjectSceneManager.m_LoadedScene` is checked to make sure it is a valid scene and that it is indeed loaded before we invoke the `NetworkSceneManager.Unload` method.
 
+### Scene Validation
+Sometimes you might need to prevent the server or client from loading a scene under certain conditions.  Here are a few examples of when you might do this:
+- One or more game states determine if a scene is loaded additively
+  - Typically, this is done on the server-side.  
+- The scene is already pre-loaded on the client
+  - Typically, this is done on the client-side.
+- Security purposes 
+  - As we mentioned earlier, `NetworkSceneManager` automatically considers all scenes in the build settings scenes in build list valid scenes to be loaded.  You might use scene validation to prevent certain scenes from being loaded that could cause some form of security and/or game play issue.
+    - It is common to do this on either the server or client side depending upon your requirements/needs.
+
+**Usage Example**
+The below example builds upon the previous example's code, and adds some psuedo-code for server-side scene validation:
+```csharp
+        private bool ServerSideSceneValidation(int sceneIndex, string sceneName, LoadSceneMode loadSceneMode)
+        {
+            // Comparing against the name or sceneIndex
+            if (sceneName == "SomeSceneName" || sceneIndex == 3)
+            {
+                return false;
+            }
+
+            // Don't allow single mode scene loading (i.e. bootstrap usage patterns might implement this)
+            if (loadSceneMode == LoadSceneMode.Single)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer && !string.IsNullOrEmpty(m_SceneName))
+            {
+                NetworkManager.SceneManager.VerifySceneBeforeLoading = ServerSideSceneValidation;
+                NetworkManager.SceneManager.OnSceneEvent += SceneManager_OnSceneEvent;
+                var status = NetworkManager.SceneManager.LoadScene(m_SceneName, LoadSceneMode.Additive);
+                CheckStatus(status);
+            }
+
+            base.OnNetworkSpawn();
+        }
+```
+The callback is the first thing invoked on the server-side when invoking the `NetworkSceneManager.Load` method.  If the scene validation fails, `NetworkSceneManager.Load` will return `SceneEventProgressStatus.SceneFailedVerification` and the scene event is cancelled.
+
+:::caution
+**Client-Side Scene Validation**<br/>
+This is where you need to be cautious with scene validation, because any scene that you do not validate on the client side should not contain Netcode objects that are considered required dependencies for a connecting client to properly synchronize with the current netcode (game) session state.  
+:::
+
 ### What Next?
 We have covered how to access the `NetworkSceneManager`, how to load and unload a scene, provided a basic overview on scene events and notifications, and even briefly discussed in-scene placed `NetworkObject`s.  You now have the fundamental building-blocks one needs to learn more advanced integrated scene management topics.  
 _We recommend proceeding to the next integrated scene management topic, "Scene Events", in the link below._

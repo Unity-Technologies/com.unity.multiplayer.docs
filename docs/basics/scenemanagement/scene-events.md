@@ -3,16 +3,38 @@ id: scene-events
 title: Scene Events
 sidebar_label: Scene Events
 ---
-## Scene Events
+:::info
+If you have not already read the [Using NetworkSceneManager](using-networkscenemanager.md) document, it is highly recommended to do so before proceeding.
+:::
 
+## Client Synchronization
+In the "Using NetworkSceneManager" document you learned that the term "Scene Event" refers to all subsequent scene events that transpire over time after a server has initiated a load or unload Scene Event. For most purposes this is true, however there is one type of Scene Event that covers much more than loading or unloading a single scene:  `SceneEventType.Synchronize` (synchronize event).
 
-
-![image](https://user-images.githubusercontent.com/73188597/175427071-c9f54556-a97a-408c-9a67-e20a0fdf1db1.png)
-
-
+Client synchronization doesn't just involve loading or unloading a scene.  It also handles the following for a newly connected and approved client:
+- Scene synchronization is the first thing a client performs during the synchronization process.
+    - The synchronization message includes a list of all scenes the server has loaded via the `NetworkSceneManager`.
+    - The client will load all of these scenes before proceeding to the `NetworkObject` synchronization.
+        - This approach was used in order to assure all `GameObject`, `NetworkObject`, and `NetworkBehaviour` dependencies are loaded and instantiated before a client attempts to locally spawn a `NetworkObject`.        
+- Synchronizing with all spawned `NetworkObjects`.
+    - Typically this involves both in-scene placed and dynamically spawned `NetworkObjects`.   
+        - Learn more about [Object Spawning here](..\object-spawning.md).
+    - The `NetworkObject` list sent to the client is pre-ordered, by the server, in order to account for certain types of dependencies such as when using [Object Pooling](..\advanced-topics\object-pooling.md).
+        - Typically object pool managers are in-scene placed and need to be instantiated and spawned prior to spawning any of its pooled `NetworkObjects`.  
+        :::info
+        With additively loaded scenes, you can run into situations where your objet pool manager, instantiated when the scene it is defined within is additively loaded by the server, is leaving its spawned `NetworkObject` instances within the [currently active scene](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.GetActiveScene.html).  This means that a client would load, or had already loaded before connecting, the currently active scene before the object spawn manager is instantiated and spawned.   
+        :::        
+        
+        
+        As such, all `NetworkObjects` spawned via the `NetworkPrefabHandler` will be instantiated and spawned only after the associated object pool manager has been instantiated and spawned locally on the client.
+        
+        
+        
+        
+        - You could have parented in-scene placed NetworkObjects (i.e. items that are picked up or consumed by players)
+- 
 
 ### The Client Synchronization Process
-(Quick blurb about client synchronization and its association with scene events and NetworkSceneManager)
+
 ![image](https://user-images.githubusercontent.com/73188597/175396754-9fccc93e-60b5-4b0a-87a4-badb65cca61b.png)
 
 In the event that the server determines the client being synchronized missed one or more DestroyObject message(s), the server will send a final ReSynchronize message that contains the NetworkObjectIds of the NetworkObjects that no longer exist. Upon receiving the ReSynchronize message, the client will remove the NetworkObjects in question and clean up the local SpawnManager's SpawnObjects lists.
