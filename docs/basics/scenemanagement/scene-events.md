@@ -60,13 +60,13 @@ The following information is not required information, but can be useful in bett
 :::
 <br/>
 Below is a diagram of the client connection and synchronization process:
-
-![image](https://user-images.githubusercontent.com/73188597/175396754-9fccc93e-60b5-4b0a-87a4-badb65cca61b.png)
-
+![image](https://user-images.githubusercontent.com/73188597/175750865-d9eb0d9a-1caa-4f68-9d7f-8fde9a31d31b.png)
 You can see that the client runs through the connection and approval process first which occurs within the `NetworkManager`.  Once approved, the `NetworkSceneManager` begins the client synchronization process by the server sending the `SceneEventType.Synchronize` Scene Event message to the approved client.  The client then processes through the synchronization message and when done it responds to the server with a `SceneEventType.SynchronizeComplete` message. 
 
 :::important
-When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (i.e. `NetworkManager.IsConnectedClient` is set to `true`), the `NetworkManager.OnClientConnected` delegate handler is invoked.  In the event that the client does need to be resynchronized, the  
+When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (i.e. `NetworkManager.IsConnectedClient` is set to `true`), the `NetworkManager.OnClientConnected` delegate handler is invoked.  So, when the `SceneEventType.SynchronizeComplete` message is invoked locally you know that:
+- the client is synchronized (enough) to safely start generating client to server messages. 
+- if your server needs to perform any additional notifications to the already connected clients (i.e. a player's status needs to transition from joining to joined) that the newly connected client has fully joined the network game session in progress. 
 :::
 
 As a last The server then determines if the client needs to be resynchronized with any despawned `NetworkObject`s that ocurred while the client was processing the `SceneEventType.Synchronize` message. If so, it will send the `SceneEventType.ReSynchronize` message to the client. 
