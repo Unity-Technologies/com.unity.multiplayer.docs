@@ -161,8 +161,6 @@ As we discussed in the earlier code example, it is important to check the status
 - InternalNetcodeError
   - Currently, this error will only happen if the scene you are trying to unload was never loaded by the `NetworkSceneManager`.
 
-[Learn More About Scene Events](scene-events.md)
-
 ### Unloading a Scene
 Now that we understand the loading process, scene events, and can load a scene additively, the next step is understanding the integrated scene management scene unloading process.  In order to unload a scene, here are the requirements:
 1. The `NetworkManager` instance unloading the scene should have already been started in host or server mode and already loaded least one scene additively.<br/>
