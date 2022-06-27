@@ -60,11 +60,11 @@ While client synchronization does fall partially outside of the scene management
 The following information is not required information, but can be useful in better understanding the synchronization process when using the integrated scene management.
 :::
 <br/>
-Below is a diagram of the client connection and synchronization process:
+Below is a diagram of the client connection approval and synchronization process:
 
 ![image](images/scenemanagement_synchronization_overview.png)
 
-You can see that the client runs through the connection and approval process first which occurs within the `NetworkManager`.  Once approved, the `NetworkSceneManager` begins the client synchronization process by the server sending the `SceneEventType.Synchronize` Scene Event message to the approved client.  The client then processes through the synchronization message and when done it responds to the server with a `SceneEventType.SynchronizeComplete` message. At this point the client is considered "synchronized", but it still might need to be resynchronized.
+Starting with the "Player" in the top right portion of the above diagram, the client (Player) runs through the connection and approval process first which occurs within the `NetworkManager`.  Once approved, the server-side `NetworkSceneManager` begins the client synchronization process by sending the `SceneEventType.Synchronize` Scene Event message to the approved client.  The client then processes through the synchronization message.  Once the client is finished processing the synchronize message, it responds to the server with a `SceneEventType.SynchronizeComplete` message. At this point the client is considered "synchronized".  If the server determines any `NetworkObject` was despawned during the client-side synchronization message processing, it will send a list of `NetworkObject` identifiers to the client via the `SceneEventType.ReSynchronize` message and the client will locally despawn the `NetworkObject`s.
 
 :::tip
 When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (i.e. `NetworkManager.IsConnectedClient` is set to `true`) and both the `NetworkManager.OnClientConnected` delegate handler and the scene event notification for `SceneEventType.SynchronizeComplete` are invoked locally. This can be useful to know if your server performs any additional notifications to the already connected clients about the newly connected client's status (i.e. a player's status needs to transition from joining to joined). 

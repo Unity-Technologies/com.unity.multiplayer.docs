@@ -7,23 +7,23 @@ sidebar_label: Timing Considerations
 ## Scene Management Timing (WIP)
 
 Scene Event Synchronization: <br/>
-![image](images/SceneEventSynchronizationTimeline%20STATIC.png)
+![image](images/SceneEventSynchronizationTimeline.png)
 
 
 Client Synchronization Updates: <br/>
-![image](images/ClientSyncUpdates%20STATIC.png)
+![image](images/ClientSyncUpdates.png)
 
 Loading Scenes Additively (`SceneLoadMode.Additive`): <br/>
-![image](images/LoadingAdditiveScene%20STATIC.png)
+![image](images/LoadingAdditiveScene.png)
 
 Unloading Additively Loaded Scenes: <br/>
-![image](images/UnloadingAdditiveScene%20STATIC.png)<br/>
+![image](images/UnloadingAdditiveScene.png)<br/>
 
 Switching Scenes (`SceneLoadMode.Single`): <br/>
-![image](images/LoadNewSceneTimeline%20STATIC.png)
-![image](images/SwitchingToNewSceneLight%20STATIC.png)
+![image](images/LoadNewSceneTimeline.png)
+![image](images/SwitchingToNewSceneLight.png)
 
 Unloading Scenes Timeline: <br/>
-![image](images/UnloadingSceneTimeline%20STATIC.png)
+![image](images/UnloadingSceneTimeline.png)
 
 
