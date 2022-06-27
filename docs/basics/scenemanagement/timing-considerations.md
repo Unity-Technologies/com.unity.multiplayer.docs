@@ -4,6 +4,10 @@ title: Timing Considerations
 sidebar_label: Timing Considerations
 ---
 
+:::caution
+If you have not already read the [Using NetworkSceneManager](using-networkscenemanager.md) and/or [Scene Events](scene-events.md) sections, it is highly recommended to do so before proceeding.
+:::
+
 ## Scene Management Timing (WIP)
 
 Scene Event Synchronization: <br/>
