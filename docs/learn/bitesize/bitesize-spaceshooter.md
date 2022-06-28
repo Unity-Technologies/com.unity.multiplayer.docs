@@ -21,7 +21,7 @@ This method of running physics makes sure that there are no desyncs or other phy
 For example:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L431-L433
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L488-L490
 ```
 
 ## Power-ups and Status Effects
@@ -30,10 +30,10 @@ The 2DSpaceShooter sample has power-ups which apply different status effects to 
 
 The power-ups themselves are server authorative. On the server they check if a player has entered their trigger and then apply a timed status effect to that player and disappear.
 
-The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You could also use regular floats for timers. By using `NetworkVariable`s, the client could use this information to display different graphics based on active buffs to players. Such as double shot and triple shot effects.
+The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You could also use regular floats for timers. By using `NetworkVariable`s, the client can use this information to display different graphics based on active buffs to players.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L50-L55
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L45-L51
 ```
 
 ## NetworkObject Pooling
@@ -44,25 +44,25 @@ The `2DSpaceShooter` object creates many objects dynamically at runtime includin
 
 ![pool img](/img/bitesize/invader-networkobjectpool.png)
 
-All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically be returned to the pool instead of getting destroyed.
+All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically returned to the pool instead of getting destroyed.
 
 Adding the `NetworkObjectPool` to the scene will not yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
 
-Regular MLAPI Spawn Code example:
+Regular Netcode Spawn Code example:
 
 ```csharp
 GameObject powerUp = Instantiate(m_PowerupPrefab);
 powerUp.GetComponent<NetworkObject>().Spawn(null, true);
 ```
 
-Pooled MLAPI Spawn Code example:
+Pooled Netcode Spawn Code example:
 
 ```csharp
 GameObject powerUp = m_ObjectPool.GetNetworkObject(m_PowerupPrefab);
 powerUp.GetComponent<NetworkObject>().Spawn(null, true);
 ```
 
-<!--  https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/Spawner.cs#L132-L135 -->
+<!--  https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/Spawner.cs#L153-L156 -->
 
 :::tip
 If you are using Unity 2021, you can use the built-in [Object Pooling API](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.ObjectPool_1.html) instead to build your own object pools.
