@@ -97,20 +97,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 Games commonly have timers to display in the UI such as Start Timer, Round Timer, and Cooldowns. The Invaders sample also has a shared timer to ensure all players start the game at the same time. Otherwise, players with higher-end devices and better network access may have an unfair advantage by loading scenes and maps faster.
 
-When you implement this kind of timer, usually you would use a `NetworkVariableFloat` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
+When you implement this kind of timer, usually you would use a `NetworkVariable<float>` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
 
-You have two options:
+An alternative solution is to sync only the start of the timer to the clients, and afterwards only sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be.
 
-* The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients cannot modify the `NetworkVariable` directly.
-* A fair solution is to set the `SendTickRate` of that timer `NetworkVariableFloat`, so that the server only sends an update once every second, without any additional work.
-
-In Invaders and the current state of Netcode, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
-
-As a workaround, you have to wait for all clients to be connected before setting the `SendTickRate` to '-1' for `m_ReplicatedTimeRemaining` `NetworkVariableFloat`. The code that checks if you need to set this is inside the `ShouldStartCountDown` method in *InvadersGame.cs*. 
-
-:::important
-As Netcode evolves and fixes this problem, you can just set `SendTickRate` in the `NetworkStart` and most of the code inside `ShouldStartCountDown` will become obsolete.
-:::
+In Invaders we chose the second solution instead, and simply start the timer for clients via an RPC.
 
 ### Start the game timer
 
@@ -125,8 +116,6 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 ### Update game timer Client-Side
 
 On the client-side, use the `UpdateGameTimer` to predictively calculate and update the `gameTimer`. The server only needs to be contacted once to check if the game has started (`m_HasGameStared` is true) and the `m_TimeRemaining` amount, recieved by `ShouldStartCountDown`. When met, it predictively calculates and updates the `gameTimer` reducing the remaining time on the client-side for all players. When `m_TimeRemaining` reaches 0.0, the timer is up.
-
-When all the players are connected, we will get one last update for `m_TimeRemaining`, so that it will sync up with the server `m_ReplicatedTimeRemaining` value on line 151, then, as long as the game did not start, or the `m_TimeRemaining` did not reach 0.0, we predictively set the `m_TimeRemaining` and update the UI with the result.
 
 Example code to update the game timer:
 
