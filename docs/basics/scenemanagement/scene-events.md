@@ -81,16 +81,27 @@ Both of these server generated messages will create local notification events (o
 :::
 
 ### Tracking Event Notifications (OnSceneEvent)
-The following code provides an example of how to use NetworkSceneManager.OnSceneEvent.  Each case contains additional comments about each scene event type. _This could be applied to an in-scene placed NetworkObject that is migrated into the DDOL or additively loaded scene that persists while a network session is active._
-```csharp
-public override void OnNetworkSpawn()
-{
-    NetworkManager.SceneManager.OnSceneEvent += SceneManager_OnSceneEvent;
-}
+The following code provides an example of how to subscribe to and use NetworkSceneManager.OnSceneEvent. Since we want the server or host to receive all scene event notifications, we will want to subscribe immediately after we start the server or host. Each case contains additional comments about each scene event type.
 
-public override void OnNetworkDespawn()
+```csharp
+public bool StartMyServer(bool isHost)
 {
-   NetworkManager.SceneManager.OnSceneEvent -= SceneManager_OnSceneEvent;
+    var success = false;
+    if (isHost)
+    {
+        success = NetworkManager.Singleton.StartHost();
+    }
+    else
+    {
+        success = NetworkManager.Singleton.StartServer();
+    }
+
+    if (success)
+    {
+        NetworkManager.Singleton.SceneManager.OnSceneEvent += SceneManager_OnSceneEvent;
+    }            
+
+    return success;
 }
 
 private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
@@ -117,6 +128,24 @@ private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
 
                 // Server Side: receives this notification for both itself and all clients
                 // Client Side: receives this notification for itself
+                
+                // Trap for server-side or client-side notifications example:
+                if (IsServer)
+                {
+                    // This determines if the notification is for the server
+                    if (sceneEvent.ClientId == NetworkManager.Singleton.LocalClientId)
+                    {
+                        // Handle server LoadComplete event here
+                    }
+                    else // Otherwise, this was received from a client
+                    {
+                        // Handle server-side client LoadComplete event here
+                    }
+                }
+                else
+                {
+                    // Handle client-side local notification
+                }
 
                 // So you can use sceneEvent.ClientId to also track when clients are finished loading a scene
                 break;
@@ -159,22 +188,29 @@ private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
     }
 }
 ```
-Scene event notifications provide users with all NetworkSceneManager related scene events (and associated data) through a single event handler. The one exception would be scene loading or unloading progress which users can handle with a coroutine (upon receiving a Load or Unload event) and checking the SceneEvent.AsyncOperation.progress value over time. 
 
 :::tip
+ This code could be applied to a component on your `GameObject` that has a `NetworkManager` component attached to it.  Since this `GameObject`, with the  `NetworkManager` component attached to it, is migrated into the DDOL (Dont Destroy on Load) scene, it will remain active for the duration of the network game session.  
+ With that in mind, you could cache your scene events that occurred (for debug or reference purposes) and/or add your own events that other game objects could subscribe to. The general idea is that if you want to receive all notifications from the moment you start `NetworkManager` then you will want to subscribe to `NetworkSceneManager.OnSceneEvent` immediately after starting it.
+:::
+
+Scene event notifications provide users with all NetworkSceneManager related scene events (and associated data) through a single event handler. The one exception would be scene loading or unloading progress which users can handle with a coroutine (upon receiving a Load or Unload event) and checking the SceneEvent.AsyncOperation.progress value over time.
+
+
+:::caution
 You will want to assign the SceneEvent.AsyncOperation to a local property of the subscribing class and have a coroutine use that to determine the progress of the scene being loaded or unloaded. 
 :::
 
-The user can then stop the progress checking coroutine upon receiving any of the following event notifications for the scene and event type in question: `LoadComplete`, `UnloadComplete`.
+You can stop the coroutine checking the progress upon receiving any of the following event notifications for the scene and event type in question: `LoadComplete`, `UnloadComplete` to handle local scene loading progress tracking.
 
 ### SceneEvent Properties
 The SceneEvent class contains values that may or may not be set depending upon the `SceneEventType`.  Below are two quick lookup tables to determine which property is set for each `SceneEventType`.
 
-**Part-1**
-![image](images/SceneEventProperties-1.png)
+**Part-1**<br/>
+![image](images/SceneEventProperties-1.png)<br/>
 
 **Part-2** <br/>
-![image](images/SceneEventProperties-2.png)
+![image](images/SceneEventProperties-2.png)<br/>
 
 So, you need to understand the `SceneEventType` context of the `SceneEvent` to know which properties you should use.  As an example, it wouldn't make sense to provide the AsyncOperation for the following `SceneEventType`s:
 - LoadComplete or LoadEventCompleted 
@@ -187,11 +223,30 @@ You can explore the [NetworkSceneManager](http://localhost:3000/netcode/current/
 Some examples:
 - NetworkSceneManager.OnLoad:  Triggered when for `OnLoad` scene events.
 - NetworkSceneManager.OnUnload:  Triggered when for `OnUnload` scene events.
-- NetworkSceneManager.OnSynchronize: Triggered when a client is synchronizing.
+- NetworkSceneManager.OnSynchronize: Triggered when a client begins synchronizing.
 
 :::info
 The general idea was to provide several ways to get scene event notifications.  You might have a component that needs to know when a client is finished synchronizing on the client side but you don't want that component to receive notifications for loading or unloading related events.  Under this scenario you would subscribe to the `NetworkManager.OnSynchronizeComplete` event on the client-side.
 :::
 
+### When is it "OK" to Subscribe?
+Possibly the more important aspect of scene event notifications is knowing when/where to subscribe.  The recommended time to subscribe is immediately upon starting your `NetworkManager` as a client, server, or host.  This will avoid problematic scenarios like trying to subscribe to the `SceneEventType.Synchronize` event within an overridden `NetworkBehaviour.OnNetworkSpawn` method of your `NetworkBehaviour` derived child class.  The reason that is "problematic" is that the `NetworkObject` has to be spawned before you can subscribe to and receive events of type `SceneEventType.Synchronize` because that will occur before anything is spawned.  Additionally, you would only receive notifications of any scenes loaded after the scene that contains the `NetworkObject` (or the object that spawns it) is loaded.
 
+An example of subscribing to `NetworkSceneManager.OnSynchronize` for a client:
+```csharp
+        public bool ConnectPlayer()
+        {
+            var success = NetworkManager.Singleton.StartClient();
+            if (success)
+            {
+                NetworkManager.Singleton.SceneManager.OnSynchronize += SceneManager_OnSynchronize;
+            }           
+            return success;
+        }
 
+        private void SceneManager_OnSynchronize(ulong clientId)
+        {
+            Debug.Log($"Client-Id ({clientId}) is synchronizing!");
+        }
+```
+_The general idea is that this would be something you would want to do immediately after you have started the server, host, or client._
