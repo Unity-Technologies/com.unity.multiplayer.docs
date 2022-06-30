@@ -46,7 +46,7 @@ Depending on your game, you may want to add the following features as well:
 
 Check out our [Boss Room sample](../learn/getting-started-boss-room.md) for an example implementation of automatic reconnection.
 
-The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Game/ConnectionManagement/ClientGameNetPortal.cs). Boss Room's implementation uses a coroutine (`TryToReconnect`) that attempts to reconnect a few times sequentially, until it either succeeds or surpasses the defined maximum number of attempts.
+The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs). Boss Room's implementation uses a coroutine (`TryToReconnect`) that attempts to reconnect a few times sequentially, until it either succeeds or surpasses the defined maximum number of attempts.
 
 The coroutine is triggered when a client disconnects, depending on the reason of that disconnect (see `OnDisconnectOrTimeout`) and is stopped when a succesfull reconnection occurs, or when a user cancels it (see `OnConnectFinished` and `OnUserDisconnectRequest`). 
 
