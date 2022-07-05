@@ -11,7 +11,7 @@ A network prefab is any unity prefab asset that has one `NetworkObject` componen
 - any child or children of the `GameObject` that the `NetworkObject` is attached to.  
 
 :::note
-A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObjet` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this.
+A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObject` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this.
 :::
 
 When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.NetworkObjectId` is used to help determine which `NetworkBehaviour` component instance will receive an update to a `NetworkVariable` or where to invoke an RPC. A `NetworkObject` component can have one or more `NetworkBehaviour` components assigned to it.
@@ -266,9 +266,9 @@ Using this type of a hierarchical separation is useful in many ways (especially 
 
 Any objects in the scene with active and spawned `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`.  In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
 
-**You can learn more about In-Scene Placed `NetworkObjects` here (NGO DOCUMENT NOT CREATED YET)**
+[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects)
 
-Generally, there are **two** modes that define how an in-scene placed `NetworkObjet` is synchronized.
+Generally, there are **two** modes that define how an in-scene placed `NetworkObject` is synchronized.
 - Soft Synchronization (Scene Management enabled)
 - Prefab Synchronization  (Scene Management disabled)
 
