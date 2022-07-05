@@ -43,7 +43,7 @@ NetworkManager.Singleton.StartClient();      // Starts the NetworkManager as jus
 **Do not start a NetworkManager within a NetworkBehaviour's Awake method as this can lead to undesirable results depending upon your project's settings!**
 
 :::note
- When starting a Server or joining an already started session as client, the `NetworkManager` can spawn a "Player Object" belonging to the client. <br>
+ When starting a Server or joining an already started session as client, the `NetworkManager` can spawn a "Player Object" belonging to the client. <br\>
  For more information about player prefabs see:
  - [NetworkObject Player Prefab Documentation](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject#player-objects)
  - [Connection Approval](https://docs-multiplayer.unity3d.com/netcode/current/getting-started/connection-approval)  
@@ -60,9 +60,13 @@ NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionDat.Port = 123
 ```
 ([more information about Netcode for GameObjects Transports](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/transports))
 
-## Disconnecting
+## Disconnecting and Shutting Down
 
-Disconnecting is rather simple, but you have to remember, that you cannot use the `NetworkSceneManager` once the `NetworkManager` is stopped because it will no longer be available and should only be used for network session scene loading, unloading, and late-joining client synchronization.  When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.  
+Disconnecting is rather simple, but you have to remember, that you cannot use/access any subsystems (i.e. `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
+
+:::info
+When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene. 
+::: 
 
 ```csharp
 public void Disconnect()
@@ -70,5 +74,24 @@ public void Disconnect()
     NetworkManager.Singleton.Shutdown();
     // At this point we must use the UnityEngine's SceneManager to switch back to the MainMenu
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+}
+```
+
+## Disconnecting Clients (Server Only)
+At times you might need to disconnect a client for various reasons without shutting down the server.  To do this, you can call the `NetworkManager.DisconnectClient` method while passing the identifier of the client you wish to disconnect as the only parameter.  The client identifier can be found within:
+- The `NetworkManager.ConnectedClients` dictionary that uses the client identifier as a key and the value as the [`NetworkClient`](../api/Unity.Netcode.NetworkClient.md).
+- As a read only list of `NetworkClients`  via the `NetworkManager.ConnectedClientsList`.
+- A full list of all connected client identifiers can be accessed via `NetworkManager.ConnectedClientsIds`.
+- The client identifier is passed as a parameter to all subscribers of the `NetworkManager.OnClientConnected` event.
+- The player's `NetworkObject` has the `NetworkObject.OwnerClientId` property.
+
+:::tip
+One way to get a player's primary `NetworkObject` is via `NetworkClient.PlayerObject`.
+:::
+
+```csharp
+void DisconnectPlayer(NetworkObject player)
+{    
+    NetworkManager.DisconnectClient(player.OwnerClientId);
 }
 ```
