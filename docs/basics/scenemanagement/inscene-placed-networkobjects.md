@@ -75,12 +75,16 @@ Using this approach allows you to:
 [See a Dynamic Spawning (non-pooled) Example Here](../object-spawning#dynamic-spawning-non-pooled)
 
 :::important
-While we encourage using in-scene placed `NetworkObject`s as something static, a manager, or a combination of both (a hybrid approach), there are times where you might need to use an in-scene placed `NetworkObjet` more like a dynamically spawned `NetworkObject` for other purposes.  For every purpose you can imagine, more often than not you might be better off using a hybrid approach and using an in-scene placed `NetworkObject` to dynamically spawn a `NetworkObject`.
+While we encourage using in-scene placed `NetworkObject`s as something static, a manager, or a combination of both (a hybrid approach), there are times where you might need to use an in-scene placed `NetworkObjet` more like a dynamically spawned `NetworkObject` for other purposes. For every purpose you can imagine, more often than not you might be better off using a hybrid approach and using an in-scene placed `NetworkObject` to dynamically spawn a `NetworkObject`.
 :::
 
 ### De-spawning, Re-spawning, and Parenting
 - You can de-spawn and re-spawn them on the server-side    
 - You can parent them (with caution)
+  - If you plan on being able to un-parent (i.e. drop an item, etc.) a child `NetworkObject`, then a dynamically spawned `NetworkObject` is a better choice
 :::warning
-There is a known bug where an in-scene placed `NetworkObject` that dynamically spawns one or more `NetworkObject`(s) and then immediately parents them under its root `GameObject` (or any child) can cause issues with client synchronization and the spawned children.  It is advised to provide a few frames, after the parent in-scene placed `NetworkObject` has spawned and has spawned its children, before parenting the children under the in-scene placed `NetworkObject`.  Use (if at all) parenting in-scene placed `NetworkObject`s with caution as there could be more edge case scenario bugs.  (_The hybrid approach is the recommended path to take._)
+There is a known bug where an in-scene placed `NetworkObject` that dynamically spawns one or more `NetworkObject`(s) and then immediately parents them under its root `GameObject` (or any child) can cause issues with client synchronization and the spawned children. It is advised to provide a few frames, after the parent in-scene placed `NetworkObject` has spawned and has spawned its children, before parenting the children under the in-scene placed `NetworkObject`. Use (if at all) parenting in-scene placed `NetworkObject`s with caution as there could be more edge case scenario bugs. (_The hybrid approach is the recommended path to take._)
+:::
+:::tip
+While you can parent in-scene placed `NetworkObject`s within the editor, you might stop to think about what you are trying to accomplish. A child `NetworkBehaviour` will be assigned to the first parent `GameObject` with a `NetworkObject` component. _You might be able to accomplish the same thing with a single in-scene placed `NetworkObject` as opposed to several nested `NetworkObject`s._
 :::
