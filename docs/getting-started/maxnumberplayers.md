@@ -11,13 +11,13 @@ Netcode for Gameobjects (Netcode) provides a way to implement a [connection appr
 Boss Room provides an example of such delegate
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/63ecd92e1c72b87cd87cc3cbc1de77da4271b720/Assets/BossRoom/Scripts/Server/Net/ServerGameNetPortal.cs#L242
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.css#L176
 ```
 ​
 The code below shows an example of an over-capacity check that would prevent more than a certain pre-defined number of players from connecting.
 ​
 ```csharp
-if( m_ClientData.Count >= CharSelectData.k_MaxLobbyPlayers )
+if( m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPlayers )
 {
     gameReturnStatus = ConnectStatus.ServerFull;
 }
