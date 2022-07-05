@@ -3,12 +3,23 @@ id: inscene-placed-networkobjects
 title: In-Scene (Placed) NetworkObjects
 sidebar_label: In-Scene NetworkObjects
 ---
+:::caution
+If you have not already read the [Using NetworkSceneManager](using-networkscenemanager.md) section, it is highly recommended to do so before proceeding.
+:::
 
 ## Introduction
 At this point, you have most likely run across the term "in-scene placed NetworkObject" or "in-scene NetworkObject" several times.  An in-scene placed `NetworkObject` means a `GameObject` with a `NetworkObject` component was added to a scene from within the editor. 
 
 ### In-Scene Placed Network Prefab Instances
 A common design pattern for commonly used in-scene placed `NetworkObject`s is to make it a Network Prefab so all you have to do to replicate the same functionality is drop a Network Prefab instance into a scene you are editing.  Additionally, you are not required to register the Network Prefab with the NetworkManager as in-scene placed `NetworkObjects` are registered internally, when scene management is enabled, for tracking and identification purposes.
+
+### Creating In-Scene Placed Network Prefab Instances
+In order to create a Network Prefab that can be used as an in-scene placed `NetworkObject` you must do the following:
+1. In the scene you wish to create the instance (or any open scene) create an empty GameObject and add a `NetworkObject` component to it.
+2. Add any other `NetworkBehaviour`s required by your in-scene placed `NetworkObject`.
+3. Drag and drop the newly created GameObject into your Prefab (or associated) folder.
+4. Delete the GameObject instance in your scene (this is *required* to get a proper GlobalObjectIdHash value assigned)
+5. Finally, drag and drop an instance of your newly created Network Prefab into the scene you wish to have an instance of your in-scene placed `NetworkObject`.
 
 ### In-Scene Placed vs Dynamically Spawned
 The instantiation of an in-scene placed `NetworkObject` is handled during the loading of the scene.  Once the scene is loaded, an in-scene `NetworkObject` will be automatically spawned.  Prior to being spawned, during the scene loading process, both the `Awake` and `Start` methods are invoked.
@@ -57,7 +68,7 @@ The most common mistake when using an in-scene placed `NetworkObject` is to try 
 
 If you answered yes to any of the above questions, then using only and in-scene placed `NetworkObject` to implement your feature is most likely not the right choice.  However, just because you did answer yes to one or more of the above questions doesn't mean you shouldn't use an in-scene placed `NetworkObject` either.  While the previous two sentences might seem puzzling, there are scenarios where the "best choice" (regarding simplicity and modularity) is to use a hybrid approach by using a combination of both!  
 
-**A Hybrid Approach Example** <br/>
+#### A Hybrid Approach Example
 Perhaps your project's design includes making some world items that can either be consumed (i.e. health) or picked up (weapons, items, etc) by players. Initially, using a single in-scene placed `NetworkObject` might seem like the best approach for this world item feature.  
 
 However, there is another way to accomplish the very same thing while keeping a clear defining line between dynamically spawned and in-scene placed `NetworkObject`s. As opposed to lumping everything into a single NetworkPrefab and handling the additional complexities involved with in-scene placed `NetworkObject`s, you could create two Network Prefabs:
