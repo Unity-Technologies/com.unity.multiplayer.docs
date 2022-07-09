@@ -212,7 +212,7 @@ There are two options for writing a `NetworkVariable.Value`:
         - This might be a player's inventory or gun's ammo count (etc.)
 
 ### Permissions Example
-The below example provides you with a few different permissions configurations that you might use in a game while keeping track of a player's state.  
+The below example provides you with a few different permissions configurations that you might use in a game while keeping track of a player's state. 
 ```csharp
 public class PlayerState : NetworkBehaviour
 {
@@ -250,12 +250,12 @@ public class PlayerState : NetworkBehaviour
     /// <summary>
     /// Owner Read & Server Write Permissions:
     /// You might incorporate some form of reconnection logic that stores a player's state on 
-    /// the server side that can be used by the client to reconnect a player if they are 
-    /// disconnected unexpectedly.  In order for the client to let the server know it is the
-    /// "same client" you create a KeyPairValue for each connected client where the key's value 
-    /// is written to the client's ReconnectionKey NetworkVariable.  Under this scenario, you
-    /// only want the server capable of writing the value and only want the owner (client) to
-    /// be synchronized with this value.
+    /// the server side and can be used by the client to reconnect a player if disconnected
+    /// unexpectedly.  In order for the client to let the server know it is the "same client" 
+    /// you create a KeyPairValue for each connected client where the key's value is written
+    /// to the client's ReconnectionKey NetworkVariable.  Under this scenario, you only want 
+    /// the server to have write permissions and the owner (client) to be synchronized with
+    /// this value (read permissions).
     /// </summary>
     public NetworkVariable<ulong> ReconnectionKey = new NetworkVariable<ulong>(default,
     NetworkVariableReadPermission.Owner, NetworkVariableWritePermission.Server);
