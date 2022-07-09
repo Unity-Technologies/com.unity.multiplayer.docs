@@ -95,7 +95,7 @@ _This works the same way with dynamically spawned `NetworkObject`s._
 :::
 
 :::important
-The above example is only to test both the initial value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was really meant to work with a single server or host and a single client.
+The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was really meant to work with a single server or host and a single client.
 :::
 
 ### OnValueChanged Example:
