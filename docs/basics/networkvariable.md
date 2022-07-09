@@ -278,7 +278,7 @@ Almost all of our examples has been focused around numeric [Value Types](https:/
 
 
 ### Synchronizing Complex Types Example:
-For this example, we are extending the previous `PlayerState` class to include some complex value types to handle a weapon boosting game play mechanic.  We will explore two types of complex values types:
+For this example, we are extending the previous `PlayerState` class to include some complex value types to handle a weapon boosting game play mechanic.  We will explore two complex values types:
 - *WeaponBooster:* A local power-up weapon booster the player can apply to its local weapon.
     - This is a simple complex value type example.
 - *AreaWeaponBooster:* A second kind of power-up that players can deploy at a specific location.  Any team members within the radius of the `AreaWeaponBooster` will have the bonus applied.
