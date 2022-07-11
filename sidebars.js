@@ -103,7 +103,11 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "advanced-topics/session-management"
-                }
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/reconnecting-mid-game"
+                },
             ]
         },
         {
@@ -262,14 +266,42 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Scenes",
+            "label": "Scene Management",
             "items": [
                 {
                     "type": "doc",
-                    "id": "basics/scene-management"
+                    "id": "basics/scenemanagement/scene-management-overview"
                 },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Integrated Management",
+                    "items": [                                
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/using-networkscenemanager"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/scene-events"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/timing-considerations"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/inscene-placed-networkobjects"
+                        },
+                    ]
+                },                
+                {
+                    "type": "doc",
+                    "id": "basics/scenemanagement/custom-management"
+                },                                                                                                     
             ]
         },
+
         {
             "collapsed": true,
             "type": "category",
@@ -327,7 +359,7 @@ module.exports = {
                 }
             ]
         },
-
+        
         {
             "collapsed": true,
             "type": "category",
