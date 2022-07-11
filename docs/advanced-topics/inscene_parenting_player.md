@@ -13,7 +13,7 @@ When a player prefab contains a script that dynamically adds a parent to its tra
 
 Steps to reproduce the behavior:
 
-1. Set up basic networking game with at least one gameobject in a scene that is not the player.
+1. Set up basic networking game with at least one `GameObject` in a scene that is not the player.
 1. Add a script to the player prefab that adds parenting to its transform via `gameObject.transform.SetParent()` in the `Start()` method.
 1. Launch one instance of the game as Host.
 1. Launch another instance and try to join as Client.

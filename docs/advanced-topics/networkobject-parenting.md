@@ -1,7 +1,7 @@
 ---
 id: networkobject-parenting
 title:  NetworkObject Parenting
-description: A `NetworkObject` reparenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
+description: A `NetworkObject` parenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
 
 ---
 
@@ -19,7 +19,7 @@ ulong? m_LatestParent; // who (NetworkObjectId) is our latest (current) parent i
 Transform m_CachedParent; // who (Transform) was our previously assigned parent?
 ```
 
-A new virtual methodWe has been added ainto `NetworkBehaviour`:
+`NetworkBehaviour` includes a virtual method you can override to be notified when a `NetworkObject`'s parent has changed:
 
 ```csharp
 /// <summary>
@@ -35,144 +35,126 @@ You need to consider two main code paths when synchronizing `NetworkObject` pare
     - Serialize `NetworkObject`s with their payloads (such as `NetworkBehaviour`s etc.)
     - Write `m_IsReparented` and `m_LatestParent` fields to sync on the client-side
 2. During Gameplay
-    - When a valid `NetworkObject` reparenting happens during networked gameplay on the server-side, it is replicated across the network to the connected clients to sync
-    - Write `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and send that over to all connected clients with `PARENT_SYNC` message type on `MLAPI_INTERNAL` channel
+    - When a server parents a spawned `NetworkObject` under another spawned `NetowrkObject` during a netcode game session this parent child relationship is replicated across the network to all connected clients.
+:::info
+The server will writes the `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and sends a `PARENT_SYNC` message on the `MLAPI_INTERNAL` channel to all connected clients.
+:::
 
+:::important
 Transform parent synchronization relies on the initial formation of transforms in the scene hierarchy being identical on all standalone instances.
+:::
 
-## NetworkObject Reparenting Rules
-
-A few basic `NetworkObject` reparenting rules are listed below.
+## NetworkObject Parenting Rules
+A few basic `NetworkObject` Parenting rules are listed below.
 
 :::warning Limiting Non-Networked NetworkObject Transform Parenting
-Rules outlined below are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try reparenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
+Rules outlined below are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try parenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
 :::
 
 
-### Only A Server (or A Host) Can Reparent
+### Only A Server (or A Host) Can Parent NetworkObjects
+Similar to [Ownership](../basics/networkobject#ownership), only the server (or host) can control `NetworkObject` parenting.
 
-Similar to [Ownership](../basics/networkobject#ownership), only the server (or host, which is both a server and a client at the same time) can control reparenting of a `NetworkObject` in the network.
+:::tip
+If you run into a situation where your client must trigger parenting a `NetworkObject`, one solution is for the client to send an RPC to the server. Upon receiving the RPC message, the server then handles parenting the `NetworkObject`.
+:::
 
-Clients however, can send RPCs to server and execute a logic server-side that ultimately makes server to reparent a `NetworkObject`.
+### Only Parent Under A `NetworkObject` Or Nothing (i.e. The Root or null)
+A `NetworkObject` can only be parented under another `NetworkObject`. The only exception is if you don't want the `NetworkObject` to have any parent. Under this case, you would parent to the root of the scene hierarchy (i.e. setting the `transform.parent` to `null`).
 
-### Only Reparenting Under A `NetworkObject` (Or To The Root) Is Valid
+:::info
+The `NetworkObject` requirement is primarily for identification purposes (i.e. knowing which GameObject's transform we are going to parent under).
+:::
 
-A `NetworkObject` can only be reparented under another `NetworkObject` (`GameObject` with `NetworkObject` component attached). Only exception is moving a `NetworkObject` to the root of the scene hierarchy.
+### Only Spawned NetworkObjects Can Be Parented
+A `NetworkObject` can only be parented if it is spawned and can only be parented under another spawned `NetworkObject`. This also means that `NetworkObject` parenting can only occur during a network session (netcode enabled game session).  Think of `NetworkObject` parenting as a netcode event.  In order for it to happen, you must have, at very minimum, a server or host instance started and listening.
 
-This is simply due to the fact that MLAPI would not be able to identify & locate new parent on the remote-side if it was a non-`NetworkObject` parent. Again, except moving it to the root because we could identify no parent (root) scenario without `NetworkObject` identification or scene hierarchy traversal.
+### Invalid `NetworkObject` Parenting Will Be Reverted
+If an invalid/unsupported `NetworkObject` parenting happens, Netcode will immediately revert it back to its original parenting status. 
 
-### Only Reparenting During Networking Is Valid
-
-A `NetworkObject` can only be reparented while networking, in other terms you can only reparent while listening/running as a server.
-
-If you allowed moves while not networking, you would be desynced immediately upon switching to networking. Also reparenting a `NetworkObject` under a non-`NetworkObject` while not networking would sound valid but that would not be replicable on the remote-side since Netcode does not cover full scene hierarchy synchronization.
-
-
-### Invalid Reparenting Will Move `NetworkObject` Back To Its Original Location
-
-If an invalid/unsupported `NetworkObject` parenting happens, Netcode will immediately pop it back to its previous location to keep things in sync and also will provide relevant error/warning messages to indicate the issue.
+**For example:** 
+If you had a `NetworkObject` who's current parent was root and tried to parent it in an invalid way (i.e. under a GameObject without a `NetworkObject` component) then a warning message would be logged and the `NetworkObject` would revert back to having root as its parent.
 
 ### In-scene NetworkObject parenting of players
+In-scene placed `NetworkObject` parenting of players requires the client to be synchronized first.  Since a server can only perform parenting related actions, the server must have already received the `NetworkSceneManager` generated `SceneEventType.SynchronizeComplete` message before the server can parent the client's player `NetworkObject`.
+:::info
+For more information, see the "[Real World In-scene NetworkObject Parenting of Players Solution](inscene_parenting_player.md)".
+:::
 
-In-scene NetworkObject parenting of players requires waiting for the client side `NetworkSceneManager` generated `SceneEventType.SynchronizeComplete` message to be received and processed as an event on the server in order for the server to make the connected player a child of an in-scene placed `NetworkObject`. (For more informatiom on this see [Real world In-scene NetworkObject parenting of players solution](inscene_parenting_player.md)
+## Parenting Examples
 
-
-## (Re)Parenting Move Examples
-
-We will assume that our initial scene hierarchy is looking like this:
+### Simple Example:
+Let's assume we have the following initial scene hierarchy before we attempt parenting:
+```
+Sun
+Tree
+Camera
+Player (GameObject->NetworkObject)
+Vehicle (GameObject->NetworkObject)
+```
+Both the player and vehicle `NetworkObject`s are spawned and the player moves towards the vehicle and wants to "get into" the vehicle.  The player's client sends perhaps a "use object" RPC command to the server.  In turn, the server then parents the player under the vehicle and changes the player's model pose to sitting.  Since both `NetworkObject`s are spawned and the server is receiving an RPC to perform the parenting action, the parenting action performed by the server is considered valid and the player is then parented under the vehicle as it is shown below:
 
 ```
 Sun
 Tree
 Camera
-Player (NetworkObject)
-  ├─ Head
-  ├─ Body
-  ├─ Arms
-  │  ├─ LeftArm
-  │  │  └─ LeftHand (NetworkObject)
-  │  └─ RightArm
-  │     └─ RightHand (NetworkObject)
-  └─ Legs
-Axe (NetworkObject)
+Vehicle (GameObject->NetworkObject)
+  └─ Player (GameObject->NetworkObject)
 ```
 
-So, let's try a few moves!
+### Mildly Complex Invalid Example:
+```
+Sun
+Tree
+Camera
+Player (GameObject->NetworkObject)
+Vehicle (GameObject->NetworkObject)
+  ├─ Seat1 (GameObject)
+  └─ Seat2 (GameObject)
+```
+In the above example, the vehicle has two GameObjects nested under the vehicle's root GameObject to represent the two available seats.  If we tried to parent the player under Seat1:
+```
+Sun
+Tree
+Camera
+Vehicle (GameObject->NetworkObject)
+  ├─Seat1 (GameObject)
+  │ └─Player (GameObject->NetworkObject)
+  └─Seat2 (GameObject)
+```
+This would be considered an invalid parenting and would be reverted.  
 
-### Root/Axe → RightHand/Axe
+### Mildly Complex Valid Example:
+In order to resolve the previous invalid parenting issue, we would need to add a `NetworkObjet` component to the seats.  This means we would need to:
+1. Spawn the vehicle and the seats:
+```
+Sun
+Tree
+Camera
+Player (GameObject->NetworkObject)
+Vehicle (GameObject->NetworkObject)
+Seat1 (GameObject->NetworkObject)
+Seat2 (GameObject->NetworkObject)
+```
 
-This is a **valid** move because `Axe (NetworkObject)` is being moved under `RightHand (NetworkObject)`. We know about their `NetworkObjectId`s and it will be replicated across the network to the clients by the server.
-
-Now, our hierarchy is looking like this:
+2. Once spawned, parent the seats under the vehicle 
 
 ```
 Sun
 Tree
 Camera
-Player (NetworkObject)
-  ├─ Head
-  ├─ Body
-  ├─ Arms
-  │  ├─ LeftArm
-  │  │  └─ LeftHand (NetworkObject)
-  │  └─ RightArm
-  │     └─ RightHand (NetworkObject)
-  │        └─ Axe (NetworkObject) [to] <──┐
-  └─ Legs                                 ├ OK
-                                [from] ───┘
+Player (GameObject->NetworkObject)
+Vehicle (GameObject->NetworkObject)
+  ├─ Seat1 (GameObject->NetworkObject)
+  └─ Seat2 (GameObject->NetworkObject)
 ```
-
-### RightHand/Axe → Body/Axe
-
-This is an **invalid** move because `Axe (NetworkObject)` is being moved under `Body` which is _not_ a `NetworkObject`. It does _not_ have a `NetworkObjectId` and it can _not_ be replicated and synced on the clients.
-
-So, we tried to do this but it did _not_ succeed:
-
+3. Finally, some time later a player wants to get into the vehicle and the player is parented under Seat1:
 ```
 Sun
 Tree
 Camera
-Player (NetworkObject)
-  ├─ Head
-  ├─ Body
-  │                               [to] <──┐
-  ├─ Arms                                 │
-  │  ├─ LeftArm                           │
-  │  │  └─ LeftHand (NetworkObject)       ├ INVALID
-  │  └─ RightArm                          │
-  │     └─ RightHand (NetworkObject)      │
-  │        └─ Axe (NetworkObject) [from] ─┘
-  └─ Legs
+Vehicle (GameObject->NetworkObject)
+  ├─Seat1 (GameObject->NetworkObject)
+  │ └─Player (GameObject->NetworkObject)
+  └─Seat2 (GameObject->NetworkObject)
 ```
-
-We'd get an error message in the logs similar to this:
-
-```
-Invalid parenting, NetworkObject moved under a non-NetworkObject parent
-```
-
-### RightHand/Axe → SceneRoot/Axe
-
-This is a **valid** move because `Axe (NetworkObject)` is being moved to the scene root (no parent). So even though there is no `NetworkObjectId` to sync, empty/null parent _can_ be synced across the network on the clients.
-
-Our up-to-date hierarchy is now looking like this:
-
-```
-Sun
-Tree
-Camera
-Player (NetworkObject)
-  ├─ Head
-  ├─ Body
-  ├─ Arms
-  │  ├─ LeftArm
-  │  │  └─ LeftHand (NetworkObject)
-  │  └─ RightArm
-  │     └─ RightHand (NetworkObject)
-  │               [from] ───┐
-  └─ Legs                   ├ OK
-Axe (NetworkObject) [to] <──┘
-```
-
-
-
