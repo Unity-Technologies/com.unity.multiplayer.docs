@@ -4,13 +4,16 @@ title: NetworkBehaviour
 ---
 
 :::note
-Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures in order to be serialized and used with `RPC`s and `NetworkVariables`:<br>
-For `NetworkObject`s use the [NetworkObjectReference](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkObjectReference).<br>
-For `NetworkBehaviour`s use the [NetworkBehaviourReference](NO API LINK AVAILABLE).
+Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures in order to be serialized and used with `RPC`s and `NetworkVariables`:
+
+For `NetworkObject`s use the [NetworkObjectReference](../api/Unity.Netcode.NetworkObjectReference).
+
+For `NetworkBehaviour`s use the NetworkBehaviourReference<!-- (NO API LINK AVAILABLE YET)-->.
 :::
 
 ## NetworkBehaviour
-`NetworkBehaviour`s can use `NetworkVariable`s and `RPC`s to synchronize state and send messages over the network.  In order to replicate any netcode aware properties or send/receive RPCs a `GameObject` must have a [NetworkObject component](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject) and at least one `NetworkBehaviour` component. A `NetworkBehaviour` requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` with the `NetworkBehaviour` component assigned to it.  If you add a `NetworkBehaviour` to a GameObject that does not have a `NetworkObject` (or any parent), then Netcode for GameObjects will automatically add a `NetworkObject` component to the `GameObject` in which the `NetworkBehaviour` was added.
+
+`NetworkBehaviour`s can use `NetworkVariable`s and `RPC`s to synchronize state and send messages over the network.  In order to replicate any netcode aware properties or send/receive RPCs a `GameObject` must have a [NetworkObject component](/basics/networkobject.md) and at least one `NetworkBehaviour` component. A `NetworkBehaviour` requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` with the `NetworkBehaviour` component assigned to it.  If you add a `NetworkBehaviour` to a GameObject that does not have a `NetworkObject` (or any parent), then Netcode for GameObjects will automatically add a `NetworkObject` component to the `GameObject` in which the `NetworkBehaviour` was added.
 
 [`NetworkBehaviour`](../api/Unity.Netcode.NetworkBehaviour.md) is an abstract class that derives from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) and is primarily used to create unique netcode/game logic.
 
@@ -21,7 +24,9 @@ It is important that the `NetworkBehaviour`s on each `NetworkObject` remains the
 :::
 
 ### Pre-Spawn and Monobehaviour Updates
+
 Since `NetworkBehaviour`s derive from MonoBehaviour, the `FixedUpdate`, `Update`, and `LateUpdate` methods, if defined, will still be invoked on `NetworkBehaviour`s even when they are not yet spawned.  In order to "exit early" to avoid executing netcode specific code within the update methods, you can check the local `NetworkBehaviour.IsSpawned` flag and return if it is not yet set like the below example:
+
 ```csharp
 private void Update()
 {
@@ -34,11 +39,14 @@ private void Update()
 ```
 
 ### Spawning
+
 `OnNetworkSpawn` is invoked on each `NetworkBehaviour` associatd with a `NetworkObject` spawned.  This is where all netcode related initialization should occur.
 You can still use `Awake` and `Start` to do things like finding components and assigning them to local properties, but if `NetworkBehaviour.IsSpawned` is false do not expect netcode distinguishing properties (like IsClient, IsServer, IsHost, etc) to be accurate while within the those two methods (Awake and Start). 
 
 #### Dynamically Spawned NetworkObjects
+
 For dynamically spawned `NetworkObjects` (instantiating a network prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Awake` and `Start` methods are invoked.  So, it is important to be aware of this because things like finding and assigning a component to a local property within the `Start` method exclusively will result in that property not being set when a `NetworkObject` is dynamically spawned.  To circumvent this issue, you could have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
+
 ```csharp
 public class MyNetworkBehaviour : NetworkBehaviour
 {
@@ -67,15 +75,20 @@ public class MyNetworkBehaviour : NetworkBehaviour
 ```
 
 #### In-Scene Placed NetworkObjects
+
 For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Awake` and `Start` methods since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example demonstrates how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`.  It all depends upon what usage pattern works best for your project.
 
 ### De-Spawning
+
 `OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it is de-spawned.  This is where all netcode "despawn cleanup code" should occur, but is not to be confused with destroying.  Despawning occurs before anything is destroyed.
 
 ### Destroying
-Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden to handle clean up that needs to occur when you know the `NetworkBehaviour` is being destroyed.<br>
-:::note
-!Important! If you override the virtual 'OnDestroy' method it is important to alway invoke the base like such:
+
+Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden to handle clean up that needs to occur when you know the `NetworkBehaviour` is being destroyed.
+
+:::important
+If you override the virtual 'OnDestroy' method it is important to alway invoke the base like such:
+
 ```csharp
         public override void OnDestroy()
         {
@@ -85,5 +98,6 @@ Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden 
             base.OnDestroy();
         }
 ```
+
 `NetworkBehaviour` handles other destroy clean up tasks and requires that you invoke the base `OnDestroy` method to operate properly.
 :::
