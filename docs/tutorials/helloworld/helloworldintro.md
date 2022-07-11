@@ -56,7 +56,7 @@ In this section we will add a Network Manager and add a Transport to our project
 1. Select `NetworkManager` Component from the list displayed.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. 
 1. Click "Select Transport".
-1. Select `UnetTransport`.
+1. Select `UnityTransport`.
 1. Save your scene.
 
 
