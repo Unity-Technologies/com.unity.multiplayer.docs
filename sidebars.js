@@ -103,7 +103,11 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "advanced-topics/session-management"
-                }
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/reconnecting-mid-game"
+                },
             ]
         },
         {
