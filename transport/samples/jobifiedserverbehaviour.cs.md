@@ -93,9 +93,12 @@ public class JobifiedServerBehaviour : MonoBehaviour
     public void OnDestroy()
     {
         // Make sure we run our jobs to completion before exiting.
-        ServerJobHandle.Complete();
-        m_Connections.Dispose();
-        m_Driver.Dispose();
+        if (m_Driver.IsCreated)
+        {
+            ServerJobHandle.Complete();
+            m_Connections.Dispose();
+            m_Driver.Dispose();
+        }
     }
 
     void Update ()

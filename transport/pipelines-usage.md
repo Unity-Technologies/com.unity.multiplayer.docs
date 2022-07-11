@@ -120,7 +120,7 @@ The ack packet type is used when a certain amount of time has passed and nothing
 
 ### Use the reliability pipeline
 
-The following creates a pipeline with just the reliability pipeline stage present, and initialize it to a window size of 32 (so it can keep track of 32 reliable packets at a one time). The maximum value for this is 32.
+The following creates a pipeline with just the reliability pipeline stage present, and initialize it to a window size of 32 (so it can keep track of 32 reliable packets at a one time). The maximum value for this is 32. Note this is a 32 packet limit per connection, and you may create multiple pipelines.
 
 ```csharp
 m_ServerDriver = NetworkDriver.Create(new ReliableUtility.Parameters { WindowSize = 32 });
