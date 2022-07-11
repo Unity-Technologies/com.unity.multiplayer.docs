@@ -81,11 +81,11 @@ NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.ASC
 NetworkManager.Singleton.StartClient();
 ```
 
-The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, will then sent passed to the server as part of the `Payload` of the connection request message that will be used on the server-side to determine if the client is approved or not.  The connetion data is completely optional and the connection approval process can be used to simply assign player's unique prefabs, other than the default, as well as facilitates the ability to spawn players at various locations (without requiring the client to send any form of connection data).
+The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, will be sent to the server as part of the `Payload` of the connection request message that will be used on the server-side to determine if the client is approved or not.  The connetion data is completely optional and the connection approval process can be used to simply assign player's unique prefabs, other than the default, as well as facilitates the ability to spawn players at various locations (without requiring the client to send any form of connection data).
 
 ## Timeout
 
-Netcode uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers.  This can take some time.  If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped.  This time starts counting when the transport has told  Netcode about the connection. This means that you cannot attack  Netcode by never sending the buffer, it will still time you out.
+Netcode uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers.  This can take some time.  If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped.  This time starts counting when the transport has told  Netcode about the connection. This means that if a client (or someone hacking) never sends this information by never sending the buffer, it will still time out and the connection will be dropped.
 
 ## Security
 
