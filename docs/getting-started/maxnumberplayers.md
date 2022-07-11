@@ -3,7 +3,7 @@ id: max-players
 title: Limiting the maximum number of players
 ---
 
-Netcode for Gameobjects (Netcode) provides a way to customize the [connection approval process](https://docs-multiplayer.unity3d.com/netcode/current/getting-started/connection-approval) that can reject incoming connections based on any number of user-specific reasons.
+Netcode for Gameobjects (Netcode) provides a way to customize the [connection approval process](/getting-started/connection-approval.md) that can reject incoming connections based on any number of user-specific reasons.
 ​
 
 Boss Room provides one example of how to handle limiting the number of players through the connection approval process:
