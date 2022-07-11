@@ -5,33 +5,35 @@ sidebar_label: NetworkVariable
 ---
 
 ## Introduction
-At a high level, a `NetworkVariable` is a way to synchronize a property (variable) between a server and clients without having to use custom messages or RPCs. Since `NetworkVariable` is basically a wrapper container of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
+At a high level, a `NetworkVariable` is a way to synchronize a property ("variable") between a server and client(s) without having to use custom messages or RPCs. Since `NetworkVariable` is really a wrapper ("container") of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
 - Newly joining clients (i.e. "Late Joining Clients")
-    - When the associated `NetworkObject` of a `NetworkBehaviour` is spawned, the `NetworkVariable`'s current state (value) is already synchronized, on the client side, upon `NetworkBehaviour.OnNetworkSpawn` being invoked. 
+    - When the associated `NetworkObject` of a `NetworkBehaviour`, with `NetworkVariable` properties, is spawned, any `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side.
 - Connected clients
     - When a `NetworkVariable` value changes, any connected clients that subscribed to `NetworkVariable.OnValueChanged` event (prior to the value being changed) will be notified of the change.
-        - Two parameters are passed to any `NetworkVariable.OnValueChanged` subscription (or directly assigned callback):
-            - First parameter: The previous value before the value was updated
-            - Second parameter: The current value that is synchronized with the server and is the "current" `NetworkVariable.Value`.
+        - Two parameters are passed to any `NetworkVariable.OnValueChanged` subscribed callback method:
+            - First parameter (Previous): The previous value before the value was changed
+            - Second parameter (Current): The newly changed `NetworkVariable.Value`.
 
 ### NetworkVariable General Requirements
 A `NetworkVariable`:
 - Property *must* be defined within a `NetworkBehaviour` derived class attached to a `GameObject`
-    - The `GameObject` or a parent `GameObject` must also have a `NetworkObject` component attached to it.
-- A `NetworkVariable`'s type (`T`) must be of an unmanaged `Type`.
+    - The `GameObject` or a parent `GameObject` **must** also have a `NetworkObject` component attached to it.
+- A `NetworkVariable`'s assigned type (`T`) must be [constrained to an unmanaged `Type`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint).
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
 *But why?*
-When a `NetworkBehaviour`'s `Awake` and `Start` methods are invoked all depends upon whether the `NetworkObject` is an in-scene placed or dynamically spawned `NetworkObject`.  
+A `NetworkBehaviour`'s `Awake` and `Start` methods are invoked based on the type of `NetworkObject` the `NetworkBehaviour` is associated with:   
+- In-Scene Placed: Since the instantiation occurs via the scene loading mechanism(s), the `Awake` and `Start` methods are invoked before `OnNetworkSpawn`.
+- Dynamically Spawned: Since `OnNetworkSpawn` is invoked immediately (i.e. within the same relative call-stack) after instantiation, `Awake` and `Start` are invoked after `OnNetworkSpawn`.  _Typically, these are invoked at least 1 frame after the `NetworkObject` and associated `NetworkBehaviour` components are instantiated._
 :::
 
 :::tip
-If you need to initialize other components or objects based on a `NetworkVariable`'s initial synchronized state (value), then you might think about having a common method that is invoked on the client side within the `NetworkVariable.OnValueChanged` callback (if assigned) and `NetworkBehaviour.OnNetworkSpawn` method.
+If you need to initialize other components or objects based on a `NetworkVariable`'s initial synchronized state, then you might contemplate having a common method that is invoked on the client side within the `NetworkVariable.OnValueChanged` callback (if assigned) and `NetworkBehaviour.OnNetworkSpawn` method.
 :::
 
 ### Synchronization and Notification Example:
-In order to fully understand how a `NetworkVariable` is initially synchronized and when a client will receive notifications from `NetworkVariable.OnValueChanged`, we have provide you with a simple example:
+The following example demonstrates how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked.  It also demonstrates how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` will provide notifications for any changes to `m_SomeValue.Value` that occur.
  ```csharp
 public class TestNetworkVariableSynchronization : NetworkBehaviour
 {
@@ -49,7 +51,8 @@ public class TestNetworkVariableSynchronization : NetworkBehaviour
         {
             if (m_SomeValue.Value != k_InitialValue)
             {
-                Debug.LogWarning($"NetworkVariable was {m_SomeValue.Value} when spawned when it really should have been {k_InitialValue}");
+                Debug.LogWarning($"NetworkVariable was {m_SomeValue.Value} upon being spawned" +
+                    $" when it really should have been {k_InitialValue}");
             }
             else
             {
@@ -95,7 +98,7 @@ _This works the same way with dynamically spawned `NetworkObject`s._
 :::
 
 :::important
-The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was really meant to work with a single server or host and a single client.
+The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was really intended to be used with a single server or host and a single client.
 :::
 
 ### OnValueChanged Example:
@@ -142,14 +145,16 @@ public class Door : NetworkBehaviour
     }
 }
 ```
-In the above example, we demonstrate how you can maintain a server authoritative `NetworkVariable` by using a non-ownership based server RPC (i.e. `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it is performing an "action" on the door. Each time the door is used by a client, the `Door.ToggleServerRpc` would be invoked and the server would toggle the state of the door. Upon this happening, all clients are updated with the newly changed state and notified, via `NetworkVariable.OnValueChanged`, that the door's state has changed.
+In the above example, we demonstrate how you can maintain a server authoritative `NetworkVariable` by using a non-ownership based server RPC (i.e. `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it is performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
 
-However, what if you wanted to adjust who could write to or read from the `NetworkVariable`?  The answer: `NetworkVariable` permissions.
+However, what if you wanted to adjust who could write to or read from the `NetworkVariable`?<br/> _The answer: `NetworkVariable` permissions._
 
 ## Permissions
 The `NetworkVariable` constructor can take up to 3 parameters:
 ```csharp
-public NetworkVariable(T value = default, NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server);
+public NetworkVariable(T value = default, 
+NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, 
+NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server);
 ```
 As you can see by the above constructor declaration, the default permissions are:
 - *Server:* Has read and write permissions
@@ -189,7 +194,7 @@ Let's look at the two types of permissions defined within [NetworkVariablePermis
     }
 ```
 :::important
-Since Netcode for GameObjects uses a server authoritative model, the server will always have read or write permissions to any `NetworkVariable`.
+Since Netcode for GameObjects uses a server authoritative model, the server will always have read or write permissions to any `NetworkVariable`.  As an example, if you set both the read and write permissions to `Owner` the server can still read and write to the `NetworkVariable`.
 :::
 
 ### Read Permissions
@@ -207,7 +212,7 @@ There are two options for writing a `NetworkVariable.Value`:
 - *Server(_default_):* the server is the only one that can write the value.
     - This is useful for server side specific states that all clients should should be aware of but cannot change.
         - Some examples would be an NPC's status (health, alive, dead, etc) or some global world environment state (i.e. is it night or day time?).
-- *Owner:* This means only the owner of the `NetworkObject` and the server can write the value.
+- *Owner:* This means only the owner of the `NetworkObject` and the server can write to the value.
     - This is useful if your `NetworkVariable` represents something specific to the client's player that only the server and client should know about
         - This might be a player's inventory or gun's ammo count (etc.)
 
@@ -219,19 +224,18 @@ public class PlayerState : NetworkBehaviour
     private const float k_DefaultHealth = 100.0f;
     /// <summary>
     /// Default Permissions: Everyone can read, server can only write
-    /// Player health is something determined (updated/written to) on the server side,
-    /// but a value everyone should be synchronized with (i.e. have the ability to read)
+    /// Player health is typically something determined (updated/written to) on the server
+    ///  side, but a value everyone should be synchronized with (i.e. read permissions).
     /// </summary>
     public NetworkVariable<float> Health = new NetworkVariable<float>(k_DefaultHealth);
 
     /// <summary>
     /// Owner Read & Write Permissions: Owner or server can read and write
     /// A player's ammo count is something that you might want, for convenience sake, the
-    /// client to update locally.  You also don't want other non-owner clients to have
-    /// access to this value to avoid any kind of "info-hacking".  This might be because
-    /// you are trying to reduce bandwidth consumption for the server and all non-owners/
-    /// players or you might be trying to incorporate a more "hack resistant" design where 
-    /// non-owners are never synchronized to this value.
+    /// client-side to update locally. This might be because you are trying to reduce 
+    /// bandwidth consumption for the server and all non-owners/ players or you might be 
+    /// trying to incorporate a more client-side "hack resistant" design where non-owners 
+    /// are never synchronized with this value.
     /// </summary>
     public NetworkVariable<int> AmmoCount = new NetworkVariable<int>(default, 
         NetworkVariableReadPermission.Owner, NetworkVariableWritePermission.Owner);
@@ -242,7 +246,7 @@ public class PlayerState : NetworkBehaviour
     /// to select different skin materials as a way to further encourage a player's personal
     /// association with their player character.  It would make sense to make the permissions 
     /// setting of the NetworkVariable such that the client can change the value, but everyone 
-    /// will be notified when it changes.
+    /// will be notified when it changes to visually reflect the new skin selection.
     /// </summary>
     public NetworkVariable<int> SkinSelectionIndex = new NetworkVariable<int>(default,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -252,10 +256,11 @@ public class PlayerState : NetworkBehaviour
     /// You might incorporate some form of reconnection logic that stores a player's state on 
     /// the server side and can be used by the client to reconnect a player if disconnected
     /// unexpectedly.  In order for the client to let the server know it is the "same client" 
-    /// you create a KeyPairValue for each connected client where the key's value is written
-    /// to the client's ReconnectionKey NetworkVariable.  Under this scenario, you only want 
-    /// the server to have write permissions and the owner (client) to be synchronized with
-    /// this value (read permissions).
+    /// you might have implemented a keyed array (i.e. Hashtable, Dictionary, etc, ) to track
+    /// each connected client. The key value for each connected client would only be written to
+    /// the each client's PlayerState.ReconnectionKey. Under this scenario, you only want the 
+    /// server to have write permissions and the owner (client) to be synchronized with this 
+    /// value (via owner only read permissions).
     /// </summary>
     public NetworkVariable<ulong> ReconnectionKey = new NetworkVariable<ulong>(default,
     NetworkVariableReadPermission.Owner, NetworkVariableWritePermission.Server);
@@ -270,23 +275,22 @@ You might be wondering about our earlier door example and why we chose to use a 
 :::
 
 ## Complex Value Types 
-Almost all of our examples has been focused around numeric [Value Types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types). Value types are any `Type` that cannot be assigned a null value. Structures are considered non-nullable complex value types, from a serialization perspective, as long as the structure does not contain any properties that are considered nullable value types.
+Almost all of our examples have been focused around numeric [Value Types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types). Value types are any `Type` that cannot be assigned a null value. Structures are considered non-nullable complex value types. From a Netcode for GameObject perspective, as long as the structure (or any nested sub-property) does not contain any properties that are considered nullable value types.
 
 :::warning
 `NetworkVariable` does not support any [nullable value types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types).  This includes any `INetworkSerializable` implementation that contains any properties (private, protected, internal, and public) that are of a nullable value type. You can use INetworkSerializable implementations that contain
 :::
 
-
 ### Synchronizing Complex Types Example:
 For this example, we are extending the previous `PlayerState` class to include some complex value types to handle a weapon boosting game play mechanic.  We will explore two complex values types:
-- *WeaponBooster:* A local power-up weapon booster the player can apply to its local weapon.
-    - This is a simple complex value type example.
-- *AreaWeaponBooster:* A second kind of power-up that players can deploy at a specific location.  Any team members within the radius of the `AreaWeaponBooster` will have the bonus applied.
-    - This is a nested complex value type example.
+- *WeaponBooster:* A power-up weapon booster that can only be assigned/applied by the client.
+    - This is a simple example of a "complex" value type.
+- *AreaWeaponBooster:* A second kind of "weapon booster" power-up that players can deploy at a specific location, and any team members within the radius of the `AreaWeaponBooster` will have the weapon booster applied.
+    - This is an example of a nested complex value type.
 
-For the `WeaponBooster`, we only need one NetworkVariable to handle synchronizing everyone with any WeaponBooster currently being applied to a fellow team member player. However, with the `AreaWeaponBooster` we must consider what happens if you have 8 team members that could, at any given moment, deploy one `AreaWeaponBooster`?  It would require, at a minimum, a list of all deployed and currently active `AreaWeaponBooster`s.  For this task, we will use a `NetworkList` as opposed to a `NetworkVariable`.
+For the `WeaponBooster`, we only need one NetworkVariable to handle synchronizing everyone with any currently active player-local `WeaponBooster`. However, with the `AreaWeaponBooster` we must consider what happens if you have 8 team members that could, at any given moment, deploy one a `AreaWeaponBooster`?  It would require, at a minimum, a list of all deployed and currently active `AreaWeaponBooster`s.  For this task, we will use a `NetworkList` as opposed to a `NetworkVariable`.
 
-Review over the below `PlayerState` additions along with the `WeaponBooster` structure (complex value type):
+First, let's review over the below `PlayerState` additions along with the `WeaponBooster` structure (complex value type):
 
 ```csharp
 public class PlayerState : NetworkBehaviour
@@ -333,28 +337,7 @@ public struct WeaponBooster : INetworkSerializable, System.IEquatable<WeaponBoos
     }
 }
 ```
-Focusing primarily on the non-nested complex value type `WeaponBooster`, we can see it implements `INetworkSerializable`. At this point, you might be wondering why we didn't just try something like this:
-```csharp
-public class PlayerState : NetworkBehaviour
-{
-    // ^^^^^^^ including all code from previous example ^^^^^^^
-
-    // The weapon booster currently applied to the local player
-    private NetworkVariable<WeaponBoosterSimple> PlayerWeaponBooster = new NetworkVariable<WeaponBoosterSimple>();
-}
-
-public struct WeaponBoosterSimple
-{
-    public float PowerAmplifier;
-    public float Duration;
-}
-```
-
-## NOEL-TODO: Re-Read and Fix FROM HERE DOWN
-
-While the above code will compile, `NetworkVariable` will start throwing errors about it not implementing INetworkSerializable with additional information about `INetworkSerializeByMemcpy`. For this example's purposes, you  just use a "raw structure" as a value type within `NetworkVariable`, there is another "good design practice" behind implementing `INetworkSerializable`:  It can be nested within another complex value type!
-
-Looking at the below second portion of our example, we can see that the `AreaWeaponBooster` includes a `WeaponBooster` property to be applied to team members that are within the `AreaWeaponBoosters` radius: 
+The above first half of the example code shows how a complex value type that implements `INetworkSerializable` is pretty straight forward. Looking at the below second portion of our example, we can see that the `AreaWeaponBooster` includes a `WeaponBooster` property that would (for example) be applied to team members that are within the `AreaWeaponBoosters` radius: 
 
 ```csharp
 /// <summary>
@@ -367,21 +350,25 @@ Looking at the below second portion of our example, we can see that the `AreaWea
 /// </summary>
 public struct AreaWeaponBooster : INetworkSerializable, System.IEquatable<AreaWeaponBooster>
 {
-    public WeaponBooster ApplyWeaponBooster;
+    public WeaponBooster ApplyWeaponBooster; // the nested complex value type
     public float Radius;
     public Vector3 Location;
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         if (serializer.IsReader)
         {
+            // The complex value type handles its own de-serialization
             serializer.SerializeValue(ref ApplyWeaponBooster);
+            // Now de-serialize the non-complex value type properties
             var reader = serializer.GetFastBufferReader();
             reader.ReadValueSafe(out Radius);
             reader.ReadValueSafe(out Location);
         }
         else
         {
+            // The complex value type handles its own serialization
             serializer.SerializeValue(ref ApplyWeaponBooster);
+            // Now serialize the non-complex value type properties
             var writer = serializer.GetFastBufferWriter();
             writer.WriteValueSafe(Radius);
             writer.WriteValueSafe(Location);
@@ -394,12 +381,133 @@ public struct AreaWeaponBooster : INetworkSerializable, System.IEquatable<AreaWe
     }
 }
 ```
- Looking closely at the read and write segments of code within `AreaWeaponBooster.NetworkSerialize`, we can also see that all you have to do to serialize the `AreaWeaponBooster.ApplyWeaponBooster` property is call `BufferSerializer<T>.SerializeValue` and pass a reference to the `ApplyWeaponBooster` property for both reading and writing the value. This type of approach can help reduce code replication while providing a more modular foundation to build more complex, nested, value types.
+ Looking closely at the read and write segments of code within `AreaWeaponBooster.NetworkSerialize`, the nested complex value type property `ApplyWeaponBooster` handles its own serialization and de-serialization. Any `AreaWeaponBooster` value type property is serialized and de-serialized by the `ApplyWeaponBooster`'s implemented `NetworkSerialize` method. Using this type of design approach can help reduce code replication while providing a more modular foundation to build even more complex, nested, value types.
 
-### We might want to remove and/or change this
+## Custom NetworkVariable Implementations
 :::warning Disclaimer
-The `NetworkVariable` and `NetworkList` and implementations are **primarily** designed as samples showing how to create `NetworkVariableBase` structures. The `NetworkVariable<T>` container is however considered production ready for basic `unmanaged` value types.
+The `NetworkVariable` and `NetworkList` classes were created as `NetworkVariableBase` class implementation examples. While the `NetworkVariable<T>` class is considered production ready for basic `unmanaged` value types, you might run into scenarios where you have a more advanced implementation in mind.  Under this scenario, we would encourage you to create your own custom implementation.
 :::
+In order to create your own `NetworkVariableBase` derived container, you should:
+- Create a class deriving from `NetworkVariableBase`.
+- Assure the the following methods are overridden:
+    - `void WriteField(FastBufferWriter writer)`
+    - `void ReadField(FastBufferReader reader)`
+    - `void WriteDelta(FastBufferWriter writer)`
+    - `void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)`
+- Depdending upon your custom `NetworkVariableBase` container, you might look at `NetworkVariable<T>` or `NetworkList` to see how those two examples were implemented.
+ 
+ ### Custom NetworkVariable Example:
+ With all of the previous discussion revolving around (unmanaged) value types, this example will explore a custom `NetworkVariableBase` derived class that does contain managed properties and one way (for example purposes) that you can have a mixture of managed and unmanaged value types:
+ ```csharp
+    /// Using MyCustomNetworkVariable within a NetworkBehaviour
+    public class TestMyCustomNetworkVariable : NetworkBehaviour
+    {
+        public MyCustomNetworkVariable CustomNetworkVariable = new MyCustomNetworkVariable();
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    var someData = new SomeData();
+                    someData.SomeFloatData = (float)i;
+                    someData.SomeIntData = i;
+                    someData.SomeListOfValues.Add((ulong)i + 1000000);
+                    someData.SomeListOfValues.Add((ulong)i + 2000000);
+                    someData.SomeListOfValues.Add((ulong)i + 3000000);
+                    CustomNetworkVariable.SomeDataToSynchronize.Add(someData);
+                    CustomNetworkVariable.SetDirty(true);
+                }
+            }
+        }
+    }
 
-## IMPROVE THIS WHOLE SECTION
-To create your own `NetworkVariable` container, simply create a class deriving from `NetworkVariableBase` and declare it as a field of a `NetworkBehaviour`. To learn how to write your own containers for more complex structures, see the `NetworkVariable<T>` implementation. To learn how to do custom delta encoding on complex structures. See the `NetworkList` implementations.
+    /// Bare minimum example of NetworkVariableBase derived class
+    [Serializable]
+    public class MyCustomNetworkVariable : NetworkVariableBase
+    {
+        /// Managed list of class instances
+        public List<SomeData> SomeDataToSynchronize = new List<SomeData>();
+
+        /// <summary>
+        /// Writes the complete state of the variable to the writer
+        /// </summary>
+        /// <param name="writer">The stream to write the state to</param>
+        public override void WriteField(FastBufferWriter writer)
+        {
+            // Serialize the data we need to synchronize
+            writer.WriteValueSafe(SomeDataToSynchronize.Count);
+            foreach (var dataEntry in SomeDataToSynchronize)
+            {
+                writer.WriteValueSafe(dataEntry.SomeIntData);
+                writer.WriteValueSafe(dataEntry.SomeFloatData);
+                writer.WriteValueSafe(dataEntry.SomeListOfValues.Count);
+                foreach (var valueItem in dataEntry.SomeListOfValues)
+                {
+                    writer.WriteValueSafe(valueItem);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads the complete state from the reader and applies it
+        /// </summary>
+        /// <param name="reader">The stream to read the state from</param>
+        public override void ReadField(FastBufferReader reader)
+        {
+            // De-Serialize the data being synchronized
+            var itemsToUpdate = (int)0;
+            reader.ReadValueSafe(out itemsToUpdate);
+            SomeDataToSynchronize.Clear();
+            for (int i = 0; i < itemsToUpdate; i++)
+            {
+                var newEntry = new SomeData();
+                reader.ReadValueSafe(out newEntry.SomeIntData);
+                reader.ReadValueSafe(out newEntry.SomeFloatData);
+                var itemsCount = (int)0;
+                var tempValue = (ulong)0;
+                reader.ReadValueSafe(out itemsCount);
+                newEntry.SomeListOfValues.Clear();
+                for (int j = 0; j < itemsCount; j++)
+                {
+                    reader.ReadValueSafe(out tempValue);
+                    newEntry.SomeListOfValues.Add(tempValue);
+                }
+                SomeDataToSynchronize.Add(newEntry);
+            }
+        }
+
+        public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
+        {
+            // Do nothing for this example
+        }
+
+        public override void WriteDelta(FastBufferWriter writer)
+        {
+            // Do nothing for this example
+        }
+    }    
+
+    /// Example managed class used as the item type in the 
+    /// MyCustomNetworkVariable.SomeDataToSynchronize list
+    [Serializable]
+    public class SomeData
+    {
+        public int SomeIntData = default;
+        public float SomeFloatData = default;
+        public List<ulong> SomeListOfValues = new List<ulong>();
+    }
+ ```
+While the above example is not the "recommended" way to synchronize a list that frequently changes (i.e. one or more elements position/order or add/remove), it is just an example of how you can "define your own rules" through using `NetworkVariableBase`.  Whether you handle managed or unmanaged value types is up to you.
+
+The above code could be tested by:
+- Using the above code with a project that includes Netcode for GameObjects v1.0 (or higher).
+- Adding the `TestMyCustomNetworkVariable` component to an in-scene placed `NetworkObject`.
+- Creating a stand alone build and running that as a host or server
+- Running the same scene within the editor and connecting as a client
+    - Once connected, you can then select the `GameObject` with the attached `NetworkObject` and `TestMyCustomNetworkVariable` components so it appears in the inspector view.  There you can verify the `TestMyCustomNetworkVariable.CustomNetworkVariable` property was synchronized with the client (like in the screenshot below):<br/>
+    ![ScreenShot](images/MyCustomNetworkVariableInspectorView.png)<br/>
+
+:::caution
+If you are not adhering to the (unmanaged) value types in your own custom `NetworkVariableBase` implementation then it is advised to not try and use `NetworkList` or `NetworkVariable` as properties within that implementation. Instead, declare `NetworkVariable` or `NetworkList` properties within the same `NetworkBehaviour` that you have declared your custom `NetworkVariableBase` implementation within.
+:::
