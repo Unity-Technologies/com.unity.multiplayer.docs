@@ -68,7 +68,7 @@ The simulator pipeline stage could be added on either the client or server to si
 
 ### Use the simulator
 
-No further configuration is needed after configuring the pipline. It can be set up when the driver is created, as follows:
+No further configuration is needed after configuring the pipeline. It can be set up when the driver is created, as follows:
 
 ```csharp
 m_DriverHandle = NetworkDriver.Create(new SimulatorUtility.Parameters {MaxPacketSize = NetworkParameterConstants.MTU, MaxPacketCount = 30, PacketDelayMs = 25, PacketDropPercentage = 10});
