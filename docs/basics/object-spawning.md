@@ -19,9 +19,10 @@ When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.N
 
 **Network prefabs can be used as:**
 
-- a player object (when assigned to the [`NetworkManager`'s Player Prefab property](../components/networkmanager))
-- a dynamically spawned `NetworkObject`
-- an in-scene placed `NetworkObject` (i.e. drag and drop a network prefab into a scene from within the editor)
+Netcode uses a server authoritative networking model so spawning objects can only be done on the server/host.
+To spawn an object first instantiate the object from your prefab and then invoke the spawn method on the `NetworkObject` component that should be attached to the prefab.
+This should only be done on the server as the object will automatically replicate on the other clients.
+By default a newly spawned object is owned by the server. See [Ownership](networkobject.md#ownership) for more information.
 
 ### Registering a Network Prefab
 
