@@ -3,23 +3,21 @@ id: max-players
 title: Limiting the maximum number of players
 ---
 
-
-Netcode for Gameobjects (Netcode) provides a way to implement a [connection approval delegate](../api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate)  that can reject incoming connections based on custom logic.
+Netcode for Gameobjects (Netcode) provides a way to customize the [connection approval process](/getting-started/connection-approval.md) that can reject incoming connections based on any number of user-specific reasons.
 ​
 
+Boss Room provides one example of how to handle limiting the number of players through the connection approval process:
 
-Boss Room provides an example of such delegate
-
-```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/63ecd92e1c72b87cd87cc3cbc1de77da4271b720/Assets/BossRoom/Scripts/Server/Net/ServerGameNetPortal.cs#L242
+```csharp 
+ void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
 ```
 ​
 The code below shows an example of an over-capacity check that would prevent more than a certain pre-defined number of players from connecting.
 ​
 ```csharp
-if( m_ClientData.Count >= CharSelectData.k_MaxLobbyPlayers )
+if (m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPlayers)
 {
-    gameReturnStatus = ConnectStatus.ServerFull;
+    return ConnectStatus.ServerFull;
 }
 ```
 ​
