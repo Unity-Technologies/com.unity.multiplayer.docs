@@ -4,7 +4,7 @@ title: Invaders Sample
 description: Learn more about game flow, modes, unconventional movement networked, and a shared timer using Netcode for GameObjects.
 ---
 
-The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders) to understand the game flow and modes with  Netcode for GameObjects (Netcode) using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients in a client-side predicted way.
+The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders) to understand the game flow and modes with  Netcode for GameObjects (Netcode) using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients updated client-side.
 
 ## Game Flows
 
@@ -93,19 +93,19 @@ Invaders has an easy movement type - moving only on one (horizontal) axis - whic
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/PlayerControl.cs#L188-L205
 ```
 
-## Shared Start/Round Timer with Client-Side Prediction
+## Shared Start/Round Timer updated Client-Side
 
 Games commonly have timers to display in the UI such as Start Timer, Round Timer, and Cooldowns. The Invaders sample also has a shared timer to ensure all players start the game at the same time. Otherwise, players with higher-end devices and better network access may have an unfair advantage by loading scenes and maps faster.
 
 When you implement this kind of timer, usually you would use a `NetworkVariable<float>` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
 
-An alternative solution is to sync only the start of the timer to the clients, and afterwards only sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be.
+An alternative solution is to sync only the start of the timer to the clients, and afterwards only sync the remaining value of the timer when a new client joins. For the remaining time, clients can update the timer locally. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be.
 
 In Invaders we chose the second solution instead, and simply start the timer for clients via an RPC.
 
 ### Start the game timer
 
-First, use `ShouldStartCountDown` to start the timer and send the time remaining value to the client-side. This initiates and sends the value only once, indicating the game has started and how much time remains. The game predictively counts down locally using these values. See [Update game timer Client-Side](#update-game-timer-client-side).
+First, use `ShouldStartCountDown` to start the timer and send the time remaining value to the client-side. This initiates and sends the value only once, indicating the game has started and how much time remains. The game then counts down locally using these values. See [Update game timer Client-Side](#update-game-timer-client-side).
 
 Example code to start the countdown:
 
@@ -115,7 +115,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ### Update game timer Client-Side
 
-On the client-side, use the `UpdateGameTimer` to predictively calculate and update the `gameTimer`. The server only needs to be contacted once to check if the game has started (`m_HasGameStared` is true) and the `m_TimeRemaining` amount, recieved by `ShouldStartCountDown`. When met, it predictively calculates and updates the `gameTimer` reducing the remaining time on the client-side for all players. When `m_TimeRemaining` reaches 0.0, the timer is up.
+On the client-side, use the `UpdateGameTimer` to locally calculate and update the `gameTimer`. The server only needs to be contacted once to check if the game has started (`m_HasGameStared` is true) and the `m_TimeRemaining` amount, recieved by `ShouldStartCountDown`. When met, it locally calculates and updates the `gameTimer` reducing the remaining time on the client-side for all players. When `m_TimeRemaining` reaches 0.0, the timer is up.
 
 Example code to update the game timer:
 
