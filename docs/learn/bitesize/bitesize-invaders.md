@@ -24,15 +24,14 @@ The backbones of the flow/system mentioned above is consisting of two main compo
 
 A `SceneTransitionHandler` with a lightweight state machine allows you to track clients' progress in regards to Scene Loading. It notifies the server when clients finish loading so that the other listeners are informed, by subscribing to the `NetworkedSceneManager` load events and creating a wrapper around it that others can subscribe to.
 
-Those events are invoked by `NetworkSceneManager` during the loading process. Invaders subscribe to these events when loading a new scene in the [SceneTransitionHandler.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs):
+Those events are invoked by `NetworkSceneManager` during the loading process. Invaders subscribe to these events when strating the server in the [MenuControl](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/MenuControl.cs) via the [SceneTransitionHandler.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs):
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs#L90-L108
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/MenuControl.cs#L16-L30
 ```
 
-It then unsubscribes from those events when `LoadEventCompleted` is invoked:
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs#L115-L119
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs#L90-L97
 ```
 
 ### SceneState
@@ -50,7 +49,7 @@ This class has the same role as the Lobby Controller, it acts as a Manager, for 
 :::
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L154-L187
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L154-L194
 ```
 
 ### Lobby Controller
@@ -58,31 +57,31 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 A Lobby Controller is a Manager for the lobby. This is where we applied a simple Mediator Design Pattern that restricts direct communications between the objects and forces them to collaborate only using a moderator object. In this case, the *[LobbyControl.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs)* handles Lobby interactions and state. This works hand-in-hand with the `SceneTransitionHandler`, by subscribing to the `OnClientLoadedScene` of that class in `OnNetworkSpawn`.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L22-L44
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L22-L45
 ```
 
 Whenever the `OnClientLoadedScene` callback is called, the custom `ClientLoadedScene` function is also called. And that is the location where you add the new Player to a container that just loaded the Lobby Scene, generates user stats for it (which is just a random name), and then later sends an update to the rest of the users notifying them that someone new has joined the Lobby.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L89-L106
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L89-L107
 ```
 
 When the players join this Lobby, they all need to click **Ready** before the game can progress to the next scene (before the Host can start the game). After players click Ready, you send a `ServerRPC` called `OnClientIsReadyServerRpc` (inside the `PlayerIsReady` function). When it arrives server-side, it marks the client state as ready based on its `ClientId`. You keep track of if a client is ready in the `m_ClientsInLobby` `Dictionary`.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L194-L208
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L194-L209
 ```
 
 At the same time, in order to sync up with the rest of the clients and update their UI, we send a ClientRpc. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L125-L143
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L125-L144
 ```
 
 When all the players have joined the lobby and are ready, `UpdateAndCheckPlayersInLobby` calls `CheckForAllPlayersReady` to transition to the next scene.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L145-L173
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L145-L174
 ```
 
 ## Unconventional Networked Movement
@@ -90,7 +89,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 Invaders has an easy movement type - moving only on one (horizontal) axis - which allows you to only modify the transform client-side without waiting for server-side validation. You can find where we perform the move logic in *[PlayerControl.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/PlayerControl.cs)* in the `InGameUpdate` function . With the help of a [`NetworkTransform`](../components/networktransform.md) that is attached directly to the Player Game Object, it will automatically sync up the Transform with the other clients. At the same time, it will smooth out the movement by interpolating or extrapolating for all of them.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/PlayerControl.cs#L188-L205
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/PlayerControl.cs#L176-L193
 ```
 
 ## Shared Start/Round Timer updated Client-Side
@@ -110,7 +109,13 @@ First, use `ShouldStartCountDown` to start the timer and send the time remaining
 Example code to start the countdown:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L189-L213
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L205-L229
+```
+
+In the case of a late-joining client, if the timer is already started, we send them an RPC to tell them the amount of time remaining.
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L196-L203
 ```
 
 ### Update game timer Client-Side
@@ -120,5 +125,5 @@ On the client-side, use the `UpdateGameTimer` to locally calculate and update th
 Example code to update the game timer:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L259-L282
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/InvadersGame.cs#L276-L299
 ```
