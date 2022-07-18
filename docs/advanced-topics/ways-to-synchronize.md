@@ -23,9 +23,9 @@ RPCs can be viewed as a way to send an event notification as well as a way to ha
 - A ClientRpc could be used by a server to notify a specific client of a special reconnection key or some other player specific information that doesn't require its state to be synchronized with all current and any future late joining client(s).
 
 **The are two types of RPC methods:**
-- ServerRpc: A client invoked remote procedure call received by and executed on the server-side.
+- **ServerRpc:** A client invoked remote procedure call received by and executed on the server-side.
     - [Read More About ServerRpc](../advanced-topics/message-system/serverrpc.md)
-- ClientRpc: A server invoked remote procedure calls received by and executed on one or more clients.
+- **ClientRpc:** A server invoked remote procedure call received by and executed on one or more clients.
     - [Read More About ClientRpc](../advanced-topics/message-system/clientrpc.md)
 
 ### Custom Messages
