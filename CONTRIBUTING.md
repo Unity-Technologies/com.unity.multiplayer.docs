@@ -14,7 +14,7 @@ Here are our guidlines for contributing:
 
 ## <a name="coc"></a> Code of Conduct
 
-Please help us keep MLAPI open and inclusive. Read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Please help us keep Netcode for GameObjects open and inclusive. Read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## <a name="ways"></a> Ways to Contribute
 
