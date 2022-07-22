@@ -8,10 +8,31 @@ If you have not already read the [Using NetworkSceneManager](using-networkscenem
 :::
 
 ## Introduction
-At this point, you have most likely run across the term "in-scene placed NetworkObject" or "in-scene NetworkObject" several times.  An in-scene placed `NetworkObject` means a `GameObject` with a `NetworkObject` component was added to a scene from within the editor. 
+At this point, you have most likely run across the term "in-scene placed NetworkObject" or "in-scene NetworkObject" several times.  An in-scene placed `NetworkObject` means a `GameObject` with a `NetworkObject` component was added to a scene from within the editor. There are many uses for in-scene placed `NetworkObjects`, which includes but is not limited to:
+- Management systems
+  - An example would be a `NetworkObject` pool managent system that dynamically spawns Network Prefabs.
+- Interactive "world objects" that are typically easier to place in-scene than spawn
+  - An example of this would be a door that can only be unlocked by a key (or the like), if a player unlocks it you want other players to know about it being unlocked and making it an in-scene placed `NetworkObject` simplifies the positioning of the door relative to the other surrounding world geometry.
+ - "Scene Static" visual elements
+   - An example of this might be a heads up display (HUD) that includes information about other items or players (i.e. radar or the like)
+   - Another example might be some form of platform or teleporter that moves a player from one location to the next when a player enters a trigger or uses an object.
+
+:::tip
+Items that can be picked up are typically better to implement as a "hybrid" approach where you use both an in-scene placed and a dynamically spawned `NetworkObject`.  The in-scene placed `NetworkObject` is commonly used to configure additional information about the item (what kind, does another one respawn after the other one is picked up and if so how much time should it wait before spawning a new item, etc.) while the dynamically spawned object is the item itself.  The hybrid approach is explained in more detail below in this section.
+:::
+
+### In-Scene Placed vs. Dynamically Spawned `NetworkObjects` (Order of Operations)
+Because in-scene placed `NetworkObject`s are instantiated when a scene loads, they have a different order of operations to that of dynamically spawned `NetworkObject`s when it comes to spawning:
+Dynamically Spawned | In-Scene Placed
+------------------- | ---------------
+Awake               | Awake
+OnNetworkSpawn      | Start
+Start               | OnNetworkSpawn
+
+Looking at the above table, we can quickly see that "spawning" occurs after `Awake` but before `Start` for dynamically spawned `NetworkObject`s, but for in-scene placed `NetworkObject`s it occurs afterboth Awake and Start are invoked.  As mentioned before, in-scene placed `NetworkObject`s are instantiated when the scene is loaded which means both the `Awake` and the `Start` methods are invoked prior to an in-scene placed `NetworkObject` being spawned. This distinct difference is important to keep in mind when doing any form of dependency related initializations that might require an active network session.  This is especially important to consider when you are using the same `NetworkBehaviour` component with both dynamically and in-scene placed `NetworkObjects`.
 
 ### In-Scene Placed Network Prefab Instances
-A common design pattern for commonly used in-scene placed `NetworkObject`s is to make it a Network Prefab so all you have to do to replicate the same functionality is drop a Network Prefab instance into a scene you are editing.  Additionally, you are not required to register the Network Prefab with the NetworkManager as in-scene placed `NetworkObjects` are registered internally, when scene management is enabled, for tracking and identification purposes.
+A common "usage" design pattern for frequently used in-scene placed `NetworkObject`s is to make it a Network Prefab in order to simplify the replication process in order to achieve the functionality. With network prefabs, you can easily use the "drag & drop" approach when editing a scene.  Another benefit of in-scene placed `NetworkObject`s is that they do not required you to register them with the NetworkManager. In-scene placed `NetworkObjects` are registered internally, when scene management is enabled, for tracking and identification purposes.
 
 ### Creating In-Scene Placed Network Prefab Instances
 In order to create a Network Prefab that can be used as an in-scene placed `NetworkObject` you must do the following:
@@ -20,13 +41,6 @@ In order to create a Network Prefab that can be used as an in-scene placed `Netw
 3. Drag and drop the newly created GameObject into your Prefab (or associated) folder.
 4. Delete the GameObject instance in your scene (this is *required* to get a proper GlobalObjectIdHash value assigned)
 5. Finally, drag and drop an instance of your newly created Network Prefab into the scene you wish to have an instance of your in-scene placed `NetworkObject`.
-
-### In-Scene Placed vs Dynamically Spawned
-The instantiation of an in-scene placed `NetworkObject` is handled during the loading of the scene.  Once the scene is loaded, an in-scene `NetworkObject` will be automatically spawned.  Prior to being spawned, during the scene loading process, both the `Awake` and `Start` methods are invoked.
-
-:::important
-In comparison, a "dynamically spawned" `NetworkObject` is when a "Network(ed) Prefab" is instantiated and spawned during runtime by code specific to your project.  `NetworkBehaviour.OnNetworkSpawn` is invoked first then `Awake` and then `Start`.  The order in which `NetworkBehaviour.OnNetworkSpawn` is invoked relative to these two methods is important to remember if you are initializing any form of Netcode related properties within `Awake` or `Start` when using the same Network Prefab for both in-scene placed and dynamically spawned `NetworkObject`s.  
-:::
 
 ## Using In-Scene Placed NetworkObjects
 Since there are additional complexities involved with in-scene placed `NetworkObject`s, some use cases are more easily achieved through dynamically spawned `NetworkObjects` or through a combination of both types. While Netcode for GameObjects has made many improvements with in-scene placed `NetworkObjects`, there are still special edge case scenarios that you have to take into consideration.
@@ -56,7 +70,7 @@ private void Start()
 Once migrated into the DDoL, migrating the in-scene placed `NetworkObject` back into a different scene after it has already been spawned will cause soft synchronization errors with late joining clients.  Once in the DDoL it should stay in the DDoL.  This is only for scene switching, if you are not using scene switching then it is recommended to use an additively loaded scene and keep that scene loaded for as long as you wish to persist the in-scene placed `NetworkObject`(s) in question.
 :::
 
-While using an in-scene placed `NetworkObject` as a manager does have some complexities involved when you wish to persist it while also using "Scene Switching", this is still considered one of the least complex ways to use an in-scene placed `NetworkObject`.
+While using an in-scene placed `NetworkObject` as a manager can have some complexities involved when you wish to persist it while also using "Scene Switching", this is still considered one of the least complex ways to use an in-scene placed `NetworkObject`.
 
 ### Complex In-Scene NetworkObject Managers:
 The most common mistake when using an in-scene placed `NetworkObject` is to try and use it like a dynamically spawned `NetworkObject`. When trying to decide if you should use an in-scene placed or dynamically spawned `NetworkObject`, you should ask yourself the following questions:
@@ -92,10 +106,11 @@ While we encourage using in-scene placed `NetworkObject`s as something static, a
 ### De-spawning, Re-spawning, and Parenting
 - You can de-spawn and re-spawn them on the server-side    
 - You can parent them (with caution)
-  - If you plan on being able to un-parent (i.e. drop an item, etc.) a child `NetworkObject`, then a dynamically spawned `NetworkObject` is a better choice
+  - If you plan on being able to un-parent (i.e. drop an item, etc.) a child `NetworkObject`, then a dynamically spawned `NetworkObject` is a better choice<br/>
 :::warning
 There is a known bug where an in-scene placed `NetworkObject` that dynamically spawns one or more `NetworkObject`(s) and then immediately parents them under its root `GameObject` (or any child) can cause issues with client synchronization and the spawned children. It is advised to provide a few frames, after the parent in-scene placed `NetworkObject` has spawned and has spawned its children, before parenting the children under the in-scene placed `NetworkObject`. Use (if at all) parenting in-scene placed `NetworkObject`s with caution as there could be more edge case scenario bugs. (_The hybrid approach is the recommended path to take._)
 :::
+<br/>
 :::tip
 While you can parent in-scene placed `NetworkObject`s within the editor, you might stop to think about what you are trying to accomplish. A child `NetworkBehaviour` will be assigned to the first parent `GameObject` with a `NetworkObject` component. _You might be able to accomplish the same thing with a single in-scene placed `NetworkObject` as opposed to several nested `NetworkObject`s._
 :::
