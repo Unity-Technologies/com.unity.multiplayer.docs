@@ -5,7 +5,7 @@ title: NetworkManager
 
 The `NetworkManager` is a required Netcode for GameObjects (Netcode) component that contains all of your project's netcode related settings.  It can be thought of as the "central netcode hub" for your netcode enabled project.  
 
-### `NetworkManager` Properties
+### `NetworkManager` Inspector Properties
 - **LogLevel**:  Sets the network logging level 
 - **PlayerPrefab**:  When a prefab is assigned, the prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
 - **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network prefab override per registered network prefab here.
@@ -18,7 +18,6 @@ The `NetworkManager` is a required Netcode for GameObjects (Netcode) component t
 - **Force Same Prefabs**: When checked it will always verify that connecting clients have the same registered network prefabs as the server.  When not checked, Netcode for GameObjects will ignore any differences.
 - **Recycle Network Ids**: When checked this will re-use previously assigned `NetworkObject.NetworkObjectIds` after the specified period of time.
 - **Network Id Recycle Delay**: The time it takes for a previously assigned but currently unassigned identifier to be available for use.  
-- **Rpc Hash Size**: !!!(UNITY TW ATTENTION) _This is only used for Custom Messages now and could stand to use a refresh on its tool tip text_!!!
 - **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
   
@@ -93,5 +92,88 @@ One way to get a player's primary `NetworkObject` is via `NetworkClient.PlayerOb
 void DisconnectPlayer(NetworkObject player)
 {    
     NetworkManager.DisconnectClient(player.OwnerClientId);
+}
+```
+
+### Client Disconnection Notifications
+Both the client and the server can subscribe to the `NetworkManger.OnClientDisconnectCallback` event in order to be notified when a client is disconnected. Client disconnect notifications are "relative" to who is receiving the notification.<br/>
+**There are two general "disconnection" categories:**
+- **Logical**: Custom server side code (code you might have written for your project) invokes `NetworkManager.DisconnectClient`.
+  - Example: A host player might eject a player or a player becomes "inactive" for too long.
+- **Network Interruption**: The transport detects there is no longer a valid network connection.
+
+**When disconnect notifications are triggered:**
+- Clients are notified when they are disconnected by the server.
+- The server is notified if the client side disconnects (i.e. a player exits a game session)
+- Both the server and clients are notified when their network connection is disconnected (network interruption)
+
+**Scenarios where the disconnect notification will not be triggered**:
+- When a server "logically" disconnects a client.
+  - _Reason: The server already knows the client is disconnected._
+- When a client "logically" disconnects itself.
+  - _Reason: The client already knows that it is disconnected._
+
+### Connection Notification Manager Example
+Below is one example of how you could provide client connect and disconnect notifications to any
+type of NetworkBehaviour or MonoBehaviour derived component.
+
+```csharp
+using System;
+using UnityEngine;
+using Unity.Netcode;
+
+/// <summary>
+/// This could be attached to the NetworkManager GameObject and
+/// provides you with a single location that anything (netcode
+/// aware or not) can be notified when a client is connected and
+/// when the client is disconnected.
+/// </summary>
+public class ConnectionNotificationManager : MonoBehaviour
+{
+    public static ConnectionNotificationManager Singleton { get; internal set; }
+
+    public enum ConnectionStatus
+    {
+        Connected,
+        Disconnected
+    }
+
+    public event Action<ulong, ConnectionStatus> OnClientConnectionNotification;
+
+    private void Awake()
+    {
+        if (Singleton != null)
+        {
+            throw new Exception($"Detected more than one instance of {nameof(ConnectionNotificationManager)}! " +
+                $"Do you have more than one component attached to a {nameof(GameObject)}");
+        }
+        Singleton = this;
+    }
+
+    private void Start()
+    {
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
+    }
+
+    private void OnDestroy()
+    {
+        // As long as you attach this to the NetworkManager GameObject,
+        // you need not worry about removing your subscription from the
+        // NetworkManager connected disconnected events since when this
+        // is getting destroyed the NetworkManager itself is getting
+        // destroyed.
+        Singleton = null;
+    }
+
+    private void OnClientConnectedCallback(ulong clientId)
+    {
+        OnClientConnectionNotification?.Invoke(clientId, ConnectionStatus.Connected);
+    }
+
+    private void OnClientDisconnectCallback(ulong clientId)
+    {
+        OnClientConnectionNotification?.Invoke(clientId, ConnectionStatus.Disconnected);
+    }
 }
 ```
