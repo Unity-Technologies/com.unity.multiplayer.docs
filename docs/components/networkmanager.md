@@ -22,7 +22,11 @@ The `NetworkManager` is a required Netcode for GameObjects (Netcode) component t
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
   
 ### `NetworkManager` Sub-Systems
-`NetworkManager` is also where you can find references to other Netcode related management systems:
+`NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
+
+:::caution
+All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (i.e. NetworkManager.IsListening == true).  A good general "rule of thumb" is to not attempt to access the below sub-systems prior to starting the `NetworkManager`, otherwise they will not yet be initialized.
+:::
 
 - [NetworkManager.PrefabHandler](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/object-pooling): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
 - [NetworkManager.SceneManager](https://docs-multiplayer.unity3d.com/netcode/current/basics/scene-management): When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
@@ -30,6 +34,7 @@ The `NetworkManager` is a required Netcode for GameObjects (Netcode) component t
 - [NetworkManager.NetworkTimeSystem](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/networktime-ticks): a synchronized time that can be used to handle issues with latency between a client and the server.
 - [NetworkManager.NetworkTickSystem](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/networktime-ticks#network-ticks): Use this to adjust the frequency of when NetworkVariables are updated.
 - [NetworkManager.CustomMessagingManager](https://docs-multiplayer.unity3d.com/netcode/current/advanced-topics/message-system/custom-messages): Use this system to create and send custom messages.
+
 
 ## Starting a Server, Host, or Client
 In order to perform any netcode related action that involves sending messages, you must first have a server started and listening for connections with at least one client (_a server can send RPCs to itself when running as a host_) that is connected.  In order to accomplish this, you must first start your `NetworkManager` as a server, host, or client.  There are three `NetworkManager` methods you can invoke to accomplish this:
