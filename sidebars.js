@@ -151,8 +151,12 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
+                    "id": "advanced-topics/ways-synchronize"
+                },                   
+                {
+                    "type": "doc",
                     "id": "advanced-topics/messaging-system"
-                },
+                },             
                 {
                     "collapsed": true,
                     "type": "category",
@@ -198,10 +202,6 @@ module.exports = {
                             "id": "advanced-topics/message-system/rpc-compatibility"
                         },
                     ]
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/ways-synchronize"
                 },
                 {
                     "collapsed": true,
