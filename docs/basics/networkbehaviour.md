@@ -43,6 +43,7 @@ private void Update()
 `OnNetworkSpawn` is invoked on each `NetworkBehaviour` associatd with a `NetworkObject` spawned.  This is where all netcode related initialization should occur.
 You can still use `Awake` and `Start` to do things like finding components and assigning them to local properties, but if `NetworkBehaviour.IsSpawned` is false do not expect netcode distinguishing properties (like IsClient, IsServer, IsHost, etc) to be accurate while within the those two methods (Awake and Start).
 For reference purposes, below is a table of when `NetworkBehaviour.OnNetworkSpawn` is invoked relative to the `NetworkObject` type:
+
 Dynamically Spawned | In-Scene Placed
 ------------------- | ---------------
 Awake               | Awake
