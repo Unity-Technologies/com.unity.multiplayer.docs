@@ -117,7 +117,7 @@ The Authentication API doesn't distinguish multiple instances of the same projec
 
 However, Authentication supports [Profiles](https://docs.unity.com/authentication/ProfileManagement.html) that allows different users existing on the same physical machine. To test locally, we need both builds and editor players to be able to switch to different Profiles.
 
-The [`ProfileManager`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/ProfileManager.cs) class wraps the logic for deciding what Profile you should be using, if any. In builds, the command-line argument `-AuthProfile` specifies the new profile id. When iterating in the editor, ParrelSync can use its `CloneManager` custom arguments to decide what user profile to use.
+The [`ProfileManager`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/ProfileManager.cs) class wraps the logic for deciding what Profile you should be using, if any. In builds, the command-line argument `-AuthProfile` specifies the new profile id. When iterating in the editor, ParrelSync can use its `CloneManager` custom arguments to decide what user profile to use.
 
 `ProfileManager.Profile` generates the custom `InitializationOptions`:
 
