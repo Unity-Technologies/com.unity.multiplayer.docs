@@ -70,10 +70,6 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "basics/modularity"
-                },
-                {
-                    "type": "doc",
                     "id": "basics/networkvariable"
                 },
                 {
