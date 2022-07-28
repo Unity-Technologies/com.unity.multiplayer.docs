@@ -6,6 +6,15 @@ sidebar_label: INetworkSerializable
 
 The `INetworkSerializable` interface can be used to define custom serializable types. 
 
+:::caution 
+All examples provided will work with RPCs and custom messages but some examples will not work with `NetworkVariable` due to the unmanaged type restriction.<br/>
+**NetworkVariable Type Litmus Test for INetworkSerializable Implementations:**
+- If the implementation itself can be a null (i.e. a class), then it cannot be used
+- If it contains any property that can be null (i.e. arrays), then it cannot be used
+
+The alternative is to create your own `NetworkVariableBase` derived `type` specific class.
+:::
+
 ```csharp
 struct MyComplexStruct : INetworkSerializable
 {
@@ -45,7 +54,7 @@ void Update()
 
 ## Nested serial types
 
-Nested serial types will be `null` unless you initilize following one of these methods:
+Nested serial types will be `null` unless you initialize following one of these methods:
 
 * Manually before calling `SerializeValue` if `serializer.IsReader` (or something like that)
 * Initialize in the default constructor
@@ -59,14 +68,17 @@ As you have more control over serialization of a struct, you might implement con
 More advanced use-cases are explored in following examples.
 
 ### Example: Array
+:::caution
+The below `INetworkSerializable` implementation example works only with RPCs and/or custom messages.  The below implementation uses an array within an `INetworkSerializable` implementation.  Arrays can be `null` and are not supported by the `NetworkVariable` class. As an alternative, you can write your own `NetworkVariableBase` derived class that does support managed or unmanaged value types.<br/>
+[Read More About Custom NetworkVariable Implementations](../basics/networkvariable.md)
+:::
 
 ```csharp
-
 public struct MyCustomStruct : INetworkSerializable
 {
     public int[] Array;
 
-    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         // Length
         int length = 0;
@@ -163,7 +175,7 @@ Unlike the [Array](#example-array) example above, in this example we do not use 
 
 ## Recursive Nested Serialization
 
-It is possible to recursively serialize nested members with `INetworkSerializable` interface down in the hierachy tree.
+It is possible to recursively serialize nested members with `INetworkSerializable` interface down in the hierarchy tree.
 
 Review the following example:
 
@@ -195,15 +207,35 @@ public struct MyStructB : INetworkSerializable
     }
 }
 ```
-
 If we were to serialize `MyStructA` alone, it would serialize `Position` and `Rotation` into the stream using `NetworkSerializer`.
 
 However, if we were to serialize `MyStructB`, it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA` by calling `MyStructA`'s `void NetworkSerialize(NetworkSerializer)` method, which serializes `Position` and `Rotation` into the same stream.
 
 :::note
-Technically, there is no hard-limit on how many `INetworkSerializable` fields you can serialize down the tree hierachy. In practice, consider memory and bandwidth boundaries for best performance.
+Technically, there is no hard-limit on how many `INetworkSerializable` fields you can serialize down the tree hierarchy. In practice, consider memory and bandwidth boundaries for best performance.
 :::
 
 :::tip
 You can conditionally serialize in recursive nested serialization scenario and make use of both features.
+:::
+
+:::caution
+While you can have nested `INetworkSerializable` implementations (i.e. an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you cannot have derived children of an `INetworkSerializable` implementation. <br/>
+**Unsupported Example**
+```csharp
+/// This is not supported.
+public struct MyStructB : MyStructA
+{
+    public int SomeNumber;
+    public string SomeText;
+    
+    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref SomeNumber);
+        serializer.SerializeValue(ref SomeText);
+        serializer.SerializeValue(ref Position);
+        serializer.SerializeValue(ref Rotation);
+    }
+}
+```
 :::

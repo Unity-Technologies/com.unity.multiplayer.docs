@@ -9,7 +9,7 @@ In this tutorial we will build on the work we have already done in Hello World a
 
 ## Requirements
 
-This tutorial requires an  Netcode for GameObjects (Netcode)-supported version of Unity (2019.4+).
+This tutorial requires a Netcode for GameObjects (Netcode)-supported version of Unity (2020.3+).
 
 ## Create a new project in Unity
 
