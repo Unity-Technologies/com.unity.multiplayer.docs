@@ -23,6 +23,7 @@ Items that can be picked up are typically better to implement as a "hybrid" appr
 
 ### In-Scene Placed vs. Dynamically Spawned `NetworkObjects` (Order of Operations)
 Because in-scene placed `NetworkObject`s are instantiated when a scene loads, they have a different order of operations to that of dynamically spawned `NetworkObject`s when it comes to spawning:
+
 Dynamically Spawned | In-Scene Placed
 ------------------- | ---------------
 Awake               | Awake
