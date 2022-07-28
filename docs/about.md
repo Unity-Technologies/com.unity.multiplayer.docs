@@ -26,7 +26,7 @@ Netcode is a mid-level networking library built for the Unity game engine to abs
 ## Before you begin
 
 Netcode supports the following versions:
-* Unity 2020.3, 2021.1, and 2021.2
+* Unity 2020.3, 2021.1, 2021.2, and 2021.3
 * Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
 
 Netcode supports the following platforms:
