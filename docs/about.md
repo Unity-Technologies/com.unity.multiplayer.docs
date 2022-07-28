@@ -10,7 +10,7 @@ Netcode is a mid-level networking library built for the Unity game engine to abs
 
 | Getting Started | Hello World | Golden Path |
 | -- | -- | -- |
-| [Install Unity Netcode](migration/installation.md)<br/>[Migration from UNet to Netcode](migration/migratingtonetcode.md)<br/>[Upgrade to Unity Netcode Package](migration/migratingfrommlapi.md) | [Your First Networked Game](tutorials/helloworld/helloworldintro)<br/>[Building on First Steps](tutorials/helloworld/helloworldtwo) | [Foundation module](tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](tutorials/goldenpath_series/gp_module_two.md)<br/>|
+| [Install Unity Netcode](migration/installation.md)<br/>[Migration from UNet to Netcode](migration/migratingtonetcode.md)<br/>[Upgrade to Unity Netcode Package](migration/migratingfrommlapi.md) | [Your First Networked Game](tutorials/helloworld/helloworldintro)<br/>[Building on "Hello World"](tutorials/helloworld/helloworldtwo) | [Foundation module](tutorials/goldenpath_series/goldenpath_foundation_module.md) <br/> [Module One](tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](tutorials/goldenpath_series/gp_module_two.md)<br/>|
 
 </div>
 
@@ -26,7 +26,7 @@ Netcode is a mid-level networking library built for the Unity game engine to abs
 ## Before you begin
 
 Netcode supports the following versions:
-* Unity 2020.3, 2021.1, and 2021.2
+* Unity 2020.3, 2021.1, 2021.2, and 2021.3
 * Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
 
 Netcode supports the following platforms:
