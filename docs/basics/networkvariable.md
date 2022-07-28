@@ -24,11 +24,21 @@ A `NetworkVariable`:
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
-*But why?*
-A `NetworkBehaviour`'s `Awake` and `Start` methods are invoked based on the type of `NetworkObject` the `NetworkBehaviour` is associated with:   
-- In-Scene Placed: Since the instantiation occurs via the scene loading mechanism(s), the `Awake` and `Start` methods are invoked before `OnNetworkSpawn`.
-- Dynamically Spawned: Since `OnNetworkSpawn` is invoked immediately (i.e. within the same relative call-stack) after instantiation, `Awake` and `Start` are invoked after `OnNetworkSpawn`.  _Typically, these are invoked at least 1 frame after the `NetworkObject` and associated `NetworkBehaviour` components are instantiated._
+*But why?*<br />
+A `NetworkBehaviour`'s `Start` and `OnNetworkSpawn` methods are invoked based on the type of `NetworkObject` the `NetworkBehaviour` is associated with:   
+- In-Scene Placed: Since the instantiation occurs via the scene loading mechanism(s), the `Start` method is invoked before `OnNetworkSpawn`.
+- Dynamically Spawned: Since `OnNetworkSpawn` is invoked immediately (i.e. within the same relative call-stack) after instantiation, the `Start` method is invoked after `OnNetworkSpawn`.  
+
+_Typically, these are invoked at least 1 frame after the `NetworkObject` and associated `NetworkBehaviour` components are instantiated._
+
+Dynamically Spawned | In-Scene Placed
+------------------- | ---------------
+Awake               | Awake
+OnNetworkSpawn      | Start
+Start               | OnNetworkSpawn
+
 :::
+
 
 :::tip
 If you need to initialize other components or objects based on a `NetworkVariable`'s initial synchronized state, then you might contemplate having a common method that is invoked on the client side within the `NetworkVariable.OnValueChanged` callback (if assigned) and `NetworkBehaviour.OnNetworkSpawn` method.
@@ -653,7 +663,7 @@ For simplicity purposes, the above example doesn't handle updating connected cli
 If you already had a maximum string size in mind, you could pre-allocate the byte array to avoid the cost of memory allocation.  The downside to this is that you would lose the "managed" flexibility of being able to handle varying message sizes, but the upside (as you will find out in the next example) is that you would always only send the exact number of bytes the string consumes and not send the entire pre-allocated buffer (i.e. you save on bandwidth). 
 :::
 
-However, if you already have know the maximum size of the `string` that you want to synchronize then there is another way to handle synchronizing "fixed" strings.
+However, if you already know the maximum size of the `string` that you want to synchronize then there is another way to handle synchronizing "fixed" strings.
 
 ### Strings: NetworkVariable FixedString Example
 
