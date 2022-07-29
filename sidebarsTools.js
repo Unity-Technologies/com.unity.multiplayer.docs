@@ -17,13 +17,13 @@ module.exports = {
             "id": "RNSM"
         },
     ],
-/*/
+
         "api": [
             {
                 "type": "doc",
                 "id": "api/introduction"
             },
-            {
+            /*/{
                 "collapsed": true,
                 "type": "category",
                 "label": "Tools",
@@ -34,7 +34,6 @@ module.exports = {
                         "label": "Tools"
                     },
                 ],
-            },
+            },/*/
         ],
-        /*/
 }

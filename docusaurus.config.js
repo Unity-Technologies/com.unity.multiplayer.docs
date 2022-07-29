@@ -133,12 +133,11 @@ module.exports = {
                             label: 'Documentation',
                             docsPluginId: 'tools',
                         },
-/*/
                         {
                             to: 'api/introduction',
                             label: 'API Reference',
                             docsPluginId: 'tools',
-                        }, /*/
+                        },
                     ]
                 },
                 {

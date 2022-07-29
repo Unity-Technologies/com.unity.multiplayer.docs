@@ -3,10 +3,10 @@ id: introduction
 title: API Overview
 ---
 
-The Unity Transport API reference provides information for availble classes, methods, delegates, and more for the `com.unity.transport` package. 
+The Unity Netcode Tools API reference provides information for availble classes, methods, delegates, and more for the `com.unity.multiplayer.tools` package. 
 
 :::unity Content Licenses
-All Unity Transport code is covered by Unity Companion License. See [Licenses](/reference/license) for more information.
+All Unity Netcode code is covered by Unity Companion License. See [Licenses](/reference/license) for more information.
 :::
 
 :::note
