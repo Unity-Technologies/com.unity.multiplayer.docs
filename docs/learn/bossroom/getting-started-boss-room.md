@@ -117,7 +117,7 @@ The Authentication API doesn't distinguish multiple instances of the same projec
 
 However, Authentication supports [Profiles](https://docs.unity.com/authentication/ProfileManagement.html) that allows different users existing on the same physical machine. To test locally, we need both builds and editor players to be able to switch to different Profiles.
 
-The [`ProfileManager`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/ProfileManager.cs) class wraps the logic for deciding what Profile you should be using, if any. In builds, the command-line argument `-AuthProfile` specifies the new profile id. When iterating in the editor, ParrelSync can use its `CloneManager` custom arguments to decide what user profile to use.
+The [`ProfileManager`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/ProfileManager.cs) class wraps the logic for deciding what Profile you should be using, if any. In builds, the command-line argument `-AuthProfile` specifies the new profile id. When iterating in the editor, ParrelSync can use its `CloneManager` custom arguments to decide what user profile to use. Users can also change profile using the in-game menu.
 
 `ProfileManager.Profile` generates the custom `InitializationOptions`:
 
@@ -132,14 +132,14 @@ if (profile.Length > 0)
 }
 
 ```
- 
+
 The code that executes profile switch and sign-in logic itself is as follows:
 
 ```
 async Task TrySignIn(InitializationOptions initializationOptions)
 {
     await Unity.Services.Core.UnityServices.InitializeAsync(initializationOptions);
-    
+
     if (!AuthenticationService.Instance.IsSignedIn)
     {
    	 await AuthenticationService.Instance.SignInAnonymouslyAsync();
@@ -172,9 +172,9 @@ Currently, the Lobby service has to be [polled for updates](https://docs.unity.c
 
 Handling player disconnections and reconnections is a necessity in a multiplayer game.
 
-Boss Room uses a [session management](../advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)). 
+Boss Room uses a [session management](../advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)).
 
-The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ServerGameNetPortal.cs)).
+The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs)).
 
 :::important
 It's important to promptly remove disconnected players from the lobby. Otherwise, the disconnected player cannot rejoin the lobby because they are still considered in it.
@@ -183,10 +183,10 @@ It's important to promptly remove disconnected players from the lobby. Otherwise
 When a player [disconnects from Relay](https://docs.unity.com/relay/disconnection.html), eventually the Lobby and Relay service integration (necessary before we run UTP connection) kicks out the disconnected players. However, the timeout for disconnect is quite long (~2 minutes), and we do not rely solely on this mechanism.
 
 To make the process of leaving lobby more reliable, there are several additional cleanup mechanisms:
-* The client code contains application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/ApplicationController.cs)) that sends a request to remove the player from the lobby
+* The client code contains application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)) that sends a request to remove the player from the lobby
 * The host has special logic that removes the disconnected player from the lobby as soon as the host knows about it (`NetworkManager.OnClientDisconnectCallback`). This is helpful when the client has crashed and couldn't send a "leave lobby" request.
-  * For this to work, the host uses `SessionManager` to store the mapping between UGS playerId and their NGO clientId. You can find this logic in [ServerGameNetPortal.cs - OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ServerGameNetPortal.cs).
-* Lastly, the client contains checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/Assets/BossRoom/Scripts/Shared/Net/ConnectionManagement/ClientGameNetPortal.cs).
+  * For this to work, the host uses `SessionManager` to store the mapping between UGS playerId and their NGO clientId. You can find this logic in [ServerGameNetPortal.cs - OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs).
+* Lastly, the client contains checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs).
 
 ## Troubleshooting
 

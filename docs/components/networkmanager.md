@@ -62,12 +62,28 @@ Do not start a NetworkManager within a NetworkBehaviour's Awake method as this c
 
 When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
-If you are using [Unity Transport](../../transport/about.md) it would look like this:
+The below examples use [Unity Transport](../../transport/about.md) to demonstrate a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` in order to configure your project's network settings programmatically: 
 
+If you are only setting the IP address and port number, then you can use the `UnityTransport.SetConnectionData` method:
 ```csharp
-NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = "127.0.0.1"; //takes string
-NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionDat.Port = 12345;           //takes integer
+NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
+    "127.0.0.1",  // The IP address is a string
+    (ushort)12345 // The port number is an unsigned short
+);
 ```
+
+If you are using the same code block to configure both your server and your client and you want to configure your server to listen to all IP addresses assigned to it, then you can directly access the `ConnectionAddressData` struct which provides you with additional properties: 
+```csharp
+var connectionData = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData;
+connectionData.Address = "127.0.0.1";           // The IP address is a string
+connectionData.Port = 12345;                    // The port number is an unsigned short
+connectionData.ServerListenAddress = "0.0.0.0"; // The server listen address is a string
+```
+
+:::note
+Using an IP address of 0.0.0.0 for the server listen address will make a server or host listen on all IP addresses assigned to the local system. This can be particularly helpful if you are testing a client instance on the same system as well as one or more client instances connecting from other systems on your local area network. Another scenario is while developing and debugging you might sometimes test local client instances on the same system and sometimes test client instances running on external systems.  
+:::
+
 
 [More information about Netcode for GameObjects Transports](../advanced-topics/transports.md)
 
@@ -103,7 +119,8 @@ One way to get a player's primary `NetworkObject` is via `NetworkClient.PlayerOb
 
 ```csharp
 void DisconnectPlayer(NetworkObject player)
-{    
+{   
+    // Note: If a client invokes this method, it will throw and exception
     NetworkManager.DisconnectClient(player.OwnerClientId);
 }
 ```
@@ -129,8 +146,12 @@ Both the client and the server can subscribe to the `NetworkManger.OnClientDisco
   - _Reason: The client already knows that it is disconnected._
 
 ### Connection Notification Manager Example
-Below is one example of how you could provide client connect and disconnect notifications to any
-type of NetworkBehaviour or MonoBehaviour derived component.
+Below is one example of how you could provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component. 
+
+:::important
+The `ConnectionNotificationManager` example below should only be attached to the same GameObject as `NetworkManager` to assure it persists as long as the `NetworkManager.Singleton` instance.
+:::
+
 
 ```csharp
 using System;
@@ -138,10 +159,9 @@ using UnityEngine;
 using Unity.Netcode;
 
 /// <summary>
-/// This could be attached to the NetworkManager GameObject and
-/// provides you with a single location that anything (netcode
-/// aware or not) can be notified when a client is connected and
-/// when the client is disconnected.
+/// Only attach this example component to the NetworkManager GameObject.
+/// This will provide you with a single location to register for client 
+/// connect and disconnect events.  
 /// </summary>
 public class ConnectionNotificationManager : MonoBehaviour
 {
@@ -159,6 +179,8 @@ public class ConnectionNotificationManager : MonoBehaviour
     {
         if (Singleton != null)
         {
+            // As long as you aren't creating multiple NetworkManager instances, throw an exception.
+            // (***the current position of the callstack will stop here***)
             throw new Exception($"Detected more than one instance of {nameof(ConnectionNotificationManager)}! " +
                 $"Do you have more than one component attached to a {nameof(GameObject)}");
         }
@@ -173,12 +195,13 @@ public class ConnectionNotificationManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        // As long as you attach this to the NetworkManager GameObject,
-        // you need not worry about removing your subscription from the
-        // NetworkManager connected disconnected events since when this
-        // is getting destroyed the NetworkManager itself is getting
-        // destroyed.
-        Singleton = null;
+        // Since the NetworkManager could potentially be destroyed before this component, only 
+        // remove the subscriptions if the singleton still exists.
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
+        }
     }
 
     private void OnClientConnectedCallback(ulong clientId)
