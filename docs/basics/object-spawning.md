@@ -17,13 +17,6 @@ A caveat of the above two rules is when one of the children `GameObject`s also h
 
 When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.NetworkObjectId` is used to help determine which `NetworkBehaviour` component instance will receive an update to a `NetworkVariable` or where to invoke an RPC. A `NetworkObject` component can have one or more `NetworkBehaviour` components assigned to it.
 
-**Network prefabs can be used as:**
-
-Netcode uses a server authoritative networking model so spawning objects can only be done on the server/host.
-To spawn an object first instantiate the object from your prefab and then invoke the spawn method on the `NetworkObject` component that should be attached to the prefab.
-This should only be done on the server as the object will automatically replicate on the other clients.
-By default a newly spawned object is owned by the server. See [Ownership](networkobject.md#ownership) for more information.
-
 ### Registering a Network Prefab
 
 One of the requirements to be able to spawn a network prefab instance is that it must be registered with the `NetworkManager` via the "Network Prefabs" property list.
@@ -77,12 +70,12 @@ To make this the default from the editor insepctor view:
 As an alternative way, you can make the `NetworkObject.DontDestroyWithOwner` property default to `true` by setting it on the `NetworkObject` itself like in the above screenshot.
 
 ### Despawning
+Only a server can despawn a `NetworkObject`, and the default despawn behavior is to destroy the associated GameObject. In order to despawn but not destroy a `NetworkObject`, you should call `NetworkObject.Despawn` and pass false as the parameter. Clients will always be notified and will mirror the despawn behavior.  If you despawn and destroy on the server then all clients will despawn and then destroy the `GameObject` that the `NetworkObjet` component is attached to.
 
-To despawn a networked object on all clients but keep it on the server call `NetworkObject.Despawn` on the server. A despawned `NetworkObject` can be spawned again, at a later time, with another spawn call if needed.
+On the client side, you should never call `Object.Destroy` on any `GameObject` with a `NetworkObject` component attached to it (this is not supported and will cause an exception to be thrown).  If you want to use a more client authority model, have the client with ownership invoke a ServerRpc to defer the despawning on server side.
 
-A client should never call destroy on a networked object itself (this is not supported and will throw an exception).  If you want to use a more client authority model, have the client with ownership invoke a ServerRpc to defer the despawning on server side.
-
-You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility](object-visibility.md).
+The only way to despawn `NetworkObject` for a specific client is to use `NetworkObject.NetworkHide`.
+See: [Object Visibility](object-visibility.md) for more information on this.
 
 ## Dynamically Spawned Network Prefabs
 
@@ -134,7 +127,7 @@ This type of dynamically spawned `NetworkObject` typically is a simple wrapper c
 Consumable and/or items that can be picked up by a player or NPC(i.e. a weapon, health, potion, etc.) would be some examples of when you might want to use non-pooled dynamically spawned `NetworkObjects`.
 
 :::note
-While the NonPooledDynamicSpawner example is one of the simplest ways to spawn a NetworkObject, there is a memory allocation cost associated with instantiating and destroying the GameObject and all attached components.  This design pattern can sometimes be all you really need for the netcode game asset you are working with, and other times you might want to respawn/re-use the object instance.  When performance is a concern and you want to spawn more than just one `NetworkObject` during the lifetime of the spawner or want to repeatedly respawn a single `NetworkObject`, the less proccessor intensive spawning technique is [pooled dynamic spawning](#pooled-dynamic-spawning).
+While the NonPooledDynamicSpawner example is one of the simplest ways to spawn a NetworkObject, there is a memory allocation cost associated with instantiating and destroying the GameObject and all attached components.  This design pattern can sometimes be all you really need for the netcode game asset you are working with, and other times you might want to respawn/re-use the object instance.  When performance is a concern and you want to spawn more than just one `NetworkObject` during the lifetime of the spawner or want to repeatedly respawn a single `NetworkObject`, the less proccessor and memory allocation intensive technique is to use [pooled dynamic spawning](#pooled-dynamic-spawning).
 :::
 
 :::note
@@ -143,9 +136,9 @@ Really, the when we use the term "non-pooled" more often than not we are referri
 
 ### Pooled Dynamic Spawning
 
-Pooled dynamic spawning is when a netcode object (`GameObject` with one `NetworkObject` component) is not destroyed on the server or the client when they are despawned. Instead, specific components are just disabled (or the `GameObject` itself) when a netcode object is despawned.  A pooled dynamically spawned netcode object is typically instantiated during an already memory allocation heavy period of time (like when a scene is loaded or even at the very start of your application prior to even establishing a network connection).  Pooled dynamically spawned netcode objects are more commonly thought of as more than one netcode object that can be re-used without incurring the memory allocation and initialization costs.  However, you might also run into scenarios where you need just one dynamically spawned netcode object to be treated like a pooled dynmically spawned netcode object.
+Pooled dynamic spawning is when netcode objects (`GameObject` with one `NetworkObject` component) are not destroyed on the server or the client when despawned. Instead, specific components are just disabled (or the `GameObject` itself) when a netcode object is despawned.  A pooled dynamically spawned netcode object is typically instantiated during an already memory allocation heavy period of time (like when a scene is loaded or even at the very start of your application prior to even establishing a network connection).  Pooled dynamically spawned netcode objects are more commonly thought of as more than one netcode object that can be re-used without incurring the memory allocation and initialization costs.  However, you might also run into scenarios where you need just one dynamically spawned netcode object to be treated like a pooled dynmically spawned netcode object.
 
-Fortunately, Netcode for GameObjects provides you with a way to be in control over the instatiation and destruction process for one or many netcode objects by implementing the `INetworkPrefabInstanceHandler` interface and registering it with the `NetworkPrefabHandler`(for multiple netcode objects see [Object Pooling](../advanced-topics/object-pooling)).
+Fortunately, Netcode for GameObjects provides you with a way to be in control over the instatiation and destruction process for one or many netcode objects by via the `INetworkPrefabInstanceHandler` interface. Any `INetworkPrefabInstanceHandler`implementation should be registered with the `NetworkPrefabHandler`(for multiple netcode objects see [Object Pooling](../advanced-topics/object-pooling)) to accomplish this.
 
 The easiest way to not destroy a network prefab instance is to have something, other than the instance itself, keeping a reference to the instance.  This way you can simply set the root `GameObject` to be inactive when it is despawned while still being able to set it active when the same network prefab type needs to be respawned.  Below is one example of how you can accomplish this for a single netcode object instance:
 
