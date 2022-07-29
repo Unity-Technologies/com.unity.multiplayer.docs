@@ -320,21 +320,6 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Tools",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "tools/install-tools",
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/profiling",
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
             "label": "Debugging",
             "items": [
                 {
