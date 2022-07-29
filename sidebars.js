@@ -476,91 +476,67 @@ module.exports = {
         [
             {
                 "type": "doc",
-                "id": "learn/introduction",
+                "id": "reference/glossary/high-level-terminology"
             },
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Reference Material",
+                "label": "Lag",
                 "items": [
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Networking Concepts",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/high-level-terminology"
-                            },
-                            {
-                                "collapsed": true,
-                                "type": "category",
-                                "label": "Lag",
-                                "items": [
-                                    {
-                                        "type": "doc",
-                                        "id": "reference/glossary/ticks-and-update-rates"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/lagandpacketloss"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/clientside_interpolation"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/dealing-with-latency"
-                                    },
-                                ],
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-terms"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/prioritization"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/relevancy"
-                            },
-                        ],
-
+                        "type": "doc",
+                        "id": "reference/glossary/ticks-and-update-rates"
                     },
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Game Architecture",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/multiplayer-game-arhitecture"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-topologies"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "learn/listen-server-host-architecture"
-                            }
-                        ]
+                        "type": "doc",
+                        "id": "learn/lagandpacketloss"
                     },
-
-
-                ],
+                    {
+                        "type": "doc",
+                        "id": "learn/clientside_interpolation"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/dealing-with-latency"
+                    },
+                        ],
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/network-terms"
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/prioritization"
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/relevancy"
+            },
+            {
+                "collapsed": true,
+                "type": "category",
+                "label": "Multiplayer Game Architecture",
+                "items": [
+                    {
+                        "type": "doc",
+                        "id": "learn/multiplayer-game-arhitecture"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "reference/glossary/network-topologies"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/listen-server-host-architecture"
+                    }
+                        ]
             },
             {
                 "type": "doc",
                 "id": "learn/faq"
             },
         ],
-
 
     api:
         [

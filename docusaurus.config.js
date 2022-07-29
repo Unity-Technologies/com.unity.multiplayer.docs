@@ -149,8 +149,8 @@ module.exports = {
                     docsPluginId: 'tools'
                 },
                 {
-                    to: '/learn/introduction',
-                    label: 'Education Resources',
+                    to: 'reference/glossary/high-level-terminology',
+                    label: 'Concepts and FAQs',
                     className: 'nav-break',
                     position: 'left',
                 },
