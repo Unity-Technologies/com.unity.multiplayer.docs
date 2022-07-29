@@ -1,10 +1,10 @@
 ---
 id: install
 title: Install Unity Transport
-description: Install Unity Transport, com.unity.transport package, using the Package Manager.
+description: Install Unity Transport, the com.unity.transport package, using the Package Manager.
 ---
 
-Follow these instructions to install Com.Unity.Transport.
+Follow these instructions to install Unity Transport.
 
 ## Prerequisites
 
@@ -12,9 +12,9 @@ You need Unity Editor version 2020.1.2f1 or later.
 
 ## Install Transport
 
-1. Open the Unity Editor.
-2. Create a new Project.
-1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
+1. Open the **Unity Editor**.
+1. Create a new Project or open an existing Project you want to include Transport.
+1. Open the **Unity Package Manager** by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar.
 
   You have the following options:
