@@ -3,10 +3,10 @@ id: max-players
 title: Limiting the maximum number of players
 ---
 
-
-Netcode for Gameobjects (Netcode) provides a way to implement a [connection approval delegate](../api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate)  that can reject incoming connections based on custom logic.
+Netcode for Gameobjects (Netcode) provides a way to customize the [connection approval process](/getting-started/connection-approval.md) that can reject incoming connections based on any number of user-specific reasons.
 ​
 
+Boss Room provides one example of how to handle limiting the number of players through the connection approval process:
 
 Boss Room provides an example of such delegate
 
@@ -19,13 +19,13 @@ The code below shows an example of an over-capacity check that would prevent mor
 ```csharp
 if( m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPlayers )
 {
-    gameReturnStatus = ConnectStatus.ServerFull;
+    return ConnectStatus.ServerFull;
 }
 ```
 ​
 :::tip**SUBJECT TO CHANGE:**
 ​
-In connection approval delegate Netcode does not support an ability to send anything more than a boolean back. 
+In connection approval delegate Netcode does not support an ability to send anything more than a boolean back.
 Boss Room demonstrates a way to provide meaningful error code to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
 
 :::

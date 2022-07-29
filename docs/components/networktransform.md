@@ -18,7 +18,7 @@ Quite often not all transform values of a GameObject need to be synchronized ove
 
 ## Thresholds
 
-The threshold values can be used to set a minimum threshold value. Changes to position, rotation or scale below the threshold will not be synchronized  That way minor changes to a value will not trigger a position synchronization which can help to reduce bandwidth.
+The threshold values can be used to set a minimum threshold value. Whether to properly scale to your project's world unit scale or to reduce the frequency of synchronization updates, changes below threshold values will not be synchronized. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (i.e. position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) will reduce the frequency of when the object's position is synchronized which translates to reducing bandwidth consumption.
 
 :::note
 Many small changes below the threshold will still result in a synchronization of the values as soon as all the accumulative changes cross the threshold.
@@ -48,7 +48,8 @@ darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
 
 `NetworkTransform` always synchronizes positions from the server to the clients and position changes on the clients are not allowed. Netcode for GameObjects comes with a sample containing a `ClientNetworkTransform`. This transform synchronizes the position of the owner client to the server and all other client allowing for client authoritative gameplay.
 
-The `ClientNetworkTransform` lives inside the Multiplayer Samples Utilities package. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"
+The `ClientNetworkTransform` lives inside the Multiplayer Samples Utilities package. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: `https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main`
 
 Or you can directly add this line to your `manifest.json` file:
- "com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"
+
+`"com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"`

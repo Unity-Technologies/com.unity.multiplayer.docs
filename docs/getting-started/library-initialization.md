@@ -3,14 +3,14 @@ id: library-initialization
 title: Library Initialization
 ---
 
-Initializing  Netcode for GameObjects (Netcode) is fairly simple. You need a `GameObject` with the `NetworkManager` component added to it. The `NetworkManager` class has a static singleton reference to itself making it easy to access from anywhere. The first configuration you have to do is to set the [`Transport`](../advanced-topics/custom-transports.md). 
+Initializing Netcode for GameObjects (Netcode) is fairly simple. You need a `GameObject` with the `NetworkManager` component added to it. The `NetworkManager` class has a static singleton reference to itself making it easy to access from anywhere. The first configuration you have to do is to set the [`Transport`](../advanced-topics/custom-transports.md). 
 
-## Add MLAPI library
+## Add Netcode for GameObjects library
 
-Add the Unity MLAPI library to your `using` declarations:
+Add Netcode for GameObjects to your `using` declarations:
 
-```
-using MLAPI;
+```csharp
+using Unity.Netcode;
 ```
 
 To initialize the library. You have three options: Host mode, Client mode, and Server mode.

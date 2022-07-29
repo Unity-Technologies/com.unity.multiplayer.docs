@@ -132,14 +132,14 @@ if (profile.Length > 0)
 }
 
 ```
- 
+
 The code that executes profile switch and sign-in logic itself is as follows:
 
 ```
 async Task TrySignIn(InitializationOptions initializationOptions)
 {
     await Unity.Services.Core.UnityServices.InitializeAsync(initializationOptions);
-    
+
     if (!AuthenticationService.Instance.IsSignedIn)
     {
    	 await AuthenticationService.Instance.SignInAnonymouslyAsync();
@@ -172,7 +172,7 @@ Currently, the Lobby service has to be [polled for updates](https://docs.unity.c
 
 Handling player disconnections and reconnections is a necessity in a multiplayer game.
 
-Boss Room uses a [session management](../advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)). 
+Boss Room uses a [session management](../advanced-topics/session-management/index.html) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)).
 
 The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs)).
 

@@ -31,7 +31,7 @@
     "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-sass": "^0.1.14",
     "mdx-mermaid": "^1.2.1",
-    "mermaid": "^8.13.9",
+    "mermaid": "^9.1.2",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "prism-react-renderer": "^1.2.0",
     "react": "^16.8.4",

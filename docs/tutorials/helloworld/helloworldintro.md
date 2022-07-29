@@ -6,12 +6,16 @@ description: Tutorial that explains creating a project, installing the  Netcode 
 
 A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
 
-This "Hello World" tutorial walks you through creating a project, installing the  Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game.
+This "Hello World" tutorial walks you through creating a project, installing the Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game.
+
+  :::note 
+  The videos on this page were recorded using a prerelease version of Netcode for GameObjects, so a few details of those videos are somewhat inaccurate nowadays. However, the written instructions on this page are accurate, as of Netcode for GameObjects v1.0.0
+  :::
 
 
 ## Requirements
 
-This tutorial requires an Netcode-supported version of Unity (2019.4+).
+This tutorial requires an Netcode-supported version of Unity (2020.3+).
 
 
 ## Create a new project in Unity
@@ -56,7 +60,7 @@ In this section we will add a Network Manager and add a Transport to our project
 1. Select `NetworkManager` Component from the list displayed.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkTransport` field. 
 1. Click "Select Transport".
-1. Select `UnetTransport`.
+1. Select `UnityTransport`.
 1. Save your scene.
 
 
@@ -96,6 +100,15 @@ This section adds in a player object and spawns it for each connected player.
 <iframe src="https://www.youtube.com/embed/B_FWb4J1Pxw?playlist=B_FWb4J1Pxw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
+### Adding your scene to the build
+
+  :::important
+  When 'Enable Scene Management' is enabled for the NetworkManager (allowing the server to control which scenes should be loaded for the clients), we must ensure that the current scene has been added to the build, otherwise, we will be unable to enter play mode. This option is enabled by default.
+  :::
+
+1. Click **File -> Build Settings**, in the upper-left corner of the Unity window
+1. Click **Add Open Scenes**
+1. Close the `Build Settings` window.
 
 ### Testing Hello World
 
@@ -103,6 +116,7 @@ Now we will test to see if everything works as expected.
 
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 
+
 
 <iframe src="https://www.youtube.com/embed/Ee3t0xNF0n8?playlist=Ee3t0xNF0n8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
         height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
