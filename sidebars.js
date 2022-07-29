@@ -25,22 +25,6 @@ module.exports = {
                     "type": "doc",
                     "id": "migration/migratingfrommlapi"
                 },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Hello World",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldintro"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldtwo"
-                        }
-                    ]
-                },
-
             ],
         },
         {
@@ -361,6 +345,21 @@ module.exports = {
             "type": "category",
             "label": "Walk-Throughs",
             "items": [
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Hello World",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "tutorials/helloworld/helloworldintro"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "tutorials/helloworld/helloworldtwo"
+                        }
+                    ]
+                },
                 {
                     "collapsed": true,
                     "type": "category",
