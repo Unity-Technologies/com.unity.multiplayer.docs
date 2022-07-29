@@ -28,7 +28,7 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Netcode Tools",
+                    "label": "Multiplayer Tools",
                     "items": [
                         {
                             type: 'doc',

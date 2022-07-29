@@ -4,7 +4,9 @@ title: Profiler
 sidebar_label: Profiler
 ---
 :::caution
-This guide uses Unity 2021.2 beta. On 2021.1 and below, the profiler outputs only simple statistics.
+This guide uses Unity 2021.3 LTS.
+
+On 2021.1 and below, the profiler outputs only simple statistics.
 :::
 
 Profiling is the process of measuring the performance of your game while it is running. It allows you to check your optimization points and control that your enhancements make a real difference.
@@ -28,7 +30,7 @@ Starting from Unity 2021.1, the Unity profiler can extend its features with Netc
 The network profiler samples its data by frame rate. Therefore, you may find the graphs a little spiky.
 :::
 
-To enable profiling support for Netcode, [install the Netcode Tools package](install-tools.md). If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the moduels to appear.
+To enable profiling support for Netcode, [install the Multiplayer Tools package](install-tools.md). If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the moduels to appear.
 
 :::caution
 Netcode for GameObjects does not update the legacy profiler modules **Network Messages** and **Network Operations**.

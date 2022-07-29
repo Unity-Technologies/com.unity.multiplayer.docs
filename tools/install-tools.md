@@ -1,10 +1,10 @@
 ---
 id: install-tools
 title: Install Tools for Netcode for GameObjects (Netcode)
-sidebar_label: Install Netcode Tools
+sidebar_label: Install Multiplayer Tools
 ---
 
-To use Netcode tools, such as the [profiler](profiler.md) or [runtime stats monitor](runtime-stats-monitor.md), you need to install the tools package by name.
+To use Multiplayer Tools, such as the [profiler](profiler.md) or [runtime stats monitor](runtime-stats-monitor.md), you need to install the tools package by name.
 
 1. Open your Unity Hub and select the Project your are presently working on.
 2. In the editor's menu bar, navigate to **Window** > **Package Manager**.

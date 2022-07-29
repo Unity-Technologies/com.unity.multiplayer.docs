@@ -118,7 +118,7 @@ module.exports = {
                 },
                 {
                     to: 'about',
-                    label: 'Netcode Tools',
+                    label: 'Multiplayer Tools',
                     position: 'left',
                     docsPluginId: 'tools',
                     className: 'nav-break',
