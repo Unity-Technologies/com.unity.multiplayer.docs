@@ -619,7 +619,7 @@ module.exports = {
           {
             redirects: [
               {
-                to: '/netcode/current/learn/bossroom',
+                to: '/netcode/current/learn/bossroom/bossroom',
                 from: '/docs/learn/bossroom/index.html',
               },
             ]
