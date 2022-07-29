@@ -129,7 +129,7 @@ module.exports = {
                             docsPluginId: 'releases'
                         },
                         {
-                            to: 'about',
+                            to: 'install-tools',
                             label: 'Documentation',
                             docsPluginId: 'tools',
                         },
