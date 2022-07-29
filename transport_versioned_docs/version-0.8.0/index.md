@@ -1,7 +1,14 @@
+
+
 ---
 id: introduction
 title: About Unity Transport
 ---
+:::danger
+
+This version of Unity Transport is neither supported nor suitable for production. Please refer to the documentation for Unity transport 1.0
+
+:::
 
 Unity Transport provides the `com.unity.transport` package, used to add multiplayer and network features to your project.
 
