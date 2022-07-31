@@ -1,8 +1,11 @@
 ---
-id: helloworldintro
+id: helloworld
 title: Your First Networked Game "Hello World"
 description: Tutorial that explains creating a project, installing the  Netcode for GameObjects package, and creating the basic components for your first networked game.
 ---
+
+This is essentially the same as GP Foundation module.
+
 
 A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
 

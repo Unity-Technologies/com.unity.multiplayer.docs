@@ -4,6 +4,8 @@ title: Golden Path Module One
 description: Tutorial that explains adding scripts to objects, editor modes (Host Server and Client), basic player movement and basic RPC use.
 ---
 
+Essentially same as HW part 2
+
 In this guide we cover the following:
 
 - Adding scripts to your objects

@@ -1,8 +1,10 @@
 ---
-id: starting_out
+id: gp_intro
 title:  Learning with Golden Path Introduction
-description: Introduction to the Golden Path series, explaining the underliying aim of the series 
+description: Introduction to the Golden Path series, explaining the aim of the series 
 ---
+
+Rewrite so that Hello World is part 1, then GP module 1 and 2
 
 These sections are intended to help guide you through the features of  Netcode for GameObjects (Netcode), they will provide  examples of how Netcode implements common  Multiplayer features. We will continue to add and update this section with more materials as we grow Netcode.  
 

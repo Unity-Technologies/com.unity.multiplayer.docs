@@ -11,19 +11,19 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "migration/install"
+                    "id": "installation/install"
                 },
                 {
                     "type": "doc",
-                    "id": "migration/upgrade-guide",
+                    "id": "installation/upgrade-guide",
                 },
                 {
                     "type": "doc",
-                    "id": "migration/migratingtonetcode"
+                    "id": "installation/migratingtonetcode"
                 },
                 {
                     "type": "doc",
-                    "id": "migration/migratingfrommlapi"
+                    "id": "installation/migratingfrommlapi"
                 },
             ],
         },
@@ -34,11 +34,11 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "getting-started/connection-approval"
+                    "id": "basics/connection-approval"
                 },
                 {
                     "type": "doc",
-                    "id": "getting-started/max-players"
+                    "id": "basics/max-players"
                 },
                 {
                     "type": "doc",
@@ -339,39 +339,23 @@ module.exports = {
                 }
             ]
         },
-        
         {
             "collapsed": true,
             "type": "category",
             "label": "Walk-Throughs",
             "items": [
                 {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Hello World",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldintro"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldtwo"
-                        }
-                    ]
+                    "type": "doc",
+                    "id": "tutorials/helloworld/helloworld"
                 },
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Learning Netcode with Goldenpath",
+                    "label": "Learning Netcode with the Goldenpath Series",
                     "items": [
                         {
                             "type": "doc",
-                            "id": "tutorials/goldenpath_series/starting_out"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+                            "id": "tutorials/goldenpath_series/gp_intro"
                         },
                         {
                             "type": "doc",

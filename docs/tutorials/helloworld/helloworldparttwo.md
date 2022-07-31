@@ -4,6 +4,9 @@ title: Building on "Hello World"
 sidebar_label: Building on "Hello World"
 description: Tutorial that explains adding scripts to objects, editor modes (Host Server and Client), basic player movement,Permissions and basic RPC use.
 ---
+This is the same as GP Module 1.
+
+
 In this guide we will build on the work we have already done in Hello World and add in a few more features, we will be covering the following:
 
 - Adding scripts to your objects
