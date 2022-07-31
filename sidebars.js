@@ -346,12 +346,12 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "tutorials/helloworld/helloworld"
+                    "id": "tutorials/helloworld"
                 },
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Learning Netcode with the Goldenpath Series",
+                    "label": "Learning Netcode with Goldenpath",
                     "items": [
                         {
                             "type": "doc",

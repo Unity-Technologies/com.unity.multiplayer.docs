@@ -1,6 +1,6 @@
 ---
 id: helloworld
-title: Your First Networked Game "Hello World"
+title: Your Netcode "Hello World" Project
 description: Tutorial that explains creating a project, installing the  Netcode for GameObjects package, and creating the basic components for your first networked game.
 ---
 

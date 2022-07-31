@@ -1,117 +1,65 @@
 ---
 id: install
-title: Install  Netcode for GameObjects
-description: Install the on-going development version of Unity  Netcode for GameObjects from a cloned respository. 
+title: Install Netcode for GameObjects
+description: How to install Unity Netcode for GameObjects (Netcode). 
 ---
 
-Multiple methods are available to install the  Netcode for GameObjects (Netcode) package. This guide details how to install the [**develop** branch](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/tree/develop) of Netcode.
+Use this guide to install Unity Netcode for GameObjects (Netcode) 1.0.0 and later.
 
-:::important In-Progress Development
-All features and code available in the *develop* branch is in-progress and not final. All cloned code may change daily or weekly, depending on submitted pull requests. All documentation and release notes for the *develop* version are not final.
+## Prerquisites
+
+Before installing Netcode, you should ensure you have:
+  * An active Unity account with a valid license.
+  * A Netcode-supported installation of Unity. See [Netcode's requirements](#netcode-installation-requirements) for full details.
+  * An existing Unity project. If you do not have a project yet, we recommend using the [Hello World](../tutorials/helloworld.md) example to test the Netcode installation process and learn some of the basic features of Netcode.
+
+### Netcode Installation Requirements
+
+Netcode supports the following Unity versions:
+* Unity 2020.3, 2021.1, 2021.2, and 2021.3 LTS <!--Confirm versions-->
+* Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+
+Netcode supports the following platforms:
+* Windows, MacOS, and Linux
+* iOS and Android
+* XR platforms running on Windows, Android, and iOS operating systems
+* Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact us for more information about specific closed platforms.
+  * When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there may be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
+
+:::caution Using WebGL
+Netcode does not support the WebGL platform because it does not allow access to IP Sockets.
+
+There are third party transports provided by the community that may enable you to use Netcode on WebGL platforms. A list of these transports are found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
+
+Use with caution:
+* You may encounter bugs and issues while using Netcode on WebGL, and we will not prioritize fixing those issues.
+* The server or host cannot be a WebGL client, but a Desktop or Mobile build.
+* You may experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
 :::
 
-## Clone the repo
+## Installing with the Package Manager
 
-You need to clone the code repo locally to work with in-development code.
+1. Open your **Unity Hub** and select the **Project** you are presently working on or create a **New Project**.
+1. From the menu bar, navigate to **Window** > **Package Manager**.
+1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add package by name..**.
 
-First, install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
+ ![Package Installed](/img/install/addbyname.png)
 
-Next, decide on how you want to clone: command line or application.
+1. Copy and paste the following in the pop-up window:
+```
+com.unity.netcode.gameobjects
+```
 
-### Git Commands
-To clone with Git commands:
-
-1. Open a command line terminal.
-1. Change directory to a location on your local.
-1. Enter a command to clone. Example commands:
-  
-    * Git CLI: `git clone https://github.com/Unity-Technologies/com.unity.netcode.gameobjects`
-    * GitHub CLI: `gh repo clone Unity-Technologies/com.unity.netcode.gameobjects`
-
-1. All files clone locally.
-
-### GitHub Desktop
-
-To clone with GitHub Desktop:
-
-1. Install [GitHub Desktop](https://desktop.github.com/).
-1. Through the GitHub repository, select **Code** > **Open with GitHub Desktop** option.
-1. Select a location to clone to and complete cloning.
-
-To clone directory through GitHub Desktop:
-
-1. Open the application. 
-1. Click **File** > **Clone** Repository.
-1. Select the URL tab, copy and paste the repository URL:
-
-  ```html
-  https://github.com/Unity-Technologies/com.unity.netcode.gameobjects
-  ```
-1. Click **Clone**.
-
-## Open the develop branch
-
-To run the develop branch of Netcode:
-
-1. Checkout the develop branch of Netcode using Git commands or application like GitHub Desktop.
-1. Open Unity Hub and click **Add**.
-1. Navigate to the cloned GitHub repository and select the testproject folder.
-1. When opened, click **File** > **Open Scene**.
-1. Navigate to and select *testproject/Assets/MainMenu.unity*. All scenes load.
-
-  ![Load Scene](/img/install/develop-scene.png)
-
-  You should see **Custom** installed packages available in *develop*, such as Netcode Networking Library and Unity Transport for Netcode.
-
-  ![Packages](/img/install/develop-packages.png)
-
-:::tip Updated Local Code
-We recommend updating your local clone often from the Netcode repository. This branch is constantly updated with new and updated features, fixed issues, and more.
-:::
-
-:::note Branching
-If you want to make changes to *develop* code and content, you may want to create a local branch off of develop. Keep your branch updated from the remote develop branch to access fixes and updated features. Do not attempt to merge commits to the develop branch back into the respository. If you want to contribute, see [Netcode Contributing](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/develop/CONTRIBUTING.md) guidelines.
-:::
+1. Click **Add**. The package installs and appears as **Netcode for GameObjects** under **Packages** in the **Package Manager** window.
 
 ## Next Steps
 
 See the following content to continue your journey using Netcode:
 
-* [Migrating From UNet to MLAPI](migratingtonetcode) for UNet users
-* [Updating to the Unity Package](migratingfrommlapi.md) for migrating from previous MLAPI versions to Netcode
-* [Building Golden Path](../tutorials/goldenpath_series/starting-out.md) to get started from install to project creation
-* [Your First Networked Game "Hello World"](../tutorials/helloworld/helloworldintro.md) to get started from install to project creation
-
-## Troubleshooting
-
-**Errors with incorrect package loading**
-
-If you receive a different package than Netcode when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
-
-Hover over the URL to copy, click the **Copy** function in the code block, and use this when adding the package from a Git URL in Unity Hub.
-
-**Errors adding package**
-
-MacOS users may receive the following errors:
-
-* `Cannot perform upm operation: Unable to add package... Error when executing git command. xcrun: error: invalid active developer path`
-* `Error adding package...`
-
-These are common errors for MacOS users that have not installed or updated Xcode or Xcode developer tools. You may need to upgrade your Xcode installation. In a terminal, use this command: `xcode-select --install`.
-
-If you newly installed or updated Git, you may also need to restart your system. Restarting Unity may not be enough if you added Git and could receive a package loading error.
-
-**Errors finding Git installation**
-
-If you receive an OS or Unity error trying to locate Git after updating or installing Git, you need to fully restart your computer. Restarting only Unity may not fully update system information to correctly locate the install.
-
-**VPN or Proxy Errors**
-
-If you use VPN or proxy software from international locations, you may encounter access issues. Consider turning off your VPN service or selecting a different location.
-
-**Package Resolution Error when using a Git Dependancy referencing an Annotated Tag in its Git URL**
-
-For more information on this error please refer to [Unity Issue Tracker.](https://issuetracker.unity3d.com/issues/package-resolution-error-when-using-a-git-dependency-referencing-an-annotated-tag-in-its-git-url)
-
-
-
+* Use the [Hello World project](../tutorials/helloworld.md) to create a project, test your Netcode install, and learn basic features of Netcode for GameObjects.
+* Build on the Hello World project to continue learning about different features of Netcode with the [Golden Path series](../tutorials/goldenpath_series/gp_intro.md).
+* Check out the educational samples to further explore Netcode and its abilities:
+  * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../learn/bitesize/bitesize-clientdriven.md)
