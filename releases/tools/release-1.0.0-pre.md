@@ -1,6 +1,6 @@
 ---
 id: tools-1-0-0-pre
-title: Multiplayer Tools 1.0.0
+title: Multiplayer Tools 1.0.0 and earlier
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
