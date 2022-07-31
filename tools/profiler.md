@@ -1,7 +1,7 @@
 ---
 id: profiler
-title: Profiler
-sidebar_label: Profiler
+title: Network Profiler
+sidebar_label: Network Profiler
 ---
 :::caution
 This guide uses Unity 2021.3 LTS.
@@ -24,13 +24,19 @@ Regarding latency, it is a whole topic in itself, but remember that we are talki
 
 ## Prerequisites
 
-Starting from Unity 2021.1, the Unity profiler can extend its features with Netcode for GameObjects [Netcode]. Netcode enables you to profile your game in the same tool you are already using for CPU, GPU, and memory.
+Starting from Unity 2021.1, the Unity Profiler can be extended with features to support profiling the network traffic of multiplayer games built using Netcode for Game Objects (Netcode). These features are available as part of the Network Profiler included in the Multiplayer Tools package. The Network Profiler enables you to profile the networking activity of your game in the same profiler that you use to profile CPU, GPU, and memory.
+
+To enable profiling support for Netcode, [install the Multiplayer Tools package](install-tools.md).
+
+You should now see two additional modules in your profiler (**Window** > **Analysis** > **Profiler**):
+* Messages - Network messages sent to the transport
+* Objects - Activity related to, and grouped by, network objects
 
 :::note
+If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the modules to appear.
+
 The network profiler samples its data by frame rate. Therefore, you may find the graphs a little spiky.
 :::
-
-To enable profiling support for Netcode, [install the Multiplayer Tools package](install-tools.md). If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the moduels to appear.
 
 :::caution
 Netcode for GameObjects does not update the legacy profiler modules **Network Messages** and **Network Operations**.
