@@ -4,4 +4,61 @@ title: Runtime Network Stats Monitor
 sidebar_label: Runtime Network Stats Monitor
 ---
 
-Content
+The Runtime Network Stats Monitor (RNSM) is a configurable component to display various network stats in an on-screen display at runtime, including stats from the Netcode for GameObjects package and custom, user-defined stats.
+
+## Prerequisites
+
+To enable the Runtime Network Stats Monitore, [install the Multiplayer Tools package](install-tools.md). The Runtime Net Stats Monitor should now be present under Component > Netcode, or when searching for it by name after pressing “Add Component”.
+
+----- Work through below
+
+## Adding the Runtime Net Stats Monitor to the Scene
+
+The Runtime Net Stats Monitor can be added to the scene by adding the Runtime Net Stats Monitor component to an object, either by pressing “Add Component” and searching for “Runtime Net Stats Monitor” or by selecting it under Component > Netcode.
+
+## Configuring the Runtime Net Stats Monitor
+
+The Runtime Net Stats Monitor can be configured from the inspector. You can add, remove, and customize its Display Elements in the inspector under Configuration/Display Elements. Each Display Element displays one or more stats, which can be added, removed, and modified under each Display Element’s “Stats” field.
+
+## Including/Excluding the Runtime Net Stats Monitor in Builds
+When using the tools package, the implementation of the Runtime Net Stats Monitor (RNSM) can be included/excluded from a build independently from its interface (the RuntimeNetStatsMonitor component), to enable developers to save space and other resources in cases where this is important, such as on mobile.
+
+The RNSM implementation is always included in the editor, is included by default in development builds, and is not included by default in release builds.
+
+### Excluding the RNSM from Development Builds
+
+The RNSM implementation is included in development builds by default. The RNSM can be excluded from development builds either by:
+
+Unchecking the “Include in Develop Builds” toggle under Project Settings > Multiplayer Tools > Net Stats Monitor.
+Manually defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_DISABLED_IN_DEVELOP under Project Settings > Player > Other Settings > Scripting Define Symbols.
+
+### Including the RNSM in Release Builds
+
+The RNSM implementation is not included in release builds by default. The RNSM can be included in release builds either by:
+
+Checking the “Include in Release Builds” toggle under Project Settings > Multiplayer Tools > Net Stats Monitor.
+Manually defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_ENABLED_IN_RELEASE under Project Settings > Player > Other Settings > Scripting Define Symbols.
+
+### Including the RNSM in All Builds
+
+In addition to the settings above that allow the RNSM to be included/excluded in development and release builds independently, the RNSM can be forcibly enabled in all builds by defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_IMPLEMENTATION_ENABLED under Project Settings > Player > Other Settings > Scripting Define Symbols. This option takes precedence over the options mentioned above to exclude the RNSM from development builds.
+
+## Generating Test Data for the Runtime Net Stats Monitor
+
+To generate test data to display in the RNSM if your project does not already have a Netcode For Game Objects (NGO) Network Manager that is networking with clients, you may do the following:
+
+Define UNITY_MP_TOOLS_DEV under Project Settings > Player > Scripting Define Symbols.
+Create a new object.
+Attach either the “Test Data Generator Component” to this new object.
+Alternatively, to create test data that is more customizable, you can attach and configure the “Custom Test Data Generator” component.
+These two test data generation components can be safely used side-by-side, although this may be confusing as the data from both with be aggregated and displayed in the RNSM.
+
+## Styling the Runtime Net Stats Monitor
+
+The styling of the RNSM can be customized by dragging and dropping a USS stylesheet into the “Custom Style Sheet” field of the RNSM component. More information about USS is available at the following link: https://docs.unity3d.com/2021.2/Documentation/Manual/UIE-USS.html.
+
+The USS file containing the default styling for the RNSM is Implementation/UI/Resources/rnsmStyleSheet.uss, and can be used either as an example of how to style the RNSM or copied and used as a jumping-of-point for custom styling.
+
+## USS Classes
+
+A full list of USS class names that can be used to style the RNSM can be found in Configuration/UssClassNames.cs.
