@@ -115,7 +115,7 @@ This type of dynamically spawned `NetworkObject` typically is a simple wrapper c
 
         public override void OnNetworkDespawn()
         {
-            if (DestroyWithSpawner && m_SpawnedNetworkObject != null && m_SpawnedNetworkObject.IsSpawned)
+            if (IsServer && DestroyWithSpawner && m_SpawnedNetworkObject != null && m_SpawnedNetworkObject.IsSpawned)
             {
                 m_SpawnedNetworkObject.Despawn();
             }
@@ -126,7 +126,7 @@ This type of dynamically spawned `NetworkObject` typically is a simple wrapper c
 
 Consumable and/or items that can be picked up by a player or NPC(i.e. a weapon, health, potion, etc.) would be some examples of when you might want to use non-pooled dynamically spawned `NetworkObjects`.
 
-:::note
+:::caution
 While the NonPooledDynamicSpawner example is one of the simplest ways to spawn a NetworkObject, there is a memory allocation cost associated with instantiating and destroying the GameObject and all attached components.  This design pattern can sometimes be all you really need for the netcode game asset you are working with, and other times you might want to respawn/re-use the object instance.  When performance is a concern and you want to spawn more than just one `NetworkObject` during the lifetime of the spawner or want to repeatedly respawn a single `NetworkObject`, the less proccessor and memory allocation intensive technique is to use [pooled dynamic spawning](#pooled-dynamic-spawning).
 :::
 

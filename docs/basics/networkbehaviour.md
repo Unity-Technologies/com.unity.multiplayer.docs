@@ -52,7 +52,7 @@ Start               | OnNetworkSpawn
 
 #### Dynamically Spawned NetworkObjects
 
-For dynamically spawned `NetworkObjects` (instantiating a network prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Awake` and `Start` methods are invoked.  So, it is important to be aware of this because things like finding and assigning a component to a local property within the `Start` method exclusively will result in that property not being set when a `NetworkObject` is dynamically spawned.  To circumvent this issue, you could have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
+For dynamically spawned `NetworkObjects` (instantiating a network prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it is important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you could have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
 
 ```csharp
 public class MyNetworkBehaviour : NetworkBehaviour
@@ -83,7 +83,7 @@ public class MyNetworkBehaviour : NetworkBehaviour
 
 #### In-Scene Placed NetworkObjects
 
-For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Awake` and `Start` methods since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example demonstrates how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`.  It all depends upon what usage pattern works best for your project.
+For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Start` method since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example demonstrates how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`.  It all depends upon what usage pattern works best for your project.
 
 ### De-Spawning
 
