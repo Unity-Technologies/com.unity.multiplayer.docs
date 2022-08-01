@@ -178,7 +178,7 @@ static void SubmitNewPosition()
 </details>
 
 
-1. Add the `HelloWorldManager` script as a component.
+1. Add the `HelloWorldManager` script component to the `HelloWorldManager` `GameObject`.
 
 ## Adding Editor Modes to Hello World
 
@@ -306,7 +306,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned and the networking is setup. We override `OnNetworkSpawn` since a client and a server will run different logic here. 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned. We override `OnNetworkSpawn` since a client and a server will run different logic here.
 
 :::note
 This can be overriden on any `NetworkBehaviour`.
@@ -452,9 +452,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 Whenever you press the GUI button (which is contextual depending on if you are server or a client), you find your local player and simply call `Move()`.
 
-You can now create a build which will demonstrate the concepts outlined above. 
+You can now create a build which will demonstrate the concepts outlined above.
+
 :::tip
-Make sure **SampleScene** is included in **BuildSettings**.
+Make sure **SampleScene** is included in **BuildSettings** > **Scenes in Build** list.
 :::
 
 One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
