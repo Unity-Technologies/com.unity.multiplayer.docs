@@ -77,6 +77,10 @@ On the client side, you should never call `Object.Destroy` on any `GameObject` w
 The only way to despawn `NetworkObject` for a specific client is to use `NetworkObject.NetworkHide`.
 See: [Object Visibility](object-visibility.md) for more information on this.
 
+:::warning
+If you have `GameObject` children, with `NetworkBehaviour` components attached, of a parent `GameObject`, with a `NetworkObject` component attached, you cannot disable the `GameObject` children prior to spawning or despawning. Doing so, in v1.0.0, could cause unexpected results and it is recommended to make sure all children are enabled in the hierarchy prior to spawning or despawning.
+:::
+
 ## Dynamically Spawned Network Prefabs
 
 Netcode for GameObjects uses the term "dynamically spawned" to convey that the `NetworkObject` is being spawned via user specific code.  Whereas a player or in-scene placed `NetworkObject` (with scene management enabled) is typically spawned by Netcode for GameObjects.  There are several ways to spawn a network prefab via code:
