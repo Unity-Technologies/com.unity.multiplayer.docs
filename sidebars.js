@@ -19,7 +19,7 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "installation/migratingtonetcode"
+                    "id": "installation/upgrade_from_UNet"
                 },
             ],
         },
