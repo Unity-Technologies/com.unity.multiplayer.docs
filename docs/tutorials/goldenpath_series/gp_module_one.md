@@ -41,7 +41,6 @@ This section adds some scripts to Hello World that contain the new features cove
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 ```csharp
@@ -188,7 +187,6 @@ Inside the `HelloWorldManager.cs` script, we define two methods which mimic the 
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 ```csharp
@@ -215,9 +213,7 @@ Inside the `HelloWorldManager.cs` script, we define two methods which mimic the 
 
 We call these methods inside of `OnGUI()`.
 <details open>
-<summary>Click to show/hide the Code.
-
-</summary>
+<summary>Click to show/hide the Code.</summary>
 
 ```csharp
 
