@@ -1,12 +1,12 @@
 ---
-id: migratingtonetcode
-title: Migrating From UNet to  Netcode for GameObjects
+id: upgrade_from_UNet
+title: Migrating from UNet to Netcode for GameObjects
 ---
 
-Use this step-by-step guide to migrate your projects from Unity UNet to Netcode for GameObjects (Netcode) Sample code is provided as available. We also recommend reviewing the latest <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
+Use this step-by-step guide to migrate your projects from Unity UNet to Netcode for GameObjects (Netcode). If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
 
-:::note
-If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
+:::warning UNet Deprecation
+UNet is an entirely deprecated product, and you should upgrade to Netcode for GameObjects as soon as possible.
 :::
 
 ## Current limitations
@@ -32,7 +32,7 @@ We recommend using both methods to backup your project. This gives you a copied 
 
 ## Install Netcode and restart Unity
 
-See [Installation](installation.md) for more information. 
+See the [Netcode installation guide](installation.md) for more information. 
 
 :::note
 If you install Git for the first time, you will need to restart your system.
@@ -42,12 +42,14 @@ If you install Git for the first time, you will need to restart your system.
 
 Invoking an RPC works the same way as in UNet. Just call the function and it will send an RPC.
 
+<!-- I know a lot of things were done to `NetworkManager` in Netcode and assume this section is just incorrect now.
+
 ##  NetworkManager 
 
 UNET’s `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
 
 :::note
-We recommend you don't inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET. 
+We recommend you don't inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET.
 :::
 
 ## Replace NetworkManagerHUD 
@@ -55,6 +57,7 @@ We recommend you don't inherit from `NetworkManager` in Netcode, which was a **r
 Currently Netcode offers no replacment for the NetworkMangerHUD.
 
 The [Community Contributions Extension Package](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.community.netcode.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
+-->
 
 ## Replace NetworkIdentity with NetworkObject
 
@@ -417,7 +420,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager
 
 </Tabs>
 
-See [Connection Approval](../getting-started/connection-approval.md) for more information.
+See [Connection Approval](../basics/connection-approval.md) for more information.
 
 ## Replace NetworkServer.Spawn with NetworkObject.Spawn
 
@@ -662,13 +665,16 @@ public class DamageClass : NetworkBehaviour
 
 Netcode does not provide Network Discovery. The Contributions repository provides an example implementation for [NetworkDiscovery](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/com.community.netcode.extensions/Runtime/NetworkDiscovery).
 
-## See Also
+## Next Steps
 
-For more information, see the following:
+After migrating and updating to the Netcode package, we recommend looking into the following:
 
-* <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> - Learn more about updated and changed features, bug fixes, and known issues for Unity Netcode.
-* [API Reference](../api/introduction.md) - Review available APIs.
-* Guides and tutorials - Review guides for Netcodev and check [tutorials](../learn/index.md).
+* Consider using the [Hello World](../tutorials/helloworld.md) and [Golden Path series](../tutorials/goldenpath_series/gp_intro.md) to learn some basics of Netcode for GameObjects.
+* Explore the educational samples content for a deeper exploration into Netcode for GameObjects:
+  * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../learn/bitesize/bitesize-clientdriven.md)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
