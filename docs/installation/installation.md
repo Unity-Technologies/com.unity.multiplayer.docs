@@ -6,7 +6,7 @@ description: How to install Unity Netcode for GameObjects (Netcode).
 
 Use this guide to install Unity Netcode for GameObjects (Netcode) 1.0.0 and later.
 
-## Prerquisites
+## Prerequisites
 
 Before installing Netcode, you should ensure you have:
   * An active Unity account with a valid license.

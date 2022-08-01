@@ -15,15 +15,11 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "installation/upgrade-guide",
+                    "id": "installation/upgrade_from_mlapi",
                 },
                 {
                     "type": "doc",
                     "id": "installation/migratingtonetcode"
-                },
-                {
-                    "type": "doc",
-                    "id": "installation/migratingfrommlapi"
                 },
             ],
         },
