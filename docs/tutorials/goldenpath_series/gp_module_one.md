@@ -4,10 +4,12 @@ title: Golden Path Module One
 description: Tutorial that explains adding scripts to objects, editor modes (Host Server and Client), basic player movement and basic RPC use.
 ---
 
-In this guide we will build on the work we have already done in Hello World and add in a few more features, we will be covering the following:
+Golden Path One continues on the work from [Hello World](../helloworld.md) to add a few more features.
+
+This guide covers:
 
 - Adding scripts to your objects
-- Adding editor modes inside your game  (Host Server and Client)
+- Adding editor modes inside your game (Host, Server, and Client)
 - Basic Player Movement
 - Permissions
 - Basic RPC use
@@ -20,11 +22,16 @@ The videos on this page were removed because they were out-of-date and caused mo
 
 You should have completed the [Hello World project](../helloworld.md) before starting this tutorial. We use Hello World as the base for this and other Golden Path modules.
 
+## Open your Hello World project
+
+1. Open Unity Hub.
+1. Select `Hello World` from the list of projects displayed.
+
 ## Adding Scripts to Hello World
 
-This section will add some scripts to Hello World which will contain the new features we will be covering in the tutorial.
+This section adds some scripts to Hello World that contain the new features covered in the tutorial.
 1. Click the **Assets** folder.
-1. Create a new Folder and call it **Scripts**.
+2. Create a new Folder and call it **Scripts**.
 
 ### Adding the `HelloWorldPlayer.cs` script
 
@@ -184,12 +191,6 @@ Inside the `HelloWorldManager.cs` script, we define two methods which mimic the 
 
 </summary>
 
-<!---
-```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs#L25-L40
-
-```
--->
 ```csharp
         static void StartButtons()
         {
@@ -218,13 +219,6 @@ We call these methods inside of `OnGUI()`.
 
 </summary>
 
-<!---
-```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldManager.cs#L8-L23
-
-```
--->
-
 ```csharp
 
 void OnGUI()
@@ -248,7 +242,7 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
+You will notice the introduction of a new method, `SubmitNewPosition()`. This is used later. 
 :::
 
 ## Adding basic movement to the Player object 
@@ -422,6 +416,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 </details>
 
 The server instance of this player has just modified the Position `NetworkVariable`, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
+
 <details open>
 <summary>Click to show/hide the Code.
 
@@ -473,10 +468,6 @@ Make sure **SampleScene** is included in **BuildSettings**.
 :::
 
 One build instance can create a host. Another client can join the host's game. Both are able to press a GUI button to move. Server will move immediately and be replicated on client. Client can request a new position, which will instruct the server to modify that server instance's position `NetworkVariable`. That client will apply that `NetworkVariable` position inside of it's Update() method.
-
-:::note Congrats!
-Congratulations you have learned the basics of a networked game 
-:::
 
 ## Next Steps
 
