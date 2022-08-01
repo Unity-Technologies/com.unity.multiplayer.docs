@@ -4,26 +4,26 @@ title:  Learning with Golden Path
 description: Introduction to the Golden Path series, explaining the aim of the series 
 ---
 
-Rewrite so that Hello World is part 1, then GP module 1 and 2
+The Hello World/Golden Path series is meant to guide you through the Netcode installation and implement some of the basic features of Netcode. They also provide a way to test if your installation and feature implementations are correct.  
 
-These sections are intended to help guide you through the features of  Netcode for GameObjects (Netcode), they will provide  examples of how Netcode implements common  Multiplayer features. We will continue to add and update this section with more materials as we grow Netcode.  
+You should start with the [Hello World guide](../helloworld.md) as the base before moving to [Golden Path One](gp_module_one.md) and [Golden Path Two](gp_module_two.md).
 
-You should start by following the [GoldenPath Foundation Module](../../tutorials/goldenpath_series/goldenpath_foundation_module.md) then move on to the other modules which contain areas that interest you. Some of the modules are built on top of the Foundation Module others are stand alone. for those that are built on the Foundation Module we will recommend creating a clone of that project.
+:::important Future plans for Hello World and Golden Paths
+We are planning to revamp the Hello World and Golden Paths series to be far more useful. For users that have used these docs in the past may have noticed a lot of repetition between the Golden Paths and Hello World tutorials, this first phase was to make the Hello World and Golden Paths more cohesive and remove the repetition.
 
-:::funfact
-In the context of software or information modelling, a Golden Path (sometimes called happy path) is a default scenario featuring no exceptional or error conditions.
+Next steps will likely involve the existing Golden Path series to be completely part of Hello World as a series, and the Golden Path series become a completely different experience that is more use case focused and more relatable to the game building experience.
 :::
 
 <div class="table-columns-plain">
 
  
-|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_foundation_module">Golden Path Foundation Module</a></div>| <div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_one"> Golden Path Module One</a></div>| 
+|<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_foundation_module">Hello World</a></div>| <div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_one"> Golden Path One</a></div>| 
 | --- | --- |
 | Creating a new project<br/>  Installing Netcode<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement <br/>Basic RPC use  |
 </div>
 <div class="table-columns-plain">
 
-| <div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_two">Golden Path Module Two</a></div>|
+| <div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="goldenpath_two">Golden Path Two</a></div>|
 | --- | 
 |  Network variables (client and server-controlled)<br/> Network transforms <br/> More on RPCs|
 
