@@ -40,8 +40,7 @@ This section adds some scripts to Hello World that contain the new features cove
 1. Edit the `HelloWorldPlayer.cs` script to match the following.
 
 <details open>
-<summary>Click to show/hide the Code.
-</summary>
+<summary>Click to show/hide the Code.</summary>
 
 ```csharp
 using Unity.Netcode;
@@ -93,7 +92,6 @@ namespace HelloWorld
     }
 }
 ```
-
 </details>
 
 ### Adding the `HelloWorldManager.cs` script
@@ -111,7 +109,8 @@ You can copy the script from here and paste it into your file.
 :::
 
 <details open>
-<summary>Click to show/hide the Code.</summary>
+<summary>Click to show/hide the Code.
+</summary>
 
 ```csharp
 
@@ -212,8 +211,10 @@ Inside the `HelloWorldManager.cs` script, we define two methods which mimic the 
 `NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
 
 We call these methods inside of `OnGUI()`.
+
 <details open>
-<summary>Click to show/hide the Code.</summary>
+<summary>Click to show/hide the Code.
+</summary>
 
 ```csharp
 
@@ -249,9 +250,9 @@ The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World pla
 1. Select the **Player** prefab.
 1. Add the script `HelloWorldPlayer` script as a component.
 This class will inherit from `NetworkBehaviour` instead of `MonoBehaviour`.
+
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -269,7 +270,6 @@ Inside this class we  now define a `NetworkVariable` to represent this player's 
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -277,6 +277,7 @@ Inside this class we  now define a `NetworkVariable` to represent this player's 
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/feature/hello-world/Assets/Scripts/Shared/HelloWorldPlayer.cs#L10-L14
 ```
 -->
+
 ```csharp
         public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
 ```
@@ -286,7 +287,6 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -316,7 +316,6 @@ On both client and server instances of this player, we call the `Move()` method,
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -348,7 +347,6 @@ If this player is a server-owned player, at `OnNetworkSpawn()` we can immediatel
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -368,11 +366,10 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 </details>
 
- If we are a client, we call a `ServerRpc`. A `ServerRpc` can be invoked by a client to be executed on the server.
+If we are a client, we call a `ServerRpc`. A `ServerRpc` can be invoked by a client to be executed on the server.
 
- <details open>
+<details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -394,7 +391,6 @@ This `ServerRpc` simply sets the position `NetworkVariable` on the server's inst
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -415,7 +411,6 @@ The server instance of this player has just modified the Position `NetworkVariab
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
@@ -435,7 +430,6 @@ We can now go back to `HelloWorldManager.cs` and define the contents of `SubmitN
 
 <details open>
 <summary>Click to show/hide the Code.
-
 </summary>
 
 <!---
