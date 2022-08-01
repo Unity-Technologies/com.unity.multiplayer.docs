@@ -4,38 +4,25 @@ title: Your Netcode "Hello World" Project
 description: Tutorial that explains creating a project, installing the  Netcode for GameObjects package, and creating the basic components for your first networked game.
 ---
 
-This is essentially the same as GP Foundation module.
+A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed and that the operator understands how to use it.
 
+This "Hello World" tutorial walks you through creating a project, installing Netcode for GameObjects (Netcode), and creating the basic components for your first networked game. It is also the base for the [Golden Path series](goldenpath_series/gp_intro.md).
 
-A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
-
-This "Hello World" tutorial walks you through creating a project, installing the Netcode for GameObjects (Netcode) package, and creating the basic components for your first networked game.
-
-  :::note 
-  The videos on this page were recorded using a prerelease version of Netcode for GameObjects, so a few details of those videos are somewhat inaccurate nowadays. However, the written instructions on this page are accurate, as of Netcode for GameObjects v1.0.0
-  :::
-
-
-## Requirements
-
-This tutorial requires an Netcode-supported version of Unity (2020.3+).
-
+:::note
+The videos on this page were removed because they were out-of-date and caused more confusion than help. All videos in the Hello World and Golden Path series will be recreated and added back at a later time.
+:::
 
 ## Create a new project in Unity
 
-1. Open the Unity Hub.
-1. Click New. 
+1. Open the **Unity Hub**.
+1. Click **New**. 
 1. Select type ‘3D’
-1. Rename the project "Hello World".
-1. Select the location to save the project.
+1. Name the project *Hello World*.
+1. Select the location you want to save the project.
 
+## Install Netcode
 
-<iframe src="https://www.youtube.com/embed/NsfwlWaZ0ng?playlist=NsfwlWaZ0ng&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-## Import Netcode Package via URL
-
-See the [Install Netcode](../../migration/installation.md) guide to install the Netcode package.
+See the [install Netcode guide](../installation/installation.md) to install the Netcode package.
 
 ## Create the Basic Components
 
@@ -45,7 +32,7 @@ In this section we will create the basic building blocks of a multiplayer game.
 
 In this section we will add a Network Manager and add a Transport to our project.
 
-1. Right click in the Hierarchy tab of the Main Unity Window.
+1. Right click in the **Hierarchy** tab of the main Unity Window.
 1. Select **Create Empty**.
 1. Rename the `GameObject` **NetworkManager**.
    
@@ -65,11 +52,6 @@ In this section we will add a Network Manager and add a Transport to our project
 1. Click "Select Transport".
 1. Select `UnityTransport`.
 1. Save your scene.
-
-
-<iframe src="https://www.youtube.com/embed/ZYEUWzsXEoY?playlist=ZYEUWzsXEoY&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
 
 ## Creating an object to spawn for each connected player
 
@@ -100,9 +82,6 @@ This section adds in a player object and spawns it for each connected player.
 1. Create a **3D Object->Plane**, centered at (0,0,0).
 1. Save your scene
 
-<iframe src="https://www.youtube.com/embed/B_FWb4J1Pxw?playlist=B_FWb4J1Pxw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
 ### Adding your scene to the build
 
   :::important
@@ -120,16 +99,13 @@ Now we will test to see if everything works as expected.
 1. Click **Play**.
 1. Click **Start Host** under **NetworkManager**. 
 
+## Next Steps
 
-<iframe src="https://www.youtube.com/embed/Ee3t0xNF0n8?playlist=Ee3t0xNF0n8&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+See the following content to continue your journey using Netcode:
 
-
-:::note Congrats!
-Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
-:::
-
-:::contribution Special Thanks
-
- This guide would not have been possible without the hard work and support of Fernando Cortez, Unity. 
-:::
+* Build on the Hello World project to continue learning about different features of Netcode with the [Golden Path series](../tutorials/goldenpath_series/gp_intro.md).
+* Check out the educational samples to further explore Netcode and its abilities:
+  * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../learn/bitesize/bitesize-clientdriven.md)

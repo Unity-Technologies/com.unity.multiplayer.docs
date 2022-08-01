@@ -12,9 +12,13 @@ In this Guide e will be covering the following:
 - Network transforms
 - RPCs
 
-## Requirements
+:::note
+The videos on this page were removed because they were out-of-date and caused more confusion than help. All videos in the Hello World and Golden Path series will be recreated and added back at a later time.
+:::
 
-You should have completed the foundation module [here](goldenpath_foundation_module) before starting this tutorial..
+## Prerequisites
+
+You should have completed the [Hello World project](../helloworld.md) and [Golden Path One](gp_module_one.md) before starting this tutorial.
 
 ## Create a Clone 'GoldenPath' project
 
@@ -266,14 +270,10 @@ Congratulations you have learned how to use some of the basic building blocks of
 
 ## Next Steps
 
+See the following content to continue your journey using Netcode:
 
-For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
-
-- [Network variables (server-controlled)](../../basics/networkvariable.md)
-- [Network transforms](../../components/networktransform.md)
-- [RPCs](../../advanced-topics/messaging-system.md)
-
-
-:::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
-:::
+* Check out the educational samples to further explore Netcode and its abilities:
+  * [Boss Room](../../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../../learn/bitesize/bitesize-clientdriven.md)
