@@ -20,6 +20,10 @@ The Runtime Net Stats Monitor can be added to the scene by adding the Runtime Ne
 
 The Runtime Net Stats Monitor can be configured from the inspector. You can add, remove, and customize its Display Elements in the inspector under Configuration/Display Elements. Each Display Element displays one or more stats, which can be added, removed, and modified under each Display Element’s “Stats” field.
 
+### Creating Configuration Presets using Scriptable Objects
+
+## Using Custom Data in the Runtime Network Stats Monitor
+
 ## Including/Excluding the Runtime Network Stats Monitor in Builds
 
 When using the tools package, the implementation of the Runtime Net Stats Monitor (RNSM) can be included/excluded from a build independently from its interface (the RuntimeNetStatsMonitor component), to enable developers to save space and other resources in cases where this is important, such as on mobile.
@@ -44,16 +48,6 @@ Manually defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_ENABLED_IN_RELEASE
 
 In addition to the settings above that allow the RNSM to be included/excluded in development and release builds independently, the RNSM can be forcibly enabled in all builds by defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_IMPLEMENTATION_ENABLED under Project Settings > Player > Other Settings > Scripting Define Symbols. This option takes precedence over the options mentioned above to exclude the RNSM from development builds.
 
-## Generating Test Data
-
-To generate test data to display in the RNSM if your project does not already have a Netcode For Game Objects (NGO) Network Manager that is networking with clients, you may do the following:
-
-Define UNITY_MP_TOOLS_DEV under Project Settings > Player > Scripting Define Symbols.
-Create a new object.
-Attach either the “Test Data Generator Component” to this new object.
-Alternatively, to create test data that is more customizable, you can attach and configure the “Custom Test Data Generator” component.
-These two test data generation components can be safely used side-by-side, although this may be confusing as the data from both with be aggregated and displayed in the RNSM.
-
 ## Styling the Runtime Network Stats Monitor
 
 The styling of the RNSM can be customized by dragging and dropping a USS stylesheet into the “Custom Style Sheet” field of the RNSM component. More information about USS is available at the following link: https://docs.unity3d.com/2021.2/Documentation/Manual/UIE-USS.html.
@@ -63,3 +57,7 @@ The USS file containing the default styling for the RNSM is Implementation/UI/Re
 ### USS Classes
 
 A full list of USS class names that can be used to style the RNSM can be found in Configuration/UssClassNames.cs.
+
+### Using the panel settings
+
+addressing screen real estate issues
