@@ -14,7 +14,7 @@ The [Multiplayer Bitesize Samples](https://github.com/Unity-Technologies/com.uni
 
 ### Client Driven
 
-A new BiteSize sample was added named [Client Driven](../../docs/learn/bitesize-clientdriven.md). It focuses on client driven movements, networked physics, spawning vs statically placed objects, and object reparenting.
+A new BiteSize sample was added named [Client Driven](https://docs-multiplayer.unity3d.com/netcode/current/learn/bitesize/bitesize-clientdriven). It focuses on client driven movements, networked physics, spawning vs statically placed objects, and object reparenting.
 
 ### Invaders
 
