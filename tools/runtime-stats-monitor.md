@@ -20,7 +20,7 @@ You must have an object selected for these options to be available.
 
 To add the RNSM to your scene, you must add it as a component to an object:
 
-1. Select the an object in your scene. <- SHOULD AN OBJECT BE MADE SPECIFICALLY FOR THE RNSM? LIKE BEST PRACTICE-WISE?
+1. Select the an object in your scene. <- SHOULD AN OBJECT BE MADE SPECIFICALLY FOR THE RNSM? LIKE BEST PRACTICE-WISE? EMPTY OBJECT OR A SPECIFIC TYPE
 2. Add the RNSM commponent by either:
    1. Selecting **Add Component** in the **Inspector** tab, navigate to **Netcode** and select **RuntimeNetStatsMonitor**.
    OR
@@ -33,48 +33,78 @@ You can configure the RNSM from the **Inspector** tab with its Display Elements.
 To configure the Display Elements:
 
 1. From the **Project** tab, navigate to **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Assets** > **Configurations** > **Default Net Stats Monitor Configuration**.
-2. <!-- Everything is greyed out so will need to play around more. -->
+2. <- Everything is greyed out so will need to play around more.
 
 ### Using the panel settings
 
-addressing screen real estate issues <!-- Greyed out here as well -->
+addressing screen real estate issues <- Greyed out here as well
 
 ### Creating Configuration Presets using Scriptable Objects
+
+Content
 
 ## Styling the Runtime Network Stats Monitor
 
 You can customize the styling of the RNSM by dragging and dropping a Unity Style Sheet (USS) onto the **Custom Style Sheet** field of the RNSM component from the **Inspector** tab.
 
-The styling of the RNSM can be customized by dragging and dropping a USS stylesheet into the “Custom Style Sheet” field of the RNSM component. More information about USS is available at the following link: https://docs.unity3d.com/2021.2/Documentation/Manual/UIE-USS.html.
+For more information about Unity Style Sheets (USS), see the Unity Documentation on [Styling the UI with USS](https://docs.unity3d.com/2021.2/Documentation/Manual/UIE-USS.html).
 
-The USS file containing the default styling for the RNSM is Implementation/UI/Resources/rnsmStyleSheet.uss, and can be used either as an example of how to style the RNSM or copied and used as a jumping-of-point for custom styling.
+You can use the default USS file for the RNSM to style your RNSM or use it as a starting point for custom styling. It can be found from the **Project** tab under **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Implementation** > **UI** > **Resources** > **UnityMpToolsRnsmDefaultStyleSheet.uss**
 
 ### USS Classes
 
-A full list of USS class names that can be used to style the RNSM can be found in Configuration/UssClassNames.cs.
+A full list of USS class names that you can use to style the RNSM can be found from the **Project** tab under **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Configuration** > **UssClassNames.cs**.
 
 ## Using Custom Data in the Runtime Network Stats Monitor
 
+Content
+
 ## Including/Excluding the Runtime Network Stats Monitor in Builds
 
-When using the tools package, the implementation of the Runtime Net Stats Monitor (RNSM) can be included/excluded from a build independently from its interface (the RuntimeNetStatsMonitor component), to enable developers to save space and other resources in cases where this is important, such as on mobile.
+To allow you to save space and other resources from builds, such as on mobile, the RNSM implementation can be included/excluded from a build independently from its interface (the RNSM component). 
 
-The RNSM implementation is always included in the editor, is included by default in development builds, and is not included by default in release builds.
+:::note
+By default, after adding the **Multiplayer Tools** package, the Runtime Network Stats Monitor is included in the editor, included in development builds, and is not included in release builds.
+:::
 
 ### Excluding the RNSM from Development Builds
 
-The RNSM implementation is included in development builds by default. The RNSM can be excluded from development builds either by:
+By default, the RNSM implementation is included in development builds. The RNSM can be excluded from development builds either by:
 
-Unchecking the “Include in Develop Builds” toggle under Project Settings > Multiplayer Tools > Net Stats Monitor.
-Manually defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_DISABLED_IN_DEVELOP under Project Settings > Player > Other Settings > Scripting Define Symbols.
+1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings...** > **Multiplayer Tools** > **Net Stats Monitor**, then uncheck **Include in Develop Builds**.
+
+OR
+
+1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings...** > **Player**.
+2. Select the **Other Settings** dropdown.
+3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
+4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_DISABLED_IN_DEVELOP` in the empty field. If the field isn't empty, you can select the ![Add symbol](../static/img/add.png).
+5. Click **Apply** for the script to compile.
 
 ### Including the RNSM in Release Builds
 
-The RNSM implementation is not included in release builds by default. The RNSM can be included in release builds either by:
+By default, the RNSM implementation is not included in release builds. The RNSM can be included in release builds either by:
 
-Checking the “Include in Release Builds” toggle under Project Settings > Multiplayer Tools > Net Stats Monitor.
-Manually defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_ENABLED_IN_RELEASE under Project Settings > Player > Other Settings > Scripting Define Symbols.
+1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings...** > **Multiplayer Tools** > **Net Stats Monitor**, then check **Include in Release Builds**.
+
+OR
+
+1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings...** > **Player**.
+2. Select the **Other Settings** dropdown.
+3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
+4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_ENABLED_IN_RELEASE` in the empty field. If the field isn't empty, you can select the ![Add symbol](../static/img/add.png).
+5. Click **Apply** for the script to compile.
 
 ### Including the RNSM in All Builds
 
-In addition to the settings above that allow the RNSM to be included/excluded in development and release builds independently, the RNSM can be forcibly enabled in all builds by defining the symbol UNITY_MP_TOOLS_NET_STATS_MONITOR_IMPLEMENTATION_ENABLED under Project Settings > Player > Other Settings > Scripting Define Symbols. This option takes precedence over the options mentioned above to exclude the RNSM from development builds.
+You can forcibly enable the RNSM in all builds by:
+
+1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings...** > **Player**.
+2. Select the **Other Settings** dropdown.
+3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
+4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_IMPLEMENTATION_ENABLED` in the empty field. If the field isn't empty, you can select the ![Add symbol](../static/img/add.png).
+5. Click **Apply** for the script to compile.
+
+:::important
+This option takes precedence over the other options to exclude the RNSM from development builds.
+:::
