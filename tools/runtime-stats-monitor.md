@@ -32,16 +32,15 @@ You can configure the RNSM from the **Inspector** tab with its Display Elements.
 
 To configure the Display Elements:
 
-1. From the **Project** tab, navigate to **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Assets** > **Configurations** > **Default Net Stats Monitor Configuration**.
-2. <- Everything is greyed out so will need to play around more.
+Assets > Create > Multiplayer
 
 ### Using the panel settings
 
-addressing screen real estate issues. Configured similarly to the Display Elements <- Greyed out here as well
+addressing screen real estate issues. Assets > Create > UI Kit
 
 ### Creating Configuration Presets using Scriptable Objects
 
-Content
+Doing the thing to create the settings to be adjustable ^ Note that the default settings are not adjustable by default
 
 ## Styling the Runtime Network Stats Monitor
 
@@ -51,13 +50,15 @@ For more information about Unity Style Sheets (USS), see the Unity Documentation
 
 You can use the default USS file for the RNSM to style your RNSM or use it as a starting point for custom styling. It can be found from the **Project** tab under **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Implementation** > **UI** > **Resources** > **UnityMpToolsRnsmDefaultStyleSheet.uss**
 
+To create a new style sheet = Assets > Create > UI Kit
+
 ### USS Classes
 
 A full list of USS class names that you can use to style the RNSM can be found from the **Project** tab under **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Configuration** > **UssClassNames.cs**.
 
 ## Using Custom Data in the Runtime Network Stats Monitor
 
-Content
+Content - Ian is helping with a sample and such for this - See slack message for content to add
 
 ## Including/Excluding the Runtime Network Stats Monitor in Builds
 
