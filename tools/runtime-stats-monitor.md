@@ -37,7 +37,7 @@ To configure the Display Elements:
 
 ### Using the panel settings
 
-addressing screen real estate issues <- Greyed out here as well
+addressing screen real estate issues. Configured similarly to the Display Elements <- Greyed out here as well
 
 ### Creating Configuration Presets using Scriptable Objects
 
