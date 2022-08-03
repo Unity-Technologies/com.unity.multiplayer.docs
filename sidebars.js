@@ -11,36 +11,16 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "migration/install"
+                    "id": "installation/install"
                 },
                 {
                     "type": "doc",
-                    "id": "migration/upgrade-guide",
+                    "id": "installation/upgrade_from_mlapi",
                 },
                 {
                     "type": "doc",
-                    "id": "migration/migratingtonetcode"
+                    "id": "installation/upgrade_from_UNet"
                 },
-                {
-                    "type": "doc",
-                    "id": "migration/migratingfrommlapi"
-                },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Hello World",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldintro"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldtwo"
-                        }
-                    ]
-                },
-
             ],
         },
         {
@@ -50,11 +30,11 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "getting-started/connection-approval"
+                    "id": "basics/connection-approval"
                 },
                 {
                     "type": "doc",
-                    "id": "getting-started/max-players"
+                    "id": "basics/max-players"
                 },
                 {
                     "type": "doc",
@@ -340,12 +320,15 @@ module.exports = {
                 }
             ]
         },
-        
         {
             "collapsed": true,
             "type": "category",
             "label": "Walk-Throughs",
             "items": [
+                {
+                    "type": "doc",
+                    "id": "tutorials/helloworld"
+                },
                 {
                     "collapsed": true,
                     "type": "category",
@@ -353,11 +336,7 @@ module.exports = {
                     "items": [
                         {
                             "type": "doc",
-                            "id": "tutorials/goldenpath_series/starting_out"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+                            "id": "tutorials/goldenpath_series/gp_intro"
                         },
                         {
                             "type": "doc",

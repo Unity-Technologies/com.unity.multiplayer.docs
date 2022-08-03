@@ -27,7 +27,7 @@ To learn how to use the `com.unity.transport` package in your own project, revie
 
 ##  Requirements
 
-This version of com.unity.transport is compatible with the following Unity versions and platforms:
+This version of `com.unity.transport` is compatible with the following Unity versions and platforms:
 
 * 2020.1.2 and later.
 * All platforms supported by Unity are supported, except WebGL.

@@ -4,27 +4,26 @@ title: Golden Path Module Two
 description: Tutorial covering, Network variables (client and server-controlled), Network transforms, and RPCs. 
 ---
 
-In this Guide e will be covering the following:
+Golden Path Two continues on the work from [Hello World](../helloworld.md) and [Golden Path One](gp_module_one.md) to add a few more features.
+
+This guide covers:
 
 - Network variables (client and server-controlled)
 - Network transforms
 - RPCs
 
-## Requirements
+:::note
+The videos on this page were removed because they were out-of-date and caused more confusion than help. All videos in the Hello World and Golden Path series will be recreated and added back at a later time.
+:::
 
-You should have completed the foundation module [here](goldenpath_foundation_module) before starting this tutorial..
+## Prerequisites
 
-## Create a Clone 'GoldenPath' project
+You should have completed the [Hello World project](../helloworld.md) and [Golden Path One](gp_module_one.md) before starting this tutorial.
 
-import Createclone from '../../shared/_create_clone_goldenpath.md';
-
-<Createclone/>
-
-
-## Open GoldenPath_Two
+## Open your Hello World project
 
 1. Open Unity Hub.
-1. Select `GoldenPath_Two` from the list of projects displayed.
+1. Select `Hello World` from the list of projects displayed.
 
 ## Introducing a Server-controlled Network Variable 
 
@@ -82,19 +81,15 @@ public class NetworkVariableTest : NetworkBehaviour
 
 8. Save your scene.
 
-<iframe src="https://www.youtube.com/embed/JsEVE6UaBIU?playlist=JsEVE6UaBIU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
 ### Testing Server-controlled Network Variables 
 
 Now we will test the Server-controlled Network Variable works as we intended.
 
 1. Select **File > Build and Run**. 
 1. Stop the player.
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
-1. After a brief delay, the client and server will spawn.  
-1. You should see the following in the console, showing that the server and client are sharing the variable:
+2. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper).
+3. After a brief delay, the client and server will spawn.  
+4. You should see the following in the console, showing that the server and client are sharing the variable:
 
 
 ```
@@ -106,10 +101,6 @@ Server set its var to: 6.099997, has client var at: 5.599997
 :::note
 Since the printing to the terminal does not happen on every tick, the numbers will not match up perfectly.
 :::
-
-<iframe src="https://www.youtube.com/embed/cUvZ3m0idpM?playlist=cUvZ3m0idpM&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
 
 ## Introducing Network Transform
 
@@ -153,24 +144,15 @@ public class NetworkTransformTest : NetworkBehaviour
 
 12. Save your scene.
 
-<iframe src="https://www.youtube.com/embed/TJkK3YTIkUs?playlist=TJkK3YTIkUs&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
 ### Testing Network Transform
 
 Now we check that the Network Transform functions correctly.
 
-1. Select **File > Build and Run**. 
+1. Select **File** > **Build and Run**. 
 1. Stop the player. 
 1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn. 
 1. You should see the player capsule moving in a circle on both the client and the server.
-
-<iframe src="https://www.youtube.com/embed/CQN_YUqdPfU?playlist=CQN_YUqdPfU&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
 
 ## Introducing RPCs
 
@@ -226,17 +208,11 @@ public class RpcTest : NetworkBehaviour
 
 9. Save your scene.
 
-<iframe src="https://www.youtube.com/embed/UEYj16CouLE?playlist=UEYj16CouLE&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
-
 ### Testing RPCs
 
 Now we will test that the client and server are both recieving the RPCs correctly.
 
-
-1. Select **File > Build and Run**. 
+1. Select **File** > **Build and Run**. 
 1. Stop the player.
 1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn.  
@@ -253,25 +229,13 @@ Server Received the RPC #3
 Client Received the RPC #3
 ...
 ```
-<iframe src="https://www.youtube.com/embed/0mSciPQauyw?playlist=0mSciPQauyw&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
-
-
-:::note Congrats!
-Congratulations you have learned how to use some of the basic building blocks of Multiplayer game creation. 
-:::
 
 ## Next Steps
 
+See the following content to continue your journey using Netcode:
 
-For more information on the relevant concepts introduced here please refer to the following sections of the documentation:
-
-- [Network variables (server-controlled)](../../basics/networkvariable.md)
-- [Network transforms](../../components/networktransform.md)
-- [RPCs](../../advanced-topics/messaging-system.md)
-
-
-:::contribution Special Thanks
-This guide would not have been possible without the hard work and support of Matt Walsh, Unity. 
-:::
+* Check out the educational samples to further explore Netcode and its abilities:
+  * [Boss Room](../../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../../learn/bitesize/bitesize-clientdriven.md)
