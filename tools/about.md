@@ -3,4 +3,6 @@ id: about
 title: Multiplayer Tools
 ---
 
-This section includes content for Multiplayer Technology tools.
+KEEP HIDDEN UNTIL THERE IS ENOUGH CONTENT TO BE USEFUL.
+
+This section includes content for Multiplayer Tools.

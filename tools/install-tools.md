@@ -1,6 +1,6 @@
 ---
 id: install-tools
-title: Install Tools for Netcode for GameObjects (Netcode)
+title: Install the Multiplayer Tools Package
 sidebar_label: Install Multiplayer Tools
 ---
 

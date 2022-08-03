@@ -124,7 +124,7 @@ module.exports = {
                     className: 'nav-break',
                     items: [
                         {
-                            to: '/tools/tools-1-0-0-pre',
+                            to: '/tools/tools-1-0-0',
                             label: 'Release Notes',
                             docsPluginId: 'releases'
                         },
