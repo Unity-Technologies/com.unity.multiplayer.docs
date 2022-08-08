@@ -46,9 +46,9 @@ Depending on your game, you may want to add the following features as well:
 
 Check out our [Boss Room sample](../learn/getting-started-boss-room.md) for an example implementation of automatic reconnection.
 
-The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs). Boss Room's implementation uses a coroutine (`TryToReconnect`) that attempts to reconnect a few times sequentially, until it either succeeds or surpasses the defined maximum number of attempts.
+The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/ClientReconnectingState.cs). Boss Room's implementation uses a state inside a state machine that starts a coroutine on entering it (`ReconnectCoroutine`) that attempts to reconnect a few times sequentially, until it either succeeds, surpasses the defined maximum number of attempts, or is cancelled. (See `OnClientConnected`, `OnClientDisconnect`, `OnDisconnectReasonReceived`, and `OnUserRequestedShutdown`)
 
-The coroutine is triggered when a client disconnects, depending on the reason of that disconnect (see `OnDisconnectOrTimeout`) and is stopped when a succesfull reconnection occurs, or when a user cancels it (see `OnConnectFinished` and `OnUserDisconnectRequest`). 
+The reconnecting state is entered when a client disconnects unexpectedly. (See `OnClientDisconnect` in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/ClientConnectedState.cs))
 
 :::note
 This sample connects with [Lobby](https://docs.unity.com/lobby/unity-lobby-service-overview.html) and [Relay](https://docs.unity.com/relay/get-started.html) services, so the client must make sure it has properly left the lobby before each reconnection attempt.
