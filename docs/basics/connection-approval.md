@@ -85,7 +85,7 @@ The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, will b
 
 ## Timeout
 
-Netcode uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers.  This can take some time.  If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped.  This time starts counting when the transport has told  Netcode about the connection. This means that if a client (or someone hacking) never sends this information by never sending the buffer, it will still time out and the connection will be dropped.
+Netcode uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers.  This can take some time.  If you don't call the callback method within the time specified by the `NetworkConfig.ClientConnectionBufferTimeout` the connection will be dropped.  The timer starts when the server is notified of the new inbound connection. This means that if a client (or someone hacking) never sends any information it will still time out and the connection will be dropped. The "Client Connection Buffer Timeout" value can be set via the `NetworkManager` in the inspector view or accessed via the `NetworkManager.NetworkConfig.ClientConnectionBufferTimeout` property.
 
 ## Security
 
