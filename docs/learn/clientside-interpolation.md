@@ -36,3 +36,7 @@ An improvement that produces even smoother gameplay at the cost of even more add
 
 Snapshot Interpolation is not implemented in Netcode at this time.
 :::
+
+## Boss Room Example
+
+In the [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/), NetworkTransform components are used for client-side interpolation. Since transforms are updated in FixedUpdate, however, there is also some server-side interpolation that is needed on the host to smooth out movement. See [ClientProjectileVisualization](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ClientProjectileVisualization.cs) and [PositionLerper](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/PositionLerper.cs) for an example of how it is done.
