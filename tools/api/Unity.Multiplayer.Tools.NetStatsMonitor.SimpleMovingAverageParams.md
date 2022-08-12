@@ -1,5 +1,5 @@
 ---
-id: Unity.Mutliplayer.Tools.NetStatsMonitor.SimpleMovingAverageParams
+id: Unity.Multiplayer.Tools.NetStatsMonitor.SimpleMovingAverageParams
 title: Unity.Multiplayer.Tools.NetStatsMonitor.SimpleMovingAverageParams
 ---
 

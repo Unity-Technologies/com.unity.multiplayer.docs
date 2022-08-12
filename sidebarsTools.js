@@ -159,7 +159,7 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStats.MetricTypeEnumArttribute",
+                        "id": "api/Unity.Multiplayer.Tools.NetStats.MetricTypeEnumAttribute",
                     },
                     {
                         "type": "doc",
