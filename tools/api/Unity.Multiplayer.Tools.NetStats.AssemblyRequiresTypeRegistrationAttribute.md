@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStats.AssemblyRequiresTypeRegistrationAttribute
+title: Unity.Multiplayer.Tools.NetStats.AssemblyRequiresTypeRegistrationAttribute
+---
+
 <div id="wrapper">
 
 <div>

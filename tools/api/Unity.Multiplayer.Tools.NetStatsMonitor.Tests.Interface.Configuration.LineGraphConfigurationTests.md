@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.LineGraphConfigurationTests
+title: Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.LineGraphConfigurationTests
+---
+
 <div id="wrapper">
 
 <div>

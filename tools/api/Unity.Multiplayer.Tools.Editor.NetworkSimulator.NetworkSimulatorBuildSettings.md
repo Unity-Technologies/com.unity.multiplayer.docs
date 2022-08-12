@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Editor.NetworkSimulator.NetworkSimulatorBuildSettings
+title: Unity.Multiplayer.Tools.Editor.NetworkSimulator.NetworkSimulatorBuildSettings
+---
+
 <div id="wrapper">
 
 <div>

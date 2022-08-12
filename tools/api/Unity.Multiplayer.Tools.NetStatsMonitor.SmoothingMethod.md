@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.SmoothingMethod
+title: Unity.Multiplayer.Tools.NetStatsMonitor.SmoothingMethod
+---
+
 <div id="wrapper">
 
 <div>

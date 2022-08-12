@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Tests.Editor
+title: Unity.Multiplayer.Tools.Tests.Editor
+---
+
 <div id="wrapper">
 
 <div>

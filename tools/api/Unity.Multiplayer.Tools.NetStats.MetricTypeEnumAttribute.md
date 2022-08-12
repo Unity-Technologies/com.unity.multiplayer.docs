@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStats.MetricTypeEnumAttribute
+title: Unity.Multiplayer.Tools.NetStats.MetricTypeEnumAttribute
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.MetricTypes.Tests.MetricTypeStringTests
+title: Unity.Multiplayer.Tools.MetricTypes.Tests.MetricTypeStringTests
+---
+
 <div id="wrapper">
 
 <div>

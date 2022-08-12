@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType
+title: Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Tests.Editor.BuildSettingsTests
+title: Unity.Multiplayer.Tools.Tests.Editor.BuildSettingsTests
+---
+
 <div id="wrapper">
 
 <div>

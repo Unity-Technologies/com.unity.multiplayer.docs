@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Common
+title: Unity.Multiplayer.Tools.Common
+---
+
 <div id="wrapper">
 
 <div>

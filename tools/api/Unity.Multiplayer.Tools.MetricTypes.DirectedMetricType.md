@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.MetricTypes.DirectedMetricType
+title: Unity.Multiplayer.Tools.MetricTypes.DirectedMetricType
+---
+
 <div id="wrapper">
 
 <div>

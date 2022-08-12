@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams
+title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams
+---
+
 <div id="wrapper">
 
 <div>

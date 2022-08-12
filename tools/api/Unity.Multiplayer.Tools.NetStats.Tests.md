@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStats.Tests
+title: Unity.Multiplayer.Tools.NetStats.Tests
+---
+
 <div id="wrapper">
 
 <div>

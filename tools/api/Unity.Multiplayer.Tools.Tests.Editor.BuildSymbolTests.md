@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Tests.Editor.BuildSymbolTests
+title: Unity.Multiplayer.Tools.Tests.Editor.BuildSymbolTests
+---
+
 <div id="wrapper">
 
 <div>

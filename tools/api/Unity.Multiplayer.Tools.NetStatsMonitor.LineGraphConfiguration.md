@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration
+title: Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration
+---
+
 <div id="wrapper">
 
 <div>

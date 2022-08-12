@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.Tests.RnsmVisibilityTests
+title: Unity.Multiplayer.Tools.NetStatsMonitor.Tests.RnsmVisibilityTests
+---
+
 <div id="wrapper">
 
 <div>

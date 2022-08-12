@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface
+title: Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface
+---
+
 <div id="wrapper">
 
 <div>

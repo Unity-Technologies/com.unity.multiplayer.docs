@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.GraphXAxisType
+title: Unity.Multiplayer.Tools.NetStatsMonitor.GraphXAxisType
+---
+
 <div id="wrapper">
 
 <div>

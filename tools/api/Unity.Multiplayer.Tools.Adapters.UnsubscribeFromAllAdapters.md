@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Adapters.UnsubscribeFromAllAdapters
+title: Unity.Multiplayer.Tools.Adapters.UnsubscribeFromAllAdapters
+---
+
 <div id="wrapper">
 
 <div>

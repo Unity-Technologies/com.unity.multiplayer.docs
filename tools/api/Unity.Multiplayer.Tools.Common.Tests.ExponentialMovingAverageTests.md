@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.Common.Tests.ExponentialMovingAverageTests
+title: Unity.Multiplayer.Tools.Common.Tests.ExpontentialMovingAverage Tests
+---
+
 <div id="wrapper">
 
 <div>

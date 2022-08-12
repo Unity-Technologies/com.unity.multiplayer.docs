@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration
+title: Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration
+---
+
 <div id="wrapper">
 
 <div>

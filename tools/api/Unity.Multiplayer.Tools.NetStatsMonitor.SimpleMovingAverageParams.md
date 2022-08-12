@@ -1,3 +1,8 @@
+---
+id: Unity.Mutliplayer.Tools.NetStatsMonitor.SimpleMovingAverageParams
+title: Unity.Multiplayer.Tools.NetStatsMonitor.SimpleMovingAverageParams
+---
+
 <div id="wrapper">
 
 <div>

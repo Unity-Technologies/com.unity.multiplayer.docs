@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod
+title: Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod
+---
+
 <div id="wrapper">
 
 <div>

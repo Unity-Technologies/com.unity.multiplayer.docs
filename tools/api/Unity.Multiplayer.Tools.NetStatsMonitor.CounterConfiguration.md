@@ -1,3 +1,8 @@
+---
+id: Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration
+title: Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration
+---
+
 <div id="wrapper">
 
 <div>
