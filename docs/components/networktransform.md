@@ -36,6 +36,9 @@ Check the `Interpolate` setting to enabled interpolation. Interpolation is enabl
 
 When `Interpolate` is disabled changes to the transform are applied immediately resulting in a less smooth position and more jitter.
 
+:::note
+The NetworkTransform component only interpolates client-side. For smoother movement on the host or server, users may want to implement interpolation server-side as well. While the server will not have the jitter caused by the network, some stutter can still happen locally, for example if movement is done in FixedUpdate with a low physics update rate.
+:::
 
 <figure>
 <ImageSwitcher 
