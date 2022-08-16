@@ -6,6 +6,18 @@ description: Learn more about the available APIs for Unity Multiplayer Networkin
 
 Netcode is a mid-level networking library built for the Unity game engine to abstract networking. This allows you, the developer to focus on your game rather than low-level protocols and networking frameworks.
 
+:::important Current Documentation Work
+We are at the tail-end of a full audit on the Multiplayer doc site. This has involved many pages being rewritten, additional content, content reorganization, and more with developer reviews on each page. Most links should still work and were updated as pages have been reviewed.
+
+However, this **About** page is one that has many link errors at the moment, and will continue to have broken links through the end of this week as the final doc PRs are commited to the live docs. Please be patient as we finish up this last bit of work this week.
+
+Aside from the minimal article updates remaining, you will notice by the end of the week:
+* A new Tools section in the top navigation bar for this growing section of content.
+* Updated API references for Netcode, Transport, and the new Tools sections.
+* A link crawler will ensure linking across the doc site is up-to-date.
+* The documentation GitHub will be cleaned up with the GH issues that were addressed by the audit closed, and new GH issues reviewed, tagged, and addressed ASAP.
+:::
+
 <div class="table-columns-plain" >
 
 | Getting Started | Hello World | Golden Path |
