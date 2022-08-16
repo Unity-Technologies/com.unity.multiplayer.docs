@@ -20,11 +20,21 @@ You must have an object selected for these options to be available.
 
 To add the RNSM to your scene, you must add it as a component to an object:
 
-1. Select an object in your scene. <- SHOULD AN OBJECT BE MADE SPECIFICALLY FOR THE RNSM? LIKE BEST PRACTICE-WISE? EMPTY OBJECT OR A SPECIFIC TYPE
+1. Select an object in your scene.
 2. Add the RNSM commponent by either:
-   1. Selecting **Add Component** in the **Inspector** tab, navigate to **Netcode** and select **RuntimeNetStatsMonitor**.
+   1. Selecting **Add Component** in the **Inspector** tab, you can start typing `RuntimeNetStatsMonitor` in the search field to select the **RuntimeNetStatsMonitor** component.
+
    OR
-   2. From the top menu bar, go to **Component** > **Netcode** > **RuntimeNetStatsMonitor**.
+
+   2. Selecting **Add Component** in the **Inspector** tab, navigate to **Netcode** and select **RuntimeNetStatsMonitor**.
+
+   OR
+   
+   3. From the top menu bar, go to **Component** > **Netcode** > **RuntimeNetStatsMonitor**.
+
+:::bestpractice Best Practice
+You can add the Runtime Network Stats Monitor component to any object in your scene and will work. However, you may want to consider creating an empty object specifically for the RNSM.
+:::
 
 ## Configuring
 
@@ -38,9 +48,16 @@ The default setting for the Display Elements, Panel Settings, and Styling are gr
 
 Each Display Element displays one or more stats that can be added, removed, or modified under the element's **Stats** field.
 
-To use the default Display Elements:
+#### To use the default Display Elements:
 
 1. It may already be the default in the **Configuration** field of the **Inspector** tab of the RNSM component.
+
+OR
+
+1. Open the RNSM component in the **Inspector** tab.
+2. Click the circle to the right of the **Configuration** field.
+3. Click the eye icon in the popup menu.
+4. Search for `default` and select the **DefaultNetStatsMonitorConfiguration**.
 
 OR
 
@@ -48,7 +65,7 @@ OR
 2. Select the `GameObject` with the RNSM component so that it appears in the **Inspector** tab.
 3. Drag the default configuration asset from the **Project** tab to the **Configuration** field under the **RuntimeNetStatsMonitor** component of your `GameObject`.
 
-To configure your own Display Elements presets:
+#### To configure your own Display Elements presets:
 
 1. Select the **Assets** folder under the **Project** tab.
 2. Right-click in the **Assets** folder, then navigate to **Create** > **Multiplayer** and click on **NetStatsMonitorConfiguration**.
@@ -58,17 +75,25 @@ To configure your own Display Elements presets:
 6. Your **Assets** folder should still be visible in the **Project** tab, so select your newly created configuration preset to drag and drop over the **Configuration** field under the **RuntimeNetStatsMonitor** component in the **Inspector** tab.
 7. **Save** your scene.
 
+:::tip
+We recommend using the default configuration as a guide to create your own for the RNSM. It can be found from the **Project** tab, go to **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Assets** > **Configurations**.
+:::
+
 ### Panel Settings
 
 While working in the Unity Editor with the Runtime Network Stats Monitor, you may find your screen real estate to be difficult to work with. To help remedy these situations, you can use the default panel settings or create your own to set up your workspace exactly as you want it.
 
-To use the default Panel Settings:
+#### To use the default Panel Settings:
 
 1. From the **Project** tab, go to **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Implementation** > **UI** > **Resources**. The default panel settings configuration for the RNSM is in this folder: `UnityMpToolsRnsmDefaultPanelSettings.asset`.
 2. Select the `GameObject` with the RNSM component so that it appears in the **Inspector** tab.
 3. Drag the default panel setting asset from the **Project** tab to the **Panel Settings Override** field under the **RuntimeNetStatsMonitor** component of your `GameObject`.
 
-To configure your own Panel Settings presets:
+:::note
+You can use the default Panel Settings for your RNSM or use it as a starting point for custom settings. Leaving the **Panel Settings Override** field blank enables the default settings.
+:::
+
+#### To configure your own Panel Settings presets:
 
 1. Select the **Assets** folder under the **Project** tab.
 2. Right-click in the **Assets** folder, then navigate to **Create** > **UI Toolkit** and click on **Panel Settings Asset**.
@@ -84,17 +109,23 @@ You can customize the styling of the RNSM by dragging and dropping a Unity Style
 
 For more information about Unity Style Sheets (USS), see the Unity Documentation on [Styling the UI with USS](https://docs.unity3d.com/2021.2/Documentation/Manual/UIE-USS.html).
 
-You can use the default USS file for the RNSM to style your RNSM or use it as a starting point for custom styling. It can be found from the **Project** tab under **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Implementation** > **UI** > **Resources** > **UnityMpToolsRnsmDefaultStyleSheet.uss**. Then drag it over the **Custom Style Sheet** field in the **Inspector** tab.
+:::note
+You can use the default USS file for the RNSM to style your RNSM or use it as a starting point for custom styling. Leaving the **Custom Style Sheet** field blank enables the default style sheet.
+:::
 
-To create a new style sheet for the RNSM:
+#### To create a new style sheet for the RNSM:
 
 1. Select the **Assets** folder under the **Project** tab.
 2. Right-click in the **Assets** folder, then navigate to **Create** > **UI Toolkit** and click on **Style Sheet**.
 3. The new USS file appears under the **Assets** folder and also opens in the **Inspector** tab.
-4. From the **Inspector** tab, you can use the + or - symbols to adjust each style element you want to include in this preset. Each field is configurable from here.
+4. From the **Inspector** tab, you can use the + or - symbols to adjust each style element you want to include in this preset. Each field is configurable from here. You may find it easier to create or modify this file as a text file rather than with the **Inspector** ([Unity Style Sheets](https://docs.unity3d.com/2021.2/Documentation/Manual/UIE-USS.html) function similarly to Cascading Style Sheets).
 5. Once configured, you can add your USS configuration preset to your RNSM `GameObject` by selecting the the RNSM `GameObject` to appear in the **Inspector** tab.
 6. Your **Assets** folder should still be visible in the **Project** tab, so select your newly created style sheet to drag and drop over the **Custom Style Sheet** field under the **RuntimeNetStatsMonitor** component in the **Inspector** tab.
 7. **Save** your scene.
+
+:::tip
+We recommend using the default style sheet as a guide to create your own style sheet for the RNSM. It can be found from the **Project** tab under **Packages** > **Multiplayer Tools** > **NetStatsMonitor** > **Implementation** > **UI** > **Resources** > **UnityMpToolsRnsmDefaultStyleSheet.uss**.
+:::
 
 #### USS Classes
 
