@@ -28,8 +28,12 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Netcode Tools",
+                    "label": "Multiplayer Tools",
                     "items": [
+                        {
+                            type: "doc",
+                            id: "tools/tools-1-0-0",
+                        },
                         {
                             type: 'doc',
                             id: 'tools/tools-1-0-0-pre',
