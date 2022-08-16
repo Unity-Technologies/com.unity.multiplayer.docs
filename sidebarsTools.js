@@ -26,51 +26,6 @@ module.exports = {
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Adapters",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Adapters",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Adapters.UnsubscribeFromAllAdapters",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Common",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Common",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Common.VisualElementExtensions",
-                    },
-                ]
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Common Tests",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Common.Tests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Common.Tests.ExponentialMovingAverageTests",
-                    },
-                ]
-            },
-            {
-                "collapsed": true,
-                "type": "category",
                 "label": "Editor",
                 "items": [
                     {
@@ -116,21 +71,6 @@ module.exports = {
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Metric Types - Tests",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.MetricTypes.Tests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.MetricTypes.Tests.MetricTypeStringTests",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
                 "label": "Net Stats",
                 "items": [
                     {
@@ -139,15 +79,7 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStats.AssemblyRequiresTypeRegistrationAttribute",
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Multiplayer.Tools.NetStats.MetricId",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStats.MetricIdTypeLibrary",
                     },
                     {
                         "type": "doc",
@@ -164,25 +96,6 @@ module.exports = {
                     {
                         "type": "doc",
                         "id": "api/Unity.Multiplayer.Tools.NetStats.Units",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Net Stats - Tests",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStats.Tests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStats.Tests.MetricFactoryTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStats.Tests.MetricIdTypeLibraryTests",
                     },
                 ],
             },
@@ -246,121 +159,6 @@ module.exports = {
                     {
                         "type": "doc",
                         "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.SmoothingMethod",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Net Stats Monitor - Tests",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.RnsmCustomDataDisplayUpdateTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.RnsmDisplayUpdateStatus",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.RnsmDisplayUpdateTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.RnsmVisibilityTests",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Net Stats Monitor - Tests - Interface",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.RnsmComponentTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.RnsmHelper",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Net Stats Monitor - Tests - Interface - Configuration",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.CounterConfigurationTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.DisplayElementConfigurationTest",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.GraphConfigurationTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.LineGraphConfigurationTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.PositionConfigurationTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Interface.Configuration.RuntimeNetStatsMonitorTest",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Net Stats Monitor - Tests - Stats",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Stats",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.Tests.Stats.StatHistoryRequirementsTests",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Tests - Editor",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Tests.Editor",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Tests.Editor.BuildSettingsTests",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Tests.Editor.BuildSymbolTests",
                     },
                 ],
             },
