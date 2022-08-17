@@ -3,13 +3,13 @@ id: Unity.Multiplayer.Tools.NetStats.MetricTypeEnumAttribute
 title: Unity.Multiplayer.Tools.NetStats.MetricTypeEnumAttribute
 ---
 
-# Class MetricTypeEnumAttribute
+## Class MetricTypeEnumAttribute
 
 Use this attribute to declare an enum that represents custom metrics for
 use with the Multiplayer Tools package. In particular, this attribute
 can be used to declare custom metrics that can be displayed in the .
 
-##### Inheritance
+### Inheritance
 
 System.Object
 
@@ -17,10 +17,11 @@ System.Attribute
 
 MetricTypeEnumAttribute
 
-##### Implements
+### Implements
 
 System.Runtime.InteropServices.\_Attribute
 
+<!-- Commented out for user readability. Keep commented out for future updates.
 ##### Inherited Members
 
 System.Attribute.Equals(System.Object)
@@ -142,12 +143,13 @@ System.Object.MemberwiseClone()
 System.Object.ReferenceEquals(System.Object, System.Object)
 
 System.Object.ToString()
+-->
 
-###### **Namespace**: Unity.Multiplayer.Tools.NetStats
+## **Namespace**: Unity.Multiplayer.Tools.NetStats
 
-###### **Assembly**: Tools.dll
+### **Assembly**: Tools.dll
 
-##### Syntax
+### Syntax
 
 ``` lang-csharp
 [AttributeUsage(AttributeTargets.Enum)]
@@ -162,13 +164,13 @@ The custom display name to use for the metric enum. This can be set to
 something different than the name of the enum to provide a nicer display
 name in UIs like the inspector.
 
-##### Declaration
+#### Declaration
 
 ``` lang-csharp
 public string DisplayName { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|

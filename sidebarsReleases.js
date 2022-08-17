@@ -82,6 +82,10 @@ module.exports = {
                         },
                         {
                             type: 'doc',
+                            id: 'transport/transport-1-0-0-pre',
+                        },
+                        {
+                            type: 'doc',
                             id: 'transport/transport-0-8-0',
                         },
                     ]
