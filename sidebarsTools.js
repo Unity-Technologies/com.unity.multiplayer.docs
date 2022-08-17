@@ -41,21 +41,6 @@ module.exports = {
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Editor - Network Simulator",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Editor.NetworkSimulator",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Editor.NetworkSimulator.NetworkSimulatorBuildSettings",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
                 "label": "Metric Types",
                 "items": [
                     {
