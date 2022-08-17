@@ -1,11 +1,6 @@
 {
   "version-2.0.0/transport": [
-      {
-          "collapsed": true,
-          "type": "category",
-          "label": "Overview",
-          "items": [
-              {
+                {
                   "type": "doc",
                   "id": "version-2.0.0/about"
               },
@@ -109,5 +104,4 @@
                   ]
               }
           ]
-          }]
 }
