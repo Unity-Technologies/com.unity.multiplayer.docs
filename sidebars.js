@@ -11,36 +11,16 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "migration/install"
+                    "id": "installation/install"
                 },
                 {
                     "type": "doc",
-                    "id": "migration/upgrade-guide",
+                    "id": "installation/upgrade_from_mlapi",
                 },
                 {
                     "type": "doc",
-                    "id": "migration/migratingtonetcode"
+                    "id": "installation/upgrade_from_UNet"
                 },
-                {
-                    "type": "doc",
-                    "id": "migration/migratingfrommlapi"
-                },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Hello World",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldintro"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/helloworld/helloworldtwo"
-                        }
-                    ]
-                },
-
             ],
         },
         {
@@ -50,11 +30,11 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "getting-started/connection-approval"
+                    "id": "basics/connection-approval"
                 },
                 {
                     "type": "doc",
-                    "id": "getting-started/max-players"
+                    "id": "basics/max-players"
                 },
                 {
                     "type": "doc",
@@ -320,21 +300,6 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Tools",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "tools/install-tools",
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/profiling",
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
             "label": "Debugging",
             "items": [
                 {
@@ -355,12 +320,15 @@ module.exports = {
                 }
             ]
         },
-        
         {
             "collapsed": true,
             "type": "category",
             "label": "Walk-Throughs",
             "items": [
+                {
+                    "type": "doc",
+                    "id": "tutorials/helloworld"
+                },
                 {
                     "collapsed": true,
                     "type": "category",
@@ -368,11 +336,7 @@ module.exports = {
                     "items": [
                         {
                             "type": "doc",
-                            "id": "tutorials/goldenpath_series/starting_out"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
+                            "id": "tutorials/goldenpath_series/gp_intro"
                         },
                         {
                             "type": "doc",
@@ -491,91 +455,67 @@ module.exports = {
         [
             {
                 "type": "doc",
-                "id": "learn/introduction",
+                "id": "reference/glossary/high-level-terminology"
             },
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Reference Material",
+                "label": "Lag",
                 "items": [
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Networking Concepts",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/high-level-terminology"
-                            },
-                            {
-                                "collapsed": true,
-                                "type": "category",
-                                "label": "Lag",
-                                "items": [
-                                    {
-                                        "type": "doc",
-                                        "id": "reference/glossary/ticks-and-update-rates"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/lagandpacketloss"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/clientside_interpolation"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/dealing-with-latency"
-                                    },
-                                ],
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-terms"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/prioritization"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/relevancy"
-                            },
-                        ],
-
+                        "type": "doc",
+                        "id": "reference/glossary/ticks-and-update-rates"
                     },
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Game Architecture",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/multiplayer-game-arhitecture"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-topologies"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "learn/listen-server-host-architecture"
-                            }
-                        ]
+                        "type": "doc",
+                        "id": "learn/lagandpacketloss"
                     },
-
-
-                ],
+                    {
+                        "type": "doc",
+                        "id": "learn/clientside_interpolation"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/dealing-with-latency"
+                    },
+                        ],
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/network-terms"
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/prioritization"
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/relevancy"
+            },
+            {
+                "collapsed": true,
+                "type": "category",
+                "label": "Multiplayer Game Architecture",
+                "items": [
+                    {
+                        "type": "doc",
+                        "id": "learn/multiplayer-game-arhitecture"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "reference/glossary/network-topologies"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/listen-server-host-architecture"
+                    }
+                        ]
             },
             {
                 "type": "doc",
                 "id": "learn/faq"
             },
         ],
-
 
     api:
         [

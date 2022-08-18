@@ -1,15 +1,15 @@
 ---
-id: profiling
-title: Profiling
-sidebar_label: Profiling
+id: profiler
+title: Network Profiler
+sidebar_label: Network Profiler
 ---
 :::caution
-This guide uses Unity 2021.2 beta. On 2021.1 and below, the profiler outputs only simple statistics.
+This guide uses Unity 2021.3 LTS.
+
+On 2021.1 and below, the profiler outputs only simple statistics.
 :::
 
 Profiling is the process of measuring the performance of your game while it is running. It allows you to check your optimization points and control that your enhancements make a real difference.
-
-<!-- For a walk-through of the Netcode profiler tool features with Boss Room, see the [Profiler Tool Golden Path](). -->
 
 In multiplayer game programming, you have three primary resources you need to keep under control:
 - Bandwidth consumption
@@ -24,22 +24,22 @@ Regarding latency, it is a whole topic in itself, but remember that we are talki
 
 ## Prerequisites
 
-Starting from Unity 2021.1, the Unity profiler can extend its features with Netcode for GameObjects [NetCode]. Netcode enables you to profile your game in the same tool you are already using for CPU, GPU, and memory.
+Starting from Unity 2021.1, the Unity Profiler can be extended with features to support profiling the network traffic of multiplayer games built using Netcode for Game Objects (Netcode). These features are available as part of the Network Profiler included in the Multiplayer Tools package. The Network Profiler enables you to profile the networking activity of your game in the same profiler that you use to profile CPU, GPU, and memory.
 
-To enable profiling support for Netcode, install the `com.unity.multiplayer.tools` package from the [Unity Package Manager](../tools/install-tools.md). Then, you should see two additional modules in your profiler (**Window** > **Analysis** > **Profiler**):
+To enable profiling support for Netcode, [install the Multiplayer Tools package](install-tools.md).
+
+You should now see two additional modules in your profiler (**Window** > **Analysis** > **Profiler**):
 * Messages - Network messages sent to the transport
 * Objects - Activity related to, and grouped by, network objects
 
-:::important
-If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the moduels to appear.
+:::note
+If you have the profiler window open when you install the tools package in 2020.3 or 2021.1, you may need to close and reopen the profiler window for the modules to appear.
+
+The network profiler samples its data by frame rate. Therefore, you may find the graphs a little spiky.
 :::
 
 :::caution
 Netcode for GameObjects does not update the legacy profiler modules **Network Messages** and **Network Operations**.
-:::
-
-:::note
-The network profiler samples its data by frame rate. Therefore, you may find the graphs a little spiky.
 :::
 
 ## Messages Module
