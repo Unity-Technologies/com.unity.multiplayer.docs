@@ -1,29 +1,30 @@
----  
-id: Unity.Netcode.NetworkObject.SpawnDelegate  
-title: Unity.Netcode.NetworkObject.SpawnDelegate  
+---
+id: Unity.Netcode.NetworkObject.SpawnDelegate
+title: Unity.Netcode.NetworkObject.SpawnDelegate
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkObject.SpawnDelegate
+
 
 Delegate type for checking spawn options
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate bool SpawnDelegate(ulong clientId);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -37,4 +38,5 @@ public delegate bool SpawnDelegate(ulong clientId);
 |----------------|-------------|
 | System.Boolean |             |
 
- 
+
+

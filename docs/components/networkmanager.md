@@ -26,7 +26,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 `NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
 :::caution
-All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (i.e. NetworkManager.IsListening == true).  A good general "rule of thumb" is to not attempt to access the below sub-systems prior to starting the `NetworkManager`, otherwise they will not yet be initialized.
+All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (i.e. `NetworkManager.IsListening == true`).  A good general "rule of thumb" is to not attempt to access the below sub-systems prior to starting the `NetworkManager`, otherwise they will not yet be initialized.
 :::
 
 - [NetworkManager.PrefabHandler](../advanced-topics/object-pooling.md): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
@@ -72,17 +72,22 @@ NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
 );
 ```
 
-If you are using the same code block to configure both your server and your client and you want to configure your server to listen to all IP addresses assigned to it, then you can directly access the `ConnectionAddressData` struct which provides you with additional properties: 
+If you are using the same code block to configure both your server and your client and you want to configure your server to listen to all IP addresses assigned to it, then you can also pass a 'listen address' of "0.0.0.0" to the `SetConnectionData` method, like so:
 ```csharp
-var connectionData = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData;
-connectionData.Address = "127.0.0.1";           // The IP address is a string
-connectionData.Port = 12345;                    // The port number is an unsigned short
-connectionData.ServerListenAddress = "0.0.0.0"; // The server listen address is a string
+NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
+    "127.0.0.1",  // The IP address is a string
+    (ushort)12345, // The port number is an unsigned short
+    "0.0.0.0" // The server listen address is a string.
+);
 ```
 
 :::note
 Using an IP address of 0.0.0.0 for the server listen address will make a server or host listen on all IP addresses assigned to the local system. This can be particularly helpful if you are testing a client instance on the same system as well as one or more client instances connecting from other systems on your local area network. Another scenario is while developing and debugging you might sometimes test local client instances on the same system and sometimes test client instances running on external systems.  
 :::
+
+It is possible to access the current connection data at runtime, via `NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData`. This will return a [`ConnectionAddressData` **struct**](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/11922a0bc100a1615c541aa7298c47d253b74937/com.unity.netcode.gameobjects/Runtime/Transports/UTP/UnityTransport.cs#L239-L286), holding this info. You are strongly advised to use the `SetConnectionData` method to update this info.
+
+If you are using Unity Relay to handle connections, however, **do not use `SetConnectionData`**. The host should call [`SetHostRelayData`](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/11922a0bc100a1615c541aa7298c47d253b74937/com.unity.netcode.gameobjects/Runtime/Transports/UTP/UnityTransport.cs#L575), and clients should call [`SetClientRelayData`](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/11922a0bc100a1615c541aa7298c47d253b74937/com.unity.netcode.gameobjects/Runtime/Transports/UTP/UnityTransport.cs#L588). Attempting to join a **Relay**-hosted game via entering IP/port number (via `SetConnectionData`) **will not work**.
 
 
 [More information about Netcode for GameObjects Transports](../advanced-topics/transports.md)
@@ -120,7 +125,7 @@ One way to get a player's primary `NetworkObject` is via `NetworkClient.PlayerOb
 ```csharp
 void DisconnectPlayer(NetworkObject player)
 {   
-    // Note: If a client invokes this method, it will throw and exception
+    // Note: If a client invokes this method, it will throw an exception.
     NetworkManager.DisconnectClient(player.OwnerClientId);
 }
 ```
@@ -173,6 +178,11 @@ public class ConnectionNotificationManager : MonoBehaviour
         Disconnected
     }
 
+    /// <summary>
+    /// This action is invoked whenever a client connects or disconnects from the game.
+    ///   The first parameter is the ID of the client (ulong).
+    ///   The second parameter is whether or not that client is connecting or disconnecting.
+    /// </summary>
     public event Action<ulong, ConnectionStatus> OnClientConnectionNotification;
 
     private void Awake()
@@ -189,6 +199,17 @@ public class ConnectionNotificationManager : MonoBehaviour
 
     private void Start()
     {
+        if (Singleton != this){
+            return; // so things don't get even more broken if this is a duplicate >:(
+        }
+        
+        if (NetworkManager.Singleton == null)
+        {
+            // Can't listen to something that doesn't exist >:(
+            throw new Exception($"There is no {nameof(NetworkManager)} for the {nameof(ConnectionNotificationManager)} to do stuff with! " + 
+                $"Please add a {nameof(NetworkManager)} to the scene.");
+        }
+        
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
     }
@@ -196,7 +217,7 @@ public class ConnectionNotificationManager : MonoBehaviour
     private void OnDestroy()
     {
         // Since the NetworkManager could potentially be destroyed before this component, only 
-        // remove the subscriptions if the singleton still exists.
+        // remove the subscriptions if that singleton still exists.
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;

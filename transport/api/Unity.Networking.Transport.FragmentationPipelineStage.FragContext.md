@@ -1,154 +1,173 @@
----  
-id: Unity.Networking.Transport.FragmentationPipelineStage.FragContext  
-title: Unity.Networking.Transport.FragmentationPipelineStage.FragContext  
+---
+id: Unity.Networking.Transport.FragmentationPipelineStage.FragContext
+title: Unity.Networking.Transport.FragmentationPipelineStage.FragContext
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct FragmentationPipelineStage.FragContext
 
-<div class="markdown level0 conceptual">
 
-</div>
+The fragmentation stage's internal context.
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct FragContext
 ```
 
-## 
 
-### endIndex
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### endIndex
 
-<div class="markdown level1 conceptual">
 
-</div>
+Ending index.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int endIndex
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### packetError
+#### packetError
 
-<div class="markdown level1 summary">
 
-</div>
+Whether there's an error with a packet.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool packetError
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### sequence
+#### sequence
 
-<div class="markdown level1 summary">
 
-</div>
+Sequence number.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int sequence
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### startIndex
+#### startIndex
 
-<div class="markdown level1 summary">
 
-</div>
+Starting index.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int startIndex
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

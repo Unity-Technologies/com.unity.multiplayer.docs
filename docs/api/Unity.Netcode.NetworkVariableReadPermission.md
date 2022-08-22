@@ -1,24 +1,50 @@
----  
-id: Unity.Netcode.NetworkVariableReadPermission  
-title: Unity.Netcode.NetworkVariableReadPermission  
 ---
+id: Unity.Netcode.NetworkVariableReadPermission
+title: Unity.Netcode.NetworkVariableReadPermission
+---
+
+# Enum NetworkVariableReadPermission
+
+
+The permission types for reading a var
+
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum NetworkVariableReadPermission
 ```
 
-</div>
+
 
 ### Fields
 
 Name
 
+
+
+
+
+
+
+
+
 Description
 
 Everyone
 
+Everyone can read
+
 Owner
+
+Only the owner and the server can read
+

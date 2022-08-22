@@ -1,210 +1,223 @@
----  
-id: Unity.Networking.Transport.CommonNetworkParametersExtensions  
-title: Unity.Networking.Transport.CommonNetworkParametersExtensions  
+---
+id: Unity.Networking.Transport.CommonNetworkParametersExtensions
+title: Unity.Networking.Transport.CommonNetworkParametersExtensions
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class CommonNetworkParametersExtensions
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+CommonNetworkParametersExtensions
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class CommonNetworkParametersExtensions
 ```
 
-## 
 
-### GetDataStreamParameters(ref NetworkSettings)
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### GetDataStreamParameters(ref NetworkSettings)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the NetworkDataStreamParameter
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static NetworkDataStreamParameter GetDataStreamParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                       | Description |
-|----------------------------|-------------|
-| NetworkDataStreamParameter |             |
+| Type                       | Description                                                           |
+|----------------------------|-----------------------------------------------------------------------|
+| NetworkDataStreamParameter | Returns the NetworkDataStreamParameter values for the NetworkSettings |
 
-### GetNetworkConfigParameters(ref NetworkSettings)
+#### GetNetworkConfigParameters(ref NetworkSettings)
 
-<div class="markdown level1 summary">
 
-</div>
+Gets the NetworkConfigParameter
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static NetworkConfigParameter GetNetworkConfigParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                   | Description |
-|------------------------|-------------|
-| NetworkConfigParameter |             |
+| Type                   | Description                                                       |
+|------------------------|-------------------------------------------------------------------|
+| NetworkConfigParameter | Returns the NetworkConfigParameter values for the NetworkSettings |
 
-### WithDataStreamParameters(ref NetworkSettings, Int32)
+#### WithDataStreamParameters(ref NetworkSettings, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Sets the NetworkDataStreamParameter values for the NetworkSettings
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ref NetworkSettings WithDataStreamParameters(this ref NetworkSettings settings, int size = 0)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
-| System.Int32    | size     |             |
+| System.Int32    | size     | size        |
 
-#### Returns
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
 
-### WithNetworkConfigParameters(ref NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+#### WithNetworkConfigParameters(ref NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Sets the NetworkConfigParameter values for the NetworkSettings
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
-public static ref NetworkSettings WithNetworkConfigParameters(this ref NetworkSettings settings, int connectTimeoutMS = 1000, int maxConnectAttempts = 60, int disconnectTimeoutMS = 30000, int heartbeatTimeoutMS = 500, int reconnectionTimeoutMS = 2000, int maxFrameTimeMS = 0, int fixedFrameTimeMS = 0)
+public static ref NetworkSettings WithNetworkConfigParameters(this ref NetworkSettings settings, int connectTimeoutMS = 1000, int maxConnectAttempts = 60, int disconnectTimeoutMS = 30000, int heartbeatTimeoutMS = 500, int maxFrameTimeMS = 0, int fixedFrameTimeMS = 0)
 ```
 
-#### Parameters
 
-| Type            | Name                  | Description |
-|-----------------|-----------------------|-------------|
-| NetworkSettings | settings              |             |
-| System.Int32    | connectTimeoutMS      |             |
-| System.Int32    | maxConnectAttempts    |             |
-| System.Int32    | disconnectTimeoutMS   |             |
-| System.Int32    | heartbeatTimeoutMS    |             |
-| System.Int32    | reconnectionTimeoutMS |             |
-| System.Int32    | maxFrameTimeMS        |             |
-| System.Int32    | fixedFrameTimeMS      |             |
 
-#### Returns
+##### Parameters
+
+| Type            | Name                | Description         |
+|-----------------|---------------------|---------------------|
+| NetworkSettings | settings            |                     |
+| System.Int32    | connectTimeoutMS    | connectTimeoutMS    |
+| System.Int32    | maxConnectAttempts  | maxConnectAttempts  |
+| System.Int32    | disconnectTimeoutMS | disconnectTimeoutMS |
+| System.Int32    | heartbeatTimeoutMS  | heartbeatTimeoutMS  |
+| System.Int32    | maxFrameTimeMS      | maxFrameTimeMS      |
+| System.Int32    | fixedFrameTimeMS    | fixedFrameTimeMS    |
+
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+
+

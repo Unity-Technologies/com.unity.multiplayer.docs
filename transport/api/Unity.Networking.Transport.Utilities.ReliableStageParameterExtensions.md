@@ -1,147 +1,155 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions  
-title: Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions  
+---
+id: Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions
+title: Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class ReliableStageParameterExtensions
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+ReliableStageParameterExtensions
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class ReliableStageParameterExtensions
 ```
 
-## 
 
-### GetReliableStageParameters(ref NetworkSettings)
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### GetReliableStageParameters(ref NetworkSettings)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the ReliableUtility.Parameters
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ReliableUtility.Parameters GetReliableStageParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                       | Description |
-|----------------------------|-------------|
-| ReliableUtility.Parameters |             |
+| Type                       | Description                                                           |
+|----------------------------|-----------------------------------------------------------------------|
+| ReliableUtility.Parameters | Returns the ReliableUtility.Parameters values for the NetworkSettings |
 
-### WithReliableStageParameters(ref NetworkSettings, Int32)
+#### WithReliableStageParameters(ref NetworkSettings, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Sets the ReliableUtility.Parameters values for the NetworkSettings
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ref NetworkSettings WithReliableStageParameters(this ref NetworkSettings settings, int windowSize = 32)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name       | Description |
 |-----------------|------------|-------------|
 | NetworkSettings | settings   |             |
-| System.Int32    | windowSize |             |
+| System.Int32    | windowSize | WindowSize  |
 
-#### Returns
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+
+

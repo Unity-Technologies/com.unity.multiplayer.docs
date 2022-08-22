@@ -1,24 +1,58 @@
----  
-id: Unity.Networking.Transport.INetworkParameter  
-title: Unity.Networking.Transport.INetworkParameter  
+---
+id: Unity.Networking.Transport.INetworkParameter
+title: Unity.Networking.Transport.INetworkParameter
 ---
 
-<div class="markdown level0 summary">
+
+# Interface INetworkParameter
+
 
 The interface for NetworkParameters
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public interface INetworkParameter
 ```
+
+
+
+### Methods
+
+#### Validate()
+
+
+Checks if the values for all fields are valid. This method will be
+automatically called when adding a paramter to the NetworkSettings.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+bool Validate()
+```
+
+
+
+##### Returns
+
+| Type           | Description                             |
+|----------------|-----------------------------------------|
+| System.Boolean | Returns true if the parameter is valid. |
+
+
+

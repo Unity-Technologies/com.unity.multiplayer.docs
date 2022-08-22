@@ -1,147 +1,155 @@
----  
-id: Unity.Networking.Transport.NetworkPipelineParametersExtensions  
-title: Unity.Networking.Transport.NetworkPipelineParametersExtensions  
+---
+id: Unity.Networking.Transport.NetworkPipelineParametersExtensions
+title: Unity.Networking.Transport.NetworkPipelineParametersExtensions
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class NetworkPipelineParametersExtensions
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkPipelineParametersExtensions
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class NetworkPipelineParametersExtensions
 ```
 
-## 
 
-### GetPipelineParameters(ref NetworkSettings)
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### GetPipelineParameters(ref NetworkSettings)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the NetworkPipelineParams
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static NetworkPipelineParams GetPipelineParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                  | Description |
-|-----------------------|-------------|
-| NetworkPipelineParams |             |
+| Type                  | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| NetworkPipelineParams | Returns the NetworkPipelineParams values for the NetworkSettings |
 
-### WithPipelineParameters(ref NetworkSettings, Int32)
+#### WithPipelineParameters(ref NetworkSettings, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Sets the NetworkPipelineParams values for the NetworkSettings
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ref NetworkSettings WithPipelineParameters(this ref NetworkSettings settings, int initialCapacity = 0)
 ```
 
-#### Parameters
 
-| Type            | Name            | Description |
-|-----------------|-----------------|-------------|
-| NetworkSettings | settings        |             |
-| System.Int32    | initialCapacity |             |
 
-#### Returns
+##### Parameters
+
+| Type            | Name            | Description     |
+|-----------------|-----------------|-----------------|
+| NetworkSettings | settings        |                 |
+| System.Int32    | initialCapacity | initialCapacity |
+
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+
+

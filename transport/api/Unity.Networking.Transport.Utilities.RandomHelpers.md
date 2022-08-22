@@ -1,134 +1,140 @@
----  
-id: Unity.Networking.Transport.Utilities.RandomHelpers  
-title: Unity.Networking.Transport.Utilities.RandomHelpers  
+---
+id: Unity.Networking.Transport.Utilities.RandomHelpers
+title: Unity.Networking.Transport.Utilities.RandomHelpers
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class RandomHelpers
 
-<div class="markdown level0 conceptual">
 
-</div>
+A simple method to obtain a random ushort provided by the class.
 
-<div class="inheritance">
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+RandomHelpers
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class RandomHelpers
 ```
 
-## 
 
-### GetRandomULong()
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### GetRandomULong()
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ulong GetRandomULong()
 ```
 
-#### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt64 |             |
 
-### GetRandomUShort()
+##### Returns
 
-<div class="markdown level1 summary">
+| Type          | Description                                |
+|---------------|--------------------------------------------|
+| System.UInt64 | a ushort in \[1..uint.MaxValue - 1\] range |
 
-</div>
+#### GetRandomUShort()
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ushort GetRandomUShort()
 ```
 
-#### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
+
+##### Returns
+
+| Type          | Description                                  |
+|---------------|----------------------------------------------|
+| System.UInt16 | a ushort in \[1..ushort.MaxValue - 1\] range |
+
+
+

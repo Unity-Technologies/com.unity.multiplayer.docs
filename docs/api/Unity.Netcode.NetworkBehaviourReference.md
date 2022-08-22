@@ -1,103 +1,99 @@
----  
-id: Unity.Netcode.NetworkBehaviourReference  
-title: Unity.Netcode.NetworkBehaviourReference  
+---
+id: Unity.Netcode.NetworkBehaviourReference
+title: Unity.Netcode.NetworkBehaviourReference
 ---
 
-<div class="markdown level0 summary">
+# Struct NetworkBehaviourReference
+
 
 A helper struct for serializing NetworkBehaviours over the network. Can
 be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled
 by the NetworkManager after a while. So a reference pointing to
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkSerializable
 
-</div>
 
-<div>
+
+
 
 System.IEquatable\<NetworkBehaviourReference\>
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkBehaviourReference : INetworkSerializable, IEquatable<NetworkBehaviourReference>
 ```
 
-</div>
+
 
 ### Constructors
 
 #### NetworkBehaviourReference(NetworkBehaviour)
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkBehaviourReference(NetworkBehaviour networkBehaviour)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -115,23 +111,20 @@ public NetworkBehaviourReference(NetworkBehaviour networkBehaviour)
 
 #### Equals(Object)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object obj)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -147,31 +140,28 @@ public override bool Equals(object obj)
 
 ##### Overrides
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
+
 
 #### Equals(NetworkBehaviourReference)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(NetworkBehaviourReference other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -187,23 +177,20 @@ public bool Equals(NetworkBehaviourReference other)
 
 #### GetHashCode()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -213,35 +200,32 @@ public override int GetHashCode()
 
 ##### Overrides
 
-<div>
+
 
 System.ValueType.GetHashCode()
 
-</div>
+
 
 #### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
-<div class="markdown level1 summary">
 
 Provides bi-directional serialization to read and write the desired data
 to serialize this type.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void NetworkSerialize<T>(BufferSerializer<T> serializer)
     where T : IReaderWriter
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -257,25 +241,22 @@ public void NetworkSerialize<T>(BufferSerializer<T> serializer)
 
 #### TryGet(out NetworkBehaviour, NetworkManager)
 
-<div class="markdown level1 summary">
 
 Tries to get the NetworkBehaviour referenced by this reference.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryGet(out NetworkBehaviour networkBehaviour, NetworkManager networkManager = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -292,26 +273,23 @@ public bool TryGet(out NetworkBehaviour networkBehaviour, NetworkManager network
 
 #### TryGet\<T\>(out T, NetworkManager)
 
-<div class="markdown level1 summary">
 
 Tries to get the NetworkBehaviour referenced by this reference.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryGet<T>(out T networkBehaviour, NetworkManager networkManager = null)
     where T : NetworkBehaviour
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -336,80 +314,79 @@ public bool TryGet<T>(out T networkBehaviour, NetworkManager networkManager = nu
 
 #### Implicit(NetworkBehaviour to NetworkBehaviourReference)
 
-<div class="markdown level1 summary">
 
-</div>
+Implicitly convert NetworkBehaviour to NetworkBehaviourReference.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkBehaviourReference(NetworkBehaviour networkBehaviour)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type             | Name             | Description |
-|------------------|------------------|-------------|
-| NetworkBehaviour | networkBehaviour |             |
+| Type             | Name             | Description                           |
+|------------------|------------------|---------------------------------------|
+| NetworkBehaviour | networkBehaviour | The NetworkBehaviour to convert from. |
 
 ##### Returns
 
-| Type                      | Description |
-|---------------------------|-------------|
-| NetworkBehaviourReference |             |
+| Type                      | Description                                                                              |
+|---------------------------|------------------------------------------------------------------------------------------|
+| NetworkBehaviourReference | The NetworkBehaviourReference created from the NetworkBehaviour passed in as a parameter |
 
 #### Implicit(NetworkBehaviourReference to NetworkBehaviour)
 
-<div class="markdown level1 summary">
 
-</div>
+Implicitly convert NetworkBehaviourReference to NetworkBehaviour.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkBehaviour(NetworkBehaviourReference networkBehaviourRef)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                      | Name                | Description |
-|---------------------------|---------------------|-------------|
-| NetworkBehaviourReference | networkBehaviourRef |             |
+| Type                      | Name                | Description                                    |
+|---------------------------|---------------------|------------------------------------------------|
+| NetworkBehaviourReference | networkBehaviourRef | The NetworkBehaviourReference to convert from. |
 
 ##### Returns
 
-| Type             | Description |
-|------------------|-------------|
-| NetworkBehaviour |             |
+| Type             | Description                                               |
+|------------------|-----------------------------------------------------------|
+| NetworkBehaviour | The NetworkBehaviour this class is holding a reference to |
 
 ### Implements
 
-<div>
+
 
 INetworkSerializable
 
-</div>
 
-<div>
+
+
 
 System.IEquatable\<T\>
 
-</div>
 
- 
+
+
+

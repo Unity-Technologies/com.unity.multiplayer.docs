@@ -1,27 +1,42 @@
----  
-id: Unity.Netcode.RpcDelivery  
-title: Unity.Netcode.RpcDelivery  
+---
+id: Unity.Netcode.RpcDelivery
+title: Unity.Netcode.RpcDelivery
 ---
 
-<div class="markdown level0 summary">
+# Enum RpcDelivery
+
 
 RPC delivery types
 
-</div>
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum RpcDelivery
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 
@@ -32,3 +47,4 @@ Reliable delivery
 Unreliable
 
 Unreliable delivery
+

@@ -1,36 +1,36 @@
----  
-id: Unity.Netcode.INetworkPrefabInstanceHandler  
-title: Unity.Netcode.INetworkPrefabInstanceHandler  
+---
+id: Unity.Netcode.INetworkPrefabInstanceHandler
+title: Unity.Netcode.INetworkPrefabInstanceHandler
 ---
 
-<div class="markdown level0 summary">
+# Interface INetworkPrefabInstanceHandler
+
 
 Interface for customizing, overriding, spawning, and destroying Network
 Prefabs Used by NetworkPrefabHandler
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public interface INetworkPrefabInstanceHandler
 ```
 
-</div>
+
 
 ### Methods
 
 #### Destroy(NetworkObject)
 
-<div class="markdown level1 summary">
 
 Invoked on Client and Server Once an implementation is registered with
 the NetworkPrefabHandler, this method will be called when a Network
@@ -47,21 +47,19 @@ Note on Pooling: When this method is invoked, you do not need to destroy
 the NetworkObject as long as you want your pool to persist. The most
 common approach is to make the NetworkObject inactive by calling .
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void Destroy(NetworkObject networkObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -71,7 +69,6 @@ void Destroy(NetworkObject networkObject)
 
 #### Instantiate(UInt64, Vector3, Quaternion)
 
-<div class="markdown level1 summary">
 
 Client Side Only Once an implementation is registered with the
 NetworkPrefabHandler, this method will be called every time a Network
@@ -85,21 +82,19 @@ client.
 Note on Pooling: If you are using a NetworkObject pool, don't forget to
 make the NetworkObject active via the method.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rotation)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -115,4 +110,5 @@ NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rota
 |---------------|-------------|
 | NetworkObject |             |
 
- 
+
+

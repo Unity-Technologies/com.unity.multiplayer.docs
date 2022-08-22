@@ -3,82 +3,91 @@ id: Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData
 title: Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData
 ---
 
-<div class="inheritedMembers">
+# Struct UnityTransport.ConnectionAddressData
+
+
+Structure to store the address to connect to
+
+
+
+
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
-
-</div>
 
 
+
+
+###### **Namespace**: Unity.Netcode.Transports.UTP
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 [Serializable]
 public struct ConnectionAddressData
 ```
 
-</div>
+
 
 ### Fields
 
 #### Address
 
-<div class="markdown level1 summary">
 
-</div>
+IP address of the server (address to which clients will connect to).
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public string Address
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -88,23 +97,22 @@ public string Address
 
 #### Port
 
-<div class="markdown level1 summary">
 
-</div>
+UDP port of the server.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ushort Port
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -114,23 +122,23 @@ public ushort Port
 
 #### ServerListenAddress
 
-<div class="markdown level1 summary">
 
-</div>
+IP address the server will listen on. If not provided, will use
+'Address'.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public string ServerListenAddress
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -142,23 +150,22 @@ public string ServerListenAddress
 
 #### ListenEndPoint
 
-<div class="markdown level1 summary">
 
-</div>
+Endpoint (IP address and port) server will listen/bind on.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly NetworkEndPoint ListenEndPoint { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -168,23 +175,22 @@ public readonly NetworkEndPoint ListenEndPoint { get; }
 
 #### ServerEndPoint
 
-<div class="markdown level1 summary">
 
-</div>
+Endpoint (IP address and port) clients will connect to.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly NetworkEndPoint ServerEndPoint { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -192,4 +198,5 @@ public readonly NetworkEndPoint ServerEndPoint { get; }
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
- 
+
+

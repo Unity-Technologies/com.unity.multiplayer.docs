@@ -1,286 +1,323 @@
----  
-id: Unity.Networking.Transport.INetworkInterface  
-title: Unity.Networking.Transport.INetworkInterface  
+---
+id: Unity.Networking.Transport.INetworkInterface
+title: Unity.Networking.Transport.INetworkInterface
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Interface INetworkInterface
 
-<div class="markdown level0 conceptual">
 
-</div>
+Interface for implementing a low-level networking interface see
+BaselibNetworkInterface as an example
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-IDisposable.Dispose()
 
-</div>
+System.IDisposable.Dispose()
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public interface INetworkInterface : IDisposable
 ```
 
-## 
 
-### LocalEndPoint
 
-<div class="markdown level1 summary">
+### Properties
 
-</div>
+#### LocalEndPoint
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the value of the local end point
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 NetworkInterfaceEndPoint LocalEndPoint { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type                     | Description |
 |--------------------------|-------------|
 | NetworkInterfaceEndPoint |             |
 
-## 
+### Methods
 
-### Bind(NetworkInterfaceEndPoint)
+#### Bind(NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
 Binds the medium to a specific endpoint.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 int Bind(NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                     | Name     | Description                       |
 |--------------------------|----------|-----------------------------------|
 | NetworkInterfaceEndPoint | endpoint | A valid NetworkInterfaceEndPoint. |
 
-#### Returns
+##### Returns
 
 | Type         | Description  |
 |--------------|--------------|
 | System.Int32 | 0 on Success |
 
-### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
+#### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
-</div>
+Creates the interface end point using the specified address
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkEndPoint          | address  |             |
-| NetworkInterfaceEndPoint | endpoint |             |
 
-#### Returns
+##### Parameters
+
+| Type                     | Name     | Description  |
+|--------------------------|----------|--------------|
+| NetworkEndPoint          | address  | The address  |
+| NetworkInterfaceEndPoint | endpoint | The endpoint |
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 |             |
+| System.Int32 | The int     |
 
-### CreateSendInterface()
+#### CreateSendInterface()
 
-<div class="markdown level1 summary">
 
-</div>
+Creates the send interface
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 NetworkSendInterface CreateSendInterface()
 ```
 
-#### Returns
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkSendInterface |             |
 
-### GetGenericEndPoint(NetworkInterfaceEndPoint)
+##### Returns
 
-<div class="markdown level1 summary">
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkSendInterface | The network send interface |
 
-</div>
+#### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the generic end point using the specified endpoint
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
 
-#### Returns
+##### Parameters
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+| Type                     | Name     | Description  |
+|--------------------------|----------|--------------|
+| NetworkInterfaceEndPoint | endpoint | The endpoint |
 
-### Initialize(NetworkSettings)
+##### Returns
 
-<div class="markdown level1 summary">
+| Type            | Description           |
+|-----------------|-----------------------|
+| NetworkEndPoint | The network end point |
 
-</div>
+#### Initialize(NetworkSettings)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Initializes the interfacing passing in optional INetworkParameter
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 int Initialize(NetworkSettings settings)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 |             |
+| System.Int32 | The int     |
 
-### Listen()
+#### Listen()
 
-<div class="markdown level1 summary">
 
 Start listening for incoming connections. This is normally a no-op for
 real UDP sockets.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 int Listen()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type         | Description  |
 |--------------|--------------|
 | System.Int32 | 0 on Success |
 
-### ScheduleReceive(NetworkPacketReceiver, JobHandle)
+#### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
-<div class="markdown level1 summary">
 
 Schedule a ReceiveJob. This is used to read data from your supported
 medium and pass it to the AppendData function supplied by NetworkDriver
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                  | Name     | Description                                      |
 |-----------------------|----------|--------------------------------------------------|
 | NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
 | JobHandle             | dep      | A to any dependency we might have.               |
 
-#### Returns
+##### Returns
 
 | Type      | Description                                 |
 |-----------|---------------------------------------------|
 | JobHandle | A to our newly created ScheduleReceive Job. |
 
-### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
+#### ScheduleSend(NativeQueue\<QueuedSendMessage\>, JobHandle)
 
-<div class="markdown level1 summary">
 
 Schedule a SendJob. This is used to flush send queues to your supported
 medium
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                             | Name      | Description                                                |
 |----------------------------------|-----------|------------------------------------------------------------|
-| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue | The send queue which can be used to emulate parallel send. |
+| NativeQueue\<QueuedSendMessage\> | sendQueue | The send queue which can be used to emulate parallel send. |
 | JobHandle                        | dep       | A to any dependency we might have.                         |
 
-#### Returns
+##### Returns
 
 | Type      | Description                              |
 |-----------|------------------------------------------|
 | JobHandle | A to our newly created ScheduleSend Job. |
+
+
+
+
+
+System.IDisposable
+
+
+
+
+
+
+
