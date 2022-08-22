@@ -1,7 +1,60 @@
----
-id: Unity.Netcode.ForceNetworkSerializeByMemcpy
-title: Unity.Netcode.ForceNetworkSerializeByMemcpy
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct ForceNetworkSerializeByMemcpy\<T\>
 
 <div class="markdown level0 summary">
 
@@ -63,7 +116,9 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -87,6 +142,8 @@ public struct ForceNetworkSerializeByMemcpy<T> : INetworkSerializeByMemcpy, IEqu
 
 <div class="markdown level1 summary">
 
+The default constructor for ForceNetworkSerializeByMemcpy\<T\>
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -105,15 +162,17 @@ public ForceNetworkSerializeByMemcpy(T value)
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| T    | value |             |
+| Type | Name  | Description                        |
+|------|-------|------------------------------------|
+| T    | value | sets the initial value of type `T` |
 
 ### Fields
 
 #### Value
 
 <div class="markdown level1 summary">
+
+The wrapped value
 
 </div>
 
@@ -143,6 +202,8 @@ public T Value
 
 <div class="markdown level1 summary">
 
+Check if this value is equal to a boxed object value
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -161,15 +222,15 @@ public override bool Equals(object obj)
 
 ##### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| System.Object | obj  |             |
+| Type          | Name | Description                      |
+|---------------|------|----------------------------------|
+| System.Object | obj  | The boxed value to check against |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description   |
+|----------------|---------------|
+| System.Boolean | true if equal |
 
 ##### Overrides
 
@@ -182,6 +243,8 @@ System.ValueType.Equals(System.Object)
 #### Equals(ForceNetworkSerializeByMemcpy\<T\>)
 
 <div class="markdown level1 summary">
+
+Check if wrapped values are equal
 
 </div>
 
@@ -201,19 +264,21 @@ public bool Equals(ForceNetworkSerializeByMemcpy<T> other)
 
 ##### Parameters
 
-| Type                               | Name  | Description |
-|------------------------------------|-------|-------------|
-| ForceNetworkSerializeByMemcpy\<T\> | other |             |
+| Type                               | Name  | Description   |
+|------------------------------------|-------|---------------|
+| ForceNetworkSerializeByMemcpy\<T\> | other | Other wrapper |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description   |
+|----------------|---------------|
+| System.Boolean | true if equal |
 
 #### GetHashCode()
 
 <div class="markdown level1 summary">
+
+Obtains the wrapped value's hash code
 
 </div>
 
@@ -233,9 +298,9 @@ public override int GetHashCode()
 
 ##### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description               |
+|--------------|---------------------------|
+| System.Int32 | Wrapped value's hash code |
 
 ##### Overrides
 
@@ -250,6 +315,9 @@ System.ValueType.GetHashCode()
 #### Implicit(T to ForceNetworkSerializeByMemcpy\<T\>)
 
 <div class="markdown level1 summary">
+
+Convert implicitly from a T value to a ForceNetworkSerializeByMemcpy
+wrapper
 
 </div>
 
@@ -271,17 +339,20 @@ public static implicit operator ForceNetworkSerializeByMemcpy<T>(T underlyingVal
 
 | Type | Name            | Description |
 |------|-----------------|-------------|
-| T    | underlyingValue |             |
+| T    | underlyingValue | the value   |
 
 ##### Returns
 
-| Type                               | Description |
-|------------------------------------|-------------|
-| ForceNetworkSerializeByMemcpy\<T\> |             |
+| Type                               | Description   |
+|------------------------------------|---------------|
+| ForceNetworkSerializeByMemcpy\<T\> | a new wrapper |
 
 #### Implicit(ForceNetworkSerializeByMemcpy\<T\> to T)
 
 <div class="markdown level1 summary">
+
+Convert implicitly from the ForceNetworkSerializeByMemcpy wrapper to the
+underlying value
 
 </div>
 
@@ -303,13 +374,13 @@ public static implicit operator T(ForceNetworkSerializeByMemcpy<T> container)
 
 | Type                               | Name      | Description |
 |------------------------------------|-----------|-------------|
-| ForceNetworkSerializeByMemcpy\<T\> | container |             |
+| ForceNetworkSerializeByMemcpy\<T\> | container | The wrapper |
 
 ##### Returns
 
-| Type | Description |
-|------|-------------|
-| T    |             |
+| Type | Description          |
+|------|----------------------|
+| T    | The underlying value |
 
 ### Implements
 
@@ -325,4 +396,42 @@ System.IEquatable\<T\>
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

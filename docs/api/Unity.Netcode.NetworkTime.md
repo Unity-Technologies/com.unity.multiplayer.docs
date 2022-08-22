@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.NetworkTime  
-title: Unity.Netcode.NetworkTime  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkTime
 
 <div class="markdown level0 summary">
 
@@ -58,7 +111,9 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -366,6 +421,8 @@ public readonly float TimeAsFloat { get; }
 
 <div class="markdown level1 summary">
 
+Returns the time a number of ticks in the past.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -384,9 +441,9 @@ public NetworkTime TimeTicksAgo(int ticks)
 
 ##### Parameters
 
-| Type         | Name  | Description |
-|--------------|-------|-------------|
-| System.Int32 | ticks |             |
+| Type         | Name  | Description                                     |
+|--------------|-------|-------------------------------------------------|
+| System.Int32 | ticks | The number of ticks ago we're querying the time |
 
 ##### Returns
 
@@ -428,6 +485,8 @@ public NetworkTime ToFixedTime()
 
 <div class="markdown level1 summary">
 
+Computes the time a number of seconds later
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -446,20 +505,22 @@ public static NetworkTime operator +(NetworkTime a, double b)
 
 ##### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| NetworkTime   | a    |             |
-| System.Double | b    |             |
+| Type          | Name | Description                  |
+|---------------|------|------------------------------|
+| NetworkTime   | a    | The start time               |
+| System.Double | b    | The number of seconds to add |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description        |
+|-------------|--------------------|
+| NetworkTime | The resulting time |
 
 #### Addition(NetworkTime, NetworkTime)
 
 <div class="markdown level1 summary">
+
+Computes the sum of two times
 
 </div>
 
@@ -481,18 +542,20 @@ public static NetworkTime operator +(NetworkTime a, NetworkTime b)
 
 | Type        | Name | Description |
 |-------------|------|-------------|
-| NetworkTime | a    |             |
-| NetworkTime | b    |             |
+| NetworkTime | a    | First time  |
+| NetworkTime | b    | Second time |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description                        |
+|-------------|------------------------------------|
+| NetworkTime | The sum of the two times passed in |
 
 #### Subtraction(NetworkTime, Double)
 
 <div class="markdown level1 summary">
+
+Computes the time a number of seconds before
 
 </div>
 
@@ -512,20 +575,22 @@ public static NetworkTime operator -(NetworkTime a, double b)
 
 ##### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| NetworkTime   | a    |             |
-| System.Double | b    |             |
+| Type          | Name | Description                     |
+|---------------|------|---------------------------------|
+| NetworkTime   | a    | The start time                  |
+| System.Double | b    | The number of seconds to remove |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description        |
+|-------------|--------------------|
+| NetworkTime | The resulting time |
 
 #### Subtraction(NetworkTime, NetworkTime)
 
 <div class="markdown level1 summary">
+
+Computes the time difference between two ticks
 
 </div>
 
@@ -547,13 +612,51 @@ public static NetworkTime operator -(NetworkTime a, NetworkTime b)
 
 | Type        | Name | Description |
 |-------------|------|-------------|
-| NetworkTime | a    |             |
-| NetworkTime | b    |             |
+| NetworkTime | a    | End time    |
+| NetworkTime | b    | Start time  |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description                               |
+|-------------|-------------------------------------------|
+| NetworkTime | The time difference between start and end |
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

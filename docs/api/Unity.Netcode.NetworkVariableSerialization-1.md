@@ -1,7 +1,70 @@
----
-id: Unity.Netcode.VariableSerialization-1
-title: Unity.Netcode.VariableSerialization-1
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class NetworkVariableSerialization\<T\>
+
+<div class="markdown level0 summary">
+
+Support methods for reading/writing NetworkVariables Because there are
+multiple overloads of WriteValue/ReadValue based on different generic
+constraints, but there's no way to achieve the same thing with a class,
+this sets up various read/write schemes based on which constraints are
+met by `T` using reflection, which is done at module load time.
+
+</div>
 
 <div class="markdown level0 conceptual">
 
@@ -19,37 +82,7 @@ System.Object
 
 <div class="level1">
 
-NetworkVariableBase
-
-</div>
-
-<div class="level2">
-
 NetworkVariableSerialization\<T\>
-
-</div>
-
-<div class="level3">
-
-NetworkList\<T\>
-
-</div>
-
-<div class="level3">
-
-NetworkVariable\<T\>
-
-</div>
-
-</div>
-
-<div classs="implements">
-
-##### Implements
-
-<div>
-
-System.IDisposable
 
 </div>
 
@@ -58,102 +91,6 @@ System.IDisposable
 <div class="inheritedMembers">
 
 ##### Inherited Members
-
-<div>
-
-NetworkVariableBase.Initialize(NetworkBehaviour)
-
-</div>
-
-<div>
-
-NetworkVariableBase.DefaultReadPerm
-
-</div>
-
-<div>
-
-NetworkVariableBase.DefaultWritePerm
-
-</div>
-
-<div>
-
-NetworkVariableBase.Name
-
-</div>
-
-<div>
-
-NetworkVariableBase.ReadPerm
-
-</div>
-
-<div>
-
-NetworkVariableBase.WritePerm
-
-</div>
-
-<div>
-
-NetworkVariableBase.SetDirty(Boolean)
-
-</div>
-
-<div>
-
-NetworkVariableBase.ResetDirty()
-
-</div>
-
-<div>
-
-NetworkVariableBase.IsDirty()
-
-</div>
-
-<div>
-
-NetworkVariableBase.CanClientRead(UInt64)
-
-</div>
-
-<div>
-
-NetworkVariableBase.CanClientWrite(UInt64)
-
-</div>
-
-<div>
-
-NetworkVariableBase.WriteDelta(FastBufferWriter)
-
-</div>
-
-<div>
-
-NetworkVariableBase.WriteField(FastBufferWriter)
-
-</div>
-
-<div>
-
-NetworkVariableBase.ReadField(FastBufferReader)
-
-</div>
-
-<div>
-
-NetworkVariableBase.ReadDelta(FastBufferReader, Boolean)
-
-</div>
-
-<div>
-
-NetworkVariableBase.Dispose()
-
-</div>
 
 <div>
 
@@ -199,7 +136,9 @@ System.Object.ToString()
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -207,108 +146,54 @@ System.Object.ToString()
 
 ``` lang-csharp
 [Serializable]
-public abstract class NetworkVariableSerialization<T> : NetworkVariableBase, IDisposable where T : struct
+public static class NetworkVariableSerialization<T>
+    where T : struct
 ```
 
 </div>
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
-
-### Constructors
-
-#### NetworkVariableSerialization(NetworkVariableReadPermission, NetworkVariableWritePermission)
-
-<div class="markdown level1 summary">
+| Name | Description                                             |
+|------|---------------------------------------------------------|
+| T    | The type the associated NetworkVariable is templated on |
 
 </div>
 
-<div class="markdown level1 conceptual">
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
 
 </div>
 
-##### Declaration
-
-<div class="codewrapper">
-
-``` lang-csharp
-protected NetworkVariableSerialization(NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server)
-```
-
-</div>
-
-##### Parameters
-
-| Type                           | Name      | Description |
-|--------------------------------|-----------|-------------|
-| NetworkVariableReadPermission  | readPerm  |             |
-| NetworkVariableWritePermission | writePerm |             |
-
-### Methods
-
-#### Read(FastBufferReader, out T)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-##### Declaration
-
-<div class="codewrapper">
-
-``` lang-csharp
-protected static void Read(FastBufferReader reader, out T value)
-```
-
-</div>
-
-##### Parameters
-
-| Type             | Name   | Description |
-|------------------|--------|-------------|
-| FastBufferReader | reader |             |
-| T                | value  |             |
-
-#### Write(FastBufferWriter, in T)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-##### Declaration
-
-<div class="codewrapper">
-
-``` lang-csharp
-protected static void Write(FastBufferWriter writer, in T value)
-```
-
-</div>
-
-##### Parameters
-
-| Type             | Name   | Description |
-|------------------|--------|-------------|
-| FastBufferWriter | writer |             |
-| T                | value  |             |
-
-### Implements
+##### In This Article
 
 <div>
 
-System.IDisposable
+</div>
 
 </div>
 
- 
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

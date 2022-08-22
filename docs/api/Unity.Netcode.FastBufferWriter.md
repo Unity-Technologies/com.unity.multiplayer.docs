@@ -1,9 +1,65 @@
----  
-id: Unity.Netcode.FastBufferWriter  
-title: Unity.Netcode.FastBufferWriter  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct FastBufferWriter
 
 <div class="markdown level0 summary">
+
+Optimized class used for writing values into a byte stream
+FastBufferReader BytePacker ByteUnpacker
 
 </div>
 
@@ -65,7 +121,9 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -320,7 +378,7 @@ public void CopyTo(FastBufferWriter other)
 
 <div class="markdown level1 summary">
 
-Frees the allocated buffer
+System.IDisposable implementation that frees the allocated buffer
 
 </div>
 
@@ -500,7 +558,7 @@ public static int GetWriteSize<T>()
 
 <div class="markdown level1 summary">
 
-Get the size required to write an unmanaged value
+Get the write size for a FixedString
 
 </div>
 
@@ -514,7 +572,7 @@ Get the size required to write an unmanaged value
 
 ``` lang-csharp
 public static int GetWriteSize<T>(in T value)
-    where T : struct
+    where T : struct, INativeList<byte>, IUTF8Bytes
 ```
 
 </div>
@@ -524,6 +582,50 @@ public static int GetWriteSize<T>(in T value)
 | Type | Name  | Description |
 |------|-------|-------------|
 | T    | value |             |
+
+##### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+##### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| T    |             |
+
+#### GetWriteSize\<T\>(in T, FastBufferWriter.ForStructs)
+
+<div class="markdown level1 summary">
+
+Get the write size for any general unmanaged value The ForStructs value
+here makes this the lowest-priority overload so other versions will be
+prioritized over this if they match
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public static int GetWriteSize<T>(in T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
+    where T : struct
+```
+
+</div>
+
+##### Parameters
+
+| Type                        | Name   | Description |
+|-----------------------------|--------|-------------|
+| T                           | value  |             |
+| FastBufferWriter.ForStructs | unused |             |
 
 ##### Returns
 
@@ -797,9 +899,9 @@ public bool TryBeginWriteValue<T>(in T value)
 
 ##### Parameters
 
-| Type | Name  | Description                 |
-|------|-------|-----------------------------|
-| T    | value | The value you want to write |
+| Type | Name  | Description                                 |
+|------|-------|---------------------------------------------|
+| T    | value | The value of the type `T` you want to write |
 
 ##### Returns
 
@@ -809,9 +911,9 @@ public bool TryBeginWriteValue<T>(in T value)
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description             |
+|------|-------------------------|
+| T    | The value type to write |
 
 ##### Exceptions
 
@@ -1128,6 +1230,8 @@ public void WritePartialValue<T>(T value, int bytesToWrite, int offsetBytes = 0)
 
 <div class="markdown level1 summary">
 
+Write a Color
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -1146,13 +1250,15 @@ public void WriteValue(in Color value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Color | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Color | value | the value to write |
 
 #### WriteValue(Color\[\])
 
 <div class="markdown level1 summary">
+
+Write a Color array
 
 </div>
 
@@ -1172,13 +1278,15 @@ public void WriteValue(Color[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Color\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Color\[\] | value | the values to write |
 
 #### WriteValue(in Color32)
 
 <div class="markdown level1 summary">
+
+Write a Color32
 
 </div>
 
@@ -1198,13 +1306,15 @@ public void WriteValue(in Color32 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Color32 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Color32 | value | the value to write |
 
 #### WriteValue(Color32\[\])
 
 <div class="markdown level1 summary">
+
+Write a Color32 array
 
 </div>
 
@@ -1224,13 +1334,15 @@ public void WriteValue(Color32[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Color32\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Color32\[\] | value | the values to write |
 
 #### WriteValue(in Quaternion)
 
 <div class="markdown level1 summary">
+
+Write a Quaternion
 
 </div>
 
@@ -1250,13 +1362,15 @@ public void WriteValue(in Quaternion value)
 
 ##### Parameters
 
-| Type       | Name  | Description |
-|------------|-------|-------------|
-| Quaternion | value |             |
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Quaternion | value | the value to write |
 
 #### WriteValue(Quaternion\[\])
 
 <div class="markdown level1 summary">
+
+Write a Quaternion array
 
 </div>
 
@@ -1276,13 +1390,15 @@ public void WriteValue(Quaternion[] value)
 
 ##### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| Quaternion\[\] | value |             |
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Quaternion\[\] | value | the values to write |
 
 #### WriteValue(in Ray)
 
 <div class="markdown level1 summary">
+
+Write a Ray
 
 </div>
 
@@ -1302,13 +1418,15 @@ public void WriteValue(in Ray value)
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| Ray  | value |             |
+| Type | Name  | Description        |
+|------|-------|--------------------|
+| Ray  | value | the value to write |
 
 #### WriteValue(Ray\[\])
 
 <div class="markdown level1 summary">
+
+Write a Ray array
 
 </div>
 
@@ -1328,13 +1446,15 @@ public void WriteValue(Ray[] value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Ray\[\] | value |             |
+| Type    | Name  | Description         |
+|---------|-------|---------------------|
+| Ray\[\] | value | the values to write |
 
 #### WriteValue(in Ray2D)
 
 <div class="markdown level1 summary">
+
+Write a Ray2D
 
 </div>
 
@@ -1354,13 +1474,15 @@ public void WriteValue(in Ray2D value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Ray2D | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Ray2D | value | the value to write |
 
 #### WriteValue(Ray2D\[\])
 
 <div class="markdown level1 summary">
+
+Write a Ray2D array
 
 </div>
 
@@ -1380,9 +1502,9 @@ public void WriteValue(Ray2D[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Ray2D\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Ray2D\[\] | value | the values to write |
 
 #### WriteValue(String, Boolean)
 
@@ -1417,6 +1539,8 @@ public void WriteValue(string s, bool oneByteChars = false)
 
 <div class="markdown level1 summary">
 
+Write a Vector2
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -1435,13 +1559,15 @@ public void WriteValue(in Vector2 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector2 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector2 | value | the value to write |
 
 #### WriteValue(Vector2\[\])
 
 <div class="markdown level1 summary">
+
+Write a Vector2 array
 
 </div>
 
@@ -1461,13 +1587,71 @@ public void WriteValue(Vector2[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector2\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector2\[\] | value | the values to write |
+
+#### WriteValue(in Vector2Int)
+
+<div class="markdown level1 summary">
+
+Write a Vector2Int
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue(in Vector2Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector2Int | value | the value to write |
+
+#### WriteValue(Vector2Int\[\])
+
+<div class="markdown level1 summary">
+
+Write a Vector2Int array
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue(Vector2Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Vector2Int\[\] | value | the values to write |
 
 #### WriteValue(in Vector3)
 
 <div class="markdown level1 summary">
+
+Write a Vector3
 
 </div>
 
@@ -1487,13 +1671,15 @@ public void WriteValue(in Vector3 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector3 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector3 | value | the value to write |
 
 #### WriteValue(Vector3\[\])
 
 <div class="markdown level1 summary">
+
+Write a Vector3 array
 
 </div>
 
@@ -1513,13 +1699,71 @@ public void WriteValue(Vector3[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector3\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector3\[\] | value | the values to write |
+
+#### WriteValue(in Vector3Int)
+
+<div class="markdown level1 summary">
+
+Write a Vector3Int
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue(in Vector3Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector3Int | value | the value to write |
+
+#### WriteValue(Vector3Int\[\])
+
+<div class="markdown level1 summary">
+
+Write a Vector3Int array
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue(Vector3Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description        |
+|----------------|-------|--------------------|
+| Vector3Int\[\] | value | the value to write |
 
 #### WriteValue(in Vector4)
 
 <div class="markdown level1 summary">
+
+Write a Vector4
 
 </div>
 
@@ -1539,13 +1783,15 @@ public void WriteValue(in Vector4 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector4 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector4 | value | the value to write |
 
 #### WriteValue(Vector4\[\])
 
 <div class="markdown level1 summary">
+
+Write a Vector4
 
 </div>
 
@@ -1565,13 +1811,15 @@ public void WriteValue(Vector4[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector4\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector4\[\] | value | the values to write |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Write an enum value
 
 </div>
 
@@ -1592,20 +1840,61 @@ public void WriteValue<T>(in T value, FastBufferWriter.ForEnums unused = default
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T                         | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T                         | value  | The value to write                                                                     |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### WriteValue\<T\>(in T, FastBufferWriter.ForFixedStrings)
+
+<div class="markdown level1 summary">
+
+Write a FixedString value. Writes only the part of the string that's
+actually used. When calling TryBeginWrite, ensure you calculate the
+write size correctly (preferably by calling
+FastBufferWriter.GetWriteSize())
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue<T>(in T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+</div>
+
+##### Parameters
+
+| Type                             | Name   | Description                                                                            |
+|----------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                | value  | the value to write                                                                     |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForNetworkSerializable)
 
 <div class="markdown level1 summary">
+
+Write a NetworkSerializable value
 
 </div>
 
@@ -1626,20 +1915,24 @@ public void WriteValue<T>(in T value, FastBufferWriter.ForNetworkSerializable un
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T                                       | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                       | value  | The value to write                                                                     |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
 </div>
 
@@ -1660,20 +1953,22 @@ public void WriteValue<T>(in T value, FastBufferWriter.ForPrimitives unused = de
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T                              | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to write                                                                     |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Write a struct
 
 </div>
 
@@ -1694,20 +1989,22 @@ public void WriteValue<T>(in T value, FastBufferWriter.ForStructs unused = defau
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T                           | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T                           | value  | The value to write                                                                     |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Write an enum array
 
 </div>
 
@@ -1728,20 +2025,22 @@ public void WriteValue<T>(T[] value, FastBufferWriter.ForEnums unused = default(
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T\[\]                     | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                     | value  | The values to write                                                                    |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForNetworkSerializable)
 
 <div class="markdown level1 summary">
+
+Write a NetworkSerializable array
 
 </div>
 
@@ -1762,20 +2061,24 @@ public void WriteValue<T>(T[] value, FastBufferWriter.ForNetworkSerializable unu
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T\[\]                                   | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                                   | value  | The values to write                                                                    |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Write a primitive value array (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
 </div>
 
@@ -1796,20 +2099,22 @@ public void WriteValue<T>(T[] value, FastBufferWriter.ForPrimitives unused = def
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T\[\]                          | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                          | value  | The values to write                                                                    |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Write a struct array
 
 </div>
 
@@ -1830,20 +2135,26 @@ public void WriteValue<T>(T[] value, FastBufferWriter.ForStructs unused = defaul
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T\[\]                       | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                       | value  | The values to write                                                                    |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe(in Color)
 
 <div class="markdown level1 summary">
+
+Write a Color
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -1863,13 +2174,19 @@ public void WriteValueSafe(in Color value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Color | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Color | value | the value to write |
 
 #### WriteValueSafe(Color\[\])
 
 <div class="markdown level1 summary">
+
+Write a Collor array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -1889,13 +2206,19 @@ public void WriteValueSafe(Color[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Color\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Color\[\] | value | the values to write |
 
 #### WriteValueSafe(in Color32)
 
 <div class="markdown level1 summary">
+
+Write a Color32
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -1915,13 +2238,19 @@ public void WriteValueSafe(in Color32 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Color32 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Color32 | value | the value to write |
 
 #### WriteValueSafe(Color32\[\])
 
 <div class="markdown level1 summary">
+
+Write a Color32 array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -1941,13 +2270,19 @@ public void WriteValueSafe(Color32[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Color32\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Color32\[\] | value | the values to write |
 
 #### WriteValueSafe(in Quaternion)
 
 <div class="markdown level1 summary">
+
+Write a Quaternion
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -1967,13 +2302,19 @@ public void WriteValueSafe(in Quaternion value)
 
 ##### Parameters
 
-| Type       | Name  | Description |
-|------------|-------|-------------|
-| Quaternion | value |             |
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Quaternion | value | the value to write |
 
 #### WriteValueSafe(Quaternion\[\])
 
 <div class="markdown level1 summary">
+
+Write a Quaternion array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -1993,13 +2334,19 @@ public void WriteValueSafe(Quaternion[] value)
 
 ##### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| Quaternion\[\] | value |             |
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Quaternion\[\] | value | the values to write |
 
 #### WriteValueSafe(in Ray)
 
 <div class="markdown level1 summary">
+
+Write a Ray
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2019,13 +2366,19 @@ public void WriteValueSafe(in Ray value)
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| Ray  | value |             |
+| Type | Name  | Description        |
+|------|-------|--------------------|
+| Ray  | value | the value to write |
 
 #### WriteValueSafe(Ray\[\])
 
 <div class="markdown level1 summary">
+
+Write a Ray array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2045,13 +2398,19 @@ public void WriteValueSafe(Ray[] value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Ray\[\] | value |             |
+| Type    | Name  | Description         |
+|---------|-------|---------------------|
+| Ray\[\] | value | the values to write |
 
 #### WriteValueSafe(in Ray2D)
 
 <div class="markdown level1 summary">
+
+Write a Ray2D
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2071,13 +2430,19 @@ public void WriteValueSafe(in Ray2D value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Ray2D | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Ray2D | value | the value to write |
 
 #### WriteValueSafe(Ray2D\[\])
 
 <div class="markdown level1 summary">
+
+Write a Ray2D array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2097,9 +2462,9 @@ public void WriteValueSafe(Ray2D[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Ray2D\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Ray2D\[\] | value | the values to write |
 
 #### WriteValueSafe(String, Boolean)
 
@@ -2138,6 +2503,12 @@ public void WriteValueSafe(string s, bool oneByteChars = false)
 
 <div class="markdown level1 summary">
 
+Write a Vector2
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -2156,13 +2527,19 @@ public void WriteValueSafe(in Vector2 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector2 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector2 | value | the value to write |
 
 #### WriteValueSafe(Vector2\[\])
 
 <div class="markdown level1 summary">
+
+Write a Vector2 array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2182,13 +2559,83 @@ public void WriteValueSafe(Vector2[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector2\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector2\[\] | value | the values to write |
+
+#### WriteValueSafe(in Vector2Int)
+
+<div class="markdown level1 summary">
+
+Write a Vector2Int
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe(in Vector2Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector2Int | value | the value to write |
+
+#### WriteValueSafe(Vector2Int\[\])
+
+<div class="markdown level1 summary">
+
+Write a Vector2Int array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe(Vector2Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Vector2Int\[\] | value | the values to write |
 
 #### WriteValueSafe(in Vector3)
 
 <div class="markdown level1 summary">
+
+Write a Vector3
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2208,13 +2655,19 @@ public void WriteValueSafe(in Vector3 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector3 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector3 | value | the value to write |
 
 #### WriteValueSafe(Vector3\[\])
 
 <div class="markdown level1 summary">
+
+Write a Vector3 array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2234,13 +2687,83 @@ public void WriteValueSafe(Vector3[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector3\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector3\[\] | value | the values to write |
+
+#### WriteValueSafe(in Vector3Int)
+
+<div class="markdown level1 summary">
+
+Write a Vector3Int
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe(in Vector3Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector3Int | value | the value to write |
+
+#### WriteValueSafe(Vector3Int\[\])
+
+<div class="markdown level1 summary">
+
+Write a Vector3Int array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe(Vector3Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Vector3Int\[\] | value | the values to write |
 
 #### WriteValueSafe(in Vector4)
 
 <div class="markdown level1 summary">
+
+Write a Vector4
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2260,13 +2783,19 @@ public void WriteValueSafe(in Vector4 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector4 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector4 | value | the value to write |
 
 #### WriteValueSafe(Vector4\[\])
 
 <div class="markdown level1 summary">
+
+Write a Vector4 array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2286,13 +2815,19 @@ public void WriteValueSafe(Vector4[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector4\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector4\[\] | value | the values to write |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Write an enum value
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2313,20 +2848,67 @@ public void WriteValueSafe<T>(in T value, FastBufferWriter.ForEnums unused = def
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T                         | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T                         | value  | The value to write                                                                     |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### WriteValueSafe\<T\>(in T, FastBufferWriter.ForFixedStrings)
+
+<div class="markdown level1 summary">
+
+Write a FixedString value. Writes only the part of the string that's
+actually used.
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe<T>(in T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+</div>
+
+##### Parameters
+
+| Type                             | Name   | Description                                                                            |
+|----------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                | value  | the value to write                                                                     |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForNetworkSerializable)
 
 <div class="markdown level1 summary">
+
+Write a NetworkSerializable value
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2347,20 +2929,28 @@ public void WriteValueSafe<T>(in T value, FastBufferWriter.ForNetworkSerializabl
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T                                       | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                       | value  | The value to write                                                                     |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2381,20 +2971,26 @@ public void WriteValueSafe<T>(in T value, FastBufferWriter.ForPrimitives unused 
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T                              | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to write                                                                     |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Write a struct
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2415,20 +3011,26 @@ public void WriteValueSafe<T>(in T value, FastBufferWriter.ForStructs unused = d
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T                           | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T                           | value  | The value to write                                                                     |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Write an enum array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2449,20 +3051,26 @@ public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForEnums unused = defa
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T\[\]                     | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                     | value  | The values to write                                                                    |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForNetworkSerializable)
 
 <div class="markdown level1 summary">
+
+Write a NetworkSerializable array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2483,20 +3091,28 @@ public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForNetworkSerializable
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T\[\]                                   | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                                   | value  | The values to write                                                                    |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2517,20 +3133,26 @@ public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForPrimitives unused =
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T\[\]                          | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                          | value  | The value to write                                                                     |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Write a struct array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
 </div>
 
@@ -2551,16 +3173,16 @@ public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForStructs unused = de
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T\[\]                       | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                       | value  | The values to write                                                                    |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 ### Implements
 
@@ -2570,4 +3192,42 @@ System.IDisposable
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.BufferSerializer-1  
-title: Unity.Netcode.BufferSerializer-1  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct BufferSerializer\<TReaderWriter\>
 
 <div class="markdown level0 summary">
 
@@ -77,7 +130,9 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -218,6 +273,12 @@ public FastBufferWriter GetFastBufferWriter()
 
 <div class="markdown level1 summary">
 
+Performs an advance check to ensure space is available to read/write one
+or more values. This provides a performance benefit for serializing
+multiple values using the SerializeValuePreChecked methods. But note
+that the benefit is small and only likely to be noticeable if
+serializing a very large number of items.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -250,6 +311,10 @@ public bool PreCheck(int amount)
 
 <div class="markdown level1 summary">
 
+Read or write a NetworkSerializable value. SerializeValue() is the
+preferred method to do this - this is provided for backward
+compatibility only.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -269,19 +334,21 @@ public void SerializeNetworkSerializable<T>(ref T value)
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| T    | value |             |
+| Type | Name  | Description              |
+|------|-------|--------------------------|
+| T    | value | The values to read/write |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
 
 #### SerializeValue(ref Color)
 
 <div class="markdown level1 summary">
+
+Read or write a Color value
 
 </div>
 
@@ -301,13 +368,15 @@ public void SerializeValue(ref Color value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Color | value |             |
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Color | value | The value to read/write |
 
 #### SerializeValue(ref Color\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Color values
 
 </div>
 
@@ -327,13 +396,15 @@ public void SerializeValue(ref Color[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Color\[\] | value |             |
+| Type      | Name  | Description              |
+|-----------|-------|--------------------------|
+| Color\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Color32)
 
 <div class="markdown level1 summary">
+
+Read or write a Color32 value
 
 </div>
 
@@ -353,13 +424,15 @@ public void SerializeValue(ref Color32 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Color32 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Color32 | value | The value to read/write |
 
 #### SerializeValue(ref Color32\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Color32 values
 
 </div>
 
@@ -379,13 +452,15 @@ public void SerializeValue(ref Color32[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Color32\[\] | value |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Color32\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Quaternion)
 
 <div class="markdown level1 summary">
+
+Read or write a Quaternion value
 
 </div>
 
@@ -405,13 +480,15 @@ public void SerializeValue(ref Quaternion value)
 
 ##### Parameters
 
-| Type       | Name  | Description |
-|------------|-------|-------------|
-| Quaternion | value |             |
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Quaternion | value | The value to read/write |
 
 #### SerializeValue(ref Quaternion\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Quaternion values
 
 </div>
 
@@ -431,13 +508,15 @@ public void SerializeValue(ref Quaternion[] value)
 
 ##### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| Quaternion\[\] | value |             |
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Quaternion\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Ray)
 
 <div class="markdown level1 summary">
+
+Read or write a Ray value
 
 </div>
 
@@ -457,13 +536,15 @@ public void SerializeValue(ref Ray value)
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| Ray  | value |             |
+| Type | Name  | Description             |
+|------|-------|-------------------------|
+| Ray  | value | The value to read/write |
 
 #### SerializeValue(ref Ray\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Ray values
 
 </div>
 
@@ -483,13 +564,15 @@ public void SerializeValue(ref Ray[] value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Ray\[\] | value |             |
+| Type    | Name  | Description              |
+|---------|-------|--------------------------|
+| Ray\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Ray2D)
 
 <div class="markdown level1 summary">
+
+Read or write a Ray2D value
 
 </div>
 
@@ -509,13 +592,15 @@ public void SerializeValue(ref Ray2D value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Ray2D | value |             |
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Ray2D | value | The value to read/write |
 
 #### SerializeValue(ref Ray2D\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Ray2D values
 
 </div>
 
@@ -535,13 +620,15 @@ public void SerializeValue(ref Ray2D[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Ray2D\[\] | value |             |
+| Type      | Name  | Description              |
+|-----------|-------|--------------------------|
+| Ray2D\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Byte)
 
 <div class="markdown level1 summary">
+
+Read or write a single byte
 
 </div>
 
@@ -561,13 +648,15 @@ public void SerializeValue(ref byte value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| System.Byte | value |             |
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| System.Byte | value | The value to read/write |
 
 #### SerializeValue(ref String, Boolean)
 
 <div class="markdown level1 summary">
+
+Read or write a string
 
 </div>
 
@@ -587,14 +676,16 @@ public void SerializeValue(ref string s, bool oneByteChars = false)
 
 ##### Parameters
 
-| Type           | Name         | Description |
-|----------------|--------------|-------------|
-| System.String  | s            |             |
-| System.Boolean | oneByteChars |             |
+| Type           | Name         | Description                                                      |
+|----------------|--------------|------------------------------------------------------------------|
+| System.String  | s            | The value to read/write                                          |
+| System.Boolean | oneByteChars | If true, characters will be limited to one-byte ASCII characters |
 
 #### SerializeValue(ref Vector2)
 
 <div class="markdown level1 summary">
+
+Read or write a Vector2 value
 
 </div>
 
@@ -614,13 +705,15 @@ public void SerializeValue(ref Vector2 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector2 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector2 | value | The value to read/write |
 
 #### SerializeValue(ref Vector2\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Vector2 values
 
 </div>
 
@@ -640,13 +733,71 @@ public void SerializeValue(ref Vector2[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector2\[\] | value |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector2\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Vector2Int)
+
+<div class="markdown level1 summary">
+
+Read or write a Vector2Int value
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValue(ref Vector2Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector2Int | value | The value to read/write |
+
+#### SerializeValue(ref Vector2Int\[\])
+
+<div class="markdown level1 summary">
+
+Read or write an array of Vector2Int values
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValue(ref Vector2Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Vector2Int\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Vector3)
 
 <div class="markdown level1 summary">
+
+Read or write a Vector3 value
 
 </div>
 
@@ -666,13 +817,15 @@ public void SerializeValue(ref Vector3 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector3 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector3 | value | The value to read/write |
 
 #### SerializeValue(ref Vector3\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Vector3 values
 
 </div>
 
@@ -692,13 +845,71 @@ public void SerializeValue(ref Vector3[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector3\[\] | value |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector3\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Vector3Int)
+
+<div class="markdown level1 summary">
+
+Read or write a Vector3Int value
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValue(ref Vector3Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector3Int | value | The value to read/write |
+
+#### SerializeValue(ref Vector3Int\[\])
+
+<div class="markdown level1 summary">
+
+Read or write an array of Vector3Int values
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValue(ref Vector3Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Vector3Int\[\] | value | The values to read/write |
 
 #### SerializeValue(ref Vector4)
 
 <div class="markdown level1 summary">
+
+Read or write a Vector4 value
 
 </div>
 
@@ -718,13 +929,15 @@ public void SerializeValue(ref Vector4 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector4 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector4 | value | The value to read/write |
 
 #### SerializeValue(ref Vector4\[\])
 
 <div class="markdown level1 summary">
+
+Read or write an array of Vector4 values
 
 </div>
 
@@ -744,13 +957,15 @@ public void SerializeValue(ref Vector4[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector4\[\] | value |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector4\[\] | value | The values to read/write |
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Read or write an enum value
 
 </div>
 
@@ -771,20 +986,58 @@ public void SerializeValue<T>(ref T value, FastBufferWriter.ForEnums unused = de
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T                         | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T                         | value  | The value to read/write                                                                |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T, FastBufferWriter.ForFixedStrings)
+
+<div class="markdown level1 summary">
+
+Read or write a FixedString value
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValue<T>(ref T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+</div>
+
+##### Parameters
+
+| Type                             | Name   | Description                                                               |
+|----------------------------------|--------|---------------------------------------------------------------------------|
+| T                                | value  | The values to read/write                                                  |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter used for enabling overload resolution of FixedStrings |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForNetworkSerializable)
 
 <div class="markdown level1 summary">
+
+Read or write a struct or class value implementing INetworkSerializable
 
 </div>
 
@@ -805,20 +1058,24 @@ public void SerializeValue<T>(ref T value, FastBufferWriter.ForNetworkSerializab
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T                                       | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                       | value  | The value to read/write                                                                |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Read or write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
 </div>
 
@@ -839,20 +1096,22 @@ public void SerializeValue<T>(ref T value, FastBufferWriter.ForPrimitives unused
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T                              | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to read/write                                                                |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Read or write a struct value implementing ISerializeByMemcpy
 
 </div>
 
@@ -873,20 +1132,22 @@ public void SerializeValue<T>(ref T value, FastBufferWriter.ForStructs unused = 
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T                           | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T                           | value  | The value to read/write                                                                |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Read or write an array of enum values
 
 </div>
 
@@ -907,20 +1168,23 @@ public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForEnums unused = 
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T\[\]                     | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                     | value  | The value to read/write                                                                |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForNetworkSerializable)
 
 <div class="markdown level1 summary">
+
+Read or write an array of struct or class values implementing
+INetworkSerializable
 
 </div>
 
@@ -941,20 +1205,24 @@ public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForNetworkSerializ
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T\[\]                                   | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                                   | value  | The values to read/write                                                               |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Read or write an array of primitive values (int, bool, etc) Accepts any
+value that implements the given interfaces, but is not guaranteed to
+work correctly on values that are not primitives.
 
 </div>
 
@@ -975,20 +1243,22 @@ public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForPrimitives unus
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T\[\]                          | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                          | value  | The values to read/write                                                               |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Read or write an array of struct values implementing ISerializeByMemcpy
 
 </div>
 
@@ -1009,20 +1279,26 @@ public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForStructs unused 
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T\[\]                       | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                       | value  | The values to read/write                                                               |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### SerializeValuePreChecked(ref Color)
 
 <div class="markdown level1 summary">
+
+Serialize a Color, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1042,13 +1318,19 @@ public void SerializeValuePreChecked(ref Color value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Color | value |             |
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Color | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Color\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Color array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1068,13 +1350,19 @@ public void SerializeValuePreChecked(ref Color[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Color\[\] | value |             |
+| Type      | Name  | Description             |
+|-----------|-------|-------------------------|
+| Color\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Color32)
 
 <div class="markdown level1 summary">
+
+Serialize a Color32, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1094,13 +1382,19 @@ public void SerializeValuePreChecked(ref Color32 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Color32 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Color32 | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Color32\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Color32 array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1120,13 +1414,19 @@ public void SerializeValuePreChecked(ref Color32[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Color32\[\] | value |             |
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| Color32\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Quaternion)
 
 <div class="markdown level1 summary">
+
+Serialize a Quaternion, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1146,13 +1446,19 @@ public void SerializeValuePreChecked(ref Quaternion value)
 
 ##### Parameters
 
-| Type       | Name  | Description |
-|------------|-------|-------------|
-| Quaternion | value |             |
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Quaternion | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Quaternion\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Quaternion array, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1172,13 +1478,19 @@ public void SerializeValuePreChecked(ref Quaternion[] value)
 
 ##### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| Quaternion\[\] | value |             |
+| Type           | Name  | Description             |
+|----------------|-------|-------------------------|
+| Quaternion\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Ray)
 
 <div class="markdown level1 summary">
+
+Serialize a Ray, "pre-checked", which skips buffer checks. In debug and
+editor builds, a check is made to ensure you've called "PreCheck" before
+calling this. In release builds, calling this without calling "PreCheck"
+may read or write past the end of the buffer, which will cause memory
+corruption and undefined behavior.
 
 </div>
 
@@ -1198,13 +1510,19 @@ public void SerializeValuePreChecked(ref Ray value)
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| Ray  | value |             |
+| Type | Name  | Description             |
+|------|-------|-------------------------|
+| Ray  | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Ray\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Ray array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1224,13 +1542,19 @@ public void SerializeValuePreChecked(ref Ray[] value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Ray\[\] | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Ray\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Ray2D)
 
 <div class="markdown level1 summary">
+
+Serialize a Ray2D, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1250,13 +1574,19 @@ public void SerializeValuePreChecked(ref Ray2D value)
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Ray2D | value |             |
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Ray2D | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Ray2D\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Ray2D array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1276,13 +1606,19 @@ public void SerializeValuePreChecked(ref Ray2D[] value)
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Ray2D\[\] | value |             |
+| Type      | Name  | Description             |
+|-----------|-------|-------------------------|
+| Ray2D\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Byte)
 
 <div class="markdown level1 summary">
+
+Serialize a byte, "pre-checked", which skips buffer checks. In debug and
+editor builds, a check is made to ensure you've called "PreCheck" before
+calling this. In release builds, calling this without calling "PreCheck"
+may read or write past the end of the buffer, which will cause memory
+corruption and undefined behavior.
 
 </div>
 
@@ -1302,13 +1638,19 @@ public void SerializeValuePreChecked(ref byte value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| System.Byte | value |             |
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| System.Byte | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref String, Boolean)
 
 <div class="markdown level1 summary">
+
+Serialize a string, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1328,14 +1670,20 @@ public void SerializeValuePreChecked(ref string s, bool oneByteChars = false)
 
 ##### Parameters
 
-| Type           | Name         | Description |
-|----------------|--------------|-------------|
-| System.String  | s            |             |
-| System.Boolean | oneByteChars |             |
+| Type           | Name         | Description                                                      |
+|----------------|--------------|------------------------------------------------------------------|
+| System.String  | s            | The value to read/write                                          |
+| System.Boolean | oneByteChars | If true, characters will be limited to one-byte ASCII characters |
 
 #### SerializeValuePreChecked(ref Vector2)
 
 <div class="markdown level1 summary">
+
+Serialize a Vector2, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1355,13 +1703,19 @@ public void SerializeValuePreChecked(ref Vector2 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector2 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector2 | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Vector2\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Vector2 array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1381,13 +1735,83 @@ public void SerializeValuePreChecked(ref Vector2[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector2\[\] | value |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector2\[\] | value | The values to read/write |
+
+#### SerializeValuePreChecked(ref Vector2Int)
+
+<div class="markdown level1 summary">
+
+Serialize a Vector2Int, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector2Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector2Int | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector2Int\[\])
+
+<div class="markdown level1 summary">
+
+Serialize a Vector2Int array, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector2Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Vector2Int\[\] | value | The values to read/write |
 
 #### SerializeValuePreChecked(ref Vector3)
 
 <div class="markdown level1 summary">
+
+Serialize a Vector3, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1407,13 +1831,19 @@ public void SerializeValuePreChecked(ref Vector3 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector3 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector3 | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Vector3\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Vector3 array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1433,13 +1863,83 @@ public void SerializeValuePreChecked(ref Vector3[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector3\[\] | value |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector3\[\] | value | The values to read/write |
+
+#### SerializeValuePreChecked(ref Vector3Int)
+
+<div class="markdown level1 summary">
+
+Serialize a Vector3Int, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector3Int value)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector3Int | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector3Int\[\])
+
+<div class="markdown level1 summary">
+
+Serialize a Vector3Int array, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector3Int[] value)
+```
+
+</div>
+
+##### Parameters
+
+| Type           | Name  | Description             |
+|----------------|-------|-------------------------|
+| Vector3Int\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Vector4)
 
 <div class="markdown level1 summary">
+
+Serialize a Vector4, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1459,13 +1959,19 @@ public void SerializeValuePreChecked(ref Vector4 value)
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector4 | value |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector4 | value | The value to read/write |
 
 #### SerializeValuePreChecked(ref Vector4\[\])
 
 <div class="markdown level1 summary">
+
+Serialize a Vector4Array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1485,13 +1991,19 @@ public void SerializeValuePreChecked(ref Vector4[] value)
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector4\[\] | value |             |
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| Vector4\[\] | value | The value to read/write |
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Serialize an enum, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1512,20 +2024,66 @@ public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForEnums u
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T                         | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                        |
+|---------------------------|--------|--------------------------------------------------------------------|
+| T                         | value  | The values to read/write                                           |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution of enums |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
+
+#### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForFixedStrings)
+
+<div class="markdown level1 summary">
+
+Serialize a FixedString, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+</div>
+
+##### Parameters
+
+| Type                             | Name   | Description                                                                             |
+|----------------------------------|--------|-----------------------------------------------------------------------------------------|
+| T                                | value  | The value to read/write                                                                 |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter that can be used for enabling overload resolution for fixed strings |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Serialize a primitive, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1546,20 +2104,26 @@ public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForPrimiti
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T                              | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to read/write                                                                |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Serialize a struct, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1580,20 +2144,26 @@ public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForStructs
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T                           | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                          |
+|-----------------------------|--------|----------------------------------------------------------------------|
+| T                           | value  | The values to read/write                                             |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution of structs |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
 
 #### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForEnums)
 
 <div class="markdown level1 summary">
+
+Serialize an array of enums, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1614,20 +2184,26 @@ public void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForEnums
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T\[\]                     | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                        |
+|---------------------------|--------|--------------------------------------------------------------------|
+| T\[\]                     | value  | The values to read/write                                           |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution of enums |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                                |
+|------|--------------------------------------------|
+| T    | The network serializable types in an array |
 
 #### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForPrimitives)
 
 <div class="markdown level1 summary">
+
+Serialize an array of primitives, "pre-checked", which skips buffer
+checks. In debug and editor builds, a check is made to ensure you've
+called "PreCheck" before calling this. In release builds, calling this
+without calling "PreCheck" may read or write past the end of the buffer,
+which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1648,20 +2224,26 @@ public void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForPrimi
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T\[\]                          | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                             |
+|--------------------------------|--------|-------------------------------------------------------------------------|
+| T\[\]                          | value  | The values to read/write                                                |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution of primitives |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                                |
+|------|--------------------------------------------|
+| T    | The network serializable types in an array |
 
 #### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForStructs)
 
 <div class="markdown level1 summary">
+
+Serialize an array of structs, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1682,15 +2264,53 @@ public void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForStruc
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T\[\]                       | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                          |
+|-----------------------------|--------|----------------------------------------------------------------------|
+| T\[\]                       | value  | The values to read/write                                             |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution of structs |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                                |
+|------|--------------------------------------------|
+| T    | The network serializable types in an array |
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

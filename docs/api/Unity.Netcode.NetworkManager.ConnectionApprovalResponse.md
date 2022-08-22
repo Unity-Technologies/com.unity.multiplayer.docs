@@ -54,12 +54,11 @@ Show / Hide Table of Contents
 
 <div class="col-md-10">
 
-# Class BitCounter
+# Class NetworkManager.ConnectionApprovalResponse
 
 <div class="markdown level0 summary">
 
-Utility class to count the number of bytes or bits needed to serialize a
-value.
+Connection Approval Response
 
 </div>
 
@@ -79,7 +78,7 @@ System.Object
 
 <div class="level1">
 
-BitCounter
+NetworkManager.ConnectionApprovalResponse
 
 </div>
 
@@ -142,18 +141,18 @@ System.Object.ToString()
 <div class="codewrapper">
 
 ``` lang-csharp
-public static class BitCounter
+public class ConnectionApprovalResponse
 ```
 
 </div>
 
-### Methods
+### Fields
 
-#### GetUsedBitCount(UInt32)
+#### Approved
 
 <div class="markdown level1 summary">
 
-Get the minimum number of bits required to represent the given value
+Whether or not the client was approved
 
 </div>
 
@@ -166,28 +165,23 @@ Get the minimum number of bits required to represent the given value
 <div class="codewrapper">
 
 ``` lang-csharp
-public static int GetUsedBitCount(uint value)
+public bool Approved
 ```
 
 </div>
 
-##### Parameters
+##### Field Value
 
-| Type          | Name  | Description |
-|---------------|-------|-------------|
-| System.UInt32 | value | The value   |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-##### Returns
-
-| Type         | Description                 |
-|--------------|-----------------------------|
-| System.Int32 | The number of bits required |
-
-#### GetUsedBitCount(UInt64)
+#### CreatePlayerObject
 
 <div class="markdown level1 summary">
 
-Get the minimum number of bits required to represent the given value
+If true, a player object will be created. Otherwise the client will have
+no object.
 
 </div>
 
@@ -200,28 +194,28 @@ Get the minimum number of bits required to represent the given value
 <div class="codewrapper">
 
 ``` lang-csharp
-public static int GetUsedBitCount(ulong value)
+public bool CreatePlayerObject
 ```
 
 </div>
 
-##### Parameters
+##### Field Value
 
-| Type          | Name  | Description |
-|---------------|-------|-------------|
-| System.UInt64 | value | The value   |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-##### Returns
-
-| Type         | Description                 |
-|--------------|-----------------------------|
-| System.Int32 | The number of bits required |
-
-#### GetUsedByteCount(UInt32)
+#### Pending
 
 <div class="markdown level1 summary">
 
-Get the minimum number of bytes required to represent the given value
+If the Approval decision cannot be made immediately, the client code can
+set Pending to true, keep a reference to the ConnectionApprovalResponse
+object and write to it later. Client code must exercise care to setting
+all the members to the value it wants before marking Pending to false,
+to indicate completion. If the field is set as Pending = true, we'll
+monitor the object until it gets set to not pending anymore and use the
+parameters then.
 
 </div>
 
@@ -234,28 +228,24 @@ Get the minimum number of bytes required to represent the given value
 <div class="codewrapper">
 
 ``` lang-csharp
-public static int GetUsedByteCount(uint value)
+public bool Pending
 ```
 
 </div>
 
-##### Parameters
+##### Field Value
 
-| Type          | Name  | Description |
-|---------------|-------|-------------|
-| System.UInt32 | value | The value   |
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-##### Returns
-
-| Type         | Description                  |
-|--------------|------------------------------|
-| System.Int32 | The number of bytes required |
-
-#### GetUsedByteCount(UInt64)
+#### PlayerPrefabHash
 
 <div class="markdown level1 summary">
 
-Get the minimum number of bytes required to represent the given value
+The prefabHash to use for the client. If createPlayerObject is false,
+this is ignored. If playerPrefabHash is null, the default player prefab
+is used.
 
 </div>
 
@@ -268,22 +258,74 @@ Get the minimum number of bytes required to represent the given value
 <div class="codewrapper">
 
 ``` lang-csharp
-public static int GetUsedByteCount(ulong value)
+public uint? PlayerPrefabHash
 ```
 
 </div>
 
-##### Parameters
+##### Field Value
 
-| Type          | Name  | Description |
-|---------------|-------|-------------|
-| System.UInt64 | value | The value   |
+| Type                             | Description |
+|----------------------------------|-------------|
+| System.Nullable\<System.UInt32\> |             |
 
-##### Returns
+#### Position
 
-| Type         | Description                  |
-|--------------|------------------------------|
-| System.Int32 | The number of bytes required |
+<div class="markdown level1 summary">
+
+The position to spawn the client at. If null, the prefab position is
+used.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public Vector3? Position
+```
+
+</div>
+
+##### Field Value
+
+| Type                       | Description |
+|----------------------------|-------------|
+| System.Nullable\<Vector3\> |             |
+
+#### Rotation
+
+<div class="markdown level1 summary">
+
+The rotation to spawn the client with. If null, the prefab position is
+used.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public Quaternion? Rotation
+```
+
+</div>
+
+##### Field Value
+
+| Type                          | Description |
+|-------------------------------|-------------|
+| System.Nullable\<Quaternion\> |             |
 
 </div>
 

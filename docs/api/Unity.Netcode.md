@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode
-title: Unity.Netcode
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Namespace Unity.Netcode
 
 <div class="markdown level0 summary">
 
@@ -29,19 +82,27 @@ Arithmetic helper class
 
 <div class="section">
 
+Utility class to count the number of bytes or bits needed to serialize a
+value.
+
 </div>
 
 #### BytePacker
 
 <div class="section">
 
-Utility class for packing values in serialization.
+Utility class for packing values in serialization. ByteUnpacker to
+unpack packed values.
 
 </div>
 
 #### ByteUnpacker
 
 <div class="section">
+
+Byte Unpacking Helper Class Use this class to unpack values during
+deserialization for values that were packed. BytePacker to pack unpacked
+values
 
 </div>
 
@@ -70,6 +131,8 @@ easier to use.
 
 <div class="section">
 
+Exception thrown when a specified network channel is invalid
+
 </div>
 
 #### InvalidParentException
@@ -92,6 +155,9 @@ The base class to override to write network code. Inherits MonoBehaviour
 #### NetworkBehaviourUpdater
 
 <div class="section">
+
+An helper class that helps NetworkManager update NetworkBehaviours and
+replicate them down to connected clients.
 
 </div>
 
@@ -143,6 +209,14 @@ The main component of the library
 
 </div>
 
+#### NetworkManager.ConnectionApprovalResponse
+
+<div class="section">
+
+Connection Approval Response
+
+</div>
+
 #### NetworkObject
 
 <div class="section">
@@ -184,6 +258,9 @@ Class that handles object spawning
 
 <div class="section">
 
+Provides discretized time. This is useful for games that require ticks
+happening at regular interval on the server and clients.
+
 </div>
 
 #### NetworkTimeSystem
@@ -199,6 +276,10 @@ and a server time. The local time is based on
 #### NetworkTransport
 
 <div class="section">
+
+The generic transport class all Netcode for GameObjects network
+transport implementations derive from. Use this class to add a custom
+transport. for an example of how a transport is integrated
 
 </div>
 
@@ -227,15 +308,15 @@ Interface for network value containers
 
 </div>
 
-#### NetworkVariableHelper
-
-<div class="section">
-
-</div>
-
 #### NetworkVariableSerialization\<T\>
 
 <div class="section">
+
+Support methods for reading/writing NetworkVariables Because there are
+multiple overloads of WriteValue/ReadValue based on different generic
+constraints, but there's no way to achieve the same thing with a class,
+this sets up various read/write schemes based on which constraints are
+met by `T` using reflection, which is done at module load time.
 
 </div>
 
@@ -281,6 +362,8 @@ Used for local notifications of various scene events. The OnSceneEvent
 of delegate type NetworkSceneManager.SceneEventDelegate uses this class
 to provide scene event status.  
 *Note: This is only when EnableSceneManagement is enabled.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 See also:  
 SceneEventType
 
@@ -302,6 +385,19 @@ server.
 <div class="section">
 
 Exception thrown when an object is not yet spawned
+
+</div>
+
+#### UserNetworkVariableSerialization\<T\>
+
+<div class="section">
+
+This class is used to register user serialization with NetworkVariables
+for types that are serialized via user serialization, such as with
+FastBufferReader and FastBufferWriter extension methods. Finding those
+methods isn't achievable efficiently at runtime, so this allows users to
+tell NetworkVariable about those extension methods (or simply pass in a
+lambda)
 
 </div>
 
@@ -369,11 +465,18 @@ could outlive the Reader/Writer's.)
 
 <div class="section">
 
+Client-Side RPC Can be used with any client-side remote procedure call
+Note: Typically this is used primarily for sending to a specific list of
+clients as opposed to the default (all). ClientRpcSendParams
+
 </div>
 
 #### ClientRpcReceiveParams
 
 <div class="section">
+
+Client-Side RPC Place holder. ServerRpcParams Note: Server will always
+be the sender, so this structure is a place holder
 
 </div>
 
@@ -381,11 +484,18 @@ could outlive the Reader/Writer's.)
 
 <div class="section">
 
+Client-Side RPC The send parameters, when sending client RPCs, provides
+you wil the ability to target specific clients as a managed or unmanaged
+list: TargetClientIds and TargetClientIdsNativeArray
+
 </div>
 
 #### FastBufferReader
 
 <div class="section">
+
+Optimized class used for reading values from a byte stream
+FastBufferWriter BytePacker ByteUnpacker
 
 </div>
 
@@ -393,11 +503,40 @@ could outlive the Reader/Writer's.)
 
 <div class="section">
 
+Optimized class used for writing values into a byte stream
+FastBufferReader BytePacker ByteUnpacker
+
 </div>
 
 #### FastBufferWriter.ForEnums
 
 <div class="section">
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
+</div>
+
+#### FastBufferWriter.ForFixedStrings
+
+<div class="section">
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
 
 </div>
 
@@ -405,17 +544,47 @@ could outlive the Reader/Writer's.)
 
 <div class="section">
 
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
 </div>
 
 #### FastBufferWriter.ForPrimitives
 
 <div class="section">
 
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
 </div>
 
 #### FastBufferWriter.ForStructs
 
 <div class="section">
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
 
 </div>
 
@@ -447,6 +616,14 @@ Struct containing event information about changes to a NetworkList.
 
 </div>
 
+#### NetworkManager.ConnectionApprovalRequest
+
+<div class="section">
+
+Connection Approval Request
+
+</div>
+
 #### NetworkObjectReference
 
 <div class="section">
@@ -471,17 +648,26 @@ gameplay.
 
 <div class="section">
 
+Server-Side RPC Can be used with any sever-side remote procedure call
+Note: typically this is use primarily for the ServerRpcReceiveParams
+
 </div>
 
 #### ServerRpcReceiveParams
 
 <div class="section">
 
+The receive parameters for server-side remote procedure calls
+
 </div>
 
 #### ServerRpcSendParams
 
 <div class="section">
+
+Server-Side RPC Place holder. ServerRpcParams Note: Clients always send
+to one destination when sending RPCs to the server so this structure is
+a place holder
 
 </div>
 
@@ -508,6 +694,15 @@ Interface for implementing custom serializable types.
 
 <div class="section">
 
+This interface is a "tag" that can be applied to a struct to mark that
+struct as being serializable by memcpy. It's up to the developer of the
+struct to analyze the struct's contents and ensure it is actually
+serializable by memcpy. This requires all of the members of the struct
+to be `unmanaged` Plain-Old-Data values - if your struct contains a
+pointer (or a type that contains a pointer, like `NativeList&lt;T>`), it
+should be serialized via `INetworkSerializable` or via
+`FastBufferReader`/`FastBufferWriter` extension methods.
+
 </div>
 
 #### INetworkUpdateSystem
@@ -515,13 +710,15 @@ Interface for implementing custom serializable types.
 <div class="section">
 
 Defines the required interface of a network update system being executed
-by the network update loop.
+by the NetworkUpdateLoop.
 
 </div>
 
 #### IReaderWriter
 
 <div class="section">
+
+Interface for an implementation of one side of a two-way serializer
 
 </div>
 
@@ -575,6 +772,8 @@ event.
 <div class="section">
 
 Defines network update stages being executed by the network update loop.
+See for more details on update stages:
+https://docs.unity3d.com/ScriptReference/PlayerLoop.Initialization.html
 
 </div>
 
@@ -582,11 +781,15 @@ Defines network update stages being executed by the network update loop.
 
 <div class="section">
 
+The permission types for reading a var
+
 </div>
 
 #### NetworkVariableWritePermission
 
 <div class="section">
+
+The permission types for writing a var
 
 </div>
 
@@ -656,15 +859,6 @@ Delegate used for incoming unnamed messages
 <div class="section">
 
 Delegate type for list changed event
-
-</div>
-
-#### NetworkManager.ConnectionApprovedDelegate
-
-<div class="section">
-
-Delegate type called when connection has been approved. This only has to
-be set on the server.
 
 </div>
 
@@ -794,16 +988,58 @@ Delegate type for value changed event
 
 </div>
 
-#### NetworkVariableSerialization\<T\>.ReadDelegate\<TForMethod\>
+#### UserNetworkVariableSerialization\<T\>.ReadValueDelegate
 
 <div class="section">
 
+The read value delegate handler definition
+
 </div>
 
-#### NetworkVariableSerialization\<T\>.WriteDelegate\<TForMethod\>
+#### UserNetworkVariableSerialization\<T\>.WriteValueDelegate
 
 <div class="section">
 
+The write value delegate handler definition
+
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

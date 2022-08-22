@@ -54,18 +54,11 @@ Show / Hide Table of Contents
 
 <div class="col-md-10">
 
-# Interface INetworkSerializeByMemcpy
+# Delegate UserNetworkVariableSerialization\<T\>.ReadValueDelegate
 
 <div class="markdown level0 summary">
 
-This interface is a "tag" that can be applied to a struct to mark that
-struct as being serializable by memcpy. It's up to the developer of the
-struct to analyze the struct's contents and ensure it is actually
-serializable by memcpy. This requires all of the members of the struct
-to be `unmanaged` Plain-Old-Data values - if your struct contains a
-pointer (or a type that contains a pointer, like `NativeList&lt;T>`), it
-should be serialized via `INetworkSerializable` or via
-`FastBufferReader`/`FastBufferWriter` extension methods.
+The read value delegate handler definition
 
 </div>
 
@@ -82,10 +75,17 @@ should be serialized via `INetworkSerializable` or via
 <div class="codewrapper">
 
 ``` lang-csharp
-public interface INetworkSerializeByMemcpy
+public delegate void ReadValueDelegate(FastBufferReader reader, out T value);
 ```
 
 </div>
+
+##### Parameters
+
+| Type             | Name   | Description                                        |
+|------------------|--------|----------------------------------------------------|
+| FastBufferReader | reader | The FastBufferReader to read the value of type `T` |
+| T                | value  | The value of type `T` to be read                   |
 
 </div>
 

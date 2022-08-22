@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.NetworkVariableBase  
-title: Unity.Netcode.NetworkVariableBase  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class NetworkVariableBase
 
 <div class="markdown level0 summary">
 
@@ -31,7 +84,13 @@ NetworkVariableBase
 
 <div class="level2">
 
-NetworkVariableSerialization\<T\>
+NetworkList\<T\>
+
+</div>
+
+<div class="level2">
+
+NetworkVariable\<T\>
 
 </div>
 
@@ -97,7 +156,9 @@ System.Object.ToString()
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -114,6 +175,9 @@ public abstract class NetworkVariableBase : IDisposable
 #### NetworkVariableBase(NetworkVariableReadPermission, NetworkVariableWritePermission)
 
 <div class="markdown level1 summary">
+
+The default constructor for NetworkVariableBase that can be used to
+create a custom NetworkVariable.
 
 </div>
 
@@ -133,16 +197,18 @@ protected NetworkVariableBase(NetworkVariableReadPermission readPerm = NetworkVa
 
 ##### Parameters
 
-| Type                           | Name      | Description |
-|--------------------------------|-----------|-------------|
-| NetworkVariableReadPermission  | readPerm  |             |
-| NetworkVariableWritePermission | writePerm |             |
+| Type                           | Name      | Description                                        |
+|--------------------------------|-----------|----------------------------------------------------|
+| NetworkVariableReadPermission  | readPerm  | the NetworkVariableReadPermission access settings  |
+| NetworkVariableWritePermission | writePerm | the NetworkVariableWritePermission access settings |
 
 ### Fields
 
 #### DefaultReadPerm
 
 <div class="markdown level1 summary">
+
+The default read permissions
 
 </div>
 
@@ -169,6 +235,8 @@ public const NetworkVariableReadPermission DefaultReadPerm = NetworkVariableRead
 #### DefaultWritePerm
 
 <div class="markdown level1 summary">
+
+The default write permissions
 
 </div>
 
@@ -223,6 +291,8 @@ public readonly NetworkVariableReadPermission ReadPerm
 #### WritePerm
 
 <div class="markdown level1 summary">
+
+The write permission for this var
 
 </div>
 
@@ -283,6 +353,8 @@ public string Name { get; }
 
 <div class="markdown level1 summary">
 
+Gets if a specific client has permission to read the var or not
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -301,19 +373,21 @@ public bool CanClientRead(ulong clientId)
 
 ##### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
+| Type          | Name     | Description   |
+|---------------|----------|---------------|
+| System.UInt64 | clientId | The client id |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                      |
+|----------------|--------------------------------------------------|
+| System.Boolean | Whether or not the client has permission to read |
 
 #### CanClientWrite(UInt64)
 
 <div class="markdown level1 summary">
+
+Gets if a specific client has permission to write the var or not
 
 </div>
 
@@ -333,19 +407,21 @@ public bool CanClientWrite(ulong clientId)
 
 ##### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
+| Type          | Name     | Description   |
+|---------------|----------|---------------|
+| System.UInt64 | clientId | The client id |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                       |
+|----------------|---------------------------------------------------|
+| System.Boolean | Whether or not the client has permission to write |
 
 #### Dispose()
 
 <div class="markdown level1 summary">
+
+Virtual System.IDisposable implementation
 
 </div>
 
@@ -367,6 +443,8 @@ public virtual void Dispose()
 
 <div class="markdown level1 summary">
 
+Initializes the NetworkVariable
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -385,9 +463,9 @@ public void Initialize(NetworkBehaviour networkBehaviour)
 
 ##### Parameters
 
-| Type             | Name             | Description |
-|------------------|------------------|-------------|
-| NetworkBehaviour | networkBehaviour |             |
+| Type             | Name             | Description                                         |
+|------------------|------------------|-----------------------------------------------------|
+| NetworkBehaviour | networkBehaviour | The NetworkBehaviour the NetworkVariable belongs to |
 
 #### IsDirty()
 
@@ -520,9 +598,9 @@ public virtual void SetDirty(bool isDirty)
 
 ##### Parameters
 
-| Type           | Name    | Description |
-|----------------|---------|-------------|
-| System.Boolean | isDirty |             |
+| Type           | Name    | Description                     |
+|----------------|---------|---------------------------------|
+| System.Boolean | isDirty | Whether or not the var is dirty |
 
 #### WriteDelta(FastBufferWriter)
 
@@ -589,4 +667,42 @@ System.IDisposable
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

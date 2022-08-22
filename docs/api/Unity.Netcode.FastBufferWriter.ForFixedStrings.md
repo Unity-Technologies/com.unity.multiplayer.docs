@@ -54,22 +54,65 @@ Show / Hide Table of Contents
 
 <div class="col-md-10">
 
-# Interface INetworkSerializeByMemcpy
+# Struct FastBufferWriter.ForFixedStrings
 
 <div class="markdown level0 summary">
 
-This interface is a "tag" that can be applied to a struct to mark that
-struct as being serializable by memcpy. It's up to the developer of the
-struct to analyze the struct's contents and ensure it is actually
-serializable by memcpy. This requires all of the members of the struct
-to be `unmanaged` Plain-Old-Data values - if your struct contains a
-pointer (or a type that contains a pointer, like `NativeList&lt;T>`), it
-should be serialized via `INetworkSerializable` or via
-`FastBufferReader`/`FastBufferWriter` extension methods.
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
 
 </div>
 
 <div class="markdown level0 conceptual">
+
+</div>
+
+<div class="inheritedMembers">
+
+##### Inherited Members
+
+<div>
+
+System.ValueType.Equals(System.Object)
+
+</div>
+
+<div>
+
+System.ValueType.GetHashCode()
+
+</div>
+
+<div>
+
+System.ValueType.ToString()
+
+</div>
+
+<div>
+
+System.Object.Equals(System.Object, System.Object)
+
+</div>
+
+<div>
+
+System.Object.GetType()
+
+</div>
+
+<div>
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+</div>
 
 </div>
 
@@ -82,7 +125,7 @@ should be serialized via `INetworkSerializable` or via
 <div class="codewrapper">
 
 ``` lang-csharp
-public interface INetworkSerializeByMemcpy
+public struct ForFixedStrings
 ```
 
 </div>

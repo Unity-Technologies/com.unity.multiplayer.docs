@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.NetworkObject  
-title: Unity.Netcode.NetworkObject  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class NetworkObject
 
 <div class="markdown level0 summary">
 
@@ -31,7 +84,9 @@ NetworkObject
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -224,7 +279,7 @@ public bool DestroyWithScene { get; set; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is the the personal clients player object
+Gets if the object is the personal clients player object
 
 </div>
 
@@ -825,6 +880,8 @@ public void SpawnWithOwnership(ulong clientId, bool destroyWithScene = false)
 
 <div class="markdown level1 summary">
 
+Set the parent of the NetworkObject transform.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -843,20 +900,22 @@ public bool TrySetParent(GameObject parent, bool worldPositionStays = true)
 
 ##### Parameters
 
-| Type           | Name               | Description |
-|----------------|--------------------|-------------|
-| GameObject     | parent             |             |
-| System.Boolean | worldPositionStays |             |
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GameObject     | parent             | The new parent for this NetworkObject transform will be the child of.                                                                                          |
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | Whether or not reparenting was successful. |
 
 #### TrySetParent(Transform, Boolean)
 
 <div class="markdown level1 summary">
+
+Set the parent of the NetworkObject transform.
 
 </div>
 
@@ -876,20 +935,22 @@ public bool TrySetParent(Transform parent, bool worldPositionStays = true)
 
 ##### Parameters
 
-| Type           | Name               | Description |
-|----------------|--------------------|-------------|
-| Transform      | parent             |             |
-| System.Boolean | worldPositionStays |             |
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Transform      | parent             | The new parent for this NetworkObject transform will be the child of.                                                                                          |
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | Whether or not reparenting was successful. |
 
 #### TrySetParent(NetworkObject, Boolean)
 
 <div class="markdown level1 summary">
+
+Set the parent of the NetworkObject transform.
 
 </div>
 
@@ -909,15 +970,53 @@ public bool TrySetParent(NetworkObject parent, bool worldPositionStays = true)
 
 ##### Parameters
 
-| Type           | Name               | Description |
-|----------------|--------------------|-------------|
-| NetworkObject  | parent             |             |
-| System.Boolean | worldPositionStays |             |
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NetworkObject  | parent             | The new parent for this NetworkObject transform will be the child of.                                                                                          |
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | Whether or not reparenting was successful. |
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

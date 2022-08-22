@@ -54,34 +54,15 @@ Show / Hide Table of Contents
 
 <div class="col-md-10">
 
-# Class ErrorUtilities
+# Struct NetworkManager.ConnectionApprovalRequest
 
 <div class="markdown level0 summary">
 
-Helper utility class to convert error codes to human readable error
-messages.
+Connection Approval Request
 
 </div>
 
 <div class="markdown level0 conceptual">
-
-</div>
-
-<div class="inheritance">
-
-##### Inheritance
-
-<div class="level0">
-
-System.Object
-
-</div>
-
-<div class="level1">
-
-ErrorUtilities
-
-</div>
 
 </div>
 
@@ -91,7 +72,19 @@ ErrorUtilities
 
 <div>
 
-System.Object.Equals(System.Object)
+System.ValueType.Equals(System.Object)
+
+</div>
+
+<div>
+
+System.ValueType.GetHashCode()
+
+</div>
+
+<div>
+
+System.ValueType.ToString()
 
 </div>
 
@@ -103,19 +96,7 @@ System.Object.Equals(System.Object, System.Object)
 
 <div>
 
-System.Object.GetHashCode()
-
-</div>
-
-<div>
-
 System.Object.GetType()
-
-</div>
-
-<div>
-
-System.Object.MemberwiseClone()
 
 </div>
 
@@ -125,15 +106,9 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
-<div>
-
-System.Object.ToString()
-
 </div>
 
-</div>
-
-###### **Namespace**: Unity.Netcode.Transports.UTP
+###### **Namespace**: Unity.Netcode
 
 ###### **Assembly**: MLAPI.dll
 
@@ -142,18 +117,18 @@ System.Object.ToString()
 <div class="codewrapper">
 
 ``` lang-csharp
-public static class ErrorUtilities
+public struct ConnectionApprovalRequest
 ```
 
 </div>
 
-### Methods
+### Fields
 
-#### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
+#### ClientNetworkId
 
 <div class="markdown level1 summary">
 
-Convert error code to human readable error message.
+The Network Id of the client we are about to handle
 
 </div>
 
@@ -166,23 +141,44 @@ Convert error code to human readable error message.
 <div class="codewrapper">
 
 ``` lang-csharp
-public static string ErrorToString(Networking.Transport.Error.StatusCode error, ulong connectionId)
+public ulong ClientNetworkId
 ```
 
 </div>
 
-##### Parameters
+##### Field Value
 
-| Type                                  | Name         | Description                        |
-|---------------------------------------|--------------|------------------------------------|
-| Networking.Transport.Error.StatusCode | error        | Status code of the error           |
-| System.UInt64                         | connectionId | Subject connection ID of the error |
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
 
-##### Returns
+#### Payload
 
-| Type          | Description                   |
-|---------------|-------------------------------|
-| System.String | Human readable error message. |
+<div class="markdown level1 summary">
+
+The connection data payload
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public byte[] Payload
+```
+
+</div>
+
+##### Field Value
+
+| Type            | Description |
+|-----------------|-------------|
+| System.Byte\[\] |             |
 
 </div>
 

@@ -1,7 +1,71 @@
----
-id: Unity.Netcode.Transports.UTP.UnityTransport
-title: Unity.Netcode.Transports.UTP.UnityTransport
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class UnityTransport
+
+<div class="markdown level0 summary">
+
+The Netcode for GameObjects NetworkTransport for UnityTransport. Note:
+This is highly recommended to use over UNet.
+
+</div>
+
+<div class="markdown level0 conceptual">
+
+</div>
 
 <div class="inheritance">
 
@@ -64,7 +128,9 @@ ArraySegment\<Byte\>, Single)
 
 </div>
 
+###### **Namespace**: Unity.Netcode.Transports.UTP
 
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -81,6 +147,10 @@ public class UnityTransport : NetworkTransport, INetworkStreamDriverConstructor
 #### ConnectionData
 
 <div class="markdown level1 summary">
+
+The connection (address) data for this UnityTransport instance. This is
+where you can change IP Address, Port, or server's listen address.
+UnityTransport.ConnectionAddressData
 
 </div>
 
@@ -108,6 +178,13 @@ public UnityTransport.ConnectionAddressData ConnectionData
 
 <div class="markdown level1 summary">
 
+Can be used to simulate poor network conditions such as:
+
+-   packet delay/latency
+-   packet jitter (variances in latency, see:
+    https://en.wikipedia.org/wiki/Jitter)
+-   packet drop rate (packet loss)
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -133,6 +210,8 @@ public UnityTransport.SimulatorParameters DebugSimulator
 #### InitialMaxPacketQueueSize
 
 <div class="markdown level1 summary">
+
+The default maximum (receive) packet queue size
 
 </div>
 
@@ -160,6 +239,8 @@ public const int InitialMaxPacketQueueSize = 128
 
 <div class="markdown level1 summary">
 
+The default maximum payload size
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -186,6 +267,8 @@ public const int InitialMaxPayloadSize = 6144
 
 <div class="markdown level1 summary">
 
+The default maximum send queue size
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -211,6 +294,8 @@ public const int InitialMaxSendQueueSize = 98304
 #### s_DriverConstructor
 
 <div class="markdown level1 summary">
+
+The global INetworkStreamDriverConstructor implementation
 
 </div>
 
@@ -307,6 +392,9 @@ as connection events).
 #### DriverConstructor
 
 <div class="markdown level1 summary">
+
+Returns either the global INetworkStreamDriverConstructor implementation
+or the current UnityTransport instance
 
 </div>
 
@@ -496,6 +584,8 @@ error about too many in-flight packets, try increasing this.
 
 <div class="markdown level1 summary">
 
+The current ProtocolType used by the transport
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -521,6 +611,8 @@ public UnityTransport.ProtocolType Protocol { get; }
 #### ServerClientId
 
 <div class="markdown level1 summary">
+
+The client id used to represent the server.
 
 </div>
 
@@ -558,6 +650,8 @@ NetworkTransport.ServerClientId
 
 <div class="markdown level1 summary">
 
+Creates the internal NetworkDriver
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -576,17 +670,19 @@ public void CreateDriver(UnityTransport transport, out NetworkDriver driver, out
 
 ##### Parameters
 
-| Type            | Name                                  | Description |
-|-----------------|---------------------------------------|-------------|
-| UnityTransport  | transport                             |             |
-| NetworkDriver   | driver                                |             |
-| NetworkPipeline | unreliableFragmentedPipeline          |             |
-| NetworkPipeline | unreliableSequencedFragmentedPipeline |             |
-| NetworkPipeline | reliableSequencedPipeline             |             |
+| Type            | Name                                  | Description                                       |
+|-----------------|---------------------------------------|---------------------------------------------------|
+| UnityTransport  | transport                             | The owner transport                               |
+| NetworkDriver   | driver                                | The driver                                        |
+| NetworkPipeline | unreliableFragmentedPipeline          | The UnreliableFragmented NetworkPipeline          |
+| NetworkPipeline | unreliableSequencedFragmentedPipeline | The UnreliableSequencedFragmented NetworkPipeline |
+| NetworkPipeline | reliableSequencedPipeline             | The ReliableSequenced NetworkPipeline             |
 
 #### DisconnectLocalClient()
 
 <div class="markdown level1 summary">
+
+Disconnects the local client from the remote
 
 </div>
 
@@ -616,6 +712,8 @@ NetworkTransport.DisconnectLocalClient()
 
 <div class="markdown level1 summary">
 
+Disconnects a remote client from the server
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -634,9 +732,9 @@ public override void DisconnectRemoteClient(ulong clientId)
 
 ##### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
+| Type          | Name     | Description              |
+|---------------|----------|--------------------------|
+| System.UInt64 | clientId | The client to disconnect |
 
 ##### Overrides
 
@@ -649,6 +747,8 @@ NetworkTransport.DisconnectRemoteClient(UInt64)
 #### GetCurrentRtt(UInt64)
 
 <div class="markdown level1 summary">
+
+Gets the current RTT for a specific client
 
 </div>
 
@@ -668,15 +768,15 @@ public override ulong GetCurrentRtt(ulong clientId)
 
 ##### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
+| Type          | Name     | Description           |
+|---------------|----------|-----------------------|
+| System.UInt64 | clientId | The client RTT to get |
 
 ##### Returns
 
 | Type          | Description |
 |---------------|-------------|
-| System.UInt64 |             |
+| System.UInt64 | The RTT     |
 
 ##### Overrides
 
@@ -689,6 +789,8 @@ NetworkTransport.GetCurrentRtt(UInt64)
 #### Initialize(NetworkManager)
 
 <div class="markdown level1 summary">
+
+Initializes the transport
 
 </div>
 
@@ -708,9 +810,9 @@ public override void Initialize(NetworkManager networkManager = null)
 
 ##### Parameters
 
-| Type           | Name           | Description |
-|----------------|----------------|-------------|
-| NetworkManager | networkManager |             |
+| Type           | Name           | Description                                                |
+|----------------|----------------|------------------------------------------------------------|
+| NetworkManager | networkManager | The NetworkManager that initialized and owns the transport |
 
 ##### Overrides
 
@@ -723,6 +825,9 @@ NetworkTransport.Initialize(NetworkManager)
 #### PollEvent(out UInt64, out ArraySegment\<Byte\>, out Single)
 
 <div class="markdown level1 summary">
+
+Polls for incoming events, with an extra output parameter to report the
+precise time the event was received.
 
 </div>
 
@@ -742,17 +847,17 @@ public override NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte
 
 ##### Parameters
 
-| Type                               | Name        | Description |
-|------------------------------------|-------------|-------------|
-| System.UInt64                      | clientId    |             |
-| System.ArraySegment\<System.Byte\> | payload     |             |
-| System.Single                      | receiveTime |             |
+| Type                               | Name        | Description                                                                |
+|------------------------------------|-------------|----------------------------------------------------------------------------|
+| System.UInt64                      | clientId    | The clientId this event is for                                             |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                  |
+| System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
 ##### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| NetworkEvent |             |
+| Type         | Description            |
+|--------------|------------------------|
+| NetworkEvent | Returns the event type |
 
 ##### Overrides
 
@@ -766,6 +871,8 @@ Single)
 #### Send(UInt64, ArraySegment\<Byte\>, NetworkDelivery)
 
 <div class="markdown level1 summary">
+
+Send a payload to the specified clientId, data and networkDelivery.
 
 </div>
 
@@ -785,11 +892,11 @@ public override void Send(ulong clientId, ArraySegment<byte> payload, NetworkDel
 
 ##### Parameters
 
-| Type                               | Name            | Description |
-|------------------------------------|-----------------|-------------|
-| System.UInt64                      | clientId        |             |
-| System.ArraySegment\<System.Byte\> | payload         |             |
-| NetworkDelivery                    | networkDelivery |             |
+| Type                               | Name            | Description                               |
+|------------------------------------|-----------------|-------------------------------------------|
+| System.UInt64                      | clientId        | The clientId to send to                   |
+| System.ArraySegment\<System.Byte\> | payload         | The data to send                          |
+| NetworkDelivery                    | networkDelivery | The delivery type (QoS) to send data with |
 
 ##### Overrides
 
@@ -859,10 +966,10 @@ public void SetConnectionData(NetworkEndPoint endPoint, NetworkEndPoint listenEn
 
 ##### Parameters
 
-| Type            | Name           | Description |
-|-----------------|----------------|-------------|
-| NetworkEndPoint | endPoint       |             |
-| NetworkEndPoint | listenEndPoint |             |
+| Type            | Name           | Description               |
+|-----------------|----------------|---------------------------|
+| NetworkEndPoint | endPoint       | The remote end point      |
+| NetworkEndPoint | listenEndPoint | The local listen endpoint |
 
 #### SetConnectionData(String, UInt16, String)
 
@@ -890,11 +997,11 @@ public void SetConnectionData(string ipv4Address, ushort port, string listenAddr
 
 ##### Parameters
 
-| Type          | Name          | Description |
-|---------------|---------------|-------------|
-| System.String | ipv4Address   |             |
-| System.UInt16 | port          |             |
-| System.String | listenAddress |             |
+| Type          | Name          | Description              |
+|---------------|---------------|--------------------------|
+| System.String | ipv4Address   | The remote IP address    |
+| System.UInt16 | port          | The remote port          |
+| System.String | listenAddress | The local listen address |
 
 #### SetDebugSimulatorParameters(Int32, Int32, Int32)
 
@@ -963,6 +1070,8 @@ public void SetHostRelayData(string ipAddress, ushort port, byte[] allocationId,
 
 <div class="markdown level1 summary">
 
+Set the relay server data for the server.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -981,19 +1090,21 @@ public void SetRelayServerData(string ipv4Address, ushort port, byte[] allocatio
 
 ##### Parameters
 
-| Type            | Name                    | Description |
-|-----------------|-------------------------|-------------|
-| System.String   | ipv4Address             |             |
-| System.UInt16   | port                    |             |
-| System.Byte\[\] | allocationIdBytes       |             |
-| System.Byte\[\] | keyBytes                |             |
-| System.Byte\[\] | connectionDataBytes     |             |
-| System.Byte\[\] | hostConnectionDataBytes |             |
-| System.Boolean  | isSecure                |             |
+| Type            | Name                    | Description                                   |
+|-----------------|-------------------------|-----------------------------------------------|
+| System.String   | ipv4Address             | IP address of the relay server.               |
+| System.UInt16   | port                    | UDP port of the relay server.                 |
+| System.Byte\[\] | allocationIdBytes       | Allocation ID as a byte array.                |
+| System.Byte\[\] | keyBytes                | Allocation key as a byte array.               |
+| System.Byte\[\] | connectionDataBytes     | Connection data as a byte array.              |
+| System.Byte\[\] | hostConnectionDataBytes | The HostConnectionData as a byte array.       |
+| System.Boolean  | isSecure                | Whether the connection is secure (uses DTLS). |
 
 #### Shutdown()
 
 <div class="markdown level1 summary">
+
+Shuts down the transport
 
 </div>
 
@@ -1023,6 +1134,13 @@ NetworkTransport.Shutdown()
 
 <div class="markdown level1 summary">
 
+Connects client to the server Note: When this method returns false it
+could mean:
+
+-   You are trying to start a client that is already started
+-   It failed during the initial port binding when attempting to begin
+    to connect
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -1041,9 +1159,9 @@ public override bool StartClient()
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                               |
+|----------------|---------------------------------------------------------------------------|
+| System.Boolean | true if the client was started and false if it failed to start the client |
 
 ##### Overrides
 
@@ -1056,6 +1174,13 @@ NetworkTransport.StartClient()
 #### StartServer()
 
 <div class="markdown level1 summary">
+
+Starts to listening for incoming clients Note: When this method returns
+false it could mean:
+
+-   You are trying to start a client that is already started
+-   It failed during the initial port binding when attempting to begin
+    to connect
 
 </div>
 
@@ -1075,9 +1200,9 @@ public override bool StartServer()
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                               |
+|----------------|---------------------------------------------------------------------------|
+| System.Boolean | true if the server was started and false if it failed to start the server |
 
 ##### Overrides
 
@@ -1095,4 +1220,42 @@ INetworkStreamDriverConstructor
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

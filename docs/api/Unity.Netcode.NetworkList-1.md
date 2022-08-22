@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.NetworkList-1  
-title: Unity.Netcode.NetworkList-1  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class NetworkList\<T\>
 
 <div class="markdown level0 summary">
 
@@ -17,7 +70,6 @@ Event based NetworkVariable container for syncing Lists
 
 ##### Inheritance
 
-</div>
 <div class="level0">
 
 System.Object
@@ -32,13 +84,9 @@ NetworkVariableBase
 
 <div class="level2">
 
-NetworkVariableSerialization\<T\>
+NetworkList\<T\>
 
 </div>
-
-<div class="level3">
-
-NetworkList\<T\>
 
 </div>
 
@@ -57,18 +105,6 @@ System.IDisposable
 <div class="inheritedMembers">
 
 ##### Inherited Members
-
-<div>
-
-NetworkVariableSerialization\<T\>.Write(FastBufferWriter, T)
-
-</div>
-
-<div>
-
-NetworkVariableSerialization\<T\>.Read(FastBufferReader, T)
-
-</div>
 
 <div>
 
@@ -168,14 +204,16 @@ System.Object.ToString()
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
 <div class="codewrapper">
 
 ``` lang-csharp
-public class NetworkList<T> : NetworkVariableSerialization<T>, IDisposable where T : struct, IEquatable<T>
+public class NetworkList<T> : NetworkVariableBase, IDisposable where T : struct, IEquatable<T>
 ```
 
 </div>
@@ -190,6 +228,15 @@ public class NetworkList<T> : NetworkVariableSerialization<T>, IDisposable where
 
 #### NetworkList()
 
+<div class="markdown level1 summary">
+
+Constructor method for
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
 
 ##### Declaration
 
@@ -202,6 +249,14 @@ public NetworkList()
 </div>
 
 #### NetworkList(IEnumerable\<T\>, NetworkVariableReadPermission, NetworkVariableWritePermission)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
 
 ##### Declaration
 
@@ -225,6 +280,14 @@ public NetworkList(IEnumerable<T> values = null, NetworkVariableReadPermission r
 
 #### Count
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -242,6 +305,14 @@ public int Count { get; }
 | System.Int32 |             |
 
 #### Item\[Int32\]
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
 
 ##### Declaration
 
@@ -267,6 +338,16 @@ public T this[int index] { get; set; }
 
 #### LastModifiedTick
 
+<div class="markdown level1 summary">
+
+This is actually unused left-over from a previous interface
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -287,6 +368,14 @@ public int LastModifiedTick { get; }
 
 #### Add(T)
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -305,6 +394,14 @@ public void Add(T item)
 
 #### Clear()
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -316,6 +413,14 @@ public void Clear()
 </div>
 
 #### Contains(T)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
 
 ##### Declaration
 
@@ -341,6 +446,18 @@ public bool Contains(T item)
 
 #### Dispose()
 
+<div class="markdown level1 summary">
+
+Overridden System.IDisposable implementation. CAUTION: If you derive
+from this class and override the Dispose() method, you **must** always
+invoke the base.Dispose() method!
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -361,6 +478,14 @@ NetworkVariableBase.Dispose()
 
 #### GetEnumerator()
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -378,6 +503,14 @@ public IEnumerator<T> GetEnumerator()
 | System.Collections.Generic.IEnumerator\<T\> |             |
 
 #### IndexOf(T)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
 
 ##### Declaration
 
@@ -403,6 +536,14 @@ public int IndexOf(T item)
 
 #### Insert(Int32, T)
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -425,6 +566,10 @@ public void Insert(int index, T item)
 <div class="markdown level1 summary">
 
 Gets Whether or not the container is dirty
+
+</div>
+
+<div class="markdown level1 conceptual">
 
 </div>
 
@@ -457,6 +602,10 @@ NetworkVariableBase.IsDirty()
 <div class="markdown level1 summary">
 
 Reads delta from the reader and applies them to the internal value
+
+</div>
+
+<div class="markdown level1 conceptual">
 
 </div>
 
@@ -493,6 +642,10 @@ Reads the complete state from the reader and applies it
 
 </div>
 
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -519,6 +672,14 @@ NetworkVariableBase.ReadField(FastBufferReader)
 
 #### Remove(T)
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -543,6 +704,14 @@ public bool Remove(T item)
 
 #### RemoveAt(Int32)
 
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -564,6 +733,10 @@ public void RemoveAt(int index)
 <div class="markdown level1 summary">
 
 Resets the dirty state and marks the variable as synced / clean
+
+</div>
+
+<div class="markdown level1 conceptual">
 
 </div>
 
@@ -591,6 +764,10 @@ NetworkVariableBase.ResetDirty()
 
 Writes the dirty changes, that is, the changes since the variable was
 last dirty, to the writer
+
+</div>
+
+<div class="markdown level1 conceptual">
 
 </div>
 
@@ -623,6 +800,10 @@ NetworkVariableBase.WriteDelta(FastBufferWriter)
 <div class="markdown level1 summary">
 
 Writes the complete state of the variable to the writer
+
+</div>
+
+<div class="markdown level1 conceptual">
 
 </div>
 
@@ -660,6 +841,10 @@ The callback to be invoked when the list gets changed
 
 </div>
 
+<div class="markdown level1 conceptual">
+
+</div>
+
 ##### Declaration
 
 <div class="codewrapper">
@@ -684,4 +869,42 @@ System.IDisposable
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

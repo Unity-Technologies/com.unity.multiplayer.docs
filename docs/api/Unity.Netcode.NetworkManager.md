@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.NetworkManager  
-title: Unity.Netcode.NetworkManager  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class NetworkManager
 
 <div class="markdown level0 summary">
 
@@ -43,7 +96,9 @@ INetworkUpdateSystem
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -174,6 +229,8 @@ public bool RunInBackground
 #### ServerClientId
 
 <div class="markdown level1 summary">
+
+The client id used to represent the server
 
 </div>
 
@@ -313,9 +370,40 @@ public string ConnectedHostname { get; }
 |---------------|-------------|
 | System.String |             |
 
+#### ConnectionApprovalCallback
+
+<div class="markdown level1 summary">
+
+The callback to invoke during connection approval. Allows client code to
+decide whether or not to allow incoming client connection
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public Action<NetworkManager.ConnectionApprovalRequest, NetworkManager.ConnectionApprovalResponse> ConnectionApprovalCallback { get; set; }
+```
+
+</div>
+
+##### Property Value
+
+| Type                                                                                                 | Description |
+|------------------------------------------------------------------------------------------------------|-------------|
+| System.Action\<NetworkManager.ConnectionApprovalRequest, NetworkManager.ConnectionApprovalResponse\> |             |
+
 #### CustomMessagingManager
 
 <div class="markdown level1 summary">
+
+Gets the CustomMessagingManager for this NetworkManager
 
 </div>
 
@@ -539,6 +627,8 @@ public ulong LocalClientId { get; }
 
 <div class="markdown level1 summary">
 
+The local NetworkTime
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -564,6 +654,8 @@ public NetworkTime LocalTime { get; }
 #### NetworkTickSystem
 
 <div class="markdown level1 summary">
+
+Accessor for the NetworkTickSystem of the NetworkManager.
 
 </div>
 
@@ -591,6 +683,9 @@ public NetworkTickSystem NetworkTickSystem { get; }
 
 <div class="markdown level1 summary">
 
+Accessor for the NetworkTimeSystem of the NetworkManager. Prefer the use
+of the LocalTime and ServerTime properties
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -616,6 +711,9 @@ public NetworkTimeSystem NetworkTimeSystem { get; }
 #### PrefabHandler
 
 <div class="markdown level1 summary">
+
+The NetworkPrefabHandler instance created after starting the
+NetworkManager
 
 </div>
 
@@ -643,6 +741,9 @@ public NetworkPrefabHandler PrefabHandler { get; }
 
 <div class="markdown level1 summary">
 
+The NetworkSceneManager instance created after starting the
+NetworkManager
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -669,6 +770,8 @@ public NetworkSceneManager SceneManager { get; }
 
 <div class="markdown level1 summary">
 
+The NetworkTime on the server
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -694,6 +797,9 @@ public NetworkTime ServerTime { get; }
 #### ShutdownInProgress
 
 <div class="markdown level1 summary">
+
+Can be used to determine if the NetworkManager is currently shutting
+itself down
 
 </div>
 
@@ -902,6 +1008,9 @@ public GameObject GetNetworkPrefabOverride(GameObject gameObject)
 
 <div class="markdown level1 summary">
 
+The update method that is being executed in the context of related
+NetworkUpdateStage.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -920,13 +1029,48 @@ public void NetworkUpdate(NetworkUpdateStage updateStage)
 
 ##### Parameters
 
-| Type               | Name        | Description |
-|--------------------|-------------|-------------|
-| NetworkUpdateStage | updateStage |             |
+| Type               | Name        | Description                                    |
+|--------------------|-------------|------------------------------------------------|
+| NetworkUpdateStage | updateStage | The NetworkUpdateStage that is being executed. |
+
+#### RemoveNetworkPrefab(GameObject)
+
+<div class="markdown level1 summary">
+
+Remove a prefab from the prefab list. As with AddNetworkPrefab, this is
+specific to the client it's called on - calling it on the server does
+not automatically remove anything on any of the client processes.
+
+Like AddNetworkPrefab, when NetworkConfig.ForceSamePrefabs is enabled,
+this cannot be called after connecting.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public void RemoveNetworkPrefab(GameObject prefab)
+```
+
+</div>
+
+##### Parameters
+
+| Type       | Name   | Description |
+|------------|--------|-------------|
+| GameObject | prefab |             |
 
 #### SetSingleton()
 
 <div class="markdown level1 summary">
+
+Set this NetworkManager instance as the static NetworkManager singleton
 
 </div>
 
@@ -997,9 +1141,9 @@ public bool StartClient()
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                             |
+|----------------|-------------------------------------------------------------------------|
+| System.Boolean | (/) returns true if NetworkManager started in client mode successfully. |
 
 #### StartHost()
 
@@ -1025,9 +1169,9 @@ public bool StartHost()
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                           |
+|----------------|-----------------------------------------------------------------------|
+| System.Boolean | (/) returns true if NetworkManager started in host mode successfully. |
 
 #### StartServer()
 
@@ -1053,39 +1197,11 @@ public bool StartServer()
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                             |
+|----------------|-------------------------------------------------------------------------|
+| System.Boolean | (/) returns true if NetworkManager started in server mode successfully. |
 
 ### Events
-
-#### ConnectionApprovalCallback
-
-<div class="markdown level1 summary">
-
-The callback to invoke during connection approval
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-##### Declaration
-
-<div class="codewrapper">
-
-``` lang-csharp
-public event Action<byte[], ulong, NetworkManager.ConnectionApprovedDelegate> ConnectionApprovalCallback
-```
-
-</div>
-
-##### Event Type
-
-| Type                                                                                       | Description |
-|--------------------------------------------------------------------------------------------|-------------|
-| System.Action\<System.Byte\[\], System.UInt64, NetworkManager.ConnectionApprovedDelegate\> |             |
 
 #### OnClientConnectedCallback
 
@@ -1173,6 +1289,46 @@ public event Action OnServerStarted
 |---------------|-------------|
 | System.Action |             |
 
+#### OnTransportFailure
+
+<div class="markdown level1 summary">
+
+The callback to invoke if the NetworkTransport fails.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public event Action OnTransportFailure
+```
+
+</div>
+
+##### Event Type
+
+| Type          | Description |
+|---------------|-------------|
+| System.Action |             |
+
+##### Remarks
+
+<div class="markdown level1 remarks">
+
+A failure of the transport is always followed by the NetworkManager
+shutting down. Recovering from a transport failure would normally entail
+reconfiguring the transport (e.g. re-authenticating, or recreating a new
+service allocation depending on the transport) and restarting the
+client/server/host.
+
+</div>
+
 ### Implements
 
 <div>
@@ -1209,4 +1365,42 @@ NetworkUpdateStage)
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

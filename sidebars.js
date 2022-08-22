@@ -642,6 +642,11 @@ module.exports = {
                     },
                     {
                         "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForFixedStrings",
+                        "lavel": "Unity.Netcode.FastBufferWriter.ForFixedStrings"
+                    },
+                    {
+                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferWriter.ForNetworkSerializable",
                         "label": "FastBufferWriter.ForNetworkSerializable"
                     },
@@ -900,7 +905,17 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
                         "label": "ConnectionApprovedDelegate"
-                    }
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalRequest",
+                        "label": "ConnectionApprovalRequest"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalResponse",
+                        "label": "ConnectionApprovalResponse"
+                    },
                 ]
             },
             {
@@ -933,6 +948,21 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariableReadPermission",
                         "label": "NetworkVariableReadPermission"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "Unity.Netcode.UserNetworkVariableSerialization-1",
+                        "label": "UserNetworkVariableSerialization-1"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "Unity.Netcode.UserNetworkVariableSerialization-1.ReadValueDelegate",
+                        "label": "UserNetworkVariableSerialization-1.ReadValueDelegate"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "Unity.Netcode.UserNetworkVariableSerialization-1.WriteValueDelegate",
+                        "label": "UserNetworkVariableSerialization-1.WriteValueDelegate"
                     },
                 ],
             },

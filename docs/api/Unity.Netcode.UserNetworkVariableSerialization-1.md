@@ -54,12 +54,16 @@ Show / Hide Table of Contents
 
 <div class="col-md-10">
 
-# Class ErrorUtilities
+# Class UserNetworkVariableSerialization\<T\>
 
 <div class="markdown level0 summary">
 
-Helper utility class to convert error codes to human readable error
-messages.
+This class is used to register user serialization with NetworkVariables
+for types that are serialized via user serialization, such as with
+FastBufferReader and FastBufferWriter extension methods. Finding those
+methods isn't achievable efficiently at runtime, so this allows users to
+tell NetworkVariable about those extension methods (or simply pass in a
+lambda)
 
 </div>
 
@@ -79,7 +83,7 @@ System.Object
 
 <div class="level1">
 
-ErrorUtilities
+UserNetworkVariableSerialization\<T\>
 
 </div>
 
@@ -133,7 +137,7 @@ System.Object.ToString()
 
 </div>
 
-###### **Namespace**: Unity.Netcode.Transports.UTP
+###### **Namespace**: Unity.Netcode
 
 ###### **Assembly**: MLAPI.dll
 
@@ -142,18 +146,25 @@ System.Object.ToString()
 <div class="codewrapper">
 
 ``` lang-csharp
-public static class ErrorUtilities
+public class UserNetworkVariableSerialization<T>
 ```
 
 </div>
 
-### Methods
+##### Type Parameters
 
-#### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
+| Name | Description |
+|------|-------------|
+| T    |             |
+
+### Fields
+
+#### ReadValue
 
 <div class="markdown level1 summary">
 
-Convert error code to human readable error message.
+The UserNetworkVariableSerialization\<T\>.ReadValueDelegate delegate
+handler declaration
 
 </div>
 
@@ -166,23 +177,45 @@ Convert error code to human readable error message.
 <div class="codewrapper">
 
 ``` lang-csharp
-public static string ErrorToString(Networking.Transport.Error.StatusCode error, ulong connectionId)
+public static UserNetworkVariableSerialization<T>.ReadValueDelegate ReadValue
 ```
 
 </div>
 
-##### Parameters
+##### Field Value
 
-| Type                                  | Name         | Description                        |
-|---------------------------------------|--------------|------------------------------------|
-| Networking.Transport.Error.StatusCode | error        | Status code of the error           |
-| System.UInt64                         | connectionId | Subject connection ID of the error |
+| Type                                                   | Description |
+|--------------------------------------------------------|-------------|
+| UserNetworkVariableSerialization.ReadValueDelegate\<\> |             |
 
-##### Returns
+#### WriteValue
 
-| Type          | Description                   |
-|---------------|-------------------------------|
-| System.String | Human readable error message. |
+<div class="markdown level1 summary">
+
+The UserNetworkVariableSerialization\<T\>.WriteValueDelegate delegate
+handler declaration
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public static UserNetworkVariableSerialization<T>.WriteValueDelegate WriteValue
+```
+
+</div>
+
+##### Field Value
+
+| Type                                                    | Description |
+|---------------------------------------------------------|-------------|
+| UserNetworkVariableSerialization.WriteValueDelegate\<\> |             |
 
 </div>
 

@@ -1,7 +1,60 @@
----  
-id: Unity.Netcode.NetworkObjectReference  
-title: Unity.Netcode.NetworkObjectReference  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkObjectReference
 
 <div class="markdown level0 summary">
 
@@ -62,7 +115,9 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
- 
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
@@ -361,6 +416,8 @@ public bool TryGet(out NetworkObject networkObject, NetworkManager networkManage
 
 <div class="markdown level1 summary">
 
+Implicitly convert to NetworkObject.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -379,19 +436,21 @@ public static implicit operator NetworkObjectReference(GameObject gameObject)
 
 ##### Parameters
 
-| Type       | Name       | Description |
-|------------|------------|-------------|
-| GameObject | gameObject |             |
+| Type       | Name       | Description          |
+|------------|------------|----------------------|
+| GameObject | gameObject | The to convert from. |
 
 ##### Returns
 
-| Type                   | Description |
-|------------------------|-------------|
-| NetworkObjectReference |             |
+| Type                   | Description                                                                                             |
+|------------------------|---------------------------------------------------------------------------------------------------------|
+| NetworkObjectReference | The NetworkObjectReference created from the parameter that has a NetworkObject component attached to it |
 
 #### Implicit(NetworkObject to NetworkObjectReference)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkObject to NetworkObjectReference.
 
 </div>
 
@@ -411,19 +470,21 @@ public static implicit operator NetworkObjectReference(NetworkObject networkObje
 
 ##### Parameters
 
-| Type          | Name          | Description |
-|---------------|---------------|-------------|
-| NetworkObject | networkObject |             |
+| Type          | Name          | Description                        |
+|---------------|---------------|------------------------------------|
+| NetworkObject | networkObject | The NetworkObject to convert from. |
 
 ##### Returns
 
-| Type                   | Description |
-|------------------------|-------------|
-| NetworkObjectReference |             |
+| Type                   | Description                                                         |
+|------------------------|---------------------------------------------------------------------|
+| NetworkObjectReference | The NetworkObjectReference created from the NetworkObject parameter |
 
 #### Implicit(NetworkObjectReference to GameObject)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkObjectReference to .
 
 </div>
 
@@ -443,19 +504,21 @@ public static implicit operator GameObject(NetworkObjectReference networkObjectR
 
 ##### Parameters
 
-| Type                   | Name             | Description |
-|------------------------|------------------|-------------|
-| NetworkObjectReference | networkObjectRef |             |
+| Type                   | Name             | Description                                 |
+|------------------------|------------------|---------------------------------------------|
+| NetworkObjectReference | networkObjectRef | The NetworkObjectReference to convert from. |
 
 ##### Returns
 
-| Type       | Description |
-|------------|-------------|
-| GameObject |             |
+| Type       | Description                                                                                                                     |
+|------------|---------------------------------------------------------------------------------------------------------------------------------|
+| GameObject | This returns the that the NetworkObject is attached to and is referenced by the NetworkObjectReference passed in as a parameter |
 
 #### Implicit(NetworkObjectReference to NetworkObject)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkObjectReference to NetworkObject.
 
 </div>
 
@@ -475,15 +538,15 @@ public static implicit operator NetworkObject(NetworkObjectReference networkObje
 
 ##### Parameters
 
-| Type                   | Name             | Description |
-|------------------------|------------------|-------------|
-| NetworkObjectReference | networkObjectRef |             |
+| Type                   | Name             | Description                                 |
+|------------------------|------------------|---------------------------------------------|
+| NetworkObjectReference | networkObjectRef | The NetworkObjectReference to convert from. |
 
 ##### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| NetworkObject |             |
+| Type          | Description                                                 |
+|---------------|-------------------------------------------------------------|
+| NetworkObject | The NetworkObject the NetworkObjectReference is referencing |
 
 ### Implements
 
@@ -499,4 +562,42 @@ System.IEquatable\<T\>
 
 </div>
 
- 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>
