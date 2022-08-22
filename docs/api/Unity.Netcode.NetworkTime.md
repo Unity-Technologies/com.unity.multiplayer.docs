@@ -1,98 +1,95 @@
----  
-id: Unity.Netcode.NetworkTime  
-title: Unity.Netcode.NetworkTime  
+---
+id: Unity.Netcode.NetworkTime
+title: Unity.Netcode.NetworkTime
 ---
 
-<div class="markdown level0 summary">
+# Struct NetworkTime
+
 
 A struct to represent a point of time in a networked game. Time is
 stored as a combination of amount of passed ticks + a duration offset.
 This struct is meant to replace the Unity Time API for multiplayer
 gameplay.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkTime
 ```
 
-</div>
+
 
 ### Constructors
 
 #### NetworkTime(UInt32)
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkTime struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime(uint tickRate)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -102,25 +99,22 @@ public NetworkTime(uint tickRate)
 
 #### NetworkTime(UInt32, Double)
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkTime struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime(uint tickRate, double timeSec)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -131,25 +125,22 @@ public NetworkTime(uint tickRate, double timeSec)
 
 #### NetworkTime(UInt32, Int32, Double)
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkTime struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime(uint tickRate, int tick, double tickOffset = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -163,26 +154,23 @@ public NetworkTime(uint tickRate, int tick, double tickOffset = 0)
 
 #### FixedDeltaTime
 
-<div class="markdown level1 summary">
 
 Gets the fixed delta time. This value is based on the TickRate and stays
 constant. Similar to There is no equivalent to
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly float FixedDeltaTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -192,26 +180,23 @@ public readonly float FixedDeltaTime { get; }
 
 #### FixedTime
 
-<div class="markdown level1 summary">
 
 Gets he current fixed network time. This is the time value of the last
 network tick. Similar to
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly double FixedTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -221,26 +206,23 @@ public readonly double FixedTime { get; }
 
 #### Tick
 
-<div class="markdown level1 summary">
 
 Gets the amount of network ticks which have passed until reaching the
 current time value.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Tick { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -250,25 +232,22 @@ public readonly int Tick { get; }
 
 #### TickOffset
 
-<div class="markdown level1 summary">
 
 Gets the amount of time which has passed since the last network tick.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly double TickOffset { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -278,25 +257,22 @@ public readonly double TickOffset { get; }
 
 #### TickRate
 
-<div class="markdown level1 summary">
 
 Gets the tickrate of the system of this NetworkTime. Ticks per second.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly uint TickRate { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -306,25 +282,22 @@ public readonly uint TickRate { get; }
 
 #### Time
 
-<div class="markdown level1 summary">
 
 Gets the current time. This is a non fixed time value and similar to
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly double Time { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -334,25 +307,22 @@ public readonly double Time { get; }
 
 #### TimeAsFloat
 
-<div class="markdown level1 summary">
 
 Gets the current time as a float.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly float TimeAsFloat { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -364,29 +334,28 @@ public readonly float TimeAsFloat { get; }
 
 #### TimeTicksAgo(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Returns the time a number of ticks in the past.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime TimeTicksAgo(int ticks)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type         | Name  | Description |
-|--------------|-------|-------------|
-| System.Int32 | ticks |             |
+| Type         | Name  | Description                                     |
+|--------------|-------|-------------------------------------------------|
+| System.Int32 | ticks | The number of ticks ago we're querying the time |
 
 ##### Returns
 
@@ -396,25 +365,22 @@ public NetworkTime TimeTicksAgo(int ticks)
 
 #### ToFixedTime()
 
-<div class="markdown level1 summary">
 
 Converts the network time into a fixed time value.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime ToFixedTime()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -426,134 +392,131 @@ public NetworkTime ToFixedTime()
 
 #### Addition(NetworkTime, Double)
 
-<div class="markdown level1 summary">
 
-</div>
+Computes the time a number of seconds later
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkTime operator +(NetworkTime a, double b)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| NetworkTime   | a    |             |
-| System.Double | b    |             |
+| Type          | Name | Description                  |
+|---------------|------|------------------------------|
+| NetworkTime   | a    | The start time               |
+| System.Double | b    | The number of seconds to add |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description        |
+|-------------|--------------------|
+| NetworkTime | The resulting time |
 
 #### Addition(NetworkTime, NetworkTime)
 
-<div class="markdown level1 summary">
 
-</div>
+Computes the sum of two times
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkTime operator +(NetworkTime a, NetworkTime b)
 ```
 
-</div>
+
 
 ##### Parameters
 
 | Type        | Name | Description |
 |-------------|------|-------------|
-| NetworkTime | a    |             |
-| NetworkTime | b    |             |
+| NetworkTime | a    | First time  |
+| NetworkTime | b    | Second time |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description                        |
+|-------------|------------------------------------|
+| NetworkTime | The sum of the two times passed in |
 
 #### Subtraction(NetworkTime, Double)
 
-<div class="markdown level1 summary">
 
-</div>
+Computes the time a number of seconds before
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkTime operator -(NetworkTime a, double b)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| NetworkTime   | a    |             |
-| System.Double | b    |             |
+| Type          | Name | Description                     |
+|---------------|------|---------------------------------|
+| NetworkTime   | a    | The start time                  |
+| System.Double | b    | The number of seconds to remove |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description        |
+|-------------|--------------------|
+| NetworkTime | The resulting time |
 
 #### Subtraction(NetworkTime, NetworkTime)
 
-<div class="markdown level1 summary">
 
-</div>
+Computes the time difference between two ticks
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkTime operator -(NetworkTime a, NetworkTime b)
 ```
 
-</div>
+
 
 ##### Parameters
 
 | Type        | Name | Description |
 |-------------|------|-------------|
-| NetworkTime | a    |             |
-| NetworkTime | b    |             |
+| NetworkTime | a    | End time    |
+| NetworkTime | b    | Start time  |
 
 ##### Returns
 
-| Type        | Description |
-|-------------|-------------|
-| NetworkTime |             |
+| Type        | Description                               |
+|-------------|-------------------------------------------|
+| NetworkTime | The time difference between start and end |
 
- 
+
+

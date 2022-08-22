@@ -1,34 +1,32 @@
----  
-id: Unity.Networking.Transport.Error  
-title: Unity.Networking.Transport.Error  
+---
+id: Unity.Networking.Transport.Error
+title: Unity.Networking.Transport.Error
 ---
 
-## 
 
-<div class="markdown level0 summary">
+# Namespace Unity.Networking.Transport.Error
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="markdown level0 remarks">
 
-</div>
 
-## 
 
-### Unity.Networking.Transport.Error.DisconnectReason
 
-<div class="section">
 
-DisconnectReason enumerates all disconnect reasons.
+### Enums
 
-</div>
+#### DisconnectReason
 
-### Unity.Networking.Transport.Error.StatusCode
 
-<div class="section">
 
-</div>
+
+#### StatusCode
+
+
+Status code returned by many functions in the API.
+
+
+
+
+

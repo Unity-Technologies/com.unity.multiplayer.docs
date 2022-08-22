@@ -1,78 +1,92 @@
----  
-id: Unity.Networking.Transport.INetworkPipelineStage  
-title: Unity.Networking.Transport.INetworkPipelineStage  
+---
+id: Unity.Networking.Transport.INetworkPipelineStage
+title: Unity.Networking.Transport.INetworkPipelineStage
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Interface INetworkPipelineStage
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network pipeline stage interface
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public interface INetworkPipelineStage
 ```
 
-## 
 
-### StaticSize
 
-<div class="markdown level1 summary">
+### Properties
 
-</div>
+#### StaticSize
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the value of the static size
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 int StaticSize { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### StaticInitialize(Byte\*, Int32, NetworkSettings)
+#### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
-<div class="markdown level1 summary">
 
-</div>
+Statics the initialize using the specified static instance buffer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings settings)
 ```
 
-#### Parameters
 
-| Type            | Name                       | Description |
-|-----------------|----------------------------|-------------|
-| System.Byte\*   | staticInstanceBuffer       |             |
-| System.Int32    | staticInstanceBufferLength |             |
-| NetworkSettings | settings                   |             |
 
-#### Returns
+##### Parameters
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkPipelineStage |             |
+| Type            | Name                       | Description                       |
+|-----------------|----------------------------|-----------------------------------|
+| System.Byte\*   | staticInstanceBuffer       | The static instance buffer        |
+| System.Int32    | staticInstanceBufferLength | The static instance buffer length |
+| NetworkSettings | settings                   |                                   |
+
+##### Returns
+
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkPipelineStage | The network pipeline stage |
+
+
+

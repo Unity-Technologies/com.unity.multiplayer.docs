@@ -1,31 +1,32 @@
----  
-id: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkSceneManager.OnLoadDelegateHandler
+
 
 Delegate declaration for the OnLoad event.  
 See also:  
 Loadfor more information
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnLoadDelegateHandler(ulong clientId, string sceneName, LoadSceneMode loadSceneMode, AsyncOperation asyncOperation);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -36,4 +37,5 @@ public delegate void OnLoadDelegateHandler(ulong clientId, string sceneName, Loa
 | LoadSceneMode  | loadSceneMode  | the LoadSceneMode mode for the scene being loaded                                                                  |
 | AsyncOperation | asyncOperation | the associated that can be used for scene loading progress                                                         |
 
- 
+
+

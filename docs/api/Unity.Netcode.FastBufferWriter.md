@@ -1,105 +1,104 @@
----  
-id: Unity.Netcode.FastBufferWriter  
-title: Unity.Netcode.FastBufferWriter  
+---
+id: Unity.Netcode.FastBufferWriter
+title: Unity.Netcode.FastBufferWriter
 ---
 
-<div class="markdown level0 summary">
+# Struct FastBufferWriter
 
-</div>
 
-<div class="markdown level0 conceptual">
+Optimized class used for writing values into a byte stream
+FastBufferReader BytePacker ByteUnpacker
 
-</div>
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct FastBufferWriter : IDisposable
 ```
 
-</div>
+
 
 ### Constructors
 
 #### FastBufferWriter(Int32, Allocator, Int32)
 
-<div class="markdown level1 summary">
 
 Create a FastBufferWriter.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FastBufferWriter(int size, Allocator allocator, int maxSize = -1)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -113,25 +112,22 @@ public FastBufferWriter(int size, Allocator allocator, int maxSize = -1)
 
 #### Capacity
 
-<div class="markdown level1 summary">
 
 The current total buffer size
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Capacity { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -141,26 +137,23 @@ public readonly int Capacity { get; }
 
 #### IsInitialized
 
-<div class="markdown level1 summary">
 
 Gets a value indicating whether the writer has been initialized and a
 handle allocated.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsInitialized { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -170,25 +163,22 @@ public readonly bool IsInitialized { get; }
 
 #### Length
 
-<div class="markdown level1 summary">
 
 The total amount of bytes that have been written to the stream
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Length { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -198,25 +188,22 @@ public readonly int Length { get; }
 
 #### MaxCapacity
 
-<div class="markdown level1 summary">
 
 The maximum possible total buffer size
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int MaxCapacity { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -226,25 +213,22 @@ public readonly int MaxCapacity { get; }
 
 #### Position
 
-<div class="markdown level1 summary">
 
 The current write position
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Position { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -256,28 +240,25 @@ public readonly int Position { get; }
 
 #### CopyFrom(FastBufferWriter)
 
-<div class="markdown level1 summary">
 
 Copy the contents of another writer into this writer. The contents will
 be copied from the beginning of the other writer to its current
 position. They will be copied to this writer starting at this writer's
 current position.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void CopyFrom(FastBufferWriter other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -287,28 +268,25 @@ public void CopyFrom(FastBufferWriter other)
 
 #### CopyTo(FastBufferWriter)
 
-<div class="markdown level1 summary">
 
 Copy the contents of this writer into another writer. The contents will
 be copied from the beginning of this writer to its current position.
 They will be copied to the other writer starting at the other writer's
 current position.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void CopyTo(FastBufferWriter other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -318,50 +296,44 @@ public void CopyTo(FastBufferWriter other)
 
 #### Dispose()
 
-<div class="markdown level1 summary">
 
-Frees the allocated buffer
+System.IDisposable implementation that frees the allocated buffer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-</div>
+
 
 #### EnterBitwiseContext()
 
-<div class="markdown level1 summary">
 
 Retrieve a BitWriter to be able to perform bitwise operations on the
 buffer. No bytewise operations can be performed on the buffer until
 bitWriter.Dispose() has been called. At the end of the operation,
 FastBufferWriter will remain byte-aligned.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public BitWriter EnterBitwiseContext()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -371,25 +343,22 @@ public BitWriter EnterBitwiseContext()
 
 #### GetUnsafePtr()
 
-<div class="markdown level1 summary">
 
 Gets a direct pointer to the underlying buffer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public byte *GetUnsafePtr()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -399,26 +368,23 @@ public byte *GetUnsafePtr()
 
 #### GetUnsafePtrAtCurrentPosition()
 
-<div class="markdown level1 summary">
 
 Gets a direct pointer to the underlying buffer at the current read
 position
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public byte *GetUnsafePtrAtCurrentPosition()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -428,25 +394,22 @@ public byte *GetUnsafePtrAtCurrentPosition()
 
 #### GetWriteSize(String, Boolean)
 
-<div class="markdown level1 summary">
 
 Get the required size to write a string
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetWriteSize(string s, bool oneByteChars = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -463,26 +426,23 @@ public static int GetWriteSize(string s, bool oneByteChars = false)
 
 #### GetWriteSize\<T\>()
 
-<div class="markdown level1 summary">
 
 Get the size required to write an unmanaged value of type T
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetWriteSize<T>()
     where T : struct
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -498,26 +458,23 @@ public static int GetWriteSize<T>()
 
 #### GetWriteSize\<T\>(in T)
 
-<div class="markdown level1 summary">
 
-Get the size required to write an unmanaged value
+Get the write size for a FixedString
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int GetWriteSize<T>(in T value)
-    where T : struct
+    where T : struct, INativeList<byte>, IUTF8Bytes
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -537,28 +494,66 @@ public static int GetWriteSize<T>(in T value)
 |------|-------------|
 | T    |             |
 
-#### GetWriteSize\<T\>(T\[\], Int32, Int32)
+#### GetWriteSize\<T\>(in T, FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
-Get the required size to write an unmanaged array
+Get the write size for any general unmanaged value The ForStructs value
+here makes this the lowest-priority overload so other versions will be
+prioritized over this if they match
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public static int GetWriteSize<T>(in T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
+    where T : struct
+```
+
+
+
+##### Parameters
+
+| Type                        | Name   | Description |
+|-----------------------------|--------|-------------|
+| T                           | value  |             |
+| FastBufferWriter.ForStructs | unused |             |
+
+##### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+##### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| T    |             |
+
+#### GetWriteSize\<T\>(T\[\], Int32, Int32)
+
+
+Get the required size to write an unmanaged array
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static int GetWriteSize<T>(T[] array, int count = -1, int offset = 0)
     where T : struct
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -582,27 +577,24 @@ public static int GetWriteSize<T>(T[] array, int count = -1, int offset = 0)
 
 #### Seek(Int32)
 
-<div class="markdown level1 summary">
 
 Move the write position in the stream. Note that moving forward past the
 current length will extend the buffer's Length value even if you don't
 write.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Seek(int where)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -612,26 +604,23 @@ public void Seek(int where)
 
 #### ToArray()
 
-<div class="markdown level1 summary">
 
 Returns an array representation of the underlying byte buffer.
 !!Allocates a new array!!
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public byte[] ToArray()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -641,26 +630,23 @@ public byte[] ToArray()
 
 #### Truncate(Int32)
 
-<div class="markdown level1 summary">
 
 Truncate the stream by setting Length to the specified value. If
 Position is greater than the specified value, it will be moved as well.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Truncate(int where = -1)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -670,7 +656,6 @@ public void Truncate(int where = -1)
 
 #### TryBeginWrite(Int32)
 
-<div class="markdown level1 summary">
 
 Allows faster serialization by batching bounds checking. When you know
 you will be writing multiple fields back-to-back and you know the total
@@ -684,21 +669,19 @@ TryBeginWrite(). In release builds, OverflowException will not be thrown
 for performance reasons, since the point of using TryBeginWrite is to
 avoid bounds checking in the following operations in release builds.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryBeginWrite(int bytes)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -720,26 +703,23 @@ public bool TryBeginWrite(int bytes)
 
 #### TryBeginWriteInternal(Int32)
 
-<div class="markdown level1 summary">
 
 Internal version of TryBeginWrite. Differs from TryBeginWrite only in
 that it won't ever move the AllowedWriteMark backward.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryBeginWriteInternal(int bytes)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -761,7 +741,6 @@ public bool TryBeginWriteInternal(int bytes)
 
 #### TryBeginWriteValue\<T\>(in T)
 
-<div class="markdown level1 summary">
 
 Allows faster serialization by batching bounds checking. When you know
 you will be writing multiple fields back-to-back and you know the total
@@ -778,28 +757,26 @@ Instead, attempting to write past the marked position in release builds
 will write to random memory and cause undefined behavior, likely
 including instability and crashes.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryBeginWriteValue<T>(in T value)
     where T : struct
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type | Name  | Description                 |
-|------|-------|-----------------------------|
-| T    | value | The value you want to write |
+| Type | Name  | Description                                 |
+|------|-------|---------------------------------------------|
+| T    | value | The value of the type `T` you want to write |
 
 ##### Returns
 
@@ -809,9 +786,9 @@ public bool TryBeginWriteValue<T>(in T value)
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description             |
+|------|-------------------------|
+| T    | The value type to write |
 
 ##### Exceptions
 
@@ -821,25 +798,22 @@ public bool TryBeginWriteValue<T>(in T value)
 
 #### WriteByte(Byte)
 
-<div class="markdown level1 summary">
 
 Write a byte to the stream.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteByte(byte value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -849,25 +823,22 @@ public void WriteByte(byte value)
 
 #### WriteBytes(Byte\*, Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Write multiple bytes to the stream
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBytes(byte *value, int size, int offset = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -879,25 +850,22 @@ public void WriteBytes(byte *value, int size, int offset = 0)
 
 #### WriteBytes(Byte\[\], Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Write multiple bytes to the stream
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBytes(byte[] value, int size = -1, int offset = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -909,7 +877,6 @@ public void WriteBytes(byte[] value, int size = -1, int offset = 0)
 
 #### WriteByteSafe(Byte)
 
-<div class="markdown level1 summary">
 
 Write a byte to the stream.
 
@@ -917,21 +884,19 @@ Write a byte to the stream.
 than bounds checking for multiple writes at once by calling
 TryBeginWrite.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteByteSafe(byte value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -941,7 +906,6 @@ public void WriteByteSafe(byte value)
 
 #### WriteBytesSafe(Byte\*, Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Write multiple bytes to the stream
 
@@ -949,21 +913,19 @@ Write multiple bytes to the stream
 than bounds checking for multiple writes at once by calling
 TryBeginWrite.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBytesSafe(byte *value, int size, int offset = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -975,7 +937,6 @@ public void WriteBytesSafe(byte *value, int size, int offset = 0)
 
 #### WriteBytesSafe(Byte\[\], Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Write multiple bytes to the stream
 
@@ -983,21 +944,19 @@ Write multiple bytes to the stream
 than bounds checking for multiple writes at once by calling
 TryBeginWrite.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteBytesSafe(byte[] value, int size = -1, int offset = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1009,26 +968,23 @@ public void WriteBytesSafe(byte[] value, int size = -1, int offset = 0)
 
 #### WriteNetworkSerializable\<T\>(in T)
 
-<div class="markdown level1 summary">
 
 Write an INetworkSerializable
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteNetworkSerializable<T>(in T value)
     where T : INetworkSerializable
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1044,26 +1000,23 @@ public void WriteNetworkSerializable<T>(in T value)
 
 #### WriteNetworkSerializable\<T\>(T\[\], Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Write an array of INetworkSerializables
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteNetworkSerializable<T>(T[] array, int count = -1, int offset = 0)
     where T : INetworkSerializable
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1081,27 +1034,24 @@ public void WriteNetworkSerializable<T>(T[] array, int count = -1, int offset = 
 
 #### WritePartialValue\<T\>(T, Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Write a partial value. The specified number of bytes is written from the
 value and the rest is ignored.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WritePartialValue<T>(T value, int bytesToWrite, int offsetBytes = 0)
     where T : struct
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1126,285 +1076,272 @@ public void WritePartialValue<T>(T value, int bytesToWrite, int offsetBytes = 0)
 
 #### WriteValue(in Color)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(in Color value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Color | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Color | value | the value to write |
 
 #### WriteValue(Color\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Color[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Color\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Color\[\] | value | the values to write |
 
 #### WriteValue(in Color32)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color32
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(in Color32 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Color32 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Color32 | value | the value to write |
 
 #### WriteValue(Color32\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color32 array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Color32[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Color32\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Color32\[\] | value | the values to write |
 
 #### WriteValue(in Quaternion)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Quaternion
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(in Quaternion value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type       | Name  | Description |
-|------------|-------|-------------|
-| Quaternion | value |             |
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Quaternion | value | the value to write |
 
 #### WriteValue(Quaternion\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Quaternion array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Quaternion[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| Quaternion\[\] | value |             |
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Quaternion\[\] | value | the values to write |
 
 #### WriteValue(in Ray)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(in Ray value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| Ray  | value |             |
+| Type | Name  | Description        |
+|------|-------|--------------------|
+| Ray  | value | the value to write |
 
 #### WriteValue(Ray\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Ray[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Ray\[\] | value |             |
+| Type    | Name  | Description         |
+|---------|-------|---------------------|
+| Ray\[\] | value | the values to write |
 
 #### WriteValue(in Ray2D)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray2D
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(in Ray2D value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Ray2D | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Ray2D | value | the value to write |
 
 #### WriteValue(Ray2D\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray2D array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Ray2D[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Ray2D\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Ray2D\[\] | value | the values to write |
 
 #### WriteValue(String, Boolean)
 
-<div class="markdown level1 summary">
 
 Writes a string
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(string s, bool oneByteChars = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1415,695 +1352,850 @@ public void WriteValue(string s, bool oneByteChars = false)
 
 #### WriteValue(in Vector2)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector2
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(in Vector2 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector2 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector2 | value | the value to write |
 
 #### WriteValue(Vector2\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector2 array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Vector2[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector2\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector2\[\] | value | the values to write |
 
-#### WriteValue(in Vector3)
+#### WriteValue(in Vector2Int)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector2Int
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue(in Vector2Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector2Int | value | the value to write |
+
+#### WriteValue(Vector2Int\[\])
+
+
+Write a Vector2Int array
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void WriteValue(Vector2Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Vector2Int\[\] | value | the values to write |
+
+#### WriteValue(in Vector3)
+
+
+Write a Vector3
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void WriteValue(in Vector3 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector3 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector3 | value | the value to write |
 
 #### WriteValue(Vector3\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector3 array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Vector3[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector3\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector3\[\] | value | the values to write |
 
-#### WriteValue(in Vector4)
+#### WriteValue(in Vector3Int)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector3Int
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue(in Vector3Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector3Int | value | the value to write |
+
+#### WriteValue(Vector3Int\[\])
+
+
+Write a Vector3Int array
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void WriteValue(Vector3Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description        |
+|----------------|-------|--------------------|
+| Vector3Int\[\] | value | the value to write |
+
+#### WriteValue(in Vector4)
+
+
+Write a Vector4
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void WriteValue(in Vector4 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector4 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector4 | value | the value to write |
 
 #### WriteValue(Vector4\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector4
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue(Vector4[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector4\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector4\[\] | value | the values to write |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
-</div>
+Write an enum value
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(in T value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T                         | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T                         | value  | The value to write                                                                     |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
-#### WriteValue\<T\>(in T, FastBufferWriter.ForNetworkSerializable)
+#### WriteValue\<T\>(in T, FastBufferWriter.ForFixedStrings)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a FixedString value. Writes only the part of the string that's
+actually used. When calling TryBeginWrite, ensure you calculate the
+write size correctly (preferably by calling
+FastBufferWriter.GetWriteSize())
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValue<T>(in T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+
+
+##### Parameters
+
+| Type                             | Name   | Description                                                                            |
+|----------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                | value  | the value to write                                                                     |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### WriteValue\<T\>(in T, FastBufferWriter.ForNetworkSerializable)
+
+
+Write a NetworkSerializable value
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void WriteValue<T>(in T value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
     where T : INetworkSerializable
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T                                       | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                       | value  | The value to write                                                                     |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(in T value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T                              | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to write                                                                     |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(in T, FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a struct
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(in T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T                           | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T                           | value  | The value to write                                                                     |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
-</div>
+Write an enum array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(T[] value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T\[\]                     | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                     | value  | The values to write                                                                    |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForNetworkSerializable)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a NetworkSerializable array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(T[] value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
     where T : INetworkSerializable
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T\[\]                                   | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                                   | value  | The values to write                                                                    |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a primitive value array (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(T[] value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T\[\]                          | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                          | value  | The values to write                                                                    |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValue\<T\>(T\[\], FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a struct array
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValue<T>(T[] value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T\[\]                       | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                       | value  | The values to write                                                                    |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe(in Color)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(in Color value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Color | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Color | value | the value to write |
 
 #### WriteValueSafe(Color\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Collor array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Color[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Color\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Color\[\] | value | the values to write |
 
 #### WriteValueSafe(in Color32)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color32
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(in Color32 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Color32 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Color32 | value | the value to write |
 
 #### WriteValueSafe(Color32\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Color32 array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Color32[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Color32\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Color32\[\] | value | the values to write |
 
 #### WriteValueSafe(in Quaternion)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Quaternion
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(in Quaternion value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type       | Name  | Description |
-|------------|-------|-------------|
-| Quaternion | value |             |
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Quaternion | value | the value to write |
 
 #### WriteValueSafe(Quaternion\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Quaternion array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Quaternion[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type           | Name  | Description |
-|----------------|-------|-------------|
-| Quaternion\[\] | value |             |
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Quaternion\[\] | value | the values to write |
 
 #### WriteValueSafe(in Ray)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(in Ray value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| Ray  | value |             |
+| Type | Name  | Description        |
+|------|-------|--------------------|
+| Ray  | value | the value to write |
 
 #### WriteValueSafe(Ray\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Ray[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Ray\[\] | value |             |
+| Type    | Name  | Description         |
+|---------|-------|---------------------|
+| Ray\[\] | value | the values to write |
 
 #### WriteValueSafe(in Ray2D)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray2D
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(in Ray2D value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type  | Name  | Description |
-|-------|-------|-------------|
-| Ray2D | value |             |
+| Type  | Name  | Description        |
+|-------|-------|--------------------|
+| Ray2D | value | the value to write |
 
 #### WriteValueSafe(Ray2D\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Ray2D array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Ray2D[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type      | Name  | Description |
-|-----------|-------|-------------|
-| Ray2D\[\] | value |             |
+| Type      | Name  | Description         |
+|-----------|-------|---------------------|
+| Ray2D\[\] | value | the values to write |
 
 #### WriteValueSafe(String, Boolean)
 
-<div class="markdown level1 summary">
 
 Writes a string
 
@@ -2111,21 +2203,19 @@ Writes a string
 than bounds checking for multiple writes at once by calling
 TryBeginWrite.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(string s, bool oneByteChars = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2136,438 +2226,639 @@ public void WriteValueSafe(string s, bool oneByteChars = false)
 
 #### WriteValueSafe(in Vector2)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector2
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(in Vector2 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector2 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector2 | value | the value to write |
 
 #### WriteValueSafe(Vector2\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector2 array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Vector2[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector2\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector2\[\] | value | the values to write |
 
-#### WriteValueSafe(in Vector3)
+#### WriteValueSafe(in Vector2Int)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector2Int
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe(in Vector2Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector2Int | value | the value to write |
+
+#### WriteValueSafe(Vector2Int\[\])
+
+
+Write a Vector2Int array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void WriteValueSafe(Vector2Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Vector2Int\[\] | value | the values to write |
+
+#### WriteValueSafe(in Vector3)
+
+
+Write a Vector3
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void WriteValueSafe(in Vector3 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector3 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector3 | value | the value to write |
 
 #### WriteValueSafe(Vector3\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector3 array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Vector3[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector3\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector3\[\] | value | the values to write |
 
-#### WriteValueSafe(in Vector4)
+#### WriteValueSafe(in Vector3Int)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector3Int
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe(in Vector3Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description        |
+|------------|-------|--------------------|
+| Vector3Int | value | the value to write |
+
+#### WriteValueSafe(Vector3Int\[\])
+
+
+Write a Vector3Int array
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void WriteValueSafe(Vector3Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description         |
+|----------------|-------|---------------------|
+| Vector3Int\[\] | value | the values to write |
+
+#### WriteValueSafe(in Vector4)
+
+
+Write a Vector4
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void WriteValueSafe(in Vector4 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type    | Name  | Description |
-|---------|-------|-------------|
-| Vector4 | value |             |
+| Type    | Name  | Description        |
+|---------|-------|--------------------|
+| Vector4 | value | the value to write |
 
 #### WriteValueSafe(Vector4\[\])
 
-<div class="markdown level1 summary">
 
-</div>
+Write a Vector4 array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe(Vector4[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type        | Name  | Description |
-|-------------|-------|-------------|
-| Vector4\[\] | value |             |
+| Type        | Name  | Description         |
+|-------------|-------|---------------------|
+| Vector4\[\] | value | the values to write |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
-</div>
+Write an enum value
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(in T value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T                         | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T                         | value  | The value to write                                                                     |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
-#### WriteValueSafe\<T\>(in T, FastBufferWriter.ForNetworkSerializable)
+#### WriteValueSafe\<T\>(in T, FastBufferWriter.ForFixedStrings)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a FixedString value. Writes only the part of the string that's
+actually used.
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
+
+``` lang-csharp
+public void WriteValueSafe<T>(in T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+
+
+##### Parameters
+
+| Type                             | Name   | Description                                                                            |
+|----------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                | value  | the value to write                                                                     |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### WriteValueSafe\<T\>(in T, FastBufferWriter.ForNetworkSerializable)
+
+
+Write a NetworkSerializable value
+
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void WriteValueSafe<T>(in T value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
     where T : INetworkSerializable
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T                                       | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                       | value  | The value to write                                                                     |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(in T value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T                              | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to write                                                                     |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(in T, FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a struct
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(in T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T                           | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T                           | value  | The value to write                                                                     |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
-</div>
+Write an enum array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                      | Name   | Description |
-|---------------------------|--------|-------------|
-| T\[\]                     | value  |             |
-| FastBufferWriter.ForEnums | unused |             |
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                     | value  | The values to write                                                                    |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForNetworkSerializable)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a NetworkSerializable array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
     where T : INetworkSerializable
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                                    | Name   | Description |
-|-----------------------------------------|--------|-------------|
-| T\[\]                                   | value  |             |
-| FastBufferWriter.ForNetworkSerializable | unused |             |
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                                   | value  | The values to write                                                                    |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                           | Name   | Description |
-|--------------------------------|--------|-------------|
-| T\[\]                          | value  |             |
-| FastBufferWriter.ForPrimitives | unused |             |
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                          | value  | The value to write                                                                     |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 #### WriteValueSafe\<T\>(T\[\], FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
-</div>
+Write a struct array
 
-<div class="markdown level1 conceptual">
+"Safe" version - automatically performs bounds checking. Less efficient
+than bounds checking for multiple writes at once by calling
+TryBeginWrite.
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void WriteValueSafe<T>(T[] value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                        | Name   | Description |
-|-----------------------------|--------|-------------|
-| T\[\]                       | value  |             |
-| FastBufferWriter.ForStructs | unused |             |
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                       | value  | The values to write                                                                    |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
 
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
 
 ### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
- 
+
+
+

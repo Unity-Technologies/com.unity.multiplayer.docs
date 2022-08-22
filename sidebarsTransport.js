@@ -145,11 +145,6 @@ module.exports = {
                     "label": "DataStreamWriter"
                 },
                 {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.WebSocketNetworkInterface",
-                    "label": "WebSocketNetworkInterface"
-                },
-                {
                     "collapsed": true,
                     "type": "category",
                     "label": "FragmentationPipelineStage",
@@ -195,11 +190,6 @@ module.exports = {
                     "type": "doc",
                     "id": "api/Unity.Networking.Transport.IPCNetworkInterface",
                     "label": "IPCNetworkInterface"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.IValidatableNetworkParameter",
-                    "label": "IValidatableNetworkParameter"
                 },
                 {
                     "type": "doc",
@@ -269,23 +259,6 @@ module.exports = {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.NetworkEvent.Type",
                             "label": "Type"
-                        }
-                    ]
-                },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "NetworkEventQueue",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkEventQueue",
-                            "label": "NetworkEventQueue"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkEventQueue.Concurrent",
-                            "label": "Concurrent"
                         }
                     ]
                 },
@@ -449,11 +422,6 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.TransportFunctionPointer-1",
                     "label": "TransportFunctionPointer-1"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.UnreliableSequencedPipelineStage",
-                    "label": "UnreliableSequencedPipelineStage"
-                }
             ]
         },
         {
@@ -481,47 +449,6 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.Relay.RelayHMACKey",
                     "label": "RelayHMACKey"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageAccepted",
-                    "label": "RelayMessageAccepted"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageBind",
-                    "label": "RelayMessageBind"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageConnectRequest",
-                    "label": "RelayMessageConnectRequest"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageDisconnect",
-                    "label": "RelayMessageDisconnect"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageHeader",
-                    "label": "RelayMessageHeader"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessagePing",
-                    "label": "RelayMessagePing"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageRelay",
-                    "label": "RelayMessageRelay"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Relay.RelayMessageType",
-                    "label": "RelayMessageType"
-                },
-
                 {
                     "type": "doc",
                     "id": "api/Unity.Networking.Transport.Relay.RelayNetworkParameter",
@@ -566,33 +493,6 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Protocols",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Protocols",
-                    "label": "Protocols"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Protocols.UdpCHeader",
-                    "label": "UdpCHeader"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Protocols.UdpCHeader.HeaderFlags",
-                    "label": "UdpCHeader.HeaderFlags"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Protocols.UdpCProtocol",
-                    "label": "UdpCProtocol"
-                }
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
             "label": "Utilities",
             "items": [
                 {
@@ -626,11 +526,6 @@ module.exports = {
                             "label": "Parameters"
                         }
                     ]
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.Utilities.NativeMultiQueue-1",
-                    "label": "NativeMultiQueue-1 "
                 },
                 {
                     "type": "doc",
@@ -750,10 +645,6 @@ module.exports = {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.Utilities.SimulatorUtility.Parameters",
                             "label": "Parameters"
-                        }, {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.ApplyMode",
-                            "label": "ApplyMode"
                         },
                         {
                             "type": "doc",
@@ -764,11 +655,6 @@ module.exports = {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions",
                             "label": "FragmentationStageParameterExtensions"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.NativeMultiQueue-1",
-                            "label": "NativeMultiQueue-1 "
                         },
                         {
                             "type": "doc",
