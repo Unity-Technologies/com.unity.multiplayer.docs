@@ -1,9 +1,11 @@
----  
-id: Unity.Networking.Transport.NetworkPacketReceiver  
-title: Unity.Networking.Transport.NetworkPacketReceiver  
+---
+id: Unity.Networking.Transport.NetworkPacketReceiver
+title: Unity.Networking.Transport.NetworkPacketReceiver
 ---
 
-<div class="markdown level0 summary">
+
+# Struct NetworkPacketReceiver
+
 
 The NetworkPacketReceiver is an interface for handling received packets,
 needed by the INetworkInterface It either can be used in two main
@@ -18,162 +20,171 @@ scenarios:
     should use AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
     NetworkPacketReceiver.AppendPacketMode) with None (default)
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NetworkPacketReceiver
 ```
 
-## 
 
-### LastUpdateTime
 
-<div class="markdown level1 summary">
+### Properties
 
-</div>
+#### LastUpdateTime
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the value of the last update time.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly long LastUpdateTime { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### ReceiveErrorCode
+#### ReceiveErrorCode
 
-<div class="markdown level1 summary">
 
-</div>
+Sets the value of the receive error code
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int ReceiveErrorCode { set; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### AllocateMemory(ref Int32)
+#### AllocateMemory(ref Int32)
 
-<div class="markdown level1 summary">
 
-Calls NetworkDriver's AllocateMemory(ref Int32)
+Calls NetworkDriver's
+Unity.Networking.Transport.NetworkDriver.AllocateMemory(System.Int32@)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public IntPtr AllocateMemory(ref int dataLen)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type         | Name    | Description                                       |
 |--------------|---------|---------------------------------------------------|
 | System.Int32 | dataLen | Size of memory to allocate in bytes. Must be \> 0 |
 
-#### Returns
+##### Returns
 
 | Type          | Description                                                                                                                                                                        |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System.IntPtr | Pointer to allocated memory or IntPtr.Zero if there is no space left (this function doesn't set ReceiveErrorCode! caller should decide if this is Out of memory or something else) |
 
-### AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32, NetworkPacketReceiver.AppendPacketMode)
+#### AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32, NetworkPacketReceiver.AppendPacketMode)
 
-<div class="markdown level1 summary">
 
 When data is received this function should be called to pass it inside
 NetworkDriver
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool AppendPacket(IntPtr data, ref NetworkInterfaceEndPoint address, int dataLen, NetworkPacketReceiver.AppendPacketMode mode = NetworkPacketReceiver.AppendPacketMode.None)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                                   | Name    | Description                                                                                                                     |
 |----------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -182,40 +193,44 @@ public bool AppendPacket(IntPtr data, ref NetworkInterfaceEndPoint address, int 
 | System.Int32                           | dataLen | Length of in bytes                                                                                                              |
 | NetworkPacketReceiver.AppendPacketMode | mode    | Extra flags, like NoCopyNeeded that means - no copy is needed, data is already in NetworkDriver's data stream                   |
 
-#### Returns
+##### Returns
 
 | Type           | Description       |
 |----------------|-------------------|
 | System.Boolean | True if no errors |
 
-### IsAddressUsed(NetworkInterfaceEndPoint)
+#### IsAddressUsed(NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
 Check if an address is currently associated with a valid connection.
 This is mostly useful to keep interface internal lists of connections in
 sync with the correct state.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool IsAddressUsed(NetworkInterfaceEndPoint address)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                     | Name    | Description |
 |--------------------------|---------|-------------|
 | NetworkInterfaceEndPoint | address |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+
+

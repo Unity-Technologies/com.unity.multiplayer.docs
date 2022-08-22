@@ -1,154 +1,174 @@
----  
-id: Unity.Networking.Transport.NetworkSendInterface  
-title: Unity.Networking.Transport.NetworkSendInterface  
+---
+id: Unity.Networking.Transport.NetworkSendInterface
+title: Unity.Networking.Transport.NetworkSendInterface
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkSendInterface
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network send interface used to pass around function pointers to the
+actual INetworkInterface
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NetworkSendInterface
 ```
 
-## 
 
-### AbortSendMessage
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### AbortSendMessage
 
-<div class="markdown level1 conceptual">
 
-</div>
+The abort send message function pointer
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> AbortSendMessage
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                                      | Description |
 |---------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkSendInterface.AbortSendMessageDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkSendInterface.AbortSendMessageDelegate\> |             |
 
-### BeginSendMessage
+#### BeginSendMessage
 
-<div class="markdown level1 summary">
 
-</div>
+The begin send message function pointer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> BeginSendMessage
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                                      | Description |
 |---------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkSendInterface.BeginSendMessageDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkSendInterface.BeginSendMessageDelegate\> |             |
 
-### EndSendMessage
+#### EndSendMessage
 
-<div class="markdown level1 summary">
 
-</div>
+The end send message function pointer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> EndSendMessage
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                                    | Description |
 |-------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkSendInterface.EndSendMessageDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkSendInterface.EndSendMessageDelegate\> |             |
 
-### UserData
+#### UserData
 
-<div class="markdown level1 summary">
 
-</div>
+The user data
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public IntPtr UserData
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.IntPtr |             |
+
+
+

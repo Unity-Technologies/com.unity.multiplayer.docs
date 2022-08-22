@@ -1,149 +1,157 @@
----  
-id: Unity.Networking.Transport.BaselibNetworkParameterExtensions  
-title: Unity.Networking.Transport.BaselibNetworkParameterExtensions  
+---
+id: Unity.Networking.Transport.BaselibNetworkParameterExtensions
+title: Unity.Networking.Transport.BaselibNetworkParameterExtensions
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class BaselibNetworkParameterExtensions
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+BaselibNetworkParameterExtensions
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class BaselibNetworkParameterExtensions
 ```
 
-## 
 
-### GetBaselibNetworkInterfaceParameters(ref NetworkSettings)
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### GetBaselibNetworkInterfaceParameters(ref NetworkSettings)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Gets the BaselibNetworkParameter
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static BaselibNetworkParameter GetBaselibNetworkInterfaceParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                    | Description |
-|-------------------------|-------------|
-| BaselibNetworkParameter |             |
+| Type                    | Description                                                        |
+|-------------------------|--------------------------------------------------------------------|
+| BaselibNetworkParameter | Returns the BaselibNetworkParameter values for the NetworkSettings |
 
-### WithBaselibNetworkInterfaceParameters(ref NetworkSettings, Int32, Int32, UInt32)
+#### WithBaselibNetworkInterfaceParameters(ref NetworkSettings, Int32, Int32, UInt32)
 
-<div class="markdown level1 summary">
 
-</div>
+Sets the BaselibNetworkParameter values for the NetworkSettings
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ref NetworkSettings WithBaselibNetworkInterfaceParameters(this ref NetworkSettings settings, int receiveQueueCapacity = 64, int sendQueueCapacity = 64, uint maximumPayloadSize = 2000U)
 ```
 
-#### Parameters
 
-| Type            | Name                 | Description |
-|-----------------|----------------------|-------------|
-| NetworkSettings | settings             |             |
-| System.Int32    | receiveQueueCapacity |             |
-| System.Int32    | sendQueueCapacity    |             |
-| System.UInt32   | maximumPayloadSize   |             |
 
-#### Returns
+##### Parameters
+
+| Type            | Name                 | Description          |
+|-----------------|----------------------|----------------------|
+| NetworkSettings | settings             |                      |
+| System.Int32    | receiveQueueCapacity | receiveQueueCapacity |
+| System.Int32    | sendQueueCapacity    | sendQueueCapacity    |
+| System.UInt32   | maximumPayloadSize   | maximumPayloadSize   |
+
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+
+

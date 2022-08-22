@@ -3,117 +3,125 @@ id: Unity.Netcode.Transports.UTP.ErrorUtilities
 title: Unity.Netcode.Transports.UTP.ErrorUtilities
 ---
 
-<div class="inheritance">
+# Class ErrorUtilities
+
+
+Helper utility class to convert error codes to human readable error
+messages.
+
+
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 ErrorUtilities
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.Object.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.MemberwiseClone()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.ToString()
 
-</div>
-
-</div>
 
 
+
+
+###### **Namespace**: Unity.Netcode.Transports.UTP
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static class ErrorUtilities
 ```
 
-</div>
+
 
 ### Methods
 
 #### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
 
-<div class="markdown level1 summary">
 
-</div>
+Convert error code to human readable error message.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static string ErrorToString(Networking.Transport.Error.StatusCode error, ulong connectionId)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                                  | Name         | Description |
-|---------------------------------------|--------------|-------------|
-| Networking.Transport.Error.StatusCode | error        |             |
-| System.UInt64                         | connectionId |             |
+| Type                                  | Name         | Description                        |
+|---------------------------------------|--------------|------------------------------------|
+| Networking.Transport.Error.StatusCode | error        | Status code of the error           |
+| System.UInt64                         | connectionId | Subject connection ID of the error |
 
 ##### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| System.String |             |
+| Type          | Description                   |
+|---------------|-------------------------------|
+| System.String | Human readable error message. |
 
- 
+
+

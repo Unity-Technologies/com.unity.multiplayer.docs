@@ -1,29 +1,30 @@
----  
-id: Unity.Netcode.NetworkTransport.TransportEventDelegate  
-title: Unity.Netcode.NetworkTransport.TransportEventDelegate  
+---
+id: Unity.Netcode.NetwrokTransport.TransportEventDelegate
+title: Unity.Netcode.NetworkTransport.TransportEventDelegate
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkTransport.TransportEventDelegate
+
 
 Delegate for transport network events
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void TransportEventDelegate(NetworkEvent eventType, ulong clientId, ArraySegment<byte> payload, float receiveTime);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -34,4 +35,5 @@ public delegate void TransportEventDelegate(NetworkEvent eventType, ulong client
 | System.ArraySegment\<System.Byte\> | payload     |             |
 | System.Single                      | receiveTime |             |
 
- 
+
+

@@ -3,57 +3,76 @@ id: Unity.Netcode.Transports.UTP
 title: Unity.Netcode.Transports.UTP
 ---
 
+# Namespace Unity.Netcode.Transports.UTP
+
+
+
+
+
+
+
+
+
+
 ### Classes
 
 #### ErrorUtilities
 
-<div class="section">
 
-</div>
+Helper utility class to convert error codes to human readable error
+messages.
+
+
 
 #### UnityTransport
 
-<div class="section">
 
-</div>
+The Netcode for GameObjects NetworkTransport for UnityTransport. Note:
+This is highly recommended to use over UNet.
+
+
 
 ### Structs
 
 #### NetworkMetricsContext
 
-<div class="section">
 
-</div>
+Caching structure to track network metrics related information.
+
+
 
 #### UnityTransport.ConnectionAddressData
 
-<div class="section">
 
-</div>
+Structure to store the address to connect to
+
+
 
 #### UnityTransport.SimulatorParameters
 
-<div class="section">
 
-</div>
+Parameters for the Network Simulator
+
+
 
 ### Interfaces
 
 #### INetworkStreamDriverConstructor
 
-<div class="section">
 
 Provides an interface that overrides the ability to create your own
 drivers and pipelines
 
-</div>
+
 
 ### Enums
 
 #### UnityTransport.ProtocolType
 
-<div class="section">
 
-</div>
+Enum type stating the type of protocol
 
- 
+
+
+
+

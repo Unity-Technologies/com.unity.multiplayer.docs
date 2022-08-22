@@ -1,29 +1,30 @@
----  
-id: Unity.Netcode.NetworkObject.VisibilityDelegate  
-title: Unity.Netcode.NetworkObject.VisibilityDelegate  
+---
+id: Unity.Netcode.NetworkObject.VisibilityDelegate
+title: Unity.Netcode.NetworkObject.VisibilityDelegate
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkObject.VisibilityDelegate
+
 
 Delegate type for checking visibility
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate bool VisibilityDelegate(ulong clientId);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -37,4 +38,5 @@ public delegate bool VisibilityDelegate(ulong clientId);
 |----------------|-------------|
 | System.Boolean |             |
 
- 
+
+

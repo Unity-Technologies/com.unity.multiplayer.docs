@@ -1,124 +1,127 @@
----  
-id: Unity.Networking.Transport.Utilities.NativeListExt  
-title: Unity.Networking.Transport.Utilities.NativeListExt  
+---
+id: Unity.Networking.Transport.Utilities.NativeListExt
+title: Unity.Networking.Transport.Utilities.NativeListExt
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class NativeListExt
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NativeListExt
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class NativeListExt
 ```
 
-## 
 
-### ResizeUninitializedTillPowerOf2&lt;T&gt;(NativeList&lt;T&gt;, Int32)
 
-<div class="markdown level1 summary">
+### Methods
+
+#### ResizeUninitializedTillPowerOf2\<T\>(NativeList\<T\>, Int32)
+
 
 This function will make sure that can fit into . If \>= 's Length then
 will be ResizeUninitialized to a new length. New Length will be the next
 highest power of 2 of
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void ResizeUninitializedTillPowerOf2<T>(this NativeList<T> list, int sizeToFit)
     where T : struct
 ```
 
-#### Parameters
 
-| Type           | Name      | Description                                           |
-|----------------|-----------|-------------------------------------------------------|
-| NativeList&lt;T&gt; | list      | List that should be resized if sizeToFit \>= its size |
-| System.Int32   | sizeToFit | Requested size that should fit into list              |
 
-#### Type Parameters
+##### Parameters
+
+| Type            | Name      | Description                                           |
+|-----------------|-----------|-------------------------------------------------------|
+| NativeList\<T\> | list      | List that should be resized if sizeToFit \>= its size |
+| System.Int32    | sizeToFit | Requested size that should fit into list              |
+
+##### Type Parameters
 
 | Name | Description |
 |------|-------------|
 | T    |             |
+
+
+

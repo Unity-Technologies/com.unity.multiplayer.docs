@@ -1,29 +1,49 @@
----  
-id: Unity.Networking.Transport.SendHandleFlags  
-title: Unity.Networking.Transport.SendHandleFlags  
+---
+id: Unity.Networking.Transport.SendHandleFlags
+title: Unity.Networking.Transport.SendHandleFlags
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Enum SendHandleFlags
 
-<div class="markdown level0 conceptual">
 
-</div>
+The send handle flags enum
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 [Flags]
 public enum SendHandleFlags
 ```
 
-## 
 
-| Name              | Description |
-|-------------------|-------------|
-| AllocatedByDriver |             |
+
+### Fields
+
+Name
+
+
+
+
+
+
+
+
+
+Description
+
+AllocatedByDriver
+
+This SendHandle has been allocated by NetworkDriver
+
+
+

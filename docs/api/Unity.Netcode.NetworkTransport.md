@@ -1,76 +1,74 @@
----  
-id: Unity.Netcode.NetworkTransport  
-title: Unity.Netcode.NetworkTransport  
+---
+id: Unity.Netcode.NetworkTransport
+title: Unity.Netcode.NetworkTransport
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkTransport
 
-</div>
 
-<div class="markdown level0 conceptual">
+The generic transport class all Netcode for GameObjects network
+transport implementations derive from. Use this class to add a custom
+transport. for an example of how a transport is integrated
 
-</div>
 
-<div class="inheritance">
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkTransport
 
-</div>
 
-<div class="level2">
+
 
 UnityTransport
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract class NetworkTransport : MonoBehaviour
 ```
 
-</div>
+
 
 ### Properties
 
 #### IsSupported
 
-<div class="markdown level1 summary">
 
 Gets a value indicating whether this NetworkTransport is supported in
 the current runtime context This is used by multiplex adapters
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public virtual bool IsSupported { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -80,27 +78,24 @@ public virtual bool IsSupported { get; }
 
 #### ServerClientId
 
-<div class="markdown level1 summary">
 
 A constant `clientId` that represents the server When this value is
 found in methods such as `Send`, it should be treated as a placeholder
 that means "the server"
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract ulong ServerClientId { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -112,47 +107,41 @@ public abstract ulong ServerClientId { get; }
 
 #### DisconnectLocalClient()
 
-<div class="markdown level1 summary">
 
 Disconnects the local client from the server
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void DisconnectLocalClient()
 ```
 
-</div>
+
 
 #### DisconnectRemoteClient(UInt64)
 
-<div class="markdown level1 summary">
 
 Disconnects a client from the server
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void DisconnectRemoteClient(ulong clientId)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -162,25 +151,22 @@ public abstract void DisconnectRemoteClient(ulong clientId)
 
 #### GetCurrentRtt(UInt64)
 
-<div class="markdown level1 summary">
 
 Gets the round trip time for a specific client. This method is optional
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract ulong GetCurrentRtt(ulong clientId)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -196,25 +182,22 @@ public abstract ulong GetCurrentRtt(ulong clientId)
 
 #### Initialize(NetworkManager)
 
-<div class="markdown level1 summary">
 
 Initializes the transport
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void Initialize(NetworkManager networkManager = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -224,26 +207,23 @@ public abstract void Initialize(NetworkManager networkManager = null)
 
 #### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\<Byte\>, Single)
 
-<div class="markdown level1 summary">
 
 Invokes the OnTransportEvent. Invokation has to occur on the Unity
 thread in the Update loop.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 protected void InvokeOnTransportEvent(NetworkEvent eventType, ulong clientId, ArraySegment<byte> payload, float receiveTime)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -256,26 +236,23 @@ protected void InvokeOnTransportEvent(NetworkEvent eventType, ulong clientId, Ar
 
 #### PollEvent(out UInt64, out ArraySegment\<Byte\>, out Single)
 
-<div class="markdown level1 summary">
 
 Polls for incoming events, with an extra output parameter to report the
 precise time the event was received.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte> payload, out float receiveTime)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -293,25 +270,22 @@ public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte
 
 #### Send(UInt64, ArraySegment\<Byte\>, NetworkDelivery)
 
-<div class="markdown level1 summary">
 
-Send a payload to the specified clientId, data and channelName.
+Send a payload to the specified clientId, data and networkDelivery.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void Send(ulong clientId, ArraySegment<byte> payload, NetworkDelivery networkDelivery)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -323,107 +297,95 @@ public abstract void Send(ulong clientId, ArraySegment<byte> payload, NetworkDel
 
 #### Shutdown()
 
-<div class="markdown level1 summary">
 
 Shuts down the transport
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract void Shutdown()
 ```
 
-</div>
+
 
 #### StartClient()
 
-<div class="markdown level1 summary">
 
 Connects client to the server
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract bool StartClient()
 ```
 
-</div>
+
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                |
+|----------------|----------------------------|
+| System.Boolean | Returns success or failure |
 
 #### StartServer()
 
-<div class="markdown level1 summary">
 
 Starts to listening for incoming clients
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public abstract bool StartServer()
 ```
 
-</div>
+
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                |
+|----------------|----------------------------|
+| System.Boolean | Returns success or failure |
 
 ### Events
 
 #### OnTransportEvent
 
-<div class="markdown level1 summary">
 
 Occurs when the transport has a new transport network event. Can be used
 to make an event based transport instead of a poll based. Invocation has
 to occur on the Unity thread in the Update loop.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkTransport.TransportEventDelegate OnTransportEvent
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -431,4 +393,5 @@ public event NetworkTransport.TransportEventDelegate OnTransportEvent
 |-----------------------------------------|-------------|
 | NetworkTransport.TransportEventDelegate |             |
 
- 
+
+
