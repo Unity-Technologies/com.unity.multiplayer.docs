@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkTimeSystem
+title: Unity.Netcode.NetworkTimeSystem
+---
+
 <div id="wrapper">
 
 <div>

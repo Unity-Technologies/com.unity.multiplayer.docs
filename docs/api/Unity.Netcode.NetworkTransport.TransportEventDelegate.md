@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetwrokTransport.TransportEventDelegate
+title: Unity.Netcode.NetworkTransport.TransportEventDelegate
+---
+
 <div id="wrapper">
 
 <div>

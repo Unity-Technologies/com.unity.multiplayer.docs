@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkPrefabHandler
+title: Unity.Netcode.NetworkPrefabHandler
+---
+
 <div id="wrapper">
 
 <div>

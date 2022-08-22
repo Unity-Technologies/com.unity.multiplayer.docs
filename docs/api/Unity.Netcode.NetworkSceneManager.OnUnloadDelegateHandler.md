@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.LogLevel
+title: Unity.Netcode.LogLevel
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkUpdateStage
+title: Unity.Netcode.NetworkUpdateStage
+---
+
 <div id="wrapper">
 
 <div>

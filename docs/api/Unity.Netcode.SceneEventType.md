@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.SceneEventType
+title: Unity.Netcode.SceneEventType
+---
+
 <div id="wrapper">
 
 <div>

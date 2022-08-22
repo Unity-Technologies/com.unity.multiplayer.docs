@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.INetworkUpdateSystem
+title: Unity.Netcode.INetworkUpdateSystem
+---
+
 <div id="wrapper">
 
 <div>

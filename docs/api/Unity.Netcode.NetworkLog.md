@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkLog
+title: Unity.Netcode.NetworkLog
+---
+
 <div id="wrapper">
 
 <div>

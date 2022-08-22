@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkVariableReadPermission
+title: Unity.Netcode.NetworkVariableReadPermission
+---
+
 <div id="wrapper">
 
 <div>

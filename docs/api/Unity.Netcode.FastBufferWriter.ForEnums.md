@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.FastBufferWriter.ForEnums
+title: Unity.Netcode.FastBufferWriter.ForEnums
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkObject.SpawnDelegate
+title: Unity.Netcode.NetworkObject.SpawnDelegate
+---
+
 <div id="wrapper">
 
 <div>

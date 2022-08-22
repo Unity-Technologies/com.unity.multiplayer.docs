@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.BitReader
+title: Unity.Netcode.BitReader
+---
+
 <div id="wrapper">
 
 <div>

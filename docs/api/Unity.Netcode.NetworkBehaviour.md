@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkBehaviour
+title: Unity.Netcode.NetworkBehaviour
+---
+
 <div id="wrapper">
 
 <div>

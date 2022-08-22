@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.Transports.UTP.NetworkMetricsContext
+title: Unity.Netcode.Transports.UTP.NetworkMetricsContext
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.HashSize
+title: Unity.Netcode.HashSize
+---
+
 <div id="wrapper">
 
 <div>

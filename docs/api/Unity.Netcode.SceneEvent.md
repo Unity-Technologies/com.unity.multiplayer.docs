@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.SceneEvent
+title: Unity.Netcode.SceneEvent
+---
+
 <div id="wrapper">
 
 <div>

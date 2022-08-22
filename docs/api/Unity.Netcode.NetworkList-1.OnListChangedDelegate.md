@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkList-1.OnListChangedDelegate
+title: Unity.Netcode.NetworkList-1.OnListChangedDelegate
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
+title: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
+---
+
 <div id="wrapper">
 
 <div>

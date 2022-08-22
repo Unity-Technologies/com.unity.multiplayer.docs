@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkUpdateLoop
+title: Unity.Netcode.NetworkUpdateLoop
+---
+
 <div id="wrapper">
 
 <div>

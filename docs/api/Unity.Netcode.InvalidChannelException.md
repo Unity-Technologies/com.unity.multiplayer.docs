@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.InvalidChannelException
+title: Unity.Netcode.InvalidChannelException
+---
+
 <div id="wrapper">
 
 <div>

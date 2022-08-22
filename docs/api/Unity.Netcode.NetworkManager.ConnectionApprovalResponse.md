@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkManager.ConnectionApprovalResponse
+title: Unity.Netcode.NetworkManager.ConnectionApprovalResponse
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.BitWriter
+title: Unity.Netcode.BitWriter
+---
+
 <div id="wrapper">
 
 <div>

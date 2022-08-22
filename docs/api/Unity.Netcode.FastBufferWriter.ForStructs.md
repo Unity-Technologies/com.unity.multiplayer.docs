@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.FastBufferWriter.ForStructs
+title: Unity.Netcode.FastBufferWriter.ForStructs
+---
+
 <div id="wrapper">
 
 <div>

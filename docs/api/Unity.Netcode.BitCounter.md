@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.BitCounter
+title: Unity.Netcode.BitCounter
+---
+
 <div id="wrapper">
 
 <div>

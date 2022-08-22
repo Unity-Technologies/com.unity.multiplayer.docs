@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.VisibilityChangeException
+title: Unity.Netcode.VisibilityChangeException
+---
+
 <div id="wrapper">
 
 <div>

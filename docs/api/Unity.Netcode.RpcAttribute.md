@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.RpcAttribute
+title: Unity.Netcode.RpcAttribute
+---
+
 <div id="wrapper">
 
 <div>

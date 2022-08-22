@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkListEvent-1.EventType
+title: Unity.Netcode.NetworkListEvent-1.EventType
+---
+
 <div id="wrapper">
 
 <div>

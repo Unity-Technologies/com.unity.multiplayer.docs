@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler
+---
+
 <div id="wrapper">
 
 <div>

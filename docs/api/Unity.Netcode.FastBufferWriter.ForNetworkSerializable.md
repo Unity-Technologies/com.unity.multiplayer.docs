@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.FastBufferWriter.ForNetworkSerializable
+title: Unity.Netcode.FastBufferWriter.ForNetworkSerializable
+---
+
 <div id="wrapper">
 
 <div>

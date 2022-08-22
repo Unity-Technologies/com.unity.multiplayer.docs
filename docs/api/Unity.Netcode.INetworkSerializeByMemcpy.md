@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.INetworkSerializeByMemcpy
+title: Unity.Netcode.INetworkSerializeByMemcpy
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData
+title: Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData
+---
+
 <div id="wrapper">
 
 <div>

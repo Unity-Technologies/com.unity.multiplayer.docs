@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkConfigurationException
+title: Unity.Netcode.NetworkConfigurationException
+---
+
 <div id="wrapper">
 
 <div>

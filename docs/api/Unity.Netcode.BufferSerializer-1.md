@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.BufferSerializer-1
+title: Unity.Netcode.BufferSerializer-1
+---
+
 <div id="wrapper">
 
 <div>

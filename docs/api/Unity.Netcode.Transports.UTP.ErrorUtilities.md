@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.Transports.UTP.ErrorUtilities
+title: Unity.Netcode.Transports.UTP.ErrorUtilities
+---
+
 <div id="wrapper">
 
 <div>

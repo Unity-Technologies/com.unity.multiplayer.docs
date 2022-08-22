@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.ByteUnpacker
+title: Unity.Netcode.ByteUnpacker
+---
+
 <div id="wrapper">
 
 <div>

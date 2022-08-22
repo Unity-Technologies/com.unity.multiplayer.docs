@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.Transports.UTP.UnityTransport.ProtocolType
+title: Unity.Netcode.Transports.UTP.UnityTransport.ProtocolType
+---
+
 <div id="wrapper">
 
 <div>

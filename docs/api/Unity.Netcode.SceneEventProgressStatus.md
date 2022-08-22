@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.SceneEventProgressStatus
+title: Unity.Netcode.SceneEventProgressStatus
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.InvalidParentException
+title: Unity.Netcode.InvalideParentException
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NotListeningException
+title: Unity.Netcode.NotListeningException
+---
+
 <div id="wrapper">
 
 <div>

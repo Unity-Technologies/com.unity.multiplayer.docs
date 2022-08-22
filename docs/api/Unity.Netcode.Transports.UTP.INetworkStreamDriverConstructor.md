@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstuctor
+title: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor
+---
+
 <div id="wrapper">
 
 <div>

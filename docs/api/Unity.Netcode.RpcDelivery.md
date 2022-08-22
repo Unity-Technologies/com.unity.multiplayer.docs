@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.RpcDelivery
+title: Unity.Netcode.RpcDelivery
+---
+
 <div id="wrapper">
 
 <div>

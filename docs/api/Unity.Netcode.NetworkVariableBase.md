@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkVariableBase
+title: Unity.Netcode.NetworkVariableBase
+---
+
 <div id="wrapper">
 
 <div>

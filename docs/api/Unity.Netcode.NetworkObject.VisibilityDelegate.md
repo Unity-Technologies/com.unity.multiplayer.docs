@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkObject.VisibilityDelegate
+title: Unity.Netcode.NetworkObject.VisibilityDelegate
+---
+
 <div id="wrapper">
 
 <div>

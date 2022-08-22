@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate
+title: Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate
+---
+
 <div id="wrapper">
 
 <div>

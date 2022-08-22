@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+---
+
 <div id="wrapper">
 
 <div>

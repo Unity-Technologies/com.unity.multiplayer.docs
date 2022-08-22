@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.ForceNetworkSerializeByMemcpy-1
+title: Unity.Netcode.ForceNetworkSerializeByMemcpy-1
+---
+
 <div id="wrapper">
 
 <div>

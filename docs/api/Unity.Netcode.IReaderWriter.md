@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.IReaderWriter
+title: Unity.Netcode.IReaderWriter
+---
+
 <div id="wrapper">
 
 <div>

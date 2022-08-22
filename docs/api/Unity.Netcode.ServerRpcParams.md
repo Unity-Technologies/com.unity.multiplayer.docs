@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.ServerRpcParams
+title: Unity.Netcode.ServerRpcParams
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
+title: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
+---
+
 <div id="wrapper">
 
 <div>

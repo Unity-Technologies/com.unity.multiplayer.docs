@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.SpawnStateException
+title: Unity.Netcode.SpawnStateException
+---
+
 <div id="wrapper">
 
 <div>

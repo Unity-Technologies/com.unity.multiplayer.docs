@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NotServerException
+title: Unity.Netcode.NotServerException
+---
+
 <div id="wrapper">
 
 <div>

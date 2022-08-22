@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.ClientRpcReceiveParams
+title: Unity.Netcode.ClientRpcReceiveParams
+---
+
 <div id="wrapper">
 
 <div>

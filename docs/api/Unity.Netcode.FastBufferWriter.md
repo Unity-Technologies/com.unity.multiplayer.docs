@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.FastBufferWriter
+title: Unity.Netcode.FastBufferWriter
+---
+
 <div id="wrapper">
 
 <div>

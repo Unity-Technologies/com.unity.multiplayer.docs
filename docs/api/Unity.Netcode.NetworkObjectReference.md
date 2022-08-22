@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkObjectReference
+title: Unity.Netcode.NetworkObjectReference
+---
+
 <div id="wrapper">
 
 <div>

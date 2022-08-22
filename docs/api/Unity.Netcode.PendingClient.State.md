@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.PendingClient.State
+title: Unity.Netcode.PendingClient.State
+---
+
 <div id="wrapper">
 
 <div>

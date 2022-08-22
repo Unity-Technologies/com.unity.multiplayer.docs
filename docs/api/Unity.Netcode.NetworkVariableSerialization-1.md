@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkVariableSerialization-1
+title: Unity.Netcode.NetworkVariableSerialization-1
+---
+
 <div id="wrapper">
 
 <div>

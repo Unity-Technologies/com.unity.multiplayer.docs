@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkSpawnManager
+title: Unity.Netcode.NetworkSpawnManager
+---
+
 <div id="wrapper">
 
 <div>

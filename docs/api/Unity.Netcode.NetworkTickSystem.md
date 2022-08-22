@@ -1,3 +1,8 @@
+---
+id: Unity.Netcode.NetworkTickSystem
+title: Unity.Netcode.NetworkTickSystem
+---
+
 <div id="wrapper">
 
 <div>
