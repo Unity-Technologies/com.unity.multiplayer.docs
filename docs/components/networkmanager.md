@@ -14,7 +14,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 - **Network Transport**: Where your network specific settings and transport type is set.  This field accepts any INetworkTransport implementation.  However, unless you have unique transport specific needs UnityTransport is the recommended transport to use with Netcode for GameObjects.
 - **Tick Rate**: This value controls the network tick update rate.
 - **Ensure Network Variable Length Safety**: (Increases cpu processing and bandwidth) When this property is checked, Netcode for GameObjects will prevent user code from writing past the boundaries of a NetworkVariable.
-- **Connection Approval**: This enables [connection approval](../getting-started/connection-approval.md) when this is checked and the `NetworkManager.ConnectionApprovalCallback` is assigned.
+- **Connection Approval**: This enables [connection approval](../basics/connection-approval.md) when this is checked and the `NetworkManager.ConnectionApprovalCallback` is assigned.
 - **Client Connection Buffer Timeout**: This value sets the amount of time that has to pass for a connecting client to complete the connection approval process.  If the time specified is exceeded the connecting client will be disconnected.
 - **Force Same Prefabs**: When checked it will always verify that connecting clients have the same registered network prefabs as the server.  When not checked, Netcode for GameObjects will ignore any differences.
 - **Recycle Network Ids**: When checked this will re-use previously assigned `NetworkObject.NetworkObjectIds` after the specified period of time.
@@ -30,7 +30,7 @@ All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is s
 :::
 
 - [NetworkManager.PrefabHandler](../advanced-topics/object-pooling.md): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
-- [NetworkManager.SceneManager](../basics/scene-management.md): When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
+- [NetworkManager.SceneManager](../basics/scenemanagement/using-networkscenemanager.md): When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
 - [NetworkManager.SpawnManager](../basics/object-spawning.md): This handles NetworkObject spawn related functionality.
 - [NetworkManager.NetworkTimeSystem](../advanced-topics/networktime-ticks.md): a synchronized time that can be used to handle issues with latency between a client and the server.
 - [NetworkManager.NetworkTickSystem](../advanced-topics/networktime-ticks#network-ticks.md): Use this to adjust the frequency of when NetworkVariables are updated.
@@ -55,14 +55,14 @@ Do not start a NetworkManager within a NetworkBehaviour's Awake method as this c
 
  For more information about player prefabs see:
  - [NetworkObject Player Prefab Documentation](../basics/networkobject.md#player-objects)
- - [Connection Approval](../getting-started/connection-approval.md)  
+ - [Connection Approval](../basics/connection-approval)  
 :::
 
 ## Connecting
 
 When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
-The below examples use [Unity Transport](../../transport/current/about.md) to demonstrate a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` in order to configure your project's network settings programmatically: 
+The below examples use [Unity Transport](../../../transport/current/about) to demonstrate a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` in order to configure your project's network settings programmatically: 
 
 If you are only setting the IP address and port number, then you can use the `UnityTransport.SetConnectionData` method:
 ```csharp
