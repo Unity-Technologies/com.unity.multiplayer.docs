@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.IPCNetworkInterface
+title: Unity.Networking.Transport.IPCNetworkInterface
+---
+
 <div id="wrapper">
 
 <div>

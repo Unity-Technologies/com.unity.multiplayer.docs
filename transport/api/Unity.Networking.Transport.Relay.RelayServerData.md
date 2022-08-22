@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Relay.RelayServerData
+title: Unity.Networking.Transport.Relay.RelayServerData
+---
+
 <div id="wrapper">
 
 <div>

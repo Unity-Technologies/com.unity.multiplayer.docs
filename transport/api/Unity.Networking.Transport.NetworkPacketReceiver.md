@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkPacketReceiver
+title: Unity.Networking.Transport.NetworkPacketReceiver
+---
+
 <div id="wrapper">
 
 <div>

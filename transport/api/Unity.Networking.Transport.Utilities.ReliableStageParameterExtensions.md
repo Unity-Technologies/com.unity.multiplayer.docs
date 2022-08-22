@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions
+title: Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions
+---
+
 <div id="wrapper">
 
 <div>

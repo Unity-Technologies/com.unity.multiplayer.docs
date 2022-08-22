@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkSettings
+title: Unity.Networking.Transport.NetworkSettings
+---
+
 <div id="wrapper">
 
 <div>

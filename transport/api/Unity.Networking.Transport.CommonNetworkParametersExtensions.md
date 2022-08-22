@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.CommonNetworkParametersExtensions
+title: Unity.Networking.Transport.CommonNetworkParametersExtensions
+---
+
 <div id="wrapper">
 
 <div>

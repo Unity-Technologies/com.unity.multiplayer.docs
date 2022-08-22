@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate
+title: Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate
+---
+
 <div id="wrapper">
 
 <div>

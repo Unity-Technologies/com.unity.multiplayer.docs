@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.SequenceBufferContext
+title: Unity.Networking.Transport.Utilities.SequenceBufferContext
+---
+
 <div id="wrapper">
 
 <div>

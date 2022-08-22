@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkInterfaceEndPoint
+title: Unity.Networking.Transport.NetworkInterfaceEndPoint
+---
+
 <div id="wrapper">
 
 <div>

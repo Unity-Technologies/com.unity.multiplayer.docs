@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.ReliableSequencePipelineStage
+title: Unity.Networking.Transport.ReliableSequencePipelineStage
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkPipelineStage.SendDelegate
+title: Unity.Networking.Transport.NetworkPipelineStage.SendDelegate
+---
+
 <div id="wrapper">
 
 <div>

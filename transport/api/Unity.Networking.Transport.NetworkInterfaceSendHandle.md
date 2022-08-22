@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkInterfaceSendHandle
+title: Unity.Networking.Transport.NetworkInterfaceSendHandle
+---
+
 <div id="wrapper">
 
 <div>

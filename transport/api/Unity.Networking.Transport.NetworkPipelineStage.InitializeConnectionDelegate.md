@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDelegate
+title: Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDelegate
+---
+
 <div id="wrapper">
 
 <div>

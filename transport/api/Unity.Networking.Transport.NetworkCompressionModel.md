@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkCompressionModel
+title: Unity.Networking.Transport.NetworkCompressionModel
+---
+
 <div id="wrapper">
 
 <div>

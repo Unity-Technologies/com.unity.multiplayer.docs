@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.FragmentationUtility
+title: Unity.Networking.Transport.Utilities.FragmentationUtility
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.QueuedSendMessage
+title: Unity.Networking.Transport.QueuedSendMessage
+---
+
 <div id="wrapper">
 
 <div>

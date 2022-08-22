@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.BaselibNetworkParameterExtensions
+title: Unity.Networking.Transport.BaselibNetworkParameterExtensions
+---
+
 <div id="wrapper">
 
 <div>

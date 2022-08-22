@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.SendHandleFlags
+title: Unity.Networking.Transport.SendHandleFlags
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.InboundSendBuffer
+title: Unity.Networking.Transport.InboundSendBuffer
+---
+
 <div id="wrapper">
 
 <div>

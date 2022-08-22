@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.DataStreamReader
+title: Unity.Networking.Transport.DataStreamReader
+---
+
 <div id="wrapper">
 
 <div>

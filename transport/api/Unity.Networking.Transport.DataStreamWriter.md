@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.DataStreamWriter
+title: Unity.Networking.Transport.DataStreamWriter
+---
+
 <div id="wrapper">
 
 <div>

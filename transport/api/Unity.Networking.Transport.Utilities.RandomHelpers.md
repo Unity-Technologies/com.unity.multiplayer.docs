@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.RandomHelpers
+title: Unity.Networking.Transport.Utilities.RandomHelpers
+---
+
 <div id="wrapper">
 
 <div>

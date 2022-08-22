@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.ErrorStatusCode
+title: Unity.Networking.Transport.ErrorStatusCode
+---
+
 <div id="wrapper">
 
 <div>

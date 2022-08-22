@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkSendQueueHandle
+title: Unity.Networking.Transport.NetworkSendQueueHandle
+---
+
 <div id="wrapper">
 
 <div>

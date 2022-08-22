@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.INetworkParameter
+title: Unity.Networking.Transport.INetworkParameter
+---
+
 <div id="wrapper">
 
 <div>

@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.SequenceHelpers
+title: Unity.Networking.Transport.Utilities.SequenceHelpers
+---
+
 <div id="wrapper">
 
 <div>

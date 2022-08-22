@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Error.DisconnectReason
+title: Unity.Networking.Transport.Error.DisconnectReason
+---
+
 <div id="wrapper">
 
 <div>

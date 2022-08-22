@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.Packet
+title: Unity.Networking.Transport.Utilities.ReliableUtility.Packet
+---
+
 <div id="wrapper">
 
 <div>

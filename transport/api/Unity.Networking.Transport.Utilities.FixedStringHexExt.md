@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.FixedStringHexExt
+title: Unity.Networking.Transport.Utilities.FixedStringHexExt
+---
+
 <div id="wrapper">
 
 <div>

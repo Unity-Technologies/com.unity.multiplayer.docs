@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions
+title: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions
+---
+
 <div id="wrapper">
 
 <div>

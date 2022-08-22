@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.SimulatorPipelineStage
+title: Unity.Networking.Transport.SimulatorPipelineStage
+---
+
 <div id="wrapper">
 
 <div>

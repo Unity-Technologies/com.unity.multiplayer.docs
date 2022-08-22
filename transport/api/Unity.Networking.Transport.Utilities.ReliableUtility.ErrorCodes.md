@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
+title: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
+---
+
 <div id="wrapper">
 
 <div>

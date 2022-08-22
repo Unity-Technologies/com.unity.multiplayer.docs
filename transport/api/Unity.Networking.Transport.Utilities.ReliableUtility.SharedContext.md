@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext
+title: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext
+---
+
 <div id="wrapper">
 
 <div>

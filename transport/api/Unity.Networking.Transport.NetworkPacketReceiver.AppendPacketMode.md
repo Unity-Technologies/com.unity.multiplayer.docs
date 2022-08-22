@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkPacketReceiver.AppendPacketMode
+title: Unity.Networking.Transport.NetworkPacketReceiver.AppendPacketMode
+---
+
 <div id="wrapper">
 
 <div>

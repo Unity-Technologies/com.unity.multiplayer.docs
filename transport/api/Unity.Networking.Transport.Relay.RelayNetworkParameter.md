@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Relay.RelayNetworkParameter
+title: Unity.Networking.Transport.Relay.RelayNetworkParameter
+---
+
 <div id="wrapper">
 
 <div>

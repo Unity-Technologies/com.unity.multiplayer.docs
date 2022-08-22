@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.Relay.RelayHMACKey
+title: Unity.Networking.Transport.Relay.RelayHMACKey
+---
+
 <div id="wrapper">
 
 <div>

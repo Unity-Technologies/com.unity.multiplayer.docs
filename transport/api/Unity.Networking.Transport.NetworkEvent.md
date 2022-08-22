@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkEvent
+title: Unity.Networking.Transport.NetworkEvent
+---
+
 <div id="wrapper">
 
 <div>

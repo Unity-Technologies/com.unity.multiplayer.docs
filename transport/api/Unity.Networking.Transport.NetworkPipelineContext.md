@@ -1,3 +1,8 @@
+---
+id: Unity.Networking.Transport.NetworkPipelineContext
+title: Unity.Networking.Transport.NetworkPipelineContext
+---
+
 <div id="wrapper">
 
 <div>
