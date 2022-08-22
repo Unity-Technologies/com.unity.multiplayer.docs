@@ -3,86 +3,27 @@ id: Unity.Networking.Transport.INetworkInterface
 title: Unity.Networking.Transport.INetworkInterface
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
 
 # Interface INetworkInterface
 
-<div class="markdown level0 summary">
 
 Interface for implementing a low-level networking interface see
 BaselibNetworkInterface as an example
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.IDisposable.Dispose()
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Networking.Transport
 
@@ -90,37 +31,33 @@ System.IDisposable.Dispose()
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public interface INetworkInterface : IDisposable
 ```
 
-</div>
+
 
 ### Properties
 
 #### LocalEndPoint
 
-<div class="markdown level1 summary">
 
 Gets the value of the local end point
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 NetworkInterfaceEndPoint LocalEndPoint { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -132,25 +69,22 @@ NetworkInterfaceEndPoint LocalEndPoint { get; }
 
 #### Bind(NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
 Binds the medium to a specific endpoint.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 int Bind(NetworkInterfaceEndPoint endpoint)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -166,25 +100,22 @@ int Bind(NetworkInterfaceEndPoint endpoint)
 
 #### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
 Creates the interface end point using the specified address
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -201,25 +132,22 @@ int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoin
 
 #### CreateSendInterface()
 
-<div class="markdown level1 summary">
 
 Creates the send interface
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 NetworkSendInterface CreateSendInterface()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -229,25 +157,22 @@ NetworkSendInterface CreateSendInterface()
 
 #### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
 Gets the generic end point using the specified endpoint
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -263,25 +188,22 @@ NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 
 #### Initialize(NetworkSettings)
 
-<div class="markdown level1 summary">
 
 Initializes the interfacing passing in optional INetworkParameter
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 int Initialize(NetworkSettings settings)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -297,26 +219,23 @@ int Initialize(NetworkSettings settings)
 
 #### Listen()
 
-<div class="markdown level1 summary">
 
 Start listening for incoming connections. This is normally a no-op for
 real UDP sockets.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 int Listen()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -326,26 +245,23 @@ int Listen()
 
 #### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
-<div class="markdown level1 summary">
 
 Schedule a ReceiveJob. This is used to read data from your supported
 medium and pass it to the AppendData function supplied by NetworkDriver
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -362,26 +278,23 @@ JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 
 #### ScheduleSend(NativeQueue\<QueuedSendMessage\>, JobHandle)
 
-<div class="markdown level1 summary">
 
 Schedule a SendJob. This is used to flush send queues to your supported
 medium
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -396,54 +309,15 @@ JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
 |-----------|------------------------------------------|
 | JobHandle | A to our newly created ScheduleSend Job. |
 
-### See Also
 
-<div class="seealso">
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
 
-<div class="contribution">
 
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

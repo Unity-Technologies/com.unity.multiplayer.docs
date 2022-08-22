@@ -3,113 +3,54 @@ id: Unity.Networking.Transport.Utilities.ReliableUtility
 title: Unity.Networking.Transport.Utilities.ReliableUtility
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
 
 # Struct ReliableUtility
 
-<div class="markdown level0 summary">
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Networking.Transport.Utilities
 
@@ -117,35 +58,31 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct ReliableUtility
 ```
 
-</div>
+
 
 ### Fields
 
 #### DefaultMinimumResendTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int DefaultMinimumResendTime = 64
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -155,23 +92,20 @@ public const int DefaultMinimumResendTime = 64
 
 #### MaximumResendTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int MaximumResendTime = 200
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -181,23 +115,20 @@ public const int MaximumResendTime = 200
 
 #### NullEntry
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int NullEntry = -1
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -209,23 +140,20 @@ public const int NullEntry = -1
 
 #### CalculateProcessingTime(Byte\*, UInt16, Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static ushort CalculateProcessingTime(byte *sharedBuffer, ushort sequenceId, long timestamp)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -243,23 +171,20 @@ public static ushort CalculateProcessingTime(byte *sharedBuffer, ushort sequence
 
 #### GetLocalPacketTimer(Byte\*, UInt16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static ReliableUtility.PacketTimers*GetLocalPacketTimer(byte *sharedBuffer, ushort sequenceId)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -276,23 +201,20 @@ public static ReliableUtility.PacketTimers*GetLocalPacketTimer(byte *sharedBuffe
 
 #### GetPacket(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static ReliableUtility.Packet*GetPacket(byte *self, int sequence)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -309,23 +231,20 @@ public static ReliableUtility.Packet*GetPacket(byte *self, int sequence)
 
 #### GetPacketInformation(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static ReliableUtility.PacketInformation*GetPacketInformation(byte *self, int sequence)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -342,23 +261,20 @@ public static ReliableUtility.PacketInformation*GetPacketInformation(byte *self,
 
 #### GetRemotePacketTimer(Byte\*, UInt16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static ReliableUtility.PacketTimers*GetRemotePacketTimer(byte *sharedBuffer, ushort sequenceId)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -375,23 +291,20 @@ public static ReliableUtility.PacketTimers*GetRemotePacketTimer(byte *sharedBuff
 
 #### InitializeContext(Byte\*, Int32, Byte\*, Int32, Byte\*, Int32, ReliableUtility.Parameters)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static ReliableUtility.SharedContext InitializeContext(byte *sharedBuffer, int sharedBufferLength, byte *sendBuffer, int sendBufferLength, byte *recvBuffer, int recvBufferLength, ReliableUtility.Parameters param)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -413,23 +326,20 @@ public static ReliableUtility.SharedContext InitializeContext(byte *sharedBuffer
 
 #### InitializeProcessContext(Byte\*, Int32, ReliableUtility.Parameters)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int InitializeProcessContext(byte *buffer, int bufferLength, ReliableUtility.Parameters param)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -447,23 +357,20 @@ public static int InitializeProcessContext(byte *buffer, int bufferLength, Relia
 
 #### ProcessCapacityNeeded(ReliableUtility.Parameters)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int ProcessCapacityNeeded(ReliableUtility.Parameters param)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -479,7 +386,6 @@ public static int ProcessCapacityNeeded(ReliableUtility.Parameters param)
 
 #### Read(NetworkPipelineContext, ReliableUtility.PacketHeader)
 
-<div class="markdown level1 summary">
 
 Read header data and update reliability tracking information in the
 shared context.
@@ -489,21 +395,19 @@ shared context.
 -   If the packets sequence ID is higher, then we'll process it and
     update tracking info in the shared context
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int Read(NetworkPipelineContext context, ReliableUtility.PacketHeader header)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -520,23 +424,20 @@ public static int Read(NetworkPipelineContext context, ReliableUtility.PacketHea
 
 #### ReadAckPacket(NetworkPipelineContext, ReliableUtility.PacketHeader)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void ReadAckPacket(NetworkPipelineContext context, ReliableUtility.PacketHeader header)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -547,23 +448,20 @@ public static void ReadAckPacket(NetworkPipelineContext context, ReliableUtility
 
 #### Release(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void Release(byte *self, int sequence)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -574,23 +472,20 @@ public static void Release(byte *self, int sequence)
 
 #### Release(Byte\*, Int32, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void Release(byte *self, int start_sequence, int count)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -602,7 +497,6 @@ public static void Release(byte *self, int start_sequence, int count)
 
 #### ReleaseOrResumePackets(NetworkPipelineContext)
 
-<div class="markdown level1 summary">
 
 Acknowledge the reception of packets which have been sent. The
 reliability shared context/state is updated when packets are received
@@ -612,21 +506,19 @@ received sequence ID) each time it sends a packet back. This checks the
 resend timers on each non-acknowledged packet and notifies if it's time
 to resend yet.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static bool ReleaseOrResumePackets(NetworkPipelineContext context)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -642,7 +534,6 @@ public static bool ReleaseOrResumePackets(NetworkPipelineContext context)
 
 #### ResumeReceive(NetworkPipelineContext, Int32, ref Boolean)
 
-<div class="markdown level1 summary">
 
 Resume or play back a packet we had received earlier out of order. When
 an out of order packet is received it is stored since we need to first
@@ -651,21 +542,19 @@ arrives it is returned but a pipeline resume is requested since we
 already have the next packet stored and it can be processed immediately
 after.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static InboundRecvBuffer ResumeReceive(NetworkPipelineContext context, int startSequence, ref bool needsResume)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -683,28 +572,25 @@ public static InboundRecvBuffer ResumeReceive(NetworkPipelineContext context, in
 
 #### ResumeSend(NetworkPipelineContext, out ReliableUtility.PacketHeader, ref Boolean)
 
-<div class="markdown level1 summary">
 
 Resend a packet which we have not received an acknowledgement for in
 time. Pipeline resume will be enabled if there are more packets which we
 need to resend. The send reliability context will then also be updated
 to track the next packet we need to resume.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static InboundSendBuffer ResumeSend(NetworkPipelineContext context, out ReliableUtility.PacketHeader header, ref bool needsResume)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -728,28 +614,25 @@ public static InboundSendBuffer ResumeSend(NetworkPipelineContext context, out R
 
 #### SetHeaderAndPacket(Byte\*, Int32, ReliableUtility.PacketHeader, InboundSendBuffer, Int64)
 
-<div class="markdown level1 summary">
 
 Write packet, packet header and tracking information to the given buffer
 space. This buffer should contain the reliability Context at the front,
 that contains the capacity of the buffer and pointer offsets needed to
 find the slots we can copy the packet to.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void SetHeaderAndPacket(byte *self, int sequence, ReliableUtility.PacketHeader header, InboundSendBuffer data, long timestamp)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -769,23 +652,20 @@ public static void SetHeaderAndPacket(byte *self, int sequence, ReliableUtility.
 
 #### SetMinimumResendTime(Int32, NetworkDriver, NetworkPipeline, NetworkConnection)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void SetMinimumResendTime(int value, NetworkDriver driver, NetworkPipeline pipeline, NetworkConnection con)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -798,23 +678,20 @@ public static void SetMinimumResendTime(int value, NetworkDriver driver, Network
 
 #### SetPacket(Byte\*, Int32, Void\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void SetPacket(byte *self, int sequence, void *data, int length)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -827,23 +704,20 @@ public static void SetPacket(byte *self, int sequence, void *data, int length)
 
 #### SetPacket(Byte\*, Int32, InboundRecvBuffer)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void SetPacket(byte *self, int sequence, InboundRecvBuffer data)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -855,23 +729,20 @@ public static void SetPacket(byte *self, int sequence, InboundRecvBuffer data)
 
 #### SharedCapacityNeeded(ReliableUtility.Parameters)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int SharedCapacityNeeded(ReliableUtility.Parameters param)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -887,23 +758,20 @@ public static int SharedCapacityNeeded(ReliableUtility.Parameters param)
 
 #### ShouldSendAck(NetworkPipelineContext)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static bool ShouldSendAck(NetworkPipelineContext ctx)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -919,23 +787,20 @@ public static bool ShouldSendAck(NetworkPipelineContext ctx)
 
 #### StoreReceiveTimestamp(Byte\*, UInt16, Int64, UInt16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void StoreReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp, ushort processingTime)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -948,23 +813,20 @@ public static void StoreReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, 
 
 #### StoreRemoteReceiveTimestamp(Byte\*, UInt16, Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void StoreRemoteReceiveTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -976,23 +838,20 @@ public static void StoreRemoteReceiveTimestamp(byte *sharedBuffer, ushort sequen
 
 #### StoreTimestamp(Byte\*, UInt16, Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void StoreTimestamp(byte *sharedBuffer, ushort sequenceId, long timestamp)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1004,23 +863,20 @@ public static void StoreTimestamp(byte *sharedBuffer, ushort sequenceId, long ti
 
 #### TryAquire(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static bool TryAquire(byte *self, int sequence)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1037,27 +893,24 @@ public static bool TryAquire(byte *self, int sequence)
 
 #### Write(NetworkPipelineContext, InboundSendBuffer, ref ReliableUtility.PacketHeader)
 
-<div class="markdown level1 summary">
 
 Store the packet for possible later resends, and fill in the header
 we'll use to send it (populate with sequence ID, last acknowledged ID
 from remote with ackmask.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static int Write(NetworkPipelineContext context, InboundSendBuffer inboundBuffer, ref ReliableUtility.PacketHeader header)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1075,27 +928,24 @@ public static int Write(NetworkPipelineContext context, InboundSendBuffer inboun
 
 #### WriteAckPacket(NetworkPipelineContext, ref ReliableUtility.PacketHeader)
 
-<div class="markdown level1 summary">
 
 Write an ack packet, only the packet header is used and this doesn't
 advance the sequence ID. The packet is not stored away for resend
 routine.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static void WriteAckPacket(NetworkPipelineContext context, ref ReliableUtility.PacketHeader header)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1104,42 +954,5 @@ public static void WriteAckPacket(NetworkPipelineContext context, ref ReliableUt
 | NetworkPipelineContext       | context | Pipeline context, the reliability shared state is used here. |
 | ReliableUtility.PacketHeader | header  | Packet header which will be populated.                       |
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
-
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

@@ -3,123 +3,63 @@ id: Unity.Networking.Transport.Relay.RelayAllocationId
 title: Unity.Networking.Transport.Relay.RelayAllocationId
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
 
 # Struct RelayAllocationId
 
-<div class="markdown level0 summary">
 
 Allocation Id is a unique identifier for a connected client/host to a
 Relay server. This identifier is used by the Relay protocol as the
 address of the client.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
 
 ##### Implements
 
-<div>
+
 
 System.IEquatable\<RelayAllocationId\>
 
-</div>
 
-<div>
+
+
 
 System.IComparable\<RelayAllocationId\>
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Networking.Transport.Relay
 
@@ -127,37 +67,33 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<RelayAllocationId>
 ```
 
-</div>
+
 
 ### Fields
 
 #### k_Length
 
-<div class="markdown level1 summary">
 
 The length in bytes of the Allocation Id.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int k_Length = 16
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -167,25 +103,22 @@ public const int k_Length = 16
 
 #### Value
 
-<div class="markdown level1 summary">
 
 The raw data of the Allocation Id.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public byte *Value
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -197,23 +130,20 @@ public byte *Value
 
 #### CompareTo(RelayAllocationId)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int CompareTo(RelayAllocationId other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -229,23 +159,20 @@ public int CompareTo(RelayAllocationId other)
 
 #### Equals(Object)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -261,31 +188,28 @@ public override bool Equals(object other)
 
 ##### Overrides
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
+
 
 #### Equals(RelayAllocationId)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(RelayAllocationId other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -301,25 +225,22 @@ public bool Equals(RelayAllocationId other)
 
 #### FromBytePointer(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
 Converts a byte pointer to a RelayAllocationId.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -342,23 +263,20 @@ public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 
 #### GetHashCode()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -368,33 +286,30 @@ public override int GetHashCode()
 
 ##### Overrides
 
-<div>
+
 
 System.ValueType.GetHashCode()
 
-</div>
+
 
 ### Operators
 
 #### Equality(RelayAllocationId, RelayAllocationId)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -411,23 +326,20 @@ public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 
 #### Inequality(RelayAllocationId, RelayAllocationId)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -444,54 +356,17 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 ### Implements
 
-<div>
+
 
 System.IEquatable\<T\>
 
-</div>
 
-<div>
+
+
 
 System.IComparable\<T\>
 
-</div>
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
 
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

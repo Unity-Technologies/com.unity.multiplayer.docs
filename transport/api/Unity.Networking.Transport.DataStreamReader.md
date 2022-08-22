@@ -3,117 +3,58 @@ id: Unity.Networking.Transport.DataStreamReader
 title: Unity.Networking.Transport.DataStreamReader
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
 
 # Struct DataStreamReader
 
-<div class="markdown level0 summary">
 
 The `DataStreamReader` class is the counterpart of the
 `DataStreamWriter` class and can be be used to deserialize data which
 was prepared with it.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Networking.Transport
 
@@ -121,17 +62,15 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct DataStreamReader
 ```
 
-</div>
+
 
 ##### **Remarks**
 
-<div class="markdown level0 remarks">
 
 Simple usage example:
 
@@ -154,29 +93,26 @@ of by ref.
 
 See the DataStreamWriter class for more information and examples.
 
-</div>
+
 
 ### Constructors
 
 #### DataStreamReader(NativeArray\<Byte\>)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public DataStreamReader(NativeArray<byte> array)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -186,23 +122,20 @@ public DataStreamReader(NativeArray<byte> array)
 
 #### DataStreamReader(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public DataStreamReader(byte *data, int length)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -215,23 +148,20 @@ public DataStreamReader(byte *data, int length)
 
 #### HasFailedReads
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool HasFailedReads { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -241,26 +171,23 @@ public readonly bool HasFailedReads { get; }
 
 #### IsCreated
 
-<div class="markdown level1 summary">
 
 True if the reader has been pointed to a valid buffer space. This would
 be false if the reader was created with no arguments.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsCreated { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -270,23 +197,20 @@ public readonly bool IsCreated { get; }
 
 #### IsLittleEndian
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsLittleEndian { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -296,25 +220,22 @@ public readonly bool IsLittleEndian { get; }
 
 #### Length
 
-<div class="markdown level1 summary">
 
 The total size of the buffer space this reader is working with.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Length { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -326,23 +247,20 @@ public readonly int Length { get; }
 
 #### GetBitsRead()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int GetBitsRead()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -352,23 +270,20 @@ public int GetBitsRead()
 
 #### GetBytesRead()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int GetBytesRead()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -378,23 +293,20 @@ public int GetBytesRead()
 
 #### ReadByte()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public byte ReadByte()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -404,26 +316,23 @@ public byte ReadByte()
 
 #### ReadBytes(NativeArray\<Byte\>)
 
-<div class="markdown level1 summary">
 
 Read and copy data into the given NativeArray of bytes, an exception
 will be thrown if not enough bytes are available.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void ReadBytes(NativeArray<byte> array)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -433,26 +342,23 @@ public void ReadBytes(NativeArray<byte> array)
 
 #### ReadBytes(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
 Read and copy data to the memory location pointed to, an exception will
 be thrown if it does not fit.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void ReadBytes(byte *data, int length)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -469,23 +375,20 @@ public void ReadBytes(byte *data, int length)
 
 #### ReadFixedString(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ushort ReadFixedString(byte *data, int maxLength)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -502,23 +405,20 @@ public ushort ReadFixedString(byte *data, int maxLength)
 
 #### ReadFixedString128()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString128Bytes ReadFixedString128()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -528,23 +428,20 @@ public FixedString128Bytes ReadFixedString128()
 
 #### ReadFixedString32()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString32Bytes ReadFixedString32()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -554,23 +451,20 @@ public FixedString32Bytes ReadFixedString32()
 
 #### ReadFixedString4096()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString4096Bytes ReadFixedString4096()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -580,23 +474,20 @@ public FixedString4096Bytes ReadFixedString4096()
 
 #### ReadFixedString512()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString512Bytes ReadFixedString512()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -606,23 +497,20 @@ public FixedString512Bytes ReadFixedString512()
 
 #### ReadFixedString64()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString64Bytes ReadFixedString64()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -632,23 +520,20 @@ public FixedString64Bytes ReadFixedString64()
 
 #### ReadFloat()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public float ReadFloat()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -658,23 +543,20 @@ public float ReadFloat()
 
 #### ReadInt()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int ReadInt()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -684,23 +566,20 @@ public int ReadInt()
 
 #### ReadIntNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int ReadIntNetworkByteOrder()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -710,23 +589,20 @@ public int ReadIntNetworkByteOrder()
 
 #### ReadLong()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public long ReadLong()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -736,23 +612,20 @@ public long ReadLong()
 
 #### ReadPackedFixedString128Delta(FixedString128Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString128Bytes ReadPackedFixedString128Delta(FixedString128Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -769,23 +642,20 @@ public FixedString128Bytes ReadPackedFixedString128Delta(FixedString128Bytes bas
 
 #### ReadPackedFixedString32Delta(FixedString32Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString32Bytes ReadPackedFixedString32Delta(FixedString32Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -802,23 +672,20 @@ public FixedString32Bytes ReadPackedFixedString32Delta(FixedString32Bytes baseli
 
 #### ReadPackedFixedString4096Delta(FixedString4096Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString4096Bytes ReadPackedFixedString4096Delta(FixedString4096Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -835,23 +702,20 @@ public FixedString4096Bytes ReadPackedFixedString4096Delta(FixedString4096Bytes 
 
 #### ReadPackedFixedString512Delta(FixedString512Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString512Bytes ReadPackedFixedString512Delta(FixedString512Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -868,23 +732,20 @@ public FixedString512Bytes ReadPackedFixedString512Delta(FixedString512Bytes bas
 
 #### ReadPackedFixedString64Delta(FixedString64Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString64Bytes ReadPackedFixedString64Delta(FixedString64Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -901,23 +762,20 @@ public FixedString64Bytes ReadPackedFixedString64Delta(FixedString64Bytes baseli
 
 #### ReadPackedFixedStringDelta(Byte\*, Int32, Byte\*, UInt16, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ushort ReadPackedFixedStringDelta(byte *data, int maxLength, byte *baseData, ushort baseLength, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -937,23 +795,20 @@ public ushort ReadPackedFixedStringDelta(byte *data, int maxLength, byte *baseDa
 
 #### ReadPackedFloat(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public float ReadPackedFloat(NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -969,23 +824,20 @@ public float ReadPackedFloat(NetworkCompressionModel model)
 
 #### ReadPackedFloatDelta(Single, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public float ReadPackedFloatDelta(float baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1002,23 +854,20 @@ public float ReadPackedFloatDelta(float baseline, NetworkCompressionModel model)
 
 #### ReadPackedInt(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int ReadPackedInt(NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1034,23 +883,20 @@ public int ReadPackedInt(NetworkCompressionModel model)
 
 #### ReadPackedIntDelta(Int32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int ReadPackedIntDelta(int baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1067,23 +913,20 @@ public int ReadPackedIntDelta(int baseline, NetworkCompressionModel model)
 
 #### ReadPackedLong(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public long ReadPackedLong(NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1099,23 +942,20 @@ public long ReadPackedLong(NetworkCompressionModel model)
 
 #### ReadPackedLongDelta(Int64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public long ReadPackedLongDelta(long baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1132,23 +972,20 @@ public long ReadPackedLongDelta(long baseline, NetworkCompressionModel model)
 
 #### ReadPackedUInt(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public uint ReadPackedUInt(NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1164,23 +1001,20 @@ public uint ReadPackedUInt(NetworkCompressionModel model)
 
 #### ReadPackedUIntDelta(UInt32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public uint ReadPackedUIntDelta(uint baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1197,23 +1031,20 @@ public uint ReadPackedUIntDelta(uint baseline, NetworkCompressionModel model)
 
 #### ReadPackedULong(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ulong ReadPackedULong(NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1229,23 +1060,20 @@ public ulong ReadPackedULong(NetworkCompressionModel model)
 
 #### ReadPackedULongDelta(UInt64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ulong ReadPackedULongDelta(ulong baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1262,23 +1090,20 @@ public ulong ReadPackedULongDelta(ulong baseline, NetworkCompressionModel model)
 
 #### ReadRawBits(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public uint ReadRawBits(int numbits)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1294,23 +1119,20 @@ public uint ReadRawBits(int numbits)
 
 #### ReadShort()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public short ReadShort()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1320,23 +1142,20 @@ public short ReadShort()
 
 #### ReadShortNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public short ReadShortNetworkByteOrder()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1346,23 +1165,20 @@ public short ReadShortNetworkByteOrder()
 
 #### ReadUInt()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public uint ReadUInt()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1372,23 +1188,20 @@ public uint ReadUInt()
 
 #### ReadUIntNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public uint ReadUIntNetworkByteOrder()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1398,23 +1211,20 @@ public uint ReadUIntNetworkByteOrder()
 
 #### ReadULong()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ulong ReadULong()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1424,23 +1234,20 @@ public ulong ReadULong()
 
 #### ReadUShort()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ushort ReadUShort()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1450,23 +1257,20 @@ public ushort ReadUShort()
 
 #### ReadUShortNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ushort ReadUShortNetworkByteOrder()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1476,23 +1280,20 @@ public ushort ReadUShortNetworkByteOrder()
 
 #### SeekSet(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SeekSet(int pos)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1500,42 +1301,5 @@ public void SeekSet(int pos)
 |--------------|------|-------------|
 | System.Int32 | pos  |             |
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
-
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

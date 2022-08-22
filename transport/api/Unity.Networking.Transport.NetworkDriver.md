@@ -3,65 +3,9 @@ id: Unity.Networking.Transport.NetworkDriver
 title: Unity.Networking.Transport.NetworkDriver
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
 
 # Struct NetworkDriver
 
-<div class="markdown level0 summary">
 
 The NetworkDriver is an implementation of Virtual Connections over any
 transport.
@@ -70,65 +14,61 @@ Basic usage:
 
     var driver = NetworkDriver.Create();
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
 
 ##### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Networking.Transport
 
@@ -136,35 +76,31 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkDriver : IDisposable
 ```
 
-</div>
+
 
 ### Constructors
 
 #### NetworkDriver(INetworkInterface)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkDriver(INetworkInterface netIf)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -174,24 +110,21 @@ public NetworkDriver(INetworkInterface netIf)
 
 #### NetworkDriver(INetworkInterface, INetworkParameter\[\])
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 [Obsolete("Use NetworkDriver(INetworkInterface, NetworkSettings) instead", false)]
 public NetworkDriver(INetworkInterface netIf, params INetworkParameter[] param)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -202,23 +135,20 @@ public NetworkDriver(INetworkInterface netIf, params INetworkParameter[] param)
 
 #### NetworkDriver(INetworkInterface, NetworkSettings)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkDriver(INetworkInterface netIf, NetworkSettings settings)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -231,23 +161,20 @@ public NetworkDriver(INetworkInterface netIf, NetworkSettings settings)
 
 #### Bound
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool Bound { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -257,25 +184,22 @@ public readonly bool Bound { get; }
 
 #### IsCreated
 
-<div class="markdown level1 summary">
 
 Returns if NetworkDriver has been created
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsCreated { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -285,25 +209,22 @@ public readonly bool IsCreated { get; }
 
 #### LastUpdateTime
 
-<div class="markdown level1 summary">
 
 Gets the value of the last update time
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly long LastUpdateTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -313,25 +234,22 @@ public readonly long LastUpdateTime { get; }
 
 #### Listening
 
-<div class="markdown level1 summary">
 
 Gets or sets if the driver is Listening
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool Listening { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -341,25 +259,22 @@ public bool Listening { get; }
 
 #### ReceiveErrorCode
 
-<div class="markdown level1 summary">
 
 Gets or sets Receive Error Code
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int ReceiveErrorCode { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -371,25 +286,22 @@ public int ReceiveErrorCode { get; }
 
 #### AbortSend(DataStreamWriter)
 
-<div class="markdown level1 summary">
 
 Aborts a asynchronous send.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void AbortSend(DataStreamWriter writer)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -406,25 +318,22 @@ public void AbortSend(DataStreamWriter writer)
 
 #### Accept()
 
-<div class="markdown level1 summary">
 
 Checks to see if there are any new connections to Accept.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConnection Accept()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -434,25 +343,22 @@ public NetworkConnection Accept()
 
 #### BeginSend(NetworkConnection, out DataStreamWriter, Int32)
 
-<div class="markdown level1 summary">
 
 Acquires a DataStreamWriter for starting a asynchronous send.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -470,34 +376,30 @@ public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requ
 
 ##### Remarks
 
-<div class="markdown level1 remarks">
 
 Will throw a System.InvalidOperationException if the connection is in a
 Connecting state.
 
-</div>
+
 
 #### BeginSend(NetworkPipeline, NetworkConnection, out DataStreamWriter, Int32)
 
-<div class="markdown level1 summary">
 
 Acquires a DataStreamWriter for starting a asynchronous send.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -516,34 +418,30 @@ public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamW
 
 ##### Remarks
 
-<div class="markdown level1 remarks">
 
 Will throw a System.InvalidOperationException if the connection is in a
 Connecting state.
 
-</div>
+
 
 #### Bind(NetworkEndPoint)
 
-<div class="markdown level1 summary">
 
 Bind the driver to a endpoint.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int Bind(NetworkEndPoint endpoint)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -567,25 +465,22 @@ public int Bind(NetworkEndPoint endpoint)
 
 #### Connect(NetworkEndPoint)
 
-<div class="markdown level1 summary">
 
 Connects the driver to a endpoint
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConnection Connect(NetworkEndPoint endpoint)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -607,25 +502,22 @@ public NetworkConnection Connect(NetworkEndPoint endpoint)
 
 #### Create()
 
-<div class="markdown level1 summary">
 
 Helper function for creating a NetworkDriver.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkDriver Create()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -635,24 +527,21 @@ public static NetworkDriver Create()
 
 #### Create(INetworkParameter\[\])
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 [Obsolete("Use Create(NetworkSettings) instead", false)]
 public static NetworkDriver Create(params INetworkParameter[] param)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -668,25 +557,22 @@ public static NetworkDriver Create(params INetworkParameter[] param)
 
 #### Create(NetworkSettings)
 
-<div class="markdown level1 summary">
 
 Helper function for creating a NetworkDriver.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkDriver Create(NetworkSettings settings)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -708,26 +594,23 @@ public static NetworkDriver Create(NetworkSettings settings)
 
 #### Create\<N\>(N)
 
-<div class="markdown level1 summary">
 
 Helper function for creating a NetworkDriver.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkDriver Create<N>(N networkInterface)
     where N : INetworkInterface
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -749,26 +632,23 @@ public static NetworkDriver Create<N>(N networkInterface)
 
 #### Create\<N\>(N, NetworkSettings)
 
-<div class="markdown level1 summary">
 
 Helper function for creating a NetworkDriver.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkDriver Create<N>(N networkInterface, NetworkSettings settings)
     where N : INetworkInterface
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -791,25 +671,22 @@ public static NetworkDriver Create<N>(N networkInterface, NetworkSettings settin
 
 #### CreatePipeline(Type\[\])
 
-<div class="markdown level1 summary">
 
 Create a new pipeline.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkPipeline CreatePipeline(params Type[] stages)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -832,25 +709,22 @@ public NetworkPipeline CreatePipeline(params Type[] stages)
 
 #### Disconnect(NetworkConnection)
 
-<div class="markdown level1 summary">
 
 Disconnects a NetworkConnection
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int Disconnect(NetworkConnection id)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -866,45 +740,39 @@ public int Disconnect(NetworkConnection id)
 
 #### Dispose()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-</div>
+
 
 #### EndSend(DataStreamWriter)
 
-<div class="markdown level1 summary">
 
 Ends a asynchronous send.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int EndSend(DataStreamWriter writer)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -927,25 +795,22 @@ public int EndSend(DataStreamWriter writer)
 
 #### GetConnectionState(NetworkConnection)
 
-<div class="markdown level1 summary">
 
 Gets the connection state using the specified NetworkConnection
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConnection.State GetConnectionState(NetworkConnection con)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -961,25 +826,22 @@ public NetworkConnection.State GetConnectionState(NetworkConnection con)
 
 #### GetEventQueueSizeForConnection(NetworkConnection)
 
-<div class="markdown level1 summary">
 
 Returns the size of the EventQueue for a specific connection
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int GetEventQueueSizeForConnection(NetworkConnection connectionId)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -995,25 +857,22 @@ public int GetEventQueueSizeForConnection(NetworkConnection connectionId)
 
 #### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray\<Byte\>, out NativeArray\<Byte\>, out NativeArray\<Byte\>)
 
-<div class="markdown level1 summary">
 
 Returns the PipelineBuffers for a specific pipeline and stage.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId stageId, NetworkConnection connection, out NativeArray<byte> readProcessingBuffer, out NativeArray<byte> writeProcessingBuffer, out NativeArray<byte> sharedBuffer)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1034,25 +893,22 @@ public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId 
 
 #### Listen()
 
-<div class="markdown level1 summary">
 
 Set the driver to Listen for incoming connections
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int Listen()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1070,25 +926,22 @@ public int Listen()
 
 #### LocalEndPoint()
 
-<div class="markdown level1 summary">
 
 Returns local NetworkEndPoint
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEndPoint LocalEndPoint()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1098,25 +951,22 @@ public NetworkEndPoint LocalEndPoint()
 
 #### MaxHeaderSize(NetworkPipeline)
 
-<div class="markdown level1 summary">
 
 Max headersize including optional NetworkPipeline
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxHeaderSize(NetworkPipeline pipe)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1132,23 +982,20 @@ public int MaxHeaderSize(NetworkPipeline pipe)
 
 #### PopEvent(out NetworkConnection, out DataStreamReader)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader reader)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1165,25 +1012,22 @@ public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReade
 
 #### PopEvent(out NetworkConnection, out DataStreamReader, out NetworkPipeline)
 
-<div class="markdown level1 summary">
 
 Pops an event
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader reader, out NetworkPipeline pipeline)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1201,23 +1045,20 @@ public NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReade
 
 #### PopEventForConnection(NetworkConnection, out DataStreamReader)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1234,25 +1075,22 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### PopEventForConnection(NetworkConnection, out DataStreamReader, out NetworkPipeline)
 
-<div class="markdown level1 summary">
 
 Pops an event for a specific connection
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1270,23 +1108,20 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 #### RemoteEndPoint(NetworkConnection)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1302,27 +1137,24 @@ public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
 
 #### ScheduleFlushSend(JobHandle)
 
-<div class="markdown level1 summary">
 
 Schedules flushing the sendqueue. Should be called in cases where you
 want the driver to send before the next ScheduleUpdate(JobHandle) is
 called.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public JobHandle ScheduleFlushSend(JobHandle dep)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1338,25 +1170,22 @@ public JobHandle ScheduleFlushSend(JobHandle dep)
 
 #### ScheduleUpdate(JobHandle)
 
-<div class="markdown level1 summary">
 
 Schedules update for driver. This should be called once a frame.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public JobHandle ScheduleUpdate(JobHandle dep = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1372,25 +1201,22 @@ public JobHandle ScheduleUpdate(JobHandle dep = null)
 
 #### ToConcurrent()
 
-<div class="markdown level1 summary">
 
 Create a Concurrent Copy of the NetworkDriver.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkDriver.Concurrent ToConcurrent()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1400,48 +1226,11 @@ public NetworkDriver.Concurrent ToConcurrent()
 
 ### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
 
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

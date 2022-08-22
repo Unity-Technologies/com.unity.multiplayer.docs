@@ -3,113 +3,54 @@ id: Unity.Networking.Transport.DataStreamWriter
 title: Unity.Networking.Transport.DataStreamWriter
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
 
 # Struct DataStreamWriter
 
-<div class="markdown level0 summary">
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Networking.Transport
 
@@ -117,38 +58,34 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct DataStreamWriter
 ```
 
-</div>
+
 
 ### Constructors
 
 #### DataStreamWriter(NativeArray\<Byte\>)
 
-<div class="markdown level1 summary">
 
 Initializes a new instance of the DataStreamWriter struct with a
 NativeArray{byte}
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public DataStreamWriter(NativeArray<byte> data)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -158,26 +95,23 @@ public DataStreamWriter(NativeArray<byte> data)
 
 #### DataStreamWriter(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
 Initializes a new instance of the DataStreamWriter struct with a memory
 we don't own
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public DataStreamWriter(byte *data, int length)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -188,25 +122,22 @@ public DataStreamWriter(byte *data, int length)
 
 #### DataStreamWriter(Int32, Allocator)
 
-<div class="markdown level1 summary">
 
 Initializes a new instance of the DataStreamWriter struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public DataStreamWriter(int length, Allocator allocator)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -219,26 +150,23 @@ public DataStreamWriter(int length, Allocator allocator)
 
 #### Capacity
 
-<div class="markdown level1 summary">
 
 The total size of the data buffer, see Length for the size of space used
 in the buffer.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Capacity { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -248,23 +176,20 @@ public readonly int Capacity { get; }
 
 #### HasFailedWrites
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool HasFailedWrites { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -274,26 +199,23 @@ public readonly bool HasFailedWrites { get; }
 
 #### IsCreated
 
-<div class="markdown level1 summary">
 
 True if there is a valid data buffer present. This would be false if the
 writer was created with no arguments.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsCreated { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -303,23 +225,20 @@ public readonly bool IsCreated { get; }
 
 #### IsLittleEndian
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static readonly bool IsLittleEndian { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -329,25 +248,22 @@ public static readonly bool IsLittleEndian { get; }
 
 #### Length
 
-<div class="markdown level1 summary">
 
 The size of the buffer used. See Capacity for the total size.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int Length { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -357,25 +273,22 @@ public readonly int Length { get; }
 
 #### LengthInBits
 
-<div class="markdown level1 summary">
 
 The size of the buffer used in bits. See Length for the length in bytes.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int LengthInBits { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -387,23 +300,20 @@ public readonly int LengthInBits { get; }
 
 #### AsNativeArray()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NativeArray<byte> AsNativeArray()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -413,65 +323,56 @@ public NativeArray<byte> AsNativeArray()
 
 #### Clear()
 
-<div class="markdown level1 summary">
 
 Moves the write position to the start of the data buffer used.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Clear()
 ```
 
-</div>
+
 
 #### Flush()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Flush()
 ```
 
-</div>
+
 
 #### WriteByte(Byte)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteByte(byte value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -487,25 +388,22 @@ public bool WriteByte(byte value)
 
 #### WriteBytes(NativeArray\<Byte\>)
 
-<div class="markdown level1 summary">
 
 Copy NativeArray of bytes into the writers data buffer.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteBytes(NativeArray<byte> value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -521,23 +419,20 @@ public bool WriteBytes(NativeArray<byte> value)
 
 #### WriteBytes(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteBytes(byte *data, int bytes)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -554,23 +449,20 @@ public bool WriteBytes(byte *data, int bytes)
 
 #### WriteFixedString128(FixedString128Bytes)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteFixedString128(FixedString128Bytes str)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -586,23 +478,20 @@ public bool WriteFixedString128(FixedString128Bytes str)
 
 #### WriteFixedString32(FixedString32Bytes)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteFixedString32(FixedString32Bytes str)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -618,23 +507,20 @@ public bool WriteFixedString32(FixedString32Bytes str)
 
 #### WriteFixedString4096(FixedString4096Bytes)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteFixedString4096(FixedString4096Bytes str)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -650,23 +536,20 @@ public bool WriteFixedString4096(FixedString4096Bytes str)
 
 #### WriteFixedString512(FixedString512Bytes)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteFixedString512(FixedString512Bytes str)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -682,23 +565,20 @@ public bool WriteFixedString512(FixedString512Bytes str)
 
 #### WriteFixedString64(FixedString64Bytes)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteFixedString64(FixedString64Bytes str)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -714,23 +594,20 @@ public bool WriteFixedString64(FixedString64Bytes str)
 
 #### WriteFloat(Single)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteFloat(float value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -746,23 +623,20 @@ public bool WriteFloat(float value)
 
 #### WriteInt(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteInt(int value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -778,23 +652,20 @@ public bool WriteInt(int value)
 
 #### WriteIntNetworkByteOrder(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteIntNetworkByteOrder(int value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -810,23 +681,20 @@ public bool WriteIntNetworkByteOrder(int value)
 
 #### WriteLong(Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteLong(long value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -842,23 +710,20 @@ public bool WriteLong(long value)
 
 #### WritePackedFixedString128Delta(FixedString128Bytes, FixedString128Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFixedString128Delta(FixedString128Bytes str, FixedString128Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -876,23 +741,20 @@ public bool WritePackedFixedString128Delta(FixedString128Bytes str, FixedString1
 
 #### WritePackedFixedString32Delta(FixedString32Bytes, FixedString32Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFixedString32Delta(FixedString32Bytes str, FixedString32Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -910,23 +772,20 @@ public bool WritePackedFixedString32Delta(FixedString32Bytes str, FixedString32B
 
 #### WritePackedFixedString4096Delta(FixedString4096Bytes, FixedString4096Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFixedString4096Delta(FixedString4096Bytes str, FixedString4096Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -944,23 +803,20 @@ public bool WritePackedFixedString4096Delta(FixedString4096Bytes str, FixedStrin
 
 #### WritePackedFixedString512Delta(FixedString512Bytes, FixedString512Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFixedString512Delta(FixedString512Bytes str, FixedString512Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -978,23 +834,20 @@ public bool WritePackedFixedString512Delta(FixedString512Bytes str, FixedString5
 
 #### WritePackedFixedString64Delta(FixedString64Bytes, FixedString64Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFixedString64Delta(FixedString64Bytes str, FixedString64Bytes baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1012,23 +865,20 @@ public bool WritePackedFixedString64Delta(FixedString64Bytes str, FixedString64B
 
 #### WritePackedFloat(Single, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFloat(float value, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1045,23 +895,20 @@ public bool WritePackedFloat(float value, NetworkCompressionModel model)
 
 #### WritePackedFloatDelta(Single, Single, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedFloatDelta(float value, float baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1079,23 +926,20 @@ public bool WritePackedFloatDelta(float value, float baseline, NetworkCompressio
 
 #### WritePackedInt(Int32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedInt(int value, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1112,23 +956,20 @@ public bool WritePackedInt(int value, NetworkCompressionModel model)
 
 #### WritePackedIntDelta(Int32, Int32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedIntDelta(int value, int baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1146,23 +987,20 @@ public bool WritePackedIntDelta(int value, int baseline, NetworkCompressionModel
 
 #### WritePackedLong(Int64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedLong(long value, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1179,23 +1017,20 @@ public bool WritePackedLong(long value, NetworkCompressionModel model)
 
 #### WritePackedLongDelta(Int64, Int64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedLongDelta(long value, long baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1213,23 +1048,20 @@ public bool WritePackedLongDelta(long value, long baseline, NetworkCompressionMo
 
 #### WritePackedUInt(UInt32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedUInt(uint value, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1246,23 +1078,20 @@ public bool WritePackedUInt(uint value, NetworkCompressionModel model)
 
 #### WritePackedUIntDelta(UInt32, UInt32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedUIntDelta(uint value, uint baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1280,23 +1109,20 @@ public bool WritePackedUIntDelta(uint value, uint baseline, NetworkCompressionMo
 
 #### WritePackedULong(UInt64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedULong(ulong value, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1313,23 +1139,20 @@ public bool WritePackedULong(ulong value, NetworkCompressionModel model)
 
 #### WritePackedULongDelta(UInt64, UInt64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WritePackedULongDelta(ulong value, ulong baseline, NetworkCompressionModel model)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1347,23 +1170,20 @@ public bool WritePackedULongDelta(ulong value, ulong baseline, NetworkCompressio
 
 #### WriteRawBits(UInt32, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteRawBits(uint value, int numbits)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1380,23 +1200,20 @@ public bool WriteRawBits(uint value, int numbits)
 
 #### WriteShort(Int16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteShort(short value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1412,23 +1229,20 @@ public bool WriteShort(short value)
 
 #### WriteShortNetworkByteOrder(Int16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteShortNetworkByteOrder(short value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1444,23 +1258,20 @@ public bool WriteShortNetworkByteOrder(short value)
 
 #### WriteUInt(UInt32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteUInt(uint value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1476,23 +1287,20 @@ public bool WriteUInt(uint value)
 
 #### WriteUIntNetworkByteOrder(UInt32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteUIntNetworkByteOrder(uint value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1508,23 +1316,20 @@ public bool WriteUIntNetworkByteOrder(uint value)
 
 #### WriteULong(UInt64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteULong(ulong value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1540,23 +1345,20 @@ public bool WriteULong(ulong value)
 
 #### WriteUShort(UInt16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteUShort(ushort value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1572,23 +1374,20 @@ public bool WriteUShort(ushort value)
 
 #### WriteUShortNetworkByteOrder(UInt16)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool WriteUShortNetworkByteOrder(ushort value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1602,42 +1401,5 @@ public bool WriteUShortNetworkByteOrder(ushort value)
 |----------------|-------------|
 | System.Boolean |             |
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
-
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>
