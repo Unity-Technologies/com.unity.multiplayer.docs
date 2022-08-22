@@ -1,5 +1,5 @@
 ---
-id: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstuctor
+id: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor
 title: Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor
 ---
 

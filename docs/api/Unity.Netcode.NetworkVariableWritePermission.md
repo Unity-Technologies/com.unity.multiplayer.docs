@@ -1,6 +1,6 @@
 ---
-id: Unity.Netcode.NetworkVariableWriterPermission
-title: Unity.Netcode.NetworkVariableWriterPermission
+id: Unity.Netcode.NetworkVariableWritePermission
+title: Unity.Netcode.NetworkVariableWritePermission
 ---
 
 <div id="wrapper">

@@ -672,23 +672,8 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy",
-                        "label": "ForceNetworkSerializeByMemcpy"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.VariableSerialization-1",
-                        "label": "VariableSerialization-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.ReadDelegate-1",
-                        "label": "NetworkVariableSerialization-1.ReadDelegate-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.WriteDelegate-1",
-                        "label": "NetworkVariableSerialization-1.WriteDelegate-1"
+                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy-1",
+                        "label": "ForceNetworkSerializeByMemcpy-1"
                     },
                     {
                         "type": "doc",
@@ -903,11 +888,6 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
-                        "label": "ConnectionApprovedDelegate"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalRequest",
                         "label": "ConnectionApprovalRequest"
                     },
@@ -931,11 +911,6 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableHelper",
-                        "label": "NetworkVariableHelper"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariable-1",
                         "label": "NetworkVariable-1"
                     },
@@ -951,18 +926,8 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "Unity.Netcode.UserNetworkVariableSerialization-1",
+                        "id": "api/Unity.Netcode.UserNetworkVariableSerialization-1",
                         "label": "UserNetworkVariableSerialization-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "Unity.Netcode.UserNetworkVariableSerialization-1.ReadValueDelegate",
-                        "label": "UserNetworkVariableSerialization-1.ReadValueDelegate"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "Unity.Netcode.UserNetworkVariableSerialization-1.WriteValueDelegate",
-                        "label": "UserNetworkVariableSerialization-1.WriteValueDelegate"
                     },
                 ],
             },
