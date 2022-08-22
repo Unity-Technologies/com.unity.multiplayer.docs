@@ -3,82 +3,93 @@ id: Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters
 title: Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters
 ---
 
-<div class="inheritedMembers">
+# Struct UnityTransport.SimulatorParameters
+
+
+Parameters for the Network Simulator
+
+
+
+
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
-
-</div>
 
 
+
+
+###### **Namespace**: Unity.Netcode.Transports.UTP
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 [Serializable]
 public struct SimulatorParameters
 ```
 
-</div>
+
 
 ### Fields
 
 #### PacketDelayMS
 
-<div class="markdown level1 summary">
 
-</div>
+Delay to add to every send and received packet (in milliseconds). Only
+applies in the editor and in development builds. The value is ignored in
+production builds.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketDelayMS
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -88,23 +99,23 @@ public int PacketDelayMS
 
 #### PacketDropRate
 
-<div class="markdown level1 summary">
 
-</div>
+Percentage of sent and received packets to drop. Only applies in the
+editor and in the editor and in developments builds.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketDropRate
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -114,23 +125,24 @@ public int PacketDropRate
 
 #### PacketJitterMS
 
-<div class="markdown level1 summary">
 
-</div>
+Jitter (random variation) to add/substract to the packet delay (in
+milliseconds). Only applies in the editor and in development builds. The
+value is ignored in production builds.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketJitterMS
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -138,4 +150,5 @@ public int PacketJitterMS
 |--------------|-------------|
 | System.Int32 |             |
 
- 
+
+

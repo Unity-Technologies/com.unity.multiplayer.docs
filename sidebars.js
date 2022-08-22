@@ -642,6 +642,11 @@ module.exports = {
                     },
                     {
                         "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForFixedStrings",
+                        "label": "FastBufferWriter.ForFixedStrings"
+                    },
+                    {
+                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferWriter.ForNetworkSerializable",
                         "label": "FastBufferWriter.ForNetworkSerializable"
                     },
@@ -667,23 +672,8 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy",
-                        "label": "ForceNetworkSerializeByMemcpy"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.VariableSerialization-1",
-                        "label": "VariableSerialization-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.ReadDelegate-1",
-                        "label": "NetworkVariableSerialization-1.ReadDelegate-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.WriteDelegate-1",
-                        "label": "NetworkVariableSerialization-1.WriteDelegate-1"
+                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy-1",
+                        "label": "ForceNetworkSerializeByMemcpy-1"
                     },
                     {
                         "type": "doc",
@@ -898,9 +888,14 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
-                        "label": "ConnectionApprovedDelegate"
-                    }
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalRequest",
+                        "label": "ConnectionApprovalRequest"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalResponse",
+                        "label": "ConnectionApprovalResponse"
+                    },
                 ]
             },
             {
@@ -916,11 +911,6 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableHelper",
-                        "label": "NetworkVariableHelper"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariable-1",
                         "label": "NetworkVariable-1"
                     },
@@ -933,6 +923,11 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariableReadPermission",
                         "label": "NetworkVariableReadPermission"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.UserNetworkVariableSerialization-1",
+                        "label": "UserNetworkVariableSerialization-1"
                     },
                 ],
             },

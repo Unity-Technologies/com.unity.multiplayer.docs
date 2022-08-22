@@ -1,29 +1,30 @@
----  
-id: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate  
-title: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate  
+---
+id: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
+title: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkVariable\<T\>.OnValueChangedDelegate
+
 
 Delegate type for value changed event
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnValueChangedDelegate(T previousValue, T newValue);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -32,4 +33,5 @@ public delegate void OnValueChangedDelegate(T previousValue, T newValue);
 | T    | previousValue | The value before the change |
 | T    | newValue      | The new value               |
 
- 
+
+

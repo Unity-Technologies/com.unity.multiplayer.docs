@@ -1,31 +1,42 @@
----  
-id: Unity.Netcode.LogLevel  
-title: Unity.Netcode.LogLevel  
+---
+id: Unity.Netcode.LogLevel
+title: Unity.Netcode.LogLevel
 ---
 
-<div class="markdown level0 summary">
+# Enum LogLevel
+
 
 Log level
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum LogLevel
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 

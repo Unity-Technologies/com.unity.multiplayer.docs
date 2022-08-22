@@ -1,31 +1,42 @@
----  
-id: Unity.Netcode.NetworkEvent  
-title: Unity.Netcode.NetworkEvent  
+---
+id: Unity.Netcode.NetworkEvent
+title: Unity.Netcode.NetworkEvent
 ---
 
-<div class="markdown level0 summary">
+# Enum NetworkEvent
+
 
 Represents a netEvent when polling
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum NetworkEvent
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 
@@ -44,3 +55,8 @@ A client disconnected, or client disconnected from server
 Nothing
 
 No new event
+
+TransportFailure
+
+Transport has encountered an unrecoverable failure
+

@@ -1,92 +1,93 @@
----  
-id: Unity.Netcode.NetworkBehaviourUpdater  
-title: Unity.Netcode.NetworkBehaviourUpdater  
+---
+id: Unity.Netcode.NetworkBehaviourUpdater
+title: Unity.Netcode.NetworkBehaviourUpdater
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkBehaviourUpdater
 
-</div>
 
-<div class="markdown level0 conceptual">
+An helper class that helps NetworkManager update NetworkBehaviours and
+replicate them down to connected clients.
 
-</div>
 
-<div class="inheritance">
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkBehaviourUpdater
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.Object.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.MemberwiseClone()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.ToString()
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkBehaviourUpdater
 ```
 
-</div>
 
- 
+
+
+

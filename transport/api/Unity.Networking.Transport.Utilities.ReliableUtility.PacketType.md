@@ -1,29 +1,46 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.PacketType  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketType  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.PacketType
+title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketType
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Enum ReliableUtility.PacketType
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public enum PacketType : ushort
 ```
 
-## 
 
-| Name    | Description |
-|---------|-------------|
-| Ack     |             |
-| Payload |             |
+
+### Fields
+
+Name
+
+
+
+
+
+
+
+
+
+Description
+
+Ack
+
+Payload
+
+
+

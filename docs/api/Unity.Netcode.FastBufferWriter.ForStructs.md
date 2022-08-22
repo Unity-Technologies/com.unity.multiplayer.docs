@@ -3,66 +3,77 @@ id: Unity.Netcode.FastBufferWriter.ForStructs
 title: Unity.Netcode.FastBufferWriter.ForStructs
 ---
 
-<div class="markdown level0 summary">
+# Struct FastBufferWriter.ForStructs
 
-</div>
 
-<div class="markdown level0 conceptual">
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct ForStructs
 ```
 
-</div>
 
- 
+
+
+

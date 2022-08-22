@@ -1,91 +1,92 @@
----  
-id: Unity.Netcode.ServerRpcReceiveParams  
-title: Unity.Netcode.ServerRpcReceiveParams  
+---
+id: Unity.Netcode.ServerRpcReceiveParams
+title: Unity.Netcode.ServerRpcReceiveParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ServerRpcReceiveParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+The receive parameters for server-side remote procedure calls
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct ServerRpcReceiveParams
 ```
 
-</div>
+
 
 ### Fields
 
 #### SenderClientId
 
-<div class="markdown level1 summary">
 
-</div>
+Server-Side RPC The client identifier of the sender
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ulong SenderClientId
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -93,4 +94,5 @@ public ulong SenderClientId
 |---------------|-------------|
 | System.UInt64 |             |
 
- 
+
+
