@@ -1,12 +1,65 @@
----  
-id: Unity.Networking.Transport.NetworkDriver.Concurrent  
-title: Unity.Networking.Transport.NetworkDriver.Concurrent  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkDriver.Concurrent
 
 <div class="markdown level0 summary">
 
 The Concurrent struct is used to create an Concurrent instance of the
-GenericNetworkDriver.
+NetworkDriver.
 
 </div>
 
@@ -20,55 +73,59 @@ GenericNetworkDriver.
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct Concurrent
 ```
 
-## 
+</div>
 
-### AbortSend(DataStreamWriter)
+### Methods
+
+#### AbortSend(DataStreamWriter)
 
 <div class="markdown level1 summary">
 
@@ -80,26 +137,30 @@ Aborts a asynchronous send.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void AbortSend(DataStreamWriter writer)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description                                       |
 |------------------|--------|---------------------------------------------------|
 | DataStreamWriter | writer | If you require the payload to be of certain size. |
 
-#### Exceptions
+##### Exceptions
 
 | Type                             | Condition                                                            |
 |----------------------------------|----------------------------------------------------------------------|
 | System.InvalidOperationException | If endsend is called with a matching BeginSend call.                 |
 | System.InvalidOperationException | If the connection got closed between the call of being and end send. |
 
-### BeginSend(NetworkConnection, out DataStreamWriter, Int32)
+#### BeginSend(NetworkConnection, out DataStreamWriter, Int32)
 
 <div class="markdown level1 summary">
 
@@ -111,13 +172,17 @@ Acquires a DataStreamWriter for starting a asynchronous send.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name                | Description                                      |
 |-------------------|---------------------|--------------------------------------------------|
@@ -125,13 +190,13 @@ public int BeginSend(NetworkConnection id, out DataStreamWriter writer, int requ
 | DataStreamWriter  | writer              | A DataStreamWriter to write to                   |
 | System.Int32      | requiredPayloadSize | If you require the payload to be of certain size |
 
-#### Returns
+##### Returns
 
 | Type         | Description                                                                                    |
 |--------------|------------------------------------------------------------------------------------------------|
 | System.Int32 | Returns Success on a successful acquire. Otherwise returns an StatusCode indicating the error. |
 
-#### Remarks
+##### Remarks
 
 <div class="markdown level1 remarks">
 
@@ -140,7 +205,7 @@ Connecting state.
 
 </div>
 
-### BeginSend(NetworkPipeline, NetworkConnection, out DataStreamWriter, Int32)
+#### BeginSend(NetworkPipeline, NetworkConnection, out DataStreamWriter, Int32)
 
 <div class="markdown level1 summary">
 
@@ -152,13 +217,17 @@ Acquires a DataStreamWriter for starting a asynchronous send.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamWriter writer, int requiredPayloadSize = 0)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name                | Description                                      |
 |-------------------|---------------------|--------------------------------------------------|
@@ -167,13 +236,13 @@ public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamW
 | DataStreamWriter  | writer              | A DataStreamWriter to write to                   |
 | System.Int32      | requiredPayloadSize | If you require the payload to be of certain size |
 
-#### Returns
+##### Returns
 
 | Type         | Description                                                                                    |
 |--------------|------------------------------------------------------------------------------------------------|
 | System.Int32 | Returns Success on a successful acquire. Otherwise returns an StatusCode indicating the error. |
 
-#### Remarks
+##### Remarks
 
 <div class="markdown level1 remarks">
 
@@ -182,7 +251,7 @@ Connecting state.
 
 </div>
 
-### EndSend(DataStreamWriter)
+#### EndSend(DataStreamWriter)
 
 <div class="markdown level1 summary">
 
@@ -194,34 +263,40 @@ Ends a asynchronous send.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int EndSend(DataStreamWriter writer)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name   | Description                                       |
 |------------------|--------|---------------------------------------------------|
 | DataStreamWriter | writer | If you require the payload to be of certain size. |
 
-#### Returns
+##### Returns
 
 | Type         | Description                                          |
 |--------------|------------------------------------------------------|
 | System.Int32 | The length of the buffer sent if nothing went wrong. |
 
-#### Exceptions
+##### Exceptions
 
 | Type                             | Condition                                                            |
 |----------------------------------|----------------------------------------------------------------------|
 | System.InvalidOperationException | If endsend is called with a matching BeginSend call.                 |
 | System.InvalidOperationException | If the connection got closed between the call of being and end send. |
 
-### GetConnectionState(NetworkConnection)
+#### GetConnectionState(NetworkConnection)
 
 <div class="markdown level1 summary">
+
+Gets the connection state using the specified id
 
 </div>
 
@@ -229,27 +304,33 @@ public int EndSend(DataStreamWriter writer)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConnection.State GetConnectionState(NetworkConnection id)
 ```
 
-#### Parameters
+</div>
 
-| Type              | Name | Description |
-|-------------------|------|-------------|
-| NetworkConnection | id   |             |
+##### Parameters
 
-#### Returns
+| Type              | Name | Description       |
+|-------------------|------|-------------------|
+| NetworkConnection | id   | The connection id |
 
-| Type                    | Description |
-|-------------------------|-------------|
-| NetworkConnection.State |             |
+##### Returns
 
-### MaxHeaderSize(NetworkPipeline)
+| Type                    | Description                  |
+|-------------------------|------------------------------|
+| NetworkConnection.State | The network connection state |
+
+#### MaxHeaderSize(NetworkPipeline)
 
 <div class="markdown level1 summary">
+
+Max headersize including a NetworkPipeline
 
 </div>
 
@@ -257,27 +338,33 @@ public NetworkConnection.State GetConnectionState(NetworkConnection id)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxHeaderSize(NetworkPipeline pipe)
 ```
 
-#### Parameters
+</div>
 
-| Type            | Name | Description |
-|-----------------|------|-------------|
-| NetworkPipeline | pipe |             |
+##### Parameters
 
-#### Returns
+| Type            | Name | Description                                             |
+|-----------------|------|---------------------------------------------------------|
+| NetworkPipeline | pipe | The pipeline with which to get the maximum header size. |
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+##### Returns
 
-### PopEventForConnection(NetworkConnection, out DataStreamReader)
+| Type         | Description     |
+|--------------|-----------------|
+| System.Int32 | The header size |
+
+#### PopEventForConnection(NetworkConnection, out DataStreamReader)
 
 <div class="markdown level1 summary">
+
+Pops events for a connection using the specified connection id
 
 </div>
 
@@ -285,28 +372,34 @@ public int MaxHeaderSize(NetworkPipeline pipe)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader)
 ```
 
-#### Parameters
+</div>
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
-| DataStreamReader  | reader       |             |
+##### Parameters
 
-#### Returns
+| Type              | Name         | Description                         |
+|-------------------|--------------|-------------------------------------|
+| NetworkConnection | connectionId | The connection id                   |
+| DataStreamReader  | reader       | Stream reader for the event's data. |
 
-| Type              | Description |
-|-------------------|-------------|
-| NetworkEvent.Type |             |
+##### Returns
 
-### PopEventForConnection(NetworkConnection, out DataStreamReader, out NetworkPipeline)
+| Type              | Description            |
+|-------------------|------------------------|
+| NetworkEvent.Type | The network event type |
+
+#### PopEventForConnection(NetworkConnection, out DataStreamReader, out NetworkPipeline)
 
 <div class="markdown level1 summary">
+
+Pops events for a connection using the specified connection id
 
 </div>
 
@@ -314,22 +407,66 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
 ```
 
-#### Parameters
+</div>
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
-| DataStreamReader  | reader       |             |
-| NetworkPipeline   | pipeline     |             |
+##### Parameters
 
-#### Returns
+| Type              | Name         | Description                                    |
+|-------------------|--------------|------------------------------------------------|
+| NetworkConnection | connectionId | The connection id                              |
+| DataStreamReader  | reader       | Stream reader for the event's data.            |
+| NetworkPipeline   | pipeline     | Pipeline on which the data event was received. |
+
+##### Returns
 
 | Type              | Description |
 |-------------------|-------------|
-| NetworkEvent.Type |             |
+| NetworkEvent.Type | The type    |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

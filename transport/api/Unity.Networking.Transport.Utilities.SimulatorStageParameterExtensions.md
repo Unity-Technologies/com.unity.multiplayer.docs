@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions  
-title: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class SimulatorStageParameterExtensions
 
 <div class="markdown level0 summary">
 
@@ -17,13 +70,13 @@ title: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+SimulatorStageParameterExtensions
 
 </div>
 
@@ -35,63 +88,69 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Utilities
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class SimulatorStageParameterExtensions
 ```
 
-## 
+</div>
 
-### GetSimulatorStageParameters(ref NetworkSettings)
+### Methods
+
+#### GetSimulatorStageParameters(ref NetworkSettings)
 
 <div class="markdown level1 summary">
+
+Gets the SimulatorUtility.Parameters
 
 </div>
 
@@ -99,27 +158,33 @@ public static class SimulatorStageParameterExtensions
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static SimulatorUtility.Parameters GetSimulatorStageParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                        | Description |
-|-----------------------------|-------------|
-| SimulatorUtility.Parameters |             |
+| Type                        | Description                                                            |
+|-----------------------------|------------------------------------------------------------------------|
+| SimulatorUtility.Parameters | Returns the SimulatorUtility.Parameters values for the NetworkSettings |
 
-### WithSimulatorStageParameters(ref NetworkSettings, Int32, Int32, ApplyMode, Int32, Int32, Int32, Int32, Int32, Int32, Int32, UInt32)
+#### WithSimulatorStageParameters(ref NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, UInt32)
 
 <div class="markdown level1 summary">
+
+Sets the SimulatorUtility.Parameters values for the NetworkSettings
 
 </div>
 
@@ -127,31 +192,73 @@ public static SimulatorUtility.Parameters GetSimulatorStageParameters(this ref N
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
-public static ref NetworkSettings WithSimulatorStageParameters(this ref NetworkSettings settings, int maxPacketCount, int maxPacketSize, ApplyMode mode, int packetDelayMs = 0, int packetJitterMs = 0, int packetDropInterval = 0, int packetDropPercentage = 0, int packetDuplicationPercentage = 0, int fuzzFactor = 0, int fuzzOffset = 0, uint randomSeed = 0U)
+public static ref NetworkSettings WithSimulatorStageParameters(this ref NetworkSettings settings, int maxPacketCount, int maxPacketSize, int packetDelayMs = 0, int packetJitterMs = 0, int packetDropInterval = 0, int packetDropPercentage = 0, int fuzzFactor = 0, int fuzzOffset = 0, uint randomSeed = 0U)
 ```
 
-#### Parameters
+</div>
 
-| Type            | Name                        | Description |
-|-----------------|-----------------------------|-------------|
-| NetworkSettings | settings                    |             |
-| System.Int32    | maxPacketCount              |             |
-| System.Int32    | maxPacketSize               |             |
-| ApplyMode       | mode                        |             |
-| System.Int32    | packetDelayMs               |             |
-| System.Int32    | packetJitterMs              |             |
-| System.Int32    | packetDropInterval          |             |
-| System.Int32    | packetDropPercentage        |             |
-| System.Int32    | packetDuplicationPercentage |             |
-| System.Int32    | fuzzFactor                  |             |
-| System.Int32    | fuzzOffset                  |             |
-| System.UInt32   | randomSeed                  |             |
+##### Parameters
 
-#### Returns
+| Type            | Name                 | Description          |
+|-----------------|----------------------|----------------------|
+| NetworkSettings | settings             |                      |
+| System.Int32    | maxPacketCount       | MaxPacketCount       |
+| System.Int32    | maxPacketSize        | MaxPacketSize        |
+| System.Int32    | packetDelayMs        | PacketDelayMs        |
+| System.Int32    | packetJitterMs       | PacketJitterMs       |
+| System.Int32    | packetDropInterval   | PacketDropInterval   |
+| System.Int32    | packetDropPercentage | PacketDropPercentage |
+| System.Int32    | fuzzFactor           | FuzzFactor           |
+| System.Int32    | fuzzOffset           | FuzzOffset           |
+| System.UInt32   | randomSeed           | RandomSeed           |
+
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

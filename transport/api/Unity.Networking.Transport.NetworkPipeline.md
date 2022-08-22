@@ -1,9 +1,64 @@
----  
-id: Unity.Networking.Transport.NetworkPipeline  
-title: Unity.Networking.Transport.NetworkPipeline  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkPipeline
 
 <div class="markdown level0 summary">
+
+The network pipeline
 
 </div>
 
@@ -17,45 +72,51 @@ title: Unity.Networking.Transport.NetworkPipeline
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkPipeline
 ```
 
-## 
+</div>
 
-### Null
+### Properties
+
+#### Null
 
 <div class="markdown level1 summary">
+
+Returns default unreliable Null NetworkPipeline
 
 </div>
 
@@ -63,21 +124,25 @@ public struct NetworkPipeline
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static readonly NetworkPipeline Null { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkPipeline |             |
 
-## 
+### Methods
 
-### Equals(Object)
+#### Equals(Object)
 
 <div class="markdown level1 summary">
 
@@ -87,25 +152,29 @@ public static readonly NetworkPipeline Null { get; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object compare)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name    | Description |
 |---------------|---------|-------------|
 | System.Object | compare |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -113,7 +182,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(NetworkPipeline)
+#### Equals(NetworkPipeline)
 
 <div class="markdown level1 summary">
 
@@ -123,25 +192,29 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(NetworkPipeline connection)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name       | Description |
 |-----------------|------------|-------------|
 | NetworkPipeline | connection |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetHashCode()
+#### GetHashCode()
 
 <div class="markdown level1 summary">
 
@@ -151,19 +224,23 @@ public bool Equals(NetworkPipeline connection)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -171,9 +248,9 @@ System.ValueType.GetHashCode()
 
 </div>
 
-## 
+### Operators
 
-### Equality(NetworkPipeline, NetworkPipeline)
+#### Equality(NetworkPipeline, NetworkPipeline)
 
 <div class="markdown level1 summary">
 
@@ -183,26 +260,30 @@ System.ValueType.GetHashCode()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator ==(NetworkPipeline lhs, NetworkPipeline rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
 | NetworkPipeline | lhs  |             |
 | NetworkPipeline | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(NetworkPipeline, NetworkPipeline)
+#### Inequality(NetworkPipeline, NetworkPipeline)
 
 <div class="markdown level1 summary">
 
@@ -212,21 +293,65 @@ public static bool operator ==(NetworkPipeline lhs, NetworkPipeline rhs)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator !=(NetworkPipeline lhs, NetworkPipeline rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
 | NetworkPipeline | lhs  |             |
 | NetworkPipeline | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

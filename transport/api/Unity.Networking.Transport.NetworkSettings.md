@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.NetworkSettings  
-title: Unity.Networking.Transport.NetworkSettings  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkSettings
 
 <div class="markdown level0 summary">
 
@@ -31,55 +84,59 @@ System.IDisposable
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkSettings : IDisposable
 ```
 
-## 
+</div>
 
-### NetworkSettings(Allocator)
+### Constructors
+
+#### NetworkSettings(Allocator)
 
 <div class="markdown level1 summary">
 
@@ -92,21 +149,25 @@ Allocator is provided, Allocator.Temp will be used.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSettings(Allocator allocator)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type      | Name      | Description                                                                                                                   |
 |-----------|-----------|-------------------------------------------------------------------------------------------------------------------------------|
 | Allocator | allocator | The allocator used for the parameters list. When Allocator.Temp is used, the settings are valid to use only during one frame. |
 
-## 
+### Methods
 
-### AddRawParameterStruct\&lt;T&gt;(ref T)
+#### AddRawParameterStruct\<T\>(ref T)
 
 <div class="markdown level1 summary">
 
@@ -119,32 +180,36 @@ parameter type.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void AddRawParameterStruct<T>(ref T parameter)
     where T : struct, INetworkParameter
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type | Name      | Description           |
 |------|-----------|-----------------------|
 | T    | parameter | The parameter to add. |
 
-#### Type Parameters
+##### Type Parameters
 
 | Name | Description                           |
 |------|---------------------------------------|
 | T    | The type of INetworkParameter to add. |
 
-#### Exceptions
+##### Exceptions
 
 | Type                     | Condition                                                                                                  |
 |--------------------------|------------------------------------------------------------------------------------------------------------|
 | System.ArgumentException | Throws an argument exception if the paramter type is already in the list or if it contains invalid values. |
 
-### Dispose()
+#### Dispose()
 
 <div class="markdown level1 summary">
 
@@ -154,13 +219,17 @@ public void AddRawParameterStruct<T>(ref T parameter)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-### TryGet\&lt;T&gt;(out T)
+</div>
+
+#### TryGet\<T\>(out T)
 
 <div class="markdown level1 summary">
 
@@ -172,26 +241,30 @@ Try to get the parameter values for the specified type.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryGet<T>(out T parameter)
     where T : struct, INetworkParameter
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type | Name      | Description                  |
 |------|-----------|------------------------------|
 | T    | parameter | The stored parameter values. |
 
-#### Returns
+##### Returns
 
 | Type           | Description                                              |
 |----------------|----------------------------------------------------------|
 | System.Boolean | Returns true if the parameter is in the paramaters list. |
 
-#### Type Parameters
+##### Type Parameters
 
 | Name | Description                        |
 |------|------------------------------------|
@@ -238,7 +311,7 @@ NetworkSettings)
 <div>
 
 CommonNetworkParametersExtensions.WithNetworkConfigParameters(ref
-NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32)
 
 </div>
 
@@ -294,8 +367,8 @@ NetworkSettings)
 <div>
 
 SimulatorStageParameterExtensions.WithSimulatorStageParameters(ref
-NetworkSettings, Int32, Int32, ApplyMode, Int32, Int32, Int32, Int32,
-Int32, Int32, Int32, UInt32)
+NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32,
+UInt32)
 
 </div>
 
@@ -316,5 +389,45 @@ RelayServerData, Int32)
 <div>
 
 RelayParameterExtensions.GetRelayParameters(ref NetworkSettings)
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

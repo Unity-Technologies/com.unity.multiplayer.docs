@@ -1,9 +1,64 @@
----  
-id: Unity.Networking.Transport.IPCNetworkInterface  
-title: Unity.Networking.Transport.IPCNetworkInterface  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct IPCNetworkInterface
 
 <div class="markdown level0 summary">
+
+The ipc network interface
 
 </div>
 
@@ -35,57 +90,63 @@ System.IDisposable
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct IPCNetworkInterface : INetworkInterface, IDisposable
 ```
 
-## 
+</div>
 
-### LocalEndPoint
+### Properties
+
+#### LocalEndPoint
 
 <div class="markdown level1 summary">
+
+Gets the value of the local end point
 
 </div>
 
@@ -93,23 +154,29 @@ public struct IPCNetworkInterface : INetworkInterface, IDisposable
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type                     | Description |
 |--------------------------|-------------|
 | NetworkInterfaceEndPoint |             |
 
-## 
+### Methods
 
-### Bind(NetworkInterfaceEndPoint)
+#### Bind(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
+
+Binds the medium to a specific endpoint.
 
 </div>
 
@@ -117,27 +184,33 @@ public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Bind(NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+</div>
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
+##### Parameters
 
-#### Returns
+| Type                     | Name     | Description                       |
+|--------------------------|----------|-----------------------------------|
+| NetworkInterfaceEndPoint | endpoint | A valid NetworkInterfaceEndPoint. |
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+##### Returns
 
-### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
+| Type         | Description  |
+|--------------|--------------|
+| System.Int32 | 0 on Success |
+
+#### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
+
+Creates an interface end point. Only available for loopback addresses.
 
 </div>
 
@@ -145,28 +218,34 @@ public int Bind(NetworkInterfaceEndPoint endpoint)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+</div>
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkEndPoint          | address  |             |
-| NetworkInterfaceEndPoint | endpoint |             |
+##### Parameters
 
-#### Returns
+| Type                     | Name     | Description      |
+|--------------------------|----------|------------------|
+| NetworkEndPoint          | address  | Loopback address |
+| NetworkInterfaceEndPoint | endpoint | The endpoint     |
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+##### Returns
 
-### CreateSendInterface()
+| Type         | Description                                       |
+|--------------|---------------------------------------------------|
+| System.Int32 | The status code of the result, 0 being a success. |
+
+#### CreateSendInterface()
 
 <div class="markdown level1 summary">
+
+Creates the send interface
 
 </div>
 
@@ -174,21 +253,27 @@ public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterface
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSendInterface CreateSendInterface()
 ```
 
-#### Returns
+</div>
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkSendInterface |             |
+##### Returns
 
-### Dispose()
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkSendInterface | The network send interface |
+
+#### Dispose()
 
 <div class="markdown level1 summary">
+
+Cleans up both the local end point and the IPCManager instance.
 
 </div>
 
@@ -196,15 +281,21 @@ public NetworkSendInterface CreateSendInterface()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-### GetGenericEndPoint(NetworkInterfaceEndPoint)
+</div>
+
+#### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
+
+Retrieves an already created endpoint with port or creates one.
 
 </div>
 
@@ -212,27 +303,33 @@ public void Dispose()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+</div>
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
+##### Parameters
 
-#### Returns
+| Type                     | Name     | Description           |
+|--------------------------|----------|-----------------------|
+| NetworkInterfaceEndPoint | endpoint | The loopback endpoint |
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+##### Returns
 
-### Initialize(NetworkSettings)
+| Type            | Description     |
+|-----------------|-----------------|
+| NetworkEndPoint | NetworkEndPoint |
+
+#### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
+
+Initializes the interface passing in optional INetworkParameter
 
 </div>
 
@@ -240,27 +337,34 @@ public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Initialize(NetworkSettings settings)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description                                       |
+|--------------|---------------------------------------------------|
+| System.Int32 | The status code of the result, 0 being a success. |
 
-### Listen()
+#### Listen()
 
 <div class="markdown level1 summary">
+
+Start listening for incoming connections. This is normally a no-op for
+real UDP sockets.
 
 </div>
 
@@ -268,21 +372,28 @@ public int Initialize(NetworkSettings settings)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Listen()
 ```
 
-#### Returns
+</div>
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+##### Returns
 
-### ScheduleReceive(NetworkPacketReceiver, JobHandle)
+| Type         | Description  |
+|--------------|--------------|
+| System.Int32 | 0 on Success |
+
+#### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedule a ReceiveJob. This is used to read data from your supported
+medium and pass it to the AppendData function supplied by NetworkDriver
 
 </div>
 
@@ -290,28 +401,35 @@ public int Listen()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 ```
 
-#### Parameters
+</div>
 
-| Type                  | Name     | Description |
-|-----------------------|----------|-------------|
-| NetworkPacketReceiver | receiver |             |
-| JobHandle             | dep      |             |
+##### Parameters
 
-#### Returns
+| Type                  | Name     | Description                                      |
+|-----------------------|----------|--------------------------------------------------|
+| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
+| JobHandle             | dep      | A to any dependency we might have.               |
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+##### Returns
 
-### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
+| Type      | Description                                 |
+|-----------|---------------------------------------------|
+| JobHandle | A to our newly created ScheduleReceive Job. |
+
+#### ScheduleSend(NativeQueue\<QueuedSendMessage\>, JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedule a SendJob. This is used to flush send queues to your supported
+medium
 
 </div>
 
@@ -319,24 +437,28 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
 ```
 
-#### Parameters
+</div>
 
-| Type                             | Name      | Description |
-|----------------------------------|-----------|-------------|
-| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue |             |
-| JobHandle                        | dep       |             |
+##### Parameters
 
-#### Returns
+| Type                             | Name      | Description                                                |
+|----------------------------------|-----------|------------------------------------------------------------|
+| NativeQueue\<QueuedSendMessage\> | sendQueue | The send queue which can be used to emulate parallel send. |
+| JobHandle                        | dep       | A to any dependency we might have.                         |
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+##### Returns
+
+| Type      | Description                              |
+|-----------|------------------------------------------|
+| JobHandle | A to our newly created ScheduleSend Job. |
 
 ### Implements
 
@@ -349,5 +471,45 @@ INetworkInterface
 <div>
 
 System.IDisposable
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

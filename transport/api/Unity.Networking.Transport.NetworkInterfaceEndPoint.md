@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.NetworkInterfaceEndPoint  
-title: Unity.Networking.Transport.NetworkInterfaceEndPoint  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkInterfaceEndPoint
 
 <div class="markdown level0 summary">
 
@@ -29,39 +82,45 @@ System.IEquatable\<NetworkInterfaceEndPoint\>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkInterfaceEndPoint : IEquatable<NetworkInterfaceEndPoint>
 ```
 
-## 
+</div>
 
-### data
+### Fields
+
+#### data
 
 <div class="markdown level1 summary">
+
+Raw representation of the interface endpoint.
 
 </div>
 
@@ -69,21 +128,27 @@ public struct NetworkInterfaceEndPoint : IEquatable<NetworkInterfaceEndPoint>
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *data
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### dataLength
+#### dataLength
 
 <div class="markdown level1 summary">
+
+Actual length of the interface endpoint's raw representation.
 
 </div>
 
@@ -91,21 +156,27 @@ public byte *data
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int dataLength
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### k_MaxLength
+#### k_MaxLength
 
 <div class="markdown level1 summary">
+
+Maximum length of the interface endpoint's raw representation.
 
 </div>
 
@@ -113,23 +184,29 @@ public int dataLength
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int k_MaxLength = 56
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Properties
 
-### IsValid
+#### IsValid
 
 <div class="markdown level1 summary">
+
+Whether the interface endpoint is valid or not.
 
 </div>
 
@@ -137,21 +214,25 @@ public const int k_MaxLength = 56
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsValid { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+### Methods
 
-### Equals(Object)
+#### Equals(Object)
 
 <div class="markdown level1 summary">
 
@@ -161,25 +242,29 @@ public readonly bool IsValid { get; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object other)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.Object | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -187,7 +272,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(NetworkInterfaceEndPoint)
+#### Equals(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
@@ -197,25 +282,29 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(NetworkInterfaceEndPoint other)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                     | Name  | Description |
 |--------------------------|-------|-------------|
 | NetworkInterfaceEndPoint | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetHashCode()
+#### GetHashCode()
 
 <div class="markdown level1 summary">
 
@@ -225,19 +314,23 @@ public bool Equals(NetworkInterfaceEndPoint other)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -245,9 +338,11 @@ System.ValueType.GetHashCode()
 
 </div>
 
-### ToFixedString()
+#### ToFixedString()
 
 <div class="markdown level1 summary">
+
+Returns the NetworkInterfaceEndPoint as a .
 
 </div>
 
@@ -255,19 +350,23 @@ System.ValueType.GetHashCode()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public FixedString64Bytes ToFixedString()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type               | Description |
 |--------------------|-------------|
 | FixedString64Bytes |             |
 
-### ToString()
+#### ToString()
 
 <div class="markdown level1 summary">
 
@@ -277,19 +376,23 @@ public FixedString64Bytes ToFixedString()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override string ToString()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -297,9 +400,9 @@ System.ValueType.ToString()
 
 </div>
 
-## 
+### Operators
 
-### Equality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
+#### Equality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
@@ -309,26 +412,30 @@ System.ValueType.ToString()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator ==(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                     | Name | Description |
 |--------------------------|------|-------------|
 | NetworkInterfaceEndPoint | lhs  |             |
 | NetworkInterfaceEndPoint | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
+#### Inequality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
@@ -338,20 +445,24 @@ public static bool operator ==(NetworkInterfaceEndPoint lhs, NetworkInterfaceEnd
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator !=(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                     | Name | Description |
 |--------------------------|------|-------------|
 | NetworkInterfaceEndPoint | lhs  |             |
 | NetworkInterfaceEndPoint | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -361,6 +472,46 @@ public static bool operator !=(NetworkInterfaceEndPoint lhs, NetworkInterfaceEnd
 
 <div>
 
-System.IEquatable\&lt;T&gt;
+System.IEquatable\<T\>
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

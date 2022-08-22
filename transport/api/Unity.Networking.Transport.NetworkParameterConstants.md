@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.NetworkParameterConstants  
-title: Unity.Networking.Transport.NetworkParameterConstants  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkParameterConstants
 
 <div class="markdown level0 summary">
 
@@ -19,55 +72,59 @@ Default NetworkParameter Constants.
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkParameterConstants
 ```
 
-## 
+</div>
 
-### ConnectTimeoutMS
+### Fields
+
+#### ConnectTimeoutMS
 
 <div class="markdown level1 summary">
 
@@ -80,19 +137,23 @@ the NetworkConfigParameter
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int ConnectTimeoutMS = 1000
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### DisconnectTimeoutMS
+#### DisconnectTimeoutMS
 
 <div class="markdown level1 summary">
 
@@ -105,19 +166,23 @@ overridden using the NetworkConfigParameter
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int DisconnectTimeoutMS = 30000
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### DriverDataStreamSize
+#### DriverDataStreamSize
 
 <div class="markdown level1 summary">
 
@@ -130,24 +195,28 @@ using the NetworkConfigParameter.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int DriverDataStreamSize = 65536
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### HeartbeatTimeoutMS
+#### HeartbeatTimeoutMS
 
 <div class="markdown level1 summary">
 
 The default inactivity timeout after which a heartbeat is sent. This
-value can be overridden using the NetworkConfigParameter
+This value can be overridden using the NetworkConfigParameter
 
 </div>
 
@@ -155,19 +224,23 @@ value can be overridden using the NetworkConfigParameter
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int HeartbeatTimeoutMS = 500
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### InitialEventQueueSize
+#### InitialEventQueueSize
 
 <div class="markdown level1 summary">
 
@@ -179,21 +252,27 @@ The default size of the event queue.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int InitialEventQueueSize = 100
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### InvalidConnectionId
+#### InvalidConnectionId
 
 <div class="markdown level1 summary">
+
+The invalid connection id
 
 </div>
 
@@ -201,19 +280,23 @@ public const int InitialEventQueueSize = 100
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int InvalidConnectionId = -1
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxConnectAttempts
+#### MaxConnectAttempts
 
 <div class="markdown level1 summary">
 
@@ -226,21 +309,27 @@ using the NetworkConfigParameter
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int MaxConnectAttempts = 60
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MTU
+#### MTU
 
 <div class="markdown level1 summary">
+
+The max size of any packet that can be sent
 
 </div>
 
@@ -248,40 +337,58 @@ public const int MaxConnectAttempts = 60
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int MTU = 1400
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReconnectionTimeoutMS
+</div>
 
-<div class="markdown level1 summary">
+<div class="hidden-sm col-md-2" role="complementary">
 
-The default inactivity timeout after which re-establishing the
-connection is attempted. This value can be overridden using the
-NetworkConfigParameter.
+<div class="sideaffix">
+
+<div class="contribution">
 
 </div>
 
-<div class="markdown level1 conceptual">
+##### In This Article
+
+<div>
 
 </div>
 
-#### Declaration
+</div>
 
-``` lang-csharp
-public const int ReconnectionTimeoutMS = 2000
-```
+</div>
 
-#### Field Value
+</div>
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

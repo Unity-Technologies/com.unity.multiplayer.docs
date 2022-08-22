@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.Utilities.SimulatorUtility.Context  
-title: Unity.Networking.Transport.Utilities.SimulatorUtility.Context  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct SimulatorUtility.Context
 
 <div class="markdown level0 summary">
 
@@ -17,55 +70,59 @@ title: Unity.Networking.Transport.Utilities.SimulatorUtility.Context
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Utilities
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct Context
 ```
 
-## 
+</div>
 
-### NextPacketTime
+### Fields
+
+#### FuzzFactor
 
 <div class="markdown level1 summary">
 
@@ -75,19 +132,127 @@ public struct Context
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int FuzzFactor
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### FuzzOffset
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int FuzzOffset
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### MaxPacketCount
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int MaxPacketCount
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### MaxPacketSize
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int MaxPacketSize
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### NextPacketTime
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public long NextPacketTime
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### PacketCount
+#### PacketCount
 
 <div class="markdown level1 summary">
 
@@ -97,19 +262,23 @@ public long NextPacketTime
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketCount
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDropCount
+#### PacketDelayMs
 
 <div class="markdown level1 summary">
 
@@ -119,19 +288,75 @@ public int PacketCount
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int PacketDelayMs
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### PacketDrop
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int PacketDrop
+```
+
+</div>
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### PacketDropCount
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketDropCount
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDuplicatedCount
+#### PacketJitterMs
 
 <div class="markdown level1 summary">
 
@@ -141,19 +366,23 @@ public int PacketDropCount
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
-public int PacketDuplicatedCount
+public int PacketJitterMs
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Random
+#### Random
 
 <div class="markdown level1 summary">
 
@@ -163,19 +392,23 @@ public int PacketDuplicatedCount
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public Mathematics.Random Random
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                     | Description |
 |--------------------------|-------------|
 | Unity.Mathematics.Random |             |
 
-### ReadyPackets
+#### RandomSeed
 
 <div class="markdown level1 summary">
 
@@ -185,19 +418,49 @@ public Mathematics.Random Random
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public uint RandomSeed
+```
+
+</div>
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
+
+#### ReadyPackets
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int ReadyPackets
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### StatsTime
+#### StatsTime
 
 <div class="markdown level1 summary">
 
@@ -207,19 +470,23 @@ public int ReadyPackets
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public long StatsTime
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### WaitingPackets
+#### WaitingPackets
 
 <div class="markdown level1 summary">
 
@@ -229,14 +496,58 @@ public long StatsTime
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int WaitingPackets
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

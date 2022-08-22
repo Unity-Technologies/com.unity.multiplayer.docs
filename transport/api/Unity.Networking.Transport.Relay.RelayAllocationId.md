@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.Relay.RelayAllocationId  
-title: Unity.Networking.Transport.Relay.RelayAllocationId  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct RelayAllocationId
 
 <div class="markdown level0 summary">
 
@@ -39,45 +92,51 @@ System.IComparable\<RelayAllocationId\>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Relay
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<RelayAllocationId>
 ```
 
-## 
+</div>
 
-### k_Length
+### Fields
+
+#### k_Length
 
 <div class="markdown level1 summary">
+
+The length in bytes of the Allocation Id.
 
 </div>
 
@@ -85,21 +144,27 @@ public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<Rel
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int k_Length = 16
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Value
+#### Value
 
 <div class="markdown level1 summary">
+
+The raw data of the Allocation Id.
 
 </div>
 
@@ -107,21 +172,25 @@ public const int k_Length = 16
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *Value
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-## 
+### Methods
 
-### CompareTo(RelayAllocationId)
+#### CompareTo(RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -131,25 +200,29 @@ public byte *Value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int CompareTo(RelayAllocationId other)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name  | Description |
 |-------------------|-------|-------------|
 | RelayAllocationId | other |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Equals(Object)
+#### Equals(Object)
 
 <div class="markdown level1 summary">
 
@@ -159,25 +232,29 @@ public int CompareTo(RelayAllocationId other)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object other)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.Object | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -185,7 +262,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(RelayAllocationId)
+#### Equals(RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -195,27 +272,33 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(RelayAllocationId other)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name  | Description |
 |-------------------|-------|-------------|
 | RelayAllocationId | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### FromBytePointer(Byte\*, Int32)
+#### FromBytePointer(Byte\*, Int32)
 
 <div class="markdown level1 summary">
+
+Converts a byte pointer to a RelayAllocationId.
 
 </div>
 
@@ -223,26 +306,36 @@ public bool Equals(RelayAllocationId other)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 ```
 
-#### Parameters
+</div>
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
+##### Parameters
 
-#### Returns
+| Type          | Name    | Description                                   |
+|---------------|---------|-----------------------------------------------|
+| System.Byte\* | dataPtr | The pointer to the data of the Allocation Id. |
+| System.Int32  | length  | The length of the data.                       |
 
-| Type              | Description |
-|-------------------|-------------|
-| RelayAllocationId |             |
+##### Returns
 
-### GetHashCode()
+| Type              | Description                                                     |
+|-------------------|-----------------------------------------------------------------|
+| RelayAllocationId | Returns a RelayAllocationId constructed from the provided data. |
+
+##### Exceptions
+
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
+
+#### GetHashCode()
 
 <div class="markdown level1 summary">
 
@@ -252,19 +345,23 @@ public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -272,9 +369,9 @@ System.ValueType.GetHashCode()
 
 </div>
 
-## 
+### Operators
 
-### Equality(RelayAllocationId, RelayAllocationId)
+#### Equality(RelayAllocationId, RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -284,26 +381,30 @@ System.ValueType.GetHashCode()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | RelayAllocationId | lhs  |             |
 | RelayAllocationId | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(RelayAllocationId, RelayAllocationId)
+#### Inequality(RelayAllocationId, RelayAllocationId)
 
 <div class="markdown level1 summary">
 
@@ -313,20 +414,24 @@ public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | RelayAllocationId | lhs  |             |
 | RelayAllocationId | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -336,12 +441,52 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 <div>
 
-System.IEquatable&lt;T&gt;
+System.IEquatable\<T\>
 
 </div>
 
 <div>
 
-System.IComparable&lt;T&gt;
+System.IComparable\<T\>
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

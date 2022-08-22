@@ -1,9 +1,65 @@
----  
-id: Unity.Networking.Transport.Relay.RelayServerData  
-title: Unity.Networking.Transport.Relay.RelayServerData  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct RelayServerData
 
 <div class="markdown level0 summary">
+
+Used by the Relay Protocol to describe how to connect to the Relay
+Service.
 
 </div>
 
@@ -17,57 +73,63 @@ title: Unity.Networking.Transport.Relay.RelayServerData
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Relay
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct RelayServerData
 ```
 
-## 
+</div>
 
-### RelayServerData(ref NetworkEndPoint, UInt16, RelayAllocationId, String, String, String, Boolean)
+### Constructors
+
+#### RelayServerData(ref NetworkEndPoint, UInt16, RelayAllocationId, String, String, String, Boolean)
 
 <div class="markdown level1 summary">
+
+Initializes a new instance of the RelayServerData class
 
 </div>
 
@@ -75,27 +137,33 @@ public struct RelayServerData
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, RelayAllocationId allocationId, string connectionData, string hostConnectionData, string key, bool isSecure)
 ```
 
-#### Parameters
+</div>
 
-| Type              | Name               | Description |
-|-------------------|--------------------|-------------|
-| NetworkEndPoint   | endpoint           |             |
-| System.UInt16     | nonce              |             |
-| RelayAllocationId | allocationId       |             |
-| System.String     | connectionData     |             |
-| System.String     | hostConnectionData |             |
-| System.String     | key                |             |
-| System.Boolean    | isSecure           |             |
+##### Parameters
 
-### RelayServerData(ref NetworkEndPoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
+| Type              | Name               | Description              |
+|-------------------|--------------------|--------------------------|
+| NetworkEndPoint   | endpoint           | The endpoint             |
+| System.UInt16     | nonce              | The nonce                |
+| RelayAllocationId | allocationId       | The allocation id        |
+| System.String     | connectionData     | The connection data      |
+| System.String     | hostConnectionData | The host connection data |
+| System.String     | key                | The key                  |
+| System.Boolean    | isSecure           | The is secure            |
+
+#### RelayServerData(ref NetworkEndPoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
 
 <div class="markdown level1 summary">
+
+Initializes a new instance of the RelayServerData class
 
 </div>
 
@@ -103,29 +171,35 @@ public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, RelayAllocati
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, ref RelayAllocationId allocationId, ref RelayConnectionData connectionData, ref RelayConnectionData hostConnectionData, ref RelayHMACKey key, bool isSecure)
 ```
 
-#### Parameters
+</div>
 
-| Type                | Name               | Description |
-|---------------------|--------------------|-------------|
-| NetworkEndPoint     | endpoint           |             |
-| System.UInt16       | nonce              |             |
-| RelayAllocationId   | allocationId       |             |
-| RelayConnectionData | connectionData     |             |
-| RelayConnectionData | hostConnectionData |             |
-| RelayHMACKey        | key                |             |
-| System.Boolean      | isSecure           |             |
+##### Parameters
 
-## 
+| Type                | Name               | Description              |
+|---------------------|--------------------|--------------------------|
+| NetworkEndPoint     | endpoint           | The endpoint             |
+| System.UInt16       | nonce              | The nonce                |
+| RelayAllocationId   | allocationId       | The allocation id        |
+| RelayConnectionData | connectionData     | The connection data      |
+| RelayConnectionData | hostConnectionData | The host connection data |
+| RelayHMACKey        | key                | The key                  |
+| System.Boolean      | isSecure           | The is secure            |
 
-### AllocationId
+### Fields
+
+#### AllocationId
 
 <div class="markdown level1 summary">
+
+The unique identifier of the client on the Relay Server.
 
 </div>
 
@@ -133,21 +207,27 @@ public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, ref RelayAllo
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public RelayAllocationId AllocationId
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type              | Description |
 |-------------------|-------------|
 | RelayAllocationId |             |
 
-### ConnectionData
+#### ConnectionData
 
 <div class="markdown level1 summary">
+
+The data that describes the client presence on the Relay Server.
 
 </div>
 
@@ -155,21 +235,27 @@ public RelayAllocationId AllocationId
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public RelayConnectionData ConnectionData
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | RelayConnectionData |             |
 
-### Endpoint
+#### Endpoint
 
 <div class="markdown level1 summary">
+
+The endpoint of the Relay Server.
 
 </div>
 
@@ -177,21 +263,27 @@ public RelayConnectionData ConnectionData
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEndPoint Endpoint
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### HMAC
+#### HMAC
 
 <div class="markdown level1 summary">
+
+The computed HMAC.
 
 </div>
 
@@ -199,21 +291,27 @@ public NetworkEndPoint Endpoint
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *HMAC
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### HMACKey
+#### HMACKey
 
 <div class="markdown level1 summary">
+
+The HMAC key for the connection.
 
 </div>
 
@@ -221,21 +319,27 @@ public byte *HMAC
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public RelayHMACKey HMACKey
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | RelayHMACKey |             |
 
-### HostConnectionData
+#### HostConnectionData
 
 <div class="markdown level1 summary">
+
+The connection data of the host client on the Relay Server.
 
 </div>
 
@@ -243,21 +347,27 @@ public RelayHMACKey HMACKey
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public RelayConnectionData HostConnectionData
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | RelayConnectionData |             |
 
-### IsSecure
+#### IsSecure
 
 <div class="markdown level1 summary">
+
+A byte that identifies the connection as secured.
 
 </div>
 
@@ -265,21 +375,27 @@ public RelayConnectionData HostConnectionData
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly byte IsSecure
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type        | Description |
 |-------------|-------------|
 | System.Byte |             |
 
-### Nonce
+#### Nonce
 
 <div class="markdown level1 summary">
+
+The Nonce value used to stablish the connection with the Relay Server.
 
 </div>
 
@@ -287,23 +403,29 @@ public readonly byte IsSecure
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ushort Nonce
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-## 
+### Methods
 
-### ComputeNewNonce()
+#### ComputeNewNonce()
 
 <div class="markdown level1 summary">
+
+Computes the new nonce, this must be called one time!
 
 </div>
 
@@ -311,8 +433,52 @@ public ushort Nonce
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void ComputeNewNonce()
 ```
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

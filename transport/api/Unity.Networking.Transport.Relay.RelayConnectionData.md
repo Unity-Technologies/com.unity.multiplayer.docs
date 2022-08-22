@@ -1,12 +1,66 @@
----  
-id: Unity.Networking.Transport.Relay.RelayConnectionData  
-title: Unity.Networking.Transport.Relay.RelayConnectionData  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct RelayConnectionData
 
 <div class="markdown level0 summary">
 
 This is the encrypted data that the Relay server uses for describing a
-connection. Used mainly in the connection stablishing process (Binding)
+connection. Used mainly in the connection establishing process
+(Binding).
 
 </div>
 
@@ -20,57 +74,63 @@ connection. Used mainly in the connection stablishing process (Binding)
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Relay
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct RelayConnectionData
 ```
 
-## 
+</div>
 
-### k_Length
+### Fields
+
+#### k_Length
 
 <div class="markdown level1 summary">
+
+The length in bytes of the Connection Data.
 
 </div>
 
@@ -78,21 +138,27 @@ public struct RelayConnectionData
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public const int k_Length = 255
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Value
+#### Value
 
 <div class="markdown level1 summary">
+
+The raw data of the Connection Data
 
 </div>
 
@@ -100,23 +166,29 @@ public const int k_Length = 255
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *Value
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-## 
+### Methods
 
-### FromBytePointer(Byte\*, Int32)
+#### FromBytePointer(Byte\*, Int32)
 
 <div class="markdown level1 summary">
+
+Converts a byte pointer to a RelayConnectionData.
 
 </div>
 
@@ -124,21 +196,71 @@ public byte *Value
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static RelayConnectionData FromBytePointer(byte *dataPtr, int length)
 ```
 
-#### Parameters
+</div>
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
+##### Parameters
 
-#### Returns
+| Type          | Name    | Description                                     |
+|---------------|---------|-------------------------------------------------|
+| System.Byte\* | dataPtr | The pointer to the data of the Connection Data. |
+| System.Int32  | length  | The length of the data.                         |
 
-| Type                | Description |
-|---------------------|-------------|
-| RelayConnectionData |             |
+##### Returns
+
+| Type                | Description                                                       |
+|---------------------|-------------------------------------------------------------------|
+| RelayConnectionData | Returns a RelayConnectionData constructed from the provided data. |
+
+##### Exceptions
+
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

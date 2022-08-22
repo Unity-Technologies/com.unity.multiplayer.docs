@@ -1,9 +1,66 @@
----  
-id: Unity.Networking.Transport.BaselibNetworkInterface  
-title: Unity.Networking.Transport.BaselibNetworkInterface  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct BaselibNetworkInterface
 
 <div class="markdown level0 summary">
+
+Default NetworkInterface implementation based on Unity's internal
+Baselib UDP sockets this is ensure to work on all platforms except for
+Unity's WebGL.
 
 </div>
 
@@ -35,57 +92,63 @@ System.IDisposable
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct BaselibNetworkInterface : INetworkInterface, IDisposable
 ```
 
-## 
+</div>
 
-### DefaultParameters
+### Fields
+
+#### DefaultParameters
 
 <div class="markdown level1 summary">
+
+Default Parameters for BaselibNetworkInterface
 
 </div>
 
@@ -93,23 +156,29 @@ public struct BaselibNetworkInterface : INetworkInterface, IDisposable
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static BaselibNetworkParameter DefaultParameters
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                    | Description |
 |-------------------------|-------------|
 | BaselibNetworkParameter |             |
 
-## 
+### Properties
 
-### IsCreated
+#### IsCreated
 
 <div class="markdown level1 summary">
+
+Gets if the interface has been created.
 
 </div>
 
@@ -117,23 +186,27 @@ public static BaselibNetworkParameter DefaultParameters
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsCreated { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### LocalEndPoint
+#### LocalEndPoint
 
 <div class="markdown level1 summary">
 
-Returns the local endpoint.
+Returns the local endpoint the BaselibNetworkInterface is bound to.
 
 </div>
 
@@ -141,25 +214,29 @@ Returns the local endpoint.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type                     | Description              |
 |--------------------------|--------------------------|
 | NetworkInterfaceEndPoint | NetworkInterfaceEndPoint |
 
-## 
+### Methods
 
-### Bind(NetworkInterfaceEndPoint)
+#### Bind(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
-Binds the BaselibNetworkInterface to the endpoint passed.
+Binds the medium to a specific endpoint.
 
 </div>
 
@@ -167,29 +244,34 @@ Binds the BaselibNetworkInterface to the endpoint passed.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Bind(NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+</div>
 
-| Type                     | Name     | Description                  |
-|--------------------------|----------|------------------------------|
-| NetworkInterfaceEndPoint | endpoint | A valid ipv4 or ipv6 address |
+##### Parameters
 
-#### Returns
+| Type                     | Name     | Description                       |
+|--------------------------|----------|-----------------------------------|
+| NetworkInterfaceEndPoint | endpoint | A valid NetworkInterfaceEndPoint. |
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 | int         |
+##### Returns
 
-### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
+| Type         | Description           |
+|--------------|-----------------------|
+| System.Int32 | Returns 0 on success. |
+
+#### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
-Creates a interface endpoint.
+Converts a generic NetworkEndPoint to its NetworkInterfaceEndPoint
+version for the BaselibNetworkInterface.
 
 </div>
 
@@ -197,28 +279,34 @@ Creates a interface endpoint.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+</div>
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkEndPoint          | address  |             |
-| NetworkInterfaceEndPoint | endpoint |             |
+##### Parameters
 
-#### Returns
+| Type                     | Name     | Description                              |
+|--------------------------|----------|------------------------------------------|
+| NetworkEndPoint          | address  | The NetworkEndPoint endpoint to convert. |
+| NetworkInterfaceEndPoint | endpoint |                                          |
 
-| Type         | Description              |
-|--------------|--------------------------|
-| System.Int32 | NetworkInterfaceEndPoint |
+##### Returns
 
-### CreateSendInterface()
+| Type         | Description                                                |
+|--------------|------------------------------------------------------------|
+| System.Int32 | returns 0 on success and sets the converted endpoint value |
+
+#### CreateSendInterface()
 
 <div class="markdown level1 summary">
+
+Creates the send interface
 
 </div>
 
@@ -226,21 +314,27 @@ public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterface
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSendInterface CreateSendInterface()
 ```
 
-#### Returns
+</div>
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkSendInterface |             |
+##### Returns
 
-### Dispose()
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkSendInterface | The network send interface |
+
+#### Dispose()
 
 <div class="markdown level1 summary">
+
+Disposes this instance
 
 </div>
 
@@ -248,15 +342,22 @@ public NetworkSendInterface CreateSendInterface()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-### GetGenericEndPoint(NetworkInterfaceEndPoint)
+</div>
+
+#### GetGenericEndPoint(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
+
+Converts a NetworkInterfaceEndPoint to its generic NetworkEndPoint
+version.
 
 </div>
 
@@ -264,25 +365,29 @@ public void Dispose()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
 ```
 
-#### Parameters
+</div>
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
+##### Parameters
 
-#### Returns
+| Type                     | Name     | Description                                       |
+|--------------------------|----------|---------------------------------------------------|
+| NetworkInterfaceEndPoint | endpoint | The NetworkInterfaceEndPoint endpoint to convert. |
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+##### Returns
 
-### Initialize(NetworkSettings)
+| Type            | Description                           |
+|-----------------|---------------------------------------|
+| NetworkEndPoint | Returns the converted endpoint value. |
+
+#### Initialize(NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -294,27 +399,34 @@ Initializes a instance of the BaselibNetworkInterface struct.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Initialize(NetworkSettings settings)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description           |
+|--------------|-----------------------|
+| System.Int32 | Returns 0 on succees. |
 
-### Listen()
+#### Listen()
 
 <div class="markdown level1 summary">
+
+Listens on the socket, currently this Interface doesn't support
+listening as its UDP based.
 
 </div>
 
@@ -322,21 +434,28 @@ public int Initialize(NetworkSettings settings)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int Listen()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
-| System.Int32 |             |
+| System.Int32 | Returns 0   |
 
-### ScheduleReceive(NetworkPacketReceiver, JobHandle)
+#### ScheduleReceive(NetworkPacketReceiver, JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedule a ReceiveJob. This is used to read data from your supported
+medium and pass it to the AppendData function supplied by NetworkDriver
 
 </div>
 
@@ -344,28 +463,35 @@ public int Listen()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 ```
 
-#### Parameters
+</div>
 
-| Type                  | Name     | Description |
-|-----------------------|----------|-------------|
-| NetworkPacketReceiver | receiver |             |
-| JobHandle             | dep      |             |
+##### Parameters
 
-#### Returns
+| Type                  | Name     | Description                                      |
+|-----------------------|----------|--------------------------------------------------|
+| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
+| JobHandle             | dep      | A to any dependency we might have.               |
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+##### Returns
 
-### ScheduleSend(NativeQueue&lt;QueuedSendMessage&gt;, JobHandle)
+| Type      | Description                                 |
+|-----------|---------------------------------------------|
+| JobHandle | A to our newly created ScheduleReceive Job. |
+
+#### ScheduleSend(NativeQueue\<QueuedSendMessage\>, JobHandle)
 
 <div class="markdown level1 summary">
+
+Schedule a SendJob. This is used to flush send queues to your supported
+medium
 
 </div>
 
@@ -373,24 +499,28 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
 ```
 
-#### Parameters
+</div>
 
-| Type                             | Name      | Description |
-|----------------------------------|-----------|-------------|
-| NativeQueue&lt;QueuedSendMessage&gt;| sendQueue |             |
-| JobHandle                        | dep       |             |
+##### Parameters
 
-#### Returns
+| Type                             | Name      | Description                                                |
+|----------------------------------|-----------|------------------------------------------------------------|
+| NativeQueue\<QueuedSendMessage\> | sendQueue | The send queue which can be used to emulate parallel send. |
+| JobHandle                        | dep       | A to any dependency we might have.                         |
 
-| Type      | Description |
-|-----------|-------------|
-| JobHandle |             |
+##### Returns
+
+| Type      | Description                              |
+|-----------|------------------------------------------|
+| JobHandle | A to our newly created ScheduleSend Job. |
 
 ### Implements
 
@@ -403,5 +533,45 @@ INetworkInterface
 <div>
 
 System.IDisposable
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

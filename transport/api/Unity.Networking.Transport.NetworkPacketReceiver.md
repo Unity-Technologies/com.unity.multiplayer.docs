@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.NetworkPacketReceiver  
-title: Unity.Networking.Transport.NetworkPacketReceiver  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkPacketReceiver
 
 <div class="markdown level0 summary">
 
@@ -30,57 +83,63 @@ scenarios:
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkPacketReceiver
 ```
 
-## 
+</div>
 
-### LastUpdateTime
+### Properties
+
+#### LastUpdateTime
 
 <div class="markdown level1 summary">
+
+Gets the value of the last update time.
 
 </div>
 
@@ -88,21 +147,27 @@ public struct NetworkPacketReceiver
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly long LastUpdateTime { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### ReceiveErrorCode
+#### ReceiveErrorCode
 
 <div class="markdown level1 summary">
+
+Sets the value of the receive error code
 
 </div>
 
@@ -110,25 +175,30 @@ public readonly long LastUpdateTime { get; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int ReceiveErrorCode { set; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### AllocateMemory(ref Int32)
+#### AllocateMemory(ref Int32)
 
 <div class="markdown level1 summary">
 
-Calls NetworkDriver's AllocateMemory(ref Int32)
+Calls NetworkDriver's
+Unity.Networking.Transport.NetworkDriver.AllocateMemory(System.Int32@)
 
 </div>
 
@@ -136,25 +206,29 @@ Calls NetworkDriver's AllocateMemory(ref Int32)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public IntPtr AllocateMemory(ref int dataLen)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type         | Name    | Description                                       |
 |--------------|---------|---------------------------------------------------|
 | System.Int32 | dataLen | Size of memory to allocate in bytes. Must be \> 0 |
 
-#### Returns
+##### Returns
 
 | Type          | Description                                                                                                                                                                        |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System.IntPtr | Pointer to allocated memory or IntPtr.Zero if there is no space left (this function doesn't set ReceiveErrorCode! caller should decide if this is Out of memory or something else) |
 
-### AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32, NetworkPacketReceiver.AppendPacketMode)
+#### AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32, NetworkPacketReceiver.AppendPacketMode)
 
 <div class="markdown level1 summary">
 
@@ -167,13 +241,17 @@ NetworkDriver
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool AppendPacket(IntPtr data, ref NetworkInterfaceEndPoint address, int dataLen, NetworkPacketReceiver.AppendPacketMode mode = NetworkPacketReceiver.AppendPacketMode.None)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                                   | Name    | Description                                                                                                                     |
 |----------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -182,13 +260,13 @@ public bool AppendPacket(IntPtr data, ref NetworkInterfaceEndPoint address, int 
 | System.Int32                           | dataLen | Length of in bytes                                                                                                              |
 | NetworkPacketReceiver.AppendPacketMode | mode    | Extra flags, like NoCopyNeeded that means - no copy is needed, data is already in NetworkDriver's data stream                   |
 
-#### Returns
+##### Returns
 
 | Type           | Description       |
 |----------------|-------------------|
 | System.Boolean | True if no errors |
 
-### IsAddressUsed(NetworkInterfaceEndPoint)
+#### IsAddressUsed(NetworkInterfaceEndPoint)
 
 <div class="markdown level1 summary">
 
@@ -202,20 +280,64 @@ sync with the correct state.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsAddressUsed(NetworkInterfaceEndPoint address)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type                     | Name    | Description |
 |--------------------------|---------|-------------|
 | NetworkInterfaceEndPoint | address |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

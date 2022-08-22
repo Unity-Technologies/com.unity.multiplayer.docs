@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct ReliableUtility.SharedContext
 
 <div class="markdown level0 summary">
 
@@ -17,55 +70,59 @@ title: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Utilities
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct SharedContext
 ```
 
-## 
+</div>
 
-### errorCode
+### Fields
+
+#### errorCode
 
 <div class="markdown level1 summary">
 
@@ -75,19 +132,23 @@ public struct SharedContext
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ReliableUtility.ErrorCodes errorCode
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                       | Description |
 |----------------------------|-------------|
 | ReliableUtility.ErrorCodes |             |
 
-### MinimumResendTime
+#### MinimumResendTime
 
 <div class="markdown level1 summary">
 
@@ -97,19 +158,23 @@ public ReliableUtility.ErrorCodes errorCode
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int MinimumResendTime
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReceivedPackets
+#### ReceivedPackets
 
 <div class="markdown level1 summary">
 
@@ -123,19 +188,23 @@ peer in the header when sending.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public SequenceBufferContext ReceivedPackets
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                  | Description |
 |-----------------------|-------------|
 | SequenceBufferContext |             |
 
-### RemoteTimerDataOffset
+#### RemoteTimerDataOffset
 
 <div class="markdown level1 summary">
 
@@ -145,19 +214,23 @@ public SequenceBufferContext ReceivedPackets
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int RemoteTimerDataOffset
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RemoteTimerDataStride
+#### RemoteTimerDataStride
 
 <div class="markdown level1 summary">
 
@@ -167,19 +240,23 @@ public int RemoteTimerDataOffset
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int RemoteTimerDataStride
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RttInfo
+#### RttInfo
 
 <div class="markdown level1 summary">
 
@@ -189,19 +266,23 @@ public int RemoteTimerDataStride
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ReliableUtility.RTTInfo RttInfo
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                    | Description |
 |-------------------------|-------------|
 | ReliableUtility.RTTInfo |             |
 
-### SentPackets
+#### SentPackets
 
 <div class="markdown level1 summary">
 
@@ -215,19 +296,23 @@ This is used when determining if a resend is needed.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public SequenceBufferContext SentPackets
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                  | Description |
 |-----------------------|-------------|
 | SequenceBufferContext |             |
 
-### stats
+#### stats
 
 <div class="markdown level1 summary">
 
@@ -237,19 +322,23 @@ public SequenceBufferContext SentPackets
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public ReliableUtility.Statistics stats
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                       | Description |
 |----------------------------|-------------|
 | ReliableUtility.Statistics |             |
 
-### TimerDataOffset
+#### TimerDataOffset
 
 <div class="markdown level1 summary">
 
@@ -259,19 +348,23 @@ public ReliableUtility.Statistics stats
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int TimerDataOffset
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### TimerDataStride
+#### TimerDataStride
 
 <div class="markdown level1 summary">
 
@@ -281,19 +374,23 @@ public int TimerDataOffset
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int TimerDataStride
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### WindowSize
+#### WindowSize
 
 <div class="markdown level1 summary">
 
@@ -303,14 +400,58 @@ public int TimerDataStride
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int WindowSize
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

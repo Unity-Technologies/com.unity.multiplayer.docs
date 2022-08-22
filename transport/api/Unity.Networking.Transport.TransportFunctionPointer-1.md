@@ -1,9 +1,65 @@
----  
-id: Unity.Networking.Transport.TransportFunctionPointer-1  
-title: Unity.Networking.Transport.TransportFunctionPointer-1  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct TransportFunctionPointer\<T\>
 
 <div class="markdown level0 summary">
+
+Represents a wrapper around burst compatible function pointers in a
+portable way
 
 </div>
 
@@ -17,52 +73,56 @@ title: Unity.Networking.Transport.TransportFunctionPointer-1
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct TransportFunctionPointer<T>
     where T : Delegate
 ```
+
+</div>
 
 ##### Type Parameters
 
@@ -70,11 +130,13 @@ public struct TransportFunctionPointer<T>
 |------|-------------|
 | T    |             |
 
-## 
+### Constructors
 
-### TransportFunctionPointer(T)
+#### TransportFunctionPointer(T)
 
 <div class="markdown level1 summary">
+
+Initializes a new instance of the class
 
 </div>
 
@@ -82,21 +144,27 @@ public struct TransportFunctionPointer<T>
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public TransportFunctionPointer(T executeDelegate)
 ```
 
-#### Parameters
+</div>
 
-| Type | Name            | Description |
-|------|-----------------|-------------|
-| T    | executeDelegate |             |
+##### Parameters
 
-### TransportFunctionPointer(FunctionPointer\&lt;T&gt;)
+| Type | Name            | Description          |
+|------|-----------------|----------------------|
+| T    | executeDelegate | The execute delegate |
+
+#### TransportFunctionPointer(FunctionPointer\<T\>)
 
 <div class="markdown level1 summary">
+
+Initializes a new instance of the class
 
 </div>
 
@@ -104,23 +172,29 @@ public TransportFunctionPointer(T executeDelegate)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public TransportFunctionPointer(FunctionPointer<T> Pointer)
 ```
 
-#### Parameters
+</div>
 
-| Type                | Name    | Description |
-|---------------------|---------|-------------|
-| FunctionPointer&lt;T&gt; | Pointer |             |
+##### Parameters
 
-## 
+| Type                 | Name    | Description |
+|----------------------|---------|-------------|
+| FunctionPointer\<T\> | Pointer | The pointer |
 
-### Ptr
+### Fields
+
+#### Ptr
 
 <div class="markdown level1 summary">
+
+Returns Burst
 
 </div>
 
@@ -128,23 +202,29 @@ public TransportFunctionPointer(FunctionPointer<T> Pointer)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly FunctionPointer<T> Ptr
 ```
 
-#### Field Value
+</div>
 
-| Type                | Description |
-|---------------------|-------------|
-| FunctionPointer&lt;T&gt;|             |
+##### Field Value
 
-## 
+| Type                 | Description |
+|----------------------|-------------|
+| FunctionPointer\<T\> |             |
 
-### Burst(T)
+### Methods
+
+#### Burst(T)
 
 <div class="markdown level1 summary">
+
+returns a wrapped Burst compiled function pointer
 
 </div>
 
@@ -152,27 +232,33 @@ public readonly FunctionPointer<T> Ptr
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static TransportFunctionPointer<T> Burst(T burstCompilableDelegate)
 ```
 
-#### Parameters
+</div>
 
-| Type | Name                    | Description |
-|------|-------------------------|-------------|
-| T    | burstCompilableDelegate |             |
+##### Parameters
 
-#### Returns
+| Type | Name                    | Description                   |
+|------|-------------------------|-------------------------------|
+| T    | burstCompilableDelegate | The burst compilable delegate |
 
-| Type                         | Description |
-|------------------------------|-------------|
-| TransportFunctionPointer&lt;T&gt;|             |
+##### Returns
 
-### Managed(T)
+| Type                          | Description                       |
+|-------------------------------|-----------------------------------|
+| TransportFunctionPointer\<T\> | A transport function pointer of t |
+
+#### Managed(T)
 
 <div class="markdown level1 summary">
+
+Returns a wrapped managed function pointer
 
 </div>
 
@@ -180,20 +266,64 @@ public static TransportFunctionPointer<T> Burst(T burstCompilableDelegate)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static TransportFunctionPointer<T> Managed(T managedDelegate)
 ```
 
-#### Parameters
+</div>
 
-| Type | Name            | Description |
-|------|-----------------|-------------|
-| T    | managedDelegate |             |
+##### Parameters
 
-#### Returns
+| Type | Name            | Description          |
+|------|-----------------|----------------------|
+| T    | managedDelegate | The managed delegate |
 
-| Type                         | Description |
-|------------------------------|-------------|
-| TransportFunctionPointer&lt;T&gt; |             |
+##### Returns
+
+| Type                          | Description                       |
+|-------------------------------|-----------------------------------|
+| TransportFunctionPointer\<T\> | A transport function pointer of t |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.BaselibNetworkParameterExtensions  
-title: Unity.Networking.Transport.BaselibNetworkParameterExtensions  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class BaselibNetworkParameterExtensions
 
 <div class="markdown level0 summary">
 
@@ -17,13 +70,13 @@ title: Unity.Networking.Transport.BaselibNetworkParameterExtensions
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+BaselibNetworkParameterExtensions
 
 </div>
 
@@ -35,63 +88,69 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class BaselibNetworkParameterExtensions
 ```
 
-## 
+</div>
 
-### GetBaselibNetworkInterfaceParameters(ref NetworkSettings)
+### Methods
+
+#### GetBaselibNetworkInterfaceParameters(ref NetworkSettings)
 
 <div class="markdown level1 summary">
+
+Gets the BaselibNetworkParameter
 
 </div>
 
@@ -99,27 +158,33 @@ public static class BaselibNetworkParameterExtensions
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static BaselibNetworkParameter GetBaselibNetworkInterfaceParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                    | Description |
-|-------------------------|-------------|
-| BaselibNetworkParameter |             |
+| Type                    | Description                                                        |
+|-------------------------|--------------------------------------------------------------------|
+| BaselibNetworkParameter | Returns the BaselibNetworkParameter values for the NetworkSettings |
 
-### WithBaselibNetworkInterfaceParameters(ref NetworkSettings, Int32, Int32, UInt32)
+#### WithBaselibNetworkInterfaceParameters(ref NetworkSettings, Int32, Int32, UInt32)
 
 <div class="markdown level1 summary">
+
+Sets the BaselibNetworkParameter values for the NetworkSettings
 
 </div>
 
@@ -127,23 +192,67 @@ public static BaselibNetworkParameter GetBaselibNetworkInterfaceParameters(this 
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static ref NetworkSettings WithBaselibNetworkInterfaceParameters(this ref NetworkSettings settings, int receiveQueueCapacity = 64, int sendQueueCapacity = 64, uint maximumPayloadSize = 2000U)
 ```
 
-#### Parameters
+</div>
 
-| Type            | Name                 | Description |
-|-----------------|----------------------|-------------|
-| NetworkSettings | settings             |             |
-| System.Int32    | receiveQueueCapacity |             |
-| System.Int32    | sendQueueCapacity    |             |
-| System.UInt32   | maximumPayloadSize   |             |
+##### Parameters
 
-#### Returns
+| Type            | Name                 | Description          |
+|-----------------|----------------------|----------------------|
+| NetworkSettings | settings             |                      |
+| System.Int32    | receiveQueueCapacity | receiveQueueCapacity |
+| System.Int32    | sendQueueCapacity    | sendQueueCapacity    |
+| System.UInt32   | maximumPayloadSize   | maximumPayloadSize   |
+
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

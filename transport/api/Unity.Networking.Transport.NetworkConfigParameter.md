@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.NetworkConfigParameter  
-title: Unity.Networking.Transport.NetworkConfigParameter  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkConfigParameter
 
 <div class="markdown level0 summary">
 
@@ -24,12 +77,6 @@ INetworkParameter
 
 </div>
 
-<div>
-
-IValidatableNetworkParameter
-
-</div>
-
 </div>
 
 <div class="inheritedMembers">
@@ -38,55 +85,59 @@ IValidatableNetworkParameter
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
+<div class="codewrapper">
+
 ``` lang-csharp
-public struct NetworkConfigParameter : INetworkParameter, IValidatableNetworkParameter
+public struct NetworkConfigParameter : INetworkParameter
 ```
 
-## 
+</div>
 
-### connectTimeoutMS
+### Fields
+
+#### connectTimeoutMS
 
 <div class="markdown level1 summary">
 
@@ -99,19 +150,23 @@ a new connection attempt.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int connectTimeoutMS
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### disconnectTimeoutMS
+#### disconnectTimeoutMS
 
 <div class="markdown level1 summary">
 
@@ -124,19 +179,23 @@ connection event, before we disconnect it.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int disconnectTimeoutMS
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Remarks
+##### Remarks
 
 <div class="markdown level1 remarks">
 
@@ -147,7 +206,7 @@ timeout (since heartbeats count as connection events).
 
 </div>
 
-### fixedFrameTimeMS
+#### fixedFrameTimeMS
 
 <div class="markdown level1 summary">
 
@@ -160,19 +219,23 @@ This is used instead of a clock.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int fixedFrameTimeMS
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Remarks
+##### Remarks
 
 <div class="markdown level1 remarks">
 
@@ -181,7 +244,7 @@ important than correctness.
 
 </div>
 
-### heartbeatTimeoutMS
+#### heartbeatTimeoutMS
 
 <div class="markdown level1 summary">
 
@@ -194,19 +257,23 @@ activity.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int heartbeatTimeoutMS
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### maxConnectAttempts
+#### maxConnectAttempts
 
 <div class="markdown level1 summary">
 
@@ -219,19 +286,23 @@ disconnecting.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int maxConnectAttempts
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### maxFrameTimeMS
+#### maxFrameTimeMS
 
 <div class="markdown level1 summary">
 
@@ -243,19 +314,23 @@ The maximum amount of time a single frame can advance timeout values.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int maxFrameTimeMS
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Remarks
+##### Remarks
 
 <div class="markdown level1 remarks">
 
@@ -264,34 +339,9 @@ spikes when both endpoints lives in the same process.
 
 </div>
 
-### reconnectionTimeoutMS
+### Methods
 
-<div class="markdown level1 summary">
-
-A timeout in milliseconds after which reconnection is attempted if there
-is no activity.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int reconnectionTimeoutMS
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-## 
-
-### Validate()
+#### Validate()
 
 <div class="markdown level1 summary">
 
@@ -301,13 +351,17 @@ public int reconnectionTimeoutMS
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Validate()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -321,8 +375,42 @@ INetworkParameter
 
 </div>
 
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
 <div>
 
-IValidatableNetworkParameter
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.FragmentationPipelineStage  
-title: Unity.Networking.Transport.FragmentationPipelineStage  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct FragmentationPipelineStage
 
 <div class="markdown level0 summary">
 
@@ -29,57 +82,63 @@ INetworkPipelineStage
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct FragmentationPipelineStage : INetworkPipelineStage
 ```
 
-## 
+</div>
 
-### StaticSize
+### Properties
+
+#### StaticSize
 
 <div class="markdown level1 summary">
+
+Gets the value of the static size
 
 </div>
 
@@ -87,23 +146,29 @@ public struct FragmentationPipelineStage : INetworkPipelineStage
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int StaticSize { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### StaticInitialize(Byte\*, Int32, NetworkSettings)
+#### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
 <div class="markdown level1 summary">
+
+Statics the initialize using the specified static instance buffer
 
 </div>
 
@@ -111,30 +176,80 @@ public readonly int StaticSize { get; }
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings settings)
 ```
 
-#### Parameters
+</div>
 
-| Type            | Name                       | Description |
-|-----------------|----------------------------|-------------|
-| System.Byte\*   | staticInstanceBuffer       |             |
-| System.Int32    | staticInstanceBufferLength |             |
-| NetworkSettings | settings                   |             |
+##### Parameters
 
-#### Returns
+| Type            | Name                       | Description                       |
+|-----------------|----------------------------|-----------------------------------|
+| System.Byte\*   | staticInstanceBuffer       | The static instance buffer        |
+| System.Int32    | staticInstanceBufferLength | The static instance buffer length |
+| NetworkSettings | settings                   | The NetworkSettings               |
 
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkPipelineStage |             |
+##### Returns
+
+| Type                 | Description                |
+|----------------------|----------------------------|
+| NetworkPipelineStage | The network pipeline stage |
+
+##### Exceptions
+
+| Type                             | Condition                                                                                                                          |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| System.InvalidOperationException | Please specify a FragmentationUtility.Parameters with a PayloadCapacity greater than MTU, which is {NetworkParameterConstants.MTU} |
 
 ### Implements
 
 <div>
 
 INetworkPipelineStage
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

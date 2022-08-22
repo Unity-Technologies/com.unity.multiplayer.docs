@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.Utilities.SimulatorUtility.Parameters  
-title: Unity.Networking.Transport.Utilities.SimulatorUtility.Parameters  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct SimulatorUtility.Parameters
 
 <div class="markdown level0 summary">
 
@@ -31,55 +84,59 @@ INetworkParameter
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Utilities
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct Parameters : INetworkParameter
 ```
 
-## 
+</div>
 
-### FuzzFactor
+### Fields
+
+#### FuzzFactor
 
 <div class="markdown level1 summary">
 
@@ -95,19 +152,23 @@ percent chance to get flipped.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int FuzzFactor
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### FuzzOffset
+#### FuzzOffset
 
 <div class="markdown level1 summary">
 
@@ -121,19 +182,23 @@ only fuzz a part of the packet.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int FuzzOffset
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxPacketCount
+#### MaxPacketCount
 
 <div class="markdown level1 summary">
 
@@ -147,19 +212,23 @@ processing buffer and can be later brought back.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxPacketCount
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxPacketSize
+#### MaxPacketSize
 
 <div class="markdown level1 summary">
 
@@ -172,41 +241,23 @@ exceeds this size it will bypass the simulator.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxPacketSize
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Mode
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public ApplyMode Mode
-```
-
-#### Field Value
-
-| Type      | Description |
-|-----------|-------------|
-| ApplyMode |             |
-
-### PacketDelayMs
+#### PacketDelayMs
 
 <div class="markdown level1 summary">
 
@@ -218,19 +269,23 @@ Fixed delay to apply to all packets which pass through.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketDelayMs
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDropInterval
+#### PacketDropInterval
 
 <div class="markdown level1 summary">
 
@@ -244,25 +299,30 @@ PacketDropInterval is 5 every 5th packet is dropped.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketDropInterval
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDropPercentage
+#### PacketDropPercentage
 
 <div class="markdown level1 summary">
 
-0 - 100, denotes the percentage of packets that will be dropped (i.e.
-deleted unprocessed). E.g. "5" means approximately every 20th packet
-will be dropped. RandomSeed to change random seed values.
+Use a drop percentage when deciding when to drop packet. For every
+packet a random number generator is used to determine if the packet
+should be dropped or not. A percentage of 5 means approximately every
+20th packet will be dropped.
 
 </div>
 
@@ -270,46 +330,23 @@ will be dropped. RandomSeed to change random seed values.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketDropPercentage
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDuplicationPercentage
-
-<div class="markdown level1 summary">
-
-0 - 100, denotes the percentage of packets that will be duplicated once.
-E.g. "5" means approximately every 20th packet will be duplicated once.
-RandomSeed to change random seed values. Note: Skipped if the packet is
-dropped.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int PacketDuplicationPercentage
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### PacketJitterMs
+#### PacketJitterMs
 
 <div class="markdown level1 summary">
 
@@ -322,19 +359,23 @@ subtracts amount from fixed delay.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int PacketJitterMs
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RandomSeed
+#### RandomSeed
 
 <div class="markdown level1 summary">
 
@@ -348,22 +389,94 @@ that are dependant on the random number generator.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public uint RandomSeed
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
+
+### Methods
+
+#### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public bool Validate()
+```
+
+</div>
+
+##### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Implements
 
 <div>
 
 INetworkParameter
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
 
 </div>

@@ -1,9 +1,64 @@
----  
-id: Unity.Networking.Transport.NetworkPipelineContext  
-title: Unity.Networking.Transport.NetworkPipelineContext  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkPipelineContext
 
 <div class="markdown level0 summary">
+
+The network pipeline context
 
 </div>
 
@@ -17,57 +72,63 @@ title: Unity.Networking.Transport.NetworkPipelineContext
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkPipelineContext
 ```
 
-## 
+</div>
 
-### accumulatedHeaderCapacity
+### Fields
+
+#### accumulatedHeaderCapacity
 
 <div class="markdown level1 summary">
+
+The accumulated header capacity
 
 </div>
 
@@ -75,21 +136,27 @@ public struct NetworkPipelineContext
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int accumulatedHeaderCapacity
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### header
+#### header
 
 <div class="markdown level1 summary">
+
+The header
 
 </div>
 
@@ -97,21 +164,27 @@ public int accumulatedHeaderCapacity
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public DataStreamWriter header
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type             | Description |
 |------------------|-------------|
 | DataStreamWriter |             |
 
-### internalProcessBuffer
+#### internalProcessBuffer
 
 <div class="markdown level1 summary">
+
+The internal process buffer
 
 </div>
 
@@ -119,21 +192,27 @@ public DataStreamWriter header
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *internalProcessBuffer
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### internalProcessBufferLength
+#### internalProcessBufferLength
 
 <div class="markdown level1 summary">
+
+The internal process buffer length
 
 </div>
 
@@ -141,21 +220,27 @@ public byte *internalProcessBuffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int internalProcessBufferLength
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### internalSharedProcessBuffer
+#### internalSharedProcessBuffer
 
 <div class="markdown level1 summary">
+
+The internal shared process buffer
 
 </div>
 
@@ -163,21 +248,27 @@ public int internalProcessBufferLength
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *internalSharedProcessBuffer
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### internalSharedProcessBufferLength
+#### internalSharedProcessBufferLength
 
 <div class="markdown level1 summary">
+
+The internal shared process buffer length
 
 </div>
 
@@ -185,21 +276,27 @@ public byte *internalSharedProcessBuffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int internalSharedProcessBufferLength
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### staticInstanceBuffer
+#### staticInstanceBuffer
 
 <div class="markdown level1 summary">
+
+The static instance buffer
 
 </div>
 
@@ -207,21 +304,27 @@ public int internalSharedProcessBufferLength
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public byte *staticInstanceBuffer
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### staticInstanceBufferLength
+#### staticInstanceBufferLength
 
 <div class="markdown level1 summary">
+
+The static instance buffer length
 
 </div>
 
@@ -229,21 +332,27 @@ public byte *staticInstanceBuffer
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public int staticInstanceBufferLength
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### timestamp
+#### timestamp
 
 <div class="markdown level1 summary">
+
+The timestamp
 
 </div>
 
@@ -251,14 +360,58 @@ public int staticInstanceBufferLength
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public long timestamp
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

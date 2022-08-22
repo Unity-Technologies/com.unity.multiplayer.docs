@@ -1,7 +1,60 @@
----  
-id: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions  
-title: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Class FragmentationStageParameterExtensions
 
 <div class="markdown level0 summary">
 
@@ -17,13 +70,13 @@ title: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtension
 
 <div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
 </div>
 
 <div class="level1">
 
-System.Dynamic.ExpandoObject
+FragmentationStageParameterExtensions
 
 </div>
 
@@ -35,63 +88,69 @@ System.Dynamic.ExpandoObject
 
 <div>
 
-Object.Equals(Object)
+System.Object.Equals(System.Object)
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetHashCode()
+System.Object.GetHashCode()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.MemberwiseClone()
+System.Object.MemberwiseClone()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ToString()
+System.Object.ToString()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport.Utilities
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static class FragmentationStageParameterExtensions
 ```
 
-## 
+</div>
 
-### GetFragmentationStageParameters(ref NetworkSettings)
+### Methods
+
+#### GetFragmentationStageParameters(ref NetworkSettings)
 
 <div class="markdown level1 summary">
+
+Gets the FragmentationUtility.Parameters
 
 </div>
 
@@ -99,27 +158,33 @@ public static class FragmentationStageParameterExtensions
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static FragmentationUtility.Parameters GetFragmentationStageParameters(this ref NetworkSettings settings)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-#### Returns
+##### Returns
 
-| Type                            | Description |
-|---------------------------------|-------------|
-| FragmentationUtility.Parameters |             |
+| Type                            | Description                                                                |
+|---------------------------------|----------------------------------------------------------------------------|
+| FragmentationUtility.Parameters | Returns the FragmentationUtility.Parameters values for the NetworkSettings |
 
-### WithFragmentationStageParameters(ref NetworkSettings, Int32)
+#### WithFragmentationStageParameters(ref NetworkSettings, Int32)
 
 <div class="markdown level1 summary">
+
+Sets the FragmentationUtility.Parameters values for the NetworkSettings
 
 </div>
 
@@ -127,21 +192,65 @@ public static FragmentationUtility.Parameters GetFragmentationStageParameters(th
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static ref NetworkSettings WithFragmentationStageParameters(this ref NetworkSettings settings, int payloadCapacity = 4096)
 ```
 
-#### Parameters
+</div>
 
-| Type            | Name            | Description |
-|-----------------|-----------------|-------------|
-| NetworkSettings | settings        |             |
-| System.Int32    | payloadCapacity |             |
+##### Parameters
 
-#### Returns
+| Type            | Name            | Description     |
+|-----------------|-----------------|-----------------|
+| NetworkSettings | settings        |                 |
+| System.Int32    | payloadCapacity | PayloadCapacity |
+
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

@@ -1,17 +1,78 @@
----  
-id: Unity.Networking.Transport.NetworkConnection  
-title: Unity.Networking.Transport.NetworkConnection  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkConnection
 
 <div class="markdown level0 summary">
-
-The NetworkConnection is a struct that hold all information needed by
-the driver to link it with a virtual connection. The NetworkConnection
-is a public representation of a connection.
 
 </div>
 
 <div class="markdown level0 conceptual">
+
+</div>
+
+<div classs="implements">
+
+##### Implements
+
+<div>
+
+System.IEquatable\<NetworkConnection\>
+
+</div>
 
 </div>
 
@@ -21,39 +82,51 @@ is a public representation of a connection.
 
 <div>
 
-Object.Equals(Object, Object)
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.GetType()
+
+</div>
+
+<div>
+
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
+<div class="codewrapper">
+
 ``` lang-csharp
-public struct NetworkConnection
+public struct NetworkConnection : IEquatable<NetworkConnection>
 ```
 
-## 
+</div>
 
-### InternalId
+### Properties
+
+#### InternalId
 
 <div class="markdown level1 summary">
+
+Gets the value of the connection's internal ID.
 
 </div>
 
@@ -61,23 +134,25 @@ public struct NetworkConnection
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly int InternalId { get; }
 ```
 
-#### Property Value
+</div>
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### IsCreated
+#### IsCreated
 
 <div class="markdown level1 summary">
-
-Check to see if a NetworkConnection is Created.
 
 </div>
 
@@ -85,132 +160,121 @@ Check to see if a NetworkConnection is Created.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public readonly bool IsCreated { get; }
 ```
 
-#### Property Value
-
-| Type           | Description                                                                                                  |
-|----------------|--------------------------------------------------------------------------------------------------------------|
-| System.Boolean | `true` if the NetworkConnection has been correctly created by a call to Accept() or Connect(NetworkEndPoint) |
-
-### Version
-
-<div class="markdown level1 summary">
-
 </div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public readonly int Version { get; }
-```
-
-#### Property Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-## 
-
-### Close(NetworkDriver)
-
-<div class="markdown level1 summary">
-
-Close an active NetworkConnection, similar to .
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int Close(NetworkDriver driver)
-```
-
-#### Parameters
-
-| Type          | Name   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| NetworkDriver | driver | The driver that owns the virtual connection. |
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### Disconnect(NetworkDriver)
-
-<div class="markdown level1 summary">
-
-Disconnects a virtual connection and marks it for deletion. This
-connection will be removed on next the next frame.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int Disconnect(NetworkDriver driver)
-```
-
-#### Parameters
-
-| Type          | Name   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| NetworkDriver | driver | The driver that owns the virtual connection. |
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### Equals(Object)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public override bool Equals(object o)
-```
-
-#### Parameters
-
-| Type          | Name | Description |
-|---------------|------|-------------|
-| System.Object | o    |             |
-
-#### Returns
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+### Methods
+
+#### Close(NetworkDriver)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int Close(NetworkDriver driver)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| NetworkDriver | driver |             |
+
+##### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### Disconnect(NetworkDriver)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public int Disconnect(NetworkDriver driver)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| NetworkDriver | driver |             |
+
+##### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### Equals(Object)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+##### Declaration
+
+<div class="codewrapper">
+
+``` lang-csharp
+public override bool Equals(object o)
+```
+
+</div>
+
+##### Parameters
+
+| Type          | Name | Description |
+|---------------|------|-------------|
+| System.Object | o    |             |
+
+##### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+##### Overrides
 
 <div>
 
@@ -218,7 +282,7 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-### Equals(NetworkConnection)
+#### Equals(NetworkConnection)
 
 <div class="markdown level1 summary">
 
@@ -228,25 +292,29 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(NetworkConnection o)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | NetworkConnection | o    |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetHashCode()
+#### GetHashCode()
 
 <div class="markdown level1 summary">
 
@@ -256,19 +324,23 @@ public bool Equals(NetworkConnection o)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+</div>
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
 <div>
 
@@ -276,7 +348,7 @@ System.ValueType.GetHashCode()
 
 </div>
 
-### GetState(NetworkDriver)
+#### GetState(NetworkDriver)
 
 <div class="markdown level1 summary">
 
@@ -286,30 +358,31 @@ System.ValueType.GetHashCode()
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConnection.State GetState(NetworkDriver driver)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type          | Name   | Description |
 |---------------|--------|-------------|
 | NetworkDriver | driver |             |
 
-#### Returns
+##### Returns
 
 | Type                    | Description |
 |-------------------------|-------------|
 | NetworkConnection.State |             |
 
-### PopEvent(NetworkDriver, out DataStreamReader)
+#### PopEvent(NetworkDriver, out DataStreamReader)
 
 <div class="markdown level1 summary">
-
-Receive an event for this specific connection. Should be called until it
-returns Empty, even if the socket is disconnected.
 
 </div>
 
@@ -317,26 +390,30 @@ returns Empty, even if the socket is disconnected.
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader stream)
 ```
 
-#### Parameters
+</div>
 
-| Type             | Name   | Description                                  |
-|------------------|--------|----------------------------------------------|
-| NetworkDriver    | driver | The driver that owns the virtual connection. |
-| DataStreamReader | stream |                                              |
+##### Parameters
 
-#### Returns
+| Type             | Name   | Description |
+|------------------|--------|-------------|
+| NetworkDriver    | driver |             |
+| DataStreamReader | stream |             |
+
+##### Returns
 
 | Type              | Description |
 |-------------------|-------------|
 | NetworkEvent.Type |             |
 
-### PopEvent(NetworkDriver, out DataStreamReader, out NetworkPipeline)
+#### PopEvent(NetworkDriver, out DataStreamReader, out NetworkPipeline)
 
 <div class="markdown level1 summary">
 
@@ -346,13 +423,17 @@ public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader str
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader stream, out NetworkPipeline pipeline)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type             | Name     | Description |
 |------------------|----------|-------------|
@@ -360,13 +441,15 @@ public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader str
 | DataStreamReader | stream   |             |
 | NetworkPipeline  | pipeline |             |
 
-#### Returns
+##### Returns
 
 | Type              | Description |
 |-------------------|-------------|
 | NetworkEvent.Type |             |
 
-### ToString()
+### Operators
+
+#### Equality(NetworkConnection, NetworkConnection)
 
 <div class="markdown level1 summary">
 
@@ -376,58 +459,30 @@ public NetworkEvent.Type PopEvent(NetworkDriver driver, out DataStreamReader str
 
 </div>
 
-#### Declaration
+##### Declaration
 
-``` lang-csharp
-public override string ToString()
-```
-
-#### Returns
-
-| Type          | Description |
-|---------------|-------------|
-| System.String |             |
-
-#### Overrides
-
-<div>
-
-System.ValueType.ToString()
-
-</div>
-
-## 
-
-### Equality(NetworkConnection, NetworkConnection)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator ==(NetworkConnection lhs, NetworkConnection rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | NetworkConnection | lhs  |             |
 | NetworkConnection | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(NetworkConnection, NetworkConnection)
+#### Inequality(NetworkConnection, NetworkConnection)
 
 <div class="markdown level1 summary">
 
@@ -437,21 +492,73 @@ public static bool operator ==(NetworkConnection lhs, NetworkConnection rhs)
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public static bool operator !=(NetworkConnection lhs, NetworkConnection rhs)
 ```
 
-#### Parameters
+</div>
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | NetworkConnection | lhs  |             |
 | NetworkConnection | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### Implements
+
+<div>
+
+System.IEquatable\<T\>
+
+</div>
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>

@@ -1,9 +1,65 @@
----  
-id: Unity.Networking.Transport.NetworkSendInterface  
-title: Unity.Networking.Transport.NetworkSendInterface  
----
+<div id="wrapper">
+
+<div>
+
+<div class="container">
+
+<div class="navbar-header">
+
+Toggle navigation
+
+<img src="../logo.svg" id="logo" class="svg" />
+
+</div>
+
+<div id="navbar" class="collapse navbar-collapse">
+
+<div class="form-group">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="subnav navbar navbar-default">
+
+<div id="breadcrumb" class="container hide-when-search">
+
+-   
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container body-content hide-when-search" role="main">
+
+<div class="sidenav hide-when-search">
+
+Show / Hide Table of Contents
+
+<div id="sidetoggle" class="sidetoggle collapse">
+
+<div id="sidetoc">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article row grid-right">
+
+<div class="col-md-10">
+
+# Struct NetworkSendInterface
 
 <div class="markdown level0 summary">
+
+The network send interface used to pass around function pointers to the
+actual INetworkInterface
 
 </div>
 
@@ -17,57 +73,63 @@ title: Unity.Networking.Transport.NetworkSendInterface
 
 <div>
 
-ValueType.Equals(Object)
+System.ValueType.Equals(System.Object)
 
 </div>
 
 <div>
 
-ValueType.GetHashCode()
+System.ValueType.GetHashCode()
 
 </div>
 
 <div>
 
-ValueType.ToString()
+System.ValueType.ToString()
 
 </div>
 
 <div>
 
-Object.Equals(Object, Object)
+System.Object.Equals(System.Object, System.Object)
 
 </div>
 
 <div>
 
-Object.GetType()
+System.Object.GetType()
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.ReferenceEquals(System.Object, System.Object)
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+###### **Namespace**: Unity.Networking.Transport
 
-##### **Assembly**: transport.dll
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkSendInterface
 ```
 
-## 
+</div>
 
-### AbortSendMessage
+### Fields
+
+#### AbortSendMessage
 
 <div class="markdown level1 summary">
+
+The abort send message function pointer
 
 </div>
 
@@ -75,21 +137,27 @@ public struct NetworkSendInterface
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> AbortSendMessage
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                                                      | Description |
 |---------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkSendInterface.AbortSendMessageDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkSendInterface.AbortSendMessageDelegate\> |             |
 
-### BeginSendMessage
+#### BeginSendMessage
 
 <div class="markdown level1 summary">
+
+The begin send message function pointer
 
 </div>
 
@@ -97,21 +165,27 @@ public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> A
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> BeginSendMessage
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                                                      | Description |
 |---------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkSendInterface.BeginSendMessageDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkSendInterface.BeginSendMessageDelegate\> |             |
 
-### EndSendMessage
+#### EndSendMessage
 
 <div class="markdown level1 summary">
+
+The end send message function pointer
 
 </div>
 
@@ -119,21 +193,27 @@ public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> B
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> EndSendMessage
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type                                                                    | Description |
 |-------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkSendInterface.EndSendMessageDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkSendInterface.EndSendMessageDelegate\> |             |
 
-### UserData
+#### UserData
 
 <div class="markdown level1 summary">
+
+The user data
 
 </div>
 
@@ -141,14 +221,58 @@ public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> End
 
 </div>
 
-#### Declaration
+##### Declaration
+
+<div class="codewrapper">
 
 ``` lang-csharp
 public IntPtr UserData
 ```
 
-#### Field Value
+</div>
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.IntPtr |             |
+
+</div>
+
+<div class="hidden-sm col-md-2" role="complementary">
+
+<div class="sideaffix">
+
+<div class="contribution">
+
+</div>
+
+##### In This Article
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grad-bottom">
+
+</div>
+
+<div class="footer">
+
+<div class="container">
+
+Back to top Generated by **DocFX**
+
+</div>
+
+</div>
+
+</div>
