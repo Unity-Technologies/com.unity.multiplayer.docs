@@ -643,7 +643,7 @@ module.exports = {
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferWriter.ForFixedStrings",
-                        "lavel": "Unity.Netcode.FastBufferWriter.ForFixedStrings"
+                        "label": "FastBufferWriter.ForFixedStrings"
                     },
                     {
                         "type": "doc",

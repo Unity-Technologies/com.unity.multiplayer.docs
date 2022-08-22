@@ -1,6 +1,6 @@
 ---
-id: Unity.Networking.Transport.FigmentationPipelineStage.FragContext
-title: Unity.Networking.Transport.FigmentationPipelineStage.FragContext
+id: Unity.Networking.Transport.FragmentationPipelineStage.FragContext
+title: Unity.Networking.Transport.FragmentationPipelineStage.FragContext
 ---
 
 <div id="wrapper">
