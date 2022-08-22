@@ -3,142 +3,80 @@ id: Unity.Netcode.NetworkPrefabHandler
 title: Unity.Netcode.NetworkPrefabHandler
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
-
 # Class NetworkPrefabHandler
 
-<div class="markdown level0 summary">
 
 Primary handler to add or remove customized spawn and destroy handlers
 for a network prefab (i.e. a prefab with a NetworkObject component)
 Register custom prefab handlers by implementing the
 INetworkPrefabInstanceHandler interface.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkPrefabHandler
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.Object.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.MemberwiseClone()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.ToString()
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Netcode
 
@@ -146,38 +84,34 @@ System.Object.ToString()
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkPrefabHandler
 ```
 
-</div>
+
 
 ### Methods
 
 #### AddHandler(GameObject, INetworkPrefabInstanceHandler)
 
-<div class="markdown level1 summary">
 
 Use a to register a class that implements the
 INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool AddHandler(GameObject networkPrefabAsset, INetworkPrefabInstanceHandler instanceHandler)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -194,27 +128,24 @@ public bool AddHandler(GameObject networkPrefabAsset, INetworkPrefabInstanceHand
 
 #### AddHandler(UInt32, INetworkPrefabInstanceHandler)
 
-<div class="markdown level1 summary">
 
 Use a Unity.Netcode.NetworkObject.GlobalObjectIdHash to register a class
 that implements the INetworkPrefabInstanceHandler interface with the
 NetworkPrefabHandler
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool AddHandler(uint globalObjectIdHash, INetworkPrefabInstanceHandler instanceHandler)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -231,26 +162,23 @@ public bool AddHandler(uint globalObjectIdHash, INetworkPrefabInstanceHandler in
 
 #### AddHandler(NetworkObject, INetworkPrefabInstanceHandler)
 
-<div class="markdown level1 summary">
 
 Use a NetworkObject to register a class that implements the
 INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool AddHandler(NetworkObject prefabAssetNetworkObject, INetworkPrefabInstanceHandler instanceHandler)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -267,27 +195,24 @@ public bool AddHandler(NetworkObject prefabAssetNetworkObject, INetworkPrefabIns
 
 #### RegisterHostGlobalObjectIdHashValues(GameObject, List\<GameObject\>)
 
-<div class="markdown level1 summary">
 
 HOST ONLY! Since a host is unique and is considered both a client and a
 server, for each source NetworkPrefab you must manually register all
 potential target overrides that have the NetworkObject component.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void RegisterHostGlobalObjectIdHashValues(GameObject sourceNetworkPrefab, List<GameObject> networkPrefabOverrides)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -298,26 +223,23 @@ public void RegisterHostGlobalObjectIdHashValues(GameObject sourceNetworkPrefab,
 
 #### RemoveHandler(GameObject)
 
-<div class="markdown level1 summary">
 
 Use the of the overridden network prefab asset to remove a registered
 class that implements the INetworkPrefabInstanceHandler interface.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool RemoveHandler(GameObject networkPrefabAsset)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -333,27 +255,24 @@ public bool RemoveHandler(GameObject networkPrefabAsset)
 
 #### RemoveHandler(UInt32)
 
-<div class="markdown level1 summary">
 
 Use the Unity.Netcode.NetworkObject.GlobalObjectIdHash of the overridden
 network prefab asset to remove a registered class that implements the
 INetworkPrefabInstanceHandler interface.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool RemoveHandler(uint globalObjectIdHash)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -369,27 +288,24 @@ public bool RemoveHandler(uint globalObjectIdHash)
 
 #### RemoveHandler(NetworkObject)
 
-<div class="markdown level1 summary">
 
 Use the NetworkObject of the overridden network prefab asset to remove a
 registered class that implements the INetworkPrefabInstanceHandler
 interface.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool RemoveHandler(NetworkObject networkObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -403,42 +319,5 @@ public bool RemoveHandler(NetworkObject networkObject)
 |----------------|-----------------------------------|
 | System.Boolean | true (success) or false (failure) |
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
-
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

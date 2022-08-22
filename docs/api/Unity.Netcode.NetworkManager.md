@@ -3,103 +3,41 @@ id: Unity.Netcode.NetworkManager
 title: Unity.Netcode.NetworkManager
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
-
 # Class NetworkManager
 
-<div class="markdown level0 summary">
 
 The main component of the library
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkManager
 
-</div>
 
-</div>
 
-<div classs="implements">
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkUpdateSystem
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Netcode
 
@@ -107,37 +45,33 @@ INetworkUpdateSystem
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkManager : MonoBehaviour, INetworkUpdateSystem
 ```
 
-</div>
+
 
 ### Fields
 
 #### LogLevel
 
-<div class="markdown level1 summary">
 
 The log level to use
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public LogLevel LogLevel
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -147,25 +81,22 @@ public LogLevel LogLevel
 
 #### NetworkConfig
 
-<div class="markdown level1 summary">
 
 The current NetworkConfig
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkConfig NetworkConfig
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -175,27 +106,24 @@ public NetworkConfig NetworkConfig
 
 #### PendingClients
 
-<div class="markdown level1 summary">
 
 Gets a dictionary of the clients that have been accepted by the
 transport but are still pending by the Netcode. This is only populated
 on the server.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public readonly Dictionary<ulong, PendingClient> PendingClients
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -205,25 +133,22 @@ public readonly Dictionary<ulong, PendingClient> PendingClients
 
 #### RunInBackground
 
-<div class="markdown level1 summary">
 
 Gets or sets if the application should be set to run in background
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool RunInBackground
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -233,25 +158,22 @@ public bool RunInBackground
 
 #### ServerClientId
 
-<div class="markdown level1 summary">
 
 The client id used to represent the server
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const ulong ServerClientId = 0UL
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -263,26 +185,23 @@ public const ulong ServerClientId = 0UL
 
 #### ConnectedClients
 
-<div class="markdown level1 summary">
 
 Gets a dictionary of connected clients and their clientId keys. This is
 only accessible on the server.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public IReadOnlyDictionary<ulong, NetworkClient> ConnectedClients { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -292,26 +211,23 @@ public IReadOnlyDictionary<ulong, NetworkClient> ConnectedClients { get; }
 
 #### ConnectedClientsIds
 
-<div class="markdown level1 summary">
 
 Gets a list of just the IDs of all connected clients. This is only
 accessible on the server.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public IReadOnlyList<ulong> ConnectedClientsIds { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -321,25 +237,22 @@ public IReadOnlyList<ulong> ConnectedClientsIds { get; }
 
 #### ConnectedClientsList
 
-<div class="markdown level1 summary">
 
 Gets a list of connected clients. This is only accessible on the server.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public IReadOnlyList<NetworkClient> ConnectedClientsList { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -349,25 +262,22 @@ public IReadOnlyList<NetworkClient> ConnectedClientsList { get; }
 
 #### ConnectedHostname
 
-<div class="markdown level1 summary">
 
 The current host name we are connected to, used to validate certificate
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public string ConnectedHostname { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -377,26 +287,23 @@ public string ConnectedHostname { get; }
 
 #### ConnectionApprovalCallback
 
-<div class="markdown level1 summary">
 
 The callback to invoke during connection approval. Allows client code to
 decide whether or not to allow incoming client connection
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public Action<NetworkManager.ConnectionApprovalRequest, NetworkManager.ConnectionApprovalResponse> ConnectionApprovalCallback { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -406,25 +313,22 @@ public Action<NetworkManager.ConnectionApprovalRequest, NetworkManager.Connectio
 
 #### CustomMessagingManager
 
-<div class="markdown level1 summary">
 
 Gets the CustomMessagingManager for this NetworkManager
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public CustomMessagingManager CustomMessagingManager { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -434,25 +338,22 @@ public CustomMessagingManager CustomMessagingManager { get; }
 
 #### IsClient
 
-<div class="markdown level1 summary">
 
 Gets Whether or not a client is running
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsClient { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -462,25 +363,22 @@ public bool IsClient { get; }
 
 #### IsConnectedClient
 
-<div class="markdown level1 summary">
 
 Gets if we are connected as a client
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsConnectedClient { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -490,25 +388,22 @@ public bool IsConnectedClient { get; }
 
 #### IsHost
 
-<div class="markdown level1 summary">
 
 Gets if we are running as host
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsHost { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -518,25 +413,22 @@ public bool IsHost { get; }
 
 #### IsListening
 
-<div class="markdown level1 summary">
 
 Gets Whether or not we are listening for connections
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsListening { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -546,25 +438,22 @@ public bool IsListening { get; }
 
 #### IsServer
 
-<div class="markdown level1 summary">
 
 Gets Whether or not a server is running
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool IsServer { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -574,25 +463,22 @@ public bool IsServer { get; }
 
 #### LocalClient
 
-<div class="markdown level1 summary">
 
 Gets the local NetworkClient for this client.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkClient LocalClient { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -602,25 +488,22 @@ public NetworkClient LocalClient { get; }
 
 #### LocalClientId
 
-<div class="markdown level1 summary">
 
 Returns ServerClientId if IsServer or LocalClientId if not
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ulong LocalClientId { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -630,25 +513,22 @@ public ulong LocalClientId { get; }
 
 #### LocalTime
 
-<div class="markdown level1 summary">
 
 The local NetworkTime
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime LocalTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -658,25 +538,22 @@ public NetworkTime LocalTime { get; }
 
 #### NetworkTickSystem
 
-<div class="markdown level1 summary">
 
 Accessor for the NetworkTickSystem of the NetworkManager.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTickSystem NetworkTickSystem { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -686,26 +563,23 @@ public NetworkTickSystem NetworkTickSystem { get; }
 
 #### NetworkTimeSystem
 
-<div class="markdown level1 summary">
 
 Accessor for the NetworkTimeSystem of the NetworkManager. Prefer the use
 of the LocalTime and ServerTime properties
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTimeSystem NetworkTimeSystem { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -715,26 +589,23 @@ public NetworkTimeSystem NetworkTimeSystem { get; }
 
 #### PrefabHandler
 
-<div class="markdown level1 summary">
 
 The NetworkPrefabHandler instance created after starting the
 NetworkManager
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkPrefabHandler PrefabHandler { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -744,26 +615,23 @@ public NetworkPrefabHandler PrefabHandler { get; }
 
 #### SceneManager
 
-<div class="markdown level1 summary">
 
 The NetworkSceneManager instance created after starting the
 NetworkManager
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSceneManager SceneManager { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -773,25 +641,22 @@ public NetworkSceneManager SceneManager { get; }
 
 #### ServerTime
 
-<div class="markdown level1 summary">
 
 The NetworkTime on the server
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTime ServerTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -801,26 +666,23 @@ public NetworkTime ServerTime { get; }
 
 #### ShutdownInProgress
 
-<div class="markdown level1 summary">
 
 Can be used to determine if the NetworkManager is currently shutting
 itself down
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool ShutdownInProgress { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -830,25 +692,22 @@ public bool ShutdownInProgress { get; }
 
 #### Singleton
 
-<div class="markdown level1 summary">
 
 The singleton instance of the NetworkManager
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkManager Singleton { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -858,25 +717,22 @@ public static NetworkManager Singleton { get; }
 
 #### SpawnManager
 
-<div class="markdown level1 summary">
 
 Gets the SpawnManager for this NetworkManager
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSpawnManager SpawnManager { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -888,7 +744,6 @@ public NetworkSpawnManager SpawnManager { get; }
 
 #### AddNetworkPrefab(GameObject)
 
-<div class="markdown level1 summary">
 
 Adds a new prefab to the network prefab list. This can be any GameObject
 with a NetworkObject component, from any source (addressables, asset
@@ -914,21 +769,19 @@ There are three limitations to this method:
     shouldn't be written around it - your code should be written so that
     the asset is expected to be loaded before it's needed.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void AddNetworkPrefab(GameObject prefab)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -944,25 +797,22 @@ public void AddNetworkPrefab(GameObject prefab)
 
 #### DisconnectClient(UInt64)
 
-<div class="markdown level1 summary">
 
 Disconnects the remote client.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void DisconnectClient(ulong clientId)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -972,7 +822,6 @@ public void DisconnectClient(ulong clientId)
 
 #### GetNetworkPrefabOverride(GameObject)
 
-<div class="markdown level1 summary">
 
 Returns the to use as the override as could be defined within the
 NetworkPrefab list Note: This should be used to create pools (with
@@ -981,21 +830,19 @@ Host model as it spawns everything locally. As such, the override will
 not be applied when spawning locally on a Host. Related Classes and
 Interfaces: NetworkPrefabHandler INetworkPrefabInstanceHandler
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public GameObject GetNetworkPrefabOverride(GameObject gameObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1011,26 +858,23 @@ public GameObject GetNetworkPrefabOverride(GameObject gameObject)
 
 #### NetworkUpdate(NetworkUpdateStage)
 
-<div class="markdown level1 summary">
 
 The update method that is being executed in the context of related
 NetworkUpdateStage.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void NetworkUpdate(NetworkUpdateStage updateStage)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1040,7 +884,6 @@ public void NetworkUpdate(NetworkUpdateStage updateStage)
 
 #### RemoveNetworkPrefab(GameObject)
 
-<div class="markdown level1 summary">
 
 Remove a prefab from the prefab list. As with AddNetworkPrefab, this is
 specific to the client it's called on - calling it on the server does
@@ -1049,21 +892,19 @@ not automatically remove anything on any of the client processes.
 Like AddNetworkPrefab, when NetworkConfig.ForceSamePrefabs is enabled,
 this cannot be called after connecting.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void RemoveNetworkPrefab(GameObject prefab)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1073,48 +914,42 @@ public void RemoveNetworkPrefab(GameObject prefab)
 
 #### SetSingleton()
 
-<div class="markdown level1 summary">
 
 Set this NetworkManager instance as the static NetworkManager singleton
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetSingleton()
 ```
 
-</div>
+
 
 #### Shutdown(Boolean)
 
-<div class="markdown level1 summary">
 
 Globally shuts down the library. Disconnects clients if connected and
 stops server if running.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Shutdown(bool discardMessageQueue = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1124,25 +959,22 @@ public void Shutdown(bool discardMessageQueue = false)
 
 #### StartClient()
 
-<div class="markdown level1 summary">
 
 Starts a client
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool StartClient()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1152,25 +984,22 @@ public bool StartClient()
 
 #### StartHost()
 
-<div class="markdown level1 summary">
 
 Starts a Host
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool StartHost()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1180,25 +1009,22 @@ public bool StartHost()
 
 #### StartServer()
 
-<div class="markdown level1 summary">
 
 Starts a server
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool StartServer()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -1210,26 +1036,23 @@ public bool StartServer()
 
 #### OnClientConnectedCallback
 
-<div class="markdown level1 summary">
 
 The callback to invoke once a client connects. This callback is only ran
 on the server and on the local client that connects.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event Action<ulong> OnClientConnectedCallback
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -1239,26 +1062,23 @@ public event Action<ulong> OnClientConnectedCallback
 
 #### OnClientDisconnectCallback
 
-<div class="markdown level1 summary">
 
 The callback to invoke when a client disconnects. This callback is only
 ran on the server and on the local client that disconnects.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event Action<ulong> OnClientDisconnectCallback
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -1268,25 +1088,22 @@ public event Action<ulong> OnClientDisconnectCallback
 
 #### OnServerStarted
 
-<div class="markdown level1 summary">
 
 The callback to invoke once the server is ready
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event Action OnServerStarted
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -1296,25 +1113,22 @@ public event Action OnServerStarted
 
 #### OnTransportFailure
 
-<div class="markdown level1 summary">
 
 The callback to invoke if the NetworkTransport fails.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event Action OnTransportFailure
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -1324,7 +1138,6 @@ public event Action OnTransportFailure
 
 ##### Remarks
 
-<div class="markdown level1 remarks">
 
 A failure of the transport is always followed by the NetworkManager
 shutting down. Recovering from a transport failure would normally entail
@@ -1332,80 +1145,43 @@ reconfiguring the transport (e.g. re-authenticating, or recreating a new
 service allocation depending on the transport) and restarting the
 client/server/host.
 
-</div>
+
 
 ### Implements
 
-<div>
+
 
 INetworkUpdateSystem
 
-</div>
+
 
 ### Extension Methods
 
-<div>
+
 
 NetworkUpdateLoop.RegisterAllNetworkUpdates(INetworkUpdateSystem)
 
-</div>
 
-<div>
+
+
 
 NetworkUpdateLoop.RegisterNetworkUpdate(INetworkUpdateSystem,
 NetworkUpdateStage)
 
-</div>
 
-<div>
+
+
 
 NetworkUpdateLoop.UnregisterAllNetworkUpdates(INetworkUpdateSystem)
 
-</div>
 
-<div>
+
+
 
 NetworkUpdateLoop.UnregisterNetworkUpdate(INetworkUpdateSystem,
 NetworkUpdateStage)
 
-</div>
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
 
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

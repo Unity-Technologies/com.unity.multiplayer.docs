@@ -3,73 +3,15 @@ id: Unity.Netcode.IReaderWriter
 title: Unity.Netcode.IReaderWriter
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
-
 # Interface IReaderWriter
 
-<div class="markdown level0 summary">
 
 Interface for an implementation of one side of a two-way serializer
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Netcode
 
@@ -77,38 +19,34 @@ Interface for an implementation of one side of a two-way serializer
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public interface IReaderWriter
 ```
 
-</div>
+
 
 ### Properties
 
 #### IsReader
 
-<div class="markdown level1 summary">
 
 Check whether this implementation is a "reader" - if it's been
 constructed to deserialize data
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 bool IsReader { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -118,26 +56,23 @@ bool IsReader { get; }
 
 #### IsWriter
 
-<div class="markdown level1 summary">
 
 Check whether this implementation is a "writer" - if it's been
 constructed to serialize data
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 bool IsWriter { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -149,26 +84,23 @@ bool IsWriter { get; }
 
 #### GetFastBufferReader()
 
-<div class="markdown level1 summary">
 
 Get the underlying FastBufferReader struct. Only valid when IsReader ==
 true
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 FastBufferReader GetFastBufferReader()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -178,26 +110,23 @@ FastBufferReader GetFastBufferReader()
 
 #### GetFastBufferWriter()
 
-<div class="markdown level1 summary">
 
 Get the underlying FastBufferWriter struct. Only valid when IsWriter ==
 true
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 FastBufferWriter GetFastBufferWriter()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -207,7 +136,6 @@ FastBufferWriter GetFastBufferWriter()
 
 #### PreCheck(Int32)
 
-<div class="markdown level1 summary">
 
 Performs an advance check to ensure space is available to read/write one
 or more values. This provides a performance benefit for serializing
@@ -215,21 +143,19 @@ multiple values using the SerializeValuePreChecked methods. But note
 that the benefit is small and only likely to be noticeable if
 serializing a very large number of items.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 bool PreCheck(int amount)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -245,28 +171,25 @@ bool PreCheck(int amount)
 
 #### SerializeNetworkSerializable\<T\>(ref T)
 
-<div class="markdown level1 summary">
 
 Read or write a NetworkSerializable value. SerializeValue() is the
 preferred method to do this - this is provided for backward
 compatibility only.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeNetworkSerializable<T>(ref T value)
     where T : INetworkSerializable, new()
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -282,25 +205,22 @@ void SerializeNetworkSerializable<T>(ref T value)
 
 #### SerializeValue(ref Color)
 
-<div class="markdown level1 summary">
 
 Read or write a Color value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Color value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -310,25 +230,22 @@ void SerializeValue(ref Color value)
 
 #### SerializeValue(ref Color\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Color values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Color[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -338,25 +255,22 @@ void SerializeValue(ref Color[] value)
 
 #### SerializeValue(ref Color32)
 
-<div class="markdown level1 summary">
 
 Read or write a Color32 value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Color32 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -366,25 +280,22 @@ void SerializeValue(ref Color32 value)
 
 #### SerializeValue(ref Color32\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Color32 values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Color32[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -394,25 +305,22 @@ void SerializeValue(ref Color32[] value)
 
 #### SerializeValue(ref Quaternion)
 
-<div class="markdown level1 summary">
 
 Read or write a Quaternion value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Quaternion value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -422,25 +330,22 @@ void SerializeValue(ref Quaternion value)
 
 #### SerializeValue(ref Quaternion\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Quaternion values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Quaternion[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -450,25 +355,22 @@ void SerializeValue(ref Quaternion[] value)
 
 #### SerializeValue(ref Ray)
 
-<div class="markdown level1 summary">
 
 Read or write a Ray value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Ray value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -478,25 +380,22 @@ void SerializeValue(ref Ray value)
 
 #### SerializeValue(ref Ray\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Ray values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Ray[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -506,25 +405,22 @@ void SerializeValue(ref Ray[] value)
 
 #### SerializeValue(ref Ray2D)
 
-<div class="markdown level1 summary">
 
 Read or write a Ray2D value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Ray2D value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -534,25 +430,22 @@ void SerializeValue(ref Ray2D value)
 
 #### SerializeValue(ref Ray2D\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Ray2D values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Ray2D[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -562,25 +455,22 @@ void SerializeValue(ref Ray2D[] value)
 
 #### SerializeValue(ref Byte)
 
-<div class="markdown level1 summary">
 
 Read or write a single byte
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref byte value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -590,25 +480,22 @@ void SerializeValue(ref byte value)
 
 #### SerializeValue(ref String, Boolean)
 
-<div class="markdown level1 summary">
 
 Read or write a string
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref string s, bool oneByteChars = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -619,25 +506,22 @@ void SerializeValue(ref string s, bool oneByteChars = false)
 
 #### SerializeValue(ref Vector2)
 
-<div class="markdown level1 summary">
 
 Read or write a Vector2 value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector2 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -647,25 +531,22 @@ void SerializeValue(ref Vector2 value)
 
 #### SerializeValue(ref Vector2\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Vector2 values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector2[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -675,25 +556,22 @@ void SerializeValue(ref Vector2[] value)
 
 #### SerializeValue(ref Vector2Int)
 
-<div class="markdown level1 summary">
 
 Read or write a Vector2Int value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector2Int value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -703,25 +581,22 @@ void SerializeValue(ref Vector2Int value)
 
 #### SerializeValue(ref Vector2Int\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Vector2Int values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector2Int[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -731,25 +606,22 @@ void SerializeValue(ref Vector2Int[] value)
 
 #### SerializeValue(ref Vector3)
 
-<div class="markdown level1 summary">
 
 Read or write a Vector3 value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector3 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -759,25 +631,22 @@ void SerializeValue(ref Vector3 value)
 
 #### SerializeValue(ref Vector3\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Vector3 values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector3[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -787,25 +656,22 @@ void SerializeValue(ref Vector3[] value)
 
 #### SerializeValue(ref Vector3Int)
 
-<div class="markdown level1 summary">
 
 Read or write a Vector3Int value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector3Int value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -815,25 +681,22 @@ void SerializeValue(ref Vector3Int value)
 
 #### SerializeValue(ref Vector3Int\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Vector3Int values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector3Int[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -843,25 +706,22 @@ void SerializeValue(ref Vector3Int[] value)
 
 #### SerializeValue(ref Vector4)
 
-<div class="markdown level1 summary">
 
 Read or write a Vector4 value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector4 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -871,25 +731,22 @@ void SerializeValue(ref Vector4 value)
 
 #### SerializeValue(ref Vector4\[\])
 
-<div class="markdown level1 summary">
 
 Read or write an array of Vector4 values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue(ref Vector4[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -899,26 +756,23 @@ void SerializeValue(ref Vector4[] value)
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
 Read or write an enum value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -935,26 +789,23 @@ void SerializeValue<T>(ref T value, FastBufferWriter.ForEnums unused = default(F
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForFixedStrings)
 
-<div class="markdown level1 summary">
 
 Read or write a FixedString value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
     where T : struct, INativeList<byte>, IUTF8Bytes
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -971,26 +822,23 @@ void SerializeValue<T>(ref T value, FastBufferWriter.ForFixedStrings unused = de
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForNetworkSerializable)
 
-<div class="markdown level1 summary">
 
 Read or write a struct or class value implementing INetworkSerializable
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
     where T : INetworkSerializable, new()
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1007,28 +855,25 @@ void SerializeValue<T>(ref T value, FastBufferWriter.ForNetworkSerializable unus
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
 Read or write a primitive value (int, bool, etc) Accepts any value that
 implements the given interfaces, but is not guaranteed to work correctly
 on values that are not primitives.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1045,26 +890,23 @@ void SerializeValue<T>(ref T value, FastBufferWriter.ForPrimitives unused = defa
 
 #### SerializeValue\<T\>(ref T, FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
 Read or write a struct value implementing ISerializeByMemcpy
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1081,26 +923,23 @@ void SerializeValue<T>(ref T value, FastBufferWriter.ForStructs unused = default
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
 Read or write an array of enum values
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T[] value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1117,27 +956,24 @@ void SerializeValue<T>(ref T[] value, FastBufferWriter.ForEnums unused = default
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForNetworkSerializable)
 
-<div class="markdown level1 summary">
 
 Read or write an array of struct or class values implementing
 INetworkSerializable
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T[] value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
     where T : INetworkSerializable, new()
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1154,28 +990,25 @@ void SerializeValue<T>(ref T[] value, FastBufferWriter.ForNetworkSerializable un
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
 Read or write an array of primitive values (int, bool, etc) Accepts any
 value that implements the given interfaces, but is not guaranteed to
 work correctly on values that are not primitives.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T[] value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1192,26 +1025,23 @@ void SerializeValue<T>(ref T[] value, FastBufferWriter.ForPrimitives unused = de
 
 #### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
 Read or write an array of struct values implementing ISerializeByMemcpy
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValue<T>(ref T[] value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1228,7 +1058,6 @@ void SerializeValue<T>(ref T[] value, FastBufferWriter.ForStructs unused = defau
 
 #### SerializeValuePreChecked(ref Color)
 
-<div class="markdown level1 summary">
 
 Serialize a Color, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1236,21 +1065,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Color value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1260,7 +1087,6 @@ void SerializeValuePreChecked(ref Color value)
 
 #### SerializeValuePreChecked(ref Color\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Color array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1268,21 +1094,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Color[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1292,7 +1116,6 @@ void SerializeValuePreChecked(ref Color[] value)
 
 #### SerializeValuePreChecked(ref Color32)
 
-<div class="markdown level1 summary">
 
 Serialize a Color32, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1300,21 +1123,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Color32 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1324,7 +1145,6 @@ void SerializeValuePreChecked(ref Color32 value)
 
 #### SerializeValuePreChecked(ref Color32\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Color32 array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1332,21 +1152,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Color32[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1356,7 +1174,6 @@ void SerializeValuePreChecked(ref Color32[] value)
 
 #### SerializeValuePreChecked(ref Quaternion)
 
-<div class="markdown level1 summary">
 
 Serialize a Quaternion, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1364,21 +1181,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Quaternion value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1388,7 +1203,6 @@ void SerializeValuePreChecked(ref Quaternion value)
 
 #### SerializeValuePreChecked(ref Quaternion\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Quaternion array, "pre-checked", which skips buffer checks.
 In debug and editor builds, a check is made to ensure you've called
@@ -1396,21 +1210,19 @@ In debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Quaternion[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1420,7 +1232,6 @@ void SerializeValuePreChecked(ref Quaternion[] value)
 
 #### SerializeValuePreChecked(ref Ray)
 
-<div class="markdown level1 summary">
 
 Serialize a Ray, "pre-checked", which skips buffer checks. In debug and
 editor builds, a check is made to ensure you've called "PreCheck" before
@@ -1428,21 +1239,19 @@ calling this. In release builds, calling this without calling "PreCheck"
 may read or write past the end of the buffer, which will cause memory
 corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Ray value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1452,7 +1261,6 @@ void SerializeValuePreChecked(ref Ray value)
 
 #### SerializeValuePreChecked(ref Ray\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Ray array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1460,21 +1268,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Ray[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1484,7 +1290,6 @@ void SerializeValuePreChecked(ref Ray[] value)
 
 #### SerializeValuePreChecked(ref Ray2D)
 
-<div class="markdown level1 summary">
 
 Serialize a Ray2D, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1492,21 +1297,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Ray2D value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1516,7 +1319,6 @@ void SerializeValuePreChecked(ref Ray2D value)
 
 #### SerializeValuePreChecked(ref Ray2D\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Ray2D array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1524,21 +1326,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Ray2D[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1548,7 +1348,6 @@ void SerializeValuePreChecked(ref Ray2D[] value)
 
 #### SerializeValuePreChecked(ref Byte)
 
-<div class="markdown level1 summary">
 
 Serialize a byte, "pre-checked", which skips buffer checks. In debug and
 editor builds, a check is made to ensure you've called "PreCheck" before
@@ -1556,21 +1355,19 @@ calling this. In release builds, calling this without calling "PreCheck"
 may read or write past the end of the buffer, which will cause memory
 corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref byte value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1580,7 +1377,6 @@ void SerializeValuePreChecked(ref byte value)
 
 #### SerializeValuePreChecked(ref String, Boolean)
 
-<div class="markdown level1 summary">
 
 Serialize a string, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1588,21 +1384,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref string s, bool oneByteChars = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1613,7 +1407,6 @@ void SerializeValuePreChecked(ref string s, bool oneByteChars = false)
 
 #### SerializeValuePreChecked(ref Vector2)
 
-<div class="markdown level1 summary">
 
 Serialize a Vector2, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1621,21 +1414,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector2 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1645,7 +1436,6 @@ void SerializeValuePreChecked(ref Vector2 value)
 
 #### SerializeValuePreChecked(ref Vector2\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Vector2 array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1653,21 +1443,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector2[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1677,7 +1465,6 @@ void SerializeValuePreChecked(ref Vector2[] value)
 
 #### SerializeValuePreChecked(ref Vector2Int)
 
-<div class="markdown level1 summary">
 
 Serialize a Vector2Int, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1685,21 +1472,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector2Int value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1709,7 +1494,6 @@ void SerializeValuePreChecked(ref Vector2Int value)
 
 #### SerializeValuePreChecked(ref Vector2Int\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Vector2Int array, "pre-checked", which skips buffer checks.
 In debug and editor builds, a check is made to ensure you've called
@@ -1717,21 +1501,19 @@ In debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector2Int[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1741,7 +1523,6 @@ void SerializeValuePreChecked(ref Vector2Int[] value)
 
 #### SerializeValuePreChecked(ref Vector3)
 
-<div class="markdown level1 summary">
 
 Serialize a Vector3, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1749,21 +1530,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector3 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1773,7 +1552,6 @@ void SerializeValuePreChecked(ref Vector3 value)
 
 #### SerializeValuePreChecked(ref Vector3\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Vector3 array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1781,21 +1559,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector3[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1805,7 +1581,6 @@ void SerializeValuePreChecked(ref Vector3[] value)
 
 #### SerializeValuePreChecked(ref Vector3Int)
 
-<div class="markdown level1 summary">
 
 Serialize a Vector3Int, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1813,21 +1588,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector3Int value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1837,7 +1610,6 @@ void SerializeValuePreChecked(ref Vector3Int value)
 
 #### SerializeValuePreChecked(ref Vector3Int\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Vector3Int array, "pre-checked", which skips buffer checks.
 In debug and editor builds, a check is made to ensure you've called
@@ -1845,21 +1617,19 @@ In debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector3Int[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1869,7 +1639,6 @@ void SerializeValuePreChecked(ref Vector3Int[] value)
 
 #### SerializeValuePreChecked(ref Vector4)
 
-<div class="markdown level1 summary">
 
 Serialize a Vector4, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1877,21 +1646,19 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector4 value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1901,7 +1668,6 @@ void SerializeValuePreChecked(ref Vector4 value)
 
 #### SerializeValuePreChecked(ref Vector4\[\])
 
-<div class="markdown level1 summary">
 
 Serialize a Vector4Array, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1909,21 +1675,19 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked(ref Vector4[] value)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1933,7 +1697,6 @@ void SerializeValuePreChecked(ref Vector4[] value)
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
 Serialize an enum, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -1941,22 +1704,20 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -1973,7 +1734,6 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForEnums unused =
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForFixedStrings)
 
-<div class="markdown level1 summary">
 
 Serialize a FixedString, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -1981,22 +1741,20 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
     where T : struct, INativeList<byte>, IUTF8Bytes
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2013,7 +1771,6 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForFixedStrings u
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
 Serialize a primitive, "pre-checked", which skips buffer checks. In
 debug and editor builds, a check is made to ensure you've called
@@ -2021,22 +1778,20 @@ debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2053,7 +1808,6 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForPrimitives unu
 
 #### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
 Serialize a struct, "pre-checked", which skips buffer checks. In debug
 and editor builds, a check is made to ensure you've called "PreCheck"
@@ -2061,22 +1815,20 @@ before calling this. In release builds, calling this without calling
 "PreCheck" may read or write past the end of the buffer, which will
 cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2093,7 +1845,6 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForStructs unused
 
 #### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForEnums)
 
-<div class="markdown level1 summary">
 
 Serialize an array of enums, "pre-checked", which skips buffer checks.
 In debug and editor builds, a check is made to ensure you've called
@@ -2101,22 +1852,20 @@ In debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
     where T : struct, Enum
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2133,7 +1882,6 @@ void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForEnums unused
 
 #### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForPrimitives)
 
-<div class="markdown level1 summary">
 
 Serialize an array of primitives, "pre-checked", which skips buffer
 checks. In debug and editor builds, a check is made to ensure you've
@@ -2141,22 +1889,20 @@ called "PreCheck" before calling this. In release builds, calling this
 without calling "PreCheck" may read or write past the end of the buffer,
 which will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
     where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2173,7 +1919,6 @@ void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForPrimitives u
 
 #### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForStructs)
 
-<div class="markdown level1 summary">
 
 Serialize an array of structs, "pre-checked", which skips buffer checks.
 In debug and editor builds, a check is made to ensure you've called
@@ -2181,22 +1926,20 @@ In debug and editor builds, a check is made to ensure you've called
 calling "PreCheck" may read or write past the end of the buffer, which
 will cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
     where T : struct, INetworkSerializeByMemcpy
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -2211,42 +1954,5 @@ void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForStructs unus
 |------|---------------------------|
 | T    | The type being serialized |
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
-
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

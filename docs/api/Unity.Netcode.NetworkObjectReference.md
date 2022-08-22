@@ -3,122 +3,62 @@ id: Unity.Netcode.NetworkObjectReference
 title: Unity.Netcode.NetworkObjectReference
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
-
 # Struct NetworkObjectReference
 
-<div class="markdown level0 summary">
 
 A helper struct for serializing NetworkObjects over the network. Can be
 used in RPCs and NetworkVariable\<T\>.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkSerializable
 
-</div>
 
-<div>
+
+
 
 System.IEquatable\<NetworkObjectReference\>
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Netcode
 
@@ -126,37 +66,33 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct NetworkObjectReference : INetworkSerializable, IEquatable<NetworkObjectReference>
 ```
 
-</div>
+
 
 ### Constructors
 
 #### NetworkObjectReference(GameObject)
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkObjectReference struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObjectReference(GameObject gameObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -173,25 +109,22 @@ public NetworkObjectReference(GameObject gameObject)
 
 #### NetworkObjectReference(NetworkObject)
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkObjectReference struct.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkObjectReference(NetworkObject networkObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -210,25 +143,22 @@ public NetworkObjectReference(NetworkObject networkObject)
 
 #### NetworkObjectId
 
-<div class="markdown level1 summary">
 
 The NetworkObjectId of the referenced NetworkObject.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ulong NetworkObjectId { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -240,23 +170,20 @@ public ulong NetworkObjectId { get; }
 
 #### Equals(Object)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override bool Equals(object obj)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -272,31 +199,28 @@ public override bool Equals(object obj)
 
 ##### Overrides
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
+
 
 #### Equals(NetworkObjectReference)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool Equals(NetworkObjectReference other)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -312,23 +236,20 @@ public bool Equals(NetworkObjectReference other)
 
 #### GetHashCode()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -338,35 +259,32 @@ public override int GetHashCode()
 
 ##### Overrides
 
-<div>
+
 
 System.ValueType.GetHashCode()
 
-</div>
+
 
 #### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
-<div class="markdown level1 summary">
 
 Provides bi-directional serialization to read and write the desired data
 to serialize this type.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void NetworkSerialize<T>(BufferSerializer<T> serializer)
     where T : IReaderWriter
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -382,25 +300,22 @@ public void NetworkSerialize<T>(BufferSerializer<T> serializer)
 
 #### TryGet(out NetworkObject, NetworkManager)
 
-<div class="markdown level1 summary">
 
 Tries to get the NetworkObject referenced by this reference.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool TryGet(out NetworkObject networkObject, NetworkManager networkManager = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -419,25 +334,22 @@ public bool TryGet(out NetworkObject networkObject, NetworkManager networkManage
 
 #### Implicit(GameObject to NetworkObjectReference)
 
-<div class="markdown level1 summary">
 
 Implicitly convert to NetworkObject.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkObjectReference(GameObject gameObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -453,25 +365,22 @@ public static implicit operator NetworkObjectReference(GameObject gameObject)
 
 #### Implicit(NetworkObject to NetworkObjectReference)
 
-<div class="markdown level1 summary">
 
 Implicitly convert NetworkObject to NetworkObjectReference.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkObjectReference(NetworkObject networkObject)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -487,25 +396,22 @@ public static implicit operator NetworkObjectReference(NetworkObject networkObje
 
 #### Implicit(NetworkObjectReference to GameObject)
 
-<div class="markdown level1 summary">
 
 Implicitly convert NetworkObjectReference to .
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator GameObject(NetworkObjectReference networkObjectRef)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -521,25 +427,22 @@ public static implicit operator GameObject(NetworkObjectReference networkObjectR
 
 #### Implicit(NetworkObjectReference to NetworkObject)
 
-<div class="markdown level1 summary">
 
 Implicitly convert NetworkObjectReference to NetworkObject.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static implicit operator NetworkObject(NetworkObjectReference networkObjectRef)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -555,54 +458,17 @@ public static implicit operator NetworkObject(NetworkObjectReference networkObje
 
 ### Implements
 
-<div>
+
 
 INetworkSerializable
 
-</div>
 
-<div>
+
+
 
 System.IEquatable\<T\>
 
-</div>
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
 
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>

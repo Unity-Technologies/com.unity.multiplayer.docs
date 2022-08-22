@@ -3,141 +3,79 @@ id: Unity.Netcode.NetworkTimeSystem
 title: Unity.Netcode.NetworkTimeSystem
 ---
 
-<div id="wrapper">
-
-<div>
-
-<div class="container">
-
-<div class="navbar-header">
-
-Toggle navigation
-
-<img src="../logo.svg" id="logo" class="svg" />
-
-</div>
-
-<div id="navbar" class="collapse navbar-collapse">
-
-<div class="form-group">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="subnav navbar navbar-default">
-
-<div id="breadcrumb" class="container hide-when-search">
-
--   
-
-</div>
-
-</div>
-
-</div>
-
-<div class="container body-content hide-when-search" role="main">
-
-<div class="sidenav hide-when-search">
-
-Show / Hide Table of Contents
-
-<div id="sidetoggle" class="sidetoggle collapse">
-
-<div id="sidetoc">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="article row grid-right">
-
-<div class="col-md-10">
-
 # Class NetworkTimeSystem
 
-<div class="markdown level0 summary">
 
 NetworkTimeSystem is a standalone system which can be used to run a
 network time simulation. The network time system maintains both a local
 and a server time. The local time is based on
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkTimeSystem
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.Object.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.MemberwiseClone()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.ToString()
 
-</div>
 
-</div>
+
+
 
 ###### **Namespace**: Unity.Netcode
 
@@ -145,37 +83,33 @@ System.Object.ToString()
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkTimeSystem
 ```
 
-</div>
+
 
 ### Constructors
 
 #### NetworkTimeSystem(Double, Double, Double, Double)
 
-<div class="markdown level1 summary">
 
 The constructor class for NetworkTickSystem
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkTimeSystem(double localBufferSec, double serverBufferSec, double hardResetThresholdSec, double adjustmentRatio = 0.01)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -190,26 +124,23 @@ public NetworkTimeSystem(double localBufferSec, double serverBufferSec, double h
 
 #### AdjustmentRatio
 
-<div class="markdown level1 summary">
 
 Gets or sets the ratio at which the NetworkTimeSystem speeds up or slows
 down time.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public double AdjustmentRatio { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -219,26 +150,23 @@ public double AdjustmentRatio { get; set; }
 
 #### HardResetThresholdSec
 
-<div class="markdown level1 summary">
 
 Gets or sets a threshold in seconds used to force a hard catchup of
 network time.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public double HardResetThresholdSec { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -248,27 +176,24 @@ public double HardResetThresholdSec { get; set; }
 
 #### LocalBufferSec
 
-<div class="markdown level1 summary">
 
 Gets or sets the amount of time in seconds the server should buffer
 incoming client messages. This increases the difference between local
 and server time so that messages arrive earlier on the server.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public double LocalBufferSec { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -278,25 +203,22 @@ public double LocalBufferSec { get; set; }
 
 #### LocalTime
 
-<div class="markdown level1 summary">
 
 The current local time with the local time offset applied
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public double LocalTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -306,7 +228,6 @@ public double LocalTime { get; }
 
 #### ServerBufferSec
 
-<div class="markdown level1 summary">
 
 Gets or sets the amount of the time in seconds the client should buffer
 incoming messages from the server. This increases server time. A higher
@@ -314,21 +235,19 @@ value increases latency but makes the game look more smooth in bad
 networking conditions. This value must be higher than the tick length
 client side.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public double ServerBufferSec { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -338,25 +257,22 @@ public double ServerBufferSec { get; set; }
 
 #### ServerTime
 
-<div class="markdown level1 summary">
 
 The current server time with the server time offset applied
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public double ServerTime { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -368,26 +284,23 @@ public double ServerTime { get; }
 
 #### Advance(Double)
 
-<div class="markdown level1 summary">
 
 Advances the time system by a certain amount of time. Should be called
 once per frame with Time.deltaTime or similar.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public bool Advance(double deltaTimeSec)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -403,25 +316,22 @@ public bool Advance(double deltaTimeSec)
 
 #### Reset(Double, Double)
 
-<div class="markdown level1 summary">
 
 Resets the time system to a time based on the given network parameters.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Reset(double serverTimeSec, double rttSec)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -432,27 +342,24 @@ public void Reset(double serverTimeSec, double rttSec)
 
 #### ServerTimeSystem()
 
-<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkTimeSystem class for a server
 instance. The server will not apply any buffer values which ensures that
 local time equals server time.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static NetworkTimeSystem ServerTimeSystem()
 ```
 
-</div>
+
 
 ##### Returns
 
@@ -462,26 +369,23 @@ public static NetworkTimeSystem ServerTimeSystem()
 
 #### Sync(Double, Double)
 
-<div class="markdown level1 summary">
 
 Synchronizes the time system with up-to-date network statistics but does
 not change any time values or advance the time.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Sync(double serverTimeSec, double rttSec)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -490,42 +394,5 @@ public void Sync(double serverTimeSec, double rttSec)
 | System.Double | serverTimeSec | The most recent server time value received in seconds.         |
 | System.Double | rttSec        | The current RTT in seconds. Can be an averaged or a raw value. |
 
-</div>
 
-<div class="hidden-sm col-md-2" role="complementary">
 
-<div class="sideaffix">
-
-<div class="contribution">
-
-</div>
-
-##### In This Article
-
-<div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="grad-bottom">
-
-</div>
-
-<div class="footer">
-
-<div class="container">
-
-Back to top Generated by **DocFX**
-
-</div>
-
-</div>
-
-</div>
