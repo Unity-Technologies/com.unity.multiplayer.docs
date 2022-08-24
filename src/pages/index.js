@@ -18,7 +18,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="netcode/current/tutorials/helloworld/helloworldintro" class="land-link">Learn more about Netcode for GameObjects</a>
+      <a href="netcode/current/tutorials/helloworld" class="land-link">Learn more about Netcode for GameObjects</a>
       </>
     ),
   },
@@ -47,7 +47,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="netcode/current/learn/bitesize-introduction">Learn more about Bitesize</a>
+      <a href="netcode/current/learn/bitesize/bitesize-introduction">Learn more about Bitesize</a>
       </>
     ),
   },

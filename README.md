@@ -44,4 +44,4 @@ Connect with the Unity Multiplayer Solution Architect team and community on the 
 
 ## Tools Used
 
-Our site uses [Docusaurus](https://docusaurus.io/) with Yarn commands. Always use Yarn commands, to update, build, and serve the server locally. Our search uses Algolia for Open Source. For details on tools, see this [blog post](https://docs-multiplayer.unity3d.com/blog/2021/02/11/welcome). If you need a preview without building locally, the Unity Doc Team can get you a preview!
+Our site uses [Docusaurus](https://docusaurus.io/) with Yarn commands. Always use Yarn commands, to update, build, and serve the server locally. Our search uses Algolia for Open Source.

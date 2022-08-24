@@ -12,7 +12,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 | Getting Started | Hello World and Golden Paths | Education and Samples |
 | -- | -- | -- |
-| [Install Unity Netcode](installation/installation.md)<br/>[Migration from UNet to Netcode](installation/migratingfromUNet.md)<br/>[Upgrade to Unity Netcode Package](installation/migratingfrommlapi.md) | [Your First Networked Game](tutorials/helloworld.md)<br/>[Module One](tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](tutorials/goldenpath_series/gp_module_two.md)<br/>| [Boss Room](learn/bossroom/getting-started-boss-room.md)<br/>[Bite Size Samples](learn/bitesize-introduction.md)<br/>[Dilmer's Tutorials](learn/dilmer/dilmer-video.md) |
+| [Install Unity Netcode](installation/installation.md)<br/>[Migration from UNet to Netcode](installation/migratingfromUNet.md)<br/>[Upgrade to Unity Netcode Package](installation/migratingfrommlapi.md) | [Your First Networked Game](tutorials/helloworld.md)<br/>[Module One](tutorials/goldenpath_series/gp_module_one.md)<br/>[Module Two](tutorials/goldenpath_series/gp_module_two.md)<br/>| [Boss Room](learn/bossroom/getting-started-boss-room.md)<br/>[Bite Size Samples](learn/bitesize/bitesize-introduction.md)<br/>[Dilmer's Tutorials](learn/dilmer/dilmer-video.md) |
 
 </div>
 
@@ -20,7 +20,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 | Core Concepts | Debugging | Terminology and FAQs |
 | -- | -- | -- |
-| [Networking](basics/connection-approval.md)<br/>[Components](components/networkmanager.md)<br/>[Objects](basics/object-spawning.md)<br/>[Messaging System](advanced-topics/messaging-system.md)<br/>[Serialization](advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](basics/scenemanagement/scene-management-overview.md) | [Logging](basics/logging.md)<br/>[Troubleshooting](troubleshooting/troubleshooting.md)<br/>[Error Messages](troubleshooting/error-messages.md) | [High Level Terminology](reference/glossary/high-level-terminology.md)<br/>[Multiplayer Game Architecture](learn/multiplayer_game_arch_intro.md) [FAQs](learn/faq.md) |
+| [Networking](basics/connection-approval.md)<br/>[Components](components/networkmanager.md)<br/>[Objects](basics/object-spawning.md)<br/>[Messaging System](advanced-topics/messaging-system.md)<br/>[Serialization](advanced-topics/serialization/serialization-intro.md)<br/>[Scenes](basics/scenemanagement/scene-management-overview.md) | [Logging](basics/logging.md)<br/>[Troubleshooting](troubleshooting/troubleshooting.md)<br/>[Error Messages](troubleshooting/error-messages.md) | [High Level Terminology](reference/glossary/high-level-terminology.md)<br/>[Multiplayer Game Architecture](learn/multiplayer_game_arch_intro.md)<br/>[FAQs](learn/faq.md) |
 
 </div>
 

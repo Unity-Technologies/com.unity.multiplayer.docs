@@ -123,7 +123,7 @@ This project release is available for use. Support for this release is limited. 
 
 See the [Bitesize Samples changelog](bitesize/bitesize-changelog) for all release information on these projects.
 
-Use the [BiteSize install guide](../../netcode/current/learn/bitesize-introduction) to begin using the different BiteSize sample projects.
+Use the [BiteSize install guide](../../netcode/current/learn/bitesize/bitesize-introduction) to begin using the different BiteSize sample projects.
 
 ### Documentation
 
