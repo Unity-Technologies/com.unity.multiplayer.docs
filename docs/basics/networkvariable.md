@@ -21,6 +21,9 @@ A `NetworkVariable`:
 - Property *must* be defined within a `NetworkBehaviour` derived class attached to a `GameObject`
     - The `GameObject` or a parent `GameObject` **must** also have a `NetworkObject` component attached to it.
 - A `NetworkVariable`'s assigned type (`T`) must be [constrained to an unmanaged `Type`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint).
+- A `NetworkVariable`'s value can only be set when:
+    - Initializing the property (either when it is declared or within the Awake method)
+    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it is still spawned).
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
@@ -37,6 +40,7 @@ Awake               | Awake
 OnNetworkSpawn      | Start
 Start               | OnNetworkSpawn
 
+Also, you should only set the value of a `NetworkVariable` when first initializing it or if it is spawned.  It is not recommended setting a `NetworkVariable` when the associated `NetworkObject` is not spawned.
 :::
 
 
