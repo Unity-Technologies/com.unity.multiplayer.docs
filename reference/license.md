@@ -4,17 +4,6 @@ title: Documentation and Code Licenses
 ---
 The following Licenses cover all documentation and sample code in [this repository](https://github.com/Unity-Technologies/com.unity.multiplayer.docs) and website. 
 
-## Documentation License
-
-All documentation sections have licenses covering content for those Unity features and code:
-
-| Documentation | License |
-| -- | -- |
-| [MLAPI](https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi) | [MIT License](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) |
-| [Transport](https://docs-multiplayer.unity3d.com/transport/0.8.0/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
-| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [Boss Room UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop)<br/><br/>[Bitsize Samples UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) |
-
-
 :::unity License Information
 Sections in this site may include license links and information depending on code samples and product.
 :::
