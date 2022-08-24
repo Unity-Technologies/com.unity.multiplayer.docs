@@ -1,9 +1,5 @@
 module.exports = {
     "tools": [
-       /*/ {
-            "type": "doc",
-            "id": "about"
-        }, /*/
         {
             "type": "doc",
             "id": "install-tools"
