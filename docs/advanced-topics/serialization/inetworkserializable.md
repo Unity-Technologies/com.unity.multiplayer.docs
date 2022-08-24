@@ -70,7 +70,7 @@ More advanced use-cases are explored in following examples.
 ### Example: Array
 :::caution
 The below `INetworkSerializable` implementation example works only with RPCs and/or custom messages.  The below implementation uses an array within an `INetworkSerializable` implementation.  Arrays can be `null` and are not supported by the `NetworkVariable` class. As an alternative, you can write your own `NetworkVariableBase` derived class that does support managed or unmanaged value types.<br/>
-[Read More About Custom NetworkVariable Implementations](../basics/networkvariable.md)
+[Read More About Custom NetworkVariable Implementations](../../basics/networkvariable.md)
 :::
 
 ```csharp

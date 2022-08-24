@@ -49,7 +49,7 @@ public void Spawn(bool destroyWithScene = true);
 
 When you set the destroyWithScene property to `false` it will be treated the same as when you set [Object.DontDestroyOnLoad](https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html). Typically, you use this if you are loading a scene using [LoadSceneMode.Single](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) parameter.
 
-[Learn more about Netcode Scene Management here](https://docs-multiplayer.unity3d.com/netcode/current/basics/scene-management)
+[Learn more about Netcode Scene Management here](scenemanagement/scene-management-overview.md)
 
 ## Destroying / Despawning
 

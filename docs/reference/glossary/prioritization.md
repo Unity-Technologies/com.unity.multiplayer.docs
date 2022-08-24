@@ -29,7 +29,7 @@ Sometimes packets are corrupted due to bit errors caused by noise and interferen
 
 ## Latency
 
-See [latency](lagandpacketloss#latency) for more information.
+See [latency](../learn/../../learn/lagandpacketloss.md#latency) for more information.
 
 ## Packet delay variation
 

@@ -300,10 +300,6 @@ module.exports = {
                     title: 'Contact',
                     items: [
                         {
-                            label: 'Unity Blog',
-                            href: 'https://blogs.unity3d.com/',
-                        },
-                        {
                             label: 'Unity Multiplayer Forum',
                             href: 'https://forum.unity.com/forums/multiplayer.26/',
                         },
