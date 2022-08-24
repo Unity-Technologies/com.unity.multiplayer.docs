@@ -142,7 +142,7 @@ Typically, this is used with clients or components that might only need to be no
 You might want to register for the `SceneEventType.LoadEventCompleted` scene event type to know, from a client perspective, that the server and all other clients have finished loading a scene.  This notification lets you know when you can start performing other netcode related actions on the newly loaded and spawned `NetworkObject`s.
 
 #### Scene Event Progress Status
-As we discussed in the earlier code example, it is important to check the status returned by `NetworkSceneManager.Load` to make sure your scene loading event has started.  The following is a list of all [SceneEventProgressStatus]([https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/develop/com.unity.netcode.gameobjects/Runtime/SceneManagement/SceneEventProgress.cs#L17](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.SceneEventProgressStatus)) `enum` values with some additional helpful information:
+As we discussed in the earlier code example, it is important to check the status returned by `NetworkSceneManager.Load` to make sure your scene loading event has started.  The following is a list of all [SceneEventProgressStatus](../../api/Unity.Netcode.SceneEventProgressStatus.md) `enum` values with some additional helpful information:
 - Started
   - The scene event has started (success)
 - SceneNotLoaded
