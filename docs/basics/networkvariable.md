@@ -23,7 +23,7 @@ A `NetworkVariable`:
 - A `NetworkVariable`'s assigned type (`T`) must be [constrained to an unmanaged `Type`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint).
 - A `NetworkVariable`'s value can only be set when:
     - Initializing the property (either when it is declared or within the Awake method)
-    - When the associated `NetworkObject` is spawned.
+    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it is still spawned).
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
