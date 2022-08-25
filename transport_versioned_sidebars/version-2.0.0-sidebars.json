@@ -5,50 +5,43 @@
                   "id": "version-2.0.0/about"
               },
               {
-                  "type": "doc",
-                  "id": "version-2.0.0/migration"
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Get started",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/get-started/install"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "version-2.0.0/get-started/upgrade"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/samples"
+                      }
+                    ]
               },
               {
                   "collapsed": true,
                   "type": "category",
-                  "label": "Getting Started",
+                  "label": "Client and server workflows",
                   "items": [
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/install"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/using-sample"
-                      },
-                      {
-                          "collapsed": true,
-                          "type": "category",
-                          "label": "Minimum client and server",
-                          "items": [
-                              {
-                              "type": "doc",
-                              "id": "version-2.0.0/minimal-workflow-udp"
-                                },
-                              {
-                                  "type": "doc",
-                                  "id": "version-2.0.0/minimal-workflow-ws"
-                              }]
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/event-loop"
-                      }]
-              },
-              {
-                  "collapsed": true,
-                  "type": "category",
-                  "label": "Best practices",
-                  "items": [
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/pipelines"
-                      },
+                    {
+                        "collapsed": true,
+                        "type": "category",
+                        "label": "Minimum client and server",
+                        "items": [
+                            {
+                            "type": "doc",
+                            "id": "version-2.0.0/workflows/minimal-workflow-udp"
+                              },
+                            {
+                                "type": "doc",
+                                "id": "version-2.0.0/workflows/minimal-workflow-ws"
+                            }]
+                    },
                       {
                           "collapsed": true,
                           "type": "category",
@@ -56,11 +49,11 @@
                           "items": [
                               {
                                   "type": "doc",
-                                  "id": "version-2.0.0/jobs"
+                                  "id": "version-2.0.0/workflows/jobs"
                               },
                               {
                                   "type": "doc",
-                                  "id": "version-2.0.0/secure-connection"
+                                  "id": "version-2.0.0/workflows/secure-connection"
                               }]
                       }
                   ]
@@ -68,40 +61,44 @@
               {
                   "collapsed": true,
                   "type": "category",
-                  "label": "Playing across platforms",
+                  "label": "Crossplay",
                   "items": [
                       {
                           "type": "doc",
-                          "id": "version-2.0.0/supported-platforms"
+                          "id": "version-2.0.0/crossplay/crossplay-without-relay"
                       },
                       {
                           "type": "doc",
-                          "id": "version-2.0.0/cross-play-without-relay"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/cross-play-relay"
+                          "id": "version-2.0.0/crossplay/crossplay-relay"
                       }
                   ]
               },
               {
-                  "collapsed": true,
-                  "type": "category",
-                  "label": "Extending functionalities",
-                  "items": [
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/custom-pipeline"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/custom-networkinterface"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/network-settings"
-                      }
-                  ]
-              }
+                "type": "doc",
+                "id": "version-2.0.0/event-loop"
+            },
+            {
+                "collapsed": true,
+                "type": "category",
+                "label": "Pipelines",
+                "items": [
+                    {
+                    "type": "doc",
+                    "id": "version-2.0.0/pipelines"
+                },
+                {
+                    "type": "doc",
+                    "id": "version-2.0.0/custom-pipeline"
+                }
+                ]
+            },
+            {
+                "type": "doc",
+                "id": "version-2.0.0/custom-networkinterface"
+            },
+            {
+                "type": "doc",
+                "id": "version-2.0.0/network-settings"
+            }
           ]
 }

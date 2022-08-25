@@ -1,7 +1,9 @@
 ---
 id: jobs
-title: Efficient client and server
+title: Efficient client and server workflow
 ---
+
+Make note/tip/whatever that "Client and Server over UDP" and "Client and Server over Websocket" are simpler workflows
 
 In the workflow [Creating a minimal client and server](workflow-client-server.md), the client should look like this [code example](samples/clientbehaviour.cs.md).
 

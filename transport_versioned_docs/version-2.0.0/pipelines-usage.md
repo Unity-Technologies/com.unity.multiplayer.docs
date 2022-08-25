@@ -1,6 +1,6 @@
 ---
 id: pipelines
-title: Use pipelines
+title: Pipeline use
 ---
 
 Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. 

@@ -1,6 +1,6 @@
 ---
 id: about
-title: About Unity Transport
+title: About Unity Transport (UTP)
 ---
 :::note
 Need an update before releasing UTP 2.0.0
@@ -34,3 +34,6 @@ This version of `com.unity.transport` is compatible with the following Unity ver
 
 * 2020.1.2 and later.
 * All platforms supported by Unity are supported, except WebGL.
+
+
+Include supported platforms content here

@@ -1,6 +1,6 @@
 ---
-id: using-sample
-title: Using Sample
+id: samples
+title: Sample use
 ---
 
 :::note

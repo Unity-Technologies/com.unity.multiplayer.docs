@@ -1,6 +1,6 @@
 ---
 id: event-loop
-title: handling the event loop
+title: Event loop
 ---
 
 # Event loop

@@ -1,6 +1,6 @@
 ---
-id: minimal-workflow-udp
-title: Client and Server over UDP
+id: minimal-workflow-ws
+title: Client and server workflow with Websocket
 ---
 
 :::note

@@ -1,6 +1,6 @@
 ---
 id: custom-networkinterface
-title: Custom Network interface
+title: Create a custom Network Interface
 ---
 
-#Custom Network Interface
+Custom Network Interface
