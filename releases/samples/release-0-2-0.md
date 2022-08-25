@@ -12,7 +12,7 @@ The Boss Room: Small Scale Co-op Sample v0.2.0 release provides new sample code,
 | Boss Room: Small Scale Co-op Sample | 0.2.0 | Early Access | May 19, 2021 | v2020.3.8f1 LTS |
 
 :::important
-Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See [Unity MLAPI](../index.md) for more information on those features, fixes, and known issues.
+Boss Room: Small Scale Co-op Sample always requires the latest version of Unity MLAPI. See Unity MLAPI for more information on those features, fixes, and known issues.
 :::
 
 ## [0.2.1] - 2021-05-27
@@ -21,7 +21,7 @@ v0.2.1 is a hotfix for an Early Access release for Boss Room: Small Scale Co-op 
 
 ### Fixes
 
-* [GitHub 343](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/pull/343) - Fixed parameter exception when connecting to lobby caused by an old MLAPI version. This fix reverts the change until the package is updated.
+* GitHub 343 - Fixed parameter exception when connecting to lobby caused by an old MLAPI version. This fix reverts the change until the package is updated.
 
 ## [0.2.0] - 2021-05-19
 
@@ -61,7 +61,7 @@ This release includes the following new features and additions:
 
 ## Changes
 
-* The Boss Room project now loads MLAPI 0.1.0-experimental package through the Unity Package Manager Registry. See the [MLAPI install guide](/docs/migration/install) for details.
+* The Boss Room project now loads MLAPI 0.1.0-experimental package through the Unity Package Manager Registry. See the MLAPI install guide for details.
 * Updated the user interface including the following:
 
   * When joining a game, a "Connecting..." UI loads. When disconnecting from a game, you are returned to the MainMenuScene with a "Connection to Host lost" message. If the game fails to connect, a general message "Connection to Host failed" loads. <!-- GOMPS-5, GOMPS-114 -->
@@ -148,4 +148,4 @@ The following issues may occur for access and games:
 
 ## Learn more
 
-See [Getting Started with Boss Room](../../netcode/current/learn/bossroom) to install and get started with Boss Room.
+See Getting Started with Boss Room to install and get started with Boss Room.

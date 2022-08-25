@@ -58,7 +58,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Changes
 * Updated to Burst 1.6.4.
 * Updated to Mathematics 1.2.5.
-* Documentation has been moved to the [offical multiplayer documentation site](https://docs-multiplayer.unity3d.com/transport/1.0.0/introduction).
+* Documentation has been moved to the offical multiplayer documentation site.
 
 ### Fixes
 * Fixed a division by zero in `SimulatorPipelineStage` when `PacketDropInterval` is set.
@@ -84,7 +84,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Changes
 * Creating a pipeline with `FragmentationPipelineStage` _after_ `ReliableSequencedPipelineStage` is now forbidden (will throw an exception if collections checks are enabled). That order never worked properly to begin with. The reverse order is fully supported and is the recommended way to configure a reliable pipeline with support for large packets.
-* Added `NetworkSettings` struct and API for defining network parameters. See [NetworkSettings documentation](https://docs-multiplayer.unity3d.com/transport/1.0.0/network-settings) for more information.
+* Added `NetworkSettings` struct and API for defining network parameters.
 * Added Roslyn Analyzers for ensuring proper extension of NetworkParameters and NetworkSettings API.
 * Update Collections package to 1.1.0
 

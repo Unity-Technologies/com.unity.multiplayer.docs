@@ -154,4 +154,4 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientH
 
 * [ClientRpc](clientrpc.md)
 * [RPC Params](rpc-params.md)
-* See [examples](../../learn/bossroom-examples/bossroom-actions) of how these were used in Boss Room.
+* See [examples](../../learn/bossroom/bossroom-actions) of how these were used in Boss Room.

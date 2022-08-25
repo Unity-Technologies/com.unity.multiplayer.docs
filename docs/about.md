@@ -24,7 +24,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 </div>
 
-Don't forget to check out our [Release Notes](../releases/netcode/1-0-0.md) and [APIs](api/introduction.md)!
+Don't forget to check out our [Release Notes](https://docs-multiplayer.unity3d.com/releases/introduction) and [APIs](api/introduction.md)!
 
 ## Before you begin
 
