@@ -1,10 +1,26 @@
 ---
 id: tools-1-0-0-pre
-title: Netcode Tools 1.0.0-pre+
-description: Release notes for Unity Netcode for GameObjects Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
+title: Multiplayer Tools 1.0.0 and earlier
+description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
-<!-- Add appropriate linking with phase two build for Tools content -->
+## [1.0.0] - 2022-06-27
+
+### *Runtime Net Stats Monitor*
+- Doc-comment fixes based on 1.0 release XML doc validation 
+
+## [1.0.0-pre.8] - 2022-06-15
+
+### *Runtime Net Stats Monitor*
+- Clamping numerical values to acceptable limits for public APIs
+- Improve generated counter labels
+- Prevent an exception when there's only one sample
+- Added spacing between divider graph and axis number alignment
+- Reusing existing numerical labels when the value doesn't change or barely changed
+- Fix incorrect values for gauges in counter display elements using SMA
+- Ensure RNSM counters display 1 rather than 1,000 milli
+- Use infinity rather than float.Min for counter config bounds
+- Reduce vertices in graphs with large sample count
 
 ## [1.0.0-pre.7] - 2022-04-27
 

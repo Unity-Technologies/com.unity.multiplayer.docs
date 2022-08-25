@@ -10,5 +10,5 @@ All Unity Transport code is covered by Unity Companion License. See [Licenses](/
 :::
 
 :::note
-All content is generated from [source code](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi) using tools including [DocFX](https://dotnet.github.io/docfx/) and custom filters with [Pandoc](https://pandoc.org/) to convert to Markdown. See [Document your code with XML comments](https://docs.microsoft.com/en-us/dotnet/csharp/codedoc) for guidance and examples. DocFX generates documentation using these comments.
+All content is generated from source code using tools including [DocFX](https://dotnet.github.io/docfx/) and custom filters with [Pandoc](https://pandoc.org/) to convert to Markdown. DocFX generates documentation using these comments.
 :::

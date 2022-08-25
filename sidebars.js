@@ -300,21 +300,6 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Tools",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "tools/install-tools",
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/profiling",
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
             "label": "Debugging",
             "items": [
                 {
@@ -470,91 +455,67 @@ module.exports = {
         [
             {
                 "type": "doc",
-                "id": "learn/introduction",
+                "id": "reference/glossary/high-level-terminology"
             },
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Reference Material",
+                "label": "Lag",
                 "items": [
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Networking Concepts",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/high-level-terminology"
-                            },
-                            {
-                                "collapsed": true,
-                                "type": "category",
-                                "label": "Lag",
-                                "items": [
-                                    {
-                                        "type": "doc",
-                                        "id": "reference/glossary/ticks-and-update-rates"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/lagandpacketloss"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/clientside_interpolation"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/dealing-with-latency"
-                                    },
-                                ],
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-terms"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/prioritization"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/relevancy"
-                            },
-                        ],
-
+                        "type": "doc",
+                        "id": "reference/glossary/ticks-and-update-rates"
                     },
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Game Architecture",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/multiplayer-game-arhitecture"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-topologies"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "learn/listen-server-host-architecture"
-                            }
-                        ]
+                        "type": "doc",
+                        "id": "learn/lagandpacketloss"
                     },
-
-
-                ],
+                    {
+                        "type": "doc",
+                        "id": "learn/clientside_interpolation"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/dealing-with-latency"
+                    },
+                        ],
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/network-terms"
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/prioritization"
+            },
+            {
+                "type": "doc",
+                "id": "reference/glossary/relevancy"
+            },
+            {
+                "collapsed": true,
+                "type": "category",
+                "label": "Multiplayer Game Architecture",
+                "items": [
+                    {
+                        "type": "doc",
+                        "id": "learn/multiplayer-game-arhitecture"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "reference/glossary/network-topologies"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/listen-server-host-architecture"
+                    }
+                        ]
             },
             {
                 "type": "doc",
                 "id": "learn/faq"
             },
         ],
-
 
     api:
         [
@@ -681,6 +642,11 @@ module.exports = {
                     },
                     {
                         "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForFixedStrings",
+                        "label": "FastBufferWriter.ForFixedStrings"
+                    },
+                    {
+                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferWriter.ForNetworkSerializable",
                         "label": "FastBufferWriter.ForNetworkSerializable"
                     },
@@ -706,23 +672,8 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy",
-                        "label": "ForceNetworkSerializeByMemcpy"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.VariableSerialization-1",
-                        "label": "VariableSerialization-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.ReadDelegate-1",
-                        "label": "NetworkVariableSerialization-1.ReadDelegate-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableSerialization-1.WriteDelegate-1",
-                        "label": "NetworkVariableSerialization-1.WriteDelegate-1"
+                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy-1",
+                        "label": "ForceNetworkSerializeByMemcpy-1"
                     },
                     {
                         "type": "doc",
@@ -937,9 +888,14 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
-                        "label": "ConnectionApprovedDelegate"
-                    }
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalRequest",
+                        "label": "ConnectionApprovalRequest"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalResponse",
+                        "label": "ConnectionApprovalResponse"
+                    },
                 ]
             },
             {
@@ -955,11 +911,6 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableHelper",
-                        "label": "NetworkVariableHelper"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariable-1",
                         "label": "NetworkVariable-1"
                     },
@@ -972,6 +923,11 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariableReadPermission",
                         "label": "NetworkVariableReadPermission"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.UserNetworkVariableSerialization-1",
+                        "label": "UserNetworkVariableSerialization-1"
                     },
                 ],
             },

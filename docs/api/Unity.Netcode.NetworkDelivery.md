@@ -1,31 +1,42 @@
----  
-id: Unity.Netcode.NetworkDelivery  
-title: Unity.Netcode.NetworkDelivery  
+---
+id: Unity.Netcode.NetworkDelivery
+title: Unity.Netcode.NetworkDelivery
 ---
 
-<div class="markdown level0 summary">
+# Enum NetworkDelivery
+
 
 Delivery methods
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum NetworkDelivery
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 
@@ -48,3 +59,4 @@ Unreliable message
 UnreliableSequenced
 
 Unreliable with sequencing
+

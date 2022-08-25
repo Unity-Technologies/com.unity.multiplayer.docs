@@ -1,332 +1,354 @@
----  
-id: Unity.Networking.Transport.Relay.RelayAllocationId  
-title: Unity.Networking.Transport.Relay.RelayAllocationId  
+---
+id: Unity.Networking.Transport.Relay.RelayAllocationId
+title: Unity.Networking.Transport.Relay.RelayAllocationId
 ---
 
-<div class="markdown level0 summary">
+
+# Struct RelayAllocationId
+
 
 Allocation Id is a unique identifier for a connected client/host to a
 Relay server. This identifier is used by the Relay protocol as the
 address of the client.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
 
 ##### Implements
 
-<div>
+
 
 System.IEquatable\<RelayAllocationId\>
 
-</div>
 
-<div>
+
+
 
 System.IComparable\<RelayAllocationId\>
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.ToString()
 
-</div>
+System.ValueType.ToString()
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetType()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
 
-</div>
+System.Object.GetType()
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Relay
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct RelayAllocationId : IEquatable<RelayAllocationId>, IComparable<RelayAllocationId>
 ```
 
-## 
 
-### k_Length
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### k_Length
 
-<div class="markdown level1 conceptual">
 
-</div>
+The length in bytes of the Allocation Id.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public const int k_Length = 16
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Value
+#### Value
 
-<div class="markdown level1 summary">
 
-</div>
+The raw data of the Allocation Id.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *Value
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-## 
+### Methods
 
-### CompareTo(RelayAllocationId)
+#### CompareTo(RelayAllocationId)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int CompareTo(RelayAllocationId other)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type              | Name  | Description |
 |-------------------|-------|-------------|
 | RelayAllocationId | other |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Equals(Object)
+#### Equals(Object)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override bool Equals(object other)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.Object | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-### Equals(RelayAllocationId)
 
-<div class="markdown level1 summary">
+#### Equals(RelayAllocationId)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool Equals(RelayAllocationId other)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type              | Name  | Description |
 |-------------------|-------|-------------|
 | RelayAllocationId | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### FromBytePointer(Byte\*, Int32)
+#### FromBytePointer(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Converts a byte pointer to a RelayAllocationId.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 ```
 
-#### Parameters
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
 
-#### Returns
+##### Parameters
 
-| Type              | Description |
-|-------------------|-------------|
-| RelayAllocationId |             |
+| Type          | Name    | Description                                   |
+|---------------|---------|-----------------------------------------------|
+| System.Byte\* | dataPtr | The pointer to the data of the Allocation Id. |
+| System.Int32  | length  | The length of the data.                       |
 
-### GetHashCode()
+##### Returns
 
-<div class="markdown level1 summary">
+| Type              | Description                                                     |
+|-------------------|-----------------------------------------------------------------|
+| RelayAllocationId | Returns a RelayAllocationId constructed from the provided data. |
 
-</div>
+##### Exceptions
 
-<div class="markdown level1 conceptual">
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
 
-</div>
+#### GetHashCode()
 
-#### Declaration
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-## 
 
-### Equality(RelayAllocationId, RelayAllocationId)
+### Operators
 
-<div class="markdown level1 summary">
+#### Equality(RelayAllocationId, RelayAllocationId)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool operator ==(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | RelayAllocationId | lhs  |             |
 | RelayAllocationId | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(RelayAllocationId, RelayAllocationId)
+#### Inequality(RelayAllocationId, RelayAllocationId)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type              | Name | Description |
 |-------------------|------|-------------|
 | RelayAllocationId | lhs  |             |
 | RelayAllocationId | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -334,14 +356,17 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 ### Implements
 
-<div>
 
-System.IEquatable&lt;T&gt;
 
-</div>
+System.IEquatable\<T\>
 
-<div>
 
-System.IComparable&lt;T&gt;
 
-</div>
+
+
+System.IComparable\<T\>
+
+
+
+
+

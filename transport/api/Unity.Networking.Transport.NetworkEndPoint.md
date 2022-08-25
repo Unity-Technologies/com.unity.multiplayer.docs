@@ -1,423 +1,469 @@
----  
-id: Unity.Networking.Transport.NetworkEndPoint  
-title: Unity.Networking.Transport.NetworkEndPoint  
+---
+id: Unity.Networking.Transport.NetworkEndPoint
+title: Unity.Networking.Transport.NetworkEndPoint
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkEndPoint
 
-<div class="markdown level0 conceptual">
 
-</div>
+Describes a raw network endpoint (typically IP and port number).
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.GetType()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NetworkEndPoint
 ```
 
-## 
 
-### Address
 
-<div class="markdown level1 summary">
+### Properties
 
-</div>
+#### Address
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly string Address { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### AnyIpv4
+#### AnyIpv4
 
-<div class="markdown level1 summary">
 
-</div>
+Gets an IPv4 endpoint that can be used to bind to any address available
+(0.0.0.0:0).
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static readonly NetworkEndPoint AnyIpv4 { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### AnyIpv6
+#### AnyIpv6
 
-<div class="markdown level1 summary">
 
-</div>
+Gets an IPv6 endpoint that can be used to bind to any address available
+(\[::0\]:0).
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static readonly NetworkEndPoint AnyIpv6 { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### Family
+#### Family
 
-<div class="markdown level1 summary">
 
-</div>
+Gets or sets NetworkFamily of the endpoint.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkFamily Family { get; set; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkFamily |             |
 
-### IsAny
+#### IsAny
 
-<div class="markdown level1 summary">
 
-</div>
+Whether the endpoint is using an "any" address.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly bool IsAny { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsLoopback
+#### IsLoopback
 
-<div class="markdown level1 summary">
 
-</div>
+Whether the endpoint is using a loopback address.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly bool IsLoopback { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsValid
+#### IsValid
 
-<div class="markdown level1 summary">
 
-</div>
+Whether the endpoint is valid or not.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly bool IsValid { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Length
+#### Length
 
-<div class="markdown level1 summary">
 
-</div>
+Returns the length of the raw network endpoint in bytes.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int Length { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### LoopbackIpv4
+#### LoopbackIpv4
 
-<div class="markdown level1 summary">
 
-</div>
+Gets an IPv4 loopback endpoint (127.0.0.1:0).
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static readonly NetworkEndPoint LoopbackIpv4 { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### LoopbackIpv6
+#### LoopbackIpv6
 
-<div class="markdown level1 summary">
 
-</div>
+Gets an IPv6 loopback endpoint (\[::1\]:0).
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static readonly NetworkEndPoint LoopbackIpv6 { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### Port
+#### Port
 
-<div class="markdown level1 summary">
 
-</div>
+Gets or sets port number of the endpoint.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ushort Port { get; set; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### RawPort
+#### RawPort
 
-<div class="markdown level1 summary">
 
-</div>
+Gets or sets the value of the raw port number.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ushort RawPort { get; set; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-## 
+### Methods
 
-### Equals(Object)
+#### Equals(Object)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override bool Equals(object other)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.Object | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-### GetHashCode()
 
-<div class="markdown level1 summary">
+#### GetHashCode()
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-### GetRawAddressBytes()
 
-<div class="markdown level1 summary">
+#### GetRawAddressBytes()
 
-</div>
 
-<div class="markdown level1 conceptual">
+Gets the raw bytes for the endpoint.
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NativeArray<byte> GetRawAddressBytes()
 ```
 
-#### Returns
 
-| Type                       | Description |
-|----------------------------|-------------|
-| NativeArray\&lt;System.Byte&gt; |             |
 
-### Parse(String, UInt16, NetworkFamily)
+##### Returns
 
-<div class="markdown level1 summary">
+| Type                       | Description                                                        |
+|----------------------------|--------------------------------------------------------------------|
+| NativeArray\<System.Byte\> | Native array containing the raw bytes (uses temporary allocation). |
 
-</div>
+#### Parse(String, UInt16, NetworkFamily)
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily family = NetworkFamily.Ipv4)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name    | Description |
 |---------------|---------|-------------|
@@ -425,82 +471,94 @@ public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily f
 | System.UInt16 | port    |             |
 | NetworkFamily | family  |             |
 
-#### Returns
+##### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### SetRawAddressBytes(NativeArray\&lt;Byte&gt;, NetworkFamily)
+#### SetRawAddressBytes(NativeArray\<Byte\>, NetworkFamily)
 
-<div class="markdown level1 summary">
 
-</div>
+Directly sets the raw bytes of the endpoint using the specified bytes
+and family.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void SetRawAddressBytes(NativeArray<byte> bytes, NetworkFamily family = NetworkFamily.Ipv4)
 ```
 
-#### Parameters
 
-| Type                       | Name   | Description |
-|----------------------------|--------|-------------|
-| NativeArray\&lt;System.Byte&gt; | bytes  |             |
-| NetworkFamily              | family |             |
 
-### ToString()
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type                       | Name   | Description                        |
+|----------------------------|--------|------------------------------------|
+| NativeArray\<System.Byte\> | bytes  | Raw bytes to use for the endpoint. |
+| NetworkFamily              | family | Endpoint's address family.         |
 
-</div>
+##### Exceptions
 
-<div class="markdown level1 conceptual">
+| Type                             | Condition                             |
+|----------------------------------|---------------------------------------|
+| System.InvalidOperationException | Length of bytes doesn't match family. |
 
-</div>
+#### ToString()
 
-#### Declaration
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override string ToString()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.ToString()
 
-</div>
 
-### TryParse(String, UInt16, out NetworkEndPoint, NetworkFamily)
 
-<div class="markdown level1 summary">
+#### TryParse(String, UInt16, out NetworkEndPoint, NetworkFamily)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool TryParse(string address, ushort port, out NetworkEndPoint endpoint, NetworkFamily family = NetworkFamily.Ipv4)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
@@ -509,96 +567,104 @@ public static bool TryParse(string address, ushort port, out NetworkEndPoint end
 | NetworkEndPoint | endpoint |             |
 | NetworkFamily   | family   |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### WithPort(UInt16)
+#### WithPort(UInt16)
 
-<div class="markdown level1 summary">
 
-</div>
+Use the given port number for this endpoint.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkEndPoint WithPort(ushort port)
 ```
 
-#### Parameters
 
-| Type          | Name | Description |
-|---------------|------|-------------|
-| System.UInt16 | port |             |
 
-#### Returns
+##### Parameters
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
+| Type          | Name | Description      |
+|---------------|------|------------------|
+| System.UInt16 | port | The port number. |
 
-## 
+##### Returns
 
-### Equality(NetworkEndPoint, NetworkEndPoint)
+| Type            | Description          |
+|-----------------|----------------------|
+| NetworkEndPoint | The endpoint (this). |
 
-<div class="markdown level1 summary">
+### Operators
 
-</div>
+#### Equality(NetworkEndPoint, NetworkEndPoint)
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool operator ==(NetworkEndPoint lhs, NetworkEndPoint rhs)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
 | NetworkEndPoint | lhs  |             |
 | NetworkEndPoint | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(NetworkEndPoint, NetworkEndPoint)
+#### Inequality(NetworkEndPoint, NetworkEndPoint)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool operator !=(NetworkEndPoint lhs, NetworkEndPoint rhs)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
 | NetworkEndPoint | lhs  |             |
 | NetworkEndPoint | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+
+

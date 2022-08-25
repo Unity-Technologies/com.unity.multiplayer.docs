@@ -1,115 +1,110 @@
----  
-id: Unity.Netcode.NetworkSceneManager  
-title: Unity.Netcode.NetworkSceneManager  
+---
+id: Unity.Netcode.NetworkSceneManager
+title: Unity.Netcode.NetworkSceneManager
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkSceneManager
+
 
 Main class for managing network scenes when EnableSceneManagement is
 enabled. Uses the Unity.Netcode.SceneEventMessage message to communicate
 Unity.Netcode.SceneEventData between the server and client(s)
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkSceneManager
 
-</div>
 
-</div>
 
-<div classs="implements">
+
+
 
 ##### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.Object.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.MemberwiseClone()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.ToString()
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public class NetworkSceneManager : IDisposable
 ```
 
-</div>
+
 
 ### Fields
 
 #### VerifySceneBeforeLoading
 
-<div class="markdown level1 summary">
 
 Delegate handler defined by
 NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler that is
@@ -120,21 +115,19 @@ you must assign the VerifySceneBeforeLoading delegate handler.
 **Server Side:** LoadScene(String, LoadSceneMode) will return
 SceneEventProgressStatus.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler VerifySceneBeforeLoading
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -146,7 +139,6 @@ public NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler VerifySceneBe
 
 #### ClientSynchronizationMode
 
-<div class="markdown level1 summary">
 
 **LoadSceneMode.Single:** All currently loaded scenes on the client will
 be unloaded and the server's currently active scene will be loaded in
@@ -156,21 +148,19 @@ are and any newly loaded scenes will be loaded additively. Users need to
 determine which scenes are valid to load via the
 VerifySceneBeforeLoading method.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public LoadSceneMode ClientSynchronizationMode { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -182,26 +172,23 @@ public LoadSceneMode ClientSynchronizationMode { get; }
 
 #### DisableValidationWarnings(Boolean)
 
-<div class="markdown level1 summary">
 
 When set to true, this will disable the console warnings about a scene
 being invalidated.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void DisableValidationWarnings(bool disabled)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -211,56 +198,50 @@ public void DisableValidationWarnings(bool disabled)
 
 #### Dispose()
 
-<div class="markdown level1 summary">
 
 Handle NetworkSeneManager clean up
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void Dispose()
 ```
 
-</div>
+
 
 #### LoadScene(String, LoadSceneMode)
 
-<div class="markdown level1 summary">
 
 **Server side:** Loads the scene name in either additive or single
 loading mode. When applicable, the is delivered within the SceneEvent
 via OnSceneEvent
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public SceneEventProgressStatus LoadScene(string sceneName, LoadSceneMode loadSceneMode)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type          | Name          | Description                        |
-|---------------|---------------|------------------------------------|
-| System.String | sceneName     | the name of the scene to be loaded |
-| LoadSceneMode | loadSceneMode |                                    |
+| Type          | Name          | Description                                            |
+|---------------|---------------|--------------------------------------------------------|
+| System.String | sceneName     | the name of the scene to be loaded                     |
+| LoadSceneMode | loadSceneMode | how the scene will be loaded (single or additive mode) |
 
 ##### Returns
 
@@ -270,7 +251,6 @@ public SceneEventProgressStatus LoadScene(string sceneName, LoadSceneMode loadSc
 
 #### SetClientSynchronizationMode(LoadSceneMode)
 
-<div class="markdown level1 summary">
 
 This will change how clients are initially synchronized.  
 **LoadSceneMode.Single:** All currently loaded scenes on the client will
@@ -281,21 +261,19 @@ are and any newly loaded scenes will be loaded additively. Users need to
 determine which scenes are valid to load via the
 VerifySceneBeforeLoading method.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetClientSynchronizationMode(LoadSceneMode mode)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -305,27 +283,24 @@ public void SetClientSynchronizationMode(LoadSceneMode mode)
 
 #### UnloadScene(Scene)
 
-<div class="markdown level1 summary">
 
 **Server Side:** Unloads an additively loaded scene. If you want to
 unload a mode loaded scene load another scene. When applicable, the is
 delivered within the SceneEvent via the OnSceneEvent
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public SceneEventProgressStatus UnloadScene(Scene scene)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -343,27 +318,26 @@ public SceneEventProgressStatus UnloadScene(Scene scene)
 
 #### OnLoad
 
-<div class="markdown level1 summary">
 
 Invoked when a Load event is started by the server.  
 *Note: The server and connected client(s) will always receive this
-notification.*
+notification.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnLoadDelegateHandler OnLoad
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -373,28 +347,27 @@ public event NetworkSceneManager.OnLoadDelegateHandler OnLoad
 
 #### OnLoadComplete
 
-<div class="markdown level1 summary">
 
 Invoked when a LoadComplete event is generated by a client or server.  
 *Note: The server receives this message from all clients (including
 itself). Each client receives their own notification sent to the
-server.*
+server.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnLoadCompleteDelegateHandler OnLoadComplete
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -404,30 +377,29 @@ public event NetworkSceneManager.OnLoadCompleteDelegateHandler OnLoadComplete
 
 #### OnLoadEventCompleted
 
-<div class="markdown level1 summary">
 
 Invoked when a LoadEventCompleted event is generated by the server. This
 event signifies the end of an existing Load event as it pertains to all
 clients connected when the event was started. This event signifies that
 all clients (and server) have finished the Load event.  
 *Note: this is useful to know when all clients have loaded the same
-scene (single or additive mode)*
+scene (single or additive mode)*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnEventCompletedDelegateHandler OnLoadEventCompleted
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -437,7 +409,6 @@ public event NetworkSceneManager.OnEventCompletedDelegateHandler OnLoadEventComp
 
 #### OnSceneEvent
 
-<div class="markdown level1 summary">
 
 Subscribe to this event to receive all SceneEventType notifications.  
 For more details review over SceneEvent and SceneEventType.  
@@ -461,21 +432,22 @@ individually via the following events:
 -   OnSynchronizeComplete Invoked only when a SynchronizeComplete event
     is being processed
 
-</div>
+*Note: Do not start new scene events within NetworkSceneManager scene
+event notification callbacks.*  
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.SceneEventDelegate OnSceneEvent
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -485,7 +457,6 @@ public event NetworkSceneManager.SceneEventDelegate OnSceneEvent
 
 #### OnSynchronize
 
-<div class="markdown level1 summary">
 
 Invoked when a Synchronize event is started by the server after a client
 is approved for connection in order to synchronize the client with the
@@ -493,23 +464,23 @@ currently loaded scenes and NetworkObjects. This event signifies the
 beginning of the synchronization event.  
 *Note: The server and connected client(s) will always receive this
 notification. This event is generated on a per newly connected and
-approved client basis.*
+approved client basis.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnSynchronizeDelegateHandler OnSynchronize
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -519,30 +490,28 @@ public event NetworkSceneManager.OnSynchronizeDelegateHandler OnSynchronize
 
 #### OnSynchronizeComplete
 
-<div class="markdown level1 summary">
 
 Invoked when a SynchronizeComplete event is generated by a client.  
 *Note: The server receives this message from the client, but will never
 generate this event for itself. Each client receives their own
 notification sent to the server. This is useful to know that a client
 has completed the entire connection sequence, loaded all scenes, and
-synchronized all NetworkObjects.*
+synchronized all NetworkObjects.* *\*\*\* Do not start new scene events
+within scene event notification callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnSynchronizeCompleteDelegateHandler OnSynchronizeComplete
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -552,27 +521,26 @@ public event NetworkSceneManager.OnSynchronizeCompleteDelegateHandler OnSynchron
 
 #### OnUnload
 
-<div class="markdown level1 summary">
 
 Invoked when a Unload event is started by the server.  
 *Note: The server and connected client(s) will always receive this
-notification.*
+notification.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnUnloadDelegateHandler OnUnload
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -582,29 +550,28 @@ public event NetworkSceneManager.OnUnloadDelegateHandler OnUnload
 
 #### OnUnloadComplete
 
-<div class="markdown level1 summary">
 
 Invoked when a UnloadComplete event is generated by a client or
 server.  
 *Note: The server receives this message from all clients (including
 itself). Each client receives their own notification sent to the
-server.*
+server.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnUnloadCompleteDelegateHandler OnUnloadComplete
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -614,7 +581,6 @@ public event NetworkSceneManager.OnUnloadCompleteDelegateHandler OnUnloadComplet
 
 #### OnUnloadEventCompleted
 
-<div class="markdown level1 summary">
 
 Invoked when a UnloadEventCompleted event is generated by the server.
 This event signifies the end of an existing Unload event as it pertains
@@ -622,23 +588,23 @@ to all clients connected when the event was started. This event
 signifies that all clients (and server) have finished the Unload
 event.  
 *Note: this is useful to know when all clients have unloaded a specific
-scene. The will always be for this event.*
+scene. The will always be for this event.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public event NetworkSceneManager.OnEventCompletedDelegateHandler OnUnloadEventCompleted
 ```
 
-</div>
+
 
 ##### Event Type
 
@@ -648,10 +614,11 @@ public event NetworkSceneManager.OnEventCompletedDelegateHandler OnUnloadEventCo
 
 ### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
- 
+
+
+

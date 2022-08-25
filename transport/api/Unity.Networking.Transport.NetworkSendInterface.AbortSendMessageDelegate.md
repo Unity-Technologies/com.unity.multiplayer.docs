@@ -1,29 +1,38 @@
----  
-id: Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate  
-title: Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate  
+---
+id: Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
+title: Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Delegate NetworkSendInterface.AbortSendMessageDelegate
 
-<div class="markdown level0 conceptual">
 
-</div>
+Will be invoked from the lower level library if sending a message was
+aborted.
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public delegate void AbortSendMessageDelegate(ref NetworkInterfaceSendHandle handle, IntPtr userData);
 ```
 
+
+
 ##### Parameters
 
-| Type                       | Name       | Description |
-|----------------------------|------------|-------------|
-| NetworkInterfaceSendHandle | \*handle   |             |
-| System.IntPtr              | \*userData |             |
+| Type                       | Name     | Description |
+|----------------------------|----------|-------------|
+| NetworkInterfaceSendHandle | handle   |             |
+| System.IntPtr              | userData |             |
+
+
+
