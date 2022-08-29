@@ -25,6 +25,7 @@ The `INetworkInterface` API used to implement custom network interfaces (the low
   * The `ScheduleReceive` method doesn't use `NetworkPacketReceiver` (which is now obsolete) to propagate received packets to the rest of UTP. Instead, implementations of `ScheduleReceive` are expected to fill the `PacketsQueue` that is now passed in with the received packets.
   * Implementations of `INetworkInterface` are now expected to be fully compatible with Burst. However, an implementation that is not may be wrapped into a compatible one with the new `WrapToUnmanaged` extension method.
   * Creating a `NetworkDriver` with a custom network interface must now be done using the static `NetworkDriver.Create` method (e.g. `NetworkDriver.Create(new MyCustomInterface())`). Directly constructing a `NetworkDriver` with `new` is deprecated.
+  * `INetworkInterface.Initialize` now takes another parameter: a reference to the packet padding. This value can be increased to reserve space for headers and such.
 
 The reason for these breaking changes is to simplify the interface and make it more flexible. For more details on how to create custom network interfaces, please refer to [this section of the documentation](custom-network-interface.md).
 
