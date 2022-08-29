@@ -14,7 +14,7 @@ The custom communication protocol used by UTP to implement connections over UDP 
 
 It is thus recommended to ensure that clients and servers are updated at the same time, or to disallow older clients from connecting once the server is updated. Another strategy is to offer different endpoints for UTP 1.X and 2.0 servers, which could smooth the transition while older clients are updated.
 
-The reasons for this breaking change are to improve bandwidth efficiency, simplify the protocol, and (ironically) improve forward-compatibility of the protocol.
+The reasons for this breaking change are to improve bandwidth efficiency, simplify the protocol, and lay foundations for better forward-compatibility of the protocol.
 
 ## Custom network interfaces
 
@@ -23,7 +23,7 @@ The `INetworkInterface` API used to implement custom network interfaces (the low
   * There is no concept of `NetworkInterfaceEndPoint` anymore. It has been completely replaced with the more general `NetworkEndpoint`. Consequently, there is no need to implement conversion logic between the two anymore (so `CreateInterfaceEndPoint` and `GetGenericEndPoint` were removed from `INetworkInterface`).
   * There is no need to provide a `NetworkSendInterface` through `CreateSendInterface` anymore. Send operations are now handled entirely by `ScheduleSend`, which gets passed a `PacketsQueue` containing the packets to be sent.
   * The `ScheduleReceive` method doesn't use `NetworkPacketReceiver` (which is now obsolete) to propagate received packets to the rest of UTP. Instead, implementations of `ScheduleReceive` are expected to fill the `PacketsQueue` that is now passed in with the received packets.
-  * Implementations of `INetworkInterface` are now expected to be fully unmanaged. However, a managed implementation can be wrapped into an unmanaged one with the new `WrapToUnmanaged` extension method.
+  * Implementations of `INetworkInterface` are now expected to be fully compatible with Burst. However, an implementation that is not may be wrapped into a compatible one with the new `WrapToUnmanaged` extension method.
   * Creating a `NetworkDriver` with a custom network interface must now be done using the static `NetworkDriver.Create` method (e.g. `NetworkDriver.Create(new MyCustomInterface())`). Directly constructing a `NetworkDriver` with `new` is deprecated.
 
 The reason for these breaking changes is to simplify the interface and make it more flexible. For more details on how to create custom network interfaces, please refer to [this section of the documentation](custom-network-interface.md).
@@ -39,7 +39,7 @@ The reason for these breaking changes is to remove Burst-incompatible APIs, allo
 
 ## Other breaking changes
 
-  * After calling `NetworkDriver.Disconnect`, notifying the remote peer of the disconnection now requires completing a `NetworkDriver.ScheduleUpdate` job. In 1.X, `NetworkDriver.ScheduleFlushSend` used to be sufficient for this purpose but it's not the case anymore.
+  * After calling `NetworkDriver.Disconnect`, notifying the remote peer of the disconnection now requires completing a `NetworkDriver.ScheduleUpdate` job. In 1.X, `NetworkDriver.ScheduleFlushSend` used to be sufficient for this purpose but it's not the case anymore. The reason for this change is to allow supporting new protocols (e.g. WebSockets) where disconnecting might involve more work than simply sending a message.
   * Using `SimulatorPipelineStageInSend` is now deprecated. Instead, use `SimulatorPipelineStage` and configure the new `ApplyMode` parameter to the direction (send, receive, or both) it should apply to.
   * `NetworkSettings.WithBaselibNetworkInterfaceParameters` is now deprecated. The maximum payload size can't be configured anymore and is automatically handled by UTP. The receive/send queue sizes are now configured via `NetworkSettings.WithNetworkConfigParameters`.
   * `NetworkSettings.WithDataStreamParameters` and `NetworkSettings.WithPipelineParameters` have been removed. The parameters they were used to configure are now handled automatically by UTP and don't require manual configuration anymore. Calls to these methods can be safely deleted.
