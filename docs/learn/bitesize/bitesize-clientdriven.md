@@ -17,14 +17,14 @@ Making movements feel responsive while staying consistent over multiple game exe
 ## Sample:
 
 ClientDriven's aim is to create a quick sample to show responsive character movements that don't feel sluggish, even under bad network conditions.
-It uses the ClientNetworkTransform sample and moves your own player's position client side, [client authoritatively](dealing-with-latency.md#allow-low-impact-client-authority). 
+It uses the ClientNetworkTransform sample and moves your own player's position client side, [client authoritatively](../dealing-with-latency.md#allow-low-impact-client-authority). 
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/9854697081df4962dd525d7c3bd65f9f88c7ee60/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs#L57-L64
 ```
 
 ### Client side object detection for pickup with server side pickup validation 
-Ingredients in ClientDriven are owned by the server, since they are [shared objects](dealing-with-latency.md#issue-world-consistency). This means if a player tries to grab an object while that object is moving, a server side range detection would sometimes fail, even though it should have succeeded (since ingredients are replicated with some lag, so the player would try to grab ingredients that are a few milliseconds behind).
+Ingredients in ClientDriven are owned by the server, since they are [shared objects](../dealing-with-latency.md#issue-world-consistency). This means if a player tries to grab an object while that object is moving, a server side range detection would sometimes fail, even though it should have succeeded (since ingredients are replicated with some lag, so the player would try to grab ingredients that are a few milliseconds behind).
 To make sure this doesn't happen, the object detection done to grab an ingredient is also done client side.
 
 ```csharp reference
