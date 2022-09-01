@@ -238,9 +238,9 @@ There are two options for writing a `NetworkVariable.Value`:
 - *Server(_default_):* the server is the only one that can write the value.
     - This is useful for server side specific states that all clients should should be aware of but cannot change.
         - Some examples would be an NPC's status (health, alive, dead, etc) or some global world environment state (i.e. is it night or day time?).
-- *Owner:* This means only the owner of the `NetworkObject` and the server can write to the value.
-    - This is useful if your `NetworkVariable` represents something specific to the client's player that only the server and client should know about
-        - This might be a player's inventory or gun's ammo count (etc.)
+- *Owner:* This means only the owner of the `NetworkObject` can write to the value.
+    - This is useful if your `NetworkVariable` represents something specific to the client's player that only the owning client should be able to set
+        - This might be a player's skin or other cosmetics
 
 ### Permissions Example
 
@@ -258,7 +258,8 @@ public class PlayerState : NetworkBehaviour
     public NetworkVariable<float> Health = new NetworkVariable<float>(k_DefaultHealth);
 
     /// <summary>
-    /// Owner Read & Write Permissions: Owner or server can read and write
+    /// Owner Read Permissions: Owner or server can read
+    /// Owner Write Permissions: Only the Owner can write
     /// A player's ammo count is something that you might want, for convenience sake, the
     /// client-side to update locally. This might be because you are trying to reduce 
     /// bandwidth consumption for the server and all non-owners/ players or you might be 
