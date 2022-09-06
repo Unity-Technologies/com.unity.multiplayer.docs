@@ -61,7 +61,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 
 **Error when connecting after imps have died**: The following is a small gotcha we encountered while developing Boss Room. Using `NetworkVariable`s is not magical. If you use `OnValueChanged`, you still need to make sure you initialize your values when spawning for the first time. `OnValueChanged` will not be called when connecting for the first time, only for the subsequent value changes.
 
-[imp not appearing dead](/img/01_imp_not_appearing_dead.png) 
+![imp not appearing dead](/img/01_imp_not_appearing_dead.png) 
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs

@@ -1,164 +1,186 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader
+title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct ReliableUtility.PacketHeader
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct PacketHeader
 
-## Fields
+``` lang-csharp
+public struct PacketHeader
+```
 
-### AckedSequenceId
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### AckedSequenceId
 
-</div>
 
-#### Declaration
 
-    public ushort AckedSequenceId
 
-#### Field Value
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public ushort AckedSequenceId
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### AckMask
+#### AckMask
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint AckMask
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public uint AckMask
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ProcessingTime
+#### ProcessingTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ushort ProcessingTime
 
-#### Field Value
+##### Declaration
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
 
-### SequenceId
+``` lang-csharp
+public ushort ProcessingTime
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public ushort SequenceId
-
-#### Field Value
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### Type
+#### SequenceId
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ushort Type
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public ushort SequenceId
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
+
+#### Type
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public ushort Type
+```
+
+
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
+
+
+

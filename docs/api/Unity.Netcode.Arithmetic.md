@@ -1,182 +1,187 @@
----  
+---
 id: Unity.Netcode.Arithmetic
 title: Unity.Netcode.Arithmetic
 ---
 
-<div class="markdown level0 summary">
+# Class Arithmetic
+
 
 Arithmetic helper class
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+Arithmetic
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class Arithmetic
 ```
 
-## 
 
-### VarIntSize(UInt64)
 
-<div class="markdown level1 summary">
+### Methods
+
+#### VarIntSize(UInt64)
+
 
 Gets the output size in bytes after VarInting a unsigned integer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static int VarIntSize(ulong value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description                              |
 |---------------|-------|------------------------------------------|
 | System.UInt64 | value | The unsigned integer whose length to get |
 
-#### Returns
+##### Returns
 
 | Type         | Description         |
 |--------------|---------------------|
 | System.Int32 | The amount of bytes |
 
-### ZigZagDecode(UInt64)
+#### ZigZagDecode(UInt64)
 
-<div class="markdown level1 summary">
 
 Decides a ZigZag encoded integer back to a signed integer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static long ZigZagDecode(ulong value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description          |
 |---------------|-------|----------------------|
 | System.UInt64 | value | The unsigned integer |
 
-#### Returns
+##### Returns
 
 | Type         | Description                       |
 |--------------|-----------------------------------|
 | System.Int64 | The signed version of the integer |
 
-### ZigZagEncode(Int64)
+#### ZigZagEncode(Int64)
 
-<div class="markdown level1 summary">
 
 ZigZag encodes a signed integer and maps it to a unsigned integer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static ulong ZigZagEncode(long value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type         | Name  | Description                  |
 |--------------|-------|------------------------------|
 | System.Int64 | value | The signed integer to encode |
 
-#### Returns
+##### Returns
 
 | Type          | Description                             |
 |---------------|-----------------------------------------|
 | System.UInt64 | A ZigZag encoded version of the integer |
+
+
+

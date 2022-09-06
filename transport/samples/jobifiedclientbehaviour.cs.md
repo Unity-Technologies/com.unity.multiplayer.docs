@@ -1,9 +1,9 @@
 ---
-id: jobifiedclientbehavior
-title: JobifiedClientBehavior
+id: jobifiedclientbehaviour
+title: JobifiedClientBehaviour sample
 ---
 
-Sample code for `JobifiedClientBehavior`:
+Sample code for `JobifiedClientBehaviour`:
 
 ```csharp
 using UnityEngine;

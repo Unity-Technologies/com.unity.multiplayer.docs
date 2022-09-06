@@ -1,73 +1,76 @@
----  
-id: Unity.Networking.Transport.DataStreamReader  
-title: Unity.Networking.Transport.DataStreamReader  
+---
+id: Unity.Networking.Transport.DataStreamReader
+title: Unity.Networking.Transport.DataStreamReader
 ---
 
-<div class="markdown level0 summary">
+
+# Struct DataStreamReader
+
 
 The `DataStreamReader` class is the counterpart of the
 `DataStreamWriter` class and can be be used to deserialize data which
 was prepared with it.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct DataStreamReader
+
+``` lang-csharp
+public struct DataStreamReader
+```
+
+
 
 ##### **Remarks**
 
-<div class="markdown level0 remarks">
 
 Simple usage example:
 
@@ -90,549 +93,691 @@ of by ref.
 
 See the DataStreamWriter class for more information and examples.
 
-</div>
 
-## Constructors 
 
-### DataStreamReader(NativeArray&lt;Byte&gt;)
+### Constructors
 
-<div class="markdown level1 summary">
+#### DataStreamReader(NativeArray\<Byte\>)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public DataStreamReader(NativeArray<byte> array)
 
-#### Parameters
 
-| Type                                             | Name  | Description |
-|--------------------------------------------------|-------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | array |             |
+##### Declaration
 
-## Properties 
 
-### HasFailedReads
+``` lang-csharp
+public DataStreamReader(NativeArray<byte> array)
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
+##### Parameters
 
-</div>
+| Type                       | Name  | Description |
+|----------------------------|-------|-------------|
+| NativeArray\<System.Byte\> | array |             |
 
-#### Declaration
+#### DataStreamReader(Byte\*, Int32)
 
-    public bool HasFailedReads { get; }
 
-#### Property Value
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
 
-### IsCreated
 
-<div class="markdown level1 summary">
 
-True if the reader has been pointed to a valid buffer space. This would
-be false if the reader was created with no arguments.
 
-</div>
+##### Declaration
 
-<div class="markdown level1 conceptual">
 
-</div>
+``` lang-csharp
+public DataStreamReader(byte *data, int length)
+```
 
-#### Declaration
 
-    public bool IsCreated { get; }
 
-#### Property Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-### Length
-
-<div class="markdown level1 summary">
-
-The total size of the buffer space this reader is working with.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int Length { get; }
-
-#### Property Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-## Methods 
-
-### GetBitsRead()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int GetBitsRead()
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### GetBytesRead()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int GetBytesRead()
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### ReadByte()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public byte ReadByte()
-
-#### Returns
-
-| Type        | Description |
-|-------------|-------------|
-| System.Byte |             |
-
-### ReadBytes(Byte\*, Int32)
-
-<div class="markdown level1 summary">
-
-Read and copy data to the memory location pointed to, an exception will
-be thrown if it does not fit.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public void ReadBytes(byte *data, int length)
-
-#### Parameters
+##### Parameters
 
 | Type          | Name   | Description |
 |---------------|--------|-------------|
 | System.Byte\* | data   |             |
 | System.Int32  | length |             |
 
-#### Exceptions
+### Properties
+
+#### HasFailedReads
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly bool HasFailedReads { get; }
+```
+
+
+
+##### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+#### IsCreated
+
+
+True if the reader has been pointed to a valid buffer space. This would
+be false if the reader was created with no arguments.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
+
+
+
+##### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+#### IsLittleEndian
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly bool IsLittleEndian { get; }
+```
+
+
+
+##### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+#### Length
+
+
+The total size of the buffer space this reader is working with.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly int Length { get; }
+```
+
+
+
+##### Property Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### Methods
+
+#### GetBitsRead()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int GetBitsRead()
+```
+
+
+
+##### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### GetBytesRead()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int GetBytesRead()
+```
+
+
+
+##### Returns
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### ReadByte()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public byte ReadByte()
+```
+
+
+
+##### Returns
+
+| Type        | Description |
+|-------------|-------------|
+| System.Byte |             |
+
+#### ReadBytes(NativeArray\<Byte\>)
+
+
+Read and copy data into the given NativeArray of bytes, an exception
+will be thrown if not enough bytes are available.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void ReadBytes(NativeArray<byte> array)
+```
+
+
+
+##### Parameters
+
+| Type                       | Name  | Description |
+|----------------------------|-------|-------------|
+| NativeArray\<System.Byte\> | array |             |
+
+#### ReadBytes(Byte\*, Int32)
+
+
+Read and copy data to the memory location pointed to, an exception will
+be thrown if it does not fit.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void ReadBytes(byte *data, int length)
+```
+
+
+
+##### Parameters
+
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| System.Byte\* | data   |             |
+| System.Int32  | length |             |
+
+##### Exceptions
 
 | Type                               | Condition                                                                                          |
 |------------------------------------|----------------------------------------------------------------------------------------------------|
 | System.ArgumentOutOfRangeException | Thrown if the length will put the reader out of bounds based on the current read pointer position. |
 
-### ReadBytes(NativeArray&lt;Byte&gt;)
+#### ReadFixedString(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-Read and copy data into the given NativeArray of bytes, an exception
-will be thrown if not enough bytes are available.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public void ReadBytes(NativeArray<byte> array)
+##### Declaration
 
-#### Parameters
 
-| Type                                             | Name  | Description |
-|--------------------------------------------------|-------|-------------|
-| Unity.Collections.NativeArray&lt;System.Byte&gt; | array |             |
+``` lang-csharp
+public ushort ReadFixedString(byte *data, int maxLength)
+```
 
-### ReadFixedString(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public ushort ReadFixedString(byte *data, int maxLength)
-
-#### Parameters
+##### Parameters
 
 | Type          | Name      | Description |
 |---------------|-----------|-------------|
 | System.Byte\* | data      |             |
 | System.Int32  | maxLength |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### ReadFixedString128()
+#### ReadFixedString128()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public FixedString128 ReadFixedString128()
 
-#### Returns
+##### Declaration
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString128 |             |
 
-### ReadFixedString32()
+``` lang-csharp
+public FixedString128Bytes ReadFixedString128()
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
+##### Returns
 
-</div>
+| Type                | Description |
+|---------------------|-------------|
+| FixedString128Bytes |             |
 
-#### Declaration
+#### ReadFixedString32()
 
-    public FixedString32 ReadFixedString32()
 
-#### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString32 |             |
 
-### ReadFixedString4096()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
+##### Declaration
 
-</div>
 
-#### Declaration
+``` lang-csharp
+public FixedString32Bytes ReadFixedString32()
+```
 
-    public FixedString4096 ReadFixedString4096()
 
-#### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| FixedString4096 |             |
+##### Returns
 
-### ReadFixedString512()
+| Type               | Description |
+|--------------------|-------------|
+| FixedString32Bytes |             |
 
-<div class="markdown level1 summary">
+#### ReadFixedString4096()
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public FixedString512 ReadFixedString512()
 
-#### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString512 |             |
+##### Declaration
 
-### ReadFixedString64()
 
-<div class="markdown level1 summary">
+``` lang-csharp
+public FixedString4096Bytes ReadFixedString4096()
+```
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+##### Returns
 
-#### Declaration
+| Type                 | Description |
+|----------------------|-------------|
+| FixedString4096Bytes |             |
 
-    public FixedString64 ReadFixedString64()
+#### ReadFixedString512()
 
-#### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString64 |             |
 
-### ReadFloat()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+##### Declaration
 
-#### Declaration
 
-    public float ReadFloat()
+``` lang-csharp
+public FixedString512Bytes ReadFixedString512()
+```
 
-#### Returns
+
+
+##### Returns
+
+| Type                | Description |
+|---------------------|-------------|
+| FixedString512Bytes |             |
+
+#### ReadFixedString64()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public FixedString64Bytes ReadFixedString64()
+```
+
+
+
+##### Returns
+
+| Type               | Description |
+|--------------------|-------------|
+| FixedString64Bytes |             |
+
+#### ReadFloat()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public float ReadFloat()
+```
+
+
+
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### ReadInt()
+#### ReadInt()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int ReadInt()
 
-#### Returns
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### ReadIntNetworkByteOrder()
+``` lang-csharp
+public int ReadInt()
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int ReadIntNetworkByteOrder()
-
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReadPackedFixedString128Delta(FixedString128, NetworkCompressionModel)
+#### ReadIntNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public FixedString128 ReadPackedFixedString128Delta(FixedString128 baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
 
-| Type                    | Name     | Description |
-|-------------------------|----------|-------------|
-| FixedString128          | baseline |             |
-| NetworkCompressionModel | model    |             |
 
-#### Returns
+``` lang-csharp
+public int ReadIntNetworkByteOrder()
+```
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString128 |             |
 
-### ReadPackedFixedString32Delta(FixedString32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
+##### Returns
 
-</div>
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
 
-<div class="markdown level1 conceptual">
+#### ReadLong()
 
-</div>
 
-#### Declaration
 
-    public FixedString32 ReadPackedFixedString32Delta(FixedString32 baseline, NetworkCompressionModel model)
 
-#### Parameters
 
-| Type                    | Name     | Description |
-|-------------------------|----------|-------------|
-| FixedString32           | baseline |             |
-| NetworkCompressionModel | model    |             |
 
-#### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString32 |             |
+##### Declaration
 
-### ReadPackedFixedString4096Delta(FixedString4096, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
+``` lang-csharp
+public long ReadLong()
+```
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+##### Returns
 
-#### Declaration
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
 
-    public FixedString4096 ReadPackedFixedString4096Delta(FixedString4096 baseline, NetworkCompressionModel model)
+#### ReadPackedFixedString128Delta(FixedString128Bytes, NetworkCompressionModel)
 
-#### Parameters
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public FixedString128Bytes ReadPackedFixedString128Delta(FixedString128Bytes baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString4096         | baseline |             |
+| FixedString128Bytes     | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
-| Type            | Description |
-|-----------------|-------------|
-| FixedString4096 |             |
+| Type                | Description |
+|---------------------|-------------|
+| FixedString128Bytes |             |
 
-### ReadPackedFixedString512Delta(FixedString512, NetworkCompressionModel)
+#### ReadPackedFixedString32Delta(FixedString32Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public FixedString512 ReadPackedFixedString512Delta(FixedString512 baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public FixedString32Bytes ReadPackedFixedString32Delta(FixedString32Bytes baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString512          | baseline |             |
+| FixedString32Bytes      | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| FixedString512 |             |
+| Type               | Description |
+|--------------------|-------------|
+| FixedString32Bytes |             |
 
-### ReadPackedFixedString64Delta(FixedString64, NetworkCompressionModel)
+#### ReadPackedFixedString4096Delta(FixedString4096Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public FixedString64 ReadPackedFixedString64Delta(FixedString64 baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public FixedString4096Bytes ReadPackedFixedString4096Delta(FixedString4096Bytes baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
-| FixedString64           | baseline |             |
+| FixedString4096Bytes    | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| FixedString64 |             |
+| Type                 | Description |
+|----------------------|-------------|
+| FixedString4096Bytes |             |
 
-### ReadPackedFixedStringDelta(Byte\*, Int32, Byte\*, UInt16, NetworkCompressionModel)
+#### ReadPackedFixedString512Delta(FixedString512Bytes, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ushort ReadPackedFixedStringDelta(byte *data, int maxLength, byte *baseData, ushort baseLength, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public FixedString512Bytes ReadPackedFixedString512Delta(FixedString512Bytes baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
+
+| Type                    | Name     | Description |
+|-------------------------|----------|-------------|
+| FixedString512Bytes     | baseline |             |
+| NetworkCompressionModel | model    |             |
+
+##### Returns
+
+| Type                | Description |
+|---------------------|-------------|
+| FixedString512Bytes |             |
+
+#### ReadPackedFixedString64Delta(FixedString64Bytes, NetworkCompressionModel)
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public FixedString64Bytes ReadPackedFixedString64Delta(FixedString64Bytes baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
+
+| Type                    | Name     | Description |
+|-------------------------|----------|-------------|
+| FixedString64Bytes      | baseline |             |
+| NetworkCompressionModel | model    |             |
+
+##### Returns
+
+| Type               | Description |
+|--------------------|-------------|
+| FixedString64Bytes |             |
+
+#### ReadPackedFixedStringDelta(Byte\*, Int32, Byte\*, UInt16, NetworkCompressionModel)
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public ushort ReadPackedFixedStringDelta(byte *data, int maxLength, byte *baseData, ushort baseLength, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name       | Description |
 |-------------------------|------------|-------------|
@@ -642,459 +787,519 @@ will be thrown if not enough bytes are available.
 | System.UInt16           | baseLength |             |
 | NetworkCompressionModel | model      |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### ReadPackedFloat(NetworkCompressionModel)
+#### ReadPackedFloat(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public float ReadPackedFloat(NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public float ReadPackedFloat(NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name  | Description |
 |-------------------------|-------|-------------|
 | NetworkCompressionModel | model |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### ReadPackedFloatDelta(Single, NetworkCompressionModel)
+#### ReadPackedFloatDelta(Single, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public float ReadPackedFloatDelta(float baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public float ReadPackedFloatDelta(float baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
 | System.Single           | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-### ReadPackedInt(NetworkCompressionModel)
+#### ReadPackedInt(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int ReadPackedInt(NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public int ReadPackedInt(NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name  | Description |
 |-------------------------|-------|-------------|
 | NetworkCompressionModel | model |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReadPackedIntDelta(Int32, NetworkCompressionModel)
+#### ReadPackedIntDelta(Int32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int ReadPackedIntDelta(int baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public int ReadPackedIntDelta(int baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
 | System.Int32            | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReadPackedLong(NetworkCompressionModel)
+#### ReadPackedLong(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public long ReadPackedLong(NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public long ReadPackedLong(NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name  | Description |
 |-------------------------|-------|-------------|
 | NetworkCompressionModel | model |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### ReadPackedLongDelta(Int64, NetworkCompressionModel)
+#### ReadPackedLongDelta(Int64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public long ReadPackedLongDelta(long baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public long ReadPackedLongDelta(long baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
 | System.Int64            | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### ReadPackedUInt(NetworkCompressionModel)
+#### ReadPackedUInt(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint ReadPackedUInt(NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public uint ReadPackedUInt(NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name  | Description |
 |-------------------------|-------|-------------|
 | NetworkCompressionModel | model |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ReadPackedUIntDelta(UInt32, NetworkCompressionModel)
+#### ReadPackedUIntDelta(UInt32, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint ReadPackedUIntDelta(uint baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public uint ReadPackedUIntDelta(uint baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
 | System.UInt32           | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ReadPackedULong(NetworkCompressionModel)
+#### ReadPackedULong(NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ulong ReadPackedULong(NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public ulong ReadPackedULong(NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name  | Description |
 |-------------------------|-------|-------------|
 | NetworkCompressionModel | model |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ReadPackedULongDelta(UInt64, NetworkCompressionModel)
+#### ReadPackedULongDelta(UInt64, NetworkCompressionModel)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ulong ReadPackedULongDelta(ulong baseline, NetworkCompressionModel model)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public ulong ReadPackedULongDelta(ulong baseline, NetworkCompressionModel model)
+```
+
+
+
+##### Parameters
 
 | Type                    | Name     | Description |
 |-------------------------|----------|-------------|
 | System.UInt64           | baseline |             |
 | NetworkCompressionModel | model    |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ReadRawBits(Int32)
+#### ReadRawBits(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint ReadRawBits(int numbits)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public uint ReadRawBits(int numbits)
+```
+
+
+
+##### Parameters
 
 | Type         | Name    | Description |
 |--------------|---------|-------------|
 | System.Int32 | numbits |             |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ReadShort()
+#### ReadShort()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public short ReadShort()
 
-#### Returns
+##### Declaration
+
+
+``` lang-csharp
+public short ReadShort()
+```
+
+
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int16 |             |
 
-### ReadShortNetworkByteOrder()
+#### ReadShortNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public short ReadShortNetworkByteOrder()
 
-#### Returns
+##### Declaration
+
+
+``` lang-csharp
+public short ReadShortNetworkByteOrder()
+```
+
+
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int16 |             |
 
-### ReadUInt()
+#### ReadUInt()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint ReadUInt()
 
-#### Returns
+##### Declaration
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt32 |             |
 
-### ReadUIntNetworkByteOrder()
+``` lang-csharp
+public uint ReadUInt()
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public uint ReadUIntNetworkByteOrder()
-
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ReadULong()
+#### ReadUIntNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ulong ReadULong()
 
-#### Returns
+##### Declaration
+
+
+``` lang-csharp
+public uint ReadUIntNetworkByteOrder()
+```
+
+
+
+##### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
+
+#### ReadULong()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public ulong ReadULong()
+```
+
+
+
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### ReadUShort()
+#### ReadUShort()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public ushort ReadUShort()
 
-#### Returns
+##### Declaration
 
-| Type          | Description |
-|---------------|-------------|
-| System.UInt16 |             |
 
-### ReadUShortNetworkByteOrder()
+``` lang-csharp
+public ushort ReadUShort()
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public ushort ReadUShortNetworkByteOrder()
-
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### SeekSet(Int32)
+#### ReadUShortNetworkByteOrder()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public void SeekSet(int pos)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public ushort ReadUShortNetworkByteOrder()
+```
+
+
+
+##### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
+
+#### SeekSet(Int32)
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SeekSet(int pos)
+```
+
+
+
+##### Parameters
 
 | Type         | Name | Description |
 |--------------|------|-------------|
 | System.Int32 | pos  |             |
+
+
+

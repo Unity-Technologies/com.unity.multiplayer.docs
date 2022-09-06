@@ -1,35 +1,46 @@
----  
-id: Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate  
-title: Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate  
+---
+id: Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate
+title: Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Delegate NetworkSendInterface.EndSendMessageDelegate
 
-<div class="markdown level0 conceptual">
 
-</div>
+Invoked from the lower level library at the end of the message sending
+routine.
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public delegate int EndSendMessageDelegate(ref NetworkInterfaceSendHandle handle, ref NetworkInterfaceEndPoint address, IntPtr userData, ref NetworkSendQueueHandle sendQueue);
+
+``` lang-csharp
+public delegate int EndSendMessageDelegate(ref NetworkInterfaceSendHandle handle, ref NetworkInterfaceEndPoint address, IntPtr userData, ref NetworkSendQueueHandle sendQueue);
+```
+
+
 
 ##### Parameters
 
-| Type                       | Name        | Description |
-|----------------------------|-------------|-------------|
-| NetworkInterfaceSendHandle | \*handle    |             |
-| NetworkInterfaceEndPoint   | \*address   |             |
-| System.IntPtr              | \*userData  |             |
-| NetworkSendQueueHandle     | \*sendQueue |             |
+| Type                       | Name      | Description |
+|----------------------------|-----------|-------------|
+| NetworkInterfaceSendHandle | handle    |             |
+| NetworkInterfaceEndPoint   | address   |             |
+| System.IntPtr              | userData  |             |
+| NetworkSendQueueHandle     | sendQueue |             |
 
 ##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

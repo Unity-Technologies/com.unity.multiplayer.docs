@@ -1,180 +1,219 @@
----  
-id: Unity.Networking.Transport.InboundSendBuffer  
-title: Unity.Networking.Transport.InboundSendBuffer  
+---
+id: Unity.Networking.Transport.InboundSendBuffer
+title: Unity.Networking.Transport.InboundSendBuffer
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct InboundSendBuffer
 
-<div class="markdown level0 conceptual">
 
-</div>
+The inbound send buffer
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct InboundSendBuffer
 
-## Fields
+``` lang-csharp
+public struct InboundSendBuffer
+```
 
-### buffer
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### buffer
 
-</div>
 
-#### Declaration
+The buffer
 
-    public byte *buffer
 
-#### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| System.Byte\* |             |
 
-### bufferLength
 
-<div class="markdown level1 summary">
 
-</div>
+##### Declaration
 
-<div class="markdown level1 conceptual">
 
-</div>
+``` lang-csharp
+public byte *buffer
+```
 
-#### Declaration
 
-    public int bufferLength
 
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### bufferWithHeaders
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public byte *bufferWithHeaders
-
-#### Field Value
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### bufferWithHeadersLength
+#### bufferLength
 
-<div class="markdown level1 summary">
 
-</div>
+The buffer length
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int bufferWithHeadersLength
 
-#### Field Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+##### Declaration
 
-### headerPadding
 
-<div class="markdown level1 summary">
+``` lang-csharp
+public int bufferLength
+```
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
-
-#### Declaration
-
-    public int headerPadding
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+#### bufferWithHeaders
 
-### SetBufferFrombufferWithHeaders()
 
-<div class="markdown level1 summary">
+The buffer with headers
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public void SetBufferFrombufferWithHeaders()
+
+##### Declaration
+
+
+``` lang-csharp
+public byte *bufferWithHeaders
+```
+
+
+
+##### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.Byte\* |             |
+
+#### bufferWithHeadersLength
+
+
+The buffer with headers length
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int bufferWithHeadersLength
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### headerPadding
+
+
+The header padding
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int headerPadding
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### Methods
+
+#### SetBufferFrombufferWithHeaders()
+
+
+Sets the buffer frombuffer with headers
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SetBufferFrombufferWithHeaders()
+```
+
+
+
+
+

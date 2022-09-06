@@ -1,127 +1,142 @@
----  
-id: Unity.Networking.Transport.NetworkPipelineParams  
-title: Unity.Networking.Transport.NetworkPipelineParams  
+---
+id: Unity.Networking.Transport.NetworkPipelineParams
+title: Unity.Networking.Transport.NetworkPipelineParams
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkPipelineParams
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network pipeline params
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkParameter
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NetworkPipelineParams : INetworkParameter
 
-## Fields
+``` lang-csharp
+public struct NetworkPipelineParams : INetworkParameter
+```
 
-### initialCapacity
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### initialCapacity
 
-</div>
 
-#### Declaration
+The initial capacity
 
-    public int initialCapacity
 
-#### Field Value
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int initialCapacity
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+### Methods
 
-### ValidateParameters(INetworkParameter\[\])
+#### Validate()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    [Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
-    public static void ValidateParameters(params INetworkParameter[] param)
 
-#### Parameters
+##### Declaration
 
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkParameter\[\] | param |             |
+
+``` lang-csharp
+public bool Validate()
+```
+
+
+
+##### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Implements
 
-<div>
+
 
 INetworkParameter
 
-</div>
+
+
+
+

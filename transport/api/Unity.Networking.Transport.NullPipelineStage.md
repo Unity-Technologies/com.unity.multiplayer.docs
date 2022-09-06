@@ -1,125 +1,137 @@
----  
-id: Unity.Networking.Transport.NullPipelineStage  
-title: Unity.Networking.Transport.NullPipelineStage  
+---
+id: Unity.Networking.Transport.NullPipelineStage
+title: Unity.Networking.Transport.NullPipelineStage
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NullPipelineStage
 
-<div class="markdown level0 conceptual">
 
-</div>
+The NullPipelineStage is the default pipeline stage and used to send
+packets unreliably
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkPipelineStage
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NullPipelineStage : INetworkPipelineStage
 
-## Properties 
+``` lang-csharp
+public struct NullPipelineStage : INetworkPipelineStage
+```
 
-### StaticSize
 
-<div class="markdown level1 summary">
 
-</div>
+### Properties
 
-<div class="markdown level1 conceptual">
+#### StaticSize
 
-</div>
 
-#### Declaration
 
-    public int StaticSize { get; }
 
-#### Property Value
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly int StaticSize { get; }
+```
+
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## Methods 
+### Methods
 
-### StaticInitialize(Byte\*, Int32, INetworkParameter\[\])
+#### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, INetworkParameter[] netParams)
 
-#### Parameters
+##### Declaration
 
-| Type                  | Name                       | Description |
-|-----------------------|----------------------------|-------------|
-| System.Byte\*         | staticInstanceBuffer       |             |
-| System.Int32          | staticInstanceBufferLength |             |
-| INetworkParameter\[\] | netParams                  |             |
 
-#### Returns
+``` lang-csharp
+public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings netParams)
+```
+
+
+
+##### Parameters
+
+| Type            | Name                       | Description |
+|-----------------|----------------------------|-------------|
+| System.Byte\*   | staticInstanceBuffer       |             |
+| System.Int32    | staticInstanceBufferLength |             |
+| NetworkSettings | netParams                  |             |
+
+##### Returns
 
 | Type                 | Description |
 |----------------------|-------------|
@@ -127,8 +139,11 @@ Object.ReferenceEquals(Object, Object)
 
 ### Implements
 
-<div>
+
 
 INetworkPipelineStage
 
-</div>
+
+
+
+

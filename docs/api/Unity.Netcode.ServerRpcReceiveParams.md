@@ -1,88 +1,98 @@
----  
-id: Unity.Netcode.ServerRpcReceiveParams  
-title: Unity.Netcode.ServerRpcReceiveParams  
+---
+id: Unity.Netcode.ServerRpcReceiveParams
+title: Unity.Netcode.ServerRpcReceiveParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ServerRpcReceiveParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+The receive parameters for server-side remote procedure calls
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct ServerRpcReceiveParams
 ```
 
-## 
 
-### SenderClientId
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### SenderClientId
 
-<div class="markdown level1 conceptual">
 
-</div>
+Server-Side RPC The client identifier of the sender
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ulong SenderClientId
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
+
+
+

@@ -1,147 +1,162 @@
----  
-id: Unity.Netcode.NetworkList-1  
-title: Unity.Netcode.NetworkList-1  
+---
+id: Unity.Netcode.NetworkList-1
+title: Unity.Netcode.NetworkList-1
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkList\<T\>
+
 
 Event based NetworkVariable container for syncing Lists
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkVariableBase
 
-<div class="level2">
 
-System.Dynamic.ExpandoObject
 
-</div>
 
-</div>
+NetworkList\<T\>
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 NetworkVariableBase.Initialize(NetworkBehaviour)
 
-</div>
 
-<div>
+
+
+
+NetworkVariableBase.DefaultReadPerm
+
+
+
+
+
+NetworkVariableBase.DefaultWritePerm
+
+
+
+
 
 NetworkVariableBase.Name
 
-</div>
 
-<div>
+
+
 
 NetworkVariableBase.ReadPerm
 
-</div>
 
-<div>
+
+
+
+NetworkVariableBase.WritePerm
+
+
+
+
 
 NetworkVariableBase.SetDirty(Boolean)
 
-</div>
 
-<div>
 
-NetworkVariableBase.ShouldWrite(UInt64, Boolean)
 
-</div>
-
-<div>
 
 NetworkVariableBase.CanClientRead(UInt64)
 
-</div>
 
-<div>
 
-Object.Equals(Object)
 
-</div>
 
-<div>
+NetworkVariableBase.CanClientWrite(UInt64)
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.MemberwiseClone()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+System.Object.GetType()
+
+
+
+
+
+System.Object.MemberwiseClone()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public class NetworkList<T> : NetworkVariableBase, IDisposable where T : struct, IEquatable<T>
 ```
+
+
 
 ##### Type Parameters
 
@@ -149,573 +164,575 @@ public class NetworkList<T> : NetworkVariableBase, IDisposable where T : struct,
 |------|-----------------------|
 | T    | The type for the list |
 
-## 
+### Constructors
 
-### NetworkList()
+#### NetworkList()
 
-<div class="markdown level1 summary">
 
-Creates a NetworkList with the default value and settings
+Constructor method for
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkList()
 ```
 
-### NetworkList(IEnumerable\&lt;T&gt;)
 
-<div class="markdown level1 summary">
 
-Creates a NetworkList with a custom value and the default settings
+#### NetworkList(IEnumerable\<T\>, NetworkVariableReadPermission, NetworkVariableWritePermission)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-``` lang-csharp
-public NetworkList(IEnumerable<T> values)
-```
 
-#### Parameters
 
-| Type                                       | Name   | Description                                  |
-|--------------------------------------------|--------|----------------------------------------------|
-| System.Collections.Generic.IEnumerable\&lt;T&gt; | values | The initial value to use for the NetworkList |
+##### Declaration
 
-### NetworkList(NetworkVariableReadPermission, IEnumerable\&lt;T&gt;)
-
-<div class="markdown level1 summary">
-
-Creates a NetworkList with the default value and custom settings
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
 
 ``` lang-csharp
-public NetworkList(NetworkVariableReadPermission readPerm, IEnumerable<T> values)
+public NetworkList(IEnumerable<T> values = null, NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server)
 ```
 
-#### Parameters
 
-| Type                                       | Name     | Description                                    |
-|--------------------------------------------|----------|------------------------------------------------|
-| NetworkVariableReadPermission              | readPerm | The read permission to use for the NetworkList |
-| System.Collections.Generic.IEnumerable\&lt;T&gt; | values   | The initial value to use for the NetworkList   |
 
-## 
+##### Parameters
 
-### Count
+| Type                                        | Name      | Description |
+|---------------------------------------------|-----------|-------------|
+| System.Collections.Generic.IEnumerable\<T\> | values    |             |
+| NetworkVariableReadPermission               | readPerm  |             |
+| NetworkVariableWritePermission              | writePerm |             |
 
-<div class="markdown level1 summary">
+### Properties
 
-</div>
+#### Count
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int Count { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Item\[Int32\]
+#### Item\[Int32\]
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public T this[int index] { get; set; }
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | index |             |
 
-#### Property Value
+##### Property Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-### LastModifiedTick
+#### LastModifiedTick
 
-<div class="markdown level1 summary">
 
-</div>
+This is actually unused left-over from a previous interface
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int LastModifiedTick { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### Add(T)
+#### Add(T)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void Add(T item)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-### Clear()
+#### Clear()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void Clear()
 ```
 
-### Contains(T)
 
-<div class="markdown level1 summary">
 
-</div>
+#### Contains(T)
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool Contains(T item)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Dispose()
+#### Dispose()
 
-<div class="markdown level1 summary">
 
-</div>
+Overridden System.IDisposable implementation. CAUTION: If you derive
+from this class and override the Dispose() method, you **must** always
+invoke the base.Dispose() method!
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void Dispose()
 ```
 
-#### Overrides
 
-<div>
+
+##### Overrides
+
+
 
 NetworkVariableBase.Dispose()
 
-</div>
 
-### GetEnumerator()
 
-<div class="markdown level1 summary">
+#### GetEnumerator()
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public IEnumerator<T> GetEnumerator()
 ```
 
-#### Returns
 
-| Type                                       | Description |
-|--------------------------------------------|-------------|
-| System.Collections.Generic.IEnumerator\&lt;T&gt; |             |
 
-### IndexOf(T)
+##### Returns
 
-<div class="markdown level1 summary">
+| Type                                        | Description |
+|---------------------------------------------|-------------|
+| System.Collections.Generic.IEnumerator\<T\> |             |
 
-</div>
+#### IndexOf(T)
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int IndexOf(T item)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-#### Returns
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Insert(Int32, T)
+#### Insert(Int32, T)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void Insert(int index, T item)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | index |             |
 | T            | item  |             |
 
-### IsDirty()
+#### IsDirty()
 
-<div class="markdown level1 summary">
 
 Gets Whether or not the container is dirty
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override bool IsDirty()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type           | Description                           |
 |----------------|---------------------------------------|
 | System.Boolean | Whether or not the container is dirty |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.IsDirty()
 
-</div>
 
-### ReadDelta(FastBufferReader, Boolean)
 
-<div class="markdown level1 summary">
+#### ReadDelta(FastBufferReader, Boolean)
+
 
 Reads delta from the reader and applies them to the internal value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name           | Description                                                  |
 |------------------|----------------|--------------------------------------------------------------|
 | FastBufferReader | reader         | The stream to read the delta from                            |
 | System.Boolean   | keepDirtyDelta | Whether or not the delta should be kept as dirty or consumed |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.ReadDelta(FastBufferReader, Boolean)
 
-</div>
 
-### ReadField(FastBufferReader)
 
-<div class="markdown level1 summary">
+#### ReadField(FastBufferReader)
+
 
 Reads the complete state from the reader and applies it
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void ReadField(FastBufferReader reader)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name   | Description                       |
 |------------------|--------|-----------------------------------|
 | FastBufferReader | reader | The stream to read the state from |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.ReadField(FastBufferReader)
 
-</div>
 
-### Remove(T)
 
-<div class="markdown level1 summary">
+#### Remove(T)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool Remove(T item)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type | Name | Description |
 |------|------|-------------|
 | T    | item |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### RemoveAt(Int32)
+#### RemoveAt(Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void RemoveAt(int index)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type         | Name  | Description |
 |--------------|-------|-------------|
 | System.Int32 | index |             |
 
-### ResetDirty()
+#### ResetDirty()
 
-<div class="markdown level1 summary">
 
 Resets the dirty state and marks the variable as synced / clean
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void ResetDirty()
 ```
 
-#### Overrides
 
-<div>
+
+##### Overrides
+
+
 
 NetworkVariableBase.ResetDirty()
 
-</div>
 
-### WriteDelta(FastBufferWriter)
 
-<div class="markdown level1 summary">
+#### WriteDelta(FastBufferWriter)
+
 
 Writes the dirty changes, that is, the changes since the variable was
 last dirty, to the writer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void WriteDelta(FastBufferWriter writer)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name   | Description                              |
 |------------------|--------|------------------------------------------|
 | FastBufferWriter | writer | The stream to write the dirty changes to |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.WriteDelta(FastBufferWriter)
 
-</div>
 
-### WriteField(FastBufferWriter)
 
-<div class="markdown level1 summary">
+#### WriteField(FastBufferWriter)
+
 
 Writes the complete state of the variable to the writer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void WriteField(FastBufferWriter writer)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
 | FastBufferWriter | writer | The stream to write the state to |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.WriteField(FastBufferWriter)
 
-</div>
 
-## 
 
-### OnListChanged
+### Events
 
-<div class="markdown level1 summary">
+#### OnListChanged
+
 
 The callback to be invoked when the list gets changed
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public event NetworkList<T>.OnListChangedDelegate OnListChanged
 ```
 
-#### Event Type
+
+
+##### Event Type
 
 | Type                                  | Description |
 |---------------------------------------|-------------|
@@ -723,8 +740,11 @@ public event NetworkList<T>.OnListChangedDelegate OnListChanged
 
 ### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
+
+
+
+

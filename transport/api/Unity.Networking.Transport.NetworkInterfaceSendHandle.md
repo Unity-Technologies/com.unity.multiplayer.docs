@@ -1,164 +1,198 @@
----  
-id: Unity.Networking.Transport.NetworkInterfaceSendHandle  
-title: Unity.Networking.Transport.NetworkInterfaceSendHandle  
+---
+id: Unity.Networking.Transport.NetworkInterfaceSendHandle
+title: Unity.Networking.Transport.NetworkInterfaceSendHandle
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkInterfaceSendHandle
 
-<div class="markdown level0 conceptual">
 
-</div>
+A handle to data that's going to be sent on an interface.
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NetworkInterfaceSendHandle
 
-## Fields
+``` lang-csharp
+public struct NetworkInterfaceSendHandle
+```
 
-### capacity
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### capacity
 
-</div>
 
-#### Declaration
+Maximum capacity of the data buffer.
 
-    public int capacity
 
-#### Field Value
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int capacity
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### data
+#### data
 
-<div class="markdown level1 summary">
 
-</div>
+Pointer to the data buffer.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public IntPtr data
 
-#### Field Value
+
+##### Declaration
+
+
+``` lang-csharp
+public IntPtr data
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.IntPtr |             |
 
-### flags
+#### flags
 
-<div class="markdown level1 summary">
 
-</div>
+Internal flags used by the driver (tracks who allocated the memory).
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public SendHandleFlags flags
 
-#### Field Value
+
+##### Declaration
+
+
+``` lang-csharp
+public SendHandleFlags flags
+```
+
+
+
+##### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | SendHandleFlags |             |
 
-### id
+#### id
 
-<div class="markdown level1 summary">
 
-</div>
+Internal ID for this handle.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int id
 
-#### Field Value
+
+##### Declaration
+
+
+``` lang-csharp
+public int id
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### size
+
+
+Actual size of the data in the buffer.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int size
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### size
 
-<div class="markdown level1 summary">
 
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int size
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |

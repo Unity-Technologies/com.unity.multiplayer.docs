@@ -100,7 +100,7 @@ public NetworkDriver m_Driver;
 private NativeList<NetworkConnection> m_Connections;
 ```
 
-You need to declare a `NetworkDriver`. You also need to create a [NativeList](http://native-list-info) to hold our connections.
+You need to declare a `NetworkDriver`. You also need to create a NativeList to hold our connections.
 
 ### Start method
 
@@ -153,10 +153,15 @@ Add the following code to the `OnDestroy` method on your [MonoBehaviour](https:/
 ```csharp
 public void OnDestroy()
 {
-    m_Driver.Dispose();
-    m_Connections.Dispose();
+    if (m_Driver.IsCreated)
+    {
+        m_Driver.Dispose();
+        m_Connections.Dispose();
+    }
 }
 ```
+
+The check for `m_Driver.IsCreated` ensures we don't dispose of the memory if it hasn't been allocated (e.g. if the component is disabled).
 
 ### Server Update loop
 
@@ -407,12 +412,12 @@ See [_ClientBehaviour.cs_](samples/clientbehaviour.cs.md) for the full source co
 
 To take this for a test run, you can add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to our **Scene**.
 
-[GameObject Added](/img/transport/game-object.PNG)
+![GameObject Added](/img/transport/game-object.PNG)
 
 Add add both of our behaviours to it:
 
-[Inspector](/img/transport/inspector.PNG)
+![Inspector](/img/transport/inspector.PNG)
 
 Click **Play**. Five log messages should load in your **Console** window:
 
-[Console](/img/transport/console-view.PNG)
+![Console](/img/transport/console-view.PNG)

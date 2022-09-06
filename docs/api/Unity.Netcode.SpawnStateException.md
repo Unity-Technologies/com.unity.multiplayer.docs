@@ -1,241 +1,242 @@
----  
-id: Unity.Netcode.SpawnStateException  
-title: Unity.Netcode.SpawnStateException  
+---
+id: Unity.Netcode.SpawnStateException
+title: Unity.Netcode.SpawnStateException
 ---
 
-<div class="markdown level0 summary">
+# Class SpawnStateException
+
 
 Exception thrown when an object is not yet spawned
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+System.Exception
 
-<div class="level2">
 
-System.Dynamic.ExpandoObject
 
-</div>
 
-</div>
+SpawnStateException
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 System.Runtime.InteropServices.\_Exception
 
-</div>
 
-<div>
+
+
 
 System.Runtime.Serialization.ISerializable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-Exception.GetBaseException()
 
-</div>
+System.Exception.GetBaseException()
 
-<div>
 
-Exception.GetObjectData(SerializationInfo, StreamingContext)
 
-</div>
 
-<div>
 
-Exception.GetType()
+System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,
+System.Runtime.Serialization.StreamingContext)
 
-</div>
 
-<div>
 
-Exception.ToString()
 
-</div>
 
-<div>
+System.Exception.GetType()
 
-Exception.Data
 
-</div>
 
-<div>
 
-Exception.HelpLink
 
-</div>
+System.Exception.ToString()
 
-<div>
 
-Exception.HResult
 
-</div>
 
-<div>
 
-Exception.InnerException
+System.Exception.Data
 
-</div>
 
-<div>
 
-Exception.Message
 
-</div>
 
-<div>
+System.Exception.HelpLink
 
-Exception.Source
 
-</div>
 
-<div>
 
-Exception.StackTrace
 
-</div>
+System.Exception.HResult
 
-<div>
 
-Exception.TargetSite
 
-</div>
 
-<div>
 
-Object.Equals(Object)
+System.Exception.InnerException
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.Exception.Message
 
-Object.GetHashCode()
 
-</div>
 
-<div>
 
-Object.MemberwiseClone()
 
-</div>
+System.Exception.Source
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Exception.StackTrace
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Exception.TargetSite
+
+
+
+
+
+System.Object.Equals(System.Object)
+
+
+
+
+
+System.Object.Equals(System.Object, System.Object)
+
+
+
+
+
+System.Object.GetHashCode()
+
+
+
+
+
+System.Object.MemberwiseClone()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public class SpawnStateException : Exception, _Exception, ISerializable
 ```
 
-## 
 
-### SpawnStateException()
 
-<div class="markdown level1 summary">
+### Constructors
+
+#### SpawnStateException()
+
 
 Constructs a SpawnStateException
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public SpawnStateException()
 ```
 
-### SpawnStateException(String)
 
-<div class="markdown level1 summary">
+
+#### SpawnStateException(String)
+
 
 Constructs a SpawnStateException with a message
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public SpawnStateException(string message)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name    | Description           |
 |---------------|---------|-----------------------|
 | System.String | message | The exception message |
 
-### SpawnStateException(String, Exception)
+#### SpawnStateException(String, Exception)
 
-<div class="markdown level1 summary">
 
 Constructs a SpawnStateException with a message and a inner exception
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public SpawnStateException(string message, Exception inner)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name    | Description           |
 |------------------|---------|-----------------------|
@@ -244,14 +245,17 @@ public SpawnStateException(string message, Exception inner)
 
 ### Implements
 
-<div>
+
 
 System.Runtime.InteropServices.\_Exception
 
-</div>
 
-<div>
+
+
 
 System.Runtime.Serialization.ISerializable
 
-</div>
+
+
+
+

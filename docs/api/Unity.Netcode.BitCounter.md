@@ -1,210 +1,219 @@
----  
-id: Unity.Netcode.BitCounter  
+---
+id: Unity.Netcode.BitCounter
 title: Unity.Netcode.BitCounter
 ---
 
-<div class="markdown level0 summary">
+# Class BitCounter
 
-</div>
 
-<div class="markdown level0 conceptual">
+Utility class to count the number of bytes or bits needed to serialize a
+value.
 
-</div>
 
-<div class="inheritance">
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+BitCounter
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class BitCounter
 ```
 
-## 
 
-### GetUsedBitCount(UInt32)
 
-<div class="markdown level1 summary">
+### Methods
+
+#### GetUsedBitCount(UInt32)
+
 
 Get the minimum number of bits required to represent the given value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static int GetUsedBitCount(uint value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt32 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                 |
 |--------------|-----------------------------|
 | System.Int32 | The number of bits required |
 
-### GetUsedBitCount(UInt64)
+#### GetUsedBitCount(UInt64)
 
-<div class="markdown level1 summary">
 
 Get the minimum number of bits required to represent the given value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static int GetUsedBitCount(ulong value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt64 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                 |
 |--------------|-----------------------------|
 | System.Int32 | The number of bits required |
 
-### GetUsedByteCount(UInt32)
+#### GetUsedByteCount(UInt32)
 
-<div class="markdown level1 summary">
 
 Get the minimum number of bytes required to represent the given value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static int GetUsedByteCount(uint value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt32 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                  |
 |--------------|------------------------------|
 | System.Int32 | The number of bytes required |
 
-### GetUsedByteCount(UInt64)
+#### GetUsedByteCount(UInt64)
 
-<div class="markdown level1 summary">
 
 Get the minimum number of bytes required to represent the given value
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static int GetUsedByteCount(ulong value)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.UInt64 | value | The value   |
 
-#### Returns
+##### Returns
 
 | Type         | Description                  |
 |--------------|------------------------------|
 | System.Int32 | The number of bytes required |
+
+
+

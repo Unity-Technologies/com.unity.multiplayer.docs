@@ -1,244 +1,278 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.Context  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.Context  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.Context
+title: Unity.Networking.Transport.Utilities.ReliableUtility.Context
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct ReliableUtility.Context
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct Context
 
-## Fields
+``` lang-csharp
+public struct Context
+```
 
-### Capacity
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### Capacity
 
-</div>
 
-#### Declaration
 
-    public int Capacity
 
-#### Field Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### DataPtrOffset
 
-<div class="markdown level1 summary">
+##### Declaration
 
-</div>
 
-<div class="markdown level1 conceptual">
+``` lang-csharp
+public int Capacity
+```
 
-</div>
 
-#### Declaration
 
-    public int DataPtrOffset
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### DataStride
+#### DataPtrOffset
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int DataStride
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### Delivered
+``` lang-csharp
+public int DataPtrOffset
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int Delivered
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### IndexPtrOffset
+#### DataStride
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int IndexPtrOffset
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### IndexStride
+``` lang-csharp
+public int DataStride
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int IndexStride
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### LastSentTime
+#### Delivered
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public long LastSentTime
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int Delivered
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### IndexPtrOffset
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int IndexPtrOffset
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### IndexStride
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int IndexStride
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### LastSentTime
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public long LastSentTime
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### PreviousTimestamp
+#### PreviousTimestamp
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public long PreviousTimestamp
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public long PreviousTimestamp
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### Resume
+#### Resume
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int Resume
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int Resume
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

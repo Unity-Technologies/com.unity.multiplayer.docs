@@ -1,124 +1,140 @@
----  
-id: Unity.Networking.Transport.QueuedSendMessage  
-title: Unity.Networking.Transport.QueuedSendMessage  
+---
+id: Unity.Networking.Transport.QueuedSendMessage
+title: Unity.Networking.Transport.QueuedSendMessage
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct QueuedSendMessage
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct QueuedSendMessage
 
-## Fields
+``` lang-csharp
+public struct QueuedSendMessage
+```
 
-### Data
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### Data
 
-</div>
 
-#### Declaration
 
-    public byte *Data
 
-#### Field Value
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public byte *Data
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### DataLength
+#### DataLength
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int DataLength
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int DataLength
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Dest
+#### Dest
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public NetworkInterfaceEndPoint Dest
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public NetworkInterfaceEndPoint Dest
+```
+
+
+
+##### Field Value
 
 | Type                     | Description |
 |--------------------------|-------------|
 | NetworkInterfaceEndPoint |             |
+
+
+

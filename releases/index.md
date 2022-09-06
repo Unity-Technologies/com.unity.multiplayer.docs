@@ -32,22 +32,46 @@ For our {Month Year} release, the following major features were released:
 {Content}
 -->
 
+## 2022 - March
+
+For our March 2022 UTP 1.0.0 release, the following major features were released:
+
+### UTP
+
+* Multi-platform, custom-wrapped UDP based transport
+* Event-driven design
+* Network Pipelines Framework including pipelines for:
+  * Reliability
+  * Sequencing
+  * Fragmentation
+  * Network Condition Simulation
+* Scheduled Jobs support for multi-threading
+* End-to-end encryption support via DTLS
+* Unity Relay support 
+* Huffman encoded datastreams
+* Support for raw, bit-level read and writes from the datastream
+* Keep-alive heartbeat message support
+
+
+See the [UTP Transport install guide](../../transport/current/install) to install Unity transport with your project.
+
+See the [Transport changelog](transport/transport-1-0-0) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+
 ## 2021 - October
 
 For our October 2021 release, the following major features were released:
 
 ### Netcode for GameObjects (Netcode)
 
-[v1.0.0 Netcode pre-release](/releases/multiplayer/1.0.0) supports Unity versions 2020.3 and later
-The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
+[v1.0.0 Netcode pre-release](netcode/1.0.0) supports Unity versions 2020.3 and later
 
-* Streamlined RPC layer with support for [serialization of custom data types](/docs/advanced-topics/custom-serialization)
-* Improved [scene management](/docs/basics/scene-management) which includes additive scene workflows support
-* Support for [network animations](/docs/components/networkanimator)
-* Improved [network transforms](/docs/components/networktransform) with interpolation support
-* Network [object parenting](/docs/advanced-topics/networkobject-parenting) support
+* Streamlined RPC layer with support for [serialization of custom data types](../../netcode/current/advanced-topics/custom-serialization)
+* Improved [scene management](../../netcode/current/basics/scenemanagement/scene-management-overview) which includes additive scene workflows support
+* Support for [network animations](../../netcode/current/components/networkanimator)
+* Improved [network transforms](../../netcode/current/components/networktransform) with interpolation support
+* Network [object parenting](../../netcode/current/advanced-topics/networkobject-parenting) support
 
-Use the [Netcode install guide](/docs/migration/install) for your first installation of Netcode and follow the [upgrade guide](/docs/migration/upgrade-guide) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
+Use the [Netcode install guide](../../netcode/current/installation/install) for your first installation of Netcode and follow the [upgrade guide](../../netcode/current/installation/upgrade_from_mlapi) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
 
 :::unity About Experimental Releases
 For Unity experimental releases:
@@ -65,23 +89,13 @@ For Unity experimental releases:
 
 ### Tools
 
-We added profiler support for Netcode. The new [network profiler modules](/docs/basics/profiling) enables you to inspect detailed information about the network activity performed on a given frame.
+We added profiler support for Netcode. The new [network profiler modules](../../tools/current/profiler) enables you to inspect detailed information about the network activity performed on a given frame.
 
-To install the tools package in your project, see the [install tools](/docs/tools/install-tools) guide.
-
-### Unity Transport (UTP)
-
-* Enabled [Relay Service](https://docs.unity.com/relay/Content/introduction.htm)
-* Includes DTLS encryption (required for console support)
-* OSS UTP Adapter for Netcode
-
-See the [UTP Transport install guide](/docs/transport-utp/install) to install Unity transport with your project.
-
-See the [Transport changelog](transport/transport-changelog.md) for all release notes and information for Unity Transport. Transport specific Netcode implementations are documented in the Netcode release notes.
+To install the tools package in your project, see the [install tools](../../tools/current/install-tools) guide.
 
 ### Boss room
 
-The Boss Room Co-Op Sample is now in [pre-release](/releases/samples/samples-1-0-0-pre) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
+The Boss Room Co-Op Sample is now in [pre-release](samples/samples-1-0-0-pre) and requires Unity 2020.3 LTS and Netcode 1.0.0-pre.
 
 #### New Features
 * Player persistence hierarchical modifications to Netcode's Player Prefab
@@ -93,7 +107,7 @@ The Boss Room Co-Op Sample is now in [pre-release](/releases/samples/samples-1-0
 * NetworkObject pool (arrows are pooled)
 * Server-authoritative character NetworkAnimator
 
-Use the [Boss Room install guide](/docs/learn/bossroom) to start using Boss Room today!
+Use the [Boss Room install guide](../../netcode/current/learn/bossroom/bossroom) to start using Boss Room today!
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
@@ -105,10 +119,10 @@ This project release is available for use. Support for this release is limited. 
 
 ### BiteSize
 
-See the [Bitesize Samples changelog](bitesize/bitesize-changelog.md) for all release information on these projects.
+See the [Bitesize Samples changelog](bitesize/bitesize-changelog) for all release information on these projects.
 
-Use the [BiteSize install guide](/docs/learn/bitesize-introduction) to begin using the different BiteSize sample projects.
+Use the [BiteSize install guide](../../netcode/current/learn/bitesize/bitesize-introduction) to begin using the different BiteSize sample projects.
 
 ### Documentation
 
-See the [Documentation changelog](doc-changelog.md) for major updates to content and site development.
+See the [Documentation changelog](doc-changelog) for major updates to content and site development.

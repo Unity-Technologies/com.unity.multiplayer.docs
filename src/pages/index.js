@@ -18,7 +18,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="docs/tutorials/helloworld/helloworldintro" class="land-link">Learn more about Netcode for GameObjects</a>
+      <a href="netcode/current/tutorials/helloworld" class="land-link">Learn more about Netcode for GameObjects</a>
       </>
     ),
   },
@@ -27,7 +27,7 @@ const features = [
     imageUrl: 'img/land-feature3b.jpg',
     description: (
       <>
-        <a href="https://unity.com/demos/small-scale-coop-sample" target="_blank">Boss Room</a> is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
+        Boss Room is a small scale cooperative game sample project – built on top of the new Unity Networking Core library – 
         designed to help you explore the concepts and patterns behind a multiplayer game flow.
       </>
     ),
@@ -47,7 +47,7 @@ const features = [
     ),
     link: (
       <>
-      <a href="docs/learn/bitesize-introduction">Learn more about Bitesize</a>
+      <a href="netcode/current/learn/bitesize/bitesize-introduction">Learn more about Bitesize</a>
       </>
     ),
   },
@@ -64,7 +64,7 @@ const highlights = [
     ),
     link: (
       <>
-      <a href="docs/learn/faq" class="land-link">See the FAQ</a>
+      <a href="netcode/current/learn/faq" class="land-link">See the FAQ</a>
       </>
     ),
   },
@@ -73,12 +73,12 @@ const highlights = [
     imageUrl: 'img/hilight-code.jpg',
     description: (
       <>
-        Unity Transport provides a new wrapper for Netcode for GameObjects! The site includes docs for <a href="docs/develop/transport-api/introduction">com.unity.multiplayer.transport.utp</a> and <a href="transport/0.8.0/api/introduction">com.unity.transport</a>.
+        Unity Netcode for GameObject uses Unity Transport by default!
       </>
     ),
     link: (
       <>
-      <a href="transport/0.8.0/introduction" class="land-link">See Transport</a>
+      <a href="transport/current/about" class="land-link">See Unity Transport</a>
       </>
     )
   },
@@ -133,7 +133,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/getting-started/about')}>
+              to={useBaseUrl('netcode/current/about')}>
               Get Started
             </Link>
           </div>

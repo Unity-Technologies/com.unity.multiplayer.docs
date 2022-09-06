@@ -1,84 +1,98 @@
----  
-id: Unity.Networking.Transport.NetworkSendQueueHandle  
-title: Unity.Networking.Transport.NetworkSendQueueHandle  
+---
+id: Unity.Networking.Transport.NetworkSendQueueHandle
+title: Unity.Networking.Transport.NetworkSendQueueHandle
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkSendQueueHandle
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network send queue handle
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NetworkSendQueueHandle
 
-## Methods 
+``` lang-csharp
+public struct NetworkSendQueueHandle
+```
 
-### FromHandle()
 
-<div class="markdown level1 summary">
 
-</div>
+### Methods
 
-<div class="markdown level1 conceptual">
+#### FromHandle()
 
-</div>
 
-#### Declaration
+Create from the internal handle
 
-    public NativeQueue<QueuedSendMessage>.ParallelWriter FromHandle()
 
-#### Returns
 
-| Type                               | Description |
-|------------------------------------|-------------|
-| NativeQueue.ParallelWriter&lt;&gt; |             |
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public NativeQueue<QueuedSendMessage>.ParallelWriter FromHandle()
+```
+
+
+
+##### Returns
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| NativeQueue.ParallelWriter\<\> |             |
+
+
+

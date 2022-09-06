@@ -1,145 +1,174 @@
----  
-id: Unity.Networking.Transport.NetworkSendInterface  
-title: Unity.Networking.Transport.NetworkSendInterface  
+---
+id: Unity.Networking.Transport.NetworkSendInterface
+title: Unity.Networking.Transport.NetworkSendInterface
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkSendInterface
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network send interface used to pass around function pointers to the
+actual INetworkInterface
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NetworkSendInterface
 
-## Fields
+``` lang-csharp
+public struct NetworkSendInterface
+```
 
-### AbortSendMessage
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### AbortSendMessage
 
-</div>
 
-#### Declaration
+The abort send message function pointer
 
-    public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> AbortSendMessage
 
-#### Field Value
 
-| Type                                                                          | Description |
-|-------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkSendInterface.AbortSendMessageDelegate&gt; |             |
 
-### BeginSendMessage
 
-<div class="markdown level1 summary">
 
-</div>
+##### Declaration
 
-<div class="markdown level1 conceptual">
 
-</div>
+``` lang-csharp
+public TransportFunctionPointer<NetworkSendInterface.AbortSendMessageDelegate> AbortSendMessage
+```
 
-#### Declaration
 
-    public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> BeginSendMessage
 
-#### Field Value
+##### Field Value
 
-| Type                                                                          | Description |
-|-------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkSendInterface.BeginSendMessageDelegate&gt; |             |
+| Type                                                                      | Description |
+|---------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\<NetworkSendInterface.AbortSendMessageDelegate\> |             |
 
-### EndSendMessage
+#### BeginSendMessage
 
-<div class="markdown level1 summary">
 
-</div>
+The begin send message function pointer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> EndSendMessage
 
-#### Field Value
 
-| Type                                                                        | Description |
-|-----------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer&lt;NetworkSendInterface.EndSendMessageDelegate&gt; |             |
+##### Declaration
 
-### UserData
 
-<div class="markdown level1 summary">
+``` lang-csharp
+public TransportFunctionPointer<NetworkSendInterface.BeginSendMessageDelegate> BeginSendMessage
+```
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+##### Field Value
 
-#### Declaration
+| Type                                                                      | Description |
+|---------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\<NetworkSendInterface.BeginSendMessageDelegate\> |             |
 
-    [NativeDisableUnsafePtrRestriction]
-    public IntPtr UserData
+#### EndSendMessage
 
-#### Field Value
+
+The end send message function pointer
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public TransportFunctionPointer<NetworkSendInterface.EndSendMessageDelegate> EndSendMessage
+```
+
+
+
+##### Field Value
+
+| Type                                                                    | Description |
+|-------------------------------------------------------------------------|-------------|
+| TransportFunctionPointer\<NetworkSendInterface.EndSendMessageDelegate\> |             |
+
+#### UserData
+
+
+The user data
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public IntPtr UserData
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.IntPtr |             |
+
+
+

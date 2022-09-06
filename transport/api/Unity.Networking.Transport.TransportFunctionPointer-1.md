@@ -1,66 +1,73 @@
----  
-id: Unity.Networking.Transport.TransportFunctionPointer-1  
-title: Unity.Networking.Transport.TransportFunctionPointer-1  
+---
+id: Unity.Networking.Transport.TransportFunctionPointer-1
+title: Unity.Networking.Transport.TransportFunctionPointer-1
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct TransportFunctionPointer\<T\>
 
-<div class="markdown level0 conceptual">
 
-</div>
+Represents a wrapper around burst compatible function pointers in a
+portable way
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct TransportFunctionPointer<T>
-        where T : Delegate
+
+``` lang-csharp
+public struct TransportFunctionPointer<T>
+    where T : Delegate
+```
+
+
 
 ##### Type Parameters
 
@@ -68,24 +75,148 @@ Object.ReferenceEquals(Object, Object)
 |------|-------------|
 | T    |             |
 
-## Constructors 
+### Constructors
 
-### TransportFunctionPointer(T)
+#### TransportFunctionPointer(T)
 
-<div class="markdown level1 summary">
 
-</div>
+Initializes a new instance of the class
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public TransportFunctionPointer(T executeDelegate)
 
-#### Parameters
 
-| Type | Name            | Description |
-|------|-----------------|-------------|
-| T    | executeDelegate |             |
+##### Declaration
+
+
+``` lang-csharp
+public TransportFunctionPointer(T executeDelegate)
+```
+
+
+
+##### Parameters
+
+| Type | Name            | Description          |
+|------|-----------------|----------------------|
+| T    | executeDelegate | The execute delegate |
+
+#### TransportFunctionPointer(FunctionPointer\<T\>)
+
+
+Initializes a new instance of the class
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public TransportFunctionPointer(FunctionPointer<T> Pointer)
+```
+
+
+
+##### Parameters
+
+| Type                 | Name    | Description |
+|----------------------|---------|-------------|
+| FunctionPointer\<T\> | Pointer | The pointer |
+
+### Fields
+
+#### Ptr
+
+
+Returns Burst
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly FunctionPointer<T> Ptr
+```
+
+
+
+##### Field Value
+
+| Type                 | Description |
+|----------------------|-------------|
+| FunctionPointer\<T\> |             |
+
+### Methods
+
+#### Burst(T)
+
+
+returns a wrapped Burst compiled function pointer
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public static TransportFunctionPointer<T> Burst(T burstCompilableDelegate)
+```
+
+
+
+##### Parameters
+
+| Type | Name                    | Description                   |
+|------|-------------------------|-------------------------------|
+| T    | burstCompilableDelegate | The burst compilable delegate |
+
+##### Returns
+
+| Type                          | Description                       |
+|-------------------------------|-----------------------------------|
+| TransportFunctionPointer\<T\> | A transport function pointer of t |
+
+#### Managed(T)
+
+
+Returns a wrapped managed function pointer
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public static TransportFunctionPointer<T> Managed(T managedDelegate)
+```
+
+
+
+##### Parameters
+
+| Type | Name            | Description          |
+|------|-----------------|----------------------|
+| T    | managedDelegate | The managed delegate |
+
+##### Returns
+
+| Type                          | Description                       |
+|-------------------------------|-----------------------------------|
+| TransportFunctionPointer\<T\> | A transport function pointer of t |
+
+
+

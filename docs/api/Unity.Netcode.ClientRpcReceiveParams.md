@@ -1,64 +1,72 @@
----  
-id: Unity.Netcode.ClientRpcReceiveParams  
-title: Unity.Netcode.ClientRpcReceiveParams  
+---
+id: Unity.Netcode.ClientRpcReceiveParams
+title: Unity.Netcode.ClientRpcReceiveParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ClientRpcReceiveParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+Client-Side RPC Place holder. ServerRpcParams Note: Server will always
+be the sender, so this structure is a place holder
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct ClientRpcReceiveParams
 ```
+
+
+
+
+

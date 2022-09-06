@@ -1,356 +1,345 @@
----  
-id: Unity.Netcode  
+---
+id: Unity.Netcode
 title: Unity.Netcode
 ---
 
-## 
+# Namespace Unity.Netcode
 
-<div class="markdown level0 summary">
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="markdown level0 remarks">
 
-</div>
 
-## 
 
-### Unity.Netcode.Arithmetic
 
-<div class="section">
+
+### Classes
+
+#### Arithmetic
+
 
 Arithmetic helper class
 
-</div>
 
-### Unity.Netcode.BitCounter
 
-<div class="section">
+#### BitCounter
 
-</div>
 
-### Unity.Netcode.BytePacker
+Utility class to count the number of bytes or bits needed to serialize a
+value.
 
-<div class="section">
 
-Utility class for packing values in serialization.
 
-</div>
+#### BytePacker
 
-### Unity.Netcode.ByteUnpacker
 
-<div class="section">
+Utility class for packing values in serialization. ByteUnpacker to
+unpack packed values.
 
-</div>
 
-### Unity.Netcode.ClientRpcAttribute
 
-<div class="section">
+#### ByteUnpacker
+
+
+Byte Unpacking Helper Class Use this class to unpack values during
+deserialization for values that were packed. BytePacker to pack unpacked
+values
+
+
+
+#### ClientRpcAttribute
+
 
 Marks a method as ClientRpc.
 
 A ClientRpc marked method will be fired by the server but executed on
 clients.
 
-</div>
 
-### Unity.Netcode.CustomMessagingManager
 
-<div class="section">
+#### CustomMessagingManager
+
 
 The manager class to manage custom messages, note that this is different
 from the NetworkManager custom messages. These are named and are much
 easier to use.
 
-</div>
 
-### Unity.Netcode.ErrorUtilities
 
-<div class="section">
+#### InvalidChannelException
 
-</div>
 
-### Unity.Netcode.FixedQueue-1
+Exception thrown when a specified network channel is invalid
 
-<div class="section">
 
-Queue with a fixed size
 
-</div>
+#### InvalidParentException
 
-### Unity.Netcode.InvalidChannelException
-
-<div class="section">
-
-</div>
-
-### Unity.Netcode.InvalidParentException
-
-<div class="section">
 
 Exception thrown when the new parent candidate of the NetworkObject is
 not valid
 
-</div>
 
-### Unity.Netcode.NetworkBehaviour
 
-<div class="section">
+#### NetworkBehaviour
+
 
 The base class to override to write network code. Inherits MonoBehaviour
 
-</div>
 
-### Unity.Netcode.NetworkBehaviourUpdater
 
-<div class="section">
+#### NetworkBehaviourUpdater
 
-</div>
 
-### Unity.Netcode.NetworkClient
+An helper class that helps NetworkManager update NetworkBehaviours and
+replicate them down to connected clients.
 
-<div class="section">
+
+
+#### NetworkClient
+
 
 A NetworkClient
 
-</div>
 
-### Unity.Netcode.NetworkConfig
 
-<div class="section">
+#### NetworkConfig
+
 
 The configuration object used to start server, client and hosts
 
-</div>
 
-### Unity.Netcode.NetworkConfigurationException
 
-<div class="section">
+#### NetworkConfigurationException
+
 
 Exception thrown when a change to a configuration is wrong
 
-</div>
 
-### Unity.Netcode.NetworkList-1
 
-<div class="section">
+#### NetworkList\<T\>
+
 
 Event based NetworkVariable container for syncing Lists
 
-</div>
 
-### Unity.Netcode.NetworkLog
 
-<div class="section">
+#### NetworkLog
+
 
 Helper class for logging
 
-</div>
 
-### Unity.Netcode.NetworkManager
 
-<div class="section">
+#### NetworkManager
+
 
 The main component of the library
 
-</div>
 
-### Unity.Netcode.NetworkObject
 
-<div class="section">
+#### NetworkManager.ConnectionApprovalResponse
+
+
+Connection Approval Response
+
+
+
+#### NetworkObject
+
 
 A component used to identify that a GameObject in the network
 
-</div>
 
-### Unity.Netcode.NetworkPrefabHandler
 
-<div class="section">
+#### NetworkPrefabHandler
+
 
 Primary handler to add or remove customized spawn and destroy handlers
 for a network prefab (i.e. a prefab with a NetworkObject component)
 Register custom prefab handlers by implementing the
 INetworkPrefabInstanceHandler interface.
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager
 
-<div class="section">
+#### NetworkSceneManager
+
 
 Main class for managing network scenes when EnableSceneManagement is
 enabled. Uses the Unity.Netcode.SceneEventMessage message to communicate
 Unity.Netcode.SceneEventData between the server and client(s)
 
-</div>
 
-### Unity.Netcode.NetworkSpawnManager
 
-<div class="section">
+#### NetworkSpawnManager
+
 
 Class that handles object spawning
 
-</div>
 
-### Unity.Netcode.NetworkTickSystem
 
-<div class="section">
+#### NetworkTickSystem
 
-</div>
 
-### Unity.Netcode.NetworkTimeSystem
+Provides discretized time. This is useful for games that require ticks
+happening at regular interval on the server and clients.
 
-<div class="section">
+
+
+#### NetworkTimeSystem
+
 
 NetworkTimeSystem is a standalone system which can be used to run a
 network time simulation. The network time system maintains both a local
 and a server time. The local time is based on
 
-</div>
 
-### Unity.Netcode.NetworkTransport
 
-<div class="section">
+#### NetworkTransport
 
-</div>
 
-### Unity.Netcode.NetworkUpdateLoop
+The generic transport class all Netcode for GameObjects network
+transport implementations derive from. Use this class to add a custom
+transport. for an example of how a transport is integrated
 
-<div class="section">
+
+
+#### NetworkUpdateLoop
+
 
 Represents the network update loop injected into low-level player loop
 in Unity.
 
-</div>
 
-### Unity.Netcode.NetworkVariable-1
 
-<div class="section">
+#### NetworkVariable\<T\>
+
 
 A variable that can be synchronized over the network.
 
-</div>
 
-### Unity.Netcode.NetworkVariableBase
 
-<div class="section">
+#### NetworkVariableBase
+
 
 Interface for network value containers
 
-</div>
 
-### Unity.Netcode.NotListeningException
 
-<div class="section">
+#### NetworkVariableSerialization\<T\>
+
+
+Support methods for reading/writing NetworkVariables Because there are
+multiple overloads of WriteValue/ReadValue based on different generic
+constraints, but there's no way to achieve the same thing with a class,
+this sets up various read/write schemes based on which constraints are
+met by `T` using reflection, which is done at module load time.
+
+
+
+#### NotListeningException
+
 
 Exception thrown when the operation require NetworkManager to be
 listening.
 
-</div>
 
-### Unity.Netcode.NotServerException
 
-<div class="section">
+#### NotServerException
+
 
 Exception thrown when the operation can only be done on the server
 
-</div>
 
-### Unity.Netcode.PendingClient
 
-<div class="section">
+#### PendingClient
+
 
 A class representing a client that is currently in the process of
 connecting
 
-</div>
 
-### Unity.Netcode.RpcAttribute
 
-<div class="section">
+#### RpcAttribute
+
 
 Represents the common base class for Rpc attributes.
 
-</div>
 
-### Unity.Netcode.SceneEvent
 
-<div class="section">
+#### SceneEvent
+
 
 Used for local notifications of various scene events. The OnSceneEvent
 of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-to provide scene event status/state.
+to provide scene event status.  
+*Note: This is only when EnableSceneManagement is enabled.*  
+*\*\*\* Do not start new scene events within scene event notification
+callbacks.*  
+See also:  
+SceneEventType
 
-</div>
 
-### Unity.Netcode.ServerRpcAttribute
 
-<div class="section">
+#### ServerRpcAttribute
+
 
 Marks a method as ServerRpc.
 
 A ServerRpc marked method will be fired by a client but executed on the
 server.
 
-</div>
 
-### Unity.Netcode.SpawnStateException
 
-<div class="section">
+#### SpawnStateException
+
 
 Exception thrown when an object is not yet spawned
 
-</div>
 
-### Unity.Netcode.StreamExtensions
 
-<div class="section">
+#### UserNetworkVariableSerialization\<T\>
 
-</div>
 
-### Unity.Netcode.UnityTransport
+This class is used to register user serialization with NetworkVariables
+for types that are serialized via user serialization, such as with
+FastBufferReader and FastBufferWriter extension methods. Finding those
+methods isn't achievable efficiently at runtime, so this allows users to
+tell NetworkVariable about those extension methods (or simply pass in a
+lambda)
 
-<div class="section">
 
-</div>
 
-### Unity.Netcode.VisibilityChangeException
+#### VisibilityChangeException
 
-<div class="section">
 
 Exception thrown when a visibility change fails
 
-</div>
 
-## 
 
-### Unity.Netcode.BitReader
+### Structs
 
-<div class="section">
+#### BitReader
+
 
 Helper class for doing bitwise reads for a FastBufferReader. Ensures all
 bitwise reads end on proper byte alignment so FastBufferReader doesn't
 have to be concerned with misaligned reads.
 
-</div>
 
-### Unity.Netcode.BitWriter
 
-<div class="section">
+#### BitWriter
+
 
 Helper class for doing bitwise writes for a FastBufferWriter. Ensures
 all bitwise writes end on proper byte alignment so FastBufferWriter
 doesn't have to be concerned with misaligned writes.
 
-</div>
 
-### Unity.Netcode.BufferSerializer-1
 
-<div class="section">
+#### BufferSerializer\<TReaderWriter\>
+
 
 Two-way serializer wrapping FastBufferReader or FastBufferWriter.
 
@@ -361,7 +350,7 @@ Implemented as a ref struct for two reasons:
 2.  The BufferSerializer must always be passed by reference and can't be
     copied
 
-Ref structs help enforce both of those rules: they can't out live the
+Ref structs help enforce both of those rules: they can't ref live the
 stack context in which they were created, and they're always passed by
 reference no matter what.
 
@@ -376,396 +365,496 @@ above requirements. (Allowing direct access to the IReaderWriter struct
 would allow dangerous things to happen because the struct's lifetime
 could outlive the Reader/Writer's.)
 
-</div>
 
-### Unity.Netcode.ClientRpcParams
 
-<div class="section">
+#### ClientRpcParams
 
-</div>
 
-### Unity.Netcode.ClientRpcReceiveParams
+Client-Side RPC Can be used with any client-side remote procedure call
+Note: Typically this is used primarily for sending to a specific list of
+clients as opposed to the default (all). ClientRpcSendParams
 
-<div class="section">
 
-</div>
 
-### Unity.Netcode.ClientRpcSendParams
+#### ClientRpcReceiveParams
 
-<div class="section">
 
-</div>
+Client-Side RPC Place holder. ServerRpcParams Note: Server will always
+be the sender, so this structure is a place holder
 
-### Unity.Netcode.FastBufferReader
 
-<div class="section">
 
-</div>
+#### ClientRpcSendParams
 
-### Unity.Netcode.FastBufferWriter
 
-<div class="section">
+Client-Side RPC The send parameters, when sending client RPCs, provides
+you wil the ability to target specific clients as a managed or unmanaged
+list: TargetClientIds and TargetClientIdsNativeArray
 
-</div>
 
-### Unity.Netcode.NetworkBehaviourReference
 
-<div class="section">
+#### FastBufferReader
+
+
+Optimized class used for reading values from a byte stream
+FastBufferWriter BytePacker ByteUnpacker
+
+
+
+#### FastBufferWriter
+
+
+Optimized class used for writing values into a byte stream
+FastBufferReader BytePacker ByteUnpacker
+
+
+
+#### FastBufferWriter.ForEnums
+
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
+
+
+#### FastBufferWriter.ForFixedStrings
+
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
+
+
+#### FastBufferWriter.ForNetworkSerializable
+
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
+
+
+#### FastBufferWriter.ForPrimitives
+
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
+
+
+#### FastBufferWriter.ForStructs
+
+
+This empty struct exists to allow overloading WriteValue based on
+generic constraints. At the bytecode level, constraints aren't included
+in the method signature, so if multiple methods exist with the same
+signature, it causes a compile error because they would end up being
+emitted as the same method, even if the constraints are different.
+Adding an empty struct with a default value gives them different
+signatures in the bytecode, which then allows the compiler to do
+overload resolution based on the generic constraints without the user
+having to pass the struct in themselves.
+
+
+
+#### ForceNetworkSerializeByMemcpy\<T\>
+
+
+This is a wrapper that adds `INetworkSerializeByMemcpy` support to
+existing structs that the developer doesn't have the ability to modify
+(for example, external structs like `Guid`).
+
+
+
+#### NetworkBehaviourReference
+
 
 A helper struct for serializing NetworkBehaviours over the network. Can
-be used in RPCs and NetworkVariable\&lt;T&gt;. Note: network ids get recycled
+be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled
 by the NetworkManager after a while. So a reference pointing to
 
-</div>
 
-### Unity.Netcode.NetworkListEvent-1
 
-<div class="section">
+#### NetworkListEvent\<T\>
+
 
 Struct containing event information about changes to a NetworkList.
 
-</div>
 
-### Unity.Netcode.NetworkObjectReference
 
-<div class="section">
+#### NetworkManager.ConnectionApprovalRequest
+
+
+Connection Approval Request
+
+
+
+#### NetworkObjectReference
+
 
 A helper struct for serializing NetworkObjects over the network. Can be
-used in RPCs and NetworkVariable\&lt;T&gt;.
+used in RPCs and NetworkVariable\<T\>.
 
-</div>
 
-### Unity.Netcode.NetworkTime
 
-<div class="section">
+#### NetworkTime
+
 
 A struct to represent a point of time in a networked game. Time is
 stored as a combination of amount of passed ticks + a duration offset.
 This struct is meant to replace the Unity Time API for multiplayer
 gameplay.
 
-</div>
 
-### Unity.Netcode.ServerRpcParams
 
-<div class="section">
+#### ServerRpcParams
 
-</div>
 
-### Unity.Netcode.ServerRpcReceiveParams
+Server-Side RPC Can be used with any sever-side remote procedure call
+Note: typically this is use primarily for the ServerRpcReceiveParams
 
-<div class="section">
 
-</div>
 
-### Unity.Netcode.ServerRpcSendParams
+#### ServerRpcReceiveParams
 
-<div class="section">
 
-</div>
+The receive parameters for server-side remote procedure calls
 
-### Unity.Netcode.UnityTransport.ConnectionAddressData
 
-<div class="section">
 
-</div>
+#### ServerRpcSendParams
 
-## 
 
-### Unity.Netcode.INetworkPrefabInstanceHandler
+Server-Side RPC Place holder. ServerRpcParams Note: Clients always send
+to one destination when sending RPCs to the server so this structure is
+a place holder
 
-<div class="section">
+
+
+### Interfaces
+
+#### INetworkPrefabInstanceHandler
+
 
 Interface for customizing, overriding, spawning, and destroying Network
 Prefabs Used by NetworkPrefabHandler
 
-</div>
 
-### Unity.Netcode.INetworkSerializable
 
-<div class="section">
+#### INetworkSerializable
+
 
 Interface for implementing custom serializable types.
 
-</div>
 
-### Unity.Netcode.INetworkStreamDriverConstructor
 
-<div class="section">
+#### INetworkSerializeByMemcpy
 
-Provides an interface that overrides the ability to create your own
-drivers and pipelines
 
-</div>
+This interface is a "tag" that can be applied to a struct to mark that
+struct as being serializable by memcpy. It's up to the developer of the
+struct to analyze the struct's contents and ensure it is actually
+serializable by memcpy. This requires all of the members of the struct
+to be `unmanaged` Plain-Old-Data values - if your struct contains a
+pointer (or a type that contains a pointer, like `NativeList&lt;T>`), it
+should be serialized via `INetworkSerializable` or via
+`FastBufferReader`/`FastBufferWriter` extension methods.
 
-### Unity.Netcode.INetworkUpdateSystem
 
-<div class="section">
+
+#### INetworkUpdateSystem
+
 
 Defines the required interface of a network update system being executed
-by the network update loop.
+by the NetworkUpdateLoop.
 
-</div>
 
-### Unity.Netcode.IReaderWriter
 
-<div class="section">
+#### IReaderWriter
 
-</div>
 
-## 
+Interface for an implementation of one side of a two-way serializer
 
-### Unity.Netcode.HashSize
 
-<div class="section">
+
+### Enums
+
+#### HashSize
+
 
 Represents the length of a var int encoded hash Note that the HashSize
 does not say anything about the actual final output due to the var int
 encoding It just says how many bytes the maximum will be
 
-</div>
 
-### Unity.Netcode.LogLevel
 
-<div class="section">
+#### LogLevel
+
 
 Log level
 
-</div>
 
-### Unity.Netcode.NetworkDelivery
 
-<div class="section">
+#### NetworkDelivery
+
 
 Delivery methods
 
-</div>
 
-### Unity.Netcode.NetworkEvent
 
-<div class="section">
+#### NetworkEvent
+
 
 Represents a netEvent when polling
 
-</div>
 
-### Unity.Netcode.NetworkListEvent-1.EventType
 
-<div class="section">
+#### NetworkListEvent\<T\>.EventType
+
 
 Enum representing the different operations available for triggering an
 event.
 
-</div>
 
-### Unity.Netcode.NetworkUpdateStage
 
-<div class="section">
+#### NetworkUpdateStage
+
 
 Defines network update stages being executed by the network update loop.
+See for more details on update stages:
+https://docs.unity3d.com/ScriptReference/PlayerLoop.Initialization.html
 
-</div>
 
-### Unity.Netcode.NetworkVariableReadPermission
 
-<div class="section">
+#### NetworkVariableReadPermission
 
-Permission type
 
-</div>
+The permission types for reading a var
 
-### Unity.Netcode.PendingClient.State
 
-<div class="section">
+
+#### NetworkVariableWritePermission
+
+
+The permission types for writing a var
+
+
+
+#### PendingClient.State
+
 
 The states of a connection
 
-</div>
 
-### Unity.Netcode.RpcDelivery
 
-<div class="section">
+#### RpcDelivery
+
 
 RPC delivery types
 
-</div>
 
-### Unity.Netcode.SceneEventProgressStatus
 
-<div class="section">
+#### SceneEventProgressStatus
+
 
 Used by NetworkSceneManager to determine if a server invoked scene event
 has started. The returned status is stored in the
-Unity.Netcode.SceneEventProgress.Status property. Note: This was
-formally known as SwitchSceneProgress which contained the . All s are
-now delivered by the OnSceneEvent event handler via the SceneEvent
-parameter.
+Unity.Netcode.SceneEventProgress.Status property.  
+*Note: This was formally known as SwitchSceneProgress which contained
+the . All s are now delivered by the OnSceneEvent event handler via the
+SceneEvent parameter.*
 
-</div>
 
-### Unity.Netcode.SceneEventType
 
-<div class="section">
+#### SceneEventType
+
 
 The different types of scene events communicated between a server and
-client. Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
-messages Note: This is only when EnableSceneManagement is enabled See
-also: SceneEvent
+client.  
+Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
+messages.  
+*Note: This is only when EnableSceneManagement is enabled.*  
+See also:  
+SceneEvent
 
-</div>
 
-### Unity.Netcode.UnityTransport.ProtocolType
 
-<div class="section">
+### Delegates
 
-</div>
+#### CustomMessagingManager.HandleNamedMessageDelegate
 
-## 
-
-### Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate
-
-<div class="section">
 
 Delegate used to handle named messages
 
-</div>
 
-### Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate
 
-<div class="section">
+#### CustomMessagingManager.UnnamedMessageDelegate
+
 
 Delegate used for incoming unnamed messages
 
-</div>
 
-### Unity.Netcode.NetworkList-1.OnListChangedDelegate
 
-<div class="section">
+#### NetworkList\<T\>.OnListChangedDelegate
+
 
 Delegate type for list changed event
 
-</div>
 
-### Unity.Netcode.NetworkManager.ConnectionApprovedDelegate
 
-<div class="section">
+#### NetworkObject.SpawnDelegate
 
-Delegate type called when connection has been approved. This only has to
-be set on the server.
-
-</div>
-
-### Unity.Netcode.NetworkObject.SpawnDelegate
-
-<div class="section">
 
 Delegate type for checking spawn options
 
-</div>
 
-### Unity.Netcode.NetworkObject.VisibilityDelegate
 
-<div class="section">
+#### NetworkObject.VisibilityDelegate
+
 
 Delegate type for checking visibility
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler
 
-<div class="section">
+#### NetworkSceneManager.OnEventCompletedDelegateHandler
+
 
 Delegate declaration for the OnLoadEventCompleted and
-OnUnloadEventCompleted events View LoadEventCompleted for more
-information View UnloadEventCompleted for more information
+OnUnloadEventCompleted events.  
+See also:  
+LoadEventCompleted  
+UnloadEventCompleted
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler
 
-<div class="section">
+#### NetworkSceneManager.OnLoadCompleteDelegateHandler
 
-Delegate declaration for the OnLoadComplete event View LoadComplete for
-more information
 
-</div>
+Delegate declaration for the OnLoadComplete event.  
+See also:  
+LoadComplete for more information
 
-### Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
 
-<div class="section">
 
-Delegate declaration for the OnLoad event View Load for more information
+#### NetworkSceneManager.OnLoadDelegateHandler
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
+Delegate declaration for the OnLoad event.  
+See also:  
+Loadfor more information
 
-<div class="section">
 
-Delegate declaration for the OnSynchronizeComplete event View
+
+#### NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
+
+
+Delegate declaration for the OnSynchronizeComplete event.  
+See also:  
 SynchronizeComplete for more information
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
 
-<div class="section">
+#### NetworkSceneManager.OnSynchronizeDelegateHandler
 
-Delegate declaration for the OnSynchronize event View Synchronize for
-more information
 
-</div>
+Delegate declaration for the OnSynchronize event.  
+See also:  
+Synchronize for more information
 
-### Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
 
-<div class="section">
 
-Delegate declaration for the OnUnloadComplete event View UnloadComplete
-for more information
+#### NetworkSceneManager.OnUnloadCompleteDelegateHandler
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler
+Delegate declaration for the OnUnloadComplete event.  
+See also:  
+UnloadComplete for more information
 
-<div class="section">
 
-Delegate declaration for the OnUnload event View Unload for more
-information
 
-</div>
+#### NetworkSceneManager.OnUnloadDelegateHandler
 
-### Unity.Netcode.NetworkSceneManager.SceneEventDelegate
 
-<div class="section">
+Delegate declaration for the OnUnload event.  
+See also:  
+Unload for more information
 
-The delegate callback definition for scene event notifications For more
-details review over SceneEvent and Unity.Netcode.SceneEventData
 
-</div>
 
-### Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+#### NetworkSceneManager.SceneEventDelegate
 
-<div class="section">
+
+The delegate callback definition for scene event notifications.  
+See also:  
+SceneEvent  
+Unity.Netcode.SceneEventData
+
+
+
+#### NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+
 
 Delegate declaration for the VerifySceneBeforeLoading handler that
 provides an additional level of scene loading security and/or validation
 to assure the scene being loaded is valid scene to be loaded in the
 LoadSceneMode specified.
 
-</div>
 
-### Unity.Netcode.NetworkTransport.TransportEventDelegate
 
-<div class="section">
+#### NetworkTransport.TransportEventDelegate
+
 
 Delegate for transport network events
 
-</div>
 
-### Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
 
-<div class="section">
+#### NetworkVariable\<T\>.OnValueChangedDelegate
+
 
 Delegate type for value changed event
 
-</div>
+
+
+#### UserNetworkVariableSerialization\<T\>.ReadValueDelegate
+
+
+The read value delegate handler definition
+
+
+
+#### UserNetworkVariableSerialization\<T\>.WriteValueDelegate
+
+
+The write value delegate handler definition
+
+
+
+
+

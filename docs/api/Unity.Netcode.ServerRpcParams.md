@@ -1,110 +1,125 @@
----  
-id: Unity.Netcode.ServerRpcParams  
-title: Unity.Netcode.ServerRpcParams  
+---
+id: Unity.Netcode.ServerRpcParams
+title: Unity.Netcode.ServerRpcParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ServerRpcParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+Server-Side RPC Can be used with any sever-side remote procedure call
+Note: typically this is use primarily for the ServerRpcReceiveParams
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct ServerRpcParams
 ```
 
-## 
 
-### Receive
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### Receive
 
-<div class="markdown level1 conceptual">
 
-</div>
+The client RPC receive parameters provides you with the sender's
+identifier
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ServerRpcReceiveParams Receive
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                   | Description |
 |------------------------|-------------|
 | ServerRpcReceiveParams |             |
 
-### Send
+#### Send
 
-<div class="markdown level1 summary">
 
-</div>
+The server RPC send parameters (currently a place holder)
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ServerRpcSendParams Send
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | ServerRpcSendParams |             |
+
+
+

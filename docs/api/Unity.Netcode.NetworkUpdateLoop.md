@@ -1,220 +1,227 @@
----  
-id: Unity.Netcode.NetworkUpdateLoop  
-title: Unity.Netcode.NetworkUpdateLoop  
+---
+id: Unity.Netcode.NetworkUpdateLoop
+title: Unity.Netcode.NetworkUpdateLoop
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkUpdateLoop
+
 
 Represents the network update loop injected into low-level player loop
 in Unity.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkUpdateLoop
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class NetworkUpdateLoop
 ```
 
-## 
 
-### UpdateStage
 
-<div class="markdown level1 summary">
+### Fields
+
+#### UpdateStage
+
 
 The current network update stage being executed.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static NetworkUpdateStage UpdateStage
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type               | Description |
 |--------------------|-------------|
 | NetworkUpdateStage |             |
 
-## 
+### Methods
 
-### RegisterAllNetworkUpdates(INetworkUpdateSystem)
+#### RegisterAllNetworkUpdates(INetworkUpdateSystem)
 
-<div class="markdown level1 summary">
 
 Registers a network update system to be executed in all network update
 stages.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void RegisterAllNetworkUpdates(this INetworkUpdateSystem updateSystem)
 ```
 
-#### Parameters
 
-| Type                 | Name         | Description |
-|----------------------|--------------|-------------|
-| INetworkUpdateSystem | updateSystem |             |
 
-### RegisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type                 | Name         | Description                                                                 |
+|----------------------|--------------|-----------------------------------------------------------------------------|
+| INetworkUpdateSystem | updateSystem | The INetworkUpdateSystem implementation to register for all network updates |
+
+#### RegisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
+
 
 Registers a network update system to be executed in a specific network
 update stage.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void RegisterNetworkUpdate(this INetworkUpdateSystem updateSystem, NetworkUpdateStage updateStage = NetworkUpdateStage.Update)
 ```
 
-#### Parameters
 
-| Type                 | Name         | Description |
-|----------------------|--------------|-------------|
-| INetworkUpdateSystem | updateSystem |             |
-| NetworkUpdateStage   | updateStage  |             |
 
-### UnregisterAllNetworkUpdates(INetworkUpdateSystem)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type                 | Name         | Description                                                                         |
+|----------------------|--------------|-------------------------------------------------------------------------------------|
+| INetworkUpdateSystem | updateSystem | The INetworkUpdateSystem implementation to register for all network updates         |
+| NetworkUpdateStage   | updateStage  | The NetworkUpdateStage being registered for the INetworkUpdateSystem implementation |
+
+#### UnregisterAllNetworkUpdates(INetworkUpdateSystem)
+
 
 Unregisters a network update system from all network update stages.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void UnregisterAllNetworkUpdates(this INetworkUpdateSystem updateSystem)
 ```
 
-#### Parameters
 
-| Type                 | Name         | Description |
-|----------------------|--------------|-------------|
-| INetworkUpdateSystem | updateSystem |             |
 
-### UnregisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type                 | Name         | Description                                                                    |
+|----------------------|--------------|--------------------------------------------------------------------------------|
+| INetworkUpdateSystem | updateSystem | The INetworkUpdateSystem implementation to deregister from all network updates |
+
+#### UnregisterNetworkUpdate(INetworkUpdateSystem, NetworkUpdateStage)
+
 
 Unregisters a network update system from a specific network update
 stage.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void UnregisterNetworkUpdate(this INetworkUpdateSystem updateSystem, NetworkUpdateStage updateStage = NetworkUpdateStage.Update)
 ```
 
-#### Parameters
 
-| Type                 | Name         | Description |
-|----------------------|--------------|-------------|
-| INetworkUpdateSystem | updateSystem |             |
-| NetworkUpdateStage   | updateStage  |             |
+
+##### Parameters
+
+| Type                 | Name         | Description                                                                            |
+|----------------------|--------------|----------------------------------------------------------------------------------------|
+| INetworkUpdateSystem | updateSystem | The INetworkUpdateSystem implementation to deregister from all network updates         |
+| NetworkUpdateStage   | updateStage  | The NetworkUpdateStage to be deregistered from the INetworkUpdateSystem implementation |
+
+
+

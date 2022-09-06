@@ -1,228 +1,170 @@
----  
-id: Unity.Networking.Transport.NetworkCompressionModel  
-title: Unity.Networking.Transport.NetworkCompressionModel  
+---
+id: Unity.Networking.Transport.NetworkCompressionModel
+title: Unity.Networking.Transport.NetworkCompressionModel
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkCompressionModel
 
-<div class="markdown level0 conceptual">
 
-</div>
+Used to provide Huffman compression when using packed DataStream
+functions
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NetworkCompressionModel : IDisposable
 
-## Constructors 
+``` lang-csharp
+public struct NetworkCompressionModel : IDisposable
+```
 
-### NetworkCompressionModel(Allocator)
 
-<div class="markdown level1 summary">
 
-</div>
+### Constructors
 
-<div class="markdown level1 conceptual">
+#### NetworkCompressionModel(Allocator)
 
-</div>
 
-#### Declaration
+Initializes a new instance of the NetworkCompressionModel class
 
-    public NetworkCompressionModel(Allocator allocator)
 
-#### Parameters
 
-| Type                        | Name      | Description |
-|-----------------------------|-----------|-------------|
-| Unity.Collections.Allocator | allocator |             |
 
-## Fields
 
-### bucketOffsets
 
-<div class="markdown level1 summary">
+##### Declaration
 
-</div>
 
-<div class="markdown level1 conceptual">
+``` lang-csharp
+public NetworkCompressionModel(Allocator allocator)
+```
 
-</div>
 
-#### Declaration
 
-    public uint *bucketOffsets
+##### Parameters
 
-#### Field Value
+| Type      | Name      | Description   |
+|-----------|-----------|---------------|
+| Allocator | allocator | The allocator |
 
-| Type            | Description |
-|-----------------|-------------|
-| System.UInt32\* |             |
+### Methods
 
-### bucketSizes
+#### CalculateBucket(UInt32)
 
-<div class="markdown level1 summary">
 
-</div>
+Calculates the bucket using the specified value
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public byte *bucketSizes
 
-#### Field Value
 
-| Type          | Description |
-|---------------|-------------|
-| System.Byte\* |             |
+##### Declaration
 
-### decodeTable
 
-<div class="markdown level1 summary">
+``` lang-csharp
+public int CalculateBucket(uint value)
+```
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
-
-#### Declaration
-
-    public ushort *decodeTable
-
-#### Field Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.UInt16\* |             |
-
-### encodeTable
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public ushort *encodeTable
-
-#### Field Value
-
-| Type            | Description |
-|-----------------|-------------|
-| System.UInt16\* |             |
-
-## Methods 
-
-### CalculateBucket(UInt32)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int CalculateBucket(uint value)
-
-#### Parameters
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
-| System.UInt32 | value |             |
+| System.UInt32 | value | The value   |
 
-#### Returns
+##### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
+| Type         | Description      |
+|--------------|------------------|
+| System.Int32 | The bucket index |
 
-### Dispose()
+#### Dispose()
 
-<div class="markdown level1 summary">
 
-</div>
+Disposes this instance
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public void Dispose()
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void Dispose()
+```
+
+
 
 ### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
+
+
+
+

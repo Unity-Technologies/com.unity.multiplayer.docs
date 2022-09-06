@@ -1,164 +1,171 @@
----  
-id: Unity.Netcode.NetworkClient  
-title: Unity.Netcode.NetworkClient  
+---
+id: Unity.Netcode.NetworkClient
+title: Unity.Netcode.NetworkClient
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkClient
+
 
 A NetworkClient
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkClient
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public class NetworkClient
 ```
 
-## 
 
-### ClientId
 
-<div class="markdown level1 summary">
+### Fields
+
+#### ClientId
+
 
 The ClientId of the NetworkClient
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ulong ClientId
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-### OwnedObjects
+#### PlayerObject
 
-<div class="markdown level1 summary">
-
-The NetworkObject's owned by this Client
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public readonly List<NetworkObject> OwnedObjects
-```
-
-#### Field Value
-
-| Type                                             | Description |
-|--------------------------------------------------|-------------|
-| System.Collections.Generic.List\&lt;NetworkObject&gt;  |             |
-
-### PlayerObject
-
-<div class="markdown level1 summary">
 
 The PlayerObject of the Client
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkObject PlayerObject
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkObject |             |
+
+### Properties
+
+#### OwnedObjects
+
+
+The NetworkObject's owned by this Client
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public List<NetworkObject> OwnedObjects { get; }
+```
+
+
+
+##### Property Value
+
+| Type                                             | Description |
+|--------------------------------------------------|-------------|
+| System.Collections.Generic.List\<NetworkObject\> |             |
+
+
+

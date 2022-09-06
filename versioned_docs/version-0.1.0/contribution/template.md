@@ -124,7 +124,7 @@ Or leave it empty and use the [link text itself].
 To include images, save PNG (.png) files to the `/static/img` folder. Add an image to a markdown file using the following format:
 
 ```markdown title="Markdown for displaying images"
-[alt text](/img/filename.png)
+![alt text](/img/filename.png)
 ```
 
 ```markdown title="Markdown for website image"
@@ -141,7 +141,7 @@ Reference-style: [alt text][logo]
 
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
-[img](/img/example-img.png)
+![img](/img/example-img.png)
 
 ### Images for Dark and Light Mode
 

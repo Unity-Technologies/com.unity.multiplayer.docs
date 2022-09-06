@@ -5,9 +5,14 @@ title: Create jobified client and server
 
 In the workflow [Creating a minimal client and server](workflow-client-server.md), the client should look like this [code example](samples/clientbehaviour.cs.md).
 
-## Requirements
+## Prerequisites
 
-Before reading and using this workflow, you should understand how the [C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) works. Review that information, then continue.
+1. Before reading and using this workflow, you should understand how the [C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) works. Review that information, then continue.
+2. Install the jobs package to your `manifest.json` file, inside the */Packages* folder. To do this:
+   1. Open your **Unity Editor** and create a new Project.
+   2. Go to **Window** > **Package Manager** from the main menu to open the **Unity Package Manager**.
+   3. Click on the ![Add](/img/add.png) (plus symbol) in the status bar and select **Add package from git URL...** from the dropdown.
+   4. Enter `com.unity.jobs` for the latest version of the jobs package.
 
 ## Create a Jobified Client
 
@@ -346,9 +351,12 @@ You need to remember to call `ServerJobHandle.Complete` in your `OnDestroy` meth
 public void OnDestroy()
 {
     // Make sure we run our jobs to completion before exiting.
-    ServerJobHandle.Complete();
-    m_Connections.Dispose();
-    m_Driver.Dispose();
+    if (m_Driver.IsCreated)
+    {
+        ServerJobHandle.Complete();
+        m_Connections.Dispose();
+        m_Driver.Dispose();
+    }
 }
 ```
 
@@ -419,10 +427,6 @@ In the code above, you have:
 * `JobHandle` returned as a dependency on the `ServerUpdateConnectionJob`.
 * The final link in the chain is the `ServerUpdateJob` that needs to run after  `ServerUpdateConnectionsJob`. In this line of code, there is a trick to invoke the `IJobParallelForDeferExtensions`. `m_Connections` `NativeList` is passed to the `Schedule` method, which updates the count of connections before starting the job. It will fan out and run all `ServerUpdateConnectionJobs` in parallel.
 
-:::note
-If you are having trouble with the `serverUpdateJob.Schedule(m_Connections, 1, ServerJobHandle);` call, you may need to add `"com.unity.jobs": "0.0.7-preview.5"` to your `manifest.json` file, inside the */Packages* folder.
-:::
-
 You should now have a fully functional [jobified server](samples/jobifiedserverbehaviour.cs.md).
 
-You can download all examples from [here](https://oc.unity3d.com/index.php/s/PHaNZP79Va2YOLT).
+

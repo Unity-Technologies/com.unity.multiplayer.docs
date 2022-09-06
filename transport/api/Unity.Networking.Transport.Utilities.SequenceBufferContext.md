@@ -1,144 +1,163 @@
----  
-id: Unity.Networking.Transport.Utilities.SequenceBufferContext  
-title: Unity.Networking.Transport.Utilities.SequenceBufferContext  
+---
+id: Unity.Networking.Transport.Utilities.SequenceBufferContext
+title: Unity.Networking.Transport.Utilities.SequenceBufferContext
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct SequenceBufferContext
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct SequenceBufferContext
 
-## Fields
+``` lang-csharp
+public struct SequenceBufferContext
+```
 
-### Acked
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### Acked
 
-</div>
 
-#### Declaration
 
-    public int Acked
 
-#### Field Value
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int Acked
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### AckMask
+#### AckMask
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint AckMask
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public uint AckMask
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### LastAckMask
+#### LastAckMask
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint LastAckMask
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public uint LastAckMask
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### Sequence
+#### Sequence
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int Sequence
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int Sequence
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

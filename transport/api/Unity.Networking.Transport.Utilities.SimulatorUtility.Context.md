@@ -1,364 +1,416 @@
----  
-id: Unity.Networking.Transport.Utilities.SimulatorUtility.Context  
-title: Unity.Networking.Transport.Utilities.SimulatorUtility.Context  
+---
+id: Unity.Networking.Transport.Utilities.SimulatorUtility.Context
+title: Unity.Networking.Transport.Utilities.SimulatorUtility.Context
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct SimulatorUtility.Context
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct Context
 
-## Fields
+``` lang-csharp
+public struct Context
+```
 
-### FuzzFactor
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### FuzzFactor
 
-</div>
 
-#### Declaration
 
-    public int FuzzFactor
 
-#### Field Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### FuzzOffset
 
-<div class="markdown level1 summary">
+##### Declaration
 
-</div>
 
-<div class="markdown level1 conceptual">
+``` lang-csharp
+public int FuzzFactor
+```
 
-</div>
 
-#### Declaration
 
-    public int FuzzOffset
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### MaxPacketCount
+#### FuzzOffset
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int MaxPacketCount
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### MaxPacketSize
+``` lang-csharp
+public int FuzzOffset
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int MaxPacketSize
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### NextPacketTime
+#### MaxPacketCount
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public long NextPacketTime
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int MaxPacketCount
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### MaxPacketSize
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int MaxPacketSize
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### NextPacketTime
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public long NextPacketTime
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### PacketCount
+#### PacketCount
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int PacketCount
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### PacketDelayMs
+``` lang-csharp
+public int PacketCount
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int PacketDelayMs
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketDrop
+#### PacketDelayMs
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int PacketDrop
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### PacketDropCount
+``` lang-csharp
+public int PacketDelayMs
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int PacketDropCount
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketJitterMs
+#### PacketDrop
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int PacketJitterMs
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int PacketDrop
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Random
+#### PacketDropCount
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public Mathematics.Random Random
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int PacketDropCount
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### PacketJitterMs
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int PacketJitterMs
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### Random
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public Mathematics.Random Random
+```
+
+
+
+##### Field Value
 
 | Type                     | Description |
 |--------------------------|-------------|
 | Unity.Mathematics.Random |             |
 
-### RandomSeed
+#### RandomSeed
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public uint RandomSeed
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public uint RandomSeed
+```
+
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### ReadyPackets
+#### ReadyPackets
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int ReadyPackets
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int ReadyPackets
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### StatsTime
+#### StatsTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public long StatsTime
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public long StatsTime
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### WaitingPackets
+#### WaitingPackets
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int WaitingPackets
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int WaitingPackets
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

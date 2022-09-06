@@ -1,29 +1,50 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
+title: Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Enum ReliableUtility.ErrorCodes
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public enum ErrorCodes
 
-## Fields
+``` lang-csharp
+public enum ErrorCodes
+```
 
-| Name | Description |
-| -- | -- |
-| Duplicated\_Packet | |
-| InsufficientMemory | |
-| OutgoingQueueIsFull | |
-| Stale\_Packet | |
+
+
+### Fields
+
+Name
+
+
+
+
+
+
+
+
+
+Description
+
+Duplicated_Packet
+
+InsufficientMemory
+
+OutgoingQueueIsFull
+
+Stale_Packet
+
+
+

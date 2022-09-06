@@ -1,190 +1,271 @@
----  
-id: Unity.Netcode.NetworkLog  
-title: Unity.Netcode.NetworkLog  
+---
+id: Unity.Netcode.NetworkLog
+title: Unity.Netcode.NetworkLog
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkLog
+
 
 Helper class for logging
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkLog
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class NetworkLog
 ```
 
-## 
 
-### CurrentLogLevel
 
-<div class="markdown level1 summary">
+### Properties
+
+#### CurrentLogLevel
+
 
 Gets the current log level.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static LogLevel CurrentLogLevel { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type     | Description            |
 |----------|------------------------|
 | LogLevel | The current log level. |
 
-## 
+### Methods
 
-### LogErrorServer(String)
+#### LogError(String)
 
-<div class="markdown level1 summary">
+
+Locally logs a error log with Netcode prefixing.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public static void LogError(string message)
+```
+
+
+
+##### Parameters
+
+| Type          | Name    | Description        |
+|---------------|---------|--------------------|
+| System.String | message | The message to log |
+
+#### LogErrorServer(String)
+
 
 Logs an error log locally and on the server if possible.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void LogErrorServer(string message)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
 
-### LogInfoServer(String)
+#### LogInfo(String)
 
-<div class="markdown level1 summary">
+
+Locally logs a info log with Netcode prefixing.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public static void LogInfo(string message)
+```
+
+
+
+##### Parameters
+
+| Type          | Name    | Description        |
+|---------------|---------|--------------------|
+| System.String | message | The message to log |
+
+#### LogInfoServer(String)
+
 
 Logs an info log locally and on the server if possible.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void LogInfoServer(string message)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
 
-### LogWarningServer(String)
+#### LogWarning(String)
 
-<div class="markdown level1 summary">
+
+Locally logs a warning log with Netcode prefixing.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public static void LogWarning(string message)
+```
+
+
+
+##### Parameters
+
+| Type          | Name    | Description        |
+|---------------|---------|--------------------|
+| System.String | message | The message to log |
+
+#### LogWarningServer(String)
+
 
 Logs a warning log locally and on the server if possible.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static void LogWarningServer(string message)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name    | Description        |
 |---------------|---------|--------------------|
 | System.String | message | The message to log |
+
+
+

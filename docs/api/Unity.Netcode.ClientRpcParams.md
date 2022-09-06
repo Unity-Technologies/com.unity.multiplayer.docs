@@ -1,110 +1,126 @@
----  
-id: Unity.Netcode.ClientRpcParams  
-title: Unity.Netcode.ClientRpcParams  
+---
+id: Unity.Netcode.ClientRpcParams
+title: Unity.Netcode.ClientRpcParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ClientRpcParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+Client-Side RPC Can be used with any client-side remote procedure call
+Note: Typically this is used primarily for sending to a specific list of
+clients as opposed to the default (all). ClientRpcSendParams
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct ClientRpcParams
 ```
 
-## 
 
-### Receive
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### Receive
 
-<div class="markdown level1 conceptual">
 
-</div>
+The client RPC receive parameters (currently a place holder)
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ClientRpcReceiveParams Receive
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                   | Description |
 |------------------------|-------------|
 | ClientRpcReceiveParams |             |
 
-### Send
+#### Send
 
-<div class="markdown level1 summary">
 
-</div>
+The client RPC send parameters provides you with the ability to send to
+a specific list of clients
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ClientRpcSendParams Send
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | ClientRpcSendParams |             |
+
+
+

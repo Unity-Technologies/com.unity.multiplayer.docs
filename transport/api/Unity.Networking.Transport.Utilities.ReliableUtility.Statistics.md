@@ -1,204 +1,232 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.Statistics  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.Statistics  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.Statistics
+title: Unity.Networking.Transport.Utilities.ReliableUtility.Statistics
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct ReliableUtility.Statistics
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct Statistics
 
-## Fields
+``` lang-csharp
+public struct Statistics
+```
 
-### PacketsDropped
 
-<div class="markdown level1 summary">
 
-</div>
+### Fields
 
-<div class="markdown level1 conceptual">
+#### PacketsDropped
 
-</div>
 
-#### Declaration
 
-    public int PacketsDropped
 
-#### Field Value
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### PacketsDuplicated
 
-<div class="markdown level1 summary">
+##### Declaration
 
-</div>
 
-<div class="markdown level1 conceptual">
+``` lang-csharp
+public int PacketsDropped
+```
 
-</div>
 
-#### Declaration
 
-    public int PacketsDuplicated
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketsOutOfOrder
+#### PacketsDuplicated
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int PacketsOutOfOrder
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### PacketsReceived
+``` lang-csharp
+public int PacketsDuplicated
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int PacketsReceived
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketsResent
+#### PacketsOutOfOrder
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int PacketsResent
 
-#### Field Value
+##### Declaration
 
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
 
-### PacketsSent
+``` lang-csharp
+public int PacketsOutOfOrder
+```
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-    public int PacketsSent
-
-#### Field Value
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### PacketsStale
+#### PacketsReceived
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int PacketsStale
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int PacketsReceived
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+#### PacketsResent
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int PacketsResent
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### PacketsSent
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int PacketsSent
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+#### PacketsStale
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public int PacketsStale
+```
+
+
+
+##### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+
+

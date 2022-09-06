@@ -1,34 +1,36 @@
----  
-id: Unity.Netcode.INetworkPrefabInstanceHandler  
-title: Unity.Netcode.INetworkPrefabInstanceHandler  
+---
+id: Unity.Netcode.INetworkPrefabInstanceHandler
+title: Unity.Netcode.INetworkPrefabInstanceHandler
 ---
 
-<div class="markdown level0 summary">
+# Interface INetworkPrefabInstanceHandler
+
 
 Interface for customizing, overriding, spawning, and destroying Network
 Prefabs Used by NetworkPrefabHandler
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public interface INetworkPrefabInstanceHandler
 ```
 
-## 
 
-### Destroy(NetworkObject)
 
-<div class="markdown level1 summary">
+### Methods
+
+#### Destroy(NetworkObject)
+
 
 Invoked on Client and Server Once an implementation is registered with
 the NetworkPrefabHandler, this method will be called when a Network
@@ -45,53 +47,56 @@ Note on Pooling: When this method is invoked, you do not need to destroy
 the NetworkObject as long as you want your pool to persist. The most
 common approach is to make the NetworkObject inactive by calling .
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 void Destroy(NetworkObject networkObject)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name          | Description                       |
 |---------------|---------------|-----------------------------------|
 | NetworkObject | networkObject | The NetworkObject being destroyed |
 
-### Instantiate(UInt64, Vector3, Quaternion)
+#### Instantiate(UInt64, Vector3, Quaternion)
 
-<div class="markdown level1 summary">
 
 Client Side Only Once an implementation is registered with the
 NetworkPrefabHandler, this method will be called every time a Network
 Prefab associated NetworkObject is spawned on clients
 
 Note On Hosts: Use the RegisterHostGlobalObjectIdHashValues(GameObject,
-List\&lt;GameObject&gt;) method to register all targeted NetworkPrefab
+List\<GameObject\>) method to register all targeted NetworkPrefab
 overrides manually since the host will be acting as both a server and
 client.
 
 Note on Pooling: If you are using a NetworkObject pool, don't forget to
 make the NetworkObject active via the method.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rotation)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name          | Description                                                           |
 |---------------|---------------|-----------------------------------------------------------------------|
@@ -99,8 +104,11 @@ NetworkObject Instantiate(ulong ownerClientId, Vector3 position, Quaternion rota
 | Vector3       | position      | the initial/default position for the NetworkObject to be instantiated |
 | Quaternion    | rotation      | the initial/default rotation for the NetworkObject to be instantiated |
 
-#### Returns
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | NetworkObject |             |
+
+
+

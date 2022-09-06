@@ -1,77 +1,87 @@
----  
-id: Unity.Netcode.INetworkUpdateSystem  
-title: Unity.Netcode.INetworkUpdateSystem  
+---
+id: Unity.Netcode.INetworkUpdateSystem
+title: Unity.Netcode.INetworkUpdateSystem
 ---
 
-<div class="markdown level0 summary">
+# Interface INetworkUpdateSystem
+
 
 Defines the required interface of a network update system being executed
-by the network update loop.
+by the NetworkUpdateLoop.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public interface INetworkUpdateSystem
 ```
 
-## 
 
-### NetworkUpdate(NetworkUpdateStage)
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### NetworkUpdate(NetworkUpdateStage)
 
-<div class="markdown level1 conceptual">
 
-</div>
+The update method that is being executed in the context of related
+NetworkUpdateStage.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 void NetworkUpdate(NetworkUpdateStage updateStage)
 ```
 
-#### Parameters
 
-| Type               | Name        | Description |
-|--------------------|-------------|-------------|
-| NetworkUpdateStage | updateStage |             |
+
+##### Parameters
+
+| Type               | Name        | Description                                    |
+|--------------------|-------------|------------------------------------------------|
+| NetworkUpdateStage | updateStage | The NetworkUpdateStage that is being executed. |
 
 ### Extension Methods
 
-<div>
+
 
 NetworkUpdateLoop.RegisterAllNetworkUpdates(INetworkUpdateSystem)
 
-</div>
 
-<div>
+
+
 
 NetworkUpdateLoop.RegisterNetworkUpdate(INetworkUpdateSystem,
 NetworkUpdateStage)
 
-</div>
 
-<div>
+
+
 
 NetworkUpdateLoop.UnregisterAllNetworkUpdates(INetworkUpdateSystem)
 
-</div>
 
-<div>
+
+
 
 NetworkUpdateLoop.UnregisterNetworkUpdate(INetworkUpdateSystem,
 NetworkUpdateStage)
 
-</div>
+
+
+
+

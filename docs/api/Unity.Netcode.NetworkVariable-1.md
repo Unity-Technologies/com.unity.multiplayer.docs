@@ -1,456 +1,413 @@
----  
-id: Unity.Netcode.NetworkVariable-1  
-title: Unity.Netcode.NetworkVariable-1  
+---
+id: Unity.Netcode.NetworkVariable-1
+title: Unity.Netcode.NetworkVariable-1
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkVariable\<T\>
+
 
 A variable that can be synchronized over the network.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkVariableBase
 
-<div class="level2">
 
-System.Dynamic.ExpandoObject
 
-</div>
 
-</div>
+NetworkVariable\<T\>
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 NetworkVariableBase.Initialize(NetworkBehaviour)
 
-</div>
 
-<div>
+
+
+
+NetworkVariableBase.DefaultReadPerm
+
+
+
+
+
+NetworkVariableBase.DefaultWritePerm
+
+
+
+
 
 NetworkVariableBase.Name
 
-</div>
 
-<div>
+
+
 
 NetworkVariableBase.ReadPerm
 
-</div>
 
-<div>
+
+
+
+NetworkVariableBase.WritePerm
+
+
+
+
 
 NetworkVariableBase.SetDirty(Boolean)
 
-</div>
 
-<div>
+
+
 
 NetworkVariableBase.ResetDirty()
 
-</div>
 
-<div>
+
+
 
 NetworkVariableBase.IsDirty()
 
-</div>
 
-<div>
 
-NetworkVariableBase.ShouldWrite(UInt64, Boolean)
 
-</div>
-
-<div>
 
 NetworkVariableBase.CanClientRead(UInt64)
 
-</div>
 
-<div>
+
+
+
+NetworkVariableBase.CanClientWrite(UInt64)
+
+
+
+
 
 NetworkVariableBase.Dispose()
 
-</div>
 
-<div>
 
-Object.Equals(Object)
 
-</div>
 
-<div>
+System.Object.Equals(System.Object)
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.MemberwiseClone()
+System.Object.GetHashCode()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
 
-<div>
+System.Object.GetType()
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+System.Object.MemberwiseClone()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 [Serializable]
 public class NetworkVariable<T> : NetworkVariableBase, IDisposable where T : struct
 ```
 
+
+
 ##### Type Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Name | Description                                 |
+|------|---------------------------------------------|
+| T    | the unmanaged type for NetworkVariable\<T\> |
 
-## 
+### Constructors
 
-### NetworkVariable()
+#### NetworkVariable(T, NetworkVariableReadPermission, NetworkVariableWritePermission)
 
-<div class="markdown level1 summary">
 
-Creates a NetworkVariable with the default value and custom read
-permission
+Constructor for NetworkVariable\<T\>
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
-public NetworkVariable()
+public NetworkVariable(T value = default(T), NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server)
 ```
 
-### NetworkVariable(T)
 
-<div class="markdown level1 summary">
 
-Creates a NetworkVariable with a custom value and the default read
-permission
+##### Parameters
 
-</div>
+| Type                           | Name      | Description                                                      |
+|--------------------------------|-----------|------------------------------------------------------------------|
+| T                              | value     | initial value set that is of type T                              |
+| NetworkVariableReadPermission  | readPerm  | the NetworkVariableReadPermission for this NetworkVariable\<T\>  |
+| NetworkVariableWritePermission | writePerm | the NetworkVariableWritePermission for this NetworkVariable\<T\> |
 
-<div class="markdown level1 conceptual">
+### Fields
 
-</div>
+#### OnValueChanged
 
-#### Declaration
-
-``` lang-csharp
-public NetworkVariable(T value)
-```
-
-#### Parameters
-
-| Type | Name  | Description                                      |
-|------|-------|--------------------------------------------------|
-| T    | value | The initial value to use for the NetworkVariable |
-
-### NetworkVariable(NetworkVariableReadPermission)
-
-<div class="markdown level1 summary">
-
-Creates a NetworkVariable with the default value and custom read
-permission
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public NetworkVariable(NetworkVariableReadPermission readPerm)
-```
-
-#### Parameters
-
-| Type                          | Name     | Description                                 |
-|-------------------------------|----------|---------------------------------------------|
-| NetworkVariableReadPermission | readPerm | The read permission for the NetworkVariable |
-
-### NetworkVariable(NetworkVariableReadPermission, T)
-
-<div class="markdown level1 summary">
-
-Creates a NetworkVariable with a custom value and custom settings
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public NetworkVariable(NetworkVariableReadPermission readPerm, T value)
-```
-
-#### Parameters
-
-| Type                          | Name     | Description                                      |
-|-------------------------------|----------|--------------------------------------------------|
-| NetworkVariableReadPermission | readPerm | The read permission for the NetworkVariable      |
-| T                             | value    | The initial value to use for the NetworkVariable |
-
-## 
-
-### OnValueChanged
-
-<div class="markdown level1 summary">
 
 The callback to be invoked when the value gets changed
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkVariable<T>.OnValueChangedDelegate OnValueChanged
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                       | Description |
 |--------------------------------------------|-------------|
 | NetworkVariable.OnValueChangedDelegate\<\> |             |
 
-## 
+### Properties
 
-### Value
+#### Value
 
-<div class="markdown level1 summary">
 
 The value of the NetworkVariable container
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public virtual T Value { get; set; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-## 
+### Methods
 
-### ReadDelta(FastBufferReader, Boolean)
+#### ReadDelta(FastBufferReader, Boolean)
 
-<div class="markdown level1 summary">
 
 Reads value from the reader and applies it
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name           | Description                                                                             |
 |------------------|----------------|-----------------------------------------------------------------------------------------|
 | FastBufferReader | reader         | The stream to read the value from                                                       |
 | System.Boolean   | keepDirtyDelta | Whether or not the container should keep the dirty delta, or mark the delta as consumed |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.ReadDelta(FastBufferReader, Boolean)
 
-</div>
 
-### ReadField(FastBufferReader)
 
-<div class="markdown level1 summary">
+#### ReadField(FastBufferReader)
+
 
 Reads the complete state from the reader and applies it
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void ReadField(FastBufferReader reader)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name   | Description                       |
 |------------------|--------|-----------------------------------|
 | FastBufferReader | reader | The stream to read the state from |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.ReadField(FastBufferReader)
 
-</div>
 
-### WriteDelta(FastBufferWriter)
 
-<div class="markdown level1 summary">
+#### WriteDelta(FastBufferWriter)
+
 
 Writes the variable to the writer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void WriteDelta(FastBufferWriter writer)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
 | FastBufferWriter | writer | The stream to write the value to |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.WriteDelta(FastBufferWriter)
 
-</div>
 
-### WriteField(FastBufferWriter)
 
-<div class="markdown level1 summary">
+#### WriteField(FastBufferWriter)
+
 
 Writes the complete state of the variable to the writer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override void WriteField(FastBufferWriter writer)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type             | Name   | Description                      |
 |------------------|--------|----------------------------------|
 | FastBufferWriter | writer | The stream to write the state to |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 NetworkVariableBase.WriteField(FastBufferWriter)
 
-</div>
+
 
 ### Implements
 
-<div>
+
 
 System.IDisposable
 
-</div>
+
+
+
+

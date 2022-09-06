@@ -1,116 +1,149 @@
----  
-id: Unity.Networking.Transport.NetworkDataStreamParameter  
-title: Unity.Networking.Transport.NetworkDataStreamParameter  
+---
+id: Unity.Networking.Transport.NetworkDataStreamParameter
+title: Unity.Networking.Transport.NetworkDataStreamParameter
 ---
 
-<div class="markdown level0 summary">
+
+# Struct NetworkDataStreamParameter
+
 
 The NetworkDataStreamParameter is used to set a fixed data stream size.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
 
 ##### Implements
 
-<div>
+
 
 INetworkParameter
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct NetworkDataStreamParameter : INetworkParameter
+
+``` lang-csharp
+public struct NetworkDataStreamParameter : INetworkParameter
+```
+
+
 
 ##### **Remarks**
 
-<div class="markdown level0 remarks">
 
 The DataStreamWriter will grow on demand if the size is set to zero.
 
-</div>
 
-## Fields
 
-### size
+### Fields
 
-<div class="markdown level1 summary">
+#### size
+
 
 Size of the default DataStreamWriter
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public int size
 
-#### Field Value
+##### Declaration
+
+
+``` lang-csharp
+public int size
+```
+
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
+### Methods
+
+#### Validate()
+
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public bool Validate()
+```
+
+
+
+##### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### Implements
 
-<div>
+
 
 INetworkParameter
 
-</div>
+
+
+
+

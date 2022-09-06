@@ -68,19 +68,6 @@ There is a group of scenarios where we would want to test how the game behaves w
 
 In this case we would want to have an ability to set artifical conditions on a per-peer basis, which is possible with [Unity Transport Simulator Tools](#unity-transport---simulator-tools). 
 
-## Unity Transport - Simulator Tools
-
-[Unity Transport for Necode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop/com.unity.netcode.adapter.utp) comes with it's own tool for simulating artificial adverse network conditions - the Simulator Tools window.
-
-It allows the developer to set latency, jitter and packet loss percentage:
-![simulator-tools.png]
-
-To use the Simulator Tools:
- - install the [Unity Transport for Necode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/develop/com.unity.netcode.adapter.utp) package via Package Manager
- - Click the `Netcode->Simulator Tools` menu item in the menu bar
-	 - The window allows you to set the values on a per-client basis
-	 - When using ParrelSync workflow for local iteration - we'd have to set these values in each separate clone editor
-
 ### Clone-based workflow (ParrelSync)
 
 :::caution
@@ -112,9 +99,10 @@ To set the latency, jitter and packet-loss percentage values for develop builds 
 
 ```
 #if DEVELOPMENT_BUILD && !UNITY_EDITOR
-        UnityTransport.ClientPacketDelayMs = 120;
-        UnityTransport.ClientPacketJitterMs = 5;
-        UnityTransport.ClientPacketDropRate = 3;
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetDebugSimulatorParameters(
+            packetDelay: 120,
+            packetJitter: 5,
+            dropRate: 3);
 #endif
 ```
 

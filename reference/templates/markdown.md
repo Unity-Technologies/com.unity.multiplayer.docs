@@ -32,4 +32,4 @@ To write instructions, add a numbered list using 1. for each line:
 
 To add an image, save the *.png* or *.jpg* to the */static/img* folder. For example:
 
-[Image alt text](/img/example-img.png)
+![Image alt text](/img/example-img.png)

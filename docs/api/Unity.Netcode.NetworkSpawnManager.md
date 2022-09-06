@@ -1,223 +1,289 @@
----  
-id: Unity.Netcode.NetworkSpawnManager  
-title: Unity.Netcode.NetworkSpawnManager  
+---
+id: Unity.Netcode.NetworkSpawnManager
+title: Unity.Netcode.NetworkSpawnManager
 ---
 
-<div class="markdown level0 summary">
+# Class NetworkSpawnManager
+
 
 Class that handles object spawning
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritance">
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+NetworkSpawnManager
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: MLAPI.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public class NetworkSpawnManager
 ```
 
-## 
 
-### SpawnedObjects
 
-<div class="markdown level1 summary">
+### Fields
+
+#### OwnershipToObjectsTable
+
+
+Use to get all NetworkObjects owned by a client Ownership to Objects
+Table Format: \[ClientId\]\[NetworkObjectId\]\[NetworkObject\] Server:
+Keeps track of all clients' ownership Client: Keeps track of only its
+ownership
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public readonly Dictionary<ulong, Dictionary<ulong, NetworkObject>> OwnershipToObjectsTable
+```
+
+
+
+##### Field Value
+
+| Type                                                                                                                          | Description |
+|-------------------------------------------------------------------------------------------------------------------------------|-------------|
+| System.Collections.Generic.Dictionary\<System.UInt64, System.Collections.Generic.Dictionary\<System.UInt64, NetworkObject\>\> |             |
+
+#### SpawnedObjects
+
 
 The currently spawned objects
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly Dictionary<ulong, NetworkObject> SpawnedObjects
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                                  | Description |
 |-----------------------------------------------------------------------|-------------|
-| System.Collections.Generic.Dictionary\&lt;System.UInt64, NetworkObject&gt; |             |
+| System.Collections.Generic.Dictionary\<System.UInt64, NetworkObject\> |             |
 
-### SpawnedObjectsList
+#### SpawnedObjectsList
 
-<div class="markdown level1 summary">
 
 A list of the spawned objects
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly HashSet<NetworkObject> SpawnedObjectsList
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                | Description |
 |-----------------------------------------------------|-------------|
-| System.Collections.Generic.HashSet\&lt;NetworkObject&gt;|             |
+| System.Collections.Generic.HashSet\<NetworkObject\> |             |
 
-## 
+### Properties
 
-### NetworkManager
+#### NetworkManager
 
-<div class="markdown level1 summary">
 
 Gets the NetworkManager associated with this SpawnManager.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkManager NetworkManager { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | NetworkManager |             |
 
-## 
+### Methods
 
-### GetLocalPlayerObject()
+#### GetClientOwnedObjects(UInt64)
 
-<div class="markdown level1 summary">
+
+Returns a list of all NetworkObjects that belong to a client.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public List<NetworkObject> GetClientOwnedObjects(ulong clientId)
+```
+
+
+
+##### Parameters
+
+| Type          | Name     | Description                   |
+|---------------|----------|-------------------------------|
+| System.UInt64 | clientId | the client's id LocalClientId |
+
+##### Returns
+
+| Type                                             | Description                                            |
+|--------------------------------------------------|--------------------------------------------------------|
+| System.Collections.Generic.List\<NetworkObject\> | returns the list of NetworkObjects owned by the client |
+
+#### GetLocalPlayerObject()
+
 
 Returns the local player object or null if one does not exist
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkObject GetLocalPlayerObject()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type          | Description                                           |
 |---------------|-------------------------------------------------------|
 | NetworkObject | The local player object or null if one does not exist |
 
-### GetPlayerNetworkObject(UInt64)
+#### GetPlayerNetworkObject(UInt64)
 
-<div class="markdown level1 summary">
 
 Returns the player object with a given clientId or null if one does not
 exist. This is only valid server side.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkObject GetPlayerNetworkObject(ulong clientId)
 ```
 
-#### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
 
-#### Returns
+##### Parameters
+
+| Type          | Name     | Description                         |
+|---------------|----------|-------------------------------------|
+| System.UInt64 | clientId | the client identifier of the player |
+
+##### Returns
 
 | Type          | Description                                                           |
 |---------------|-----------------------------------------------------------------------|
 | NetworkObject | The player object with a given clientId or null if one does not exist |
+
+
+

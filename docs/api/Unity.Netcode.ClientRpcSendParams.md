@@ -1,119 +1,130 @@
----  
-id: Unity.Netcode.ClientRpcSendParams  
-title: Unity.Netcode.ClientRpcSendParams  
+---
+id: Unity.Netcode.ClientRpcSendParams
+title: Unity.Netcode.ClientRpcSendParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ClientRpcSendParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+Client-Side RPC The send parameters, when sending client RPCs, provides
+you wil the ability to target specific clients as a managed or unmanaged
+list: TargetClientIds and TargetClientIdsNativeArray
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct ClientRpcSendParams
 ```
 
-## 
 
-### TargetClientIds
 
-<div class="markdown level1 summary">
+### Fields
+
+#### TargetClientIds
+
 
 IEnumerable version of target id list - use either this OR
 TargetClientIdsNativeArray Note: Even if you provide a value type such
 as NativeArray, enumerating it will cause boxing. If you want to avoid
 boxing, use TargetClientIdsNativeArray
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public IReadOnlyList<ulong> TargetClientIds
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| IReadOnlyList\&lt;System.UInt64&gt;|             |
+| IReadOnlyList\<System.UInt64\> |             |
 
-### TargetClientIdsNativeArray
+#### TargetClientIdsNativeArray
 
-<div class="markdown level1 summary">
 
 NativeArray version of target id list - use either this OR
 TargetClientIds This option avoids any GC allocations but is a bit
 trickier to use.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NativeArray<ulong>? TargetClientIdsNativeArray
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                            | Description |
 |-------------------------------------------------|-------------|
-| System.Nullable\<NativeArray\&lt;System.UInt64&gt;\> |             |
+| System.Nullable\<NativeArray\<System.UInt64\>\> |             |
+
+
+

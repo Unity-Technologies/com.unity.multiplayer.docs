@@ -1,9 +1,10 @@
----  
-id: Unity.Netcode.BufferSerializer-1  
-title: Unity.Netcode.BufferSerializer-1  
+---
+id: Unity.Netcode.BufferSerializer-1
+title: Unity.Netcode.BufferSerializer-1
 ---
 
-<div class="markdown level0 summary">
+# Struct BufferSerializer\<TReaderWriter\>
+
 
 Two-way serializer wrapping FastBufferReader or FastBufferWriter.
 
@@ -14,7 +15,7 @@ Implemented as a ref struct for two reasons:
 2.  The BufferSerializer must always be passed by reference and can't be
     copied
 
-Ref structs help enforce both of those rules: they can't out live the
+Ref structs help enforce both of those rules: they can't ref live the
 stack context in which they were created, and they're always passed by
 reference no matter what.
 
@@ -29,64 +30,65 @@ above requirements. (Allowing direct access to the IReaderWriter struct
 would allow dangerous things to happen because the struct's lifetime
 could outlive the Reader/Writer's.)
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public ref struct BufferSerializer<TReaderWriter>
     where TReaderWriter : IReaderWriter
 ```
+
+
 
 ##### Type Parameters
 
@@ -94,471 +96,1931 @@ public ref struct BufferSerializer<TReaderWriter>
 |---------------|---------------------------|
 | TReaderWriter | The implementation struct |
 
-## 
+### Properties
 
-### IsReader
+#### IsReader
 
-<div class="markdown level1 summary">
 
 Check if the contained implementation is a reader
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly bool IsReader { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### IsWriter
+#### IsWriter
 
-<div class="markdown level1 summary">
 
 Check if the contained implementation is a writer
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly bool IsWriter { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+### Methods
 
-### GetFastBufferReader()
+#### GetFastBufferReader()
 
-<div class="markdown level1 summary">
 
 Retrieves the FastBufferReader instance. Only valid if IsReader = true,
 throws InvalidOperationException otherwise.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public FastBufferReader GetFastBufferReader()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type             | Description     |
 |------------------|-----------------|
 | FastBufferReader | Reader instance |
 
-### GetFastBufferWriter()
+#### GetFastBufferWriter()
 
-<div class="markdown level1 summary">
 
 Retrieves the FastBufferWriter instance. Only valid if IsWriter = true,
 throws InvalidOperationException otherwise.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public FastBufferWriter GetFastBufferWriter()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type             | Description     |
 |------------------|-----------------|
 | FastBufferWriter | Writer instance |
 
-### PreCheck(Int32)
+#### PreCheck(Int32)
 
-<div class="markdown level1 summary">
 
-Allows faster serialization by batching bounds checking. When you know
-you will be writing multiple fields back-to-back and you know the total
-size, you can call PreCheck() once on the total size, and then follow it
-with calls to SerializeValuePreChecked() for faster serialization. Write
-buffers will grow during PreCheck() if needed.
+Performs an advance check to ensure space is available to read/write one
+or more values. This provides a performance benefit for serializing
+multiple values using the SerializeValuePreChecked methods. But note
+that the benefit is small and only likely to be noticeable if
+serializing a very large number of items.
 
-PreChecked serialization operations will throw OverflowException in
-editor and development builds if you go past the point you've marked
-using PreCheck(). In release builds, OverflowException will not be
-thrown for performance reasons, since the point of using PreCheck is to
-avoid bounds checking in the following operations in release builds.
 
-To get the correct size to check for, use
-FastBufferWriter.GetWriteSize(value) or
-FastBufferWriter.GetWriteSize\&lt;type&gt;()
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+##### Declaration
+
 
 ``` lang-csharp
 public bool PreCheck(int amount)
 ```
 
-#### Parameters
 
-| Type         | Name   | Description                               |
-|--------------|--------|-------------------------------------------|
-| System.Int32 | amount | Number of bytes you plan to read or write |
 
-#### Returns
+##### Parameters
 
-| Type           | Description                                          |
-|----------------|------------------------------------------------------|
-| System.Boolean | True if the read/write can proceed, false otherwise. |
+| Type         | Name   | Description |
+|--------------|--------|-------------|
+| System.Int32 | amount |             |
 
-### SerializeNetworkSerializable\&lt;T&gt;(ref T)
+##### Returns
 
-<div class="markdown level1 summary">
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
-Serialize an INetworkSerializable
+#### SerializeNetworkSerializable\<T\>(ref T)
 
-Throws OverflowException if the end of the buffer has been reached.
-Write buffers will grow up to the maximum allowable message size before
-throwing OverflowException.
 
-</div>
+Read or write a NetworkSerializable value. SerializeValue() is the
+preferred method to do this - this is provided for backward
+compatibility only.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void SerializeNetworkSerializable<T>(ref T value)
     where T : INetworkSerializable, new()
 ```
 
-#### Parameters
 
-| Type | Name  | Description        |
-|------|-------|--------------------|
-| T    | value | Value to serialize |
 
-#### Type Parameters
+##### Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Type | Name  | Description              |
+|------|-------|--------------------------|
+| T    | value | The values to read/write |
 
-### SerializeValue(ref Byte)
+##### Type Parameters
 
-<div class="markdown level1 summary">
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
 
-Serialize a single byte
+#### SerializeValue(ref Color)
 
-Throws OverflowException if the end of the buffer has been reached.
-Write buffers will grow up to the maximum allowable message size before
-throwing OverflowException.
 
-</div>
+Read or write a Color value
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Color value)
+```
+
+
+
+##### Parameters
+
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Color | value | The value to read/write |
+
+#### SerializeValue(ref Color\[\])
+
+
+Read or write an array of Color values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Color[] value)
+```
+
+
+
+##### Parameters
+
+| Type      | Name  | Description              |
+|-----------|-------|--------------------------|
+| Color\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Color32)
+
+
+Read or write a Color32 value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Color32 value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Color32 | value | The value to read/write |
+
+#### SerializeValue(ref Color32\[\])
+
+
+Read or write an array of Color32 values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Color32[] value)
+```
+
+
+
+##### Parameters
+
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Color32\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Quaternion)
+
+
+Read or write a Quaternion value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Quaternion value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Quaternion | value | The value to read/write |
+
+#### SerializeValue(ref Quaternion\[\])
+
+
+Read or write an array of Quaternion values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Quaternion[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Quaternion\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Ray)
+
+
+Read or write a Ray value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Ray value)
+```
+
+
+
+##### Parameters
+
+| Type | Name  | Description             |
+|------|-------|-------------------------|
+| Ray  | value | The value to read/write |
+
+#### SerializeValue(ref Ray\[\])
+
+
+Read or write an array of Ray values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Ray[] value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description              |
+|---------|-------|--------------------------|
+| Ray\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Ray2D)
+
+
+Read or write a Ray2D value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Ray2D value)
+```
+
+
+
+##### Parameters
+
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Ray2D | value | The value to read/write |
+
+#### SerializeValue(ref Ray2D\[\])
+
+
+Read or write an array of Ray2D values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Ray2D[] value)
+```
+
+
+
+##### Parameters
+
+| Type      | Name  | Description              |
+|-----------|-------|--------------------------|
+| Ray2D\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Byte)
+
+
+Read or write a single byte
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void SerializeValue(ref byte value)
 ```
 
-#### Parameters
 
-| Type        | Name  | Description        |
-|-------------|-------|--------------------|
-| System.Byte | value | Value to serialize |
 
-### SerializeValue(ref String, Boolean)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| System.Byte | value | The value to read/write |
 
-Serialize a string.
+#### SerializeValue(ref String, Boolean)
 
-Note: Will ALWAYS allocate a new string when reading.
 
-Throws OverflowException if the end of the buffer has been reached.
-Write buffers will grow up to the maximum allowable message size before
-throwing OverflowException.
+Read or write a string
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void SerializeValue(ref string s, bool oneByteChars = false)
 ```
 
-#### Parameters
 
-| Type           | Name         | Description                                                                                                |
-|----------------|--------------|------------------------------------------------------------------------------------------------------------|
-| System.String  | s            | Value to serialize                                                                                         |
-| System.Boolean | oneByteChars | If true, will truncate each char to one byte. This is slower than two-byte chars, but uses less bandwidth. |
 
-### SerializeValue\&lt;T&gt;(ref T)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type           | Name         | Description                                                      |
+|----------------|--------------|------------------------------------------------------------------|
+| System.String  | s            | The value to read/write                                          |
+| System.Boolean | oneByteChars | If true, characters will be limited to one-byte ASCII characters |
 
-Serialize an unmanaged type. Supports basic value types as well as
-structs. The provided type will be copied to/from the buffer as it
-exists in memory.
+#### SerializeValue(ref Vector2)
 
-Throws OverflowException if the end of the buffer has been reached.
-Write buffers will grow up to the maximum allowable message size before
-throwing OverflowException.
 
-</div>
+Read or write a Vector2 value
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
-public void SerializeValue<T>(ref T value)
-    where T : struct
+public void SerializeValue(ref Vector2 value)
 ```
 
-#### Parameters
 
-| Type | Name  | Description        |
-|------|-------|--------------------|
-| T    | value | Value to serialize |
 
-#### Type Parameters
+##### Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector2 | value | The value to read/write |
 
-### SerializeValue\&lt;T&gt;(ref T\[\])
+#### SerializeValue(ref Vector2\[\])
 
-<div class="markdown level1 summary">
 
-Serialize an array value.
+Read or write an array of Vector2 values
 
-Note: Will ALWAYS allocate a new array when reading. If you have a
-statically-sized array that you know is large enough, it's recommended
-to serialize the size yourself and iterate serializing array members.
 
-(This is because C# doesn't allow setting an array's length value, so
-deserializing into an existing array of larger size would result in an
-array that doesn't have as many values as its Length indicates it
-should.)
 
-Throws OverflowException if the end of the buffer has been reached.
-Write buffers will grow up to the maximum allowable message size before
-throwing OverflowException.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+##### Declaration
 
-#### Declaration
 
 ``` lang-csharp
-public void SerializeValue<T>(ref T[] array)
-    where T : struct
+public void SerializeValue(ref Vector2[] value)
 ```
 
-#### Parameters
 
-| Type  | Name  | Description        |
-|-------|-------|--------------------|
-| T\[\] | array | Value to serialize |
 
-#### Type Parameters
+##### Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector2\[\] | value | The values to read/write |
 
-### SerializeValuePreChecked(ref Byte)
+#### SerializeValue(ref Vector2Int)
 
-<div class="markdown level1 summary">
 
-Serialize a single byte
+Read or write a Vector2Int value
 
-Using the PreChecked versions of these functions requires calling
-PreCheck() ahead of time, and they should only be called if PreCheck()
-returns true. This is an efficiency option, as it allows you to
-PreCheck() multiple serialization operations in one function call
-instead of having to do bounds checking on every call.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector2Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector2Int | value | The value to read/write |
+
+#### SerializeValue(ref Vector2Int\[\])
+
+
+Read or write an array of Vector2Int values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector2Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Vector2Int\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Vector3)
+
+
+Read or write a Vector3 value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector3 value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector3 | value | The value to read/write |
+
+#### SerializeValue(ref Vector3\[\])
+
+
+Read or write an array of Vector3 values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector3[] value)
+```
+
+
+
+##### Parameters
+
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector3\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Vector3Int)
+
+
+Read or write a Vector3Int value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector3Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector3Int | value | The value to read/write |
+
+#### SerializeValue(ref Vector3Int\[\])
+
+
+Read or write an array of Vector3Int values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector3Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Vector3Int\[\] | value | The values to read/write |
+
+#### SerializeValue(ref Vector4)
+
+
+Read or write a Vector4 value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector4 value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector4 | value | The value to read/write |
+
+#### SerializeValue(ref Vector4\[\])
+
+
+Read or write an array of Vector4 values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue(ref Vector4[] value)
+```
+
+
+
+##### Parameters
+
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector4\[\] | value | The values to read/write |
+
+#### SerializeValue\<T\>(ref T, FastBufferWriter.ForEnums)
+
+
+Read or write an enum value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
+    where T : struct, Enum
+```
+
+
+
+##### Parameters
+
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T                         | value  | The value to read/write                                                                |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T, FastBufferWriter.ForFixedStrings)
+
+
+Read or write a FixedString value
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+
+
+##### Parameters
+
+| Type                             | Name   | Description                                                               |
+|----------------------------------|--------|---------------------------------------------------------------------------|
+| T                                | value  | The values to read/write                                                  |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter used for enabling overload resolution of FixedStrings |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
+
+#### SerializeValue\<T\>(ref T, FastBufferWriter.ForNetworkSerializable)
+
+
+Read or write a struct or class value implementing INetworkSerializable
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
+    where T : INetworkSerializable, new()
+```
+
+
+
+##### Parameters
+
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                                       | value  | The value to read/write                                                                |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T, FastBufferWriter.ForPrimitives)
+
+
+Read or write a primitive value (int, bool, etc) Accepts any value that
+implements the given interfaces, but is not guaranteed to work correctly
+on values that are not primitives.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
+    where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
+```
+
+
+
+##### Parameters
+
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to read/write                                                                |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T, FastBufferWriter.ForStructs)
+
+
+Read or write a struct value implementing ISerializeByMemcpy
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
+    where T : struct, INetworkSerializeByMemcpy
+```
+
+
+
+##### Parameters
+
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T                           | value  | The value to read/write                                                                |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForEnums)
+
+
+Read or write an array of enum values
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
+    where T : struct, Enum
+```
+
+
+
+##### Parameters
+
+| Type                      | Name   | Description                                                                            |
+|---------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                     | value  | The value to read/write                                                                |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForNetworkSerializable)
+
+
+Read or write an array of struct or class values implementing
+INetworkSerializable
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForNetworkSerializable unused = default(FastBufferWriter.ForNetworkSerializable))
+    where T : INetworkSerializable, new()
+```
+
+
+
+##### Parameters
+
+| Type                                    | Name   | Description                                                                            |
+|-----------------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                                   | value  | The values to read/write                                                               |
+| FastBufferWriter.ForNetworkSerializable | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForPrimitives)
+
+
+Read or write an array of primitive values (int, bool, etc) Accepts any
+value that implements the given interfaces, but is not guaranteed to
+work correctly on values that are not primitives.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
+    where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
+```
+
+
+
+##### Parameters
+
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                          | value  | The values to read/write                                                               |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValue\<T\>(ref T\[\], FastBufferWriter.ForStructs)
+
+
+Read or write an array of struct values implementing ISerializeByMemcpy
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValue<T>(ref T[] value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
+    where T : struct, INetworkSerializeByMemcpy
+```
+
+
+
+##### Parameters
+
+| Type                        | Name   | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| T\[\]                       | value  | The values to read/write                                                               |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description               |
+|------|---------------------------|
+| T    | The type being serialized |
+
+#### SerializeValuePreChecked(ref Color)
+
+
+Serialize a Color, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Color value)
+```
+
+
+
+##### Parameters
+
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Color | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Color\[\])
+
+
+Serialize a Color array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Color[] value)
+```
+
+
+
+##### Parameters
+
+| Type      | Name  | Description             |
+|-----------|-------|-------------------------|
+| Color\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Color32)
+
+
+Serialize a Color32, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Color32 value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Color32 | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Color32\[\])
+
+
+Serialize a Color32 array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Color32[] value)
+```
+
+
+
+##### Parameters
+
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| Color32\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Quaternion)
+
+
+Serialize a Quaternion, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Quaternion value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Quaternion | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Quaternion\[\])
+
+
+Serialize a Quaternion array, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Quaternion[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description             |
+|----------------|-------|-------------------------|
+| Quaternion\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Ray)
+
+
+Serialize a Ray, "pre-checked", which skips buffer checks. In debug and
+editor builds, a check is made to ensure you've called "PreCheck" before
+calling this. In release builds, calling this without calling "PreCheck"
+may read or write past the end of the buffer, which will cause memory
+corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Ray value)
+```
+
+
+
+##### Parameters
+
+| Type | Name  | Description             |
+|------|-------|-------------------------|
+| Ray  | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Ray\[\])
+
+
+Serialize a Ray array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Ray[] value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Ray\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Ray2D)
+
+
+Serialize a Ray2D, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Ray2D value)
+```
+
+
+
+##### Parameters
+
+| Type  | Name  | Description             |
+|-------|-------|-------------------------|
+| Ray2D | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Ray2D\[\])
+
+
+Serialize a Ray2D array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Ray2D[] value)
+```
+
+
+
+##### Parameters
+
+| Type      | Name  | Description             |
+|-----------|-------|-------------------------|
+| Ray2D\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Byte)
+
+
+Serialize a byte, "pre-checked", which skips buffer checks. In debug and
+editor builds, a check is made to ensure you've called "PreCheck" before
+calling this. In release builds, calling this without calling "PreCheck"
+may read or write past the end of the buffer, which will cause memory
+corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void SerializeValuePreChecked(ref byte value)
 ```
 
-#### Parameters
 
-| Type        | Name  | Description        |
-|-------------|-------|--------------------|
-| System.Byte | value | Value to serialize |
 
-### SerializeValuePreChecked(ref String, Boolean)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| System.Byte | value | The value to read/write |
 
-Serialize a string.
+#### SerializeValuePreChecked(ref String, Boolean)
 
-Note: Will ALWAYS allocate a new string when reading.
 
-Using the PreChecked versions of these functions requires calling
-PreCheck() ahead of time, and they should only be called if PreCheck()
-returns true. This is an efficiency option, as it allows you to
-PreCheck() multiple serialization operations in one function call
-instead of having to do bounds checking on every call.
+Serialize a string, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void SerializeValuePreChecked(ref string s, bool oneByteChars = false)
 ```
 
-#### Parameters
 
-| Type           | Name         | Description                                                                                                |
-|----------------|--------------|------------------------------------------------------------------------------------------------------------|
-| System.String  | s            | Value to serialize                                                                                         |
-| System.Boolean | oneByteChars | If true, will truncate each char to one byte. This is slower than two-byte chars, but uses less bandwidth. |
 
-### SerializeValuePreChecked\&lt;T&gt;(ref T)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type           | Name         | Description                                                      |
+|----------------|--------------|------------------------------------------------------------------|
+| System.String  | s            | The value to read/write                                          |
+| System.Boolean | oneByteChars | If true, characters will be limited to one-byte ASCII characters |
 
-Serialize an unmanaged type. Supports basic value types as well as
-structs. The provided type will be copied to/from the buffer as it
-exists in memory.
+#### SerializeValuePreChecked(ref Vector2)
 
-Using the PreChecked versions of these functions requires calling
-PreCheck() ahead of time, and they should only be called if PreCheck()
-returns true. This is an efficiency option, as it allows you to
-PreCheck() multiple serialization operations in one function call
-instead of having to do bounds checking on every call.
 
-</div>
+Serialize a Vector2, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
-public void SerializeValuePreChecked<T>(ref T value)
-    where T : struct
+public void SerializeValuePreChecked(ref Vector2 value)
 ```
 
-#### Parameters
 
-| Type | Name  | Description        |
-|------|-------|--------------------|
-| T    | value | Value to serialize |
 
-#### Type Parameters
+##### Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector2 | value | The value to read/write |
 
-### SerializeValuePreChecked\&lt;T&gt;(ref T\[\])
+#### SerializeValuePreChecked(ref Vector2\[\])
 
-<div class="markdown level1 summary">
 
-Serialize an array value.
+Serialize a Vector2 array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
 
-Note: Will ALWAYS allocate a new array when reading. If you have a
-statically-sized array that you know is large enough, it's recommended
-to serialize the size yourself and iterate serializing array members.
 
-(This is because C# doesn't allow setting an array's length value, so
-deserializing into an existing array of larger size would result in an
-array that doesn't have as many values as its Length indicates it
-should.)
 
-Using the PreChecked versions of these functions requires calling
-PreCheck() ahead of time, and they should only be called if PreCheck()
-returns true. This is an efficiency option, as it allows you to
-PreCheck() multiple serialization operations in one function call
-instead of having to do bounds checking on every call.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+##### Declaration
 
-#### Declaration
 
 ``` lang-csharp
-public void SerializeValuePreChecked<T>(ref T[] array)
-    where T : struct
+public void SerializeValuePreChecked(ref Vector2[] value)
 ```
 
-#### Parameters
 
-| Type  | Name  | Description        |
-|-------|-------|--------------------|
-| T\[\] | array | Value to serialize |
 
-#### Type Parameters
+##### Parameters
 
-| Name | Description |
-|------|-------------|
-| T    |             |
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector2\[\] | value | The values to read/write |
+
+#### SerializeValuePreChecked(ref Vector2Int)
+
+
+Serialize a Vector2Int, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector2Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector2Int | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector2Int\[\])
+
+
+Serialize a Vector2Int array, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector2Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description              |
+|----------------|-------|--------------------------|
+| Vector2Int\[\] | value | The values to read/write |
+
+#### SerializeValuePreChecked(ref Vector3)
+
+
+Serialize a Vector3, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector3 value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector3 | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector3\[\])
+
+
+Serialize a Vector3 array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector3[] value)
+```
+
+
+
+##### Parameters
+
+| Type        | Name  | Description              |
+|-------------|-------|--------------------------|
+| Vector3\[\] | value | The values to read/write |
+
+#### SerializeValuePreChecked(ref Vector3Int)
+
+
+Serialize a Vector3Int, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector3Int value)
+```
+
+
+
+##### Parameters
+
+| Type       | Name  | Description             |
+|------------|-------|-------------------------|
+| Vector3Int | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector3Int\[\])
+
+
+Serialize a Vector3Int array, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector3Int[] value)
+```
+
+
+
+##### Parameters
+
+| Type           | Name  | Description             |
+|----------------|-------|-------------------------|
+| Vector3Int\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector4)
+
+
+Serialize a Vector4, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector4 value)
+```
+
+
+
+##### Parameters
+
+| Type    | Name  | Description             |
+|---------|-------|-------------------------|
+| Vector4 | value | The value to read/write |
+
+#### SerializeValuePreChecked(ref Vector4\[\])
+
+
+Serialize a Vector4Array, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked(ref Vector4[] value)
+```
+
+
+
+##### Parameters
+
+| Type        | Name  | Description             |
+|-------------|-------|-------------------------|
+| Vector4\[\] | value | The value to read/write |
+
+#### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForEnums)
+
+
+Serialize an enum, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
+    where T : struct, Enum
+```
+
+
+
+##### Parameters
+
+| Type                      | Name   | Description                                                        |
+|---------------------------|--------|--------------------------------------------------------------------|
+| T                         | value  | The values to read/write                                           |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution of enums |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
+
+#### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForFixedStrings)
+
+
+Serialize a FixedString, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForFixedStrings unused = default(FastBufferWriter.ForFixedStrings))
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+
+
+##### Parameters
+
+| Type                             | Name   | Description                                                                             |
+|----------------------------------|--------|-----------------------------------------------------------------------------------------|
+| T                                | value  | The value to read/write                                                                 |
+| FastBufferWriter.ForFixedStrings | unused | An unused parameter that can be used for enabling overload resolution for fixed strings |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
+
+#### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForPrimitives)
+
+
+Serialize a primitive, "pre-checked", which skips buffer checks. In
+debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
+    where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
+```
+
+
+
+##### Parameters
+
+| Type                           | Name   | Description                                                                            |
+|--------------------------------|--------|----------------------------------------------------------------------------------------|
+| T                              | value  | The value to read/write                                                                |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution based on generic constraints |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
+
+#### SerializeValuePreChecked\<T\>(ref T, FastBufferWriter.ForStructs)
+
+
+Serialize a struct, "pre-checked", which skips buffer checks. In debug
+and editor builds, a check is made to ensure you've called "PreCheck"
+before calling this. In release builds, calling this without calling
+"PreCheck" may read or write past the end of the buffer, which will
+cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
+    where T : struct, INetworkSerializeByMemcpy
+```
+
+
+
+##### Parameters
+
+| Type                        | Name   | Description                                                          |
+|-----------------------------|--------|----------------------------------------------------------------------|
+| T                           | value  | The values to read/write                                             |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution of structs |
+
+##### Type Parameters
+
+| Name | Description                   |
+|------|-------------------------------|
+| T    | The network serializable type |
+
+#### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForEnums)
+
+
+Serialize an array of enums, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForEnums unused = default(FastBufferWriter.ForEnums))
+    where T : struct, Enum
+```
+
+
+
+##### Parameters
+
+| Type                      | Name   | Description                                                        |
+|---------------------------|--------|--------------------------------------------------------------------|
+| T\[\]                     | value  | The values to read/write                                           |
+| FastBufferWriter.ForEnums | unused | An unused parameter used for enabling overload resolution of enums |
+
+##### Type Parameters
+
+| Name | Description                                |
+|------|--------------------------------------------|
+| T    | The network serializable types in an array |
+
+#### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForPrimitives)
+
+
+Serialize an array of primitives, "pre-checked", which skips buffer
+checks. In debug and editor builds, a check is made to ensure you've
+called "PreCheck" before calling this. In release builds, calling this
+without calling "PreCheck" may read or write past the end of the buffer,
+which will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForPrimitives unused = default(FastBufferWriter.ForPrimitives))
+    where T : struct, IComparable, IConvertible, IComparable<T>, IEquatable<T>
+```
+
+
+
+##### Parameters
+
+| Type                           | Name   | Description                                                             |
+|--------------------------------|--------|-------------------------------------------------------------------------|
+| T\[\]                          | value  | The values to read/write                                                |
+| FastBufferWriter.ForPrimitives | unused | An unused parameter used for enabling overload resolution of primitives |
+
+##### Type Parameters
+
+| Name | Description                                |
+|------|--------------------------------------------|
+| T    | The network serializable types in an array |
+
+#### SerializeValuePreChecked\<T\>(ref T\[\], FastBufferWriter.ForStructs)
+
+
+Serialize an array of structs, "pre-checked", which skips buffer checks.
+In debug and editor builds, a check is made to ensure you've called
+"PreCheck" before calling this. In release builds, calling this without
+calling "PreCheck" may read or write past the end of the buffer, which
+will cause memory corruption and undefined behavior.
+
+
+
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForStructs unused = default(FastBufferWriter.ForStructs))
+    where T : struct, INetworkSerializeByMemcpy
+```
+
+
+
+##### Parameters
+
+| Type                        | Name   | Description                                                          |
+|-----------------------------|--------|----------------------------------------------------------------------|
+| T\[\]                       | value  | The values to read/write                                             |
+| FastBufferWriter.ForStructs | unused | An unused parameter used for enabling overload resolution of structs |
+
+##### Type Parameters
+
+| Name | Description                                |
+|------|--------------------------------------------|
+| T    | The network serializable types in an array |
+
+
+

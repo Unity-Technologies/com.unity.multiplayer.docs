@@ -1,83 +1,90 @@
----  
-id: Unity.Networking.Transport.Utilities.SimulatorUtility  
-title: Unity.Networking.Transport.Utilities.SimulatorUtility  
+---
+id: Unity.Networking.Transport.Utilities.SimulatorUtility
+title: Unity.Networking.Transport.Utilities.SimulatorUtility
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct SimulatorUtility
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
 
-    public struct SimulatorUtility
 
-## Constructors 
+``` lang-csharp
+public struct SimulatorUtility
+```
 
-### SimulatorUtility(Int32, Int32, Int32, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+### Constructors
 
-<div class="markdown level1 conceptual">
+#### SimulatorUtility(Int32, Int32, Int32, Int32)
 
-</div>
 
-#### Declaration
 
-    public SimulatorUtility(int packetCount, int maxPacketSize, int packetDelayMs, int packetJitterMs)
 
-#### Parameters
+
+
+
+##### Declaration
+
+
+``` lang-csharp
+public SimulatorUtility(int packetCount, int maxPacketSize, int packetDelayMs, int packetJitterMs)
+```
+
+
+
+##### Parameters
 
 | Type         | Name           | Description |
 |--------------|----------------|-------------|
@@ -86,23 +93,26 @@ Object.ReferenceEquals(Object, Object)
 | System.Int32 | packetDelayMs  |             |
 | System.Int32 | packetJitterMs |             |
 
-## Methods 
+### Methods
 
-### DelayPacket(ref NetworkPipelineContext, InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
+#### DelayPacket(ref NetworkPipelineContext, InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public bool DelayPacket(ref NetworkPipelineContext ctx, InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, long timestamp)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public bool DelayPacket(ref NetworkPipelineContext ctx, InboundSendBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, long timestamp)
+```
+
+
+
+##### Parameters
 
 | Type                          | Name          | Description |
 |-------------------------------|---------------|-------------|
@@ -111,48 +121,54 @@ Object.ReferenceEquals(Object, Object)
 | NetworkPipelineStage.Requests | requests      |             |
 | System.Int64                  | timestamp     |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### FuzzPacket(SimulatorUtility.Context\*, ref InboundSendBuffer)
+#### FuzzPacket(SimulatorUtility.Context\*, ref InboundSendBuffer)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public void FuzzPacket(SimulatorUtility.Context*ctx, ref InboundSendBuffer inboundBuffer)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public void FuzzPacket(SimulatorUtility.Context*ctx, ref InboundSendBuffer inboundBuffer)
+```
+
+
+
+##### Parameters
 
 | Type                       | Name          | Description |
 |----------------------------|---------------|-------------|
 | SimulatorUtility.Context\* | ctx           |             |
 | InboundSendBuffer          | inboundBuffer |             |
 
-### GetDelayedPacket(ref NetworkPipelineContext, ref InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
+#### GetDelayedPacket(ref NetworkPipelineContext, ref InboundSendBuffer, ref NetworkPipelineStage.Requests, Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public bool GetDelayedPacket(ref NetworkPipelineContext ctx, ref InboundSendBuffer delayedPacket, ref NetworkPipelineStage.Requests requests, long currentTimestamp)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public bool GetDelayedPacket(ref NetworkPipelineContext ctx, ref InboundSendBuffer delayedPacket, ref NetworkPipelineStage.Requests requests, long currentTimestamp)
+```
+
+
+
+##### Parameters
 
 | Type                          | Name             | Description |
 |-------------------------------|------------------|-------------|
@@ -161,27 +177,30 @@ Object.ReferenceEquals(Object, Object)
 | NetworkPipelineStage.Requests | requests         |             |
 | System.Int64                  | currentTimestamp |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetEmptyDataSlot(Byte\*, ref Int32, ref Int32)
+#### GetEmptyDataSlot(Byte\*, ref Int32, ref Int32)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public bool GetEmptyDataSlot(byte *processBufferPtr, ref int packetPayloadOffset, ref int packetDataOffset)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public bool GetEmptyDataSlot(byte *processBufferPtr, ref int packetPayloadOffset, ref int packetDataOffset)
+```
+
+
+
+##### Parameters
 
 | Type          | Name                | Description |
 |---------------|---------------------|-------------|
@@ -189,48 +208,54 @@ Object.ReferenceEquals(Object, Object)
 | System.Int32  | packetPayloadOffset |             |
 | System.Int32  | packetDataOffset    |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### InitializeContext(SimulatorUtility.Parameters, Byte\*)
+#### InitializeContext(SimulatorUtility.Parameters, Byte\*)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public static void InitializeContext(SimulatorUtility.Parameters param, byte *sharedProcessBuffer)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public static void InitializeContext(SimulatorUtility.Parameters param, byte *sharedProcessBuffer)
+```
+
+
+
+##### Parameters
 
 | Type                        | Name                | Description |
 |-----------------------------|---------------------|-------------|
 | SimulatorUtility.Parameters | param               |             |
 | System.Byte\*               | sharedProcessBuffer |             |
 
-### ShouldDropPacket(SimulatorUtility.Context\*, SimulatorUtility.Parameters, Int64)
+#### ShouldDropPacket(SimulatorUtility.Context\*, SimulatorUtility.Parameters, Int64)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
 
-    public bool ShouldDropPacket(SimulatorUtility.Context*ctx, SimulatorUtility.Parameters param, long timestamp)
 
-#### Parameters
+##### Declaration
+
+
+``` lang-csharp
+public bool ShouldDropPacket(SimulatorUtility.Context*ctx, SimulatorUtility.Parameters param, long timestamp)
+```
+
+
+
+##### Parameters
 
 | Type                        | Name      | Description |
 |-----------------------------|-----------|-------------|
@@ -238,8 +263,11 @@ Object.ReferenceEquals(Object, Object)
 | SimulatorUtility.Parameters | param     |             |
 | System.Int64                | timestamp |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+
+
