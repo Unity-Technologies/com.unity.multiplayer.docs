@@ -8,6 +8,18 @@ This section describes the breaking changes introduced in version 2.0 of the Uni
 
 Note that for most use cases, no action should be required when updating to 2.0. The core APIs like `NetworkDriver` remain the same, with the biggest changes limited to specialized scenarios (e.g. custom network interfaces).
 
+## Editor version support
+
+UTP 1.X supported Unity editor 2020.3 and up, but 2.0 only supports 2022.2 and up. This is required to keep the dependency on the Collections package up to date. Editor 2022.2 brings many changes to the core engine runtime which allows more code to be Burst-compiled. UTP benefits from this through increased performance.
+
+Note that UTP 1.X remains fully supported on LTS versions 2020.3 and 2021.3 and will be kept updated with bug fixes and improvements. However, some features (like WebSocket support) will only be available in UTP 2.0 and up.
+
+## `DataStreamReader`/`DataStreamWriter` moved to Collections
+
+The `DataStreamReader` and `DataStreamWriter` APIs were moved to the Collections package to make them more widely available, since they could be useful outside of UTP. Consequently, updating to UTP 2.0 might require adding a `using Unity.Collections` directive at the top of files making use of these APIs.
+
+The APIs themselves are largely unchanged, with the exception of methods dealing with raw pointers. Those methods are now provided in the `Unity.Collections.LowLevel.Unsafe` namespace, and have `Unsafe` appended to their name. For example, the method `WriteBytes(byte*, int)` is now `WriteBytesUnsafe(byte*, int)`.
+
 ## Protocol incompatibility
 
 The custom communication protocol used by UTP to implement connections over UDP has changed in a backward-incompatible manner. This means that clients running UTP 2.0 or later can't connect to servers running 1.X, and vice versa. Attempting to establish such connections will result in connection failure after the usual timeout.
