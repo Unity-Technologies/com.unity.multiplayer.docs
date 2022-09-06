@@ -25,7 +25,6 @@ struct MyComplexStruct : INetworkSerializable
 Types implementing `INetworkSerializable` are supported by `NetworkSerializer`, `RPC`s and `NetworkVariable`s.
 
 ```csharp
-
 [ServerRpc]
 void MyServerRpc(MyComplexStruct myStruct) { /* ... */ }
 
@@ -60,33 +59,114 @@ More advanced use-cases are explored in following examples.
 
 ### Example: Array
 
+Because of the limitations of NetworkVariable, which is implemented to avoid creating garbage as much as possible, C# arrays aren't supported in NetworkVariable, including arrays that are embedded in structs, as they prevent those structs from being allocated without creating garbage. Unity provides alternatives to C# arrays, however, that do work with NetworkVariable - `NativeArray<>` and `NativeList<>`.
+
+`NativeArray<>` works similarly to C# arrays in that they are statically sized, with the size determined at allocation, while `NativeList<>` behaves similarly to `List<>` in being dynamically resizable. `NativeList<>` requires importing the `collections` package, but it does have one advantage over `NativeArray<>` in that it has a return-by-ref `ElementAt()` method. Since the `BufferSerializer` API is bi-directional serialization that takes values by ref for both reading and writing, this method simplifies serialization of array values and avoids the need to copy to and from temporary values.
+
+Care must be taken when using `NativeArray<>` and `NativeList<>`, however, because they do need to be manually allocated and deallocated. When using them, you must ensure that they've been properly initialized before use, and that they're disposed when no longer used. Take note, as well, that copying a `NativeArray<>` or `NativeList<>` isn't a true copy - like C# classes, both copies will reference the same data, so if you make copies of your structs, make sure that they are only disposed once.
+
+Worth noting on that topic is that serialization never reads into an existing value; it always replaces it with a new value. When serializing yourself, you need to make sure to `Dispose()` your native collections before reading new data or you will have a memory leak. When using such a struct within a `NetworkVariable`, you should hook into `NetworkVariable<>.OnValueChanged` to dispose the previous value once the new one has been read.
+
 ```csharp
-
-public struct MyCustomStruct : INetworkSerializable
+public struct MyCustomStruct : INetworkSerializable, IDisposable
 {
-    public int[] Array;
+    public NativeArray<int> Array;
+    public NativeList<int> List;
 
-    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    public MyCustomStruct(int arraySize)
     {
-        // Length
+        Array = new NativeArray<int>(arraySize, Allocator.Persistent);
+        List = new NativeList<int>(Allocator.Persistent);
+    }
+
+    public void Dispose()
+    {
+        if (Array.IsCreated)
+        {
+            Array.Dispose();
+        }
+        if (List.IsCreated)
+        {
+            List.Dispose();
+        }
+    }
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        // NativeArray
+        
+        // Serialize the Array
+        // Note that if the length is static and never changes, you can skip serializing the length!
         int length = 0;
         if (!serializer.IsReader)
         {
+            // The writer side needs to initialize the length value before serializing it
             length = Array.Length;
         }
 
         serializer.SerializeValue(ref length);
 
-        // Array
         if (serializer.IsReader)
         {
-            Array = new int[length];
+            if(Array.IsCreated)
+            {
+                Array.Dispose();
+            }
+            Array = new NativeArray<int>(length, Allocator.Persistent);
         }
 
         for (int n = 0; n < length; ++n)
         {
-            serializer.SerializeValue(ref Array[n]);
+            // Because NativeArray lacks the ElementAt() method, the value has to be copied into a temp
+            // variable to be passed in by ref.
+            var value = Array[n];
+            serializer.SerializeValue(ref value);
+            // Technically this line only needs to be executed on the reader side, but since the value hasn't changed,
+            // there's no harm in doing it on the writer side.
+            Array[n] = value;
         }
+
+        // NativeList
+        
+        // Serialize the List
+        if (!serializer.IsReader)
+        {
+            // The writer side needs to initialize the length value before serializing it
+            length = Array.Length;
+        }
+
+        serializer.SerializeValue(ref length);
+
+        if (serializer.IsReader)
+        {
+            if(List.IsCreated)
+            {
+                List.ResizeUninitialized(length);
+            }
+            List = new NativeList<int>(length, Allocator.Persistent);
+        }
+
+        for (int n = 0; n < length; ++n)
+        {
+            // Because NativeList has ElementAt(), which returns a ref to the memory already in the list, passing that
+            // allows us to avoid a temp value here and serialize directly to/from the list itself.
+            serializer.SerializeValue(ref List.ElementAt(n));
+        }
+    }
+
+    public static void OnNetworkVariableUpdated(MyCustomStruct previousValue, MyCustomStruct newValue)
+    {
+        previousValue.Dispose();
+    }
+}
+
+public class MyNetworkBehaviour : NetworkBehaviour
+{
+    public NetworkVariable<MyCustomStruct> CustomNetworkVariable = new NetworkVariable<MyCustomStruct>();
+
+    public Awake()
+    {
+        CustomNetworkVariable.OnValueChanged = MyCustomStruct.OnNetworkVariableUpdated;
     }
 }
 ```
@@ -97,21 +177,19 @@ public struct MyCustomStruct : INetworkSerializable
 - Iterate over `Array` member `n=length` times
 - (De)serialize value back into Array[n] element from the stream
 
-
 **Writing:**
 
 - Serialize length=Array.Length into stream
 - Iterate over Array member n=length times
 - Serialize value from Array[n] element into the stream
 
+(The logic is effectively the same for `NativeList<>`, the API is just slightly different.)
 
-The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`
-
+The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new native collection instance with `length` size to set `Array`/`List` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriter`
 
 ### Example: Move
 
 ```csharp
-
 public struct MyMoveStruct : INetworkSerializable
 {
     public Vector3 Position;
@@ -126,7 +204,7 @@ public struct MyMoveStruct : INetworkSerializable
         // Position & Rotation
         serializer.SerializeValue(ref Position);
         serializer.SerializeValue(ref Rotation);
-        
+
         // LinearVelocity & AngularVelocity
         serializer.SerializeValue(ref SyncVelocity);
         if (SyncVelocity)
@@ -153,8 +231,8 @@ public struct MyMoveStruct : INetworkSerializable
 - Serialize `Rotation` into the stream
 - Serialize `SyncVelocity` into the stream
 - Check if `SyncVelocity` is set to true, if so:
-  -  Serialize `LinearVelocity` into the stream
-  -  Serialize `AngularVelocity` into the stream
+  - Serialize `LinearVelocity` into the stream
+  - Serialize `AngularVelocity` into the stream
 
 Unlike the [Array](#example-array) example above, in this example we do not use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
 
@@ -168,7 +246,6 @@ It is possible to recursively serialize nested members with `INetworkSerializabl
 Review the following example:
 
 ```csharp
-
 public struct MyStructA : INetworkSerializable
 {
     public Vector3 Position;
@@ -186,7 +263,7 @@ public struct MyStructB : INetworkSerializable
     public int SomeNumber;
     public string SomeText;
     public MyStructA StructA;
-    
+
     void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref SomeNumber);
