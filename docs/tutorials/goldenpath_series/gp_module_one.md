@@ -31,7 +31,7 @@ You should have completed the [Hello World project](../helloworld.md) before sta
 
 This section adds some scripts to Hello World that contain the new features covered in the tutorial.
 1. Click the **Assets** folder.
-2. Create a new Folder and call it **Scripts**.
+2. Open the **Scripts** folder.
 
 ### Adding the `HelloWorldPlayer.cs` script
 
