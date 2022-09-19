@@ -81,6 +81,25 @@ In-scene placed `NetworkObject` parenting of players requires the client to be s
 For more information, see the "[Real World In-scene NetworkObject Parenting of Players Solution](inscene_parenting_player.md)".
 :::
 
+### WorldPositionStays usage
+When using the `NetworkObjdct.TrySetParent` method, the `WorldPositionStays` paremeter is synchronized with currently connected and late joining clients. When removing a child from its parent, you should use the same `WorldPositionStays` value that was used to parent the child.  More specifically when `WorldPositionStays` is set to false this applies, but if you are using the defalt value of `true` then this is not required (because it is the default).
+
+When the `WorldPositionStays` parameter in `NetworkObject.TrySetParent` is the default value of `true`, this will preserve the world space values of the child `NetworkObject` relative to the parent.  However, sometimes you might want to only preserve the local space values (i.e. pick up an object that only has some initial changes to the child's transform when parented).  Through a combination of `NetworkObject.TrySetParent` and `NetworkBehaviour.OnNetworkObjectParentChanged` you can accomplish this without the need for a `NetworkTransform`.  To better understand how this works, it is important to understand the order of operatiosn for both of these two methods:
+
+**Server-Side**
+- `NetworkObject.TrySetParent` invokes `NetworkBehaviour.OnNetworkObjectParentChanged`
+  - You can make adjustments to the child's position, rotation, and scale in `OnNetworkObjectParentChanged`
+- The ParentSyncMessage is generated and sent
+  - ParentSyncMessage includes the child's postion, rotation, and scale
+    - Currently connected or late joining clients will be synchronized with the parenting and the child's associated transform values
+
+**When to use a NetworkTransform**
+If you plan on the child `NetowrkObject` moving around, rotating, or scaling independently (when parented or not) then you will still want to use a NetworkTransform.
+If you only plan on making a one time adjustment to the child `NetworkObject`'s transform when parented, then you would not need `NetworkTransform` if you set `WorldPositionStays` to false when parenting the child.
+
+[Learn More About WorldPositionStays](https://docs.unity3d.com/ScriptReference/Transform.SetParent.html)
+
+
 ## Parenting Examples
 
 ### Simple Example:
@@ -158,3 +177,4 @@ Vehicle (GameObject->NetworkObject)
   │ └─Player (GameObject->NetworkObject)
   └─Seat2 (GameObject->NetworkObject)
 ```
+
