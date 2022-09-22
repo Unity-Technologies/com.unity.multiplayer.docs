@@ -9,18 +9,19 @@ Sample code for `SecureClient`:
 using UnityEngine;
 using Unity.Networking.Transport;
 using Unity.Networking.Transport.TLS;
+
 public class SecureClientBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
     public NetworkConnection m_Connection;
     public bool m_Done;
-    private NetworkSettings settings = new NetworkSettings();
+
     void Start ()
     {
-         settings.WithSecureClientParameters(
-            serverName: ref SecureParameters.ServerCommonName,       
-            caCertificate: ref SecureParameters.MyGameClientCA  // Use the content of myGameClientCA.pem
-        );
+        var settings = new NetworkSettings();
+        settings.WithSecureClientParameters(
+            serverName: SecureParameters.ServerCommonName,       
+            caCertificate: SecureParameters.MyGameClientCA);
         m_Driver = NetworkDriver.Create(settings);
         m_Connection = default(NetworkConnection);  
 
