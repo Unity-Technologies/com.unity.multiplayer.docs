@@ -117,7 +117,7 @@ module.exports = {
                     docsPluginId: 'transport'
                 },
                 {
-                    to: 'about',
+                    to: 'install-tools',
                     label: 'Multiplayer Tools',
                     position: 'left',
                     docsPluginId: 'tools',
