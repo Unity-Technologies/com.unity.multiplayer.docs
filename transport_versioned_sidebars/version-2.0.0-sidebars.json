@@ -1,0 +1,107 @@
+{
+  "version-2.0.0/transport": [
+                {
+                  "type": "doc",
+                  "id": "version-2.0.0/about"
+              },
+              {
+                  "type": "doc",
+                  "id": "version-2.0.0/migration"
+              },
+              {
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Getting Started",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/install"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/using-sample"
+                      },
+                      {
+                          "collapsed": true,
+                          "type": "category",
+                          "label": "Minimum client and server",
+                          "items": [
+                              {
+                              "type": "doc",
+                              "id": "version-2.0.0/minimal-workflow-udp"
+                                },
+                              {
+                                  "type": "doc",
+                                  "id": "version-2.0.0/minimal-workflow-ws"
+                              }]
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/event-loop"
+                      }]
+              },
+              {
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Best practices",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/pipelines"
+                      },
+                      {
+                          "collapsed": true,
+                          "type": "category",
+                          "label": "Improved client and server",
+                          "items": [
+                              {
+                                  "type": "doc",
+                                  "id": "version-2.0.0/jobs"
+                              },
+                              {
+                                  "type": "doc",
+                                  "id": "version-2.0.0/secure-connection"
+                              }]
+                      }
+                  ]
+              },
+              {
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Playing across platforms",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/supported-platforms"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/cross-play-without-relay"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/cross-play-relay"
+                      }
+                  ]
+              },
+              {
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Extending functionalities",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/custom-pipeline"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/custom-networkinterface"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "version-2.0.0/network-settings"
+                      }
+                  ]
+              }
+          ]
+}
