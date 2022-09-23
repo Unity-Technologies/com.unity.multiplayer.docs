@@ -5,7 +5,7 @@ description: Introduction to how to spawn and destroy objects over the network a
 ---
 
 :::important
-These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For imformation on modyfing the code for use with Netcode for GameObjects please see [here](../../migration/migratingfrommlapi.md)
+These tutorials use Unity v2021.1, and MLAPI 0.1.0 .  For imformation on modyfing the code for use with Netcode for GameObjects please see [here](../../installation/migratingfrommlapi.md)
 :::
 
 This Unity Multiplayer tutorial will teach you how to spawn and destroy objects over the network as well as assigning client authority.

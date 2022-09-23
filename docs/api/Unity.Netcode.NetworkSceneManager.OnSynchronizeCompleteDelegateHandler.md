@@ -1,31 +1,32 @@
----  
-id: Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkSceneManager.OnSynchronizeCompleteDelegateHandler
+
 
 Delegate declaration for the OnSynchronizeComplete event.  
 See also:  
 SynchronizeComplete for more information
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnSynchronizeCompleteDelegateHandler(ulong clientId);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -33,4 +34,5 @@ public delegate void OnSynchronizeCompleteDelegateHandler(ulong clientId);
 |---------------|----------|--------------------------------------|
 | System.UInt64 | clientId | the client that completed this event |
 
- 
+
+

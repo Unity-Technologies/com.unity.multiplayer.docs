@@ -1,144 +1,165 @@
----  
-id: Unity.Networking.Transport.Relay.RelayConnectionData  
-title: Unity.Networking.Transport.Relay.RelayConnectionData  
+---
+id: Unity.Networking.Transport.Relay.RelayConnectionData
+title: Unity.Networking.Transport.Relay.RelayConnectionData
 ---
 
-<div class="markdown level0 summary">
+
+# Struct RelayConnectionData
+
 
 This is the encrypted data that the Relay server uses for describing a
-connection. Used mainly in the connection stablishing process (Binding)
+connection. Used mainly in the connection establishing process
+(Binding).
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Relay
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct RelayConnectionData
 ```
 
-## 
 
-### k_Length
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### k_Length
 
-<div class="markdown level1 conceptual">
 
-</div>
+The length in bytes of the Connection Data.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public const int k_Length = 255
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Value
+#### Value
 
-<div class="markdown level1 summary">
 
-</div>
+The raw data of the Connection Data
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *Value
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-## 
+### Methods
 
-### FromBytePointer(Byte\*, Int32)
+#### FromBytePointer(Byte\*, Int32)
 
-<div class="markdown level1 summary">
 
-</div>
+Converts a byte pointer to a RelayConnectionData.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static RelayConnectionData FromBytePointer(byte *dataPtr, int length)
 ```
 
-#### Parameters
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
 
-#### Returns
+##### Parameters
 
-| Type                | Description |
-|---------------------|-------------|
-| RelayConnectionData |             |
+| Type          | Name    | Description                                     |
+|---------------|---------|-------------------------------------------------|
+| System.Byte\* | dataPtr | The pointer to the data of the Connection Data. |
+| System.Int32  | length  | The length of the data.                         |
+
+##### Returns
+
+| Type                | Description                                                       |
+|---------------------|-------------------------------------------------------------------|
+| RelayConnectionData | Returns a RelayConnectionData constructed from the provided data. |
+
+##### Exceptions
+
+| Type                     | Condition                                                                   |
+|--------------------------|-----------------------------------------------------------------------------|
+| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
+
+
+

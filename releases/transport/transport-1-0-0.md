@@ -1,28 +1,9 @@
 ---
-title: Unity Transport 1.0.0+
-id: transport-1-0-0
+title: Unity Transport 1.0.0-pre
+id: transport-1-0-0-pre
 ---
 
 The [Unity Transport](../../transport/current/about) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
-
-## [1.1.0] - 2022-06-14
-
-### New features
-* A `DataStreamReader` can now be passed to another job without triggering the job safety system.
-* A `GetRelayConnectionStatus` method has been added to `NetworkDriver` to query the status of the connection to the Relay server.
-
-### Changes
-* `NetworkSettings.WithDataStreamParameters` is now obsolete. The functionality still works and will remain supported for version 1.X of the package, but will be removed in version 2.0. The reason for the removal is that in 2.0 the data stream size is always dynamically-sized to avoid out-of-memory errors.
-* `NetworkSettings.WithPipelineParameters` is now obsolete. The functionality still works and will remain supported for version 1.X of the package, but will be removed in version 2.0, where pipeline buffer sizing is handled internally.
-* Updated Burst dependency to 1.6.6.
-* Updated Collections dependency to 1.2.4.
-* Updated Mathematics dependency to 1.2.6.
-
-### Fixes
-* `BeginSend` would not return an error if called on a closed connection before the next `ScheduleUpdate` call.
-* Fixed a warning if using the default maximum payload size with DTLS.
-* Removed an error log when receiving messages on a closed DTLS connection (this scenario is common if there were in-flight messages at the moment of disconnection).
-* Fix broken link in package documentation.
 
 ## [1.0.0] - 2022-03-28
 
@@ -77,7 +58,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Changes
 * Updated to Burst 1.6.4.
 * Updated to Mathematics 1.2.5.
-* Documentation has been moved to the [offical multiplayer documentation site](https://docs-multiplayer.unity3d.com/transport/1.0.0/introduction).
+* Documentation has been moved to the offical multiplayer documentation site.
 
 ### Fixes
 * Fixed a division by zero in `SimulatorPipelineStage` when `PacketDropInterval` is set.
@@ -103,7 +84,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Changes
 * Creating a pipeline with `FragmentationPipelineStage` _after_ `ReliableSequencedPipelineStage` is now forbidden (will throw an exception if collections checks are enabled). That order never worked properly to begin with. The reverse order is fully supported and is the recommended way to configure a reliable pipeline with support for large packets.
-* Added `NetworkSettings` struct and API for defining network parameters. See [NetworkSettings documentation](https://docs-multiplayer.unity3d.com/transport/1.0.0/network-settings) for more information.
+* Added `NetworkSettings` struct and API for defining network parameters.
 * Added Roslyn Analyzers for ensuring proper extension of NetworkParameters and NetworkSettings API.
 * Update Collections package to 1.1.0
 

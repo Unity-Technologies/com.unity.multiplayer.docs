@@ -1,9 +1,10 @@
----  
-id: Unity.Netcode.SceneEventType  
-title: Unity.Netcode.SceneEventType  
+---
+id: Unity.Netcode.SceneEventType
+title: Unity.Netcode.SceneEventType
 ---
 
-<div class="markdown level0 summary">
+# Enum SceneEventType
+
 
 The different types of scene events communicated between a server and
 client.  
@@ -13,21 +14,35 @@ messages.
 See also:  
 SceneEvent
 
-</div>
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum SceneEventType : byte
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 

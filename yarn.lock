@@ -5978,10 +5978,10 @@ domhandler@^4.0.0, domhandler@^4.2.0:
   dependencies:
     domelementtype "^2.2.0"
 
-dompurify@2.3.8:
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.8.tgz#224fe9ae57d7ebd9a1ae1ac18c1c1ca3f532226f"
-  integrity sha512-eVhaWoVibIzqdGYjwsBWodIQIaXFSB+cKDf4cfxLMsK0xiud6SE+/WCVx/Xw/UwQsa4cS3T2eITcdtmTg2UKcw==
+dompurify@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.0.tgz#c9c88390f024c2823332615c9e20a453cf3825dd"
+  integrity sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA==
 
 domutils@1.5.1:
   version "1.5.1"
@@ -8556,10 +8556,10 @@ mdurl@^1.0.0:
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
-mdx-mermaid@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/mdx-mermaid/-/mdx-mermaid-1.2.1.tgz#4860987bfb97e1cf50f68616c576e953476dc699"
-  integrity sha512-RYmrUJodWDNy9S0A++Fex3vr5+Q2vLMDakjpw7cQjd8Owhg98eYe+AePpmMx6Y/wLHjWKIGv2wvHWj2qdaZN7w==
+mdx-mermaid@^v1.3.0:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/mdx-mermaid/-/mdx-mermaid-1.3.2.tgz#9a9d335368de88f0c771daf12dde855bc6b67d57"
+  integrity sha512-8kw0tg3isKKBFzFwoe2DhIaEgKYtVeJXQtxZCCrdTPO0CTpXHnTHT0atDqsp7YkXi5iUCp/zAZPZu1cmr68T3w==
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -8617,19 +8617,19 @@ merge2@^1.3.0, merge2@^1.4.1:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-mermaid@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-9.1.2.tgz#98cdc55603464240987fe1a15f68dd06304c07f1"
-  integrity sha512-RVf3hBKqiMfyORHboCaEjOAK1TomLO50hYRPvlTrZCXlCniM5pRpe8UlkHBjjpaLtioZnbdYv/vEVj7iKnwkJQ==
+mermaid@^9.1.7:
+  version "9.1.7"
+  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-9.1.7.tgz#e24de9b2d36c8cb25a09d72ffce966941b24bd6e"
+  integrity sha512-MRVHXy5FLjnUQUG7YS3UN9jEN6FXCJbFCXVGJQjVIbiR6Vhw0j/6pLIjqsiah9xoHmQU6DEaKOvB3S1g/1nBPA==
   dependencies:
     "@braintree/sanitize-url" "^6.0.0"
     d3 "^7.0.0"
     dagre "^0.8.5"
     dagre-d3 "^0.6.4"
-    dompurify "2.3.8"
+    dompurify "2.4.0"
     graphlib "^2.1.8"
     khroma "^2.0.0"
-    moment-mini "^2.24.0"
+    moment-mini "2.24.0"
     stylis "^4.0.10"
 
 methods@~1.1.2:
@@ -8808,7 +8808,7 @@ module-alias@^2.2.2:
   resolved "https://registry.yarnpkg.com/module-alias/-/module-alias-2.2.2.tgz#151cdcecc24e25739ff0aa6e51e1c5716974c0e0"
   integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
 
-moment-mini@^2.24.0:
+moment-mini@2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment-mini/-/moment-mini-2.24.0.tgz#fa68d98f7fe93ae65bf1262f6abb5fb6983d8d18"
   integrity sha512-9ARkWHBs+6YJIvrIp0Ik5tyTTtP9PoV0Ssu2Ocq5y9v8+NOOpWiRshAp8c4rZVWTOe+157on/5G+zj5pwIQFEQ==

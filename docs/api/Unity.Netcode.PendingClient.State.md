@@ -1,27 +1,42 @@
----  
-id: Unity.Netcode.PendingClient.State  
-title: Unity.Netcode.PendingClient.State  
+---
+id: Unity.Netcode.PendingClient.State
+title: Unity.Netcode.PendingClient.State
 ---
 
-<div class="markdown level0 summary">
+# Enum PendingClient.State
+
 
 The states of a connection
 
-</div>
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum State
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 
@@ -32,3 +47,4 @@ Waiting for client connection request to be approved
 PendingConnection
 
 Waiting for client to send it's initial connection request
+

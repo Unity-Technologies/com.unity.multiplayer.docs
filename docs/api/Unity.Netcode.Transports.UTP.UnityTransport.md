@@ -3,100 +3,107 @@ id: Unity.Netcode.Transports.UTP.UnityTransport
 title: Unity.Netcode.Transports.UTP.UnityTransport
 ---
 
-<div class="inheritance">
+# Class UnityTransport
+
+
+The Netcode for GameObjects NetworkTransport for UnityTransport. Note:
+This is highly recommended to use over UNet.
+
+
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
 System.Object
 
-</div>
 
-<div class="level1">
+
 
 NetworkTransport
 
-</div>
 
-<div class="level2">
+
 
 UnityTransport
 
-</div>
 
-</div>
 
-<div classs="implements">
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkStreamDriverConstructor
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 NetworkTransport.IsSupported
 
-</div>
 
-<div>
+
+
 
 NetworkTransport.OnTransportEvent
 
-</div>
 
-<div>
+
+
 
 NetworkTransport.InvokeOnTransportEvent(NetworkEvent, UInt64,
 ArraySegment\<Byte\>, Single)
 
-</div>
-
-</div>
 
 
+
+
+###### **Namespace**: Unity.Netcode.Transports.UTP
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public class UnityTransport : NetworkTransport, INetworkStreamDriverConstructor
 ```
 
-</div>
+
 
 ### Fields
 
 #### ConnectionData
 
-<div class="markdown level1 summary">
 
-</div>
+The connection (address) data for this UnityTransport instance. This is
+where you can change IP Address, Port, or server's listen address.
+UnityTransport.ConnectionAddressData
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public UnityTransport.ConnectionAddressData ConnectionData
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -106,23 +113,27 @@ public UnityTransport.ConnectionAddressData ConnectionData
 
 #### DebugSimulator
 
-<div class="markdown level1 summary">
 
-</div>
+Can be used to simulate poor network conditions such as:
 
-<div class="markdown level1 conceptual">
+-   packet delay/latency
+-   packet jitter (variances in latency, see:
+    https://en.wikipedia.org/wiki/Jitter)
+-   packet drop rate (packet loss)
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public UnityTransport.SimulatorParameters DebugSimulator
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -132,23 +143,22 @@ public UnityTransport.SimulatorParameters DebugSimulator
 
 #### InitialMaxPacketQueueSize
 
-<div class="markdown level1 summary">
 
-</div>
+The default maximum (receive) packet queue size
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int InitialMaxPacketQueueSize = 128
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -158,23 +168,22 @@ public const int InitialMaxPacketQueueSize = 128
 
 #### InitialMaxPayloadSize
 
-<div class="markdown level1 summary">
 
-</div>
+The default maximum payload size
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int InitialMaxPayloadSize = 6144
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -184,23 +193,22 @@ public const int InitialMaxPayloadSize = 6144
 
 #### InitialMaxSendQueueSize
 
-<div class="markdown level1 summary">
 
-</div>
+The default maximum send queue size
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public const int InitialMaxSendQueueSize = 98304
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -210,23 +218,22 @@ public const int InitialMaxSendQueueSize = 98304
 
 #### s_DriverConstructor
 
-<div class="markdown level1 summary">
 
-</div>
+The global INetworkStreamDriverConstructor implementation
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public static INetworkStreamDriverConstructor s_DriverConstructor
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -238,26 +245,23 @@ public static INetworkStreamDriverConstructor s_DriverConstructor
 
 #### ConnectTimeoutMS
 
-<div class="markdown level1 summary">
 
 Timeout in milliseconds indicating how long we will wait until we send a
 new connection attempt.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int ConnectTimeoutMS { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -267,25 +271,22 @@ public int ConnectTimeoutMS { get; set; }
 
 #### DisconnectTimeoutMS
 
-<div class="markdown level1 summary">
 
 Inactivity timeout after which a connection will be disconnected.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int DisconnectTimeoutMS { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -295,34 +296,33 @@ public int DisconnectTimeoutMS { get; set; }
 
 ##### Remarks
 
-<div class="markdown level1 remarks">
 
 The connection needs to receive data from the connected endpoint within
 this timeout. Note that with heartbeats enabled, simply not sending any
 data will not be enough to trigger this timeout (since heartbeats count
 as connection events).
 
-</div>
+
 
 #### DriverConstructor
 
-<div class="markdown level1 summary">
 
-</div>
+Returns either the global INetworkStreamDriverConstructor implementation
+or the current UnityTransport instance
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public INetworkStreamDriverConstructor DriverConstructor { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -332,26 +332,23 @@ public INetworkStreamDriverConstructor DriverConstructor { get; }
 
 #### HeartbeatTimeoutMS
 
-<div class="markdown level1 summary">
 
 Timeout in milliseconds after which a heartbeat is sent if there is no
 activity.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int HeartbeatTimeoutMS { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -361,26 +358,23 @@ public int HeartbeatTimeoutMS { get; set; }
 
 #### MaxConnectAttempts
 
-<div class="markdown level1 summary">
 
 The maximum amount of connection attempts we will try before
 disconnecting.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxConnectAttempts { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -390,26 +384,23 @@ public int MaxConnectAttempts { get; set; }
 
 #### MaxPacketQueueSize
 
-<div class="markdown level1 summary">
 
 The maximum amount of packets that can be in the internal send/receive
 queues.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxPacketQueueSize { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -419,34 +410,30 @@ public int MaxPacketQueueSize { get; set; }
 
 ##### Remarks
 
-<div class="markdown level1 remarks">
 
 Basically this is how many packets can be sent/received in a single
 update/frame.
 
-</div>
+
 
 #### MaxPayloadSize
 
-<div class="markdown level1 summary">
 
 The maximum size of a payload that can be handled by the transport.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxPayloadSize { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -456,25 +443,22 @@ public int MaxPayloadSize { get; set; }
 
 #### MaxSendQueueSize
 
-<div class="markdown level1 summary">
 
 The maximum size in bytes of the transport send queue.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public int MaxSendQueueSize { get; set; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -484,33 +468,31 @@ public int MaxSendQueueSize { get; set; }
 
 ##### Remarks
 
-<div class="markdown level1 remarks">
 
 The send queue accumulates messages for batching and stores messages
 when other internal send queues are full. If you routinely observe an
 error about too many in-flight packets, try increasing this.
 
-</div>
+
 
 #### Protocol
 
-<div class="markdown level1 summary">
 
-</div>
+The current ProtocolType used by the transport
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public UnityTransport.ProtocolType Protocol { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -520,23 +502,22 @@ public UnityTransport.ProtocolType Protocol { get; }
 
 #### ServerClientId
 
-<div class="markdown level1 summary">
 
-</div>
+The client id used to represent the server.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override ulong ServerClientId { get; }
 ```
 
-</div>
+
 
 ##### Property Value
 
@@ -546,280 +527,271 @@ public override ulong ServerClientId { get; }
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.ServerClientId
 
-</div>
+
 
 ### Methods
 
 #### CreateDriver(UnityTransport, out NetworkDriver, out NetworkPipeline, out NetworkPipeline, out NetworkPipeline)
 
-<div class="markdown level1 summary">
 
-</div>
+Creates the internal NetworkDriver
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void CreateDriver(UnityTransport transport, out NetworkDriver driver, out NetworkPipeline unreliableFragmentedPipeline, out NetworkPipeline unreliableSequencedFragmentedPipeline, out NetworkPipeline reliableSequencedPipeline)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type            | Name                                  | Description |
-|-----------------|---------------------------------------|-------------|
-| UnityTransport  | transport                             |             |
-| NetworkDriver   | driver                                |             |
-| NetworkPipeline | unreliableFragmentedPipeline          |             |
-| NetworkPipeline | unreliableSequencedFragmentedPipeline |             |
-| NetworkPipeline | reliableSequencedPipeline             |             |
+| Type            | Name                                  | Description                                       |
+|-----------------|---------------------------------------|---------------------------------------------------|
+| UnityTransport  | transport                             | The owner transport                               |
+| NetworkDriver   | driver                                | The driver                                        |
+| NetworkPipeline | unreliableFragmentedPipeline          | The UnreliableFragmented NetworkPipeline          |
+| NetworkPipeline | unreliableSequencedFragmentedPipeline | The UnreliableSequencedFragmented NetworkPipeline |
+| NetworkPipeline | reliableSequencedPipeline             | The ReliableSequenced NetworkPipeline             |
 
 #### DisconnectLocalClient()
 
-<div class="markdown level1 summary">
 
-</div>
+Disconnects the local client from the remote
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override void DisconnectLocalClient()
 ```
 
-</div>
+
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.DisconnectLocalClient()
 
-</div>
+
 
 #### DisconnectRemoteClient(UInt64)
 
-<div class="markdown level1 summary">
 
-</div>
+Disconnects a remote client from the server
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override void DisconnectRemoteClient(ulong clientId)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
+| Type          | Name     | Description              |
+|---------------|----------|--------------------------|
+| System.UInt64 | clientId | The client to disconnect |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.DisconnectRemoteClient(UInt64)
 
-</div>
+
 
 #### GetCurrentRtt(UInt64)
 
-<div class="markdown level1 summary">
 
-</div>
+Gets the current RTT for a specific client
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override ulong GetCurrentRtt(ulong clientId)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type          | Name     | Description |
-|---------------|----------|-------------|
-| System.UInt64 | clientId |             |
+| Type          | Name     | Description           |
+|---------------|----------|-----------------------|
+| System.UInt64 | clientId | The client RTT to get |
 
 ##### Returns
 
 | Type          | Description |
 |---------------|-------------|
-| System.UInt64 |             |
+| System.UInt64 | The RTT     |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.GetCurrentRtt(UInt64)
 
-</div>
+
 
 #### Initialize(NetworkManager)
 
-<div class="markdown level1 summary">
 
-</div>
+Initializes the transport
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override void Initialize(NetworkManager networkManager = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type           | Name           | Description |
-|----------------|----------------|-------------|
-| NetworkManager | networkManager |             |
+| Type           | Name           | Description                                                |
+|----------------|----------------|------------------------------------------------------------|
+| NetworkManager | networkManager | The NetworkManager that initialized and owns the transport |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.Initialize(NetworkManager)
 
-</div>
+
 
 #### PollEvent(out UInt64, out ArraySegment\<Byte\>, out Single)
 
-<div class="markdown level1 summary">
 
-</div>
+Polls for incoming events, with an extra output parameter to report the
+precise time the event was received.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte> payload, out float receiveTime)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                               | Name        | Description |
-|------------------------------------|-------------|-------------|
-| System.UInt64                      | clientId    |             |
-| System.ArraySegment\<System.Byte\> | payload     |             |
-| System.Single                      | receiveTime |             |
+| Type                               | Name        | Description                                                                |
+|------------------------------------|-------------|----------------------------------------------------------------------------|
+| System.UInt64                      | clientId    | The clientId this event is for                                             |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                  |
+| System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
 ##### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| NetworkEvent |             |
+| Type         | Description            |
+|--------------|------------------------|
+| NetworkEvent | Returns the event type |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.PollEvent(out UInt64, out ArraySegment\<Byte\>, out
 Single)
 
-</div>
+
 
 #### Send(UInt64, ArraySegment\<Byte\>, NetworkDelivery)
 
-<div class="markdown level1 summary">
 
-</div>
+Send a payload to the specified clientId, data and networkDelivery.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override void Send(ulong clientId, ArraySegment<byte> payload, NetworkDelivery networkDelivery)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type                               | Name            | Description |
-|------------------------------------|-----------------|-------------|
-| System.UInt64                      | clientId        |             |
-| System.ArraySegment\<System.Byte\> | payload         |             |
-| NetworkDelivery                    | networkDelivery |             |
+| Type                               | Name            | Description                               |
+|------------------------------------|-----------------|-------------------------------------------|
+| System.UInt64                      | clientId        | The clientId to send to                   |
+| System.ArraySegment\<System.Byte\> | payload         | The data to send                          |
+| NetworkDelivery                    | networkDelivery | The delivery type (QoS) to send data with |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.Send(UInt64, ArraySegment\<Byte\>, NetworkDelivery)
 
-</div>
+
 
 #### SetClientRelayData(String, UInt16, Byte\[\], Byte\[\], Byte\[\], Byte\[\], Boolean)
 
-<div class="markdown level1 summary">
 
 Set the relay server data for the host.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetClientRelayData(string ipAddress, ushort port, byte[] allocationId, byte[] key, byte[] connectionData, byte[] hostConnectionData, bool isSecure = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -835,88 +807,79 @@ public void SetClientRelayData(string ipAddress, ushort port, byte[] allocationI
 
 #### SetConnectionData(NetworkEndPoint, NetworkEndPoint)
 
-<div class="markdown level1 summary">
 
 Sets IP and Port information. This will be ignored if using the Unity
 Relay and you should call SetRelayServerData(String, UInt16, Byte\[\],
 Byte\[\], Byte\[\], Byte\[\], Boolean)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetConnectionData(NetworkEndPoint endPoint, NetworkEndPoint listenEndPoint = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type            | Name           | Description |
-|-----------------|----------------|-------------|
-| NetworkEndPoint | endPoint       |             |
-| NetworkEndPoint | listenEndPoint |             |
+| Type            | Name           | Description               |
+|-----------------|----------------|---------------------------|
+| NetworkEndPoint | endPoint       | The remote end point      |
+| NetworkEndPoint | listenEndPoint | The local listen endpoint |
 
 #### SetConnectionData(String, UInt16, String)
 
-<div class="markdown level1 summary">
 
 Sets IP and Port information. This will be ignored if using the Unity
 Relay and you should call SetRelayServerData(String, UInt16, Byte\[\],
 Byte\[\], Byte\[\], Byte\[\], Boolean)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetConnectionData(string ipv4Address, ushort port, string listenAddress = null)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type          | Name          | Description |
-|---------------|---------------|-------------|
-| System.String | ipv4Address   |             |
-| System.UInt16 | port          |             |
-| System.String | listenAddress |             |
+| Type          | Name          | Description              |
+|---------------|---------------|--------------------------|
+| System.String | ipv4Address   | The remote IP address    |
+| System.UInt16 | port          | The remote port          |
+| System.String | listenAddress | The local listen address |
 
 #### SetDebugSimulatorParameters(Int32, Int32, Int32)
 
-<div class="markdown level1 summary">
 
 Set the parameters for the debug simulator.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetDebugSimulatorParameters(int packetDelay, int packetJitter, int dropRate)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -928,25 +891,22 @@ public void SetDebugSimulatorParameters(int packetDelay, int packetJitter, int d
 
 #### SetHostRelayData(String, UInt16, Byte\[\], Byte\[\], Byte\[\], Boolean)
 
-<div class="markdown level1 summary">
 
 Set the relay server data for the host.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetHostRelayData(string ipAddress, ushort port, byte[] allocationId, byte[] key, byte[] connectionData, bool isSecure = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -961,138 +921,145 @@ public void SetHostRelayData(string ipAddress, ushort port, byte[] allocationId,
 
 #### SetRelayServerData(String, UInt16, Byte\[\], Byte\[\], Byte\[\], Byte\[\], Boolean)
 
-<div class="markdown level1 summary">
 
-</div>
+Set the relay server data for the server.
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public void SetRelayServerData(string ipv4Address, ushort port, byte[] allocationIdBytes, byte[] keyBytes, byte[] connectionDataBytes, byte[] hostConnectionDataBytes = null, bool isSecure = false)
 ```
 
-</div>
+
 
 ##### Parameters
 
-| Type            | Name                    | Description |
-|-----------------|-------------------------|-------------|
-| System.String   | ipv4Address             |             |
-| System.UInt16   | port                    |             |
-| System.Byte\[\] | allocationIdBytes       |             |
-| System.Byte\[\] | keyBytes                |             |
-| System.Byte\[\] | connectionDataBytes     |             |
-| System.Byte\[\] | hostConnectionDataBytes |             |
-| System.Boolean  | isSecure                |             |
+| Type            | Name                    | Description                                   |
+|-----------------|-------------------------|-----------------------------------------------|
+| System.String   | ipv4Address             | IP address of the relay server.               |
+| System.UInt16   | port                    | UDP port of the relay server.                 |
+| System.Byte\[\] | allocationIdBytes       | Allocation ID as a byte array.                |
+| System.Byte\[\] | keyBytes                | Allocation key as a byte array.               |
+| System.Byte\[\] | connectionDataBytes     | Connection data as a byte array.              |
+| System.Byte\[\] | hostConnectionDataBytes | The HostConnectionData as a byte array.       |
+| System.Boolean  | isSecure                | Whether the connection is secure (uses DTLS). |
 
 #### Shutdown()
 
-<div class="markdown level1 summary">
 
-</div>
+Shuts down the transport
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override void Shutdown()
 ```
 
-</div>
+
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.Shutdown()
 
-</div>
+
 
 #### StartClient()
 
-<div class="markdown level1 summary">
 
-</div>
+Connects client to the server Note: When this method returns false it
+could mean:
 
-<div class="markdown level1 conceptual">
+-   You are trying to start a client that is already started
+-   It failed during the initial port binding when attempting to begin
+    to connect
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override bool StartClient()
 ```
 
-</div>
+
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                               |
+|----------------|---------------------------------------------------------------------------|
+| System.Boolean | true if the client was started and false if it failed to start the client |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.StartClient()
 
-</div>
+
 
 #### StartServer()
 
-<div class="markdown level1 summary">
 
-</div>
+Starts to listening for incoming clients Note: When this method returns
+false it could mean:
 
-<div class="markdown level1 conceptual">
+-   You are trying to start a client that is already started
+-   It failed during the initial port binding when attempting to begin
+    to connect
 
-</div>
+
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public override bool StartServer()
 ```
 
-</div>
+
 
 ##### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                                               |
+|----------------|---------------------------------------------------------------------------|
+| System.Boolean | true if the server was started and false if it failed to start the server |
 
 ##### Overrides
 
-<div>
+
 
 NetworkTransport.StartServer()
 
-</div>
+
 
 ### Implements
 
-<div>
+
 
 INetworkStreamDriverConstructor
 
-</div>
 
- 
+
+
+

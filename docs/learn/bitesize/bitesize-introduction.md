@@ -11,7 +11,7 @@ The Bitesize Samples repository provides a series of sample code as modules to u
 
 ## Requirements
 
-You need Unity and Netcode for GameObjects installed to work with these samples. See [Install  Netcode for GameObjects ](../migration/installation.md) for details.
+You need Unity and Netcode for GameObjects installed to work with these samples. See [Install  Netcode for GameObjects ](../../installation/installation.md) for details.
 
 ## Get the samples
 

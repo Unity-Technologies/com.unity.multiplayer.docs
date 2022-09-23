@@ -1,31 +1,32 @@
----  
-id: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkSceneManager.OnUnloadCompleteDelegateHandler
+
 
 Delegate declaration for the OnUnloadComplete event.  
 See also:  
 UnloadComplete for more information
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void OnUnloadCompleteDelegateHandler(ulong clientId, string sceneName);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -34,4 +35,5 @@ public delegate void OnUnloadCompleteDelegateHandler(ulong clientId, string scen
 | System.UInt64 | clientId  | the client that is processing this event (the server will receive all of these events for every client and itself) |
 | System.String | sceneName | the scene name pertaining to this event                                                                            |
 
- 
+
+

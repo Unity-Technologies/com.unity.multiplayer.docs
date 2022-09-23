@@ -1,9 +1,5 @@
 module.exports = {
     "tools": [
-       /*/ {
-            "type": "doc",
-            "id": "about"
-        }, /*/
         {
             "type": "doc",
             "id": "install-tools"
@@ -35,21 +31,6 @@ module.exports = {
                     {
                         "type": "doc",
                         "id": "api/Unity.Multiplayer.Tools.Editor.NetStatsMonitorBuildSettings",
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Editor - Network Simulator",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Editor.NetworkSimulator",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Multiplayer.Tools.Editor.NetworkSimulator.NetworkSimulatorBuildSettings",
                     },
                 ],
             },

@@ -1,123 +1,129 @@
----  
-id: Unity.Networking.Transport.NullPipelineStage  
-title: Unity.Networking.Transport.NullPipelineStage  
+---
+id: Unity.Networking.Transport.NullPipelineStage
+title: Unity.Networking.Transport.NullPipelineStage
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NullPipelineStage
 
-<div class="markdown level0 conceptual">
 
-</div>
+The NullPipelineStage is the default pipeline stage and used to send
+packets unreliably
 
-<div classs="implements">
+
+
+
+
 
 ##### Implements
 
-<div>
+
 
 INetworkPipelineStage
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NullPipelineStage : INetworkPipelineStage
 ```
 
-## 
 
-### StaticSize
 
-<div class="markdown level1 summary">
+### Properties
 
-</div>
+#### StaticSize
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int StaticSize { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Methods
 
-### StaticInitialize(Byte\*, Int32, NetworkSettings)
+#### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings netParams)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type            | Name                       | Description |
 |-----------------|----------------------------|-------------|
@@ -125,7 +131,7 @@ public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int sta
 | System.Int32    | staticInstanceBufferLength |             |
 | NetworkSettings | netParams                  |             |
 
-#### Returns
+##### Returns
 
 | Type                 | Description |
 |----------------------|-------------|
@@ -133,8 +139,11 @@ public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int sta
 
 ### Implements
 
-<div>
+
 
 INetworkPipelineStage
 
-</div>
+
+
+
+

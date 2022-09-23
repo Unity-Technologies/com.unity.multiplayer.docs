@@ -65,15 +65,13 @@ For our October 2021 release, the following major features were released:
 
 [v1.0.0 Netcode pre-release](netcode/1.0.0) supports Unity versions 2020.3 and later
 
-The `develop` branch is considered experimental and supports Unity versions 2020.3 and later
-
 * Streamlined RPC layer with support for [serialization of custom data types](../../netcode/current/advanced-topics/custom-serialization)
-* Improved [scene management](../../netcode/current/basics/scene-management) which includes additive scene workflows support
+* Improved [scene management](../../netcode/current/basics/scenemanagement/scene-management-overview) which includes additive scene workflows support
 * Support for [network animations](../../netcode/current/components/networkanimator)
 * Improved [network transforms](../../netcode/current/components/networktransform) with interpolation support
 * Network [object parenting](../../netcode/current/advanced-topics/networkobject-parenting) support
 
-Use the [Netcode install guide](../../netcode/current/migration/install) for your first installation of Netcode and follow the [upgrade guide](../../netcode/current/migration/upgrade-guide) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
+Use the [Netcode install guide](../../netcode/current/installation/install) for your first installation of Netcode and follow the [upgrade guide](../../netcode/current/installation/upgrade_from_mlapi) if you are transitioning from MLAPI 0.1.0 to Netcode 1.0.0.
 
 :::unity About Experimental Releases
 For Unity experimental releases:
@@ -91,9 +89,9 @@ For Unity experimental releases:
 
 ### Tools
 
-We added profiler support for Netcode. The new [network profiler modules](../../netcode/current/basics/profiling) enables you to inspect detailed information about the network activity performed on a given frame.
+We added profiler support for Netcode. The new [network profiler modules](../../tools/current/profiler) enables you to inspect detailed information about the network activity performed on a given frame.
 
-To install the tools package in your project, see the [install tools](../../netcode/current/tools/install-tools) guide.
+To install the tools package in your project, see the [install tools](../../tools/current/install-tools) guide.
 
 ### Boss room
 
@@ -109,7 +107,7 @@ The Boss Room Co-Op Sample is now in [pre-release](samples/samples-1-0-0-pre) an
 * NetworkObject pool (arrows are pooled)
 * Server-authoritative character NetworkAnimator
 
-Use the [Boss Room install guide](../../netcode/current/learn/bossroom) to start using Boss Room today!
+Use the [Boss Room install guide](../../netcode/current/learn/bossroom/bossroom) to start using Boss Room today!
 
 :::important
 Boss Room: Small Scale Co-op Sample always requires the latest version of Netcode.
@@ -123,7 +121,7 @@ This project release is available for use. Support for this release is limited. 
 
 See the [Bitesize Samples changelog](bitesize/bitesize-changelog) for all release information on these projects.
 
-Use the [BiteSize install guide](../../netcode/current/learn/bitesize-introduction) to begin using the different BiteSize sample projects.
+Use the [BiteSize install guide](../../netcode/current/learn/bitesize/bitesize-introduction) to begin using the different BiteSize sample projects.
 
 ### Documentation
 

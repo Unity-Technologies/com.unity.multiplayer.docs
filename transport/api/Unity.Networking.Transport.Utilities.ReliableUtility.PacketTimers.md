@@ -1,176 +1,186 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers
+title: Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct ReliableUtility.PacketTimers
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct PacketTimers
 ```
 
-## 
 
-### Padding
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### Padding
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ushort Padding
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### ProcessingTime
+#### ProcessingTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ushort ProcessingTime
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-### ReceiveTime
+#### ReceiveTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public long ReceiveTime
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### SentTime
+#### SentTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public long SentTime
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-### SequenceId
+#### SequenceId
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int SequenceId
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

@@ -1,32 +1,33 @@
----  
-id: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+
 
 Delegate declaration for the VerifySceneBeforeLoading handler that
 provides an additional level of scene loading security and/or validation
 to assure the scene being loaded is valid scene to be loaded in the
 LoadSceneMode specified.
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate bool VerifySceneBeforeLoadingDelegateHandler(int sceneIndex, string sceneName, LoadSceneMode loadSceneMode);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -42,4 +43,5 @@ public delegate bool VerifySceneBeforeLoadingDelegateHandler(int sceneIndex, str
 |----------------|-----------------------------------|
 | System.Boolean | true (valid) or false (not valid) |
 
- 
+
+

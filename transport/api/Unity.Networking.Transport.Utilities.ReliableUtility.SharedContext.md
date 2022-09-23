@@ -1,316 +1,332 @@
----  
-id: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext  
-title: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext  
+---
+id: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext
+title: Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct ReliableUtility.SharedContext
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct SharedContext
 ```
 
-## 
 
-### errorCode
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### errorCode
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ReliableUtility.ErrorCodes errorCode
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                       | Description |
 |----------------------------|-------------|
 | ReliableUtility.ErrorCodes |             |
 
-### MinimumResendTime
+#### MinimumResendTime
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int MinimumResendTime
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### ReceivedPackets
+#### ReceivedPackets
 
-<div class="markdown level1 summary">
 
 Context of received packets, last sequence ID received, and ackmask of
 received packets. Acked is not used. This is sent back to the remote
 peer in the header when sending.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public SequenceBufferContext ReceivedPackets
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                  | Description |
 |-----------------------|-------------|
 | SequenceBufferContext |             |
 
-### RemoteTimerDataOffset
+#### RemoteTimerDataOffset
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int RemoteTimerDataOffset
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RemoteTimerDataStride
+#### RemoteTimerDataStride
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int RemoteTimerDataStride
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### RttInfo
+#### RttInfo
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ReliableUtility.RTTInfo RttInfo
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                    | Description |
 |-------------------------|-------------|
 | ReliableUtility.RTTInfo |             |
 
-### SentPackets
+#### SentPackets
 
-<div class="markdown level1 summary">
 
 Context of sent packets, last sequence ID sent (-1), last ID of our sent
 packet acknowledged by remote peer, ackmask of acknowledged packets.
 This is used when determining if a resend is needed.
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public SequenceBufferContext SentPackets
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                  | Description |
 |-----------------------|-------------|
 | SequenceBufferContext |             |
 
-### stats
+#### stats
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ReliableUtility.Statistics stats
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                       | Description |
 |----------------------------|-------------|
 | ReliableUtility.Statistics |             |
 
-### TimerDataOffset
+#### TimerDataOffset
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int TimerDataOffset
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### TimerDataStride
+#### TimerDataStride
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int TimerDataStride
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### WindowSize
+#### WindowSize
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int WindowSize
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

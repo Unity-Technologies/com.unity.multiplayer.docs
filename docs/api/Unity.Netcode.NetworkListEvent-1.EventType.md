@@ -1,28 +1,43 @@
----  
-id: Unity.Netcode.NetworkListEvent-1.EventType  
-title: Unity.Netcode.NetworkListEvent-1.EventType  
+---
+id: Unity.Netcode.NetworkListEvent-1.EventType
+title: Unity.Netcode.NetworkListEvent-1.EventType
 ---
 
-<div class="markdown level0 summary">
+# Enum NetworkListEvent\<T\>.EventType
+
 
 Enum representing the different operations available for triggering an
 event.
 
-</div>
+
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum EventType : byte
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 

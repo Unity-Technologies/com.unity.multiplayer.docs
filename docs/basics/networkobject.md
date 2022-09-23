@@ -10,8 +10,8 @@ Netcode for Gameobjects' high level components, [the RPC system](../advanced-top
 :::note
 Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures in order to be serialized and used with `RPC`s and `NetworkVariables`:
 
-- For `NetworkObject`s use the [NetworkObjectReference](../api/Unity.Netcode.NetworkObjectReference).
-- For `NetworkBehaviour`s use the `NetworkBehaviourReference`<!--(NO API LINK AVAILABLE)-->.
+- For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference).
+- For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
 :::
 
 ## NetworkObject
@@ -67,7 +67,7 @@ Player objects are an optional feature in Netcode which can be used to assign a 
 :::note
 If you want a client to control multiple objects, then use the ownership methods described above under the ownership section.
 
-If you want to be able to assign a unique player prefab on a per client connection basis, use client [Connection Approval](../getting-started/connection-approval).
+If you want to be able to assign a unique player prefab on a per client connection basis, use client [Connection Approval](connection-approval).
 :::
 
 ### Creating a Player Object

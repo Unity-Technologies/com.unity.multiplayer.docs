@@ -1,264 +1,298 @@
----  
-id: Unity.Networking.Transport.NetworkPipelineContext  
-title: Unity.Networking.Transport.NetworkPipelineContext  
+---
+id: Unity.Networking.Transport.NetworkPipelineContext
+title: Unity.Networking.Transport.NetworkPipelineContext
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkPipelineContext
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network pipeline context
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NetworkPipelineContext
 ```
 
-## 
 
-### accumulatedHeaderCapacity
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### accumulatedHeaderCapacity
 
-<div class="markdown level1 conceptual">
 
-</div>
+The accumulated header capacity
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int accumulatedHeaderCapacity
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### header
+#### header
 
-<div class="markdown level1 summary">
 
-</div>
+The header
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public DataStreamWriter header
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type             | Description |
 |------------------|-------------|
 | DataStreamWriter |             |
 
-### internalProcessBuffer
+#### internalProcessBuffer
 
-<div class="markdown level1 summary">
 
-</div>
+The internal process buffer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *internalProcessBuffer
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### internalProcessBufferLength
+#### internalProcessBufferLength
 
-<div class="markdown level1 summary">
 
-</div>
+The internal process buffer length
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int internalProcessBufferLength
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### internalSharedProcessBuffer
+#### internalSharedProcessBuffer
 
-<div class="markdown level1 summary">
 
-</div>
+The internal shared process buffer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *internalSharedProcessBuffer
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### internalSharedProcessBufferLength
+#### internalSharedProcessBufferLength
 
-<div class="markdown level1 summary">
 
-</div>
+The internal shared process buffer length
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int internalSharedProcessBufferLength
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### staticInstanceBuffer
+#### staticInstanceBuffer
 
-<div class="markdown level1 summary">
 
-</div>
+The static instance buffer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *staticInstanceBuffer
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### staticInstanceBufferLength
+#### staticInstanceBufferLength
 
-<div class="markdown level1 summary">
 
-</div>
+The static instance buffer length
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int staticInstanceBufferLength
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### timestamp
+#### timestamp
 
-<div class="markdown level1 summary">
 
-</div>
+The timestamp
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public long timestamp
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
+
+
+

@@ -1,357 +1,379 @@
----  
-id: Unity.Networking.Transport.NetworkInterfaceEndPoint  
-title: Unity.Networking.Transport.NetworkInterfaceEndPoint  
+---
+id: Unity.Networking.Transport.NetworkInterfaceEndPoint
+title: Unity.Networking.Transport.NetworkInterfaceEndPoint
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkInterfaceEndPoint
 
-<div class="markdown level0 conceptual">
 
-</div>
 
-<div classs="implements">
+
+
+
 
 ##### Implements
 
-<div>
+
 
 System.IEquatable\<NetworkInterfaceEndPoint\>
 
-</div>
 
-</div>
 
-<div class="inheritedMembers">
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
+System.Object.GetType()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NetworkInterfaceEndPoint : IEquatable<NetworkInterfaceEndPoint>
 ```
 
-## 
 
-### data
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### data
 
-<div class="markdown level1 conceptual">
 
-</div>
+Raw representation of the interface endpoint.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *data
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### dataLength
+#### dataLength
 
-<div class="markdown level1 summary">
 
-</div>
+Actual length of the interface endpoint's raw representation.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public int dataLength
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### k_MaxLength
+#### k_MaxLength
 
-<div class="markdown level1 summary">
 
-</div>
+Maximum length of the interface endpoint's raw representation.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public const int k_MaxLength = 56
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+### Properties
 
-### IsValid
+#### IsValid
 
-<div class="markdown level1 summary">
 
-</div>
+Whether the interface endpoint is valid or not.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly bool IsValid { get; }
 ```
 
-#### Property Value
+
+
+##### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+### Methods
 
-### Equals(Object)
+#### Equals(Object)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override bool Equals(object other)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name  | Description |
 |---------------|-------|-------------|
 | System.Object | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-### Equals(NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
+#### Equals(NetworkInterfaceEndPoint)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public bool Equals(NetworkInterfaceEndPoint other)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                     | Name  | Description |
 |--------------------------|-------|-------------|
 | NetworkInterfaceEndPoint | other |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### GetHashCode()
+#### GetHashCode()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-### ToFixedString()
 
-<div class="markdown level1 summary">
+#### ToFixedString()
 
-</div>
 
-<div class="markdown level1 conceptual">
+Returns the NetworkInterfaceEndPoint as a .
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public FixedString64Bytes ToFixedString()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type               | Description |
 |--------------------|-------------|
 | FixedString64Bytes |             |
 
-### ToString()
+#### ToString()
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public override string ToString()
 ```
 
-#### Returns
+
+
+##### Returns
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-#### Overrides
+##### Overrides
 
-<div>
+
 
 System.ValueType.ToString()
 
-</div>
 
-## 
 
-### Equality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
+### Operators
 
-<div class="markdown level1 summary">
+#### Equality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool operator ==(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                     | Name | Description |
 |--------------------------|------|-------------|
 | NetworkInterfaceEndPoint | lhs  |             |
 | NetworkInterfaceEndPoint | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
+#### Inequality(NetworkInterfaceEndPoint, NetworkInterfaceEndPoint)
 
-<div class="markdown level1 summary">
 
-</div>
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static bool operator !=(NetworkInterfaceEndPoint lhs, NetworkInterfaceEndPoint rhs)
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type                     | Name | Description |
 |--------------------------|------|-------------|
 | NetworkInterfaceEndPoint | lhs  |             |
 | NetworkInterfaceEndPoint | rhs  |             |
 
-#### Returns
+##### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -359,8 +381,11 @@ public static bool operator !=(NetworkInterfaceEndPoint lhs, NetworkInterfaceEnd
 
 ### Implements
 
-<div>
 
-System.IEquatable\&lt;T&gt;
 
-</div>
+System.IEquatable\<T\>
+
+
+
+
+

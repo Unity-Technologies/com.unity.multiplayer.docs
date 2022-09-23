@@ -45,13 +45,13 @@ While client synchronization does fall partially outside of the scene management
 - Synchronizing with all spawned `NetworkObjects`.
   - Typically this involves both in-scene placed and dynamically spawned `NetworkObjects`.   
     - Learn more about [Object Spawning here](..\object-spawning.md).
-  - The `NetworkObject` list sent to the client is pre-ordered, by the server, in order to account for certain types of dependencies such as when using [Object Pooling](..\advanced-topics\object-pooling.md).
+  - The `NetworkObject` list sent to the client is pre-ordered, by the server, in order to account for certain types of dependencies such as when using [Object Pooling](../../advanced-topics/object-pooling.md).
     - Typically object pool managers are in-scene placed and need to be instantiated and spawned prior to spawning any of its pooled `NetworkObjects` on a client that is synchronizing. As such, `NetworkSceneManager` takes this into account to assure that all `NetworkObjects` spawned via the `NetworkPrefabHandler` will be instantiated and spawned after their object pool manager dependency has been instantiated and spawned locally on the client.        
         - You could have parented in-scene placed NetworkObjects (i.e. items that are picked up or consumed by players)
             - `NetworkSceneManager` uses a combination of the `NetworkObject.GlobalObjectIdHash` and the instantiating scene's handle to uniquely identify in-scene placed `NetworkObject`s.
 
 :::info
-With additively loaded scenes, you can run into situations where your objet pool manager, instantiated when the scene it is defined within is additively loaded by the server, is leaving its spawned `NetworkObject` instances within the [currently active scene](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.GetActiveScene.html).  While assuring that newly connected clients being synchronized have loaded all of the scenes first helps to avoid scene dependency issues, this alone does not resolve issue with the `NetworkObject` spawning order.  The integrated scene management, included in Netcode for GameObjects, takes scenarios such as this into considerationThe integrated scene management, included in Netcode for GameObjects, takes scenarios such as this into consideration.
+With additively loaded scenes, you can run into situations where your objet pool manager, instantiated when the scene it is defined within is additively loaded by the server, is leaving its spawned `NetworkObject` instances within the [currently active scene](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.GetActiveScene.html).  While assuring that newly connected clients being synchronized have loaded all of the scenes first helps to avoid scene dependency issues, this alone does not resolve issue with the `NetworkObject` spawning order.  The integrated scene management, included in Netcode for GameObjects, takes scenarios such as this into consideration.
 :::       
 
 ### The Client Synchronization Process
