@@ -51,8 +51,33 @@ darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
 
 `NetworkTransform` always synchronizes positions from the server to the clients and position changes on the clients are not allowed. Netcode for GameObjects comes with a sample containing a `ClientNetworkTransform`. This transform synchronizes the position of the owner client to the server and all other client allowing for client authoritative gameplay.
 
-The `ClientNetworkTransform` lives inside the Multiplayer Samples Utilities package. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: `https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main`
 
-Or you can directly add this line to your `manifest.json` file:
+You can use the existing `ClientNetworkTransform` that lives inside the Multiplayer Samples Utilities package. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: `https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main`.
 
+Optionally, you can directly add this line to your `manifest.json` file:
 `"com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"`
+
+You can also just create your own `ClientNetworkTransform` by deriving from `NetworkTransform`, overriding the `OnIsServerAuthoritative` virtual method, and return false: 
+```csharp
+using Unity.Netcode.Components;
+using UnityEngine;
+
+/// <summary>
+/// Used for syncing a transform with client side changes. This includes host.
+/// Pure server as owner isn't supported by this. Please use NetworkTransform
+/// for transforms that'll always be owned by the server.
+/// </summary>
+[DisallowMultipleComponent]
+public class ClientNetworkTransform : NetworkTransform
+{
+    /// <summary>
+    /// Used to determine who can write to this transform. Owner client only.
+    /// This imposes state to the server. This is putting trust on your clients.
+    /// Make sure no security-sensitive features use this transform.
+    /// </summary>
+    protected override bool OnIsServerAuthoritative()
+    {
+        return false;
+    }
+}
+```
