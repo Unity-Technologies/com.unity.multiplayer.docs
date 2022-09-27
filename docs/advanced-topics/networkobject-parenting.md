@@ -4,22 +4,28 @@ title:  NetworkObject Parenting
 description: A `NetworkObject` parenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
 
 ---
-
-:::important Opt-OUT
-This feature is behind a bool flag that can be toggled on the `NetworkObject` inspector UI. It will be enabled by default but you can opt-out from it if you want to implement your own solution
+:::note Optional Auto Synchronized Parenting
+The Auto Object Parent Sync property of NetworkObject, enabled by default, allows you to disable automatic parent change synchronziation in the event you want to implement your own parenting solution for one or more NetworkObjects.
 :::
 
- [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) under `NetworkObject`  is utilized to catch `transform.parent` changes.
 
-Three additional state variables are stored in `NetworkObject`:
+## Things to consider for `NetworkObject` parenting:
 
-```csharp
-bool m_IsReparented; // did parent change compared to initial scene hierarchy?
-ulong? m_LatestParent; // who (NetworkObjectId) is our latest (current) parent if we changed our parent?
-Transform m_CachedParent; // who (Transform) was our previously assigned parent?
-```
+- It is recommended to use the `NetworkObject.TrySetParent` method when parenting unless you want the to-be-parented child to maintain local space transform values. 
+- If you directly set the parent of a child's `Transform` it will use the default WorldPositionStays value (true).
+- If you want the child `NetworkObject` to not keep its current world space values relative to the parent:
+  - Always use the `NetworkObject.TrySetParent` method in order to set the `worldPositionStays` paremeter to false and have that synchronized across clients.
+  - On the server-side, you can adjust the child's transform values by overriding the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method.
+    - This can be useful if you don't plan to adjust the child NetworkObject's local space transform values while it is parented as it allows you to "pickup" and "drop" NetworkObjects without the need to attach a NetworkTransform component to the child.
+- When a server parents a spawned `NetworkObject` under another spawned `NetowrkObject` during a netcode game session this parent child relationship is replicated across the network to all connected and future late joining clients.
+- In-scene placed `NetworkObject`s can be nested under a GameObject without a `NetworkObject` component and that hierarchy will be preserved.
+- You can perform the same parenting actions with in-scene placed `NetworkObject`s as you can with dynamically spawned `NetworkObject`s.
 
-`NetworkBehaviour` includes a virtual method you can override to be notified when a `NetworkObject`'s parent has changed:
+:::caution Multi-Generation Children and Scale
+If you are dealing with more than one generation of nested children where each parent and child have scale values other than `Vector3.one`, then mixing the `WorldPositionStays` value when parenting and removing a parent will impact how the final scale is calculated! If you want to maintain the same values prior to parenting when removing a parent from a child, then you need to use the same `WorldPositionStays` value used when the child was parented. 
+:::
+
+[`NetworkBehaviour.OnNetworkObjectParentChanged`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour#onnetworkobjectparentchangednetworkobject) is a virtual method you can override to be notified when a `NetworkObject`'s parent has changed. The [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) method is used by `NetworkObject` to catch `transform.parent` changes and notify its associated NetworkBehaviours.
 
 ```csharp
 /// <summary>
@@ -28,29 +34,12 @@ Transform m_CachedParent; // who (Transform) was our previously assigned parent?
 virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject) { }
 ```
 
-You need to consider two main code paths when synchronizing `NetworkObject` parenting:
-
-1. At Object Spawn
-    - Client spawns objects including static scene objects and dynamic spawned objects on join.
-    - Serialize `NetworkObject`s with their payloads (such as `NetworkBehaviour`s etc.)
-    - Write `m_IsReparented` and `m_LatestParent` fields to sync on the client-side
-2. During Gameplay
-    - When a server parents a spawned `NetworkObject` under another spawned `NetowrkObject` during a netcode game session this parent child relationship is replicated across the network to all connected clients.
-:::info
-The server will writes the `m_IsReparented` and `m_LatestParent` fields into a `NetworkBuffer` and sends a `PARENT_SYNC` message on the `MLAPI_INTERNAL` channel to all connected clients.
-:::
-
-:::important
-Transform parent synchronization relies on the initial formation of transforms in the scene hierarchy being identical on all standalone instances.
-:::
-
 ## NetworkObject Parenting Rules
 A few basic `NetworkObject` Parenting rules are listed below.
 
 :::warning Limiting Non-Networked NetworkObject Transform Parenting
-Rules outlined below are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try parenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.
+Rules outlined below are applied and enforced even while not networking (not hosting or connected). Specifically, if you were to try parenting a `NetworkObject` under a non-`NetworkObject`, that'd be invalid and reverted even though you are not hosting or connected to a server.  The only time you can have a `NetworkObject` nested under a non-`NetworkObject` is when using in-scene placed `NetworkObject`s. Under this scenario, if you remove the child `NetworkObject` from the non-`NetworkObject` during runtime you will not be able to parent it back under a `GameObject`.
 :::
-
 
 ### Only A Server (or A Host) Can Parent NetworkObjects
 Similar to [Ownership](../basics/networkobject#ownership), only the server (or host) can control `NetworkObject` parenting.
@@ -177,4 +166,5 @@ Vehicle (GameObject->NetworkObject)
   │ └─Player (GameObject->NetworkObject)
   └─Seat2 (GameObject->NetworkObject)
 ```
+
 
