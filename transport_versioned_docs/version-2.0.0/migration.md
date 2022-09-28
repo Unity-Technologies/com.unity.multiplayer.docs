@@ -26,7 +26,7 @@ The custom communication protocol UTP uses to implement connections over UDP has
 
 Due to the incompatibility between UTP 2.0 and UTP 1.X, you must either ensure that you either update clients and servers simultaneously or disallow older clients from connecting to updated servers. Alternatively, you can provide different endpoints for UTP 1.X and 2.0 servers to smooth the transition while older clients are updated.
 
-The breaking changes introduced in UTP 2.0 improve bandwidth efficiency, simplify the protocol, and lay the foundations for better forward compatibility.
+These breaking changes introduced in UTP 2.0 improve bandwidth efficiency, simplify the protocol, and lay the foundations for better forward compatibility.
 
 ## Custom network interfaces
 
@@ -35,9 +35,9 @@ The updates in UTP 2.0 heavily modify the `INetworkInterface` API used to implem
 UTP 2.0 introduces the following breaking changes to custom network interfaces: 
 
 * UTP 2.0 no longer has the concept of `NetworkInterfaceEndPoint`; the more general `NetworkEndpoint` replaces `NetworkInterfaceEndPoint`. As a result, you do not need to implement conversion logic between `NetworkEndpoint` and `NetworkInterfaceEndPoint` anymore, so `INetworkInterface` omits `CreateInterfaceEndPoint` and `GetGenericEndPoint`.
-* You no longer need to provide a `NetworkSendInterfac`e through `CreateSendInterface`. `ScheduleSend` handles `Send` operations, which get passed a `PacketsQueue` containing the packets to send.
+* You no longer need to provide a `NetworkSendInterface` through `CreateSendInterface`. `ScheduleSend` handles `Send` operations, which get passed a `PacketsQueue` containing the packets to send.
 * The `ScheduleReceive` method doesn't use the (now obsolete) `NetworkPacketReceiver` to propagate received packets to the rest of UTP. Instead, implementations of `ScheduleReceive` should fill the `PacketsQueue` passed in with the received packets.
-* Most implementations of `INetworkInterface` are now fully compatible with Burst. If an implementation is incompatible with Burst, you can wrap it into a compatible implementation with the new `WrapToUnmanaged` extension method.
+* Implementations of `INetworkInterface` must now be fully compatible with Burst. If an implementation is incompatible with Burst, you can wrap it into a compatible implementation with the new `WrapToUnmanaged` extension method.
 * You must now create `NetworkDriver`s using a custom network interface using the static `NetworkDriver.Create` method. For example, `NetworkDriver.Create(new MyCustomInterface())` creates a `NetworkDriver `named `MyCustomInterface()`. Directly constructing a `NetworkDriver` with `new` is deprecated.
 * `INetworkInterface.Initialize` now takes another parameter: a reference to the packet padding, and you can increase this value to reserve space for headers.
 
@@ -58,8 +58,7 @@ For more information, see [Creating a custom pipeline stage](custom-pipeline.md)
 
 In addition to the changes around data streams, custom network interfaces, and pipeline stages, UTP 2.0 also introduces the following breaking changes:
 
-* You must now complete a `NetworkDriver.ScheduleUpdate` job when notifying the remote peer of the disconnection after calling `NetworkDriver.Disconnec`t.
-* In 1.X, `NetworkDriver.ScheduleFlushSend` was sufficient to notify a remote peer of a disconnection, but this is not the case with UTP 2.0. This change supports new protocols, such as `WebSockets`, where disconnecting might involve more work than simply sending a message.
+* You must now complete a `NetworkDriver.ScheduleUpdate` job when notifying the remote peer of the disconnection after calling `NetworkDriver.Disconnect`. In 1.X, `NetworkDriver.ScheduleFlushSend` was sufficient to notify a remote peer of a disconnection, but this is not the case with UTP 2.0. This change supports new protocols, such as WebSockets, where disconnecting might involve more work than simply sending a message.
 * Using `SimulatorPipelineStageInSend` is now deprecated. Instead, use `SimulatorPipelineStage` and configure the new `ApplyMode` parameter to the direction (for example, `send`, `receive`, or both).
 * `NetworkSettings.WithBaselibNetworkInterfaceParameters` is now deprecated. You can no longer configure the maximum payload size; UTP handles the payload size automatically. However, you can configure the receive and send queue sizes with `NetworkSettings.WithNetworkConfigParameters`.
 * UTP 2.0 removes `NetworkSettings.WithDataStreamParameters` and `NetworkSettings.WithPipelineParameters`. You no longer need to manually configure either of these parameters, so the methods are unnecessary. You can safely delete calls to these methods.
