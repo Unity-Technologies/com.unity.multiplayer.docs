@@ -45,25 +45,23 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 :::
 
 ## ParrelSync
+[**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
+
 :::caution
 
-ParallelSync is **not** supported by Unity.  More information on its usage is available [here](https://github.com/VeriorPies/ParrelSync). Troubleshooting information can be found [here](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs)
+ParallelSync is **not** supported by Unity.  Please see the repositor for more information and [troubleshooting information](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs)
 
 :::
-
-![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
-
-[**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
 
 **ParrelSync** works by making a copy of the original project folder and creating symbolic links to the `Asset` and `Project Settings` folders back from the original project.
 
 We use **ParrelSync** for local iteration in [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
 
+![parrelsync-bossroom-demo](../../../static/img/parrelsync-bossroom-demo.gif)
+
 :::important
 
-**ParrelSync** relies on symbolic links and partial copies of the original project folder structure - generally it is completely safe. 
-
-To ensure that no bug in any of the software you use can destroy your work - it is recommended that you consistently backup your project or use a version control system. Some common examples are:
+**ParrelSync** relies on symbolic links and partial copies of the original project folder structure.  It is generally completely safe, but it is recommended that you consistently backup your project or use a version control system. Some common examples are:
 - [Git](https://git-scm.com/)
 - [SVN](https://subversion.apache.org/)
 - [Plastic](https://www.plasticscm.com/)
@@ -88,6 +86,23 @@ By default **ParrelSync** prevents asset serialization in all clone instances an
 
  - Open the `ParrelSync->Clones Manager` from which you can launch, create and remove clone editors.
 	 - Advanced usage is to utilize **ParrelSync's** capability of passing [Arguments](https://github.com/VeriorPies/ParrelSync/wiki/Argument) to clones, thus allowing to run custom logic on a per-clone basis.
+
+### UGS Authentication
+
+When you using [Unity Authentication](https://docs.unity.com/authentication/IntroUnityAuthentication.html) the users identity is cached locally, even with [Anonymous Sign-in](https://docs.unity.com/authentication/UsingAnonSignIn.html).  This means that each  **ParrelSync** clone will be signed in as the same user which can make testing certain scenarios difficult.  You can force each clone to use a different identity using the [profile management in the Authentication SDK](https://docs.unity.com/authentication/ProfileManagement.html).  `ParrelSync.ClonesManager` can be used to detect and automate this step.
+
+```csharp
+// ParrelSync should only be used within the Unity Editor so you should use the UNITY_EDITOR define
+#if UNITY_EDITOR 
+if (ParrelSync.ClonesManager.IsClone())
+{
+    // When using a ParrelSync clone, switch to a different authentication profile to force the clone
+    // to sign in as a different anonymous user account.
+    string customArgument = ParrelSync.ClonesManager.GetArgument();
+    AuthenticationService.Instance.SwitchProfile($"Clone_{customArgument}_Profile");
+}
+#endif
+```
 
 ### Known issues and workarounds
  - An important nuance is that **ParrelSync** does not sync changes made to packages. `Packages` folder is synced on clone opening, so if you made package changes - you should close and re-open your clones.
