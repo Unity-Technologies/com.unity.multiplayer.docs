@@ -12,7 +12,7 @@ This section holds a Multiplayer Unity Networking tutorial video that teachs var
 
 |<div class="buttons-pages"><a class="button button--outline button--secondary button--lg" href="codemonkey-complete">COMPLETE Unity Multiplayer Tutorial (Netcode for Game Objects)</a></div>| 
 | --- | 
-| Code Momnkey gives an end to end tutorial on how to make a multiplayer game using Netcode for Game objects |
+| Code Monkey gives an end to end tutorial on how to make a multiplayer game using Netcode for Game objects |
 </div>
 
 
