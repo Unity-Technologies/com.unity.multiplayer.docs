@@ -414,7 +414,7 @@ module.exports = {
                         },
                         {
                             "type": "doc",
-                            "id": "learn/codemonkey/codemonkey-complete-tutorial"
+                            "id": "learn/codemonkey/codemonkey-complete"
                         },
                  
                     ]
