@@ -406,6 +406,23 @@ module.exports = {
 
                     "collapsed": true,
                     "type": "category",
+                    "label": "Code Monkey Tutorials",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/codemonkey/codemonkey-video"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/codemonkey/codemonkey-complete-tutorial"
+                        },
+                 
+                    ]
+                },
+                {
+
+                    "collapsed": true,
+                    "type": "category",
                     "label": "Dilmer Tutorials",
                     "items": [
                         {
