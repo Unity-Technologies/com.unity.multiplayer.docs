@@ -33,12 +33,10 @@
                               {
                                   "type": "doc",
                                   "id": "version-2.0.0/minimal-workflow-ws"
-                              }]
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/event-loop"
-                      }]
+                              }
+                          ]
+                      }
+                   ]
               },
               {
                   "collapsed": true,
@@ -104,4 +102,5 @@
                   ]
               }
           ]
+ 
 }
