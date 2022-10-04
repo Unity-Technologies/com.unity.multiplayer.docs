@@ -41,7 +41,8 @@ Use with caution:
 
 1. Open your **Unity Hub** and select the **Project** you are presently working on or create a **New Project**.
 1. From the menu bar, navigate to **Window** > **Package Manager**.
-1. Click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add package by name..**.
+1. When using 2021.3+ click the plus sign ![Add](/img/add.png) in the **Package Manager** status bar and select **Add package by name**. 
+1. If using 2020.3LTS there is no option to add by package name, instead click **Add package from git URL**.
 
  ![Package Installed](/img/install/addbyname.png)
 
