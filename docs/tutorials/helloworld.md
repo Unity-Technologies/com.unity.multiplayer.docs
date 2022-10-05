@@ -186,7 +186,7 @@ public class NetworkCommandLine : MonoBehaviour
 Now we will test that the command line helper script works.
 
 1. Select **File** > **Build and Run**. 
-1. Create a new folder called `Build` inside your Golden Path project folder.
+1. Create a new folder called `Build` inside your Hello World project folder.
 1. **Save As** the binary `HelloWorld`.
 1. Your project will build and launch in a new window, and you should see the plane.  
 1. Quit your app.
