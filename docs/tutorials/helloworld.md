@@ -82,13 +82,13 @@ This section adds in a player object and spawns it for each connected player.
 
 ### Adding your scene to the build
 
-  :::important
-  When `Enable Scene Management` is enabled for the NetworkManager (allowing the server to control which scenes should be loaded for the clients), we must ensure that the current scene has been added to the build, otherwise, we will be unable to enter play mode. This option is enabled by default.
-  :::
+:::important
+When 'Enable Scene Management' is enabled for the NetworkManager (allowing the server to control which scenes should be loaded for the clients), we must ensure that the current scene has been added to the build, otherwise, we will be unable to enter play mode. This option is enabled by default. 
+:::
 
 1. Click **File** > **Build Settings**, in the upper-left corner of the Unity window
-1. Click **Add Open Scenes**
-1. Close the `Build Settings` window.
+2. Click **Add Open Scenes**
+3. Close the `Build Settings` window.
 
 ## Creating a command line helper
 
