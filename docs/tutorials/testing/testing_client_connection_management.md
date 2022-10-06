@@ -13,7 +13,7 @@ Managing client connections in a networked game can lead to many unexpected edge
     - in the case of a client-hosted game, after ending a previous game as a host
   - Client connecting to an ongoing game session (late-joining)
   - Client reconnecting to an ongoing game session (see [Session Management](../../advanced-topics/session-management.md#Reconnection))
-  - Client failing to connect due to approval denied (see [Connection Approval](../../getting-started/connection-approval.md))
+  - Client failing to connect due to approval denied (see [Connection Approval](../../basics/connection-approval.md))
 - things to look out for:
   - Client-Side:
     - Does the state of the client prior to connecting have an impact (i.e. if connecting after disconnecting from another game or hosting one)

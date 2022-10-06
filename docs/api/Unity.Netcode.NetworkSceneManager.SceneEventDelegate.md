@@ -1,32 +1,33 @@
----  
-id: Unity.Netcode.NetworkSceneManager.SceneEventDelegate  
-title: Unity.Netcode.NetworkSceneManager.SceneEventDelegate  
+---
+id: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
+title: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
 ---
 
-<div class="markdown level0 summary">
+# Delegate NetworkSceneManager.SceneEventDelegate
+
 
 The delegate callback definition for scene event notifications.  
 See also:  
 SceneEvent  
 Unity.Netcode.SceneEventData
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void SceneEventDelegate(SceneEvent sceneEvent);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -34,4 +35,5 @@ public delegate void SceneEventDelegate(SceneEvent sceneEvent);
 |------------|------------|-------------|
 | SceneEvent | sceneEvent |             |
 
- 
+
+

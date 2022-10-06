@@ -1,91 +1,94 @@
----  
-id: Unity.Netcode.ClientRpcParams  
-title: Unity.Netcode.ClientRpcParams  
+---
+id: Unity.Netcode.ClientRpcParams
+title: Unity.Netcode.ClientRpcParams
 ---
 
-<div class="markdown level0 summary">
+# Struct ClientRpcParams
 
-</div>
 
-<div class="markdown level0 conceptual">
+Client-Side RPC Can be used with any client-side remote procedure call
+Note: Typically this is used primarily for sending to a specific list of
+clients as opposed to the default (all). ClientRpcSendParams
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
+
 
 System.ValueType.Equals(System.Object)
 
-</div>
 
-<div>
+
+
 
 System.ValueType.GetHashCode()
 
-</div>
 
-<div>
+
+
 
 System.ValueType.ToString()
 
-</div>
 
-<div>
+
+
 
 System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
+
+
 
 System.Object.GetType()
 
-</div>
 
-<div>
+
+
 
 System.Object.ReferenceEquals(System.Object, System.Object)
 
-</div>
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public struct ClientRpcParams
 ```
 
-</div>
+
 
 ### Fields
 
 #### Receive
 
-<div class="markdown level1 summary">
 
-</div>
+The client RPC receive parameters (currently a place holder)
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ClientRpcReceiveParams Receive
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -95,23 +98,23 @@ public ClientRpcReceiveParams Receive
 
 #### Send
 
-<div class="markdown level1 summary">
 
-</div>
+The client RPC send parameters provides you with the ability to send to
+a specific list of clients
 
-<div class="markdown level1 conceptual">
 
-</div>
+
+
+
 
 ##### Declaration
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public ClientRpcSendParams Send
 ```
 
-</div>
+
 
 ##### Field Value
 
@@ -119,4 +122,5 @@ public ClientRpcSendParams Send
 |---------------------|-------------|
 | ClientRpcSendParams |             |
 
- 
+
+

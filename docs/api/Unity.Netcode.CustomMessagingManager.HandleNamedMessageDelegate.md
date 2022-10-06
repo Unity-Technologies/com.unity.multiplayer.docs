@@ -1,29 +1,30 @@
----  
-id: Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate  
-title: Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate  
+---
+id: Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate
+title: Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate
 ---
 
-<div class="markdown level0 summary">
+# Delegate CustomMessagingManager.HandleNamedMessageDelegate
+
 
 Delegate used to handle named messages
 
-</div>
 
-<div class="markdown level0 conceptual">
 
-</div>
 
- 
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public delegate void HandleNamedMessageDelegate(ulong senderClientId, FastBufferReader messagePayload);
 ```
 
-</div>
+
 
 ##### Parameters
 
@@ -32,4 +33,5 @@ public delegate void HandleNamedMessageDelegate(ulong senderClientId, FastBuffer
 | System.UInt64    | senderClientId |             |
 | FastBufferReader | messagePayload |             |
 
- 
+
+

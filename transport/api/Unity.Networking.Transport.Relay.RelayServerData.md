@@ -1,318 +1,359 @@
----  
-id: Unity.Networking.Transport.Relay.RelayServerData  
-title: Unity.Networking.Transport.Relay.RelayServerData  
+---
+id: Unity.Networking.Transport.Relay.RelayServerData
+title: Unity.Networking.Transport.Relay.RelayServerData
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct RelayServerData
 
-<div class="markdown level0 conceptual">
 
-</div>
+Used by the Relay Protocol to describe how to connect to the Relay
+Service.
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Relay
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct RelayServerData
 ```
 
-## 
 
-### RelayServerData(ref NetworkEndPoint, UInt16, RelayAllocationId, String, String, String, Boolean)
 
-<div class="markdown level1 summary">
+### Constructors
 
-</div>
+#### RelayServerData(ref NetworkEndPoint, UInt16, RelayAllocationId, String, String, String, Boolean)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Initializes a new instance of the RelayServerData class
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, RelayAllocationId allocationId, string connectionData, string hostConnectionData, string key, bool isSecure)
 ```
 
-#### Parameters
 
-| Type              | Name               | Description |
-|-------------------|--------------------|-------------|
-| NetworkEndPoint   | endpoint           |             |
-| System.UInt16     | nonce              |             |
-| RelayAllocationId | allocationId       |             |
-| System.String     | connectionData     |             |
-| System.String     | hostConnectionData |             |
-| System.String     | key                |             |
-| System.Boolean    | isSecure           |             |
 
-### RelayServerData(ref NetworkEndPoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
+##### Parameters
 
-<div class="markdown level1 summary">
+| Type              | Name               | Description              |
+|-------------------|--------------------|--------------------------|
+| NetworkEndPoint   | endpoint           | The endpoint             |
+| System.UInt16     | nonce              | The nonce                |
+| RelayAllocationId | allocationId       | The allocation id        |
+| System.String     | connectionData     | The connection data      |
+| System.String     | hostConnectionData | The host connection data |
+| System.String     | key                | The key                  |
+| System.Boolean    | isSecure           | The is secure            |
 
-</div>
+#### RelayServerData(ref NetworkEndPoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Initializes a new instance of the RelayServerData class
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, ref RelayAllocationId allocationId, ref RelayConnectionData connectionData, ref RelayConnectionData hostConnectionData, ref RelayHMACKey key, bool isSecure)
 ```
 
-#### Parameters
 
-| Type                | Name               | Description |
-|---------------------|--------------------|-------------|
-| NetworkEndPoint     | endpoint           |             |
-| System.UInt16       | nonce              |             |
-| RelayAllocationId   | allocationId       |             |
-| RelayConnectionData | connectionData     |             |
-| RelayConnectionData | hostConnectionData |             |
-| RelayHMACKey        | key                |             |
-| System.Boolean      | isSecure           |             |
 
-## 
+##### Parameters
 
-### AllocationId
+| Type                | Name               | Description              |
+|---------------------|--------------------|--------------------------|
+| NetworkEndPoint     | endpoint           | The endpoint             |
+| System.UInt16       | nonce              | The nonce                |
+| RelayAllocationId   | allocationId       | The allocation id        |
+| RelayConnectionData | connectionData     | The connection data      |
+| RelayConnectionData | hostConnectionData | The host connection data |
+| RelayHMACKey        | key                | The key                  |
+| System.Boolean      | isSecure           | The is secure            |
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### AllocationId
 
-<div class="markdown level1 conceptual">
 
-</div>
+The unique identifier of the client on the Relay Server.
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public RelayAllocationId AllocationId
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type              | Description |
 |-------------------|-------------|
 | RelayAllocationId |             |
 
-### ConnectionData
+#### ConnectionData
 
-<div class="markdown level1 summary">
 
-</div>
+The data that describes the client presence on the Relay Server.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public RelayConnectionData ConnectionData
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | RelayConnectionData |             |
 
-### Endpoint
+#### Endpoint
 
-<div class="markdown level1 summary">
 
-</div>
+The endpoint of the Relay Server.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkEndPoint Endpoint
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkEndPoint |             |
 
-### HMAC
+#### HMAC
 
-<div class="markdown level1 summary">
 
-</div>
+The computed HMAC.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public byte *HMAC
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### HMACKey
+#### HMACKey
 
-<div class="markdown level1 summary">
 
-</div>
+The HMAC key for the connection.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public RelayHMACKey HMACKey
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | RelayHMACKey |             |
 
-### HostConnectionData
+#### HostConnectionData
 
-<div class="markdown level1 summary">
 
-</div>
+The connection data of the host client on the Relay Server.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public RelayConnectionData HostConnectionData
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | RelayConnectionData |             |
 
-### IsSecure
+#### IsSecure
 
-<div class="markdown level1 summary">
 
-</div>
+A byte that identifies the connection as secured.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly byte IsSecure
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type        | Description |
 |-------------|-------------|
 | System.Byte |             |
 
-### Nonce
+#### Nonce
 
-<div class="markdown level1 summary">
 
-</div>
+The Nonce value used to stablish the connection with the Relay Server.
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public ushort Nonce
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-## 
+### Methods
 
-### ComputeNewNonce()
+#### ComputeNewNonce()
 
-<div class="markdown level1 summary">
 
-</div>
+Computes the new nonce, this must be called one time!
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public void ComputeNewNonce()
 ```
+
+
+
+
+

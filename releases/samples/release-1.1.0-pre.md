@@ -129,4 +129,4 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 
 ## Learn more
 
-See [Getting Started with Boss Room](../../netcode/current/learn/bossroom) to install and get started with Boss Room.
+See [Getting Started with Boss Room](../../netcode/current/learn/bossroom/bossroom) to install and get started with Boss Room.

@@ -260,7 +260,7 @@ Extrapolation is an attempt to estimate a future game state, without taking into
 
 The client will normally assume that a moving object will continue in the same direction. When a new packet is received, the position may be updated.
 
-For Netcode for gameobjects (Netcode), a basic extrapolation implementation has been provided in [`NetworkTransform`](../../components/networktransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
+For Netcode for gameobjects (Netcode), a basic extrapolation implementation has been provided in [`NetworkTransform`](../components/networktransform.md) and is estimated between the time a tick advances in server-side animation and the update of the frame on the client-side. The game object extrapolates the next frame's values based on the ratio. 
 :::
 
 <!-- TODO LATER -->

@@ -21,6 +21,9 @@ A `NetworkVariable`:
 - Property *must* be defined within a `NetworkBehaviour` derived class attached to a `GameObject`
     - The `GameObject` or a parent `GameObject` **must** also have a `NetworkObject` component attached to it.
 - A `NetworkVariable`'s assigned type (`T`) must be [constrained to an unmanaged `Type`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint).
+- A `NetworkVariable`'s value can only be set when:
+    - Initializing the property (either when it is declared or within the Awake method)
+    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it is still spawned).
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
@@ -37,6 +40,7 @@ Awake               | Awake
 OnNetworkSpawn      | Start
 Start               | OnNetworkSpawn
 
+Also, you should only set the value of a `NetworkVariable` when first initializing it or if it is spawned.  It is not recommended setting a `NetworkVariable` when the associated `NetworkObject` is not spawned.
 :::
 
 
@@ -234,9 +238,9 @@ There are two options for writing a `NetworkVariable.Value`:
 - *Server(_default_):* the server is the only one that can write the value.
     - This is useful for server side specific states that all clients should should be aware of but cannot change.
         - Some examples would be an NPC's status (health, alive, dead, etc) or some global world environment state (i.e. is it night or day time?).
-- *Owner:* This means only the owner of the `NetworkObject` and the server can write to the value.
-    - This is useful if your `NetworkVariable` represents something specific to the client's player that only the server and client should know about
-        - This might be a player's inventory or gun's ammo count (etc.)
+- *Owner:* This means only the owner of the `NetworkObject` can write to the value.
+    - This is useful if your `NetworkVariable` represents something specific to the client's player that only the owning client should be able to set
+        - This might be a player's skin or other cosmetics
 
 ### Permissions Example
 
@@ -254,7 +258,8 @@ public class PlayerState : NetworkBehaviour
     public NetworkVariable<float> Health = new NetworkVariable<float>(k_DefaultHealth);
 
     /// <summary>
-    /// Owner Read & Write Permissions: Owner or server can read and write
+    /// Owner Read Permissions: Owner or server can read
+    /// Owner Write Permissions: Only the Owner can write
     /// A player's ammo count is something that you might want, for convenience sake, the
     /// client-side to update locally. This might be because you are trying to reduce 
     /// bandwidth consumption for the server and all non-owners/ players or you might be 

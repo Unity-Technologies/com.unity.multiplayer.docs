@@ -1,126 +1,131 @@
----  
-id: Unity.Networking.Transport.Utilities.FixedStringHexExt  
-title: Unity.Networking.Transport.Utilities.FixedStringHexExt  
+---
+id: Unity.Networking.Transport.Utilities.FixedStringHexExt
+title: Unity.Networking.Transport.Utilities.FixedStringHexExt
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Class FixedStringHexExt
 
-<div class="markdown level0 conceptual">
 
-</div>
+Provides Extension methods for FixedStrings
 
-<div class="inheritance">
+
+
+
+
 
 ##### Inheritance
 
-<div class="level0">
 
-System.Dynamic.ExpandoObject
+System.Object
 
-</div>
 
-<div class="level1">
 
-System.Dynamic.ExpandoObject
 
-</div>
+FixedStringHexExt
 
-</div>
 
-<div class="inheritedMembers">
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-Object.Equals(Object)
 
-</div>
+System.Object.Equals(System.Object)
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
 
-Object.GetHashCode()
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-<div>
 
-Object.GetType()
 
-</div>
 
-<div>
+System.Object.GetHashCode()
 
-Object.MemberwiseClone()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.GetType()
 
-<div>
 
-Object.ToString()
 
-</div>
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+System.Object.MemberwiseClone()
 
-##### **Assembly**: transport.dll
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+System.Object.ToString()
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport.Utilities
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public static class FixedStringHexExt
 ```
 
-## 
 
-### AppendHex&lt;T&gt;(ref T, UInt16)
 
-<div class="markdown level1 summary">
+### Methods
 
-</div>
+#### AppendHex\<T\>(ref T, UInt16)
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public static FormatError AppendHex<T>(this ref T str, ushort val)
     where T : struct, INativeList<byte>, IUTF8Bytes
 ```
 
-#### Parameters
+
+
+##### Parameters
 
 | Type          | Name | Description |
 |---------------|------|-------------|
 | T             | str  |             |
 | System.UInt16 | val  |             |
 
-#### Returns
+##### Returns
 
 | Type        | Description |
 |-------------|-------------|
 | FormatError |             |
 
-#### Type Parameters
+##### Type Parameters
 
 | Name | Description |
 |------|-------------|
 | T    |             |
+
+
+

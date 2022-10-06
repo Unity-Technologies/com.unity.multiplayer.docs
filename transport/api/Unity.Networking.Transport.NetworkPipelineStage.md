@@ -1,273 +1,307 @@
----  
-id: Unity.Networking.Transport.NetworkPipelineStage  
-title: Unity.Networking.Transport.NetworkPipelineStage  
+---
+id: Unity.Networking.Transport.NetworkPipelineStage
+title: Unity.Networking.Transport.NetworkPipelineStage
 ---
 
-<div class="markdown level0 summary">
 
-</div>
+# Struct NetworkPipelineStage
 
-<div class="markdown level0 conceptual">
 
-</div>
+The network pipeline stage
 
-<div class="inheritedMembers">
+
+
+
+
 
 ##### Inherited Members
 
-<div>
 
-ValueType.Equals(Object)
 
-</div>
+System.ValueType.Equals(System.Object)
 
-<div>
 
-ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-ValueType.ToString()
+System.ValueType.GetHashCode()
 
-</div>
 
-<div>
 
-Object.Equals(Object, Object)
 
-</div>
 
-<div>
+System.ValueType.ToString()
 
-Object.GetType()
 
-</div>
 
-<div>
 
-Object.ReferenceEquals(Object, Object)
 
-</div>
+System.Object.Equals(System.Object, System.Object)
 
-</div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: transport.dll
+
+
+System.Object.GetType()
+
+
+
+
+
+System.Object.ReferenceEquals(System.Object, System.Object)
+
+
+
+
+
+###### **Namespace**: Unity.Networking.Transport
+
+###### **Assembly**: Transport.dll
 
 ##### Syntax
+
 
 ``` lang-csharp
 public struct NetworkPipelineStage
 ```
 
-## 
 
-### NetworkPipelineStage(TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt; , TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt; , TransportFunctionPointerlt;NetworkPipelineStage.InitializeConnectionDelegate&gt;
 
-<div class="markdown level1 summary">
+### Constructors
 
-</div>
+#### NetworkPipelineStage(TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate\>, TransportFunctionPointer\<NetworkPipelineStage.SendDelegate\>, TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate\>, Int32, Int32, Int32, Int32, Int32)
 
-<div class="markdown level1 conceptual">
 
-</div>
+Initializes a new instance of the NetworkPipelineStage class
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public NetworkPipelineStage(TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive, TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send, TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegate> InitializeConnection, int ReceiveCapacity, int SendCapacity, int HeaderCapacity, int SharedStateCapacity, int PayloadCapacity = 0)
 ```
 
-#### Parameters
 
-| Type                                                                          | Name                 | Description |
-|-------------------------------------------------------------------------------|----------------------|-------------|
-| TransportFunctionPointer&lt;NetworkPipelineStage.ReceiveDelegate&gt;              | Receive              |             |
-| TransportFunctionPointer&lt;NetworkPipelineStage.SendDelegate&gt;                  | Send                 |             |
-| TransportFunctionPointer&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; | InitializeConnection |             |
-| System.Int32                                                                  | ReceiveCapacity      |             |
-| System.Int32                                                                  | SendCapacity         |             |
-| System.Int32                                                                  | HeaderCapacity       |             |
-| System.Int32                                                                  | SharedStateCapacity  |             |
-| System.Int32                                                                  | PayloadCapacity      |             |
 
-## 
+##### Parameters
 
-### HeaderCapacity
+| Type                                                                          | Name                 | Description               |
+|-------------------------------------------------------------------------------|----------------------|---------------------------|
+| TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate\>              | Receive              | The receive               |
+| TransportFunctionPointer\<NetworkPipelineStage.SendDelegate\>                 | Send                 | The send                  |
+| TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate\> | InitializeConnection | The initialize connection |
+| System.Int32                                                                  | ReceiveCapacity      | The receive capacity      |
+| System.Int32                                                                  | SendCapacity         | The send capacity         |
+| System.Int32                                                                  | HeaderCapacity       | The header capacity       |
+| System.Int32                                                                  | SharedStateCapacity  | The shared state capacity |
+| System.Int32                                                                  | PayloadCapacity      | The payload capacity      |
 
-<div class="markdown level1 summary">
+### Fields
 
-</div>
+#### HeaderCapacity
 
-<div class="markdown level1 conceptual">
 
-</div>
+The header capacity
 
-#### Declaration
+
+
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int HeaderCapacity
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### InitializeConnection
+#### InitializeConnection
 
-<div class="markdown level1 summary">
 
-</div>
+InitializeConnection function pointer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegate> InitializeConnection
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                                          | Description |
 |-------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt;  |             |
+| TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate\> |             |
 
-### PayloadCapacity
+#### PayloadCapacity
 
-<div class="markdown level1 summary">
 
-</div>
+The payload capacity
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int PayloadCapacity
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Receive
+#### Receive
 
-<div class="markdown level1 summary">
 
-</div>
+Receive function pointer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                             | Description |
 |------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;|             |
+| TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate\> |             |
 
-### ReceiveCapacity
+#### ReceiveCapacity
 
-<div class="markdown level1 summary">
 
-</div>
+The receive capacity
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int ReceiveCapacity
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Send
+#### Send
 
-<div class="markdown level1 summary">
 
-</div>
+Send function pointer
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type                                                          | Description |
 |---------------------------------------------------------------|-------------|
-| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt; |             |
+| TransportFunctionPointer\<NetworkPipelineStage.SendDelegate\> |             |
 
-### SendCapacity
+#### SendCapacity
 
-<div class="markdown level1 summary">
 
-</div>
+The send capacity
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int SendCapacity
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### SharedStateCapacity
+#### SharedStateCapacity
 
-<div class="markdown level1 summary">
 
-</div>
+The shared state capacity
 
-<div class="markdown level1 conceptual">
 
-</div>
 
-#### Declaration
+
+
+
+##### Declaration
+
 
 ``` lang-csharp
 public readonly int SharedStateCapacity
 ```
 
-#### Field Value
+
+
+##### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
+
+
+

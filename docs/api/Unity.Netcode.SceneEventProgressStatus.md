@@ -1,9 +1,10 @@
----  
-id: Unity.Netcode.SceneEventProgressStatus  
-title: Unity.Netcode.SceneEventProgressStatus  
+---
+id: Unity.Netcode.SceneEventProgressStatus
+title: Unity.Netcode.SceneEventProgressStatus
 ---
 
-<div class="markdown level0 summary">
+# Enum SceneEventProgressStatus
+
 
 Used by NetworkSceneManager to determine if a server invoked scene event
 has started. The returned status is stored in the
@@ -12,22 +13,35 @@ Unity.Netcode.SceneEventProgress.Status property.
 the . All s are now delivered by the OnSceneEvent event handler via the
 SceneEvent parameter.*
 
-</div>
 
+
+
+
+
+###### **Namespace**: Unity.Netcode
+
+###### **Assembly**: MLAPI.dll
 
 ##### Syntax
 
-<div class="codewrapper">
 
 ``` lang-csharp
 public enum SceneEventProgressStatus
 ```
 
-</div>
+
 
 ### Fields
 
 Name
+
+
+
+
+
+
+
+
 
 Description
 
