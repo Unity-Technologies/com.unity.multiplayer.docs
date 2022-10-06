@@ -4,12 +4,14 @@ title: SecureServerBehaviour sample
 ---
 
 Sample code for `SecureServerBehaviour`:
-```cs
+
+```csharp
 using UnityEngine;
 using UnityEngine.Assertions;
 using Unity.Collections;
 using Unity.Networking.Transport;
 using Unity.Networking.Transport.TLS;
+
 public class SecureServerBehaviour : MonoBehaviour
 {
     public NetworkDriver m_Driver;
@@ -19,9 +21,8 @@ public class SecureServerBehaviour : MonoBehaviour
     {
         var settings = new NetworkSettings();
         settings.WithSecureServerParameters(
-            certificate: ref SecureParameters.MyGameServerCertificate,            // The content of the `myGameServerCertificate.pem`           
-            privateKey: ref SecureParameters.MyGameServerPrivate                  // The content of `myGameServerPrivate.pem`
-        );
+            certificate: SecureParameters.MyGameServerCertificate,      
+            privateKey: SecureParameters.MyGameServerPrivateKey);
         m_Driver = NetworkDriver.Create(settings);
         var endpoint = NetworkEndPoint.AnyIpv4;
         endpoint.Port = 9001;
