@@ -12,7 +12,7 @@ The movement in 2DSpaceShooter is physics based. The player object is a dynamic 
 
 The client sends inputs in the form of RPCs to the server. The server then uses those inputs to adjust the throttle and turn values of the player.
 
-This method of running physics makes sure that there are no desyncs or other physics issues between the client and server, but it introduces more latency. With future prediction support of Netcode, the latency will no longer be an issue which makes this the best choice of a movement model for a game like this.
+This method of running physics makes sure that there are no desyncs or other physics issues between the client and server, but it introduces more latency. 
 
 ## Player Health
 
