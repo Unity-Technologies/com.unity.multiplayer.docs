@@ -179,7 +179,7 @@ public class RpcTest : NetworkBehaviour
 {
     public override void OnNetworkSpawn()
     {
-        if (IsClient)
+        if (!IsServer)
         {
             TestServerRpc(0);
         }
