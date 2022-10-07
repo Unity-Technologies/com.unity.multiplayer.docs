@@ -104,15 +104,127 @@ Using this approach allows you to:
 While we encourage using in-scene placed `NetworkObject`s as something static, a manager, or a combination of both (a hybrid approach), there are times where you might need to use an in-scene placed `NetworkObjet` more like a dynamically spawned `NetworkObject` for other purposes. For every purpose you can imagine, more often than not you might be better off using a hybrid approach and using an in-scene placed `NetworkObject` to dynamically spawn a `NetworkObject`.
 :::
 
-### De-spawning, Re-spawning, and Parenting (TODO: Add updates for v1.1.0)
-- You can de-spawn and re-spawn them on the server-side    
-- You can parent them (with caution)
-  - If you plan on being able to un-parent (i.e. drop an item, etc.) a child `NetworkObject`, then a dynamically spawned `NetworkObject` is a better choice<br/>
-:::warning
-There is a known bug where an in-scene placed `NetworkObject` that dynamically spawns one or more `NetworkObject`(s) and then immediately parents them under its root `GameObject` (or any child) can cause issues with client synchronization and the spawned children. It is advised to provide a few frames, after the parent in-scene placed `NetworkObject` has spawned and has spawned its children, before parenting the children under the in-scene placed `NetworkObject`. Use (if at all) parenting in-scene placed `NetworkObject`s with caution as there could be more edge case scenario bugs. (_The hybrid approach is the recommended path to take._)
+### Spawning and De-spawning 
+By default, an in-scene placed `NetworkObject` will always get spawned when the scene it was placed within is loaded and a network session is in progress.  However, in-scene placed `NetworkObject`s are unique from dynamically spawned `NetworkObject`s when it comes to spawning and de-spawning.  Functionally speaking, when de-spawning a dynamically spawned NetworkObject you can always spawn a new instance of the `NetworkObject`'s associated network prefab. So, whether you decide to destroy a dynamically spawned `NetworkObject` or not, you can always make another clone of the same network prefab unless you want to preserve the current state of the instance being de-spawned. <br />
+With in-scene placed NetworkObjects, the scene it is placed within is similar to the network prefab used to dynamically spawn a `NetworkObject` in that both are used to uniquely identify the spawned `NetworkObject`.  The primary difference is that you use a network prefab to create a new dynamically spawned instance where you a required to additively load the same scene to create another in-scene placed `NetworkObject` instance.<br />
+
+**How the two types of spawned `NetworkObject`s are uniquely identified**
+
+Dynamically Spawned | In-Scene Placed
+------------------- | ---------------
+NetworkPrefab       | Scene (_When Loaded, the Scene's Handle_)
+GlobalObjectIdHash  | GlobalObjectIdHash
+
+Once the `NetworkObject` is spawned, Netcode for GameObjects uses the `NetworkObjectId` to uniquely identify it for both types.
+
+<br />
+
+**_What if you wanted to de-spawn and re-spawn the same in-scene placed NetworkObject?_**
+
+When invoking the `Despawn` method of a `NetworkObject` with no parameters, it will always default to destroying the `NetworkObject`:
+
+```csharp
+NetworkObject.Despawn();  // Will de-spawn and destroy
+```
+
+If you want an in-scene placed NetworkObject to persist after it has been de-spawned, it is recommended to always set the first parameter of the `Despawn` method to `false`:
+
+```csharp
+NetworkObject.Despawn(false); // Will only de-spawn
+```
+
+Now that you have a de-spawned `NetworkObject`, you might notice that the associated `GameObject` and all of its components are still active and possibly visible to all players (i.e. like a `MeshRenderer` component). Unless you have a specific reason to keep the associated `GameObject` active in the hierarchy, you can override the virtual `OnNetworkDespawn` method in a `NetworkBehaviour` derived component and set the `GameObject` to in-active:
+
+```csharp
+using UnityEngine;
+using Unity.Netcode;
+
+public class MyInSceneNetworkObjectBehaviour : NetworkBehaviour
+{
+    public override void OnNetworkDespawn()
+    {
+        gameObject.SetActive(false);
+        base.OnNetworkDespawn();
+    }
+}
+``` 
+
+This will assure that when your in-scene placed `NetworkObject` is de-spawned it won't consume precious processing or rendering cycles and it will become "invisible" to all players (connected or that join the session later).  Once the `NetworkObject` has been de-spawned and disabled, you might want to re-spawn it at some later time.  To do this, you would want to set the server-side instance's `GameObject` back to being active and spawn it:
+
+```csharp
+using UnityEngine;
+using Unity.Netcode;
+
+public class MyInSceneNetworkObjectBehaviour : NetworkBehaviour
+{
+    public override void OnNetworkDespawn()
+    {
+        gameObject.SetActive(false);
+        base.OnNetworkDespawn();
+    }
+
+    public void Spawn(bool destroyWithScene)
+    {
+        if (IsServer && !IsSpawned)
+        {
+            gameObject.SetActive(true);
+            NetworkObject.Spawn(destroyWithScene);
+        }
+    }
+}
+```
+
+:::info 
+You only need to enable the `NetworkObject` on the server-side to be able to re-spawn it. Netcode for GameObjects will only enable a disabled in-scene placed `NetworkObject` on the client-side if the server-side spawns it. <br />
+_This **does not** apply to dynamically spawned `NetworkObjects`. <br />(see [Object Pooling](../../advanced-topics/object-pooling.md) for an example of recycling dynamically spawned `NetworkObject`s_)
 :::
+
+
+**_How can you start an in-scene placed `NetworkObject` as de-spawned when the scene is first loaded (i.e. its first spawn)?_**
+
+Since in-scene placed `NetworkObject`s are automatically spawned when their respective scene has finished loading during a network session, you might run into the scenario where you want it to start disabled until a certain condition has been met specific to your project.  To do this, it only requires adding some additional code in the `OnNetworkSpawn` portion of your `NetworkBehaviour` component:
+
+```csharp
+using UnityEngine;
+using Unity.Netcode;
+
+    public class MyInSceneNetworkObjectBehaviour : NetworkBehaviour
+    {
+        public bool StartDespawned;
+
+        private bool m_HasStartedDespawned;
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer && StartDespawned && !m_HasStartedDespawned)
+            {
+                m_HasStartedDespawned = true;
+                NetworkObject.Despawn();
+            }
+            base.OnNetworkSpawn();
+        }
+
+        public override void OnNetworkDespawn()
+        {
+            gameObject.SetActive(false);
+            base.OnNetworkDespawn();
+        }
+
+        public void Spawn(bool destroyWithScene)
+        {
+            if (IsServer && !IsSpawned)
+            {
+                gameObject.SetActive(true);
+                NetworkObject.Spawn(destroyWithScene);
+            }
+        }
+    }
+```
+
+You will notice the above example keeps track of whether the in-scene placed `NetworkObject` has started as being de-spawned (to avoid de-spawning after its first time being spawned), and it makes sure only the server executes that block of code in the overridden `OnNetworkSpawn` method. The above `MyInSceneNetworkObjectBehaviour` example also declares a public `bool` property `StartDespawned` to provide control over this through the inspector view in the editor.
+
+
+### Parenting
+(WIP)
+- You can parent and remove the parent like you would with dynamically spawned `NetworkObject`s
 <br  />
 
-:::tip
-While you can parent in-scene placed `NetworkObject`s within the editor, you might stop to think about what you are trying to accomplish. A child `NetworkBehaviour` will be assigned to the first parent `GameObject` with a `NetworkObject` component. _You might be able to accomplish the same thing with a single in-scene placed `NetworkObject` as opposed to several nested `NetworkObject`s._
-:::
