@@ -104,7 +104,7 @@ Using this approach allows you to:
 While we encourage using in-scene placed `NetworkObject`s as something static, a manager, or a combination of both (a hybrid approach), there are times where you might need to use an in-scene placed `NetworkObjet` more like a dynamically spawned `NetworkObject` for other purposes. For every purpose you can imagine, more often than not you might be better off using a hybrid approach and using an in-scene placed `NetworkObject` to dynamically spawn a `NetworkObject`.
 :::
 
-### De-spawning, Re-spawning, and Parenting
+### De-spawning, Re-spawning, and Parenting (TODO: Add updates for v1.1.0)
 - You can de-spawn and re-spawn them on the server-side    
 - You can parent them (with caution)
   - If you plan on being able to un-parent (i.e. drop an item, etc.) a child `NetworkObject`, then a dynamically spawned `NetworkObject` is a better choice<br/>
