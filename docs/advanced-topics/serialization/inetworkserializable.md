@@ -60,13 +60,15 @@ More advanced use-cases are explored in following examples.
 
 ### Example: Array
 
+There are two ways that arrays can be used: via C# arrays or via Native Collections; i.e., `NativeArray`. The important distinction between the two is that C# arrays cause any type that contains them to become a managed type, which creates garbage collection overhead and makes them somewhat less optimized when used with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
+
 ```csharp
 
 public struct MyCustomStruct : INetworkSerializable
 {
     public int[] Array;
 
-    void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         // Length
         int length = 0;
@@ -86,6 +88,54 @@ public struct MyCustomStruct : INetworkSerializable
         for (int n = 0; n < length; ++n)
         {
             serializer.SerializeValue(ref Array[n]);
+        }
+    }
+}
+```
+
+```csharp
+public struct MyCustomNativeStruct : INetworkSerializable, IDisposable
+{
+    public NativeArray<int> Array;
+
+    public void Dispose()
+    {
+        Array.Dispose();
+    }
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        // Length
+        int length = 0;
+        if (!serializer.IsReader)
+        {
+            length = Array.Length;
+        }
+
+        serializer.SerializeValue(ref length);
+
+        // Array
+        if (serializer.IsReader)
+        {
+            if(Array.IsCreated)
+            {
+                // Make sure the existing array is disposed and not leaked
+                Array.Dispose();
+            }
+            Array = new NativeArray<int>(length, Allocator.Persistent);
+        }
+
+        for (int n = 0; n < length; ++n)
+        {
+            // NataveArray doesn't have a by-ref index operator
+            // so we have to read, serialize, write. This works in both
+            // reading and writing contexts - in reading, `val` gets overwritten
+            // so the current value doesn't matter; in writing, `val` is unchanged,
+            // so Array[n] = val is the same as Array[n] = Array[n].
+            // NativeList also exists which does have a by-ref `ElementAt()` method.
+            var val = Array[n];
+            serializer.SerializeValue(ref val);
+            Array[n] = val;
         }
     }
 }

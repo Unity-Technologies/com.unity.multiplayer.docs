@@ -55,10 +55,27 @@ void valueChanged(float prevF, float newF){
 ### Single Sync Values
 If you want values to be synced only once (at spawn), the built-in container's send rate can be set to a negative value.
 
-### Serialization
-Since the `NetworkVariable` class is a generic, editor serialization is NOT supported, it is only available through editor scripts for viewing the values. To get proper serialization, a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
+### Supported Types
 
-The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariable<T>` where `T` is the type.
+:::note
+While `NetworkVariable` supports both managed and unmanaged types, managed types do come with an amount of additional overhead. Efforts are made to minimize GC allocations for managed `INetworkSerializable` types (a new value is only allocated if the value changes from `null` to non-`null`), but the ability of a type to be `null` adds additional overhead both in logic (checking for nulls before serializing) and bandwidth (every serialization carries an additional byte indicating whether or not the value is `null`).
+:::
+
+`NetworkVariable` provides support for the following types:
+
+* C# unmanaged [primitive types](../advanced-topics/serialization/cprimitives.md): `bool`, `byte`, `sbyte`, `char`, `decimal`, `double`, `float`, `int`, `uint`, `long`, `ulong`, `short`, and `ushort`, which will be serialized by direct memcpy into/out of the buffer.
+
+* Unity unmanaged [built-in types](../advanced-topics/serialization/unity-primitives.md): `Vector2`, `Vector3`, `Vector2Int`, `Vector3Int`, `Vector4`, `Quaternion`, `Color`, `Color32`, `Ray`, `Ray2D`, which will be serialized by direct memcpy into/out of the buffer.
+
+* Any [`enum`](../advanced-topics/serialization/enum-types.md) types, which will be serialized by direct memcpy into/out of the buffer.
+
+* Any type (managed or unmanaged) that implements [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md), which will be serialized by calling their `NetworkSerialize` method. **On the reading side, these values are deserialized in-place, meaning the existing instance will be reused and any non-serialized values will be left in their current state.**
+
+* Any unmanaged struct type that implements [`INetworkSerializeByMemcpy`](../advanced-topics/serialization/inetworkserializebymemcpy.md), which will be serialized by direct memcpy of the entire struct into/out of the buffer.
+
+* Unity [fixed string](../advanced-topics/serialization/fixedstrings.md) types: `FixedString32Bytes`, `FixedString64Bytes`, `FixedString128Bytes`, `FixedString512Bytes`, and `FixedString4096Bytes`. These are serialized intelligently, only sending the used portion across the network and adjusting the "length" of the string on the other side to fit the received data. 
+
+For any types that don't fit within this list, including managed types and unmanaged types with pointers, it's possible to provide delegates informing the serialization system how to serialize and deserialize your values. For more information on that, see [Custom Serialization](../advanced-topics/custom-serialization.md). A limitation of custom serialization is that, unlike `INetworkSerializable` types, types using custom serialization are not able to be read in-place, so managed types will, by necessity, incur a GC allocationpr on every update.
 
 ## Example NetworkVariable and NetworkStart
 
@@ -74,9 +91,9 @@ namespace DefaultNamespace
     public class HealthComponent : NetworkBehaviour
     {
         [SerializeField]
-        private NetworkVariableInt m_Health = new NetworkVariableInt(100);
+        private NetworkVariable<int> m_Health = new NetworkVariable<int>(100);
 
-        public NetworkVariableInt Health => m_Health;
+        public NetworkVariable<int> Health => m_Health;
 
         void OnEnable()
         {
