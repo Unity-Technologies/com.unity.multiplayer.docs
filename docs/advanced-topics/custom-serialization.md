@@ -13,7 +13,9 @@ That is, when Netcode first gets hold of a type, it will check for any custom ty
 
 By default, any type that satisfies the `unmanaged` generic constraint can be automatically serialized as RPC parameters. This includes all basic types (bool, byte, int, float, enum, etc) as well as any structs that contains only these basic types.
 
-With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types.
+With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types. However, the way custom serialization is implemented for RPCs and NetworkVariables is slightly different.
+
+### For RPCs
 
 To register a custom type, or override an already handled type, you need to create extension methods for `FastBufferReader.ReadValueSafe()` and `FastBufferWriter.WriteValueSafe()`:
 
@@ -30,16 +32,16 @@ public static class SerializationExtensions
 
     public static void WriteValueSafe(this FastBufferWriter writer, in Url value)
     {
-        writer.WriteValueSafe(instance.Value);
+        writer.WriteValueSafe(value.Value);
     }
 }
 ```
 
 The code generation for RPCs will automatically pick up and use these functions, and they'll become available via `FastBufferWriter` and `FastBufferReader` directly.
 
-You can also optionally use the same method to add support for `BufferSerializer<TReaderWriter>.SerializeValue()`, if you wish, which will make this type readily available within [`INetworkSerializable`](/advanced-topics/serialization/inetworkserializable.md) types:
+You can also optionally use the same method to add support for `BufferSerializer<TReaderWriter>.SerializeValue()`, if you wish, which will make this type readily available within [`INetworkSerializable`](inetworkserializable.md) types:
 
-```c#
+```csharp
 // The class name doesn't matter here.
 public static class SerializationExtensions
 {  
@@ -55,3 +57,29 @@ public static class SerializationExtensions
 ```
 
 Additionally, you can also add extensions for `FastBufferReader.ReadValue()`, `FastBufferWriter.WriteValue()`, and `BufferSerializer<TReaderWriter>.SerializeValuePreChecked()` to provide more optimal implementations for manual serialization using `FastBufferReader.TryBeginRead()`, `FastBufferWriter.TryBeginWrite()`, and `BufferSerializer<TReaderWriter>.PreCheck()`, respectively. However, none of these will be used for serializing RPCs - only `ReadValueSafe` and `WriteValueSafe` are used.
+
+### For NetworkVariable
+
+`NetworkVariable` goes through a slightly different pipeline than `RPC`s and relies on a different process for determining how to serialize its types. As a result, making a custom type available to the `RPC` pipeline doesn't automatically make it available to the `NetworkVariable` pipeline, and vice-versa. The same method can be used for both, but currently, `NetworkVariable` requires an additional runtime step to make it aware of the methods.
+
+To add custom serialization support in `NetworkVariable`, follow the steps from the "For RPCs" section to write extension methods for `FastBufferReader` and `FastBufferWriter`; then, somewhere in your application startup (before any `NetworkVariable`s using the affected types will be serialized) add the following:
+
+```csharp
+UserNetworkVariableSerialization<Url>.WriteValue = SerializationExtensions.WriteValueSafe;
+UserNetworkVariableSerialization<Url>.ReadValue = SerializationExtensions.ReadValueSafe;    
+```
+
+You can also use lambda expressions here:
+
+```csharp
+UserNetworkVariableSerialization<Url>.WriteValue = (FastBufferWriter writer, in Url value) =>
+{
+    writer.WriteValueSafe(value.Value);
+};
+
+UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url value) 
+{
+    reader.ReadValueSafe(out string val);
+    value = new Url(val);
+};
+```
