@@ -3,7 +3,7 @@ id: custom-serialization
 title: Custom Serialization
 ---
 
-When using `RPC`'s, `NetworkVariable`'s or any other Netcode for GameObjects (Netcode) related task that requires serialization. The Netcode uses a default serialization pipeline that looks like this:
+When using `RPC`s, `NetworkVariable`'s or any other Netcode for GameObjects (Netcode) related task that requires serialization. The Netcode uses a default serialization pipeline that looks like this:
 
 ``
 Custom Types => Built In Types => INetworkSerializable
@@ -39,7 +39,7 @@ public static class SerializationExtensions
 
 The code generation for RPCs will automatically pick up and use these functions, and they'll become available via `FastBufferWriter` and `FastBufferReader` directly.
 
-You can also optionally use the same method to add support for `BufferSerializer<TReaderWriter>.SerializeValue()`, if you wish, which will make this type readily available within [`INetworkSerializable`](inetworkserializable.md) types:
+You can also optionally use the same method to add support for `BufferSerializer<TReaderWriter>.SerializeValue()`, if you wish, which will make this type readily available within [`INetworkSerializable`](/advanced-topics/serialization/inetworkserializable.md) types:
 
 ```csharp
 // The class name doesn't matter here.
