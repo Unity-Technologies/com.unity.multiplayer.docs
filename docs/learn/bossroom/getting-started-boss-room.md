@@ -6,13 +6,9 @@ description: Learn more about installing and running the Boss Room game sample.
 
 ![Boss Room banner](/img/banner.png)
 
-:::important
-This project is currently in early-access.
-:::
+Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode patterns that are frequently featured in similar multiplayer games.
 
-Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and  Netcode for GameObjects (Netcode). We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
-
-You can use everything in this project as a starting point or as bits and pieces in your own Unity games.
+PLEASE NOTE: Boss Room is compatible with the latest Unity Long Term Support (LTS) editor version, currently 2021 LTS. Please include standalone support for Windows/Mac in your installation.
 
 
 ## Download the project files
@@ -27,22 +23,26 @@ Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path 
 1. You can now add the Boss Room project to your Unity Hub.
 
 :::important Compatibility
-- Boss Room supports those platforms supported by Netcode.
-- Boss Room is compatible with Unity 2020.3 and later.
-- Ensure your Unity installation includes the build support module components for your OS.
+Boss Room has been developed and tested on the following platforms:
+
+* Windows
+* Mac
+* iOS
+* Android
+Boss Room's min spec devices are:
+
+* iPhone 6S
+* Samsung Galaxy J2 Core
 :::
 
 ## Add the project with Unity Hub
 
 1. Open your Unity Hub.
 1. Click the dropdown arrow next to **Open**, then select **Add project from disk**.
-1. Select the root folder of the downloaded project. For example, `com.unity.multiplayer.samples.coop-0.2.1`.
-
-<iframe src="https://www.youtube.com/embed/PwPUcj3qwtI?playlist=PwPUcj3qwtI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
+1. Select the root folder of the downloaded project. For example, `com.unity.multiplayer.samples.coop-<version>`.
 
 :::note
-The first time you open the project, Unity will import all assets, which will take longer than usual - this is normal. The Unity Netcode For GameObjects v1.0.0 Netcodepackage will also be installed with Boss Room.
+The first time you open the project, Unity will import all assets, which will take longer than usual - this is normal. The Unity Netcode for GameObjects package will also be installed with Boss Room.
 
 **Issues with importing due to parental control software**: If you have issues with importing you may want to check your DNS settings as some ISP parental controls  may block GitHub access. For example, see this information on [WebSafe](https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/td-p/4279652).
 :::
@@ -60,10 +60,6 @@ To open the project for the first time:
 2. Then under the **Project** tab, go to **Assets** > **Boss Room** > **Scenes** and double-click on the **Startup** scene.
 3. Click **Play**. The Boss Room menu scene loads.
 
-
-<iframe src="https://www.youtube.com/embed/OSSBWOJq6gI?playlist=OSSBWOJq6gI&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
 ## Test multiplayer
 
 To see the multiplayer functionality in action, you can either run multiple instances of the game [locally on your computer](#local-multiplayer-setup) or choose to [connect through the internet](#multiplayer-over-internet).
@@ -75,19 +71,13 @@ For a local multiplayer setup, you must build an executable and launch several i
 1. With the Boss Room project open in your Unity editor, click **File** > **Build Settings** > **Build**.
 2. Save the binary as `Boss Room`.
 
-<iframe src="https://www.youtube.com/embed/eZGofxiuAgA?playlist=eZGofxiuAgA&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
-
 After the build has completed, you can launch several instances of the built executable to both host and join a game.
 
 :::important Mac Users
 To run multiple instances of the same app, you need to use the command line:
-1.  First, change your directory to the folder where you saved the Boss Room executable. For example, `cd Desktop/com.unity.multiplayer.samples.coop-0.2.1`.
+1.  First, change your directory to the folder where you saved the Boss Room executable. For example, `cd Desktop/com.unity.multiplayer.samples.coop-<version>`.
 2.  Run the command `Open -n YourAppName.app`. If you saved the app as `BossRoom`, your command is `Open -n BossRoom.app`. However, if you saved your app as `Boss Room` with a space, your command needs to include quotation marks ("") around the executable name: `Open -n "BossRoom.app"`.
 :::
-
-<iframe src="https://www.youtube.com/embed/27Ikr0t7vzg?playlist=27Ikr0t7vzg&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"
-        height="480px" className="video-container" frameborder="0" position="relative" allow="accelerometer; autoplay; loop; playlist; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen=""></iframe>
 
 ## Multiplayer over internet
 
