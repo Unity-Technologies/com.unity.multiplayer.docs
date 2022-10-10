@@ -3,7 +3,7 @@ id: custom-serialization
 title: Custom Serialization
 ---
 
-When using `RPC`s, `NetworkVariable`'s or any other Netcode for GameObjects (Netcode) related task that requires serialization. The Netcode uses a default serialization pipeline that looks like this:
+When using `RPC`s, `NetworkVariable`s or any other Netcode for GameObjects (Netcode) related task that requires serialization, the Netcode uses a default serialization pipeline that looks like this:
 
 ``
 Custom Types => Built In Types => INetworkSerializable
@@ -13,7 +13,7 @@ That is, when Netcode first gets hold of a type, it will check for any custom ty
 
 By default, any type that satisfies the `unmanaged` generic constraint can be automatically serialized as RPC parameters. This includes all basic types (bool, byte, int, float, enum, etc) as well as any structs that contains only these basic types.
 
-With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types. However, the way custom serialization is implemented for RPCs and NetworkVariables is slightly different.
+With this flow, you can provide support for serializing any unsupported types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types. However, the way custom serialization is implemented for RPCs and NetworkVariables is slightly different.
 
 ### For RPCs
 
