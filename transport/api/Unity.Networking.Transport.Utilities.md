@@ -93,18 +93,6 @@ title: Unity.Networking.Transport.Utilities
 
 </div>
 
-### Unity.Networking.Transport.Utilities.ReliableUtility.Packet
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.Utilities.ReliableUtility.PacketInformation
 
 <div class="section">
@@ -112,12 +100,6 @@ title: Unity.Networking.Transport.Utilities
 </div>
 
 ### Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Utilities.ReliableUtility.ParameterConstants
 
 <div class="section">
 
@@ -159,12 +141,6 @@ title: Unity.Networking.Transport.Utilities
 
 </div>
 
-### Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.Utilities.SimulatorUtility.Parameters
 
 <div class="section">
@@ -182,12 +158,6 @@ Configuration parameters for the simulator pipeline stage.
 </div>
 
 ### Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Utilities.ReliableUtility.PacketType
 
 <div class="section">
 

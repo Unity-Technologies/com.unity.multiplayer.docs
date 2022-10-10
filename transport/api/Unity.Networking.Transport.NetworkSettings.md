@@ -106,7 +106,33 @@ public NetworkSettings(Allocator allocator)
 
 ## 
 
-### AddRawParameterStruct\&lt;T&gt;(ref T)
+### IsCreated
+
+<div class="markdown level1 summary">
+
+If the settings have been created (e.g. not disposed).
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly bool IsCreated { get; }
+```
+
+#### Property Value
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+## 
+
+### AddRawParameterStruct\<T>(ref T)
 
 <div class="markdown level1 summary">
 
@@ -144,6 +170,30 @@ public void AddRawParameterStruct<T>(ref T parameter)
 |--------------------------|------------------------------------------------------------------------------------------------------------|
 | System.ArgumentException | Throws an argument exception if the paramter type is already in the list or if it contains invalid values. |
 
+### AsReadOnly()
+
+<div class="markdown level1 summary">
+
+Get a read-only copy of the settings.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkSettings AsReadOnly()
+```
+
+#### Returns
+
+| Type            | Description                       |
+|-----------------|-----------------------------------|
+| NetworkSettings | A read-only copy of the settings. |
+
 ### Dispose()
 
 <div class="markdown level1 summary">
@@ -160,7 +210,7 @@ public void AddRawParameterStruct<T>(ref T parameter)
 public void Dispose()
 ```
 
-### TryGet\&lt;T&gt;(out T)
+### TryGet\<T>(out T)
 
 <div class="markdown level1 summary">
 
@@ -216,49 +266,29 @@ NetworkSettings, Int32, Int32, UInt32)
 
 <div>
 
-BaselibNetworkParameterExtensions.GetBaselibNetworkInterfaceParameters(ref
-NetworkSettings)
+NetworkSimulatorParameterExtensions.WithNetworkSimulatorParameters(ref
+NetworkSettings, Single, Single)
 
 </div>
 
 <div>
 
-CommonNetworkParametersExtensions.WithDataStreamParameters(ref
-NetworkSettings, Int32)
-
-</div>
-
-<div>
-
-CommonNetworkParametersExtensions.GetDataStreamParameters(ref
-NetworkSettings)
+NetworkDriverIdentifierParameterExtensions.WithDriverIdentifierParameters(ref
+NetworkSettings, FixedString32Bytes)
 
 </div>
 
 <div>
 
 CommonNetworkParametersExtensions.WithNetworkConfigParameters(ref
-NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32,
+Int32)
 
 </div>
 
 <div>
 
 CommonNetworkParametersExtensions.GetNetworkConfigParameters(ref
-NetworkSettings)
-
-</div>
-
-<div>
-
-NetworkPipelineParametersExtensions.WithPipelineParameters(ref
-NetworkSettings, Int32)
-
-</div>
-
-<div>
-
-NetworkPipelineParametersExtensions.GetPipelineParameters(ref
 NetworkSettings)
 
 </div>

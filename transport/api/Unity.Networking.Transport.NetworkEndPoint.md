@@ -1,6 +1,6 @@
 ---  
-id: Unity.Networking.Transport.NetworkEndPoint  
-title: Unity.Networking.Transport.NetworkEndPoint  
+id: Unity.Networking.Transport.NetworkEndpoint  
+title: Unity.Networking.Transport.NetworkEndpoint  
 ---
 
 <div class="markdown level0 summary">
@@ -8,6 +8,18 @@ title: Unity.Networking.Transport.NetworkEndPoint
 </div>
 
 <div class="markdown level0 conceptual">
+
+</div>
+
+<div classs="implements">
+
+##### Implements
+
+<div>
+
+System.IEquatable\<NetworkEndpoint\>
+
+</div>
 
 </div>
 
@@ -42,7 +54,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkEndPoint
+public struct NetworkEndpoint : IEquatable<NetworkEndpoint>
 ```
 
 ## 
@@ -82,14 +94,14 @@ public readonly string Address { get; }
 #### Declaration
 
 ``` lang-csharp
-public static readonly NetworkEndPoint AnyIpv4 { get; }
+public static readonly NetworkEndpoint AnyIpv4 { get; }
 ```
 
 #### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ### AnyIpv6
 
@@ -104,14 +116,14 @@ public static readonly NetworkEndPoint AnyIpv4 { get; }
 #### Declaration
 
 ``` lang-csharp
-public static readonly NetworkEndPoint AnyIpv6 { get; }
+public static readonly NetworkEndpoint AnyIpv6 { get; }
 ```
 
 #### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ### Family
 
@@ -236,14 +248,14 @@ public readonly int Length { get; }
 #### Declaration
 
 ``` lang-csharp
-public static readonly NetworkEndPoint LoopbackIpv4 { get; }
+public static readonly NetworkEndpoint LoopbackIpv4 { get; }
 ```
 
 #### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ### LoopbackIpv6
 
@@ -258,14 +270,14 @@ public static readonly NetworkEndPoint LoopbackIpv4 { get; }
 #### Declaration
 
 ``` lang-csharp
-public static readonly NetworkEndPoint LoopbackIpv6 { get; }
+public static readonly NetworkEndpoint LoopbackIpv6 { get; }
 ```
 
 #### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ### Port
 
@@ -349,6 +361,34 @@ System.ValueType.Equals(System.Object)
 
 </div>
 
+### Equals(NetworkEndpoint)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Equals(NetworkEndpoint other)
+```
+
+#### Parameters
+
+| Type            | Name  | Description |
+|-----------------|-------|-------------|
+| NetworkEndpoint | other |             |
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
 ### GetHashCode()
 
 <div class="markdown level1 summary">
@@ -399,7 +439,7 @@ public NativeArray<byte> GetRawAddressBytes()
 
 | Type                       | Description |
 |----------------------------|-------------|
-| NativeArray\&lt;System.Byte&gt; |             |
+| NativeArray\<System.Byte\> |             |
 
 ### Parse(String, UInt16, NetworkFamily)
 
@@ -414,7 +454,7 @@ public NativeArray<byte> GetRawAddressBytes()
 #### Declaration
 
 ``` lang-csharp
-public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily family = NetworkFamily.Ipv4)
+public static NetworkEndpoint Parse(string address, ushort port, NetworkFamily family = NetworkFamily.Ipv4)
 ```
 
 #### Parameters
@@ -429,9 +469,9 @@ public static NetworkEndPoint Parse(string address, ushort port, NetworkFamily f
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
-### SetRawAddressBytes(NativeArray\&lt;Byte&gt;, NetworkFamily)
+### SetRawAddressBytes(NativeArray\<Byte>, NetworkFamily)
 
 <div class="markdown level1 summary">
 
@@ -451,8 +491,30 @@ public void SetRawAddressBytes(NativeArray<byte> bytes, NetworkFamily family = N
 
 | Type                       | Name   | Description |
 |----------------------------|--------|-------------|
-| NativeArray\&lt;System.Byte&gt; | bytes  |             |
+| NativeArray\<System.Byte\> | bytes  |             |
 | NetworkFamily              | family |             |
+
+### ToFixedString()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public FixedString128Bytes ToFixedString()
+```
+
+#### Returns
+
+| Type                | Description |
+|---------------------|-------------|
+| FixedString128Bytes |             |
 
 ### ToString()
 
@@ -484,7 +546,7 @@ System.ValueType.ToString()
 
 </div>
 
-### TryParse(String, UInt16, out NetworkEndPoint, NetworkFamily)
+### TryParse(String, UInt16, out NetworkEndpoint, NetworkFamily)
 
 <div class="markdown level1 summary">
 
@@ -497,7 +559,7 @@ System.ValueType.ToString()
 #### Declaration
 
 ``` lang-csharp
-public static bool TryParse(string address, ushort port, out NetworkEndPoint endpoint, NetworkFamily family = NetworkFamily.Ipv4)
+public static bool TryParse(string address, ushort port, out NetworkEndpoint endpoint, NetworkFamily family = NetworkFamily.Ipv4)
 ```
 
 #### Parameters
@@ -506,7 +568,7 @@ public static bool TryParse(string address, ushort port, out NetworkEndPoint end
 |-----------------|----------|-------------|
 | System.String   | address  |             |
 | System.UInt16   | port     |             |
-| NetworkEndPoint | endpoint |             |
+| NetworkEndpoint | endpoint |             |
 | NetworkFamily   | family   |             |
 
 #### Returns
@@ -528,7 +590,7 @@ public static bool TryParse(string address, ushort port, out NetworkEndPoint end
 #### Declaration
 
 ``` lang-csharp
-public NetworkEndPoint WithPort(ushort port)
+public NetworkEndpoint WithPort(ushort port)
 ```
 
 #### Parameters
@@ -541,11 +603,11 @@ public NetworkEndPoint WithPort(ushort port)
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ## 
 
-### Equality(NetworkEndPoint, NetworkEndPoint)
+### Equality(NetworkEndpoint, NetworkEndpoint)
 
 <div class="markdown level1 summary">
 
@@ -558,15 +620,15 @@ public NetworkEndPoint WithPort(ushort port)
 #### Declaration
 
 ``` lang-csharp
-public static bool operator ==(NetworkEndPoint lhs, NetworkEndPoint rhs)
+public static bool operator ==(NetworkEndpoint lhs, NetworkEndpoint rhs)
 ```
 
 #### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
-| NetworkEndPoint | lhs  |             |
-| NetworkEndPoint | rhs  |             |
+| NetworkEndpoint | lhs  |             |
+| NetworkEndpoint | rhs  |             |
 
 #### Returns
 
@@ -574,7 +636,7 @@ public static bool operator ==(NetworkEndPoint lhs, NetworkEndPoint rhs)
 |----------------|-------------|
 | System.Boolean |             |
 
-### Inequality(NetworkEndPoint, NetworkEndPoint)
+### Inequality(NetworkEndpoint, NetworkEndpoint)
 
 <div class="markdown level1 summary">
 
@@ -587,18 +649,26 @@ public static bool operator ==(NetworkEndPoint lhs, NetworkEndPoint rhs)
 #### Declaration
 
 ``` lang-csharp
-public static bool operator !=(NetworkEndPoint lhs, NetworkEndPoint rhs)
+public static bool operator !=(NetworkEndpoint lhs, NetworkEndpoint rhs)
 ```
 
 #### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
-| NetworkEndPoint | lhs  |             |
-| NetworkEndPoint | rhs  |             |
+| NetworkEndpoint | lhs  |             |
+| NetworkEndpoint | rhs  |             |
 
 #### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### Implements
+
+<div>
+
+System.IEquatable\<T>
+
+</div>

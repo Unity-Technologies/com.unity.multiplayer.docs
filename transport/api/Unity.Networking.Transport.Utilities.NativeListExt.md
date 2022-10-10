@@ -89,7 +89,7 @@ public static class NativeListExt
 
 ## 
 
-### ResizeUninitializedTillPowerOf2&lt;T&gt;(NativeList&lt;T&gt;, Int32)
+### ResizeUninitializedTillPowerOf2\<T>(NativeList\<T>, Int32)
 
 <div class="markdown level1 summary">
 
@@ -114,7 +114,7 @@ public static void ResizeUninitializedTillPowerOf2<T>(this NativeList<T> list, i
 
 | Type           | Name      | Description                                           |
 |----------------|-----------|-------------------------------------------------------|
-| NativeList&lt;T&gt; | list      | List that should be resized if sizeToFit \>= its size |
+| NativeList\<T> | list      | List that should be resized if sizeToFit \>= its size |
 | System.Int32   | sizeToFit | Requested size that should fit into list              |
 
 #### Type Parameters

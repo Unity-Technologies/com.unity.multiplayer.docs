@@ -134,16 +134,7 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.CommonNetworkParametersExtensions",
                     "label": "CommonNetworkParametersExtensions"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.DataStreamReader",
-                    "label": "DataStreamReader"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.DataStreamWriter",
-                    "label": "DataStreamWriter"
-                },
+     
                 {
                     "collapsed": true,
                     "type": "category",
@@ -153,11 +144,6 @@ module.exports = {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.FragmentationPipelineStage",
                             "label": "FragmentationPipelineStage"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.FragmentationPipelineStage.FragContext",
-                            "label": "FragContext"
                         }
                     ]
                 },
@@ -191,11 +177,7 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.IPCNetworkInterface",
                     "label": "IPCNetworkInterface"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkCompressionModel",
-                    "label": "NetworkCompressionModel"
-                },
+
                 {
                     "type": "doc",
                     "id": "api/Unity.Networking.Transport.NetworkConfigParameter",
@@ -218,11 +200,7 @@ module.exports = {
                         }
                     ]
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkDataStreamParameter",
-                    "label": "NetworkDataStreamParameter"
-                },
+     
                 {
                     "collapsed": true,
                     "type": "category",
@@ -242,8 +220,8 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkEndPoint",
-                    "label": "NetworkEndPoint"
+                    "id": "api/Unity.Networking.Transport.NetworkEndpoint",
+                    "label": "NetworkEndpoint"
                 },
                 {
                     "collapsed": true,
@@ -272,11 +250,7 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.NetworkInterfaceEndPoint",
                     "label": "NetworkInterfaceEndPoint"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkInterfaceSendHandle",
-                    "label": "NetworkInterfaceSendHandle"
-                },
+          
                 {
                     "type": "doc",
                     "id": "api/Unity.Networking.Transport.NetworkPacketReceiver",
@@ -303,16 +277,7 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.NetworkPipelineContext",
                     "label": "NetworkPipelineContext"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkPipelineParams",
-                    "label": "NetworkPipelineParams"
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkPipelineParametersExtensions",
-                    "label": "NetworkPipelineParametersExtensions"
-                },
+          
                 {
                     "collapsed": true,
                     "type": "category",
@@ -323,11 +288,7 @@ module.exports = {
                             "id": "api/Unity.Networking.Transport.NetworkPipelineStage",
                             "label": "NetworkPipelineStage"
                         },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkPipelineStageCollection",
-                            "label": "NetworkPipelineStageCollection"
-                        },
+                  
                         {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.NetworkPipelineStageId",
@@ -355,38 +316,8 @@ module.exports = {
                         }
                     ]
                 },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "NetworkSendInterface",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkSendInterface",
-                            "label": "NetworkSendInterface"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate",
-                            "label": "AbortSendMessageDelegate"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate",
-                            "label": "BeginSendMessageDelegate"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate",
-                            "label": "EndSendMessageDelegate"
-                        }
-                    ]
-                },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.NetworkSendQueueHandle",
-                    "label": "NetworkSendQueueHandle"
-                },
+    
+    
                 {
                     "type": "doc",
                     "id": "api/Unity.Networking.Transport.NullPipelineStage",
@@ -402,11 +333,7 @@ module.exports = {
                     "id": "api/Unity.Networking.Transport.ReliableSequencedPipelineStage",
                     "label": "ReliableSequencedPipelineStage"
                 },
-                {
-                    "type": "doc",
-                    "id": "api/Unity.Networking.Transport.SendHandleFlags",
-                    "label": "SendHandleFlags"
-                },
+           
                 {
                     "type": "doc",
                     "id": "api/Unity.Networking.Transport.SimulatorPipelineStage",
@@ -552,15 +479,7 @@ module.exports = {
                             "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes",
                             "label": "ErrorCodes"
                         },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.Packet",
-                            "label": "Packet"
-                        }, {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader",
-                            "label": "PacketHeader"
-                        },
+                        
                         {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.PacketInformation",
@@ -571,16 +490,7 @@ module.exports = {
                             "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers",
                             "label": "PacketTimers"
                         },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.PacketType",
-                            "label": "PacketType"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.ParameterConstants",
-                            "label": "ParameterConstants"
-                        },
+                   
                         {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.Utilities.ReliableUtility.Parameters",
@@ -635,11 +545,6 @@ module.exports = {
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.Utilities.SimulatorUtility.Context",
                             "label": "Context"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "api/Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket",
-                            "label": "DelayedPacket"
                         },
                         {
                             "type": "doc",

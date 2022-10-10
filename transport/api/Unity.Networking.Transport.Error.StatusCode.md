@@ -30,8 +30,10 @@ public enum StatusCode
 | NetworkHeaderInvalid        |             |
 | NetworkIdMismatch           |             |
 | NetworkPacketOverflow       |             |
+| NetworkReceiveQueueFull     |             |
 | NetworkSendHandleInvalid    |             |
 | NetworkSendQueueFull        |             |
+| NetworkSocketError          |             |
 | NetworkStateMismatch        |             |
 | NetworkVersionMismatch      |             |
 | Success                     |             |

@@ -114,9 +114,41 @@ public byte *Value
 
 ## 
 
+### FromByteArray(Byte\[\])
+
+<div class="markdown level1 summary">
+
+Convert a byte array to a RelayConnectionData
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static RelayConnectionData FromByteArray(byte[] data)
+```
+
+#### Parameters
+
+| Type            | Name | Description       |
+|-----------------|------|-------------------|
+| System.Byte\[\] | data | Array to convert. |
+
+#### Returns
+
+| Type                | Description              |
+|---------------------|--------------------------|
+| RelayConnectionData | New RelayConnectionData. |
+
 ### FromBytePointer(Byte\*, Int32)
 
 <div class="markdown level1 summary">
+
+Convert a raw buffer to a RelayConnectionData
 
 </div>
 
@@ -132,13 +164,13 @@ public static RelayConnectionData FromBytePointer(byte *dataPtr, int length)
 
 #### Parameters
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
+| Type          | Name    | Description                       |
+|---------------|---------|-----------------------------------|
+| System.Byte\* | dataPtr | Raw pointer to buffer to convert. |
+| System.Int32  | length  | Length of the buffer to convert.  |
 
 #### Returns
 
-| Type                | Description |
-|---------------------|-------------|
-| RelayConnectionData |             |
+| Type                | Description              |
+|---------------------|--------------------------|
+| RelayConnectionData | New RelayConnectionData. |

@@ -130,7 +130,7 @@ public static RelayNetworkParameter GetRelayParameters(this ref NetworkSettings 
 #### Declaration
 
 ``` lang-csharp
-public static ref NetworkSettings WithRelayParameters(this ref NetworkSettings settings, ref RelayServerData serverData, int relayConnectionTimeMS = 9000)
+public static ref NetworkSettings WithRelayParameters(this ref NetworkSettings settings, ref RelayServerData serverData, int relayConnectionTimeMS = 3000)
 ```
 
 #### Parameters

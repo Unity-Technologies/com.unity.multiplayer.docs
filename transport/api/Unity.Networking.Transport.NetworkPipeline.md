@@ -11,6 +11,18 @@ title: Unity.Networking.Transport.NetworkPipeline
 
 </div>
 
+<div classs="implements">
+
+##### Implements
+
+<div>
+
+System.IEquatable\<NetworkPipeline\>
+
+</div>
+
+</div>
+
 <div class="inheritedMembers">
 
 ##### Inherited Members
@@ -48,7 +60,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkPipeline
+public struct NetworkPipeline : IEquatable<NetworkPipeline>
 ```
 
 ## 
@@ -230,3 +242,11 @@ public static bool operator !=(NetworkPipeline lhs, NetworkPipeline rhs)
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### Implements
+
+<div>
+
+System.IEquatable\<T>
+
+</div>

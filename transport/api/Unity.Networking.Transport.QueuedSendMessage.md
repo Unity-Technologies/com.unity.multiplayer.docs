@@ -122,11 +122,11 @@ public int DataLength
 #### Declaration
 
 ``` lang-csharp
-public NetworkInterfaceEndPoint Dest
+public NetworkEndpoint Dest
 ```
 
 #### Field Value
 
-| Type                     | Description |
-|--------------------------|-------------|
-| NetworkInterfaceEndPoint |             |
+| Type            | Description |
+|-----------------|-------------|
+| NetworkEndpoint |             |

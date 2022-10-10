@@ -338,9 +338,9 @@ public int PacketJitterMs
 
 <div class="markdown level1 summary">
 
-The random seed is used to set the initial seed of the random number
-generator. This is useful to get deterministic runs in tests for example
-that are dependant on the random number generator.
+Value to use to seed the random number generator. For non-deterministic
+behavior, use a dynamic value here (e.g. the result of a call to
+Stopwatch.GetTimestamp).
 
 </div>
 
@@ -359,6 +359,30 @@ public uint RandomSeed
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
+
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool Validate()
+```
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
 
 ### Implements
 

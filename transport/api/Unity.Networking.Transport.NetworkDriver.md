@@ -97,6 +97,7 @@ public struct NetworkDriver : IDisposable
 #### Declaration
 
 ``` lang-csharp
+[Obsolete("Use NetworkDriver.Create(INetworkInterface networkInterface) instead", true)]
 public NetworkDriver(INetworkInterface netIf)
 ```
 
@@ -105,30 +106,6 @@ public NetworkDriver(INetworkInterface netIf)
 | Type              | Name  | Description |
 |-------------------|-------|-------------|
 | INetworkInterface | netIf |             |
-
-### NetworkDriver(INetworkInterface, INetworkParameter\[\])
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-[Obsolete("Use NetworkDriver(INetworkInterface, NetworkSettings) instead", false)]
-public NetworkDriver(INetworkInterface netIf, params INetworkParameter[] param)
-```
-
-#### Parameters
-
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkInterface     | netIf |             |
-| INetworkParameter\[\] | param |             |
 
 ### NetworkDriver(INetworkInterface, NetworkSettings)
 
@@ -143,6 +120,7 @@ public NetworkDriver(INetworkInterface netIf, params INetworkParameter[] param)
 #### Declaration
 
 ``` lang-csharp
+[Obsolete("Use NetworkDriver.Create(INetworkInterface networkInterface, NetworkSettings settings) instead", true)]
 public NetworkDriver(INetworkInterface netIf, NetworkSettings settings)
 ```
 
@@ -177,6 +155,39 @@ public readonly bool Bound { get; }
 |----------------|-------------|
 | System.Boolean |             |
 
+### CurrentSettings
+
+<div class="markdown level1 summary">
+
+Current settings used by the driver.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly NetworkSettings CurrentSettings { get; }
+```
+
+#### Property Value
+
+| Type            | Description |
+|-----------------|-------------|
+| NetworkSettings |             |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Current settings are read-only and can't be modified except through
+methods like .
+
+</div>
+
 ### IsCreated
 
 <div class="markdown level1 summary">
@@ -198,28 +209,6 @@ public readonly bool IsCreated { get; }
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
-
-### LastUpdateTime
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public readonly long LastUpdateTime { get; }
-```
-
-#### Property Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int64 |             |
 
 ### Listening
 
@@ -256,7 +245,7 @@ public bool Listening { get; }
 #### Declaration
 
 ``` lang-csharp
-public int ReceiveErrorCode { get; }
+public readonly int ReceiveErrorCode { get; }
 ```
 
 #### Property Value
@@ -312,38 +301,6 @@ public NetworkConnection Accept()
 | Type              | Description                                              |
 |-------------------|----------------------------------------------------------|
 | NetworkConnection | If accept fails it returnes a default NetworkConnection. |
-
-### AllocateMemory(ref Int32)
-
-<div class="markdown level1 summary">
-
-Allocates temporary memory in NetworkDriver's data stream. You don't
-need to deallocate it If you need to call this function several times -
-use PinMemoryTillUpdate(Int32) to move 'head'
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public IntPtr AllocateMemory(ref int dataLen)
-```
-
-#### Parameters
-
-| Type         | Name    | Description                                       |
-|--------------|---------|---------------------------------------------------|
-| System.Int32 | dataLen | Size of memory to allocate in bytes. Must be \> 0 |
-
-#### Returns
-
-| Type          | Description                                                                                                                                                                        |
-|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System.IntPtr | Pointer to allocated memory or IntPtr.Zero if there is no space left (this function doesn't set ReceiveErrorCode! caller should decide if this is Out of memory or something else) |
 
 ### BeginSend(NetworkConnection, out DataStreamWriter, Int32)
 
@@ -406,7 +363,7 @@ public int BeginSend(NetworkPipeline pipe, NetworkConnection id, out DataStreamW
 |--------------|-------------|
 | System.Int32 |             |
 
-### Bind(NetworkEndPoint)
+### Bind(NetworkEndpoint)
 
 <div class="markdown level1 summary">
 
@@ -421,14 +378,14 @@ Bind the driver to a endpoint.
 #### Declaration
 
 ``` lang-csharp
-public int Bind(NetworkEndPoint endpoint)
+public int Bind(NetworkEndpoint endpoint)
 ```
 
 #### Parameters
 
 | Type            | Name     | Description              |
 |-----------------|----------|--------------------------|
-| NetworkEndPoint | endpoint | The endpoint to bind to. |
+| NetworkEndpoint | endpoint | The endpoint to bind to. |
 
 #### Returns
 
@@ -444,7 +401,7 @@ public int Bind(NetworkEndPoint endpoint)
 | System.InvalidOperationException | If bind is called more then once on the driver                    |
 | System.InvalidOperationException | If bind is called after a connection has already been established |
 
-### Connect(NetworkEndPoint)
+### Connect(NetworkEndpoint)
 
 <div class="markdown level1 summary">
 
@@ -459,14 +416,14 @@ Connects the driver to a endpoint
 #### Declaration
 
 ``` lang-csharp
-public NetworkConnection Connect(NetworkEndPoint endpoint)
+public NetworkConnection Connect(NetworkEndpoint endpoint)
 ```
 
 #### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
-| NetworkEndPoint | endpoint |             |
+| NetworkEndpoint | endpoint |             |
 
 #### Returns
 
@@ -502,35 +459,6 @@ public static NetworkDriver Create()
 |---------------|-------------|
 | NetworkDriver |             |
 
-### Create(INetworkParameter\[\])
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-[Obsolete("Use Create(NetworkSettings) instead", false)]
-public static NetworkDriver Create(params INetworkParameter[] param)
-```
-
-#### Parameters
-
-| Type                  | Name  | Description |
-|-----------------------|-------|-------------|
-| INetworkParameter\[\] | param |             |
-
-#### Returns
-
-| Type          | Description |
-|---------------|-------------|
-| NetworkDriver |             |
-
 ### Create(NetworkSettings)
 
 <div class="markdown level1 summary">
@@ -551,9 +479,9 @@ public static NetworkDriver Create(NetworkSettings settings)
 
 #### Parameters
 
-| Type            | Name     | Description |
-|-----------------|----------|-------------|
-| NetworkSettings | settings |             |
+| Type            | Name     | Description                   |
+|-----------------|----------|-------------------------------|
+| NetworkSettings | settings | Configuration for the driver. |
 
 #### Returns
 
@@ -567,11 +495,204 @@ public static NetworkDriver Create(NetworkSettings settings)
 |----------------------------------|-----------|
 | System.InvalidOperationException |           |
 
+### Create\<N>(N)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static NetworkDriver Create<N>(N networkInterface)
+    where N : struct, INetworkInterface
+```
+
+#### Parameters
+
+| Type | Name             | Description |
+|------|------------------|-------------|
+| N    | networkInterface |             |
+
+#### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| NetworkDriver |             |
+
+#### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| N    |             |
+
+### Create\<N>(N, NetworkSettings)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static NetworkDriver Create<N>(N networkInterface, NetworkSettings settings)
+    where N : struct, INetworkInterface
+```
+
+#### Parameters
+
+| Type            | Name             | Description |
+|-----------------|------------------|-------------|
+| N               | networkInterface |             |
+| NetworkSettings | settings         |             |
+
+#### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| NetworkDriver |             |
+
+#### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| N    |             |
+
+### Create\<N>(ref N)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static NetworkDriver Create<N>(ref N networkInterface)
+    where N : struct, INetworkInterface
+```
+
+#### Parameters
+
+| Type | Name             | Description |
+|------|------------------|-------------|
+| N    | networkInterface |             |
+
+#### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| NetworkDriver |             |
+
+#### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| N    |             |
+
+### Create\<N>(ref N, NetworkSettings)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static NetworkDriver Create<N>(ref N networkInterface, NetworkSettings settings)
+    where N : struct, INetworkInterface
+```
+
+#### Parameters
+
+| Type            | Name             | Description |
+|-----------------|------------------|-------------|
+| N               | networkInterface |             |
+| NetworkSettings | settings         |             |
+
+#### Returns
+
+| Type          | Description |
+|---------------|-------------|
+| NetworkDriver |             |
+
+#### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| N    |             |
+
+### CreatePipeline(NativeArray\<NetworkPipelineStageId>)
+
+<div class="markdown level1 summary">
+
+Create a new pipeline from stage IDs.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkPipeline CreatePipeline(NativeArray<NetworkPipelineStageId> stages)
+```
+
+#### Parameters
+
+| Type                                  | Name   | Description                                     |
+|---------------------------------------|--------|-------------------------------------------------|
+| NativeArray\<NetworkPipelineStageId\> | stages | Array of stage IDs the pipeline should contain. |
+
+#### Returns
+
+| Type            | Description |
+|-----------------|-------------|
+| NetworkPipeline |             |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+The order of the different stages is important, as that is the order in
+which the stages will process a packet when sending messages (the
+reverse order is used when processing received packets).
+
+Note that this method is Burst-compatible. Note also that no reference
+to the native array is kept internally by the driver. It is thus safe to
+dispose of it immediately after calling this method (or to use a
+temporary allocation for the array).
+
+</div>
+
+#### Exceptions
+
+| Type                             | Condition                                                                                                                                                                      |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.InvalidOperationException | If collections checks are enabled (ENABLE_UNITY_COLLECTIONS_CHECKS is defined), will be thrown if called after the driver has established connections or before it is created. |
+
 ### CreatePipeline(Type\[\])
 
 <div class="markdown level1 summary">
 
-Create a new pipeline.
+Create a new pipeline from stage types.
 
 </div>
 
@@ -587,9 +708,9 @@ public NetworkPipeline CreatePipeline(params Type[] stages)
 
 #### Parameters
 
-| Type            | Name   | Description                                     |
-|-----------------|--------|-------------------------------------------------|
-| System.Type\[\] | stages | An array of stages the pipeline should contain. |
+| Type            | Name   | Description                                  |
+|-----------------|--------|----------------------------------------------|
+| System.Type\[\] | stages | Array of stages the pipeline should contain. |
 
 #### Returns
 
@@ -597,12 +718,21 @@ public NetworkPipeline CreatePipeline(params Type[] stages)
 |-----------------|-------------|
 | NetworkPipeline |             |
 
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+The order of the different stages is important, as that is the order in
+which the stages will process a packet when sending messages (the
+reverse order is used when processing received packets).
+
+</div>
+
 #### Exceptions
 
-| Type                             | Condition                                 |
-|----------------------------------|-------------------------------------------|
-| System.InvalidOperationException | If the driver is not created properly     |
-| System.InvalidOperationException | A connection has already been established |
+| Type                             | Condition                                                                                                                                                                      |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.InvalidOperationException | If collections checks are enabled (ENABLE_UNITY_COLLECTIONS_CHECKS is defined), will be thrown if called after the driver has established connections or before it is created. |
 
 ### Disconnect(NetworkConnection)
 
@@ -736,7 +866,32 @@ public int GetEventQueueSizeForConnection(NetworkConnection connectionId)
 |--------------|-------------------------------------------------------------------------------------------|
 | System.Int32 | If the connection is valid it returns the size of the event queue otherwise it returns 0. |
 
-### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray&lt;Byte&gt;, out NativeArray&lt;Byte&gt;, out NativeArray&lt;Byte&gt;))
+### GetLocalEndpoint()
+
+<div class="markdown level1 summary">
+
+Get the local endpoint used by the driver (the endpoint remote peers
+will use to reach this driver).
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkEndpoint GetLocalEndpoint()
+```
+
+#### Returns
+
+| Type            | Description                       |
+|-----------------|-----------------------------------|
+| NetworkEndpoint | The local endpoint of the driver. |
+
+### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray\<Byte>, out NativeArray\<Byte>, out NativeArray\<Byte>)
 
 <div class="markdown level1 summary">
 
@@ -761,15 +916,46 @@ public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId 
 | NetworkPipeline            | pipeline              |             |
 | NetworkPipelineStageId     | stageId               |             |
 | NetworkConnection          | connection            |             |
-| NativeArray&lt;System.Byte&gt; | readProcessingBuffer  |             |
-| NativeArray&lt;System.Byte&gt;| writeProcessingBuffer |             |
-| NativeArray&lt;System.Byte&gt; | sharedBuffer          |             |
+| NativeArray\<System.Byte\> | readProcessingBuffer  |             |
+| NativeArray\<System.Byte\> | writeProcessingBuffer |             |
+| NativeArray\<System.Byte\> | sharedBuffer          |             |
 
 #### Exceptions
 
 | Type                             | Condition                         |
 |----------------------------------|-----------------------------------|
 | System.InvalidOperationException | If the the connection is invalid. |
+
+### GetRemoteEndpoint(NetworkConnection)
+
+<div class="markdown level1 summary">
+
+Get the remote endpoint of a connection (the endpoint used to reach the
+remote peer on the connection).
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkEndpoint GetRemoteEndpoint(NetworkConnection id)
+```
+
+#### Parameters
+
+| Type              | Name | Description                        |
+|-------------------|------|------------------------------------|
+| NetworkConnection | id   | Connection to get the endpoint of. |
+
+#### Returns
+
+| Type            | Description                            |
+|-----------------|----------------------------------------|
+| NetworkEndpoint | The remote endpoint of the connection. |
 
 ### Listen()
 
@@ -816,14 +1002,15 @@ public int Listen()
 #### Declaration
 
 ``` lang-csharp
-public NetworkEndPoint LocalEndPoint()
+[Obsolete("LocalEndPoint has been renamed to GetLocalEndpoint. (UnityUpgradable) -> GetLocalEndpoint()", false)]
+public NetworkEndpoint LocalEndPoint()
 ```
 
 #### Returns
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ### MaxHeaderSize(NetworkPipeline)
 
@@ -852,40 +1039,6 @@ public int MaxHeaderSize(NetworkPipeline pipe)
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
-
-### PinMemoryTillUpdate(Int32)
-
-<div class="markdown level1 summary">
-
-Moves 'head' of allocator for 'length' bytes. Use this to 'pin' memory
-in till the next update. If you don't call it - it is 'pinned' till the
-next call to AllocateMemory(ref Int32) Means every time you call
-AllocateMemory(ref Int32) without PinMemoryTillUpdate(Int32) memory is
-overriden
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int PinMemoryTillUpdate(int length)
-```
-
-#### Parameters
-
-| Type         | Name   | Description   |
-|--------------|--------|---------------|
-| System.Int32 | length | Bytes to move |
-
-#### Returns
-
-| Type         | Description                   |
-|--------------|-------------------------------|
-| System.Int32 | Returns head of pinned memory |
 
 ### PopEvent(out NetworkConnection, out DataStreamReader)
 
@@ -1005,6 +1158,56 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 |-------------------|-------------|
 | NetworkEvent.Type |             |
 
+### RegisterPipelineStage\<T>(T)
+
+<div class="markdown level1 summary">
+
+Register a custom pipeline stage.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public void RegisterPipelineStage<T>(T stage)
+    where T : struct, INetworkPipelineStage
+```
+
+#### Parameters
+
+| Type | Name  | Description                        |
+|------|-------|------------------------------------|
+| T    | stage | An instance of the pipeline stage. |
+
+#### Type Parameters
+
+| Name | Description                                         |
+|------|-----------------------------------------------------|
+| T    | The type of the pipeline stage (must be unmanaged). |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Can only be called before a driver is bound (see Bind(NetworkEndpoint)).
+
+Note that the default pipeline stages (FragmentationPipelineStage,
+ReliableSequencedPipelineStage, UnreliableSequencedPipelineStage, and
+SimulatorPipelineStage) don't need to be registered. Registering a
+pipeline stage is only required for custom ones.
+
+</div>
+
+#### Exceptions
+
+| Type                             | Condition                                                                                                                                                   |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.InvalidOperationException | If collections checks are enabled (ENABLE_UNITY_COLLECTIONS_CHECKS is defined), will be thrown if called after the driver is bound or before it is created. |
+
 ### RemoteEndPoint(NetworkConnection)
 
 <div class="markdown level1 summary">
@@ -1018,7 +1221,8 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 #### Declaration
 
 ``` lang-csharp
-public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
+[Obsolete("RemoteEndPoint has been renamed to GetRemoteEndpoint. (UnityUpgradable) -> GetRemoteEndpoint(*)", false)]
+public NetworkEndpoint RemoteEndPoint(NetworkConnection id)
 ```
 
 #### Parameters
@@ -1031,7 +1235,7 @@ public NetworkEndPoint RemoteEndPoint(NetworkConnection id)
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
+| NetworkEndpoint |             |
 
 ### ScheduleFlushSend(JobHandle)
 
@@ -1118,5 +1322,33 @@ public NetworkDriver.Concurrent ToConcurrent()
 <div>
 
 System.IDisposable
+
+</div>
+
+### Extension Methods
+
+<div>
+
+NetworkSimulatorParameterExtensions.ModifyNetworkSimulatorParameters(NetworkDriver,
+NetworkSimulatorParameter)
+
+</div>
+
+<div>
+
+SimulatorStageParameterExtensions.ModifySimulatorStageParameters(NetworkDriver,
+SimulatorUtility.Parameters)
+
+</div>
+
+<div>
+
+NetworkDriverRelayExtensions.GetRelayConnectionStatus(NetworkDriver)
+
+</div>
+
+<div>
+
+NetworkDriverRelayExtensions.Connect(NetworkDriver)
 
 </div>

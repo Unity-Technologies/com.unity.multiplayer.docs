@@ -111,9 +111,41 @@ public byte *Value
 
 ## 
 
+### FromByteArray(Byte\[\])
+
+<div class="markdown level1 summary">
+
+Convert a byte array to a RelayHMACKey
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static RelayHMACKey FromByteArray(byte[] data)
+```
+
+#### Parameters
+
+| Type            | Name | Description       |
+|-----------------|------|-------------------|
+| System.Byte\[\] | data | Array to convert. |
+
+#### Returns
+
+| Type         | Description       |
+|--------------|-------------------|
+| RelayHMACKey | New RelayHMACKey. |
+
 ### FromBytePointer(Byte\*, Int32)
 
 <div class="markdown level1 summary">
+
+Convert a raw buffer to a RelayHMACKey
 
 </div>
 
@@ -129,13 +161,13 @@ public static RelayHMACKey FromBytePointer(byte *data, int length)
 
 #### Parameters
 
-| Type          | Name   | Description |
-|---------------|--------|-------------|
-| System.Byte\* | data   |             |
-| System.Int32  | length |             |
+| Type          | Name   | Description                      |
+|---------------|--------|----------------------------------|
+| System.Byte\* | data   |                                  |
+| System.Int32  | length | Length of the buffer to convert. |
 
 #### Returns
 
-| Type         | Description |
-|--------------|-------------|
-| RelayHMACKey |             |
+| Type         | Description       |
+|--------------|-------------------|
+| RelayHMACKey | New RelayHMACKey. |

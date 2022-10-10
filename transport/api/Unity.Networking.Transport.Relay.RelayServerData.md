@@ -65,9 +65,11 @@ public struct RelayServerData
 
 ## 
 
-### RelayServerData(ref NetworkEndPoint, UInt16, RelayAllocationId, String, String, String, Boolean)
+### RelayServerData(String, UInt16, Byte\[\], Byte\[\], Byte\[\], Byte\[\], Boolean)
 
 <div class="markdown level1 summary">
+
+Create a new Relay server data structure.
 
 </div>
 
@@ -78,24 +80,39 @@ public struct RelayServerData
 #### Declaration
 
 ``` lang-csharp
-public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, RelayAllocationId allocationId, string connectionData, string hostConnectionData, string key, bool isSecure)
+public RelayServerData(string host, ushort port, byte[] allocationId, byte[] connectionData, byte[] hostConnectionData, byte[] key, bool isSecure)
 ```
 
 #### Parameters
 
-| Type              | Name               | Description |
-|-------------------|--------------------|-------------|
-| NetworkEndPoint   | endpoint           |             |
-| System.UInt16     | nonce              |             |
-| RelayAllocationId | allocationId       |             |
-| System.String     | connectionData     |             |
-| System.String     | hostConnectionData |             |
-| System.String     | key                |             |
-| System.Boolean    | isSecure           |             |
+| Type            | Name               | Description                                               |
+|-----------------|--------------------|-----------------------------------------------------------|
+| System.String   | host               | IP address or hostname of the Relay server.               |
+| System.UInt16   | port               | Port of the Relay server.                                 |
+| System.Byte\[\] | allocationId       | ID of the Relay allocation.                               |
+| System.Byte\[\] | connectionData     | Connection data of the allocation.                        |
+| System.Byte\[\] | hostConnectionData | Connection data of the host (same as previous for hosts). |
+| System.Byte\[\] | key                | HMAC signature of the allocation.                         |
+| System.Boolean  | isSecure           | Whether the Relay connection is to be secured or not.     |
 
-### RelayServerData(ref NetworkEndPoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+If a hostname is provided as the "host" parameter, this constructor will
+perform a DNS resolution to map it to an IP address. If the hostname is
+not in the OS cache, this operation can possibly block for a long time
+(between 20 and 120 milliseconds). If this is a concern, perform the DNS
+resolution asynchronously and pass in the resulting IP address directly
+(see ).
+
+</div>
+
+### RelayServerData(ref NetworkEndpoint, UInt16, ref RelayAllocationId, ref RelayConnectionData, ref RelayConnectionData, ref RelayHMACKey, Boolean)
 
 <div class="markdown level1 summary">
+
+Create a new Relay server data structure (low level constructor).
 
 </div>
 
@@ -106,20 +123,20 @@ public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, RelayAllocati
 #### Declaration
 
 ``` lang-csharp
-public RelayServerData(ref NetworkEndPoint endpoint, ushort nonce, ref RelayAllocationId allocationId, ref RelayConnectionData connectionData, ref RelayConnectionData hostConnectionData, ref RelayHMACKey key, bool isSecure)
+public RelayServerData(ref NetworkEndpoint endpoint, ushort nonce, ref RelayAllocationId allocationId, ref RelayConnectionData connectionData, ref RelayConnectionData hostConnectionData, ref RelayHMACKey key, bool isSecure)
 ```
 
 #### Parameters
 
-| Type                | Name               | Description |
-|---------------------|--------------------|-------------|
-| NetworkEndPoint     | endpoint           |             |
-| System.UInt16       | nonce              |             |
-| RelayAllocationId   | allocationId       |             |
-| RelayConnectionData | connectionData     |             |
-| RelayConnectionData | hostConnectionData |             |
-| RelayHMACKey        | key                |             |
-| System.Boolean      | isSecure           |             |
+| Type                | Name               | Description                                             |
+|---------------------|--------------------|---------------------------------------------------------|
+| NetworkEndpoint     | endpoint           | Endpoint of the Relay server.                           |
+| System.UInt16       | nonce              | Nonce used in connection handshake (preferably random). |
+| RelayAllocationId   | allocationId       | ID of the Relay allocation.                             |
+| RelayConnectionData | connectionData     | Connection data of the allocation.                      |
+| RelayConnectionData | hostConnectionData | Connection data of the host (use default for hosts).    |
+| RelayHMACKey        | key                | HMAC signature of the allocation.                       |
+| System.Boolean      | isSecure           | Whether the Relay connection is to be secured or not.   |
 
 ## 
 
@@ -180,36 +197,14 @@ public RelayConnectionData ConnectionData
 #### Declaration
 
 ``` lang-csharp
-public NetworkEndPoint Endpoint
+public NetworkEndpoint Endpoint
 ```
 
 #### Field Value
 
 | Type            | Description |
 |-----------------|-------------|
-| NetworkEndPoint |             |
-
-### HMAC
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public byte *HMAC
-```
-
-#### Field Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Byte\* |             |
+| NetworkEndpoint |             |
 
 ### HMACKey
 
@@ -298,21 +293,3 @@ public ushort Nonce
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
-
-## 
-
-### ComputeNewNonce()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public void ComputeNewNonce()
-```

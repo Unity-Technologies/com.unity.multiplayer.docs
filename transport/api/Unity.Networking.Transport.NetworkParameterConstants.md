@@ -117,31 +117,6 @@ public const int DisconnectTimeoutMS = 30000
 |--------------|-------------|
 | System.Int32 |             |
 
-### DriverDataStreamSize
-
-<div class="markdown level1 summary">
-
-The default size of the DataStreamWriter. This value can be overridden
-using the NetworkConfigParameter.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public const int DriverDataStreamSize = 65536
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
 ### HeartbeatTimeoutMS
 
 <div class="markdown level1 summary">
@@ -159,52 +134,6 @@ value can be overridden using the NetworkConfigParameter
 
 ``` lang-csharp
 public const int HeartbeatTimeoutMS = 500
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### InitialEventQueueSize
-
-<div class="markdown level1 summary">
-
-The default size of the event queue.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public const int InitialEventQueueSize = 100
-```
-
-#### Field Value
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### InvalidConnectionId
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public const int InvalidConnectionId = -1
 ```
 
 #### Field Value
@@ -242,6 +171,8 @@ public const int MaxConnectAttempts = 60
 
 <div class="markdown level1 summary">
 
+Maximum size of a packet that can be sent by the transport.
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -252,6 +183,31 @@ public const int MaxConnectAttempts = 60
 
 ``` lang-csharp
 public const int MTU = 1400
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### ReceiveQueueCapacity
+
+<div class="markdown level1 summary">
+
+The default capacity of the receive queue. This value can be overridden
+using the NetworkConfigParameter
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int ReceiveQueueCapacity = 64
 ```
 
 #### Field Value
@@ -278,6 +234,31 @@ NetworkConfigParameter.
 
 ``` lang-csharp
 public const int ReconnectionTimeoutMS = 2000
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### SendQueueCapacity
+
+<div class="markdown level1 summary">
+
+The default capacity of the send queue. This value can be overridden
+using the NetworkConfigParameter
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int SendQueueCapacity = 64
 ```
 
 #### Field Value

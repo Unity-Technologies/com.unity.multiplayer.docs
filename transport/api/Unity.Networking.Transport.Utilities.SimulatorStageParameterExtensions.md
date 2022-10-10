@@ -117,9 +117,47 @@ public static SimulatorUtility.Parameters GetSimulatorStageParameters(this ref N
 |-----------------------------|-------------|
 | SimulatorUtility.Parameters |             |
 
+### ModifySimulatorStageParameters(NetworkDriver, SimulatorUtility.Parameters)
+
+<div class="markdown level1 summary">
+
+Modify the parameters of the simulator pipeline stage.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static void ModifySimulatorStageParameters(this NetworkDriver driver, SimulatorUtility.Parameters newParams)
+```
+
+#### Parameters
+
+| Type                        | Name      | Description                             |
+|-----------------------------|-----------|-----------------------------------------|
+| NetworkDriver               | driver    |                                         |
+| SimulatorUtility.Parameters | newParams | New parameters for the simulator stage. |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Some parameters (e.g. max packet count and size) are not modifiable.
+These need to be passed unmodified to this function (can't just leave
+them at 0 for example). The current parameters can be obtained using
+CurrentSettings.
+
+</div>
+
 ### WithSimulatorStageParameters(ref NetworkSettings, Int32, Int32, ApplyMode, Int32, Int32, Int32, Int32, Int32, Int32, Int32, UInt32)
 
 <div class="markdown level1 summary">
+
+Set the parameters of the simulator pipeline stage.
 
 </div>
 

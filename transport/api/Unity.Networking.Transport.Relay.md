@@ -19,7 +19,7 @@ title: Unity.Networking.Transport.Relay
 
 ## 
 
-### Unity.Networking.Transport.Relay.RelayMessageBind
+### Unity.Networking.Transport.Relay.NetworkDriverRelayExtensions
 
 <div class="section">
 
@@ -58,42 +58,6 @@ connection. Used mainly in the connection stablishing process (Binding)
 
 </div>
 
-### Unity.Networking.Transport.Relay.RelayMessageAccepted
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageConnectRequest
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageDisconnect
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageHeader
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessagePing
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.Relay.RelayMessageRelay
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.Relay.RelayNetworkParameter
 
 <div class="section">
@@ -107,6 +71,14 @@ connection. Used mainly in the connection stablishing process (Binding)
 </div>
 
 ## 
+
+### Unity.Networking.Transport.Relay.RelayConnectionStatus
+
+<div class="section">
+
+State of the connection to the relay server.
+
+</div>
 
 ### Unity.Networking.Transport.Relay.RelayMessageType
 

@@ -89,34 +89,6 @@ public static class BaselibNetworkParameterExtensions
 
 ## 
 
-### GetBaselibNetworkInterfaceParameters(ref NetworkSettings)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public static BaselibNetworkParameter GetBaselibNetworkInterfaceParameters(this ref NetworkSettings settings)
-```
-
-#### Parameters
-
-| Type            | Name     | Description |
-|-----------------|----------|-------------|
-| NetworkSettings | settings |             |
-
-#### Returns
-
-| Type                    | Description |
-|-------------------------|-------------|
-| BaselibNetworkParameter |             |
-
 ### WithBaselibNetworkInterfaceParameters(ref NetworkSettings, Int32, Int32, UInt32)
 
 <div class="markdown level1 summary">
@@ -130,7 +102,8 @@ public static BaselibNetworkParameter GetBaselibNetworkInterfaceParameters(this 
 #### Declaration
 
 ``` lang-csharp
-public static ref NetworkSettings WithBaselibNetworkInterfaceParameters(this ref NetworkSettings settings, int receiveQueueCapacity = 64, int sendQueueCapacity = 64, uint maximumPayloadSize = 2000U)
+[Obsolete("To set receiveQueueCapacity and sendQueueCapacity parameters use WithNetworkConfigParameters()", false)]
+public static ref NetworkSettings WithBaselibNetworkInterfaceParameters(this ref NetworkSettings settings, int receiveQueueCapacity = 0, int sendQueueCapacity = 0, uint maximumPayloadSize = 0U)
 ```
 
 #### Parameters

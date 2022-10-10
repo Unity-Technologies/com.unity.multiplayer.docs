@@ -21,12 +21,6 @@ INetworkParameter
 
 </div>
 
-<div>
-
-IValidatableNetworkParameter
-
-</div>
-
 </div>
 
 <div class="inheritedMembers">
@@ -78,7 +72,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct Parameters : INetworkParameter, IValidatableNetworkParameter
+public struct Parameters : INetworkParameter
 ```
 
 ## 
@@ -134,11 +128,5 @@ public bool Validate()
 <div>
 
 INetworkParameter
-
-</div>
-
-<div>
-
-IValidatableNetworkParameter
 
 </div>

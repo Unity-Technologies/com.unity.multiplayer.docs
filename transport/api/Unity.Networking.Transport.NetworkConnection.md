@@ -15,6 +15,18 @@ is a public representation of a connection.
 
 </div>
 
+<div classs="implements">
+
+##### Implements
+
+<div>
+
+System.IEquatable\<NetworkConnection\>
+
+</div>
+
+</div>
+
 <div class="inheritedMembers">
 
 ##### Inherited Members
@@ -46,7 +58,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkConnection
+public struct NetworkConnection : IEquatable<NetworkConnection>
 ```
 
 ## 
@@ -95,7 +107,7 @@ public readonly bool IsCreated { get; }
 
 | Type           | Description                                                                                                  |
 |----------------|--------------------------------------------------------------------------------------------------------------|
-| System.Boolean | `true` if the NetworkConnection has been correctly created by a call to Accept() or Connect(NetworkEndPoint) |
+| System.Boolean | `true` if the NetworkConnection has been correctly created by a call to Accept() or Connect(NetworkEndpoint) |
 
 ### Version
 
@@ -455,3 +467,11 @@ public static bool operator !=(NetworkConnection lhs, NetworkConnection rhs)
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
+
+### Implements
+
+<div>
+
+System.IEquatable\<T>
+
+</div>

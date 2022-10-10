@@ -21,12 +21,6 @@ INetworkParameter
 
 </div>
 
-<div>
-
-IValidatableNetworkParameter
-
-</div>
-
 </div>
 
 <div class="inheritedMembers">
@@ -78,7 +72,8 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct BaselibNetworkParameter : INetworkParameter, IValidatableNetworkParameter
+[Obsolete("To set receiveQueueCapacity and sendQueueCapacity parameters use NetworkConfigParameter", false)]
+public struct BaselibNetworkParameter : INetworkParameter
 ```
 
 ## 
@@ -178,11 +173,5 @@ public bool Validate()
 <div>
 
 INetworkParameter
-
-</div>
-
-<div>
-
-IValidatableNetworkParameter
 
 </div>

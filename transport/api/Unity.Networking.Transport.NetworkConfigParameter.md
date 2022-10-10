@@ -24,12 +24,6 @@ INetworkParameter
 
 </div>
 
-<div>
-
-IValidatableNetworkParameter
-
-</div>
-
 </div>
 
 <div class="inheritedMembers">
@@ -81,7 +75,7 @@ Object.ReferenceEquals(Object, Object)
 ##### Syntax
 
 ``` lang-csharp
-public struct NetworkConfigParameter : INetworkParameter, IValidatableNetworkParameter
+public struct NetworkConfigParameter : INetworkParameter
 ```
 
 ## 
@@ -264,6 +258,30 @@ spikes when both endpoints lives in the same process.
 
 </div>
 
+### receiveQueueCapacity
+
+<div class="markdown level1 summary">
+
+The capacity of the receive queue.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int receiveQueueCapacity
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
 ### reconnectionTimeoutMS
 
 <div class="markdown level1 summary">
@@ -281,6 +299,30 @@ is no activity.
 
 ``` lang-csharp
 public int reconnectionTimeoutMS
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### sendQueueCapacity
+
+<div class="markdown level1 summary">
+
+The capacity of the send queue.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public int sendQueueCapacity
 ```
 
 #### Field Value
@@ -318,11 +360,5 @@ public bool Validate()
 <div>
 
 INetworkParameter
-
-</div>
-
-<div>
-
-IValidatableNetworkParameter
 
 </div>

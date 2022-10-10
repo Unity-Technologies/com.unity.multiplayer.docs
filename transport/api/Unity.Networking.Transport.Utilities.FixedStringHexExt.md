@@ -89,7 +89,7 @@ public static class FixedStringHexExt
 
 ## 
 
-### AppendHex&lt;T&gt;(ref T, UInt16)
+### AppendHex\<T>(ref T, UInt16)
 
 <div class="markdown level1 summary">
 
@@ -103,6 +103,42 @@ public static class FixedStringHexExt
 
 ``` lang-csharp
 public static FormatError AppendHex<T>(this ref T str, ushort val)
+    where T : struct, INativeList<byte>, IUTF8Bytes
+```
+
+#### Parameters
+
+| Type          | Name | Description |
+|---------------|------|-------------|
+| T             | str  |             |
+| System.UInt16 | val  |             |
+
+#### Returns
+
+| Type        | Description |
+|-------------|-------------|
+| FormatError |             |
+
+#### Type Parameters
+
+| Name | Description |
+|------|-------------|
+| T    |             |
+
+### AppendHex2\<T>(ref T, UInt16)
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static FormatError AppendHex2<T>(this ref T str, ushort val)
     where T : struct, INativeList<byte>, IUTF8Bytes
 ```
 

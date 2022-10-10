@@ -35,7 +35,7 @@ public interface INetworkInterface : IDisposable
 
 ## 
 
-### LocalEndPoint
+### LocalEndpoint
 
 <div class="markdown level1 summary">
 
@@ -48,18 +48,18 @@ public interface INetworkInterface : IDisposable
 #### Declaration
 
 ``` lang-csharp
-NetworkInterfaceEndPoint LocalEndPoint { get; }
+NetworkEndpoint LocalEndpoint { get; }
 ```
 
 #### Property Value
 
-| Type                     | Description |
-|--------------------------|-------------|
-| NetworkInterfaceEndPoint |             |
+| Type            | Description |
+|-----------------|-------------|
+| NetworkEndpoint |             |
 
 ## 
 
-### Bind(NetworkInterfaceEndPoint)
+### Bind(NetworkEndpoint)
 
 <div class="markdown level1 summary">
 
@@ -74,14 +74,14 @@ Binds the medium to a specific endpoint.
 #### Declaration
 
 ``` lang-csharp
-int Bind(NetworkInterfaceEndPoint endpoint)
+int Bind(NetworkEndpoint endpoint)
 ```
 
 #### Parameters
 
-| Type                     | Name     | Description                       |
-|--------------------------|----------|-----------------------------------|
-| NetworkInterfaceEndPoint | endpoint | A valid NetworkInterfaceEndPoint. |
+| Type            | Name     | Description              |
+|-----------------|----------|--------------------------|
+| NetworkEndpoint | endpoint | A valid NetworkEndpoint. |
 
 #### Returns
 
@@ -89,7 +89,7 @@ int Bind(NetworkInterfaceEndPoint endpoint)
 |--------------|--------------|
 | System.Int32 | 0 on Success |
 
-### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
+### Initialize(ref NetworkSettings, ref Int32)
 
 <div class="markdown level1 summary">
 
@@ -102,93 +102,15 @@ int Bind(NetworkInterfaceEndPoint endpoint)
 #### Declaration
 
 ``` lang-csharp
-int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
+int Initialize(ref NetworkSettings settings, ref int packetPadding)
 ```
 
 #### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkEndPoint          | address  |             |
-| NetworkInterfaceEndPoint | endpoint |             |
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### CreateSendInterface()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-NetworkSendInterface CreateSendInterface()
-```
-
-#### Returns
-
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkSendInterface |             |
-
-### GetGenericEndPoint(NetworkInterfaceEndPoint)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
-```
-
-#### Parameters
-
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
-
-#### Returns
-
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
-
-### Initialize(NetworkSettings)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-int Initialize(NetworkSettings settings)
-```
-
-#### Parameters
-
-| Type            | Name     | Description |
-|-----------------|----------|-------------|
-| NetworkSettings | settings |             |
+| Type            | Name          | Description |
+|-----------------|---------------|-------------|
+| NetworkSettings | settings      |             |
+| System.Int32    | packetPadding |             |
 
 #### Returns
 
@@ -221,7 +143,7 @@ int Listen()
 |--------------|--------------|
 | System.Int32 | 0 on Success |
 
-### ScheduleReceive(NetworkPacketReceiver, JobHandle)
+### ScheduleReceive(ref ReceiveJobArguments, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -237,15 +159,15 @@ medium and pass it to the AppendData function supplied by NetworkDriver
 #### Declaration
 
 ``` lang-csharp
-JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+JobHandle ScheduleReceive(ref ReceiveJobArguments arguments, JobHandle dep)
 ```
 
 #### Parameters
 
-| Type                  | Name     | Description                                      |
-|-----------------------|----------|--------------------------------------------------|
-| NetworkPacketReceiver | receiver | A NetworkDriver used to parse the data received. |
-| JobHandle             | dep      | A to any dependency we might have.               |
+| Type                | Name      | Description                                                        |
+|---------------------|-----------|--------------------------------------------------------------------|
+| ReceiveJobArguments | arguments | A set of ReceiveJobArguments that can be used in the receive jobs. |
+| JobHandle           | dep       | A to any dependency we might have.                                 |
 
 #### Returns
 
@@ -253,7 +175,7 @@ JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 |-----------|---------------------------------------------|
 | JobHandle | A to our newly created ScheduleReceive Job. |
 
-### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
+### ScheduleSend(ref SendJobArguments, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -269,18 +191,26 @@ medium
 #### Declaration
 
 ``` lang-csharp
-JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+JobHandle ScheduleSend(ref SendJobArguments arguments, JobHandle dep)
 ```
 
 #### Parameters
 
-| Type                             | Name      | Description                                                |
-|----------------------------------|-----------|------------------------------------------------------------|
-| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue | The send queue which can be used to emulate parallel send. |
-| JobHandle                        | dep       | A to any dependency we might have.                         |
+| Type             | Name      | Description                                                  |
+|------------------|-----------|--------------------------------------------------------------|
+| SendJobArguments | arguments | A set of SendJobArguments that can be used in the send jobs. |
+| JobHandle        | dep       | A to any dependency we might have.                           |
 
 #### Returns
 
 | Type      | Description                              |
 |-----------|------------------------------------------|
 | JobHandle | A to our newly created ScheduleSend Job. |
+
+### Extension Methods
+
+<div>
+
+ManagedNetworkInterfaceExtensions.WrapToUnmanaged\<T>(T)
+
+</div>

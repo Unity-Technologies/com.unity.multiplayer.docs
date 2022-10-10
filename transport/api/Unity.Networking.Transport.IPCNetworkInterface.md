@@ -83,7 +83,7 @@ public struct IPCNetworkInterface : INetworkInterface, IDisposable
 
 ## 
 
-### LocalEndPoint
+### LocalEndpoint
 
 <div class="markdown level1 summary">
 
@@ -96,18 +96,18 @@ public struct IPCNetworkInterface : INetworkInterface, IDisposable
 #### Declaration
 
 ``` lang-csharp
-public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
+public readonly NetworkEndpoint LocalEndpoint { get; }
 ```
 
 #### Property Value
 
-| Type                     | Description |
-|--------------------------|-------------|
-| NetworkInterfaceEndPoint |             |
+| Type            | Description |
+|-----------------|-------------|
+| NetworkEndpoint |             |
 
 ## 
 
-### Bind(NetworkInterfaceEndPoint)
+### Bind(NetworkEndpoint)
 
 <div class="markdown level1 summary">
 
@@ -120,71 +120,20 @@ public readonly NetworkInterfaceEndPoint LocalEndPoint { get; }
 #### Declaration
 
 ``` lang-csharp
-public int Bind(NetworkInterfaceEndPoint endpoint)
+public int Bind(NetworkEndpoint endpoint)
 ```
 
 #### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
+| Type            | Name     | Description |
+|-----------------|----------|-------------|
+| NetworkEndpoint | endpoint |             |
 
 #### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
-
-### CreateInterfaceEndPoint(NetworkEndPoint, out NetworkInterfaceEndPoint)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int CreateInterfaceEndPoint(NetworkEndPoint address, out NetworkInterfaceEndPoint endpoint)
-```
-
-#### Parameters
-
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkEndPoint          | address  |             |
-| NetworkInterfaceEndPoint | endpoint |             |
-
-#### Returns
-
-| Type         | Description |
-|--------------|-------------|
-| System.Int32 |             |
-
-### CreateSendInterface()
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public NetworkSendInterface CreateSendInterface()
-```
-
-#### Returns
-
-| Type                 | Description |
-|----------------------|-------------|
-| NetworkSendInterface |             |
 
 ### Dispose()
 
@@ -202,7 +151,7 @@ public NetworkSendInterface CreateSendInterface()
 public void Dispose()
 ```
 
-### GetGenericEndPoint(NetworkInterfaceEndPoint)
+### Initialize(ref NetworkSettings, ref Int32)
 
 <div class="markdown level1 summary">
 
@@ -215,42 +164,15 @@ public void Dispose()
 #### Declaration
 
 ``` lang-csharp
-public NetworkEndPoint GetGenericEndPoint(NetworkInterfaceEndPoint endpoint)
+public int Initialize(ref NetworkSettings settings, ref int packetPadding)
 ```
 
 #### Parameters
 
-| Type                     | Name     | Description |
-|--------------------------|----------|-------------|
-| NetworkInterfaceEndPoint | endpoint |             |
-
-#### Returns
-
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
-
-### Initialize(NetworkSettings)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public int Initialize(NetworkSettings settings)
-```
-
-#### Parameters
-
-| Type            | Name     | Description |
-|-----------------|----------|-------------|
-| NetworkSettings | settings |             |
+| Type            | Name          | Description |
+|-----------------|---------------|-------------|
+| NetworkSettings | settings      |             |
+| System.Int32    | packetPadding |             |
 
 #### Returns
 
@@ -280,7 +202,7 @@ public int Listen()
 |--------------|-------------|
 | System.Int32 |             |
 
-### ScheduleReceive(NetworkPacketReceiver, JobHandle)
+### ScheduleReceive(ref ReceiveJobArguments, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -293,15 +215,15 @@ public int Listen()
 #### Declaration
 
 ``` lang-csharp
-public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
+public JobHandle ScheduleReceive(ref ReceiveJobArguments arguments, JobHandle dep)
 ```
 
 #### Parameters
 
-| Type                  | Name     | Description |
-|-----------------------|----------|-------------|
-| NetworkPacketReceiver | receiver |             |
-| JobHandle             | dep      |             |
+| Type                | Name      | Description |
+|---------------------|-----------|-------------|
+| ReceiveJobArguments | arguments |             |
+| JobHandle           | dep       |             |
 
 #### Returns
 
@@ -309,7 +231,7 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 |-----------|-------------|
 | JobHandle |             |
 
-### ScheduleSend(NativeQueue\&lt;QueuedSendMessage&gt;, JobHandle)
+### ScheduleSend(ref SendJobArguments, JobHandle)
 
 <div class="markdown level1 summary">
 
@@ -322,15 +244,15 @@ public JobHandle ScheduleReceive(NetworkPacketReceiver receiver, JobHandle dep)
 #### Declaration
 
 ``` lang-csharp
-public JobHandle ScheduleSend(NativeQueue<QueuedSendMessage> sendQueue, JobHandle dep)
+public JobHandle ScheduleSend(ref SendJobArguments arguments, JobHandle dep)
 ```
 
 #### Parameters
 
-| Type                             | Name      | Description |
-|----------------------------------|-----------|-------------|
-| NativeQueue\&lt;QueuedSendMessage&gt; | sendQueue |             |
-| JobHandle                        | dep       |             |
+| Type             | Name      | Description |
+|------------------|-----------|-------------|
+| SendJobArguments | arguments |             |
+| JobHandle        | dep       |             |
 
 #### Returns
 
@@ -349,5 +271,13 @@ INetworkInterface
 <div>
 
 System.IDisposable
+
+</div>
+
+### Extension Methods
+
+<div>
+
+ManagedNetworkInterfaceExtensions.WrapToUnmanaged\<T>(T)
 
 </div>

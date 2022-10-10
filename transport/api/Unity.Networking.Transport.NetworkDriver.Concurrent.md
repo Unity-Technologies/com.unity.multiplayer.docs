@@ -317,16 +317,16 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 #### Declaration
 
 ``` lang-csharp
-public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, out DataStreamReader reader, out NetworkPipeline pipeline)
+public NetworkEvent.Type PopEventForConnection(NetworkConnection connection, out DataStreamReader reader, out NetworkPipeline pipeline)
 ```
 
 #### Parameters
 
-| Type              | Name         | Description |
-|-------------------|--------------|-------------|
-| NetworkConnection | connectionId |             |
-| DataStreamReader  | reader       |             |
-| NetworkPipeline   | pipeline     |             |
+| Type              | Name       | Description |
+|-------------------|------------|-------------|
+| NetworkConnection | connection |             |
+| DataStreamReader  | reader     |             |
+| NetworkPipeline   | pipeline   |             |
 
 #### Returns
 

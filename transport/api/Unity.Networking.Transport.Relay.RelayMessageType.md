@@ -30,5 +30,6 @@ public enum RelayMessageType : byte
 | BindReceived   |             |
 | ConnectRequest |             |
 | Disconnect     |             |
+| Error          |             |
 | Ping           |             |
 | Relay          |             |

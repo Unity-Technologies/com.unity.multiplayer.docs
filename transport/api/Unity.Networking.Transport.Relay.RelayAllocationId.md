@@ -213,9 +213,41 @@ public bool Equals(RelayAllocationId other)
 |----------------|-------------|
 | System.Boolean |             |
 
+### FromByteArray(Byte\[\])
+
+<div class="markdown level1 summary">
+
+Convert a byte array to a RelayAllocationId
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public static RelayAllocationId FromByteArray(byte[] data)
+```
+
+#### Parameters
+
+| Type            | Name | Description       |
+|-----------------|------|-------------------|
+| System.Byte\[\] | data | Array to convert. |
+
+#### Returns
+
+| Type              | Description            |
+|-------------------|------------------------|
+| RelayAllocationId | New RelayAllocationId. |
+
 ### FromBytePointer(Byte\*, Int32)
 
 <div class="markdown level1 summary">
+
+Convert a raw buffer to a RelayAllocationId
 
 </div>
 
@@ -231,16 +263,16 @@ public static RelayAllocationId FromBytePointer(byte *dataPtr, int length)
 
 #### Parameters
 
-| Type          | Name    | Description |
-|---------------|---------|-------------|
-| System.Byte\* | dataPtr |             |
-| System.Int32  | length  |             |
+| Type          | Name    | Description                       |
+|---------------|---------|-----------------------------------|
+| System.Byte\* | dataPtr | Raw pointer to buffer to convert. |
+| System.Int32  | length  | Length of the buffer to convert.  |
 
 #### Returns
 
-| Type              | Description |
-|-------------------|-------------|
-| RelayAllocationId |             |
+| Type              | Description            |
+|-------------------|------------------------|
+| RelayAllocationId | New RelayAllocationId. |
 
 ### GetHashCode()
 
@@ -336,12 +368,12 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 <div>
 
-System.IEquatable&lt;T&gt;
+System.IEquatable\<T>
 
 </div>
 
 <div>
 
-System.IComparable&lt;T&gt;
+System.IComparable\<T>
 
 </div>

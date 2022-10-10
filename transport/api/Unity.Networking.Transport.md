@@ -31,13 +31,19 @@ title: Unity.Networking.Transport
 
 </div>
 
-### Unity.Networking.Transport.NetworkPipelineParametersExtensions
+### Unity.Networking.Transport.ManagedNetworkInterfaceExtensions
 
 <div class="section">
 
 </div>
 
-### Unity.Networking.Transport.NetworkPipelineStageCollection
+### Unity.Networking.Transport.NetworkDriverIdentifierParameterExtensions
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.NetworkSimulatorParameterExtensions
 
 <div class="section">
 
@@ -57,29 +63,7 @@ title: Unity.Networking.Transport
 
 </div>
 
-### Unity.Networking.Transport.DataStreamReader
-
-<div class="section">
-
-The `DataStreamReader` class is the counterpart of the
-`DataStreamWriter` class and can be be used to deserialize data which
-was prepared with it.
-
-</div>
-
-### Unity.Networking.Transport.DataStreamWriter
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.FragmentationPipelineStage
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.FragmentationPipelineStage.FragContext
 
 <div class="section">
 
@@ -103,12 +87,6 @@ was prepared with it.
 
 </div>
 
-### Unity.Networking.Transport.NetworkCompressionModel
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.NetworkConfigParameter
 
 <div class="section">
@@ -125,14 +103,6 @@ driver uses.
 The NetworkConnection is a struct that hold all information needed by
 the driver to link it with a virtual connection. The NetworkConnection
 is a public representation of a connection.
-
-</div>
-
-### Unity.Networking.Transport.NetworkDataStreamParameter
-
-<div class="section">
-
-The NetworkDataStreamParameter is used to set a fixed data stream size.
 
 </div>
 
@@ -158,7 +128,13 @@ GenericNetworkDriver.
 
 </div>
 
-### Unity.Networking.Transport.NetworkEndPoint
+### Unity.Networking.Transport.NetworkDriverIdentifierParameter
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.NetworkEndpoint
 
 <div class="section">
 
@@ -176,7 +152,7 @@ GenericNetworkDriver.
 
 </div>
 
-### Unity.Networking.Transport.NetworkInterfaceSendHandle
+### Unity.Networking.Transport.NetworkInterfaceUnmanagedWrapper\`1
 
 <div class="section">
 
@@ -185,19 +161,6 @@ GenericNetworkDriver.
 ### Unity.Networking.Transport.NetworkPacketReceiver
 
 <div class="section">
-
-The NetworkPacketReceiver is an interface for handling received packets,
-needed by the INetworkInterface It either can be used in two main
-scenarios:
-
-1.  Your API requires a pointer to memory that you own. Then you should
-    use AllocateMemory(ref Int32), write to the memory and then
-    AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
-    NetworkPacketReceiver.AppendPacketMode) with NoCopyNeeded. You don't
-    need to deallocate the memory
-2.  Your API gives you a pointer that you don't own. In this case you
-    should use AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
-    NetworkPacketReceiver.AppendPacketMode) with None (default)
 
 </div>
 
@@ -221,12 +184,6 @@ Default NetworkParameter Constants.
 
 </div>
 
-### Unity.Networking.Transport.NetworkPipelineParams
-
-<div class="section">
-
-</div>
-
 ### Unity.Networking.Transport.NetworkPipelineStage
 
 <div class="section">
@@ -237,17 +194,7 @@ Default NetworkParameter Constants.
 
 <div class="section">
 
-</div>
-
-### Unity.Networking.Transport.NetworkSendInterface
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.NetworkSendQueueHandle
-
-<div class="section">
+Identifier for a pipeline stage.
 
 </div>
 
@@ -259,9 +206,41 @@ A list of the parameters that describe the network configuration.
 
 </div>
 
+### Unity.Networking.Transport.NetworkSimulatorParameter
+
+<div class="section">
+
+Parameters for the global network simulator.
+
+</div>
+
 ### Unity.Networking.Transport.NullPipelineStage
 
 <div class="section">
+
+</div>
+
+### Unity.Networking.Transport.OperationResult
+
+<div class="section">
+
+Stores the result of a NetworkDriver operation.
+
+</div>
+
+### Unity.Networking.Transport.PacketProcessor
+
+<div class="section">
+
+Provides an API for processing packets.
+
+</div>
+
+### Unity.Networking.Transport.PacketsQueue
+
+<div class="section">
+
+A queue of packets with an internal pool of preallocated packet buffers
 
 </div>
 
@@ -271,9 +250,25 @@ A list of the parameters that describe the network configuration.
 
 </div>
 
+### Unity.Networking.Transport.ReceiveJobArguments
+
+<div class="section">
+
+Arguments required by the ScheduleReceive jobs.
+
+</div>
+
 ### Unity.Networking.Transport.ReliableSequencedPipelineStage
 
 <div class="section">
+
+</div>
+
+### Unity.Networking.Transport.SendJobArguments
+
+<div class="section">
+
+Arguments required by the ScheduleSend jobs.
 
 </div>
 
@@ -289,7 +284,13 @@ A list of the parameters that describe the network configuration.
 
 </div>
 
-### Unity.Networking.Transport.TransportFunctionPointer-1
+### Unity.Networking.Transport.TransportFunctionPointer\`1
+
+<div class="section">
+
+</div>
+
+### Unity.Networking.Transport.UDPNetworkInterface
 
 <div class="section">
 
@@ -326,14 +327,6 @@ The interface for NetworkParameters
 ### Unity.Networking.Transport.INetworkPipelineStage
 
 <div class="section">
-
-</div>
-
-### Unity.Networking.Transport.IValidatableNetworkParameter
-
-<div class="section">
-
-Interface for adding validation capabilities to the INetworkParameter.
 
 </div>
 
@@ -376,12 +369,6 @@ NetworkFamily indicates what type of underlying medium we are using.
 
 </div>
 
-### Unity.Networking.Transport.SendHandleFlags
-
-<div class="section">
-
-</div>
-
 ## 
 
 ### Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDelegate
@@ -397,24 +384,6 @@ NetworkFamily indicates what type of underlying medium we are using.
 </div>
 
 ### Unity.Networking.Transport.NetworkPipelineStage.SendDelegate
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate
-
-<div class="section">
-
-</div>
-
-### Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate
 
 <div class="section">
 

@@ -22,3 +22,30 @@ The interface for NetworkParameters
 ``` lang-csharp
 public interface INetworkParameter
 ```
+
+## 
+
+### Validate()
+
+<div class="markdown level1 summary">
+
+Checks if the values for all fields are valid. This method will be
+automatically called when adding a paramter to the NetworkSettings.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+bool Validate()
+```
+
+#### Returns
+
+| Type           | Description                             |
+|----------------|-----------------------------------------|
+| System.Boolean | Returns true if the parameter is valid. |

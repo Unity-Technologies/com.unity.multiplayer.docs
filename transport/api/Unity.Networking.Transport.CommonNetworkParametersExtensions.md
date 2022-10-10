@@ -89,34 +89,6 @@ public static class CommonNetworkParametersExtensions
 
 ## 
 
-### GetDataStreamParameters(ref NetworkSettings)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public static NetworkDataStreamParameter GetDataStreamParameters(this ref NetworkSettings settings)
-```
-
-#### Parameters
-
-| Type            | Name     | Description |
-|-----------------|----------|-------------|
-| NetworkSettings | settings |             |
-
-#### Returns
-
-| Type                       | Description |
-|----------------------------|-------------|
-| NetworkDataStreamParameter |             |
-
 ### GetNetworkConfigParameters(ref NetworkSettings)
 
 <div class="markdown level1 summary">
@@ -145,7 +117,7 @@ public static NetworkConfigParameter GetNetworkConfigParameters(this ref Network
 |------------------------|-------------|
 | NetworkConfigParameter |             |
 
-### WithDataStreamParameters(ref NetworkSettings, Int32)
+### WithNetworkConfigParameters(ref NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32)
 
 <div class="markdown level1 summary">
 
@@ -158,36 +130,7 @@ public static NetworkConfigParameter GetNetworkConfigParameters(this ref Network
 #### Declaration
 
 ``` lang-csharp
-public static ref NetworkSettings WithDataStreamParameters(this ref NetworkSettings settings, int size = 0)
-```
-
-#### Parameters
-
-| Type            | Name     | Description |
-|-----------------|----------|-------------|
-| NetworkSettings | settings |             |
-| System.Int32    | size     |             |
-
-#### Returns
-
-| Type            | Description |
-|-----------------|-------------|
-| NetworkSettings |             |
-
-### WithNetworkConfigParameters(ref NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public static ref NetworkSettings WithNetworkConfigParameters(this ref NetworkSettings settings, int connectTimeoutMS = 1000, int maxConnectAttempts = 60, int disconnectTimeoutMS = 30000, int heartbeatTimeoutMS = 500, int reconnectionTimeoutMS = 2000, int maxFrameTimeMS = 0, int fixedFrameTimeMS = 0)
+public static ref NetworkSettings WithNetworkConfigParameters(this ref NetworkSettings settings, int connectTimeoutMS = 1000, int maxConnectAttempts = 60, int disconnectTimeoutMS = 30000, int heartbeatTimeoutMS = 500, int reconnectionTimeoutMS = 2000, int maxFrameTimeMS = 0, int fixedFrameTimeMS = 0, int receiveQueueCapacity = 64, int sendQueueCapacity = 64)
 ```
 
 #### Parameters
@@ -202,6 +145,8 @@ public static ref NetworkSettings WithNetworkConfigParameters(this ref NetworkSe
 | System.Int32    | reconnectionTimeoutMS |             |
 | System.Int32    | maxFrameTimeMS        |             |
 | System.Int32    | fixedFrameTimeMS      |             |
+| System.Int32    | receiveQueueCapacity  |             |
+| System.Int32    | sendQueueCapacity     |             |
 
 #### Returns
 
