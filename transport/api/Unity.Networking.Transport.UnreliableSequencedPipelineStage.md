@@ -1,153 +1,140 @@
+---  
+id: Unity.Networking.Transport.UnreliableSequencedPipelineStage  
+title: Unity.Networking.Transport.UnreliableSequencedPipelineStage  
 ---
-id: Unity.Networking.Transport.UnreliableSequencePipelineStage
-title: Unity.Networking.Transport.UnreliableSequencePipelineStage
----
 
+<div class="markdown level0 summary">
 
-# Struct UnreliableSequencedPipelineStage
+</div>
 
+<div class="markdown level0 conceptual">
 
-The UnreliableSequencedPipelineStage is used to send unreliable packets
-in order.
+</div>
 
-
-
-
-
+<div classs="implements">
 
 ##### Implements
 
-
+<div>
 
 INetworkPipelineStage
 
+</div>
 
+</div>
 
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct UnreliableSequencedPipelineStage : INetworkPipelineStage
 ```
 
+## 
 
+### StaticSize
 
-### Properties
+<div class="markdown level1 summary">
 
-#### StaticSize
+</div>
 
+<div class="markdown level1 conceptual">
 
-Gets the value of the static size
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public readonly int StaticSize { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Methods
+## 
 
-#### StaticInitialize(Byte\*, Int32, NetworkSettings)
+### StaticInitialize(Byte\*, Int32, NetworkSettings)
 
+<div class="markdown level1 summary">
 
-Statics the initialize using the specified static instance buffer
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NetworkPipelineStage StaticInitialize(byte *staticInstanceBuffer, int staticInstanceBufferLength, NetworkSettings settings)
 ```
 
+#### Parameters
 
+| Type            | Name                       | Description |
+|-----------------|----------------------------|-------------|
+| System.Byte\*   | staticInstanceBuffer       |             |
+| System.Int32    | staticInstanceBufferLength |             |
+| NetworkSettings | settings                   |             |
 
-##### Parameters
+#### Returns
 
-| Type            | Name                       | Description                       |
-|-----------------|----------------------------|-----------------------------------|
-| System.Byte\*   | staticInstanceBuffer       | The static instance buffer        |
-| System.Int32    | staticInstanceBufferLength | The static instance buffer length |
-| NetworkSettings | settings                   | The net params                    |
-
-##### Returns
-
-| Type                 | Description                |
-|----------------------|----------------------------|
-| NetworkPipelineStage | The network pipeline stage |
+| Type                 | Description |
+|----------------------|-------------|
+| NetworkPipelineStage |             |
 
 ### Implements
 
-
+<div>
 
 INetworkPipelineStage
 
-
-
-
-
+</div>

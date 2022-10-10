@@ -2,6 +2,9 @@
 id: about
 title: About Unity Transport
 ---
+:::note
+Need an update before releasing UTP 2.0.0
+:::
 
 Unity Transport provides the `com.unity.transport` package, used to add multiplayer and network features to your project.
 

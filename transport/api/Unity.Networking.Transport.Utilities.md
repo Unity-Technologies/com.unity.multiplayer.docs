@@ -1,165 +1,194 @@
+---  
+id: Unity.Networking.Transport.Utilities  
+title: Unity.Networking.Transport.Utilities  
 ---
-id: Unity.Networking.Transport.Utilities
-title: Unity.Networking.Transport.Utilities
----
 
+## 
 
-# Namespace Unity.Networking.Transport.Utilities
+<div class="markdown level0 summary">
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="markdown level0 remarks">
 
+</div>
 
+## 
 
+### Unity.Networking.Transport.Utilities.FixedStringHexExt
 
+<div class="section">
 
-### Classes
+</div>
 
-#### FixedStringHexExt
+### Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions
 
+<div class="section">
 
-Provides Extension methods for FixedStrings
+</div>
 
+### Unity.Networking.Transport.Utilities.NativeListExt
 
+<div class="section">
 
-#### FragmentationStageParameterExtensions
+</div>
 
+### Unity.Networking.Transport.Utilities.RandomHelpers
 
+<div class="section">
 
+</div>
 
-#### NativeListExt
+### Unity.Networking.Transport.Utilities.ReliableStageParameterExtensions
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.SequenceHelpers
 
-#### RandomHelpers
+<div class="section">
 
+</div>
 
-A simple method to obtain a random ushort provided by the class.
+### Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions
 
+<div class="section">
 
+</div>
 
-#### ReliableStageParameterExtensions
+### Unity.Networking.Transport.Utilities.SimulatorUtility
 
+<div class="section">
 
+</div>
 
+## 
 
-#### SequenceHelpers
+### Unity.Networking.Transport.Utilities.FragmentationUtility
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.FragmentationUtility.Parameters
 
-#### SimulatorStageParameterExtensions
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility
 
+<div class="section">
 
-### Structs
+</div>
 
-#### FragmentationUtility
+### Unity.Networking.Transport.Utilities.ReliableUtility.Context
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.Packet
 
-#### FragmentationUtility.Parameters
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.PacketHeader
 
+<div class="section">
 
-#### ReliableUtility
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.PacketInformation
 
+<div class="section">
 
+</div>
 
-#### ReliableUtility.Context
+### Unity.Networking.Transport.Utilities.ReliableUtility.PacketTimers
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.ParameterConstants
 
-#### ReliableUtility.Packet
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.Parameters
 
+<div class="section">
 
-#### ReliableUtility.PacketHeader
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.RTTInfo
 
+<div class="section">
 
+</div>
 
-#### ReliableUtility.PacketInformation
+### Unity.Networking.Transport.Utilities.ReliableUtility.SharedContext
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.Statistics
 
-#### ReliableUtility.PacketTimers
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.SequenceBufferContext
 
+<div class="section">
 
-#### ReliableUtility.ParameterConstants
+</div>
 
+### Unity.Networking.Transport.Utilities.SimulatorUtility.Context
 
+<div class="section">
 
+</div>
 
-#### ReliableUtility.Parameters
+### Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.SimulatorUtility.Parameters
 
-#### ReliableUtility.RTTInfo
-
-
-
-
-#### ReliableUtility.SharedContext
-
-
-
-
-#### ReliableUtility.Statistics
-
-
-
-
-#### SequenceBufferContext
-
-
-
-
-#### SimulatorUtility
-
-
-
-
-#### SimulatorUtility.Context
-
-
-
-
-#### SimulatorUtility.DelayedPacket
-
-
-
-
-#### SimulatorUtility.Parameters
-
+<div class="section">
 
 Configuration parameters for the simulator pipeline stage.
 
+</div>
 
+## 
 
-### Enums
+### Unity.Networking.Transport.Utilities.ApplyMode
 
-#### ReliableUtility.ErrorCodes
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.ErrorCodes
 
+<div class="section">
 
-#### ReliableUtility.PacketType
+</div>
 
+### Unity.Networking.Transport.Utilities.ReliableUtility.PacketType
 
+<div class="section">
 
-
-
-
+</div>

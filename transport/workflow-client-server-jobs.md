@@ -1,6 +1,6 @@
 ---
 id: jobs
-title: Create jobified client and server
+title: Efficient client and server
 ---
 
 In the workflow [Creating a minimal client and server](workflow-client-server.md), the client should look like this [code example](samples/clientbehaviour.cs.md).

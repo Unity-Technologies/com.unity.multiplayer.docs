@@ -1,163 +1,141 @@
+---  
+id: Unity.Networking.Transport.Relay.RelayHMACKey  
+title: Unity.Networking.Transport.Relay.RelayHMACKey  
 ---
-id: Unity.Networking.Transport.Relay.RelayHMACKey
-title: Unity.Networking.Transport.Relay.RelayHMACKey
----
 
+<div class="markdown level0 summary">
 
-# Struct RelayHMACKey
+</div>
 
+<div class="markdown level0 conceptual">
 
-Used to represent the HMACKey for the Relay Service
+</div>
 
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Relay
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct RelayHMACKey
 ```
 
+## 
 
+### k_Length
 
-### Fields
+<div class="markdown level1 summary">
 
-#### k_Length
+</div>
 
+<div class="markdown level1 conceptual">
 
-The length in bytes of the RelayHMACKey.
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public const int k_Length = 64
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### Value
+### Value
 
+<div class="markdown level1 summary">
 
-The raw data of the HMAC key.
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public byte *Value
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-### Methods
+## 
 
-#### FromBytePointer(Byte\*, Int32)
+### FromBytePointer(Byte\*, Int32)
 
+<div class="markdown level1 summary">
 
-Converts a byte pointer to a RelayHMACKey.
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static RelayHMACKey FromBytePointer(byte *data, int length)
 ```
 
+#### Parameters
 
+| Type          | Name   | Description |
+|---------------|--------|-------------|
+| System.Byte\* | data   |             |
+| System.Int32  | length |             |
 
-##### Parameters
+#### Returns
 
-| Type          | Name   | Description                                   |
-|---------------|--------|-----------------------------------------------|
-| System.Byte\* | data   | The pointer to the data of the Allocation Id. |
-| System.Int32  | length | The length of the data.                       |
-
-##### Returns
-
-| Type         | Description                                                |
-|--------------|------------------------------------------------------------|
-| RelayHMACKey | Returns a RelayHMACKey constructed from the provided data. |
-
-##### Exceptions
-
-| Type                     | Condition                                                                   |
-|--------------------------|-----------------------------------------------------------------------------|
-| System.ArgumentException | Provided byte array length is invalid, must be {k_Length} but got {length}. |
-
-
-
+| Type         | Description |
+|--------------|-------------|
+| RelayHMACKey |             |

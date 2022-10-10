@@ -4,6 +4,10 @@ title: Install Unity Transport
 description: Install Unity Transport, the com.unity.transport package, using the Package Manager.
 ---
 
+:::note
+Need an update before releasing UTP 2.0.0
+:::
+
 Follow these instructions to install Unity Transport.
 
 ## Prerequisites

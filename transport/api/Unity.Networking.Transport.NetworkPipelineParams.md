@@ -1,130 +1,129 @@
+---  
+id: Unity.Networking.Transport.NetworkPipelineParams  
+title: Unity.Networking.Transport.NetworkPipelineParams  
 ---
-id: Unity.Networking.Transport.NetworkPipelineParams
-title: Unity.Networking.Transport.NetworkPipelineParams
----
 
+<div class="markdown level0 summary">
 
-# Struct NetworkPipelineParams
+</div>
 
+<div class="markdown level0 conceptual">
 
-The network pipeline params
+</div>
 
-
-
-
-
+<div classs="implements">
 
 ##### Implements
 
-
+<div>
 
 INetworkParameter
 
+</div>
 
+<div>
 
+IValidatableNetworkParameter
 
+</div>
 
+</div>
+
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-
 ``` lang-csharp
-public struct NetworkPipelineParams : INetworkParameter
+public struct NetworkPipelineParams : INetworkParameter, IValidatableNetworkParameter
 ```
 
+## 
 
+### initialCapacity
 
-### Fields
+<div class="markdown level1 summary">
 
-#### initialCapacity
+</div>
 
+<div class="markdown level1 conceptual">
 
-The initial capacity
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int initialCapacity
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Methods
+## 
 
-#### Validate()
+### Validate()
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public bool Validate()
 ```
 
-
-
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -132,11 +131,14 @@ public bool Validate()
 
 ### Implements
 
-
+<div>
 
 INetworkParameter
 
+</div>
 
+<div>
 
+IValidatableNetworkParameter
 
-
+</div>
