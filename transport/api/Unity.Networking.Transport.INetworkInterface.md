@@ -211,6 +211,6 @@ JobHandle ScheduleSend(ref SendJobArguments arguments, JobHandle dep)
 
 <div>
 
-ManagedNetworkInterfaceExtensions.WrapToUnmanaged\<T>(T)
+ManagedNetworkInterfaceExtensions.WrapToUnmanaged\&lt;T&gt;(T)
 
 </div>

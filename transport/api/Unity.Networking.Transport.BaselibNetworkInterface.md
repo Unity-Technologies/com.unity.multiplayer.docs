@@ -301,6 +301,6 @@ System.IDisposable
 
 <div>
 
-ManagedNetworkInterfaceExtensions.WrapToUnmanaged\<T>(T)
+ManagedNetworkInterfaceExtensions.WrapToUnmanaged\&lt;T&gt;T)
 
 </div>

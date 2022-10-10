@@ -89,7 +89,7 @@ public static class ManagedNetworkInterfaceExtensions
 
 ## 
 
-### WrapToUnmanaged\<T>(T)
+### WrapToUnmanaged\&lt;T&gt;(T)
 
 <div class="markdown level1 summary">
 
@@ -118,7 +118,7 @@ public static NetworkInterfaceUnmanagedWrapper<T> WrapToUnmanaged<T>(this T netw
 
 | Type                                 | Description                                                       |
 |--------------------------------------|-------------------------------------------------------------------|
-| NetworkInterfaceUnmanagedWrapper\<T> | Returns the unmanaged wrapper instance for the network interface. |
+| NetworkInterfaceUnmanagedWrapper\&lt;T&gt; | Returns the unmanaged wrapper instance for the network interface. |
 
 #### Type Parameters
 

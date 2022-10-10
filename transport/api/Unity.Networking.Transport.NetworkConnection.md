@@ -472,6 +472,6 @@ public static bool operator !=(NetworkConnection lhs, NetworkConnection rhs)
 
 <div>
 
-System.IEquatable\<T>
+System.IEquatable\&lt;T&gt;
 
 </div>

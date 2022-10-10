@@ -131,7 +131,7 @@ public static UserNetworkVariableSerialization<T>.ReadValueDelegate ReadValue
 
 <div class="markdown level1 summary">
 
-The UserNetworkVariableSerialization\&lt;T&gt;.WriteValueDelegate delegate
+The UserNetworkVariableSerialization\&lt;T&gt;.WriteValueDelegate delegate 
 handler declaration
 
 </div>
