@@ -131,7 +131,7 @@ public bool Equals(NetworkPipelineStageId other)
 |----------------|-------------|
 | System.Boolean |             |
 
-### Get\<T>()
+### Get\&lt;T&gt;()
 
 <div class="markdown level1 summary">
 
@@ -256,6 +256,6 @@ public static bool operator !=(NetworkPipelineStageId lhs, NetworkPipelineStageI
 
 <div>
 
-System.IEquatable\<T>
+System.IEquatable\&lt;T&gt;
 
 </div>

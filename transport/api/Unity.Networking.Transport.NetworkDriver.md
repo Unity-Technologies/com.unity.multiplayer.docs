@@ -891,7 +891,7 @@ public NetworkEndpoint GetLocalEndpoint()
 |-----------------|-----------------------------------|
 | NetworkEndpoint | The local endpoint of the driver. |
 
-### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray\<Byte>, out NativeArray\<Byte>, out NativeArray\<Byte>)
+### GetPipelineBuffers(NetworkPipeline, NetworkPipelineStageId, NetworkConnection, out NativeArray\&lt;Byte&gt;, out NativeArray\&lt;Byte&gt;, out NativeArray\&lt;Byte&gt;)
 
 <div class="markdown level1 summary">
 

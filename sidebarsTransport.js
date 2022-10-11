@@ -136,16 +136,12 @@ module.exports = {
                 },
      
                 {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "FragmentationPipelineStage",
-                    "items": [
-                        {
+                                         
                             "type": "doc",
                             "id": "api/Unity.Networking.Transport.FragmentationPipelineStage",
                             "label": "FragmentationPipelineStage"
-                        }
-                    ]
+                       
+                    
                 },
                 {
                     "type": "doc",
