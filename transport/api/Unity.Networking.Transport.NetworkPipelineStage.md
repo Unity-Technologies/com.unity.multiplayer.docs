@@ -65,7 +65,7 @@ public struct NetworkPipelineStage
 
 ## 
 
-### NetworkPipelineStage(TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate>, TransportFunctionPointer\<NetworkPipelineStage.SendDelegate>, TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate>, Int32, Int32, Int32, Int32, Int32)
+### NetworkPipelineStage(TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;, TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt;, TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt;, Int32, Int32, Int32, Int32, Int32)
 
 <div class="markdown level1 summary">
 
@@ -85,9 +85,9 @@ public NetworkPipelineStage(TransportFunctionPointer<NetworkPipelineStage.Receiv
 
 | Type                                                                          | Name                 | Description |
 |-------------------------------------------------------------------------------|----------------------|-------------|
-| TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate\>              | Receive              |             |
-| TransportFunctionPointer\<NetworkPipelineStage.SendDelegate\>                 | Send                 |             |
-| TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate\> | InitializeConnection |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt;              | Receive              |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt;                | Send                 |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; | InitializeConnection |             |
 | System.Int32                                                                  | ReceiveCapacity      |             |
 | System.Int32                                                                  | SendCapacity         |             |
 | System.Int32                                                                  | HeaderCapacity       |             |
@@ -138,7 +138,7 @@ public TransportFunctionPointer<NetworkPipelineStage.InitializeConnectionDelegat
 
 | Type                                                                          | Description |
 |-------------------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\<NetworkPipelineStage.InitializeConnectionDelegate\> |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.InitializeConnectionDelegate&gt; |             |
 
 ### PayloadCapacity
 
@@ -182,7 +182,7 @@ public TransportFunctionPointer<NetworkPipelineStage.ReceiveDelegate> Receive
 
 | Type                                                             | Description |
 |------------------------------------------------------------------|-------------|
-| TransportFunctionPointer\<NetworkPipelineStage.ReceiveDelegate\> |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.ReceiveDelegate&gt; |             |
 
 ### ReceiveCapacity
 
@@ -226,7 +226,7 @@ public TransportFunctionPointer<NetworkPipelineStage.SendDelegate> Send
 
 | Type                                                          | Description |
 |---------------------------------------------------------------|-------------|
-| TransportFunctionPointer\<NetworkPipelineStage.SendDelegate\> |             |
+| TransportFunctionPointer\&lt;NetworkPipelineStage.SendDelegate&gt; |             |
 
 ### SendCapacity
 

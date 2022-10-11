@@ -297,7 +297,7 @@ public void AppendToPayload(PacketProcessor processor)
 |--------------------------|---------------------------------------------------------------------------------------|
 | System.ArgumentException | Throws an exception if there are not enough bytes available at the end of the packet. |
 
-### AppendToPayload\<T>(T)
+### AppendToPayload\&lt;T&gt;(T)
 
 <div class="markdown level1 summary">
 
@@ -390,7 +390,7 @@ Drops the packet.
 public void Drop()
 ```
 
-### GetPayloadDataRef\<T>(Int32)
+### GetPayloadDataRef\&lt;T&gt;(Int32)
 
 <div class="markdown level1 summary">
 
@@ -457,7 +457,7 @@ public void *GetUnsafePayloadPtr()
 |---------------|-------------------------------|
 | System.Void\* | A pointer to the packet data. |
 
-### PrependToPayload\<T>(T)
+### PrependToPayload\&lt;T&gt;(T)
 
 <div class="markdown level1 summary">
 
@@ -526,7 +526,7 @@ public void RemoveFromPayloadStart(void *ptr, int size)
 |--------------------------|--------------------------------------------|
 | System.ArgumentException | If provided buffer is larger than payload. |
 
-### RemoveFromPayloadStart\<T>()
+### RemoveFromPayloadStart\&lt;T&gt;()
 
 <div class="markdown level1 summary">
 

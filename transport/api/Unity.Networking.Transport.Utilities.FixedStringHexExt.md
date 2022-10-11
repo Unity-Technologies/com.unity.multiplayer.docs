@@ -89,7 +89,7 @@ public static class FixedStringHexExt
 
 ## 
 
-### AppendHex\<T>(ref T, UInt16)
+### AppendHex\&lt;T&gt;(ref T, UInt16)
 
 <div class="markdown level1 summary">
 
@@ -125,7 +125,7 @@ public static FormatError AppendHex<T>(this ref T str, ushort val)
 |------|-------------|
 | T    |             |
 
-### AppendHex2\<T>(ref T, UInt16)
+### AppendHex2\&lt;T&gt;(ref T, UInt16)
 
 <div class="markdown level1 summary">
 

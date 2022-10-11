@@ -17,7 +17,7 @@ title: Unity.Networking.Transport.NetworkInterfaceEndPoint
 
 <div>
 
-System.IEquatable\<NetworkInterfaceEndPoint\>
+System.IEquatable\&lt;NetworkInterfaceEndPoint&gt;
 
 </div>
 
@@ -110,6 +110,6 @@ public bool Equals(NetworkInterfaceEndPoint other)
 
 <div>
 
-System.IEquatable\<T>
+System.IEquatable\&lt;T&gt;
 
 </div>

@@ -368,12 +368,12 @@ public static bool operator !=(RelayAllocationId lhs, RelayAllocationId rhs)
 
 <div>
 
-System.IEquatable\<T>
+System.IEquatable\&lt;T&gt;
 
 </div>
 
 <div>
 
-System.IComparable\<T>
+System.IComparable\&lt;T&gt;
 
 </div>

@@ -471,7 +471,7 @@ public static NetworkEndpoint Parse(string address, ushort port, NetworkFamily f
 |-----------------|-------------|
 | NetworkEndpoint |             |
 
-### SetRawAddressBytes(NativeArray\<Byte>, NetworkFamily)
+### SetRawAddressBytes(NativeArray\&lt;Byte&gt;, NetworkFamily)
 
 <div class="markdown level1 summary">
 
@@ -491,7 +491,7 @@ public void SetRawAddressBytes(NativeArray<byte> bytes, NetworkFamily family = N
 
 | Type                       | Name   | Description |
 |----------------------------|--------|-------------|
-| NativeArray\<System.Byte\> | bytes  |             |
+| NativeArray\&lt;System.Byte&gt; | bytes  |             |
 | NetworkFamily              | family |             |
 
 ### ToFixedString()
@@ -669,6 +669,5 @@ public static bool operator !=(NetworkEndpoint lhs, NetworkEndpoint rhs)
 
 <div>
 
-System.IEquatable\<T>
-
+System.IEquatable\&lt;T&gt;
 </div>

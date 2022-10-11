@@ -495,7 +495,7 @@ public static NetworkDriver Create(NetworkSettings settings)
 |----------------------------------|-----------|
 | System.InvalidOperationException |           |
 
-### Create\<N>(N)
+### Create\&lt;N&gt;(N)
 
 <div class="markdown level1 summary">
 
@@ -530,7 +530,7 @@ public static NetworkDriver Create<N>(N networkInterface)
 |------|-------------|
 | N    |             |
 
-### Create\<N>(N, NetworkSettings)
+### Create\&lt;N&gt;(N, NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -566,7 +566,7 @@ public static NetworkDriver Create<N>(N networkInterface, NetworkSettings settin
 |------|-------------|
 | N    |             |
 
-### Create\<N>(ref N)
+### Create\&lt;N&gt;(ref N)
 
 <div class="markdown level1 summary">
 
@@ -601,7 +601,7 @@ public static NetworkDriver Create<N>(ref N networkInterface)
 |------|-------------|
 | N    |             |
 
-### Create\<N>(ref N, NetworkSettings)
+### Create\&lt;N&gt;(ref N, NetworkSettings)
 
 <div class="markdown level1 summary">
 
@@ -637,7 +637,7 @@ public static NetworkDriver Create<N>(ref N networkInterface, NetworkSettings se
 |------|-------------|
 | N    |             |
 
-### CreatePipeline(NativeArray\<NetworkPipelineStageId>)
+### CreatePipeline(NativeArray\&lt;NetworkPipelineStageId&gt;)
 
 <div class="markdown level1 summary">
 
@@ -659,7 +659,7 @@ public NetworkPipeline CreatePipeline(NativeArray<NetworkPipelineStageId> stages
 
 | Type                                  | Name   | Description                                     |
 |---------------------------------------|--------|-------------------------------------------------|
-| NativeArray\<NetworkPipelineStageId\> | stages | Array of stage IDs the pipeline should contain. |
+| NativeArray\&lt;NetworkPipelineStageId&gt; | stages | Array of stage IDs the pipeline should contain. |
 
 #### Returns
 
@@ -916,9 +916,9 @@ public void GetPipelineBuffers(NetworkPipeline pipeline, NetworkPipelineStageId 
 | NetworkPipeline            | pipeline              |             |
 | NetworkPipelineStageId     | stageId               |             |
 | NetworkConnection          | connection            |             |
-| NativeArray\<System.Byte\> | readProcessingBuffer  |             |
-| NativeArray\<System.Byte\> | writeProcessingBuffer |             |
-| NativeArray\<System.Byte\> | sharedBuffer          |             |
+| NativeArray\&lt;System.Byte&gt; | readProcessingBuffer  |             |
+| NativeArray\&lt;System.Byte&gt; | writeProcessingBuffer |             |
+| NativeArray\&lt;System.Byte&gt; | sharedBuffer          |             |
 
 #### Exceptions
 
@@ -1158,7 +1158,7 @@ public NetworkEvent.Type PopEventForConnection(NetworkConnection connectionId, o
 |-------------------|-------------|
 | NetworkEvent.Type |             |
 
-### RegisterPipelineStage\<T>(T)
+### RegisterPipelineStage\&lt;T&gt;(T)
 
 <div class="markdown level1 summary">
 

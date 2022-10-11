@@ -132,7 +132,7 @@ public readonly bool IsCreated { get; }
 
 ## 
 
-### AddRawParameterStruct\<T>(ref T)
+### AddRawParameterStruct\&lt;T&gt;(ref T)
 
 <div class="markdown level1 summary">
 
@@ -210,7 +210,7 @@ public NetworkSettings AsReadOnly()
 public void Dispose()
 ```
 
-### TryGet\<T>(out T)
+### TryGet\&lt;T&gt;(out T)
 
 <div class="markdown level1 summary">
 

@@ -94,7 +94,7 @@ public TransportFunctionPointer(T executeDelegate)
 |------|-----------------|-------------|
 | T    | executeDelegate |             |
 
-### TransportFunctionPointer(FunctionPointer\<T>)
+### TransportFunctionPointer(FunctionPointer\&lt;T&gt;)
 
 <div class="markdown level1 summary">
 
@@ -114,7 +114,7 @@ public TransportFunctionPointer(FunctionPointer<T> Pointer)
 
 | Type                | Name    | Description |
 |---------------------|---------|-------------|
-| FunctionPointer\<T> | Pointer |             |
+| FunctionPointer\&lt;T&gt; | Pointer |             |
 
 ## 
 
@@ -138,7 +138,7 @@ public readonly FunctionPointer<T> Ptr
 
 | Type                | Description |
 |---------------------|-------------|
-| FunctionPointer\<T> |             |
+| FunctionPointer\&lt;T&gt; |             |
 
 ## 
 
@@ -168,7 +168,7 @@ public static TransportFunctionPointer<T> Burst(T burstCompilableDelegate)
 
 | Type                         | Description |
 |------------------------------|-------------|
-| TransportFunctionPointer\<T> |             |
+| TransportFunctionPointer\&lt;T&gt; |             |
 
 ### Managed(T)
 
@@ -196,4 +196,4 @@ public static TransportFunctionPointer<T> Managed(T managedDelegate)
 
 | Type                         | Description |
 |------------------------------|-------------|
-| TransportFunctionPointer\<T> |             |
+| TransportFunctionPointer\&lt;T&gt; |             |

@@ -17,7 +17,7 @@ title: Unity.Networking.Transport.NetworkPipeline
 
 <div>
 
-System.IEquatable\<NetworkPipeline\>
+System.IEquatable\&lt;NetworkPipeline&gt;
 
 </div>
 
@@ -247,6 +247,6 @@ public static bool operator !=(NetworkPipeline lhs, NetworkPipeline rhs)
 
 <div>
 
-System.IEquatable\<T>
+System.IEquatable\&lt;T&gt;
 
 </div>
