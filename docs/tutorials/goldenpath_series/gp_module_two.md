@@ -86,7 +86,7 @@ Now we will test the Server-controlled Network Variable works as we intended.
 
 1. Select **File > Build and Run**. 
 1. Stop the player.
-2. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper).
+2. Launch the client and server together in a terminal as shown in [Testing the command line helper](../helloworld.md#testing-the-command-line-helper).
 3. After a brief delay, the client and server will spawn.  
 4. You should see the following in the console, showing that the server and client are sharing the variable:
 
