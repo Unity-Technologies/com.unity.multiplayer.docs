@@ -68,10 +68,8 @@ This section adds in a player object and spawns it for each connected player.
   :::
 
 5. Select `NetworkManager`.
-6. Inside the `NetworkManager` component tab, locate the  `NetworkPrefabs` field. 
-7. Click `+` to create a slot.
-8. Drag this player prefab from above into the new empty slot
-9. Drag the prefab also into the `Player Prefab` slot. 
+6. Inside the `NetworkManager` component tab, locate the  `Player Prefab` field. 
+7. Drag this player prefab from above into this field.
 
   :::important
   When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as the `Player Prefab` no player object will be spawned.
