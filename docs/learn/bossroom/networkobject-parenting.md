@@ -13,8 +13,8 @@ Boss Room leverages `NetworkObject` parenting through the server-driven `PickUp`
 
 At its root, `PickUpPot` contains a `NetworkObject`, a `NetworkTransform`, and a `PositionConstraint` component. `AutoObjectParentSync` is enabled on its `NetworkTransform` (as is by default) so that:
 
-1. `NetworkObject` can verify server-side if parenting a Heavy object to another `NetworkObject` is allowed.
-2. `NetworkObject` can notify us when the parent has successfully been modified server-side.
+1. The `NetworkObject` can verify server-side if parenting a Heavy object to another `NetworkObject` is allowed.
+2. The `NetworkObject` can notify us when the parent has successfully been modified server-side.
 
 To accommodate the limitation highlighted at the beginning of this document, Boss Room leverages the `PositionConstraint` component to simulate an object following a character’s position.
 
