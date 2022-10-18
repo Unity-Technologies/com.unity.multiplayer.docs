@@ -9,7 +9,7 @@ Required reading: [NetworkObject Parenting](../../advanced-topics/networkobject-
 
 Before detailing Boss Room’s approach toon `NetworkObject` parenting, it’s important to highlight a limitation of Netcode: A dynamically-spawned `NetworkObject` **cannot** contain another `NetworkObject` in its hierarchy. If you spawn such a `NetworkObject` is spawned, you cannot spawn children `NetworkObjects` will not be spawned. You can only add multiple `NetworkObject` components to a `NetworkObject` that is part of a scene.
 
-Inside Boss Room leverages, `NetworkObject` parenting is leveraged through the server-driven `PickUp` action (see [`PickUpAction.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs)), where a character has the ability to pick up a specially-tagged, in-scene placed `NetworkObject` (see [`PickUpPot` prefab](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Prefabs/Game/PickUpPot.prefab)].
+Boss Room leverages `NetworkObject` parenting through the server-driven `PickUp` action (see [`PickUpAction.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs)), where a character has the ability to pick up a specially-tagged, in-scene placed `NetworkObject` (see [`PickUpPot` prefab](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Prefabs/Game/PickUpPot.prefab)].
 
 At its root, `PickUpPot` contains a `NetworkObject`, a `NetworkTransform`, and a `PositionConstraint` component. `AutoObjectParentSync` is enabled on its `NetworkTransform` (as is by default) so that:
 
