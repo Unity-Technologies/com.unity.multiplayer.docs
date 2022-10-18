@@ -162,9 +162,8 @@ This section adds some basic RPCs to the project.
 1. Click the **Player** prefab.
 1. In the  **Player** prefab Inspector tab, click **Add Component**.
 1. Click **Scripts**, and add the `RpcTest.cs` script you created earlier.
-1. Right Click **Player** prefab. 
-1. Open the `RpcTest.cs` script.
-1. Edit the `RpcTest.cs` script to match the following.
+2. Open the `RpcTest.cs` script.
+3. Edit the `RpcTest.cs` script to match the following.
 
 <details open>
 <summary>Click to show/hide the Code.
