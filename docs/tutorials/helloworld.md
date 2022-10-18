@@ -127,9 +127,9 @@ public class NetworkCommandLine : MonoBehaviour
 
        var args = GetCommandlineArgs();
 
-       if (args.TryGetValue("-mlapi", out string mlapiValue))
+       if (args.TryGetValue("-mode", out string mode))
        {
-           switch (mlapiValue)
+           switch (mode)
            {
                case "server":
                    netManager.StartServer();
