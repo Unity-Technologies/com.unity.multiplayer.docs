@@ -93,9 +93,9 @@ Now we will test the Server-controlled Network Variable works as we intended.
 
 ```
 Server's var initialized to: 0
-Server set its var to: 0.1, has client var at: 0
-Server set its var to: 3.099999, has client var at: 2.6
-Server set its var to: 6.099997, has client var at: 5.599997
+Server set its var to: 0.1
+Server set its var to: 3.099999
+Server set its var to: 6.099997
 ```
 :::note
 Since the printing to the terminal does not happen on every tick, the numbers will not match up perfectly.
