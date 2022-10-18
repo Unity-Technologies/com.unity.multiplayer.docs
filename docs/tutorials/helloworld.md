@@ -171,7 +171,9 @@ public class NetworkCommandLine : MonoBehaviour
 
 9. Paste the copied code into your code editor.
 1. Save your changes. Your script will reload in the Unity Editor.
-1. Back in the Editor, select **File** > **Build Settings** > **Player Settings...**. Beneath **Settings for PC, Mac, & Linux Standalone**, click **Resolution and Presentation** to open the section options.
+1. Back in the Editor, open **Edit** -> **Project Settings**
+1. Select the **Player tab**. 
+1. Expand the **Resolution and Presentation**.
 1. From **Resolution** > **Fullscreen Mode**, change `Fullscreen Window` to `Windowed`.    
 1. Back to the Editor main window, save your scene.
 
