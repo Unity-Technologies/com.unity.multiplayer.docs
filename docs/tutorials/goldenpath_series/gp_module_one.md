@@ -155,7 +155,7 @@ namespace HelloWorld
             GUILayout.Label("Mode: " + mode);
         }
 
-static void SubmitNewPosition()
+        static void SubmitNewPosition()
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
             {
@@ -218,7 +218,7 @@ We call these methods inside of `OnGUI()`.
 
 ```csharp
 
-void OnGUI()
+        void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
             if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
