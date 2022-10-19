@@ -214,22 +214,22 @@ You may get a UAC prompt requesting permission for the binary to run you should 
 
   Server: 
   ```
-  <Path to Project>\Build\HelloWorld.exe -mlapi server
+  <Path to Project>\Build\HelloWorld.exe -mode server
   ```
   
   Client:
   ```
-  <path to project>\Build\HelloWorld.exe -mlapi client
+  <path to project>\Build\HelloWorld.exe -mode client
   ```
 
   To run these commands on a single line:
   ```
-  HelloWorld\Build\HelloWorld.exe -mlapi server & HelloWorld\Build\HelloWorld.exe -mlapi client
+  HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
   ```
 
   Example:
   ```
-  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -mlapi server & HelloWorld\Build\HelloWorld.exe -mlapi client
+  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
   ```
 
 :::important
@@ -245,17 +245,17 @@ Modify the commands as follows:
 
   Server: 
   ```
-  <Path to Project>\Build\HelloWorld.exe -logfile log-server.txt -mlapi server 
+  <Path to Project>\Build\HelloWorld.exe -logfile log-server.txt -mode server 
   ```
   
   Client:
   ```
-  <Path to Project>\Build\HelloWorld.exe  -logfile log-client.txt -mlapi client
+  <Path to Project>\Build\HelloWorld.exe  -logfile log-client.txt -mode client
   ```
 
   Example (Running as a single command line):
   ```
-  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile -log-server.txt -mlapi server & HelloWorld\Build\HelloWorld.exe -logfile log-client.txt -mlapi client
+  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile -log-server.txt -mode server & HelloWorld\Build\HelloWorld.exe -logfile log-client.txt -mode client
   ```
 :::
 
@@ -270,17 +270,17 @@ For Mac you should do the following:
 
 Server
 ```
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi server -logfile -
+<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile -
 ```
 
 Client
 ```
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi client -logfile -
+<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```
 
 Run both as a single command:
 ```
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi server -logfile - & ; ~ <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi client -logfile -
+<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile - & ; ~ <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```
 </TabItem>
 </Tabs>
