@@ -49,26 +49,30 @@ If you need to initialize other components or objects based on a `NetworkVariabl
 ### Supported Types
 
 :::note
-While `NetworkVariable` supports both managed and [unmanaged](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint)types, managed types do come with an amount of additional overhead. Efforts are made to minimize GC allocations for managed `INetworkSerializable` types (a new value is only allocated if the value changes from `null` to non-`null`), but the ability of a type to be `null` adds additional overhead both in logic (checking for nulls before serializing) and bandwidth (every serialization carries an additional byte indicating whether or not the value is `null`).
+Although `NetworkVariable` supports both managed and [unmanaged](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint) types, managed types come with additional overhead.
 
-Also note that any type which contains a managed type is itself a managed type - so a struct that contains `int[]` is a managed type because `int[]` is a managed type.
+Netcode has made efforts to minimize Garbage Collected allocations for managed `INetworkSerializable` types (for example, a new value is only allocated if the value changes from `null` to non-`null`). However, the ability of a type to be `null` adds additional overhead both in logic (checking for nulls before serializing) and bandwidth (every serialization carries an additional byte indicating whether or not the value is `null`).
+
+Additionally, any type that contains a managed type is itself a managed type - so a struct that contains `int[]` is a managed type because `int[]` is a managed type.
+
+Finally, while managed `INetworkSerializable` types are serialized in-place (and thus don't incur allocations for simple value updates), C# arrays and managed types serialized through custom serialization are **not** serialized in-place, and will incur an allocation on every update.
 :::
 
 `NetworkVariable` provides support for the following types:
 
-* C# unmanaged [primitive types](../advanced-topics/serialization/cprimitives.md): `bool`, `byte`, `sbyte`, `char`, `decimal`, `double`, `float`, `int`, `uint`, `long`, `ulong`, `short`, and `ushort`, which will be serialized by direct memcpy into/out of the buffer.
+* C# unmanaged [primitive types](../advanced-topics/serialization/cprimitives.md) (which are serialized by direct memcpy into/out of the buffer): `bool`, `byte`, `sbyte`, `char`, `decimal`, `double`, `float`, `int`, `uint`, `long`, `ulong`, `short`, and `ushort`
 
-* Unity unmanaged [built-in types](../advanced-topics/serialization/unity-primitives.md): `Vector2`, `Vector3`, `Vector2Int`, `Vector3Int`, `Vector4`, `Quaternion`, `Color`, `Color32`, `Ray`, `Ray2D`, which will be serialized by direct memcpy into/out of the buffer.
+* Unity unmanaged [built-in types](../advanced-topics/serialization/unity-primitives.md) (which will be serialized by direct memcpy into/out of the buffer.): `Vector2`, `Vector3`, `Vector2Int`, `Vector3Int`, `Vector4`, `Quaternion`, `Color`, `Color32`, `Ray`, `Ray2D`
 
-* Any [`enum`](../advanced-topics/serialization/enum-types.md) types, which will be serialized by direct memcpy into/out of the buffer.
+* Any [`enum`](../advanced-topics/serialization/enum-types.md) types (which will be serialized by direct memcpy into/out of the buffer).
 
-* Any type (managed or unmanaged) that implements [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md), which will be serialized by calling their `NetworkSerialize` method. **On the reading side, these values are deserialized in-place, meaning the existing instance will be reused and any non-serialized values will be left in their current state.**
+* Any type (managed or unmanaged) that implements [`INetworkSerializable`](../advanced-topics/serialization/inetworkserializable.md) (which will be serialized by calling their `NetworkSerialize` method.) **On the reading side, these values are deserialized in-place, meaning the existing instance will be reused and any non-serialized values will be left in their current state.**
 
-* Any unmanaged struct type that implements [`INetworkSerializeByMemcpy`](../advanced-topics/serialization/inetworkserializebymemcpy.md), which will be serialized by direct memcpy of the entire struct into/out of the buffer.
+* Any unmanaged struct type that implements [`INetworkSerializeByMemcpy`](../advanced-topics/serialization/inetworkserializebymemcpy.md) (which will be serialized by direct memcpy of the entire struct into/out of the buffer).
 
-* Unity [fixed string](../advanced-topics/serialization/fixedstrings.md) types: `FixedString32Bytes`, `FixedString64Bytes`, `FixedString128Bytes`, `FixedString512Bytes`, and `FixedString4096Bytes`. These are serialized intelligently, only sending the used portion across the network and adjusting the "length" of the string on the other side to fit the received data. 
+* Unity [fixed string](../advanced-topics/serialization/fixedstrings.md) types: `FixedString32Bytes`, `FixedString64Bytes`, `FixedString128Bytes`, `FixedString512Bytes`, and `FixedString4096Bytes` (which are serialized intelligently, only sending the used portion across the network and adjusting the "length" of the string on the other side to fit the received data). 
 
-For any types that don't fit within this list, including managed types and unmanaged types with pointers, it's possible to provide delegates informing the serialization system how to serialize and deserialize your values. For more information on that, see [Custom Serialization](../advanced-topics/custom-serialization.md). A limitation of custom serialization is that, unlike `INetworkSerializable` types, types using custom serialization are not able to be read in-place, so managed types will, by necessity, incur a GC allocationpr on every update.
+For any types that don't fit within this list, including managed types and unmanaged types with pointers: It's possible to provide delegates informing the serialization system of how to serialize and deserialize your values. For more information, see [Custom Serialization](../advanced-topics/custom-serialization.md). A limitation of custom serialization is that, unlike `INetworkSerializable` types, types using custom serialization are not able to be read in-place, so managed types will, by necessity, incur a Garbage Collected allocation (which can cause performance issues) on every update.
 
 ### Synchronization and Notification Example
 
@@ -124,7 +128,7 @@ public class TestNetworkVariableSynchronization : NetworkBehaviour
         NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
     }
 }
-```
+ ```
 
 In the above example:
  - The server initializes the `NetworkVariable` upon the associated `NetworkObject` being spawned.
@@ -389,7 +393,7 @@ public struct WeaponBooster : INetworkSerializable, System.IEquatable<WeaponBoos
 }
 ```
 
-The above first half of the example code shows how a complex type that implements `INetworkSerializable` is pretty straight forward. Looking at the below second portion of our example, we can see that the `AreaWeaponBooster` includes a `WeaponBooster` property that would (for example) be applied to team members that are within the `AreaWeaponBoosters` radius: 
+The above first half of the example code shows how a complex type that implements `INetworkSerializable` is pretty straightforward. Looking at the below second portion of the example, you can see that the `AreaWeaponBooster` includes a `WeaponBooster` property that would (for example) be applied to team members that are within the `AreaWeaponBoosters` radius:
 
 ```csharp
 /// <summary>
@@ -433,12 +437,12 @@ public struct AreaWeaponBooster : INetworkSerializable, System.IEquatable<AreaWe
     }
 }
 ```
- Looking closely at the read and write segments of code within `AreaWeaponBooster.NetworkSerialize`, the nested complex type property `ApplyWeaponBooster` handles its own serialization and de-serialization. Any `AreaWeaponBooster` type property is serialized and de-serialized by the `ApplyWeaponBooster`'s implemented `NetworkSerialize` method. Using this type of design approach can help reduce code replication while providing a more modular foundation to build even more complex, nested types.
+Looking closely at the read and write segments of code within `AreaWeaponBooster.NetworkSerialize`, the nested complex type property `ApplyWeaponBooster` handles its own serialization and de-serialization. The `ApplyWeaponBooster`'s implemented `NetworkSerialize` method serializes and deserialized any `AreaWeaponBooster` type property. This design approach can help reduce code replication while providing a more modular foundation to build even more complex, nested types.
 
 ## Custom NetworkVariable Implementations
 
 :::warning Disclaimer
-The `NetworkVariable` and `NetworkList` classes were created as `NetworkVariableBase` class implementation examples. While the `NetworkVariable<T>` class is considered production ready, you might run into scenarios where you have a more advanced implementation in mind.  Under this scenario, we would encourage you to create your own custom implementation.
+The `NetworkVariable` and `NetworkList` classes were created as `NetworkVariableBase` class implementation examples. While the `NetworkVariable<T>` class is considered production ready, you might run into scenarios where you have a more advanced implementation in mind. In this case, we encourage you to create your own custom implementation.
 :::
 In order to create your own `NetworkVariableBase` derived container, you should:
 
@@ -450,10 +454,10 @@ In order to create your own `NetworkVariableBase` derived container, you should:
     - `void WriteDelta(FastBufferWriter writer)`
     - `void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)`
 - Depdending upon your custom `NetworkVariableBase` container, you might look at `NetworkVariable<T>` or `NetworkList` to see how those two examples were implemented.
- 
+
  ### Custom NetworkVariable Example
 
-  This example shows a custom NetworkVariable type for the purposes of helping to understand how such a type can be implemented. In the current version of Netcode for GameObjects, this example is possible to achieve without using a custom NetworkVariable type; however, for more complex situations that aren't natively supported, this basic example should help inform you of how to approach the implementation:
+This example shows a custom `NetworkVariable` type to help you understand how you might implement such a type. In the current version of Netcode for GameObjects, this example is possible without using a custom `NetworkVariable` type; however, for more complex situations that aren't natively supported, this basic example should help inform you of how to approach the implementation:
 
  ```csharp
     /// Using MyCustomNetworkVariable within a NetworkBehaviour
@@ -556,7 +560,7 @@ In order to create your own `NetworkVariableBase` derived container, you should:
     }
  ```
 
-While the above example is not the "recommended" way to synchronize a list that frequently changes (i.e. one or more elements position/order or add/remove), it is just an example of how you can "define your own rules" through using `NetworkVariableBase`. 
+While the above example is not the "recommended" way to synchronize a list where the number or order of elements in the list frequently changes, it is just an example of how you can define your own rules using `NetworkVariableBase`.
 
 The above code could be tested by:
 - Using the above code with a project that includes Netcode for GameObjects v1.0 (or higher).
@@ -567,14 +571,16 @@ The above code could be tested by:
     ![ScreenShot](images/MyCustomNetworkVariableInspectorView.png)
 
 :::caution
-`NetworkVariable` does not support being nested inside of other `NetworkVariable` classes. Netcode for GameObjects does a code generation step to define serialization callbacks for each type it finds used in a `NetworkVariable`, and it looks for those variables as fields of `NetworkBehaviour` types - a `NetworkVariable` that's declared anywhere else will be missed by the sweep. Instead, declare `NetworkVariable` or `NetworkList` properties within the same `NetworkBehaviour` that you have declared your custom `NetworkVariableBase` implementation within.
+You cannot nest `NetworkVariable`s inside other `NetworkVariable` classes. This is because Netcode for GameObjects performs a code generation step to define serialization callbacks for each type it finds in a `NetworkVariable`. The code generation step looks for variables *as fields of `NetworkBehaviour` types*; it misses any `NetworkVariable`s declared anywhere else.
+
+Instead of nesting `NetworkVariable`s inside other `NetworkVariable` classes, declare `NetworkVariable` or `NetworkList` properties within the same `NetworkBehaviour` within which you have declared your custom `NetworkVariableBase` implementation.
 :::
 
 ## Strings
 
-While NetworkVariable does support managed `INetworkSerializable` types, strings are not in the list of supported types. This is because strings in C# are immutable types, preventing them from being deserialized in-place, so every update to a `NetworkVariable<string>` would cause a GC allocation to create the new string, which may lead to performance problems.
+While NetworkVariable does support managed `INetworkSerializable` types, strings are not in the list of supported types. This is because strings in C# are immutable types, preventing them from being deserialized in-place, so every update to a `NetworkVariable<string>` would cause a Garbage Collected allocation to create the new string, which may lead to performance problems.
 
-While it is technically possible to support strings using custom serialization through `UserNetworkVariableSerialization`, it isn't recommended to do so due to the performance implications that come with it. Instead, we recommend using one of the `Unity.Collections.FixedString` value types. In the below example, we used a `FixedString128Bytes` as the `NetworkVariable` value type and then, on the server side, it will change the string value each time you press the space bar on the server or host instance. Joining clients will be synchronized with the current value applied on the server side, and then each time you hit the space bar on the server side the client will be synchronized with the changed string.
+While it is technically possible to support strings using custom serialization through `UserNetworkVariableSerialization`, it isn't recommended to do so due to the performance implications that come with it. Instead, we recommend using one of the `Unity.Collections.FixedString` value types. In the below example, we used a `FixedString128Bytes` as the `NetworkVariable` value type. On the server side, it changes the string value each time you press the space bar on the server or host instance. Joining clients will be synchronized with the current value applied on the server side, and each time you hit the space bar on the server side, the client synchronizes with the changed string.
 
 :::note
 `NetworkVariable<T>` will not serialize the entire 128 bytes each time the `Value` is changed. Only the number of bytes that are actually used to store the string value will be sent, no matter which size of `FixedString` you use.

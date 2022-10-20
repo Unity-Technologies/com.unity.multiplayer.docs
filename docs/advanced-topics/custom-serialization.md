@@ -3,7 +3,7 @@ id: custom-serialization
 title: Custom Serialization
 ---
 
-When using `RPC`s, `NetworkVariable`s or any other Netcode for GameObjects (Netcode) related task that requires serialization, the Netcode uses a default serialization pipeline that looks like this:
+Netcode uses a default serialization pipeline when using `RPC`s, `NetworkVariable`s, or any other Netcode-related tasks that require serialization. The serialization pipeline looks like this:
 
 ``
 Custom Types => Built In Types => INetworkSerializable
@@ -24,15 +24,15 @@ To register a custom type, or override an already handled type, you need to crea
 // The class name doesn't matter here.
 public static class SerializationExtensions
 {
-    public static void ReadValueSafe(this FastBufferReader reader, out Url value)
+    public static void ReadValueSafe(this FastBufferReader reader, out Url url)
     {
         reader.ReadValueSafe(out string val);
-        value = new Url(val);
+        url = new Url(val);
     }
 
-    public static void WriteValueSafe(this FastBufferWriter writer, in Url value)
+    public static void WriteValueSafe(this FastBufferWriter writer, in Url url)
     {
-        writer.WriteValueSafe(value.Value);
+        writer.WriteValueSafe(url.Value);
     }
 }
 ```
@@ -45,13 +45,13 @@ You can also optionally use the same method to add support for `BufferSerializer
 // The class name doesn't matter here.
 public static class SerializationExtensions
 {  
-    public static void SerializeValue<TReaderWriter>(this BufferSerializer<TReaderWriter> serializer, ref Url value) where TReaderWriter: IReaderWriter
+    public static void SerializeValue<TReaderWriter>(this BufferSerializer<TReaderWriter> serializer, ref Url url) where TReaderWriter: IReaderWriter
     {
         if (serializer.IsReader)
         {
-            value = new Url();
+            url = new Url();
         }
-        serializer.SerializeValue(ref value.Value);
+        serializer.SerializeValue(ref url.Value);
     }
 }
 ```
@@ -72,14 +72,14 @@ UserNetworkVariableSerialization<Url>.ReadValue = SerializationExtensions.ReadVa
 You can also use lambda expressions here:
 
 ```csharp
-UserNetworkVariableSerialization<Url>.WriteValue = (FastBufferWriter writer, in Url value) =>
+UserNetworkVariableSerialization<Url>.WriteValue = (FastBufferWriter writer, in Url url) =>
 {
-    writer.WriteValueSafe(value.Value);
+    writer.WriteValueSafe(url.Value);
 };
 
-UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url value) 
+UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url) 
 {
     reader.ReadValueSafe(out string val);
-    value = new Url(val);
+    url = new Url(val);
 };
 ```

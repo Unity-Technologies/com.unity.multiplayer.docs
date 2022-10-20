@@ -60,7 +60,12 @@ More advanced use-cases are explored in following examples.
 
 ### Example: Array
 
-There are two ways arrays can be used: via C# arrays or Native Collections, i.e., `NativeArray`. The critical distinction between the two is that C# arrays cause any type that contains them to become a managed type, which creates garbage collection overhead and makes them somewhat less optimized when used with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
+You can use arrays in one of two ways:
+
+1. Via C# arrays
+2. Via Native Collections (that is, `NativeArray`)
+
+The critical distinction between the two is that **C# arrays** convert any type that contains the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
 
 ```csharp
 public struct MyCustomStruct : INetworkSerializable
