@@ -19,13 +19,13 @@ Next steps will likely involve the existing Golden Path series to be completely 
  
 |<div class="buttons-pages">Hello World</div>| <div class="buttons-pages">Golden Path One</div>| 
 | --- | --- |
-| Creating a new project<br/>  Installing Netcode<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement <br/>Basic RPC use  |
+| Creating a new project<br/>  Installing Netcode<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement <br/>Basic RPC and Network variable use  |
 </div>
 <div class="table-columns-plain">
 
 | <div class="buttons-pages">Golden Path Two</div>|
 | --- | 
-|  Network variables (client and server-controlled)<br/> Network transforms <br/> More on RPCs|
+|  Network variables (server-controlled)<br/> Network transforms <br/> More on RPCs|
 
 
 </div>
