@@ -48,7 +48,7 @@ Since there are additional complexities involved with in-scene placed `NetworkOb
 
 ### Static Objects
 There are many scenarios where you might just need to use the in-scene placed `NetworkObject` to keep track of when a door is opened, a button pushed, a lever pulled, and any other "toggle oriented" type of state.  This is what we consider "static objects":
- - They are "statically" spawned while its originating scene is loaded and only despawned when its originating scene is unloaded.
+ - They are "statically" spawned while its originating scene is loaded and only de-spawned when its originating scene is unloaded.
     - The originating scene is the scene that the in-scene `NetworkObject` was placed.
  - They are typically associated with some world object that is visible to the players (i.e. door, switch, etc.)
  - They aren't migrated into other scenes or parented under another `NetworkObject`
@@ -58,7 +58,7 @@ There are many scenarios where you might just need to use the in-scene placed `N
 ### Netcode Managers
 An in-scene placed `NetworkObject` used as a netcode manager could range from handling game states (i.e. player scores) to a `NetworkObject` spawn manager (pooled or not). Typically, a manager will stay instantiated and spawned as long as the scene it was placed in remains loaded.  For scenarios where you want to keep a global game state, the recommended solution is to place the in-scene `NetworkObject` in an additively loaded scene that remains loaded for the duration of your network game session.  
 
-If you are using "Scene Switching" (i.e. loading a scene in LoadSceneMode.Single), then you can migrate the in-scene placed `NetworkObject` into the DDoL by sending its `GameObject` to the DDoL like in the code snippet below:
+If you are using "Scene Switching" (i.e. loading a scene in LoadSceneMode.Single), then you can migrate the in-scene placed `NetworkObject` (used for management purposes) into the DDoL by sending its `GameObject` to the DDoL:
 
 ```csharp
 private void Start()
@@ -67,21 +67,19 @@ private void Start()
     DontDestroyOnLoad(gameObject);
 }
 ```
+
 :::warning
-Once migrated into the DDoL, migrating the in-scene placed `NetworkObject` back into a different scene after it has already been spawned will cause soft synchronization errors with late joining clients.  Once in the DDoL it should stay in the DDoL.  This is only for scene switching, if you are not using scene switching then it is recommended to use an additively loaded scene and keep that scene loaded for as long as you wish to persist the in-scene placed `NetworkObject`(s) in question.
+Once migrated into the DDoL, migrating the in-scene placed `NetworkObject` back into a different scene after it has already been spawned will cause soft synchronization errors with late joining clients.  Once in the DDoL it should stay in the DDoL.  This is only for scene switching, if you are not using scene switching then it is recommended to use an additively loaded scene and keep that scene loaded for as long as you wish to persist the in-scene placed `NetworkObject`(s) being used for state management purposes.
 :::
 
-While using an in-scene placed `NetworkObject` as a manager can have some complexities involved when you wish to persist it while also using "Scene Switching", this is still considered one of the least complex ways to use an in-scene placed `NetworkObject`.
-
-### Complex In-Scene NetworkObject Managers:
+### Complex In-Scene NetworkObjects:
 The most common mistake when using an in-scene placed `NetworkObject` is to try and use it like a dynamically spawned `NetworkObject`. When trying to decide if you should use an in-scene placed or dynamically spawned `NetworkObject`, you should ask yourself the following questions:
-- Will it be spawned and despawned more than once?
+- Do you plan on de-spawning and destroying the `NetworkObject`? _(highly recommended to use dynamically spawned)_
 - Could it be parented, at runtime, under another `NetworkObject`?
-    - Does the parent exist in a different scene than the originating scene of the in-scene placed `NetworkObject'?
 - Excluding any special case DDoL scenarios, will it be moved into another scene other than the originating scene?
-- Does it dynamically spawn NetworkObjects and then immediately parent the spawned instances under itself?
+- Do you plan on having full scene-migrations (i.e. LoadSceneMode.Single or "scene switching") during a network session?
 
-If you answered yes to any of the above questions, then using only and in-scene placed `NetworkObject` to implement your feature is most likely not the right choice.  However, just because you did answer yes to one or more of the above questions doesn't mean you shouldn't use an in-scene placed `NetworkObject` either.  While the previous two sentences might seem puzzling, there are scenarios where the "best choice" (regarding simplicity and modularity) is to use a hybrid approach by using a combination of both!  
+If you answered yes to any of the above questions, then using only an in-scene placed `NetworkObject` to implement your feature might not be the right choice.  However, just because you did answer yes to one or more of the above questions doesn't mean you shouldn't use an in-scene placed `NetworkObject` either.  While the previous two sentences might seem puzzling, there are scenarios where the "best choice" (regarding simplicity and modularity) is to use a hybrid approach by using a combination of both in-scene placed and dynamically spawned `NetworkObject`s!  
 
 #### A Hybrid Approach Example
 Perhaps your project's design includes making some world items that can either be consumed (i.e. health) or picked up (weapons, items, etc) by players. Initially, using a single in-scene placed `NetworkObject` might seem like the best approach for this world item feature.  
@@ -98,11 +96,7 @@ Using this approach allows you to:
 1. Re-use the same single spawn manager with any other Network Prefab registered with the `NetworkManager`
 2. Not worry about the complexities involved with treating an in-scene placed `NetworkObject` like a dynamically spawned one.
 
-[See a Dynamic Spawning (non-pooled) Example Here](../object-spawning#dynamic-spawning-non-pooled)
-
-:::important
-While we encourage using in-scene placed `NetworkObject`s as something static, a manager, or a combination of both (a hybrid approach), there are times where you might need to use an in-scene placed `NetworkObjet` more like a dynamically spawned `NetworkObject` for other purposes. For every purpose you can imagine, more often than not you might be better off using a hybrid approach and using an in-scene placed `NetworkObject` to dynamically spawn a `NetworkObject`.
-:::
+[See a Dynamic Spawning (non-pooled) "Hybrid Approach" Example Here](../object-spawning#dynamic-spawning-non-pooled)
 
 ### Spawning and De-spawning 
 By default, an in-scene placed `NetworkObject` will always get spawned when the scene it was placed within is loaded and a network session is in progress.  However, in-scene placed `NetworkObject`s are unique from dynamically spawned `NetworkObject`s when it comes to spawning and de-spawning.  Functionally speaking, when de-spawning a dynamically spawned NetworkObject you can always spawn a new instance of the `NetworkObject`'s associated network prefab. So, whether you decide to destroy a dynamically spawned `NetworkObject` or not, you can always make another clone of the same network prefab unless you want to preserve the current state of the instance being de-spawned. <br />
@@ -112,10 +106,10 @@ With in-scene placed NetworkObjects, the scene it is placed within is similar to
 
 Dynamically Spawned | In-Scene Placed
 ------------------- | ---------------
-NetworkPrefab       | Scene (_When Loaded, the Scene's Handle_)
-GlobalObjectIdHash  | GlobalObjectIdHash
+NetworkPrefab       | Scene 
+GlobalObjectIdHash  | Scene Handle (_When Loaded_) & GlobalObjectIdHash
 
-Once the `NetworkObject` is spawned, Netcode for GameObjects uses the `NetworkObjectId` to uniquely identify it for both types.
+Once the `NetworkObject` is spawned, Netcode for GameObjects uses the `NetworkObjectId` to uniquely identify it for both types.  An in-scene placed `NetworkObject` will still continue to be uniquely identified by the scene handle that it originated from and the GlobalObjectIdHash even if the in-scene placed `NetworkObject` is migrated to another additively loaded scene and originating scene is unloaded.
 
 <br />
 
@@ -124,13 +118,13 @@ Once the `NetworkObject` is spawned, Netcode for GameObjects uses the `NetworkOb
 When invoking the `Despawn` method of a `NetworkObject` with no parameters, it will always default to destroying the `NetworkObject`:
 
 ```csharp
-NetworkObject.Despawn();  // Will de-spawn and destroy
+NetworkObject.Despawn();  // Will de-spawn and destroy (!!! not recommended !!!) 
 ```
 
 If you want an in-scene placed NetworkObject to persist after it has been de-spawned, it is recommended to always set the first parameter of the `Despawn` method to `false`:
 
 ```csharp
-NetworkObject.Despawn(false); // Will only de-spawn
+NetworkObject.Despawn(false); // Will only de-spawn (recommended usage for in-scene placed NetworkObjects)
 ```
 
 Now that you have a de-spawned `NetworkObject`, you might notice that the associated `GameObject` and all of its components are still active and possibly visible to all players (i.e. like a `MeshRenderer` component). Unless you have a specific reason to keep the associated `GameObject` active in the hierarchy, you can override the virtual `OnNetworkDespawn` method in a `NetworkBehaviour` derived component and set the `GameObject` to in-active:
@@ -198,7 +192,7 @@ using Unity.Netcode;
             if (IsServer && StartDespawned && !m_HasStartedDespawned)
             {
                 m_HasStartedDespawned = true;
-                NetworkObject.Despawn();
+                NetworkObject.Despawn(false);
             }
             base.OnNetworkSpawn();
         }
@@ -220,11 +214,19 @@ using Unity.Netcode;
     }
 ```
 
-You will notice the above example keeps track of whether the in-scene placed `NetworkObject` has started as being de-spawned (to avoid de-spawning after its first time being spawned), and it makes sure only the server executes that block of code in the overridden `OnNetworkSpawn` method. The above `MyInSceneNetworkObjectBehaviour` example also declares a public `bool` property `StartDespawned` to provide control over this through the inspector view in the editor.
+You will notice the above example keeps track of whether the in-scene placed `NetworkObject` has started as being de-spawned (to avoid de-spawning after its first time being spawned), and it only allows the server to execute that block of code in the overridden `OnNetworkSpawn` method. The above `MyInSceneNetworkObjectBehaviour` example also declares a public `bool` property `StartDespawned` to provide control over this through the inspector view in the editor. 
 
+**_How do I synchronize late joining clients when an in-scene placed `NetworkObject` has been de-spawned and destroyed?_**
+
+Referring back to the [Complex In-Scene NetworkObject Managers](inscene-placed-networkobjects#complex-in-scene-networkobjects), it is recommended to use dynamically spawned `NetworkObject`s if you are planning on destroying the object when it is de-spawned.  However, if either de-spawning but not destroying or using the hybrid approach ([discussed earlier on this page](inscene-placed-networkobjects#a-hybrid-approach-example)) (dynamically spawned) don't appear to be options for your project's needs, then really there are only two other possible (but not recommended) alternatives:
+- Have another in-scene placed `NetworkObject` track which in-scene placed `NetworkObject`s have been destroyed and upon a player late-joining (i.e. OnClientConnected) you would need to send the newly joined client the list of in-scene placed NetworkObjects that it should destroy.  This adds an additional in-scene placed `NetworkObject` to your scene hierarchy and will consume memory keeping track of what was destroyed.
+- Disable the visual and physics related components (in editor as a default) of the in-scene placed `NetworkObject`(s) in question and only enable them in OnNetworkSpawn. This does not delete/remove the in-scene placed `NetworkObject`(s) for the late joining client and can be tricky to implement without running into edge case scenario bugs.
+
+These two "alternatives" *are not recommended* but worth briefly exploring to better understand why we recommend using a [non-pooled hybrid approach](../object-spawning#dynamic-spawning-non-pooled) or just not destroying the in-scene placed `NetworkObject` when de-spawning it. _The time spent implementing and possibly debugging either of the two above not recommended approaches will far exceed the time spent implementing one of the recommended approaches._
 
 ### Parenting
-(WIP)
-- You can parent and remove the parent like you would with dynamically spawned `NetworkObject`s
-<br  />
-
+In-scene placed `NetworkObject`s follow the same parenting rules as [dynamically spawned `NetworkObject`s](../../advanced-topics/networkobject-parenting.md) with only a few differences and recommendations:
+- You can create complex nested `NetworkObject` hierarchies when they are in-scene placed.
+- If you plan on using full scene-migration (i.e. LoadSceneMode.Single or "scene switching") then parenting an in-scene placed `NetworkObject` that stays parented during the scene migration is not recommended.
+  - Under this scenario, you would want to use a hybrid approach where the in-scene placed `NetworkObject` dynamically spawns the item to be picked up.
+- If you plan on using a bootstrap scene usage pattern where you use additive scene loading and unloading with no full scene-migration(s), then it is "OK" to parent in-scene placed NetworkObjects.
