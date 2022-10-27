@@ -230,3 +230,7 @@ In-scene placed `NetworkObject`s follow the same parenting rules as [dynamically
 - If you plan on using full scene-migration (i.e. LoadSceneMode.Single or "scene switching") then parenting an in-scene placed `NetworkObject` that stays parented during the scene migration is not recommended.
   - Under this scenario, you would want to use a hybrid approach where the in-scene placed `NetworkObject` dynamically spawns the item to be picked up.
 - If you plan on using a bootstrap scene usage pattern where you use additive scene loading and unloading with no full scene-migration(s), then it is "OK" to parent in-scene placed NetworkObjects.
+
+:::warning
+Parenting in-scene placed `NetworkObject`s under `GameObject`s with no `NetworkObject` component will currently synchronize the child `NetworkObject` as if it is in world space on the client side. To work around this particular issue you should add a `NetworkTransform` to the child and enable local space synchronization.
+:::
