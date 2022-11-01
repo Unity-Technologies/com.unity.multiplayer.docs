@@ -290,16 +290,19 @@ import TabItem from '@theme/TabItem';
 
 ## Testing Hello World
 
-Now we will test to see if everything works as expected.
+Now, to see if everything works as expected we can test starting a host in the editor. A host plays the role of a server and a client at the same time.
 
 1. Click **Play**.
-1. Click **Start Host** under **NetworkManager**. 
+1. Click the **Start Host** button in the **NetworkManager** GameObject's inspector.
+1. You should now see your scene with your Player Prefab spawned.
+
+You can also use the command line helper to launch a server and one or more client that will connect to the server. You should then see the plane on the server, until the first client connects. Then, for each connected client, a new Player Prefab will be spawned.
 
 ## Next Steps
 
 See the following content to continue your journey using Netcode:
 
-* Build on the Hello World project to continue learning about different features of Netcode with the [Golden Path series](../tutorials/goldenpath_series/gp_intro.md).
+* Build on the Hello World project to continue learning about different features of Netcode with the [Golden Path series](goldenpath_series/gp_intro.md).
 * Check out the educational samples to further explore Netcode and its abilities:
   * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
   * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
