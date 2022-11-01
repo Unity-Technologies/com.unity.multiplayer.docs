@@ -306,13 +306,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned. We override `OnNetworkSpawn` since a client and a server will run different logic here.
-
-:::note
-This can be overriden on any `NetworkBehaviour`.
-:::
-
-On both client and server instances of this player, we call the `Move()` method, which will simply do the following.
+In a networked game, server/host machines may need to run different functions to a networked player/client. (For example, in a server-authoritative game, the client would handle the player inputs but the movement would be done on the server). All of the instances of this script in the game, whether they're the host/server or a client, will call the `OnNetworkSpawn` method when the `NetworkObject` to which this script is attached has spawned, but only its owner will call the `Move` method. In the case of a Player Object, every client (or host) will have one instance spawned for them, for which they will be the owner. Calling this in `OnNetworkSpawn` makes sure that the NetworkObject has finished spawning so the check to see whether the player is a Server/Host or Client is valid. The `Move` method can then implement different logic depending on the answer (so that Servers do one thing, and Clients do another).
 
 <details open>
 <summary>Click to show/hide the Code.
