@@ -89,7 +89,7 @@ When 'Enable Scene Management' is enabled for the NetworkManager (allowing the s
 
 ## Creating a command line helper
 
-This command line helper launches our project outside Unity and can make testing builds easier.
+This command line helper will allow us to launch builds with a command line argument that will start a networking session, either as a server, host, or client. This can make testing builds easier.
 
 1. Right-click the **Assets** folder and create a new folder by hovering over **Create** and selecting **Folder**. Name it **Scripts**.
 2. Create a script called `NetworkCommandLine` by right-clicking on your **Scripts** folder, hovering over **Create** and selecting **C# Script**.
