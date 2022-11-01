@@ -182,7 +182,7 @@ namespace HelloWorld
 
 ## Adding Editor Modes to Hello World
 
-Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
+In the HelloWorld project, you created a **NetworkManager** by adding the pre-created **NetworkManager** component. In Play Mode, the NetworkManager shows Editor buttons labeled `Start Host`, `Start Client`, and `Start Server` in its inspector. These call the `StartHost`, `StartClient` and `StartServer` methods of the **NetworkManager** respectively, to initiate a networking session. Inside the `HelloWorldManager.cs` script, we define two methods which mimic this functionality via UI buttons and status labels.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -208,7 +208,7 @@ Inside the `HelloWorldManager.cs` script, we define two methods which mimic the 
 ```
 </details>
 
-`NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
+The `NetworkManager` instance can be accessed statically from any other scripts via its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
 
 We call these methods inside of `OnGUI()`.
 
