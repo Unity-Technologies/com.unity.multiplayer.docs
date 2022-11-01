@@ -27,79 +27,15 @@ You should have completed the [Hello World project](../helloworld.md) before sta
 1. Open Unity Hub.
 1. Select `Hello World` from the list of projects displayed.
 
-## Adding Scripts to Hello World
+## Adding Editor Modes to Hello World
 
-This section adds some scripts to Hello World that contain the new features covered in the tutorial.
-1. Click the **Assets** folder.
-2. Open the **Scripts** folder.
-
-### Adding the `HelloWorldPlayer.cs` script
-
-1. Create a new script called `HelloWorldPlayer`.
-1. Open the `HelloWorldPlayer.cs` script.
-1. Edit the `HelloWorldPlayer.cs` script to match the following.
-
-<details open>
-<summary>Click to show/hide the Code.</summary>
-
-```csharp
-using Unity.Netcode;
-using UnityEngine;
-
-namespace HelloWorld
-{
-    public class HelloWorldPlayer : NetworkBehaviour
-    {
-        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-
-        public override void OnNetworkSpawn()
-        {
-            if (IsOwner)
-            {
-                Move();
-            }
-        }
-
-        public void Move()
-        {
-            if (NetworkManager.Singleton.IsServer)
-            {
-                var randomPosition = GetRandomPositionOnPlane();
-                transform.position = randomPosition;
-                Position.Value = randomPosition;
-            }
-            else
-            {
-                SubmitPositionRequestServerRpc();
-            }
-        }
-
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
-        {
-            Position.Value = GetRandomPositionOnPlane();
-        }
-
-        static Vector3 GetRandomPositionOnPlane()
-        {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
-        }
-
-        void Update()
-        {
-            transform.position = Position.Value;
-        }
-    }
-}
-```
-</details>
-
-### Adding the `HelloWorldManager.cs` script
+In the HelloWorld project, you created a **NetworkManager** by adding the pre-created **NetworkManager** component. In Play Mode, the NetworkManager shows Editor buttons labeled `Start Host`, `Start Client`, and `Start Server` in its inspector. These call the `StartHost`, `StartClient` and `StartServer` methods of the **NetworkManager** respectively, to initiate a networking session. Inside the `HelloWorldManager.cs` script, we define two methods which mimic this functionality via UI buttons and status labels.
 
 1. Create an empty `GameObject` rename it **HelloWorldManager**.
-1. Create a script called `HelloWorldManager`.
-1. Open the `HelloWorldManager.cs` script.
-1. Edit the `HelloWorldManager.cs` script to match the following.
+2. Open the **Scripts** Folder.
+3. Create a script called `HelloWorldManager`.
+4. Open the `HelloWorldManager.cs` script.
+5. Edit the `HelloWorldManager.cs` script to match the following.
 
 :::tip 
 You can copy the script from here and paste it into your file.
@@ -180,10 +116,6 @@ namespace HelloWorld
 
 1. Add the `HelloWorldManager` script component to the `HelloWorldManager` `GameObject`.
 
-## Adding Editor Modes to Hello World
-
-In the HelloWorld project, you created a **NetworkManager** by adding the pre-created **NetworkManager** component. In Play Mode, the NetworkManager shows Editor buttons labeled `Start Host`, `Start Client`, and `Start Server` in its inspector. These call the `StartHost`, `StartClient` and `StartServer` methods of the **NetworkManager** respectively, to initiate a networking session. Inside the `HelloWorldManager.cs` script, we define two methods which mimic this functionality via UI buttons and status labels.
-
 <details open>
 <summary>Click to show/hide the Code.
 </summary>
@@ -244,7 +176,67 @@ You will notice the introduction of a new method, `SubmitNewPosition()`. This is
 
 ## Adding basic movement to the Player object 
 
-The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World player.
+Here we will create a `HelloWorldPlayer.cs` script that adds some basic movement to the Hello World player.
+
+1. Open the **Scripts** Folder.
+1. Create a new script called `HelloWorldPlayer`.
+1. Open the `HelloWorldPlayer.cs` script.
+1. Edit the `HelloWorldPlayer.cs` script to match the following.
+
+<details open>
+<summary>Click to show/hide the Code.</summary>
+
+```csharp
+using Unity.Netcode;
+using UnityEngine;
+
+namespace HelloWorld
+{
+    public class HelloWorldPlayer : NetworkBehaviour
+    {
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                Move();
+            }
+        }
+
+        public void Move()
+        {
+            if (NetworkManager.Singleton.IsServer)
+            {
+                var randomPosition = GetRandomPositionOnPlane();
+                transform.position = randomPosition;
+                Position.Value = randomPosition;
+            }
+            else
+            {
+                SubmitPositionRequestServerRpc();
+            }
+        }
+
+        [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        {
+            Position.Value = GetRandomPositionOnPlane();
+        }
+
+        static Vector3 GetRandomPositionOnPlane()
+        {
+            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+        }
+
+        void Update()
+        {
+            transform.position = Position.Value;
+        }
+    }
+}
+```
+</details>
 
 
 1. Select the **Player** prefab.
@@ -458,7 +450,7 @@ One build instance can create a host. Another client can join the host's game. B
 
 See the following content to continue your journey using Netcode:
 
-* Build on the your growing Hello World project to continue learning about different features of Netcode with [Golden Path Two](gp_module_two.md)
+* Build on the your growing Hello World project to continue learning about different features of Netcode with [Golden Path Two](goldenpath_two.md)
 * Check out the educational samples to further explore Netcode and its abilities:
   * [Boss Room](../../learn/bossroom/bossroom)
   * [2D Spaceshooter Bitesize Sample](../../learn/bitesize/bitesize-spaceshooter)
