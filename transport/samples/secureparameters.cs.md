@@ -6,27 +6,26 @@ title: SecureParameters sample
 Sample code for `SecureParameters`:
 
 ```csharp
-using Unity.Collections;
 public static class SecureParameters
-    { 
-        public static FixedString32Bytes ServerCommonName = new FixedString32Bytes("localserver");  // Use the common name you used to define the server certificate.
+{
+    // Use the common name you used to create the server certificate.
+    public static readonly string ServerCommonName = "localserver";
 
-        public static FixedString4096Bytes MyGameClientCA = new FixedString4096Bytes(
-        @"-----BEGIN CERTIFICATE-----
- *** REPLACE BY YOUR OWN CA Certificate ***
------END CERTIFICATE-----");
+    public static readonly string MyGameClientCA =
+@"-----BEGIN CERTIFICATE-----
+*** REPLACE WITH YOUR OWN CA CERTIFICATE ***
+-----END CERTIFICATE-----";
 
 #if UNITY_SERVER
-        public static FixedString4096Bytes MyGameServerCertificate = new FixedString4096Bytes(
-        @"-----BEGIN CERTIFICATE-----
-*** REPLACE BY YOUR OWN Server Certificate ***
------END CERTIFICATE-----");
+    public static readonly string MyGameServerCertificate =
+@"-----BEGIN CERTIFICATE-----
+*** REPLACE WITH YOUR OWN SERVER CERTIFICATE ***
+-----END CERTIFICATE-----";
 
-        public static FixedString4096Bytes MyGameServerPrivate = new FixedString4096Bytes(
-        @"-----BEGIN RSA PRIVATE KEY-----
-*** REPLACE BY YOUR OWN Private Key ***
------END RSA PRIVATE KEY-----");
+    public static readonly string MyGameServerPrivateKey =
+@"-----BEGIN RSA PRIVATE KEY-----
+*** REPLACE WITH YOUR OWN SERVER PRIVATE KEY ***
+-----END RSA PRIVATE KEY-----";
 #endif
 }
-
 ```

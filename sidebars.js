@@ -370,6 +370,18 @@ module.exports = {
                             "type": "doc",
                             "id": "learn/bossroom/bossroom-actions"
                         },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/networkobject-parenting"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/networkrigidbody"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/spawn-networkobjects"
+                        },
                     ],
                 },
                 {
