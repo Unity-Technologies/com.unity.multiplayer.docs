@@ -30,7 +30,7 @@ In this section we will create the basic building blocks of a multiplayer game.
 
 ### Creating Network Manager and selecting the Transport
 
-In this section we will add a Network Manager and add Unity Transport (UTP) to our project. The [NetworkManager](../components/networkmanager.md) is the component that contains all of your project's netcode related settings. UTP is the transport layer that Netcode will use for communication between the server and the clients. See [here](../advanced-topics/transports.md) for more.
+In this section we add a Network Manager and add Unity Transport (UTP) to our project. The [NetworkManager](../components/networkmanager.md) is the component that contains all your project's netcode-related settings. UTP is the transport layer that Netcode uses for communication between the server and the clients. See [here](../advanced-topics/transports.md) for more.
 
 1. Right-click in the **Hierarchy** tab of the main Unity Window.
 1. Select **Create Empty**.
@@ -296,7 +296,7 @@ Now, to see if everything works as expected we can test starting a host in the e
 1. Click the **Start Host** button in the **NetworkManager** GameObject's inspector.
 1. You should now see your scene with your Player Prefab spawned.
 
-You can also use the command line helper to launch a server and one or more client that will connect to the server. You should then see the plane on the server, until the first client connects. Then, for each connected client, a new Player Prefab will be spawned.
+You can also use the command line helper to launch a server and one or more clients to connect to the server. You should see the plane on the server until the first client connects. Then, a new Player Prefab will be spawned by Netcode for each connected client.
 
 ## Next Steps
 

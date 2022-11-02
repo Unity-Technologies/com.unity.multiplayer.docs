@@ -140,7 +140,7 @@ namespace HelloWorld
 ```
 </details>
 
-The `NetworkManager` instance can be accessed statically from any other scripts via its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
+You can statically access the `NetworkManager` instance from any other scripts via its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the connection state we have currently established that you will use shortly.
 
 We call these methods inside of `OnGUI()`.
 
@@ -298,7 +298,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-In a networked game, server/host machines may need to run different functions to a networked player/client. (For example, in a server-authoritative game, the client would handle the player inputs but the movement would be done on the server). All of the instances of this script in the game, whether they're the host/server or a client, will call the `OnNetworkSpawn` method when the `NetworkObject` to which this script is attached has spawned, but only its owner will call the `Move` method. In the case of a Player Object, every client (or host) will have one instance spawned for them, for which they will be the owner. Calling this in `OnNetworkSpawn` makes sure that the NetworkObject has finished spawning so the check to see whether the player is a Server/Host or Client is valid. The `Move` method can then implement different logic depending on the answer (so that Servers do one thing, and Clients do another).
+In a networked game, the dedicated server (or host) might need to run different functions than the networked player (the client). For example, in a server-authoritative game, the client would handle the player inputs, but the server would handle the movement. All instances of this script in the game, whether running on a server/host or a client, call the `OnNetworkSpawn` method when the `NetworkObject` to which this script is attached has spawned, but only its owner will call the `Move` method. In the case of a Player Object, every client (or host) has an instance of the Player Object, which contains this script as a component, spawned for them by Netcode. Each client is the owner of the Player Object that was spawned for them. Calling the `Move` method in `OnNetworkSpawn` instead of in `Awake` ensures that the NetworkObject has finished spawning, so the check to see whether the player is a server/host or client is valid. The `Move` method can then implement different logic depending on the answer (so that servers do one thing, and clients do another).
 
 <details open>
 <summary>Click to show/hide the Code.
