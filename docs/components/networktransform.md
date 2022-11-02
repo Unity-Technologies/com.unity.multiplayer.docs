@@ -51,8 +51,19 @@ darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
 
 `NetworkTransform` always synchronizes positions from the server to the clients and position changes on the clients are not allowed. Netcode for GameObjects comes with a sample containing a `ClientNetworkTransform`. This transform synchronizes the position of the owner client to the server and all other client allowing for client authoritative gameplay.
 
-The `ClientNetworkTransform` lives inside the Multiplayer Samples Utilities package. You can add this package via the `Package Manager` window in the Unity Editor by selecting `add from Git URL` and adding the following URL: `https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main`
+You can use the existing ClientNetworkTransform in the Multiplayer Samples Utilities package.<br />
+To add the Multiplayer Samples Utilities package:
 
-Or you can directly add this line to your `manifest.json` file:
+- Open the Package Manager by selecting Window > Package Manager.
+- Select the plus button (+) > Add from git URL....
+- Copy and paste the following Git URL: https://github.com/Unity-> Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main
+- Select Add.
 
+Optionally, you can directly add this line to your `manifest.json` file:
 `"com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"`
+
+You can also create your own `ClientNetworkTransform` by deriving from `NetworkTransform`, overriding the `OnIsServerAuthoritative` virtual method, and returning false:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs
+```
