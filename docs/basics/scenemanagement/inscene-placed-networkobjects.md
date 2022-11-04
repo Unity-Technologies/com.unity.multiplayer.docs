@@ -231,6 +231,30 @@ In-scene placed `NetworkObject`s follow the same parenting rules as [dynamically
   - Under this scenario, you would want to use a hybrid approach where the in-scene placed `NetworkObject` dynamically spawns the item to be picked up.
 - If you plan on using a bootstrap scene usage pattern where you use additive scene loading and unloading with no full scene-migration(s), then it is "OK" to parent in-scene placed NetworkObjects.
 
-:::warning
-Parenting in-scene placed `NetworkObject`s under `GameObject`s with no `NetworkObject` component will currently synchronize the child `NetworkObject` as if it is in world space on the client side. To work around this particular issue you should add a `NetworkTransform` to the child and enable local space synchronization.
+### Auto Object Parent Sync Option & Parenting
+ Already parented in-scene placed `NetworkObject`s Auto Object Parent Sync Usage:
+
+- When disabled, the NetworkObject ignores its parent and considers all of its transform values as being world space synchronized (i.e. no matter where you move or rotate its parent, it will maintain its current position and rotation)
+  - Typically, when disabling this you need to handle synchronizing the client either through your own custom messages or RPCS or add a NetworkTransform component to it. This is only useful if you want to have some global parent that might shift or have transform values that you don't want to impact the `NetworkObject` in question.
+- When enabled, the NetworkObject is aware of its parent and will treat all of its transform values as being local space synchronized.  
+  - _This also applies to being pre-parented under a `GameObject` with no `NetworkObject` component._
+
+:::note 
+_**The caveat to the above is scale**:_
+Scale is treated always as local space relative for pre-parented in-scene placed `NetworkObjects`. <br />
+
+*For dynamically spawned NetworkObjects:* <br />
+It depends upon what WorldPositionStays value you use when parenting the NetworkObject in question.<br />
+WorldPositionStays = true: Everything is world space relative. _(default)_<br />
+WorldPositionStays = false: Everything is local space relative. _(children offset relative to the parent)_<br />
 :::
+
+
+### Parenting & Transform Synchronization
+It is important to understand that without the use of a `NetworkTransform` clients are only synchronized with the transform values when:
+- A client is being synchronized with the NetworkObject in question:
+  - During the client's first synchronization after a client has their connection approved.
+  - When a server spawns a new NetworkObject.
+- A NetworkObject has been parented (or a parent removed). 
+ - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.
+   - These transform changes will be synchronized with clients via the `ParentSyncMessage`
