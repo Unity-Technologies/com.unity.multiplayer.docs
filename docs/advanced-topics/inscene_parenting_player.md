@@ -49,8 +49,9 @@ public class ParentPlayerToInSceneNetworkObject : NetworkBehaviour
             // As long as the client (player) is in the connected clients list
             if (NetworkManager.ConnectedClients.ContainsKey(clientId))
             {
-                // Set the player as a child of this in-scene placed NetworkObject 
-                NetworkManager.ConnectedClients[clientId].PlayerObject.transform.parent = transform;
+                // Set the player as a child of this in-scene placed NetworkObject
+                // We parent in local space by setting the WorldPositionStays value to false
+                NetworkManager.ConnectedClients[clientId].PlayerObject.TrySetParent(NetworkObject, false);
             }
         }
     }
@@ -83,5 +84,5 @@ You should place this script on your in-scene placed `NetworkObject` (i.e. the f
 
 
 :::note
-Remove any parenting code you might have had from your player prefab before using the above script.
+Remove any parenting code you might have had from your player prefab before using the above script. Depending upon your project's goals, you might be parenting all players under the same in-scene placed `NetworkObject` or you might intend to have each player parenting unique.  If you want each player to be parented under a unique in-scene placed `NetworkObject` then you will need to have the same number of in-scene placed `NetworkObject`s as your maximum allowed players per game session.  The above example will only parent all players under the same in-scene placed `NetworkObject`.  You could extend the above example by migrating the scene event code into an in-scene placed `NetworkObject` that manages the parenting of players (i,e. name it something like `PlayerSpawnManager`) as they connect, make the `SetPlayerParent` method public, and add all in-scene placed `NetworkObject`s to a public list of GameObjects that the `PlayerSpawnManager` will reference and assign player's to as they connect while also freeing in-scene placed `NetworkObject`s as players disconnect during a game session.
 :::

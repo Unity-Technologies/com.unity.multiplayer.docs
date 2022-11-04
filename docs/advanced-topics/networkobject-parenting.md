@@ -151,7 +151,7 @@ Vehicle (GameObject->NetworkObject)
 This would be considered an invalid parenting and would be reverted.  
 
 ### Mildly Complex Valid Example:
-In order to resolve the previous invalid parenting issue, we would need to add a `NetworkObjet` component to the seats.  This means we would need to:
+In order to resolve the previous invalid parenting issue, we would need to add a `NetworkObject` component to the seats.  This means we would need to:
 1. Spawn the vehicle and the seats:
 ```
 Sun
@@ -185,8 +185,18 @@ Vehicle (GameObject->NetworkObject)
   └─Seat2 (GameObject->NetworkObject)
 ```
 
+### Parenting & Transform Synchronization
+It is important to understand that without the use of a `NetworkTransform` clients are only synchronized with the transform values when:
+- A client is being synchronized with the NetworkObject in question:
+  - During the client's first synchronization after a client has their connection approved.
+  - When a server spawns a new `NetworkObject`.
+- A `NetworkObject` has been parented _(or a parent removed)_. 
+ - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.
+   - These transform changes will be synchronized with clients via the `ParentSyncMessage`
+
+
 :::note Optional Auto Synchronized Parenting
-The Auto Object Parent Sync property of NetworkObject, enabled by default, allows you to disable automatic parent change synchronization in the event you want to implement your own parenting solution for one or more NetworkObjects.
+The Auto Object Parent Sync property of a `NetworkObject`, enabled by default, allows you to disable automatic parent change synchronization in the event you want to implement your own parenting solution for one or more NetworkObjects. It is important to understand that disabling the Auto Object Parent Sync option of a `NetworkObject` will treat the `NetworkObject`'s transform synchronization with *clients* as if its parent is the hierarchy root _(i.e. null)_.
 :::
 
 
