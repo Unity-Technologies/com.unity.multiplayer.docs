@@ -1,0 +1,1061 @@
+{
+  "version-1.0.0/netcode": [
+    {
+      "type": "doc",
+      "id": "version-1.0.0/about"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/installation/install"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/installation/upgrade_from_mlapi"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/installation/upgrade_from_UNet"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Networking",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/connection-approval"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/max-players"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/networkobject"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/networkobject-parenting"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/networkbehavior"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/networkvariable"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/object-visibility"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/fastbufferwriter-fastbufferreader"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/networktime-ticks"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/physics"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/transports"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/relay/relay"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/session-management"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/reconnecting-mid-game"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Components",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/components/networkmanager"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/components/networktransform"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/components/networkanimator"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Objects",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/object-spawning"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/object-pooling"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Messaging System",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/ways-synchronize"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/messaging-system"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "RPC Remote Procedure Call",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/message-system/clientrpc"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/message-system/serverrpc"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/message-system/reliability"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/message-system/execution-table"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/message-system/rpc-params"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "RPCs vs NetworkVariables",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.0.0/learn/rpcvnetvar"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.0.0/learn/rpcnetvarexamples"
+                }
+              ]
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/message-system/rpc-compatibility"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Network Update Loop",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/network-update-loop-system/about-network-update-loop"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/advanced-topics/network-update-loop-system/network-update-loop-reference"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/message-system/custom-messages"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Serialization",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/serialization-intro"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/cprimitives"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/unity-primitives"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/enum_types"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/arrays"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/inetworkserializable"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/custom-serialization"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/advanced-topics/serialization/networkobject-serialization"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Scene Management",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/scenemanagement/scene-management-overview"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Integrated Management",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/basics/scenemanagement/using-networkscenemanager"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/basics/scenemanagement/scene-events"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/basics/scenemanagement/timing-considerations"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/basics/scenemanagement/inscene-placed-networkobjects"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/scenemanagement/custom-management"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Testing ",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/tutorials/testing/testing_locally"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/tutorials/testing/testing_with_artificial_conditions"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/tutorials/testing/testing_client_connection_management"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Debugging",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/basics/logging"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/troubleshooting/troubleshooting"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/troubleshooting/errormessages"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Walk-Throughs",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/tutorials/helloworld"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Learning Netcode with Goldenpath",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/tutorials/goldenpath_series/gp_intro"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/tutorials/goldenpath_series/goldenpath_one"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/tutorials/goldenpath_series/goldenpath_two"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Educational Samples",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Boss Room",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bossroom/bossroom"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bossroom/bossroom-actions"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bossroom/networkobject-parenting"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bossroom/networkrigidbody"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bossroom/spawn-networkobjects"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Bitesize Samples",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bitesize/bitesize-introduction"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bitesize/bitesize-invaders"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bitesize/bitesize-spaceshooter"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/bitesize/bitesize-clientdriven"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Community Contributions",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Code Monkey Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/codemonkey/codemonkey-video"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/codemonkey/codemonkey-complete"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Dilmer Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/dilmer-video"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/project-setup"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/corefeatures"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/networkanimator"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dilmer/relay-service-setup"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Dapper Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dapper/dapper-video"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/learn/dapper/dapper-upgrade"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "version-1.0.0/Multiplayer": [
+    {
+      "type": "doc",
+      "id": "version-1.0.0/reference/glossary/high-level-terminology"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Lag",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/reference/glossary/ticks-and-update-rates"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/learn/lagandpacketloss"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/learn/clientside_interpolation"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/learn/dealing-with-latency"
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "version-1.0.0/reference/glossary/network-terms"
+    },
+    {
+      "type": "doc",
+      "id": "version-1.0.0/reference/glossary/prioritization"
+    },
+    {
+      "type": "doc",
+      "id": "version-1.0.0/reference/glossary/relevancy"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Multiplayer Game Architecture",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/learn/multiplayer-game-arhitecture"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/reference/glossary/network-topologies"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/learn/listen-server-host-architecture"
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "version-1.0.0/learn/faq"
+    }
+  ],
+  "version-1.0.0/api": [
+    {
+      "type": "doc",
+      "id": "version-1.0.0/api/introduction"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Netcode",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.INetworkUpdateSystem"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkBehaviour"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkBehaviourUpdater"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkObjectReference"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkObject.SpawnDelegate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkObject.VisibilityDelegate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkTickSystem"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkUpdateLoop"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkUpdateStage"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.INetworkPrefabInstanceHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkDelivery"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkEvent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkPrefabHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.BitCounter"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.BitReader"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.BitWriter"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.BufferSerializer-1"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.BytePacker"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ByteUnpacker"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferReader"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter.ForEnums"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter.ForFixedStrings"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter.ForNetworkSerializable"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter.ForPrimitives"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter.ForStructs"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.FastBufferWriter"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.INetworkSerializeByMemcpy"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ForceNetworkSerializeByMemcpy-1"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableWritePermission"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Time",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkTime"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkTimeSystem"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Configuration",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.HashSize"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkConfig"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Connection",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkClient"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.PendingClient"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.PendingClient.State"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Exceptions",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.InvalidChannelException"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.InvalidParentException"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkConfigurationException"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NotListeningException"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NotServerException"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.SpawnStateException"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.VisibilityChangeException"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Logging",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.LogLevel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkLog"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Messaging",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcAttribute"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcReceiveParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ClientRpcSendParams"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "CustomMessagingManager",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.CustomMessagingManager"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.CustomMessagingManager.HandleNamedMessageDelegate"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.RpcAttribute"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.RpcDelivery"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcAttribute"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcReceiveParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.ServerRpcSendParams"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "NetworkManager",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkManager"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkManager.ConnectionApprovalRequest"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkManager.ConnectionApprovalResponse"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "NetworkVariable",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableBase"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariable-1"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkVariableReadPermission"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.UserNetworkVariableSerialization-1"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "NetworkList-1",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "NetworkList-1",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.NetworkList-1"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.NetworkList-1.OnListChangedDelegate"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "NetworkListEvent-1",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.NetworkListEvent-1"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0.0/api/Unity.Netcode.NetworkListEvent-1.EventType"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "SceneEvent",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.SceneEvent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.SceneEventProgressStatus"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.SceneEventType"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "SceneManagement",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.SceneEventDelegate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnEventCompletedDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnLoadCompleteDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnSynchronizeCompleteDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Serialization",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Arithmetic"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.INetworkSerializable"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Spawning",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkSpawnManager"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "NetworkTransport",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.NetworkTransport"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Transports.UTP",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.ErrorUtilities"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.NetworkMetricsContext"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.UnityTransport"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.UnityTransport.ProtocolType"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters"
+        }
+      ]
+    }
+  ]
+}
