@@ -85,7 +85,9 @@ The impact of surpassing the Max Packet Queue Size threshold varies depending on
 
 Setting the Max Packet Queue Size parameter too low could introduce some [jitter](../../learn/lagandpacketloss.md) during frames where the number of packets sent or received is too high.  On the other hand, setting the Max Packet Queue Size parameter too high would use more memory than necessary.
 
+:::note
 **Note**: Each unit in the Max Packet Queue Size parameter uses roughly 4 KB of memory. This value is based on twice the maximum size of a packet, which UTP defines internally (it is not exposed to Netcode users since this parameter governs the sizes of both the send and receive queues).
+:::
 
 The Boss Room sample uses a Max Packet Queue Size property value of 256. The reasoning behind choosing 256 is specific to how Boss Room uses UTP.
 
@@ -153,8 +155,6 @@ An issue with this technique is that, since clients receive the whole paths of c
 | Reduces bandwidth usage                                         | Implementation involves a lot of hidden complexity                                     |
 | Works for both deterministic and non-deterministic pathfinding  | Increases the likelihood of cheating by knowing the future positions of other players  |
 
-
-
 A variant of this technique is to send only the destination and let the clients calculate the paths (instead of sending the whole paths). Offloading path calculation to the clients saves even more bandwidth but adds CPU costs to clients and makes determinism more difficult.
 
 #### Calculating the paths on the client and sending the movement directions to the server {#technique-3}
@@ -176,4 +176,4 @@ The third technique wasn’t ideal either because most of the entities in the Bo
 
 ## Dedicated game server (DGS) optimizations {#dgs-optimizations}
 
-We investigated what porting Boss Room from a client-hosted architecture to a dedicated game server architecture would take and what it would bring in terms of pros and cons. See Porting to DGS for a detailed explanation of what such a port would entail.
+Coming soon!
