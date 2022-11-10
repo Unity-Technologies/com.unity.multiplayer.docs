@@ -27,79 +27,15 @@ You should have completed the [Hello World project](../helloworld.md) before sta
 1. Open Unity Hub.
 1. Select `Hello World` from the list of projects displayed.
 
-## Adding Scripts to Hello World
+## Adding Editor Modes to Hello World
 
-This section adds some scripts to Hello World that contain the new features covered in the tutorial.
-1. Click the **Assets** folder.
-2. Open the **Scripts** folder.
-
-### Adding the `HelloWorldPlayer.cs` script
-
-1. Create a new script `HelloWorldPlayer`.
-1. Open the `HelloWorldPlayer.cs` script.
-1. Edit the `HelloWorldPlayer.cs` script to match the following.
-
-<details open>
-<summary>Click to show/hide the Code.</summary>
-
-```csharp
-using Unity.Netcode;
-using UnityEngine;
-
-namespace HelloWorld
-{
-    public class HelloWorldPlayer : NetworkBehaviour
-    {
-        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-
-        public override void OnNetworkSpawn()
-        {
-            if (IsOwner)
-            {
-                Move();
-            }
-        }
-
-        public void Move()
-        {
-            if (NetworkManager.Singleton.IsServer)
-            {
-                var randomPosition = GetRandomPositionOnPlane();
-                transform.position = randomPosition;
-                Position.Value = randomPosition;
-            }
-            else
-            {
-                SubmitPositionRequestServerRpc();
-            }
-        }
-
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
-        {
-            Position.Value = GetRandomPositionOnPlane();
-        }
-
-        static Vector3 GetRandomPositionOnPlane()
-        {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
-        }
-
-        void Update()
-        {
-            transform.position = Position.Value;
-        }
-    }
-}
-```
-</details>
-
-### Adding the `HelloWorldManager.cs` script
+In the HelloWorld project, you created a **NetworkManager** by adding the pre-created **NetworkManager** component. In Play Mode, the NetworkManager shows Editor buttons labeled `Start Host`, `Start Client`, and `Start Server` in its inspector. These call the `StartHost`, `StartClient` and `StartServer` methods of the **NetworkManager** respectively, to initiate a networking session. Inside the `HelloWorldManager.cs` script, we define two methods which mimic this functionality via UI buttons and status labels.
 
 1. Create an empty `GameObject` rename it **HelloWorldManager**.
-1. Create a script called `HelloWorldManager`.
-1. Open the `HelloWorldManager.cs` script.
-1. Edit the `HelloWorldManager.cs` script to match the following.
+2. Open the **Scripts** Folder.
+3. Create a script called `HelloWorldManager`.
+4. Open the `HelloWorldManager.cs` script.
+5. Edit the `HelloWorldManager.cs` script to match the following.
 
 :::tip 
 You can copy the script from here and paste it into your file.
@@ -180,10 +116,6 @@ namespace HelloWorld
 
 1. Add the `HelloWorldManager` script component to the `HelloWorldManager` `GameObject`.
 
-## Adding Editor Modes to Hello World
-
-Inside the `HelloWorldManager.cs` script, we define two methods which mimic the editor buttons inside of **NetworkManager** during Play mode.
-
 <details open>
 <summary>Click to show/hide the Code.
 </summary>
@@ -208,7 +140,7 @@ Inside the `HelloWorldManager.cs` script, we define two methods which mimic the 
 ```
 </details>
 
-`NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
+You can statically access the `NetworkManager` instance from any other scripts via its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the connection state we have currently established that you will use shortly.
 
 We call these methods inside of `OnGUI()`.
 
@@ -244,7 +176,67 @@ You will notice the introduction of a new method, `SubmitNewPosition()`. This is
 
 ## Adding basic movement to the Player object 
 
-The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World player.
+Here we will create a `HelloWorldPlayer.cs` script that adds some basic movement to the Hello World player.
+
+1. Open the **Scripts** Folder.
+1. Create a new script called `HelloWorldPlayer`.
+1. Open the `HelloWorldPlayer.cs` script.
+1. Edit the `HelloWorldPlayer.cs` script to match the following.
+
+<details open>
+<summary>Click to show/hide the Code.</summary>
+
+```csharp
+using Unity.Netcode;
+using UnityEngine;
+
+namespace HelloWorld
+{
+    public class HelloWorldPlayer : NetworkBehaviour
+    {
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                Move();
+            }
+        }
+
+        public void Move()
+        {
+            if (NetworkManager.Singleton.IsServer)
+            {
+                var randomPosition = GetRandomPositionOnPlane();
+                transform.position = randomPosition;
+                Position.Value = randomPosition;
+            }
+            else
+            {
+                SubmitPositionRequestServerRpc();
+            }
+        }
+
+        [ServerRpc]
+        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        {
+            Position.Value = GetRandomPositionOnPlane();
+        }
+
+        static Vector3 GetRandomPositionOnPlane()
+        {
+            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+        }
+
+        void Update()
+        {
+            transform.position = Position.Value;
+        }
+    }
+}
+```
+</details>
 
 
 1. Select the **Player** prefab.
@@ -306,13 +298,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. This method is fired when the `NetworkObject` gets spawned. We override `OnNetworkSpawn` since a client and a server will run different logic here.
-
-:::note
-This can be overriden on any `NetworkBehaviour`.
-:::
-
-On both client and server instances of this player, we call the `Move()` method, which will simply do the following.
+In a networked game, the dedicated server (or host) might need to run different functions than the networked player (the client). For example, in a server-authoritative game, the client would handle the player inputs, but the server would handle the movement. All instances of this script in the game, whether running on a server/host or a client, call the `OnNetworkSpawn` method when the `NetworkObject` to which this script is attached has spawned, but only its owner will call the `Move` method. In the case of a [Player Object](../../basics/networkobject#player-objects), Netcode spawns an instance of the player object for every client and host (for which they are the owner). Each of these player objects contain this script. Calling the `Move` method in OnNetworkSpawn instead of, for example, in `Awake` ensures that the NetworkObject has finished spawning, so the check to see whether the player is a server/host or client is valid. The `Move` method can then implement different logic depending on the answer (so that servers do one thing, and clients do another).
 
 <details open>
 <summary>Click to show/hide the Code.
