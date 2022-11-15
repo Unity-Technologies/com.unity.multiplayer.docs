@@ -86,16 +86,16 @@ Now we will test the Server-controlled Network Variable works as we intended.
 
 1. Select **File > Build and Run**. 
 1. Stop the player.
-2. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper).
+2. Launch the client and server together in a terminal as shown in [Testing the command line helper](../helloworld.md#testing-the-command-line-helper).
 3. After a brief delay, the client and server will spawn.  
 4. You should see the following in the console, showing that the server and client are sharing the variable:
 
 
 ```
 Server's var initialized to: 0
-Server set its var to: 0.1, has client var at: 0
-Server set its var to: 3.099999, has client var at: 2.6
-Server set its var to: 6.099997, has client var at: 5.599997
+Server set its var to: 0.1
+Server set its var to: 3.099999
+Server set its var to: 6.099997
 ```
 :::note
 Since the printing to the terminal does not happen on every tick, the numbers will not match up perfectly.
@@ -149,7 +149,7 @@ Now we check that the Network Transform functions correctly.
 
 1. Select **File** > **Build and Run**. 
 1. Stop the player. 
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](../helloworld.md#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn. 
 1. You should see the player capsule moving in a circle on both the client and the server.
 
@@ -162,9 +162,8 @@ This section adds some basic RPCs to the project.
 1. Click the **Player** prefab.
 1. In the  **Player** prefab Inspector tab, click **Add Component**.
 1. Click **Scripts**, and add the `RpcTest.cs` script you created earlier.
-1. Right Click **Player** prefab. 
-1. Open the `RpcTest.cs` script.
-1. Edit the `RpcTest.cs` script to match the following.
+2. Open the `RpcTest.cs` script.
+3. Edit the `RpcTest.cs` script to match the following.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -213,7 +212,7 @@ Now we will test that the client and server are both recieving the RPCs correctl
 
 1. Select **File** > **Build and Run**. 
 1. Stop the player.
-1. Launch the client and server together in a terminal as shown in [Testing the command line helper](#testing-the-command-line-helper). 
+1. Launch the client and server together in a terminal as shown in [Testing the command line helper](../helloworld.md#testing-the-command-line-helper). 
 1. After a brief delay, the client and server will spawn.  
 1. In the console, you should expect to see the client and server sending RPC messages to each other. 
 1. The client kicks off the exchange in its `Update` call the first time with a counter value of 0.  

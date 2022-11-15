@@ -30,7 +30,7 @@ In this section we will create the basic building blocks of a multiplayer game.
 
 ### Creating Network Manager and selecting the Transport
 
-In this section we will add a Network Manager and add Unity Transport (UTP) to our project.
+In this section we add a Network Manager and add Unity Transport (UTP) to our project. The [NetworkManager](../components/networkmanager.md) is the component that contains all your project's netcode-related settings. UTP is the transport layer that Netcode uses for communication between the server and the clients. See [here](../advanced-topics/transports.md) for more.
 
 1. Right-click in the **Hierarchy** tab of the main Unity Window.
 1. Select **Create Empty**.
@@ -68,10 +68,8 @@ This section adds in a player object and spawns it for each connected player.
   :::
 
 5. Select `NetworkManager`.
-6. Inside the `NetworkManager` component tab, locate the  `NetworkPrefabs` field. 
-7. Click `+` to create a slot.
-8. Drag this player prefab from above into the new empty slot
-9. Drag the prefab also into the `Player Prefab` slot. 
+6. Inside the `NetworkManager` component tab, locate the  `Player Prefab` field. 
+7. Drag this player prefab from above into this field.
 
   :::important
   When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as the `Player Prefab` no player object will be spawned.
@@ -91,7 +89,7 @@ When 'Enable Scene Management' is enabled for the NetworkManager (allowing the s
 
 ## Creating a command line helper
 
-This command line helper launches our project outside Unity and can make testing builds easier.
+This command line helper will allow us to launch builds with a command line argument that will start a networking session, either as a server, host, or client. This can make testing builds easier.
 
 1. Right-click the **Assets** folder and create a new folder by hovering over **Create** and selecting **Folder**. Name it **Scripts**.
 2. Create a script called `NetworkCommandLine` by right-clicking on your **Scripts** folder, hovering over **Create** and selecting **C# Script**.
@@ -127,9 +125,9 @@ public class NetworkCommandLine : MonoBehaviour
 
        var args = GetCommandlineArgs();
 
-       if (args.TryGetValue("-mlapi", out string mlapiValue))
+       if (args.TryGetValue("-mode", out string mode))
        {
-           switch (mlapiValue)
+           switch (mode)
            {
                case "server":
                    netManager.StartServer();
@@ -216,22 +214,22 @@ You may get a UAC prompt requesting permission for the binary to run you should 
 
   Server: 
   ```
-  <Path to Project>\Build\HelloWorld.exe -mlapi server
+  <Path to Project>\Build\HelloWorld.exe -mode server
   ```
   
   Client:
   ```
-  <path to project>\Build\HelloWorld.exe -mlapi client
+  <path to project>\Build\HelloWorld.exe -mode client
   ```
 
   To run these commands on a single line:
   ```
-  HelloWorld\Build\HelloWorld.exe -mlapi server & HelloWorld\Build\HelloWorld.exe -mlapi client
+  HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
   ```
 
   Example:
   ```
-  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -mlapi server & HelloWorld\Build\HelloWorld.exe -mlapi client
+  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
   ```
 
 :::important
@@ -247,17 +245,17 @@ Modify the commands as follows:
 
   Server: 
   ```
-  <Path to Project>\Build\HelloWorld.exe -logfile log-server.txt -mlapi server 
+  <Path to Project>\Build\HelloWorld.exe -logfile log-server.txt -mode server 
   ```
   
   Client:
   ```
-  <Path to Project>\Build\HelloWorld.exe  -logfile log-client.txt -mlapi client
+  <Path to Project>\Build\HelloWorld.exe  -logfile log-client.txt -mode client
   ```
 
   Example (Running as a single command line):
   ```
-  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile -log-server.txt -mlapi server & HelloWorld\Build\HelloWorld.exe -logfile log-client.txt -mlapi client
+  C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile -log-server.txt -mode server & HelloWorld\Build\HelloWorld.exe -logfile log-client.txt -mode client
   ```
 :::
 
@@ -272,17 +270,17 @@ For Mac you should do the following:
 
 Server
 ```
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi server -logfile -
+<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile -
 ```
 
 Client
 ```
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi client -logfile -
+<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```
 
 Run both as a single command:
 ```
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi server -logfile - & ; ~ <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mlapi client -logfile -
+<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile - & ; ~ <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```
 </TabItem>
 </Tabs>
@@ -292,16 +290,19 @@ import TabItem from '@theme/TabItem';
 
 ## Testing Hello World
 
-Now we will test to see if everything works as expected.
+Now, to see if everything works as expected we can test starting a host in the editor. A host plays the role of a server and a client at the same time.
 
 1. Click **Play**.
-1. Click **Start Host** under **NetworkManager**. 
+1. Click the **Start Host** button in the **NetworkManager** GameObject's inspector.
+1. You should now see your scene with your Player Prefab spawned.
+
+You can also use the command line helper to launch a server and one or more clients to connect to the server. You should see the plane on the server until the first client connects. Then, a new Player Prefab will be spawned by Netcode for each connected client.
 
 ## Next Steps
 
 See the following content to continue your journey using Netcode:
 
-* Build on the Hello World project to continue learning about different features of Netcode with the [Golden Path series](../tutorials/goldenpath_series/gp_intro.md).
+* Build on the Hello World project to continue learning about different features of Netcode with the [Golden Path series](goldenpath_series/gp_intro.md).
 * Check out the educational samples to further explore Netcode and its abilities:
   * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
   * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)

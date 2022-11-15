@@ -19,13 +19,13 @@ Next steps will likely involve the existing Golden Path series to be completely 
  
 |<div class="buttons-pages">Hello World</div>| <div class="buttons-pages">Golden Path One</div>| 
 | --- | --- |
-| Creating a new project<br/>  Installing Netcode<br/>   Creating and testing the basic networking building blocks<br/> |   Adding scripts to objects<br/> Editor modes (Host Server and Client)<br/> Basic player movement <br/>Basic RPC use  |
+| [Creating a new project](../helloworld.md#create-a-new-project-in-unity)<br/>  [Installing Netcode](../helloworld.md#install-netcode)<br/>   [Creating and testing the basic networking building blocks](../helloworld.md#create-the-basic-components)<br/> |   [Editor modes (Host Server and Client)](gp_module_one.md#adding-editor-modes-to-hello-world)<br/> [Basic player movement](gp_module_one.md#adding-basic-movement-to-the-player-object) <br/>[Basic RPC and Network variable use](gp_module_one.md#some-simple-rpc-use)  |
 </div>
 <div class="table-columns-plain">
 
 | <div class="buttons-pages">Golden Path Two</div>|
 | --- | 
-|  Network variables (client and server-controlled)<br/> Network transforms <br/> More on RPCs|
+|  [Network variables (server-controlled)](gp_module_two.md#introducing-a-server-controlled-network-variable)<br/> [Network transforms](gp_module_two.md#introducing-network-transform) <br/> [More on RPCs](gp_module_two.md#introducing-rpcs)|
 
 
 </div>
