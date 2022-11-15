@@ -12,6 +12,10 @@ module.exports = {
             "type": "doc",
             "id": "RNSM"
         },
+        {
+            "type": "doc",
+            "id": "tools-network-simulator"
+        }
     ],
 
         "api": [
