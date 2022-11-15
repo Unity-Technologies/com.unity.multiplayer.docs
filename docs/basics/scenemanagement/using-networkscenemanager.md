@@ -117,7 +117,7 @@ The term "Scene Event" refers to all subsequent scene events that transpire over
 The purpose behind the above outline is to demonstrate that a Scene Event can lead to other scene event types being generated and that the entire sequence of events that transpire occur over a longer period of time than if you were loading a scene in a single player game. 
 
 :::tip
-When you receive the `SceneEventType.LoadEvenetCompleted` or the `SceneEventType.SynchronizeComplete` you know that the server or clients can start invoking netcode specific code (i.e. sending Rpcs, updating `NetworkVariable`s, etc.).  Alternately, `NetworkManager.OnClientConnectedCallback` is triggered when a client finishes synchronizing and could be used in a similar fashion.  _However, that only works for the initial client synchronization and not for scene loading or unloading events._
+When you receive the `SceneEventType.LoadEventCompleted` or the `SceneEventType.SynchronizeComplete` you know that the server or clients can start invoking netcode specific code (i.e. sending Rpcs, updating `NetworkVariable`s, etc.).  Alternately, `NetworkManager.OnClientConnectedCallback` is triggered when a client finishes synchronizing and could be used in a similar fashion.  _However, that only works for the initial client synchronization and not for scene loading or unloading events._
 :::
 
 :::warning
