@@ -62,13 +62,13 @@ You can trigger a simulated lag spike in the Unity Editor with the Network Simul
 The Network Simulator tool comes packaged with configuration presets that simulate common network conditions, such as a home broadband connection or a mobile 3G connection. To use one of the configuration presets:
 
 1. Select the **NetworkSimulator** component from the **Hierarchy** tab.
-2. Set the **Connection Preset** field to the configuration you want to use. \
+2. Set the **Connection Preset** field to the configuration you want to use.
 
 ![](../static/img/tools/netsim-3.png)
 
 #### Create a Network Simulator Preset
 
-The Network Simulator tool allows you to create any number of custom network configuration presets. To create a custom network configuration preset: 
+The Network Simulator tool allows you to create any number of custom network configuration presets. To create a custom network configuration preset:
 
 1. Right-click on the **Assets** folder in the **Project** tab.
 2. Select **Create** > **Multiplayer** > **NetworkSimulatorPresetAsset**.
@@ -100,7 +100,7 @@ It comes packaged with a couple network scenarios presets:
 To use a network scenario:
 
 1. Select the **NetworkSimulator** component from the **Hierarchy** tab.
-2. Under Network Scenarios in the Inspector tab, set the **Scenario** field to the network scenario you want to use. \
+2. Under Network Scenarios in the Inspector tab, set the **Scenario** field to the network scenario you want to use.
 
 ![](../static/img/tools/netsim-12.png)
 
@@ -118,19 +118,19 @@ The **Connections Cycle** Network Scenario allows you to cycle through different
 
 ![](../static/img/tools/netsim-15.png)
 
-2. Set the first **Connection Preset** to a built-in preset or a custom preset. \
+1. Set the first **Connection Preset** to a built-in preset or a custom preset.
 
 ![](../static/img/tools/netsim-13.png)
 
-3. Set the **Change Interval Milliseconds** field to the time to wait before switching to the next preset. \
+1. Set the **Change Interval Milliseconds** field to the time to wait before switching to the next preset.
 
 ![](../static/img/tools/netsim-8.png)
 
-4. Select the **plus (+)** symbol to add another cycle. \
+1. Select the **plus (+)** symbol to add another cycle.
 
 ![](../static/img/tools/netsim-14.png)
 
-5. Configure the next cycle as you see fit. \
+1. Configure the next cycle as you see fit.
 
 ![](../static/img/tools/netsim-4.png)
 
@@ -140,19 +140,19 @@ The Connections Cycle scenario cycles through the configurations list at the **C
 
 The **Random Connections Swap** Network Scenario allows you to specify a set of network configuration presets to swap through at random. By default, it includes one cycle that’s set to None. To configure the Random Connection Swap:
 
-1. From the Inspector tab, expand the **Network Scenarios** > **Configurations** section. \
+1. From the Inspector tab, expand the **Network Scenarios** > **Configurations** section.
 
 ![](../static/img/tools/netsim-6.png)
 
-2. Set the **Class Preset** to a built-in preset or a custom preset. \
+1. Set the **Class Preset** to a built-in preset or a custom preset.
 
 ![](../static/img/tools/netsim-10.png)
 
-3. Select the **plus (+)** symbol to add another configuration. \
+1. Select the **plus (+)** symbol to add another configuration.
 
 ![](../static/img/tools/netsim-5.png)
 
-4. Configure the configuration as you see fit. \
+1. Configure the configuration as you see fit.
 
 ![](../static/img/tools/netsim-9.png)
  \
@@ -179,7 +179,7 @@ The [Home Broadband](#home-broadband) Network Simulator presets simulates a good
 
 A poor-quality mobile connection preset represents an extremely poor connection, entirely unsuitable for synchronous multiplayer gaming due to exceptionally [high ping](#latency). However, it might work for some turn-based games.
 
-The following Network Simulator presets simulate a poor-quality mobile connection: 
+The following Network Simulator presets simulate a poor-quality mobile connection:
 
 * [Mobile 2G](#mobile-2g)
 * [Mobile 2.5G](#mobile-25g)
