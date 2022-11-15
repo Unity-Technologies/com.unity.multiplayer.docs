@@ -6,200 +6,275 @@ description: Learn more about installing and running the Boss Room game sample.
 
 ![Boss Room banner](/img/banner.png)
 
-Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode patterns that are frequently featured in similar multiplayer games.
+Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) frequently featured in similar multiplayer games.
 
-PLEASE NOTE: Boss Room is compatible with the latest Unity Long Term Support (LTS) editor version, currently 2021 LTS. Please include standalone support for Windows/Mac in your installation.
-
-
-## Download the project files
-
-1. Go to the Multiplayer Samples Co-Op [Latest Release](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/latest) on GitHub.
-1. Click on `Project.zip` to automatically start downloading the folder.
-1. Unzip the Project zip file. It unzips a folder named `com.unity.multiplayer.samples.coop-<version>`.
-:::note Windows users
-Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+:::note
+**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2021 LTS](https://unity.com/releases/2021-lts)). Make sure to include standalone support for Windows/Mac in your installation.
 :::
-1. You may choose to move your unzipped folder to a new location. My default location is my `Downloads` folder that I regularly clean out, so I moved the folder to my desktop.
-1. You can now add the Boss Room project to your Unity Hub.
 
-:::important Compatibility
 Boss Room has been developed and tested on the following platforms:
 
 * Windows
 * Mac
 * iOS
 * Android
-Boss Room's min spec devices are:
+
+The minimum device specifications for Boss Room are:
 
 * iPhone 6S
 * Samsung Galaxy J2 Core
-:::
 
-## Add the project with Unity Hub
+Join the multiplayer community on the Unity [Discord](https://discord.gg/mNgM2XRDpb) and [Forum](https://forum.unity.com/forums/multiplayer.26/) to connect and find support. Got feedback? Tell us what you think using our new [Feedback Form](#feedback-form).
 
-1. Open your Unity Hub.
-1. Click the dropdown arrow next to **Open**, then select **Add project from disk**.
-1. Select the root folder of the downloaded project. For example, `com.unity.multiplayer.samples.coop-<version>`.
+### Contents and quick links
+
+- [Contents and quick links](#contents-and-quick-links)
+- [Boss Room Overview](#boss-room-overview)
+- [Getting the project](#getting-the-project)
+  - [Direct download](#direct-download)
+  - [Installing Git LFS to clone locally](#installing-git-lfs-to-clone-locally)
+- [Registering the project with Unity Gaming Services (UGS)](#registering-the-project-with-unity-gaming-services-ugs)
+- [Opening the project for the first time](#opening-the-project-for-the-first-time)
+- [Exploring the project](#exploring-the-project)
+- [Testing multiplayer](#testing-multiplayer)
+  - [Local multiplayer setup](#local-multiplayer-setup)
+  - [Multiplayer over Internet](#multiplayer-over-internet)
+- [Index of resources](#index-of-resources)
+  - [Gameplay](#gameplay)
+  - [Game flow](#game-flow)
+  - [Connectivity](#connectivity)
+  - [Services](#services)
+  - [Tools and utilities](#tools-and-utilities)
+- [Troubleshooting](#troubleshooting)
+  - [Bugs](#bugs)
+- [Licence](#licence)
+- [Other samples](#other-samples)
+- [Contributing](#contributing)
+- [Feedback form](#feedback-form)
+
+### Boss Room Overview
+
+Boss Room is designed to be used in its entirety to help you explore the concepts and patterns behind a multiplayer game flow; such as character abilities, casting animations to hide latency, replicated objects, RPCs, and integration with the [Relay](https://unity.com/products/relay), [Lobby](https://unity.com/products/lobby), and [Authentication](https://unity.com/products/authentication) services.
+
+You can use the project as a reference starting point for your own Unity game or use elements individually.
+
+This repository also contains a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
+
+```json
+"com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop"
+```
+
+For more information on the art in Boss Room, see [ART_NOTES.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/ART_NOTES.md).
+
+### Getting the project
+
+You can get the project by downloading it directly or cloning locally. However, if you use git, you must install Git LFS.
+
+#### Direct download
+
+You can download the latest version of Boss Room from our [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page.
+
+Alternatively, you can click the green **Code** button, then select **Download Zip**. This downloadd the branch that you are currently viewing on Github.
 
 :::note
-The first time you open the project, Unity will import all assets, which will take longer than usual - this is normal. The Unity Netcode for GameObjects package will also be installed with Boss Room.
-
-**Issues with importing due to parental control software**: If you have issues with importing you may want to check your DNS settings as some ISP parental controls  may block GitHub access. For example, see this information on [WebSafe](https://community.virginmedia.com/t5/Networking-and-WiFi/Web-Safe-Breaks-GitHub/td-p/4279652).
+**Note for Windows users**: Using Windows' built-in extraction tool may generate an `Error 0x80010135: Path too long` error window which can invalidate the extraction process. A workaround for this is to shorten the zip file to a single character (for example, "`c.zip`") and move it to the shortest path on your computer (most often right at `C:\`) and retry. If that solution fails, another workaround is to extract the downloaded zip file using [7zip](https://www.7-zip.org/).
 :::
 
-## Register the project with Unity Gaming Services (UGS)
+#### Installing Git LFS to clone locally
 
-This project leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must first [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the **Unity Dashboard**, and enable both the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services.
+Boss Room uses Git Large Files Support (LFS) to handle all large assets required locally. See [Git LFS installation options](https://github.com/git-lfs/git-lfs/wiki/Installation) for Windows and Mac instructions. This step is only needed if cloning locally. You can also just download the project which will already include large files.
 
-## Open the project
+### Registering the project with Unity Gaming Services (UGS)
 
-To open the project for the first time:
+Boss Room leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard, and enable the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services. Otherwise, you can still use Boss Room without UGS.
 
-1. In your Unity Hub, double-click the project.
-1. Navigate to the Editor window.
-2. Then under the **Project** tab, go to **Assets** > **Boss Room** > **Scenes** and double-click on the **Startup** scene.
-3. Click **Play**. The Boss Room menu scene loads.
+### Opening the project for the first time
 
-## Test multiplayer
+Once you have downloaded the project, follow the steps below to get up and running:
 
-To see the multiplayer functionality in action, you can either run multiple instances of the game [locally on your computer](#local-multiplayer-setup) or choose to [connect through the internet](#multiplayer-over-internet).
+1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/2021-lts).
+    1. Include standalone support for **Windows/Mac** in your Unity Editor installation.
+2. Add the project to the Unity Hub by selecting the **Add** button and pointing it to the root folder of the downloaded project.
+    1. Unity imports all the project assets the first time you open the project, which takes longer than usual.
+3. Select the **Play** button. You can then host a new game or join an existing one using the in-game UI.
 
-## Local multiplayer setup
+### Exploring the project
 
-For a local multiplayer setup, you must build an executable and launch several instances of this executable to both host and join a game.
+Boss Room is an eight-player co-op RPG game experience, where players collaborate to fight imps, and then a boss. Players can select between classes that each have skills with didactically interesting networking characteristics. Control model is click-to-move, with skills triggered by a mouse button or hotkey.
 
-1. With the Boss Room project open in your Unity editor, click **File** > **Build Settings** > **Build**.
-2. Save the binary as `Boss Room`.
+One of the eight clients acts as the host/server. That client will use a compositional approach so that its entities have both server and client components.
 
-After the build has completed, you can launch several instances of the built executable to both host and join a game.
+* The game is server-authoritative, with latency-masking animations.
+* Position updates are carried out through NetworkTransform that sync position and rotation.
+* Code is organized in domain-based assemblies. See our [ARCHITECTURE.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/ARCHITECTURE.md) file for more details.
 
-:::important Mac Users
-To run multiple instances of the same app, you need to use the command line:
-1.  First, change your directory to the folder where you saved the Boss Room executable. For example, `cd Desktop/com.unity.multiplayer.samples.coop-<version>`.
-2.  Run the command `Open -n YourAppName.app`. If you saved the app as `BossRoom`, your command is `Open -n BossRoom.app`. However, if you saved your app as `Boss Room` with a space, your command needs to include quotation marks ("") around the executable name: `Open -n "BossRoom.app"`.
-:::
+### Testing multiplayer
 
-## Multiplayer over internet
+To see the multiplayer functionality in action, you can:
 
-In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
+* Run multiple instances of the game locally on your computer (using either ParrelSync or builds).
+* Connect to a friend over the internet.
 
-Running the game over internet currently requires using [Port Forwarding](#port-forwarding) or [Integrating Boss Room with Unity Gaming Services](#integrating-boss-room-with-unity-gaming-services).
+See [Testing multiplayer games locally](../../tutorials/testing/testing_locally.md) for more information.
 
-### Port Forwarding
+#### Local multiplayer setup
 
-The [Portforward Site](https://portforward.com/) has guides on how to enable port forwarding on a huge number of routers. Boss Room uses UDP and needs a 9998 external port to be open.
+First, build an executable by selecting **File** > **Build Settings** > **Build**.
 
-import Iframe from 'react-iframe'
+After you have the build, you can launch several instances of the build executable to host or join a game.
 
-### Integrating Boss Room with Unity Gaming Services
-
-With the release of Boss Room 1.1.0, Boss Room integrated with Unity Gaming Services (UGS): [Authentication](https://docs.unity.com/authentication/IntroUnityAuthentication.html), [Relay](https://docs.unity.com/relay/introduction.html), and [Lobby](https://docs.unity.com/lobby/unity-lobby-service-overview.html). These services  make it easy for players to host and join games that are playable over the internet, without the need for port forwarding or out-of-game coordination.
-
-#### Authentication
-
-To interact with the rest of UGS, the user must be authenticated. Therefore, authentication is kicked off as soon as the game launches and the main menu scene loads.
+If you run several instances locally, you must use the **Change Profile** button to set different profiles for each instance for authentication purposes.
 
 :::note
-The Authentication service supports [anonymous sign-in](https://docs.unity.com/authentication/UsingAnonSignIn.html) and doesn't require any additional input from the player.
+**Note**: If you’re using Mac to run multiple instances of the same app, you need to use the command line. Run `open -n BossRoom.app`.
 :::
 
-The Authentication API doesn't distinguish multiple instances of the same project running on the same machine and logs in the same user in all those different instances. Both ParrelSync clones and actual game builds are affected and can mess up testing the game locally.
+#### Multiplayer over Internet
 
-However, Authentication supports [Profiles](https://docs.unity.com/authentication/ProfileManagement.html) that allows different users existing on the same physical machine. To test locally, we need both builds and editor players to be able to switch to different Profiles.
+Use the following instructions to test Boss Room with multiple players over the Internet.
 
-The [`ProfileManager`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/ProfileManager.cs) class wraps the logic for deciding what Profile you should be using, if any. In builds, the command-line argument `-AuthProfile` specifies the new profile id. When iterating in the editor, ParrelSync can use its `CloneManager` custom arguments to decide what user profile to use. Users can also change profile using the in-game menu.
+First, build an executable and distribute it to all players.
 
-`ProfileManager.Profile` generates the custom `InitializationOptions`:
-
-```
-var unityAuthenticationInitOptions = new InitializationOptions();
-var profile = ProfileManager.Profile;
-
-
-if (profile.Length > 0)
-{
-    unityAuthenticationInitOptions.SetProfile(profile);
-}
-
-```
-
-The code that executes profile switch and sign-in logic itself is as follows:
-
-```
-async Task TrySignIn(InitializationOptions initializationOptions)
-{
-    await Unity.Services.Core.UnityServices.InitializeAsync(initializationOptions);
-
-    if (!AuthenticationService.Instance.IsSignedIn)
-    {
-   	 await AuthenticationService.Instance.SignInAnonymouslyAsync();
-    }
-}
-```
-
-Next is lobby and relay.
-
-#### Lobby and Relay
-
-##### The Lobby Host Flow
-
-1. The would-be host enters the lobby name, specifies if it's public or private and hits the **Create** button.
-1. The [Lobby creation API](https://docs.unity.com/lobby/creating-a-lobby.html) call is made. The newly created lobby is **locked** (i.e prevented from appearing in the list of publicly available, fully set up games that are ready to be joined) until we successfully complete the relay allocation and Netcode startup steps below.
-1. The host requests a relay allocation from the [Relay service](https://docs.unity.com/relay/introduction.html).
-2. [UTP](../../../transport/about.md)) starts and the host is switches to the character selection scene. The lobby itself is now considered unlocked and is available for other clients to join.
-
-##### The Lobby Client Flow
-* There are several ways to connect to a lobby:
-  * Choose one of the public lobbies regularly fetched from the Lobby service
-  * [Quickjoin](https://docs.unity.com/lobby/quick-join.html): Randomly selects a public lobby
-  * Using a [lobby key](https://docs.unity.com/lobby/joining-lobbies.html), shared through out-of-game means. This works for both public and private lobbies.
-* After joining a lobby, the [relay join code passes through lobby metadata](https://docs.unity.com/lobby/relay-integrations.html) to connect to the host via UTP Relay transport.
-* The host receives a request to approve the connecting client, and the host would server-authoritatively switch the player to the appropriate scene.
-
-Currently, the Lobby service has to be [polled for updates](https://docs.unity.com/lobby/polling-for-lobby-state.html). This is not ideal for a responsive feel to character selection; however, when there is an option to get real time updates from the Lobby service, it would be a good alternative way to implement something like this.
-
-##### Disconnection and Reconnection
-
-Handling player disconnections and reconnections is a necessity in a multiplayer game.
-
-Boss Room uses a [session management](../../advanced-topics/session-management.md) system that ensures when a player disconnects, some data is kept and accurately assigned back to that player if or when they reconnect (see [SessionManager.cs – OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)).
-
-The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs)).
-
-:::important
-It's important to promptly remove disconnected players from the lobby. Otherwise, the disconnected player cannot rejoin the lobby because they are still considered in it.
+:::tip
+**Tip**: It is possible to connect between multiple instances of the same executable OR between executables and the Unity Editor that you used to create the executable.
 :::
 
-When a player [disconnects from Relay](https://docs.unity.com/relay/disconnection.html), eventually the Lobby and Relay service integration (necessary before we run UTP connection) kicks out the disconnected players. However, the timeout for disconnect is quite long (~2 minutes), and we do not rely solely on this mechanism.
+Next, you need to set up a relay. Running the Boss Room over the internet currently requires setting up a relay:
 
-To make the process of leaving lobby more reliable, there are several additional cleanup mechanisms:
-* The client code contains application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)) that sends a request to remove the player from the lobby
-* The host has special logic that removes the disconnected player from the lobby as soon as the host knows about it (`NetworkManager.OnClientDisconnectCallback`). This is helpful when the client has crashed and couldn't send a "leave lobby" request.
-  * For this to work, the host uses `SessionManager` to store the mapping between UGS playerId and their NGO clientId. You can find this logic in [ServerGameNetPortal.cs - OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs).
-* Lastly, the client contains checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs).
+* Boss Room provides an integration with [Unity Relay](../../relay/relay.md). You can find our Unity Relay setup guide [here](../../relay/relay.md).
+* Alternatively you can use Port Forwarding. The [https://portforward.com/](https://portforward.com/) site has guides on how to enable port forwarding on a huge number of routers.
+* Boss Room uses `UDP` and needs a `9998` external port to be open.
+* Make sure your host's address listens on 0.0.0.0 (127.0.0.1 is for local development only).
 
-## Troubleshooting
+### Index of resources
 
-**Errors finding Git installation**
+The Boss Room sample includes resources for gameplay, game flow, connectivity, Unity services, and other tools and utilities.
 
-If you receive an OS or Unity error trying to locate Git after updating or installing Git, you need to fully restart your computer. Restarting only Unity may not fully update system information to correctly locate the install.
+#### Gameplay
 
-**Windows Error 0x80010135: Path too long**
+Boss Room includes the following gameplay resources:
 
-Using Windows' built-in extracting tool may generate an "Error 0x80010135: Path too long" error window which can invalidate the extraction process. As a workaround, shorten the zip file to a single character (for example *c.zip*) and move it to the shortest path on your computer (such as in root C:\) and retry. If that solution fails, another workaround is to extract the downloaded zip file using an application like 7zip.
+* Action anticipation - AnticipateActionClient() in [Assets/Scripts/Gameplay/Action/Action.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/Action.cs)
+* Object spawning for long actions (archer arrow) - LaunchProjectile() in [Assets/Scripts/Gameplay/Action/ConcreteActions/LaunchProjectileAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/LaunchProjectileAction.cs)
+* Quick actions with RPCs (ex: mage bolt) - [Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs)
+* Teleport - [Assets/Scripts/Gameplay/Action/ConcreteActions/DashAttackAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/DashAttackAction.cs)
+* Client side input tracking before an action (archer AOE) - OnStartClient() in [Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs)
+* Time based action (charged shot) - [Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedLaunchProjectileAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedLaunchProjectileAction.cs)
+* Object parenting to animation - [Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs)
+* Physics object throwing (using NetworkRigidbody) - [Assets/Scripts/Gameplay/Action/ConcreteActions/TossAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/TossAction.cs)
+* NetworkAnimator usage - All actions, in particular [Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedShieldAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedShieldAction.cs)
+* NetworkTransform local space - [Assets/Scripts/Gameplay/GameplayObjects/ServerDisplacerOnParentChange.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ServerDisplacerOnParentChange.cs)
+* Dynamic imp spawning with portals - [Assets/Scripts/Gameplay/GameplayObjects/ServerWaveSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ServerWaveSpawner.cs)
+* In scene placed dynamic objects (imps) - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs)
+* Static objects (non-destroyables like doors, switches, etc) - [Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs)
+* State tracking with breakables, switch, doors
+    * [Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs)
+    * [Assets/Scripts/Gameplay/GameplayObjects/FloorSwitch.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/FloorSwitch.cs)
+    * [Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs)
+* NetworkVariable with Enum - [Assets/Scripts/Gameplay/GameState/NetworkPostGame.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/NetworkPostGame.cs)
+* NetworkVariable with custom serialization (GUID) - [Assets/Scripts/Infrastructure/NetworkGuid.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkGuid.cs)
+* NetworkVariable with fixed string - [Assets/Scripts/Utils/NetworkNameState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkNameState.cs)
+* NetworkList with custom serialization (LobbyPlayerState) - [Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs)
+* Persistent player (over multiple scenes) - [Assets/Scripts/Gameplay/GameplayObjects/PersistentPlayer.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/PersistentPlayer.cs)
+* Character logic (including player's avatar) - [Assets/Scripts/Gameplay/GameplayObjects/Character/ \
+Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacter.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Character)
+* Character movements - [Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs)
+* Client driven movements - Boss Room is server driven with anticipation animation. See [Client Driven bitesize](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) for client driven gameplay
+* Player spawn - SpawnPlayer() in [Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs)
 
-**Run builds on Mac OSX gives "unidentified developer"**
+#### Game flow
 
-If you attempt to run a build on OSX and receive a warning dialog mentioning an "unidentified developer", you may need to override your security settings for this application:
+Boss Room includes the following game flow resources:
 
-1. In the Finder on your Mac, locate the application you want to open.
+* Application Controller - [Assets/Scripts/ApplicationLifecycle/ApplicationController.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)
+* Game flow state machine - All child classes in [Assets/Scripts/Gameplay/GameState/GameStateBehaviour.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/GameStateBehaviour.cs)
+* Scene loading and progress sharing - [ackages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
+* Synced UI with character select - [Assets/Scripts/Gameplay/GameState/ClientCharSelectState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/ClientCharSelectState.cs)
+* In-game lobby (character selection) - [Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs \
+Assets/Scripts/Gameplay/GameState/ServerCharSelectState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs)
+* Win state - [Assets/Scripts/Gameplay/GameState/PersistentGameState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/PersistentGameState.cs)
 
-  :::note
-  Do not use Launchpad, it does not allow you to access the shortcut menu.
-  :::
+#### Connectivity
 
-1. Control-click the app icon, then choose **Open** from the shortcut menu.
-1. Click **Open**.
-1. The app is saved as an exception to your security settings. You can open it in the future by double-clicking it just as you can any registered app.
+Boss Room includes the following connectivity resources:
 
-See [Apple Support](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac) for details.
+* Connection approval return value with custom messaging - WaitToDenyApproval() in [Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs)
+* Connection state machine - [Assets/Scripts/ConnectionManagement/ConnectionManager.cs \
+Assets/Scripts/ConnectionManagement/ConnectionState/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionManager.cs)
+* Session manager - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)
+* RTT stats - [Assets/Scripts/Utils/NetworkOverlay/NetworkStats.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkOverlay/NetworkStats.cs)
+
+#### Services
+
+Boss Room supports integration with Lobby, Relay, and Authentication (UAS). Boss Room includes the following service resources:
+
+* Lobby and relay - host creation - CreateLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
+* Lobby and relay - client join - JoinLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
+* Relay Join - StartClientLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
+* Relay Create - StartHostLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
+* Authentication - EnsurePlayerIsAuthorized() in [Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs)
+
+#### Tools and utilities
+
+Boss Room includes the following tools and utilities:
+
+* Networked message channel (inter-class and networked messaging) - [Assets/Scripts/Infrastructure/PubSub/NetworkedMessageChannel.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/PubSub/NetworkedMessageChannel.cs)
+* Simple interpolation - [Assets/Scripts/Utils/PositionLerper.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/PositionLerper.cs)
+* Network Object Pooling - [Assets/Scripts/Infrastructure/NetworkObjectPool.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkObjectPool.cs)
+* NetworkGuid - [Assets/Scripts/Infrastructure/NetworkGuid.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkGuid.cs)
+* Netcode hooks - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetcodeHooks.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetcodeHooks.cs)
+* Spawner for in-scene objects - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs)
+* Session manager for reconnection - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)
+* Relay utils - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/UnityRelayUtilities.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/UnityRelayUtilities.cs)
+* Client authority - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs)
+* Scene utils with synced loading screens - [Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
+* RNSM custom config - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset)
+* ParrelSync - [Packages/manifest.json](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/manifest.json)
+
+### Troubleshooting
+#### Bugs
+
+Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report NGO bugs using NGO Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
+
+### Licence
+
+Boss Room is licenced under the Unity Companion Licence. See [LICENSE.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/LICENSE.md) for more legal information.
+
+Visit the following links to learn more about Unity Netcode and Boss Room.
+
+* [About Netcode for GameObjects](../../about.md)
+* [Boss Room Actions Walkthrough](bossroom-actions.md)
+* [NetworkObject Parenting inside Boss Room](networkobject-parenting.md)
+* [NetworkRigidbody inside Boss Room](networkrigidbody.md)
+* [Dynamically spawning NetworkObject in Boss Room](spawn-networkobjects.md)
+
+### Other samples
+
+The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and contains a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
+
+### Contributing
+
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/develop/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
+
+Our projects use the `git-flow` branching strategy:
+
+* The `develop` branch contains all active development.
+* The `main` branch contains release versions.
+
+To get the project on your machine, you need to clone the repository from GitHub using the following command-line command:
+
+```bash
+git clone https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git
+```
+
+:::danger
+**Important**: You should have [Git LFS](https://git-lfs.github.com/) installed on your local machine.
+:::
+
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md) for guidelines on submitting issues and PRs to Boss Room!
+
+### Feedback form
+
+Thank you for cloning Boss Room and taking a look at the project. To help us improve and build better samples in the future, please consider submitting feedback about your experiences with Boss Room. It'll only take a couple of minutes. Thanks!
+
+[Enter the Boss Room Feedback Form](https://unitytech.typeform.com/bossroom)
