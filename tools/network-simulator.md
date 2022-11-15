@@ -54,7 +54,7 @@ You can trigger a simulated lag spike in the Unity Editor with the Network Simul
 ![](../static/img/tools/netsim-7.png)
 
 :::tip
-**Tip**: You can trigger lag spikes through code with the `NetworkSimulator.TriggerLagSpike` API (without needing to write a Network Scenario). See the [Lag spike scenario](#lag-spike-scenario) example to learn how.
+**Tip**: You can trigger lag spikes through code with the `NetworkSimulator.TriggerLagSpike` API or you can write a Network Scenario that triggers it.  See the [Lag spike scenario](#lag-spike-scenario) example to learn how.
 :::
 
 #### Use a Network Simulator Preset
@@ -86,12 +86,9 @@ Once you select the custom preset asset, you can edit it live from the Inspector
 
 #### Use a Network Scenario
 
-The Network Simulator tool supports NetworkScenarios. A NetworkScenario is a way to script how you want to affect the network conditions at runtime. They allow you to change parameters and presets cyclicly or at random.
+The Network Simulator tool supports NetworkScenarios. A NetworkScenario is a way to script how you want to affect the network conditions at runtime. They allow you to change parameters and presets dynamically.
 
-It comes packaged with a couple network scenarios presets:
-
-* [Connections Cycle](#connections-cycle) allows you to cycle through network configurations.
-* [Random Connections Swap](#random-connections-swap) allows you to swap through network configurations at random.
+It comes packaged with a couple network scenarios presets, such as the [Connections Cycle](#connections-cycle) and  [Random Connections Swap](#random-connections-swap).
 
 :::note
 **Note**: You can also [create custom network scenarios](#create-a-network-simulator-preset).
