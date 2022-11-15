@@ -6,7 +6,13 @@ description: Learn how Boss Room optimizes performance.
 
 Optimization is critical for networked and non-networked games. However, you have more limitations and constraints to consider when building a networked game. For example, networked games must account for latency, packet loss, reliability, and bandwidth limitations.
 
-A critical optimization opportunity of a networked game is bandwidth usage. Higher bandwidth usage means there’s a higher chance of encountering issues like your network dropping traffic. Higher bandwidth usage also increases the likelihood of discrepancies between players depending on their network access. A player with limited network access won’t have as good an experience as players with better network access. As a result, one of the primary optimization goals of a networked game is to keep bandwidth usage to a minimum. Low bandwidth usage makes delivering a smooth player experience easier and reduces the load on servers and clients.
+One of the more critical optimizations of a networked game is how much bandwidth it consumes. The following issues can occur with networked games that have high bandwidth usage:
+
+* The game instance drops packets, which can occur at the transport or NIC (network interface card) layers
+* Latency induced discrepancies between players depend upon their network capabilities.
+  * A player with a latent and/or lower bandwidth capable connection can often lead to a less than nominal experience than players with a low latency and/or higher bandwidth capable connections.
+  
+As such, a good optimization goal for a netcode enabled game is to keep the bandwidth consumption reduced where possible. Netcode enabled games that have been optimized for bandwidth usage can help deliver a smoother player experience and reduce the overall network requirements for both servers and clients.
 
 The following sections cover a handful of the most impactful optimization techniques used in the Boss Room sample, including
 
@@ -29,13 +35,13 @@ RPCs require less bandwidth than NetworkVariables, so using RPCs for temporary e
 
 For example, consider the Archer’s and the Mage’s attacks. The Archer’s projectile is a slow, aimed attack that takes time to reach its target and only registers a hit when colliding with another character or object. In this case, creating a NetworkObject for the Archer’s projectile and replicating its position with a NetworkTransform component (which uses NetworkVariables internally) makes sense to ensure the arrow stays in sync over multiple seconds.
 
-However, the Mage’s projectile is much faster and always seeks its target to hit it. In the case of the Mage’s projectile, it does not matter if all clients see the projectile in the same place simultaneously; they only need to see it launch and hit its target. As a result, you can save bandwidth by using an RPC to trigger the creation of the visual effect on the clients and have each client interpret that event without data from the server. In this case, the server only needs to send data when the Mage triggers the ability instead of each tick.
+However, the Mage’s projectile is much faster and always seeks its target to hit it. In the case of the Mage’s projectile, it does not matter if all clients see the projectile in the same place simultaneously; they only need to see it launch and hit its target. As a result, you can save bandwidth by using an RPC to trigger the creation of the visual effect on the clients and have each client interpret that event without data from the server. In this case, the server only needs to send data when the Mage triggers the ability instead of spawning a new NetworkObject that contains the visual effects (VFX) and synchronizing the motion of the VFX as it heads towards its target over each network tick.
 
 For more examples, see [RPCs vs. NetworkVariables Examples](../../learn/rpcnetvarexamples.md).
 
 ## NetworkTransform configuration {#networktransform-configuration}
 
-The NetworkTransform component handles the synchronization of a NetworkObject’s Transform. By default, the NetworkTransform component synchronizes every part of the transform at every tick if a change bigger than a specified [threshold](../../components/networktransform.md) occurs. However, you can configure it to only synchronize the necessary data by omitting particular axes of the position, rotation, or scale vectors. See [Restricting synchronization](../../components/networktransform.md).
+The NetworkTransform component handles the synchronization of a NetworkObject’s Transform. By default, the NetworkTransform component synchronizes every part of the transform at every tick if a change bigger than the specified [threshold](../../components/networktransform.md) occurs. However, you can configure it to only synchronize the necessary data by omitting particular axeis of the position, rotation, or scale vectors. See [Restricting synchronization](../../components/networktransform.md).
 
 You can also increase the thresholds to reduce the frequency of updates if you don’t mind reducing the accuracy and responsiveness of the replicated Transform.
 
@@ -47,7 +53,7 @@ See [NetworkTransform](../../components/networktransform.md) for more informatio
 
 Object pooling is a creational design pattern that pre-instantiates all required objects before gameplay. It removes the need to create new objects or destroy old ones while the game runs. It creates a set amount of GameObjects before the game’s runtime and inactivates or activates the required GameObjects, effectively recycling the GameObject and never destroying it.
 
-You can use object pooling to optimize both networked and non-networked games by lowering the burden placed on the CPU by pooling GameObjects before gameplay starts instead of having to rapidly create and destroy them.
+You can use object pooling to optimize both networked and non-networked games by lowering the burden placed on the CPU and reudcing expensive memory allocations by pooling GameObjects before gameplay starts instead of having to rapidly create and destroy them.
 
 See [Object pooling](../../advanced-topics/object-pooling.md).
 
