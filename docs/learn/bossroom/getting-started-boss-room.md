@@ -31,8 +31,8 @@ Join the multiplayer community on the Unity [Discord](https://discord.gg/mNgM2XR
 - [Contents and quick links](#contents-and-quick-links)
 - [Boss Room Overview](#boss-room-overview)
 - [Getting the project](#getting-the-project)
-  - [Direct download](#direct-download)
   - [Installing Git LFS to clone locally](#installing-git-lfs-to-clone-locally)
+  - [Direct download](#direct-download)
 - [Registering the project with Unity Gaming Services (UGS)](#registering-the-project-with-unity-gaming-services-ugs)
 - [Opening the project for the first time](#opening-the-project-for-the-first-time)
 - [Exploring the project](#exploring-the-project)
@@ -70,9 +70,13 @@ For more information on the art in Boss Room, see [ART_NOTES.md](https://github.
 
 You can get the project by downloading it directly or cloning locally. However, if you use git, you must install Git LFS.
 
+#### Installing Git LFS to clone locally
+
+Boss Room uses Git Large Files Support (LFS) to handle all large assets required locally. See [Git LFS installation options](https://github.com/git-lfs/git-lfs/wiki/Installation) for Windows and Mac instructions. This step is only needed if cloning locally. You can also just download the project which will already include large files.
+
 #### Direct download
 
-You can download the latest version of Boss Room from our [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page.
+You can download the latest version of Boss Room from our [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page. Doing so doesn't require you to use Git LFS.
 
 Alternatively, you can click the green **Code** button, then select **Download Zip**. This downloadd the branch that you are currently viewing on Github.
 
@@ -80,13 +84,13 @@ Alternatively, you can click the green **Code** button, then select **Download Z
 **Note for Windows users**: Using Windows' built-in extraction tool may generate an `Error 0x80010135: Path too long` error window which can invalidate the extraction process. A workaround for this is to shorten the zip file to a single character (for example, "`c.zip`") and move it to the shortest path on your computer (most often right at `C:\`) and retry. If that solution fails, another workaround is to extract the downloaded zip file using [7zip](https://www.7-zip.org/).
 :::
 
-#### Installing Git LFS to clone locally
-
-Boss Room uses Git Large Files Support (LFS) to handle all large assets required locally. See [Git LFS installation options](https://github.com/git-lfs/git-lfs/wiki/Installation) for Windows and Mac instructions. This step is only needed if cloning locally. You can also just download the project which will already include large files.
-
 ### Registering the project with Unity Gaming Services (UGS)
 
-Boss Room leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard, and enable the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services. Otherwise, you can still use Boss Room without UGS.
+Boss Room leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must:
+
+1. [Create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard.
+2. Enable the [Relay](https://docs.unity.com/relay/get-started.html) service.
+3. Enable the [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) service.
 
 ### Opening the project for the first time
 
@@ -100,7 +104,7 @@ Once you have downloaded the project, follow the steps below to get up and runni
 
 ### Exploring the project
 
-Boss Room is an eight-player co-op RPG game experience, where players collaborate to fight imps, and then a boss. Players can select between classes that each have skills with didactically interesting networking characteristics. Control model is click-to-move, with skills triggered by a mouse button or hotkey.
+Boss Room is an eight-player co-op RPG game experience, where players collaborate to fight imps, and then a boss. Players can select between character classes that were designed to provide educational oriented implementations of characteristics commonly found in similar small-scale netcode games. Control model is click-to-move, with skills triggered by a mouse button or hotkey.
 
 One of the eight clients acts as the host/server. That client will use a compositional approach so that its entities have both server and client components.
 
@@ -112,8 +116,10 @@ One of the eight clients acts as the host/server. That client will use a composi
 
 To see the multiplayer functionality in action, you can:
 
-* Run multiple instances of the game locally on your computer (using either ParrelSync or builds).
-* Connect to a friend over the internet.
+* Connect with a friend over your local area network
+* Connect with a friend over the internet
+  * You can use UGS which helps remove the complexities of handling port forwarding
+  * Otherwise, the host will need to setup port forwarding on their router
 
 See [Testing multiplayer games locally](../../tutorials/testing/testing_locally.md) for more information.
 
