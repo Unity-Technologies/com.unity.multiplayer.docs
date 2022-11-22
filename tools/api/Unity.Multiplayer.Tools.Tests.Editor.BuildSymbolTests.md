@@ -1,12 +1,9 @@
 ---  
-id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
-title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
+id: Unity.Multiplayer.Tools.Tests.Editor.BuildSymbolTests  
+title: Unity.Multiplayer.Tools.Tests.Editor.BuildSymbolTests  
 ---
 
 <div class="markdown level0 summary">
-
-Parameters for the exponential moving average smoothing method in
-CounterConfiguration.
 
 </div>
 
@@ -87,17 +84,14 @@ Object.MemberwiseClone()
 ##### Syntax
 
 ``` lang-csharp
-[Serializable]
-public sealed class ExponentialMovingAverageParams
+public class BuildSymbolTests
 ```
 
-## Properties 
+## Methods 
 
-### HalfLife
+### When_GettingToolBuildSymbol_IsExpectedString()
 
 <div class="markdown level1 summary">
-
-The half-life (in seconds) by which samples should decay. By default, This is set to one second.
 
 </div>
 
@@ -108,11 +102,5 @@ The half-life (in seconds) by which samples should decay. By default, This is se
 #### Declaration
 
 ``` lang-csharp
-public double HalfLife { get; set; }
+public void When_GettingToolBuildSymbol_IsExpectedString()
 ```
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Double |             |

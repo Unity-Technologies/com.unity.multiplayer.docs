@@ -1,28 +1,58 @@
----
-id: Unity.Multiplayer.Tools.NetStats.MetricId
-title: Unity.Multiplayer.Tools.NetStats.MetricId
+---  
+id: Unity.Multiplayer.Tools.NetStats.MetricId  
+title: Unity.Multiplayer.Tools.NetStats.MetricId  
 ---
 
-# Struct MetricId
+<div class="markdown level0 summary">
 
 Wrapper around an enum with the MetricTypeEnumAttribute. The struct
 provide a way to create metric that can be used with multiplayer tools.
 
+</div>
+
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div classs="implements">
+
 ##### Implements
+
+<div>
 
 System.IEquatable\<MetricId\>
 
+</div>
+
+</div>
+
+<div class="inheritedMembers">
+
 ##### Inherited Members
 
-System.Object.Equals(System.Object, System.Object)
+<div>
 
-System.Object.GetType()
+Object.Equals(Object, Object)
 
-System.Object.ReferenceEquals(System.Object, System.Object)
+</div>
 
-###### **Namespace**: Unity.Multiplayer.Tools.NetStats
+<div>
 
-###### **Assembly**: Tools.dll
+Object.ReferenceEquals(Object, Object)
+
+</div>
+
+<div>
+
+Object.GetType()
+
+</div>
+
+</div>
+
+##### **Namespace**: System.Dynamic.ExpandoObject
+
+##### **Assembly**: Tools.dll
 
 ##### Syntax
 
@@ -31,145 +61,206 @@ System.Object.ReferenceEquals(System.Object, System.Object)
 public struct MetricId : IEquatable<MetricId>
 ```
 
-### Methods
+## Methods 
 
-#### Create\<T\>(T)
+### Create\<T\>(T)
+
+<div class="markdown level1 summary">
 
 Static function to create a MetricId.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public static MetricId Create<T>(T value)
+
     where T : struct, IConvertible
 ```
 
-##### Parameters
+#### Parameters
 
 | Type | Name  | Description                |
 |------|-------|----------------------------|
 | T    | value | Enum value for the metric. |
 
-##### Returns
+#### Returns
 
 | Type     | Description |
 |----------|-------------|
 | MetricId |             |
 
-##### Type Parameters
+#### Type Parameters
 
 | Name | Description                              |
 |------|------------------------------------------|
 | T    | An enum with the MetricTypeEnumAttribute |
 
-#### Equals(Object)
+### Equals(Object)
+
+<div class="markdown level1 summary">
 
 Determines whether the specified object is equal to the current object.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public override bool Equals(object obj)
 ```
 
-##### Parameters
+#### Parameters
 
 | Type          | Name | Description                                     |
 |---------------|------|-------------------------------------------------|
 | System.Object | obj  | The object to compare with the current object.. |
 
-##### Returns
+#### Returns
 
 | Type           | Description                                                                    |
 |----------------|--------------------------------------------------------------------------------|
 | System.Boolean | true if the specified object is equal to the current object; otherwise, false. |
 
-##### Overrides
+#### Overrides
+
+<div>
 
 System.ValueType.Equals(System.Object)
 
-#### Equals(MetricId)
+</div>
+
+### Equals(MetricId)
+
+<div class="markdown level1 summary">
 
 Determines whether the specified MetricId is equal to the current
 MetricId.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public bool Equals(MetricId other)
 ```
 
-##### Parameters
+#### Parameters
 
 | Type     | Name  | Description                                        |
 |----------|-------|----------------------------------------------------|
 | MetricId | other | The MetricId to compare with the current MetricId. |
 
-##### Returns
+#### Returns
 
 | Type           | Description                                                                        |
 |----------------|------------------------------------------------------------------------------------|
 | System.Boolean | true if the specified MetricId is equal to the current MetricId; otherwise, false. |
 
-#### GetHashCode()
+### GetHashCode()
+
+<div class="markdown level1 summary">
 
 Serves as the default hash function.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-##### Returns
+#### Returns
 
 | Type         | Description                           |
 |--------------|---------------------------------------|
 | System.Int32 | A hash code for the current MetricId. |
 
-##### Overrides
+#### Overrides
+
+<div>
 
 System.ValueType.GetHashCode()
 
-#### ToString()
+</div>
+
+### ToString()
+
+<div class="markdown level1 summary">
 
 Returns a string that represents the current MetricId.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public override string ToString()
 ```
 
-##### Returns
+#### Returns
 
 | Type          | Description                                    |
 |---------------|------------------------------------------------|
 | System.String | A string that represents the current MetricId. |
 
-##### Overrides
+#### Overrides
+
+<div>
 
 System.ValueType.ToString()
 
-### Operators
+</div>
 
-#### Implicit(MetricId to String)
+## Operators 
+
+### Implicit(MetricId to String)
+
+<div class="markdown level1 summary">
 
 Implicit operator to convert to string.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public static implicit operator string (MetricId metricId)
 ```
 
-##### Parameters
+#### Parameters
 
 | Type     | Name     | Description                        |
 |----------|----------|------------------------------------|
 | MetricId | metricId | The MetricId to convert to string. |
 
-##### Returns
+#### Returns
 
 | Type          | Description               |
 |---------------|---------------------------|
@@ -177,4 +268,8 @@ public static implicit operator string (MetricId metricId)
 
 ### Implements
 
+<div>
+
 System.IEquatable\<T\>
+
+</div>

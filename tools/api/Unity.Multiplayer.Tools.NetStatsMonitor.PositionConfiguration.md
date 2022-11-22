@@ -1,191 +1,169 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration
-title: Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration
----
 
-
-
-
-
-# Class PositionConfiguration
-
-
+<div class="markdown level0 summary">
 
 Configuration for the position of the RuntimeNetStatsMonitor on screen
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-PositionConfiguration
-
-
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.ToString()
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 [Serializable]
 public class PositionConfiguration
 ```
 
+## Properties 
 
+### OverridePosition
 
-### Properties
-
-#### OverridePosition
-
-
+<div class="markdown level1 summary">
 
 If enabled, the position here will override the position set by the USS
 styling. Disable this options if you would like to use the position from
 the USS styling instead.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public bool OverridePosition { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### PositionLeftToRight
+### PositionLeftToRight
 
-
+<div class="markdown level1 summary">
 
 The position of the Net Stats Monitor from left to right in the range
 from 0 to 1. 0 is flush left, 0.5 is centered, and 1 is flush right.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public float PositionLeftToRight { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-#### PositionTopToBottom
+### PositionTopToBottom
 
-
+<div class="markdown level1 summary">
 
 The position of the Net Stats Monitor from top to bottom in the range
 from 0 to 1. 0 is flush to the top, 0.5 is centered, and 1 is flush to
 the bottom.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public float PositionTopToBottom { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|

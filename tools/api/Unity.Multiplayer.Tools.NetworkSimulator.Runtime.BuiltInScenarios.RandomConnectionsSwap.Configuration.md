@@ -1,12 +1,11 @@
 ---  
-id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
-title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
+id: Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.RandomConnectionsSwap.Configuration  
+title: Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.RandomConnectionsSwap.Configuration  
 ---
 
 <div class="markdown level0 summary">
 
-Parameters for the exponential moving average smoothing method in
-CounterConfiguration.
+Specifies a ConnectionPreset that can be selected. PresetConfiguration
 
 </div>
 
@@ -30,11 +29,23 @@ System.Dynamic.ExpandoObject
 
 </div>
 
+<div class="level2">
+
+System.Dynamic.ExpandoObject
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
 
 ##### Inherited Members
+
+<div>
+
+PresetConfiguration.ConnectionPreset
+
+</div>
 
 <div>
 
@@ -88,31 +99,5 @@ Object.MemberwiseClone()
 
 ``` lang-csharp
 [Serializable]
-public sealed class ExponentialMovingAverageParams
+public sealed class Configuration : PresetConfiguration
 ```
-
-## Properties 
-
-### HalfLife
-
-<div class="markdown level1 summary">
-
-The half-life (in seconds) by which samples should decay. By default, This is set to one second.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public double HalfLife { get; set; }
-```
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.Double |             |

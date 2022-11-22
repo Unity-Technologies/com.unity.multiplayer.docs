@@ -1,140 +1,126 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration
-title: Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration
----
 
-
-
-
-
-# Class LineGraphConfiguration
-
-
+<div class="markdown level0 summary">
 
 Configuration for Line Graph specific options.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-LineGraphConfiguration
-
-
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.ToString()
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 [Serializable]
 public sealed class LineGraphConfiguration
 ```
 
+## Properties 
 
+### LineThickness
 
-### Properties
-
-#### LineThickness
-
-
+<div class="markdown level1 summary">
 
 The line thickness for a line graph. By default this is set to one.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public float LineThickness { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-##### Remarks
+#### Remarks
 
-
+<div class="markdown level1 remarks">
 
 The accepted range for the line thickness is between 1 and 10. If the
 value goes beyond those value, it will be clamped.
 
-
+</div>

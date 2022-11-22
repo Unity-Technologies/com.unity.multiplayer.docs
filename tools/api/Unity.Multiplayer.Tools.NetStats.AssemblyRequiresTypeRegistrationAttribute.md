@@ -1,12 +1,13 @@
 ---  
-id: Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute  
-title: Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute  
+id: Unity.Multiplayer.Tools.NetStats.AssemblyRequiresTypeRegistrationAttribute  
+title: Unity.Multiplayer.Tools.NetStats.AssemblyRequiresTypeRegistrationAttribute  
 ---
 
 <div class="markdown level0 summary">
 
-Attribute to provide more information about a metric, such as a custom
-name and units.
+For internal use. This attribute is automatically added to assemblies
+that use types from the multiplayer tools package that require code
+generation to work correctly
 
 </div>
 
@@ -341,108 +342,9 @@ Object.MemberwiseClone()
 ##### Syntax
 
 ``` lang-csharp
-[AttributeUsage(AttributeTargets.Field)]
-public class MetricMetadataAttribute : Attribute, _Attribute
+[AttributeUsage(AttributeTargets.Assembly)]
+public class AssemblyRequiresTypeRegistrationAttribute : Attribute, _Attribute
 ```
-
-## Properties 
-
-### DisplayAsPercentage
-
-<div class="markdown level1 summary">
-
-Toggle for the metric to be shown as a percentage. This should only be
-used for unitless metrics.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public bool DisplayAsPercentage { get; set; }
-```
-
-#### Property Value
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
-
-### DisplayName
-
-<div class="markdown level1 summary">
-
-The custom display name to show for a metric.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public string DisplayName { get; set; }
-```
-
-#### Property Value
-
-| Type          | Description |
-|---------------|-------------|
-| System.String |             |
-
-### MetricKind
-
-<div class="markdown level1 summary">
-
-The kind of metric. By default, the metric is a counter.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public MetricKind MetricKind { get; set; }
-```
-
-#### Property Value
-
-| Type       | Description |
-|------------|-------------|
-| MetricKind |             |
-
-### Units
-
-<div class="markdown level1 summary">
-
-The units for the metric. By default, there are no units.
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public Units Units { get; set; }
-```
-
-#### Property Value
-
-| Type  | Description |
-|-------|-------------|
-| Units |             |
 
 ### Implements
 

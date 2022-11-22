@@ -1,12 +1,9 @@
 ---  
-id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
-title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
+id: Unity.Multiplayer.Tools.Adapters.Tests.Ngo1WithUtp2.Ngo1WithUtp2AdapterInitializerTests  
+title: Unity.Multiplayer.Tools.Adapters.Tests.Ngo1WithUtp2.Ngo1WithUtp2AdapterInitializerTests  
 ---
 
 <div class="markdown level0 summary">
-
-Parameters for the exponential moving average smoothing method in
-CounterConfiguration.
 
 </div>
 
@@ -87,17 +84,14 @@ Object.MemberwiseClone()
 ##### Syntax
 
 ``` lang-csharp
-[Serializable]
-public sealed class ExponentialMovingAverageParams
+public class Ngo1WithUtp2AdapterInitializerTests
 ```
 
-## Properties 
+## Methods 
 
-### HalfLife
+### Ngo1WithUtp2AdapterInitializer_WhenNgo1AndUtp2AreInitialized_RegistersAdapter()
 
 <div class="markdown level1 summary">
-
-The half-life (in seconds) by which samples should decay. By default, This is set to one second.
 
 </div>
 
@@ -108,11 +102,11 @@ The half-life (in seconds) by which samples should decay. By default, This is se
 #### Declaration
 
 ``` lang-csharp
-public double HalfLife { get; set; }
+public IEnumerator Ngo1WithUtp2AdapterInitializer_WhenNgo1AndUtp2AreInitialized_RegistersAdapter()
 ```
 
-#### Property Value
+#### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| System.Double |             |
+| Type                           | Description |
+|--------------------------------|-------------|
+| System.Collections.IEnumerator |             |

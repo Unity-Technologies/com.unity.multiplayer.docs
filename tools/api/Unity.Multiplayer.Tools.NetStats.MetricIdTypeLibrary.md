@@ -1,12 +1,12 @@
 ---  
-id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
-title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
+id: Unity.Multiplayer.Tools.NetStats.MetricIdTypeLibrary  
+title: Unity.Multiplayer.Tools.NetStats.MetricIdTypeLibrary  
 ---
 
 <div class="markdown level0 summary">
 
-Parameters for the exponential moving average smoothing method in
-CounterConfiguration.
+For internal use. Static class to register MetricId and make them
+available to all tools.
 
 </div>
 
@@ -87,17 +87,26 @@ Object.MemberwiseClone()
 ##### Syntax
 
 ``` lang-csharp
-[Serializable]
-public sealed class ExponentialMovingAverageParams
+public static class MetricIdTypeLibrary
 ```
 
-## Properties 
+##### **Remarks**
 
-### HalfLife
+<div class="markdown level0 remarks">
+
+There is no need to manually call this class for custom type as they are
+automatically registered through CodeGen if they are marked with
+MetricTypeEnumAttribute.
+
+</div>
+
+## Methods 
+
+### RegisterType\<TEnumType\>()
 
 <div class="markdown level1 summary">
 
-The half-life (in seconds) by which samples should decay. By default, This is set to one second.
+For internal use. Register an enum type to be used as a MetricId.
 
 </div>
 
@@ -108,11 +117,11 @@ The half-life (in seconds) by which samples should decay. By default, This is se
 #### Declaration
 
 ``` lang-csharp
-public double HalfLife { get; set; }
+public static void RegisterType<TEnumType>()
 ```
 
-#### Property Value
+#### Type Parameters
 
-| Type          | Description |
-|---------------|-------------|
-| System.Double |             |
+| Name      | Description                |
+|-----------|----------------------------|
+| TEnumType | The enum type to register. |
