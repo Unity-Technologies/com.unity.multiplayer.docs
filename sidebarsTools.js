@@ -12,6 +12,10 @@ module.exports = {
             "type": "doc",
             "id": "RNSM"
         },
+        {
+            "type": "doc",
+            "id": "tools-network-simulator"
+        }
     ],
 
         "api": [
@@ -78,6 +82,14 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Multiplayer.Tools.NetStats.Units",
                     },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetStats.MetricIdTypeLibrary",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetStats.AssemblyRequiresTypeRegistrationAttribute",
+                    },
                 ],
             },
             {
@@ -140,6 +152,93 @@ module.exports = {
                     {
                         "type": "doc",
                         "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.SmoothingMethod",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetStatsMonitor.SampleRate",
+                    },
+                ],
+            },
+            {
+                "collapsed": true,
+                "type": "category",
+                "label": "Network Simulator",
+                "items": [
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.ConnectionsCycle",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.ConnectionsCycle.Configuration",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.PresetConfiguration",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.RandomConnectionsSwap",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.BuiltInScenarios.RandomConnectionsSwap.Configuration",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.INetworkEventsApi",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.INetworkSimulatorPreset",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.MinMaxRangeAttribute",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkScenario",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkScenarioBehaviour",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkScenarioTask",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkSimulator",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkSimulatorPreset",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkSimulatorPresetAsset",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkSimulatorPresets",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Editor.UI.PropertyDrawers",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Multiplayer.Tools.NetworkSimulator.Editor.UI.PropertyDrawers.MinMaxDrawer",
                     },
                 ],
             },

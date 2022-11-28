@@ -1,22 +1,40 @@
----
-id: Unity.Multiplayer.Tools.NetStatsMonitor.RuntimeNetStatsMonitor
-title: Unity.Multiplayer.Tools.NetStatsMonitor.RuntimeNetStatsMonitor
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.RuntimeNetStatsMonitor  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.RuntimeNetStatsMonitor  
 ---
 
-# Class RuntimeNetStatsMonitor
+<div class="markdown level0 summary">
 
 The Runtime Net Stats Monitor component. Add this component to a game
 object in a scene to display network statistics on screen.
 
+</div>
+
+<div class="markdown level0 conceptual">
+
+</div>
+
+<div class="inheritance">
+
 ##### Inheritance
 
-System.Object
+<div class="level0">
 
-RuntimeNetStatsMonitor
+System.Dynamic.ExpandoObject
 
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
+</div>
 
-###### **Assembly**: Tools.dll
+<div class="level1">
+
+System.Dynamic.ExpandoObject
+
+</div>
+
+</div>
+
+##### **Namespace**: System.Dynamic.ExpandoObject
+
+##### **Assembly**: Tools.dll
 
 ##### Syntax
 
@@ -24,139 +42,195 @@ RuntimeNetStatsMonitor
 public class RuntimeNetStatsMonitor : MonoBehaviour
 ```
 
-### Properties
+## Properties 
 
-#### Configuration
+### Configuration
+
+<div class="markdown level1 summary">
 
 The configuration asset used to configure the information displayed in
 this Runtime Net Stats Monitor. The NetStatsMonitorConfiguration can
 created from the Create menu, or from C# using
 ScriptableObject.CreateInstance.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public NetStatsMonitorConfiguration Configuration { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type                         | Description |
 |------------------------------|-------------|
 | NetStatsMonitorConfiguration |             |
 
-#### CustomStyleSheet
+### CustomStyleSheet
+
+<div class="markdown level1 summary">
 
 Custom stylesheet to override the default style of the Runtime Net Stats
 Monitor.
 
+</div>
 
-##### Declaration
+<div class="markdown level1 conceptual">
 
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public StyleSheet CustomStyleSheet { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type       | Description |
 |------------|-------------|
 | StyleSheet |             |
 
-#### MaxRefreshRate
+### MaxRefreshRate
+
+<div class="markdown level1 summary">
 
 The maximum rate at which the Runtime Net Stats Monitor's on-screen
 display is updated (per second). The on-screen display will never be
 updated faster than the overall refresh rate. The default refresh rate
 is 30fps.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public double MaxRefreshRate { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Double |             |
 
-#### PanelSettingsOverride
+### PanelSettingsOverride
+
+<div class="markdown level1 summary">
 
 Optional panel settings that can be used to override the default. These
 panel settings can be used to control a number of things, including how
 the on-screen display of the Runtime Net Stats Monitor scales on
 different devices and displays.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public PanelSettings PanelSettingsOverride { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | PanelSettings |             |
 
-#### Position
+### Position
+
+<div class="markdown level1 summary">
 
 Position configuration that allows custom positioning on screen The
 default position is the top left corner of the screen
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public PositionConfiguration Position { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type                  | Description |
 |-----------------------|-------------|
 | PositionConfiguration |             |
 
-#### Visible
+### Visible
+
+<div class="markdown level1 summary">
 
 Visibility toggle to hide or show the on-screen display.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public bool Visible { get; set; }
 ```
 
-##### Property Value
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-### Methods
+## Methods 
 
-#### AddCustomValue(MetricId, Single)
+### AddCustomValue(MetricId, Single)
+
+<div class="markdown level1 summary">
 
 Add a custom value for this metricId, which can be displayed in the
 RuntimeNetStatsMonitor using a counter or graph configured to display
 this metric.
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public void AddCustomValue(MetricId metricId, float value)
 ```
 
-##### Parameters
+#### Parameters
 
 | Type          | Name     | Description                                 |
 |---------------|----------|---------------------------------------------|
 | MetricId      | metricId | The custom MetricId to provide a value for. |
 | System.Single | value    | The value of the metric.                    |
 
-#### ApplyConfiguration()
+### ApplyConfiguration()
+
+<div class="markdown level1 summary">
 
 Apply the CustomStyleSheet, Position, and Configuration to the monitor.
 This function must be called when these fields have been modified from
@@ -164,7 +238,13 @@ C# in order to apply the changes. This function does not need to be
 called when these fields are modified in the inspector, as changes made
 in the inspector are detected and applied automatically
 
-##### Declaration
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
 
 ``` lang-csharp
 public void ApplyConfiguration()
