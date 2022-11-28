@@ -1,108 +1,90 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.NetStatsMonitorConfiguration  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.NetStatsMonitorConfiguration  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.NetStatsMonitorConfiguration
-title: Unity.Multiplayer.Tools.NetStatsMonitor.NetStatsMonitorConfiguration
----
 
-
-
-
-
-# Class NetStatsMonitorConfiguration
-
-
+<div class="markdown level0 summary">
 
 The NetStatsMonitorConfiguration includes all fields required to
 configure the contents of the RuntimeNetStatsMonitor
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-NetStatsMonitorConfiguration
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 public class NetStatsMonitorConfiguration : ScriptableObject
 ```
 
+## Properties 
 
+### DisplayElements
 
-### Properties
-
-#### DisplayElements
-
-
+<div class="markdown level1 summary">
 
 List of elements to be rendered by the RuntimeNetStatsMonitor.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public List<DisplayElementConfiguration> DisplayElements { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type                                                           | Description |
 |----------------------------------------------------------------|-------------|
 | System.Collections.Generic.List\<DisplayElementConfiguration\> |             |
 
-### Methods
+## Methods 
 
-#### OnConfigurationModified()
+### OnConfigurationModified()
 
-
+<div class="markdown level1 summary">
 
 Force a configuration reload. This needs to be called if the
 configuration has been modified at runtime by a script.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public void OnConfigurationModified()
 ```
-
-
