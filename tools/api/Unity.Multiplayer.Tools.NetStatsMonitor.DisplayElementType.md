@@ -1,61 +1,33 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType
-title: Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType
----
 
-
-
-
-
-# Enum DisplayElementType
-
-
+<div class="markdown level0 summary">
 
 Enum representing the different type of elements the
 RuntimeNetStatsMonitor can render.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 public enum DisplayElementType
 ```
 
+## Fields
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Counter
-
-Counter type for DisplayElementConfiguration
-
-LineGraph
-
-Line graph type for DisplayElementConfiguration
-
-StackedAreaGraph
-
-Stacked area graph type for DisplayElementConfiguration
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| Counter          | Counter type for DisplayElementConfiguration            |
+| LineGraph        | Line graph type for DisplayElementConfiguration         |
+| StackedAreaGraph | Stacked area graph type for DisplayElementConfiguration |
