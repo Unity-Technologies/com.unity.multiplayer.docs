@@ -1,496 +1,444 @@
+---  
+id: Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute  
+title: Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute  
 ---
-id: Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute
-title: Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute
----
 
-
-
-
-
-# Class MetricMetadataAttribute
-
-
+<div class="markdown level0 summary">
 
 Attribute to provide more information about a metric, such as a custom
 name and units.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level2">
 
-System.Attribute
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-
-
-MetricMetadataAttribute
-
-
-
-
-
-
+<div classs="implements">
 
 ##### Implements
 
-
+<div>
 
 System.Runtime.InteropServices.\_Attribute
 
+</div>
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Attribute.GetCustomAttributes(MemberInfo, Type)
 
-System.Attribute.Equals(System.Object)
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(MemberInfo, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.Assembly,
-System.Type)
+Attribute.GetCustomAttributes(MemberInfo)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(MemberInfo, Boolean)
 
+</div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.Assembly,
-System.Type, System.Boolean)
+<div>
 
+Attribute.IsDefined(MemberInfo, Type)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(MemberInfo, Type, Boolean)
 
-System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo,
-System.Type)
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(MemberInfo, Type)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo,
-System.Type, System.Boolean)
+Attribute.GetCustomAttribute(MemberInfo, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo)
 
+</div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.Module,
-System.Type)
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo, Type)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo, Type, Boolean)
 
-System.Attribute.GetCustomAttribute(System.Reflection.Module,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo,
-System.Type)
+Attribute.IsDefined(ParameterInfo, Type)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(ParameterInfo, Type, Boolean)
 
+</div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo,
-System.Type, System.Boolean)
+<div>
 
+Attribute.GetCustomAttribute(ParameterInfo, Type)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(ParameterInfo, Type, Boolean)
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly)
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Module, Type)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly,
-System.Boolean)
+Attribute.GetCustomAttributes(Module)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Module, Boolean)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly,
-System.Type)
+<div>
 
+Attribute.GetCustomAttributes(Module, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(Module, Type)
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Attribute.IsDefined(Module, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo)
+Attribute.GetCustomAttribute(Module, Type)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(Module, Type, Boolean)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,
-System.Boolean)
+<div>
 
+Attribute.GetCustomAttributes(Assembly, Type)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Assembly, Type, Boolean)
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,
-System.Type)
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Assembly)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,
-System.Type, System.Boolean)
+Attribute.GetCustomAttributes(Assembly, Boolean)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(Assembly, Type)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module)
+<div>
 
+Attribute.IsDefined(Assembly, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(Assembly, Type)
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module,
-System.Boolean)
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(Assembly, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module,
-System.Type)
+Attribute.Equals(Object)
 
+</div>
 
+<div>
 
+Attribute.GetHashCode()
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module,
-System.Type, System.Boolean)
+<div>
 
+Attribute.Match(Object)
 
+</div>
 
+<div>
 
+Attribute.IsDefaultAttribute()
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo)
+</div>
 
+<div>
 
+Attribute.\_Attribute.GetTypeInfoCount(UInt32)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,
-System.Boolean)
+Attribute.\_Attribute.GetTypeInfo(UInt32, UInt32, IntPtr)
 
+</div>
 
+<div>
 
+Attribute.\_Attribute.GetIDsOfNames(Guid, IntPtr, UInt32, UInt32,
+IntPtr)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,
-System.Type)
+<div>
 
+Attribute.\_Attribute.Invoke(UInt32, Guid, UInt32, Int16, IntPtr,
+IntPtr, IntPtr, IntPtr)
 
+</div>
 
+<div>
 
+Attribute.TypeId
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
-System.Attribute.GetHashCode()
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Attribute.IsDefaultAttribute()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
-System.Attribute.IsDefined(System.Reflection.Assembly, System.Type)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Attribute.IsDefined(System.Reflection.Assembly, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.MemberInfo, System.Type)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.MemberInfo, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.Module, System.Type)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.Module, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.ParameterInfo, System.Type)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.ParameterInfo, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.Match(System.Object)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.GetIDsOfNames(System.Guid,
-System.IntPtr, System.UInt32, System.UInt32, System.IntPtr)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.GetTypeInfo(System.UInt32,
-System.UInt32, System.IntPtr)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.GetTypeInfoCount(System.UInt32)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.Invoke(System.UInt32,
-System.Guid, System.UInt32, System.Int16, System.IntPtr, System.IntPtr,
-System.IntPtr, System.IntPtr)
-
-
-
-
-
-System.Attribute.TypeId
-
-
-
-
-
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStats
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 [AttributeUsage(AttributeTargets.Field)]
 public class MetricMetadataAttribute : Attribute, _Attribute
 ```
 
+## Properties 
 
+### DisplayAsPercentage
 
-### Properties
-
-#### DisplayAsPercentage
-
-
+<div class="markdown level1 summary">
 
 Toggle for the metric to be shown as a percentage. This should only be
 used for unitless metrics.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public bool DisplayAsPercentage { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### DisplayName
+### DisplayName
 
-
+<div class="markdown level1 summary">
 
 The custom display name to show for a metric.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public string DisplayName { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-#### MetricKind
+### MetricKind
 
-
+<div class="markdown level1 summary">
 
 The kind of metric. By default, the metric is a counter.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public MetricKind MetricKind { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type       | Description |
 |------------|-------------|
 | MetricKind |             |
 
-#### Units
+### Units
 
-
+<div class="markdown level1 summary">
 
 The units for the metric. By default, there are no units.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public Units Units { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type  | Description |
 |-------|-------------|
@@ -498,8 +446,8 @@ public Units Units { get; set; }
 
 ### Implements
 
-
+<div>
 
 System.Runtime.InteropServices.\_Attribute
 
-
+</div>
