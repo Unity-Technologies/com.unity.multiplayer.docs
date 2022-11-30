@@ -56,7 +56,7 @@ To add the Multiplayer Samples Utilities package:
 
 - Open the Package Manager by selecting Window > Package Manager.
 - Select the plus button (+) > Add from git URL....
-- Copy and paste the following Git URL: https://github.com/Unity-> Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main
+- Copy and paste the following Git URL: `https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main`
 - Select Add.
 
 Optionally, you can directly add this line to your `manifest.json` file:
