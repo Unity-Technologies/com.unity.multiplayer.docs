@@ -1,132 +1,117 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams
-title: Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams
----
 
-
-
-
-
-# Class ExponentialMovingAverageParams
-
-
+<div class="markdown level0 summary">
 
 Parameters for the exponential moving average smoothing method in
 CounterConfiguration.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-ExponentialMovingAverageParams
-
-
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.ToString()
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 [Serializable]
 public sealed class ExponentialMovingAverageParams
 ```
 
+## Properties 
 
+### HalfLife
 
-### Properties
+<div class="markdown level1 summary">
 
-#### HalfLife
+The half-life (in seconds) by which samples should decay. By default, This is set to one second.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
-The half-life (in seconds) by which samples should decay. By default,
-this is set to one second.
+</div>
 
-
-
-
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public double HalfLife { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
