@@ -52,7 +52,7 @@ See the following pages for more information:
 There is also some additional design advice on RPC's and some usage examples on the following pages:
 
 - [RPC vs NetworkVariable](../learn/rpcvnetvar.md)
-- [RPC vs NewtorkVariables Examples](../learn/rpcnetvarexamples.md)
+- [RPC vs NetworkVariables Examples](../learn/rpcnetvarexamples.md)
 
 :::note Migration and Compatibility
 See [RPC Migration and Compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
