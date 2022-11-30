@@ -16,6 +16,10 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
+                            id: 'netcode/1.1.0',
+                        },
+                        {
+                            type: 'doc',
                             id: 'netcode/1.0.0',
                         },
                         {

@@ -1,0 +1,146 @@
+{
+  "version-1.0.0/tools": [
+    {
+      "type": "doc",
+      "id": "version-1.0.0/install-tools"
+    },
+    {
+      "type": "doc",
+      "id": "version-1.0.0/profiler"
+    },
+    {
+      "type": "doc",
+      "id": "version-1.0.0/RNSM"
+    }
+  ],
+  "version-1.0.0/api": [
+    {
+      "type": "doc",
+      "id": "version-1.0.0/api/introduction"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Editor",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.Editor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.Editor.NetStatsMonitorBuildSettings"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Metric Types",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.MetricTypes"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.MetricTypes.DirectedMetricType"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Net Stats",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStats"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStats.MetricId"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStats.MetricKind"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStats.MetricMetadataAttribute"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStats.MetricTypeEnumAttribute"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStats.Units"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Net Stats Monitor",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementConfiguration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.DisplayElementType"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.ExponentialMovingAverageParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.GraphConfiguration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.GraphXAxisType"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.LineGraphConfiguration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.NetStatsMonitorConfiguration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.PositionConfiguration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.RuntimeNetStatsMonitor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.SimpleMovingAverageParams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/api/Unity.Multiplayer.Tools.NetStatsMonitor.SmoothingMethod"
+        }
+      ]
+    }
+  ]
+}
