@@ -1,57 +1,32 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod
-title: Unity.Multiplayer.Tools.NetStatsMonitor.AggregationMethod
----
 
-
-
-
-
-# Enum AggregationMethod
-
-
+<div class="markdown level0 summary">
 
 Enum to select the different aggregation method offered by
 CounterConfiguration.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 public enum AggregationMethod
 ```
 
+## Fields
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Average
-
-Aggregation using the average of multiple stats.
-
-Sum
-
-Aggregation using the sum of multiple stats.
+| Name    | Description                                      |
+|---------|--------------------------------------------------|
+| Average | Aggregation using the average of multiple stats. |
+| Sum     | Aggregation using the sum of multiple stats.     |

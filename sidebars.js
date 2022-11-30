@@ -376,6 +376,10 @@ module.exports = {
                         },
                         {
                             "type": "doc",
+                            "id": "learn/bossroom/optimizing-bossroom"
+                        },
+                        {
+                            "type": "doc",
                             "id": "learn/bossroom/networkrigidbody"
                         },
                         {

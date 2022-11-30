@@ -1,338 +1,296 @@
+---  
+id: Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration  
+title: Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration  
 ---
-id: Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration
-title: Unity.Multiplayer.Tools.NetStatsMonitor.CounterConfiguration
----
 
-
-
-
-
-# Class CounterConfiguration
-
-
+<div class="markdown level0 summary">
 
 Counter configuration used by DisplayElementConfiguration. This
 configuration contain all information about a counter.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-CounterConfiguration
-
-
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.ToString()
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Multiplayer.Tools.NetStatsMonitor
-
-###### **Assembly**: Tools.dll
+##### **Assembly**: Tools.dll
 
 ##### Syntax
-
-
 
 ``` lang-csharp
 [Serializable]
 public sealed class CounterConfiguration
 ```
 
+## Properties 
 
+### AggregationMethod
 
-### Properties
-
-#### AggregationMethod
-
-
+<div class="markdown level1 summary">
 
 The desired aggregation method for the stats used in the counter.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public AggregationMethod AggregationMethod { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type              | Description |
 |-------------------|-------------|
 | AggregationMethod |             |
 
-#### ExponentialMovingAverageParams
+### ExponentialMovingAverageParams
 
-
+<div class="markdown level1 summary">
 
 Parameters used if SmoothingMethod is set to ExponentialMovingAverage.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public ExponentialMovingAverageParams ExponentialMovingAverageParams { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type                           | Description |
 |--------------------------------|-------------|
 | ExponentialMovingAverageParams |             |
 
-#### HighlightLowerBound
+### HighlightLowerBound
 
-
+<div class="markdown level1 summary">
 
 Values below this threshold will be highlighted by the default styling,
 and can be highlighted by custom styling using the following USS
 classes:
 
--   rnsm-counter-out-of-bounds
--   rnsm-counter-below-threshold
+- rnsm-counter-out-of-bounds
+- rnsm-counter-below-threshold
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public float HighlightLowerBound { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-#### HighlightUpperBound
+### HighlightUpperBound
 
-
+<div class="markdown level1 summary">
 
 Values above this threshold will be highlighted by the default styling,
 and can be highlighted by custom styling using the following USS
 classes:
 
--   rnsm-counter-out-of-bounds
--   rnsm-counter-above-threshold
+- rnsm-counter-out-of-bounds
+- rnsm-counter-above-threshold
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public float HighlightUpperBound { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Single |             |
 
-#### SampleCount
+### SampleCount
 
-
+<div class="markdown level1 summary">
 
 The current configured sample count. Note that if the SmoothingMethod is
 set to ExponentialMovingAverage, the sample count will be zero.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public int SampleCount { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### SignificantDigits
+### SignificantDigits
 
-
+<div class="markdown level1 summary">
 
 The number of significant digits to display for this counter.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public int SignificantDigits { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### SimpleMovingAverageParams
+### SimpleMovingAverageParams
 
-
+<div class="markdown level1 summary">
 
 Parameters used if SmoothingMethod is set to SimpleMovingAverage.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public SimpleMovingAverageParams SimpleMovingAverageParams { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type                      | Description |
 |---------------------------|-------------|
 | SimpleMovingAverageParams |             |
 
-#### SmoothingMethod
+### SmoothingMethod
 
-
+<div class="markdown level1 summary">
 
 The desired smoothing method over time for the counter.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
-
+#### Declaration
 
 ``` lang-csharp
 public SmoothingMethod SmoothingMethod { get; set; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
