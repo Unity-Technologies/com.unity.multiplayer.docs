@@ -6,15 +6,6 @@ sidebar_label: INetworkSerializable
 
 The `INetworkSerializable` interface can be used to define custom serializable types. 
 
-:::caution 
-All examples provided will work with RPCs and custom messages but some examples will not work with `NetworkVariable` due to the unmanaged type restriction.<br/>
-**NetworkVariable Type Litmus Test for INetworkSerializable Implementations:**
-- If the implementation itself can be a null (i.e. a class), then it cannot be used
-- If it contains any property that can be null (i.e. arrays), then it cannot be used
-
-The alternative is to create your own `NetworkVariableBase` derived `type` specific class.
-:::
-
 ```csharp
 struct MyComplexStruct : INetworkSerializable
 {
@@ -68,10 +59,13 @@ As you have more control over serialization of a struct, you might implement con
 More advanced use-cases are explored in following examples.
 
 ### Example: Array
-:::caution
-The below `INetworkSerializable` implementation example works only with RPCs and/or custom messages.  The below implementation uses an array within an `INetworkSerializable` implementation.  Arrays can be `null` and are not supported by the `NetworkVariable` class. As an alternative, you can write your own `NetworkVariableBase` derived class that does support managed or unmanaged value types.<br/>
-[Read More About Custom NetworkVariable Implementations](../../basics/networkvariable.md)
-:::
+
+You can use arrays in one of two ways:
+
+1. Via C# arrays
+2. Via Native Collections (that is, `NativeArray`)
+
+The critical distinction between the two is that **C# arrays** convert any type that contains the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
 
 ```csharp
 public struct MyCustomStruct : INetworkSerializable
@@ -98,6 +92,54 @@ public struct MyCustomStruct : INetworkSerializable
         for (int n = 0; n < length; ++n)
         {
             serializer.SerializeValue(ref Array[n]);
+        }
+    }
+}
+```
+
+```csharp
+public struct MyCustomNativeStruct : INetworkSerializable, IDisposable
+{
+    public NativeArray<int> Array;
+
+    public void Dispose()
+    {
+        Array.Dispose();
+    }
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        // Length
+        int length = 0;
+        if (!serializer.IsReader)
+        {
+            length = Array.Length;
+        }
+
+        serializer.SerializeValue(ref length);
+
+        // Array
+        if (serializer.IsReader)
+        {
+            if(Array.IsCreated)
+            {
+                // Make sure the existing array is disposed and not leaked
+                Array.Dispose();
+            }
+            Array = new NativeArray<int>(length, Allocator.Persistent);
+        }
+
+        for (int n = 0; n < length; ++n)
+        {
+            // NataveArray doesn't have a by-ref index operator
+            // so we have to read, serialize, write. This works in both
+            // reading and writing contexts - in reading, `val` gets overwritten
+            // so the current value doesn't matter; in writing, `val` is unchanged,
+            // so Array[n] = val is the same as Array[n] = Array[n].
+            // NativeList also exists which does have a by-ref `ElementAt()` method.
+            var val = Array[n];
+            serializer.SerializeValue(ref val);
+            Array[n] = val;
         }
     }
 }
