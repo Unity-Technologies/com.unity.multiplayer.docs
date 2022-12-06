@@ -355,9 +355,57 @@ public class PlayerState : NetworkBehaviour
     // The weapon booster currently applied to a player
     private NetworkVariable<WeaponBooster> PlayerWeaponBooster = new NetworkVariable<WeaponBooster>();
 
-    // A list of team members active "area weapon boosters" that could be applied if the local player
-    // is within their range.
-    private NetworkList<AreaWeaponBooster> TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>();
+    /// <summary>
+    /// A list of team members active "area weapon boosters" that could be applied if the local player
+    /// is within their range.
+    /// </summary>
+    private NetworkList<AreaWeaponBooster> TeamAreaWeaponBoosters;
+
+    void Awake()
+    {
+        //NetworkList can't be initialized at declaration time like NetworkVariable. It must be initialized in Awake instead.
+        TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>(); 
+    }
+
+    void Start()
+    {
+        /*At this point, the object has not been network spawned yet, so you're not allowed to edit network variables! */
+        //list.Add(new AreaWeaponBooster());
+    }
+
+    void Update()
+    {
+        //This is just an example that shows how to add an element to the list after its initialization:
+        if (!IsServer) { return; } //remember: only the server can edit the list
+        if (Input.GetKeyUp(KeyCode.UpArrow)) 
+        {
+            TeamAreaWeaponBoosters.Add(new AreaWeaponBooster()));
+        }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        if (IsClient)
+        {
+            TeamAreaWeaponBoosters.OnListChanged += OnClientListChanged;
+        }
+        if (IsServer)
+        {
+            TeamAreaWeaponBoosters.OnListChanged += OnServerListChanged;
+            TeamAreaWeaponBoosters.Add(new AreaWeaponBooster()); //if you want to initialize the list with some default values, this is a good time to do so.
+        }
+    }
+
+    void OnServerListChanged(NetworkListEvent<AreaWeaponBooster> changeEvent)
+    {
+        Debug.Log($"[S] The list changed and now contains {TeamAreaWeaponBoosters.Count} elements");
+    }
+
+    void OnClientListChanged(NetworkListEvent<AreaWeaponBooster> changeEvent)
+    {
+        Debug.Log($"[C] The list changed and now contains {TeamAreaWeaponBoosters.Count} elements");
+    }
 }
 
 /// <summary>
