@@ -17,10 +17,10 @@ Making movements feel responsive while staying consistent over multiple game exe
 ## Sample:
 
 ClientDriven's aim is to create a quick sample to show responsive character movements that don't feel sluggish, even under bad network conditions.
-It uses the ClientNetworkTransform sample and moves your own player's position client side, [client authoritatively](../dealing-with-latency.md#allow-low-impact-client-authority). 
+It uses the ClientNetworkTransform sample and moves your own player's position client side, [client authoritatively](../dealing-with-latency.md#allow-low-impact-client-authority). Movement is leveraged through the use of Unity's Starter Assets, the [Third Person Character Controller](https://assetstore.unity.com/packages/essentials/starter-assets-third-person-character-controller-196526).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/9854697081df4962dd525d7c3bd65f9f88c7ee60/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs#L57-L64
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/d37c360bc8cdbbbf680e2afc5963571e20f28ffd/Basic/ClientDriven/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs#L274-L276
 ```
 
 ### Client side object detection for pickup with server side pickup validation 
@@ -28,21 +28,21 @@ Ingredients in ClientDriven are owned by the server, since they are [shared obje
 To make sure this doesn't happen, the object detection done to grab an ingredient is also done client side.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/develop/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs#L66-L94
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/d37c360bc8cdbbbf680e2afc5963571e20f28ffd/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs#L64-L94
 ```
 
 But the pickup itself is done server side.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/996ac9785c4e825c0e4692f115c9b5f2b4c7c386/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L41-L69
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/d37c360bc8cdbbbf680e2afc5963571e20f28ffd/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L46-L82
 ```
 
 Notice how we're checking whether that object can be picked up or not (since another player could have picked it up at the same time, creating a conflict).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/996ac9785c4e825c0e4692f115c9b5f2b4c7c386/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L45
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/d37c360bc8cdbbbf680e2afc5963571e20f28ffd/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L50
 ```
-If the object is already picked up, we're not doing anything. You client side animations should take this into account and cancel any animations "carrying" something.
+If the object is already picked up, we're not doing anything. Your client side animations should take this into account and cancel any animations "carrying" something.
 
 ### Server side player spawn points
 In this sample, our spawn points list is server side (to have a single source of truth). 
@@ -50,7 +50,7 @@ ClientNetworkTransforms can be updated by owners only, which means the server ca
 This means OnNetworkSpawn, the server will need to assign a position to the player using a ClientRPC.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/0c9081b27e66879ce5742314c13ff69ac45ff02e/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L24-L37
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/d37c360bc8cdbbbf680e2afc5963571e20f28ffd/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L24-L44
 ```
 
 ## Server physics with client driven movements (interactions on different timelines)
@@ -64,5 +64,5 @@ Note that we're also setting InLocalSpace while reparenting, to make sure the cl
 An ownership change could also have been used here, but the client would have needed to ask the server for that change first.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/0c9081b27e66879ce5742314c13ff69ac45ff02e/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L42-L54
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/d37c360bc8cdbbbf680e2afc5963571e20f28ffd/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L46-L61
 ```
