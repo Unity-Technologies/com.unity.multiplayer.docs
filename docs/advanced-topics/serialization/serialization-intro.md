@@ -6,9 +6,11 @@ Multiplayer framework has built-in serialization support for C# and Unity primit
 
 See the following sections:
 
-* [C# Primitives](cprimatives.md)
-* [Unity Primitives](unity-primatives.md)
+* [C# Primitives](cprimitives.md)
+* [Unity Primitives](unity-primitives.md)
 * [Enum Types](enum-types.md)
 * [Arrays](serialization-arrays.md)
+* [Fixed Strings](fixedstrings.md)
 * [INetworkSerializable](inetworkserializable.md)
+* [INetworkSerializeByMemcpy](inetworkserializebymemcpy.md)
 * [NetworkObjects & NetworkBehaviours](networkobject-serialization.md)
