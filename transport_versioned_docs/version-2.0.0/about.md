@@ -2,35 +2,19 @@
 id: about
 title: About Unity Transport
 ---
-:::note
-Need an update before releasing UTP 2.0.0
-:::
 
-Unity Transport provides the `com.unity.transport` package, used to add multiplayer and network features to your project.
+The Unity Transport package (`com.unity.transport`) is a low-level networking library for multiplayer game development.
 
-:::note
-This package should not be confused with Unity Netcode's `NetworkTransport` abstraction. Please see Netcode's [Transports](/netcode/current/advanced-topics/transports) section for more information.
-:::
+It’s the underlying protocol of both [Netcode for GameObjects](../../docs/about.md) and [Netcode for Entities](https://docs.unity3d.com/Packages/com.unity.netcode@latest), but you can also use it with a custom solution.
 
-:::unity Content Licenses
-All Transport code and documentation is covered by Unity Companion License. See [Licenses](/reference/license) for more information.
-:::
+Unity Transport seamlessly supports all platforms the Unity Engine supports thanks to a connection-based abstraction layer (built-in network driver) provided over UDP and WebSockets.
 
-## Overview
+You can set up both UDP and WebSockets with or without encryption. The following illustration shows encrypted connections with a closed padlock and unencrypted connections with an open padlock.
 
-![Transport Overview](/img/transport/layercake.png)
+![Block diagram](../../static/img/transport/layercake-2.png)
 
-## Installing Transport
+You can also use [pipelines](pipelines-usage.md) to leverage additional functionality, such as reliability, packet ordering, and packet fragmentation.
 
-See the [installation guide](install.md) to install the `com.unity.transport` package.
+## Get started with Unity Transport
 
-## Using Transport
-
-To learn how to use the `com.unity.transport` package in your own project, review the client and server workflows, additional information, and sample code available in this guide.
-
-##  Requirements
-
-This version of `com.unity.transport` is compatible with the following Unity versions and platforms:
-
-* 2020.1.2 and later.
-* All platforms supported by Unity are supported, except WebGL.
+See [Getting started](getting-started.md).
