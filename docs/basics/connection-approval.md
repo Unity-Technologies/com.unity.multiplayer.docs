@@ -98,3 +98,72 @@ The connection data is not encrypted or authenticated.
 :::important
 A man in the middle attack can be done. It is strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
 :::
+
+## Changing the Player Prefab
+There might be times when you want to specify an alternate player prefab to use for a player connecting. The connection approval process provides you with the ability to accomplish this task.
+### Step 1: Modify/Create an In-Scene Placed Connection Approval Component
+```csharp
+    public class ClientConnectionHandler : NetworkBehaviour
+    {
+        public List<uint> AlternatePlayerPrefabs;
+
+        public void SetClientPlayerPrefab(int index)
+        {
+            if (index > AlternatePlayerPrefabs.Count)
+            {
+                Debug.LogError($"Trying to assign player prefab index of {index} when there are onlky {AlternatePlayerPrefabs.Count} entries!");
+                return;
+            }
+            if (NetworkManager.IsListening || IsSpawned)
+            {
+                Debug.LogError("This needs to be set this prior to connecting!");
+                return;
+            }
+            NetworkManager.NetworkConfig.ConnectionData = System.BitConverter.GetBytes(index);
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer)
+            {
+                NetworkManager.ConnectionApprovalCallback = ConnectionApprovalCallback;
+            }
+        }
+
+        private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
+        {
+            var playerPrefabIndex = System.BitConverter.ToInt32(request.Payload);
+            if (AlternatePlayerPrefabs.Count < playerPrefabIndex)
+            {
+                response.PlayerPrefabHash = AlternatePlayerPrefabs[playerPrefabIndex];
+            }
+            else
+            {
+                Debug.LogError($"Client provided player prefab index of {playerPrefabIndex} when there are onlky {AlternatePlayerPrefabs.Count} entries!");
+                return;
+            }
+            // Continue filling out the response
+        }
+    }
+
+```
+In the above example, we created a list of unsigned integers to store our alternate player prefab GlobalObjectIdHash values (`AlternatePlayerPrefabs`).  For example purposes, we added a public method that a client could invoke to set their selected player prefab's index that is relative to `AlternatePlayerPrefabs` (you could do this in some other component). The general idea for this approach is that the client provides the server with the alternate player prefab index that the player whishes to use.
+
+The server assigns the `ConnectionApprovalCallback` when it spawns the in-scene placed NetworkObject that the `ClientConnectionHandler` is attached to.  When a connection request is handled, the server grabs the alternate player prefab index from the request's Payload field and then obtains the GlobalObjectIdHash value from the `AlternatePlayerPrefabs` list and assigns that to the `response.PlayerPrefabHash`.
+
+### Step 2: Copy the Alternate Player Prefab's GlobalObjectIdHash Value
+![Copy-GlobalObjectIdHash](images/CopyGlobalObjectIdHash.png)
+In order to populate the `AlternatePlayerPrefabs` list:
+- Open the scene containing the in-scene placed `NetworkObject` that the `ConnectionApprovalCallback` is attached to.
+- Find each alternate player prefab you wish to add to the list, select the prefab (but don't open it), and copy the GlobalObjectIdHash value by right-clicking and selecting "copy".
+- Paste the copied GlobalObjectIdHash value into a new list item entry in the `AlternatePlayerPrefabs` list.
+
+### Step 3: Assign Client's Selected Player Prefab Index
+This part is really up to your project's design.  We did include a method that could be invoked by the client, but that also requires the client to have that scene loaded. You could choose to have a ScriptableObject that contains the list of alternate player prefab GlobalObjectIdHash values and share that between components (this would require you to change the `AlternatePlayerPrefabs` to a reference of the `ScriptableObject`).  The general idea is to have the client populate the NetworkConfig.ConnectionData prior to starting.
+
+:::tip
+An alternate way to handle this is by using a generic player prefab that is used as the parent to the actual player's character and allowing the player to select their player once they are connected. This would involve dynamically spawning the player's selected character with the client as the owner and parenting that under the player's generic player prefab instance.<br />
+Suggested Reading: <br />
+[NetworkObject Parenting](../advanced-topics/networkobject-parenting.md)<br />
+[Session Management](../advanced-topics/session-management.md)<br />
+:::
