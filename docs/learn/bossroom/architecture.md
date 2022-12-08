@@ -10,7 +10,7 @@ This article describes the high-level architecture of the Boss Room codebase and
 
 We organized Boss Room’s code into multiple domain-based assemblies, each with a relatively self-contained purpose.
 
-An exception to this organization structure is the `Gameplay` assembly, which houses most of the networked gameplay logic and other functionality tightly coupled with the gameplay logic.
+An exception to this organization structure is the Gameplay assembly, which houses most of the networked gameplay logic and other functionality tightly coupled with the gameplay logic.
 
 This assembly separation style enforces better separation of concerns and helps keep the codebase organized. It also uses more granular recompilation during iterations to save time.
 
@@ -18,10 +18,10 @@ This assembly separation style enforces better separation of concerns and helps 
 
 ## Application flow
 
-The application flow of Boss Room starts with the Startup scene (which should always load first).
+The application flow of Boss Room starts with the `Startup` scene (which should always load first).
 
 :::tip
-The Boss Room sample has an editor tool that enforces starting from the Startup scene even if you’re working in another scene. You can disable this tool through the Unity Editor by selecting **Menu** > **Boss Room** > **Don't Load Bootsrap Scene On Play**. Select **Load Bootsrap Scene On Play** to re-enable it.
+The Boss Room sample has an editor tool that enforces starting from the `Startup` scene even if you’re working in another scene. You can disable this tool through the Unity Editor by selecting **Menu** > **Boss Room** > **Don't Load Bootsrap Scene On Play**. Select **Load Bootsrap Scene On Play** to re-enable it.
 :::
 
 The `ApplicationController` component lives on a GameObject in the Startup scene and serves as the application's entry point (and composition root). It binds dependencies throughout the application's lifetime (the core dependency injection managed “singletons”). See the [Dependency Injection](#dependency-injection) section for more information.
@@ -89,12 +89,12 @@ These three UGS services allow players to host and join games without needing po
 
 To keep a single source of truth for service access (and avoid scattering of service access logic), Boss Room wraps UGS SDK access into Facades and uses UI mediators to contain the service logic triggered by UIs. We call these in multiple places throughout the codebase.
 
-* [AuthenticationServiceFacade.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs)
-* [LobbyServiceFacade.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Lobby/LobbyServiceFacade.cs)
-* Lobby and relay - client join - JoinLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
-* Relay Join - StartClientLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
-* Relay Create - StartHostLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
-* Lobby and relay - host creation - CreateLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
+* [`AuthenticationServiceFacade.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs)
+* [`LobbyServiceFacade.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Lobby/LobbyServiceFacade.cs)
+* Lobby and Relay - client join - `JoinLobbyRequest()` in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
+* Relay Join - `StartClientLobby()` in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
+* Relay Create - `StartHostLobby()` in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
+* Lobby and Relay - host creation - `CreateLobbyRequest()` in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
 
 ## Core gameplay structure
 
@@ -102,7 +102,7 @@ To keep a single source of truth for service access (and avoid scattering of ser
 An `Avatar` is at the same level as an `Imp` and lives in a scene. A `Persistent Player` lives across scenes.
 :::
 
-A `Persistent Player` prefab goes into the Player Prefab slot in the NetworkManager of Boss Room. As a result, Boss Room spawns a single `Persistent Player` prefab per client, and each client owns their respective `Persistent Player` instances.
+A `Persistent Player` prefab goes into the `Player` Prefab slot in the `NetworkManager` of Boss Room. As a result, Boss Room spawns a single `Persistent Player` prefab per client, and each client owns their respective `Persistent Player` instances.
 
 :::note
 There is no need to mark `Persistent Player` instances as `DontDestroyOnLoad`. NGO automatically keeps these prefabs alive between scene loads while the connections are live.
@@ -114,12 +114,12 @@ Each connected client owns their respective instance of the PlayerAvatar prefab.
 
 In the `CharSelect` scene, clients select from eight possible avatar classes. Boss Room stores each player’s selection inside the `PersistentPlayer`'s `NetworkAvatarGuidState`.
 
-Inside the Boss Room scene, `ServerBossRoomState` spawns a PlayerAvatar per `PersistentPlayer` present.
+Inside the Boss Room scene, `ServerBossRoomState` spawns a `PlayerAvatar` per `PersistentPlayer` present.
 
 The following example of a selected “Archer Boy” class demonstrates the `PlayerAvatar` GameObject hierarchy:
 
-* `PlayerAvatar` is a NetworkObject that Boss Room destroys when the scene unloads.
-* `PlayerGraphics` is a child GameObject containing a NetworkAnimator component responsible for replicating animations invoked on the server.
+* `PlayerAvatar` is a `NetworkObject` that Boss Room destroys when the scene unloads.
+* `PlayerGraphics` is a child `GameObject` containing a `NetworkAnimator` component responsible for replicating animations invoked on the server.
 * `PlayerGraphics_Archer_Boy` is a purely graphical representation of the selected avatar class.
 
 `ClientAvatarGuidHandler`, a `NetworkBehaviour` component residing on the `PlayerAvatar` prefab instance, fetches the validated avatar GUID from `NetworkAvatarGuidState` and spawns a local, non-networked graphics GameObject corresponding to the avatar GUID.
@@ -131,7 +131,7 @@ The following example of a selected “Archer Boy” class demonstrates the `Pla
 * Movement and pathfinding via `ServerCharacterMovement` use `NavMeshAgent,` which exists on the server to translate the character’s transform (which is synchronized using the NetworkTransform component);
 * Player action queueing and execution via `ServerActionPlayer`;
 * AI logic via `AIBrain` (applies to NPCs);
-* Character animations via `ServerAnimationHandler`, which uses NetworkAnimator to synchronize;
+* Character animations via `ServerAnimationHandler`, which uses `NetworkAnimator` to synchronize;
 * `ClientCharacter` is primarily a host for the `ClientActionPlayer` class and has the client RPCs for the character gameplay logic.
 
 ### Game config setup
@@ -188,7 +188,7 @@ The Visuals GameObject never outpaces the simulation GameObject and is always sl
 
 ### Navigation system
 
-Each scene with navigation (or dynamic navigation objects) should have a `NavigationSystem` component on a scene GameObject. The GameObject containing the NavigationSystem component must have the `NavigationSystem` tag.
+Each scene with navigation (or dynamic navigation objects) should have a `NavigationSystem` component on a scene GameObject. The `GameObject` containing the `NavigationSystem` component must have the `NavigationSystem` tag.
 
 #### Building a navigation mesh
 
@@ -230,7 +230,7 @@ After investigation, we determined that client/server separation was unnecessary
 * There’s no need for [asmdef (assembly definition)](https://docs.unity3d.com/Manual/cus-asmdef.html) stripping because you can ifdef out single classes instead.
 * It’s not completely necessary to ifdef classes because it’s only compile-time insurance that certain parts of client-side code never run.
 * The added complexity outweighed the pros that’d help with stripping whole assemblies.
-* Most client/server class pairs are tightly coupled and call one another; they have split implementations of the same logical object. Separating them into different assemblies forces you to create “bridge classes” to avoid circular dependencies between your client and server assemblies. By putting your client and server classes in the same assemblies, you allow those circular dependencies in those tightly coupled classes and remove unnecessary bridging and abstractions.
+* Most `Client`/`Server` class pairs are tightly coupled and call one another; they have split implementations of the same logical object. Separating them into different assemblies forces you to create “bridge classes” to avoid circular dependencies between your client and server assemblies. By putting your client and server classes in the same assemblies, you allow those circular dependencies in those tightly coupled classes and remove unnecessary bridging and abstractions.
 * Whole assembly stripping is incompatible with NGO because NGO doesn’t support NetworkBehaviour stripping. Components related to a NetworkObject must match on the client and server sides. If these components aren’t identical, it creates difficulties with NetworkBehaviour indexing.
 
 After those experiments, we established new rules for the team:
@@ -242,10 +242,10 @@ After those experiments, we established new rules for the team:
 * Place client/server pairs in the same assembly.
 * If you start the game as a client, the server components disable themselves, leaving you with only client components executing. Ensure you don’t destroy the server components. NGO still requires the server component for network message sending.
 * The clients have a `m_Server`, and servers have a `m_Client` property.
-* The Server class owns server-driven NetworkVariables. Similarly, the Client class owns owner-driven NetworkVariables. This ownership separation helps make larger classes more readable and maintainable.
+* The `Server` class owns server-driven `NetworkVariables`. Similarly, the `Client` class owns owner-driven `NetworkVariables`. This ownership separation helps make larger classes more readable and maintainable.
 * Use partial classes when separating ownership isn’t possible.
-* Continue using the Client/Server prefix to make contexts more obvious. Note: You can’t use prefixes for ScriptableObjects that have file name requirements.
-* Use Client/Server/Shared separation when you have a one-to-many relationship where your server class needs to send information to many client classes. You can also achieve this with the [`NetworkedMessageChannel`](#heading=h.wfrn29pfpphk).
+* Continue using the `Client`/`Server` prefix to make contexts more obvious. Note: You can’t use prefixes for `ScriptableObjects` that have file name requirements.
+* Use `Client`/`Server`/`Shared` separation when you have a one-to-many relationship where your server class needs to send information to many client classes. You can also achieve this with the [`NetworkedMessageChannel`](#heading=h.wfrn29pfpphk).
 
 You still need to take care of code executing in `Start` and `Awake`. If the code in `Start` and `Awake` runs simultaneously with the NetworkManager's initialization, it might not know whether the player is a host or client.
 
