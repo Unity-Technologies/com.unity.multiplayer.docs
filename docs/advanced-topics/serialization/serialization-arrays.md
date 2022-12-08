@@ -42,3 +42,6 @@ public class StringContainer : INetworkSerializable
 }
 ```
 
+### Native Containers
+
+Native containers, like `NativeArray`, are not natively supported as `RPC` parameters. However, custom support can be added for them; see [Custom Serialization](../custom-serialization.md)
