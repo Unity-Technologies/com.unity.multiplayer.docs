@@ -4,22 +4,26 @@ title: Install Unity Transport
 description: Install Unity Transport, the com.unity.transport package, using the Package Manager.
 ---
 
-:::note
-Need an update before releasing UTP 2.0.0
-:::
-
 Follow these instructions to install Unity Transport.
 
 ## Prerequisites
 
-You need Unity Editor version 2020.1.2f1 or later.
+Unity Transport 2.0 requires Unity Editor version 2022.2 or later.
+
+:::note
+WebGL only supports Unity Transport WebSocket connections in client mode.
+:::
+
+:::warning
+Unity Transport (the com.unity.transport package) is separate from the NetworkTransport abstraction in Netcode for GameObjects.
+:::
 
 ## Install Transport
 
-1. Open the **Unity Hub**.
-1. Create a **New Project** or open an existing Project you want to include Transport.
-2. Open the **Unity Package Manager** by navigating to **Window** > **Package Manager** along the top bar.
-3. Click ![Add](/img/add.png) in the status bar.
-4. Select **Add package by name**
-5. In the **Name**, enter `com.unity.transport`. It may take a moment to load.
-6. Under **Packages** in the **Package Manager**, you should now see **Unity Transport** with it's current version number.
+You can install the Unity Transport package using the Package Manager in the Unity Editor:
+
+1. From the Unity Editor, select **Window** > **Package Manager**.
+2. Select **Add (+)** > **Add package by name**.
+3. In the **Name** field, enter com.unity.transport.
+
+After the import completes, you should see Unity Transport under **Packages** in the **Package Manager**.

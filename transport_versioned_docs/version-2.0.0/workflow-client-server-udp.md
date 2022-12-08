@@ -1,33 +1,36 @@
 ---
 id: minimal-workflow-udp
-title: Client and Server over UDP
+title: Create a simple client and server
 ---
 
-:::note
-Need an update before releasing UTP 2.0.0
-:::
+This guide walks you through using the Unity Transport package to create a simple client and server that use a remote function over a UDP connection to add two numbers with the following flow:
 
-This Transport workflow covers all aspects of the `Unity.Networking.Transport` package and helps you create a sample project that highlights how to use the `com.unity.transport` API to:
+1. The client connects to the server.
+2. The client sends a number to the server.
+3. The server receives the number and adds it to another number.
+4. The server sends the sum of the two numbers to the client.
+5. The client receives the sum.
+6. The client disconnects from the server and quits.
 
-* Configure
-* Connect
-* Send data
-* Receive data
-* Close a connection
-* Disconnect
-* Timeout a connection
+It demonstrates using the Unity Transport API to:
 
-The goal is to make a remote `add` function. The flow will be: a client connects to the server, and sends a number, this number is then received by the server that adds another number to it and sends it back to the client. The client, upon receiving the number, disconnects and quits.
+- Configure
+- Connect
+- Send data
+- Receive data
+- Close a connection
+- Disconnect
+- Timeout a connection
 
-Using the `NetworkDriver` to write client and server code is similar between clients and servers; there are a few subtle differences demonstrated in this guide.
+The client-server workflow in this guide demonstrates the subtle differences between using the `NetworkDriver` for clients and servers.
 
-## Creating a Server
+## Create a server
 
-A server is an endpoint that listens for incoming connection requests and sends and receives messages.
+A server is an endpoint that listens for incoming connection requests and sends and receives messages. This section demonstrates creating a simple server with UTP 2.0.
 
-Start by creating a C# script in the Unity Editor.
+Start by creating a C# script in the Unity Editor. Name the script ServerBehaviour.cs.
 
-Filename: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
+**Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
 
 ```csharp
 using System.Collections;
@@ -48,17 +51,15 @@ public class ServerBehaviour : MonoBehaviour {
 }
 ```
 
-### Boilerplate code
-
-As the `com.unity.transport` package is a low level API, there is a bit of boiler plate code you might want to setup. This is an architecture design Unity chose to make sure that you always have full control.
+The `com.unity.transport` package is a low-level API, and, as a result, there is a bit of boilerplate code you should set up. The necessity of the boilerplate code is due to an architecture design to ensure you always have full control.
 
 :::note
-As development on the `com.unity.transport` package evolves, more abstractions may be created to reduce your workload on a day-to-day basis.
+As development on the com.unity.transport package evolves, Unity might create more abstractions to reduce your workload on a day-to-day basis.
 :::
 
-The next step is to clean up the dependencies and add our boilerplate code:
+In the `ServerBehaviour.cs` script, clean up the dependencies and add the boilerplate code:
 
-**Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
+**Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
 
 ```csharp
 using UnityEngine;
@@ -70,13 +71,9 @@ using Unity.Networking.Transport;
 ...
 ```
 
-#### Code walkthrough
+The following code demonstrates the necessary boilerplate code and creates empty bodies for the `Start`, `OnDestroy`, and `Update` methods. It also declares a `NetworkDriver` and creates a `NativeList` to hold all connections between the client and server.
 
-### ServerBehaviour.cs
-
-Adding the members we need the following code:
-
-**Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
+**Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
 
 ```csharp
 using ...
@@ -95,20 +92,17 @@ public class ServerBehaviour : MonoBehaviour {
     void Update () {
     }
 
-```
-
-#### Code walkthrough
-
-```
 public NetworkDriver m_Driver;
 private NativeList<NetworkConnection> m_Connections;
 ```
 
-You need to declare a `NetworkDriver`. You also need to create a NativeList to hold our connections.
+Next, expand the `Start`, `OnDestroy`, and `Update` methods.
 
-### Start method
+### `Start` method
 
-**Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
+First, define the logic in the [`MonoBehaviour.Start` method](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html).
+
+**Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
 
 ```csharp
 void Start ()
@@ -125,34 +119,34 @@ void Start ()
 }
 ```
 
-#### Code walkthrough
+The first line of code, `m_Driver = NetworkDriver.Create()`, creates a `NetworkDriver` instance without any parameters.
 
-The first line of code, `m_Driver = NetworkDriver.Create();` , just makes sure you are creating your driver without any parameters.
+Next, `m_Driver.Bind` binds the `NetworkDriver` instance to a specific network address and port, and if that doesn't fail, it calls the `Listen` method.
 
 ```csharp
-    if (m_Driver.Bind(endpoint) != 0)
+   if (m_Driver.Bind(endpoint) != 0)
         Debug.Log("Failed to bind to port 9000");
     else
         m_Driver.Listen();
 ```
 
-Then we try to bind our driver to a specific network address and port, and if that does not fail, we call the `Listen` method.
-
 :::important
-the call to the `Listen` method sets the `NetworkDriver` to the `Listen` state. This means that the `NetworkDriver` will now actively listen for incoming connections.
+The call to the `Listen` method sets the `NetworkDriver` to the `Listen` state, which means the `NetworkDriver` actively listens for incoming connections.
 :::
 
-` m_Connections = new NativeList<NetworkConnection>(16, Allocator.Persistent);`
+`m_Connections` creates a `NativeList` to hold all the connections.
 
-Finally we create a `NativeList` to hold all the connections.
+```csharp
+m_Connections = new NativeList<NetworkConnection>(16, Allocator.Persistent);
+```
 
-### OnDestroy method
+### `OnDestroy` method
 
-Both `NetworkDriver` and `NativeList` allocate unmanaged memory and need to be disposed. To make sure this happens we can simply call the `Dispose` method when we are done with both of them.
+You must dispose of both `NetworkDriver` and `NativeList` because they allocate unmanaged memory. To ensure proper disposal, call the `Dispose` method when you no longer need them.
 
-Add the following code to the `OnDestroy` method on your [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html):
+Add the following code to the OnDestroy method on [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html):
 
-**Filename**: [_Assets\Scripts\ServerBehaviour.cs_](samples/serverbehaviour.cs.md)
+**Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
 
 ```csharp
 public void OnDestroy()
@@ -165,11 +159,11 @@ public void OnDestroy()
 }
 ```
 
-The check for `m_Driver.IsCreated` ensures we don't dispose of the memory if it hasn't been allocated (e.g. if the component is disabled).
+The check for `m_Driver.IsCreated` ensures you don't dispose of unallocated memory. For example, UTP doesn’t allocate memory for disabled components.
 
-### Server Update loop
+### Server `Update` loop
 
-As the `com.unity.transport` package uses the [Unity C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) internally, the `m_Driver` has a `ScheduleUpdate` method call. Inside our `Update` loop you need to make sure to call the `Complete` method on the [JobHandle](https://docs.unity3d.com/Manual/JobSystemJobDependencies.html) that is returned, in order to know when you are ready to process any updates.
+The `com.unity.transport` package uses the [Unity C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) internally. As a result, the `m_Driver` has a `ScheduleUpdate` method call. Call the `Complete` method on the returned [JobHandle](https://docs.unity3d.com/Manual/JobSystemJobDependencies.html) inside the `Update` loop to ensure you know when to process updates.
 
 ```csharp
 void Update () {
@@ -178,16 +172,15 @@ void Update () {
 ```
 
 :::note
-In this example, we are forcing a synchronization on the main thread in order to update and handle our data later in the `MonoBehaviour::Update` call. The workflow [Creating a jobified client and server](workflow-client-server-jobs.md) shows you how to use the Transport package with the C# Job System.
+This example forces synchronization on the main thread to update and handle the data later in the `MonoBehaviour::Update` call. The workflow [Create a jobified client and server](workflow-client-server-jobs.md) shows how to use the Transport package with the C# Job System.
 :::
 
+After updating `m_Driver`, the first thing you must do is handle the connections. Start by cleaning up any stale connections from the list before processing new ones. Cleaning up stale connections ensures you don't have any old connections lying around when you iterate through the list to check for new events.
 
-The first thing we want to do, after you have updated your `m_Driver`, is to handle your connections. Start by cleaning up any old stale connections from the list before processing any new ones. This cleanup ensures that, when we iterate through the list to check what new events we have gotten, we dont have any old connections laying around.
-
-Inside the "Clean up connections" block below, we iterate through our connection list and just simply remove any stale connections.
+The following code iterates through the connection list and removes any stale connections.
 
 ```csharp
-    // Clean up connections
+   // Clean up connections
     for (int i = 0; i < m_Connections.Length; i++)
     {
         if (!m_Connections[i].IsCreated)
@@ -198,10 +191,10 @@ Inside the "Clean up connections" block below, we iterate through our connection
     }
 ```
 
-Under "Accept new connections" below, we add a connection while there are new connections to accept.
+The following code adds a connection while there are new connections to accept.
 
 ```csharp
-    // Accept new connections
+   // Accept new connections
     NetworkConnection c;
     while ((c = m_Driver.Accept()) != default(NetworkConnection))
     {
@@ -210,50 +203,50 @@ Under "Accept new connections" below, we add a connection while there are new co
     }
 ```
 
-Now we have an up-to-date connection list. You can now start querying the driver for events that might have happened since the last update.
+You now have an up-to-date connection list and can start querying the driver for events that might have happened since the last update.
 
 ```csharp
-    DataStreamReader stream;
+  DataStreamReader stream;
     for (int i = 0; i < m_Connections.Length; i++)
     {
         if (!m_Connections[i].IsCreated)
             continue;
 ```
 
-Begin by defining a `DataStreamReader`. This will be used in case any `Data` event was received. Then we just start looping through all our connections.
+Begin by defining a `DataStreamReader`, which you’ll use to process received Data events. Next, loop through the connections.
 
-For each connection we want to call `PopEventForConnection` while there are more events still needing to get processed.
+Call `PopEventForConnection` for each connection while unprocessed events exist.
 
 ```csharp
-    NetworkEvent.Type cmd;
+   NetworkEvent.Type cmd;
     while ((cmd = m_Driver.PopEventForConnection(m_Connections[i], out stream)) != NetworkEvent.Type.Empty)
     {
 ```
 
 :::note
-There is also the `NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader slice)` method call, that returns the first available event, the `NetworkConnection` that its for and possibly a `DataStreamReader`.
+You can also use the `NetworkEvent.Type PopEvent(out NetworkConnection con, out DataStreamReader slice)` method call, which returns the first available event, the NetworkConnection that it's for, and possibly a `DataStreamReader`.
 :::
 
-We are now ready to process events. Lets start with the `Data` event.
+Now it’s time to process events. Start with the `Data` event.
 
 ```csharp
-    if (cmd == NetworkEvent.Type.Data)
+   if (cmd == NetworkEvent.Type.Data)
     {
 ```
 
-Next, we try to read a `uint` from the stream and output what we have received:
+Next, try to read a `uint` from the stream and output the received data:
 
 ```csharp
-    uint number = stream.ReadUInt();
+   uint number = stream.ReadUInt();
     Debug.Log("Got " + number + " from the Client adding + 2 to it.");
 ```
 
-When this is done we simply add two to the number we received and send it back. To send anything with the `NetworkDriver` we need a instance of a `DataStreamWriter`. A `DataStreamWriter` is a new type that comes with the `com.unity.transport` package. You get a `DataStreamWriter` when you start sending a message by calling `BeginSend`.
+After outputting the received data, add the received numbers and send the sum back to the client. To send anything with the `NetworkDriver`, you need an instance of a `DataStreamWriter`. A `DataStreamWriter` is a new type that comes with the `com.unity.transport` package. You get a `DataStreamWriter` when you start sending a message by calling `BeginSend`.
 
-After you have written your updated number to your stream, you call the `EndSend` method on the driver and off it goes:
+After you’ve written the sum of the two numbers to the stream, call the `EndSend` method on the driver. Off it goes!
 
 ```csharp
-    number +=2;
+   number +=2;
 
     m_Driver.BeginSend(NetworkPipeline.Null, m_Connections[i], out var writer);
     writer.WriteUInt(number);
@@ -262,13 +255,13 @@ After you have written your updated number to your stream, you call the `EndSend
 ```
 
 :::note
-We are passing `NetworkPipeline.Null` to the `BeginSend` function. This way we say to the driver to use the unreliable pipeline to send our data. It is also possible to not specify a pipeline.
+This example passes `NetworkPipeline.Null` to the `BeginSend` function to tell the driver to use the unreliable pipeline to send the data. However, it’s also possible to choose not to specify a pipeline.
 :::
 
-Finally, you need to handle the disconnect case. This is pretty straight forward, if you receive a disconnect message you need to reset that connection to a `default(NetworkConnection)`. As you might remember, the next time the `Update` loop runs you will clean up after yourself.
+You must handle the disconnect case. Handling the disconnect case is pretty straightforward: if you receive a disconnect message, reset that connection to a `default(NetworkConnection)`. The next time the `Update` loop runs, you should clean up the stale connections..
 
 ```csharp
-                else if (cmd == NetworkEvent.Type.Disconnect)
+               else if (cmd == NetworkEvent.Type.Disconnect)
                 {
                     Debug.Log("Client disconnected from server");
                     m_Connections[i] = default(NetworkConnection);
@@ -276,20 +269,26 @@ Finally, you need to handle the disconnect case. This is pretty straight forward
             }
         }
     }
-
 ```
 
-That is the whole server. See [_ServerBehaviour.cs_](samples/serverbehaviour.cs.md) for the full source code.
+You’ve now created the server, and you’re ready to create a client. Here’s a summary of the server logic:
 
-## Creating a Client
+1. Add any necessary boilerplate code.
+2. Define the `Start` method logic, which includes declaring (and binding to) a `NetworkDriver` and `creating` a NativeList to hold the connections.
+3. Define the `OnDestroy` method logic, which includes disposing of the `NetworkDriver` and the NativeList that holds the connections.
+4. Define the `Update` loop logic, which includes listening for connections, adding connections, processing data, handling disconnections, and cleaning up stale connections.
 
-The client code looks pretty similar to the server code at first glance, but there are a few subtle differences. This part of the workflow covers the differences between them, and not so much the similarities.
+See [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md) for the full source code.
 
-### ClientBehaviour.cs
+## Create a Client
 
-You still define a `NetworkDriver` but instead of having a list of connections we now only have one. There is a `Done` flag to indicate when we are done, or in case you have issues with a connection, you can exit quickly.
+This section demonstrates creating a simple client with UTP 2.0. The client code looks pretty similar to the server code at first glance, but there are subtle differences. This part of the workflow covers the differences between them and not so much the similarities.
 
-**Filename**: [_Assets\Scripts\ClientBehaviour.cs_](samples/clientbehaviour.cs.md)
+Start by creating a C# script in the Unity Editor. Name the script `ClientBehaviour.cs`.
+
+Similar to the server behavior, you still need to define a `NetworkDriver`. However, the client only has one instead of a list of connections. There’s also a Done flag to indicate when the client is finished with the connection. You can also use the Done flag to exit if you have connection issues.
+
+**Filename**: [`Assets\Scripts\ClientBehaviour.cs`](samples/clientbehaviour.cs.md)
 
 ```csharp
 using ...
@@ -306,9 +305,9 @@ public class ClientBehaviour : MonoBehaviour {
 }
 ```
 
-### Creating and Connecting a Client
+### Create and connect a client
 
-Start by creating a driver for the client and an address for the server.
+Start by creating a `NetworkDriver` for the client and an address for the server.
 
 ```csharp
 void Start () {
@@ -321,9 +320,9 @@ void Start () {
 }
 ```
 
-Then call the `Connect` method on your driver.
+Then call the `Connect` method on the `NetworkDriver` you created.
 
-Cleaning up this time is a bit easier because you don’t need a `NativeList` to hold your connections, so it simply just becomes:
+Cleaning up the client is easier than cleaning up the server because you don’t need a `NativeList` to hold the connections. You only need to dispose of the `NetworkDriver`.
 
 ```csharp
 public void OnDestroy()
@@ -332,9 +331,9 @@ public void OnDestroy()
 }
 ```
 
-### Client Update loop
+### Client `Update` loop
 
-You start the same way as you did in the server by calling `m_Driver.ScheduleUpdate().Complete();` and make sure that the connection worked.
+You start the client Update loop the same way as the server: by calling `m_Driver.ScheduleUpdate().Complete()`, then ensuring the connection succeeded.
 
 ```csharp
 void Update()
@@ -349,24 +348,23 @@ void Update()
     }
 ```
 
-You should recognize the code below, but if you look closely you can see that the call to `m_Driver.PopEventForConnection` was switched out with a call to `m_Connection.PopEvent`. This is technically the same method, it just makes it a bit clearer that you are handling a single connection.
+The following code is similar to the server Update loop code. However, if you look closely, you can see the call to `m_Driver.PopEventForConnection` is replaced with a call to `m_Connection.PopEvent`. This is technically the same method; it just makes it clearer that you are handling a single connection.
 
 ```csharp
-    DataStreamReader stream;
+   DataStreamReader stream;
     NetworkEvent.Type cmd;
     while ((cmd = m_Connection.PopEvent(m_Driver, out stream)) != NetworkEvent.Type.Empty)
     {
 ```
 
-Now you encounter a new event you have not seen yet: a `NetworkEvent.Type.Connect` event.
-This event tells you that you have received a `ConnectionAccept` message and you are now connected to the remote peer.
+Now you encounter a new event you haven't seen yet: a `NetworkEvent.Type.Connect` event. The `NetworkEvent.Type.Connect` event tells you that you received a `ConnectionAccept` message and are now connected to the remote peer.
 
 :::note
-In this case, the server that is listening on port `9000` on `NetworkEndPoint.LoopbackIpv4` is more commonly known as `127.0.0.1`.
+In this case, the server listens on port 9000 on `NetworkEndPoint.LoopbackIpv4` (more commonly known as 127.0.0.1).
 :::
 
 ```csharp
-    if (cmd == NetworkEvent.Type.Connect)
+   if (cmd == NetworkEvent.Type.Connect)
     {
         Debug.Log("We are now connected to the server");
 
@@ -377,16 +375,16 @@ In this case, the server that is listening on port `9000` on `NetworkEndPoint.Lo
     }
 ```
 
-When you establish a connection between the client and the server, you send a number (that you want the server to increment by two). The use of the `BeginSend` / `EndSend` pattern together with the `DataStreamWriter`, where we set `value` to one, write it into the stream, and finally send it out on the network.
+Upon establishing a connection between the client and the server, the client sends a number to the server (that the server increments by two). Using the `BeginSend` / `EndSend` pattern with the `DataStreamWriter`, set value to one, write it into the stream, and send it out on the network.
 
-When the `NetworkEvent` type is `Data`, as below, you read the `value` back that you received from the server and then call the `Disconnect` method.
+When the `NetworkEvent` type is Data, read the value you received back from the server, then call the `Disconnect` method.
 
 :::note
-A good pattern is to always set your `NetworkConnection` to `default(NetworkConnection)` to avoid stale references.
+The recommended best practice is to set `NetworkConnection` to `default(NetworkConnection)` to avoid stale references.
 :::
 
 ```csharp
-    else if (cmd == NetworkEvent.Type.Data)
+   else if (cmd == NetworkEvent.Type.Data)
     {
         uint value = stream.ReadUInt();
         Debug.Log("Got the value = " + value + " back from the server");
@@ -394,13 +392,11 @@ A good pattern is to always set your `NetworkConnection` to `default(NetworkConn
         m_Connection.Disconnect(m_Driver);
         m_Connection = default(NetworkConnection);
     }
-
 ```
 
-Lastly, we need to handle potential server disconnects:
+You must handle potential server disconnects:
 
 ```csharp
-
             else if (cmd == NetworkEvent.Type.Disconnect)
             {
                 Debug.Log("Client got disconnected from server");
@@ -410,18 +406,30 @@ Lastly, we need to handle potential server disconnects:
     }
 ```
 
-See [_ClientBehaviour.cs_](samples/clientbehaviour.cs.md) for the full source code.
+You’ve now created the server and client, and you’re ready to put it all together. Here’s a summary of the client logic:
 
-## Putting it all together
+1. Define the `Start` method logic, which includes declaring (and binding to) a `NetworkDriver`.
+2. Define the `OnDestroy` method logic, which includes disposing of the `NetworkDriver`.
+3. Define the `Update` loop logic, which includes connecting to the server, handling the Connect event, sending data, receiving data, and handling disconnections.
 
-To take this for a test run, you can add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to our **Scene**.
+See [`ClientBehaviour.cs`](samples/clientbehaviour.cs.md) for the full source code.
 
-![GameObject Added](/img/transport/game-object.PNG)
+## Test the server and client
 
-Add add both of our behaviours to it:
+If you’ve been following along with the tutorial and using the sample code, you now have a functional server and client. This section shows how to put it together and test it in the Unity Editor.
 
-![Inspector](/img/transport/inspector.PNG)
+Add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to your **Scene**.
 
-Click **Play**. Five log messages should load in your **Console** window:
+![GameObject](../../static/img/transport/gameobject-2.png)
 
-![Console](/img/transport/console-view.PNG)
+Add both the `ServerBehaviour` and the `ClientBehaviour` scripts to the GameObject.
+
+![Inspector](../../static/img/transport/inspector-2.png)
+
+Select **Play** to enter Play mode. You should see five log messages in the **Console** window:
+
+![Console output](../../static/img/transport/console-2.png)
+
+## WebSocket
+
+ See [Client and server over WebSocket](workflow-client-server-ws.md).

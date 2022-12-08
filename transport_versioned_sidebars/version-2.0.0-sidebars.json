@@ -15,8 +15,12 @@
                   "items": [
                       {
                           "type": "doc",
-                          "id": "version-2.0.0/install"
+                          "id": "version-2.0.0/getting-started"
                       },
+                      {
+                        "type": "doc",
+                        "id": "version-2.0.0/install"
+                    },
                       {
                           "type": "doc",
                           "id": "version-2.0.0/using-sample"
@@ -59,26 +63,12 @@
                               {
                                   "type": "doc",
                                   "id": "version-2.0.0/secure-connection"
-                              }]
-                      }
-                  ]
-              },
-              {
-                  "collapsed": true,
-                  "type": "category",
-                  "label": "Playing across platforms",
-                  "items": [
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/supported-platforms"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/cross-play-without-relay"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/cross-play-relay"
+                              },
+                              {
+                                  "type": "doc",
+                                  "id": "version-2.0.0/integrate-logging"
+                              }
+                            ]
                       }
                   ]
               },
@@ -87,14 +77,6 @@
                   "type": "category",
                   "label": "Extending functionalities",
                   "items": [
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/custom-pipeline"
-                      },
-                      {
-                          "type": "doc",
-                          "id": "version-2.0.0/custom-networkinterface"
-                      },
                       {
                           "type": "doc",
                           "id": "version-2.0.0/network-settings"
