@@ -23,7 +23,7 @@ For `NetworkBehaviour`s use the NetworkBehaviourReference<!-- (NO API LINK AVAIL
 It is important that the `NetworkBehaviour`s on each `NetworkObject` remains the same for the server and any client connected. When using multiple projects, this becomes especially important so the server doesn't try to call a client RPC on a `NetworkBehaviour` that might not exist on a specific client type (or set a NetworkVariable, etc).
 :::
 
-### Pre-Spawn and Monobehaviour Updates
+### Pre-Spawn and MonoBehaviour Updates
 
 Since `NetworkBehaviour`s derive from MonoBehaviour, the `FixedUpdate`, `Update`, and `LateUpdate` methods, if defined, will still be invoked on `NetworkBehaviour`s even when they are not yet spawned.  In order to "exit early" to avoid executing netcode specific code within the update methods, you can check the local `NetworkBehaviour.IsSpawned` flag and return if it is not yet set like the below example:
 
@@ -107,4 +107,131 @@ If you override the virtual 'OnDestroy' method it is important to alway invoke t
 ```
 
 `NetworkBehaviour` handles other destroy clean up tasks and requires that you invoke the base `OnDestroy` method to operate properly.
+:::
+
+### NetworkBehaviour Pre-Spawn Synchronization
+
+There could be scenarios where you need to include additional configuration data or use a `NetworkBehaviour` to configure some non-netcode related component (or the like) prior to a `NetworkObject` being spawned. This can be particularly critical if you want specific settings applied prior to `NetworkBehaviour.OnNetworkSpawn` being invoked. When a client is synchronizing with an existing network session, this can become problematic as messaging requires a client to be fully synchronized before you really know "it is safe" to send the message and even if you send a message there is the latency involved in the whole process that might not be convenient and could require additional specialized code to account for this.
+
+`NetworkBehaviour.OnSynchronize` allows you to write and read custom serialized data during the `NetworkObject` serialization process.  
+
+There are two cases where `NetworkObject` synchronization occurs:
+- When dynamically spawning a `NetworkObject`.
+- When a client is being synchronized after connection approval 
+  - i.e. Full synchronization of the `NetworkObject`s and scenes.
+
+:::info
+If you haven't already become familiar with the [`INetworkSerializable` interface](../advanced-topics/serialization/inetworkserializable.md), then you might read up on that before proceeding as `NetworkBehaviour.OnSynchronize` as it follows a very similar usage pattern.
+:::
+
+#### Order of Operations When Dynamically Spawning:<br />
+The following provides you with an outline of the order of operations that occur during `NetworkObject` serialization when dynamically spawned.
+
+Server-Side:
+- `GameObject` with `NetworkObject` component is instantiated.
+- The `NetworkObject` is spawned. 
+  - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
+- The `CreateObjectMessage` is generated 
+  - `NetworkObject` state is serialized.
+  - `NetworkVariable` state is serialized.
+  - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
+    - If this method is not overridden then nothing is written to the serialization buffer.
+- The `CreateObjectMessage` is sent to all clients that are observers of the `NetworkObject`.
+<br />
+
+Client-Side:
+- The `CreateObjectMessage` is received
+  - `GameObject` with `NetworkObject` component is instantiated.
+  - `NetworkVariable` state is deserialized and applied.
+  - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
+    - If this method is not overridden then nothing is read from the serialization buffer.
+- The `NetworkObject` is spawned
+  - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
+
+#### Order of Operations During Full (late-join) Client Synchronization:<br />
+Server-Side:
+- The `SceneEventMessage` of type `SceneEventType.Synchronize` is created
+  - All spawned `NetworkObjects` that are visible to the client, already instantiated, and spawned are serialized.
+    - `NetworkObject` state is serialized.
+    - `NetworkVariable` state is serialized.
+    - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
+      - If this method is not overridden then nothing is written to the serialization buffer.
+- The `SceneEventMessage` is sent to the client.
+
+Client-Side:
+- The `SceneEventMessage` of type `SceneEventType.Synchronize` is received
+- Scene information is deserialized and scenes are loaded (if not already)
+  - In-scene placed `NetworkObject`s are instantiated when a scene is loaded.
+- All `NetworkObject` oriented synchronization information is deserialized
+  - Dynamically spawned `NetworkObject`s are instantiated and state is synchronized
+  - For each `NetworkObject` instance:
+    - `NetworkVariable` state is deserialized and applied.
+    - `NetworkBehaviour.OnSynchronize` is invoked.
+      - If this method is not overridden then nothing is read from the serialization buffer.
+    - The `NetworkObject` is spawned
+      - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
+
+### OnSynchronize Example 
+Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later so you decide to use RPCs.  However, this becomes an issue when you want to synchronize late joining clients as there is no way to really synchronize late joining clients based on RPC activity over the duration of a network session.  This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
+In the example below, it provides one simple use-case scenario where you can use `NetworkBehaviour.OnSynchronize` to synchronize late-joining clients with state set by `ClientRpc` events:
+```csharp
+using UnityEngine;
+using Unity.Netcode;
+
+/// <summary>
+/// Simple RPC driven state that demonstrates one
+/// form of NetworkBehaviour.OnSynchronize usage
+/// </summary>
+public class SimpleRpcState : NetworkBehaviour
+{
+    private bool m_ToggleState;
+
+    /// <summary>
+    /// Late joining clients will be synchronized 
+    /// to the most current m_ToggleState
+    /// </summary>
+    protected override void OnSynchronize<T>(ref BufferSerializer<T> serializer)
+    {
+        serializer.SerializeValue(ref m_ToggleState);
+        base.OnSynchronize(ref serializer);
+    }
+
+    public void ToggleState(bool stateIsSet)
+    {
+        m_ToggleState = stateIsSet;
+    }
+
+    /// <summary>
+    /// Synchronizes connected clients with the
+    /// server-side m_ToggleState
+    /// </summary>
+    /// <param name="stateIsSet"></param>
+    [ClientRpc]
+    private void ToggleStateClientRpc(bool stateIsSet)
+    {
+        m_ToggleState = stateIsSet;
+    }
+}
+```
+:::caution
+Since `NetworkBehaviour.OnSynchronize` is primarily used for server to client synchronization, RPC state synchronization only works when using ClientRpcs since `NetworkBehaviour.OnSynchronize` is only invoked on the server side during the write portion of serialization and only invoked on the client side during the read portion of serialization. When running a host `NetworkBehaviour.OnSynchronize` is still only invoked once (server-side) during the write portion of serialization.
+:::
+
+### Debugging OnSynchronize Serialization
+If your serialization code has a bug and throws an exception, then `NetworkBehaviour.OnSynchronize` has additional safety checking to handle a graceful recovery without completely breaking the rest of the synchronization serialization pipeline.  
+
+#### When Writing:
+If user-code throws an exception during `NetworkBehaviour.OnSynchronize`, it catches the exception and if:
+- **LogLevel = Normal**: A warning message that includes the name of the `NetworkBehaviour` that threw an exception while writing will be logged and that portion of the serialization for the given `NetworkBehaviour` is skipped.
+- **LogLevel = Developer**: It provides the same warning message as well as it logs an error with the exception message and stack trace.
+
+After generating the log message(s), it rewinds the serialization stream to the point just before it invoked `NetworkBehaviour.OnSynchronize` and will continue serializing. Any data written before the exception occurred will be overwritten or dropped depending upon whether there are more `NetworkBehaviour` components to be serialized.
+
+### When Reading:
+For exceptions this follows the exact same message logging pattern described above when writing. The distinct difference is that after it logs one or more messages to the console, it skips over only the serialization data written by the server-side when `NetworkBehaviour.OnSynchronize` was invoked and continues the deserialization process for any remaining `NetworkBehaviour` components.
+
+However, there is an additional check to assure that the total expected bytes to read were actually read from the buffer. If the total number of bytes read does not equal the expected number of bytes to be read it will log a warning that includes the name of the NetworkBehaviour in question, the total bytes read, the expected bytes to be read, and lets you know this `NetworkBehaviour` is being skipped.
+
+:::caution
+When using `NetworkBehaviour.OnSynchronize` you should be aware that you are increasing the synchronization payload size per instance.  If you have 30 instances that each write 100 bytes of information you will have increased the total full client synchronization size by 3000 bytes
 :::
