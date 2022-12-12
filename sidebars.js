@@ -386,6 +386,10 @@ module.exports = {
                             "type": "doc",
                             "id": "learn/bossroom/spawn-networkobjects"
                         },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs"
+                        },
                     ],
                 },
                 {
