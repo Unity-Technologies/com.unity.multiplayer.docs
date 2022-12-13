@@ -373,6 +373,10 @@ module.exports = {
                         },
                         {
                             "type": "doc",
+                            "id": "learn/bossroom/bossroom-architecture"
+                        },
+                        {
+                            "type": "doc",
                             "id": "learn/bossroom/bossroom-actions"
                         },
                         {
