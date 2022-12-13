@@ -570,7 +570,7 @@ You can usually automate setting up your infrastructure in a cloud environment w
 
 #### Quality assurance (QA) testing
 
-You can use continuous integration to automate your QA team’s flows. For example, you can automate a csustom build pipeline for creating daily test builds and setting up a custom dedicated server for testing. Additionally, you can automate setting up play tests with the test builds and test servers.
+You can use continuous integration to automate your QA team’s flows. For example, you can automate a custom build pipeline for creating daily test builds and setting up a custom dedicated server for testing. Additionally, you can automate setting up play tests with the test builds and test servers.
 
 When you create a custom build pipeline using `BuildPipeline.BuildPlayer`, you must set `buildPlayerOptions.subtarget` to `(int)StandaloneBuildSubtarget.Server` to set your build as a dedicated server build. This means you need both `buildPlayerOptions.subtarget` and `buildPlayerOptions.target`.
 
