@@ -8,7 +8,7 @@ This article describes the high-level architecture of the Boss Room codebase and
 
 ## Assembly structure
 
-We organized Boss Room’s code into multiple domain-based assemblies, each with a relatively self-contained purpose.
+Boss Room’s code is organized into multiple domain-based assemblies, each with a relatively self-contained purpose.
 
 An exception to this organization structure is the Gameplay assembly, which houses most of the networked gameplay logic and other functionality tightly coupled with the gameplay logic.
 
@@ -41,7 +41,7 @@ The `NetworkManager` starts when the `CharSelect` scene loads, which happens whe
 ![Application Flow Diagram](../../../static/img/arch-1.png)
 
 :::note
-We split Boss Room’s main room into four scenes. The primary scene (Boss Room's root scene) contains the state components, game logic, level `navmesh`, and trigger areas that let the server know to load a given sub-scene. Boss Room loads each sub-scene additively using those triggers.
+Boss Room’s main room has four scenes. The primary scene (Boss Room's root scene) has the state components, game logic, level `navmesh`, and trigger areas that let the server know to load a given sub-scene. Boss Room loads each sub-scene additively using those triggers.
 :::tip
 
 Sub-scenes contain spawn points for the enemies and visual assets for their respective level segments. The server unloads sub-scenes that don't have active players and loads the required sub-scenes based on the players' position. If at least one player overlaps with the sub-scene's trigger area, the server loads the sub-scene.
@@ -61,7 +61,7 @@ See the [Multiplayer over the internet](getting-started-boss-room.md) section of
 
 Boss Room uses the Unity Transport Package (UTP). Boss Room's assigns its instance of Unity Transport to the `transport` field of the `NetworkManager`.
 
-The Unity Transport Package is a network transport layer with network simulation tools that help spot networking issues early during development. Boss Room has both buttons to start a game in the two modes and will setup UTP automatically to use either one of them at runtime. 
+The Unity Transport Package is a network transport layer with network simulation tools that help spot networking issues early during development. Boss Room has both buttons to start a game in the two modes and will setup UTP automatically to use either one of them at runtime.
 
 Unity Transport supports Unity Relay (provided by Unity Gaming Services). See the documentation on [Unity Transport Package](../../../transport/about.md) and [Unity Relay](https://docs-multiplayer.unity3d.com/docs/relay/relay) for more information.
 
@@ -79,7 +79,7 @@ For more information, see [Session Management](../../advanced-topics/session-man
 
 ## Unity Gaming Services integration
 
-Boss Room is a multiplayer experience designed to be playable over the internet. To effectively support this, we integrated several [Unity Gaming Services](https://unity.com/solutions/gaming-services) (UGS):
+Boss Room is a multiplayer experience designed to be playable over the internet. To effectively support this, it integrates several [Unity Gaming Services](https://unity.com/solutions/gaming-services) (UGS):
 
 * Authentication
 * Lobby
@@ -87,7 +87,7 @@ Boss Room is a multiplayer experience designed to be playable over the internet.
 
 These three UGS services allow players to host and join games without needing port forwarding or out-of-game coordination.
 
-To keep a single source of truth for service access (and avoid scattering of service access logic), Boss Room wraps UGS SDK access into Facades and uses UI mediators to contain the service logic triggered by UIs. We call these in multiple places throughout the codebase.
+To keep a single source of truth for service access (and avoid scattering of service access logic), Boss Room wraps UGS SDK access into `Facades` and uses UI mediators to contain the service logic triggered by user interfaces (UIs).
 
 * [`AuthenticationServiceFacade.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs)
 * [`LobbyServiceFacade.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Lobby/LobbyServiceFacade.cs)
@@ -126,9 +126,9 @@ The following example of a selected “Archer Boy” class demonstrates the `Pla
 
 ### Characters
 
-`ServerCharacter` exists on a `PlayerAvatar` (or another NPC character) and contains server RPCs and `NetworkVariables` that store the state of a given character. It's responsible for executing the server-side logic for the characters. This server-side logic includes the following:
+`ServerCharacter` exists on a `PlayerAvatar` (or another NPC character) and has server RPCs and `NetworkVariables` that store the state of a given character. It's responsible for executing the server-side logic for the characters. This server-side logic includes the following:
 
-* Movement and pathfinding via `ServerCharacterMovement` use `NavMeshAgent,` which exists on the server to translate the character’s transform (which is synchronized using the NetworkTransform component);
+* Movement and pathfinding via `ServerCharacterMovement` use `NavMeshAgent,` which exists on the server to translate the character’s transform (synchronized using the `NetworkTransform` component);
 * Player action queueing and execution via `ServerActionPlayer`;
 * AI logic via `AIBrain` (applies to NPCs);
 * Character animations via `ServerAnimationHandler`, which uses `NetworkAnimator` to synchronize;
@@ -147,16 +147,16 @@ The [`Action`](https://github.com/Unity-Technologies/com.unity.multiplayer.sampl
 ### Action System
 
 :::note
-We built Boss Room's action system specifically for Boss Room's educational purpose. You'll need to implement a more user friendly custom action system to allow for better game design emergence from your game designers.
+Boss Room's action system was created specifically for Boss Room's educational purpose. You'll need to implement a more user friendly custom action system to allow for better game design emergence from your game designers.
 :::
 
-Boss Room's Action System is a generalized mechanism for Characters to "do stuff" in a networked way. `ScriptableObject`-derived `Actions` implement the client and server logic of any given thing the characters can do in the game.
+Boss Room's Action System is a generalized mechanism for `Characters` to "do stuff" in a networked way. `ScriptableObject`-derived `Actions` implement the client and server logic of any given thing the characters can do in the game.
 
 There are a variety of actions that serve different purposes. Some actions are generic and reused by multiple character classes, while others are specific to a single class.
 
-Each character can have multiple actions that exist simultaneously but only one active Action (also called the "blocking" action). If a character triggers a later action, Boss Room queues it behind the current action. Non-blocking actions can run in the background without interfering with the current action.
+Each character can have multiple actions that exist simultaneously but only one active `Action` (also called the "blocking" action). If a character triggers a later action, Boss Room queues it behind the current action. Non-blocking actions can run in the background without interfering with the current action.
 
-Boss Room synchronizes actions by calling a `ServerCharacter.RecvDoActionServerRPC` and passing the `ActionRequestData`, a struct that implements the INetworkSerializable interface.
+Boss Room synchronizes actions by calling a `ServerCharacter.RecvDoActionServerRPC` and passing the `ActionRequestData`, a struct that implements the `INetworkSerializable` interface.
 
 :::note
 `ActionRequestData` has an `ActionID` field, a simple struct that wraps an integer containing the index of a given `ScriptableObject` `Action` in the registry of abilities available to characters. The registry of available character abilities is stored in `GameDataSource`.
@@ -202,9 +202,9 @@ You should also ensure each scene has exactly one `navmesh` file. You can find `
 
 ### Dependency injection
 
-Boss Room implements the [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (DI) pattern using the [VContainer](https://vcontainer.hadashikick.jp/) library. DI allows Boss Room to clearly define its dependencies in code instead of using static access, pervasive singletons, or scriptable object references (Scriptable Object Architecture). Code is easy to version-control and comparatively easy to understand for a programmer, unlike Unity YAML-based objects, such as scenes, scriptable object instances, and prefabs.
+Boss Room implements the [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection) (DI) pattern using the [`VContainer`](https://vcontainer.hadashikick.jp/) library. DI allows Boss Room to clearly define its dependencies in code instead of using static access, pervasive singletons, or scriptable object references (Scriptable Object Architecture). Code is easy to version-control and comparatively easy to understand for a programmer, unlike Unity YAML-based objects, such as scenes, scriptable object instances, and prefabs.
 
-DI also allows Boss Room to circumvent the problem of cross-scene references to common dependencies, even though it still has to manage the lifecycle of MonoBehaviour-based dependencies by marking them with `DontDestroyOnLoad` and destroying them manually when appropriate.
+DI also allows Boss Room to circumvent the problem of cross-scene references to common dependencies, even though it still has to manage the lifecycle of `MonoBehaviour`-based dependencies by marking them with `DontDestroyOnLoad` and destroying them manually when appropriate.
 
 :::note
 `ApplicationController` inherits from the `VContainer`'s `LifetimeScope`, a class that serves as a dependency injection scope and bootstrapper that facilitates binding dependencies. Scene-specific State classes inherit from `LifetimeScope`, too.
@@ -214,26 +214,26 @@ In the Unity Editor Inspector, you can choose a parent scope for any `LifetimeSc
 
 ### `Client`/`Server` code separation
 
-A challenge we encountered when developing Boss Room was that code would often run in a single context, either client or server. Reading mixed client and server code adds a layer of complexity, making mistakes more likely.
+A challenge the Boss Room development team encountered when developing Boss Room was that code would often run in a single context, either client or server. Reading mixed client and server code adds a layer of complexity, making mistakes more likely.
 
-To solve this challenge, we explored different client-server code separation approaches. We eventually decided to revert our initial client/server/shared assemblies to a more classic domain-driven assembly architecture while keeping more complex classes separated by client/server.
+To solve this challenge, they explored different client-server code separation approaches. The team eventually decided to revert the initial client/server/shared assemblies to a more classic domain-driven assembly architecture while keeping more complex classes separated by client/server.
 
-Our initial thought was that separating assemblies by client and server would allow for easier porting to a dedicated game server (DGS) model afterward; we’d only need to strip a single assembly to ensure code only runs when necessary.
+The initial thought was that separating assemblies by client and server would allow for easier porting to a dedicated game server (DGS) model afterward; the team would only need to strip a single assembly to ensure code only runs when necessary.
 
 However, this approach had two primary issues:
 
-* It introduced callback hell, which made code (that should be trivial) too complex. You can look at our different action implementations in Boss Room 1.3.1 to see this.
-* Many components could be single simple classes instead of three-class horrors.
+* It introduced callback hell, which made code (that should be trivial) too complex. You can look at the different action implementations in Boss Room 1.3.1 to see this.
+* Many components were better suited as single simple classes instead of three-class horrors.
 
-After investigation, we determined that client/server separation was unnecessary for the following reasons:
+After investigation, the Boss Room development team determined that client/server separation was unnecessary for the following reasons:
 
 * There’s no need for [asmdef (assembly definition)](https://docs.unity3d.com/Manual/cus-asmdef.html) stripping because you can ifdef out single classes instead.
 * It’s not completely necessary to ifdef classes because it’s only compile-time insurance that certain parts of client-side code never run. You can still disable the component on Awake at runtime if it's not mean to run on the server or client.
 * The added complexity outweighed the pros that’d help with stripping whole assemblies.
 * Most `Client`/`Server` class pairs are tightly coupled and call one another; they have split implementations of the same logical object. Separating them into different assemblies forces you to create “bridge classes” to avoid circular dependencies between your client and server assemblies. By putting your client and server classes in the same assemblies, you allow those circular dependencies in those tightly coupled classes and remove unnecessary bridging and abstractions.
-* Whole assembly stripping is incompatible with NGO because NGO doesn’t support NetworkBehaviour stripping. Components related to a NetworkObject must match on the client and server sides. If these components aren’t identical, it creates undefined runtime errors (the errors will change from one use case to another; they range from no issue, to silent errors, to buffer exceptions) with NGO's NetworkBehaviour indexing.
+* Whole assembly stripping is incompatible with NGO because NGO doesn’t support NetworkBehaviour stripping. Components related to a NetworkObject must match on the client and server sides. If these components aren’t identical, it creates undefined runtime errors (the errors will change from one use to another; they range from no issue, to silent errors, to buffer exceptions) with NGO's `NetworkBehaviour` indexing.
 
-After those experiments, we established new rules for the team:
+After those experiments, the Boss Room development team established new rules for the codebase:
 
 * Use domain-based assemblies
 * Use single classes for small components (for example, the Boss Room door with a simple on/off state).
@@ -245,26 +245,26 @@ After those experiments, we established new rules for the team:
 * The `Server` class owns server-driven `NetworkVariables`. Similarly, the `Client` class owns owner-driven `NetworkVariables`. This ownership separation helps make larger classes more readable and maintainable.
 * Use partial classes when separating by context isn’t possible.
 * Continue using the `Client`/`Server` prefix to make contexts more obvious. Note: You can’t use prefixes for `ScriptableObjects` that have file name requirements.
-* Use `Client`/`Server`/`Shared` separation when you have a one-to-many relationship where your server class needs to send information to many client classes. You can also achieve this with the [`NetworkedMessageChannel`](#heading=h.wfrn29pfpphk).
+* Use `Client`/`Server`/`Shared` separation when you have a one-to-many relationship where your server class needs to send information to many client classes. You can also achieve this with the [`NetworkedMessageChannel`](#networkedmessagechannel).
 
 You still need to take care of code executing in `Start` and `Awake`. If the code in `Start` and `Awake` runs simultaneously with the NetworkManager's initialization, it might not know whether the player is a host or client.
 
 ### Publisher-Subscriber Messaging
 
-We implemented a dependency injection-friendly Publisher-Subscriber pattern that allows Boss Room to send and receive strongly-typed messages in a loosely-coupled manner, where communicating systems only know about the `IPublisher`/`ISubscriber` of a given message type.
+Boss Room implements a dependency injection-friendly Publisher-Subscriber pattern that allows Boss Room to send and receive strongly-typed messages in a loosely coupled manner, where communicating systems only know about the `IPublisher`/`ISubscriber` of a given message type.
 
-Because publishers and subscribers are classes, we can have more interesting behavior for message transfer, such as buffered and networked messaging. See the NetworkedMessageChannel section.
+Because publishers and subscribers are classes, Boss Room can have more interesting behavior for message transfer, such as buffered and networked messaging. See the [`NetworkedMessageChannel`](#networkedmessagechannel) section.
 
-These mechanisms allow Boss Room to avoid circular references and limit the dependency surface between assemblies. Cross-communicating systems rely on common messages but don't necessarily need to know about each other. Because messages don’t need to know about each other, we can more easily separate them into smaller assemblies.
+These mechanisms allow Boss Room to avoid circular references and limit the dependency surface between assemblies. Cross-communicating systems rely on common messages but don't necessarily need to know about each other. Because messages don’t need to know about each other, Boss Room can more easily separate them into smaller assemblies.
 
-These mechanisms allow for strong separation of concerns and coupling reduction using PubSub and dependency injection (DI). We use DI to pass the handles to the `IPublisher` or `ISubscriber` of any given event type. As a result, message publishers and consumers are unaware of each other.
+These mechanisms allow for strong separation of concerns and coupling reduction using PubSub and dependency injection (DI). Boss Room uses DI to pass the handles to the `IPublisher` or `ISubscriber` of any given event type. As a result, message publishers and consumers are unaware of each other.
 
-`MessageChannel` classes implement the `IPublisher` and `ISubscriber` interfaces and provide the actual messaging logic.
+`MessageChannel` classes implement the `IPublisher` and `ISubscriber` interfaces and have the actual messaging logic.
 
 :::note
-Boss Room could have used a 3rd party library for messaging (like MessagePipe). Since we needed custom networked channels and our use cases were quite simple, we decided to go with our own light implementation. If we had had a full game with more gameplay, we might have switched to a library that had more features.
+The Boss Room development team considered using a third party library for messaging (like `MessagePipe`). However, since Boss Room needed custom networked channels and the use cases were quite simple, the team decided to go with an in-house light implementation. If Boss Room was a full game with more gameplay, it'd benefit more from a library that with more features.
 :::
 
 #### `NetworkedMessageChannel`
 
-With in-process messaging, Boss Room implements the NetworkedMessageChannel, which uses the same API, but allows for sending data between peers. We implemented the Netcode synchronization for these using custom NGO messaging, which serves as a useful synchronization primitive in our arsenal.
+With in-process messaging, Boss Room implements the `NetworkedMessageChannel`, which uses the same API, but allows for sending data between peers. Boss Room implements the Netcode synchronization for these using custom NGO messaging, which serves as a useful synchronization primitive in the codebase arsenal.
