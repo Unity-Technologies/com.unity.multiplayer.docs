@@ -3,9 +3,11 @@ id: porting-to-dgs
 title: Porting from Client-hosted to DGS-hosted
 ---
 
-You might have started developing your game with client-hosted in mind but then realized it wasn’t giving you the performance, reliability, or security you wanted. There are multiple reasons for choosing both a dedicated game server (DGS) solution and a client-hosted solution. This document provides guidance around switching from a client-hosted game to a dedicated-server game in Unity using Netcode for GameObjects (NGO).
+You might have started developing your game with client-hosted in mind but then realized it wasn’t giving you the performance, reliability, or security you wanted. There are multiple reasons for choosing both a dedicated game server (DGS) solution and a client-hosted solution. This document provides guidance around switching from a client-hosted game to a dedicated-server game in Unity using [Netcode for GameObjects (NGO)](../about.md).
 
-:::note
+If your server and clients run the same code, it’s usually simpler to port from DGS to client-hosted than the other way around. It’s easier to place a client on top of a DGS than to extract a DGS from your host. By starting with your DGS logic already isolated, you can then more easily change to client-hosted by enabling client-side logic for the host. This isn't the case if your server uses a different technology stack than your clients.
+
+:::info
 There are two distinct meanings of the word “host” that you must take care not to confuse: the NGO host and the hardware host.
 
 - The **NGO host** is where both a client and a server run simultaneously. The hosting provider (the hardware host) runs your Unity server build.
@@ -14,13 +16,9 @@ There are two distinct meanings of the word “host” that you must take care n
 In this article, host refers to the NGO host.
 :::
 
-:::note
-If your server and clients run the same code, it’s usually simpler to port from DGS to client-hosted than the other way around. It’s easier to place a client on top of a DGS than to extract a DGS from your host. By starting with your DGS logic already isolated, you can then more easily change to client-hosted by enabling client-side logic for the host. This isn't the case if your server uses a different technology stack than your clients.
-:::
-
 ## Client-hosted vs dedicated server-hosted games
 
-Choosing between a client-hosted and a dedicated server game isn’t as straightforward as it might initially seem. There are multiple pros and cons to each solution, and the scales can easily tip one way or another depending on a multitude of factors, such as the game type, the latency tolerance, the game integrity (how easily players can cheat), and the expectations of your players. Sometimes, it might even make sense to provide multiple hosting options. This section covers some pros and cons of each solution.
+Choosing between a client-hosted and a dedicated server game isn’t as straightforward as it might initially seem. There are multiple pros and cons to each solution, and the scales can easily tip one way or another depending on a multitude of factors, such as the game type, the latency tolerance, the game integrity (how easily players can cheat), and the expectations of your players. Sometimes, it might even make sense to have multiple hosting options. This section covers some pros and cons of each solution.
 
 ### Client-hosted games
 
@@ -41,7 +39,7 @@ The following table lists some pros and cons of using a client-hosted hosting ap
 | PROS | CONS |
 |---|---|
 | There are fewer costs associated with a client-hosted game because you don’t need to worry about paying for a hosting provider. ✝ | You don’t have control over the quality of service (QoS) of connections because they depend on the host player’s network. |
-| It is easier to manage builds in client-hosted games because you only need to release a single build for players. | Depending on the game type, players might become frustrated because it’s not fair that the host player has zero latency. |
+| It's easier to manage builds in client-hosted games because you only need to release a single build for players. | Depending on the game type, players might become frustrated because it’s not fair that the host player has zero latency. |
 | Client-hosted games are simpler to debug and profile compared to dedicated server-hosted games (your development PC can also run the host, a DGS might run on specialized hardware). | Players can more easily cheat because they have physical access to the server. |
 | The above makes it great for LAN (local area network) parties. | Client-hosted games don’t scale well. Player hardware usually isn’t capable of hosting game sessions with hundreds of connections. |
 
@@ -61,11 +59,11 @@ The following table lists some pros and cons of using a dedicated server hosting
 
 | PROS | CONS |
 |---|---|
-| Players don’t have access to your server build, which makes it easier to maintain game authority and security. | You have to worry about uptime, quality of service, latency, and geographic availability. |
-| There’s no additional lag due to relay based connections. | You must consider scalability because the number of players connected to your server fleet could change drastically in a short time period. |
+| Players don’t have access to your server build, which makes it easier to keep game authority and security. | You have to worry about uptime, quality of service, latency, and geographic availability. |
+| There’s no extra lag due to relay based connections. | You must consider scalability because the number of players connected to your server fleet can change drastically in a short time. |
 | You have more control over performance and quality of service since you as a developer control the hardware the server runs on. | It can quickly get expensive, depending on how you host the server build. |
 | It’s easier to think about the server part of your code and the client part of your code when there’s no overlap like a client-hosted game. | It’s more complicated to debug because you usually need to run the production build in a virtual machine for testing. |
-| Clients don’t require as much performance because they aren’t responsible for the processing and bandwidth overhead involved with hosting. | You have to maintain a server build and a client build. |
+| Clients don’t require as much performance because they aren’t responsible for the processing and bandwidth overhead involved with hosting. | You have to keep a server build and a client build. |
 | You don’t have to worry about host migrations or what to do when the host player disconnects. ✝ |  |
 | You don’t have to worry about the unfairness of the host having zero latency or lag. |  |
 | You have the option of using a managed service provider like Game Server Hosting, which allows you to focus on other aspects of your game. |  |
@@ -95,7 +93,7 @@ You must adapt the `if ([IsServer](https://docs-multiplayer.unity3d.com/netcode/
 
 Porting from a client-hosted to a server-hosted game often requires you to change the IP address your game listens on.
 
-By default, NGO uses 127.0.0.1 as the listen address; however, that address is only reachable by other processes on the same machine, which isn’t useful for server-hosted games. Typically, server-hosted games listen on all addresses using 0.0.0.0.
+By default, NGO uses `127.0.0.1` as the listen address; however, that address is only reachable by other processes on the same machine, which isn’t useful for server-hosted games. Typically, server-hosted games listen on all addresses using `0.0.0.0`.
 
 Most hosting providers allow you to specify a port or give you a specific port to listen on. You need to capture the port your game uses to set them in [UTP](../../transport/about.md). You can do this in many ways. For example, you can:
 
@@ -114,9 +112,9 @@ NetworkManager.Singleton.SceneManager.VerifySceneBeforeLoading += DontSyncClient
 
 #### Use scene events instead of OnNetworkSpawn for static objects
 
-You might have been tempted to use `NetworkBehaviours` on offline objects to get access to `OnNetworkSpawn`. However, a couple of issues with this approach are discussed in the [stripping section below](#ngo-and-script-stripping). You should use [scene events](../basics/scenemanagement/using-networkscenemanager#scene-events-and-scene-event-progress) for static spawn events instead. In general, you should avoid using `NetworkBehaviour` if you anticipate stripping them.
+It's tempting to use `NetworkBehaviours` on offline objects to get access to `OnNetworkSpawn`. However, there are a couple of issues with this approach discussed in the [stripping section below](#ngo-and-script-stripping). You should use [Scene events](../basics/scenemanagement/using-networkscenemanager#scene-events-and-scene-event-progress) for static spawn events instead. In general, you should avoid using `NetworkBehaviour` if you expect to strip them.
 
-You can also use a dummy [`NetworkBehaviour`](../basics/networkbehavior) that exposes its `OnNetworkSpawn` to other components on the same `NetworkObject`.
+You can also use a placeholder [`NetworkBehaviour`](../basics/networkbehavior) that exposes its `OnNetworkSpawn` to other components on the same `NetworkObject`.
 
 ### In-game automation
 
@@ -168,7 +166,7 @@ Finishing game sessions and sending users back to a matchmaking queue can also h
 |---|---|
 | Better for match-based games | Not desirable for continuous player experience, such as with MMO games |
 | Less likely to introduce issues with corruption and long-running bugs |  |
-| Memory leak issues are less apparent |  |
+| Memory leak issues are less clear |  |
 | Best for short game sessions |  |
 | Reduces the likelihood of server fragmentation |  |
 
@@ -211,7 +209,7 @@ You don't want to look at log files individually when you have thousands of serv
 - Log analysis tools
 - Log parsing tools (for example, Elasticsearch)
 
-Many logging services encompass all the above. To use these tools, you should structure your logs in a machine-readable manner (for example, JSON). Structured machine-friendly logs make it easier to integrate with the log tooling you’ll need to analyze your data.
+Many logging services encompass all the above. To use these tools, you should structure your logs in a machine-readable manner (for example, `JSON`). Structured machine-friendly logs make it easier to integrate with the log tooling you’ll need to analyze your data.
 
 ##### Log levels
 
@@ -222,7 +220,7 @@ In a production environment, you won't typically want to receive `INFO` or `DEBU
 Unlike client-hosted game logs, which only last as long as the game session, dedicated-server game logs can grow larger for days or weeks at a time. This means your log file will grow increasingly large. The best way to prevent log files from becoming too large is to use log rotation. Log rotation is an automated way to swap log files at a consistent time interval, allowing you to manage and delete older log files.
 
 :::note
-If you’re using containers to host game servers, you should log to STDERR/STDOUT instead of a log file. STDERR/STDOUT is preferable in this case because the container orchestration layer (for example, Docker, Nomad, and K8S) is better suited to persist, collect, and ship the logs to central locations. Some logging solutions have [“sinks”](https://docs.unity3d.com/Packages/com.unity.logging@1.0/manual/sinks.html) available to customize log outputting.
+If you’re using containers to host game servers, you should log to `STDERR`/`STDOUT` instead of a log file. `STDERR`/`STDOUT` is preferable in this case because the container orchestration layer (for example, Docker, Nomad, and K8S) is better suited to persist, collect, and ship the logs to central locations. Some logging solutions have [“sinks”](https://docs.unity3d.com/Packages/com.unity.logging@1.0/manual/sinks.html) available to customize log outputting.
 :::
 
 ##### Performance
@@ -233,7 +231,7 @@ The logging solution you select should optimize for these scenarios. Such optimi
 
 #### Throttle the server-side frame rate
 
-Because there’s no need to render in a headless server-side build, it’s useless to let it run at max frame rate. Usually, you can set `Application.targetFrameRate` to a low value, such as 30. Doing so prevents the server-side simulation from spinning too fast, preventing useless micro-updates and saving on server hosting costs.
+Because there’s no need to render in a headless server-side build, it’s useless to let it run at max frame rate. Usually, you can set `Application.targetFrameRate` to a low value, such as `30`. Doing so prevents the server-side simulation from spinning too fast, preventing useless micro-updates and saving on server hosting costs.
 
 See [Servers using too much CPU](https://docs.unity.com/game-server-hosting/guides/troubleshooting.html#Servers_using_too_much_CPU).
 
@@ -243,7 +241,7 @@ Testing a server-hosted game is a bit more involved than testing a client-hosted
 
 With the dedicated server build target, you don’t have visuals anymore; there’s no camera rendering anything for you.
 
-When you’re testing in the Unity Editor, you can use the Scene view, scene hierarchy, inspector, and other tools. However, when testing builds that you intend to scale for a multiplayer game, you need to rely on other means. Some options for testing server builds include:
+When you’re testing in the Unity Editor, you can use the Scene view, Scene hierarchy, Inspector, and other tools. However, when testing builds that you intend to scale for a multiplayer game, you need to rely on other means. Some options for testing server builds include:
 
 - [Console logs](#console-logs)
 - [REST debugging servers](#rest-debugging-servers)
@@ -258,7 +256,7 @@ You can use console logging to log all the [Scene hierarchy](https://docs.unity3
 
 You can use debugging REST servers with multiple ports listening for different types of features in a single game.
 
-Some games implement an extra TCP (transmission control protocol) endpoint listening for REST calls, which provides a debugging backdoor in your server that you can use for debugging, customer support, and quality assurance (QA). For example, you might have a debugging endpoint that responds to GET calls and returns an `index.html` that has server debugging information in a human-friendly format.
+Some games implement an extra TCP (transmission control protocol) endpoint listening for REST calls, which provides a debugging backdoor in your server that you can use for debugging, customer support, and quality assurance (QA). For example, you might have a debugging endpoint that responds to `GET` calls and returns an `index.html` that has server debugging information in a human-friendly format.
 
 Some other ideas for increasing the usability of a REST debugging server include:
 
@@ -285,7 +283,7 @@ There are many ways to perform load testing; the solutions mentioned in this sec
 
 You don’t want to launch your game live without load testing your hosting setup to ensure it can handle all your players and changes in CCU (concurrently connected users). You want to ensure your hosting and scaling rules can handle unexpected spikes in CCU. Otherwise, players might be unable to connect to your servers due to unexpected loads. Some benefits of load testing include:
 
-- Ensuring auto-scaling works. You can do this by launching automated clients to test how your hosting reacts to changes in load. You don’t need to test millions of users; you can extrapolate.
+- Ensuring auto scaling works. You can do this by launching automated clients to test how your hosting reacts to changes in load. You don’t need to test millions of users; you can extrapolate.
 - Getting cost estimates, which you can extrapolate from a few servers running.
 - Ensuring you don’t have resource contention between game server processes running on the same hardware. Ensuring processes don’t interfere with one another by using too much CPU and memory.
 
@@ -310,7 +308,7 @@ To simple scripted inputs more realistic, you can record client inputs for a sam
 | PROS | CONS |
 |---|---|
 | More realistic than simple scripted input. | Requires a recording setup, which can be complex. |
-| Less time consuming for devs (as those recordings can be done by QA) | Can break easily when you introduce game changes. |
+| Less time consuming for developers (QA can do the recordings) | Can break easily when you introduce game changes. |
 
 #### Profiling ports
 
@@ -338,13 +336,13 @@ A dedicated server also allows you to perform authentication checks server-side 
 
 Some platforms require (or prefer) you to use DTLS (datagram transport layer security) to encrypt your network traffic. You can do this for client-hosted games with services like [Relay](https://docs.unity.com/relay/relay-and-utp.html#Create). However, enabling DTLS encryption for a server-hosted game is more involved.
 
-One way to accomplish this is to [use UTP to set up secure connections with DTLS](../secure-connection/index.html). You must get a certificate from a [CA (certificate authority) provider](https://en.wikipedia.org/wiki/Certificate_authority) before you can use UTP to set up secure connections with DTLS. The instructions in the UTP documentation only cover using self-signed certificates.
+One way to do this is to [use UTP to set up secure connections with DTLS](../secure-connection/index.html). You must get a certificate from a [CA (certificate authority) provider](https://en.wikipedia.org/wiki/Certificate_authority) before you can use UTP to set up secure connections with DTLS. The instructions in the UTP documentation only cover using self-signed certificates.
 
 DTLS enables you to add additional security measures to ensure players don’t fall victim to [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [packet sniffing](https://en.wikipedia.org/wiki/Packet_analyzer) attacks. If you combine DTLS with authentication and other security measures, you can ensure bad actors can’t make purchases and transactions for your players, send chats for your players, or pursue similar attacks.
 
 Several companies use their own root certificate to be able to intercept and decrypt everything that walks on their network. This is a feature that's often found on "enterprise" firewalls. This is technically a use of a self-signed certificate.
 
-It's also used when you have services that you can only reach by an IP address ("normal" certificates are always attached to a domain name). This is rather rare these days because typically most organizations can easily use subdomains of their main domain. On the other hand, it would be a real use case for a video game. Like if you deploy on Multiplay, they just give you an IP address and a port. If you want to use DTLS, it's probably easier to have a self-signed certificate. Otherwise you would have to point your DNS to the IP address provided by Multiplay, which isn't practical (and can be problematic if the IP address isn't stable).
+It's also used when you have services that you can only reach by an IP address ("normal" certificates are always attached to a domain name). This is rather rare these days because typically most organizations can easily use subdomains of their main domain. On the other hand, it would be a real use for a video game. Like if you deploy on Multiplay, they just give you an IP address and a port. If you want to use DTLS, it's probably easier to have a self-signed certificate. Otherwise you would have to point your DNS to the IP address provided by Multiplay, which isn't practical (and can be problematic if the IP address isn't stable).
 
 I've also seen self-signed certificates used for "offline" purposes, such as encrypting files, or authenticating binaries or configuration files.
 
@@ -366,7 +364,7 @@ There are several ways you can mitigate the differences between build versions. 
 
 ##### The same build machine to generate similar builds
 
-Use the same build machine with the same operating system (OS) to generate builds that are as similar as possible. Consistently using the same build machine prevents unnecessary inconsistencies between versions, such as those due to floating point arithmetics. One of the easiest ways to ensure you always use the same build machine is to use a dedicated build server. However, you can also designate a person in your team to create your builds but the recommended best practice is to not do this because it relies too heavily on a single individual.
+Use the same build machine with the same operating system (OS) to generate builds that are as similar as possible. Consistently using the same build machine prevents unnecessary inconsistencies between versions, such as those due to floating point arithmetic. One of the easiest ways to ensure you always use the same build machine is to use a dedicated build server. However, you can also designate a person in your team to create your builds but the recommended best practice is to not do this because it relies too heavily on a single individual.
 
 ##### Addressables and asset bundles to split your build
 
@@ -418,11 +416,11 @@ There are some indexing issues that arise when using Netcode for GameObjects (NG
 
 Netcode for GameObjects (NGO) relies on `[NetworkBehaviour](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkbehavior)`’s index position on a GameObject to know to which `NetworkBehaviour` it needs to route network messages. By stripping a script, you can unintentionally create holes in the GameObject’s list of components, interfering with NGO’s indexing. In general, you shouldn’t strip `NetworkBehaviours`; in fact, `NetworkBehaviours` should always be the same between the client and server. To avoid indexing issues with NGO, use script stripping with caution (and only strip as necessary).
 
-Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like `[OnNetworkSpawn](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour/#onnetworkspawn)`. These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Packages/com.unity.multiplayer.samples.coop/Utilities)).
+Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like [`OnNetworkSpawn`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour/#onnetworkspawn). These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Packages/com.unity.multiplayer.samples.coop/Utilities)).
 
 ### Manual stripping
 
-You can use third-party solutions, such as [BuildStripper](https://github.com/JesusLuvsYooh/BuildStripper) and [Headless Builder](https://assetstore.unity.com/packages/tools/utilities/headless-builder-108317), to manually strip prefab and GameObject assets one by one.
+You can use third-party solutions, such as [`BuildStripper`](https://github.com/JesusLuvsYooh/BuildStripper) and [Headless Builder](https://assetstore.unity.com/packages/tools/utilities/headless-builder-108317), to manually strip prefab and GameObject assets one by one.
 
 ### GameObjects stripping
 
@@ -495,7 +493,7 @@ Usually it makes more sense to use a cloud-hosted solution or a managed service 
 | You don’t have to pay for ongoing cloud (or managed services) to keep your game online. | Hosting on-premise requires a large initial investment of time, money, and resources. |
 | Ongoing maintenance costs might be lower, depending on your infrastructure. | You must pay for ongoing hardware software, licensing, and general maintenance. |
 | You have more control over your data and the security of your servers. However, keep in mind that it’s difficult to achieve the same level of security as services such as AWS. | You must ensure your infrastructure is secure; you can’t rely on a provider. |
-|  | You don’t have access to some of the quality-of-life features providers might offer, such as automatic backup and differential syncing. You can implement these features on-premise, but you must invest the resources to do so. |
+|  | You don’t have access to some quality-of-life features providers might offer, such as automatic backup and differential syncing. You can implement these features on-premise, but you must invest the resources to do so. |
 |  | If your users are located across the globe, you’ll need multiple data centers. |
 |  | It’s difficult to achieve the same level of security provided by services such as AWS. |
 |  | There’s a lot you must consider that a service or hosting provider would normally handle for you, such as redundancy, fire suppression, backup generators, geographic availability, and staffing. |
@@ -531,7 +529,7 @@ See the following table to learn more about the pros and cons of opting for a ma
 |---|---|
 | You don’t have to worry about creating and maintaining the virtual or physical infrastructure to host your game. | You often don’t have visibility into the inner workings of the service. |
 | Managed service providers often make it easy to scale up or down in response to changing resource requirements. | You must rely on the managed service provider to guarantee uptime, availability, and support. |
-| Managed service providers often provide quality-of-life features, such as analytic dashboards, automatic scaling, and logging solutions. | Some managed service providers require you to make code changes to use their service. |
+| Managed service providers often have quality-of-life features, such as analytic dashboards, automatic scaling, and logging solutions. | Some managed service providers require you to make code changes to use their service. |
 | Because you don’t have to worry about infrastructure, you can spend more time improving the player experience of your game. | Similar to cloud hosting solutions, managed services often cost more than on-premise solutions. |
 | Some managed service providers (such as Unity’s GSH) often have deals with multiple cloud providers, which increases the redundancy and availability of your game. |  |
 
@@ -572,7 +570,7 @@ You can usually automate setting up your infrastructure in a cloud environment w
 
 #### Quality assurance (QA) testing
 
-You can use continuous integration to automate your QA team’s flows. For example, you can automate a custom build pipeline for creating daily test builds and setting up a custom dedicated server for testing. Additionally, you can automate setting up playtests with the test builds and test servers.
+You can use continuous integration to automate your QA team’s flows. For example, you can automate a csustom build pipeline for creating daily test builds and setting up a custom dedicated server for testing. Additionally, you can automate setting up play tests with the test builds and test servers.
 
 When you create a custom build pipeline using `BuildPipeline.BuildPlayer`, you must set `buildPlayerOptions.subtarget` to `(int)StandaloneBuildSubtarget.Server` to set your build as a dedicated server build. This means you need both `buildPlayerOptions.subtarget` and `buildPlayerOptions.target`.
 
