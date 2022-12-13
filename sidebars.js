@@ -78,6 +78,10 @@ module.exports = {
                 },
                 {
                     "type": "doc",
+                    "id": "learn/porting-to-dgs"
+                },
+                {
+                    "type": "doc",
                     "id": "advanced-topics/session-management"
                 },
                 {
@@ -346,6 +350,7 @@ module.exports = {
                             "type": "doc",
                             "id": "tutorials/goldenpath_series/goldenpath_two"
                         },
+                        
                     ],
 
                 },
@@ -365,6 +370,10 @@ module.exports = {
                         {
                             "type": "doc",
                             "id": "learn/bossroom/bossroom"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom-architecture"
                         },
                         {
                             "type": "doc",
