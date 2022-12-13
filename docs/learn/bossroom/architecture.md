@@ -237,7 +237,7 @@ After those experiments, we established new rules for the team:
 
 * Use domain-based assemblies
 * Use single classes for small components (for example, the Boss Room door with a simple on/off state).
-* If a class never grows too big, use a single NetworkBehaviour (because it’s easy to maintain).
+    * If a class never grows too big, use a single NetworkBehaviour (because it’s easy to maintain).
 * Use client and server classes (with each pointing to the other) for client/server separation.
 * Place client/server pairs in the same assembly.
 * If you start the game as a client, the server components disable themselves, leaving you with only client components executing. Ensure you don’t destroy the server components. NGO still requires the server component for network message sending.
