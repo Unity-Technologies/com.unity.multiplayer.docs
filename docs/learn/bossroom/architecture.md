@@ -261,6 +261,10 @@ These mechanisms allow for strong separation of concerns and coupling reduction 
 
 `MessageChannel` classes implement the `IPublisher` and `ISubscriber` interfaces and provide the actual messaging logic.
 
+:::note
+Boss Room could have used a 3rd party library for messaging (like MessagePipe). Since we needed custom networked channels and our use cases were quite simple, we decided to go with our own light implementation. If we had had a full game with more gameplay, we might have switched to a library that had more features.
+:::
+
 #### `NetworkedMessageChannel`
 
 With in-process messaging, Boss Room implements the NetworkedMessageChannel, which uses the same API, but allows for sending data between peers. We implemented the Netcode synchronization for these using custom NGO messaging, which serves as a useful synchronization primitive in our arsenal.
