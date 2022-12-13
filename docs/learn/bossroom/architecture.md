@@ -243,7 +243,7 @@ After those experiments, we established new rules for the team:
 * If you start the game as a client, the server components disable themselves, leaving you with only client components executing. Ensure you don’t destroy the server components. NGO still requires the server component for network message sending.
 * The clients have a `m_Server`, and servers have a `m_Client` property.
 * The `Server` class owns server-driven `NetworkVariables`. Similarly, the `Client` class owns owner-driven `NetworkVariables`. This ownership separation helps make larger classes more readable and maintainable.
-* Use partial classes when separating ownership isn’t possible.
+* Use partial classes when separating by context isn’t possible.
 * Continue using the `Client`/`Server` prefix to make contexts more obvious. Note: You can’t use prefixes for `ScriptableObjects` that have file name requirements.
 * Use `Client`/`Server`/`Shared` separation when you have a one-to-many relationship where your server class needs to send information to many client classes. You can also achieve this with the [`NetworkedMessageChannel`](#heading=h.wfrn29pfpphk).
 
