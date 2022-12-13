@@ -67,7 +67,7 @@ Unity Transport supports Unity Relay (provided by Unity Gaming Services). See th
 
 ## Connection flow state machine
 
-The `ConnectionManager`, a simple state machine, owns Boss Room’s network connection flow. It receives inputs from NGO (or the user) and handles the inputs according to its current state. Each state inherits from the C`onnectionState` abstract class. If you add a new transport, you must extend the `StartingHostState` and `ClientConnectingState` states. Both of these classes assume you're using the UTP transport.
+The `ConnectionManager`, a simple state machine, owns Boss Room’s network connection flow. It receives inputs from NGO (or the user) and handles the inputs according to its current state. Each state inherits from the `ConnectionState` abstract class. If you add a new transport, you must extend the `StartingHostState` and `ClientConnectingState` states. Both of these classes assume you're using the UTP transport.
 
 ![Connection flow state machine](../../../static/img/arch-3.png)
 
