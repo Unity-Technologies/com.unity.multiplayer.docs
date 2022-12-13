@@ -228,7 +228,7 @@ However, this approach had two primary issues:
 After investigation, we determined that client/server separation was unnecessary for the following reasons:
 
 * There’s no need for [asmdef (assembly definition)](https://docs.unity3d.com/Manual/cus-asmdef.html) stripping because you can ifdef out single classes instead.
-* It’s not completely necessary to ifdef classes because it’s only compile-time insurance that certain parts of client-side code never run.
+* It’s not completely necessary to ifdef classes because it’s only compile-time insurance that certain parts of client-side code never run. You can still disable the component on Awake at runtime if it's not mean to run on the server or client.
 * The added complexity outweighed the pros that’d help with stripping whole assemblies.
 * Most `Client`/`Server` class pairs are tightly coupled and call one another; they have split implementations of the same logical object. Separating them into different assemblies forces you to create “bridge classes” to avoid circular dependencies between your client and server assemblies. By putting your client and server classes in the same assemblies, you allow those circular dependencies in those tightly coupled classes and remove unnecessary bridging and abstractions.
 * Whole assembly stripping is incompatible with NGO because NGO doesn’t support NetworkBehaviour stripping. Components related to a NetworkObject must match on the client and server sides. If these components aren’t identical, it creates difficulties with NetworkBehaviour indexing.
