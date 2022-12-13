@@ -147,7 +147,7 @@ The [`Action`](https://github.com/Unity-Technologies/com.unity.multiplayer.sampl
 ### Action System
 
 :::note
-We built Boss Room's action system specifically for Boss Room's educational purpose. You'll need to implement a custom action system to allow for better game design emergence from your game designers.
+We built Boss Room's action system specifically for Boss Room's educational purpose. You'll need to implement a more user friendly custom action system to allow for better game design emergence from your game designers.
 :::
 
 Boss Room's Action System is a generalized mechanism for Characters to "do stuff" in a networked way. `ScriptableObject`-derived `Actions` implement the client and server logic of any given thing the characters can do in the game.
