@@ -29,7 +29,7 @@ Don't forget to check out our [Release Notes](https://docs-multiplayer.unity3d.c
 ## Before you begin
 
 Netcode supports the following versions:
-* Unity 2020.3, 2021.1, 2021.2, and 2021.3
+* Unity 2020.3, 2021.1, 2021.2, 2021.3, and 2022.
 * Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
 
 Netcode supports the following platforms:
