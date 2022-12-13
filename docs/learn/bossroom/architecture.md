@@ -178,7 +178,7 @@ The following list describes the movement flow of a player character.
 4. There’s network latency before the server receives the RPC.
 5. The server receives the RPC (containing the target destination).
 6. The server performs pathfinding calculations.
-7. The server completes the pathfinding, and the server representation of the entity starts updating its `NetworkVariables` at the same cadence as `FixedUpdate`.
+7. The server completes the pathfinding, and the server representation of the entity starts updating its `NetworkTransform` at the same cadence as `FixedUpdate`.
 8. There’s network latency before clients receive replication data.
 9. The client representation of the entity updates its NetworkVariables.
 
