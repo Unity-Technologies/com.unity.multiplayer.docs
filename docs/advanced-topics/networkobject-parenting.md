@@ -11,7 +11,7 @@ If you aren't completely familiar with transform parenting in Unity, then it is 
 - Setting the parent of a child's `Transform` directly (i.e. `transform.parent = childTransform;`) will always use the default `WorldPositionStays` value of `true`.
   - It is recommended to always use the `NetworkObject.TrySetParent` method when parenting if you plan on changing the `WorldPositionStays` default value.
   - Likewise, it is also recommended to use the `NetworkObject.TryRemoveParent` method to remove a parent from a child.
-- When a server parents a spawned `NetworkObject` under another spawned `NetowrkObject` during a netcode game session this parent child relationship is replicated across the network to all connected and future late joining clients.
+- When a server parents a spawned `NetworkObject` under another spawned `NetworkObject` during a netcode game session this parent child relationship is replicated across the network to all connected and future late joining clients.
 - If, while editing a scene, you place an in-scene placed `NetworkObject` under a `GameObject` that does not have a `NetworkObject` component attached to it, NGO will preserve that parenting relationship.
   - During runtime, this parent-child hierarchy will remain true unless user code removes the GameObject parent from the child NetworkObject.
     - _Note: Once removed, NGO will not allow you to re-parent the `NetworkObject` back under the same or another `GameObject` that with no `NetworkObject` component attached to it._ 
@@ -81,7 +81,7 @@ When the `WorldPositionStays` parameter in `NetworkObject.TrySetParent` is the d
     - Currently connected or late joining clients will be synchronized with the parenting and the child's associated transform values
 
 **When to use a NetworkTransform** <br />
-If you plan on the child `NetowrkObject` moving around, rotating, or scaling independently (when parented or not) then you will still want to use a NetworkTransform.
+If you plan on the child `NetworkObject` moving around, rotating, or scaling independently (when parented or not) then you will still want to use a NetworkTransform.
 If you only plan on making a one time adjustment to the child `NetworkObject`'s transform when parented or having a parent removed, then the child does not need a `NetworkTransform` component.
 
 :::info For More Information
