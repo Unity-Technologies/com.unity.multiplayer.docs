@@ -1,5 +1,5 @@
 ---
-id: porting-to-dgs-3
+id: porting-to-dgs-game-changes
 title: Porting from client-hosted to DGS - Game changes
 sidebar_label: Game changes
 ---

@@ -83,23 +83,23 @@ module.exports = {
                     "items": [
                         {
                             "type": "doc",
-                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-1"
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-intro"
                         },
                         {
                             "type": "doc",
-                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-2"
+                            "id": "advanced-topics/porting-to-dgs/client-vs-dgs"
                         },
                         {
                             "type": "doc",
-                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-3"
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-game-changes"
                         },
                         {
                             "type": "doc",
-                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-4"
+                            "id": "advanced-topics/porting-to-dgs/optimizing-server-builds"
                         },
                         {
                             "type": "doc",
-                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-5"
+                            "id": "advanced-topics/porting-to-dgs/hosting-considerations"
                         },
                     ]
                 },

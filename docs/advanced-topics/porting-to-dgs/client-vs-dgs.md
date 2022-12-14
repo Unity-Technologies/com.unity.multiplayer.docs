@@ -1,5 +1,5 @@
 ---
-id: porting-to-dgs-2
+id: client-vs-dgs
 title: Porting from client-hosted to DGS - Client-hosted vs DGS-hosted
 sidebar_label: Client-hosted vs DGS-hosted
 ---

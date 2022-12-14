@@ -1,5 +1,5 @@
 ---
-id: porting-to-dgs-4
+id: optimizing-server-builds
 title: Porting from client-hosted to DGS - Optimizing server builds
 sidebar_label: Optimizing server builds
 ---

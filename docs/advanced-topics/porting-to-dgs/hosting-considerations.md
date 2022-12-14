@@ -1,5 +1,5 @@
 ---
-id: porting-to-dgs-5
+id: hosting-considerations
 title: Porting from client-hosted to DGS - Hosting considerations
 sidebar_label: Hosting considerations
 ---
