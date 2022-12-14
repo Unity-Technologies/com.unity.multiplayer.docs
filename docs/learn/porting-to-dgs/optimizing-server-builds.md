@@ -4,15 +4,15 @@ title: Porting from client-hosted to DGS - Optimizing server builds
 sidebar_label: Optimizing server builds
 ---
 :::note
-This is part four of the [Porting from client-hosted to dedicated server-hosted series](./porting-to-dedicated-server-hosted.md).
+This is part four of the [Porting from client-hosted to dedicated server-hosted series](../porting-to-dgs).
 
 See the other pages in this series:
 
-- [Part 1 - Introduction](./porting-to-dedicated-server-hosted.md)
-- [Part 2 - Client-hosted versus DGS-hosted](./client-vs-dgs.md)
-- [Part 3 - Game changes](./game-changes.md)
+- [Part 1 - Introduction](../porting-to-dgs)
+- [Part 2 - Client-hosted versus DGS-hosted](./client-vs-dgs)
+- [Part 3 - Game changes](./porting-to-dgs-game-changes)
 - **Part 4** - Current
-- [Part 5 - Hosting considerations](./hosting-considerations.md)
+- [Part 5 - Hosting considerations](./hosting-considerations)
 
 :::
 
@@ -40,7 +40,7 @@ There are some indexing issues that arise when using Netcode for GameObjects (NG
 
 Netcode for GameObjects (NGO) relies on `[NetworkBehaviour](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkbehavior)`’s index position on a GameObject to know to which `NetworkBehaviour` it needs to route network messages. By stripping a script, you can unintentionally create holes in the GameObject’s list of components, interfering with NGO’s indexing. In general, you shouldn’t strip `NetworkBehaviours`; in fact, `NetworkBehaviours` should always be the same between the client and server. To avoid indexing issues with NGO, use script stripping with caution (and only strip as necessary).
 
-Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like [`OnNetworkSpawn`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour/#onnetworkspawn). These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Packages/com.unity.multiplayer.samples.coop/Utilities)).
+Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like [`OnNetworkSpawn`](../../api/Unity.Netcode.NetworkBehaviour#onnetworkspawn). These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Packages/com.unity.multiplayer.samples.coop/Utilities)).
 
 ## Manual stripping
 

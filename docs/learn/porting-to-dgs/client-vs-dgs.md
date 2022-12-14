@@ -4,15 +4,15 @@ title: Porting from client-hosted to DGS - Client-hosted vs DGS-hosted
 sidebar_label: Client-hosted vs DGS-hosted
 ---
 :::note
-This is part two of the [Porting from client-hosted to dedicated server-hosted series](./porting-to-dedicated-server-hosted.md).
+This is part two of the [Porting from client-hosted to dedicated server-hosted series](../porting-to-dgs).
 
 See the other pages in this series:
 
-- [Part 1 - Introduction](./porting-to-dedicated-server-hosted.md)
+- [Part 1 - Introduction](../porting-to-dgs)
 - **Part 2** - Current
-- [Part 3 - Game changes](./game-changes.md)
-- [Part 4 - Optimizing server builds](./optimizing-server-builds.md)
-- [Part 5 - Hosting considerations](./hosting-considerations.md)
+- [Part 3 - Game changes](./porting-to-dgs-game-changes)
+- [Part 4 - Optimizing server builds](./optimizing-server-builds)
+- [Part 5 - Hosting considerations](./hosting-considerations)
 
 :::
 
@@ -23,7 +23,7 @@ Choosing between a client-hosted and a dedicated server game isn’t as straight
 A client-hosted game is a game that doesn’t rely on a dedicated server (or a server-specific build) to host game servers. Instead, the same executable has the code to run as a client or as a host. Players can run the client build locally as a host and allow other players to join through peer-to-peer connections or a peer-to-peer mimicking solution like [Relay](https://docs.unity.com/relay/).
 
 :::note
-NGO has three start options: [`StartClient`](../api/Unity.Netcode.NetworkTransport.md#startclient), `StartHost`, and [`StartServer`](../api/Unity.Netcode.NetworkTransport.md#startserver). A host acts as both a client and a server.
+NGO has three start options: [`StartClient`](../api/Unity.Netcode.NetworkTransport#startclient), `StartHost`, and [`StartServer`](../api/Unity.Netcode.NetworkTransport#startserver). A host acts as both a client and a server.
 :::
 
 Games that benefit most from a client-hosted hosting approach include games that:
@@ -45,7 +45,7 @@ The following table lists some pros and cons of using a client-hosted hosting ap
 
 ## Dedicated server-hosted games
 
-A dedicated server-hosted game is a game that runs server builds on hardware that’s dedicated to hosting the game. The dedicated server might be in an [on-premise data center](./hosting-considerations.md#developer-hosted-cloud), in the [cloud](./hosting-considerations.md#developer-hosted-cloud), or made available through a [managed service provider](#managed-service-provider), such as Unity’s [Game Server Hosting](https://docs.unity.com/game-server-hosting). In any case, players don’t usually have access to the server build.
+A dedicated server-hosted game is a game that runs server builds on hardware that’s dedicated to hosting the game. The dedicated server might be in an [on-premise data center](./hosting-considerations.md#developer-hosted-cloud), in the [cloud](./hosting-considerations#developer-hosted-cloud), or made available through a [managed service provider](#managed-service-provider), such as Unity’s [Game Server Hosting](https://docs.unity.com/game-server-hosting). In any case, players don’t usually have access to the server build.
 
 Games that benefit most from a dedicated server-hosted hosting approach include those that:
 
