@@ -331,28 +331,7 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "tutorials/helloworld"
-                },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Learning Netcode with Goldenpath",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/gp_intro"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_one"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_two"
-                        },
-                        
-                    ],
-
+                    "id": "tutorials/get-started-ngo"
                 },
 
             ]
