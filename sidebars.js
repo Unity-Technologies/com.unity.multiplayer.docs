@@ -77,8 +77,31 @@ module.exports = {
                     "id": "relay/relay"
                 },
                 {
-                    "type": "doc",
-                    "id": "learn/porting-to-dgs"
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Porting from client-hosted to DGS",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-1"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-2"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-3"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-4"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced-topics/porting-to-dgs/porting-to-dgs-5"
+                        },
+                    ]
                 },
                 {
                     "type": "doc",
