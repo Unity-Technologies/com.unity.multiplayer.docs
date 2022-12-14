@@ -5,14 +5,14 @@ sidebar_label: Hosting considerations
 ---
 
 :::note
-This is part five of the [Porting from client-hosted to dedicated server-hosted series](./porting-to-dedicated-server-hosted.md).
+This is part five of the [Porting from client-hosted to dedicated server-hosted series](../porting-to-dgs).
 
 See the other pages in this series:
 
-- [Part 1 - Introduction](./porting-to-dedicated-server-hosted.md)
-- [Part 2 - Client-hosted versus DGS-hosted](./client-vs-dgs.md)
-- [Part 3 - Game changes](./game-changes.md)
-- [Part 4 - Optimizing server builds](./optimizing-server-builds.md)
+- [Part 1 - Introduction](../porting-to-dgs)
+- [Part 2 - Client-hosted versus DGS-hosted](./client-vs-dgs)
+- [Part 3 - Game changes](./porting-to-dgs-game-changes)
+- [Part 4 - Optimizing server builds](./optimizing-server-builds)
 - **Part 5** - Current
 
 :::

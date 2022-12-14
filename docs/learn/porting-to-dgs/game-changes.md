@@ -4,15 +4,15 @@ title: Porting from client-hosted to DGS - Game changes
 sidebar_label: Game changes
 ---
 :::note
-This is part three of the [Porting from client-hosted to dedicated server-hosted series](./porting-to-dedicated-server-hosted.md).
+This is part three of the [Porting from client-hosted to dedicated server-hosted series](../porting-to-dgs).
 
 See the other pages in this series:
 
-- [Part 1 - Introduction](./porting-to-dedicated-server-hosted.md)
-- [Part 2 - Client-hosted versus DGS-hosted](./client-vs-dgs.md)
+- [Part 1 - Introduction](../porting-to-dgs)
+- [Part 2 - Client-hosted versus DGS-hosted](./client-vs-dgs)
 - **Part 3** - Current
-- [Part 4 - Optimizing server builds](./optimizing-server-builds.md)
-- [Part 5 - Hosting considerations](./hosting-considerations.md)
+- [Part 4 - Optimizing server builds](./optimizing-server-builds)
+- [Part 5 - Hosting considerations](./hosting-considerations)
 
 :::
 
@@ -29,7 +29,7 @@ See the following sections to learn about the NGO-specific game changes required
 
 ### Switch from `StartHost` to `StartServer`
 
-NGO provides [`StartHost`](../../api/Unity.Netcode.NetworkManager#starthost) and [`StartServer`](../api/Unity.Netcode.NetworkManager#startserver). `StartHost` makes the player act as both a client and a server. `StartServer` acts only as a server; players can't run on `StartServer`.
+NGO provides [`StartHost`](../../api/Unity.Netcode.NetworkManager#starthost) and [`StartServer`](../../api/Unity.Netcode.NetworkManager#startserver). `StartHost` makes the player act as both a client and a server. `StartServer` acts only as a server; players can't run on `StartServer`.
 
 You must adapt the `if ([IsServer](https://docs-multiplayer.unity3d.com/netcode/0.1.0/api/MLAPI.NetworkBehaviour/index.html#isserver))` logic of your game so that it doesn't assume a player is there.
 
@@ -39,7 +39,7 @@ Porting from a client-hosted to a server-hosted game often requires you to chang
 
 By default, NGO uses `127.0.0.1` as the listen address; however, that address is only reachable by other processes on the same machine, which isn’t useful for server-hosted games. Typically, server-hosted games listen on all addresses using `0.0.0.0`.
 
-Most hosting providers allow you to specify a port or give you a specific port to listen on. You need to capture the port your game uses to set them in [UTP](../../transport/about.md). You can do this in many ways. For example, you can:
+Most hosting providers allow you to specify a port or give you a specific port to listen on. You need to capture the port your game uses to set them in [UTP](../../../transport/about.md). You can do this in many ways. For example, you can:
 
 - Use [command-line arguments](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=net-7.0) (`Environment.GetCommandLineArgs`).
 - Use [environment variables](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getenvironmentvariable?view=net-7.0) (`Environment.GetEnvironmentVariable`).
@@ -48,7 +48,7 @@ Most hosting providers allow you to specify a port or give you a specific port t
 
 A common difference between client-hosted and server-hosted games is that there are scenes the client uses but the server doesn’t need to know about.
 
-If you use [scene management](../basics/scenemanagement/scene-management-overview), NGO automatically tracks all scene changes on the server and syncs connected clients. You can exclude specific scenes from loading client-side or server-side by excluding those scenes from NGO’s scene management using `SceneManager`’s `VerifySceneBeforeLoading`.
+If you use [scene management](../../basics/scenemanagement/scene-management-overview), NGO automatically tracks all scene changes on the server and syncs connected clients. You can exclude specific scenes from loading client-side or server-side by excluding those scenes from NGO’s scene management using `SceneManager`’s `VerifySceneBeforeLoading`.
 
 ```csharp
 NetworkManager.Singleton.SceneManager.VerifySceneBeforeLoading += DontSyncClientOnlyScenes;
@@ -56,7 +56,7 @@ NetworkManager.Singleton.SceneManager.VerifySceneBeforeLoading += DontSyncClient
 
 ### Use scene events instead of OnNetworkSpawn for static objects
 
-It's tempting to use `NetworkBehaviours` on offline objects to get access to `OnNetworkSpawn`. However, there are a couple of issues with this approach discussed in the [stripping section below](./optimizing-server-builds.md#ngo-and-script-stripping). You should use [Scene events](../../basics/scenemanagement/using-networkscenemanager#scene-events-and-scene-event-progress) for static spawn events instead. In general, you should avoid using `NetworkBehaviour` if you expect to strip them.
+It's tempting to use `NetworkBehaviours` on offline objects to get access to `OnNetworkSpawn`. However, there are a couple of issues with this approach discussed in the [stripping section below](./optimizing-server-builds#ngo-and-script-stripping). You should use [Scene events](../../basics/scenemanagement/using-networkscenemanager#scene-events-and-scene-event-progress) for static spawn events instead. In general, you should avoid using `NetworkBehaviour` if you expect to strip them.
 
 You can also use a placeholder [`NetworkBehaviour`](../../basics/networkbehavior) that exposes its `OnNetworkSpawn` to other components on the same `NetworkObject`.
 
@@ -280,7 +280,7 @@ A dedicated server also allows you to perform authentication checks server-side 
 
 Some platforms require (or prefer) you to use DTLS (datagram transport layer security) to encrypt your network traffic. You can do this for client-hosted games with services like [Relay](https://docs.unity.com/relay/relay-and-utp.html#Create). However, enabling DTLS encryption for a server-hosted game is more involved.
 
-One way to do this is to [use UTP to set up secure connections with DTLS](../../secure-connection/index.html). You must get a certificate from a [CA (certificate authority) provider](https://en.wikipedia.org/wiki/Certificate_authority) before you can use UTP to set up secure connections with DTLS. The instructions in the UTP documentation only cover using self-signed certificates.
+One way to do this is to [use UTP to set up secure connections with DTLS](../../../transport/workflow-client-server-secure.md)(../../secure-connection/index.html). You must get a certificate from a [CA (certificate authority) provider](https://en.wikipedia.org/wiki/Certificate_authority) before you can use UTP to set up secure connections with DTLS. The instructions in the UTP documentation only cover using self-signed certificates.
 
 DTLS enables you to add additional security measures to ensure players don’t fall victim to [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [packet sniffing](https://en.wikipedia.org/wiki/Packet_analyzer) attacks. If you combine DTLS with authentication and other security measures, you can ensure bad actors can’t make purchases and transactions for your players, send chats for your players, or pursue similar attacks.
 
