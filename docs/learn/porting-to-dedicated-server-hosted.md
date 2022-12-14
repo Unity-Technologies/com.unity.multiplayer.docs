@@ -1,5 +1,5 @@
 ---
-id: porting-to-dgs-intro
+id: porting-to-dgs
 title: Porting from client-hosted to DGS - Introduction
 sidebar_label: Introduction
 ---
