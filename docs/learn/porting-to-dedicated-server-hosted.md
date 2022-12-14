@@ -519,7 +519,7 @@ Using a cloud hosting solution often saves you money upfront but can cost more t
 You can also opt to host your servers with a bare-metal data center, such as Rackspace or Servers.com. Using bare-metal servers comes with its own set of pros and cons. Unity’s Game Server Hosting uses a combination of bare-metal and cloud servers to leverage the advantages of both. See [Machine capacity](https://docs.unity.com/game-server-hosting/legacy/machine-capacity.html) to learn more about the differences between the two options.
 :::
 
-##### Managed service provider
+#### Managed service provider
 
 A managed service provider is a service that takes your game server build and manages hosting, scaling, and maintaining it in a white-glove environment. You tell the managed service provider how to run your game, and you often have control over scaling, availability, and other key operation points. Examples of managed service providers include [Unity’s Game Server Hosting](https://docs.unity.com/multiplay/), Amazon Web Services’ Gamelift, Microsoft’s Playfab, and Google’s Agones.
 
