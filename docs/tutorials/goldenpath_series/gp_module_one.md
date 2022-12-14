@@ -450,7 +450,7 @@ One build instance can create a host. Another client can join the host's game. B
 
 See the following content to continue your journey using Netcode:
 
-* Build on the your growing Hello World project to continue learning about different features of Netcode with [Golden Path Two](goldenpath_two)
+* Build on the your growing Hello World project to continue learning about different features of Netcode with [Golden Path Two](gp_module_two.md)
 * Check out the educational samples to further explore Netcode and its abilities:
   * [Boss Room](../../learn/bossroom/bossroom)
   * [2D Spaceshooter Bitesize Sample](../../learn/bitesize/bitesize-spaceshooter)
