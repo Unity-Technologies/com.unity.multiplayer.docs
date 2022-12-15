@@ -23,7 +23,7 @@ Choosing between a client-hosted and a dedicated server game isn’t as straight
 A client-hosted game is a game that doesn’t rely on a dedicated server (or a server-specific build) to host game servers. Instead, the same executable has the code to run as a client or as a host. Players can run the client build locally as a host and allow other players to join through peer-to-peer connections or a peer-to-peer mimicking solution like [Relay](https://docs.unity.com/relay/).
 
 :::note
-NGO has three start options: [`StartClient`](../api/Unity.Netcode.NetworkTransport#startclient), `StartHost`, and [`StartServer`](../api/Unity.Netcode.NetworkTransport#startserver). A host acts as both a client and a server.
+NGO has three start options: [`StartClient`](../../api/Unity.Netcode.NetworkTransport#startclient), [`StartHost`](../../api/Unity.Netcode.NetworkManager#starthost) and [`StartServer`](../../api/Unity.Netcode.NetworkManager#startserver), and [`StartServer`](../../api/Unity.Netcode.NetworkTransport#startserver). A host acts as both a client and a server.
 :::
 
 Games that benefit most from a client-hosted hosting approach include games that:
