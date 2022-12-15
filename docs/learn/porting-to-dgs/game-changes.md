@@ -31,7 +31,7 @@ See the following sections to learn about the NGO-specific game changes required
 
 NGO provides [`StartHost`](../../api/Unity.Netcode.NetworkManager#starthost) and [`StartServer`](../../api/Unity.Netcode.NetworkManager#startserver). `StartHost` makes the player act as both a client and a server. `StartServer` acts only as a server; players can't run on `StartServer`.
 
-You must adapt the `if ([IsServer](https://docs-multiplayer.unity3d.com/netcode/0.1.0/api/MLAPI.NetworkBehaviour/index.html#isserver))` logic of your game so that it doesn't assume a player is there.
+You must adapt the `if (IsServer)` logic of your game so that it doesn't assume a player is there.
 
 ### Change the listen address and port
 
