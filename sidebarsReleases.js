@@ -61,6 +61,10 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
+                            id: 'transport/transport-2-0-0',
+                        },
+                        {
+                            type: 'doc',
                             id: 'transport/transport-1-0-0',
                         },
                         {
