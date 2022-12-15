@@ -1,8 +1,10 @@
 ---
 id: ngo-changelog
 title: Netcode for GameObjects Changelog
-description: Netcode for GameObjects Changelog
+description: NGOs changelog and release notes
 ---
+
+The following content tracks features, updates, bug fixes, and refactoring for the next release of Unity Netcode. Since Netcode for GameObjects is open source, you can access the full release notes and changelogs in the [com.unity.netcode.gameobjects GitHub repository](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects).
 
 | Release | Date | Changelog |
 |---|---|---|

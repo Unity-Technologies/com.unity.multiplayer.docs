@@ -1,8 +1,10 @@
 ---
 id: bossroom-changelog
 title: Boss Room Changelog
-description: Boss Room Changelog
+description: Boss Room changelog and release notes
 ---
+
+The following content tracks features, updates, bug fixes, and refactoring for the next release of the Boss Room sample project. Since Boss Room is open source, you can access the full release notes and changelogs in the [com.unity.multiplayer.samples.coop GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop).
 
 | Release | Date | Changelog |
 |---|---|---|

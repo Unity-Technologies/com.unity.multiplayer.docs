@@ -1,10 +1,10 @@
 ---
 id: bitesize-changelog
 title: Multiplayer Bitesize Samples
-description: Release notes for Boss Room Small Scale Co-op Sample v0.1.0, the first release of the Boss Room sample project for Unity MLAPI.
+description: Bitesize changelog and release notes
 ---
 
-The [Multiplayer Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository provides modular samples code to use in your game projects. 
+The following content tracks features, updates, bug fixes, and refactoring for the next release of the Boss Room sample project. Since Boss Room is open source, you can access the full release notes and changelogs in the [com.unity.multiplayer.samples.bitesize GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop).
 
 | Release | Date | Changelog |
 |---|---|---|
