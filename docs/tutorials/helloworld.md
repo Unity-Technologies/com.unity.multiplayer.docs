@@ -290,13 +290,15 @@ import TabItem from '@theme/TabItem';
 
 ## Testing Hello World
 
+### Route 1 - Editor
 Now, to see if everything works as expected we can test starting a host in the editor. A host plays the role of a server and a client at the same time.
 
 1. Click **Play**.
 1. Click the **Start Host** button in the **NetworkManager** GameObject's inspector.
 1. You should now see your scene with your Player Prefab spawned.
 
-You can also use the command line helper to launch a server and one or more clients to connect to the server. You should see the plane on the server until the first client connects. Then, a new Player Prefab will be spawned by Netcode for each connected client.
+### Route 2 - Command Line 
+You can also use the command line helper to launch a server and one or more clients to connect to the server. You should see just the plane on the server until the first client connects. Then, a new Player Prefab will be spawned by Netcode for each connected client; however, they will be overlapped in the game view.
 
 ## Next Steps
 
