@@ -368,6 +368,8 @@ For multiplayer games, every object runs on at least two machines: player one an
         }
 ```
 
+Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. The `OnNetworkSpawn()` method fires in response to the `NetworkObject` spawning. The `HelloWorldPlayer` class overrides `OnNetworkSpawn` since clients and the server run different logic.
+
 :::note
 
 You can override this behavior on any `NetworkBehaviour`.
@@ -444,14 +446,6 @@ The `HelloWorldPlayer` class overrides `OnNetworkSpawn`.
             }
         }
 ```
-
-Any `MonoBehaviour` implementing `NetworkBehaviour` can override the Netcode method `OnNetworkSpawn()`. The `OnNetworkSpawn()` method fires in response to the `NetworkObject` spawning. The `HelloWorldPlayer` class overrides `OnNetworkSpawn` since clients and the server run different logic.
-
-:::note
-
-You can override this behavior on any `NetworkBehaviour`.
-
-:::
 
 The script calls the `Move()` method on both client and server instances of the player. The `Move()` script does the following:
 
@@ -606,6 +600,6 @@ You can test your Hello World project through the Unity Editor or a command line
 
 2. Select **NetworkManager** from the **Hierarchy** list.
 
-3. With NetworkManager selected, select **Start Host** from the **Inspector** tab.
+3. With NetworkManager selected, select **Start Host** from the **Inspector** tab. Alternatively, you can use the in0game GUI buttons.
 
 If it works correctly, you should see the option to **Stop Host** in the **Inspector** tab.
