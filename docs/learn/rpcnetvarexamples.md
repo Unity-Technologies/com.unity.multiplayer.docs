@@ -12,7 +12,7 @@ See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 Boss Room uses RPCs to send movement inputs.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Input/ClientInputSender.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/UserInput/ClientInputSender.cs
 ```
 
 Boss Room wants the full history of inputs sent, not just the latest value. There is no need for `NetworkVariable`s, you just want to blast your inputs to the server. Since Boss Room isn't a twitch shooter, it sends inputs as reliable `RPC`s without worrying about the latency an input loss would add.
@@ -32,13 +32,13 @@ For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCha
 The archer's arrows use a standalone `GameObject` that's replicated over time. Since this object's movements are slow, the Boss Room development team decided to use state (via the `NetworkTransform`) to replicate the ability's status (in case a client connected while the arrow was flying).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ServerProjectileLogic.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/PhysicsProjectile.cs
 ```
 
 Boss Room might have used an `RPC` instead (for the Mage's projectile attack). Since the Mage's projectile fires quickly, the player experience isn't affected by the few milliseconds where a newly connected client might miss the projectile. In fact, it helps Boss Room save on bandwidth when managing a replicated object. Instead, Boss Room sends a single RPC to trigger the FX client side.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/FXProjectileTargetedAction.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/FXProjectile.cs
 ```
 
 ## Breakable state
@@ -46,13 +46,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 Boss Room might have used a "break" `RPC` to set a breakable object as broken and play the appropriate visual effects. Applying the "replicate information when a player joins the game mid-game" rule of thumb, the Boss Room development team used `NetworkVariable`s instead. Boss Room uses the `OnValueChanged` callback on those values to play the visual effects (and an initial check when spawning the `NetworkBehaviour`).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/NetworkBreakableState.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs
 ```
 
 The visual changes:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ClientBreakableVisualization.cs#L49-L59
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L147-L188
 ```
 
 :::tip Lesson Learned
@@ -61,9 +61,6 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 
 ![imp not appearing dead](/img/01_imp_not_appearing_dead.png)
 
-```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ClientBreakableVisualization.cs#L31-L47
-```
 
 :::
 
