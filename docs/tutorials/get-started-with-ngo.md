@@ -17,15 +17,7 @@ Before continuing, create a new project using Unity Editor version 2021.3 or lat
 
 ## Install Netcode for GameObjects
 
-This section guides you through installing the Netcode for GameObjects package in the Unity Editor.
-
-Install the Netcode for GameObjects package:
-
-1. From the Unity Editor, select **Window** > **Package Manager**.
-2. From the Package Manager, select **Add (+)** > **Add package by name…**
-3. Type (or copy and paste) `com.unity.netcode.gameobjects` into the package name field, then select **Add**.
-
-Now that you have a new project and the NGO package installed, you can start creating the essential components of an NGO multiplayer game.
+See [Install Netcode for GameObjects](../installation/installation.md).
 
 ## Add the basic components
 
