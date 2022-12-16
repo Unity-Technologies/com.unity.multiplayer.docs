@@ -17,7 +17,7 @@ Before continuing, create a new project using Unity Editor version 2021.3 or lat
 
 ## Install Netcode for GameObjects
 
-See [Install Netcode for GameObjects](../installation/installation.md).
+See [Install Netcode for GameObjects](../installation/)
 
 ## Add the basic components
 
@@ -46,6 +46,11 @@ First, create the `NetworkManager` component:
 
 ### Create an object to spawn for each connected player
 
+:::important
+
+When you drop the prefab into the **PlayerPrefab** slot, you are telling the library that when a client connects to the game, it should automatically spawn this prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any prefab set as the **PlayerPrefab**. See [Player Objects](../basics/networkobject#finding-player-objects).
+:::
+
 This section guides you through creating an object that spawns for each connected player.
 
 1. In the Unity Editor, right-click within the **Hierarchy** tab, then select **3D Object** > **Capsule**.
@@ -65,11 +70,6 @@ You can remove the `Player` object from the scene because you assign this networ
 9. With `NetworkManager` selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
 
 10. Drag the **Player** prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
-
-:::important
-
-When you drop the prefab into the **PlayerPrefab** slot, you are telling the library that when a client connects to the game, it should automatically spawn this prefab as the character for the connecting client. NGO won’t spawn a player object if you do not have any prefab set as the **PlayerPrefab**.
-:::
 
 11. Add a 3D Plane (centered at 0,0,0) to the scene by right-clicking in the **Hierarchy** tab, then selecting **3D Object** > **Plane**.
 
