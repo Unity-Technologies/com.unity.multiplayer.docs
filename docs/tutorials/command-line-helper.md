@@ -99,10 +99,10 @@ Saving the project in this way causes the Unity Editor to build and launch the p
 For Windows you should do the following:
 
 1. Open the Command Prompt.
-2. Use the following command to launch the server and the client. Be sure to change the noted section `&lt; >` of both commands to your project.
+2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angle brackets (`< >`) for all commands.
 
 :::note
-You may get a UAC prompt requesting permission for the binary to run you should allow it.
+You might get a [UAC prompt](https://learn.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) requesting permission to run the executable. You should allow it.
 :::
 
 Command to start the server:
@@ -123,14 +123,14 @@ To run these commands on a single line:
 HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
 ```
 
-Here’s an example of what your command might look like when you replace the placeholder text in `&lt;>`:
+Here’s an example of what your command might look like when you replace the placeholder text in `< >`:
 
 ```cmd
 C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
 ```
 
 :::important
-On Windows, no standard out stream exists by default, so you will need to view the `Debug.log` file to see the outputs. You can find the `Debug.log` files in:
+There's no standard out stream on Windows by default, so you will need to view the `Debug.log` file to see the outputs. You can find the `Debug.log` files in:
 
 ```cmd
 C:\Users\username\AppData\LocalLow\CompanyName\ProductName\Player.log
@@ -163,10 +163,10 @@ C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile -log-server.txt -mode se
 
 #### **Test on Mac**
 
-For Mac you should do the following:
+Use the following instructions if you're using MacOS:
 
 1. Open the Terminal app.
-2. Use the following command to launch the server and the client. Be sure to change the noted section `&lt; >` of both commands to your project.
+2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angle brackets (`< >`) for all commands.
 
 Command to start the server:
 
