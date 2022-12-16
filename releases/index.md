@@ -32,6 +32,32 @@ For our {Month Year} release, the following major features were released:
 {Content}
 -->
 
+
+## 2022 - December
+
+### Netcode for GameObjects
+
+- Netcode for GameObjects 1.2.0 released. See the [NGO changelog](./netcode/ngo-changelog.md).
+
+### Tools
+
+- Tools 1.1.0 released. See the [Tools changelog](./tools/release-1.1.0.md).
+
+### UTP
+
+- Unity Transport 2.0.0-pre.3 pre-release available. See the [UTP 2.0.0 changelog](./transport/transport-2-0-0.md).
+- Unity Transport 1.3.0 released. See the [UTP 1.0.0 changelog](./transport/transport-1-0-0.md).
+
+### Boss Room
+
+- Boss Room [2.0.4](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases/tag/v2.0.4) released. See the [Boss Room changelog](./samples/bossroom-changelog.md).
+
+
+### BiteSize
+
+- Bitesize Samples [1.1.0](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/releases/tag/v1.1.0) released. See the [Bitesize changelog](./bitesize/bitesize-changelog.md).
+
+
 ## 2022 - March
 
 For our March 2022 UTP 1.0.0 release, the following major features were released:
