@@ -51,7 +51,7 @@ Before reviewing into code, define the `GameObject` composition model for player
 We first take a look at *NetworkCharacterState.cs*, a `NetworkBehaviour` component attached to a "PC".
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L45-L55
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v0.1.0/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L45-L55
 ```
 
 It is a `NetworkBehaviour` that defines two `NetworkVariable`s: `NetworkPosition` and `NetworkRotationY`.
@@ -64,7 +64,7 @@ You will also notice that they're also initialized with a particular `SendChanne
 Next look in *ServerCharacterMovement.cs* where these `NetworkVariable`s are modified on the server:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Server/Game/Character/ServerCharacterMovement.cs#L150-L159
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v0.1.0/Assets/BossRoom/Scripts/Server/Game/Character/ServerCharacterMovement.cs#L150-L159
 ```
 
 The first thing to point out is that this is done inside `FixedUpdate()` with Boss Room's `FixedTimestep` set to 0.02s. This setting can be found in **ProjectSettings** > **Time**. This is the maximum possible frequency of updates of position and rotation. We highlight this because a server will not send a `NetworkVariable` update if the value is unchanged.
@@ -75,7 +75,7 @@ Next take a look at client-side code, which interprets what to do with this `Net
 A PC's position and rotation are modified inside the `Update()` method of *ClientGenericMovement.cs*:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientGenericMovement.cs#L35-L48
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v0.1.0/Assets/BossRoom/Scripts/Client/Game/Character/ClientGenericMovement.cs#L35-L48
 ```
 
 This is what we refered to as a "dumb terminal". Position and rotation data are applied as quickly as the client can render them.
@@ -84,13 +84,13 @@ This is what we refered to as a "dumb terminal". Position and rotation data are 
 The Graphics' transform is modified inside the `Update()` method of *ClientCharacterVisualizaton.cs*:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L335-L353
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v0.1.0/Assets/BossRoom/Scripts/Client/Game/Character/ClientCharacterVisualization.cs#L335-L353
 ```
 
 Examine `VisualUtils.SmoothMove(...)`, which is a "Graphics" transform:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Client/Game/Utils/VisualUtils.cs#L22-L64
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v0.1.0/Assets/BossRoom/Scripts/Client/Game/Utils/VisualUtils.cs#L22-L64
 ```
 
 The Graphics transform moves according to the following:
