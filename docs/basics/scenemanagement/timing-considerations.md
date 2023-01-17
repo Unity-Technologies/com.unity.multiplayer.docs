@@ -3,6 +3,7 @@ id:  timing-considerations
 title: Timing Considerations
 sidebar_label: Timing Considerations
 ---
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 :::caution
 If you have not already read the [Using NetworkSceneManager](using-networkscenemanager.md) and/or [Scene Events](scene-events.md) sections, it is highly recommended to do so before proceeding.
@@ -20,8 +21,8 @@ In each diagram, you will see two types of black arrows:
 The below diagram, Client Synchronization Updates, steps you through the entire client synchronization process from starting the client all the way to the client being fully synchronized and connected.  
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/ClientSyncUpdates_Light.png?text=LightMode"
-darkImageSrc="images/ClientSyncUpdates_Dark.png?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/ClientSyncUpdates_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/ClientSyncUpdates_Dark.png?text=DarkMode"/>
 </figure>
 Above, we can see that the client will first send a connection request to the server that will process the request, handle the approval process via ConnectionApprovalCallback (if connection approval is enabled), and if approved the server will:
 - Send a connection approved message back to the client
@@ -51,8 +52,8 @@ Take note that after the client finishes processing the synchronization event, t
 Now that we have covered the high-level synchronization process, we can dive a little deeper into what happens on the client side as it processes the synchronize message.  The below sub-diagram, "Scene Event Synchronization Timeline", provides you with a more detailed view of how the client processes the synchronize message:
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/SceneEventSynchronizationTimeline_Light.png?text=LightMode"
-darkImageSrc="images/SceneEventSynchronizationTimeline_Dark.png?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/SceneEventSynchronizationTimeline_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/SceneEventSynchronizationTimeline_Dark.png?text=DarkMode"/>
 </figure>
 You can see that upon receiving the message, the client appears to be iterating over portions of the data included in the synchronize message.  This is primarily the asynchronous scene loading phase of the client synchronization process. This means the more scenes loaded, the more a client will be required to load which means the Client Synchronization Period is directly proportional to the number of scene being loaded and the size of each scene being loaded.  Once all scenes are loaded, the client will then locally spawn all `NetworkObject`s.  As a final step, the client sends the list of all `NetworkObjectId`s it spawned as part of its `SceneEventType.SynchronizeComplete` scene event message so the server can determine if it needs to resynchronize the client with a list of any `NetworkObjects` that might have despawned during the Client Synchronization Period.
 
@@ -64,8 +65,8 @@ Looking at the timeline diagram below, "Loading an Additive Scene", we can see t
 Another point of interest in the below diagram is how Client 1 receives the scene loading event, processes it, and then responds with a `SceneEventType.LoadComplete` scene event message before client 2. This delta between client 1 and client 2 represents the varying client-server latencies and further enforces the underlying concept behind the `SceneEventType.LoadEventCompleted` message.  Once a server has received all `SceneEventType.LoadComplete` messages from the connected clients, it will then broadcast the `SceneEventType.LoadEventCompleted` message to all connected clients.  At this point, we can consider the scene loading event (truly) complete and all connected clients are able to receive and process netcode messages.
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/LoadingAdditiveScene_Light?text=LightMode"
-darkImageSrc="images/LoadingAdditiveScene_Dark?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/LoadingAdditiveScene_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/LoadingAdditiveScene_Dark.png?text=DarkMode"/>
 </figure>
 :::caution
 While a client can start sending the server messages (including NetworkVariable changes) upon local `SceneEventType.LoadComplete` event notifications, under more controlled testing environments where the network being used has very little to no latency (i.e. using loopback with multiple instances running on the same system or using your LAN), this approach will not expose latency related issues. Even though the timing might "work out" under controlled low latency conditions you could still run into edge case scenarios where if a client approaches or exceeds a 500ms RTT latency you could potentially run into issues.
@@ -98,8 +99,8 @@ How you load scenes is really up to your project/design requirements.
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/SwitchingToNewScene_Light?text=LightMode"
-darkImageSrc="images/SwitchingToNewScene_Dark?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/SwitchingToNewScene_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/SwitchingToNewScene_Dark.png?text=DarkMode"/>
 </figure>
 
 ## Load New Scene Timeline (Sub-Diagram)
@@ -110,8 +111,8 @@ When looking at the below sub-diagram, both single and additive scene loading mo
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/LoadNewSceneTimeline_Light?text=LightMode"
-darkImageSrc="images/LoadNewSceneTimeline_Dark?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/LoadNewSceneTimeline_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/LoadNewSceneTimeline_Dark.png?text=DarkMode"/>
 </figure>
 
 **Load New Scene Additively**
@@ -140,8 +141,8 @@ If you look at the below diagram, "Unloading an Additive Scene", you will see a 
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/UnloadingAdditiveScene_Light?text=LightMode"
-darkImageSrc="images/UnloadingAdditiveScene_Dark?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/UnloadingAdditiveScene_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/UnloadingAdditiveScene_Dark.png?text=DarkMode"/>
 </figure>
 
 ### Unloading Scenes Timeline:
@@ -156,6 +157,6 @@ Review over the below diagram and take note of the following things:
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="images/UnloadingSceneTimeline_Light?text=LightMode"
-darkImageSrc="images/UnloadingSceneTimeline_Dark?text=DarkMode"/>
+lightImageSrc="/img/sequence_diagrams/SceneManagement/UnloadingSceneTimeline_Light.png?text=LightMode"
+darkImageSrc="/img/sequence_diagrams/SceneManagement/UnloadingSceneTimeline_Dark.png?text=DarkMode"/>
 </figure>
