@@ -346,6 +346,17 @@ The callback is the first thing invoked on the server-side when invoking the `Ne
 This is where you need to be cautious with scene validation, because any scene that you do not validate on the client side should not contain Netcode objects that are considered required dependencies for a connecting client to properly synchronize with the current netcode (game) session state.  
 :::
 
+### Dynamically Generated Scenes
+You might find yourself in a scenario where you just need to dynamically generate a scene.  A common use for dynamically generated scenes is when you need to dynamically generate collision geometry that you wish to only create on the server-host side. For this scenario you most likely would only want the server to have this scene loaded, but you might run into issues when synchronizing clients.  For single player games, you could just create a new scene at runtime, dynamically generate the collision geometry, add the collision geometry to the newly created scene, and everything works out.  With Netcode for GameObjects there are two extra steps you need to take in order to assure you don't run into any issues:
+- Create an empty scene for each scene you plan on dynamically generating and add them to the "Scenes in Build" list found within the "Build Settings".
+  - For this example we would only need one (i.e. we might call the scene "WorldCollisionGeometry")
+- Have the server-host register for `NetworkManager.SceneManager.VerifySceneBeforeLoading` handler and return false when one of the blank scene names is being validated as a valid scene for a client to load.
+  - For this example we would return false any time `VerifySceneBeforeLoading` was invoked with the scene name "WorldCollisionGeometry".
+ 
+ :::caution
+ This only works under the scenario where the dynamically generated scene is a server-host side only scene unless you write server-side code that sends enough information to a newly connected client in order to replicate the dynamically generated scene via RPC, a custom message, a `NetowrkVariable`, or an in-scene placed NetworkObject that is in a scene, other than the dynamically generated one, and contains a `NetworkBehaviour` component with an overridden `OnSynchronize` method that includes additional serializatoin information about how to construct the dynamically generated scene.  The limitation on this approach is that the scene should not contain already spawned `NetworkObject`s as those will not get automatically synchronized when a client first connects.
+ :::
+
 ### What Next?
 We have covered how to access the `NetworkSceneManager`, how to load and unload a scene, provided a basic overview on scene events and notifications, and even briefly discussed in-scene placed `NetworkObject`s.  You now have the fundamental building-blocks one needs to learn more advanced integrated scene management topics.  
 _We recommend proceeding to the next integrated scene management topic, "Scene Events", in the link below._
