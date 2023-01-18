@@ -28,7 +28,9 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2
 Boss Room might have used an `RPC` instead (for the Mage's projectile attack). Since the Mage's projectile fires quickly, the player experience isn't affected by the few milliseconds where a newly connected client might miss the projectile. In fact, it helps Boss Room save on bandwidth when managing a replicated object. Instead, Boss Room sends a single RPC to trigger the FX client side.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs
+
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/FXProjectile.cs
+
 ```
 
 ## Breakable state
@@ -36,13 +38,17 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2
 Boss Room might have used a "break" `RPC` to set a breakable object as broken and play the appropriate visual effects. Applying the "replicate information when a player joins the game mid-game" rule of thumb, the Boss Room development team used `NetworkVariable`s instead. Boss Room uses the `OnValueChanged` callback on those values to play the visual effects (and an initial check when spawning the `NetworkBehaviour`).
 
 ```csharp reference
+
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L59-L78
+
 ```
 
 The visual changes:
 
 ```csharp reference
+
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L146-L156
+
 ```
 
 :::tip Lesson Learned
@@ -51,9 +57,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2
 
 ![imp not appearing dead](/img/01_imp_not_appearing_dead.png)
 
+
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerAnimationHandler.cs#L23-L30
 ```
+
 
 :::
 
