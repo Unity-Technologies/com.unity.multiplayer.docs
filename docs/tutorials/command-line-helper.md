@@ -174,7 +174,7 @@ Command to start the server:
 <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile -
 ```
 
-Command to start the client
+Command to start the client:
 
 ```shell
 <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
