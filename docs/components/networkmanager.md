@@ -132,7 +132,7 @@ void DisconnectPlayer(NetworkObject player)
 
 ### Client Disconnection Notifications
 
-Both the client and the server can subscribe to the `NetworkManger.OnClientDisconnectCallback` event in order to be notified when a client is disconnected. Client disconnect notifications are "relative" to who is receiving the notification.
+Both the client and the server can subscribe to the `NetworkManager.OnClientDisconnectCallback` event in order to be notified when a client is disconnected. Client disconnect notifications are "relative" to who is receiving the notification.
 
 **There are two general "disconnection" categories:**
 - **Logical**: Custom server side code (code you might have written for your project) invokes `NetworkManager.DisconnectClient`.
