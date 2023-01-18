@@ -25,6 +25,7 @@ This is how the connection approval response is formed by server-side specific u
 - **PlayerPrefabHash**: The type of player prefab to use for the authorized player (_if this is null it uses the default `NetworkManager` defined player prefab_)
 - **Position** and **Rotation**: The position and rotation of the player when spawned
 - **Pending**: Provides the ability to mark the approval "pending" to delay the authorization until other user-specific code finishes the approval process.
+- **Reason**: If `Approved` is `false` you can populate this with a `string` based message (or `json`) to send the reason why the client was not approved.
 
 :::note
 Unlike previous versions of Netcode for GameObjects where users were provided a callback to be invoked within the connection approval handler method, users now only need to set the appropriate properties of the `NetworkManager.ConnectionApprovalResponse` class.  Part of this update allows users to set their `ConnectionApprovalResponse` to `Pending` which provides users additional time to process any other tasks involved with the player approval process.
@@ -61,12 +62,63 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
 
     // Rotation to spawn the player object (if null it uses the default of Quaternion.identity)
     response.Rotation = Quaternion.identity;
+    
+    // If response.Approved is false, you can provide a message that explains the reason why via ConnectionApprovalResponse.Reason
+    // On the client-side, NetworkManager.DisconnectReason will be populated with this message via DisconnectReasonMessage
+    response.Reason = "Some reason for not approving the client";
 
     // If additional approval steps are needed, set this to true until the additional steps are complete
     // once it transitions from true to false the connection approval response will be processed.
     response.Pending = false;
 }
 ```
+
+## Sending An Approval Declined Reason (_`NetworkManager.ConnectionApprovalResponse.Reason`_)
+
+Under the condition that you need to deny a player from connecting for any particular reason (*reached maximum number of connections, invalid authorization, etc.*), the `NetworkManager.ConnectionApprovalResponse` structure provides you with the optional `NetworkManager.ConnectionApprovalResponse.Reason` property.  When `NetworkManager.ConnectionApprovalResponse.Approved` is false and `NetworkManager.ConnectionApprovalResponse.Reason` has been populated with the reason for denying the player's request to connect, then the server will send the client a `DisconnectReasonMessage`. Upon the client side receiving the `DisconnectReasonMessage`, the `NetworkManager.DisconnectReason` property will be populated with the `NetworkManager.ConnectionApprovalResponse.Reason` message. The example provided below demonstrates how this works:
+
+
+```csharp
+using UnityEngine;
+using Unity.Netcode;
+
+/// <summary>
+/// Connection Approval Handler Component
+/// </summary>
+/// <remarks>
+/// This should be placed on the same GameObject as the NetworkManager.
+/// It automatically declines the client connection for example purposes.
+/// </remarks>
+public class ConnectionApprovalHandler : MonoBehaviour
+{
+    private NetworkManager m_NetworkManager;
+
+    private void Start()
+    {
+        m_NetworkManager = GetComponent<NetworkManager>();
+        if (m_NetworkManager != null)
+        {
+            m_NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback;
+            m_NetworkManager.ConnectionApprovalCallback = ApprovalCheck;
+        }
+    }
+
+    private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
+    {
+        response.Approved = false;
+        response.Reason = "Testing the declined approval message";
+    }
+
+    private void OnClientDisconnectCallback(ulong obj)
+    {
+        if (!m_NetworkManager.IsServer && m_NetworkManager.DisconnectReason != string.Empty)
+        {
+            Debug.Log($"Approval Declined Reason: {m_NetworkManager.DisconnectReason}");
+        }
+    }
+}
+```
+
 
 ## Connection data  (_`NetworkManager.ConnectionApprovalRequest.Payload`_)
 
@@ -153,6 +205,7 @@ The server assigns the `ConnectionApprovalCallback` when it spawns the in-scene 
 
 ### Step 2: Copy the Alternate Player Prefab's GlobalObjectIdHash Value
 ![Copy-GlobalObjectIdHash](images/CopyGlobalObjectIdHash.png)
+
 In order to populate the `AlternatePlayerPrefabs` list:
 - Open the scene containing the in-scene placed `NetworkObject` that the `ConnectionApprovalCallback` is attached to.
 - Find each alternate player prefab you wish to add to the list, select the prefab (but don't open it), and copy the GlobalObjectIdHash value by right-clicking and selecting "copy".
