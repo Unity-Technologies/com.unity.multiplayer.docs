@@ -600,6 +600,6 @@ You can test your Hello World project through the Unity Editor or a command line
 
 2. Select **NetworkManager** from the **Hierarchy** list.
 
-3. With NetworkManager selected, select **Start Host** from the **Inspector** tab. Alternatively, you can use the in0game GUI buttons.
+3. With NetworkManager selected, select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
 
 If it works correctly, you should see the option to **Stop Host** in the **Inspector** tab.
