@@ -5,6 +5,12 @@ title: Get started with NGO
 
 Use this guide to learn how to create your first NGO project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects (NGO).
 
+:::tip
+
+See [Testing the command line helper](command-line-helper) to learn how to test your builds with a command line helper.
+
+:::
+
 ## Prerequisites
 
 Before you start, ensure you have the following prerequisites:
@@ -49,8 +55,8 @@ First, create the `NetworkManager` component:
 
 ![](../../static/img/get-started-ngo/ngo-1.png)
 
-5. Select **UnityTransport** as the **Network Transport**.
-6. Save the scene by selecting **File** > **Save**.
+5. In the Inspector tab, locate the Unity Transport section, then select **UnityTransport** as the **Protocol type**.
+6. Save the scene by pressing **Ctrl** + **S** (or by selecting **File** > **Save**).
 
 ### Create an object to spawn for each connected player
 
@@ -95,7 +101,7 @@ Adding the Plane adds a visual reference point to visualize the Player prefab’
 
 ![](../../static/img/get-started-ngo/ngo-7.png)
 
-12. Save the scene by selecting **File** > **Save**.
+12. Save the scene by pressing **Ctrl** + **S** (selecting **File** > **Save**).
 
 ### Add your scene to the build
 
@@ -116,7 +122,7 @@ You should see **Scenes/SampleScene** listed under **Scenes In Build**. You can 
 
 :::tip
 
-Use the command line helper to test the build out before continuing. You should see the Player prefab spawn when:
+If you want, you can create a build at this point and use the [command line helper](command-line-helper) to test the build out before continuing. You should see the Player prefab spawn when:
 
 1. You connect a client to the server.
 2. Start as a host.
@@ -178,7 +184,7 @@ public class RpcTest : NetworkBehaviour
 }
 ```
 
-4. Save the Scene by selecting **File** > **Save**.
+4. Save the Scene by pressing **Ctrl** + **S** (or by selecting **File** > **Save**).
 
 ### Test the RPCs
 
@@ -188,17 +194,23 @@ This section guides you through testing the RPCs you added in the earlier sectio
 2. Stop the player.
 3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper).
 
+:::tip
+
+Instead of using the command line helper script, you can use Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. See [MPPM](../../tools/mppm.md) to learn more.
+
+:::
+
 After the client and server spawn, you should see a log in the **Console** of the client and server sending RPC messages to each other.
 
 The client kicks off the exchange in its `Update` call for the first time with a counter value of `0`. It then makes an RPC call to the server with the next value. The server receives this and calls the client. You should see the following in the **Console** tab.
 
 ```log
+Server Received the RPC #0
+Client Received the RPC #0
 Server Received the RPC #1
 Client Received the RPC #1
 Server Received the RPC #2
 Client Received the RPC #2
-Server Received the RPC #3
-Client Received the RPC #3
 ...
 ```
 
@@ -603,7 +615,7 @@ public class NetworkTransformTest : NetworkBehaviour
 }
 ```
 
-4. Save the scene by selecting **File** > **Save**.
+4. Save the scene by pressing **Ctrl** + **S** (or by selecting **File** > **Save**).
 
 ### Test the `NetworkTransform`
 
@@ -629,7 +641,7 @@ You can test your Hello World project through the Unity Editor or a command line
 
 ![](../../static/img/get-started-ngo/ngo-2.png)
 
-3. With NetworkManager selected, select **Start Host** from the **Inspector** tab. Alternatively, you can use the in0game GUI buttons.
+3. With **NetworkManager** selected (in the Hierarchy tab), select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
 
 ![](../../static/img/get-started-ngo/ngo-3.png)
 
