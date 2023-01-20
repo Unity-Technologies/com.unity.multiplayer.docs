@@ -101,7 +101,7 @@ Adding the Plane adds a visual reference point to visualize the Player prefab’
 
 ![](../../static/img/get-started-ngo/ngo-7.png)
 
-12. Save the scene by pressing **Ctrl** + **S** (selecting **File** > **Save**).
+12. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
 
 ### Add your scene to the build
 
