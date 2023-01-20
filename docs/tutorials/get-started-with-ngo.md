@@ -638,7 +638,7 @@ public class NetworkTransformTest : NetworkBehaviour
 }
 ```
 
-4. Save the scene by pressing **Ctrl** + **S** (or by selecting **File** > **Save**).
+4. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
 ### Test the `NetworkTransform`
 
