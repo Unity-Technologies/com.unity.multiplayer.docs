@@ -159,27 +159,27 @@ public class RpcTest : NetworkBehaviour
 {
     public override void OnNetworkSpawn()
     {
-        if (!IsServer)
+        if (!IsServer && IsOwner) //Only send an RPC to the server on the client that owns the NetworkObject that owns this NetworkBehaviour instance
         {
-            TestServerRpc(0);
+            TestServerRpc(0, NetworkObjectId);
         }
     }
 
     [ClientRpc]
-    void TestClientRpc(int value)
+    void TestClientRpc(int value, ulong sourceNetworkObjectId)
     {
-        if (IsClient)
+        Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        if (IsOwner) //Only send an RPC to the server on the client that owns the NetworkObject that owns this NetworkBehaviour instance
         {
-            Debug.Log("Client Received the RPC #" + value);
-            TestServerRpc(value + 1);
+            TestServerRpc(value + 1, sourceNetworkObjectId);
         }
     }
 
     [ServerRpc]
-    void TestServerRpc(int value)
+    void TestServerRpc(int value, ulong sourceNetworkObjectId)
     {
-        Debug.Log("Server Received the RPC #" + value);
-        TestClientRpc(value);
+        Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        TestClientRpc(value, sourceNetworkObjectId);
     }
 }
 ```
@@ -202,17 +202,40 @@ Instead of using the command line helper script, you can use Multiplayer Play Mo
 
 After the client and server spawn, you should see a log in the **Console** of the client and server sending RPC messages to each other.
 
-The client kicks off the exchange in its `Update` call for the first time with a counter value of `0`. It then makes an RPC call to the server with the next value. The server receives this and calls the client. You should see the following in the **Console** tab.
+The client kicks off the exchange in its `Update` call for the first time with a counter value of `0`. It then makes an RPC call to the server with the next value. The server receives this and calls the client. You should see the following in the **Console** of the server and client respectively.
 
 ```log
-Server Received the RPC #0
-Client Received the RPC #0
-Server Received the RPC #1
-Client Received the RPC #1
-Server Received the RPC #2
-Client Received the RPC #2
+Server Received the RPC #0 on NetworkObject #1
+Server Received the RPC #1 on NetworkObject #1
+Server Received the RPC #2 on NetworkObject #1
+Server Received the RPC #3 on NetworkObject #1
 ...
 ```
+```log
+Client Received the RPC #0 on NetworkObject #1
+Client Received the RPC #1 on NetworkObject #1
+Client Received the RPC #2 on NetworkObject #1
+Client Received the RPC #3 on NetworkObject #1
+...
+```
+Only the client owning the `NetworkObject` owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log Rpcs being received once per `NetworkObject` per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
+```log
+Server Received the RPC #0 on NetworkObject #2
+Client Received the RPC #0 on NetworkObject #2
+Server Received the RPC #1 on NetworkObject #2
+Client Received the RPC #1 on NetworkObject #2
+Server Received the RPC #2 on NetworkObject #2
+Client Received the RPC #2 on NetworkObject #2
+Server Received the RPC #3 on NetworkObject #2
+Client Received the RPC #3 on NetworkObject #2
+...
+```
+
+:::Note
+
+The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it will not be sending the initial RPC starting the chain because it is a server.
+
+:::
 
 ## Extend the functionality with scripts
 
