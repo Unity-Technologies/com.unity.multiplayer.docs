@@ -184,7 +184,7 @@ public class RpcTest : NetworkBehaviour
 }
 ```
 
-4. Save the Scene by pressing **Ctrl** + **S** (or by selecting **File** > **Save**).
+4. Save the Scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
 ### Test the RPCs
 
