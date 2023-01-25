@@ -5,11 +5,8 @@ title: Get started with NGO
 
 Use this guide to learn how to create your first NGO project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects (NGO).
 
-:::tip
-
 See [Testing the command line helper](command-line-helper) to learn how to test your builds with a command line helper.
 
-:::
 
 ## Prerequisites
 
