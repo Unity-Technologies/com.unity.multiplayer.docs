@@ -12,7 +12,7 @@ Boss Room provides one example of how to handle limiting the number of players t
 Boss Room provides an example of such delegate
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs#L176
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/9bdfe99812be3987fa96fe7cc893eaca66cfa0d8/Assets/Scripts/Gameplay/GameState/ServerCharSelectState.cs#L223
 
 ```
 
