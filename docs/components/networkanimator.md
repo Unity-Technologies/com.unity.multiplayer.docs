@@ -10,32 +10,28 @@ updated: 2023-01-24T18:34:06-06:00
 The `NetworkAnimator` component provides you with a fundamental example of how to synchronize animations during a network session. Animation states are synchronized with players joining an existing network session and any client already connected before the animation state changing.
 
 * Players joining an existing network session will be synchronized with:
-
-    - All the `Animator`'s current properties and states.
-
+    * All the `Animator`'s current properties and states.
         * *With exception to `Animator` trigger properties. These are only synchronized with already connected clients.*
-
-    - Any in progress transition
-
+    * Any in progress transition
 * Players already connected will be synchronized with changes to `Animator`:
-
-    - States
-
-    - Transitions
-
-    - Properties
-
+    * States
+    * Transitions
+    * Properties
         * `NetworkAnimator` will only synchronize properties that have changed since the earlier frame property values.
-
         * Since triggers are similar to an "event," when an `Animator` property is set to `true` it will always be synchronized.
 
 `NetworkAnimator` can operate in two authoritative modes:
 
 * Server Authoritative (default): Server initiates animation state changes.
-
-    - Owner's can still invoke `NetworkAnimator.SetTrigger`.
-
+    * Owner's can still invoke `NetworkAnimator.SetTrigger`.
 * Client Authoritative: Client owners start animation state changes.
+
+
+:::note
+
+You need to use `Unity.Netcode.Components` to reference components such as `NetworkAnimator`.
+
+:::
 
 ## Animator Trigger Property
 
@@ -62,7 +58,6 @@ In the above diagram, a client might be sending the server an RPC to tell the se
 **Server authoritative model drawbacks:**
 
 * Hosts will always be "slightly ahead" of all other clients which may or may not be an issue for your project.
-
 * Client owners will experience a latency between performing an action (moving, picking something up, anything that causes an `Animator` state change).
 
 ## Owner Authoritative Mode
@@ -92,7 +87,6 @@ In the above diagram, it shows that the owner client has an `Animator` state cha
 **Owner authoritative model drawbacks:**
 
 * Non-owner clients lag behind the owner client's animation by roughly one full RTT.
-
 * A host lags behind the owner client's animation by roughly half RTT.
 
 :::caution
@@ -113,7 +107,7 @@ Using `NetworkAnimator` is a pretty straight forward approach with the only subt
 
 ### Server Authoritative
 
-If you decide you want to use the server authoritative model, then you can add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject` . In the below screenshot, you can see a network Prefab that houses two authoritative models. The `NetworkAnimatorCube-Server`  `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component.
+If you decide you want to use the server authoritative model, then you can add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject` . In the below screenshot, you can see a network Prefab that houses two authoritative models. The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component.
 
 ![Usage-1](Images/NetworkAnimatorUsage-1.png)
 
@@ -131,7 +125,7 @@ While it isn't advised to have different `NetworkAnimator` authoritative models 
 
 ### Changing Animator Properties
 
-For all `Animator` properties (except for triggers), you can set them directly via the `Animator` class. As an example, you might use the player's normalized velocity as a way to control the walking or running animation of a player. You might have an `Animator`  `float` property called "AppliedMotion" that you would set on the authoritative instance (server or owner) like such:
+For all `Animator` properties (except for triggers), you can set them directly via the `Animator` class. As an example, you might use the player's normalized velocity as a way to control the walking or running animation of a player. You might have an `Animator` `float` property called "AppliedMotion" that you would set on the authoritative instance (server or owner) like such:
 
 ```csharp
 public void ApplyMotion(Vector3 playerVelocity)
