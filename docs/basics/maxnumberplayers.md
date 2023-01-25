@@ -2,7 +2,7 @@
 id: max-players
 title: Limiting the maximum number of players
 created: 2023-01-24T18:08:36-06:00
-updated: 2023-01-24T18:08:36-06:00
+updated: 2023-01-24T18:59:55-06:00
 ---
 
 Netcode for Gameobjects (Netcode) provides a way to customize the [connection approval process](connection-approval.md) that can reject incoming connections based on any number of user-specific reasons.
