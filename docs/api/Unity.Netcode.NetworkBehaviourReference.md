@@ -7,8 +7,8 @@ title: Unity.Netcode.NetworkBehaviourReference
 
 
 A helper struct for serializing NetworkBehaviours over the network. Can
-be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled
-by the NetworkManager after a while. So a reference pointing to
+be used in RPCs and NetworkVariable\<T\>. **Note**: Network ids get recycled
+by the NetworkManager after a while. A reference point to a network behaviour is more reliable as it's not recycled.
 
 
 
