@@ -1,6 +1,8 @@
 ---
 id: reconnecting-mid-game
 title: Reconnecting Mid-Game
+created: 2023-01-24T17:55:53-06:00
+updated: 2023-01-24T18:28:58-06:00
 ---
 
 In a multiplayer game, clients may get disconnected from the server for a variety of reasons (network issues, application/device crashes, etc). For those reasons, you may want to allow your players to reconnect to the game.
