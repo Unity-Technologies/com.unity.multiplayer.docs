@@ -56,7 +56,7 @@ First, create the `NetworkManager` component:
 ![](../../static/img/get-started-ngo/ngo-1.png)
 
 5. In the Inspector tab, locate the Unity Transport section, then select **UnityTransport** as the **Protocol type**.
-6. Save the scene by pressing **Ctrl** + **S** (or by selecting **File** > **Save**).
+6. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
 ### Create an object to spawn for each connected player
 
