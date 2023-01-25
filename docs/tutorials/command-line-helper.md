@@ -157,7 +157,7 @@ Client command:
 Example (Running as a single command line):
 
 ```cmd
-C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile -log-server.txt -mode server & HelloWorld\Build\HelloWorld.exe -logfile log-client.txt -mode client
+C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile log-server.txt -mode server & HelloWorld\Build\HelloWorld.exe -logfile log-client.txt -mode client
 ```
 :::
 

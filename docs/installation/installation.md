@@ -20,8 +20,10 @@ Before installing Netcode, you should ensure you have:
 
 Netcode supports the following Unity versions:
 
+
 * Unity Editor version 2020.3 or later
 * Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+
 
 Netcode supports the following platforms:
 
