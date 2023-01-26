@@ -4,30 +4,34 @@ title: Install Netcode for GameObjects
 description: How to install Unity Netcode for GameObjects (NGO). 
 ---
 
+# Installation
+
 Use this guide to install Unity Netcode for GameObjects (NGO) 1.0.0 and later.
 
 ## Prerequisites
 
 Before installing Netcode, you should ensure you have:
 
-- An active Unity account with a valid license.
-- A Netcode-supported installation of Unity. See [Netcode's requirements](#netcode-installation-requirements) for full details.
-- An existing Unity project. If you don't have a project yet, see [Get started with NGO](../tutorials/get-started-with-ngo.md).
+* An active Unity account with a valid license.
+* A Netcode-supported installation of Unity. See [Netcode's requirements](#netcode-installation-requirements) for full details.
+* An existing Unity project. If you don't have a project yet, see [Get started with NGO](../tutorials/get-started-with-ngo.md).
 
-### Netcode Installation Requirements
+## Netcode Installation Requirements
 
 Netcode supports the following Unity versions:
 
-- Unity Eitor version 2020.3 or later
-- Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+
+* Unity Editor version 2020.3 or later
+* Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+
 
 Netcode supports the following platforms:
 
-- Windows, MacOS, and Linux
-- iOS and Android
-- XR platforms running on Windows, Android, and iOS operating systems
-- Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact the [NGO development team](https://discord.com/channels/449263083769036810/563033158480691211) for more information about specific closed platforms.
-  - When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there might be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
+* Windows, MacOS, and Linux
+* iOS and Android
+* XR platforms running on Windows, Android, and iOS operating systems
+* Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact the [NGO development team](https://discord.com/channels/449263083769036810/563033158480691211) for more information about specific closed platforms.
+  * When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there might be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
 
 :::caution Using WebGL
 
@@ -37,9 +41,10 @@ There are third party transports provided by the community that might enable you
 
 However, you should use these transports with caution:
 
-- You might encounter bugs and issues while using Netcode on WebGL, and the Netcode development won't prioritize fixing those issues.
-- The server or host can't be a WebGL client; It must be a Desktop or Mobile build.
-- You might experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
+* You might encounter bugs and issues while using Netcode on WebGL, and the Netcode development won't prioritize fixing those issues.
+* The server or host can't be a WebGL client; It must be a Desktop or Mobile build.
+* You might experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
+
 :::
 
 ## Installing with the Package Manager
@@ -56,7 +61,7 @@ If you're using Unity Editor version 2020.3 LTS or earlier, there's no option to
 
 1. From the Unity Editor, select **Window** > **Package Manager**.
 2. From the Package Manager, select **Add (+)** > **Add package by git URL…**
-3. Type (or copy and paste) `chttps://github.com/Unity-Technologies/com.unity.netcode.gameobjects` into the git URL field, then select **Add**.
+3. Type (or copy and paste) `https://github.com/Unity-Technologies/com.unity.netcode.gameobjects` into the git URL field, then select **Add**.
 
 :::
 
@@ -64,9 +69,9 @@ If you're using Unity Editor version 2020.3 LTS or earlier, there's no option to
 
 See the following content to continue your journey using Netcode:
 
-- Use the [Get started with NGO tutorial](../tutorials/get-started-with-ngo.md) to create a project, test your Netcode install, and learn how to use the basic features of Netcode for GameObjects.
-- Check out the educational samples to further explore Netcode and its abilities:
-  - [Boss Room](../learn/bossroom/getting-started-boss-room.md)
-  - [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
-  - [Invaders Bitesize Sample](../learn/bitesize/bitesize-invaders.md)
-  - [Client-Driven Bitesize Sample](../learn/bitesize/bitesize-clientdriven.md)
+* Use the [Get started with NGO tutorial](../tutorials/get-started-with-ngo.md) to create a project, test your Netcode install, and learn how to use the basic features of Netcode for GameObjects.
+* Check out the educational samples to further explore Netcode and its abilities:
+  * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../learn/bitesize/bitesize-clientdriven.md)
