@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:36:34 pm
 
 <div class="markdown level0 summary">
 
-Represents the network update loop injected into low-level player loop
-
-in Unity.
+Represents the network update loop injected into low-level player loop in Unity.
 
 </div>
 

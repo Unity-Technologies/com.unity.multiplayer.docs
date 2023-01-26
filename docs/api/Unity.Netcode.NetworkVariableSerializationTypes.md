@@ -6,32 +6,9 @@ date modified: Wednesday, January 25th 2023, 5:36:47 pm
 ---
 
 <div class="markdown level0 summary">
+This class contains initialization functions for various different types used in NetworkVariables. Generally speaking, these methods are called by a module initializer created by codegen (NetworkBehaviourILPP) and do not need to be called manually.
 
-This class contains initialization functions for various different types
-
-used in NetworkVariables. Generally speaking, these methods are called
-
-by a module initializer created by codegen (NetworkBehaviourILPP) and do
-
-not need to be called manually.
-
-There are two types of initializers: Serializers and EqualityCheckers.
-
-Every type must have an EqualityChecker registered to it in order to be
-
-used in NetworkVariable; however, not all types need a Serializer. Types
-
-without a serializer registered will fall back to using the delegates in
-
-UserNetworkVariableSerialization\<T\>. If no such delegate has been
-
-registered, a type without a serializer will throw an exception on the
-
-first attempt to serialize or deserialize it. (Again, however, codegen
-
-handles this automatically and this registration doesn't typically need
-
-to be performed manually.)
+There are two types of initializers: Serializers and EqualityCheckers. Every type must have an EqualityChecker registered to it in order to be used in NetworkVariable; however, not all types need a Serializer. Types without a serializer registered will fall back to using the delegates in UserNetworkVariableSerialization\<T\>. If no such delegate has been registered, a type without a serializer will throw an exception on the first attempt to serialize or deserialize it. (Again, however, codegen handles this automatically and this registration doesn't typically need to be performed manually.)
 
 </div>
 
@@ -121,9 +98,7 @@ public static class NetworkVariableSerializationTypes
 
 <div class="markdown level1 summary">
 
-Registers a managed type that will be checked for equality using the ==
-
-operator
+Registers a managed type that will be checked for equality using the == operator
 
 </div>
 
@@ -149,9 +124,7 @@ public static void InitializeEqualityChecker_ManagedClassEquals<T>()
 
 <div class="markdown level1 summary">
 
-Registers a managed type that will be checked for equality using
-
-T.Equals()
+Registers a managed type that will be checked for equality using T.Equals()
 
 </div>
 
@@ -177,10 +150,7 @@ public static void InitializeEqualityChecker_ManagedIEquatable<T>()
 
 <div class="markdown level1 summary">
 
-Registers an unmanaged type that will be checked for equality using
-
-T.Equals()
-
+Registers an unmanaged type that will be checked for equality using T.Equals()
 </div>
 
 <div class="markdown level1 conceptual">
@@ -205,11 +175,7 @@ public static void InitializeEqualityChecker_UnmanagedIEquatable<T>()
 
 <div class="markdown level1 summary">
 
-Registers an unmanaged type that will be checked for equality using
-
-memcmp and only considered equal if they are bitwise equivalent in
-
-memory
+Registers an unmanaged type that will be checked for equality using memcmp and only considered equal if they are bitwise equivalent in memory
 
 </div>
 
@@ -235,9 +201,7 @@ public static void InitializeEqualityChecker_UnmanagedValueEquals<T>()
 
 <div class="markdown level1 summary">
 
-Registers a FixedString type that will be serialized through
-
-FastBufferReader/FastBufferWriter's FixedString serializers
+Registers a FixedString type that will be serialized through FastBufferReader/FastBufferWriter's FixedString serializers
 
 </div>
 
@@ -263,9 +227,7 @@ public static void InitializeSerializer_FixedString<T>()
 
 <div class="markdown level1 summary">
 
-Registers a managed type that implements INetworkSerializable and will
-
-be serialized through a call to NetworkSerialize
+Registers a managed type that implements INetworkSerializable and will be serialized through a call to NetworkSerialize
 
 </div>
 
@@ -291,9 +253,7 @@ public static void InitializeSerializer_ManagedINetworkSerializable<T>()
 
 <div class="markdown level1 summary">
 
-Registeres an unmanaged type that will be serialized by a direct memcpy
-
-into a buffer
+Registeres an unmanaged type that will be serialized by a direct memcpy into a buffer
 
 </div>
 
@@ -319,9 +279,7 @@ public static void InitializeSerializer_UnmanagedByMemcpy<T>()
 
 <div class="markdown level1 summary">
 
-Registers an unmanaged type that implements INetworkSerializable and
-
-will be serialized through a call to NetworkSerialize
+Registers an unmanaged type that implements INetworkSerializable and will be serialized through a call to NetworkSerialize
 
 </div>
 

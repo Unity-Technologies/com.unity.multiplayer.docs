@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:36:36 pm
 
 <div class="markdown level0 summary">
 
-Defines network update stages being executed by the network update loop.
-
-See for more details on update stages:
-
-<https://docs.unity3d.com/ScriptReference/PlayerLoop.Initialization.html>
+Defines network update stages being executed by the network update loop. See for more details on update stages: <https://docs.unity3d.com/ScriptReference/PlayerLoop.Initialization.html>
 
 </div>
 

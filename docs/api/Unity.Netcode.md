@@ -33,9 +33,7 @@ Arithmetic helper class
 
 <div class="section">
 
-Utility class to count the number of bytes or bits needed to serialize a
-
-value.
+Utility class to count the number of bytes or bits needed to serialize a value.
 
 </div>
 
@@ -53,11 +51,7 @@ unpack packed values.
 
 <div class="section">
 
-Byte Unpacking Helper Class Use this class to unpack values during
-
-deserialization for values that were packed. BytePacker to pack unpacked
-
-values
+Byte Unpacking Helper Class Use this class to unpack values during deserialization for values that were packed. BytePacker to pack unpacked values
 
 </div>
 
@@ -65,11 +59,7 @@ values
 
 <div class="section">
 
-Marks a method as ClientRpc.
-
-A ClientRpc marked method will be fired by the server but executed on
-
-clients.
+Marks a method as ClientRpc. A ClientRpc marked method will be fired by the server but executed on clients.
 
 </div>
 
@@ -77,11 +67,7 @@ clients.
 
 <div class="section">
 
-The manager class to manage custom messages, note that this is different
-
-from the NetworkManager custom messages. These are named and are much
-
-easier to use.
+The manager class to manage custom messages, note that this is different from the NetworkManager custom messages. These are named and are much easier to use.
 
 </div>
 
@@ -97,9 +83,7 @@ Exception thrown when a specified network channel is invalid
 
 <div class="section">
 
-Exception thrown when the new parent candidate of the NetworkObject is
-
-not valid
+Exception thrown when the new parent candidate of the NetworkObject is not valid
 
 </div>
 
@@ -115,9 +99,7 @@ The base class to override to write network code. Inherits MonoBehaviour
 
 <div class="section">
 
-An helper class that helps NetworkManager update NetworkBehaviours and
-
-replicate them down to connected clients.
+An helper class that helps NetworkManager update NetworkBehaviours and replicate them down to connected clients.
 
 </div>
 
@@ -197,13 +179,7 @@ Class that represents a NetworkPrefab
 
 <div class="section">
 
-Primary handler to add or remove customized spawn and destroy handlers
-
-for a network prefab (i.e. a prefab with a NetworkObject component)
-
-Register custom prefab handlers by implementing the
-
-INetworkPrefabInstanceHandler interface.
+Primary handler to add or remove customized spawn and destroy handlers for a network prefab (i.e. a prefab with a NetworkObject component) Register custom prefab handlers by implementing the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -211,11 +187,7 @@ INetworkPrefabInstanceHandler interface.
 
 <div class="section">
 
-A class that represents the runtime aspect of network prefabs. This
-
-class contains processed prefabs from the NetworkPrefabsList, as well as
-
-additional modifications (additions and removals) made at runtime.
+A class that represents the runtime aspect of network prefabs. This class contains processed prefabs from the NetworkPrefabsList, as well as additional modifications (additions and removals) made at runtime.
 
 </div>
 
@@ -223,15 +195,7 @@ additional modifications (additions and removals) made at runtime.
 
 <div class="section">
 
-A ScriptableObject for holding a network prefabs list, which can be
-
-shared between multiple NetworkManagers.
-
-When NetworkManagers hold references to this list, modifications to the
-
-list at runtime will be picked up by all NetworkManagers that reference
-
-it.
+A ScriptableObject for holding a network prefabs list, which can be shared between multiple NetworkManagers. When NetworkManagers hold references to this list, modifications to the list at runtime will be picked up by all NetworkManagers that reference it.
 
 </div>
 
@@ -239,11 +203,7 @@ it.
 
 <div class="section">
 
-Main class for managing network scenes when EnableSceneManagement is
-
-enabled. Uses the Unity.Netcode.SceneEventMessage message to communicate
-
-Unity.Netcode.SceneEventData between the server and client(s)
+Main class for managing network scenes when EnableSceneManagement is enabled. Uses the Unity.Netcode.SceneEventMessage message to communicate Unity.Netcode.SceneEventData between the server and client(s)
 
 </div>
 
@@ -259,21 +219,14 @@ Class that handles object spawning
 
 <div class="section">
 
-Provides discretized time. This is useful for games that require ticks
-
-happening at regular interval on the server and clients.
-
+Provides discretized time. This is useful for games that require ticks happening at regular interval on the server and clients.
 </div>
 
 ### Unity.Netcode.NetworkTimeSystem
 
 <div class="section">
 
-NetworkTimeSystem is a standalone system which can be used to run a
-
-network time simulation. The network time system maintains both a local
-
-and a server time. The local time is based on
+NetworkTimeSystem is a standalone system which can be used to run a network time simulation. The network time system maintains both a local and a server time. The local time is based on
 
 </div>
 
@@ -281,11 +234,7 @@ and a server time. The local time is based on
 
 <div class="section">
 
-The generic transport class all Netcode for GameObjects network
-
-transport implementations derive from. Use this class to add a custom
-
-transport. for an example of how a transport is integrated
+The generic transport class all Netcode for GameObjects network transport implementations derive from. Use this class to add a custom transport. for an example of how a transport is integrated
 
 </div>
 
@@ -293,9 +242,7 @@ transport. for an example of how a transport is integrated
 
 <div class="section">
 
-Represents the network update loop injected into low-level player loop
-
-in Unity.
+Represents the network update loop injected into low-level player loop in Unity.
 
 </div>
 
@@ -319,47 +266,14 @@ Interface for network value containers
 
 <div class="section">
 
-Support methods for reading/writing NetworkVariables Because there are
-
-multiple overloads of WriteValue/ReadValue based on different generic
-
-constraints, but there's no way to achieve the same thing with a class,
-
-this sets up various read/write schemes based on which constraints are
-
-met by `T` using reflection, which is done at module load time.
-
+Support methods for reading/writing NetworkVariables Because there are multiple overloads of WriteValue/ReadValue based on different generic constraints, but there's no way to achieve the same thing with a class, this sets up various read/write schemes based on which constraints are met by `T` using reflection, which is done at module load time.
 </div>
 
 ### Unity.Netcode.NetworkVariableSerializationTypes
 
 <div class="section">
 
-This class contains initialization functions for various different types
-
-used in NetworkVariables. Generally speaking, these methods are called
-
-by a module initializer created by codegen (NetworkBehaviourILPP) and do
-
-not need to be called manually.
-
-There are two types of initializers: Serializers and EqualityCheckers.
-
-Every type must have an EqualityChecker registered to it in order to be
-
-used in NetworkVariable; however, not all types need a Serializer. Types
-
-without a serializer registered will fall back to using the delegates in
-
-UserNetworkVariableSerialization\<T\>. If no such delegate has been
-
-registered, a type without a serializer will throw an exception on the
-
-first attempt to serialize or deserialize it. (Again, however, codegen
-
-handles this automatically and this registration doesn't typically need
-
-to be performed manually.)
+This class contains initialization functions for various different types used in NetworkVariables. Generally speaking, these methods are called by a module initializer created by codegen (NetworkBehaviourILPP) and do not need to be called manually. There are two types of initializers: Serializers and EqualityCheckers. Every type must have an EqualityChecker registered to it in order to be used in NetworkVariable; however, not all types need a Serializer. Types without a serializer registered will fall back to using the delegates in UserNetworkVariableSerialization\<T\>. If no such delegate has been registered, a type without a serializer will throw an exception on the first attempt to serialize or deserialize it. (Again, however, codegen handles this automatically and this registration doesn't typically need to be performed manually.)
 
 </div>
 
@@ -367,9 +281,7 @@ to be performed manually.)
 
 <div class="section">
 
-Exception thrown when the operation require NetworkManager to be
-
-listening.
+Exception thrown when the operation require NetworkManager to be listening.
 
 </div>
 
@@ -385,9 +297,7 @@ Exception thrown when the operation can only be done on the server
 
 <div class="section">
 
-A class representing a client that is currently in the process of
-
-connecting
+A class representing a client that is currently in the process of connecting
 
 </div>
 
@@ -403,11 +313,7 @@ Represents the common base class for Rpc attributes.
 
 <div class="section">
 
-Used for local notifications of various scene events. The OnSceneEvent
-
-of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-
-to provide scene event status.
+Used for local notifications of various scene events. The OnSceneEvent of delegate type NetworkSceneManager.SceneEventDelegate uses this class to provide scene event status.
 
 *Note: This is only when EnableSceneManagement is enabled.*
 
@@ -425,11 +331,7 @@ SceneEventType
 
 <div class="section">
 
-Marks a method as ServerRpc.
-
-A ServerRpc marked method will be fired by a client but executed on the
-
-server.
+Marks a method as ServerRpc. A ServerRpc marked method will be fired by a client but executed on the server.
 
 </div>
 
@@ -445,17 +347,7 @@ Exception thrown when an object is not yet spawned
 
 <div class="section">
 
-This class is used to register user serialization with NetworkVariables
-
-for types that are serialized via user serialization, such as with
-
-FastBufferReader and FastBufferWriter extension methods. Finding those
-
-methods isn't achievable efficiently at runtime, so this allows users to
-
-tell NetworkVariable about those extension methods (or simply pass in a
-
-lambda)
+This class is used to register user serialization with NetworkVariables for types that are serialized via user serialization, such as with FastBufferReader and FastBufferWriter extension methods. Finding those methods isn't achievable efficiently at runtime, so this allows users to tell NetworkVariable about those extension methods (or simply pass in a lambda)
 
 </div>
 
@@ -473,11 +365,7 @@ Exception thrown when a visibility change fails
 
 <div class="section">
 
-Helper class for doing bitwise reads for a FastBufferReader. Ensures all
-
-bitwise reads end on proper byte alignment so FastBufferReader doesn't
-
-have to be concerned with misaligned reads.
+Helper class for doing bitwise reads for a FastBufferReader. Ensures all bitwise reads end on proper byte alignment so FastBufferReader doesn't have to be concerned with misaligned reads.
 
 </div>
 
@@ -485,11 +373,7 @@ have to be concerned with misaligned reads.
 
 <div class="section">
 
-Helper class for doing bitwise writes for a FastBufferWriter. Ensures
-
-all bitwise writes end on proper byte alignment so FastBufferWriter
-
-doesn't have to be concerned with misaligned writes.
+Helper class for doing bitwise writes for a FastBufferWriter. Ensures all bitwise writes end on proper byte alignment so FastBufferWriter doesn't have to be concerned with misaligned writes.
 
 </div>
 
@@ -506,31 +390,7 @@ Implemented as a ref struct for two reasons:
 2. The BufferSerializer must always be passed by reference and can't be
     copied
 
-Ref structs help enforce both of those rules: they can't ref live the
-
-stack context in which they were created, and they're always passed by
-
-reference no matter what.
-
-BufferSerializer doesn't wrapp FastBufferReader or FastBufferWriter
-
-directly because it can't. ref structs can't implement interfaces, and
-
-in order to be able to have two different implementations with the same
-
-interface (which allows us to avoid an "if(IsReader)" on every call),
-
-the thing directly wrapping the struct has to implement an interface. So
-
-IReaderWriter exists as the interface, which is implemented by a normal
-
-struct, while the ref struct wraps the normal one to enforce the two
-
-above requirements. (Allowing direct access to the IReaderWriter struct
-
-would allow dangerous things to happen because the struct's lifetime
-
-could outlive the Reader/Writer's.)
+Ref structs help enforce both of those rules: they can't ref live the stack context in which they were created, and they're always passed by reference no matter what. BufferSerializer doesn't wrapp FastBufferReader or FastBufferWriter directly because it can't. ref structs can't implement interfaces, and in order to be able to have two different implementations with the same interface (which allows us to avoid an "if(IsReader)" on every call), the thing directly wrapping the struct has to implement an interface. So IReaderWriter exists as the interface, which is implemented by a normal struct, while the ref struct wraps the normal one to enforce the two above requirements. (Allowing direct access to the IReaderWriter struct would allow dangerous things to happen because the struct's lifetime could outlive the Reader/Writer's.)
 
 </div>
 
@@ -540,9 +400,7 @@ could outlive the Reader/Writer's.)
 
 Client-Side RPC Can be used with any client-side remote procedure call
 
-Note: Typically this is used primarily for sending to a specific list of
-
-clients as opposed to the default (all). ClientRpcSendParams
+Note: Typically this is used primarily for sending to a specific list of clients as opposed to the default (all). ClientRpcSendParams
 
 </div>
 
@@ -550,9 +408,7 @@ clients as opposed to the default (all). ClientRpcSendParams
 
 <div class="section">
 
-Client-Side RPC Place holder. ServerRpcParams Note: Server will always
-
-be the sender, so this structure is a place holder
+Client-Side RPC Place holder. ServerRpcParams Note: Server will always be the sender, so this structure is a place holder
 
 </div>
 
@@ -560,11 +416,7 @@ be the sender, so this structure is a place holder
 
 <div class="section">
 
-Client-Side RPC The send parameters, when sending client RPCs, provides
-
-you wil the ability to target specific clients as a managed or unmanaged
-
-list: TargetClientIds and TargetClientIdsNativeArray
+Client-Side RPC The send parameters, when sending client RPCs, provides you wil the ability to target specific clients as a managed or unmanaged list: TargetClientIds and TargetClientIdsNativeArray
 
 </div>
 
@@ -572,9 +424,7 @@ list: TargetClientIds and TargetClientIdsNativeArray
 
 <div class="section">
 
-Optimized class used for reading values from a byte stream
-
-FastBufferWriter BytePacker ByteUnpacker
+Optimized class used for reading values from a byte stream FastBufferWriter BytePacker ByteUnpacker
 
 </div>
 
@@ -582,9 +432,7 @@ FastBufferWriter BytePacker ByteUnpacker
 
 <div class="section">
 
-Optimized class used for writing values into a byte stream
-
-FastBufferReader BytePacker ByteUnpacker
+Optimized class used for writing values into a byte stream FastBufferReader BytePacker ByteUnpacker
 
 </div>
 
@@ -592,23 +440,7 @@ FastBufferReader BytePacker ByteUnpacker
 
 <div class="section">
 
-This empty struct exists to allow overloading WriteValue based on
-
-generic constraints. At the bytecode level, constraints aren't included
-
-in the method signature, so if multiple methods exist with the same
-
-signature, it causes a compile error because they would end up being
-
-emitted as the same method, even if the constraints are different.
-
-Adding an empty struct with a default value gives them different
-
-signatures in the bytecode, which then allows the compiler to do
-
-overload resolution based on the generic constraints without the user
-
-having to pass the struct in themselves.
+This empty struct exists to allow overloading WriteValue based on generic constraints. At the bytecode level, constraints aren't included in the method signature, so if multiple methods exist with the same signature, it causes a compile error because they would end up being emitted as the same method, even if the constraints are different. Adding an empty struct with a default value gives them different signatures in the bytecode, which then allows the compiler to do overload resolution based on the generic constraints without the user having to pass the struct in themselves.
 
 </div>
 
@@ -616,71 +448,21 @@ having to pass the struct in themselves.
 
 <div class="section">
 
-This empty struct exists to allow overloading WriteValue based on
-
-generic constraints. At the bytecode level, constraints aren't included
-
-in the method signature, so if multiple methods exist with the same
-
-signature, it causes a compile error because they would end up being
-
-emitted as the same method, even if the constraints are different.
-
-Adding an empty struct with a default value gives them different
-
-signatures in the bytecode, which then allows the compiler to do
-
-overload resolution based on the generic constraints without the user
-
-having to pass the struct in themselves.
-
+This empty struct exists to allow overloading WriteValue based on generic constraints. At the bytecode level, constraints aren't included in the method signature, so if multiple methods exist with the same signature, it causes a compile error because they would end up being emitted as the same method, even if the constraints are different. Adding an empty struct with a default value gives them different signatures in the bytecode, which then allows the compiler to do overload resolution based on the generic constraints without the user having to pass the struct in themselves.
 </div>
 
 ### Unity.Netcode.FastBufferWriter.ForNetworkSerializable
 
 <div class="section">
 
-This empty struct exists to allow overloading WriteValue based on
-
-generic constraints. At the bytecode level, constraints aren't included
-
-in the method signature, so if multiple methods exist with the same
-
-signature, it causes a compile error because they would end up being
-
-emitted as the same method, even if the constraints are different.
-
-Adding an empty struct with a default value gives them different
-
-signatures in the bytecode, which then allows the compiler to do
-
-overload resolution based on the generic constraints without the user
-
-having to pass the struct in themselves.
-
+This empty struct exists to allow overloading WriteValue based on generic constraints. At the bytecode level, constraints aren't included in the method signature, so if multiple methods exist with the same signature, it causes a compile error because they would end up being emitted as the same method, even if the constraints are different. Adding an empty struct with a default value gives them different signatures in the bytecode, which then allows the compiler to do overload resolution based on the generic constraints without the user having to pass the struct in themselves.
 </div>
 
 ### Unity.Netcode.FastBufferWriter.ForPrimitives
 
 <div class="section">
 
-This empty struct exists to allow overloading WriteValue based on
-
-generic constraints. At the bytecode level, constraints aren't included
-
-in the method signature, so if multiple methods exist with the same
-
-signature, it causes a compile error because they would end up being
-
-emitted as the same method, even if the constraints are different.
-
-Adding an empty struct with a default value gives them different
-
-signatures in the bytecode, which then allows the compiler to do
-
-overload resolution based on the generic constraints without the user
-
-having to pass the struct in themselves.
+This empty struct exists to allow overloading WriteValue based on generic constraints. At the bytecode level, constraints aren't included in the method signature, so if multiple methods exist with the same signature, it causes a compile error because they would end up being emitted as the same method, even if the constraints are different. Adding an empty struct with a default value gives them different signatures in the bytecode, which then allows the compiler to do overload resolution based on the generic constraints without the user having to pass the struct in themselves.
 
 </div>
 
@@ -688,23 +470,7 @@ having to pass the struct in themselves.
 
 <div class="section">
 
-This empty struct exists to allow overloading WriteValue based on
-
-generic constraints. At the bytecode level, constraints aren't included
-
-in the method signature, so if multiple methods exist with the same
-
-signature, it causes a compile error because they would end up being
-
-emitted as the same method, even if the constraints are different.
-
-Adding an empty struct with a default value gives them different
-
-signatures in the bytecode, which then allows the compiler to do
-
-overload resolution based on the generic constraints without the user
-
-having to pass the struct in themselves.
+This empty struct exists to allow overloading WriteValue based on generic constraints. At the bytecode level, constraints aren't included in the method signature, so if multiple methods exist with the same signature, it causes a compile error because they would end up being emitted as the same method, even if the constraints are different. Adding an empty struct with a default value gives them different signatures in the bytecode, which then allows the compiler to do overload resolution based on the generic constraints without the user having to pass the struct in themselves.
 
 </div>
 
@@ -712,11 +478,7 @@ having to pass the struct in themselves.
 
 <div class="section">
 
-This is a wrapper that adds `INetworkSerializeByMemcpy` support to
-
-existing structs that the developer doesn't have the ability to modify
-
-(for example, external structs like `Guid`).
+This is a wrapper that adds `INetworkSerializeByMemcpy` support to existing structs that the developer doesn't have the ability to modify (for example, external structs like `Guid`).
 
 </div>
 
@@ -724,11 +486,7 @@ existing structs that the developer doesn't have the ability to modify
 
 <div class="section">
 
-A helper struct for serializing NetworkBehaviours over the network. Can
-
-be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled
-
-by the NetworkManager after a while. So a reference pointing to
+A helper struct for serializing NetworkBehaviours over the network. Can be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled by the NetworkManager after a while. So a reference pointing to
 
 </div>
 
@@ -752,9 +510,7 @@ Connection Approval Request
 
 <div class="section">
 
-A helper struct for serializing NetworkObjects over the network. Can be
-
-used in RPCs and NetworkVariable\<T\>.
+A helper struct for serializing NetworkObjects over the network. Can be used in RPCs and NetworkVariable\<T\>.
 
 </div>
 
@@ -762,14 +518,7 @@ used in RPCs and NetworkVariable\<T\>.
 
 <div class="section">
 
-A struct to represent a point of time in a networked game. Time is
-
-stored as a combination of amount of passed ticks + a duration offset.
-
-This struct is meant to replace the Unity Time API for multiplayer
-
-gameplay.
-
+A struct to represent a point of time in a networked game. Time is stored as a combination of amount of passed ticks + a duration offset. This struct is meant to replace the Unity Time API for multiplayer gameplay.
 </div>
 
 ### Unity.Netcode.ServerRpcParams
@@ -794,11 +543,7 @@ The receive parameters for server-side remote procedure calls
 
 <div class="section">
 
-Server-Side RPC Place holder. ServerRpcParams Note: Clients always send
-
-to one destination when sending RPCs to the server so this structure is
-
-a place holder
+Server-Side RPC Place holder. ServerRpcParams Note: Clients always send to one destination when sending RPCs to the server so this structure is a place holder
 
 </div>
 
@@ -808,9 +553,7 @@ a place holder
 
 <div class="section">
 
-Interface for customizing, overriding, spawning, and destroying Network
-
-Prefabs Used by NetworkPrefabHandler
+Interface for customizing, overriding, spawning, and destroying Network Prefabs Used by NetworkPrefabHandler
 
 </div>
 
@@ -826,21 +569,7 @@ Interface for implementing custom serializable types.
 
 <div class="section">
 
-This interface is a "tag" that can be applied to a struct to mark that
-
-struct as being serializable by memcpy. It's up to the developer of the
-
-struct to analyze the struct's contents and ensure it is actually
-
-serializable by memcpy. This requires all of the members of the struct
-
-to be `unmanaged` Plain-Old-Data values - if your struct contains a
-
-pointer (or a type that contains a pointer, like `NativeList&lt;T>`), it
-
-should be serialized via `INetworkSerializable` or via
-
-`FastBufferReader`/`FastBufferWriter` extension methods.
+This interface is a "tag" that can be applied to a struct to mark that struct as being serializable by memcpy. It's up to the developer of the struct to analyze the struct's contents and ensure it is actually serializable by memcpy. This requires all of the members of the struct to be `unmanaged` Plain-Old-Data values - if your struct contains a pointer (or a type that contains a pointer, like `NativeList&lt;T>`), it should be serialized via `INetworkSerializable` or via `FastBufferReader`/`FastBufferWriter` extension methods.
 
 </div>
 
@@ -848,10 +577,7 @@ should be serialized via `INetworkSerializable` or via
 
 <div class="section">
 
-Defines the required interface of a network update system being executed
-
-by the NetworkUpdateLoop.
-
+Defines the required interface of a network update system being executed by the NetworkUpdateLoop.
 </div>
 
 ### Unity.Netcode.IReaderWriter
@@ -868,11 +594,7 @@ Interface for an implementation of one side of a two-way serializer
 
 <div class="section">
 
-Represents the length of a var int encoded hash Note that the HashSize
-
-does not say anything about the actual final output due to the var int
-
-encoding It just says how many bytes the maximum will be
+Represents the length of a var int encoded hash Note that the HashSize does not say anything about the actual final output due to the var int encoding It just says how many bytes the maximum will be
 
 </div>
 
@@ -904,9 +626,7 @@ Represents a netEvent when polling
 
 <div class="section">
 
-Enum representing the different operations available for triggering an
-
-event.
+Enum representing the different operations available for triggering an event.
 
 </div>
 
@@ -966,17 +686,9 @@ RPC delivery types
 
 <div class="section">
 
-Used by NetworkSceneManager to determine if a server invoked scene event
+Used by NetworkSceneManager to determine if a server invoked scene event has started. The returned status is stored in the Unity.Netcode.SceneEventProgress.Status property.
 
-has started. The returned status is stored in the
-
-Unity.Netcode.SceneEventProgress.Status property.
-
-*Note: This was formally known as SwitchSceneProgress which contained
-
-the . All s are now delivered by the OnSceneEvent event handler via the
-
-SceneEvent parameter.*
+*Note: This was formally known as SwitchSceneProgress which contained the . All s are now delivered by the OnSceneEvent event handler via the SceneEvent parameter.*
 
 </div>
 
@@ -984,14 +696,7 @@ SceneEvent parameter.*
 
 <div class="section">
 
-The different types of scene events communicated between a server and
-
-client.
-
-Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
-
-messages.
-
+The different types of scene events communicated between a server and client. Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage messages.
 *Note: This is only when EnableSceneManagement is enabled.*
 
 See also:
@@ -1046,9 +751,7 @@ Delegate type for checking visibility
 
 <div class="section">
 
-Delegate declaration for the OnLoadEventCompleted and
-
-OnUnloadEventCompleted events.
+Delegate declaration for the OnLoadEventCompleted and OnUnloadEventCompleted events.
 
 See also:
 
@@ -1148,14 +851,7 @@ Unity.Netcode.SceneEventData
 
 <div class="section">
 
-Delegate declaration for the VerifySceneBeforeLoading handler that
-
-provides an additional level of scene loading security and/or validation
-
-to assure the scene being loaded is valid scene to be loaded in the
-
-LoadSceneMode specified.
-
+Delegate declaration for the VerifySceneBeforeLoading handler that provides an additional level of scene loading security and/or validation to assure the scene being loaded is valid scene to be loaded in the LoadSceneMode specified.
 </div>
 
 ### Unity.Netcode.NetworkTransport.TransportEventDelegate

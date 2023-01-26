@@ -31,9 +31,7 @@ public interface INetworkSerializable
 
 <div class="markdown level1 summary">
 
-Provides bi-directional serialization to read and write the desired data
-
-to serialize this type.
+Provides bi-directional serialization to read and write the desired data to serialize this type.
 
 </div>
 

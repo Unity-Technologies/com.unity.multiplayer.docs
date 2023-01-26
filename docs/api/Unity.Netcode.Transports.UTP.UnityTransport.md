@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:38:42 pm
 
 <div class="markdown level0 summary">
 
-The Netcode for GameObjects NetworkTransport for UnityTransport. Note:
-
-This is highly recommended to use over UNet.
+The Netcode for GameObjects NetworkTransport for UnityTransport. Note: This is highly recommended to use over UNet.
 
 </div>
 

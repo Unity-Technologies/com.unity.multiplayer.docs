@@ -6,14 +6,7 @@ date modified: Wednesday, January 25th 2023, 5:36:29 pm
 ---
 
 <div class="markdown level0 summary">
-
-A struct to represent a point of time in a networked game. Time is
-
-stored as a combination of amount of passed ticks + a duration offset.
-
-This struct is meant to replace the Unity Time API for multiplayer
-
-gameplay.
+A struct to represent a point of time in a networked game. Time is stored as a combination of amount of passed ticks + a duration offset. This struct is meant to replace the Unity Time API for multiplayer gameplay.
 
 </div>
 

@@ -48,10 +48,7 @@ public sealed class NetworkObject : MonoBehaviour
 ### AlwaysReplicateAsRoot
 
 <div class="markdown level1 summary">
-
-If true, the object will always be replicated as root on clients and the
-
-parent will be ignored.
+If true, the object will always be replicated as root on clients and the parent will be ignored.
 
 </div>
 
@@ -99,10 +96,7 @@ public bool AutoObjectParentSync
 
 <div class="markdown level1 summary">
 
-Delegate invoked when the netcode needs to know if the object should be
-
-visible to a client, if null it will assume true
-
+Delegate invoked when the netcode needs to know if the object should be visible to a client, if null it will assume true
 </div>
 
 <div class="markdown level1 conceptual">
@@ -125,9 +119,7 @@ public NetworkObject.VisibilityDelegate CheckObjectVisibility
 
 <div class="markdown level1 summary">
 
-Whether or not to destroy this object if it's owner is destroyed. If
-
-true, the objects ownership will be given to the server.
+Whether or not to destroy this object if it's owner is destroyed. If true, the objects ownership will be given to the server.
 
 </div>
 
@@ -152,7 +144,6 @@ public bool DontDestroyWithOwner
 <div class="markdown level1 summary">
 
 Delegate invoked when the netcode needs to know if it should include the
-
 transform when spawning the object, if null it will assume true
 
 </div>
@@ -179,9 +170,7 @@ public NetworkObject.SpawnDelegate IncludeTransformWhenSpawning
 
 <div class="markdown level1 summary">
 
-Gets whether or not the object should be automatically removed when the
-
-scene is unloaded.
+Gets whether or not the object should be automatically removed when the scene is unloaded.
 
 </div>
 
@@ -253,9 +242,7 @@ public bool IsOwnedByServer { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is owned by the local player or if the object is the
-
-local player object
+Gets if the object is owned by the local player or if the object is the local player object
 
 </div>
 
@@ -303,9 +290,7 @@ public bool IsPlayerObject { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is a SceneObject, null if it's not yet spawned but is
-
-a scene object.
+Gets if the object is a SceneObject, null if it's not yet spawned but is a scene object.
 
 </div>
 
@@ -451,9 +436,7 @@ public void ChangeOwnership(ulong newOwnerClientId)
 
 <div class="markdown level1 summary">
 
-Despawns the of this NetworkObject and sends a destroy message for it to
-
-all connected clients.
+Despawns the of this NetworkObject and sends a destroy message for it to all connected clients.
 
 </div>
 
@@ -611,12 +594,7 @@ invisible", for a currently visible NetworkObject.
 
 
 
-Dynamically Spawned: NetworkObjects will be despawned and destroyed on
-
-the targeted client's side.
-In-Scene Placed: NetworkObjects will only be despawned on the targeted
-
-client's side.
+Dynamically Spawned: NetworkObjects will be despawned and destroyed on the targeted client's side. In-Scene Placed: NetworkObjects will only be despawned on the targeted client's side.
 
 
 
@@ -630,9 +608,7 @@ NetworkShow(UInt64) or NetworkShow(List\<NetworkObject\>, UInt64)
 
 <div class="markdown level1 summary">
 
-Makes a list of previously hidden NetworkObjects "netcode visible" for
-
-the client specified.
+Makes a list of previously hidden NetworkObjects "netcode visible" for the client specified.
 
 </div>
 
@@ -657,18 +633,11 @@ public static void NetworkShow(List<NetworkObject> networkObjects, ulong clientI
 
 <div class="markdown level1 remarks">
 
-Usage: Use to start sending updates for previously hidden NetworkObjects
-
-to the targeted client.
+Usage: Use to start sending updates for previously hidden NetworkObjects to the targeted client.
 
 
 
-Dynamically Spawned: NetworkObjects will be instantiated and spawned on
-
-the targeted client's side.
-In-Scene Placed: Already instantiated but despawned NetworkObjects will
-
-be spawned on the targeted client's side.
+Dynamically Spawned: NetworkObjects will be instantiated and spawned on the targeted client's side. In-Scene Placed: Already instantiated but despawned NetworkObjects will be spawned on the targeted client's side.
 
 
 
@@ -682,9 +651,7 @@ NetworkHide(UInt64) or NetworkHide(List\<NetworkObject\>, UInt64)
 
 <div class="markdown level1 summary">
 
-Makes the previously hidden NetworkObject "netcode visible" to the
-
-targeted client.
+Makes the previously hidden NetworkObject "netcode visible" to the targeted client.
 
 </div>
 
@@ -708,18 +675,11 @@ public void NetworkShow(ulong clientId)
 
 <div class="markdown level1 remarks">
 
-Usage: Use to start sending updates for a previously hidden
-
-NetworkObject to the targeted client.
+Usage: Use to start sending updates for a previously hidden NetworkObject to the targeted client.
 
 
 
-Dynamically Spawned: NetworkObjects will be instantiated and spawned on
-
-the targeted client side.
-In-Scene Placed: The instantiated but despawned NetworkObjects will be
-
-spawned on the targeted client side.
+Dynamically Spawned: NetworkObjects will be instantiated and spawned on the targeted client side. In-Scene Placed: The instantiated but despawned NetworkObjects will be spawned on the targeted client side.
 
 
 
@@ -733,9 +693,7 @@ NetworkHide(UInt64) or NetworkHide(List\<NetworkObject\>, UInt64)
 
 <div class="markdown level1 summary">
 
-Removes all ownership of an object from any client. Can only be called
-
-from server
+Removes all ownership of an object from any client. Can only be called from server
 
 </div>
 
@@ -753,9 +711,7 @@ public void RemoveOwnership()
 
 <div class="markdown level1 summary">
 
-Spawns this NetworkObject across the network. Can only be called from
-
-the Server
+Spawns this NetworkObject across the network. Can only be called from the Server
 
 </div>
 
@@ -779,9 +735,7 @@ public void Spawn(bool destroyWithScene = false)
 
 <div class="markdown level1 summary">
 
-Spawns a NetworkObject across the network and makes it the player object
-
-for the given client
+Spawns a NetworkObject across the network and makes it the player object for the given client
 
 </div>
 
@@ -806,9 +760,7 @@ public void SpawnAsPlayerObject(ulong clientId, bool destroyWithScene = false)
 
 <div class="markdown level1 summary">
 
-Spawns a NetworkObject across the network with a given owner. Can only
-
-be called from server
+Spawns a NetworkObject across the network with a given owner. Can only be called from server
 
 </div>
 
@@ -862,10 +814,7 @@ public bool TryRemoveParent(bool worldPositionStays = true)
 #### Remarks
 
 <div class="markdown level1 remarks">
-
-This is a more convenient way to remove the parent without having to
-
-cast the null value to either or NetworkObject
+This is a more convenient way to remove the parent without having to cast the null value to either or NetworkObject
 
 </div>
 

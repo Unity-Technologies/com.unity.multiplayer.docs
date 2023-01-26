@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:17 pm
 
 <div class="markdown level0 summary">
 
-Client-Side RPC Can be used with any client-side remote procedure call
-
-Note: Typically this is used primarily for sending to a specific list of
-
-clients as opposed to the default (all). ClientRpcSendParams
+Client-Side RPC Can be used with any client-side remote procedure call Note: Typically this is used primarily for sending to a specific list of clients as opposed to the default (all). ClientRpcSendParams
 
 </div>
 

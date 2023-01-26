@@ -6,12 +6,7 @@ date modified: Wednesday, January 25th 2023, 5:36:30 pm
 ---
 
 <div class="markdown level0 summary">
-
-NetworkTimeSystem is a standalone system which can be used to run a
-
-network time simulation. The network time system maintains both a local
-
-and a server time. The local time is based on
+NetworkTimeSystem is a standalone system which can be used to run a network time simulation. The network time system maintains both a local and a server time. The local time is based on
 
 </div>
 
@@ -156,9 +151,7 @@ public double AdjustmentRatio { get; set; }
 
 <div class="markdown level1 summary">
 
-Gets or sets a threshold in seconds used to force a hard catchup of
-
-network time.
+Gets or sets a threshold in seconds used to force a hard catchup of network time.
 
 </div>
 
@@ -182,11 +175,7 @@ public double HardResetThresholdSec { get; set; }
 
 <div class="markdown level1 summary">
 
-Gets or sets the amount of time in seconds the server should buffer
-
-incoming client messages. This increases the difference between local
-
-and server time so that messages arrive earlier on the server.
+Gets or sets the amount of time in seconds the server should buffer incoming client messages. This increases the difference between local and server time so that messages arrive earlier on the server.
 
 </div>
 
@@ -234,15 +223,7 @@ public double LocalTime { get; }
 
 <div class="markdown level1 summary">
 
-Gets or sets the amount of the time in seconds the client should buffer
-
-incoming messages from the server. This increases server time. A higher
-
-value increases latency but makes the game look more smooth in bad
-
-networking conditions. This value must be higher than the tick length
-
-client side.
+Gets or sets the amount of the time in seconds the client should buffer incoming messages from the server. This increases server time. A higher value increases latency but makes the game look more smooth in bad networking conditions. This value must be higher than the tick length client side.
 
 </div>
 
@@ -292,9 +273,7 @@ public double ServerTime { get; }
 
 <div class="markdown level1 summary">
 
-Advances the time system by a certain amount of time. Should be called
-
-once per frame with Time.unscaledDeltaTime or similar.
+Advances the time system by a certain amount of time. Should be called once per frame with Time.unscaledDeltaTime or similar.
 
 </div>
 
@@ -349,11 +328,7 @@ public void Reset(double serverTimeSec, double rttSec)
 
 <div class="markdown level1 summary">
 
-Creates a new instance of the NetworkTimeSystem class for a server
-
-instance. The server will not apply any buffer values which ensures that
-
-local time equals server time.
+Creates a new instance of the NetworkTimeSystem class for a server instance. The server will not apply any buffer values which ensures that local time equals server time.
 
 </div>
 
@@ -377,9 +352,7 @@ public static NetworkTimeSystem ServerTimeSystem()
 
 <div class="markdown level1 summary">
 
-Synchronizes the time system with up-to-date network statistics but does
-
-not change any time values or advance the time.
+Synchronizes the time system with up-to-date network statistics but does not change any time values or advance the time.
 
 </div>
 

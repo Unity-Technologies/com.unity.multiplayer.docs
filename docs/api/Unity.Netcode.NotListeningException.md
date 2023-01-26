@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:36:50 pm
 
 <div class="markdown level0 summary">
 
-Exception thrown when the operation require NetworkManager to be
-
-listening.
+Exception thrown when the operation require NetworkManager to be listening.
 
 </div>
 

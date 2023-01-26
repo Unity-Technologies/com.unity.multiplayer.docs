@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:38:34 pm
 
 <div class="markdown level0 summary">
 
-Provides an interface that overrides the ability to create your own
-
-drivers and pipelines
+Provides an interface that overrides the ability to create your own drivers and pipelines
 
 </div>
 

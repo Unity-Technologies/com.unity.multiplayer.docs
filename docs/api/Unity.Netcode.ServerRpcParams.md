@@ -74,10 +74,7 @@ public struct ServerRpcParams
 ### Receive
 
 <div class="markdown level1 summary">
-
-The client RPC receive parameters provides you with the sender's
-
-identifier
+The client RPC receive parameters provides you with the sender's identifier
 
 </div>
 

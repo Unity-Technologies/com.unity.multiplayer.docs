@@ -16,31 +16,7 @@ Implemented as a ref struct for two reasons:
 2. The BufferSerializer must always be passed by reference and can't be
     copied
 
-Ref structs help enforce both of those rules: they can't ref live the
-
-stack context in which they were created, and they're always passed by
-
-reference no matter what.
-
-BufferSerializer doesn't wrapp FastBufferReader or FastBufferWriter
-
-directly because it can't. ref structs can't implement interfaces, and
-
-in order to be able to have two different implementations with the same
-
-interface (which allows us to avoid an "if(IsReader)" on every call),
-
-the thing directly wrapping the struct has to implement an interface. So
-
-IReaderWriter exists as the interface, which is implemented by a normal
-
-struct, while the ref struct wraps the normal one to enforce the two
-
-above requirements. (Allowing direct access to the IReaderWriter struct
-
-would allow dangerous things to happen because the struct's lifetime
-
-could outlive the Reader/Writer's.)
+Ref structs help enforce both of those rules: they can't ref live the stack context in which they were created, and they're always passed by reference no matter what. BufferSerializer doesn't wrapp FastBufferReader or FastBufferWriter directly because it can't. ref structs can't implement interfaces, and in order to be able to have two different implementations with the same interface (which allows us to avoid an "if(IsReader)" on every call), the thing directly wrapping the struct has to implement an interface. So IReaderWriter exists as the interface, which is implemented by a normal struct, while the ref struct wraps the normal one to enforce the two above requirements. (Allowing direct access to the IReaderWriter struct would allow dangerous things to happen because the struct's lifetime could outlive the Reader/Writer's.)
 
 </div>
 

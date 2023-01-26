@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:14 pm
 
 <div class="markdown level0 summary">
 
-Marks a method as ClientRpc.
-
-A ClientRpc marked method will be fired by the server but executed on
-
-clients.
+Marks a method as ClientRpc. A ClientRpc marked method will be fired by the server but executed on clients.
 
 </div>
 

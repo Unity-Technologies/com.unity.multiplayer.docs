@@ -7,13 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:54 pm
 
 <div class="markdown level0 summary">
 
-Primary handler to add or remove customized spawn and destroy handlers
-
-for a network prefab (i.e. a prefab with a NetworkObject component)
-
-Register custom prefab handlers by implementing the
-
-INetworkPrefabInstanceHandler interface.
+Primary handler to add or remove customized spawn and destroy handlers for a network prefab (i.e. a prefab with a NetworkObject component) Register custom prefab handlers by implementing the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -103,9 +97,7 @@ public class NetworkPrefabHandler
 
 <div class="markdown level1 summary">
 
-Use a to register a class that implements the
-
-INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
+Use a to register a class that implements the INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
@@ -136,11 +128,7 @@ public bool AddHandler(GameObject networkPrefabAsset, INetworkPrefabInstanceHand
 
 <div class="markdown level1 summary">
 
-Use a Unity.Netcode.NetworkObject.GlobalObjectIdHash to register a class
-
-that implements the INetworkPrefabInstanceHandler interface with the
-
-NetworkPrefabHandler
+Use a Unity.Netcode.NetworkObject.GlobalObjectIdHash to register a class that implements the INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
@@ -171,9 +159,7 @@ public bool AddHandler(uint globalObjectIdHash, INetworkPrefabInstanceHandler in
 
 <div class="markdown level1 summary">
 
-Use a NetworkObject to register a class that implements the
-
-INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
+Use a NetworkObject to register a class that implements the INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
@@ -204,11 +190,7 @@ public bool AddHandler(NetworkObject prefabAssetNetworkObject, INetworkPrefabIns
 
 <div class="markdown level1 summary">
 
-HOST ONLY! Since a host is unique and is considered both a client and a
-
-server, for each source NetworkPrefab you must manually register all
-
-potential target overrides that have the NetworkObject component.
+HOST ONLY! Since a host is unique and is considered both a client and a server, for each source NetworkPrefab you must manually register all potential target overrides that have the NetworkObject component.
 
 </div>
 
@@ -233,9 +215,7 @@ public void RegisterHostGlobalObjectIdHashValues(GameObject sourceNetworkPrefab,
 
 <div class="markdown level1 summary">
 
-Use the of the overridden network prefab asset to remove a registered
-
-class that implements the INetworkPrefabInstanceHandler interface.
+Use the of the overridden network prefab asset to remove a registered class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -265,11 +245,7 @@ public bool RemoveHandler(GameObject networkPrefabAsset)
 
 <div class="markdown level1 summary">
 
-Use the Unity.Netcode.NetworkObject.GlobalObjectIdHash of the overridden
-
-network prefab asset to remove a registered class that implements the
-
-INetworkPrefabInstanceHandler interface.
+Use the Unity.Netcode.NetworkObject.GlobalObjectIdHash of the overridden network prefab asset to remove a registered class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -299,11 +275,7 @@ public bool RemoveHandler(uint globalObjectIdHash)
 
 <div class="markdown level1 summary">
 
-Use the NetworkObject of the overridden network prefab asset to remove a
-
-registered class that implements the INetworkPrefabInstanceHandler
-
-interface.
+Use the NetworkObject of the overridden network prefab asset to remove a registered class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 

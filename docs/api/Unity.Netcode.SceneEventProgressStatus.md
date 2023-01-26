@@ -7,12 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:37:50 pm
 
 <div>
 
-Used by NetworkSceneManager to determine if a server invoked scene event
-
-has started. The returned status is stored in the
-
-Unity.Netcode.SceneEventProgress.Status property.
-*Note: This was formally known as SwitchSceneProgress which contained the . All s are now delivered by the OnSceneEvent event handler via the SceneEvent parameter.*
+Used by NetworkSceneManager to determine if a server invoked scene event has started. The returned status is stored in the Unity.Netcode.SceneEventProgress.Status property. *Note: This was formally known as SwitchSceneProgress which contained the . All s are now delivered by the OnSceneEvent event handler via the SceneEvent parameter.*
 
 </div>
 

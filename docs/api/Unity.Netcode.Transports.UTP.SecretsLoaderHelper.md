@@ -7,13 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:38:38 pm
 
 <div class="markdown level0 summary">
 
-Component to add to a NetworkManager if you want the certificates to be
-
-loaded from files. Mostly helpful to ease development and testing,
-
-especially with self-signed certificates
-
-Shipping code should make the calls to
+Component to add to a NetworkManager if you want the certificates to be loaded from files. Mostly helpful to ease development and testing, especially with self-signed certificates Shipping code should make the calls to
 
 * SetServerSecrets
 * SetClientSecrets directly, instead of relying on this.
@@ -106,11 +100,7 @@ public string ClientCAFilePath { get; set; }
 
 <div class="markdown level1 summary">
 
-Client CA Override. Only useful for development with self-signed
-
-certificates. Certificate content, for platforms that lack file access
-
-(WebGL)
+Client CA Override. Only useful for development with self-signed certificates. Certificate content, for platforms that lack file access (WebGL)
 
 </div>
 

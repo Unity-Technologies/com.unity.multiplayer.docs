@@ -7,15 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:58 pm
 
 <div class="markdown level0 summary">
 
-A ScriptableObject for holding a network prefabs list, which can be
-
-shared between multiple NetworkManagers.
-
-When NetworkManagers hold references to this list, modifications to the
-
-list at runtime will be picked up by all NetworkManagers that reference
-
-it.
+A ScriptableObject for holding a network prefabs list, which can be shared between multiple NetworkManagers. When NetworkManagers hold references to this list, modifications to the list at runtime will be picked up by all NetworkManagers that reference it.
 
 </div>
 
@@ -57,11 +49,7 @@ public class NetworkPrefabsList : ScriptableObject
 
 <div class="markdown level1 summary">
 
-Read-only view into the prefabs list, enabling iterating and examining
-
-the list. Actually modifying the list should be done using
-
-Add(NetworkPrefab) and Remove(NetworkPrefab).
+Read-only view into the prefabs list, enabling iterating and examining the list. Actually modifying the list should be done using Add(NetworkPrefab) and Remove(NetworkPrefab).
 
 </div>
 
@@ -87,10 +75,7 @@ public IReadOnlyList<NetworkPrefab> PrefabList { get; }
 
 <div class="markdown level1 summary">
 
-Adds a prefab to the prefab list. Performing this here will apply the
-
-operation to all NetworkManagers that reference this list.
-
+Adds a prefab to the prefab list. Performing this here will apply the operation to all NetworkManagers that reference this list.
 </div>
 
 <div class="markdown level1 conceptual">
@@ -173,9 +158,7 @@ public bool Contains(NetworkPrefab prefab)
 
 <div class="markdown level1 summary">
 
-Removes a prefab from the prefab list. Performing this here will apply
-
-the operation to all NetworkManagers that reference this list.
+Removes a prefab from the prefab list. Performing this here will apply the operation to all NetworkManagers that reference this list.
 
 </div>
 

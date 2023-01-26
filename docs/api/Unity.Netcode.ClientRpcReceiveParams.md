@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:19 pm
 
 <div class="markdown level0 summary">
 
-Client-Side RPC Place holder. ServerRpcParams Note: Server will always
-
-be the sender, so this structure is a place holder
+Client-Side RPC Place holder. ServerRpcParams Note: Server will always be the sender, so this structure is a place holder
 
 </div>
 

@@ -6,18 +6,7 @@ date modified: Wednesday, January 25th 2023, 5:39:22 pm
 ---
 
 <div class="markdown level0 summary">
-
-This class is used to register user serialization with NetworkVariables
-
-for types that are serialized via user serialization, such as with
-
-FastBufferReader and FastBufferWriter extension methods. Finding those
-
-methods isn't achievable efficiently at runtime, so this allows users to
-
-tell NetworkVariable about those extension methods (or simply pass in a
-
-lambda)
+This class is used to register user serialization with NetworkVariables for types that are serialized via user serialization, such as with FastBufferReader and FastBufferWriter extension methods. Finding those methods isn't achievable efficiently at runtime, so this allows users to tell NetworkVariable about those extension methods (or simply pass in a lambda)
 
 </div>
 

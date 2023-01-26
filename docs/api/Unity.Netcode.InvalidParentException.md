@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:06 pm
 
 <div class="markdown level0 summary">
 
-Exception thrown when the new parent candidate of the NetworkObject is
-
-not valid
+Exception thrown when the new parent candidate of the NetworkObject is not valid
 
 </div>
 

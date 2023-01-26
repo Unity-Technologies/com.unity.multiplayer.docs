@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:36:28 pm
 
 <div class="markdown level0 summary">
 
-Provides discretized time. This is useful for games that require ticks
-
-happening at regular interval on the server and clients.
+Provides discretized time. This is useful for games that require ticks happening at regular interval on the server and clients.
 
 </div>
 
@@ -153,11 +151,7 @@ public const int NoTick = -2147483648
 
 <div class="markdown level1 summary">
 
-The current local time. This is the time at which predicted or client
-
-authoritative objects move. This value is accurate when called in Update
-
-or during the Tick event but does not work correctly for FixedUpdate.
+The current local time. This is the time at which predicted or client authoritative objects move. This value is accurate when called in Update or during the Tick event but does not work correctly for FixedUpdate.
 
 </div>
 
@@ -181,13 +175,7 @@ public NetworkTime LocalTime { get; }
 
 <div class="markdown level1 summary">
 
-The current server time. This value is mostly used for internal purposes
-
-and to interpolate state received from the server. This value is
-
-accurate when called in Update or during the Tick event but does not
-
-work correctly for FixedUpdate.
+The current server time. This value is mostly used for internal purposes and to interpolate state received from the server. This value is accurate when called in Update or during the Tick event but does not work correctly for FixedUpdate.
 
 </div>
 
@@ -211,9 +199,7 @@ public NetworkTime ServerTime { get; }
 
 <div class="markdown level1 summary">
 
-The TickRate of the tick system. This is used to decide how often a
-
-fixed network tick is run.
+The TickRate of the tick system. This is used to decide how often a fixed network tick is run.
 
 </div>
 
@@ -264,9 +250,7 @@ public void Reset(double localTimeSec, double serverTimeSec)
 
 <div class="markdown level1 summary">
 
-Called after advancing the time system to run ticks based on the
-
-difference in time.
+Called after advancing the time system to run ticks based on the difference in time.
 
 </div>
 

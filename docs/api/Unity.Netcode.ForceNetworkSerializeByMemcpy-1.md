@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:50 pm
 
 <div class="markdown level0 summary">
 
-This is a wrapper that adds `INetworkSerializeByMemcpy` support to
-
-existing structs that the developer doesn't have the ability to modify
-
-(for example, external structs like `Guid`).
+This is a wrapper that adds `INetworkSerializeByMemcpy` support to existing structs that the developer doesn't have the ability to modify (for example, external structs like `Guid`).
 
 </div>
 

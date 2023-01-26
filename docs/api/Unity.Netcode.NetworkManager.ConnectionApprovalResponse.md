@@ -121,9 +121,7 @@ public bool Approved
 
 <div class="markdown level1 summary">
 
-If true, a player object will be created. Otherwise the client will have
-
-no object.
+If true, a player object will be created. Otherwise the client will have no object.
 
 </div>
 
@@ -147,19 +145,7 @@ public bool CreatePlayerObject
 
 <div class="markdown level1 summary">
 
-If the Approval decision cannot be made immediately, the client code can
-
-set Pending to true, keep a reference to the ConnectionApprovalResponse
-
-object and write to it later. Client code must exercise care to setting
-
-all the members to the value it wants before marking Pending to false,
-
-to indicate completion. If the field is set as Pending = true, we'll
-
-monitor the object until it gets set to not pending anymore and use the
-
-parameters then.
+If the Approval decision cannot be made immediately, the client code can set Pending to true, keep a reference to the ConnectionApprovalResponse object and write to it later. Client code must exercise care to setting all the members to the value it wants before marking Pending to false, to indicate completion. If the field is set as Pending = true, we'll monitor the object until it gets set to not pending anymore and use the parameters then.
 
 </div>
 
@@ -183,11 +169,7 @@ public bool Pending
 
 <div class="markdown level1 summary">
 
-The prefabHash to use for the client. If createPlayerObject is false,
-
-this is ignored. If playerPrefabHash is null, the default player prefab
-
-is used.
+The prefabHash to use for the client. If createPlayerObject is false, this is ignored. If playerPrefabHash is null, the default player prefab is used.
 
 </div>
 
@@ -211,9 +193,7 @@ public uint? PlayerPrefabHash
 
 <div class="markdown level1 summary">
 
-The position to spawn the client at. If null, the prefab position is
-
-used.
+The position to spawn the client at. If null, the prefab position is used.
 
 </div>
 
@@ -237,9 +217,7 @@ public Vector3? Position
 
 <div class="markdown level1 summary">
 
-Optional reason. If Approved is false, this reason will be sent to the
-
-client so they know why they were not approved.
+Optional reason. If Approved is false, this reason will be sent to the client so they know why they were not approved.
 
 </div>
 
@@ -263,9 +241,7 @@ public string Reason
 
 <div class="markdown level1 summary">
 
-The rotation to spawn the client with. If null, the prefab position is
-
-used.
+The rotation to spawn the client with. If null, the prefab position is used.
 
 </div>
 

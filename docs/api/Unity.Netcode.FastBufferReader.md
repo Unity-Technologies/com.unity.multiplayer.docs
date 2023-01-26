@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:34 pm
 
 <div class="markdown level0 summary">
 
-Optimized class used for reading values from a byte stream
-
-FastBufferWriter BytePacker ByteUnpacker
+Optimized class used for reading values from a byte stream FastBufferWriter BytePacker ByteUnpacker
 
 </div>
 
@@ -87,33 +85,7 @@ public struct FastBufferReader : IDisposable
 
 <div class="markdown level1 summary">
 
-Create a FastBufferReader from a NativeArray.
-
-A new buffer will be created using the given and the value will be
-
-copied in. FastBufferReader will then own the data.
-
-The exception to this is when the passed in is Allocator.None. In this
-
-scenario, ownership of the data remains with the caller and the reader
-
-will point at it directly. When created with Allocator.None,
-
-FastBufferReader will allocate some internal data using Allocator.Temp
-
-so it should be treated as if it's a ref struct and not allowed to
-
-outlive the context in which it was created (it should neither be
-
-returned from that function nor stored anywhere in heap memory). This is
-
-true, unless the param is explicitly set to i.e.: Allocator.Persistent
-
-in which case it would allow the internal data to Persist for longer,
-
-but the caller should manually call Dispose() when it is no longer
-
-needed.
+Create a FastBufferReader from a NativeArray. A new buffer will be created using the given and the value will be copied in. FastBufferReader will then own the data. The exception to this is when the passed in is Allocator.None. In this scenario, ownership of the data remains with the caller and the reader will point at it directly. When created with Allocator.None, FastBufferReader will allocate some internal data using Allocator.Temp so it should be treated as if it's a ref struct and not allowed to outlive the context in which it was created (it should neither be returned from that function nor stored anywhere in heap memory). This is true, unless the param is explicitly set to i.e.: Allocator.Persistent in which case it would allow the internal data to Persist for longer, but the caller should manually call Dispose() when it is no longer needed.
 
 </div>
 
@@ -141,17 +113,7 @@ public FastBufferReader(NativeArray<byte> buffer, Allocator copyAllocator, int l
 
 <div class="markdown level1 summary">
 
-Create a FastBufferReader from an ArraySegment.
-
-A new buffer will be created using the given allocator and the value
-
-will be copied in. FastBufferReader will then own the data.
-
-Allocator.None is not supported for byte\[\]. If you need this
-
-functionality, use a fixed() block and ensure the FastBufferReader isn't
-
-used outside that block.
+Create a FastBufferReader from an ArraySegment. A new buffer will be created using the given allocator and the value will be copied in. FastBufferReader will then own the data. Allocator.None is not supported for byte\[\]. If you need this functionality, use a fixed() block and ensure the FastBufferReader isn't used outside that block.
 
 </div>
 
@@ -178,33 +140,7 @@ public FastBufferReader(ArraySegment<byte> buffer, Allocator copyAllocator, int 
 
 <div class="markdown level1 summary">
 
-Create a FastBufferReader from an existing byte buffer.
-
-A new buffer will be created using the given and the value will be
-
-copied in. FastBufferReader will then own the data.
-
-The exception to this is when the passed in is Allocator.None. In this
-
-scenario, ownership of the data remains with the caller and the reader
-
-will point at it directly. When created with Allocator.None,
-
-FastBufferReader will allocate some internal data using Allocator.Temp,
-
-so it should be treated as if it's a ref struct and not allowed to
-
-outlive the context in which it was created (it should neither be
-
-returned from that function nor stored anywhere in heap memory). This is
-
-true, unless the param is explicitly set to i.e.: Allocator.Persistent
-
-in which case it would allow the internal data to Persist for longer,
-
-but the caller should manually call Dispose() when it is no longer
-
-needed.
+Create a FastBufferReader from an existing byte buffer. A new buffer will be created using the given and the value will be copied in. FastBufferReader will then own the data. The exception to this is when the passed in is Allocator.None. In this scenario, ownership of the data remains with the caller and the reader will point at it directly. When created with Allocator.None, FastBufferReader will allocate some internal data using Allocator.Temp, so it should be treated as if it's a ref struct and not allowed to outlive the context in which it was created (it should neither be returned from that function nor stored anywhere in heap memory). This is true, unless the param is explicitly set to i.e.: Allocator.Persistent in which case it would allow the internal data to Persist for longer, but the caller should manually call Dispose() when it is no longer needed.
 
 </div>
 
@@ -232,17 +168,7 @@ public FastBufferReader(byte *buffer, Allocator copyAllocator, int length, int o
 
 <div class="markdown level1 summary">
 
-Create a FastBufferReader from an existing byte array.
-
-A new buffer will be created using the given allocator and the value
-
-will be copied in. FastBufferReader will then own the data.
-
-Allocator.None is not supported for byte\[\]. If you need this
-
-functionality, use a fixed() block and ensure the FastBufferReader isn't
-
-used outside that block.
+Create a FastBufferReader from an existing byte array. A new buffer will be created using the given allocator and the value will be copied in. FastBufferReader will then own the data. Allocator.None is not supported for byte\[\]. If you need this functionality, use a fixed() block and ensure the FastBufferReader isn't used outside that block.
 
 </div>
 
@@ -269,31 +195,7 @@ public FastBufferReader(byte[] buffer, Allocator copyAllocator, int length = -1,
 
 <div class="markdown level1 summary">
 
-Create a FastBufferReader from another existing FastBufferReader. This
-
-is typically used when you want to change the copyAllocator that a
-
-reader is allocated to - for example, upgrading a Temp reader to a
-
-Persistent one to be processed later.
-
-A new buffer will be created using the given and the value will be
-
-copied in. FastBufferReader will then own the data.
-
-The exception to this is when the passed in is Allocator.None. In this
-
-scenario, ownership of the data remains with the caller and the reader
-
-will point at it directly. When created with Allocator.None,
-
-FastBufferReader will allocate some internal data using Allocator.Temp,
-
-so it should be treated as if it's a ref struct and not allowed to
-
-outlive the context in which it was created (it should neither be
-
-returned from that function nor stored anywhere in heap memory).
+Create a FastBufferReader from another existing FastBufferReader. This is typically used when you want to change the copyAllocator that a reader is allocated to - for example, upgrading a Temp reader to a Persistent one to be processed later. A new buffer will be created using the given and the value will be copied in. FastBufferReader will then own the data. The exception to this is when the passed in is Allocator.None. In this scenario, ownership of the data remains with the caller and the reader will point at it directly. When created with Allocator.None, FastBufferReader will allocate some internal data using Allocator.Temp, so it should be treated as if it's a ref struct and not allowed to outlive the context in which it was created (it should neither be returned from that function nor stored anywhere in heap memory).
 
 </div>
 
@@ -321,33 +223,7 @@ public FastBufferReader(FastBufferReader reader, Allocator copyAllocator, int le
 
 <div class="markdown level1 summary">
 
-Create a FastBufferReader from a FastBufferWriter.
-
-A new buffer will be created using the given and the value will be
-
-copied in. FastBufferReader will then own the data.
-
-The exception to this is when the passed in is Allocator.None. In this
-
-scenario, ownership of the data remains with the caller and the reader
-
-will point at it directly. When created with Allocator.None,
-
-FastBufferReader will allocate some internal data using Allocator.Temp,
-
-so it should be treated as if it's a ref struct and not allowed to
-
-outlive the context in which it was created (it should neither be
-
-returned from that function nor stored anywhere in heap memory). This is
-
-true, unless the param is explicitly set to i.e.: Allocator.Persistent
-
-in which case it would allow the internal data to Persist for longer,
-
-but the caller should manually call Dispose() when it is no longer
-
-needed.
+Create a FastBufferReader from a FastBufferWriter. A new buffer will be created using the given and the value will be copied in. FastBufferReader will then own the data. The exception to this is when the passed in is Allocator.None. In this scenario, ownership of the data remains with the caller and the reader will point at it directly. When created with Allocator.None, FastBufferReader will allocate some internal data using Allocator.Temp, so it should be treated as if it's a ref struct and not allowed to outlive the context in which it was created (it should neither be returned from that function nor stored anywhere in heap memory). This is true, unless the param is explicitly set to i.e.: Allocator.Persistent in which case it would allow the internal data to Persist for longer, but the caller should manually call Dispose() when it is no longer needed.
 
 </div>
 
@@ -377,9 +253,7 @@ public FastBufferReader(FastBufferWriter writer, Allocator copyAllocator, int le
 
 <div class="markdown level1 summary">
 
-Gets a value indicating whether the reader has been initialized and a
-
-handle allocated.
+Gets a value indicating whether the reader has been initialized and a handle allocated.
 
 </div>
 

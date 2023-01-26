@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:38 pm
 
 <div class="markdown level0 summary">
 
-Optimized class used for writing values into a byte stream
-
-FastBufferReader BytePacker ByteUnpacker
+Optimized class used for writing values into a byte stream FastBufferReader BytePacker ByteUnpacker
 
 </div>
 

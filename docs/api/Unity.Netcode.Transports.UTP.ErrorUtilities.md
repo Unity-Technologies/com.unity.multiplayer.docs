@@ -6,10 +6,7 @@ date modified: Wednesday, January 25th 2023, 5:38:31 pm
 ---
 
 <div class="markdown level0 summary">
-
-Helper utility class to convert error codes to human readable error
-
-messages.
+Helper utility class to convert error codes to human readable error messages.
 
 </div>
 

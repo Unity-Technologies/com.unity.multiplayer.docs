@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:57 pm
 
 <div class="markdown level0 summary">
 
-A class that represents the runtime aspect of network prefabs. This
-
-class contains processed prefabs from the NetworkPrefabsList, as well as
-
-additional modifications (additions and removals) made at runtime.
+A class that represents the runtime aspect of network prefabs. This class contains processed prefabs from the NetworkPrefabsList, as well as additional modifications (additions and removals) made at runtime.
 
 </div>
 
@@ -102,9 +98,7 @@ public class NetworkPrefabs
 
 <div class="markdown level1 summary">
 
-This dictionary provides a quick way to check and see if a NetworkPrefab
-
-has a NetworkPrefab override. Generated at runtime and OnValidate
+This dictionary provides a quick way to check and see if a NetworkPrefab has a NetworkPrefab override. Generated at runtime and OnValidate
 
 </div>
 
@@ -153,11 +147,7 @@ public List<NetworkPrefabsList> NetworkPrefabsLists
 
 <div class="markdown level1 remarks">
 
-This field can be null if no prefabs are pre-configured. Runtime usages
-
-of NetworkPrefabs should not depend on this edit-time field for
-
-execution.
+This field can be null if no prefabs are pre-configured. Runtime usages of NetworkPrefabs should not depend on this edit-time field for execution.
 
 </div>
 
@@ -244,15 +234,7 @@ public bool Add(NetworkPrefab networkPrefab)
 
 <div class="markdown level1 remarks">
 
-The framework does not synchronize this list between clients. Any
-
-runtime changes must be handled manually.
-
-Any modifications made here are not persisted. Permanent configuration
-
-changes should be done through the NetworkPrefabsList scriptable object
-
-property.
+The framework does not synchronize this list between clients. Any runtime changes must be handled manually. Any modifications made here are not persisted. Permanent configuration changes should be done through the NetworkPrefabsList scriptable object property.
 
 </div>
 
@@ -335,10 +317,7 @@ protected void Finalize()
 ### Initialize(Boolean)
 
 <div class="markdown level1 summary">
-
-Processes the NetworkPrefabsList if one is present for use during
-
-runtime execution, else processes Prefabs.
+Processes the NetworkPrefabsList if one is present for use during runtime execution, else processes Prefabs.
 
 </div>
 
@@ -386,16 +365,7 @@ public void Remove(GameObject prefab)
 
 <div class="markdown level1 remarks">
 
-The framework does not synchronize this list between clients. Any
-
-runtime changes must be handled manually.
-
-Any modifications made here are not persisted. Permanent configuration
-
-changes should be done through the NetworkPrefabsList scriptable object
-
-property.
-
+The framework does not synchronize this list between clients. Any runtime changes must be handled manually. Any modifications made here are not persisted. Permanent configuration changes should be done through the NetworkPrefabsList scriptable object property.
 </div>
 
 ### Remove(NetworkPrefab)
@@ -426,14 +396,6 @@ public void Remove(NetworkPrefab prefab)
 
 <div class="markdown level1 remarks">
 
-The framework does not synchronize this list between clients. Any
-
-runtime changes must be handled manually.
-
-Any modifications made here are not persisted. Permanent configuration
-
-changes should be done through the NetworkPrefabsList scriptable object
-
-property.
+The framework does not synchronize this list between clients. Any runtime changes must be handled manually. Any modifications made here are not persisted. Permanent configuration changes should be done through the NetworkPrefabsList scriptable object property.
 
 </div>

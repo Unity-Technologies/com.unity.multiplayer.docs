@@ -164,9 +164,7 @@ public GameObject Prefab
 
 <div class="markdown level1 summary">
 
-Used when hash is selected for the source prefab to override value (i.e.
-
-a direct reference is not possible such as in a multi-project pattern)
+Used when hash is selected for the source prefab to override value (i.e. a direct reference is not possible such as in a multi-project pattern)
 
 </div>
 
@@ -190,13 +188,7 @@ public uint SourceHashToOverride
 
 <div class="markdown level1 summary">
 
-Used when prefab is selected for the source prefab to override value
-
-(i.e. direct reference, the prefab is within the same project) We keep a
-
-separate value as the user might want to have something different than
-
-the default Prefab for the SourcePrefabToOverride
+Used when prefab is selected for the source prefab to override value (i.e. direct reference, the prefab is within the same project) We keep a separate value as the user might want to have something different than the default Prefab for the SourcePrefabToOverride
 
 </div>
 

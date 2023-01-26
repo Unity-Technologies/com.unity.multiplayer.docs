@@ -109,11 +109,7 @@ public NetworkConfig NetworkConfig
 
 <div class="markdown level1 summary">
 
-Gets a dictionary of the clients that have been accepted by the
-
-transport but are still pending by the Netcode. This is only populated
-
-on the server.
+Gets a dictionary of the clients that have been accepted by the transport but are still pending by the Netcode. This is only populated on the server.
 
 </div>
 
@@ -287,9 +283,7 @@ public string ConnectedHostname { get; }
 
 <div class="markdown level1 summary">
 
-The callback to invoke during connection approval. Allows client code to
-
-decide whether or not to allow incoming client connection
+The callback to invoke during connection approval. Allows client code to decide whether or not to allow incoming client connection
 
 </div>
 
@@ -337,11 +331,7 @@ public CustomMessagingManager CustomMessagingManager { get; }
 
 <div class="markdown level1 summary">
 
-When disconnected from the server, the server may send a reason. If a
-
-reason was sent, this property will tell client code what the reason
-
-was. It should be queried after the OnClientDisconnectCallback is called
+When disconnected from the server, the server may send a reason. If a reason was sent, this property will tell client code what the reason was. It should be queried after the OnClientDisconnectCallback is called
 
 </div>
 
@@ -389,13 +379,7 @@ public bool IsApproved { get; }
 
 <div class="markdown level1 remarks">
 
-This only reflects the client's approved status and does not mean the
-
-client has finished the connection and synchronization process. The
-
-server-host will always be approved upon being starting the
-
-NetworkManager IsConnectedClient
+This only reflects the client's approved status and does not mean the client has finished the connection and synchronization process. The server-host will always be approved upon being starting the NetworkManager IsConnectedClient
 
 </div>
 
@@ -427,9 +411,7 @@ public bool IsClient { get; }
 
 <div class="markdown level1 summary">
 
-When true, the client is connected, approved, and synchronized with the
-
-server.
+When true, the client is connected, approved, and synchronized with the server.
 
 </div>
 
@@ -621,9 +603,7 @@ public NetworkTickSystem NetworkTickSystem { get; }
 
 <div class="markdown level1 summary">
 
-Accessor for the NetworkTimeSystem of the NetworkManager. Prefer the use
-
-of the LocalTime and ServerTime properties
+Accessor for the NetworkTimeSystem of the NetworkManager. Prefer the use of the LocalTime and ServerTime properties
 
 </div>
 
@@ -723,9 +703,7 @@ public NetworkTime ServerTime { get; }
 
 <div class="markdown level1 summary">
 
-Can be used to determine if the NetworkManager is currently shutting
-
-itself down
+Can be used to determine if the NetworkManager is currently shutting itself down
 
 </div>
 
@@ -799,47 +777,13 @@ public NetworkSpawnManager SpawnManager { get; }
 
 <div class="markdown level1 summary">
 
-Adds a new prefab to the network prefab list. This can be any GameObject
+Adds a new prefab to the network prefab list. This can be any GameObject with a NetworkObject component, from any source (addressables, asset bundles, Resource.Load, dynamically created, etc) There are three limitations to this method:
 
-with a NetworkObject component, from any source (addressables, asset
+* If you have NetworkConfig.ForceSamePrefabs enabled, you can only do this before starting networking, and the server and all connected clients must all have the same exact set of prefabs added via this method before connecting
 
-bundles, Resource.Load, dynamically created, etc)
+* Adding a prefab on the server does not automatically add it on the client - it's up to you to make sure the client and server are synchronized via whatever method makes sense for your game (RPCs, configs, deterministic loading, etc)
 
-There are three limitations to this method:
-
-* If you have NetworkConfig.ForceSamePrefabs enabled, you can only do
-
-  this before starting networking, and the server and all connected
-
-  clients must all have the same exact set of prefabs added via this
-
-  method before connecting
-
-* Adding a prefab on the server does not automatically add it on the
-
-  client - it's up to you to make sure the client and server are
-
-  synchronized via whatever method makes sense for your game (RPCs,
-
-  configs, deterministic loading, etc)
-
-* If the server sends a Spawn message to a client that has not yet added
-
-  a prefab for, the spawn message and any other relevant messages will
-
-  be held for a configurable time (default 1 second, configured via
-
-  NetworkConfig.SpawnTimeout) before an error is logged. This is
-
-  intented to enable the SDK to gracefully handle unexpected conditions
-
-  (slow disks, slow network, etc) that slow down asset loading. This
-
-  timeout should not be relied on and code shouldn't be written around
-
-  it - your code should be written so that the asset is expected to be
-
-  loaded before it's needed.
+* If the server sends a Spawn message to a client that has not yet added a prefab for, the spawn message and any other relevant messages will be held for a configurable time (default 1 second, configured via NetworkConfig.SpawnTimeout) before an error is logged. This is intented to enable the SDK to gracefully handle unexpected conditions (slow disks, slow network, etc) that slow down asset loading. This timeout should not be relied on and code shouldn't be written around it - your code should be written so that the asset is expected to be loaded before it's needed.
 
 </div>
 
@@ -918,17 +862,7 @@ public void DisconnectClient(ulong clientId, string reason)
 
 <div class="markdown level1 summary">
 
-Returns the to use as the override as could be defined within the
-
-NetworkPrefab list Note: This should be used to create pools (with
-
-NetworkObject components) under the scenario where you are using the
-
-Host model as it spawns everything locally. As such, the override will
-
-not be applied when spawning locally on a Host. Related Classes and
-
-Interfaces: NetworkPrefabHandler INetworkPrefabInstanceHandler
+Returns the to use as the override as could be defined within the NetworkPrefab list Note: This should be used to create pools (with NetworkObject components) under the scenario where you are using the Host model as it spawns everything locally. As such, the override will not be applied when spawning locally on a Host. Related Classes and Interfaces: NetworkPrefabHandler INetworkPrefabInstanceHandler
 
 </div>
 
@@ -980,15 +914,7 @@ public void NetworkUpdate(NetworkUpdateStage updateStage)
 
 <div class="markdown level1 summary">
 
-Remove a prefab from the prefab list. As with AddNetworkPrefab, this is
-
-specific to the client it's called on - calling it on the server does
-
-not automatically remove anything on any of the client processes.
-
-Like AddNetworkPrefab, when NetworkConfig.ForceSamePrefabs is enabled,
-
-this cannot be called after connecting.
+Remove a prefab from the prefab list. As with AddNetworkPrefab, this is specific to the client it's called on - calling it on the server does not automatically remove anything on any of the client processes. Like AddNetworkPrefab, when NetworkConfig.ForceSamePrefabs is enabled, this cannot be called after connecting.
 
 </div>
 
@@ -1130,9 +1056,7 @@ public bool StartServer()
 
 <div class="markdown level1 summary">
 
-The callback to invoke once a client connects. This callback is only ran
-
-on the server and on the local client that connects.
+The callback to invoke once a client connects. This callback is only ran on the server and on the local client that connects.
 
 </div>
 
@@ -1155,10 +1079,7 @@ public event Action<ulong> OnClientConnectedCallback
 ### OnClientDisconnectCallback
 
 <div class="markdown level1 summary">
-
-The callback to invoke when a client disconnects. This callback is only
-
-ran on the server and on the local client that disconnects.
+The callback to invoke when a client disconnects. This callback is only ran on the server and on the local client that disconnects.
 
 </div>
 
@@ -1229,16 +1150,7 @@ public event Action OnTransportFailure
 #### Remarks
 
 <div class="markdown level1 remarks">
-
-A failure of the transport is always followed by the NetworkManager
-
-shutting down. Recovering from a transport failure would normally entail
-
-reconfiguring the transport (e.g. re-authenticating, or recreating a new
-
-service allocation depending on the transport) and restarting the
-
-client/server/host.
+A failure of the transport is always followed by the NetworkManager shutting down. Recovering from a transport failure would normally entail reconfiguring the transport (e.g. re-authenticating, or recreating a new service allocation depending on the transport) and restarting the client/server/host.
 
 </div>
 

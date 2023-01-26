@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:06 pm
 
 <div class="markdown level0 summary">
 
-Utility class for packing values in serialization. ByteUnpacker to
-
-unpack packed values.
+Utility class for packing values in serialization. ByteUnpacker to unpack packed values.
 
 </div>
 

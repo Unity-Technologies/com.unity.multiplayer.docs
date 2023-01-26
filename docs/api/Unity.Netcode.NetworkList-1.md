@@ -367,11 +367,7 @@ public bool Contains(T item)
 
 <div class="markdown level1 summary">
 
-Overridden System.IDisposable implementation. CAUTION: If you derive
-
-from this class and override the Dispose() method, you **must** always
-
-invoke the base.Dispose() method!
+Overridden System.IDisposable implementation. CAUTION: If you derive from this class and override the Dispose() method, you **must** always invoke the base.Dispose() method!
 
 </div>
 

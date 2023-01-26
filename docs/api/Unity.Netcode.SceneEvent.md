@@ -5,12 +5,8 @@ title: Unity.Netcode.SceneEvent
 
 <div class="markdown level0 summary">
 
-Used for local notifications of various scene events. The OnSceneEvent
-of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-to provide scene event status.  
-*Note: This is only when EnableSceneManagement is enabled.*  
-*\*\*\* Do not start new scene events within scene event notification
-callbacks.*  
+Used for local notifications of various scene events. The OnSceneEvent of delegate type NetworkSceneManager.SceneEventDelegate uses this class to provide scene event status.  
+*Note: This is only when EnableSceneManagement is enabled.* *\*\*\* Do not start new scene events within scene event notification callbacks.*  
 See also:  
 SceneEventType
 
@@ -102,8 +98,7 @@ public class SceneEvent
 
 <div class="markdown level1 summary">
 
-The returned by  
-This is set for the following SceneEventTypes:
+The returned by This is set for the following SceneEventTypes:
 
 - Load
 - Unload
@@ -133,17 +128,12 @@ public AsyncOperation AsyncOperation
 The client identifier can vary depending upon the following
 conditions:  
 
-1.  SceneEventTypes that always set the ClientId to the local client
-    identifier, are initiated (and processed locally) by the
-    server-host, and sent to all clients to be processed.  
+1.  SceneEventTypes that always set the ClientId to the local client identifier, are initiated (and processed locally) by the server-host, and sent to all clients to be processed.  
     - Load
     - Unload
     - Synchronize
     - ReSynchronize
-2.  Events that always set the ClientId to the local client identifier,
-    are initiated (and processed locally) by a client or server-host,
-    and if initiated by a client will always be sent to and processed on
-    the server-host:
+2.  Events that always set the ClientId to the local client identifier, are initiated (and processed locally) by a client or server-host, and if initiated by a client will always be sent to and processed on the server-host:
     - LoadComplete
     - UnloadComplete
     - SynchronizeComplete
@@ -173,8 +163,7 @@ public ulong ClientId
 
 <div class="markdown level1 summary">
 
-List of clients that completed a loading or unloading event.  
-This is set for the following SceneEventTypes:
+List of clients that completed a loading or unloading event. This is set for the following SceneEventTypes:
 
 - LoadEventCompleted
 - UnloadEventCompleted
@@ -201,8 +190,7 @@ public List<ulong> ClientsThatCompleted
 
 <div class="markdown level1 summary">
 
-List of clients that timed out during a loading or unloading event.  
-This is set for the following SceneEventTypes:
+List of clients that timed out during a loading or unloading event. This is set for the following SceneEventTypes:
 
 - LoadEventCompleted
 - UnloadEventCompleted
@@ -229,9 +217,7 @@ public List<ulong> ClientsThatTimedOut
 
 <div class="markdown level1 summary">
 
-If applicable, this reflects the type of scene loading or unloading that
-is occurring.  
-This is set for the following SceneEventTypes:
+If applicable, this reflects the type of scene loading or unloading that is occurring. This is set for the following SceneEventTypes:
 
 - Load
 - Unload

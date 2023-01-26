@@ -7,12 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:13 pm
 
 <div class="markdown level0 summary">
 
-A helper struct for serializing NetworkBehaviours over the network. Can
-
-be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled
-
-by the NetworkManager after a while. So a reference pointing to
-
+A helper struct for serializing NetworkBehaviours over the network. Can be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled by the NetworkManager after a while. So a reference pointing to
 </div>
 
 <div class="markdown level0 conceptual">

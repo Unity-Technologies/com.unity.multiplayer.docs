@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:48 pm
 
 <div class="markdown level0 summary">
 
-A helper struct for serializing NetworkObjects over the network. Can be
-
-used in RPCs and NetworkVariable\<T\>.
+A helper struct for serializing NetworkObjects over the network. Can be used in RPCs and NetworkVariable\<T\>.
 
 </div>
 

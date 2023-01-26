@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:10 pm
 
 <div class="markdown level0 summary">
 
-Byte Unpacking Helper Class Use this class to unpack values during
-
-deserialization for values that were packed. BytePacker to pack unpacked
-
-values
+Byte Unpacking Helper Class Use this class to unpack values during deserialization for values that were packed. BytePacker to pack unpacked values
 
 </div>
 

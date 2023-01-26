@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:02 pm
 
 <div class="markdown level0 summary">
 
-Defines the required interface of a network update system being executed
-
-by the NetworkUpdateLoop.
+Defines the required interface of a network update system being executed by the NetworkUpdateLoop.
 
 </div>
 
@@ -33,9 +31,7 @@ public interface INetworkUpdateSystem
 
 <div class="markdown level1 summary">
 
-The update method that is being executed in the context of related
-
-NetworkUpdateStage.
+The update method that is being executed in the context of related NetworkUpdateStage.
 
 </div>
 

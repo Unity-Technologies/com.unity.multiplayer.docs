@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:24 pm
 
 <div class="markdown level0 summary">
 
-The manager class to manage custom messages, note that this is different
-
-from the NetworkManager custom messages. These are named and are much
-
-easier to use.
+The manager class to manage custom messages, note that this is different from the NetworkManager custom messages. These are named and are much easier to use.
 
 </div>
 

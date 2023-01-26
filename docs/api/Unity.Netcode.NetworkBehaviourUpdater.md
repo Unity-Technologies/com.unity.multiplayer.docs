@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:15 pm
 
 <div class="markdown level0 summary">
 
-An helper class that helps NetworkManager update NetworkBehaviours and
-
-replicate them down to connected clients.
+An helper class that helps NetworkManager update NetworkBehaviours and replicate them down to connected clients.
 
 </div>
 

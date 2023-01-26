@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:36:32 pm
 
 <div class="markdown level0 summary">
 
-The generic transport class all Netcode for GameObjects network
-
-transport implementations derive from. Use this class to add a custom
-
-transport. for an example of how a transport is integrated
+The generic transport class all Netcode for GameObjects network transport implementations derive from. Use this class to add a custom transport. for an example of how a transport is integrated
 
 </div>
 
@@ -59,9 +55,7 @@ public abstract class NetworkTransport : MonoBehaviour
 
 <div class="markdown level1 summary">
 
-Gets a value indicating whether this NetworkTransport is supported in
-
-the current runtime context This is used by multiplex adapters
+Gets a value indicating whether this NetworkTransport is supported in the current runtime context This is used by multiplex adapters
 
 </div>
 
@@ -85,11 +79,7 @@ public virtual bool IsSupported { get; }
 
 <div class="markdown level1 summary">
 
-A constant `clientId` that represents the server When this value is
-
-found in methods such as `Send`, it should be treated as a placeholder
-
-that means "the server"
+A constant `clientId` that represents the server When this value is found in methods such as `Send`, it should be treated as a placeholder that means "the server"
 
 </div>
 
@@ -368,12 +358,7 @@ public abstract bool StartServer()
 
 <div class="markdown level1 summary">
 
-Occurs when the transport has a new transport network event. Can be used
-
-to make an event based transport instead of a poll based. Invocation has
-
-to occur on the Unity thread in the Update loop.
-
+Occurs when the transport has a new transport network event. Can be used to make an event based transport instead of a poll based. Invocation has to occur on the Unity thread in the Update loop.
 </div>
 
 <div class="markdown level1 conceptual">

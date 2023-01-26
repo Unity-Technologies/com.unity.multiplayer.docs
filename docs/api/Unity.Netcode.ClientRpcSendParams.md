@@ -7,12 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:22 pm
 
 <div class="markdown level0 summary">
 
-Client-Side RPC The send parameters, when sending client RPCs, provides
-
-you wil the ability to target specific clients as a managed or unmanaged
-
-list: TargetClientIds and TargetClientIdsNativeArray
-
+Client-Side RPC The send parameters, when sending client RPCs, provides you wil the ability to target specific clients as a managed or unmanaged list: TargetClientIds and TargetClientIdsNativeArray
 </div>
 
 <div class="markdown level0 conceptual">
@@ -77,13 +72,7 @@ public struct ClientRpcSendParams
 
 <div class="markdown level1 summary">
 
-IEnumerable version of target id list - use either this OR
-
-TargetClientIdsNativeArray Note: Even if you provide a value type such
-
-as NativeArray, enumerating it will cause boxing. If you want to avoid
-
-boxing, use TargetClientIdsNativeArray
+IEnumerable version of target id list - use either this OR TargetClientIdsNativeArray Note: Even if you provide a value type such as NativeArray, enumerating it will cause boxing. If you want to avoid boxing, use TargetClientIdsNativeArray
 
 </div>
 
@@ -107,11 +96,7 @@ public IReadOnlyList<ulong> TargetClientIds
 
 <div class="markdown level1 summary">
 
-NativeArray version of target id list - use either this OR
-
-TargetClientIds This option avoids any GC allocations but is a bit
-
-trickier to use.
+NativeArray version of target id list - use either this OR TargetClientIds This option avoids any GC allocations but is a bit trickier to use.
 
 </div>
 

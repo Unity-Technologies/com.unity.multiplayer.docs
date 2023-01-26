@@ -123,11 +123,7 @@ public bool IsHost { get; }
 
 <div class="markdown level1 summary">
 
-If a NetworkObject is assigned, it will return whether or not this
-
-NetworkObject is the local player object. If no NetworkObject is
-
-assigned it will always return false.
+If a NetworkObject is assigned, it will return whether or not this NetworkObject is the local player object. If no NetworkObject is assigned it will always return false.
 
 </div>
 
@@ -175,9 +171,7 @@ public bool IsOwnedByServer { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is owned by the local player or if the object is the
-
-local player object
+Gets if the object is owned by the local player or if the object is the local player object
 
 </div>
 
@@ -225,11 +219,7 @@ public bool IsServer { get; }
 
 <div class="markdown level1 summary">
 
-Used to determine if it is safe to access NetworkObject and
-
-NetworkManager from within a NetworkBehaviour component Primarily useful
-
-when checking NetworkObject/NetworkManager properties within FixedUpate
+Used to determine if it is safe to access NetworkObject and NetworkManager from within a NetworkBehaviour component Primarily useful when checking NetworkObject/NetworkManager properties within FixedUpate
 
 </div>
 
@@ -275,13 +265,7 @@ public ushort NetworkBehaviourId { get; }
 
 ### NetworkManager
 
-<div class="markdown level1 summary">
-
-Gets the NetworkManager that owns this NetworkBehaviour instance See
-
-note around `NetworkObject` for how there is a chicken / egg problem
-
-when we are not initialized
+<div class="markdown level1 summary"> Gets the NetworkManager that owns this NetworkBehaviour instance See note around `NetworkObject` for how there is a chicken / egg problem when we are not initialized
 
 </div>
 
@@ -378,10 +362,7 @@ public ulong OwnerClientId { get; }
 ### GetNetworkBehaviour(UInt16)
 
 <div class="markdown level1 summary">
-
-Returns a the NetworkBehaviour with a given BehaviourId for the current
-
-NetworkObject
+Returns a the NetworkBehaviour with a given BehaviourId for the current NetworkObject
 
 </div>
 
@@ -441,11 +422,7 @@ protected NetworkObject GetNetworkObject(ulong networkId)
 
 <div class="markdown level1 summary">
 
-Invoked when the the NetworkBehaviour is attached to. NOTE: If you
-
-override this, you will want to always invoke this base class version of
-
-this OnDestroy() method!!
+Invoked when the the NetworkBehaviour is attached to. NOTE: If you override this, you will want to always invoke this base class version of this OnDestroy() method!!
 
 </div>
 
@@ -499,9 +476,7 @@ public virtual void OnLostOwnership()
 
 <div class="markdown level1 summary">
 
-Gets called when the NetworkObject gets despawned. Is called both on the
-
-server and clients.
+Gets called when the NetworkObject gets despawned. Is called both on the server and clients.
 
 </div>
 
@@ -519,9 +494,7 @@ public virtual void OnNetworkDespawn()
 
 <div class="markdown level1 summary">
 
-Gets called when the parent NetworkObject of this NetworkBehaviour's
-
-NetworkObject has changed
+Gets called when the parent NetworkObject of this NetworkBehaviour's NetworkObject has changed
 
 </div>
 
@@ -545,9 +518,7 @@ public virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObje
 
 <div class="markdown level1 summary">
 
-Gets called when the NetworkObject gets spawned, message handlers are
-
-ready to be registered and the network is setup.
+Gets called when the NetworkObject gets spawned, message handlers are ready to be registered and the network is setup.
 
 </div>
 
@@ -565,15 +536,7 @@ public virtual void OnNetworkSpawn()
 
 <div class="markdown level1 summary">
 
-Override this method if your derived NetworkBehaviour requires custom
-
-synchronization data. Note: Use of this method is only for the initial
-
-client synchronization of NetworkBehaviours and will increase the
-
-payload size for client synchronization and dynamically spawned
-
-NetworkObjects.
+Override this method if your derived NetworkBehaviour requires custom synchronization data. Note: Use of this method is only for the initial client synchronization of NetworkBehaviours and will increase the payload size for client synchronization and dynamically spawned NetworkObjects.
 
 </div>
 
@@ -605,12 +568,6 @@ protected virtual void OnSynchronize<T>(ref BufferSerializer<T> serializer)
 
 <div class="markdown level1 remarks">
 
-When serializing (writing) this will be invoked during the client
-
-synchronization period and when spawning new NetworkObjects. When
-
-deserializing (reading), this will be invoked prior to the
-
-NetworkBehaviour's associated NetworkObject being spawned.
+When serializing (writing) this will be invoked during the client synchronization period and when spawning new NetworkObjects. When deserializing (reading), this will be invoked prior to the NetworkBehaviour's associated NetworkObject being spawned.
 
 </div>

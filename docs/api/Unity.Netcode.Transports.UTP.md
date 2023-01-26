@@ -25,9 +25,7 @@ date modified: Wednesday, January 25th 2023, 5:38:29 pm
 
 <div class="section">
 
-Helper utility class to convert error codes to human readable error
-
-messages.
+Helper utility class to convert error codes to human readable error messages.
 
 </div>
 

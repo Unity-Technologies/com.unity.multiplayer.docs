@@ -7,11 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:38:21 pm
 
 <div class="markdown level0 summary">
 
-Server-Side RPC Place holder. ServerRpcParams Note: Clients always send
-
-to one destination when sending RPCs to the server so this structure is
-
-a place holder
+Server-Side RPC Place holder. ServerRpcParams Note: Clients always send to one destination when sending RPCs to the server so this structure is a place holder
 
 </div>
 

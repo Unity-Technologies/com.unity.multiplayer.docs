@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:36:53 pm
 
 <div class="markdown level0 summary">
 
-A class representing a client that is currently in the process of
-
-connecting
+A class representing a client that is currently in the process of connecting
 
 </div>
 

@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:40:43 pm
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnLoadEventCompleted and
-
-OnUnloadEventCompleted events.
+Delegate declaration for the OnLoadEventCompleted and OnUnloadEventCompleted events.
 
 See also:
 

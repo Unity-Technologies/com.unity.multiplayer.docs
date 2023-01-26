@@ -7,23 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:34:44 pm
 
 <div class="markdown level0 summary">
 
-This empty struct exists to allow overloading WriteValue based on
-
-generic constraints. At the bytecode level, constraints aren't included
-
-in the method signature, so if multiple methods exist with the same
-
-signature, it causes a compile error because they would end up being
-
-emitted as the same method, even if the constraints are different.
-
-Adding an empty struct with a default value gives them different
-
-signatures in the bytecode, which then allows the compiler to do
-
-overload resolution based on the generic constraints without the user
-
-having to pass the struct in themselves.
+This empty struct exists to allow overloading WriteValue based on generic constraints. At the bytecode level, constraints aren't included in the method signature, so if multiple methods exist with the same signature, it causes a compile error because they would end up being emitted as the same method, even if the constraints are different. Adding an empty struct with a default value gives them different signatures in the bytecode, which then allows the compiler to do overload resolution based on the generic constraints without the user having to pass the struct in themselves.
 
 </div>
 

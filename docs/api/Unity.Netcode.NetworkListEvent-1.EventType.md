@@ -7,9 +7,7 @@ date modified: Wednesday, January 25th 2023, 5:35:31 pm
 
 <div class="markdown level0 summary">
 
-Enum representing the different operations available for triggering an
-
-event.
+Enum representing the different operations available for triggering an event.
 
 </div>
 

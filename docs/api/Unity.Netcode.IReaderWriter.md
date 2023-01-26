@@ -31,9 +31,7 @@ public interface IReaderWriter
 
 <div class="markdown level1 summary">
 
-Check whether this implementation is a "reader" - if it's been
-
-constructed to deserialize data
+Check whether this implementation is a "reader" - if it's been constructed to deserialize data
 
 </div>
 
@@ -57,9 +55,7 @@ bool IsReader { get; }
 
 <div class="markdown level1 summary">
 
-Check whether this implementation is a "writer" - if it's been
-
-constructed to serialize data
+Check whether this implementation is a "writer" - if it's been constructed to serialize data
 
 </div>
 
@@ -85,9 +81,7 @@ bool IsWriter { get; }
 
 <div class="markdown level1 summary">
 
-Get the underlying FastBufferReader struct. Only valid when IsReader ==
-
-true
+Get the underlying FastBufferReader struct. Only valid when IsReader == true
 
 </div>
 
@@ -111,9 +105,7 @@ FastBufferReader GetFastBufferReader()
 
 <div class="markdown level1 summary">
 
-Get the underlying FastBufferWriter struct. Only valid when IsWriter ==
-
-true
+Get the underlying FastBufferWriter struct. Only valid when IsWriter == true
 
 </div>
 
@@ -137,15 +129,7 @@ FastBufferWriter GetFastBufferWriter()
 
 <div class="markdown level1 summary">
 
-Performs an advance check to ensure space is available to read/write one
-
-or more values. This provides a performance benefit for serializing
-
-multiple values using the SerializeValuePreChecked methods. But note
-
-that the benefit is small and only likely to be noticeable if
-
-serializing a very large number of items.
+Performs an advance check to ensure space is available to read/write one or more values. This provides a performance benefit for serializing multiple values using the SerializeValuePreChecked methods. But note that the benefit is small and only likely to be noticeable if serializing a very large number of items.
 
 </div>
 
@@ -175,11 +159,7 @@ bool PreCheck(int amount)
 
 <div class="markdown level1 summary">
 
-Read or write a NetworkSerializable value. SerializeValue() is the
-
-preferred method to do this - this is provided for backward
-
-compatibility only.
+Read or write a NetworkSerializable value. SerializeValue() is the preferred method to do this - this is provided for backward compatibility only.
 
 </div>
 
@@ -839,11 +819,7 @@ void SerializeValue<T>(ref T value, FastBufferWriter.ForNetworkSerializable unus
 
 <div class="markdown level1 summary">
 
-Read or write a primitive value (int, bool, etc) Accepts any value that
-
-implements the given interfaces, but is not guaranteed to work correctly
-
-on values that are not primitives.
+Read or write a primitive value (int, bool, etc) Accepts any value that implements the given interfaces, but is not guaranteed to work correctly on values that are not primitives.
 
 </div>
 
@@ -977,11 +953,7 @@ void SerializeValue<T>(ref T[] value, FastBufferWriter.ForNetworkSerializable un
 
 <div class="markdown level1 summary">
 
-Read or write an array of primitive values (int, bool, etc) Accepts any
-
-value that implements the given interfaces, but is not guaranteed to
-
-work correctly on values that are not primitives.
+Read or write an array of primitive values (int, bool, etc) Accepts any value that implements the given interfaces, but is not guaranteed to work correctly on values that are not primitives.
 
 </div>
 
@@ -1047,15 +1019,7 @@ void SerializeValue<T>(ref T[] value, FastBufferWriter.ForStructs unused = defau
 
 <div class="markdown level1 summary">
 
-Serialize a Color, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize a Color, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1079,15 +1043,7 @@ void SerializeValuePreChecked(ref Color value)
 
 <div class="markdown level1 summary">
 
-Serialize a Color array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Color array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1111,16 +1067,7 @@ void SerializeValuePreChecked(ref Color[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Color32, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
-
+Serialize a Color32, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 </div>
 
 <div class="markdown level1 conceptual">
@@ -1143,15 +1090,7 @@ void SerializeValuePreChecked(ref Color32 value)
 
 <div class="markdown level1 summary">
 
-Serialize a Color32 array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Color32 array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1174,16 +1113,7 @@ void SerializeValuePreChecked(ref Color32[] value)
 ### SerializeValuePreChecked(ref Quaternion)
 
 <div class="markdown level1 summary">
-
-Serialize a Quaternion, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Quaternion, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1207,16 +1137,7 @@ void SerializeValuePreChecked(ref Quaternion value)
 
 <div class="markdown level1 summary">
 
-Serialize a Quaternion array, "pre-checked", which skips buffer checks.
-
-In debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
-
+Serialize a Quaternion array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 </div>
 
 <div class="markdown level1 conceptual">
@@ -1239,15 +1160,7 @@ void SerializeValuePreChecked(ref Quaternion[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Ray, "pre-checked", which skips buffer checks. In debug and
-
-editor builds, a check is made to ensure you've called "PreCheck" before
-
-calling this. In release builds, calling this without calling "PreCheck"
-
-may read or write past the end of the buffer, which will cause memory
-
-corruption and undefined behavior.
+Serialize a Ray, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1271,15 +1184,7 @@ void SerializeValuePreChecked(ref Ray value)
 
 <div class="markdown level1 summary">
 
-Serialize a Ray array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Ray array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1303,15 +1208,7 @@ void SerializeValuePreChecked(ref Ray[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Ray2D, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize a Ray2D, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1335,15 +1232,7 @@ void SerializeValuePreChecked(ref Ray2D value)
 
 <div class="markdown level1 summary">
 
-Serialize a Ray2D array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Ray2D array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1367,15 +1256,7 @@ void SerializeValuePreChecked(ref Ray2D[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a byte, "pre-checked", which skips buffer checks. In debug and
-
-editor builds, a check is made to ensure you've called "PreCheck" before
-
-calling this. In release builds, calling this without calling "PreCheck"
-
-may read or write past the end of the buffer, which will cause memory
-
-corruption and undefined behavior.
+Serialize a byte, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1399,15 +1280,7 @@ void SerializeValuePreChecked(ref byte value)
 
 <div class="markdown level1 summary">
 
-Serialize a string, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize a string, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1432,15 +1305,7 @@ void SerializeValuePreChecked(ref string s, bool oneByteChars = false)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector2, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize a Vector2, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1464,15 +1329,7 @@ void SerializeValuePreChecked(ref Vector2 value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector2 array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector2 array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1496,15 +1353,7 @@ void SerializeValuePreChecked(ref Vector2[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector2Int, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector2Int, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1528,15 +1377,7 @@ void SerializeValuePreChecked(ref Vector2Int value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector2Int array, "pre-checked", which skips buffer checks.
-
-In debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector2Int array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1560,15 +1401,7 @@ void SerializeValuePreChecked(ref Vector2Int[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector3, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize a Vector3, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1592,15 +1425,7 @@ void SerializeValuePreChecked(ref Vector3 value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector3 array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector3 array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1624,15 +1449,7 @@ void SerializeValuePreChecked(ref Vector3[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector3Int, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector3Int, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1656,15 +1473,7 @@ void SerializeValuePreChecked(ref Vector3Int value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector3Int array, "pre-checked", which skips buffer checks.
-
-In debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector3Int array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1688,15 +1497,7 @@ void SerializeValuePreChecked(ref Vector3Int[] value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector4, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize a Vector4, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1720,15 +1521,7 @@ void SerializeValuePreChecked(ref Vector4 value)
 
 <div class="markdown level1 summary">
 
-Serialize a Vector4Array, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a Vector4Array, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1752,15 +1545,7 @@ void SerializeValuePreChecked(ref Vector4[] value)
 
 <div class="markdown level1 summary">
 
-Serialize an enum, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
+Serialize an enum, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1793,15 +1578,7 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForEnums unused =
 
 <div class="markdown level1 summary">
 
-Serialize a FixedString, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a FixedString, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1834,15 +1611,7 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForFixedStrings u
 
 <div class="markdown level1 summary">
 
-Serialize a primitive, "pre-checked", which skips buffer checks. In
-
-debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize a primitive, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1875,16 +1644,7 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForPrimitives unu
 
 <div class="markdown level1 summary">
 
-Serialize a struct, "pre-checked", which skips buffer checks. In debug
-
-and editor builds, a check is made to ensure you've called "PreCheck"
-
-before calling this. In release builds, calling this without calling
-
-"PreCheck" may read or write past the end of the buffer, which will
-
-cause memory corruption and undefined behavior.
-
+Serialize a struct, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 </div>
 
 <div class="markdown level1 conceptual">
@@ -1916,15 +1676,7 @@ void SerializeValuePreChecked<T>(ref T value, FastBufferWriter.ForStructs unused
 
 <div class="markdown level1 summary">
 
-Serialize an array of enums, "pre-checked", which skips buffer checks.
-
-In debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize an array of enums, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1957,15 +1709,7 @@ void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForEnums unused
 
 <div class="markdown level1 summary">
 
-Serialize an array of primitives, "pre-checked", which skips buffer
-
-checks. In debug and editor builds, a check is made to ensure you've
-
-called "PreCheck" before calling this. In release builds, calling this
-
-without calling "PreCheck" may read or write past the end of the buffer,
-
-which will cause memory corruption and undefined behavior.
+Serialize an array of primitives, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
@@ -1998,15 +1742,7 @@ void SerializeValuePreChecked<T>(ref T[] value, FastBufferWriter.ForPrimitives u
 
 <div class="markdown level1 summary">
 
-Serialize an array of structs, "pre-checked", which skips buffer checks.
-
-In debug and editor builds, a check is made to ensure you've called
-
-"PreCheck" before calling this. In release builds, calling this without
-
-calling "PreCheck" may read or write past the end of the buffer, which
-
-will cause memory corruption and undefined behavior.
+Serialize an array of structs, "pre-checked", which skips buffer checks. In debug and editor builds, a check is made to ensure you've called "PreCheck" before calling this. In release builds, calling this without calling "PreCheck" may read or write past the end of the buffer, which will cause memory corruption and undefined behavior.
 
 </div>
 
