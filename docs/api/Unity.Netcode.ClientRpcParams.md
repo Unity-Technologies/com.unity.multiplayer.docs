@@ -1,126 +1,124 @@
 ---
 id: Unity.Netcode.ClientRpcParams
 title: Unity.Netcode.ClientRpcParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:17 pm
 ---
 
-# Struct ClientRpcParams
-
+<div class="markdown level0 summary">
 
 Client-Side RPC Can be used with any client-side remote procedure call
+
 Note: Typically this is used primarily for sending to a specific list of
+
 clients as opposed to the default (all). ClientRpcSendParams
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.Equals(Object)
 
+</div>
 
+<div>
 
-System.ValueType.Equals(System.Object)
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
+ValueType.ToString()
 
+</div>
 
-System.ValueType.GetHashCode()
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public struct ClientRpcParams
 ```
 
+## Fields
 
+### Receive
 
-### Fields
-
-#### Receive
-
+<div class="markdown level1 summary">
 
 The client RPC receive parameters (currently a place holder)
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ClientRpcReceiveParams Receive
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                   | Description |
 |------------------------|-------------|
 | ClientRpcReceiveParams |             |
 
-#### Send
+### Send
 
+<div class="markdown level1 summary">
 
 The client RPC send parameters provides you with the ability to send to
+
 a specific list of clients
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ClientRpcSendParams Send
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | ClientRpcSendParams |             |
-
-
-

@@ -1,104 +1,107 @@
 ---
 id: Unity.Netcode.NetworkVariableSerialization-1
 title: Unity.Netcode.NetworkVariableSerialization-1
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:39:47 pm
 ---
 
-# Class NetworkVariableSerialization\<T\>
-
+<div class="markdown level0 summary">
 
 Support methods for reading/writing NetworkVariables Because there are
+
 multiple overloads of WriteValue/ReadValue based on different generic
+
 constraints, but there's no way to achieve the same thing with a class,
+
 this sets up various read/write schemes based on which constraints are
+
 met by `T` using reflection, which is done at module load time.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-NetworkVariableSerialization\<T\>
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
-##### Inherited Members
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetHashCode()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.GetType()
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 [Serializable]
 public static class NetworkVariableSerialization<T>
-    where T : struct
 ```
 
-
-
-##### Type Parameters
+## Type Parameters
 
 | Name | Description                                             |
 |------|---------------------------------------------------------|
 | T    | The type the associated NetworkVariable is templated on |
-
-
-

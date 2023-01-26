@@ -1,239 +1,241 @@
 ---
 id: Unity.Netcode.InvalidParentException
-title: Unity.Netcode.InvalideParentException
+title: Unity.Netcode.InvalidParentException
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:06 pm
 ---
 
-# Class InvalidParentException
-
+<div class="markdown level0 summary">
 
 Exception thrown when the new parent candidate of the NetworkObject is
+
 not valid
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level2">
 
-System.Exception
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
+<div classs="implements">
 
-InvalidParentException
+## Implements
 
-
-
-
-
-
-##### Implements
-
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
+</div>
 
+</div>
 
-##### Inherited Members
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-System.Exception.GetBaseException()
+Exception.GetBaseException()
 
+</div>
 
+<div>
 
+Exception.ToString()
 
+</div>
 
-System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,
-System.Runtime.Serialization.StreamingContext)
+<div>
 
+Exception.GetObjectData(SerializationInfo, StreamingContext)
 
+</div>
 
+<div>
 
+Exception.GetType()
 
-System.Exception.GetType()
+</div>
 
+<div>
 
+Exception.Message
 
+</div>
 
+<div>
 
-System.Exception.ToString()
+Exception.Data
 
+</div>
 
+<div>
 
+Exception.InnerException
 
+</div>
 
-System.Exception.Data
+<div>
 
+Exception.TargetSite
 
+</div>
 
+<div>
 
+Exception.StackTrace
 
-System.Exception.HelpLink
+</div>
 
+<div>
 
+Exception.HelpLink
 
+</div>
 
+<div>
 
-System.Exception.HResult
+Exception.Source
 
+</div>
 
+<div>
 
+Exception.HResult
 
+</div>
 
-System.Exception.InnerException
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
-System.Exception.Message
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
-System.Exception.Source
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
-System.Exception.StackTrace
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-System.Exception.TargetSite
-
-
-
-
-
-System.Object.Equals(System.Object)
-
-
-
-
-
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetHashCode()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
-public class InvalidParentException : Exception, _Exception, ISerializable
+public class InvalidParentException : Exception, ISerializable, _Exception
 ```
 
+## Constructors
 
+### InvalidParentException()
 
-### Constructors
-
-#### InvalidParentException()
-
+<div class="markdown level1 summary">
 
 Constructor for InvalidParentException
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public InvalidParentException()
 ```
 
+### InvalidParentException(String)
 
+<div class="markdown level1 summary">
 
-#### InvalidParentException(String)
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public InvalidParentException(string message)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name    | Description |
 |---------------|---------|-------------|
 | System.String | message |             |
 
-#### InvalidParentException(String, Exception)
+### InvalidParentException(String, Exception)
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public InvalidParentException(string message, Exception innerException)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type             | Name           | Description |
 |------------------|----------------|-------------|
@@ -242,17 +244,14 @@ public InvalidParentException(string message, Exception innerException)
 
 ### Implements
 
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
-
+</div>

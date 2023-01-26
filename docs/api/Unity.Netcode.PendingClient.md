@@ -1,145 +1,144 @@
 ---
 id: Unity.Netcode.PendingClient
 title: Unity.Netcode.PendingClient
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:53 pm
 ---
 
-# Class PendingClient
-
+<div class="markdown level0 summary">
 
 A class representing a client that is currently in the process of
+
 connecting
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-PendingClient
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
-##### Inherited Members
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetHashCode()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.GetType()
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public class PendingClient
 ```
 
+## Properties
 
+### ClientId
 
-### Properties
-
-#### ClientId
-
+<div class="markdown level1 summary">
 
 The ClientId of the client
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ulong ClientId { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-#### ConnectionState
+### ConnectionState
 
+<div class="markdown level1 summary">
 
 The state of the connection process for the client
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public PendingClient.State ConnectionState { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type                | Description |
 |---------------------|-------------|
 | PendingClient.State |             |
-
-
-

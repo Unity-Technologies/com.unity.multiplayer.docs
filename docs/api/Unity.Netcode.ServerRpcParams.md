@@ -1,125 +1,122 @@
 ---
 id: Unity.Netcode.ServerRpcParams
 title: Unity.Netcode.ServerRpcParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:38:12 pm
 ---
 
-# Struct ServerRpcParams
-
+<div class="markdown level0 summary">
 
 Server-Side RPC Can be used with any sever-side remote procedure call
+
 Note: typically this is use primarily for the ServerRpcReceiveParams
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.Equals(Object)
 
+</div>
 
+<div>
 
-System.ValueType.Equals(System.Object)
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
+ValueType.ToString()
 
+</div>
 
-System.ValueType.GetHashCode()
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public struct ServerRpcParams
 ```
 
+## Fields
 
+### Receive
 
-### Fields
-
-#### Receive
-
+<div class="markdown level1 summary">
 
 The client RPC receive parameters provides you with the sender's
+
 identifier
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ServerRpcReceiveParams Receive
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                   | Description |
 |------------------------|-------------|
 | ServerRpcReceiveParams |             |
 
-#### Send
+### Send
 
+<div class="markdown level1 summary">
 
 The server RPC send parameters (currently a place holder)
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ServerRpcSendParams Send
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                | Description |
 |---------------------|-------------|
 | ServerRpcSendParams |             |
-
-
-

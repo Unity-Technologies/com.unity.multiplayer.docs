@@ -1,305 +1,303 @@
 ---
 id: Unity.Netcode.ForceNetworkSerializeByMemcpy-1
 title: Unity.Netcode.ForceNetworkSerializeByMemcpy-1
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:34:50 pm
 ---
 
-# Struct ForceNetworkSerializeByMemcpy\<T\>
-
+<div class="markdown level0 summary">
 
 This is a wrapper that adds `INetworkSerializeByMemcpy` support to
+
 existing structs that the developer doesn't have the ability to modify
+
 (for example, external structs like `Guid`).
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div classs="implements">
 
+## Implements
 
-
-##### Implements
-
-
+<div>
 
 INetworkSerializeByMemcpy
 
+</div>
 
-
-
+<div>
 
 System.IEquatable\<ForceNetworkSerializeByMemcpy\<T\>\>
 
+</div>
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.ToString()
 
+</div>
 
+<div>
 
-System.ValueType.ToString()
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
-System.Object.GetType()
+## **Assembly**: Netcode.dll
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public struct ForceNetworkSerializeByMemcpy<T> : INetworkSerializeByMemcpy, IEquatable<ForceNetworkSerializeByMemcpy<T>> where T : struct, IEquatable<T>
 ```
 
-
-
-##### Type Parameters
+## Type Parameters
 
 | Name | Description |
 |------|-------------|
 | T    |             |
 
-### Constructors
+## Constructors
 
-#### ForceNetworkSerializeByMemcpy(T)
+### ForceNetworkSerializeByMemcpy(T)
 
+<div class="markdown level1 summary">
 
 The default constructor for ForceNetworkSerializeByMemcpy\<T\>
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ForceNetworkSerializeByMemcpy(T value)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type | Name  | Description                        |
 |------|-------|------------------------------------|
 | T    | value | sets the initial value of type `T` |
 
-### Fields
+## Fields
 
-#### Value
+### Value
 
+<div class="markdown level1 summary">
 
 The wrapped value
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public T Value
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-### Methods
+## Methods
 
-#### Equals(Object)
+### Equals(Object)
 
+<div class="markdown level1 summary">
 
 Check if this value is equal to a boxed object value
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public override bool Equals(object obj)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name | Description                      |
 |---------------|------|----------------------------------|
 | System.Object | obj  | The boxed value to check against |
 
-##### Returns
+#### Returns
 
 | Type           | Description   |
 |----------------|---------------|
 | System.Boolean | true if equal |
 
-##### Overrides
+#### Overrides
 
-
+<div>
 
 System.ValueType.Equals(System.Object)
 
+</div>
 
+### Equals(ForceNetworkSerializeByMemcpy\<T\>)
 
-#### Equals(ForceNetworkSerializeByMemcpy\<T\>)
-
+<div class="markdown level1 summary">
 
 Check if wrapped values are equal
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public bool Equals(ForceNetworkSerializeByMemcpy<T> other)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type                               | Name  | Description   |
 |------------------------------------|-------|---------------|
 | ForceNetworkSerializeByMemcpy\<T\> | other | Other wrapper |
 
-##### Returns
+#### Returns
 
 | Type           | Description   |
 |----------------|---------------|
 | System.Boolean | true if equal |
 
-#### GetHashCode()
+### GetHashCode()
 
+<div class="markdown level1 summary">
 
 Obtains the wrapped value's hash code
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-
-
-##### Returns
+#### Returns
 
 | Type         | Description               |
 |--------------|---------------------------|
 | System.Int32 | Wrapped value's hash code |
 
-##### Overrides
+#### Overrides
 
-
+<div>
 
 System.ValueType.GetHashCode()
 
+</div>
 
+## Operators
 
-### Operators
+### Implicit(T To ForceNetworkSerializeByMemcpy\<T\>)
 
-#### Implicit(T to ForceNetworkSerializeByMemcpy\<T\>)
-
+<div class="markdown level1 summary">
 
 Convert implicitly from a T value to a ForceNetworkSerializeByMemcpy
+
 wrapper
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static implicit operator ForceNetworkSerializeByMemcpy<T>(T underlyingValue)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type | Name            | Description |
 |------|-----------------|-------------|
 | T    | underlyingValue | the value   |
 
-##### Returns
+#### Returns
 
 | Type                               | Description   |
 |------------------------------------|---------------|
 | ForceNetworkSerializeByMemcpy\<T\> | a new wrapper |
 
-#### Implicit(ForceNetworkSerializeByMemcpy\<T\> to T)
+### Implicit(ForceNetworkSerializeByMemcpy\<T\> To T)
 
+<div class="markdown level1 summary">
 
 Convert implicitly from the ForceNetworkSerializeByMemcpy wrapper to the
+
 underlying value
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static implicit operator T(ForceNetworkSerializeByMemcpy<T> container)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type                               | Name      | Description |
 |------------------------------------|-----------|-------------|
 | ForceNetworkSerializeByMemcpy\<T\> | container | The wrapper |
 
-##### Returns
+#### Returns
 
 | Type | Description          |
 |------|----------------------|
@@ -307,17 +305,14 @@ public static implicit operator T(ForceNetworkSerializeByMemcpy<T> container)
 
 ### Implements
 
-
+<div>
 
 INetworkSerializeByMemcpy
 
+</div>
 
-
-
+<div>
 
 System.IEquatable\<T\>
 
-
-
-
-
+</div>

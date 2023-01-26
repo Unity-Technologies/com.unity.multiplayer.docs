@@ -1,93 +1,94 @@
 ---
 id: Unity.Netcode.NetworkBehaviourUpdater
 title: Unity.Netcode.NetworkBehaviourUpdater
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:15 pm
 ---
 
-# Class NetworkBehaviourUpdater
-
+<div class="markdown level0 summary">
 
 An helper class that helps NetworkManager update NetworkBehaviours and
+
 replicate them down to connected clients.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-NetworkBehaviourUpdater
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
-##### Inherited Members
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetHashCode()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.GetType()
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public class NetworkBehaviourUpdater
 ```
-
-
-
-
-

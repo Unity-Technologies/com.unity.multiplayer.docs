@@ -1,127 +1,127 @@
 ---
 id: Unity.Netcode.Transports.UTP.ErrorUtilities
 title: Unity.Netcode.Transports.UTP.ErrorUtilities
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:38:31 pm
 ---
 
-# Class ErrorUtilities
-
+<div class="markdown level0 summary">
 
 Helper utility class to convert error codes to human readable error
+
 messages.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
-ErrorUtilities
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
-##### Inherited Members
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetHashCode()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.GetType()
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode.Transports.UTP
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public static class ErrorUtilities
 ```
 
+## Methods
 
+### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
 
-### Methods
+<div class="markdown level1 summary">
 
-#### ErrorToString(Networking.Transport.Error.StatusCode, UInt64)
+Convert a UTP error code to human-readable error message.
 
+</div>
 
-Convert error code to human readable error message.
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static string ErrorToString(Networking.Transport.Error.StatusCode error, ulong connectionId)
 ```
 
+#### Parameters
 
+| Type                                  | Name         | Description                                       |
+|---------------------------------------|--------------|---------------------------------------------------|
+| Networking.Transport.Error.StatusCode | error        | UTP error code.                                   |
+| System.UInt64                         | connectionId | ID of the connection on which the error occurred. |
 
-##### Parameters
-
-| Type                                  | Name         | Description                        |
-|---------------------------------------|--------------|------------------------------------|
-| Networking.Transport.Error.StatusCode | error        | Status code of the error           |
-| System.UInt64                         | connectionId | Subject connection ID of the error |
-
-##### Returns
+#### Returns
 
 | Type          | Description                   |
 |---------------|-------------------------------|
-| System.String | Human readable error message. |
-
-
-
+| System.String | Human-readable error message. |
