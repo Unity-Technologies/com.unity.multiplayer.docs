@@ -1,403 +1,385 @@
 ---
 id: Unity.Netcode.RpcAttribute
 title: Unity.Netcode.RpcAttribute
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:37:00 pm
 ---
 
-# Class RpcAttribute
-
+<div class="markdown level0 summary">
 
 Represents the common base class for Rpc attributes.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level2">
 
-System.Attribute
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level3">
 
+System.Dynamic.ExpandoObject
 
-RpcAttribute
+</div>
 
+<div class="level3">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
-ClientRpcAttribute
+</div>
 
+<div classs="implements">
 
+## Implements
 
-
-ServerRpcAttribute
-
-
-
-
-
-
-##### Implements
-
-
+<div>
 
 System.Runtime.InteropServices.\_Attribute
 
+</div>
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+Attribute.GetCustomAttributes(MemberInfo, Type)
 
+</div>
 
+<div>
 
-System.Attribute.Equals(System.Object)
+Attribute.GetCustomAttributes(MemberInfo, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(MemberInfo)
 
+</div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.Assembly,
-System.Type)
+<div>
 
+Attribute.GetCustomAttributes(MemberInfo, Boolean)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(MemberInfo, Type)
 
-System.Attribute.GetCustomAttribute(System.Reflection.Assembly,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Attribute.IsDefined(MemberInfo, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo,
-System.Type)
+Attribute.GetCustomAttribute(MemberInfo, Type)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(MemberInfo, Type, Boolean)
 
+</div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo,
-System.Type, System.Boolean)
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo, Type)
 
-System.Attribute.GetCustomAttribute(System.Reflection.Module,
-System.Type)
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(ParameterInfo, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.Module,
-System.Type, System.Boolean)
+Attribute.GetCustomAttributes(ParameterInfo, Boolean)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(ParameterInfo, Type)
 
+</div>
 
-System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo,
-System.Type)
+<div>
 
+Attribute.IsDefined(ParameterInfo, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(ParameterInfo, Type)
 
-System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(ParameterInfo, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly)
+Attribute.GetCustomAttributes(Module, Type)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Module)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly,
-System.Boolean)
+<div>
 
+Attribute.GetCustomAttributes(Module, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Module, Type, Boolean)
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly,
-System.Type)
+</div>
 
+<div>
 
+Attribute.IsDefined(Module, Type)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Assembly,
-System.Type, System.Boolean)
+Attribute.IsDefined(Module, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(Module, Type)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo)
+<div>
 
+Attribute.GetCustomAttribute(Module, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Assembly, Type)
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,
-System.Boolean)
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Assembly, Type, Boolean)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,
-System.Type)
+Attribute.GetCustomAttributes(Assembly)
 
+</div>
 
+<div>
 
+Attribute.GetCustomAttributes(Assembly, Boolean)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,
-System.Type, System.Boolean)
+<div>
 
+Attribute.IsDefined(Assembly, Type)
 
+</div>
 
+<div>
 
+Attribute.IsDefined(Assembly, Type, Boolean)
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module)
+</div>
 
+<div>
 
+Attribute.GetCustomAttribute(Assembly, Type)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module,
-System.Boolean)
+Attribute.GetCustomAttribute(Assembly, Type, Boolean)
 
+</div>
 
+<div>
 
+Attribute.Equals(Object)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module,
-System.Type)
+<div>
 
+Attribute.GetHashCode()
 
+</div>
 
+<div>
 
+Attribute.Match(Object)
 
-System.Attribute.GetCustomAttributes(System.Reflection.Module,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Attribute.IsDefaultAttribute()
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo)
+Attribute.\_Attribute.GetTypeInfoCount(UInt32)
 
+</div>
 
+<div>
 
+Attribute.\_Attribute.GetTypeInfo(UInt32, UInt32, IntPtr)
 
+</div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,
-System.Boolean)
+<div>
 
+Attribute.\_Attribute.GetIDsOfNames(Guid, IntPtr, UInt32, UInt32,
 
+IntPtr)
 
+</div>
 
+<div>
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,
-System.Type)
+Attribute.\_Attribute.Invoke(UInt32, Guid, UInt32, Int16, IntPtr,
 
+IntPtr, IntPtr, IntPtr)
 
+</div>
 
+<div>
 
+Attribute.TypeId
 
-System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,
-System.Type, System.Boolean)
+</div>
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
-System.Attribute.GetHashCode()
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Attribute.IsDefaultAttribute()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
-System.Attribute.IsDefined(System.Reflection.Assembly, System.Type)
+</div>
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-System.Attribute.IsDefined(System.Reflection.Assembly, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.MemberInfo, System.Type)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.MemberInfo, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.Module, System.Type)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.Module, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.ParameterInfo, System.Type)
-
-
-
-
-
-System.Attribute.IsDefined(System.Reflection.ParameterInfo, System.Type,
-System.Boolean)
-
-
-
-
-
-System.Attribute.Match(System.Object)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.GetIDsOfNames(System.Guid,
-System.IntPtr, System.UInt32, System.UInt32, System.IntPtr)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.GetTypeInfo(System.UInt32,
-System.UInt32, System.IntPtr)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.GetTypeInfoCount(System.UInt32)
-
-
-
-
-
-System.Attribute.System.Runtime.InteropServices.\_Attribute.Invoke(System.UInt32,
-System.Guid, System.UInt32, System.Int16, System.IntPtr, System.IntPtr,
-System.IntPtr, System.IntPtr)
-
-
-
-
-
-System.Attribute.TypeId
-
-
-
-
-
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public abstract class RpcAttribute : Attribute, _Attribute
 ```
 
+## Fields
 
+### Delivery
 
-### Fields
-
-#### Delivery
-
+<div class="markdown level1 summary">
 
 Type of RPC delivery method
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public RpcDelivery Delivery
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type        | Description |
 |-------------|-------------|
@@ -405,11 +387,8 @@ public RpcDelivery Delivery
 
 ### Implements
 
-
+<div>
 
 System.Runtime.InteropServices.\_Attribute
 
-
-
-
-
+</div>

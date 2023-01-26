@@ -1,38 +1,34 @@
 ---
 id: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
 title: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:12 pm
 ---
 
-# Delegate NetworkSceneManager.OnSynchronizeDelegateHandler
+<div class="markdown level0 summary">
 
-
-Delegate declaration for the OnSynchronize event.  
-See also:  
+Delegate declaration for the OnSynchronize event.
+See also:
 Synchronize for more information
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public delegate void OnSynchronizeDelegateHandler(ulong clientId);
 ```
 
+## Parameters
 
-
-##### Parameters
-
-| Type          | Name     | Description                                                                                                        |
-|---------------|----------|--------------------------------------------------------------------------------------------------------------------|
-| System.UInt64 | clientId | the client that is processing this event (the server will receive all of these events for every client and itself) |
-
-
-
+| Type          | Name       | Description                                                                                                        |
+|---------------|------------|--------------------------------------------------------------------------------------------------------------------|
+| System.UInt64 | \*clientId | the client that is processing this event (the server will receive all of these events for every client and itself) |

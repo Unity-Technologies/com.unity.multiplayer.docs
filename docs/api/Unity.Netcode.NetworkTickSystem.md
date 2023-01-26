@@ -1,116 +1,117 @@
 ---
 id: Unity.Netcode.NetworkTickSystem
 title: Unity.Netcode.NetworkTickSystem
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:28 pm
 ---
 
-# Class NetworkTickSystem
+<div class="markdown level0 summary">
 
+Provides discretized time. This is useful for games that require ticks happening at regular interval on the server and clients.
 
-Provides discretized time. This is useful for games that require ticks
-happening at regular interval on the server and clients.
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-##### Inheritance
+</div>
 
+<div class="level1">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
+<div class="inheritedMembers">
 
-NetworkTickSystem
+## Inherited Members
 
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object)
 
-##### Inherited Members
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
-System.Object.GetType()
+## **Assembly**: Netcode.dll
 
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public class NetworkTickSystem
 ```
 
+## Constructors
 
+### NetworkTickSystem(UInt32, Double, Double)
 
-### Constructors
-
-#### NetworkTickSystem(UInt32, Double, Double)
-
+<div class="markdown level1 summary">
 
 Creates a new instance of the NetworkTickSystem class.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NetworkTickSystem(uint tickRate, double localTimeSec, double serverTimeSec)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name          | Description                          |
 |---------------|---------------|--------------------------------------|
@@ -118,197 +119,180 @@ public NetworkTickSystem(uint tickRate, double localTimeSec, double serverTimeSe
 | System.Double | localTimeSec  | The initial local time to start at.  |
 | System.Double | serverTimeSec | The initial server time to start at. |
 
-### Fields
+## Fields
 
-#### NoTick
+### NoTick
 
+<div class="markdown level1 summary">
 
 Special value to indicate "No tick information"
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public const int NoTick = -2147483648
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Properties
+## Properties
 
-#### LocalTime
+### LocalTime
 
+<div class="markdown level1 summary">
 
-The current local time. This is the time at which predicted or client
-authoritative objects move. This value is accurate when called in Update
-or during the Tick event but does not work correctly for FixedUpdate.
+The current local time. This is the time at which predicted or client authoritative objects move. This value is accurate when called in Update or during the Tick event but does not work correctly for FixedUpdate.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NetworkTime LocalTime { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type        | Description |
 |-------------|-------------|
 | NetworkTime |             |
 
-#### ServerTime
+### ServerTime
 
+<div class="markdown level1 summary">
 
-The current server time. This value is mostly used for internal purposes
-and to interpolate state received from the server. This value is
-accurate when called in Update or during the Tick event but does not
-work correctly for FixedUpdate.
+The current server time. This value is mostly used for internal purposes and to interpolate state received from the server. This value is accurate when called in Update or during the Tick event but does not work correctly for FixedUpdate.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NetworkTime ServerTime { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type        | Description |
 |-------------|-------------|
 | NetworkTime |             |
 
-#### TickRate
+### TickRate
 
+<div class="markdown level1 summary">
 
-The TickRate of the tick system. This is used to decide how often a
-fixed network tick is run.
+The TickRate of the tick system. This is used to decide how often a fixed network tick is run.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public uint TickRate { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-### Methods
+## Methods
 
-#### Reset(Double, Double)
+### Reset(Double, Double)
 
+<div class="markdown level1 summary">
 
 Resets the tick system to the given network time.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public void Reset(double localTimeSec, double serverTimeSec)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name          | Description                 |
 |---------------|---------------|-----------------------------|
 | System.Double | localTimeSec  | The local time in seconds.  |
 | System.Double | serverTimeSec | The server time in seconds. |
 
-#### UpdateTick(Double, Double)
+### UpdateTick(Double, Double)
 
+<div class="markdown level1 summary">
 
-Called after advancing the time system to run ticks based on the
-difference in time.
+Called after advancing the time system to run ticks based on the difference in time.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public void UpdateTick(double localTimeSec, double serverTimeSec)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name          | Description                |
 |---------------|---------------|----------------------------|
 | System.Double | localTimeSec  | The local time in seconds  |
 | System.Double | serverTimeSec | The server time in seconds |
 
-### Events
+## Events
 
-#### Tick
+### Tick
 
+<div class="markdown level1 summary">
 
 Gets invoked before every network tick.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public event Action Tick
 ```
 
-
-
-##### Event Type
+#### Event Type
 
 | Type          | Description |
 |---------------|-------------|
 | System.Action |             |
-
-
-

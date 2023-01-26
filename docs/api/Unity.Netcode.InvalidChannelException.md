@@ -1,198 +1,201 @@
 ---
 id: Unity.Netcode.InvalidChannelException
 title: Unity.Netcode.InvalidChannelException
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:05 pm
 ---
 
-# Class InvalidChannelException
-
+<div class="markdown level0 summary">
 
 Exception thrown when a specified network channel is invalid
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level2">
 
-System.Exception
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
+<div classs="implements">
 
-InvalidChannelException
+## Implements
 
-
-
-
-
-
-##### Implements
-
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
+</div>
 
+</div>
 
-##### Inherited Members
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-System.Exception.GetBaseException()
+Exception.GetBaseException()
 
+</div>
 
+<div>
 
+Exception.ToString()
 
+</div>
 
-System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,
-System.Runtime.Serialization.StreamingContext)
+<div>
 
+Exception.GetObjectData(SerializationInfo, StreamingContext)
 
+</div>
 
+<div>
 
+Exception.GetType()
 
-System.Exception.GetType()
+</div>
 
+<div>
 
+Exception.Message
 
+</div>
 
+<div>
 
-System.Exception.ToString()
+Exception.Data
 
+</div>
 
+<div>
 
+Exception.InnerException
 
+</div>
 
-System.Exception.Data
+<div>
 
+Exception.TargetSite
 
+</div>
 
+<div>
 
+Exception.StackTrace
 
-System.Exception.HelpLink
+</div>
 
+<div>
 
+Exception.HelpLink
 
+</div>
 
+<div>
 
-System.Exception.HResult
+Exception.Source
 
+</div>
 
+<div>
 
+Exception.HResult
 
+</div>
 
-System.Exception.InnerException
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
-System.Exception.Message
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
-System.Exception.Source
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
-System.Exception.StackTrace
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-System.Exception.TargetSite
-
-
-
-
-
-System.Object.Equals(System.Object)
-
-
-
-
-
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetHashCode()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
-public class InvalidChannelException : Exception, _Exception, ISerializable
+public class InvalidChannelException : Exception, ISerializable, _Exception
 ```
 
+## Constructors
 
+### InvalidChannelException(String)
 
-### Constructors
-
-#### InvalidChannelException(String)
-
+<div class="markdown level1 summary">
 
 Constructs an InvalidChannelException with a message
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public InvalidChannelException(string message)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name    | Description |
 |---------------|---------|-------------|
@@ -200,17 +203,14 @@ public InvalidChannelException(string message)
 
 ### Implements
 
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
-
+</div>

@@ -1,50 +1,33 @@
 ---
 id: Unity.Netcode.NetworkVariableReadPermission
 title: Unity.Netcode.NetworkVariableReadPermission
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:44 pm
 ---
 
-# Enum NetworkVariableReadPermission
-
+<div class="markdown level0 summary">
 
 The permission types for reading a var
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public enum NetworkVariableReadPermission
 ```
 
+## Fields
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Everyone
-
-Everyone can read
-
-Owner
-
-Only the owner and the server can read
-
+| Name     | Description                            |
+|----------|----------------------------------------|
+| Everyone | Everyone can read                      |
+| Owner    | Only the owner and the server can read |

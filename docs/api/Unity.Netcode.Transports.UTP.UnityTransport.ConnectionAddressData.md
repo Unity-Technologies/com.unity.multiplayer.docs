@@ -1,202 +1,193 @@
 ---
 id: Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData
 title: Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:38:44 pm
 ---
 
-# Struct UnityTransport.ConnectionAddressData
-
+<div class="markdown level0 summary">
 
 Structure to store the address to connect to
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.Equals(Object)
 
+</div>
 
+<div>
 
-System.ValueType.Equals(System.Object)
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
+ValueType.ToString()
 
+</div>
 
-System.ValueType.GetHashCode()
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode.Transports.UTP
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 [Serializable]
 public struct ConnectionAddressData
 ```
 
+## Fields
 
+### Address
 
-### Fields
-
-#### Address
-
+<div class="markdown level1 summary">
 
 IP address of the server (address to which clients will connect to).
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public string Address
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-#### Port
+### Port
 
+<div class="markdown level1 summary">
 
 UDP port of the server.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ushort Port
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-#### ServerListenAddress
+### ServerListenAddress
 
+<div class="markdown level1 summary">
 
-IP address the server will listen on. If not provided, will use
-'Address'.
+IP address the server will listen on. If not provided, will use 0.0.0.0.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public string ServerListenAddress
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
 
-### Properties
+## Properties
 
-#### ListenEndPoint
+### ListenEndPoint
 
+<div class="markdown level1 summary">
 
 Endpoint (IP address and port) server will listen/bind on.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
-public readonly NetworkEndPoint ListenEndPoint { get; }
+public readonly Networking.Transport.NetworkEndPoint ListenEndPoint { get; }
 ```
 
+#### Property Value
 
+| Type                                       | Description |
+|--------------------------------------------|-------------|
+| Unity.Networking.Transport.NetworkEndPoint |             |
 
-##### Property Value
+### ServerEndPoint
 
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
-
-#### ServerEndPoint
-
+<div class="markdown level1 summary">
 
 Endpoint (IP address and port) clients will connect to.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
-public readonly NetworkEndPoint ServerEndPoint { get; }
+public readonly Networking.Transport.NetworkEndPoint ServerEndPoint { get; }
 ```
 
+#### Property Value
 
-
-##### Property Value
-
-| Type            | Description |
-|-----------------|-------------|
-| NetworkEndPoint |             |
-
-
-
+| Type                                       | Description |
+|--------------------------------------------|-------------|
+| Unity.Networking.Transport.NetworkEndPoint |             |
