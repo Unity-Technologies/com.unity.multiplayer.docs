@@ -61,7 +61,7 @@ PongClientRpc(somenumber, sometext); // This is clearly a ClientRpc call
 
 ## To Send to One Client, use ClientRpcSendParameters
 
-The following code provides an example of using `ClientRpcSendParameters`, which sends a `ClientRpc` to a specific client connections. The default Netcode for GameObjects's behavior is to broadcast to every single client.
+The following code provides an example of using `ClientRpcSendParameters`, which sends a `ClientRpc` to a specific client connection. _The default Netcode for GameObjects behavior is to broadcast to every single client_.
 
 ```csharp
 private void DoSomethingServerSide(int clientId)
@@ -112,8 +112,12 @@ The host is both a client and a server. If a host invokes a client RPC, it trigg
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
- <figcaption>Hosts can invoke client RPCs on `NetworkObjects`. The RPC will be placed in the local queue. After a short delay, the client RPC executes on the host and all other clients. When a client receives a client RPC it's executed on that client's version of the same `NetworkObject`.</figcaption>
+ <figcaption>Hosts can invoke client RPCs on `NetworkObjects`. If broadcasting to all clients, the RPC will be immediately invoked on the host and placed in the local queue. At the end of the frame, the client RPC will be sent to the remote clients. When a remote client receives the client RPC it's executed on the client's local cloned instance of the same `NetworkObject`.</figcaption>
 </figure>
+
+:::warning
+When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (i.e. infinite recursion).
+:::
 
 See the [Boss Room RPC xamples](../../learn/bossroom/bossroom-actions).
 
