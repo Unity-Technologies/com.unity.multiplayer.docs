@@ -119,7 +119,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientH
 When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (i.e. infinite recursion).
 :::
 
-See the [Boss Room RPC xamples](../../learn/bossroom/bossroom-actions).
+See the [Boss Room RPC Examples](../../learn/bossroom/bossroom-actions).
 
 
 ## Also see
