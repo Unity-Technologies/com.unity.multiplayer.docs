@@ -133,22 +133,26 @@ The following are a few timing diagrams to help provide additional visual contex
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
-  <figcaption>Client can invoke a server RPC on a Network Object. The RPC will be placed in the local queue and then sent to the server, where it will be executed on the server version of the same Network Object.</figcaption>
+  <figcaption>A Client can invoke a server RPC on a `NetworkObject`. The RPC will be placed in the local queue and then sent to the server at the end of the frame. Upon receiving the server RPC, it is executed on the Server's instance of the same `NetworkObject`.</figcaption>
 </figure>
 
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClient.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClient_Dark.png?text=DarkMode"/>
-  <figcaption>Clients can invoke server RPCs on Client Hosts the same way they can invoke server RPCs on the regular servers: the RPC will be placed in the local queue and then sent to the Client Host, where it will be executed on the Client Host's version of the same Network Object.</figcaption>
+  <figcaption>Clients can invoke server RPCs on Hosts exactly like they can on a Server: the RPC will be placed in the local queue and sent to the Host at the end of the frame. Upon receiving the server RPC,  it will be executed on the Host's instance of the same `NetworkObject`.</figcaption>
 </figure>
 
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
-  <figcaption>When a server RPC is invoked by the Client Host, the RPC will be placed in a local queue and then executed on the Client Host after a short delay. The same happens for pure servers.</figcaption>
+  <figcaption>When a server RPC is invoked by a Host, the RPC is immediately executed.</figcaption>
 </figure>
+
+:::warning
+When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (i.e. infinite recursion).
+:::
 
 ## See Also
 

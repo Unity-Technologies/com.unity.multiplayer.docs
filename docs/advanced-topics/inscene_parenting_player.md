@@ -21,7 +21,7 @@ Steps to reproduce the behavior:
 ## Solution:
 
 
-If you want to do this when a player has first connected and all `NetworkObjects` (in-scene placed and already dynamically spawned by the server-host) have been fully synchronized with the client then we would recommend using the `NetworkManager.SceneManager.OnSceneEvent` to trap for the `C2S_SyncComplete` event.
+If you want to do this when a player has first connected and all `NetworkObjects` (in-scene placed and already dynamically spawned by the server-host) have been fully synchronized with the client then we would recommend using the `NetworkManager.SceneManager.OnSceneEvent` to trap for the `SynchronizeComplete` event.
 
 Here is an example script that we recommend using to achieve this:
 
@@ -61,11 +61,11 @@ public class ParentPlayerToInSceneNetworkObject : NetworkBehaviour
         // OnSceneEvent is very useful for many things
         switch (sceneEvent.SceneEventType)
         {
-            // The C2S_SyncComplete event tells the server that a client-player has:
+            // The SceneEventType event tells the server that a client-player has:
             // 1.) Connected and Spawned
             // 2.) Loaded all scenes that were loaded on the server at the time of connecting
             // 3.) Synchronized (instantiated and spawned) all NetworkObjects in the network session
-            case SceneEventData.SceneEventTypes.C2S_SyncComplete:
+            case SceneEventType.SynchronizeComplete:
                 {
                     // As long as we are not the server-player
                     if (sceneEvent.ClientId != NetworkManager.LocalClientId)
@@ -85,4 +85,8 @@ You should place this script on your in-scene placed `NetworkObject` (i.e. the f
 
 :::note
 Remove any parenting code you might have had from your player prefab before using the above script. Depending upon your project's goals, you might be parenting all players under the same in-scene placed `NetworkObject` or you might intend to have each player parenting unique.  If you want each player to be parented under a unique in-scene placed `NetworkObject` then you will need to have the same number of in-scene placed `NetworkObject`s as your maximum allowed players per game session.  The above example will only parent all players under the same in-scene placed `NetworkObject`.  You could extend the above example by migrating the scene event code into an in-scene placed `NetworkObject` that manages the parenting of players (i,e. name it something like `PlayerSpawnManager`) as they connect, make the `SetPlayerParent` method public, and add all in-scene placed `NetworkObject`s to a public list of GameObjects that the `PlayerSpawnManager` will reference and assign player's to as they connect while also freeing in-scene placed `NetworkObject`s as players disconnect during a game session.
+:::
+
+:::important
+NGO v1.2 has a [known issue](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/2396) with parenting dynamically spawned `NetworkObjects` under in-scene placed `NetworkObjects`. This will be fixed in the next NGO update.
 :::

@@ -36,9 +36,11 @@ The `NetworkSceneManager` lives within the `NetworkManager` and is instantiated 
   - The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.
 - As a server:
   -  Any scene you want synchronized with currently connected or late joining clients **must** be loaded via the `NetworkSceneManager`
-    - If you use the `UnityEngine.SceneManagement.SceneManager` during a netcode enabled game session, then those scenes will not be synchronized with currently connected or late joining clients.
-      - A "late joining client" is a client that joins a game session that has already been started and there are already one or more clients connected
-        - _All netcode aware objects spawned prior to a late joining client need to be synchronized with the late joining client._
+    - If you use the `UnityEngine.SceneManagement.SceneManager` during a netcode enabled game session, then those scenes will not be synchronized with currently connected clients.
+      - A "late joining client" is a client that joins a game session that has already been started and there are already one or more clients connected.
+        - _All netcode aware objects spawned prior to a late joining client will be synchronized with a late joining client._
+      - If you load a scene on the server-side using `UnityEngine.SceneManagement.SceneManager` then it will be synchronized with late joining clients unless you use server-side scene validation (see [Scene Validation](using-networkscenemanager.md#scene-validation)).
+        - _It is a best practice to use `NetworkSceneManager` when loading scenes _
   -  The server does not require any clients to be currently connected before it starts loading scenes via the `NetworkSceneManager`.
     - Any scene loaded via `NetworkSceneManager` will always default to being synchronized with clients.
       - _Scene validation is explained later in this document._
@@ -354,7 +356,7 @@ You might find yourself in a scenario where you just need to dynamically generat
   - For this example we would return false any time `VerifySceneBeforeLoading` was invoked with the scene name "WorldCollisionGeometry".
  
  :::caution
- This only works under the scenario where the dynamically generated scene is a server-host side only scene unless you write server-side code that sends enough information to a newly connected client in order to replicate the dynamically generated scene via RPC, a custom message, a `NetowrkVariable`, or an in-scene placed NetworkObject that is in a scene, other than the dynamically generated one, and contains a `NetworkBehaviour` component with an overridden `OnSynchronize` method that includes additional serializatoin information about how to construct the dynamically generated scene.  The limitation on this approach is that the scene should not contain already spawned `NetworkObject`s as those will not get automatically synchronized when a client first connects.
+ This only works under the scenario where the dynamically generated scene is a server-host side only scene unless you write server-side code that sends enough information to a newly connected client in order to replicate the dynamically generated scene via RPC, a custom message, a `NetworkVariable`, or an in-scene placed NetworkObject that is in a scene, other than the dynamically generated one, and contains a `NetworkBehaviour` component with an overridden `OnSynchronize` method that includes additional serialization information about how to construct the dynamically generated scene.  The limitation on this approach is that the scene should not contain already spawned `NetworkObject`s as those will not get automatically synchronized when a client first connects.
  :::
 
 ### What Next?
