@@ -10,7 +10,7 @@ description: Learn more about installing and running the Boss Room game sample.
 This project is currently in early-access.
 :::
 
-Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and MLAPI. We are building the sample to serve as an educational showcase of specific typical gameplay patterns frequently featured in similar games.
+Boss Room is a fully functional Multiplayer Co-op Sample game made with Unity and MLAPI. We are building the sample to serve as an educational showcase of specific typical gameplay patterns often featured in similar games.
 
 The intention is that you can use everything in this project as a starting point or as bits and pieces in your own Unity games. 
 
@@ -90,7 +90,7 @@ To run multiple instances of the same app, you need to use the command line:
 ### Multiplayer over internet
 
 :::tip
-In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
+In contrast to running a local setup, when playing over internet we don't necessarily need a built executable. You can run the game in editor.
 :::
 
 Running the game over internet currently requires either setting up a [Photon Transport for MLAPI](#photon-transport) or using [Port Forwarding](#port-forwarding).
@@ -126,7 +126,7 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 1. In the Finder on your Mac, locate the application you want to open.
   
   :::note
-  Do not use Launchpad, it does not allow you to access the shortcut menu.
+  Don't use Launchpad, it does not allow you to access the shortcut menu.
   :::
 
 1. Control-click the app icon, then choose **Open** from the shortcut menu.

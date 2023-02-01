@@ -8,7 +8,7 @@ Netcode for Gameobjects' high level components, [the RPC system](../advanced-top
   2. [`NetworkBehaviour`](networkbehaviour.md)
 
 :::note
-Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures in order to be serialized and used with `RPC`s and `NetworkVariables`:
+Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures to be serialized and used with `RPC`s and `NetworkVariables`:
 
 - For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference).
 - For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
@@ -57,7 +57,7 @@ To determine if the local client is the owner of a NetworkObject you can check t
 To determine if the NetworkObject is owned by the server you can check the [`NetworkBehaviour.IsOwnedByServer`](../api/Unity.Netcode.NetworkBehaviour#isownedbyserver) property.
 
 :::note
-When you want to despawn and destroy the owner but you don't want a specific `NetworkObject` to be destroyed along with the owner, then you can set the `NetworkObject.DontDestroyWithOwner` property to `true` which will assure that when the owner is destroyed the owned `NetworkObject`is not destroyed.
+When you want to despawn and destroy the owner but you don't want a specific `NetworkObject` to be destroyed along with the owner, then you can set the `NetworkObject.DontDestroyWithOwner` property to `true` which will assure that when the owner is destroyed the owned `NetworkObject`isn't destroyed.
 :::
 
 ## Player Objects
@@ -105,5 +105,5 @@ To find your own player object just pass `NetworkManager.Singleton.LocalClientId
 Network prefabs (NetworkPrefabs) are prefabs that contain a GameObject with a `NetworkObject` component.  As an example, if you wanted to create a prefab to be the default player prefab, then you would create a prefab that at the root GameObject included a `NetworkObject` component and any additional player specific `NetworkBehaviour` components.  You can then assign that prefab to the `NetworkManager` Player Prefab property to be used when a player is connected and approved.  Each connected player will have a unique instance spawned on all connected clients (including the server).
 
 :::note
-You can only have one `NetworkObject` at the root of a prefab.  This means do not create prefabs with nested `NetworkObjects`!
+You can only have one `NetworkObject` at the root of a prefab.  This means don't create prefabs with nested `NetworkObjects`!
 :::

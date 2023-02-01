@@ -5,7 +5,7 @@ description: A brief explanation of Custom Messages use in Netcode for GameObjec
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-If you do not want to use the Netcode for GameObjects (Netcode) messaging system, you do not have to. You can use a thin layer called "Custom Messages" to implement your own messaging behavior and/or add custom targeting. They are unbound to any game object. Custom messages can be used in combination with [RPC messages](../messaging-system.md). 
+If you don't want to use the Netcode for GameObjects (Netcode) messaging system, you don't have to. You can use a thin layer called "Custom Messages" to implement your own messaging behavior and/or add custom targeting. They're unbound to any game object. Custom messages can be used in combination with [RPC messages](../messaging-system.md). 
 
 There are two types of custom messages:
 - Unnamed
@@ -34,7 +34,7 @@ public class UnnamedStringMessageHandler : CustomUnnamedMessageHandler<string>
     /// </summary>
     protected override byte MessageType()
     {
-        // As an example, we could define message type of 1 for string messages
+        // As an example, we can define message type of 1 for string messages
         return 1;
     }
 
@@ -85,7 +85,7 @@ public class UnnamedStringMessageHandler : CustomUnnamedMessageHandler<string>
             Debug.Log($"Server received unnamed message of type ({MessageType()}) from client " +
                 $"({clientId}) that contained the string: \"{stringMessage}\"");
 
-            // As an example, we could also broadcast the client message to everyone
+            // As an example, we can also broadcast the client message to everyone
             SendUnnamedMessage($"Newly connected client sent this greeting: \"{stringMessage}\"");
         }
         else
@@ -205,7 +205,7 @@ public class CustomUnnamedMessageHandler<T> : NetworkBehaviour
 ## Named Messages
 If you don't want to handle the complexity of creating your own messaging system, Netcode for GameObjects also provides you with the option to use custom "named messages". Custom named messages use the "message name" as the unique identifier (it creates a hash value from the name and links that to a received named message callback). 
 :::tip
-If you are not quite sure if you need to incorporate the complexity of message identification and handling like you do with custom unnamed messages, you can always start with custom named messages and then if, at a later date, you determine you need "sub-message types" for a specific custom named message then you can always incorporate a type identifier (like you would with unnamed messages) into the named message payload itself.
+If you aren't quite sure if you need to incorporate the complexity of message identification and handling like you do with custom unnamed messages, you can always start with custom named messages and then if, at a later date, you determine you need "sub-message types" for a specific custom named message then you can always incorporate a type identifier (like you would with unnamed messages) into the named message payload itself.
 :::
 
 ### Name Message Example

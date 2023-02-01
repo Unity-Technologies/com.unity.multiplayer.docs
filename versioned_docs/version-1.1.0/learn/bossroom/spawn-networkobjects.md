@@ -7,14 +7,14 @@ description: Learn how to dynamically spawn NetworkObjects in Boss Room to resol
 Required reading: [Object Spawning](../../basics/object-spawning.md).
 :::
 
-This document serves as a walkthrough of Boss Room’s approach to solving the following issue: Late-joining clients entering networked sessions encountering zombie `NetworkObjects`. Zombie `NetworkObjects` represent `NetworkObjects` that are instantiated for a client due to scene loads but are not despawned or destroyed by Netcode.
+This document serves as a walkthrough of Boss Room’s approach to solving the following issue: Late-joining clients entering networked sessions encountering zombie `NetworkObjects`. Zombie `NetworkObjects` represent `NetworkObjects` that are instantiated for a client due to scene loads but aren't despawned or destroyed by Netcode.
 
 This is a particular Netcode limitation of `NetworkObject` spawning: `NetworkObjects` that belong to a scene object should not be destroyed until its scene has been unloaded through Netcode’s scene management.
 
 The scenario in question:
 
 * A host loads a scene and destroys a `NetworkObject` that belonged to that scene.
-* A client joins the host’s session and loads the additive scene. This operation loads **all** the `GameObjects` included in the additive scene. The `NetworkObject` that was destroyed on the server will not be destroyed on the client’s machine.
+* A client joins the host’s session and loads the additive scene. This operation loads **all** the `GameObjects` included in the additive scene. The `NetworkObject` that was destroyed on the server won't be destroyed on the client’s machine.
 
 This scenario manifested inside Boss Room, whereby late-joining clients joining a game session encountered zombie `NetworkObject`s that were not destroyed over the network.
 

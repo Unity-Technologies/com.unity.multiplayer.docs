@@ -30,7 +30,7 @@ The 2DSpaceShooter sample has power-ups which apply different status effects to 
 
 The power-ups themselves are server authorative. On the server they check if a player has entered their trigger and then apply a timed status effect to that player and disappear.
 
-The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You could also use regular floats for timers. By using `NetworkVariable`s, the client can use this information to display different graphics based on active buffs to players.
+The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You can also use regular floats for timers. By using `NetworkVariable`s, the client can use this information to display different graphics based on active buffs to players.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L45-L51
@@ -46,7 +46,7 @@ The `2DSpaceShooter` object creates many objects dynamically at runtime includin
 
 All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically returned to the pool instead of getting destroyed.
 
-Adding the `NetworkObjectPool` to the scene will not yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
+Adding the `NetworkObjectPool` to the scene won't yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
 
 Regular Netcode Spawn Code example:
 

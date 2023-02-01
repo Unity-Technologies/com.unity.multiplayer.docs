@@ -92,15 +92,15 @@ This allows the four bytes of the embedded struct to be rapidly serialized as a 
 - `FastBufferReader` and `FastBufferWriter` are heavily optimized for speed, using aggressive inlining and unsafe code to achieve the fastest possible buffer storage and retrieval.
 - `FastBufferReader` and `FastBufferWriter` use unsafe typecasts and `UnsafeUtility.MemCpy` operations on `byte*` values, achieving native memory copy performance with no need to iterate or do bitwise shifts and masks.
 - `FastBufferReader` and `FastBufferWriter` are intended to make data easier to debug - one such thing to support will be a `#define MLAPI_FAST_BUFFER_UNPACK_ALL` that will disable all packing operations to make the buffers for messages that use them easier to read.
-- `FastBufferReader` and `FastBufferWriter` do not support runtime type discovery - there is no `WriteObject` or `ReadObject` implementation. All types must be known at compile time. This is to avoid garbage and boxing allocations.
+- `FastBufferReader` and `FastBufferWriter` don't support runtime type discovery - there is no `WriteObject` or `ReadObject` implementation. All types must be known at compile time. This is to avoid garbage and boxing allocations.
 
-A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general they are rarely if ever needed for more than a frame, but this does provide a very efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
+A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general they're rarely if ever needed for more than a frame, but this does provide a very efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
 
 ## Creating and Disposing FastBufferWriters and FastBufferReaders
 
-To create your own `FastBufferWriter`s and `FastBufferReader`s, it's important to note that struct default/parameterless constructors cannot be removed or overridden, but `FastBufferWriter` and `FastBufferReader` require constructor behavior to be functional. 
+To create your own `FastBufferWriter`s and `FastBufferReader`s, it's important to note that struct default/parameterless constructors can't be removed or overridden, but `FastBufferWriter` and `FastBufferReader` require constructor behavior to be functional. 
 
-`FastBufferWriter` always owns its internal buffer and must be constructed with an initial size, an allocator, and a maximum size. If the maximum size is not provided or is less than or equal to the initial size, the `FastBufferWriter` cannot expand.
+`FastBufferWriter` always owns its internal buffer and must be constructed with an initial size, an allocator, and a maximum size. If the maximum size isn't provided or is less than or equal to the initial size, the `FastBufferWriter` can't expand.
 
 `FastBufferReader` can be constructed to either own its buffer or reference an existing one via `Allocator.None`. Not all types are compatible with `Allocator.None` - only `byte*`, `NativeArray<byte>`, and `FastBufferWriter` input types can provide `Allocator.None`. You can obtain a `byte*` from a `byte[]` using the following method:
 
@@ -118,7 +118,7 @@ Regardless which allocator you use (including `Allocator.None`), `FastBufferWrit
 
 ## Bounds Checking
 
-For performance reasons, by default, `FastBufferReader` and `FastBufferWriter` **do not do bounds checking** on each write. Rather, they require the use of specific bounds checking functions - `TryBeginRead(int amount)` and `TryBeginWrite(int amount)`, respectively. This improves performance by allowing you to verify the space exists for the multiple values in a single call, rather than doing that check on every single operation.
+For performance reasons, by default, `FastBufferReader` and `FastBufferWriter` **don't do bounds checking** on each write. Rather, they require the use of specific bounds checking functions - `TryBeginRead(int amount)` and `TryBeginWrite(int amount)`, respectively. This improves performance by allowing you to verify the space exists for the multiple values in a single call, rather than doing that check on every single operation.
 
 :::info
 **In editor mode and development builds**, calling these functions records a watermark point, and any attempt to read or write past the watermark point will throw an exception. This ensures these functions are used properly, while avoiding the performance cost of per-operation checking in production builds. In production builds, attempting to read or write past the end of the buffer will cause undefined behavior, likely program instability and/or crashes.
@@ -132,7 +132,7 @@ Writing values in sizes measured in bits rather than bytes comes with a cost
 - First, it comes with a cost of having to track bitwise lengths and convert them to bytewise lenghts.
 - Second, it comes with a cost of having to remember to add padding after your bitwise writes and reads to ensure the next bytewise write or read functions correctly, and to make sure the buffer length includes any trailing bits.
 
-To address that, `FastBufferReader` and `FastBufferWriter` do not, themselves, have bitwise operations. When needed, however, you can create a `BitWriter` or `BitReader` instance, which is used ensure that no unaligned bits are left at the end - from the perspective of `FastBufferReader` and `FastBufferWriter`, only bytes are allowed. `BitWriter` and `BitReader` operate directly on the underlying buffer, so calling non-bitwise operations within a bitwise context is an error (and will raise an exception in non-production builds).
+To address that, `FastBufferReader` and `FastBufferWriter` don't, themselves, have bitwise operations. When needed, however, you can create a `BitWriter` or `BitReader` instance, which is used ensure that no unaligned bits are left at the end - from the perspective of `FastBufferReader` and `FastBufferWriter`, only bytes are allowed. `BitWriter` and `BitReader` operate directly on the underlying buffer, so calling non-bitwise operations within a bitwise context is an error (and will raise an exception in non-production builds).
 
 ```csharp
 FastBufferWriter writer = new FastBufferWriter(256, Allocator.TempJob);

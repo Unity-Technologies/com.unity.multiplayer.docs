@@ -77,7 +77,7 @@ This section adds in a player object and spawns it for each connected player.
 1. Delete **Player** from scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
+  We remove **Player**, because we will be using the network library to spawn the player. The library can't track objects that start in the scene.
   :::
 
 1. Select `NetworkManager`.
@@ -86,7 +86,7 @@ This section adds in a player object and spawns it for each connected player.
 1. Drag this player prefab from above into the new empty slot
 
   :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as `Default Player Prefab` the game will crash on client connect.
+  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you don't have any prefab set as `Default Player Prefab` the game will crash on client connect.
   :::
 
   :::note
@@ -112,7 +112,7 @@ Now we will test to see if everything works as expected.
 
 
 :::note Congrats!
-Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
+Congratulations you have created a networked game. It isn't a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
 :::
 
 :::contribution Special Thanks

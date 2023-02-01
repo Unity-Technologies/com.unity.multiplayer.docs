@@ -40,7 +40,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Only server finds navigation object, asserts refactored [MTT-3248] (#602)
 * Relogin when auth token is stale [MTT-3253] (#604)
 * Scene loading issue when shutting down [MTT-2828] (#610)
-* Silencing errors that are not errors [MTT-2930] [MTT-3249] (#597)
+* Silencing errors that aren't errors [MTT-2930] [MTT-3249] (#597)
 * Chore: bump to latest tools version, so we get the awesome new perf improvements (#614)
 * Chore: bumping package version and cleaning up dependencies for boss room package (#600)
 * Chore: upgrade to 2020.3.33f1 (#615)
@@ -108,13 +108,13 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * When reconnecting, the player has a big teleport to it's old position
 * Proper-Fix: Retrieve Lobby list hit the rate limit. Will try again soon... error spam
 * improve auth flow, it's not clear at the moment how to run two players locally
-* Disconnecting wifi client side couldn’t reconnect
-* "Service Error - Cannot resolve destination host" when attempting to reconnect
+* Disconnecting wifi client side cann’t reconnect
+* "Service Error - Can't resolve destination host" when attempting to reconnect
 * Received "No client guid found mapped to the given client ID" when leaving game
 * Remove workaround for wait to disconnect
-* NotServerException: Destroy a spawned NetworkObject on a non-host client is not valid. Call Destroy or Despawn on the server/host instead - thrown when a host joins Lobby as a client
+* NotServerException: Destroy a spawned NetworkObject on a non-host client isn't valid. Call Destroy or Despawn on the server/host instead - thrown when a host joins Lobby as a client
 * When start host fails, we shouldn't go to char select screen
-* heal not consistent, sometimes will not see health bar move
+* heal not consistent, sometimes won't see health bar move
 * additive scene loading produces some lag in editor
 * Bringing up cheats screen on touchscreens should not invoke any game-side actions
 * Idling in Lobby Join window causes a curl error from Lobby Services
@@ -122,7 +122,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Android UI/Click issues
 * Fix environment material on lowest setting for android
 * [Connection] UI feedback on hosting and joining
-* Emote drawer is not opened when 4 is pressed on keyboard
+* Emote drawer isn't opened when 4 is pressed on keyboard
 * Controls modal does not scale with the window
 * Walk is triggered when trying to hit emotes on mobile
 * Late join clients have green names

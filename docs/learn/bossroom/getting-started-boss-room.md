@@ -6,7 +6,7 @@ description: Learn more about installing and running the Boss Room game sample.
 
 ![Boss Room banner](/img/banner.png)
 
-Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) frequently featured in similar multiplayer games.
+Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
 
 :::note
 **Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2021 LTS](https://unity.com/releases/2021-lts)). Make sure to include standalone support for Windows/Mac in your installation.

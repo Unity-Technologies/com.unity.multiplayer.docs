@@ -181,7 +181,7 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
+You won'tice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
 :::
 
 ## Adding basic movement to the Player object 

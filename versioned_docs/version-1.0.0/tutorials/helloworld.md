@@ -72,7 +72,7 @@ This section adds in a player object and spawns it for each connected player.
 7. Drag this player prefab from above into this field.
 
   :::important
-  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as the `Player Prefab` no player object will be spawned.
+  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you don't have any prefab set as the `Player Prefab` no player object will be spawned.
   :::
 
 1. Create a **3D Object->Plane**, centered at (0,0,0).

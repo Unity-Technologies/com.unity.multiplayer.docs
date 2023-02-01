@@ -109,7 +109,7 @@ This release includes the following updates:
   * Completed minor code cleanup.
   * Added verification to only show skill and ability buttons for available character abilities. Empty buttons no longer load for characters. <!-- GOMPS-356 -->
 
-* Added a call to warm up shaders when the project starts to ensure animations issues do not occur. <!-- GOMPS-367 -->
+* Added a call to warm up shaders when the project starts to ensure animations issues don't occur. <!-- GOMPS-367 -->
 * Removed collision from objects that have a Broken (dead) state. <!-- GOMPS-461 -->
 * Implemented a better cooldown solution and calculations for tracking and managing character, imp, and boss actions. <!-- GOMPS-468 PR 309-->
 * Updated event registration and unregistration code to be symmetrical across the project.<!-- GOMPS-471 -->
@@ -141,7 +141,7 @@ This release includes the following issue fixes:
 
 The following issues may occur for access and games:
 
-* An MLAPI soft sync error on cleanup between scene transitions may break the game, for example imps do not spawn and pots are intangible.  <!-- GOMPS-535, MTT-772-->
+* An MLAPI soft sync error on cleanup between scene transitions may break the game, for example imps don't spawn and pots are intangible.  <!-- GOMPS-535, MTT-772-->
 * The game can be initiated while a second player is connecting to the host in `CharSelect`. Players may join without selected characters spawning and in an unresponsive state.<!-- GOMPS-534 -->
 * Sometimes after completing a match and the host starts a new match from the Victory or Loss screen, connected players may have no visible interactions to join or select characters. A work-around is implemented to not block entry into the game. <!-- GOMPS-464 GOMPS-506 still an issue -->
 * Sometimes the client may be disconnected from Photon which causes a timeout and `PhotonRealtimeTransport` to be in a bad state after the shutdown. An exception is developed that fires every frame. <!-- GOMPS-525 GOMPS-532 MLAPI GH 70 -->

@@ -10,7 +10,7 @@ Object (NetworkObject) visibility is a Netcode for GameObjects term used to desc
 
 ## Using Visibility
 
-One way to determine visibility is to assign a callback to `NetworkObject.CheckObjectVisibility`.  This callback is invoked when new clients connect or just before the associated `NetworkObject` is spawned. Looking at the example below, we can see the callback includes a client identifier (clientId) value as a parameter which is used to determine whether the `NetworkObject` is visible to the client.  If `NetworkObject.CheckObjectVisibility` is not assigned, then Netcode for GameObjects assumes it is visible to all clients.
+One way to determine visibility is to assign a callback to `NetworkObject.CheckObjectVisibility`.  This callback is invoked when new clients connect or just before the associated `NetworkObject` is spawned. Looking at the example below, we can see the callback includes a client identifier (clientId) value as a parameter which is used to determine whether the `NetworkObject` is visible to the client.  If `NetworkObject.CheckObjectVisibility` isn't assigned, then Netcode for GameObjects assumes it is visible to all clients.
 
 ### CheckObjectVisibility Callback Example 
 ```csharp

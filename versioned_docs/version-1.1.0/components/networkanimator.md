@@ -3,7 +3,7 @@ id: networkanimator
 title: NetworkAnimator
 ---
 ## Introduction
-The `NetworkAnimator` component provides you with a fundamental example of how to synchronize animations during a network session.  Animation states are synchronized with players joining an existing network session and any client already connected prior to the animation state changing.
+The `NetworkAnimator` component provides you with a fundamental example of how to synchronize animations during a network session.  Animation states are synchronized with players joining an existing network session and any client already connected before the animation state changing.
 - Players joining an existing network session will be synchronized with:
     - All of the `Animator`'s current properties and states.
         - _With exception to `Animator` trigger properties.  These are only synchronized with already connected clients._
@@ -23,13 +23,13 @@ The `NetworkAnimator` component provides you with a fundamental example of how t
 ### Animator Trigger Property
 The `Animator` trigger property type ("trigger") is basically nothing more than a boolean value that, when set to `true`, will get automatically reset back to `false` after the `Animator` component has processed the trigger. In most cases, a trigger is used to initiate a transition between `Animator` layer states. In this sense, one can think of a trigger as a way to signal the "beginning of an event". Because trigger properties have this unique behavior, they **require** that you to set the trigger value via the `NetworkAnimator.SetTrigger` method.  
 :::caution
-If you set a trigger property using `Animator.SetTrigger` then this will not be synchronized with non-owner clients.
+If you set a trigger property using `Animator.SetTrigger` then this won't be synchronized with non-owner clients.
 :::
 
 ### Server Authoritative Mode
-The default setting for `NetworkAnimator` is server authoritative mode.  When operating in server authoritative mode, any animation state changes that are set (i.e. triggers) or detected (i.e. change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients.  Because the server initiates any synchronization of changes to an `Animator`'s state, a client that is the owner of the `NetworkObject` associated with the `NetworkAnimator` could lag by roughly the full round trip time (RTT).  Below is a timing diagram to demonstrate this:
+The default setting for `NetworkAnimator` is server authoritative mode.  When operating in server authoritative mode, any animation state changes that are set (i.e. triggers) or detected (i.e. change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients.  Because the server initiates any synchronization of changes to an `Animator`'s state, a client that is the owner of the `NetworkObject` associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT).  Below is a timing diagram to demonstrate this:
 ![ServerAuthMode](Images/NetworkAnimatorServerAuthTiming.png)
-In the above diagram, a client might be sending the server an RPC to notify the server that the player is performing some kind of action that could change the player's animations (including setting a trigger). Under this scenario, the client sends an RPC to the server (half RTT), the server processes the RPC, the associated `Animator` state changes are detected by the `NetworkAnimator` (server-side), and then all clients (including the owner client) are synchronized with the changed.  
+In the above diagram, a client might be sending the server an RPC to notify the server that the player is performing some kind of action that can change the player's animations (including setting a trigger). Under this scenario, the client sends an RPC to the server (half RTT), the server processes the RPC, the associated `Animator` state changes are detected by the `NetworkAnimator` (server-side), and then all clients (including the owner client) are synchronized with the changed.  
 
 **Server authoritative model benefits:**
 - If running a plain server (i.e. non-host), this model helps reduce the synchronization latency between all client animations.

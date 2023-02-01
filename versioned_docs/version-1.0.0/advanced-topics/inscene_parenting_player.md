@@ -9,11 +9,11 @@ We received the following issue in Github.
 
 ## Issue:
 
-When a player prefab contains a script that dynamically adds a parent to its transform, the client cannot join a game hosted by another client. [You can see orignal issue here](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/issues/1211)
+When a player prefab contains a script that dynamically adds a parent to its transform, the client can't join a game hosted by another client. [You can see orignal issue here](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/issues/1211)
 
 Steps to reproduce the behavior:
 
-1. Set up basic networking game with at least one `GameObject` in a scene that is not the player.
+1. Set up basic networking game with at least one `GameObject` in a scene that isn't the player.
 1. Add a script to the player prefab that adds parenting to its transform via `gameObject.transform.SetParent()` in the `Start()` method.
 1. Launch one instance of the game as Host.
 1. Launch another instance and try to join as Client.
@@ -66,7 +66,7 @@ public class ParentPlayerToInSceneNetworkObject : NetworkBehaviour
             // 3.) Synchronized (instantiated and spawned) all NetworkObjects in the network session
             case SceneEventData.SceneEventTypes.C2S_SyncComplete:
                 {
-                    // As long as we are not the server-player
+                    // As long as we aren't the server-player
                     if (sceneEvent.ClientId != NetworkManager.LocalClientId)
                     {
                         // Set the newly joined and synchronized client-player as a child of this in-scene placed NetworkObject
@@ -79,7 +79,7 @@ public class ParentPlayerToInSceneNetworkObject : NetworkBehaviour
 }
 ```
 
-You should place this script on your in-scene placed `NetworkObject` (i.e. the first `GameObject`) and do the parenting from it in order to avoid any timing issues of when it is spawned or the like. It only runs the script on the server-host side since parenting is server authoritative. 
+You should place this script on your in-scene placed `NetworkObject` (i.e. the first `GameObject`) and do the parenting from it to avoid any timing issues of when it is spawned or the like. It only runs the script on the server-host side since parenting is server authoritative. 
 
 
 :::note

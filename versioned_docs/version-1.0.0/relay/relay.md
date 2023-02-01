@@ -3,7 +3,7 @@ id: relay
 title: Relay
 ---
 
-Netcode for GameObjects (Netcode) allows you to connect to a host by its IP and port. However, if the host is not on the same network as you (i.e. somewhere over the Internet), you will need some extra services to achieve a successful connection and thus a successful game.
+Netcode for GameObjects (Netcode) allows you to connect to a host by its IP and port. However, if the host isn't on the same network as you (i.e. somewhere over the Internet), you will need some extra services to achieve a successful connection and thus a successful game.
 
 Many factors impact how you connect to the remote host, and it can be tricky to implement. There are two ways of achieving such a connection: 
 - [NAT punching](../learn/listenserverhostarchitecture.md#option-c-nat-punchthrough): an advanced technique that allows you to directly connect to the host computer even if it is on another network.  

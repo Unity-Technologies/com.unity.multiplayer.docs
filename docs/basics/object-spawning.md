@@ -12,7 +12,7 @@ A network prefab is any unity prefab asset that has one `NetworkObject` componen
 - any child or children of the `GameObject` that the `NetworkObject` is attached to.  
 
 :::note
-A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObject` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components are not permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and will not allow you to do this.
+A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObject` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components aren't permited in network prefabs, Netcode for GameObjects won'tify you in the editor if you are trying to add more than one `NetworkObject` to a prefab and won't allow you to do this.
 :::
 
 When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.NetworkObjectId` is used to help determine which `NetworkBehaviour` component instance will receive an update to a `NetworkVariable` or where to invoke an RPC. A `NetworkObject` component can have one or more `NetworkBehaviour` components assigned to it.
@@ -55,7 +55,7 @@ When you set the destroyWithScene property to `false` it will be treated the sam
 
 By default, a spawned network prefab instance that is destroyed on the server/host will be automatically destroyed on all clients.
 
-When a client disconnects, all network prefab instances created during the network session will be destroyed on the client-side by default. If you do not want that to happen, set the `DontDestroyWithOwner` field on `NetworkObject` to true before despawning.
+When a client disconnects, all network prefab instances created during the network session will be destroyed on the client-side by default. If you don't want that to happen, set the `DontDestroyWithOwner` field on `NetworkObject` to true before despawning.
 
 To do this at runtime:
 ```csharp
@@ -70,15 +70,15 @@ To make this the default from the editor insepctor view:
 As an alternative way, you can make the `NetworkObject.DontDestroyWithOwner` property default to `true` by setting it on the `NetworkObject` itself like in the above screenshot.
 
 ### Despawning
-Only a server can despawn a `NetworkObject`, and the default despawn behavior is to destroy the associated GameObject. In order to despawn but not destroy a `NetworkObject`, you should call `NetworkObject.Despawn` and pass false as the parameter. Clients will always be notified and will mirror the despawn behavior.  If you despawn and destroy on the server then all clients will despawn and then destroy the `GameObject` that the `NetworkObjet` component is attached to.
+Only a server can despawn a `NetworkObject`, and the default despawn behavior is to destroy the associated GameObject. to despawn but not destroy a `NetworkObject`, you should call `NetworkObject.Despawn` and pass false as the parameter. Clients will always be notified and will mirror the despawn behavior.  If you despawn and destroy on the server then all clients will despawn and then destroy the `GameObject` that the `NetworkObjet` component is attached to.
 
-On the client side, you should never call `Object.Destroy` on any `GameObject` with a `NetworkObject` component attached to it (this is not supported and will cause an exception to be thrown).  If you want to use a more client authority model, have the client with ownership invoke a ServerRpc to defer the despawning on server side.
+On the client side, you should never call `Object.Destroy` on any `GameObject` with a `NetworkObject` component attached to it (this isn't supported and will cause an exception to be thrown).  If you want to use a more client authority model, have the client with ownership invoke a ServerRpc to defer the despawning on server side.
 
 The only way to despawn `NetworkObject` for a specific client is to use `NetworkObject.NetworkHide`.
 See: [Object Visibility](object-visibility.md) for more information on this.
 
 :::warning
-If you have `GameObject` children, with `NetworkBehaviour` components attached, of a parent `GameObject`, with a `NetworkObject` component attached, you cannot disable the `GameObject` children prior to spawning or despawning. Doing so, in v1.0.0, could cause unexpected results and it is recommended to make sure all children are enabled in the hierarchy prior to spawning or despawning.
+If you have `GameObject` children, with `NetworkBehaviour` components attached, of a parent `GameObject`, with a `NetworkObject` component attached, you can't disable the `GameObject` children before spawning or despawning. Doing so, in v1.0.0, can cause unexpected results and it is recommended to make sure all children are enabled in the hierarchy before spawning or despawning.
 :::
 
 ## Dynamically Spawned Network Prefabs
@@ -140,7 +140,7 @@ Really, the when we use the term "non-pooled" more often than not we are referri
 
 ### Pooled Dynamic Spawning
 
-Pooled dynamic spawning is when netcode objects (`GameObject` with one `NetworkObject` component) are not destroyed on the server or the client when despawned. Instead, specific components are just disabled (or the `GameObject` itself) when a netcode object is despawned.  A pooled dynamically spawned netcode object is typically instantiated during an already memory allocation heavy period of time (like when a scene is loaded or even at the very start of your application prior to even establishing a network connection).  Pooled dynamically spawned netcode objects are more commonly thought of as more than one netcode object that can be re-used without incurring the memory allocation and initialization costs.  However, you might also run into scenarios where you need just one dynamically spawned netcode object to be treated like a pooled dynmically spawned netcode object.
+Pooled dynamic spawning is when netcode objects (`GameObject` with one `NetworkObject` component) aren't destroyed on the server or the client when despawned. Instead, specific components are just disabled (or the `GameObject` itself) when a netcode object is despawned.  A pooled dynamically spawned netcode object is typically instantiated during an already memory allocation heavy period of time (like when a scene is loaded or even at the very start of your application before even establishing a network connection).  Pooled dynamically spawned netcode objects are more commonly thought of as more than one netcode object that can be re-used without incurring the memory allocation and initialization costs.  However, you might also run into scenarios where you need just one dynamically spawned netcode object to be treated like a pooled dynmically spawned netcode object.
 
 Fortunately, Netcode for GameObjects provides you with a way to be in control over the instatiation and destruction process for one or many netcode objects by via the `INetworkPrefabInstanceHandler` interface. Any `INetworkPrefabInstanceHandler`implementation should be registered with the `NetworkPrefabHandler`(for multiple netcode objects see [Object Pooling](../advanced-topics/object-pooling)) to accomplish this.
 
@@ -266,20 +266,20 @@ Below is an example of what a non-pooled friendly prefab might look like:
 
 ![image](images/non-pooled-friendly-prefab.png)
 
-The issues you might run into with the above prefab hierarchy is that everything is on a single `GameObject`, and as such if you wanted to disable the `MeshRenderer` and the `NetworkObjectLabel`, [one of our classes in the Netcode for GameObjects test project](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/f0631414e5a5358a5ac7811d43273b1a82a60ca9/testproject/Assets/Scripts/NetworkObjectLabel.cs#L4), you would need to get those component types prior to disabling them (i.e. during `Start` or `OnNetworkSpawn` or get them when `OnNetworkDespawn` is invoked).
+The issues you might run into with the above prefab hierarchy is that everything is on a single `GameObject`, and as such if you wanted to disable the `MeshRenderer` and the `NetworkObjectLabel`, [one of our classes in the Netcode for GameObjects test project](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/f0631414e5a5358a5ac7811d43273b1a82a60ca9/testproject/Assets/Scripts/NetworkObjectLabel.cs#L4), you would need to get those component types before disabling them (i.e. during `Start` or `OnNetworkSpawn` or get them when `OnNetworkDespawn` is invoked).
 
 To reduce this level of complexity, a more "pooled dynamic spawning" friendly prefab heirarchy might look like this:
 
 ![image](images/pooled-friendly-prefab.png)
 
-The `NetworkObject` sits at the root `GameObject` of the network prefab.  The child `GameObject`, SpawnedComponents, then contains everything that you might want to have disabled when the network prefab instance is not spawned:
+The `NetworkObject` sits at the root `GameObject` of the network prefab.  The child `GameObject`, SpawnedComponents, then contains everything that you might want to have disabled when the network prefab instance isn't spawned:
 
 ![image](images/pooled-friendly-prefab-child.png)
 
 This reduces the complexity down to setting the SpawnedComponents `GameObject` to inactive, which will also disable all of the components attached to it.
 
 :::tip
-Using this type of a hierarchical separation is useful in many ways (especially when you have a much more complex prefab).  For more complex prefabs, you could further expand this pattern into specific categories (i.e. visuals, physics, sound, etc) which will provide you with a more macrocosmic way to control enabling or disabling many different components without having to have references to all of them.
+Using this type of a hierarchical separation is useful in many ways (especially when you have a much more complex prefab).  For more complex prefabs, you can further expand this pattern into specific categories (i.e. visuals, physics, sound, etc) which will provide you with a more macrocosmic way to control enabling or disabling many different components without having to have references to all of them.
 :::
 
 ## In-Scene Placed `NetworkObject` 
@@ -294,7 +294,7 @@ Generally, there are **two** modes that define how an in-scene placed `NetworkOb
 
 ### Soft Synchronization
 
-`SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties.  If you receive a "soft synchronization error", then this typically means that a client could not locate the same in-scene placed `NetworkObject` after loading a scene.
+`SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties.  If you receive a "soft synchronization error", then this typically means that a client can't locate the same in-scene placed `NetworkObject` after loading a scene.
 
 :::note
 The benefit of using scene management is that you don't have to register every in-scene placed `NetworkObject` with the `NetworkManager` as a network prefab, and it handles synchronizing clients to your current game state.

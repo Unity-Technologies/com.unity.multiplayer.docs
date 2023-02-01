@@ -499,7 +499,7 @@ Using MDX, you can create markdown files with a section of content that can be i
 
 Save your files with a file name starting with an underscore (_) in a shared folder (available in each version folder). These files will be included in generated versions.
 
-Currently, any headings will not build in the on-page navigation (on the right). You can add a heading to the page then import the file.
+Currently, any headings won't build in the on-page navigation (on the right). You can add a heading to the page then import the file.
 
 Use the following code with an absolute path to the shared folder file.
 

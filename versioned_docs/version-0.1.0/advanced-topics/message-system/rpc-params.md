@@ -39,5 +39,5 @@ void XyzwClientRpc(int framekey, ClientRpcParams clientRpcParams = default) { /*
 ```
 
 :::tip
-`ClientRpcSendParams`'s `TargetClientIds` property is a `ulong[]` which means everytime you try to specify a subset of target clients or even a single client target, you will have to allocate a `new ulong[]`. This pattern could quickly lead into lots of heap allocations and pressure GC which would cause GC spikes at runtime. We suggest developers cache their `ulong[]` variables or use an array pool to cycle `ulong[]` instances so that it would cause less heap allocations.
+`ClientRpcSendParams`'s `TargetClientIds` property is a `ulong[]` which means everytime you try to specify a subset of target clients or even a single client target, you will have to allocate a `new ulong[]`. This pattern can quickly lead into lots of heap allocations and pressure GC which would cause GC spikes at runtime. We suggest developers cache their `ulong[]` variables or use an array pool to cycle `ulong[]` instances so that it would cause less heap allocations.
 :::

@@ -5,11 +5,11 @@ title: Network Latency Management
 
 Every player is affected by a certain amount of latency, which is the result of the distance to the server or host, the number of hops a packet has to make, and the server's tick rate and update rate.
 
-This is where Network Latency Management comes in. Due to these delays, you would see where a player was a few milliseconds ago, not where they are right now. If the game did not compensate for at least a portion of this delay, then you would be unable to hit other players.
+This is where Network Latency Management comes in. Due to these delays, you would see where a player was a few milliseconds ago, not where they're right now. If the game did not compensate for at least a part of this delay, then you would be unable to hit other players.
 
 ## Lag Compensation 
 
-The server rewinds time by an appropriate amount in order to determine what the shooting client saw at the time the shot was fired.
+The server rewinds time by an appropriate amount to determine what the shooting client saw at the time the shot was fired.
 
 ## Snapshot Interpolation
 
@@ -118,7 +118,7 @@ Higher ping values mean that there is more delay or lag, which is why you want t
 
 ## Update Rate
 
-What adds an extra delay on top of the travel time of our data (ping), is how frequently a game sends and receives that data. When a game sends and receives updates at 30Hz (30 updates per second), then there is more time between updates than when it sends and receives updates at 60Hz.
+What adds an extra delay on top of the travel time of our data (ping), is how often a game sends and receives that data. When a game sends and receives updates at 30Hz (30 updates per second), then there is more time between updates than when it sends and receives updates at 60Hz.
 
 Update Rates, additional delay:
 
@@ -126,7 +126,7 @@ Update Rates, additional delay:
 lightImageSrc="/img/update-rates-light.png?text=LightMode"
 darkImageSrc="/img/update-rates-dark.png?text=DarkMode"/>
 
-Low update rates do not only affect the network delay; they also cause issues like "super bullets," where a single hit from a gun deals more damage than it should be able to deal. 
+Low update rates don't only affect the network delay; they also cause issues like "super bullets," where a single hit from a gun deals more damage than it should be able to deal. 
 
 For example, a game server sends 10 updates per second. At this update rate we have 100ms between the updates, which is the same time that we have between two bullets when a gun fires 600 rounds per minute.
 

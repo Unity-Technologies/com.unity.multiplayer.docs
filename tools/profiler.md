@@ -82,7 +82,7 @@ The following table includes the Objects the Netcode Profiler counts:
 
 * The profiler modules can be removed from the profiler by either using the **Restore Defaults** functionality or manually removing them. You can re-add them by re-opening the editor or recompiling a script.
 
-* If you remove the tools package, the profiler modules remain in the profiler but are not functional. You can remove them by using the **Restore Defaults** functionality or manually removing them.
+* If you remove the tools package, the profiler modules remain in the profiler but aren't functional. You can remove them by using the **Restore Defaults** functionality or manually removing them.
 
 ## Best Practices
 

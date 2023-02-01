@@ -13,7 +13,7 @@ That is, when Netcode first gets hold of a type, it will check for any custom ty
 
 By default, any type that satisfies the `unmanaged` generic constraint can be automatically serialized as RPC parameters. This includes all basic types (bool, byte, int, float, enum, etc) as well as any structs that contains only these basic types.
 
-With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types.
+With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you haven't defined yourself, those who are behind a 3rd party wall, such as .NET types.
 
 To register a custom type, or override an already handled type, you need to create extension methods for `FastBufferReader.ReadValueSafe()` and `FastBufferWriter.WriteValueSafe()`:
 

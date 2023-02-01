@@ -9,7 +9,7 @@ This section adds in a player object and spawns it for each connected player.
 1. Delete **Player** from scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
+  We remove **Player**, because we will be using the network library to spawn the player. The library can't track objects that start in the scene.
   :::
 
 1. Select **NetworkManager**.
@@ -19,7 +19,7 @@ This section adds in a player object and spawns it for each connected player.
 1. Select **Default Player Prefab**.
 
   :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have the default selected for any prefab the game will crash on client connect.
+  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you don't have the default selected for any prefab the game will crash on client connect.
   :::
 
   :::note

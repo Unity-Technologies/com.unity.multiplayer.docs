@@ -44,22 +44,22 @@ public void Spawn(Stream spawnPayload = null, bool destroyWithScene = false);
 
 | Parameter | Description |
 | -- | -- |
-| `spawnPayload` | A `System.IO.Stream` and can be retrieved in `NetworkStart()` to sync values once when spawning this object. The payload data is only available for already connected clients. If a client connects later they will not get the payload data. |
+| `spawnPayload` | A `System.IO.Stream` and can be retrieved in `NetworkStart()` to sync values once when spawning this object. The payload data is only available for already connected clients. If a client connects later they won't get the payload data. |
 | `destroyWithScene` | If set to true, the object will be destroyed on scene switching. This can only be set inside the spawn call. |
 
 ## Destroying / Despawning
 
 When a spawned object gets destroyed on the server/host, MLAPI will automatically destroy it on all clients as well.
 
-When a client disconnects, all objects owned by that client will be destroyed. If you do not want that to happen for an object set the `DontDestroyWithOwner` field on `NetworkObject` to true.
+When a client disconnects, all objects owned by that client will be destroyed. If you don't want that to happen for an object set the `DontDestroyWithOwner` field on `NetworkObject` to true.
 
 ### Despawning
 
 To despawn a networked object on all clients but keep it on the server call `NetworkObject.Despawn` on the server. An despawned object can also later be spawned again with another spawn call if needed.
 
-A client should never call destroy on a networked object itself (this is not supported).  To destroy an object with client authority, have the client send an RPC to the server, which allows the server to destroy the object.
+A client should never call destroy on a networked object itself (this isn't supported).  To destroy an object with client authority, have the client send an RPC to the server, which allows the server to destroy the object.
 
-You cannot despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility](object-visibility.md).
+You can't despawn objects on just specific clients. If you want to hide an object on some clients but display it on others use [Object Visibility](object-visibility.md).
 
 To get more control about the object lifecycle, MLAPI has built in object pooling. See [Object Pooling](../advanced-topics/object-pooling.md) to learn more.
 
@@ -74,7 +74,7 @@ There are **two** modes that define how scene objects are synchronized.
 `SoftSync` is the default and recommended mode for synchronizing scene objects.
 
 When using `SoftSync` MLAPI will just synchronize existing scene objects with each other.
-This allows scene objects to be non prefabs and they will not be replaced, thus keeping their serialized data.
+This allows scene objects to be non prefabs and they won't be replaced, thus keeping their serialized data.
 
 
 ### PrefabSync

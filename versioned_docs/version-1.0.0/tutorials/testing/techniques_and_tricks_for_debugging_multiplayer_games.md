@@ -38,7 +38,7 @@ When working on Boss Room we found it valuable to draw debug lines for the follo
  - Object interactions
 
 ### A Netcode Enabled Line Renderer
-Sometimes it is useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that could be used for visual debugging purposes:
+Sometimes it is useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that can be used for visual debugging purposes:
 ```csharp
 using UnityEngine;
 using Unity.Netcode;
@@ -150,7 +150,7 @@ public class NetcodeEnabledLineRenderer : NetworkBehaviour
 }
 ```
 
-### Use debug logging for situations where visual debugging is not appropriate.
+### Use debug logging for situations where visual debugging isn't appropriate.
 
 Text-based logging is valuable for tracking down non-visual events (such as RPCs) and information.
 It is a good idea to include network tick and client id in log messages so that it's easier to build a timeline when reading the logs.

@@ -89,10 +89,10 @@ The impact of surpassing the Max Packet Queue Size threshold varies depending on
 * If a client or the server tries to **send** more packets than the Max Packet Queue Size value during a single frame, UTP buffers the extra packets inside a send queue until the next frame update. 
 * If a client or the server **receives** more packets than the Max Packet Queue Size value during a single frame, the operating system buffers the extra packets.
 
-Setting the Max Packet Queue Size parameter too low could introduce some [jitter](../../learn/lagandpacketloss.md) during frames where the number of packets sent or received is too high.  On the other hand, setting the Max Packet Queue Size parameter too high would use more memory than necessary.
+Setting the Max Packet Queue Size parameter too low can introduce some [jitter](../../learn/lagandpacketloss.md) during frames where the number of packets sent or received is too high.  On the other hand, setting the Max Packet Queue Size parameter too high would use more memory than necessary.
 
 :::note
-**Note**: Each unit in the Max Packet Queue Size parameter uses roughly 4 KB of memory. This value is based on twice the maximum size of a packet, which UTP defines internally (it is not exposed to Netcode users since this parameter governs the sizes of both the send and receive queues).
+**Note**: Each unit in the Max Packet Queue Size parameter uses roughly 4 KB of memory. This value is based on twice the maximum size of a packet, which UTP defines internally (it isn't exposed to Netcode users since this parameter governs the sizes of both the send and receive queues).
 :::
 
 The Boss Room sample uses a Max Packet Queue Size property value of 256. The reasoning behind choosing 256 is specific to how Boss Room uses UTP.
@@ -105,15 +105,15 @@ As a result, the maximum number of reliable packets sent or received in a single
 
 Netcode’s [NetworkManager](../../components/networkmanager.md) provides some configuration options, one of which is the [tick rate](../../advanced-topics/networktime-ticks.md). The tick rate configuration option determines the frequency at which network ticks occur. The ideal tick rate value relies on balancing smoothness, accuracy, and bandwidth usage.
 
-Lowering the tick rate reduces the frequency of NetworkVariable update messages (because they are sent at each tick). However, since it reduces the frequency of updates, it also reduces the smoothness of gameplay for the clients. You can reduce the impact of lower tick rates by using interpolation to provide smoothness, such as in the NetworkTransform. However, because there are fewer updates, the interpolation will be less accurate because it has less information.
+Lowering the tick rate reduces the frequency of NetworkVariable update messages (because they're sent at each tick). However, since it reduces the frequency of updates, it also reduces the smoothness of gameplay for the clients. You can reduce the impact of lower tick rates by using interpolation to provide smoothness, such as in the NetworkTransform. However, because there are fewer updates, the interpolation will be less accurate because it has less information.
 
-In the Boss Room sample, we found an ideal tick rate value by manually testing different values using the same scenarios. To define the scenarios, we looked at where we used NetworkVariables and which most frequently needed to be updated to provide smooth gameplay. We identified NetworkTransforms as the most sensitive use of NetworkVariables, so we defined our scenarios around players moving, launching arrows, and tossing items. We compared video captures of these scenarios and determined that the smallest tick rate value that gave clients smooth and accurate gameplay was 30 ticks per second.
+In the Boss Room sample, we found an ideal tick rate value by manually testing different values using the same scenarios. To define the scenarios, we looked at where we used NetworkVariables and which most often needed to be updated to provide smooth gameplay. We identified NetworkTransforms as the most sensitive use of NetworkVariables, so we defined our scenarios around players moving, launching arrows, and tossing items. We compared video captures of these scenarios and determined that the smallest tick rate value that gave clients smooth and accurate gameplay was 30 ticks per second.
 
 ## Further potential optimizations {#further-potential-optimizations}
 
 Even with all the optimizations above, it’s possible to further reduce the bandwidth requirements of the Boss Room sample with additional optimizations.
 
-As a vertical slice of a small-scale co-op game, the bandwidth usage of the Boss Room sample is already pretty low. Still, the following techniques could reduce it further or improve other performance considerations, such as responsiveness.
+As a vertical slice of a small-scale co-op game, the bandwidth usage of the Boss Room sample is already pretty low. Still, the following techniques can reduce it further or improve other performance considerations, such as responsiveness.
 
 ### Unreliable RPCs vs. reliable RPCs {#unreliable-rpcs-vs-reliable-rpcs}
 
@@ -154,7 +154,7 @@ The first technique involves calculating the paths, moving everything on the ser
 
 The second technique involves calculating the paths on the server, then sending the paths to the clients and allowing them to simulate the movements themselves. It works for both deterministic and non-deterministic pathfinding by sending key position updates. Calculating the paths on the server reduces bandwidth usage, but implementing this technique involves a lot of hidden complexity.
 
-An issue with this technique is that, since clients receive the whole paths of characters, it could lead to cheating because clients know where other players will be in the future. Clients knowing the future position of other players could introduce a big issue in competitive games like MOBA multiplayer online battle arena (MOBA) and real-time strategy (RTS) games.
+An issue with this technique is that, since clients receive the whole paths of characters, it can lead to cheating because clients know where other players will be in the future. Clients knowing the future position of other players can introduce a big issue in competitive games like MOBA multiplayer online battle arena (MOBA) and real-time strategy (RTS) games.
 
 | PROS                                                            | CONS                                                                                   |
 |-----------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -176,9 +176,9 @@ The third technique involves calculating the paths on the clients, then sending 
 
 The Boss Room sample uses the first technique: it calculates the paths and moves everything on the server to keep the positions synchronized with the clients. This technique works well with the Boss Room sample because it doesn't have too many characters moving simultaneously.
 
-The second technique wasn’t an option because some actions, like the Archer's attacks, require aiming. A position that could become desynchronized between a client and the server could negatively impact gameplay.
+The second technique wasn’t an option because some actions, like the Archer's attacks, require aiming. A position that can become desynchronized between a client and the server can negatively impact gameplay.
 
-The third technique wasn’t ideal either because most of the entities in the Boss Room sample are not player-controlled.
+The third technique wasn’t ideal either because most of the entities in the Boss Room sample aren't player-controlled.
 
 ## Dedicated game server (DGS) optimizations {#dgs-optimizations}
 

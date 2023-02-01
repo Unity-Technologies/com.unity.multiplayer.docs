@@ -7,10 +7,10 @@ sidebar_label: INetworkSerializable
 The `INetworkSerializable` interface can be used to define custom serializable types. 
 
 :::caution 
-All examples provided will work with RPCs and custom messages but some examples will not work with `NetworkVariable` due to the unmanaged type restriction.<br/>
+All examples provided will work with RPCs and custom messages but some examples won't work with `NetworkVariable` due to the unmanaged type restriction.<br/>
 **NetworkVariable Type Litmus Test for INetworkSerializable Implementations:**
-- If the implementation itself can be a null (i.e. a class), then it cannot be used
-- If it contains any property that can be null (i.e. arrays), then it cannot be used
+- If the implementation itself can be a null (i.e. a class), then it can't be used
+- If it contains any property that can be null (i.e. arrays), then it can't be used
 
 The alternative is to create your own `NetworkVariableBase` derived `type` specific class.
 :::
@@ -59,7 +59,7 @@ Nested serial types will be `null` unless you initialize following one of these 
 * Manually before calling `SerializeValue` if `serializer.IsReader` (or something like that)
 * Initialize in the default constructor
 
-This is by design. You may see the values as null until properly initialized. The serializer is not deserializing them, the `null` value is simply applied before it can be serialized.
+This is by design. You may see the values as null until properly initialized. The serializer isn't deserializing them, the `null` value is simply applied before it can be serialized.
 
 ## Conditional Serialization
 
@@ -69,7 +69,7 @@ More advanced use-cases are explored in following examples.
 
 ### Example: Array
 :::caution
-The below `INetworkSerializable` implementation example works only with RPCs and/or custom messages.  The below implementation uses an array within an `INetworkSerializable` implementation.  Arrays can be `null` and are not supported by the `NetworkVariable` class. As an alternative, you can write your own `NetworkVariableBase` derived class that does support managed or unmanaged value types.<br/>
+The below `INetworkSerializable` implementation example works only with RPCs and/or custom messages.  The below implementation uses an array within an `INetworkSerializable` implementation.  Arrays can be `null` and aren't supported by the `NetworkVariable` class. As an alternative, you can write your own `NetworkVariableBase` derived class that does support managed or unmanaged value types.<br/>
 [Read More About Custom NetworkVariable Implementations](../../basics/networkvariable.md)
 :::
 
@@ -117,7 +117,7 @@ public struct MyCustomStruct : INetworkSerializable
 - Serialize value from Array[n] element into the stream
 
 
-The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`
+The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether to set `length` value to prepare before writing into the stream —  we then use it to determine whether to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`
 
 
 ### Example: Move
@@ -168,7 +168,7 @@ public struct MyMoveStruct : INetworkSerializable
   -  Serialize `LinearVelocity` into the stream
   -  Serialize `AngularVelocity` into the stream
 
-Unlike the [Array](#example-array) example above, in this example we do not use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
+Unlike the [Array](#example-array) example above, in this example we don't use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
 
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.
@@ -220,10 +220,10 @@ You can conditionally serialize in recursive nested serialization scenario and m
 :::
 
 :::caution
-While you can have nested `INetworkSerializable` implementations (i.e. an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you cannot have derived children of an `INetworkSerializable` implementation. <br/>
+While you can have nested `INetworkSerializable` implementations (i.e. an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you can't have derived children of an `INetworkSerializable` implementation. <br/>
 **Unsupported Example**
 ```csharp
-/// This is not supported.
+/// This isn't supported.
 public struct MyStructB : MyStructA
 {
     public int SomeNumber;

@@ -9,7 +9,7 @@ It's important to at least understand how transitions occur in the connection st
 
 All connections start in `Disconnected` state.
 
-Depending what state the `NetworkDriver` is in, the `Listening (Passive)` state might be triggered. This is when the driver acts like a server listening for incoming connections and data requests. And secondly you could try to use the driver to connect to a remote endpoint and then we would invoke another flow of the state machine.
+Depending what state the `NetworkDriver` is in, the `Listening (Passive)` state might be triggered. This is when the driver acts like a server listening for incoming connections and data requests. And secondly you can try to use the driver to connect to a remote endpoint and then we would invoke another flow of the state machine.
 
 So to give a overview we have two standard scenarios. Either you listen for incoming connections or you use and outgoing connection to connect to someone else.
 

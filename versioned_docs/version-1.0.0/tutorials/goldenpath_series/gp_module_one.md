@@ -239,7 +239,7 @@ We call these methods inside of `OnGUI()`.
 </details>
 
 :::note
-You will notice the introduction of a new method, `SubmitNewPosition()`. This is used later. 
+You won'tice the introduction of a new method, `SubmitNewPosition()`. This is used later. 
 :::
 
 ## Adding basic movement to the Player object 

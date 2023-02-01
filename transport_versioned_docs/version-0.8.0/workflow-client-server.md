@@ -160,7 +160,7 @@ public void OnDestroy()
 
 ### Server Update loop
 
-As the `com.unity.transport` package uses the [Unity C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) internally, the `m_Driver` has a `ScheduleUpdate` method call. Inside our `Update` loop you need to make sure to call the `Complete` method on the [JobHandle](https://docs.unity3d.com/Manual/JobSystemJobDependencies.html) that is returned, in order to know when you are ready to process any updates.
+As the `com.unity.transport` package uses the [Unity C# Job System](https://docs.unity3d.com/Manual/JobSystem.html) internally, the `m_Driver` has a `ScheduleUpdate` method call. Inside our `Update` loop you need to make sure to call the `Complete` method on the [JobHandle](https://docs.unity3d.com/Manual/JobSystemJobDependencies.html) that is returned, to know when you are ready to process any updates.
 
 ```csharp
 void Update () {
@@ -169,7 +169,7 @@ void Update () {
 ```
 
 :::note
-In this example, we are forcing a synchronization on the main thread in order to update and handle our data later in the `MonoBehaviour::Update` call. The workflow [Creating a jobified client and server](workflow-client-server-jobs.md) shows you how to use the Transport package with the C# Job System.
+In this example, we are forcing a synchronization on the main thread to update and handle our data later in the `MonoBehaviour::Update` call. The workflow [Creating a jobified client and server](workflow-client-server-jobs.md) shows you how to use the Transport package with the C# Job System.
 :::
 
 
@@ -349,7 +349,7 @@ You should recognize the code below, but if you look closely you can see that th
     {
 ```
 
-Now you encounter a new event you have not seen yet: a `NetworkEvent.Type.Connect` event.
+Now you encounter a new event you haven't seen yet: a `NetworkEvent.Type.Connect` event.
 This event tells you that you have received a `ConnectionAccept` message and you are now connected to the remote peer.
 
 :::note

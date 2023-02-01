@@ -9,7 +9,7 @@ Pipelines are a feature which offers layers of functionality on top of the defau
 
 The way it works is that you can add any number of pipelines (each with any number of stages) to your transport driver. The pipelines are chained together in the order defined by the user. Each pipeline input will the output of the previous pipeline. In other terms, when you send a packet it will go to the first stage, then the second one and so on until it's sent on the wire. On the receiving side the stages are then processed in reverse order, so the packet is correctly "unpacked" by the stages.
 
-For example the first stage might compress a packet and a second stage could add a sequence number (just the packets header). When receiving the packet is first passed through the sequence stage and then decompressed. The sequence stage could drop the packet if it's out of order in which case it leaves the pipeline and doesn't continue to the decompression.
+For example the first stage might compress a packet and a second stage can add a sequence number (just the packets header). When receiving the packet is first passed through the sequence stage and then decompressed. The sequence stage can drop the packet if it's out of order in which case it leaves the pipeline and doesn't continue to the decompression.
 
 :::note
 * The order in which the pipelines are defined is extremely important. For instance, a pipeline created with ```CreatePipeline(typeof(ReliableSequencedPipelineStage), typeof(SimulatorPipelineStage))``` is different from a pipeline created with the same stages but in the reverse order.
@@ -27,7 +27,7 @@ The pipeline stages are gathered together in a collection. This is the interface
 
 The example below shows how the driver can create a new pipeline with 2 pipeline stages present (sequencer and simulator). The driver is created with the default pipeline collection and the pipeline parameters can be passed to the collection there. Multiple pipeline parameters can be passed in this way and the collection itself takes care of assigning them to the right pipeline stage.
 
-When sending packets the pipeline can then be specified as a parameter, so the packet is passed through it, it's then automatically processed the right way on the receiving end. It is therefore important both the client and server set up their pipelines in exactly the same way. One exception is with pipeline stages which do not manipulate the packet  payload or header, these do not need to be symmetric. For example, the simulator stage here is only keeping packets on hold for a certain time and then releases them unmodified or drops them altogether, it can therefore be set up to only run on the client.
+When sending packets the pipeline can then be specified as a parameter, so the packet is passed through it, it's then automatically processed the right way on the receiving end. It is therefore important both the client and server set up their pipelines in exactly the same way. One exception is with pipeline stages which don't manipulate the packet  payload or header, these don't need to be symmetric. For example, the simulator stage here is only keeping packets on hold for a certain time and then releases them unmodified or drops them altogether, it can therefore be set up to only run on the client.
 
 ```csharp
 using Unity.Collections;
@@ -64,7 +64,7 @@ public class Client
 
 ## Simulator Pipeline
 
-The simulator pipeline stage could be added on either the client or server to simulate bad network conditions. It is best to add it as the last stage in the pipeline, then it will either drop the packet or add a delay right before it would go on the wire.
+The simulator pipeline stage can be added on either the client or server to simulate bad network conditions. It is best to add it as the last stage in the pipeline, then it will either drop the packet or add a delay right before it would go on the wire.
 
 ### Use the simulator
 
@@ -114,7 +114,7 @@ public struct PacketHeader
 }
 ```
 
-Where the type could be either a payload or ack packet, which is an empty packet with only this header. Processing time is time which passed between receiving a particular sequence ID and sending an acknowledgement for it, this is used for Round Trip Time (RTT) calculations. Then there is the sequence ID of this packet (not used in ack packets) and what remote sequence ID is being acknowledged. The AckMask is the history of acknowledgements we know about (up to the window size) so you can acknowledge multiple packets in a single header.
+Where the type can be either a payload or ack packet, which is an empty packet with only this header. Processing time is time which passed between receiving a particular sequence ID and sending an acknowledgement for it, this is used for Round Trip Time (RTT) calculations. Then there is the sequence ID of this packet (not used in ack packets) and what remote sequence ID is being acknowledged. The AckMask is the history of acknowledgements we know about (up to the window size) so you can acknowledge multiple packets in a single header.
 
 The ack packet type is used when a certain amount of time has passed and nothing has been sent to the remote endpoint. We then check if we need to send a pending acknowledgement to him, or else the last packet will be assumed lost and a resend will take place. If a message is sent on every update call these kinds of packets never need to be sent.
 
@@ -143,7 +143,7 @@ if (serverReliableCtx->errorCode != 0)
 }
 ```
 
-It is possible to run into an `OutgoingQueueIsFull` error when packets are being sent too frequently for the latency and quality of the connection. High packet loss means packets need to stay for multiple Round Trip Times (RTTs) in the queue and if the RTT is high then that time can end up being longer than the send rate + window size permit. For example, with 60 packets sent per second, a packet will go out every 16 ms. If the RTT is 250ms, about 16 packets will be in the queue at any one time. With a packet drop, the total time will go up to 500 ms and the packet will be in the last slot when it is finally freed.
+It is possible to run into an `OutgoingQueueIsFull` error when packets are being sent too often for the latency and quality of the connection. High packet loss means packets need to stay for multiple Round Trip Times (RTTs) in the queue and if the RTT is high then that time can end up being longer than the send rate + window size permit. For example, with 60 packets sent per second, a packet will go out every 16 ms. If the RTT is 250ms, about 16 packets will be in the queue at any one time. With a packet drop, the total time will go up to 500 ms and the packet will be in the last slot when it is finally freed.
 
 It is best suited to use the reliability pipeline for event type messages (door opened), Remote Procedure Calls (RPCs), or slow frequency messages like chat.
 

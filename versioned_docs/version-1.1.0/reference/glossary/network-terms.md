@@ -28,9 +28,9 @@ The payload appears immediately after the header.
 
 ## Transmission Control Protocol (TCP)
 
-Transmission Control Protocol (TCP) is a connection-oriented communications protocol that facilitates the exchange of messages between computing devices in a network. It is the most common protocol in networks that use the Internet Protocol (IP); together they are sometimes referred to as TCP/IP.
+Transmission Control Protocol (TCP) is a connection-oriented communications protocol that facilitates the exchange of messages between computing devices in a network. It is the most common protocol in networks that use the Internet Protocol (IP); together they're sometimes referred to as TCP/IP.
 
-TCP takes messages from an application/server and divides them into packets, which can then be forwarded by the devices in the network – switches, routers, security gateways – to the destination. TCP numbers each packet and reassembles them prior to handing them off to the application/server recipient. Because it is connection-oriented, it ensures a connection is established and maintained until the exchange between the application/servers sending and receiving the message is complete.
+TCP takes messages from an application/server and divides them into packets, which can then be forwarded by the devices in the network – switches, routers, security gateways – to the destination. TCP numbers each packet and reassembles them before handing them off to the application/server recipient. Because it is connection-oriented, it ensures a connection is established and maintained until the exchange between the application/servers sending and receiving the message is complete.
 
 ## User Datagram Protocol (UDP)
 
@@ -44,7 +44,7 @@ Reliable User Datagram Protocol (RUDP) provides a solution where UDP is too prim
 
 ## Routing
 
-A data packet travels at a more or less fixed speed, so a player's ping is directly affected by the distance between the player and the server. However, the copper and fiber optic cables do not take a direct path to the data center, so the path, or route, to a data center that's physically farther away could actually end up being shorter than a route a data center that's physically closer to you.
+A data packet travels at a more or less fixed speed, so a player's ping is directly affected by the distance between the player and the server. However, the copper and fiber optic cables don't take a direct path to the data center, so the path, or route, to a data center that's physically farther away can actually end up being shorter than a route a data center that's physically closer to you.
 
 Another factor that affects the data travel time is the number of stops (or hops) that your data packet must make on its way. Every additional hop also increases the risk that you lose a data packet.
 
@@ -62,7 +62,7 @@ There is no guarantee that your packet will actually reach its destination. When
 
 The basic protocol operates essentially as follows: The client, typically operating inside a private network, sends a binding request to a **STUN** server on the public Internet. The STUN server responds with a success response that contains the IP address and port number of the client, as observed from the server's perspective. 
 
-*STUN* messages are sent in *User Datagram Protocol (UDP)* packets. Since UDP does not provide reliable transport guarantees, reliability is achieved by application-controlled retransmissions of the *STUN* requests. *STUN* servers do not implement any reliability mechanism for their responses. When reliability is mandatory, the *Transmission Control Protocol (TCP)* may be used, but induces extra networking overhead
+*STUN* messages are sent in *User Datagram Protocol (UDP)* packets. Since UDP does not provide reliable transport guarantees, reliability is achieved by application-controlled retransmissions of the *STUN* requests. *STUN* servers don't implement any reliability mechanism for their responses. When reliability is mandatory, the *Transmission Control Protocol (TCP)* may be used, but induces extra networking overhead
 
 ## Interactive Connectivity Establishment (ICE) 
 
@@ -76,6 +76,6 @@ UDP hole punching establishes connectivity between two hosts communicating acros
 
 ## Network address translation (NAT) 
 
-*Network address translation (NAT)* is a method of mapping an *IP address* space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.
+*Network address translation (NAT)* is a method of mapping an *IP address* space into another by modifying network address information in the IP header of packets while they're in transit across a traffic routing device.
 
 import ImageSwitcher from '@site/src/ImageSwitcher.js';

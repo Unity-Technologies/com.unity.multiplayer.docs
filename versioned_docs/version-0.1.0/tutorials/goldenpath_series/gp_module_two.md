@@ -127,7 +127,7 @@ Client set its var to: 3.099999, has server var at: 3.199999
 Server set its var to: 6.099997, has client var at: 5.599997
 ```
 :::note
-Since the printing to the terminal does not happen on every tick, the numbers will not match up perfectly.
+Since the printing to the terminal does not happen on every tick, the numbers won't match up perfectly.
 :::
 
 <iframe src="https://www.youtube.com/embed/cUvZ3m0idpM?playlist=cUvZ3m0idpM&loop=1&&autoplay=0&controls=1&showinfo=0&mute=1"   width="854px"

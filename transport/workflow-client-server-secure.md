@@ -51,7 +51,7 @@ Now that you have a root private key, you can generate the root certificate.
 openssl req -x509 -new -nodes -key clientPrivateKeyForRootCA.pem -sha256 -days 1095 -out myGameClientCA.pem
 ```
 
-You will be prompted to answer several questions. Most of the answers are not that important within the present context. It is, however, useful to use a common name that makes sense for you to identify this certificate amongst others. Ideally, you would want to use your domain name if you have one.
+You will be prompted to answer several questions. Most of the answers aren't that important within the present context. It is, however, useful to use a common name that makes sense for you to identify this certificate amongst others. Ideally, you would want to use your domain name if you have one.
 
 #### Generate the root-signed certificate to use with the server
 

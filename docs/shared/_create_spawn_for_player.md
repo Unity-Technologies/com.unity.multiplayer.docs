@@ -10,7 +10,7 @@ This section adds in a player object and spawns it for each connected player.
   :::tip
   We remove **Player**, because we will be using the built-in functionality of the NetworkManager to spawn the player. Doing so will make the NetworkManager spawn a player object for each connecting client and automatically give that client ownership over their player object.
 
-  If you do not remove **Player**, a player object will exist at scene load that doesn't react with the NetworkManager.
+  If you don't remove **Player**, a player object will exist at scene load that doesn't react with the NetworkManager.
   :::
 1. Select your `NetworkManager` object from the **Hierarchy** tab.
 2. Go to the **Inspector** tab > **NetworkManager** component > **NetworkPrefabs**. 
@@ -19,7 +19,7 @@ This section adds in a player object and spawns it for each connected player.
 5. 1. Drag the prefab also into the `Player Prefab` slot. 
 
   :::important
-  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as the `Player Prefab` no player object will be spawned.
+  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you don't have any prefab set as the `Player Prefab` no player object will be spawned.
   :::
 
 5. Finish this section by right-clicking in the **Hierarchy** tab, hover over **3D Object**, select **Plane**.

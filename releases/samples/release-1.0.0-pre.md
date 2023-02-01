@@ -90,7 +90,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Rogue can teleport to top of column
 * Bringing up cheats screen on touchscreens should not invoke any game-side actions
 * Join with Unity Relay with empty join code throws exception
-* heal not consistent, sometimes will not see health bar move
+* heal not consistent, sometimes won't see health bar move
 * Null ref in UnityEngine.Camera.WorldToScreenPoint (and other?)
 * Wrong anticipation animations played on client
 * With high lag, camera jitter was observed when rotating

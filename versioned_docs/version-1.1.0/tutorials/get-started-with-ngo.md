@@ -229,7 +229,7 @@ Client Received the RPC #3 on NetworkObject #2
 
 :::Note
 
-The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it will not be sending the initial RPC starting the chain because it is a server.
+The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it won't be sending the initial RPC starting the chain because it is a server.
 
 :::
 

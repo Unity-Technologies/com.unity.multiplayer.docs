@@ -66,7 +66,7 @@ The following code provides an example of using `ClientRpcSendParameters`, which
 ```csharp
 private void DoSomethingServerSide(int clientId)
     {
-        // If is not the Server/Host then we should early return here!
+        // If isn't the Server/Host then we should early return here!
         if (!IsServer) return;
 
 

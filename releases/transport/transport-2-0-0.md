@@ -28,7 +28,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Fixes
 
-- Fixed `IndexOutOfRangeException` when connecting a driver configured with IPC interface and Relay. This case is not valid and now fails with a `InvalidOperationException` when the driver is created.
+- Fixed `IndexOutOfRangeException` when connecting a driver configured with IPC interface and Relay. This case isn't valid and now fails with a `InvalidOperationException` when the driver is created.
 - Fixed a crash on Android when using the Mono backend.
 
 ## [2.0.0-exp.8] - 2022-10-28
@@ -40,8 +40,8 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Changes
 
-- It is not necessary anymore to configure the hostname with `NetworkSettings.WithSecureClientParameters` when using secure WebSockets connections to the Relay server.
-- Fields have been renamed in the `SecureNetworkProtocolParameter` structure: `Pem` is now `CACertificate`, `Rsa` is now `Certificate`, and `RsaKey` is now `PrivateKey`. Note that directly using this structure is not recommended. `WithSecureClientParameters` and `WithSecureServerParameters` from `NetworkSettings` are the preferred ways of configuring encryption parameters.
+- It isn't necessary anymore to configure the hostname with `NetworkSettings.WithSecureClientParameters` when using secure WebSockets connections to the Relay server.
+- Fields have been renamed in the `SecureNetworkProtocolParameter` structure: `Pem` is now `CACertificate`, `Rsa` is now `Certificate`, and `RsaKey` is now `PrivateKey`. Note that directly using this structure isn't recommended. `WithSecureClientParameters` and `WithSecureServerParameters` from `NetworkSettings` are the preferred ways of configuring encryption parameters.
 - The `SecureNetworkProtocolParameter` structure now stores certificates and private keys as `FixedPEMString` instead of `FixedString4096Bytes`, which allows for certificates larger than 4KB.
 - `NetworkSettings.WithSimulatorStageParameters` now provides default values for parameters `maxPacketSize` and `applyMode`. The defaults are respectively the MTU size, and to apply the simulator in both directions (send/receive).
 
@@ -74,9 +74,9 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Fixes
 
-- Fixed an issue where a duplicated reliable packet wouldn't be processed correctly, which could possibly lead to the entire reliable pipeline stage stalling (not being able to send new packets).
+- Fixed an issue where a duplicated reliable packet wouldn't be processed correctly, which can possibly lead to the entire reliable pipeline stage stalling (not being able to send new packets).
 - Fixed an issue where a warning about having too many pipeline updates would be spammed after a connection was closed.
-- Fixed an issue where pipeline updates would be run too many times, which would waste CPU and could lead to the warning about having too many pipeline updates being erroneously logged.
+- Fixed an issue where pipeline updates would be run too many times, which would waste CPU and can lead to the warning about having too many pipeline updates being erroneously logged.
 - Fixed issues with `ReliableSequencePipelineStage` that would, in rare circumstances, lead to failure to deliver a reliable packet.
 - Fixed an issue where sending maximally-sized packets to the Relay when using DTLS would fail with an error about failing to encrypt the packet.
 - Fixed an issue when using secure WebSockets where the stream would become corrupted, resulting in failure to decrypt packets (and eventually potentially a crash of the server).
@@ -100,11 +100,11 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 - Updated to Collections 2.1.0-exp.1
 - `FragmentationPipelineStage.FragContext` was made internal as it is an internal implementation detail that serves no purpose being exposed publicly.
 - Multiple APIs were removed or made internal in `ReliableUtility` (more than is practical to list here). These were all internal implementation details that served no purpose being exposed publicly. The only remaining public APIs in `ReliableUtility` are those used to gather statistics from a reliable pipeline (as demonstrated in the Soaker sample).
-- All APIs except `Parameters` and `Context` in `SimulatorUtility` were made internal as they are implementation details that serve no purpose being exposed publicly.
+- All APIs except `Parameters` and `Context` in `SimulatorUtility` were made internal as they're implementation details that serve no purpose being exposed publicly.
 - It is no longer possible to configure the read timeout in the secure parameters as values other than the default (0) were never properly supported.
 - It is no longer possible to configure the handshake minimum/maximum timeouts in the secure parameters. These values are now derived from the `connectTimeoutMS` and `maxConnectAttempts` values configured with `NetworkSettings.WithNetworkConfigParameters`.
 - Hostnames in secure parameters are now `FixedString512Bytes` instead of `FixedString32Bytes`, allowing any possibly hostname to be used instead of only short ones.
-- `NetworkSendQueueHandle` was removed. It was not used for anything anymore (previously it was used for custom implementations of `INetworkInterface`).
+- `NetworkSendQueueHandle` was removed. It wasn't used for anything anymore (previously it was used for custom implementations of `INetworkInterface`).
 - `NetworkInterfaceSendHandle` and `SendHandleFlags` were made internal. With the removal of `NetworkSendInterface`, these served no purpose anymore.
 - `INetworkInterface.Initialize` now receives a `ref packetPadding` parameter that can be increased to reserve space for headers.
 - `BaselibNetworkInterface` was renamed to `UDPNetworkInterface`.
@@ -156,7 +156,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 - Removed: `NetworkPipelineStageCollection` has been deleted. See upgrade guide below for details of how to replace its usages.
 - Updated to Collections 2.0.0-pre.32.
 - Updated to Burst 1.7.2.
-- Removed: `NetworkDriver.LastUpdateTime` has been deleted. This value was an internal detail not meant to be consumed by users, and its time reference couldn't be reliably related to typical C# timestamps.
+- Removed: `NetworkDriver.LastUpdateTime` has been deleted. This value was an internal detail not meant to be consumed by users, and its time reference cann't be reliably related to typical C# timestamps.
 
 ### Fixes
 
@@ -195,12 +195,12 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 - Documentation has been moved to the offical multiplayer documentation site.
 - The `INetworkInterface.ScheduleSend()` method signature was modified to receive a `SendJobArguments` struct instead of a `NativeQueue`. A `PacketsQueue` parameter is passed in this new struct.
 - `sendQueueCapacity` and `receiveQueueCapacity` parameters moved from `BaselibNetworkParameter` to `NetworkConfigParameter`.
-- Removed: `BaselibNetworkParameter.maximumPayloadSize` is not needed anymore as it is handled internally.
-- Removed: `INetworkInterface.CreateSendInterface` is not needed anymore, the send queue is managed internally by the `NetworkDriver`. Operations from the `INetworkInterface` must be done through the `ScheduleSend` and `ScheduleReceive` methods. This removes the need of function pointers which where casing GC allocations on `BeginSend`, `EndSend` and `AbortSend` when burst is not enabled.
+- Removed: `BaselibNetworkParameter.maximumPayloadSize` isn't needed anymore as it is handled internally.
+- Removed: `INetworkInterface.CreateSendInterface` isn't needed anymore, the send queue is managed internally by the `NetworkDriver`. Operations from the `INetworkInterface` must be done through the `ScheduleSend` and `ScheduleReceive` methods. This removes the need of function pointers which where casing GC allocations on `BeginSend`, `EndSend` and `AbortSend` when burst isn't enabled.
 - Added: `SendJobArguments` and `ReceiveJobArguments` structs to pass arguments to the send and receive jobs of the `INetworkInterface`.
 - Obsolete: `NetworkDriver` constructor is now obsolete, instead use `NetworkDriver.Create` methods. This improves burst compatibility as generic methods allows to know the INeworkInterface type at compilation time.
 - Obsolete: `NetworkPacketReceiver` is now deprecated. Use the `ReceiveJobArguments.ReceiveQueue` and `PacketProcessor` instead.
-- `NetworkDriver.LastUpdateTime` is now consistent across different copies of a driver. It is now also set by the job scheduled with `ScheduleUpdate`, so any job scheduled before it will not see the updated value. This also means the value will not be updated right after `ScheduleUpdate` returns (only once its jobs completes).
+- `NetworkDriver.LastUpdateTime` is now consistent across different copies of a driver. It is now also set by the job scheduled with `ScheduleUpdate`, so any job scheduled before it won't see the updated value. This also means the value won't be updated right after `ScheduleUpdate` returns (only once its jobs completes).
 - An error is now logged if failing to decrypt a DTLS message when using Relay.
 - Decreased default Relay keep-alive period to 3 seconds (was 9 seconds). The value can still be configured through the `relayConnectionTimeMS` parameter of `NetworkSettings.WithRelayParameters`.
 - `NetworkDriver` now requires that the `INetworkInterface` provided is an unmanaged type. Managed `INetworkInterfaces` are still supported but are required to be wrapped into an unmanaged type: `myInterface.WrapToUnmanaged()`.
@@ -225,7 +225,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 - `INetworkPipelineStage` and `INetworkInterface` initialization methods now receive a `NetworkSettings` parameter instead of `INetworkParameter[]`.
 - `SimulatorPipelineStageInSend` is no longer required and can be safely removed from your pipeline construction. To replace it, `SimulatorPipelineStage` now supports handling both sending and receiving via `ApplyMode.AllPackets`.
-- On fragmented and reliable pipelines, sending a large packet when the reliable window was almost full could result in the packet being lost.
+- On fragmented and reliable pipelines, sending a large packet when the reliable window was almost full can result in the packet being lost.
 - Revert decrease of MTU to 1384 on Xbox platforms (now back at 1400). It would cause issues for cross-platform communications.
 - For custom implementation of the `INetworkInterface`: Remove the `CreateSendInterface` and update the `ScheduleSend` and `ScheduleReceive` signature; to iterate over the send/receive queue use the `PacketsQueue[]` operator.
 - Move the definition of the `sendQueueCapacity` and `receiveQueueCapacity` parameters from the `WithBaselibNetworkParameters()` to the `WithNetworkConfigParameters()`.
