@@ -47,7 +47,7 @@ While client synchronization does fall partially outside of the scene management
     - Learn more about [Object Spawning here](..\object-spawning.md).
   - The `NetworkObject` list sent to the client is pre-ordered, by the server, to account for certain types of dependencies such as when using [Object Pooling](../../advanced-topics/object-pooling.md).
     - Typically object pool managers are in-scene placed and need to be instantiated and spawned before spawning any of its pooled `NetworkObjects` on a client that is synchronizing. As such, `NetworkSceneManager` takes this into account to assure that all `NetworkObjects` spawned via the `NetworkPrefabHandler` will be instantiated and spawned after their object pool manager dependency has been instantiated and spawned locally on the client.        
-        - You can have parented in-scene placed NetworkObjects (i.e. items that are picked up or consumed by players)
+        - You can have parented in-scene placed NetworkObjects (that is, items that are picked up or consumed by players)
             - `NetworkSceneManager` uses a combination of the `NetworkObject.GlobalObjectIdHash` and the instantiating scene's handle to uniquely identify in-scene placed `NetworkObject`s.
 
 :::info
@@ -66,7 +66,7 @@ Below is a diagram of the client connection approval and synchronization process
 Starting with the "Player" in the top right part of the above diagram, the client (Player) runs through the connection and approval process first which occurs within the `NetworkManager`.  Once approved, the server-side `NetworkSceneManager` begins the client synchronization process by sending the `SceneEventType.Synchronize` Scene Event message to the approved client.  The client then processes through the synchronization message.  Once the client is finished processing the synchronize message, it responds to the server with a `SceneEventType.SynchronizeComplete` message. At this point the client is considered "synchronized".  If the server determines any `NetworkObject` was despawned during the client-side synchronization message processing period, it will send a list of `NetworkObject` identifiers to the client via the `SceneEventType.ReSynchronize` message and the client will locally despawn the `NetworkObject`s.
 
 :::tip
-When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (i.e. `NetworkManager.IsConnectedClient` is set to `true`) and both the `NetworkManager.OnClientConnected` delegate handler and the scene event notification for `SceneEventType.SynchronizeComplete` are invoked locally. This can be useful to know if your server sends any additional messages to the already connected clients about the newly connected client's status (i.e. a player's status needs to transition from joining to joined). 
+When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (that is, `NetworkManager.IsConnectedClient` is set to `true`) and both the `NetworkManager.OnClientConnected` delegate handler and the scene event notification for `SceneEventType.SynchronizeComplete` are invoked locally. This can be useful to know if your server sends any additional messages to the already connected clients about the newly connected client's status (that is, a player's status needs to transition from joining to joined). 
 :::
 
 ## Scene Event Notifications 

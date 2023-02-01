@@ -58,11 +58,11 @@ Another point of interest in the below diagram is how Client 1 receives the scen
 ![image](images/LoadingAdditiveScene.png)
 
 :::caution
-While a client can start sending the server messages (including NetworkVariable changes) upon local `SceneEventType.LoadComplete` event notifications, under more controlled testing environments where the network being used has very little to no latency (i.e. using loopback with multiple instances running on the same system or using your LAN), this approach won't expose latency related issues. Even though the timing might "work out" under controlled low latency conditions you can still run into edge case scenarios where if a client approaches or exceeds a 500ms RTT latency you can potentially run into issues.
+While a client can start sending the server messages (including NetworkVariable changes) upon local `SceneEventType.LoadComplete` event notifications, under more controlled testing environments where the network being used has very little to no latency (that is, using loopback with multiple instances running on the same system or using your LAN), this approach won't expose latency related issues. Even though the timing might "work out" under controlled low latency conditions you can still run into edge case scenarios where if a client approaches or exceeds a 500ms RTT latency you can potentially run into issues.
 :::
 
 :::tip
-It is recommended that if your project's design requires that one or more `NetworkBehaviour`s immediately send any form of client to server message (i.e. changing a `NetworkVariable`, sending an RPC, sending a custom message, etc.) upon a client being locally notified of a `SceneEventType.LoadComplete` then you should test with artificial/simulated network conditions.  
+It is recommended that if your project's design requires that one or more `NetworkBehaviour`s immediately send any form of client to server message (that is, changing a `NetworkVariable`, sending an RPC, sending a custom message, etc.) upon a client being locally notified of a `SceneEventType.LoadComplete` then you should test with artificial/simulated network conditions.  
 [Learn More About Simulating NetworkConditions Here](../../tutorials/testing/testing_with_artificial_conditions.md)
 :::
 
@@ -74,7 +74,7 @@ Loading a scene in `LoadSceneMode.Single` mode via `NetworkSceneManager` is almo
 How you load scenes is really up to your project/design requirements.
 
 - **Boot Strap Usage Pattern (Additive Loading Only)**
-    - Your only single mode loaded scene is the very first scene loaded (i.e. scene index of 0 in the scenes in build list within your project's build settings).
+    - Your only single mode loaded scene is the very first scene loaded (that is, scene index of 0 in the scenes in build list within your project's build settings).
     - Because your single mode loaded scene is automatically loaded, the server and all clients will already have this scene loaded
         - To prevent clients from loading the bootstrap scene, you should use server-side [scene validation](using-networkscenemanager.md#scene-validation)
     - All other scenes are loaded additively

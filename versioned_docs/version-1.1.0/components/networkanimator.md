@@ -27,16 +27,16 @@ If you set a trigger property using `Animator.SetTrigger` then this won't be syn
 :::
 
 ### Server Authoritative Mode
-The default setting for `NetworkAnimator` is server authoritative mode.  When operating in server authoritative mode, any animation state changes that are set (i.e. triggers) or detected (i.e. change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients.  Because the server initiates any synchronization of changes to an `Animator`'s state, a client that is the owner of the `NetworkObject` associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT).  Below is a timing diagram to demonstrate this:
+The default setting for `NetworkAnimator` is server authoritative mode.  When operating in server authoritative mode, any animation state changes that are set (that is, triggers) or detected (that is, change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients.  Because the server initiates any synchronization of changes to an `Animator`'s state, a client that is the owner of the `NetworkObject` associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT).  Below is a timing diagram to demonstrate this:
 ![ServerAuthMode](Images/NetworkAnimatorServerAuthTiming.png)
 In the above diagram, a client might be sending the server an RPC to notify the server that the player is performing some kind of action that can change the player's animations (including setting a trigger). Under this scenario, the client sends an RPC to the server (half RTT), the server processes the RPC, the associated `Animator` state changes are detected by the `NetworkAnimator` (server-side), and then all clients (including the owner client) are synchronized with the changed.  
 
 **Server authoritative model benefits:**
-- If running a plain server (i.e. non-host), this model helps reduce the synchronization latency between all client animations.
+- If running a plain server (that is, non-host), this model helps reduce the synchronization latency between all client animations.
 
 **Server authoritative model drawbacks:**
 - Hosts will always be "slightly ahead" of all other clients which may or may not be an issue for your project.
-- Client owners will experience a latency between performing an action (i.e. moving, picking something up, anything that causes an `Animator` state change).
+- Client owners will experience a latency between performing an action (that is, moving, picking something up, anything that causes an `Animator` state change).
 
 ### Owner Authoritative Mode
 In some cases, your project's design (or personal preference) might require that owners are immediately updated to any `Animator` state changes.  The most typical reason would be to provide the local player with instantaneous visual (animation) feedback.  To create an owner authoritative `NetworkAnimator` you need to create a new class that is derived from `NetworkAnimator`, override the `NetworkAnimator.OnIsServerAuthoritative` method, and within the overridden `OnIsServerAuthoritative` method you should return false like in the example provided below:
@@ -51,7 +51,7 @@ In some cases, your project's design (or personal preference) might require that
 ```
 Looking at the timing for an owner authoritative `NetworkAnimator`, in the diagram below, we can see that while the owner client gets "immediate visual animation response" the non-owner clients end up being roughly one full RTT behind the owner client and a host would be half RTT behind the owner client.
 ![ServerAuthMode](Images/NetworkAnimatorOwnerAuthTiming.png)
-In the above diagram, it shows that the owner client has an `Animator` state change that is detected by the `NetworkAnimator` (i.e. `OwnerNetworkAnimator`) which automatically synchronizes the server with the changed state.  The server applies the change(s) locally and then broadcasts this state change to all non-owner clients. 
+In the above diagram, it shows that the owner client has an `Animator` state change that is detected by the `NetworkAnimator` (that is, `OwnerNetworkAnimator`) which automatically synchronizes the server with the changed state.  The server applies the change(s) locally and then broadcasts this state change to all non-owner clients. 
 
 **Owner authoritative model benefits:**
 - The owner is provided instant visual feedback of `Animator` state changes, which does provide a smoother experience for the local player.

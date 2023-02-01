@@ -26,7 +26,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 `NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
 :::caution
-All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (i.e. `NetworkManager.IsListening == true`).  A good general "rule of thumb" is to not attempt to access the below sub-systems before starting the `NetworkManager`, otherwise they won't yet be initialized.
+All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (that is, `NetworkManager.IsListening == true`).  A good general "rule of thumb" is to not attempt to access the below sub-systems before starting the `NetworkManager`, otherwise they won't yet be initialized.
 :::
 
 - [NetworkManager.PrefabHandler](../advanced-topics/object-pooling.md): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
@@ -41,8 +41,8 @@ All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is s
 In order to perform any netcode related action that involves sending messages, you must first have a server started and listening for connections with at least one client (_a server can send RPCs to itself when running as a host_) that is connected.  to accomplish this, you must first start your `NetworkManager` as a server, host, or client.  There are three `NetworkManager` methods you can invoke to accomplish this:
 
 ```csharp
-NetworkManager.Singleton.StartServer();      // Starts the NetworkManager as just a server (i.e. no local client).
-NetworkManager.Singleton.StartHost();        // Starts the NetworkManager as both a server and a client (i.e. has local client)
+NetworkManager.Singleton.StartServer();      // Starts the NetworkManager as just a server (that is, no local client).
+NetworkManager.Singleton.StartHost();        // Starts the NetworkManager as both a server and a client (that is, has local client)
 NetworkManager.Singleton.StartClient();      // Starts the NetworkManager as just a client.
 ```
 
@@ -94,7 +94,7 @@ If you are using Unity Relay to handle connections, however, **don't use `SetCon
 
 ## Disconnecting and Shutting Down
 
-Disconnecting is rather simple, but you can't use/access any subsystems (i.e. `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
+Disconnecting is rather simple, but you can't use/access any subsystems (that is, `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
 
 :::info
 When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene. 
@@ -141,7 +141,7 @@ Both the client and the server can subscribe to the `NetworkManger.OnClientDisco
 
 **When disconnect notifications are triggered:**
 - Clients aren'tified when they're disconnected by the server.
-- The server isn'tified if the client side disconnects (i.e. a player exits a game session)
+- The server isn'tified if the client side disconnects (that is, a player exits a game session)
 - Both the server and clients aren'tified when their network connection is disconnected (network interruption)
 
 **Scenarios where the disconnect notification won't be triggered**:

@@ -9,8 +9,8 @@ The `INetworkSerializable` interface can be used to define custom serializable t
 :::caution 
 All examples provided will work with RPCs and custom messages but some examples won't work with `NetworkVariable` due to the unmanaged type restriction.<br/>
 **NetworkVariable Type Litmus Test for INetworkSerializable Implementations:**
-- If the implementation itself can be a null (i.e. a class), then it can't be used
-- If it contains any property that can be null (i.e. arrays), then it can't be used
+- If the implementation itself can be a null (that is, a class), then it can't be used
+- If it contains any property that can be null (that is, arrays), then it can't be used
 
 The alternative is to create your own `NetworkVariableBase` derived `type` specific class.
 :::
@@ -220,7 +220,7 @@ You can conditionally serialize in recursive nested serialization scenario and m
 :::
 
 :::caution
-While you can have nested `INetworkSerializable` implementations (i.e. an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you can't have derived children of an `INetworkSerializable` implementation. <br/>
+While you can have nested `INetworkSerializable` implementations (that is, an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you can't have derived children of an `INetworkSerializable` implementation. <br/>
 **Unsupported Example**
 ```csharp
 /// This isn't supported.

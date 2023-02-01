@@ -262,7 +262,7 @@ You can conditionally serialize in recursive nested serialization scenario and m
 :::
 
 :::caution
-While you can have nested `INetworkSerializable` implementations (i.e. an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you can't have derived children of an `INetworkSerializable` implementation. <br/>
+While you can have nested `INetworkSerializable` implementations (that is, an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you can't have derived children of an `INetworkSerializable` implementation. <br/>
 **Unsupported Example**
 ```csharp
 /// This isn't supported.

@@ -128,7 +128,7 @@ This type of dynamically spawned `NetworkObject` typically is a simple wrapper c
     }
 ```
 
-Consumable and/or items that can be picked up by a player or NPC(i.e. a weapon, health, potion, etc.) would be some examples of when you might want to use non-pooled dynamically spawned `NetworkObjects`.
+Consumable and/or items that can be picked up by a player or NPC(that is, a weapon, health, potion, etc.) would be some examples of when you might want to use non-pooled dynamically spawned `NetworkObjects`.
 
 :::caution
 While the NonPooledDynamicSpawner example is one of the simplest ways to spawn a NetworkObject, there is a memory allocation cost associated with instantiating and destroying the GameObject and all attached components.  This design pattern can sometimes be all you really need for the netcode game asset you are working with, and other times you might want to respawn/re-use the object instance.  When performance is a concern and you want to spawn more than just one `NetworkObject` during the lifetime of the spawner or want to repeatedly respawn a single `NetworkObject`, the less proccessor and memory allocation intensive technique is to use [pooled dynamic spawning](#pooled-dynamic-spawning).
@@ -266,7 +266,7 @@ Below is an example of what a non-pooled friendly prefab might look like:
 
 ![image](images/non-pooled-friendly-prefab.png)
 
-The issues you might run into with the above prefab hierarchy is that everything is on a single `GameObject`, and as such if you wanted to disable the `MeshRenderer` and the `NetworkObjectLabel`, [one of our classes in the Netcode for GameObjects test project](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/f0631414e5a5358a5ac7811d43273b1a82a60ca9/testproject/Assets/Scripts/NetworkObjectLabel.cs#L4), you would need to get those component types before disabling them (i.e. during `Start` or `OnNetworkSpawn` or get them when `OnNetworkDespawn` is invoked).
+The issues you might run into with the above prefab hierarchy is that everything is on a single `GameObject`, and as such if you wanted to disable the `MeshRenderer` and the `NetworkObjectLabel`, [one of our classes in the Netcode for GameObjects test project](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/f0631414e5a5358a5ac7811d43273b1a82a60ca9/testproject/Assets/Scripts/NetworkObjectLabel.cs#L4), you would need to get those component types before disabling them (that is, during `Start` or `OnNetworkSpawn` or get them when `OnNetworkDespawn` is invoked).
 
 To reduce this level of complexity, a more "pooled dynamic spawning" friendly prefab heirarchy might look like this:
 
@@ -279,7 +279,7 @@ The `NetworkObject` sits at the root `GameObject` of the network prefab.  The ch
 This reduces the complexity down to setting the SpawnedComponents `GameObject` to inactive, which will also disable all of the components attached to it.
 
 :::tip
-Using this type of a hierarchical separation is useful in many ways (especially when you have a much more complex prefab).  For more complex prefabs, you can further expand this pattern into specific categories (i.e. visuals, physics, sound, etc) which will provide you with a more macrocosmic way to control enabling or disabling many different components without having to have references to all of them.
+Using this type of a hierarchical separation is useful in many ways (especially when you have a much more complex prefab).  For more complex prefabs, you can further expand this pattern into specific categories (that is, visuals, physics, sound, etc) which will provide you with a more macrocosmic way to control enabling or disabling many different components without having to have references to all of them.
 :::
 
 ## In-Scene Placed `NetworkObject` 

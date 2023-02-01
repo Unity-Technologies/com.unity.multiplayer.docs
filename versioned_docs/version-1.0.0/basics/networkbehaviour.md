@@ -17,7 +17,7 @@ For `NetworkBehaviour`s use the NetworkBehaviourReference<!-- (NO API LINK AVAIL
 
 [`NetworkBehaviour`](../api/Unity.Netcode.NetworkBehaviour.md) is an abstract class that derives from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) and is primarily used to create unique netcode/game logic.
 
-`NetworkBehaviours` can contain RPC methods and `NetworkVariables`. When you call an RPC function, the function isn't called locally. Instead a message is sent containing your parameters, the `networkId` of the `NetworkObject` associated with the same GameObject (or child) that the `NetworkBehaviour` is assigned to, and the "index" of the `NetworkObject` relative `NetworkBehaviour` (i.e. a `NetworkObject` can have several NetworkBehaviours, the index communicates "which one"). 
+`NetworkBehaviours` can contain RPC methods and `NetworkVariables`. When you call an RPC function, the function isn't called locally. Instead a message is sent containing your parameters, the `networkId` of the `NetworkObject` associated with the same GameObject (or child) that the `NetworkBehaviour` is assigned to, and the "index" of the `NetworkObject` relative `NetworkBehaviour` (that is, a `NetworkObject` can have several NetworkBehaviours, the index communicates "which one"). 
 
 :::note
 It is important that the `NetworkBehaviour`s on each `NetworkObject` remains the same for the server and any client connected. When using multiple projects, this becomes especially important so the server doesn't try to call a client RPC on a `NetworkBehaviour` that might not exist on a specific client type (or set a NetworkVariable, etc).

@@ -8,7 +8,7 @@ With every new connection,  Netcode for GameObjects (Netcode) performs a handsha
 Connection approval allows you to decide, on a per connection basis, if the connection should be allowed. Connection approval also enables you to specify the player prefab to be created, allowing you to override the default `NetworkManager` defined player prefab on a per player basis. By setting `ConnectionApproval` property of the `NetworkManager` to `true` Netcode will then check to make sure the `NetworkManager.ConnectionApprovalCallback` has been assigned. If it has been assigned, then Netcode will use the connection approval process for connecting clients. 
 
 :::note
-If it isn't assigned even with the `NetworkManager.ConnectionApprovalCallback` set to `true`, then the basic authentication will be used for the user! (i.e. automatically authorizes and assigns the default player prefab)
+If it isn't assigned even with the `NetworkManager.ConnectionApprovalCallback` set to `true`, then the basic authentication will be used for the user! (that is, automatically authorizes and assigns the default player prefab)
 :::
 
 ### NetworkManager.ConnectionApprovalRequest
@@ -85,7 +85,7 @@ The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, will b
 
 ## Timeout
 
-Netcode uses a callback system to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steam servers.  This can take some time, so you will want to set the `NetworkManager.ConnectionApprovalResponse.Pending` to true while the steam server(or other third party authentication service) occurs.  However, if the third party authentication process (i.e. steam servers, etc) takes longer than the time specified by the `NetworkConfig.ClientConnectionBufferTimeout`, then the connection will be dropped.  The timer for this starts when the server isn'tified of the new inbound client connection. The "Client Connection Buffer Timeout" value can be set via the `NetworkManager` in the inspector view or accessed via the `NetworkManager.NetworkConfig.ClientConnectionBufferTimeout` property.
+Netcode uses a callback system to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steam servers.  This can take some time, so you will want to set the `NetworkManager.ConnectionApprovalResponse.Pending` to true while the steam server(or other third party authentication service) occurs.  However, if the third party authentication process (that is, steam servers, etc) takes longer than the time specified by the `NetworkConfig.ClientConnectionBufferTimeout`, then the connection will be dropped.  The timer for this starts when the server isn'tified of the new inbound client connection. The "Client Connection Buffer Timeout" value can be set via the `NetworkManager` in the inspector view or accessed via the `NetworkManager.NetworkConfig.ClientConnectionBufferTimeout` property.
 
 ## Security
 

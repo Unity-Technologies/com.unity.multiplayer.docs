@@ -23,7 +23,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Changes
 
 - The return code of `NetworkDriver.Bind` and `NetworkDriver.Listen` is now a proper value from the `Error.StatusCode` enum, instead of a seemingly random negative value.
-- If the connection to the Relay server fails (e.g. the DTLS handshake fails), then the connection status returned by `NetworkDriver.GetRelayConnectionStatus` will now be `AllocationInvalid`. It used to remain `NotEstablished` which would leave no way for a user to determine that the connection had failed.
+- If the connection to the Relay server fails (for example, the DTLS handshake fails), then the connection status returned by `NetworkDriver.GetRelayConnectionStatus` will now be `AllocationInvalid`. It used to remain `NotEstablished` which would leave no way for a user to determine that the connection had failed.
 - Status codes `NetworkHeaderInvalid` and `NetworkArgumentMismatch` are now marked as obsolete. Nothing in the API returns these status codes anymore.
 
 ### Fixes
@@ -63,7 +63,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Changes
 
-- Reverted the fix for the `SimulatorPipelineStage` always using the same random seed, reverting its behavior to always be deterministic. If non-determinism is desired, use a dynamic random seed (e.g. `Stopwatch.GetTimestamp`).
+- Reverted the fix for the `SimulatorPipelineStage` always using the same random seed, reverting its behavior to always be deterministic. If non-determinism is desired, use a dynamic random seed (for example, `Stopwatch.GetTimestamp`).
 - The default network interface (`UDPNetworkInterface`) does not enable address reuse anymore. This means `NetworkDriver.Bind` will now always fail if something else is listening on the same port, even if that something else is bound to a wildcard address and we are trying to bind to a specific one.
 - Added: `NetworkDriverIdentifierParameter` struct and `NetworkSettings.WithDriverIdentifierParameters()` method that can be use to identify the NetworkDriver instances with a custom label. Currently this method serves no purpose, but might be used in future releases to make debugging easier.
 - The `InitialEventQueueSize`, `InvalidConnectionId`, and `DriverDataStreamSize` fields were removed from `NetworkParameterConstants`. They all served no purpose anymore.
@@ -91,7 +91,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### New features
 
-- Preliminary WebSocket support. To have a `NetworkDriver` use WebSockets, create it with the appropriate network interface (e.g. `NetworkDriver.Create(new WebSocketNetworkInterface())`). To enable TLS support, create the driver with `NetworkSettings` configured with `WithSecureClientParameters`/`WithSecureServerParameters` (on the client, only the hostname needs to be provided).
+- Preliminary WebSocket support. To have a `NetworkDriver` use WebSockets, create it with the appropriate network interface (for example, `NetworkDriver.Create(new WebSocketNetworkInterface())`). To enable TLS support, create the driver with `NetworkSettings` configured with `WithSecureClientParameters`/`WithSecureServerParameters` (on the client, only the hostname needs to be provided).
 - `NetworkSettings.WithSecureClientParameters` and `NetworkSettings.WithSecureServerParameters` now have versions where the certificates and hostnames are provided as normal strings, instead of fixed strings.
 
 ### Changes
@@ -205,7 +205,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 - Decreased default Relay keep-alive period to 3 seconds (was 9 seconds). The value can still be configured through the `relayConnectionTimeMS` parameter of `NetworkSettings.WithRelayParameters`.
 - `NetworkDriver` now requires that the `INetworkInterface` provided is an unmanaged type. Managed `INetworkInterfaces` are still supported but are required to be wrapped into an unmanaged type: `myInterface.WrapToUnmanaged()`.
 - Instantiating a `NetworkDriver` is now only supported through the `NetworkDriver.Create` methods.
-- Don't warn when overwriting settings in `NetworkSettings` (e.g. when calling the same `WithFooParameters` method twice).
+- Don't warn when overwriting settings in `NetworkSettings` (for example, when calling the same `WithFooParameters` method twice).
 - Added new methods to set security parameters: `NetworkSettings.WithSecureClientParameters` and `NetworkSettings.WithSecureServerParameters`. These replace the existing `WithSecureParameters`.
 - `NetworkInterfaceEndPoint` usage replaced with `NetworkEndPoint`.
 - Removed: `INetworkInterface.CreateInterfaceEndPoint` and `INetworkInterface.GetGenericEndPoint` removed as interfaces use now `NetworkEndPoint`.

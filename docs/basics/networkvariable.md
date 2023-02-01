@@ -7,7 +7,7 @@ sidebar_label: NetworkVariable
 ## Introduction
 
 At a high level, a `NetworkVariable` is a way to synchronize a property ("variable") between a server and client(s) without having to use custom messages or RPCs. Since `NetworkVariable` is really a wrapper ("container") of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
-- Newly joining clients (i.e. "Late Joining Clients")
+- Newly joining clients (that is, "Late Joining Clients")
     - When the associated `NetworkObject` of a `NetworkBehaviour`, with `NetworkVariable` properties, is spawned, any `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side.
 - Connected clients
     - When a `NetworkVariable` value changes, any connected clients that subscribed to `NetworkVariable.OnValueChanged` event (prior to the value being changed) will be notified of the change.
@@ -29,7 +29,7 @@ When a client first connects, it will be synchronized with the current value of 
 *But why?*<br />
 A `NetworkBehaviour`'s `Start` and `OnNetworkSpawn` methods are invoked based on the type of `NetworkObject` the `NetworkBehaviour` is associated with:   
 - In-Scene Placed: Since the instantiation occurs via the scene loading mechanism(s), the `Start` method is invoked before `OnNetworkSpawn`.
-- Dynamically Spawned: Since `OnNetworkSpawn` is invoked immediately (i.e. within the same relative call-stack) after instantiation, the `Start` method is invoked after `OnNetworkSpawn`.  
+- Dynamically Spawned: Since `OnNetworkSpawn` is invoked immediately (that is, within the same relative call-stack) after instantiation, the `Start` method is invoked after `OnNetworkSpawn`.  
 
 _Typically, these are invoked at least 1 frame after the `NetworkObject` and associated `NetworkBehaviour` components are instantiated._
 
@@ -148,7 +148,7 @@ The above example is only to test both the initial client synchronization of the
 
 ### OnValueChanged Example
 
-While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't really provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (i.e. open or closed):
+While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't really provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
 
 ```csharp
 public class Door : NetworkBehaviour
@@ -191,7 +191,7 @@ public class Door : NetworkBehaviour
     }
 }
 ```
-In the above example, we demonstrate how you can maintain a server authoritative `NetworkVariable` by using a non-ownership based server RPC (i.e. `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it is performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
+In the above example, we demonstrate how you can maintain a server authoritative `NetworkVariable` by using a non-ownership based server RPC (that is, `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it is performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
 
 However, what if you wanted to adjust who can write to or read from the `NetworkVariable`?
 _The answer: `NetworkVariable` permissions._
@@ -263,7 +263,7 @@ There are two options for reading a `NetworkVariable.Value`:
 There are two options for writing a `NetworkVariable.Value`:
 - *Server(_default_):* the server is the only one that can write the value.
     - This is useful for server side specific states that all clients should should be aware of but can't change.
-        - Some examples would be an NPC's status (health, alive, dead, etc) or some global world environment state (i.e. is it night or day time?).
+        - Some examples would be an NPC's status (health, alive, dead, etc) or some global world environment state (that is, is it night or day time?).
 - *Owner:* This means only the owner of the `NetworkObject` can write to the value.
     - This is useful if your `NetworkVariable` represents something specific to the client's player that only the owning client should be able to set
         - This might be a player's skin or other cosmetics
@@ -279,7 +279,7 @@ public class PlayerState : NetworkBehaviour
     /// <summary>
     /// Default Permissions: Everyone can read, server can only write
     /// Player health is typically something determined (updated/written to) on the server
-    ///  side, but a value everyone should be synchronized with (i.e. read permissions).
+    ///  side, but a value everyone should be synchronized with (that is, read permissions).
     /// </summary>
     public NetworkVariable<float> Health = new NetworkVariable<float>(k_DefaultHealth);
 
@@ -311,7 +311,7 @@ public class PlayerState : NetworkBehaviour
     /// You might incorporate some form of reconnection logic that stores a player's state on 
     /// the server side and can be used by the client to reconnect a player if disconnected
     /// unexpectedly.  In order for the client to let the server know it is the "same client" 
-    /// you might have implemented a keyed array (i.e. Hashtable, Dictionary, etc, ) to track
+    /// you might have implemented a keyed array (that is, Hashtable, Dictionary, etc, ) to track
     /// each connected client. The key value for each connected client would only be written to
     /// the each client's PlayerState.ReconnectionKey. Under this scenario, you only want the 
     /// server to have write permissions and the owner (client) to be synchronized with this 

@@ -161,7 +161,7 @@ public void OnDestroy()
 }
 ```
 
-The check for `m_Driver.IsCreated` ensures we don't dispose of the memory if it hasn't been allocated (e.g. if the component is disabled).
+The check for `m_Driver.IsCreated` ensures we don't dispose of the memory if it hasn't been allocated (for example, if the component is disabled).
 
 ### Server Update loop
 

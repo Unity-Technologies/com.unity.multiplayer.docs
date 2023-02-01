@@ -18,7 +18,7 @@ Quite often not all transform values of a GameObject need to be synchronized ove
 
 ## Thresholds
 
-The threshold values can be used to set a minimum threshold value. Whether to properly scale to your project's world unit scale or to reduce the frequency of synchronization updates, changes below threshold values won't be synchronized. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (i.e. position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) will reduce the frequency of when the object's position is synchronized which translates to reducing bandwidth consumption.
+The threshold values can be used to set a minimum threshold value. Whether to properly scale to your project's world unit scale or to reduce the frequency of synchronization updates, changes below threshold values won't be synchronized. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (that is, position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) will reduce the frequency of when the object's position is synchronized which translates to reducing bandwidth consumption.
 
 :::note
 Many small changes below the threshold will still result in a synchronization of the values as soon as all the accumulative changes cross the threshold.
@@ -44,7 +44,7 @@ The NetworkTransform component only interpolates client-side. For smoother movem
 <ImageSwitcher 
 lightImageSrc="/img/BufferedTick.png?text=LightMode"
 darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
-  <figcaption>Graphic of a buffered tick between the server and a client (i.e. interpolation)</figcaption>
+  <figcaption>Graphic of a buffered tick between the server and a client (that is, interpolation)</figcaption>
 </figure>
 
 ### ClientNetworkTransform

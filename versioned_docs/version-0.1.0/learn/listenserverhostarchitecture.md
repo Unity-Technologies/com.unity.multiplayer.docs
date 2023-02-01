@@ -27,7 +27,7 @@ A listen server is hosted on one of the player's machine. It acts both as a serv
 The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (< 12) and for games which don't need persistent worlds because the game state is often tied to the host. 
 
 :::info
-Persistent world in netcode usually means "persistent online world' E.g. the game state isn't bound to a player or a session
+Persistent world in netcode usually means "persistent online world' For example, the game state isn't bound to a player or a session
 :::
 
 Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authorative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.

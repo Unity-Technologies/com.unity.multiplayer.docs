@@ -17,7 +17,7 @@ For `NetworkBehaviour`s use the NetworkBehaviourReference<!-- (NO API LINK AVAIL
 
 [`NetworkBehaviour`](../api/Unity.Netcode.NetworkBehaviour.md) is an abstract class that derives from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) and is primarily used to create unique netcode/game logic.
 
-`NetworkBehaviours` can contain RPC methods and `NetworkVariables`. When you call an RPC function, the function isn't called locally. Instead a message is sent containing your parameters, the `networkId` of the `NetworkObject` associated with the same GameObject (or child) that the `NetworkBehaviour` is assigned to, and the "index" of the `NetworkObject` relative `NetworkBehaviour` (i.e. a `NetworkObject` can have several NetworkBehaviours, the index communicates "which one"). 
+`NetworkBehaviours` can contain RPC methods and `NetworkVariables`. When you call an RPC function, the function isn't called locally. Instead a message is sent containing your parameters, the `networkId` of the `NetworkObject` associated with the same GameObject (or child) that the `NetworkBehaviour` is assigned to, and the "index" of the `NetworkObject` relative `NetworkBehaviour` (that is, a `NetworkObject` can have several NetworkBehaviours, the index communicates "which one"). 
 
 :::note
 It is important that the `NetworkBehaviour`s on each `NetworkObject` remains the same for the server and any client connected. When using multiple projects, this becomes especially important so the server doesn't try to call a client RPC on a `NetworkBehaviour` that might not exist on a specific client type (or set a NetworkVariable, etc).
@@ -118,7 +118,7 @@ There can be scenarios where you need to include additional configuration data o
 There are two cases where `NetworkObject` synchronization occurs:
 - When dynamically spawning a `NetworkObject`.
 - When a client is being synchronized after connection approval 
-  - i.e. Full synchronization of the `NetworkObject`s and scenes.
+  - that is, Full synchronization of the `NetworkObject`s and scenes.
 
 :::info
 If you haven't already become familiar with the [`INetworkSerializable` interface](../advanced-topics/serialization/inetworkserializable.md), then you might read up on that before proceeding as `NetworkBehaviour.OnSynchronize` as it follows a very similar usage pattern.

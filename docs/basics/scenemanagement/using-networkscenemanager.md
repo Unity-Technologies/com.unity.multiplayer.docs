@@ -119,7 +119,7 @@ The term "Scene Event" refers to all subsequent scene events that transpire over
 The purpose behind the above outline is to demonstrate that a Scene Event can lead to other scene event types being generated and that the entire sequence of events that transpire occur over a longer period of time than if you were loading a scene in a single player game. 
 
 :::tip
-When you receive the `SceneEventType.LoadEventCompleted` or the `SceneEventType.SynchronizeComplete` you know that the server or clients can start invoking netcode specific code (i.e. sending Rpcs, updating `NetworkVariable`s, etc.).  Alternately, `NetworkManager.OnClientConnectedCallback` is triggered when a client finishes synchronizing and can be used in a similar fashion.  _However, that only works for the initial client synchronization and not for scene loading or unloading events._
+When you receive the `SceneEventType.LoadEventCompleted` or the `SceneEventType.SynchronizeComplete` you know that the server or clients can start invoking netcode specific code (that is, sending Rpcs, updating `NetworkVariable`s, etc.).  Alternately, `NetworkManager.OnClientConnectedCallback` is triggered when a client finishes synchronizing and can be used in a similar fashion.  _However, that only works for the initial client synchronization and not for scene loading or unloading events._
 :::
 
 :::warning
@@ -319,7 +319,7 @@ The below example builds upon the previous example's code, and adds some psuedo-
                 return false;
             }
 
-            // Don't allow single mode scene loading (i.e. bootstrap usage patterns might implement this)
+            // Don't allow single mode scene loading (that is, bootstrap usage patterns might implement this)
             if (loadSceneMode == LoadSceneMode.Single)
             {
                 return false;
@@ -351,7 +351,7 @@ This is where you need to be cautious with scene validation, because any scene t
 ### Dynamically Generated Scenes
 You might find yourself in a scenario where you just need to dynamically generate a scene.  A common use for dynamically generated scenes is when you need to dynamically generate collision geometry that you wish to only create on the server-host side. For this scenario you most likely would only want the server to have this scene loaded, but you might run into issues when synchronizing clients.  For single player games, you can just create a new scene at runtime, dynamically generate the collision geometry, add the collision geometry to the newly created scene, and everything works out.  With Netcode for GameObjects there are two extra steps you need to take to assure you don't run into any issues:
 - Create an empty scene for each scene you plan on dynamically generating and add them to the "Scenes in Build" list found within the "Build Settings".
-  - For this example we would only need one (i.e. we might call the scene "WorldCollisionGeometry")
+  - For this example we would only need one (that is, we might call the scene "WorldCollisionGeometry")
 - Have the server-host register for `NetworkManager.SceneManager.VerifySceneBeforeLoading` handler and return false when one of the blank scene names is being validated as a valid scene for a client to load.
   - For this example we would return false any time `VerifySceneBeforeLoading` was invoked with the scene name "WorldCollisionGeometry".
  

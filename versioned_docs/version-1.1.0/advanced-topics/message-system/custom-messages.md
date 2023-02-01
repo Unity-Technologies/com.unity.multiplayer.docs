@@ -168,7 +168,7 @@ public class CustomUnnamedMessageHandler<T> : NetworkBehaviour
 
     /// <summary>
     /// This method needs to be overridden to handle reading a unique message type
-    /// (i.e. derived class)
+    /// (that is, derived class)
     /// </summary>
     protected virtual void OnReceivedUnnamedMessage(ulong clientId, FastBufferReader reader)
     {

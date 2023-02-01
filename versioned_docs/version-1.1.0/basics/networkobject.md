@@ -24,7 +24,7 @@ When spawning a `NetworkObject`, the NetworkObject.GlobalObjectIdHash value is u
 
 ## Ownership
 
-Each `NetworkObject` is owned by either the server (default) or any connected and approved client.  Netcode for GameObjects is server authoritative, which means the server controls (i.e. is the only system authorized) to spawn or despawn `NetworkObject`s.  
+Each `NetworkObject` is owned by either the server (default) or any connected and approved client.  Netcode for GameObjects is server authoritative, which means the server controls (that is, is the only system authorized) to spawn or despawn `NetworkObject`s.  
 
 :::note
 All code snippets below should be invoked on the server-side.

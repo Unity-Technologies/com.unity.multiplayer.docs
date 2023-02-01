@@ -37,7 +37,7 @@ sequenceDiagram
 - Use if just a general time value is needed.
 
 `ServerTime`:
-- For player objects with server authority (E.g. by sending inputs to the server via RPCs)
+- For player objects with server authority (For example, by sending inputs to the server via RPCs)
 - In sync with position updates of `NetworkTransform` for all `NetworkObjects` where the client isn't authoritative over the transform.
 - For everything on non client controlled `NetworkObjects`.
 
