@@ -80,7 +80,7 @@ Both of these server generated messages will create local notification events (o
 :::
 
 ### Tracking Event Notifications (OnSceneEvent)
-The following code provides an example of how to subscribe to and use `NetworkSceneManager.OnSceneEvent`. Since we want the server or host to receive all scene event notifications, we will want to subscribe immediately after we start the server or host. Each case contains additional comments about each scene event type.  Starting the client is fairly straight forward and follows the same pattern by subscribing to `NetworkSceneManager.OnSceneEvent` if the client successfully started.
+The following code provides an example of how to subscribe to and use `NetworkSceneManager.OnSceneEvent`. Since we want the server or host to receive all scene event notifications, we will want to subscribe immediately after we start the server or host. Each case has additional comments about each scene event type.  Starting the client is fairly straight forward and follows the same pattern by subscribing to `NetworkSceneManager.OnSceneEvent` if the client successfully started.
 
 ```csharp
 public bool StartMyServer(bool isHost)
@@ -233,7 +233,7 @@ You will want to assign the SceneEvent.AsyncOperation to a local property of the
 You can stop the coroutine checking the progress upon receiving any of the following event notifications for the scene and event type in question: `LoadComplete`, `UnloadComplete` to handle local scene loading progress tracking. Otherwise, you should use the `LoadEventCompleted` or `UnloadEventCompleted` to assure that when your "scene loading progress" visual handler stops it will stop at ~roughly~ the same time as the rest of the connected clients.  The server will always be slightly ahead of the clients since it notifies itself locally and then broadcasts this message to all connected clients.
 
 ### SceneEvent Properties
-The SceneEvent class contains values that may or may not be set depending upon the `SceneEventType`.  Below are two quick lookup tables to determine which property is set for each `SceneEventType`.
+The SceneEvent class has values that may or may not be set depending upon the `SceneEventType`.  Below are two quick lookup tables to determine which property is set for each `SceneEventType`.
 
 **Part-1**<br/>
 ![image](images/SceneEventProperties-1.png)<br/>
@@ -259,7 +259,7 @@ The general idea was to provide several ways to get scene event notifications.  
 :::
 
 ### When is it "OK" to Subscribe?
-Possibly the more important aspect of scene event notifications is knowing when/where to subscribe.  The recommended time to subscribe is immediately upon starting your `NetworkManager` as a client, server, or host.  This will avoid problematic scenarios like trying to subscribe to the `SceneEventType.Synchronize` event within an overridden `NetworkBehaviour.OnNetworkSpawn` method of your `NetworkBehaviour` derived child class.  The reason that is "problematic" is that the `NetworkObject` has to be spawned before you can subscribe to and receive events of type `SceneEventType.Synchronize` because that will occur before anything is spawned.  Additionally, you would only receive notifications of any scenes loaded after the scene that contains the `NetworkObject` (or the object that spawns it) is loaded.
+Possibly the more important aspect of scene event notifications is knowing when/where to subscribe.  The recommended time to subscribe is immediately upon starting your `NetworkManager` as a client, server, or host.  This will avoid problematic scenarios like trying to subscribe to the `SceneEventType.Synchronize` event within an overridden `NetworkBehaviour.OnNetworkSpawn` method of your `NetworkBehaviour` derived child class.  The reason that is "problematic" is that the `NetworkObject` has to be spawned before you can subscribe to and receive events of type `SceneEventType.Synchronize` because that will occur before anything is spawned.  Additionally, you would only receive notifications of any scenes loaded after the scene that has the `NetworkObject` (or the object that spawns it) is loaded.
 
 An example of subscribing to `NetworkSceneManager.OnSynchronize` for a client:
 ```csharp

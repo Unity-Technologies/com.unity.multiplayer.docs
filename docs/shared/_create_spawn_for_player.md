@@ -15,11 +15,11 @@ This section adds in a player object and spawns it for each connected player.
 1. Select your `NetworkManager` object from the **Hierarchy** tab.
 2. Go to the **Inspector** tab > **NetworkManager** component > **NetworkPrefabs**. 
 3. Click `+` to create a slot.
-4. Drag the **Player** prefab from **Assets** > **Prefabs** to the new empty slot
-5. 1. Drag the prefab also into the `Player Prefab` slot. 
+4. Drag the **Player** Prefab from **Assets** > **Prefabs** to the new empty slot
+5. 1. Drag the Prefab also into the `Player Prefab` slot. 
 
   :::important
-  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you don't have any prefab set as the `Player Prefab` no player object will be spawned.
+  When you drop the Prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this Prefab as the character for the connecting client. If you don't have any Prefab set as the `Player Prefab` no player object will be spawned.
   :::
 
 5. Finish this section by right-clicking in the **Hierarchy** tab, hover over **3D Object**, select **Plane**.

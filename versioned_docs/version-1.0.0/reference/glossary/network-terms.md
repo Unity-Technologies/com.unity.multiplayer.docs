@@ -60,7 +60,7 @@ There is no guarantee that your packet will actually reach its destination. When
 
 *STUN* is a tool for communications protocols to detect and traverse network address translators that are located in the path between two endpoints of communication. It is implemented as a light-weight client-server protocol, requiring only simple query and response components with a third-party server located on the common, easily accessible network, typically the Internet.
 
-The basic protocol operates essentially as follows: The client, typically operating inside a private network, sends a binding request to a **STUN** server on the public Internet. The STUN server responds with a success response that contains the IP address and port number of the client, as observed from the server's perspective. 
+The basic protocol operates essentially as follows: The client, typically operating inside a private network, sends a binding request to a **STUN** server on the public Internet. The STUN server responds with a success response that has the IP address and port number of the client, as observed from the server's perspective. 
 
 *STUN* messages are sent in *User Datagram Protocol (UDP)* packets. Since UDP does not provide reliable transport guarantees, reliability is achieved by application-controlled retransmissions of the *STUN* requests. *STUN* servers don't implement any reliability mechanism for their responses. When reliability is mandatory, the *Transmission Control Protocol (TCP)* may be used, but induces extra networking overhead
 

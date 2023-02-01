@@ -16,7 +16,7 @@ Review the following limitations for upgrade and migrations from previous versio
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
 - Errors for RPC postfix naming patterns don't show in your IDE. 
 - Client and Server have separate representations in UNet. UNet has a number of callbacks that don't exist for Netcode.
-- Prefabs need to be added to the prefab registration list for Netcode.
+- Prefabs need to be added to the Prefab registration list for Netcode.
 - Matchmaking isn't available in Netcode at this time.
 
 ## Backup your project
@@ -56,7 +56,7 @@ We recommend you don't inherit from `NetworkManager` in Netcode, which was a **r
 
 Currently Netcode offers no replacment for the NetworkMangerHUD.
 
-The [Community Contributions Extension Package](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.community.netcode.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
+The [Community Contributions Extension Package](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.community.netcode.extensions) has a a drop in `NetworkManagerHud` component you can use for a quick substitute.
 -->
 
 ## Replace NetworkIdentity with NetworkObject
@@ -291,7 +291,7 @@ void ListenChanges()
     m_ints.OnListChanged += OnIntChanged;
 }
 
-// The NetworkListEvent contains information about the operation and index of the change.
+// The NetworkListEvent has information about the operation and index of the change.
 void OnIntChanged(NetworkListEvent<int> changeEvent)
 {
 
@@ -408,8 +408,8 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager
     bool approve = true;
     bool createPlayerObject = true;
 
-    // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
+    // The Prefab hash. Use null to use the default player prefab
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a Prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
@@ -443,7 +443,7 @@ using UnityEngine.Networking;
 
 public class Example : NetworkBehaviour
 {
-    //Assign the prefab in the Inspector
+    //Assign the Prefab in the Inspector
     public GameObject m_MyGameObject;
     GameObject m_MyInstantiated;
 

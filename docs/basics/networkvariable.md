@@ -6,7 +6,7 @@ sidebar_label: NetworkVariable
 
 ## Introduction
 
-At a high level, a `NetworkVariable` is a way to synchronize a property ("variable") between a server and client(s) without having to use custom messages or RPCs. Since `NetworkVariable` is really a wrapper ("container") of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
+At a high level, a `NetworkVariable` is a way to synchronize a property ("variable") between a server and client(s) without having to use custom messages or RPCs. Since `NetworkVariable` is a wrapper ("container") of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
 - Newly joining clients (that is, "Late Joining Clients")
     - When the associated `NetworkObject` of a `NetworkBehaviour`, with `NetworkVariable` properties, is spawned, any `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side.
 - Connected clients
@@ -53,7 +53,7 @@ Although `NetworkVariable` supports both managed and [unmanaged](https://docs.mi
 
 Netcode has made efforts to minimize Garbage Collected allocations for managed `INetworkSerializable` types (for example, a new value is only allocated if the value changes from `null` to non-`null`). However, the ability of a type to be `null` adds additional overhead both in logic (checking for nulls before serializing) and bandwidth (every serialization carries an additional byte indicating whether the value is `null`).
 
-Additionally, any type that contains a managed type is itself a managed type - so a struct that contains `int[]` is a managed type because `int[]` is a managed type.
+Additionally, any type that has a managed type is itself a managed type - so a struct that has `int[]` is a managed type because `int[]` is a managed type.
 
 Finally, while managed `INetworkSerializable` types are serialized in-place (and thus don't incur allocations for simple value updates), C# arrays and managed types serialized through custom serialization are **not** serialized in-place, and will incur an allocation on every update.
 :::
@@ -96,7 +96,7 @@ public class TestNetworkVariableSynchronization : NetworkBehaviour
             if (m_SomeValue.Value != k_InitialValue)
             {
                 Debug.LogWarning($"NetworkVariable was {m_SomeValue.Value} upon being spawned" +
-                    $" when it really should have been {k_InitialValue}");
+                    $" when it should have been {k_InitialValue}");
             }
             else
             {
@@ -143,12 +143,12 @@ _This works the same way with dynamically spawned `NetworkObject`s._
 :::
 
 :::important
-The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was really intended to be used with a single server or host and a single client.
+The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was intended to be used with a single server or host and a single client.
 :::
 
 ### OnValueChanged Example
 
-While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't really provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
+While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
 
 ```csharp
 public class Door : NetworkBehaviour
@@ -399,12 +399,12 @@ public class PlayerState : NetworkBehaviour
 
     void OnServerListChanged(NetworkListEvent<AreaWeaponBooster> changeEvent)
     {
-        Debug.Log($"[S] The list changed and now contains {TeamAreaWeaponBoosters.Count} elements");
+        Debug.Log($"[S] The list changed and now has {TeamAreaWeaponBoosters.Count} elements");
     }
 
     void OnClientListChanged(NetworkListEvent<AreaWeaponBooster> changeEvent)
     {
-        Debug.Log($"[C] The list changed and now contains {TeamAreaWeaponBoosters.Count} elements");
+        Debug.Log($"[C] The list changed and now has {TeamAreaWeaponBoosters.Count} elements");
     }
 }
 

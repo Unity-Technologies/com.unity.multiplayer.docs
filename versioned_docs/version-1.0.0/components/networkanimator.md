@@ -72,7 +72,7 @@ Using `NetworkAnimator` is a pretty straight forward approach with the only subt
 :::
 
 ### Server Authoritative
-If you decide you want to use the server authoritative model, then you can simply add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject`.  In the below screenshot, you can see a network prefab that houses two authoritative models.  The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component. 
+If you decide you want to use the server authoritative model, then you can simply add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject`.  In the below screenshot, you can see a network Prefab that houses two authoritative models.  The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component. 
 ![Usage-1](Images/NetworkAnimatorUsage-1.png)
 
 ### Owner Authoritative
@@ -80,7 +80,7 @@ If you decide you want to use the owner authoritative model, then (for example p
 ![Usage-1](Images/NetworkAnimatorUsage-2.png)
 
 :::info
-While it isn't advised to have different `NetworkAnimator` authoritative models "under the same root network prefab `GameObject`", you can have multiple children that each have their own `Animator` and `NetworkAnimator` all housed under a single `NetworkObject` and all use the same authoritative model.  However, you should always consider the balance between performance (cpu and/or bandwidth consumption) and convenience/modularity.
+While it isn't advised to have different `NetworkAnimator` authoritative models "under the same root network Prefab `GameObject`", you can have multiple children that each have their own `Animator` and `NetworkAnimator` all housed under a single `NetworkObject` and all use the same authoritative model.  However, you should always consider the balance between performance (cpu and/or bandwidth consumption) and convenience/modularity.
 :::
 
 ### Changing Animator Properties

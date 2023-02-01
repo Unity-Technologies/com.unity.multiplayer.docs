@@ -35,7 +35,7 @@ RPCs require less bandwidth than NetworkVariables, so using RPCs for temporary e
 
 For example, consider the Archer’s and the Mage’s attacks. The Archer’s projectile is a slow, aimed attack that takes time to reach its target and only registers a hit when colliding with another character or object. In this case, creating a NetworkObject for the Archer’s projectile and replicating its position with a NetworkTransform component (which uses NetworkVariables internally) makes sense to ensure the arrow stays in sync over multiple seconds.
 
-However, the Mage’s projectile is much faster and always seeks its target to hit it. In the case of the Mage’s projectile, it does not matter if all clients see the projectile in the same place simultaneously; they only need to see it launch and hit its target. As a result, you can save bandwidth by using an RPC to trigger the creation of the visual effect on the clients and have each client interpret that event without data from the server. In this case, the server only needs to send data when the Mage triggers the ability instead of spawning a new NetworkObject that contains the visual effects (VFX) and synchronizing the motion of the VFX as it heads towards its target over each network tick.
+However, the Mage’s projectile is much faster and always seeks its target to hit it. In the case of the Mage’s projectile, it does not matter if all clients see the projectile in the same place simultaneously; they only need to see it launch and hit its target. As a result, you can save bandwidth by using an RPC to trigger the creation of the visual effect on the clients and have each client interpret that event without data from the server. In this case, the server only needs to send data when the Mage triggers the ability instead of spawning a new NetworkObject that has the visual effects (VFX) and synchronizing the motion of the VFX as it heads towards its target over each network tick.
 
 For more examples, see [RPCs vs. NetworkVariables Examples](../../learn/rpcnetvarexamples.md).
 
@@ -59,7 +59,7 @@ See [Object pooling](../../advanced-topics/object-pooling.md).
 
 ## UTP properties configuration {#utp-properties-configuration}
 
-The [Unity Transport Package](../../../transport/about.md) (UTP) contains properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the [UnityTransport](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md) script.
+The [Unity Transport Package](../../../transport/about.md) (UTP) has properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the [UnityTransport](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md) script.
 
 The Boss Room sample demonstrates how to adapt some UTP properties to fit its specific requirements. Most of the UTP property configuration remains unchanged. However, we changed the following property values:
 

@@ -26,7 +26,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ## Power-ups and Status Effects
 
-The 2DSpaceShooter sample has power-ups which apply different status effects to a player on collection. The core implementation of the power up effects in `ShipControl.cs` is very simplistic.
+The 2DSpaceShooter sample has power-ups which apply different status effects to a player on collection. The core implementation of the power up effects in `ShipControl.cs` is simplistic.
 
 The power-ups themselves are server authorative. On the server they check if a player has entered their trigger and then apply a timed status effect to that player and disappear.
 

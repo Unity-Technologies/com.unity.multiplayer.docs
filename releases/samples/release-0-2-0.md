@@ -31,11 +31,11 @@ This release includes the following new features and additions:
 
 * Introduced static scene `NetworkObject`s to Boss Room scene including the following updates:<!-- GOMPS-381 PR 292-->
 
-    * Implemented a `ScriptableObject` based event system to encapsulate events inside assets. These objects include a `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
+    * Implemented a `ScriptableObject` based event system to encapsulate events inside assets. These objects include a `GameEvent` (ScriptableObject) and `GameEventListener` (MonoBehaviour) to encapsulate events inside assets, located in the `ServerBossRoomState` Prefab which now has a `GameEventListener` component. The event associated to this listener is `BossDefeated`, which the Boss raises when the `LifeState` is Dead in the `RaiseEventOnLifeChange` component.
     * Added two separator `GameObject`s for scene readability: runtime `NetworkObject`s and `NetworkObject`s already placed in the scene.
     * Added a custom editor for GameEvents to fire in the editor (greatly enhances testing).
     * The `LifeState` `NetworkVariable` was moved from `NetworkCharacterState` into its own component, `NetworkLifeState`.
-    * Cleaned up and removed old spawn prefab collections and spawner scripts (`NetSpawnPoint`).
+    * Cleaned up and removed old spawn Prefab collections and spawner scripts (`NetSpawnPoint`).
 
 * Added ramp-up animation for hero movement and actions <!-- GOMPS-122 GOMPS-472-->
 * Added F/X and animation assets for the game including:

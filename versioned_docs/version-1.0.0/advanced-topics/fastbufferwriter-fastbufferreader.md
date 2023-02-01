@@ -88,13 +88,13 @@ This allows the four bytes of the embedded struct to be rapidly serialized as a 
 - `FastBufferWriter` and `FastBufferReader` are **structs**, not **classes**. This means they can be constructed and destructed without GC allocations.
 - `FastBufferWriter` and `FastBufferReader` both use the same allocation scheme as Native Containers, allowing the internal buffers to be created and resized without creating any garbage and with the use of `Allocator.Temp` or `Allocator.TempJob`.
 - `FastBufferReader` can be instantiated using `Allocator.None` to operate on an existing buffer with no allocations and no copies.
-- Neither `FastBufferReader` nor `FastBufferWriter` inherits from nor contains a `Stream`.
+- Neither `FastBufferReader` nor `FastBufferWriter` inherits from nor has a `Stream`.
 - `FastBufferReader` and `FastBufferWriter` are heavily optimized for speed, using aggressive inlining and unsafe code to achieve the fastest possible buffer storage and retrieval.
 - `FastBufferReader` and `FastBufferWriter` use unsafe typecasts and `UnsafeUtility.MemCpy` operations on `byte*` values, achieving native memory copy performance with no need to iterate or do bitwise shifts and masks.
 - `FastBufferReader` and `FastBufferWriter` are intended to make data easier to debug - one such thing to support will be a `#define MLAPI_FAST_BUFFER_UNPACK_ALL` that will disable all packing operations to make the buffers for messages that use them easier to read.
 - `FastBufferReader` and `FastBufferWriter` don't support runtime type discovery - there is no `WriteObject` or `ReadObject` implementation. All types must be known at compile time. This is to avoid garbage and boxing allocations.
 
-A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general they're rarely if ever needed for more than a frame, but this does provide a very efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
+A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general they're rarely if ever needed for more than a frame, but this does provide a efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
 
 ## Creating and Disposing FastBufferWriters and FastBufferReaders
 
@@ -149,7 +149,7 @@ Packing values is done using the utility classes `BytePacker` and `ByteUnpacker`
 
 - `BytePacker.WriteValuePacked()`/`ByteUnpacker.ReadValuePacked()` are the most versatile. They can write any range of values that fit into the type, and also have special built-in methods for many common Unity types that can automatically pack the values contained within.
 
-- `BytePacker.WriteValueBitPacked()`/`ByteUnpacker.ReadValueBitPacked()` offer tighter/more optimal packing (the data in the buffer will never exceed `sizeof(type)`, which can happen with very large values using `WriteValuePacked()`, and will usually be one byte smaller than with `WriteValuePacked()` except for values <= 240, which will be one byte with both methods), but come with the limitations that they can only be used on integral types, and they use some bits of the type to encode length information, meaning that they reduce the usable size of the type. The sizes allowed by these functions are as follows:
+- `BytePacker.WriteValueBitPacked()`/`ByteUnpacker.ReadValueBitPacked()` offer tighter/more optimal packing (the data in the buffer will never exceed `sizeof(type)`, which can happen with large values using `WriteValuePacked()`, and will usually be one byte smaller than with `WriteValuePacked()` except for values <= 240, which will be one byte with both methods), but come with the limitations that they can only be used on integral types, and they use some bits of the type to encode length information, meaning that they reduce the usable size of the type. The sizes allowed by these functions are as follows:
 
   | Type   | Usable Size                                                  |
   | ------ | ------------------------------------------------------------ |

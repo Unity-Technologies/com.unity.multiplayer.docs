@@ -15,7 +15,7 @@ There are two types of custom messages:
 Unnamed messages can be thought of as a single sending channel. A message sent has one receive handler, this is useful for building your own custom messaging system. Netcode for GameObjects handles delivering and receiving custom unnamed messages, you can provide your own "custom message headers" to determine the type of unnamed message being sent or received.
 
 ### Unnamed Message Example
-Below is a very basic example of how you might implement your own messaging system using unnamed messages:
+Below is a basic example of how you might implement your own messaging system using unnamed messages:
 ```csharp
 using UnityEngine;
 using Unity.Collections;
@@ -209,7 +209,7 @@ If you aren't quite sure if you need to incorporate the complexity of message id
 :::
 
 ### Name Message Example
-Below is a very basic example of implementing a custom named message:
+Below is a basic example of implementing a custom named message:
 ```csharp
 using System;
 using UnityEngine;

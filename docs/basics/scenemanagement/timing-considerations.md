@@ -69,7 +69,7 @@ lightImageSrc="/img/sequence_diagrams/SceneManagement/LoadingAdditiveScene_Light
 darkImageSrc="/img/sequence_diagrams/SceneManagement/LoadingAdditiveScene_Dark.png?text=DarkMode"/>
 </figure>
 :::caution
-While a client can start sending the server messages (including NetworkVariable changes) upon local `SceneEventType.LoadComplete` event notifications, under more controlled testing environments where the network being used has very little to no latency (that is, using loopback with multiple instances running on the same system or using your LAN), this approach won't expose latency related issues. Even though the timing might "work out" under controlled low latency conditions you can still run into edge case scenarios where if a client approaches or exceeds a 500ms RTT latency you can potentially run into issues.
+While a client can start sending the server messages (including NetworkVariable changes) upon local `SceneEventType.LoadComplete` event notifications, under more controlled testing environments where the network being used has little to no latency (that is, using loopback with multiple instances running on the same system or using your LAN), this approach won't expose latency related issues. Even though the timing might "work out" under controlled low latency conditions you can still run into edge case scenarios where if a client approaches or exceeds a 500ms RTT latency you can potentially run into issues.
 :::
 
 :::tip
@@ -82,10 +82,10 @@ Loading a scene in `LoadSceneMode.Single` mode via `NetworkSceneManager` is almo
 - all currently loaded scenes are unloaded
 - all `NetworkObject`s that have `DestroyWithScene` set to `true` will be despawned and destroyed.
 
-How you load scenes is really up to your project/design requirements.
+How you load scenes is up to your project/design requirements.
 
 - **Boot Strap Usage Pattern (Additive Loading Only)**
-    - Your only single mode loaded scene is the very first scene loaded (that is, scene index of 0 in the scenes in build list within your project's build settings).
+    - Your only single mode loaded scene is the first scene loaded (that is, scene index of 0 in the scenes in build list within your project's build settings).
     - Because your single mode loaded scene is automatically loaded, the server and all clients will already have this scene loaded
         - To prevent clients from loading the bootstrap scene, you should use server-side [scene validation](using-networkscenemanager.md#scene-validation)
     - All other scenes are loaded additively
@@ -137,7 +137,7 @@ Primarily, this applies to unloading additively loaded scenes via th `NetworkSce
 
 
 ### Unloading an Additive Scene
-If you look at the below diagram, "Unloading an Additive Scene", you will see a very similar flow as that of loading a scene.  The server still initiates the `SceneEventType.Unload` scene event and won't send this message to clients until it has completed the `Unload` scene event locally.
+If you look at the below diagram, "Unloading an Additive Scene", you will see a similar flow as that of loading a scene.  The server still initiates the `SceneEventType.Unload` scene event and won't send this message to clients until it has completed the `Unload` scene event locally.
 
 <figure>
 <ImageSwitcher 
@@ -153,7 +153,7 @@ Review over the below diagram and take note of the following things:
             - This will cause a series of server-to-client despawn messages to be sent to all clients.
 - **Client Side:**
     - While a server is unloading a scene, the client can begin to receive a bunch of despawn messages for the `NetworkObject`s being destroyed on the server-side while the scene is being unloaded.
-        - By the time a client receives the `SceneEventType.Unload` scene event message, it very well can have no remaining `NetworkObject`s in the scene being unloaded.  This won't impact the client-side scene unloading process, but it is useful to know that this will happen.
+        - By the time a client receives the `SceneEventType.Unload` scene event message, it well can have no remaining `NetworkObject`s in the scene being unloaded.  This won't impact the client-side scene unloading process, but it is useful to know that this will happen.
 
 <figure>
 <ImageSwitcher 

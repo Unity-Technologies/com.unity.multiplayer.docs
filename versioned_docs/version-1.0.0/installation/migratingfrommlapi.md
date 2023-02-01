@@ -45,7 +45,7 @@ After installing the patcher package, you can continue the upgrade process.
 ## Install the Netcode Package
 Follow the [installation guide](installation.md) to install Netcode.
 
-After installing the package, you will have error messages in the console, which is expected behavior because your project now contains MLAPI and Netcode at the same time. This will be remedied by the end of this guide.
+After installing the package, you will have error messages in the console, which is expected behavior because your project now has MLAPI and Netcode at the same time. This will be remedied by the end of this guide.
 
 Installing the Netcode package will also install some other packages such as [`Unity Transport`](https://docs.unity3d.com/Packages/com.unity.transport@latest/), [`Unity Collections`](https://docs.unity3d.com/Packages/com.unity.collections@latest/), [`Unity Burst`](https://docs.unity3d.com/Packages/com.unity.burst@latest/) etc.
 
@@ -154,7 +154,7 @@ This error will pop up if your project uses Assembly definition (`.asmdef`) file
 
 **Error: The type or namespace name 'NetworkedBehaviour' can't be found**
 
-If you get an error message like this (or for another Netcode type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names.
+If you get an error message like this (or for another Netcode type than `NetworkedBehaviour`) in the console it is most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names.
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 

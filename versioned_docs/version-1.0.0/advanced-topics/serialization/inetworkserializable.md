@@ -10,7 +10,7 @@ The `INetworkSerializable` interface can be used to define custom serializable t
 All examples provided will work with RPCs and custom messages but some examples won't work with `NetworkVariable` due to the unmanaged type restriction.<br/>
 **NetworkVariable Type Litmus Test for INetworkSerializable Implementations:**
 - If the implementation itself can be a null (that is, a class), then it can't be used
-- If it contains any property that can be null (that is, arrays), then it can't be used
+- If it has any property that can be null (that is, arrays), then it can't be used
 
 The alternative is to create your own `NetworkVariableBase` derived `type` specific class.
 :::

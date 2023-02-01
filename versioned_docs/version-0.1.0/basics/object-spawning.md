@@ -15,17 +15,17 @@ In Unity, you typically create a new game object using the `Instantiate` functio
 
 To spawn an object, it must first be registered as a networked prefab:
 
-1. Create a prefab out of the object you want to spawn.
+1. Create a Prefab out of the object you want to spawn.
 1. Make sure the object has a `NetworkObject` component on it. 
 
   The `NetworkObject` component has a `PrefabHash` this is a unique name used by MLAPI to find the right object to spawn on the clients. By default this is the name of the object but it can be changed if needed.
   
-1. Add your prefab to the `NetworkPrefabs` list of the `NetworkManager`.
+1. Add your Prefab to the `NetworkPrefabs` list of the `NetworkManager`.
 
 ### Spawning a Networked Prefab
 
 MLAPI uses a server authorative networking model so spawning objects can only be done on the server/host.
-To spawn an object first instantiate the object from your prefab and then invoke the spawn method on the `NetworkObject` component that should be attached to the prefab.
+To spawn an object first instantiate the object from your Prefab and then invoke the spawn method on the `NetworkObject` component that should be attached to the prefab.
 This should only be done on the server as the object will automatically replicate on the other clients.
 By default a newly spawned object is owned by the server. See [Ownership](networkobject.md#ownership) for more information.
 
@@ -81,5 +81,5 @@ This allows scene objects to be non prefabs and they won't be replaced, thus kee
 
 `PrefabSync` can be manually enabled in the `NetworkManager` by ticking the *Use Prefab Sync* checkbox. Prefab sync will also be used if `SceneManagement` is disabled.
 
-If it's enabled, every scene object with a `NetworkObject` component has to be a prefab and must be registered in the `NetworkPrefabs` list. When a client starts, MLAPI will destroy all existing scene objects with a `NetworkObject` component on them and spawn a corresponding prefab from the `NetworkPrefabs` list instead. This means that serialized data gets lost on the clients. It's thus recommended to place serialized data in `NetworkVariable`'s.
+If it's enabled, every scene object with a `NetworkObject` component has to be a Prefab and must be registered in the `NetworkPrefabs` list. When a client starts, MLAPI will destroy all existing scene objects with a `NetworkObject` component on them and spawn a corresponding Prefab from the `NetworkPrefabs` list instead. This means that serialized data gets lost on the clients. It's thus recommended to place serialized data in `NetworkVariable`'s.
 **PrefabSync is ONLY recommended for multi project setups**.

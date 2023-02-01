@@ -19,7 +19,7 @@ darkImageSrc="/img/sequence_diagrams/BossRoomExamples/HidingLatency_AnimationAnt
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_MageMagicBolt.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_MageMagicBolt_Dark.png?text=DarkMode"/>
-<figcaption>Boss Room's mage's bolt doesn't use NetworkVariables and NetworkObjects to track the bolt's state. Since its movement is very fast, we only send an RPC to trigger VFX on clients. No need to waste CPU and bandwidth on a NetworkObject over time for this. Even if the FX passes through a wall on some clients (due to network discrepancies in target positions), the FX is so quick it wouldn't be visible to players.</figcaption>
+<figcaption>Boss Room's mage's bolt doesn't use NetworkVariables and NetworkObjects to track the bolt's state. Since its movement is fast, we only send an RPC to trigger VFX on clients. No need to waste CPU and bandwidth on a NetworkObject over time for this. Even if the FX passes through a wall on some clients (due to network discrepancies in target positions), the FX is so quick it wouldn't be visible to players.</figcaption>
 </figure>
 
 <figure>

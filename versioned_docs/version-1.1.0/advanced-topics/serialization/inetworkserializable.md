@@ -65,7 +65,7 @@ You can use arrays in one of two ways:
 1. Via C# arrays
 2. Via Native Collections (that is, `NativeArray`)
 
-The critical distinction between the two is that **C# arrays** convert any type that contains the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
+The critical distinction between the two is that **C# arrays** convert any type that has the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
 
 ```csharp
 public struct MyCustomStruct : INetworkSerializable

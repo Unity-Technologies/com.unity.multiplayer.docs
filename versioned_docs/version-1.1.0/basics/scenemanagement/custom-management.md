@@ -10,7 +10,7 @@ Custom Scene Management currently has some drawbacks that we hope to improve upo
 :::
 
 ## Building Your Own Scene Management Solution
-Netcode for GameObjects has primarily focused on providing a scene management solution that should meet most projects' needs. However, there might be a special case scenario where you require building your own scene management solution. The very first step is to disable the "Enable Scene Management" property in your `NetworkManager`'s properties. All of your scene loading and unloading will be handled via the UnityEngine.SceneManagement.SceneManager class.  
+Netcode for GameObjects has primarily focused on providing a scene management solution that should meet most projects' needs. However, there might be a special case scenario where you require building your own scene management solution. The first step is to disable the "Enable Scene Management" property in your `NetworkManager`'s properties. All of your scene loading and unloading will be handled via the UnityEngine.SceneManagement.SceneManager class.  
 
 ### Registering In-Scene Placed NetworkObjects
 While integrated scene management solution handles the synchronization of in-scene placed `NetworkObject`s, custom scene management treats everything like a dynamically spawned `NetworkObject`.  As such, you are **required to register a Network Prefab hash override for each in-scene placed `NetworkObject` instance**.
@@ -47,7 +47,7 @@ The recommended way of starting session using your own scene management solution
     - As an example:  A client might be connected and has synchronized with the default scenes required to connect, but then you have one or more additional scenes you might have loaded (additively) that the client needs to load and synchronize (spawn) any in-scene placed Network Prefab instances 
 
 ### Scene Loading and Unloading
-You can accomplish this using either RPCs or custom messages. You might even use your own `INetworkSerializable` implementation that contains a list of scenes and whether they should be loaded or unloaded.  You should always have some form of "complete" response factored into your design so you know when a client has finished loading/unloading a scene. You will also want to devise a strategy for loading a scene in `LoadSceneMode.Additive` and `LoadSceneMode.Single` modes.  
+You can accomplish this using either RPCs or custom messages. You might even use your own `INetworkSerializable` implementation that has a list of scenes and whether they should be loaded or unloaded.  You should always have some form of "complete" response factored into your design so you know when a client has finished loading/unloading a scene. You will also want to devise a strategy for loading a scene in `LoadSceneMode.Additive` and `LoadSceneMode.Single` modes.  
 
 :::tip
 Creating a global scene management script and attaching it to the same GameObject as the `NetworkManager` is one way to assure your custom netcode scene management solution persists while a game session is in progress.  

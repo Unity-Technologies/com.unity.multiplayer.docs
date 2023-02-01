@@ -3,13 +3,13 @@ id: networkmanager
 title: NetworkManager
 ---
 
-The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** component that contains all of your project's netcode related settings. Think of it as the "central netcode hub" for your netcode enabled project.  
+The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** component that has all of your project's netcode related settings. Think of it as the "central netcode hub" for your netcode enabled project.  
 
 ### `NetworkManager` Inspector Properties
 
 - **LogLevel**:  Sets the network logging level 
-- **PlayerPrefab**:  When a prefab is assigned, the prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
-- **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network prefab override per registered network prefab here.
+- **PlayerPrefab**:  When a Prefab is assigned, the Prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
+- **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network Prefab override per registered network Prefab here.
 - **Protocol Version**: Set this value to help distinguish between builds when the most current build has new assets that can cause issues with older builds connecting.
 - **Network Transport**: Where your network specific settings and transport type is set.  This field accepts any INetworkTransport implementation.  However, unless you have unique transport specific needs UnityTransport is the recommended transport to use with Netcode for GameObjects.
 - **Tick Rate**: This value controls the network tick update rate.

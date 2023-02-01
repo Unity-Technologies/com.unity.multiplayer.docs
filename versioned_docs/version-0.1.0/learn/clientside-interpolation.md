@@ -43,7 +43,7 @@ This technique is implemented in the [Boss Room sample](https://github.com/Unity
 
 Before reviewing into code, define the `GameObject` composition model for player characers, and similarly AI characters, inside Boss Room:
 
-* The first, a non-visual, `NetworkObject`: Contains both server and client `NetworkBehaviour` components, namely *ServerCharacterMovement.cs* and *ClientGenericMovement.cs*. We refer to this `GameObject` as "PC".
+* The first, a non-visual, `NetworkObject`: has both server and client `NetworkBehaviour` components, namely *ServerCharacterMovement.cs* and *ClientGenericMovement.cs*. We refer to this `GameObject` as "PC".
 * The second, a visual `GameObject`: Displays the character's model and play animations. This is the `GameObject` which performs client-side interpolation. We refer to this as "Graphics".
 
 ### NetworkCharacterState

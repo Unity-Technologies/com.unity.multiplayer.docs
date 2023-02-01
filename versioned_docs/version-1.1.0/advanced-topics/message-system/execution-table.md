@@ -13,7 +13,7 @@ The following table details the execution of `ServerRpc` and `ClientRpc` functio
 | ClientRpc Send | <i class="fp-check"></i> | <i class="fp-x"></i> | <i class="fp-check"></i> |
 | ClientRpc Execute | <i class="fp-x"></i> | <i class="fp-check"></i> | <i class="fp-check"></i> |
 
-An RPC function typically doesn't execute its body immediately since the function call really is a stand-in for a network transmission. Since the host is both a client and a server, local RPCs targeting the host-server or host-client are invoked immediately.  As such, avoid nesting RPCs when running in host mode as a ServerRpc method that invokes a ClientRpc method that invokes the same ServerRpc method (and repeat...) can cause a stack overflow.
+An RPC function typically doesn't execute its body immediately since the function call is a stand-in for a network transmission. Since the host is both a client and a server, local RPCs targeting the host-server or host-client are invoked immediately.  As such, avoid nesting RPCs when running in host mode as a ServerRpc method that invokes a ClientRpc method that invokes the same ServerRpc method (and repeat...) can cause a stack overflow.
 
 Structure of a typical `ServerRpc`:
 

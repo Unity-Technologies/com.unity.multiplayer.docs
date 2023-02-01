@@ -6,7 +6,7 @@ sidebar_label: NetworkVariable
 
 ## Introduction
 
-At a high level, a `NetworkVariable` is a way to synchronize a property ("variable") between a server and client(s) without having to use custom messages or RPCs. Since `NetworkVariable` is really a wrapper ("container") of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
+At a high level, a `NetworkVariable` is a way to synchronize a property ("variable") between a server and client(s) without having to use custom messages or RPCs. Since `NetworkVariable` is a wrapper ("container") of the stored value of type `T`, you must use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable.Value` is synchronized with:
 - Newly joining clients (that is, "Late Joining Clients")
     - When the associated `NetworkObject` of a `NetworkBehaviour`, with `NetworkVariable` properties, is spawned, any `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side.
 - Connected clients
@@ -70,7 +70,7 @@ public class TestNetworkVariableSynchronization : NetworkBehaviour
             if (m_SomeValue.Value != k_InitialValue)
             {
                 Debug.LogWarning($"NetworkVariable was {m_SomeValue.Value} upon being spawned" +
-                    $" when it really should have been {k_InitialValue}");
+                    $" when it should have been {k_InitialValue}");
             }
             else
             {
@@ -117,12 +117,12 @@ _This works the same way with dynamically spawned `NetworkObject`s._
 :::
 
 :::important
-The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was really intended to be used with a single server or host and a single client.
+The above example is only to test both the initial client synchronization of the value and when the value changes.  It was intentionally written to only be an example, and if you "late join" a 2nd client it will throw the warning about the `NetworkVariable.Value` not being the initial value.  This example was intended to be used with a single server or host and a single client.
 :::
 
 ### OnValueChanged Example
 
-While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't really provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
+While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
 
 ```csharp
 public class Door : NetworkBehaviour
@@ -309,7 +309,7 @@ You might be wondering about our earlier door example and why we chose to use a 
 Almost all of our examples have been focused around numeric [Value Types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types). Value types are any `Type` that can't be assigned a null value. Structures are considered non-nullable complex value types. From a Netcode for GameObject perspective, as long as the structure (or any nested sub-property) does not contain any properties that are considered nullable value types.
 
 :::warning
-`NetworkVariable` does not support any [nullable value types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types). This includes any `INetworkSerializable` implementation that contains any properties (private, protected, internal, and public) that are of a nullable value type.
+`NetworkVariable` does not support any [nullable value types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types). This includes any `INetworkSerializable` implementation that has any properties (private, protected, internal, and public) that are of a nullable value type.
 :::
 
 ### Synchronizing Complex Types Example
@@ -672,7 +672,7 @@ However, if you already know the maximum size of the `string` that you want to s
 
 ### Strings: NetworkVariable FixedString Example
 
-Perhaps you want to leverage from the already existing `NetworkVariable<T>` class to handle synchronizing connected clients with any changes that might occur to a string or you might want to keep a very strict "no memory allocations during runtime" design pattern.  Under either of these scenarios, you would want to use one of the `Unity.Collections.FixedString` value types. In the below example, we used a `FixedString128Bytes` as the `NetworkVariable` value type and then, on the server side, it will change the string value each time you press the space bar on the server or host instance. Joining clients will be synchronized with the current value applied on the server side, and then each time you hit the space bar on the server side the client will be synchronized with the changed string.
+Perhaps you want to leverage from the already existing `NetworkVariable<T>` class to handle synchronizing connected clients with any changes that might occur to a string or you might want to keep a strict "no memory allocations during runtime" design pattern.  Under either of these scenarios, you would want to use one of the `Unity.Collections.FixedString` value types. In the below example, we used a `FixedString128Bytes` as the `NetworkVariable` value type and then, on the server side, it will change the string value each time you press the space bar on the server or host instance. Joining clients will be synchronized with the current value applied on the server side, and then each time you hit the space bar on the server side the client will be synchronized with the changed string.
 
 :::caution
 `NetworkVariable<T>` will serialize the entire 128 bytes each time the `Value` is changed even if you only consume a few bytes. to only update what has changed you would need to create a custom `NetworkVariable` that handles only synchronizing the deltas between the previous and current versions of the `NetworkVariable`.

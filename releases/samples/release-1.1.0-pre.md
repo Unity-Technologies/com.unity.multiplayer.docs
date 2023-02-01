@@ -56,7 +56,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Adding new cheats (#446): heal player (#448), kill enemies (#447), portals toggle (#452), speedhack toggle (#449), teleport mode (#450), toggle door (#451)
 * Adding transport RTT to UI stats and using exponential moving average for calculations (#528)
 * Boss and run VFX Optimizations (#514)
-* Made a shared menu camera prefab for all of the menu scenes and swapped out the old cameras in the scenes for it (#473)
+* Made a shared menu camera Prefab for all of the menu scenes and swapped out the old cameras in the scenes for it (#473)
 * feat: player architecture ARCHITECTURE.md addition (#476)
 
 ### Dependencies

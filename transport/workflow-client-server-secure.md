@@ -134,7 +134,7 @@ That's it for the server!
 
 ### Creating a secure client
 
-The secure client is very similar to the secure server. The only difference is in how the `NetworkSettings` object is configured.
+The secure client is similar to the secure server. The only difference is in how the `NetworkSettings` object is configured.
 
 ```csharp
 void Start ()

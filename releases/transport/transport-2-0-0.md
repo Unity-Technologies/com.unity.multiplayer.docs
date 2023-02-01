@@ -112,7 +112,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Fixes
 
 - Fixed an issue where when sending data on a connection and closing that connection in the same update, the data message would not be sent properly.
-- Fixed a stack overflow exception when send/receive queue capacity was set very high (>10,000).
+- Fixed a stack overflow exception when send/receive queue capacity was set high (>10,000).
 - Fixed an issue where `SimulatorPipelineStage` would always use the same seed for its random number generator.
 
 ### Upgrade guide

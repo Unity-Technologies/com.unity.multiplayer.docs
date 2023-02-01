@@ -4,7 +4,7 @@ id: rn-version
 description: Release notes for Multiplayer V#.#, including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
-The release of Multiplayer v #.# contains features, updates, and bug fixes for the SDK.
+The release of Multiplayer v #.# has features, updates, and bug fixes for the SDK.
 
 ## [#.#.#] - yyyy-mm-dd
 

@@ -11,7 +11,7 @@ Custom Types => Built In Types => INetworkSerializable
 
 That is, when Netcode first gets hold of a type, it will check for any custom types that the user have registered for serialization, after that it will check if it's a built in type, such as a Vector3, float etc. These are handled by default. If not, it will check if the type inherits `INetworkSerializable`, if it does, it will call it's write methods.
 
-By default, any type that satisfies the `unmanaged` generic constraint can be automatically serialized as RPC parameters. This includes all basic types (bool, byte, int, float, enum, etc) as well as any structs that contains only these basic types.
+By default, any type that satisfies the `unmanaged` generic constraint can be automatically serialized as RPC parameters. This includes all basic types (bool, byte, int, float, enum, etc) as well as any structs that has only these basic types.
 
 With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you haven't defined yourself, those who are behind a 3rd party wall, such as .NET types.
 

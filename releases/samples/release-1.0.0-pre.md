@@ -58,7 +58,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Reduced default master volume value (#445)
 * Removed room name textbox when using IP-based connection (#418)
 * Removed the !IsConnectedClient condition for handling client disconnect (#435)
-* Replaced instance of PostGameState prefab inside PostGame scene to fix malformed GlobalObjectIdHash (#443)
+* Replaced instance of PostGameState Prefab inside PostGame scene to fix malformed GlobalObjectIdHash (#443)
 * Updating Toon Shader to Shader Graph (#414)
 * Fix/randomly rotate breakable pots #472
 * Deleted an overlapping object #471
@@ -70,7 +70,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Updated IET package version to 2.1.1 (#422)
 * Bumped Unity LTS version (#396)
 * Updating photon to latest (#402)
-* Updated char select background prefab (#416)
+* Updated char select background Prefab (#416)
 
 ### Known Issues
 * NetworkTransform overflow exception
@@ -111,7 +111,7 @@ Boss Room: Small Scale Co-op Sample always requires the latest version of Unity 
 * Replace MLAPI references with NGO 
 * Adding utilities asmdef. 
 * Visual improvements:
-    * Touched up the character select background prefab 
+    * Touched up the character select background Prefab 
     * A matte around the border of the map to block the camera from seeing lava, edges of meshes, particles, etc
     * Lighting changes and optimizations
     * Reduced number of realtime lights to 4 (from 27)
@@ -147,7 +147,7 @@ This release includes the following new features:
 * Adding ParrelSync and updating third party notice.md
 * NetworkAnimator added to boss door & floor switch with server-authority
 * Integrating Unity Transport and Relay into Boss Room
-* Updated image in the UnityLogo prefab with the new Unity logo
+* Updated image in the UnityLogo Prefab with the new Unity logo
 * NetworkObject pool (arrows are pooled)
 * Server-authoritative character NetworkAnimator
 
@@ -155,7 +155,7 @@ And the following changes:
 
 * Collider and Layer cleanup & optimizations
 * Photon Transport send queue batch size incremented to 8192
-* OnNetworkSpawn() refactoring, player prefab removed from NetworkManager prefab list
+* OnNetworkSpawn() refactoring, player Prefab removed from NetworkManager Prefab list
 * Netcode rebranding
 * Added link to bitesize samples
 * Update compatible Unity version in Readme

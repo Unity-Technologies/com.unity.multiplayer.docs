@@ -173,10 +173,10 @@ It's important to promptly remove disconnected players from the lobby. Otherwise
 When a player [disconnects from Relay](https://docs.unity.com/relay/disconnection.html), eventually the Lobby and Relay service integration (necessary before we run UTP connection) kicks out the disconnected players. However, the timeout for disconnect is quite long (~2 minutes), and we don't rely solely on this mechanism.
 
 To make the process of leaving lobby more reliable, there are several additional cleanup mechanisms:
-* The client code contains application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)) that sends a request to remove the player from the lobby
+* The client code has application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)) that sends a request to remove the player from the lobby
 * The host has special logic that removes the disconnected player from the lobby as soon as the host knows about it (`NetworkManager.OnClientDisconnectCallback`). This is helpful when the client has crashed and cann't send a "leave lobby" request.
   * For this to work, the host uses `SessionManager` to store the mapping between UGS playerId and their NGO clientId. You can find this logic in [ServerGameNetPortal.cs - OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs).
-* Lastly, the client contains checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs).
+* Lastly, the client has checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs).
 
 ## Troubleshooting
 

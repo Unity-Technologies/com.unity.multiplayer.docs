@@ -39,7 +39,7 @@ public void MyGlobalServerRpc(ServerRpcParams serverRpcParams = default)
     }
 }
 ```
-In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams). This parameter type is optional, but it can be very useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
+In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams). This parameter type is optional, but it can be useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
 :::important Best Practice
 Using the `ServerRpcParams.Receive.SenderClientId` property is considered the best practice to identify which client was invoking the `ServerRpc`. It isn't recommended to send the client identifier via an additional `ulong` parameter added to the `ServerRpc`:<br/>
 ```csharp

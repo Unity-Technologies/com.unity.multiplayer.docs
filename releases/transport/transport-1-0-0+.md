@@ -25,7 +25,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Fixes
 
-* Fixed a possible stack overflow error that occurs if the `receive` or `send` queue parameters are configured with very large values (>15,000).
+* Fixed a possible stack overflow error that occurs if the `receive` or `send` queue parameters are configured with large values (>15,000).
 * Prevented an issue where a warning about having too many pipeline updates would be spammed after a connection was closed.
 * Fixed an issue where a duplicated reliable packet wouldn't be processed correctly, which can possibly lead to the entire reliable pipeline stage stalling (not being able to send new packets).
 * Fixed an issue where pipeline updates would be run too many times, which would waste CPU and can lead to the warning about having too many pipeline updates being erroneously logged.

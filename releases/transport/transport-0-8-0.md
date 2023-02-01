@@ -31,7 +31,7 @@ The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` 
 
 ### New features
 * An error handling pass has been made and `Error.StatusCode` have been added to indicate more specific errors.
-* `Error.DisconnectReason` has been added, so when NetworkDriver.PopEvent returns a `NetworkEvent.Type.Disconnect` the reader returned contains 1 byte of data indicating the reason.
+* `Error.DisconnectReason` has been added, so when NetworkDriver.PopEvent returns a `NetworkEvent.Type.Disconnect` the reader returned has 1 byte of data indicating the reason.
 
 ### Changes
 * The function signature for NetworkDriver.BeginSend has changed. It now returns an `int` value indicating if the function succeeded or not and the DataStreamWriter now instead is returned as a `out` parameter.
@@ -169,7 +169,7 @@ The interface for network interfaces has been changed.
 ### New features
 * Added a new *Ping-Multiplay* sample based on the *Ping* sample.
     * Created to be the main sample for demonstrating Multiplay compatibility and best practices (SQP usage, IP binding, etc.).
-    * Contains both client and server code. Additional details in readme in `/Assets/Samples/Ping-Multiplay/`.
+    * has both client and server code. Additional details in readme in `/Assets/Samples/Ping-Multiplay/`.
 * **DedicatedServerConfig**: Added arguments for `-fps` and `-timeout`.
 * **NetworkEndPoint**: Added a `TryParse()` method which returns false if parsing fails
     * Note: The `Parse()` method returns a default IP / Endpoint if parsing fails, but a method that can report failure was needed for the Multiplay sample.

@@ -41,7 +41,7 @@ If you want a client to control multiple objects use the ownership model instead
 
 ### Creating a Player Object
 
-Netcode can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkManager`, then Netcode will spawn the prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
+Netcode can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkManager`, then Netcode will spawn the Prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
 
 To manually spawn an object as player object, use `SpawnAsPlayerObject` instead of the regular `Spawn` method. This replaces the old player object with the new one.
 

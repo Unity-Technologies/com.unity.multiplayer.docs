@@ -52,7 +52,7 @@ Start               | OnNetworkSpawn
 
 #### Dynamically Spawned NetworkObjects
 
-For dynamically spawned `NetworkObjects` (instantiating a network prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it is important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
+For dynamically spawned `NetworkObjects` (instantiating a network Prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it is important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
 
 ```csharp
 public class MyNetworkBehaviour : NetworkBehaviour

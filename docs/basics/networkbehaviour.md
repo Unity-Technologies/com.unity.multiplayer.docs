@@ -52,7 +52,7 @@ Start               | OnNetworkSpawn
 
 #### Dynamically Spawned NetworkObjects
 
-For dynamically spawned `NetworkObjects` (instantiating a network prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it is important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
+For dynamically spawned `NetworkObjects` (instantiating a network Prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it is important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
 
 ```csharp
 public class MyNetworkBehaviour : NetworkBehaviour
@@ -111,7 +111,7 @@ If you override the virtual 'OnDestroy' method it is important to alway invoke t
 
 ### NetworkBehaviour Pre-Spawn Synchronization
 
-There can be scenarios where you need to include additional configuration data or use a `NetworkBehaviour` to configure some non-netcode related component (or the like) before a `NetworkObject` being spawned. This can be particularly critical if you want specific settings applied before `NetworkBehaviour.OnNetworkSpawn` being invoked. When a client is synchronizing with an existing network session, this can become problematic as messaging requires a client to be fully synchronized before you really know "it is safe" to send the message and even if you send a message there is the latency involved in the whole process that might not be convenient and can require additional specialized code to account for this.
+There can be scenarios where you need to include additional configuration data or use a `NetworkBehaviour` to configure some non-netcode related component (or the like) before a `NetworkObject` being spawned. This can be particularly critical if you want specific settings applied before `NetworkBehaviour.OnNetworkSpawn` being invoked. When a client is synchronizing with an existing network session, this can become problematic as messaging requires a client to be fully synchronized before you know "it is safe" to send the message and even if you send a message there is the latency involved in the whole process that might not be convenient and can require additional specialized code to account for this.
 
 `NetworkBehaviour.OnSynchronize` allows you to write and read custom serialized data during the `NetworkObject` serialization process.  
 
@@ -121,7 +121,7 @@ There are two cases where `NetworkObject` synchronization occurs:
   - that is, Full synchronization of the `NetworkObject`s and scenes.
 
 :::info
-If you haven't already become familiar with the [`INetworkSerializable` interface](../advanced-topics/serialization/inetworkserializable.md), then you might read up on that before proceeding as `NetworkBehaviour.OnSynchronize` as it follows a very similar usage pattern.
+If you haven't already become familiar with the [`INetworkSerializable` interface](../advanced-topics/serialization/inetworkserializable.md), then you might read up on that before proceeding as `NetworkBehaviour.OnSynchronize` as it follows a similar usage pattern.
 :::
 
 #### Order of Operations When Dynamically Spawning:<br />
@@ -172,7 +172,7 @@ Client-Side:
       - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
 
 ### OnSynchronize Example 
-Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later so you decide to use RPCs.  However, this becomes an issue when you want to synchronize late joining clients as there is no way to really synchronize late joining clients based on RPC activity over the duration of a network session.  This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
+Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later so you decide to use RPCs.  However, this becomes an issue when you want to synchronize late joining clients as there is no way to synchronize late joining clients based on RPC activity over the duration of a network session.  This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
 In the example below, it provides one simple use-case scenario where you can use `NetworkBehaviour.OnSynchronize` to synchronize late-joining clients with state set by `ClientRpc` events:
 ```csharp
 using UnityEngine;

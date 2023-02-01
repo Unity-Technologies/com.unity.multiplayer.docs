@@ -54,7 +54,7 @@ ParallelSync is **not** supported by Unity.  More information on its usage is av
 
 
 
-[**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity editor window opened and mirror the changes from the original project. 
+[**ParrelSync**](https://github.com/VeriorPies/ParrelSync) is an open-source Unity Editor extension that allows users to **test multiplayer gameplay without building the project** by having another Unity Editor window opened and mirror the changes from the original project. 
 
 **ParrelSync** works by making a copy of the original project folder and creating symbolic links to the `Asset` and `Project Settings` folders back from the original project.
 

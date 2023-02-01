@@ -54,7 +54,7 @@ After installing the patcher package you are good to go. Complete the following 
 ## 1. Install the MLAPI Package
 Follow the [installation guide](installation.md) for installing the package version of MLAPI.
 
-After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
+After installing the package, you will have error messages in the console, which is expected behavior because your project now has two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
 :::warning
 Don't remove the old version of MLAPI yet. It will still be used in the next step.
@@ -142,7 +142,7 @@ This error will pop up if your project uses Assembly definition (`.asmdef`) file
 
 **Error: The type or namespace name 'NetworkedBehaviour' can't be found**
 
-If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
+If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 

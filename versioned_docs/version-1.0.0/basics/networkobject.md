@@ -18,7 +18,7 @@ Both the `NetworkObject` and `NetworkBehaviour` components require the use of sp
 
 In order to replicate any netcode aware properties or send/receive RPCs a `GameObject` must have a `NetworkObject` component and at least one `NetworkBehaviour` component.  Any netcode related component, like `NetworkTransform` or a `NetworkBehaviour` with one or more `NetworkVariable`s or `RPC`s, requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` in question.
 
-When spawning a `NetworkObject`, the NetworkObject.GlobalObjectIdHash value is used to initially identify the associatd network prefab asset clients will instantiate to create a client-local clone/copy.  Once instantiated locally, each `NetworkObject` is assigned a `NetworkObjectId` that is used to associate `NetworkObject`s across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103", and everyone knows what object that is. A `NetworkObject` is considered "Spawned" on a client is when it has been instatiated and assigned a unique `NetworkObjectId`.
+When spawning a `NetworkObject`, the NetworkObject.GlobalObjectIdHash value is used to initially identify the associatd network Prefab asset clients will instantiate to create a client-local clone/copy.  Once instantiated locally, each `NetworkObject` is assigned a `NetworkObjectId` that is used to associate `NetworkObject`s across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103", and everyone knows what object that is. A `NetworkObject` is considered "Spawned" on a client is when it has been instatiated and assigned a unique `NetworkObjectId`.
 
 [NetworkBehaviours](networkbehaviour.md) provide users with the ability to add their own custom netcode logic to the associated `NetworkObject`.
 
@@ -67,12 +67,12 @@ Player objects are an optional feature in Netcode which can be used to assign a 
 :::note
 If you want a client to control multiple objects, then use the ownership methods described above under the ownership section.
 
-If you want to be able to assign a unique player prefab on a per client connection basis, use client [Connection Approval](connection-approval).
+If you want to be able to assign a unique player Prefab on a per client connection basis, use client [Connection Approval](connection-approval).
 :::
 
 ### Creating a Player Object
 
-Netcode can spawn a default player object for you. If `Create Player Prefab` is checked (`true`) in the `NetworkManager` and the `Player Prefab` is assigned a valid prefab, then Netcode will spawn a unique instance of the designated player prefab for each connected and approved client.
+Netcode can spawn a default player object for you. If `Create Player Prefab` is checked (`true`) in the `NetworkManager` and the `Player Prefab` is assigned a valid prefab, then Netcode will spawn a unique instance of the designated player Prefab for each connected and approved client.
 
 To manually spawn an object as player object, use the following method:
 
@@ -80,7 +80,7 @@ To manually spawn an object as player object, use the following method:
 GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
 ```
 :::note
-If the player already had a prefab instance assigned, then the NetworkObject of that prefab instance will still be owned by the client unless there is additional server-side specific user code that removes or changes the ownership.
+If the player already had a Prefab instance assigned, then the NetworkObject of that Prefab instance will still be owned by the client unless there is additional server-side specific user code that removes or changes the ownership.
 :::
 
 ### Finding Player Objects
@@ -102,7 +102,7 @@ NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
 To find your own player object just pass `NetworkManager.Singleton.LocalClientId` as the clientId in the sample above.
 
 ### Network Prefabs
-Network prefabs (NetworkPrefabs) are prefabs that contain a GameObject with a `NetworkObject` component.  As an example, if you wanted to create a prefab to be the default player prefab, then you would create a prefab that at the root GameObject included a `NetworkObject` component and any additional player specific `NetworkBehabiour` components.  You can then assign that prefab to the `NetworkManager` Player Prefab property to be used when a player is connected and approved.  Each connected player will have a unique instance spawned on all connected clients (including the server).
+Network prefabs (NetworkPrefabs) are prefabs that contain a GameObject with a `NetworkObject` component.  As an example, if you wanted to create a Prefab to be the default player prefab, then you would create a Prefab that at the root GameObject included a `NetworkObject` component and any additional player specific `NetworkBehabiour` components.  You can then assign that Prefab to the `NetworkManager` Player Prefab property to be used when a player is connected and approved.  Each connected player will have a unique instance spawned on all connected clients (including the server).
 
 :::note
 You can only have one `NetworkObject` at the root of a prefab.  This means don't create prefabs with nested `NetworkObjects`!

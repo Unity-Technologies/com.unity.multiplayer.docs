@@ -158,7 +158,7 @@ The Random Connections Swap scenario selects one of configurations from the list
 
 ### Network types
 
-A network type is the general state of a user’s network connection. This section contains the descriptions of the available Network Simulator preset configurations. These configuration presets fall into five categories:
+A network type is the general state of a user’s network connection. This section has the descriptions of the available Network Simulator preset configurations. These configuration presets fall into five categories:
 
 * [Home broadband connections](#home-broadband-connections)
 * [Poor quality mobile connections](#poor-quality-mobile-connections)

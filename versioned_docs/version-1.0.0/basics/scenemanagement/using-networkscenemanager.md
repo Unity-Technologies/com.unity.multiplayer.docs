@@ -236,7 +236,7 @@ public class ProjectSceneManager : NetworkBehaviour
     /// <summary>
     /// Handles processing notifications when subscribed to OnSceneEvent
     /// </summary>
-    /// <param name="sceneEvent">class that contains information about the scene event</param>
+    /// <param name="sceneEvent">class that has information about the scene event</param>
     private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
     {
         var clientOrServer = sceneEvent.ClientId == NetworkManager.ServerClientId ? "server" : "client";

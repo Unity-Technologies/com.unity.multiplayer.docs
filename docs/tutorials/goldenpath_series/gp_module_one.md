@@ -140,7 +140,7 @@ namespace HelloWorld
 ```
 </details>
 
-You can statically access the `NetworkManager` instance from any other scripts via its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the connection state we have currently established that you will use shortly.
+You can statically access the `NetworkManager` instance from any other scripts via its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also has useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the connection state we have currently established that you will use shortly.
 
 We call these methods inside of `OnGUI()`.
 

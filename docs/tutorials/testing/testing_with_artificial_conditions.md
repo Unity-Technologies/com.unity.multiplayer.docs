@@ -77,7 +77,7 @@ ParallelSync is **not** supported by Unity.  More information on its usage is av
 :::
 
 
-Simulator Tools effects only apply to editor instances and to [debug builds](#debug-builds), as such it matches really well with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync). 
+Simulator Tools effects only apply to editor instances and to [debug builds](#debug-builds), as such it matches well with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync). 
 
 Other tools should be used when testing release builds locally.
 

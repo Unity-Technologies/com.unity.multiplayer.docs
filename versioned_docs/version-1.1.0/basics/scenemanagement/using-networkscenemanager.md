@@ -236,7 +236,7 @@ public class ProjectSceneManager : NetworkBehaviour
     /// <summary>
     /// Handles processing notifications when subscribed to OnSceneEvent
     /// </summary>
-    /// <param name="sceneEvent">class that contains information about the scene event</param>
+    /// <param name="sceneEvent">class that has information about the scene event</param>
     private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
     {
         var clientOrServer = sceneEvent.ClientId == NetworkManager.ServerClientId ? "server" : "client";
@@ -354,7 +354,7 @@ You might find yourself in a scenario where you just need to dynamically generat
   - For this example we would return false any time `VerifySceneBeforeLoading` was invoked with the scene name "WorldCollisionGeometry".
  
  :::caution
- This only works under the scenario where the dynamically generated scene is a server-host side only scene unless you write server-side code that sends enough information to a newly connected client to replicate the dynamically generated scene via RPC, a custom message, a `NetowrkVariable`, or an in-scene placed NetworkObject that is in a scene, other than the dynamically generated one, and contains a `NetworkBehaviour` component with an overridden `OnSynchronize` method that includes additional serializatoin information about how to construct the dynamically generated scene.  The limitation on this approach is that the scene should not contain already spawned `NetworkObject`s as those won't get automatically synchronized when a client first connects.
+ This only works under the scenario where the dynamically generated scene is a server-host side only scene unless you write server-side code that sends enough information to a newly connected client to replicate the dynamically generated scene via RPC, a custom message, a `NetowrkVariable`, or an in-scene placed NetworkObject that is in a scene, other than the dynamically generated one, and has a `NetworkBehaviour` component with an overridden `OnSynchronize` method that includes additional serializatoin information about how to construct the dynamically generated scene.  The limitation on this approach is that the scene should not contain already spawned `NetworkObject`s as those won't get automatically synchronized when a client first connects.
  :::
 
 ### What Next?

@@ -69,7 +69,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Fixes
 * On fragmented and reliable pipelines, sending a large packet when the reliable window was almost full can result in the packet being lost.
-* Fixed "pending sends" warning being emitted very often when sending to remote hosts.
+* Fixed "pending sends" warning being emitted often when sending to remote hosts.
 * Revert decrease of MTU to 1384 on Xbox platforms (now back at 1400). It would cause issues for cross-platform communications.
 
 ## [1.0.0-pre.9] - 2021-11-26

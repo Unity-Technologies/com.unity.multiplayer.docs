@@ -18,7 +18,7 @@ The scenario in question:
 
 This scenario manifested inside Boss Room, whereby late-joining clients joining a game session encountered zombie `NetworkObject`s that were not destroyed over the network.
 
-Additive scenes now contain prefab instances of a custom spawner, [`NetworkObjectSpawner`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs) to accommodate this visual inconsistency.
+Additive scenes now contain Prefab instances of a custom spawner, [`NetworkObjectSpawner`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs) to accommodate this visual inconsistency.
 
 Compositionally, these additive scenes now only contain the following:
 

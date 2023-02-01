@@ -114,7 +114,7 @@ darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
 
 The time between sending the request and receiving the answer is your ping to the game server. This means that with a ping of 20ms, it takes data 10ms to travel from the client to the server, as the ping is the round-trip time of your data.
 
-Higher ping values mean that there is more delay or lag, which is why you want to play on servers with very low pings, as that is the basic prerequisite for games to feel snappy and responsive.
+Higher ping values mean that there is more delay or lag, which is why you want to play on servers with low pings, as that is the basic prerequisite for games to feel snappy and responsive.
 
 ## Update Rate
 

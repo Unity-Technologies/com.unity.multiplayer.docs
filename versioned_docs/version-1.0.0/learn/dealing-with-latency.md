@@ -219,7 +219,7 @@ TODO show example -->
 
 If a player selects an imp, the selection circle will be client driven, it won't wait for the server to tell us we've selected the imp.
 
-<!-- TODO AOE selection isn't really client authoritative, but should still be talked about -->
+<!-- TODO AOE selection isn't client authoritative, but should still be talked about -->
 <!-- TODO NOW show jil drawing -->
 [Click](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Input/ClientInputSender.cs) is client driven, [AOE selection](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/AoeActionInput.cs) is client driven. AOE's distance check is client driven. However the distance check is done [server side too](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/AOEAction.cs). This way if there's too much latency between a client click and the server side position, the server will do a sanity check to make sure that for its own state, the click is within the allowed range.
         
@@ -243,9 +243,9 @@ A rule of thumb here is to ask yourself: ```Can the server correct me on this?``
 ### Client Side Prediction
 Predicting what the server will send you.
 
-Prediction is a very common way of making an educated "guess" as to what the server will send you. Your game can stay server authoritative, but instead of waiting a full RTT for your action results, your client can simulate and run gameplay code of what it thinks will happen as soon as your players trigger inputs. For example, instead of waiting a full RTT for the server to tell me where I moved, I can directly update my movements according to my inputs. This is very close to client authority, except with this technique you can be corrected:
+Prediction is a common way of making an educated "guess" as to what the server will send you. Your game can stay server authoritative, but instead of waiting a full RTT for your action results, your client can simulate and run gameplay code of what it thinks will happen as soon as your players trigger inputs. For example, instead of waiting a full RTT for the server to tell me where I moved, I can directly update my movements according to my inputs. This is close to client authority, except with this technique you can be corrected:
 The world (and especially the internet) is messy. A client can guess wrong. An event produced by another player can come and mess your own local guess or your physic simulation can be non-deterministic.
-With the movement example, I can have an enemy come and stun me while I thought I can still move. 200 ms latency is enough time for a stun to happen and create a discrepancy between the move I "predicted" client side and what really happened server side.
+With the movement example, I can have an enemy come and stun me while I thought I can still move. 200 ms latency is enough time for a stun to happen and create a discrepancy between the move I "predicted" client side and what happened server side.
 This is where "reconciliation" (or "correction") comes in play. The client keeps a history of the positions it predicted. Being still server authoritative, the client still receives (outdated by x ms of latency) positions coming from the server. The client will validate whether the positions it predicted in the past fits with the old positions coming from the server. The client can then detect discrepancies and "correct" its position according to the server's authoritative position.
 This way, clients can stay server authoritative while still be reactive.
 
@@ -307,7 +307,7 @@ Players don't have to wait for their mouse movements to be synced for AOE. They'
 ### Server Side Rewind (also called Lag Compensation)
 
 Server rewind is a security check on a client driven feature to make sure we stay server authoritative. A common usecase is snipers.
-If I aim at an enemy, I'm actually aiming at a ghost representation of that enemy that's RTT/2 ms late. If I click its head, the input sent to the server will take another RTT/2 ms to get to the server. That's a full RTT to miss my shot and is very frustrating.
+If I aim at an enemy, I'm actually aiming at a ghost representation of that enemy that's RTT/2 ms late. If I click its head, the input sent to the server will take another RTT/2 ms to get to the server. That's a full RTT to miss my shot and is frustrating.
 The solution for this is to use server rewind by "favoring the attacker". Psychology 101: it's way more frustrating for an attacker to always miss their shots than for a target to get shot behind a wall once in a while. The client sends along with its input a message telling the server "I have hit my target at time t". The server when receiving this at time t+RTT/2 will rewind its simulation at time t-RTT, validate the shot and correct the world at the latest time (ie kill the target). This allows for the player to feel like the world is consistent (my shots are hitting what they're supposed to hit) while still remaining secure and server authoritative.
 Note: the server rewind of the game's state is done all in the same frame, this is invisible to players.
 This is a server side check that allows validating a client telling you what to do.

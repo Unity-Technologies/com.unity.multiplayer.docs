@@ -6,7 +6,7 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 The position, rotation, and scale of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized once when that object is spawned. To synchronize position, rotation, and scale at realtime during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform from server object to the clients.
 
-`NetworkTransform` covers most use cases for synchronizing transforms. For some special cases such as really fast paced games a custom implementation with a different interpolation algorithm might be better.
+`NetworkTransform` covers most use cases for synchronizing transforms. For some special cases such as fast paced games a custom implementation with a different interpolation algorithm might be better.
 
 :::tip
 You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.

@@ -58,7 +58,7 @@ Boss Room is designed to be used in its entirety to help you explore the concept
 
 You can use the project as a reference starting point for your own Unity game or use elements individually.
 
-This repository also contains a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
+This repository also has a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
 
 ```json
 "com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop"
@@ -256,7 +256,7 @@ Visit the following links to learn more about Unity Netcode and Boss Room.
 
 ### Other samples
 
-The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and contains a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
+The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
 
 ### Contributing
 
@@ -264,8 +264,8 @@ Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.uni
 
 Our projects use the `git-flow` branching strategy:
 
-* The `develop` branch contains all active development.
-* The `main` branch contains release versions.
+* The `develop` branch has all active development.
+* The `main` branch has release versions.
 
 To get the project on your machine, you need to clone the repository from GitHub using the following command-line command:
 

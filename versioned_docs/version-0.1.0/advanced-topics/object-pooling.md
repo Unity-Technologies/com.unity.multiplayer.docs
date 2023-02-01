@@ -16,7 +16,7 @@ You can register your own spawn handlers. MLAPI will use them in place of defaul
 ```csharp
 NetworkSpawnManager.RegisterCustomSpawnHandler(NetworkSpawnManager.GetPrefabHash("myPrefabName"), (position, rotation, disabled) =>
 {
-    // Called when the MLAPI want's to spawn a prefab with the name "myPrefabName"
+    // Called when the MLAPI want's to spawn a Prefab with the name "myPrefabName"
 });
 ```
 ## DestroyHandler

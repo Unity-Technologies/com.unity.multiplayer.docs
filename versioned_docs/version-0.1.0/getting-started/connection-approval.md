@@ -5,7 +5,7 @@ title: Connection Approval
 
 With every new connection, Unity MLAPI performs a handshake in addition to handshakes done by the transport. This is to ensure that the `NetworkConfig`s match between the Client and Server. In the `NetworkConfig`, you can specify to enable `ConnectionApproval`. 
 
-Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
+Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player Prefab to be created, allowing you to override the default behaviour on a per player basis.
 
 ## Callback for approval logic
 
@@ -29,8 +29,8 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
     bool approve = true;
     bool createPlayerObject = true;
 
-    // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
+    // The Prefab hash. Use null to use the default player prefab
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a Prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkSpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected

@@ -33,7 +33,7 @@ This section adds a Server-controlled Network Variable to the project.
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkVariableTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab, click **Add Component**. 
+1. In the **Player** Prefab Inspector tab, click **Add Component**. 
 1. Click **Scripts**, and add the `NetworkVariableTest.cs` script you created earlier.
 1. Open the `NetworkVariableTest.cs` script.
 1. Edit the `NetworkVariableTest.cs` script to match the following.
@@ -145,7 +145,7 @@ This section adds a Network Transform component that will move the player.
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkTransformTest`.
 1. Click the **Player** prefab.
-1. In the **Player** prefab Inspector tab, click **Add Component**. 
+1. In the **Player** Prefab Inspector tab, click **Add Component**. 
 1. Click **Scripts**, and add the `NetworkTransformTest.cs` script you created earlier.
 1. Open the `NetworkTransformTest.cs` script.
 1. Edit the `NetworkTransformTest.cs` script to match the following.
@@ -202,7 +202,7 @@ This section adds some basic RPCs to the project.
 1. Open the **Scripts** Folder.
 1. Create a script called `RpcTest`.
 1. Click the **Player** prefab.
-1. In the  **Player** prefab Inspector tab, click **Add Component**.
+1. In the  **Player** Prefab Inspector tab, click **Add Component**.
 1. Click **Scripts**, and add the `RpcTest.cs` script you created earlier.
 1. Right Click **Player** prefab. 
 1. Open the `RpcTest.cs` script.
