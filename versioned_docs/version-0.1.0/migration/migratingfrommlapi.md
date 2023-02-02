@@ -142,14 +142,14 @@ This error will pop up if your project uses Assembly definition (`.asmdef`) file
 
 **Error: The type or namespace name 'NetworkedBehaviour' can't be found**
 
-If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
+If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it's most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 
 If this appears whenever you enter playmode or save a scene, close the Unity Editor and open it again and this should be gone.
 
 ## 5. Removing the Patcher Package
-After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.
+After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it's no longer needed.
 
 ## Next Steps
 

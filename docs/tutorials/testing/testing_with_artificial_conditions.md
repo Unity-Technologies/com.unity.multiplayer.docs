@@ -108,7 +108,7 @@ To set the latency, jitter and packet-loss percentage values for develop builds 
 
 ## System-wide network conditioners
 
-These tools are useful when we want to test builds as opposed to running multiple editor instances. It is also an option that works for **release** builds. 
+These tools are useful when we want to test builds as opposed to running multiple editor instances. it's also an option that works for **release** builds. 
 
 :::important
 The solutions described below share some common features:

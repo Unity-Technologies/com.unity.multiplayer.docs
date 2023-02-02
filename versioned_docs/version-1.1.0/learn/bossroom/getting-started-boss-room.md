@@ -6,7 +6,7 @@ description: Learn more about installing and running the Boss Room game sample.
 
 ![Boss Room banner](/img/banner.png)
 
-Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
+Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. it's an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
 
 :::note
 **Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2021 LTS](https://unity.com/releases/2021-lts)). Make sure to include standalone support for Windows/Mac in your installation.
@@ -86,7 +86,7 @@ Alternatively, you can click the green **Code** button, then select **Download Z
 
 ### Registering the project with Unity Gaming Services (UGS)
 
-Boss Room leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must:
+Boss Room leverages several services from UGS to ease connectivity between players. To use these services inside your project, you must:
 
 1. [Create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard.
 2. Enable the [Relay](https://docs.unity.com/relay/get-started.html) service.
@@ -142,7 +142,7 @@ Use the following instructions to test Boss Room with multiple players over the 
 First, build an executable and distribute it to all players.
 
 :::tip
-**Tip**: It is possible to connect between multiple instances of the same executable OR between executables and the Unity Editor that you used to create the executable.
+**Tip**: it's possible to connect between multiple instances of the same executable OR between executables and the Unity Editor that you used to create the executable.
 :::
 
 Next, you need to set up a relay. Running the Boss Room over the internet currently requires setting up a relay:

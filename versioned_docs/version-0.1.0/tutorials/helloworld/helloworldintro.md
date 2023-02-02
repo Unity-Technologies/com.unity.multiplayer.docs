@@ -4,7 +4,7 @@ title: Your First Networked Game "Hello World"
 description: Tutorial that explains creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 ---
 
-A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
+A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it's  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
 
 This "Hello World" tutorial walks you through creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 
@@ -112,7 +112,7 @@ Now we will test to see if everything works as expected.
 
 
 :::note Congrats!
-Congratulations you have created a networked game. It isn't a flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
+Congratulations you have created a networked game. It isn't a flashy game but it's a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
 :::
 
 :::contribution Special Thanks

@@ -6,7 +6,7 @@ title: Relay
 Netcode for GameObjects (Netcode) allows you to connect to a host by its IP and port. However, if the host isn't on the same network as you (that is, somewhere over the Internet), you will need some extra services to achieve a successful connection and thus a successful game.
 
 Many factors impact how you connect to the remote host, and it can be tricky to implement. There are two ways of achieving such a connection: 
-- [NAT punching](../learn/listenserverhostarchitecture.md#option-c-nat-punchthrough): an advanced technique that allows you to directly connect to the host computer even if it is on another network.  
+- [NAT punching](../learn/listenserverhostarchitecture.md#option-c-nat-punchthrough): an advanced technique that allows you to directly connect to the host computer even if it's on another network.  
 - Usage of a Relay server: the server is on the Internet with a public-facing IP that you and the host can reach. After each side binds with the Relay, they can establish a connection and send data to each other via the Relay.
 
 Netcode does not offer tools to help you do a successful punch through a NAT. But, Unity Services provides a Relay Service that can relay all Unity Transport based technology, like Netcode.
@@ -190,8 +190,8 @@ UnityTransport transport = NetworkManager.Singleton.gameObject.GetComponent<Unit
 ```
 
 You can now call the method `SetRelayServerData` on the retrieved transport with all the allocation parameters in this order : 
-1. The relay server endpoint host -- `RelayServerEndpoint.Host` or `RelayServer.IpV4` (deprecated)
-2. The relay server endpoint port -- `RelayServerEndpoint.Port` or `RelayServer.Port` (deprecated)
+1. The Relay server endpoint host -- `RelayServerEndpoint.Host` or `RelayServer.IpV4` (deprecated)
+2. The Relay server endpoint port -- `RelayServerEndpoint.Port` or `RelayServer.Port` (deprecated)
 3. The allocation ID in Base64 encoded bytes.
 4. The key in Base64 encoded bytes.
 5. The `ConnectionData` for the allocation (this is unique for the host and every other player)

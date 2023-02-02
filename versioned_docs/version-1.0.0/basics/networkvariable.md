@@ -22,8 +22,8 @@ A `NetworkVariable`:
     - The `GameObject` or a parent `GameObject` **must** also have a `NetworkObject` component attached to it.
 - A `NetworkVariable`'s assigned type (`T`) must be [constrained to an unmanaged `Type`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters#unmanaged-constraint).
 - A `NetworkVariable`'s value can only be set when:
-    - Initializing the property (either when it is declared or within the Awake method)
-    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it is still spawned).
+    - Initializing the property (either when it's declared or within the Awake method)
+    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it's still spawned).
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
@@ -40,7 +40,7 @@ Awake               | Awake
 OnNetworkSpawn      | Start
 Start               | OnNetworkSpawn
 
-Also, you should only set the value of a `NetworkVariable` when first initializing it or if it is spawned.  It isn't recommended setting a `NetworkVariable` when the associated `NetworkObject` isn't spawned.
+Also, you should only set the value of a `NetworkVariable` when first initializing it or if it's spawned.  It isn't recommended setting a `NetworkVariable` when the associated `NetworkObject` isn't spawned.
 :::
 
 
@@ -50,7 +50,7 @@ If you need to initialize other components or objects based on a `NetworkVariabl
 
 ### Synchronization and Notification Example
 
-The following example demonstrates how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked.  It also demonstrates how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` will provide notifications for any changes to `m_SomeValue.Value` that occur.
+The following example shows how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked.  It also shows how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` will provide notifications for any changes to `m_SomeValue.Value` that occur.
 
  ```csharp
 public class TestNetworkVariableSynchronization : NetworkBehaviour
@@ -122,7 +122,7 @@ The above example is only to test both the initial client synchronization of the
 
 ### OnValueChanged Example
 
-While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
+While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't provide any concrete example usage.  The next example shows a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
 
 ```csharp
 public class Door : NetworkBehaviour
@@ -165,7 +165,7 @@ public class Door : NetworkBehaviour
     }
 }
 ```
-In the above example, we demonstrate how you can maintain a server authoritative `NetworkVariable` by using a non-ownership based server RPC (that is, `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it is performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
+In the above example, we show how you can keep a server authoritative `NetworkVariable` by using a non-ownership based server RPC (that is, `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it's performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
 
 However, what if you wanted to adjust who can write to or read from the `NetworkVariable`?
 _The answer: `NetworkVariable` permissions._
@@ -284,7 +284,7 @@ public class PlayerState : NetworkBehaviour
     /// Owner Read & Server Write Permissions:
     /// You might incorporate some form of reconnection logic that stores a player's state on 
     /// the server side and can be used by the client to reconnect a player if disconnected
-    /// unexpectedly.  In order for the client to let the server know it is the "same client" 
+    /// unexpectedly.  In order for the client to let the server know it's the "same client" 
     /// you might have implemented a keyed array (that is, Hashtable, Dictionary, etc, ) to track
     /// each connected client. The key value for each connected client would only be written to
     /// the each client's PlayerState.ReconnectionKey. Under this scenario, you only want the 
@@ -535,7 +535,7 @@ In order to create your own `NetworkVariableBase` derived container, you should:
     }
  ```
 
-While the above example isn't the "recommended" way to synchronize a list that often changes (that is, one or more elements position/order or add/remove), it is just an example of how you can "define your own rules" through using `NetworkVariableBase`.  Whether you handle managed or unmanaged value types is up to you.
+While the above example isn't the "recommended" way to synchronize a list that often changes (that is, one or more elements position/order or add/remove), it's just an example of how you can "define your own rules" through using `NetworkVariableBase`.  Whether you handle managed or unmanaged value types is up to you.
 
 The above code can be tested by:
 - Using the above code with a project that includes Netcode for GameObjects v1.0 (or higher).
@@ -546,7 +546,7 @@ The above code can be tested by:
     ![ScreenShot](images/MyCustomNetworkVariableInspectorView.png)
 
 :::caution
-If you aren't adhering to the (unmanaged) value types in your own custom `NetworkVariableBase` implementation then it is advised to not try and use `NetworkList` or `NetworkVariable` as properties within that implementation. Instead, declare `NetworkVariable` or `NetworkList` properties within the same `NetworkBehaviour` that you have declared your custom `NetworkVariableBase` implementation within.
+If you aren't adhering to the (unmanaged) value types in your own custom `NetworkVariableBase` implementation then it's advised to not try and use `NetworkList` or `NetworkVariable` as properties within that implementation. Instead, declare `NetworkVariable` or `NetworkList` properties within the same `NetworkBehaviour` that you have declared your custom `NetworkVariableBase` implementation within.
 :::
 
 
@@ -662,7 +662,7 @@ public class StringContainer : NetworkVariableBase
 }
 ```
 
-For simplicity purposes, the above example doesn't handle updating connected clients with any changes to the `Text` string property. It is just one possible approach you might take if you aren't concerned about the memory allocation of the temporary `byte` array. It is a "bare minimum and non-optimized" example to demonstrate that as long as your serialization process knows what to write and what to read you can serialize any form of managed type.
+For simplicity purposes, the above example doesn't handle updating connected clients with any changes to the `Text` string property. it's just one possible approach you might take if you aren't concerned about the memory allocation of the temporary `byte` array. it's a "bare minimum and non-optimized" example to show that as long as your serialization process knows what to write and what to read you can serialize any form of managed type.
 
 :::important
 If you already had a maximum string size in mind, you can pre-allocate the byte array to avoid the cost of memory allocation.  The downside to this is that you would lose the "managed" flexibility of being able to handle varying message sizes, but the upside (as you will find out in the next example) is that you would always only send the exact number of bytes the string consumes and not send the entire pre-allocated buffer (that is, you save on bandwidth). 

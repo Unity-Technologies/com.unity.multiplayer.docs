@@ -116,7 +116,7 @@ In the `CharSelect` scene, clients select from eight possible avatar classes. Bo
 
 Inside the Boss Room scene, `ServerBossRoomState` spawns a `PlayerAvatar` per `PersistentPlayer` present.
 
-The following example of a selected “Archer Boy” class demonstrates the `PlayerAvatar` GameObject hierarchy:
+The following example of a selected “Archer Boy” class shows the `PlayerAvatar` GameObject hierarchy:
 
 * `PlayerAvatar` is a `NetworkObject` that Boss Room destroys when the scene unloads.
 * `PlayerGraphics` is a child `GameObject` containing a `NetworkAnimator` component responsible for replicating animations invoked on the server.

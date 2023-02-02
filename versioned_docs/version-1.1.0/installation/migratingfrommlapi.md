@@ -113,7 +113,7 @@ The Unity Multiplayer team tried to keep most of the MLAPI intact in Netcode. Ho
 
 ### Scene Management changes
 
-The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it by: 
+The scene management had some changes unifying the way users uses it. First, it's now under the `NetworkManager` Singleton. Consequently, you directly access it by: 
 
 ```csharp
 var sceneManager = NetworkManager.Singleton.SceneManager;
@@ -144,7 +144,7 @@ The page also includes information on nested serial types.
 SyncVars have been removed in Netcode. Convert your existing SyncVars into [NetworkVariables](../basics/networkvariable).
 
 ## Remove the Patcher Package
-After you are done upgrading your project, you can remove the Netcode Patcher package from your project in the Unity Package Manager as it is no longer needed.
+After you are done upgrading your project, you can remove the Netcode Patcher package from your project in the Unity Package Manager as it's no longer needed.
 
 ## Troubleshooting
 
@@ -154,7 +154,7 @@ This error will pop up if your project uses Assembly definition (`.asmdef`) file
 
 **Error: The type or namespace name 'NetworkedBehaviour' can't be found**
 
-If you get an error message like this (or for another Netcode type than `NetworkedBehaviour`) in the console it is most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names.
+If you get an error message like this (or for another Netcode type than `NetworkedBehaviour`) in the console it's most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names.
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 

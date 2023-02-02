@@ -40,7 +40,7 @@ Even if you specify in your client logic that you can't kill an Imp (for example
 
 In addition to responsiveness, the accuracy of your simulation is important. Not only can it break your player's immersion, competitive games often have prize pools of multiple millions of dollars where you want to make sure when your user is targeting something on their screen, it actually hits.
 
-With latency, what a client receives from the server is RTT/2 ms late. The information available client-side isn't the "live" information, it's the information sent over the internet some time earlier (for example, 200ms ago). This means if a local player collides with a server-driven networked object, the player sees the collider overlap with it before the server reacts and tells it to move.
+With latency, what a client receives from the server is RTT/2 ms late. The information available client-side isn't the "live" information, it's the information sent over the internet some time earlier (for example, 200ms ago). This means if a local player collides with a server-driven networked object, the player sees the Collider overlap with it before the server reacts and tells it to move.
 
 <!-- (TODO LATER Jil drawing for server rewind. can do a gif of this, this kind of overlapping is pretty cool to visualize).  -->
 

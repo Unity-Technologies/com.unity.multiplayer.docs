@@ -229,7 +229,7 @@ Client Received the RPC #3 on NetworkObject #2
 
 :::Note
 
-The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it won't be sending the initial RPC starting the chain because it is a server.
+The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it won't be sending the initial RPC starting the chain because it's a server.
 
 :::
 
@@ -580,7 +580,7 @@ Since the `HelloWorldPlayer.cs` script handles the position `NetworkVariable`, t
 
 The method in the code block above adds a contextual button that changes depending on whether the client is a server or a client. When you press the button this method creates, it finds your local player and calls `Move()`.
 
-You can now create a build that demonstrates the concepts outlined above.
+You can now create a build that shows the concepts outlined above.
 
 Create two build instances: one for the host and the other for the client (to join the host's game).
 

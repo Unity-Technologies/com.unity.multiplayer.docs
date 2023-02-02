@@ -78,7 +78,7 @@ The only way to despawn `NetworkObject` for a specific client is to use `Network
 See: [Object Visibility](object-visibility.md) for more information on this.
 
 :::warning
-If you have `GameObject` children, with `NetworkBehaviour` components attached, of a parent `GameObject`, with a `NetworkObject` component attached, you can't disable the `GameObject` children before spawning or despawning. Doing so, in v1.0.0, can cause unexpected results and it is recommended to make sure all children are enabled in the hierarchy before spawning or despawning.
+If you have `GameObject` children, with `NetworkBehaviour` components attached, of a parent `GameObject`, with a `NetworkObject` component attached, you can't disable the `GameObject` children before spawning or despawning. Doing so, in v1.0.0, can cause unexpected results and it's recommended to make sure all children are enabled in the hierarchy before spawning or despawning.
 :::
 
 ## Dynamically Spawned Network Prefabs
@@ -144,7 +144,7 @@ Pooled dynamic spawning is when netcode objects (`GameObject` with one `NetworkO
 
 Fortunately, Netcode for GameObjects provides you with a way to be in control over the instatiation and destruction process for one or many netcode objects by via the `INetworkPrefabInstanceHandler` interface. Any `INetworkPrefabInstanceHandler`implementation should be registered with the `NetworkPrefabHandler`(for multiple netcode objects see [Object Pooling](../advanced-topics/object-pooling)) to accomplish this.
 
-The easiest way to not destroy a network Prefab instance is to have something, other than the instance itself, keeping a reference to the instance.  This way you can simply set the root `GameObject` to be inactive when it is despawned while still being able to set it active when the same network Prefab type needs to be respawned.  Below is one example of how you can accomplish this for a single netcode object instance:
+The easiest way to not destroy a network Prefab instance is to have something, other than the instance itself, keeping a reference to the instance.  This way you can simply set the root `GameObject` to be inactive when it's despawned while still being able to set it active when the same network Prefab type needs to be respawned.  Below is one example of how you can accomplish this for a single netcode object instance:
 
 ```csharp
 public class SinglePooledDynamicSpawner : NetworkBehaviour, INetworkPrefabInstanceHandler

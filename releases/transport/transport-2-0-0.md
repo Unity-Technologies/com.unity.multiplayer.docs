@@ -9,7 +9,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Changes
 
-- It is now possible to set a window size of up to 64 for `ReliableSequencedPipelineStage` (use `NetworkSettings.WithReliableStageParameters` to modify the value). Doing so increases the packet header size by 4 bytes though, so the default value remains at 32.
+- it's now possible to set a window size of up to 64 for `ReliableSequencedPipelineStage` (use `NetworkSettings.WithReliableStageParameters` to modify the value). Doing so increases the packet header size by 4 bytes though, so the default value remains at 32.
 - The Soaker and Pipeline samples were removed in an effort to streamline the samples offered with the package.
 
 ### Fixes
@@ -36,7 +36,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### New features
 
 - Support for the `com.unity.logging` package has been added. If the package is installed, logs will go through its default logger instead of the classic `UnityEngine.Debug` mechanism.
-- A new `FixedPEMString` type is introduced to store certificates and private keys in the PEM format. `WithSecureClientParameters` and `WithSecureServerParameters` from `NetworkSettings` now accept certificates and private keys in this format instead of `FixedString4096Bytes`. It is still recommended to use the `string`\-based versions, however.
+- A new `FixedPEMString` type is introduced to store certificates and private keys in the PEM format. `WithSecureClientParameters` and `WithSecureServerParameters` from `NetworkSettings` now accept certificates and private keys in this format instead of `FixedString4096Bytes`. it's still recommended to use the `string`\-based versions, however.
 
 ### Changes
 
@@ -49,14 +49,14 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 - Fixed Websockets sending ping messages when the `HeartbeatsTimeout` parameter is disabled (set to `0`).
 - Fixed an issue with secure WebSockets where a connection would fail to be established if the end of the TLS handshake and beginning of the WebSocket handshake arrived in the same message.
-- It is now possible to pass certificates larger than 4KB to `WithSecureClientParameters` and `WithSecureServerParameters` from `NetworkSettings`.
+- it's now possible to pass certificates larger than 4KB to `WithSecureClientParameters` and `WithSecureServerParameters` from `NetworkSettings`.
 - Fixed an issue where if one end of a reliable pipeline stopped sending any traffic and its latest ACK message was lost, then the other end would stall.
 
 ## [2.0.0-exp.7] - 2022-09-29
 
 ### New features
 
-- It is now possible to obtain `RelayAllocationId`, `RelayConnectionData`, and `RelayHMACKey` structures from byte arrays using their static `FromByteArray` method.
+- it's now possible to obtain `RelayAllocationId`, `RelayConnectionData`, and `RelayHMACKey` structures from byte arrays using their static `FromByteArray` method.
 - A new constructor for `RelayServerData` is now provided with argument types that better match those available in the models returned by the Relay SDK. The "RelayPing" sample has been updated to use this constructor.
 - New constructors for `RelayServerData` are now provided with argument types that better match those available in the models returned by the Relay SDK. The "RelayPing" sample has been updated to use them constructor.
 - `NetworkSettings` now has a `IsCreated` property which can be used to check if it's been disposed of or not.
@@ -67,7 +67,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 - The default network interface (`UDPNetworkInterface`) does not enable address reuse anymore. This means `NetworkDriver.Bind` will now always fail if something else is listening on the same port, even if that something else is bound to a wildcard address and we are trying to bind to a specific one.
 - Added: `NetworkDriverIdentifierParameter` struct and `NetworkSettings.WithDriverIdentifierParameters()` method that can be use to identify the NetworkDriver instances with a custom label. Currently this method serves no purpose, but might be used in future releases to make debugging easier.
 - The `InitialEventQueueSize`, `InvalidConnectionId`, and `DriverDataStreamSize` fields were removed from `NetworkParameterConstants`. They all served no purpose anymore.
-- If using Relay, it is now possible to call `Connect` without an endpoint (the endpoint would be ignored anyway). This extension to `NetworkDriver` is provided in the `Unity.Networking.Transport.Relay` namespace.
+- If using Relay, it's now possible to call `Connect` without an endpoint (the endpoint would be ignored anyway). This extension to `NetworkDriver` is provided in the `Unity.Networking.Transport.Relay` namespace.
 - The `RelayServerData.HMAC` field is now internal. There was no use to this being available publicly.
 - The deprecated constructor for `RelayServerData` that was taking strings for the allocation ID, connection data, and key has been completely removed.
 - The deprecated `RelayServerData.ComputeNewNonce` method has also been removed. One can provide a custom nonce using the "low level" constructor of `RelayServerData`. Other constructors will select a new one automatically.
@@ -98,11 +98,11 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 - `Protocol` field was removed from the `SecureNetworkProtocolParameter` structure. The protocol is now determined automatically from the network interface being used.
 - Updated to Collections 2.1.0-exp.1
-- `FragmentationPipelineStage.FragContext` was made internal as it is an internal implementation detail that serves no purpose being exposed publicly.
+- `FragmentationPipelineStage.FragContext` was made internal as it's an internal implementation detail that serves no purpose being exposed publicly.
 - Multiple APIs were removed or made internal in `ReliableUtility` (more than is practical to list here). These were all internal implementation details that served no purpose being exposed publicly. The only remaining public APIs in `ReliableUtility` are those used to gather statistics from a reliable pipeline (as demonstrated in the Soaker sample).
 - All APIs except `Parameters` and `Context` in `SimulatorUtility` were made internal as they're implementation details that serve no purpose being exposed publicly.
-- It is no longer possible to configure the read timeout in the secure parameters as values other than the default (0) were never properly supported.
-- It is no longer possible to configure the handshake minimum/maximum timeouts in the secure parameters. These values are now derived from the `connectTimeoutMS` and `maxConnectAttempts` values configured with `NetworkSettings.WithNetworkConfigParameters`.
+- it's no longer possible to configure the read timeout in the secure parameters as values other than the default (0) were never properly supported.
+- it's no longer possible to configure the handshake minimum/maximum timeouts in the secure parameters. These values are now derived from the `connectTimeoutMS` and `maxConnectAttempts` values configured with `NetworkSettings.WithNetworkConfigParameters`.
 - Hostnames in secure parameters are now `FixedString512Bytes` instead of `FixedString32Bytes`, allowing any possibly hostname to be used instead of only short ones.
 - `NetworkSendQueueHandle` was removed. It wasn't used for anything anymore (previously it was used for custom implementations of `INetworkInterface`).
 - `NetworkInterfaceSendHandle` and `SendHandleFlags` were made internal. With the removal of `NetworkSendInterface`, these served no purpose anymore.
@@ -121,7 +121,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### New features
 
-- A new global network simulator has been added, configurable through `NetworkSettings.WithNetworkSimulatorParameters` (settings can be modified at runtime with `NetworkDriver.ModifyNetworkSimulatorParameters`). Unlike `SimulatorPipelineStage`, it applies its parameters to *all* traffic (including control messages). Note that it is currently *much* less featureful than `SimulatorPipelineStage` (only supports dropping packets for now), so we still recommend using the latter for all network simulation.
+- A new global network simulator has been added, configurable through `NetworkSettings.WithNetworkSimulatorParameters` (settings can be modified at runtime with `NetworkDriver.ModifyNetworkSimulatorParameters`). Unlike `SimulatorPipelineStage`, it applies its parameters to *all* traffic (including control messages). Note that it's currently *much* less featureful than `SimulatorPipelineStage` (only supports dropping packets for now), so we still recommend using the latter for all network simulation.
 - Added a new `NetworkDriver.ModifySimulatorStageParameters` API to modify the parameters of the `SimulatorPipelineStage` at runtime.
 - `NetworkDriver` now exposes the `NetworkSettings` currently in use through the `CurrentSettings` property. These settings are read-only.
 - To implement the above functionality, `NetworkSettings` now provides a `AsReadOnly` method that returns a read-only copy of the settings.
@@ -134,14 +134,14 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 - Updated to Burst 1.7.3.
 - Changed: A call to `NetworkDriver.Disconnect` now requires a subsequent call to `NetworkDriver.Update` for the disconnect packet to be effectively sent (Previously `NetworkDriver.FlushSend` was enough).
-- Changed: The protocol used to establish connections now supports protocol versioning. This should help maintain compatibility for future releases, but unfortunately it's now incompatible with the protocol used in version 1.X.
+- Changed: The protocol used to establish connections now supports protocol versioning. This should help keep compatibility for future releases, but unfortunately it's now incompatible with the protocol used in version 1.X.
 
 ### Fixes
 
 ### Upgrade guide
 
 - For `NetworkDriver.FlushSend` calls that follows a call to `NetworkDriver.Disconnect`, change it to `NetworkDriver.Update`.
-- The communication protocol used to establish connections has had a breaking change and is now incompatible with Unity Transport 1.X. Clients and servers will need to be updated at the same time to maintain compatibility.
+- The communication protocol used to establish connections has had a breaking change and is now incompatible with Unity Transport 1.X. Clients and servers will need to be updated at the same time to keep compatibility.
 
 ## [2.0.0-exp.2] - 2022-06-07
 
@@ -195,12 +195,12 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 - Documentation has been moved to the offical multiplayer documentation site.
 - The `INetworkInterface.ScheduleSend()` method signature was modified to receive a `SendJobArguments` struct instead of a `NativeQueue`. A `PacketsQueue` parameter is passed in this new struct.
 - `sendQueueCapacity` and `receiveQueueCapacity` parameters moved from `BaselibNetworkParameter` to `NetworkConfigParameter`.
-- Removed: `BaselibNetworkParameter.maximumPayloadSize` isn't needed anymore as it is handled internally.
+- Removed: `BaselibNetworkParameter.maximumPayloadSize` isn't needed anymore as it's handled internally.
 - Removed: `INetworkInterface.CreateSendInterface` isn't needed anymore, the send queue is managed internally by the `NetworkDriver`. Operations from the `INetworkInterface` must be done through the `ScheduleSend` and `ScheduleReceive` methods. This removes the need of function pointers which where casing GC allocations on `BeginSend`, `EndSend` and `AbortSend` when burst isn't enabled.
 - Added: `SendJobArguments` and `ReceiveJobArguments` structs to pass arguments to the send and receive jobs of the `INetworkInterface`.
 - Obsolete: `NetworkDriver` constructor is now obsolete, instead use `NetworkDriver.Create` methods. This improves burst compatibility as generic methods allows to know the INeworkInterface type at compilation time.
 - Obsolete: `NetworkPacketReceiver` is now deprecated. Use the `ReceiveJobArguments.ReceiveQueue` and `PacketProcessor` instead.
-- `NetworkDriver.LastUpdateTime` is now consistent across different copies of a driver. It is now also set by the job scheduled with `ScheduleUpdate`, so any job scheduled before it won't see the updated value. This also means the value won't be updated right after `ScheduleUpdate` returns (only once its jobs completes).
+- `NetworkDriver.LastUpdateTime` is now consistent across different copies of a driver. it's now also set by the job scheduled with `ScheduleUpdate`, so any job scheduled before it won't see the updated value. This also means the value won't be updated right after `ScheduleUpdate` returns (only once its jobs completes).
 - An error is now logged if failing to decrypt a DTLS message when using Relay.
 - Decreased default Relay keep-alive period to 3 seconds (was 9 seconds). The value can still be configured through the `relayConnectionTimeMS` parameter of `NetworkSettings.WithRelayParameters`.
 - `NetworkDriver` now requires that the `INetworkInterface` provided is an unmanaged type. Managed `INetworkInterfaces` are still supported but are required to be wrapped into an unmanaged type: `myInterface.WrapToUnmanaged()`.

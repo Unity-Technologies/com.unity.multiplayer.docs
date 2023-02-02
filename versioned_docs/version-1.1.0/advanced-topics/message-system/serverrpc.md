@@ -77,7 +77,7 @@ public void PlayerShootGunServerRpc(Vector3 lookWorldPosition, ServerRpcParams s
 Looking at the above example, we can see the client invoking the `PlayerShootGunServerRpc` method passes in a world position based on perhaps a screen space crosshair position to world space position, the `ServerRpcParams`, and the `ServerRpc` doesn't require ownership.  
 
 :::tip Alternate Owner Example
-Of course, if your project's design was such that a weapon changes ownership when it is picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
+Of course, if your project's design was such that a weapon changes ownership when it's picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
 ```csharp
 [ServerRpc]
 public void PlayerOwnerShootGunServerRpc(Vector3 lookWorldPosition)

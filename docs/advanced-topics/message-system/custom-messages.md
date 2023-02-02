@@ -177,7 +177,7 @@ public class CustomUnnamedMessageHandler<T> : NetworkBehaviour
     /// <summary>
     /// For this unnamed message example, we always read the message type
     /// value to determine if it should be handled by this instance in the
-    ///  event it is a child of the CustomUnnamedMessageHandler class.
+    ///  event it's a child of the CustomUnnamedMessageHandler class.
     /// </summary>
     private void ReceiveMessage(ulong clientId, FastBufferReader reader)
     {

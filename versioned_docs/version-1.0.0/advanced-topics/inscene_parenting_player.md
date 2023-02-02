@@ -79,7 +79,7 @@ public class ParentPlayerToInSceneNetworkObject : NetworkBehaviour
 }
 ```
 
-You should place this script on your in-scene placed `NetworkObject` (that is, the first `GameObject`) and do the parenting from it to avoid any timing issues of when it is spawned or the like. It only runs the script on the server-host side since parenting is server authoritative. 
+You should place this script on your in-scene placed `NetworkObject` (that is, the first `GameObject`) and do the parenting from it to avoid any timing issues of when it's spawned or the like. It only runs the script on the server-host side since parenting is server authoritative. 
 
 
 :::note

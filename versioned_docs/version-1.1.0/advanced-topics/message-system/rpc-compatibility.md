@@ -38,7 +38,7 @@ A change in the RPC signature will lead into a different send/receive codepath w
 | -- | :--: | -- |
 | Cross-Build Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different builds. |
 | Cross-Version Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different versions. |
-| Cross-Project Compatibility | <i class="fp-x"></i> | Since project name or any project-specific token isn't being a part of RPC signature, it is possible to have the exact same RPC method signature defined in different builds and they're not necessarily going to be compatible with each other. |
+| Cross-Project Compatibility | <i class="fp-x"></i> | Since project name or any project-specific token isn't being a part of RPC signature, it's possible to have the exact same RPC method signature defined in different builds and they're not necessarily going to be compatible with each other. |
 
 ## Deprecation of return values
 

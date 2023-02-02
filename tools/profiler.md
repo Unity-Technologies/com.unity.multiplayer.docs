@@ -9,7 +9,7 @@ This guide uses Unity 2021.3 LTS.
 On 2021.1 and below, the profiler outputs only simple statistics.
 :::
 
-Profiling is the process of measuring the performance of your game while it is running. It allows you to check your optimization points and control that your enhancements make a real difference.
+Profiling is the process of measuring the performance of your game while it's running. It allows you to check your optimization points and control that your enhancements make a real difference.
 
 In multiplayer game programming, you have three primary resources you need to keep under control:
 - Bandwidth consumption
@@ -20,7 +20,7 @@ These three resources are the three vertices of a triangle with a constant area.
 
 For this article, we will only focus on bandwidth profiling. You can find the official profiler documentation for CPU [here](https://docs.unity3d.com/Manual/ProfilerCPU.html).
 
-Regarding latency, it is a whole topic in itself, but remember that we are talking about the time taken for sending a packet here, not the network latency. Thus, a simple StopWatch on your serialization and compression algorithms should be sufficient to measure the CPU latency you are introducing here.
+Regarding latency, it's a whole topic in itself, but remember that we are talking about the time taken for sending a packet here, not the network latency. Thus, a simple StopWatch on your serialization and compression algorithms should be sufficient to measure the CPU latency you are introducing here.
 
 ## Prerequisites
 
@@ -118,7 +118,7 @@ For iOS and Android, see [Profiling on mobile devices](https://docs.unity3d.com/
 
 ### Profiling inside the Unity editor
 
-When it is more useful to have a broader sense of performance quickly than high accuracy, you want to profile inside the Unity editor. For example, you may try enabling and disabling multiple GameObjects at runtime to determine the culprit for a performance problem.
+When it's more useful to have a broader sense of performance quickly than high accuracy, you want to profile inside the Unity editor. For example, you may try enabling and disabling multiple GameObjects at runtime to determine the culprit for a performance problem.
 
 To profile inside the Unity editor, see [Profiling in the Unity Editor](https://docs.unity3d.com/Manual/profiler-profiling-applications.html) for more information.
 

@@ -53,16 +53,16 @@ Often the host can forward a public port on his router to a machine in his local
 These limitations make port forwarding often not a viable option for a released game but it can be a useful tool for development.  You can learn more about how to port forward here: https://portforward.com/
 
 :::caution
-There are risks associated port forwarding. If you  open ports, then you are opening direct lines for hackers and malware attacks. It is recommended that you close the ports when you have completed your session.
+There are risks associated port forwarding. If you  open ports, then you are opening direct lines for hackers and malware attacks. it's recommended that you close the ports when you have completed your session.
 :::
 
 ### Option B: Relay server
 
 Players will always be able to connect to a dedicated server which has ports already forwarded. This servers can run in the cloud or in a data center.
 
-The relay server approach uses this to send data between two players. In a listen server scenario, the host and all clients would connect to the same listen server. The clients would then send packets to each other by sending them to the relay server and telling it to redirect it to the right client.
+The Relay server approach uses this to send data between two players. In a listen server scenario, the host and all clients would connect to the same listen server. The clients would then send packets to each other by sending them to the Relay server and telling it to redirect it to the right client.
 
-The advantages of doing this compared to a direct connection is that connecting to a relay server should always work for any client another advantage is that the relay server can know when the host client disconnects and inform other clients about that or start a host migration process. If clients are directly to the host they won't be able if it is their internet or the hosts internet which caused the disconnect. The disavantages are that you'll have to pay for your relay server and the round trip times for messages can be higher because messages have to go over the relay instead of to the other client directly.
+The advantages of doing this compared to a direct connection is that connecting to a Relay server should always work for any client another advantage is that the Relay server can know when the host client disconnects and inform other clients about that or start a host migration process. If clients are directly to the host they won't be able if it's their internet or the hosts internet which caused the disconnect. The disavantages are that you'll have to pay for your Relay server and the round trip times for messages can be higher because messages have to go over the relay instead of to the other client directly.
 
 ### Option C: NAT Punchthrough
 
@@ -84,4 +84,4 @@ There are companies which provide relay servers in your cloud ready for your gam
 ## MLAPI and listen servers
 
 MLAPI modular transport system supports all the options above. Most regular transports will allow you to connect to them
-via port forwarding. MLAPI can support platform specific relays via Transport. You can find implementations in the mlapi-community-contributions repository. MLAPI also supports cross platform listen servers by integrating a third party relay service via transport. You can also write your own relay server or NAT punch server for MLAPI.
+via port forwarding. MLAPI can support platform specific relays via Transport. You can find implementations in the mlapi-community-contributions repository. MLAPI also supports cross platform listen servers by integrating a third party relay service via transport. You can also write your own Relay server or NAT punch server for MLAPI.

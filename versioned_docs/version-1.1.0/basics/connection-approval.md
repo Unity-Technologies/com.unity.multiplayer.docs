@@ -75,7 +75,7 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
 
 ## Sending An Approval Declined Reason (_`NetworkManager.ConnectionApprovalResponse.Reason`_)
 
-Under the condition that you need to deny a player from connecting for any particular reason (*reached maximum number of connections, invalid authorization, etc.*), the `NetworkManager.ConnectionApprovalResponse` structure provides you with the optional `NetworkManager.ConnectionApprovalResponse.Reason` property.  When `NetworkManager.ConnectionApprovalResponse.Approved` is false and `NetworkManager.ConnectionApprovalResponse.Reason` has been populated with the reason for denying the player's request to connect, then the server will send the client a `DisconnectReasonMessage`. Upon the client side receiving the `DisconnectReasonMessage`, the `NetworkManager.DisconnectReason` property will be populated with the `NetworkManager.ConnectionApprovalResponse.Reason` message. The example provided below demonstrates how this works:
+Under the condition that you need to deny a player from connecting for any particular reason (*reached maximum number of connections, invalid authorization, etc.*), the `NetworkManager.ConnectionApprovalResponse` structure provides you with the optional `NetworkManager.ConnectionApprovalResponse.Reason` property.  When `NetworkManager.ConnectionApprovalResponse.Approved` is false and `NetworkManager.ConnectionApprovalResponse.Reason` has been populated with the reason for denying the player's request to connect, then the server will send the client a `DisconnectReasonMessage`. Upon the client side receiving the `DisconnectReasonMessage`, the `NetworkManager.DisconnectReason` property will be populated with the `NetworkManager.ConnectionApprovalResponse.Reason` message. The example provided below shows how this works:
 
 
 ```csharp
@@ -148,7 +148,7 @@ If connection approval is enabled. Any messages sent before a connection is setu
 The connection data isn't encrypted or authenticated. 
 
 :::important
-A man in the middle attack can be done. It is strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
+A man in the middle attack can be done. it's strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
 :::
 
 ## Changing the Player Prefab

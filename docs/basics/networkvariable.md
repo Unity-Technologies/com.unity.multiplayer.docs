@@ -21,8 +21,8 @@ A `NetworkVariable`:
 - Property *must* be defined within a `NetworkBehaviour` derived class attached to a `GameObject`
     - The `GameObject` or a parent `GameObject` **must** also have a `NetworkObject` component attached to it.
 - A `NetworkVariable`'s value can only be set when:
-    - Initializing the property (either when it is declared or within the Awake method)
-    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it is still spawned).
+    - Initializing the property (either when it's declared or within the Awake method)
+    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it's still spawned).
 
 :::important
 When a client first connects, it will be synchronized with the current value of the `NetworkVariable`.  Typically, clients should register for `NetworkVariable.OnValueChanged` within the OnNetworkSpawn method.  
@@ -39,7 +39,7 @@ Awake               | Awake
 OnNetworkSpawn      | Start
 Start               | OnNetworkSpawn
 
-Also, you should only set the value of a `NetworkVariable` when first initializing it or if it is spawned.  It isn't recommended setting a `NetworkVariable` when the associated `NetworkObject` isn't spawned.
+Also, you should only set the value of a `NetworkVariable` when first initializing it or if it's spawned.  It isn't recommended setting a `NetworkVariable` when the associated `NetworkObject` isn't spawned.
 :::
 
 :::tip
@@ -76,7 +76,7 @@ For any types that don't fit within this list, including managed types and unman
 
 ### Synchronization and Notification Example
 
-The following example demonstrates how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked.  It also demonstrates how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` will provide notifications for any changes to `m_SomeValue.Value` that occur.
+The following example shows how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked.  It also shows how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` will provide notifications for any changes to `m_SomeValue.Value` that occur.
 
  ```csharp
 public class TestNetworkVariableSynchronization : NetworkBehaviour
@@ -148,7 +148,7 @@ The above example is only to test both the initial client synchronization of the
 
 ### OnValueChanged Example
 
-While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't provide any concrete example usage.  The next example demonstrates a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
+While the first example highlighted the differences between synchronizing a `NetworkVariable` with newly joining clients and notifying connected clients when a `NetworkVariable` changes, it didn't provide any concrete example usage.  The next example shows a simple server authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed):
 
 ```csharp
 public class Door : NetworkBehaviour
@@ -191,7 +191,7 @@ public class Door : NetworkBehaviour
     }
 }
 ```
-In the above example, we demonstrate how you can maintain a server authoritative `NetworkVariable` by using a non-ownership based server RPC (that is, `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it is performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
+In the above example, we show how you can keep a server authoritative `NetworkVariable` by using a non-ownership based server RPC (that is, `RequireOwnership = false` means non-owners can invoke it) so any client can notify the server that it's performing an "action" on the door. For this example, each time the door is used by a client the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. Upon the `Door.State.Value` changing, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
 
 However, what if you wanted to adjust who can write to or read from the `NetworkVariable`?
 _The answer: `NetworkVariable` permissions._
@@ -310,7 +310,7 @@ public class PlayerState : NetworkBehaviour
     /// Owner Read & Server Write Permissions:
     /// You might incorporate some form of reconnection logic that stores a player's state on 
     /// the server side and can be used by the client to reconnect a player if disconnected
-    /// unexpectedly.  In order for the client to let the server know it is the "same client" 
+    /// unexpectedly.  In order for the client to let the server know it's the "same client" 
     /// you might have implemented a keyed array (that is, Hashtable, Dictionary, etc, ) to track
     /// each connected client. The key value for each connected client would only be written to
     /// the each client's PlayerState.ReconnectionKey. Under this scenario, you only want the 
@@ -608,7 +608,7 @@ This example shows a custom `NetworkVariable` type to help you understand how yo
     }
  ```
 
-While the above example isn't the "recommended" way to synchronize a list where the number or order of elements in the list often changes, it is just an example of how you can define your own rules using `NetworkVariableBase`.
+While the above example isn't the "recommended" way to synchronize a list where the number or order of elements in the list often changes, it's just an example of how you can define your own rules using `NetworkVariableBase`.
 
 The above code can be tested by:
 - Using the above code with a project that includes Netcode for GameObjects v1.0 (or higher).
@@ -628,7 +628,7 @@ Instead of nesting `NetworkVariable`s inside other `NetworkVariable` classes, de
 
 While NetworkVariable does support managed `INetworkSerializable` types, strings aren't in the list of supported types. This is because strings in C# are immutable types, preventing them from being deserialized in-place, so every update to a `NetworkVariable<string>` would cause a Garbage Collected allocation to create the new string, which may lead to performance problems.
 
-While it is technically possible to support strings using custom serialization through `UserNetworkVariableSerialization`, it isn't recommended to do so due to the performance implications that come with it. Instead, we recommend using one of the `Unity.Collections.FixedString` value types. In the below example, we used a `FixedString128Bytes` as the `NetworkVariable` value type. On the server side, it changes the string value each time you press the space bar on the server or host instance. Joining clients will be synchronized with the current value applied on the server side, and each time you hit the space bar on the server side, the client synchronizes with the changed string.
+While it's technically possible to support strings using custom serialization through `UserNetworkVariableSerialization`, it isn't recommended to do so due to the performance implications that come with it. Instead, we recommend using one of the `Unity.Collections.FixedString` value types. In the below example, we used a `FixedString128Bytes` as the `NetworkVariable` value type. On the server side, it changes the string value each time you press the space bar on the server or host instance. Joining clients will be synchronized with the current value applied on the server side, and each time you hit the space bar on the server side, the client synchronizes with the changed string.
 
 :::note
 `NetworkVariable<T>` won't serialize the entire 128 bytes each time the `Value` is changed. Only the number of bytes that are actually used to store the string value will be sent, no matter which size of `FixedString` you use.

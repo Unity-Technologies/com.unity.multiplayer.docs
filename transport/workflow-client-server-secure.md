@@ -67,7 +67,7 @@ You can use this private key to generate a certificate signing request.
 openssl req -new -key myGameServerPrivateKey.pem -out myGameServerCertificateSigningRequest.pem
 ```
 
-You'll be prompted with the same questions you answered when generating the root certificate. The answers are no more important (except for the common name: it is recommended to use the server's hostname).
+You'll be prompted with the same questions you answered when generating the root certificate. The answers are no more important (except for the common name: it's recommended to use the server's hostname).
 
 Finally, you can create the certificate file the server will use to authenticate itself using the generated files:
 
@@ -152,5 +152,5 @@ void Start ()
 You should now have a secure connection between the server and its clients!
 
 :::note 
-If you create clients for multiple platforms, it is important for all clients to continue using the same root certificate if they communicate with the same server.
+If you create clients for multiple platforms, it's important for all clients to continue using the same root certificate if they communicate with the same server.
 :::

@@ -3,7 +3,7 @@ id: networkmanager
 title: NetworkManager
 ---
 
-The `NetworkManager` is a script component handling all your Networking related settings, your Networked Prefabs and your registered scene names. A Transport component is needed on the same GameObject. It is responsible for handling IP adresses and additional settings.
+The `NetworkManager` is a script component handling all your Networking related settings, your Networked Prefabs and your registered scene names. A Transport component is needed on the same GameObject. it's responsible for handling IP adresses and additional settings.
 
 ## Starting a Server, Host, or Client
 The `NetworkManager` allows you to start/stop the Networking. It provides the same functions for Server, Host and Client.

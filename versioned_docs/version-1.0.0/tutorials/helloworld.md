@@ -4,9 +4,9 @@ title: Your Netcode "Hello World" Project
 description: Tutorial that explains creating a project, installing the  Netcode for GameObjects package, and creating the basic components for your first networked game.
 ---
 
-A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It is also used as a sanity test to make sure that a computer language is correctly installed and that the operator understands how to use it.
+A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it's  the first program written by people learning to code. it's also used as a sanity test to make sure that a computer language is correctly installed and that the operator understands how to use it.
 
-This "Hello World" tutorial walks you through creating a project, installing Netcode for GameObjects (Netcode), and creating the basic components for your first networked game. It is also the base for the [Golden Path series](goldenpath_series/gp_intro.md).
+This "Hello World" tutorial walks you through creating a project, installing Netcode for GameObjects (Netcode), and creating the basic components for your first networked game. it's also the base for the [Golden Path series](goldenpath_series/gp_intro.md).
 
 :::note
 The videos on this page were removed because they were out-of-date and caused more confusion than help. All videos in the Hello World and Golden Path series will be recreated and added back at a later time.

@@ -26,7 +26,7 @@ Unity engine has two debug rendering APIs that are useful for the purposes of mu
 
 Both of these functions allow us to draw arbitrary debug lines that would be visible in the Scene view and in the Game view, provided Gizmo rendering is enabled (to enable Gizmo rendering in Game view you need to click on the `Gizmos` menu at the top of the Game view).
 
-The key trick here is to use different colors for different kinds of information and to make the lines stay long enough for visual inspection by setting `duration` parameter. This technique shines when it is combined with [screen recordings](#7-recording-the-video-of-gameplay) of [multiple peers running side by side in separate editor instances via ParrelSync](#1-use-parrelsync-workflow-during-development).
+The key trick here is to use different colors for different kinds of information and to make the lines stay long enough for visual inspection by setting `duration` parameter. This technique shines when it's combined with [screen recordings](#7-recording-the-video-of-gameplay) of [multiple peers running side by side in separate editor instances via ParrelSync](#1-use-parrelsync-workflow-during-development).
 
 The code below would render a green debug line that's 2 units tall at the position of the transform, and this line would stay on screen for 4 seconds:
 `Debug.DrawLine(this.transform.position, this.transform.position + Vector3.UP * 2f, Color.green, duration: 4f);`
@@ -38,7 +38,7 @@ When working on Boss Room we found it valuable to draw debug lines for the follo
  - Object interactions
 
 ### A Netcode Enabled Line Renderer
-Sometimes it is useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that can be used for visual debugging purposes:
+Sometimes it's useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that can be used for visual debugging purposes:
 ```csharp
 using UnityEngine;
 using Unity.Netcode;
@@ -165,7 +165,7 @@ Artificial network conditions allow the errors and oddities that are hidden by n
 
 ### Capturing screen recordings of the game instances.
 
-First of all, it is valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
+First of all, it's valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
 When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls. 
 

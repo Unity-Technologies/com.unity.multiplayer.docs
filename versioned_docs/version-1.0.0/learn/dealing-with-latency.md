@@ -34,7 +34,7 @@ Even if you specify in your client logic that you can't kill an imp if it's more
 
 ## Consistency
 In addition to responsiveness, the accuracy of your simulation is important. Not only will it break your player's immersion, competitive games often have prize pools of multiple millions of dollars where you want to make sure when your user is targeting something on their screen, it actually hits.
-With latency, what a client receives from the server is RTT/2 ms late. The information available isn't the "live" one, it's the one that was sent over the internet some time earlier (for example 200ms ago). This means if my local player collides with a server driven networked object, I'll see my collider overlap with it before the server reacts and tells it to move. 
+With latency, what a client receives from the server is RTT/2 ms late. The information available isn't the "live" one, it's the one that was sent over the internet some time earlier (for example 200ms ago). This means if my local player collides with a server driven networked object, I'll see my Collider overlap with it before the server reacts and tells it to move. 
 
 <!-- (TODO LATER Jil drawing for server rewind. can do a gif of this, this kind of overlapping is pretty cool to visualize).  -->
 
@@ -125,7 +125,7 @@ darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPar
 :::
 
 #### Issue: Security
-Client authority is a pretty dangerous door to leave open on your server, since any malicious player can forge messages to say "kill player a, b, c, d, e, f, g" and win the game. It is pretty useful though for reactivity. Since the client is taking all the important gameplay decisions, it can display the result of user inputs as soon as they happen instead of waiting a few hundred milliseconds.
+Client authority is a pretty dangerous door to leave open on your server, since any malicious player can forge messages to say "kill player a, b, c, d, e, f, g" and win the game. it's pretty useful though for reactivity. Since the client is taking all the important gameplay decisions, it can display the result of user inputs as soon as they happen instead of waiting a few hundred milliseconds.
 When you don't think there's any reason for your players to cheat, client authority can be a great way to have reactivity without some of the complexity added with techniques like [input prediction](#prediction). 
 <!-- (NOTE sam: I'll write on client prediction, even though it's tech that's not available in Netcode. This has the potential to confuse users, but at least they'll know it's there). -->
 Another way of solving this issue in a client authoritative game is using soft validation server side. Instead of completely doing a simulation server side, the server will only do basic validation. It can for example do range checks to make sure a player isn't teleporting to places it shouldn't. This would usually be acceptable in a [PvE](https://en.wikipedia.org/wiki/Player_versus_environment) game. However any [PvP](https://en.wikipedia.org/wiki/Player_versus_player) will usually require server authority.

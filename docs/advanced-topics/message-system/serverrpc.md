@@ -77,7 +77,7 @@ public void PlayerShootGunServerRpc(Vector3 lookWorldPosition, ServerRpcParams s
 Looking at the above example, we can see the client invoking the `PlayerShootGunServerRpc` method passes in a world position based on perhaps a screen space crosshair position to world space position, the `ServerRpcParams`, and the `ServerRpc` doesn't require ownership.  
 
 :::tip Alternate Owner Example
-Of course, if your project's design was such that a weapon changes ownership when it is picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
+Of course, if your project's design was such that a weapon changes ownership when it's picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
 ```csharp
 [ServerRpc]
 public void PlayerOwnerShootGunServerRpc(Vector3 lookWorldPosition)
@@ -133,7 +133,7 @@ The following are a few timing diagrams to help provide additional visual contex
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
-  <figcaption>A Client can invoke a server RPC on a `NetworkObject`. The RPC will be placed in the local queue and then sent to the server at the end of the frame. Upon receiving the server RPC, it is executed on the Server's instance of the same `NetworkObject`.</figcaption>
+  <figcaption>A Client can invoke a server RPC on a `NetworkObject`. The RPC will be placed in the local queue and then sent to the server at the end of the frame. Upon receiving the server RPC, it's executed on the Server's instance of the same `NetworkObject`.</figcaption>
 </figure>
 
 <figure>

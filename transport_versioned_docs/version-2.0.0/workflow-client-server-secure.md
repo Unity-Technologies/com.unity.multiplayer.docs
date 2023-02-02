@@ -10,7 +10,7 @@ Secure connections are available in Unity Editor versions 2020.3 (starting at 20
 
 ## Server authentication
 
-This section demonstrates using encrypted communications with Unity Transport.
+This section shows using encrypted communications with Unity Transport.
 
 :::warning
 This example uses hardcoded certificates to make understanding the process easier. In a real deployment, you should keep the server certificates separate from client builds. You can separate server and client certificates by using separate assemblies or loading them from a file on the server.
@@ -113,7 +113,7 @@ public static class SecureParameters
 
 ### Create a secure server
 
-This section demonstrates creating a secure server. It uses the simple server code example as a starting point.
+This section shows creating a secure server. It uses the simple server code example as a starting point.
 
 Start by creating a `NetworkSettings` object in the `Start` method and configure it as follows:
 
@@ -139,7 +139,7 @@ That’s all you need to do to enable secure communication server-side.
 
 ### Create a secure client
 
-This section demonstrates creating a secure client. It uses the simple client code example as a starting point.
+This section shows creating a secure client. It uses the simple client code example as a starting point.
 
 The secure client is similar to the secure server. The only difference is in how you configure the NetworkSettings object.
 

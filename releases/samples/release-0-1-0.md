@@ -71,7 +71,7 @@ The following issues may occur for access and games:
 * Any player that plays the game and then returns to the Main Menu may be unable to Start or Join properly again, requiring you to restart the client. <!-- GOMPS-355 -->
 * Green quads may show on impact when the Archer arrow strikes enemies. This issue may only occur in the editor. <!-- GOMPS-460 -->
 * The Photon Transport currently generates some errors in the Player log related to the `PhotonCryptoPlugin`. <!-- GOMPS-453 -->
-* The welcome player message in the lobby indicates P2 (player 2) regardless of your generated name. Currently the Character Select scene displays “Player1” and “P1” in two locations, where it is intended that the user’s name be displayed.  <!-- GOMPS-428 --> 
+* The welcome player message in the lobby indicates P2 (player 2) regardless of your generated name. Currently the Character Select scene displays “Player1” and “P1” in two locations, where it's intended that the user’s name be displayed.  <!-- GOMPS-428 --> 
 * The spawner portal does not work in this release. <!-- PR #172 -->
 * Players may not reliably play another match when selecting **Return to Main Menu** during the post-game scene. This may be due to states not properly clearing. <!-- PR #246-->
 * Some actions may feel unresponsive and require action anticipation animations.

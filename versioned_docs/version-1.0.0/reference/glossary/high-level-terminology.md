@@ -31,7 +31,7 @@ Is a network client that connects an individual user to the server, used mainly 
 
 ##  Server 
 
-Is a server which is the authoritative source of events in a multiplayer video game. The server transmits enough data about its internal state to allow its connected clients to maintain their own accurate version of the game world for display to players. They also receive and process each player's input
+Is a server which is the authoritative source of events in a multiplayer video game. The server transmits enough data about its internal state to allow its connected clients to keep their own accurate version of the game world for display to players. They also receive and process each player's input
 
 ## Hit Registration
 
@@ -49,7 +49,7 @@ Hit registration can be done by your game client (client side), which then tells
 
 ## Asymmetrical multiplayer
 
-A type of gameplay in which players can have significantly different roles or abilities from each other; enough to provide a significantly different experience of the game. 
+A type of gameplay in which players can have significantly different roles or abilities from each other; enough to offer a significantly different experience of the game. 
 
 - **Soft Asymmetry:** Players have the same basic mechanics (such as movement and death), yet have different roles in the game.
 

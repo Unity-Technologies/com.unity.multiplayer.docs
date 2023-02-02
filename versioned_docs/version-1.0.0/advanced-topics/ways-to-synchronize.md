@@ -33,6 +33,6 @@ Custom messages provide you with the ability to create your own "netcode message
 [Read More About Custom Messages](../advanced-topics/message-system/custom-messages.md)
 
 ## NetworkVariable System
-A NetworkVariable is most commonly used to synchronize state between both connected and late joining clients. The `NetworkVariable` system only supports non-nullable value `type`s, but also provides support for `INetworkSerializable` implementations as well you can create your own `NetworkVariable` class by deriving from the `NetworkVariableBase` abstract class. If you want something to always be synchronized with current and late-joining clients, then it is likely a good `NetworkVariable` candidate.
+A NetworkVariable is most commonly used to synchronize state between both connected and late joining clients. The `NetworkVariable` system only supports non-nullable value `type`s, but also provides support for `INetworkSerializable` implementations as well you can create your own `NetworkVariable` class by deriving from the `NetworkVariableBase` abstract class. If you want something to always be synchronized with current and late-joining clients, then it's likely a good `NetworkVariable` candidate.
 
 [Read More About NetworkVariable](../basics/networkvariable.md)

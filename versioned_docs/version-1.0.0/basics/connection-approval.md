@@ -96,5 +96,5 @@ If connection approval is enabled. Any messages sent before a connection is setu
 The connection data isn't encrypted or authenticated. 
 
 :::important
-A man in the middle attack can be done. It is strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
+A man in the middle attack can be done. it's strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
 :::

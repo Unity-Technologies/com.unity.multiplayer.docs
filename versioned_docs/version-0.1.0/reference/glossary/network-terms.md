@@ -28,9 +28,9 @@ The payload appears immediately after the header.
 
 ## Transmission Control Protocol (TCP)
 
-Transmission Control Protocol (TCP) is a connection-oriented communications protocol that facilitates the exchange of messages between computing devices in a network. It is the most common protocol in networks that use the Internet Protocol (IP); together they're sometimes referred to as TCP/IP.
+Transmission Control Protocol (TCP) is a connection-oriented communications protocol that facilitates the exchange of messages between computing devices in a network. it's the most common protocol in networks that use the Internet Protocol (IP); together they're sometimes referred to as TCP/IP.
 
-TCP takes messages from an application/server and divides them into packets, which can then be forwarded by the devices in the network – switches, routers, security gateways – to the destination. TCP numbers each packet and reassembles them before handing them off to the application/server recipient. Because it is connection-oriented, it ensures a connection is established and maintained until the exchange between the application/servers sending and receiving the message is complete.
+TCP takes messages from an application/server and divides them into packets, which can then be forwarded by the devices in the network – switches, routers, security gateways – to the destination. TCP numbers each packet and reassembles them before handing them off to the application/server recipient. Because it's connection-oriented, it ensures a connection is established and maintained until the exchange between the application/servers sending and receiving the message is complete.
 
 ## User Datagram Protocol (UDP)
 
@@ -58,7 +58,7 @@ There is no guarantee that your packet will actually reach its destination. When
 
 ## Session Traversal Utilities for NAT (STUN)
 
-*STUN* is a tool for communications protocols to detect and traverse network address translators that are located in the path between two endpoints of communication. It is implemented as a light-weight client-server protocol, requiring only simple query and response components with a third-party server located on the common, easily accessible network, typically the Internet.
+*STUN* is a tool for communications protocols to detect and traverse network address translators that are located in the path between two endpoints of communication. it's implemented as a light-weight client-server protocol, requiring only simple query and response components with a third-party server located on the common, easily accessible network, typically the Internet.
 
 The basic protocol operates essentially as follows: The client, typically operating inside a private network, sends a binding request to a **STUN** server on the public Internet. The STUN server responds with a success response that has the IP address and port number of the client, as observed from the server's perspective. 
 

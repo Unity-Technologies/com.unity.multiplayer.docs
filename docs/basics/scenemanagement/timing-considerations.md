@@ -6,7 +6,7 @@ sidebar_label: Timing Considerations
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 :::caution
-If you haven't already read the [Using NetworkSceneManager](using-networkscenemanager.md) and/or [Scene Events](scene-events.md) sections, it is highly recommended to do so before proceeding.
+If you haven't already read the [Using NetworkSceneManager](using-networkscenemanager.md) and/or [Scene Events](scene-events.md) sections, it's highly recommended to do so before proceeding.
 :::
 
 ## Introduction
@@ -121,7 +121,7 @@ darkImageSrc="/img/sequence_diagrams/SceneManagement/LoadNewSceneTimeline_Dark.p
 3. Scene loading completes. 
 4. All in-scene placed `NetworkObject`s are spawned.
 :::caution
-Step #3 above signifies that the `UnityEngine.SceneManagement.SceneManager` has finished loading the scene. If you subscribe to the `UnityEngine.SceneManagement.SceneManager.sceneLoaded` event, then step #3 would happen on the same frame that your subscribed handler is invoked. **Don't use this event** as a way to determine that the current Load SceneEvent has completed. <br/> <center>_Doing so will result in unexpected results that most commonly are associated with "yet-to-be-spawned" (locally) `NetworkObject`'s and/or their related `NetworkBehaviour` dependencies._</center> When using Netcode Integrated SceneManagement, it is recommended to use the `NetworkSceneManager` scene events to determine when the "netcode scene loading event" has completed locally or for all clients.
+Step #3 above signifies that the `UnityEngine.SceneManagement.SceneManager` has finished loading the scene. If you subscribe to the `UnityEngine.SceneManagement.SceneManager.sceneLoaded` event, then step #3 would happen on the same frame that your subscribed handler is invoked. **Don't use this event** as a way to determine that the current Load SceneEvent has completed. <br/> <center>_Doing so will result in unexpected results that most commonly are associated with "yet-to-be-spawned" (locally) `NetworkObject`'s and/or their related `NetworkBehaviour` dependencies._</center> When using Netcode Integrated SceneManagement, it's recommended to use the `NetworkSceneManager` scene events to determine when the "netcode scene loading event" has completed locally or for all clients.
 :::
 
 **Load New Scene Single (a.k.a "Scene Switching")**
@@ -149,11 +149,11 @@ darkImageSrc="/img/sequence_diagrams/SceneManagement/UnloadingAdditiveScene_Dark
 Review over the below diagram and take note of the following things:
 - **Server Side:**
     - When a server starts the `SceneEventType.Unload` event, Unity will naturally being to destroy all `GameObjects` in the scene being unloaded.  
-        - If a `GameObject` has a `NetworkObject` component attached to it and it is still considered spawned at the time the `GameObject` is destroyed, then the `NetworkObject` will be despawned before the `GameObject` being destroyed.
+        - If a `GameObject` has a `NetworkObject` component attached to it and it's still considered spawned at the time the `GameObject` is destroyed, then the `NetworkObject` will be despawned before the `GameObject` being destroyed.
             - This will cause a series of server-to-client despawn messages to be sent to all clients.
 - **Client Side:**
     - While a server is unloading a scene, the client can begin to receive a bunch of despawn messages for the `NetworkObject`s being destroyed on the server-side while the scene is being unloaded.
-        - By the time a client receives the `SceneEventType.Unload` scene event message, it well can have no remaining `NetworkObject`s in the scene being unloaded.  This won't impact the client-side scene unloading process, but it is useful to know that this will happen.
+        - By the time a client receives the `SceneEventType.Unload` scene event message, it well can have no remaining `NetworkObject`s in the scene being unloaded.  This won't impact the client-side scene unloading process, but it's useful to know that this will happen.
 
 <figure>
 <ImageSwitcher 

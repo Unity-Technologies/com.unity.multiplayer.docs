@@ -31,7 +31,7 @@ Is a network client that connects an individual user to the server, used mainly 
 
 ##  Server 
 
-Is a server which is the authoritative source of events in a multiplayer video game. The server transmits enough data about its internal state to allow its connected clients to maintain their own accurate version of the game world for display to players. They also receive and process each player's input
+Is a server which is the authoritative source of events in a multiplayer video game. The server transmits enough data about its internal state to allow its connected clients to keep their own accurate version of the game world for display to players. They also receive and process each player's input
 
 ## Hit Registration
 

@@ -62,7 +62,7 @@ Don't start a NetworkManager within a NetworkBehaviour's Awake method as this ca
 
 When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
-The below examples use [Unity Transport](../../../transport/current/about) to demonstrate a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` to configure your project's network settings programmatically: 
+The below examples use [Unity Transport](../../../transport/current/about) to show a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` to configure your project's network settings programmatically: 
 
 If you are only setting the IP address and port number, then you can use the `UnityTransport.SetConnectionData` method:
 ```csharp
@@ -148,7 +148,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 - When a server "logically" disconnects a client.
   - _Reason: The server already knows the client is disconnected._
 - When a client "logically" disconnects itself.
-  - _Reason: The client already knows that it is disconnected._
+  - _Reason: The client already knows that it's disconnected._
 
 ### Connection Notification Manager Example
 Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component. 

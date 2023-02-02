@@ -61,7 +61,7 @@ See [Object pooling](../../advanced-topics/object-pooling.md).
 
 The [Unity Transport Package](../../../transport/about.md) (UTP) has properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the [UnityTransport](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md) script.
 
-The Boss Room sample demonstrates how to adapt some UTP properties to fit its specific requirements. Most of the UTP property configuration remains unchanged. However, we changed the following property values:
+The Boss Room sample shows how to adapt some UTP properties to fit its specific requirements. Most of the UTP property configuration remains unchanged. However, we changed the following property values:
 
 * [Disconnect Timeout](#disconnect-timeout)
 * [Max Connect Attempts](#max-connect-attempts)

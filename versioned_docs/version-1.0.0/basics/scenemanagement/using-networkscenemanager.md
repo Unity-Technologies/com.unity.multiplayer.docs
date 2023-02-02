@@ -20,7 +20,7 @@ sidebar_label: Using NetworkSceneManager
  - In-Scene placed NetworkObject synchronization
 
 :::info
-In-Scene placed `NetworkObject`s can be used in many ways and are treated uniquely from that of dynamically spawned `NetworkObject`s.  An in-scene placed `NetworkObject` is a GameObject with a `NetworkObject` and typically at least one `NetworkBehaviour` component attached to a child of or the same `GameObject`.  It is recommended to read through all integrated scene management materials (this document, [Scene Events](scene-events.md), and [Timing Considerations](timing-considerations.md)) before learning about more advanced [In-Scene (placed) NetworkObjects](inscene-placed-networkobjects.md) topics.
+In-Scene placed `NetworkObject`s can be used in many ways and are treated uniquely from that of dynamically spawned `NetworkObject`s.  An in-scene placed `NetworkObject` is a GameObject with a `NetworkObject` and typically at least one `NetworkBehaviour` component attached to a child of or the same `GameObject`.  it's recommended to read through all integrated scene management materials (this document, [Scene Events](scene-events.md), and [Timing Considerations](timing-considerations.md)) before learning about more advanced [In-Scene (placed) NetworkObjects](inscene-placed-networkobjects.md) topics.
 :::
 
 All of these scene management features (and more) are handled by the [`NetworkSceneManager`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSceneManager).
@@ -114,14 +114,14 @@ The term "Scene Event" refers to all subsequent scene events that transpire over
 - Each client receives the `SceneEventType.LoadEventCompleted` event
   - At this point all clients have completed the `SceneEventType.Load` event and are synchronized with all newly instantiated and spawned `NetworkObjects`.
 
-The purpose behind the above outline is to demonstrate that a Scene Event can lead to other scene event types being generated and that the entire sequence of events that transpire occur over a longer period of time than if you were loading a scene in a single player game. 
+The purpose behind the above outline is to show that a Scene Event can lead to other scene event types being generated and that the entire sequence of events that transpire occur over a longer period of time than if you were loading a scene in a single player game. 
 
 :::tip
 When you receive the `SceneEventType.LoadEvenetCompleted` or the `SceneEventType.SynchronizeComplete` you know that the server or clients can start invoking netcode specific code (that is, sending Rpcs, updating `NetworkVariable`s, etc.).  Alternately, `NetworkManager.OnClientConnectedCallback` is triggered when a client finishes synchronizing and can be used in a similar fashion.  _However, that only works for the initial client synchronization and not for scene loading or unloading events._
 :::
 
 :::warning
-Because the `NetworkSceneManager` still has additional tasks to complete once a scene is loaded, it isn't recommended to use `UnityEngine.SceneManagement.SceneManager.sceneLoaded` or `UnityEngine.SceneManagement.SceneManager.sceneUnloaded` as a way to know when a scene event has completed.  These two callbacks will occur before `NetworkSceneManager` has finished the final processing after a scene is loaded or unloaded and you can run into timing related issues. If you are using the netcode integrated scene management, then it is highly recommended to subscribe to the `NetworkSceneManager`'s scene event notifications.
+Because the `NetworkSceneManager` still has additional tasks to complete once a scene is loaded, it isn't recommended to use `UnityEngine.SceneManagement.SceneManager.sceneLoaded` or `UnityEngine.SceneManagement.SceneManager.sceneUnloaded` as a way to know when a scene event has completed.  These two callbacks will occur before `NetworkSceneManager` has finished the final processing after a scene is loaded or unloaded and you can run into timing related issues. If you are using the netcode integrated scene management, then it's highly recommended to subscribe to the `NetworkSceneManager`'s scene event notifications.
 :::
 
 #### Scene Event Notifications
@@ -142,7 +142,7 @@ Typically, this is used with clients or components that might only need to be no
 You might want to register for the `SceneEventType.LoadEventCompleted` scene event type to know, from a client perspective, that the server and all other clients have finished loading a scene.  Thisn'tification lets you know when you can start performing other netcode related actions on the newly loaded and spawned `NetworkObject`s.
 
 #### Scene Event Progress Status
-As we discussed in the earlier code example, it is important to check the status returned by `NetworkSceneManager.Load` to make sure your scene loading event has started.  The following is a list of all [SceneEventProgressStatus](../../api/Unity.Netcode.SceneEventProgressStatus.md) `enum` values with some additional helpful information:
+As we discussed in the earlier code example, it's important to check the status returned by `NetworkSceneManager.Load` to make sure your scene loading event has started.  The following is a list of all [SceneEventProgressStatus](../../api/Unity.Netcode.SceneEventProgressStatus.md) `enum` values with some additional helpful information:
 - Started
   - The scene event has started (success)
 - SceneNotLoaded
@@ -167,7 +167,7 @@ Now that we understand the loading process, scene events, and can load a scene a
 3. A Scene Event can't already be in progress
 
 :::info
-Unloading the currently active scene, in Netcode, is commonly referred to as "scene switching" or loading another scene in `LoadSceneMode.Single` mode.  This will unload all additively loaded scenes and upon the new scene being loaded in `LoadSceneMode.Single` mode it is set as the active scene and the previous active scene is unloaded.
+Unloading the currently active scene, in Netcode, is commonly referred to as "scene switching" or loading another scene in `LoadSceneMode.Single` mode.  This will unload all additively loaded scenes and upon the new scene being loaded in `LoadSceneMode.Single` mode it's set as the active scene and the previous active scene is unloaded.
 :::
 
 #### Basic Scene Unloading Example
@@ -294,7 +294,7 @@ public class ProjectSceneManager : NetworkBehaviour
 ```
 Really, if you take away the debug logging code the major differences are:
 - We store the Scene loaded when the server receives its local `SceneEventType.SceneEventType.LoadComplete` notification
-- When the `ProjectSceneManager.UnloadScene` method is invoked (_assuming this occurs outside of this class_) the `ProjectSceneManager.m_LoadedScene` is checked to make sure it is a valid scene and that it is indeed loaded before we invoke the `NetworkSceneManager.Unload` method.
+- When the `ProjectSceneManager.UnloadScene` method is invoked (_assuming this occurs outside of this class_) the `ProjectSceneManager.m_LoadedScene` is checked to make sure it's a valid scene and that it's indeed loaded before we invoke the `NetworkSceneManager.Unload` method.
 
 ### Scene Validation
 Sometimes you might need to prevent the server or client from loading a scene under certain conditions.  Here are a few examples of when you might do this:
@@ -304,7 +304,7 @@ Sometimes you might need to prevent the server or client from loading a scene un
   - Typically, this is done on the client-side.
 - Security purposes 
   - As we mentioned earlier, `NetworkSceneManager` automatically considers all scenes in the build settings scenes in build list valid scenes to be loaded.  You might use scene validation to prevent certain scenes from being loaded that can cause some form of security and/or game play issue.
-    - It is common to do this on either the server or client side depending upon your requirements/needs.
+    - it's common to do this on either the server or client side depending upon your requirements/needs.
 
 **Usage Example**
 The below example builds upon the previous example's code, and adds some psuedo-code for server-side scene validation:

@@ -24,7 +24,7 @@ Matchmaking would have to be implemented using 3rd party matchmaking services. M
 
 ### How can you provide the server address or any connection information before starting the client?
    
-MLAPI does not deal with IP addresses or any connection informations (for example, relay region and room name). This is the role of your transport layer. To provide such information, the best way to do it is to get your transport component (for example, UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
+MLAPI does not deal with IP addresses or any connection informations (for example, relay region and room name). This is the role of your transport layer. To provide such information, the best way to do it's to get your transport component (for example, UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
    
 ```csharp
 UNetTransport transport = MLAPI.NetworkManager.Singleton.GetComponent<UNetTransport>();
@@ -52,7 +52,7 @@ We recommend the following:
    It should work just like over LAN you just have to connect to the public IP itself. Make sure to open UDP on the router. Many forward ports tutorials are available to review, including this option https://portforward.com/.
 1. Use a relay. 
    
-   There is an [unofficial MLAPI relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You can also use MLAPI's list server to browse through all hosts.
+   There is an [unofficial MLAPI relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The Relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You can also use MLAPI's list server to browse through all hosts.
    
    The other option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
 

@@ -36,7 +36,7 @@ The archer's arrows uses a standalone `GameObject` that is replicated over time.
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Server/Game/Entity/ServerProjectileLogic.cs
 ```
 
-We can have used an `RPC` instead, for example the Mage's projectile attack. Since it is expected for that projectile to be quick, we aren't affected by the few milliseconds where a newly connected client can miss the projectile and we save on bandwidth having to manage a replicated object. Instead a single RPC is sent to trigger the FX client side.
+We can have used an `RPC` instead, for example the Mage's projectile attack. Since it's expected for that projectile to be quick, we aren't affected by the few milliseconds where a newly connected client can miss the projectile and we save on bandwidth having to manage a replicated object. Instead a single RPC is sent to trigger the FX client side.
 
 
 ```csharp reference

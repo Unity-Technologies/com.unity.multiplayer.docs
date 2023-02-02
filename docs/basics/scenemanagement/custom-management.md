@@ -5,7 +5,7 @@ sidebar_label: Custom Management
 ---
 
 :::caution
-If you haven't already read the [Using NetworkSceneManager](using-networkscenemanager.md) section, it is highly recommended to do so before proceeding.
+If you haven't already read the [Using NetworkSceneManager](using-networkscenemanager.md) section, it's highly recommended to do so before proceeding.
 Custom Scene Management currently has some drawbacks that we hope to improve upon over time.
 :::
 

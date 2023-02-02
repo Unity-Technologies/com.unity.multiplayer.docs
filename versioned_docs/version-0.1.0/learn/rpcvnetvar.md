@@ -39,7 +39,7 @@ Using the Boss Room's door as an example. A player's client needs to receive the
 
 If we sent an `RPC` to all clients, then all players connecting mid game after that `RPC` are sent will miss that information and have the wrong visual on their clients.
 
-In that case, it is preferable to use `NetworkVariable`s like shown here.
+In that case, it's preferable to use `NetworkVariable`s like shown here.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/NetworkDoorState.cs

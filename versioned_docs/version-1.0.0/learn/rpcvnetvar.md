@@ -34,7 +34,7 @@ darkImageSrc="/img/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin_Dark.png
 </figure>
 
 
-In that case, it is preferable to use `NetworkVariable`s like shown here.
+In that case, it's preferable to use `NetworkVariable`s like shown here.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/NetworkDoorState.cs

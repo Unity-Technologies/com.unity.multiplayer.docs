@@ -52,7 +52,7 @@ Start               | OnNetworkSpawn
 
 #### Dynamically Spawned NetworkObjects
 
-For dynamically spawned `NetworkObjects` (instantiating a network Prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it is important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
+For dynamically spawned `NetworkObjects` (instantiating a network Prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it's important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
 
 ```csharp
 public class MyNetworkBehaviour : NetworkBehaviour
@@ -83,18 +83,18 @@ public class MyNetworkBehaviour : NetworkBehaviour
 
 #### In-Scene Placed NetworkObjects
 
-For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Start` method since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example demonstrates how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`.  It all depends upon what usage pattern works best for your project.
+For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **after** the `Start` method since the SceneManager scene loading process controls when the `NetworkObject`s are instantiated.  The previous code example shows how one can design a `NetworkBehaviour` that assures both in-scene placed and dynamically spawned `NetworkObject`s will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`.  It all depends upon what usage pattern works best for your project.
 
 ### De-Spawning
 
-`OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it is de-spawned.  This is where all netcode "despawn cleanup code" should occur, but isn't to be confused with destroying.  Despawning occurs before anything is destroyed.
+`OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "despawn cleanup code" should occur, but isn't to be confused with destroying.  Despawning occurs before anything is destroyed.
 
 ### Destroying
 
 Each 'NetworkBehaviour' has a virtual 'OnDestroy' method that can be overridden to handle clean up that needs to occur when you know the `NetworkBehaviour` is being destroyed.
 
 :::important
-If you override the virtual 'OnDestroy' method it is important to alway invoke the base like such:
+If you override the virtual 'OnDestroy' method it's important to alway invoke the base like such:
 
 ```csharp
         public override void OnDestroy()
@@ -179,7 +179,7 @@ using UnityEngine;
 using Unity.Netcode;
 
 /// <summary>
-/// Simple RPC driven state that demonstrates one
+/// Simple RPC driven state that shows one
 /// form of NetworkBehaviour.OnSynchronize usage
 /// </summary>
 public class SimpleRpcState : NetworkBehaviour

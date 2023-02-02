@@ -491,7 +491,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 Whenever you press the GUI button (which is contextual depending on if you are server or a client), you find your local player and simply call `Move()`.
 
-You can now create a build which will demonstrate the concepts outlined above. 
+You can now create a build which will show the concepts outlined above. 
 :::tip
 Make sure **SampleScene** is included in **BuildSettings**.
 :::

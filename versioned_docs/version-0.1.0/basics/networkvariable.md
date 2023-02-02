@@ -56,7 +56,7 @@ void valueChanged(float prevF, float newF){
 If you want values to be synced only once (at spawn), the built-in container's send rate can be set to a negative value.
 
 ### Serialization
-Since the `NetworkVariable` class is a generic, editor serialization isn't supported, it is only available through editor scripts for viewing the values. To get proper serialization, a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
+Since the `NetworkVariable` class is a generic, editor serialization isn't supported, it's only available through editor scripts for viewing the values. To get proper serialization, a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
 
 The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they're called `NetworkVariable<T>` where `T` is the type.
 
