@@ -17,7 +17,7 @@ You can have more than one `NetworkTransform` components on child objects of you
 
 # Restricting Synchronization
 
-You often don't need to synchronize all transform values of a GameObject over the network. For instance, if the scale of the GameObject never changes, you can deactivate it in the **syncing scale** row in the Inspector. Deactivating synchronization only saves CPU costs. In the future, it will also reduce the bandwidth used by `NetworkTransform`.
+You often don't need to synchronize all transform values of a GameObject over the network. For instance, if the scale of the GameObject never changes, you can deactivate it in the **syncing scale** row in the Inspector. Deactivating synchronization saves CPU costs and network bandwidth.
 
 # Thresholds
 
