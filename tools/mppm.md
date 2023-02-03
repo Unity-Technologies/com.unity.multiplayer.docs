@@ -19,9 +19,9 @@ This document uses the following terminology to distinguish between the primary 
 ## Releases
 
 | Version  | Release date | Notes                                               |
-|----------|:------------:|----------------------------------------------------:|
-| 0.1.1    | 2023-01-26   | See [MPPM release notes](../releases/tools/mppm.md) |
-| 0.1.0    | 2022-11-15   | See [MPPM release notes](../releases/tools/mppm.md) |
+|----------|:------------:|----------------------------------------------------|
+| 0.1.1    | 2023-01-26   | See [MPPM release notes](../releases/tools/mppm-release-notes.md) |
+| 0.1.0    | 2022-11-15   | See [MPPM release notes](../releases/tools/mppm-release-notes.md) |
 
 
 ## Requirements
