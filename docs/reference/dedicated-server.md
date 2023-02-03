@@ -20,6 +20,8 @@ You must meet the following requirements to use the Dedicated Server build targe
 1. Download and install Unity Editor version **2021.3 LTS** or later
 2. Install the Dedicated Server module for the platform you’re targeting. For example, enable **Linux Dedicated Server Build Support** if you plan to build for Linux.
 
+![](../../static/img/dedicated-server-02.png)
+
 ### Get started
 
 You can create a Dedicated Server build through the [Unity Editor user interface](#unity-editor), with [scripts](#scripting), or through the [command line](#command-line).
@@ -30,6 +32,8 @@ To create a Dedicated Server build through the Unity Editor:
 
 1. From the Unity Editor, select **File** > **Build Settings…**
 2. Select **Dedicated Server**.
+
+![](../../static/img/dedicated-server-01.png)
 
 :::tip
 **Tip**: You can further configure the Dedicated Server build through the Player Settings.
@@ -135,6 +139,8 @@ To customize the Dedicated Server Player Settings:
 
 1. From the Unity Editor, select **File** > **Build Settings…**
 2. Select **Player Settings…** 
+
+![](../../static/img/dedicated-server-03.png)
 
 ### AssetBundles
 
