@@ -4,7 +4,7 @@ title:  Learning with Golden Path
 description: Introduction to the Golden Path series, explaining the aim of the series 
 ---
 
-The Hello World/Golden Path series is meant to guide you through the Netcode installation and implement some of the basic features of Netcode. They also provide a way to test if your installation and feature implementations are correct.  
+The Hello World/Golden Path series is meant to guide you through the Netcode installation and implement some of the basic features of Netcode. They also offer a way to test if your installation and feature implementations are correct.  
 
 You should start with the [Hello World guide](../helloworld) as the base before moving to [Golden Path One](gp_module_one.md) and [Golden Path Two](gp_module_two.md).
 

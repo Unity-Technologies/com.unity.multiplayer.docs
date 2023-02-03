@@ -12,7 +12,7 @@ Learn more about on-going major updates in Multiplayer documentation, contributi
 
 ## Documentation updates
 
-The changelog tracks major changes to documentation, such as removed pages, added content, and significant rewriting. Minor changes are not tracked, but can be reviewed through closed [pull requests](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/pulls?q=is%3Apr+is%3Aclosed+label%3Aupdate).
+The changelog tracks major changes to documentation, such as removed pages, added content, and significant rewriting. Minor changes aren't tracked, but can be reviewed through closed [pull requests](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/pulls?q=is%3Apr+is%3Aclosed+label%3Aupdate).
 
 | Feature | Date | Description |
 | -- | -- | -- |

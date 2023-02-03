@@ -15,16 +15,16 @@ Error messages are captured and returned through Unity Editor Diagnostics (requi
 ## NetworkObject errors
 
 **Error:** 
-* `Cannot find pending soft sync object. Is the projects the same? UnityEngine.Debug:LogError(Object)`
-* `ArgumentNullException: Cannot spawn null object  Parameter name: netObject`
+* `Can't find pending soft sync object. Is the projects the same? UnityEngine.Debug:LogError(Object)`
+* `ArgumentNullException: Can't spawn null object  Parameter name: netObject`
 
-This exception should only occur if your scenes are not the same, for example if the scene of your server contains a `NetworkObject` which is not present in the client scene. Verify the scene objects work correctly by entering playmode in both editors. This will add an `InstanceId` field to your `NetworkObject`s. These IDs should match on both projects.
+This exception should only occur if your scenes aren't the same, for example if the scene of your server has a `NetworkObject` which isn't present in the client scene. Verify the scene objects work correctly by entering playmode in both editors. This will add an `InstanceId` field to your `NetworkObject`s. These IDs should match on both projects.
 
 ## ServerRPC errors
 
 **Error:** 
 * Server: `[MLAPI] Only owner can invoke ServerRPC that is marked to require ownership`
-* Host: `KeyNotFoundException: The given key was not present in the dictionary.`
+* Host: `KeyNotFoundException: The given key wasn't present in the dictionary.`
 
 The ServerRPC should only be used on the server. Make sure to add `isServer` check before calling.
 

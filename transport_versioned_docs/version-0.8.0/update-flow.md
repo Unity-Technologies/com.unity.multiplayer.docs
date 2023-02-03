@@ -13,6 +13,6 @@ The `Update` loop of the driver is simple, and may look daunting at first glance
 * The chain is running the `ReceiveJob` for reading and parsing the data from the socket.
 * Finally for each new message you receive on the socket, call a `AppendPacket` function that parses each packet received and either creates an event for it or discards it.
 
-Update completes. You just clean up, populate buffers, and push new events. You could almost view the `NetworkDriver` as a Control System for the State Machine handling 
+Update completes. You just clean up, populate buffers, and push new events. You can almost view the `NetworkDriver` as a Control System for the State Machine handling 
 `NetworkConnection`.
 

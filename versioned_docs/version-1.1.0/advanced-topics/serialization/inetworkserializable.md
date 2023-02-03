@@ -50,7 +50,7 @@ Nested serial types will be `null` unless you initialize following one of these 
 * Manually before calling `SerializeValue` if `serializer.IsReader` (or something like that)
 * Initialize in the default constructor
 
-This is by design. You may see the values as null until properly initialized. The serializer is not deserializing them, the `null` value is simply applied before it can be serialized.
+This is by design. You may see the values as null until properly initialized. The serializer isn't deserializing them, the `null` value is simply applied before it can be serialized.
 
 ## Conditional Serialization
 
@@ -65,7 +65,7 @@ You can use arrays in one of two ways:
 1. Via C# arrays
 2. Via Native Collections (that is, `NativeArray`)
 
-The critical distinction between the two is that **C# arrays** convert any type that contains the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
+The critical distinction between the two is that **C# arrays** convert any type that has the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
 
 ```csharp
 public struct MyCustomStruct : INetworkSerializable
@@ -159,7 +159,7 @@ public struct MyCustomNativeStruct : INetworkSerializable, IDisposable
 - Serialize value from Array[n] element into the stream
 
 
-The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`
+The `BufferSerializer<TReaderWriter>.IsReader` flag is being utilized here to determine whether to set `length` value to prepare before writing into the stream —  we then use it to determine whether to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`
 
 
 ### Example: Move
@@ -210,7 +210,7 @@ public struct MyMoveStruct : INetworkSerializable
   -  Serialize `LinearVelocity` into the stream
   -  Serialize `AngularVelocity` into the stream
 
-Unlike the [Array](#example-array) example above, in this example we do not use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
+Unlike the [Array](#example-array) example above, in this example we don't use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
 
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.
@@ -262,10 +262,10 @@ You can conditionally serialize in recursive nested serialization scenario and m
 :::
 
 :::caution
-While you can have nested `INetworkSerializable` implementations (i.e. an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you cannot have derived children of an `INetworkSerializable` implementation. <br/>
+While you can have nested `INetworkSerializable` implementations (that is, an `INetworkSerializable` implementation with `INetworkSerializable` implementations as properties) like demonstrated in the example above, you can't have derived children of an `INetworkSerializable` implementation. <br/>
 **Unsupported Example**
 ```csharp
-/// This is not supported.
+/// This isn't supported.
 public struct MyStructB : MyStructA
 {
     public int SomeNumber;

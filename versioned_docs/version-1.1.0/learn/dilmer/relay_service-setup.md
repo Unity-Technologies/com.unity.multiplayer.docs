@@ -12,7 +12,7 @@ These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease.
  Dilmer looks at how to set up multiplayer capabilities available over the internet
  
  <ul>
- <li> Setting up relay server through Unity Services</li>
+ <li> Setting up Relay server through Unity Services</li>
  <li> Adding Unity Relay and Unity Transport UDP packages</li>
  <li> Adding a new multiplayer relay scene with the Unity Transport in the NetworkManager</li>
  <li> Creating a RelayManager singleton to create a Relay allocation and also provide a join code to clients connecting via relay</li>

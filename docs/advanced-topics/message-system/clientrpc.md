@@ -66,7 +66,7 @@ The following code provides an example of using `ClientRpcSendParameters`, which
 ```csharp
 private void DoSomethingServerSide(int clientId)
     {
-        // If is not the Server/Host then we should early return here!
+        // If isn't the Server/Host then we should early return here!
         if (!IsServer) return;
 
 
@@ -116,7 +116,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientH
 </figure>
 
 :::warning
-When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (i.e. infinite recursion).
+When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (that is, infinite recursion).
 :::
 
 See the [Boss Room RPC Examples](../../learn/bossroom/bossroom-actions).

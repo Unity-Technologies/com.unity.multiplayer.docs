@@ -7,11 +7,11 @@ description: Learn about Boss Room's approach to NetworkObject parenting.
 Required reading: [NetworkObject Parenting](../../advanced-topics/networkobject-parenting.md)
 :::
 
-Before detailing Boss Room’s approach toon `NetworkObject` parenting, it’s important to highlight a limitation of Netcode: A dynamically-spawned `NetworkObject` **cannot** contain another `NetworkObject` in its hierarchy. If you spawn such a `NetworkObject`, you cannot spawn children `NetworkObjects`. You can only add children `NetworkObject` components to a `NetworkObject` that is part of a scene.
+Before detailing Boss Room’s approach toon `NetworkObject` parenting, it’s important to highlight a limitation of Netcode: A dynamically-spawned `NetworkObject` **can't** contain another `NetworkObject` in its hierarchy. If you spawn such a `NetworkObject`, you can't spawn children `NetworkObjects`. You can only add children `NetworkObject` components to a `NetworkObject` that is part of a scene.
 
 Boss Room leverages `NetworkObject` parenting through the server-driven `PickUp` action (see [`PickUpAction.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs)), where a character has the ability to pick up a specially-tagged, in-scene placed `NetworkObject` (see [`PickUpPot` prefab](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Prefabs/Game/PickUpPot.prefab)].
 
-At its root, `PickUpPot` contains a `NetworkObject`, a `NetworkTransform`, and a `PositionConstraint` component. `AutoObjectParentSync` is enabled on its `NetworkTransform` (as is by default) so that:
+At its root, `PickUpPot` has a `NetworkObject`, a `NetworkTransform`, and a `PositionConstraint` component. `AutoObjectParentSync` is enabled on its `NetworkTransform` (as is by default) so that:
 
 1. The `NetworkObject` can verify server-side if parenting a Heavy object to another `NetworkObject` is allowed.
 2. The `NetworkObject` can notify us when the parent has successfully been modified server-side.

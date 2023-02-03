@@ -23,7 +23,7 @@ For testing development builds with built-in artificial latency we suggest using
 For testing release builds we suggest using [Clumsy](#clumsy-windows) if you're on Windows and Network Link Conditioner if you're on [macOS](#network-link-conditioner-mac-os) or [iOS](#network-link-conditioner-ios). A scriptable alternative to Network Link Conditioner on macOS is [dummynet](#dummynet-dnctl-and-pftcl-mac-os), which offers great control and comes packaged with the operating system.
 
 :::important
-While artificial latency is great for simulating network conditions during development - it will not accurately emulate real world conditions. We recommend to test your game frequently on the targeted platforms and real live networking conditions.
+While artificial latency is great for simulating network conditions during development - it won't accurately emulate real world conditions. We recommend to test your game often on the targeted platforms and real live networking conditions.
 :::
 
 ## How much lag/packet loss/jitter should we use? 
@@ -46,25 +46,25 @@ Next we should determine how much chaos we want to introduce - that's largely ba
  - Is the game meant to be played from a good broadband internet connection?
  - Is the game meant to run on mobile networks?
 
-This question tells us if our users are likely to experience more jitter and packet loss - mobile networks are notorious for having widely varying quality of connection. Mobile users also could experience frequent network changes during active application usage, and even though [UTP has reconnection mechanism](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/rfc/device-reconnection/text/0000-device-reconnection.md), it still requires our applicaton to factor in the possibility of an occasional lag burst.
+This question tells us if our users are likely to experience more jitter and packet loss - mobile networks aren'torious for having widely varying quality of connection. Mobile users also can experience frequent network changes during active application usage, and even though [UTP has reconnection mechanism](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/rfc/device-reconnection/text/0000-device-reconnection.md), it still requires our applicaton to factor in the possibility of an occasional lag burst.
 
-What's important here is that testing purely with added delay and no packet loss and jitter is unrealistic. These values shouldn't be high - the baseline scenario is not what we would call stress-testing, but they should be non-zero.
+What's important here is that testing purely with added delay and no packet loss and jitter is unrealistic. These values shouldn't be high - the baseline scenario isn't what we would call stress-testing, but they should be non-zero.
 
 Adding jitter to the base delay value adds a layer of chaotic unreliability that would make our peers behave in a more natural way, allowing us to tweak our interpolation, buffering and other techniques to compensate for these instabilities.
 
-Adding packet loss, apart from introducing even more effective delay to our system could also wreak havoc on our unreliable messages, thus allowing us to explore if we need more defensive logic surrounding our unreliable messages or if we should opt for a reliable message instead.
+Adding packet loss, apart from introducing even more effective delay to our system can also wreak havoc on our unreliable messages, thus allowing us to explore if we need more defensive logic surrounding our unreliable messages or if we should opt for a reliable message instead.
 
 ### Different network conditions for different peers
 
 :::important
 [Clumsy](#clumsy-on-windows), [Network Link Conditioner](#network-link-conditioner-mac-os) and [dummynet](#dummynet-dnctl-and-pftcl-mac-os) are introducing changes on OS level, thus all the instances of the game that we open on our local machine would run under the same network conditions. 
 
-Do not forget to disable it once you're done debugging, else your network connection will feel slow!
+Don't forget to disable it once you're done debugging, else your network connection will feel slow!
  
-QA teams run playtests with multiple people, each with their own system-wide conditioning settings settings. We can imitate this workflow locally by setting different per-peer network conditions. This approach is not as reflective of reality as good QA tests on different machines, but it allows us to test these more peculiar scenarios locally. 
+QA teams run playtests with multiple people, each with their own system-wide conditioning settings settings. We can imitate this workflow locally by setting different per-peer network conditions. This approach isn't as reflective of reality as good QA tests on different machines, but it allows us to test these more peculiar scenarios locally. 
 :::
 
-There is a group of scenarios where we would want to test how the game behaves when a player with a different baseline connection quality from most of our other peers joins the game - an example of such case could be someone playing from a significantly remote location or connecting from a device that's on a mobile network.
+There is a group of scenarios where we would want to test how the game behaves when a player with a different baseline connection quality from most of our other peers joins the game - an example of such case can be someone playing from a significantly remote location or connecting from a device that's on a mobile network.
 
 In this case we would want to have an ability to set artifical conditions on a per-peer basis, which is possible with [Unity Transport Simulator Tools](#unity-transport---simulator-tools). 
 
@@ -77,7 +77,7 @@ ParallelSync is **not** supported by Unity.  More information on its usage is av
 :::
 
 
-Simulator Tools effects only apply to editor instances and to [debug builds](#debug-builds), as such it matches really well with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync). 
+Simulator Tools effects only apply to editor instances and to [debug builds](#debug-builds), as such it matches well with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync). 
 
 Other tools should be used when testing release builds locally.
 
@@ -88,7 +88,7 @@ With Simulator Tools we can't specify if inbound packets and outbound packets wo
 :::
 
 :::important
-Simulator Tools window settings will not be committed to version control and need to be set up manually on different editor instances.
+Simulator Tools window settings won't be committed to version control and need to be set up manually on different editor instances.
 :::
 
 ### Debug Builds
@@ -108,16 +108,16 @@ To set the latency, jitter and packet-loss percentage values for develop builds 
 
 ## System-wide network conditioners
 
-These tools are useful when we want to test builds as opposed to running multiple editor instances. It is also an option that works for **release** builds. 
+These tools are useful when we want to test builds as opposed to running multiple editor instances. it's also an option that works for **release** builds. 
 
 :::important
 The solutions described below share some common features:
- - They do not support latency variability over time, so in effect we can't imitate artificial jitter with them.
- - They are system-wide, thus all the local instances of our game would run under the same network conditions.
+ - They don't support latency variability over time, so in effect we can't imitate artificial jitter with them.
+ - They're system-wide, thus all the local instances of our game would run under the same network conditions.
  - They allow to control the settings for sending and receiving separately.
 :::
 
-There are some inherent limitations that come with the system-wide level of application of these tools - they are not ideal for local testing of more than two peers because we can't have peers with different network conditions between them (if that is important for the test ofcourse).
+There are some inherent limitations that come with the system-wide level of application of these tools - they're not ideal for local testing of more than two peers because we can't have peers with different network conditions between them (if that is important for the test ofcourse).
 
 :::important
 Some consoles offer similar functionality at the native SDK level.  Check their documentation for details.

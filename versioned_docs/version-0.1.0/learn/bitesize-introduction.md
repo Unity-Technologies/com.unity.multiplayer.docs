@@ -20,6 +20,6 @@ You can download the projects from the [Bitesize Samples GitHub](https://github.
 
 **Error building**
 
-*Error:* Error building Player: Currently selected scripting backend (IL2CPP) is not installed.
+*Error:* Error building Player: Currently selected scripting backend (IL2CPP) isn't installed.
 
 Currently, you may need to have [Unity IL2CPP](https://docs.unity3d.com/Manual/IL2CPP.html) installed. Bitesize Samples should not require IL2CPP, and may have updates to resolve this error.

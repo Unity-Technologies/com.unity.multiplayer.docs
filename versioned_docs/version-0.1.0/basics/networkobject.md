@@ -10,7 +10,7 @@ title: NetworkObject
 For an object to be replicated across the network, it needs to have a `NetworkObject` component.
 Each object which uses components networking functionality, like `NetworkTransform` or `NetworkBehaviour`s with `NetworkVariable`s or `RPC`s,  needs a `NetworkObject` component on the same `GameObject` or in a parent.
 
-When a `NetworkObject` is considered "Spawned", it is replicated across the network so that everyone has their own version of the object. Each `NetworkObject` gets assigned a `NetworkId` at runtime, which is used to associate two `NetworkObject`s across the network. For example, one peer can say "Send this RPC to the object with the NetworkId 103", and everyone knows what object that is.
+When a `NetworkObject` is considered "Spawned", it's replicated across the network so that everyone has their own version of the object. Each `NetworkObject` gets assigned a `NetworkId` at runtime, which is used to associate two `NetworkObject`s across the network. For example, one peer can say "Send this RPC to the object with the NetworkId 103", and everyone knows what object that is.
 
 To add custom code logic to your `NetworkObjects`, use [NetworkBehaviours](networkbehaviour.md).
 
@@ -41,7 +41,7 @@ If you want a client to control multiple objects use the ownership model instead
 
 ### Creating a Player Object
 
-Netcode can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkManager`, then Netcode will spawn the prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
+Netcode can spawn a default player object for you. If `Create Player Prefab` is activated in the `NetworkManager`, then Netcode will spawn the Prefab marked as `Default Player Prefab` in the `NetworkPrefabs` list for each client upon connection.
 
 To manually spawn an object as player object, use `SpawnAsPlayerObject` instead of the regular `Spawn` method. This replaces the old player object with the new one.
 

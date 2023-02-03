@@ -13,7 +13,7 @@ The following table details the execution of `ServerRpc` and `ClientRpc` functio
 | ClientRpc Send | <i class="fp-check"></i> | <i class="fp-x"></i> | <i class="fp-check"></i> |
 | ClientRpc Execute | <i class="fp-x"></i> | <i class="fp-check"></i> | <i class="fp-check"></i> |
 
-An RPC function typically doesn't execute its body immediately since the function call really is a stand-in for a network transmission. Since the host is both a client and a server, local RPCs targeting the host-server or host-client are invoked immediately.  As such, avoid nesting RPCs when running in host mode as a ServerRpc method that invokes a ClientRpc method that invokes the same ServerRpc method (and repeat...) could cause a stack overflow.
+An RPC function typically doesn't execute its body immediately since the function call is a stand-in for a network transmission. Since the host is both a client and a server, local RPCs targeting the host-server or host-client are invoked immediately.  As such, avoid nesting RPCs when running in host mode as a ServerRpc method that invokes a ClientRpc method that invokes the same ServerRpc method (and repeat...) can cause a stack overflow.
 
 Structure of a typical `ServerRpc`:
 
@@ -93,5 +93,5 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
- <figcaption>Client Hosts can invoke Client RPCs on Network Objects. The RPC will be placed in the local queue and then, after a short delay the client RPC will be executed on the Client Host, and sent to the other clients. When client RPC is received by the client - it is executed on the Client's version of the same Network Object.</figcaption>
+ <figcaption>Client Hosts can invoke Client RPCs on Network Objects. The RPC will be placed in the local queue and then, after a short delay the client RPC will be executed on the Client Host, and sent to the other clients. When client RPC is received by the client - it's executed on the Client's version of the same Network Object.</figcaption>
 </figure>

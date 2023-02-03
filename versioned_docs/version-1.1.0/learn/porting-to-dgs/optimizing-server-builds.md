@@ -44,7 +44,7 @@ Your server build can have a few `NetworkBehaviours` scripts to allow callbacks 
 
 ## Manual stripping
 
-You can use third-party solutions, such as [`BuildStripper`](https://github.com/JesusLuvsYooh/BuildStripper) and [Headless Builder](https://assetstore.unity.com/packages/tools/utilities/headless-builder-108317), to manually strip prefab and GameObject assets one by one.
+You can use third-party solutions, such as [`BuildStripper`](https://github.com/JesusLuvsYooh/BuildStripper) and [Headless Builder](https://assetstore.unity.com/packages/tools/utilities/headless-builder-108317), to manually strip Prefab and GameObject assets one by one.
 
 ## GameObjects stripping
 

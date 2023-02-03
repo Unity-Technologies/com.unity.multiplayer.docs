@@ -3,7 +3,7 @@
 Cloning your Foundation **GoldenPath** project does not support rollback, so it will only work on the Unity version that it was originally created for. Attempting to open the clone on a newer or older version of Unity may cause unexpected funcationality.
 :::
 
-We create a clone of the Golden Path Foundation project for further Golden Path modules, if you have not yet created a `GoldenPath` project then you should follow the steps [here](goldenpath_foundation_module) to create one. Working from a clone of the initial project will help you learn about new features and concepts without having to repeat  previous work.
+We create a clone of the Golden Path Foundation project for further Golden Path modules, if you haven't yet created a `GoldenPath` project then you should follow the steps [here](goldenpath_foundation_module) to create one. Working from a clone of the initial project will help you learn about new features and concepts without having to repeat  previous work.
  
 ### Create a clone of GoldenPath
 
@@ -16,7 +16,7 @@ We create a clone of the Golden Path Foundation project for further Golden Path 
    :::
 2. Create a new folder and name it `Golden Path_<modulenumber>`. 
    :::tip
-   For the purposes of the Golden Path series, I will replace `modulenumber`  with the current module number of the series. You do not have to, though, you may find it makes following the series easier.
+   For the purposes of the Golden Path series, I will replace `modulenumber`  with the current module number of the series. You don't have to, though, you may find it makes following the series easier.
 
    Our comparative paths of the new folder for module one:
    * Mac in video: `~/dev/mlapi-golden-path/Golden_Path_One`

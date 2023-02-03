@@ -178,7 +178,7 @@ The server side is pretty similar to start with. You create the jobs you need an
 Consider this: you know that the `NetworkDriver` has a `ScheduleUpdate` method that returns a `JobHandle`. The job as you saw above populates the internal buffers of the `NetworkDriver` and lets us call `PopEvent`/`PopEventForConnection` method. What if you create a job that will fan out and run the processing code for all connected clients in parallel? If you look at the documentation for the C# Job System, you can see that there is a [IJobParallelFor](https://docs.unity3d.com/Manual/JobSystemParallelForJobs.html) job type that can handle this scenario
 
 :::note
-Because you do not know how many requests you may receive or how many connections you may need to process at any one time, there is another `IJobPrarallelFor` job type that you can use namely: `IJobParallelForDefer`.
+Because you don't know how many requests you may receive or how many connections you may need to process at any one time, there is another `IJobPrarallelFor` job type that you can use namely: `IJobParallelForDefer`.
 :::
 
 ```csharp
@@ -191,9 +191,9 @@ struct ServerUpdateJob : IJobParallelForDefer
 }
 ```
 
-However, you cannot run all of your code in parallel.
+However, you can't run all of your code in parallel.
 
-In the client example above, you begin by cleaning up closed connections and accepting new ones, which cannot be done in parallel. You need to create a connection job.
+In the client example above, you begin by cleaning up closed connections and accepting new ones, which can't be done in parallel. You need to create a connection job.
 
 Start by creating a `ServerUpdateConnectionJob` job. Pass both the `driver` and `connections` to the connection job. Then you want your job to "Clean up connections" and "Accept new connections":
 
@@ -321,7 +321,7 @@ The only change made in your variable declaration is adding a `JobHandle` to kee
 
 #### Start method
 
-You do not need to change your `Start` method as it should look the same:
+You don't need to change your `Start` method as it should look the same:
 
 ```csharp
 void Start ()

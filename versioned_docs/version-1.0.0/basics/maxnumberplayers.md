@@ -27,7 +27,7 @@ if( m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPl
 ​
 In connection approval delegate Netcode doesn't support an ability to send anything more than a Boolean back.
 
-Boss Room demonstrates a way to offer meaningful error codes to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
+Boss Room shows a way to offer meaningful error codes to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
 
 :::
 

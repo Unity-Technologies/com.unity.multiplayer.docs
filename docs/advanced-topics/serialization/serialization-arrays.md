@@ -3,7 +3,7 @@ id: arrays
 title: Arrays
 ---
 
-Arrays of [C# primitive types](cprimatives.md), like `int[]`, and [Unity primitive types](unity-primatives.md), such as `Vector3`, are serialized by built-in serialization code. Otherwise, any array of types that are not handled by the built-in serialization code, such as `string[]`, needs to be handled through a container class or structure that implements the  [`INetworkSerializable`](inetworkserializable.md) interface.
+Arrays of [C# primitive types](cprimatives.md), like `int[]`, and [Unity primitive types](unity-primatives.md), such as `Vector3`, are serialized by built-in serialization code. Otherwise, any array of types that aren't handled by the built-in serialization code, such as `string[]`, needs to be handled through a container class or structure that implements the  [`INetworkSerializable`](inetworkserializable.md) interface.
 
 ### Built-In Primitive Types Example
 Using built-in primitive types is fairly straight forward:
@@ -44,4 +44,4 @@ public class StringContainer : INetworkSerializable
 
 ### Native Containers
 
-Native containers, like `NativeArray`, are not natively supported as `RPC` parameters. However, custom support can be added for them; see [Custom Serialization](../custom-serialization.md)
+Native containers, like `NativeArray`, aren't natively supported as `RPC` parameters. However, custom support can be added for them; see [Custom Serialization](../custom-serialization.md)

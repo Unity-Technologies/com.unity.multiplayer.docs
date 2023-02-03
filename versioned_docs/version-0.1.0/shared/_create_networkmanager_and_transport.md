@@ -7,7 +7,7 @@ In this section we will add a Network Manager and add a Transport to our project
   :::tip
   We renamed the `GameObject` because:
     * It makes it  easier to refer to later.
-    * There should only be one **NetworkManager**, this is the object that contains the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
+    * There should only be one **NetworkManager**, this is the object that has the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
   :::
 
   You have now created a new `GameObject` called **NetworkManager**.

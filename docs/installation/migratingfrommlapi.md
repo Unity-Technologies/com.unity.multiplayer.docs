@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Use this guide to upgrade from MLAPI 0.1.0 to Netcode for GameObjects (Netcode) 1.0.0.
 
 :::caution Upgrade to Netcode for GameObjects
-It is recommended to upgrade to Netcode from MLAPI as soon as possible. MLAPI is not maintained and will not have future updates. MLAPI should be considered a deprecated product.
+It is recommended to upgrade to Netcode from MLAPI as soon as possible. MLAPI isn't maintained and won't have future updates. MLAPI should be considered a deprecated product.
 :::
 
 ## Backup your MLAPI project
@@ -45,24 +45,24 @@ After installing the patcher package, you can continue the upgrade process.
 ## Install the Netcode Package
 Follow the [installation guide](installation.md) to install Netcode.
 
-After installing the package, you will have error messages in the console, which is expected behavior because your project now contains MLAPI and Netcode at the same time. This will be remedied by the end of this guide.
+After installing the package, you will have error messages in the console, which is expected behavior because your project now has MLAPI and Netcode at the same time. This will be remedied by the end of this guide.
 
 Installing the Netcode package will also install some other packages such as [`Unity Transport`](https://docs.unity3d.com/Packages/com.unity.transport@latest/), [`Unity Collections`](https://docs.unity3d.com/Packages/com.unity.collections@latest/), [`Unity Burst`](https://docs.unity3d.com/Packages/com.unity.burst@latest/) etc.
 
-The `Burst` package requires an Editor restart. So restart your Unity after the installation. Unity will ask you to enter Fail Safe mode at the next boot, which is normal behaviour since all your network code is not compiling anymore.
+The `Burst` package requires an Editor restart. So restart your Unity after the installation. Unity will ask you to enter Fail Safe mode at the next boot, which is normal behaviour since all your network code isn't compiling anymore.
 
 :::warning
-Do not remove the old version of MLAPI yet. It will still be used in the next step.
+Don't remove the old version of MLAPI yet. It will still be used in the next step.
 :::
 
 ## Updating Script References
 
 Open the Netcode patcher window by selecting **Window** > **Netcode Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version. 
 
-Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
+Previously there were two major ways to use MLAPI in projects. You can either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
 
 :::tip
-If you are not sure which way of MLAPI you are using check whether you have the `Assets/MLAPI/Lib/MLAPI.dll` file in your project. If that's the case you are using the `Installer` version.
+If you aren't sure which way of MLAPI you are using check whether you have the `Assets/MLAPI/Lib/MLAPI.dll` file in your project. If that's the case you are using the `Installer` version.
 :::
 
 In the Patcher window, select **Installer** or **Source** button:
@@ -109,11 +109,11 @@ The Unity Multiplayer team tried to keep most of the MLAPI intact in Netcode. Ho
 
 ### `NetworkVariable` changes
 
-`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream. 
+`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) won't match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream. 
 
 ### Scene Management changes
 
-The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it by: 
+The scene management had some changes unifying the way users uses it. First, it's now under the `NetworkManager` Singleton. Consequently, you directly access it by: 
 
 ```csharp
 var sceneManager = NetworkManager.Singleton.SceneManager;
@@ -144,17 +144,17 @@ The page also includes information on nested serial types.
 SyncVars have been removed in Netcode. Convert your existing SyncVars into [NetworkVariables](../basics/networkvariable).
 
 ## Remove the Patcher Package
-After you are done upgrading your project, you can remove the Netcode Patcher package from your project in the Unity Package Manager as it is no longer needed.
+After you are done upgrading your project, you can remove the Netcode Patcher package from your project in the Unity Package Manager as it's no longer needed.
 
 ## Troubleshooting
 
-**Error: The type or namespace name 'MLAPI' could not be found**
+**Error: The type or namespace name 'MLAPI' can't be found**
 
 This error will pop up if your project uses Assembly definition (`.asmdef`) files. After switching to the package version your assembly definition files will need to reference `com.unity.multiplayer.mlapi.runtime`.
 
-**Error: The type or namespace name 'NetworkedBehaviour' could not be found**
+**Error: The type or namespace name 'NetworkedBehaviour' can't be found**
 
-If you get an error message like this (or for another Netcode type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names.
+If you get an error message like this (or for another Netcode type than `NetworkedBehaviour`) in the console it's most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names.
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 

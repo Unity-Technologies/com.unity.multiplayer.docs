@@ -13,7 +13,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ## [1.0.0-pre.16] - 2022-03-24
 
 ### Changes
-* Don't warn when overwriting settings in `NetworkSettings` (e.g. when calling the same `WithFooParameters` method twice).
+* Don't warn when overwriting settings in `NetworkSettings` (for example, when calling the same `WithFooParameters` method twice).
 * Added new methods to set security parameters: `NetworkSettings.WithSecureClientParameters` and `NetworkSettings.WithSecureServerParameters`. These replace the existing `WithSecureParameters`, which is now obsolete.
 * Updated Collections dependency to 1.2.3.
 
@@ -37,7 +37,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 * Added: `NetworkDriver.Create<>()` generic methods.
 
 ### Fixes
-* Fixed compilation on WebGL. Note that the platform is still unsupported, but at least including the package in a WebGL project will not create compilation errors anymore. Creating a `NetworkDriver` in WebGL projects will now produce a warning.
+* Fixed compilation on WebGL. Note that the platform is still unsupported, but at least including the package in a WebGL project won't create compilation errors anymore. Creating a `NetworkDriver` in WebGL projects will now produce a warning.
 
 ## [1.0.0-pre.13] - 2022-02-14
 
@@ -68,8 +68,8 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ## [1.0.0-pre.10] - 2021-12-02
 
 ### Fixes
-* On fragmented and reliable pipelines, sending a large packet when the reliable window was almost full could result in the packet being lost.
-* Fixed "pending sends" warning being emitted very often when sending to remote hosts.
+* On fragmented and reliable pipelines, sending a large packet when the reliable window was almost full can result in the packet being lost.
+* Fixed "pending sends" warning being emitted often when sending to remote hosts.
 * Revert decrease of MTU to 1384 on Xbox platforms (now back at 1400). It would cause issues for cross-platform communications.
 
 ## [1.0.0-pre.9] - 2021-11-26
@@ -103,7 +103,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 * Some public APIs that should have always been internal are now internal (`Base64`, `SHA256`, `HMACSHA256`, `NetworkEventQueue`, `UdpCHeader`, `UdpCProtocol`, `SessionIdToken`, `NativeMultiQueue`).
 
 ### Fixes
-* Fixed: Couldn't send a payload of the configured payload size on fragmented pipelines
+* Fixed: Cann't send a payload of the configured payload size on fragmented pipelines
 
 ## [1.0.0-pre.6] - 2021-10-14
 
@@ -113,7 +113,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Changes
 * Added `heartbeatTimeoutMS` in `NetworkConfigParameter` to support heartbeats (see above).
 * `NetworkDriver.Bind` is now synchronous when using Relay (matches behavior of other protocols).
-* `NetworkDriver.Bind` is not required to be called anymore for Relay clients (only for host).
+* `NetworkDriver.Bind` isn't required to be called anymore for Relay clients (only for host).
 * `EndSend` will now return an error if called with a writer that has failed writes.
 * MTU decreased to 1384 (from 1400) on Xbox platforms.
 * `Connect` will automatically bind the driver if not already bound. This was already done implicitly before, but now it's explicit (the `NetworkDriver.Bound` property will be true after a successful call to `Connect`).
@@ -122,7 +122,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Fixes
 * Fixed: Receiving a Disconnect message on DTLS would crash the receive job
 * Fixed: TLS server name might be set to nothing in Relay+DTLS, causing the handshake to fail
-* Fixed: Couldn't send large messages on fragmented pipeline if `requiredPayloadSize` was not provided to `BeginSend`
+* Fixed: Cann't send large messages on fragmented pipeline if `requiredPayloadSize` wasn't provided to `BeginSend`
 * Fixed: DTLS handshake messages were never resent if lost
 * Fixed: Clients wouldn't honor the endpoint their were bound to
 
@@ -136,7 +136,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ### Fixes
 * Fixed: Socket never created on unbound DTLS clients (causes handshake to fail)
 * Fixed: When using DTLS it would not properly read data packets
-* Fixed: When using DTLS it could possibly fail to send a packet that was at the MTU size.
+* Fixed: When using DTLS it can possibly fail to send a packet that was at the MTU size.
 
 ## [1.0.0-pre.4] - 2021-09-07
 
@@ -148,7 +148,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 ## [1.0.0-pre.3] - 2021-09-01
 
 ### New features
-* Removed references of TransportSamples from readme as they are not currently included in the package
+* Removed references of TransportSamples from readme as they're not currently included in the package
 * Stripping out un-needed files from the package
 
 ## [1.0.0-pre.2] - 2021-08-23

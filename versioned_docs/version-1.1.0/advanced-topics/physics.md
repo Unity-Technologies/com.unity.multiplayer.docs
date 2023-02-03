@@ -12,9 +12,9 @@ There are many different ways to do physics in multiplayer games. Netcode for Ga
 
 To use `NetworkRigidbody` add a `Rigidbody`, `NetworkTransform` and `NetworkRigidbody` component to your `NetworkObject`.
 
-Some collision events are not fired when using `NetworkRigidbody`.
+Some collision events aren't fired when using `NetworkRigidbody`.
 - On the `server` all collision and trigger events (such as OnCollisionEnter) will fire as expected and you can access / modify values of the `Rigidbody` such as velocity.
-- On the `clients` the rigidbody will be kinematic. Trigger events will still be fired but collision events will not be fired when colliding with other networked rigidbodies.
+- On the `clients` the rigidbody will be kinematic. Trigger events will still be fired but collision events won't be fired when colliding with other networked rigidbodies.
 
 :::tip
 If there is a need for a gameplay event to happen on a collision you can listen to `OnCollisionEnter` function on the server and synchronize the event via ClientRpc to all clients.

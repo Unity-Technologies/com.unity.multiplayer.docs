@@ -54,7 +54,7 @@ v0.1.1 is a hotfix for an Early Access release for Boss Room: Small Scale Co-op 
 
 ## New features
 
-Boss Room is a small-scale cooperative game sample project – built on top of the new experimental netcode library – designed as an educational sample that showcases typical gameplay patterns that are frequently featured in similar games. Use this project to explore the concepts and patterns behind a multiplayer game flow. It supports up to 8 players for testing multiplayer functionality.
+Boss Room is a small-scale cooperative game sample project – built on top of the new experimental netcode library – designed as an educational sample that showcases typical gameplay patterns that are often featured in similar games. Use this project to explore the concepts and patterns behind a multiplayer game flow. It supports up to 8 players for testing multiplayer functionality.
 
 * Access Boss Room by downloading the project and adding it using Package Manager.
 * Learn with Unity using the Boss Room source code, project files, and assets which include: 1 populated dungeon level, 4 character classes with 2 genders, combatant imps and boss, and a simple collaborative puzzle.
@@ -71,13 +71,13 @@ The following issues may occur for access and games:
 * Any player that plays the game and then returns to the Main Menu may be unable to Start or Join properly again, requiring you to restart the client. <!-- GOMPS-355 -->
 * Green quads may show on impact when the Archer arrow strikes enemies. This issue may only occur in the editor. <!-- GOMPS-460 -->
 * The Photon Transport currently generates some errors in the Player log related to the `PhotonCryptoPlugin`. <!-- GOMPS-453 -->
-* The welcome player message in the lobby indicates P2 (player 2) regardless of your generated name. Currently the Character Select scene displays “Player1” and “P1” in two locations, where it is intended that the user’s name be displayed.  <!-- GOMPS-428 --> 
+* The welcome player message in the lobby indicates P2 (player 2) regardless of your generated name. Currently the Character Select scene displays “Player1” and “P1” in two locations, where it's intended that the user’s name be displayed.  <!-- GOMPS-428 --> 
 * The spawner portal does not work in this release. <!-- PR #172 -->
 * Players may not reliably play another match when selecting **Return to Main Menu** during the post-game scene. This may be due to states not properly clearing. <!-- PR #246-->
 * Some actions may feel unresponsive and require action anticipation animations.
 * In some degraded network conditions, a replicated entity on a client can vanish from that client, creating the effect of being assailed by an invisible enemy. <!-- GOMPS-380-->
 * Boss collisions with a Pillar may not correctly apply a stun effect and shatter the pillar when using the Trample attack. <!-- PR #206 gomps-330 -->
-* The displayed graphical affects for casting and blocking a Bolt do not correctly match the caster and target.  <!-- gomps-417 PR #223-->
+* The displayed graphical affects for casting and blocking a Bolt don't correctly match the caster and target.  <!-- gomps-417 PR #223-->
 * Some areas of the Boss Room require updates to geometry seams and collisions, for short walls and lava pits. <!-- GOMPS-289-->
 
 ## Learn more

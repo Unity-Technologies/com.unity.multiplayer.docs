@@ -23,7 +23,7 @@ public class SomeNetworkBehaviour : NetworkBehaviour
     }
 }
 ```
-The above example uses the default [ServerRpc] attribute settings which only allows a client owner (client that owns `NetworkObject` associated with the `NetworkBehaviour` containing the `ServerRpc` method) invocation rights.  Any client that is not the owner will not be allowed to invoke the `ServerRpc`.
+The above example uses the default [ServerRpc] attribute settings which only allows a client owner (client that owns `NetworkObject` associated with the `NetworkBehaviour` containing the `ServerRpc` method) invocation rights.  Any client that isn't the owner won't be allowed to invoke the `ServerRpc`.
 
 ## ServerRpc Ownership And ServerRpcParams
 There are times where you might want any client to have `ServerRpc` invocation rights.  You can easily accomplish this by setting the `ServerRpc` attribute's `RequireOwnership` parameter to false like in the example below:
@@ -39,9 +39,9 @@ public void MyGlobalServerRpc(ServerRpcParams serverRpcParams = default)
     }
 }
 ```
-In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams). This parameter type is optional, but it can be very useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
+In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams). This parameter type is optional, but it can be useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
 :::important Best Practice
-Using the `ServerRpcParams.Receive.SenderClientId` property is considered the best practice to identify which client was invoking the `ServerRpc`. It is not recommended to send the client identifier via an additional `ulong` parameter added to the `ServerRpc`:<br/>
+Using the `ServerRpcParams.Receive.SenderClientId` property is considered the best practice to identify which client was invoking the `ServerRpc`. It isn't recommended to send the client identifier via an additional `ulong` parameter added to the `ServerRpc`:<br/>
 ```csharp
 [ServerRpc(RequireOwnership = false)]
 public void MyGlobalServerRpc(ulong clientId) // This is considered a bad practice (Not Recommended)
@@ -53,7 +53,7 @@ public void MyGlobalServerRpc(ulong clientId) // This is considered a bad practi
     }
 }
 ```
-The primary reason, especially when `RequireOwnership == false`, is that it could introduce potential security issues. The secondary reason is that this value is already automatically provided to you via `ServerRpcParams` without the additional `ulong` parameter bandwidth overhead you would incur by sending the client identifier as a `ServerRpc` parameter. 
+The primary reason, especially when `RequireOwnership == false`, is that it can introduce potential security issues. The secondary reason is that this value is already automatically provided to you via `ServerRpcParams` without the additional `ulong` parameter bandwidth overhead you would incur by sending the client identifier as a `ServerRpc` parameter. 
 :::
 
 Now, taking the best practices example into consideration, you might want to have other valid parameters added to your `ServerRpc`. When adding additional parameters other than the `ServerRpcParams` parameter, you **must** declare `ServerRpcParams` as the **last** parameter of the `ServerRpc`:
@@ -77,7 +77,7 @@ public void PlayerShootGunServerRpc(Vector3 lookWorldPosition, ServerRpcParams s
 Looking at the above example, we can see the client invoking the `PlayerShootGunServerRpc` method passes in a world position based on perhaps a screen space crosshair position to world space position, the `ServerRpcParams`, and the `ServerRpc` doesn't require ownership.  
 
 :::tip Alternate Owner Example
-Of course, if your project's design was such that a weapon changes ownership when it is picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
+Of course, if your project's design was such that a weapon changes ownership when it's picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
 ```csharp
 [ServerRpc]
 public void PlayerOwnerShootGunServerRpc(Vector3 lookWorldPosition)
