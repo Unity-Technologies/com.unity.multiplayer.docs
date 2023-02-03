@@ -3,350 +3,326 @@ id: Unity.Netcode.SceneEvent
 title: Unity.Netcode.SceneEvent
 ---
 
-# Class SceneEvent
+<div class="markdown level0 summary">
 
-
-Used for local notifications of various scene events. The OnSceneEvent
-of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-to provide scene event status.  
-*Note: This is only when EnableSceneManagement is enabled.*  
-*\*\*\* Do not start new scene events within scene event notification
-callbacks.*  
+Used for local notifications of various scene events. The OnSceneEvent of delegate type NetworkSceneManager.SceneEventDelegate uses this class to provide scene event status.  
+*Note: This is only when EnableSceneManagement is enabled.* *\*\*\* Do not start new scene events within scene event notification callbacks.*  
 See also:  
 SceneEventType
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
-SceneEvent
+</div>
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.ToString()
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
+##### **Assembly**: Netcode.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public class SceneEvent
 ```
 
+## Fields
 
+### AsyncOperation
 
-### Fields
+<div class="markdown level1 summary">
 
-#### AsyncOperation
+The returned by This is set for the following SceneEventTypes:
 
+- Load
+- Unload
 
-The returned by  
-This is set for the following SceneEventTypes:
+</div>
 
--   Load
--   Unload
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public AsyncOperation AsyncOperation
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | AsyncOperation |             |
 
-#### ClientId
+### ClientId
 
+<div class="markdown level1 summary">
 
 The client identifier can vary depending upon the following
 conditions:  
 
-1.  SceneEventTypes that always set the ClientId to the local client
-    identifier, are initiated (and processed locally) by the
-    server-host, and sent to all clients to be processed.  
-    -   Load
-    -   Unload
-    -   Synchronize
-    -   ReSynchronize
-2.  Events that always set the ClientId to the local client identifier,
-    are initiated (and processed locally) by a client or server-host,
-    and if initiated by a client will always be sent to and processed on
-    the server-host:
-    -   LoadComplete
-    -   UnloadComplete
-    -   SynchronizeComplete
+1.  SceneEventTypes that always set the ClientId to the local client identifier, are initiated (and processed locally) by the server-host, and sent to all clients to be processed.  
+    - Load
+    - Unload
+    - Synchronize
+    - ReSynchronize
+2.  Events that always set the ClientId to the local client identifier, are initiated (and processed locally) by a client or server-host, and if initiated by a client will always be sent to and processed on the server-host:
+    - LoadComplete
+    - UnloadComplete
+    - SynchronizeComplete
 3.  Events that always set the ClientId to the ServerId:
-    -   LoadEventCompleted
-    -   UnloadEventCompleted
+    - LoadEventCompleted
+    - UnloadEventCompleted
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ulong ClientId
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt64 |             |
 
-#### ClientsThatCompleted
+### ClientsThatCompleted
 
+<div class="markdown level1 summary">
 
-List of clients that completed a loading or unloading event.  
-This is set for the following SceneEventTypes:
+List of clients that completed a loading or unloading event. This is set for the following SceneEventTypes:
 
--   LoadEventCompleted
--   UnloadEventCompleted
+- LoadEventCompleted
+- UnloadEventCompleted
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public List<ulong> ClientsThatCompleted
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                                             | Description |
 |--------------------------------------------------|-------------|
 | System.Collections.Generic.List\<System.UInt64\> |             |
 
-#### ClientsThatTimedOut
+### ClientsThatTimedOut
 
+<div class="markdown level1 summary">
 
-List of clients that timed out during a loading or unloading event.  
-This is set for the following SceneEventTypes:
+List of clients that timed out during a loading or unloading event. This is set for the following SceneEventTypes:
 
--   LoadEventCompleted
--   UnloadEventCompleted
+- LoadEventCompleted
+- UnloadEventCompleted
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public List<ulong> ClientsThatTimedOut
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                                             | Description |
 |--------------------------------------------------|-------------|
 | System.Collections.Generic.List\<System.UInt64\> |             |
 
-#### LoadSceneMode
+### LoadSceneMode
 
+<div class="markdown level1 summary">
 
-If applicable, this reflects the type of scene loading or unloading that
-is occurring.  
-This is set for the following SceneEventTypes:
+If applicable, this reflects the type of scene loading or unloading that is occurring. This is set for the following SceneEventTypes:
 
--   Load
--   Unload
--   LoadComplete
--   UnloadComplete
--   LoadEventCompleted
--   UnloadEventCompleted
+- Load
+- Unload
+- LoadComplete
+- UnloadComplete
+- LoadEventCompleted
+- UnloadEventCompleted
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public LoadSceneMode LoadSceneMode
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | LoadSceneMode |             |
 
-#### Scene
+### Scene
 
+<div class="markdown level1 summary">
 
 When a scene is loaded, the Scene structure is returned.  
 This is set for the following SceneEventTypes:
 
--   LoadComplete
+- LoadComplete
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public Scene Scene
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type  | Description |
 |-------|-------------|
 | Scene |             |
 
-#### SceneEventType
+### SceneEventType
 
+<div class="markdown level1 summary">
 
 Will always be set to the current SceneEventType
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public SceneEventType SceneEventType
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type           | Description |
 |----------------|-------------|
 | SceneEventType |             |
 
-#### SceneName
+### SceneName
 
+<div class="markdown level1 summary">
 
 This will be set to the scene name that the event pertains to.  
 This is set for the following SceneEventTypes:
 
--   Load
--   Unload
--   LoadComplete
--   UnloadComplete
--   LoadEventCompleted
--   UnloadEventCompleted
+- Load
+- Unload
+- LoadComplete
+- UnloadComplete
+- LoadEventCompleted
+- UnloadEventCompleted
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public string SceneName
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.String |             |
-
-
-

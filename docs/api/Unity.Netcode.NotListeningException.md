@@ -1,243 +1,243 @@
 ---
 id: Unity.Netcode.NotListeningException
 title: Unity.Netcode.NotListeningException
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:50 pm
 ---
 
-# Class NotListeningException
+<div class="markdown level0 summary">
 
+Exception thrown when the operation require NetworkManager to be listening.
 
-Exception thrown when the operation require NetworkManager to be
-listening.
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
-##### Inheritance
+</div>
 
+<div class="level1">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level2">
 
+System.Dynamic.ExpandoObject
 
-System.Exception
+</div>
 
+</div>
 
+<div classs="implements">
 
+## Implements
 
-NotListeningException
-
-
-
-
-
-
-##### Implements
-
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
+</div>
 
+</div>
 
-##### Inherited Members
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-System.Exception.GetBaseException()
+Exception.GetBaseException()
 
+</div>
 
+<div>
 
+Exception.ToString()
 
+</div>
 
-System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,
-System.Runtime.Serialization.StreamingContext)
+<div>
 
+Exception.GetObjectData(SerializationInfo, StreamingContext)
 
+</div>
 
+<div>
 
+Exception.GetType()
 
-System.Exception.GetType()
+</div>
 
+<div>
 
+Exception.Message
 
+</div>
 
+<div>
 
-System.Exception.ToString()
+Exception.Data
 
+</div>
 
+<div>
 
+Exception.InnerException
 
+</div>
 
-System.Exception.Data
+<div>
 
+Exception.TargetSite
 
+</div>
 
+<div>
 
+Exception.StackTrace
 
-System.Exception.HelpLink
+</div>
 
+<div>
 
+Exception.HelpLink
 
+</div>
 
+<div>
 
-System.Exception.HResult
+Exception.Source
 
+</div>
 
+<div>
 
+Exception.HResult
 
+</div>
 
-System.Exception.InnerException
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
-System.Exception.Message
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
-System.Exception.Source
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
-System.Exception.StackTrace
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-System.Exception.TargetSite
-
-
-
-
-
-System.Object.Equals(System.Object)
-
-
-
-
-
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetHashCode()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
-public class NotListeningException : Exception, _Exception, ISerializable
+public class NotListeningException : Exception, ISerializable, _Exception
 ```
 
+## Constructors
 
+### NotListeningException()
 
-### Constructors
-
-#### NotListeningException()
-
+<div class="markdown level1 summary">
 
 Constructs a NotListeningException
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NotListeningException()
 ```
 
+### NotListeningException(String)
 
-
-#### NotListeningException(String)
-
+<div class="markdown level1 summary">
 
 Constructs a NotListeningException with a message
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NotListeningException(string message)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name    | Description           |
 |---------------|---------|-----------------------|
 | System.String | message | The exception message |
 
-#### NotListeningException(String, Exception)
+### NotListeningException(String, Exception)
 
+<div class="markdown level1 summary">
 
 Constructs a NotListeningException with a message and a inner exception
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NotListeningException(string message, Exception inner)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type             | Name    | Description           |
 |------------------|---------|-----------------------|
@@ -246,17 +246,14 @@ public NotListeningException(string message, Exception inner)
 
 ### Implements
 
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
-
+</div>

@@ -1,154 +1,153 @@
 ---
 id: Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters
 title: Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:38:50 pm
 ---
 
-# Struct UnityTransport.SimulatorParameters
-
+<div class="markdown level0 summary">
 
 Parameters for the Network Simulator
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.Equals(Object)
 
+</div>
 
+<div>
 
-System.ValueType.Equals(System.Object)
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
+ValueType.ToString()
 
+</div>
 
-System.ValueType.GetHashCode()
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode.Transports.UTP
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 [Serializable]
 public struct SimulatorParameters
 ```
 
+## Fields
 
+### PacketDelayMS
 
-### Fields
-
-#### PacketDelayMS
-
+<div class="markdown level1 summary">
 
 Delay to add to every send and received packet (in milliseconds). Only
+
 applies in the editor and in development builds. The value is ignored in
+
 production builds.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int PacketDelayMS
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### PacketDropRate
+### PacketDropRate
 
+<div class="markdown level1 summary">
 
 Percentage of sent and received packets to drop. Only applies in the
+
 editor and in the editor and in developments builds.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int PacketDropRate
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### PacketJitterMS
+### PacketJitterMS
 
+<div class="markdown level1 summary">
 
 Jitter (random variation) to add/substract to the packet delay (in
+
 milliseconds). Only applies in the editor and in development builds. The
+
 value is ignored in production builds.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int PacketJitterMS
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
-
-
-

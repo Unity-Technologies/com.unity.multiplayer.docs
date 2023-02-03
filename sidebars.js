@@ -77,6 +77,33 @@ module.exports = {
                     "id": "relay/relay"
                 },
                 {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Porting from client-hosted to DGS",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/client-vs-dgs"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/porting-to-dgs-game-changes"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/optimizing-server-builds"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/hosting-considerations"
+                        },
+                    ]
+                },
+                {
                     "type": "doc",
                     "id": "advanced-topics/session-management"
                 },
@@ -327,27 +354,11 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "tutorials/helloworld"
+                    "id": "tutorials/get-started-ngo"
                 },
                 {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Learning Netcode with Goldenpath",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/gp_intro"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_one"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_two"
-                        },
-                    ],
-
+                    "type": "doc",
+                    "id": "tutorials/command-line-helper"
                 },
 
             ]
@@ -365,6 +376,10 @@ module.exports = {
                         {
                             "type": "doc",
                             "id": "learn/bossroom/bossroom"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom-architecture"
                         },
                         {
                             "type": "doc",
@@ -617,6 +632,26 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
                         "label": "INetworkPrefabInstanceHandler"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefab",
+                        "label": "NetworkPrefab"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabs",
+                        "label": "NetworkPrefabs"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabOverride",
+                        "label": "NetworkPrefabOverride"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabsList",
+                        "label": "NetworkPrefabsList"
                     },
                     {
                         "type": "doc",
@@ -962,6 +997,11 @@ module.exports = {
                         "id": "api/Unity.Netcode.UserNetworkVariableSerialization-1",
                         "label": "UserNetworkVariableSerialization-1"
                     },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkVariableSerializationTypes",
+                        "label": "NetworkVariableSerializationTypes"
+                    },
                 ],
             },
             {
@@ -1101,6 +1141,11 @@ module.exports = {
                         "id": "api/Unity.Netcode.INetworkSerializable",
                         "label": "INetworkSerializable"
                     },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkVariableSerializationTypes",
+                        "label": "NetworkVariableSerializationTypes"
+                    },
                 ]
             },
             {
@@ -1136,6 +1181,11 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.Transports.UTP.ErrorUtilities",
                         "label": "Transports.UTP.ErrorUtilities"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.SecretsLoaderHelper",
+                        "label": "Transports.UTP.SecretsLoaderHelper"
                     },
                     {
                         "type": "doc",
