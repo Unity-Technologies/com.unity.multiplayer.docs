@@ -10,7 +10,7 @@ settings.WithNetworkConfigParameters(disconnectTimeoutMS: 1000);
 var driver = NetworkDriver.Create(settings);
 ```
 ## Extending the NetworkSettings
-When extending Unity Transport it is often useful to add custom parameters or settings that users can set to define the configuration of the `NetworkDriver`.
+When extending Unity Transport it's often useful to add custom parameters or settings that users can set to define the configuration of the `NetworkDriver`.
 That can be done by extending the `NetworkSettings` API so the custom Network Interfaces or Pipelines can capture the parameter values inside the Initialization method as detailed in the following sections.
 
 ### INetworkParameter

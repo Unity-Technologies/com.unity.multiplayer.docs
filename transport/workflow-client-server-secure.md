@@ -51,7 +51,7 @@ Now that you have a root private key, you can generate the root certificate.
 openssl req -x509 -new -nodes -key clientPrivateKeyForRootCA.pem -sha256 -days 1095 -out myGameClientCA.pem
 ```
 
-You will be prompted to answer several questions. Most of the answers are not that important within the present context. It is, however, useful to use a common name that makes sense for you to identify this certificate amongst others. Ideally, you would want to use your domain name if you have one.
+You will be prompted to answer several questions. Most of the answers aren't that important within the present context. It is, however, useful to use a common name that makes sense for you to identify this certificate amongst others. Ideally, you would want to use your domain name if you have one.
 
 #### Generate the root-signed certificate to use with the server
 
@@ -67,7 +67,7 @@ You can use this private key to generate a certificate signing request.
 openssl req -new -key myGameServerPrivateKey.pem -out myGameServerCertificateSigningRequest.pem
 ```
 
-You'll be prompted with the same questions you answered when generating the root certificate. The answers are no more important (except for the common name: it is recommended to use the server's hostname).
+You'll be prompted with the same questions you answered when generating the root certificate. The answers are no more important (except for the common name: it's recommended to use the server's hostname).
 
 Finally, you can create the certificate file the server will use to authenticate itself using the generated files:
 
@@ -134,7 +134,7 @@ That's it for the server!
 
 ### Creating a secure client
 
-The secure client is very similar to the secure server. The only difference is in how the `NetworkSettings` object is configured.
+The secure client is similar to the secure server. The only difference is in how the `NetworkSettings` object is configured.
 
 ```csharp
 void Start ()
@@ -152,5 +152,5 @@ void Start ()
 You should now have a secure connection between the server and its clients!
 
 :::note 
-If you create clients for multiple platforms, it is important for all clients to continue using the same root certificate if they communicate with the same server.
+If you create clients for multiple platforms, it's important for all clients to continue using the same root certificate if they communicate with the same server.
 :::

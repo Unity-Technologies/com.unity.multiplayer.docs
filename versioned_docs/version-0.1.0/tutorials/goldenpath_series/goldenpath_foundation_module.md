@@ -4,7 +4,7 @@ title:  Golden Path Foundation Module
 description: Tutorial that explains how to create the foundation for all the future Goldan path modules, the foundation module includes, creating a new project, Installing MLAPI,  creating and testing the basic networking building blocks, and creating and testing a commandline helper. 
 ---
 
-In this tutorial we will build on the work we have already done in Hello World and add in a few more features. As there are some minor differences between this tutorial and the Hello World series we will be starting afresh. You do not have to have completed either of the Hello World tutorials to complete this one, however, if you are new to Unity then we recommended that you complete them in order to familiarise yourself with Unity.
+In this tutorial we will build on the work we have already done in Hello World and add in a few more features. As there are some minor differences between this tutorial and the Hello World series we will be starting afresh. You don't have to have completed either of the Hello World tutorials to complete this one, however, if you are new to Unity then we recommended that you complete them to familiarise yourself with Unity.
 
 
 ## Requirements

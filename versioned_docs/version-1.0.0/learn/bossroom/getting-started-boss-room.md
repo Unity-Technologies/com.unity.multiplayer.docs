@@ -6,7 +6,7 @@ description: Learn more about installing and running the Boss Room game sample.
 
 ![Boss Room banner](/img/banner.png)
 
-Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode patterns that are frequently featured in similar multiplayer games.
+Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. it's an educational sample designed to showcase typical netcode patterns that are often featured in similar multiplayer games.
 
 PLEASE NOTE: Boss Room is compatible with the latest Unity Long Term Support (LTS) editor version, currently 2021 LTS. Please include standalone support for Windows/Mac in your installation.
 
@@ -49,7 +49,7 @@ The first time you open the project, Unity will import all assets, which will ta
 
 ## Register the project with Unity Gaming Services (UGS)
 
-This project leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must first [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the **Unity Dashboard**, and enable both the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services.
+This project leverages several services from UGS to ease connectivity between players. To use these services inside your project, you must first [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the **Unity Dashboard**, and enable both the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services.
 
 ## Open the project
 
@@ -81,7 +81,7 @@ To run multiple instances of the same app, you need to use the command line:
 
 ## Multiplayer over internet
 
-In contrast to running a local setup, when playing over internet we do not necessarily need a built executable. You can run the game in editor.
+In contrast to running a local setup, when playing over internet we don't necessarily need a built executable. You can run the game in editor.
 
 Running the game over internet currently requires using [Port Forwarding](#port-forwarding) or [Integrating Boss Room with Unity Gaming Services](#integrating-boss-room-with-unity-gaming-services).
 
@@ -156,7 +156,7 @@ Next is lobby and relay.
 * After joining a lobby, the [relay join code passes through lobby metadata](https://docs.unity.com/lobby/relay-integrations.html) to connect to the host via UTP Relay transport.
 * The host receives a request to approve the connecting client, and the host would server-authoritatively switch the player to the appropriate scene.
 
-Currently, the Lobby service has to be [polled for updates](https://docs.unity.com/lobby/polling-for-lobby-state.html). This is not ideal for a responsive feel to character selection; however, when there is an option to get real time updates from the Lobby service, it would be a good alternative way to implement something like this.
+Currently, the Lobby service has to be [polled for updates](https://docs.unity.com/lobby/polling-for-lobby-state.html). This isn't ideal for a responsive feel to character selection; however, when there is an option to get real time updates from the Lobby service, it would be a good alternative way to implement something like this.
 
 ##### Disconnection and Reconnection
 
@@ -167,16 +167,16 @@ Boss Room uses a [session management](../../advanced-topics/session-management.m
 The way Boss Room handles restoration of user data on reconnection can be found in [SessionManager.cs - SetupConnectingPlayerSessionData](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs), which is called as a part of a connection approval check that is handled by the host (see [ServerGameNetPortal.s – ApprovalCheck](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs)).
 
 :::important
-It's important to promptly remove disconnected players from the lobby. Otherwise, the disconnected player cannot rejoin the lobby because they are still considered in it.
+It's important to promptly remove disconnected players from the lobby. Otherwise, the disconnected player can't rejoin the lobby because they're still considered in it.
 :::
 
-When a player [disconnects from Relay](https://docs.unity.com/relay/disconnection.html), eventually the Lobby and Relay service integration (necessary before we run UTP connection) kicks out the disconnected players. However, the timeout for disconnect is quite long (~2 minutes), and we do not rely solely on this mechanism.
+When a player [disconnects from Relay](https://docs.unity.com/relay/disconnection.html), eventually the Lobby and Relay service integration (necessary before we run UTP connection) kicks out the disconnected players. However, the timeout for disconnect is quite long (~2 minutes), and we don't rely solely on this mechanism.
 
 To make the process of leaving lobby more reliable, there are several additional cleanup mechanisms:
-* The client code contains application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)) that sends a request to remove the player from the lobby
-* The host has special logic that removes the disconnected player from the lobby as soon as the host knows about it (`NetworkManager.OnClientDisconnectCallback`). This is helpful when the client has crashed and couldn't send a "leave lobby" request.
+* The client code has application quit logic (see [ApplicationController.cs - OnWantToQuit and LeaveSession](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)) that sends a request to remove the player from the lobby
+* The host has special logic that removes the disconnected player from the lobby as soon as the host knows about it (`NetworkManager.OnClientDisconnectCallback`). This is helpful when the client has crashed and cann't send a "leave lobby" request.
   * For this to work, the host uses `SessionManager` to store the mapping between UGS playerId and their NGO clientId. You can find this logic in [ServerGameNetPortal.cs - OnClientDisconnect](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs).
-* Lastly, the client contains checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs).
+* Lastly, the client has checks that determine if the host has left the lobby, and if so, the client leaves the lobby too. The code for this can be found at [ClientGameNetPortal.cs - OnDisconnectOrTimeout](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ClientGameNetPortal.cs).
 
 ## Troubleshooting
 
@@ -195,7 +195,7 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 1. In the Finder on your Mac, locate the application you want to open.
 
   :::note
-  Do not use Launchpad, it does not allow you to access the shortcut menu.
+  Don't use Launchpad, it does not allow you to access the shortcut menu.
   :::
 
 1. Control-click the app icon, then choose **Open** from the shortcut menu.

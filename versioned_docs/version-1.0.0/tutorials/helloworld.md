@@ -4,9 +4,9 @@ title: Your Netcode "Hello World" Project
 description: Tutorial that explains creating a project, installing the  Netcode for GameObjects package, and creating the basic components for your first networked game.
 ---
 
-A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It is also used as a sanity test to make sure that a computer language is correctly installed and that the operator understands how to use it.
+A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it's  the first program written by people learning to code. it's also used as a sanity test to make sure that a computer language is correctly installed and that the operator understands how to use it.
 
-This "Hello World" tutorial walks you through creating a project, installing Netcode for GameObjects (Netcode), and creating the basic components for your first networked game. It is also the base for the [Golden Path series](goldenpath_series/gp_intro.md).
+This "Hello World" tutorial walks you through creating a project, installing Netcode for GameObjects (Netcode), and creating the basic components for your first networked game. it's also the base for the [Golden Path series](goldenpath_series/gp_intro.md).
 
 :::note
 The videos on this page were removed because they were out-of-date and caused more confusion than help. All videos in the Hello World and Golden Path series will be recreated and added back at a later time.
@@ -39,7 +39,7 @@ In this section we will add a Network Manager and add Unity Transport (UTP) to o
   :::tip
   We renamed the `GameObject` because:
     * It makes it  easier to refer to later.
-    * There should only be one **NetworkManager**, this is the object that contains the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
+    * There should only be one **NetworkManager**, this is the object that has the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
   :::
 
 2. Select **NetworkManager**.
@@ -60,19 +60,19 @@ This section adds in a player object and spawns it for each connected player.
 1. While **Player** is selected, add a **Netcode** > `NetworkObject` component in the Inspector Tab.
 1. Click the **Assets** folder under the **Project** tab.
 2. Right-click inside the **Assets** folder to **Create** > **Folder** and call it **Prefabs**.
-3. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
+3. Make **Player** a Prefab by dragging it to **Prefabs** folder you just created.
 4. Delete **Player** from scene.
 
   :::tip
-  We remove the **Player** object from the scene because we assign this network prefab to the `Player Prefab` property in the `NetworkManager` component. The library does not support defining a player object as an in-scene placed `NetworkObject`.
+  We remove the **Player** object from the scene because we assign this network Prefab to the `Player Prefab` property in the `NetworkManager` component. The library does not support defining a player object as an in-scene placed `NetworkObject`.
   :::
 
 5. Select `NetworkManager`.
 6. Inside the `NetworkManager` component tab, locate the  `Player Prefab` field. 
-7. Drag this player prefab from above into this field.
+7. Drag this player Prefab from above into this field.
 
   :::important
-  When you drop the prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as the `Player Prefab` no player object will be spawned.
+  When you drop the Prefab into the `Player Prefab` slot, you are telling the library that when a client connects to the game, automatically spawn this Prefab as the character for the connecting client. If you don't have any Prefab set as the `Player Prefab` no player object will be spawned.
   :::
 
 1. Create a **3D Object->Plane**, centered at (0,0,0).

@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Frequently Asked Questions
+title: often Asked Questions
 ---
 
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
@@ -24,7 +24,7 @@ Matchmaking would have to be implemented using 3rd party matchmaking services. M
 
 ### How can you provide the server address or any connection information before starting the client?
    
-MLAPI does not deal with IP addresses or any connection informations (e.g. relay region and room name). This is the role of your transport layer. To provide such information, the best way to do it is to get your transport component (e.g. UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
+MLAPI does not deal with IP addresses or any connection informations (for example, relay region and room name). This is the role of your transport layer. To provide such information, the best way to do it's to get your transport component (for example, UNetTransport) on the NetworkManager and give this component your information. Let's take UNetTransport as an example : 
    
 ```csharp
 UNetTransport transport = MLAPI.NetworkManager.Singleton.GetComponent<UNetTransport>();
@@ -52,7 +52,7 @@ We recommend the following:
    It should work just like over LAN you just have to connect to the public IP itself. Make sure to open UDP on the router. Many forward ports tutorials are available to review, including this option https://portforward.com/.
 1. Use a relay. 
    
-   There is an [unofficial MLAPI relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You could also use MLAPI's list server to browse through all hosts.
+   There is an [unofficial MLAPI relay application](https://github.com/MidLevel/MLAPI.Relay) which you can try to host on a server. The Relay server uses IP addresses to index hosts. You can connect to it using an IP address and port, but it will be routed through the relay server. You can also use MLAPI's list server to browse through all hosts.
    
    The other option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
 
@@ -63,7 +63,7 @@ We recommend the following:
 
 ### Is it good for add Spawnable object into NetworkConfig after start host? 
 
-Yes, but you need to ensure that all your clients add the same object to their configs as well. You cannot only add it on the host.
+Yes, but you need to ensure that all your clients add the same object to their configs as well. You can't only add it on the host.
 
 ### What is the best method for spawning?
 
@@ -101,7 +101,7 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 1. In the Finder on your Mac, locate the application you want to open.
   
   :::note
-  Do not use Launchpad, it does not allow you to access the shortcut menu.
+  Don't use Launchpad, it does not allow you to access the shortcut menu.
   :::
 
 1. Control-click the app icon, then choose **Open** from the shortcut menu.

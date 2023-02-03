@@ -8,11 +8,11 @@ MLAPI has two main methods of syncing information between players. `RPC` (Remote
 
 ## RPCs
 
-The concept of an `RPC` is common not only in video games but in the software industry in general. They are ways to call methods on objects that are not in the same executable. 
+The concept of an `RPC` is common not only in video games but in the software industry in general. They're ways to call methods on objects that aren't in the same executable. 
 
 At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters. 
 
-When calling an `RPC`, you call a method remotely on an object that could be anywhere in the world. They are "events" you can trigger when needed. 
+When calling an `RPC`, you call a method remotely on an object that can be anywhere in the world. They're "events" you can trigger when needed. 
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
@@ -39,7 +39,7 @@ Using the Boss Room's door as an example. A player's client needs to receive the
 
 If we sent an `RPC` to all clients, then all players connecting mid game after that `RPC` are sent will miss that information and have the wrong visual on their clients.
 
-In that case, it is preferable to use `NetworkVariable`s like shown here.
+In that case, it's preferable to use `NetworkVariable`s like shown here.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/NetworkDoorState.cs
@@ -52,9 +52,9 @@ It uses a `BoolNetworkVariable` to represent the "IsOpen" state. If I open the d
 
 `RPC`s are simpler.
 
-If you have a temporary event like an explosion, you do not need a replicated state for this. It would not make sense. You would have an "unexploded" state that would need to be synced everytime a new player connected? From a design perspective, you might not want to represent these events as state.
+If you have a temporary event like an explosion, you don't need a replicated state for this. It would not make sense. You would have an "unexploded" state that would need to be synced everytime a new player connected? From a design perspective, you might not want to represent these events as state.
 
-An explosion could use an `RPC` for the event, but the effect of the explosion should be using `NetworkVariable`s ( for example player's knockback and health decrease). A newly connected player doesn't care about an explosion that happened 5 seconds ago. They do care about the current health of the players around that explosion though.
+An explosion can use an `RPC` for the event, but the effect of the explosion should be using `NetworkVariable`s ( for example player's knockback and health decrease). A newly connected player doesn't care about an explosion that happened 5 seconds ago. They do care about the current health of the players around that explosion though.
   
 Actions in Boss Room are a great example for this. The area of effect action (`AoeAction`) triggers an `RPC` when the action is activated (showing a VFX around the affected area). The imp's health (`NetworkVariable`s) is updated. If a new player connects, they will see the damaged imps. We would not care about the area of effect ability's VFX, which works great with a transient `RPC`.
    

@@ -1,157 +1,151 @@
 ---
 id: Unity.Netcode.UserNetworkVariableSerialization-1
 title: Unity.Netcode.UserNetworkVariableSerialization-1
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:39:22 pm
 ---
 
-# Class UserNetworkVariableSerialization\<T\>
+<div class="markdown level0 summary">
+This class is used to register user serialization with NetworkVariables for types that are serialized via user serialization, such as with FastBufferReader and FastBufferWriter extension methods. Finding those methods isn't achievable efficiently at runtime, so this allows users to tell NetworkVariable about those extension methods (or simply pass in a lambda)
 
+</div>
 
-This class is used to register user serialization with NetworkVariables
-for types that are serialized via user serialization, such as with
-FastBufferReader and FastBufferWriter extension methods. Finding those
-methods isn't achievable efficiently at runtime, so this allows users to
-tell NetworkVariable about those extension methods (or simply pass in a
-lambda)
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
-##### Inheritance
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
-System.Object
+</div>
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
-UserNetworkVariableSerialization\<T\>
+<div>
 
+Object.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object)
 
+</div>
 
-##### Inherited Members
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.Object.Equals(System.Object)
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
+Object.GetHashCode()
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
-System.Object.GetHashCode()
+Object.MemberwiseClone()
 
+</div>
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-System.Object.GetType()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public class UserNetworkVariableSerialization<T>
 ```
 
-
-
-##### Type Parameters
+## Type Parameters
 
 | Name | Description |
 |------|-------------|
 | T    |             |
 
-### Fields
+## Fields
 
-#### ReadValue
+### ReadValue
 
+<div class="markdown level1 summary">
 
 The UserNetworkVariableSerialization\<T\>.ReadValueDelegate delegate
+
 handler declaration
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static UserNetworkVariableSerialization<T>.ReadValueDelegate ReadValue
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                                                   | Description |
 |--------------------------------------------------------|-------------|
 | UserNetworkVariableSerialization.ReadValueDelegate\<\> |             |
 
-#### WriteValue
+### WriteValue
 
+<div class="markdown level1 summary">
 
 The UserNetworkVariableSerialization\<T\>.WriteValueDelegate delegate
+
 handler declaration
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static UserNetworkVariableSerialization<T>.WriteValueDelegate WriteValue
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                                                    | Description |
 |---------------------------------------------------------|-------------|
 | UserNetworkVariableSerialization.WriteValueDelegate\<\> |             |
-
-
-

@@ -11,7 +11,7 @@ Use this guide to install Unity Netcode for GameObjects (Netcode) 1.0.0 and late
 Before installing Netcode, you should ensure you have:
   * An active Unity account with a valid license.
   * A Netcode-supported installation of Unity. See [Netcode's requirements](#netcode-installation-requirements) for full details.
-  * An existing Unity project. If you do not have a project yet, we recommend using the [Hello World](../tutorials/helloworld.md) example to test the Netcode installation process and learn some of the basic features of Netcode.
+  * An existing Unity project. If you don't have a project yet, we recommend using the [Hello World](../tutorials/helloworld.md) example to test the Netcode installation process and learn some of the basic features of Netcode.
 
 ### Netcode Installation Requirements
 
@@ -32,8 +32,8 @@ Netcode does not support the WebGL platform because it does not allow access to 
 There are third party transports provided by the community that may enable you to use Netcode on WebGL platforms. A list of these transports are found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
 
 Use with caution:
-* You may encounter bugs and issues while using Netcode on WebGL, and we will not prioritize fixing those issues.
-* The server or host cannot be a WebGL client, but a Desktop or Mobile build.
+* You may encounter bugs and issues while using Netcode on WebGL, and we won't prioritize fixing those issues.
+* The server or host can't be a WebGL client, but a Desktop or Mobile build.
 * You may experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
 :::
 

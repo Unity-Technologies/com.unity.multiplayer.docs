@@ -563,6 +563,10 @@ module.exports = {
                 "type": "doc",
                 "id": "learn/faq"
             },
+            {
+                "type": "doc",
+                "id": "reference/dedicated-server"
+            },
         ],
 
     api:
@@ -632,6 +636,26 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
                         "label": "INetworkPrefabInstanceHandler"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefab",
+                        "label": "NetworkPrefab"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabs",
+                        "label": "NetworkPrefabs"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabOverride",
+                        "label": "NetworkPrefabOverride"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabsList",
+                        "label": "NetworkPrefabsList"
                     },
                     {
                         "type": "doc",
@@ -977,6 +1001,11 @@ module.exports = {
                         "id": "api/Unity.Netcode.UserNetworkVariableSerialization-1",
                         "label": "UserNetworkVariableSerialization-1"
                     },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkVariableSerializationTypes",
+                        "label": "NetworkVariableSerializationTypes"
+                    },
                 ],
             },
             {
@@ -1116,6 +1145,11 @@ module.exports = {
                         "id": "api/Unity.Netcode.INetworkSerializable",
                         "label": "INetworkSerializable"
                     },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkVariableSerializationTypes",
+                        "label": "NetworkVariableSerializationTypes"
+                    },
                 ]
             },
             {
@@ -1151,6 +1185,11 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.Transports.UTP.ErrorUtilities",
                         "label": "Transports.UTP.ErrorUtilities"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.SecretsLoaderHelper",
+                        "label": "Transports.UTP.SecretsLoaderHelper"
                     },
                     {
                         "type": "doc",

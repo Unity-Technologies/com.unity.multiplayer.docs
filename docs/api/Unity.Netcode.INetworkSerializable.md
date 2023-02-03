@@ -1,65 +1,60 @@
 ---
 id: Unity.Netcode.INetworkSerializable
 title: Unity.Netcode.INetworkSerializable
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:57 pm
 ---
 
-# Interface INetworkSerializable
-
+<div class="markdown level0 summary">
 
 Interface for implementing custom serializable types.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public interface INetworkSerializable
 ```
 
+## Methods
 
+### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
-### Methods
+<div class="markdown level1 summary">
 
-#### NetworkSerialize\<T\>(BufferSerializer\<T\>)
+Provides bi-directional serialization to read and write the desired data to serialize this type.
 
+</div>
 
-Provides bi-directional serialization to read and write the desired data
-to serialize this type.
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 void NetworkSerialize<T>(BufferSerializer<T> serializer)
+
     where T : IReaderWriter
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type                  | Name       | Description                                       |
 |-----------------------|------------|---------------------------------------------------|
 | BufferSerializer\<T\> | serializer | The serializer to use to read and write the data. |
 
-##### Type Parameters
+#### Type Parameters
 
 | Name | Description                                                                                                              |
 |------|--------------------------------------------------------------------------------------------------------------------------|
 | T    | Either BufferSerializerReader or BufferSerializerWriter, depending whether the serializer is in read mode or write mode. |
-
-
-

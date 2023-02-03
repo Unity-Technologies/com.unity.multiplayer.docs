@@ -1,123 +1,90 @@
 ---
 id: Unity.Netcode.SceneEventType
 title: Unity.Netcode.SceneEventType
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:37:18 pm
 ---
 
-# Enum SceneEventType
-
+<div class="markdown level0 summary">
 
 The different types of scene events communicated between a server and
-client.  
+
+client.
 Used by NetworkSceneManager for Unity.Netcode.SceneEventMessage
-messages.  
-*Note: This is only when EnableSceneManagement is enabled.*  
-See also:  
+
+messages.
+*Note: This is only when EnableSceneManagement is enabled.*
+See also:
 SceneEvent
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public enum SceneEventType : byte
 ```
 
+## Fields
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Load
-
-Load a scene  
-**Invocation:** Server Side  
-**Message Flow:** Server to client  
-**Event Notification:** Both server and client are notified a load scene
-event started
-
-LoadComplete
-
-A client has finished loading a scene  
-**Invocation:** Client Side  
-**Message Flow:** Client to Server  
-**Event Notification:** Both server and client receive a local
-notification.
-
-LoadEventCompleted
-
-All clients have finished loading a scene  
-**Invocation:** Server Side  
-**Message Flow:** Server to Client  
-**Event Notification:** Both server and client receive a local
-notification containing the clients that finished as well as the clients
-that timed out(*if any*).
-
-ReSynchronize
-
-Game session re-synchronization of NetworkObjects that were destroyed
-during a Synchronize event  
-**Invocation:** Server Side  
-**Message Flow:** Server to client  
-**Event Notification:** Both server and client receive a local
-notification  
-
-Synchronize
-
-Synchronizes current game session state for newly approved clients  
-**Invocation:** Server Side  
-**Message Flow:** Server to client  
-**Event Notification:** Server and Client receives a local notification
-(*server receives the ClientId being synchronized*).
-
-SynchronizeComplete
-
-A client has finished synchronizing from a Synchronize event  
-**Invocation:** Client Side  
-**Message Flow:** Client to Server  
-**Event Notification:** Both server and client receive a local
-notification.
-
-Unload
-
-Unload a scene  
-**Invocation:** Server Side  
-**Message Flow:** Server to client  
-**Event Notification:** Both server and client are notified an unload
-scene event started.
-
-UnloadComplete
-
-A client has finished unloading a scene  
-**Invocation:** Client Side  
-**Message Flow:** Client to Server  
-**Event Notification:** Both server and client receive a local
-notification.
-
-UnloadEventCompleted
-
-All clients have unloaded a scene  
-**Invocation:** Server Side  
-**Message Flow:** Server to Client  
-**Event Notification:** Both server and client receive a local
-notification containing the clients that finished as well as the clients
-that timed out(*if any*).
-
+|Name|Description|
+|--- |--- |
+|Load|Load a scene
+Invocation: Server Side
+Message Flow: Server to client
+Event Notification: Both server and client are notified
+a load scene event started|
+|LoadComplete|A client has finished loading a scene
+Invocation: Client Side
+Message Flow: Client to Server
+Event Notification: Both server and client receive a
+local notification.|
+|LoadEventCompleted|All clients have finished loading a scene
+Invocation: Server Side
+Message Flow: Server to Client
+Event Notification: Both server and client receive a
+local notification containing the clients that finished as well as the
+clients that timed out(if any).|
+|ReSynchronize|Game session re-synchronization of NetworkObjects that were
+destroyed during a Synchronize event
+Invocation: Server Side
+Message Flow: Server to client
+Event Notification: Both server and client receive a
+local notification|
+|Synchronize|Synchronizes current game session state for newly approved
+clients
+Invocation: Server Side
+Message Flow: Server to client
+Event Notification: Server and Client receives a local
+notification (server receives the ClientId being
+synchronized).|
+|SynchronizeComplete|A client has finished synchronizing from a Synchronize
+event
+Invocation: Client Side
+Message Flow: Client to Server
+Event Notification: Both server and client receive a
+local notification.|
+|Unload|Unload a scene
+Invocation: Server Side
+Message Flow: Server to client
+Event Notification: Both server and client are notified
+an unload scene event started.|
+|UnloadComplete|A client has finished unloading a scene
+Invocation: Client Side
+Message Flow: Client to Server
+Event Notification: Both server and client receive a
+local notification.|
+|UnloadEventCompleted|All clients have unloaded a scene
+Invocation: Server Side
+Message Flow: Server to Client
+Event Notification: Both server and client receive a
+local notification containing the clients that finished as well as the
+clients that timed out(if any).|
