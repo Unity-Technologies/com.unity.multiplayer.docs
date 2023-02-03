@@ -3,7 +3,7 @@ id: command-line-helper
 title: Create a command line helper
 ---
 
-This section demonstrates how to create a command line helper that launches the project outside the Unity Editor to make testing builds easier.
+This section shows how to create a command line helper that launches the project outside the Unity Editor to make testing builds easier.
 
 :::tip
 Using a command line helper script to launch multiple instances of a game build isn’t the only way to test a multiplayer game. You can also use the Unity Editor or the [Multiplayer Play Mode package](../../tools/mppm.md).

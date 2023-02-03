@@ -8,7 +8,7 @@ sidebar_label: NetworkTime & Ticks
 
 Why are there two different time values and which one should be used?
 
-Netcode for GameObjects (Netcode) uses a star topology. That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` will not happen immediately on other machines. `NetworkTime` allows to use time while considering those transmission delays.
+Netcode for GameObjects (Netcode) uses a star topology. That means all communications happen between the clients and the server/host and never between clients directly. Messages take time to transmit over the network. That's why `RPCs` and `NetworkVariable` won't happen immediately on other machines. `NetworkTime` allows to use time while considering those transmission delays.
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
@@ -37,8 +37,8 @@ sequenceDiagram
 - Use if just a general time value is needed.
 
 `ServerTime`:
-- For player objects with server authority (E.g. by sending inputs to the server via RPCs)
-- In sync with position updates of `NetworkTransform` for all `NetworkObjects` where the client is not authoritative over the transform.
+- For player objects with server authority (For example, by sending inputs to the server via RPCs)
+- In sync with position updates of `NetworkTransform` for all `NetworkObjects` where the client isn't authoritative over the transform.
 - For everything on non client controlled `NetworkObjects`.
 
 ## Examples
@@ -47,7 +47,7 @@ sequenceDiagram
 
 Many games have environmental objects which move in a fixed pattern. By using network time these objects can be moved without having to synchronize their positions with a `NetworkTransform`.
 
-For instance the following code could be used to create a moving elevator platform for a client authoritative game:
+For instance the following code can be used to create a moving elevator platform for a client authoritative game:
 
 ```csharp
 using Unity.Netcode;
@@ -66,7 +66,7 @@ public class MovingPlatform : MonoBehaviour
 
 ### Example 2: Using network time to create a synced event
 
-Most of the time aligning an effect precisely to time is not needed. But in some cases for important effects or gameplay events it can help to improve consistency especially for clients with bad network connections.
+Most of the time aligning an effect precisely to time isn't needed. But in some cases for important effects or gameplay events it can help to improve consistency especially for clients with bad network connections.
 
 ```csharp
 using System.Collections;
@@ -89,7 +89,7 @@ public class SyncedEventExample : NetworkBehaviour
 
     private IEnumerator WaitAndSpawnSyncedEffect(float timeToWait)
     {
-        // Note sometimes the timeToWait will be negative on the server or the receiving clients if a message got delayed by the network for a long time. This usually happens only in rare cases. Custom logic could be implemented to deal with that scenario.
+        // Note sometimes the timeToWait will be negative on the server or the receiving clients if a message got delayed by the network for a long time. This usually happens only in rare cases. Custom logic can be implemented to deal with that scenario.
         if (timeToWait > 0)
         {
             yield return new WaitForSeconds(timeToWait);
@@ -149,7 +149,7 @@ Some components such as `NetworkTransform` add additional buffering. When trying
 
 Network ticks are run at a fixed rate. The 'Tick Rate' field on the `NetworkManager` can be used to set the tick rate.
 
-What does changing the network tick affect? Changes to `NetworkVariables` are not sent immediately. Instead during each network tick changes to `NetworkVariables` are collected and sent out to other peers.
+What does changing the network tick affect? Changes to `NetworkVariables` aren't sent immediately. Instead during each network tick changes to `NetworkVariables` are collected and sent out to other peers.
 
 To run custom code once per network tick (before `NetworkVariable` changes are collected) the `Tick` event on the `NetworkTickSystem` can be used.
 ```cs
@@ -187,7 +187,7 @@ public void Update()
 
 ## NetworkTime Precision
 
-Network time values are calculated using double precisions. This allows time to stay accurate on long running servers. For game servers which run sessions for a long time (multiple hours or days) do not convert this value in a float and always use doubles for time related calculations.
+Network time values are calculated using double precisions. This allows time to stay accurate on long running servers. For game servers which run sessions for a long time (multiple hours or days) don't convert this value in a float and always use doubles for time related calculations.
 
 For games with short play sessions casting the time to float is safe or `TimeAsFloat` can be used.
 
@@ -197,7 +197,7 @@ For games with short play sessions casting the time to float is safe or `TimeAsF
 The properties of the `NetworkTimeSystem` should be left untouched on the server/host. Changing the values on the client is sufficient to change the behavior of the time system.
 :::
 
-The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the API docs (TODO LINK) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values could be increased for a player with a bad connection.
+The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the API docs (TODO LINK) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values can be increased for a player with a bad connection.
 
 <!-- On page code -->
 

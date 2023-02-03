@@ -3,7 +3,7 @@ id: nameofpage
 title: Template - Name of page
 ---
 
-Copy this `markdown.md` file located in [*/reference/templates* folder](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/reference/templates/markdown.md) in the repository or cloned local files. In the */versioned_docs* folder, paste it in a version folder and location. This file contains the minimum code needed to write content. For extensive Markdown features, see [Markdown Guide and Code](../template.md).
+Copy this `markdown.md` file located in [*/reference/templates* folder](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/reference/templates/markdown.md) in the repository or cloned local files. In the */versioned_docs* folder, paste it in a version folder and location. This file has the minimum code needed to write content. For extensive Markdown features, see [Markdown Guide and Code](../template.md).
 
 Write a quick introduction. Answer the following questions in it: what is this (feature, code example), what does it solve, what is the result?
 

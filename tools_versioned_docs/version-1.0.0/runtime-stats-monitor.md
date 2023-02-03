@@ -139,7 +139,7 @@ To add custom data to the RNSM:
 2. Once your custom data `.cs` file is ready, you can drag the file from your **Assets** folder to an object in your scene as a new component.
 
 :::best practice
-Be sure your file name and class name match for your `.cs` file or it will not work.
+Be sure your file name and class name match for your `.cs` file or it won't work.
 :::
 
 Below is an example of custom data you can use with the RNSM. You can use this example as a guide to create your own custom data to explore with RNSM. Be sure to name this file as `CustomStats` to match the class name.
@@ -200,7 +200,7 @@ public class CustomStats : MonoBehaviour
 To allow you to save space and other resources from builds, such as on mobile, the RNSM implementation can be included/excluded from a build independently from its interface (the RNSM component). 
 
 :::note
-By default, after adding the **Multiplayer Tools** package, the Runtime Network Stats Monitor is included in the editor, included in development builds, and is not included in release builds.
+By default, after adding the **Multiplayer Tools** package, the Runtime Network Stats Monitor is included in the editor, included in development builds, and isn't included in release builds.
 :::
 
 ### Excluding the RNSM from Development Builds
@@ -219,7 +219,7 @@ OR
 
 ### Including the RNSM in Release Builds
 
-By default, the RNSM implementation is not included in release builds. The RNSM can be included in release builds either by:
+By default, the RNSM implementation isn't included in release builds. The RNSM can be included in release builds either by:
 
 1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings...** > **Multiplayer Tools** > **Net Stats Monitor**, then check **Include in Release Builds**.
 

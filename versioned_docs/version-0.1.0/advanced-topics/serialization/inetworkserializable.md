@@ -51,7 +51,7 @@ Nested serial types will be `null` unless you initilize following one of these m
 * Manually before calling `Serialize` if `serializer.IsReading` (or something like that)
 * Initialize in the default constructor
 
-This is by design. You may see the values as null until properly initialized. The serializer is not deserializing them, the `null` value is simply applied before it can be serialized.
+This is by design. You may see the values as null until properly initialized. The serializer isn't deserializing them, the `null` value is simply applied before it can be serialized.
 
 ## Conditional Serialization
 
@@ -106,7 +106,7 @@ public struct MyCustomStruct : INetworkSerializable
 - Serialize value from Array[n] element into the stream
 
 
-The `NetworkSerializer.IsReading` flag is being utilized here to determine whether or not to set `length` value to prepare before writing into the stream —  we then use it to determine whether or not to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream.
+The `NetworkSerializer.IsReading` flag is being utilized here to determine whether to set `length` value to prepare before writing into the stream —  we then use it to determine whether to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream.
 
 
 ### Example: Move
@@ -157,7 +157,7 @@ public struct MyMoveStruct : INetworkSerializable
   -  Serialize `LinearVelocity` into the stream
   -  Serialize `AngularVelocity` into the stream
 
-Unlike the [Array](#example-array) example above, in this example we do not use `NetworkSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.
+Unlike the [Array](#example-array) example above, in this example we don't use `NetworkSerializer.IsReading` flag to change serialization logic but to change the value of a serialized flag itself.
 
 - If the `SyncVelocity` flag is set to true, both the `LinearVelocity` and `AngularVelocity`  will  be serialized into the stream 
 - When the `SyncVelocity` flag is set to `false`, we will leave `LinearVelocity` and `AngularVelocity` with default values.

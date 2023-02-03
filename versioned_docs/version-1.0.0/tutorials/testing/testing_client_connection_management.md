@@ -16,7 +16,7 @@ Managing client connections in a networked game can lead to many unexpected edge
   - Client failing to connect due to approval denied (see [Connection Approval](../../basics/connection-approval.md))
 - things to look out for:
   - Client-Side:
-    - Does the state of the client prior to connecting have an impact (i.e. if connecting after disconnecting from another game or hosting one)
+    - Does the state of the client before connecting have an impact (that is, if connecting after disconnecting from another game or hosting one)
     - Does the game state get properly replicated from the server when connecting?
   - Server-Side:
     - Does the server properly handle reconnections or late-joining, if the game supports it, or does it deny approval if not?
@@ -31,7 +31,7 @@ Managing client connections in a networked game can lead to many unexpected edge
     - By disabling it on the host/server
 - things to look out for:
   - Client-side:
-    - Is the state of every object tied to the game session properly reset if not destroyed? (for example, if a NetworkBehaviour is not destroyed when despawning, is its state properly reset via OnNetworkDespawn and OnNetworkSpawn?)
+    - Is the state of every object tied to the game session properly reset if not destroyed? (for example, if a NetworkBehaviour isn't destroyed when despawning, is its state properly reset via OnNetworkDespawn and OnNetworkSpawn?)
     - Is the client brought back to a state from which it can try to connect to a new game?
   - Server-Side:
     - Is the server notified of this disconnection and does it handle it properly?
@@ -44,7 +44,7 @@ Managing client connections in a networked game can lead to many unexpected edge
     - in the case of a client-hosted game, after disconnecting from a preivious game as a client
 - things to look out for:
   - Server-side:
-    - Does the state of the application prior to starting a new session have an impact (i.e. if starting after shutting down another game or disconnecting from one as a client)
+    - Does the state of the application before starting a new session have an impact (that is, if starting after shutting down another game or disconnecting from one as a client)
 
 ### Host / Server shutting down
 - test cases:
@@ -57,4 +57,4 @@ Managing client connections in a networked game can lead to many unexpected edge
     - Are clients notified of this shut down, and do they handle it?
   - Server-side:
     - Are the services used notified of this? (for example if using a lobby service, does the game properly close the lobby when shutting down the game session?)
-    - Is the state of every object tied to the game session properly reset if not destroyed? (for example, if a NetworkBehaviour is not destroyed when despawning, is its state properly reset via OnNetworkDespawn and OnNetworkSpawn?)
+    - Is the state of every object tied to the game session properly reset if not destroyed? (for example, if a NetworkBehaviour isn't destroyed when despawning, is its state properly reset via OnNetworkDespawn and OnNetworkSpawn?)

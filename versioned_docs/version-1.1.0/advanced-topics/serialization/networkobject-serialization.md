@@ -4,7 +4,7 @@ title: NetworkObject & NetworkBehaviour
 description: Brief explanation on using NetworkObject & NetworkBehaviour in Network for GameObjects
 ---
 
-`GameObjects`, `NetworkObjects` and `NetworkBehaviour` are not serializable types so they cannot be used in `RPCs` or `NetworkVariables` by default.
+`GameObjects`, `NetworkObjects` and `NetworkBehaviour` aren't serializable types so they can't be used in `RPCs` or `NetworkVariables` by default.
 
 There are two convenience wrappers which can be used to send a reference to a `NetworkObject` or a `NetworkBehaviour` over RPCs or `NetworkVariables`.
 
@@ -56,7 +56,7 @@ public class Weapon : NetworkBehaviour
 }
 ```
 :::note
-The implicit conversion to `NetworkObject` / `GameObject` will result in `Null` if the reference can not be found.
+The implicit conversion to `NetworkObject` / `GameObject` will result in `Null` if the reference can't be found.
 :::
 
 ## NetworkBehaviourReference

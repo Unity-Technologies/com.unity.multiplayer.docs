@@ -45,7 +45,7 @@ If you set a trigger property using `Animator.SetTrigger` then this won't be syn
 
 ## Server Authoritative Mode
 
-The default setting for `NetworkAnimator` is server authoritative mode. When operating in server authoritative mode, any animation state changes that are set (triggers) or detected (change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients. Because the server initiates any synchronization of changes to an `Animator` 's state, a client that's the owner of the `NetworkObject` associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT). Below is a timing diagram to demonstrate this:
+The default setting for `NetworkAnimator` is server authoritative mode. When operating in server authoritative mode, any animation state changes that are set (triggers) or detected (change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients. Because the server initiates any synchronization of changes to an `Animator` 's state, a client that's the owner of the `NetworkObject` associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT). Below is a timing diagram to show this:
 
 ![ServerAuthMode](Images/NetworkAnimatorServerAuthTiming.png)
 

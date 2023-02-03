@@ -18,7 +18,7 @@ The Ping sample project implements a simple ping-pong service and supplies clien
 
 ## Pipeline
 
-The Pipeline sample shows how to define [pipeline](pipelines-usage.md) stages as described in [Pipelines](pipelines-usage.md). The code demonstrates a pipeline definition for unreliable sequenced delivery based on a default `UDPNetworkInterface`.
+The Pipeline sample shows how to define [pipeline](pipelines-usage.md) stages as described in [Pipelines](pipelines-usage.md). The code shows a pipeline definition for unreliable sequenced delivery based on a default `UDPNetworkInterface`.
 
 :::note
 Consider using pipeline stages carefully. Some pipeline configurations can't add value to the quality of service and might be harmful, depending on the underlying `NetworkInterface` you use. For example, it makes sense to have a pipeline stage for unreliable sequenced delivery over a `UDPNetworkInterface`. The same [pipeline](pipelines-usage.md) stage over a `WebSocketNetworkInterface` incurs unnecessary overhead because the underlying network interface already provides unreliable sequenced delivery.

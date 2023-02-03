@@ -20,13 +20,13 @@ Use ParrelSync to run separate editor instances for your Host/Server and Client.
  
 ### Use debug drawing techniques extensively
 
-Unity engine has two debug rendering APIs that are very useful for the purposes of multiplayer game debugging:
+Unity engine has two debug rendering APIs that are useful for the purposes of multiplayer game debugging:
  - [Debug.DrawRay](https://docs.unity3d.com/ScriptReference/Debug.DrawRay.html)
  - [Debug.DrawLine](https://docs.unity3d.com/ScriptReference/Debug.DrawLine.html)
 
 Both of these functions allow us to draw arbitrary debug lines that would be visible in the Scene view and in the Game view, provided Gizmo rendering is enabled (to enable Gizmo rendering in Game view you need to click on the `Gizmos` menu at the top of the Game view).
 
-The key trick here is to use different colors for different kinds of information and to make the lines stay long enough for visual inspection by setting `duration` parameter. This technique shines when it is combined with [screen recordings](#7-recording-the-video-of-gameplay) of [multiple peers running side by side in separate editor instances via ParrelSync](#1-use-parrelsync-workflow-during-development).
+The key trick here is to use different colors for different kinds of information and to make the lines stay long enough for visual inspection by setting `duration` parameter. This technique shines when it's combined with [screen recordings](#7-recording-the-video-of-gameplay) of [multiple peers running side by side in separate editor instances via ParrelSync](#1-use-parrelsync-workflow-during-development).
 
 The code below would render a green debug line that's 2 units tall at the position of the transform, and this line would stay on screen for 4 seconds:
 `Debug.DrawLine(this.transform.position, this.transform.position + Vector3.UP * 2f, Color.green, duration: 4f);`
@@ -38,7 +38,7 @@ When working on Boss Room we found it valuable to draw debug lines for the follo
  - Object interactions
 
 ### A Netcode Enabled Line Renderer
-Sometimes it is useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that could be used for visual debugging purposes:
+Sometimes it's useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that can be used for visual debugging purposes:
 ```csharp
 using UnityEngine;
 using Unity.Netcode;
@@ -150,7 +150,7 @@ public class NetcodeEnabledLineRenderer : NetworkBehaviour
 }
 ```
 
-### Use debug logging for situations where visual debugging is not appropriate.
+### Use debug logging for situations where visual debugging isn't appropriate.
 
 Text-based logging is valuable for tracking down non-visual events (such as RPCs) and information.
 It is a good idea to include network tick and client id in log messages so that it's easier to build a timeline when reading the logs.
@@ -165,15 +165,15 @@ Artificial network conditions allow the errors and oddities that are hidden by n
 
 ### Capturing screen recordings of the game instances.
 
-First of all, it is very valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
+First of all, it's valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
 When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls. 
 
 In debug builds it's a great idea to show the Peer ID and the current frame number somewhere in the corner of the screen - this way there is a visual reference to the number of the frame we're currently observing on the recording.
 
-Sometimes, despite us using good debug rendering and logging it's still hard to understand what's going on even when going through the frames one by one. Increasing our FixedTimeStep setting to a ridiculous value (something as high as `0.2`) helps to have more time to really see what’s going on.
+Sometimes, despite us using good debug rendering and logging it's still hard to understand what's going on even when going through the frames one by one. Increasing our FixedTimeStep setting to a ridiculous value (something as high as `0.2`) helps to have more time to see what’s going on.
 
-The same applies to very high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
+The same applies to high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
 
 ### Using breakpoints to debug a Client or Server
 

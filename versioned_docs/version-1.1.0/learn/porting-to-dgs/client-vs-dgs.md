@@ -61,7 +61,7 @@ The following table lists some pros and cons of using a dedicated server hosting
 | There’s no extra lag due to relay based connections. | You must consider scalability because the number of players connected to your server fleet can change drastically in a short time. |
 | You have more control over performance and quality of service since you as a developer control the hardware the server runs on. | It can quickly get expensive, depending on how you host the server build. |
 | It’s easier to think about the server part of your code and the client part of your code when there’s no overlap like a client-hosted game. | It’s more complicated to debug because you usually need to run the production build in a virtual machine for testing. |
-| Clients don’t require as much performance because they aren’t responsible for the processing and bandwidth overhead involved with hosting. | You have to keep a server build and a client build. |
+| Clients don’t require as much performance because they'ren’t responsible for the processing and bandwidth overhead involved with hosting. | You have to keep a server build and a client build. |
 | You don’t have to worry about host migrations or what to do when the host player disconnects. ✝ |  |
 | You don’t have to worry about the unfairness of the host having zero latency or lag. |  |
 | You have the option of using a managed service provider like Game Server Hosting, which allows you to focus on other aspects of your game. |  |

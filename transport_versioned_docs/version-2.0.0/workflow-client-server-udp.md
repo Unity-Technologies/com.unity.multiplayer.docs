@@ -12,7 +12,7 @@ This guide walks you through using the Unity Transport package to create a simpl
 5. The client receives the sum.
 6. The client disconnects from the server and quits.
 
-It demonstrates using the Unity Transport API to:
+It shows using the Unity Transport API to:
 
 - Configure
 - Connect
@@ -22,11 +22,11 @@ It demonstrates using the Unity Transport API to:
 - Disconnect
 - Timeout a connection
 
-The client-server workflow in this guide demonstrates the subtle differences between using the `NetworkDriver` for clients and servers.
+The client-server workflow in this guide shows the subtle differences between using the `NetworkDriver` for clients and servers.
 
 ## Create a server
 
-A server is an endpoint that listens for incoming connection requests and sends and receives messages. This section demonstrates creating a simple server with UTP 2.0.
+A server is an endpoint that listens for incoming connection requests and sends and receives messages. This section shows creating a simple server with UTP 2.0.
 
 Start by creating a C# script in the Unity Editor. Name the script ServerBehaviour.cs.
 
@@ -71,7 +71,7 @@ using Unity.Networking.Transport;
 ...
 ```
 
-The following code demonstrates the necessary boilerplate code and creates empty bodies for the `Start`, `OnDestroy`, and `Update` methods. It also declares a `NetworkDriver` and creates a `NativeList` to hold all connections between the client and server.
+The following code shows the necessary boilerplate code and creates empty bodies for the `Start`, `OnDestroy`, and `Update` methods. It also declares a `NetworkDriver` and creates a `NativeList` to hold all connections between the client and server.
 
 **Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
 
@@ -282,7 +282,7 @@ See [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md) for the full source co
 
 ## Create a Client
 
-This section demonstrates creating a simple client with UTP 2.0. The client code looks pretty similar to the server code at first glance, but there are subtle differences. This part of the workflow covers the differences between them and not so much the similarities.
+This section shows creating a simple client with UTP 2.0. The client code looks pretty similar to the server code at first glance, but there are subtle differences. This part of the workflow covers the differences between them and not so much the similarities.
 
 Start by creating a C# script in the Unity Editor. Name the script `ClientBehaviour.cs`.
 

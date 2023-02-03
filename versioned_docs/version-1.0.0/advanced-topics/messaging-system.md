@@ -9,7 +9,7 @@ Netcode for GameObjects (Netcode) has two parts to its messaging system: RPCs an
 
 ## RPC: Remote Procedure Call
 
-The concept of an `RPC` is common not only in video games but in the software industry in general. They are ways to call methods on objects that are not in the same executable. 
+The concept of an `RPC` is common not only in video games but in the software industry in general. They're ways to call methods on objects that aren't in the same executable. 
 
 <figure>
 <ImageSwitcher 
@@ -20,7 +20,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
 
 At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters. 
 
-When calling an `RPC`, you call a method remotely on an object that could be anywhere in the world. They are "events" you can trigger when needed. 
+When calling an `RPC`, you call a method remotely on an object that can be anywhere in the world. They're "events" you can trigger when needed. 
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
