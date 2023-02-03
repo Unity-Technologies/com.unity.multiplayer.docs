@@ -21,7 +21,7 @@ Quite often not all transform values of a GameObject need to be synchronized ove
 
 # Thresholds
 
-You can use the threshold values to set a minimum threshold value. Whether to scale to your project's world unit scale or to reduce the frequency of synchronization updateSs, changes below threshold values won't synchronize. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) reduces the frequency of when the object's position synchronize (which translates to reducing bandwidth consumption).
+You can use the threshold values to set a minimum threshold value. Whether to scale to your project's world unit scale or to reduce the frequency of synchronization updates, changes below threshold values won't synchronize. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) reduces the frequency of when the object's position synchronize (which translates to reducing bandwidth consumption).
 
 :::note
 
