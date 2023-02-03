@@ -102,13 +102,13 @@ To keep a single source of truth for service access (and avoid scattering of ser
 An `Avatar` is at the same level as an `Imp` and lives in a scene. A `Persistent Player` lives across scenes.
 :::
 
-A `Persistent Player` prefab goes into the `Player` Prefab slot in the `NetworkManager` of Boss Room. As a result, Boss Room spawns a single `Persistent Player` prefab per client, and each client owns their respective `Persistent Player` instances.
+A `Persistent Player` Prefab goes into the `Player` Prefab slot in the `NetworkManager` of Boss Room. As a result, Boss Room spawns a single `Persistent Player` Prefab per client, and each client owns their respective `Persistent Player` instances.
 
 :::note
 There is no need to mark `Persistent Player` instances as `DontDestroyOnLoad`. NGO automatically keeps these prefabs alive between scene loads while the connections are live.
 :::
 
-The `Persistent Player` prefab stores synchronized data about a player, such as their name and selected `PlayerAvatar` GUID.
+The `Persistent Player` Prefab stores synchronized data about a player, such as their name and selected `PlayerAvatar` GUID.
 
 Each connected client owns their respective instance of the PlayerAvatar prefab. NGO destroys the `PlayerAvatar` instance when a scene load occurs (either to the `PostGame` or `MainMenu` scenes) or if the client disconnects.
 
@@ -116,13 +116,13 @@ In the `CharSelect` scene, clients select from eight possible avatar classes. Bo
 
 Inside the Boss Room scene, `ServerBossRoomState` spawns a `PlayerAvatar` per `PersistentPlayer` present.
 
-The following example of a selected “Archer Boy” class demonstrates the `PlayerAvatar` GameObject hierarchy:
+The following example of a selected “Archer Boy” class shows the `PlayerAvatar` GameObject hierarchy:
 
 * `PlayerAvatar` is a `NetworkObject` that Boss Room destroys when the scene unloads.
 * `PlayerGraphics` is a child `GameObject` containing a `NetworkAnimator` component responsible for replicating animations invoked on the server.
 * `PlayerGraphics_Archer_Boy` is a purely graphical representation of the selected avatar class.
 
-`ClientAvatarGuidHandler`, a `NetworkBehaviour` component residing on the `PlayerAvatar` prefab instance, fetches the validated avatar GUID from `NetworkAvatarGuidState` and spawns a local, non-networked graphics GameObject corresponding to the avatar GUID.
+`ClientAvatarGuidHandler`, a `NetworkBehaviour` component residing on the `PlayerAvatar` Prefab instance, fetches the validated avatar GUID from `NetworkAvatarGuidState` and spawns a local, non-networked graphics GameObject corresponding to the avatar GUID.
 
 ### Characters
 

@@ -38,7 +38,7 @@ void Ping(int somenumber, string sometext) { /* ... */ }
 void PingServerRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-`[ServerRpc]` attribute and matching `...ServerRpc` suffix in the method name are there to make it crystal clear for RPC call sites to know when they are executing an RPC. It will be replicated and executed on the server-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it is a `ServerRpc` or [`ClientRpc`](clientrpc.md):
+`[ServerRpc]` attribute and matching `...ServerRpc` suffix in the method name are there to make it crystal clear for RPC call sites to know when they're executing an RPC. It will be replicated and executed on the server-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it's a `ServerRpc` or [`ClientRpc`](clientrpc.md):
 
 ```csharp
 Ping(somenumber, sometext); // Is this an RPC call?

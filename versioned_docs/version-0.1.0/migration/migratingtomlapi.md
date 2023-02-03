@@ -14,12 +14,12 @@ If you need help, contact us in the [Unity MLAPI Discord](https://discord.gg/buM
 Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Unity MLAPI:
 
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. MLAPI requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
-- Errors for RPC postfix naming patterns do not show in your IDE. 
-- MLAPI RPCs do not support arrays yet.
-- Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for MLAPI.
-- Prefabs need to be added to the prefab registration list for MLAPI.
-- Connection callbacks do not happen in single player or host mode.
-- Matchmaking is not available in MLAPI at this time.
+- Errors for RPC postfix naming patterns don't show in your IDE. 
+- MLAPI RPCs don't support arrays yet.
+- Client and Server have separate representations in UNet. UNet has a number of callbacks that don't exist for MLAPI.
+- Prefabs need to be added to the Prefab registration list for MLAPI.
+- Connection callbacks don't happen in single player or host mode.
+- Matchmaking isn't available in MLAPI at this time.
 
 ## Backup your project
 
@@ -51,14 +51,14 @@ See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information
 UNET’s `NetworkManager` is also called `NetworkManager` in the MLAPI and works in a similar way.
 
 :::note
-You cannot inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET. 
+You can't inherit from `NetworkManager` in MLAPI, which was a **recommended** pattern in UNET. 
 :::
 
 ## Replace NetworkManagerHUD 
 
 Currently MLAPI offers no replacment for the NetworkMangerHUD.
 
-The [Community Contributions Extension Package](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
+The [Community Contributions Extension Package](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions) has a a drop in `NetworkManagerHud` component you can use for a quick substitute.
 
 ## Replace NetworkIdentity with NetworkObject
 
@@ -149,7 +149,7 @@ See [NetworkBehaviour](../mlapi-basics/networkbehaviour.md) for more information
 
 ## NetworkStart
 
-In the MLAPI, `RPC`s and `NetworkVariable` changes will not be replicated if they are done before the `NetworkStart` method is called. The `NetworkStart` method is called when the `NetworkObject` is ready for network use.
+In the MLAPI, `RPC`s and `NetworkVariable` changes won't be replicated if they're done before the `NetworkStart` method is called. The `NetworkStart` method is called when the `NetworkObject` is ready for network use.
 
 <Tabs
   className="unique-tabs"
@@ -237,7 +237,7 @@ void OnChangeHealth(int oldHealth, int newHealth){
 
 </Tabs>
 
-Replace all postfix increment and decrement usages of SyncVar in your project. MLAPI's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement is not supported.
+Replace all postfix increment and decrement usages of SyncVar in your project. MLAPI's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement isn't supported.
 
 <Tabs
   className="unique-tabs"
@@ -318,7 +318,7 @@ void ListenChanges()
     m_ints.OnListChanged += OnIntChanged;
 }
 
-// The NetworkListEvent contains information about the operation and index of the change.
+// The NetworkListEvent has information about the operation and index of the change.
 void OnIntChanged(NetworkListEvent<int> changeEvent)
 {
 
@@ -436,8 +436,8 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
     bool approve = true;
     bool createPlayerObject = true;
 
-    // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
+    // The Prefab hash. Use null to use the default player prefab
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a Prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
@@ -471,7 +471,7 @@ using UnityEngine.Networking;
 
 public class Example : NetworkBehaviour
 {
-    //Assign the prefab in the Inspector
+    //Assign the Prefab in the Inspector
     public GameObject m_MyGameObject;
     GameObject m_MyInstantiated;
 
@@ -510,7 +510,7 @@ The MLAPI has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UN
 
 ## Network Proximity Checker/ OnCheckObserver with MLAPI visibility
 
-There is no direct equivalent to the `NetworkPromimityChecker` UNet component in MLAPI. Network visiblilty for clients works similar as in UNet. MLAPI does not have an equivalent to the `ObjectHide` message from UNet. In MLAPI networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to MLAPI by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for MLAPIs visibilty system.
+There is no direct equivalent to the `NetworkPromimityChecker` UNet component in MLAPI. Network visiblilty for clients works similar as in UNet. MLAPI does not have an equivalent to the `ObjectHide` message from UNet. In MLAPI networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to MLAPI by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` isn't needed for MLAPIs visibilty system.
 
 <Tabs
   className="unique-tabs"
@@ -559,7 +559,7 @@ See [Object Visbility](../mlapi-basics/object-visibility.md) to learn more about
 
 ## Update SceneManagement
 
-In MLAPI, scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
+In MLAPI, scene management isn't done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
 
 <Tabs
   className="unique-tabs"

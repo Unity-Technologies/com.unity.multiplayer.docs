@@ -6,7 +6,7 @@ description: Learn more about installing and running the Boss Room game sample.
 
 ![Boss Room banner](/img/banner.png)
 
-Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It is an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) frequently featured in similar multiplayer games.
+Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. it's an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
 
 :::note
 **Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2021 LTS](https://unity.com/releases/2021-lts)). Make sure to include standalone support for Windows/Mac in your installation.
@@ -58,7 +58,7 @@ Boss Room is designed to be used in its entirety to help you explore the concept
 
 You can use the project as a reference starting point for your own Unity game or use elements individually.
 
-This repository also contains a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
+This repository also has a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
 
 ```json
 "com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop"
@@ -86,7 +86,7 @@ Alternatively, you can click the green **Code** button, then select **Download Z
 
 ### Registering the project with Unity Gaming Services (UGS)
 
-Boss Room leverages several services from UGS to facilitate connectivity between players. To use these services inside your project, you must:
+Boss Room leverages several services from UGS to ease connectivity between players. To use these services inside your project, you must:
 
 1. [Create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard.
 2. Enable the [Relay](https://docs.unity.com/relay/get-started.html) service.
@@ -142,7 +142,7 @@ Use the following instructions to test Boss Room with multiple players over the 
 First, build an executable and distribute it to all players.
 
 :::tip
-**Tip**: It is possible to connect between multiple instances of the same executable OR between executables and the Unity Editor that you used to create the executable.
+**Tip**: it's possible to connect between multiple instances of the same executable OR between executables and the Unity Editor that you used to create the executable.
 :::
 
 Next, you need to set up a relay. Running the Boss Room over the internet currently requires setting up a relay:
@@ -256,7 +256,7 @@ Visit the following links to learn more about Unity Netcode and Boss Room.
 
 ### Other samples
 
-The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and contains a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
+The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
 
 ### Contributing
 
@@ -264,8 +264,8 @@ Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.uni
 
 Our projects use the `git-flow` branching strategy:
 
-* The `develop` branch contains all active development.
-* The `main` branch contains release versions.
+* The `develop` branch has all active development.
+* The `main` branch has release versions.
 
 To get the project on your machine, you need to clone the repository from GitHub using the following command-line command:
 

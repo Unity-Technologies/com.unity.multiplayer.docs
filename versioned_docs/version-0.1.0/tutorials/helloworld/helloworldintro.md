@@ -4,7 +4,7 @@ title: Your First Networked Game "Hello World"
 description: Tutorial that explains creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 ---
 
-A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it is  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
+A "Hello World" program is a computer program that outputs or displays the message "Hello, World!". Normally it's  the first program written by people learning to code. It  is also  used as a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.
 
 This "Hello World" tutorial walks you through creating a project, installing the MLAPI package, and creating the basic components for your first networked game.
 
@@ -45,7 +45,7 @@ In this section we will add a Network Manager and add a Transport to our project
   :::tip
   We renamed the `GameObject` because:
     * It makes it  easier to refer to later.
-    * There should only be one **NetworkManager**, this is the object that contains the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
+    * There should only be one **NetworkManager**, this is the object that has the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
   :::
 
   You have now created a new `GameObject` called **NetworkManager**.
@@ -73,20 +73,20 @@ This section adds in a player object and spawns it for each connected player.
 1. Add a `NetworkObject` component.
 1. Click the **Assets** folder.
 1. Create a new Folder and call it **Prefabs**.
-1. Make **Player** a prefab by dragging it to **Prefabs** folder you just created.
+1. Make **Player** a Prefab by dragging it to **Prefabs** folder you just created.
 1. Delete **Player** from scene.
 
   :::tip
-  We remove **Player**, because we will be using the network library to spawn the player. The library cannot track objects that start in the scene.
+  We remove **Player**, because we will be using the network library to spawn the player. The library can't track objects that start in the scene.
   :::
 
 1. Select `NetworkManager`.
 1. Inside the `NetworkManager` component tab, locate the  `NetworkPrefabs` field. 
 1. Click `+` to create a slot.
-1. Drag this player prefab from above into the new empty slot
+1. Drag this player Prefab from above into the new empty slot
 
   :::important
-  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this prefab as the character for the connecting client. If you do not have any prefab set as `Default Player Prefab` the game will crash on client connect.
+  When you select the **Default Player Prefab** , you are telling the library that when a client connects to the game, automatically spawn this Prefab as the character for the connecting client. If you don't have any Prefab set as `Default Player Prefab` the game will crash on client connect.
   :::
 
   :::note
@@ -112,7 +112,7 @@ Now we will test to see if everything works as expected.
 
 
 :::note Congrats!
-Congratulations you have created a networked game. It is not a very flashy game but it is a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
+Congratulations you have created a networked game. It isn't a flashy game but it's a networked game nonetheless. For the next steps in your journey see [Building on "Hello World"](helloworldparttwo.md)
 :::
 
 :::contribution Special Thanks

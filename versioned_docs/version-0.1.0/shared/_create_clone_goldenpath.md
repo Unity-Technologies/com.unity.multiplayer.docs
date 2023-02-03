@@ -3,7 +3,7 @@
 The clone does not support rollback so it will only work on the unity version that it was originaly created for. Attempting to open the clone on a newer or older version of Unity may cause unexpected funcationality.
 :::
 
-We  create a clone of the Golden Path foundation project that you created, if you have not yet created a `GoldenPath` project then you should follow the steps [here](goldenpath_foundation_module) to create one.
+We  create a clone of the Golden Path foundation project that you created, if you haven't yet created a `GoldenPath` project then you should follow the steps [here](goldenpath_foundation_module) to create one.
 
 :::tip
  Working from a clone of the initial project will help you learn about new features and concepts without having to repeat  previous work.
@@ -15,7 +15,7 @@ We  create a clone of the Golden Path foundation project that you created, if yo
 1. Create a new folder.
 1. Rename the new folder  `Golden Path_<modulenumber>`. 
    :::tip
-   For the purposes of this series I will replace `modulenumber`  with the current module number of the series. You do not have to though you may find it makes following the series easier.
+   For the purposes of this series I will replace `modulenumber`  with the current module number of the series. You don't have to though you may find it makes following the series easier.
    ::: 
 1. Open the `Goldenpath` folder.
 1. Select **Copy**.

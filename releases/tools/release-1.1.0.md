@@ -26,4 +26,4 @@ For more information, see the [Network Simulator documentation](../../tools/netw
 ### Runtime Net Stats Monitor
 
 - You can now configure graphs and Simple Moving Average counters to be sampled per-second rather than per-frame.
-- Fixed an issue where RNSM line graphs could retain incorrect maximum values in some cases
+- Fixed an issue where RNSM line graphs can retain incorrect maximum values in some cases

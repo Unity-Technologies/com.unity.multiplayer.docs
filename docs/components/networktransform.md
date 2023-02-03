@@ -51,7 +51,7 @@ The `NetworkTransform` component only interpolates client-side. For smoother mov
 <ImageSwitcher
 lightImageSrc="/img/BufferedTick.png?text=LightMode"
 darkImageSrc="/img/BufferedTick_Dark.png?text=DarkMode"/>
-  <figcaption>Graphic of a buffered tick between the server and a client (i.e. interpolation)</figcaption>
+  <figcaption>Graphic of a buffered tick between the server and a client (that is, interpolation)</figcaption>
 </figure>
 
 ## ClientNetworkTransform

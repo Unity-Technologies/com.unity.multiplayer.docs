@@ -14,10 +14,10 @@ UNet is an entirely deprecated product, and you should upgrade to Netcode for Ga
 Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Netcode:
 
 - Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
-- Errors for RPC postfix naming patterns do not show in your IDE. 
-- Client and Server have separate representations in UNet. UNet has a number of callbacks that do not exist for Netcode.
-- Prefabs need to be added to the prefab registration list for Netcode.
-- Matchmaking is not available in Netcode at this time.
+- Errors for RPC postfix naming patterns don't show in your IDE. 
+- Client and Server have separate representations in UNet. UNet has a number of callbacks that don't exist for Netcode.
+- Prefabs need to be added to the Prefab registration list for Netcode.
+- Matchmaking isn't available in Netcode at this time.
 
 ## Backup your project
 
@@ -56,7 +56,7 @@ We recommend you don't inherit from `NetworkManager` in Netcode, which was a **r
 
 Currently Netcode offers no replacment for the NetworkMangerHUD.
 
-The [Community Contributions Extension Package](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.community.netcode.extensions) contains a a drop in `NetworkManagerHud` component you can use for a quick substitute.
+The [Community Contributions Extension Package](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/master/com.community.netcode.extensions) has a a drop in `NetworkManagerHud` component you can use for a quick substitute.
 -->
 
 ## Replace NetworkIdentity with NetworkObject
@@ -210,7 +210,7 @@ void OnChangeHealth(int oldHealth, int newHealth){
 
 </Tabs>
 
-Replace all postfix increment and decrement usages of SyncVar in your project. Netcode's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement is not supported.
+Replace all postfix increment and decrement usages of SyncVar in your project. Netcode's `NetworkVariable.Value` exposes a value type that's why postfix increment/decrement isn't supported.
 
 <Tabs
   className="unique-tabs"
@@ -291,7 +291,7 @@ void ListenChanges()
     m_ints.OnListChanged += OnIntChanged;
 }
 
-// The NetworkListEvent contains information about the operation and index of the change.
+// The NetworkListEvent has information about the operation and index of the change.
 void OnIntChanged(NetworkListEvent<int> changeEvent)
 {
 
@@ -408,8 +408,8 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager
     bool approve = true;
     bool createPlayerObject = true;
 
-    // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
+    // The Prefab hash. Use null to use the default player prefab
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a Prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
@@ -443,7 +443,7 @@ using UnityEngine.Networking;
 
 public class Example : NetworkBehaviour
 {
-    //Assign the prefab in the Inspector
+    //Assign the Prefab in the Inspector
     public GameObject m_MyGameObject;
     GameObject m_MyInstantiated;
 
@@ -482,7 +482,7 @@ Netcode has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNet
 
 ## Network Proximity Checker/ OnCheckObserver with Netcode visibility
 
-There is no direct equivalent to the `NetworkPromimityChecker` UNet component in Netcode. Network visiblilty for clients works similar as in UNet. Netcode does not have an equivalent to the `ObjectHide` message from UNet. In Netcode networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to Netcode by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` is not needed for Netcode visibilty system.
+There is no direct equivalent to the `NetworkPromimityChecker` UNet component in Netcode. Network visiblilty for clients works similar as in UNet. Netcode does not have an equivalent to the `ObjectHide` message from UNet. In Netcode networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to Netcode by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` isn't needed for Netcode visibilty system.
 
 <Tabs
   className="unique-tabs"
@@ -531,7 +531,7 @@ See [Object Visbility](../basics/object-visibility.md) to learn more about Netco
 
 ## Update SceneManagement
 
-In Netcode, scene management is not done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
+In Netcode, scene management isn't done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
 
 <Tabs
   className="unique-tabs"

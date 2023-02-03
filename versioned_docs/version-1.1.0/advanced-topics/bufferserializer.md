@@ -13,7 +13,7 @@ These aren't without downsides, however:
 
 - `BufferSerializer<TReaderWriter>` has to operate on an existing mutable value due to its bi-directional nature, which means values like `List<T>.Count` have to be stored to a local variable before writing.
 - `BufferSerializer<TReaderWriter>` is slightly slower than `FastBufferReader` and `FastBufferWriter` due to both the extra pass-through method calls and the mandatory bounds checking on each write.
-- `BufferSerializer<TReaderWriter>` do not support any form of packed reads and writes.
+- `BufferSerializer<TReaderWriter>` don't support any form of packed reads and writes.
 
 However, when those downsides are unreasonable, `BufferSerializer<TReaderWriter>` offers two ways to perform more optimal serialization for either performance or bandwidth usage:
 

@@ -19,21 +19,21 @@ darkImageSrc="/img/sequence_diagrams/BossRoomExamples/HidingLatency_AnimationAnt
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_MageMagicBolt.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_MageMagicBolt_Dark.png?text=DarkMode"/>
-<figcaption>Boss Room's mage's bolt doesn't use NetworkVariables and NetworkObjects to track the bolt's state. Since its movement is very fast, we only send an RPC to trigger VFX on clients. No need to waste CPU and bandwidth on a NetworkObject over time for this. Even if the FX passes through a wall on some clients (due to network discrepancies in target positions), the FX is so quick it wouldn't be visible to players.</figcaption>
+<figcaption>Boss Room's mage's bolt doesn't use NetworkVariables and NetworkObjects to track the bolt's state. Since its movement is fast, we only send an RPC to trigger VFX on clients. No need to waste CPU and bandwidth on a NetworkObject over time for this. Even if the FX passes through a wall on some clients (due to network discrepancies in target positions), the FX is so quick it wouldn't be visible to players.</figcaption>
 </figure>
 
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherRangedShot.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherRangedShot_Dark.png?text=DarkMode"/>
-<figcaption>Boss Room's archer's arrows use fully replicated NetworkObjects + NetworkTransform. Since they are slow moving, we want them to be seen by late joining players. We also want to make sure their behaviour is the same for all clients (so they don't go through walls for example). This will use more bandwidth, but will be more accurate.</figcaption>
+<figcaption>Boss Room's archer's arrows use fully replicated NetworkObjects + NetworkTransform. Since they're slow moving, we want them to be seen by late joining players. We also want to make sure their behaviour is the same for all clients (so they don't go through walls for example). This will use more bandwidth, but will be more accurate.</figcaption>
 </figure>
 
 <figure>
 <ImageSwitcher 
 lightImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherVolley.png?text=LightMode"
 darkImageSrc="/img/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherVolley_Dark.png?text=DarkMode"/>
-<figcaption>The archer's volley takes multiple steps. First on click, the client will show a circle VFX tracking the mouse. That FX is not networked and client side only. Then on click, the client will send a ServerRPC to the server. The server will then apply it's gameplay logic, update the imp's health (tracked by NetworkVariables) and trigger a Client RPC to play the volley animation on all clients.</figcaption>
+<figcaption>The archer's volley takes multiple steps. First on click, the client will show a circle VFX tracking the mouse. That FX isn't networked and client side only. Then on click, the client will send a ServerRPC to the server. The server will then apply it's gameplay logic, update the imp's health (tracked by NetworkVariables) and trigger a Client RPC to play the volley animation on all clients.</figcaption>
 </figure>
 
 <!-- TODO add volley video -->

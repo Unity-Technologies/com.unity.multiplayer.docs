@@ -5,7 +5,7 @@ title: Connection Approval
 
 With every new connection, Unity MLAPI performs a handshake in addition to handshakes done by the transport. This is to ensure that the `NetworkConfig`s match between the Client and Server. In the `NetworkConfig`, you can specify to enable `ConnectionApproval`. 
 
-Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player prefab to be created, allowing you to override the default behaviour on a per player basis.
+Connection approval allows you to decide on a per connection basis if the connection should be allowed. Connection approval also enables you to specify the player Prefab to be created, allowing you to override the default behaviour on a per player basis.
 
 ## Callback for approval logic
 
@@ -29,8 +29,8 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
     bool approve = true;
     bool createPlayerObject = true;
 
-    // The prefab hash. Use null to use the default player prefab
-    // If using this hash, replace "MyPrefabHashGenerator" with the name of a prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
+    // The Prefab hash. Use null to use the default player prefab
+    // If using this hash, replace "MyPrefabHashGenerator" with the name of a Prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkSpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
     
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
@@ -38,7 +38,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, MLAPI.NetworkM
 }
 ```
 
-`ConnectionApprovalCallback` is not called by the Client host. You need to specify the `positionToSpawnAt`, `rotationToSpawnWith`, `createPlayerObject`, and `prefabHash` properties as parameters: 
+`ConnectionApprovalCallback` isn't called by the Client host. You need to specify the `positionToSpawnAt`, `rotationToSpawnWith`, `createPlayerObject`, and `prefabHash` properties as parameters: 
 
 ```csharp
 StartHost (positionToSpawnAt, rotationToSpawnWith, createPlayerObject, prefabHash);
@@ -62,7 +62,7 @@ The `ConnectionData` will then be passed to the server and it will decide if the
 
 ## Timeout
 
-The MLAPI uses a callback system in order to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you cannot attack the MLAPI by never sending the buffer, it will still time you out.
+The MLAPI uses a callback system to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steams servers. This can take some time. If you don't call the callback method within the time specified in the `ClientConnectionBufferTimeout` configuration the connection will be dropped. This time starts counting when the transport has told the MLAPI about the connection. This means that you can't attack the MLAPI by never sending the buffer, it will still time you out.
 
 ## Security
 
@@ -70,8 +70,8 @@ If connection approval is enabled. Any messages sent before a connection is setu
 
 ### Connection data security
 
-The connection data is not encrypted or authenticated. 
+The connection data isn't encrypted or authenticated. 
 
 :::important
-A man in the middle attack can be done. It is strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
+A man in the middle attack can be done. it's strongly suggested to not send authentication tokens such as steam tickets or user passwords over connection approval.
 :::

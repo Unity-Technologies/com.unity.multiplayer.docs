@@ -287,7 +287,7 @@ While you can have nested `INetworkSerializable` implementations (an `INetworkSe
 **Unsupported Example**
 
 ```csharp
-/// This is not supported.
+/// This isn't supported.
 public struct MyStructB : MyStructA
 {
     public int SomeNumber;

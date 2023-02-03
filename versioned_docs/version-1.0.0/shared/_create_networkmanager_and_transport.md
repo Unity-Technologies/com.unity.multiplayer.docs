@@ -5,7 +5,7 @@
   :::note
   We renamed the `GameObject` because:
     * It makes it  easier to refer to later.
-    * There should only be one **NetworkManager** object that contains the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
+    * There should only be one **NetworkManager** object that has the  `NetworkManager` component. You may get unexpected results if you create more than one **NetworkManager**.
   :::
 
 You have created a new `GameObject` called **NetworkManager**. Now we will add the `NetworkManager` component and select the transport type.
