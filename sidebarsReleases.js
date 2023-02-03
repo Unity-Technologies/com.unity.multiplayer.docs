@@ -37,6 +37,11 @@ module.exports = {
                             type: 'doc',
                             id: 'tools/tools-1-0-0-pre',
                         },
+                        ,
+                        {
+                            type: 'doc',
+                            id: 'tools/mppm-release-notes',
+                        },
                     ]
                 },
                 {
