@@ -310,7 +310,7 @@ namespace HelloWorld
 
 In the Hello World project from earlier), you created a `NetworkManager` by adding the pre-created `NetworkManager` component. This component allows you to start a Host, Client, or Server in Play mode by inspecting the component. The `HelloWorldManager.cs` script simplifies this slightly by creating an on-screen UI button menu upon entering Play mode.
 
-::tip
+:::tip
 
 * The **Host** starts the server and joins as a client.
 * The **Client** is joining the server as a client player.
