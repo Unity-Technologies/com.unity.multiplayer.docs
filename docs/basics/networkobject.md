@@ -12,8 +12,8 @@ Netcode for GameObjects' high level components, [the RPC system](../advanced-top
 
 Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures before you can serialize and use them with `RPC` s and `NetworkVariables` :
 
-* For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity. Netcode. NetworkObjectReference).
-* For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity. Netcode. NetworkBehaviourReference.md).
+* For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference).
+* For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
 
 :::
 
