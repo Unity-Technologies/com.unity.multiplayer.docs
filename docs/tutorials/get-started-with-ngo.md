@@ -20,7 +20,7 @@ Before continuing, create a new project using Unity Editor version 2021.3 or lat
 
 ## Install Netcode for GameObjects
 
-See [Install Netcode for GameObjects](../installation/)
+See [Install Netcode for GameObjects](../installation).
 
 ## Add the basic components
 

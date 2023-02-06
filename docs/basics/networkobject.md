@@ -12,8 +12,8 @@ Netcode for GameObjects' high level components, [the RPC system](../advanced-top
 
 Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures before you can serialize and use them with `RPC` s and `NetworkVariables` :
 
-* For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity. Netcode. NetworkObjectReference).
-* For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity. Netcode. NetworkBehaviourReference.md).
+* For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference).
+* For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
 
 :::
 
@@ -65,9 +65,9 @@ To give ownership back to the server use the `RemoveOwnership` method:
 GetComponent<NetworkObject>().RemoveOwnership();
 ```
 
-To decide if the local client is the owner of a NetworkObject, you can check the [ `NetworkBehaviour.IsOwner` ](../api/Unity. Netcode. NetworkBehaviour#isowner) property.
+To decide if the local client is the owner of a NetworkObject, you can check the [ `NetworkBehaviour.IsOwner` ](../api/Unity.Netcode.NetworkBehaviour#isowner) property.
 
-To decide if the server owns the NetworkObject, you can check the [ `NetworkBehaviour.IsOwnedByServer` ](../api/Unity. Netcode. NetworkBehaviour#isownedbyserver) property.
+To decide if the server owns the NetworkObject, you can check the [ `NetworkBehaviour.IsOwnedByServer` ](../api/Unity.Netcode.NetworkBehaviour#isownedbyserver) property.
 
 :::note
 
