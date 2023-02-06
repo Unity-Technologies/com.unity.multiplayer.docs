@@ -84,7 +84,7 @@ This section guides you through creating an object that spawns for each connecte
 
 ![](../../static/img/get-started-ngo/ngo-12.png)
 
-1. Delete the Player from the scene by selecting the Player capsule within the **Scene** tab, then pressing the **Delete** key.
+1. Delete the Player from the scene by selecting the Player capsule within the **Scene** tab, then pressing the **Delete** key (or **Cmd** + **Delete** for Mac OS).
 
 :::tip
 
