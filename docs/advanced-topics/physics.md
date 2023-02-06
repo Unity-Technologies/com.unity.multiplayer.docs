@@ -38,6 +38,6 @@ Add the `ClientNetworkTransform` component to your `GameObject` first. Otherwise
 
 ## Physics and latency
 
-A common issue with physics in multiplayer games is lag and how objects update on basically different timelines. For example, a player would be on a timeline that’s offset by the network latency relative to your server’s objects. One way to prepare for this is to test your game with artificial lag. You might catch some see weird delayed collisions that would otherwise make it into production.
+A common issue with physics in multiplayer games is lag and how objects update on basically different timelines. For example, a player would be on a timeline that’s offset by the network latency relative to your server’s objects. One way to prepare for this is to test your game with artificial lag. You might catch some weird delayed collisions that would otherwise make it into production.
 
 The `ClientDriven` [bitesize sample](../learn/bitesize/bitesize-clientdriven.md) addresses this by manually adding forces server-side to offer a buffer before an actual collision, but it still feels wobbly at times. Using the [Network Simulator tool](../../tools/network-simulator.md) is a better way to test for latency issue.
