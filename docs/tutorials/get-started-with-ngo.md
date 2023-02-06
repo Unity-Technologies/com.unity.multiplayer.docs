@@ -18,6 +18,16 @@ Before you start, ensure you have the following prerequisites:
 
 Before continuing, create a new project using Unity Editor version 2021.3 or later.
 
+:::tip
+
+If you don't already have an `Assets/Scripts/` folder, create one now:
+1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
+2. Name the new folder **Scripts**.
+
+This is where you'll keep all your scripts.
+
+:::
+
 ## Install Netcode for GameObjects
 
 See [Install Netcode for GameObjects](../installation/install).
@@ -59,7 +69,7 @@ First, create the `NetworkManager` component:
 
 :::important
 
-When you drop the Prefab into the **PlayerPrefab** slot, you are telling the library that when a client connects to the game, it should automatically spawn this Prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any Prefab set as the **PlayerPrefab**. See [Player Objects](../basics/networkobject#finding-player-objects).
+When you drop the Prefab into the **PlayerPrefab** slot, you're telling the library that when a client connects to the game, it should automatically spawn this Prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any Prefab set as the **PlayerPrefab**. See [Player Objects](../basics/networkobject#finding-player-objects).
 
 :::
 
@@ -123,7 +133,7 @@ You should see **Scenes/SampleScene** listed under **Scenes In Build**. You can 
 
 ## Add RPCs
 
-This section guides you through adding basic RPCs to the project.
+This section guides you through adding basic RPCs to the project. 
 
 Create a script named `RpcTest.cs`:
 
@@ -592,7 +602,7 @@ The client can request a new position, instructing the server to change that ins
 
 This section guides you through adding a `NetworkTransform` component that moves the player.
 
-Add a `NetworkTransform` component to the Player prefab:
+Add a `NetworkTransform` component to the Player Prefab:
 
 1. Select the **Player** Prefab in Assets > Prefabs.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
@@ -604,7 +614,7 @@ Create a script named `NetworkTransformTest.cs`.
 2. Right-click, then select **Create** > **C# Script**.
 3. Name it `NetworkTransformTest`.
 
-Add the `NetworkTransformTest` script to the Player prefab:
+Add the `NetworkTransformTest` script to the Player Prefab:
 
 1. Select the **Player** Prefab in **Assets** > **Prefabs**.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
