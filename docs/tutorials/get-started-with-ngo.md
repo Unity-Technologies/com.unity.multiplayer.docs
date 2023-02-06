@@ -685,7 +685,7 @@ After the client and server spawn, you should see the player capsule moving in a
 
 To see if everything works as expected, test starting a host in the Unity Editor. A host plays the role of a server and a client at the same time.
 
-You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, see [Create a command line helper](command-line-helper). Otherwise, see the following instructions to test through the Unity Editor.
+You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, see [Create a command line helper](command-line-helper). Otherwise, see the following instructions to test through the Unity Editor. You should see just the Plane on the server until the first client connects. Then, NGO spawns a new Player Prefab for each connected client; however, they will be overlapped in the game view.
 
 1. Select **Play** from the top of the Unity Editor to start the scene.
 
