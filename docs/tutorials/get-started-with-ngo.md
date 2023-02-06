@@ -82,31 +82,31 @@ This section guides you through creating an object that spawns for each connecte
 
 1. In the Unity Editor, right-click within the **Hierarchy** tab, then select **3D Object** > **Capsule**.
 2. Name the Capsule Object **Player**.
-3. With Player selected, add a `NetworkObject` component in the **Inspector** tab by selecting **Add Component** > **NetworkObject**.
+3. With Player selected, add a NetworkObject component in the **Inspector** tab by selecting **Add Component** > **Netcode** > **NetworkObject**.
 4. Right-click within the **Assets** folder under the **Project** tab, then select **Create** > **Folder**.
 5. Name the folder **Prefabs**.
 6. Make the **Player** object you created earlier into a Prefab by dragging it from the **Hierarchy** tab into the **Prefabs** folder.
 
 ![](../../static/img/get-started-ngo/ngo-12.png)
 
-1. Delete the Player from the scene by selecting the Player capsule within the **Scene** tab, then pressing the **Delete** key (or **Cmd** + **Delete** for Mac OS).
+7. Delete the Player from the scene by selecting the Player capsule within the **Scene** tab, then pressing the **Delete** key (or **Cmd** + **Delete** for Mac OS).
 
 :::tip
 
-You can remove the `Player` object from the scene because you assign this network Prefab to the Player Prefab property in the `NetworkManager` component. The library doesn't support defining a player object as an in-scene placed `NetworkObject`.
+You can remove the `Player` object from the scene because you assign this network Prefab to the Player Prefab property in the `NetworkManager` component. The library doesn't support defining a player object as an in-scene placed NetworkObject.
 
 :::
 
-1. Select **NetworkManager**.
-2. With `NetworkManager` selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
+8. Select **NetworkManager**.
+9. With `NetworkManager` selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-9.png)
 
-1. Drag the **Player** Prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
+10. Drag the **Player** Prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-5.png)
 
-1. Add a 3D Plane (centered at 0,0,0) to the scene by right-clicking in the **Hierarchy** tab, then selecting **3D Object** > **Plane**.
+11. Add a 3D Plane (centered at 0,0,0) to the scene by right-clicking in the **Hierarchy** tab, then selecting **3D Object** > **Plane**.
 
 :::note
 
@@ -116,7 +116,7 @@ Adding the Plane adds a visual reference point to visualize the Player Prefab’
 
 ![](../../static/img/get-started-ngo/ngo-7.png)
 
-1. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
+12. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
 
 ### Add your scene to the build
 
