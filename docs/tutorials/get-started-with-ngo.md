@@ -14,13 +14,13 @@ Before you start, ensure you have the following prerequisites:
 
 * An active Unity account with a valid license.
 * The [Unity Hub](https://unity.com/download).
-* A NGO-supported version of the Unity Editor. See [NGO requirements](../installation/installation.md).
+* A NGO-supported version of the Unity Editor. See [NGO requirements](../installation/install).
 
 Before continuing, create a new project using Unity Editor version 2021.3 or later.
 
 ## Install Netcode for GameObjects
 
-See [Install Netcode for GameObjects](../installation).
+See [Install Netcode for GameObjects](../installation/install).
 
 ## Add the basic components
 
@@ -95,7 +95,7 @@ You can remove the `Player` object from the scene because you assign this networ
 
 :::note
 
-Adding the Plane adds a visual reference point to visualize the Player prefab’s position, but it isn’t necessary.
+Adding the Plane adds a visual reference point to visualize the Player Prefab’s position, but it isn’t necessary.
 
 :::
 
