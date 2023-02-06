@@ -3,25 +3,25 @@ id: networkobject
 title: NetworkObject
 ---
 
-Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../basics/object-spawning), and [NetworkVariable](../basics/networkvariable)s all rely on there being at least two Netcode components added to a `GameObject` :
+Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../basics/object-spawning), and [NetworkVariable](networkvariable.md)s all rely on there being at least two Netcode components added to a `GameObject`:
 
   1. `NetworkObject`
   2. [`NetworkBehaviour`](networkbehaviour.md)
 
 :::note
 
-Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures before you can serialize and use them with `RPC` s and `NetworkVariables` :
+Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures before you can serialize and use them with RPCs and `NetworkVariables`:
 
-* For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference).
+* For `NetworkObject`s use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference.md).
 * For `NetworkBehaviour`s use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
 
 :::
 
 # NetworkObject
 
-To replicate any Netcode aware properties or send/receive RPCs a `GameObject` must have a `NetworkObject` component and at least one `NetworkBehaviour` component. Any Netcode related component, like `NetworkTransform` or a `NetworkBehaviour` with one or more `NetworkVariable` s or `RPC` s, requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` in question.
+To replicate any Netcode aware properties or send/receive RPCs a `GameObject` must have a `NetworkObject` component and at least one `NetworkBehaviour` component. Any Netcode related component, like `NetworkTransform` or a `NetworkBehaviour` with one or more `NetworkVariable`s or `RPC`s, requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` in question.
 
-When spawning a `NetworkObject`, the `NetworkObject.GlobalObjectIdHash` value initially identifies the associated network Prefab asset clients instantiate to create a client-local clone. After instantiated locally, each `NetworkObject` is assigned a `NetworkObjectId` that's used to associate `NetworkObject` s across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103, " and everyone knows what object it's referring to. A `NetworkObject` is "Spawned" on a client is when it's instatiated and assigned a unique `NetworkObjectId`.
+When spawning a `NetworkObject`, the `NetworkObject.GlobalObjectIdHash` value initially identifies the associated network Prefab asset clients instantiate to create a client-local clone. After instantiated locally, each `NetworkObject` is assigned a `NetworkObjectId` that's used to associate `NetworkObject` s across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103," and everyone knows what object it's referring to. A `NetworkObject` is "Spawned" on a client is when it's instantiated and assigned a unique `NetworkObjectId`.
 
 [NetworkBehaviours](networkbehaviour.md) offer users with the ability to add their own custom Netcode logic to the associated `NetworkObject`.
 
@@ -33,7 +33,7 @@ The order of networked objects matters. Make sure to load any `NetworkBehaviour`
 
 # Ownership
 
-Each `NetworkObject` is owned by either the server (default) or any connected and approved client. Netcode for GameObjects is server authoritative, which means the server controls (the only system authorized) to spawn or de-spawn `NetworkObject` s.
+Each `NetworkObject` is owned by either the server (default) or any connected and approved client. Netcode for GameObjects is server authoritative, which means the server controls (the only system authorized) to spawn or de-spawn `NetworkObject`s.
 
 :::note
 
@@ -89,7 +89,7 @@ If you want to be able to assign a unique player Prefab on a per client connecti
 
 ## Creating a Player Object
 
-Netcode can spawn a default player object for you. If `Create Player Prefab` is checked (`true`) in the `NetworkManager` and the `Player Prefab` is assigned a valid Prefab, then Netcode will spawn a unique instance of the designated player Prefab for each connected and approved client.
+Netcode can spawn a default player object for you. If you enable **Create Player Prefab** (`true`) in the `NetworkManager` and you assign a valid Prefab to the Player Prefab, then Netcode spawns a unique instance of the designated player Prefab for each connected and approved client.
 
 To manually spawn an object as player object, use the following method:
 
@@ -99,21 +99,21 @@ GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
 
 :::note
 
-If the player already had a Prefab instance assigned, then the NetworkObject of that Prefab instance is owned by the client unless there is additional server-side specific user code that removes or changes the ownership.
+If the player already had a Prefab instance assigned, then the client owns the NetworkObject of that Prefab instance unless there's additional server-side specific user code that removes or changes the ownership.
 
 :::
 
 ## Finding Player Objects
 
-To find a player object for a specific client id you can use the following methods:
+To find a player object for a specific client ID, you can use the following methods:
 
-Within a `NetworkBehaviour`, you can check the local `NetworkManager` 's `LocalClient` to get the local player object:
+Within a `NetworkBehaviour`, you can check the local `NetworkManager`'s `LocalClient` to get the local player object:
 
 ```csharp
 NetworkManager.LocalClient.PlayerObject
 ```
 
-Conversely, on the server-side, if you need to get the player object instance for a specific client you can use the following:
+Conversely, on the server-side, if you need to get the player object instance for a specific client, you can use the following:
 
 ```csharp
 NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
@@ -125,8 +125,8 @@ To find your own player object just pass `NetworkManager.Singleton.LocalClientId
 
 Network Prefabs (`NetworkPrefabs`) are Prefabs that contain a GameObject with a `NetworkObject` component. As an example, if you wanted to create a Prefab to be the default player Prefab, then you would create a Prefab that at the root GameObject included a `NetworkObject` component and any additional player specific `NetworkBehaviour` components. You can then assign that Prefab to the `NetworkManager` Player Prefab property to be used when a player is connected and approved. Each connected player will have a unique instance spawned on all connected clients (including the server).
 
-:::note
+:::warning
 
-You can only have one `NetworkObject` at the root of a Prefab. This means don't create Prefabs with nested `NetworkObjects` !
+You can only have one `NetworkObject` at the root of a Prefab. Don't create Prefabs with nested `NetworkObjects`!
 
 :::
