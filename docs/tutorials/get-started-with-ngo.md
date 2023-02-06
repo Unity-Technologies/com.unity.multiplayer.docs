@@ -140,6 +140,16 @@ You should see **Scenes/SampleScene** listed under **Scenes In Build**. You can 
 
 This section guides you through adding basic RPCs to the project. 
 
+:::tip
+
+If you don't already have an `Assets/Scripts/` folder, create one now:
+1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
+2. Name the new folder **Scripts**.
+
+This is where you'll keep all your scripts.
+
+:::
+
 Create a script named `RpcTest.cs`:
 
 1. In the **Project** tab, select **Assets** > **Scripts**.
@@ -352,7 +362,7 @@ The `HelloWorldManager.cs` script accomplishes this menu within the `StartButton
         }
 ```
 
-As seen in the earlier code snippet, the `HelloWorldManager.cs` script also utilizes the `NetworkManager` ‘s instance via its singleton to grab useful properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
+As seen in the earlier code snippet, the `HelloWorldManager.cs` script also utilizes the `NetworkManager`‘s instance via its singleton to grab useful properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
 
 :::note
 
@@ -362,8 +372,18 @@ The `HelloWorldManager.cs` script introduces a new method called `SubmitNewPosit
 
 ### `The HelloWorldPlayer.cs` Script
 
+:::tip
+
+If you don't already have an `Assets/Scripts/` folder, create one now:
+1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
+2. Name the new folder **Scripts**.
+
+This is where you'll keep all your scripts.
+
+:::
+
 1. Create a new script in the `Scripts` folder named `HelloWorldPlayer.cs`.
-2. Add the script as a component to your Player prefab.
+2. Add the script as a component to your Player Prefab.
 3. Copy the following code into the `HelloWorldPlayer.cs` script:
 
 ```csharp
