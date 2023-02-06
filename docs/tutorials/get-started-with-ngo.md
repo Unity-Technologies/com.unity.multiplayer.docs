@@ -50,20 +50,25 @@ First, create the `NetworkManager` component:
 
 ![](../../static/img/get-started-ngo/ngo-10.png)
 
-1. Rename the empty GameObject **NetworkManager**.
+2. Rename the empty GameObject **NetworkManager**.
 
 ![](../../static/img/get-started-ngo/ngo-11.png)
 
-1. Select **NetworkManager**, then select **Add Component** from the **Inspector** tab.
+3. Select **NetworkManager**, then select **Add Component** from the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-6.png)
 
-1. Select **Netcode** > **NetworkManager** from the component list.
+4. Select **Netcode** > **NetworkManager** from the component list.
 
 ![](../../static/img/get-started-ngo/ngo-1.png)
 
-1. In the Inspector tab, locate the Unity Transport section, then select **UnityTransport** as the **Protocol type**.
-2. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
+5. In the Inspector tab, locate the Unity Transport section, then select **UnityTransport** as the **Protocol type**.
+
+![](../../static/img/get-started-ngo/ngo-13.png)
+
+![](../../static/img/get-started-ngo/ngo-14.png)
+
+6. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
 ### Create an object to spawn for each connected player
 
@@ -141,7 +146,7 @@ Create a script named `RpcTest.cs`:
 2. Right-click in the **Scripts** folder and select **Create** > **C# Script**.
 3. Name the script `RpcTest`.
 
-Add the `RpcTest.cs` script to the Player prefab:
+Add the `RpcTest.cs` script to the Player Prefab:
 
 1. Select the **Player** Prefab in **Assets** > **Prefabs**.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
