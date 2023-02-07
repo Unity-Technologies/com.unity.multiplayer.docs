@@ -13,7 +13,7 @@ sidebar_label: Using NetworkSceneManager
   - All spawned Netcode objects are synchronized with clients during client synchronization.
 - A comprehensive scene event notification system that provides you with a plethora of options.
   - It provides scene loading, unloading, and client synchronization events ("Scene Events") that can be tracked on both the client and server.
-    - The server isn'tified of all scene events (including the clients')
+    - The server notified of all scene events (including the clients')
       - The server tracks each client's scene event progress (scene event progress tracking)
     - Clients receive scene event messages from the server, trigger local notifications as it progresses through a Scene Event's, and send local notifications to the server.
       - _clients **aren't** aware of other clients' scene events_
@@ -105,7 +105,7 @@ The term "Scene Event" refers to all subsequent scene events that transpire over
   - Upon starting the scene event, the clients will receive a local notification for the SceneEventType.Load event.
   - As each client finishes loading the scene, they will generate a `SceneEventType.LoadComplete` event 
     - The client sends this event message to the server.
-    - The client isn'tified locally of this scene event.
+    - The client notified locally of this scene event.
       - Thisn'tification only means that it has finished loading and synchronizing the scene, but does not mean all other clients have!
 - The server receives the `SceneEventType.LoadComplete` events from the clients
   - When all `SceneEventType.LoadComplete` events have been received, the server will generate a `SceneEventType.LoadEventCompleted` notification
