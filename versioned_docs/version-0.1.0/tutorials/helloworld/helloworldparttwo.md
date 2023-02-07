@@ -299,7 +299,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 ### Introducing permissions
 
-In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable` . For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
+In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable`. For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
 
 `HelloWorldPlayer` overrides `NetworkStart`.
 

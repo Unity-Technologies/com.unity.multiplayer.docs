@@ -13,7 +13,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 * Added a new constructor for `RelayServerData` that is now provided with argument types that better match those available in the models returned by the [Relay SDK](https://docs.unity.com/relay/SDK/sdk.html). **Note**: We also updated the "RelayPing" sample to use the new constructor.
 * Added new constructors for `RelayServerData` that are provided with argument types that better match those available in the models returned by the [Relay SDK](https://docs.unity.com/relay/SDK/sdk.html). **Note**: We also updated the "RelayPing" sample to use the new constructor.
 * Updated `NetworkSettings` to include a `IsCreated` property that can be used to check if it's been disposed of or not.
-* Added new versions of `NetworkSettings.WithSecureClientParameters` and `NetworkSettins.WithSecureServerParameters` . These new versions take strings as parameters instead of references to fixed strings. The older versions are still available and fully supported.
+* Added new versions of `NetworkSettings.WithSecureClientParameters` and `NetworkSettins.WithSecureServerParameters`. These new versions take strings as parameters instead of references to fixed strings. The older versions are still available and fully supported.
 * Added a new version of `NetworkSettings.WithSecureClientParameters` that only takes the server name as a parameter. You can use this when the server uses certificates from a recognized CA (certificate authority).
 
 ### Changes

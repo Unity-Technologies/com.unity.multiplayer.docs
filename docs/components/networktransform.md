@@ -15,7 +15,7 @@ You can have more than one `NetworkTransform` components on child objects of you
 
 :::
 
-# Restricting Synchronization
+# Restricting synchronization
 
 You often don't need to synchronize all transform values of a GameObject over the network. For instance, if the scale of the GameObject never changes, you can deactivate it in the **syncing scale** row in the Inspector. Deactivating synchronization saves CPU costs and network bandwidth.
 
@@ -29,7 +29,7 @@ The small changes below the threshold still result in a synchronization of the v
 
 :::
 
-# Local Space
+# Local space
 
 By default, `NetworkTransform` synchronizes the transform of an object in world space. The **In Local Space** configuration option allows you to change to synchronizing the transform in local space instead.
 

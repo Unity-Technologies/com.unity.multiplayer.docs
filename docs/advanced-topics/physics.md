@@ -8,38 +8,26 @@ There are many different ways to do physics in multiplayer games. Netcode for Ga
 
 ## NetworkRigidbody
 
-`NetworkRigidbody` is a component that sets the `Rigidbody` of the `GameObject` into kinematic mode on every peer (except the server). That way, you can run a realistic physics simulation on the server and synchronize the resulting positions to the clients without any interference.
+NetworkRigidbody is a component that sets the Rigidbody of the GameObject into kinematic mode on every peer (except the server). That way, a realistic physics simulation runs on the server and the resulting positions synchronize to the clients without any interference.
 
-To use `NetworkRigidbody` add a `Rigidbody`, `NetworkTransform`,  and `NetworkRigidbody` component to your `NetworkObject`.
+To use NetworkRigidbody, add a **Rigidbody**, **NetworkTransform**, and **NetworkRigidbody** component to your NetworkObject.
 
-Some collision events aren't fired when using `NetworkRigidbody`.
-- On the `server`, all collision and trigger events (such as `OnCollisionEnter`) fire as expected and you can access (and change) values of the `Rigidbody` (such as velocity).
-- On the `clients`, the `Rigidbody` is kinematic. Trigger events still fire but collision events won't fire when colliding with other networked `Rigidbody` instances.
+Some collision events aren't fired when using NetworkRigidbody.
+- On the server, all collision and trigger events (such as `OnCollisionEnter`) fire as expected and you can access (and change) values of the Rigidbody (such as velocity).
+- On the clients, the Rigidbody is kinematic. Trigger events fire, but collision events won't fire when colliding with other networked Rigidbody instances.
 
 :::tip
-
-If there is a need for a gameplay event to happen on a collision, you can listen to `OnCollisionEnter` function on the server and synchronize the event via `ClientRpc` to all clients.
-
+You need a gameplay event to happen on a collision, you can listen to `OnCollisionEnter` function on the server and synchronize the event via [ClientRpc](../advanced-topics/message-system/clientrpc.md) to all clients.
 :::
 
 ## NetworkRigidbody2D
 
-`NetworkRigidbody2D` works in the same way as `NetworkRigidbody` but for 2D physics (`Rigidbody2D`) instead.
+NetworkRigidbody2D works in the same way as NetworkRigidbody but for 2D physics (Rigidbody2D) instead.
 
 ## NetworkRigidbody & ClientNetworkTransform
 
-You can use `NetworkRigidbody` with the [`ClientNetworkTransform`](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a `NetworkObject` to move it authoritatively. In this mode, collisions only result in realistic dynamic collisions if the object is colliding with other `NetworkObjects` (owned by the same client).
+You can use NetworkRigidbody` in combination with the [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a NetworkObject to move it authoritatively. In this mode, collisions only result in realistic dynamic collisions if the object is colliding with other NetworkObjects owned by the same client.
 
 :::note
-
-Add the `ClientNetworkTransform` component to your `GameObject` first. Otherwise the `NetworkRigidbody` automatically adds a regular `NetworkTransform`.
-
+Add the ClientNetworkTransform component to your GameObject first. Otherwise, the NetworkRigidbody automatically adds a regular NetworkTransform.
 :::
-
-## Physics and latency
-
-A common issue with physics in multiplayer games is lag and how objects update on basically different timelines. For example, a player would be on a timeline that’s offset by the network latency relative to your server’s objects. One way to prepare for this is to test your game with artificial lag. You might catch some weird delayed collisions that would otherwise make it into production.
-
-The `ClientDriven` [bitesize sample](../learn/bitesize/bitesize-clientdriven.md) addresses this by manually adding forces server-side to offer a buffer before an actual collision, but it still feels wobbly at times. However, this isn't really a solution. 
-
-The best way to address the issue of physics latency is to create a custom `NetworkTransform` with a custom physics-based interpolator. You can also use the [Network Simulator tool](../../tools/network-simulator.md) to spot issues with latency.S

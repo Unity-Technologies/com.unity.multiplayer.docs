@@ -24,7 +24,7 @@ struct MyComplexStruct : INetworkSerializable
 }
 ```
 
-Types implementing `INetworkSerializable` are supported by `NetworkSerializer` , `RPC` s and `NetworkVariable` s.
+Types implementing `INetworkSerializable` are supported by `NetworkSerializer`, `RPC` s and `NetworkVariable` s.
 
 ```csharp
 
@@ -68,7 +68,7 @@ You can use arrays in one of two ways:
 1. Via C# arrays
 2. Via Native Collections (`NativeArray`)
 
-The critical distinction between the two is that **C# arrays** convert any type that has the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable` . On the other hand, `NativeArray` requires manual memory management.
+The critical distinction between the two is that **C# arrays** convert any type that has the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
 
 ```csharp
 public struct MyCustomStruct : INetworkSerializable
@@ -164,7 +164,7 @@ public struct MyCustomNativeStruct : INetworkSerializable, IDisposable
 
 * Serialize value from Array[n] element into the stream
 
-The following examples uses the `BufferSerializer<TReaderWriter>.IsReader` flag to decide whether to set `length` value to prepare before writing into the stream—the example then uses it to decide whether to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting` .
+The following examples uses the `BufferSerializer<TReaderWriter>.IsReader` flag to decide whether to set `length` value to prepare before writing into the stream—the example then uses it to decide whether to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`.
 
 ## Example: Move
 
@@ -265,9 +265,9 @@ public struct MyStructB : INetworkSerializable
 }
 ```
 
-If you were to serialize `MyStructA` alone, it would serialize `Position` and `Rotation` into the stream using `NetworkSerializer` .
+If you were to serialize `MyStructA` alone, it would serialize `Position` and `Rotation` into the stream using `NetworkSerializer`.
 
-However, if you were to serialize `MyStructB` , it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA` by calling `MyStructA` 's `void NetworkSerialize(NetworkSerializer)` method, which serializes `Position` and `Rotation` into the same stream.
+However, if you were to serialize `MyStructB`, it would serialize `SomeNumber` and `SomeText` into the stream, then serialize `StructA` by calling `MyStructA` 's `void NetworkSerialize(NetworkSerializer)` method, which serializes `Position` and `Rotation` into the same stream.
 
 :::note
 
