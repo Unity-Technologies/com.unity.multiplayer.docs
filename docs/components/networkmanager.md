@@ -141,7 +141,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 
 **When disconnect notifications are triggered:**
 - Clients aren'tified when they're disconnected by the server.
-- The server isn'tified if the client side disconnects (that is, a player exits a game session)
+- The server notified if the client side disconnects (that is, a player exits a game session)
 - Both the server and clients aren'tified when their network connection is disconnected (network interruption)
 
 **Scenarios where the disconnect notification won't be triggered**:

@@ -27,7 +27,7 @@ using (PooledNetworkBuffer stream = PooledNetworkBuffer.Get())
 
 While the `BinaryWriter` class built into .NET is great for reading and writing binary data, it's not compact or efficient and doesn't offer a ton of flexibility. The `NetworkWriter` and `NetworkReader` solves this.
 
-The `NetworkWriter` and `NetworkReader` can operate at the bit level when used with a `NetworkBuffer` . It also has many fancy write methods for compacting data.
+The `NetworkWriter` and `NetworkReader` can operate at the bit level when used with a `NetworkBuffer`. It also has many fancy write methods for compacting data.
 
 Some of it's key features include the following.
 
