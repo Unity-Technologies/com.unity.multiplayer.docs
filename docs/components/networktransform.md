@@ -5,31 +5,31 @@ title: NetworkTransform
 
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-The position, rotation, and scale of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized once when that object is spawned. To synchronize position, rotation, and scale at real-time during the game, a `NetworkTransform` component is needed. `NetworkTransform` synchronizes the transform from server object to the clients.
+The position, rotation, and scale of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized once when that object spawns. To synchronize position, rotation, and scale at real-time during the game, you need a `NetworkTransform` component. `NetworkTransform` synchronizes the transform from server object to the clients.
 
 `NetworkTransform` covers most use cases for synchronizing transforms. For some special cases such as fast paced games a custom implementation with a different interpolation algorithm might be better.
 
 :::tip
 
-You can have multiple `NetworkTransform` components on child objects of your network object to synchronize individual positions of child objects.
+You can have more than one `NetworkTransform` components on child objects of your NetworkObject to synchronize individual positions of child objects.
 
 :::
 
-# Restricting Synchronization
+# Restricting synchronization
 
-Quite often not all transform values of a GameObject need to be synchronized over the network. For instance if the scale of the GameObject never changes it can be deactivated in the `syncing scale` row in the inspector. Deactivating synchronization only saves on CPU costs but in the future it will also reduce the bandwidth used by NetworkTransform`.
+Quite often, you don't need to synchronize all transform values of a GameObject over the network. For instance, you can't deactivate the **syncing scale** row in the Inspector if the scale of the GameObject never changes. Deactivating synchronization only saves on CPU costs and reduces the bandwidth used by NetworkTransform.
 
 # Thresholds
 
-You can use the threshold values to set a minimum threshold value. Whether to scale to your project's world unit scale or to reduce the frequency of synchronization updateSs, changes below threshold values won't synchronize. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) reduces the frequency of when the object's position synchronize (which translates to reducing bandwidth consumption).
+You can use the threshold values to set a minimum threshold value. Whether to scale to your project's world unit scale or to reduce the frequency of synchronization updates, changes below threshold values won't synchronize. For example, if your NetworkTransform has Interpolate enabled you might find that you can lower your position threshold resolution (position threshold value increased) without impacting the "smoothness" of an object's motion. Increasing the threshold value (lowering the resolution of synchronization updates) reduces the frequency of when the object's position synchronize (which translates to reducing bandwidth consumption).
 
 :::note
 
-The small changes below the threshold  still result in a synchronization of the values as soon as all the accumulative changes cross the threshold.
+The small changes below the threshold still result in a synchronization of the values as soon as all the accumulative changes cross the threshold.
 
 :::
 
-# Local Space
+# Local space
 
 By default, `NetworkTransform` synchronizes the transform of an object in world space. The `In Local Space` configuration option allows you to change to synchronizing the transform in local space instead.
 
@@ -37,13 +37,13 @@ Using `local space` can improve the synchronization of the transform when the ob
 
 # Interpolation
 
-Check the `Interpolate` setting to enabled interpolation. Interpolation is enabled by default and is highly recommended. With interpolation enabled, the `NetworkTransform` interpolates incoming changes to position, rotation, and scale. In addition interpolation buffers, the incoming data with a slight delay and applies extra smoothing to the values. All these factors combined result in a much smoother transform synchronization.
+Check the **Interpolate** setting to enabled interpolation. Interpolation is enabled by default and is highly recommended. With interpolation enabled, the `NetworkTransform` interpolates incoming changes to position, rotation, and scale. The interpolation also buffers the incoming data with a slight delay and applies extra smoothing to the values. All these factors combined result in a much smoother transform synchronization.
 
 When you have `Interpolate` disabled, changes to the transform apply immediately, resulting in a less smooth position and more jitter.
 
 :::note
 
-The `NetworkTransform` component only interpolates client-side. For smoother movement on the host or server, users might want to implement interpolation server-side as well. While the server won't have the jitter caused by the network, some stutter can still happen locally (for example, if movement is done in `FixedUpdate` with a low physics update rate).
+The `NetworkTransform` component only interpolates client-side. For smoother movement on the host or server, users might want to implement interpolation server-side as well. While the server won't have the jitter caused by the network, some stutter can still happen locally (for example, if you perform movement in `FixedUpdate` with a low physics update rate).
 
 :::
 

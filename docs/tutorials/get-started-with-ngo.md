@@ -40,11 +40,11 @@ This section guides you through adding the essential components of a networked g
 * [A player object](#create-an-object-to-spawn-for-each-connected-player)
 * [A scene](#add-your-scene-to-the-build)
 
-### Create the `NetworkManager` component
+### Create the NetworkManager component
 
-This section guides you through creating a `NetworkManager` component.
+This section guides you through creating a NetworkManager component.
 
-First, create the `NetworkManager` component:
+First, create the NetworkManager component:
 
 1. Right-click in the **Hierarchy** tab, then select **Create Empty** to create an empty GameObject.
 
@@ -98,7 +98,7 @@ You can remove the `Player` object from the scene because you assign this networ
 :::
 
 8. Select **NetworkManager**.
-9. With `NetworkManager` selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
+9. With NetworkManager selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-9.png)
 
@@ -126,7 +126,7 @@ The **Enable Scene Management** for the `NetworkManager` setting allows the serv
 
 :::note
 
-The **Enable Scene Management** option for the `NetworkManager` is enabled by default.
+The **Enable Scene Management** option for the NetworkManager is enabled by default.
 
 :::
 
@@ -238,7 +238,7 @@ Client Received the RPC #3 on NetworkObject #1
 ...
 ```
 
-Only the client owning the `NetworkObject` owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log Rpcs being received once per `NetworkObject` per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
+Only the client owning the `NetworkObject` owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log RPCs received once per `NetworkObject` per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
 
 ```log
 Server Received the RPC #0 on NetworkObject #2
@@ -254,7 +254,7 @@ Client Received the RPC #3 on NetworkObject #2
 
 :::note
 
-The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it won't be sending the initial RPC starting the chain because it's a server.
+The `NetworkObjectId` here is `2` because the host also has a NetworkObject with the `RpcTest` script spawned for it, but it won't send the initial RPC starting the chain because it's a server.
 
 :::
 
@@ -333,7 +333,7 @@ namespace HelloWorld
 
 1. Continue reading to understand what the example code means:
 
-In the Hello World project from earlier), you created a `NetworkManager` by adding the pre-created `NetworkManager` component. This component allows you to start a Host, Client, or Server in Play mode by inspecting the component. The `HelloWorldManager.cs` script simplifies this slightly by creating an on-screen UI button menu upon entering Play mode.
+In the Hello World project from earlier), you created a NetworkManager by adding the pre-created NetworkManager component. This component allows you to start a Host, Client, or Server in Play mode by inspecting the component. The `HelloWorldManager.cs` script simplifies this slightly by creating an on-screen UI button menu upon entering Play mode.
 
 :::tip
 
@@ -362,7 +362,7 @@ The `HelloWorldManager.cs` script accomplishes this menu within the `StartButton
         }
 ```
 
-As seen in the earlier code snippet, the `HelloWorldManager.cs` script also utilizes the `NetworkManager`‘s instance via its singleton to grab useful properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
+As seen in the earlier code snippet, the `HelloWorldManager.cs` script also utilizes the NetworkManager‘s instance via its singleton to grab useful properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
 
 :::note
 
@@ -439,7 +439,7 @@ namespace HelloWorld
 
 1. Continue reading to understand what the code means:
 
-The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server’s position `NetworkVariable`, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position `NetworkVariable`, then replicate the change locally.
+The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server’s position NetworkVariable, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position NetworkVariable, then replicate the change locally.
 
 The `HelloWorldPlayer` class inherits from `Unity.Netcode`‘s `NetworkBehaviour` instead of `MonoBehaviour`. This allows you to customize the networking code as you override what happens when the Player spawns.
 
@@ -469,7 +469,7 @@ You can override this behavior on any `NetworkBehaviour`.
 
 Since the server and client can be the same machine and the Player's owner (aka Host), you want further to differentiate the two and have different Move behavior for each.
 
-If the current player is the server, the code determines a random position to spawn the Player. You can’t determine the spawn location if the current player is the client; you have to get it from the server.
+If the current player is the server, the code determines a random position to spawn the Player. You can’t find the spawn location if the current player is the client; you have to get it from the server.
 
 ```csharp
        public void Move()
@@ -498,11 +498,11 @@ If the current player is the server, the code determines a random position to sp
         }
 ```
 
-#### Add the `HelloWorldPlayer.cs` script to the Player prefab
+#### Add the `HelloWorldPlayer.cs` script to the player Prefab
 
-This section guides you through adding the `HelloWorldPlayer.cs` script to the Player prefab.
+This section guides you through adding the `HelloWorldPlayer.cs` script to the Player Prefab.
 
-Select the Player prefab:
+Select the Player Prefab:
 
 1. From the **Project** tab, select **Assets** > **Prefabs**.
 2. Select **Player**.
@@ -580,7 +580,7 @@ If the player is a client, the script calls a `ServerRpc`. Clients can invoke a 
             }
 ```
 
-The `ServerRpc` sets the position `NetworkVariable` on the server's instance of the player by just picking a random point on the plane.
+The `ServerRpc` sets the position NetworkVariable on the server's instance of the player by just picking a random point on the plane.
 
 ```csharp
        [ServerRpc]
@@ -599,7 +599,7 @@ The server instance of the player modifies the `Position` `NetworkVariable` thro
         }
 ```
 
-Since the `HelloWorldPlayer.cs` script handles the position `NetworkVariable`, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
+Since the `HelloWorldPlayer.cs` script handles the position NetworkVariable, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
 
 ```csharp
        static void SubmitNewPosition()
@@ -623,11 +623,11 @@ Both build instances can move the player with the GUI button. The server moves t
 
 The client can request a new position, instructing the server to change that instance's position `NetworkVariable`. After the server updates the position `NetworkVariable`, the client applies that `NetworkVariable` position inside its `Update()` method.
 
-### Add a `NetworkTransform`
+### Add a NetworkTransform
 
 This section guides you through adding a `NetworkTransform` component that moves the player.
 
-Add a `NetworkTransform` component to the Player Prefab:
+Add a NetworkTransform component to the Player Prefab:
 
 1. Select the **Player** Prefab in Assets > Prefabs.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
@@ -671,9 +671,9 @@ public class NetworkTransformTest : NetworkBehaviour
 
 1. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
-#### Test the `NetworkTransform`
+#### Test the NetworkTransform
 
-This section guides you through testing the `NetworkTransform` you added in the earlier section.
+This section guides you through testing the NetworkTransform you added in the earlier section.
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
