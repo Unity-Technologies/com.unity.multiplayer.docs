@@ -32,20 +32,7 @@ Netcode supports the following platforms:
 * XR platforms running on Windows, Android, and iOS operating systems
 * Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact the [NGO development team](https://discord.com/channels/449263083769036810/563033158480691211) for more information about specific closed platforms.
   * When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there might be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
-
-:::caution Using WebGL
-
-Netcode doesn't support the WebGL platform because it doesn't allow access to IP Sockets.
-
-There are third party transports provided by the community that might enable you to use Netcode on WebGL platforms. You can find a list of these transports [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
-
-However, you should use these transports with caution:
-
-* You might encounter bugs and issues while using Netcode on WebGL, and the Netcode development won't prioritize fixing those issues.
-* The server or host can't be a WebGL client; It must be a Desktop or Mobile build.
-* You might experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
-
-:::
+* WebGL (requires NGO 1.2.0+ and UTP 2.0.0+)
 
 ## Installing with the Package Manager
 
