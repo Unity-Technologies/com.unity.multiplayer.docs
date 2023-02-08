@@ -26,7 +26,7 @@ NetworkRigidbody2D works in the same way as NetworkRigidbody but for 2D physics 
 
 ## NetworkRigidbody & ClientNetworkTransform
 
-You can use NetworkRigidbody` in combination with the [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a NetworkObject to move it authoritatively. In this mode, collisions only result in realistic dynamic collisions if the object is colliding with other NetworkObjects owned by the same client.
+You can use NetworkRigidbody in combination with the [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a NetworkObject to move it authoritatively. In this mode, collisions only result in realistic dynamic collisions if the object is colliding with other NetworkObjects owned by the same client.
 
 :::note
 Add the ClientNetworkTransform component to your GameObject first. Otherwise, the NetworkRigidbody automatically adds a regular NetworkTransform.
