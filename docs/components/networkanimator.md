@@ -5,7 +5,7 @@ created: 2023-01-24T18:34:06-06:00
 updated: 2023-01-24T18:34:06-06:00
 ---
 
-# Introduction
+# NetworkAnimator
 
 The `NetworkAnimator` component provides you with a fundamental example of how to synchronize animations during a network session. Animation states are synchronized with players joining an existing network session and any client already connected before the animation state changing.
 
