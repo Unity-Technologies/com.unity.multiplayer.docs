@@ -36,7 +36,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ### SceneState
 
-At the same time, we have implemented a light State Machine to keep track of the current `SceneState`. For example, the `SceneState` could indicate if players are in the Init or Bootstrap scene, Start or Lobby, or InGame. You can run a different Behavior or in this case a different `UpdateLoop` function, for each state.
+At the same time, we have implemented a light State Machine to keep track of the current `SceneState`. For example, the `SceneState` can indicate if players are in the Init or Bootstrap scene, Start or Lobby, or InGame. You can run a different Behavior or in this case a different `UpdateLoop` function, for each state.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs#L25-L34
@@ -72,7 +72,7 @@ When the players join this Lobby, they all need to click **Ready** before the ga
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L195-L209
 ```
 
-At the same time, in order to sync up with the rest of the clients and update their UI, we send a ClientRpc. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
+At the same time, to sync up with the rest of the clients and update their UI, we send a ClientRpc. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L126-L144
@@ -96,7 +96,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 Games commonly have timers to display in the UI such as Start Timer, Round Timer, and Cooldowns. The Invaders sample also has a shared timer to ensure all players start the game at the same time. Otherwise, players with higher-end devices and better network access may have an unfair advantage by loading scenes and maps faster.
 
-When you implement this kind of timer, usually you would use a `NetworkVariable<float>` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
+When you implement this kind of timer, usually you would use a `NetworkVariable<float>` to replicate and display the exact time value across all clients. To improve performance, you don't need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
 
 An alternative solution is to sync only the start of the timer to the clients, and afterwards only sync the remaining value of the timer when a new client joins. For the remaining time, clients can update the timer locally. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be.
 

@@ -24,7 +24,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 ```
 
 ### Client side object detection for pickup with server side pickup validation 
-Ingredients in ClientDriven are owned by the server, since they are [shared objects](../dealing-with-latency.md#issue-world-consistency). This means if a player tries to grab an object while that object is moving, a server side range detection would sometimes fail, even though it should have succeeded (since ingredients are replicated with some lag, so the player would try to grab ingredients that are a few milliseconds behind).
+Ingredients in ClientDriven are owned by the server, since they're [shared objects](../dealing-with-latency.md#issue-world-consistency). This means if a player tries to grab an object while that object is moving, a server side range detection would sometimes fail, even though it should have succeeded (since ingredients are replicated with some lag, so the player would try to grab ingredients that are a few milliseconds behind).
 To make sure this doesn't happen, the object detection done to grab an ingredient is also done client side.
 
 ```csharp reference
@@ -37,7 +37,7 @@ But the pickup itself is done server side.
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/996ac9785c4e825c0e4692f115c9b5f2b4c7c386/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L41-L69
 ```
 
-Notice how we're checking whether that object can be picked up or not (since another player could have picked it up at the same time, creating a conflict).
+Notice how we're checking whether that object can be picked up or not (since another player can have picked it up at the same time, creating a conflict).
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/996ac9785c4e825c0e4692f115c9b5f2b4c7c386/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L45
@@ -61,7 +61,7 @@ This sample uses NetworkRigidbody for ingredients, which sets Kinematic = true, 
 
 This sample uses Netcode's automatic reparenting synchronization. By setting a NetworkObject's parent to another NetworkObject, that reparenting will be synced to connected clients.
 Note that we're also setting InLocalSpace while reparenting, to make sure the client side ingredient will be tracked the same way as the server side one (else the ingredient would be carried with latency, making it appear "dragging along behind you").
-An ownership change could also have been used here, but the client would have needed to ask the server for that change first.
+An ownership change can also have been used here, but the client would have needed to ask the server for that change first.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/0c9081b27e66879ce5742314c13ff69ac45ff02e/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L42-L54

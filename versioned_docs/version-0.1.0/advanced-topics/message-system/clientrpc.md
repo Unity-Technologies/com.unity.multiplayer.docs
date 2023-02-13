@@ -38,7 +38,7 @@ void Pong(int somenumber, string sometext) { /* ... */ }
 void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-`[ClientRpc]` attribute and matching `...ClientRpc` suffix in the method name are there to make it crystal clear for RPC call sites to know when they are executing an RPC, it will be replicated and executed on the client-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it is a [ServerRpc](serverrpc.md) or `ClientRpc`:
+`[ClientRpc]` attribute and matching `...ClientRpc` suffix in the method name are there to make it crystal clear for RPC call sites to know when they're executing an RPC, it will be replicated and executed on the client-side, without necessarily jumping into original RPC method declaration to find out if it was an RPC, if so whether it's a [ServerRpc](serverrpc.md) or `ClientRpc`:
 
 ```csharp
 Pong(somenumber, sometext); // Is this an RPC call?
@@ -55,7 +55,7 @@ The following code provides an example of using `ClientRpcSendParameters`, which
 ```csharp
 private void DoSomethingServerSide(int clientId)
     {
-        // If is not the Server/Host then we should early return here!
+        // If isn't the Server/Host then we should early return here!
         if (!IsServer) return;
 
 

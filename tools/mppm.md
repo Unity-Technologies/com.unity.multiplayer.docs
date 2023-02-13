@@ -7,7 +7,7 @@ sidebar_label: Multiplayer Play Mode
 Multiplayer Play Mode (MPPM) enables you to test multiplayer functionality without leaving the Unity Editor. You can simulate up to four Players (the Main Editor Player plus three Virtual Players) simultaneously on the same development device while using the same source assets on disk. You can leverage MPPM to create multiplayer development workflows that reduce the time it takes to build a project, run it locally, and test the server-client relationship.
 
 :::warning
-Despite the page's layout, MPPM is not part of the Multiplayer Tools package. It is not in the 1.1.0. MPPM is a separate package. Please check the Requirements section below for further information
+Despite the page's layout, MPPM isn't part of the Multiplayer Tools package. It isn't in the 1.1.0. MPPM is a separate package. Please check the Requirements section below for further information
 :::
 
 This document uses the following terminology to distinguish between the primary Unity Editor project and the Virtual Player instances:
@@ -15,6 +15,14 @@ This document uses the following terminology to distinguish between the primary 
 - The **Main Editor** refers to the primary (or original) instance of the project in the Unity Editor, and this is the only instance with full authoring capabilities.
 - **Virtual Players** refers to simulated Players created with Multiplayer Play Mode that open in a separate window with limited authoring capabilities when you enter **[Play mode](https://docs.unity3d.com/Manual/GameView.html)**.
 - **Players** refers to all Player instances, including the Main Editor Player and all Virtual Players.
+
+## Releases
+
+| Version  | Release date | Notes                                               |
+|----------|:------------:|----------------------------------------------------|
+| 0.1.1    | 2023-01-26   | See [MPPM release notes](../releases/tools/mppm-release-notes.md) |
+| 0.1.0    | 2022-11-15   | See [MPPM release notes](../releases/tools/mppm-release-notes.md) |
+
 
 ## Requirements
 

@@ -1,123 +1,118 @@
 ---
 id: Unity.Netcode.Transports.UTP.NetworkMetricsContext
 title: Unity.Netcode.Transports.UTP.NetworkMetricsContext
+date created: Tuesday, December 6th 2022, 1:36:00 pm
+date modified: Wednesday, January 25th 2023, 5:38:36 pm
 ---
 
-# Struct NetworkMetricsContext
-
+<div class="markdown level0 summary">
 
 Caching structure to track network metrics related information.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.Equals(Object)
 
+</div>
 
+<div>
 
-System.ValueType.Equals(System.Object)
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
+ValueType.ToString()
 
+</div>
 
-System.ValueType.GetHashCode()
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode.Transports.UTP
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public struct NetworkMetricsContext
 ```
 
+## Fields
 
+### PacketReceivedCount
 
-### Fields
-
-#### PacketReceivedCount
-
+<div class="markdown level1 summary">
 
 The number of packet received.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public uint PacketReceivedCount
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-#### PacketSentCount
+### PacketSentCount
 
+<div class="markdown level1 summary">
 
 The number of packet sent.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public uint PacketSentCount
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
-
-
-

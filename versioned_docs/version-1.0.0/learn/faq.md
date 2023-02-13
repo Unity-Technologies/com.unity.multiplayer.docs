@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Frequently Asked Questions
+title: often Asked Questions
 ---
 
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including  Netcode for GameObjects (Netcode), Transport, and more.
@@ -48,7 +48,7 @@ We recommend the following:
 
 ### Is it good for add Spawnable object into NetworkConfig after start host? 
 
-Yes, but you need to ensure that all your clients add the same object to their configs as well. You cannot only add it on the host.
+Yes, but you need to ensure that all your clients add the same object to their configs as well. You can't only add it on the host.
 
 ### How do I join from two devices on the same network?
 
@@ -92,7 +92,7 @@ If you attempt to run a build on OSX and receive a warning dialog mentioning an 
 1. In the Finder on your Mac, locate the application you want to open.
   
   :::note
-  Do not use Launchpad, it does not allow you to access the shortcut menu.
+  Don't use Launchpad, it does not allow you to access the shortcut menu.
   :::
 
 1. Control-click the app icon, then choose **Open** from the shortcut menu.

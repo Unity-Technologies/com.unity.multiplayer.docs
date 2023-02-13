@@ -40,7 +40,7 @@ The builtin types that are handled by default are:
 * NetworkObject (Only if spawned)
 * NetworkBehaviour (Only if spawned)
 
-With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you have not defined yourself, those who are behind a 3rd party wall, such as .NET types.
+With this flow, you can override **ALL** serialization for **ALL** types, even built in types, and with the API provided, it can even be done with types that you haven't defined yourself, those who are behind a 3rd party wall, such as .NET types.
 
 To register a custom type, or override an already handeld type you need to register a handler pair.
 

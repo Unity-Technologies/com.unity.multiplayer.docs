@@ -13,7 +13,7 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 * Added a new constructor for `RelayServerData` that is now provided with argument types that better match those available in the models returned by the [Relay SDK](https://docs.unity.com/relay/SDK/sdk.html). **Note**: We also updated the "RelayPing" sample to use the new constructor.
 * Added new constructors for `RelayServerData` that are provided with argument types that better match those available in the models returned by the [Relay SDK](https://docs.unity.com/relay/SDK/sdk.html). **Note**: We also updated the "RelayPing" sample to use the new constructor.
 * Updated `NetworkSettings` to include a `IsCreated` property that can be used to check if it's been disposed of or not.
-* Added new versions of `NetworkSettings.WithSecureClientParameters` and `NetworkSettins.WithSecureServerParameters` . These new versions take strings as parameters instead of references to fixed strings. The older versions are still available and fully supported.
+* Added new versions of `NetworkSettings.WithSecureClientParameters` and `NetworkSettins.WithSecureServerParameters`. These new versions take strings as parameters instead of references to fixed strings. The older versions are still available and fully supported.
 * Added a new version of `NetworkSettings.WithSecureClientParameters` that only takes the server name as a parameter. You can use this when the server uses certificates from a recognized CA (certificate authority).
 
 ### Changes
@@ -25,10 +25,10 @@ The [Unity Transport](../../transport/current/about) `com.unity.transport` packa
 
 ### Fixes
 
-* Fixed a possible stack overflow error that occurs if the `receive` or `send` queue parameters are configured with very large values (>15,000).
+* Fixed a possible stack overflow error that occurs if the `receive` or `send` queue parameters are configured with large values (>15,000).
 * Prevented an issue where a warning about having too many pipeline updates would be spammed after a connection was closed.
-* Fixed an issue where a duplicated reliable packet wouldn't be processed correctly, which could possibly lead to the entire reliable pipeline stage stalling (not being able to send new packets).
-* Fixed an issue where pipeline updates would be run too many times, which would waste CPU and could lead to the warning about having too many pipeline updates being erroneously logged.
+* Fixed an issue where a duplicated reliable packet wouldn't be processed correctly, which can possibly lead to the entire reliable pipeline stage stalling (not being able to send new packets).
+* Fixed an issue where pipeline updates would be run too many times, which would waste CPU and can lead to the warning about having too many pipeline updates being erroneously logged.
 * Fixed issues with `ReliableSequencePipelineStage` that would, in rare circumstances, lead to failure to deliver a reliable packet.
 
 ## [1.2.0] - 2022-08-16

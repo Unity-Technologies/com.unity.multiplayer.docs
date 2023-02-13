@@ -35,21 +35,8 @@ Netcode supports the following versions:
 Netcode supports the following platforms:
 * Windows, MacOS, and Linux
 * iOS and Android
+* WebGL (requires NGO 1.2.0+ and UTP 2.0.0+). **Note**: Although NGO 1.2.0 introduces WebGL support, there's a bug in NGO 1.2.0 that impacts WebGL compatibility, so it's recommended to use NGO 1.3.0+.
+
 * XR platforms running on Windows, Android, and iOS operating systems
 * Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact us for more information about specific closed platforms.
-  * When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there may be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
-
-:::caution Using WebGL
-Netcode doesn't support the WebGL platform because it doesn't allow access to IP Sockets.
-
-There are third party transports provided by the community that may enable you to use Netcode on WebGL platforms. A list of these transports are found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
-
-Use with caution:
-* You may encounter bugs and issues while using Netcode on WebGL, and the engineering team won't prioritize fixing those issues.
-* The server or host can't be a WebGL client, but a Desktop or Mobile build.
-* You may experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
-:::
-
-:::unity Content Licenses
-This is free under the permissive MIT [Licenses](/reference/license) by Unity and the Netcode collaborators. Netcode is open source with no attached costs or limitations, so you can develop features alongside Unity.
-:::
+  + When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there may be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.

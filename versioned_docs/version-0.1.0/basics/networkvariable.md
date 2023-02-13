@@ -11,7 +11,7 @@ There is a  Video Tutorial covering some of the concepts covered in this page [h
 
 `NetworkVariable` is the way data can be synchronized between peers in abstracted ways. The data can be custom containers and complex structures such as inventory structs.
 
-By default, Netcode comes with three different containers. `NetworkList`, `NetworkDictionary` and `NetworkVariable`. The `NetworkVariable` container is built to store simple data types such as `float`s and `int`s. The List and Dictionary implementations are wrappers around the .NET equivalents. They are event-driven and have a list of events to be synced. The default implementations come with flexibility in terms of settings. Containers can be setup to sync Client To Server, Server To Client, or Bidirectional. It can also be set to target specific clients using custom delegates.
+By default, Netcode comes with three different containers. `NetworkList`, `NetworkDictionary` and `NetworkVariable`. The `NetworkVariable` container is built to store simple data types such as `float`s and `int`s. The List and Dictionary implementations are wrappers around the .NET equivalents. They're event-driven and have a list of events to be synced. The default implementations come with flexibility in terms of settings. Containers can be setup to sync Client To Server, Server To Client, or Bidirectional. It can also be set to target specific clients using custom delegates.
 
 Since the `NetworkVariable` container is a wrapper container around the value, the value has be accessed using the `.Value` property.
 
@@ -56,9 +56,9 @@ void valueChanged(float prevF, float newF){
 If you want values to be synced only once (at spawn), the built-in container's send rate can be set to a negative value.
 
 ### Serialization
-Since the `NetworkVariable` class is a generic, editor serialization is NOT supported, it is only available through editor scripts for viewing the values. To get proper serialization, a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
+Since the `NetworkVariable` class is a generic, editor serialization isn't supported, it's only available through editor scripts for viewing the values. To get proper serialization, a clone of the `NetworkVariable` implementation has to be done for each type you wish to use. For example, `NetworkVariableInt` where you replace all the usages of `T` with `int`.
 
-The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they are called `NetworkVariable<T>` where `T` is the type.
+The MLAPI provides a few default serializable implementations of the `NetworkVariable`, they're called `NetworkVariable<T>` where `T` is the type.
 
 ## Example NetworkVariable and NetworkStart
 

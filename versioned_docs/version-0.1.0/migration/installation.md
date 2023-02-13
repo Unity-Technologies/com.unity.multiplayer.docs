@@ -33,7 +33,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.
 
 To install MLAPI on Unity versions 2019.4 and later and 2020.x, use the Unity Package Manager passing a git URL to the MLAPI release:
 
-1. Install [Git](https://git-scm.com/) if you do not have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
+1. Install [Git](https://git-scm.com/) if you don't have it installed on your PC. After installing Git, restart your system. A full restart is required to update for Git or you may receive an error adding packages.
 
 1. Open the Unity Package Manager by navigating to **Window** > **Package Manager** on Unity’s main menu.
 1. Click ![Add](/img/add.png) in the status bar and select **Add package from git URL...** (due to the package being experimental).
@@ -80,7 +80,7 @@ To include preview packages in the Package Manager, select the ![Gear Icon](/img
 ### Errors with incorrect package loading
 
 
-If you receive a different package than Unity MLAPI when adding the URL to Unity Hub, you may have not correctly copied the GitHub URL. 
+If you receive a different package than Unity MLAPI when adding the URL to Unity Hub, you may haven't correctly copied the GitHub URL. 
 
 Hover over the URL to copy, click the **Copy** function in the code block, and use this when adding the package from a Git URL in Unity Hub.
 
@@ -88,12 +88,12 @@ Hover over the URL to copy, click the **Copy** function in the code block, and u
 
 MacOS users may receive the following errors:
 
-* `Cannot perform upm operation: Unable to add package... Error when executing git command. xcrun: error: invalid active developer path`
+* `Can't perform upm operation: Unable to add package... Error when executing git command. xcrun: error: invalid active developer path`
 * `Error adding package...`
 
-These are common errors for MacOS users that have not installed or updated Xcode or Xcode developer tools. You may need to upgrade your Xcode installation. In a terminal, use this command: `xcode-select --install`.
+These are common errors for MacOS users that haven't installed or updated Xcode or Xcode developer tools. You may need to upgrade your Xcode installation. In a terminal, use this command: `xcode-select --install`.
 
-If you newly installed or updated Git, you may also need to restart your system. Restarting Unity may not be enough if you added Git and could receive a package loading error.
+If you newly installed or updated Git, you may also need to restart your system. Restarting Unity may not be enough if you added Git and can receive a package loading error.
 
 **Errors finding Git installation**
 
