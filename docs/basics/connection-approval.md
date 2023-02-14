@@ -5,7 +5,7 @@ title: Connection approval
 
 With every new connection, Netcode for GameObjects (Netcode) performs a handshake in addition to handshakes done by the transport. This ensures the NetworkConfig on the client matches the server's NetworkConfig. You can enable ConnectionApproval in the NetworkManager or via code by setting `NetworkManager.NetworkConfig.ConnectionApproval` to `true`.
 
-Connection approval allows you to decide, on a per connection basis, whether to allow a connection. Connection approval also enables you to specify the player Prefab to create, allowing you to override the default NetworkManager defined player Prefab on a per player basis. By setting ConnectionApproval property of the NetworkManager to true, Netcode checks to make sure the `NetworkManager.ConnectionApprovalCallback` has been assigned. If assigned, Netcode uses the connection approval process for connecting clients. 
+Connection approval allows you to decide, on a per connection basis, whether to allow a connection. Connection approval also enables you to specify the player Prefab to create, allowing you to override the default NetworkManager defined player Prefab on a per player basis. By setting ConnectionApproval property of the NetworkManager to true, Netcode checks to make sure the `NetworkManager.ConnectionApprovalCallback` has been assigned. If assigned, Netcode uses the connection approval process for connecting clients whether to allow a connection or deny it.
 
 :::note
 If you don't assign the `NetworkManager.ConnectionApprovalCallback` (even with the `NetworkManager.ConnectionApprovalCallback` set to `true`), Netcode uses basic authentication for the user, which automatically authorizes and assigns the default player Prefab).
@@ -21,7 +21,7 @@ This class represents the client-to-server request which has:
 
 This is how the connection approval response is formed by server-side specific user code in the handler assigned to `NetworkManager.ConnectionApprovalCallback`. On the server side, this class has all the connection approval response information required to either allow or reject a player attempting to connect. It also has the following properties:
 - **Approved**: When `true`, the player is approved and `false` the player is denied.
-- **CreatePlayerObject**: When `true`, the server spawns a player Prefab for the connecting player. The default player Prefab is defined in the NetworkManager. to specify a player Prefab other than the default, use the `PlayerPrefabHash` property.
+- **CreatePlayerObject**: When `true`, the server spawns a player Prefab for the connecting client and when `false`, the connecting client will have no player Prefab spawned.
 - **PlayerPrefabHash**: The type of player Prefab to use for the authorized player (if this is `null`, it uses the default NetworkManager defined player Prefab)
 - **Position** and **Rotation**: The position and rotation of the player when spawned.
 - **Pending**: Provides the ability to mark the approval as pending to delay the authorization until other user-specific code finishes the approval process.
@@ -124,7 +124,7 @@ public class ConnectionApprovalHandler : MonoBehaviour
 
 ## Connection data (`NetworkManager.ConnectionApprovalRequest.Payload`)
 
-The `ConnectionApprovalRequest.Payload` parameter takes any custom data the client should send to the server. Usually, this data should be some sort of ticket, room password, or similar that helps the server decide whether to approve a connection. The `connectionData` is specified on the client-side in the `NetworkingConfig` (supplied when connecting).
+The `ConnectionApprovalRequest.Payload` parameter takes any custom data the client should send to the server. Usually, this data should be some sort of ticket, room password, or similar that helps the server decide whether to approve a connection. The `connectionData` is specified on the client-side in the `NetworkingConfig` (supplied when connecting). The `NetworkConfig.ConnectionData`, automatically sent with the connection request message to the server, should be populated on the client-side before calling `NetworkManager.StartClient`.
 
 Example:
 
@@ -141,7 +141,7 @@ The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, is sen
 
 Netcode uses a callback system to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steam servers. This can take some time, so you will want to set the `NetworkManager.ConnectionApprovalResponse.Pending` to true while the steam server (or other third party authentication service) occurs. 
 
-If the third party authentication process (steam servers) takes longer than the time specified by the `NetworkConfig.ClientConnectionBufferTimeout`, then the connection is dropped. The timer for this starts when the server notified of the new inbound client connection. You can set the **Client Connection Buffer Timeout** value via the `NetworkManager` in the Inspector view or with the `NetworkManager.NetworkConfig.ClientConnectionBufferTimeout` property.
+If the third party authentication process (steam servers) takes longer than the time specified by the `NetworkConfig.ClientConnectionBufferTimeout`, then the connection is dropped. The timer for this starts when the server is notified of the new inbound client connection. You can set the **Client Connection Buffer Timeout** value via the `NetworkManager` in the Inspector view or with the `NetworkManager.NetworkConfig.ClientConnectionBufferTimeout` property.
 
 ## Security
 

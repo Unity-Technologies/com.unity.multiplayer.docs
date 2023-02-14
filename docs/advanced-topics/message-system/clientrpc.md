@@ -17,7 +17,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 
 ## Declaring a ClientRpc
 
-You can declare a ClientRpc by marking a method with `[ClientRpc]` attribute and including the `ClientRpc` suffix in the method name.
+You can declare a ClientRpc by marking a method with the `[ClientRpc]` attribute and including the `ClientRpc` suffix in the method name.
 
 ```csharp
 [ClientRpc]
@@ -26,7 +26,7 @@ void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 
 ## Invoking a ClientRpc
 
-You can invoke a ClientRpc by making a direct function call with parameters:
+You can invoke a ClientRpc by invoking the function directly with parameters:
 
 ```csharp
 void Update()
@@ -49,7 +49,7 @@ void Pong(int somenumber, string sometext) { /* ... */ }
 void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-The `[ClientRpc]` attribute and matching `...ClientRpc` suffix in the method name ensure RPC call sites know when they're executing an RPC. The client RPC replicates and executes client-side, without jumping into the original RPC method declaration to find out if it's an RPC.
+The `[ClientRpc]` attribute and matching `...ClientRpc` suffix in the method name help to assure context clarity in scripts that invoke them and are used by Netcode during the ILPostProcessor pass. The ILPostProcessor pass replaces all call-site locations where the RPC method is invoked, with additional code generated specific to the RPC to assure that the RPC message is generated and sent to the appropriate destinations/targets as opposed to just locally invoking the method.
 
 ```csharp
 Pong(somenumber, sometext); // Is this an RPC call?
