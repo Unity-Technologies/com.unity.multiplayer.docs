@@ -5,7 +5,7 @@ title: ClientRpc
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 
-Servers can invoke a `ClientRpc` to execute on all clients.
+Servers can invoke a ClientRpc to execute on all clients.
 
 <figure>
 <ImageSwitcher 
@@ -17,7 +17,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 
 ## Declaring a ClientRpc
 
-You can declare a `ClientRpc` by marking a method with `[ClientRpc]` attribute and including the `ClientRpc` suffix in the method name.
+You can declare a ClientRpc by marking a method with the `[ClientRpc]` attribute and including the `ClientRpc` suffix in the method name.
 
 ```csharp
 [ClientRpc]
@@ -26,7 +26,7 @@ void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 
 ## Invoking a ClientRpc
 
-You can invoke a `ClientRpc` by making a direct function call with parameters:
+You can invoke a ClientRpc by invoking the function directly with parameters:
 
 ```csharp
 void Update()
@@ -49,7 +49,7 @@ void Pong(int somenumber, string sometext) { /* ... */ }
 void PongClientRpc(int somenumber, string sometext) { /* ... */ }
 ```
 
-The `[ClientRpc]` attribute and matching `...ClientRpc` suffix in the method name are there to ensure RPC call sites know when they're executing an RPC. The client RPC replicates and executes client-side, without jumping into the original RPC method declaration to find out if it's an RPC.
+The `[ClientRpc]` attribute and matching `...ClientRpc` suffix in the method name help to assure context clarity in scripts that invoke them and are used by Netcode during the ILPostProcessor pass. The ILPostProcessor pass replaces all call-site locations where the RPC method is invoked, with additional code generated specific to the RPC to assure that the RPC message is generated and sent to the appropriate destinations/targets as opposed to just locally invoking the method.
 
 ```csharp
 Pong(somenumber, sometext); // Is this an RPC call?
@@ -59,9 +59,9 @@ PongRpc(somenumber, sometext); // Is this a ServerRpc call or ClientRpc call?
 PongClientRpc(somenumber, sometext); // This is clearly a ClientRpc call
 ```
 
-## To Send to One Client, use ClientRpcSendParameters
+## To send to one client, use ClientRpcSendParameters
 
-The following code provides an example of using `ClientRpcSendParameters`, which sends a `ClientRpc` to a specific client connection. _The default Netcode for GameObjects behavior is to broadcast to every single client_.
+The following code provides an example of using ClientRpcSendParameters, which sends a ClientRpc to a specific client connection. The default Netcode for GameObjects behavior is to broadcast to every single client.
 
 ```csharp
 private void DoSomethingServerSide(int clientId)
@@ -103,7 +103,7 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients_Dark.png?tex
  <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
 </figure>
 
-## Invoking a Client RPC from the Host
+## Invoking a client RPC from the host
 
 The host is both a client and a server. If a host invokes a client RPC, it triggers the on all clients, including the host.
 
@@ -116,13 +116,13 @@ darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientH
 </figure>
 
 :::warning
-When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (that is, infinite recursion).
+When running as a host, Netcode for GameObjects invokes RPCs immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (infinite recursion).
 :::
 
-See the [Boss Room RPC Examples](../../learn/bossroom/bossroom-actions).
+See the [Boss Room RPC Examples](../../learn/bossroom/bossroom-actions.md).
 
 
 ## Also see
 
 * [ServerRpc](serverrpc.md)
-* [RPC Params](rpc-params.md)
+* [RPC parameters](rpc-params.md)

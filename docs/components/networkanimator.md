@@ -5,7 +5,7 @@ created: 2023-01-24T18:34:06-06:00
 updated: 2023-01-24T18:34:06-06:00
 ---
 
-# Introduction
+# NetworkAnimator
 
 The `NetworkAnimator` component provides you with a fundamental example of how to synchronize animations during a network session. Animation states are synchronized with players joining an existing network session and any client already connected before the animation state changing.
 
@@ -35,7 +35,7 @@ You need to use `Unity.Netcode.Components` to reference components such as `Netw
 
 ## Animator Trigger Property
 
-The `Animator` trigger property type ("trigger") is basically nothing more than a Boolean value that, when set to `true` , will get automatically reset back to `false` after the `Animator` component has processed the trigger. Usually, a trigger is used to start a transition between `Animator` layer states. In this sense, one can think of a trigger as a way to signal the "beginning of an event." Because trigger properties have this unique behavior, they **require** that you to set the trigger value via the `NetworkAnimator.SetTrigger` method.
+The `Animator` trigger property type ("trigger") is basically nothing more than a Boolean value that, when set to `true`, will get automatically reset back to `false` after the `Animator` component has processed the trigger. Usually, a trigger is used to start a transition between `Animator` layer states. In this sense, one can think of a trigger as a way to signal the "beginning of an event." Because trigger properties have this unique behavior, they **require** that you to set the trigger value via the `NetworkAnimator.SetTrigger` method.
 
 :::caution
 
@@ -62,7 +62,7 @@ In the above diagram, a client might be sending the server an RPC to tell the se
 
 ## Owner Authoritative Mode
 
-Usually, your project's design (or personal preference) might require that owners are immediately updated to any `Animator` state changes. The most typical reason would be to give the local player with instantaneous visual (animation) feedback. To create an owner authoritative `NetworkAnimator` you need to create a new class that's derived from `NetworkAnimator` , override the `NetworkAnimator.OnIsServerAuthoritative` method, and within the overridden `OnIsServerAuthoritative` method you should return false like in the example provided below:
+Usually, your project's design (or personal preference) might require that owners are immediately updated to any `Animator` state changes. The most typical reason would be to give the local player with instantaneous visual (animation) feedback. To create an owner authoritative `NetworkAnimator` you need to create a new class that's derived from `NetworkAnimator`, override the `NetworkAnimator.OnIsServerAuthoritative` method, and within the overridden `OnIsServerAuthoritative` method you should return false like in the example provided below:
 
 ```csharp
     public class OwnerNetworkAnimator : NetworkAnimator
@@ -74,11 +74,11 @@ Usually, your project's design (or personal preference) might require that owner
     }
 ```
 
-Looking at the timing for an owner authoritative `NetworkAnimator` , in the diagram below, you can see that while the owner client gets "immediate visual animation response" the non-owner clients end up being roughly one full RTT behind the owner client and a host would be half RTT behind the owner client.
+Looking at the timing for an owner authoritative `NetworkAnimator`, in the diagram below, you can see that while the owner client gets "immediate visual animation response" the non-owner clients end up being roughly one full RTT behind the owner client and a host would be half RTT behind the owner client.
 
 ![ServerAuthMode](Images/NetworkAnimatorOwnerAuthTiming.png)
 
-In the above diagram, it shows that the owner client has an `Animator` state change that's detected by the `NetworkAnimator` ( `OwnerNetworkAnimator` ) which automatically synchronizes the server with the changed state. The server applies the change(s) locally and then broadcasts this state change to all non-owner clients.
+In the above diagram, it shows that the owner client has an `Animator` state change that's detected by the `NetworkAnimator` ( `OwnerNetworkAnimator`) which automatically synchronizes the server with the changed state. The server applies the change(s) locally and then broadcasts this state change to all non-owner clients.
 
 **Owner authoritative model benefits:**
 
@@ -91,7 +91,7 @@ In the above diagram, it shows that the owner client has an `Animator` state cha
 
 :::caution
 
-The same rule for setting trigger properties still applies to owner clients. As such, if you want to programmatically set a trigger then you still need to use `NetworkAnimator.SetTrigger` .
+The same rule for setting trigger properties still applies to owner clients. As such, if you want to programmatically set a trigger then you still need to use `NetworkAnimator.SetTrigger`.
 
 :::
 
@@ -107,7 +107,7 @@ Using `NetworkAnimator` is a pretty straight forward approach with the only subt
 
 ### Server Authoritative
 
-If you decide you want to use the server authoritative model, then you can add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject` . In the below screenshot, you can see a network Prefab that houses two authoritative models. The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component.
+If you decide you want to use the server authoritative model, then you can add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject`. In the below screenshot, you can see a network Prefab that houses two authoritative models. The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component.
 
 ![Usage-1](Images/NetworkAnimatorUsage-1.png)
 
@@ -119,7 +119,7 @@ If you decide you want to use the owner authoritative model, then (for example p
 
 :::info
 
-While it isn't advised to have different `NetworkAnimator` authoritative models "under the same root network Prefab `GameObject` , " you can have multiple children that each have their own `Animator` and `NetworkAnimator` all housed under a single `NetworkObject` and all use the same authoritative model. However, you should always consider the balance between performance (CPU or bandwidth consumption) and convenience/modularity.
+While it isn't advised to have different `NetworkAnimator` authoritative models "under the same root network Prefab `GameObject`, " you can have multiple children that each have their own `Animator` and `NetworkAnimator` all housed under a single `NetworkObject` and all use the same authoritative model. However, you should always consider the balance between performance (CPU or bandwidth consumption) and convenience/modularity.
 
 :::
 
@@ -134,7 +134,7 @@ public void ApplyMotion(Vector3 playerVelocity)
 }
 ```
 
-For triggers you always want to use `NetworkAnimator` . One example might be that you use a trigger, called it " `IsJumping` , " to start a blended transition between the player's walking/running animation and the jumping animation:
+For triggers you always want to use `NetworkAnimator`. One example might be that you use a trigger, called it " `IsJumping`, " to start a blended transition between the player's walking/running animation and the jumping animation:
 
 ```csharp
 public void SetPlayerJumping(bool isJumping)

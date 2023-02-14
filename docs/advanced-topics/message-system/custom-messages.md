@@ -5,14 +5,14 @@ description: A brief explanation of Custom Messages use in Netcode for GameObjec
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-If you don't want to use the Netcode for GameObjects (Netcode) messaging system, you don't have to. You can use a thin layer called "Custom Messages" to implement your own messaging behavior and/or add custom targeting. They're unbound to any game object. Custom messages can be used in combination with [RPC messages](../messaging-system.md). 
+If you don't want to use the Netcode for GameObjects (Netcode) messaging system, you don't have to. You can use a thin layer called "Custom Messages" to implement your own messaging behavior or add custom targeting. They're unbound to any GameObject. You can use Custom messages with [RPC messages](../messaging-system.md). 
 
 There are two types of custom messages:
 - Unnamed
 - Named
 
 ## Unnamed Messages
-Unnamed messages can be thought of as a single sending channel. A message sent has one receive handler, this is useful for building your own custom messaging system. Netcode for GameObjects handles delivering and receiving custom unnamed messages, you can provide your own "custom message headers" to determine the type of unnamed message being sent or received.
+You can think about unnamed messages as if you are sending information over a single unique channel. There's only one receiver handler per unnamed message, which can help when building a custom messaging system where you can define your own message headers. Netcode for GameObjects handles delivering and receiving custom unnamed messages; you determine what kind of information you want to transmit over the channel.
 
 ### Unnamed Message Example
 Below is a basic example of how you might implement your own messaging system using unnamed messages:
@@ -203,9 +203,10 @@ public class CustomUnnamedMessageHandler<T> : NetworkBehaviour
 }
 ```
 ## Named Messages
-If you don't want to handle the complexity of creating your own messaging system, Netcode for GameObjects also provides you with the option to use custom "named messages". Custom named messages use the "message name" as the unique identifier (it creates a hash value from the name and links that to a received named message callback). 
+If you don't want to handle the complexity of creating your own messaging system, Netcode for GameObjects also provides you with the option to use custom named messages. Custom named messages use the message name as the unique identifier (it creates a hash value from the name and links that to a received named message callback).
+
 :::tip
-If you aren't quite sure if you need to incorporate the complexity of message identification and handling like you do with custom unnamed messages, you can always start with custom named messages and then if, at a later date, you determine you need "sub-message types" for a specific custom named message then you can always incorporate a type identifier (like you would with unnamed messages) into the named message payload itself.
+If you aren't quite sure if you need to incorporate the complexity of message identification and handling like you do with custom unnamed messages, you can always start with custom named messages and then if, later, you find you need sub-message types for a specific custom named message then you can always incorporate a type identifier (like you would with unnamed messages) into the named message payload itself.
 :::
 
 ### Name Message Example

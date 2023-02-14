@@ -123,7 +123,7 @@ void Start ()
 
 #### Code walkthrough
 
-The first line of code, `m_Driver = NetworkDriver.Create();` , just makes sure you are creating your driver without any parameters.
+The first line of code, `m_Driver = NetworkDriver.Create();`, just makes sure you are creating your driver without any parameters.
 
 ```csharp
     if (m_Driver.Bind(endpoint) != 0)

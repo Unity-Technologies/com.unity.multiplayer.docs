@@ -14,13 +14,23 @@ Before you start, ensure you have the following prerequisites:
 
 * An active Unity account with a valid license.
 * The [Unity Hub](https://unity.com/download).
-* A NGO-supported version of the Unity Editor. See [NGO requirements](../installation/installation.md).
+* A NGO-supported version of the Unity Editor. See [NGO requirements](../installation/install).
 
 Before continuing, create a new project using Unity Editor version 2021.3 or later.
 
+:::tip
+
+If you don't already have an `Assets/Scripts/` folder, create one now:
+1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
+2. Name the new folder **Scripts**.
+
+This is where you'll keep all your scripts.
+
+:::
+
 ## Install Netcode for GameObjects
 
-See [Install Netcode for GameObjects](../installation/)
+See [Install Netcode for GameObjects](../installation/install).
 
 ## Add the basic components
 
@@ -30,36 +40,41 @@ This section guides you through adding the essential components of a networked g
 * [A player object](#create-an-object-to-spawn-for-each-connected-player)
 * [A scene](#add-your-scene-to-the-build)
 
-### Create the `NetworkManager` component
+### Create the NetworkManager component
 
-This section guides you through creating a `NetworkManager` component.
+This section guides you through creating a NetworkManager component.
 
-First, create the `NetworkManager` component:
+First, create the NetworkManager component:
 
 1. Right-click in the **Hierarchy** tab, then select **Create Empty** to create an empty GameObject.
 
 ![](../../static/img/get-started-ngo/ngo-10.png)
 
-1. Rename the empty GameObject **NetworkManager**.
+2. Rename the empty GameObject **NetworkManager**.
 
 ![](../../static/img/get-started-ngo/ngo-11.png)
 
-1. Select **NetworkManager**, then select **Add Component** from the **Inspector** tab.
+3. Select **NetworkManager**, then select **Add Component** from the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-6.png)
 
-1. Select **Netcode** > **NetworkManager** from the component list.
+4. Select **Netcode** > **NetworkManager** from the component list.
 
 ![](../../static/img/get-started-ngo/ngo-1.png)
 
-1. In the Inspector tab, locate the Unity Transport section, then select **UnityTransport** as the **Protocol type**.
-2. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
+5. In the Inspector tab, locate the Unity Transport section, then select **UnityTransport** as the **Protocol type**.
+
+![](../../static/img/get-started-ngo/ngo-13.png)
+
+![](../../static/img/get-started-ngo/ngo-14.png)
+
+6. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
 ### Create an object to spawn for each connected player
 
 :::important
 
-When you drop the Prefab into the **PlayerPrefab** slot, you are telling the library that when a client connects to the game, it should automatically spawn this Prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any Prefab set as the **PlayerPrefab**. See [Player Objects](../basics/networkobject#finding-player-objects).
+When you drop the Prefab into the **PlayerPrefab** slot, you're telling the library that when a client connects to the game, it should automatically spawn this Prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any Prefab set as the **PlayerPrefab**. See [Player Objects](../basics/networkobject#finding-player-objects).
 
 :::
 
@@ -67,41 +82,41 @@ This section guides you through creating an object that spawns for each connecte
 
 1. In the Unity Editor, right-click within the **Hierarchy** tab, then select **3D Object** > **Capsule**.
 2. Name the Capsule Object **Player**.
-3. With Player selected, add a `NetworkObject` component in the **Inspector** tab by selecting **Add Component** > **NetworkObject**.
+3. With Player selected, add a NetworkObject component in the **Inspector** tab by selecting **Add Component** > **Netcode** > **NetworkObject**.
 4. Right-click within the **Assets** folder under the **Project** tab, then select **Create** > **Folder**.
 5. Name the folder **Prefabs**.
 6. Make the **Player** object you created earlier into a Prefab by dragging it from the **Hierarchy** tab into the **Prefabs** folder.
 
 ![](../../static/img/get-started-ngo/ngo-12.png)
 
-1. Delete the Player from the scene by selecting the Player capsule within the **Scene** tab, then pressing the **Delete** key.
+7. Delete the Player from the scene by selecting the Player capsule within the **Scene** tab, then pressing the **Delete** key (or **Cmd** + **Delete** for Mac OS).
 
 :::tip
 
-You can remove the `Player` object from the scene because you assign this network Prefab to the Player Prefab property in the `NetworkManager` component. The library doesn't support defining a player object as an in-scene placed `NetworkObject`.
+You can remove the `Player` object from the scene because you assign this network Prefab to the Player Prefab property in the `NetworkManager` component. The library doesn't support defining a player object as an in-scene placed NetworkObject.
 
 :::
 
-1. Select **NetworkManager**.
-2. With `NetworkManager` selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
+8. Select **NetworkManager**.
+9. With NetworkManager selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-9.png)
 
-1. Drag the **Player** Prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
+10. Drag the **Player** Prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-5.png)
 
-1. Add a 3D Plane (centered at 0,0,0) to the scene by right-clicking in the **Hierarchy** tab, then selecting **3D Object** > **Plane**.
+11. Add a 3D Plane (centered at 0,0,0) to the scene by right-clicking in the **Hierarchy** tab, then selecting **3D Object** > **Plane**.
 
 :::note
 
-Adding the Plane adds a visual reference point to visualize the Player prefab’s position, but it isn’t necessary.
+Adding the Plane adds a visual reference point to visualize the Player Prefab’s position, but it isn’t necessary.
 
 :::
 
 ![](../../static/img/get-started-ngo/ngo-7.png)
 
-1. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
+12. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
 
 ### Add your scene to the build
 
@@ -111,7 +126,7 @@ The **Enable Scene Management** for the `NetworkManager` setting allows the serv
 
 :::note
 
-The **Enable Scene Management** option for the `NetworkManager` is enabled by default.
+The **Enable Scene Management** option for the NetworkManager is enabled by default.
 
 :::
 
@@ -123,7 +138,17 @@ You should see **Scenes/SampleScene** listed under **Scenes In Build**. You can 
 
 ## Add RPCs
 
-This section guides you through adding basic RPCs to the project.
+This section guides you through adding basic RPCs to the project. 
+
+:::tip
+
+If you don't already have an `Assets/Scripts/` folder, create one now:
+1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
+2. Name the new folder **Scripts**.
+
+This is where you'll keep all your scripts.
+
+:::
 
 Create a script named `RpcTest.cs`:
 
@@ -131,7 +156,7 @@ Create a script named `RpcTest.cs`:
 2. Right-click in the **Scripts** folder and select **Create** > **C# Script**.
 3. Name the script `RpcTest`.
 
-Add the `RpcTest.cs` script to the Player prefab:
+Add the `RpcTest.cs` script to the Player Prefab:
 
 1. Select the **Player** Prefab in **Assets** > **Prefabs**.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
@@ -213,7 +238,7 @@ Client Received the RPC #3 on NetworkObject #1
 ...
 ```
 
-Only the client owning the `NetworkObject` owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log Rpcs being received once per `NetworkObject` per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
+Only the client owning the `NetworkObject` owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log RPCs received once per `NetworkObject` per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
 
 ```log
 Server Received the RPC #0 on NetworkObject #2
@@ -227,9 +252,9 @@ Client Received the RPC #3 on NetworkObject #2
 ...
 ```
 
-:::Note
+:::note
 
-The `NetworkObjectId` here is 2 because the host will also have a `NetworkObject` with the `RpcTest` script spawned for it, but it won't be sending the initial RPC starting the chain because it's a server.
+The `NetworkObjectId` here is `2` because the host also has a NetworkObject with the `RpcTest` script spawned for it, but it won't send the initial RPC starting the chain because it's a server.
 
 :::
 
@@ -308,9 +333,9 @@ namespace HelloWorld
 
 1. Continue reading to understand what the example code means:
 
-In the Hello World project from earlier), you created a `NetworkManager` by adding the pre-created `NetworkManager` component. This component allows you to start a Host, Client, or Server in Play mode by inspecting the component. The `HelloWorldManager.cs` script simplifies this slightly by creating an on-screen UI button menu upon entering Play mode.
+In the Hello World project from earlier), you created a NetworkManager by adding the pre-created NetworkManager component. This component allows you to start a Host, Client, or Server in Play mode by inspecting the component. The `HelloWorldManager.cs` script simplifies this slightly by creating an on-screen UI button menu upon entering Play mode.
 
-::tip
+:::tip
 
 * The **Host** starts the server and joins as a client.
 * The **Client** is joining the server as a client player.
@@ -337,7 +362,7 @@ The `HelloWorldManager.cs` script accomplishes this menu within the `StartButton
         }
 ```
 
-As seen in the earlier code snippet, the `HelloWorldManager.cs` script also utilizes the `NetworkManager` ‘s instance via its singleton to grab useful properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
+As seen in the earlier code snippet, the `HelloWorldManager.cs` script also utilizes the NetworkManager‘s instance via its singleton to grab useful properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
 
 :::note
 
@@ -347,8 +372,18 @@ The `HelloWorldManager.cs` script introduces a new method called `SubmitNewPosit
 
 ### `The HelloWorldPlayer.cs` Script
 
+:::tip
+
+If you don't already have an `Assets/Scripts/` folder, create one now:
+1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
+2. Name the new folder **Scripts**.
+
+This is where you'll keep all your scripts.
+
+:::
+
 1. Create a new script in the `Scripts` folder named `HelloWorldPlayer.cs`.
-2. Add the script as a component to your Player prefab.
+2. Add the script as a component to your Player Prefab.
 3. Copy the following code into the `HelloWorldPlayer.cs` script:
 
 ```csharp
@@ -404,7 +439,7 @@ namespace HelloWorld
 
 1. Continue reading to understand what the code means:
 
-The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server’s position `NetworkVariable`, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position `NetworkVariable`, then replicate the change locally.
+The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server’s position NetworkVariable, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position NetworkVariable, then replicate the change locally.
 
 The `HelloWorldPlayer` class inherits from `Unity.Netcode`‘s `NetworkBehaviour` instead of `MonoBehaviour`. This allows you to customize the networking code as you override what happens when the Player spawns.
 
@@ -434,7 +469,7 @@ You can override this behavior on any `NetworkBehaviour`.
 
 Since the server and client can be the same machine and the Player's owner (aka Host), you want further to differentiate the two and have different Move behavior for each.
 
-If the current player is the server, the code determines a random position to spawn the Player. You can’t determine the spawn location if the current player is the client; you have to get it from the server.
+If the current player is the server, the code determines a random position to spawn the Player. You can’t find the spawn location if the current player is the client; you have to get it from the server.
 
 ```csharp
        public void Move()
@@ -463,11 +498,11 @@ If the current player is the server, the code determines a random position to sp
         }
 ```
 
-#### Add the `HelloWorldPlayer.cs` script to the Player prefab
+#### Add the `HelloWorldPlayer.cs` script to the player Prefab
 
-This section guides you through adding the `HelloWorldPlayer.cs` script to the Player prefab.
+This section guides you through adding the `HelloWorldPlayer.cs` script to the Player Prefab.
 
-Select the Player prefab:
+Select the Player Prefab:
 
 1. From the **Project** tab, select **Assets** > **Prefabs**.
 2. Select **Player**.
@@ -545,7 +580,7 @@ If the player is a client, the script calls a `ServerRpc`. Clients can invoke a 
             }
 ```
 
-The `ServerRpc` sets the position `NetworkVariable` on the server's instance of the player by just picking a random point on the plane.
+The `ServerRpc` sets the position NetworkVariable on the server's instance of the player by just picking a random point on the plane.
 
 ```csharp
        [ServerRpc]
@@ -564,7 +599,7 @@ The server instance of the player modifies the `Position` `NetworkVariable` thro
         }
 ```
 
-Since the `HelloWorldPlayer.cs` script handles the position `NetworkVariable`, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
+Since the `HelloWorldPlayer.cs` script handles the position NetworkVariable, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
 
 ```csharp
        static void SubmitNewPosition()
@@ -588,11 +623,11 @@ Both build instances can move the player with the GUI button. The server moves t
 
 The client can request a new position, instructing the server to change that instance's position `NetworkVariable`. After the server updates the position `NetworkVariable`, the client applies that `NetworkVariable` position inside its `Update()` method.
 
-### Add a `NetworkTransform`
+### Add a NetworkTransform
 
 This section guides you through adding a `NetworkTransform` component that moves the player.
 
-Add a `NetworkTransform` component to the Player prefab:
+Add a NetworkTransform component to the Player Prefab:
 
 1. Select the **Player** Prefab in Assets > Prefabs.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
@@ -604,7 +639,7 @@ Create a script named `NetworkTransformTest.cs`.
 2. Right-click, then select **Create** > **C# Script**.
 3. Name it `NetworkTransformTest`.
 
-Add the `NetworkTransformTest` script to the Player prefab:
+Add the `NetworkTransformTest` script to the Player Prefab:
 
 1. Select the **Player** Prefab in **Assets** > **Prefabs**.
 2. In the **Inspector** tab (with the Player Prefab selected), select **Add Component**.
@@ -636,9 +671,9 @@ public class NetworkTransformTest : NetworkBehaviour
 
 1. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
-#### Test the `NetworkTransform`
+#### Test the NetworkTransform
 
-This section guides you through testing the `NetworkTransform` you added in the earlier section.
+This section guides you through testing the NetworkTransform you added in the earlier section.
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
@@ -650,7 +685,7 @@ After the client and server spawn, you should see the player capsule moving in a
 
 To see if everything works as expected, test starting a host in the Unity Editor. A host plays the role of a server and a client at the same time.
 
-You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, see [Create a command line helper](command-line-helper). Otherwise, see the following instructions to test through the Unity Editor.
+You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, see [Create a command line helper](command-line-helper). Otherwise, see the following instructions to test through the Unity Editor. You should see just the Plane on the server until the first client connects. Then, NGO spawns a new Player Prefab for each connected client; however, they will be overlapped in the game view.
 
 1. Select **Play** from the top of the Unity Editor to start the scene.
 

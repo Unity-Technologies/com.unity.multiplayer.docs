@@ -128,6 +128,7 @@ module.exports = {
                 },
                 {
                     "type": "doc",
+                    "label": "NetworkAnimator",
                     "id": "components/networkanimator"
                 },
             ]
