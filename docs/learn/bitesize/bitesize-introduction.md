@@ -7,7 +7,8 @@ The Bitesize Samples repository provides a series of sample code as modules to u
 
 * [2D Space Shooter Sample](bitesize-spaceshooter.md) - Learn more about physics movement and status effects using Netcode `NetworkVariables` and `ObjectPooling`.
 * [Invaders Sample](bitesize-invaders.md) - Learn more about game flow, modes, unconventional movement networked, and a shared timer.
-* [Client Driven Sample](bitesize-clientdriven.md) - Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting
+* [Client Driven Sample](bitesize-clientdriven.md) - Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting.
+* [Dynamic Addressables Network Prefabs](bitesize-dynamicprefabs.md) - Learn more about the dynamic prefab system, which allows us to add new spawnable prefabs at runtime.
 
 ## Requirements
 
