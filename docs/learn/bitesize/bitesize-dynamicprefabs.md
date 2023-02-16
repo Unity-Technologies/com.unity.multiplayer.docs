@@ -8,8 +8,6 @@ description: Learn more about the dynamic Prefab system, which allows you to add
 
 The [DynamicAddressablesNetworkPrefabs Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/DynamicPrefabs) showcases the available ways you can use dynamic Prefabs to dynamically load network Prefabs at runtime, either pre-connection or post-connection. Doing so allows you to add new spawnable NetworkObject Prefabs to Netcode for GameObjects.
 
-# Project Overview
-
 ## Uses Breakdown
 
 This sample covers a variety of possible ways you can use dynamically loaded network Prefabs:
@@ -21,7 +19,6 @@ This sample covers a variety of possible ways you can use dynamically loaded net
 - **Server-authoritative network visibility spawning**: Spawn a network Prefab server-side as soon as it has loaded it locally, and only change the visibility of the spawned NetworkObject when each client loads the Prefab load.
 
 There's also the **APIPlayground**, which serves as an API playground that implements all post-connection uses together.
-<br>
 
 ### Addressables
 
