@@ -213,7 +213,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 
 :::tip
 
-Instead of using the command line helper script, you can use Multiplayer Play Mode (MMPM) package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. See [Multiplayer Play Mode](../../tools/mppm.md) to learn more.
+Instead of using the command line helper script, you can use Multiplayer Play Mode (MMPM) package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. See [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 **Note**: MPPM is only supported in Unity Editor version 2023.1 and later.
 
