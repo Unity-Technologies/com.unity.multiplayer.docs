@@ -8,8 +8,6 @@ description: Learn more about the dynamic Prefab system, which allows you to add
 
 The [DynamicAddressablesNetworkPrefabs Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/DynamicPrefabs) showcases the available ways you can use dynamic Prefabs to dynamically load network Prefabs at runtime, either pre-connection or post-connection. Doing so allows you to add new spawnable NetworkObject Prefabs to Netcode for GameObjects.
 
-## Uses Breakdown
-
 This sample covers a variety of possible ways you can use dynamically loaded network Prefabs:
 
 - **Pre-loading**: Add dynamic Prefabs to all peers before starting the connection.
@@ -20,9 +18,9 @@ This sample covers a variety of possible ways you can use dynamically loaded net
 
 There's also the **APIPlayground**, which serves as an API playground that implements all post-connection uses together.
 
-### Addressables
-
-This sample leverages [Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/index.html) to load dynamic Prefabs.
+:::note
+**Note**: This sample leverages [Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/index.html) to load dynamic Prefabs.
+:::
 
 ### Scene 00_Preloading Dynamic Prefabs
 
