@@ -60,7 +60,7 @@ An important implementation detail to note about this technique is that the serv
 
 The `05_API Playground Showcasing All Post-Connection Uses` scene uses a class that serves as the playground of the dynamic Prefab loading uses. It integrates APIs from this sample to use at post-connection time, such as:
 
-- Connection approval for syncing late-joining clients,
-- Dynamically loading a collection of network Prefabs on the host and all connected clients,
-- Synchronously spawning a dynamically loaded network Prefab across connected clients,
+- Connection approval for syncing late-joining clients.
+- Dynamically loading a collection of network Prefabs on the host and all connected clients.
+- Synchronously spawning a dynamically loaded network Prefab across connected clients.
 - Spawning a dynamically loaded network Prefab as network-invisible for all clients until they load the Prefab locally (in which case it becomes network-visible to the client).
