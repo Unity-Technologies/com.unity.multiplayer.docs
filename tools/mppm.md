@@ -234,7 +234,7 @@ using UnityEngine;
 using Unity.Multiplayer.Playmode;
 using Unity.Multiplayer.Tools.NetworkSimulator.Runtime;
 
-public class NetworkSimulatotion : MonoBehaviour
+public class NetworkSimulation : MonoBehaviour
 {
     void Start()
     {
