@@ -425,6 +425,10 @@ module.exports = {
                             "type": "doc",
                             "id": "learn/bitesize/bitesize-clientdriven"
                         },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-dynamicPrefabs"
+                        },
                     ]
                 },
             ],
