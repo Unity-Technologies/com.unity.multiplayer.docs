@@ -30,9 +30,97 @@ This is the lesser intrusive option for your development, as you don't have any 
 
 Here, the sample serializes the AssetReferenceGameObject to this class, but ideally you want to authenticate players when your game starts up and have them fetch network Prefabs from services such as UGS (see [Remote Config](https://docs.unity.com/remote-config)). You should also note that this is a technique that can serve to decrease the install size of your application, since you'd be streaming in networked game assets dynamically.
 
+The entirety of this use-case is performed pre-connection time, and all game instances would execute this bit of code inside Preloading.cs' Start() method:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/00_Preloading/Preloading.cs#L27-L31
+```
+
+The logic of this method invoked on Start() is defined below:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/00_Preloading/Preloading.cs#L33-L56
+```
+
+First, we wait for the dynamic prefab asset to be loaded from its address and into memory. Once the object is ready to be used, we add it to NetworkManger's list of NetworkPrefabs, and afterwards mark this NetworkObject as NetworkManager's PlayerPrefab.
+
+Lastly, we force NetworkManager to perform the check for matching [NetworkConfig](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/ngo/1.2.0/com.unity.netcode.gameobjects/Runtime/Configuration/NetworkConfig.cs)s between a client and the server by setting ForceSamePrefabs to be true. Essentially, if the server detects a mismatch in the server and client's NetworkManager's NetworkPrefabs list when a client is attempting to connect, the connection will be denied automatically. 
+
 ### Scene 01_Connection Approval Required For Late Joining
 
-The `01_Connection Approval Required For Late Joining` scene uses a class that walks through what a server needs to approve a client when dynamically loading network Prefabs. This is another simple example; it's just the implementation of the connection approval callback, which is an **optional** feature from Netcode for GameObjects. To enable it, enable the **Connection Approval** option on the NetworkManager in your scene. This example enables connection approval functionality to support late-joining clients, and it works best in combination with the techniques from the other example scenes. The other example scenes don't allow for reconciliation after the server loads a Prefab dynamically.
+The `01_Connection Approval Required For Late Joining` scene uses a class that walks through what a server needs to approve a client when dynamically loading network Prefabs. This is another simple example; it's just the implementation of the connection approval callback, which is an **optional** feature from Netcode for GameObjects. To enable it, enable the **Connection Approval** option on the NetworkManager in your scene. This example enables connection approval functionality to support late-joining clients, and it works best in combination with the techniques from the other example scenes. The other example scenes don't allow for reconciliation after the server loads a Prefab dynamically, except for scene `05_API Playground Showcasing All Post-Connection Uses`, where all post-connection use-cases are integrated in one scene.
+
+To commence, we'll walk through what the client will send to the server when attempting a connection. This is done inside of [ClientConnectingState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/ConnectionStates/ClientConnectingState.cs)' StartClient() method:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/ConnectionStates/ClientConnectingState.cs#L25-L32
+```
+
+Before invoking NetworkManager.StartClient(), the client defines what the ConnectionData to send along with the connection request, gathered from [DynamicPrefabLoadingUtilities.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/DynamicPrefabLoadingUtilities.cs):
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/DynamicPrefabLoadingUtilities.cs#L81-L89
+```
+
+For simplicity's sake, this method generates a hash that uniquely describes the dynamic prefabs that a client has loaded. This hash is what the server will use as validation to determine whether a client is approved a connection.
+
+Now, we'll take a look at how the server handles incoming ConnectionData. We listen for NetworkManager's ConnectionApprovalCallback and define the behaviour when this is invoked inside of ConnectionApproval.cs. This is done on Start():
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L30-L52
+```
+
+Unlike the previous use-case, ForceSamePrefab is set to false, since this allows us to add NetworkObject prefabs to NetworkManager's NetworkPrefabs list after establishing a connection, on both server and clients. Before walking through what this class' connection approval callback looks like, it's worth noting here that we'll force a mismatch of NetworkPrefabs between server and clients, because as soon as the server starts it'll load a dynamic prefab, and register it to the server's NetworkPrefabs list:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L54-L69
+```
+
+We'll walk through the connection approval defined in this class in steps. First, its worth noting that the connection approval will be invoked on the host. Therefore, we simply allow the host to establish a connection: 
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L85-L90
+```
+
+Next, a few more validation steps will be introduced. First, this sample only allows 4 connected clients. If the server detects any more connections past that limit, the requesting client will be denied a connection. Secondly, if the ConnectionData is above a certain size threshold, it'll be denied outright.
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L92-L105
+```
+
+A trivial approval for an incoming connection request occurs when the server has not yet loaded any dynamic prefabs. Assuming the client has not injected any prefabs outside of the `DynamicPrefabLoadingUtilities` system, a client is approved a connection:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L107-L112
+```
+
+Another case for connection approval is when the requesting client's Prefab hash is identical to that of the server:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L114-L128
+```
+
+If the requesting client has a mismatching Prefab hash, it means that the client has not yet loaded the appropriate dynamic Prefabs. When this occurs, we'll leverage NetworkManager's ConnectionApprovalResponse's Reason string field, and populate it with a payload containing the GUIDs of the dynamic prefabs the client should load locally before re-attempting connection:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L140-L144
+```
+
+A client that is attempting to connect will receive a callback from Netcode that it has been disconnected inside of `ClientConnectingState`:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/ConnectionStates/ClientConnectingState.cs#L39-L68
+```
+
+If the parsed DisconnectReason string is valid, and the parsed reason is of type `DisconnectReason.ClientNeedsToPreload`, the client will be instructed to load the prefabs by their GUID. This is done inside of [ClientPreloadingState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/ConnectionStates/ClientPreloadingState.cs):
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/Shared/ConnectionStates/ClientPreloadingState.cs#L30-L37
+```
+
+Once the client loads the necessary prefabs, it once again transitions to the `ClientConnectingState`, and re-attempts the connection to the server, sending along a new Prefab hash.
+
+Note: This sample leveraged a state machine to handle connection management. A state machine is not by any means necessary for connection approvals to work -- it serves to compartmentalize connection logic per state, and to be a debug-friendly tool to step through connection steps.
 
 ### Scene 02_Server Authoritative Load All Prefabs Asynchronously
 
