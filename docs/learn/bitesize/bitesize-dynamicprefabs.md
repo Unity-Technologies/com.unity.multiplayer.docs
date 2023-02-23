@@ -64,7 +64,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 For simplicity's sake, this method generates a hash that uniquely describes the dynamic prefabs that a client has loaded. This hash is what the server will use as validation to determine whether a client is approved a connection.
 
-Now, we'll take a look at how the server handles incoming ConnectionData. We listen for NetworkManager's ConnectionApprovalCallback and define the behaviour when this is invoked inside of ConnectionApproval.cs. This is done on Start():
+Now, we'll take a look at how the server handles incoming ConnectionData. We listen for NetworkManager's ConnectionApprovalCallback and define the behaviour when this is invoked inside of [ConnectionApproval.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval). This is done on Start():
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L30-L52
@@ -129,6 +129,42 @@ The `02_Server Authoritative Load All Prefabs Asynchronously` scene is a simple 
 This technique might benefit a scenario where, after all clients connect, the host arrives at a point in the game where it expects that will need to load Prefabs soon. In such a case, the server instructs all clients to preemptively load those Prefabs. Later in the same game session, the server needs to perform a spawn, and can do so knowing all clients have loaded said dynamic Prefab (since it already did so preemptively). This allows for simple spawn management.
 
 This sample is different from the `00_Preloading Dynamic Prefabs` scene, in that it occurs after clients connect and join the game. It allows for more gameplay flexibility and loading different Prefabs based on where players are at in the game, for example.
+
+The logic that drives the behaviour for this use-case resides inside [ServerAuthoritativeLoadAllAsync.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs). Its Start() method is as follows:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L36-L59
+```
+
+You will notice that similarly to the last use-case, we have ConnectionApproval set to true and ForceSamePrefabs set to false here. We've defined a trimmed-down ConnectionApproval callback inside of this class resembling that of the last use-case to let us deny connection to clients that have mismatched NetworkPrefabs lists to that of the server. If we had ConnectionApproval set to false, then any incoming connection will be approved.
+
+We'll also bind a UI button's pressed callback to a method inside this class. This method, shown below, will iterate through the serialized list of `AssetReferenceGameObject`s, and generate a set of tasks to asynchronously load the prefabs on every connected client, as well as the server.
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L136-L145
+```
+
+The task to load an Addressable individually is as follows:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L147-L189
+```
+
+First, we make sure that this block of code is executed only on the server. Next a simple check will let us verify if the dynamic prefab has already been loaded, in which case we can easily early return inside this method.
+
+Next, the server sends out a ClientRpc to every client, instructing them to load an Addressable and add it to their NetworkManager's NetworkPrefabs list. After sending out the ClientRpc, the server begins to asynchronously load the same prefab. The ClientRpc looks like:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L191-L213
+```
+
+We want this operation to run only on clients. Once the prefab has been loaded on the client, the client will send back an acknowledgement ServerRpc containing the hashcode of the loaded prefab. The ServerRpc looks like:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L215-L242
+```
+
+The server simply records that the client has successfully loaded the dynamic prefab. As hinted by the class' name, this use-case only instructs clients to load a set of dynamic prefabs and does not invoke a network spawn.
 
 ### Scene 03_Server Authoritative Synchronous Dynamic Prefab Spawn
 
