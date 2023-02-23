@@ -174,6 +174,48 @@ This example implementation works best for scenarios where you want to guarantee
 
 The technique demonstrated in this sample works best for spawning game-changing gameplay elements, assuming you want all clients to be able to interact with said gameplay elements from the same point forward. For example, you don't want to have an enemy that's only visible (network-side or visually) to some clients and not others—you want to delay the spawning the enemy until all clients have dynamically loaded it and are able to see it before spawning it server-side.
 
+The logic for this use-case resides inside of [ServerAuthoritativeSynchronousSpawning.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs). The Start() method of this class resembles that of the last use-case, however the method invoked by UI is:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L134-L149
+```
+
+We first validate that only the server executes this bit of code. Next, we'll grab a AssetReferenceGameObject from our serialized list at random, and invoke an async task that will try to spawn this dynamic prefab, positioned inside a random point of a circle:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L151-L235
+```
+
+We will first check if the dynamic prefab is already loaded and if so, we can just spawn it directly:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L166-L171
+```
+
+Next, we'll reset the variable to track the number of clients that have loaded a prefab during this asynchronous operation, as well as the variable to track how long a spawn operation has taken. The server will then instruct all clients to load the dynamic prefab via a ClientRpc:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L176-L177
+```
+
+The server will now load the dynamic prefab. After successfully loading the dynamic prefab, the server will record the necessary number of acknowledgement ServerRpcs it will need to receive in order to be guaranteed that all clients have loaded the dynamic prefab. The server then halts until that condition is met:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L189-L203
+```
+
+If all clients have loaded the dynamic prefab, and that condition is met within a predetermined amount of seconds, the server is free to instantiate and spawn a NetworkObject over the network. If this loading condition is not met, the server does not instantiate nor spawn the loaded NetworkObject, and returns a failure for this task:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L205-L208
+```
+
+The ClientRpc in this class is identical to that of the last use-case, but the ServerRpc is different since here is where the acknowledgement variable is incremented:
+
+```csharp reference
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/03_Server%20Authoritative%20Synchronous%20Spawning/ServerAuthoritativeSynchronousSpawning.cs#L261-L290
+```
+
 ### Scene 04_Server Authoritative Spawn Dynamic Prefab Using Network Visibility
 
 The `04_Server Authoritative Spawn Dynamic Prefab Using Network Visibility` scene is a dynamic Prefab loading scenario where the server instructs all clients to load a single network Prefab via a [ClientRpc](../../../docs/advanced-topics/message-system/clientrpc.md), spawns the Prefab as soon as it's loaded on the server, and marks the Prefab as network-visible only to clients that have already loaded that same Prefab. As soon as a client loads the Prefab locally, it sends an acknowledgement [ServerRpcs](../../../docs/advanced-topics/message-system/serverrpc.md), and the server marks that spawned NetworkObject as network-visible for that client.
