@@ -568,10 +568,6 @@ module.exports = {
                 "type": "doc",
                 "id": "learn/faq"
             },
-            {
-                "type": "doc",
-                "id": "reference/dedicated-server"
-            },
         ],
 
     api:
@@ -790,7 +786,11 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkConfig",
                         "label": "NetworkConfig"
-                    }
+                    },
+                    {
+                        "type": "doc",
+                        "id": "reference/dedicated-server"
+                    },
                 ]
             },
             {
