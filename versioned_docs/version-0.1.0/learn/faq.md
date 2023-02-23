@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Frequently Asked Questions
+title: often Asked Questions
 ---
 
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including MLAPI, Transport, and more.
