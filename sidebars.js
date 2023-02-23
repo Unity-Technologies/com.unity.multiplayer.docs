@@ -111,6 +111,10 @@ module.exports = {
                     "type": "doc",
                     "id": "advanced-topics/reconnecting-mid-game"
                 },
+                {
+                    "type": "doc",
+                    "id": "reference/dedicated-server"
+                },
             ]
         },
         {
@@ -786,11 +790,7 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkConfig",
                         "label": "NetworkConfig"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "reference/dedicated-server"
-                    },
+                    }
                 ]
             },
             {
