@@ -42,7 +42,7 @@ The logic of this method invoked on `Start()` is defined below:
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/00_Preloading/Preloading.cs#L33-L56
 ```
 
-First, the sample waits for the dynamic Prefab asset to load from its address and into memory. After the object is ready to, it adds it to NetworkManger's list of NetworkPrefabs, and marks the NetworkObject as NetworkManager's PlayerPrefab.
+First, the sample waits for the dynamic Prefab asset to load from its address and into memory. After the object is ready, it adds it to NetworkManger's list of NetworkPrefabs, and marks the NetworkObject as the NetworkManager's PlayerPrefab.
 
 Lastly, the sample forces the NetworkManager to check for matching [NetworkConfig](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/ngo/1.2.0/com.unity.netcode.gameobjects/Runtime/Configuration/NetworkConfig.cs)s between a client and the server by setting ForceSamePrefabs to true. If the server detects a mismatch between the server's and client's NetworkManager's NetworkPrefabs list when a client is trying to connect, it denies the connection automatically.
 
@@ -153,7 +153,7 @@ The task to load an Addressable individually is as follows:
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L147-L189
 ```
 
-First, the sample ensures this block of code execute only on the server. Next, a simple check verifies if the dynamic Prefab has already been loaded. If the dynamic Prefab is loaded, you can early return inside this method.
+First, the sample ensures this block of code only executes on the server. Next, a simple check verifies if the dynamic Prefab has already been loaded. If the dynamic Prefab is loaded, you can early return inside this method.
 
 Next, the server sends out a ClientRpc to every client, instructing them to load an Addressable and add it to their NetworkManager's NetworkPrefabs list. After sending out the ClientRpc, the server begins to asynchronously load the same Prefab. The ClientRpc looks like:
 
@@ -161,7 +161,7 @@ Next, the server sends out a ClientRpc to every client, instructing them to load
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L191-L213
 ```
 
-This operation should only run on clients. After the Prefab has loads on the client, the client sends back an acknowledgement ServerRpc containing the hashcode of the loaded Prefab. The ServerRpc looks like:
+This operation should only run on clients. After the Prefab loads on the client, the client sends back an acknowledgement ServerRpc containing the hashcode of the loaded Prefab. The ServerRpc looks like:
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/02_Server%20Authoritative%20Load%20All%20Async/ServerAuthoritativeLoadAllAsync.cs#L215-L242
