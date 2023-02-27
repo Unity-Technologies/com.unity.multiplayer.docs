@@ -42,7 +42,7 @@ The logic of this method invoked on `Start()` is defined below:
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/00_Preloading/Preloading.cs#L33-L56
 ```
 
-First, the sample waits for the dynamic Prefab asset to load from its address and into memory. After the object is ready, it adds it to NetworkManger's list of NetworkPrefabs, and marks the NetworkObject as the NetworkManager's PlayerPrefab.
+First, the sample waits for the dynamic Prefab asset to load from its address and into memory. After the Prefab is ready, the game instance adds it to NetworkManger's list of NetworkPrefabs, then it marks the NetworkObject as the NetworkManager's PlayerPrefab.
 
 Lastly, the sample forces the NetworkManager to check for matching [NetworkConfig](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/ngo/1.2.0/com.unity.netcode.gameobjects/Runtime/Configuration/NetworkConfig.cs)s between a client and the server by setting ForceSamePrefabs to true. If the server detects a mismatch between the server's and client's NetworkManager's NetworkPrefabs list when a client is trying to connect, it denies the connection automatically.
 
