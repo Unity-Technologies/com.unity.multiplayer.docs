@@ -11,15 +11,15 @@ If you aren't completely familiar with transform parenting in Unity, then it's h
 - Setting the parent of a child's `Transform` directly (that is, `transform.parent = childTransform;`) will always use the default `WorldPositionStays` value of `true`.
   - it's recommended to always use the `NetworkObject.TrySetParent` method when parenting if you plan on changing the `WorldPositionStays` default value.
   - Likewise, it's also recommended to use the `NetworkObject.TryRemoveParent` method to remove a parent from a child.
-- When a server parents a spawned `NetworkObject` under another spawned `NetowrkObject` during a netcode game session this parent child relationship is replicated across the network to all connected and future late joining clients.
+- When a server parents a spawned `NetworkObject` under another spawned `NetworkObject` during a netcode game session this parent child relationship is replicated across the network to all connected and future late joining clients.
 - If, while editing a scene, you place an in-scene placed `NetworkObject` under a `GameObject` that does not have a `NetworkObject` component attached to it, NGO will preserve that parenting relationship.
   - During runtime, this parent-child hierarchy will remain true unless user code removes the GameObject parent from the child NetworkObject.
     - _Note: Once removed, NGO won't allow you to re-parent the `NetworkObject` back under the same or another `GameObject` that with no `NetworkObject` component attached to it._ 
-- You can perform the same parenting actions with in-scene placed `NetworkObject`s as you can with dynamically spawned `NetworkObject`s.
-  - Only in-scene placed `NetworkObject`s can have multiple generations of nested `NetworkObject` children.
+- You can perform the same parenting actions with in-scene placed NetworkObjects as you can with dynamically spawned NetworkObjects.
+  - Unlike network prefabs that do not allow in-editor nested `NetworkObject` children, in-scene placed NetworkObjects can have multiple generations of in-editor nested `NetworkObject` children.
   - You can parent dynamically spawned `NetworkObject`s under in-scene placed `NetworkObject`s and vice versa.
 - To adjust a child's transform values when parenting or when removing a parent:
-  - Override the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method within a `NetworkBehaviour` attached to the child NetworkObject.
+  - Override the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method within a `NetworkBehaviour` component attached to the child NetworkObject.
   - When `OnNetworkObjectParentChanged` is invoked, on the server side, adjust the child's transform values within the overridden method.
   - NGO will then synchronize all clients with the child's parenting and transform changes.
   
