@@ -81,7 +81,7 @@ When the `WorldPositionStays` parameter in `NetworkObject.TrySetParent` is the d
     - Currently connected or late joining clients will be synchronized with the parenting and the child's associated transform values
 
 **When to use a NetworkTransform** <br />
-If you plan on the child `NetowrkObject` moving around, rotating, or scaling independently (when parented or not) then you will still want to use a NetworkTransform.
+If you plan on the child `NetworkObject` moving around, rotating, or scaling independently (when parented or not) then you will still want to use a NetworkTransform.
 If you only plan on making a one time adjustment to the child `NetworkObject`'s transform when parented or having a parent removed, then the child does not need a `NetworkTransform` component.
 
 :::info For More Information
