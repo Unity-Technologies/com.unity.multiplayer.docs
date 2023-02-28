@@ -19,7 +19,7 @@ If you aren't completely familiar with transform parenting in Unity, then it's h
   - Unlike network prefabs that do not allow in-editor nested `NetworkObject` children, in-scene placed NetworkObjects can have multiple generations of in-editor nested `NetworkObject` children.
   - You can parent dynamically spawned `NetworkObject`s under in-scene placed `NetworkObject`s and vice versa.
 - To adjust a child's transform values when parenting or when removing a parent:
-  - Override the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method within a `NetworkBehaviour` component attached to the child NetworkObject.
+  - Override the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method within a NetworkBehaviour component attached to the child NetworkObject.
   - When `OnNetworkObjectParentChanged` is invoked, on the server side, adjust the child's transform values within the overridden method.
   - NGO will then synchronize all clients with the child's parenting and transform changes.
   
