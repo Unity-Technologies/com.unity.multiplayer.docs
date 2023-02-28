@@ -1,7 +1,7 @@
 ---
 id: networkobject-parenting
 title: NetworkObject Parenting
-description: A NetworkObject parenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of `NetworkObjects`.
+description: A NetworkObject parenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of NetworkObject components.
 ---
 
 ### Overview
@@ -10,28 +10,28 @@ If you aren't completely familiar with transform parenting in Unity, then it's h
 
 ### Parenting rules
 
-- Setting the parent of a child's `Transform` directly (that is, `transform.parent = childTransform;`) will always use the default `WorldPositionStays` value of `true`.
+- Setting the parent of a child's `Transform` directly (that is, `transform.parent = childTransform;`) always uses the default `WorldPositionStays` value of `true`.
   - It's recommended to always use the `NetworkObject.TrySetParent` method when parenting if you plan on changing the `WorldPositionStays` default value.
   - Likewise, it's also recommended to use the `NetworkObject.TryRemoveParent` method to remove a parent from a child.
-- When a server parents a spawned NetworkObject component under another spawned NetworkObject component during a netcode game session this parent child relationship is replicated across the network to all connected and future late joining clients.
+- When a server parents a spawned NetworkObject component under another spawned NetworkObject component during a Netcode game session this parent child relationship replicates across the network to all connected and future late joining clients.
 - If, while editing a scene, you place an in-scene placed NetworkObject component under a GameObject component that doesn't have a NetworkObject component attached to it, NGO preserves that parenting relationship.
-  - During runtime, this parent-child hierarchy will remain true unless user code removes the GameObject parent from the child NetworkObject.
-    - **Note**: Once removed, NGO won't allow you to re-parent the NetworkObject component back under the same or another `GameObject` that with no NetworkObject component attached to it.
-- You can perform the same parenting actions with in-scene placed NetworkObjects as you can with dynamically spawned NetworkObjects.
-  - Unlike network prefabs that don't allow in-editor nested NetworkObject component children, in-scene placed NetworkObjects can have multiple generations of in-editor nested NetworkObject component children.
+  - During runtime, this parent-child hierarchy remains true unless the user code removes the GameObject parent from the child NetworkObject component.
+    - **Note**: Once removed, NGO won't allow you to re-parent the NetworkObject component back under the same or another GameObject component that with no NetworkObject component attached to it.
+- You can perform the same parenting actions with in-scene placed NetworkObjects as you can with dynamically spawned NetworkObject components.
+  - Unlike network prefabs that don't allow in-Editor nested NetworkObject component children, in-scene placed NetworkObjects can have multiple generations of in-editor nested NetworkObject component children.
   - You can parent dynamically spawned NetworkObject components under in-scene placed NetworkObject components and vice versa.
 - To adjust a child's transform values when parenting or when removing a parent:
-  - Override the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method within a NetworkBehaviour component attached to the child NetworkObject.
+  - Override the `NetworkBehaviour.OnNetworkObjectParentChanged` virtual method within a NetworkBehaviour component attached to the child NetworkObject component.
   - When `OnNetworkObjectParentChanged` is invoked, on the server side, adjust the child's transform values within the overridden method.
   - NGO will then synchronize all clients with the child's parenting and transform changes.
 
 :::tip
-When a NetworkObject is parented, NGO synchronizes both the parenting information along with the child's transform values. NGO uses the `WorldPositionStays` setting to determine whether to synchronize the local or world space transform values of the child `NetworkObject`. This means that a `NetworkObject` doesn't require you to include a `NetworkTransform` component if it never moves around, rotates, or changes its scale when it isn't parented. This can be useful for world items a player might pickup (that is, parent the item under the player) and the item in question needs to be adjusted relative to the player when it's parented or the parent is removed (that is, dropped). This helps to reduce the item's over-all bandwidth and processing resources consumption.
+When a NetworkObject is parented, NGO synchronizes both the parenting information along with the child's transform values. NGO uses the `WorldPositionStays` setting to decide whether to synchronize the local or world space transform values of the child NetworkObject component. This means that a NetworkObject component doesn't require you to include a NetworkTransform component if it never moves around, rotates, or changes its scale when it isn't parented. This can be beneficial for world items a player might pickup (parent the item under the player) and the item in question needs to adjustment relative to the player when it's parented or the parent is removed (dropped). This helps to reduce the item's over-all bandwidth and processing resources consumption.
 :::
 
 ### OnNetworkObjectParentChanged
 
-[`NetworkBehaviour.OnNetworkObjectParentChanged`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour#onnetworkobjectparentchangednetworkobject) is a virtual method you can override to be notified when a `NetworkObject`'s parent has changed. The [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) method is used by `NetworkObject` to catch `transform.parent` changes and notify its associated `NetworkBehaviour`s.
+[`NetworkBehaviour.OnNetworkObjectParentChanged`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkBehaviour#onnetworkobjectparentchangednetworkobject) is a virtual method you can override to be notified when a NetworkObject component's parent has changed. The [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) method is used by NetworkObject component to catch `transform.parent` changes and notify its associated NetworkBehaviour components.
 
 ```csharp
 /// <summary>
@@ -40,16 +40,16 @@ When a NetworkObject is parented, NGO synchronizes both the parenting informatio
 virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject) { }
 ```
 
-:::caution Multi-Generation Children and Scale
+:::caution Multi-generation children and scale
 If you are dealing with more than one generation of nested children where each parent and child have scale values other than `Vector3.one`, then mixing the `WorldPositionStays` value when parenting and removing a parent will impact how the final scale is calculated! If you want to keep the same values before parenting when removing a parent from a child, then you need to use the same `WorldPositionStays` value used when the child was parented.
 :::
 
 ### Only a server (or a host) can parent NetworkObjects
 
-Similar to [Ownership](../basics/networkobject#ownership), only the server (or host) can control `NetworkObject` parenting.
+Similar to [Ownership](../basics/networkobject#ownership), only the server (or host) can control NetworkObject component parenting.
 
 :::tip
-If you run into a situation where your client must trigger parenting a `NetworkObject`, one solution is for the client to send an RPC to the server. Upon receiving the RPC message, the server then handles parenting the `NetworkObject`.
+If you run into a situation where your client must trigger parenting a NetworkObject component, one solution is for the client to send an RPC to the server. Upon receiving the RPC message, the server then handles parenting the NetworkObject component.
 :::
 
 ### Only parent under a NetworkObject Or nothing (root or null)
@@ -58,11 +58,11 @@ You can only parent a NetworkObject under another NetworkObject. The only except
 
 ### Only spawned NetworkObjects can be parented
 
-A `NetworkObject` can only be parented if it's spawned and can only be parented under another spawned `NetworkObject`. This also means that `NetworkObject` parenting can only occur during a network session (netcode enabled game session). Think of `NetworkObject` parenting as a netcode event. In order for it to happen, you must have, at minimum, a server or host instance started and listening.
+A NetworkObject component can only be parented if it's spawned and can only be parented under another spawned NetworkObject component. This also means that NetworkObject component parenting can only occur during a network session (netcode enabled game session). Think of NetworkObject component parenting as a Netcode event. In order for it to happen, you must have, at minimum, a server or host instance started and listening.
 
 ### Invalid parenting actions are reverted
 
-If an invalid/unsupported NetworkObject component parenting action occurs, the attempted parenting action will be reverted back to the NetworkObject component's original parenting state.
+If an invalid/unsupported NetworkObject component parenting action occurs, the attempted parenting action reverts back to the NetworkObject component's original parenting state.
 
 **For example:**
 If you had a NetworkObject component whose current parent was root and tried to parent it in an invalid way (such as under a GameObject without a NetworkObject component), it logs a warning message and the NetworkObject component reverts back to having root as its parent.
@@ -81,7 +81,7 @@ If you plan on parenting in-scene placed NetworkObject components with a player 
 
 When using the `NetworkObject.TrySetParent` or `NetworkObject.TryRemoveParent` methods, the `WorldPositionStays` parameter is synchronized with currently connected and late joining clients. When removing a child from its parent, use the same `WorldPositionStays` value that you used to parent the child. More specifically, when `WorldPositionStays` is false, this applies. However, if you're using the default value of `true`, this isn't required (because it's the default).
 
-When the `WorldPositionStays` parameter in `NetworkObject.TrySetParent` is the default value of `true`, this will preserve the world space values of the child `NetworkObject` relative to the parent. However, sometimes you might want to only preserve the local space values (that is, pick up an object that only has some initial changes to the child's transform when parented). Through a combination of `NetworkObject.TrySetParent` and `NetworkBehaviour.OnNetworkObjectParentChanged` you can accomplish this without the need for a NetworkTransform. To better understand how this works, it's important to understand the order of operations for both of these two methods:
+When the `WorldPositionStays` parameter in `NetworkObject.TrySetParent` is the default value of `true`, this will preserve the world space values of the child `NetworkObject` relative to the parent. However, sometimes you might want to only preserve the local space values (pick up an object that only has some initial changes to the child's transform when parented). Through a combination of `NetworkObject.TrySetParent` and `NetworkBehaviour.OnNetworkObjectParentChanged` you can accomplish this without the need for a NetworkTransform component. To better understand how this works, it's important to understand the order of operations for both of these two methods:
 
 **Server-Side**
 
@@ -100,7 +100,7 @@ If you only plan on making a one time change to the child NetworkObject componen
 - [Learn More About WorldPositionStays](https://docs.unity3d.com/ScriptReference/Transform.SetParent.html)
   :::
 
-### Network Prefabs, Parenting, and NetworkTransforms
+### Network prefabs, parenting, and NetworkTransform components
 
 Because the NetworkTransform component synchronizes the transform of a GameObject component (with a NetworkObject component attached to it), it can become tricky to understand the parent-child transform relationship and how that translates when synchronizing late joining clients. Currently, a network prefab can only have one NetworkObject component within the root GameObject component of the prefab. However, you can have a complex hierarchy of GameObject components nested under the root GameObjet component and each child GameObject component can have a NetworkBehaviour component attached to it. Because a NetworkTransform component synchronizes the transform of the GameObject component it's attached to, you might be tempted to setup a network prefab like this:
 
@@ -111,13 +111,13 @@ Network Prefab Root (GameObject with NetworkObject and NetworkTransform componen
   └─ Child #2 (GameObject with NetworkTransform component attached to it)
 ```
 
-While this won't give you any warnings and, depending upon the transform settings of Child #1 & #2, it might appear to work properly (because it synchronizes clients), it's important to understand how the child GameObject component (with no NetworkObject component attached to it) and parent GameObject component (that does have a NetworkObject component attached to it), synchronize when a client connects to an already in-progress network session (late joins or late joining client). If Child #1 or Child #2 have had changes to their respective `GameObject`'s transform before a client joining, then upon a client late joining the two child GameObject component's transforms won't synchronize during the initial synchronization period because they don't have NetworkObject components attached to them:
+While this won't give you any warnings and, depending upon the transform settings of Child #1 & #2, it might appear to work properly (because it synchronizes clients), it's important to understand how the child GameObject component (with no NetworkObject component attached to it) and parent GameObject component (that does have a NetworkObject component attached to it), synchronize when a client connects to an already in-progress network session (late joins or late joining client). If Child #1 or Child #2 have had changes to their respective GameObject component's transform before a client joining, then upon a client late joining the two child GameObject component's transforms won't synchronize during the initial synchronization period because they don't have NetworkObject components attached to them:
 
 ```
-Network Prefab Root (Late joining client is synchronized with `GameObject`'s current transform state)
-  ├─ Child #1 (Late joining client *isn't synchronized* with `GameObject`'s current transform state)
+Network Prefab Root (Late joining client is synchronized with GameObject's current transform state)
+  ├─ Child #1 (Late joining client *isn't synchronized* with GameObject's current transform state)
   │
-  └─ Child #2 (Late joining client *isn't synchronized* with `GameObject`'s current transform state)
+  └─ Child #2 (Late joining client *isn't synchronized* with GameObject's current transform state)
 ```
 
 This is important to understand because the NetworkTransform component initializes itself, during `NetworkTransform.OnNetworkSpawn`, with the GameObject component's current transform state. Just below, in the parenting examples, there are some valid and invalid parenting rules. As such, take these rules into consideration when using NetworkTransform components if you plan on using a complex parent-child hierarchy. Also make sure to organize your project's assets where any children that have NetworkTransform components attached to them also have NetworkObject components attached to them to avoid late-joining client synchronization issues.
@@ -212,17 +212,17 @@ Vehicle (GameObject->NetworkObject)
   └─Seat2 (GameObject->NetworkObject)
 ```
 
-### Parenting & Transform Synchronization
+### Parenting & transform synchronization
 
-It's important to understand that without the use of a `NetworkTransform` clients are only synchronized with the transform values when:
+It's important to understand that without the use of a NetworkTransform component clients are only synchronized with the transform values when:
 
-- A client is being synchronized with the NetworkObject in question:
+- A client is being synchronized with the NetworkObject component in question:
   - During the client's first synchronization after a client has their connection approved.
-  - When a server spawns a new `NetworkObject`.
-- A `NetworkObject` has been parented _(or a parent removed)_.
+  - When a server spawns a new NetworkObject component.
+- A NetworkObject component has been parented (or a parent removed).
 - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that's invoked.
   - These transform changes will be synchronized with clients via the `ParentSyncMessage`
 
-:::note Optional Auto Synchronized Parenting
-The Auto Object Parent Sync property of a `NetworkObject`, enabled by default, allows you to disable automatic parent change synchronization in the event you want to implement your own parenting solution for one or more NetworkObjects. it's important to understand that disabling the Auto Object Parent Sync option of a `NetworkObject` will treat the `NetworkObject`'s transform synchronization with _clients_ as if its parent is the hierarchy root _(that is, null)_.
+:::note Optional auto synchronized parenting
+The Auto Object Parent Sync property of a NetworkObject component, enabled by default, allows you to disable automatic parent change synchronization in the event you want to implement your own parenting solution for one or more NetworkObjects. It's important to understand that disabling the Auto Object Parent Sync option of a NetworkObject component will treat the NetworkObject component's transform synchronization with clients as if its parent is the hierarchy root (null).
 :::
