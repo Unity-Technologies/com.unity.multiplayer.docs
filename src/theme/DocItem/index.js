@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionSuggestions from '@theme/DocVersionSuggestions';
 import TOC from '@theme/TOC';
-import IconEdit from '@theme/IconEdit';
+import IconEdit from '@theme/Icon/Edit';
 import IconBug from '@theme/IconBug';
 import clsx from 'clsx';
 import styles from './styles.module.css';

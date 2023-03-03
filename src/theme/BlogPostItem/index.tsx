@@ -5,35 +5,35 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import clsx from 'clsx';
-import {MDXProvider} from '@mdx-js/react';
-import Translate, {translate} from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
-import MDXComponents from '@theme/MDXComponents';
-import Seo from '@theme/Seo';
-import type {Props} from '@theme/BlogPostItem';
+import React from "react";
+import clsx from "clsx";
+import { MDXProvider } from "@mdx-js/react";
+import Translate, { translate } from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
+import MDXComponents from "@theme/MDXComponents";
+import { PageMetadata } from "@docusaurus/theme-common";
+import type { Props } from "@theme/BlogPostItem";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
-import {usePluralForm} from '@docusaurus/theme-common';
+import { usePluralForm } from "@docusaurus/theme-common";
 
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
-  const {selectMessage} = usePluralForm();
+  const { selectMessage } = usePluralForm();
   return (readingTimeFloat: number) => {
     const readingTime = Math.ceil(readingTimeFloat);
     return selectMessage(
       readingTime,
       translate(
         {
-          id: 'theme.blog.post.readingTime.plurals',
+          id: "theme.blog.post.readingTime.plurals",
           description:
             'Pluralized label for "{readingTime} min read". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: 'One min read|{readingTime} min read',
+          message: "One min read|{readingTime} min read",
         },
-        {readingTime},
-      ),
+        { readingTime }
+      )
     );
   };
 }
@@ -47,8 +47,8 @@ function BlogPostItem(props: Props): JSX.Element {
     truncated,
     isBlogPostPage = false,
   } = props;
-  const {date, formattedDate, permalink, tags, readingTime} = metadata;
-  const {author, title, image, keywords} = frontMatter;
+  const { date, formattedDate, permalink, tags, readingTime } = metadata;
+  const { author, title, image, keywords } = frontMatter;
 
   const authorURL = frontMatter.author_url || frontMatter.authorURL;
   const authorTitle = frontMatter.author_title || frontMatter.authorTitle;
@@ -56,12 +56,11 @@ function BlogPostItem(props: Props): JSX.Element {
     frontMatter.author_image_url || frontMatter.authorImageURL;
 
   const renderPostHeader = () => {
-    const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
+    const TitleHeading = isBlogPostPage ? "h1" : "h2";
 
     return (
       <header>
-        <TitleHeading
-          className="margin-bottom--sm blogPostTitle">
+        <TitleHeading className="margin-bottom--sm blogPostTitle">
           {isBlogPostPage ? title : <Link to={permalink}>{title}</Link>}
         </TitleHeading>
         <div className="margin-vert--md">
@@ -69,7 +68,7 @@ function BlogPostItem(props: Props): JSX.Element {
             {formattedDate}
             {readingTime && (
               <>
-                {' · '}
+                {" · "}
                 {readingTimePlural(readingTime)}
               </>
             )}
@@ -98,9 +97,9 @@ function BlogPostItem(props: Props): JSX.Element {
 
   return (
     <>
-      <Seo {...{keywords, image}} />
+      <PageMetadata {...{ keywords, image }} />
 
-      <article className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}>
+      <article className={!isBlogPostPage ? "margin-bottom--xl" : undefined}>
         {renderPostHeader()}
         <div className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
@@ -112,15 +111,17 @@ function BlogPostItem(props: Props): JSX.Element {
                 <strong>
                   <Translate
                     id="theme.tags.tagsListLabel"
-                    description="The label alongside a tag list">
+                    description="The label alongside a tag list"
+                  >
                     Tags:
                   </Translate>
                 </strong>
-                {tags.map(({label, permalink: tagPermalink}) => (
+                {tags.map(({ label, permalink: tagPermalink }) => (
                   <Link
                     key={tagPermalink}
                     className="margin-horiz--sm"
-                    to={tagPermalink}>
+                    to={tagPermalink}
+                  >
                     {label}
                   </Link>
                 ))}
@@ -130,11 +131,13 @@ function BlogPostItem(props: Props): JSX.Element {
               <div className="col text--right">
                 <Link
                   to={metadata.permalink}
-                  aria-label={`Read more about ${title}`}>
+                  aria-label={`Read more about ${title}`}
+                >
                   <strong>
                     <Translate
                       id="theme.blog.post.readMore"
-                      description="The label used in blog post item excerpts to link to full blog posts">
+                      description="The label used in blog post item excerpts to link to full blog posts"
+                    >
                       Read More
                     </Translate>
                   </strong>
