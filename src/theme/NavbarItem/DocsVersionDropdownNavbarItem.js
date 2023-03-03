@@ -6,7 +6,7 @@ import {
   useVersions,
   useLatestVersion,
   useActiveDocContext,
-} from '@theme/hooks/useDocs';
+} from '@docusaurus/theme-common';
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 
 const getVersionMainDoc = (version) =>

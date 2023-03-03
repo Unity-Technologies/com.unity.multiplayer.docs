@@ -12,7 +12,7 @@ import {
   useActivePlugin,
   useActiveVersion,
   useDocVersionSuggestions,
-} from '@theme/hooks/useDocs';
+} from '@docusaurus/theme-common';
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 
 function UnreleasedVersionLabel({siteTitle, versionLabel}) {
