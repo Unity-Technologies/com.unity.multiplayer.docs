@@ -92,66 +92,66 @@ Follow these instructions to test that the command line helper script works.
 2. Create a new folder called `Build` inside your Hello World project folder.
 3. Save As the binary “`HelloWorld`.”
 
-Saving the project in this way causes the Unity Editor to build and launch the project in a new window. After it launches (and you see the plane), close the window you just launched.
+Saving the project in this way causes the Unity Editor to build and launch the project in a new window. After it launches (and displays the plane), close the window you just launched.
 
 #### Test on Windows
 
-For Windows you should do the following:
+To test on Windows:
 
 1. Open the Command Prompt.
 2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angle brackets (`< >`) for all commands.
 
 :::note
-You might get a [UAC prompt](https://learn.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) requesting permission to run the executable. You should allow it.
+You might get a [UAC prompt](https://learn.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) requesting permission to run the executable. Allow the executable to run to continue.
 :::
 
 Command to start the server:
 
 ```cmd
-<Path to Project>\Build\HelloWorld.exe -mode server
+<Path to Project>\HelloWorld.exe -mode server
 ```
 
 Command to start the client:
 
 ```cmd
-<path to project>\Build\HelloWorld.exe -mode client
+<path to project>\HelloWorld.exe -mode client
 ```
 
 To run these commands on a single line:
 
 ```cmd
-HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
+<path to project>\HelloWorld.exe -mode server & <path to project>\HelloWorld.exe -mode client
 ```
 
 Here’s an example of what your command might look like when you replace the placeholder text in `< >`:
 
 ```cmd
-C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -mode server & HelloWorld\Build\HelloWorld.exe -mode client
+<path to project>\HelloWorld.exe -mode server & <path to project>\HelloWorld.exe -mode client
 ```
 
 :::important
-There's no standard out stream on Windows by default, so you will need to view the `Debug.log` file to see the outputs. You can find the `Debug.log` files in:
+There's no standard out stream on Windows by default, so you need to view the `Debug.log` file for the outputs. You can find the `Debug.log` files in:
 
 ```cmd
 C:\Users\username\AppData\LocalLow\CompanyName\ProductName\Player.log
 ```
 
-Where the `CompanyName` should default to `DefaultCompany` for a new project and `ProductName` should be equal to the project's name.
+Where the `CompanyName` defaults to `DefaultCompany` for a new project and `ProductName` equals to the project's name.
 
-Alternatively you can change the Windows commands to create a `log.txt` file in the same folder as your `HelloWorld` folder.
+You can also change the Windows commands to create a `log.txt` file in the same folder as your `HelloWorld` folder.
 
 Change the commands as follows:
 
 Server command:
 
 ```cmd
-<Path to Project>\Build\HelloWorld.exe -logfile log-server.txt -mode server
+<Path to Project>\HelloWorld.exe -logfile log-server.txt -mode server
 ```
 
 Client command:
 
 ```cmd
-<Path to Project>\Build\HelloWorld.exe  -logfile log-client.txt -mode client
+<Path to Project>\HelloWorld.exe  -logfile log-client.txt -mode client
 ```
 
 Example (Running as a single command line):
@@ -162,9 +162,9 @@ C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile log-server.txt -mode ser
 
 :::
 
-#### **Test on Mac**
+#### **Test on macOS**
 
-Use the following instructions if you're using MacOS:
+Use the following instructions if you're using macOS:
 
 1. Open the Terminal app.
 2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angle brackets (`< >`) for all commands.
@@ -172,17 +172,17 @@ Use the following instructions if you're using MacOS:
 Command to start the server:
 
 ```shell
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile -
+<Path to Project>/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile -
 ```
 
 Command to start the client:
 
 ```shell
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
+<Path to Project>/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```
 
 To run both as a single command:
 
 ```shell
-<Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile - & ; ~ <Path to Project>/Build/HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
+<Path to Project>/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile - & ; ~ <Path to Project>HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```
