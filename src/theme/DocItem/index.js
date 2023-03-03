@@ -16,7 +16,8 @@ import IconEdit from '@theme/Icon/Edit';
 import IconBug from '@theme/IconBug';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import { useActivePlugin, useVersions, useActiveVersion } from '@docusaurus/theme-common';
+import { useActivePlugin, useVersions } from '@docusaurus/theme-common';
+import  {useActiveVersion} from '@docusaurus/plugin-content-docs/client'
 import Link from '@docusaurus/Link';
 
 //Components

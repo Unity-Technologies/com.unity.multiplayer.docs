@@ -10,9 +10,9 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import {
   useActivePlugin,
-  useActiveVersion,
   useDocVersionSuggestions,
 } from '@docusaurus/theme-common';
+import {useActiveVersion} from '@docusaurus/plugin-content-docs/client'
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 
 function UnreleasedVersionLabel({siteTitle, versionLabel}) {
