@@ -16,8 +16,7 @@ import IconEdit from '@theme/Icon/Edit';
 import IconBug from '@theme/IconBug';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import { useActivePlugin, useVersions } from '@docusaurus/theme-common';
-import  {useActiveVersion} from '@docusaurus/plugin-content-docs/client'
+import { useActiveVersion, useActivePlugin, useVersions } from '@docusaurus/plugin-content-docs/client';
 import Link from '@docusaurus/Link';
 
 //Components
@@ -65,7 +64,7 @@ function DocItem(props) {
   // See https://github.com/facebook/docusaurus/issues/3362
 
   const showVersionBadge = versions.length > 1;
-  const metaTitle = useTitleFormatter(title);
+  const metaTitle = title; //todo: implement title formatter after deprecation of useTitleFormatter
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true
   });
