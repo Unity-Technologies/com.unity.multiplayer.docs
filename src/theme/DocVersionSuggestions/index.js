@@ -8,11 +8,7 @@ import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import {
-  useActivePlugin,
-  useDocVersionSuggestions,
-} from '@docusaurus/theme-common';
-import {useActiveVersion} from '@docusaurus/plugin-content-docs/client'
+import {useActiveVersion, useActivePlugin, useDocVersionSuggestions} from '@docusaurus/plugin-content-docs/client'
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 
 function UnreleasedVersionLabel({siteTitle, versionLabel}) {
