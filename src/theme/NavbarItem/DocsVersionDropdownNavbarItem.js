@@ -4,9 +4,9 @@ import React from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import {
   useVersions,
-  useLatestVersion,
   useActiveDocContext,
 } from '@docusaurus/theme-common';
+import {useLatestVersion} from '@docusaurus/plugin-content-docs/client'
 import {useDocsPreferredVersion} from '@docusaurus/theme-common';
 
 const getVersionMainDoc = (version) =>

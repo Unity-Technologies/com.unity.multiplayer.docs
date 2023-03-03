@@ -41,6 +41,7 @@
     "sass-loader": "^10.1.1",
     "ssri": "^8.0.1",
     "trim-newlines": "^3.0.1",
+    "url": "^0.11.0",
     "webpack": "^5.0.0"
   },
   "browserslist": {
