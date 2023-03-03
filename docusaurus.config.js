@@ -23,8 +23,11 @@ module.exports = {
         'data-domain-script': '6e91be4c-3145-4ea2-aa64-89d716064836'
     }],
     themeConfig: {
-        //button on sidebar
-        hideableSidebar: true,
+        docs: {
+            sidebar: {
+                hideable: true,
+            }
+        },
         // Announcement across entire site at top of pages
         announcementBar: {
             id: 'prerelease', // Any value that will identify this message.
@@ -209,7 +212,7 @@ module.exports = {
                     to: 'contribute',
                     docsPluginId: 'reference',
                     items: [
-                        { href: '/blog', label: 'Blog', position: 'right', },
+                        { href: '/blog', label: 'Blog' },
                         {
                             label: 'Product Roadmap',
                             href: 'https://unity.com/roadmap/unity-platform/multiplayer-networking',
