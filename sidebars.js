@@ -26,6 +26,44 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
+            "label": "Multiplayer Conceptual Knowledge",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "terms-concepts/network-topologies",
+                },
+                {
+                    "type": "doc",
+                    "id": "learn/listen-server-host-architecture",
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Lag",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/ticks-and-update-rates",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/lagandpacketloss",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/clientside_interpolation",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dealing-with-latency",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
             "label": "Networking",
             "items": [
                 {
@@ -506,73 +544,15 @@ module.exports = {
                 }
             ]
         },
+        {
+            "type": "doc",
+            "id": "learn/faq",
+        },
+        {
+            "type": "doc",
+            "id": "terms-concepts/mtt-terms"
+        },
     ],
-
-    Multiplayer:
-        [
-            {
-                "type": "doc",
-                "id": "reference/glossary/high-level-terminology"
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Lag",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "reference/glossary/ticks-and-update-rates"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/lagandpacketloss"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/clientside_interpolation"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/dealing-with-latency"
-                    },
-                        ],
-            },
-            {
-                "type": "doc",
-                "id": "reference/glossary/network-terms"
-            },
-            {
-                "type": "doc",
-                "id": "reference/glossary/prioritization"
-            },
-            {
-                "type": "doc",
-                "id": "reference/glossary/relevancy"
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Multiplayer Game Architecture",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "learn/multiplayer-game-arhitecture"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "reference/glossary/network-topologies"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/listen-server-host-architecture"
-                    }
-                        ]
-            },
-            {
-                "type": "doc",
-                "id": "learn/faq"
-            },
-        ],
 
     api:
         [
