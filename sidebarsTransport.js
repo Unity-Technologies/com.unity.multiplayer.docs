@@ -90,6 +90,10 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "network-settings"
+                },
+                {
+                    "type": "doc",
+                    "id": "utp-2-faq"
                 }
             ]
         },
