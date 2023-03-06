@@ -148,12 +148,6 @@ module.exports = {
                     docsPluginId: 'tools'
                 },
                 {
-                    to: 'reference/glossary/high-level-terminology',
-                    label: 'Concepts and FAQs',
-                    className: 'nav-break',
-                    position: 'left',
-                },
-                {
                     className: 'navbar-github-link',
                     position: 'right',
                     to: 'contribute',
