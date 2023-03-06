@@ -93,6 +93,10 @@ module.exports = {
                 }
             ]
         },
+        {
+            "type": "doc",
+            "id": "terms-concepts/mtt-terms"
+        },
     ],
     "api": [
         {

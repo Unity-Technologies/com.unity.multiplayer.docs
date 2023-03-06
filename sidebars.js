@@ -28,9 +28,37 @@ module.exports = {
             "type": "category",
             "label": "Multiplayer Conceptual Knowledge",
             "items": [
-                {},
-                {},
-                {},
+                {
+                    "type": "doc",
+                    "id": "terms-concepts/network-topologies",
+                },
+                {
+                    "type": "doc",
+                    "id": "learn/listen-server-host-architecture",
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Lag",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/ticks-and-update-rates",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/lagandpacketloss",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/clientside_interpolation",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dealing-with-latency",
+                        },
+                    ],
+                },
             ],
         },
         {
