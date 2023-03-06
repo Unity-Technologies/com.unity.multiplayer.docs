@@ -35,8 +35,6 @@ Netcode supports the following versions:
 Netcode supports the following platforms:
 * Windows, MacOS, and Linux
 * iOS and Android
-* WebGL (requires NGO 1.2.0+ and UTP 2.0.0+). **Note**: Although NGO 1.2.0 introduces WebGL support, there's a bug in NGO 1.2.0 that impacts WebGL compatibility, so it's recommended to use NGO 1.3.0+.
-
 * XR platforms running on Windows, Android, and iOS operating systems
 * Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact us for more information about specific closed platforms.
   + When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there may be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
