@@ -359,6 +359,18 @@ You might find yourself in a scenario where you just need to dynamically generat
  This only works under the scenario where the dynamically generated scene is a server-host side only scene unless you write server-side code that sends enough information to a newly connected client to replicate the dynamically generated scene via RPC, a custom message, a `NetworkVariable`, or an in-scene placed NetworkObject that is in a scene, other than the dynamically generated one, and has a `NetworkBehaviour` component with an overridden `OnSynchronize` method that includes additional serialization information about how to construct the dynamically generated scene.  The limitation on this approach is that the scene should not contain already spawned `NetworkObject`s as those won't get automatically synchronized when a client first connects.
  :::
 
+### Active Scene Synchronization
+Setting `NetworkSceneManager.ActiveSceneSynchronizationEnabled` to true on the host or server instance will automatically synchronize both connected and late joining clients with changes in the active scene by the server or host. This can be most useful when the `NetworkSceneManager.ClientSynchronizationMode` is set to `LoadSceneMode.Additive` via the `NetworkSceneManager.SetClientSynchronizationMode` method on a server or host instance. When enabled, the server or host instance subscribes to the `SceneManager.activeSceneChanged` event and generates `SceneEventType.ActiveSceneChanged` messages when the active scene is changed. Disabling this property just means the server or host instance unsubscribes from the event and will no longer send `SceneEventType.ActiveSceneChanged` messages to keep client's synchronized with the server or host's currently active scene.
+
+:::note
+You should invoke `NetworkSceneManager.SetClientSynchronizationMode` immediately after starting the server or host instance prior to any clients connecting. This should not be changed once set.  Read more about [Client Synchronization Mode](client-synchronization-mode.md).
+:::
+
+:::caution
+Unlike `NetworkSceneManager.ClientSynchronizationMode`, `NetworkSceneManager.ActiveSceneSynchronizationEnabled` can be enabled or disabled after clients have connected. While late joining players will automatically synchronize to the server's currently active scene when If you plan on changing this
+:::
+
+
 ### What Next?
 We have covered how to access the `NetworkSceneManager`, how to load and unload a scene, provided a basic overview on scene events and notifications, and even briefly discussed in-scene placed `NetworkObject`s.  You now have the fundamental building-blocks one needs to learn more advanced integrated scene management topics.  
 _We recommend proceeding to the next integrated scene management topic, "Scene Events", in the link below._

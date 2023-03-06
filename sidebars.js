@@ -301,6 +301,10 @@ module.exports = {
                             "type": "doc",
                             "id": "basics/scenemanagement/inscene-placed-networkobjects"
                         },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/client-synchronization-mode"
+                        },                        
                     ]
                 },                
                 {
