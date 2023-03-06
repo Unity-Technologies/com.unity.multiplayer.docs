@@ -1,4 +1,4 @@
-[A](#a) *B* [C](#c) *D* [E](#e) *F* [G](#g) [H](#h) [I](#i) *J* *K* *L* *M* [N](#n) [O](#o) [P](#p) *Q* [R](#r) [S](#s) [T](#t) [U](#u) *V* *W* *X* *Y* *Z*
+[A](#a) &nbsp; | &nbsp; *B* &nbsp; | &nbsp; [C](#c) &nbsp; | &nbsp; *D* &nbsp; | &nbsp; [E](#e) &nbsp; | &nbsp; *F* &nbsp; | &nbsp; [G](#g) &nbsp; | &nbsp; [H](#h) &nbsp; | &nbsp; [I](#i) &nbsp; | &nbsp; *J* &nbsp; | &nbsp; *K* &nbsp; | &nbsp; *L* &nbsp; | &nbsp; *M* &nbsp; | &nbsp; [N](#n) &nbsp; | &nbsp; [O](#o) &nbsp; | &nbsp; [P](#p) &nbsp; | &nbsp; *Q* &nbsp; | &nbsp; [R](#r) &nbsp; | &nbsp; [S](#s) &nbsp; | &nbsp; [T](#t) &nbsp; | &nbsp; [U](#u) &nbsp; | &nbsp; *V* &nbsp; | &nbsp; *W* &nbsp; | &nbsp; *X* &nbsp; | &nbsp; *Y* &nbsp; | &nbsp; *Z*
 
 ## A
 

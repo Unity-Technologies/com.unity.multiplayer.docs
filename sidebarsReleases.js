@@ -85,10 +85,6 @@ module.exports = {
                     type: "doc",
                     id: 'doc-changelog',
                 },
-                {
-                    "type": "doc",
-                    "id": "terms-concepts/mtt-terms"
-                },
             ],
         },
     ],
