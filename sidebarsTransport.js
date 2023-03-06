@@ -97,6 +97,10 @@ module.exports = {
                 }
             ]
         },
+        {
+            "type": "doc",
+            "id": "mtt-terms"
+        },
     ],
     "api": [
         {
