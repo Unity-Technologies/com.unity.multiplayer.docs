@@ -1,6 +1,10 @@
-[A](#a)
+[A](#a) *B* [C](#c) *D* [E](#e) *F* [G](#g) [H](#h) [I](#i) *J* *K* *L* *M* [N](#n) [O](#o) [P](#p) *Q* [R](#r) [S](#s) [T](#t) [U](#u) *V* *W* *X* *Y* *Z*
 
 ## A
+
+### Age (Staleness)
+
+Objects or data which hasn’t been transmitted in a long time becomes higher-priority, until the next time it's transmitted, at which time its priority returns to a lower value.
 
 ### Asymmetrical multiplayer
 
@@ -26,9 +30,22 @@ Is the active software and instructions executed while your applications are run
 
 ## E
 
+### Errors
+
+Sometimes packets are corrupted due to bit errors caused by noise and interference, especially in wireless communications and long copper wires. The receiver has to detect this, and, just as if the packet was dropped, may ask for this information to be retransmitted.
+
 ## F
 
 ## G
+
+### Gameplay Relevance
+See also *[Spatial Relevance](#spatial-relevance)*
+- **Interaction:** Have I, or am I likely about to, interact with a gameplay element. For example, a grenade I threw far away.
+- **Objective:** Critical gameplay elements which need constant awareness. For example, a player carrying a flag across the map in CTF.
+
+### Goodput
+
+Due to varying load from disparate users sharing the same network resources, the maximum throughput that can be provided to a certain data stream may be too low for real-time multimedia services.
 
 ## H
 
@@ -47,6 +64,13 @@ There are more than just two cases. The non physics version of bullets via rayca
 Hit registration can be done by your game client (client side), which then tells the server (or in p2p, the other clients) that you hit something. 
 
 ## I
+
+### Interaction
+
+Similar to interaction as it relates to Relevancy, objects which you have recently, or are about to interact with should typically be treated as higher priority to keep more frequent updates/synchronization.
+
+Many things can happen to packets as they travel from origin to destination, resulting in the following problems as seen from the point of view of the sender and receiver:
+See *[Goodput](#goodput)*, *[Packet loss](#packet-loss)*, *[Errors](#errors)*, *[Latency](../learn/dealing-with-latency.md)*, *[Packet delay variation](#packet-delay-variation)*, [Out-of-order delivery](#out-of-order-delivery)*
 
 ### Interactive Connectivity Establishment (ICE) 
 
@@ -84,6 +108,10 @@ This layer enables the host to send and receive error corrected data, packets or
 
 ## O
 
+### Out-of-order delivery
+
+When a collection of related packets is routed through a network, different packets may take different routes, each resulting in a different delay. The result is that the packets arrive in a different order than they were sent. This problem requires special additional protocols for rearranging out-of-order packets. The reordering process requires additional buffering at the receiver, and, as with packet delay variation, increases the overall latency for the stream.
+
 ## P
 
 ### Packet
@@ -95,9 +123,13 @@ Packets are composed of a header and payload.
 
 The payload appears immediately after the header.
 
-### **Packet loss** — where did my data go? (See Routing for more information)
+### Packet delay variation
 
-There is no guarantee that your packet will actually reach its destination. When a packet disappears, this is called packet loss, which is a big problem for real-time applications such as online games, as re-sending that data increases the delay.
+Packets from the source will reach the destination with different delays. A packet's delay varies with its position in the queues of the routers along the path between source and destination, and this position can vary unpredictably. Delay variation can be absorbed at the receiver, but in so doing increases the overall latency for the stream.
+
+### Packet loss
+
+The network may fail to deliver (drop) some packets due to network congestion. The receiving application may ask for this information to be retransmitted, possibly resulting in congestive collapse or unacceptable delays in the overall transmission.
 
 ### Port 
 
@@ -131,17 +163,24 @@ Is a server which is the authoritative source of events in a multiplayer video g
 
 Is the active software and instructions executed while your applications are running on your server. This includes physical and virtual servers running hosted services and software communicating with additional services and clients.
 
-### Session Traversal Utilities for NAT (STUN) (refer to NAT)
+### Session Traversal Utilities for NAT (STUN)
 
 *STUN* is a tool for communications protocols to detect and traverse network address translators that are located in the path between two endpoints of communication. it's implemented as a light-weight client-server protocol, requiring only simple query and response components with a third-party server located on the common, easily accessible network, typically the Internet.
 
-The basic protocol operates essentially as follows: The client, typically operating inside a private network, sends a binding request to a **STUN** server on the public Internet. The STUN server responds with a success response that has the IP address and port number of the client, as observed from the server's perspective. 
+The basic protocol operates essentially as follows: The client, typically operating inside a private network, sends a binding request to a *STUN* server on the public Internet. The STUN server responds with a success response that has the IP address and port number of the client, as observed from the server's perspective. 
 
 *STUN* messages are sent in *User Datagram Protocol (UDP)* packets. Since UDP does not provide reliable transport guarantees, reliability is achieved by application-controlled retransmissions of the *STUN* requests. *STUN* servers don't implement any reliability mechanism for their responses. When reliability is mandatory, the *Transmission Control Protocol (TCP)* may be used, but induces extra networking overhead
 
 ### Socket
 
 A socket is one endpoint of a two-way communication link between two programs running on the network. A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to. An endpoint is a combination of an IP address and a port number.
+
+### Spatial Relevance
+See also: *[Gameplay Relevance](#gameplay-relevance)*
+- **Distance from player:** How many units away is this object from the networked player
+- **Static Zones:** Predefined areas of a game world, where a player typically only finds objects within their same zone or adjacent zones as relevant. Examples would be a room, building, or town.
+- **View Frustum:** If it's in the camera’s view it’s relevant. If it's behind me, it isn't.
+- **Instances:** Static zones which can be instantiated/copied multiple times. Example would be a dungeon raid.
 
 ## T
 
@@ -159,7 +198,7 @@ User Datagram Protocol (UDP) uses a simple connectionless communication model wi
 
 UDP is suitable for purposes where error checking and correction are either not necessary or are performed in the application; UDP avoids the overhead of such processing in the protocol stack. Time-sensitive applications often use UDP because dropping packets is preferable to waiting for packets delayed due to retransmission, which may not be an option in a real-time system.
 
-### UDP hole punching (refer to NAT)
+### UDP hole punching
 
 *UDP hole punching* is a commonly used technique employed in *Network Address Translation (NAT)* applications for maintaining *User Datagram Protocol (UDP)* packet streams that traverse the *NAT*. NAT traversal techniques are typically required for client-to-client networking applications on the Internet involving hosts connected in private networks, especially in peer-to-peer, Direct Client-to-Client (DCC) and Voice over Internet Protocol (VoIP) deployments.
 
