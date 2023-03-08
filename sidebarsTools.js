@@ -19,7 +19,11 @@ module.exports = {
         {
             "type": "doc",
             "id": "mppm"
-        }
+        },
+        {
+            "type": "doc",
+            "id": "mtt-terms"
+        },
     ],
 
         "api": [
