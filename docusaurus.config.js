@@ -1,11 +1,18 @@
-const admonitions = {tag:'::::',
-keywords: [
-    'contribution',
-    'funfact',
-    'bestpractice',
-    'faq',
-    'unity'
-]}
+const admonitions = {
+    tag:':::',
+    keywords: [
+        'contribution',
+        'funfact',
+        'bestpractice',
+        'faq',
+        'unity',
+        'note',
+        'tip',
+        'info',
+        'caution',
+        'danger'
+    ]
+}
 module.exports = {
     title: 'Unity Multiplayer Networking',
     tagline: 'Build multiplayer games in Unity',
