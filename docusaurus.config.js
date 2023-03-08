@@ -65,21 +65,30 @@ module.exports = {
             items: [
                 {
                     label: 'Netcode for GameObjects',
-                    className: 'nav-break',
-                    to: 'about',
+                    // className: 'nav-break',
+                    type: 'dropdown',
+                    docId: 'about',
                     position: 'left',
                     items: [
                         {
-                            to: '/introduction',
+                            type: 'doc',
+                            docId: 'about',
+                            label: 'About',
+                        },
+                        {
+                            type: 'doc',
+                            docId: 'netcode/develop',
                             label: 'Release Notes',
                             docsPluginId: 'releases'
                         },
                         {
-                            to: 'about',
+                            type: 'doc',
+                            docId: 'installation/install',
                             label: 'Documentation',
                         },
                         {
-                            to: 'api/introduction',
+                            type: 'doc',
+                            docId: 'api/introduction',
                             label: 'API Reference',
                         },
                     ]
@@ -96,7 +105,8 @@ module.exports = {
                     docsPluginId: 'default',
                 },
                 {
-                    to: 'about',
+                    type: 'dropdown',
+                    docId: 'about',
                     label: 'Transport',
                     position: 'left',
                     docsPluginId: 'transport',
@@ -114,7 +124,7 @@ module.exports = {
                         },
 
                         {
-                            to: 'api/introduction',
+                            to: 'docs/introduction',
                             label: 'API Reference',
                             docsPluginId: 'transport',
                         },
