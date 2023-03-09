@@ -11,29 +11,29 @@ A listen server is hosted on one of the player's machine. It acts both as a serv
 
 ### Disadvantages
 
-- Network Performance is impacted by having to communicate with remote players over the residential internet connection of the host player.  
-- Network Performance may also be reduced because the machine running the server is also generating an output image. 
+- Network Performance is impacted by having to communicate with remote players over the residential internet connection of the host player.
+- Network Performance may also be reduced because the machine running the server is also generating an output image.
 - Listen servers grant the host player a large latency advantage over other players.
-- The hosting client has access to all the world's information, making it easier to cheat for that player. 
+- The hosting client has access to all the world's information, making it easier to cheat for that player.
 - The server will cease to exist when host player leaves the game.
 
-### Advantages 
+### Advantages
 
-- Essentially free 
+- Essentially free
 - Don't require any special infrastructure or forward planning to set up, which makes them common at LAN parties where latency and bandwidth issues aren't a concern.
 
 ## When to use a listen server architecture
 
-The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (< 12) and for games which don't need persistent worlds because the game state is often tied to the host. 
+The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (< 12) and for games which don't need persistent worlds because the game state is often tied to the host.
 
 :::info
 Persistent world in netcode usually means "persistent online world' For example, the game state isn't bound to a player or a session
 :::
 
-Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authorative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.
+Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authoritative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.
 
 :::note
-You will still have to setup matchmaking to get your players to join together. You can't just  launch a listen server game and get players playing together, you still have to redirect players to those client-hosted servers.
+You will still have to setup matchmaking to get your players to join together. You can't just launch a listen server game and get players playing together, you still have to redirect players to those client-hosted servers.
 :::
 
 :::funfact
@@ -47,13 +47,14 @@ Connecting to someone elses computer is often not as straight forward as one wou
 ### Option A: Port Forwarding
 
 Often the host can forward a public port on his router to a machine in his local network and thus allow someone from the outside to connect to a listen server. While this approach works fine it comes with a few caveats.
+
 1. Users need to manually open ports on their router and there is quite a bit of technical knowledge needed to do so.
 1. Users won't always have access to their routers. For instance if they use a mobile device or are using a corporate network or public WIFI.
 
-These limitations make port forwarding often not a viable option for a released game but it can be a useful tool for development.  You can learn more about how to port forward here: https://portforward.com/
+These limitations make port forwarding often not a viable option for a released game but it can be a useful tool for development. You can learn more about how to port forward here: https://portforward.com/
 
 :::caution
-There are risks associated port forwarding. If you  open ports, then you are opening direct lines for hackers and malware attacks. it's recommended that you close the ports when you have completed your session.
+There are risks associated port forwarding. If you open ports, then you are opening direct lines for hackers and malware attacks. it's recommended that you close the ports when you have completed your session.
 :::
 
 ### Option B: Relay server
@@ -70,7 +71,7 @@ The idea behind NAT Punchthrough is to open a direct connection between clients 
 
 ### Option D: NAT Punch and Relay Fallback
 
-This option combines NAT punching with a relay fallback. The idea is to first have clients try connecting to the host via NAT punching and if the connection fails they default back to the relay server. This helps to reduce load on the relay while still allowing any client to connect to the host. This option is widely used because 
+This option combines NAT punching with a relay fallback. The idea is to first have clients try connecting to the host via NAT punching and if the connection fails they default back to the relay server. This helps to reduce load on the relay while still allowing any client to connect to the host. This option is widely used because
 it reduces hosting costs of relay servers.
 
 ## Which option to chose
@@ -81,7 +82,7 @@ Many platforms come with platform specific networking solutions. They usually us
 
 There are companies which provide relay servers in your cloud ready for your game to use such as Playfab Party or Photon Realtime. They usually charge a cost based on the CCU (conccurrent users).
 
-##  Netcode for GameObjects (Netcode) and listen servers
+## Netcode for GameObjects (Netcode) and listen servers
 
 Netcode modular transport system supports all the options above. Most regular transports will allow you to connect to them
 via port forwarding. Netcode can support platform specific relays via Transport. You can find implementations in the Netcode-community-contributions repository. Netcode also supports cross platform listen servers by integrating a third party relay service via transport. You can also write your own Relay server or NAT punch server for Netcode.
