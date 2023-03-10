@@ -57,6 +57,8 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^2.3.1"
+    "@docusaurus/eslint-plugin": "^2.3.1",
+    "eslint-config-prettier": "^8.7.0",
+    "prettier": "2.8.4"
   }
 }
