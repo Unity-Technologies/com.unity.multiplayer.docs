@@ -1,6 +1,7 @@
 const navbar = require("./config/navbar.config.js");
 const admonitions = require("./config/admonitions.config.js");
 const scripts = require("./config/scripts.config.js");
+const i18n = require("./config/i18n.config.js");
 
 module.exports = {
   title: "Unity Multiplayer Networking",
@@ -311,4 +312,5 @@ module.exports = {
     "@saucelabs/theme-github-codeblock",
     "react-iframe",
   ],
+  i18n,
 };
