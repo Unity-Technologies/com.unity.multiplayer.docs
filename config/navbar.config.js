@@ -5,6 +5,7 @@ const navbar = {
     src: "img/logo.png",
   },
   items: [
+    // Netcode for GameObjects Dropdown
     {
       label: "Netcode for GameObjects",
       // className: 'nav-break',
@@ -35,8 +36,8 @@ const navbar = {
         },
       ],
     },
+    // Netcode for Gameobjects Versions Dropdown
     {
-      // NETCODE VERSIONS
       type: "docsVersionDropdown",
       position: "left",
       // Add additional dropdown items at the beginning/end of the dropdown.
@@ -46,6 +47,7 @@ const navbar = {
       dropdownActiveClassDisabled: true,
       docsPluginId: "default",
     },
+    // Transport Dropdown
     {
       type: "dropdown",
       docId: "about",
@@ -72,13 +74,14 @@ const navbar = {
         },
       ],
     },
+    // Transport Versions Dropdown
     {
-      //TRANSPORT VERSIONS
       type: "docsVersionDropdown",
       position: "left",
       dropdownActiveClassDisabled: true,
       docsPluginId: "transport",
     },
+    // Multiplayer Tools Dropdown
     {
       to: "install-tools",
       label: "Multiplayer Tools",
@@ -103,8 +106,8 @@ const navbar = {
         },
       ],
     },
+    // Multiplayer Tools Versions Dropdown
     {
-      //TOOLS VERSIONS
       type: "docsVersionDropdown",
       position: "left",
       dropdownActiveClassDisabled: true,
