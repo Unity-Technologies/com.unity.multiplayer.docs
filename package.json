@@ -9,7 +9,8 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "clear": "docusaurus clear"
+    "clear": "docusaurus clear",
+    "write-translations": "docusaurus write-translations"
   },
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.13.8",
