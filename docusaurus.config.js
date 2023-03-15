@@ -7,6 +7,7 @@ module.exports = {
   title: "Unity Multiplayer Networking",
   tagline: "Build multiplayer games in Unity",
   url: "https://docs-multiplayer.unity3d.com/",
+  staticDirectories: ["public", "static"],
   baseUrl: "/",
   onBrokenLinks: "ignore", // due to custom code for versioned drop downs
   onBrokenMarkdownLinks: "ignore", // due to custom code for versioned drop downs
