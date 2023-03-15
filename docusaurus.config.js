@@ -1,4 +1,3 @@
-// const navbar = require("./config/navbar.config.js");
 const admonitions = require("./config/admonitions.config.js");
 const scripts = require("./config/scripts.config.js");
 const i18n = require("./config/i18n.config.js");
@@ -342,6 +341,9 @@ module.exports = {
       // Configs for Netcode versioned content
       "@docusaurus/preset-classic",
       {
+        pages: {
+          admonitions,
+        },
         docs: {
           routeBasePath: "netcode",
           sidebarPath: require.resolve("./sidebars.js"),
