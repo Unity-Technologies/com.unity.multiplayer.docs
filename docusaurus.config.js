@@ -8,8 +8,8 @@ module.exports = {
   url: "https://docs-multiplayer.unity3d.com/",
   staticDirectories: ["public", "static"],
   baseUrl: "/",
-  onBrokenLinks: "ignore", // due to custom code for versioned drop downs
-  onBrokenMarkdownLinks: "ignore", // due to custom code for versioned drop downs
+  onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
+  onBrokenMarkdownLinks: "ignore", // todo: review and set to throw or at least warn
   favicon: "img/favicon.ico",
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
@@ -341,9 +341,6 @@ module.exports = {
       // Configs for Netcode versioned content
       "@docusaurus/preset-classic",
       {
-        pages: {
-          admonitions,
-        },
         docs: {
           routeBasePath: "netcode",
           sidebarPath: require.resolve("./sidebars.js"),
