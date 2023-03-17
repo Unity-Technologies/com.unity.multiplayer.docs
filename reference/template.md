@@ -2,6 +2,18 @@
 id: template
 title: Markdown Guide and Code
 ---
+import Admonition from "@theme/Admonition";
+
+<Admonition type="tip" title="Tip Admonition Titleyarn">
+   <p>Some information contribution admonition as JSX</p>
+</Admonition>
+
+
+:::note This is a tip title
+
+This is a tip.
+
+:::
 
 This guide details how to use Markdown and custom features available for this site. You can review Markdown code in this [GitHub file](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/blob/master/reference/template.md) or in local cloned files in the */reference/template.md* file. You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/). See the [Contributions Guide](https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki) for details on creating and updating documentation.
 
