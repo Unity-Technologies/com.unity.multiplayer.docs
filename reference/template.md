@@ -350,7 +350,7 @@ Custom styles are available for tables, added using `<div>` tags around the mark
 
 `<div class="table-rows">`
 
-<div class="table-rows"> supports up to 5 columns with differing shades.
+<div className="table-rows"> supports up to 5 columns with differing shades.
 
 | Tables        |      Are      |   Cool | Check | It | Out |
 | ------------- | :-----------: | -----: | --- | --- | --- | 
@@ -361,7 +361,7 @@ Custom styles are available for tables, added using `<div>` tags around the mark
 
 `<div class="table-columns">` supports up to 5 columns with differing shades and highlights a column on hover.
 
-<div class="table-columns">
+<div className="table-columns">
 
 | Tables        |      Are      |   Cool | Check | It | Out |
 | ------------- | :-----------: | -----: | --- | --- | --- | 
