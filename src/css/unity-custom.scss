@@ -413,7 +413,7 @@ html[data-theme='light'] .admonition-contribution {
   color: var(--ifm-font-color-base);
 }
 
-html[data-theme='dark'] .admonition-contribution {
+html[data-theme='dark'] .theme-admonition-contribution {
   background-color: transparent;
   border: 1px solid #855EF0;
   border-left: 6px solid #855EF0;
@@ -421,7 +421,7 @@ html[data-theme='dark'] .admonition-contribution {
 }
 
 // FUNFACT
-html[data-theme='light'] .admonition-funfact {
+html[data-theme='light'] .theme-admonition-funfact {
   background-color: transparent;
   border: 1px solid #40817a;
   border-left: 6px solid #40817a;
@@ -429,7 +429,7 @@ html[data-theme='light'] .admonition-funfact {
   --ra-admonition-icon-color: #40817a; 
 }
 
-html[data-theme='dark'] .admonition-funfact {
+html[data-theme='dark'] .theme-admonition-funfact {
   background-color: transparent;
   border: 1px solid #40817a;
   border-left: 6px solid #40817a;
@@ -438,7 +438,7 @@ html[data-theme='dark'] .admonition-funfact {
 }
 
 // BESTPRACTICE
-html[data-theme='light'] .admonition-bestpractice {
+html[data-theme='light'] .theme-admonition-bestpractice {
   background-color: transparent;
   border: 1px solid #e5ab09;
   border-left: 6px solid #e5ab09;
@@ -446,7 +446,7 @@ html[data-theme='light'] .admonition-bestpractice {
   --ra-admonition-icon-color: #e5ab09; 
 }
 
-html[data-theme='dark'] .admonition-bestpractice {
+html[data-theme='dark'] .theme-admonition-bestpractice {
   background-color: transparent;
   border: 1px solid #e5ab09;
   border-left: 6px solid #e5ab09;
@@ -455,7 +455,7 @@ html[data-theme='dark'] .admonition-bestpractice {
 }
 
 // UNITY 
-html[data-theme='dark'] .admonition-unity {
+html[data-theme='dark'] .theme-admonition-unity {
   background-color: transparent;
   border: 1px solid #757575;
   border-left: 6px solid #757575;
@@ -466,7 +466,7 @@ html[data-theme='dark'] .admonition-unity {
   }
 }
 
-html[data-theme='light'] .admonition-unity {
+html[data-theme='light'] .theme-admonition-unity {
   background-color: transparent;
   border: 1px solid #757575;
   border-left: 6px solid #757575;
