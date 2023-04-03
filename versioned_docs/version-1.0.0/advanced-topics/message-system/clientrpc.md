@@ -9,8 +9,8 @@ A `ClientRpc` can be invoked by the server to be executed on a client.
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 </figure>
 
 
@@ -97,8 +97,8 @@ private void DoSomethingServerSide(int clientId)
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs_CertainClients.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_CertainClients_Dark.png?text=DarkMode"/>
  <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
 </figure>
 
@@ -109,8 +109,8 @@ As the host is both a client and a server, if a host invokes a Client RPC, that 
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
  <figcaption>Client Hosts can invoke Client RPCs on Network Objects. The RPC will be placed in the local queue and then, after a short delay the client RPC will be executed on the Client Host, and sent to the other clients. When client RPC is received by the client - it's executed on the Client's version of the same Network Object.</figcaption>
 </figure>
 

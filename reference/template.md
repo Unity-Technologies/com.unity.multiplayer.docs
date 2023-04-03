@@ -161,15 +161,15 @@ Save your light image with a background color of white (`#ffffff`) or charcoal (
 
 ```javascript
 <ImageSwitcher 
-lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
-darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+lightImageSrc="/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 ```
 
 For example:
 
 <ImageSwitcher 
-lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
-darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+lightImageSrc="/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 
 ## Tabs
 
