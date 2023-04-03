@@ -96,10 +96,6 @@ module.exports = {
               docsPluginId: "reference",
             },
             {
-              label: "Product Roadmap",
-              href: "https://unity.com/roadmap/unity-platform/multiplayer-networking",
-            },
-            {
               label: "GitHub - Netcode",
               href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
             },
@@ -310,7 +306,6 @@ module.exports = {
           to: "contribute",
           docsPluginId: "reference",
           items: [
-            { href: "/blog", label: "Blog" },
             {
               label: "Product Roadmap",
               href: "https://unity.com/roadmap/unity-platform/multiplayer-networking",
