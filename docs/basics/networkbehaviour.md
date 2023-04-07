@@ -74,7 +74,7 @@ For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **a
 
 ### De-Spawning
 
-`NetworkBehaviour.OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "cleanup code" should occur, but isn't to be confused with destroying.  `NetworkBehaviour.OnNetworkDespawn` is always invoked before `NetworkBehaviour.OnDestroy`.
+`NetworkBehaviour.OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "cleanup code" should occur, but isn't to be confused with destroying. When a NetworkBehaviour component is destroyed, it means the associated GameObject, and all attached components, are in the middle of being destroyed. Regarding the order of operations, `NetworkBehaviour.OnNetworkDespawn` is always invoked before `NetworkBehaviour.OnDestroy`. 
 
 ### Destroying
 
@@ -100,19 +100,27 @@ If you override the virtual 'OnDestroy' method it's important to alway invoke th
 
 Since `NetworkBehaviour` is a derived `MonoBehaviour`, the `NetworkBehaviour.OnNetworkSpawn` method is treated similar to the Awake, Start, FixedUpdate, Update, and LateUpdate `MonoBehaviour` methods when the associated GameObject is active or not active in the hierarchy:
 
-- When active: Awake, Start, FixedUpdate, Update, and LateUpdate are invoked.
+- When active: Awake, Start, FixedUpdate, Update, and LateUpdate are invoked 
 - When not active: Awake, Start, FixedUpdate, Update, and LateUpdate are **not invoked**.
+
+[More Information About Execution Order](https://docs.unity3d.com/2020.1/Documentation/Manual/ExecutionOrder.html)
 
 _The unique behavior of OnNetworkSpawn, relative to the previously listed methods, is that it is not invoked until the associated GameObject is active in the hierarchy and its associated NetworkObject is spawned._
 
 If you want to disable a specific `NetworkBehaviour` but still want it to be included in the `NetworkObject` spawn process ( _i.e. so you can still enable it at a later time_), as opposed to disabling the entire `GameObject` you should disable the individual NetworkBehaviour component.
 
 :::caution
-When disabling a NetworkBehaviour component prior to spawning the `NetworkObject` you should not depend upon the `NetworkBehaviour.Start` method for any pre-initialization of properties needed by `NetworkBehaviour.OnNetworkSpawn` as `NetworkBehaviour.Start` will be invoked when the NetworkBehaviour component is enabled where `NetworkBehaviour.OnNetworkSpawn` will be invoked when spawned.
+NetworkBehaviour components, that are disabled by default and are attached to in-scene placed NetworkObjects, will behave like NetworkBehaviour components that are attached to dynamically spawned NetworkObjects when it comes to the order of operations for the `NetworkBehaviour.Start` and `NetworkBehaviour.OnNetworkSpawn` methods. Since in-sene placed NetworkObjects are spawned when the scene is loaded, a NetworkBehaviour component (_that is disabled by default_) will have its `NetworkBehaviour.OnNetworkSpawn` method invoked before the `NetworkBehaviour.Start` method since `NetworkBehaviour.Start` is invoked when a disabled NetworkBehaviour component is enabled.
+
+Dynamically Spawned | In-Scene Placed (disabled NetworkBehaviour components)
+------------------- | ---------------
+Awake               | Awake
+OnNetworkSpawn      | OnNetworkSpawn
+Start               | Start (invoked when disabled NetworkBehaviour components are enabled)
 :::
 
 :::warning Parenting, Inactive GameObjects, and NetworkBehaviour Components
-If you have child GameObjects that are not active in the hierarchy but are nested under an active GameObject with an attached NetworkObject component, then the inactive child GameObjects will not be included when spawned and for the duration of the NetworkObject's spawned lifetime. If you want all child NetworkBehaviour components to be included in the spawn process, then make sure their respective GameObjects are active in the hierarchy before spawning the `NetworkObject` or just disable the NetworkBehaviour component(s) individually.
+If you have child GameObjects that are not active in the hierarchy but are nested under an active GameObject with an attached NetworkObject component, then the inactive child GameObjects will not be included when the NetworkObject is spawned. This applies for the duration of the NetworkObject's spawned lifetime. If you want all child NetworkBehaviour components to be included in the spawn process, then make sure their respective GameObjects are active in the hierarchy before spawning the `NetworkObject`. Alternatively, you can just disable the NetworkBehaviour component(s) individually while leaving their associated GameObject active.
 
 _It is recommended to disable a NetworkBehaviour component than the GameObject itself._
 :::
