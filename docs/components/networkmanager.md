@@ -140,9 +140,9 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 - **Network Interruption**: The transport detects there is no longer a valid network connection.
 
 **When disconnect notifications are triggered:**
-- Clients aren'tified when they're disconnected by the server.
-- The server notified if the client side disconnects (that is, a player exits a game session)
-- Both the server and clients aren'tified when their network connection is disconnected (network interruption)
+- Clients are notified when they're disconnected by the server.
+- The server is notified if the client side disconnects (_i.e_ a player intentionally exits a game session using `NetworkManager.DisconnectClient`).
+- Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption).
 
 **Scenarios where the disconnect notification won't be triggered**:
 - When a server "logically" disconnects a client.
