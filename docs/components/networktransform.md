@@ -5,6 +5,52 @@ title: NetworkTransform
 
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
+# Introduction
+The synchronization of an object's transform is one of the most common netcode tasks performed in multiplayer games today. The concept seems simple:
+- Determine which transform axis you want to have synchronized
+- Serialize the values
+- Send the serialized values as messages to all other connected clients
+- Process the messages and deserialize the values
+- Apply the values to the appropriate axis
+
+At first pass glance the high level outlined tasks seem relatively simple, but when you start to implement each line item almost any veteran netcode software engineer will agree: _It can become complicated very quickly_.
+
+The above itemized tasks exclude things like:
+- Who controls the synchronization (i.e. each client or the server or perhaps both depending upon the object being synchronized)?
+- How often do you synchronize the values and what logic should you use to determine when the values need to be synchronized?
+  - If you have wide time gaps between synchronization, how do you smooth out the motion on the receiving side?
+- If you have a complex parenting hierarchy (parents with children transforms), do you want to synchronize the world or local space axis values?
+  - If you have complex axis values (i.e. a parent with a world space rotation and a child with a local space rotation), can you use Euler values (or better yet, should you use Euler values).
+- Ultimately, you might arrive to the most common question: How can I optimize the bandwidth cost per transform update?
+
+Fortunately, NGO provides you with (albeit opinionated) a NetworkTransform component that helps you to reduce time spent solving for some of the trickier aspects of transform synchronization while providing you with a set of properties that allows you to customize what portions of the transform you want synchronized, whether it will synchronize world or local space axis values, the kind of bandwidth optimizations you would like to used, and define what instance (client/owner or server) will be in control of the synchronization of the axis values.
+
+# NetworkTransform 
+
+## Adding
+When adding a NetworkTransform component to a GameObject, you should always make sure the GameObject has a NetworkObject component attached to it or that the GameObject's transform parent is assigned to a GameObject with a NetworkObject component attached to it like in the image below:
+![image](images/NetworkTransformSimple.png)
+
+You can also have a parent GameObject that has a NetworkObject component attached to it with a child GameObject that has a NetworkTransform component like in the image below:
+![image](images/NetworkTransformSimpleParent.png)
+
+You can also have "nested NetworkTransforms" that are all associated with a single NetworkObject like in the image below:
+![image](images/NetworkTransformNestedParent.png)
+
+:::tip
+**The general rule to follow is:**
+ 
+ As long as there is at least one (1) NetworkObject at the same GameObject hierarchical level or above, you can attach a NetworkTransform component to a GameObject. 
+ 
+ _You could have a single root-parent GameObject that has a NetworkObject component and under the root-parent several levels of nested child GameObjects that all have NetworkTransform components attached to them. Each child GameObject would not require a NetworkObject component in order for each respective NetworkTransform component to function/synchronize properly._
+:::
+
+
+## Configuring
+Properties
+![image](images/NetworkTransformProperties.png)
+
+
 The position, rotation, and scale of a [`NetworkObject`](../basics/networkobject.md) is normally only synchronized once (when that object spawns). To synchronize position, rotation, and scale at real-time during the game, you must use a `NetworkTransform` component. `NetworkTransform` synchronizes the transform from server object to the clients.
 
 `NetworkTransform` covers most use cases for synchronizing transforms. For some special cases, such as fast paced games, a custom implementation with a different interpolation algorithm might be better.
