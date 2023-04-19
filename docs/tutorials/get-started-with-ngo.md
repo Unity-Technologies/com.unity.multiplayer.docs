@@ -98,7 +98,7 @@ You can remove the Player GameObject from the scene because you assign this netw
 :::
 
 8. Select **NetworkManager**.
-9. With NetworkManager selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
+9. With NetworkManager selected, locate the **PlayerPrefab** field in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-9.png)
 
