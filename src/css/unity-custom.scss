@@ -1279,3 +1279,14 @@ html[data-theme='dark'] .DocSearch {
     font-size: 1rem;
   }
 }
+
+
+.version-and-feedbacklinks {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  margin-bottom: 1rem;
+  .theme-doc-version-badge {
+    padding: .5rem;
+  }
+}
