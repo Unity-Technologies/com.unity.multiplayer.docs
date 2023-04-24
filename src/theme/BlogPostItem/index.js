@@ -10,7 +10,7 @@ import {MDXProvider} from '@mdx-js/react';
 import Translate, {translate} from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import MDXComponents from '@theme/MDXComponents';
-import Seo from '@theme/Seo';
+import { PageMetadata } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 import {usePluralForm} from '@docusaurus/theme-common'; // Very simple pluralization: probably good enough for now
 
@@ -93,7 +93,7 @@ function BlogPostItem(props) {
 
   return (
     <>
-      <Seo
+      <PageMetadata
         {...{
           keywords,
           image,
