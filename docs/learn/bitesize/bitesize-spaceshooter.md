@@ -4,15 +4,15 @@ title: 2D Space Shooter Sample
 description: Learn more about physics movement and status effects using Netcode for GameObjects (Netcode) NetworkVariables and ObjectPooling .
 ---
 
-The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Netcode for GameObjects (Netcode). Technical features include[NetworkVariable](../../basics/networkvariable.md) and [ObjectPooling](../../advanced-topics/object-pooling.md). 
+The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Netcode for GameObjects (Netcode). Technical features include[NetworkVariable](../../basics/networkvariable.md) and [ObjectPooling](../../advanced-topics/object-pooling.md).
 
-## Server Authorative Physics Movement
+## Server Authoritative Physics Movement
 
 The movement in 2DSpaceShooter is physics based. The player object is a dynamic rigidbody and can collide with other players or asteroids. Physics in multiplayer games can be hard to get right. For simplicity, 2DSpaceShooter runs all movement and physics just on the server-side.
 
 The client sends inputs in the form of RPCs to the server. The server then uses those inputs to adjust the throttle and turn values of the player.
 
-This method of running physics makes sure that there are no desyncs or other physics issues between the client and server, but it introduces more latency. 
+This method of running physics makes sure that there are no desyncs or other physics issues between the client and server, but it introduces more latency.
 
 ## Player Health
 
@@ -40,7 +40,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 The `2DSpaceShooter` object creates many objects dynamically at runtime including bullets, asteroids, and pickups. 2DSpaceShooter uses object pooling to avoid performance issues of instantiating and destroying Unity Objects all the time and creating allocations in the process.
 
-2DSpaceShooter uses the NetworkObjectPool script, which can be found in the Community Contributions Repository. 
+2DSpaceShooter uses the NetworkObjectPool script, which can be found in the Community Contributions Repository.
 
 ![pool img](/img/bitesize/invader-networkobjectpool.png)
 
@@ -67,4 +67,3 @@ powerUp.GetComponent<NetworkObject>().Spawn(null, true);
 :::tip
 If you are using Unity 2021, you can use the built-in [Object Pooling API](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.ObjectPool_1.html) instead to build your own object pools.
 :::
-

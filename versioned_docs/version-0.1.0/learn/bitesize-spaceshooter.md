@@ -4,9 +4,9 @@ title: 2D Space Shooter Sample
 description: Learn more about physics movement and status effects using MLAPI NetworkVariables and ObjectPooling using MLAPI.
 ---
 
-The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Unity MLAPI. Technical features include `NetworkVariable` and `ObjectPooling`. 
+The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Unity MLAPI. Technical features include `NetworkVariable` and `ObjectPooling`.
 
-## Server Authorative Physics Movement
+## Server Authoritative Physics Movement
 
 The movement in 2DSpaceShooter is physics based. The player object is a dynamic rigidbody and can collide with other players or asteroids. Physics in multiplayer games can be hard to get right. For simplicity, 2DSpaceShooter runs all movement and physics just on the server-side.
 
@@ -40,7 +40,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 The `2DSpaceShooter` object creates many objects dynamically at runtime including bullets, asteroids, and pickups. 2DSpaceShooter uses object pooling to avoid performance issues of instantiating and destroying Unity Objects all the time and creating allocations in the process.
 
-2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository. 
+2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository.
 
 ![pool img](/img/bitesize/invader-networkobjectpool.png)
 
