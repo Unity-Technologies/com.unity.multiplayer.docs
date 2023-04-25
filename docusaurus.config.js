@@ -383,7 +383,7 @@ module.exports = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5,
-          trailingSlash: true, //do not change, search requires
+          trailingSlash: false, //do not change, search requires
         },
       },
     ],
