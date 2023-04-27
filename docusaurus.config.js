@@ -10,6 +10,7 @@ module.exports = {
   onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
   onBrokenMarkdownLinks: "ignore", // todo: review and set to throw or at least warn
   favicon: "img/favicon.ico",
+  trailingSlash: true,
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
   scripts,
@@ -371,7 +372,7 @@ module.exports = {
           //postsPerPage: 3,
           feedOptions: {
             type: "all",
-            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+            copyright: `Copyright © ${new Date().getFullYear()} Unity Technologies`,
           },
           blogSidebarCount: "ALL",
           blogSidebarTitle: "All Blog Posts",
@@ -381,8 +382,7 @@ module.exports = {
         },
         sitemap: {
           changefreq: "weekly",
-          priority: 0.5,
-          trailingSlash: false, //do not change, search requires
+          priority: 0.5, //do not change, search requires
         },
       },
     ],
