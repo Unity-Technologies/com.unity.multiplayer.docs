@@ -1,6 +1,5 @@
 const admonitions = require("./config/admonitions.config.js");
 const scripts = require("./config/scripts.config.js");
-const i18n = require("./config/i18n.config.js");
 
 module.exports = {
   title: "Unity Multiplayer Networking",
@@ -11,7 +10,7 @@ module.exports = {
   onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
   onBrokenMarkdownLinks: "ignore", // todo: review and set to throw or at least warn
   favicon: "img/favicon.ico",
-  trailingSlash: true,
+  trailingSlash: false, //do not change because of search
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
   scripts,
@@ -503,5 +502,13 @@ module.exports = {
     "@saucelabs/theme-github-codeblock",
     "react-iframe",
   ],
-  i18n,
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+    localeConfigs: {
+      en: {
+        htmlLang: "en-US",
+      },
+    },
+  },
 };

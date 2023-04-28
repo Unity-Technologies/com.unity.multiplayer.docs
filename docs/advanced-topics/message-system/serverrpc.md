@@ -38,6 +38,11 @@ public void MyGlobalServerRpc(ServerRpcParams serverRpcParams = default)
         // Do things for this client
     }
 }
+
+public override void OnNetworkSpawn()
+{
+    MyGlobalServerRpc(); // serverRpcParams will be filled in automatically
+}
 ```
 In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams). This parameter type is optional, but it can be useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
 :::important Best Practice
