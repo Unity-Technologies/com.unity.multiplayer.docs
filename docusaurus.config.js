@@ -196,7 +196,7 @@ module.exports = {
           items: [
             {
               type: "doc",
-              docId: "transport/transport-1-0-0",
+              docId: "transport/transport-2-0-0",
               label: "Release Notes",
               docsPluginId: "releases",
             },
