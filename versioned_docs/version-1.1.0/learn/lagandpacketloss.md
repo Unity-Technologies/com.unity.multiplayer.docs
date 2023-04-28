@@ -34,8 +34,8 @@ Round Trip Time without frame calculation:
 When a PC or console "pings" the server, it sends an ICMP (Internet Control Message Protocol) echo request to the game server, which then answers this request by returning an ICMP echo reply.
 
 <ImageSwitcher 
-lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
-darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+lightImageSrc="/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 
 The time between sending the request and receiving the answer is your ping to the game server. This means that with a ping of 20ms, it takes data 10ms to travel from the client to the server, as the ping is the round-trip time of your data.
 
