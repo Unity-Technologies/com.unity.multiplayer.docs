@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: Get Started
 ---
 
 See the [Installation](install.md) guide if you’re new to Unity Transport. If you’re upgrading from a earlier version of Unity Transport, see Migrating from 1.X.
