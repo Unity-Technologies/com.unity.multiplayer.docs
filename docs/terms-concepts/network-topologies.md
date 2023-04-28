@@ -3,6 +3,10 @@ id: network-topologies
 title: Network Topologies
 ---
 
+There are many different architectures for creating multiplayer games. Your game can run on
+dedicated servers like many esport titles do or connect clients directly and use a lockstep approach.
+Finally many games allow a client to host a game and then other players to join that session.
+
 Network topology defines the way a network is arranged, including how links and nodes relate to each other, clients and hosts, physical machines and virtual. Learn more about these configurations.
 
 ## Local or couch multiplayer
