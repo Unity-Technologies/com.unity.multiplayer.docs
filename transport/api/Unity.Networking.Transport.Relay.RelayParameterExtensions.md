@@ -1,156 +1,148 @@
+---  
+id: Unity.Networking.Transport.Relay.RelayParameterExtensions  
+title: Unity.Networking.Transport.Relay.RelayParameterExtensions  
 ---
-id: Unity.Networking.Transport.Relay.RelayParameterExtensions
-title: Unity.Networking.Transport.Relay.RelayParameterExtensions
----
 
+<div class="markdown level0 summary">
 
-# Class RelayParameterExtensions
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
-RelayParameterExtensions
+</div>
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.Equals(Object)
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.ToString()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Relay
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public static class RelayParameterExtensions
 ```
 
+## 
 
+### GetRelayParameters(ref NetworkSettings)
 
-### Methods
+<div class="markdown level1 summary">
 
-#### GetRelayParameters(ref NetworkSettings)
+</div>
 
+<div class="markdown level1 conceptual">
 
-Gets the RelayNetworkParameter
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static RelayNetworkParameter GetRelayParameters(this ref NetworkSettings settings)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-##### Returns
+#### Returns
 
-| Type                  | Description                                                      |
-|-----------------------|------------------------------------------------------------------|
-| RelayNetworkParameter | Returns the RelayNetworkParameter values for the NetworkSettings |
+| Type                  | Description |
+|-----------------------|-------------|
+| RelayNetworkParameter |             |
 
-#### WithRelayParameters(ref NetworkSettings, ref RelayServerData, Int32)
+### WithRelayParameters(ref NetworkSettings, ref RelayServerData, Int32)
 
+<div class="markdown level1 summary">
 
-Sets the RelayNetworkParameter values for the NetworkSettings
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
-public static ref NetworkSettings WithRelayParameters(this ref NetworkSettings settings, ref RelayServerData serverData, int relayConnectionTimeMS = 3000)
+public static ref NetworkSettings WithRelayParameters(this ref NetworkSettings settings, ref RelayServerData serverData, int relayConnectionTimeMS = 9000)
 ```
 
+#### Parameters
 
+| Type            | Name                  | Description |
+|-----------------|-----------------------|-------------|
+| NetworkSettings | settings              |             |
+| RelayServerData | serverData            |             |
+| System.Int32    | relayConnectionTimeMS |             |
 
-##### Parameters
-
-| Type            | Name                  | Description           |
-|-----------------|-----------------------|-----------------------|
-| NetworkSettings | settings              |                       |
-| RelayServerData | serverData            | ServerData            |
-| System.Int32    | relayConnectionTimeMS | RelayConnectionTimeMS |
-
-##### Returns
+#### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
-
-
-

@@ -1,247 +1,232 @@
+---  
+id: Unity.Networking.Transport.NetworkPipeline  
+title: Unity.Networking.Transport.NetworkPipeline  
 ---
-id: Unity.Networking.Transport.NetworkPipeline
-title: Unity.Networking.Transport.NetworkPipeline
----
 
+<div class="markdown level0 summary">
 
-# Struct NetworkPipeline
+</div>
 
+<div class="markdown level0 conceptual">
 
-The network pipeline
+</div>
 
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.ToString()
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
-System.Object.GetType()
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct NetworkPipeline
 ```
 
+## 
 
+### Null
 
-### Properties
+<div class="markdown level1 summary">
 
-#### Null
+</div>
 
+<div class="markdown level1 conceptual">
 
-Returns default unreliable Null NetworkPipeline
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static readonly NetworkPipeline Null { get; }
 ```
 
-
-
-##### Property Value
+#### Property Value
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkPipeline |             |
 
-### Methods
+## 
 
-#### Equals(Object)
+### Equals(Object)
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public override bool Equals(object compare)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name    | Description |
 |---------------|---------|-------------|
 | System.Object | compare |             |
 
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-##### Overrides
+#### Overrides
 
-
+<div>
 
 System.ValueType.Equals(System.Object)
 
+</div>
 
+### Equals(NetworkPipeline)
 
-#### Equals(NetworkPipeline)
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public bool Equals(NetworkPipeline connection)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type            | Name       | Description |
 |-----------------|------------|-------------|
 | NetworkPipeline | connection |             |
 
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### GetHashCode()
+### GetHashCode()
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public override int GetHashCode()
 ```
 
-
-
-##### Returns
+#### Returns
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-##### Overrides
+#### Overrides
 
-
+<div>
 
 System.ValueType.GetHashCode()
 
+</div>
 
+## 
 
-### Operators
+### Equality(NetworkPipeline, NetworkPipeline)
 
-#### Equality(NetworkPipeline, NetworkPipeline)
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static bool operator ==(NetworkPipeline lhs, NetworkPipeline rhs)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
 | NetworkPipeline | lhs  |             |
 | NetworkPipeline | rhs  |             |
 
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
 
-#### Inequality(NetworkPipeline, NetworkPipeline)
+### Inequality(NetworkPipeline, NetworkPipeline)
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static bool operator !=(NetworkPipeline lhs, NetworkPipeline rhs)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type            | Name | Description |
 |-----------------|------|-------------|
 | NetworkPipeline | lhs  |             |
 | NetworkPipeline | rhs  |             |
 
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
 | System.Boolean |             |
-
-
-
