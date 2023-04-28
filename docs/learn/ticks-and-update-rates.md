@@ -28,8 +28,8 @@ What adds an extra delay on top of the travel time of our data (ping), is how of
 Update Rates, additional delay:
 
 <ImageSwitcher 
-lightImageSrc="/img/update-rates-light.png?text=LightMode"
-darkImageSrc="/img/update-rates-dark.png?text=DarkMode"/>
+lightImageSrc="/update-rates-light.png?text=LightMode"
+darkImageSrc="/update-rates-dark.png?text=DarkMode"/>
 
 Low update rates don't only affect the network delay; they also cause issues like "super bullets," where a single hit from a gun deals more damage than it should be able to deal. 
 
@@ -40,8 +40,8 @@ But many shooters have guns which fire 750 rounds per minute or more. As a resul
 RPM vs Update Rates: "Super Bullets" damage of multiple hits sent in one update:
 
 <ImageSwitcher 
-lightImageSrc="/img/rpm_update_rates-light.png?text=LightMode"
-darkImageSrc="/img/rpm_update_rates-dark.png?text=DarkMode"/>
+lightImageSrc="/rpm_update_rates-light.png?text=LightMode"
+darkImageSrc="/rpm_update_rates-dark.png?text=DarkMode"/>
 
 ## Tick or Simulation Rate
 

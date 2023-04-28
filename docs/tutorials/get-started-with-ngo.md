@@ -98,7 +98,7 @@ You can remove the Player GameObject from the scene because you assign this netw
 :::
 
 8. Select **NetworkManager**.
-9. With NetworkManager selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
+9. With NetworkManager selected, locate the **PlayerPrefab** field in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-9.png)
 
@@ -213,7 +213,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 
 :::tip
 
-Instead of using the command line helper script, you can use Multiplayer Play Mode (MMPM) package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
+Instead of using the command line helper script, you can use Multiplayer Play Mode (MPPM) package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 **Note**: MPPM is only supported in Unity Editor version 2023.1 and later.
 

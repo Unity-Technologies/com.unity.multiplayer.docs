@@ -38,6 +38,11 @@ public void MyGlobalServerRpc(ServerRpcParams serverRpcParams = default)
         // Do things for this client
     }
 }
+
+public override void OnNetworkSpawn()
+{
+    MyGlobalServerRpc(); // serverRpcParams will be filled in automatically
+}
 ```
 In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams). This parameter type is optional, but it can be useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
 :::important Best Practice
@@ -131,22 +136,22 @@ The following are a few timing diagrams to help provide additional visual contex
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
   <figcaption>A Client can invoke a server RPC on a `NetworkObject`. The RPC will be placed in the local queue and then sent to the server at the end of the frame. Upon receiving the server RPC, it's executed on the Server's instance of the same `NetworkObject`.</figcaption>
 </figure>
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClient.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClient_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClient.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClient_Dark.png?text=DarkMode"/>
   <figcaption>Clients can invoke server RPCs on Hosts exactly like they can on a Server: the RPC will be placed in the local queue and sent to the Host at the end of the frame. Upon receiving the server RPC,  it will be executed on the Host's instance of the same `NetworkObject`.</figcaption>
 </figure>
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
   <figcaption>When a server RPC is invoked by a Host, the RPC is immediately executed.</figcaption>
 </figure>
 
