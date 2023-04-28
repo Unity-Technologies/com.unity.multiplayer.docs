@@ -57,8 +57,8 @@ The authority is who has the right to make final gameplay decisions over objects
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority_Dark.png?text=DarkMode"/>
 <figcaption>The server gets to make the final gameplay decisions</figcaption>
 </figure>
 
@@ -96,8 +96,8 @@ In a **client authoritative** (or **client driven**) game using Netcode for Game
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority_Dark.png?text=DarkMode"/>
 <figcaption>The client gets to make the final gameplay decisions</figcaption>
 </figure>
 
@@ -119,8 +119,8 @@ Mltiple clients with the ability to affect the same shared object can quickly be
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue_Dark.png?text=DarkMode"/>
 <figcaption>Multiple clients trying to impose their reality on a shared object.</figcaption>
 </figure>
 
@@ -128,8 +128,8 @@ To avoid this, it's recommended to use client **owner** authority, which allows 
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix_Dark.png?text=DarkMode"/>
 <figcaption>Multiple clients ASKING to interact with a shared object.</figcaption>
 </figure>
 :::
