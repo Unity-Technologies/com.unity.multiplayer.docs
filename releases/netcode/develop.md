@@ -2,6 +2,7 @@
 id: develop
 title: Netcode for GameObjects In-Development Release Notes
 description: In-progress release notes for the next release of Netcode for GameObjects  including new features, updates, bug fixes, known issues, and information to help you upgrade.
+displayed_sidebar: releases
 ---
 
 The following in-progress content tracks features, updates, bug fixes, and refactoring for the next release of Netcode for GameObjects . Specific release information including supported Unity versions, release date, and release version is to be announced. All content and development information is subject to change.

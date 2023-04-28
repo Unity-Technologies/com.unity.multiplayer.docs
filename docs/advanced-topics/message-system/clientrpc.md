@@ -9,8 +9,8 @@ Servers can invoke a ClientRpc to execute on all clients.
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 </figure>
 
 
@@ -98,8 +98,8 @@ private void DoSomethingServerSide(int clientId)
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_CertainClients_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs_CertainClients.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_CertainClients_Dark.png?text=DarkMode"/>
  <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
 </figure>
 
@@ -110,8 +110,8 @@ The host is both a client and a server. If a host invokes a client RPC, it trigg
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
  <figcaption>Hosts can invoke client RPCs on `NetworkObjects`. If broadcasting to all clients, the RPC will be immediately invoked on the host and placed in the local queue. At the end of the frame, the client RPC will be sent to the remote clients. When a remote client receives the client RPC it's executed on the client's local cloned instance of the same `NetworkObject`.</figcaption>
 </figure>
 
