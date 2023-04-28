@@ -49,8 +49,8 @@ A data packet travels at a more or less fixed speed, so a player's ping is direc
 Another factor that affects the data travel time is the number of stops (or hops) that your data packet must make on its way. Every additional hop also increases the risk that you lose a data packet.
 
 <ImageSwitcher 
-lightImageSrc="/img/data-relay-light.png?text=LightMode"
-darkImageSrc="/img/data-relay-dark.png?text=DarkMode"/>
+lightImageSrc="/data-relay-light.png?text=LightMode"
+darkImageSrc="/data-relay-dark.png?text=DarkMode"/>
 
 **Packet loss** — where did my data go?
 
