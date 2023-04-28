@@ -13,8 +13,8 @@ The concept of an `RPC` is common not only in video games but in the software in
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
   <figcaption>Client can invoke a server RPC on a Network Object. The RPC will be placed in the local queue and then sent to the server, where it will be executed on the server version of the same Network Object.</figcaption>
 </figure>
 
@@ -28,8 +28,8 @@ Netcode has two variations of RPCs to execute logic on either server-side or cli
 
 <figure>
 <ImageSwitcher 
-lightImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
-darkImageSrc="/img/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
+lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
  <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
 </figure>
 
