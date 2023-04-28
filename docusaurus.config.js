@@ -196,7 +196,7 @@ module.exports = {
           items: [
             {
               type: "doc",
-              docId: "transport/transport-1-0-0",
+              docId: "transport/transport-2-0-0",
               label: "Release Notes",
               docsPluginId: "releases",
             },
@@ -435,8 +435,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "1.0.0",
+            label: "2.0.0",
             path: "current",
+          },
+          "1.0.0": {
+            label: "1.0.0",
+            path: "1.0.0",
           },
           "0.8.0": {
             label: "0.8.0",

@@ -5,6 +5,99 @@ id: transport-2-0-0
 
 The [Unity Transport](../../transport/current/about) `com.unity.transport` package repository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
+## [2.0.2] - 2023-04-26
+
+## Changes
+
+- When using Unity Relay, NetworkDriver.GetRemoteEndpoint will now always return the address of the Relay server, instead of returning the address until a connection is established, and then returning the allocation ID encoded as an endpoint (appearing as an invalid endpoint). This makes the behavior the same as it was in version 1.X of the package.
+
+## Fixes
+- Fixed an issue where the reliable pipeline stage could end up writing past the end of its internal buffer and thrashing the buffers of other connections. This could result in packet corruption, but would most likely result in erroneous -7 (NetworkDriverParallelForErr) errors being reported when calling EndSend.
+- Fixed an issue where upon returning -7 (NetworkDriverParallelForErr), EndSend would leak the send handle. Over time, this would result in less send handles being available, resulting in more -5 (NetworkSendQueueFull) errors.
+- Fixed an issue where WebSocket connections would always take at least connectTimeoutMS milliseconds to be reported as established, even if the connection was actually established faster than that.
+- Fixed an issue where ArgumentOutOfRangeException could be thrown in situations where a new WebSocket connection is established while a previous connection is in the process of being closed.
+- If nothing is received from a Unity Relay server for a while, the transport will now attempt to rebind to it. This should improve the accuracy of GetRelayConnectionStatus in scenarios where the Relay allocation times out while communications with the server are out.
+- Fixed an issue where UDPNetworkInterface (the default one) would not bind to the correct address if the local IP address change and the socket needs to be recreated (e.g. because the app was backgrounded on a mobile device).
+
+## [2.0.1] - 2023-04-17
+
+### Changes
+
+- Updated Collections dependency to 2.1.1.
+
+## [2.0.0] - 2023-04-14
+
+### Changes
+
+- NetworkEndpoint.ToString and its fixed string variant now return "invalid" for invalid endpoints instead of an empty string.
+- Updated Burst dependency to 1.8.4.
+- Updated Collections dependency to 2.1.0.
+
+### Fixes
+
+- Fixed an issue where the TLS handshake of a new secure WebSocket connection could possibly fail if there were already other active connections on the same server.
+
+## [2.0.0-pre.8] - 2023-03-30
+
+### New features
+
+- MultiNetworkDriver can then be used for client drivers too. The restriction on it accepting only listening drivers has been lifted, and it now offers a new Connect method to connect client drivers. This makes it easier to write networking code that can be shared between server and client.
+- Added a new ReliableUtility.SetMaximumResendTime static method, allowing to modify the maximum resend time of the reliable pipeline at runtime (there's already a similar method for the minimum resend time). Increasing this value can improve bandwidth usage for poor connections (RTT greater than 200ms).
+- Added the possibility of setting the minimum and maximum resend times of the reliable pipeline through NetworkSettings (with WithReliableStageParameters).
+
+### Changes
+
+- NetworkEndpoint.TryParse will now return false and log an error when attempting to parse an IPv6 address on platforms where IPv6 is not supported. The previous behavior was to throw an exception, but only in the editor. On the devices themselves, the address would be successfully parsed silently, which would lead to confusing socket errors down the line.
+- The SimulatorUtility.Context structure has been made internal. It contained only implementation details, or values that appeared useful but were actually either misleading or broken.
+- The RelayMessageType enum has been made internal. The only purpose of this type was to list the different messages of the Relay protocol, which is an implementation detail that should not be relevant to users.
+
+### Fixes
+
+- Fixed an issue where calling ScheduleFlushSend before the socket was bound would still result in socket system calls being made, resulting in errors being logged.
+- No warning will be printed when attempting to send on a WebSocket connection that has been closed by the remote peer (would only happen if calling ScheduleFlushSend).
+
+## [2.0.0-pre.7] - 2023-03-15
+
+### New features
+
+- Added a new MultiNetworkDriver API to make it easier to handle multiple NetworkDriver instances at the same time for cross-play scenarios. Refer to the "cross-play support" section of the documentation for more details on this feature. This new API is also showcased in a new "CrossPlay" package sample.
+
+### Changes
+
+- Update Burst dependency to 1.8.3.
+- The QueuedSendMessage structure was removed as it didn't serve any purpose anymore.
+- The dependency argument of NetworkDriver.ScheduleFlushSend is now optional.
+- SequenceHelpers, RandomHelpers, and the extensions in NativeListExt and FixedStringExt have all been made internal. These are all internal helper classes that shouldn't have been part of the public API in the first place.
+- Many APIs and types inside ReliableUtility have been made internal (among them all APIs and types dealing with send/receive contexts and packet information and timers). The information they contain was meant purely for internal consumption in the first place. The statistics and RTT information inside the shared context remains public.
+- Removed errorCode from ReliableUtility.SharedContext. Any useful information it can provide is already returned by higher-level APIs like NetworkDriver.EndSend.
+- Default send and receive queue sizes are now set to 512 packets (previous value was 64). The queue sizes are modifiable with NetworkSettings.WithNetworkConfigParameters.
+
+### Fixes
+
+- Fixed a possible exception in IPCNetworkInterface if it was fed an unknown endpoint.
+- Fixed NetworkDriver.GetLocalEndpoint when using WebSocketNetworkInterface (note that on web browsers this will now print a warning since local endpoints are not available on WebGL).
+
+## [2.0.0-pre.6] - 2023-01-13
+
+### New features
+
+- Added a NetworkConnection.ToFixedString method to allow logging network connections from Burst.
+
+## [2.0.0-pre.5] - 2023-01-12
+
+### Changes
+
+- Revert to Collections 2.1.0-pre.6 as pre.7 is not promoted yet.
+
+## [2.0.0-pre.4] - 2023-01-12
+
+### Changes
+
+- Update Burst dependency to 1.8.2.
+- Update Collections dependency to 2.1.0-pre.7.
+- The InternalId and Version properties of NetworkConnection are now internal. These referred to internal values and using them directly was error-prone since values could be reused across connections. To compare connections reliably, compare the NetworkConnection objects directly (they implement all the relevant operators and interfaces).
+- Replace NetworkDriverIdentifierParameter (and WithNetworkDriverIdentifierParameters) with a more general LoggingParameter (and WithLoggingParameters). Note that currently these parameters don't affect anything, and are there for future use only.
+
 ## [2.0.0-pre.3] - 2022-11-29
 
 ### Changes

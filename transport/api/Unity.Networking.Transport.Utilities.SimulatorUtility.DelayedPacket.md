@@ -1,163 +1,154 @@
+---  
+id: Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket  
+title: Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket  
 ---
-id: Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket
-title: Unity.Networking.Transport.Utilities.SimulatorUtility.DelayedPacket
----
 
+<div class="markdown level0 summary">
 
-# Struct SimulatorUtility.DelayedPacket
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Utilities
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct DelayedPacket
 ```
 
+## 
 
+### delayUntil
 
-### Fields
+<div class="markdown level1 summary">
 
-#### delayUntil
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public long delayUntil
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int64 |             |
 
-#### packetHeaderPadding
+### packetHeaderPadding
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ushort packetHeaderPadding
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-#### packetSize
+### packetSize
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ushort packetSize
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt16 |             |
 
-#### processBufferOffset
+### processBufferOffset
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int processBufferOffset
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
-
-
-
