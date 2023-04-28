@@ -1,56 +1,33 @@
+---  
+id: Unity.Networking.Transport.NetworkConnection.State  
+title: Unity.Networking.Transport.NetworkConnection.State  
 ---
-id: Unity.Networking.Transport.NetworkConnection.State
-title: Unity.Networking.Transport.NetworkConnection.State
----
 
+<div class="markdown level0 summary">
 
-# Enum NetworkConnection.State
+ConnectionState enumerates available connection states a connection can
+have.
 
+</div>
 
-Connection States
+<div class="markdown level0 conceptual">
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public enum State
 ```
 
+## 
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Connected
-
-Indicates the connection is connected.
-
-Connecting
-
-Indicates the connection is being established.
-
-Disconnected
-
-Indicates the connection is disconnected.
-
-
-
+| Name         | Description                                    |
+|--------------|------------------------------------------------|
+| Connected    | Indicates the connection is connected..        |
+| Connecting   | Indicates the connection is trying to connect. |
+| Disconnected | Indicates the connection is disconnected       |

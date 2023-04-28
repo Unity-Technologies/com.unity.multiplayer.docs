@@ -1,57 +1,32 @@
+---  
+id: Unity.Networking.Transport.NetworkFamily  
+title: Unity.Networking.Transport.NetworkFamily  
 ---
-id: Unity.Networking.Transport.NetworkFamily
-title: Unity.Networking.Transport.NetworkFamily
----
 
+<div class="markdown level0 summary">
 
-# Enum NetworkFamily
+NetworkFamily indicates what type of underlying medium we are using.
 
+</div>
 
-Indicates the protocol family of the address (analogous of AF\_\* in
-sockets API).
+<div class="markdown level0 conceptual">
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public enum NetworkFamily
 ```
 
+## 
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Invalid
-
-Invalid network family.
-
-Ipv4
-
-IPv4 (analogous to AF_INET).
-
-Ipv6
-
-IPv6 (analogous to AF_INET6).
-
-
-
+| Name    | Description |
+|---------|-------------|
+| Invalid |             |
+| Ipv4    |             |
+| Ipv6    |             |
