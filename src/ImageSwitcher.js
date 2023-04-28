@@ -1,12 +1,19 @@
-import React from 'react';
-import useThemeContext from '@theme/hooks/useThemeContext'; //docs: https://v2.docusaurus.io/docs/2.0.0-alpha.69/theme-classic#usethemecontext
+import React from "react";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
-const ImageSwitcher = ({lightImageSrc, darkImageSrc}) => {
-  const { isDarkTheme } = useThemeContext();
+// https://docusaurus.io/docs/next/markdown-features/assets#themed-images
 
+const ImageSwitcher = ({ lightImageSrc, darkImageSrc, alt }) => {
   return (
-    <img src={isDarkTheme ? darkImageSrc : lightImageSrc} alt="Example banner" />
-  )
-}
+    <ThemedImage
+      alt={alt}
+      sources={{
+        light: useBaseUrl(`/img/${lightImageSrc}`),
+        dark: useBaseUrl(`/img/${darkImageSrc}`),
+      }}
+    />
+  );
+};
 
 export default ImageSwitcher;
