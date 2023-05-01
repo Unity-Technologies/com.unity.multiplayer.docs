@@ -14,7 +14,7 @@ A network Prefab is any unity Prefab asset that has one `NetworkObject` componen
 - any child or children of the `GameObject` that the `NetworkObject` is attached to.
 
 :::note
-A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObject` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components aren't permited in network prefabs, Netcode for GameObjects won'tify you in the editor if you are trying to add more than one `NetworkObject` to a Prefab and won't allow you to do this.
+A caveat of the above two rules is when one of the children `GameObject`s also has a `NetworkObject` component assigned to it (a.k.a. "Nested NetworkObjects"). Because nested `NetworkObject` components aren't permited in network prefabs, Netcode for GameObjects will notify you in the editor if you are trying to add more than one `NetworkObject` to a Prefab and won't allow you to do this.
 :::
 
 When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.NetworkObjectId` is used to help determine which `NetworkBehaviour` component instance will receive an update to a `NetworkVariable` or where to invoke an RPC. A `NetworkObject` component can have one or more `NetworkBehaviour` components assigned to it.

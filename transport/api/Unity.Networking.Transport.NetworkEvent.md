@@ -1,71 +1,64 @@
+---  
+id: Unity.Networking.Transport.NetworkEvent  
+title: Unity.Networking.Transport.NetworkEvent  
 ---
-id: Unity.Networking.Transport.NetworkEvent
-title: Unity.Networking.Transport.NetworkEvent
----
 
+<div class="markdown level0 summary">
 
-# Struct NetworkEvent
+</div>
 
+<div class="markdown level0 conceptual">
 
-Represents an event on a connection.
+</div>
 
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct NetworkEvent
 ```
-
-
-
-
-

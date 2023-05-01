@@ -1,39 +1,31 @@
+---  
+id: Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate  
+title: Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate  
 ---
-id: Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate
-title: Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate
----
 
+<div class="markdown level0 summary">
 
-# Delegate NetworkPipelineStage.ReceiveDelegate
+</div>
 
+<div class="markdown level0 conceptual">
 
-The receive delegate
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public delegate void ReceiveDelegate(ref NetworkPipelineContext ctx, ref InboundRecvBuffer inboundBuffer, ref NetworkPipelineStage.Requests requests, int systemHeadersSize);
 ```
 
-
-
 ##### Parameters
 
-| Type                          | Name              | Description |
-|-------------------------------|-------------------|-------------|
-| NetworkPipelineContext        | ctx               |             |
-| InboundRecvBuffer             | inboundBuffer     |             |
-| NetworkPipelineStage.Requests | requests          |             |
-| System.Int32                  | systemHeadersSize |             |
-
-
-
+| Type                          | Name                | Description |
+|-------------------------------|---------------------|-------------|
+| NetworkPipelineContext        | \*ctx               |             |
+| InboundRecvBuffer             | \*inboundBuffer     |             |
+| NetworkPipelineStage.Requests | \*requests          |             |
+| System.Int32                  | \*systemHeadersSize |             |

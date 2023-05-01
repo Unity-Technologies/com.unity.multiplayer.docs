@@ -1,156 +1,140 @@
+---  
+id: Unity.Networking.Transport.InboundRecvBuffer  
+title: Unity.Networking.Transport.InboundRecvBuffer  
 ---
-id: Unity.Networking.Transport.InboundRecvBuffer
-title: Unity.Networking.Transport.InboundRecvBuffer
----
 
+<div class="markdown level0 summary">
 
-# Struct InboundRecvBuffer
+</div>
 
+<div class="markdown level0 conceptual">
 
-The inbound recv buffer
+</div>
 
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct InboundRecvBuffer
 ```
 
+## 
 
+### buffer
 
-### Fields
+<div class="markdown level1 summary">
 
-#### buffer
+</div>
 
+<div class="markdown level1 conceptual">
 
-The buffer
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public byte *buffer
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-#### bufferLength
+### bufferLength
 
+<div class="markdown level1 summary">
 
-The buffer length
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int bufferLength
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Methods
+## 
 
-#### Slice(Int32)
+### Slice(Int32)
 
+<div class="markdown level1 summary">
 
-Slices the offset
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public InboundRecvBuffer Slice(int offset)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type         | Name   | Description |
 |--------------|--------|-------------|
-| System.Int32 | offset | The offset  |
+| System.Int32 | offset |             |
 
-##### Returns
+#### Returns
 
 | Type              | Description |
 |-------------------|-------------|
-| InboundRecvBuffer | The slice   |
-
-
-
+| InboundRecvBuffer |             |

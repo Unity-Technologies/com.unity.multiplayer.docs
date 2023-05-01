@@ -1,156 +1,140 @@
+---  
+id: Unity.Networking.Transport.NetworkPipelineStageCollection  
+title: Unity.Networking.Transport.NetworkPipelineStageCollection  
 ---
-id: Unity.Networking.Transport.NetworkPipelineStageCollection
-title: Unity.Networking.Transport.NetworkPipelineStageCollection
----
 
+<div class="markdown level0 summary">
 
-# Class NetworkPipelineStageCollection
+</div>
 
+<div class="markdown level0 conceptual">
 
-The network pipeline stage collection class
+</div>
 
-
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
-NetworkPipelineStageCollection
+</div>
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.Equals(Object)
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.ToString()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public static class NetworkPipelineStageCollection
 ```
 
+## 
 
+### GetStageId(Type)
 
-### Methods
+<div class="markdown level1 summary">
 
-#### GetStageId(Type)
+</div>
 
+<div class="markdown level1 conceptual">
 
-Gets the stage id using the specified stage type
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static NetworkPipelineStageId GetStageId(Type stageType)
 ```
 
+#### Parameters
 
+| Type        | Name      | Description |
+|-------------|-----------|-------------|
+| System.Type | stageType |             |
 
-##### Parameters
+#### Returns
 
-| Type        | Name      | Description    |
-|-------------|-----------|----------------|
-| System.Type | stageType | The stage type |
+| Type                   | Description |
+|------------------------|-------------|
+| NetworkPipelineStageId |             |
 
-##### Returns
+### RegisterPipelineStage(INetworkPipelineStage)
 
-| Type                   | Description                   |
-|------------------------|-------------------------------|
-| NetworkPipelineStageId | The network pipeline stage id |
+<div class="markdown level1 summary">
 
-##### Exceptions
+</div>
 
-| Type                             | Condition                                    |
-|----------------------------------|----------------------------------------------|
-| System.InvalidOperationException | Pipeline stage {stageType} is not registered |
+<div class="markdown level1 conceptual">
 
-#### RegisterPipelineStage(INetworkPipelineStage)
+</div>
 
-
-Registers the pipeline stage using the specified stage
-
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static void RegisterPipelineStage(INetworkPipelineStage stage)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type                  | Name  | Description |
 |-----------------------|-------|-------------|
-| INetworkPipelineStage | stage | The stage   |
-
-
-
+| INetworkPipelineStage | stage |             |

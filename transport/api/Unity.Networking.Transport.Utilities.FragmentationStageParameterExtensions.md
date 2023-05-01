@@ -1,155 +1,147 @@
+---  
+id: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions  
+title: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions  
 ---
-id: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions
-title: Unity.Networking.Transport.Utilities.FragmentationStageParameterExtensions
----
 
+<div class="markdown level0 summary">
 
-# Class FragmentationStageParameterExtensions
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
-FragmentationStageParameterExtensions
+</div>
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.Equals(Object)
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.ToString()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Utilities
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public static class FragmentationStageParameterExtensions
 ```
 
+## 
 
+### GetFragmentationStageParameters(ref NetworkSettings)
 
-### Methods
+<div class="markdown level1 summary">
 
-#### GetFragmentationStageParameters(ref NetworkSettings)
+</div>
 
+<div class="markdown level1 conceptual">
 
-Gets the FragmentationUtility.Parameters
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static FragmentationUtility.Parameters GetFragmentationStageParameters(this ref NetworkSettings settings)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-##### Returns
+#### Returns
 
-| Type                            | Description                                                                |
-|---------------------------------|----------------------------------------------------------------------------|
-| FragmentationUtility.Parameters | Returns the FragmentationUtility.Parameters values for the NetworkSettings |
+| Type                            | Description |
+|---------------------------------|-------------|
+| FragmentationUtility.Parameters |             |
 
-#### WithFragmentationStageParameters(ref NetworkSettings, Int32)
+### WithFragmentationStageParameters(ref NetworkSettings, Int32)
 
+<div class="markdown level1 summary">
 
-Sets the FragmentationUtility.Parameters values for the NetworkSettings
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static ref NetworkSettings WithFragmentationStageParameters(this ref NetworkSettings settings, int payloadCapacity = 4096)
 ```
 
+#### Parameters
 
+| Type            | Name            | Description |
+|-----------------|-----------------|-------------|
+| NetworkSettings | settings        |             |
+| System.Int32    | payloadCapacity |             |
 
-##### Parameters
-
-| Type            | Name            | Description     |
-|-----------------|-----------------|-----------------|
-| NetworkSettings | settings        |                 |
-| System.Int32    | payloadCapacity | PayloadCapacity |
-
-##### Returns
+#### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
-
-
-
