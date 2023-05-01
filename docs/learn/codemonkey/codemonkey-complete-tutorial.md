@@ -30,7 +30,7 @@ This video  covers
 - Unity Transport
 - Creating the Player
 - NetworkObject
-- Assigning the PlayerPrefab and NetworkPrefab List
+- Assigning the PlayerPrefab and NetworkPrefab List (From NGO release 1.3.1+, the NetworkPrefabs are assigned to a ScriptableObject)
 - First Quick Test
 - What is Server, Host, Client
 - Creating UI Buttons

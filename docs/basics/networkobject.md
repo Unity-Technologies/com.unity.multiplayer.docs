@@ -105,7 +105,7 @@ If the player already had a Prefab instance assigned, then the client owns the N
 
 ## Finding PlayerObjects
 
-To find a pPlayerObjects for a specific client ID, you can use the following methods:
+To find a PlayerObjects for a specific client ID, you can use the following methods:
 
 Within a NetworkBehaviour, you can check the local `NetworkManager.LocalClient` to get the local PlayerObjects:
 
@@ -123,7 +123,7 @@ To find your own player object just pass `NetworkManager.Singleton.LocalClientId
 
 ## Network Prefabs
 
-Network Prefabs (NetworkPrefabs) are Prefabs that contain a GameObject with a NetworkObject component. As an example, if you wanted to create a Prefab to be the default player Prefab, then you would create a Prefab that at the root GameObject included a NetworkObject component and any additional player specific NetworkBehaviour components. You can then assign that Prefab to the `NetworkManager` Player Prefab property to use when a player connects and is approved. Each connected player has a unique instance spawned on all connected clients (including the server).
+Network Prefabs (NetworkPrefabs) are Prefabs that contain a GameObject with a NetworkObject component. As an example, if you wanted to create a Prefab to be the default player Prefab, then you would create a Prefab that at the root GameObject included a NetworkObject component and any additional player specific NetworkBehaviour components. You can then assign that Prefab to a `ScriptableObject` Player Prefab property to use when a player connects and is approved. Each connected player has a unique instance spawned on all connected clients (including the server).
 
 :::warning
 

@@ -21,11 +21,11 @@ When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.N
 
 ### Registering a Network Prefab
 
-One of the requirements to be able to spawn a network Prefab instance is that it must be registered with the `NetworkManager` via the "Network Prefabs" property list.
-The two steps to registering a network Prefab with `NetworkManager`:
+You must register a Network Prefab instance with a `ScriptableObject` via the Network Prefabs property list.
+The two steps to registering a network Prefab with a `ScriptableObject`:
 
-1. Create a network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`
-1. Add your network Prefab to the Network Prefabs list poperty of the `NetworkManager`.
+1. Create a Network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`
+2. Add your Network Prefab to the Network Prefabs list poperty of a `ScriptableObject`.
 
 ### Spawning a Network Prefab (Overview)
 
@@ -228,7 +228,7 @@ public class SinglePooledDynamicSpawner : NetworkBehaviour, INetworkPrefabInstan
     {
         // We register our network Prefab and this NetworkBehaviour that implements the
         // INetworkPrefabInstanceHandler interface with the Prefab handler
-        NetworkManager.PrefabHandler.AddHandler(PrefabToSpawn, this);
+        ScriptableObject.PrefabHandler.AddHandler(PrefabToSpawn, this);
 
         if (!IsServer || !SpawnPrefabAutomatically)
         {
@@ -256,7 +256,7 @@ public class SinglePooledDynamicSpawner : NetworkBehaviour, INetworkPrefabInstan
         if (m_PrefabInstance != null)
         {
             // Always deregister the prefab
-            NetworkManager.Singleton.PrefabHandler.RemoveHandler(PrefabToSpawn);
+            ScriptableObject.Singleton.PrefabHandler.RemoveHandler(PrefabToSpawn);
             Destroy(m_PrefabInstance);
         }
         base.OnDestroy();
@@ -288,7 +288,7 @@ Using this type of a hierarchical separation is useful in many ways (especially 
 
 ## In-Scene Placed `NetworkObject`
 
-Any objects in the scene with active and spawned `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`. In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
+Any objects in the scene with active and spawned `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`. <!-- Is this changed? It's not a prefab (if I'm understanding correctly). --> In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
 
 [Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects)
 
@@ -299,14 +299,10 @@ Generally, there are **two** modes that define how an in-scene placed `NetworkOb
 
 ### Soft Synchronization
 
-`SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties. If you receive a "soft synchronization error", then this typically means that a client can't locate the same in-scene placed `NetworkObject` after loading a scene.
-
-:::note
-The benefit of using scene management is that you don't have to register every in-scene placed `NetworkObject` with the `NetworkManager` as a network prefab, and it handles synchronizing clients to your current game state.
-:::
+`SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties. <!-- Is this changed? It's not a prefab (if I'm understanding correctly). --> If you receive a "soft synchronization error", then this typically means that a client can't locate the same in-scene placed `NetworkObject` after loading a scene.
 
 ### Prefab Synchronization
 
-`PrefabSync` or "Prefab Synchronization" is used if scene management is disabled in the `NetworkManager`. With Prefab synchronization, every in-scene placed `NetworkObject` has to be a network Prefab and must be registered with `NetworkPrefabs` list. When a client starts, Netcode will destroy all existing in-scene placed `NetworkObject`s and spawn its corresponding Prefab from the `NetworkPrefabs` list instead. This also means that you will have to implement your own scene manager and handle how you synchronize clients when they join a network session.
+`PrefabSync` or "Prefab Synchronization" is used if scene management is disabled in the `NetworkManager`. <!-- Is this changed? This would still be accurate if the above statements about enabled scene management are still correct. -->With Prefab synchronization, every in-scene placed `NetworkObject` has to be a network Prefab and must be registered with `NetworkPrefabs` list. When a client starts, Netcode will destroy all existing in-scene placed `NetworkObject`s and spawn its corresponding Prefab from the `NetworkPrefabs` list instead. This also means that you will have to implement your own scene manager and handle how you synchronize clients when they join a network session.
 
 **PrefabSync is ONLY recommended for advanced development and/or multi project setups**.

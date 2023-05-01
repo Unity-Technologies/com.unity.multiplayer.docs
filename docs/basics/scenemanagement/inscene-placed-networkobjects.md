@@ -93,7 +93,7 @@ However, there is another way to accomplish the same thing while keeping a clear
 :::
 
 Using this approach allows you to:
-1. Re-use the same single spawn manager with any other Network Prefab registered with the `NetworkManager`
+1. Re-use the same single spawn manager with any other Network Prefab registered with a `ScriptableObject`
 2. Not worry about the complexities involved with treating an in-scene placed `NetworkObject` like a dynamically spawned one.
 
 [See a Dynamic Spawning (non-pooled) "Hybrid Approach" Example Here](../object-spawning#dynamic-spawning-non-pooled)
