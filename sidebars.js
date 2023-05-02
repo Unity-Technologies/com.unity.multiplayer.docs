@@ -333,12 +333,16 @@ module.exports = {
                         },
                         {
                             "type": "doc",
+                            "id": "basics/scenemanagement/client-synchronization-mode"
+                        },
+                        {
+                            "type": "doc",
                             "id": "basics/scenemanagement/timing-considerations"
                         },
                         {
                             "type": "doc",
                             "id": "basics/scenemanagement/inscene-placed-networkobjects"
-                        },
+                        }, 
                     ]
                 },                
                 {
