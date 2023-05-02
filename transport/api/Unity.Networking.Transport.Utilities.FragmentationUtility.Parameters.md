@@ -1,128 +1,129 @@
+---  
+id: Unity.Networking.Transport.Utilities.FragmentationUtility.Parameters  
+title: Unity.Networking.Transport.Utilities.FragmentationUtility.Parameters  
 ---
-id: Unity.Networking.Transport.Utilities.FragmentationUtility.Parameters
-title: Unity.Networking.Transport.Utilities.FragmentationUtility.Parameters
----
 
+<div class="markdown level0 summary">
 
-# Struct FragmentationUtility.Parameters
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
+<div classs="implements">
 
 ##### Implements
 
-
+<div>
 
 INetworkParameter
 
+</div>
 
+<div>
 
+IValidatableNetworkParameter
 
+</div>
 
+</div>
+
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Utilities
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-
 ``` lang-csharp
-public struct Parameters : INetworkParameter
+public struct Parameters : INetworkParameter, IValidatableNetworkParameter
 ```
 
+## 
 
+### PayloadCapacity
 
-### Fields
+<div class="markdown level1 summary">
 
-#### PayloadCapacity
+</div>
 
+<div class="markdown level1 conceptual">
 
-Maximum payload size that can be fragmented.
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int PayloadCapacity
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Methods
+## 
 
-#### Validate()
+### Validate()
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public bool Validate()
 ```
 
-
-
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -130,11 +131,14 @@ public bool Validate()
 
 ### Implements
 
-
+<div>
 
 INetworkParameter
 
+</div>
 
+<div>
 
+IValidatableNetworkParameter
 
-
+</div>

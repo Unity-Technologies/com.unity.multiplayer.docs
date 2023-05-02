@@ -1,60 +1,33 @@
+---  
+id: Unity.Networking.Transport.NetworkEvent.Type  
+title: Unity.Networking.Transport.NetworkEvent.Type  
 ---
-id: Unity.Networking.Transport.NetworkEvent.Type
-title: Unity.Networking.Transport.NetworkEvent.Type
----
 
+<div class="markdown level0 summary">
 
-# Enum NetworkEvent.Type
+NetworkEvent.Type enumerates available network events for this driver.
 
+</div>
 
-The different types of events that can be returned for a connection.
+<div class="markdown level0 conceptual">
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public enum Type : short
 ```
 
+## 
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Connect
-
-The connection is now established.
-
-Data
-
-Data was received on the connection.
-
-Disconnect
-
-The connection is now closed.
-
-Empty
-
-No event actually occured. Should be ignored.
-
-
-
+| Name       | Description |
+|------------|-------------|
+| Connect    |             |
+| Data       |             |
+| Disconnect |             |
+| Empty      |             |

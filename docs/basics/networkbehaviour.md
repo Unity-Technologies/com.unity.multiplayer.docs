@@ -23,24 +23,9 @@ For `NetworkBehaviour`s use the NetworkBehaviourReference<!-- (NO API LINK AVAIL
 It is important that the `NetworkBehaviour`s on each `NetworkObject` remains the same for the server and any client connected. When using multiple projects, this becomes especially important so the server doesn't try to call a client RPC on a `NetworkBehaviour` that might not exist on a specific client type (or set a NetworkVariable, etc).
 :::
 
-### Pre-Spawn and MonoBehaviour Updates
-
-Since `NetworkBehaviour`s derive from MonoBehaviour, the `FixedUpdate`, `Update`, and `LateUpdate` methods, if defined, will still be invoked on `NetworkBehaviour`s even when they're not yet spawned.  to "exit early" to avoid executing netcode specific code within the update methods, you can check the local `NetworkBehaviour.IsSpawned` flag and return if it isn't yet set like the below example:
-
-```csharp
-private void Update()
-{
-    if (!IsSpawned)
-    {
-        return;
-    }
-    // Netcode specific logic below here
-}
-```
-
 ### Spawning
 
-`OnNetworkSpawn` is invoked on each `NetworkBehaviour` associatd with a `NetworkObject` spawned.  This is where all netcode related initialization should occur.
+`OnNetworkSpawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` spawned.  This is where all netcode related initialization should occur.
 You can still use `Awake` and `Start` to do things like finding components and assigning them to local properties, but if `NetworkBehaviour.IsSpawned` is false don't expect netcode distinguishing properties (like IsClient, IsServer, IsHost, etc) to be accurate while within the those two methods (Awake and Start).
 For reference purposes, below is a table of when `NetworkBehaviour.OnNetworkSpawn` is invoked relative to the `NetworkObject` type:
 
@@ -49,6 +34,8 @@ Dynamically Spawned | In-Scene Placed
 Awake               | Awake
 OnNetworkSpawn      | Start
 Start               | OnNetworkSpawn
+
+For more information about `NetworkBehaviour` methods and when they are invoked, see the [Pre-Spawn and MonoBehaviour Methods](networkbehaviour.md#pre-spawn-and-monobehaviour-methods) section.
 
 #### Dynamically Spawned NetworkObjects
 
@@ -87,7 +74,7 @@ For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **a
 
 ### De-Spawning
 
-`OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "despawn cleanup code" should occur, but isn't to be confused with destroying.  Despawning occurs before anything is destroyed.
+`NetworkBehaviour.OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "cleanup code" should occur, but isn't to be confused with destroying. When a NetworkBehaviour component is destroyed, it means the associated GameObject, and all attached components, are in the middle of being destroyed. Regarding the order of operations, `NetworkBehaviour.OnNetworkDespawn` is always invoked before `NetworkBehaviour.OnDestroy`. 
 
 ### Destroying
 
@@ -109,7 +96,51 @@ If you override the virtual 'OnDestroy' method it's important to alway invoke th
 `NetworkBehaviour` handles other destroy clean up tasks and requires that you invoke the base `OnDestroy` method to operate properly.
 :::
 
-### NetworkBehaviour Pre-Spawn Synchronization
+### Pre-Spawn and MonoBehaviour Methods
+
+Since `NetworkBehaviour` is a derived `MonoBehaviour`, the `NetworkBehaviour.OnNetworkSpawn` method is treated similar to the Awake, Start, FixedUpdate, Update, and LateUpdate `MonoBehaviour` methods when the associated GameObject is active or not active in the hierarchy:
+
+- When active: Awake, Start, FixedUpdate, Update, and LateUpdate are invoked 
+- When not active: Awake, Start, FixedUpdate, Update, and LateUpdate are **not invoked**.
+
+[More Information About Execution Order](https://docs.unity3d.com/2020.1/Documentation/Manual/ExecutionOrder.html)
+
+_The unique behavior of OnNetworkSpawn, relative to the previously listed methods, is that it is not invoked until the associated GameObject is active in the hierarchy and its associated NetworkObject is spawned._
+
+If you want to disable a specific `NetworkBehaviour` but still want it to be included in the `NetworkObject` spawn process ( _i.e. so you can still enable it at a later time_), as opposed to disabling the entire `GameObject` you should disable the individual NetworkBehaviour component.
+
+:::caution
+NetworkBehaviour components, that are disabled by default and are attached to in-scene placed NetworkObjects, will behave like NetworkBehaviour components that are attached to dynamically spawned NetworkObjects when it comes to the order of operations for the `NetworkBehaviour.Start` and `NetworkBehaviour.OnNetworkSpawn` methods. Since in-sene placed NetworkObjects are spawned when the scene is loaded, a NetworkBehaviour component (_that is disabled by default_) will have its `NetworkBehaviour.OnNetworkSpawn` method invoked before the `NetworkBehaviour.Start` method since `NetworkBehaviour.Start` is invoked when a disabled NetworkBehaviour component is enabled.
+
+Dynamically Spawned | In-Scene Placed (disabled NetworkBehaviour components)
+------------------- | ---------------
+Awake               | Awake
+OnNetworkSpawn      | OnNetworkSpawn
+Start               | Start (invoked when disabled NetworkBehaviour components are enabled)
+:::
+
+:::warning Parenting, Inactive GameObjects, and NetworkBehaviour Components
+If you have child GameObjects that are not active in the hierarchy but are nested under an active GameObject with an attached NetworkObject component, then the inactive child GameObjects will not be included when the NetworkObject is spawned. This applies for the duration of the NetworkObject's spawned lifetime. If you want all child NetworkBehaviour components to be included in the spawn process, then make sure their respective GameObjects are active in the hierarchy before spawning the `NetworkObject`. Alternatively, you can just disable the NetworkBehaviour component(s) individually while leaving their associated GameObject active.
+
+_It is recommended to disable a NetworkBehaviour component than the GameObject itself._
+:::
+
+Additionally, the `FixedUpdate`, `Update`, and `LateUpdate` methods, if defined and the `GameObject` is active in the hierarchy, will still be invoked on `NetworkBehaviour`s even when they're not yet spawned.  
+If you want portions or all of your update methods to only execute when the associated `NetworkObject` component is spawned, you can use the `NetworkBehaviour.IsSpawned` flag to determine the spawned status like the below example:
+
+```csharp
+private void Update()
+{
+    // If the NetworkObject is not yet spawned, exit early.
+    if (!IsSpawned)
+    {
+        return;
+    }
+    // Netcode specific logic executed when spawned.
+}
+```
+
+### Pre-Spawn Synchronization
 
 There can be scenarios where you need to include additional configuration data or use a `NetworkBehaviour` to configure some non-netcode related component (or the like) before a `NetworkObject` being spawned. This can be particularly critical if you want specific settings applied before `NetworkBehaviour.OnNetworkSpawn` being invoked. When a client is synchronizing with an existing network session, this can become problematic as messaging requires a client to be fully synchronized before you know "it is safe" to send the message and even if you send a message there is the latency involved in the whole process that might not be convenient and can require additional specialized code to account for this.
 
@@ -227,7 +258,7 @@ If user-code throws an exception during `NetworkBehaviour.OnSynchronize`, it cat
 
 After generating the log message(s), it rewinds the serialization stream to the point just before it invoked `NetworkBehaviour.OnSynchronize` and will continue serializing. Any data written before the exception occurred will be overwritten or dropped depending upon whether there are more `NetworkBehaviour` components to be serialized.
 
-### When Reading:
+#### When Reading:
 For exceptions this follows the exact same message logging pattern described above when writing. The distinct difference is that after it logs one or more messages to the console, it skips over only the serialization data written by the server-side when `NetworkBehaviour.OnSynchronize` was invoked and continues the deserialization process for any remaining `NetworkBehaviour` components.
 
 However, there is an additional check to assure that the total expected bytes to read were actually read from the buffer. If the total number of bytes read does not equal the expected number of bytes to be read it will log a warning that includes the name of the NetworkBehaviour in question, the total bytes read, the expected bytes to be read, and lets you know this `NetworkBehaviour` is being skipped.
