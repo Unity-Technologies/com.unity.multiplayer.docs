@@ -77,7 +77,7 @@ All in all a sum of non-network latency contributors can be called Input Lag - t
   :::tip
   Typically fewer large packets perform better than many smaller packets because typical routing requires examining only the header of the packet.
   :::
-- **Propagation delay**: This is the time signal spends traveling through the physical medium. It can't be less than the speed of light multiplied by the distance between source and destination, which is: 
+- **Propagation delay**: This is the time signal spends traveling through the physical medium. It can't be less than the speed of light divided by the distance between source and destination, which is: 
     
     `Propagation Delay = 0.3-ns * meters-to-travel` 
 

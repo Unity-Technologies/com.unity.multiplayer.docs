@@ -10,15 +10,8 @@ module.exports = {
             "label": "Release Notes",
             "items": [
                 {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Unity Netcode for GameObjects",
-                    "items": [
-                        {
-                            type: 'doc',
-                            id: 'netcode/ngo-changelog',
-                        },
-                    ]
+                    type: 'doc',
+                    id: 'netcode/ngo-changelog',
                 },
                 {
                     "collapsed": true,

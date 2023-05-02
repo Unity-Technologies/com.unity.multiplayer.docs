@@ -10,6 +10,20 @@ This section describes the breaking changes introduced in version 2.0 of the Uni
 In most use cases, there’s no need to perform any additional steps to migrate from 1.X to 2.0. The core APIs (like `NetworkDriver`) remain the same, and the most significant changes are limited to specialized scenarios, such as [custom network interfaces](#custom-network-interfaces).
 :::
 
+## Collections-related errors following upgrade
+
+It is possible that upgrading a project from version 1.X to 2.0 will result in errors like the following appearing in the console:
+
+```
+Unity.Collections/NativeParallelHashSetExtensions.gen.cs(17,51): error CS0246: The type or namespace name 'NativeHashSet<>' could not be found (are you missing a using directive or an assembly reference?)
+
+Unity.Collections/UnsafeParallelHashSetExtensions.gen.cs(1084,78): error CS0246: The type or namespace name 'UnsafeHashSet<>' could not be found (are you missing a using directive or an assembly reference?)
+```
+
+There errors can occur when upgrading the Collections package from version 1.2 to 2.X. Closing and restarting the editor is usually enough to get rid of the errors.
+
+
+
 ## Editor version support
 
 UTP 1.X supports Unity Editor 2020.3 and up, but 2.0 only supports 2022.2 and up to keep the Collections package dependency up to date. Unity Editor 2022.2 brings changes to the core Unity Engine runtime, allowing more code to be Burst-compiled. UTP benefits from this through increased performance.
