@@ -26,7 +26,7 @@ Fortunately, NGO provides you withNetworkTransform component implementation that
 ## Adding
 When adding a NetworkTransform component to a GameObject, you should always make sure the GameObject has a NetworkObject component attached to it or that the GameObject's transform parent is assigned to a GameObject with a NetworkObject component attached to it like in the image below:
 
-![image](images/NetworkTransformSimple.png)
+![image](Images/NetworkTransformSimple.png)
 
 You can also have a parent GameObject that has a NetworkObject component attached to it with a child GameObject that has a NetworkTransform component like in the image below:
 
