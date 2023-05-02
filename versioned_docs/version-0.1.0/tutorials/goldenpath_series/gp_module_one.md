@@ -155,7 +155,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-`NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also contains very useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
+`NetworkManager` implements the singleton pattern as it declares its singleton named `Singleton`. This is defined when the `MonoBehaviour` is enabled. This component also has useful properties, such as `IsClient`, `IsServer`, and `IsLocalClient`. The first two dictate the connection state we have currently established that you will use shortly.
 
 We call these methods inside of `OnGUI()`.
 <details open>
@@ -193,7 +193,7 @@ void OnGUI()
 </details>
 
 :::note
-You will notice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
+You won'tice the introduction of a new method,  `SubmitNewPosition()`; which we will be using later. 
 :::
 
 ## Adding basic movement to the Player object 
@@ -311,7 +311,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 ### Introducing permissions
 
-In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable` . For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
+In the `HelloWorldPlayer.cs ` script we  introduce read and write permissions on a `NetworkVariable`. For the purposes of this demo, the server will be authoritative on the `NetworkVariable` representing position. All clients are able to read the value, however.
 
 `HelloWorldPlayer` overrides `NetworkStart`.
 
@@ -491,7 +491,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 Whenever you press the GUI button (which is contextual depending on if you are server or a client), you find your local player and simply call `Move()`.
 
-You can now create a build which will demonstrate the concepts outlined above. 
+You can now create a build which will show the concepts outlined above. 
 :::tip
 Make sure **SampleScene** is included in **BuildSettings**.
 :::

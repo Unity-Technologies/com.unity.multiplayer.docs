@@ -1,117 +1,110 @@
+---  
+id: Unity.Networking.Transport.Utilities.ReliableUtility.Packet  
+title: Unity.Networking.Transport.Utilities.ReliableUtility.Packet  
 ---
-id: Unity.Networking.Transport.Utilities.ReliableUtility.Packet
-title: Unity.Networking.Transport.Utilities.ReliableUtility.Packet
----
 
+<div class="markdown level0 summary">
 
-# Struct ReliableUtility.Packet
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Utilities
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct Packet
 ```
 
+## 
 
+### Buffer
 
-### Fields
+<div class="markdown level1 summary">
 
-#### Buffer
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public byte *Buffer
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.Byte\* |             |
 
-#### Header
+### Header
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public ReliableUtility.PacketHeader Header
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                         | Description |
 |------------------------------|-------------|
 | ReliableUtility.PacketHeader |             |
-
-
-

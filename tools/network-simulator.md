@@ -158,7 +158,7 @@ The Random Connections Swap scenario selects one of configurations from the list
 
 ### Network types
 
-A network type is the general state of a user’s network connection. This section contains the descriptions of the available Network Simulator preset configurations. These configuration presets fall into five categories:
+A network type is the general state of a user’s network connection. This section has the descriptions of the available Network Simulator preset configurations. These configuration presets fall into five categories:
 
 * [Home broadband connections](#home-broadband-connections)
 * [Poor quality mobile connections](#poor-quality-mobile-connections)
@@ -394,7 +394,7 @@ The code samples in this section showcase how you can build custom network simul
 
 #### Lag spike scenario
 
-The following code snippet demonstrates using `NetworkScenarioTask` to create a custom network scenario that simulates a connection with [lag spikes](#lag-spikes). See [`LagSpikeScenarioWithAsyncTask.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.tools/blob/develop/Samples~/NetworkSimulator/LagSpikeScenarioWithAsyncTask.cs#L27).
+The following code snippet shows using `NetworkScenarioTask` to create a custom network scenario that simulates a connection with [lag spikes](#lag-spikes). See [`LagSpikeScenarioWithAsyncTask.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.tools/blob/develop/Samples~/NetworkSimulator/LagSpikeScenarioWithAsyncTask.cs#L27).
 
 #### Disconnect scenario
 
@@ -402,7 +402,7 @@ The following code snippet uses `NetworkScenarioBehaviour` to create a custom ne
 
 #### Unstable connection scenario
 
-The following code snippet demonstrates using `NetworkScenarioTask` to create a custom network scenario that simulates an [unstable connection](#instability). See [`UnstableConnection.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.tools/blob/develop/Samples~/NetworkSimulator/UnstableConnection.cs).
+The following code snippet shows using `NetworkScenarioTask` to create a custom network scenario that simulates an [unstable connection](#instability). See [`UnstableConnection.cs`](https://github.com/Unity-Technologies/com.unity.multiplayer.tools/blob/develop/Samples~/NetworkSimulator/UnstableConnection.cs).
 
 #### Affect connection parameters using Animation Curves scenario
 

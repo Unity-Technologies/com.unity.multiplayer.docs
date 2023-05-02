@@ -1,130 +1,117 @@
 ---
 id: Unity.Netcode.ClientRpcSendParams
 title: Unity.Netcode.ClientRpcSendParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:22 pm
 ---
 
-# Struct ClientRpcSendParams
+<div class="markdown level0 summary">
 
+Client-Side RPC The send parameters, when sending client RPCs, provides you wil the ability to target specific clients as a managed or unmanaged list: TargetClientIds and TargetClientIdsNativeArray
+</div>
 
-Client-Side RPC The send parameters, when sending client RPCs, provides
-you wil the ability to target specific clients as a managed or unmanaged
-list: TargetClientIds and TargetClientIdsNativeArray
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
+</div>
 
-##### Inherited Members
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
-System.ValueType.Equals(System.Object)
+<div>
 
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
-System.ValueType.GetHashCode()
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
-System.ValueType.ToString()
+Object.GetType()
 
+</div>
 
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public struct ClientRpcSendParams
 ```
 
+## Fields
 
+### TargetClientIds
 
-### Fields
+<div class="markdown level1 summary">
 
-#### TargetClientIds
+IEnumerable version of target id list - use either this OR TargetClientIdsNativeArray Note: Even if you provide a value type such as NativeArray, enumerating it will cause boxing. If you want to avoid boxing, use TargetClientIdsNativeArray
 
+</div>
 
-IEnumerable version of target id list - use either this OR
-TargetClientIdsNativeArray Note: Even if you provide a value type such
-as NativeArray, enumerating it will cause boxing. If you want to avoid
-boxing, use TargetClientIdsNativeArray
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public IReadOnlyList<ulong> TargetClientIds
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                           | Description |
 |--------------------------------|-------------|
 | IReadOnlyList\<System.UInt64\> |             |
 
-#### TargetClientIdsNativeArray
+### TargetClientIdsNativeArray
 
+<div class="markdown level1 summary">
 
-NativeArray version of target id list - use either this OR
-TargetClientIds This option avoids any GC allocations but is a bit
-trickier to use.
+NativeArray version of target id list - use either this OR TargetClientIds This option avoids any GC allocations but is a bit trickier to use.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NativeArray<ulong>? TargetClientIdsNativeArray
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                                            | Description |
 |-------------------------------------------------|-------------|
 | System.Nullable\<NativeArray\<System.UInt64\>\> |             |
-
-
-

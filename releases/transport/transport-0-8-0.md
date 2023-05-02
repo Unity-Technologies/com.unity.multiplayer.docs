@@ -31,7 +31,7 @@ The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` 
 
 ### New features
 * An error handling pass has been made and `Error.StatusCode` have been added to indicate more specific errors.
-* `Error.DisconnectReason` has been added, so when NetworkDriver.PopEvent returns a `NetworkEvent.Type.Disconnect` the reader returned contains 1 byte of data indicating the reason.
+* `Error.DisconnectReason` has been added, so when NetworkDriver.PopEvent returns a `NetworkEvent.Type.Disconnect` the reader returned has 1 byte of data indicating the reason.
 
 ### Changes
 * The function signature for NetworkDriver.BeginSend has changed. It now returns an `int` value indicating if the function succeeded or not and the DataStreamWriter now instead is returned as a `out` parameter.
@@ -40,7 +40,7 @@ The [Unity Transport](../../transport/0.8.0/introduction) `com.unity.transport` 
 
 ### Fixes
 * Fixed a potential crash when receiving a malformated packet.
-* Fixed an issue where the DataStream could sometimes fail writing packet uints before the buffer was full.
+* Fixed an issue where the DataStream can sometimes fail writing packet uints before the buffer was full.
 
 ### Upgrade guide
 * `NetworkDriver.BeginSend` now returns an `int` indicating a `Error.StatusCode`, and the `DataStreamWriter` is passed as an `out` parameter.
@@ -80,7 +80,7 @@ The transport now requires Unity 2020.1.2.
 ## [0.3.1-preview.4] - 2020-06-05
 
 ### Changes
-* Added a new `requiredPayloadSize` parameter to `BeginSend`. The required size cannot be larger than `NetworkParameterConstants.MTU`.
+* Added a new `requiredPayloadSize` parameter to `BeginSend`. The required size can't be larger than `NetworkParameterConstants.MTU`.
 * Added errorcode parameter to a `network_set_nonblocking`, `network_set_send_buffer_size` and `network_set_receive_buffer_size` in `NativeBindings`.
 * Additional APIs added to `NativeBindings`: `network_set_blocking`, `network_get_send_buffer_size`, `network_get_receive_buffer_size`, `network_set_receive_timeout`, `network_set_send_timeout`.
 * Implemented `NetworkEndPoint.AddressAsString`.
@@ -93,14 +93,14 @@ The transport now requires Unity 2020.1.2.
 ## [0.3.0-preview.6] - 2020-02-24
 
 ### Changes
-* Pipelines are now registered by calling `NetworkPipelineStageCollection.RegisterPipelineStage` before creating a `NetworkDriver`. The built-in pipelines do not require explicit registration. The interface for implementing pipelines has been changed to support this.
-* NetworkDriver is no longer a generic type. You pass it an interface when creating the `NetworkDriver`, which means you can switch between backends without modifying all usage of the driver. There is a new `NetworkDriver.Create` which creates a driver with the default `NetworkInterface`. It is also possible to create a `new NetworkDriver` by passing a `NetworkInterface` instance as the first argument.
+* Pipelines are now registered by calling `NetworkPipelineStageCollection.RegisterPipelineStage` before creating a `NetworkDriver`. The built-in pipelines don't require explicit registration. The interface for implementing pipelines has been changed to support this.
+* NetworkDriver is no longer a generic type. You pass it an interface when creating the `NetworkDriver`, which means you can switch between backends without modifying all usage of the driver. There is a new `NetworkDriver.Create` which creates a driver with the default `NetworkInterface`. it's also possible to create a `new NetworkDriver` by passing a `NetworkInterface` instance as the first argument.
 * `NetworkDriver.Send` is replaced by `BeginSend` and `EndSend`. This allows us to do less data copying when sending messages. The interface for implementing new network interfaces has been changed to support this.
-* `DataStreamReader` and `DataStreamWriter` no longer owns any memory. They are just reading/writing the data of a `NativeArray<byte>`.
+* `DataStreamReader` and `DataStreamWriter` no longer owns any memory. They're just reading/writing the data of a `NativeArray<byte>`.
 * `DataStreamWriter` has explicit types for all Write methods.
 * `DataStreamReader.Context` has been removed.
 * Error handling for `DataStreamWriter` has been improved, on failure it returns false and sets `DataStreamWriter.HasFailedWrites` to true. `DataStreamReader` returns a default value and sets `DataStreamReader.HasFailedReads` to true. `DataStreamReader` will throw an exception instead of returning a default value in the editor.
-* IPCManager is no longer public, it is still possible to create a `NetworkDriver` with a `IPCNetworkInterface`.
+* IPCManager is no longer public, it's still possible to create a `NetworkDriver` with a `IPCNetworkInterface`.
 * Added `NetworkDriver.ScheduleFlushSend` which must be called to guarantee that messages are send before next call to `NetworkDriver.ScheduleUpdate`.
 * Added `NetworkDriver.LastUpdateTime` to get the update time the `NetworkDriver` used for the most recent update.
 * Removed the IPC address family, use a IPv4 localhost address instead.
@@ -161,7 +161,7 @@ The interface for network interfaces has been changed.
 * Added `LengthInBits` to the `DataStreamWriter`.
 
 ### Fixes
-* Do not push data events to disconnected connections. Fixes an error about resetting the queue with pending messages.
+* Don't push data events to disconnected connections. Fixes an error about resetting the queue with pending messages.
 * Made the endian checks in `DataStream` compatible with latest version of burst.
 
 ## [0.1.2-preview.1] - 2019-07-17
@@ -169,10 +169,10 @@ The interface for network interfaces has been changed.
 ### New features
 * Added a new *Ping-Multiplay* sample based on the *Ping* sample.
     * Created to be the main sample for demonstrating Multiplay compatibility and best practices (SQP usage, IP binding, etc.).
-    * Contains both client and server code. Additional details in readme in `/Assets/Samples/Ping-Multiplay/`.
+    * has both client and server code. Additional details in readme in `/Assets/Samples/Ping-Multiplay/`.
 * **DedicatedServerConfig**: Added arguments for `-fps` and `-timeout`.
 * **NetworkEndPoint**: Added a `TryParse()` method which returns false if parsing fails
-    * Note: The `Parse()` method returns a default IP / Endpoint if parsing fails, but a method that could report failure was needed for the Multiplay sample.
+    * Note: The `Parse()` method returns a default IP / Endpoint if parsing fails, but a method that can report failure was needed for the Multiplay sample.
 * **CommandLine**:
     * Added a `HasArgument()` method which returns true if an argument is present.
     * Added a `PrintArgsToLog()` method which is a simple way to print launch args to logs.

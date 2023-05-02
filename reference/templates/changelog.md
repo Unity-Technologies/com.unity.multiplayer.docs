@@ -14,7 +14,7 @@ The changelog does not require frontmatter. That code is included in this file s
 * Updates and changes to features, such as modified endpoints, deprecated endpoints with new endpoints to use, processes, data, error messages, etc.
 
 ### Fixes
-* Add a bullet per issue/bug fix. You do not require an issue number for the changelog. <!-- If you want to include issue numbers without building, you can include mtt-### in comments. -->
+* Add a bullet per issue/bug fix. You don't require an issue number for the changelog. <!-- If you want to include issue numbers without building, you can include mtt-### in comments. -->
 
 ### Known issues
 You may need to include this section if you have known issues with the release that may affect integrations and usage.

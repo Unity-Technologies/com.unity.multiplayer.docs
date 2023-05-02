@@ -3,150 +3,136 @@ id: pipelines
 title: Use pipelines
 ---
 
-Pipelines are a feature which offers layers of functionality on top of the default socket implementation behaviour. In the case of the UDP socket this makes it possible to have additional functionality on top of the standard unreliable datagram, such as Quality of Service features like sequencing, reliability, fragmentation and so on. 
+Pipelines are a core functionality of Unity Transport that allows selectively adding layers of functionality on top of the standard unreliable datagrams that UTP provides by default.
 
-## How it works
+You can use pipelines to add sequencing, reliability, and fragmentation features.
 
-The way it works is that you can add any number of pipelines (each with any number of stages) to your transport driver. The pipelines are chained together in the order defined by the user. Each pipeline input will the output of the previous pipeline. In other terms, when you send a packet it will go to the first stage, then the second one and so on until it's sent on the wire. On the receiving side the stages are then processed in reverse order, so the packet is correctly "unpacked" by the stages.
+Pipelines are a sequence of one or more stages. When you **send** a message through a pipeline, Unity Transport runs through the stages in order, piping the output of the first stage into the second stage. As a result, if the first stage adds a header to the packet, the second stage processes the entire packet, including the header added by the first stage. When you **receive** a message, it goes through the same chain of stages in reverse order.
 
-For example the first stage might compress a packet and a second stage could add a sequence number (just the packets header). When receiving the packet is first passed through the sequence stage and then decompressed. The sequence stage could drop the packet if it's out of order in which case it leaves the pipeline and doesn't continue to the decompression.
+![Pipeline stages](../static/img/transport/pipeline-stages-2.png)
+
+`FragmentationPipelineStage` allows breaking large messages into smaller pieces, and `ReliableSequencedPipelineStage` allows sending messages with guaranteed order and delivery. The following example shows how to create a pipeline with both functionalities:
+
+```csharp
+// In initialization code, before any connections are made.
+var myPipeline = driver.CreatePipeline(
+    typeof(FragmentationPipelineStage), typeof(ReliableSequencedPipelineStage));
+```
+
+This creates a pipeline where Unity Transport first fragments messages into smaller pieces (that each fit in a packet), then delivers the individual packets reliably and in the correct order.
+
+![Block diagram](../static/img/transport/fragmentation-2.png)
+
+This illustration shows the process of fragmentation and delivering packets in order. The small orange pieces on the fragments represent sequence numbers and other information added by the reliable stage.
 
 :::note
-* The order in which the pipelines are defined is extremely important. For instance, a pipeline created with ```CreatePipeline(typeof(ReliableSequencedPipelineStage), typeof(SimulatorPipelineStage))``` is different from a pipeline created with the same stages but in the reverse order.
- In that example, putting the simulator pipeline stage first would result in packets being dropped/delayed before there can be any reliability added to them, which is likely not the desired outcome.
-* It is highly recommended to use the same pipelines, in the same order for both the client and the server.
+The order of the stages in a pipeline is important. If you reverse the order, UTP only adds the reliability information to the larger unfragmented message. Doing so is less bandwidth-efficient because losing any single fragment would result in needing to resend the entire unfragmented message. By ordering the reliable stage after fragmentation, you only need to resend a single fragment if you lose a fragment.
 :::
 
-![PipelineStagesDiagram](/img/transport/pipeline-stages.png)
-
-The pipeline stages are gathered together in a collection. This is the interface between the pipeline processor in the driver to the pipeline stages you might be using. Here the pipeline stages are initialized and so on. There is a default collection provided in the driver which has all the built in pipeline stages already configured. It's possible to just use that and use a custom collection if you have your own pipeline stage you need to add to the collection.
-
-
-
-## Example usage
-
-The example below shows how the driver can create a new pipeline with 2 pipeline stages present (sequencer and simulator). The driver is created with the default pipeline collection and the pipeline parameters can be passed to the collection there. Multiple pipeline parameters can be passed in this way and the collection itself takes care of assigning them to the right pipeline stage.
-
-When sending packets the pipeline can then be specified as a parameter, so the packet is passed through it, it's then automatically processed the right way on the receiving end. It is therefore important both the client and server set up their pipelines in exactly the same way. One exception is with pipeline stages which do not manipulate the packet  payload or header, these do not need to be symmetric. For example, the simulator stage here is only keeping packets on hold for a certain time and then releases them unmodified or drops them altogether, it can therefore be set up to only run on the client.
+You can pass the pipeline to `BeginSend` to send a message on this new pipeline:
 
 ```csharp
-using Unity.Collections;
-using Unity.Networking.Transport;
-using Unity.Networking.Transport.Utilities;
+driver.BeginSend(myPipeline, connection, out var writer);
+```
 
-public class Client
+You can use the last argument of `PopEvent`/`PopEventForConnection` to know which pipeline you received a message on:
+
+```csharp
+var eventType = driver.PopEvent(out _, out _, out var receivePipeline);
+if (eventType == NetworkEvent.Type.Data)
 {
-    NetworkDriver m_DriverHandle;
-    NetworkPipeline m_Pipeline;
-
-    const int k_PacketSize = 256;
-
-    // Connection establishment omitted
-    public NetworkConnection m_ConnectionToServer;
-
-    public void Configure()
-    {
-        // Driver can be used as normal
-        m_DriverHandle = NetworkDriver.Create(new SimulatorUtility.Parameters {MaxPacketSize = k_PacketSize, MaxPacketCount = 30, PacketDelayMs = 100});
-        // Driver now knows about this pipeline and can explicitly be asked to send packets through it (by default it sends directly)
-        m_Pipeline = m_DriverHandle.CreatePipeline(typeof(UnreliableSequencedPipelineStage), typeof(SimulatorPipelineStage));
-    }
-
-    public void SendMessage(NativeArray<byte> someData)
-    {
-        // Send using the pipeline created in Configure()
-        m_DriverHandle.BeginSend(m_Pipeline, m_ConnectionToServer, out var writer);
-        writer.WriteBytes(someData);
-        m_DriverHandle.EndSend(writer);
-    }
+    // Data message was received on the receivePipeline pipeline.
 }
 ```
 
-## Simulator Pipeline
+:::note
+You should always configure pipelines the same way on the server and client. The CreatePipeline calls (and their order) must match on both ends of a connection. Unity Transport doesn't protect you against mismatched pipelines between servers and clients.
+:::
 
-The simulator pipeline stage could be added on either the client or server to simulate bad network conditions. It is best to add it as the last stage in the pipeline, then it will either drop the packet or add a delay right before it would go on the wire.
+## The fragmentation pipeline stage
 
-### Use the simulator
+By default, Unity Transport can only send messages that fit into the [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit) (roughly 1400 bytes). You must split larger messages into smaller pieces. This process is called message fragmentation.
 
-No further configuration is needed after configuring the pipeline. It can be set up when the driver is created, as follows:
+Pipelines configured with a `FragmentationPipelineStage` automatically fragment messages for you. You can configure the maximum pre-fragmentation payload size when creating a `NetworkDriver`:
 
 ```csharp
-m_DriverHandle = NetworkDriver.Create(new SimulatorUtility.Parameters {MaxPacketSize = NetworkParameterConstants.MTU, MaxPacketCount = 30, PacketDelayMs = 25, PacketDropPercentage = 10});
-m_Pipeline = m_DriverHandle.CreatePipeline(typeof(SimulatorPipelineStage));
+var settings = new NetworkSettings();
+settings.WithFragmentationStageParameters(payloadCapacity: 10000);
+
+var driver = NetworkDriver.Create(settings);
+var fragmentedPipeline = driver.CreatePipeline(typeof(FragmentationPipelineStage));
 ```
 
-This would create a simulator pipeline stage which can delay up to 30 packets of a size up to the MTU size constant. Each packets gets a 25 ms delay applied and 10% of packets received will be dropped. SimulatorPipelineStage processes packets on the Receive stage of the pipeline.
+The maximum value is about ~20 megabytes. However, the fragmentation pipeline stage is only optimized for payloads of a few kilobytes (the default value is 4096 bytes). We don't recommend sending messages much larger than a few kilobytes unless it’s a one-time transmission at initialization.
 
-### Debug information
+Furthermore, if you use this pipeline stage with the `ReliableSequencedPipelineStage`, the maximum value is even lower at around 88 kilobytes.
 
-To get information about internal state in the simulator, check the `SimulatorUtility.Context` structure, stored in the pipeline stage shared buffer. This tracks how many packets have been set, `PacketCount`, and how many of those were dropped, `PacketDropCount`. `ReadyPackets` and `WaitingPackets` shows what packets are now ready to be sent (delay time expired) and how many are stored by the simulator. `StatsTime` and `NextPacketTime` show the last time the simulator ran and when the next packet is due to be released.
+:::note
+Most pipeline stages don't support packets larger than the MTU (maximum transmission unit). As a result, in most cases, you should use `FragmentationPipelineStage` as the first stage in pipelines with multiple stages.
+:::
+
+## The reliable pipeline stage
+
+Pipelines configured with a `ReliableSequencedPipelineStage` guarantee the delivery and order of their packets, similar to how a [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) connection would. The `ReliableSequencedPipelineStage` tags packets with a sequence number and peers acknowledge the reception of these numbers. If a peer doesn't acknowledge a packet, UTP resends it until it’s acknowledged. If a packet arrives out of order, UTP buffers it until it receives all earlier packets.
+
+While reliability is useful, you should use it sparingly in a multiplayer game context. Reliable data streams can suffer from [head-of-line blocking](https://en.wikipedia.org/wiki/Head-of-line_blocking), which can cause increased latency and delay packet processing. We recommend using the `ReliableSequencedPipelineStage` pipeline stage only for important traffic you can't afford to lose (like RPCs and character actions).
+
+### Maximum in-flight packets
+
+The reliable stage limits the number of packets in-flight at any given time. The default limit is 32, but you can increase the limit up to 64. The in-flight packet limit is per connection and per pipeline; it's not shared across connections.
+
+Due to the in-flight package limitation, we recommend batching reliable messages together as much as possible. For example, instead of sending two reliable messages of 20 bytes each, concatenate them and send a single message of 40 bytes.
+
+If you try to send a new reliable message while the maximum number of packets is already in-flight, `EndSend` returns the error code `NetworkSendQueueFull` (value `-5`). If you encounter this situation, we recommend storing the message in a queue until it's possible to send it again:
 
 ```csharp
-public unsafe void DumpSimulatorStatistics()
+driver.BeginSend(myReliablePipeline, connection, out var writer);
+// Write your message to the writer.
+if (driver.EndSend(writer) == (int)Error.StatusCode.NetworkSendQueueFull))
 {
-    var simulatorStageId = NetworkPipelineStageCollection.GetStageId(typeof(SimulatorPipelineStage));
-    driver.GetPipelineBuffers(pipeline, simulatorStageId, connection[0], out var receiveBuffer, out var sendBuffer, out var sharedBuffer);
-    var simCtx = (SimulatorUtility.Context*)sharedBuffer.GetUnsafeReadOnlyPtr();
-    UnityEngine.Debug.Log("Simulator stats\n" +
-        "PacketCount: " + simCtx->PacketCount + "\n" +
-        "PacketDropCount: " + simCtx->PacketDropCount + "\n" +
-        "ReadyPackets: " + simCtx->ReadyPackets + "\n" +
-        "WaitingPackets: " + simCtx->WaitingPackets + "\n" +
-        "NextPacketTime: " + simCtx->NextPacketTime + "\n" +
-        "StatsTime: " + simCtx->StatsTime);
+    // Copy your message to a queue, and try resending later.
 }
 ```
 
-## Reliability pipeline
+### Increasing the limit
 
-The reliability pipeline makes sure all packets are delivered and in order. It adds header information to all packets sent and tracks their state internally to make this happen. Whenever a packet is sent, it is given a sequence ID and then stored in the send processing buffer along with timing information (send time). The packet is then sent with that sequence ID added to the packet header. All packet headers also include information about what remote sequence IDs have been seen, so the receiver of the packet can know the delivery state of the packets it sent. This way there is always information about delivery state flowing between the two endpoints who make up a connection. If a certain time interval expires without an acknowledgement for a particular sequence ID the packet is resent and the timers reset.
-
-Reliability packet header looks like this:
+You can change the in-flight package limit when creating a `NetworkDriver`:
 
 ```csharp
-public struct PacketHeader
-{
-    public ushort Type;
-    public ushort ProcessingTime;
-    public ushort SequenceId;
-    public ushort AckedSequenceId;
-    public uint AckMask;
-}
+var settings = new NetworkSettings();
+settings.WithReliableStageParameters(windowSize: 64);
+
+var driver = NetworkDriver.Create(settings);
+var reliablePipeline = driver.CreatePipeline(typeof(ReliableSequencedPipelineStage));
 ```
 
-Where the type could be either a payload or ack packet, which is an empty packet with only this header. Processing time is time which passed between receiving a particular sequence ID and sending an acknowledgement for it, this is used for Round Trip Time (RTT) calculations. Then there is the sequence ID of this packet (not used in ack packets) and what remote sequence ID is being acknowledged. The AckMask is the history of acknowledgements we know about (up to the window size) so you can acknowledge multiple packets in a single header.
+The default limit is 32, and the maximum is 64. Any value higher than 32 results in slightly large (4 bytes) headers, leaving much less space for actual data in the packets.
 
-The ack packet type is used when a certain amount of time has passed and nothing has been sent to the remote endpoint. We then check if we need to send a pending acknowledgement to him, or else the last packet will be assumed lost and a resend will take place. If a message is sent on every update call these kinds of packets never need to be sent.
+## The simulator pipeline stage
 
-### Use the reliability pipeline
+The `SimulatorPipelineStage` is meant to be used when testing your application. It allows you to simulate network conditions like packet loss, delay, and jitter. You can use this stage to know how a game might behave in a real-world environment.
 
-The following creates a pipeline with just the reliability pipeline stage present, and initialize it to a window size of 32 (so it can keep track of 32 reliable packets at a one time). The maximum value for this is 32. Note this is a 32 packet limit per connection, and you may create multiple pipelines.
+You can configure the network conditions when creating a `NetworkDriver`:
 
 ```csharp
-m_ServerDriver = NetworkDriver.Create(new ReliableUtility.Parameters { WindowSize = 32 });
-m_Pipeline = m_ServerDriver.CreatePipeline(typeof(ReliableSequencedPipelineStage));
+var settings = new NetworkSettings();
+settings.WithSimulatorStageParameters(
+    maxPacketCount: 100,
+    mode: ApplyMode.AllPackets,
+    packetDelayMs: 50);
+
+var driver = NetworkDriver.Create(settings);
+var simulatorPipeline = driver.CreatePipeline(typeof(SimulatorPipelineStage));
 ```
 
-Because only 32 packets can be tracked at a time there can't be more than 32 packets in flight at any one time, trying to send a 33rd packet will result in an error. It's possible to check for such errors by checking the error code in the reliability internal state:
+The following list has some important parameters of the `SimulatorPipelineStage`.
 
-```csharp
-// Get a reference to the internal state or shared context of the reliability
-var reliableStageId = NetworkPipelineStageCollection.GetStageId(typeof(ReliableSequencedPipelineStage));
-m_ServerDriver.GetPipelineBuffers(serverPipe, reliableStageId, serverToClient, out var tmpReceiveBuffer, out var tmpSendBuffer, out var serverReliableBuffer);
-var serverReliableCtx = (ReliableUtility.SharedContext*) serverReliableBuffer.GetUnsafePtr();
+* `maxPacketCount` is the maximum number of simultaneously delayed packets. Past that, packets go through without any added delay.
+* mode In which direction the simulator should apply the network conditions (send, receive, or both).
+* `packetDelayMs` is the delay in milliseconds to apply to packets. Good values range between `20` (for a good broadband connection) and `200` (for a bad mobile connection).
+* `packetJitterMs` is the deviation around the packet delay in milliseconds. This value is typically half the packet delay or slightly less.
+* `packetDropPercentage` is the percentage of packets to drop. You should use values above `3`, even for bad mobile connections.
 
-m_ServerDriver.BeginSend(serverPipe, serverToClient, out var strm);
-m_ServerDriver.EndSend(strm);
-if (serverReliableCtx->errorCode != 0)
-{
-    // Failed to send with reliability, error code will be ReliableUtility.ErrorCodes.OutgoingQueueIsFull if no buffer space is left to store the packet
-}
-```
-
-It is possible to run into an `OutgoingQueueIsFull` error when packets are being sent too frequently for the latency and quality of the connection. High packet loss means packets need to stay for multiple Round Trip Times (RTTs) in the queue and if the RTT is high then that time can end up being longer than the send rate + window size permit. For example, with 60 packets sent per second, a packet will go out every 16 ms. If the RTT is 250ms, about 16 packets will be in the queue at any one time. With a packet drop, the total time will go up to 500 ms and the packet will be in the last slot when it is finally freed.
-
-It is best suited to use the reliability pipeline for event type messages (door opened), Remote Procedure Calls (RPCs), or slow frequency messages like chat.
-
-### Debug information
-
-More internal state information can be gathered using `GetPipelineBuffers` as shown above. The soaker test gathers statistics as seen in the *SoakCommon.cs* file, in the `GatherReliabilityStats` function. There it checks the internally used RTT and how many packets have been sent, received, dropped, duplicated and resent.
+:::note
+SimulatorPipelineStage should normally be the last in the chain when creating a pipeline with multiple stages. Otherwise, packets might drop before other stages can process them (which isn't useful for a reliable pipeline, for example).
+:::

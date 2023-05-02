@@ -31,7 +31,7 @@ Is a network client that connects an individual user to the server, used mainly 
 
 ##  Server 
 
-Is a server which is the authoritative source of events in a multiplayer video game. The server transmits enough data about its internal state to allow its connected clients to maintain their own accurate version of the game world for display to players. They also receive and process each player's input
+Is a server which is the authoritative source of events in a multiplayer video game. The server transmits enough data about its internal state to allow its connected clients to keep their own accurate version of the game world for display to players. They also receive and process each player's input
 
 ## Hit Registration
 
@@ -41,7 +41,7 @@ This is how a shooter determines if your shot hit something. There are two main 
 There are more than just two cases. The non physics version of bullets via raycast is often also used for weapons with travel time such as snipers. Parabolas of bullets can be calculated without the need of a physics simulation.
 :::
 
-1. Games where bullet travel time is not a factor in close quarters combat can use a simple and fast from where bullets have no travel time. 
+1. Games where bullet travel time isn't a factor in close quarters combat can use a simple and fast from where bullets have no travel time. 
 
 1. Games where you need more complex and demanding bullet physics simulations for hit registration. Every projectile has a travel speed and trajectory, affected by various factors.
 

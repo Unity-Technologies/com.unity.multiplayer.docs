@@ -1,242 +1,243 @@
 ---
 id: Unity.Netcode.NotServerException
 title: Unity.Netcode.NotServerException
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:51 pm
 ---
 
-# Class NotServerException
-
+<div class="markdown level0 summary">
 
 Exception thrown when the operation can only be done on the server
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritance">
 
+## Inheritance
 
+<div class="level0">
 
-##### Inheritance
+System.Dynamic.ExpandoObject
 
+</div>
 
-System.Object
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level2">
 
-System.Exception
+System.Dynamic.ExpandoObject
 
+</div>
 
+</div>
 
+<div classs="implements">
 
-NotServerException
+## Implements
 
-
-
-
-
-
-##### Implements
-
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
+</div>
 
+</div>
 
-##### Inherited Members
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-System.Exception.GetBaseException()
+Exception.GetBaseException()
 
+</div>
 
+<div>
 
+Exception.ToString()
 
+</div>
 
-System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,
-System.Runtime.Serialization.StreamingContext)
+<div>
 
+Exception.GetObjectData(SerializationInfo, StreamingContext)
 
+</div>
 
+<div>
 
+Exception.GetType()
 
-System.Exception.GetType()
+</div>
 
+<div>
 
+Exception.Message
 
+</div>
 
+<div>
 
-System.Exception.ToString()
+Exception.Data
 
+</div>
 
+<div>
 
+Exception.InnerException
 
+</div>
 
-System.Exception.Data
+<div>
 
+Exception.TargetSite
 
+</div>
 
+<div>
 
+Exception.StackTrace
 
-System.Exception.HelpLink
+</div>
 
+<div>
 
+Exception.HelpLink
 
+</div>
 
+<div>
 
-System.Exception.HResult
+Exception.Source
 
+</div>
 
+<div>
 
+Exception.HResult
 
+</div>
 
-System.Exception.InnerException
+<div>
 
+Object.Equals(Object)
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
-System.Exception.Message
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
+</div>
 
+<div>
 
-System.Exception.Source
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
-System.Exception.StackTrace
+</div>
 
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-System.Exception.TargetSite
-
-
-
-
-
-System.Object.Equals(System.Object)
-
-
-
-
-
-System.Object.Equals(System.Object, System.Object)
-
-
-
-
-
-System.Object.GetHashCode()
-
-
-
-
-
-System.Object.MemberwiseClone()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
-public class NotServerException : Exception, _Exception, ISerializable
+public class NotServerException : Exception, ISerializable, _Exception
 ```
 
+## Constructors
 
+### NotServerException()
 
-### Constructors
-
-#### NotServerException()
-
+<div class="markdown level1 summary">
 
 Constructs a NotServerException
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NotServerException()
 ```
 
+### NotServerException(String)
 
-
-#### NotServerException(String)
-
+<div class="markdown level1 summary">
 
 Constructs a NotServerException with a message
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NotServerException(string message)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type          | Name    | Description           |
 |---------------|---------|-----------------------|
 | System.String | message | The exception message |
 
-#### NotServerException(String, Exception)
+### NotServerException(String, Exception)
 
+<div class="markdown level1 summary">
 
 Constructs a NotServerException with a message and a inner exception
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NotServerException(string message, Exception inner)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type             | Name    | Description           |
 |------------------|---------|-----------------------|
@@ -245,17 +246,14 @@ public NotServerException(string message, Exception inner)
 
 ### Implements
 
-
-
-System.Runtime.InteropServices.\_Exception
-
-
-
-
+<div>
 
 System.Runtime.Serialization.ISerializable
 
+</div>
 
+<div>
 
+System.Runtime.InteropServices.\_Exception
 
-
+</div>

@@ -15,7 +15,15 @@ module.exports = {
         {
             "type": "doc",
             "id": "tools-network-simulator"
-        }
+        },
+        {
+            "type": "doc",
+            "id": "mppm"
+        },
+        {
+            "type": "doc",
+            "id": "mtt-terms"
+        },
     ],
 
         "api": [

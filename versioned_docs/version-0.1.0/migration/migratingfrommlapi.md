@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 This upgrade guide targets projects using the MLAPI version 12.1.7 and earlier that were installed by the MLAPI installer or by cloning the source code from Github.
 
 :::important
-If your project uses a Package Manager version of Unity MLAPI, this guide is not relevant. 
+If your project uses a Package Manager version of Unity MLAPI, this guide isn't relevant. 
 :::
 
 The aqcuisiton of MLAPI has been a unique event in Unity history. In our efforts to integrate MLAPI into the Unity ecosystem, we are providing it in a Unity package.
@@ -54,20 +54,20 @@ After installing the patcher package you are good to go. Complete the following 
 ## 1. Install the MLAPI Package
 Follow the [installation guide](installation.md) for installing the package version of MLAPI.
 
-After installing the package, you will have error messages in the console, which is expected behavior because your project now contains two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
+After installing the package, you will have error messages in the console, which is expected behavior because your project now has two different versions of MLAPI at the same time. No worries, we will later clean up the old MLAPI version.
 
 :::warning
-Do not remove the old version of MLAPI yet. It will still be used in the next step.
+Don't remove the old version of MLAPI yet. It will still be used in the next step.
 :::
 
 ## 2. Updating Script References
 
 Open the MLAPI patcher window by selecting **Window** > **MLAPI Patcher** in the menu bar. The patcher will ask you whether you are using the *Installer* version of MLAPI or the *Source* version. 
 
-Previously there were two major ways to use MLAPI in projects. You could either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
+Previously there were two major ways to use MLAPI in projects. You can either download a release version of MLAPI using the MLAPI installer or manually copy the source files into your project.
 
 :::tip
-If you are not sure which way of MLAPI you are using check whether you have the `Assets/MLAPI/Lib/MLAPI.dll` file in your project. If that's the case you are using the `Installer` version.
+If you aren't sure which way of MLAPI you are using check whether you have the `Assets/MLAPI/Lib/MLAPI.dll` file in your project. If that's the case you are using the `Installer` version.
 :::
 
 In the Patcher window, select **Installer** or **Source** button:
@@ -98,7 +98,7 @@ In the Patcher window, select **Installer** or **Source** button:
 
 After you complete the **Update Script References** process of the patcher, the MLAPI components on your `Prefabs` and `GameObject`s should have been updated to their new names. You can verify by checking if the `NetworkingManager` component is now called `NetworkManager`.
 
-Most likely at this point you will get a warning telling you that the script cannot be loaded. No need to panic, this is expected and your serialized data won't be lost. As soon as you finish up migrating and clean up all error messages your data will appear again.
+Most likely at this point you will get a warning telling you that the script can't be loaded. No need to panic, this is expected and your serialized data won't be lost. As soon as you finish up migrating and clean up all error messages your data will appear again.
 
  ![NetworkManager component after upgrading](/img/upgrade-guide/networkmanager-component.png)
 
@@ -136,20 +136,20 @@ SyncVars have been removed in Unity MLAPI. Convert your existing SyncVars into [
 
 ## 4.5 Troubleshooting
 
-**Error: The type or namespace name 'MLAPI' could not be found**
+**Error: The type or namespace name 'MLAPI' can't be found**
 
 This error will pop up if your project uses Assembly definition (`.asmdef`) files. After switching to the package version your assembly definition files will need to reference `com.unity.multiplayer.mlapi.runtime`.
 
-**Error: The type or namespace name 'NetworkedBehaviour' could not be found**
+**Error: The type or namespace name 'NetworkedBehaviour' can't be found**
 
-If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it is most likely because your code contains outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
+If you get an error message like this (or for another MLAPI type than `NetworkedBehaviour`) in the console it's most likely because your code has outdated APIs. Open the script indicated in the error messagea and update all APIs to the new names. You can find a table of what we renamed in the <Link to={useBaseUrl ('/releases/introduction') }>Release Notes</Link> .
 
 **Error: SerializedObjectNotCreatableException: Object at index 0 is null**
 
 If this appears whenever you enter playmode or save a scene, close the Unity Editor and open it again and this should be gone.
 
 ## 5. Removing the Patcher Package
-After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it is no longer needed.
+After you are done upgrading your project, you can remove the MLAPI Patcher package from your project in the Unity Package Manager as it's no longer needed.
 
 ## Next Steps
 

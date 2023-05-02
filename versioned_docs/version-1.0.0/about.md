@@ -45,8 +45,8 @@ Netcode does not support the WebGL platform because it does not allow access to 
 There are third party transports provided by the community that may enable you to use Netcode on WebGL platforms. A list of these transports are found [here](https://github.com/Unity-Technologies/multiplayer-community-contributions#transports).
 
 Use with caution:
-* You may encounter bugs and issues while using Netcode on WebGL, and we will not prioritize fixing those issues.
-* The server or host cannot be a WebGL client, but a Desktop or Mobile build.
+* You may encounter bugs and issues while using Netcode on WebGL, and we won't prioritize fixing those issues.
+* The server or host can't be a WebGL client, but a Desktop or Mobile build.
 * You may experience **increased** latency and jitter because of the TCP protocol used by WebSockets.
 :::
 

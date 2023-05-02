@@ -37,7 +37,7 @@ See the following options for frontmatter fields:
 | `id:` | Used for the navigation. Recommend only using lowercase and dashes.
 | `title:` | Displays as the page name and as the H1. |
 | `description:` | Metadata description for the page for search engines. By default, search engines will pull the first X amount of words from the page as a description.|
-| `sidebar_label:` | Shorter name for the side nav for the page, if the title is very long this can help for viewing and formatting. |
+| `sidebar_label:` | Shorter name for the side nav for the page, if the title is long this can help for viewing and formatting. |
 
 ## Headers
 
@@ -161,15 +161,15 @@ Save your light image with a background color of white (`#ffffff`) or charcoal (
 
 ```javascript
 <ImageSwitcher 
-lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
-darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+lightImageSrc="/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 ```
 
 For example:
 
 <ImageSwitcher 
-lightImageSrc="/img/ping-animation-light.gif?text=LightMode"
-darkImageSrc="/img/ping-animation-dark.gif?text=DarkMode"/>
+lightImageSrc="/ping-animation-light.gif?text=LightMode"
+darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 
 ## Tabs
 
@@ -350,7 +350,7 @@ Custom styles are available for tables, added using `<div>` tags around the mark
 
 `<div class="table-rows">`
 
-<div class="table-rows"> supports up to 5 columns with differing shades.
+<div className="table-rows"> supports up to 5 columns with differing shades.
 
 | Tables        |      Are      |   Cool | Check | It | Out |
 | ------------- | :-----------: | -----: | --- | --- | --- | 
@@ -361,7 +361,7 @@ Custom styles are available for tables, added using `<div>` tags around the mark
 
 `<div class="table-columns">` supports up to 5 columns with differing shades and highlights a column on hover.
 
-<div class="table-columns">
+<div className="table-columns">
 
 | Tables        |      Are      |   Cool | Check | It | Out |
 | ------------- | :-----------: | -----: | --- | --- | --- | 
@@ -373,14 +373,14 @@ Custom styles are available for tables, added using `<div>` tags around the mark
 ## Blockquotes
 
 ```markdown title="Markdown Code"
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
+> Blockquotes are handy in email to emulate reply text. This line is part of the same quote.
 ```
 
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
+> Blockquotes are handy in email to emulate reply text. This line is part of the same quote.
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
+> This is a long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
 ## Embed Files
 
@@ -499,7 +499,7 @@ Using MDX, you can create markdown files with a section of content that can be i
 
 Save your files with a file name starting with an underscore (_) in a shared folder (available in each version folder). These files will be included in generated versions.
 
-Currently, any headings will not build in the on-page navigation (on the right). You can add a heading to the page then import the file.
+Currently, any headings won't build in the on-page navigation (on the right). You can add a heading to the page then import the file.
 
 Use the following code with an absolute path to the shared folder file.
 

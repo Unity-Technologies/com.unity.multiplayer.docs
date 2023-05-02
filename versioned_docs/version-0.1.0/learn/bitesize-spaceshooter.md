@@ -4,9 +4,9 @@ title: 2D Space Shooter Sample
 description: Learn more about physics movement and status effects using MLAPI NetworkVariables and ObjectPooling using MLAPI.
 ---
 
-The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Unity MLAPI. Technical features include `NetworkVariable` and `ObjectPooling`. 
+The [2D Space Shooter Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/master/Basic/2DSpaceShooter) provides examples of physics, player health, and status effects using Unity MLAPI. Technical features include `NetworkVariable` and `ObjectPooling`.
 
-## Server Authorative Physics Movement
+## Server Authoritative Physics Movement
 
 The movement in 2DSpaceShooter is physics based. The player object is a dynamic rigidbody and can collide with other players or asteroids. Physics in multiplayer games can be hard to get right. For simplicity, 2DSpaceShooter runs all movement and physics just on the server-side.
 
@@ -26,11 +26,11 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ## Power-ups and Status Effects
 
-The 2DSpaceShooter sample has power-ups which apply different status effects to a player on collection. The core implementation of the power up effects in `ShipControl.cs` is very simplistic.
+The 2DSpaceShooter sample has power-ups which apply different status effects to a player on collection. The core implementation of the power up effects in `ShipControl.cs` is simplistic.
 
 The power-ups themselves are server authorative. On the server they check if a player has entered their trigger and then apply a timed status effect to that player and disappear.
 
-The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You could also use regular floats for timers. By using `NetworkVariable`s, the client could use this information to display different graphics based on active buffs to players. Such as double shot and triple shot effects.
+The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You can also use regular floats for timers. By using `NetworkVariable`s, the client can use this information to display different graphics based on active buffs to players. Such as double shot and triple shot effects.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L50-L55
@@ -40,13 +40,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 The `2DSpaceShooter` object creates many objects dynamically at runtime including bullets, asteroids, and pickups. 2DSpaceShooter uses object pooling to avoid performance issues of instantiating and destroying Unity Objects all the time and creating allocations in the process.
 
-2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository. 
+2DSpaceShooter uses the [NetworkObjectPool](https://github.com/Unity-Technologies/mlapi-community-contributions/tree/master/com.mlapi.contrib.extensions/Runtime/NetworkObjectPool) script, which can be found in the Community Contributions Repository.
 
 ![pool img](/img/bitesize/invader-networkobjectpool.png)
 
 All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause MLAPI to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically be returned to the pool instead of getting destroyed.
 
-Adding the `NetworkObjectPool` to the scene will not yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
+Adding the `NetworkObjectPool` to the scene won't yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
 
 Regular MLAPI Spawn Code example:
 

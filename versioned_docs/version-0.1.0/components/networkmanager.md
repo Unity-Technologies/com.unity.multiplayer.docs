@@ -3,7 +3,7 @@ id: networkmanager
 title: NetworkManager
 ---
 
-The `NetworkManager` is a script component handling all your Networking related settings, your Networked Prefabs and your registered scene names. A Transport component is needed on the same GameObject. It is responsible for handling IP adresses and additional settings.
+The `NetworkManager` is a script component handling all your Networking related settings, your Networked Prefabs and your registered scene names. A Transport component is needed on the same GameObject. it's responsible for handling IP adresses and additional settings.
 
 ## Starting a Server, Host, or Client
 The `NetworkManager` allows you to start/stop the Networking. It provides the same functions for Server, Host and Client.
@@ -16,7 +16,7 @@ NetworkManager.Singleton.StartHost();        //or
 NetworkManager.Singleton.StartClient();
 ```
 :::note
- When starting a Server or joining a running session as client, the `NetworkManager` will spawn a "Player Object" belonging to that Player. You can choose which prefab shall be spawned as "Player Object" in the `NetworkManager` Component under `NetworkPrefabs`. Simply tick the corresponding `Default Player Prefab` checkbox there.
+ When starting a Server or joining a running session as client, the `NetworkManager` will spawn a "Player Object" belonging to that Player. You can choose which Prefab shall be spawned as "Player Object" in the `NetworkManager` Component under `NetworkPrefabs`. Simply tick the corresponding `Default Player Prefab` checkbox there.
 :::
 Only the "Player Object" will return true for `IsLocalPlayer` on the corresponding machine, use `IsOwner` for non Player Objects instead.
 
@@ -33,7 +33,7 @@ NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectPort = 12345;     
 
 ## Disconnecting
 
-Disconnecting is rather simple, but you have to remember, that you cannot use the `NetworkSceneManager` for scene switching in most Disconnecting cases. As soon as you stop the Client, Server or Host you have to use `UnityEngine.SceneManagement` instead.
+Disconnecting is rather simple, but you have to remember, that you can't use the `NetworkSceneManager` for scene switching in most Disconnecting cases. As soon as you stop the Client, Server or Host you have to use `UnityEngine.SceneManagement` instead.
 
 ```csharp
 public void Disconnect()
@@ -55,6 +55,6 @@ public void Disconnect()
 }
 ```
 
-The only case where you could use the `NetworkSceneManager` for disconnecting, would be if the Server/Host switches back to MainMenu or similar for everyone and then Stopping the Server and all the Clients. 
+The only case where you can use the `NetworkSceneManager` for disconnecting, would be if the Server/Host switches back to MainMenu or similar for everyone and then Stopping the Server and all the Clients. 
 
 See `NetworkSceneManager` for more details.

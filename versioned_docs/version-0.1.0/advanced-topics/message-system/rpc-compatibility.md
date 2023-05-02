@@ -29,15 +29,15 @@ where:
 
 An RPC signature will be turned into a 32-bit integer using [xxHash](https://cyan4973.github.io/xxHash/) (XXH32) non-cryptographic hash algorithm.
 
-As expected, RPC signature therefore its hash will be changed if assembly, return type, enclosing type, method name and/or any method param type changes. Names of method parameters can be changed as they are not a part of the method signature.
+As expected, RPC signature therefore its hash will be changed if assembly, return type, enclosing type, method name and/or any method param type changes. Names of method parameters can be changed as they're not a part of the method signature.
 
-A change in the RPC signature will lead into a different send/receive codepath with different serialization code and execute a different method body. Previous versions of the RPC method will not be executed by the new RPC method with the new signature.
+A change in the RPC signature will lead into a different send/receive codepath with different serialization code and execute a different method body. Previous versions of the RPC method won't be executed by the new RPC method with the new signature.
 
 | Compatibility | <i class="fp-check"></i> | Description |
 | -- | :--: | -- |
 | Cross-Build Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different builds. |
 | Cross-Version Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different versions. |
-| Cross-Project Compatibility | <i class="fp-x"></i> | Since project name or any project-specific token is not being a part of RPC signature, it is possible to have the exact same RPC method signature defined in different builds and they are not necessarily going to be compatible with each other. |
+| Cross-Project Compatibility | <i class="fp-x"></i> | Since project name or any project-specific token isn't being a part of RPC signature, it's possible to have the exact same RPC method signature defined in different builds and they're not necessarily going to be compatible with each other. |
 
 ## Deprecation of return values
 

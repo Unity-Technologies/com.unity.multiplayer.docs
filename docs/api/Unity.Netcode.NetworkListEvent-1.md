@@ -1,179 +1,172 @@
 ---
 id: Unity.Netcode.NetworkListEvent-1
 title: Unity.Netcode.NetworkListEvent-1
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:41:06 pm
 ---
 
-# Struct NetworkListEvent\<T\>
-
+<div class="markdown level0 summary">
 
 Struct containing event information about changes to a NetworkList.
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="inheritedMembers">
 
+## Inherited Members
 
+<div>
 
-##### Inherited Members
+ValueType.Equals(Object)
 
+</div>
 
+<div>
 
-System.ValueType.Equals(System.Object)
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
+ValueType.ToString()
 
+</div>
 
-System.ValueType.GetHashCode()
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.ValueType.ToString()
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
+</div>
 
-System.Object.Equals(System.Object, System.Object)
+## **Namespace**: System.Dynamic.ExpandoObject
 
+## **Assembly**: Netcode.dll
 
-
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Netcode
-
-###### **Assembly**: MLAPI.dll
-
-##### Syntax
-
+## Syntax
 
 ``` lang-csharp
 public struct NetworkListEvent<T>
 ```
 
-
-
-##### Type Parameters
+## Type Parameters
 
 | Name | Description                                   |
 |------|-----------------------------------------------|
 | T    | The type for the list that the event is about |
 
-### Fields
+## Fields
 
-#### Index
+### Index
 
+<div class="markdown level1 summary">
 
 the index changed, added or removed if available
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int Index
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### PreviousValue
+### PreviousValue
 
+<div class="markdown level1 summary">
 
 The previous value when "Value" has changed, if available.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public T PreviousValue
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
 
-#### Type
+### Type
 
+<div class="markdown level1 summary">
 
 Enum representing the operation made to the list.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NetworkListEvent<T>.EventType Type
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type                           | Description |
 |--------------------------------|-------------|
 | NetworkListEvent.EventType\<\> |             |
 
-#### Value
+### Value
 
+<div class="markdown level1 summary">
 
 The value changed, added or removed if available.
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public T Value
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type | Description |
 |------|-------------|
 | T    |             |
-
-
-

@@ -1,65 +1,33 @@
+---  
+id: Unity.Networking.Transport.NetworkPipelineStage.Requests  
+title: Unity.Networking.Transport.NetworkPipelineStage.Requests  
 ---
-id: Unity.Networking.Transport.NetworkPipelineStage.Requests
-title: Unity.Networking.Transport.NetworkPipelineStage.Requests
----
 
+<div class="markdown level0 summary">
 
-# Enum NetworkPipelineStage.Requests
+</div>
 
+<div class="markdown level0 conceptual">
 
-The requests enum
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 [Flags]
 public enum Requests
 ```
 
+## 
 
-
-### Fields
-
-Name
-
-
-
-
-
-
-
-
-
-Description
-
-Error
-
-The error requests
-
-None
-
-The none requests
-
-Resume
-
-The resume requests
-
-SendUpdate
-
-The send update requests
-
-Update
-
-The update requests
-
-
-
+| Name       | Description |
+|------------|-------------|
+| Error      |             |
+| None       |             |
+| Resume     |             |
+| SendUpdate |             |
+| Update     |             |

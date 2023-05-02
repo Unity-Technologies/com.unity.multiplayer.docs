@@ -9,89 +9,68 @@ module.exports = {
             "id": "install"
         },
         {
-            "collapsed": true,
-            "type": "category",
-            "label": "Minimal Client and Server",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "minimal-workflow"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/clientbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/serverbehaviour"
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Jobified Client and Server",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "jobs",
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/jobifiedclientbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/jobifiedserverbehaviour"
-                },
-                
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Secure Client and Server",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "secure-connection",
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureparameters"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureserverbehaviour"
-                },
-                {
-                    "type": "doc",
-                    "id": "samples/secureclientbehaviour"
-                },
-            ]
+            "type": "doc",
+            "id": "migration",
         },
         {
             "type": "doc",
-            "id": "pipelines"
+            "id": "using-sample",
         },
         {
             "collapsed": true,
             "type": "category",
-            "label": "Additional information",
+            "label": "Minimum client and server",
             "items": [
                 {
                     "type": "doc",
-                    "id": "connection-state"
+                    "id": "minimal-workflow-udp",
                 },
                 {
                     "type": "doc",
-                    "id": "events"
-                },
-                {
-                    "type": "doc",
-                    "id": "network-settings"
+                    "id": "minimal-workflow-ws",
                 }
-            ]
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Best practices",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "pipelines",
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Improved client and server",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "jobs",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "secure-connection",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "integrate-logging",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Extending functionalities",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "network-settings",
+                },
+            ],
         },
     ],
     "api": [

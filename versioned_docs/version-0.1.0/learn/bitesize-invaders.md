@@ -32,7 +32,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 ### SceneState
 
-At the same time, we have implemented a light State Machine to keep track of the current `SceneState`. For example, the `SceneState` could indicate if players are in the Init or Bootstrap scene, Start or Lobby, or InGame. You can run a different Behavior or in this case a different `UpdateLoop` function, for each state.
+At the same time, we have implemented a light State Machine to keep track of the current `SceneState`. For example, the `SceneState` can indicate if players are in the Init or Bootstrap scene, Start or Lobby, or InGame. You can run a different Behavior or in this case a different `UpdateLoop` function, for each state.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/SceneTransitionHandler.cs#L25-L34
@@ -68,7 +68,7 @@ When the players join this Lobby, they all need to click **Ready** before the ga
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L208-L222
 ```
 
-At the same time, in order to sync up with the rest of the clients and update their UI, we send a ClientRpc. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
+At the same time, to sync up with the rest of the clients and update their UI, we send a ClientRpc. The update is handled by the ClientRpc called `SendClientReadyStatusUpdatesClientRpc` in `UpdateAndCheckPlayersInLobby`.
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/Invaders/Assets/Scripts/LobbyControl.cs#L81-L100
@@ -92,14 +92,14 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 
 Games commonly have timers to display in the UI such as Start Timer, Round Timer, and Cooldowns. Invaders also have a shared timer to ensure all players start the game at the same time. Otherwise, players with higher-end devices and better network access may have an unfair advantage by loading scenes and maps faster.
 
-When you implement this kind of timer, usually you would use a `NetworkVariableFloat` to replicate and display the exact time value across all clients. To improve performance, you do not need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
+When you implement this kind of timer, usually you would use a `NetworkVariableFloat` to replicate and display the exact time value across all clients. To improve performance, you don't need to replicate that float every Network Tick to the Clients, which would only waste network bandwidth and some minimal CPU resources.
 
 You have two options:
 
-* The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients cannot modify the `NetworkVariable` directly.
+* The best solution is to sync the remaining value of the timer when a new client joins. For the remaining time, clients can locally predict what the next value of that timer is going to be. This method ensures the server does not need to send the value of that timer every Network Update tick since you know what the approximated value will be. There is a minimal overhead of keeping an additional float member variable that will be kept updated, as the clients can't modify the `NetworkVariable` directly.
 * A fair solution is to set the `SendTickRate` of that timer `NetworkVariableFloat`, so that the server only sends an update once every second, without any additional work.
 
-In Invaders and the current state of Unity MLAPI, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "do not send any updates anymore about this NetworkVariable to the clients"), it will not sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
+In Invaders and the current state of Unity MLAPI, there is a drawback to implement such a pattern. If you set `NetworkVariableFloat` `SendTickRate` to '-1' (which means "don't send any updates anymore about this NetworkVariable to the clients"), it won't sync up the current timer value with the clients that just joined. It will never catch up with the server, which means you need to write more code to deal with this.
 
 As a workaround, you have to wait for all clients to be connected before setting the `SendTickRate` to '-1' for `m_ReplicatedTimeRemaining` `NetworkVariableFloat`. The code that checks if you need to set this is inside the `ShouldStartCountDown` method in *InvadersGame.cs*. 
 

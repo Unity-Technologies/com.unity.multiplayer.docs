@@ -11,7 +11,7 @@ Boss Room provides one example of how to handle limiting the number of players t
 Boss Room provides an example of such delegate
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs#L176
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs#L176
 ```
 ​
 The code below shows an example of an over-capacity check that would prevent more than a certain pre-defined number of players from connecting.
@@ -25,8 +25,9 @@ if( m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPl
 ​
 :::tip**SUBJECT TO CHANGE:**
 ​
-In connection approval delegate Netcode does not support an ability to send anything more than a boolean back.
-Boss Room demonstrates a way to provide meaningful error code to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
+In connection approval delegate Netcode doesn't support an ability to send anything more than a Boolean back.
+
+Boss Room shows a way to offer meaningful error codes to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
 
 :::
 

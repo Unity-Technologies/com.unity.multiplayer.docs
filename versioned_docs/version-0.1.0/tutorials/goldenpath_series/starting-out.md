@@ -7,7 +7,7 @@ description: Introduction to the Golden Path series, explaining the underliying 
 These sections are intended to help guide you through the features of MLAPI, they will provide  examples of how MLAPI implements common  Multiplayer features. We will continue to add and update this section with more materials as we grow MLAPI.  
 
 :::tip
-You do not have to have completed either of the [Hello World tutorials](../helloworld/helloworldintro.md) to complete this one, however, if you are new to Unity then we recommended that you complete them in order to familiarise yourself with Unity.
+You don't have to have completed either of the [Hello World tutorials](../helloworld/helloworldintro.md) to complete this one, however, if you are new to Unity then we recommended that you complete them to familiarise yourself with Unity.
 :::
 
 You should start by following the [GoldenPath Foundation Module](../../tutorials/goldenpath_series/goldenpath_foundation_module.md) then move on to the other modules which contain areas that interest you. Some of the modules are built on top of the Foundation Module others are stand alone. for those that are built on the Foundation Module we will recommend creating a clone of that project.
