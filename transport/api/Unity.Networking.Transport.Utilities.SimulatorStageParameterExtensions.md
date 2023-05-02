@@ -1,163 +1,157 @@
+---  
+id: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions  
+title: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions  
 ---
-id: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions
-title: Unity.Networking.Transport.Utilities.SimulatorStageParameterExtensions
----
 
+<div class="markdown level0 summary">
 
-# Class SimulatorStageParameterExtensions
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
-
-
-
+<div class="inheritance">
 
 ##### Inheritance
 
+<div class="level0">
 
-System.Object
+System.Dynamic.ExpandoObject
 
+</div>
 
+<div class="level1">
 
+System.Dynamic.ExpandoObject
 
-SimulatorStageParameterExtensions
+</div>
 
+</div>
 
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+Object.Equals(Object)
 
-System.Object.Equals(System.Object)
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
+<div>
 
-System.Object.Equals(System.Object, System.Object)
+Object.GetHashCode()
 
+</div>
 
+<div>
 
+Object.GetType()
 
+</div>
 
-System.Object.GetHashCode()
+<div>
 
+Object.MemberwiseClone()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.GetType()
+</div>
 
+<div>
 
+Object.ToString()
 
+</div>
 
+</div>
 
-System.Object.MemberwiseClone()
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-System.Object.ToString()
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport.Utilities
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public static class SimulatorStageParameterExtensions
 ```
 
+## 
 
+### GetSimulatorStageParameters(ref NetworkSettings)
 
-### Methods
+<div class="markdown level1 summary">
 
-#### GetSimulatorStageParameters(ref NetworkSettings)
+</div>
 
+<div class="markdown level1 conceptual">
 
-Gets the SimulatorUtility.Parameters
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public static SimulatorUtility.Parameters GetSimulatorStageParameters(this ref NetworkSettings settings)
 ```
 
-
-
-##### Parameters
+#### Parameters
 
 | Type            | Name     | Description |
 |-----------------|----------|-------------|
 | NetworkSettings | settings |             |
 
-##### Returns
+#### Returns
 
-| Type                        | Description                                                            |
-|-----------------------------|------------------------------------------------------------------------|
-| SimulatorUtility.Parameters | Returns the SimulatorUtility.Parameters values for the NetworkSettings |
+| Type                        | Description |
+|-----------------------------|-------------|
+| SimulatorUtility.Parameters |             |
 
-#### WithSimulatorStageParameters(ref NetworkSettings, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, UInt32)
+### WithSimulatorStageParameters(ref NetworkSettings, Int32, Int32, ApplyMode, Int32, Int32, Int32, Int32, Int32, Int32, Int32, UInt32)
 
+<div class="markdown level1 summary">
 
-Sets the SimulatorUtility.Parameters values for the NetworkSettings
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
-public static ref NetworkSettings WithSimulatorStageParameters(this ref NetworkSettings settings, int maxPacketCount, int maxPacketSize, int packetDelayMs = 0, int packetJitterMs = 0, int packetDropInterval = 0, int packetDropPercentage = 0, int fuzzFactor = 0, int fuzzOffset = 0, uint randomSeed = 0U)
+public static ref NetworkSettings WithSimulatorStageParameters(this ref NetworkSettings settings, int maxPacketCount, int maxPacketSize, ApplyMode mode, int packetDelayMs = 0, int packetJitterMs = 0, int packetDropInterval = 0, int packetDropPercentage = 0, int packetDuplicationPercentage = 0, int fuzzFactor = 0, int fuzzOffset = 0, uint randomSeed = 0U)
 ```
 
+#### Parameters
 
+| Type            | Name                        | Description |
+|-----------------|-----------------------------|-------------|
+| NetworkSettings | settings                    |             |
+| System.Int32    | maxPacketCount              |             |
+| System.Int32    | maxPacketSize               |             |
+| ApplyMode       | mode                        |             |
+| System.Int32    | packetDelayMs               |             |
+| System.Int32    | packetJitterMs              |             |
+| System.Int32    | packetDropInterval          |             |
+| System.Int32    | packetDropPercentage        |             |
+| System.Int32    | packetDuplicationPercentage |             |
+| System.Int32    | fuzzFactor                  |             |
+| System.Int32    | fuzzOffset                  |             |
+| System.UInt32   | randomSeed                  |             |
 
-##### Parameters
-
-| Type            | Name                 | Description          |
-|-----------------|----------------------|----------------------|
-| NetworkSettings | settings             |                      |
-| System.Int32    | maxPacketCount       | MaxPacketCount       |
-| System.Int32    | maxPacketSize        | MaxPacketSize        |
-| System.Int32    | packetDelayMs        | PacketDelayMs        |
-| System.Int32    | packetJitterMs       | PacketJitterMs       |
-| System.Int32    | packetDropInterval   | PacketDropInterval   |
-| System.Int32    | packetDropPercentage | PacketDropPercentage |
-| System.Int32    | fuzzFactor           | FuzzFactor           |
-| System.Int32    | fuzzOffset           | FuzzOffset           |
-| System.UInt32   | randomSeed           | RandomSeed           |
-
-##### Returns
+#### Returns
 
 | Type            | Description |
 |-----------------|-------------|
 | NetworkSettings |             |
-
-
-

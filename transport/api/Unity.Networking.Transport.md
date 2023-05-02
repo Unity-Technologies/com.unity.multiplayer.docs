@@ -1,185 +1,190 @@
+---  
+id: Unity.Networking.Transport  
+title: Unity.Networking.Transport  
 ---
-id: Unity.Networking.Transport
-title: Unity.Networking.Transport
----
 
+## 
 
-# Namespace Unity.Networking.Transport
+<div class="markdown level0 summary">
 
+</div>
 
+<div class="markdown level0 conceptual">
 
+</div>
 
+<div class="markdown level0 remarks">
 
+</div>
 
+## 
 
+### Unity.Networking.Transport.BaselibNetworkParameterExtensions
 
+<div class="section">
 
-### Classes
+</div>
 
-#### BaselibNetworkParameterExtensions
+### Unity.Networking.Transport.CommonNetworkParametersExtensions
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineParametersExtensions
 
-#### CommonNetworkParametersExtensions
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineStageCollection
 
+<div class="section">
 
-#### NetworkPipelineParametersExtensions
+</div>
 
+## 
 
+### Unity.Networking.Transport.BaselibNetworkInterface
 
+<div class="section">
 
-#### NetworkPipelineStageCollection
+</div>
 
+### Unity.Networking.Transport.BaselibNetworkParameter
 
-The network pipeline stage collection class
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.DataStreamReader
 
-### Structs
-
-#### BaselibNetworkInterface
-
-
-Default NetworkInterface implementation based on Unity's internal
-Baselib UDP sockets this is ensure to work on all platforms except for
-Unity's WebGL.
-
-
-
-#### BaselibNetworkParameter
-
-
-Network Parameters used to set queue and payload sizes for
-BaselibNetworkInterface
-
-
-
-#### DataStreamReader
-
+<div class="section">
 
 The `DataStreamReader` class is the counterpart of the
 `DataStreamWriter` class and can be be used to deserialize data which
 was prepared with it.
 
+</div>
 
+### Unity.Networking.Transport.DataStreamWriter
 
-#### DataStreamWriter
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.FragmentationPipelineStage
 
+<div class="section">
 
-#### FragmentationPipelineStage
+</div>
 
+### Unity.Networking.Transport.FragmentationPipelineStage.FragContext
 
+<div class="section">
 
+</div>
 
-#### FragmentationPipelineStage.FragContext
+### Unity.Networking.Transport.InboundRecvBuffer
 
+<div class="section">
 
-The fragmentation stage's internal context.
+</div>
 
+### Unity.Networking.Transport.InboundSendBuffer
 
+<div class="section">
 
-#### InboundRecvBuffer
+</div>
 
+### Unity.Networking.Transport.IPCNetworkInterface
 
-The inbound recv buffer
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.NetworkCompressionModel
 
-#### InboundSendBuffer
+<div class="section">
 
+</div>
 
-The inbound send buffer
+### Unity.Networking.Transport.NetworkConfigParameter
 
-
-
-#### IPCNetworkInterface
-
-
-The ipc network interface
-
-
-
-#### NetworkCompressionModel
-
-
-Used to provide Huffman compression when using packed DataStream
-functions
-
-
-
-#### NetworkConfigParameter
-
+<div class="section">
 
 The NetworkConfigParameter is used to set specific parameters that the
 driver uses.
 
+</div>
 
+### Unity.Networking.Transport.NetworkConnection
 
-#### NetworkConnection
+<div class="section">
 
+The NetworkConnection is a struct that hold all information needed by
+the driver to link it with a virtual connection. The NetworkConnection
+is a public representation of a connection.
 
+</div>
 
+### Unity.Networking.Transport.NetworkDataStreamParameter
 
-#### NetworkDataStreamParameter
-
+<div class="section">
 
 The NetworkDataStreamParameter is used to set a fixed data stream size.
 
+</div>
 
+### Unity.Networking.Transport.NetworkDriver
 
-#### NetworkDriver
-
+<div class="section">
 
 The NetworkDriver is an implementation of Virtual Connections over any
 transport.
 
 Basic usage:
 
-    var driver = NetworkDriver.Create();
+    var driver = new NetworkDriver.Create();
 
+</div>
 
+### Unity.Networking.Transport.NetworkDriver.Concurrent
 
-#### NetworkDriver.Concurrent
-
+<div class="section">
 
 The Concurrent struct is used to create an Concurrent instance of the
-NetworkDriver.
+GenericNetworkDriver.
 
+</div>
 
+### Unity.Networking.Transport.NetworkEndPoint
 
-#### NetworkEndPoint
+<div class="section">
 
+</div>
 
-Describes a raw network endpoint (typically IP and port number).
+### Unity.Networking.Transport.NetworkEvent
 
+<div class="section">
 
+</div>
 
-#### NetworkEvent
+### Unity.Networking.Transport.NetworkInterfaceEndPoint
 
+<div class="section">
 
-Represents an event on a connection.
+</div>
 
+### Unity.Networking.Transport.NetworkInterfaceSendHandle
 
+<div class="section">
 
-#### NetworkInterfaceEndPoint
+</div>
 
+### Unity.Networking.Transport.NetworkPacketReceiver
 
-
-
-#### NetworkInterfaceSendHandle
-
-
-A handle to data that's going to be sent on an interface.
-
-
-
-#### NetworkPacketReceiver
-
+<div class="section">
 
 The NetworkPacketReceiver is an interface for handling received packets,
 needed by the INetworkInterface It either can be used in two main
@@ -194,242 +199,223 @@ scenarios:
     should use AppendPacket(IntPtr, ref NetworkInterfaceEndPoint, Int32,
     NetworkPacketReceiver.AppendPacketMode) with None (default)
 
+</div>
 
+### Unity.Networking.Transport.NetworkParameterConstants
 
-#### NetworkParameterConstants
-
+<div class="section">
 
 Default NetworkParameter Constants.
 
+</div>
 
+### Unity.Networking.Transport.NetworkPipeline
 
-#### NetworkPipeline
+<div class="section">
 
+</div>
 
-The network pipeline
+### Unity.Networking.Transport.NetworkPipelineContext
 
+<div class="section">
 
+</div>
 
-#### NetworkPipelineContext
+### Unity.Networking.Transport.NetworkPipelineParams
 
+<div class="section">
 
-The network pipeline context
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineStage
 
+<div class="section">
 
-#### NetworkPipelineParams
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineStageId
 
-The network pipeline params
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.NetworkSendInterface
 
-#### NetworkPipelineStage
+<div class="section">
 
+</div>
 
-The network pipeline stage
+### Unity.Networking.Transport.NetworkSendQueueHandle
 
+<div class="section">
 
+</div>
 
-#### NetworkPipelineStageId
+### Unity.Networking.Transport.NetworkSettings
 
-
-
-
-#### NetworkSendInterface
-
-
-The network send interface used to pass around function pointers to the
-actual INetworkInterface
-
-
-
-#### NetworkSendQueueHandle
-
-
-The network send queue handle
-
-
-
-#### NetworkSettings
-
+<div class="section">
 
 A list of the parameters that describe the network configuration.
 
+</div>
 
+### Unity.Networking.Transport.NullPipelineStage
 
-#### NullPipelineStage
+<div class="section">
 
+</div>
 
-The NullPipelineStage is the default pipeline stage and used to send
-packets unreliably
+### Unity.Networking.Transport.QueuedSendMessage
 
+<div class="section">
 
+</div>
 
-#### QueuedSendMessage
+### Unity.Networking.Transport.ReliableSequencedPipelineStage
 
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.SimulatorPipelineStage
 
-#### ReliableSequencedPipelineStage
+<div class="section">
 
+</div>
 
-The ReliableSequencedPipelineStage is used to send packets reliably and
-retain the order in which they are sent. This PipelineStage has a
-hardcoded WindowSize of 32 inflight packets and will drop packets if its
-unable to track them.
+### Unity.Networking.Transport.SimulatorPipelineStageInSend
 
+<div class="section">
 
+</div>
 
-#### SimulatorPipelineStage
+### Unity.Networking.Transport.TransportFunctionPointer-1
 
+<div class="section">
 
-The SimulatorPipelineStage could be added on either the client or server
-to simulate bad network conditions. It's best to add it as the last
-stage in the pipeline, then it will either drop the packet or add a
-delay right before it would go on the wire.
+</div>
 
+### Unity.Networking.Transport.UnreliableSequencedPipelineStage
 
+<div class="section">
 
-#### SimulatorPipelineStageInSend
+</div>
 
+### Unity.Networking.Transport.WebSocketNetworkInterface
 
-The simulator pipeline stage in send
+<div class="section">
 
+</div>
 
+## 
 
-#### TransportFunctionPointer\<T\>
+### Unity.Networking.Transport.INetworkInterface
 
+<div class="section">
 
-Represents a wrapper around burst compatible function pointers in a
-portable way
+</div>
 
+### Unity.Networking.Transport.INetworkParameter
 
-
-#### UnreliableSequencedPipelineStage
-
-
-The UnreliableSequencedPipelineStage is used to send unreliable packets
-in order.
-
-
-
-### Interfaces
-
-#### INetworkInterface
-
-
-Interface for implementing a low-level networking interface see
-BaselibNetworkInterface as an example
-
-
-
-#### INetworkParameter
-
+<div class="section">
 
 The interface for NetworkParameters
 
+</div>
 
+### Unity.Networking.Transport.INetworkPipelineStage
 
-#### INetworkPipelineStage
+<div class="section">
 
+</div>
 
-The network pipeline stage interface
+### Unity.Networking.Transport.IValidatableNetworkParameter
 
+<div class="section">
 
+Interface for adding validation capabilities to the INetworkParameter.
 
-### Enums
+</div>
 
-#### NetworkConnection.State
+## 
 
+### Unity.Networking.Transport.NetworkConnection.State
 
-Connection States
+<div class="section">
 
+ConnectionState enumerates available connection states a connection can
+have.
 
+</div>
 
-#### NetworkEvent.Type
+### Unity.Networking.Transport.NetworkEvent.Type
 
+<div class="section">
 
-The different types of events that can be returned for a connection.
+NetworkEvent.Type enumerates available network events for this driver.
 
+</div>
 
+### Unity.Networking.Transport.NetworkFamily
 
-#### NetworkFamily
+<div class="section">
 
+NetworkFamily indicates what type of underlying medium we are using.
 
-Indicates the protocol family of the address (analogous of AF\_\* in
-sockets API).
+</div>
 
+### Unity.Networking.Transport.NetworkPacketReceiver.AppendPacketMode
 
+<div class="section">
 
-#### NetworkPacketReceiver.AppendPacketMode
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineStage.Requests
 
-Permits choosing between two ways of appending packets: via a copy or
-not.
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.SendHandleFlags
 
-#### NetworkPipelineStage.Requests
+<div class="section">
 
+</div>
 
-The requests enum
+## 
 
+### Unity.Networking.Transport.NetworkPipelineStage.InitializeConnectionDelegate
 
+<div class="section">
 
-#### SendHandleFlags
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineStage.ReceiveDelegate
 
-The send handle flags enum
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.NetworkPipelineStage.SendDelegate
 
-### Delegates
+<div class="section">
 
-#### NetworkPipelineStage.InitializeConnectionDelegate
+</div>
 
+### Unity.Networking.Transport.NetworkSendInterface.AbortSendMessageDelegate
 
-The initialize connection delegate
+<div class="section">
 
+</div>
 
+### Unity.Networking.Transport.NetworkSendInterface.BeginSendMessageDelegate
 
-#### NetworkPipelineStage.ReceiveDelegate
+<div class="section">
 
+</div>
 
-The receive delegate
+### Unity.Networking.Transport.NetworkSendInterface.EndSendMessageDelegate
 
+<div class="section">
 
-
-#### NetworkPipelineStage.SendDelegate
-
-
-The send delegate
-
-
-
-#### NetworkSendInterface.AbortSendMessageDelegate
-
-
-Will be invoked from the lower level library if sending a message was
-aborted.
-
-
-
-#### NetworkSendInterface.BeginSendMessageDelegate
-
-
-Invoked from the lower level library at the beginning of the message
-sending routine.
-
-
-
-#### NetworkSendInterface.EndSendMessageDelegate
-
-
-Invoked from the lower level library at the end of the message sending
-routine.
-
-
-
-
-
+</div>
