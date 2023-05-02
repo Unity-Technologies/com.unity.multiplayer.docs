@@ -5,9 +5,21 @@ title: Sample projects
 
 The Unity Transport package comes with a `Samples` folder containing simple assembly definitions and associated scenes that illustrate the basic functionality of the Unity Transport package library. These sample projects include:
 
-- [Ping](#ping)
-- [Pipeline](#pipeline)
-- [RelayPing](#relayping)
+## SimpleClientServer
+
+The [SimpleClientServer](workflow-client-server-udp.md) sample covers all aspects of the Unity Transport package and helps you create a sample project that highlights how to use the API to:
+
+- Configure the transport
+- Establish a connection
+- Send data
+- Receive data
+- Close a connection
+
+The goal is to make a remote "add" function. The flow will be: a client connects to the server, and sends a number. This number is then received by the server that adds another number to it and sends it back to the client. The client, upon receiving the number, closes the connection.
+
+## JobifiedClientServer
+
+Continuing from the the [SimpleClientServer](#simpleclientserver) sample, the [JobifiedClientServer](workflow-client-server-jobs.md) sample walks you through creating a client and server that use jobs. Using jobs allows you to take advantage of parallel code execution.
 
 ## Ping
 

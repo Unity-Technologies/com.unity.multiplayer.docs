@@ -2,6 +2,8 @@
 id: secure-connection
 title: Create a secure client and server
 ---
+<!-- Called "Encrypted communications" in UTP package docs -->
+
 You can configure the Unity Transport package to encrypt the connection between the server and clients while ensuring the authenticity of both.
 
 :::note
