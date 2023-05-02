@@ -1,89 +1,92 @@
 ---
 id: secure-connection
-title: Create secure client and server
+title: Create a secure client and server
 ---
+You can configure the Unity Transport package to encrypt the connection between the server and clients while ensuring the authenticity of both.
 
-You can configure the Unity Transport package to encrypt the server-client connection while ensuring the authenticity of both the server and the client.
-
-Secure connections are available with Editor versions 2020.3 (starting at 2020.3.34), 2021.3, and 2022.1 and above.
+:::note
+Secure connections are available in Unity Editor versions 2020.3 (starting at 2020.3.34), 2021.3, and 2022.1 and above.
+:::
 
 ## Server authentication
 
-:::warning Warning
-This example uses hardcoded certificates to illustrate the process better. However, in an actual deployment, you should keep the server certificates separate from the client builds. You can do this by keeping the server certificates on a separate assembly or by loading the server certificates from a file on the server.
+This section shows using encrypted communications with Unity Transport.
+
+:::warning
+This example uses hardcoded certificates to make understanding the process easier. In a real deployment, you should keep the server certificates separate from client builds. You can separate server and client certificates by using separate assemblies or loading them from a file on the server.
 :::
 
-### High level authentication process
+### High-level authentication process
 
-In this configuration, the server provides a certificate to the client (`certificate`) to prove its identity. The client uses its own root certificate (`caCertificate`) to validate the certificate from the server.
+In this configuration, the server provides a certificate to the client (certificate) to prove its identity. The client compares the server’s certificate against its own root certificate (`caCertificate`) to validate the server’s identity.
 
 :::note
 Root certificates are also sometimes referred to as CA certificates.
 :::
 
-After confirming its identity, the server uses the private key (`privateKey`) to establish a secure communication channel.
+After the client confirms the server's identity, the server uses the private key (`privateKey`) to establish a secure communication channel.
 
 ### Requirements
 
-You need the following before you can use the client-server secure workflow:
+To use the secure communication workflow, you need the following:
 
 - A valid certificate
 - The root certificate used to sign the certificate
 - The private key used to create the certificate
 
-You can use OpenSSL to generate these if you don't have them. The procedure is detailed hereafter.
+If you don't have these, you can use OpenSSL to generate them. The following section explains how to use OpenSSL to generate certificates.
 
-### Generating the required keys and certificates with OpenSSL
+### Generate keys and certificates
 
-It is assumed that you have [OpenSSL](https://www.openssl.org/) installed on your machine.
+This section explains how to use OpenSSL to generate a valid certificate (a requirement for using encrypted connections). Before continuing, ensure you have [OpenSSL](https://www.openssl.org/) installed on your machine.
 
 #### Generate the root certificate
 
-First, generate a root private key. You will need it later to generate the root certificate.
+Generate a root private key. You need the root private key to generate the root certificate.
 
-```shell
+```csharp
 openssl genrsa -out clientPrivateKeyForRootCA.pem 2048
 ```
 
-Now that you have a root private key, you can generate the root certificate.
+Use the root private key to generate the root certificate.
 
-```shell
+```csharp
 openssl req -x509 -new -nodes -key clientPrivateKeyForRootCA.pem -sha256 -days 1095 -out myGameClientCA.pem
 ```
 
-You will be prompted to answer several questions. Most of the answers aren't that important within the present context. It is, however, useful to use a common name that makes sense for you to identify this certificate amongst others. Ideally, you would want to use your domain name if you have one.
+OpenSSL will prompt you to answer several questions. Most of the answers aren't that important within the present context. It's useful to use a common name that makes sense for you to identify this certificate, amongst others. Ideally, you want to use a domain name you own (if you have one).
 
 #### Generate the root-signed certificate to use with the server
 
-Now, create a private key for the server.
+Create a private key for the server.
 
-```shell
+```csharp
 openssl genrsa -out myGameServerPrivateKey.pem 2048
 ```
 
-You can use this private key to generate a certificate signing request.
+Use the private key to generate a certificate signing request.
 
-```shell
+```csharp
 openssl req -new -key myGameServerPrivateKey.pem -out myGameServerCertificateSigningRequest.pem
 ```
 
-You'll be prompted with the same questions you answered when generating the root certificate. The answers are no more important (except for the common name: it's recommended to use the server's hostname).
+OpenSSL will prompt you with the same questions you answered when you generated the root certificate. The answers are no more important. However, we recommend you use the server's hostname.
 
-Finally, you can create the certificate file the server will use to authenticate itself using the generated files:
+Using the different files generated, create the certificate file the server will use to authenticate itself:
 
-```shell
+```csharp
 openssl.exe x509 -req -in myGameServerCertificateSigningRequest.pem -CA myGameClientCA.pem -CAkey clientPrivateKeyForRootCA.pem -CAcreateserial -out myGameServerCertificate.pem -days 365 -sha256
 ```
 
-You should have now generated a total of five files. You only need to use the following three: `myGameClientCA.pem`, `myGameServerCertificate.pem`, and `myGameServerPrivateKey.pem`.
+You should now have five generated files. Out of these, you only need the following three:
 
-- On the client side, you need the content of the `myGameClientCA.pem` for the `caCertificate` parameter.
-- On the server end, you need the contents of `myGameServerCertificate.pem` for the `certificate` parameter.
-- On the server end, you need the contents of `myGameServerPrivateKey.pem` for the `privateKey` parameter.
+- `myGameClientCA.pem` - You need the content of the client CA to use client-side as the `caCertificate` parameter.
+- `myGameServerCertificate.pem` - You need the server certificate to use server-side for the certificate parameter.
+- `myGameServerPrivateKey.pem` - You need the server private key to use server-side for the `privateKey` parameter.
 
 ### Boilerplate file holding the secure parameters
 
-Create a `SecureParameters.cs` script file to hold your certificates and the private key. Place it in the same folder as the minimal server and minimal client scripts. Then, declare the `SecureParameters` static class and the boilerplate code that will hold your secure information:
+When you have all the requirements, create a `SecureParameters.cs` script file to hold your certificates and the private key. Place it in the same folder as the minimal server and minimal client scripts. Then declare the `SecureParameters` static class and the boilerplate code to hold the secure information:
 
 ```csharp
 public static class SecureParameters
@@ -106,11 +109,13 @@ public static class SecureParameters
 *** Contents of myGameServerPrivateKey.pem ***
 -----END RSA PRIVATE KEY-----";
 }
-```  
+```
 
-### Creating the secure server
+### Create a secure server
 
-Starting from the minimal server sample code, create a `NetworkSettings` object in the `Start` method and configure it as follows:
+This section shows creating a secure server. It uses the simple server code example as a starting point.
+
+Start by creating a `NetworkSettings` object in the `Start` method and configure it as follows:
 
 ```csharp
 void Start ()
@@ -130,11 +135,13 @@ When creating the `NetworkDriver`, pass in this `NetworkSettings` object:
 m_Driver = NetworkDriver.Create(settings); 
 ```
 
-That's it for the server!
+That’s all you need to do to enable secure communication server-side.
 
-### Creating a secure client
+### Create a secure client
 
-The secure client is similar to the secure server. The only difference is in how the `NetworkSettings` object is configured.
+This section shows creating a secure client. It uses the simple client code example as a starting point.
+
+The secure client is similar to the secure server. The only difference is in how you configure the NetworkSettings object.
 
 ```csharp
 void Start ()
@@ -151,6 +158,6 @@ void Start ()
 
 You should now have a secure connection between the server and its clients!
 
-:::note 
-If you create clients for multiple platforms, it's important for all clients to continue using the same root certificate if they communicate with the same server.
+:::warning
+If you create clients for multiple platforms, all clients must use the same root certificate if they communicate with the same server.
 :::

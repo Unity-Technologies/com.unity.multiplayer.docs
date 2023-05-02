@@ -1,98 +1,88 @@
+---  
+id: Unity.Networking.Transport.NetworkSendQueueHandle  
+title: Unity.Networking.Transport.NetworkSendQueueHandle  
 ---
-id: Unity.Networking.Transport.NetworkSendQueueHandle
-title: Unity.Networking.Transport.NetworkSendQueueHandle
----
 
+<div class="markdown level0 summary">
 
-# Struct NetworkSendQueueHandle
+</div>
 
+<div class="markdown level0 conceptual">
 
-The network send queue handle
+</div>
 
-
-
-
-
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
-
 
 ``` lang-csharp
 public struct NetworkSendQueueHandle
 ```
 
+## 
 
+### FromHandle()
 
-### Methods
+<div class="markdown level1 summary">
 
-#### FromHandle()
+</div>
 
+<div class="markdown level1 conceptual">
 
-Create from the internal handle
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public NativeQueue<QueuedSendMessage>.ParallelWriter FromHandle()
 ```
 
-
-
-##### Returns
+#### Returns
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| NativeQueue.ParallelWriter\<\> |             |
-
-
-
+| NativeQueue.ParallelWriter&lt;&gt; |             |

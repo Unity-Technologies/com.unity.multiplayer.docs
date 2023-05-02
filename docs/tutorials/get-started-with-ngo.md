@@ -98,7 +98,7 @@ You can remove the Player GameObject from the scene because you assign this netw
 :::
 
 8. Select **NetworkManager**.
-9. With NetworkManager selected, locate the **PlayerPrefabs** field in the **Inspector** tab.
+9. With NetworkManager selected, locate the **PlayerPrefab** field in the **Inspector** tab.
 
 ![](../../static/img/get-started-ngo/ngo-9.png)
 
@@ -221,7 +221,7 @@ Instead of using the command line helper script, you can use Multiplayer Play Mo
 
 After the client and server spawn, a log displays in the **Console** of the client and server sending RPC messages to each other.
 
-The client kicks off the exchange in its `Update` call for the first time with a counter value of `0`. It then makes an RPC call to the server with the next value. The server receives this and calls the client. The Console displays the following for the server and client respectively.
+The client kicks off the exchange in its `OnNetworkSpawn` call for the first time with a counter value of `0`. It then makes an RPC call to the server with the next value. The server receives this and calls the client. The Console displays the following for the server and client respectively.
 
 ```log
 Server Received the RPC #0 on NetworkObject #1

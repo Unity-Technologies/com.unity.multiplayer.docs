@@ -60,7 +60,7 @@ function Footer() {
         {links && links.length > 0 && <div className="row footer__links">
             {links.map((linkItem, i) => <div key={i} className="col footer__col">
                 {linkItem.title != null ? <h4 className="footer__title">{linkItem.title}</h4> : null}
-                {linkItem.items != null && Array.isArray(linkItem.items) && linkItem.items.length > 0 ? <ul className="footer__items">
+                {linkItem.items != null && Array.isArray(linkItem.items) && linkItem.items.length > 0 ? <ul className={styles.footer__items}>
                     {linkItem.items.map((item, key) => item.html ? <li key={key} className="footer__item" // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{

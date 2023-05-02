@@ -1,183 +1,173 @@
+---  
+id: Unity.Networking.Transport.BaselibNetworkParameter  
+title: Unity.Networking.Transport.BaselibNetworkParameter  
 ---
-id: Unity.Networking.Transport.BaselibNetworkParameter
-title: Unity.Networking.Transport.BaselibNetworkParameter
----
 
+<div class="markdown level0 summary">
 
-# Struct BaselibNetworkParameter
+</div>
 
+<div class="markdown level0 conceptual">
 
-Network Parameters used to set queue and payload sizes for
-BaselibNetworkInterface
+</div>
 
-
-
-
-
+<div classs="implements">
 
 ##### Implements
 
-
+<div>
 
 INetworkParameter
 
+</div>
 
+<div>
 
+IValidatableNetworkParameter
 
+</div>
 
+</div>
+
+<div class="inheritedMembers">
 
 ##### Inherited Members
 
+<div>
 
+ValueType.Equals(Object)
 
-System.ValueType.Equals(System.Object)
+</div>
 
+<div>
 
+ValueType.GetHashCode()
 
+</div>
 
+<div>
 
-System.ValueType.GetHashCode()
+ValueType.ToString()
 
+</div>
 
+<div>
 
+Object.Equals(Object, Object)
 
+</div>
 
-System.ValueType.ToString()
+<div>
 
+Object.GetType()
 
+</div>
 
+<div>
 
+Object.ReferenceEquals(Object, Object)
 
-System.Object.Equals(System.Object, System.Object)
+</div>
 
+</div>
 
+##### **Namespace**: System.Dynamic.ExpandoObject
 
-
-
-System.Object.GetType()
-
-
-
-
-
-System.Object.ReferenceEquals(System.Object, System.Object)
-
-
-
-
-
-###### **Namespace**: Unity.Networking.Transport
-
-###### **Assembly**: Transport.dll
+##### **Assembly**: transport.dll
 
 ##### Syntax
 
-
 ``` lang-csharp
-public struct BaselibNetworkParameter : INetworkParameter
+public struct BaselibNetworkParameter : INetworkParameter, IValidatableNetworkParameter
 ```
 
+## 
 
+### maximumPayloadSize
 
-### Fields
+<div class="markdown level1 summary">
 
-#### maximumPayloadSize
+</div>
 
+<div class="markdown level1 conceptual">
 
-The maximum payload size.
+</div>
 
-
-
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public uint maximumPayloadSize
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type          | Description |
 |---------------|-------------|
 | System.UInt32 |             |
 
-#### receiveQueueCapacity
+### receiveQueueCapacity
 
+<div class="markdown level1 summary">
 
-The maximum number of receiving packets that the BaselibNetworkInterface
-can process in a single update iteration.
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int receiveQueueCapacity
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-#### sendQueueCapacity
+### sendQueueCapacity
 
+<div class="markdown level1 summary">
 
-The maximum number of sending packets that the BaselibNetworkInterface
-can process in a single update iteration.
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public int sendQueueCapacity
 ```
 
-
-
-##### Field Value
+#### Field Value
 
 | Type         | Description |
 |--------------|-------------|
 | System.Int32 |             |
 
-### Methods
+## 
 
-#### Validate()
+### Validate()
 
+<div class="markdown level1 summary">
 
+</div>
 
+<div class="markdown level1 conceptual">
 
+</div>
 
-
-
-##### Declaration
-
+#### Declaration
 
 ``` lang-csharp
 public bool Validate()
 ```
 
-
-
-##### Returns
+#### Returns
 
 | Type           | Description |
 |----------------|-------------|
@@ -185,11 +175,14 @@ public bool Validate()
 
 ### Implements
 
-
+<div>
 
 INetworkParameter
 
+</div>
 
+<div>
 
+IValidatableNetworkParameter
 
-
+</div>
