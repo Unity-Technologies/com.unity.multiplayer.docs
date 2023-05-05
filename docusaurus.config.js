@@ -224,7 +224,8 @@ module.exports = {
         },
         // Multiplayer Tools Dropdown
         {
-          to: "install-tools",
+          type: "dropdown",
+          docId: "install-tools",
           label: "Multiplayer Tools",
           position: "left",
           docsPluginId: "tools",
