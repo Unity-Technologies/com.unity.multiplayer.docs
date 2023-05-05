@@ -13,7 +13,7 @@ Fixed `Failed to load type initialization for assembly Unity.Multiplayer.Tools.M
 
 ### Network Scene Visualization
 
-This release adds the Network Scene Visualization to the Multiplayer Tools Package. This tool allows users to visualize networking information (like bandwidth and ownership) on a per-object basis in the scene view using a number of visualizations, including mesh shading and a text overlay.
+This release adds the [Network Scene Visualization](../../tools/network-scene-vis.md) to the Multiplayer Tools Package. This tool allows users to visualize networking information (like bandwidth and ownership) on a per-object basis in the scene view using a number of visualizations, including mesh shading and a text overlay.
 
 ### Runtime Net Stats Monitor
 
