@@ -2,42 +2,23 @@
 id: netscenevis
 title: Network Scene Visualization
 ---
-<!-- README location: https://github.com/Unity-Technologies/com.unity.multiplayer.tools/blob/develop/NetVis/readme.org -->
 
-Network Scene Visualization (NetSceneVis) is a tool included in the Multiplayer Tools package that allows users to visualize networking information (like bandwidth and ownership) on a per-object basis in the scene view using a number of visualizations, including mesh shading and a text overlay.
+The Network Scene Visualization (NetSceneVis) is a powerful, user-friendly tool included in the Multiplayer Tools package to help you visualize and debug network communication on a per-object basis in the scene view of your project with visualizations such as mesh shading and text overlay.
 
-### Prerequisites
-- git
-- Unity 2023.2.0a11 or later
-  - Unity 2023.2 is required for NetSceneVis overall
-  - Unity 2023.2.0a11 is required for NetSceneVis mesh shading in particular, as ~rpfoundation/object-id-render-request~ landed in 2023.2.0a11
-- A recent version of the Multiplayer Tools package develop branch
+When a game session is started, network messages contain information about the game state, such as the position of game objects and player actions. The NetSceneVis tool intercepts these network messages to visually display them in the Unity Editor. Each player is represented by a colored sphere, and lines show the network messages being sent between the players. The state of each GameObject in the scene, including their position, rotation, and any other relevant data is also shown.
 
-### Using NetSceneVis in an existing NGO project
-In order to use NetSceneVis in an existing NGO project, you need to install a recent copy of the develop branch of the Multiplayer Tools package.
+The visualizations are updated in real-time as the network messages are sent and received, showing the game state synchronization across the network.
 
-### Installing the Multiplayer Tools package from a git URL
-Instructions for installing a package from a git URL can be found [[https://docs.unity3d.com/Manual/upm-ui-giturl.html][here]. The URL for the Multiplayer Tools package is https://github.com/Unity-Technologies/com.unity.multiplayer.tools.
+NetSceneVis can help diagnose issues related to network latency, packet loss, and other network-related issues that may affect the player experience in your multiplayer games. This tool can help optimize your network code to ensure that your game runs smoothly for all players.
 
-### Installing the Multiplayer Tools package from a local git clone
-Instructions for installing a package from a local folder can be found [[https://docs.unity3d.com/Manual/upm-ui-local.html][here]. A local clone of the Multiplayer Tools package can be created using the following git command:
-#+BEGIN_SRC
-git clone https://github.com/Unity-Technologies/com.unity.multiplayer.tools.git
-#+END_SRC
+## Requirements
+- Unity 2023.2
+:::note
+Unity 2023.2.0a11 is specifically required for NetSceneVis mesh shading
+:::
+- Up-to-date Multiplayer Tools package, see [Install the Multiplayer Tools Package](./install-tools.md).
 
-### After Installing
-After installing a recent copy of the develop branch of the Multiplayer Tools package, the Network Scene Visualization overlay should now be available in the scene view.
+## Using Network Scene Visualization
 
-### Using NetSceneVis in the EcoSim Test Project
-A test project (called EcoSim) containing a mock multiplayer game is available for testing NetSceneVis, and [[https://github.com/Unity-Technologies/Multiplayer-Tools-Sandbox/blob/main/TestProjects/EcoSim/readme.org][includes a readme file with setup instructions]].
+After [installing the Multiplayer Tools package](./install-tools.md), the Network Visualization toolbar is available in the scene view of the Unity Editor. This toolbar includes the options to visualize networking information per-object of your game.
 
-The Multiplayer Tools Sandbox and the tools package can be quickly installed in a directory using the following commands:
-#+BEGIN_SRC
-git clone https://github.com/Unity-Technologies/Multiplayer-Tools-Sandbox.git
-git clone https://github.com/Unity-Technologies/com.unity.multiplayer.tools.git
-#+END_SRC
-
-The EcoSim test project uses the MockNgoAdapter to generate mock network data based on the actions of some simulated animals without requiring user input, and includes a number of different projects for testing NetSceneVis using different rendering backends. After cloning the Multiplayer Tools Sandbox repository alongside the Multiplayer Tools package as described above, you can open any of the EcoSim projects to test NetSceneVis.
-
-## Using NetSceneVis
-With a recent version of the tools package develop branch installed in a project using either NGO or the MockNgoAdapter, the "Network Visualization" toolbar should now be available in the scene view. This toolbar includes options that allow the user to visualize networking information (like bandwidth and ownership) on a per-object in the scene view using a number of visualizations, including mesh shading and a text overlay.
