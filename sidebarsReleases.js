@@ -20,7 +20,7 @@ module.exports = {
                     "items": [
                         {
                             type: "doc",
-                            id: "tools/tools-1-1-0",
+                            id: "tools/tools-2-0-0",
                         },
                         {
                             type: "doc",
