@@ -233,7 +233,7 @@ module.exports = {
           items: [
             {
               type: "doc",
-              docId: "tools/tools-1-0-0",
+              docId: "tools/tools-2-0-0",
               label: "Release Notes",
               docsPluginId: "releases",
             },
