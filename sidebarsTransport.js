@@ -32,6 +32,10 @@ module.exports = {
             ],
         },
         {
+            "type": "doc",
+            "id": "cross-play",
+        },
+        {
             "collapsed": true,
             "type": "category",
             "label": "Best practices",
@@ -72,6 +76,14 @@ module.exports = {
                 },
             ],
         },
+        {
+            "type": "doc",
+            "id": "utp-2-faq",
+        },
+        {
+            "type": "doc",
+            "id": "mtt-terms"
+          },
     ],
     "api": [
         {

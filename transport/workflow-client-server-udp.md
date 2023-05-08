@@ -12,7 +12,7 @@ This guide walks you through using the Unity Transport package to create a simpl
 5. The client receives the sum.
 6. The client disconnects from the server and quits.
 
-It shows using the Unity Transport API to:
+It shows how to use the Unity Transport API to:
 
 - Configure
 - Connect

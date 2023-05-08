@@ -1,6 +1,6 @@
 ---
 id: pipelines
-title: Use pipelines
+title: Pipeline use
 ---
 
 Pipelines are a core functionality of Unity Transport that allows selectively adding layers of functionality on top of the standard unreliable datagrams that UTP provides by default.
