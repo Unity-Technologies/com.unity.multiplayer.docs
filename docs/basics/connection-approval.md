@@ -55,7 +55,7 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
     response.CreatePlayerObject = true;
 
     // The Prefab hash value of the NetworkPrefab, if null the default NetworkManager player Prefab is used
-    response.PlayerPrefabHash = null; //Is this line still true?
+    response.PlayerPrefabHash = null;
 
     // Position to spawn the player object (if null it uses default of Vector3.zero)
     response.Position = Vector3.zero;
