@@ -25,7 +25,7 @@ You must register a Network Prefab instance with a `NetworkManager` via the `Net
 The two steps to registering a network Prefab with a `NetworkManager`:
 
 1. Create a Network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`
-2. Add your Network Prefab to the Network Prefabs list poperty of a `NetworkManager`.
+2. Add your Network Prefab to the Network Prefabs List that's associated with a `NetworkManager`.
 
 ### Spawning a Network Prefab (Overview)
 
