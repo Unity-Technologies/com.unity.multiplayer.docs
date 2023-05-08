@@ -243,7 +243,9 @@ Let's look at the two types of permissions defined within [NetworkVariablePermis
         Owner
     }
 ```
-
+:::important
+Owner writer permissions are owner-only.
+:::
 
 ### Read Permissions
 
