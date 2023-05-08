@@ -243,9 +243,7 @@ Let's look at the two types of permissions defined within [NetworkVariablePermis
         Owner
     }
 ```
-:::important
-Since Netcode for GameObjects uses a server authoritative model, the server will always have read or write permissions to any `NetworkVariable`.  As an example, if you set both the read and write permissions to `Owner` the server can still read and write to the `NetworkVariable`.
-:::
+
 
 ### Read Permissions
 
