@@ -123,10 +123,12 @@ To find your own player object just pass `NetworkManager.Singleton.LocalClientId
 
 ## Network Prefabs
 
-Network Prefabs (NetworkPrefabs) are Prefabs that contain a GameObject with a NetworkObject component. As an example, if you wanted to create a Prefab to be the default player Prefab, then you would create a Prefab that at the root GameObject included a NetworkObject component and any additional player specific NetworkBehaviour components. You can then assign that Prefab to a `ScriptableObject` Player Prefab property to use when a player connects and is approved. Each connected player has a unique instance spawned on all connected clients (including the server).
+Network Prefabs are registered to a `NetworkPrefabsList` object (a type of `ScriptableObject`). By default, a Default Prefabs List containing every Network Prefab in your project.
+
+However, when you want to limit which prefabs are available (for example, to reduce memory usage), you can disable this behavior in **Project Settings** > **Netcode For GameObjects** > **Project Settings**. You can also manually create a `NetworkPrefabsList` by right-clicking in the assets view and selecting **Create** > **Netcode** > **Network Prefabs List** and adding your prefabs to it. That prefab list can then be assigned to a `NetworkManager` to allow that `NetworkManager` to create those prefabs.
 
 :::warning
 
-You can only have one NetworkObject at the root of a Prefab. Don't create Prefabs with nested NetworkObjects!
+You can only have one `NetworkObject` at the root of a Prefab. Don't create Prefabs with nested `NetworkObjects`!
 
 :::

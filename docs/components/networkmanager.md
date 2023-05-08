@@ -9,6 +9,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 
 - **LogLevel**:  Sets the network logging level 
 - **PlayerPrefab**:  When a Prefab is assigned, the Prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
+- **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network Prefab override per registered network Prefab here.
 - **Protocol Version**: Set this value to help distinguish between builds when the most current build has new assets that can cause issues with older builds connecting.
 - **Network Transport**: Where your network specific settings and transport type is set.  This field accepts any INetworkTransport implementation.  However, unless you have unique transport specific needs UnityTransport is the recommended transport to use with Netcode for GameObjects.
 - **Tick Rate**: This value controls the network tick update rate.
@@ -28,6 +29,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (that is, `NetworkManager.IsListening == true`).  A good general "rule of thumb" is to not attempt to access the below sub-systems before starting the `NetworkManager`, otherwise they won't yet be initialized.
 :::
 
+- [NetworkManager.PrefabHandler](../advanced-topics/object-pooling.md): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
 - [NetworkManager.SceneManager](../basics/scenemanagement/using-networkscenemanager.md): When scene management is enabled, this is used to load and unload scenes, register for scene events, and other scene management related actions.
 - [NetworkManager.SpawnManager](../basics/object-spawning.md): This handles NetworkObject spawn related functionality.
 - [NetworkManager.NetworkTimeSystem](../advanced-topics/networktime-ticks.md): a synchronized time that can be used to handle issues with latency between a client and the server.
