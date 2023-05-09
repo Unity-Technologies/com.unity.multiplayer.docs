@@ -40,8 +40,12 @@ In order to create a Network Prefab that can be used as an in-scene placed `Netw
 1. In the scene you wish to create the instance (or any open scene) create an empty GameObject and add a `NetworkObject` component to it.
 2. Add any other `NetworkBehaviour`s required by your in-scene placed `NetworkObject`.
 3. Drag and drop the newly created GameObject into your Prefab (or associated) folder.
-4. Delete the GameObject instance in your scene (this is *required* to get a proper GlobalObjectIdHash value assigned)
+4. Delete the GameObject instance in your scene (this is *required* to get a proper `GlobalObjectIdHash` value assigned)
 5. Finally, drag and drop an instance of your newly created Network Prefab into the scene you wish to have an instance of your in-scene placed `NetworkObject`.
+
+:::note
+You may need to deactivate **Enter Play Mode Options** if your `NetworkBehaviour` components do not spawn.
+:::
 
 ## Using In-Scene Placed NetworkObjects
 Since there are additional complexities involved with in-scene placed `NetworkObject`s, some use cases are more easily achieved through dynamically spawned `NetworkObjects` or through a combination of both types. While Netcode for GameObjects has made many improvements with in-scene placed `NetworkObjects`, there are still special edge case scenarios that you have to take into consideration.
@@ -93,7 +97,7 @@ However, there is another way to accomplish the same thing while keeping a clear
 :::
 
 Using this approach allows you to:
-1. Re-use the same single spawn manager with any other Network Prefab registered with the `NetworkManager`
+1. Re-use the same single spawn manager with any other Network Prefab registered with a `NetworkPrefabsList`
 2. Not worry about the complexities involved with treating an in-scene placed `NetworkObject` like a dynamically spawned one.
 
 [See a Dynamic Spawning (non-pooled) "Hybrid Approach" Example Here](../object-spawning#dynamic-spawning-non-pooled)

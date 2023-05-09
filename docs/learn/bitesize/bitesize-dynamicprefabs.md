@@ -24,7 +24,7 @@ There's also the **APIPlayground**, which serves as an API playground that imple
 
 ### Scene 00_Preloading Dynamic Prefabs
 
-The `00_Preloading Dynamic Prefabs` scene is the simplest implementation of a dynamic Prefab. It instructs all game instances to load a network Prefab (it can be just one, it can also be a set of network Prefabs) and inject them to NetworkManager's NetworkPrefabs list before starting the server. What's important is that it doesn't matter where the Prefab comes from. It can be a simple Prefab or it can be an Addressable - it's all the same.
+The `00_Preloading Dynamic Prefabs` scene is the simplest implementation of a dynamic Prefab. It instructs all game instances to load a network Prefab (it can be just one, it can also be a set of network Prefabs) and inject them to a NetworkManager's NetworkPrefabs list before starting the server. What's important is that it doesn't matter where the Prefab comes from. It can be a simple Prefab or it can be an Addressable - it's all the same.
 
 This is the lesser intrusive option for your development, as you don't have any extra spawning and Addressables management to perform later in your game.
 
@@ -42,7 +42,7 @@ The logic of this method invoked on `Start()` is defined below:
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/00_Preloading/Preloading.cs#L33-L56
 ```
 
-First, the sample waits for the dynamic Prefab asset to load from its address and into memory. After the Prefab is ready, the game instance adds it to NetworkManger's list of NetworkPrefabs, then it marks the NetworkObject as the NetworkManager's PlayerPrefab.
+First, the sample waits for the dynamic Prefab asset to load from its address and into memory. After the Prefab is ready, the game instance adds it to NetworkManger's list of NetworkPrefabs, then it marks the NetworkObject as a NetworkManager's PlayerPrefab.
 
 Lastly, the sample forces the NetworkManager to check for matching [NetworkConfig](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/ngo/1.2.0/com.unity.netcode.gameobjects/Runtime/Configuration/NetworkConfig.cs)s between a client and the server by setting ForceSamePrefabs to true. If the server detects a mismatch between the server's and client's NetworkManager's NetworkPrefabs list when a client is trying to connect, it denies the connection automatically.
 
@@ -70,7 +70,7 @@ Next, take a look at how the server handles incoming `ConnectionData`. The sampl
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L30-L52
 ```
 
-Unlike the earlier use-case, `ForceSamePrefab` is to false; this allows you to add NetworkObject Prefabs to NetworkManager's NetworkPrefabs list after establishing a connection on both the server and clients. Before walking through what this class' connection approval callback looks like, it's worth noting here that the sample forces a mismatch of NetworkPrefabs between server and clients, because as soon as the server starts, it loads a dynamic Prefab and registers it to the server's NetworkPrefabs list:
+Unlike the earlier use-case, `ForceSamePrefab` is to false; this allows you to add NetworkObject Prefabs to a NetworkManager's NetworkPrefabs list after establishing a connection on both the server and clients. Before walking through what this class' connection approval callback looks like, it's worth noting here that the sample forces a mismatch of NetworkPrefabs between server and clients, because as soon as the server starts, it loads a dynamic Prefab and registers it to the server's NetworkPrefabs list:
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/DynamicAddressablesNetworkPrefabs/Assets/Scripts/01_Connection%20Approval/ConnectionApproval.cs#L54-L69
