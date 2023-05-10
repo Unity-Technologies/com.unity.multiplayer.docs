@@ -22,7 +22,7 @@ Netcode will use the `Instantiate` and `Destroy` methods in place of default spa
 The following example is from the Boss Room Sample. It shows how object pooling is used to handle the different projectile objects. In that example, the class `NetworkObjectPool` is the data structure containing the pooled objects and the class `PooledPrefabInstanceHandler` is the handler implementing `INetworkPrefabInstanceHandler`.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkObjectPool.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Infrastructure/NetworkObjectPool.cs
 ```
 
 Let's have a look at `NetworkObjectPool` first. `PooledPrefabsList` has a list of prefabs to handle, with an initial number of instances to spawn for each. In the `InitializePool` method, called in `OnNetworkSpawn`, it initialises the different pools for each Prefab as `ObjectPool`s inside the `m_PooledObjects` dictionary. It also instantiates the handlers for each Prefab and registers them. To use these objects, a user then needs to obtain it via the `GetNetworkObject` method before spawning it, then return the object to the pool after use with `ReturnNetworkObject` before despawning it. This only needs to be done on the server, as the `PooledPrefabInstanceHandler` will handle it on the client(s) when the network object's `Spawn` or `Despawn` method is called, via its `Instantiate` and `Destroy` methods. Inside those methods, the `PooledPrefabInstanceHandler` simply calls the pool to get the corresponding object, or to return it. 

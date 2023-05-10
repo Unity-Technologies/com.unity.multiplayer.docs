@@ -8,7 +8,7 @@ All documentation sections have licenses covering content for those Unity featur
 | -- | -- |
 | [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/docs/getting-started/about) | [MIT License](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) |
 | [Transport](https://docs-multiplayer.unity3d.com/docs/transport/introduction) | [Unity Companion License](https://unity3d.com/legal/licenses/Unity_Companion_License) |
-| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/LICENSE.md) |
+| [Learn](https://docs-multiplayer.unity3d.com/docs/learn/introduction) | [UCL License](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/LICENSE.md) |
 
 Documentation site files and markdown content outside of these features is covered under the MIT License:
 
