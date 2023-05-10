@@ -9,7 +9,7 @@ As we discussed in [Lag and Packet Loss](lagandpacketloss.md) - latency is our e
 If we just accept the fact that latency exists, but chose not to do anything about it - we would implement what is known as "dumb terminal". Dumb Terminals don't need to understand anything about the simulation they're visualizing for the client - all they do is:
 
 * Send inputs from Clients to the Server
-* Receive the resulting state from the Server and render it appropritely
+* Receive the resulting state from the Server and render it appropriately
 
 This is a conservative approach that makes no attempt to mitigate delay, but also never shows an incorrect user state. The problems with this approach is that not only will the user feel the latency, the frequency of updates from the server would dictate how choppy our gameplay experience is for the clients. In effect, regardless of the potential framerate that the client can achieve, the game would only run at the cadence the server (with its limiting networking factors) is capable of. This can reduce a good 60 FPS experience into a  bad 15 FPS experience with perceivable input lag.
 
@@ -39,4 +39,4 @@ Snapshot Interpolation isn't implemented in Netcode at this time.
 
 ## Boss Room Example
 
-In the [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/), NetworkTransform components are used for client-side interpolation. Since transforms are updated in FixedUpdate, however, there is also some server-side interpolation that is needed on the host to smooth out movement. See [PhysicsProjectile](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/PhysicsProjectile.cs) and [PositionLerper](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/PositionLerper.cs) for an example of how it's done.
+In the [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/), NetworkTransform components are used for client-side interpolation. Since transforms are updated in FixedUpdate, however, there is also some server-side interpolation that is needed on the host to smooth out movement. See [PhysicsProjectile](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/PhysicsProjectile.cs) and [PositionLerper](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Utils/PositionLerper.cs) for an example of how it's done.
