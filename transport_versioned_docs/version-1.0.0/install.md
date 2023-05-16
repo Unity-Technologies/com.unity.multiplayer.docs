@@ -8,7 +8,7 @@ Follow these instructions to install Unity Transport.
 
 ## Prerequisites
 
-You need Unity Editor version 2020.1.2f1 or later.
+You need Unity Editor version 2021.3.7f1 LTS or later.
 
 ## Install Transport
 

@@ -21,11 +21,11 @@ When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.N
 
 ### Registering a Network Prefab
 
-One of the requirements to be able to spawn a network Prefab instance is that it must be registered with the `NetworkManager` via the "Network Prefabs" property list.
-The two steps to registering a network Prefab with `NetworkManager`:
+You must register a Network Prefab instance with a `NetworkManager` via the `NetworkPrefabsList`.
+The two steps to registering a network Prefab with a `NetworkManager`:
 
-1. Create a network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`
-1. Add your network Prefab to the Network Prefabs list poperty of the `NetworkManager`.
+1. Create a Network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`
+2. Add your Network Prefab to the Network Prefabs List that's associated with a `NetworkManager`.
 
 ### Spawning a Network Prefab (Overview)
 
@@ -300,10 +300,6 @@ Generally, there are **two** modes that define how an in-scene placed `NetworkOb
 ### Soft Synchronization
 
 `SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties. If you receive a "soft synchronization error", then this typically means that a client can't locate the same in-scene placed `NetworkObject` after loading a scene.
-
-:::note
-The benefit of using scene management is that you don't have to register every in-scene placed `NetworkObject` with the `NetworkManager` as a network prefab, and it handles synchronizing clients to your current game state.
-:::
 
 ### Prefab Synchronization
 
