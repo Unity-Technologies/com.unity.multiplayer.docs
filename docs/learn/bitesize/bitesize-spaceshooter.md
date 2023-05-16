@@ -21,7 +21,7 @@ This method of running physics makes sure that there are no desyncs or other phy
 For example:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L488-L490
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L488-L490
 ```
 
 ## Power-ups and Status Effects
@@ -33,7 +33,7 @@ The power-ups themselves are server authorative. On the server they check if a p
 The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You can also use regular floats for timers. By using `NetworkVariable`s, the client can use this information to display different graphics based on active buffs to players.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L45-L51
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L45-L51
 ```
 
 ## NetworkObject Pooling
@@ -62,7 +62,7 @@ GameObject powerUp = m_ObjectPool.GetNetworkObject(m_PowerupPrefab);
 powerUp.GetComponent<NetworkObject>().Spawn(null, true);
 ```
 
-<!--  https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/master/Basic/2DSpaceShooter/Assets/Scripts/Spawner.cs#L153-L156 -->
+<!--  https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/Spawner.cs#L153-L156 -->
 
 :::tip
 If you are using Unity 2021, you can use the built-in [Object Pooling API](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.ObjectPool_1.html) instead to build your own object pools.
