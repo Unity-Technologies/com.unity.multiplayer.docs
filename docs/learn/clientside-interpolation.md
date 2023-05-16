@@ -9,7 +9,7 @@ As we discussed in [Lag and Packet Loss](lagandpacketloss.md) - latency is our e
 If we just accept the fact that latency exists, but chose not to do anything about it - we would implement what is known as "dumb terminal". Dumb Terminals don't need to understand anything about the simulation they're visualizing for the client - all they do is:
 
 * Send inputs from Clients to the Server
-* Receive the resulting state from the Server and render it appropritely
+* Receive the resulting state from the Server and render it appropriately
 
 This is a conservative approach that makes no attempt to mitigate delay, but also never shows an incorrect user state. The problems with this approach is that not only will the user feel the latency, the frequency of updates from the server would dictate how choppy our gameplay experience is for the clients. In effect, regardless of the potential framerate that the client can achieve, the game would only run at the cadence the server (with its limiting networking factors) is capable of. This can reduce a good 60 FPS experience into a  bad 15 FPS experience with perceivable input lag.
 
@@ -25,7 +25,7 @@ Visual choppiness is caused by infrequent (in comparison to the speed at which c
 
 In client-side Interpolation instead of just snapping objects to their positions that are transmitted from the server the client smoothly interpolates to this state over time. This approach is still conservative - the client just smoothens out the transition between valid states that were sent from the server. 
 
-Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for client-side interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect, our latency would increase by our [Interpolation Period](../reference/glossary/ticks-and-update-rates#interpolation-period). to avoid stutter, we want that period to be less than the [Packet Sending Period](../reference/glossary/ticks-and-update-rates#packet-sending-period). When the client is done interpolating to the previous state, it would always have received a new state to repeat the process. 
+Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for client-side interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect, our latency would increase by our [Interpolation Period](../learn/ticks-and-update-rates#interpolation-period). to avoid stutter, we want that period to be less than the [Packet Sending Period](../learn/ticks-and-update-rates#packet-sending-period). When the client is done interpolating to the previous state, it would always have received a new state to repeat the process. 
 
 Client-side interpolation is implemented in Netcode for GameObjects (Netcode) in the [NetworkTransform](../components/networktransform.md) component.
 
@@ -39,4 +39,4 @@ Snapshot Interpolation isn't implemented in Netcode at this time.
 
 ## Boss Room Example
 
-In the [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/), NetworkTransform components are used for client-side interpolation. Since transforms are updated in FixedUpdate, however, there is also some server-side interpolation that is needed on the host to smooth out movement. See [ClientProjectileVisualization](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ClientProjectileVisualization.cs) and [PositionLerper](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/PositionLerper.cs) for an example of how it's done.
+In the [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/), NetworkTransform components are used for client-side interpolation. Since transforms are updated in FixedUpdate, however, there is also some server-side interpolation that is needed on the host to smooth out movement. See [PhysicsProjectile](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/PhysicsProjectile.cs) and [PositionLerper](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Utils/PositionLerper.cs) for an example of how it's done.
