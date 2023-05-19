@@ -9,32 +9,9 @@ The NetSceneVis tool listens to network messages about the game state to visuall
 
 This tool can help optimize your network code to ensure that your game runs smoothly for all players.
 
-<!-- For full release ## Requirements
-- Unity 2023.2.0a11 or higher
-- Up-to-date Multiplayer Tools package, see [Install the Multiplayer Tools Package](./install-tools.md) -->
-
 ## Requirements
 - Unity 2023.2.0a11 or higher
-- Up-to-date Multiplayer Tools package from the `develop` branch.
-
-### Installing Network Scene Visualization from `develop`
-
-You can install the `develop` branch of the Multiplayer Tools package as a local git clone.
-
-### Installing from a local git clone
-Instructions for installing a package from a local folder can be found here. A local clone of the Multiplayer Tools package can be created using the following git command:
-
-git clone https://github.com/Unity-Technologies/com.unity.multiplayer.tools.git
-
-1. Open your Unity Hub and select the Project your are presently working on.
-2. In the editor's menu bar, navigate to **Window** > **Package Manager**.
-3. Click the plus sign ![plus sign](/img/add.png) in the Package Manager status bar and select **Add package from disk...**.
-4. Navigate to the folder root of your local package.
-5. Double-click the `package.json` file in the file browser. The file browser closes, and the package now appears in the package list with the  tag.
-
-:::note
-If you have a package installed locally that matches a version in the registry, the **Update** button still appears and the list might display the same version twice as **Currently Installed** and **Recommended**.
-:::
+- Up-to-date Multiplayer Tools package, see [Install the Multiplayer Tools Package](./install-tools.md)
 
 ## Using Network Scene Visualization
 
