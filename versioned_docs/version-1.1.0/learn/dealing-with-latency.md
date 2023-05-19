@@ -155,7 +155,7 @@ Another way of solving this issue in a client authoritative game is using soft v
 
 <!-- TODO NOW jil drawings for different actions when it's merged -->
 
-Boss Room's [actions](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Assets/BossRoom/Scripts/Server/Game/Action) uses a server authoritative model. The client sends inputs (mouse clicks for the character's destination) and the server sends back positions. This way, every features in the world are on the same world time. If the Boss charges and bumps you, you'll see your character fly away as soon as the boss touches you, not pass through you and then see you fly away.
+Boss Room's [actions](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v2.0.4/Assets/BossRoom/Scripts/Server/Game/Action) uses a server authoritative model. The client sends inputs (mouse clicks for the character's destination) and the server sends back positions. This way, every features in the world are on the same world time. If the Boss charges and bumps you, you'll see your character fly away as soon as the boss touches you, not pass through you and then see you fly away.
 
 <!-- (TODO we don't have an example of client authoritative character where we can show the overlap effect of this, but that's coming https://jira.unity3d.com/browse/MTT-985) -->
 
@@ -237,7 +237,7 @@ If a player selects an imp, the selection circle will be client driven, it won't
 
 <!-- TODO AOE selection isn't client authoritative, but should still be talked about -->
 <!-- TODO NOW show jil drawing -->
-[Click](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Input/ClientInputSender.cs) is client driven, [AOE selection](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/AoeActionInput.cs) is client driven. AOE's distance check is client driven. However the distance check is done [server side too](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/AOEAction.cs). This way if there's too much latency between a client click and the server side position, the server will do a sanity check to make sure that for its own state, the click is within the allowed range.
+[Click](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/Input/ClientInputSender.cs) is client driven, [AOE selection](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/Action/AoeActionInput.cs) is client driven. AOE's distance check is client driven. However the distance check is done [server side too](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/Action/AOEAction.cs). This way if there's too much latency between a client click and the server side position, the server will do a sanity check to make sure that for its own state, the click is within the allowed range.
 
 <!-- TODO NOW talk about rogue stealth? how it can be super simple client side logic to hide? can also not be part of this section. -->
 
@@ -315,7 +315,7 @@ In Boss Room for example, our movements use a small "jump" animation as soon as 
 The client then waits for the server to send position updates. The game still feels reactive, even though the character's movements are server driven.
 
 :::info
-For example, Boss Room plays an animation on [Melee action](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/MeleeActionFX.cs) client side while waiting for the server to confirm the swing. If the server doesn't confirm, worst comes to worst we've played an animation for nothing and nothing else is desynced. Your players will be none the wiser.
+For example, Boss Room plays an animation on [Melee action](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/Action/MeleeActionFX.cs) client side while waiting for the server to confirm the swing. If the server doesn't confirm, worst comes to worst we've played an animation for nothing and nothing else is desynced. Your players will be none the wiser.
 :::
 
 This is also useful for any action that needs to interract with the world. An ability that makes you invulnerable would need to be on the same time as other server events. If I predict my invulnerability, but a sniper headshots me before my input has reached the server, I'll see my invulnerable animation, but will still get killed. This is pretty frustrating for users. Instead, I can play a "getting invulnerable" animation with the character playing an animation, wait for the server to tell me "you're invulnerable now" and then display my invulnerable status. This way, if a sniper shoots me, the client will receive both the sniper shot and the invulnerability messages on the same timeline, without any desync.

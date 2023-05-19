@@ -155,7 +155,7 @@ Another way of solving this issue in a client authoritative game is using soft v
 
 <!-- TODO NOW jil drawings for different actions when it's merged -->
 
-Boss Room's [actions](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Assets/BossRoom/Scripts/Server/Game/Action) uses a server authoritative model. The client sends inputs (mouse clicks for the character's destination) and the server sends back positions. This way, every features in the world are on the same world time. If the Boss charges and bumps you, you'll see your character fly away as soon as the boss touches you, not pass through you and then see you fly away.
+Boss Room's [actions](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v2.1.0/Assets/BossRoom/Scripts/Server/Game/Action) uses a server authoritative model. The client sends inputs (mouse clicks for the character's destination) and the server sends back positions. This way, every features in the world are on the same world time. If the Boss charges and bumps you, you'll see your character fly away as soon as the boss touches you, not pass through you and then see you fly away.
 
 <!-- (TODO we don't have an example of client authoritative character where we can show the overlap effect of this, but that's coming https://jira.unity3d.com/browse/MTT-985) -->
 
