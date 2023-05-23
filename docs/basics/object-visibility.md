@@ -61,9 +61,10 @@ Make several `NetworkObject`s invisible/hidden to a single client (static method
 NetworkObject.NetworkHide(networkObjects, clientId);
 ```
 
-Spawn a NetworkObject with no observers (i.e. not visible to any clients):
+Spawn a NetworkObject with no observers (_i.e. not visible to any clients initially_):
 ```csharp
 NetworkObject.SpawnWithObservers = false;
 NetworkObject.Spawn();
 ```
+See [Spawning With (or Without) Observers](networkobject.md#spawning-with-or-without-observers) for more information.
 
