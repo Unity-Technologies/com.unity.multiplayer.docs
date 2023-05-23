@@ -66,5 +66,6 @@ Spawn a NetworkObject with no observers (_i.e. not visible to any clients initia
 NetworkObject.SpawnWithObservers = false;
 NetworkObject.Spawn();
 ```
+
 See [Spawning With (or Without) Observers](networkobject.md#spawning-with-or-without-observers) for more information.
 
