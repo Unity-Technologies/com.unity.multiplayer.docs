@@ -133,6 +133,11 @@ You can only have one `NetworkObject` at the root of a Prefab. Don't create Pref
 
 :::
 
+## Spawning with (or without) Observers
+![image](images/SpawnWithObservers.png)
+The `NetworkObject.SpawnWithObservers` property (default is true) provides you with the ability to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
+
+
 ## Transform Synchronization
 ![image](images/NetworkObject-TransformSynchronization.png)
 
