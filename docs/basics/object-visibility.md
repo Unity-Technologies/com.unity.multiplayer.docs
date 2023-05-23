@@ -34,7 +34,7 @@ netObject.CheckObjectVisibility = ((clientId) => {
 });
 ```
 
-### Additional Visibility Methods:
+### Additional Visibility Methods and Properties:
 The `CheckObjectVisibility` callback helps you determine if a `NetworkObject` is visible to a specific client when the `NetworkObject` is spawned.  However, you might have the need to change a `NetworkObject`'s visibility after it's spawned.  To change the visibility of a `NetworkObject` that is already spawned, you can use the following methods:
 
 Make a `NetworkObject` visible to a single client:
@@ -60,3 +60,10 @@ Make several `NetworkObject`s invisible/hidden to a single client (static method
 /// networkObjects is of type List<NetworkObject>
 NetworkObject.NetworkHide(networkObjects, clientId);
 ```
+
+Spawn a NetworkObject with no observers (i.e. not visible to any clients):
+```csharp
+NetworkObject.SpawnWithObservers = false;
+NetworkObject.Spawn();
+```
+
