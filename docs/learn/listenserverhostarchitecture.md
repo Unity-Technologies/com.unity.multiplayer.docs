@@ -1,43 +1,45 @@
 ---
 id: listen-server-host-architecture
-title: Create a game with a listen server / host architecture
+title: Create a game with a listen server and host architecture
 sidebar_label: Listen server and host architecture
-description: Learn more about creating a game with a listen server and host architecture.
 ---
 
 ## What is a listen server
 
-A listen server is hosted on one of the player's machine. It acts both as a server and as a client. This means one of the players will both play and own the game world and other players will connect to it. This has performance, security and cost considerations.
+A listen server acts as both a server and client on a single player's machine for multiplayer game play. This means one player both plays the game and owns the game world while other players connect to this server.
+
+This set up has performance, security, and cost considerations for implementation.
 
 ### Disadvantages
 
-- Network Performance is impacted by having to communicate with remote players over the residential internet connection of the host player.
-- Network Performance may also be reduced because the machine running the server is also generating an output image.
-- Listen servers grant the host player a large latency advantage over other players.
-- The hosting client has access to all the world's information, making it easier to cheat for that player.
-- The server will cease to exist when host player leaves the game.
+- Network performance relies on the residential internet connection of the host player and their machine's output effeciency. Both may cause the remote players connecting to the host to suffer performance issues.
+- The host player may have a large latency advantage over the remote players.
+- With access to all of the game world's information, the host player has an easier opportunity to cheat.
+- The server, i.e. the game ceases to exist when the host player leaves the game.
 
 ### Advantages
 
 - Essentially free
-- Don't require any special infrastructure or forward planning to set up, which makes them common at LAN parties where latency and bandwidth issues aren't a concern.
+- Doesn't require special infrastructure or forward planning to set up. This makes them common use for LAN parties because latency and bandwidth issues aren't a concern.
 
 ## When to use a listen server architecture
 
-The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (< 12) and for games which don't need persistent worlds because the game state is often tied to the host.
+Listen server architecture is a popular choice for single player games that want to provide the option to add a friend into an existing game world. Listen servers are best suited for a smaller player group (< 12) and games that don't require a persistent world.
 
 :::info
-Persistent world in netcode usually means "persistent online world' For example, the game state isn't bound to a player or a session
+*Persistent world* in Netcode for GameObjects (NGO) means "a persistent online world." 
+
+For example, the game state isn't bound to a player or a session, but is often tied to the host.
 :::
 
-Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authoritative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.
+In contrast to dedicated servers, listen servers are cheaper without the need to run dedicated authoritative servers for your game. Often, the listen server approach is chosen to avoid setting up a system to orchestrate the game server fleet.
 
 :::note
-You will still have to setup matchmaking to get your players to join together. You can't just launch a listen server game and get players playing together, you still have to redirect players to those client-hosted servers.
+You still need to set up matchmaking for your player to join together to play. A listen server game requires redirecting players to the client-hosted server.
 :::
 
 :::funfact
-Valheim is a listen server game with a persistent world. The host has a save game when a group of friends want to play together the host needs to start the world from that save. It's not ideal, but it works.
+*Valheim* by Iron Gate Studio is a listen server game with a persistent world. The host has a separate save game for playing with a group of friends versus when playing alone. It may not be ideal, but it works.
 :::
 
 ## Connecting to a listen server
