@@ -30,7 +30,7 @@ This is where you'll keep all your scripts.
 
 ## Install Netcode for GameObjects
 
-Refer to [Install Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/installation/install).
+Refer to [Install Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/installation/).
 
 ## Add the basic components
 
