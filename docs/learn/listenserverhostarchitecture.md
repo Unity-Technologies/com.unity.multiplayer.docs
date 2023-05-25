@@ -52,7 +52,7 @@ With port forwarding, the host can allow another player to connect to a listen s
 
 Considerations:
 
-* It has risks. By opening ports, you are creating direct lines for hackers and malware attacks to your system. You should always close the ports after every session.
+* It has risks. By opening ports, you create direct pathways for hackers and malware attacks to access your system.
 * The host must manually open the ports on their router, and this requires some technical knowledge the average user may not have.
 * The host may not always have access to their router and would not be able to open a port. For example, the host may be using a mobile device, a corporate network, or public WiFi.
 
@@ -62,7 +62,7 @@ Port forwarding may not be a viable option for a released game but can be useful
 
 A dedicated server has ports already forwarded for players to connect anytime. These servers can run in the cloud or a data center. The relay server option uses these servers to send data between players.
 
-In a listen server relay scenario, the host and all clients connect to the same listen server. Clients then send packets to each other through the relay server and telling it to redirect these packets to the correct client.
+In a listen server relay scenario, the host and all clients connect to the same listen server. Clients send packets to the relay server, which then redirects these packets to the intended recipient.
 
 Advantages:
 
@@ -70,8 +70,8 @@ Advantages:
 * A relay server knows when the host client disconnects and can inform the other clients or start a host migration process.
 
 Disadvantages:
-* A relay server costs money.
-* The round trip times for packet exchange may be higher because they have to go through the relay server instead of to the other client directly.
+
+A relay server costs money, and the round trip times for packet exchange may be higher because they have to go through the relay server instead of being sent directly to the other client.
 
 ### NAT Punch-through
 
@@ -86,6 +86,6 @@ Because of its high rate of failure, NAT punch-through is typically only used wi
 
 ### NAT Punch and Relay Fallback
 
-This option combines NAT punching with a relay fallback. Clients first try to connect to the host by NAT punching and default back to the relay server on failure. This reduces work load on the relay server while allowing clients to still connect to the host.
+This option combines NAT punching with a relay fallback. Clients first try to connect to the host by NAT punching and default back to the relay server on failure. This reduces the workload on the relay server while allowing clients to still connect to the host.
 
 It is widely used because it reduces the hosting costs of relay servers.
