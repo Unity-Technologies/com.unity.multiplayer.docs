@@ -149,10 +149,6 @@ module.exports = {
                     "type": "doc",
                     "id": "advanced-topics/reconnecting-mid-game"
                 },
-                {
-                    "type": "doc",
-                    "id": "reference/dedicated-server"
-                },
             ]
         },
         {
