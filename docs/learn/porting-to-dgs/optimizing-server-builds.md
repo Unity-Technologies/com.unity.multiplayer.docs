@@ -42,13 +42,9 @@ Netcode for GameObjects (NGO) relies on [`NetworkBehaviour`](https://docs-multip
 
 Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like [`OnNetworkSpawn`](../../api/Unity.Netcode.NetworkBehaviour#onnetworkspawn). These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v2.1.0/Packages/com.unity.multiplayer.samples.coop/Utilities)).
 
-## Manual stripping
+## Content Selection
 
-You can use third-party solutions, such as [`BuildStripper`](https://github.com/JesusLuvsYooh/BuildStripper) and [Headless Builder](https://assetstore.unity.com/packages/tools/utilities/headless-builder-108317), to manually strip Prefab and GameObject assets one by one.
-
-## GameObjects stripping
-
-It’s possible to create automation workflows that selectively strip GameObjects depending on the build target. Such automation might allow you to remove performance-heavy GameObjects and ensure the server is as lightweight as possible, resulting in reduced hosting costs.
+You can use [content selection](content-selection.md) methods to selectively strip GameObjects, components, and prefab assets depending on your build target.
 
 ## Other stripping opportunities
 
