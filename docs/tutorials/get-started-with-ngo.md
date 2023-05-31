@@ -13,7 +13,7 @@ Before you start, ensure you have the following prerequisites:
 
 - An active Unity account with a valid license.
 - The [Unity Hub](https://unity.com/download).
-- A NGO-supported version of the Unity Editor. Refer to the [NGO requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation/install).
+- A NGO-supported version of the Unity Editor. Refer to the [NGO requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
 Before continuing, create a new project using Unity Editor version 2021.3 or later.
 
@@ -30,7 +30,7 @@ This is where you'll keep all your scripts.
 
 ## Install Netcode for GameObjects
 
-Refer to [Install Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/installation/install).
+Refer to [Install Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
 ## Add the basic components
 
@@ -209,7 +209,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
-3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper).
+3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](https://docs-multiplayer.unity3d.com/netcode/current/tutorials/command-line-helper).
 
 :::tip
 

@@ -7,6 +7,12 @@ With every new connection, Netcode for GameObjects (Netcode) performs a handshak
 
 Connection approval allows you to decide, on a per connection basis, whether to allow a connection. Connection approval also enables you to specify the player Prefab to create, allowing you to override the default NetworkManager defined player Prefab on a per player basis. By setting ConnectionApproval property of the NetworkManager to true, Netcode checks to make sure the `NetworkManager.ConnectionApprovalCallback` has been assigned. If assigned, Netcode uses the connection approval process for connecting clients whether to allow a connection or deny it.
 
+:::warning
+Netcode for GameObjects (NGO) does not encrypt or authenticate any of the raw information sent over connection approval. To prevent man-in-the-middle attacks, you should AVOID sending authentication tokens (such as Steam tickets or user passwords) over connection approval without additional safety precautions.
+
+The examples in this article are to illustrate how NGO does not protect any connection data, and does not show how to incorporate encryption, authentication, or some other method of data security.
+:::
+
 :::note
 If you don't assign the `NetworkManager.ConnectionApprovalCallback` (even with the `NetworkManager.ConnectionApprovalCallback` set to `true`), Netcode uses basic authentication for the user, which automatically authorizes and assigns the default player Prefab).
 :::
@@ -151,8 +157,10 @@ If you enable connection approval, the server silently ignores any messages sent
 
 The connection data isn't encrypted or authenticated. 
 
-:::important
-To prevent man in the middle attacks, it's strongly recommended to not send authentication tokens (such as steam tickets or user passwords) over connection approval.
+:::warning
+Netcode for GameObjects (NGO) does not encrypt or authenticate any of the raw information sent over connection approval. To prevent man-in-the-middle attacks, you should AVOID sending authentication tokens (such as Steam tickets or user passwords) over connection approval without additional safety precautions.
+
+The examples in this article are to illustrate how NGO does not protect any connection data, and does not show how to incorporate encryption, authentication, or some other method of data security.
 :::
 
 ## Changing the player Prefab
@@ -169,7 +177,7 @@ There might be times when you want to specify an alternate player Prefab to use 
         {
             if (index > AlternatePlayerPrefabs.Count)
             {
-                Debug.LogError($"Trying to assign player Prefab index of {index} when there are onlky {AlternatePlayerPrefabs.Count} entries!");
+                Debug.LogError($"Trying to assign player Prefab index of {index} when there are only {AlternatePlayerPrefabs.Count} entries!");
                 return;
             }
             if (NetworkManager.IsListening || IsSpawned)
@@ -197,7 +205,7 @@ There might be times when you want to specify an alternate player Prefab to use 
             }
             else
             {
-                Debug.LogError($"Client provided player Prefab index of {playerPrefabIndex} when there are onlky {AlternatePlayerPrefabs.Count} entries!");
+                Debug.LogError($"Client provided player Prefab index of {playerPrefabIndex} when there are only {AlternatePlayerPrefabs.Count} entries!");
                 return;
             }
             // Continue filling out the response
