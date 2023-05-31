@@ -59,6 +59,6 @@ When selecting the following preset options, Unity removes the corresponding com
 
 | Component Type | Corresponding Stripped Components |
 |---|---|
-| Rendering Components | **Camera** </ br> **Light** </ br> All components inheriting from **Render** |
-| UI Components | All components in the `UnityEngine.UI` namespace </ br> All components in the `UnityEngine.EventSystems` namespace </ br> `UnityEngine.UIElements.PanelEventHandler` </ br> `UnityEngine.UIElements.PanelRaycaster` |
-| Audio Components | `UnityEngine.AudioSource` </ br> `UnityEngine.AudioLowPassFilter` </ br> `UnityEngine.AudioHighPassFilter` </ br> `UnityEngine.AudioReverbFilter` </ br> `UnityEngine.AudioListener` </ br> `UnityEngine.AudioReverbZone` </ br> `UnityEngine.AudioDistortionFilter` </ br> `UnityEngine.AudioEchoFilter` </ br> `UnityEngine.AudioChorusFilter` |
+| Rendering Components | <ul> <li>**Camera**</li> <li>**Light**</li> <li>All components inheriting from **Render**</li></ul> |
+| UI Components | <ul> <li>All components in the `UnityEngine.UI` namespace</li> <li>All components in the `UnityEngine.EventSystems` namespace</li> <li>`UnityEngine.UIElements.PanelEventHandler`</li> <li>`UnityEngine.UIElements.PanelRaycaster`</li></ul> |
+| Audio Components | <ul> <li>`UnityEngine.AudioSource`</li> <li>`UnityEngine.AudioLowPassFilter`</li> <li>`UnityEngine.AudioHighPassFilter`</li> <li>`UnityEngine.AudioReverbFilter`</li> <li>`UnityEngine.AudioListener`</li> <li>`UnityEngine.AudioReverbZone`</li> <li>`UnityEngine.AudioDistortionFilter`</li> <li>`UnityEngine.AudioEchoFilter`</li> <li>`UnityEngine.AudioChorusFilter`</li></ul> |
