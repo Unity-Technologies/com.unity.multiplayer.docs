@@ -3,15 +3,15 @@ id: netscenevis
 title: Network Scene Visualization
 ---
 
-The Network Scene Visualization (NetSceneVis) is a powerful, user-friendly tool included in the Multiplayer Tools package to help you visualize and debug network communication on a per-object basis in the scene view of your project with visualizations such as mesh shading and text overlay.
+Network Scene Visualization (NetSceneVis) is a powerful, user-friendly tool included in the Multiplayer Tools package to help you visualize and debug network communication on a per-object basis in the Unity Editor Scene View of your project with visualizations such as mesh shading and text overlay.
 
 The NetSceneVis tool listens to network messages about the game state to visually display bandwidth and ownership on a per-object basis in the Unity Editor. The visualizations are updated in real-time as the network messages are sent and received, showing the game state synchronization across the network.
 
-This tool can help optimize your network code to ensure that your game runs smoothly for all players.
+This tool can help you optimize and debug your network code to ensure that your game runs smoothly for all players.
 
 ## Requirements
 - Unity 2023.2.0a11 or higher
-- Up-to-date Multiplayer Tools package, see [Install the Multiplayer Tools Package](./install-tools.md)
+- Multiplayer Tools package 2.0.0-pre.3 or higher, see [Install the Multiplayer Tools Package](./install-tools.md)
 
 ## Using Network Scene Visualization
 
@@ -23,7 +23,7 @@ Hovering over each option under **Bandwidth**, **Ownership**, and **Settings** r
 
 ### Bandwidth
 
-Adjusting the Bandwidth options displays the bandwidth usage of each object.
+Selecting **Bandwidth Mode** displays the bandwidth usage of each object.
 
 | Option | Description |
 |---|---|
@@ -36,7 +36,7 @@ Adjusting the Bandwidth options displays the bandwidth usage of each object.
 
 ### Ownership
 
-The Ownership options displays the ownership of each object by the server/host or the client.
+Selecting **Ownership Mode** displays the ownership of each object, either by the server, host, or by a specific client.
 
 | Option | Description |
 |---|---|
@@ -44,6 +44,8 @@ The Ownership options displays the ownership of each object by the server/host o
 | *Shading* | Visualize the per-object ownership with a colored overlay. |
 
 ### Settings
+
+These settings are only available when **MeshShading** is enabled.
 
 You can toggle the **Outline** option to display a black outline around networked objects to improve visibility in the scene and distinguish between overlapping networked objects.
 

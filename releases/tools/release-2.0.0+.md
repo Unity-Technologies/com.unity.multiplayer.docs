@@ -4,16 +4,16 @@ title: Multiplayer Tools 2.0.0-pre+
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
-## [2.0.0-pre.2] - 2023-05-02
+## [2.0.0-pre.3] - 2023-05-02
 
 ### General
 
-Dropped support for Unity 2020.3; the next supported version is Unity 2021.3
-Fixed `Failed to load type initialization for assembly Unity.Multiplayer.Tools.MetricTypes` runtime exception when building using Managed Stripping level set to high.
+* Dropped support for Unity 2020.3; the next supported version is Unity 2021.3
+* Fixed `Failed to load type initialization for assembly Unity.Multiplayer.Tools.MetricTypes` runtime exception when building using Managed Stripping level set to high.
 
 ### Network Scene Visualization
 
-This release adds the [Network Scene Visualization](../../tools/network-scene-vis.md) to the Multiplayer Tools Package. This tool allows users to visualize networking information (like bandwidth and ownership) on a per-object basis in the scene view using a number of visualizations, including mesh shading and a text overlay.
+This release adds [Network Scene Visualization](../../tools/network-scene-vis.md) to the Multiplayer Tools Package. This tool allows users to visualize networking information (like bandwidth and ownership) on a per-object basis in the scene view using a number of visualizations, including mesh shading and a text overlay.
 
 ### Runtime Net Stats Monitor
 
