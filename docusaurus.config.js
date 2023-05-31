@@ -231,7 +231,7 @@ module.exports = {
           items: [
             {
               type: "doc",
-              docId: "tools/tools-1-0-0",
+              docId: "tools/tools-2-0-0",
               label: "Release Notes",
               docsPluginId: "releases",
             },
@@ -466,8 +466,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "1.1.0",
+            label: "2.0.0-pre",
             path: "current",
+          },
+          "1.1.0" : {
+            label: "1.1.0",
+            path: "1.1.0",
           },
           "1.0.0": {
             label: "1.0.0",
