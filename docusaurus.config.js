@@ -168,9 +168,8 @@ module.exports = {
               label: "Documentation",
             },
             {
-              type: "doc",
-              docId: "api/introduction",
               label: "API Reference",
+              href: "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.4/api/index.html",
             },
           ],
         },
@@ -208,9 +207,8 @@ module.exports = {
             },
 
             {
-              type: "doc",
-              docId: "api/introduction",
               label: "API Reference",
+              href: "https://docs.unity3d.com/Packages/com.unity.transport@2.0/api/index.html",
               docsPluginId: "transport",
             },
           ],
@@ -244,9 +242,8 @@ module.exports = {
               docsPluginId: "tools",
             },
             {
-              type: "doc",
-              docId: "api/introduction",
               label: "API Reference",
+              href: "https://docs.unity3d.com/Packages/com.unity.multiplayer.tools@1.1/api/index.html",
               docsPluginId: "tools",
             },
           ],
