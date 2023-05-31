@@ -11,7 +11,7 @@ This tool can help you optimize and debug your network code to ensure that your 
 
 ## Requirements
 - Unity 2023.2.0a11 or higher
-- Multiplayer Tools package 2.0.0-pre.3 or higher, see [Install the Multiplayer Tools Package](./install-tools.md)
+- Multiplayer Tools package 2.0.0-pre.2 or higher, see [Install the Multiplayer Tools Package](./install-tools.md)
 
 ## Using Network Scene Visualization
 
