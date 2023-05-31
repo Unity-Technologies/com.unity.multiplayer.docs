@@ -4,7 +4,15 @@ title: Multiplayer Tools 2.0.0-pre+
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
-## [2.0.0-pre.3] - 2023-05-02
+## [2.0.0-pre.3] - 2023-05-23
+
+### *General*
+* Remove unintentionally public classes (such as test classes), most of which were already deprecated.
+
+### *Network Scene Visualization*
+* Fix to prevent NGO from throwing a NotServerException when visualizing ownership on a client that is not connected as the server or host.
+
+## [2.0.0-pre.2] - 2023-05-02
 
 ### General
 
