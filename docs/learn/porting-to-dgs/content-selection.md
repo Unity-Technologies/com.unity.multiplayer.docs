@@ -15,7 +15,7 @@ You can choose the GameObjects and their children Unity automatically strips whe
 2. In the **Hierarchy** window, select one or more GameObjects.
 3. In the **Inspector** window, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
 
-! [Screenshot of the **Multiplayer Target** icons for a GameObject](./../../../static/img/DGS_MultiplayerTargetField.png)
+![Screenshot of the **Multiplayer Target** icons for a GameObject](./../../../static/img/DGS_MultiplayerTargetField.png)
 
 ## Component Selection
 
@@ -25,7 +25,7 @@ You can choose the individual Components Unity automatically strips when buildin
 2. In the **Hierarchy** window, select one or more GameObjects.
 3. In the **Inspector** window, in the Component section of the GameObject, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
 
-! [Screenshot of the **Multiplayer Target** icons for a Component within a GameObject](./../../../static/img/DGS_MultiplayerTargetField_Components.png)
+![Screenshot of the **Multiplayer Target** icons for a Component within a GameObject](./../../../static/img/DGS_MultiplayerTargetField_Components.png)
 
 ## Prefab Asset and Instance Selection
 
@@ -43,7 +43,7 @@ By using search, you can choose multiple GameObjects or prefab assets and instan
 4. Select the GameObjects.
 5. In the **Preview Inspector** panel, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
 
-! [Screenshot of the **Multiplayer Target** icons in the **Inspector** panel of the **Search** window](./../../../static/img/DGS_MultiplayerTargetField_Search.png)
+![Screenshot of the **Multiplayer Target** icons in the **Inspector** panel of the **Search** window](./../../../static/img/DGS_MultiplayerTargetField_Search.png)
 
 ## Automatic Selection
 
