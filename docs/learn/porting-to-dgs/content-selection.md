@@ -5,23 +5,45 @@ title: Content Selection
 
 When building a [Dedicated Games Server](https://docs.unity3d.com/Manual/dedicated-server.html), content of a scene may differ between the client and server versions. For example, the cameras, rendering, and UI components may not be required on the server side, and server-related managers should not be included client side.
 
-To optimize your builds, you can select what [game objects](#game-object-selection), [components](#component-selection), and [prefab assets](#prefab-assets-and-instances) are present in different server build targets: **Standalone** or **Dedicated Server**. You can select each part of a scene to be stripped individually, by [search criteria](#selection-by-search), or [automatically](#automatic-selection) from the build target.
+To optimize your builds, you can select what [GameObjects](#game-object-selection), [components](#component-selection), and [prefab assets](#prefab-asset-and-instance-selection) are present in different server build targets: **Standalone** or **Dedicated Server**. You can select each part of a scene to be stripped individually, by [search criteria](#selection-by-search), or [automatically](#automatic-selection) from the build target.
 
-## Game Object Selection
+## GameObject Selection
 
-Allows to select which Game Objects should be present/removed in the different multiplayer targets. When building or entering play mode, Unity will automatically strip the corresponding Game Objects (and all its children).
+You can choose the GameObjects and their children Unity automatically strips when building or entering play mode.
+
+1. Open a scene.
+2. In the **Hierarchy** window, select one or more GameObjects.
+3. In the **Inspector** window, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
+
+! [Screenshot of the **Multiplayer Target** icons for a GameObject](./../../../static/img/DGS_MultiplayerTargetField.png)
 
 ## Component Selection
 
-Allows to select which specific Components should be present/removed from its Game Object in the different multiplayer targets. When building or entering play mode, Unity will automatically strip the corresponding Components.
+You can choose the individual Components Unity automatically strips when building or entering play mode.
+
+1. Open a scene.
+2. In the **Hierarchy** window, select one or more GameObjects.
+3. In the **Inspector** window, in the Component section of the GameObject, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
+
+! [Screenshot of the **Multiplayer Target** icons for a Component within a GameObject](./../../../static/img/DGS_MultiplayerTargetField_Components.png)
+
+## Prefab Asset and Instance Selection
+
+1. Open a scene.
+2. Either select the **Prefab Asset** in the **Project** window or select a **Prefab Instance** in the **Hierarchy** window, and click **Open**. Changes in a **Prefab Instance** take precedence over those in the base **Prefab Asset**.
+3. In the **Inspector** window, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
 
 ## Selection by Search
 
-Allows to select multiple GameObjects of Components given a search criteria.
+By using search, you can choose multiple GameObjects or prefab assets and instances Unity automatically strips when building or entering play mode.
 
-### Prefab Assets and Instances
+1. Open a scene.
+2. Open the [**Search** window](https://docs.unity3d.com/Manual/search-overview.html).
+3. Search for the GameObjects to select (e.g. all renderers `t: Renderer`)
+4. Select the GameObjects.
+5. In the **Preview Inspector** panel, find the **Multiplayer Target** icons and pick **Dedicated Server** or **Standalone**. Hover over the icons for the tooltip explaining each button.
 
-Similar to Game Objects above, with one difference:
+! [Screenshot of the **Multiplayer Target** icons in the **Inspector** panel of the **Search** window](./../../../static/img/DGS_MultiplayerTargetField_Search.png)
 
 ## Automatic Selection
 
