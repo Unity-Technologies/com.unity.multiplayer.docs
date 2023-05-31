@@ -11,7 +11,7 @@ Boss Room provides one example of how to handle limiting the number of players t
 Boss Room provides an example of such delegate
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs#L176
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Assets/Scripts/Gameplay/ConnectionManagement/ServerGameNetPortal.cs#L176
 ```
 ​
 The code below shows an example of an over-capacity check that would prevent more than a certain pre-defined number of players from connecting.

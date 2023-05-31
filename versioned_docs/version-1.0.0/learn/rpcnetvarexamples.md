@@ -12,7 +12,7 @@ See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 Boss Room uses RPCs to send movement inputs.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Input/ClientInputSender.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/Input/ClientInputSender.cs
 ```
 
 We want the full history of inputs sent, not just the latest value. There is no need for `NetworkVariable`s, you just want to blast your inputs to the server. Since Boss Room isn't a twitch shooter, we send inputs as reliable `RPC`s without worrying about the additional latency an input loss would add. 
@@ -23,7 +23,7 @@ We want the full history of inputs sent, not just the latest value. There is no 
 The following `RecvPerformHitReactionClient`  call sends actions from server to client:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L263-L267
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/BossRoom/Scripts/Shared/Game/Entity/NetworkCharacterState.cs#L263-L267
 ```
 
 For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCharacterState` is interesting for optimization purposes. You would normally want to have only one `RPC` for an action and let the client decide who should play the associated animation. Due to "ouch" being a long running action over multiple frames, you don't know yet when sending the initial `RPC` which characters will be affected by that action. You want this to be dynamic as the boss is hitting targets. As a result, multiple `RPC`s will be sent for each hit character.
@@ -33,14 +33,14 @@ For example, the Boss Room project "ouch" action `RPC` mentioned for `NetworkCha
 The archer's arrows uses a standalone `GameObject` that is replicated over time. Since this object's movements are slow, we made the choice to use state (via the NetworkTransform) to replicate this ability's status, in case a client connected while the arrow was flying. 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ServerProjectileLogic.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/GameplayObjects/ServerProjectileLogic.cs
 ```
 
 We can have used an `RPC` instead, for example the Mage's projectile attack. Since it's expected for that projectile to be quick, we aren't affected by the few milliseconds where a newly connected client can miss the projectile and we save on bandwidth having to manage a replicated object. Instead a single RPC is sent to trigger the FX client side.
 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/FXProjectileTargetedAction.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/Action/FXProjectileTargetedAction.cs
 ```
 
 ## Breakable state
@@ -48,13 +48,13 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 We can have used a "break" `RPC` to set a breakable object as broken and play the appropriate visual effects. Applying our "should that information be replicated when a player joins the game mid-game" rule of thumb, we used `NetworkVariable`s instead. We used the `OnValueChanged` callback on those values to play our visual effects, as well as an initial check when spawning the NetworkBehaviour.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/NetworkBreakableState.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/GameplayObjects/NetworkBreakableState.cs
 ```
 
 The visual changes:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ClientBreakableVisualization.cs#L49-L59
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/GameplayObjects/ClientBreakableVisualization.cs#L49-L59
 ```
         
 :::tip Lesson Learned
@@ -64,7 +64,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/ma
 ![imp not appearing dead](/img/01_imp_not_appearing_dead.png) 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ClientBreakableVisualization.cs#L31-L47
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v1.3.1-pre/Assets/Scripts/Gameplay/GameplayObjects/ClientBreakableVisualization.cs#L31-L47
 ```
 
 :::

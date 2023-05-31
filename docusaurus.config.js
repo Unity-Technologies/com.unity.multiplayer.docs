@@ -10,7 +10,7 @@ module.exports = {
   onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
   onBrokenMarkdownLinks: "ignore", // todo: review and set to throw or at least warn
   favicon: "img/favicon.ico",
-  trailingSlash: false, //do not change because of search
+  trailingSlash: true,
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
   scripts,

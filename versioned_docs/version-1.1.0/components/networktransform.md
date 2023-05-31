@@ -65,5 +65,5 @@ Optionally, you can directly add this line to your `manifest.json` file:
 You can also create your own `ClientNetworkTransform` by deriving from `NetworkTransform`, overriding the `OnIsServerAuthoritative` virtual method, and returning false:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.0.4/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs
 ```
