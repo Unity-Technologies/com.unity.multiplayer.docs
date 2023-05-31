@@ -177,7 +177,7 @@ There might be times when you want to specify an alternate player Prefab to use 
         {
             if (index > AlternatePlayerPrefabs.Count)
             {
-                Debug.LogError($"Trying to assign player Prefab index of {index} when there are onlky {AlternatePlayerPrefabs.Count} entries!");
+                Debug.LogError($"Trying to assign player Prefab index of {index} when there are only {AlternatePlayerPrefabs.Count} entries!");
                 return;
             }
             if (NetworkManager.IsListening || IsSpawned)
@@ -205,7 +205,7 @@ There might be times when you want to specify an alternate player Prefab to use 
             }
             else
             {
-                Debug.LogError($"Client provided player Prefab index of {playerPrefabIndex} when there are onlky {AlternatePlayerPrefabs.Count} entries!");
+                Debug.LogError($"Client provided player Prefab index of {playerPrefabIndex} when there are only {AlternatePlayerPrefabs.Count} entries!");
                 return;
             }
             // Continue filling out the response
