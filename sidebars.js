@@ -137,6 +137,10 @@ module.exports = {
                         },
                         {
                             "type": "doc",
+                            "id": "learn/porting-to-dgs/content-selection"
+                        },
+                        {
+                            "type": "doc",
                             "id": "learn/porting-to-dgs/hosting-considerations"
                         },
                     ]
