@@ -21,7 +21,7 @@ This tool offers a configurable component to simulate adverse network condition.
 Packet delay, jitter, packet loss and loss interval are all parameters that can be configured to simulate different kind of networks.
 A set of built-in network scenarios are provided to simulate more complex scenarios. User-defined scenarios are also supported.
 
-For more information, see the [Network Simulator documentation](../../tools/network-simulator.md).
+For more information, see the [Network Simulator documentation](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/).
 
 ### Runtime Net Stats Monitor
 
