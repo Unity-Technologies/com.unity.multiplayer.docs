@@ -309,7 +309,7 @@ In this example, _Alice the Assassin_ is chasing _Bob the Victim_. _Bob_ enters 
 
 One solution is to use server authoritative gameplay with prediction and correction on both clients as described in other sections on this page. The door is corrected by teleporting back open, and the killing animations would play as usual. That correction would remove your players from their immersion and frustrate _Bob_.
 
-Another solution is to use action anticipation on the door closing and have the door be server driven. You remove the correction and desync problems altogether. However, it still adds lag to each door opening and closing.
+Another solution is to use action anticipation on the door closing and have the door be server driven. You remove the correction and desync problems altogether. However, it still adds lag to each door opening and closing as an instant action without animation to hide the lag.
 
 For the best user experience, you can use controlled desyncs. You could add windows in your doors and reinterpret the kill action depending on local client state. _Alice_ could see a knife kill while the door is still open (they haven't received the "door closed" update from the server yet), and _Bob_ could see a gun kill through the window of the locally closed door instead. Ultimately, clients only care about the final "Bob is dead and killed by Alice" state. You let clients reinterpret how they reach that final state according to their own different local context.
 
