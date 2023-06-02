@@ -301,7 +301,7 @@ It can be hard to handle misprediction corrections elegantly and without taking 
 
 For example, you could have an assassination mechanic that you want to seamlessly handle misprediction correction. You could have your client tell the server "I killed that target," have the server validate to prevent cheating (like with server rewind), and still give advantage to the attacker.
 
-In this example, _Alice the Assassin_ is chasing _Bob the Victim_. _Bob_ enters a room and quickly closes the door behind them at time _t=0_ seconds. Simultaneously at _t=0_, _Alice_ hits the **kill** button. Both actions are client-driven and reach the server at the same time, so the server would tell all clients "Alice killed Bob" at _t=0.1_. _Bob_ receives the "You got killed" message at _t=0.2_. However, _Bob_ closed their door at _t=0_, it would appear that _Alice_ killed _Bob_ through the door.
+In this example, _Alice the Assassin_ is chasing _Bob the Victim_. _Bob_ enters a room and quickly closes the door behind them at time _t=0_ seconds. Simultaneously at _t=0_, _Alice_ hits the **kill** button. Both actions are client-driven and reach the server at the same time, so the server would tell all clients "Alice killed Bob" at _t=0.1_. _Bob_ receives the "You got killed" message at _t=0.2_. However, _Bob_ locally closed their door at _t=0_, it would appear that _Alice_ killed _Bob_ through the door.
 
 One solution is to use server authoritative gameplay with prediction and correction on both clients as described in other sections on this page. The door is corrected by teleporting back open, and the killing animations would play as usual. That correction would remove your players from their immersion and frustrate _Bob_.
 
