@@ -3,7 +3,7 @@ title: Unity Transport 1.0.0+
 id: transport-1-0-0
 ---
 
-The [Unity Transport](../../transport/current/about) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
+The [Unity Transport](https://docs-multiplayer.unity3d.com/transport/1.0.0/about/) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
 ## [1.3.4] - 2023-04-27
 
