@@ -10,7 +10,7 @@ module.exports = {
   onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
   onBrokenMarkdownLinks: "ignore", // todo: review and set to throw or at least warn
   favicon: "img/favicon.ico",
-  trailingSlash: false, //do not change because of search
+  trailingSlash: true,
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
   scripts,
@@ -168,9 +168,8 @@ module.exports = {
               label: "Documentation",
             },
             {
-              type: "doc",
-              docId: "api/introduction",
               label: "API Reference",
+              href: "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.4/api/index.html",
             },
           ],
         },
@@ -208,9 +207,8 @@ module.exports = {
             },
 
             {
-              type: "doc",
-              docId: "api/introduction",
               label: "API Reference",
+              href: "https://docs.unity3d.com/Packages/com.unity.transport@2.0/api/index.html",
               docsPluginId: "transport",
             },
           ],
@@ -233,7 +231,7 @@ module.exports = {
           items: [
             {
               type: "doc",
-              docId: "tools/tools-1-0-0",
+              docId: "tools/tools-2-0-0",
               label: "Release Notes",
               docsPluginId: "releases",
             },
@@ -244,9 +242,8 @@ module.exports = {
               docsPluginId: "tools",
             },
             {
-              type: "doc",
-              docId: "api/introduction",
               label: "API Reference",
+              href: "https://docs.unity3d.com/Packages/com.unity.multiplayer.tools@1.1/api/index.html",
               docsPluginId: "tools",
             },
           ],
@@ -469,8 +466,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "1.1.0",
+            label: "2.0.0-pre",
             path: "current",
+          },
+          "1.1.0" : {
+            label: "1.1.0",
+            path: "1.1.0",
           },
           "1.0.0": {
             label: "1.0.0",

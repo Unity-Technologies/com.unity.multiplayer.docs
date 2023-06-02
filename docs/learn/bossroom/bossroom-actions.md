@@ -4,7 +4,7 @@ title: Boss Room Actions Walkthrough
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-Boss Room's actions each use a different pattern for good multiplayer quality. This doc walks you through each of them and goes into details about how we implemented each and what lessons you can learn from each. You can get their implementations [here](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Assets/Scripts/Gameplay/Action).
+Boss Room's actions each use a different pattern for good multiplayer quality. This doc walks you through each of them and goes into details about how we implemented each and what lessons you can learn from each. You can get their implementations [here](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v2.1.0/Assets/Scripts/Gameplay/Action).
 
 <figure>
 <ImageSwitcher 

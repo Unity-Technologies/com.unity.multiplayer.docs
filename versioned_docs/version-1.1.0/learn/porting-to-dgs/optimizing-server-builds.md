@@ -40,7 +40,7 @@ There are some indexing issues that arise when using Netcode for GameObjects (NG
 
 Netcode for GameObjects (NGO) relies on `[NetworkBehaviour](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkbehavior)`’s index position on a GameObject to know to which `NetworkBehaviour` it needs to route network messages. By stripping a script, you can unintentionally create holes in the GameObject’s list of components, interfering with NGO’s indexing. In general, you shouldn’t strip `NetworkBehaviours`; in fact, `NetworkBehaviours` should always be the same between the client and server. To avoid indexing issues with NGO, use script stripping with caution (and only strip as necessary).
 
-Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like [`OnNetworkSpawn`](../../api/Unity.Netcode.NetworkBehaviour#onnetworkspawn). These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/main/Packages/com.unity.multiplayer.samples.coop/Utilities)).
+Your server build can have a few `NetworkBehaviours` scripts to allow callbacks like [`OnNetworkSpawn`](../../api/Unity.Netcode.NetworkBehaviour#onnetworkspawn). These callbacks should use the `NetcodeHook` class (see [Boss Room’s Utilities package](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/tree/v2.0.4/Packages/com.unity.multiplayer.samples.coop/Utilities)).
 
 ## Manual stripping
 

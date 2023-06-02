@@ -1,88 +1,91 @@
 ---
 id: listen-server-host-architecture
-title: Create a game with a listen server / host architecture
+title: Create a game with a listen server and host architecture
 sidebar_label: Listen server and host architecture
-description: Learn more about creating a game with a listen server and host architecture.
 ---
 
 ## What is a listen server
 
-A listen server is hosted on one of the player's machine. It acts both as a server and as a client. This means one of the players will both play and own the game world and other players will connect to it. This has performance, security and cost considerations.
+A listen server acts as both a server and client on a single player's machine for multiplayer game play. This means one player both plays the game and owns the game world while other players connect to this server.
+
+This set up has performance, security, and cost considerations for implementation.
 
 ### Disadvantages
 
-- Network Performance is impacted by having to communicate with remote players over the residential internet connection of the host player.
-- Network Performance may also be reduced because the machine running the server is also generating an output image.
-- Listen servers grant the host player a large latency advantage over other players.
-- The hosting client has access to all the world's information, making it easier to cheat for that player.
-- The server will cease to exist when host player leaves the game.
+- Network performance relies on the residential internet connection of the host player and their machine's output efficiency. Both may cause the remote players connecting to the host to suffer performance issues.
+- The host player may have a large latency advantage over the remote players.
+- With access to all of the game world's information, the host player has an easier opportunity to cheat.
+- The server, i.e. the game ceases to exist when the host player leaves the game.
 
 ### Advantages
 
-- Essentially free
-- Don't require any special infrastructure or forward planning to set up, which makes them common at LAN parties where latency and bandwidth issues aren't a concern.
+- Essentially free compard to dedicated server options.
+- Doesn't require special infrastructure or forward planning to set up. This makes them common use for LAN parties because latency and bandwidth issues aren't a concern.
 
 ## When to use a listen server architecture
 
-The listen server architecture is a popular option for single player games which want to add the option to add a friend into an existing world. Listen servers work best for a smaller amount of players (< 12) and for games which don't need persistent worlds because the game state is often tied to the host.
+Listen server architecture is a popular choice for single player games that want to provide the option to add a friend into an existing game world. Listen servers are best suited for a smaller player group (< 12) and games that don't require a persistent world.
 
 :::info
-Persistent world in netcode usually means "persistent online world' For example, the game state isn't bound to a player or a session
+*Persistent world* in Netcode for GameObjects (NGO) means "a persistent online world." 
+
+For example, the game state isn't bound to a player or a session, but is typically tied to the host.
 :::
 
-Listen servers are also much cheaper then dedicated servers because there is no need to run dedicated authoritative servers for your game. Often developers chose a listen server approach because they don't want to deal with setting up a system which orchestrates their game server fleet.
+In contrast to dedicated servers, listen servers are cheaper without the need to run dedicated authoritative servers for a game. Often, the listen server approach is chosen to avoid setting up a system to orchestrate the game server fleet.
 
 :::note
-You will still have to setup matchmaking to get your players to join together. You can't just launch a listen server game and get players playing together, you still have to redirect players to those client-hosted servers.
+You still need to set up matchmaking for your player to join together to play. A listen server game requires redirecting players to the client-hosted server.
 :::
 
 :::funfact
-Valheim is a listen server game with a persistent world. The host has a save game when a group of friends want to play together the host needs to start the world from that save. It's not ideal, but it works.
+*Valheim* by Iron Gate Studio is a listen server game with a persistent world. The host has a separate save game for playing with a group of friends versus when playing alone. It may not be ideal, but it works.
 :::
 
 ## Connecting to a listen server
 
-Connecting to someone elses computer is often not as straight forward as one would think. Computers are hidden behind NATs (Network Address Translation devices) and routers. Personal Computers are hidden behind those devices and usually not directly accessible. There are multiple options available to still create a connection to them.
+Personal computers are hidden behind NATs (Network Address Translation devices) and routers to protect them from direct access. To connect to a listen server, you may choose an option such as [port forwarding](#port-forwarding), a [relay server](#relay-server), [NAT punch-through](#nat-punchthrough), or a [NAT punch with relay fallback](#nat-punch-and-relay-fallback).
 
-### Option A: Port Forwarding
+### Port Forwarding
 
-Often the host can forward a public port on his router to a machine in his local network and thus allow someone from the outside to connect to a listen server. While this approach works fine it comes with a few caveats.
+With port forwarding, the host can allow another player to connect to a listen server by forwarding a public port on their router to a machine in their local network.
 
-1. Users need to manually open ports on their router and there is quite a bit of technical knowledge needed to do so.
-1. Users won't always have access to their routers. For instance if they use a mobile device or are using a corporate network or public WIFI.
+Considerations:
 
-These limitations make port forwarding often not a viable option for a released game but it can be a useful tool for development. You can learn more about how to port forward here: https://portforward.com/
+* It has risks. By opening ports, you create direct pathways for hackers and malware attacks to access your system.
+* The host must manually open the ports on their router, and this requires some technical knowledge the average user may not have.
+* The host may not always have access to their router and would not be able to open a port. For example, the host may be using a mobile device, a corporate network, or public WiFi.
 
-:::caution
-There are risks associated port forwarding. If you open ports, then you are opening direct lines for hackers and malware attacks. it's recommended that you close the ports when you have completed your session.
-:::
+Port forwarding may not be a viable option for a released game but can be useful for development. For more information about port forwarding, see https://portforward.com/.
 
-### Option B: Relay server
+### Relay Server
 
-Players will always be able to connect to a dedicated server which has ports already forwarded. This servers can run in the cloud or in a data center.
+A dedicated server has ports already forwarded for players to connect anytime. These servers can run in the cloud or a data center. The relay server option uses these servers to send data between players.
 
-The Relay server approach uses this to send data between two players. In a listen server scenario, the host and all clients would connect to the same listen server. The clients would then send packets to each other by sending them to the Relay server and telling it to redirect it to the right client.
+In a listen server relay scenario, the host and all clients connect to the same listen server. Clients send packets to the relay server, which then redirects these packets to the intended recipient.
 
-The advantages of doing this compared to a direct connection is that connecting to a Relay server should always work for any client another advantage is that the Relay server can know when the host client disconnects and inform other clients about that or start a host migration process. If clients are directly to the host they won't be able if it's their internet or the hosts internet which caused the disconnect. The disavantages are that you'll have to pay for your Relay server and the round trip times for messages can be higher because messages have to go over the relay instead of to the other client directly.
+Advantages:
 
-### Option C: NAT Punchthrough
+* Compared to direct connecting through port forwarding, a relay server should always work for any client.
+* A relay server knows when the host client disconnects and can inform the other clients or start a host migration process.
 
-The idea behind NAT Punchthrough is to open a direct connection between clients without having one of them do portforwarding. There are multiple ways to do NAT punchthrough such as [STUN](../reference/glossary/network-terms.md#session-traversal-utilities-for-nat-stun), [ICE](../reference/glossary/network-terms.md#interactive-connectivity-establishment-ice) or [UDP hole punching](../reference/glossary/network-terms.md#udp-hole-punching). When NAT punching suceeds clients will have a direct connection open between them and can send packets to each other. Often NAT punching can fail this depends on the type of NATs which is between the clients. Since most games want everyone to be able to play their games, NAT Punchthrough isn't a popular option and is mostly only used with a fallback relay which is the next described option.
+Disadvantages:
 
-### Option D: NAT Punch and Relay Fallback
+A relay server costs money, and the round trip times for packet exchange may be higher because they have to go through the relay server instead of being sent directly to the other client.
 
-This option combines NAT punching with a relay fallback. The idea is to first have clients try connecting to the host via NAT punching and if the connection fails they default back to the relay server. This helps to reduce load on the relay while still allowing any client to connect to the host. This option is widely used because
-it reduces hosting costs of relay servers.
+### NAT Punch-through
 
-## Which option to chose
+Network Address Translation (NAT) punch-through, also known as hole punching, opens a direct connection without port forwarding. When successful, clients are directly connected to each other to exchange packets. However, depending on the NAT types among the clients, NAT punching often fails.
 
-Listen server games often use Nat Punch and Relay Fallback (option D) because it keeps costs low while allowing anyone to join a session. NAT Punchthrough (option C) can be a good option as well because the relay can better handle disconnects and host migration and might have a better connection quality.
+Ways to NAT punch:
+* Session Traversal Utilities for NAT [STUN](../reference/glossary/network-terms.md#session-traversal-utilities-for-nat-stun)
+* Interactive Connectivity Establishment [ICE](../reference/glossary/network-terms.md#interactive-connectivity-establishment-ice)
+* User Datagram Protocol [(UDP) hole punching](../reference/glossary/network-terms.md#udp-hole-punching)
 
-Many platforms come with platform specific networking solutions. They usually use the NAT Punch and Relay Fallback model behind the scenes. They can be a good option because they're free and integrate with other API features of the platform such as social systems. They're often limited to just their own platforms.
+Because of its high rate of failure, NAT punch-through is typically only used with a relay fallback. 
 
-There are companies which provide relay servers in your cloud ready for your game to use such as Playfab Party or Photon Realtime. They usually charge a cost based on the CCU (conccurrent users).
+### NAT Punch and Relay Fallback
 
-## Netcode for GameObjects (Netcode) and listen servers
+This option combines NAT punching with a relay fallback. Clients first try to connect to the host by NAT punching and default back to the relay server on failure. This reduces the workload on the relay server while allowing clients to still connect to the host.
 
-Netcode modular transport system supports all the options above. Most regular transports will allow you to connect to them
-via port forwarding. Netcode can support platform specific relays via Transport. You can find implementations in the Netcode-community-contributions repository. Netcode also supports cross platform listen servers by integrating a third party relay service via transport. You can also write your own Relay server or NAT punch server for Netcode.
+It is widely used because it reduces the hosting costs of relay servers.
