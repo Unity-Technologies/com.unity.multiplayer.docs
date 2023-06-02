@@ -44,7 +44,7 @@ Your server build can have a few `NetworkBehaviours` scripts to allow callbacks 
 
 ## Content Selection
 
-You can use [content selection](content-selection.md) methods to selectively strip GameObjects, components, and prefab assets depending on your build target.
+You can use [content selection](./content-selection) methods to selectively strip GameObjects, components, and prefab assets depending on your build target.
 
 ## Other stripping opportunities
 
