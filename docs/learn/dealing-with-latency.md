@@ -295,6 +295,10 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO Tentacular, if interract with other server driven elements, need these elements to be predicted as well -->
 <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
 
+:::info
+There's no prediction implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
+:::
+
 ### Controlled Desyncs
 
 It can be hard to handle misprediction corrections elegantly and without taking your players out of their immersion. Clients also can't always stay in sync tick by tick, frame by frame. You can adapt your gameplay and animations to allow your clients to desync for a few seconds to resync again to smooth correction handling. By using controlled desyncs, clients can resolve and reinterpret how they reach a common state independently based on their local context. You can consider this technique as a "smart context-aware interpolation" or an "elegant correction" when predicting. It reuses some of [action anticipation](#action-anticipation)'s technique where you use non-gameplay-important animations to hide discrepancies caused by lag and reinterpret how the client will reach the target authoritative state.
