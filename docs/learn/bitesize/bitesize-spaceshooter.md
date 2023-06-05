@@ -16,12 +16,12 @@ This method of running physics makes sure that there are no desyncs or other phy
 
 ## Player Health
 
-2DSpaceShooter uses `NetworkVariable`s to track the players health and energy. Both variables are server authorative, only the host or server can make changes to them. The client draws the player's health bar simply by accessing the value of the `NetworkVariable`.
+2DSpaceShooter uses `NetworkVariable`s to track the players health and energy. Both variables are server authoritative, only the host or server can make changes to them. The client draws the player's health bar simply by accessing the value of the `NetworkVariable`.
 
 For example:
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L488-L490
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L172-L175
 ```
 
 ## Power-ups and Status Effects
@@ -33,7 +33,7 @@ The power-ups themselves are server authorative. On the server they check if a p
 The `ShipControl.cs` of the player object tracks each status effect. `NetworkVariable`s are used as duration timers to control the beginning and end of status effects. You can also use regular floats for timers. By using `NetworkVariable`s, the client can use this information to display different graphics based on active buffs to players.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L45-L51
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/2DSpaceShooter/Assets/Scripts/ShipControl.cs#L431-L486
 ```
 
 ## NetworkObject Pooling

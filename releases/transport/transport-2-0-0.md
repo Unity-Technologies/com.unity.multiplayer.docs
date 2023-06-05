@@ -3,21 +3,24 @@ title: Unity Transport 2.0.0+
 id: transport-2-0-0
 ---
 
-The [Unity Transport](../../transport/current/about) `com.unity.transport` package repository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
+The [Unity Transport](https://docs-multiplayer.unity3d.com/transport/current/about/) `com.unity.transport` package repository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
-## [2.0.2] - 2023-04-26
+## [2.0.2] - 2023-05-30
 
-## Changes
+### Changes
+* When using Unity Relay, `NetworkDriver.GetRemoteEndpoint` will now always return the address of the Relay server, instead of returning the address until a connection is established, and then returning the allocation ID encoded as an endpoint (appearing as an invalid endpoint). This makes the behavior the same as it was in version 1.X of the package.
+* Updated Collections dependency to 2.1.4.
+* A warning will now be emitted if passing a connection type other than "wss" to the `RelayServerData` constructors on WebGL (other connection types are not supported on that platform).
 
-- When using Unity Relay, NetworkDriver.GetRemoteEndpoint will now always return the address of the Relay server, instead of returning the address until a connection is established, and then returning the allocation ID encoded as an endpoint (appearing as an invalid endpoint). This makes the behavior the same as it was in version 1.X of the package.
-
-## Fixes
-- Fixed an issue where the reliable pipeline stage could end up writing past the end of its internal buffer and thrashing the buffers of other connections. This could result in packet corruption, but would most likely result in erroneous -7 (NetworkDriverParallelForErr) errors being reported when calling EndSend.
-- Fixed an issue where upon returning -7 (NetworkDriverParallelForErr), EndSend would leak the send handle. Over time, this would result in less send handles being available, resulting in more -5 (NetworkSendQueueFull) errors.
-- Fixed an issue where WebSocket connections would always take at least connectTimeoutMS milliseconds to be reported as established, even if the connection was actually established faster than that.
-- Fixed an issue where ArgumentOutOfRangeException could be thrown in situations where a new WebSocket connection is established while a previous connection is in the process of being closed.
-- If nothing is received from a Unity Relay server for a while, the transport will now attempt to rebind to it. This should improve the accuracy of GetRelayConnectionStatus in scenarios where the Relay allocation times out while communications with the server are out.
-- Fixed an issue where UDPNetworkInterface (the default one) would not bind to the correct address if the local IP address change and the socket needs to be recreated (e.g. because the app was backgrounded on a mobile device).
+### Fixes
+* Fixed an issue where the reliable pipeline stage could end up writing past the end of its internal buffer and thrashing the buffers of other connections. This could result in packet corruption, but would most likely result in erroneous -7 (`NetworkDriverParallelForErr`) errors being reported when calling `EndSend`.
+* Fixed an issue where upon returning -7 (`NetworkDriverParallelForErr`), `EndSend` would leak the send handle. Over time, this would result in less send handles being available, resulting in more -5 (`NetworkSendQueueFull`) errors.
+* Fixed an issue where WebSocket connections would always take at least `connectTimeoutMS` milliseconds to be reported as established, even if the connection was actually established faster than that.
+* Fixed an issue where `ArgumentOutOfRangeException` could be thrown in situations where a new WebSocket connection is established while a previous connection is in the process of being closed.
+* If nothing is received from a Unity Relay server for a while, the transport will now attempt to rebind to it. This should improve the accuracy of `GetRelayConnectionStatus` in scenarios where the Relay allocation times out while communications with the server are out.
+* Fixed an issue where `UDPNetworkInterface` (the default one) would not bind to the correct address if the local IP address change and the socket needs to be recreated (e.g. because the app was backgrounded on a mobile device).
+* Fixed an issue where `Disconnect` events would fail to be reported correctly for WebSocket connections.
+* Fixed an issue where, when using Relay, heartbeats would be sent constantly when they are disabled by setting `relayConnectionTimeMS` to 0 in the Relay parameters.
 
 ## [2.0.1] - 2023-04-17
 
