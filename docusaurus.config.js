@@ -157,19 +157,9 @@ module.exports = {
           position: "left",
           items: [
             {
-              type: "docSidebar",
-              sidebarId: "releases",
-              label: "Release Notes",
-              docsPluginId: "releases",
-            },
-            {
               type: "doc",
               docId: "about",
               label: "Documentation",
-            },
-            {
-              label: "API Reference",
-              href: "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.4/api/index.html",
             },
           ],
         },

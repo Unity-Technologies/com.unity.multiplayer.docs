@@ -6,10 +6,6 @@ module.exports = {
             "label": "Release Notes",
             "items": [
                 {
-                    type: 'doc',
-                    id: 'netcode/ngo-changelog',
-                },
-                {
                     "collapsed": true,
                     "type": "category",
                     "label": "Multiplayer Tools",
