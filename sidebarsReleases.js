@@ -36,29 +36,6 @@ module.exports = {
                     type: 'doc',
                     id: 'bitesize/bitesize-changelog',
                 },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Transport (UTP)",
-                    "items": [
-                        {
-                            type: 'doc',
-                            id: 'transport/transport-2-0-0',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'transport/transport-1-0-0',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'transport/transport-1-0-0-pre',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'transport/transport-0-8-0',
-                        },
-                    ]
-                },
             ],
         },
     ],

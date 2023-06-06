@@ -148,20 +148,13 @@ module.exports = {
         src: "img/logo.png",
       },
       items: [
-        // Netcode for GameObjects Dropdown
+        // Netcode for GameObjects Documentation Button
         {
           label: "Netcode for GameObjects",
           // className: 'nav-break',
-          type: "dropdown",
+          type: "doc",
           docId: "about",
           position: "left",
-          items: [
-            {
-              type: "doc",
-              docId: "about",
-              label: "Documentation",
-            },
-          ],
         },
         // Netcode for Gameobjects Versions Dropdown
         {
@@ -174,34 +167,14 @@ module.exports = {
           dropdownActiveClassDisabled: true,
           docsPluginId: "default",
         },
-        // Transport Dropdown
+        // Transport Documentation Button
         {
-          type: "dropdown",
+          type: "doc",
           docId: "about",
           label: "Transport",
           position: "left",
           docsPluginId: "transport",
           className: "nav-break",
-          items: [
-            {
-              type: "doc",
-              docId: "transport/transport-2-0-0",
-              label: "Release Notes",
-              docsPluginId: "releases",
-            },
-            {
-              type: "doc",
-              docId: "about",
-              label: "Documentation",
-              docsPluginId: "transport",
-            },
-
-            {
-              label: "API Reference",
-              href: "https://docs.unity3d.com/Packages/com.unity.transport@2.0/api/index.html",
-              docsPluginId: "transport",
-            },
-          ],
         },
         // Transport Versions Dropdown
         {
