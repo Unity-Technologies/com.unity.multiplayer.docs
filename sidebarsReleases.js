@@ -28,14 +28,6 @@ module.exports = {
                     type: 'doc',
                     id: 'tools/mppm-release-notes',
                 },
-                {
-                    type: 'doc',
-                    id: 'samples/bossroom-changelog',
-                },
-                {
-                    type: 'doc',
-                    id: 'bitesize/bitesize-changelog',
-                },
             ],
         },
     ],

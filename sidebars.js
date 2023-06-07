@@ -1,13 +1,30 @@
 module.exports = {
     "netcode": [
         {
-            "type": "doc",
-            "id": "about"
+            type: "doc",
+            id: "about"
         },
         {
-            "type": "doc",
-            "id": "release-notes/ngo-changelog",
-            "label": "Release Notes"
+            "collapsed": true,
+            "type": "category",
+            "label": "Release Notes",
+            "items": [
+                {
+                    type: "doc",
+                    id: "release-notes/ngo-changelog",
+                    label: "Netcode for GameObjects"
+                },
+                {
+                    type: 'doc',
+                    id: 'samples/release-notes/bossroom-changelog',
+                    label: "Boss Room"
+                },
+                {
+                    type: 'doc',
+                    id: 'samples/release-notes/bitesize-changelog',
+                    label: "Bitesize"
+                },
+            ],
         },
         {
             "type": "link",
