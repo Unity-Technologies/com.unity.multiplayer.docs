@@ -183,33 +183,14 @@ module.exports = {
           dropdownActiveClassDisabled: true,
           docsPluginId: "transport",
         },
-        // Multiplayer Tools Dropdown
+        // Multiplayer Tools Documentation Button
         {
-          type: "dropdown",
+          type: "doc",
           docId: "install-tools",
           label: "Multiplayer Tools",
           position: "left",
           docsPluginId: "tools",
           className: "nav-break",
-          items: [
-            {
-              type: "doc",
-              docId: "tools/tools-2-0-0",
-              label: "Release Notes",
-              docsPluginId: "releases",
-            },
-            {
-              type: "doc",
-              docId: "install-tools",
-              label: "Documentation",
-              docsPluginId: "tools",
-            },
-            {
-              label: "API Reference",
-              href: "https://docs.unity3d.com/Packages/com.unity.multiplayer.tools@1.1/api/index.html",
-              docsPluginId: "tools",
-            },
-          ],
         },
         // Multiplayer Tools Versions Dropdown
         {
