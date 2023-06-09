@@ -45,7 +45,7 @@ void Update()
 }
 ```
 
-# Nested serial types
+## Nested serial types
 
 Nested serial types will be `null` unless you initialize following one of these methods:
 
@@ -55,118 +55,13 @@ Nested serial types will be `null` unless you initialize following one of these 
 
 This is by design. You may see the values as null until initialized. The serializer isn't deserializing them, the `null` value is applied before it can be serialized.
 
-# Conditional Serialization
+## Conditional Serialization
 
 As you have more control over serialization of a struct, you might implement conditional serialization at runtime.
 
-The following examples explore more advanced use-cases.
+The following example explores a more advanced use case.
 
-## Example: Array
-
-You can use arrays in one of two ways:
-
-1. Via C# arrays
-2. Via Native Collections (`NativeArray`)
-
-The critical distinction between the two is that **C# arrays** convert any type that has the arrays to a managed type. This results in garbage collection overhead and makes the arrays somewhat less optimized when you use them with `NetworkVariable`. On the other hand, `NativeArray` requires manual memory management.
-
-```csharp
-public struct MyCustomStruct : INetworkSerializable
-{
-    public int[] Array;
-
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        // Length
-        int length = 0;
-        if (!serializer.IsReader)
-        {
-            length = Array.Length;
-        }
-
-        serializer.SerializeValue(ref length);
-
-        // Array
-        if (serializer.IsReader)
-        {
-            Array = new int[length];
-        }
-
-        for (int n = 0; n < length; ++n)
-        {
-            serializer.SerializeValue(ref Array[n]);
-        }
-    }
-}
-```
-
-```csharp
-public struct MyCustomNativeStruct : INetworkSerializable, IDisposable
-{
-    public NativeArray<int> Array;
-
-    public void Dispose()
-    {
-        Array.Dispose();
-    }
-
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        // Length
-        int length = 0;
-        if (!serializer.IsReader)
-        {
-            length = Array.Length;
-        }
-
-        serializer.SerializeValue(ref length);
-
-        // Array
-        if (serializer.IsReader)
-        {
-            if(Array.IsCreated)
-            {
-                // Make sure the existing array is disposed and not leaked
-                Array.Dispose();
-            }
-            Array = new NativeArray<int>(length, Allocator.Persistent);
-        }
-
-        for (int n = 0; n < length; ++n)
-        {
-            // NataveArray doesn't have a by-ref index operator
-            // so we have to read, serialize, write. This works in both
-            // reading and writing contexts - in reading, `val` gets overwritten
-            // so the current value doesn't matter; in writing, `val` is unchanged,
-            // so Array[n] = val is the same as Array[n] = Array[n].
-            // NativeList also exists which does have a by-ref `ElementAt()` method.
-            var val = Array[n];
-            serializer.SerializeValue(ref val);
-            Array[n] = val;
-        }
-    }
-}
-```
-
-**Reading:**
-
-* (De)serialize `length` back from the stream
-
-* Iterate over `Array` member `n=length` times
-
-* (De)serialize value back into Array[n] element from the stream
-
-**Writing:**
-
-* Serialize `length=Array.Length` into stream
-
-* Iterate over Array member n=length times
-
-* Serialize value from Array[n] element into the stream
-
-The following examples uses the `BufferSerializer<TReaderWriter>.IsReader` flag to decide whether to set `length` value to prepare before writing into the stream—the example then uses it to decide whether to create a new `int[]` instance with `length` size to set `Array` before reading values from the stream. There's also an equivalent but opposite `BufferSerializer<TReaderWriter>.IsWriting`.
-
-## Example: Move
+### Example: Move
 
 ```csharp
 
@@ -224,13 +119,11 @@ public struct MyMoveStruct : INetworkSerializable
 
   * Serialize `AngularVelocity` into the stream.
 
-Unlike the [Array](#example-array) example above, this example doesn't use `BufferSerializer<TReaderWriter>.IsReader` flag to change serialization logic but to change the value of a serialized flag itself.
-
 * If the `SyncVelocity` flag is set to true, serialize both the `LinearVelocity` and `AngularVelocity` into the stream.
 
 * When the `SyncVelocity` flag is set to `false`, leave `LinearVelocity` and `AngularVelocity` with default values.
 
-## Recursive Nested Serialization
+### Recursive Nested Serialization
 
 It's possible to recursively serialize nested members with `INetworkSerializable` interface down in the hierarchy tree.
 
