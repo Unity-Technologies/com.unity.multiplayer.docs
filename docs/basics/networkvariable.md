@@ -364,7 +364,7 @@ public class PlayerState : NetworkBehaviour
     void Awake()
     {
         //NetworkList can't be initialized at declaration time like NetworkVariable. It must be initialized in Awake instead.
-        //If you do initialize at decleration, you will run into Memmory leak errors.
+        //If you do initialize at declaration, you will run into Memmory leak errors.
         TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>(); 
     }
 
