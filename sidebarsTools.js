@@ -53,6 +53,33 @@ module.exports = {
             "id": "netscenevis"
         },
         {
+            "collapsed": true,
+            "type": "category",
+            "label": "Porting from client-hosted to DGS",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "porting-to-dgs"
+                },
+                {
+                    "type": "doc",
+                    "id": "porting-to-dgs/client-vs-dgs"
+                },
+                {
+                    "type": "doc",
+                    "id": "porting-to-dgs/porting-to-dgs-game-changes"
+                },
+                {
+                    "type": "doc",
+                    "id": "porting-to-dgs/optimizing-server-builds"
+                },
+                {
+                    "type": "doc",
+                    "id": "porting-to-dgs/hosting-considerations"
+                },
+            ]
+        },
+        {
             "type": "doc",
             "id": "mtt-terms"
         },
