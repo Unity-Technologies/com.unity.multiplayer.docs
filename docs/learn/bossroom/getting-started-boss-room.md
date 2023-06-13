@@ -9,7 +9,7 @@ description: Learn more about installing and running the Boss Room game sample.
 Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. it's an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
 
 :::note
-**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2021 LTS](https://unity.com/releases/2021-lts)). Make sure to include standalone support for Windows/Mac in your installation.
+**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2022 LTS](https://unity.com/releases/lts)). Make sure to include standalone support for Windows/Mac in your installation.
 :::
 
 Boss Room has been developed and tested on the following platforms:
@@ -96,7 +96,7 @@ Boss Room leverages several services from UGS to ease connectivity between playe
 
 Once you have downloaded the project, follow the steps below to get up and running:
 
-1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/2021-lts).
+1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/lts).
     1. Include standalone support for **Windows/Mac** in your Unity Editor installation.
 2. Add the project to the Unity Hub by selecting the **Add** button and pointing it to the root folder of the downloaded project.
     1. Unity imports all the project assets the first time you open the project, which takes longer than usual.
