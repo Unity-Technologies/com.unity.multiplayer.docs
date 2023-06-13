@@ -5,6 +5,34 @@ module.exports = {
             "id": "about"
         },
         {
+            "collapsed": true,
+            "type": "category",
+            "label": "Release Notes",
+            "items": [
+                {
+                    type: 'doc',
+                    id: 'release-notes/transport-2-0-0',
+                },
+                {
+                    type: 'doc',
+                    id: 'release-notes/transport-1-0-0',
+                },
+                {
+                    type: 'doc',
+                    id: 'release-notes/transport-1-0-0-pre',
+                },
+                {
+                    type: 'doc',
+                    id: 'release-notes/transport-0-8-0',
+                },
+            ]
+        },
+        {
+            "type": "link",
+            "label": "API Reference",
+            "href": "https://docs.unity3d.com/Packages/com.unity.transport@latest",
+        },
+        {
             "type": "doc",
             "id": "install"
         },
