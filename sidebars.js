@@ -34,7 +34,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Getting Started",
+            "label": "Get Started",
             "items": [
                 {
                     "type": "doc",
@@ -48,50 +48,43 @@ module.exports = {
                     "type": "doc",
                     "id": "installation/upgrade_from_UNet"
                 },
+                {
+                    "type": "doc",
+                    "id": "tutorials/get-started-ngo"
+                },
+                {
+                    "type": "doc",
+                    "id": "tutorials/command-line-helper"
+                },
             ],
         },
         {
             "collapsed": true,
             "type": "category",
-            "label": "Multiplayer Conceptual Knowledge",
+            "label": "Lag Conceptual Knowledge",
             "items": [
-                {
-                    "type": "doc",
-                    "id": "terms-concepts/network-topologies",
-                },
-                {
-                    "type": "doc",
-                    "id": "learn/listen-server-host-architecture",
-                },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Lag",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "learn/ticks-and-update-rates",
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/lagandpacketloss",
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/clientside_interpolation",
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/dealing-with-latency",
-                        },
-                    ],
-                },
-            ],
+                    {
+                        "type": "doc",
+                        "id": "learn/ticks-and-update-rates",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/lagandpacketloss",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/clientside_interpolation",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/dealing-with-latency",
+                    },
+                ],
         },
         {
             "collapsed": true,
             "type": "category",
-            "label": "Networking",
+            "label": "Configuration",
             "items": [
                 {
                     "type": "doc",
@@ -101,6 +94,29 @@ module.exports = {
                     "type": "doc",
                     "id": "basics/max-players"
                 },
+                {
+                    "type": "doc",
+                    "id": "terms-concepts/network-topologies"
+                },
+                {
+                    "type": "doc",
+                    "id": "learn/listen-server-host-architecture"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/transports"
+                },
+                {
+                    "type": "doc",
+                    "id": "relay/relay"
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Networking Components",
+            "items": [
                 {
                     "type": "doc",
                     "id": "basics/networkobject"
@@ -115,78 +131,8 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "basics/networkvariable"
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/object-visibility"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/fastbufferwriter-fastbufferreader"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/networktime-ticks"
-                },
-                {
-                    "type": "doc",
                     "id": "advanced-topics/physics"
                 },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/transports"
-                },
-                {
-                    "type": "doc",
-                    "id": "relay/relay"
-                },
-                {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Porting from client-hosted to DGS",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "learn/porting-to-dgs"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/porting-to-dgs/client-vs-dgs"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/porting-to-dgs/porting-to-dgs-game-changes"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/porting-to-dgs/optimizing-server-builds"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/porting-to-dgs/hosting-considerations"
-                        },
-                    ]
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/session-management"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/reconnecting-mid-game"
-                },
-                {
-                    "type": "doc",
-                    "id": "reference/dedicated-server"
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Components",
-            "items": [
                 {
                     "type": "doc",
                     "id": "components/networkmanager"
@@ -205,7 +151,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Objects",
+            "label": "Spawning and Ownership",
             "items": [
                 {
                     "type": "doc",
@@ -214,13 +160,17 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "advanced-topics/object-pooling"
-                }
+                },
+                {
+                    "type": "doc",
+                    "id": "basics/object-visibility"
+                },
             ]
         },
         {
             "collapsed": true,
             "type": "category",
-            "label": "Messaging System",
+            "label": "Network Synchronization",
             "items": [
                 {
                     "type": "doc",
@@ -262,6 +212,10 @@ module.exports = {
                             "items": [
                                 {
                                     "type": "doc",
+                                    "id": "basics/networkvariable"
+                                },
+                                {
+                                    "type": "doc",
                                     "id": "learn/rpcvnetvar"
                                 },
                                 {
@@ -290,6 +244,10 @@ module.exports = {
                             "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
                         },
                     ]
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/networktime-ticks"
                 },
                 {
                     "type": "doc",
@@ -333,6 +291,10 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "advanced-topics/serialization/networkobject-serialization"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/fastbufferwriter-fastbufferreader"
                 },
             ]
         },
@@ -378,11 +340,25 @@ module.exports = {
                 },                                                                                                     
             ]
         },
-
         {
             "collapsed": true,
             "type": "category",
-            "label": "Testing ",
+            "label": "Session Management",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/session-management"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/reconnecting-mid-game"
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Testing and Debugging",
             "items": [
                 {
                     "type": "doc",
@@ -396,13 +372,6 @@ module.exports = {
                     "type": "doc",
                     "id": "tutorials/testing/testing_client_connection_management"
                 },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Debugging",
-            "items": [
                 {
                     "type": "doc",
                     "id": "basics/logging"
@@ -418,23 +387,7 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "troubleshooting/errormessages"
-                }
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Walk-Throughs",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "tutorials/get-started-ngo"
                 },
-                {
-                    "type": "doc",
-                    "id": "tutorials/command-line-helper"
-                },
-
             ]
         },
         {
