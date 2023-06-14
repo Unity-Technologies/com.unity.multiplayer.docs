@@ -10,7 +10,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 <div className="table-columns-plain" >
 
-| Getting Started                                                                                                                                                                                          | Hello World and Golden Paths                                          | Education and Samples                                                                                                                                                            |
+| Getting Started                                                                                                                                                                                          | Get Started Project                                         | Education and Samples                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Install Unity Netcode](installation/installation.md)<br/>[Migration from UNet to Netcode](installation/migratingfromUNet.md)<br/>[Upgrade to Unity Netcode Package](installation/migratingfrommlapi.md) | [Get started with Netcode](../docs/tutorials/get-started-with-ngo.md) | [Boss Room](learn/bossroom/getting-started-boss-room.md)<br/>[Bite Size Samples](learn/bitesize/bitesize-introduction.md)<br/>[Dilmer's Tutorials](learn/dilmer/dilmer-video.md) |
 
@@ -24,7 +24,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 </div>
 
-Don't forget to check out [Release Notes](https://docs-multiplayer.unity3d.com/releases/introduction) and [APIs](api/introduction.md)!
+Don't forget to check out [Release Notes](release-notes/ngo-changelog.md) and [APIs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest)!
 
 ## Before you begin
 
