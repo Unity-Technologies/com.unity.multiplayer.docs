@@ -24,13 +24,13 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 </div>
 
-Don't forget to check out [Release Notes](https://docs-multiplayer.unity3d.com/releases/introduction) and [APIs](api/introduction.md)!
+Don't forget to check out [Release Notes](https://docs-multiplayer.unity3d.com/netcode/current/release-notes/ngo-changelog/) and [APIs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest)!
 
 ## Before you begin
 
 Netcode supports the following versions:
 
-- Unity 2020.3, 2021.1, 2021.2, 2021.3, and 2022.
+- Unity 2020.3 and later
 - Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
 
 Netcode supports the following platforms:

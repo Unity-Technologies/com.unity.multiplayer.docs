@@ -66,7 +66,7 @@ m_SpawnedNetworkObject.DontDestroyWithOwner = true;
 m_SpawnedNetworkObject.Despawn();
 ```
 
-To make this the default from the editor insepctor view:
+To make this the default from the editor Inspector view:
 
 ![image](images/DontDestroyWithOwner.png)
 

@@ -10,7 +10,7 @@ The **Runtime Network Stats Monitor (RNSM)** is a configurable component to disp
 
 To enable the Runtime Network Stats Monitor, [install the Multiplayer Tools package](install-tools.md). 
 
-You should now see the Runtime Network Stats Monitor from the **Unity Hub** top menu bar under **Component** > **Netcode**, or when searching for it by name after pressing **Component** > **Add..**. 
+You should now see the Runtime Network Stats Monitor from the **Unity Editor** top menu bar under **Component** > **Netcode**, or when searching for it by name after pressing **Component** > **Add..**. 
 
 :::note
 You must have an object selected for these options to be available.

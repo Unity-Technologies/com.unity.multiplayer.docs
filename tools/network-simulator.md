@@ -22,7 +22,7 @@ You can also use the Network Simulator SDK to create custom network scenarios th
 
 ### Requirements
 
-The only requirement for using Network Simulator is theUnity Editor version 2022.2 and later and the following [package dependencies](#package-dependencies).
+The only requirement for using Network Simulator is Unity Editor version 2022.2 and later and the following [package dependencies](#package-dependencies).
 
 #### Package dependencies
 
@@ -39,7 +39,7 @@ To get started with the Network Simulator:
     1. Tools 1.1.0 or later
     2. Network for GameObjects 1.1.0 or later
     3. Unity Transport 2.0.0 or later
-2. Add the NetworkSimulator Component to any GameObject that persisted across scenes.
+2. Add the NetworkSimulator Component to any GameObject that persists across scenes.
 
 #### Trigger a network disconnect
 
