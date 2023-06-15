@@ -39,7 +39,7 @@ To get started with the Network Simulator:
     1. Tools 1.1.0 or later
     2. Network for GameObjects 1.1.0 or later
     3. Unity Transport 2.0.0 or later
-2. Add the NetworkSimulator Component to any GameObject that persisted across scenes.
+2. Add the NetworkSimulator Component to any GameObject that persists across scenes.
 
 #### Trigger a network disconnect
 
