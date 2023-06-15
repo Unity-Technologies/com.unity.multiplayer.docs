@@ -22,7 +22,7 @@ You can also use the Network Simulator SDK to create custom network scenarios th
 
 ### Requirements
 
-The only requirement for using Network Simulator is theUnity Editor version 2022.2 and later and the following [package dependencies](#package-dependencies).
+The only requirement for using Network Simulator is Unity Editor version 2022.2 and later and the following [package dependencies](#package-dependencies).
 
 #### Package dependencies
 
