@@ -202,62 +202,14 @@ module.exports = {
         {
           className: "navbar-github-link",
           position: "right",
-          to: "contribute",
+          href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
           docsPluginId: "reference",
-          items: [
-            {
-              label: "Docs Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.docs",
-            },
-            {
-              label: "Netcode for GameObjects Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
-            },
-            {
-              label: "Multiplayer Community Contributions",
-              href: "https://github.com/Unity-Technologies/multiplayer-community-contributions",
-            },
-            {
-              label: "Boss Room Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop",
-            },
-            {
-              label: "Bitesize Samples Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize",
-            },
-            {
-              label: "Contribution Guide",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki",
-            },
-          ],
         },
         {
           position: "right",
           className: "navbar-grid-menu",
-          to: "contribute",
+          href: "https://discord.gg/buMxnnPvTb",
           docsPluginId: "reference",
-          items: [
-            {
-              label: "Product Roadmap",
-              href: "https://unity.com/roadmap/unity-platform/multiplayer-networking",
-            },
-            {
-              label: "Discord",
-              href: "https://discord.gg/buMxnnPvTb",
-            },
-            {
-              label: "Unity Multiplayer Forum",
-              href: "https://forum.unity.com/forums/multiplayer.26/",
-            },
-            {
-              label: "Netcode for GameObjects Forum",
-              href: "https://forum.unity.com/forums/netcode-for-gameobjects.661/",
-            },
-            {
-              label: "Unity Transport Forum",
-              href: "https://forum.unity.com/forums/unity-transport.664/",
-            },
-          ],
         },
       ],
     },
