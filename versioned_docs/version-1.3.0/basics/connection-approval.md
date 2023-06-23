@@ -218,7 +218,7 @@ The above example creates a list of unsigned integers to store an alternate play
 The server assigns the `ConnectionApprovalCallback` when it spawns the in-scene placed NetworkObject that the `ClientConnectionHandler` is attached to. When the server handles a connection request, it grabs the alternate player Prefab index from the request's `Payload` field and then obtains the GlobalObjectIdHash value from the `AlternatePlayerPrefabs` list and assigns that to the `response.PlayerPrefabHash`.
 
 ### Step 2: copy the alternate player Prefab's GlobalObjectIdHash value
-![Copy-GlobalObjectIdHash](images/CopyGlobalObjectIdHash.png)
+![Copy-GlobalObjectIdHash](/img/CopyGlobalObjectIdHash.png)
 
 To populate the `AlternatePlayerPrefabs` list:
 - Open the scene containing the in-scene placed NetworkObject that the `ConnectionApprovalCallback` is attached to.
