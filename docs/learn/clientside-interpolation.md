@@ -4,7 +4,7 @@ title:  Client-side Interpolation
 description: Guide covering the basics of lag mitigation and a way to produce smooth gameplay.
 ---
 
-As we discussed in [Lag and Packet Loss](lagandpacketloss.md) - latency is our enemy, with [Jitter](lagandpacketloss#jitter) being the chaotic element that adds complexity to our task of producing "smooth" gameplay experience.
+As we discussed in [Lag and Packet Loss](lagandpacketloss.md) - latency is our enemy, with [Jitter](lagandpacketloss.md#jitter) being the chaotic element that adds complexity to our task of producing "smooth" gameplay experience.
 
 If we just accept the fact that latency exists, but chose not to do anything about it - we would implement what is known as "dumb terminal". Dumb Terminals don't need to understand anything about the simulation they're visualizing for the client - all they do is:
 
@@ -15,7 +15,7 @@ This is a conservative approach that makes no attempt to mitigate delay, but als
 
 Not only does this approach cause some unresponsiveness (which may be acceptable in certain game genres), it also makes it more difficult to aim at other players. The non-up-to-date rendering of the world forces the player to aim ahead of their target to compensate for lag. As a worst case scenario, the player can be legitimately aiming at the enemy player, but due to the fact that the enemy was actually a 100-150ms "ahead" (as in forward in time, not necessarily ahead in a positional sense) of what is being rendered, they may be unable to hit the enemy unless he runs predictably in a straight line. 
 
-Now throw in some chaos by means of [RTT fluctuations](lagandpacketloss#round-trip-time-rtt) and [Jitter](lagandpacketloss#jitter), and we are getting into an unacceptable gameplay experience.
+Now throw in some chaos by means of [RTT fluctuations](lagandpacketloss.md#round-trip-time-rtt) and [Jitter](lagandpacketloss.md#jitter), and we are getting into an unacceptable gameplay experience.
 
 Fortunately we can mitigate the effects of latency and jitter.
 
@@ -25,7 +25,7 @@ Visual choppiness is caused by infrequent (in comparison to the speed at which c
 
 In client-side Interpolation instead of just snapping objects to their positions that are transmitted from the server the client smoothly interpolates to this state over time. This approach is still conservative - the client just smoothens out the transition between valid states that were sent from the server. 
 
-Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for client-side interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect, our latency would increase by our [Interpolation Period](../learn/ticks-and-update-rates#interpolation-period). to avoid stutter, we want that period to be less than the [Packet Sending Period](../learn/ticks-and-update-rates#packet-sending-period). When the client is done interpolating to the previous state, it would always have received a new state to repeat the process. 
+Normally a client in a server-authoritative topology, barring any additional tricks and techniques, would be able to render state that is approximately half the Round Trip Time (RTT) behind the actual state of simulation on the server. In order for client-side interpolation to be able to work it needs to be somewhat behind (catching up to) the most recent state passed to us from the server. In effect, our latency would increase by our [Interpolation Period](ticks-and-update-rates.md#interpolation-period). to avoid stutter, we want that period to be less than the [Packet Sending Period](ticks-and-update-rates.md#packet-sending-period). When the client is done interpolating to the previous state, it would always have received a new state to repeat the process. 
 
 Client-side interpolation is implemented in Netcode for GameObjects (Netcode) in the [NetworkTransform](../components/networktransform.md) component.
 
