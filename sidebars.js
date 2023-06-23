@@ -465,67 +465,17 @@ module.exports = {
             "label": "Community Contributions",
             "items": [
                 {
-
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Code Monkey Tutorials",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "learn/codemonkey/codemonkey-video"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/codemonkey/codemonkey-complete"
-                        },
-                 
-                    ]
+                    "type": "doc",
+                    "id": "community-contributions/codemonkey"
                 },
                 {
-
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Dilmer Tutorials",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "learn/dilmer/dilmer-video"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/dilmer/project-setup"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/dilmer/corefeatures"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/dilmer/networkanimator"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/dilmer/relay-service-setup"
-                        }
-                    ]
+                    "type": "doc",
+                    "id": "community-contributions/dilmer"
                 },
                 {
-
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Dapper Tutorials",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "learn/dapper/dapper-video"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "learn/dapper/dapper-upgrade"
-                        },
-
-                    ]
-                }
+                    "type": "doc",
+                    "id": "community-contributions/dapper"
+                },
             ]
         },
         {

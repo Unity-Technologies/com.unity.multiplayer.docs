@@ -1,9 +1,9 @@
 ---
 id: dilmer
-title: Dilmer Valecillos Netcode for GameObjects Tutorial Videos
+title: Dilmer Valecillos NGO Tutorial Videos
 ---
 
-This section aims to collate a series of Multiplayer Unity Networking tutorial videos that teach various concepts of the new Unity Official Multiplayer solution Netcode for GameObjects, all made by Dilmer Valecillos. Learn more about Dilmer Valecillos and his [Youtube channel](https://www.youtube.com/channel/UCHM37DnT_QGJT5Zyl4EmqcA) and don't forget to click the subscribe button.
+Dilmer Valecillos teaches various concepts about Netcode for GameObjects in the following video tutorials. Learn more about Dilmer Valecillos and his [Youtube channel](https://www.youtube.com/channel/UCHM37DnT_QGJT5Zyl4EmqcA), and don't forget to click the **Subscribe** button.
 
 :::important
 These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease. 
