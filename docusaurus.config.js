@@ -303,15 +303,6 @@ module.exports = {
           },
           admonitions,
         },
-        blog: {
-          //postsPerPage: 3,
-          feedOptions: {
-            type: "all",
-            copyright: `Copyright © ${new Date().getFullYear()} Unity Technologies`,
-          },
-          blogSidebarCount: "ALL",
-          blogSidebarTitle: "All Blog Posts",
-        },
         theme: {
           customCss: require.resolve("./src/css/unity-custom.scss"),
         },
