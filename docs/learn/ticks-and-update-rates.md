@@ -19,7 +19,7 @@ The time the server waits between sending packets to clients.
 
 ## Latency and Lag
 
-See [Latency](../../learn/lagandpacketloss.md#latency)
+See [Latency](lagandpacketloss.md#latency)
 
 ## Update Rate
 

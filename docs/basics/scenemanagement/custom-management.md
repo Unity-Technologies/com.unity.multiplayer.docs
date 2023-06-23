@@ -20,12 +20,12 @@ While integrated scene management solution handles the synchronization of in-sce
 - Create an instance of a Network Prefab in your scene.
 - Select the instance and in the inspector view navigate to the `NetworkObject` component
   - Copy the GlobalObjectIdHash value of the `NetworkObject`
-  ![image](images/CustomManagementGlobalObjectIdHash.png)
+  ![image](/img/CustomManagementGlobalObjectIdHash.png)
 - Within your `NetworkManager`, create a new Network Prefab entry in the Network Prefabs list.
   - Check the "Override" property of the new Network Prefab entry.
   - Select "Hash" and paste the GlobalObjectIdHash value into the "Hash" field.
   - Drag an drop your recently created in-scene placed Network Prefab to link the two together (GlobalObjectIdHash and Network Prefab)
-  ![image](images/CustomManagementRegister.png)
+  ![image](/img/CustomManagementRegister.png)
 :::tip
 If your `NetworkManager` is in another scene, then the easiest way to accomplish this is to (within the editor) load the scene containing the `NetworkManager` instance and the scene you are creating an instance of your in-scene placed Network Prefab.  Having quick access to your `NetworkManager`'s properties helps expedite the in-scene placed Network Prefab override registration process.
 :::

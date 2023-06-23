@@ -17,14 +17,6 @@ This document uses the following terminology to distinguish between the primary 
 - **Virtual Players** refers to simulated Players created with Multiplayer Play Mode that open in a separate window with limited authoring capabilities when you enter **[Play mode](https://docs.unity3d.com/Manual/GameView.html)**.
 - **Players** refers to all Player instances, including the Main Editor Player and all Virtual Players.
 
-## Releases
-
-| Version  | Release date | Notes                                               |
-|----------|:------------:|----------------------------------------------------|
-| 0.1.1    | 2023-01-26   | See [MPPM release notes](../releases/tools/mppm-release-notes.md) |
-| 0.1.0    | 2022-11-15   | See [MPPM release notes](../releases/tools/mppm-release-notes.md) |
-
-
 ## Requirements
 
 You must meet the following requirements to use Multiplayer Play Mode:
