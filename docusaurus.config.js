@@ -206,11 +206,6 @@ module.exports = {
           docsPluginId: "reference",
           items: [
             {
-              to: "/introduction",
-              label: "Release Notes",
-              docsPluginId: "releases",
-            },
-            {
               label: "Docs Repo",
               href: "https://github.com/Unity-Technologies/com.unity.multiplayer.docs",
             },
@@ -233,12 +228,6 @@ module.exports = {
             {
               label: "Contribution Guide",
               href: "https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki",
-            },
-            {
-              type: "doc",
-              docId: "template",
-              label: "Markdown Template",
-              docsPluginId: "reference",
             },
           ],
         },
@@ -311,10 +300,6 @@ module.exports = {
               label: "1.0.0",
               path: "1.0.0",
             },
-            "0.1.0": {
-              label: "0.1.0",
-              path: "0.1.0",
-            },
           },
           admonitions,
         },
@@ -339,40 +324,6 @@ module.exports = {
   ],
   plugins: [
     [
-      // Configs for Release Note unversioned content
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "releases",
-        path: "releases",
-        editUrl: ({ docPath }) => {
-          return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${docPath}`;
-        },
-        editCurrentVersion: true,
-        routeBasePath: "releases",
-        sidebarPath: require.resolve("./sidebarsReleases.js"),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        admonitions,
-      },
-    ],
-    [
-      // Configs for Reference unversioned content
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "reference",
-        path: "reference",
-        editUrl: ({ docPath }) => {
-          return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${docPath}`;
-        },
-        editCurrentVersion: true,
-        routeBasePath: "reference",
-        sidebarPath: require.resolve("./sidebarsReference.js"),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        admonitions,
-      },
-    ],
-    [
       // Configs for Transport versioned content
       "@docusaurus/plugin-content-docs",
       {
@@ -391,10 +342,6 @@ module.exports = {
           "1.0.0": {
             label: "1.0.0",
             path: "1.0.0",
-          },
-          "0.8.0": {
-            label: "0.8.0",
-            path: "0.8.0",
           },
         },
         editCurrentVersion: true,
