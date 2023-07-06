@@ -199,7 +199,7 @@ There might be times when you want to specify an alternate player Prefab to use 
         private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
         {
             var playerPrefabIndex = System.BitConverter.ToInt32(request.Payload);
-            if (AlternatePlayerPrefabs.Count < playerPrefabIndex)
+            if (AlternatePlayerPrefabs.Count > playerPrefabIndex)
             {
                 response.PlayerPrefabHash = AlternatePlayerPrefabs[playerPrefabIndex];
             }
