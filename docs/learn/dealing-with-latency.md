@@ -18,7 +18,7 @@ Accuracy/consistency | server rewind, server authority
 
 ---
 
-As mentioned in [latency](lagandpacketloss.md) and [tick](../reference/glossary/ticks-and-update-rates.md), waiting for your server's response makes your game feel unresponsive.
+As mentioned in [latency](lagandpacketloss.md) and [tick](ticks-and-update-rates.md), waiting for your server's response makes your game feel unresponsive.
 
 Latency destroys your gameplay experience and makes your game frustrating. It doesn't take much to make a multiplayer game unplayable. Add 200ms between your inputs and what you see on your screen and you'll want to throw your computer through the window.
 

@@ -202,73 +202,14 @@ module.exports = {
         {
           className: "navbar-github-link",
           position: "right",
-          to: "contribute",
+          href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
           docsPluginId: "reference",
-          items: [
-            {
-              to: "/introduction",
-              label: "Release Notes",
-              docsPluginId: "releases",
-            },
-            {
-              label: "Docs Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.docs",
-            },
-            {
-              label: "Netcode for GameObjects Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
-            },
-            {
-              label: "Multiplayer Community Contributions",
-              href: "https://github.com/Unity-Technologies/multiplayer-community-contributions",
-            },
-            {
-              label: "Boss Room Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop",
-            },
-            {
-              label: "Bitesize Samples Repo",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize",
-            },
-            {
-              label: "Contribution Guide",
-              href: "https://github.com/Unity-Technologies/com.unity.multiplayer.docs/wiki",
-            },
-            {
-              type: "doc",
-              docId: "template",
-              label: "Markdown Template",
-              docsPluginId: "reference",
-            },
-          ],
         },
         {
           position: "right",
           className: "navbar-grid-menu",
-          to: "contribute",
+          href: "https://discord.gg/buMxnnPvTb",
           docsPluginId: "reference",
-          items: [
-            {
-              label: "Product Roadmap",
-              href: "https://unity.com/roadmap/unity-platform/multiplayer-networking",
-            },
-            {
-              label: "Discord",
-              href: "https://discord.gg/buMxnnPvTb",
-            },
-            {
-              label: "Unity Multiplayer Forum",
-              href: "https://forum.unity.com/forums/multiplayer.26/",
-            },
-            {
-              label: "Netcode for GameObjects Forum",
-              href: "https://forum.unity.com/forums/netcode-for-gameobjects.661/",
-            },
-            {
-              label: "Unity Transport Forum",
-              href: "https://forum.unity.com/forums/unity-transport.664/",
-            },
-          ],
         },
       ],
     },
@@ -311,21 +252,8 @@ module.exports = {
               label: "1.0.0",
               path: "1.0.0",
             },
-            "0.1.0": {
-              label: "0.1.0",
-              path: "0.1.0",
-            },
           },
           admonitions,
-        },
-        blog: {
-          //postsPerPage: 3,
-          feedOptions: {
-            type: "all",
-            copyright: `Copyright © ${new Date().getFullYear()} Unity Technologies`,
-          },
-          blogSidebarCount: "ALL",
-          blogSidebarTitle: "All Blog Posts",
         },
         theme: {
           customCss: require.resolve("./src/css/unity-custom.scss"),
@@ -338,40 +266,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    [
-      // Configs for Release Note unversioned content
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "releases",
-        path: "releases",
-        editUrl: ({ docPath }) => {
-          return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${docPath}`;
-        },
-        editCurrentVersion: true,
-        routeBasePath: "releases",
-        sidebarPath: require.resolve("./sidebarsReleases.js"),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        admonitions,
-      },
-    ],
-    [
-      // Configs for Reference unversioned content
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "reference",
-        path: "reference",
-        editUrl: ({ docPath }) => {
-          return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${docPath}`;
-        },
-        editCurrentVersion: true,
-        routeBasePath: "reference",
-        sidebarPath: require.resolve("./sidebarsReference.js"),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        admonitions,
-      },
-    ],
     [
       // Configs for Transport versioned content
       "@docusaurus/plugin-content-docs",
@@ -391,10 +285,6 @@ module.exports = {
           "1.0.0": {
             label: "1.0.0",
             path: "1.0.0",
-          },
-          "0.8.0": {
-            label: "0.8.0",
-            path: "0.8.0",
           },
         },
         editCurrentVersion: true,
