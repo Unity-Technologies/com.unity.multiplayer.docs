@@ -45,7 +45,11 @@ The NetworkTransform component handles the synchronization of a NetworkObject’
 
 You can also increase the thresholds to reduce the frequency of updates if you don’t mind reducing the accuracy and responsiveness of the replicated Transform.
 
-Before optimization, the Boss Room sample contained a lot of unnecessary data. We restricted every NetworkTransform only to synchronize the required data to reduce bandwidth usage. Since the characters evolve on a plane, we only synchronize their position’s x and z components and their rotation about the y-axis.
+Before optimization, the Boss Room sample contained a lot of unnecessary data. This is due to NetworkTransform synchronizing every axis' position, rotation, and scale information by default. So, we restricted every NetworkTransform only to synchronize the required data to reduce bandwidth usage. 
+
+Since the characters evolve on a plane, we only synchronize their position’s x and z components and their rotation about the y-axis.
+
+Additionally, with the changes introduced in [Netcode for GameObjects v1.4.0](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F1.4.0), we were able to further reduce the bandwidth cost associated for some prefabs that utilized NetworkTransform. The synchronization payload was reduced by 5 bytes for the Character and the Arrow prefab inside Boss Room, for example, by enabling "Use Half Float Precision" on their respective NetworkTransforms.
 
 See [NetworkTransform](../../components/networktransform.md) for more information on the NetworkTransform component.
 
