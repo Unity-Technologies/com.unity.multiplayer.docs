@@ -76,22 +76,18 @@ const features = [
 
 const highlights = [
   {
-    title: "Have a question?",
+    title: "Multiplayer Tools",
     imageUrl: "img/hilight-question.jpg",
     description: (
       <>
-        Check the FAQ, that's frequently asked questions. If you don't find what
-        you need, use search or contact us on{" "}
-        <a href="https://discord.gg/buMxnnPvTb" target="_blank">
-          <strong>Discord</strong>
-        </a>
-        !
+        Use Multiplayer Tools such as the Profiler, Runtime Stats Monitor, Network Simulator, and
+        Network Scene Visualization to optimize your game's performance and usability.
       </>
     ),
     link: (
       <>
-        <a href="netcode/current/learn/faq" className="land-link">
-          See the FAQ
+        <a href="tools/current/install-tools" className="land-link">
+          Learn more about Multiplayer Tools
         </a>
       </>
     ),
@@ -105,7 +101,7 @@ const highlights = [
     link: (
       <>
         <a href="transport/current/about" className="land-link">
-          See Unity Transport
+          Learn more about Unity Transport
         </a>
       </>
     ),
@@ -205,23 +201,17 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className="col col--6">
-              <h1 className="blog-title">Get the latest news!</h1>
+              <h1 className="blog-title">Be part of the community!</h1>
               <p className="blog-subtitle">
-                New releases, tips and tricks, contribution news, and much
-                more...see the blog! Every month we highlight releases, new
-                content, and community news.{" "}
+                We have an active community on Discord for tips, announcements, and
+                interact with other users and Unity developers to help you on your Multiplayer Networking
+                journey!
+                Connect to our {" "}
+                <a href="https://discord.gg/buMxnnPvTb" target="_blank">
+                  <strong>Discord community</strong>
+                </a>
+                !
               </p>
-              <div className="buttons-pages">
-                <Link
-                  className={clsx(
-                    "button button--outline button--secondary button--lg",
-                    styles.getStarted
-                  )}
-                  to={useBaseUrl("blog")}
-                >
-                  See the Blog
-                </Link>
-              </div>
             </div>
           </div>
         </div>

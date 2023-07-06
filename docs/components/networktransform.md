@@ -26,15 +26,15 @@ Fortunately, NGO provides you withNetworkTransform component implementation that
 ## Adding
 When adding a NetworkTransform component to a GameObject, you should always make sure the GameObject has a NetworkObject component attached to it or that the GameObject's transform parent is assigned to a GameObject with a NetworkObject component attached to it like in the image below:
 
-![image](./Images/NetworkTransformSimple.png)
+![image](/img/NetworkTransformSimple.png)
 
 You can also have a parent GameObject that has a NetworkObject component attached to it with a child GameObject that has a NetworkTransform component like in the image below:
 
-![image](./Images/NetworkTransformSimpleParent.png)
+![image](/img/NetworkTransformSimpleParent.png)
 
 As well, you can have "nested NetworkTransforms" that are all associated with a single NetworkObject like in the image below:
 
-![image](./Images/NetworkTransformNestedParent.png)
+![image](/img/NetworkTransformNestedParent.png)
 
 With nested NetworkTransforms, you can (theoretically) have the (n) number of nested children each with NetworkTransform components.  _However, we recommend exercising caution with the amount of nested NetworkTransforms per network prefab instance if you plan on having many instances of that same network prefab per network session._
 
@@ -51,7 +51,7 @@ With nested NetworkTransforms, you can (theoretically) have the (n) number of ne
 ## Configuring
 When you select a NetworkTransform component, you will see the following properties in the inspector view:
 
-![image](./Images/NetworkTransformProperties.png)
+![image](/img/NetworkTransformProperties.png)
 
 ### Property Synchronization
 Some of the `NetworkTransform` properties are automatically synchronized by the authoritative instance to all non-authoritative instances.  It is **important to note** that when any synchronized property changes the NetworkTransform is effectively "teleported" (i.e. all values re-synchronized and interpolation is reset) which can cause a single frame delta in position, rotation, and scale (depending upon what is being synchronized). _Always keep this in mind when making adjustments to NetworkTransform properties during runtime._
@@ -112,7 +112,7 @@ With Quaternion synchronization enabled, the authoritative instance still compar
 
 Quaternion synchronization comes with a price. It will increase the bandwidth cost, 16 bytes per instance, in exchange for handling the more complex rotation issues that more often occur when using nested NetworkTransform (one or more parent transforms with one or more child transforms). However, when you enable the **Use Quaternion Synchronization** property you will notice a change in both the **Syncing** axis selection check boxes and a new **Use Quaternion Compression** property will appear:
 
-![image](./Images/NetworkTransformQuaternionSynch.png)
+![image](/img/NetworkTransformQuaternionSynch.png)
 
 :::note
 

@@ -543,7 +543,7 @@ The above code can be tested by:
 - Creating a stand alone build and running that as a host or server
 - Running the same scene within the editor and connecting as a client
     - Once connected, you can then select the `GameObject` with the attached `NetworkObject` and `TestMyCustomNetworkVariable` components so it appears in the inspector view.  There you can verify the `TestMyCustomNetworkVariable.CustomNetworkVariable` property was synchronized with the client (like in the screenshot below):
-    ![ScreenShot](images/MyCustomNetworkVariableInspectorView.png)
+    ![ScreenShot](/img/MyCustomNetworkVariableInspectorView.png)
 
 :::caution
 If you aren't adhering to the (unmanaged) value types in your own custom `NetworkVariableBase` implementation then it's advised to not try and use `NetworkList` or `NetworkVariable` as properties within that implementation. Instead, declare `NetworkVariable` or `NetworkList` properties within the same `NetworkBehaviour` that you have declared your custom `NetworkVariableBase` implementation within.
