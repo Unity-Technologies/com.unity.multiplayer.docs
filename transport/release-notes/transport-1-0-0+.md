@@ -5,6 +5,17 @@ id: transport-1-0-0
 
 The [Unity Transport](https://docs-multiplayer.unity3d.com/transport/1.0.0/about/) `com.unity.transport` package respository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
+## [1.4.0] - 2023-06-28
+
+### New features
+
+* Added a new `GetUnsafeReadOnlyPtr` method to `DataStreamReader`. This is meant as an escape hatch for use cases that require passing stream readers outside of a job (this not possible with `DataStreamReader` directly since the safety system will not allow it). As the name implies, this throws away many safety guarantees and is thus not recommended to use unless absolutely required.
+
+### Changes
+
+* `NetworkDriver.GetRelayConnectionStatus` will now return the new enum value `RelayConnectionStatus.NotUsingRelay` when called on a `NetworkDriver` that has not been configured to use Unity Relay. The previous behavior was to throw an exception.
+* It is now possible to configure the maximum message size that the transport will send through a new `maxMessageSize` parameter in `NetworkSettings.WithNetworkConfigParameters`. This is useful for environments where network equipment mishandles larger packets (like some mobile networks or VPNs). The value excludes IP and UDP headers, but includes headers added by the transport itself (e.g. reliability headers). The default value is 1400. Note that it is recommended that both client and server be configured to use the same value.
+
 ## [1.3.4] - 2023-04-27
 
 ### Fixes
