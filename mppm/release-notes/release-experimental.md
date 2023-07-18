@@ -1,17 +1,37 @@
 ---
-id: mppm-release-notes
-title: Multiplayer Play Mode
+id: mppm-experimental
+title: Multiplayer Play Mode Release Notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [0.2.0] - 2023-06-26
+
+### Fixed
+
+* Fixed null exception when loading into a new scene with unsaved changes.
+* Fixed exception triggered on players when changing scene in play mode.
+* Updated text to "Show in Finder" on MacOS for revealing Players location on disk.
+* Fixed issues with the Asset Database syncing.
+
+### Features
+
+* Display a message to the console log when opening Clones that don't have the required symlinked folders.
+* Trigger play mode for clones before main editor starts entering play mode.
+* Clone players will have the same behaviour as the main editor regarding the "Stop playing and compile" option.
+ 
 ## [0.1.1] - 2023-01-26
 
-* Reduced GC allocations in the messaging system loop.
+### Fixed
+
+- Reduced GC allocations in the messaging system loop.
+- Fixed CurrentPlayer.Tag returning "Untagged" instead of an empty string if a tag is not assigned.
+- Fixed bug where pressing Return or Enter would not submit a created tag to the UI.
+- Fixed missing XMLDoc for CurrentPlayer API.
+- Fixed broken links in the package documentation.
+
+### Features
+
 * Added support for additive scenes.
-* Fixed `CurrentPlayer.Tag` returning "Untagged" instead of an empty string if a tag isn't assigned.
-* Fixed bug where pressing Return or Enter would not submit a created tag to the UI.
-* Fixed missing XMLDoc for CurrentPlayer API.
-* Fixed broken links in the package documentation.
 
 ## [0.1.0] - 2022-11-15
 
