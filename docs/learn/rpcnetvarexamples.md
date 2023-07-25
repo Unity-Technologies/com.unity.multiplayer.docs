@@ -12,7 +12,7 @@ See the [RPC vs NetworkVariable](rpcvnetvar.md) tutorial for more information.
 Boss Room uses RPCs to send movement inputs.
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/UserInput/ClientInputSender.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/UserInput/ClientInputSender.cs
 ```
 
 Boss Room wants the full history of inputs sent, not just the latest value. There is no need for `NetworkVariable`s, you just want to blast your inputs to the server. Since Boss Room isn't a twitch shooter, it sends inputs as reliable `RPC`s without worrying about the latency an input loss would add.
@@ -22,14 +22,14 @@ Boss Room wants the full history of inputs sent, not just the latest value. Ther
 The archer's arrows use a standalone `GameObject` that's replicated over time. Since this object's movements are slow, the Boss Room development team decided to use state (via the `NetworkTransform`) to replicate the ability's status (in case a client connected while the arrow was flying).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/PhysicsProjectile.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/PhysicsProjectile.cs
 ```
 
 Boss Room might have used an `RPC` instead (for the Mage's projectile attack). Since the Mage's projectile fires quickly, the player experience isn't affected by the few milliseconds where a newly connected client might miss the projectile. In fact, it helps Boss Room save on bandwidth when managing a replicated object. Instead, Boss Room sends a single RPC to trigger the FX client side.
 
 ```csharp reference
 
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/FXProjectile.cs
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Projectiles/FXProjectile.cs
 
 ```
 
@@ -39,7 +39,7 @@ Boss Room might have used a "break" `RPC` to set a breakable object as broken an
 
 ```csharp reference
 
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L59-L78
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L59-L78
 
 ```
 
@@ -47,7 +47,7 @@ The visual changes:
 
 ```csharp reference
 
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L146-L156
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs#L146-L156
 
 ```
 
@@ -59,7 +59,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2
 
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerAnimationHandler.cs#L23-L30
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerAnimationHandler.cs#L23-L30
 ```
 
 

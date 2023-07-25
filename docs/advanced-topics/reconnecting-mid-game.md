@@ -71,9 +71,9 @@ Depending on your game, you might want to add the following features as well:
 
 Check out the [Boss Room sample](../learn/bossroom/getting-started-boss-room.md) for an example implementation of automatic reconnection.
 
-The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/ConnectionManagement/ConnectionState/ClientReconnectingState.cs). Boss Room's implementation uses a state inside a state machine that starts a coroutine on entering it ( `ReconnectCoroutine`) that attempts to reconnect a few times sequentially, until it either succeeds, surpasses the defined maximum number of attempts, or is cancelled. (Check out `OnClientConnected`, `OnClientDisconnect`, `OnDisconnectReasonReceived`, and `OnUserRequestedShutdown`.)
+The entry point for this feature is in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionState/ClientReconnectingState.cs). Boss Room's implementation uses a state inside a state machine that starts a coroutine on entering it ( `ReconnectCoroutine`) that attempts to reconnect a few times sequentially, until it either succeeds, surpasses the defined maximum number of attempts, or is cancelled. (Check out `OnClientConnected`, `OnClientDisconnect`, `OnDisconnectReasonReceived`, and `OnUserRequestedShutdown`.)
 
-The reconnecting state is entered when a client disconnects unexpectedly. (Check out `OnClientDisconnect` in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.1.0/Assets/Scripts/ConnectionManagement/ConnectionState/ClientConnectedState.cs))
+The reconnecting state is entered when a client disconnects unexpectedly. (Check out `OnClientDisconnect` in [this class](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionState/ClientConnectedState.cs))
 
 :::note
 
