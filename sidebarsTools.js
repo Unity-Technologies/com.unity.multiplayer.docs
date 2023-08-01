@@ -17,10 +17,6 @@ module.exports = {
                 type: 'doc',
                 id: 'release-notes/tools-1-0-0-pre',
             },
-            {
-                type: 'doc',
-                id: 'release-notes/mppm-release-notes',
-            },
         ]
     },
     {
@@ -43,10 +39,6 @@ module.exports = {
         {
             "type": "doc",
             "id": "tools-network-simulator"
-        },
-        {
-            "type": "doc",
-            "id": "mppm"
         },
         {
             "type": "doc",
