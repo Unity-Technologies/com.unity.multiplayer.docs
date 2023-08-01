@@ -25,6 +25,10 @@ module.exports = {
         "href": "https://docs.unity3d.com/Packages/com.unity.multiplayer.tools@2.0/api/index.html",
     },
         {
+            type: "doc",
+            id: "about"
+        },
+        {
             "type": "doc",
             "id": "install-tools"
         },
