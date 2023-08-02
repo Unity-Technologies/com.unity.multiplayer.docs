@@ -6,13 +6,6 @@ description: Overview of Multiplayer Play Mode
 
 You can use **Multiplayer Play Mode (MPPM)** to test multiplayer functionality within the **Unity Editor**. You can simulate up to 4 players (the **Main Editor** and 3 **Virtual Players**) simultaneously on the same development device while using the same source assets on disk. **MPPM** can help you create multiplayer development workflows that reduce project build times, run it locally, and test the server-client relationship.
 
-| Get Started | Virtual Players | Player Tags |
-| --- | --- | --- |
-| [Install](install.md) | [Enable Virtual Players](virtual-players.md) | [Overview](player-tags/player-tags.md) |
-| [Synchronize with Play mode](sync-play-mode.md) | - | [Configure a **Player** to run as a server, client, or host example](./player-tags/target-instance.md) |
-| - | - | [Configure a Player to simulate different network connections example](./player-tags/target-network.md) |
-| - | - | [Assign a Player a team example](./player-tags/target-team.md) |
-
 ## MPPM Terminology
 
 The following have specific meaning in relation to **MPPM**:

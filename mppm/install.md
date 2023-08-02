@@ -25,4 +25,4 @@ To install **MPPM**, you must have:
 
 ## Next Steps
 
-You can now access and configure your [**Virtual Players**](virtual-players.md) and their [**Player Tags**](player-tags/player-tags.md).
+You can now access and configure your [**Virtual Players**](../virtual-players) and their [**Player Tags**](../player-tags).

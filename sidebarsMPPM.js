@@ -5,15 +5,8 @@ module.exports = {
             id: 'about'
         },
         {
-            collapsed: true,
-            type: 'category',
-            label: 'Release Notes',
-            items: [
-                {
-                    type: 'doc',
-                    id: 'release-notes/mppm-experimental',
-                },
-            ]
+            type: 'doc',
+            id: 'release-notes/mppm-experimental',
         },
         {
             type: 'doc',

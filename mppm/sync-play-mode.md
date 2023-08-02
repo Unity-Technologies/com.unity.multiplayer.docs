@@ -4,7 +4,7 @@ title: Synchronize with Play mode
 description: Understand how Multiplayer Play Mode synchronizes with Play mode for multiplayer testing.
 ---
 
-**Multiplayer Play Mode (MPPM)** syncs the **Main Editor** and [**Virtual Players**](virtual-players.md) when you enter [**Play mode**](https://docs.unity3d.com/Manual/GameView.html) in the **Unity Editor**. You control **MPPM** the same way you control **Play mode** with the **Toolbar** buttons.
+**Multiplayer Play Mode (MPPM)** syncs the **Main Editor** and [**Virtual Players**](../virtual-players) when you enter [**Play mode**](https://docs.unity3d.com/Manual/GameView.html) in the **Unity Editor**. You control **MPPM** the same way you control **Play mode** with the **Toolbar** buttons.
 
 | Toolbar Button | Function |
 | --- | --- |

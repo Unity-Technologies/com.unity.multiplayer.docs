@@ -7,7 +7,7 @@ description: You can enable up to 3 additional Virtual Players to your Main Edit
 In [**Play mode**](https://docs.unity3d.com/Manual/GameView.html), you only have the default **Main Editor Player** to test your gameplay. By adding the **Multiplayer Play Mode (MPPM)** package, you can enable up to 3 additional **Virtual Players** to the **Play mode** for a total of 4 players.
 
 :::important
-You can only attach **Player Tags** to inactive players (including the **Main Editor Player**). If you plan to use **Player Tags**, [create and configure your tags](player-tags/player-tags.md) first.
+You can only attach **Player Tags** to inactive players (including the **Main Editor Player**). If you plan to use **Player Tags**, [create and configure your tags](../player-tags) first.
 :::
 
 ## Enable a Virtual Player
@@ -26,4 +26,4 @@ To enable **Virtual Players** for **Play mode**,
 
 ## Next Steps
 
-To understand how **Multiplayer Play Mode** works with **Play mode**, see [**Synchronize with Play mode**](sync-play-mode.md).
+To understand how **Multiplayer Play Mode** works with **Play mode**, see [**Synchronize with Play mode**](../synchronize).

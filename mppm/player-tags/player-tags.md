@@ -13,7 +13,7 @@ Player Tags are similar to launch arguments for Players (both the Main Editor Pl
 Using Player Tags involves 3 parts,
 1. [Create the tag(s)](#create-a-player-tag)
 2. [Configure the tag(s)](#next-steps)
-3. [Attach the tag(s) to your players](../virtual-players.md)
+3. [Attach the tag(s) to your players](../virtual-players)
 
 ## Create a Player Tag
 
@@ -29,7 +29,7 @@ To create a **Player Tag**,
 
 Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.Tag`. See the following **Player Tag** examples as guides for your own scripts:
 
-- [For a **Player** to run as a server, client, or host](target-instance.md)
-- [To automatically assign a **Player** to a team](target-team.md)
-- [To simulate network conditions](target-network.md)
+- [For a **Player** to run as a server, client, or host](target-instance)
+- [To automatically assign a **Player** to a team](target-team)
+- [To simulate network conditions](target-network)
 

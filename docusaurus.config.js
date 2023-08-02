@@ -209,12 +209,6 @@ module.exports = {
           className: "nav-break",
         },
         // Multiplayer Play Mode Versions Dropdown - TBD After Experimental
-        {
-          type: "docsVersionDropdown",
-          position: "left",
-          dropdownActiveClassDisabled: false,
-          docsPluginId: "mppm",
-        },
       ],
     },
   },
@@ -342,13 +336,6 @@ module.exports = {
           return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         includeCurrentVersion: true,
-        lastVersion: "current",
-        versions: {
-          current: {
-            label: "0.3.0-exp",
-            path: "current",
-          },
-        },
         editCurrentVersion: true,
         routeBasePath: "mppm",
         sidebarPath: require.resolve("./sidebarsMPPM.js"),
