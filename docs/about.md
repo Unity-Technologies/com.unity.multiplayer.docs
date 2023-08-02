@@ -8,13 +8,27 @@ Netcode for GameObjects (NGO) is a high-level networking library built for Unity
 
 To learn more about Netcode for GameObjects functionality and capabilities, explore the content below:
 
+<!--
+<div className="table-columns-plain" >
 | Get Started | Configuration | Samples and Education|
 
+</div>
+
+<div className="table-columns-plain" >
 | Networking Components | Spawning and Ownership | Network Synchronization |
 
+</div>
+
+<div className="table-columns-plain" >
 | Serialization | Scenes | Sessions |
 
+</div>
+
+<div className="table-columns-plain" >
 | Test and Debug | Reference | Related Unity Gaming Services |
+
+</div>
+-->
 
 <div className="table-columns-plain" >
 
