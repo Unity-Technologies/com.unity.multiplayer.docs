@@ -186,7 +186,7 @@ module.exports = {
         // Multiplayer Tools Documentation Button
         {
           type: "doc",
-          docId: "install-tools",
+          docId: "about",
           label: "Multiplayer Tools",
           position: "left",
           docsPluginId: "tools",
@@ -199,18 +199,16 @@ module.exports = {
           dropdownActiveClassDisabled: true,
           docsPluginId: "tools",
         },
+        // Multiplayer Play Mode Documentation Button
         {
-          className: "navbar-github-link",
-          position: "right",
-          href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
-          docsPluginId: "reference",
+          type: "doc",
+          docId: "about",
+          label: "Multiplayer Play Mode",
+          position: "left",
+          docsPluginId: "mppm",
+          className: "nav-break",
         },
-        {
-          position: "right",
-          className: "navbar-grid-menu",
-          href: "https://discord.gg/buMxnnPvTb",
-          docsPluginId: "reference",
-        },
+        // Multiplayer Play Mode Versions Dropdown - TBD After Experimental
       ],
     },
   },
@@ -323,6 +321,24 @@ module.exports = {
         editCurrentVersion: true,
         routeBasePath: "tools",
         sidebarPath: require.resolve("./sidebarsTools.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        admonitions,
+      },
+    ],
+    [
+      // Configs for MPPM versioned content
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "mppm",
+        path: "mppm",
+        editUrl: function ({ versionDocsDirPath, docPath }) {
+          return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
+        includeCurrentVersion: true,
+        editCurrentVersion: true,
+        routeBasePath: "mppm",
+        sidebarPath: require.resolve("./sidebarsMPPM.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         admonitions,
