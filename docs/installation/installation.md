@@ -4,57 +4,76 @@ title: Install Netcode for GameObjects
 description: How to install Unity Netcode for GameObjects (NGO). 
 ---
 
-# Installation
+# 1. Installation
 
-Use this guide to install Unity Netcode for GameObjects (NGO).
+Welcome to the installation guide for Unity Netcode for GameObjects (NGO). This guide will help you set up Netcode in your Unity project and get started with networking your game objects.
 
-## Prerequisites
+##  **Prerequisites**
 
-Before installing Netcode, you should ensure you have:
+Before you begin installing Netcode, make sure you have the following:
 
-* An active Unity account with a valid license.
-* A Netcode-supported installation of Unity. See [Netcode's requirements](#netcode-installation-requirements) for full details.
-* An existing Unity project. If you don't have a project yet, see [Get started with NGO](../tutorials/get-started-with-ngo.md).
+1. An active Unity account with a valid license.
+2. A supported version of Unity. Check [Netcode's requirements](#netcode-installation-requirements)  for the specific Unity version details.
+3. An existing Unity project. If you're new to Unity, you can refer to the [Get started with NGO](../tutorials/get-started-with-ngo.md) section for guidance.
 
 ## Netcode Installation Requirements
 
 Netcode supports the following Unity versions:
 
-
 * Unity Editor version 2021.3 or later
-* Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+* Mono and IL2CPP 
 
 
-Netcode supports the following platforms:
+## **Netcode Installation Requirements**
 
-* Windows, MacOS, and Linux
-* iOS and Android
-* XR platforms running on Windows, Android, and iOS operating systems
-* Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact the [NGO development team](https://discord.com/channels/449263083769036810/563033158480691211) for more information about specific closed platforms.
-  * When working with consoles (such as PlayStation, Xbox, or Nintendo Switch), there might be Netcode-specific policies you should be aware of while testing and before launching your game live. Refer to the console's internal documentation for more information. This content is typically protected by NDA.
-* WebGL (requires NGO 1.2.0+ and UTP 2.0.0+). **Note**: Although NGO 1.2.0 introduces WebGL support, there's a bug in NGO 1.2.0 that impacts WebGL compatibility, so it's recommended to use NGO 1.3.0+.
+Netcode is compatible with the following:
 
-## Installing with the Package Manager
+### **Unity Versions**
 
-Install the Netcode for GameObjects package:
+- Unity Editor version 2021.3 or later
+**[Download Unity Editor](https://unity.com/releases/editor/archive)**
 
-1. From the Unity Editor, select **Window** > **Package Manager**.
-2. From the Package Manager, select **Add (+)** > **Add package by name…**
-3. Type (or copy and paste) `com.unity.netcode.gameobjects` into the package name field, then select **Add**.
+### **Scripting Backends**
 
-:::note
+- Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
+<img src="https://github.com/Unity-Technologies/com.unity.multiplayer.docs/assets/84278213/cd51ad69-ad43-4ce7-b1c2-3c46510dd647" alt="Backends Image" width="500" height="300">
 
-If you're using Unity Editor version 2020.3 LTS or earlier, there's no option to add a package by name. In this case, use **Add package from git URL** instead:
+### **Supported Platforms**
 
-1. From the Unity Editor, select **Window** > **Package Manager**.
-2. From the Package Manager, select **Add (+)** > **Add package by git URL…**
-3. Type (or copy and paste) `https://github.com/Unity-Technologies/com.unity.netcode.gameobjects` into the git URL field, then select **Add**.
+- Windows, MacOS, and Linux
+- iOS and Android
+- XR platforms on Windows, Android, and iOS
+- * Most [**closed platforms**](https://unity.com/platform-installation), such as consoles. Contact the [NGO development team](https://discord.com/channels/449263083769036810/563033158480691211) for more information about specific closed platforms.
+- WebGL (requires NGO 1.2.0+ and UTP 2.0.0+)
 
-:::
+**Note**: When working with closed platforms like consoles (PlayStation, Xbox, Nintendo Switch), there may be specific policies and considerations. Refer to your console's documentation for more information.
 
-## Next Steps
 
-See the following content to continue your journey using Netcode:
+## **Installation Steps with the Package Manager**
+
+### **1. Installing via Unity Package Manager**
+
+1. Open Unity Editor.
+2. Go to **`Window > Package Manager`**.
+3. Click on the **`+`** button and select **`Add package by name...`**.
+4. Enter **`com.unity.netcode.gameobjects`** and click **`Add`**.
+
+**Note**: If you are using Unity Editor version 2020.3 LTS or earlier, follow these steps instead:
+
+1. Open Unity Editor.
+2. Go to **`Window > Package Manager`**.
+3. Click on the **`+`** button and select **`Add package by git URL...`**.
+4. Enter **`https://github.com/Unity-Technologies/com.unity.netcode.gameobjects`** and click **`Add`**.
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+# 2. **Next Steps**
+
+After installing Netcode, you're ready to dive into networking your game objects:
 
 * Use the [Get started with NGO tutorial](../tutorials/get-started-with-ngo.md) to create a project, test your Netcode install, and learn how to use the basic features of Netcode for GameObjects.
 * Check out the educational samples to further explore Netcode and its abilities:
