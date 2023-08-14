@@ -184,5 +184,5 @@ Command to start the client:
 To run both as a single command:
 
 ```shell
-<Path to Project>/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile - & ; ~ <Path to Project>HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
+<Path to Project>/HelloWorld.app/Contents/MacOS/<Project Name> -mode server -logfile - & <Path to Project>HelloWorld.app/Contents/MacOS/<Project Name> -mode client -logfile -
 ```

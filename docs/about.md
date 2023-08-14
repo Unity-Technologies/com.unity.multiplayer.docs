@@ -1,12 +1,34 @@
 ---
 id: about
 title: About Netcode for GameObjects
-description: Learn more about the available APIs for Unity Multiplayer Networking, including Netcode for GameObjects and Transport.
+description: Overview of Unity's Netcode for GameObjects for your multiplayer networking needs.
 ---
 
-Netcode for GameObjects (Netcode) is a high-level networking library built for Unity for you to abstract networking logic. It enables you to send GameObjects and world data across a networking session to many players at once. With Netcode, you can focus on building your game instead of low-level protocols and networking frameworks.
+Netcode for GameObjects (NGO) is a high-level networking library built for Unity for you to abstract networking logic. It enables you to send GameObjects and world data across a networking session to many players at once. With NGO, you can focus on building your game instead of low-level protocols and networking frameworks.
 
 To learn more about Netcode for GameObjects functionality and capabilities, explore the content below:
+
+<!--
+<div className="table-columns-plain" >
+| Get Started | Configuration | Samples and Education|
+
+</div>
+
+<div className="table-columns-plain" >
+| Networking Components | Spawning and Ownership | Network Synchronization |
+
+</div>
+
+<div className="table-columns-plain" >
+| Serialization | Scenes | Sessions |
+
+</div>
+
+<div className="table-columns-plain" >
+| Test and Debug | Reference | Related Unity Gaming Services |
+
+</div>
+-->
 
 <div className="table-columns-plain" >
 
