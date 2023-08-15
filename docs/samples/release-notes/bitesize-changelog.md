@@ -4,7 +4,7 @@ title: Multiplayer Bitesize Samples
 description: Bitesize changelog and release notes
 ---
 
-The following content tracks features, updates, bug fixes, and refactoring for the next release of the Boss Room sample project. Since Boss Room is open source, you can access the full release notes and changelogs in the [com.unity.multiplayer.samples.bitesize GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop).
+The following content tracks features, updates, bug fixes, and refactoring for the next release of the Multiplayer Bitesize samples project. Since Multiplayer Bitesize is open source, you can access the full release notes and changelogs in the [com.unity.multiplayer.samples.bitesize GitHub repository](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize).
 
 | Release | Date | Changelog |
 |---|---|---|

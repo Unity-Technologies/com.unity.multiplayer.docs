@@ -5,7 +5,7 @@ title: Get started with NGO
 
 Use this guide to learn how to create your first NGO project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects (NGO).
 
-Refer to [Testing the command line helper](../command-line-helper) to learn how to test your builds with a command line helper.
+Refer to [Testing the command line helper](../tutorials/command-line-helper/) to learn how to test your builds with a command line helper.
 
 ## Prerequisites
 
@@ -209,7 +209,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
-3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](../command-line-helper).
+3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](../tutorials/command-line-helper/).
 
 :::tip
 
@@ -679,7 +679,7 @@ This section guides you through testing the NetworkTransform you added in the ea
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
-3. Launch the client and server together in a terminal as shown in [Test the command line helper](../command-line-helper).
+3. Launch the client and server together in a terminal as shown in [Test the command line helper](../tutorials/command-line-helper/).
 
 After the client and server spawn, the player capsule moves in a circle on both the client and the server.
 
