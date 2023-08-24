@@ -168,9 +168,14 @@ A network type is the general state of a user’s network connection. This secti
 
 #### Home broadband connections
 
-A typical home broadband connection preset represents common connections from desktops, console platforms, and some mobile devices.
+A home broadband connection presets represent common connections from desktops, console platforms, and some mobile devices. Most of them are good quality network connections.
 
-The [Home Broadband](#home-broadband) Network Simulator presets simulates a good-quality mobile connection
+* [Home Broadband](#home-broadband)
+* [Home Fiber](#home-fiber)
+* [Home Cable](#home-cable)
+* [Home DSL](#home-dsl)
+* [Home Satellite](#home-satellite)
+* [Home Broadband with Congested Network](#home-broadband-with-congested-network)
 
 #### Poor-quality mobile connections
 
@@ -211,7 +216,7 @@ A network configuration preset is a bundle of Network Simulator parameters that 
 
 #### Home Broadband
 
-The Home Broadband network simulation preset simulates a typical home broadband connection.
+The Home Broadband network simulation preset simulates a typical generic home broadband connection.
 
 |**Name**|Home Broadband [WIFI, Cable, Console, PC]|
 |:----|:----|
@@ -221,113 +226,173 @@ The Home Broadband network simulation preset simulates a typical home broadband 
 |**Packet loss interval**|0|
 |**Packet loss percent**|2|
 
+#### Home Fiber
+
+The Home Fiber network simulation preset simulates the best case network connection scenario for desktop and console platforms. Excellent network connection type for multiplayer games.
+
+|**Name**| Home Fiber [Best real-world scenario]   |
+|:----|:----------------------------------------|
+|**Description**| Simulates the best real-world scenario. |
+|**Packet delay (ms)**| 10                                      |
+|**Packet jitter (ms)**| 1                                       |
+|**Packet loss interval**| 0                                       |
+|**Packet loss percent**| 0                                       |
+
+#### Home Cable
+
+The Home Cable network simulation preset simulates an optimal network connection scenario for desktop and console platforms. Optimal network connection type for multiplayer games.
+
+|**Name**| Home Cable [Optimal real-world scenario]  |
+|:----|:------------------------------------------|
+|**Description**| Simulates an optimal real-world scenario. |
+|**Packet delay (ms)**| 25                                        |
+|**Packet jitter (ms)**| 5                                         |
+|**Packet loss interval**| 0                                         |
+|**Packet loss percent**| 0                                         |
+
+#### Home DSL
+
+The Home DSL network simulation preset simulates an average network connection scenario for desktop and console platforms.
+
+|**Name**| Home DSL [ADSL or VDSL]                   |
+|:----|:------------------------------------------|
+|**Description**| Simulates an average real-world scenario. |
+|**Packet delay (ms)**| 30                                        |
+|**Packet jitter (ms)**| 10                                        |
+|**Packet loss interval**| 0                                         |
+|**Packet loss percent**| 0                                         |
+
+#### Home Satellite
+
+The Home Satellite network simulation preset simulates a Low Earth orbit satellite network connection scenario for desktop and console platforms. Good quality broadband network connection, but with a constant higher ping.
+
+|**Name**| Home Satellite [low Earth orbit]                          |
+|:----|:----------------------------------------------------------|
+|**Description**| Simulates a low Earth orbit satellite network connection. |
+|**Packet delay (ms)**| 100                                                       |
+|**Packet jitter (ms)**| 10                                                        |
+|**Packet loss interval**| 0                                                         |
+|**Packet loss percent**| 0                                                         |
+
+#### Home Broadband with Congested Network
+
+The Home Broadband with Congested Network simulation preset simulates desktop and console platforms trough congested networks, where other users already using the network's maximum capacity. The otherwise decent network connection is affected by very bad jitter.
+
+|**Name**| Home Broadband with Congested Network                    |
+|:----|:---------------------------------------------------------|
+|**Description**| Simulates a congested home broadband network connection. |
+|**Packet delay (ms)**| 50                                                       |
+|**Packet jitter (ms)**| 50                                                       |
+|**Packet loss interval**| 0                                                        |
+|**Packet loss percent**| 1                                                        |
+
 #### Mobile 2G
 
 The Mobile 2G network simulation preset simulates a typical 2G mobile connection.
 
-|**Name**|Mobile 2G [CDMA & GSM, '00]|
-|:----|:----|
-|**Description**|Simulates a poor-quality mobile connection.|
-|**Packet delay (ms)**|400|
-|**Packet jitter (ms)**|200|
-|**Packet loss interval**|0|
-|**Packet loss percent**|3|
+|**Name**| Mobile 2G [CDMA & GSM, '00]                 |
+|:----|:--------------------------------------------|
+|**Description**| Simulates a poor-quality mobile connection. |
+|**Packet delay (ms)**| 520                                         |
+|**Packet jitter (ms)**| 50                                          |
+|**Packet loss interval**| 0                                           |
+|**Packet loss percent**| 7                                           |
 
 #### Mobile 2.5G
 
 The Mobile 2.5G network simulation preset simulates a typical 2.5G (GPRS) mobile connection.
 
-|**Name**|Mobile 2.5G [GPRS, G, '00]|
-|:----|:----|
-|**Description**|Simulates a poor-quality mobile connection.|
-|**Packet delay (ms)**|200|
-|**Packet jitter (ms)**|100|
-|**Packet loss interval**|0|
-|**Packet loss percent**|3|
+|**Name**| Mobile 2.5G [GPRS, G, '00]                  |
+|:----|:--------------------------------------------|
+|**Description**| Simulates a poor-quality mobile connection. |
+|**Packet delay (ms)**| 480                                         |
+|**Packet jitter (ms)**| 40                                         |
+|**Packet loss interval**| 0                                           |
+|**Packet loss percent**| 7                                           |
 
 #### Mobile 2.75G
 
 The Mobile 2.75G network simulation preset simulates a typical 2.75G (EDGE) mobile connection.
 
-|**Name**|Mobile 3.75G [HDSDPA+, H+, '11]|
-|:----|:----|
-|**Description**|Simulates a decent-quality mobile connection.|
-|**Packet delay (ms)**|75|
-|**Packet jitter (ms)**|50|
-|**Packet loss interval**|0|
-|**Packet loss percent**|3|
+|**Name**| Mobile 2.75G [Edge, E, '06]               |
+|:----|:----------------------------------------------|
+|**Description**| Simulates a decent-quality mobile connection. |
+|**Packet delay (ms)**| 440                                           |
+|**Packet jitter (ms)**| 40                                            |
+|**Packet loss interval**| 0                                             |
+|**Packet loss percent**| 7                                             |
 
 #### Mobile 3G
 
 The Mobile 3G network simulation preset simulates a typical 3G mobile connection.
 
-|**Name**|Mobile 3.75G [HDSDPA+, H+, '11]|
-|:----|:----|
-|**Description**|Simulates a decent-quality mobile connection.|
-|**Packet delay (ms)**|75|
-|**Packet jitter (ms)**|50|
-|**Packet loss interval**|0|
-|**Packet loss percent**|3|
+|**Name**| Mobile 3G [WCDMA & UMTS, '03]               |
+|:----|:----------------------------------------------|
+|**Description**| Simulates a decent-quality mobile connection. |
+|**Packet delay (ms)**| 360                                           |
+|**Packet jitter (ms)**| 30                                            |
+|**Packet loss interval**| 0                                             |
+|**Packet loss percent**| 7                                             |
 
 #### Mobile 3.5G
 
 The Mobile 3.5G network simulation preset simulates a typical 3.5G (HSDPA/H) mobile connection.
 
-|**Name**|Mobile 3.75G [HDSDPA+, H+, '11]|
-|:----|:----|
-|**Description**|Simulates a decent-quality mobile connection.|
-|**Packet delay (ms)**|75|
-|**Packet jitter (ms)**|50|
-|**Packet loss interval**|0|
-|**Packet loss percent**|3|
+|**Name**| Mobile 3.5G [HSDPA, H, '06]               |
+|:----|:----------------------------------------------|
+|**Description**| Simulates a decent-quality mobile connection. |
+|**Packet delay (ms)**| 160                                           |
+|**Packet jitter (ms)**| 30                                            |
+|**Packet loss interval**| 0                                             |
+|**Packet loss percent**| 6                                             |
 
 #### Mobile 3.75G
 
 The Mobile 3.75G network simulation preset simulates a typical 3.75G (HSPA+/H+) mobile connection.
 
-|**Name**|Mobile 3.75G [HDSDPA+, H+, '11]|
-|:----|:----|
-|**Description**|Simulates a decent-quality mobile connection.|
-|**Packet delay (ms)**|75|
-|**Packet jitter (ms)**|50|
-|**Packet loss interval**|0|
-|**Packet loss percent**|3|
+|**Name**| Mobile 3.75G [HDSDPA+, H+, '11]               |
+|:----|:----------------------------------------------|
+|**Description**| Simulates a decent-quality mobile connection. |
+|**Packet delay (ms)**| 130                                           |
+|**Packet jitter (ms)**| 30                                            |
+|**Packet loss interval**| 0                                             |
+|**Packet loss percent**| 6                                             |
 
 #### Mobile 4G
 
 The Mobile 4G network simulation preset simulates a typical 4G (LTE) mobile connection.
 
-|**Name**|Mobile 4G [4G, LTE, '13]|
-|:----|:----|
-|**Description**|Simulates a decent-quality mobile connection.|
-|**Packet delay (ms)**|50|
-|**Packet jitter (ms)**|25|
-|**Packet loss interval**|0|
-|**Packet loss percent**|2|
+|**Name**| Mobile 4G [4G, LTE, '13]                      |
+|:----|:----------------------------------------------|
+|**Description**| Simulates a decent-quality mobile connection. |
+|**Packet delay (ms)**| 100                                           |
+|**Packet jitter (ms)**| 20                                            |
+|**Packet loss interval**| 0                                             |
+|**Packet loss percent**| 4                                             |
 
 #### Mobile 4.5G
 
 The Mobile 4.5G network simulation preset simulates a typical 4.5G (LTE+) mobile connection.
 
-|**Name**|Mobile 4.5G [4G+, LTE-A, '16]|
-|:----|:----|
-|**Description**|Simulates a decent-quality mobile connection.|
-|**Packet delay (ms)**|50|
-|**Packet jitter (ms)**|25|
-|**Packet loss interval**|0|
-|**Packet loss percent**|2|
+|**Name**| Mobile 4.5G [4G+, LTE-A, '16]                 |
+|:----|:----------------------------------------------|
+|**Description**| Simulates a decent-quality mobile connection. |
+|**Packet delay (ms)**| 80                                            |
+|**Packet jitter (ms)**| 20                                            |
+|**Packet loss interval**| 0                                             |
+|**Packet loss percent**| 4                                             |
 
 #### Mobile 5G
 
 The Mobile 5G network simulation preset simulates a typical 5G mobile connection.
 
-|**Name**|Mobile 5G ['20]|
-|:----|:----|
-|**Description**|Simulates a good-quality mobile connection.|
-|**Packet delay (ms)**|1|
-|**Packet jitter (ms)**|10|
-|**Packet loss interval**|0|
-|**Packet loss percent**|2|
+|**Name**| Mobile 5G ['20]                             |
+|:----|:--------------------------------------------|
+|**Description**| Simulates a good-quality mobile connection. |
+|**Packet delay (ms)**| 30                                          |
+|**Packet jitter (ms)**| 20                                          |
+|**Packet loss interval**| 0                                           |
+|**Packet loss percent**| 4                                           |
 
 ### Network events
 
