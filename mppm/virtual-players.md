@@ -24,10 +24,6 @@ To enable **Virtual Players** for **Play mode**,
 4. Wait for the player status to change from inactive to active for each **Virtual Player** you selected.
 5. Once active, the **Virtual Player(s)** appear in **Play mode** in the **Main Editor** window. A separate window opens for each enabled player with the player name as the window title.
 
-:::note
-You can also assign **Player Tags** from the computer icon dropdown ![](../static/img/mppm/mppm-player-tags-dropdown.png) next to the **Layout** dropdown in the top bar of the **Play mode** window.
-:::
-
 ## Next Steps
 
 To understand how **Multiplayer Play Mode** works with **Play mode**, see [**Synchronize with Play mode**](../synchronize).
