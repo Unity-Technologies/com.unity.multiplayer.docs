@@ -11,7 +11,7 @@ If you haven't already read the [Using NetworkSceneManager](using-networkscenema
 
 ## Introduction
 Netcode for GameObjects handles many of the more complicated aspects of scene management.  This section is tailored towards those who want to better understand the client-server communication sequence for scene events as they occur over time. 
-In each diagram, you will see two types of black arrows:
+In each diagram, you will see two types of arrows:
 - Horizontal arrows: Denotes a progression to the next state and/or event.
 - Diagonal arrows: Denotes a message being sent (server to client or vice versa).
     - These arrows will have the name of the message being sent or the type of the scene event message being sent.
