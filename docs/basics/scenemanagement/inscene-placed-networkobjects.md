@@ -260,5 +260,4 @@ It is important to understand that without the use of a `NetworkTransform` clien
   - During the client's first synchronization after a client has their connection approved.
   - When a server spawns a new NetworkObject.
 - A NetworkObject has been parented (or a parent removed). 
- - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.
-   - These transform changes will be synchronized with clients via the `ParentSyncMessage`
+ - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.   
