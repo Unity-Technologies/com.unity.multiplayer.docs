@@ -45,7 +45,7 @@ When working with closed platforms like consoles (PlayStation, Xbox, Nintendo Sw
 
 ## Next Steps
 
-After installing Netcod for GameObjects(NGO), see the following content to continue your journey:
+After installing Netcode for GameObjects(NGO), see the following content to continue your journey:
 
 * Use the [Get started with NGO tutorial](../tutorials/get-started-with-ngo.md) to create a project, test your Netcode install, and learn how to use the basic features of Netcode for GameObjects.
 * Check out the educational samples to further explore Netcode and its abilities:
