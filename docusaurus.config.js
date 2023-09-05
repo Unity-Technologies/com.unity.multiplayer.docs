@@ -186,7 +186,7 @@ module.exports = {
         // Multiplayer Tools Documentation Button
         {
           type: "doc",
-          docId: "install-tools",
+          docId: "about",
           label: "Multiplayer Tools",
           position: "left",
           docsPluginId: "tools",
@@ -199,17 +199,21 @@ module.exports = {
           dropdownActiveClassDisabled: true,
           docsPluginId: "tools",
         },
+        // Multiplayer Play Mode Documentation Button
         {
-          className: "navbar-github-link",
-          position: "right",
-          href: "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects",
-          docsPluginId: "reference",
+          type: "doc",
+          docId: "about",
+          label: "Multiplayer Play Mode",
+          position: "left",
+          docsPluginId: "mppm",
+          className: "nav-break",
         },
+        // Multiplayer Play Mode Versions Dropdown
         {
-          position: "right",
-          className: "navbar-grid-menu",
-          href: "https://discord.gg/buMxnnPvTb",
-          docsPluginId: "reference",
+          type: "docsVersionDropdown",
+          position: "left",
+          dropdownActiveClassDisabled: true,
+          docsPluginId: "mppm",
         },
       ],
     },
@@ -233,7 +237,7 @@ module.exports = {
           lastVersion: "current",
           versions: {
             current: {
-              label: "1.5.1",
+              label: "1.5.2",
               path: "current",
             },
             "1.4.0": {
@@ -311,7 +315,7 @@ module.exports = {
             label: "2.0.0-pre",
             path: "current",
           },
-          "1.1.0" : {
+          "1.1.0": {
             label: "1.1.0",
             path: "1.1.0",
           },
@@ -323,6 +327,35 @@ module.exports = {
         editCurrentVersion: true,
         routeBasePath: "tools",
         sidebarPath: require.resolve("./sidebarsTools.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        admonitions,
+      },
+    ],
+    [
+      // Configs for MPPM versioned content
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "mppm",
+        path: "mppm",
+        editUrl: function ({ versionDocsDirPath, docPath }) {
+          return `https://github.com/Unity-Technologies/com.unity.multiplayer.docs/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
+        includeCurrentVersion: true,
+        lastVersion: "current",
+        versions: {
+          current: {
+            label: "0.4.0",
+            path: "current",
+          },
+          "0.3.0": {
+            label: "0.3.0",
+            path: "0.3.0",
+          },
+        },
+        editCurrentVersion: true,
+        routeBasePath: "mppm",
+        sidebarPath: require.resolve("./sidebarsMPPM.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         admonitions,
