@@ -9,7 +9,7 @@ You can use pipelines to add sequencing, reliability, and fragmentation features
 
 Pipelines are a sequence of one or more stages. When you **send** a message through a pipeline, Unity Transport runs through the stages in order, piping the output of the first stage into the second stage. As a result, if the first stage adds a header to the packet, the second stage processes the entire packet, including the header added by the first stage. When you **receive** a message, it goes through the same chain of stages in reverse order.
 
-![Pipeline stages](../static/img/transport/pipeline-stages-2.png)
+![Pipeline stages](/img/transport/pipeline-stages-2.png)
 
 `FragmentationPipelineStage` allows breaking large messages into smaller pieces, and `ReliableSequencedPipelineStage` allows sending messages with guaranteed order and delivery. The following example shows how to create a pipeline with both functionalities:
 
@@ -21,7 +21,7 @@ var myPipeline = driver.CreatePipeline(
 
 This creates a pipeline where Unity Transport first fragments messages into smaller pieces (that each fit in a packet), then delivers the individual packets reliably and in the correct order.
 
-![Block diagram](../static/img/transport/fragmentation-2.png)
+![Block diagram](/img/transport/fragmentation-2.png)
 
 This illustration shows the process of fragmentation and delivering packets in order. The small orange pieces on the fragments represent sequence numbers and other information added by the reliable stage.
 

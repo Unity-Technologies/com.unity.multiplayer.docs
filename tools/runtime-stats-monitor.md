@@ -238,7 +238,7 @@ OR
 3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
 4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_DISABLED_IN_DEVELOP` in the empty field. If the field isn't empty, you can select the
 
-![Add symbol](../static/img/add.png)
+![Add symbol](/img/add.png)
 
 .
 
@@ -255,7 +255,7 @@ OR
 1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings…** > **Player**.
 2. Select the **Other Settings** dropdown.
 3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
-4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_ENABLED_IN_RELEASE` in the empty field. If the field isn't empty, you can select the ![Add symbol](../static/img/add.png).
+4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_ENABLED_IN_RELEASE` in the empty field. If the field isn't empty, you can select the ![Add symbol](/img/add.png).
 
 5. Click **Apply** for the script to compile.
 
@@ -266,7 +266,7 @@ You can forcibly enable the RNSM in all builds by:
 1. Navigating to the Unity Editor top bar menu > **Edit** > **Project Settings…** > **Player**.
 2. Select the **Other Settings** dropdown.
 3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
-4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_IMPLEMENTATION_ENABLED` in the empty field. If the field isn't empty, you can select the ![Add symbol](../static/img/add.png).
+4. Add `UNITY_MP_TOOLS_NET_STATS_MONITOR_IMPLEMENTATION_ENABLED` in the empty field. If the field isn't empty, you can select the ![Add symbol](/img/add.png).
 
 5. Click **Apply** for the script to compile.
 

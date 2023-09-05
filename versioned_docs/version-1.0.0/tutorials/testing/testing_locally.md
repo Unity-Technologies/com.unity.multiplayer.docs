@@ -50,7 +50,7 @@ Though functional, we find this approach to be somewhat slow for the purposes of
 ParallelSync is **not** supported by Unity.  More information on its usage is available [here](https://github.com/VeriorPies/ParrelSync). Troubleshooting information can be found [here](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs)
 
 :::
-![parrelsync-bossroom-demo](../../../../static/img/parrelsync-bossroom-demo.gif)
+![parrelsync-bossroom-demo](/img/parrelsync-bossroom-demo.gif)
 
 
 
