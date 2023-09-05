@@ -45,13 +45,13 @@ To get started with the Network Simulator:
 
 You can trigger a network disconnect in the Unity Editor with the Network Simulator component by setting the **Connection** to **Disconnected**. See the [Disconnect scenario](#disconnect-scenario) example.
 
-![](../../static/img/tools/netsim-1.png)
+![](/img/tools/netsim-1.png)
 
 #### Trigger a lag spike
 
 You can trigger a simulated lag spike in the Unity Editor with the Network Simulator component by setting the **Duration of the lag spike (ms)**, then selecting **Trigger**.
 
-![](../../static/img/tools/netsim-7.png)
+![](/img/tools/netsim-7.png)
 
 :::tip
 **Tip**: You can trigger lag spikes through code with the `NetworkSimulator.TriggerLagSpike` API or you can write a Network Scenario that triggers it.  See the [Lag spike scenario](#lag-spike-scenario) example to learn how.
@@ -64,7 +64,7 @@ The Network Simulator tool comes packaged with configuration presets that simula
 1. Select the **NetworkSimulator** component from the **Hierarchy** tab.
 2. Set the **Connection Preset** field to the configuration you want to use.
 
-![](../../static/img/tools/netsim-3.png)
+![](/img/tools/netsim-3.png)
 
 #### Create a Network Simulator Preset
 
@@ -75,7 +75,7 @@ The Network Simulator tool allows you to create any number of custom network con
 3. Select the NetworkSimulatorPreset from the **Assets** folder.
 4. Edit the parameters in the **Inspector** tab. The parameters allow you to set the name, description, packet delay, packet jitter, and packet loss (as a percentage and interval).
 
-![](../../static/img/tools/netsim-11.png)
+![](/img/tools/netsim-11.png)
 
 To use a custom Network Simulator Preset:
 
@@ -99,12 +99,12 @@ To use a network scenario:
 1. Select the **NetworkSimulator** component from the **Hierarchy** tab.
 2. Under Network Scenarios in the Inspector tab, set the **Scenario** field to the network scenario you want to use.
 
-![](../../static/img/tools/netsim-12.png)
+![](/img/tools/netsim-12.png)
 
 :::tip
 **Tip**: You can control whether the Network Scenario runs automatically by toggling the **Auto Run Scenario** checkbox. You can also set this option dynamically via code.
 
-![](../../static/img/tools/netsim-2.png)
+![](/img/tools/netsim-2.png)
 :::
 
 ##### **Connections Cycle**
@@ -113,23 +113,23 @@ The **Connections Cycle** Network Scenario allows you to cycle through different
 
 1. From the Inspector tab, expand the **Network Scenarios** > **Configurations** section.
 
-![](../../static/img/tools/netsim-15.png)
+![](/img/tools/netsim-15.png)
 
 1. Set the first **Connection Preset** to a built-in preset or a custom preset.
 
-![](../../static/img/tools/netsim-13.png)
+![](/img/tools/netsim-13.png)
 
 1. Set the **Change Interval Milliseconds** field to the time to wait before switching to the next preset.
 
-![](../../static/img/tools/netsim-8.png)
+![](/img/tools/netsim-8.png)
 
 1. Select the **plus (+)** symbol to add another cycle.
 
-![](../../static/img/tools/netsim-14.png)
+![](/img/tools/netsim-14.png)
 
 1. Configure the next cycle as you see fit.
 
-![](../../static/img/tools/netsim-4.png)
+![](/img/tools/netsim-4.png)
 
 The Connections Cycle scenario cycles through the configurations list at the **Change Interval** until you use the **Pause** button to pause the connection cycling.
 
@@ -139,19 +139,19 @@ The **Random Connections Swap** Network Scenario allows you to specify a set of 
 
 1. From the Inspector tab, expand the **Network Scenarios** > **Configurations** section.
 
-![](../../static/img/tools/netsim-6.png)
+![](/img/tools/netsim-6.png)
 
 1. Set the **Class Preset** to a built-in preset or a custom preset.
 
-![](../../static/img/tools/netsim-10.png)
+![](/img/tools/netsim-10.png)
 
 1. Select the **plus (+)** symbol to add another configuration.
 
-![](../../static/img/tools/netsim-5.png)
+![](/img/tools/netsim-5.png)
 
 1. Configure the configuration as you see fit.
 
-![](../../static/img/tools/netsim-9.png)
+![](/img/tools/netsim-9.png)
 
 The Random Connections Swap scenario selects one of configurations from the list at random at the **Change Interval** until you use the **Pause** button to pause the connection cycling.
 
@@ -345,7 +345,7 @@ A network disconnect is a disruption or termination of the connection between th
 
 You can trigger a network disconnect in the Unity Editor with the Network Simulator component by setting the **Connection** to **Disconnected**. See the [Disconnect scenario](#disconnect-scenario) example.
 
-![](../../static/img/tools/netsim-1.png)
+![](/img/tools/netsim-1.png)
 
 #### Lag spikes
 
@@ -353,7 +353,7 @@ A lag spike refers to a temporary increase in network latency. Some of the most 
 
 You can trigger a simulated lag spike in the Unity Editor with the Network Simulator component by setting the **Duration of the lag spike (ms)**, then selecting **Trigger**. See the [Lag spike scenario](#lag-spike-scenario) example.
 
-![](../../static/img/tools/netsim-7.png)
+![](/img/tools/netsim-7.png)
 
 #### Latency
 
