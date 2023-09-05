@@ -37,11 +37,11 @@ A common "usage" design pattern for often used in-scene placed `NetworkObject`s 
 
 ### Creating In-Scene Placed Network Prefab Instances
 In order to create a Network Prefab that can be used as an in-scene placed `NetworkObject` you must do the following:
-1. In the scene you wish to create the instance (or any open scene) create an empty GameObject and add a `NetworkObject` component to it.
-2. Add any other `NetworkBehaviour`s required by your in-scene placed `NetworkObject`.
-3. Drag and drop the newly created GameObject into your Prefab (or associated) folder.
-4. Delete the GameObject instance in your scene (this is *required* to get a proper `GlobalObjectIdHash` value assigned)
-5. Finally, drag and drop an instance of your newly created Network Prefab into the scene you wish to have an instance of your in-scene placed `NetworkObject`.
+1. Create a prefab asset (from a GameObject in a scene or creating it directly in a subfolder within Assets).
+2. Add only one `NetworkObject` component to the root GameObject of the prefab.
+3. Add any other `NetworkBehaviour`s (on the root or on any level of child GameObject under the root prefab GameObject).
+4. If you created the prefab asset from an existing scene, then the original in-scene placed object will automatically become a network prefab instance.
+5. If you created the prefab asset directly in a subfolder under the Assets directory, then drag and drop the newly created network prefab into the scene of choice.
 
 :::note
 You may need to deactivate **Enter Play Mode Options** if your `NetworkBehaviour` components do not spawn.
@@ -260,5 +260,4 @@ It is important to understand that without the use of a `NetworkTransform` clien
   - During the client's first synchronization after a client has their connection approved.
   - When a server spawns a new NetworkObject.
 - A NetworkObject has been parented (or a parent removed). 
- - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.
-   - These transform changes will be synchronized with clients via the `ParentSyncMessage`
+ - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.   
