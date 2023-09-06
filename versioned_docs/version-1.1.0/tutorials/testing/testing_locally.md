@@ -57,7 +57,7 @@ ParallelSync is **not** supported by Unity.  Please see the repositor for more i
 
 We use **ParrelSync** for local iteration in [Boss Room sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/).
 
-![parrelsync-bossroom-demo](../../../../static/img/parrelsync-bossroom-demo.gif)
+![parrelsync-bossroom-demo](/img/parrelsync-bossroom-demo.gif)
 
 ParrelSync is generally safe because it relies on symbolic links and partial copies of the original project folder structure.
 

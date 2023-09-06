@@ -4,6 +4,21 @@ title: Multiplayer Play Mode Release Notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [0.4.0] - 2023-08-26
+
+### Fixed
+
+- Fixed an issue where a player could still show up as active after it had exited.
+- Fixed an issue where you could have multiple add tag views.
+- Fixed an issue where `CurrentPlayer.ReadOnlyTag` would not return the correct value when domain reload on play mode is disabled.
+- Fixed an issue where clones were crashing when scrolling mouse over menu top bar
+
+### Features
+
+- Debug workflows now has dynamic layouts that persist between runs.
+- Players that are unresponsive will now result in a prompt appearing in the main editor asking if they should be restarted. (Only on Windows for now.)
+- Now support for content selection in your players (Requires dedicated server package to be installed).
+
 ## [0.3.0] - 2023-07-26
 
 ### Fixed

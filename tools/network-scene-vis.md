@@ -17,7 +17,7 @@ This tool can help you optimize and debug your network code to ensure that your 
 
 After [installing the Multiplayer Tools package](#requirements), the Network Visualization toolbar is available in the scene view of the Unity Editor. This toolbar includes the options to visualize networking information per-object of your game.
 
-![Screenshot of the Network Scene Visualization toolbar in the scene view of the Unity Editor](../static/img/tools/netscenevis-1.png)
+![Screenshot of the Network Scene Visualization toolbar in the scene view of the Unity Editor](/img/tools/netscenevis-1.png)
 
 Hovering over each option under **Bandwidth**, **Ownership**, and **Settings** reveals detailed tooltips for each option.
 
