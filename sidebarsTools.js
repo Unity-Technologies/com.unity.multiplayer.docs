@@ -15,6 +15,10 @@ module.exports = {
                 },
                 {
                     type: "doc",
+                    id: "release-notes/tools-2-0-0-pre",
+                },
+                {
+                    type: "doc",
                     id: "release-notes/tools-1-0-0",
                 },
                 {
