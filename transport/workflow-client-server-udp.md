@@ -420,15 +420,15 @@ If you’ve been following along with the tutorial and using the sample code, yo
 
 Add a new empty [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) to your **Scene**.
 
-![GameObject](../static/img/transport/gameobject-2.png)
+![GameObject](/img/transport/gameobject-2.png)
 
 Add both the `ServerBehaviour` and the `ClientBehaviour` scripts to the GameObject.
 
-![Inspector](../static/img/transport/inspector-2.png)
+![Inspector](/img/transport/inspector-2.png)
 
 Select **Play** to enter Play mode. You should see five log messages in the **Console** window:
 
-![Console output](../static/img/transport/console-2.png)
+![Console output](/img/transport/console-2.png)
 
 ## WebSocket
 

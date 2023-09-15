@@ -48,7 +48,7 @@ Each Virtual Player increases the demand for system resources. MPPM limits the p
 
 You can access MPPM by opening the Multiplayer Play Mode window: Select **Window** > **Multiplayer Play Mode**.
 
-![MPPM Window](../../static/img/tools/mppm-05.png)
+![MPPM Window](/img/tools/mppm-05.png)
 
 The Multiplayer Play Mode window allows you to access Virtual Players and Player Tags.
 
@@ -69,12 +69,12 @@ To enable a Virtual Player:
 
 1. Select the checkbox next to the Virtual Player name (for example, Player 2).
 
-![Enable Virtual Player](../../static/img/tools/mppm-03.png)
+![Enable Virtual Player](/img/tools/mppm-03.png)
 
 2. Wait for Unity to activate the Virtual Player.
 3. After the Player is activated, the status changes from **Activating** to **Active**, and you can use the Virtual Player in testing.
 
-![Enable Virtual Player](../../static/img/tools/mppm-06.png)
+![Enable Virtual Player](/img/tools/mppm-06.png)
 
 4. Select the **Play** button in the Main Editor.
 
@@ -98,11 +98,11 @@ You can't attach a Player Tag to an active Player. You must first disable the Pl
 
 1. Select the Player Tag from the **Tag** drop-down for the Player.
 
-![Enable Fast Player](../../static/img/tools/mppm-07.png)
+![Enable Fast Player](/img/tools/mppm-07.png)
 
 2. Enable the Player by selecting the checkbox to its left.
 
-![Enable Virtual Player](../../static/img/tools/mppm-08.png)
+![Enable Virtual Player](/img/tools/mppm-08.png)
 
 ### Add a Player Tag
 
@@ -110,17 +110,17 @@ You can add a Player Tag through the Multiplayer Play Mode window. When you add 
 
 1. Select the **+** symbol under Player Tags.
 
-![Add Player Tag](../../static/img/tools/mppm-01.png)
+![Add Player Tag](/img/tools/mppm-01.png)
 
 2. Name the Player Tag.
 
-![Name the Player Tag](../../static/img/tools/mppm-02.png)
+![Name the Player Tag](/img/tools/mppm-02.png)
 
 3. Select **Save**.
 
 You should now see the new Player Tag listed under Player Tags and in the drop-down menu for the Tag option of each Player.
 
-![Player Tag](../../static/img/tools/mppm-09.png)
+![Player Tag](/img/tools/mppm-09.png)
 
 ### Configuring Player Tags
 
@@ -257,7 +257,7 @@ When you enter [Play mode](https://docs.unity3d.com/Manual/GameView.html), Multi
 
 Because MPPM synchronizes [Play mode](https://docs.unity3d.com/Manual/GameView.html) between the Main Editor and Virtual Players, you can use the Play, Pause, and Step actions the same way you do in a standard Unity Editor workflow.
 
-![Editor Modes](../../static/img/tools/mppm-04.png)
+![Editor Modes](/img/tools/mppm-04.png)
 
 1. Selecting **Play** runs all activated Players.
 2. Selecting **Pause** pauses all activated Players.

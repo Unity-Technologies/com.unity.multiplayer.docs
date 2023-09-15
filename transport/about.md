@@ -11,7 +11,7 @@ Unity Transport seamlessly supports all platforms the Unity Engine supports than
 
 You can set up both UDP and WebSockets with or without encryption. The following illustration shows encrypted connections with a closed padlock and unencrypted connections with an open padlock.
 
-![Block diagram](../static/img/transport/layercake-2.png)
+![Block diagram](/img/transport/layercake-2.png)
 
 You can also use [pipelines](pipelines-usage.md) to leverage additional functionality, such as reliability, packet ordering, and packet fragmentation.
 

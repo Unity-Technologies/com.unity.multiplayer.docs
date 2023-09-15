@@ -14,7 +14,7 @@ An exception to this organization structure is the Gameplay assembly, which hous
 
 This assembly separation style enforces better separation of concerns and helps keep the codebase organized. It also uses more granular recompilation during iterations to save time.
 
-![Assembly structure](../../../../static/img/arch-2.png)
+![Assembly structure](/img/arch-2.png)
 
 ## Application flow
 
@@ -38,7 +38,7 @@ The `NetworkManager` starts when the `CharSelect` scene loads, which happens whe
 
 ### Application Flow Diagram
 
-![Application Flow Diagram](../../../../static/img/arch-1.png)
+![Application Flow Diagram](/img/arch-1.png)
 
 :::note
 Boss Room’s main room has four scenes. The primary scene (Boss Room's root scene) has the state components, game logic, level `navmesh`, and trigger areas that let the server know to load a given sub-scene. Boss Room loads each sub-scene additively using those triggers.
@@ -69,7 +69,7 @@ Unity Transport supports Unity Relay (provided by Unity Gaming Services). See th
 
 The `ConnectionManager`, a simple state machine, owns Boss Room’s network connection flow. It receives inputs from NGO (or the user) and handles the inputs according to its current state. Each state inherits from the `ConnectionState` abstract class. If you add a new transport, you must extend the `StartingHostState` and `ClientConnectingState` states. Both of these classes assume you're using the UTP transport.
 
-![Connection flow state machine](../../../../static/img/arch-3.png)
+![Connection flow state machine](/img/arch-3.png)
 
 ## Session management and reconnection
 
