@@ -5,7 +5,7 @@ title: Get started with NGO
 
 Use this guide to learn how to create your first NGO project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects (NGO).
 
-Refer to [Testing the command line helper](../tutorials/command-line-helper/) to learn how to test your builds with a command line helper.
+Refer to [Testing the command line helper](command-line-helper.md) to learn how to test your builds with a command line helper.
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ First, create the NetworkManager component:
 
 :::important
 
-When you drop the prefab into the **PlayerPrefab** slot, you're telling the library that when a client connects to the game, it automatically spawns this prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any prefab set as the **PlayerPrefab**. Refer to [Player Objects](../basics/networkobject#finding-player-objects).
+When you drop the prefab into the **PlayerPrefab** slot, you're telling the library that when a client connects to the game, it automatically spawns this prefab as the character for the connecting client. NGO won’t spawn a player object if you don't have any prefab set as the **PlayerPrefab**. Refer to [Player Objects](../basics/networkobject.md#finding-playerobjects).
 
 :::
 
@@ -209,7 +209,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
-3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](../command-line-helper/).
+3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
 
 :::tip
 
