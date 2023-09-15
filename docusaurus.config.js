@@ -139,7 +139,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Unity Technologies. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Unity Technologies`,
     },
     navbar: {
       title: "Multiplayer Networking",
