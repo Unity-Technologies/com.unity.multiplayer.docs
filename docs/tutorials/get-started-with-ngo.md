@@ -209,7 +209,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 
 1. Select **File** > **Build And Run**.
 2. Stop the player.
-3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](../command-line-helper/).
+3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
 
 :::tip
 
