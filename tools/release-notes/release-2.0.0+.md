@@ -3,6 +3,27 @@ id: tools-2-0-0-pre
 title: Multiplayer Tools 2.0.0-pre+
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
+## [2.0.0-pre.5] - 2023-09-19
+
+### *General*
+- *New*: Find all the multiplayer tools in a central place in the multiplayer tools window.
+
+### *Network Profiler*
+- Fixed an issue causing inconsistent foldout behavior.
+- Fixed a bug where switching frames would reset the sorting filter.
+- Improved UI for the Network Profiler.
+
+### *Runtime Net Stats Monitor*
+- Fix an index out of range exception that could occur when adding a new RNSM graph at runtime.
+- Renamed the Component in the "Add Component" menu from "RuntimeNetStatsMonitor" to "Runtime Network Stats Monitor".
+
+### *Network Simulator*
+- Added presets for common home broadband connections and situations.
+
+### *Network Scene Visualization*
+- Text Overlays now also work in 2D scenes with 2D colliders.
+- Removed slight delay between bandwidth text and color change.
+- Made bandwidth update instantly after switching back from Ownership mode
 
 ## [2.0.0-pre.3] - 2023-05-23
 
