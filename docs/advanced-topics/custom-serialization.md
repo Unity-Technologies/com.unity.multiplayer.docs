@@ -17,6 +17,10 @@ With this flow, you can provide support for serializing any unsupported types, a
 
 ### For RPCs
 
+:::note
+As of 1.7.0, RPCs can also use the NetworkVariable flow indicated below; however, NetworkVariable cannot use the RPC flow. The RPC flow is slightly more efficient if the type is only being serialized by RPCs, and will be selected preferentially if both flows are implemented, but if a type is used by both NetworkVariables and RPCs, you can implement only the NetworkVariable flow to ease maintenance requirements.
+:::
+
 To register a custom type, or override an already handled type, you need to create extension methods for `FastBufferReader.ReadValueSafe()` and `FastBufferWriter.WriteValueSafe()`:
 
 ```csharp
@@ -83,3 +87,5 @@ UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out 
     url = new Url(val);
 };
 ```
+
+If you are using this in `NetworkVariable<T>`, in addition to `WriteValue` and `ReadValue`, you also have to implement `DuplicateValue`. This should return a complete deep copy of the value; this is used by `NetworkVariable<T>` to check whether or not a value has changed by comparing it against a previous value, to avoid reserializing it over the network every frame when it hasn't changed.
