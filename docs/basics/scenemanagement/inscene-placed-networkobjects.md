@@ -100,9 +100,9 @@ Using this approach allows you to:
 1. Re-use the same single spawn manager with any other Network Prefab registered with a `NetworkPrefabsList`
 2. Not worry about the complexities involved with treating an in-scene placed `NetworkObject` like a dynamically spawned one.
 
-[See a Dynamic Spawning (non-pooled) "Hybrid Approach" Example Here](../object-spawning#dynamic-spawning-non-pooled)
+[See a Dynamic Spawning (non-pooled) "Hybrid Approach" Example Here](../object-spawning/index.html#dynamic-spawning-non-pooled)
 
-### Spawning and De-spawning 
+## Spawning and De-spawning 
 By default, an in-scene placed `NetworkObject` will always get spawned when the scene it was placed within is loaded and a network session is in progress.  However, in-scene placed `NetworkObject`s are unique from dynamically spawned `NetworkObject`s when it comes to spawning and de-spawning.  Functionally speaking, when de-spawning a dynamically spawned NetworkObject you can always spawn a new instance of the `NetworkObject`'s associated network prefab. So, whether you decide to destroy a dynamically spawned `NetworkObject` or not, you can always make another clone of the same network Prefab unless you want to preserve the current state of the instance being de-spawned. <br />
 With in-scene placed NetworkObjects, the scene it's placed within is similar to the network Prefab used to dynamically spawn a `NetworkObject` in that both are used to uniquely identify the spawned `NetworkObject`.  The primary difference is that you use a network Prefab to create a new dynamically spawned instance where you a required to additively load the same scene to create another in-scene placed `NetworkObject` instance.<br />
 
@@ -260,4 +260,5 @@ It is important to understand that without the use of a `NetworkTransform` clien
   - During the client's first synchronization after a client has their connection approved.
   - When a server spawns a new NetworkObject.
 - A NetworkObject has been parented (or a parent removed). 
- - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.   
+- The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.
+   - These transform changes will be synchronized with clients via the `ParentSyncMessage`

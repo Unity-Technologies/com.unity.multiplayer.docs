@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../basics/object-spawning), and [NetworkVariable](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
+Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../object-spawning), and [NetworkVariable](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
 
   1. `NetworkObject`
   2. [`NetworkBehaviour`](networkbehaviour.md)
