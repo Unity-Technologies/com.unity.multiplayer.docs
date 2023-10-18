@@ -74,6 +74,19 @@ If your `NetworkTransform` has `Interpolate` enabled, you might find that you ca
 Threshold values are not synchronized, but they can be updated on the [authoritative instance](networktransform#authority-modes). You should keep this in mind when using [owner authoritative mode](networktransform#owner-authoritative-mode) instances since changing ownership will use whatever values are currently set on the new owner instance. If you plan on changing the threshold value during runtime and plan on changing ownership, then you might need to synchronize the threshold values as well.
 :::
 
+### Delivery
+
+Sometimes network conditions are not exactly "optimal" where packets can have both undesirable latency and even the dreaded packet loss. When NetworkTransform interpolation is enabled, packet loss can mean undesirable visual artifacts (_i.e. large visual motion gaps often referred to as "stutter"_). Originally, NetworkTransform sent every state update using reliable fragmented sequenced network delivery. For interpolation, with enough latency and packet loss this could cause a time gap between interpolation points which eventually would lead to the motion "stutter". Fortunately, NetworkTransform has been continually evolving and defaults to sending the more common delta state updates (_i.e. position, rotation, or scale changes_) as unreliable sequenced network delivered messages. If one state is dropped then the `BufferedLinearInterpolator` can recover easily as it doesn't have to wait precisely for the next state update and can just lose a small portion of the over-all interpolated path (_i.e. with a TickRate setting of 30 you could lose 5 to 10% of the over-all state updates over one second and still have a relatively similar interpolated path to that of a perfectly delivered 30 delta state updates generated path_). As such, the UseUnreliableDeltas NetworkTransform property, default to enabled, controls whether you send your delta state updates unreliably or reliably. 
+
+Of course, you might wonder what would happen if say 5% of a jumping motion, towards the end of the jumping motion, were dropped how NetworkTransform might recover since each state update sent is only based on axial deltas defined by each axis threshold settings. The answer is that there is a small bandwidth penalty for sending standard delta state updates unreliably: Axial Frame Synchronization.
+
+#### Axial Frame Synchronization
+
+When unreliable delta state updates is enabled (UseUnreliableDeltas is enabled), NetworkTransform instances are assigned a constantly rolling tick position relative to a 1 second period of time. So, if you are using the default `NetworkConfig.TickRate` value (30) there are 30 "tick slots" that each NetworkTransform instance is distributed amongst on the authoritative instance. This means that each instance will send 1 Axial Frame Synchronization update per second while the NetworkObject in question is moving, rotating, or scaling enough to trigger delta state updates. When a NetworkObject comes to rest (i.e. no longer sending delta state updates) the Axial Frame Synchronization stops. This assures that if a vital portion of a state update is dropped, within a 1 second period of time, all axis marked to be synchronized will be synchronized to provide an eventual consistency in axis synchronization between the authority and non-authority instances.
+
+:::info
+If bandwidth consumption becomes a concern and you have tested your project under normal network conditions with UseUnreliableDeltas disabled with no noticeable visual artifacts, then you can opt out of unreliable delta state updates to recover the minor penalty for being packet loss tolerant or you might opt to make that an in-game configuration setting that players can enable or disable. You just need to update the authoritative NetworkTransform instances with any change in the setting during runtime.
+:::
 
 ### Local space
 
