@@ -25,6 +25,25 @@ The first thing to understand is that Relay is a Unity service. You need to add 
 
 See [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started) for more detailed instructions.
 
+## How do I quickly try Relay in the Editor?
+
+If you are using Unity 2022.3 or later, you can try the Relay service directly in the editor from the inspector of the Network Manager. The workflow is similar to what you experienced in
+the [Get Started with NGO](../tutorials/get-started-with-ngo.md) page: the inspector shows buttons which start a Host, Server or Client without the need to add a UI to your game yet. The biggest difference is that starting a client requires a [join code](https://docs.unity.com/relay/en/manual/join-codes) which you can get from the host or server.
+
+![](/img/relay/ngo-relay-connection.png)
+
+You will get feedback in the UI and in the console if the connection failed. If the connection is successfully established, you will see the following message with the join code in the inspector:
+
+![](/img/relay/ngo-relay-connected.png)
+
+This view enables you to conveniently copy the join code so that you can share it with your colleagues, or test in a second window project (see [Testing Locally](../tutorials/testing/testing_locally.md)).
+
+:::note
+This integration is only available in the editor. You can't use it in a build. You may however use the following functions from the NetworkManager in a build, if they suit your needs: `NetworkManager.StartServerWithRelay`, `NetworkManager.StartClientWithRelay` and `NetworkManager.StartHostWithRelay`. 
+They are built on the Unity Transport Package. For more advanced use-cases, please check the [Relay documentation](https://docs.unity.com/relay/en/manual/connection-data) 
+
+:::
+
 ## How do I request an allocation?
 
 To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay, you need to make an authenticated call to Unity back end using their SDK. On the host, call the `CreateAllocationAsync` method with the maximum number of expected peers. For example, a host requesting a maximum of `3` peer connections reserves four slots for a four player game. This function can throw exceptions, and catching them can give you hints about the underlying error.
@@ -209,4 +228,4 @@ You can now call the method `SetRelayServerData` on the retrieved transport with
 
 Your transport is now configured. You can call `StartClient` or `StartHost` and use the Netcode library as usual.
 
-For more information see [Unity Relay](https://docs.unity.com/relay).
+For more information see [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction).
