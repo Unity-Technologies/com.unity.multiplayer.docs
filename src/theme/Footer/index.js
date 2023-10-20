@@ -88,6 +88,7 @@ function Footer() {
             <li><a href="https://unity.com/legal/privacy-policy">Privacy Policy </a></li>
             <li><a href="https://unity.com/legal/cookie-policy">Cookies</a></li>
             <li><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a></li>
+            <li><a href="javascript:void(0);" id="ot-sdk-btn" class="ot-sdk-show-settings">Your Privacy Choices (Cookie Settings)</a></li>
          </ul>
         </div>
         <div className="footer__details" >"Unity", Unity logos, and other Unity trademarks are trademarks or registered trademarks of Unity Technologies or its affiliates in the U.S. and elsewhere (<a href="https://unity3d.com/legal/trademarks">more info here</a>). Other names or brands are trademarks of their respective owners.</div>
