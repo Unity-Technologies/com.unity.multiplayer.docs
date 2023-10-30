@@ -39,7 +39,7 @@ You will get feedback in the UI and in the console if the connection failed. If 
 This view enables you to conveniently copy the join code so that you can share it with your colleagues, or test in a second window project (see [Testing Locally](../tutorials/testing/testing_locally.md)).
 
 :::note
-This integration is only available in the editor. You can't use it in a build. You may however use the following functions from the NetworkManager in a build, if they suit your needs: `NetworkManager.StartServerWithRelay`, `NetworkManager.StartClientWithRelay` and `NetworkManager.StartHostWithRelay`. 
+This integration is only available in the editor. You can't use it in a build. You may however use the Code Snippets at the end of this page.
 They are built on the Unity Transport Package. For more advanced use-cases, please check the [Relay documentation](https://docs.unity.com/relay/en/manual/connection-data) 
 
 :::
