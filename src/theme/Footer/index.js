@@ -91,8 +91,7 @@ function Footer() {
             <li><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a></li>
             <li>
                 <a href="javascript:void(0);" id="ot-sdk-btn" class="ot-sdk-show-settings">
-                  <OneTrust />
-                  &nbsp;
+                  <OneTrust className='footer__legal-onetrusttick' />
                   Your Privacy Choices (Cookie Settings)
                 </a>
               </li>
