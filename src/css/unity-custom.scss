@@ -761,6 +761,10 @@ html[data-theme='dark'] .node polygon {
   list-style-type: none;
 }
 
+.footer__legal-onetrusttick {
+  margin-right: 0.5rem;
+}
+
 // override the OneTrust styling for the link-button
 #ot-sdk-btn.ot-sdk-show-settings {
   color: var(--ifm-link-color) !important;
