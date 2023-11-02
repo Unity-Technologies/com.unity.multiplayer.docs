@@ -759,6 +759,10 @@ html[data-theme='dark'] .node polygon {
   flex-flow: row nowrap;
   gap: 1rem;
   list-style-type: none;
+
+  a {
+    color: var(--ifm-footer-title-color);
+  }
 }
 
 .footer__legal-onetrusttick {
@@ -767,7 +771,7 @@ html[data-theme='dark'] .node polygon {
 
 // override the OneTrust styling for the link-button
 #ot-sdk-btn.ot-sdk-show-settings {
-  color: var(--ifm-link-color) !important;
+  color: var(--ifm-footer-title-color) !important;
   border: inherit !important;
   white-space: inherit !important;
   padding: inherit !important;
