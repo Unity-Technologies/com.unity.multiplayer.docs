@@ -19,8 +19,9 @@ See the [Contribution Guide](https://github.com/Unity-Technologies/com.unity.mul
 You can install and build docs on Mac and Windows environments. The doc site is built on Docusaurus, which requires NodeJS and Yarn installed for your OS.
 
 1. Install [NodeJS](https://nodejs.org/en/download/).
-1. Install [Yarn](https://yarnpkg.com/en/).
-1. Install Docusaurus to a temp location: `yarn global add docusaurus-init`. You can delete the temp project.
+2. Install [Yarn](https://yarnpkg.com/en/).
+3. Install Docusaurus to a temp location: `yarn global add docusaurus-init`. You can delete the temp project.
+4. Install all packages: `yarn install`
 
 ## Building on Local
 
