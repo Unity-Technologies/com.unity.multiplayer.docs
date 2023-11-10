@@ -25,7 +25,7 @@ You need to add the Relay Service to your organization in the Unity Dashboard (u
 
 See [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started) for more detailed instructions.
 
-## How do I try Relay in the Editor?
+## Test the Relay service in the Unity Editor
 
 If you are using Unity 2022.3 or later, you can try the Relay service directly in the editor from the inspector of the Network Manager. The workflow is similar to what you experienced in
 the [Get Started with NGO](../tutorials/get-started-with-ngo.md) page: the inspector shows buttons which start a Host, Server or Client without the need to add a UI to your game yet. The biggest difference is that starting a client requires a [join code](https://docs.unity.com/relay/en/manual/join-codes) which you can get from the host or server.
@@ -44,7 +44,7 @@ They are built on the Unity Transport Package. For more advanced use-cases, plea
 
 :::
 
-## How do I request an allocation?
+## Request an allocation
 
 To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay, you need to make an authenticated call to the Unity back end using the SDK. On the host, call the `CreateAllocationAsync` method with the maximum number of expected peers. For example, a host requesting a maximum of `3` peer connections reserves four slots for a four player game. This function can throw exceptions, and catching them can give you hints about the underlying error.
 
@@ -83,7 +83,7 @@ if (!AuthenticationService.Instance.IsSignedIn)
 }
 ```
 
-## How do I join an existing allocation?
+## Join an existing allocation
 
 The host of your game created a Relay allocation, and your client has received its [join code](https://docs.unity.com/relay/en/manual/join-codes). You now need to [request all the allocation parameters](https://docs.unity.com/relay/manual/connection-flow#4) from the join code to join the game. To do that, call the `JoinAllocationAsync` method with your join code like so:
 
@@ -92,7 +92,7 @@ The host of your game created a Relay allocation, and your client has received i
 JoinAllocation allocation = await Unity.Services.Relay.RelayService.Instance.JoinAllocationAsync(joinCode);
 ```
 
-## How do I pass allocation data to my transport component?
+## Pass allocation data to a transport component
 
 Now that you have an allocation (either by joining or hosting), you need to make all traffic coming from Netcode go through the Relay. To achieve that, you need to pass allocation parameters to your transport. For now, only the `UnityTransport` supports the Relay protocol. To pass allocation parameters to it, you first need to retrieve it from your `NetworkManager` like so:
 
@@ -111,9 +111,9 @@ Your transport is now configured. You can call `StartClient`, `StartHost` or `St
 
 # Code Snippets
 
-Here is the complete code that allows working with the [Relay server](https://docs.unity.com/relay/en/manual/relay-servers). To start a server instead of a host, simply replace the `StartHost` call with `StartServer` in `StartHostWithRelay`.
+Use the following code to work with the [Relay server](https://docs.unity.com/relay/en/manual/relay-servers). To start a server instead of a host, replace the `StartHost` call with `StartServer` in `StartHostWithRelay`.
 
-For more information see [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction).
+For more information, refer to [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction).
 
 ```csharp
 /// <summary>
