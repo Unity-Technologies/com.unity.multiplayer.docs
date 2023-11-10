@@ -17,7 +17,7 @@ Netcode doesn't offer tools to help you do a successful punch through a NAT. How
 
 The host of your game will need to request a Relay allocation and get a [join code](https://docs.unity.com/relay/en/manual/join-codes) for this allocation. The join code is a random string that your clients will use to join the correct server and allocation. The host and clients will then be able to communicate via the Relay server without disclosing their IP addresses and ports directly.
 
-## How do I enable Relay for my project?
+## Enable Relay in a project
 
 You need to install the Unity Relay SDK if you want to interact with the service. To install it, add `com.unity.services.relay` package to your project.
 
