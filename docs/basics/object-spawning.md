@@ -146,7 +146,7 @@ Really, the when we use the term "non-pooled" more often than not we are referri
 
 Pooled dynamic spawning is when netcode objects (`GameObject` with one `NetworkObject` component) aren't destroyed on the server or the client when despawned. Instead, specific components are just disabled (or the `GameObject` itself) when a netcode object is despawned. A pooled dynamically spawned netcode object is typically instantiated during an already memory allocation heavy period of time (like when a scene is loaded or even at the start of your application before even establishing a network connection). Pooled dynamically spawned netcode objects are more commonly thought of as more than one netcode object that can be re-used without incurring the memory allocation and initialization costs. However, you might also run into scenarios where you need just one dynamically spawned netcode object to be treated like a pooled dynmically spawned netcode object.
 
-Fortunately, Netcode for GameObjects provides you with a way to be in control over the instatiation and destruction process for one or many netcode objects by via the `INetworkPrefabInstanceHandler` interface. Any `INetworkPrefabInstanceHandler`implementation should be registered with the `NetworkPrefabHandler`(for multiple netcode objects see [Object Pooling](../advanced-topics/object-pooling)) to accomplish this.
+Fortunately, Netcode for GameObjects provides you with a way to be in control over the instatiation and destruction process for one or many netcode objects by via the `INetworkPrefabInstanceHandler` interface. Any `INetworkPrefabInstanceHandler`implementation should be registered with the `NetworkPrefabHandler`(for multiple netcode objects see [Object Pooling](../advanced-topics/object-pooling.md)) to accomplish this.
 
 The easiest way to not destroy a network Prefab instance is to have something, other than the instance itself, keeping a reference to the instance. This way you can simply set the root `GameObject` to be inactive when it's despawned while still being able to set it active when the same network Prefab type needs to be respawned. Below is one example of how you can accomplish this for a single netcode object instance:
 
@@ -290,7 +290,7 @@ Using this type of a hierarchical separation is useful in many ways (especially 
 
 Any objects in the scene with active and spawned `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`. In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
 
-[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects)
+[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects.md)
 
 Generally, there are **two** modes that define how an in-scene placed `NetworkObject` is synchronized.
 
