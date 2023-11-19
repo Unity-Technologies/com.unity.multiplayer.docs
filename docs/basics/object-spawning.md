@@ -39,12 +39,12 @@ See [Ownership](networkobject.md#ownership) for more information.
 The following is a basic example of how to spawn a network Prefab instance (with the default server ownership):
 
 ```csharp
-GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
-go.GetComponent<NetworkObject>().Spawn();
+var instance = Instantiate(myPrefab);
+var instanceNetworkObject = instance.GetComponent<NetworkObject>();
+instanceNetworkObject.Spawn();
 ```
 
 The `NetworkObject.Spawn` method takes 1 optional parameter that defaults to `true`:
-
 ```csharp
 public void Spawn(bool destroyWithScene = true);
 ```
@@ -52,6 +52,43 @@ public void Spawn(bool destroyWithScene = true);
 When you set the destroyWithScene property to `false` it will be treated the same as when you set [Object.DontDestroyOnLoad](https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html). Typically, you use this if you are loading a scene using [LoadSceneMode.Single](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) parameter.
 
 [Learn more about Netcode Scene Management here](scenemanagement/scene-management-overview.md)
+
+:::caution You might find it useful to add a `GameObject` property in a `NetworkBehaviour` derived component that you use to assign a network prefab instance for dynamically spawning. You need to make sure to instantiate a new instance **prior** to spawning. If you attempt to just spawn the actual network prefab instance it can result in unexpected results.
+:::
+
+### Taking Prefab Overrides Into Consideration
+Sometimes you might want to make a simpler prefab instance to be spawned on server version the override for clients. You should take this into consideration when dynamically spawning a network prefab. If you are running as a host, you want the override to spawn since a host is both a server and a client. However, if you also want to have the ability to run as a dedicated server you might want to spawn the source network prefab. 
+
+**_There are two ways you can accomplish this:_**
+
+#### Get The Network Prefab Override First 
+This option provides you with the over-all view of getting the network prefab override, instantiating it, and then spawning it.
+
+```csharp
+var instance = Instantiate(NetworkManager.GetNetworkPrefabOverride(myPrefab));
+var instanceNetworkObject = instance.GetComponent<NetworkObject>();
+instanceNetworkObject.Spawn();
+```
+ In the above script, you can see that we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method, we then create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`. Of course, this is a bit of code to write in order to just "spawn something".
+
+#### Using InstantiateAndSpawn
+The second option you have is to leverage from the `NetworkSpawnManager.InstantiateAndSpawn` method that handles dealing with whether to spawn an override or not for you. The below script was written as if was being invoked within a `NetworkBehaviour`. 
+
+```csharp
+var networkObject = NetworkManager.SpawnManager.InstantiateAndSpawn(myPrefab, ownerId);
+```
+We pass in the overridden source network prefab we want to have instantiated and spawned, and then it returns the instantiated and spawned `NetworkOject` of the spawned object. The default behavior of `InstantiateAndSpawn` is to spawn the override if running as a host and the original source prefab if running as a server.
+
+`InstantiateAndSpawn` has several more parameters to provide a bit more control over this process:
+
+```csharp
+InstantiateAndSpawn(NetworkObject networkPrefab, ulong ownerClientId = NetworkManager.ServerClientId, bool destroyWithScene = false, bool isPlayerObject = false, bool forceOverride = false, Vector3 position = default, Quaternion rotation = default)
+```
+
+Looking at the parameters, we can see it defaults to the server as being the owner, assures the instantiated `NetworkObject` will not be destroyed if the scene is unloaded, is not spawned as a player, has a "forceOverride" parameter (more on this in a second), and provides a way to set the position and rotation of the newly instantiated `NetworkObject`.
+
+The "forceOverride" parameter, when set to true, will use the override whether you are running a server or host.
+
 
 ## Destroying / Despawning
 
