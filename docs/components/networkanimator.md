@@ -142,3 +142,46 @@ public void SetPlayerJumping(bool isJumping)
     m_NetworkAnimator.SetTrigger("IsJumping");
 }
 ```
+
+### Using Root Motion
+When using root motion (i.e. Animator.applyRootMotion), you need to make sure that the non-authoritative instance(s) do not apply root motion since they are just mirroring what is happening on the authoritative instance side. To accomplish this you can create a custom NetworkAnimator that handles both owner and server authoritative modes:
+```csharp
+public class RootMotionAnimator : NetworkAnimator
+{
+    public enum AuthorityModes
+    {
+        Server,
+        Owner,
+    }
+
+    public AuthorityModes AuthorityMode;
+
+    protected override bool OnIsServerAuthoritative()
+    {
+        return AuthorityMode == AuthorityModes.Server;
+    }
+
+    private void ApplyRootMotion()
+    {
+        Animator.applyRootMotion = OnIsServerAuthoritative() ? IsServer : IsOwner;
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        // Always invoke the base when overriding NetworkAnimator's OnNetworkSpawn method
+        base.OnNetworkSpawn();
+        ApplyRootMotion();
+    }
+
+    protected override void OnOwnershipChanged(ulong previous, ulong current)
+    {
+        // Always invoke the base when overriding NetworkAnimator's OnOwnershipChanged method
+        base.OnOwnershipChanged(previous, current);
+
+        // This handles the scenario where you are using an owner authoritative motion model
+        // and ownership changes.
+        ApplyRootMotion();
+    }
+}
+```
+This allows the non-authoritative instances to apply updates from `NetworkAnimator` and `NetworkTransform` without trying to drive motion from the playing animations.
