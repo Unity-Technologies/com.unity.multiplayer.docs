@@ -504,6 +504,7 @@ In order to create your own `NetworkVariableBase` derived container, you should:
     - `void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)`
 - Depdending upon your custom `NetworkVariableBase` container, you might look at `NetworkVariable<T>` or `NetworkList` to see how those two examples were implemented.
 
+<a name="network-variable-serialization"></a>
 #### NetworkVariableSerialization&lt;T&gt;
 
 When working with known, non-generic types, it is easy and efficient to read and write using `FastBufferReader.ReadValue` and `FastBufferWriter.WriteValue`, respectively, or for integer types, using `BytePacker` and `ByteUnpacker` to add compression. When working with generic types, however, we have to rely on serializers that are generated based on types discovered during a compile-time code generation process. As such, when working with generic types, you have to a little bit of extra work to tell our code generation algorithm which types to generate serializers for. You can do this in two ways:
