@@ -13,7 +13,7 @@ Many factors impact how you connect to the remote host, and it can be tricky to 
 
 Netcode doesn't offer tools to help you do a successful punch through a NAT. However, Unity Services provides a Relay service that can relay all Unity Transport based technology, like Netcode.
 
-# How does Relay work?
+# How to use Relay
 
 The host of your game will need to request a Relay allocation and get a [join code](https://docs.unity.com/relay/en/manual/join-codes) for this allocation. The join code is a random string that your clients will use to join the correct server and allocation. The host and clients will then be able to communicate via the Relay server without disclosing their IP addresses and ports directly.
 
