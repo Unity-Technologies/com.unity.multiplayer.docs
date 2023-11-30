@@ -316,8 +316,8 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "2.0.0",
-            path: "current",
+            label: "2.1.0",
+            path: "2.1.0",
           },
           "2.0.0-pre": {
             label: "2.0.0-pre",
