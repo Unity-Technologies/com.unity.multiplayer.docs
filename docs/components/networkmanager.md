@@ -94,6 +94,7 @@ If you are using Unity Relay to handle connections, however, **don't use `SetCon
 
 ## Disconnecting and Shutting Down
 
+### Disconnecting
 Disconnecting is rather simple, but you can't use/access any subsystems (that is, `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
 
 :::info
@@ -108,6 +109,12 @@ public void Disconnect()
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 }
 ```
+
+### Shutting Down
+When you invoked `NetworkManager.Shutdown` any existing transport connections will be closed. The shutdown sequence for a client will complete by the next player loop update/frame. However, the shutdown sequence can take a bit longer for a server or host (server-host). In order to assure all clients are notified when a server-host is shutting down, upon invoking `NetworkManager.Shutdown` the server-host will first send out a disconnect notification to all currently connected clients and will populate the NetworkManager.Disconnect reason with one of the two following messages (depending upon whether it is a server or host instance):
+- "Disconnected due to server shutting down."
+- "Disconnected due to host shutting down."
+The server-host will attempt to wait for all client connections to close prior to finishing the shutdown sequence. This additional step on the server-host side can help to assure clients receive a disconnect notification and will help to prevent the client transport connection from timing out. Under the scenario where not all client connections are closed within 5 seconds after invoking `NetworkManager.Shutdown`, the server-host will automatically finish its shutdown sequence and any remaining connections will be closed.
 
 ## Disconnecting Clients (Server Only)
 
@@ -132,23 +139,19 @@ void DisconnectPlayer(NetworkObject player)
 
 ### Client Disconnection Notifications
 
-Both the client and the server can subscribe to the `NetworkManager.OnClientDisconnectCallback` event to be notified when a client is disconnected. Client disconnect notifications are "relative" to who is receiving the notification.
-
-**There are two general "disconnection" categories:**
-- **Logical**: Custom server side code (code you might have written for your project) invokes `NetworkManager.DisconnectClient`.
-  - Example: A host player might eject a player or a player becomes "inactive" for too long.
-- **Network Interruption**: The transport detects there is no longer a valid network connection.
+Both the client and the server can subscribe to the `NetworkManager.OnClientDisconnectCallback` event to be notified when a client is disconnected.
 
 **When disconnect notifications are triggered:**
 - Clients are notified when they're disconnected by the server.
-- The server is notified if the client side disconnects (that is, a player intentionally exits a game session)
+- The server is notified when any client disconnects (whether the server disconnects the client or the client disconnects itself).
 - Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption)
 
-**Scenarios where the disconnect notification won't be triggered**:
-- When a server "logically" disconnects a client.
-  - _Reason: The server already knows the client is disconnected._
-- When a client "logically" disconnects itself.
-  - _Reason: The client already knows that it's disconnected._
+**Client notification identifiers**
+- On the server-side, the client identifier parameter will always be the identifier of the client disconnected
+- On the client-side, the client identifier parameter will always be the identifier assigned to the client
+  - _The exception to this is when a client is disconnected before its connection is approved._
+
+
 
 ### Connection Notification Manager Example
 Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component. 
