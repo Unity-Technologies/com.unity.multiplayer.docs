@@ -507,23 +507,32 @@ In order to create your own `NetworkVariableBase` derived container, you should:
 <a name="network-variable-serialization"></a>
 #### NetworkVariableSerialization&lt;T&gt;
 
-When working with known, non-generic types, it is easy and efficient to read and write using `FastBufferReader.ReadValue` and `FastBufferWriter.WriteValue`, respectively, or for integer types, using `BytePacker` and `ByteUnpacker` to add compression. When working with generic types, however, we have to rely on serializers that are generated based on types discovered during a compile-time code generation process. As such, when working with generic types, you have to a little bit of extra work to tell our code generation algorithm which types to generate serializers for. You can do this in two ways:
+The way you read and write network variables changes depending on the type you use.
 
-The first way is to use `GenerateSerializationForTypeAttribute` to generate serialization for a specific hard-coded type:
+* Known, non-generic types: Use `FastBufferReader.ReadValue` to read from and `FastBufferWriter.WriteValue` to write to the network variable value. 
+* Integer types:  This type gives you the option to use `BytePacker` and `ByteUnpacker` to compress the network variable value. This process can save bandwidth but adds CPU processing time.
+* Generic types: Use serializers that Unity generates based on types discovered during a compile-time code generation process. This means you need to tell Unity's code generation algorithm which types to generate serializers for. To tell Unity which types to serialize, use the following methods: 
+    * Use `GenerateSerializationForTypeAttribute` to serialize hard-coded types.
+    * Use `GenerateSerializationForGenericParameterAttribute` to serialize generic types. 
+    To learn how to use these methods, refer to [Network variable serialization](#network-variable-serialization).
+
+##### Tell Unity to serialize a hard-coded type
+The following code example uses `GenerateSerializationForTypeAttribute` to generate serialization for a specific hard-coded type:
 ```csharp
 [GenerateSerializationForType(typeof(Foo))]
 public class MyNetworkVariableTypeUsingFoo : NetworkVariableBase {}
 ```
 
 However, this is rarely useful for generic types, since if you know the type, you can generally use the more efficient route of calling `FastBufferReader`/`FastBufferWriter` methods directly.
-
+##### Tell Unity to serialize a generic type
 The more common and more useful method is to use `GenerateSerializationForGenericParameterAttribute` to generate serialization for a specific generic parameter in your `NetworkVariable` type:
 ```csharp
 [GenerateSerializationForGenericParameter(0)]
 public class MyNetworkVariableType<T> : NetworkVariableBase {}
 ```
 
-This attribute takes an integer indicating which parameter in the type to generate serialization for. This value is 0-indexed, so the first type is 0, the second is 1, and so on. The attribute can be placed more than once on one class to generate serialization for multiple types:
+This attribute accepts an integer that indicates which parameter in the type to generate serialization for. This value is 0-indexed, which means that the first type is 0, the second type is 1, and so on. 
+The following code example places the attribute more than once on one class to generate serialization for multiple types, in this case,`TFirstType` and `TSecondType:
 
 ```csharp
 [GenerateSerializationForGenericParameter(0)]
@@ -531,9 +540,8 @@ This attribute takes an integer indicating which parameter in the type to genera
 public class MyNetworkVariableType<TFirstType, TSecondType> : NetworkVariableBase {}
 ```
 
-This will generate serialization for both `TFirstType` and `TSecondType`.
 
-Either of these attributes will cause the code generation to generate the following methods that you can use:
+The  `GenerateSerializationForGenericParameterAttribute` and `GenerateSerializationForTypeAttribute` attributes make Unity's code generation create the following methods:
 
 ```csharp
 NetworkVariableSerialization<T>.Write(FastBufferWriter writer, ref T value);
@@ -544,11 +552,11 @@ NetworkVariableSerialization<T>.AreEqual(in T a, in T b);
 
 In cases where the type is dynamically allocated (managed types and collections like NativeArray and NativeList), calling `Read` will read the value in-place whenever possible, avoiding further allocations.
 
-`AreEqual` can be used to determine if a value has changed from a previous value cached via `Duplicate` at a previous time to determine if a value has changed or not, to avoid re-sending the same value multiple times. This previous value cached via `Duplicate` can also be used to calculate deltas for implementing `ReadDelta` and `WriteDelta`.
+You can use `AreEqual` to determine if a value is different from the value that `Duplicate` cached. This avoids sending the same value multiple times. You can also use the previous value that `Duplicate` cached to calculate deltas to use in `ReadDelta` and `WriteDelta`.
 
-Note that the type must be serializable according to the "Supported Types" list above. Each type needs its own serializer instantiated, so this step tells the codegen which types to create serializers for.
+The type you use must be serializable according to the "Supported Types" list above. Each type needs its own serializer instantiated, so this step tells the codegen which types to create serializers for.
 
-Note also that the codegen makes the assumption that all `NetworkVariable` types will exist as fields within `NetworkBehaviour` types, and limits its inspection to those fields to identify which types to create serializers for.
+:::note Unity's code generator assumes that all `NetworkVariable` types exist as fields inside `NetworkBehaviour` types. This means that Unity only inspects fields inside `NetworkBehaviour` types to identify the types to create serializers for.
 
  ### Custom NetworkVariable Example
 
