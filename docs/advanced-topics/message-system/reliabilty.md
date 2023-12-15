@@ -13,21 +13,15 @@ Packet reliability can be a two edged sword (pro and con):
 :::
 
 ### Reliable and Unreliable RPC Examples:
-Reliability configuration can be specified for both `ServerRpc` and `ClientRpc` methods at compile-time:
+Reliability configuration can be specified for `Rpc` methods at compile-time:
 
 ```csharp
 
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void MyReliableServerRpc() { /* ... */ }
 
-[ServerRpc(Delivery = RpcDelivery.Unreliable)]
+[Rpc(SendTo.Server, Delivery = RpcDelivery.Unreliable)]
 void MyUnreliableServerRpc() { /* ... */ }
-
-[ClientRpc]
-void MyReliableClientRpc() { /* ... */ }
-
-[ClientRpc(Delivery = RpcDelivery.Unreliable)]
-void MyUnreliableClientRpc() { /* ... */ }
 ```
 
 Reliable RPCs will be received on the remote end in the same order as they're fired but this in-order guarantee only applies to RPCs on the same `NetworkObject`. Different `NetworkObjects` might have reliable RPCs called but executed in different order compared to each other. To put more simply, **in-order reliable RPC execution is guaranteed per `NetworkObject` basis only**.  If you determine an RPC is being updated often (that is, several times per second), it _might_ be better suited as an unreliable RPC.    

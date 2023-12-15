@@ -182,7 +182,7 @@ public class Door : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [Rpc(SendTo.Server)]
     public void ToggleServerRpc()
     {
         // this will cause a replication over the network

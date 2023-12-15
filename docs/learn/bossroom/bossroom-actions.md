@@ -28,12 +28,11 @@ lightImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherRangedSh
 darkImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherRangedShot_Dark.png?text=DarkMode"/>
 <figcaption>Boss Room's archer's arrows use fully replicated NetworkObjects + NetworkTransform. Since they're slow moving, we want them to be seen by late joining players. We also want to make sure their behaviour is the same for all clients (so they don't go through walls for example). This will use more bandwidth, but will be more accurate.</figcaption>
 </figure>
-
 <figure>
 <ImageSwitcher 
 lightImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherVolley.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherVolley_Dark.png?text=DarkMode"/>
-<figcaption>The archer's volley takes multiple steps. First on click, the client will show a circle VFX tracking the mouse. That FX isn't networked and client side only. Then on click, the client will send a ServerRPC to the server. The server will then apply it's gameplay logic, update the imp's health (tracked by NetworkVariables) and trigger a Client RPC to play the volley animation on all clients.</figcaption>
+<figcaption>The archer's volley takes multiple steps. First on click, the client will show a circle VFX tracking the mouse. That FX isn't networked and client side only. Then on click, the client will send an Rpc to the server. The server will then apply it's gameplay logic, update the imp's health (tracked by NetworkVariables) and trigger a Client RPC to play the volley animation on all clients.</figcaption>
 </figure>
 
 <!-- TODO add volley video -->

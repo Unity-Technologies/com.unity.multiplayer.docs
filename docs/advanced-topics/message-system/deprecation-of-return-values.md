@@ -37,13 +37,13 @@ void MyRpcInvoker()
     MyRpcWithReturnValueRequestServerRpc(Random.Range(0f, 100f)), Random.Range(0f, 100f)));
 }
 
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void MyRpcWithReturnValueRequestServerRpc(float x, float y)
 {
     MyRpcWithReturnValueResponseClientRpc(x * y);
 }
 
-[ClientRpc]
+[Rpc(SendTo.ClientsAndHost)]
 void MyRpcWithReturnValueResponseClientRpc(float result)
 {
     Debug.LogFormat("The final result was {0}!", result);

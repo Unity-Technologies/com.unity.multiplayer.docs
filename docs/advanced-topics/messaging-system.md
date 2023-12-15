@@ -24,7 +24,7 @@ When calling an `RPC`, you call a method remotely on an object that can be anywh
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
-Netcode has two variations of RPCs to execute logic on either server-side or client-side: [`ServerRpc`](message-system/serverrpc.md) and [`ClientRpc`](message-system/clientrpc.md).
+Netcode has several variations of RPCs to execute logic with various remote targets. To learn more, see [`Rpc`](message-system/rpc.md).
 
 <figure>
 <ImageSwitcher 
@@ -42,8 +42,7 @@ For more information see the wikipedia entry on [Remote Procedure Call's](https:
 
 See the following pages for more information:
 
-- [ClientRpc](message-system/clientrpc.md)
-- [ServerRpc](message-system/serverrpc.md)
+- [Rpc](message-system/rpc.md)
 - [Reliability](message-system/reliabilty.md)
 - [Execution Table](message-system/execution-table.md)
 - [RPC Params](message-system/rpc-params.md)
@@ -66,12 +65,10 @@ A method turned into an RPC is no longer a regular method, it will have its own 
 
 ### RPC usage checklist:
 To use RPCs, make sure
-- ```[ClientRpc]``` or ```[ServerRpc]``` attributes are on your method
-- Your method name ends with ```ClientRpc``` or ```ServerRpc``` (ex: ```DoSomethingServerRpc()```)
+-  ```[Rpc]``` attributes are on your method
+- Your method name ends with ```Rpc``` (ex: ```DoSomethingRpc()```)
 - your method is declared in a class that inherits from NetworkBehaviour
   - your GameObject has a NetworkObject component attached
-- Make sure to call your RPC method server side or client side (using ```isClient``` or ```isServer```)
-- Only accept value types as parameters
 
 ## Serialization Types and RPCs
 

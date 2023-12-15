@@ -4,6 +4,10 @@ title: Execution Table
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
+:::warning
+ClientRpc and ServerRpc are legacy features of Netcode for GameObjects, and have been supplanted by the universal Rpc attribute. Universal Rpcs can be "sent" from any process - i.e., a "Server" Rpc can be sent by the server to itself. This documentation is provided for legacy use, but we recommend all current projects use [Rpc](rpc.md) instead.
+:::
+
 The following table details the execution of `ServerRpc` and `ClientRpc` functions:
 
 | Function | Server | Client | Host (Server+Client) |

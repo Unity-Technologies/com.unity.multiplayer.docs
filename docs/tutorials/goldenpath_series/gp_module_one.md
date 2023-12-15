@@ -218,8 +218,8 @@ namespace HelloWorld
             }
         }
 
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        [Rpc(SendTo.Server)]
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             Position.Value = GetRandomPositionOnPlane();
         }
@@ -352,7 +352,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 </details>
 
-If we are a client, we call a `ServerRpc`. A `ServerRpc` can be invoked by a client to be executed on the server.
+If we are a client, we call an `Rpc` with the parameter `SendTo.Server`. An `Rpc` with this parameter can be invoked by anyone (client, host, or server) to be executed on the server.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -373,7 +373,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-This `ServerRpc` simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
+This `Rpc` simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -385,8 +385,8 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        [Rpc(SendTo.Server)]
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             Position.Value = GetRandomPositionOnPlane();
         }

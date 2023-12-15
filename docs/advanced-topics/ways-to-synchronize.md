@@ -19,14 +19,19 @@ The Netcode messaging system provides you with the ability to handle sending and
 ### Remote Procedure Calls
 RPCs can be viewed as a way to send an event notification as well as a way to handle direct communication between a server and a client (or vice versa).  This is sometimes useful when the ownership scope of the `NetworkBehavior`, that the remote procedure call is declared within, belongs to the server but you still want one or more clients to be able to communicate with the associated `NetworkObject`.  
 **Some Usage Examples:**
-- A ServerRpc can be used by a client to notify the server that the player is trying to use a world object (that is, a door, a vehicle, etc.)
-- A ClientRpc can be used by a server to notify a specific client of a special reconnection key or some other player specific information that doesn't require its state to be synchronized with all current and any future late joining client(s).
+- An Rpc with `SendTo.Server` can be used by a client to notify the server that the player is trying to use a world object (that is, a door, a vehicle, etc.)
+- A second Rpc with `SendTo.SpecifiedInParams` can be used by a server to notify a specific client of a special reconnection key or some other player specific information that doesn't require its state to be synchronized with all current and any future late joining client(s).
 
-**The are two types of RPC methods:**
-- **ServerRpc:** A client invoked remote procedure call received by and executed on the server-side.
-    - [Read More About ServerRpc](../advanced-topics/message-system/serverrpc.md)
-- **ClientRpc:** A server invoked remote procedure call received by and executed on one or more clients.
-    - [Read More About ClientRpc](../advanced-topics/message-system/clientrpc.md)
+**The are several types of RPC methods,** but most are circumstantial. The ones you are most likely to use are:
+
+- **Rpc(SendTo.Server):** A remote procedure call received by and executed on the server-side.
+- **Rpc(SendTo.NotServer):** A remote procedure call received by and executed on the client side. Note that this does NOT execute on the host, as the host is also the server.
+- **Rpc(SendTo.ClientsAndHost):** A remote procedure call received by and executed on the client side. If the server is running in host mode, this RPC will also be executed on the server (the host client).
+- **Rpc(SendTo.SpecifiedInParams):** A remote procedure call that will be sent to a list of client IDs provided as parameters at runtime. (By default, other `SendTo` values cannot have any client IDs passed to them to change where they are being sent, but this can also be changed by passing `AllowTargetOverride = true` to the `Rpc` attribute.
+
+RPCs have no limitations on who can send them - the server can invoke an RPC with `SendTo.Server`, a client can invoke an RPC with `SendTo.NotServer`, etc. If an RPC is invoked in a way that would cause it to be received by the same process that invoked it, it will be executed immediately in that process by default. Passing `DeferOverride = true` to the `Rpc` attribute will change this behavior and the RPC will be invoked at the start of the next frame.
+
+[Read More About Rpcs](../advanced-topics/message-system/rpc.md)
 
 ### Custom Messages
 Custom messages provide you with the ability to create your own "netcode message type" to handle scenarios where you might just need to create your own custom message.
