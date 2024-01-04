@@ -23,7 +23,7 @@ sidebar_label: Using NetworkSceneManager
 In-Scene placed `NetworkObject`s can be used in many ways and are treated uniquely from that of dynamically spawned `NetworkObject`s.  An in-scene placed `NetworkObject` is a GameObject with a `NetworkObject` and typically at least one `NetworkBehaviour` component attached to a child of or the same `GameObject`.  it's recommended to read through all integrated scene management materials (this document, [Scene Events](scene-events.md), and [Timing Considerations](timing-considerations.md)) before learning about more advanced [In-Scene (placed) NetworkObjects](inscene-placed-networkobjects.md) topics.
 :::
 
-All of these scene management features (and more) are handled by the [`NetworkSceneManager`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSceneManager).
+All of these scene management features (and more) are handled by the [`NetworkSceneManager`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkSceneManager.html).
 
 ### Accessing `NetworkSceneManager`
 The `NetworkSceneManager` lives within the `NetworkManager` and is instantiated when the `NetworkManager` is started.
@@ -129,7 +129,7 @@ Because the `NetworkSceneManager` still has additional tasks to complete once a 
 #### Scene Event Notifications
 You can be notified of scene events by registering in one of two ways:
 1. Receive all scene event notification types: `NetworkSceneManager.OnSceneEvent`
-2. Receive only a specific scene event notification type: [`NetworkSceneManager`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSceneManager#events) has one for each [`SceneEventType`](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.SceneEventType)<br/>
+2. Receive only a specific scene event notification type: [`NetworkSceneManager`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkSceneManager.html#events) has one for each [`SceneEventType`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.SceneEventType.html)<br/>
 :::info
 Receiving (via subscribing to the associated event callback) only specific scene event notification types does not change how a server or client receives and processes notifications.  
 :::

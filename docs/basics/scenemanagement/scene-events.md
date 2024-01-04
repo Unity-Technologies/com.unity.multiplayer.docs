@@ -29,11 +29,11 @@ signifies that the server and all clients have finished unloading the scene and 
 ### Synchronization:
 This is automatically happens after a client is connected and approved.<br/>
 **Initiating Scene Event**: `SceneEventType.Synchronize`<br/>
-**Associated Scene Events**: 
+**Associated Scene Events**:
 - `SceneEventType.SynchronizeComplete`: <br/>
 signifies that the client has finished loading all scenes and locally spawned all Netcode objects.  The client sends this scene event message back to the server.  This message also includes a list of `NetworkObject.NetworkObjectId`s for all of the `NetworkObject`s the client spawned.
 - `SceneEventType.ReSynchronize`: <br/>
-signifies that the server determines the client needs to be "re-synchronized" because one or more `NetworkObject`s were despawned while the client was synchronizing.  This message is sent to the client with a `NetworkObject.NetworkObjectId` list for all `NetworkObject`s the client needs to despawn. 
+signifies that the server determines the client needs to be "re-synchronized" because one or more `NetworkObject`s were despawned while the client was synchronizing.  This message is sent to the client with a `NetworkObject.NetworkObjectId` list for all `NetworkObject`s the client needs to despawn.
 
 
 ## Client Synchronization Details
@@ -66,10 +66,10 @@ Below is a diagram of the client connection approval and synchronization process
 Starting with the "Player" in the top right part of the above diagram, the client (Player) runs through the connection and approval process first which occurs within the `NetworkManager`.  Once approved, the server-side `NetworkSceneManager` begins the client synchronization process by sending the `SceneEventType.Synchronize` Scene Event message to the approved client.  The client then processes through the synchronization message.  Once the client is finished processing the synchronize message, it responds to the server with a `SceneEventType.SynchronizeComplete` message. At this point the client is considered "synchronized".  If the server determines any `NetworkObject` was despawned during the client-side synchronization message processing period, it will send a list of `NetworkObject` identifiers to the client via the `SceneEventType.ReSynchronize` message and the client will locally despawn the `NetworkObject`s.
 
 :::tip
-When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (that is, `NetworkManager.IsConnectedClient` is set to `true`) and both the `NetworkManager.OnClientConnected` delegate handler and the scene event notification for `SceneEventType.SynchronizeComplete` are invoked locally. This can be useful to know if your server sends any additional messages to the already connected clients about the newly connected client's status (that is, a player's status needs to transition from joining to joined). 
+When the server receives and processes the `SceneEventType.SynchronizeComplete` message, the client is considered connected (that is, `NetworkManager.IsConnectedClient` is set to `true`) and both the `NetworkManager.OnClientConnected` delegate handler and the scene event notification for `SceneEventType.SynchronizeComplete` are invoked locally. This can be useful to know if your server sends any additional messages to the already connected clients about the newly connected client's status (that is, a player's status needs to transition from joining to joined).
 :::
 
-## Scene Event Notifications 
+## Scene Event Notifications
 
 ### When are Load or Unload SceneEvents Truly Complete?
 There are two special scene event types that generate messages for the server and all connected clients:
@@ -152,7 +152,7 @@ private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
                     {
                         // Handle server side LoadComplete related tasks here
                     }
-                    else 
+                    else
                     {
                         // Handle client LoadComplete **server-side** notifications here
                     }
@@ -227,7 +227,7 @@ private void SceneManager_OnSceneEvent(SceneEvent sceneEvent)
 Scene event notifications provide users with all NetworkSceneManager related scene events (and associated data) through a single event handler. The one exception would be scene loading or unloading progress which users can handle with a coroutine (upon receiving a Load or Unload event) and checking the `SceneEvent.AsyncOperation.progress` value over time.
 
 :::caution
-You will want to assign the SceneEvent.AsyncOperation to a local property of the subscribing class and have a coroutine use that to determine the progress of the scene being loaded or unloaded. 
+You will want to assign the SceneEvent.AsyncOperation to a local property of the subscribing class and have a coroutine use that to determine the progress of the scene being loaded or unloaded.
 :::
 
 You can stop the coroutine checking the progress upon receiving any of the following event notifications for the scene and event type in question: `LoadComplete`, `UnloadComplete` to handle local scene loading progress tracking. Otherwise, you should use the `LoadEventCompleted` or `UnloadEventCompleted` to assure that when your "scene loading progress" visual handler stops it will stop at ~roughly~ the same time as the rest of the connected clients.  The server will always be slightly ahead of the clients since it notifies itself locally and then broadcasts this message to all connected clients.
@@ -242,13 +242,13 @@ The SceneEvent class has values that may or may not be set depending upon the `S
 ![image](/img/SceneEventProperties-2.png)<br/>
 
 So, the big "take-away" from the above table is that you need to understand the `SceneEventType` context of the `SceneEvent` you are processing to know which properties are valid and you can use.  As an example, it wouldn't make sense to provide the AsyncOperation for the following `SceneEventType`s:
-- LoadComplete or LoadEventCompleted 
+- LoadComplete or LoadEventCompleted
 - UnloadComplete or UnloadEventCompleted
 - Synchronize or Resynchronize
 
 ### SceneEventType Specific Notifications
 There might be a time where you aren't interested in all of the details for each scene event type that occurs.  As it just so happens, `NetworkSceneManager` includes a single delegate handler for each `SceneEventType` that is only triggered for the associated `SceneEventType`.
-You can explore the [NetworkSceneManager](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.NetworkSceneManager#events) for a full listing of the corresponding single `SceneEventType` events.
+You can explore the [NetworkSceneManager](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.SceneEventType.html) for a full listing of the corresponding single `SceneEventType` events.
 Some examples:
 - NetworkSceneManager.OnLoad:  Triggered when for `OnLoad` scene events.
 - NetworkSceneManager.OnUnload:  Triggered when for `OnUnload` scene events.
