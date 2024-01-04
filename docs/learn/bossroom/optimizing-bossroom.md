@@ -186,4 +186,4 @@ The third technique wasn’t ideal either because most of the entities in the Bo
 
 ## Dedicated game server (DGS) optimizations {#dgs-optimizations}
 
-See [DGS game changes](../porting-to-dgs/game-changes.md) and [Optimizing server builds](../porting-to-dgs/optimizing-server-builds).
+See [DGS game changes](../../../tools/porting-to-dgs/game-changes.md) and [Optimizing server builds](../../../tools/porting-to-dgs/optimizing-server-builds.md).
