@@ -32,7 +32,6 @@
     "chokidar": "^3.0.0",
     "clsx": "^1.2.1",
     "dns-packet": "^5.2.2",
-    "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-sass": "^0.1.14",
     "mdx-mermaid": "^v1.3.2",
     "mermaid": "^10.0.2",
