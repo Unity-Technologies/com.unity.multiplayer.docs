@@ -11,7 +11,7 @@ One of the more critical optimizations of a networked game is how much bandwidth
 * The game instance drops packets, which can occur at the transport or NIC (network interface card) layers
 * Latency induced discrepancies between players depend upon their network capabilities.
   * A player with a latent and/or lower bandwidth capable connection can often lead to a less than nominal experience than players with a low latency and/or higher bandwidth capable connections.
-  
+
 As such, a good optimization goal for a netcode enabled game is to keep the bandwidth consumption reduced where possible. Netcode enabled games that have been optimized for bandwidth usage can help deliver a smoother player experience and reduce the overall network requirements for both servers and clients.
 
 The following sections cover a handful of the most impactful optimization techniques used in the Boss Room sample, including
@@ -45,7 +45,7 @@ The NetworkTransform component handles the synchronization of a NetworkObject’
 
 You can also increase the thresholds to reduce the frequency of updates if you don’t mind reducing the accuracy and responsiveness of the replicated Transform.
 
-Before optimization, the Boss Room sample contained a lot of unnecessary data. This is due to NetworkTransform synchronizing every axis' position, rotation, and scale information by default. So, we restricted every NetworkTransform only to synchronize the required data to reduce bandwidth usage. 
+Before optimization, the Boss Room sample contained a lot of unnecessary data. This is due to NetworkTransform synchronizing every axis' position, rotation, and scale information by default. So, we restricted every NetworkTransform only to synchronize the required data to reduce bandwidth usage.
 
 Since the characters evolve on a plane, we only synchronize their position’s x and z components and their rotation about the y-axis.
 
@@ -63,7 +63,7 @@ See [Object pooling](../../advanced-topics/object-pooling.md).
 
 ## UTP properties configuration {#utp-properties-configuration}
 
-The [Unity Transport Package](../../../transport/about.md) (UTP) has properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the [UnityTransport](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md) script.
+The [Unity Transport Package](../../../transport/about.md) (UTP) has properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the UnityTransport script.
 
 The Boss Room sample shows how to adapt some UTP properties to fit its specific requirements. Most of the UTP property configuration remains unchanged. However, we changed the following property values:
 
@@ -74,23 +74,23 @@ The Boss Room sample shows how to adapt some UTP properties to fit its specific 
 
 ### Disconnect Timeout {#disconnect-timeout}
 
-The [Disconnect Timeout property](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md#disconnecttimeoutms) controls how long the server (and the clients) wait before disconnecting. The Boss Room sample uses a Disconnect Timeout value of 10 seconds to prevent the server and the clients from hanging onto a connection for too long.
+The [Disconnect Timeout property](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/Unity.Netcode.Transports.UTP.UnityTransport.html#Unity_Netcode_Transports_UTP_UnityTransport_DisconnectTimeoutMS) controls how long the server (and the clients) wait before disconnecting. The Boss Room sample uses a Disconnect Timeout value of 10 seconds to prevent the server and the clients from hanging onto a connection for too long.
 
 ### Max Connect Attempts {#max-connect-attempts}
 
-The [Max Connect Attempts property](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md#maxconnectattempts) controls the times a client tries to connect before declaring a connection failure. The Boss Room sample uses a Max Connect Attempts value of 10 to prevent clients from waiting too long before declaring a connection failure.
+The [Max Connect Attempts property](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/Unity.Netcode.Transports.UTP.UnityTransport.html#Unity_Netcode_Transports_UTP_UnityTransport_MaxConnectAttempts) controls the times a client tries to connect before declaring a connection failure. The Boss Room sample uses a Max Connect Attempts value of 10 to prevent clients from waiting too long before declaring a connection failure.
 
 ### Connect Timeout {#connect-timeout}
 
-The [Connect Timeout property](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md#connecttimeoutms) controls the number of times clients attempt to connect per second. The Boss Room sample uses a Connect Timeout value of 1 second, meaning that clients try to connect once per second. Having the Connect Timeout set to 1 second and the Max Connect Attempts set to 10 means that clients fail to connect after 10 seconds of waiting.
+The [Connect Timeout property](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/Unity.Netcode.Transports.UTP.UnityTransport.html#Unity_Netcode_Transports_UTP_UnityTransport_ConnectTimeoutMS) controls the number of times clients attempt to connect per second. The Boss Room sample uses a Connect Timeout value of 1 second, meaning that clients try to connect once per second. Having the Connect Timeout set to 1 second and the Max Connect Attempts set to 10 means that clients fail to connect after 10 seconds of waiting.
 
 ### Max Packet Queue Size {#max-packet-queue-size}
 
-The [Max Packet Queue Size property](../../api/Unity.Netcode.Transports.UTP.UnityTransport.md#maxpacketqueuesize) defines the maximum number of packets that can be sent and received during a single frame.
+The [Max Packet Queue Size property](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/Unity.Netcode.Transports.UTP.UnityTransport.html#Unity_Netcode_Transports_UTP_UnityTransport_MaxPacketQueueSize) defines the maximum number of packets that can be sent and received during a single frame.
 
 The impact of surpassing the Max Packet Queue Size threshold varies depending on the packet direction (sending or receiving).
 
-* If a client or the server tries to **send** more packets than the Max Packet Queue Size value during a single frame, UTP buffers the extra packets inside a send queue until the next frame update. 
+* If a client or the server tries to **send** more packets than the Max Packet Queue Size value during a single frame, UTP buffers the extra packets inside a send queue until the next frame update.
 * If a client or the server **receives** more packets than the Max Packet Queue Size value during a single frame, the operating system buffers the extra packets.
 
 Setting the Max Packet Queue Size parameter too low can introduce some [jitter](../../learn/lagandpacketloss.md) during frames where the number of packets sent or received is too high.  On the other hand, setting the Max Packet Queue Size parameter too high would use more memory than necessary.
@@ -121,7 +121,7 @@ As a vertical slice of a small-scale co-op game, the bandwidth usage of the Boss
 
 ### Unreliable RPCs vs. reliable RPCs {#unreliable-rpcs-vs-reliable-rpcs}
 
-You can use unreliable RPCs when possible instead of only using reliable RPCs. The Boss Room sample uses only reliable messages for RPCs, which means that if a client doesn’t receive an RPC sent by the server, the server will resend it until the client receives and acknowledges it (and vice versa). 
+You can use unreliable RPCs when possible instead of only using reliable RPCs. The Boss Room sample uses only reliable messages for RPCs, which means that if a client doesn’t receive an RPC sent by the server, the server will resend it until the client receives and acknowledges it (and vice versa).
 
 Reliable messages aren’t necessary for all RPCs, though. For example, it wouldn’t pose that much of an issue if a client (having network issues) doesn’t receive the RPC triggering the visual effect of a single Imp’s attack. This is because the client would receive the impact of the Imp’s attack (such as position updates and hit points) after recovering from the issue. As a result, there’s no need to slow down the server and, by extension, the whole game to ensure that this client properly receives this specific message. An unreliable RPC would increase the game’s responsiveness without much downside in such a case.
 
