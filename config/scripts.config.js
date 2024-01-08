@@ -1,11 +1,28 @@
-const scripts = [
+const headTags = [
   {
-    //OneTrust Cookie required by Unity web team
-    src: "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js",
-    async: true,
-    "data-domain-script": "6e91be4c-3145-4ea2-aa64-89d716064836",
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js',
+      async: "true",
+      "data-domain-script": "6e91be4c-3145-4ea2-aa64-89d716064836",
+      "data-dLayer-ignore": "true",
+      "data-document-language": "true",
+    },
   },
-  //todo: GTM implementation that relates to OT and user data tracking
+
+  {
+    tagName: 'script',
+    attributes: {},
+    innerHTML: "function OptanonWrapper() {}",
+  },
+
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://www.googletagmanager.com/gtm.js?id=GTM-5V25JL6',
+      async: "true",
+    },
+  }
 ];
 
-module.exports = scripts;
+module.exports = headTags;
