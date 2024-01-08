@@ -1,10 +1,11 @@
 const admonitions = require("./config/admonitions.config.js");
-const scripts = require("./config/scripts.config.js");
+const headTags = require("./config/scripts.config.js");
 
 module.exports = {
   title: "Unity Multiplayer Networking",
   tagline: "Build multiplayer games in Unity",
   url: "https://docs-multiplayer.unity3d.com/",
+  headTags,
   staticDirectories: ["public", "static"],
   baseUrl: "/",
   onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
@@ -13,7 +14,6 @@ module.exports = {
   trailingSlash: true,
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
-  scripts,
   markdown: {
     mermaid: true,
   },
@@ -139,7 +139,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Unity Technologies. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Unity Technologies`,
     },
     navbar: {
       title: "Multiplayer Networking",
@@ -365,12 +365,12 @@ module.exports = {
         admonitions,
       },
     ],
-    [
-      require.resolve("docusaurus-gtm-plugin"),
-      {
-        id: "GTM-5V25JL6", // GTM Container ID
-      },
-    ],
+    // [
+    //   require.resolve("docusaurus-gtm-plugin"),
+    //   {
+    //     id: "GTM-5V25JL6", // GTM Container ID
+    //   },
+    // ],
     [
       "@docusaurus/plugin-client-redirects",
       {

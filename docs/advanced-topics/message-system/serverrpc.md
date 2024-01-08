@@ -102,7 +102,7 @@ public void PlayerOwnerShootGunServerRpc(Vector3 lookWorldPosition)
 :::
 
 ## Invoking a ServerRpc
-From the example below that uses the `PlayerOwnerShootGunServerRpc` method, you can see that you would invoke it just any other method:
+From the example below that uses the `PlayerOwnerShootGunServerRpc` method, you can see that you would invoke it just like any other method:
 
 ```csharp
 private void Update()
