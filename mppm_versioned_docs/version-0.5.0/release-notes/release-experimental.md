@@ -4,24 +4,11 @@ title: Multiplayer Play Mode Release Notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
-## [0.6.0] - 2023-11-08
-
-### Fixed
-
-- Some fixes for Clone heartbeats.
-- More fixes for persistent window layouts.
-
-### Features
-
-- Can now focus player with hotkeys (CTRL+F9-F12).
-- Just show the layout view toggles as disabled during playmode.
-- Automatically focus players after activating.
-
 ## [0.5.0] - 2023-09-27
 
 ### Fixed
 
-- Fix broken links in documentation.
+- Fixed broken links in documentation
 
 ### Features
 
@@ -36,7 +23,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 - Fixed an issue where a player could still show up as active after it had exited.
 - Fixed an issue where you could have multiple add tag views.
 - Fixed an issue where `CurrentPlayer.ReadOnlyTag` would not return the correct value when domain reload on play mode is disabled.
-- Fixed an issue where clones were crashing when scrolling mouse over menu top bar
+- Fixed an issue where clones were crashing when scrolling mouse over menu top bar.
 
 ### Features
 
