@@ -6,18 +6,18 @@ title: NetworkBehaviour
 :::note
 Both the `NetworkObject` and `NetworkBehaviour` components require the use of specialized structures to be serialized and used with `RPC`s and `NetworkVariables`:
 
-For `NetworkObject`s use the [NetworkObjectReference](../api/Unity.Netcode.NetworkObjectReference).
+For `NetworkObject`s use the [NetworkObjectReference](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html).
 
-For `NetworkBehaviour`s use the NetworkBehaviourReference<!-- (NO API LINK AVAILABLE YET)-->.
+For `NetworkBehaviour`s use the [NetworkBehaviourReference](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviourReference.html).
 :::
 
 ## NetworkBehaviour
 
 `NetworkBehaviour`s can use `NetworkVariable`s and `RPC`s to synchronize state and send messages over the network.  to replicate any netcode aware properties or send/receive RPCs a `GameObject` must have a [NetworkObject component](/basics/networkobject.md) and at least one `NetworkBehaviour` component. A `NetworkBehaviour` requires a `NetworkObject` component on the same relative `GameObject` or on a parent of the `GameObject` with the `NetworkBehaviour` component assigned to it.  If you add a `NetworkBehaviour` to a GameObject that does not have a `NetworkObject` (or any parent), then Netcode for GameObjects will automatically add a `NetworkObject` component to the `GameObject` in which the `NetworkBehaviour` was added.
 
-[`NetworkBehaviour`](../api/Unity.Netcode.NetworkBehaviour.md) is an abstract class that derives from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) and is primarily used to create unique netcode/game logic.
+[`NetworkBehaviour`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviour.html) is an abstract class that derives from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) and is primarily used to create unique netcode/game logic.
 
-`NetworkBehaviours` can contain RPC methods and `NetworkVariables`. When you call an RPC function, the function isn't called locally. Instead a message is sent containing your parameters, the `networkId` of the `NetworkObject` associated with the same GameObject (or child) that the `NetworkBehaviour` is assigned to, and the "index" of the `NetworkObject` relative `NetworkBehaviour` (that is, a `NetworkObject` can have several NetworkBehaviours, the index communicates "which one"). 
+`NetworkBehaviours` can contain RPC methods and `NetworkVariables`. When you call an RPC function, the function isn't called locally. Instead a message is sent containing your parameters, the `networkId` of the `NetworkObject` associated with the same GameObject (or child) that the `NetworkBehaviour` is assigned to, and the "index" of the `NetworkObject` relative `NetworkBehaviour` (that is, a `NetworkObject` can have several NetworkBehaviours, the index communicates "which one").
 
 :::note
 It is important that the `NetworkBehaviour`s on each `NetworkObject` remains the same for the server and any client connected. When using multiple projects, this becomes especially important so the server doesn't try to call a client RPC on a `NetworkBehaviour` that might not exist on a specific client type (or set a NetworkVariable, etc).
@@ -62,7 +62,7 @@ public class MyNetworkBehaviour : NetworkBehaviour
     {
         Initialize();
         // Do things with m_MeshRenderer
-        
+
         base.OnNetworkSpawn();
     }
 }
@@ -74,7 +74,7 @@ For in-scene placed `NetworkObjects`, the `OnNetworkSpawn` method is invoked **a
 
 ### De-Spawning
 
-`NetworkBehaviour.OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "cleanup code" should occur, but isn't to be confused with destroying. When a NetworkBehaviour component is destroyed, it means the associated GameObject, and all attached components, are in the middle of being destroyed. Regarding the order of operations, `NetworkBehaviour.OnNetworkDespawn` is always invoked before `NetworkBehaviour.OnDestroy`. 
+`NetworkBehaviour.OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's de-spawned.  This is where all netcode "cleanup code" should occur, but isn't to be confused with destroying. When a NetworkBehaviour component is destroyed, it means the associated GameObject, and all attached components, are in the middle of being destroyed. Regarding the order of operations, `NetworkBehaviour.OnNetworkDespawn` is always invoked before `NetworkBehaviour.OnDestroy`.
 
 ### Destroying
 
@@ -87,8 +87,8 @@ If you override the virtual 'OnDestroy' method it's important to alway invoke th
         public override void OnDestroy()
         {
             // Clean up your NetworkBehaviour
-            
-            // Always invoked the base 
+
+            // Always invoked the base
             base.OnDestroy();
         }
 ```
@@ -100,7 +100,7 @@ If you override the virtual 'OnDestroy' method it's important to alway invoke th
 
 Since `NetworkBehaviour` is a derived `MonoBehaviour`, the `NetworkBehaviour.OnNetworkSpawn` method is treated similar to the Awake, Start, FixedUpdate, Update, and LateUpdate `MonoBehaviour` methods when the associated GameObject is active or not active in the hierarchy:
 
-- When active: Awake, Start, FixedUpdate, Update, and LateUpdate are invoked 
+- When active: Awake, Start, FixedUpdate, Update, and LateUpdate are invoked
 - When not active: Awake, Start, FixedUpdate, Update, and LateUpdate are **not invoked**.
 
 [More Information About Execution Order](https://docs.unity3d.com/2020.1/Documentation/Manual/ExecutionOrder.html)
@@ -148,7 +148,7 @@ There can be scenarios where you need to include additional configuration data o
 
 There are two cases where `NetworkObject` synchronization occurs:
 - When dynamically spawning a `NetworkObject`.
-- When a client is being synchronized after connection approval 
+- When a client is being synchronized after connection approval
   - that is, Full synchronization of the `NetworkObject`s and scenes.
 
 :::info
@@ -160,9 +160,9 @@ The following provides you with an outline of the order of operations that occur
 
 Server-Side:
 - `GameObject` with `NetworkObject` component is instantiated.
-- The `NetworkObject` is spawned. 
+- The `NetworkObject` is spawned.
   - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
-- The `CreateObjectMessage` is generated 
+- The `CreateObjectMessage` is generated
   - `NetworkObject` state is serialized.
   - `NetworkVariable` state is serialized.
   - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
@@ -202,7 +202,7 @@ Client-Side:
     - The `NetworkObject` is spawned
       - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
 
-### OnSynchronize Example 
+### OnSynchronize Example
 Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later so you decide to use RPCs.  However, this becomes an issue when you want to synchronize late joining clients as there is no way to synchronize late joining clients based on RPC activity over the duration of a network session.  This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
 In the example below, it provides one simple use-case scenario where you can use `NetworkBehaviour.OnSynchronize` to synchronize late-joining clients with state set by `ClientRpc` events:
 ```csharp
@@ -218,7 +218,7 @@ public class SimpleRpcState : NetworkBehaviour
     private bool m_ToggleState;
 
     /// <summary>
-    /// Late joining clients will be synchronized 
+    /// Late joining clients will be synchronized
     /// to the most current m_ToggleState
     /// </summary>
     protected override void OnSynchronize<T>(ref BufferSerializer<T> serializer)
