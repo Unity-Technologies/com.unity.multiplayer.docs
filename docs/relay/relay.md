@@ -14,7 +14,7 @@ Netcode doesn't offer tools to help you punch through a NAT. However, you can us
 
 # How to use Relay
 
-To access a Relay server, the game host requires the following: 
+To access a Relay server, do the following: 
 * An allocated relay server.
 * A [join code](https://docs.unity.com/relay/en/manual/join-codes). This code allows the host and clients to communicate through the Relay server without disclosing their IP addresses and ports directly.
 
@@ -25,7 +25,7 @@ To enable and set up Relay in a project, follow the steps in [Get started with R
 ## Test the Relay service in the Unity Editor
 
 From Unity version 2022.3, you can test the Relay service in the editor: 
-1. Open the Network Manager’s inspector window. 
+1. Open the inspector window and select the Network Manager. 
 2. Navigate to the Start Connection section
 3. Check the **Try Relay in the editor** box. 
 4. Select **Start Server** or **Start Host** to start the server or host, or enter the [join code](https://docs.unity.com/relay/en/manual/join-codes).
@@ -47,7 +47,7 @@ This Relay integration is only available in the editor, which means you can't us
 
 ## Allocate a Relay server
 
-To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay, make an authenticated call to the Unity backend using the SDK. On the host, call the `CreateAllocationAsync` method with the maximum number of expected peers. For example, a host that requests a maximum of three peer connections reserves four slots for a four player game. This function can throw exceptions, which you can catch to learn about the error that caused them.
+To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay, make an authenticated call to the Unity backend using the SDK. To do this, call the `CreateAllocationAsync` method on the host with the maximum number of expected peers. For example, a host that requests a maximum of three peer connections reserves four slots for a four player game. This function can throw exceptions, which you can catch to learn about the error that caused them.
 
 ```csharp
 //Ask Unity Services to allocate a Relay server that will handle up to eight players: seven peers and the host.
@@ -107,7 +107,7 @@ When an allocation exists, you need to make all traffic that comes from Netcode 
 UnityTransport transport = NetworkManager.Singleton.gameObject.GetComponent<UnityTransport>();
 ```
 
-2. Call the method `SetRelayServerData` method on the retrieved transport by passing the allocation data that you retrieved, as well as the connection type (here set to [dtls](https://docs.unity.com/relay/en/manual/dtls-encryption)). For example:
+2. Call the `SetRelayServerData` method on the retrieved transport by passing the allocation data that you retrieved, as well as the connection type (here set to [dtls](https://docs.unity.com/relay/en/manual/dtls-encryption)). For example:
 
 ```csharp
 transport.SetRelayServerData(new RelayServerData(allocation, connectionType:"dtls"));
