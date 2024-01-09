@@ -246,7 +246,7 @@ The above examples are atomic actions. They happen on click.
 To do continuous client driven actions, there's a few more considerations to take.
 
 - You need to keep a local variable to keep track of your client authoritative data. 
-- You then need to make sure you don't send Rpcs to the server (containing your authoritative state) when no data has changed and do dirty checks.
+- You then need to make sure you don't send RPCs to the server (containing your authoritative state) when no data has changed and do dirty checks.
 - You'd need to send it on tick or at worst on FixedUpdate. Sending on Update() would spam your connection.
 
 A sample for a [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) has been created, so you don't have to reimplement this yourself for transform updates. A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) has been created on how to use it. See [movement script](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs).

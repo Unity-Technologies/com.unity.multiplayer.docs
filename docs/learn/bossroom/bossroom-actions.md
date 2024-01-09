@@ -32,7 +32,7 @@ darkImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherRangedSho
 <ImageSwitcher 
 lightImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherVolley.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/BossRoomExamples/RPCFlowExample_ArcherVolley_Dark.png?text=DarkMode"/>
-<figcaption>The archer's volley takes multiple steps. First on click, the client will show a circle VFX tracking the mouse. That FX isn't networked and client side only. Then on click, the client will send an Rpc to the server. The server will then apply it's gameplay logic, update the imp's health (tracked by NetworkVariables) and trigger a Client RPC to play the volley animation on all clients.</figcaption>
+<figcaption>The archer's volley takes multiple steps. First on click, the client will show a circle VFX tracking the mouse. That FX isn't networked and client side only. Then on click, the client will send an RPC to the server. The server will then apply it's gameplay logic, update the imp's health (tracked by NetworkVariables) and trigger a Client RPC to play the volley animation on all clients.</figcaption>
 </figure>
 
 <!-- TODO add volley video -->

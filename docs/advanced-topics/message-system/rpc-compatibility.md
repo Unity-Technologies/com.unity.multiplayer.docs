@@ -8,37 +8,37 @@ This section provides information on compatibility and support for Unity Netcode
 
 ## Cross-Compatibility
 
-Learn more about standard RPC API's cross-compatibility only, not the framework as a whole. A method marked as RPC will be statically registered with its assembly-scoped method signature hash.
+Learn more about standard RPC API's cross-compatibility only, not the framework as a whole. A method decorated with an RPC attribute will be statically registered with its assembly-scoped method signature hash.
 
 A typical assembly-scoped method signature sample:
 
 ```
-Game.dll / System.Void Shooter::PingServerRpc(System.Int32,MLAPI.Messaging.ServerRpcParams)
+Game.dll / System.Void Shooter::PingRpc(System.Int32)
 ```
 
 where:
 
 - `Game.dll` is the Assembly
 - `/` is a Separator
-- `System.Void Shooter::PingServerRpc(System.Int32,MLAPI.Messaging.ServerRpcParams)` is the Method signature:
+- `System.Void Shooter::PingRpc(System.Int32)` is the Method signature:
 
     - `System.Void` is the Return type
     - `Shooter` is the Enclosing type
     - `::` is the Scope resolution operator
-    - `PingServerRpc` is the Method name
-    - `(System.Int32,MLAPI.Messaging.ServerRpcParams)` is the Params with types (no param names)
+    - `PingRpc` is the Method name
+    - `(System.Int32)` is the Parameter type (no param names)
 
 An RPC signature will be turned into a 32-bit integer using [xxHash](https://cyan4973.github.io/xxHash/) (XXH32) non-cryptographic hash algorithm.
 
-As expected, RPC signature therefore its hash will be changed if assembly, return type, enclosing type, method name and/or any method param type changes. Names of method parameters can be changed as they're not a part of the method signature.
+As such, if the assembly, enclosing type, method name and/or any method param type changes then the RPC signature hash will change. However, if only the names of the parameters for an existing RPC change it will not change the method signature.
 
-A change in the RPC signature will lead into a different send/receive codepath with different serialization code and execute a different method body. Previous versions of the RPC method won't be executed by the new RPC method with the new signature.
+Since changing the RPC signature leads into a different invocation code path that has different serialization code, previous versions of that RPC method (i.e. older builds) will not be remotely invoked by the RPC method with the new signature.
 
 | Compatibility | <i class="fp-check"></i> | Description |
 | -- | :--: | -- |
 | Cross-Build Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different builds. |
 | Cross-Version Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different versions. |
-| Cross-Project Compatibility | <i class="fp-x"></i> | Since project name or any project-specific token isn't being a part of RPC signature, it's possible to have the exact same RPC method signature defined in different builds and they're not necessarily going to be compatible with each other. |
+| Cross-Project Compatibility | <i class="fp-x"></i> | Since the project name or project-specific token isn't part of RPC signature, it is possible to have the exact same RPC method signature defined in different projects. Cross project RPC methods will not be be compatible with each other. |
 
 ## Deprecation of return values
 

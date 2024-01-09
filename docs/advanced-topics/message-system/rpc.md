@@ -24,9 +24,9 @@ darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 
 
 
-## Declaring an Rpc
+## Declaring an RPC (Remote Procedure Call)
 
-You can declare an Rpc by marking a method with the `[Rpc]` attribute and including the `Rpc` suffix in the method name. Rpcs have a number of possible targets that can be declared at both runtime and compile time, but a default must be passed to the Rpc attribute. For example, to create an Rpc that will be executed on the server, you would declare it like this:
+You can declare an RPC by marking a method with the `[Rpc]` attribute and including the `Rpc` suffix in the method name. RPCs have a number of possible targets that can be declared at both runtime and compile time, but a default must be passed to the `[Rpc]` attribute. For example, to create an RPC that will be executed on the server, you would declare it like this:
 
 ```csharp
 [Rpc(SendTo.Server)]
@@ -53,12 +53,12 @@ There are several default, compile-time targets you can choose from:
 | **SendTo.SpecifiedInParams** | This RPC cannot be sent without passing in a target in `RpcSendParams` |
 
 :::note
-While client-to-client RPCs are supported, it is important to note that there are no direct connections between clients. When sending a client-to-client RPC, the RPC is sent to the server and then proxied out to all destination clients. If the destination client includes the local client, the local client will still execute the RPC immediately without proxying it to the server.
+While client-to-client RPCs are supported, it is important to note that there are no direct connections between clients. When sending a client-to-client RPC, the RPC is sent to the server, that acts as a proxy, and forwards the same RPC message to all destination clients. If the targeted destination clients includes the local client, the local client will still execute the RPC immediately (or if deferred it is invoked on the next frame locally).
 :::
 
-## Invoking an Rpc
+## Invoking an RPC
 
-You can invoke an Rpc by invoking the function directly with parameters:
+You can invoke an RPC by invoking the function directly with parameters:
 
 ```csharp
 [Rpc(SendTo.Server)]

@@ -76,7 +76,7 @@ As an alternative way, you can make the `NetworkObject.DontDestroyWithOwner` pro
 
 Only a server can despawn a `NetworkObject`, and the default despawn behavior is to destroy the associated GameObject. to despawn but not destroy a `NetworkObject`, you should call `NetworkObject.Despawn` and pass false as the parameter. Clients will always be notified and will mirror the despawn behavior. If you despawn and destroy on the server then all clients will despawn and then destroy the `GameObject` that the `NetworkObjet` component is attached to.
 
-On the client side, you should never call `Object.Destroy` on any `GameObject` with a `NetworkObject` component attached to it (this isn't supported and will cause an exception to be thrown). If you want to use a more client authority model, have the client with ownership invoke an Rpc to defer the despawning on server side.
+On the client side, you should never call `Object.Destroy` on any `GameObject` with a `NetworkObject` component attached to it (this isn't supported and will cause an exception to be thrown). If you want to use a more client authority model, have the client with ownership invoke an RPC to defer the despawning on server side.
 
 The only way to despawn `NetworkObject` for a specific client is to use `NetworkObject.NetworkHide`.
 See: [Object Visibility](object-visibility.md) for more information on this.
