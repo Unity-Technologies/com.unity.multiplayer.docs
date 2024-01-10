@@ -7,7 +7,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 
 ### `NetworkManager` Inspector Properties
 
-- **LogLevel**:  Sets the network logging level 
+- **LogLevel**:  Sets the network logging level
 - **PlayerPrefab**:  When a Prefab is assigned, the Prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
 - **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network Prefab override per registered network Prefab here.
 - **Protocol Version**: Set this value to help distinguish between builds when the most current build has new assets that can cause issues with older builds connecting.
@@ -21,7 +21,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 - **Network Id Recycle Delay**: The time it takes for a previously assigned but currently unassigned identifier to be available for use.  
 - **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
-  
+
 ### `NetworkManager` Sub-Systems
 `NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
@@ -62,7 +62,7 @@ Don't start a NetworkManager within a NetworkBehaviour's Awake method as this ca
 
 When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
-The below examples use [Unity Transport](../../../transport/current/about) to show a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` to configure your project's network settings programmatically: 
+The below examples use [Unity Transport](../../../transport/current/about) to show a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` to configure your project's network settings programmatically:
 
 If you are only setting the IP address and port number, then you can use the `UnityTransport.SetConnectionData` method:
 ```csharp
@@ -97,8 +97,8 @@ If you are using Unity Relay to handle connections, however, **don't use `SetCon
 Disconnecting is rather simple, but you can't use/access any subsystems (that is, `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
 
 :::info
-When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene. 
-::: 
+When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.
+:::
 
 ```csharp
 public void Disconnect()
@@ -112,7 +112,7 @@ public void Disconnect()
 ## Disconnecting Clients (Server Only)
 
 At times you might need to disconnect a client for various reasons without shutting down the server.  To do this, you can call the `NetworkManager.DisconnectClient` method while passing the identifier of the client you wish to disconnect as the only parameter.  The client identifier can be found within:
-- The `NetworkManager.ConnectedClients` dictionary that uses the client identifier as a key and the value as the [`NetworkClient`](../api/Unity.Netcode.NetworkClient.md).
+- The `NetworkManager.ConnectedClients` dictionary that uses the client identifier as a key and the value as the [`NetworkClient`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkClient.html).
 - As a read only list of `NetworkClients`  via the `NetworkManager.ConnectedClientsList`.
 - A full list of all connected client identifiers can be accessed via `NetworkManager.ConnectedClientsIds`.
 - The client identifier is passed as a parameter to all subscribers of the `NetworkManager.OnClientConnected` event.
@@ -151,7 +151,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
   - _Reason: The client already knows that it's disconnected._
 
 ### Connection Notification Manager Example
-Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component. 
+Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component.
 
 :::important
 The `ConnectionNotificationManager` example below should only be attached to the same GameObject as `NetworkManager` to assure it persists as long as the `NetworkManager.Singleton` instance.
@@ -165,7 +165,7 @@ using Unity.Netcode;
 
 /// <summary>
 /// Only attach this example component to the NetworkManager GameObject.
-/// This will provide you with a single location to register for client 
+/// This will provide you with a single location to register for client
 /// connect and disconnect events.  
 /// </summary>
 public class ConnectionNotificationManager : MonoBehaviour
@@ -202,21 +202,21 @@ public class ConnectionNotificationManager : MonoBehaviour
         if (Singleton != this){
             return; // so things don't get even more broken if this is a duplicate >:(
         }
-        
+
         if (NetworkManager.Singleton == null)
         {
             // Can't listen to something that doesn't exist >:(
-            throw new Exception($"There is no {nameof(NetworkManager)} for the {nameof(ConnectionNotificationManager)} to do stuff with! " + 
+            throw new Exception($"There is no {nameof(NetworkManager)} for the {nameof(ConnectionNotificationManager)} to do stuff with! " +
                 $"Please add a {nameof(NetworkManager)} to the scene.");
         }
-        
+
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
     }
 
     private void OnDestroy()
     {
-        // Since the NetworkManager can potentially be destroyed before this component, only 
+        // Since the NetworkManager can potentially be destroyed before this component, only
         // remove the subscriptions if that singleton still exists.
         if (NetworkManager.Singleton != null)
         {
