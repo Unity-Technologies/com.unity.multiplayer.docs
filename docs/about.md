@@ -46,7 +46,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 </div>
 
-Don't forget to check out [Release Notes](release-notes/ngo-changelog.md) and [APIs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/index.html)!
+Don't forget to check out [Release Notes](release-notes/ngo-changelog.md) and [APIs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/index.html)!
 
 ## Before you begin
 
