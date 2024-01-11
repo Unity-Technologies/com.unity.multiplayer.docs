@@ -428,7 +428,7 @@ In the code above, you:
 * `JobHandle` is returned as a dependency on the `ServerUpdateConnectionJob`.
 * The final link in the chain is the `ServerUpdateJob`. It must run after `ServerUpdateConnectionsJob` to invoke the `IJobParallelForDeferExtensions`. `m_Connections` `NativeList` passed to the `Schedule` method, which updates the connections count before starting the job. It fans out and runs all `ServerUpdateConnectionJobs` in parallel.
 
-You now have a fully functional [jobified server](https://docs.unity3d.com/Packages/com.unity.transport@2.2/manual/samples/jobifiedserverbehaviour.cs.html).
+You now have a fully functional [jobified server](https://docs.unity3d.com/Packages/com.unity.transport@2.0/manual/samples/jobifiedserverbehaviour.cs.html).
 
 ## Use Burst for extra performance
 
