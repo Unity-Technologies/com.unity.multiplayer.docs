@@ -545,7 +545,7 @@ If the player is a server-owned player at `OnNetworkSpawn()`, you can immediatel
             SubmitPositionRequestServerRpc();
 ```
 
-This `Rpc` can be called regardless of whether the player is a client or a server. When an `Rpc` with `SendTo.Server` is called on the server side, it simply executes as if it were a local function call by default.
+You can call this `Rpc` when the player is a client or a server. When you call an `Rpc` with `SendTo.Server`  on the server side. it executes in the same way as a local function call by default.
 
 The `Rpc` sets the position NetworkVariable on the server's instance of the player by just picking a random point on the plane.
 

@@ -30,7 +30,13 @@ where:
 
 An RPC signature will be turned into a 32-bit integer using [xxHash](https://cyan4973.github.io/xxHash/) (XXH32) non-cryptographic hash algorithm.
 
-As such, if the assembly, enclosing type, method name and/or any method param type changes then the RPC signature hash will change. However, if only the names of the parameters for an existing RPC change it will not change the method signature.
+The RPC signature hash changes when any of the following variables change: 
+* Assembly.
+* Enclosing type.
+* Method name.
+* Method parameter type.
+
+However, the RPC signature hash doesn't change when the names of the parameters for an existing RPC are the only variables that change.
 
 Since changing the RPC signature leads into a different invocation code path that has different serialization code, previous versions of that RPC method (i.e. older builds) will not be remotely invoked by the RPC method with the new signature.
 
@@ -38,7 +44,7 @@ Since changing the RPC signature leads into a different invocation code path tha
 | -- | :--: | -- |
 | Cross-Build Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different builds. |
 | Cross-Version Compatibility | <i class="fp-check"></i> | As long as the RPC method signature is kept the same, it will be compatible between different versions. |
-| Cross-Project Compatibility | <i class="fp-x"></i> | Since the project name or project-specific token isn't part of RPC signature, it is possible to have the exact same RPC method signature defined in different projects. Cross project RPC methods will not be be compatible with each other. |
+| Cross-Project Compatibility | <i class="fp-x"></i> | The exact same RPC method signature can be defined in different projects. This is because the project name or project-specific token isn't part of RPC signature. Cross-project RPC methods aren't compatible with each other. |
 
 ## Deprecation of return values
 

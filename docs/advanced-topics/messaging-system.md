@@ -24,7 +24,7 @@ When calling an `RPC`, you call a method remotely on an object that can be anywh
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
-Netcode has several variations of RPCs to execute logic with various remote targets. To learn more, see [`Rpc`](message-system/rpc.md).
+Netcode includes multiple RPC variations that you can use to execute logic with various remote targets. To learn more about RPCs, refer to[`Rpc`](message-system/rpc.md).
 
 <figure>
 <ImageSwitcher 

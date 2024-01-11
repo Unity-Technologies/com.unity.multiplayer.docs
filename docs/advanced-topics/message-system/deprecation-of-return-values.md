@@ -29,7 +29,7 @@ public float MyRpcWithReturnValue(float x, float y)
 
 ```
 
-NGO no longer supports this feature, but the same functionality can be achieved using a combination of both ServerRpc and ClientRpc methods as it is demonstrated below:
+NGO no longer supports this feature. To achieve the same functionality, use a combination of the ServerRpc and ClientRpc methods. The following code demonstrates this method:
 
 ```csharp
 void MyRpcInvoker()
