@@ -29,7 +29,7 @@ module.exports = {
         {
             "type": "link",
             "label": "API Reference",
-            "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/index.html",
+            "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/index.html",
         },
         {
             "collapsed": true,
@@ -175,11 +175,11 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "advanced-topics/ways-synchronize"
-                },                   
+                },
                 {
                     "type": "doc",
                     "id": "advanced-topics/messaging-system"
-                },             
+                },
                 {
                     "collapsed": true,
                     "type": "category",
@@ -311,7 +311,7 @@ module.exports = {
                     "collapsed": true,
                     "type": "category",
                     "label": "Integrated Management",
-                    "items": [                                
+                    "items": [
                         {
                             "type": "doc",
                             "id": "basics/scenemanagement/using-networkscenemanager"
@@ -331,13 +331,13 @@ module.exports = {
                         {
                             "type": "doc",
                             "id": "basics/scenemanagement/inscene-placed-networkobjects"
-                        }, 
+                        },
                     ]
-                },                
+                },
                 {
                     "type": "doc",
                     "id": "basics/scenemanagement/custom-management"
-                },                                                                                                     
+                },
             ]
         },
         {
