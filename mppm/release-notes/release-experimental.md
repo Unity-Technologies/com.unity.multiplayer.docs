@@ -78,7 +78,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Fixed
 
 - Reduced GC allocations in the messaging system loop.
-- Fixed CurrentPlayer.Tag returning "Untagged" instead of an empty string if a tag is not assigned.
+- Fixed CurrentPlayer.ReadOnlyTags() returning "Untagged" instead of an empty string if a tag is not assigned.
 - Fixed bug where pressing Return or Enter would not submit a created tag to the UI.
 - Fixed missing XMLDoc for CurrentPlayer API.
 - Fixed broken links in the package documentation.
