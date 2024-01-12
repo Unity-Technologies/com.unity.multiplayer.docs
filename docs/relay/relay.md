@@ -15,7 +15,7 @@ Netcode doesn't offer tools to help you punch through a NAT. However, you can us
 # How to use Relay
 
 To access a Relay server, do the following: 
-* An allocated relay server.
+* As the host, request an allocation on the relay server.
 * A [join code](https://docs.unity.com/relay/en/manual/join-codes). This code allows the host and clients to communicate through the Relay server without disclosing their IP addresses and ports directly.
 
 ## Enable Relay in a project
