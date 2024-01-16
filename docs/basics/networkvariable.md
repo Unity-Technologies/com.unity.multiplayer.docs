@@ -550,7 +550,7 @@ NetworkVariableSerialization<T>.Duplicate(in T value, ref T duplicatedValue);
 NetworkVariableSerialization<T>.AreEqual(in T a, in T b);
 ```
 
-In cases where the type is dynamically allocated (managed types and collections like NativeArray and NativeList), calling `Read` will read the value in-place whenever possible, avoiding further allocations.
+For dynamically allocated types with a value that isn't `null` (for example, managed types and collections like NativeArray and NativeList) call `Read` to read the value in the existing object and write data into it directy (in-place). This avoids more allocations. 
 
 You can use `AreEqual` to determine if a value is different from the value that `Duplicate` cached. This avoids sending the same value multiple times. You can also use the previous value that `Duplicate` cached to calculate deltas to use in `ReadDelta` and `WriteDelta`.
 
