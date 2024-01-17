@@ -16,7 +16,7 @@ Netcode doesn't offer tools to help you punch through a NAT. However, you can us
 
 To access a Relay server, do the following: 
 * As the host, request an allocation on the relay server.
-* A [join code](https://docs.unity.com/relay/en/manual/join-codes). This code allows the host and clients to communicate through the Relay server without disclosing their IP addresses and ports directly.
+* As a client, use the [join code](https://docs.unity.com/relay/en/manual/join-codes) that the host creates to connect to the relay server. This code allows the host and clients to communicate through the Relay server without disclosing their IP addresses and ports directly.
 
 ## Enable Relay in a project
 
@@ -28,8 +28,10 @@ From Unity version 2022.3, you can test the Relay service in the editor:
 1. Open the inspector window and select the Network Manager. 
 2. Navigate to the Start Connection section
 3. Check the **Try Relay in the editor** box. 
-4. Select **Start Server** or **Start Host** to start the server or host, or enter the [join code](https://docs.unity.com/relay/en/manual/join-codes).
-5. Select Start Client. 
+4. Select **Start Server** or **Start Host** to start the server or host.
+5. In the inspector, copy the [join code](https://docs.unity.com/relay/en/manual/join-codes).
+6. Enter the join code in a new window running the same project.
+7.  Select **Start Client**.
 
 This means you don’t need to create UI elements to test the Relay service.
 
