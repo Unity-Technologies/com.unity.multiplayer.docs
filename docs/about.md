@@ -4,7 +4,7 @@ title: About Netcode for GameObjects
 description: Overview of Unity's Netcode for GameObjects for your multiplayer networking needs.
 ---
 
-Netcode for GameObjects (NGO) is a high-level networking library built for Unity for you to abstract networking logic. It enables you to send GameObjects and world data across a networking session to many players at once. With NGO, you can focus on building your game instead of low-level protocols and networking frameworks.
+Netcode for GameObjects (NGO) is a high-level networking library built for Unity for you to abstract networking logic. You can send GameObjects and world data across a networking session to many players at once. With NGO, you can focus on building your game instead of low-level protocols and networking frameworks.
 
 To learn more about Netcode for GameObjects functionality and capabilities, explore the content below:
 
@@ -34,7 +34,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 | Getting Started                                                                                                                                                                                          | Get Started Project                                          | Education and Samples                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Install Unity Netcode](installation/installation.md)<br/>[Migration from UNet to Netcode](installation/migratingfromUNet.md)<br/>[Upgrade to Unity Netcode Package](installation/migratingfrommlapi.md) | [Get started with Netcode](../docs/tutorials/get-started-with-ngo.md) | [Boss Room](learn/bossroom/getting-started-boss-room.md)<br/>[Bite Size Samples](learn/bitesize/bitesize-introduction.md)<br/>[Dilmer's Tutorials](learn/dilmer/dilmer-video.md) |
+| [Install Unity Netcode](installation/installation.md)<br/>[Migration from UNet to Netcode](installation/migratingfromUNet.md)<br/>[Upgrade to Unity Netcode Package](installation/migratingfrommlapi.md) | [Get started with Netcode](../docs/tutorials/get-started-with-ngo.md) | [Boss Room](learn/bossroom/getting-started-boss-room.md)<br/>[Bite Size Samples](learn/bitesize/bitesize-introduction.md)<br/>[Dilmer's Tutorials](community-contributions/dilmer-videos.md) |
 
 </div>
 
@@ -46,7 +46,7 @@ To learn more about Netcode for GameObjects functionality and capabilities, expl
 
 </div>
 
-Don't forget to check out [Release Notes](release-notes/ngo-changelog.md) and [APIs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/index.html)!
+For more information, check out [Release Notes](release-notes/ngo-changelog.md) and [APIs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6/api/index.html).
 
 ## Before you begin
 

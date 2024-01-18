@@ -86,11 +86,7 @@ Alternatively, you can click the green **Code** button, then select **Download Z
 
 ### Registering the project with Unity Gaming Services (UGS)
 
-Boss Room leverages several services from UGS to ease connectivity between players. To use these services inside your project, you must:
-
-1. [Create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard.
-2. Enable the [Relay](https://docs.unity.com/relay/get-started.html) service.
-3. Enable the [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) service.
+Boss Room leverages several services from UGS to ease connectivity between players. To use these services inside your project, you need to [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard, which will provide you with access to the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services.
 
 ### Opening the project for the first time
 
