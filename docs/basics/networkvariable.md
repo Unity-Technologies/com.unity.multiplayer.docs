@@ -525,7 +525,7 @@ public class MyNetworkVariableTypeUsingFoo : NetworkVariableBase {}
 
 You can call a type that you know the name of with the `FastBufferReader` or `FastBufferWriter` methods. These methods don't work for Generic types because the name of the type is unknown.
 ##### Tell Unity to serialize a generic type
-The more common and more useful method is to use `GenerateSerializationForGenericParameterAttribute` to generate serialization for a specific generic parameter in your `NetworkVariable` type:
+The following code example uses `GenerateSerializationForGenericParameterAttribute` to generate serialization for a specific Generic parameter in your `NetworkVariable` type:
 ```csharp
 [GenerateSerializationForGenericParameter(0)]
 public class MyNetworkVariableType<T> : NetworkVariableBase {}
