@@ -7,7 +7,7 @@ With [Netcode for GameObjects (NGO)](https://docs-multiplayer.unity3d.com/netcod
 
 Many factors impact how you connect to the remote host. To connect to a remote host, use one of the following methods:
 
-* Perform a NAT punch: This advanced technique directly connects to the host computer, even if it's on another network.
+* Perform a [NAT punchthrough](../learn/listenserverhostarchitecture.md#option-c-nat-punchthrough): This advanced technique directly connects to the host computer, even if it's on another network.
 * Use a [Relay server](https://docs.unity.com/relay/en/manual/relay-servers): A Relay server exists on the internet with a public-facing IP that you and the host can access. After the client and the host connect to a relay server, they can send data to each other through the Relay server.
 
 Netcode doesn't offer tools to help you punch through a NAT. However, you can use the Relay service provided by Unity Services to relay all technology based on Unity Transport, like Netcode.
