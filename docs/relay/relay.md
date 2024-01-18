@@ -24,7 +24,7 @@ To enable and set up Relay in a project, follow the steps in [Get started with R
 
 ## Test the Relay service in the Unity Editor
 
-From Unity version 2022.3, you can test the Relay service with Netcode for GameObjects (NGO) in the editor. To  do the following: 
+From Unity version 2022.3, you can test the Relay service with Netcode for GameObjects (NGO) in the editor. To do this, do the following: 
 1. Follow the steps in [Get started with NGO](https://docs-multiplayer.unity3d.com/netcode/current/tutorials/get-started-ngo/). 
 2. Follow the steps in [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started).
 3. Open the inspector window and select the Network Manager. 
