@@ -3,7 +3,7 @@ id: relay
 title: Relay
 ---
 
-You can use [Netcode for GameObjects (NGO)](https://docs-multiplayer.unity3d.com/netcode/current/about/) to use an IP address and a port to connect a client to a host. You can use the [Relay Unity Games Service (UGS)](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction) to connect multiple clients to a host that isn't on the same network.
+You can use [Netcode for GameObjects (NGO)](https://docs-multiplayer.unity3d.com/netcode/current/about/) to use an IP address and a port to connect a client to a host. You can use [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction) to connect multiple clients to a host that isn't on the same network.
 
 Many factors impact how you connect to the remote host. To connect to a remote host, use one of the following methods:
 
