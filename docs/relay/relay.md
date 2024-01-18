@@ -49,9 +49,9 @@ You can copy the join code to share it or or test it in a project in a separate 
 This Relay integration is only available in the editor, which means you can't use it in a build. Instead, use the code snippets at the end of this page. These snippets use the Unity Transport Package. To do this in projects that don’t use Transport, refer to the Relay documentation.
 :::
 
-## Allocate a Relay server
+## Create allocation on a Relay server
 
-To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay, make an authenticated call to the Unity backend using the SDK. To do this, call the `CreateAllocationAsync` method on the host with the maximum number of expected peers. For example, a host that requests a maximum of three peer connections reserves four slots for a four player game. This function can throw exceptions, which you can catch to learn about the error that caused them.
+To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay server, make an authenticated call to the Unity backend using the SDK. To do this, call the `CreateAllocationAsync` method on the host with the maximum number of expected peers. For example, a host that requests a maximum of three peer connections reserves four slots for a four player game. This function can throw exceptions, which you can catch to learn about the error that caused them.
 
 ```csharp
 //Ask Unity Services to allocate a Relay server that will handle up to eight players: seven peers and the host.
@@ -88,9 +88,9 @@ if (!AuthenticationService.Instance.IsSignedIn)
 }
 ```
 
-## Join an allocated Relay server
+## Join an allocation on a Relay server
 
-To join a allocated Relay server, the following must be true:
+To join an allocation on a Relay server, the following must be true:
 * The host of the game has created a Relay allocation.
 * The client has received a join code.
 
