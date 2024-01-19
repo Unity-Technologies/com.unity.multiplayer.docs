@@ -27,7 +27,7 @@ To create a **Player Tag**,
 
 ### Next Steps
 
-Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.Tag`. See the following **Player Tag** examples as guides for your own scripts:
+Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.ReadOnlyTags()`. See the following **Player Tag** examples as guides for your own scripts:
 
 - [For a **Player** to run as a server, client, or host](target-instance)
 - [To automatically assign a **Player** to a team](target-team)

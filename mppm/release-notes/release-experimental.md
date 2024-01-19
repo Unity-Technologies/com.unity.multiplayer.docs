@@ -4,6 +4,31 @@ title: Multiplayer Play Mode Release Notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [0.6.0] - 2023-11-08
+
+### Fixed
+
+- Some fixes for Clone heartbeats.
+- More fixes for persistent window layouts.
+
+### Features
+
+- Can now focus player with hotkeys (CTRL+F9-F12).
+- Just show the layout view toggles as disabled during playmode.
+- Automatically focus players after activating.
+
+## [0.5.0] - 2023-09-27
+
+### Fixed
+
+- Fix broken links in documentation.
+
+### Features
+
+- Moved PlayerTags to the project settings window.
+- Players can now have multiple PlayerTags.
+- Updated `CurrentPlayer.ReadOnlyTag` to be `CurrentPlayer.ReadOnlyTags`.
+
 ## [0.4.0] - 2023-08-26
 
 ### Fixed
@@ -47,13 +72,13 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 * Display a message to the console log when opening Clones that don't have the required symlinked folders.
 * Trigger play mode for clones before main editor starts entering play mode.
 * Clone players will have the same behaviour as the main editor regarding the "Stop playing and compile" option.
- 
+
 ## [0.1.1] - 2023-01-26
 
 ### Fixed
 
 - Reduced GC allocations in the messaging system loop.
-- Fixed CurrentPlayer.Tag returning "Untagged" instead of an empty string if a tag is not assigned.
+- Fixed CurrentPlayer.ReadOnlyTags() returning "Untagged" instead of an empty string if a tag is not assigned.
 - Fixed bug where pressing Return or Enter would not submit a created tag to the UI.
 - Fixed missing XMLDoc for CurrentPlayer API.
 - Fixed broken links in the package documentation.
