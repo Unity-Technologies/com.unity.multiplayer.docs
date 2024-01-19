@@ -4,7 +4,7 @@ title: Assign a Player a team example
 description: This example shows how you can automatically assign Players to different teams in Multiplayer Play Mode.
 ---
 
-Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.Tag`. You can place these scripts where you want, but you must attach the scripts to a [NetworkObject](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject/) (such as the **Player**).
+Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.ReadOnlyTags()`. You can place these scripts where you want, but you must attach the scripts to a [NetworkObject](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject/) (such as the **Player**).
 
 The logic in the following example checks if the **Player Tag** has a string rather than if it’s equal to a string to allow for more flexibility with the name of the **Player Tag**. You can change this logic so that it checks for an exact match.
 
@@ -38,7 +38,7 @@ public class Player : NetworkBehaviour
         {
             return;
         }
-        var mppmTag = CurrentPlayer.Tag;
+        var mppmTag = CurrentPlayer.ReadOnlyTags();
         if (mppmTag.Contains("Blue"))
         {
             team.Value = Team.Blue;

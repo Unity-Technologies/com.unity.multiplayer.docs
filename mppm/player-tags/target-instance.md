@@ -5,7 +5,7 @@ sidebar_label: Assign Players different session roles example
 description: This example shows how you can use Netcode for GameObjects to run a Player as a server, client, or host in Multiplayer Play Mode.
 ---
 
-Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.Tag`. You can place these scripts where you want, but you must attach the scripts to a [NetworkObject](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject/) (such as the **Player**).
+Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.ReadOnlyTags()`. You can place these scripts where you want, but you must attach the scripts to a [NetworkObject](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject/) (such as the **Player**).
 
 :::important
 The following example uses the `Contains` method, which is case-sensitive by default. You can make it case-insensitive by passing the `System.StringComparison.CurrentCultureIgnoreCase` method.
@@ -30,7 +30,7 @@ public class MppmConnect : MonoBehaviour
 {
     void Start()
     {
-        var mppmTag = CurrentPlayer.Tag;
+        var mppmTag = CurrentPlayer.ReadOnlyTags();
         var networkManager = NetworkManager.Singleton;
         if (mppmTag.Contains("Server"))
         {

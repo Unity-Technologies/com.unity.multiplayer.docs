@@ -70,7 +70,7 @@ UTP 2.0 don't introduce changes to how you write custom pipeline stages. However
 
 These breaking changes remove Burst-incompatible APIs, allowing you to use more of UTP with Burst-compiled code.
 
-For more information, see the [section on using pipelines](https://docs.unity3d.com/Packages/com.unity.transport@2.0/manual/pipelines-usage.html).
+For more information, see the [section on using pipelines](https://docs.unity3d.com/Packages/com.unity.transport@2.2/manual/pipelines-usage.html).
 
 ## Other breaking changes
 
