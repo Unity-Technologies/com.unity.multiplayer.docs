@@ -38,7 +38,7 @@ The RPC signature hash changes when any of the following variables change:
 
 However, the RPC signature hash doesn't change when the names of the parameters for an existing RPC are the only variables that change.
 
-Since changing the RPC signature leads into a different invocation code path that has different serialization code, previous versions of that RPC method (i.e. older builds) will not be remotely invoked by the RPC method with the new signature.
+When the RPC signature changes, it directs to a different invocation code path that has different serialization code. This means that the RPC method with the new signature doesn't invoke previous versions of that RPC method (for example, an RPC method from an older build).
 
 | Compatibility | <i class="fp-check"></i> | Description |
 | -- | :--: | -- |
