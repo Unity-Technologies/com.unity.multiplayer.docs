@@ -4,18 +4,6 @@ title: Multiplayer Play Mode Release Notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
-## [1.0.0-pre.2] - 2023-12-21
-
-### Fixed
-
-- Better handling of custom implicit packages on the clones.
-
-## [1.0.0-pre.1] - 2023-11-17
-
-### Fixed
-
-- Some compatibility fixes with Dedicated Server.
-
 ## [0.6.0] - 2023-11-08
 
 ### Fixed
