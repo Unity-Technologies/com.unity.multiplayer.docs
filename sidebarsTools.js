@@ -42,6 +42,10 @@ module.exports = {
         },
         {
             "type": "doc",
+            "id": "multiplayer-tools-window"
+          },
+        {
+            "type": "doc",
             "id": "RNSM"
         },
         {
