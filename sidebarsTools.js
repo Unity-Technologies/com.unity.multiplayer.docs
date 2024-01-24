@@ -11,11 +11,7 @@ module.exports = {
             "items": [
                 {
                     type: "doc",
-                    id: "release-notes/tools-2-0-0",
-                },
-                {
-                    type: "doc",
-                    id: "release-notes/tools-2-0-0-pre",
+                    id: "release-notes/tools-2-0-0+",
                 },
                 {
                     type: "doc",
