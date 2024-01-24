@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../basics/object-spawning), and [NetworkVariable](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
+Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../object-spawning), and [NetworkVariable](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
 
   1. `NetworkObject`
   2. [`NetworkBehaviour`](networkbehaviour.md)
@@ -12,8 +12,8 @@ Netcode for GameObjects' high level components, [the RPC system](../advanced-top
 
 Both the NetworkObject and NetworkBehaviour components require the use of specialized structures before you can serialize and use them with RPCs and NetworkVariables:
 
-* For NetworkObjects, use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference.md).
-* For NetworkBehaviours, use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
+* For NetworkObjects, use the [`NetworkObjectReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html).
+* For NetworkBehaviours, use the [`NetworkBehaviourReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviourReference.html).
 
 :::
 
@@ -33,7 +33,7 @@ The order of networked objects matters. Make sure to load any NetworkBehaviour c
 
 # Ownership
 
-Either the server (default) or any connected and approved client each NetworkObject. Netcode for GameObjects is server-authoritative, which means the server controls (the only system authorized) spawning and despawning NetworkObjects.
+Either the server (default) or any connected and approved client owns each NetworkObject. Netcode for GameObjects is server-authoritative, which means the server controls (the only system authorized) spawning and despawning NetworkObjects.
 
 :::note
 
@@ -65,9 +65,9 @@ To give ownership back to the server use the `RemoveOwnership` method:
 GetComponent<NetworkObject>().RemoveOwnership();
 ```
 
-To decide if the local client is the owner of a NetworkObject, you can check the [`NetworkBehaviour.IsOwner`](../api/Unity.Netcode.NetworkBehaviour.md#isowner) property.
+To decide if the local client is the owner of a NetworkObject, you can check the [`NetworkBehaviour.IsOwner`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviour.IsOwner.html) property.
 
-To decide if the server owns the NetworkObject, you can check the [`NetworkBehaviour.IsOwnedByServer`](../api/Unity.Netcode.NetworkBehaviour.md#isownedbyserver) property.
+To decide if the server owns the NetworkObject, you can check the [`NetworkBehaviour.IsOwnedByServer`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviour.IsOwnedByServer.html) property.
 
 :::note
 
@@ -159,9 +159,8 @@ See Also: [NetworkSceneManager Active Scene Synchronization](../basics/scenemana
 
 ![image](/img/SceneMigrationSynchronization.png)
 
-Similar to `NetworkObject.ActiveSceneSynchronization`, this property will automatically synchronize client-side NetworkObject instances that are migrated to a scene via [`SceneManager.MoveGameObjectToScene`](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.MoveGameObjectToScene.html) on the host or server side. This can be useful if you have a specific scene you wish to migrate NetworkObject instances to that is not the currently active scene. 
+Similar to `NetworkObject.ActiveSceneSynchronization`, this property will automatically synchronize client-side NetworkObject instances that are migrated to a scene via [`SceneManager.MoveGameObjectToScene`](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.MoveGameObjectToScene.html) on the host or server side. This can be useful if you have a specific scene you wish to migrate NetworkObject instances to that is not the currently active scene.
 
 :::info
 `NetworkObject.ActiveSceneSynchronization` can be used with `NetworkObject.SceneMigrationSynchronization` as long as you take into consideration that if you migrate a NetworkObject into a non-active scene via `SceneManager.MoveGameObjectToScene` and then later change the active scene then the NetworkObject instance will be automatically migrated to the newly set active scene.
 :::
-

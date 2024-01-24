@@ -1,10 +1,11 @@
 const admonitions = require("./config/admonitions.config.js");
-const scripts = require("./config/scripts.config.js");
+const headTags = require("./config/scripts.config.js");
 
 module.exports = {
   title: "Unity Multiplayer Networking",
   tagline: "Build multiplayer games in Unity",
   url: "https://docs-multiplayer.unity3d.com/",
+  headTags,
   staticDirectories: ["public", "static"],
   baseUrl: "/",
   onBrokenLinks: "ignore", // todo: review and set to throw or at least warn
@@ -13,7 +14,6 @@ module.exports = {
   trailingSlash: true,
   organizationName: "unity", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
-  scripts,
   markdown: {
     mermaid: true,
   },
@@ -139,7 +139,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Unity Technologies. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Unity Technologies`,
     },
     navbar: {
       title: "Multiplayer Networking",
@@ -237,8 +237,16 @@ module.exports = {
           lastVersion: "current",
           versions: {
             current: {
-              label: "1.6.0",
+              label: "1.8.0",
               path: "current",
+            },
+            "1.7.1": {
+              label: "1.7.1",
+              path: "1.7.1",
+            },
+            "1.6.0": {
+              label: "1.6.0",
+              path: "1.6.0",
             },
             "1.5.2": {
               label: "1.5.2",
@@ -287,8 +295,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "2.0.0",
+            label: "2.2.1",
             path: "current",
+          },
+          "2.0.0": {
+            label: "2.0.0",
+            path: "2.0.0",
           },
           "1.0.0": {
             label: "1.0.0",
@@ -317,11 +329,7 @@ module.exports = {
         versions: {
           current: {
             label: "2.1.0",
-            path: "2.1.0",
-          },
-          "2.0.0-pre": {
-            label: "2.0.0-pre",
-            path: "2.0.0-pre",
+            path: "current",
           },
           "1.1.0": {
             label: "1.1.0",
@@ -353,8 +361,20 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "0.4.0",
+            label: "1.0.0-pre.2",
             path: "current",
+          },
+          "0.6.0": {
+            label: "0.6.0",
+            path: "0.6.0",
+          },
+          "0.5.0": {
+            label: "0.5.0",
+            path: "0.5.0",
+          },
+          "0.4.0": {
+            label: "0.4.0",
+            path: "0.4.0",
           },
           "0.3.0": {
             label: "0.3.0",
@@ -369,12 +389,12 @@ module.exports = {
         admonitions,
       },
     ],
-    [
-      require.resolve("docusaurus-gtm-plugin"),
-      {
-        id: "GTM-5V25JL6", // GTM Container ID
-      },
-    ],
+    // [
+    //   require.resolve("docusaurus-gtm-plugin"),
+    //   {
+    //     id: "GTM-5V25JL6", // GTM Container ID
+    //   },
+    // ],
     [
       "@docusaurus/plugin-client-redirects",
       {

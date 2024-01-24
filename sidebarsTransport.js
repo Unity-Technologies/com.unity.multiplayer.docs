@@ -30,7 +30,7 @@ module.exports = {
         {
             "type": "link",
             "label": "API Reference",
-            "href": "https://docs.unity3d.com/Packages/com.unity.transport@2.0/api/index.html",
+            "href": "https://docs.unity3d.com/Packages/com.unity.transport@2.2/api/index.html",
         },
         {
             "type": "doc",

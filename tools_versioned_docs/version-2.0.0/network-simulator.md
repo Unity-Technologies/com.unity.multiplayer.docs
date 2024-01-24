@@ -54,6 +54,7 @@ You can trigger a simulated lag spike in the Unity Editor with the Network Simul
 ![](/img/tools/netsim-7.png)
 
 :::tip
+
 You can trigger lag spikes through code with the `NetworkSimulator.TriggerLagSpike` API or you can write a Network Scenario that triggers it.  See the [Lag spike scenario](#lag-spike-scenario) example to learn how.
 :::
 
@@ -88,6 +89,7 @@ Once you select the custom preset asset, you can edit it live from the Inspector
 
 The Network Simulator tool supports NetworkScenarios. A NetworkScenario is a way to script how you want to affect the network conditions at runtime. They allow you to change parameters and presets dynamically.
 
+
 It comes packaged with a couple network scenarios presets, such as the [Connections Cycle](#connections-cycle) and [Random Connections Swap](#random-connections-swap).
 
 :::note
@@ -106,6 +108,7 @@ You can control whether the Network Scenario runs automatically by toggling the 
 
 ![](/img/tools/netsim-2.png)
 :::
+
 
 #### Connections Cycle
 
@@ -133,6 +136,7 @@ The **Connections Cycle** Network Scenario allows you to cycle through different
 
 The Connections Cycle scenario cycles through the configurations list at the **Change Interval** until you use the **Pause** button to pause the connection cycling.
 
+
 #### Random Connections Swap
 
 The **Random Connections Swap** Network Scenario allows you to specify a set of network configuration presets to swap through at random. By default, it includes one cycle that’s set to None. To configure the Random Connection Swap:
@@ -153,6 +157,7 @@ The **Random Connections Swap** Network Scenario allows you to specify a set of 
 
 ![](/img/tools/netsim-9.png)
 
+
 The Random Connections Swap scenario selects one of configurations from the list at random at the **Change Interval** until you use the **Pause** button to pause the connection cycling.
 
 ## Network types
@@ -164,6 +169,7 @@ A network type is the general state of a user’s network connection. This secti
 * [Medium quality mobile connections](#medium-quality-mobile-connections)
 * [Decent quality mobile connections](#decent-quality-mobile-connections)
 * [Good quality mobile connections](#good-quality-mobile-connections)
+
 
 ### Home broadband connections
 
@@ -186,6 +192,7 @@ The following Network Simulator presets simulate a poor-quality mobile connectio
 * [Mobile 2.5G](#mobile-25g)
 * [Mobile 2.75G](#mobile-275g)
 * [Mobile 3G](#mobile-3g)
+
 
 ### Medium-quality mobile connections
 
