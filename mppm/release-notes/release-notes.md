@@ -1,5 +1,5 @@
 ---
-id: mppm-experimental
+id: mppm-release-notes
 title: Multiplayer Play Mode Release Notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---

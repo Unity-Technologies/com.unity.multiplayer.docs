@@ -6,7 +6,7 @@ module.exports = {
         },
         {
             type: 'doc',
-            id: 'release-notes/mppm-experimental',
+            id: 'release-notes/mppm-release-notes',
         },
         {
             type: 'doc',
