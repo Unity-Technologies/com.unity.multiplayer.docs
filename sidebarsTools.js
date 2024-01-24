@@ -15,7 +15,7 @@ module.exports = {
                 },
                 {
                     type: "doc",
-                    id: "release-notes/tools-1-0-0",
+                    id: "release-notes/tools-1-1-0",
                 },
                 {
                     type: 'doc',
