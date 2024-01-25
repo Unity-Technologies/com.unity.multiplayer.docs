@@ -4,7 +4,9 @@ title: RPC Params
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-`Rpc` methods are configured by the `[Rpc]` attribute at compile-time and `RpcParams` are configured at runtime. Likewise, the **legacy** `ServerRpc` and `ClientRpc` methods can be configured either by `[ServerRpc]` and `[ClientRpc]` attributes at compile-time and `ServerRpcParams` and `ClientRpcParams` at runtime.
+You can configure the `Rpc`,  `ServerRpc` and `ClientRpc` methods in the following ways: 
+* Use the `[Rpc]`, `[ServerRpc]` and `[ClientRpc]` attributes at compile-time.
+* Use `ServerRpcParams` and `ClientRpcParams` at runtime.
 
 Developers can put, `RpcParams`, `ServerRpcParams`, or `ClientRpcParams` as the last parameter (optionally, as appropriate for the type of RPC). The `RpcParams`, `ServerRpcParams`, and `ClientRpcParams` types contain both send and receive properties that are populated relative to the context of usage.
 
