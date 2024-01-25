@@ -8,7 +8,7 @@ Arrays of [C# primitive types](cprimatives.md), like `int[]`, and [Unity primiti
 ## Built-In Primitive Types Example
 Using built-in primitive types is fairly straight forward:
 ```csharp
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void HelloServerRpc(int[] scores, Color[] colors) { /* ... */ }
 ```
 
@@ -16,7 +16,7 @@ void HelloServerRpc(int[] scores, Color[] colors) { /* ... */ }
 There are many ways to handle sending an array of managed types.
 The below example is a simple `string` container class that implements `INetworkSerializable` and can be used as an array of "StringContainers":
 ```csharp
-[ClientRpc]
+[Rpc(SendTo.ClientsAndHost)]
 void SendMessagesClientRpc(StringContainer[] messages) 
 { 
     foreach (var stringContainer in stringContainers)

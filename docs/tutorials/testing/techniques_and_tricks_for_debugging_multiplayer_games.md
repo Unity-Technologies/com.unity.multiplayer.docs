@@ -17,7 +17,7 @@ Below is a list of practices and techniques that we use daily when working on th
 [ParrelSync workflow](testing_locally.md#parrelsync) is faster than creating builds and it allows you to debug the separate editor instances via separate IDE debuggers.
 
 Use ParrelSync to run separate editor instances for your Host/Server and Client.
- 
+
 ### Use debug drawing techniques extensively
 
 Unity engine has two debug rendering APIs that are useful for the purposes of multiplayer game debugging:
@@ -129,7 +129,7 @@ public class NetcodeEnabledLineRenderer : NetworkBehaviour
     /// <summary>
     /// Example for having netcode debug render lines
     /// </summary>
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     private void ToggleDebugLinesClientRpc(bool drawDebugLines)
     {
         m_EnableDebugLines = drawDebugLines;
