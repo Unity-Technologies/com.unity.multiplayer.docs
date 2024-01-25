@@ -662,7 +662,7 @@ You can test your Hello World project through the Unity Editor or a command line
 
 1. Select **NetworkManager** from the **Hierarchy** list.
 
-![](/img/get-started-ngo/ngo-2.png)
+![](\img\get-started-ngo\ngo-2.png)
 
 1. With **NetworkManager** selected (in the Hierarchy tab), select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
 

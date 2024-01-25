@@ -79,7 +79,7 @@ void AbcdServerRpc(int somenumber) { /* ... */ }
 void XyzwServerRpc(int somenumber, ServerRpcParams serverRpcParams = default) { /* ... */ }
 ```
 
-[ServerRpcParams Documentation](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ServerRpcParams)
+[ServerRpcParams Documentation](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.ServerRpcParams.html)
 
 ## ClientRpc Params
 
@@ -99,7 +99,7 @@ void AbcdClientRpc(int framekey) { /* ... */ }
 void XyzwClientRpc(int framekey, ClientRpcParams clientRpcParams = default) { /* ... */ }
 ```
 
-[ClientRpcParams Documentation](https://docs-multiplayer.unity3d.com/netcode/current/api/Unity.Netcode.ClientRpcParams)
+[ClientRpcParams Documentation](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.ClientRpcParams.html)
 
 :::tip
 `ClientRpcSendParams`'s `TargetClientIds` property is a `ulong[]` which means everytime you try to specify a subset of target clients or even a single client target, you will have to allocate a `new ulong[]`. This pattern can quickly lead into lots of heap allocations and pressure GC which would cause GC spikes at runtime. We suggest developers cache their `ulong[]` variables or use an array pool to cycle `ulong[]` instances so that it would cause less heap allocations.
