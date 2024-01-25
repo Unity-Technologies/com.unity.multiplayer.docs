@@ -20,7 +20,7 @@ enum NormalEnum // default -> int
     Z
 }
 
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void ConfigServerRpc(SmallEnum smallEnum, NormalEnum normalEnum) { /* ... */ }
 
 void Update()

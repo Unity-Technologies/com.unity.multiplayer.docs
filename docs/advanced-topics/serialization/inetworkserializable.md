@@ -28,7 +28,7 @@ Types implementing `INetworkSerializable` are supported by `NetworkSerializer`, 
 
 ```csharp
 
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void MyServerRpc(MyComplexStruct myStruct) { /* ... */ }
 
 void Update()

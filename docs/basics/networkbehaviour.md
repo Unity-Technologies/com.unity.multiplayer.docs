@@ -204,7 +204,8 @@ Client-Side:
 
 ### OnSynchronize Example
 Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later so you decide to use RPCs.  However, this becomes an issue when you want to synchronize late joining clients as there is no way to synchronize late joining clients based on RPC activity over the duration of a network session.  This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
-In the example below, it provides one simple use-case scenario where you can use `NetworkBehaviour.OnSynchronize` to synchronize late-joining clients with state set by `ClientRpc` events:
+The following example uses `NetworkBehaviour.OnSynchronize` to synchronize connecting (to-be-synchronized) clients and also uses an RPC to synchronize changes in state for already synchronized and connected clients:
+
 ```csharp
 using UnityEngine;
 using Unity.Netcode;
@@ -237,7 +238,7 @@ public class SimpleRpcState : NetworkBehaviour
     /// server-side m_ToggleState
     /// </summary>
     /// <param name="stateIsSet"></param>
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     private void ToggleStateClientRpc(bool stateIsSet)
     {
         m_ToggleState = stateIsSet;
