@@ -4,29 +4,6 @@ title: Dedicated game server sample
 sidebar_label: RPC vs NetworkVariable
 ---
 
-<!-----
-
-
-
-Conversion time: 1.06 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β35
-* Fri Jan 26 2024 06:15:31 GMT-0800 (PST)
-* Source doc: Dedicated Game Server Bitesize Sample Documentation
------>
-
-
-
 ## Dedicated Game Server sample
 
 [The Dedicated Game Server sample](https://github.cds.internal.unity3d.com/unity/com.unity.multiplayer.samples.bitesize-mirror/tree/sample/DGS) project demonstrates how the dedicated server model works and the tools that you can use to test multiplayer in the editor.
@@ -47,8 +24,8 @@ This section describes how the following features are configured to use the dedi
 
 * [Project settings](#project-settings)
     * [Strip generic components from the server](#strip-generic-components-from-the-server)
-    * [Split scripts across the client, server, or network](#split-scripts-across-the-client,-server,-or-network)
-    * [Split scripts across the client, server, or network](#split-scripts-across-the-client,-server,-or-network)
+    * [Split scripts across the client, server, or network](#split-scripts-across-the-client-server-or-network)
+    * [Split scripts across the client, server, or network](#split-scripts-across-the-client-server-or-network)
     * [Synchronize animations between clients](#synchronize-animations-between-clients)
     * [Navigation](#navigation)
     * [Use multiplayer roles to control game logic](#use-multiplayer-roles-to-control-game-logic)
