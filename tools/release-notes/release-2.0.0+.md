@@ -1,6 +1,7 @@
 ---
-id: tools-2-0-0
+id: tools-2-0-0+
 title: Multiplayer Tools 2.0.0+
+
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
@@ -22,7 +23,7 @@ description: Release notes for Multiplayer Tools including new features, updates
 
 ### General
 
-- *New*: Find all the multiplayer tools in a central place in the multiplayer tools window.
+- Find all the multiplayer tools in a central place in the multiplayer tools window.
 
 ### Network Profiler
 
@@ -53,6 +54,7 @@ description: Release notes for Multiplayer Tools including new features, updates
 
 ### Network Scene Visualization
 
+* Remove unintentionally public classes (such as test classes), most of which were already deprecated.
 * Fix to prevent NGO from throwing a NotServerException when visualizing ownership on a client that is not connected as the server or host.
 
 ## [2.0.0-pre.2] - 2023-05-02

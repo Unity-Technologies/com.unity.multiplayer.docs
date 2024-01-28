@@ -22,7 +22,7 @@ public class Weapon : NetworkBehaviour
         ShootTargetServerRpc(targetObject);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ShootTargetServerRpc(NetworkObjectReference target)
     {
         if (target.TryGet(out NetworkObject targetObject))
@@ -48,7 +48,7 @@ public class Weapon : NetworkBehaviour
         ShootTargetServerRpc(target);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ShootTargetServerRpc(NetworkObjectReference target)
     {
         NetworkObject targetObject = target;
@@ -77,7 +77,7 @@ public class Weapon : NetworkBehaviour
         ShootTargetServerRpc(health, 10);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ShootTargetServerRpc(NetworkBehaviourReference health, int damage)
     {
         if (health.TryGet(out Health healthComponent))
