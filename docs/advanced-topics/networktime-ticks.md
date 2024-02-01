@@ -98,7 +98,7 @@ public class SyncedEventExample : NetworkBehaviour
         Instantiate(ParticleEffect, transform.position, Quaternion.identity);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     private void CreateSyncedEffectServerRpc(double time)
     {
         CreateSyncedEffectClientRpc(time); // Call a client RPC to also create the effect on each client.
@@ -106,7 +106,7 @@ public class SyncedEventExample : NetworkBehaviour
         StartCoroutine(WaitAndSpawnSyncedEffect((float)timeToWait)); // Create the effect on the server but wait for the right time.
     }
 
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     private void CreateSyncedEffectClientRpc(double time)
     {
         // The owner already created the effect so skip them.

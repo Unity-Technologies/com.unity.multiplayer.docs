@@ -13,7 +13,7 @@ UNet is an entirely deprecated product, and you should upgrade to Netcode for Ga
 
 Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Netcode:
 
-- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
+- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been replaced with `RpcAttribute(SendTo.Server)` and `ClientRPCAttribute` has been replaced with `RpcAttribute(SendTo.NotServer)` or `RpcAttribute(SendTo.ClientsAndHost)` depending on whether you want the host client to receive the RPC.
 - Errors for RPC postfix naming patterns don't show in your IDE. 
 - Client and Server have separate representations in UNet. UNet has a number of callbacks that don't exist for Netcode.
 - Prefabs need to be added to the Prefab registration list for Netcode.
@@ -128,12 +128,12 @@ public class MyNetcodeExample : NetworkBehaviour
         ExampleClientRpc(10f);
         ExampleServerRpc(10f);
     }
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
     }
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
@@ -333,12 +333,12 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode whic
 <TabItem value="tab2">
 
 ```csharp
-    [ServerRPC]
+    [Rpc(SendTo.Server)]
     public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
     }
-    [ClientRPC]
+    [Rpc(SendTo.ClientsAndHost)]
     public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
@@ -347,9 +347,8 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode whic
 </TabItem>
 </Tabs>
 
-
 :::note
-In Netcode, RPC function names must end with a `ClientRpc/ServerRpc` suffix.
+In Netcode, RPC function names must end with an `Rpc` suffix.
 :::
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
@@ -644,14 +643,14 @@ public class DamageClass : NetworkBehaviour
 
     public event TakeDamageDelegate EventTakeDamage;
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void TakeDamageServerRpc(int val)
     {
         EventTakeDamage(val);
         OnTakeDamageClientRpc(val);
     }
 
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     public void OnTakeDamageClientRpc(int val){
         EventTakeDamage(val);
     }
