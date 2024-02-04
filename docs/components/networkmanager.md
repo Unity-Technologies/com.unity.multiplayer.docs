@@ -95,7 +95,7 @@ If you are using Unity Relay to handle connections, however, **don't use `SetCon
 ## Disconnecting and Shutting Down
 
 ### Disconnect from a network
-Disconnecting is rather simple, but you can't use/access any subsystems (that is, `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
+When you disconnect from a network you can't use or access any subsystems, for example `NetworkSceneManager`, because they become unavailable when `NetworkManager` stops. For client, host, or server modes, call the `NetworkManager.Shutdown` method to disconnect and shut down at the same time.  
 
 :::info
 When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene. 
