@@ -111,7 +111,8 @@ public void Disconnect()
 ```
 
 ### Shutting Down
-When you invoked `NetworkManager.Shutdown` any existing transport connections will be closed. The shutdown sequence for a client will complete by the next player loop update/frame. However, the shutdown sequence can take a bit longer for a server or host (server-host). In order to assure all clients are notified when a server-host is shutting down, upon invoking `NetworkManager.Shutdown` the server-host will first send out a disconnect notification to all currently connected clients and will populate the NetworkManager.Disconnect reason with one of the two following messages (depending upon whether it is a server or host instance):
+When you invoke `NetworkManager.Shutdown` it closes any existing transport connections. The shutdown sequence for a client finishes before the next player loop update or frame. However, the shutdown sequence can take a bit longer for a server or host (server-host). 
+The server-host notifies all clients when it shuts down. To do this, when you invoke `NetworkManager.Shutdown` the server-host sends out a disconnect notification to all currently connected clients and populates the `NetworkManager.Disconnect` reason with one of the two following messages, depending upon whether it is a server or host instance:
 - "Disconnected due to server shutting down."
 - "Disconnected due to host shutting down."
 The server-host will attempt to wait for all client connections to close prior to finishing the shutdown sequence. This additional step on the server-host side can help to assure clients receive a disconnect notification and will help to prevent the client transport connection from timing out. Under the scenario where not all client connections are closed within 5 seconds after invoking `NetworkManager.Shutdown`, the server-host will automatically finish its shutdown sequence and any remaining connections will be closed.
