@@ -149,7 +149,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 
 **Client notification identifiers**
 - On the server-side, the client identifier parameter is the identifier of the client that disconnects.
-- On the client-side, the client identifier parameter will always be the identifier assigned to the client
+- On the client-side, the client identifier parameter is the identifier assigned to the client.
   - _The exception to this is when a client is disconnected before its connection is approved._
 
 
