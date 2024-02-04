@@ -148,7 +148,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 - Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption)
 
 **Client notification identifiers**
-- On the server-side, the client identifier parameter will always be the identifier of the client disconnected
+- On the server-side, the client identifier parameter is the identifier of the client that disconnects.
 - On the client-side, the client identifier parameter will always be the identifier assigned to the client
   - _The exception to this is when a client is disconnected before its connection is approved._
 
