@@ -115,7 +115,7 @@ When you invoke `NetworkManager.Shutdown` it closes any existing transport conne
 The server-host notifies all clients when it shuts down. To do this, when you invoke `NetworkManager.Shutdown` the server-host sends out a disconnect notification to all currently connected clients and populates the `NetworkManager.Disconnect` reason with one of the two following messages, depending upon whether it is a server or host instance:
 - "Disconnected due to server shutting down."
 - "Disconnected due to host shutting down."
-The server-host will attempt to wait for all client connections to close prior to finishing the shutdown sequence. This additional step on the server-host side can help to assure clients receive a disconnect notification and will help to prevent the client transport connection from timing out. Under the scenario where not all client connections are closed within 5 seconds after invoking `NetworkManager.Shutdown`, the server-host will automatically finish its shutdown sequence and any remaining connections will be closed.
+The server-host attempts to wait for all client connections to close before it finishes the shutdown sequence. This additional step on the server-host side helps to assure that clients receive a disconnect notification and prevents the client transport connection from timing out.  If some client connections take longer than five seconds to close after `NetworkManager.Shutdown` is invoked, the server-host automatically finishes the shutdown sequence and closes any remaining connections.
 
 ## Disconnecting Clients (Server Only)
 
