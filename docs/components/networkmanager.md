@@ -144,7 +144,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 
 **When disconnect notifications are triggered:**
 - Clients are notified when they're disconnected by the server.
-- The server is notified when any client disconnects (whether the server disconnects the client or the client disconnects itself).
+- The server is notified when any client disconnects from the server, whether the server disconnects the client or the client disconnects itself.
 - Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption)
 
 **Client notification identifiers**
