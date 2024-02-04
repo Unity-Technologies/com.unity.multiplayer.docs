@@ -94,7 +94,7 @@ If you are using Unity Relay to handle connections, however, **don't use `SetCon
 
 ## Disconnecting and Shutting Down
 
-### Disconnecting
+### Disconnect from a network
 Disconnecting is rather simple, but you can't use/access any subsystems (that is, `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
 
 :::info
