@@ -193,7 +193,7 @@ public void PingRpc(int pingCount, RpcParams rpcParams)
     // Here we use RpcParams for incoming purposes - fetching the sender ID the RPC came from
     // That sender ID can be passed in to the PongRpc to send this back to that client and ONLY that client
     
-    PongRpc(pingCount, "PONG!", RpcTarget.Single(rpcParams.Receive.SenderClientId));
+    PongRpc(pingCount, "PONG!", RpcTarget.Single(rpcParams.Receive.SenderClientId, RpcTargetUse.Temp));
 }
 
 [Rpc(SendTo.SpecifiedInParams)]
