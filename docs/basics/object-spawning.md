@@ -77,9 +77,9 @@ The second option is to leverage the `NetworkSpawnManager.InstantiateAndSpawn` m
 ```csharp
 var networkObject = NetworkManager.SpawnManager.InstantiateAndSpawn(myPrefab, ownerId);
 ```
-We pass in the overridden source network prefab we want to have instantiated and spawned, and then it returns the instantiated and spawned `NetworkOject` of the spawned object. The default behavior of `InstantiateAndSpawn` is to spawn the override if running as a host and the original source prefab if running as a server.
+We pass in the overridden source network prefab we want to have instantiated and spawned, and then it returns the instantiated and spawned `NetworkObject` of the spawned object. The default behavior of `InstantiateAndSpawn` is to spawn the override if running as a host and the original source prefab if running as a server.
 
-`InstantiateAndSpawn` has several more parameters to provide a bit more control over this process:
+`InstantiateAndSpawn` has several parameters to provide more control over this process:
 
 ```csharp
 InstantiateAndSpawn(NetworkObject networkPrefab, ulong ownerClientId = NetworkManager.ServerClientId, bool destroyWithScene = false, bool isPlayerObject = false, bool forceOverride = false, Vector3 position = default, Quaternion rotation = default)
