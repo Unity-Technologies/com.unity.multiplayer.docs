@@ -18,7 +18,7 @@ Network Scene Management      | Enabled  | Disabled
 Scene Event Synchronizing     | Yes      | No
 In-Scene Network Prefab Synchronizing | Yes      | Yes
 In-Scene NetworkObject Synchronizing  | Yes      | No
-Auto Scene Migration Synchonizing    | Yes      | No
+Auto Scene Migration Synchronizing    | Yes      | No
 
 #### Scene Event Synchronizing
 When integrated scene management is enabled, scene-related events are automatically synchronized for you. When integrated scene management is disabled, you need to handle the synchronization of scenes yourself.
