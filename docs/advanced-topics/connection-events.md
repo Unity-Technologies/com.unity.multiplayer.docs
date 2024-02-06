@@ -5,7 +5,7 @@ sidebar_label: Connection Events
 
 ---
 
-When you need to react to connection / disconnection events for yourself and other clients, you can use `NetworkManager.OnConnectionEvent` as a single unified source of information about changes to the network topology. `OnConnectionEvent` will receive a `ConnectionEventData` struct detailing the relevant information about the connection state change:
+When you need to react to connection or disconnection events for yourself and other clients, you can use `NetworkManager.OnConnectionEvent` as a unified source of information about changes to the network topology. `OnConnectionEvent` will receive a `ConnectionEventData` struct detailing the relevant information about the connection state change:
 
 ```csharp
 public enum ConnectionEvent
@@ -24,11 +24,11 @@ public struct ConnectionEventData
 }
 ```
 
+There are four types of event you can receive. The events are the same for both clients and servers/hosts, but they indicate slightly different things depending on the context.
 
-
-The four types of events you can receive are as follows:
-
-- **ConnectionEvent.ClientConnected:** On the server or host, this event indicates a new client has connected; on the client, this  event indicates that the local client has completed its connection to the server. **ClientId** will be the ID of the newly connected client (on the client side, it will be LocalClientId). On the client side, **PeerClientIds** will contain the list of client IDs for other clients that are currently connected to the server. On the server side, **PeerClientIds** will be uninitialized and should not be used.
-- **ConnectionEvent.PeerConnected:** This event is only executed for clients, including the host client if running in host mode. This is executed when another client connects to the server. **ClientId** will contain the client ID for the newly connected client. **PeerClientIds** will be uninitialized and should not be used.
-- **ConnectionEvent.ClientDisconnected:** On the server or host, this event indicates a client has disconnected; on the client, this event indicates the connection to the server has been lost. **ClientId** will be the ID of the disconnected client (on the client side, it will be LocalClientId). **PeerClientIds** will be uninitialized and should not be used.
-- **ConnectionEvent.PeerDisconnected:** This event is only executed for clients, including the host client if running in host mode. This is executed when another client disconnects from the server. **ClientId** will contain the client ID for the disconnected client. **PeerClientIds** will be uninitialized and should not be used.
+|Event   |Server or host   |Client   |
+|---|---|---|
+|`ConnectionEvent.ClientConnected`   |Indicates that a new client has connected. The ID of the newly connected client is `ClientId`. `PeerClientIds` is uninitialized and shouldn't be used.|Indicates that the local client has completed its connection to the server. The ID of the client is `LocalClientId`, and `PeerClientIds` contains a list of client IDs of other clients currently connected to the server.|
+|`ConnectionEvent.PeerConnected`     |Not applicable for servers. For host clients running in host mode, works the same as for clients.|Indicates that another client has connected to the server. The ID of the newly connected client is `ClientId`. `PeerClientIds` is uninitialized and shouldn't be used. |
+|`ConnectionEvent.ClientDisconnected`|Indicates that a client has disconnected. The ID of the disconnected client is `ClientId`. `PeerClientIds` is uninitialized and shouldn't be used.|Indicates that the local client has disconnected from the server. The ID of the client is `LocalClientId`. `PeerClientIds` is uninitialized and shouldn't be used.    |
+|`ConnectionEvent.PeerDisconnected`  |Not applicable for servers. For host clients running in host mode, works the same as for clients.| Indicates that another client has disconnected from the server. The ID of the disconnected client is `ClientId`. `PeerClientIds` is uninitialized and shouldn't be used.|

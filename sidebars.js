@@ -178,6 +178,10 @@ module.exports = {
                 },
                 {
                     "type": "doc",
+                    "id": "advanced-topics/connection-events"
+                },
+                {
+                    "type": "doc",
                     "id": "advanced-topics/messaging-system"
                 },
                 {
