@@ -48,15 +48,15 @@ void OverridableServerRpc(RpcParams rpcParams = default) { /* ... */ }
 
 // Throws an exception: SendTo.Server cannot be overriden for ServerRpc
 ServerRpc(RpcTarget.NotServer);
-ServerRpc(RpcTarget.Single(someClientId));
+ServerRpc(RpcTarget.Single(someClientId, RpcTargetUse.Temp));
 
 // Works
 RuntimeSpecifiedRpc(RpcTarget.NotServer);
-RuntimeSpecifiedRpc(RpcTarget.Single(someClientId));
+RuntimeSpecifiedRpc(RpcTarget.Single(someClientId, RpcTargetUse.Temp));
 
 // Works
 OverridableServerRpc(RpcTarget.NotServer);
-OverridableServerRpc(RpcTarget.Single(someClientId));
+OverridableServerRpc(RpcTarget.Single(someClientId, RpcTargetUse.Temp));
 ```
 
 :::note

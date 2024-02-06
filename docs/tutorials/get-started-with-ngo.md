@@ -412,7 +412,7 @@ namespace HelloWorld
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -473,7 +473,7 @@ If the current player is the server, the code determines a random position to sp
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -551,7 +551,7 @@ The `Rpc` sets the position NetworkVariable on the server's instance of the play
 
 ```csharp
        [Rpc(SendTo.Server)]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
