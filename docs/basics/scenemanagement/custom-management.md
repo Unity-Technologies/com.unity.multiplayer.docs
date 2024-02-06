@@ -10,7 +10,7 @@ Custom Scene Management currently has some drawbacks that we hope to improve upo
 :::
 
 ## Building Your Own Scene Management Solution
-Netcode for GameObjects has primarily focused on providing a scene management solution that should meet most projects' needs. However, there might be a special case scenario where you require building your own scene management solution. The first step is to disable the "Enable Scene Management" property in your `NetworkManager`'s properties. All of your scene loading and unloading has to be handled via the `UnityEngine.SceneManagement.SceneManager` class.  
+Netcode for GameObjects is designed to provide a scene management solution that should meet most projects' needs. However, some projects might still need to build their own scene management solution. The first step is to disable **Enable Scene Management** in your `NetworkManager`'s properties. All of your scene loading and unloading must be handled via the `UnityEngine.SceneManagement.SceneManager` class.  
 
 ### Integrated NetworkSceneManager Comparison (Enabled vs Disabled)
 Network Scene Management      | Enabled  | Disabled
