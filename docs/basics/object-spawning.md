@@ -53,23 +53,23 @@ When you set the destroyWithScene property to `false` it will be treated the sam
 
 [Learn more about Netcode Scene Management here](scenemanagement/scene-management-overview.md)
 
-:::caution You might find it useful to add a `GameObject` property in a `NetworkBehaviour` derived component that you use to assign a network prefab instance for dynamically spawning. You need to make sure to instantiate a new instance **prior** to spawning. If you attempt to just spawn the actual network prefab instance it can result in unexpected results.
+:::caution You might find it useful to add a `GameObject` property in a `NetworkBehaviour`-derived component to use when assigning a network prefab instance for dynamically spawning. You need to make sure to instantiate a new instance **prior** to spawning. If you attempt to just spawn the actual network prefab instance it can result in unexpected results.
 :::
 
 ### Taking Prefab Overrides Into Consideration
-Sometimes you might want to make a simpler prefab instance to be spawned on server version the override for clients. You should take this into consideration when dynamically spawning a network prefab. If you are running as a host, you want the override to spawn since a host is both a server and a client. However, if you also want to have the ability to run as a dedicated server you might want to spawn the source network prefab. 
+Sometimes, you might want to make a simpler prefab instance to be spawned on server version the override for clients. You should take this into consideration when dynamically spawning a network prefab. If you're running as a host, you want the override to spawn since a host is both a server and a client. However, if you also want to have the ability to run as a dedicated server, you might want to spawn the source network prefab. 
 
-**_There are two ways you can accomplish this:_**
+There are two ways you can accomplish this, as explained below.
 
 #### Get The Network Prefab Override First 
-This option provides you with the over-all view of getting the network prefab override, instantiating it, and then spawning it.
+This option provides you with the overall view of getting the network prefab override, instantiating it, and then spawning it.
 
 ```csharp
 var instance = Instantiate(NetworkManager.GetNetworkPrefabOverride(myPrefab));
 var instanceNetworkObject = instance.GetComponent<NetworkObject>();
 instanceNetworkObject.Spawn();
 ```
- In the above script, you can see that we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method, we then create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`. Of course, this is a bit of code to write in order to just "spawn something".
+In the above script, we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method. Then we then create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`.
 
 #### Using InstantiateAndSpawn
 The second option you have is to leverage from the `NetworkSpawnManager.InstantiateAndSpawn` method that handles dealing with whether to spawn an override or not for you. The below script was written as if was being invoked within a `NetworkBehaviour`. 
