@@ -85,9 +85,9 @@ We pass in the overridden source network prefab we want to have instantiated and
 InstantiateAndSpawn(NetworkObject networkPrefab, ulong ownerClientId = NetworkManager.ServerClientId, bool destroyWithScene = false, bool isPlayerObject = false, bool forceOverride = false, Vector3 position = default, Quaternion rotation = default)
 ```
 
-Looking at the parameters, we can see it defaults to the server as being the owner, assures the instantiated `NetworkObject` will not be destroyed if the scene is unloaded, is not spawned as a player, has a "forceOverride" parameter (more on this in a second), and provides a way to set the position and rotation of the newly instantiated `NetworkObject`.
+Looking at the parameters, we can see it defaults to the server as the owner, ensures that the instantiated `NetworkObject` won't be destroyed if the scene is unloaded, is not spawned as a player, has a `forceOverride` parameter, and provides a way to set the position and rotation of the newly instantiated `NetworkObject`.
 
-The "forceOverride" parameter, when set to true, will use the override whether you are running a server or host.
+The `forceOverride` parameter, when set to true, will use the override whether you're running as either server or host.
 
 
 ## Destroying / Despawning
