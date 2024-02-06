@@ -72,7 +72,7 @@ instanceNetworkObject.Spawn();
 In the above script, we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method. Then we then create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`.
 
 #### Using InstantiateAndSpawn
-The second option you have is to leverage from the `NetworkSpawnManager.InstantiateAndSpawn` method that handles dealing with whether to spawn an override or not for you. The below script was written as if was being invoked within a `NetworkBehaviour`. 
+The second option is to leverage the `NetworkSpawnManager.InstantiateAndSpawn` method that handles whether or not to spawn an override for you. The below script is written as if it's being invoked within a `NetworkBehaviour`. 
 
 ```csharp
 var networkObject = NetworkManager.SpawnManager.InstantiateAndSpawn(myPrefab, ownerId);
