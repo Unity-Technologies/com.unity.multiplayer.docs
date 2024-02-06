@@ -8,7 +8,7 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 Any process can communicate with any other process by sending an RPC. Starting in version 1.8, the `Rpc` attribute encompasses Server to Client Rpcs, Client to Server Rpcs, and Client to Client Rpcs.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
 </figure>
@@ -16,7 +16,7 @@ darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
 
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 </figure>
@@ -71,7 +71,7 @@ public void PingRpc(int pingCount)
 }
 
 [Rpc(SendTo.NotServer)]
-void PongRpc(int pingCount, string message) 
+void PongRpc(int pingCount, string message)
 {
     Debug.Log($"Received pong from server for ping {pingCount} and message {message}");
 }
@@ -127,9 +127,9 @@ public class SomeNetworkBehaviour : NetworkBehaviour
     [Rpc(SendTo.Server, AllowTargetOverride = true)]
     public void SomeRpc(int serializedParameter1, float serializedParameter2, RpcParams rpcParams)
     {
-        
+
     }
-    
+
     // Sends SomeRpc() to the owner instead of the server
     public void SendSomeRpcToOwner(int param1, float param2)
     {
@@ -140,7 +140,7 @@ public class SomeNetworkBehaviour : NetworkBehaviour
 public class SomeOtherClass
 {
     public SomeNetworkBehaviour Behaviour;
-    
+
     public SendSomeRpcToOwnerOnBehaviour(int param1, float param2)
     {
         // Since this method is not within a NetworkBehaviour, RpcTarget.Owner must be accessed through
@@ -165,14 +165,14 @@ public BaseRpcTarget Not(ulong excludedClientId, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Group(NativeArray<ulong> clientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Group(NativeList<ulong> clientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Group(ulong[] clientIds, RpcTargetUse use) { /* ... */ }
-public BaseRpcTarget Group<T>(T clientIds, RpcTargetUse use) where T : IEnumerable<ulong> 
+public BaseRpcTarget Group<T>(T clientIds, RpcTargetUse use) where T : IEnumerable<ulong>
 { /* ... */ }
 
 // Sends to everyone EXCEPT a group of client IDs.
 public BaseRpcTarget Not(NativeArray<ulong> excludedClientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Not(NativeList<ulong> excludedClientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Not(ulong[] excludedClientIds, RpcTargetUse use) { /* ... */ }
-public BaseRpcTarget Not<T>(T excludedClientIds, RpcTargetUse use) where T : IEnumerable<ulong> 
+public BaseRpcTarget Not<T>(T excludedClientIds, RpcTargetUse use) where T : IEnumerable<ulong>
 { /* ... */ }
 ```
 
@@ -192,17 +192,17 @@ public void PingRpc(int pingCount, RpcParams rpcParams)
 {
     // Here we use RpcParams for incoming purposes - fetching the sender ID the RPC came from
     // That sender ID can be passed in to the PongRpc to send this back to that client and ONLY that client
-    
+
     PongRpc(pingCount, "PONG!", RpcTarget.Single(rpcParams.Receive.SenderClientId, RpcTargetUse.Temp));
 }
 
 [Rpc(SendTo.SpecifiedInParams)]
-void PongRpc(int pingCount, string message, RpcParams rpcParams) 
+void PongRpc(int pingCount, string message, RpcParams rpcParams)
 {
     // We do not use rpcParams within this method's body, but that is okay!
     // The params passed in are used by the generated code to ensure that this sends only
     // to the one client it should go to
-    
+
     Debug.Log($"Received pong from server for ping {pingCount} and message {message}");
 }
 

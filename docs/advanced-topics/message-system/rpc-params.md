@@ -4,7 +4,7 @@ title: RPC Params
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-You can configure the `Rpc`,  `ServerRpc` and `ClientRpc` methods in the following ways: 
+You can configure the `Rpc`,  `ServerRpc` and `ClientRpc` methods in the following ways:
 * Use the `[Rpc]`, `[ServerRpc]` and `[ClientRpc]` attributes at compile-time.
 * Use `ServerRpcParams` and `ClientRpcParams` at runtime.
 
