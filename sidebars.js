@@ -182,6 +182,10 @@ module.exports = {
                 },
                 {
                     "type": "doc",
+                    "id": "basics/networkvariable"
+                },
+                {
+                    "type": "doc",
                     "id": "advanced-topics/messaging-system"
                 },
                 {
@@ -218,10 +222,6 @@ module.exports = {
                             "type": "category",
                             "label": "RPCs vs NetworkVariables",
                             "items": [
-                                {
-                                    "type": "doc",
-                                    "id": "basics/networkvariable"
-                                },
                                 {
                                     "type": "doc",
                                     "id": "learn/rpcvnetvar"
