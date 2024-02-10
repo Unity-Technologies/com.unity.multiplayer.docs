@@ -133,6 +133,27 @@ You can only have one `NetworkObject` at the root of a Prefab. Don't create Pref
 
 :::
 
+### Creating a Network Prefab
+You can create a network prefab the [same way you create normal prefabs](https://docs.unity3d.com/Manual/CreatingPrefabs.html), with the only addition is that the root GameObject of the prefab should have a `NetworkObject` component added to it:
+![image](/img/createnetworkprefab.png)
+
+### Converting Prefab to Network Prefab
+Sometimes you might run into a scenario where you created a prefab and already had several in-scene placed instances of that prefab within one or more already existing scenes. Under this scenario, you will want to:
+
+- Navigate to your source network prefab.
+- Select it so its properties show up in the inspector view.
+- Find the `NetworkObject` component and right click on it.
+- At the bottom of the context menu, select the "Refresh In-Scene Prefab Instances" menu item.
+
+![image](/img/RefresInScenePrefabInstances.png)
+
+This will:
+- Open each scene, individually, within the `Build Settings --> Scenes in Build` list 
+- Automatically update each prefab instance with the correct `GlobalObjectIdHash` value and then save and close each scene.
+
+_This will process the currently opened scene as well._
+
+
 ## Spawning with (or without) Observers
 ![image](/img/SpawnWithObservers.png)
 
