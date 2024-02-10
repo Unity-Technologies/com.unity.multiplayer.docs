@@ -482,7 +482,7 @@ public struct AreaWeaponBooster : INetworkSerializable, System.IEquatable<AreaWe
 
     public bool Equals(AreaWeaponBooster other)
     {
-        return other.Equals(this) && Radius == other.Radius && Location == other.Location;
+        return ApplyWeaponBooster.Equals(other.ApplyWeaponBooster) && Radius == other.Radius && Location == other.Location;
     }
 }
 ```
