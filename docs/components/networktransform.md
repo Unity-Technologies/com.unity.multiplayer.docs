@@ -41,9 +41,9 @@ With nested NetworkTransforms, you can (theoretically) have the (n) number of ne
 
 :::tip
 **The general rule to follow is:**
- 
+
  As long as there is at least one (1) NetworkObject at the same GameObject hierarchical level or above, you can attach a NetworkTransform component to a GameObject. 
- 
+
  _You could have a single root-parent GameObject that has a NetworkObject component and under the root-parent several levels of nested child GameObjects that all have NetworkTransform components attached to them. Each child GameObject would not require a NetworkObject component in order for each respective NetworkTransform component to function/synchronize properly._
 :::
 
@@ -163,7 +163,7 @@ Say you have marked only the position and rotation axis to be synchronized but e
 
 
 ### Owner Authoritative Mode
-**(a.k.a ClientNetworkTransform)**
+**(a.k.a. ClientNetworkTransform)**
 
  Server-side authority NetworkTransforms provide a balance between synchronized transforms and the latency between applying the updates on all connected clients. However, there are times when you want the position to update immediately for a specific NetworkObject (common the player) on the client-side. Owner authority of a NetworkTransform is dictated by the `NetworkTransform.OnIsServerAuthoritative` method when a NetworkTransform component is first initialized. If it returns `true` (the default) then it initializes as a server authoritative `NetworkTransform`. If it returns `false` then it initializes as an owner authoritative `NetworkTransform` (a.k.a. `ClientNetworkTransform`). This can be achieved by deriving from `NetworkTransform`, overriding the `OnIsServerAuthoritative` virtual method, and returning false like in the code example below:
 
@@ -186,6 +186,231 @@ Optionally, you can directly add this line to your `manifest.json` file:
 
 `"com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main"`
 
+### Client Anticipation Mode
+
+**(a.k.a. AnticipatedNetworkTransform)**
+
+Client Anticipation Mode gets the benefits of server authority (consistency of state between clients and resistance to cheating) and client authority (immediate response to player input), but requires a little bit more effort to implement. There are a few ways to use AnticipatedNetworkTransform, but the three most common ways are:
+
+- **Local Simulation and Reconciliation** - the most common way of using `AnticipatedNetworkTransform` for the player's own controlled character is by duplicating the input handling on the client and server. Implementing this requires a few basic components:
+
+  - **Duplicated Simulation:** When input is received on the client, the input itself should be passed to the server via an RPC so that the server can process that input, but the client should also process that input, using `AnticipateMove()`, `AnticipateRotate()`, and `AnticipateScale()` to apply the results of that simulation. On the server, these methods not only update the anticipated (visible) state, but also update the authoritative state, so the server can actually run the exact same code as the clients without having to change how it assigns values.
+
+  - **Consistent Timing:** Timing of input processing (meaning, the delta time used in the computation) needs to be consistent on the client and server to ensure they are performing the same calculations so that the anticipation calculation can be as accurate as possible. This generally means input should be processed either in `FixedUpdate` or in a method that has been registered as a network tick callback with the `NetworkManager.NetworkTickSystem.Tick` event. This also has important implications to how input is handled, because these calls will not necessarily be called every frame, so events like `GetKeyPressed()` will potentially be missed, which means some method (such as input buffering) needs to be used to implement your own detection of key press and release events.
+
+  - **Historical Input:** In order to perform local simulation and reconciliation, player input must be recorded over time to create a historical list of inputs associated with local timestamps taken from `NetworkManager.LocalTime.Time`. (It is important to use this value and not any other time source.)
+
+  - **The OnReanticipate Delegate:** An `AnticipatedNetworkTransform` without an `OnReanticipate` delegate is not very useful, as whatever anticipation you do on the client side will be overwritten the moment a new server update comes in. In order to implement the Local Simulation and Reconciliation paradigm, this delegate (which can be registered in the `Awake()` or `OnNetworkSpawn()` events  for an attached `NetworkBehaviour`) has to be used to re-perform anticipation to get an updated current position that compensates for latency. The historical input mentioned above is used for that purpose by reapplying any inputs that have timestamps more recent than the `authorityTime` passed into the delegate. This uses the new server authority value as a base, and then compensates for the latency in receiving that update by re-applying the frames of input in between then and the present time to compensate for a new value. In the event that the newly calculated value differs from the previous anticipated value, it is then common to call something like `networkTransform.Smooth(anticipatedValue, newValue, 0.1f)`, which will smoothly interpolate from the previous anticipated value (passed into the delegate as the `anticipatedValue` parameter) and the newly calculated value.
+
+    After doing this process, the input history then needs to be trimmed to keep it from growing forever. the `authorityTime` passed to the delegate is guaranteed to always be greater than the previous one, so it is safe to remove every input in the history list whose time value is less than or equal to `authorityTime`.
+
+- **Interpolation** - The most common way of using `AnticipatedNetworkTransform` for other player characters is interpolation, which will be similar to using the normal `NetworkTransform` with the `Interpolate` option enabled. Generally speaking, the only difference between `AnticipatedNetworkTransform` and `NetworkTransform` for this use case is that `AnticipatedNetworkTransform` gives you greater control over the interpolation, as you can control the duration of the interpolation (balancing between smoothness, accurate reproduction of motion, and latency, as interpolation itself adds to the latency by adding "smoothing" time before reaching the new authoritative position). Additionally, `AnticipatedNetworkTransform` gives you the ability to react to different situations in different ways - for example, if you know a certain update represents a teleport in some way, or if the distance traveled exceeds a certain threshold, you can skip the interpolation for that update; or, you can decide the duration of the interpolation based on the distance the character needs to travel to reach the new authoritative position.
+
+  For interpolation, all you need is to register an `OnReanticipate` delegate with the `AnticipatedNetworkTransform` that calls `networkVariable.Smooth()`, which, as mentioned above, can be registered in the `Awake()` or `OnNetworkSpawn()` events  for an attached `NetworkBehaviour`.
+
+- **Extrapolation** - Whereas interpolation is mostly concerned with reducing the visual jitter associated with network updates of a character's position, and accomplishes this by *adding* a small amount of latency to the simulation, *extrapolation* is the opposite; rather than adding latency, extrapolation attempts to eliminate it. This is not frequently used with player-controlled objects, as it is almost impossible to reliably predict what the inputs you haven't received yet will contain in order to calculate a new position, but for AI-controlled characters, extrapolation can be used in a similar fashion to local simulation and reconciliation. At a basic level, this requires the same set of components as the re-simulation described above; the only difference is that the list of historical inputs is not required for extrapolation. Instead, after the server updates the state, the AI logic simply runs from the new state.
+
+  Because extrapolation, more than other forms of anticipation, may rely on more complex state (for example, the movement of an AI may depend on the value of one or more NetworkVariables) it is worth noting that all `AnticipatedNetworkVariable<T>` fields (as well as all other `NetworkVariableBase` fields) and all `AnticipatedNetworkTransform` components will be updated with their new authoritative values before any of their `OnReanticipate` callbacks are called, and that those callbacks will be called in the order of `AnticipatedNetworkVariable<T>` first, then `AnticipatedNetworkTransform`, though the order of individual variables and transforms relative to each other is undefined. After all `OnReanticipate` callbacks are called, a global `NetworkManager.OnReanticipate` callback is called so that you can perform a global reanticipation pass if you need a more defined order of anticipation. This callback accepts `HashSet<NetworkVariableBase>` and `HashSet<NetworkBehaviour>`, containing all updated `AnticipatedNetworkVariable<T>` and `AnticipatedNetworkTransform` objects, respectively, so that if you need to limit your logic to only those things that have changed, you can check if they are present in those sets before running the logic.
+
+  Standard `NetworkTransform`, however, operates differently than `AnticipatedNetworkTransform`, and will be updated at an undefined point during the Unity engine's `Update` stage, so if your `AnticipatedNetworkTransform`'s reanticipation logic relies on other network transforms, make sure they are all `AnticipatedNetworkTransform` as well so that you can get the most current information.
+
+  One note about calculations performed for extrapolation: With local simulation and reanticipation, inputs from the entire round trip time between the client and the server are used to recalculate the new position of the object. With extrapolation, however, because you are not sending anything to the server to cause an action, but simply reacting to its result and anticipating what will come next, you should only use the **half**-round-trip time to perform your calculations. This can be estimated as `(NetworkManager.LocalTime.Time - authorityTime) * 0.5f`, which is slightly less precise than the full round trip time calculation as the time may have been different in one direction compared to the other, but is the most precise measurement we can make in practice and is generally "good enough" for accurate anticipation.
+
+There is also a fourth paradigm that is less commonly used with transforms, which is an "anticipate once" paradigm. In this paradigm, you anticipate a particular result from an action, and thereafter, ignore all new updates from the server until the server has processed your request, as opposed to recalculating a new anticipated value on each update as in the above three paradigms. Due to the nature of transforms (in that they tend to represent more analog movement patterns rather than simple state values), it's very rare to use this paradigm for transforms, but if you do need this paradigm, you can use it by setting the transform's `StaleDataHandling` value to `StaleDataHandling.Ignore`. In this mode, the transform will track the next round trip to the server, ignoring any updates that arrive before one round trip is completed (updates that are considered "stale"). The general assumption is that operating in this mode will be accompanied by a message to the server (most likely an RPC) that will update the value on the server-side, and the anticipated value on the client will be left unchanged until that RPC has been processed by the server. This is done deterministically (which is to say, the anticipation system sends a message to the server and waits for a response to that specific message, as opposed to guessing based on current round trip time values).
+
+A sample showing both the **local simulation and reanticipation** and **interpolation** paradigms is available in our bitesize samples repository. The sample is intended to be run locally in three windows (one server and two clients) and shows local simulation and reanticipation for the client who is providing input for the character, and interpolation for the other client. (Technically both are running the local simulation and reanticipation code, but as the other client's input history is blank, the reanticipation does nothing, which results in it running as simple interpolation.)
+
+### Client Anticipation Example
+
+**Client Simulation and Reanticipation:**
+
+```csharp
+public class PlayerMovableObject : NetworkBehaviour
+{
+    // This object's own AnticipatedNetworkTransform, linked in the editor for easy access
+    public AnticipatedNetworkTransform MyTransform;
+    // An input manager - this is a class that can return the current frame's input,
+    // as well as input from previous frames. It also provides its own detection of key
+    // press and release events, since it is used in FixedUpdate instead of Update,
+    // and the Unity implementations of those events can result in missed inputs.
+    public InputManager InputManager;
+    public float SmoothDistance = 3;
+    
+    // InputList is a [Flags] enum that just records which buttons were pressed
+    // as one bit per input.
+    public void Move(InputList inputs)
+    {
+        if ((inputs & InputList.Up) != 0)
+        {
+            var newPosition = transform.position + transform.right * (Time.fixedDeltaTime * 4);
+            MyTransform.AnticipateMove(newPosition);
+        }
+
+        if ((inputs & InputList.Down) != 0)
+        {
+            var newPosition = transform.position - transform.right * (Time.fixedDeltaTime * 4);
+            MyTransform.AnticipateMove(newPosition);
+        }
+
+        if ((inputs & InputList.Left) != 0)
+        {
+            transform.Rotate(Vector3.up, -180f * Time.fixedDeltaTime);
+            MyTransform.AnticipateRotate(transform.rotation);
+        }
+
+        if ((inputs & InputList.Right) != 0)
+        {
+            transform.Rotate(Vector3.up, 180f * Time.fixedDeltaTime);
+            MyTransform.AnticipateRotate(transform.rotation);
+        }
+    }
+    
+    // Raw inputs are passed to the server for the server to process.
+    // The server performs the exact same logic as the client did in its anticipation.
+    [Rpc(SendTo.Server)]
+    private void ServerMoveRpc(InputList inputs)
+    {
+        // Calling Anticipate functions on the authority sets the authority value, too, so we can
+        // just reuse the same method here with no problem.
+        Move(inputs);
+    }
+    
+    // Input processing happens in FixedUpdate rather than Update because the frame rate 
+    // of server and client may not exactly match, and if that is the case, doing movement
+    // in Update based on Time.deltaTime could result in significantly different calculations
+    // between the server and client, meaning greater opportunities for desync. Performing 
+    // updates in FixedUpdate does not guarantee no desync, but it makes the calculations
+    // more consistent between the two. It also means that we don't have to worry about 
+    // delta times when replaying inputs when we get updates - we can assume a fixed amount 
+    // of time for each input. Otherwise, we would have to store the delta time of each 
+    // input and replay using those delta times to get consistent results.
+    public void FixedUpdate()
+    {
+        if (!NetworkManager.IsConnectedClient)
+        {
+            return;
+        }
+        if (!IsServer)
+        {
+            // Retrieve the inputs for the current frame
+            var inputs = InputManager.GetInput();
+            // Apply them locally
+            Move(inputs);
+            // Then replicate them to the server to be applied there as well
+            ServerMoveRpc(inputs);
+        }
+    }
+    
+    public override void OnNetworkSpawn()
+    {
+        MyTransform.OnReanticipate = (networkTransform, anticipatedValue, anticipationTime, authorityValue, authorityTime) =>
+        {
+            // Here we re-anticipate the new position of the player based on the updated
+            // server position. We do this by taking the current authoritative position 
+            // and replaying every input we have received since the reported authority time, 
+            // re-applying all the movement we have applied since then to arrive at a new
+            // anticipated player location.
+            foreach (var item in InputManager.GetHistory())
+            {
+                if (item.Time <= authorityTime)
+                {
+                    continue;
+                }
+
+                Move(item.Item, true);
+            }
+            // Clear out all the input history before the given authority time. 
+            // We don't need anything before that anymore as we won't get any more updates 
+            // from the server from before this one. We keep the current
+            // authority time because theoretically another system may need that.
+            InputManager.RemoveBefore(authorityTime);
+            // It's not always desirable to smooth the transform. 
+            // In cases of very large discrepencies in state, it can sometimes be desirable
+            // to simply teleport to the new position. We use the SmoothDistance value (and 
+            // use SqrMagnitude instead of Distance for efficiency) as a threshold for
+            // teleportation. This could also use other mechanisms of detection: 
+            // For example, when a Telport input is included in the replay set, we could 
+            // set a flag to disable smoothing because we know we are teleporting.
+            if (Vector3.SqrMagnitude(anticipatedValue.Position - networkTransform.AnticipatedState.Position) < SmoothDistance * SmoothDistance)
+            {
+                // Server updates are not necessarily smooth, so applying reanticipation 
+                // can also result in hitchy, unsmooth animations. To compensate for that,
+                // we call this to smooth from the previous anticipated state (stored in 
+                // "anticipatedValue") to the new state (which, because we have used
+                // the "Move" method that updates the anticipated state of the transform, 
+                // is now the current transform anticipated state)
+                networkTransform.Smooth(anticipatedValue, networkTransform.AnticipatedState, 0.1f);
+            }
+        };
+        base.OnNetworkSpawn();
+    }
+}
+```
+
+**Interpolation:**
+
+```csharp
+public class OtherPlayerObject : NetworkBehaviour
+{
+    // This object's own AnticipatedNetworkTransform, linked in the editor for easy access
+    public AnticipatedNetworkTransform MyTransform;
+    
+    public override void OnNetworkSpawn()
+    {
+        MyTransform.OnReanticipate = (networkTransform, anticipatedValue, anticipationTime, authorityValue, authorityTime) =>
+        {
+            // See above example for comments here: This section is the same as the above.
+            if (Vector3.SqrMagnitude(anticipatedValue.Position - networkTransform.AnticipatedState.Position) < SmoothDistance * SmoothDistance)
+            {
+                networkTransform.Smooth(anticipatedValue, networkTransform.AnticipatedState, 0.1f);
+            }
+            // That's it for interpolation!
+        };
+        base.OnNetworkSpawn();
+    }
+}
+```
+
+**Extrapolation:**
+
+```csharp
+public class EnemyObject : NetworkBehaviour
+{
+    // This object's own AnticipatedNetworkTransform, linked in the editor for easy access
+    public AnticipatedNetworkTransform MyTransform;
+    
+    public override void OnNetworkSpawn()
+    {
+        // For a simple extrapolation example, we assume that this object is moving in a straight
+        // line at a constant velocity of (1, 1, 0) units per second. This is obviously a VERY
+        // simplified example of extrapolation, but should give you a good idea of how to approach
+        // it.
+        MyTransform.OnReanticipate = (networkTransform, anticipatedValue, anticipationTime, authorityValue, authorityTime) =>
+        {
+            var smoothTime = 0.1f;
+            
+            // Calculate the amount of time in the past we currently are using the
+            // half-round-trip time combined with our smoothing time of 0.1f
+            var secondsBehind = (NetworkManager.LocalTime.Time - authoritativeTime) * 0.5f + smoothTime;
+
+            // Move the position of the authoritative value according to our constant velocity of (1, 1, 0).
+            var newAnticipatedValue = new AnticipatedNetworkTransform.TransformState
+            {
+                Position = authoritativeValue.Position + new Vector3(1, 1, 0) * secondsBehind,
+                Rotation = authoritativeValue.Rotation,
+                Scale = authoritativeValue.Scale
+            };
+            
+            // Smooth to hide jitter
+            networkTransform.Smooth(anticipatedValue, newAnticipatedValue, smoothTime);
+        };
+        base.OnNetworkSpawn();
+    }
+}
+```
+
+
+
 ## Additional Virtual Methods of Interest
 
 `NetworkTransform.OnAuthorityPushTransformState`: This virtual method is invoked when the authoritative instance is pushing a new `NetworkTransformState` to non-authoritative instances. This can be used to better determine the precise values updated to non-authoritative instances for prediction related tasks.
@@ -197,5 +422,4 @@ Optionally, you can directly add this line to your `manifest.json` file:
 `NetworkTransform.OnInitialize`: This virtual method is invoked when the associated `NetworkObject` is first spawned and when ownership changes.
 
 `NetworkTransform.Update`: This method has been made virtual in order to provide you with the ability to handle any customizations to a derived `NetworkTransform` class. If you override this method, it is required that all non-authoritative instances invoke `base.Update()` but not required for authoritative instances.
-
 

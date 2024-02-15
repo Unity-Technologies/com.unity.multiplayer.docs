@@ -331,6 +331,93 @@ The above example provides you with details on:
 You might be wondering about our earlier door example and why we chose to use a server RPC for clients to notify the server that the door's open/closed state has changed.  Under that scenario, the owner of the door will most likely be owned by the server just like non-player characters will almost always be owned by the server.  Under a server owned scenario, using an RPC to handle updating a `NetworkVariable` is the proper choice above permissions for most cases.
 :::
 
+## Client Anticipation
+
+In many scenarios, you will want to have network variables that respond to user input or user actions very quickly, with no perceptible delay between input and action. In a multiplayer context, this desire is at odds with the nature of the internet, which is that, in a server-authoritative architecture, it simply takes time for an input to reach the server, and more time for the server to respond with the result of that input, resulting in **latency** or **lag**, which creates an unpleasant (and, in some cases, unplayable) experience for users.
+
+One solution to this problem is to use client authority, which is done using the write permissions as described above. However, this has potential issues - not only does client authority open your game up to cheating, since the server cannot perform any verification on inputs from a client authority network variable, and instead simply accepts the values blindly and forwards them to other players; but, because you are operating in a game state that is on a time delay from the server state, it is possible that the action you think you can perform actually can't be performed, and without server verification to reject the action and maintain a consistent state, this can lead to a **desync** - a break in the game state where some clients get a different simulation than others, or where the game enters an invalid state because a network variable was updated in a way it wouldn't have been allowed to be if the game state had been up to date when it was updated.
+
+The other solution, which helps to avoid these issues, is **client anticipation**. In client anticipation, your game remains entirely server authoritative. When the client wants to do something that should involve a change to a network variable, it sends a message to the server asking the server to perform the action. Because this has latency, the game then acts to hide that latency by **anticipating** the result of the action - it assumes the action will succeed and updates its local simulation accordingly, acting as if the action succeeded even though it actually doesn't know the result yet. In the event that the client anticipates incorrectly and the server comes out with a different result, or rejects the action entirely, the server updates the client with the actual result, and the client reacts through a process called **reconciliation**, where the client game state is updated to fix the desync and bring it back into line with the actual server game state.
+
+To use client anticipation with network variables, you use `AnticipatedNetworkVariable<T>`. This supports all the features of `NetworkVariable<T>` *except* for the read and write permissions - `AnticipatedNetworkVariable<T>` is always writable only by the server, and readable by everyone. But in addition to those features, it has additional features for performing anticipation and reconciliation.
+
+There are four basic ways that an AnticipatedNetworkVariable can operate:
+
+- **Snap Reconciliation:** Snap Reconciliation is enabled by creating the variable with`StaleDataHandling.Ignore` and providing no `OnReanticipate` callback, making it the default mode. In this mode, when you update the variable by calling `variable.Anticipate(val)`, the variable's display value is updated to the new value, and the variable will then track the next round trip to the server, ignoring any updates that arrive before one round trip is completed (updates that are considered "stale"). The general assumption is that operating in this mode will be accompanied by a message to the server (most likely an RPC) that will update the value on the server-side, and the anticipated value on the client will be left unchanged until that RPC has been processed by the server. This is done deterministically (which is to say, the anticipation system sends a message to the server and waits for a response to that specific message, as opposed to guessing based on current round trip time values).
+
+- **Smooth Reconciliation:** Smooth reconciliation is similar to the above, but adds an `OnReconcile` callback that enables it to make the correction less jarring, so that instead of snapping to the new value, it is smoothed out in some way. This is generally done via interpolation, but it can be done in any way you like. There are two ways you can handle this: If your smoothing function can be expressed as a function that takes a start value, an end value, and a percentage value between the two, you can use `variable.Smooth(start, end, duration, method)` to have the variable automatically handle interpolation for you. The classic example is smoothing a float value using `variable.Smooth(anticipatedValue, authoritativeValue, 0.25f, Mathf.Lerp)` - this will interpolate between `anticipatedValue` (the value you last provided to `variable.Anticipate`) and `authoritativeValue` (the value that just arrived from the server) over 0.25 seconds. The other way, if your needs are more complex, is to have some external process (say, in the `NetworkBehaviour`'s `Update` event) perform the smoothing by making new calls to `variable.Anticipate()` on each frame, providing new values until it reaches the point where the anticipated and authoritative values are the same.
+
+- **Extrapolation:** Extrapolation is a process wherein a server-controlled network variable is updated continuously to compensate for latency between the server and the client. In extrapolation, you calculate the **half**-round-trip time from the server to the client and simulate that amount of time forward for the variable, calling the same functions the server would call to calculate a new value for the variable. Generally, because server updates are not consistent in their timing, you will then also want to smooth the result as mentioned above. One thing to keep in mind, however, is that smoothing adds additional latency (as it takes that much additional time to reach the actual server value), so you will want to factor the amount of time you use for your smoothing operation into your simulation - making it half-round-trip plus smooth time.
+
+  To achieve extrapolation, use `StaleDataHandling.Reanticipate` to ensure you get an `OnReanticipate` callback for every update, and then implement the `OnReanticipate` callback to perform your extrapolation logic.
+
+  The half-round-trip time to be used for extrapolation can be estimated as `(NetworkManager.LocalTime.Time - authorityTime) * 0.5f`, which is slightly less precise than the full round trip time calculation as the time may have been different in one direction compared to the other, but is the most precise measurement we can make in practice and is generally "good enough" for accurate anticipation.
+
+- **Local Simulation and Reanticipation:** This is more common for NetworkTransform than it is for NetworkVariable, but is still achievable for NetworkVariable as well when it is needed. This mode is similar to extrapolation, except that instead of updating the variable when you get an update from the server, you apply updates locally in response to player input (making this variable client-controlled) and ALSO constantly respond to updates from the server.
+
+  This is conceptually very similar to extrapolation: it still uses `StaleDataHandling.Reanticipate` coupled with an `OnReanticipate` callback that performs logic on every update. The difference here is that, rather than trying to predict what the server is doing, you are reapplying what the client has already done. This generally involves keeping a history of player inputs and reapplying all the ones that are not represented in the most recent server update to calculate a new value. Because this is more common with transforms than network variables, it is described in more detail in [NetworkTransform](../components/networktransform.md); the same basic processes described there are used for network variables of this type as well.
+
+  One thing to note: While extrapolation uses the **half**-round-trip time for its calculations (because it is only accounting for the time it took for the server to send an update to the client), local simulation and reanticipation must use the **entire** round-trip time for its calculations, as it is accounting for the time passed since the last command the client sent to the server - a full round trip.
+
+A sample showing the **Snap Reconciliation**, **Smooth Reconciliation**, and **Extrapolation** paradigms is available in our bitesize samples repository. It is intended to be run in three windows (one server and two clients) and shows how snap and smooth actions also affect other clients (which may mean, in some cases, that you may want your smoothing action to be conditional on whether or not the variable has been anticipated, or whether or not it is owned by the current client, etc).
+
+### Client Anticipation Examples
+
+```csharp
+class MyNetworkBehaviour: NetworkBehaviour
+{
+    // Both of these are created the same way. The difference is shown in OnNetworkSpawn().
+    public AnticipatedNetworkVariable<float> SnapReconciliationVariable = new AnticipatedNetworkVariable<float>(0, StaleDataHandling.Ignore);
+    public AnticipatedNetworkVariable<float> SmoothReconciliationVariable = new AnticipatedNetworkVariable<float>(0, StaleDataHandling.Ignore);
+    
+    // This variable performs extrapolation, and is thus created using StaleDataHandling.Reanticipate
+    public AnticipatedNetworkVariable<float> ExtrapolationVariable = new AnticipatedNetworkVariable<float>(0, StaleDataHandling.Reanticipate);
+    
+    private const float k_ChangePerSecond = 2.5f;
+    
+    public override void OnNetworkSpawn()
+    {
+        // SmoothReconciliationVariable reacts to a request to reanticipate by 
+        // simply smoothing between the previous anticipated value and the new
+        // authoritative value. It is not frequently updated and only needs any
+        // reanticipation action when the anticipation was wrong.
+        SmoothReconciliationVariable.OnReanticipate = (AnticipatedNetworkVariable<float> variable, in float anticipatedValue, double anticipationTime, in float authoritativeValue, double authoritativeTime) =>
+        {
+            variable.Smooth(anticipatedValue, authoritativeValue, 0.25f, Mathf.Lerp);
+        };
+
+        // ExtrapolationVariable is actually trying to anticipate the current value
+        // of a constantly changing object to hide latency. It uses the amount of 
+        // time that has passed since the authoritativetime to gauge the latency of 
+        // this update and anticipates a new value based on that delay. The server
+        // value is in the past, so the predicted value attempts to guess what the 
+        // value is in the present.
+        ExtrapolationVariable.OnReanticipate = (AnticipatedNetworkVariable<float> variable, in float anticipatedValue, double anticipationTime, in float authoritativeValue, double authoritativeTime) =>
+        {
+            var smoothTime = 0.25f;
+            
+            // Calculate the amount of time in the past we currently are using the
+            // half-round-trip time combined with our smoothing time of 0.25f
+            var secondsBehind = (NetworkManager.LocalTime.Time - authoritativeTime) * 0.5f + smoothTime;
+
+            var newAnticipatedValue = (float)(authoritativeValue + k_ChangePerSecond * secondsBehind);
+            // Smooth to hide jitter
+            variable.Smooth(anticipatedValue, newAnticipatedValue, smoothTime, Mathf.Lerp);
+        };
+    }
+    
+    private void Update()
+    {
+        if (IsServer)
+        {
+            ExtrapolationVariable.AuthoritativeValue = (ExtrapolationVariable.AuthoritativeValue + k_ChangePerSecond * Time.deltaTime);
+        }
+    }
+}
+```
+
+
+
 ## Complex Types
 
 Almost all of our examples have been focused around numeric [Value Types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types). Netcode for GameObjects also supports complex types (as mentioned in the Supported Types list above), and can support both unmanaged types *and* managed types (although avoiding managed types where possible will improve your game's performance).
