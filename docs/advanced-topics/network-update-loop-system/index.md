@@ -1,6 +1,6 @@
 ---
 id: about-network-update-loop
-title: About Network Update Loop
+title: About NetworkUpdateLoop
 ---
 
 Often there is a need to update netcode systems like RPC queue, transport IO, and others outside the standard `MonoBehaviour` event cycle.
@@ -51,4 +51,3 @@ In all `NetworkUpdateStages`, it iterates over an array and calls the `NetworkUp
 ## References
 
 See [Network Update Loop Reference](network-update-loop-reference.md) for process flow diagrams and code.
-

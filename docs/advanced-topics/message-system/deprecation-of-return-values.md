@@ -1,6 +1,6 @@
 ---
 id: deprecation-of-return-values
-title: Deprecation of Return Values
+title: Deprecation of return values
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 

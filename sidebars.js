@@ -7,7 +7,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Release Notes",
+            "label": "Release notes",
             "items": [
                 {
                     type: "doc",
@@ -28,13 +28,13 @@ module.exports = {
         },
         {
             "type": "link",
-            "label": "API Reference",
+            "label": "API reference",
             "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/index.html",
         },
         {
             "collapsed": true,
             "type": "category",
-            "label": "Get Started",
+            "label": "Get started",
             "items": [
                 {
                     "type": "doc",
@@ -61,7 +61,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Lag Conceptual Knowledge",
+            "label": "Lag conceptual knowledge",
             "items": [
                     {
                         "type": "doc",
@@ -115,7 +115,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Networking Components",
+            "label": "Networking components",
             "items": [
                 {
                     "type": "doc",
@@ -151,7 +151,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Spawning and Ownership",
+            "label": "Spawning and ownership",
             "items": [
                 {
                     "type": "doc",
@@ -170,7 +170,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Network Synchronization",
+            "label": "Network synchronization",
             "items": [
                 {
                     "type": "doc",
@@ -191,7 +191,7 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "RPC Remote Procedure Call",
+                    "label": "RPC remote procedure call",
                     "items": [
                         {
                             "type": "doc",
@@ -241,7 +241,7 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Network Update Loop",
+                    "label": "Network update loop",
                     "items": [
                         {
                             "type": "doc",
@@ -309,7 +309,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Scene Management",
+            "label": "Scene management",
             "items": [
                 {
                     "type": "doc",
@@ -318,7 +318,7 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Integrated Management",
+                    "label": "Integrated management",
                     "items": [
                         {
                             "type": "doc",
@@ -351,7 +351,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Session Management",
+            "label": "Session management",
             "items": [
                 {
                     "type": "doc",
@@ -366,7 +366,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Testing and Debugging",
+            "label": "Testing and debugging",
             "items": [
                 {
                     "type": "doc",
@@ -401,7 +401,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Educational Samples",
+            "label": "Educational samples",
             "items": [
                 {
                     "collapsed": true,
@@ -441,7 +441,7 @@ module.exports = {
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Bitesize Samples",
+                    "label": "Bitesize samples",
                     "items": [
                         {
                             "type": "doc",
@@ -470,7 +470,7 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Community Contributions",
+            "label": "Community contributions",
             "items": [
                 {
                     "type": "doc",

@@ -1,6 +1,6 @@
 ---
 id: networkobject-parenting
-title: NetworkObject Parenting
+title: NetworkObject parenting
 description: A NetworkObject parenting solution within Netcode for GameObjects (Netcode) to help developers with synchronizing transform parent-child relationships of NetworkObject components.
 ---
 

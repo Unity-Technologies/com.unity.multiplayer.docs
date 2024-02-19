@@ -1,6 +1,6 @@
 ---
 id: bossroom
-title: Getting Started with Boss Room
+title: Getting started with Boss Room
 description: Learn more about installing and running the Boss Room game sample.
 ---
 

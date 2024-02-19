@@ -1,6 +1,6 @@
 ---
 id: bossroom-architecture
-title: Boss Room Architecture
+title: Boss Room architecture
 ---
 Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It's an educational sample designed to showcase typical Netcode patterns often featured in similar multiplayer games. Players work together to fight Imps and a boss using a click-to-move control model.
 

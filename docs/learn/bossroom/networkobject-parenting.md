@@ -1,6 +1,6 @@
 ---
 id: networkobject-parenting
-title: NetworkObject Parenting inside Boss Room
+title: NetworkObject parenting inside Boss Room
 description: Learn about Boss Room's approach to NetworkObject parenting.
 ---
 :::note

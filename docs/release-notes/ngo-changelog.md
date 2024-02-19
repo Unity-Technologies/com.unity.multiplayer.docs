@@ -1,6 +1,6 @@
 ---
 id: ngo-changelog
-title: Netcode for GameObjects Changelog
+title: Netcode for GameObjects changelog
 description: NGOs changelog and release notes
 ---
 

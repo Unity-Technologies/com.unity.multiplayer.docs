@@ -1,12 +1,12 @@
 ---
 id: dilmer
-title: Dilmer Valecillos NGO Tutorial Videos
+title: Dilmer Valecillos NGO tutorial videos
 ---
 
 Dilmer Valecillos teaches various concepts about Netcode for GameObjects in the following video tutorials. Learn more about Dilmer Valecillos and his [Youtube channel](https://www.youtube.com/channel/UCHM37DnT_QGJT5Zyl4EmqcA), and don't forget to click the **Subscribe** button.
 
 :::important
-These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease. 
+These tutorials use Unity v2021.1, and Netcode for GameObjects 1.0.0 prerelease.
 :::
 
 This Unity Multiplayer tutorial will teach you how to implement connection approval so that clients have to send the correct password to be able to connect to the server.
@@ -18,17 +18,17 @@ This Unity Multiplayer tutorial will teach you how to implement connection appro
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
 Video published 14th Nov 2021
 
 This Unity Multiplayer tutorial will teach you how to implement:
-- NetworkVariable types and how to use them 
+- NetworkVariable types and how to use them
 - Network Transforms to synchronize player position across the network
-- Synchronization of Player HUD over many clients 
-- Player client controller and Network Behaviors 
+- Synchronization of Player HUD over many clients
+- Player client controller and Network Behaviors
 - How and why should you use ServerRpc (Remote Procedure Calls)
 
 <Iframe url="https://www.youtube.com/embed/rFCFMkzFaog"
@@ -38,13 +38,13 @@ This Unity Multiplayer tutorial will teach you how to implement:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
 Video published 15th Nov 2021
 
-Dilmer takes a look at the Network Animator component and how you can synchronise animation states with other clients connected to the server or client-host. Features covered: 
+Dilmer takes a look at the Network Animator component and how you can synchronise animation states with other clients connected to the server or client-host. Features covered:
 <ul>
 <li> NetworkAnimator component</li>
 <li> NetworkVariables Vector3 and permissions</li>
@@ -61,14 +61,14 @@ Dilmer takes a look at the Network Animator component and how you can synchronis
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
 Video published 15th Nov 2021
 
 Dilmer looks at how to set up multiplayer capabilities available over the internet
- 
+
 <ul>
 <li> Setting up Relay server through Unity Services</li>
 <li> Adding Unity Relay and Unity Transport UDP packages</li>
@@ -83,7 +83,7 @@ Dilmer looks at how to set up multiplayer capabilities available over the intern
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

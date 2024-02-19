@@ -1,6 +1,6 @@
 ---
 id: optimizing-bossroom
-title: Optimizing Boss Room Performance
+title: Optimizing Boss Room performance
 description: Learn how Boss Room optimizes performance.
 ---
 
