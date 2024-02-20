@@ -13,8 +13,22 @@ module.exports = {
             id: 'install'
         },
         {
-            type: 'doc',
-            id: 'virtual-players'
+            collapsed: true,
+            type: 'category',
+            label: 'Virtual players',
+            link: {type: 'doc', id: 'virtual-players'},
+            items: [
+                {
+                    type: 'doc',
+                    id: 'virtual-players'
+                },
+                {
+                    type: 'doc',
+                    id: 'virtual-players-focus'
+                }
+
+            ]
+
         },
         {
             collapsed: true,
