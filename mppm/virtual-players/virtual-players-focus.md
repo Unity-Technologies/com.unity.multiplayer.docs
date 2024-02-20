@@ -1,12 +1,12 @@
 ---
 id: virtual-players-focus
-title: Focus the multiplayer play mode view on a virtual player
-description: Select which virtual player to view in the multiplayer play mode window.
+title: Focus the  view on a virtual player
+description: Select which virtual player to view in the Multiplayer Play Mode window.
 ---
 
-To switch between virtual player views in the multiplayer play mode window, use one of the following methods:
+To switch between virtual player views in the Multiplayer Play Mode window, use one of the following methods:
 
-* [Select **Focus on Player** in the Multiplayer Play mode window](#focus-play-mode).
+* [Select **Focus on Player** in the Multiplayer Play Mode window](#focus-play-mode).
 * [Use the focus player keyboard shortcuts](#focus-shortcuts).
 
 ## Focus on a virtual player in the Multiplayer Play Mode window {#focus-play-mode}

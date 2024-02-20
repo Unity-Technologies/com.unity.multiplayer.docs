@@ -16,6 +16,6 @@ This section contains the following information:
 
 | **Page**                                              | **Description**                                        |
 |-------------------------------------------------------|--------------------------------------------------------|
-| [Enable virtual players](../virtual-players-enable)   | Set up virtual players and assign player tags.         |
-| [Focus the multiplayer play mode view on a virtual player](../virtual-players-focus) | Switch the multiplayer play mode view between players. |
+| [Enable virtual players](../virtual-players/virtual-players-enable)   | Set up virtual players and assign player tags.         |
+| [Focus the Multiplayer Play Mode view on a virtual player](../virtual-players/virtual-players-focus) | Switch the Multiplayer Play Mode view between players. |
 

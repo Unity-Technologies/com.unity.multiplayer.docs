@@ -16,15 +16,15 @@ module.exports = {
             collapsed: true,
             type: 'category',
             label: 'Virtual players',
-            link: {type: 'doc', id: 'virtual-players'},
+            link: {type: 'doc', id: 'virtual-players/virtual-players'},
             items: [
                 {
                     type: 'doc',
-                    id: 'virtual-players'
+                    id: 'virtual-players/virtual-players-enable'
                 },
                 {
                     type: 'doc',
-                    id: 'virtual-players-focus'
+                    id: 'virtual-players/virtual-players-focus'
                 }
 
             ]
