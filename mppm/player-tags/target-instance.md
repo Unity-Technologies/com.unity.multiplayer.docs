@@ -1,7 +1,6 @@
 ---
 id: target-instance
-title: Use a Player tag to run a virtual player as a server, client, or host
-sidebar_label: Assign Players different session roles example
+title: Use Player Tags to run a player as a server, client, or host
 description: This example shows how you can use Netcode for GameObjects to run a Player as a server, client, or host in Multiplayer Play Mode.
 ---
 

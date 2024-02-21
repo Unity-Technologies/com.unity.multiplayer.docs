@@ -25,29 +25,40 @@ module.exports = {
                 {
                     type: 'doc',
                     id: 'virtual-players/virtual-players-focus'
-                }
-
+                },
             ]
 
         },
         {
             collapsed: true,
             type: 'category',
-            label: 'Create Player Tags',
+            label: 'Player Tags',
             link: {type: 'doc', id: 'player-tags/player-tags'},
             items: [
                 {
                     type: 'doc',
-                    id: 'player-tags/target-instance'
+                    id: 'player-tags/player-tags-create'
                 },
                 {
-                    type: 'doc',
-                    id: 'player-tags/target-team'
-                },
-                {
-                    type: 'doc',
-                    id: 'player-tags/target-network'
-                },
+                    collapsed: true,
+                    type: 'category',
+                    label: 'Configure Player Tags',
+                    link: {type: 'doc', id: 'player-tags/player-tags-configure'},
+                    items: [
+                    {
+                        type: 'doc',
+                        id: 'player-tags/target-instance'
+                    },
+                    {
+                        type: 'doc',
+                        id: 'player-tags/target-team'
+                    },
+                    {
+                        type: 'doc',
+                        id: 'player-tags/target-network'
+                    },
+                ]
+            }
             ]
         },
         {
@@ -59,4 +70,5 @@ module.exports = {
             id: 'mtt-terms'
         },
     ],
+
 }
