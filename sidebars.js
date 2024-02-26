@@ -42,20 +42,27 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "installation/upgrade_from_mlapi",
-                },
-                {
-                    "type": "doc",
-                    "id": "installation/upgrade_from_UNet"
-                },
-                {
-                    "type": "doc",
                     "id": "tutorials/get-started-ngo"
                 },
                 {
                     "type": "doc",
                     "id": "tutorials/command-line-helper"
                 },
+                {
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Migrating",
+                  "items": [
+                    {
+                        "type": "doc",
+                        "id": "installation/upgrade_from_UNet"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "installation/upgrade_from_mlapi",
+                    },
+                  ],
+                }
             ],
         },
         {
