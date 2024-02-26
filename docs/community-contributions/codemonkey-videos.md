@@ -1,6 +1,6 @@
 ---
 id: codemonkey
-title: Code Monkey NGO tutorial videos
+title: Code Monkey tutorial videos
 ---
 
 Code Monkey has a Multiplayer Unity Networking tutorial video that teachs various concepts of Netcode for GameObjects. Learn more about Code Monkey and his [Youtube channel](https://www.youtube.com/c/CodeMonkeyUnity), and don't forget to click the **Subscribe** button.

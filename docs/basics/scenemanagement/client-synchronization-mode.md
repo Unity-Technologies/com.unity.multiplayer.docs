@@ -5,14 +5,14 @@ sidebar_label: Client synchronization mode
 ---
 
 ## Introduction
-Client synchronization occurs when immediately after a client connects to a host or server and the connection is approved. During the client synchronization process, the server will determine everything that a client might need to know about in order to join an in progress network session (networked game session). Netcode for GameObjects (NGO) provides you with the ability to select the client synchronization mode that best suits your project's needs.  During client synchronization a client will automatically set its local client synchronization mode to match that of the server or host setting.
+Client synchronization occurs when immediately after a client connects to a host or server and the connection is approved. During the client synchronization process, the server will determine everything that a client might need to know about in order to join an in progress network session (networked game session). Netcode for GameObjects provides you with the ability to select the client synchronization mode that best suits your project's needs.  During client synchronization a client will automatically set its local client synchronization mode to match that of the server or host setting.
 
 The client synchronization mode should be set when the server or host is first provided via the `NetworkSceneManager.SetClientSynchronizationMode` method that takes a [`LoadSceneMode`](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) value as a parameter. Each client synchronization mode behaves in a similar way to loading a scene based on the chosen `LoadSceneMode`.
 
 ## Single Client Synchronization Mode
 _(Existing Client-Side Scenes Unloaded During Synchronization)_
 
-If you are already familiar with NGO, then this is most likely the client synchronization mode you are familiar with.  When client synchronization mode is set to `LoadSceneMode.Single`, a client treats the synchronization similar to that of loading a scene using `LoadSceneMode.Single`.  When loading a scene in `LoadSceneMode.Single`, any currently loaded scene will be unloaded and then the new scene is loaded.  From a client synchronization mode perspective, the host or server will always have a default active scene. As such, the default active scene is loaded first in `LoadSceneMode.Single` mode and then any other additional scenes that need to be synchronized are loaded as `LoadSceneMode.Additive`.
+If you are already familiar with Netcode for GameObjects, then this is most likely the client synchronization mode you are familiar with.  When client synchronization mode is set to `LoadSceneMode.Single`, a client treats the synchronization similar to that of loading a scene using `LoadSceneMode.Single`.  When loading a scene in `LoadSceneMode.Single`, any currently loaded scene will be unloaded and then the new scene is loaded.  From a client synchronization mode perspective, the host or server will always have a default active scene. As such, the default active scene is loaded first in `LoadSceneMode.Single` mode and then any other additional scenes that need to be synchronized are loaded as `LoadSceneMode.Additive`.
 
 
 This means any scene that is loaded on the client side prior to being synchronized will be unloaded when the first/default active scene is loaded.

@@ -4,7 +4,7 @@ title: Deprecation of return values
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-Netcode for GameObjects (NGO) used to support RPC return values on convenience RPCs.
+Netcode for GameObjects used to support RPC return values on convenience RPCs.
 
 Example:
 
@@ -29,7 +29,7 @@ public float MyRpcWithReturnValue(float x, float y)
 
 ```
 
-NGO no longer supports this feature. To achieve the same functionality, use a combination of the ServerRpc and ClientRpc methods. The following code demonstrates this method:
+Netcode for GameObjects no longer supports this feature. To achieve the same functionality, use a combination of the ServerRpc and ClientRpc methods. The following code demonstrates this method:
 
 ```csharp
 void MyRpcInvoker()

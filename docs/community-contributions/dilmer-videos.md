@@ -1,6 +1,6 @@
 ---
 id: dilmer
-title: Dilmer Valecillos NGO tutorial videos
+title: Dilmer Valecillos tutorial videos
 ---
 
 Dilmer Valecillos teaches various concepts about Netcode for GameObjects in the following video tutorials. Learn more about Dilmer Valecillos and his [Youtube channel](https://www.youtube.com/channel/UCHM37DnT_QGJT5Zyl4EmqcA), and don't forget to click the **Subscribe** button.

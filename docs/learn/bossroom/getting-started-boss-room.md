@@ -237,7 +237,7 @@ Boss Room includes the following tools and utilities:
 ### Troubleshooting
 #### Bugs
 
-Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report NGO bugs using NGO Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
+Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report Netcode for GameObjects bugs using Netcode for GameObjects Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
 
 ### Licence
 
@@ -253,7 +253,7 @@ Visit the following links to learn more about Unity Netcode and Boss Room.
 
 ### Other samples
 
-The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
+The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of Netcode for GameObjects. You can review these samples with documentation to better understand our APIs and features.
 
 ### Contributing
 

@@ -1,6 +1,6 @@
 ---
 id: dapper
-title: Dapper Dino NGO tutorial videos
+title: Dapper Dino tutorial videos
 ---
 
 Dapper Dino teaches various concepts about upgrading Unity's previous Multiplayer Networking solution, MLAPI to Netcode for GameObjects. Learn more about Dapper Dino and his [Youtube channel](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw), and don't forget to click the **Subscribe** button.
