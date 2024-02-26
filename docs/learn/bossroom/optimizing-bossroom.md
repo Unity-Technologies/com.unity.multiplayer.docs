@@ -19,7 +19,7 @@ The following sections cover a handful of the most impactful optimization techni
 * [RPCs vs. NetworkVariables](#rpcs-vs-networkvariables)
 * [NetworkTransform configuration](#networktransform-configuration)
 * [Pooling](#pooling)
-* [UTP properties configuration](#utp-properties-configuration)
+* [Unity Transport properties configuration](#utp-properties-configuration)
 * [NetworkManager tick rate tweaking](#utp-properties-configuration)
 
 ## RPCs vs. NetworkVariables {#rpcs-vs-networkvariables}
@@ -61,11 +61,11 @@ You can use object pooling to optimize both networked and non-networked games by
 
 See [Object pooling](../../advanced-topics/object-pooling.md).
 
-## UTP properties configuration {#utp-properties-configuration}
+## Unity Transport properties configuration {#utp-properties-configuration}
 
-The [Unity Transport Package](../../../transport/about.md) (UTP) has properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the UnityTransport script.
+The [Unity Transport package](../../../transport/about.md) has properties you can configure to meet a game’s needs. You can find these properties in the Inspector of the UnityTransport script.
 
-The Boss Room sample shows how to adapt some UTP properties to fit its specific requirements. Most of the UTP property configuration remains unchanged. However, we changed the following property values:
+The Boss Room sample shows how to adapt some Unity Transport properties to fit its specific requirements. Most of the Unity Transport property configuration remains unchanged. However, we changed the following property values:
 
 * [Disconnect Timeout](#disconnect-timeout)
 * [Max Connect Attempts](#max-connect-attempts)
@@ -90,20 +90,20 @@ The [Max Packet Queue Size property](https://docs.unity3d.com/Packages/com.unity
 
 The impact of surpassing the Max Packet Queue Size threshold varies depending on the packet direction (sending or receiving).
 
-* If a client or the server tries to **send** more packets than the Max Packet Queue Size value during a single frame, UTP buffers the extra packets inside a send queue until the next frame update.
+* If a client or the server tries to **send** more packets than the Max Packet Queue Size value during a single frame, Unity Transport buffers the extra packets inside a send queue until the next frame update.
 * If a client or the server **receives** more packets than the Max Packet Queue Size value during a single frame, the operating system buffers the extra packets.
 
 Setting the Max Packet Queue Size parameter too low can introduce some [jitter](../../learn/lagandpacketloss.md) during frames where the number of packets sent or received is too high.  On the other hand, setting the Max Packet Queue Size parameter too high would use more memory than necessary.
 
 :::note
-**Note**: Each unit in the Max Packet Queue Size parameter uses roughly 4 KB of memory. This value is based on twice the maximum size of a packet, which UTP defines internally (it isn't exposed to Netcode users since this parameter governs the sizes of both the send and receive queues).
+**Note**: Each unit in the Max Packet Queue Size parameter uses roughly 4 KB of memory. This value is based on twice the maximum size of a packet, which Unity Transport defines internally (it isn't exposed to Netcode users since this parameter governs the sizes of both the send and receive queues).
 :::
 
-The Boss Room sample uses a Max Packet Queue Size property value of 256. The reasoning behind choosing 256 is specific to how Boss Room uses UTP.
+The Boss Room sample uses a Max Packet Queue Size property value of 256. The reasoning behind choosing 256 is specific to how Boss Room uses Unity Transport.
 
 In the Boss Room sample, we found that the Max Packet Queue Size default value was too low, so we increased it. However, it didn’t make sense to increase the Max Packet Queue Size too much because Boss Room only uses reliable channels for its NetworkVariable updates, RPCs, and custom messages. Reliable channels only support 32 in-flight packets per connection.
 
-As a result, the maximum number of reliable packets sent or received in a single frame is the number of players (minus the host) multiplied by 32 (the maximum number of in-flight packets). For example, a game of eight players would have a maximum of 224 (seven times 32) reliable in-flight packets. To allow some leeway for the internal traffic from UTP itself (such as resend/ACKs of reliable packets and heartbeats), we chose a slightly higher value of 256.
+As a result, the maximum number of reliable packets sent or received in a single frame is the number of players (minus the host) multiplied by 32 (the maximum number of in-flight packets). For example, a game of eight players would have a maximum of 224 (seven times 32) reliable in-flight packets. To allow some leeway for the internal traffic from Unity Transport itself (such as resend/ACKs of reliable packets and heartbeats), we chose a slightly higher value of 256.
 
 ## NetworkManager tick rate configuration {#networkmanager-tick-rate-configuration}
 

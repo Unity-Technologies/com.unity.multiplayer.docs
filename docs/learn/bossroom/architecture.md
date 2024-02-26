@@ -59,11 +59,11 @@ With the Unity Relay network transport, clients don’t need to worry about shar
 
 See the [Multiplayer over the internet](getting-started-boss-room.md) section of the Boss Room README for more information about using the two network transport mechanisms.
 
-Boss Room uses the Unity Transport Package (UTP). Boss Room's assigns its instance of Unity Transport to the `transport` field of the `NetworkManager`.
+Boss Room uses the Unity Transport package. Boss Room's assigns its instance of Unity Transport to the `transport` field of the `NetworkManager`.
 
-The Unity Transport Package is a network transport layer with network simulation tools that help spot networking issues early during development. Boss Room has both buttons to start a game in the two modes and will setup UTP automatically to use either one of them at runtime.
+The Unity Transport Package is a network transport layer with network simulation tools that help spot networking issues early during development. Boss Room has both buttons to start a game in the two modes and will setup Unity Transport automatically to use either one of them at runtime.
 
-Unity Transport supports Unity Relay (provided by Unity Gaming Services). See the documentation on [Unity Transport Package](../../../transport/about.md) and [Unity Relay](https://docs-multiplayer.unity3d.com/docs/relay/relay) for more information.
+Unity Transport supports Unity Relay (provided by Unity Gaming Services). See the documentation on [Unity Transport package](../../../transport/about.md) and [Unity Relay](https://docs-multiplayer.unity3d.com/docs/relay/relay) for more information.
 
 ## Connection flow state machine
 
