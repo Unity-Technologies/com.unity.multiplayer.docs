@@ -3,7 +3,7 @@ id: relay
 title: Relay
 ---
 
-With [Netcode for GameObjects (NGO)](https://docs-multiplayer.unity3d.com/netcode/current/about/) you can use an IP address and a port to connect a client to a host over the internet. However, using an IP address to establish a connnection doesn't always work. Instead, use [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction) to succesfully initiate a connection between multiple clients and a host.
+With [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/about/) you can use an IP address and a port to connect a client to a host over the internet. However, using an IP address to establish a connnection doesn't always work. Instead, use [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction) to succesfully initiate a connection between multiple clients and a host.
 
 Many factors impact how you connect to the remote host. To connect to a remote host, use one of the following methods:
 
@@ -14,7 +14,7 @@ Netcode doesn't offer tools to help you punch through a NAT. However, you can us
 
 # How to use Relay
 
-To access a Relay server, do the following: 
+To access a Relay server, do the following:
 * As the host, request an allocation on the relay server.
 * As a client, use the [join code](https://docs.unity.com/relay/en/manual/join-codes) that the host creates to connect to the relay server. This code allows the host and clients to communicate through the Relay server without disclosing their IP addresses and ports directly.
 
@@ -24,12 +24,12 @@ To enable and set up Relay in a project, follow the steps in [Get started with R
 
 ## Test the Relay service in the Unity Editor
 
-From Unity version 2022.3, you can test the Relay service with Netcode for GameObjects (NGO) in the editor. To do this, do the following: 
-1. Follow the steps in [Get started with NGO](https://docs-multiplayer.unity3d.com/netcode/current/tutorials/get-started-ngo/). 
+From Unity version 2022.3, you can test the Relay service with Netcode for GameObjects in the editor. To do this, do the following:
+1. Follow the steps in [Get started with Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/tutorials/get-started-ngo/).
 2. Follow the steps in [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started).
-3. Open the inspector window and select the Network Manager. 
+3. Open the inspector window and select the Network Manager.
 4. Navigate to the Start Connection section
-5. Check the **Try Relay in the editor** box. 
+5. Check the **Try Relay in the editor** box.
 6. Select **Start Server** or **Start Host** to start the server or host.
 7. In the inspector, copy the [join code](https://docs.unity.com/relay/en/manual/join-codes).
 8. Enter the join code in a new window running the same project.
@@ -141,7 +141,7 @@ public async Task<string> StartHostWithRelay(int maxConnections=5)
         //If not already logged, log the user in
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
-    
+
     // Request allocation and join code
     Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
     var joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
