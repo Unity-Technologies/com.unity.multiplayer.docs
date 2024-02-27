@@ -1,6 +1,6 @@
 ---
 id: bitesize-spaceshooter
-title: 2D Space Shooter Sample
+title: 2D Space Shooter sample
 description: Learn more about physics movement and status effects using Netcode for GameObjects (Netcode) NetworkVariables and ObjectPooling .
 ---
 

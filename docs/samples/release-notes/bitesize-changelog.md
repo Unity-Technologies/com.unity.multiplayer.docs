@@ -1,6 +1,6 @@
 ---
 id: bitesize-changelog
-title: Multiplayer Bitesize Samples
+title: Multiplayer Bitesize samples
 description: Bitesize changelog and release notes
 ---
 
