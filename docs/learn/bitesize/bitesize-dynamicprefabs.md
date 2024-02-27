@@ -1,6 +1,6 @@
 ---
 id: bitesize-dynamicPrefabs
-title: Dynamic Prefabs Sample
+title: Dynamic Prefabs sample
 description: Learn more about the dynamic Prefab system, which allows you to add new spawnable Prefabs at runtime.
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: bitesize-introduction
-title: About Bitesize Samples
+title: About Bitesize samples
 ---
 
 The Bitesize Samples repository provides a series of sample code as modules to use in your games and better understand Netcode for GameObjects (Netcode).

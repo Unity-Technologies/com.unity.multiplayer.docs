@@ -8,9 +8,9 @@ With every new connection, Netcode for GameObjects (Netcode) performs a handshak
 Connection approval allows you to decide, on a per connection basis, whether to allow a connection. Connection approval also enables you to specify the player Prefab to create, allowing you to override the default NetworkManager defined player Prefab on a per player basis. By setting ConnectionApproval property of the NetworkManager to true, Netcode checks to make sure the `NetworkManager.ConnectionApprovalCallback` has been assigned. If assigned, Netcode uses the connection approval process for connecting clients whether to allow a connection or deny it.
 
 :::warning
-Netcode for GameObjects (NGO) does not encrypt or authenticate any of the raw information sent over connection approval. To prevent man-in-the-middle attacks, you should AVOID sending authentication tokens (such as Steam tickets or user passwords) over connection approval without additional safety precautions.
+Netcode for GameObjects does not encrypt or authenticate any of the raw information sent over connection approval. To prevent man-in-the-middle attacks, you should AVOID sending authentication tokens (such as Steam tickets or user passwords) over connection approval without additional safety precautions.
 
-The examples in this article are to illustrate how NGO does not protect any connection data, and does not show how to incorporate encryption, authentication, or some other method of data security.
+The examples in this article are to illustrate how Netcode for GameObjects does not protect any connection data, and does not show how to incorporate encryption, authentication, or some other method of data security.
 :::
 
 :::note
@@ -42,7 +42,7 @@ Unlike earlier versions of Netcode for GameObjects where users provided a callba
 ```csharp
 using Unity.Netcode;
 
-private void Setup() 
+private void Setup()
 {
     NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
     NetworkManager.Singleton.StartHost();
@@ -68,7 +68,7 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
 
     // Rotation to spawn the player object (if null it uses the default of Quaternion.identity)
     response.Rotation = Quaternion.identity;
-    
+
     // If response.Approved is false, you can provide a message that explains the reason why via ConnectionApprovalResponse.Reason
     // On the client-side, NetworkManager.DisconnectReason will be populated with this message via DisconnectReasonMessage
     response.Reason = "Some reason for not approving the client";
@@ -81,7 +81,7 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
 
 ## Sending an approval declined reason (`NetworkManager.ConnectionApprovalResponse.Reason`)
 
-Under the condition that you need to deny a player from connecting for any reason (such as if they reached the maximum number of connections or provided an invalid authorization), the `NetworkManager.ConnectionApprovalResponse` structure provides you with the optional `NetworkManager.ConnectionApprovalResponse.Reason` property. 
+Under the condition that you need to deny a player from connecting for any reason (such as if they reached the maximum number of connections or provided an invalid authorization), the `NetworkManager.ConnectionApprovalResponse` structure provides you with the optional `NetworkManager.ConnectionApprovalResponse.Reason` property.
 
 When `NetworkManager.ConnectionApprovalResponse.Approved` is false and `NetworkManager.ConnectionApprovalResponse.Reason` is populated with the reason for denying the player's request to connect, the server sends the client a `DisconnectReasonMessage`. Upon the client side receiving the `DisconnectReasonMessage`, the `NetworkManager.DisconnectReason` property populates with the `NetworkManager.ConnectionApprovalResponse.Reason` message. The example below shows how this works:
 
@@ -145,7 +145,7 @@ The `Payload`, defined by the client-side `NetworkConfig.ConnectionData`, is sen
 
 ## Timeout
 
-Netcode uses a callback system to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steam servers. This can take some time, so you will want to set the `NetworkManager.ConnectionApprovalResponse.Pending` to true while the steam server (or other third party authentication service) occurs. 
+Netcode uses a callback system to allow for external validation. For example, you might have a steam authentication ticket sent as the `ConnectionData` that you want to validate against steam servers. This can take some time, so you will want to set the `NetworkManager.ConnectionApprovalResponse.Pending` to true while the steam server (or other third party authentication service) occurs.
 
 If the third party authentication process (steam servers) takes longer than the time specified by the `NetworkConfig.ClientConnectionBufferTimeout`, then the connection is dropped. The timer for this starts when the server is notified of the new inbound client connection. You can set the **Client Connection Buffer Timeout** value via the `NetworkManager` in the Inspector view or with the `NetworkManager.NetworkConfig.ClientConnectionBufferTimeout` property.
 
@@ -155,12 +155,12 @@ If you enable connection approval, the server silently ignores any messages sent
 
 ### Connection data security
 
-The connection data isn't encrypted or authenticated. 
+The connection data isn't encrypted or authenticated.
 
 :::warning
-Netcode for GameObjects (NGO) does not encrypt or authenticate any of the raw information sent over connection approval. To prevent man-in-the-middle attacks, you should AVOID sending authentication tokens (such as Steam tickets or user passwords) over connection approval without additional safety precautions.
+Netcode for GameObjects does not encrypt or authenticate any of the raw information sent over connection approval. To prevent man-in-the-middle attacks, you should AVOID sending authentication tokens (such as Steam tickets or user passwords) over connection approval without additional safety precautions.
 
-The examples in this article are to illustrate how NGO does not protect any connection data, and does not show how to incorporate encryption, authentication, or some other method of data security.
+The examples in this article are to illustrate how Netcode for GameObjects does not protect any connection data, and does not show how to incorporate encryption, authentication, or some other method of data security.
 :::
 
 ## Changing the player Prefab

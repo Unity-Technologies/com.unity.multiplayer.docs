@@ -1,9 +1,9 @@
 ---
 id: arrays
-title: Arrays and Native Containers
+title: Arrays and native containers
 ---
 
-Arrays of [C# primitive types](cprimatives.md), like `int[]`, and [Unity primitive types](unity-primatives.md), such as `Vector3`, are serialized by built-in serialization code. Otherwise, any array of types that aren't handled by the built-in serialization code, such as `string[]`, needs to be handled through a container class or structure that implements the  [`INetworkSerializable`](inetworkserializable.md) interface.
+Arrays of [C# primitive types](cprimatives.md), like `int[]`, and [Unity primitive types](unity-primitives.md), such as `Vector3`, are serialized by built-in serialization code. Otherwise, any array of types that aren't handled by the built-in serialization code, such as `string[]`, needs to be handled through a container class or structure that implements the  [`INetworkSerializable`](inetworkserializable.md) interface.
 
 ## Built-In Primitive Types Example
 Using built-in primitive types is fairly straight forward:
@@ -17,8 +17,8 @@ There are many ways to handle sending an array of managed types.
 The below example is a simple `string` container class that implements `INetworkSerializable` and can be used as an array of "StringContainers":
 ```csharp
 [Rpc(SendTo.ClientsAndHost)]
-void SendMessagesClientRpc(StringContainer[] messages) 
-{ 
+void SendMessagesClientRpc(StringContainer[] messages)
+{
     foreach (var stringContainer in stringContainers)
     {
         Debug.Log($"{stringContainer.SomeText}");
@@ -65,7 +65,7 @@ To serialize a `NativeList` container, you must:
    2. Select the **Other Settings** dropdown.
    3. Scroll to **Script Compilation** > **Scripting Define Symbols**.
    4. Add `UNITY_NETCODE_NATIVE_COLLECTION_SUPPORT`.
-3. Use `serializer.SerializeValue(ref List)` as your serialization syntax. 
+3. Use `serializer.SerializeValue(ref List)` as your serialization syntax.
 
 :::important
 When using `NativeLists` within `INetworkSerializable`, the list `ref` value must be a valid, initialized `NativeList`.

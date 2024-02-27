@@ -1,11 +1,11 @@
 ---
 id: dapper
-title: Dapper Dino NGO Tutorial Videos
+title: Dapper Dino tutorial videos
 ---
 
 Dapper Dino teaches various concepts about upgrading Unity's previous Multiplayer Networking solution, MLAPI to Netcode for GameObjects. Learn more about Dapper Dino and his [Youtube channel](https://www.youtube.com/channel/UCjCpZyil4D8TBb5nVTMMaUw), and don't forget to click the **Subscribe** button.
 
-This Unity Multiplayer tutorial will teach you how to upgrade your project from MLAPI to Unity's Netcode For GameObjects. 
+This Unity Multiplayer tutorial will teach you how to upgrade your project from MLAPI to Unity's Netcode For GameObjects.
 
 <Iframe url="https://www.youtube.com/embed/PnQutPyMZhI"
         width="854px"
@@ -14,11 +14,11 @@ This Unity Multiplayer tutorial will teach you how to upgrade your project from 
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
-   
+
 
 Video published Nov 19, 2021
 
