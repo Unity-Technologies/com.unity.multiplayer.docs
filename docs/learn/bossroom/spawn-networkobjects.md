@@ -1,6 +1,6 @@
 ---
 id: spawn-networkobjects
-title: Dynamically spawning NetworkObjects in Boss Room to Resolve Zombie NetworkObjects
+title: Dynamically spawning NetworkObjects in Boss Room to resolve zombie NetworkObjects
 description: Learn how to dynamically spawn NetworkObjects in Boss Room to resolve zombie NetworkObjects.
 ---
 :::note

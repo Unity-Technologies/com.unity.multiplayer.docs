@@ -1,6 +1,6 @@
 ---
 id: bitesize-invaders
-title: Invaders Sample
+title: Invaders sample
 description: Learn more about game flow, modes, unconventional movement networked, and a shared timer using Netcode for GameObjects.
 ---
 
@@ -17,7 +17,7 @@ Invaders implements this game-flow by creating different controller classes that
 The backbones of the flow/system mentioned above is consisting of two main components:
 
 * `SceneTransitionHandler`
-* `SceneState` 
+* `SceneState`
 * `Lobby Controller`
 
 ### SceneTransitionHandler

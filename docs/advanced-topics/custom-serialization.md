@@ -1,6 +1,6 @@
 ---
 id: custom-serialization
-title: Custom Serialization
+title: Custom serialization
 ---
 
 Netcode uses a default serialization pipeline when using `RPC`s, `NetworkVariable`s, or any other Netcode-related tasks that require serialization. The serialization pipeline looks like this:
@@ -81,7 +81,7 @@ UserNetworkVariableSerialization<Url>.WriteValue = (FastBufferWriter writer, in 
     writer.WriteValueSafe(url.Value);
 };
 
-UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url) 
+UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url)
 {
     reader.ReadValueSafe(out string val);
     url = new Url(val);

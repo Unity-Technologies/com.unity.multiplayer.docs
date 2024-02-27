@@ -21,7 +21,7 @@ For example, the above itemized tasks don't take into consideration:
 - If you have a complex parenting hierarchy (parents with one or more child transforms), should you synchronize world or local space axis values?
 - How can you optimize the bandwidth cost per transform update?
 
-Fortunately, NGO provides you withNetworkTransform component implementation that handles some of the trickier aspects of transform synchronization and is easily configurable by properties accessible via the in-editor inspector view.
+Fortunately, Netcode for GameObjects provides you withNetworkTransform component implementation that handles some of the trickier aspects of transform synchronization and is easily configurable by properties accessible via the in-editor inspector view.
 
 ## Adding
 When adding a NetworkTransform component to a GameObject, you should always make sure the GameObject has a NetworkObject component attached to it or that the GameObject's transform parent is assigned to a GameObject with a NetworkObject component attached to it like in the image below:
@@ -41,9 +41,9 @@ With nested NetworkTransforms, you can (theoretically) have the (n) number of ne
 
 :::tip
 **The general rule to follow is:**
- 
- As long as there is at least one (1) NetworkObject at the same GameObject hierarchical level or above, you can attach a NetworkTransform component to a GameObject. 
- 
+
+ As long as there is at least one (1) NetworkObject at the same GameObject hierarchical level or above, you can attach a NetworkTransform component to a GameObject.
+
  _You could have a single root-parent GameObject that has a NetworkObject component and under the root-parent several levels of nested child GameObjects that all have NetworkTransform components attached to them. Each child GameObject would not require a NetworkObject component in order for each respective NetworkTransform component to function/synchronize properly._
 :::
 
@@ -62,7 +62,7 @@ You often don't need to synchronize all transform values of a GameObject over th
 The term "synchronizing" refers to the synchronization of axis values over time. This is not to be confused with the initial synchronization of a transform's values. As an example:
  If you don't plan on changing the transform's scale after the initial first synchronization (i.e. upon joining a network session or when a network prefab instance is spawned for the first time), then un-checking/disabling the X, Y, and Z properties for Scale synchronization would remove the additional processing overhead per instance.
 
-Since these values really only apply to the authoritative instance, changes can be made to these values during runtime and non-authoritative instances will only receive updates for the axis marked for synchronization on the authoritative side. 
+Since these values really only apply to the authoritative instance, changes can be made to these values during runtime and non-authoritative instances will only receive updates for the axis marked for synchronization on the authoritative side.
 
 ### Thresholds
 
@@ -132,17 +132,17 @@ This property value can be updated on the authority during runtime and will be s
 ### Use Half Float Precision
 Enabling this property does exactly what it sounds like, it converts any transform axial value from a 4 byte float to a 2 byte half-float at the expense of a loss in precision. When this option is enabled, half float precision is used for all transform axis marked for synchronization. However, there are some unique aspects of half float precision when it comes to position and rotation.
 
-Since there is a loss in precision, position state updates only provide the delta in position relative to the last known full position. The `NetworkDeltaPosition` serializable structure keeps track of the current delta between the last known full position and the current delta offset from the last known full position. Additionally, `NetworkDeltaPosition` auto-corrects precision loss by determining any loss of precision on the authoritative side when sending an update. Any precision delta from the previous update will be included in the next position update. _In other words, non-authoritative instances can potentially have a fractional delta (per applied update) from the authoritative instance for the duration of 1 network tick period or until the next transform state update is received._ Additionally, `NetworkDeltaPosition` bridges the gap between the [maximum half float value](https://github.com/Unity-Technologies/Unity.Mathematics/blob/701d58fde76f3b93e40d0a792cd8fa4c130f1450/src/Unity.Mathematics/half.cs#L25) and the maximum boundaries of the Unity World space (global/project scale relative). 
+Since there is a loss in precision, position state updates only provide the delta in position relative to the last known full position. The `NetworkDeltaPosition` serializable structure keeps track of the current delta between the last known full position and the current delta offset from the last known full position. Additionally, `NetworkDeltaPosition` auto-corrects precision loss by determining any loss of precision on the authoritative side when sending an update. Any precision delta from the previous update will be included in the next position update. _In other words, non-authoritative instances can potentially have a fractional delta (per applied update) from the authoritative instance for the duration of 1 network tick period or until the next transform state update is received._ Additionally, `NetworkDeltaPosition` bridges the gap between the [maximum half float value](https://github.com/Unity-Technologies/Unity.Mathematics/blob/701d58fde76f3b93e40d0a792cd8fa4c130f1450/src/Unity.Mathematics/half.cs#L25) and the maximum boundaries of the Unity World space (global/project scale relative).
 
 :::info
 
 **Recommended Unity World Space Units Per Second:**
 
-The maximum delta per update should not exceed 64 Unity world space units. If you are using the default network tick (30) then an object should not move at speeds that are equal to or exceed 1,920 Unity world space units per second (i.e. 30 x 64). To give you a frame of reference, the default camera far clipping plane is 1,000 Unity world space units which means something moving at 1,920 Unity world space units would most likely not be visually detectable or appear as a brief "blip" in the render view frustum. 
+The maximum delta per update should not exceed 64 Unity world space units. If you are using the default network tick (30) then an object should not move at speeds that are equal to or exceed 1,920 Unity world space units per second (i.e. 30 x 64). To give you a frame of reference, the default camera far clipping plane is 1,000 Unity world space units which means something moving at 1,920 Unity world space units would most likely not be visually detectable or appear as a brief "blip" in the render view frustum.
 
 :::
 
-When **Use Quaternion Synchronization** and **Use Half Float Precision** are both enabled and **Use Quaternion Compression** is disabled, the quaternion values are synchronized via the `HalfVector4` serializable structure where each axial value (x, y, z, and w) are stored as [half values](https://docs.unity3d.com/Packages/com.unity.mathematics@1.2/api/Unity.Mathematics.half.html). This means that each rotation update is reduced from a full precision 16 bytes per update down to 8 bytes per update. Using half float precision for rotation provides a better precision than quaternion compression at 2x the bandwidth cost but half the cost of full precision. 
+When **Use Quaternion Synchronization** and **Use Half Float Precision** are both enabled and **Use Quaternion Compression** is disabled, the quaternion values are synchronized via the `HalfVector4` serializable structure where each axial value (x, y, z, and w) are stored as [half values](https://docs.unity3d.com/Packages/com.unity.mathematics@1.2/api/Unity.Mathematics.half.html). This means that each rotation update is reduced from a full precision 16 bytes per update down to 8 bytes per update. Using half float precision for rotation provides a better precision than quaternion compression at 2x the bandwidth cost but half the cost of full precision.
 
 When **Use Quaternion Synchronization**, **Use Half Float Precision**, and **Use Quaternion Compression** are enabled, quaternion compression is used in place of half float precision for rotation.
 
@@ -152,7 +152,7 @@ All of these properties are synchronized to non-authoritative instances when upd
 ## Authority modes
 
 ### Server Authoritative Mode
-By default, `NetworkTransform` operates in server authoritative mode. This means that changes to transform axis (marked to be synchronized) are detected on the server-side and pushed to connected clients. This also means any changes to the transform axis values will be overridden by the authoritative state (in this case the server-side transform state). 
+By default, `NetworkTransform` operates in server authoritative mode. This means that changes to transform axis (marked to be synchronized) are detected on the server-side and pushed to connected clients. This also means any changes to the transform axis values will be overridden by the authoritative state (in this case the server-side transform state).
 
 There is another concept to keep in mind about axis synchronization vs the initial synchronized transform values. Any axis not marked to be synchronized will still be updated with the authority's initial state when a NetworkObject is spawned or when a client is synchronized for the first time.
 
@@ -197,5 +197,3 @@ Optionally, you can directly add this line to your `manifest.json` file:
 `NetworkTransform.OnInitialize`: This virtual method is invoked when the associated `NetworkObject` is first spawned and when ownership changes.
 
 `NetworkTransform.Update`: This method has been made virtual in order to provide you with the ability to handle any customizations to a derived `NetworkTransform` class. If you override this method, it is required that all non-authoritative instances invoke `base.Update()` but not required for authoritative instances.
-
-

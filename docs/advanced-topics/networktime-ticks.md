@@ -1,7 +1,7 @@
 ---
 id: networktime-ticks
-title: NetworkTime and Ticks
-sidebar_label: NetworkTime & Ticks
+title: NetworkTime and ticks
+sidebar_label: NetworkTime and ticks
 ---
 
 ## LocalTime and ServerTime
@@ -12,7 +12,7 @@ Netcode for GameObjects (Netcode) uses a star topology. That means all communica
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
-  
+
 
 
 <Mermaid chart={`
@@ -200,4 +200,3 @@ The properties of the `NetworkTimeSystem` should be left untouched on the server
 The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. Refer to the [API docs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkTimeSystem.html) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance, buffer values can be increased for a player with a bad connection.
 
 <!-- On page code -->
-

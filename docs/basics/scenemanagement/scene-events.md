@@ -1,7 +1,7 @@
 ---
 id: scene-events
-title: Scene Events
-sidebar_label: Scene Events
+title: Scene events
+sidebar_label: Scene events
 ---
 :::caution
 If you haven't already read the [Using NetworkSceneManager](using-networkscenemanager.md) section, it's highly recommended to do so before proceeding.

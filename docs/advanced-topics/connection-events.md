@@ -1,7 +1,7 @@
 ---
 id: connection-events
-title: Connection Events
-sidebar_label: Connection Events
+title: Connection events
+sidebar_label: Connection events
 
 ---
 
