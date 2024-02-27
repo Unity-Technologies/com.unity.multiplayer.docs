@@ -1,11 +1,11 @@
 ---
 id: custom-messages
-title: Custom Messages 
+title: Custom messages 
 description: A brief explanation of Custom Messages use in Netcode for GameObjects (Netcode) covering Named and Unnamed messages.
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-If you don't want to use the Netcode for GameObjects (Netcode) messaging system, you don't have to. You can use a thin layer called "Custom Messages" to implement your own messaging behavior or add custom targeting. They're unbound to any GameObject. You can use Custom messages with [RPC messages](../messaging-system.md). 
+If you don't want to use the Netcode for GameObjects (Netcode) messaging system, you don't have to. You can use a thin layer called "Custom Messages" to implement your own messaging behavior or add custom targeting. They're unbound to any GameObject. You can use Custom messages with [RPC messages](../messaging-system.md).
 
 There are two types of custom messages:
 - Unnamed

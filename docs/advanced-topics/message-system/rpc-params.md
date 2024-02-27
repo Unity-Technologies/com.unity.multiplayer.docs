@@ -1,6 +1,6 @@
 ---
 id: rpc-params
-title: RPC Params
+title: RPC params
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
