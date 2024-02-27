@@ -23,7 +23,7 @@ This Unity Multiplayer tutorial will teach you how to upgrade your project from 
 Video published Nov 19, 2021
 
 :::important
-These tutorials use Unity v2021.1, and MLAPI 0.1.0.  For imformation on modyfing the code for use with Netcode for GameObjects please see [here](../installation/migratingfrommlapi.md)
+These tutorials use Unity v2021.1, and MLAPI 0.1.0.  For information on modifying the code for use with Netcode for GameObjects please see [here](../installation/migratingfrommlapi.md)
 :::
 
 :::contribution Community Contribution
