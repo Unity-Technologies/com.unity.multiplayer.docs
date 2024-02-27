@@ -1,6 +1,6 @@
 ---
 id: bossroom-architecture
-title: Boss Room Architecture
+title: Boss Room architecture
 ---
 Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. It's an educational sample designed to showcase typical Netcode patterns often featured in similar multiplayer games. Players work together to fight Imps and a boss using a click-to-move control model.
 
@@ -59,15 +59,15 @@ With the Unity Relay network transport, clients don’t need to worry about shar
 
 See the [Multiplayer over the internet](getting-started-boss-room.md) section of the Boss Room README for more information about using the two network transport mechanisms.
 
-Boss Room uses the Unity Transport Package (UTP). Boss Room's assigns its instance of Unity Transport to the `transport` field of the `NetworkManager`.
+Boss Room uses the Unity Transport package. Boss Room's assigns its instance of Unity Transport to the `transport` field of the `NetworkManager`.
 
-The Unity Transport Package is a network transport layer with network simulation tools that help spot networking issues early during development. Boss Room has both buttons to start a game in the two modes and will setup UTP automatically to use either one of them at runtime.
+The Unity Transport Package is a network transport layer with network simulation tools that help spot networking issues early during development. Boss Room has both buttons to start a game in the two modes and will setup Unity Transport automatically to use either one of them at runtime.
 
-Unity Transport supports Unity Relay (provided by Unity Gaming Services). See the documentation on [Unity Transport Package](../../../transport/about.md) and [Unity Relay](https://docs-multiplayer.unity3d.com/docs/relay/relay) for more information.
+Unity Transport supports Unity Relay (provided by Unity Gaming Services). See the documentation on [Unity Transport package](../../../transport/about.md) and [Unity Relay](https://docs-multiplayer.unity3d.com/docs/relay/relay) for more information.
 
 ## Connection flow state machine
 
-The `ConnectionManager`, a simple state machine, owns Boss Room’s network connection flow. It receives inputs from NGO (or the user) and handles the inputs according to its current state. Each state inherits from the `ConnectionState` abstract class. If you add a new transport, you must extend the `StartingHostState` and `ClientConnectingState` states. Both of these classes assume you're using the UTP transport.
+The `ConnectionManager`, a simple state machine, owns Boss Room’s network connection flow. It receives inputs from Netcode for GameObjects (or the user) and handles the inputs according to its current state. Each state inherits from the `ConnectionState` abstract class. If you add a new transport, you must extend the `StartingHostState` and `ClientConnectingState` states. Both of these classes assume you're using the Unity Transport transport.
 
 ![Connection flow state machine](/img/arch-3.png)
 
@@ -105,12 +105,12 @@ An `Avatar` is at the same level as an `Imp` and lives in a scene. A `Persistent
 A `Persistent Player` Prefab goes into the `Player` Prefab slot in the `NetworkManager` of Boss Room. As a result, Boss Room spawns a single `Persistent Player` Prefab per client, and each client owns their respective `Persistent Player` instances.
 
 :::note
-There is no need to mark `Persistent Player` instances as `DontDestroyOnLoad`. NGO automatically keeps these prefabs alive between scene loads while the connections are live.
+There is no need to mark `Persistent Player` instances as `DontDestroyOnLoad`. Netcode for GameObjects automatically keeps these prefabs alive between scene loads while the connections are live.
 :::
 
 The `Persistent Player` Prefab stores synchronized data about a player, such as their name and selected `PlayerAvatar` GUID.
 
-Each connected client owns their respective instance of the PlayerAvatar prefab. NGO destroys the `PlayerAvatar` instance when a scene load occurs (either to the `PostGame` or `MainMenu` scenes) or if the client disconnects.
+Each connected client owns their respective instance of the PlayerAvatar prefab. Netcode for GameObjects destroys the `PlayerAvatar` instance when a scene load occurs (either to the `PostGame` or `MainMenu` scenes) or if the client disconnects.
 
 In the `CharSelect` scene, clients select from eight possible avatar classes. Boss Room stores each player’s selection inside the `PersistentPlayer`'s `NetworkAvatarGuidState`.
 
@@ -231,7 +231,7 @@ After investigation, the Boss Room development team determined that client/serve
 * It’s not completely necessary to ifdef classes because it’s only compile-time insurance that certain parts of client-side code never run. You can still disable the component on Awake at runtime if it's not mean to run on the server or client.
 * The added complexity outweighed the pros that’d help with stripping whole assemblies.
 * Most `Client`/`Server` class pairs are tightly coupled and call one another; they have split implementations of the same logical object. Separating them into different assemblies forces you to create “bridge classes” to avoid circular dependencies between your client and server assemblies. By putting your client and server classes in the same assemblies, you allow those circular dependencies in those tightly coupled classes and remove unnecessary bridging and abstractions.
-* Whole assembly stripping is incompatible with NGO because NGO doesn’t support NetworkBehaviour stripping. Components related to a NetworkObject must match on the client and server sides. If these components aren’t identical, it creates undefined runtime errors (the errors will change from one use to another; they range from no issue, to silent errors, to buffer exceptions) with NGO's `NetworkBehaviour` indexing.
+* Whole assembly stripping is incompatible with Netcode for GameObjects because Netcode for GameObjects doesn’t support NetworkBehaviour stripping. Components related to a NetworkObject must match on the client and server sides. If these components aren’t identical, it creates undefined runtime errors (the errors will change from one use to another; they range from no issue, to silent errors, to buffer exceptions) with Netcode for GameObjects' `NetworkBehaviour` indexing.
 
 After those experiments, the Boss Room development team established new rules for the codebase:
 
@@ -240,7 +240,7 @@ After those experiments, the Boss Room development team established new rules fo
     * If a class never grows too big, use a single NetworkBehaviour (because it’s easy to maintain).
 * Use client and server classes (with each pointing to the other) for client/server separation.
 * Place client/server pairs in the same assembly.
-* If you start the game as a client, the server components disable themselves, leaving you with only client components executing. Ensure you don’t destroy the server components. NGO still requires the server component for network message sending.
+* If you start the game as a client, the server components disable themselves, leaving you with only client components executing. Ensure you don’t destroy the server components. Netcode for GameObjects still requires the server component for network message sending.
 * The clients have a `m_Server`, and servers have a `m_Client` property.
 * The `Server` class owns server-driven `NetworkVariables`. Similarly, the `Client` class owns owner-driven `NetworkVariables`. This ownership separation helps make larger classes more readable and maintainable.
 * Use partial classes when separating by context isn’t possible.
@@ -267,4 +267,4 @@ The Boss Room development team considered using a third party library for messag
 
 #### `NetworkedMessageChannel`
 
-With in-process messaging, Boss Room implements the `NetworkedMessageChannel`, which uses the same API, but allows for sending data between peers. Boss Room implements the Netcode synchronization for these using custom NGO messaging, which serves as a useful synchronization primitive in the codebase arsenal.
+With in-process messaging, Boss Room implements the `NetworkedMessageChannel`, which uses the same API, but allows for sending data between peers. Boss Room implements the Netcode synchronization for these using custom Netcode for GameObjects messaging, which serves as a useful synchronization primitive in the codebase arsenal.
