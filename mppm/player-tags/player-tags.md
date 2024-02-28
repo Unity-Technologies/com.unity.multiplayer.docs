@@ -17,19 +17,18 @@ Using Player Tags involves 3 parts,
 
 ## Create a Player Tag
 
-To create a **Player Tag**,
+To create a Player Tag,
 
-1. In the **Unity Editor**, open the **MPPM** window by navigating to **Window** > **Multiplayer Play Mode**.
+1. In the Unity Editor, open the Multiplayer Play Mode window by navigating to **Window** > **Multiplayer Play Mode**.
 2. Select the plus sign ![plus sign](/img/add.png) under **Player Tags** to create your new tag.
-3. Name the **Player Tag**.
+3. Name the Player Tag.
 4. Select **Save**. Your new tag is automatically added to the `VirtualProjectsConfig.json` file in the `ProjectsSettings` folder.
-5. Your new tag should also appear under the **Player Tags** section of the **MPPM** window and in the dropdown menu for the **Tag** option of each **Player**.
+5. Your new tag should also appear under the Player Tags section of the Multiplayer Play Mode window and in the dropdown menu for the Tag option of each Player.
 
-### Next Steps
+### Next steps
 
-Without configuration, **Player Tags** don't do anything. You must target **Player Tags** in your game scripts with `CurrentPlayer.ReadOnlyTags()`. See the following **Player Tag** examples as guides for your own scripts:
+Without configuration, Player Tags don't do anything. You must target Player Tags in your game scripts with `CurrentPlayer.ReadOnlyTags()`. See the following Player Tag examples as guides for your own scripts:
 
-- [For a **Player** to run as a server, client, or host](target-instance)
-- [To automatically assign a **Player** to a team](target-team)
+- [For a Player to run as a server, client, or host](target-instance)
+- [To automatically assign a Player to a team](target-team)
 - [To simulate network conditions](target-network)
-
