@@ -4,11 +4,11 @@ title: Techniques and tricks for debugging multiplayer games
 description: Guide covering some of the techniques that are either specific to or are useful when debugging multiplayer games.
 ---
 
-When debugging games, multiplayer games included, it helps to know the toolbag that we have at our disposal. 
+When debugging games, multiplayer games included, it helps to know the toolbag that we have at our disposal.
 
 All the conventional game development wisdom applies, however certain scenarios that are typical to multiplayer game development call for special tricks and approaches.
 
-Below is a list of practices and techniques that we use daily when working on the Boss Room sample. These recommendations, we find, compound into a more comfortable working experience when developing multiplayer games with Unity. 
+Below is a list of practices and techniques that we use daily when working on the Boss Room sample. These recommendations, we find, compound into a more comfortable working experience when developing multiplayer games with Unity.
 
 ## Debugging tricks for multiplayer games
 
@@ -159,7 +159,7 @@ It is a good idea to include network tick and client id in log messages so that 
 
 The options that are currently available to us are covered in the related [article on artificial network conditioning tools](testing_with_artificial_conditions.md).
 
-Of particular interest to us is the application-level network conditioning provided by [Unity Transport Simulator Tools](testing_with_artificial_conditions.md#unity-transport---simulator-tools), as it allows us to easily specify conditions for our individual peers that live within separate editors by means of ParrelSync.
+Of particular interest to us is the application-level network conditioning provided by [Network Simulator tools](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/), as it allows us to easily specify conditions for our individual peers that live within separate editors by means of ParrelSync.
 
 Artificial network conditions allow the errors and oddities that are hidden by nigh-absence of lag when running your instances locally to show up, and it's a good thing!
 
@@ -167,7 +167,7 @@ Artificial network conditions allow the errors and oddities that are hidden by n
 
 First of all, it's valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
-When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls. 
+When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls.
 
 In debug builds it's a great idea to show the Peer ID and the current frame number somewhere in the corner of the screen - this way there is a visual reference to the number of the frame we're currently observing on the recording.
 
@@ -177,4 +177,4 @@ The same applies to high latencies (1000ms) - these stress the lag hiding techni
 
 ### Using breakpoints to debug a Client or Server
 
-You can use breakpoints to debug a game, but your connection may time out if you stay too long in this mode. Since it pauses your game, you can temporarily increase the timeout value to avoid disconnecting. 
+You can use breakpoints to debug a game, but your connection may time out if you stay too long in this mode. Since it pauses your game, you can temporarily increase the timeout value to avoid disconnecting.
