@@ -16,9 +16,9 @@ This is challenging when we are [iterating on our game locally](testing_locally.
 
 Thankfully there are a number of tools that can simulate adverse network conditions.
 
-For testing locally within the editor we suggest using [Unity Transport - Simulator Tools](#unity-transport---simulator-tools) along with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync).
+For testing locally within the Editor, you can use the [Network Simulator tool](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/) along with [clone-based workflow via ParrelSync](testing_locally.md#parrelsync).
 
-For testing development builds with built-in artificial latency we suggest using [Unity Transport Simulator Tools with some custom code to inject artifical conditions into the build](#debug-builds).
+For testing development builds with built-in artificial latency we suggest using [Network Simulator tools with some custom code to inject artificial conditions into the build](#debug-builds).
 
 For testing release builds we suggest using [Clumsy](#clumsy-windows) if you're on Windows and Network Link Conditioner if you're on [macOS](#network-link-conditioner-mac-os) or [iOS](#network-link-conditioner-ios). A scriptable alternative to Network Link Conditioner on macOS is [dummynet](#dummynet-dnctl-and-pftcl-mac-os), which offers great control and comes packaged with the operating system.
 
@@ -32,7 +32,7 @@ It's not immediately obvious what the values and options we should enable in our
 
 Determining which network conditions to test with is about what your users will encounter while playing your game, which will vary by region and by platform.
 
-However, deciding what experience degradation is acceptable is dependant on game genre and on your game design decisions and other requirements. It's up to you to determine what's acceptable, there's no single rule for this.
+However, deciding what experience degradation is acceptable is dependent on game genre and on your game design decisions and other requirements. It's up to you to determine what's acceptable, there's no single rule for this.
 
 What latency value to use for general development?
 
@@ -46,7 +46,7 @@ Next we should determine how much chaos we want to introduce - that's largely ba
  - Is the game meant to be played from a good broadband internet connection?
  - Is the game meant to run on mobile networks?
 
-This question tells us if our users are likely to experience more jitter and packet loss - mobile networks aren'torious for having widely varying quality of connection. Mobile users also can experience frequent network changes during active application usage, and even though [Unity Transport has reconnection mechanism](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/rfc/device-reconnection/text/0000-device-reconnection.md), it still requires our applicaton to factor in the possibility of an occasional lag burst.
+This question tells us if our users are likely to experience more jitter and packet loss - mobile networks are notorious for having widely varying quality of connection. Mobile users also can experience frequent network changes during active application usage, and even though [Unity Transport has reconnection mechanism](https://github.com/Unity-Technologies/com.unity.multiplayer.rfcs/blob/rfc/device-reconnection/text/0000-device-reconnection.md), it still requires our application to factor in the possibility of an occasional lag burst.
 
 What's important here is that testing purely with added delay and no packet loss and jitter is unrealistic. These values shouldn't be high - the baseline scenario isn't what we would call stress-testing, but they should be non-zero.
 
@@ -61,12 +61,12 @@ Adding packet loss, apart from introducing even more effective delay to our syst
 
 Don't forget to disable it once you're done debugging, else your network connection will feel slow!
 
-QA teams run playtests with multiple people, each with their own system-wide conditioning settings settings. We can imitate this workflow locally by setting different per-peer network conditions. This approach isn't as reflective of reality as good QA tests on different machines, but it allows us to test these more peculiar scenarios locally.
+QA teams run playtests with multiple people, each with their own system-wide conditioning settings. We can imitate this workflow locally by setting different per-peer network conditions. This approach isn't as reflective of reality as good QA tests on different machines, but it allows us to test these more peculiar scenarios locally.
 :::
 
 There is a group of scenarios where we would want to test how the game behaves when a player with a different baseline connection quality from most of our other peers joins the game - an example of such case can be someone playing from a significantly remote location or connecting from a device that's on a mobile network.
 
-In this case we would want to have an ability to set artifical conditions on a per-peer basis, which is possible with [Unity Transport Simulator Tools](#unity-transport---simulator-tools).
+In this case we would want to have an ability to set artificial conditions on a per-peer basis, which is possible with the [Network Simulator tool](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/).
 
 ### Clone-based workflow (ParrelSync)
 
@@ -84,7 +84,7 @@ Other tools should be used when testing release builds locally.
 To combine the benefits of Simulator Tools Window with ParrelSync - create or open a clone of your project, open up the simulator tools window in both the main project and the clone and play with the settings to alter how network behaves for each individual peer. Remember to re-launch your game if you change the values in the tools window - the effects only take place when the Unity Transport driver is being created.
 
 :::important
-With Simulator Tools we can't specify if inbound packets and outbound packets would experience different conditions - artificial latecny, jitter and packet loss are bi-directional.
+With Simulator Tools we can't specify if inbound packets and outbound packets would experience different conditions - artificial latency, jitter and packet loss are bi-directional.
 :::
 
 :::important
@@ -95,7 +95,7 @@ Simulator Tools window settings won't be committed to version control and need t
 
 Debug builds do allow for the possibility of applying artificial network conditions to the Unity Transport driver, but the Simulator Tools window itself only sets these values in the Editor.
 
-To set the latency, jitter and packet-loss percentage values for develop builds we need the following code to execute before `NetworkManager` attempts to connect (changing the values of the paramters as desired):
+To set the latency, jitter and packet-loss percentage values for develop builds we need the following code to execute before `NetworkManager` attempts to connect (changing the values of the parameters as desired):
 
 ```
 #if DEVELOPMENT_BUILD && !UNITY_EDITOR
@@ -108,7 +108,7 @@ To set the latency, jitter and packet-loss percentage values for develop builds 
 
 ## System-wide network conditioners
 
-These tools are useful when we want to test builds as opposed to running multiple editor instances. it's also an option that works for **release** builds.
+These tools are useful when we want to test builds as opposed to running multiple editor instances. It's also an option that works for **release** builds.
 
 :::important
 The solutions described below share some common features:
@@ -117,7 +117,7 @@ The solutions described below share some common features:
  - They allow to control the settings for sending and receiving separately.
 :::
 
-There are some inherent limitations that come with the system-wide level of application of these tools - they're not ideal for local testing of more than two peers because we can't have peers with different network conditions between them (if that is important for the test ofcourse).
+There are some inherent limitations that come with the system-wide level of application of these tools - they're not ideal for local testing of more than two peers because we can't have peers with different network conditions between them (if that is important for the test of course).
 
 :::important
 Some consoles offer similar functionality at the native SDK level.  Check their documentation for details.
@@ -139,10 +139,10 @@ To test the builds with Clumsy:
 
 #### Settings quickstart
 
- - Lag - that's our primary lever to control artifical latency
+ - Lag - that's our primary lever to control artificial latency
  - Drop - that's our packet loss
  - Throttle, Out of Order, Duplicate, Tamper - these will manifest as additional latency but should be automatically handled for us by Netcode.
-   - Since Clumsy doesn't have Jitter functionality - we can emulate jitter (inconsistnent latency over time) by playing with these parameters. Their cumulative effect would produce artifical latency fluctuations.
+   - Since Clumsy doesn't have Jitter functionality - we can emulate jitter (inconsistent latency over time) by playing with these parameters. Their cumulative effect would produce artificial latency fluctuations.
 
 For further reading please refer to the Details section of the [Clumsy Webpage](https://jagt.github.io/clumsy/) - the settings explanation there goes more into the actual mechanics of each individual setting.
 
@@ -167,7 +167,7 @@ In order to get to the settings we need to go into the `Manage Profiles` menu an
 
  - Downlink and Uplink Bandwidth are useful for testing how our game would behave if it's starved for bandwidth, but generally tightening it too much would gradually degrade any networked game.
  - Downlink and Uplink Packets Dropped % is exactly what it seems - packet loss percentage.
- - Downlink and Uplink Delay are our levers for controling artificial latency
+ - Downlink and Uplink Delay are our levers for controlling artificial latency
 
 ### Network Link Conditioner (iOS)
 
@@ -217,8 +217,8 @@ After you start dummynet, testing the builds is as easy as launching several ins
 #### Settings quickstart
  - `bw` -  this parameter controls bandwidth.
   - `dnctl pipe 1 config bw 40Kbit/s` will set our bandwidth to 40 Kbit per second.
- - `delay` - this parameter is our artifical latency.
-  - `dnctl pipe 1 config delay 100` will set our artifical latecny to 100 ms.
+ - `delay` - this parameter is our artificial latency.
+  - `dnctl pipe 1 config delay 100` will set our artificial latecny to 100 ms.
  - `plr` - this parameter is our packet loss percentage.
   - `dnctl pipe 1 config plr 0.1` will set our packet loss percetage to 10%
 
