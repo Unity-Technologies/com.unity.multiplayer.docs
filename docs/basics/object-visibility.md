@@ -1,7 +1,7 @@
 ---
 id: object-visibility
-title: Object Visibility
-sidebar_label: Object Visibility
+title: Object visibility
+sidebar_label: Object visibility
 ---
 
 ## What Is NetworkObject Visibility?
@@ -12,26 +12,76 @@ Object (NetworkObject) visibility is a Netcode for GameObjects term used to desc
 
 One way to determine visibility is to assign a callback to `NetworkObject.CheckObjectVisibility`.  This callback is invoked when new clients connect or just before the associated `NetworkObject` is spawned. Looking at the example below, we can see the callback includes a client identifier (clientId) value as a parameter which is used to determine whether the `NetworkObject` is visible to the client.  If `NetworkObject.CheckObjectVisibility` isn't assigned, then Netcode for GameObjects assumes it's visible to all clients.
 
-### CheckObjectVisibility Callback Example 
+### CheckObjectVisibility Callback Example
 ```csharp
-NetworkObject netObject = GetComponent<NetworkObject>();
-netObject.CheckObjectVisibility = ((clientId) => {
-    // return true to show the object, return false to hide it
+public class VisibilityCheckExample : NetworkBehaviour
+{
+    public bool ContinuallyCheckVisibility = true;
+    public float VisibilityDistance = 5.0f;
 
+    /// <summary>
+    /// This is automatically invoked when spawning the network prefab
+    /// relative to each client.
+    /// </summary>
+    /// <param name="clientId">client identifier to check</param>
+    /// <returns>true/false whether it is visible to the client or not</returns>
+    private bool CheckVisibility(ulong clientId)
+    {
+        // If not spawned, then always return false
+        if (!IsSpawned)
+        {
+            return false;
+        }
 
-    if (Vector3.Distance(NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject.transform.position, transform.position) < 5)
-    {
-        // Only show the object to players that are within 5 meters. Note that this has to be rechecked by your own code
-        // If you want it to update as the client and objects distance change.
-        // This callback is usually only called once per client
-        return true;
+        // We can do a simple distance check between the NetworkObject instance position and the client
+        return Vector3.Distance(NetworkManager.ConnectedClients[clientId].PlayerObject.transform.position, transform.position) <= VisibilityDistance;
     }
-    else
+
+    public override void OnNetworkSpawn()
     {
-        // Hide this NetworkObject
-        return false;
+        if (IsServer)
+        {
+            // The server handles visibility checks and should subscribe when spawned locally on the server-side.
+            NetworkObject.CheckObjectVisibility += CheckVisibility;
+            // If we want to continually update, we don't need to check every frame but should check at least once per tick
+            if (ContinuallyCheckVisibility)
+            {
+                NetworkManager.NetworkTickSystem.Tick += OnNetworkTick;
+            }                
+        }
+        base.OnNetworkSpawn();
     }
-});
+
+    private void OnNetworkTick()
+    {
+        // If CheckObjectVisibility is enabled, check the distance to clients
+        // once per network tick.
+        foreach (var clientId in NetworkManager.ConnectedClientsIds)
+        {
+            var shouldBeVisibile = CheckVisibility(clientId);
+            var isVisibile = NetworkObject.IsNetworkVisibleTo(clientId);
+            if (shouldBeVisibile && !isVisibile)
+            {
+                // Note: This will invoke the CheckVisibility check again
+                NetworkObject.NetworkShow(clientId);
+            }
+            else if (!shouldBeVisibile && isVisibile)
+            {
+                NetworkObject.NetworkHide(clientId);
+            }
+        }
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if (IsServer)
+        {
+            NetworkObject.CheckObjectVisibility -= CheckVisibility;
+            NetworkManager.NetworkTickSystem.Tick -= OnNetworkTick;
+        }
+        base.OnNetworkDespawn();
+    }
+}
 ```
 
 ### Additional Visibility Methods and Properties:
@@ -68,4 +118,3 @@ NetworkObject.Spawn();
 ```
 
 See [Spawning With (or Without) Observers](networkobject.md#spawning-with-or-without-observers) for more information.
-

@@ -12,9 +12,9 @@ The following example uses the `Contains` method, which is case-sensitive by def
 
 ## Automatically assign a Player to a team
 
-The following script automatically sets a [NetworkVariable](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkvariable/) called `Team` based on the **Player Tag**.
+The following script automatically sets a [NetworkVariable](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkvariable/) called `Team` based on the Player Tag.
 
-A **Player** with a `Red` **Player Tag** automatically sets the `Team` NetworkVariable to `Red`. A Player with a `Blue` **Player Tag** automatically sets the `Team` NetworkVariable to `Blue`.
+A Player with a `Red` Player Tag automatically sets the `Team` NetworkVariable to `Red`. A Player with a `Blue` Player Tag automatically sets the `Team` NetworkVariable to `Blue`.
 
 ```csharp
 using Unity.Netcode;

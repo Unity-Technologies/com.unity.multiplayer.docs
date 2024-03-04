@@ -10,7 +10,7 @@ You can also use the dedicated server package to set a player tag to server, cli
 
 ## Set a player tag to server, client, or host in a script
 
-The following script uses the Netcode for GameObjects (NGO) [NetworkManager](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager/) to automatically connect the **Virtual Player** as a server, client, or host based on their **Player Tag**. A **Player** with the `Server` **Player Tag** automatically runs as a server, and a **Player** with the `Client` **Player Tag** automatically runs as a client.
+The following script uses the Netcode for GameObjects (NGO) [NetworkManager](https://docs-multiplayer.unity3d.com/netcode/current/components/networkmanager/) to automatically connect the Virtual Player as a server, client, or host based on their Player Tag. A Player with the `Server` Player Tag automatically runs as a server, and a Player with the `Client` Player Tag automatically runs as a client.
 
 :::important
 This example uses the `Contains` method which is case-sensitive by default. To make it case-insensitive, pass the `System.StringComparison.CurrentCultureIgnoreCase` method.

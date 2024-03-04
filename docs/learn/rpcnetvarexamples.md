@@ -1,7 +1,7 @@
 ---
 id: rpcnetvarexamples
-title: RPCs vs NetworkVariables Examples
-sidebar_label: RPCs vs NetworkVariables Examples
+title: RPCs vs NetworkVariables examples
+sidebar_label: RPCs vs NetworkVariables examples
 ---
 This page has examples of how the Small Coop Sample (Boss Room) uses `RPC`s and `NetworkVariable`s. It gives guidance on when to use `RPC`s versus `NetworkVariable`s in your own projects.
 

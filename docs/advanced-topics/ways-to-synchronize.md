@@ -1,6 +1,6 @@
 ---
 id: ways-synchronize
-title: Synchronizing States & Events
+title: Synchronizing states and events
 ---
 
 ## Introduction
@@ -11,7 +11,7 @@ Netcode for GameObjects (Netcode) includes three options for synchronizing game 
 - NetworkVariables
     - Handled by the "internal" messaging system and [categorized under "Networking".](../basics/networkvariable.md)
 
-While each of the above options can be used for the same thing, synchronizing states or events, they all have specific use cases and limitations. 
+While each of the above options can be used for the same thing, synchronizing states or events, they all have specific use cases and limitations.
 
 ## Messaging System
 The Netcode messaging system provides you with the ability to handle sending and receiving messages or events.  The entire messaging system supports the serialization of most primitive value `type`s as well as any classes and/or structures that implement the `INetworkSerializable` interface.

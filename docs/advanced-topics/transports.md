@@ -18,13 +18,13 @@ A transport layer can provide:
 * *Manage network congestion* by mediating flow rates and node overloads.
 * *Adjust data streams* to transmit as byte streams or packets.
 
-## Unity Transport Package (UTP)
+## Unity Transport package
 
-Netcode's default transport Unity Transport (UTP) is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](../../../transport/current/about) for more information and how to [install](../../../transport/current/install).
+Netcode's default transport Unity Transport is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](../../../transport/current/about) for more information and how to [install](../../../transport/current/install).
 
-## Unity’s UNet Transport Layer API
+## Unity's UNet Transport Layer API
 
-UNet is a deprecated solution that is no longer supported after Unity 2022.2. Unity Transport Package (UTP) is the default transport for Netcode for GameObjects. We recommend transitioning to UTP as soon as possible.
+UNet is a deprecated solution that is no longer supported after Unity 2022.2. Unity Transport Package is the default transport for Netcode for GameObjects. We recommend transitioning to Unity Transport as soon as possible.
 
 ### Community Transports or Writing Your Own
 

@@ -8,7 +8,7 @@ The logic in the following example checks if the **Player Tag** has a string rat
 
 ## Simulate network conditions
 
-This example script uses the Network Simulation Presets from the [Multiplayer Tools package](https://docs-multiplayer.unity3d.com/tools/current/install-tools/) to automatically simulate a fast or slow network based on the **Player Tag**. A **Player** with the `FastNetwork` **Player Tag** simulates a common [Home Broadband](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/#home-broadband-connections) connection, and a Player with the `SlowNetwork` **Player Tag** simulates a [Mobile 2.5G](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/#mobile-25g) connection.
+This example script uses the Network Simulation Presets from the [Multiplayer Tools package](https://docs-multiplayer.unity3d.com/tools/current/install-tools/) to automatically simulate a fast or slow network based on the Player Tag. A Player with the `FastNetwork` Player Tag simulates a common [Home Broadband](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/#home-broadband-connections) connection, and a Player with the `SlowNetwork` Player Tag simulates a [Mobile 2.5G](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/#mobile-25g) connection.
 
 :::note
 This example uses the [Network Simulator](https://docs-multiplayer.unity3d.com/tools/current/tools-network-simulator/) tool from the `com.unity.multiplayer.tools` package.
