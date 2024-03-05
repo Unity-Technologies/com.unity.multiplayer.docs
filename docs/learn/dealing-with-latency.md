@@ -267,8 +267,6 @@ The world (and especially the internet) is messy. A client can guess wrong. An e
 With the movement example, I can have an enemy come and stun me while I thought I can still move. 200 ms latency is enough time for a stun to happen and create a discrepancy between the move I "predicted" client side and what happened server side. This is where "reconciliation" (or "correction") comes in play. The client keeps a history of the positions it predicted. Being still server authoritative, the client still receives (outdated by x ms of latency) positions coming from the server. The client will validate whether the positions it predicted in the past fits with the old positions coming from the server. The client can then detect discrepancies and "correct" its position according to the server's authoritative position.
 This way, clients can stay server authoritative while still be reactive.
 
-:::info
-
 #### Input Prediction vs World Prediction vs Extrapolation
 
 Local input prediction will predict your state using your local player's inputs.
@@ -296,7 +294,18 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
 
 :::info
-There's no prediction implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
+While Netcode for GameObjects does not have a full implementation of Client Side Prediction and Reconciliation, you can build Client Side Prediction and Reconciliation on top of our existing Client Side Anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself.
+
+The aspects that Netcode for GameObjects does not provide built-in solutions for are:
+
+- Network Input, to transmit input from a client to a server/host to enable client control of server-authoritative objects
+- Client-side input history, to be able to reapply inputs in the `OnReanticipate` callbacks as new server data arrives
+- Client-side replay, to resimulate previous frames or ticks to create new predictions when new server data arrives (we do provide client-side rollback to the authoritative position, but reconciliation is handled through a single callback rather than a frame-by-frame or tick-by-tick prediction loop.)
+
+A sample is provided in our samples repository that shows a simplified implementation of client-side prediction for a few variables and a single player object. This sample does not show full game state rollback and replay, which can be accomplished using the `NetworkManager.OnReanticipate` delegate to create your own prediction loop. (The sample shows a smaller-scale prediction loop for only the single player object within the player object's `OnReanticipate` callback.)
+
+For more information, see  [`AnticipatedNetworkVariable`](../basics/networkvariable.md#AnticipatedNetworkVariable) and   [`AnticipatedNetworkTransform`](../components/networktransform.md#AnticipatedNetworkTransform)
+
 :::
 
 ### Controlled Desyncs
