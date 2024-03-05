@@ -367,7 +367,7 @@ There are four basic ways that an AnticipatedNetworkVariable can operate:
 
   One thing to note: While extrapolation uses the **half**-round-trip time for its calculations (because it is only accounting for the time it took for the server to send an update to the client), local simulation and reanticipation must use the **entire** round-trip time for its calculations, as it is accounting for the time passed since the last command the client sent to the server - a full round trip.
 
-A sample showing the **Snap Reconciliation**, **Smooth Reconciliation**, **Server/Host Smoothing**, and **Extrapolation** paradigms is available in our bitesize samples repository. It is intended to be run in three windows (one server and two clients) and shows how snap and smooth actions also affect other clients (which may mean, in some cases, that you may want your smoothing action to be conditional on whether or not the variable has been anticipated, or whether or not it is owned by the current client, etc).
+A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Experimental/Anticipation%20Sample) showing the **Snap Reconciliation**, **Smooth Reconciliation**, **Server/Host Smoothing**, and **Extrapolation** paradigms is available in our bitesize samples repository. It is intended to be run in three windows (one server and two clients) and shows how snap and smooth actions also affect other clients (which may mean, in some cases, that you may want your smoothing action to be conditional on whether or not the variable has been anticipated, or whether or not it is owned by the current client, etc).
 
 ### Client Anticipation Examples
 
