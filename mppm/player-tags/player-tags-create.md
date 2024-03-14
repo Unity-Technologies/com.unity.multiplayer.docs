@@ -11,3 +11,4 @@ To create a **Player Tag**,
 3. Name the **Player Tag**.
 4. Select **Save**. Your new tag is automatically added to the `VirtualProjectsConfig.json` file in the `ProjectsSettings` folder.
 5. Your new tag should also appear under the **Player Tags** section of the **MPPM** window and in the dropdown menu for the **Tag** option of each **Player**.
+
