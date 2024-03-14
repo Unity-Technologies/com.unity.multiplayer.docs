@@ -294,17 +294,9 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
 
 :::info
-While Netcode for GameObjects does not have a full implementation of Client Side Prediction and Reconciliation, you can build Client Side Prediction and Reconciliation on top of our existing Client Side Anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself.
+While Netcode for GameObjects does not have a full implementation of Client Side Prediction and Reconciliation, you can build Client Side Prediction and Reconciliation on top of our existing Client Side Anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself. Because of the complexity inherent in building a full client prediction system, the details of that are left as an exercise for the user, and we recommend only advanced users pursue this option.
 
-The aspects that Netcode for GameObjects does not provide built-in solutions for are:
-
-- Network Input, to transmit input from a client to a server/host to enable client control of server-authoritative objects
-- Client-side input history, to be able to reapply inputs in the `OnReanticipate` callbacks as new server data arrives
-- Client-side replay, to resimulate previous frames or ticks to create new predictions when new server data arrives (we do provide client-side rollback to the authoritative position, but reconciliation is handled through a single callback rather than a frame-by-frame or tick-by-tick prediction loop.)
-
-A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Experimental/Anticipation%20Sample) is provided in our samples repository that shows a simplified implementation of client-side prediction for a few variables and a single player object. This sample does not show full game state rollback and replay, which can be accomplished using the `NetworkManager.OnReanticipate` delegate to create your own prediction loop. (The sample shows a smaller-scale prediction loop for only the single player object within the player object's `OnReanticipate` callback.)
-
-For more information, see  [`AnticipatedNetworkVariable`](../basics/networkvariable.md#AnticipatedNetworkVariable) and   [`AnticipatedNetworkTransform`](../components/networktransform.md#AnticipatedNetworkTransform)
+For more information, see the [`Client Anticipation`](../advanced-topics/client-anticipation.md) documentation.
 
 :::
 
@@ -365,7 +357,7 @@ Players don't have to wait for their mouse movements to be synced for AOE. They'
 <!-- TODO NOW Add side by side video for AOE, need to upload video -->
 :::
 
-Action anticipation can also be used to set the value of a network variable or network transform on the assumption that an action will succeed while waiting for the server to respond. This is the first building block of Client Side Prediction mentioned above, with the most simple form simply being to set a value and let the server overwrite it later. This is done in Netcode for GameObjects using  [`AnticipatedNetworkVariable`](../basics/networkvariable.md#AnticipatedNetworkVariable) and   [`AnticipatedNetworkTransform`](../components/networktransform.md#AnticipatedNetworkTransform).
+Action anticipation can also be used to set the value of a network variable or network transform on the assumption that an action will succeed while waiting for the server to respond. This is the first building block of Client Side Prediction mentioned above, with the most simple form simply being to set a value and let the server overwrite it later. This is done in Netcode for GameObjects using  `AnticipatedNetworkVariable<T>` and   `AnticipatedNetworkTransform`. For more information, see the [`Client Anticipation`](../advanced-topics/client-anticipation.md) documentation.
 
 ### Server Side Rewind (also called Lag Compensation)
 
