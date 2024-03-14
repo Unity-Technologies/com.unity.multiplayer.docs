@@ -327,7 +327,7 @@ Using this type of a hierarchical separation is useful in many ways (especially 
 
 Any objects in the scene with active and spawned `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`. In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
 
-[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects)
+[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects.md)
 
 Generally, there are **two** modes that define how an in-scene placed `NetworkObject` is synchronized.
 
