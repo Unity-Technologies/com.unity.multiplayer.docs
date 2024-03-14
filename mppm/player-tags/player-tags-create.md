@@ -1,10 +1,10 @@
 ---
 id: player-tags-create
-title: Create a Player Tags
+title: Create a Player Tag
 description: Use these steps to create Player Tags to configure the player actions in Multiplayer Play Mode.
 ---
 
-To create a **Player Tag**,
+To create a **Player Tag**, perform mthe following actions: 
 
 1. In the **Unity Editor**, open the **MPPM** window by navigating to **Window** > **Multiplayer Play Mode**.
 2. Select the plus sign ![plus sign](/img/add.png) under **Player Tags** to create your new tag.
