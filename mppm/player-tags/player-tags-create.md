@@ -1,5 +1,6 @@
 ---
 id: player-tags-create
+
 title: Create a Player Tag
 description: Use these steps to create Player Tags to configure the player actions in Multiplayer Play Mode.
 ---
@@ -11,4 +12,3 @@ To create a **Player Tag**, perform the following actions:
 3. Name the **Player Tag**.
 4. Select **Save**. The new tag is automatically added to the `VirtualProjectsConfig.json` file in the `ProjectsSettings` folder.
 5. The new tag also appears under the **Player Tags** section of the **Multiplayer Play Mode** window and in the dropdown menu for the **Tag** option of each **Player**.
-
