@@ -16,6 +16,10 @@ The following script uses the Netcode for GameObjects [NetworkManager](https://d
 This example uses the `Contains` method, which is case-sensitive by default. To make it case-insensitive, pass the `System.StringComparison.CurrentCultureIgnoreCase` method.
 :::
 
+:::important
+This example uses the `Contains` method which is case-sensitive by default. To make it case-insensitive, pass the `System.StringComparison.CurrentCultureIgnoreCase` method.
+:::
+
 :::note
 This example uses [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/about/).
 :::
