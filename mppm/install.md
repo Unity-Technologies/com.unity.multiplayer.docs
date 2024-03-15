@@ -17,7 +17,7 @@ To install Multiplayer Play Mode, you must have:
 ## Install the Multiplayer Play Mode package
 
 1. Open Unity Hub.
-2. Select the Project you are working on.
+2. Select a Project.
 3. In the Editor's menu bar, navigate to **Window** > **Package Manager**.
 4. Click the plus sign ![plus sign](/img/add.png) in the Package Manager status bar.
 5. Select **Install package by name...**.
