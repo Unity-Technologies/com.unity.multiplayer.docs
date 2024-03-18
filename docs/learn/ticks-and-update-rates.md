@@ -36,4 +36,4 @@ darkImageSrc="/rpm_update_rates-dark.png?text=DarkMode"/>
 
 ### Discrepancy between tick rate and update rate
 
-If the update rate of a client is lower than the tick rate of the server, then the client won't see the benefit of the high tick rate, because it will only receive updates at its update rate, even if multiple ticks have been processed in the interim.
+If the update rate of a client is lower than the tick rate of the server, then the client won't see the benefit of the high tick rate, because it will only receive updates at the client update rate, even if multiple ticks have been processed in the interim.
