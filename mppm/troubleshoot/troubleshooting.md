@@ -17,4 +17,3 @@ To learn more about writing and running tests in Unity, refer to [Write and run 
 |**Page** |**Description**|
 |-|-|
 |[Debug Multiplayer Play Mode](debug-mppm.md)| Learn how to use Unity Test Framework to test a project with Multiplayer Play Mode. |
-
