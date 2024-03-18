@@ -16,7 +16,7 @@ There are a number of factors that contribute to latency, some of which can be m
 
 ### Non-network latency
 
-Non-network latency refers to latency incurred by processes that occur prior to any involvement with the network. This is an area where, as a game developer, you have more control over optimization to reduce latency (whereas network conditions are often beyond your control). Non-network latency is also referred to as input lag: the time it takes user input to be rendered on screen.
+Non-network latency refers to latency incurred by processes that happen before there is any involvement with the network. This is an area where you have more control over optimization to reduce latency (whereas network conditions are often beyond your control). Non-network latency is also referred to as input lag: the time it takes user input to be rendered on screen.
 
 Factors that contribute to non-network latency include:
 
