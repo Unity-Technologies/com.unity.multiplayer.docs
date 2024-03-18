@@ -1,109 +1,56 @@
 ---
 id: lagandpacketloss
-title: Latency and packet loss
+title: Understanding latency
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-A multiplayer game operating over the internet has to deal with several adverse factors that aren't present when developing single-player or LAN-only multiplayer games.
+Multiplayer games operating over the internet have to manage adverse network factors that don't affect single-player or LAN-only multiplayer games, most notably [network latency](#network-latency). Latency (also known as lag) is the delay between a user taking an action and seeing the expected result. When latency is too high, a game feels unresponsive and slow.
 
-:::important
- According to wikipedia, 200 ms of input lag is the lower threshold at which people typically notice lag.
+Generally, 200ms of latency is the point at which users notice gameplay degradation, although different types of games can tolerate more or less latency. For example, first-person shooter games perform best with less than 100ms of latency, whereas real-time strategy games can tolerate higher latency values of up to 500ms before gameplay is meaningfully impacted.
 
-Different game genres and platforms allow for different acceptable latency budgets:
+In addition to the sources of latency described on this page, [ticks and update rates](ticks-and-update-rates.md) can also affect the user experience of your game.
 
-* VR games are highly sensitive to latency: 7-20ms.
-* Fighting games and shooter games with twitchy gameplay are the next most sensitive: 16-150ms latency before the user starts noticing lag regardless of frame rate.
-* RTS games are on the other side of the latency tolerance spectrum: values up to 500ms can be acceptable and not degrade the overall experience.
-:::
+## Sources of latency
 
-## Ping
+There are a number of factors that contribute to latency, some of which can be minimized, although it's impossible to get rid of latency entirely.
 
-Round Trip Time without frame calculation:
+### Non-network latency
 
-<Mermaid chart={`
-	graph LR;
-		A(A)
-		B(B)
-		C(B)
-		D(A)
-		E(+)
-		A --> B --> E --> C
-		C --> D
-`}/>
+Non-network latency refers to latency incurred by processes that occur prior to any involvement with the network. This is an area where, as a game developer, you have more control over optimization to reduce latency (whereas network conditions are often beyond your control). Non-network latency is also referred to as input lag: the time it takes user input to be rendered on screen.
 
-When a PC or console "pings" the server, it sends an ICMP (Internet Control Message Protocol) echo request to the game server, which then answers this request by returning an ICMP echo reply.
+Factors that contribute to non-network latency include:
+
+- **Input sampling delay**: The time it takes for an input device, such as a mouse or keyboard, to recognize that it's been activated and the time it takes for the game to detect that change.
+- **Render pipeline delay**: The time it takes for the GPU to render the outcome of inputs, which are often batched together to be processed in groups rather than individually.
+- **Vertical synchronization (VSync)**: A graphics technology that synchronizes the frame rate of the GPU with the refresh rate of the connected monitor. VSync can reduce undesirable visual behavior known as screen tearing, at the cost of increased latency incurred by the reduced frame rate.
+- **Display processing delay**: Display devices typically process incoming signals to some degree (such as deinterlacing and noise cancellation), which adds to latency.
+- **Pixel response time**: LCD screen pixels physically take time to change their brightness in response to inputs.
+
+### Network latency
+
+Network latency refers to latency incurred by interactions over the network after local processing is complete.
+
+Factors that contribute to network latency include:
+
+- **Processing delay**: The time it takes for the network router to read packet headers and forward them to the appropriate location. Processing delay also includes any encryption, network address translation (NAT), or network mapping that the router might be doing. This delay is generally low, but can add up when packets are moving between multiple locations.
+- **Transmission delay**: The time it takes for packets to be transmitted across the network. Transmission delay is proportional to the size of the packet (in bits) and is usually greatest in the parts of the network that connect directly to end users, which often have lower relative bandwidth. Sending fewer, larger packets can reduce transmission delay, because more bits are spent on game data rather than packet headers.
+- **Queueing delay**: The time packets spend waiting in queues. When a router receives more packets than it can process, those packets are added to a queue, which causes delays. Similarly, network interfaces can only output a limited number of packets at a time, so there can also be transmission queues. These queueing delays can add significantly to latency.
+- **Propagation delay**: The time it takes for signals to physically travel across the network. In [client-server topologies](../terms-concepts/network-topologies.md), this can be optimized by having servers located geographically closer to players.
+
+#### Round-trip time and pings
+
+Round-trip time (RTT) is a measure of how long it takes a packet to travel from one location on a network to another and receive a response packet back. You can use RTT to understand how much network latency your game is experiencing in different network conditions.
+
+A ping is a simplified way of measuring RTT that involves sending a very basic message, with no processing at either end of the interaction, to get a general idea of network responsiveness and latency.
 
 <ImageSwitcher
 lightImageSrc="/ping-animation-light.gif?text=LightMode"
 darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 
-The time between sending the request and receiving the answer is your ping to the game server. This means that with a ping of 20ms, it takes data 10ms to travel from the client to the server, as the ping is the round-trip time of your data.
+The time between sending the request and receiving the answer is the value of your ping. For example, a ping of 20ms means it takes roughly 10ms for data to travel from the client to the server, and then 10ms to travel back. Higher ping values indicate a lot of network latency, which can make games feel slow and unresponsive.
 
-Higher ping values mean that there is more delay or lag, which is why you want to play on servers with low pings, as that is the basic prerequisite for games to feel snappy and responsive.
+#### Jitter and packet loss
 
+RTT can be affected by changing network conditions and is unlikely to remain constant, usually hovering around an average value. The degree to which this average value varies is referred to as jitter. Jitter can affect network latency mitigation and cause packets to arrive out of order.
 
-## Latency
-
-One of the adverse factors is Latency, which in the context of games means the amount of time between a cause and it's visible effect. An example can be a click on a button and a message popping up in response to said click.
-
-Excessive latency that causes noticeable delay between cause and effect is typically referred to as Lag.
-
-:::note  
-While we can minimize the perceived impact of latency, we can't get rid of it - latency is just a fact of life that has to be taken into account.
-:::
-There are both network and non-network related components of latency.
-
-### Non-network Latency
-
-Non-network latency is a serious issue and can eat up a large chunk of our ~200ms latency budget. This means that for online games input lag, and specifically the part that is largely under our control (render pipeline related lag) should be minimized.
-
-- **Input sampling delay**: The time it takes for the input device to recognize that it has been activated and the time it takes for the game to detect that change
-- **Render pipeline delay**: GPUs don't perform draw commands immediately, instead they batch them to be performed later on
-- **Vsync**:  Prevents an artifact known as screen tearing by locking the GPU to the vertical blanking interval of the monitor
-- **Display processing delay**: Display devices typically process the incoming signal in some ways (such as deinterlacing and noise cancellation), which adds to latency
-- **Pixel response time**: LCD screen pixels physically take time to change their brightness
-
-All in all a sum of non-network latency contributors can be called Input Lag - the time it takes user input to be rendered on screen (without any network communications being involved).
-
-## Network latency
-
-- **Processing delay**: This is the time it takes for the router to read the packet header and to figure out the next machine that should receive the packet and then to forward it to the appropriate interface.  
-  :::note
-  This delay also includes any encryption, NAT, network mapping and other work that the router might be doing. Typically this delay is low, but it's total effect can accumulate the more hops the packet takes).
-  :::
-- **Transmission delay**: This is the time it takes to push the packet bits onto the physical link, irrespective of the distance to the destination. it's proportional to the packet length in bits. Transmission delay is greatest at the "last mile" of the internet - the parts of the network that goes to the end users. Fewer but bigger packets sent would reduce the amount of bits being spent on headers (in proportion to the bits used for the game data), thus reducing your transmission delay somewhat.
-- **Queueing delay**:  Becasue a router can only process a limited number of packets at a time, if it receives more packets that it can handle - these packets get queued in the receive queue. In a similar way, a network interface can also only output a single packet at a time, so if after the packet is processed the appropriate network interface is busy, then the packet will land in the transmission queue.  Queueing delay can be a significant contributor to overall latency.
-
-  :::tip
-  Typically fewer large packets perform better than many smaller packets because typical routing requires examining only the header of the packet.
-  :::
-- **Propagation delay**: This is the time signal spends traveling through the physical medium. It can't be less than the speed of light divided by the distance between source and destination, which is:
-
-    `Propagation Delay = 0.3-ns * meters-to-travel`
-
-    In practice that means that even under ideal conditions, it would take at least 50ms for a packet to go from Montreal to Australia, and approximately 15ms to cross the USA east to west.
-
-    This type of delay is optimizable in a client-server game - by placing servers closer to your players you effectively reduce propagation delay. In case dispersing servers isn't an option for gameplay reasons (for instance when your players NEED to be able to play with as little latency across, say, the entire US) an even more expensive and performant option is possible - a so-called edge network can be built.
-
- :::funfact
-    Riot games famously had to go that route for their League of Legends, building their own network that peered with ISPs across North America to provide the fastest connection possible and reducing network hops as much as possible.
- :::
-
-In the context of networking it's valuable to consider the combination of network latency factors which is typically referred to as Ping or Round Trip Time (RTT).
-
-## Round Trip Time (RTT)
-RTT is the time it takes for a packet to travel from one host to another and then for a response packet to travel back. This includes both the two-way sum of network latency factors and, as it contributes to how quickly the server can send out a response, the frame rate of the remote host,.
-
-Since the traffic is unlikely to travel at the same speed in each direction, the RTT is rarely exactly the time it takes for a packet to go from one host to another. Regardless, it's a common practice to approximate one-way travel time by dividing RTT by 2.
-
-Another complication arises from the fact that for any two hosts, the RTT time between them isn't a constant. It varies over time, normally hovering around a certain average value. The components of network latency can also vary over time, causing the RTT to deviate from the expected value. This deviation is called Jitter.
-
-## Jitter
-
-Jitter is the rate at which ping changes over a period of time.  It can affect RTT mitigation and also make packets arrive out of order if it causes  the router to send packets through different routes, which can cause an older packet to arrive before a newer packet.
-
-## Packet Loss
-
-Another danger that can befall our packets apart from being delayed is being lost entirely. Packet loss can be a greater problem than even Jitter.
-
-Packet Loss, apart from degrading and potentially making the game unplayable, can contribute to the overall delay the user would experience. This occurs when packet loss heavily affects the data that must be delivered reliably and forces the game to resend data, multiplying delays.
+In addition to being delayed, packets can also be lost, which degrades gameplay experience either by losing key information and causing unpredictable behavior, or requiring it to be sent again, causing delays.
