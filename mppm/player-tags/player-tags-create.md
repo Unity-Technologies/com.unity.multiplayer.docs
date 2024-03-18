@@ -10,6 +10,6 @@ To create a **Player Tag**, perform the following actions:
 1. Open the Multiplayer Play mode window (**Window** > **Multiplayer Play Mode**).
 2. Expand the Tags dropdown for a Player or the Main Editor.
 3. Select ![plus sign](/img/add.png) Create Tag.
-5. Name the **Player Tag**.
-6. Select **Save**. The new tag is automatically added to the `VirtualProjectsConfig.json` file in the `ProjectsSettings` folder.
-7. The new tag also appears under the **Player Tags** section of the **Multiplayer Play Mode** window and in the dropdown menu for the **Tag** option of each **Player**.
+4. Name the **Player Tag**.
+5. Select **Save**. The new tag is automatically added to the `VirtualProjectsConfig.json` file in the `ProjectsSettings` folder.
+6. The new tag also appears under the **Player Tags** section of the **Multiplayer Play Mode** window and in the dropdown menu for the **Tag** option of each **Player**.
