@@ -45,10 +45,6 @@ module.exports = {
                     "id": "tutorials/get-started-ngo"
                 },
                 {
-                    "type": "doc",
-                    "id": "tutorials/command-line-helper"
-                },
-                {
                   "collapsed": true,
                   "type": "category",
                   "label": "Migrating",
@@ -64,29 +60,6 @@ module.exports = {
                   ],
                 }
             ],
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Lag conceptual knowledge",
-            "items": [
-                    {
-                        "type": "doc",
-                        "id": "learn/ticks-and-update-rates",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/lagandpacketloss",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/clientside_interpolation",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "learn/dealing-with-latency",
-                    },
-                ],
         },
         {
             "collapsed": true,
@@ -173,6 +146,29 @@ module.exports = {
                     "id": "basics/object-visibility"
                 },
             ]
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Latency and performance",
+            "items": [
+                    {
+                        "type": "doc",
+                        "id": "learn/lagandpacketloss",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/ticks-and-update-rates",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/clientside_interpolation",
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/dealing-with-latency",
+                    },
+                ],
         },
         {
             "collapsed": true,
@@ -394,6 +390,10 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
+                },
+                {
+                    "type": "doc",
+                    "id": "tutorials/command-line-helper"
                 },
                 {
                     "type": "doc",
