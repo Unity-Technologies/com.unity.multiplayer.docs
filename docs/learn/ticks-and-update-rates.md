@@ -24,9 +24,9 @@ Update rate is a measure of how frequently the client sends and receives data to
 lightImageSrc="/update-rates-light.png?text=LightMode"
 darkImageSrc="/update-rates-dark.png?text=DarkMode"/>
 
-In addition to adding to perceived latency, low update rates can cause their own issues such as 'super bullets', where multiple updates are bundled together and arrive at the same time, causing undesirable behavior.
+In addition to adding to perceived latency, low update rates can cause their own issues, such as multiple updates being bundled together and arriving at the same time, causing undesirable behavior.
 
-For example, if an in-game gun is capable of shooting more times per second than the client can update, then at some point the impact of more than one bullet will be communicated in the same update. For players receiving this update, it will seem as if a single bullet is doing more damage than it should, because they're actually receiving updates from multiple bullets at once.
+In the example of 'super bullets': if an in-game gun is capable of shooting more times per second than the client can update, then at some point the impact of more than one bullet will be communicated in the same update. For players receiving this update, it will seem as if a single bullet is doing more damage than it should, because they're actually receiving updates from multiple bullets at once.
 
 The diagram below illustrates the difference between a 10 Hz update rate and a 60 Hz update rate. With a 10 Hz update rate, the game sends updates to the server ten times a second, so a gun that can fire 600 rounds per minute (RPM), or ten times a second, will only ever send a single bullet per update. A gun that fires at 750 RPM, more than ten times a second, will end up running into the super bullet problem. A higher update rate of 60 Hz resolves this issue, ensuring that there are enough updates for each bullet to arrive separately in its own update.
 

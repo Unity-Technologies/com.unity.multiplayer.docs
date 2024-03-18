@@ -16,7 +16,7 @@ There are a number of factors that contribute to latency, some of which can be m
 
 ### Non-network latency
 
-Non-network latency refers to latency incurred by processes that happen before there is any involvement with the network. This is an area where you have more control over optimization to reduce latency (whereas network conditions are often beyond your control). Non-network latency is also referred to as input lag: the time it takes user input to be rendered on screen.
+Non-network latency refers to latency incurred by processes that happen before there's any involvement with the network. This is an area where you have more control over optimization to reduce latency (whereas network conditions are often beyond your control). Non-network latency is also referred to as input lag: the time it takes user input to be rendered on screen.
 
 Factors that contribute to non-network latency include:
 
@@ -47,7 +47,7 @@ A ping is a simplified way of measuring RTT that involves sending a very basic m
 lightImageSrc="/ping-animation-light.gif?text=LightMode"
 darkImageSrc="/ping-animation-dark.gif?text=DarkMode"/>
 
-The time between sending the request and receiving the answer is the value of your ping. For example, a ping of 20ms means it takes roughly 10ms for data to travel from the client to the server, and then 10ms to travel back. Higher ping values indicate a lot of network latency, which can make games feel slow and unresponsive.
+The time between sending the request and receiving the answer is the value of your ping. Sending and receiving data can take different amounts of time: for example, with a 20ms ping it might take 15ms to send a request from the client to the server and only 5ms to receive a response. Higher ping values indicate a lot of network latency, which can make games feel slow and unresponsive.
 
 #### Jitter and packet loss
 
