@@ -4,9 +4,9 @@ title: About Multiplayer Play Mode
 description: Overview of Multiplayer Play Mode
 ---
 
-You can use Multiplayer Play Mode to test multiplayer functionality within the Unity Editor. You can simulate up to 4 players (the Main Editor and 3 Virtual Players) simultaneously on the same development device while using the same source assets on disk. Multiplayer Play Mode can help you create multiplayer development workflows that reduce project build times, run it locally, and test the server-client relationship.
+Use Multiplayer Play Mode to test multiplayer functionality within the Unity Editor. You can simulate up to four players (the Main Editor and three Virtual Players) simultaneously on the same development device while using the same source assets on disk. Multiplayer Play Mode can help you create multiplayer development workflows that reduce project build times, run it locally, and test the server-client relationship.
 
-## Multiplayer Play Mode Terminology
+## Multiplayer Play Mode terminology
 
 The following have specific meaning in relation to Multiplayer Play Mode:
 
@@ -20,7 +20,7 @@ Multiplayer Play Mode has some inherent technical limitations, specifically arou
 
 ### Scale
 
-The Unity Editor and Virtual Players require a lot of system resources, so you shouldn't use Multiplayer Play Mode at scale. Multiplayer Play Mode is designed for small-scale, local testing environments that can only support up to 4 total players (the Main Editor and 3 Virtual Players).
+The Unity Editor and Virtual Players require a lot of system resources, so you shouldn't use Multiplayer Play Mode at scale. Multiplayer Play Mode is designed for small-scale, local testing environments that can only support up to four total players (the Main Editor and three Virtual Players).
 
 ### Authoring
 
