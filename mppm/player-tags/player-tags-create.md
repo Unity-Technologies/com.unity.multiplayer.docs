@@ -7,7 +7,7 @@ description: Use these steps to create Player Tags to configure the player actio
 
 To create a **Player Tag**, perform the following actions:
 
-1. Open the Multiplayer Play mode window (**Window** > **Multiplayer Play Mode**).
+1. To open the Multiplayer Play mode window, navigate to **Window** > **Multiplayer Play Mode**.
 2. Expand the Tags dropdown for a Player or the Main Editor.
 3. Select ![plus sign](/img/add.png) Create Tag.
 4. Name the **Player Tag**.
