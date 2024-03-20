@@ -12,7 +12,7 @@ To switch between virtual player views in the Multiplayer Play Mode window, use 
 ## Focus on a virtual player in the Multiplayer Play Mode window {#focus-play-mode}
 
 1. Open the Multiplayer Play Mode window.
-2. In the Virtual Players section.
+2. Navigate to the Virtual Players section.
 3. Open a player's **More** (**⋮**) menu.
 4. In the drop-down, select **Focus on Player**.
 
