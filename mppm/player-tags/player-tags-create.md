@@ -4,6 +4,7 @@ title: Create a Player Tag
 description: Use these steps to create Player Tags to configure the player actions in Multiplayer Play Mode.
 ---
 
+
 To create a **Player Tag**, perform the following actions:
 
 1. To open the Multiplayer Play mode window, navigate to **Window** > **Multiplayer Play Mode**.
