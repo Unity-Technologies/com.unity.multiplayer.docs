@@ -14,4 +14,4 @@ The [Dedicated Server package](https://docs.unity3d.com/Packages/com.unity.dedic
 
 |**Page** |**Description**|
 |-|-|
-|[Debug Multiplayer Play Mode](debug-mppm.md)| Learn how to use Unity Test Framework to test a project that with Multiplayer Play Mode. |
+|[Debug Multiplayer Play Mode](debug-mppm.md)| Learn how to use Unity Test Framework to test a project with Multiplayer Play Mode. |
