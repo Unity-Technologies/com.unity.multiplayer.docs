@@ -94,7 +94,8 @@ If you are using Unity Relay to handle connections, however, **don't use `SetCon
 
 ## Disconnecting and Shutting Down
 
-Disconnecting is rather simple, but you can't use/access any subsystems (that is, `NetworkSceneManager`) once the `NetworkManager` is stopped because they will no longer be available.  For client, host, or server modes, you only need to call the `NetworkManager.Shutdown` method as it will disconnect while shutting down.  
+### Disconnect from a network
+When you disconnect from a network you can't use or access any subsystems, for example `NetworkSceneManager`, because they become unavailable when `NetworkManager` stops. For client, host, or server modes, call the `NetworkManager.Shutdown` method to disconnect and shut down at the same time.  
 
 :::info
 When no network session is active and the `NetworkManager` has been shutdown, you will need to use `UnityEngine.SceneManagement` to load any non-network session related scene.
@@ -108,6 +109,13 @@ public void Disconnect()
     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 }
 ```
+
+### Shutting Down
+When you invoke `NetworkManager.Shutdown` it closes any existing transport connections. The shutdown sequence for a client finishes before the next player loop update or frame. However, the shutdown sequence can take a bit longer for a server or host (server-host). 
+The server-host notifies all clients when it shuts down. To do this, when you invoke `NetworkManager.Shutdown` the server-host sends out a disconnect notification to all currently connected clients and populates the `NetworkManager.Disconnect` reason with one of the two following messages, depending upon whether it is a server or host instance:
+- "Disconnected due to server shutting down."
+- "Disconnected due to host shutting down."
+The server-host attempts to wait for all client connections to close before it finishes the shutdown sequence. This additional step on the server-host side helps to assure that clients receive a disconnect notification and prevents the client transport connection from timing out.  If some client connections take longer than five seconds to close after `NetworkManager.Shutdown` is invoked, the server-host automatically finishes the shutdown sequence and closes any remaining connections.
 
 ## Disconnecting Clients (Server Only)
 
@@ -132,23 +140,19 @@ void DisconnectPlayer(NetworkObject player)
 
 ### Client Disconnection Notifications
 
-Both the client and the server can subscribe to the `NetworkManager.OnClientDisconnectCallback` event to be notified when a client is disconnected. Client disconnect notifications are "relative" to who is receiving the notification.
-
-**There are two general "disconnection" categories:**
-- **Logical**: Custom server side code (code you might have written for your project) invokes `NetworkManager.DisconnectClient`.
-  - Example: A host player might eject a player or a player becomes "inactive" for too long.
-- **Network Interruption**: The transport detects there is no longer a valid network connection.
+Both the client and the server can subscribe to the `NetworkManager.OnClientDisconnectCallback` event to be notified when a client is disconnected.
 
 **When disconnect notifications are triggered:**
 - Clients are notified when they're disconnected by the server.
-- The server is notified if the client side disconnects (that is, a player intentionally exits a game session)
+- The server is notified when any client disconnects from the server, whether the server disconnects the client or the client disconnects itself.
 - Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption)
 
-**Scenarios where the disconnect notification won't be triggered**:
-- When a server "logically" disconnects a client.
-  - _Reason: The server already knows the client is disconnected._
-- When a client "logically" disconnects itself.
-  - _Reason: The client already knows that it's disconnected._
+**Client notification identifiers**
+- On the server-side, the client identifier parameter is the identifier of the client that disconnects.
+- On the client-side, the client identifier parameter is the identifier assigned to the client.
+  - _The exception to this is when a client is disconnected before its connection is approved._
+
+
 
 ### Connection Notification Manager Example
 Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component.
