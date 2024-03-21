@@ -27,7 +27,7 @@ This set up has performance, security, and cost considerations for implementatio
 Listen server architecture is a popular choice for single player games that want to provide the option to add a friend into an existing game world. Listen servers are best suited for a smaller player group (< 12) and games that don't require a persistent world.
 
 :::info
-*Persistent world* in Netcode for GameObjects (NGO) means "a persistent online world." 
+*Persistent world* in Netcode for GameObjects means "a persistent online world." 
 
 For example, the game state isn't bound to a player or a session, but is typically tied to the host.
 :::
@@ -82,7 +82,7 @@ Ways to NAT punch:
 * Interactive Connectivity Establishment [ICE](../reference/glossary/network-terms.md#interactive-connectivity-establishment-ice)
 * User Datagram Protocol [(UDP) hole punching](../reference/glossary/network-terms.md#udp-hole-punching)
 
-Because of its high rate of failure, NAT punch-through is typically only used with a relay fallback. 
+Because of its high rate of failure, NAT punch-through is typically only used with a relay fallback.
 
 ### NAT Punch and Relay Fallback
 
