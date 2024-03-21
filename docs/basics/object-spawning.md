@@ -71,7 +71,7 @@ var instance = Instantiate(NetworkManager.GetNetworkPrefabOverride(myPrefab));
 var instanceNetworkObject = instance.GetComponent<NetworkObject>();
 instanceNetworkObject.Spawn();
 ```
-In the above script, we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method. Then we then create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`.
+In the above script, we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method. Then we create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`.
 
 #### Using InstantiateAndSpawn
 The second option is to leverage the `NetworkSpawnManager.InstantiateAndSpawn` method that handles whether or not to spawn an override for you. The below script is written as if it's being invoked within a `NetworkBehaviour`.
@@ -178,7 +178,7 @@ While the NonPooledDynamicSpawner example is one of the simplest ways to spawn a
 :::
 
 :::note
-Really, the when we use the term "non-pooled" more often than not we are referring to the concept that a `GameObject` will be instantiated on both the server and the clients each time an instance is spawned.
+Really, when we use the term "non-pooled" more often than not we are referring to the concept that a `GameObject` will be instantiated on both the server and the clients each time an instance is spawned.
 :::
 
 ### Pooled Dynamic Spawning
