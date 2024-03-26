@@ -41,7 +41,7 @@ In this sample some GameObjects and components exist on the clients, some exist 
 This project automatically strips the rendering, UI, and Audio components. To learn which settings automatically strip components, perform the following actions: 
 
 * Open the Project Settings window (menu: **Edit** > **Project Settings**).
-* Select **Multiplayer.**
+* Select **Multiplayer Roles**.
 * Select **Content Selection**.
 
 For more information, refer to [Automatically remove components from a Multiplayer Role](https://docs.unity3d.com/Packages/com.unity.dedicated-server@1.0/manual/automatic-selection.html).
@@ -50,7 +50,7 @@ This sample strips other components and GameObjects from the server manually. To
 
 #### Split scripts across the client, server, or network
 
-This sample splits the logic of the Player Character and the AI Character into separate scripts so that you can use the Content Selection window to run each character separately on the client, server and network.. For example, the `PlayerCharacter` script logic is split into the following scripts: 
+This sample splits the logic of the Player Character and the AI Character into separate scripts so that you can use the Content Selection window to run each character separately on the client, server and network. For example, the `PlayerCharacter` script logic is split into the following scripts: 
 * Client Player Character. This script only exists on the clients. 
 * Server Player Character.This script only exists on the server.
 * Networked Player Character: This script inherits from `NetworkBehaviour`.It synchronizes data and sends messages between the server and clients. This script exists on both clients and the server.
