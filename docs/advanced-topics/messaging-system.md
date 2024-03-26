@@ -1,6 +1,6 @@
 ---
 id: messaging-system
-title: Sending Events with RPCs
+title: Sending events with RPCs
 description: An introduction to the messaging system in Unity MLAPI, including RPC's and Custom Messages.
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
@@ -9,25 +9,25 @@ Netcode for GameObjects (Netcode) has two parts to its messaging system: RPCs an
 
 ## RPC: Remote Procedure Call
 
-The concept of an `RPC` is common not only in video games but in the software industry in general. They're ways to call methods on objects that aren't in the same executable. 
+The concept of an `RPC` is common not only in video games but in the software industry in general. They're ways to call methods on objects that aren't in the same executable.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
   <figcaption>Client can invoke a server RPC on a Network Object. The RPC will be placed in the local queue and then sent to the server, where it will be executed on the server version of the same Network Object.</figcaption>
 </figure>
 
-At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters. 
+At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters.
 
-When calling an `RPC`, you call a method remotely on an object that can be anywhere in the world. They're "events" you can trigger when needed. 
+When calling an `RPC`, you call a method remotely on an object that can be anywhere in the world. They're "events" you can trigger when needed.
 
 If you call an `RPC` method on your side, it will execute on a different machine.
 
 Netcode includes multiple RPC variations that you can use to execute logic with various remote targets. To learn more about RPCs, refer to[`Rpc`](message-system/rpc.md).
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
  <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
@@ -35,7 +35,7 @@ darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 
 
 :::info
-For more information see the wikipedia entry on [Remote Procedure Call's](https://en.wikipedia.org/wiki/Remote_procedure_call). 
+For more information see the wikipedia entry on [Remote Procedure Call's](https://en.wikipedia.org/wiki/Remote_procedure_call).
 :::
 
 ### Netcode's RPCs
@@ -75,4 +75,3 @@ To use RPCs, make sure
 Instances of Serializable Types are passed into an RPC as parameters and are serialized and replicated to the remote side.
 
 See [Serialization](serialization/serialization-intro.md) for more information.
-

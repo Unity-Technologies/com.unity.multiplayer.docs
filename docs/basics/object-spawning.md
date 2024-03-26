@@ -1,7 +1,7 @@
 ---
 id: object-spawning
-title: Object Spawning
-sidebar_label: Object Spawning
+title: Object spawning
+sidebar_label: Object spawning
 ---
 
 In Unity, you typically create a new game object using the `Instantiate` function. Creating a game object with `Instantiate` will only create that object on the local machine. `Spawning` in Netcode for GameObjects (Netcode) means to instantiate and/or spawn the object that is synchronized between all clients by the server.
@@ -21,11 +21,13 @@ When a `NetworkBehaviour` is assigned to a `NetworkObject`, the `NetworkObject.N
 
 ### Registering a Network Prefab
 
-You must register a Network Prefab instance with a `NetworkManager` via the `NetworkPrefabsList`.
-The two steps to registering a network Prefab with a `NetworkManager`:
+You must register a Network Prefab instance with a `NetworkManager` using a `NetworkedPrefabsList` scriptable object.
+There are four steps to registering a network Prefab with a `NetworkManager`:
 
-1. Create a Network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`
-2. Add your Network Prefab to the Network Prefabs List that's associated with a `NetworkManager`.
+1. Create a Network Prefab by creating a Prefab with a `NetworkObject` component attached to the root `GameObject`.
+2. Create a scriptable object called `NetworkedPrefabsList` by right-clicking the project window, then: `Create/Netcode/NetworkedPrefabsList`.
+3. Add your Network Prefab to the `NetworkPrefabsList`.
+4. Add the `NetworkPrefabsList` to the Network Prefabs Lists that's associated with a `NetworkManager`.
 
 ### Spawning a Network Prefab (Overview)
 
@@ -39,12 +41,12 @@ See [Ownership](networkobject.md#ownership) for more information.
 The following is a basic example of how to spawn a network Prefab instance (with the default server ownership):
 
 ```csharp
-GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
-go.GetComponent<NetworkObject>().Spawn();
+var instance = Instantiate(myPrefab);
+var instanceNetworkObject = instance.GetComponent<NetworkObject>();
+instanceNetworkObject.Spawn();
 ```
 
 The `NetworkObject.Spawn` method takes 1 optional parameter that defaults to `true`:
-
 ```csharp
 public void Spawn(bool destroyWithScene = true);
 ```
@@ -52,6 +54,43 @@ public void Spawn(bool destroyWithScene = true);
 When you set the destroyWithScene property to `false` it will be treated the same as when you set [Object.DontDestroyOnLoad](https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html). Typically, you use this if you are loading a scene using [LoadSceneMode.Single](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) parameter.
 
 [Learn more about Netcode Scene Management here](scenemanagement/scene-management-overview.md)
+
+:::caution You might find it useful to add a `GameObject` property in a `NetworkBehaviour`-derived component to use when assigning a network prefab instance for dynamically spawning. You need to make sure to instantiate a new instance **prior** to spawning. If you attempt to just spawn the actual network prefab instance it can result in unexpected results.
+:::
+
+### Taking Prefab Overrides Into Consideration
+Sometimes, you might want to make a simpler prefab instance to be spawned on server version the override for clients. You should take this into consideration when dynamically spawning a network prefab. If you're running as a host, you want the override to spawn since a host is both a server and a client. However, if you also want to have the ability to run as a dedicated server, you might want to spawn the source network prefab.
+
+There are two ways you can accomplish this, as explained below.
+
+#### Get The Network Prefab Override First
+This option provides you with the overall view of getting the network prefab override, instantiating it, and then spawning it.
+
+```csharp
+var instance = Instantiate(NetworkManager.GetNetworkPrefabOverride(myPrefab));
+var instanceNetworkObject = instance.GetComponent<NetworkObject>();
+instanceNetworkObject.Spawn();
+```
+In the above script, we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method. Then we then create an instance of the network prefab override, and finally we spawn the network prefab override instance's `NetworkObject`.
+
+#### Using InstantiateAndSpawn
+The second option is to leverage the `NetworkSpawnManager.InstantiateAndSpawn` method that handles whether or not to spawn an override for you. The below script is written as if it's being invoked within a `NetworkBehaviour`.
+
+```csharp
+var networkObject = NetworkManager.SpawnManager.InstantiateAndSpawn(myPrefab, ownerId);
+```
+We pass in the overridden source network prefab we want to have instantiated and spawned, and then it returns the instantiated and spawned `NetworkObject` of the spawned object. The default behavior of `InstantiateAndSpawn` is to spawn the override if running as a host and the original source prefab if running as a server.
+
+`InstantiateAndSpawn` has several parameters to provide more control over this process:
+
+```csharp
+InstantiateAndSpawn(NetworkObject networkPrefab, ulong ownerClientId = NetworkManager.ServerClientId, bool destroyWithScene = false, bool isPlayerObject = false, bool forceOverride = false, Vector3 position = default, Quaternion rotation = default)
+```
+
+Looking at the parameters, we can see it defaults to the server as the owner, ensures that the instantiated `NetworkObject` won't be destroyed if the scene is unloaded, is not spawned as a player, has a `forceOverride` parameter, and provides a way to set the position and rotation of the newly instantiated `NetworkObject`.
+
+The `forceOverride` parameter, when set to true, will use the override whether you're running as either server or host.
+
 
 ## Destroying / Despawning
 
@@ -290,7 +329,7 @@ Using this type of a hierarchical separation is useful in many ways (especially 
 
 Any objects in the scene with active and spawned `NetworkObject` components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`. In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
 
-[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects)
+[Learn more about In-Scene Placed `NetworkObjects`](scenemanagement/inscene-placed-networkobjects.md)
 
 Generally, there are **two** modes that define how an in-scene placed `NetworkObject` is synchronized.
 

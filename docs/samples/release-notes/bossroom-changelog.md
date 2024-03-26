@@ -1,6 +1,6 @@
 ---
 id: bossroom-changelog
-title: Boss Room Changelog
+title: Boss Room changelog
 description: Boss Room changelog and release notes
 ---
 

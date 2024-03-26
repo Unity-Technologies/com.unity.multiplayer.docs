@@ -8,7 +8,7 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 Any process can communicate with any other process by sending an RPC. Starting in version 1.8, the `Rpc` attribute encompasses Server to Client Rpcs, Client to Server Rpcs, and Client to Client Rpcs.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
 </figure>
@@ -16,7 +16,7 @@ darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
 
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 </figure>
@@ -45,7 +45,7 @@ There are several default, compile-time targets you can choose from:
 | **SendTo.Server**            | Send to the server, regardless of ownership. Will execute locally if invoked on the server. |
 | **SendTo.NotServer**         | Send to **everyone but** the server, filtered to the current observer list. Will **not** send to a server running in host mode - it is still treated as a server. If you want to send to servers when they are host, but not when they are dedicated server, use **SendTo.ClientsAndHost**.<br /><br />Will execute locally if invoked on a client. Will **not** execute locally if invoked on a server running in host mode. |
 | **SendTo.Owner**             | Send to the NetworkObject's current owner. Will execute locally if the local process is the owner. |
-| **SendTo.NotOwner**          | Send to everyone but the current owner, filtered to the current observer list. Will execute locally if the local process is not the owner. |
+| **SendTo.NotOwner**          | Send to everyone but the current owner, filtered to the current observer list. Will execute locally if the local process is not the owner.<br/><br/>In host mode, the host will receive this message twice: once on the host client, once on the host server. |
 | **SendTo.Me**                | Execute this RPC locally.<br/><br/>Normally this is no different from a standard function call.<br/><br/>Using the `DeferLocal` parameter of the attribute or the `LocalDeferMode` override in `RpcSendParams`, this can allow an RPC to be process on localhost with a one-frame delay as if it were sent over the network. |
 | **SendTo.NotMe**             | Send this RPC to everyone but the local machine, filtered to the current observer list. |
 | **SendTo.Everyone**          | Send this RPC to everyone, filtered to the current observer list. **Will** execute locally. |
@@ -71,7 +71,7 @@ public void PingRpc(int pingCount)
 }
 
 [Rpc(SendTo.NotServer)]
-void PongRpc(int pingCount, string message) 
+void PongRpc(int pingCount, string message)
 {
     Debug.Log($"Received pong from server for ping {pingCount} and message {message}");
 }
@@ -127,9 +127,9 @@ public class SomeNetworkBehaviour : NetworkBehaviour
     [Rpc(SendTo.Server, AllowTargetOverride = true)]
     public void SomeRpc(int serializedParameter1, float serializedParameter2, RpcParams rpcParams)
     {
-        
+
     }
-    
+
     // Sends SomeRpc() to the owner instead of the server
     public void SendSomeRpcToOwner(int param1, float param2)
     {
@@ -140,7 +140,7 @@ public class SomeNetworkBehaviour : NetworkBehaviour
 public class SomeOtherClass
 {
     public SomeNetworkBehaviour Behaviour;
-    
+
     public SendSomeRpcToOwnerOnBehaviour(int param1, float param2)
     {
         // Since this method is not within a NetworkBehaviour, RpcTarget.Owner must be accessed through
@@ -165,14 +165,14 @@ public BaseRpcTarget Not(ulong excludedClientId, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Group(NativeArray<ulong> clientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Group(NativeList<ulong> clientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Group(ulong[] clientIds, RpcTargetUse use) { /* ... */ }
-public BaseRpcTarget Group<T>(T clientIds, RpcTargetUse use) where T : IEnumerable<ulong> 
+public BaseRpcTarget Group<T>(T clientIds, RpcTargetUse use) where T : IEnumerable<ulong>
 { /* ... */ }
 
 // Sends to everyone EXCEPT a group of client IDs.
 public BaseRpcTarget Not(NativeArray<ulong> excludedClientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Not(NativeList<ulong> excludedClientIds, RpcTargetUse use) { /* ... */ }
 public BaseRpcTarget Not(ulong[] excludedClientIds, RpcTargetUse use) { /* ... */ }
-public BaseRpcTarget Not<T>(T excludedClientIds, RpcTargetUse use) where T : IEnumerable<ulong> 
+public BaseRpcTarget Not<T>(T excludedClientIds, RpcTargetUse use) where T : IEnumerable<ulong>
 { /* ... */ }
 ```
 
@@ -192,17 +192,17 @@ public void PingRpc(int pingCount, RpcParams rpcParams)
 {
     // Here we use RpcParams for incoming purposes - fetching the sender ID the RPC came from
     // That sender ID can be passed in to the PongRpc to send this back to that client and ONLY that client
-    
-    PongRpc(pingCount, "PONG!", RpcTarget.Single(rpcParams.Receive.SenderClientId));
+
+    PongRpc(pingCount, "PONG!", RpcTarget.Single(rpcParams.Receive.SenderClientId, RpcTargetUse.Temp));
 }
 
 [Rpc(SendTo.SpecifiedInParams)]
-void PongRpc(int pingCount, string message, RpcParams rpcParams) 
+void PongRpc(int pingCount, string message, RpcParams rpcParams)
 {
     // We do not use rpcParams within this method's body, but that is okay!
     // The params passed in are used by the generated code to ensure that this sends only
     // to the one client it should go to
-    
+
     Debug.Log($"Received pong from server for ping {pingCount} and message {message}");
 }
 

@@ -1,13 +1,13 @@
 ---
 id: command-line-helper
-title: Create a command line helper
+title: Create a command-line helper for testing
 ---
 
-This section shows how to create a command line helper that launches the project outside the Unity Editor to make testing builds easier.
+This page walks you through how to create a command-line helper that launches your project outside the Unity Editor to make testing builds easier.
 
-:::tip
-Using a command line helper script to launch multiple instances of a game build isn’t the only way to test a multiplayer game. You can also use the Unity Editor or the [Multiplayer Play Mode package](https://docs-multiplayer.unity3d.com/tools/current/mppm).
-:::
+Using a command-line helper script to launch multiple instances of a game build isn’t the only way to test a multiplayer game. You can also use the Unity Editor or the [Multiplayer Play Mode package](https://docs-multiplayer.unity3d.com/mppm/current/about/).
+
+## Create the command-line helper
 
 1. Right-click the **Assets** folder in the **Projects** tab, then select **Create** > **Folder**.
 2. Name the new folder **Scripts**.
@@ -84,26 +84,23 @@ public class NetworkCommandLine : MonoBehaviour
 15. From **Resolution** > **Fullscreen Mode**, change **Fullscreen Window** to **Windowed**.
 16. Return to the Editor main window and save your scene.
 
-### Test the command line helper
+## Test the command-line helper
 
-Follow these instructions to test that the command line helper script works.
+Follow these instructions to test that the command-line helper script works.
 
 1. Select **File** > **Build and Run**.
 2. Create a new folder called `Build` inside your Hello World project folder.
-3. Save As the binary “`HelloWorld`.”
+3. **Save As** the binary `HelloWorld`.
 
 Saving the project in this way causes the Unity Editor to build and launch the project in a new window. After it launches (and displays the plane), close the window you just launched.
 
-#### Test on Windows
+### Test on Windows
 
 To test on Windows:
 
 1. Open the Command Prompt.
-2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angle brackets (`< >`) for all commands.
-
-:::note
-You might get a [UAC prompt](https://learn.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) requesting permission to run the executable. Allow the executable to run to continue.
-:::
+2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angled brackets (`< >`) for all commands.
+    * You might get a [UAC prompt](https://learn.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) requesting permission to run the executable. Allow the executable to run to continue.
 
 Command to start the server:
 
@@ -162,12 +159,12 @@ C:\Users\sarao>HelloWorld\Build\HelloWorld.exe -logfile log-server.txt -mode ser
 
 :::
 
-#### **Test on macOS**
+### Test on macOS
 
 Use the following instructions if you're using macOS:
 
 1. Open the Terminal app.
-2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angle brackets (`< >`) for all commands.
+2. Use the following command to launch the server and the client. Make sure to replace the placeholder text within the angled brackets (`< >`) for all commands.
 
 Command to start the server:
 
