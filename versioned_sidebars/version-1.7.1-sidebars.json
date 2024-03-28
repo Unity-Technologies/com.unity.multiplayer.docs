@@ -396,6 +396,10 @@
       "label": "Educational Samples",
       "items": [
         {
+          "type": "doc",
+          "id": "learn/sample-dedicated-server"
+        },
+        {
           "collapsed": true,
           "type": "category",
           "label": "Boss Room",
