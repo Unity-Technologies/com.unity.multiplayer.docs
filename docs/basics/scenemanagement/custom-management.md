@@ -1,7 +1,7 @@
 ---
 id: custom-management
-title: Custom Scene Management
-sidebar_label: Custom Management
+title: Custom scene management
+sidebar_label: Custom management
 ---
 
 :::caution
@@ -65,12 +65,3 @@ You can accomplish this using either RPCs or custom messages. You might even use
 :::tip
 Creating a global scene management script and attaching it to the same GameObject as the `NetworkManager` is one way to assure your custom netcode scene management solution persists while a game session is in progress.  
 :::
-
-
-
-
-
-
-
-
-

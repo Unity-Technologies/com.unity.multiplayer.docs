@@ -1,6 +1,6 @@
 ---
 id: enum_types
-title: Enum Types
+title: Enum types
 ---
 
 A user-defined enum type will be serialized by built-in serialization code (with underlying integer type).

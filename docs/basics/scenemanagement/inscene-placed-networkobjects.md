@@ -1,7 +1,7 @@
 ---
 id: inscene-placed-networkobjects
-title: In-Scene (Placed) NetworkObjects
-sidebar_label: In-Scene NetworkObjects
+title: In-scene (placed) NetworkObjects
+sidebar_label: In-scene NetworkObjects
 ---
 :::caution
 If you haven't already read the [Using NetworkSceneManager](using-networkscenemanager.md) section, it's highly recommended to do so before proceeding.
@@ -102,7 +102,7 @@ Using this approach allows you to:
 
 [See a Dynamic Spawning (non-pooled) "Hybrid Approach" Example Here](../object-spawning/index.html#dynamic-spawning-non-pooled)
 
-## Spawning and De-spawning 
+## Spawning and De-spawning
 By default, an in-scene placed `NetworkObject` will always get spawned when the scene it was placed within is loaded and a network session is in progress.  However, in-scene placed `NetworkObject`s are unique from dynamically spawned `NetworkObject`s when it comes to spawning and de-spawning.  Functionally speaking, when de-spawning a dynamically spawned NetworkObject you can always spawn a new instance of the `NetworkObject`'s associated network prefab. So, whether you decide to destroy a dynamically spawned `NetworkObject` or not, you can always make another clone of the same network Prefab unless you want to preserve the current state of the instance being de-spawned. <br />
 With in-scene placed NetworkObjects, the scene it's placed within is similar to the network Prefab used to dynamically spawn a `NetworkObject` in that both are used to uniquely identify the spawned `NetworkObject`.  The primary difference is that you use a network Prefab to create a new dynamically spawned instance where you a required to additively load the same scene to create another in-scene placed `NetworkObject` instance.<br />
 
@@ -110,7 +110,7 @@ With in-scene placed NetworkObjects, the scene it's placed within is similar to 
 
 Dynamically Spawned | In-Scene Placed
 ------------------- | ---------------
-NetworkPrefab       | Scene 
+NetworkPrefab       | Scene
 GlobalObjectIdHash  | Scene Handle (_When Loaded_) & GlobalObjectIdHash
 
 Once the `NetworkObject` is spawned, Netcode for GameObjects uses the `NetworkObjectId` to uniquely identify it for both types.  An in-scene placed `NetworkObject` will still continue to be uniquely identified by the scene handle that it originated from and the GlobalObjectIdHash even if the in-scene placed `NetworkObject` is migrated to another additively loaded scene and originating scene is unloaded.
@@ -122,7 +122,7 @@ Once the `NetworkObject` is spawned, Netcode for GameObjects uses the `NetworkOb
 When invoking the `Despawn` method of a `NetworkObject` with no parameters, it will always default to destroying the `NetworkObject`:
 
 ```csharp
-NetworkObject.Despawn();  // Will de-spawn and destroy (!!! not recommended !!!) 
+NetworkObject.Despawn();  // Will de-spawn and destroy (!!! not recommended !!!)
 ```
 
 If you want an in-scene placed NetworkObject to persist after it has been de-spawned, it's recommended to always set the first parameter of the `Despawn` method to `false`:
@@ -145,7 +145,7 @@ public class MyInSceneNetworkObjectBehaviour : NetworkBehaviour
         base.OnNetworkDespawn();
     }
 }
-``` 
+```
 
 This will assure that when your in-scene placed `NetworkObject` is de-spawned it won't consume precious processing or rendering cycles and it will become "invisible" to all players (connected or that join the session later).  Once the `NetworkObject` has been de-spawned and disabled, you might want to re-spawn it at some later time.  To do this, you would want to set the server-side instance's `GameObject` back to being active and spawn it:
 
@@ -172,7 +172,7 @@ public class MyInSceneNetworkObjectBehaviour : NetworkBehaviour
 }
 ```
 
-:::info 
+:::info
 You only need to enable the `NetworkObject` on the server-side to be able to re-spawn it. Netcode for GameObjects will only enable a disabled in-scene placed `NetworkObject` on the client-side if the server-side spawns it. <br />
 _This **does not** apply to dynamically spawned `NetworkObjects`. <br />(see [Object Pooling](../../advanced-topics/object-pooling.md) for an example of recycling dynamically spawned `NetworkObject`s_)
 :::
@@ -218,7 +218,7 @@ using Unity.Netcode;
     }
 ```
 
-You won'tice the above example keeps track of whether the in-scene placed `NetworkObject` has started as being de-spawned (to avoid de-spawning after its first time being spawned), and it only allows the server to execute that block of code in the overridden `OnNetworkSpawn` method. The above `MyInSceneNetworkObjectBehaviour` example also declares a public `bool` property `StartDespawned` to provide control over this through the inspector view in the editor. 
+You won'tice the above example keeps track of whether the in-scene placed `NetworkObject` has started as being de-spawned (to avoid de-spawning after its first time being spawned), and it only allows the server to execute that block of code in the overridden `OnNetworkSpawn` method. The above `MyInSceneNetworkObjectBehaviour` example also declares a public `bool` property `StartDespawned` to provide control over this through the inspector view in the editor.
 
 **_How do I synchronize late joining clients when an in-scene placed `NetworkObject` has been de-spawned and destroyed?_**
 
@@ -243,7 +243,7 @@ In-scene placed `NetworkObject`s follow the same parenting rules as [dynamically
 - When enabled, the NetworkObject is aware of its parent and will treat all of its transform values as being local space synchronized.  
   - _This also applies to being pre-parented under a `GameObject` with no `NetworkObject` component._
 
-:::note 
+:::note
 _**The caveat to the above is scale**:_
 Scale is treated always as local space relative for pre-parented in-scene placed `NetworkObjects`. <br />
 
@@ -259,6 +259,6 @@ It is important to understand that without the use of a `NetworkTransform` clien
 - A client is being synchronized with the NetworkObject in question:
   - During the client's first synchronization after a client has their connection approved.
   - When a server spawns a new NetworkObject.
-- A NetworkObject has been parented (or a parent removed). 
+- A NetworkObject has been parented (or a parent removed).
 - The server can override the `NetworkBehaviour.OnNetworkObjectParentChanged` method and adjust the transform values when that is invoked.
    - These transform changes will be synchronized with clients via the `ParentSyncMessage`

@@ -1,6 +1,6 @@
 ---
 id: network-update-loop-reference
-title: Network Update Loop Reference 
+title: NetworkUpdateLoop reference 
 ---
 
 The following diagrams provide insight into the Network Update Loop process and APIs.

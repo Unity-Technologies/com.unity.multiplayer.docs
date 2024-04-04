@@ -1,11 +1,11 @@
 ---
 id: codemonkey
-title: Code Monkey NGO Tutorial Videos
+title: Code Monkey tutorial videos
 ---
 
 Code Monkey has a Multiplayer Unity Networking tutorial video that teachs various concepts of Netcode for GameObjects. Learn more about Code Monkey and his [Youtube channel](https://www.youtube.com/c/CodeMonkeyUnity), and don't forget to click the **Subscribe** button.
 
-This Unity Multiplayer video tutorial teaches you how to use Unity's Netcode For GameObjects to create a multiplayer game. 
+This Unity Multiplayer video tutorial teaches you how to use Unity's Netcode For GameObjects to create a multiplayer game.
 
 <Iframe url="https://www.youtube.com/embed/3yuBOB3VrCk"
         width="854px"
@@ -14,11 +14,11 @@ This Unity Multiplayer video tutorial teaches you how to use Unity's Netcode For
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
-   
+
 
 Video published Sept 26, 2022
 
