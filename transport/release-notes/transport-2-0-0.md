@@ -5,14 +5,68 @@ id: transport-2-0-0
 
 The [Unity Transport](https://docs-multiplayer.unity3d.com/transport/current/about/) `com.unity.transport` package repository adds multiplayer and network features to your project. See the following changelog for new features, updates, fixes, and upgrade information.
 
+## [2.2.1] - 2023-12-06
+
+### Fixes
+
+* Fixed an issue where `NetworkEndpoint.TryParse` would leave the out parameter endpoint with a valid `NetworkFamily`, even if parsing of the address had failed.
+
+## [2.2.0] - 2023-12-01
+
+### New features
+
+* The WebSocket URL path can now be configured using `NetworkSettings.WithWebSocketParameters`. For clients, the path provided there is the path on which connections will be made. For servers, it's the path connections will be accepted on.
+* It is now possible to specify a payload to be sent along with connection requests through a new parameter for the `NetworkDriver.Connect` call. This payload is retrievable as-is on the server side when calling `NetworkDriver.Accept`. An example usage would be to send an authentication token (thus alleviating the need to do this through a separate message).
+
+### Changes
+
+* All parameter structures that can be used with `NetworkSettings` are now marked as `Serializable`.
+* For custom endpoints, `NetworkDriver.Connect` will now automatically bind to the endpoint passed as a parameter instead of binding to the wildcard IPv4 address (only if the driver was not previously bound).
+* The size of `NetworkEndpoint` has been increased, which allows creating custom endpoints (endpoints where the family is `NetworkFamily.Custom`) containing up to 60 bytes of data.
+
+### Fixes
+
+* Allow creating a driver with the same Relay allocation as a previous driver. Note that having two drivers using the same Relay allocation _at the same time_ is not supported. This fix is for the case where one disposes of a driver, and then creates a new one with the same Relay allocation.
+* Fixed an issue where some data messages could be inadvertently dropped if the last message in the connection handshake was lost in transit.
+* Fixed an issue where reliable packets could be resent even after they had been acknowledged, which would lead to wasted bandwidth.
+* Fixed an issue that made it impossible to set the family of a `NetworkEndpoint` to `NetworkFamily.Custom`.
+* Fixed an issue where it was possible for the state of a connection (as reported by `GetConnectionState`) would be `Disconnected` one update before the `Disconnect` event would appear through `PopEvent`.
+* Fixed an issue where WebSocket connections would be closed if the TCP OS buffers were overflowed. In this situation, traffic that can't be sent on the TCP socket will now accumulate in the send queue. If _that_ fills up, then new `BeginSend` operations will return `Error.StatusCode.NetworkSendQueueFull` and the situation can be handled by user as they see fit (e.g. buffer the traffic on the side). Frameworks like Netcode for GameObjects already handle this situation gracefully.
+* Fixed an issue where if the receive queue was filled up (say when pulling a lot of data at once from a socket), then WebSocket packets would fail to be processed and their associated connections would be closed.
+
+## [2.1.0] - 2023-09-19
+
+### New features
+
+* It is now possible to configure the maximum message size that the transport will send through a new `maxMessageSize` parameter in `NetworkSettings.WithNetworkConfigParameters`. This is useful for environments where network equipment mishandles larger packets (like some mobile networks or VPNs). The value excludes IP and UDP headers, but includes headers added by the transport itself (e.g. reliability headers). The default value is 1400. Note that it is recommended that both client and server be configured to use the same value.
+* Added new values `AuthenticationFailure` and `ProtocolError` to the `Error.DisconnectReason` enum. These values are respectively returned when a connection fails to be established because of DTLS/TLS handshake failure, and for unexpected and unrecoverable errors encountered by the transport (e.g. unexpected socket errors or malformed WebSocket frames).
+* Added a new `NetworkFamily.Custom` value and proper support for it in `NetworkEndpoint`. This value is intended for usage with custom `INetworkInterface` implementations, where endpoints are not IP addresses.
+
+### Changes
+
+* Updated Collections dependency to 2.2.1.
+* Updated Burst dependency to 1.8.8.
+* Updated Mathematics dependency to 1.3.1.
+* `NetworkDriver.GetRelayConnectionStatus` will now return the new enum value `RelayConnectionStatus.NotUsingRelay` when called on a `NetworkDriver` that has not been configured to use Unity Relay. The previous behavior was to throw an exception. This can be used to safely determine if a driver is using Relay, even from Burst-compiled code.
+* `RelayServerData` now exposes a `IsWebSocket` field that can be used to determine if the server data will be using a WebSocket endpoint. This value is set automatically if constructing the `RelayServerData` from an allocation object, and can be set through a new optional `isWebSocket` parameter for low-level constructors.
+* `NetworkEndpoint.RawPort` is now obsolete. There is little use for this API since it basically only converts to/from network byte order. There are standard C# APIs to do this.
+
+### Fixes
+
+* Fixed a possible crash when using secure WebSockets that would occur if a connection was closed suddenly with pending packets waiting to be sent.
+* Fixed an issue where empty messages would not properly be received if sent on a non-default pipeline.
+* Fixed "Input string was not in a correct format" log when listening on a port already in use.
+
 ## [2.0.2] - 2023-05-30
 
 ### Changes
+
 * When using Unity Relay, `NetworkDriver.GetRemoteEndpoint` will now always return the address of the Relay server, instead of returning the address until a connection is established, and then returning the allocation ID encoded as an endpoint (appearing as an invalid endpoint). This makes the behavior the same as it was in version 1.X of the package.
 * Updated Collections dependency to 2.1.4.
 * A warning will now be emitted if passing a connection type other than "wss" to the `RelayServerData` constructors on WebGL (other connection types are not supported on that platform).
 
 ### Fixes
+
 * Fixed an issue where the reliable pipeline stage could end up writing past the end of its internal buffer and thrashing the buffers of other connections. This could result in packet corruption, but would most likely result in erroneous -7 (`NetworkDriverParallelForErr`) errors being reported when calling `EndSend`.
 * Fixed an issue where upon returning -7 (`NetworkDriverParallelForErr`), `EndSend` would leak the send handle. Over time, this would result in less send handles being available, resulting in more -5 (`NetworkSendQueueFull`) errors.
 * Fixed an issue where WebSocket connections would always take at least `connectTimeoutMS` milliseconds to be reported as established, even if the connection was actually established faster than that.

@@ -1,6 +1,6 @@
 ---
 id: bossroom
-title: Getting Started with Boss Room
+title: Getting started with Boss Room
 description: Learn more about installing and running the Boss Room game sample.
 ---
 
@@ -86,11 +86,7 @@ Alternatively, you can click the green **Code** button, then select **Download Z
 
 ### Registering the project with Unity Gaming Services (UGS)
 
-Boss Room leverages several services from UGS to ease connectivity between players. To use these services inside your project, you must:
-
-1. [Create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard.
-2. Enable the [Relay](https://docs.unity.com/relay/get-started.html) service.
-3. Enable the [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) service.
+Boss Room leverages several services from UGS to ease connectivity between players. To use these services inside your project, you need to [create an organization](https://support.unity.com/hc/en-us/articles/208592876-How-do-I-create-a-new-Organization-) inside the Unity Dashboard, which will provide you with access to the [Relay](https://docs.unity.com/relay/get-started.html) and [Lobby](https://docs.unity.com/lobby/game-lobby-sample.html) services.
 
 ### Opening the project for the first time
 
@@ -241,7 +237,7 @@ Boss Room includes the following tools and utilities:
 ### Troubleshooting
 #### Bugs
 
-Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report NGO bugs using NGO Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
+Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report Netcode for GameObjects bugs using Netcode for GameObjects Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
 
 ### Licence
 
@@ -257,7 +253,7 @@ Visit the following links to learn more about Unity Netcode and Boss Room.
 
 ### Other samples
 
-The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
+The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of Netcode for GameObjects. You can review these samples with documentation to better understand our APIs and features.
 
 ### Contributing
 

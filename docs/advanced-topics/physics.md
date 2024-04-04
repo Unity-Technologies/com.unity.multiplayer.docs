@@ -18,7 +18,7 @@ Some collision events aren't fired when using `NetworkRigidbody`.
 
 :::tip
 
-If there is a need for a gameplay event to happen on a collision, you can listen to `OnCollisionEnter` function on the server and synchronize the event via `ClientRpc` to all clients.
+If there is a need for a gameplay event to happen on a collision, you can listen to `OnCollisionEnter` function on the server and synchronize the event via `Rpc(SendTo.ClientsAndHost)` to all clients.
 
 :::
 
