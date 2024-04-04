@@ -12,34 +12,30 @@ Netcode for GameObjects' high level components, [the RPC system](../advanced-top
 
 Both the NetworkObject and NetworkBehaviour components require the use of specialized structures before you can serialize and use them with RPCs and NetworkVariables:
 
-* For NetworkObjects, use the [`NetworkObjectReference`](../api/Unity.Netcode.NetworkObjectReference.md).
-* For NetworkBehaviours, use the [`NetworkBehaviourReference`](../api/Unity.Netcode.NetworkBehaviourReference.md).
+* For NetworkObjects, use the [`NetworkObjectReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html).
+* For NetworkBehaviours, use the [`NetworkBehaviourReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviourReference.html).
 
 :::
 
 ## NetworkObject
 
-To replicate any Netcode aware properties or send/receive RPCs, a GameObject must have a NetworkObject component and at least one NetworkBehaviour component. Any Netcode-related component, such as a NetworkTransform or a NetworkBehaviour with one or more NetworkVariables or RPCs, requires a NetworkObject component on the same relative GameObject (or on a parent of the GameObject in question).
+To replicate any Netcode-aware properties or send and receive RPCs, a GameObject must have a NetworkObject component and at least one NetworkBehaviour component. Any Netcode-related component, such as a NetworkTransform or a NetworkBehaviour with one or more NetworkVariables or RPCs, requires a NetworkObject component on the same relative GameObject (or on a parent of the GameObject in question).
 
-When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value initially identifies the associated network Prefab asset clients instantiate to create a client-local clone. After instantiated locally, each NetworkObject is assigned a NetworkObjectId that's used to associate NetworkObjects across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103," and everyone knows what object it's referring to. A NetworkObject is spawned on a client is when it's instantiated and assigned a unique NetworkObjectId.
+When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value initially identifies the associated network Prefab asset clients instantiate to create a client-local clone. After being instantiated locally, each NetworkObject is assigned a NetworkObjectId that's used to associate NetworkObjects across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103," and everyone knows what object it's referring to. A NetworkObject is spawned on a client is when it's instantiated and assigned a unique NetworkObjectId.
 
-[NetworkBehaviours](networkbehaviour.md) offer users with the ability to add their own custom Netcode logic to the associated NetworkObject.
+[NetworkBehaviours](networkbehaviour.md) offers users the ability to add their own custom Netcode logic to the associated NetworkObject.
 
 :::warning
 
-The order of networked objects matters. Make sure to load any NetworkBehaviour components before the Network Object component on the GameObject.
+The script order of networked objects matters. Make sure to load any NetworkBehaviour components before the NetworkObject component on the GameObject.
 
 :::
 
 ## Ownership
 
-Either the server (default) or any connected and approved client each NetworkObject. Netcode for GameObjects is server-authoritative, which means the server controls (the only system authorized) spawning and despawning NetworkObjects.
+By default, the server owns NetworkObjects, although connected and approved clients can also own NetworkObjects using the `SpawnWithOwnership` method. Netcode for GameObjects is server-authoritative, which means that only the server is authorized to spawn and despawn NetworkObjects.
 
-:::note
-
-Invoke all code snippets below on the server-side.
-
-:::
+Invoke all the following code snippets on the server-side.
 
 The default `NetworkObject.Spawn` method assumes server-side ownership:
 
@@ -65,9 +61,9 @@ To give ownership back to the server use the `RemoveOwnership` method:
 GetComponent<NetworkObject>().RemoveOwnership();
 ```
 
-To decide if the local client is the owner of a NetworkObject, you can check the [`NetworkBehaviour.IsOwner`](../api/Unity.Netcode.NetworkBehaviour.md#isowner) property.
+To decide if the local client is the owner of a NetworkObject, you can check the [`NetworkBehaviour.IsOwner`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviour.IsOwner.html) property.
 
-To decide if the server owns the NetworkObject, you can check the [`NetworkBehaviour.IsOwnedByServer`](../api/Unity.Netcode.NetworkBehaviour.md#isownedbyserver) property.
+To decide if the server owns the NetworkObject, you can check the [`NetworkBehaviour.IsOwnedByServer`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviour.IsOwnedByServer.html) property.
 
 :::note
 
@@ -161,7 +157,6 @@ This will process the currently opened scene as well.
 ![image](/img/SpawnWithObservers.png)
 
 The `NetworkObject.SpawnWithObservers` property (default is true) provides you with the ability to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
-
 
 ## Transform synchronization
 

@@ -1,7 +1,7 @@
 ---
 id: networktime-ticks
-title: NetworkTime and Ticks
-sidebar_label: NetworkTime & Ticks
+title: NetworkTime and ticks
+sidebar_label: NetworkTime and ticks
 ---
 
 ## LocalTime and ServerTime
@@ -12,7 +12,7 @@ Netcode for GameObjects (Netcode) uses a star topology. That means all communica
 
 - `LocalTime` on a client is ahead of the server. If a server RPC is sent at `LocalTime` from a client it will roughly arrive at `ServerTime` on the server.
 - `ServerTime` on clients is behind the server. If a client RPC is sent at `ServerTime` from the server to clients it will roughly arrive at `ServerTime` on the clients.
-  
+
 
 
 <Mermaid chart={`
@@ -98,7 +98,7 @@ public class SyncedEventExample : NetworkBehaviour
         Instantiate(ParticleEffect, transform.position, Quaternion.identity);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     private void CreateSyncedEffectServerRpc(double time)
     {
         CreateSyncedEffectClientRpc(time); // Call a client RPC to also create the effect on each client.
@@ -106,7 +106,7 @@ public class SyncedEventExample : NetworkBehaviour
         StartCoroutine(WaitAndSpawnSyncedEffect((float)timeToWait)); // Create the effect on the server but wait for the right time.
     }
 
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     private void CreateSyncedEffectClientRpc(double time)
     {
         // The owner already created the effect so skip them.
@@ -197,7 +197,6 @@ For games with short play sessions casting the time to float is safe or `TimeAsF
 The properties of the `NetworkTimeSystem` should be left untouched on the server/host. Changing the values on the client is sufficient to change the behavior of the time system.
 :::
 
-The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. See the API docs (TODO LINK) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance buffer values can be increased for a player with a bad connection.
+The way network time gets calculated can be configured in the `NetworkTimeSystem` if needed. Refer to the [API docs](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkTimeSystem.html) for information about the properties which can be modified. All properties can be safely adjusted at runtime. For instance, buffer values can be increased for a player with a bad connection.
 
 <!-- On page code -->
-

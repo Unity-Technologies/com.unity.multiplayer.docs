@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import OneTrust from "@site/static/svg/onetrust.svg";
 import styles from './styles.module.scss';
 
 function FooterLink({
@@ -82,8 +83,22 @@ function Footer() {
         dangerouslySetInnerHTML={{
           __html: copyright
         }} /> : null}
-        <div className="footer__details" >"Unity", Unity logos, and other Unity trademarks are trademarks or registered trademarks of Unity Technologies or its affiliates in the U.S. and elsewhere (<a href="https://unity3d.com/legal/trademarks">more info here</a>). Other names or brands are trademarks of their respective owners.</div>
-          </div>}
+        <div className="footer__legal" >
+          <ul>
+            <li><a href="https://unity.com/legal">Legal</a></li>
+            <li><a href="https://unity.com/legal/privacy-policy">Privacy Policy </a></li>
+            <li><a href="https://unity.com/legal/cookie-policy">Cookies</a></li>
+            <li><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a></li>
+            <li>
+                <a href="javascript:void(0);" id="ot-sdk-btn" class="ot-sdk-show-settings">
+                  <OneTrust className='footer__legal-onetrusttick' />
+                  Your Privacy Choices (Cookie Settings)
+                </a>
+              </li>
+         </ul>
+        </div>
+        <div className="footer__details" >"Unity", Unity logos, and other Unity trademarks are trademarks or registered trademarks of Unity Technologies or its affiliates in the U.S. and elsewhere (<a href="https://unity.com/legal/trademarks">more info here</a>). Other names or brands are trademarks of their respective owners.</div>
+        </div>}
       </div>
       <script type="text/javascript">
         function OptanonWrapper() { }

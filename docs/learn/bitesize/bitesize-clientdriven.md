@@ -1,6 +1,6 @@
 ---
 id: bitesize-clientdriven
-title: ClientDriven Sample
+title: ClientDriven sample
 description: Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting
 ---
 
@@ -23,7 +23,7 @@ It uses the ClientNetworkTransform sample and moves your own player's position c
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs#L274-L276
 ```
 
-### Client side object detection for pickup with server side pickup validation 
+### Client side object detection for pickup with server side pickup validation
 Ingredients in ClientDriven are owned by the server, since they're [shared objects](../dealing-with-latency.md#issue-world-consistency). This means if a player tries to grab an object while that object is moving, a server side range detection would sometimes fail, even though it should have succeeded (since ingredients are replicated with some lag, so the player would try to grab ingredients that are a few milliseconds behind).
 To make sure this doesn't happen, the object detection done to grab an ingredient is also done client side.
 
@@ -45,7 +45,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 If the object is already picked up, we're not doing anything. Your client side animations should take this into account and cancel any animations "carrying" something.
 
 ### Server side player spawn points
-In this sample, our spawn points list is server side (to have a single source of truth). 
+In this sample, our spawn points list is server side (to have a single source of truth).
 ClientNetworkTransforms can be updated by owners only, which means the server can't update the player's position directly.
 This means OnNetworkSpawn, the server will need to assign a position to the player using a ClientRPC.
 

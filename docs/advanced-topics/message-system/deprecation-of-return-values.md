@@ -1,10 +1,10 @@
 ---
 id: deprecation-of-return-values
-title: Deprecation of Return Values
+title: Deprecation of return values
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-Netcode for GameObjects (Netcode) supports RPC return values on convenience RPCs.
+Netcode for GameObjects used to support RPC return values on convenience RPCs.
 
 Example:
 
@@ -29,7 +29,7 @@ public float MyRpcWithReturnValue(float x, float y)
 
 ```
 
-This RFC also drops this feature and similar functionality can be achived as following:
+Netcode for GameObjects no longer supports this feature. To achieve the same functionality, use a combination of the ServerRpc and ClientRpc methods. The following code demonstrates this method:
 
 ```csharp
 void MyRpcInvoker()
@@ -37,13 +37,13 @@ void MyRpcInvoker()
     MyRpcWithReturnValueRequestServerRpc(Random.Range(0f, 100f)), Random.Range(0f, 100f)));
 }
 
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void MyRpcWithReturnValueRequestServerRpc(float x, float y)
 {
     MyRpcWithReturnValueResponseClientRpc(x * y);
 }
 
-[ClientRpc]
+[Rpc(SendTo.ClientsAndHost)]
 void MyRpcWithReturnValueResponseClientRpc(float result)
 {
     Debug.LogFormat("The final result was {0}!", result);
