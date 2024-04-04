@@ -37,7 +37,7 @@ In the HelloWorld project, you created a **NetworkManager** by adding the pre-cr
 4. Open the `HelloWorldManager.cs` script.
 5. Edit the `HelloWorldManager.cs` script to match the following.
 
-:::tip 
+:::tip
 You can copy the script from here and paste it into your file.
    1. Select the code sample.
    1. Click **Copy** in the top right corner.
@@ -171,10 +171,10 @@ We call these methods inside of `OnGUI()`.
 </details>
 
 :::note
-You won'tice the introduction of a new method, `SubmitNewPosition()`. This is used later. 
+You might notice the introduction of a new method, `SubmitNewPosition()`. This is used later.
 :::
 
-## Adding basic movement to the Player object 
+## Adding basic movement to the Player object
 
 Here we will create a `HelloWorldPlayer.cs` script that adds some basic movement to the Hello World player.
 
@@ -218,8 +218,8 @@ namespace HelloWorld
             }
         }
 
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        [Rpc(SendTo.Server)]
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             Position.Value = GetRandomPositionOnPlane();
         }
@@ -352,7 +352,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 
 </details>
 
-If we are a client, we call a `ServerRpc`. A `ServerRpc` can be invoked by a client to be executed on the server.
+If we are a client, we call an `Rpc` with the parameter `SendTo.Server`. An `Rpc` with this parameter can be invoked by anyone (client, host, or server) to be executed on the server.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -373,7 +373,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 </details>
 
-This `ServerRpc` simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
+This `Rpc` simply sets the position `NetworkVariable` on the server's instance of this player by just picking a random point on the plane.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -385,15 +385,15 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.poc/tree/fea
 ```
 -->
 ```csharp
-        [ServerRpc]
-        void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+        [Rpc(SendTo.Server)]
+        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
         {
             Position.Value = GetRandomPositionOnPlane();
         }
 ```
 </details>
 
-The server instance of this player has just modified the Position `NetworkVariable`, meaning that if we are a client, we need to apply this position locally inside of our Update loop. 
+The server instance of this player has just modified the Position `NetworkVariable`, meaning that if we are a client, we need to apply this position locally inside of our Update loop.
 
 <details open>
 <summary>Click to show/hide the Code.
@@ -452,7 +452,7 @@ See the following content to continue your journey using Netcode:
 
 * Build on the your growing Hello World project to continue learning about different features of Netcode with [Golden Path Two](gp_module_two.md)
 * Check out the educational samples to further explore Netcode and its abilities:
-  * [Boss Room](../../learn/bossroom/bossroom)
-  * [2D Spaceshooter Bitesize Sample](../../learn/bitesize/bitesize-spaceshooter)
-  * [Invaders Bitesize Sample](../../learn/bitesize/bitesize-invaders)
-  * [Client-Driven Bitesize Sample](../../learn/bitesize/bitesize-clientdriven)
+  * [Boss Room](../../learn/bossroom/getting-started-boss-room.md)
+  * [2D Spaceshooter Bitesize Sample](../../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize Sample](../../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize Sample](../../learn/bitesize/bitesize-clientdriven.md)

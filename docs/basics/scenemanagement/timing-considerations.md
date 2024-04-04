@@ -1,7 +1,7 @@
 ---
 id:  timing-considerations
-title: Timing Considerations
-sidebar_label: Timing Considerations
+title: Timing considerations
+sidebar_label: Timing considerations
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
@@ -10,7 +10,7 @@ If you haven't already read the [Using NetworkSceneManager](using-networkscenema
 :::
 
 ## Introduction
-Netcode for GameObjects handles many of the more complicated aspects of scene management.  This section is tailored towards those who want to better understand the client-server communication sequence for scene events as they occur over time. 
+Netcode for GameObjects handles many of the more complicated aspects of scene management.  This section is tailored towards those who want to better understand the client-server communication sequence for scene events as they occur over time.
 In each diagram, you will see two types of arrows:
 - Horizontal arrows: Denotes a progression to the next state and/or event.
 - Diagonal arrows: Denotes a message being sent (server to client or vice versa).
@@ -20,7 +20,7 @@ In each diagram, you will see two types of arrows:
 ## Client Synchronization:
 The below diagram, Client Synchronization Updates, steps you through the entire client synchronization process from starting the client all the way to the client being fully synchronized and connected.  
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/ClientSyncUpdates_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/ClientSyncUpdates_Dark.png?text=DarkMode"/>
 </figure>
@@ -51,7 +51,7 @@ Take note that after the client finishes processing the synchronization event, t
 ### Client-Side Synchronization Timeline
 Now that we have covered the high-level synchronization process, we can dive a little deeper into what happens on the client side as it processes the synchronize message.  The below sub-diagram, "Scene Event Synchronization Timeline", provides you with a more detailed view of how the client processes the synchronize message:
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/SceneEventSynchronizationTimeline_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/SceneEventSynchronizationTimeline_Dark.png?text=DarkMode"/>
 </figure>
@@ -60,11 +60,11 @@ You can see that upon receiving the message, the client appears to be iterating 
 ## Loading Scenes
 
 ### LoadSceneMode.Additive
-Looking at the timeline diagram below, "Loading an Additive Scene", we can see that it includes a server, two clients, and that the server will always precede all clients when it comes to processing the scene loading event. The big-picture this diagram is conveying is that only when the server has finished loading the scene and spawning any in-scene placed `NetworkObject`s, instantiated by the newly loaded scene, will it send the scene loading event message to the clients. 
+Looking at the timeline diagram below, "Loading an Additive Scene", we can see that it includes a server, two clients, and that the server will always precede all clients when it comes to processing the scene loading event. The big-picture this diagram is conveying is that only when the server has finished loading the scene and spawning any in-scene placed `NetworkObject`s, instantiated by the newly loaded scene, will it send the scene loading event message to the clients.
 
 Another point of interest in the below diagram is how Client 1 receives the scene loading event, processes it, and then responds with a `SceneEventType.LoadComplete` scene event message before client 2. This delta between client 1 and client 2 represents the varying client-server latencies and further enforces the underlying concept behind the `SceneEventType.LoadEventCompleted` message.  Once a server has received all `SceneEventType.LoadComplete` messages from the connected clients, it will then broadcast the `SceneEventType.LoadEventCompleted` message to all connected clients.  At this point, we can consider the scene loading event (truly) complete and all connected clients are able to receive and process netcode messages.
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/LoadingAdditiveScene_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/LoadingAdditiveScene_Dark.png?text=DarkMode"/>
 </figure>
@@ -98,7 +98,7 @@ How you load scenes is up to your project/design requirements.
         - If `DestroyWithScene` is set to `false` it will be "preserved" (_see the sub-diagram "Load New Scene Timeline" below_)
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/SwitchingToNewScene_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/SwitchingToNewScene_Dark.png?text=DarkMode"/>
 </figure>
@@ -110,7 +110,7 @@ When looking at the below sub-diagram, both single and additive scene loading mo
 :::
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/LoadNewSceneTimeline_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/LoadNewSceneTimeline_Dark.png?text=DarkMode"/>
 </figure>
@@ -118,7 +118,7 @@ darkImageSrc="/sequence_diagrams/SceneManagement/LoadNewSceneTimeline_Dark.png?t
 **Load New Scene Additively**
 1. Starts loading the scene
 2. During the scene loading process, in-scene placed `NetworkObject`s are instantiated and their `Awake` and then `Start` methods are invoked (in that order).
-3. Scene loading completes. 
+3. Scene loading completes.
 4. All in-scene placed `NetworkObject`s are spawned.
 :::caution
 Step #3 above signifies that the `UnityEngine.SceneManagement.SceneManager` has finished loading the scene. If you subscribe to the `UnityEngine.SceneManagement.SceneManager.sceneLoaded` event, then step #3 would happen on the same frame that your subscribed handler is invoked. **Don't use this event** as a way to determine that the current Load SceneEvent has completed. <br/> <center>_Doing so will result in unexpected results that most commonly are associated with "yet-to-be-spawned" (locally) `NetworkObject`'s and/or their related `NetworkBehaviour` dependencies._</center> When using Netcode Integrated SceneManagement, it's recommended to use the `NetworkSceneManager` scene events to determine when the "netcode scene loading event" has completed locally or for all clients.
@@ -140,7 +140,7 @@ Primarily, this applies to unloading additively loaded scenes via th `NetworkSce
 If you look at the below diagram, "Unloading an Additive Scene", you will see a similar flow as that of loading a scene.  The server still initiates the `SceneEventType.Unload` scene event and won't send this message to clients until it has completed the `Unload` scene event locally.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/UnloadingAdditiveScene_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/UnloadingAdditiveScene_Dark.png?text=DarkMode"/>
 </figure>
@@ -156,7 +156,7 @@ Review over the below diagram and take note of the following things:
         - By the time a client receives the `SceneEventType.Unload` scene event message, it well can have no remaining `NetworkObject`s in the scene being unloaded.  This won't impact the client-side scene unloading process, but it's useful to know that this will happen.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/SceneManagement/UnloadingSceneTimeline_Light.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/SceneManagement/UnloadingSceneTimeline_Dark.png?text=DarkMode"/>
 </figure>

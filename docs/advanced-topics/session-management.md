@@ -1,6 +1,6 @@
 ---
 id: session-management
-title: Session Management
+title: Session management
 created: 2023-01-24T17:55:53-06:00
 updated: 2023-01-24T18:28:58-06:00
 ---

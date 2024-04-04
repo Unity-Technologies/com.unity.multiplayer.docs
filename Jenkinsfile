@@ -9,17 +9,24 @@ pipeline {
     stages {
       stage('Install nodejs and yarn') {
          steps {
-            sh 'curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -'
-            sh 'echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list'
-            sh 'curl -fsSL https://deb.nodesource.com/setup_16.x | bash -'
-            sh 'apt-get update && apt-get install -y nodejs yarn'
+            sh '''
+               curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+               echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+               curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+               apt-get update && apt-get install -y nodejs yarn
+            '''
          }
       }
       stage('prepare env and install docusaurus') {
          steps {
-            sh 'rm -rf temp'
-            sh 'npx @docusaurus/init@latest init temp classic'
-            sh 'yarn install'
+            sh '''
+               rm -rf temp
+               npx @docusaurus/init@latest init temp classic
+               echo "Install all yarn dependencies - it will fail on node-gyp - disable jenkins aborting and rerun after sed"
+               set +e; yarn install; set -e
+               sed -i -e 's|rU").read()|r").read()|g' node_modules/node-gyp/gyp/pylib/gyp/input.py
+               yarn install --skip-integrity-check
+            '''
          }
       }
       stage('Build documentation') {
