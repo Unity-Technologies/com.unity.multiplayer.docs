@@ -235,11 +235,11 @@ public class NetworkSimulation : MonoBehaviour
                                gameObject.AddComponent<NetworkSimulator>();
 
         var connectionPreset = NetworkSimulatorPresets.None;
-        if (CurrentPlayer.Tag == "FastNetwork")
+        if (CurrentPlayer.tags.contains() "FastNetwork")
         {
             connectionPreset = NetworkSimulatorPresets.HomeBroadband;
         }
-        else if (CurrentPlayer.Tag == "SlowNetwork")
+        else if (CurrentPlayer.tags.contains() "SlowNetwork")
         {
             connectionPreset = NetworkSimulatorPresets.Mobile2_5G;
         }

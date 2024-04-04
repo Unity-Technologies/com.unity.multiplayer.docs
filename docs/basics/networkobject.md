@@ -117,9 +117,9 @@ NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
 
 To find your own player object just pass `NetworkManager.Singleton.LocalClientId` as the `clientId` in the sample above.
 
-### Network Prefabs
+## Network prefabs
 
-Network Prefabs are registered to a `NetworkPrefabsList` object (a type of `ScriptableObject`). By default, a Default Prefabs List containing every Network Prefab in your project.
+Network prefabs are registered to a `NetworkPrefabsList` object (a type of `ScriptableObject`). By default, a default prefabs List containing every network prefab in your project.
 
 However, when you want to limit which prefabs are available (for example, to reduce memory usage), you can disable this behavior in **Project Settings** > **Netcode For GameObjects** > **Project Settings**. You can also manually create a `NetworkPrefabsList` by right-clicking in the assets view and selecting **Create** > **Netcode** > **Network Prefabs List** and adding your prefabs to it. That prefab list can then be assigned to a `NetworkManager` to allow that `NetworkManager` to create those prefabs.
 
@@ -129,13 +129,37 @@ You can only have one `NetworkObject` at the root of a Prefab. Don't create Pref
 
 :::
 
-### Spawning with (or without) Observers
+### Creating a network prefab
+
+You can create a network prefab the [same way you create normal prefabs](https://docs.unity3d.com/Manual/CreatingPrefabs.html). The only difference is that the root GameObject of the prefab should have a `NetworkObject` component added to it:
+
+![image](/img/createnetworkprefab.png)
+
+### Converting a prefab to a network prefab
+
+Sometimes you might run into a scenario where you created a prefab and already have several in-scene placed instances of that prefab within one or more already existing scenes. In this scenario, you can:
+
+- Navigate to your source network prefab.
+- Select it so its properties show up in the inspector view.
+- Find the `NetworkObject` component and right click on it.
+- At the bottom of the context menu, select the **Refresh In-Scene Prefab Instances** menu item.
+
+![image](/img/RefresInScenePrefabInstances.png)
+
+This will:
+- Open each scene, individually, within the **Build Settings** > **Scenes in Build** list
+- Automatically update each prefab instance with the correct `GlobalObjectIdHash` value and then save and close each scene.
+
+This will process the currently opened scene as well.
+
+## Spawning with (or without) observers
+
 ![image](/img/SpawnWithObservers.png)
 
 The `NetworkObject.SpawnWithObservers` property (default is true) provides you with the ability to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
 
+## Transform synchronization
 
-### Transform Synchronization
 ![image](/img/NetworkObject-TransformSynchronization.png)
 
 There are times when you want to use a NetworkObject for something that does not require the synchronization of its transform. You might have an [In-Scene placed NetworkObject](./scenemanagement/inscene-placed-networkobjects.md) that is purely used to manage game state (or the like) and it doesn't make sense to incur the initial client synchronization cost of synchronizing its transform. To prevent a NetworkObject from initially synchronizing its transform when spawned, un-check the Synchronize Transform property. This property is enabled/checked by default.
@@ -144,14 +168,15 @@ There are times when you want to use a NetworkObject for something that does not
 If you are planning to use a NetworkTransform then you always want to make sure the Synchronize Transform property is enabled/checked.
 :::
 
-### Active Scene Synchronization
+## Active scene synchronization
+
 ![image](/img/ActiveSceneMigration.png)
 
 When a GameObject is instantiated it gets instantiated in the current active scene. However, sometimes you might find that you want to change the currently active scene and would like specific NetworkObject instances to automatically migrate to the newly assigned active scene. While you could keep a list or table of the NetworkObject instances and write the code/logic to migrate them into a newly assigned active scene, this can be time consuming an become complicated depending upon project size and complexity. The alternate way (and recommended) to handle this is by enabling/checking the Active Scene Synchronization property of each NetworkObject you want to automatically migrate into any newly assigned scene. This property defaults to disabled/un-checked.
 
 See Also: [NetworkSceneManager Active Scene Synchronization](../basics/scenemanagement/using-networkscenemanager#active-scene-synchronization)
 
-### Scene Migration Synchronization
+## Scene migration synchronization
 
 ![image](/img/SceneMigrationSynchronization.png)
 
