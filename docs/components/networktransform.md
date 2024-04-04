@@ -22,7 +22,7 @@ For example, the above itemized tasks don't take into consideration:
 - If you have a complex parenting hierarchy (parents with one or more child transforms), should you synchronize world or local space axis values?
 - How can you optimize the bandwidth cost per transform update?
 
-Fortunately, NGO provides you withNetworkTransform component implementation that handles some of the trickier aspects of transform synchronization and is easily configurable by properties accessible via the in-editor inspector view.
+Fortunately, Netcode for GameObjects provides you withNetworkTransform component implementation that handles some of the trickier aspects of transform synchronization and is easily configurable by properties accessible via the in-editor inspector view.
 
 ## Adding
 
@@ -173,6 +173,7 @@ All of these properties are synchronized to non-authoritative instances when upd
 ## Authority modes
 
 ### Server authoritative mode
+
 By default, `NetworkTransform` operates in server authoritative mode. This means that changes to transform axis (marked to be synchronized) are detected on the server-side and pushed to connected clients. This also means any changes to the transform axis values will be overridden by the authoritative state (in this case the server-side transform state).
 
 There is another concept to keep in mind about axis synchronization vs the initial synchronized transform values. Any axis not marked to be synchronized will still be updated with the authority's initial state when a NetworkObject is spawned or when a client is synchronized for the first time.

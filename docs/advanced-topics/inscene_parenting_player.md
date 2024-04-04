@@ -5,7 +5,7 @@ description: In-scene NetworkObject parenting of players Solution
 ---
 
 
-We received the following issue in Github. 
+We received the following issue in Github.
 
 ## Issue:
 
@@ -80,7 +80,7 @@ public class ParentPlayerToInSceneNetworkObject : NetworkBehaviour
 }
 ```
 
-You should place this script on your in-scene placed `NetworkObject` (that is, the first `GameObject`) and do the parenting from it to avoid any timing issues of when it's spawned or the like. It only runs the script on the server-host side since parenting is server authoritative. 
+You should place this script on your in-scene placed `NetworkObject` (that is, the first `GameObject`) and do the parenting from it to avoid any timing issues of when it's spawned or the like. It only runs the script on the server-host side since parenting is server authoritative.
 
 
 :::note
@@ -88,5 +88,5 @@ Remove any parenting code you might have had from your player Prefab before usin
 :::
 
 :::important
-NGO v1.2 has a [known issue](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/2396) with parenting dynamically spawned `NetworkObjects` under in-scene placed `NetworkObjects`. This will be fixed in the next NGO update.
+Netcode for GameObjects v1.2 has a [known issue](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/pull/2396) with parenting dynamically spawned `NetworkObjects` under in-scene placed `NetworkObjects`. This will be fixed in the next update.
 :::

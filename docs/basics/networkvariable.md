@@ -1,7 +1,7 @@
 ---
 id: networkvariable
-title: NetworkVariable
-sidebar_label: NetworkVariable
+title: NetworkVariables
+sidebar_label: NetworkVariables
 ---
 
 ## Introduction
@@ -70,7 +70,7 @@ Finally, while managed `INetworkSerializable` types are serialized in-place (and
 
 * Any unmanaged struct type that implements [`INetworkSerializeByMemcpy`](../advanced-topics/serialization/inetworkserializebymemcpy.md) (which will be serialized by direct memcpy of the entire struct into/out of the buffer).
 
-* Unity [fixed string](../advanced-topics/serialization/fixedstrings.md) types: `FixedString32Bytes`, `FixedString64Bytes`, `FixedString128Bytes`, `FixedString512Bytes`, and `FixedString4096Bytes` (which are serialized intelligently, only sending the used part across the network and adjusting the "length" of the string on the other side to fit the received data). 
+* Unity [fixed string](../advanced-topics/serialization/fixedstrings.md) types: `FixedString32Bytes`, `FixedString64Bytes`, `FixedString128Bytes`, `FixedString512Bytes`, and `FixedString4096Bytes` (which are serialized intelligently, only sending the used part across the network and adjusting the "length" of the string on the other side to fit the received data).
 
 For any types that don't fit within this list, including managed types and unmanaged types with pointers: It's possible to provide delegates informing the serialization system of how to serialize and deserialize your values. For more information, see [Custom Serialization](../advanced-topics/custom-serialization.md). A limitation of custom serialization is that, unlike `INetworkSerializable` types, types using custom serialization aren't able to be read in-place, so managed types will, by necessity, incur a Garbage Collected allocation (which can cause performance issues) on every update.
 
@@ -182,7 +182,7 @@ public class Door : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [Rpc(SendTo.Server)]
     public void ToggleServerRpc()
     {
         // this will cause a replication over the network
@@ -201,8 +201,8 @@ _The answer: `NetworkVariable` permissions._
 The `NetworkVariable` constructor can take up to 3 parameters:
 
 ```csharp
-public NetworkVariable(T value = default, 
-NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, 
+public NetworkVariable(T value = default,
+NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone,
 NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server);
 ```
 
@@ -287,20 +287,20 @@ public class PlayerState : NetworkBehaviour
     /// Owner Read Permissions: Owner or server can read
     /// Owner Write Permissions: Only the Owner can write
     /// A player's ammo count is something that you might want, for convenience sake, the
-    /// client-side to update locally. This might be because you are trying to reduce 
-    /// bandwidth consumption for the server and all non-owners/ players or you might be 
-    /// trying to incorporate a more client-side "hack resistant" design where non-owners 
+    /// client-side to update locally. This might be because you are trying to reduce
+    /// bandwidth consumption for the server and all non-owners/ players or you might be
+    /// trying to incorporate a more client-side "hack resistant" design where non-owners
     /// are never synchronized with this value.
     /// </summary>
-    public NetworkVariable<int> AmmoCount = new NetworkVariable<int>(default, 
+    public NetworkVariable<int> AmmoCount = new NetworkVariable<int>(default,
         NetworkVariableReadPermission.Owner, NetworkVariableWritePermission.Owner);
 
     /// <summary>
     /// Owner Write & Everyone Read Permissions:
     /// A player's model's skin selection index. You might have the option to allow players
     /// to select different skin materials as a way to further encourage a player's personal
-    /// association with their player character.  It would make sense to make the permissions 
-    /// setting of the NetworkVariable such that the client can change the value, but everyone 
+    /// association with their player character.  It would make sense to make the permissions
+    /// setting of the NetworkVariable such that the client can change the value, but everyone
     /// will be notified when it changes to visually reflect the new skin selection.
     /// </summary>
     public NetworkVariable<int> SkinSelectionIndex = new NetworkVariable<int>(default,
@@ -308,13 +308,13 @@ public class PlayerState : NetworkBehaviour
 
     /// <summary>
     /// Owner Read & Server Write Permissions:
-    /// You might incorporate some form of reconnection logic that stores a player's state on 
+    /// You might incorporate some form of reconnection logic that stores a player's state on
     /// the server side and can be used by the client to reconnect a player if disconnected
-    /// unexpectedly.  In order for the client to let the server know it's the "same client" 
+    /// unexpectedly.  In order for the client to let the server know it's the "same client"
     /// you might have implemented a keyed array (that is, Hashtable, Dictionary, etc, ) to track
     /// each connected client. The key value for each connected client would only be written to
-    /// the each client's PlayerState.ReconnectionKey. Under this scenario, you only want the 
-    /// server to have write permissions and the owner (client) to be synchronized with this 
+    /// the each client's PlayerState.ReconnectionKey. Under this scenario, you only want the
+    /// server to have write permissions and the owner (client) to be synchronized with this
     /// value (via owner only read permissions).
     /// </summary>
     public NetworkVariable<ulong> ReconnectionKey = new NetworkVariable<ulong>(default,
@@ -365,7 +365,7 @@ public class PlayerState : NetworkBehaviour
     {
         //NetworkList can't be initialized at declaration time like NetworkVariable. It must be initialized in Awake instead.
         //If you do initialize at declaration, you will run into Memmory leak errors.
-        TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>(); 
+        TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>();
     }
 
     void Start()
@@ -378,7 +378,7 @@ public class PlayerState : NetworkBehaviour
     {
         //This is just an example that shows how to add an element to the list after its initialization:
         if (!IsServer) { return; } //remember: only the server can edit the list
-        if (Input.GetKeyUp(KeyCode.UpArrow)) 
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             TeamAreaWeaponBoosters.Add(new AreaWeaponBooster()));
         }
@@ -412,7 +412,7 @@ public class PlayerState : NetworkBehaviour
 /// <summary>
 /// Example: Complex Type
 /// This is an example of how one might handle tracking any weapon booster currently applied
-/// to a player. 
+/// to a player.
 /// </summary>
 public struct WeaponBooster : INetworkSerializable, System.IEquatable<WeaponBooster>
 {
@@ -450,7 +450,7 @@ The above first half of the example code shows how a complex type that implement
 /// This example uses the previous WeaponBooster complex type to be a "container" for
 /// the "weapon booster" information of an AreaWeaponBooster.  It then provides additional
 /// information that would allow clients to easily determine, based on location and radius,
-/// if it should add (for example) a special power up HUD symbol or special-FX to the local 
+/// if it should add (for example) a special power up HUD symbol or special-FX to the local
 /// player.
 /// </summary>
 public struct AreaWeaponBooster : INetworkSerializable, System.IEquatable<AreaWeaponBooster>
@@ -504,6 +504,60 @@ In order to create your own `NetworkVariableBase` derived container, you should:
     - `void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)`
 - Depdending upon your custom `NetworkVariableBase` container, you might look at `NetworkVariable<T>` or `NetworkList` to see how those two examples were implemented.
 
+<a name="network-variable-serialization"></a>
+#### NetworkVariableSerialization&lt;T&gt;
+
+The way you read and write network variables changes depending on the type you use.
+
+* Known, non-generic types: Use `FastBufferReader.ReadValue` to read from and `FastBufferWriter.WriteValue` to write to the network variable value.
+* Integer types:  This type gives you the option to use `BytePacker` and `ByteUnpacker` to compress the network variable value. This process can save bandwidth but adds CPU processing time.
+* Generic types: Use serializers that Unity generates based on types discovered during a compile-time code generation process. This means you need to tell Unity's code generation algorithm which types to generate serializers for. To tell Unity which types to serialize, use the following methods:
+    * Use `GenerateSerializationForTypeAttribute` to serialize hard-coded types.
+    * Use `GenerateSerializationForGenericParameterAttribute` to serialize generic types.
+    To learn how to use these methods, refer to [Network variable serialization](#network-variable-serialization).
+
+##### Tell Unity to serialize a hard-coded type
+The following code example uses `GenerateSerializationForTypeAttribute` to generate serialization for a specific hard-coded type:
+```csharp
+[GenerateSerializationForType(typeof(Foo))]
+public class MyNetworkVariableTypeUsingFoo : NetworkVariableBase {}
+```
+
+You can call a type that you know the name of with the `FastBufferReader` or `FastBufferWriter` methods. These methods don't work for Generic types because the name of the type is unknown.
+##### Tell Unity to serialize a generic type
+The following code example uses `GenerateSerializationForGenericParameterAttribute` to generate serialization for a specific Generic parameter in your `NetworkVariable` type:
+```csharp
+[GenerateSerializationForGenericParameter(0)]
+public class MyNetworkVariableType<T> : NetworkVariableBase {}
+```
+
+This attribute accepts an integer that indicates which parameter in the type to generate serialization for. This value is 0-indexed, which means that the first type is 0, the second type is 1, and so on.
+The following code example places the attribute more than once on one class to generate serialization for multiple types, in this case,`TFirstType` and `TSecondType:
+
+```csharp
+[GenerateSerializationForGenericParameter(0)]
+[GenerateSerializationForGenericParameter(1)]
+public class MyNetworkVariableType<TFirstType, TSecondType> : NetworkVariableBase {}
+```
+
+
+The  `GenerateSerializationForGenericParameterAttribute` and `GenerateSerializationForTypeAttribute` attributes make Unity's code generation create the following methods:
+
+```csharp
+NetworkVariableSerialization<T>.Write(FastBufferWriter writer, ref T value);
+NetworkVariableSerialization<T>.Read(FastBufferWriter writer, ref T value);
+NetworkVariableSerialization<T>.Duplicate(in T value, ref T duplicatedValue);
+NetworkVariableSerialization<T>.AreEqual(in T a, in T b);
+```
+
+For dynamically allocated types with a value that isn't `null` (for example, managed types and collections like NativeArray and NativeList) call `Read` to read the value in the existing object and write data into it directy (in-place). This avoids more allocations.
+
+You can use `AreEqual` to determine if a value is different from the value that `Duplicate` cached. This avoids sending the same value multiple times. You can also use the previous value that `Duplicate` cached to calculate deltas to use in `ReadDelta` and `WriteDelta`.
+
+The type you use must be serializable according to the "Supported Types" list above. Each type needs its own serializer instantiated, so this step tells the codegen which types to create serializers for.
+
+:::note Unity's code generator assumes that all `NetworkVariable` types exist as fields inside `NetworkBehaviour` types. This means that Unity only inspects fields inside `NetworkBehaviour` types to identify the types to create serializers for.
+
  ### Custom NetworkVariable Example
 
 This example shows a custom `NetworkVariable` type to help you understand how you might implement such a type. In the current version of Netcode for GameObjects, this example is possible without using a custom `NetworkVariable` type; however, for more complex situations that aren't natively supported, this basic example should help inform you of how to approach the implementation:
@@ -513,6 +567,7 @@ This example shows a custom `NetworkVariable` type to help you understand how yo
     public class TestMyCustomNetworkVariable : NetworkBehaviour
     {
         public MyCustomNetworkVariable CustomNetworkVariable = new MyCustomNetworkVariable();
+        public MyCustomGenericNetworkVariable<int> CustomGenericNetworkVariable = new MyCustomGenericNetworkVariable<int>();
         public override void OnNetworkSpawn()
         {
             if (IsServer)
@@ -527,6 +582,9 @@ This example shows a custom `NetworkVariable` type to help you understand how yo
                     someData.SomeListOfValues.Add((ulong)i + 3000000);
                     CustomNetworkVariable.SomeDataToSynchronize.Add(someData);
                     CustomNetworkVariable.SetDirty(true);
+
+                    CustomGenericNetworkVariable.SomeDataToSynchronize.Add(i);
+                    CustomGenericNetworkVariable.SetDirty(true);
                 }
             }
         }
@@ -589,16 +647,70 @@ This example shows a custom `NetworkVariable` type to help you understand how yo
 
         public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
         {
-            // Don'thing for this example
+            // Do nothing for this example
         }
 
         public override void WriteDelta(FastBufferWriter writer)
         {
-            // Don'thing for this example
+            // Do nothing for this example
         }
     }    
 
-    /// Example managed class used as the item type in the 
+    /// Bare minimum example of generic NetworkVariableBase derived class
+    [Serializable]
+    [GenerateSerializationForGenericParameter(0)]
+    public class MyCustomGenericNetworkVariable<T> : NetworkVariableBase
+    {
+        /// Managed list of class instances
+        public List<T> SomeDataToSynchronize = new List<T>();
+
+        /// <summary>
+        /// Writes the complete state of the variable to the writer
+        /// </summary>
+        /// <param name="writer">The stream to write the state to</param>
+        public override void WriteField(FastBufferWriter writer)
+        {
+            // Serialize the data we need to synchronize
+            writer.WriteValueSafe(SomeDataToSynchronize.Count);
+            for (var i = 0; i < SomeDataToSynchronize.Count; ++i)
+            {
+                var dataEntry = SomeDataToSynchronize[i];
+                // NetworkVariableSerialization<T> is used for serializing generic types
+                NetworkVariableSerialization<T>.Write(writer, ref dataEntry);
+            }
+        }
+
+        /// <summary>
+        /// Reads the complete state from the reader and applies it
+        /// </summary>
+        /// <param name="reader">The stream to read the state from</param>
+        public override void ReadField(FastBufferReader reader)
+        {
+            // De-Serialize the data being synchronized
+            var itemsToUpdate = (int)0;
+            reader.ReadValueSafe(out itemsToUpdate);
+            SomeDataToSynchronize.Clear();
+            for (int i = 0; i < itemsToUpdate; i++)
+            {
+                T newEntry = default;
+                // NetworkVariableSerialization<T> is used for serializing generic types
+                NetworkVariableSerialization<T>.Read(reader, ref newEntry);
+                SomeDataToSynchronize.Add(newEntry);
+            }
+        }
+
+        public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
+        {
+            // Do nothing for this example
+        }
+
+        public override void WriteDelta(FastBufferWriter writer)
+        {
+            // Do nothing for this example
+        }
+    }
+
+    /// Example managed class used as the item type in the
     /// MyCustomNetworkVariable.SomeDataToSynchronize list
     [Serializable]
     public class SomeData
@@ -698,8 +810,3 @@ public class TestFixedString : NetworkBehaviour
 :::note
 The above example uses a pre-set list of strings to cycle through for example purposes only.  If you have a predefined set of text strings as part of your actual design then you would not want to use a FixedString to handle synchronizing the changes to `m_TextString`.  Instead, you would want to use a `uint` for the type `T` where the `uint` was the index of the string message to apply to `m_TextString`.  
 :::
-
-
-
-
-

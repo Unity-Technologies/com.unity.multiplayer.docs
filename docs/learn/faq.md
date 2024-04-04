@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Frequently Asked Questions
+title: Frequently asked questions
 ---
 
 The FAQ provides immediate answers for questions collected from the Community on developing games with Multiplayer, including Netcode for GameObjects (Netcode), Transport, and more.
@@ -20,17 +20,6 @@ Netcode works with both a Listen Server and a Dedicated Server model. You just h
 ### Does Netcode have any Matchmaking functionality?
 
 You would have to implement matchmaking using third party matchmaking services. Netcode has no matchmaking functionality.
-
-### How can you get more information for ClientRPC errors?
-
-If you receive `ClientRPC` errors like the following, you might have difficulty debugging:
-
-```
-:warning: [Netcode] ClientRPC message received for a non existent object with id: 16. This message will be buffered and might be recovered.
-`UnityEngine.Debug:LogWarning(object)`
-```
-
-You can set **Enable Message Buffering** to **True** in NetworkManager component. It stores the RPCs and applies them later after the object spawns.
 
 ### What are recommendations for getting a game connecting over the internet?
 

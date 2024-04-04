@@ -1,6 +1,6 @@
 ---
 id: enum_types
-title: Enum Types
+title: Enum types
 ---
 
 A user-defined enum type will be serialized by built-in serialization code (with underlying integer type).
@@ -20,7 +20,7 @@ enum NormalEnum // default -> int
     Z
 }
 
-[ServerRpc]
+[Rpc(SendTo.Server)]
 void ConfigServerRpc(SmallEnum smallEnum, NormalEnum normalEnum) { /* ... */ }
 
 void Update()

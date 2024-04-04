@@ -7,7 +7,7 @@ description: Release notes for Multiplayer Tools including new features, updates
 ## [1.0.0] - 2022-06-27
 
 ### *Runtime Net Stats Monitor*
-- Doc-comment fixes based on 1.0 release XML doc validation 
+- Doc-comment fixes based on 1.0 release XML doc validation
 
 ## [1.0.0-pre.8] - 2022-06-15
 
