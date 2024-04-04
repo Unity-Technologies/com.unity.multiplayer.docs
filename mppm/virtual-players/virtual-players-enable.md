@@ -4,7 +4,7 @@ title: Enable virtual players
 description: Enable up to 3 additional Virtual Players to your Main Editor Player in Multiplayer Play Mode.
 ---
 :::important
-You can only attach **Player Tags** to inactive players (including the **Main Editor Player**). If you plan to use **Player Tags**, [create and configure your tags](../player-tags) before you enable virtual players.
+You can only attach **Player Tags** to inactive players (including the **Main Editor Player**). If you plan to use **Player Tags**, [create and configure your tags](../player-tags/player-tags-create.md) before you enable virtual players.
 :::
 
 :::note
@@ -19,4 +19,4 @@ To enable **Virtual Players** for **Play mode**, do the following.
 4. Wait for the player status to change from inactive to active for each Virtual Player you selected.
 5. When active, the Virtual Player(s) appear in Play Mode in the Main Editor window. A separate window opens for each enabled player with the player name as the window title.
 
-To understand how **Multiplayer Play Mode** works with **Play mode**, refer to [**Synchronize with Play mode**](../synchronize).
+To understand how **Multiplayer Play Mode** works with **Play mode**, refer to [**Synchronize with Play mode**](../sync-play-mode.md).
