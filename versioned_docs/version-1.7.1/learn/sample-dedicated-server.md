@@ -6,7 +6,7 @@ sidebar_label: RPC vs NetworkVariable
 
 ## Dedicated Game Server sample
 
-[The Dedicated Game Server sample](https://github.cds.internal.unity3d.com/unity/com.unity.multiplayer.samples.bitesize-mirror/tree/sample/DGS) project demonstrates how the dedicated server model works and the tools that you can use to test multiplayer in the editor.
+[The Dedicated Game Server sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Experimental/DedicatedGameServer) project demonstrates how the dedicated server model works and the tools that you can use to test multiplayer in the editor.
 
 This project uses the following packages and services:
 
