@@ -1,7 +1,7 @@
 ---
 id: dgssample
 title: Dedicated game server sample
-sidebar_label: RPC vs NetworkVariable
+sidebar_label: Dedicated game server sample
 ---
 
 ## Dedicated Game Server sample
