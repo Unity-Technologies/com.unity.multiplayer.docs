@@ -1,9 +1,8 @@
 ---
 id: player-tags-create
-title: Create a Player Tag
+title: Create a Player Tags
 description: Use these steps to create Player Tags to configure the player actions in Multiplayer Play Mode.
 ---
-
 
 To create a **Player Tag**, perform the following actions:
 
