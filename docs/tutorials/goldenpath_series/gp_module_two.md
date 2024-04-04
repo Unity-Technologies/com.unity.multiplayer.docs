@@ -28,7 +28,7 @@ You should have completed the [Hello World project](../helloworld.md) and [Golde
 ## Introducing a Server-controlled Network Variable 
 
 This section adds a Server-controlled Network Variable to the project.
- 
+
 1. Open the **Scripts** Folder.
 1. Create a script called `NetworkVariableTest`.
 1. Click the **Player** prefab.
@@ -184,7 +184,7 @@ public class RpcTest : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     void TestClientRpc(int value)
     {
         if (IsClient)
@@ -194,7 +194,7 @@ public class RpcTest : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     void TestServerRpc(int value)
     {
         Debug.Log("Server Received the RPC #" + value);

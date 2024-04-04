@@ -4,6 +4,10 @@ title: ClientRpc
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
+:::warning
+ClientRpc and ServerRpc are legacy features of Netcode for GameObjects and have been replaced with the universal RPC attribute. This documentation is for legacy use. For current projects, use [Rpc](rpc.md) instead.
+:::
+
 
 Servers can invoke a ClientRpc to execute on all clients.
 
