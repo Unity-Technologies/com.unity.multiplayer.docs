@@ -1,12 +1,12 @@
 ---
 id: unity-primitives
-title: Unity Primitives
+title: Unity primitives
 ---
 
 Unity Primitive `Color`, `Color32`, `Vector2`, `Vector3`, `Vector4`, `Quaternion`, `Ray`, `Ray2D` types will be serialized by built-in serialization code.
 
 ```csharp
-[ClientRpc]
+[Rpc(SendTo.ClientsAndHost)]
 void BarClientRpc(Color somecolor) { /* ... */ }
 
 void Update()

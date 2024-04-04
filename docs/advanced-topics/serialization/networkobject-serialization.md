@@ -1,7 +1,7 @@
 ---
 id: networkobject-serialization
-title: NetworkObject & NetworkBehaviour
-description: Brief explanation on using NetworkObject & NetworkBehaviour in Network for GameObjects
+title: NetworkObject and NetworkBehaviour
+description: Brief explanation on using NetworkObject and NetworkBehaviour in Network for GameObjects
 ---
 
 `GameObjects`, `NetworkObjects` and `NetworkBehaviour` aren't serializable types so they can't be used in `RPCs` or `NetworkVariables` by default.
@@ -22,7 +22,7 @@ public class Weapon : NetworkBehaviour
         ShootTargetServerRpc(targetObject);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ShootTargetServerRpc(NetworkObjectReference target)
     {
         if (target.TryGet(out NetworkObject targetObject))
@@ -48,7 +48,7 @@ public class Weapon : NetworkBehaviour
         ShootTargetServerRpc(target);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ShootTargetServerRpc(NetworkObjectReference target)
     {
         NetworkObject targetObject = target;
@@ -77,7 +77,7 @@ public class Weapon : NetworkBehaviour
         ShootTargetServerRpc(health, 10);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ShootTargetServerRpc(NetworkBehaviourReference health, int damage)
     {
         if (health.TryGet(out Health healthComponent))

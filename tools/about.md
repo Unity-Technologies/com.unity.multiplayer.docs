@@ -12,3 +12,5 @@ The Multiplayer Tools package provides a variety of tools to analyze, debug, and
 |  | [Network Simulator](network-simulator.md) |
 |  | [Runtime Network Stats Monitor](runtime-stats-monitor.md) |
 |  | [Network Scene Visualization](network-scene-vis.md) |
+
+The [Multiplayer Tools Window](tools-window.md) provides convenient access to all the tools mentioned above.

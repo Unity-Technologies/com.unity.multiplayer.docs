@@ -1,6 +1,6 @@
 ---
 id: custom-serialization
-title: Custom Serialization
+title: Custom serialization
 ---
 
 Netcode uses a default serialization pipeline when using `RPC`s, `NetworkVariable`s, or any other Netcode-related tasks that require serialization. The serialization pipeline looks like this:
@@ -15,7 +15,11 @@ By default, any type that satisfies the `unmanaged` generic constraint can be au
 
 With this flow, you can provide support for serializing any unsupported types, and with the API provided, it can even be done with types that you haven't defined yourself, those who are behind a 3rd party wall, such as .NET types. However, the way custom serialization is implemented for RPCs and NetworkVariables is slightly different.
 
-### For RPCs
+### Serialize a type in a Remote Procedure Call (RPC)
+
+:::note
+From versioln 1.7.0 Remote Procedure Calls (RPCs) can also use the Network Variable flow, but NetworkVariables can't use the RPC flow. The RPC flow is more efficient when RPCs serialize the type. Unity selects the RPC flow if you implement both the RPC and Network variable flows. When a type is used by both NetworkVariables and RPCs you can use the NetworkVariable flow to lower maintenance requirements.
+:::
 
 To register a custom type, or override an already handled type, you need to create extension methods for `FastBufferReader.ReadValueSafe()` and `FastBufferWriter.WriteValueSafe()`:
 
@@ -77,9 +81,17 @@ UserNetworkVariableSerialization<Url>.WriteValue = (FastBufferWriter writer, in 
     writer.WriteValueSafe(url.Value);
 };
 
-UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url) 
+UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url)
 {
     reader.ReadValueSafe(out string val);
     url = new Url(val);
 };
 ```
+
+When you create an extension method in `NetworkVariable<T>` you need to implement the following values:
+
+- `WriteValue`
+- `ReadValue`
+- `DuplicateValue`
+
+`DuplicateValue` returns a complete deep copy of the value that `NetworkVariable<T>` compares to a previous value to check whether or not that values has changed. This avoids reserializing it over the network every frame when it hasn't changed.
