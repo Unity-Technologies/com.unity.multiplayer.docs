@@ -6,7 +6,7 @@ description: This example shows how you can use Netcode for GameObjects to run a
 
 This example explains how to target **Player Tags** in your game scripts with `CurrentPlayer.ReadOnlyTags()`. You can place these scripts where you want, but you must attach the scripts to a [NetworkObject](https://docs-multiplayer.unity3d.com/netcode/current/basics/networkobject/) (such as the **Player**).
 
-You can also use the dedicated server package to set a player tag to server, client, or host. For more information, refer to ()[###LINK###].
+You can also use the dedicated server package to set a player tag to server, client, or host. For more information, refer to [Use Multiplayer Play Mode with a Dedicated Server](../dedicated-server/play-mode-dedicated-server.md).
 
 ## Set a player tag to server, client, or host in a script
 
@@ -14,10 +14,6 @@ The following script uses the Netcode for GameObjects [NetworkManager](https://d
 
 :::important
 This example uses the `Contains` method, which is case-sensitive by default. To make it case-insensitive, pass the `System.StringComparison.CurrentCultureIgnoreCase` method.
-:::
-
-:::important
-This example uses the `Contains` method which is case-sensitive by default. To make it case-insensitive, pass the `System.StringComparison.CurrentCultureIgnoreCase` method.
 :::
 
 :::note
