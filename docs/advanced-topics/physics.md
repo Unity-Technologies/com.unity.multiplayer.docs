@@ -4,7 +4,7 @@ title: Physics
 Description: Brief explanation on using Physics in Netcode for GameObjects
 ---
 
-There are many different ways to do physics in multiplayer games. Netcode for GameObjects (Netcode) has a built in approach which allows for server-authoritative physics where the physics simulation only runs on the server. To enable network physics, add a `NetworkRigidbody` component to your object.
+There are many different ways to manage physics simulation in multiplayer games. Netcode for GameObjects (Netcode) has a built in approach which allows for server-authoritative physics where the physics simulation only runs on the server. To enable network physics, add a `NetworkRigidbody` component to your object.
 
 ## NetworkRigidbody
 
@@ -26,7 +26,7 @@ If there is a need for a gameplay event to happen on a collision, you can listen
 
 `NetworkRigidbody2D` works in the same way as NetworkRigidbody but for 2D physics (`Rigidbody2D`) instead.
 
-## NetworkRigidbody & ClientNetworkTransform
+## NetworkRigidbody and ClientNetworkTransform
 
 You can use NetworkRigidbody with the [`ClientNetworkTransform`](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a NetworkObject to move it authoritatively. In this mode, collisions only result in realistic dynamic collisions if the object is colliding with other NetworkObjects (owned by the same client).
 
@@ -40,13 +40,14 @@ Add the ClientNetworkTransform component to your GameObject first. Otherwise the
 
 A common issue with physics in multiplayer games is lag and how objects update on basically different timelines. For example, a player would be on a timeline that’s offset by the network latency relative to your server’s objects. One way to prepare for this is to test your game with artificial lag. You might catch some weird delayed collisions that would otherwise make it into production.
 
-The ClientDriven [bitesize sample](../learn/bitesize/bitesize-clientdriven.md) addresses this by manually adding forces server-side to offer a buffer before an actual collision, but it still feels wobbly at times. However, this isn't really a solution. 
+The ClientDriven [bitesize sample](../learn/bitesize/bitesize-clientdriven.md) addresses this by manually adding forces server-side to offer a buffer before an actual collision, but it still feels wobbly at times. However, this isn't really a solution.
 
 The best way to address the issue of physics latency is to create a custom `NetworkTransform` with a custom physics-based interpolator. You can also use the [Network Simulator tool](../../tools/network-simulator.md) to spot issues with latency.
 
+## Message processing vs. applying changes to state (timing considerations)
 
-## Message Processing vs. Applying Changes to State (Timing Condsiderations)
-When handling the synchronization of changes to certain physics properties, it is important to understand a bit more about the order of operations when it comes to message processing relative to the various update stages that occur within a single frame. To do this, we should first review over the various update stages:
+When handling the synchronization of changes to certain physics properties, it's important to understand the order of operations involved in message processing relative to the update stages that occur within a single frame. The stages occur in this order:
+
 - Initialization _(Awake and Start are invoked here)_
 - EarlyUpdate _(Inbound messages are processed here)_
 - FixedUpdate _(Physics simulation is run and results)_
@@ -56,14 +57,12 @@ When handling the synchronization of changes to certain physics properties, it i
 - LateUpdate: _(Useful for changes to camera, detecting input, and handling other post-update tasks)_
 - PostLateUpdate: _(Dirty NetworkVariables processed and pending outbound messages are sent)_
 
-From the above list of update stages, we should focus our attention on the `EarlyUpdate` and `FixedUpdate` stages and what that might mean for NetworkVariableDeltaMessage and RpcMessages processing. If we are processing inbound messages during the `EarlyUpdate` stage, this means that Rpc methods and NetworkVariable.OnValueChanged callbacks will be invoked at that point in time during any given frame. Taking this into consideration, there are certain scenarios where making changes to a Rigidbody could yield undeseriable results.
+From this list of update stages, the `EarlyUpdate` and `FixedUpdate` stages have the most impact on NetworkVariableDeltaMessage and RpcMessages processing. Inbound messages are processed during the `EarlyUpdate` stage, which means that Rpc methods and NetworkVariable.OnValueChanged callbacks are invoked at that point in time during any given frame. Taking this into consideration, there are certain scenarios where making changes to a Rigidbody could yield undesirable results.
 
-### Rigidbody Interpolation (_an example_)
-If you have any experience with `Rigidbody`, then you might have discovered the usefulness of `Rigidbody.interpolation`. While `NetworkTransform` offers interpolation as a way to smooth between delta state updates, you might have discovered that it does not get applied to the authoritative instance (_whether server or owner mode_).  You might also decide that you want to use `Rigidbody.interpolation` for your authoritative instance while keeping a strict server authoritative motion model. In order to have a client control their owned objects, you might leverage from the use of either invoking ServerRpcs or udpating one or more NetworkVariables on the client side. However, you could soon discover that a host-client's updates seem to "work as expected" but you notice a slight jitter when a client sends updates. You might be scanning for key or device input during the `Update` to `LateUpdate` stages. Any input from the Host player would be applied after the `FixedUpdate` stage (i.e. physics simulation for the frame has already run), but any input from client players would be sent via a message and processed, with a half RTT delay, on the host side (or processed 1 network tick + half RTT if using NetworkVariables). Because of when messages are processed, client input updates run the risk of being processed during the `EarlyUpdate` stage which occurs just before the current frame's `FixedUpdate` stage.
+### Rigidbody interpolation example
 
-To avoid this kind of scenario, it is recommended that you apply changes, that are received via messages, to a Rigidbody after the FixedUpdate has run for the current frame. If you [look at how `NetworkTransform` handles its changes to transform state](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/a2c6f7da5be5af077427eef9c1598fa741585b82/com.unity.netcode.gameobjects/Components/NetworkTransform.cs#L3028), you will see that state updates are applied during the `Update` stage but are received during the `EarlyUpdate` stage. Following this kind of pattern, when synchronizing changes to a Rigidbody via messages, will help you to avoid unexpected results in your netcode enabled project.
+While `NetworkTransform` offers interpolation as a way to smooth between delta state updates, it doesn't get applied to the authoritative instance. You can use `Rigidbody.interpolation` for your authoritative instance while maintaining a strict server-authoritative motion model.
 
+To have a client control their owned objects, you can use either [RPCs](message-system/rpc.md) or [NetworkVariables](../basics/networkvariables.md) on the client-side. However, this often results in the host-client's updates working as expected, but with slight jitter when a client sends updates. You might be scanning for key or device input during the `Update` to `LateUpdate` stages. Any input from the host player is applied after the `FixedUpdate` stage (i.e. physics simulation for the frame has already run), but input from client players is sent via a message and processed, with a half RTT delay, on the host side (or processed 1 network tick + half RTT if using NetworkVariables). Because of when messages are processed, client input updates run the risk of being processed during the `EarlyUpdate` stage which occurs just before the current frame's `FixedUpdate` stage.
 
-
-
-
+To avoid this kind of scenario, it's recommended that you apply any changes received via messages to a Rigidbody _after_ the FixedUpdate has run for the current frame. If you [look at how `NetworkTransform` handles its changes to transform state](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/a2c6f7da5be5af077427eef9c1598fa741585b82/com.unity.netcode.gameobjects/Components/NetworkTransform.cs#L3028), you can see that state updates are applied during the `Update` stage, but are received during the `EarlyUpdate` stage. Following this kind of pattern when synchronizing changes to a Rigidbody via messages will help you to avoid unexpected results in your Netcode for GameObjects project.
