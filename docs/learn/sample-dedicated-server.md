@@ -1,7 +1,7 @@
 ---
 id: dgssample
 title: Dedicated game server sample
-sidebar_label: Dedicated game server sample
+sidebar_label: sample-dedicated-server
 ---
 
 ## Dedicated Game Server sample
