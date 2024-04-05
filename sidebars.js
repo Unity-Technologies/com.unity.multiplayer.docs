@@ -478,6 +478,10 @@ module.exports = {
             "label": "Educational samples",
             "items": [
                 {
+                    "type": "doc",
+                    "id": "learn/sample-dedicated-server"
+                },
+                {
                     "collapsed": true,
                     "type": "category",
                     "label": "Boss Room",
