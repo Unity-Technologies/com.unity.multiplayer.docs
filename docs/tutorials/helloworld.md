@@ -16,7 +16,7 @@ The videos on this page were removed because they were out-of-date and caused mo
 
 1. Open the **Unity Hub**.
 1. Click **New**.
-1. Select type ‘3D’
+1. Select type '3D'
 1. Name the project *Hello World*.
 1. Select the location you want to save the project.
 

@@ -72,7 +72,7 @@ First, create the NetworkManager component:
 
 :::important
 
-When you drop the prefab into the **PlayerPrefab** slot, you're telling the library that when a client connects to the game, it automatically spawns this prefab as the character for the connecting client. Netcode for GameObjects won’t spawn a player object if you don't have any prefab set as the **PlayerPrefab**. Refer to [Player Objects](../basics/networkobject.md#finding-playerobjects).
+When you drop the prefab into the **PlayerPrefab** slot, you're telling the library that when a client connects to the game, it automatically spawns this prefab as the character for the connecting client. Netcode for GameObjects won't spawn a player object if you don't have any prefab set as the **PlayerPrefab**. Refer to [Player Objects](../basics/networkobject.md#finding-playerobjects).
 
 :::
 
@@ -99,7 +99,7 @@ This section guides you through creating an object that spawns for each connecte
 ![](/img/get-started-ngo/ngo-5.png)
 
 11. Add a 3D Plane (centered at 0,0,0) to the scene by right-clicking in the **Hierarchy** tab, then selecting **3D Object** > **Plane**.
-    * Adding the Plane adds a visual reference point to visualize the Player prefab’s position, but it isn’t necessary.
+    * Adding the Plane adds a visual reference point to visualize the Player prefab's position, but it isn't necessary.
 ![](/img/get-started-ngo/ngo-7.png)
 
 12. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
@@ -376,7 +376,7 @@ namespace HelloWorld
 }
 ```
 
-The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server’s position NetworkVariable, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position NetworkVariable, then replicate the change locally.
+The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server's position NetworkVariable, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position NetworkVariable, then replicate the change locally.
 
 The `HelloWorldPlayer` class inherits from `Unity.Netcode`'s `NetworkBehaviour` instead of `MonoBehaviour`. This allows you to customize the networking code as you override what happens when the Player spawns.
 

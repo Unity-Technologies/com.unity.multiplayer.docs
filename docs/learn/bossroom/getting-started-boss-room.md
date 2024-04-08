@@ -128,7 +128,7 @@ After you have the build, you can launch several instances of the build executab
 If you run several instances locally, you must use the **Change Profile** button to set different profiles for each instance for authentication purposes.
 
 :::note
-**Note**: If you’re using Mac to run multiple instances of the same app, you need to use the command line. Run `open -n BossRoom.app`.
+**Note**: If you're using Mac to run multiple instances of the same app, you need to use the command line. Run `open -n BossRoom.app`.
 :::
 
 #### Multiplayer over Internet

@@ -167,11 +167,11 @@ Artificial network conditions allow the errors and oddities that are hidden by n
 
 First of all, it's valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
-When recording your screen, sometimes it’s hard to see if we are legitimately missing an update in our game or if it’s just our recording refresh rate isn’t synced with Unity’s refresh calls.
+When recording your screen, sometimes it's hard to see if we are legitimately missing an update in our game or if it's just our recording refresh rate isn't synced with Unity's refresh calls.
 
 In debug builds it's a great idea to show the Peer ID and the current frame number somewhere in the corner of the screen - this way there is a visual reference to the number of the frame we're currently observing on the recording.
 
-Sometimes, despite us using good debug rendering and logging it's still hard to understand what's going on even when going through the frames one by one. Increasing our FixedTimeStep setting to a ridiculous value (something as high as `0.2`) helps to have more time to see what’s going on.
+Sometimes, despite us using good debug rendering and logging it's still hard to understand what's going on even when going through the frames one by one. Increasing our FixedTimeStep setting to a ridiculous value (something as high as `0.2`) helps to have more time to see what's going on.
 
 The same applies to high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
 

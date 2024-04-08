@@ -158,6 +158,7 @@ This will process the currently opened scene as well.
 
 The `NetworkObject.SpawnWithObservers` property (default is true) provides you with the ability to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
 
+
 ## Transform synchronization
 
 ![image](/img/NetworkObject-TransformSynchronization.png)
