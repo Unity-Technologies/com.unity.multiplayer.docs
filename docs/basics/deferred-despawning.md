@@ -3,7 +3,7 @@ id: deferred-despawning
 title: Deferred despawning
 ---
 
-:::info[Distributed authority only]
+:::info Distributed authority only
 
 Deferred despawning is only available for games using a [distributed authority topology](../terms-concepts/distributed-authority.md).
 
@@ -33,7 +33,7 @@ The process above is broken down into two steps that are performed on the author
 
 |Authority instance|Non-authority instance(s)|
 |---|---|
-|1. Invoke the `NetworkObject.DeferDespawn` method while providing the number of ticks to offset despawning by on non-authority instance(s), relative to the local client's current known network tick.</br> 2. If overridden, handle any changes to state (i.e. NetworkVariables) when `NetworkBehaviour.OnDeferringDespawn` is invoked.|1. Use any updated states to synchronize the visual portion of a deferred despawn (for example, starting a particle system to represent the point of impact).|
+|1. Invoke the `NetworkObject.DeferDespawn` method while providing the number of ticks to offset despawning by on non-authority instance(s), relative to the local client's current known network tick.<br/> 2. If overridden, handle any changes to state (i.e. NetworkVariables) when `NetworkBehaviour.OnDeferringDespawn` is invoked.|1. Use any updated states to synchronize the visual portion of a deferred despawn (for example, starting a particle system to represent the point of impact).|
 
 ### Deferred despawning example
 
@@ -171,11 +171,11 @@ The pseudo script above excludes the motion of the projectile, but makes the ass
 
 Authority instance|Non-authority instance(s)|
 |---|---|
-|1. Move until collision (excluded from the above example)</br> 2. Upon collision: instantiate ExplosionFX, position ExplosionFX, acquire the ExplosionFX component, spawn the ExplosionFX, defer despawning the projectile</br> 3. When deferring despawning the projectile, assign the NetworkBehaviourReference to the ExplosionFX</br> 4. Despawn locally (happens automatically at end of the DeferDespawn)|1. When spawned, register changes to the m_ExplosionFX NetworkVariable</br> 2. Continue to interpolate towards last updated position (handled by NetworkTransform)</br> 3. When m_ExplosionFX NetworkVariable changes, assign the local m_SpawnExplosion ExplosionFX component of the explosion associated with the current projectile instance (to be used when despawned)</br> 4.When despawned, start the ExplosionFX particle system via m_SpawnExplosion|
+|1. Move until collision (excluded from the above example)<br/> 2. Upon collision: instantiate ExplosionFX, position ExplosionFX, acquire the ExplosionFX component, spawn the ExplosionFX, defer despawning the projectile<br/> 3. When deferring despawning the projectile, assign the NetworkBehaviourReference to the ExplosionFX<br/> 4. Despawn locally (happens automatically at end of the DeferDespawn)|1. When spawned, register changes to the m_ExplosionFX NetworkVariable<br/> 2. Continue to interpolate towards last updated position (handled by NetworkTransform)<br/> 3. When m_ExplosionFX NetworkVariable changes, assign the local m_SpawnExplosion ExplosionFX component of the explosion associated with the current projectile instance (to be used when despawned)<br/> 4.When despawned, start the ExplosionFX particle system via m_SpawnExplosion|
 
 The non-authority instance still spawns the ExplosionFX NetworkObject at the same relative time frame as the authority, however it doesn't start its particle system until the local non-authority projectile instance is despawned. Since the projectile has had its despawn deferred until a future network tick, the non-authority instance interpolates up to its last updated position from the authority side and then shortly (in milliseconds) after is despawned and the explosion particle system started.
 
-:::info[Example purposes only]
+:::info Example purposes only
 
 The spawning explosion FX example above is only for example purposes and would be less bandwidth and processor intensive if you used a local particle FX pool that you pull from and began playing on both the authority and non-authority sides when the object in question is despawned. The same deferred despawn principles would be used without the need to spawn an additional object. However, providing the spawned explosion example also covers other scenarios where spawning is required.
 
