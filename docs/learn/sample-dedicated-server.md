@@ -5,11 +5,7 @@ title: Dedicated game server sample
 
 ## Dedicated Game Server sample
 
-<<<<<<< HEAD
 [The Dedicated Game Server sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Experimental/DedicatedGameServer) project demonstrates how the dedicated server model works and the tools that you can use to test multiplayer in the editor.
-=======
-[The Dedicated Game Server sample](https://github.cds.internal.unity3d.com/unity/com.unity.multiplayer.samples.bitesize-mirror/tree/sample/DGS) project demonstrates how the dedicated server model works and the tools that you can use to test multiplayer in the editor.
->>>>>>> main
 
 This project uses the following packages and services:
 
@@ -25,30 +21,18 @@ This project uses the following packages and services:
 
 This section describes how the following features are configured to use the dedicated server: 
 
-<<<<<<< HEAD
-- [The Dedicated Game Server sample project demonstrates how the dedicated server model works and the tools that you can use to test multiplayer in the editor.](#the-dedicated-game-server-sample-project-demonstrates-how-the-dedicated-server-model-works-and-the-tools-that-you-can-use-to-test-multiplayer-in-the-editor)
-    - [Sample features](#sample-features)
-    - [Project settings](#project-settings)
-      - [Strip generic components from the server](#strip-generic-components-from-the-server)
-      - [Split scripts across the client, server, or network](#split-scripts-across-the-client-server-or-network)
-      - [Synchronize animations between clients](#synchronize-animations-between-clients)
-        - [Automatically synchronized animations](#automatically-synchronized-animations)
-- [The Animator component and the NetworkAnimator script synchronize animations across the clients and servers. The server or the owner of the animations, for example a PlayerCharacter script that uses a `ClientNetworkAnimator`, handles and automatically synchronizes animations between clients. This is necessary for animations that drive logic on the server. For example, in this sample the door animation (door\_boss\_ani) is synchronized automatically, but its game state determines whether to enable or disable its colliders and navmesh obstacles.](#the-animator-component-and-the-networkanimator-script-synchronize-animations-across-the-clients-and-servers-the-server-or-the-owner-of-the-animations-for-example-a-playercharacter-script-that-uses-a-clientnetworkanimator-handles-and-automatically-synchronizes-animations-between-clients-this-is-necessary-for-animations-that-drive-logic-on-the-server-for-example-in-this-sample-the-door-animation-door_boss_ani-is-synchronized-automatically-but-its-game-state-determines-whether-to-enable-or-disable-its-colliders-and-navmesh-obstacles)
-        - [Manually synchronized animations](#manually-synchronized-animations)
-      - [Navigation](#navigation)
-      - [Use multiplayer roles to control game logic](#use-multiplayer-roles-to-control-game-logic)
-  - [Integrate with Unity Gaming Services (UGS)](#integrate-with-unity-gaming-services-ugs)
-  - [Set default command line arguments](#set-default-command-line-arguments)
-* [Project settings](#project-settings)
-    * [Strip generic components from the server](#strip-generic-components-from-the-server)
-    * [Split scripts across the client, server, or network](#split-scripts-across-the-client-server-or-network)
-    * [Split scripts across the client, server, or network](#split-scripts-across-the-client-server-or-network)
-    * [Synchronize animations between clients](#synchronize-animations-between-clients)
-    * [Navigation](#navigation)
-    * [Use multiplayer roles to control game logic](#use-multiplayer-roles-to-control-game-logic)
-* [Integrate with Unity Gaming Services (UGS)](#integrate-with-unity-gaming-services-(ugs))
-* [Set default command line arguments](#set-default-command-line-arguments)
->>>>>>> main
+- [Dedicated Game Server sample](#dedicated-game-server-sample)
+  - [Sample features](#sample-features)
+  - [Project settings](#project-settings)
+    - [Strip generic components from the server](#strip-generic-components-from-the-server)
+    - [Split scripts across the client, server, or network](#split-scripts-across-the-client-server-or-network)
+    - [Synchronize animations between clients](#synchronize-animations-between-clients)
+      - [Automatically synchronized animations](#automatically-synchronized-animations)
+      - [Manually synchronized animations](#manually-synchronized-animations)
+    - [Navigation](#navigation)
+    - [Use multiplayer roles to control game logic](#use-multiplayer-roles-to-control-game-logic)
+- [Integrate with Unity Gaming Services (UGS)](#integrate-with-unity-gaming-services-ugs)
+- [Set default command line arguments](#set-default-command-line-arguments)
 
 ### Project settings 
 
@@ -89,11 +73,7 @@ This sample handles synchronizes animations between clients in the following way
 
 ##### Automatically synchronized animations
 
-<<<<<<< HEAD
 The Animator component and the NetworkAnimator script synchronize animations across the clients and servers. The server or the owner of the animations, for example a PlayerCharacter script that uses a `ClientNetworkAnimator`, handles and automatically synchronizes animations between clients. This is necessary for animations that drive logic on the server. For example, in this sample the door animation (door_boss_ani) is synchronized automatically, but its game state determines whether to enable or disable its colliders and navmesh obstacles.
-=======
-The Animator component and the NetworkAnimator script synchronize animations across the clients and servers. The server or the owner of the animations, for example a PlayerCharacter script that uses a `ClientNetworkAnimator`, handles and automatically synchronizes animations between clients. This is necessary for animations that drive logic on the server. In this sample, the door animation (door_boss_ani) is synchronized automatically because its animation event controls when Unity turns off the colliders and navmesh obstacles. 
->>>>>>> main
 
 ##### Manually synchronized animations
 
