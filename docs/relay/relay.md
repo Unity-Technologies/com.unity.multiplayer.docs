@@ -35,7 +35,7 @@ From Unity version 2022.3, you can test the Relay service with Netcode for GameO
 8. Enter the join code in a new window running the same project.
 9. Select **Start Client**.
 
-This means you don’t need to create UI elements to test the Relay service.
+This means you don't need to create UI elements to test the Relay service.
 
 If the connection fails then an error message appears in the UI and console.
 ![](/img/relay/ngo-relay-connection.png)
@@ -46,7 +46,7 @@ If Relay connects, a message appears in the inspector that displays the join cod
 You can copy the join code to share it or or test it in a project in a separate window. ([Testing Locally](../tutorials/testing/testing_locally.md).
 
 :::note
-This Relay integration is only available in the editor, which means you can't use it in a build. Instead, use the code snippets at the end of this page. These snippets use the Unity Transport Package. To do this in projects that don’t use Transport, refer to the Relay documentation.
+This Relay integration is only available in the editor, which means you can't use it in a build. Instead, use the code snippets at the end of this page. These snippets use the Unity Transport Package. To do this in projects that don't use Transport, refer to the Relay documentation.
 :::
 
 ## Create allocation on a Relay server

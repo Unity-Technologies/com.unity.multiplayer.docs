@@ -66,6 +66,29 @@ module.exports = {
             "type": "category",
             "label": "Configuration",
             "items": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Network topologies",
+                "items": [
+                  {
+                      "type": "doc",
+                      "id": "terms-concepts/network-topologies"
+                  },
+                  {
+                      "type": "doc",
+                      "id": "terms-concepts/client-server",
+                  },
+                  {
+                      "type": "doc",
+                      "id": "learn/listen-server-host-architecture"
+                  },
+                  {
+                      "type": "doc",
+                      "id": "terms-concepts/distributed-authority",
+                  },
+                ],
+              },
                 {
                     "type": "doc",
                     "id": "basics/connection-approval"
@@ -73,14 +96,6 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "basics/max-players"
-                },
-                {
-                    "type": "doc",
-                    "id": "terms-concepts/network-topologies"
-                },
-                {
-                    "type": "doc",
-                    "id": "learn/listen-server-host-architecture"
                 },
                 {
                     "type": "doc",
@@ -131,7 +146,22 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Spawning and ownership",
+            "label": "Ownership and authority",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "basics/ownership"
+                },
+                {
+                    "type": "doc",
+                    "id": "basics/race-conditions"
+                },
+            ]
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Spawning and despawning",
             "items": [
                 {
                     "type": "doc",
@@ -144,6 +174,14 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "basics/object-visibility"
+                },
+                {
+                    "type": "doc",
+                    "id": "basics/spawning-synchronization"
+                },
+                {
+                    "type": "doc",
+                    "id": "basics/deferred-despawning"
                 },
             ]
         },
