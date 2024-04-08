@@ -27,7 +27,7 @@ When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value init
 
 :::warning
 
-The scriptorder of networked objects matters. Make sure to load any NetworkBehaviour components before the NetworkObject component on the GameObject.
+The script order of networked objects matters. Make sure to load any NetworkBehaviour components before the NetworkObject component on the GameObject.
 
 :::
 
@@ -35,7 +35,7 @@ The scriptorder of networked objects matters. Make sure to load any NetworkBehav
 
 By default, the server owns NetworkObjects, although connected and approved clients can also own NetworkObjects using the `SpawnWithOwnership` method. Netcode for GameObjects is server-authoritative, which means that only the server is authorized to spawn and despawn NetworkObjects.
 
-Invoke all code snippets below on the server-side.
+Invoke all the following code snippets on the server-side.
 
 The default `NetworkObject.Spawn` method assumes server-side ownership:
 
