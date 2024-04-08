@@ -17,25 +17,29 @@ Both the NetworkObject and NetworkBehaviour components require the use of specia
 
 :::
 
-## NetworkObject
+# NetworkObject
 
-To replicate any Netcode-aware properties or send and receive RPCs, a GameObject must have a NetworkObject component and at least one NetworkBehaviour component. Any Netcode-related component, such as a NetworkTransform or a NetworkBehaviour with one or more NetworkVariables or RPCs, requires a NetworkObject component on the same relative GameObject (or on a parent of the GameObject in question).
+To replicate any Netcode aware properties or send/receive RPCs, a GameObject must have a NetworkObject component and at least one NetworkBehaviour component. Any Netcode-related component, such as a NetworkTransform or a NetworkBehaviour with one or more NetworkVariables or RPCs, requires a NetworkObject component on the same relative GameObject (or on a parent of the GameObject in question).
 
-When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value initially identifies the associated network Prefab asset clients instantiate to create a client-local clone. After being instantiated locally, each NetworkObject is assigned a NetworkObjectId that's used to associate NetworkObjects across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103," and everyone knows what object it's referring to. A NetworkObject is spawned on a client is when it's instantiated and assigned a unique NetworkObjectId.
+When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value initially identifies the associated network Prefab asset clients instantiate to create a client-local clone. After instantiated locally, each NetworkObject is assigned a NetworkObjectId that's used to associate NetworkObjects across the network. For example, one peer can say "Send this RPC to the object with the NetworkObjectId 103," and everyone knows what object it's referring to. A NetworkObject is spawned on a client is when it's instantiated and assigned a unique NetworkObjectId.
 
-[NetworkBehaviours](networkbehaviour.md) offers users the ability to add their own custom Netcode logic to the associated NetworkObject.
+[NetworkBehaviours](networkbehaviour.md) offer users with the ability to add their own custom Netcode logic to the associated NetworkObject.
 
 :::warning
 
-The script order of networked objects matters. Make sure to load any NetworkBehaviour components before the NetworkObject component on the GameObject.
+The order of networked objects matters. Make sure to load any NetworkBehaviour components before the Network Object component on the GameObject.
 
 :::
 
-## Ownership
+# Ownership
 
-By default, the server owns NetworkObjects, although connected and approved clients can also own NetworkObjects using the `SpawnWithOwnership` method. Netcode for GameObjects is server-authoritative, which means that only the server is authorized to spawn and despawn NetworkObjects.
+Either the server (default) or any connected and approved client owns each NetworkObject. By default, Netcode for GameObjects is server-authoritative, which means only the server can spawn and despawn NetworkObjects.
 
-Invoke all the following code snippets on the server-side.
+:::note
+
+Invoke all code snippets below on the server-side.
+
+:::
 
 The default `NetworkObject.Spawn` method assumes server-side ownership:
 
@@ -71,7 +75,7 @@ When you want to de-spawn and destroy the owner but you don't want to destroy a 
 
 :::
 
-## Player NetworkObjects
+# Player NetworkObjects
 
 Player objects are an optional feature in Netcode you can use to assign a networked object to a specific client. A client can always only have at most one player object.
 
@@ -83,7 +87,7 @@ If you want to be able to assign a unique player Prefab on a per client connecti
 
 :::
 
-### Creating a PlayerObject
+## Creating a PlayerObject
 
 Netcode can spawn a default PlayerObject for you. If you enable **Create Player Prefab** (true) in the NetworkManager and you assign a valid Prefab to the Player Prefab, then Netcode spawns a unique instance of the designated player Prefab for each connected and approved client.
 
@@ -99,7 +103,7 @@ If the player already had a Prefab instance assigned, then the client owns the N
 
 :::
 
-### Finding PlayerObjects
+## Finding PlayerObjects
 
 To find a PlayerObjects for a specific client ID, you can use the following methods:
 
@@ -117,9 +121,9 @@ NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
 
 To find your own player object just pass `NetworkManager.Singleton.LocalClientId` as the `clientId` in the sample above.
 
-## Network prefabs
+## Network Prefabs
 
-Network prefabs are registered to a `NetworkPrefabsList` object (a type of `ScriptableObject`). By default, a default prefabs List containing every network prefab in your project.
+Network Prefabs are registered to a `NetworkPrefabsList` object (a type of `ScriptableObject`). By default, a Default Prefabs List containing every Network Prefab in your project.
 
 However, when you want to limit which prefabs are available (for example, to reduce memory usage), you can disable this behavior in **Project Settings** > **Netcode For GameObjects** > **Project Settings**. You can also manually create a `NetworkPrefabsList` by right-clicking in the assets view and selecting **Create** > **Netcode** > **Network Prefabs List** and adding your prefabs to it. That prefab list can then be assigned to a `NetworkManager` to allow that `NetworkManager` to create those prefabs.
 
@@ -129,37 +133,13 @@ You can only have one `NetworkObject` at the root of a Prefab. Don't create Pref
 
 :::
 
-### Creating a network prefab
-
-You can create a network prefab the [same way you create normal prefabs](https://docs.unity3d.com/Manual/CreatingPrefabs.html). The only difference is that the root GameObject of the prefab should have a `NetworkObject` component added to it:
-
-![image](/img/createnetworkprefab.png)
-
-### Converting a prefab to a network prefab
-
-Sometimes you might run into a scenario where you created a prefab and already have several in-scene placed instances of that prefab within one or more already existing scenes. In this scenario, you can:
-
-- Navigate to your source network prefab.
-- Select it so its properties show up in the inspector view.
-- Find the `NetworkObject` component and right click on it.
-- At the bottom of the context menu, select the **Refresh In-Scene Prefab Instances** menu item.
-
-![image](/img/RefresInScenePrefabInstances.png)
-
-This will:
-- Open each scene, individually, within the **Build Settings** > **Scenes in Build** list
-- Automatically update each prefab instance with the correct `GlobalObjectIdHash` value and then save and close each scene.
-
-This will process the currently opened scene as well.
-
-## Spawning with (or without) observers
-
+## Spawning with (or without) Observers
 ![image](/img/SpawnWithObservers.png)
 
 The `NetworkObject.SpawnWithObservers` property (default is true) provides you with the ability to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
 
-## Transform synchronization
 
+## Transform Synchronization
 ![image](/img/NetworkObject-TransformSynchronization.png)
 
 There are times when you want to use a NetworkObject for something that does not require the synchronization of its transform. You might have an [In-Scene placed NetworkObject](./scenemanagement/inscene-placed-networkobjects.md) that is purely used to manage game state (or the like) and it doesn't make sense to incur the initial client synchronization cost of synchronizing its transform. To prevent a NetworkObject from initially synchronizing its transform when spawned, un-check the Synchronize Transform property. This property is enabled/checked by default.
@@ -168,15 +148,14 @@ There are times when you want to use a NetworkObject for something that does not
 If you are planning to use a NetworkTransform then you always want to make sure the Synchronize Transform property is enabled/checked.
 :::
 
-## Active scene synchronization
-
+## Active Scene Synchronization
 ![image](/img/ActiveSceneMigration.png)
 
 When a GameObject is instantiated it gets instantiated in the current active scene. However, sometimes you might find that you want to change the currently active scene and would like specific NetworkObject instances to automatically migrate to the newly assigned active scene. While you could keep a list or table of the NetworkObject instances and write the code/logic to migrate them into a newly assigned active scene, this can be time consuming an become complicated depending upon project size and complexity. The alternate way (and recommended) to handle this is by enabling/checking the Active Scene Synchronization property of each NetworkObject you want to automatically migrate into any newly assigned scene. This property defaults to disabled/un-checked.
 
 See Also: [NetworkSceneManager Active Scene Synchronization](../basics/scenemanagement/using-networkscenemanager#active-scene-synchronization)
 
-## Scene migration synchronization
+## Scene Migration Synchronization
 
 ![image](/img/SceneMigrationSynchronization.png)
 

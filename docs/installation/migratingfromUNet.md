@@ -1,6 +1,6 @@
 ---
 id: upgrade_from_UNet
-title: Migrating from UNet to Netcode for GameObjects
+title: Migrate from UNet to Netcode for GameObjects
 ---
 
 UNet is deprecated and no longer supported. Follow this guide to migrate from UNet to Netcode for GameObjects. If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
@@ -15,7 +15,7 @@ There are some differences between UNet and Netcode for GameObjects that you sho
 * Prefabs need to be added to the Prefab registration list in Netcode for GameObjects.
 * Matchmaking isn't available in Netcode for GameObjects at this time.
 
-## Back p your project
+## Back up your project
 
 It's strongly recommended that you back up your existing UNet project before migration. You can do one or both of the following:
 
@@ -36,7 +36,7 @@ Invoking an RPC works the same way as in UNet. Just call the function and it wil
 
 ##  NetworkManager
 
-UNET’s `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
+UNET's `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
 
 :::note
 We recommend you don't inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET.
@@ -51,11 +51,11 @@ The [Community Contributions Extension Package](https://github.com/Unity-Technol
 
 ## Replace NetworkIdentity with NetworkObject
 
-UNet’s `NetworkIdentity` is called `NetworkObject` in Netcode for GameObjects and works in a similar way.
+UNet's `NetworkIdentity` is called `NetworkObject` in Netcode for GameObjects and works in a similar way.
 
 ## Replace UNet NetworkTransform with Netcode NetworkTransform
 
-UNet’s `NetworkTransform` is also called `NetworkTransform` in Netcode for GameObjects and works in a similar way.
+UNet's `NetworkTransform` is also called `NetworkTransform` in Netcode for GameObjects and works in a similar way.
 
 `NetworkTransform` doesn't have full feature parity with UNET's `NetworkTransform`. It lacks features like position synchronizing for rigid bodies.
 

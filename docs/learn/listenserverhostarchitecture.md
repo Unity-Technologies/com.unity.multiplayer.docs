@@ -19,7 +19,7 @@ This set up has performance, security, and cost considerations for implementatio
 
 ### Advantages
 
-- Essentially free compared to dedicated server options.
+- Essentially free compard to dedicated server options.
 - Doesn't require special infrastructure or forward planning to set up. This makes them common use for LAN parties because latency and bandwidth issues aren't a concern.
 
 ## When to use a listen server architecture
@@ -27,7 +27,7 @@ This set up has performance, security, and cost considerations for implementatio
 Listen server architecture is a popular choice for single player games that want to provide the option to add a friend into an existing game world. Listen servers are best suited for a smaller player group (< 12) and games that don't require a persistent world.
 
 :::info
-*Persistent world* in Netcode for GameObjects means "a persistent online world." 
+*Persistent world* in Netcode for GameObjects means "a persistent online world."
 
 For example, the game state isn't bound to a player or a session, but is typically tied to the host.
 :::
@@ -36,10 +36,6 @@ In contrast to dedicated servers, listen servers are cheaper without the need to
 
 :::note
 You still need to set up matchmaking for your player to join together to play. A listen server game requires redirecting players to the client-hosted server.
-:::
-
-:::funfact
-*Valheim* by Iron Gate Studio is a listen server game with a persistent world. The host has a separate save game for playing with a group of friends versus when playing alone. It may not be ideal, but it works.
 :::
 
 ## Connecting to a listen server
