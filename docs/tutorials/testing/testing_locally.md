@@ -12,7 +12,7 @@ Testing a multiplayer game presents unique challenges:
 
 Unity doesn't offer any workflow that covers all these requirements. (Check out the [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking))
 
-There will always be a need to validate work in the target distribution format (on platform) and the way to do it's by creating [Player Builds](#player-builds).
+There will always be a need to validate work in the target distribution format (on platform) and the way to do this is by creating [Player Builds](#player-builds).
 
 :::important
 Player builds don't meet the iteration and debugging requirements for using Editor tools. As such, the current recommended workflow for local iteration is [ParrelSync](#parrelsync).
@@ -116,7 +116,3 @@ if (ParrelSync.ClonesManager.IsClone())
 - Bigger screens or multi-screen setups allow for more screen real estate, which is handy when one has to have multiple instances of an app opened at the same time.
 - **ParrelSync** has to copy and update separate `Packages` and `Library` folders for every clone, and in certain cases a fix for misbehaving clone is re-creation - a good SSD makes this process quite a bit faster.
 - Creating a fork of any git repository that your project relies upon in production can help avoid bad surprises if the repository gets taken down or introduces an undesirable change. You should fork **ParrelSync** before using it in your live project.
-
-:::contribution Special Thanks
-This guide wouldn't have been possible without the hard work and support of Philipp Deschain, Unity.
-:::

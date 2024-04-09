@@ -3,40 +3,30 @@ id: upgrade_from_UNet
 title: Migrating from UNet to Netcode for GameObjects
 ---
 
-Use this step-by-step guide to migrate your projects from Unity UNet to Netcode for GameObjects (Netcode). If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
+UNet is deprecated and no longer supported. Follow this guide to migrate from UNet to Netcode for GameObjects. If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
 
-:::warning UNet Deprecation
-UNet is an entirely deprecated product, and you should upgrade to Netcode for GameObjects as soon as possible.
-:::
+## Comparison between Netcode for GameObjects and UNet
 
-## Current limitations
+There are some differences between UNet and Netcode for GameObjects that you should be aware of as part of your migration:
 
-Review the following limitations for upgrade and migrations from previous versions of Unity UNet to Netcode:
+* Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`, whereas Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been replaced with `RpcAttribute(SendTo.Server)` and `ClientRPCAttribute` has been replaced with `RpcAttribute(SendTo.NotServer)` or `RpcAttribute(SendTo.ClientsAndHost)`, depending on whether you want the host client to receive the RPC.
+* Errors for RPC postfix naming patterns don't show in your IDE.
+* Client and server have separate representations in UNet. UNet has a number of callbacks that don't exist in Netcode for GameObjects.
+* Prefabs need to be added to the Prefab registration list in Netcode for GameObjects.
+* Matchmaking isn't available in Netcode for GameObjects at this time.
 
-- Naming constraints may cause issues. UNet prefixed methods with `Cmd` or `Rpc`. Netcode requires postfix. This may require either complicated multi-line regex to find and replace, or manual updates. For example, `CommandAttribute` has been renamed `ServerRpcAttribute` and `ClientRPCAttribute` has been renamed `ClientRpcAttribute`.
-- Errors for RPC postfix naming patterns don't show in your IDE. 
-- Client and Server have separate representations in UNet. UNet has a number of callbacks that don't exist for Netcode.
-- Prefabs need to be added to the Prefab registration list for Netcode.
-- Matchmaking isn't available in Netcode at this time.
+## Back up your project
 
-## Backup your project
-
-It is recommended that you back up your project before proceeding with the migration. For example:
+It's strongly recommended that you back up your existing UNet project before migration. You can do one or both of the following:
 
 * Create a copy of your entire project folder.
-* Use source control software, like Git. 
+* Use source control software, like Git.
 
-:::bestpractice
-We recommend using both methods to backup your project. This gives you a copied project and tracking through committed changes and history.
-:::
+## Install Netcode for GameObjects and restart Unity
 
-## Install Netcode and restart Unity
+Follow the [installation guide](installation.md) to install Netcode for GameObjects.
 
-See the [Netcode installation guide](installation.md) for more information. 
-
-:::note
-If you install Git for the first time, you will need to restart your system.
-:::
+Installing Netcode for GameObjects also installs some other packages such as [Unity Transport](https://docs.unity3d.com/Packages/com.unity.transport@latest/), [Unity Collections](https://docs.unity3d.com/Packages/com.unity.collections@latest/), and [Unity Burst](https://docs.unity3d.com/Packages/com.unity.burst@latest/).
 
 ## RPC Invoking
 
@@ -44,15 +34,15 @@ Invoking an RPC works the same way as in UNet. Just call the function and it wil
 
 <!-- I know a lot of things were done to `NetworkManager` in Netcode and assume this section is just incorrect now.
 
-##  NetworkManager 
+##  NetworkManager
 
-UNET’s `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
+UNET's `NetworkManager` is also called `NetworkManager` in Netcode and works in a similar way.
 
 :::note
 We recommend you don't inherit from `NetworkManager` in Netcode, which was a **recommended** pattern in UNET.
 :::
 
-## Replace NetworkManagerHUD 
+## Replace NetworkManagerHUD
 
 Currently Netcode offers no replacment for the NetworkMangerHUD.
 
@@ -61,21 +51,21 @@ The [Community Contributions Extension Package](https://github.com/Unity-Technol
 
 ## Replace NetworkIdentity with NetworkObject
 
-UNet’s `NetworkIdentity` is called `NetworkObject` in Netcode and works in a similar way.
+UNet's `NetworkIdentity` is called `NetworkObject` in Netcode for GameObjects and works in a similar way.
 
 ## Replace UNet NetworkTransform with Netcode NetworkTransform
 
-UNet’s `NetworkTransform` is also called `NetworkTransform` in Netcode and works in a similar way.
+UNet's `NetworkTransform` is also called `NetworkTransform` in Netcode for GameObjects and works in a similar way.
 
-The `NetworkTransform` does not have full feature parity with UNET's `NetworkTransform`. It lacks features like position synchronizing for rigidbodies.
+`NetworkTransform` doesn't have full feature parity with UNET's `NetworkTransform`. It lacks features like position synchronizing for rigid bodies.
 
 ## Replace UNet NetworkAnimator with Netcode NetworkAnimator
 
-Replace UNEt's `NetworkAnimator` with Netcode's `NetworkAnimator` component everywhere in your project.
+Replace UNet's `NetworkAnimator` with Netcode for GameObjects' `NetworkAnimator` component everywhere in your project.
 
 ## Update NetworkBehaviour
 
-Replace UNet `NetworkBehaviour` with Netcode's `NetworkBehaviour` everywhere in your project.
+Replace UNet `NetworkBehaviour` with Netcode for GameObjects' `NetworkBehaviour` everywhere in your project.
 
 <Tabs
   className="unique-tabs"
@@ -128,12 +118,12 @@ public class MyNetcodeExample : NetworkBehaviour
         ExampleClientRpc(10f);
         ExampleServerRpc(10f);
     }
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
     }
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
@@ -144,13 +134,13 @@ public class MyNetcodeExample : NetworkBehaviour
 
 </Tabs>
 
-See [NetworkBehaviour](../basics/networkbehaviour.md) for more information. 
+See [NetworkBehaviour](../basics/networkbehaviour.md) for more information.
 
-## Replace SyncVar 
+## Replace SyncVar
 
 Replace `SyncVar` with `NetworkVariable` everywhere in your project.
 
-To achieve equivalent functionality of `SyncVar` hooks in Netcode subscribe a function to the `OnValueChanged` callback of the `NetworkVariable`. A noteable difference between the UNet hooks and Netcode's `OnValueChanged` callback is that Netcode gives you both the old and the newly changed value while UNet provides you only with the old value. With UNet, you also had to manually assign the value of the SyncVar.
+To achieve equivalent functionality to `SyncVar`, hooks in Netcode for GameObjects subscribe a function to the `OnValueChanged` callback of the `NetworkVariable`. A notable difference between UNet hooks and Netcode for GameObjects' `OnValueChanged` callback is that Netcode for GameObjects gives you both the old and the newly changed value, while UNet only provides you with the old value. With UNet, you also had to manually assign the value of the `SyncVar`.
 
 <Tabs
   className="unique-tabs"
@@ -251,9 +241,9 @@ public void Update(){
 See [NetworkVariable](../basics/networkvariable.md) for more information.
 
 
-## Replace SyncList with NetworkList
+## Replace `SyncList` with `NetworkList`
 
-Replace `SyncList<T>` with `NetworkList<T>` everywhere in your project. `NetworkList` has a `OnListChanged` event which is similar to UNet's `Callback`.
+Replace `SyncList<T>` with `NetworkList<T>` everywhere in your project. `NetworkList` has an `OnListChanged` event which is similar to UNet's `Callback`.
 
 <Tabs
   className="unique-tabs"
@@ -302,9 +292,9 @@ void OnIntChanged(NetworkListEvent<int> changeEvent)
 
 </Tabs>
 
-## Replace Command/ClientRPC 
+## Replace Command/ClientRPC
 
-UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode which works in a similar way.
+UNet's `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode for GameObjects, which works in a similar way.
 
 <Tabs
   className="unique-tabs"
@@ -333,12 +323,12 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode whic
 <TabItem value="tab2">
 
 ```csharp
-    [ServerRPC]
+    [Rpc(SendTo.Server)]
     public void ExampleServerRpc(float x)
     {
         Debug.Log(“Runs on server”);
     }
-    [ClientRPC]
+    [Rpc(SendTo.ClientsAndHost)]
     public void ExampleClientRpc(float x)
     {
         Debug.Log(“Runs on clients”);
@@ -347,14 +337,13 @@ UNet’s `Command/ClientRPC` is replaced with `Server/ClientRpc` in Netcode whic
 </TabItem>
 </Tabs>
 
-
 :::note
-In Netcode, RPC function names must end with a `ClientRpc/ServerRpc` suffix.
+In Netcode for GameObjects, RPC function names must end with an `Rpc` suffix.
 :::
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
 
-## Replace OnServerAddPlayer  
+## Replace `OnServerAddPlayer`  
 
 Replace `OnServerAddPlayer` with `ConnectionApproval` everywhere in your project.
 
@@ -396,7 +385,7 @@ Server-only example:
 ```csharp
 using Unity.Netcode;
 
-private void Setup() 
+private void Setup()
 {
     NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
     NetworkManager.Singleton.StartHost();
@@ -411,7 +400,7 @@ private void ApprovalCheck(byte[] connectionData, ulong clientId, NetworkManager
     // The Prefab hash. Use null to use the default player prefab
     // If using this hash, replace "MyPrefabHashGenerator" with the name of a Prefab added to the NetworkPrefabs field of your NetworkManager object in the scene
     ulong? prefabHash = NetworkpawnManager.GetPrefabHashFromGenerator("MyPrefabHashGenerator");
-    
+
     //If approve is true, the connection gets added. If it's false. The client gets disconnected
     callback(createPlayerObject, prefabHash, approve, positionToSpawnAt, rotationToSpawnWith);
 }
@@ -424,7 +413,7 @@ See [Connection Approval](../basics/connection-approval.md) for more information
 
 ## Replace NetworkServer.Spawn with NetworkObject.Spawn
 
-Replace `NetworkServer.Spawn`  with `NetworkObject.Spawn` everywhere in your project. 
+Replace `NetworkServer.Spawn`  with `NetworkObject.Spawn` everywhere in your project.
 
 <Tabs
   className="unique-tabs"
@@ -476,13 +465,18 @@ See [Object Spawning](../basics/object-spawning.md) for more information.
 
 Netcode has `Custom Spawn Handlers` to replace UNet's `Custom Spawn Functions`. See [Object Pooling](../advanced-topics/object-pooling) for more information.
 
-## Replace NetworkContextProperties
+## Replace `NetworkContextProperties`
 
-Netcode has `IsLocalPlayer`, `IsClient`, `IsServer` and `IsHost` to replace UNets `isLocalPlayer`, `isClient` and `isServer`. In Netcode each object can be owned by a specific peer. This can be checked with `IsOwner` which is similar to UNets ``hasAuthority``.
+Netcode has `IsLocalPlayer`, `IsClient`, `IsServer`, and `IsHost` to replace UNet's `isLocalPlayer`, `isClient`, and `isServer`. In Netcode for GameObjects, each object can be owned by a specific peer. This can be checked with `IsOwner`, which is similar to UNet's `hasAuthority`.
 
-## Network Proximity Checker/ OnCheckObserver with Netcode visibility
+## `NetworkProximityChecker`, `OnCheckObserver` and network visibility
 
-There is no direct equivalent to the `NetworkPromimityChecker` UNet component in Netcode. Network visiblilty for clients works similar as in UNet. Netcode does not have an equivalent to the `ObjectHide` message from UNet. In Netcode networked objects on the host are always visible. There is no equivalent to the `OnSetLocalVisibility` function in UNet. A manual network promiximty implementation with the `OnCheckObserver` can be ported to Netcode by using `NetworkObject.CheckObjectVisibility`. `OnRebuildObservers` isn't needed for Netcode visibilty system.
+Netcode for GameObjects doesn't have direct equivalents for the following UNet components and functions:
+
+* `NetworkPromimityChecker` component. Network visibility for clients works similar as in UNet.
+* `ObjectHide` message. In Netcode for GameObjects, networked objects on the host are always visible.
+* `OnSetLocalVisibility` function. A manual network proximity implementation with the `OnCheckObserver` can be ported to Netcode for GameObjects by using `NetworkObject.CheckObjectVisibility`.
+* `OnRebuildObservers` isn't needed for the Netcode for GameObjects' visibility system.
 
 <Tabs
   className="unique-tabs"
@@ -529,9 +523,9 @@ public bool IsVisibleToPlayer(NetworkObject networkObject, NetworkClient client)
 
 See [Object Visbility](../basics/object-visibility.md) to learn more about Netcodes network visiblity check.
 
-## Update SceneManagement
+## Update scene management
 
-In Netcode, scene management isn't done over the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
+In Netcode for Gameobjects, scene management isn't done using the `NetworkManager` like in UNet. The `NetworkSceneManager` provides equivalent functionality for switching scenes.
 
 <Tabs
   className="unique-tabs"
@@ -563,9 +557,9 @@ public void ChangeScene()
 
 </Tabs>
 
-## Update ClientAttribute/ClientCallbackAttribute and ServerAttribute/ServerCallbackAttribute
+## Update `ClientAttribute/ClientCallbackAttribute` and `ServerAttribute/ServerCallbackAttribute`
 
-Netcode currently does not offer a replacement for marking a function with an attribute so that it only runs on the server or the client. You can manually return out of the function instead.
+Netcode for GameObjects currently doesn't offer a replacement for marking a function with an attribute so that it only runs on the server or the client. You can manually return out of the function instead.
 
 <Tabs
   className="unique-tabs"
@@ -603,9 +597,9 @@ public void MyClientOnlyFunction()
 </Tabs>
 
 
-## Replace SyncEvent with RPC event
+## Replace `SyncEvent` with an RPC event
 
-Netcode does not provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to Netcode, send an RPC to invoke the event on the other side.
+Netcode for GameObjects doesn't provide an equivalent for `SyncEvent`. To port `SyncEvent` code from UNet to Netcode for GameObjects, send an RPC to invoke the event on the other side.
 
 <Tabs
   className="unique-tabs"
@@ -644,14 +638,14 @@ public class DamageClass : NetworkBehaviour
 
     public event TakeDamageDelegate EventTakeDamage;
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void TakeDamageServerRpc(int val)
     {
         EventTakeDamage(val);
         OnTakeDamageClientRpc(val);
     }
 
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     public void OnTakeDamageClientRpc(int val){
         EventTakeDamage(val);
     }
@@ -663,18 +657,18 @@ public class DamageClass : NetworkBehaviour
 
 ## Network Discovery
 
-Netcode does not provide Network Discovery. The Contributions repository provides an example implementation for [NetworkDiscovery](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/com.community.netcode.extensions/Runtime/NetworkDiscovery).
+Netcode for GameObjects doesn't provide Network Discovery. The Contributions repository provides an example implementation for [NetworkDiscovery](https://github.com/Unity-Technologies/multiplayer-community-contributions/tree/main/com.community.netcode.extensions/Runtime/NetworkDiscovery).
 
-## Next Steps
+## Next steps
 
-After migrating and updating to the Netcode package, we recommend looking into the following:
+After migrating to the Netcode for GameObjects package, you can review the following for what to do next:
 
 * Consider using the [Hello World](../tutorials/helloworld.md) and [Golden Path series](../tutorials/goldenpath_series/gp_intro.md) to learn some basics of Netcode for GameObjects.
 * Explore the educational samples content for a deeper exploration into Netcode for GameObjects:
   * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
-  * [2D Spaceshooter Bitesize Sample](../learn/bitesize/bitesize-spaceshooter.md)
-  * [Invaders Bitesize Sample](../learn/bitesize/bitesize-invaders.md)
-  * [Client-Driven Bitesize Sample](../learn/bitesize/bitesize-clientdriven.md)
+  * [2D Spaceshooter Bitesize sample](../learn/bitesize/bitesize-spaceshooter.md)
+  * [Invaders Bitesize sample](../learn/bitesize/bitesize-invaders.md)
+  * [Client-Driven Bitesize sample](../learn/bitesize/bitesize-clientdriven.md)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -246,7 +246,7 @@ The above examples are atomic actions. They happen on click.
 To do continuous client driven actions, there's a few more considerations to take.
 
 - You need to keep a local variable to keep track of your client authoritative data. 
-- You then need to make sure you don't send ServerRpcs (containing your authoritative state) when no data has changed and do dirty checks.
+- You then need to make sure you don't send RPCs to the server (containing your authoritative state) when no data has changed and do dirty checks.
 - You'd need to send it on tick or at worst on FixedUpdate. Sending on Update() would spam your connection.
 
 A sample for a [ClientNetworkTransform](../components/networktransform.md#clientnetworktransform) has been created, so you don't have to reimplement this yourself for transform updates. A [sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) has been created on how to use it. See [movement script](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/Scripts/ClientPlayerMove.cs).
@@ -274,7 +274,7 @@ This way, clients can stay server authoritative while still be reactive.
 Local input prediction will predict your state using your local player's inputs.
 
 You can also predict other objects in your world by predicting from the last server data your received.
-Knowing an AI’s state at frame i, we can predict its state at time i+1 assuming it’s deterministic enough to run the same both client side and server side.
+Knowing an AI's state at frame i, we can predict its state at time i+1 assuming it's deterministic enough to run the same both client side and server side.
 
 Extrapolation is an attempt to estimate a future game state, without taking into account latency. On receipt of a packet from the server, the position of an object is updated to the new position. Awaiting the next update, the next position is extrapolated based on the current position and the movement at the time of the update.
 
@@ -387,4 +387,4 @@ A method of networking a system from one computer to another by sending only the
 
 Deterministic rollback/
 
-An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup enables a more responsive game than lockstep. It’s relatively inexpensive.
+An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup enables a more responsive game than lockstep. It's relatively inexpensive.
