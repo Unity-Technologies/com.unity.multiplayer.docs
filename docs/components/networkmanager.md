@@ -3,9 +3,9 @@ id: networkmanager
 title: NetworkManager
 ---
 
-The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** component that has all of your project's netcode related settings. Think of it as the "central netcode hub" for your netcode enabled project.  
+The `NetworkManager` is a required Netcode for GameObjects component that has all of your project's netcode-related settings. Think of it as the central netcode hub for your netcode-enabled project.  
 
-### `NetworkManager` Inspector properties
+## `NetworkManager` Inspector properties
 
 - **LogLevel**:  Sets the network logging level
 - **PlayerPrefab**:  When a Prefab is assigned, the Prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
@@ -22,7 +22,7 @@ The `NetworkManager` is a required **Netcode for GameObjects (Netcode)** compone
 - **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
 
-### `NetworkManager` sub-systems
+## `NetworkManager` sub-systems
 
 `NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
@@ -39,7 +39,7 @@ All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is s
 
 ## Starting a server, host, or client
 
-In order to perform any netcode related action that involves sending messages, you must first have a server started and listening for connections with at least one client (_a server can send RPCs to itself when running as a host_) that is connected.  to accomplish this, you must first start your `NetworkManager` as a server, host, or client.  There are three `NetworkManager` methods you can invoke to accomplish this:
+In order to perform any netcode-related action that involves sending messages, you must first have a server started and listening for connections with at least one client (_a server can send RPCs to itself when running as a host_) that is connected. To accomplish this, you must first start your `NetworkManager` as a server, host, or client. There are three `NetworkManager` methods you can invoke to accomplish this:
 
 ```csharp
 NetworkManager.Singleton.StartServer();      // Starts the NetworkManager as just a server (that is, no local client).
@@ -52,7 +52,8 @@ Don't start a NetworkManager within a NetworkBehaviour's Awake method as this ca
 :::
 
 :::note
- When starting a Server or joining an already started session as client, the `NetworkManager` can spawn a "Player Object" belonging to the client.
+
+ When starting a server or joining an already started session as client, the `NetworkManager` can spawn a "Player Object" belonging to the client.
 
  For more information about player prefabs see:
  - [NetworkObject Player Prefab Documentation](../basics/networkobject.md#player-objects)
@@ -61,7 +62,7 @@ Don't start a NetworkManager within a NetworkBehaviour's Awake method as this ca
 
 ## Connecting
 
-When Starting a Client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
+When starting a client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
 The below examples use [Unity Transport](../../../transport/current/about) to show a few ways you can gain access to the `UnityTransport` component via the `NetworkManager.Singleton` to configure your project's network settings programmatically:
 
@@ -74,6 +75,7 @@ NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
 ```
 
 If you are using the same code block to configure both your server and your client and you want to configure your server to listen to all IP addresses assigned to it, then you can also pass a 'listen address' of "0.0.0.0" to the `SetConnectionData` method, like so:
+
 ```csharp
 NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
     "127.0.0.1",  // The IP address is a string
@@ -125,7 +127,8 @@ The server-host attempts to wait for all client connections to close before it f
 
 ## Disconnecting clients (server only)
 
-At times you might need to disconnect a client for various reasons without shutting down the server.  To do this, you can call the `NetworkManager.DisconnectClient` method while passing the identifier of the client you wish to disconnect as the only parameter.  The client identifier can be found within:
+At times you might need to disconnect a client for various reasons without shutting down the server. To do this, you can call the `NetworkManager.DisconnectClient` method while passing the identifier of the client you wish to disconnect as the only parameter.  The client identifier can be found within:
+
 - The `NetworkManager.ConnectedClients` dictionary that uses the client identifier as a key and the value as the [`NetworkClient`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkClient.html).
 - As a read only list of `NetworkClients`  via the `NetworkManager.ConnectedClientsList`.
 - A full list of all connected client identifiers can be accessed via `NetworkManager.ConnectedClientsIds`.
@@ -151,12 +154,14 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 **When disconnect notifications are triggered:**
 - Clients are notified when they're disconnected by the server.
 - The server is notified when any client disconnects from the server, whether the server disconnects the client or the client disconnects itself.
-- Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption)
+- Both the server and clients are notified when their network connection is unexpectedly disconnected (network interruption).
 
 **Client notification identifiers**
 - On the server-side, the client identifier parameter is the identifier of the client that disconnects.
 - On the client-side, the client identifier parameter is the identifier assigned to the client.
   - _The exception to this is when a client is disconnected before its connection is approved._
+
+You can also use the `NetworkManager.OnServerStopped` and `NetworkManager.OnClientStopped` callbacks to get local notifications when the server or client stops respectively.
 
 ### Connection notification manager example
 
