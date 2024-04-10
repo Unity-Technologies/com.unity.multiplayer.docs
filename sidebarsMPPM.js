@@ -2,11 +2,15 @@ module.exports = {
     'mppm': [
         {
             type: 'doc',
+            id: 'release-notes/mppm-release-notes',
+        },
+        {
+            type: 'doc',
             id: 'about'
         },
         {
             type: 'doc',
-            id: 'release-notes/mppm-release-notes',
+            id: 'sys-req'
         },
         {
             type: 'doc',
