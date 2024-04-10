@@ -3,6 +3,8 @@ id: networkobject
 title: NetworkObject
 ---
 
+A NetworkObject is a [GameObject](https://docs.unity3d.com/Manual/GameObjects.html) with a NetworkObject component and at least one [NetworkBehaviour](networkbehaviour.md) component, enabling the GameObject to respond to and interact with netcode.
+
 Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../object-spawning), and [NetworkVariable](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
 
   1. `NetworkObject`
