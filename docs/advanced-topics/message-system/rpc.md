@@ -5,7 +5,7 @@ title: Rpc
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 
-Any process can communicate with any other process by sending an RPC. Starting in version 1.8, the `Rpc` attribute encompasses Server to Client Rpcs, Client to Server Rpcs, and Client to Client Rpcs.
+Any process can communicate with any other process by sending an RPC. Starting in version 1.8, the `Rpc` attribute encompasses server to client RPCs, client to server RPCs, and client to client RPCs.
 
 <figure>
 <ImageSwitcher
@@ -13,16 +13,11 @@ lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
 </figure>
 
-
-
 <figure>
 <ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
 </figure>
-
-
-
 
 ## Declaring an RPC (Remote Procedure Call)
 
@@ -58,7 +53,7 @@ While client-to-client RPCs are supported, it is important to note that there ar
 
 ## Invoking an RPC
 
-You can invoke an RPC by invoking the function directly with parameters:
+You can invoke an RPC by invoking the function directly with parameters. The following code is a heavily simplified example of a server to client RPC and a client to server RPC, with additional logic removed to display only the most basic features of an RPC.
 
 ```csharp
 [Rpc(SendTo.Server)]
