@@ -106,7 +106,7 @@ One of the eight clients acts as the host/server. That client will use a composi
 
 * The game is server-authoritative, with latency-masking animations.
 * Position updates are carried out through NetworkTransform that sync position and rotation.
-* Code is organized in domain-based assemblies. See our [ARCHITECTURE.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/ARCHITECTURE.md) file for more details.
+* Code is organized in domain-based assemblies.
 
 ### Testing multiplayer
 
@@ -235,9 +235,12 @@ Boss Room includes the following tools and utilities:
 * ParrelSync - [Packages/manifest.json](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/manifest.json)
 
 ### Troubleshooting
+
 #### Bugs
 
-Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report Netcode for GameObjects bugs using Netcode for GameObjects Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
+- Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues)
+- Report Netcode for GameObjects bugs using Netcode for GameObjects Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/issues)
+- Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
 
 ### Licence
 
@@ -257,7 +260,7 @@ The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplay
 
 ### Contributing
 
-Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0p/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
 
 Our projects use the `git-flow` branching strategy:
 
