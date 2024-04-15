@@ -4,17 +4,7 @@ title: Install Multiplayer Play Mode
 description: How to install Multiplayer Play Mode
 ---
 
-To begin testing your multiplayer functionality, you must first install Multiplayer Play Mode.
-
-## Prerequisites
-
-To install Multiplayer Play Mode, you must have:
-
-- Unity Editor version 2023.1 or later
-- An active Project in Unity Hub
-
-
-## Install the Multiplayer Play Mode package
+To begin testing your multiplayer functionality, you must first install the Multiplayer Play Mode package.
 
 1. Open Unity Hub.
 2. Select a Project.
