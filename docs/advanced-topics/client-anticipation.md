@@ -3,11 +3,33 @@ id: client-anticipation
 title: Client Anticipation
 ---
 
+import ImageSwitcher from '@site/src/ImageSwitcher.js';
+
 # Client Anticipation
 
 While Netcode for GameObjects does not provide a full client-side prediction and reconciliation implementation, it does provide an implementation of client anticipation, which is a somewhat simplified model that lacks the full rollback-and-replay prediction loop, but still provides a mechanism for anticipating the server result of an action and then correcting if you anticipated incorrectly.
 
 Client anticipation is done using `AnticipatedNetworkVariable<T>` and `AnticipatedNetworkTransform`, which both fundamentally work in the same way: By calling their various Anticipate methods, you can set a visual value that differs from the server value. You can then react to updates from the server in different ways depending on how you have configured the `StaleDataHandling` property. Additionally, both include a `Smooth` method to provide for interpolation, either when receiving updated values from the server that do not match the anticipated value, or when receiving updates from other clients' actions that you have not anticipated at all.
+
+## Overview
+
+One problem with a server-authoritative architecture is the problem of keeping a game feeling responsive in the face of latency. Take, for example, the idea of a UI that allows the user to change the color of an object. Suppose the object is green and the user wants to change it to blue. When they do this, they would click a button, an RPC would be sent to the server, and the server would change the object to blue. The client would then not see this change to blue until the server responds to that message, resulting in a delay from the perspective of the client user:
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritative.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritative_Dark.png?text=DarkMode"/>
+</figure>
+
+Client anticipation solves this problem by allowing a separation between the visual value and the authoritative value of an object. In this example, with anticipation, when the button is pressed, the client *anticipates* the result of the command by visually changing the object to green while it waits for an update from the server:
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/sequence_diagrams/Anticipation/ClientAnticipation.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/Anticipation/ClientAnticipation_Dark.png?text=DarkMode"/>
+</figure>
+
+This creates a responsive feel to the gameplay, allowing the client player to feel as if things are responding immediately to their input when they are not.
 
 ## The Anticipated Value
 
@@ -16,7 +38,49 @@ Both `AnticipatedNetworkVariable<T>` and `AnticipatedNetworkTransform` separate 
 - On `AnticipatedNetworkVariable<T>`, the anticipated value is stored as `variable.Value`, while the authoritative value is stored as `variable.AuthoritativeValue`. To change the anticipated value, call `variable.Anticipate(newValue)`, which will set the anticipated value to the newly provided value. On the server, calling `variable.Anticipate(newValue)` will change both the anticipated and authoritative values, enabling you to use the exact same code on the client and server; likewise, `variable.AuthoritativeValue = newValue` will also update both values on the server, while this value is **read-only** on the client.
 - On `AnticipatedNetworkTransform`, the anticipated value is stored in both `gameObject.transform` and `anticipatedNetworkTransform.AnticipatedState`, both of which are **read-only** on the client, while the authoritative value is stored as `anticipatedNetworkTransform.AuthoritativeState`. If you simply update the transform's values on the client, they will be overwritten when the next server update comes in. To perform anticipation on the transform, you have to call `anticipatedNetworkTransform.AnticipateMove()`, `anticipatedNetworkTransform.AnticipateRotate()`,  `anticipatedNetworkTransform.AnticipateScale()`, or `anticipatedNetworkTransform.AnticipateState()` to update all three at once. As with `AnticipatedNetworkVariable<T>`, calling any of these on the server will update both the anticipated and authoritative values.
 
-## OnReanticipate
+## StaleDataHandling
+
+On problem that an anticipation system needs to be able to solve is the problem of **stale data**. Stale data refers to updates from the server that represent actions that happened before your last request, and are actually going to be overwritten by that request.
+
+Let's return to the example from above of an object whose color gets changed, but let's expand it to include a second client who's also trying to change the color of the same object. If client 1 tries to change the object to blue, and then client 2 tries to change it to red, client 1 will see a delayed switch to blue, followed by a switch to red (which is fine because this is actually what happened). Client 2, however, will click the button to change it to red, then see it change to blue, followed by a change to red.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritativeMultiClient.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritativeMultiClient_Dark.png?text=DarkMode"/>
+</figure>
+
+With client anticipation, we change the way this works: client 1 anticipates the change to blue so it happens immediately, and then later sees the object change to red, which, again, is fine. Client 2 also sees the object change to red immediately, but because a change to blue is already in progress, that overwrites client 2's anticipated value, causing it to flicker briefly to blue from client 1's request before changing back to red again from client 2's request.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/sequence_diagrams/Anticipation/StaleDataNoPolicy.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/Anticipation/StaleDataNoPolicy_Dark.png?text=DarkMode"/>
+</figure>
+
+To address this, Netcode for GameObjects's client anticipation includes a feature called `StaleDataHandling`. Stale data is determined based on assumptions about causation - it assumes that when you make an anticipation on the client side based on player input, that at the same time, you will be sending an RPC to the server requesting it to make the same change. It uses a continuously incrementing `AnticipationCounter` to track when the server has received and responded to the batch of requests that was sent on the same frame as the variable was anticipated. If an update for a variable arrives before the server has processed that message, the anticipation system regards that data as being "stale".
+
+There are two ways you can respond to stale data, which are determined by the `StaleDataHandling` value on each `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`:
+
+If `StaleDataHandling` is set to `StaleDataHandling.Ignore`, stale data will not roll back the value of the variable or transform to the server value and will not trigger the `OnReanticipate` event. `ShouldReanticipate` will remain false in the event something else triggers the callback. The authoritative value will still be updated, however, and for `AnticipatedNetworkVariable`, the `OnAuthoritativeValueUpdated` callback will still be called. The result here is that, for client 2, the change to blue is recognized as being sequenced before its change to red, and is thus ignored, eliminating the flickering. This is the default behavior for `AnticipatedNetworkVariable<T>`.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/sequence_diagrams/Anticipation/StaleDataIgnore.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/Anticipation/StaleDataIgnore_Dark.png?text=DarkMode"/>
+</figure>
+
+If `StaleDataHandling` is set to `StaleDataHandling.Reanticipate`, stale data will be treated the same way as any other server data updates. The value will be rolled back, `ShouldReanticipate` will be set to true, and the `OnReanticipate` event will be fired (see below). In typical client prediction systems, and generally involves replaying the player's input from the time of the incoming data to now, which results in re-performing the switch to red.
+
+<figure>
+<ImageSwitcher 
+lightImageSrc="/sequence_diagrams/Anticipation/StaleDataReanticipate.png?text=LightMode"
+darkImageSrc="/sequence_diagrams/Anticipation/StaleDataReanticipate_Dark.png?text=DarkMode"/>
+</figure>
+
+However, the `OnReanticipate` event can also be used for other purposes, such as "forward simulation" of an AI to anticipate a new position for it based on the latency. While we provide this functionality for advanced users, the implementations of these use cases are largely left as an exercise to the reader.
+
+## The OnReanticipate Event
 
 `NetworkBehaviour` has a virtual method called `OnReanticipate`. When server data is received for an `AnticipatedNetworkVariable` or `AnticipatedNetworkTransform`, it will be rolled back immediately, setting its anticipated state. Each frame during which a server update for any `AnticipatedNetworkVariable` or `AnticipatedNetworkTransform` is received, after **all** such operations have been performed and **all** objects are rolled back to their server state, each `NetworkObject` that had any rollbacks will call the `OnReanticipate` method on **all** of its `NetworkBehaviour`s.
 
@@ -33,17 +97,6 @@ In addition to the `NetworkBehaviour`'s `OnReanticipate` method, `NetworkManager
 If you want to implement a full client-side prediction model in your game, the global OnReanticipate callback is likely the ideal place to incorporate your rollback and replay logic. The details of implementing this, however, are left as an exercise for the user; implementing a full, production-ready prediction loop is a complex topic and recommended for advanced users only.
 
 :::
-
-## StaleDataHandling
-
-Normally, in a full client prediction system, when new data arrives from the server, any inputs or other events that would have caused an anticipation to occur would be reprocessed, avoiding flickering if the server has not applied a requested update yet. Because Netcode for GameObjects does not have such a full client prediction system, Anticipation is potentially prone to flickering - for example, if Alice changes a value from 0 to 1 and then Bob changes it from 0 to 2, the server will receive Alice's request first and replicate that to Bob, resulting in Bob's value changing to 2 briefly, before the server receives Bob's request and changes the value to 1, which then updates Bob's value and changes it back to 1. With anticipation, this results in Bob setting the value to 1 (which is reflected immediately via anticipation), and then seeing it briefly flicker to 2 before changing back to 1.
-
-To address this, Netcode for GameObjects's client anticipation includes a feature called `StaleDataHandling`. Stale data is determined based on assumptions about causation - it assumes that when you make an anticipation on the client side based on player input, that at the same time, you will be sending an RPC to the server requesting it to make the same change. It uses a continuously incrementing `AnticipationCounter` to track when the server has received and responded to the batch of requests that was sent on the same frame as the variable was anticipated. If an update for a variable arrives before the server has processed that message, the anticipation system regards that data as being "stale".
-
-There are two ways you can respond to stale data, which are determined by the `StaleDataHandling` value on each `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`:
-
-- If `StaleDataHandling` is set to `StaleDataHandling.Ignore`, stale data will not roll back the value of the variable or transform to the server value and will not trigger the `OnReanticipate` event. `ShouldReanticipate` will remain false in the event something else triggers the callback. The authoritative value will still be updated, however, and for `AnticipatedNetworkVariable`, the `OnAuthoritativeValueUpdated` callback will still be called.
-- If `StaleDataHandling` is set to `StaleDataHandling.Reanticipate`, stale data will be treated the same way as any other server data updates. The value will be rolled back, `ShouldReanticipate` will be set to true, and the `OnReanticipate` event will be fired.
 
 ## Smoothing
 
