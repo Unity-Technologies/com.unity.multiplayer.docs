@@ -1,6 +1,6 @@
 ---
 id: bossroom
-title: Getting Started with Boss Room
+title: Getting started with Boss Room
 description: Learn more about installing and running the Boss Room game sample.
 ---
 
@@ -106,7 +106,7 @@ One of the eight clients acts as the host/server. That client will use a composi
 
 * The game is server-authoritative, with latency-masking animations.
 * Position updates are carried out through NetworkTransform that sync position and rotation.
-* Code is organized in domain-based assemblies. See our [ARCHITECTURE.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/ARCHITECTURE.md) file for more details.
+* Code is organized in domain-based assemblies.
 
 ### Testing multiplayer
 
@@ -128,7 +128,7 @@ After you have the build, you can launch several instances of the build executab
 If you run several instances locally, you must use the **Change Profile** button to set different profiles for each instance for authentication purposes.
 
 :::note
-**Note**: If you’re using Mac to run multiple instances of the same app, you need to use the command line. Run `open -n BossRoom.app`.
+**Note**: If you're using Mac to run multiple instances of the same app, you need to use the command line. Run `open -n BossRoom.app`.
 :::
 
 #### Multiplayer over Internet
@@ -235,9 +235,12 @@ Boss Room includes the following tools and utilities:
 * ParrelSync - [Packages/manifest.json](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/manifest.json)
 
 ### Troubleshooting
+
 #### Bugs
 
-Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues) Report NGO bugs using NGO Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
+- Report bugs in Boss Room using Github [issues](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/issues)
+- Report Netcode for GameObjects bugs using Netcode for GameObjects Github [issues](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/issues)
+- Report Unity bugs using the [Unity bug submission process](https://unity3d.com/unity/qa/bug-reporting).
 
 ### Licence
 
@@ -253,11 +256,11 @@ Visit the following links to learn more about Unity Netcode and Boss Room.
 
 ### Other samples
 
-The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of NGO. You can review these samples with documentation to better understand our APIs and features.
+The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize) repository is currently being expanded and has a collection of smaller samples and games showcasing sub-features of Netcode for GameObjects. You can review these samples with documentation to better understand our APIs and features.
 
 ### Contributing
 
-Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0p/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
 
 Our projects use the `git-flow` branching strategy:
 

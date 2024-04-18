@@ -116,7 +116,3 @@ if (ParrelSync.ClonesManager.IsClone())
 - Bigger screens or multi-screen setups allow for more screen real estate, which is handy when one has to have multiple instances of an app opened at the same time.
 - **ParrelSync** has to copy and update separate `Packages` and `Library` folders for every clone, and in certain cases a fix for misbehaving clone is re-creation - a good SSD makes this process quite a bit faster.
 - Creating a fork of any git repository that your project relies upon in production can help avoid bad surprises if the repository gets taken down or introduces an undesirable change. You should fork **ParrelSync** before using it in your live project.
-
-:::contribution Special Thanks
-This guide wouldn't have been possible without the hard work and support of Philipp Deschain, Unity.
-:::

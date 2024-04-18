@@ -272,7 +272,7 @@ This way, clients can stay server authoritative while still be reactive.
 Local input prediction will predict your state using your local player's inputs.
 
 You can also predict other objects in your world by predicting from the last server data your received.
-Knowing an AI’s state at frame i, we can predict its state at time i+1 assuming it’s deterministic enough to run the same both client side and server side.
+Knowing an AI's state at frame i, we can predict its state at time i+1 assuming it's deterministic enough to run the same both client side and server side.
 
 Extrapolation is an attempt to estimate a future game state, without taking into account latency. On receipt of a packet from the server, the position of an object is updated to the new position. Awaiting the next update, the next position is extrapolated based on the current position and the movement at the time of the update.
 
@@ -390,4 +390,4 @@ A method of networking a system from one computer to another by sending only the
 
 Deterministic rollback/
 
-An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup enables a more responsive game than lockstep. It’s relatively inexpensive.
+An enhancement of deterministic lockstep where clients forward-predict inputs while waiting for updates. This setup enables a more responsive game than lockstep. It's relatively inexpensive.

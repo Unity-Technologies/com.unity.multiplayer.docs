@@ -28,9 +28,7 @@ The client-server workflow in this guide shows the subtle differences between us
 
 A server is an endpoint that listens for incoming connection requests and sends and receives messages. This section shows creating a simple server with UTP 2.0.
 
-Start by creating a C# script in the Unity Editor. Name the script ServerBehaviour.cs.
-
-**Filename**: [`ServerBehaviour.cs`](samples/serverbehaviour.cs.md)
+Start by creating a C# script in the Unity Editor. Name the script `ServerBehaviour.cs`.
 
 ```csharp
 using System.Collections;

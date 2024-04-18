@@ -1,51 +1,52 @@
 ---
 id: network-topologies
-title: Network Topologies
+title: Network topologies
 ---
 
-There are many different architectures for creating multiplayer games. Your game can run on
-dedicated servers like many esport titles do or connect clients directly and use a lockstep approach.
-Finally many games allow a client to host a game and then other players to join that session.
+Network topology defines how a network is arranged. In the context of multiplayer games, this primarily relates to how clients, hosts, and servers are connected and communicate. Different network topologies have different benefits and drawbacks, depending on the type of game you want to make.
 
-Network topology defines the way a network is arranged, including how links and nodes relate to each other, clients and hosts, physical machines and virtual. Learn more about these configurations.
+The two primary network topologies that Netcode for GameObjects supports are [client-server](#client-server) and [distributed authority](#distributed-authority).
 
-## Local or couch multiplayer
+<!-- Link to Multiplayer Center here when available, as a 'if you don't know which topology to use, there's this tool' -->
 
-Using just client runtime 
-Couch multiplayer games consist of local multiplayer games that can be played on the same screen, such as a TV, from one couch.
+## Client-server
 
-## Lan game (offline) 
+### Dedicated game server
 
-Server and Client Runtime involved and transport, usually a hosted server on a site.
+Dedicated servers run the main simulation and manage all aspects of running the networked game. Players connect to the server using separate client programs to see and interact with the game.
 
-## Peer-to-Peer (P2P)
+Dedicated servers are often the most expensive network topology, but also offer the highest performance and can provide additional functionality such as competitive client prediction, rollback, and a centralized authority to manage any potential client conflicts. However, this comes at the cost of added latencies when communicating state changes from one client to another, as all state changes must be sent from client to server, processed, and then sent back out to other clients.
 
-A peer-to-peer network is created when two or more PCs are connected and share resources without going through a separate server computer. 
-
-![Peer-to-Peer](/img/peer2peer1.png)
-
-A P2P network can be:
-- An ad hoc connection—a couple of computers connected via a Universal Serial Bus to transfer files.
-- A permanent infrastructure that links a half-dozen computers in a small office over copper wires. 
-- A network on a much grander scale in which special protocols and applications set up direct relationships among users over the Internet.
-
-## Client hosted (Listen server)
-
-Listen servers run in the same process as a game client. 
-
-![Client Hosted](/img/client-hosted.png)
-
-:::note
-They function like dedicated servers, but typically have the disadvantage of having to communicate with remote players over the residential internet connection of the hosting player. Performance is also reduced by the simple fact that the machine running the server is also generating an output image. 
-:::
-
-## Dedicated Game Server (DGS)
+This network topology is primarily used by performance-sensitive games, such as first-person shooters, or competitive games where having a central server authority is necessary to minimize cheating and the effects of bad actors.
 
 ![Dedicated Server](/img/ded_server.png)
 
-Dedicated servers simulate game worlds without supporting direct input or output, except that required for their administration. Players must connect to the server with separate client programs to see and interact with the game.
+### Client-hosted listen server
 
+Listen servers are similar to dedicated game servers, except that the server runs in the same process as a game client. This makes it a cheaper option, but with the disadvantage that the hosting client has to communicate updates over a residential internet connection. Server performance is also degraded because the machine running the server is also generating an output image for the user playing on that machine.
 
+![Client Hosted](/img/client-hosted.png)
 
+## Distributed authority
 
+In a distributed authority topology, game clients share responsibility for owning and tracking the state of objects in the network and have the authority to spawn and manage objects themselves, with additional options to configure ownership permissions. A small, lightweight central state service keeps track of changes in spawned object states and routes network traffic. There is no central server simulating the game: all clients run their own simulations and communicate their updates directly to other clients (via the central state service).
 
+Distributed authority topologies are useful for keeping costs down, and solve a lot of the input-related issues typically addressed using client prediction systems, although the lack of a central authority can make them more vulnerable to cheating and bad actors.
+
+For more details about distributed authority topologies, refer to the [Distributed authority page](distributed-authority.md).
+
+## Other network topologies
+
+### Local or couch multiplayer
+
+Local multiplayer games use a single client runtime instance that can be played by two or more people on the same screen in the same physical location.
+
+### Offline local area network (LAN)
+
+Local area network games aren't connected to the internet, but use a hosted server onsite to support a local network of clients in the same physical location.
+
+### Peer-to-peer (P2P)
+
+A peer-to-peer network is created when two or more computers are connected and share resources without going through a separate server.
+
+![Peer-to-Peer](/img/peer2peer1.png)

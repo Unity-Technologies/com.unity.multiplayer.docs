@@ -1,6 +1,6 @@
 ---
 id: mppm-release-notes
-title: Multiplayer Play Mode Release Notes
+title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
@@ -67,7 +67,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 
 - Can now have your players reboot if they fail to import or stop unexpectedly (e.g. crash). A prompt will appear asking what action to take.
 - Debugging workflows is now enabled (giving users more access to the editor in players). It can be accessed by using the Layout Dropdown in the top left of a player to enable more views (Scene, Game, etc).
-- Can disable MPPM in settings.
+- Can disable Multiplayer Play Mode in settings.
 - Updated Tag to be ReadOnlyTag to better communicate how tags as a feature works.
 
 ## [0.2.0] - 2023-06-26
