@@ -40,7 +40,7 @@ Both `AnticipatedNetworkVariable<T>` and `AnticipatedNetworkTransform` separate 
 
 ## StaleDataHandling
 
-On problem that an anticipation system needs to be able to solve is the problem of **stale data**. Stale data refers to updates from the server that represent actions that happened before your last request, and are actually going to be overwritten by that request.
+One problem that an anticipation system needs to be able to solve is the problem of **stale data**. Stale data refers to updates from the server that represent actions that happened before your last request, and are actually going to be overwritten by that request.
 
 Let's return to the example from above of an object whose color gets changed, but let's expand it to include a second client who's also trying to change the color of the same object. If client 1 tries to change the object to blue, and then client 2 tries to change it to red, client 1 will see a delayed switch to blue, followed by a switch to red (which is fine because this is actually what happened). Client 2, however, will click the button to change it to red, then see it change to blue, followed by a change to red.
 
