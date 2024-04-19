@@ -98,7 +98,7 @@ If you want to implement a full client-side prediction model in your game, the g
 
 :::
 
-## Smoothing
+## Smoothing for Corrections
 
 Much of the time, when you perform an anticipation action, your anticipation will be correct and the server will update the state to the same value as you did. Occasionally, though, the server will have a different result, since latency can result in the server state changing before it receives your command in ways that affect the result. When this happens, by default, the value will be snapped to the new server value.
 
