@@ -10,7 +10,7 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 Client anticipation is only relevant for games using a [client-server topology](../terms-concepts/client-server.md).
 
 :::
-While Netcode for GameObjects does not provide a full client-side prediction and reconciliation implementation, it does provide an implementation of client anticipation, which is a somewhat simplified model that lacks the full rollback-and-replay prediction loop, but still provides a mechanism for anticipating the server result of an action and then correcting if you anticipated incorrectly.
+Netcode for GameObjects doesn't support full client-side prediction and reconciliation, but it does support client anticipation: a simplified model that lacks the full rollback-and-replay prediction loop, but still provides a mechanism for anticipating the server result of an action and then correcting if you anticipated incorrectly.
 
 Client anticipation uses `AnticipatedNetworkVariable<T>` and `AnticipatedNetworkTransform`. By calling their various `Anticipate` methods, you can set a visual value that differs from the server value and then react to updates from the server in different ways depending on how you have configured the `StaleDataHandling` property. Additionally, both include a [`Smooth` method](#smoothing-for-corrections) to support interpolation, either when receiving updated values from the server that don't match the anticipated value, or when receiving updates from other clients' actions that weren't anticipated at all.
 
