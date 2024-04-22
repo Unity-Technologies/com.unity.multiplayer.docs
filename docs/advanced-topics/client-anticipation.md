@@ -65,6 +65,10 @@ To address this, Netcode for GameObjects's client anticipation includes a featur
 
 There are two ways you can respond to stale data, which are determined by the `StaleDataHandling` value on each `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`:
 
+- StaleDataHandling.Ignore
+- StaleDataHandling.Reanticipate
+
+### StaleDataHandling.Ignore
 If `StaleDataHandling` is set to `StaleDataHandling.Ignore`, stale data doesn't roll back the value of the variable or transform to the server value and doesn't trigger the [`OnReanticipate` event](#onreanticipate-event). `ShouldReanticipate` remains false in the event something else triggers the callback. The authoritative value is still updated, however, and for `AnticipatedNetworkVariable`, the `OnAuthoritativeValueUpdated` callback is still called. The result for our example is that, for client B, the change to blue is recognized as being sequenced before its change to red, and is thus ignored, eliminating the flickering. This is the default behavior for `AnticipatedNetworkVariable<T>`.
 
 <figure>
@@ -73,6 +77,7 @@ lightImageSrc="/sequence_diagrams/Anticipation/StaleDataIgnore.png?text=LightMod
 darkImageSrc="/sequence_diagrams/Anticipation/StaleDataIgnore_Dark.png?text=DarkMode"/>
 </figure>
 
+### StaleDataHandling.Reanticipate
 If `StaleDataHandling` is set to `StaleDataHandling.Reanticipate`, stale data is treated the same way as any other server data updates. The value is rolled back, `ShouldReanticipate` is set to true, and the [`OnReanticipate` event](#onreanticipate-event) fires. In typical client prediction systems, this generally involves replaying the player's input from the time of the incoming data to now, which results in re-performing the switch to red.
 
 <figure>
