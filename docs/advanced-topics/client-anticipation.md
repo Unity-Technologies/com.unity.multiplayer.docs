@@ -1,6 +1,6 @@
 ---
 id: client-anticipation
-title: Client Anticipation
+title: Client anticipation
 ---
 
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
