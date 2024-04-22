@@ -357,7 +357,7 @@ Players don't have to wait for their mouse movements to be synced for AOE. They'
 <!-- TODO NOW Add side by side video for AOE, need to upload video -->
 :::
 
-Action anticipation can also be used to set the value of a network variable or network transform on the assumption that an action will succeed while waiting for the server to respond. This is the first building block of Client Side Prediction mentioned above, with the most simple form simply being to set a value and let the server overwrite it later. This is done in Netcode for GameObjects using  `AnticipatedNetworkVariable<T>` and   `AnticipatedNetworkTransform`. For more information, see the [`Client Anticipation`](../advanced-topics/client-anticipation.md) documentation.
+Action anticipation can also be used to set the value of a network variable or network transform on the assumption that an action succeeds while waiting for the server to respond. This is the first building block of client-side prediction mentioned above, with the most simple form being to set a value and let the server overwrite it later. This is done in Netcode for GameObjects using  `AnticipatedNetworkVariable<T>` and   `AnticipatedNetworkTransform`. For more information, refer to the [client anticipation](../advanced-topics/client-anticipation.md) documentation.
 
 ### Server Side Rewind (also called Lag Compensation)
 
