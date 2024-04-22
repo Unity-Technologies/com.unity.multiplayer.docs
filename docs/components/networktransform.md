@@ -185,7 +185,7 @@ Say you have marked only the position and rotation axis to be synchronized but e
 :::
 
 
-### Owner Authoritative Mode
+### Owner authoritative mode
 **(a.k.a. ClientNetworkTransform)**
 
  Server-side authority NetworkTransforms provide a balance between synchronized transforms and the latency between applying the updates on all connected clients. However, there are times when you want the position to update immediately for a specific NetworkObject (common the player) on the client-side. Owner authority of a NetworkTransform is dictated by the `NetworkTransform.OnIsServerAuthoritative` method when a NetworkTransform component is first initialized. If it returns `true` (the default) then it initializes as a server authoritative `NetworkTransform`. If it returns `false` then it initializes as an owner authoritative `NetworkTransform` (a.k.a. `ClientNetworkTransform`). This can be achieved by deriving from `NetworkTransform`, overriding the `OnIsServerAuthoritative` virtual method, and returning false like in the code example below:
