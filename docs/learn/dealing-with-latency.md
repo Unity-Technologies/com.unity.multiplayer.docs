@@ -294,7 +294,7 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
 
 :::info
-While Netcode for GameObjects does not have a full implementation of Client Side Prediction and Reconciliation, you can build Client Side Prediction and Reconciliation on top of our existing Client Side Anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself. Because of the complexity inherent in building a full client prediction system, the details of that are left as an exercise for the user, and we recommend only advanced users pursue this option.
+While Netcode for GameObjects doesn't have a full implementation of client-side prediction and reconciliation, you can build such a system on top of the existing client-side anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself. Because of the complexity inherent in building a full client prediction system, the details of that are left for users, and we recommend only advanced users pursue this option.
 
 For more information, refer to the [client anticipation](../advanced-topics/client-anticipation.md) documentation.
 
