@@ -296,7 +296,7 @@ Advanced games will have most of their world predicted, allowing the client and 
 :::info
 While Netcode for GameObjects does not have a full implementation of Client Side Prediction and Reconciliation, you can build Client Side Prediction and Reconciliation on top of our existing Client Side Anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself. Because of the complexity inherent in building a full client prediction system, the details of that are left as an exercise for the user, and we recommend only advanced users pursue this option.
 
-For more information, see the [`Client Anticipation`](../advanced-topics/client-anticipation.md) documentation.
+For more information, refer to the [client anticipation](../advanced-topics/client-anticipation.md) documentation.
 
 :::
 
