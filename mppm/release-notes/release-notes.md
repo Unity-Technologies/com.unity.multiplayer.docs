@@ -4,6 +4,12 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [1.0.0] - 2024-03-12
+
+### Added
+
+- A Multiplayer development workflow aiming to offer a more efficient development cycle for multiplayer games. The tool enables opening multiple Unity Editor instances simultaneously on the same development device, using the same source assets on disk.
+
 ## [1.0.0-pre.2] - 2023-12-21
 
 ### Fixed
