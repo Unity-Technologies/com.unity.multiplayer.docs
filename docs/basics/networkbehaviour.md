@@ -37,6 +37,30 @@ Start               | OnNetworkSpawn
 
 For more information about `NetworkBehaviour` methods and when they are invoked, see the [Pre-Spawn and MonoBehaviour Methods](networkbehaviour.md#pre-spawn-and-monobehaviour-methods) section.
 
+### PreSpawn, Spawn, Post Spawn and Synchronization
+The `NetworkObject` spawn process can become complicated when there are multiple `NetworkBehaviour` components attached to the same `GameObject`. Additionally, there can be times where you want to be able to handle pre and post spawn oriented tasks.
+- Pre-Spawn example: Instantiating a `NetworkVariable` with owner write permissions and assigning a value to that `NetworkVariable` on the server or host side.
+- Spawn example: Applying a local value or setting that may be used during post spawn by another local `NetworkBehaviour` component.
+- Post-Spawn example: Accessing a `NetworkVariable` or other property that is set during the spawn process.
+
+Below we can see the three virtual methods you can override within a `NetworkBehaviour` derrived class:
+
+Method                       | Scope                    | Use Case                                               | Context
+---------------------------- | ------------------------ | ------------------------------------------------------ | -------------
+OnNetworkPreSpawn            | NetworkObject            | Pre-Spawn initialization                               | client & server
+OnNetworkSpawn               | NetworkObject            | During spawn initialization                            | client & server
+OnNetworkPostSpawn           | NetworkObject            | Post spawn actions                                     | client & server
+OnNetworkSessionSynchronized | All NetworkObjects       | New client finished synchronizing                      | client-side only **
+OnInSceneObjectsSpawned      | In-Scene NetworkObjects  | New client finished synchronizing or a scene is loaded | client & server
+
+Looking at the above list, there are two additional special case "convenience" methods:
+- OnNetworkSessionSynchronized: When scene management is enabled and a new client joins a session the client will start synchronizing with the network session. During this period of time the client might need to load additional scenes as well as instantiate and spawn `NetworkObjects`. When a client has finished loading all scenes and all `NetworkObject`s are spawned, this method gets invoked on all `NetworkBehaviours` associated with any spawned `NetworkObject`s. This can be useful if you want to write script that might require access to other spawned `NetworkObject`s and/or their `NetworkBehaviour` components. When this method is invoked, you are assured everything is spawned and ready to be accessed and/or to have messages sent from them. Of course, take in mind this is on invoked on clients and will not be invoked on a server or host.
+- OnInSceneObjectsSpawned: Sometimes you might want to have the same kind of assurance that any in-scene placed `NetworkObject`s have been spawned prior to a specific set of script being invoked. This method is invoked on in-scene placed `NetworkObject`s when:
+- A server or host first starts up after all in-scene placed NetworkObjects in the currently loaded scene(s) have been spawned.
+- A client finishes synchronizing.
+- On the server and client side after a scene has been loaded and all newly instantiated in-scene placed NetworkObjects have been spawned.
+
+
 #### Dynamically Spawned NetworkObjects
 
 For dynamically spawned `NetworkObjects` (instantiating a network Prefab during runtime) the `OnNetworkSpawn` method is invoked **before** the `Start` method is invoked.  So, it's important to be aware of this because finding and assigning components to a local property within the `Start` method exclusively will result in that property not being set in a `NetworkBehaviour` component's `OnNetworkSpawn` method when the `NetworkObject` is dynamically spawned.  To circumvent this issue, you can have a common method that initializes the components and is invoked both during the `Start` method and the `OnNetworkSpawned` method like the code example below:
