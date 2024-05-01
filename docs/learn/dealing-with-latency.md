@@ -267,8 +267,6 @@ The world (and especially the internet) is messy. A client can guess wrong. An e
 With the movement example, I can have an enemy come and stun me while I thought I can still move. 200 ms latency is enough time for a stun to happen and create a discrepancy between the move I "predicted" client side and what happened server side. This is where "reconciliation" (or "correction") comes in play. The client keeps a history of the positions it predicted. Being still server authoritative, the client still receives (outdated by x ms of latency) positions coming from the server. The client will validate whether the positions it predicted in the past fits with the old positions coming from the server. The client can then detect discrepancies and "correct" its position according to the server's authoritative position.
 This way, clients can stay server authoritative while still be reactive.
 
-:::info
-
 #### Input Prediction vs World Prediction vs Extrapolation
 
 Local input prediction will predict your state using your local player's inputs.
@@ -296,7 +294,10 @@ Advanced games will have most of their world predicted, allowing the client and 
 <!-- TODO add diagram examples (stun grenade for example) and flow of reconciliation -->
 
 :::info
-There's no prediction implementation right now in Netcode for GameObjects, but you can implement your own. See our [roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) for more information.
+While Netcode for GameObjects doesn't have a full implementation of client-side prediction and reconciliation, you can build such a system on top of the existing client-side anticipation building-blocks, `AnticipatedNetworkVariable` and `AnticipatedNetworkTransform`. These components allow differentiating between the "authoritative" value and the value that is shown to the players. These components provide most of the information needed to implement prediction, but do require you to implement certain aspects yourself. Because of the complexity inherent in building a full client prediction system, the details of that are left for users, and we recommend only advanced users pursue this option.
+
+For more information, refer to the [client anticipation](../advanced-topics/client-anticipation.md) documentation.
+
 :::
 
 ### Controlled Desyncs
@@ -355,6 +356,8 @@ Players don't have to wait for their mouse movements to be synced for AOE. They'
 
 <!-- TODO NOW Add side by side video for AOE, need to upload video -->
 :::
+
+Action anticipation can also be used to set the value of a network variable or network transform on the assumption that an action succeeds while waiting for the server to respond. This is the first building block of client-side prediction mentioned above, with the most simple form being to set a value and let the server overwrite it later. This is done in Netcode for GameObjects using  `AnticipatedNetworkVariable<T>` and   `AnticipatedNetworkTransform`. For more information, refer to the [client anticipation](../advanced-topics/client-anticipation.md) documentation.
 
 ### Server Side Rewind (also called Lag Compensation)
 

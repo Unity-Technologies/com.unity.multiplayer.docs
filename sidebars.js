@@ -211,6 +211,10 @@ module.exports = {
                     },
                     {
                         "type": "doc",
+                        "id": "advanced-topics/client-anticipation",
+                    },
+                    {
+                        "type": "doc",
                         "id": "learn/dealing-with-latency",
                     },
                 ],

@@ -161,9 +161,8 @@ There is another concept to keep in mind about axis synchronization vs the initi
 Say you have marked only the position and rotation axis to be synchronized but exclude all scale axis on a NetworkTransform component for a network prefab. When you spawn an instance of the network prefab the initial authoritative side scale values are synchronized upon spawning. From that point forward, the non-authoritative instances (in this case the client-side instances) will maintain those same scale axis values even though they are never updated again.
 :::
 
-
-### Owner Authoritative Mode
-**(a.k.a ClientNetworkTransform)**
+### Owner authoritative mode
+**(a.k.a. ClientNetworkTransform)**
 
  Server-side authority NetworkTransforms provide a balance between synchronized transforms and the latency between applying the updates on all connected clients. However, there are times when you want the position to update immediately for a specific NetworkObject (common the player) on the client-side. Owner authority of a NetworkTransform is dictated by the `NetworkTransform.OnIsServerAuthoritative` method when a NetworkTransform component is first initialized. If it returns `true` (the default) then it initializes as a server authoritative `NetworkTransform`. If it returns `false` then it initializes as an owner authoritative `NetworkTransform` (a.k.a. `ClientNetworkTransform`). This can be achieved by deriving from `NetworkTransform`, overriding the `OnIsServerAuthoritative` virtual method, and returning false like in the code example below:
 
@@ -197,3 +196,4 @@ Optionally, you can directly add this line to your `manifest.json` file:
 `NetworkTransform.OnInitialize`: This virtual method is invoked when the associated `NetworkObject` is first spawned and when ownership changes.
 
 `NetworkTransform.Update`: This method has been made virtual in order to provide you with the ability to handle any customizations to a derived `NetworkTransform` class. If you override this method, it is required that all non-authoritative instances invoke `base.Update()` but not required for authoritative instances.
+
