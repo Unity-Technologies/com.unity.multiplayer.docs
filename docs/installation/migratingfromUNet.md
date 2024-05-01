@@ -1,6 +1,6 @@
 ---
 id: upgrade_from_UNet
-title: Migrating from UNet to Netcode for GameObjects
+title: Migrate from UNet to Netcode for GameObjects
 ---
 
 UNet is deprecated and no longer supported. Follow this guide to migrate from UNet to Netcode for GameObjects. If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).

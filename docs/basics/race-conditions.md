@@ -3,7 +3,7 @@ id: race-conditions
 title: Ownership race conditions
 ---
 
-:::info Distributed authority only
+:::info[Distributed authority only]
 
 The race conditions described on this page only affect games using a [distributed authority topology](../terms-concepts/distributed-authority.md).
 

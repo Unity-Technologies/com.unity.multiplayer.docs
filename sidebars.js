@@ -29,7 +29,7 @@ module.exports = {
         {
             "type": "link",
             "label": "API reference",
-            "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.0/api/index.html",
+            "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/index.html",
         },
         {
             "collapsed": true,
@@ -89,14 +89,21 @@ module.exports = {
                   },
                 ],
               },
-                {
-                    "type": "doc",
-                    "id": "basics/connection-approval"
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/max-players"
-                },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Configuring connections",
+                "items": [
+                  {
+                      "type": "doc",
+                      "id": "basics/connection-approval"
+                  },
+                  {
+                      "type": "doc",
+                      "id": "basics/max-players"
+                  },
+                ],
+              }
                 {
                     "type": "doc",
                     "id": "advanced-topics/transports"
@@ -218,41 +225,36 @@ module.exports = {
                     "id": "advanced-topics/ways-synchronize"
                 },
                 {
-                    "type": "doc",
-                    "id": "advanced-topics/connection-events"
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/networkvariable"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/messaging-system"
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "NetworkVariables",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "basics/networkvariable"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/custom-networkvariables"
+                        },
+                    ],
                 },
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "RPC remote procedure call",
+                    "label": "Remote procedure calls (RPCs)",
                     "items": [
+                        {
+                            "type": "doc",
+                            "id": "advanced-topics/messaging-system"
+                        },
                         {
                             "type": "doc",
                             "id": "advanced-topics/message-system/rpc"
                         },
                         {
                             "type": "doc",
-                            "id": "advanced-topics/message-system/clientrpc"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "advanced-topics/message-system/serverrpc"
-                        },
-                        {
-                            "type": "doc",
                             "id": "advanced-topics/message-system/reliability"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "advanced-topics/message-system/execution-table"
                         },
                         {
                             "type": "doc",
@@ -277,7 +279,34 @@ module.exports = {
                             "type": "doc",
                             "id": "advanced-topics/message-system/rpc-compatibility"
                         },
+                        {
+                            "collapsed": true,
+                            "type": "category",
+                            "label": "Legacy RPC options",
+                            "items": [
+                                {
+                                    "type": "doc",
+                                    "id": "advanced-topics/message-system/clientrpc"
+                                  },
+                                  {
+                                      "type": "doc",
+                                      "id": "advanced-topics/message-system/serverrpc"
+                                  },
+                                  {
+                                      "type": "doc",
+                                      "id": "advanced-topics/message-system/execution-table"
+                                  },
+                            ],
+                        },
                     ]
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/message-system/custom-messages"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/connection-events"
                 },
                 {
                     "collapsed": true,
@@ -297,10 +326,6 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "advanced-topics/networktime-ticks"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/message-system/custom-messages"
                 },
             ]
         },

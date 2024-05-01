@@ -19,7 +19,7 @@ This set up has performance, security, and cost considerations for implementatio
 
 ### Advantages
 
-- Essentially free compared to dedicated server options.
+- Essentially free compard to dedicated server options.
 - Doesn't require special infrastructure or forward planning to set up. This makes them common use for LAN parties because latency and bandwidth issues aren't a concern.
 
 ## When to use a listen server architecture
