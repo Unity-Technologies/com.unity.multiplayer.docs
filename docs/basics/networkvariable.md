@@ -505,6 +505,7 @@ In order to create your own `NetworkVariableBase` derived container, you should:
 - Depdending upon your custom `NetworkVariableBase` container, you might look at `NetworkVariable<T>` or `NetworkList` to see how those two examples were implemented.
 
 <a name="network-variable-serialization"></a>
+
 #### NetworkVariableSerialization&lt;T&gt;
 
 The way you read and write network variables changes depending on the type you use.
