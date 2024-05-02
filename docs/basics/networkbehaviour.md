@@ -45,13 +45,13 @@ The `NetworkObject` spawn process can become complicated when there are multiple
 
 Below we can see the three virtual methods you can override within a `NetworkBehaviour` derrived class:
 
-Method                       | Scope                    | Use Case                                               | Context
+Method                       | Scope                    | Use case                                               | Context
 ---------------------------- | ------------------------ | ------------------------------------------------------ | -------------
-OnNetworkPreSpawn            | NetworkObject            | Pre-Spawn initialization                               | client & server
-OnNetworkSpawn               | NetworkObject            | During spawn initialization                            | client & server
-OnNetworkPostSpawn           | NetworkObject            | Post spawn actions                                     | client & server
-OnNetworkSessionSynchronized | All NetworkObjects       | New client finished synchronizing                      | client-side only **
-OnInSceneObjectsSpawned      | In-Scene NetworkObjects  | New client finished synchronizing or a scene is loaded | client & server
+OnNetworkPreSpawn            | NetworkObject            | Pre-spawn initialization                               | Client and server
+OnNetworkSpawn               | NetworkObject            | During spawn initialization                            | Client and server
+OnNetworkPostSpawn           | NetworkObject            | Post-spawn actions                                     | Client and server
+OnNetworkSessionSynchronized | All NetworkObjects       | New client finished synchronizing                      | Client-side only
+OnInSceneObjectsSpawned      | In-scene NetworkObjects  | New client finished synchronizing or a scene is loaded | Client and server
 
 Looking at the above list, there are two additional special case "convenience" methods:
 - OnNetworkSessionSynchronized: When scene management is enabled and a new client joins a session the client will start synchronizing with the network session. During this period of time the client might need to load additional scenes as well as instantiate and spawn `NetworkObjects`. When a client has finished loading all scenes and all `NetworkObject`s are spawned, this method gets invoked on all `NetworkBehaviours` associated with any spawned `NetworkObject`s. This can be useful if you want to write script that might require access to other spawned `NetworkObject`s and/or their `NetworkBehaviour` components. When this method is invoked, you are assured everything is spawned and ready to be accessed and/or to have messages sent from them. Of course, take in mind this is on invoked on clients and will not be invoked on a server or host.
