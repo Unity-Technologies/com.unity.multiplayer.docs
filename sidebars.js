@@ -58,7 +58,7 @@ module.exports = {
                         "id": "installation/upgrade_from_mlapi"
                     },
                   ],
-                }
+                },
             ],
         },
         {
@@ -103,7 +103,7 @@ module.exports = {
                       "id": "basics/max-players"
                   },
                 ],
-              }
+              },
                 {
                     "type": "doc",
                     "id": "advanced-topics/transports"
