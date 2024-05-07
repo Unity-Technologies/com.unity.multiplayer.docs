@@ -260,7 +260,7 @@ The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplay
 
 ### Contributing
 
-Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0p/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
 
 Our projects use the `git-flow` branching strategy:
 
@@ -277,7 +277,7 @@ git clone https://github.com/Unity-Technologies/com.unity.multiplayer.samples.co
 **Important**: You should have [Git LFS](https://git-lfs.github.com/) installed on your local machine.
 :::
 
-Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/CONTRIBUTING.md) for guidelines on submitting issues and PRs to Boss Room!
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md) for guidelines on submitting issues and PRs to Boss Room!
 
 ### Feedback form
 

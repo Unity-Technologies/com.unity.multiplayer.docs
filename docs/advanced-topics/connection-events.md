@@ -1,11 +1,12 @@
 ---
 id: connection-events
 title: Connection events
-sidebar_label: Connection events
 
 ---
 
-When you need to react to connection or disconnection events for yourself and other clients, you can use `NetworkManager.OnConnectionEvent` as a unified source of information about changes to the network topology. `OnConnectionEvent` will receive a `ConnectionEventData` struct detailing the relevant information about the connection state change:
+When you need to react to connection or disconnection events for yourself or other clients, you can use `NetworkManager.OnConnectionEvent` as a unified source of information about changes in the network. Connection events are session-mode agnostic and work in both [client-server](../terms-concepts/client-server.md) and [distributed authority](../terms-concepts/distributed-authority.md) contexts.
+
+`OnConnectionEvent` receives a `ConnectionEventData` struct detailing the relevant information about the connection state change:
 
 ```csharp
 public enum ConnectionEvent

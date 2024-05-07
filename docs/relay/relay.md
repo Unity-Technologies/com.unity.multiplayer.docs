@@ -1,34 +1,36 @@
 ---
 id: relay
-title: Relay
+title: Using Unity Relay
 ---
 
-With [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/about/) you can use an IP address and a port to connect a client to a host over the internet. However, using an IP address to establish a connection doesn't always work. Instead, use [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction) to succesfully initiate a connection between multiple clients and a host.
+With [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/about/) you can use an IP address and a port to connect a client to a host over the internet. However, using an IP address to establish a connection doesn't always work. Instead, you can use [Unity Relay](https://docs.unity.com/ugs/en-us/manual/relay/manual/introduction) to initiate a connection between multiple clients and a host.
 
 Many factors impact how you connect to the remote host. To connect to a remote host, use one of the following methods:
 
 * Perform a [NAT punchthrough](../learn/listenserverhostarchitecture.md#option-c-nat-punchthrough): This advanced technique directly connects to the host computer, even if it's on another network.
-* Use a [Relay server](https://docs.unity.com/relay/en/manual/relay-servers): A Relay server exists on the internet with a public-facing IP that you and the host can access. After the client and the host connect to a relay server, they can send data to each other through the Relay server.
+* Use a [relay server](https://docs.unity.com/relay/en/manual/relay-servers): A relay server exists on the internet with a public-facing IP that you and the host can access. After the client and the host connect to a relay server, they can send data to each other through the relay server.
 
-Netcode doesn't offer tools to help you punch through a NAT. However, you can use the Relay service provided by Unity Services to relay all technology based on Unity Transport, like Netcode.
+Netcode for GameObjects doesn't offer tools to help you punch through a NAT. However, you can use the Unity Relay service to relay all technology based on Unity Transport.
 
-# How to use Relay
+## Using Unity Relay
 
-To access a Relay server, do the following:
+To access a Unity Relay server, do the following:
+
 * As the host, request an allocation on the relay server.
-* As a client, use the [join code](https://docs.unity.com/relay/en/manual/join-codes) that the host creates to connect to the relay server. This code allows the host and clients to communicate through the Relay server without disclosing their IP addresses and ports directly.
+* As a client, use the [join code](https://docs.unity.com/relay/en/manual/join-codes) that the host creates to connect to the relay server. This code allows the host and clients to communicate through the relay server without disclosing their IP addresses and ports directly.
 
-## Enable Relay in a project
+### Enable Unity Relay in a project
 
-To enable and set up Relay in a project, follow the steps in [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started).
+To enable and set up Unity Relay in a project, follow the steps in [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started).
 
-## Test the Relay service in the Unity Editor
+### Test the Unity Relay service in the Unity Editor
 
-From Unity version 2022.3, you can test the Relay service with Netcode for GameObjects in the editor. To do this, do the following:
+From Unity version 2022.3, you can test the Relay service with Netcode for GameObjects in the Editor. To do this, do the following:
+
 1. Follow the steps in [Get started with Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/current/tutorials/get-started-ngo/).
 2. Follow the steps in [Get started with Relay](https://docs.unity.com/relay/en/manual/get-started).
 3. Open the inspector window and select the Network Manager.
-4. Navigate to the Start Connection section
+4. Navigate to the Start Connection section.
 5. Check the **Try Relay in the editor** box.
 6. Select **Start Server** or **Start Host** to start the server or host.
 7. In the inspector, copy the [join code](https://docs.unity.com/relay/en/manual/join-codes).
@@ -43,22 +45,22 @@ If the connection fails then an error message appears in the UI and console.
 If Relay connects, a message appears in the inspector that displays the join code.
 ![](/img/relay/ngo-relay-connected.png)
 
-You can copy the join code to share it or or test it in a project in a separate window. ([Testing Locally](../tutorials/testing/testing_locally.md).
+You can copy the join code to share it, or test it in a project in a separate window. Refer to [testing locally](../tutorials/testing/testing_locally.md) for more details.
 
 :::note
-This Relay integration is only available in the editor, which means you can't use it in a build. Instead, use the code snippets at the end of this page. These snippets use the Unity Transport Package. To do this in projects that don't use Transport, refer to the Relay documentation.
+This Relay integration is only available in the Editor, which means you can't use it in a build. Instead, use the code snippets at the end of this page. These snippets use the Unity Transport Package. To do this in projects that don't use Transport, refer to the Relay documentation.
 :::
 
-## Create allocation on a Relay server
+### Create an allocation on a Relay server
 
-To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay server, make an authenticated call to the Unity backend using the SDK. To do this, call the `CreateAllocationAsync` method on the host with the maximum number of expected peers. For example, a host that requests a maximum of three peer connections reserves four slots for a four player game. This function can throw exceptions, which you can catch to learn about the error that caused them.
+To create an [allocation](https://docs.unity.com/relay/en/manual/allocations) on a Relay server, make an authenticated call to the Unity backend using the SDK. To do this, call the `CreateAllocationAsync` method on the host with the maximum number of expected peers. For example, a host that requests a maximum of three peer connections reserves four slots for a four-player game. This function can throw exceptions, which you can catch to learn about the error that caused them.
 
 ```csharp
 //Ask Unity Services to allocate a Relay server that will handle up to eight players: seven peers and the host.
 Allocation allocation = await Unity.Services.Relay.RelayService.Instance.CreateAllocationAsync(7);
 ```
 
-The `Allocation` class represents all the necessary data for a [host player](https://docs.unity.com/relay/manual/players#Host) to start hosting using the specific Relay server allocated. You don't need to understand each part of this allocation; you only need to feed them to your chosen transport that handles the Relay communication on its own. For the more curious (and for reference), here's a simple overview of those parameters:
+The `Allocation` class represents all the necessary data for a [host player](https://docs.unity.com/relay/manual/players#Host) to start hosting using the specific Relay server allocated. You don't need to understand each part of this allocation; you only need to feed them to your chosen transport that handles the Relay communication on its own. For reference, here's a simple overview of those parameters:
 
 * A `RelayServer` class containing the IP and port of your allocation's server.
 
@@ -88,9 +90,10 @@ if (!AuthenticationService.Instance.IsSignedIn)
 }
 ```
 
-## Join an allocation on a Relay server
+### Join an allocation on a Relay server
 
 To join an allocation on a Relay server, the following must be true:
+
 * The host of the game has created a Relay allocation.
 * The client has received a join code.
 
@@ -102,9 +105,10 @@ JoinAllocation allocation = await Unity.Services.Relay.RelayService.Instance.Joi
 ```
 For more information about the join code connection process, refer to [Connection flow](https://docs.unity.com/relay/manual/connection-flow#4).
 
-## Pass allocation data to a transport component
+### Pass allocation data to a transport component
 
-When an allocation exists, you need to make all traffic that comes from Netcode go through the Relay. To do this, perform the following actions to pass the allocation parameters to UnityTransport:
+When an allocation exists, you need to make all traffic that comes from Netcode for GameObjects go through the Relay. To do this, perform the following actions to pass the allocation parameters to UnityTransport:
+
 1. Retrieve Unity transport from your `NetworkManager`:
 ```csharp
 //Retrieve the Unity transport used by the NetworkManager
@@ -119,7 +123,7 @@ transport.SetRelayServerData(new RelayServerData(allocation, connectionType:"dtl
 
 3. Call `StartClient`, `StartHost` or `StartServer` and use the Netcode library.
 
-# Code sample
+## Code sample
 
 Use the following code to work with the [Relay server](https://docs.unity.com/relay/en/manual/relay-servers). To start a server instead of a host, replace the `StartHost` call with `StartServer` in `StartHostWithRelay`.
 

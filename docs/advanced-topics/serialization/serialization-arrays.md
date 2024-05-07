@@ -69,7 +69,6 @@ To serialize a `NativeArray` container, use `serializer.SerializeValue(ref Array
 ### `NativeList<T>`
 
 To serialize a `NativeList` container, you must:
-
 1. Ensure your assemblies reference `Collections`.
 2. You must add `UNITY_NETCODE_NATIVE_COLLECTION_SUPPORT` to your **Scriptiong Define Symbols** list.
    1. From the Unity Editor top bar menu, go to **Edit** > **Project Settings...** > **Player**.

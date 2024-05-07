@@ -5,7 +5,7 @@ title: NetworkManager
 
 The `NetworkManager` is a required Netcode for GameObjects component that has all of your project's netcode-related settings. Think of it as the central netcode hub for your netcode-enabled project.  
 
-## `NetworkManager` Inspector properties
+### `NetworkManager` Inspector properties
 
 - **LogLevel**:  Sets the network logging level
 - **PlayerPrefab**:  When a Prefab is assigned, the Prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
@@ -22,8 +22,7 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 - **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
 
-## `NetworkManager` sub-systems
-
+### `NetworkManager` sub-systems
 `NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
 :::caution
@@ -39,7 +38,7 @@ All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is s
 
 ## Starting a server, host, or client
 
-In order to perform any netcode-related action that involves sending messages, you must first have a server started and listening for connections with at least one client (_a server can send RPCs to itself when running as a host_) that is connected. To accomplish this, you must first start your `NetworkManager` as a server, host, or client. There are three `NetworkManager` methods you can invoke to accomplish this:
+To perform any netcode-related action that involves sending messages, you must first have a server started and listening for connections with at least one client (_a server can send RPCs to itself when running as a host_) that is connected. To accomplish this, you must first start your `NetworkManager` as a server, host, or client. There are three `NetworkManager` methods you can invoke to accomplish this:
 
 ```csharp
 NetworkManager.Singleton.StartServer();      // Starts the NetworkManager as just a server (that is, no local client).
@@ -52,8 +51,7 @@ Don't start a NetworkManager within a NetworkBehaviour's Awake method as this ca
 :::
 
 :::note
-
- When starting a server or joining an already started session as client, the `NetworkManager` can spawn a "Player Object" belonging to the client.
+ When starting a Server or joining an already started session as client, the `NetworkManager` can spawn a "Player Object" belonging to the client.
 
  For more information about player prefabs see:
  - [NetworkObject Player Prefab Documentation](../basics/networkobject.md#player-objects)
@@ -75,7 +73,6 @@ NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
 ```
 
 If you are using the same code block to configure both your server and your client and you want to configure your server to listen to all IP addresses assigned to it, then you can also pass a 'listen address' of "0.0.0.0" to the `SetConnectionData` method, like so:
-
 ```csharp
 NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(
     "127.0.0.1",  // The IP address is a string
@@ -164,7 +161,6 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 You can also use the `NetworkManager.OnServerStopped` and `NetworkManager.OnClientStopped` callbacks to get local notifications when the server or client stops respectively.
 
 ### Connection notification manager example
-
 Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component.
 
 :::important

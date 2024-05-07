@@ -32,7 +32,7 @@ lightImageSrc="/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin.png?text=Li
 darkImageSrc="/sequence_diagrams/NetworkVariableVSRPCs/RPCsLateJoin_Dark.png?text=DarkMode"/>
 <figcaption>Sending state with RPCs won't be transmitted to late joining clients.</figcaption>
 </figure>
-
+s
 
 In that case, it's preferable to use `NetworkVariable`s as show below:
 
@@ -70,7 +70,6 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2
 ```
 
 `AOEAction.cs` has server-side logic detecting enemies inside the area and applying damage. It then broadcasts an RPC to tell all clients to play the VFX at the appropriate position. Character's state will automatically update with their respective `NetworkVariable`s update (health and alive status for example).
-
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs#L8-L-40

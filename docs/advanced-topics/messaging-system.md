@@ -1,77 +1,70 @@
 ---
 id: messaging-system
 title: Sending events with RPCs
-description: An introduction to the messaging system in Unity MLAPI, including RPC's and Custom Messages.
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-Netcode for GameObjects (Netcode) has two parts to its messaging system: RPCs and [Custom Messages](message-system/custom-messages.md). Both types have sub-types that change their behaviour, functionality, and performance. This page will focus on RPCs.
+Netcode for GameObjects has two parts to its messaging system: [remote procedure calls (RPCs)](message-system/rpc.md) and [custom messages](message-system/custom-messages.md). Both types have sub-types that change their behavior, functionality, and performance. RPCs as implemented in Netcode for GameObjects are session-mode agnostic, and work in both [client-server](../terms-concepts/client-server.md) and [distributed authority](../terms-concepts/distributed-authority.md) contexts.
 
-## RPC: Remote Procedure Call
+This page provides an introduction to RPCs. For more details, refer to the pages listed in the [RPCs in Netcode for GameObjects section](#rpcs-in-netcode-for-gameobjects)
 
-The concept of an `RPC` is common not only in video games but in the software industry in general. They're ways to call methods on objects that aren't in the same executable.
+## Remote procedure calls (RPCs)
+
+RPCs are a standard software industry concept. They're a way to call methods on objects that aren't in the same executable.
 
 <figure>
 <ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ServerRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
-  <figcaption>Client can invoke a server RPC on a Network Object. The RPC will be placed in the local queue and then sent to the server, where it will be executed on the server version of the same Network Object.</figcaption>
+  <figcaption>Client can invoke a server RPC on a NetworkObject. The RPC is placed in the local queue and then sent to the server, where it's executed on the server version of the same NetworkObject.</figcaption>
 </figure>
 
-At a high level, when calling an `RPC` client side, the SDK will take a note of the object, component, method and any parameters for that `RPC` and send that information over the network. The server will receive that information, find the specified object, find the specified method and call it on the specified object with the received parameters.
+When calling an RPC from a client, the SDK takes note of the object, component, method, and any parameters for that RPC and sends that information over the network. The server or distributed authority service receives that information, finds the specified object, finds the specified method, and calls it on the specified object with the received parameters.
 
-When calling an `RPC`, you call a method remotely on an object that can be anywhere in the world. They're "events" you can trigger when needed.
-
-If you call an `RPC` method on your side, it will execute on a different machine.
-
-Netcode includes multiple RPC variations that you can use to execute logic with various remote targets. To learn more about RPCs, refer to[`Rpc`](message-system/rpc.md).
+Netcode for GameObjects includes multiple RPC variations that you can use to execute logic with various remote targets.
 
 <figure>
 <ImageSwitcher
 lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_Dark.png?text=DarkMode"/>
- <figcaption>Server can invoke a client RPC on a Network Object. The RPC will be placed in the local queue and then sent to a selection of clients (by default this selection is "all clients"). When received by a client, RPC will be executed on the client's version of the same Network Object.</figcaption>
+ <figcaption>Server can invoke a client RPC on a NetworkObject. The RPC is placed in the local queue and then sent to a selection of clients (by default this selection is all clients). When received by a client, RPCs are executed on the client's version of the same NetworkObject.</figcaption>
 </figure>
 
+### RPCs in Netcode for GameObjects
 
-:::info
-For more information see the wikipedia entry on [Remote Procedure Call's](https://en.wikipedia.org/wiki/Remote_procedure_call).
-:::
+Refer to the following pages for more information about how RPCs are implemented in Netcode for GameObjects.
 
-### Netcode's RPCs
-
-See the following pages for more information:
-
-- [Rpc](message-system/rpc.md)
+- [Remote procedure calls (RPCs)](message-system/rpc.md)
 - [Reliability](message-system/reliabilty.md)
-- [Execution Table](message-system/execution-table.md)
-- [RPC Params](message-system/rpc-params.md)
-  - [Serialization Types and RPCs](message-system/../serialization/serialization-intro.md)
+- [RPC parameters](message-system/rpc-params.md)
+  - [Serialization types and RPCs](message-system/../serialization/serialization-intro.md)
 
-There is also some additional design advice on RPC's and some usage examples on the following pages:
+There's also some additional design advice on RPCs and some usage examples on the following pages:
 
 - [RPC vs NetworkVariable](../learn/rpcvnetvar.md)
 - [RPC vs NetworkVariables Examples](../learn/rpcnetvarexamples.md)
 
-:::note Migration and Compatibility
-See [RPC Migration and Compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
+:::note Migration and compatibility
+Refer to [RPC migration and compatibility](message-system/rpc-compatibility.md) for more information on updates, cross-compatibility, and deprecated methods for Unity RPC.
 :::
 
 ## RPC method calls
 
 A typical SDK user (Unity developer) can declare multiple RPCs under a `NetworkBehaviour` and inbound/outbound RPC calls will be replicated as a part of its replication in a network frame.
 
-A method turned into an RPC is no longer a regular method, it will have its own implications on direct calls and in the network pipeline. See [Execution Table](message-system/execution-table.md).
+A method turned into an RPC is no longer a regular method; it will have its own implications on direct calls and in the network pipeline.
 
-### RPC usage checklist:
-To use RPCs, make sure
--  ```[Rpc]``` attributes are on your method
-- Your method name ends with ```Rpc``` (ex: ```DoSomethingRpc()```)
-- your method is declared in a class that inherits from NetworkBehaviour
-  - your GameObject has a NetworkObject component attached
+### RPC usage checklist
 
-## Serialization Types and RPCs
+To use RPCs, make sure:
 
-Instances of Serializable Types are passed into an RPC as parameters and are serialized and replicated to the remote side.
+-  `[Rpc]` attributes are on your method
+- Your method name ends with `Rpc` (for example, `DoSomethingRpc()`)
+- Your method is declared in a class that inherits from `NetworkBehaviour`
+  - Your GameObject has a NetworkObject component attached
 
-See [Serialization](serialization/serialization-intro.md) for more information.
+## Serialization types and RPCs
+
+Instances of serializable types are passed into an RPC as parameters and are serialized and replicated to the remote side.
+
+Refer to the [serialization page](serialization/serialization-intro.md) for more information.
