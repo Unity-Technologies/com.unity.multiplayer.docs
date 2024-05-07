@@ -5,22 +5,17 @@ created: 2023-01-24T18:08:36-06:00
 updated: 2023-01-24T18:59:55-06:00
 ---
 
-Netcode for Gameobjects (Netcode) provides a way to customize the [connection approval process](connection-approval.md) that can reject incoming connections based on any number of user-specific reasons.
+Netcode for GameObjects provides a way to customize the [connection approval process](connection-approval.md) that can reject incoming connections based on any number of user-specific reasons.
 
 Boss Room provides one example of how to handle limiting the number of players through the connection approval process:
-
-Boss Room provides an example of such delegate
 
 ```csharp reference
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs
 
 ```
 
-​
-
 The code below shows an example of an over-capacity check that would prevent more than a certain pre-defined number of players from connecting.
 
-​
 
 ```csharp
 if( m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPlayers )
@@ -29,13 +24,11 @@ if( m_Portal.NetManager.ConnectedClientsIds.Count >= CharSelectData.k_MaxLobbyPl
 }
 ```
 
-:::tip**SUBJECT TO CHANGE:**
+:::tip​
 
-​
+In connection approval delegate, Netcode for GameObjects doesn't support sending anything more than a Boolean back.
 
-In connection approval delegate Netcode doesn't support an ability to send anything more than a Boolean back.
-
-Boss Room shows a way to offer meaningful error code to the client by invoking a client RPC in the same channel that Netcode uses for its connection callback.
+Boss Room shows a way to offer meaningful error code to the client by invoking a client RPC in the same channel that Netcode for GameObjects uses for its connection callback.
 
 :::
 

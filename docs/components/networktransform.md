@@ -61,6 +61,7 @@ When you select a NetworkTransform component, you will see the following propert
 Some of the `NetworkTransform` properties are automatically synchronized by the authoritative instance to all non-authoritative instances.  It is **important to note** that when any synchronized property changes the NetworkTransform is effectively "teleported" (i.e. all values re-synchronized and interpolation is reset) which can cause a single frame delta in position, rotation, and scale (depending upon what is being synchronized). _Always keep this in mind when making adjustments to NetworkTransform properties during runtime._
 
 ### Synchronizing
+
 You often don't need to synchronize all transform values of a GameObject over the network. For instance, if the scale of the GameObject never changes, you can deactivate it in the **syncing scale** row in the Inspector. Deactivating synchronization saves CPU costs and network bandwidth.
 
 The term "synchronizing" refers to the synchronization of axis values over time. This is not to be confused with the initial synchronization of a transform's values. As an example:
@@ -79,7 +80,6 @@ Threshold values are not synchronized, but they can be updated on the [authorita
 :::
 
 ### Delivery
-
 
 Sometimes network conditions are not exactly "optimal" where packets can have both undesirable latency and even the dreaded packet loss. When NetworkTransform interpolation is enabled, packet loss can mean undesirable visual artifacts (_i.e. large visual motion gaps often referred to as "stutter"_). Originally, NetworkTransform sent every state update using reliable fragmented sequenced network delivery. For interpolation, with enough latency and packet loss this could cause a time gap between interpolation points which eventually would lead to the motion "stutter". Fortunately, NetworkTransform has been continually evolving and defaults to sending the more common delta state updates (_i.e. position, rotation, or scale changes_) as unreliable sequenced network delivered messages. If one state is dropped then the `BufferedLinearInterpolator` can recover easily as it doesn't have to wait precisely for the next state update and can just lose a small portion of the over-all interpolated path (_i.e. with a TickRate setting of 30 you could lose 5 to 10% of the over-all state updates over one second and still have a relatively similar interpolated path to that of a perfectly delivered 30 delta state updates generated path_). As such, the UseUnreliableDeltas NetworkTransform property, default to enabled, controls whether you send your delta state updates unreliably or reliably.
 
@@ -184,7 +184,6 @@ There is another concept to keep in mind about axis synchronization vs the initi
 Say you have marked only the position and rotation axis to be synchronized but exclude all scale axis on a NetworkTransform component for a network prefab. When you spawn an instance of the network prefab the initial authoritative side scale values are synchronized upon spawning. From that point forward, the non-authoritative instances (in this case the client-side instances) will maintain those same scale axis values even though they are never updated again.
 :::
 
-
 ### Owner authoritative mode
 **(a.k.a. ClientNetworkTransform)**
 
@@ -220,4 +219,3 @@ Optionally, you can directly add this line to your `manifest.json` file:
 `NetworkTransform.OnInitialize`: This virtual method is invoked when the associated `NetworkObject` is first spawned and when ownership changes.
 
 `NetworkTransform.Update`: This method has been made virtual in order to provide you with the ability to handle any customizations to a derived `NetworkTransform` class. If you override this method, it is required that all non-authoritative instances invoke `base.Update()` but not required for authoritative instances.
-
