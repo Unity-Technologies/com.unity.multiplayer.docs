@@ -55,7 +55,7 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "installation/upgrade_from_mlapi",
+                        "id": "installation/upgrade_from_mlapi"
                     },
                   ],
                 }
@@ -77,7 +77,7 @@ module.exports = {
                   },
                   {
                       "type": "doc",
-                      "id": "terms-concepts/client-server",
+                      "id": "terms-concepts/client-server"
                   },
                   {
                       "type": "doc",
@@ -85,7 +85,7 @@ module.exports = {
                   },
                   {
                       "type": "doc",
-                      "id": "terms-concepts/distributed-authority",
+                      "id": "terms-concepts/distributed-authority"
                   },
                 ],
               },
@@ -118,7 +118,7 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "advanced-topics/networkobject-parenting",
+                    "id": "advanced-topics/networkobject-parenting"
                 },
                 {
                     "type": "doc",
@@ -192,23 +192,23 @@ module.exports = {
             "items": [
                     {
                         "type": "doc",
-                        "id": "learn/lagandpacketloss",
+                        "id": "learn/lagandpacketloss"
                     },
                     {
                         "type": "doc",
-                        "id": "learn/ticks-and-update-rates",
+                        "id": "learn/ticks-and-update-rates"
                     },
                     {
                         "type": "doc",
-                        "id": "learn/clientside_interpolation",
+                        "id": "learn/clientside_interpolation"
                     },
                     {
                         "type": "doc",
-                        "id": "advanced-topics/client-anticipation",
+                        "id": "advanced-topics/client-anticipation"
                     },
                     {
                         "type": "doc",
-                        "id": "learn/dealing-with-latency",
+                        "id": "learn/dealing-with-latency"
                     },
                 ],
         },
