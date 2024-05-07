@@ -1,0 +1,19 @@
+---
+id: cprimitives
+title: C# primitives
+---
+
+C# primitive types will be serialized by built-in serialization code. These types include `bool`, `char`, `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, and `string`.
+
+```csharp
+[Rpc(SendTo.Server)]
+void FooServerRpc(int somenumber, string sometext) { /* ... */ }
+
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.P))
+    {
+        FooServerRpc(Time.frameCount, "hello, world"); // Client -> Server
+    }
+}
+```
