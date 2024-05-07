@@ -240,6 +240,10 @@ module.exports = {
               label: "2.0.0-exp",
               path: "current",
             },
+            "1.9.1": {
+              label: "1.9.1",
+              path: "1.9.1",
+            },
             "1.8.1": {
               label: "1.8.1",
               path: "1.8.1",
