@@ -15,7 +15,7 @@ Before you begin, you need the following:
 - The [Unity Hub](https://unity.com/download).
 - A supported version of the Unity Editor. Refer to the [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
-Before continuing, create a new project using Unity Editor version 2021.3 or later.
+Before continuing, create a new project using Unity Editor version 2022.3 or later.
 
 ### Create an `Assets/Scripts/` folder
 
@@ -94,7 +94,7 @@ This section guides you through creating an object that spawns for each connecte
 
 ![](/img/get-started-ngo/ngo-9.png)
 
-10. Drag the **Player** prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
+10. Drag the **Player** prefab from the **Project** tab into the **PlayerPrefab** slot within the **NetworkManager** component in the **Inspector** tab.
 
 ![](/img/get-started-ngo/ngo-5.png)
 
@@ -103,6 +103,26 @@ This section guides you through creating an object that spawns for each connecte
 ![](/img/get-started-ngo/ngo-7.png)
 
 12. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
+
+## Test starting a host in Unity Editor
+
+To ensure **NetworkManager** and **PlayerPrefab** are functioning correctly, test starting a host in the Unity Editor. A host plays the role of a server and a client at the same time.
+
+You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, refer to [Create a command line helper](../tutorials/command-line-helper/). Otherwise, refer to the following instructions to test through the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
+
+1. Select **Play** from the top of the Unity Editor to start the scene.
+
+![](/img/get-started-ngo/ngo-8.png)
+
+2. Select **NetworkManager** from the **Hierarchy** list.
+
+![](\img\get-started-ngo\ngo-2.png)
+
+3. With **NetworkManager** selected (in the Hierarchy tab), select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
+
+![](/img/get-started-ngo/ngo-3.png)
+
+If it works correctly, the option to **Stop Host** displays in the **Inspector** tab.
 
 ### Add your scene to the build
 
@@ -116,7 +136,7 @@ The **Enable Scene Management** for the `NetworkManager` setting allows the serv
 
 ## Add RPCs
 
-This section guides you through adding basic RPCs to the project. Save your scripts in your `Assets/Scripts/` folder.
+This section guides you through adding basic RPCs to the project. Save your scripts in your `Assets/Scripts/` folder. RPCs are used to call functions on remote clients or the server.
 
 Create a script named `RpcTest.cs`:
 
@@ -175,10 +195,14 @@ public class RpcTest : NetworkBehaviour
 
 This section guides you through testing the RPCs you added in the earlier section.
 
-1. Select **File** > **Build And Run**.
-2. Stop the player.
-3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
-    * Alternatively, you can use Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
+1. Select **File** > **Build Setting...**.
+2. In the **Build Setting** window, configure your build settings as needed.
+3. Click **Build** and choose a location to save your first build.
+4. After the first build is done, return to the **Build Setting** window.
+5. Click **Build** again and choose a different location to save your second build.
+    * Alternatively, you can run the builds by:
+      - launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
+      - using Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 After the client and server spawn, a log displays in the **Console** of the client and server sending RPC messages to each other.
 
@@ -528,9 +552,9 @@ Both build instances can move the player with the GUI button. The server moves t
 
 The client can request a new position, instructing the server to change that instance's position `NetworkVariable`. After the server updates the position `NetworkVariable`, the client applies that `NetworkVariable` position inside its `Update()` method.
 
-### Add a NetworkTransform
+## Add a NetworkTransform
 
-This section guides you through adding a `NetworkTransform` component that moves the player.
+This section guides you through adding a `NetworkTransform` component that moves the player. `NetworkTransform` is a component used to synchronize the position, rotation, and scale of objects across the network.
 
 Add a NetworkTransform component to the Player prefab:
 
@@ -576,32 +600,17 @@ public class NetworkTransformTest : NetworkBehaviour
 
 4. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
-#### Test the NetworkTransform
+### Test the NetworkTransform
 
 This section guides you through testing the NetworkTransform you added in the earlier section.
 
-1. Select **File** > **Build And Run**.
-2. Stop the player.
-3. Launch the client and server together in a terminal as shown in [Test the command line helper](../tutorials/command-line-helper/).
+1. Select **File** > **Build Setting...**.
+2. In the **Build Setting** window, configure your build settings as needed.
+3. Click **Build** and choose a location to save your first build.
+4. After the first build is done, return to the **Build Setting** window.
+5. Click **Build** again and choose a different location to save your second build.
+    * Alternatively, you can run the builds by:
+      - launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
+      - using Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 After the client and server spawn, the player capsule moves in a circle on both the client and the server.
-
-## Test Hello World
-
-To check if everything works as expected, test starting a host in the Unity Editor. A host plays the role of a server and a client at the same time.
-
-You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, refer to [Create a command line helper](command-line-helper). Otherwise, refer to the following instructions to test through the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
-
-1. Select **Play** from the top of the Unity Editor to start the scene.
-
-![](/img/get-started-ngo/ngo-8.png)
-
-2. Select **NetworkManager** from the **Hierarchy** list.
-
-![](\img\get-started-ngo\ngo-2.png)
-
-3. With **NetworkManager** selected (in the Hierarchy tab), select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
-
-![](/img/get-started-ngo/ngo-3.png)
-
-If it works correctly, the option to **Stop Host** displays in the **Inspector** tab.
