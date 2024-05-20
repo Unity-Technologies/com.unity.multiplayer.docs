@@ -3,7 +3,7 @@ id: get-started-ngo
 title: Get started with Netcode for GameObjects
 ---
 
-Use this guide to learn how to create your first Netcode for GameObjects project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects.
+Use this guide to learn how to create your first [client-server](../terms-concepts/client-server.md) Netcode for GameObjects project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects.
 
 Refer to [Testing the command line helper](command-line-helper.md) to learn how to test your builds with a command-line helper.
 
@@ -178,6 +178,7 @@ This section guides you through testing the RPCs you added in the earlier sectio
 1. Select **File** > **Build And Run**.
 2. Stop the player.
 3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
+    * Alternatively, you can use Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 After the client and server spawn, a log displays in the **Console** of the client and server sending RPC messages to each other.
 
@@ -218,8 +219,6 @@ Client Received the RPC #3 on NetworkObject #2
 The `NetworkObjectId` here is `2` because the host also has a NetworkObject with the `RpcTest` script spawned for it, but it won't send the initial RPC starting the chain because it's a server.
 
 :::
-
-Alternatively, you can use the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to the [Multiplayer Play Mode documentation](https://docs-multiplayer.unity3d.com/mppm/current/about/) to learn more.
 
 ## Extend functionality with scripts
 
