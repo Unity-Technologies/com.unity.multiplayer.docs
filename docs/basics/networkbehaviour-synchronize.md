@@ -103,7 +103,8 @@ Client-side:
 
 ### `OnSynchronize` example
 
-Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later so you decide to use RPCs. However, this becomes an issue when you want to synchronize late-joining clients as there is no way to synchronize late-joining clients based on RPC activity over the duration of a network session. This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
+Now that you understand the general concept behind `NetworkBehaviour.OnSynchronize`, the question you might have is "when would you use such a thing"? `NetworkVariable`s can be useful to synchronize state, but they also are only updated every network tick and you might have some form of state that needs to be updated when it happens and not several frames later, so you decide to use RPCs. However, this becomes an issue when you want to synchronize late-joining clients as there is no way to synchronize late-joining clients based on RPC activity over the duration of a network session. This is one of many possible reasons one might want to use `NetworkBehaviour.OnSynchronize`.
+
 The following example uses `NetworkBehaviour.OnSynchronize` to synchronize connecting (to-be-synchronized) clients and also uses an RPC to synchronize changes in state for already synchronized and connected clients:
 
 ```csharp
@@ -146,7 +147,7 @@ public class SimpleRpcState : NetworkBehaviour
 }
 ```
 :::caution
-Since `NetworkBehaviour.OnSynchronize` is primarily used for server to client synchronization, RPC state synchronization only works when using ClientRpcs since `NetworkBehaviour.OnSynchronize` is only invoked on the server side during the write part of serialization and only invoked on the client side during the read part of serialization. When running a host `NetworkBehaviour.OnSynchronize` is still only invoked once (server-side) during the write part of serialization.
+`NetworkBehaviour.OnSynchronize` is only invoked on the server side during the write part of serialization and only invoked on the client side during the read part of serialization. When running a host, `NetworkBehaviour.OnSynchronize` is still only invoked once (server-side) during the write part of serialization.
 :::
 
 ### Debugging `OnSynchronize` serialization
