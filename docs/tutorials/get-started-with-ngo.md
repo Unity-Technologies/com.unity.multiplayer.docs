@@ -201,8 +201,8 @@ This section guides you through testing the RPCs you added in the earlier sectio
 4. After the first build is done, return to the **Build Setting** window.
 5. Click **Build** again and choose a different location to save your second build.
     * Alternatively, you can run the builds by:
-      - launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
-      - using Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
+      - Launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
+      - Using the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 After the client and server spawn, a log displays in the **Console** of the client and server sending RPC messages to each other.
 
