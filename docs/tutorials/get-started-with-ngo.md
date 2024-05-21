@@ -108,7 +108,7 @@ This section guides you through creating an object that spawns for each connecte
 
 To ensure that **NetworkManager** and **PlayerPrefab** are functioning correctly, you can test starting a host in the Unity Editor. A host plays the role of a server and a client at the same time.
 
-You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, refer to [Create a command line helper](../tutorials/command-line-helper/). Otherwise, refer to the following instructions to test through the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
+You can test your Hello World project using the Unity Editor or a command-line helper. If you choose the latter, refer to [Create a command line helper](../tutorials/command-line-helper/). Otherwise, refer to the following instructions to test using the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
 
 1. Select **Play** from the top of the Unity Editor to start the scene.
 
