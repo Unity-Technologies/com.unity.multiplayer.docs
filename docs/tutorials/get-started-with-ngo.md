@@ -204,7 +204,7 @@ namespace HelloWorld
 }
 ```
 
-In your Hello World project, you created a NetworkManager by adding the pre-created NetworkManager component to a `GameObject`. This component allows you to start a Host, Client, or Server in Play Mode via the inspector view. The `HelloWorldManager.cs` script simplifies this by creating a runtime/play mode UI menu that allows you to select the three different `NetworkManager` modes you can start:
+In your Hello World project, you created a NetworkManager by adding the pre-created NetworkManager component to a `GameObject`. This component allows you to start a Host, Client, or Server in Play Mode via the inspector view. The `HelloWorldManager.cs` script simplifies and extends this functionality by creating a runtime/play mode UI menu that allows you to select the three different `NetworkManager` modes you can start:
 
 - The **Host** starts the server and joins as a client.
 - The **Client** joins the server as a client player.
