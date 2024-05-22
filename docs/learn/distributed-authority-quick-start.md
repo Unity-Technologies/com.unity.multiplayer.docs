@@ -1,36 +1,40 @@
 ---
 id: distributed-authority-quick-start
-title: Distributed Authority Quick Start
+title: Distributed authority quickstart for Netcode for GameObjects
 ---
 
-## Quick Start Tutorial: Moving Cubes
+Use this guide to learn how to create your first [distributed authority](../terms-concepts/distributed-authority.md) Netcode for GameObjects project. It walks you through the connection setup, including connecting to the distributed authority service, and adding basic gameplay.
 
-### Step 1 - Project Setup
+## Prerequisites
 
-Create a new Unity Project using the 3D template. 
+Before you begin, you need the following:
+
+- An active Unity account with a valid license.
+- The [Unity Hub](https://unity.com/download).
+- A supported version of the Unity Editor. Refer to the [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
+
+## Install packages
+
+- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
+- Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects package.
+
+## Project setup
+
+1. Create a new Unity Project using the 3D template.
 
 ![new unity project](/static/img/learn/distributed-authority-quick-start/new-project.png)
 
-Ensure that the project is connected to a Unity Cloud project.
+2. Ensure that the project is connected to a Unity Cloud project.
 
 ![connect unity cloud](/static/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
 
-During Alpha and Closed Beta, to enable the distributed authority service please provide your Unity contact with the Unity Cloud project ID you created.
+:::note Access during alpha and beta
+During alpha and beta, you need to request access to the distributed authority service. To do so, provide your Unity contact with the ID of the Unity Cloud project you created.
+:::
 
----
+## Connection setup
 
-Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
-
-![add multiplayer package](/static/img/learn/distributed-authority-quick-start/multiplayer-package.png)
-
-Install the latest `com.unity.netcode.gameobjects` **Netcode for GameObjects** package (version: **2.0.0-exp.2**)
-
-![add ngo package](/static/img/learn/distributed-authority-quick-start/ngo-package.png)
-
-
-### Step 2 - Connection Setup
-
-Create a new script called **ConnectionManager.cs**. This script provides a user interface and connects to a distributed authority service session:
+1. Create a new script called *ConnectionManager.cs*. This script provides a user interface and connects to a distributed authority service session:
 
 ```cs
 using System;
@@ -47,14 +51,14 @@ public class ConnectionManager : MonoBehaviour
    private int _maxPlayers = 10;
    private ConnectionState _state = ConnectionState.Disconnected;
    private ISession _session;
-  
+
    private enum ConnectionState
    {
        Disconnected,
        Connecting,
        Connected,
    }
-  
+
    private async void Awake()
    {
        await UnityServices.InitializeAsync();
@@ -64,7 +68,7 @@ public class ConnectionManager : MonoBehaviour
    {
        if (_state == ConnectionState.Connected)
            return;
-      
+
        GUI.enabled = _state != ConnectionState.Connecting;
 
        using (new GUILayout.HorizontalScope(GUILayout.Width(250)))
@@ -72,7 +76,7 @@ public class ConnectionManager : MonoBehaviour
            GUILayout.Label("Profile Name", GUILayout.Width(100));
            _profileName = GUILayout.TextField(_profileName);
        }
-      
+
        using (new GUILayout.HorizontalScope(GUILayout.Width(250)))
        {
            GUILayout.Label("Session Name", GUILayout.Width(100));
@@ -80,7 +84,7 @@ public class ConnectionManager : MonoBehaviour
        }
 
        GUI.enabled = GUI.enabled && !string.IsNullOrEmpty(_profileName) && !string.IsNullOrEmpty(_sessionName);
-      
+
        if (GUILayout.Button("Create or Join Session"))
        {
            CreateOrJoinSessionAsync();
@@ -102,11 +106,11 @@ public class ConnectionManager : MonoBehaviour
            await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
             var options = new CreateSessionOptions(_maxPlayers) {
-                Name = _sessionName 
+                Name = _sessionName
             }.WithDistributedConnection();
 
             _session = await MultiplayerService.Instance.CreateOrJoinSessionAsync(_sessionName, options);
-      
+
            _state = ConnectionState.Connected;
        }
        catch (Exception e)
@@ -118,29 +122,29 @@ public class ConnectionManager : MonoBehaviour
 }
 ```
 
-Attach this script to a new object in your scene. 
+2. Attach this script to a new object in your scene.
 
 ![add connection manager](/static/img/learn/distributed-authority-quick-start/create-connection-manager.png)
 
-### Step 3 - NGO Setup
+## Netcode for GameObjects setup
 
-Create a new object in your scene called **NetworkManager**. Attach a Network Manager component to it. 
+1. Create a new object in your scene called *NetworkManager*. Attach a Network Manager component to it.
 
 ![add network manager](/static/img/learn/distributed-authority-quick-start/network-manager.png)
 
-Set **Session Mode** to **Distributed Authority**. 
+2. Set **Session Mode** to **Distributed Authority**.
 
 ![set session mode](/static/img/learn/distributed-authority-quick-start/session-mode.png)
 
-Under network transport. Select **UnityTransport** from the list of options to add.
+3. Under **Network Transport**, select **UnityTransport** from the list of options to add.
 
 ![use unity transport](/static/img/learn/distributed-authority-quick-start/unity-transport.png)
 
-Save any changes to your objects and scene. 
+4. Save any changes to your objects and scene.
 
-### Step 4 - Gameplay
+## Adding gameplay
 
-Create a new Script called **PlayerCubeController.cs**:
+1. Create a new Script called *PlayerCubeController.cs*:
 
 ```cs
 using Unity.Netcode;
@@ -152,7 +156,7 @@ public class PlayerCubeController : NetworkBehaviour
    public float speed = 20;
 
    private NetworkTransform _transform;
-  
+
    private void Start()
    {
        _transform = GetComponent<NetworkTransform>();
@@ -166,26 +170,28 @@ public class PlayerCubeController : NetworkBehaviour
 }
 ```
 
-Create a new Prefab called **PlayerCube**. Open it for editing. Attach the **PlayerCubeController** to the prefab. When prompted to add a **NetworkObject**, click Yes. In addition, attach a **NetworkTransform** component as well. Make sure all the **Ownership** flags are unchecked.
+2. Create a new prefab called *PlayerCube* and open it for editing.
+    - Attach the *PlayerCubeController* to the prefab. When prompted to add a NetworkObject, select **Yes**.
+    - Attach a Network Transform component as well. Make sure all the **Ownership** flags are unchecked.
 
 ![setup network transform](/static/img/learn/distributed-authority-quick-start/network-transform.png)
 
-Attach a child object in the prefab. Select the root of the prefab, right click and select **3D Object > Cube**.
+3. Attach a child object in the prefab. Select the root of the prefab, right-click, and select **3D Object > Cube**.
 
 ![add the cube](/static/img/learn/distributed-authority-quick-start/create-cube.png)
 
-Save all changes to the prefab.
+4. Save all changes to the prefab.
 
-Open the Network Manager, navigate to **Prefab Settings** and set the **Default Player Prefab** to be **PlayerCube**. 
+5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be **PlayerCube**.
 
 ![set the prefab](/static/img/learn/distributed-authority-quick-start/player-cube.png)
 
-Save all changes to the scene.
+6. Save all changes to the scene.
 
-### Conclusion
+## Next steps
 
-Hit play, fill out the **Profile Name** and **Session Name**, then click **Create or Join Session**. The profile name is the name of the player so this should be different on every client. The session name is the identifier of the session you are joining so this should be the same on every client. If everything has been set up correctly you will see the game create a session, connect to it and spawn a PlayerCube.
+Hit play, fill out the **Profile Name** and **Session Name**, then click **Create or Join Session**. The profile name is the name of the player, so ensure this is different on every client. The session name is the identifier of the session you are joining, so this should be the same on every client. If everything has been set up correctly you will see the game create a session, connect to it, and spawn a PlayerCube.
 
-If you create a build and connect a new profile to the same session you will see a second PlayerCube spawn and sync up with the first. 
+If you create a build and connect a new profile to the same session you will see a second PlayerCube spawn and sync up with the first.
 
 ![success](/static/img/learn/distributed-authority-quick-start/gameplay.png)
