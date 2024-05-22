@@ -41,6 +41,7 @@ The distributed authority service is designed to quickly inspect messages, make 
 
 For more information about how distributed authority works in Netcode for GameObjects, see the following pages in the documentation:
 
+- [Distributed authority quickstart](../learn/distributed-authority-quick-start.md)
 - [Understanding ownership and authority](../basics/ownership.md)
 - [Race conditions](../basics/race-conditions.md)
 - [Spawning synchronization](../basics/spawning-synchronization.md)
