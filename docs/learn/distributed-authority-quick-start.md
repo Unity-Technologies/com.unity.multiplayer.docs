@@ -22,11 +22,11 @@ Before you begin, you need the following:
 
 1. Create a new Unity Project using the 3D template.
 
-![new unity project](/static/img/learn/distributed-authority-quick-start/new-project.png)
+![new unity project](/img/learn/distributed-authority-quick-start/new-project.png)
 
 2. Ensure that the project is connected to a Unity Cloud project.
 
-![connect unity cloud](/static/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
+![connect unity cloud](/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
 
 :::note Access during alpha and beta
 During alpha and beta, you need to request access to the distributed authority service. To do so, provide your Unity contact with the ID of the Unity Cloud project you created.
@@ -124,21 +124,21 @@ public class ConnectionManager : MonoBehaviour
 
 2. Attach this script to a new object in your scene.
 
-![add connection manager](/static/img/learn/distributed-authority-quick-start/create-connection-manager.png)
+![add connection manager](/img/learn/distributed-authority-quick-start/create-connection-manager.png)
 
 ## Netcode for GameObjects setup
 
 1. Create a new object in your scene called *NetworkManager*. Attach a Network Manager component to it.
 
-![add network manager](/static/img/learn/distributed-authority-quick-start/network-manager.png)
+![add network manager](/img/learn/distributed-authority-quick-start/network-manager.png)
 
 2. Set **Session Mode** to **Distributed Authority**.
 
-![set session mode](/static/img/learn/distributed-authority-quick-start/session-mode.png)
+![set session mode](/img/learn/distributed-authority-quick-start/session-mode.png)
 
 3. Under **Network Transport**, select **UnityTransport** from the list of options to add.
 
-![use unity transport](/static/img/learn/distributed-authority-quick-start/unity-transport.png)
+![use unity transport](/img/learn/distributed-authority-quick-start/unity-transport.png)
 
 4. Save any changes to your objects and scene.
 
@@ -174,17 +174,17 @@ public class PlayerCubeController : NetworkBehaviour
     - Attach the *PlayerCubeController* to the prefab. When prompted to add a NetworkObject, select **Yes**.
     - Attach a Network Transform component as well. Make sure all the **Ownership** flags are unchecked.
 
-![setup network transform](/static/img/learn/distributed-authority-quick-start/network-transform.png)
+![setup network transform](/img/learn/distributed-authority-quick-start/network-transform.png)
 
 3. Attach a child object in the prefab. Select the root of the prefab, right-click, and select **3D Object > Cube**.
 
-![add the cube](/static/img/learn/distributed-authority-quick-start/create-cube.png)
+![add the cube](/img/learn/distributed-authority-quick-start/create-cube.png)
 
 4. Save all changes to the prefab.
 
 5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be **PlayerCube**.
 
-![set the prefab](/static/img/learn/distributed-authority-quick-start/player-cube.png)
+![set the prefab](/img/learn/distributed-authority-quick-start/player-cube.png)
 
 6. Save all changes to the scene.
 
@@ -194,4 +194,4 @@ Hit play, fill out the **Profile Name** and **Session Name**, then click **Creat
 
 If you create a build and connect a new profile to the same session you will see a second PlayerCube spawn and sync up with the first.
 
-![success](/static/img/learn/distributed-authority-quick-start/gameplay.png)
+![success](/img/learn/distributed-authority-quick-start/gameplay.png)
