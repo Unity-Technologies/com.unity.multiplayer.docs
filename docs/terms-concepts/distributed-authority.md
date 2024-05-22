@@ -30,8 +30,18 @@ The traditional [client-server](client-server.md) model typically includes a ser
 
 With a distributed authority topology, a client's state change takes a single client-relative [round trip period of time (RTT)](../lagandpacketloss.md#round-trip-time-and-pings) (½ per client) to be updated on all connected clients. The distributed authority service is more efficient: messages are routed and then processed, whereas client-server topologies require messages to be processed and then, at a later time, conveyed via new messages to all connected clients.
 
-![Cloud relay service](/img/cloud-relay-service.jpg)
-
-![Distributed authority service](/img/distributed-authority-service.jpg)
+<p align="middle">
+  <img src="/img/cloud-relay-service.jpg" width="50%" />
+  <img src="/img/distributed-authority-service.jpg" width="50%" />
+</p>
 
 The distributed authority service is designed to quickly inspect messages, make any necessary changes (such as updating the destination address), forward the message, and then update any object state changes it's tracking. For certain operations like joining an in-progress session, the distributed authority service completely substitutes for a traditional host or server: it already has an up-to-date understanding of the state and can immediately transmit it to the joining client. Compared to a traditional client-server topology, this results in faster delivery of state changes, more balanced bandwidth utilization, and a smoother experience for all players.
+
+## More information about distributed authority
+
+For more information about how distributed authority works in Netcode for GameObjects, see the following pages in the documentation:
+
+- [Understanding ownership and authority](../basics/ownership.md)
+- [Race conditions](../basics/race-conditions.md)
+- [Spawning synchronization](../basics/spawning-synchronization.md)
+- [Deferred despawning](../basics/deferred-despawning.md)
