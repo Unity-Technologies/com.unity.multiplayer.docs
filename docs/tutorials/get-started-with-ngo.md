@@ -138,7 +138,7 @@ If it works correctly, the option to **Stop Host** displays in the **Inspector**
 Now that you have verified everything is configured correctly, you will want to have the ability to start the `NetworkManager` whether in play mode, as a stand alone build, or in another MPPM instance. This section will walk you through creating the `HelloWorldManager.cs` component script.
 
 1. Create a new script in the `Scripts` folder named `HelloWorldManager.cs`.
-2. Create a new empty object, `HelloWorldManager`, in the scene and attach the script as a component.
+2. Add this component to the `NetworkManager` `GameObject` in your scene.
 3. Copy the following code into the `HelloWorldManager.cs` script:
 
 ```csharp
@@ -149,10 +149,17 @@ namespace HelloWorld
 {
     public class HelloWorldManager : MonoBehaviour
     {
+        private NetworkManager m_NetworkManager;
+
+        void Awake()
+        {
+            m_NetworkManager = GetComponent<NetworkManager>();
+        }
+
         void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-            if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
+            if (!m_NetworkManager.IsClient && !m_NetworkManager.IsServer)
             {
                 StartButtons();
             }
@@ -168,33 +175,33 @@ namespace HelloWorld
 
         static void StartButtons()
         {
-            if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
-            if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
-            if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
+            if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
+            if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
+            if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
         static void StatusLabels()
         {
-            var mode = NetworkManager.Singleton.IsHost ?
-                "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
+            var mode = m_NetworkManager.IsHost ?
+                "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
 
             GUILayout.Label("Transport: " +
-                NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
+                m_NetworkManager.NetworkConfig.NetworkTransport.GetType().Name);
             GUILayout.Label("Mode: " + mode);
         }
 
         static void SubmitNewPosition()
         {
-            if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
+            if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
-                if (NetworkManager.Singleton.IsServer && !NetworkManager.Singleton.IsClient )
+                if (m_NetworkManager.IsServer && !m_NetworkManager.IsClient )
                 {
-                    foreach (ulong uid in NetworkManager.Singleton.ConnectedClientsIds)
-                        NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(uid).GetComponent<HelloWorldPlayer>().Move();
+                    foreach (ulong uid in m_NetworkManager.ConnectedClientsIds)
+                        m_NetworkManager.SpawnManager.GetPlayerNetworkObject(uid).GetComponent<HelloWorldPlayer>().Move();
                 }
                 else
                 {
-                    var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+                    var playerObject = m_NetworkManager.SpawnManager.GetLocalPlayerObject();
                     var player = playerObject.GetComponent<HelloWorldPlayer>();
                     player.Move();
                 }
@@ -235,7 +242,7 @@ As seen in the earlier code snippet, the `HelloWorldManager.cs` script also uses
 
 The `HelloWorldManager.cs` script also introduces a new method called `SubmitNewPosition()` that the `HelloWorldPlayer` script uses to [create a simple RPC call](#add-simple-rpc-use).
 
-## Add RPCs
+## Adding RPCs (Remote Procedure Calls)
 
 This section guides you through adding basic RPCs to the project. Save your scripts in your `Assets/Scripts/` folder. RPCs are used to call functions on remote clients or the server.
 
@@ -267,25 +274,25 @@ public class RpcTest : NetworkBehaviour
     {
         if (!IsServer && IsOwner) //Only send an RPC to the server from the client that owns the NetworkObject of this NetworkBehaviour instance
         {
-            TestServerRpc(0, NetworkObjectId);
+            ServerOnlyRpc(0, NetworkObjectId);
         }
     }
 
     [Rpc(SendTo.ClientsAndHost)]
-    void TestClientRpc(int value, ulong sourceNetworkObjectId)
+    void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
         if (IsOwner) //Only send an RPC to the owner of the NetworkObject
         {
-            TestServerRpc(value + 1, sourceNetworkObjectId);
+            ServerOnlyRpc(value + 1, sourceNetworkObjectId);
         }
     }
 
     [Rpc(SendTo.Server)]
-    void TestServerRpc(int value, ulong sourceNetworkObjectId)
+    void ServerOnlyRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
-        TestClientRpc(value, sourceNetworkObjectId);
+        ClientAndHostRpc(value, sourceNetworkObjectId);
     }
 }
 ```
@@ -345,13 +352,7 @@ The `NetworkObjectId` here is `2` because the host also has a NetworkObject with
 
 :::
 
-## Extend functionality with scripts
-
-The section shows how to extend the functionality of the Hello World project with two scripts: [`HelloWorldPlayer.cs`](#the-helloworldplayercs-script) and [`HelloWorldManager.cs`](#the-helloworldmanagercs-script).
-
-
-
-### Adding Netcode script to your player prefab
+## Adding Netcode script to your player prefab
 
 At this point, you should have set up script and should have experimented with sending and receiving RPCs via the `RpcTest.cs` script above. This next step demonstrates how you can add additional netcode logic to your player prefab via the `HelloWorldPlayer.cs` script.
 
