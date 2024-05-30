@@ -11,7 +11,7 @@ You can display and use the following parts of the [Unity Interface](https://doc
 - [Inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html)
 - [Scene](https://docs.unity3d.com/Manual/UsingTheSceneView.html)
 
-note:::
+:::note
 When you exit Play Mode in the Editor, Unity disables the Hierarchy, Inspector, and Scene views in the virtual player window.
 :::
 
