@@ -4,25 +4,6 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
-## [1.1.0] - 2024-04-24
-
-### Added
-- Added a new layout option to each Multiplayer Play Mode clone in projects that include the Netcode For Entities package.
-- Updated the **Close** button to display a warning dialog prompt that deactivates a virtual player.
-- Added the mute setting to mute specific users.
-- Added a setting that changes the Asset Database refresh timeout.
-- Updated the focus shortcut behavior to focus on other individual virtual player windows from inside an individual player.
-- Updated the message that appears when a Symlink failure (on FAT32) happens because it isn't supported.
-
-### Fixed
-- The local clone cache clears automatically when you update the Multiplayer Play Mode package.
-- Fixed a crash caused by devices set to certain regions.
-- Changed the default multiplayer role of player clones to Client and Server.
-- Added a minimum width for the main view of the Multiplayer Play Mode window.
-- The escape key no longer closes virtual player windows on Windows devices.
-- Fixed issues with heartbeat timeout.
-- Removed the forward slash **/** character from tags because it's for drop-down behavior only.
-  
 ## [1.0.0] - 2024-03-12
 
 ### Added

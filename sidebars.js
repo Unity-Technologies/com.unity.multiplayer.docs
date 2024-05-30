@@ -45,6 +45,10 @@ module.exports = {
                     "id": "tutorials/get-started-ngo"
                 },
                 {
+                    "type": "doc",
+                    "id": "learn/distributed-authority-quick-start"
+                },
+                {
                   "collapsed": true,
                   "type": "category",
                   "label": "Migrating",
@@ -477,6 +481,10 @@ module.exports = {
             "type": "category",
             "label": "Educational samples",
             "items": [
+                {
+                    "type": "doc",
+                    "id": "learn/sample-dedicated-server"
+                },
                 {
                     "collapsed": true,
                     "type": "category",
