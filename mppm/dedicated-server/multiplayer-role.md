@@ -6,6 +6,10 @@ description: Learn how to use the dedicated server package to assign virtual pla
 
 Install the [Dedicated Server package](https://docs.unity3d.com/Packages/com.unity.dedicated-server@1.0/manual/index.html) with Multiplayer Play Mode to switch players between the server and client role without a script.
 
+::: Important
+To avoid errors, install the Dedicated Server package version that is the same as the Multiplayer Play mode version that exists in your project.
+:::
+
 ## Set the main editor player multiplayer role
 
 To set the role of a the main editor player, do the following:

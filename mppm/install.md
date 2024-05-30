@@ -9,12 +9,9 @@ To begin testing your multiplayer functionality, you must first install the Mult
 1. Open Unity Hub.
 2. Select a Project.
 3. In the Editor's menu bar, navigate to **Window** > **Package Manager**.
-4. Click the plus sign ![plus sign](/img/add.png) in the Package Manager status bar.
-5. Select **Install package by name...**.
-6. Enter `com.unity.multiplayer.playmode` in the pop-up window.
-7. Select **Add**.
-8. After the download is complete, **Multiplayer Play Mode** appears under **Unity Technologies** in the **Package Manager** window.
-9. To open the Multiplayer Play Mode window, navigate to **Window** > **Multiplayer Play Mode**.
+4. Select **Unity Registry**.
+5. Select the **Multiplayer Play Mode** package. 
+6. Select **Install**.
 
 ## Next steps
 
