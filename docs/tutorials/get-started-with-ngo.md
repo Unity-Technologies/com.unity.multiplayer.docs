@@ -1,6 +1,6 @@
 ---
 id: get-started-ngo
-title: Get started with Netcode for GameObjects
+title: Client-server quickstart for Netcode for GameObjects
 ---
 
 Use this guide to learn how to create your first [client-server](../terms-concepts/client-server.md) Netcode for GameObjects project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects.

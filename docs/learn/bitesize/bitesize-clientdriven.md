@@ -17,10 +17,10 @@ Making movements feel responsive while staying consistent over multiple game exe
 ## Sample:
 
 ClientDriven's aim is to create a quick sample to show responsive character movements that don't feel sluggish, even under bad network conditions.
-It uses the ClientNetworkTransform sample and moves your own player's position client side, [client authoritatively](../dealing-with-latency.md#allow-low-impact-client-authority). Movement is leveraged through the use of Unity's Starter Assets, the [Third Person Character Controller](https://assetstore.unity.com/packages/essentials/starter-assets-third-person-character-controller-196526).
+It uses the ClientNetworkTransform component and moves your own player's position client side, [client authoritatively](../dealing-with-latency.md#allow-low-impact-client-authority). Movement is leveraged through the use of Unity's Starter Assets, the [Third Person Character Controller](https://assetstore.unity.com/packages/essentials/starter-assets-third-person-character-controller-196526).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs#L274-L276
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs#L155-L162
 ```
 
 ### Client side object detection for pickup with server side pickup validation
@@ -40,7 +40,7 @@ https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blo
 Notice how we're checking whether that object can be picked up or not (since another player can have picked it up at the same time, creating a conflict).
 
 ```csharp reference
-https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L50
+https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/v1.2.1/Basic/ClientDriven/Assets/Scripts/ServerPlayerMove.cs#L50-L58
 ```
 If the object is already picked up, we're not doing anything. Your client side animations should take this into account and cancel any animations "carrying" something.
 
