@@ -10,7 +10,6 @@ You can display and use the following parts of the [Unity Interface](https://doc
 - [Hierarchy](https://docs.unity3d.com/Manual/Hierarchy.html)
 - [Inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html)
 - [Scene](https://docs.unity3d.com/Manual/UsingTheSceneView.html)
-- [PlayMode Tools](https://docs.unity3d.com/Packages/com.unity.netcode@1.2/manual/playmode-tool.html). This Window only appears in projects that use Netcode for Entities.
 
 :::note
 You can only use the Hierarchy, Inspector, and Scene windows when you enter Play Mode.

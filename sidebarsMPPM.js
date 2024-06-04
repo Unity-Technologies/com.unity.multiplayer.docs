@@ -30,6 +30,10 @@ module.exports = {
                     type: 'doc',
                     id: 'virtual-players/virtual-players-focus'
                 },
+                {
+                    type: 'doc',
+                    id: 'virtual-players/virtual-players-layout'
+                },
             ]
 
         },
