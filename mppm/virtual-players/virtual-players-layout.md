@@ -1,7 +1,7 @@
 ---
 id: virtual-players-layout
 title: Change the layout of a Virtual Player
-description: Learn how to change the layout of a Vrtual Player window.
+description: Learn how to change the layout of a Virtual Player window.
 ---
 
 You can display and use the following parts of the [Unity Interface](https://docs.unity3d.com/Manual/UsingTheEditor.html) in a Virtual Player:
@@ -13,7 +13,7 @@ You can display and use the following parts of the [Unity Interface](https://doc
 - [PlayMode Tools](https://docs.unity3d.com/Packages/com.unity.netcode@1.2/manual/playmode-tool.html). This Window only appears in projects that use Netcode for Entities.
 
 :::note
-You can only use the Hierarchy, Inspector, and Scene windows when you enter Play Mode.
+You can only use the Hierarchy, Inspector, and Scene windows in Play Mode.
 :::
 
 ## Display a window in a virtual player
@@ -21,7 +21,7 @@ You can only use the Hierarchy, Inspector, and Scene windows when you enter Play
 To display a window in a Virtual Player, perform the following actions: 
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
-2. Select the **Layout** drop down.
+2. Select the **Layout** dropdown.
 3. Check the box next to the window(s) you want to appear in this Virtual Player.
 4. Select **Apply**.
 
@@ -30,6 +30,6 @@ To display a window in a Virtual Player, perform the following actions:
 To hide a window in a Virtual Player, perform the following actions: 
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
-2. Select the **Layout** drop down.
+2. Select the **Layout** dropdown.
 3. Select the checked box next to the window(s) you want to hide in this Virtual Player.
 4. Select **Apply**.
