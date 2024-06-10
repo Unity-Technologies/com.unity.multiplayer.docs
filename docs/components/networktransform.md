@@ -23,21 +23,23 @@ Except the implementation is far more complicated than one might expect. For exa
 
 Fortunately, Netcode for GameObjects provides you with the NetworkTransform component. It handles many of the tricky aspects of transform synchronization and can be configured via Inspector properties.
 
-## Adding
+## Adding the component
 
-When adding a NetworkTransform component to a GameObject, you should always make sure the GameObject has a NetworkObject component attached to it or that the GameObject's transform parent is assigned to a GameObject with a NetworkObject component attached to it like in the image below:
+When adding a NetworkTransform component to a GameObject, it requires a NetworkObject on the same or a parent GameObject for it to function. 
+
+In this image both NetworkTransform and NetworkObject components are on the same GameObject:
 
 ![image](/img/NetworkTransformSimple.png)
 
-You can also have a parent GameObject that has a NetworkObject component attached to it with a child GameObject that has a NetworkTransform component like in the image below:
+Alternatively, a parent GameObject can have the NetworkObject component while the NetworkTransform is attached to a child object:
 
 ![image](/img/NetworkTransformSimpleParent.png)
 
-As well, you can have "nested NetworkTransforms" that are all associated with a single NetworkObject like in the image below:
+You can also have NetworkTransform components on several child objects, all sharing the same NetworkObject in their common parent object:
 
 ![image](/img/NetworkTransformNestedParent.png)
 
-With nested NetworkTransforms, you can (theoretically) have the (n) number of nested children each with NetworkTransform components.  _However, we recommend exercising caution with the amount of nested NetworkTransforms per network prefab instance if you plan on having many instances of that same network prefab per network session._
+With such nested NetworkTransforms you can theoretically have a NetworkTransform on every child object. _However, we recommend exercising caution with the amount of nested NetworkTransforms in a network prefab. Particularly if there will be many instances of this network prefab._
 
 
 :::tip
