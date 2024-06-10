@@ -15,7 +15,7 @@ Before you begin, you need the following:
 - The [Unity Hub](https://unity.com/download).
 - A supported version of the Unity Editor. Refer to the [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
-Before continuing, create a new project using Unity Editor version 2021.3 or later.
+Before continuing, create a new project using Unity Editor version 2022.3 or later.
 
 ### Create an `Assets/Scripts/` folder
 
@@ -94,7 +94,7 @@ This section guides you through creating an object that spawns for each connecte
 
 ![](/img/get-started-ngo/ngo-9.png)
 
-10. Drag the **Player** prefab from the **Project** tab into the **PlayerPrefab** slot you created in the **Inspector** tab.
+10. Drag the **Player** prefab from the **Project** tab into the **PlayerPrefab** slot within the **NetworkManager** component in the **Inspector** tab.
 
 ![](/img/get-started-ngo/ngo-5.png)
 
@@ -104,19 +104,147 @@ This section guides you through creating an object that spawns for each connecte
 
 12. Save the scene by pressing **Ctrl/Cmd** + **S** (selecting **File** > **Save**).
 
-### Add your scene to the build
+### Scene management and the scenes in build list
 
-This section guides you through adding your scene to the build.
-
-The **Enable Scene Management** for the `NetworkManager` setting allows the server to control which scenes load for the clients. However, you must add the current scene to the build to enter Play mode. The **Enable Scene Management** option for the NetworkManager is enabled by default.
+Netcode for GameObjects comes with an integrated scene management solution that helps you synchronize what scenes should be loaded by all connected clients. The `NetworkManager` **Enable Scene Management** property, enabled by default, determines whether the integrated scene management solution will be used for your project (or not). In order for the integrated scene management solution to work properly, you must add any scene you want to be synchronized to the scenes in build list. This section guides you through adding your current scene to the scenes in build list.
 
 1. Open the Build Settings window by selecting **File** > **Build Settings**.
 2. Select **Add Open Scenes**.
 3. **Scenes/SampleScene** is listed under **Scenes In Build**. You can close the Build Settings window.
 
-## Add RPCs
+## Test starting a host in the Unity Editor
 
-This section guides you through adding basic RPCs to the project. Save your scripts in your `Assets/Scripts/` folder.
+Now that you have a **NetworkManager**, assigned a **PlayerPrefab**, and added your current scene to the scenes in build test, you can quickly verify everything is functioning/configured correctly via entering play mode in the Unity Editor. By starting a host, you are starting `NetworkManager` as both a server and a client at the same time.
+
+You can test your Hello World project using the Unity Editor or a command-line helper. If you choose the latter, refer to [Create a command line helper](../tutorials/command-line-helper/). Otherwise, refer to the following instructions to test using the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
+
+1. Select **Play** from the top of the Unity Editor to start the scene.
+
+![](/img/get-started-ngo/ngo-8.png)
+
+2. Select **NetworkManager** from the **Hierarchy** list.
+
+![](\img\get-started-ngo\ngo-2.png)
+
+3. With **NetworkManager** selected (in the Hierarchy tab), select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
+
+![](/img/get-started-ngo/ngo-3.png)
+
+If it works correctly, the option to **Stop Host** displays in the **Inspector** tab.
+
+
+### The `HelloWorldManager.cs` script
+
+Now that you have verified everything is configured correctly, you will want to have the ability to start the `NetworkManager` whether in play mode, as a stand alone build, or in another MPPM instance. This section will walk you through creating the `HelloWorldManager.cs` component script.
+
+1. Create a new script in the `Scripts` folder named `HelloWorldManager.cs`.
+2. Add this component to the `NetworkManager` `GameObject` in your scene.
+3. Copy the following code into the `HelloWorldManager.cs` script:
+
+```csharp
+using Unity.Netcode;
+using UnityEngine;
+
+namespace HelloWorld
+{
+    public class HelloWorldManager : MonoBehaviour
+    {
+        private NetworkManager m_NetworkManager;
+
+        void Awake()
+        {
+            m_NetworkManager = GetComponent<NetworkManager>();
+        }
+
+        void OnGUI()
+        {
+            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+            if (!m_NetworkManager.IsClient && !m_NetworkManager.IsServer)
+            {
+                StartButtons();
+            }
+            else
+            {
+                StatusLabels();
+
+                SubmitNewPosition();
+            }
+
+            GUILayout.EndArea();
+        }
+
+        static void StartButtons()
+        {
+            if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
+            if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
+            if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
+        }
+
+        static void StatusLabels()
+        {
+            var mode = m_NetworkManager.IsHost ?
+                "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
+
+            GUILayout.Label("Transport: " +
+                m_NetworkManager.NetworkConfig.NetworkTransport.GetType().Name);
+            GUILayout.Label("Mode: " + mode);
+        }
+
+        static void SubmitNewPosition()
+        {
+            if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
+            {
+                if (m_NetworkManager.IsServer && !m_NetworkManager.IsClient )
+                {
+                    foreach (ulong uid in m_NetworkManager.ConnectedClientsIds)
+                        m_NetworkManager.SpawnManager.GetPlayerNetworkObject(uid).GetComponent<HelloWorldPlayer>().Move();
+                }
+                else
+                {
+                    var playerObject = m_NetworkManager.SpawnManager.GetLocalPlayerObject();
+                    var player = playerObject.GetComponent<HelloWorldPlayer>();
+                    player.Move();
+                }
+            }
+        }
+    }
+}
+```
+
+In your Hello World project, you created a NetworkManager by adding the pre-created NetworkManager component to a `GameObject`. This component allows you to start a Host, Client, or Server in Play Mode via the inspector view. The `HelloWorldManager.cs` script simplifies and extends this functionality by creating a runtime/play mode UI menu that allows you to select the three different `NetworkManager` modes you can start:
+
+- The **Host** starts the server and joins as a client.
+- The **Client** joins the server as a client player.
+- The **Server** starts the game as a server without instantiating a player.
+
+The `HelloWorldManager.cs` script accomplishes this menu within the `StartButtons().` After you select a button, the `StatusLabels()`method adds a label on-screen to display which mode you have selected. This helps distinguish Game view windows from each other when testing your multiplayer game.
+
+```csharp
+       static void StartButtons()
+        {
+            if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
+            if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
+            if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
+        }
+
+        static void StatusLabels()
+        {
+            var mode = NetworkManager.Singleton.IsHost ?
+                "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
+
+            GUILayout.Label("Transport: " +
+                NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
+            GUILayout.Label("Mode: " + mode);
+        }
+```
+
+As seen in the earlier code snippet, the `HelloWorldManager.cs` script also uses the NetworkManager's instance via its singleton to grab properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
+
+The `HelloWorldManager.cs` script also introduces a new method called `SubmitNewPosition()` that the `HelloWorldPlayer` script uses to [create a simple RPC call](#add-simple-rpc-use).
+
+## Adding RPCs (Remote Procedure Calls)
+
+This section guides you through adding basic RPCs to the project. Save your scripts in your `Assets/Scripts/` folder. RPCs are used to call functions on remote clients or the server.
 
 Create a script named `RpcTest.cs`:
 
@@ -144,27 +272,27 @@ public class RpcTest : NetworkBehaviour
 {
     public override void OnNetworkSpawn()
     {
-        if (!IsServer && IsOwner) //Only send an RPC to the server on the client that owns the NetworkObject that owns this NetworkBehaviour instance
+        if (!IsServer && IsOwner) //Only send an RPC to the server from the client that owns the NetworkObject of this NetworkBehaviour instance
         {
-            TestServerRpc(0, NetworkObjectId);
+            ServerOnlyRpc(0, NetworkObjectId);
         }
     }
 
     [Rpc(SendTo.ClientsAndHost)]
-    void TestClientRpc(int value, ulong sourceNetworkObjectId)
+    void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
-        if (IsOwner) //Only send an RPC to the server on the client that owns the NetworkObject that owns this NetworkBehaviour instance
+        if (IsOwner) //Only send an RPC to the owner of the NetworkObject
         {
-            TestServerRpc(value + 1, sourceNetworkObjectId);
+            ServerOnlyRpc(value + 1, sourceNetworkObjectId);
         }
     }
 
     [Rpc(SendTo.Server)]
-    void TestServerRpc(int value, ulong sourceNetworkObjectId)
+    void ServerOnlyRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
-        TestClientRpc(value, sourceNetworkObjectId);
+        ClientAndHostRpc(value, sourceNetworkObjectId);
     }
 }
 ```
@@ -175,10 +303,14 @@ public class RpcTest : NetworkBehaviour
 
 This section guides you through testing the RPCs you added in the earlier section.
 
-1. Select **File** > **Build And Run**.
-2. Stop the player.
-3. Launch the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
-    * Alternatively, you can use Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
+1. Select **File** > **Build Setting...**.
+2. In the **Build Setting** window, configure your build settings as needed.
+3. Click **Build** and choose a location to save your first build.
+4. After the first build is done, return to the **Build Setting** window.
+5. Click **Build** again and choose a different location to save your second build.
+    * Alternatively, you can run the builds by:
+      - Launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
+      - Using the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 After the client and server spawn, a log displays in the **Console** of the client and server sending RPC messages to each other.
 
@@ -220,117 +352,12 @@ The `NetworkObjectId` here is `2` because the host also has a NetworkObject with
 
 :::
 
-## Extend functionality with scripts
+## Adding Netcode script to your player prefab
 
-The section shows how to extend the functionality of the Hello World project with two scripts: [`HelloWorldPlayer.cs`](#the-helloworldplayercs-script) and [`HelloWorldManager.cs`](#the-helloworldmanagercs-script).
-
-### The `HelloWorldManager.cs` script
-
-1. Create a new script in the `Scripts` folder named `HelloWorldManager.cs`.
-2. Create a new empty object, `HelloWorldManager`, in the scene and attach the script as a component.
-3. Copy the following code into the `HelloWorldManager.cs` script:
-
-```csharp
-using Unity.Netcode;
-using UnityEngine;
-
-namespace HelloWorld
-{
-    public class HelloWorldManager : MonoBehaviour
-    {
-        void OnGUI()
-        {
-            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-            if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
-            {
-                StartButtons();
-            }
-            else
-            {
-                StatusLabels();
-
-                SubmitNewPosition();
-            }
-
-            GUILayout.EndArea();
-        }
-
-        static void StartButtons()
-        {
-            if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
-            if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
-            if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
-        }
-
-        static void StatusLabels()
-        {
-            var mode = NetworkManager.Singleton.IsHost ?
-                "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
-
-            GUILayout.Label("Transport: " +
-                NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
-            GUILayout.Label("Mode: " + mode);
-        }
-
-        static void SubmitNewPosition()
-        {
-            if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
-            {
-                if (NetworkManager.Singleton.IsServer && !NetworkManager.Singleton.IsClient )
-                {
-                    foreach (ulong uid in NetworkManager.Singleton.ConnectedClientsIds)
-                        NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(uid).GetComponent<HelloWorldPlayer>().Move();
-                }
-                else
-                {
-                    var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
-                    var player = playerObject.GetComponent<HelloWorldPlayer>();
-                    player.Move();
-                }
-            }
-        }
-    }
-}
-```
-
-In the Hello World project from earlier, you created a NetworkManager by adding the pre-created NetworkManager component. This component allows you to start a Host, Client, or Server in Play Mode by inspecting the component. The `HelloWorldManager.cs` script simplifies this slightly by creating an on-screen UI button menu upon entering Play Mode.
-
-- The **Host** starts the server and joins as a client.
-- The **Client** joins the server as a client player.
-- The **Server** starts the game as a server without instantiating a player.
-
-The `HelloWorldManager.cs` script accomplishes this menu within the `StartButtons().` After you select a button, the `StatusLabels()`method adds a label on-screen to display which mode you have selected. This helps distinguish Game view windows from each other when testing your multiplayer game.
-
-```csharp
-       static void StartButtons()
-        {
-            if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
-            if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
-            if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
-        }
-
-        static void StatusLabels()
-        {
-            var mode = NetworkManager.Singleton.IsHost ?
-                "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
-
-            GUILayout.Label("Transport: " +
-                NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
-            GUILayout.Label("Mode: " + mode);
-        }
-```
-
-As seen in the earlier code snippet, the `HelloWorldManager.cs` script also uses the NetworkManager's instance via its singleton to grab properties like the `IsClient`, `IsServer`, and `IsLocalClient`. The `IsClient` and `IsServer` properties dictate the established connection state.
-
-The `HelloWorldManager.cs` script also introduces a new method called `SubmitNewPosition()` that the `HelloWorldPlayer` script uses to [create a simple RPC call](#add-simple-rpc-use).
-
-### The `HelloWorldPlayer.cs` script
-
-You need to set up the `HelloWorldManager.cs` script explained above for the `HelloWorldPlayer.cs` script to work.
+At this point, you should have set up script and should have experimented with sending and receiving RPCs via the `RpcTest.cs` script above. This next step demonstrates how you can add additional netcode logic to your player prefab via the `HelloWorldPlayer.cs` script.
 
 1. Create a new script in the `Scripts` folder named `HelloWorldPlayer.cs`.
-2. Add the script as a component to your Player prefab.
-3. Copy the following code into the `HelloWorldPlayer.cs` script:
+2. Copy the following code into the `HelloWorldPlayer.cs` script and save it:
 
 ```csharp
 using Unity.Netcode;
@@ -352,11 +379,11 @@ namespace HelloWorld
 
         public void Move()
         {
-            SubmitPositionRequestServerRpc();
+            SubmitPositionRequestRpc();
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
+        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -375,6 +402,8 @@ namespace HelloWorld
     }
 }
 ```
+
+#### A Review of the `HelloWorldPlayer.cs` script 
 
 The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server's position NetworkVariable, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position NetworkVariable, then replicate the change locally.
 
@@ -405,11 +434,11 @@ If the current player is the server, the code determines a random position to sp
 ```csharp
         public void Move()
         {
-            SubmitPositionRequestServerRpc();
+            SubmitPositionRequestRpc();
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
+        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -422,63 +451,14 @@ If the current player is the server, the code determines a random position to sp
         }
 ```
 
-#### Add the `HelloWorldPlayer.cs` script to the Player prefab
+#### Positioning the player using an RPC
 
-This section guides you through adding the `HelloWorldPlayer.cs` script to the Player prefab.
-
-Select the Player prefab:
-
-1. From the **Project** tab, select **Assets** > **Prefabs**.
-2. Select **Player**.
-
-Add the `HelloWorldPlayer.cs` script to the Player prefab as a component:
-
-1. With the Player prefab selected, select **Add Component** from the Inspector tab.
-2. Select **Scripts** > **Hello World** > **Hello World Player**.
-
-#### About the `HelloWorldPlayer` script
-
-The `HelloWorldPlayer` class inherits from `NetworkBehaviour` instead of `MonoBehaviour`.
-
-```csharp
-public class HelloWorldPlayer : NetworkBehaviour
-```
-
-The `HelloWorldPlayer` class defines a `NetworkVariable` to represent the player's networked position.
-
-```csharp
-public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-```
-
-The `HelloWorldPlayer` class overrides `OnNetworkSpawn`.
-
-```csharp
-       public override void OnNetworkSpawn()
-        {
-            if (IsOwner)
-            {
-                Move();
-            }
-        }
-```
-
-The script calls the `Move()` method on both client and server instances of the player. The `Move()` script does the following:
-
-```csharp
-       public void Move()
-        {
-            SubmitPositionRequestServerRpc();
-        }
-```
-
-## Add simple RPC use
-
-This section walks you through the sample code that adds a simple RPC.
+This section walks you through the `HelloWorldPlayer.cs` portion of the script that declares the `SubmitPositionRequestRpc` RPC.
 
 If the player is a server-owned player at `OnNetworkSpawn()`, you can immediately move this player, as suggested in the following code.
 
 ```csharp
-            SubmitPositionRequestServerRpc();
+            SubmitPositionRequestRpc();
 ```
 
 You can call this `Rpc` when the player is a client or a server. When you call an `Rpc` with `SendTo.Server`  on the server side, it executes in the same way as a local function call by default.
@@ -487,7 +467,7 @@ The `Rpc` sets the position NetworkVariable on the server's instance of the play
 
 ```csharp
        [Rpc(SendTo.Server)]
-        void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
+        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -528,9 +508,24 @@ Both build instances can move the player with the GUI button. The server moves t
 
 The client can request a new position, instructing the server to change that instance's position `NetworkVariable`. After the server updates the position `NetworkVariable`, the client applies that `NetworkVariable` position inside its `Update()` method.
 
-### Add a NetworkTransform
+## Add the `HelloWorldPlayer.cs` script to the Player prefab
 
-This section guides you through adding a `NetworkTransform` component that moves the player.
+This section guides you through adding the `HelloWorldPlayer.cs` script to the Player prefab.
+
+Select the Player prefab:
+
+1. From the **Project** tab, select **Assets** > **Prefabs**.
+2. Select **Player**.
+
+Add the `HelloWorldPlayer.cs` script to the Player prefab as a component:
+
+1. With the Player prefab selected, select **Add Component** from the Inspector tab.
+2. Select **Scripts** > **Hello World** > **Hello World Player**.
+
+
+## Add a NetworkTransform
+
+This section guides you through adding a `NetworkTransform` component that moves the player. `NetworkTransform` is a component used to synchronize the position, rotation, and scale of objects across the network.
 
 Add a NetworkTransform component to the Player prefab:
 
@@ -576,32 +571,17 @@ public class NetworkTransformTest : NetworkBehaviour
 
 4. Save the scene by pressing **Ctrl/Cmd** + **S** (or by selecting **File** > **Save**).
 
-#### Test the NetworkTransform
+### Test the NetworkTransform
 
 This section guides you through testing the NetworkTransform you added in the earlier section.
 
-1. Select **File** > **Build And Run**.
-2. Stop the player.
-3. Launch the client and server together in a terminal as shown in [Test the command line helper](../tutorials/command-line-helper/).
+1. Select **File** > **Build Setting...**.
+2. In the **Build Setting** window, configure your build settings as needed.
+3. Click **Build** and choose a location to save your first build.
+4. After the first build is done, return to the **Build Setting** window.
+5. Click **Build** again and choose a different location to save your second build.
+    * Alternatively, you can run the builds by:
+      - Launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
+      - Using the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
 
 After the client and server spawn, the player capsule moves in a circle on both the client and the server.
-
-## Test Hello World
-
-To check if everything works as expected, test starting a host in the Unity Editor. A host plays the role of a server and a client at the same time.
-
-You can test your Hello World project through the Unity Editor or a command line helper. If you choose the latter, refer to [Create a command line helper](command-line-helper). Otherwise, refer to the following instructions to test through the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
-
-1. Select **Play** from the top of the Unity Editor to start the scene.
-
-![](/img/get-started-ngo/ngo-8.png)
-
-2. Select **NetworkManager** from the **Hierarchy** list.
-
-![](\img\get-started-ngo\ngo-2.png)
-
-3. With **NetworkManager** selected (in the Hierarchy tab), select **Start Host** from the **Inspector** tab. Alternatively, you can use the in-game GUI buttons.
-
-![](/img/get-started-ngo/ngo-3.png)
-
-If it works correctly, the option to **Stop Host** displays in the **Inspector** tab.
