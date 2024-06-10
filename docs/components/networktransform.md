@@ -7,38 +7,39 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 ## Introduction
 
-The synchronization of an object's transform is one of the most common netcode tasks performed in multiplayer games today. The concept seems simple:
+The synchronization of an object's transform is one of the core netcode tasks. The outline of operations is simple:
 - Determine which transform axis you want to have synchronized
 - Serialize the values
 - Send the serialized values as messages to all other connected clients
 - Process the messages and deserialize the values
 - Apply the values to the appropriate axis
 
-At first pass glance the high level outlined tasks seem relatively simple, but when you start to implement each line item almost any veteran netcode software engineer will agree: _It can become complicated very quickly_.
-
-For example, the above itemized tasks don't take into consideration:
+Except the implementation is far more complicated than one might expect. For example, we need to take into consideration:
 - Who controls the synchronization (i.e. each client or the server or perhaps both depending upon the object being synchronized)?
-- How often do you synchronize the values and what logic should you use to determine when the values need to be synchronized?
-- If you have a complex parenting hierarchy (parents with one or more child transforms), should you synchronize world or local space axis values?
-- How can you optimize the bandwidth cost per transform update?
+- How often do you synchronize the values?
+- What logic should you use to determine when and which values need to be synchronized?
+- For objects with one or more child objects, should you synchronize world or local space axis values?
+- How can you optimize the bandwidth for a transform update?
 
-Fortunately, Netcode for GameObjects provides you withNetworkTransform component implementation that handles some of the trickier aspects of transform synchronization and is easily configurable by properties accessible via the in-editor inspector view.
+Fortunately, Netcode for GameObjects provides you with the NetworkTransform component. It handles many of the tricky aspects of transform synchronization and can be configured via Inspector properties.
 
-## Adding
+## Adding the component
 
-When adding a NetworkTransform component to a GameObject, you should always make sure the GameObject has a NetworkObject component attached to it or that the GameObject's transform parent is assigned to a GameObject with a NetworkObject component attached to it like in the image below:
+When adding a NetworkTransform component to a GameObject, it requires a NetworkObject on the same or a parent GameObject for it to function. 
+
+In this image both NetworkTransform and NetworkObject components are on the same GameObject:
 
 ![image](/img/NetworkTransformSimple.png)
 
-You can also have a parent GameObject that has a NetworkObject component attached to it with a child GameObject that has a NetworkTransform component like in the image below:
+Alternatively, a parent GameObject can have the NetworkObject component while the NetworkTransform is attached to a child object:
 
 ![image](/img/NetworkTransformSimpleParent.png)
 
-As well, you can have "nested NetworkTransforms" that are all associated with a single NetworkObject like in the image below:
+You can also have NetworkTransform components on several child objects, all sharing the same NetworkObject in their common parent object:
 
 ![image](/img/NetworkTransformNestedParent.png)
 
-With nested NetworkTransforms, you can (theoretically) have the (n) number of nested children each with NetworkTransform components.  _However, we recommend exercising caution with the amount of nested NetworkTransforms per network prefab instance if you plan on having many instances of that same network prefab per network session._
+With such nested NetworkTransforms you can theoretically have a NetworkTransform on every child object. _However, we recommend exercising caution with the amount of nested NetworkTransforms in a network prefab. Particularly if there will be many instances of this network prefab._
 
 
 :::tip
