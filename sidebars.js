@@ -132,8 +132,19 @@ module.exports = {
                     "id": "advanced-topics/networkobject-parenting"
                 },
                 {
-                    "type": "doc",
-                    "id": "basics/networkbehavior"
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "NetworkBehaviour",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "basics/networkbehavior"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "basics/networkbehavior-synchronize"
+                      },
+                    ]
                 },
                 {
                     "type": "doc",
