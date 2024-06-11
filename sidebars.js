@@ -144,6 +144,7 @@ module.exports = {
                           "type": "doc",
                           "id": "basics/networkbehavior-synchronize"
                       },
+                    ]
                 },
                 {
                     "type": "doc",
