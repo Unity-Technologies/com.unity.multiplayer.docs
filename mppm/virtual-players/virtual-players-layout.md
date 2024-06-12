@@ -4,7 +4,7 @@ title: Change the layout of a Virtual Player
 description: Learn how to change the layout of a Virtual Player window.
 ---
 
-You can display and use the following parts of the [Unity Interface](https://docs.unity3d.com/Manual/UsingTheEditor.html) in a Virtual Player:
+The Virtual Player can display the following parts of the [Unity Interface](https://docs.unity3d.com/Manual/UsingTheEditor.html):
 - [Console](https://docs.unity3d.com/Manual/Console.html)
 - [Game](https://docs.unity3d.com/Manual/GameView.html)
 - [Hierarchy](https://docs.unity3d.com/Manual/Hierarchy.html)
