@@ -22,7 +22,7 @@ To display a window in a Virtual Player, perform the following actions:
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
 2. Select the **Layout** dropdown.
-3. Check the box next to the window(s) you want to appear in this Virtual Player.
+3. Select the box next to the window(s) you want to add to this Virtual Player.
 4. Select **Apply**.
 
 ## Hide a window in a virtual player
