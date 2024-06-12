@@ -3,9 +3,13 @@ id: connection-approval
 title: Connection approval
 ---
 
-Connection approval allows you to decide for every new client connection attempt whether to allow the client to connect. You can also send additional payload data via connection approval to initialize the client. For instance you can use this data to have a client specify a custom player Prefab (see example below).
+Connection approval allows you to decide for every new client connection attempt whether to allow or deny the client to connect. 
 
-You can enable ConnectionApproval in the NetworkManager Inspector or by setting `NetworkManager.NetworkConfig.ConnectionApproval = true` in a script before starting the host/server. If connection appoval is not enabled, the callback is not invoked. But in both cases clients still have to pass internal authentication, to confirm that their NetworkConfig matches that of the server. 
+You can also send additional payload data via connection approval to initialize the client. For instance you can use this data to have a client specify a custom player Prefab (see example below).
+
+You have to enable ConnectionApproval in the NetworkManager Inspector or by setting `NetworkManager.NetworkConfig.ConnectionApproval = true` in a script before starting the host/server. If connection approval is not enabled, the `NetworkManager.ConnectionApprovalCallback` is not invoked. 
+
+In both cases clients also have to pass internal authentication, to confirm that their NetworkConfig matches that of the server. 
 
 ## `NetworkManager.ConnectionApprovalRequest`
 
