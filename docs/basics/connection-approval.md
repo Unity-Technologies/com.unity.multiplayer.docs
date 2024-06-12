@@ -3,9 +3,9 @@ id: connection-approval
 title: Connection approval
 ---
 
-With every new connection, Netcode for GameObjects performs a handshake in addition to handshakes done by the transport. This ensures that the NetworkConfig on the client matches the server's NetworkConfig. You can enable ConnectionApproval in the NetworkManager or via code by setting `NetworkManager.NetworkConfig.ConnectionApproval` to `true`. Connection approval allows you to decide, on a per connection basis, whether to allow a connection. You can also use connection approval to specify the player Prefab to create, allowing you to override the default NetworkManager-defined player Prefab on a per player basis.
+Connection approval allows you to decide for every new client connection attempt whether to allow the client to connect. You can also send additional payload data via connection approval to initialize the client. For instance you can use this data to have a client specify a custom player Prefab (see example below).
 
-When you set the ConnectionApproval property of the NetworkManager to true, Netcode for GameObjects checks to make sure the `NetworkManager.ConnectionApprovalCallback` has been assigned. If assigned, the connection approval process is used for connecting clients to decide whether to allow a connection or deny it. If you don't assign the `NetworkManager.ConnectionApprovalCallback` (even with the `NetworkManager.ConnectionApprovalCallback` set to `true`), Netcode for GameObjects uses basic authentication for the user, which automatically authorizes and assigns the default player Prefab.
+You can enable ConnectionApproval in the NetworkManager Inspector or by setting `NetworkManager.NetworkConfig.ConnectionApproval = true` in a script before starting the host/server. If connection appoval is not enabled, the callback is not invoked. But in both cases clients still have to pass internal authentication, to confirm that their NetworkConfig matches that of the server. 
 
 ## `NetworkManager.ConnectionApprovalRequest`
 
