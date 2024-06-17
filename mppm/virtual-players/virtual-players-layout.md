@@ -31,5 +31,5 @@ To hide a window in a Virtual Player, perform the following actions:
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
 2. Select the **Layout** dropdown.
-3. Select the checked box next to the window(s) you want to hide in this Virtual Player.
+3. Deselect the checked box next to the window(s) you want to hide in this Virtual Player.
 4. Select **Apply**.
