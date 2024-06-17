@@ -4,7 +4,7 @@ title: Change the layout of a Virtual Player
 description: Learn how to change the layout of a Vrtual Player window.
 ---
 
-You can display and use the following parts of the [Unity Interface](https://docs.unity3d.com/Manual/UsingTheEditor.html) in a Virtual Player:
+The Virtual Player can display and use the following parts of the [Unity Interface](https://docs.unity3d.com/Manual/UsingTheEditor.html) in a Virtual Player:
 - [Console](https://docs.unity3d.com/Manual/Console.html)
 - [Game](https://docs.unity3d.com/Manual/GameView.html)
 - [Hierarchy](https://docs.unity3d.com/Manual/Hierarchy.html)
@@ -21,7 +21,7 @@ To display a window in a Virtual Player, perform the following actions:
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
 2. Select the **Layout** drop down.
-3. Check the box next to the window(s) you want to appear in this Virtual Player.
+3. Select the box next to the window(s) you want to add to this Virtual Player.
 4. Select **Apply**.
 
 ## Hide a window in a virtual player

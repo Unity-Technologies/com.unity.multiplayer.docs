@@ -5,7 +5,7 @@ description: How to install Multiplayer Play Mode
 ---
 
 You can use Multiplayer Play Mode in Unity Editor versions 2023.1 or later.
-To install the Multiplayer Play Mode package, do the following.
+To install the Multiplayer Play Mode package, follow these steps:
 
 1. Open Unity Hub.
 2. Select a Project to open it.
