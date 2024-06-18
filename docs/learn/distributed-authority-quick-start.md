@@ -30,9 +30,6 @@ Before you begin, you need the following:
 
 ![connect unity cloud](/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
 
-:::note Access during alpha and beta
-During alpha and beta, you need to request access to the distributed authority service. To do so, provide your Unity contact with the ID of the Unity Cloud project you created.
-:::
 
 ## Netcode for GameObjects setup
 
