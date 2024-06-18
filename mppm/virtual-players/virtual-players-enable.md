@@ -6,7 +6,7 @@ description: Enable up to 3 additional Virtual Players to your Main Editor Playe
 
 To use a Virtual Player to test multiplayer gameplay, activate at least one Virtual Player.
 
-When you enable a Virtual Player, Unity creates a new local folder in  `C://Users/[YourName]/[ProjectName]Library/VP` that contains the data for each Virtual Player you activate. To remove this folder, delete it from your local files. 
+The first time you enable a Virtual Player Unity creates a new local folder in `C://Users/[YourName]/[ProjectName]Library/VP` that contains the data for each Virtual Player you activate. When you deactivate a Virtual Player, Unity caches its corresponding folder to use again when you re-activate it.
 
 :::info
 You can only attach **Player Tags** to inactive players (including the **Main Editor Player**). To use **Player Tags**, [create and configure your tags](../player-tags/player-tags-create.md) before you enable virtual players.
@@ -34,3 +34,7 @@ To deactivate a **Virtual Player**.
 
 1. In the Unity Editor, open the Multiplayer Play Mode window by navigating to **Window** > **Multiplayer Play Mode**.
 2. Deselect the checkbox for the active Virtual Player (**Player 2**, **Player 3**, or **Player 4**).
+
+:::note
+When you deactivate a Virtual Player, Unity doesn't delete its corresponding folder. To remove a Virtual Player folder, navigate to `C://Users/[YourName]/[ProjectName]Library/VP` and delete the folder for this Virtual Player. 
+:::
