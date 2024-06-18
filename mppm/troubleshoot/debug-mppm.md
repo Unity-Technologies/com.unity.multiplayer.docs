@@ -7,7 +7,7 @@ description: Learn how to test a player running in Multiplayer Play Mode
 Use the Test Runner included in the [Unity Test Framework (UTF)](https://docs.unity3d.com/Packages/com.unity.test-framework@2.0/manual/index.html) to test players in a multiplayer project.
 
 :::note: 
-Multiplayer Play Mode is compatible with Unity Editor versions 2023.1 or later.
+Multiplayer Play Mode version 1.1.0 is compatible with Unity Editor versions 6000.0.3f1 or later. Multiplayer Play mode versions 1.0.0 and earlier are compatible with Unity version 2023.1 or later.
 :::
 
 ## Test a player
