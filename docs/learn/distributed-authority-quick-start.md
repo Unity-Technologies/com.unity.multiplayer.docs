@@ -14,12 +14,6 @@ Before you begin, you need the following:
 - A supported version of the Unity 6 Editor. 
   - Additional requirements information can be found here: [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
-## Install packages
-
-- Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects **v2.0.0** package.
-- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
-
-
 ## Project setup
 
 1. Create a new Unity Project using the 3D template.
@@ -30,6 +24,10 @@ Before you begin, you need the following:
 
 ![connect unity cloud](/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
 
+## Install packages
+
+- Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects **v2.0.0** package.
+- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
 
 ## Netcode for GameObjects setup
 
