@@ -125,7 +125,7 @@ void Start ()
     var settings = new NetworkSettings();
     settings.WithSecureServerParameters(
         certificate: SecureParameters.MyGameServerCertificate,     
-        privateKey: SecureParameters.myGameServerPrivateKey);
+        privateKey: SecureParameters.MyGameServerPrivateKey);
 
     // ...
 }
@@ -149,7 +149,7 @@ The secure client is similar to the secure server. The only difference is in how
 void Start ()
 {
     var settings = new NetworkSettings();
-    settings.WithSecureServerParameters(
+    settings.WithSecureClientParameters(
         serverName: SecureParameters.ServerCommonName,     
         caCertificate: SecureParameters.MyGameClientCA);
     m_Driver = NetworkDriver.Create(settings);
