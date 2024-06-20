@@ -6,7 +6,7 @@ title: System requirements and compatibility
 The Multiplayer Play Mode package requires the following:
 
 - Unity Editor version 2023.1 or later.
-- An active Project in Unity Hub.
+- An active Project in the Unity Hub.
 
 ## Compatibility
 Multiplayer Play Mode is compatible with the following multiplayer packages and services: 
