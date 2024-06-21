@@ -12,7 +12,7 @@ Multiplayer Play Mode syncs the Main Editor and [Virtual Players](../virtual-pla
 | **Pause** | Pauses all activated Players (Main Editor and Virtual Players) |
 | **Step** | Performs a single-frame step for all activated Players (Main Editor and Virtual Players) |
 
-In the toolbar of the **Play Mode** window, you can adjust the layout with the **Layout** dropdown. You can select and deselect the **Console**, **Game**, **Hierarchy**, **Inspector**, and **Scene**. Select **Apply** to implement your changes to the layout.
+You can change the layout of the **Multiplayer Play Mode** window with the **Layout** dropdown. To learn more, refer to [Change the layout of a Virtual Player](virtual-players-layout).
 
 :::note
 If you enable Error Pause in the [Console](https://docs.unity3d.com/Manual/Console.html) toolbar of any Player, all Virtual Players pause when you call `Debug.LogError` from a script.
