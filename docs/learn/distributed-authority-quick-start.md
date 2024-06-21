@@ -62,6 +62,7 @@ public class ConnectionManager : MonoBehaviour
    private int _maxPlayers = 10;
    private ConnectionState _state = ConnectionState.Disconnected;
    private ISession _session;
+   private NetworkManager m_NetworkManager;
 
    private enum ConnectionState
    {
@@ -70,10 +71,29 @@ public class ConnectionManager : MonoBehaviour
        Connected,
    }
 
-   private async void Awake()
-   {
-       await UnityServices.InitializeAsync();
-   }
+    private async void Awake()
+    {
+        m_NetworkManager = GetComponent<NetworkManager>();
+        m_NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback;
+        m_NetworkManager.OnSessionOwnerPromoted += OnSessionOwnerPromoted;
+        await UnityServices.InitializeAsync();
+    }
+
+    private void OnSessionOwnerPromoted(ulong sessionOwnerPromoted)
+    {
+        if (m_NetworkManager.LocalClient.IsSessionOwner)
+        {
+            Debug.Log($"Client-{m_NetworkManager.LocalClientId} is the session owner!");
+        }
+    }
+
+    private void OnClientConnectedCallback(ulong clientId)
+    {
+        if (m_NetworkManager.LocalClientId == clientId)
+        {
+            Debug.Log($"Client-{clientId} is connected and can spawn {nameof(NetworkObject)}s.");
+        }
+    }
 
    private void OnGUI()
    {
