@@ -7,11 +7,11 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ## [1.2.0] - 2024-06-04
 
 ### Added
-- Added tool tips to the preferences window
+- Added tooltips to the preferences window
 
 ### Fixed
-- Fixed Multiplayer roles not displaying after reinstalling Dedicated Server Package
-- Fixed main view window, so it may not be shrunk destructively
+- Fixed an issue that hid Multiplayer roles when you reinstalled the Dedicated Server Package.
+- Fixed the main view window so that when you make it smaller the UI is not affected.
 
 ## [1.1.0] - 2024-04-24
 
