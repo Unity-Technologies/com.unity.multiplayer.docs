@@ -105,8 +105,9 @@ public class ConnectionManager : MonoBehaviour
            AuthenticationService.Instance.SwitchProfile(_profileName);
            await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
-            var options = new CreateSessionOptions(_maxPlayers) {
-                Name = _sessionName
+            var options = new SessionOptions {
+                Name = _sessionName,
+                MaxPlayers = _maxPlayers
             }.WithDistributedConnection();
 
             _session = await MultiplayerService.Instance.CreateOrJoinSessionAsync(_sessionName, options);
