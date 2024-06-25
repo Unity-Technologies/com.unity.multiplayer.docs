@@ -11,12 +11,8 @@ Before you begin, you need the following:
 
 - An active Unity account with a valid license.
 - The [Unity Hub](https://unity.com/download).
-- A supported version of the Unity Editor. Refer to the [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
-
-## Install packages
-
-- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
-- Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects package.
+- A supported version of the Unity 6 Editor.
+  - Additional requirements information can be found here: [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
 ## Project setup
 
@@ -28,14 +24,29 @@ Before you begin, you need the following:
 
 ![connect unity cloud](/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
 
-:::note Access during alpha and beta
-During alpha and beta, you need to request access to the distributed authority service. To do so, provide your Unity contact with the ID of the Unity Cloud project you created.
-:::
+## Install packages
+
+- Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects **v2.0.0** package.
+- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
+
+## Netcode for GameObjects setup
+
+1.  Using the SampleScene, add a new *Empty* object and name it *NetworkManager*.
+
+2. Attach a Network Manager component to it.
+![add network manager](/img/learn/distributed-authority-quick-start/network-manager.png)
+
+3. Under the Network Settings, set the **Network Topology** property to **Distributed Authority**.
+![set network topology](/img/learn/distributed-authority-quick-start/network-topology.png)
+
+4. Under **Network Transport**, select **UnityTransport** from the list of options to add.
+![use unity transport](/img/learn/distributed-authority-quick-start/unity-transport.png)
+
+5. Save any changes to your objects and scene.
 
 ## Connection setup
 
-1. Create a new script called *ConnectionManager.cs*. This script provides a user interface and connects to a distributed authority service session:
-
+1. Create a new script called *ConnectionManager.cs*. This script provides a user interface and the script logic required to connect to a distributed authority service session:
 ```cs
 using System;
 using System.Threading.Tasks;
@@ -51,6 +62,7 @@ public class ConnectionManager : MonoBehaviour
    private int _maxPlayers = 10;
    private ConnectionState _state = ConnectionState.Disconnected;
    private ISession _session;
+   private NetworkManager m_NetworkManager;
 
    private enum ConnectionState
    {
@@ -59,10 +71,29 @@ public class ConnectionManager : MonoBehaviour
        Connected,
    }
 
-   private async void Awake()
-   {
-       await UnityServices.InitializeAsync();
-   }
+    private async void Awake()
+    {
+        m_NetworkManager = GetComponent<NetworkManager>();
+        m_NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback;
+        m_NetworkManager.OnSessionOwnerPromoted += OnSessionOwnerPromoted;
+        await UnityServices.InitializeAsync();
+    }
+
+    private void OnSessionOwnerPromoted(ulong sessionOwnerPromoted)
+    {
+        if (m_NetworkManager.LocalClient.IsSessionOwner)
+        {
+            Debug.Log($"Client-{m_NetworkManager.LocalClientId} is the session owner!");
+        }
+    }
+
+    private void OnClientConnectedCallback(ulong clientId)
+    {
+        if (m_NetworkManager.LocalClientId == clientId)
+        {
+            Debug.Log($"Client-{clientId} is connected and can spawn {nameof(NetworkObject)}s.");
+        }
+    }
 
    private void OnGUI()
    {
@@ -122,70 +153,139 @@ public class ConnectionManager : MonoBehaviour
 }
 ```
 
-2. Attach this script to a new object in your scene.
-
+2. Add the `ConnectionManager` component script you created to the  *NetworkManager* object.
 ![add connection manager](/img/learn/distributed-authority-quick-start/create-connection-manager.png)
-
-## Netcode for GameObjects setup
-
-1. Create a new object in your scene called *NetworkManager*. Attach a Network Manager component to it.
-
-![add network manager](/img/learn/distributed-authority-quick-start/network-manager.png)
-
-2. Set **Session Mode** to **Distributed Authority**.
-
-![set session mode](/img/learn/distributed-authority-quick-start/session-mode.png)
-
-3. Under **Network Transport**, select **UnityTransport** from the list of options to add.
-
-![use unity transport](/img/learn/distributed-authority-quick-start/unity-transport.png)
-
-4. Save any changes to your objects and scene.
 
 ## Adding gameplay
 
 1. Create a new Script called *PlayerCubeController.cs*:
-
 ```cs
-using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
-
-public class PlayerCubeController : NetworkBehaviour
+#if UNITY_EDITOR
+using Unity.Netcode.Editor;
+using UnityEditor;
+/// <summary>
+/// The custom editor for the <see cref="PlayerCubeController"/> component.
+/// </summary>
+[CustomEditor(typeof(PlayerCubeController), true)]
+public class PlayerCubeControllerEditor : NetworkTransformEditor
 {
-   public float speed = 20;
+    private SerializedProperty m_Speed;
+    private SerializedProperty m_ApplyVerticalInputToZAxis;
 
-   private NetworkTransform _transform;
 
-   private void Start()
-   {
-       _transform = GetComponent<NetworkTransform>();
-   }
+    public override void OnEnable()
+    {
+        m_Speed = serializedObject.FindProperty(nameof(PlayerCubeController.Speed));
+        m_ApplyVerticalInputToZAxis = serializedObject.FindProperty(nameof(PlayerCubeController.ApplyVerticalInputToZAxis));
+        base.OnEnable();
+    }
 
-   private void Update()
-   {
-       var movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-       _transform.transform.position += movement * speed * Time.deltaTime;
-   }
+
+    public override void OnInspectorGUI()
+    {
+        var playerCubeController = target as PlayerCubeController;
+
+
+        playerCubeController.PlayerCubeControllerPropertiesVisible = EditorGUILayout.BeginFoldoutHeaderGroup(playerCubeController.PlayerCubeControllerPropertiesVisible, $"{nameof(PlayerCubeController)} Properties");
+        if (playerCubeController.PlayerCubeControllerPropertiesVisible)
+        {
+            EditorGUILayout.PropertyField(m_Speed);
+            EditorGUILayout.PropertyField(m_ApplyVerticalInputToZAxis);
+        }
+        EditorGUILayout.EndFoldoutHeaderGroup();
+
+
+        EditorGUILayout.Space();
+
+
+        playerCubeController.NetworkTransformPropertiesVisible = EditorGUILayout.BeginFoldoutHeaderGroup(playerCubeController.NetworkTransformPropertiesVisible, $"{nameof(NetworkTransform)} Properties");
+        if (playerCubeController.NetworkTransformPropertiesVisible)
+        {
+            // End the header group prior to invoking the base OnInspectorGUID in order to avoid nested
+            // foldout groups.
+            EditorGUILayout.EndFoldoutHeaderGroup();
+            // If NetworkTransform properties are visible, then both the properties any modified properties
+            // will be applied.
+            base.OnInspectorGUI();
+        }
+        else
+        {
+            // End the header group
+            EditorGUILayout.EndFoldoutHeaderGroup();
+            // If NetworkTransform properties are not visible, then make sure we apply any modified properties.
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
+}
+#endif
+
+
+public class PlayerCubeController : NetworkTransform
+{
+#if UNITY_EDITOR
+    // These bool properties ensure that any expanded or collapsed property views
+    // within the inspector view will be saved and restored the next time the
+    // asset/prefab is viewed.
+    public bool PlayerCubeControllerPropertiesVisible;
+    public bool NetworkTransformPropertiesVisible;
+#endif
+
+
+    public float Speed = 10;
+    public bool ApplyVerticalInputToZAxis;
+
+
+    private Vector3 m_Motion;
+
+
+    private void Update()
+    {
+        // If not spawned or we don't have authority, then don't update
+        if (!IsSpawned || !HasAuthority)
+        {
+            return;
+        }
+
+
+        // Handle acquiring and applying player input
+        m_Motion = Vector3.zero;
+        m_Motion.x = Input.GetAxis("Horizontal");
+
+
+        // Determine whether the vertical input is applied to the Y or Z axis
+        if (!ApplyVerticalInputToZAxis)
+        {
+            m_Motion.y = Input.GetAxis("Vertical");
+        }
+        else
+        {
+            m_Motion.z = Input.GetAxis("Vertical");
+        }
+
+
+        // If there is any player input magnitude, then apply that amount of
+        // motion to the transform
+        if (m_Motion.magnitude > 0)
+        {
+            transform.position += m_Motion * Speed * Time.deltaTime;
+        }
+    }
 }
 ```
-
-2. Create a new prefab called *PlayerCube* and open it for editing.
-    - Attach the *PlayerCubeController* to the prefab. When prompted to add a NetworkObject, select **Yes**.
-    - Attach a Network Transform component as well. Make sure all the **Ownership** flags are unchecked.
-
-![setup network transform](/img/learn/distributed-authority-quick-start/network-transform.png)
-
-3. Attach a child object in the prefab. Select the root of the prefab, right-click, and select **3D Object > Cube**.
-
-![add the cube](/img/learn/distributed-authority-quick-start/create-cube.png)
-
-4. Save all changes to the prefab.
-
-5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be **PlayerCube**.
-
-![set the prefab](/img/learn/distributed-authority-quick-start/player-cube.png)
-
+2. In the open *SampleScene*, create a 3D cube and name it *PlayerCube*.
+![create PlayerCube object](/img/learn/distributed-authority-quick-start/player-cube.png)
+3. Add a `NetworkObject` component to the *PlayerCube*.
+![add a NetworkObject component](/img/learn/distributed-authority-quick-start/add-networkobject.png)
+4. Add the *PlayerCubeController* to the *PlayerCube*.
+![add the PlayerCubeController component](/img/learn/distributed-authority-quick-start/add-playercubecontroller.png)
+5. Create a Prefabs folder in the root Assets folder.
+6. Drag and drop the *PlayerCube* object into the newly created Prefabs folder.
+![create the player cube prefab](/img/learn/distributed-authority-quick-start/create-playercube-prefab.png)
+6. Delete the *PlayerCube* object from your scene.
+5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created *PlayerCube*.
+![set the default player prefab](/img/learn/distributed-authority-quick-start/assign-default-player-prefab.png)
 6. Save all changes to the scene.
 
 ## Next steps
