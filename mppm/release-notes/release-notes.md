@@ -31,7 +31,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 - The escape key no longer closes virtual player windows on Windows devices.
 - Fixed issues with heartbeat timeout.
 - Removed the forward slash **/** character from tags because it's for drop-down behavior only.
-  
+
 ## [1.0.0] - 2024-03-12
 
 ### Added
