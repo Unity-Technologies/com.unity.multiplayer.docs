@@ -11,7 +11,7 @@ Before you begin, you need the following:
 
 - An active Unity account with a valid license.
 - The [Unity Hub](https://unity.com/download).
-- A supported version of the Unity 6 Editor. 
+- A supported version of the Unity 6 Editor.
   - Additional requirements information can be found here: [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
 ## Project setup
@@ -36,7 +36,7 @@ Before you begin, you need the following:
 2. Attach a Network Manager component to it.
 ![add network manager](/img/learn/distributed-authority-quick-start/network-manager.png)
 
-3. Under the Network Settings, set the **Network Topology** property **Distributed Authority**.
+3. Under the Network Settings, set the **Network Topology** property to **Distributed Authority**.
 ![set network topology](/img/learn/distributed-authority-quick-start/network-topology.png)
 
 4. Under **Network Transport**, select **UnityTransport** from the list of options to add.
@@ -225,7 +225,7 @@ public class PlayerCubeControllerEditor : NetworkTransformEditor
 public class PlayerCubeController : NetworkTransform
 {
 #if UNITY_EDITOR
-    // These bool properties will assure any expanded or collapsed property views
+    // These bool properties ensure that any expanded or collapsed property views
     // within the inspector view will be saved and restored the next time the
     // asset/prefab is viewed.
     public bool PlayerCubeControllerPropertiesVisible;
@@ -274,19 +274,18 @@ public class PlayerCubeController : NetworkTransform
     }
 }
 ```
-2. In the *SampleScene* opened, create a 3D cube and name it *PlayerCube*.
+2. In the open *SampleScene*, create a 3D cube and name it *PlayerCube*.
 ![create PlayerCube object](/img/learn/distributed-authority-quick-start/player-cube.png)
 3. Add a `NetworkObject` component to the *PlayerCube*.
 ![add a NetworkObject component](/img/learn/distributed-authority-quick-start/add-networkobject.png)
 4. Add the *PlayerCubeController* to the *PlayerCube*.
 ![add the PlayerCubeController component](/img/learn/distributed-authority-quick-start/add-playercubecontroller.png)
 5. Create a Prefabs folder in the root Assets folder.
-6. Drag and drop the PlayerCube object into the newly created Prefabs folder.
+6. Drag and drop the *PlayerCube* object into the newly created Prefabs folder.
 ![create the player cube prefab](/img/learn/distributed-authority-quick-start/create-playercube-prefab.png)
 6. Delete the *PlayerCube* object from your scene.
-5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created **PlayerCube**.
+5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created *PlayerCube*.
 ![set the default player prefab](/img/learn/distributed-authority-quick-start/assign-default-player-prefab.png)
-
 6. Save all changes to the scene.
 
 ## Next steps
