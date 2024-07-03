@@ -4,15 +4,6 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
-## [1.2.0] - 2024-06-04
-
-### Added
-- Added tooltips to the preferences window
-
-### Fixed
-- Fixed an issue that hid Multiplayer roles when you reinstalled the Dedicated Server Package.
-- Fixed the main view window so that when you make it smaller the UI is not affected.
-
 ## [1.1.0] - 2024-04-24
 
 ### Added
@@ -31,7 +22,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 - The escape key no longer closes virtual player windows on Windows devices.
 - Fixed issues with heartbeat timeout.
 - Removed the forward slash **/** character from tags because it's for drop-down behavior only.
-
+  
 ## [1.0.0] - 2024-03-12
 
 ### Added
