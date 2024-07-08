@@ -11,9 +11,9 @@ To install the Multiplayer Play Mode package, follow these steps:
 2. Select a Project to open it.
 3. In the Editor's menu bar, navigate to **Window** > **Package Manager**.
 4. Select **Unity Registry**.
-5. Select the **Multiplayer Play Mode** package. 
+5. Select the **Multiplayer Play Mode** package.
 6. Select **Install**.
 
 ## Next steps
 
-You can now access and configure your [Virtual Players](../virtual-players) and their [Player Tags](../player-tags).
+You can now access and configure your [Virtual Players](../virtual-players) and their [tags](../player-tags).

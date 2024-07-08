@@ -19,7 +19,7 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Create Player Tags",
+      "label": "Create tags",
       "link": {
         "type": "doc",
         "id": "player-tags/player-tags"
