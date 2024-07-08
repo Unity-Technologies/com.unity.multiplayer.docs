@@ -31,7 +31,7 @@ The `NetworkSceneManager` lives within the `NetworkManager` and is instantiated 
 -  From within a `NetworkBehaviour` derived component, you can access it by using `NetworkManager.SceneManager`
 -  From anything else that does not already have a reference to `NetworkManager`, you can access it using `NetworkManager.Singleton.SceneManager`.
 
-**Here are some genral rules about accessing and using `NetworkSceneManager`:**
+**Here are some general rules about accessing and using `NetworkSceneManager`:**
 - Don't try to access the `NetworkSceneManager` when the `NetworkManager` is shutdown (it won't exist).
   - The `NetworkSceneManager` is only instantiated when a `NetworkManager` is started.
 - As a server:
