@@ -9,6 +9,9 @@ Use Multiplayer Play Mode to test multiplayer functionality within the Unity Edi
 ## Compatibility
 Multiplayer Play Mode version 1.0.0 is compatible with Unity Editor versions 2023.1 or later.
 
+## Compatibility
+Multiplayer Play Mode version 1.0.0 is compatible with Unity Editor versions 2023.1 or later.
+
 ## Multiplayer Play Mode terminology
 
 The following have specific meaning in relation to Multiplayer Play Mode:
@@ -27,6 +30,7 @@ The Unity Editor and Virtual Players require a lot of system resources, so you s
 
 ### Authoring
 You can't create or change the properties of GameObjects in a Virtual Player. Instead, use the main Editor Player to make changes and a Virtual Player to test multiplayer functionality. Any changes you make in Play Mode in the main Editor Player reset when you exit Play Mode.
+
 :::note
 You can't access any main Editor Player functionality from Virtual Players.
 :::

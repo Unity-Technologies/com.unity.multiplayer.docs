@@ -19,5 +19,3 @@ This section contains the following information:
 | [Activate a Virtual Player](../virtual-Players/virtual-Players-enable)   | Set up virtual Players.         |
 | [Focus the multiplayer Play Mode view on a virtual Player](../virtual-Players/virtual-Players-focus) | Switch the multiplayer Play Mode view between Players. |
 | [Change the layout of a Virtual Player](../virtual-Players/virtual-Players-layout)| Control which parts of the [Unity Interface](https://docs.unity3d.com/Manual/UsingTheEditor.html) appear in a Virtual Player. |
-
-

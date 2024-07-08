@@ -18,7 +18,7 @@ You can only use the Hierarchy, Inspector, and Scene windows in Play Mode.
 
 ## Display a window in a Virtual Player
 
-To display a window in a Virtual Player, perform the following actions: 
+To display a window in a Virtual Player, perform the following actions:
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
 2. Select the **Layout** dropdown.
@@ -27,7 +27,7 @@ To display a window in a Virtual Player, perform the following actions:
 
 ## Hide a window in a Virtual Player
 
-To hide a window in a Virtual Player, perform the following actions: 
+To hide a window in a Virtual Player, perform the following actions:
 
 1. [Activate](../virtual-players/virtual-players-enable) a Virtual Player.
 2. Select the **Layout** dropdown.

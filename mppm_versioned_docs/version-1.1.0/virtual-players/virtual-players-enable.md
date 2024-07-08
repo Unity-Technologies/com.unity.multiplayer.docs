@@ -36,5 +36,5 @@ To deactivate a Virtual Player.
 2. Deselect the checkbox for the active Virtual Player (**Player 2**, **Player 3**, or **Player 4**).
 
 :::note
-When you deactivate a Virtual Player, Unity doesn't delete its corresponding folder. To remove a Virtual Player folder, navigate to `C://Users/[YourName]/[ProjectName]Library/VP` and delete the folder for this Virtual Player. 
+When you deactivate a Virtual Player, Unity doesn't delete its corresponding folder. To remove a Virtual Player folder, navigate to `C://Users/[YourName]/[ProjectName]Library/VP` and delete the folder for this Virtual Player.
 :::
