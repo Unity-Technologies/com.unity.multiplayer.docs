@@ -12,6 +12,7 @@ Multiplayer Play Mode syncs the Main Editor and [Virtual Players](../virtual-pla
 | **Pause** | Pauses all activated Players (Main Editor and Virtual Players) |
 | **Step** | Performs a single-frame step for all activated Players (Main Editor and Virtual Players) |
 
+
 You can change the layout of the **Multiplayer Play Mode** window with the **Layout** dropdown. To learn more, refer to [Change the layout of a Virtual Player](virtual-players-layout).
 
 :::note
