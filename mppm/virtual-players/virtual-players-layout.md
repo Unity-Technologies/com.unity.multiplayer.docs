@@ -16,7 +16,7 @@ The Virtual Player can display and use the following parts of the [Unity Interfa
 You can only use the Hierarchy, Inspector, and Scene windows in Play Mode.
 :::
 
-## Display a window in a virtual player
+## Display a window in a Virtual Player
 
 To display a window in a Virtual Player, perform the following actions: 
 
@@ -25,7 +25,7 @@ To display a window in a Virtual Player, perform the following actions:
 3. Select the box next to the window(s) you want to add to this Virtual Player.
 4. Select **Apply**.
 
-## Hide a window in a virtual player
+## Hide a window in a Virtual Player
 
 To hide a window in a Virtual Player, perform the following actions: 
 

@@ -16,4 +16,4 @@ To install the Multiplayer Play Mode package, follow these steps:
 
 ## Next steps
 
-You can now access and configure your [Virtual Players](../virtual-players) and their [Player Tags](../player-tags).
+You can now access and configure your [Virtual Players](../virtual-players) and their [tags](../player-tags).

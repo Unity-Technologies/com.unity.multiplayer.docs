@@ -1,7 +1,7 @@
 ---
 id: troubleshooting
 title: Troubleshooting
-description: Learn how to use Player Tags to configure player actions in Multiplayer Play Mode.
+description: Learn how to use tags to configure player actions in Multiplayer Play Mode.
 ---
 
 This section contains information to help you test, debug, and fix issues with Multiplayer Play Mode.

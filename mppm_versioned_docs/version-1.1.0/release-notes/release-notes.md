@@ -8,18 +8,18 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 
 ### Added
 - Added a new layout option to each Multiplayer Play Mode clone in projects that include the Netcode For Entities package.
-- Updated the **Close** button to display a warning dialog prompt that deactivates a virtual player.
+- Updated the **Close** button to display a warning dialog prompt that deactivates a virtual Player.
 - Added the mute setting to mute specific users.
 - Added a setting that changes the Asset Database refresh timeout.
-- Updated the focus shortcut behavior to focus on other individual virtual player windows from inside an individual player.
+- Updated the focus shortcut behavior to focus on other individual virtual Player windows from inside an individual Player.
 - Updated the message that appears when a Symlink failure (on FAT32) happens because it isn't supported.
 
 ### Fixed
 - The local clone cache clears automatically when you update the Multiplayer Play Mode package.
 - Fixed a crash caused by devices set to certain regions.
-- Changed the default multiplayer role of player clones to Client and Server.
+- Changed the default multiplayer role of Player clones to Client and Server.
 - Added a minimum width for the main view of the Multiplayer Play Mode window.
-- The escape key no longer closes virtual player windows on Windows devices.
+- The escape key no longer closes virtual Player windows on Windows devices.
 - Fixed issues with heartbeat timeout.
 - Removed the forward slash **/** character from tags because it's for drop-down behavior only.
   
@@ -50,9 +50,9 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 
 ### Features
 
-- Can now focus player with hotkeys (CTRL+F9-F12).
+- Can now focus Player with hotkeys (CTRL+F9-F12).
 - Just show the layout view toggles as disabled during playmode.
-- Automatically focus players after activating.
+- Automatically focus Players after activating.
 
 ## [0.5.0] - 2023-09-27
 
@@ -70,7 +70,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 
 ### Fixed
 
-- Fixed an issue where a player could still show up as active after it had exited.
+- Fixed an issue where a Player could still show up as active after it had exited.
 - Fixed an issue where you could have multiple add tag views.
 - Fixed an issue where `CurrentPlayer.ReadOnlyTag` would not return the correct value when domain reload on play mode is disabled.
 - Fixed an issue where clones were crashing when scrolling mouse over menu top bar
@@ -78,20 +78,20 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Features
 
 - Debug workflows now has dynamic layouts that persist between runs.
-- Players that are unresponsive will now result in a prompt appearing in the main editor asking if they should be restarted. (Only on Windows for now.)
-- Now support for content selection in your players (Requires dedicated server package to be installed).
+- Players that are unresponsive will now result in a prompt appearing in the main Editor Player asking if they should be restarted. (Only on Windows for now.)
+- Now support for content selection in your Players (Requires dedicated server package to be installed).
 
 ## [0.3.0] - 2023-07-26
 
 ### Fixed
 
 - Fixed PlayerTags starting and ending with whitespace.
-- Fixed handling of relative paths in the package.json of a player.
+- Fixed handling of relative paths in the package.json of a Player.
 
 ### Features
 
-- Can now have your players reboot if they fail to import or stop unexpectedly (e.g. crash). A prompt will appear asking what action to take.
-- Debugging workflows is now enabled (giving users more access to the editor in players). It can be accessed by using the Layout Dropdown in the top left of a player to enable more views (Scene, Game, etc).
+- Can now have your Players reboot if they fail to import or stop unexpectedly (e.g. crash). A prompt will appear asking what action to take.
+- Debugging workflows is now enabled (giving users more access to the editor in Players). It can be accessed by using the Layout Dropdown in the top left of a Player to enable more views (Scene, Game, etc).
 - Can disable Multiplayer Play Mode in settings.
 - Updated Tag to be ReadOnlyTag to better communicate how tags as a feature works.
 
@@ -100,15 +100,15 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Fixed
 
 * Fixed null exception when loading into a new scene with unsaved changes.
-* Fixed exception triggered on players when changing scene in play mode.
+* Fixed exception triggered on Players when changing scene in play mode.
 * Updated text to "Show in Finder" on MacOS for revealing Players location on disk.
 * Fixed issues with the Asset Database syncing.
 
 ### Features
 
 * Display a message to the console log when opening Clones that don't have the required symlinked folders.
-* Trigger play mode for clones before main editor starts entering play mode.
-* Clone players will have the same behaviour as the main editor regarding the "Stop playing and compile" option.
+* Trigger play mode for clones before main Editor Player starts entering play mode.
+* Clone Players will have the same behaviour as the main Editor Player regarding the "Stop playing and compile" option.
 
 ## [0.1.1] - 2023-01-26
 
@@ -131,7 +131,7 @@ This release adds the Multiplayer Play Mode, which is a multiplayer development 
 ### Known issues
 
 * Player windows can't be reopened if they're closed during Play Mode
-* Virtual Players can remain in Play Mode after the Main Editor has exited in certain circumstances, such as if script changes are made during Play Mode and the “Stop Playing and Recompile” option is active.
+* Virtual Players can remain in Play Mode after the main Editor Player has exited in certain circumstances, such as if script changes are made during Play Mode and the “Stop Playing and Recompile” option is active.
 * Entering Play Mode with multiple scenes open isn't currently supported
 * Virtual Players lose some Game view settings, such as Aspect Ratio, when exiting and entering Play Mode
 * Opening a Virtual Player with unresolved script updater issues will cause an API Update prompt to appear
