@@ -4,19 +4,6 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
-## [1.3.0-exp.2] - 2024-07-03
-
-## Fixed
-- Fixed an issue to make the **Stream logs to main editor** property work in local instances.
-
-## [1.3.0-exp.1] - 2024-06-24
-
-### Added
-- Added the Playmode Scenarios window that you can use to configure Editor, local and remote instances.
-
-### Fixed
-- No longer hit an exception when launching the standalone profiler.
-
 ## [1.2.0] - 2024-06-04
 
 ### Added
