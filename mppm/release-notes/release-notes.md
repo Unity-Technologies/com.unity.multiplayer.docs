@@ -6,7 +6,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 
 ## [1.3.0-exp.2] - 2024-07-03
 
-## Fixed
+### Fixed
 - Fixed an issue to make the **Stream logs to main editor** property work in local instances.
 
 ## [1.3.0-exp.1] - 2024-06-24
