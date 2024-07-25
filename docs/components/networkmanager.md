@@ -19,7 +19,7 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 - **Force Same Prefabs**: When checked it will always verify that connecting clients have the same registered network prefabs as the server.  When not checked, Netcode for GameObjects will ignore any differences.
 - **Recycle Network Ids**: When checked this will re-use previously assigned `NetworkObject.NetworkObjectIds` after the specified period of time.
 - **Network Id Recycle Delay**: The time it takes for a previously assigned but currently unassigned identifier to be available for use.  
-- **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
+- **Enable Scene Management**: When checked, Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, you will have to create your own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
 
 ### `NetworkManager` sub-systems
