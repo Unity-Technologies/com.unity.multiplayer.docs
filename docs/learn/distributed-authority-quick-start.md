@@ -16,9 +16,7 @@ Before you begin, you need the following:
 
 ## Project setup
 
-1. Create a new Unity Project using the 3D template.
-
-![new unity project](/img/learn/distributed-authority-quick-start/new-project.png)
+1. Create a new Unity Project using the __3D__ template.
 
 2. Ensure that the project is connected to a Unity Cloud project.
 
