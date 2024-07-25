@@ -30,13 +30,17 @@ module.exports = {
                     type: 'doc',
                     id: 'virtual-players/virtual-players-focus'
                 },
+                {
+                    type: 'doc',
+                    id: 'virtual-players/virtual-players-layout'
+                },
             ]
 
         },
         {
             collapsed: true,
             type: 'category',
-            label: 'Player Tags',
+            label: 'Information about tags',
             link: {type: 'doc', id: 'player-tags/player-tags'},
             items: [
                 {
@@ -46,7 +50,7 @@ module.exports = {
                 {
                     collapsed: true,
                     type: 'category',
-                    label: 'Configure Player Tags',
+                    label: 'Configure tags',
                     link: {type: 'doc', id: 'player-tags/player-tags-configure'},
                     items: [
                     {
