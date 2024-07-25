@@ -27,7 +27,7 @@ Before you begin, you need the following:
 ## Install packages
 
 - Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects **v2.0.0** package.
-- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
+- Install the latest `com.unity.services.multiplayer` Multiplayer Services SDK package.
 
 ## Netcode for GameObjects setup
 
