@@ -52,7 +52,7 @@ For more information, check out [Release Notes](release-notes/ngo-changelog.md) 
 
 Netcode for GameObjects supports the following versions:
 
-- Unity 2021.3 and later
+- Unity 6.0+ and later
 - Mono and IL2CPP [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html)
 
 Netcode for GameObjects supports the following platforms:
