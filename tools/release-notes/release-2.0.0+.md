@@ -9,7 +9,7 @@ description: Release notes for Multiplayer Tools including new features, updates
 
 ### General
 
-- Increased minimum version to 6000.0 and later.
+- Increased minimum required version of Unity to 6000.0 and later.
 
 ## [2.1.0] - 2023-11-21
 
