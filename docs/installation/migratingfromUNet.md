@@ -51,7 +51,7 @@ The [Community Contributions Extension Package](https://github.com/Unity-Technol
 
 ## Replace NetworkIdentity with NetworkObject
 
-UNet's `NetworkIdentity` is called `NetworkObject` in Netcode for GameObjects and works in a similar way.
+UNet's `NetworkIdentity` is called NetworkObject in Netcode for GameObjects and works in a similar way.
 
 ## Replace UNet NetworkTransform with Netcode NetworkTransform
 

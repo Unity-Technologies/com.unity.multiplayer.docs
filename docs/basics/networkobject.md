@@ -7,7 +7,7 @@ A NetworkObject is a [GameObject](https://docs.unity3d.com/Manual/GameObjects.ht
 
 Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../object-spawning), and [`NetworkVariable`](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
 
-  1. `NetworkObject`
+  1. NetworkObject
   2. [`NetworkBehaviour`](networkbehaviour.md)
 
 NetworkObjects require the use of specialized [`NetworkObjectReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html) structures before you can serialize and use them with RPCs and `NetworkVariable`s.
@@ -36,7 +36,7 @@ The default `NetworkObject.Spawn` method assumes server-side ownership:
 GetComponent<NetworkObject>().Spawn();
 ```
 
-To spawn `NetworkObject`s with ownership use the following:
+To spawn NetworkObjects with ownership use the following:
 
 ```csharp
 GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
@@ -110,7 +110,7 @@ However, when you want to limit which prefabs are available (for example, to red
 
 :::warning
 
-You can only have one `NetworkObject` at the root of a prefab. Don't create prefabs with nested `NetworkObjects`.
+You can only have one NetworkObject at the root of a prefab. Don't create prefabs with nested `NetworkObjects`.
 
 :::
 
@@ -118,7 +118,7 @@ You can only have one `NetworkObject` at the root of a prefab. Don't create pref
 
 ![image](/img/SpawnWithObservers.png)
 
-The `NetworkObject.SpawnWithObservers` property (default is true) enables you to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
+The `NetworkObject.SpawnWithObservers` property (default is true) enables you to spawn a NetworkObject with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the NetworkObject in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
 
 ## Transform synchronization
 

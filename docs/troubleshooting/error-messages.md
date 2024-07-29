@@ -18,7 +18,7 @@ Error messages are captured and returned through Unity Editor Diagnostics (requi
 * `Can't find pending soft sync object. Is the projects the same? UnityEngine.Debug:LogError(Object)`
 * `ArgumentNullException: Can't spawn null object  Parameter name: netObject`
 
-This exception should only occur if your scenes aren't the same, for example if the scene of your server has a `NetworkObject` which isn't present in the client scene. Verify the scene objects work correctly by entering playmode in both editors. 
+This exception should only occur if your scenes aren't the same, for example if the scene of your server has a NetworkObject which isn't present in the client scene. Verify the scene objects work correctly by entering playmode in both editors. 
 
 ## ServerRPC errors
 

@@ -31,7 +31,7 @@ NullReferenceException: Object reference not set to an instance of an object
 NullReferenceException: Object reference not set to an instance of an object
 ```
 
-**Solution:** You most likely forgot to `Spawn()` your object. Run `Spawn()` on your `NetworkObject` component as the server to fix this issue.
+**Solution:** You most likely forgot to `Spawn()` your object. Run `Spawn()` on your NetworkObject component as the server to fix this issue.
 
 ## Server build is using 100% CPU
 

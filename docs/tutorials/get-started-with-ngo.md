@@ -332,7 +332,7 @@ Client Received the RPC #3 on NetworkObject #1
 ...
 ```
 
-Only the client owning the `NetworkObject` owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log RPCs received once per `NetworkObject` per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
+Only the client owning the NetworkObject owning the `RpcTest` script will send RPCs on the server, but they will all receive RPCs from the server. This means that if you test with multiple clients the consoles will log RPCs received once per NetworkObject per iteration on the server and all clients. If testing with a host and a client, you will see the following on the host's **Console**. This is because as a server it will receive the other client's server RPCs and as a client it will also receive its own client RPCs.
 
 ```log
 Server Received the RPC #0 on NetworkObject #2
@@ -425,7 +425,7 @@ For multiplayer games, every object runs on at least two machines: player one an
         }
 ```
 
-Any `MonoBehaviour` implementing a NetworkBehaviour component can override the Netcode for GameObjects method `OnNetworkSpawn()`. The `OnNetworkSpawn()` method fires in response to the `NetworkObject` spawning. The `HelloWorldPlayer` class overrides `OnNetworkSpawn` because clients and the server run different logic. You can override this behavior on any NetworkBehaviour component.
+Any `MonoBehaviour` implementing a NetworkBehaviour component can override the Netcode for GameObjects method `OnNetworkSpawn()`. The `OnNetworkSpawn()` method fires in response to the NetworkObject spawning. The `HelloWorldPlayer` class overrides `OnNetworkSpawn` because clients and the server run different logic. You can override this behavior on any NetworkBehaviour component.
 
 Because the server and client can be the same machine and the Player's owner (aka Host), you want further to differentiate the two and have different Move behavior for each.
 
