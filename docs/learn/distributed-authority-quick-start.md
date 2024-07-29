@@ -135,7 +135,7 @@ public class ConnectionManager : MonoBehaviour
             var options = new SessionOptions() {
                 Name = _sessionName,
                 MaxPlayers = _maxPlayers
-            }.WithDistributedConnection();
+            }.WithDistributedAuthorityNetwork();
 
             _session = await MultiplayerService.Instance.CreateOrJoinSessionAsync(_sessionName, options);
 

@@ -5,12 +5,6 @@ title: Multiplayer Tools 2.0.0+
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
-## [2.2.0] - 2024-07-24
-
-### General
-
-- Increased minimum required version of Unity to 6000.0 and later.
-
 ## [2.1.0] - 2023-11-21
 
 ### General
