@@ -238,10 +238,10 @@ While the above example isn't the recommended way to synchronize a list where th
 
 You can test the code above by:
 - Using the above code with a project that includes Netcode for GameObjects v1.0 (or higher).
-- Adding the `TestMyCustomNetworkVariable` component to an in-scene placed `NetworkObject`.
+- Adding the `TestMyCustomNetworkVariable` component to an in-scene placed NetworkObject.
 - Creating a stand alone build and running that as a host or server.
 - Running the same scene within the Editor and connecting as a client.
-    - Once connected, you can then select the `GameObject` with the attached `NetworkObject` and `TestMyCustomNetworkVariable` components so it appears in the inspector view. There you can verify the `TestMyCustomNetworkVariable.CustomNetworkVariable` property was synchronized with the client (like in the screenshot below):
+    - Once connected, you can then select the `GameObject` with the attached NetworkObject and `TestMyCustomNetworkVariable` components so it appears in the inspector view. There you can verify the `TestMyCustomNetworkVariable.CustomNetworkVariable` property was synchronized with the client (like in the screenshot below):
     ![ScreenShot](/img/MyCustomNetworkVariableInspectorView.png)
 
 :::caution

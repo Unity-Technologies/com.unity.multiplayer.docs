@@ -17,7 +17,7 @@ You can register your own spawn handlers by including the `INetworkPrefabInstanc
         void Destroy(NetworkObject networkObject);
     }
 ```
-Netcode will use the `Instantiate` and `Destroy` methods in place of default spawn handlers for the `NetworkObject` used during spawning and despawning.  Because the message to instantiate a new `NetworkObject` originates from a Host or Server, both won't have the Instantiate method invoked. All clients (excluding a Host) will have the instantiate method invoked if the `INetworkPrefabInstanceHandler` implementation is  registered with `NetworkPrefabHandler` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated `NetworkObject`.
+Netcode will use the `Instantiate` and `Destroy` methods in place of default spawn handlers for the NetworkObject used during spawning and despawning.  Because the message to instantiate a new NetworkObject originates from a Host or Server, both won't have the Instantiate method invoked. All clients (excluding a Host) will have the instantiate method invoked if the `INetworkPrefabInstanceHandler` implementation is  registered with `NetworkPrefabHandler` (`NetworkManager.PrefabHandler`) and a Host or Server spawns the registered/associated NetworkObject.
 
 The following example is from the Boss Room Sample. It shows how object pooling is used to handle the different projectile objects. In that example, the class `NetworkObjectPool` is the data structure containing the pooled objects and the class `PooledPrefabInstanceHandler` is the handler implementing `INetworkPrefabInstanceHandler`.
 

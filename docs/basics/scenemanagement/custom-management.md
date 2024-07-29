@@ -29,20 +29,20 @@ Clients are always synchronized with any in-scene placed Network Prefab instance
 :::warning Any in-scene defined NetworkObject (i.e. not a network prefab instance) will not get synchronized with a newly-joined client when scene management is disabled.
 :::
 
-When the integrated `NetworkSceneManager` is enabled, both in-scene placed network prefab instances and in-scene defined `NetworkObject`s get synchronized, and when new scenes are loaded they get synchronized also.
+When the integrated `NetworkSceneManager` is enabled, both in-scene placed network prefab instances and in-scene defined NetworkObjects get synchronized, and when new scenes are loaded they get synchronized also.
 
 #### Auto (NetworkObject) Scene Migration Synchronization
-When integrated scene management is enabled, you can have the server migrate an already spawned `NetworkObject` from one scene to another and it will automatically be synchronized with connected and late-joining clients.
+When integrated scene management is enabled, you can have the server migrate an already spawned NetworkObject from one scene to another and it will automatically be synchronized with connected and late-joining clients.
 
 When integrated scene management is disabled, this is not handled and you need to use either NetworkVariables, Rpcs, or custom messages to handle synchronizing clients with any migration of `NetworkObjects`s from one scene to another.
 
 ### Registering In-Scene Placed Network Prefab Instances
-While integrated scene management handles the synchronization of in-scene placed `NetworkObject`s, custom scene management treats everything like a dynamically spawned `NetworkObject`.  As such, you can only use network prefabs defined in your NetworkPrefabList assigned to your NetworkManager, and any in-scene defined `NetworkObject`s will not synchronize with clients.
+While integrated scene management handles the synchronization of in-scene placed NetworkObjects, custom scene management treats everything like a dynamically spawned NetworkObject.  As such, you can only use network prefabs defined in your NetworkPrefabList assigned to your NetworkManager, and any in-scene defined NetworkObjects will not synchronize with clients.
 
 Once you've registered your in-scene placed Network Prefabs with your `NetworkPrefabList` and assigned that to your `NetworkManager`, you can then start a server or host and have a client connect and synchronize with the in-scene placed Network Prefab instances (as long as both client and server have pre-loaded the scene or scenes required).  
 
 :::important
-When a client first connects, it deletes any in-scene placed `NetworkObjects` in any of the scenes it has currently loaded.  When using a custom scene management solution, in-scene placed `NetworkObject`s are actually dynamically spawned. This means any changes you make to your in-scene placed Network Prefabs will *not* be synchronized with clients automatically.
+When a client first connects, it deletes any in-scene placed `NetworkObjects` in any of the scenes it has currently loaded.  When using a custom scene management solution, in-scene placed NetworkObjects are actually dynamically spawned. This means any changes you make to your in-scene placed Network Prefabs will *not* be synchronized with clients automatically.
 :::
 
 ### Synchronizing In-Scene Placed Network Prefab Instances

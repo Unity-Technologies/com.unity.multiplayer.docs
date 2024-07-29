@@ -45,7 +45,7 @@ If you set a trigger property using `Animator.SetTrigger` then this won't be syn
 
 ## Server Authoritative Mode
 
-The default setting for `NetworkAnimator` is server authoritative mode. When operating in server authoritative mode, any animation state changes that are set (triggers) or detected (change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients. Because the server initiates any synchronization of changes to an `Animator` 's state, a client that's the owner of the `NetworkObject` associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT). Below is a timing diagram to show this:
+The default setting for `NetworkAnimator` is server authoritative mode. When operating in server authoritative mode, any animation state changes that are set (triggers) or detected (change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients. Because the server initiates any synchronization of changes to an `Animator` 's state, a client that's the owner of the NetworkObject associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT). Below is a timing diagram to show this:
 
 ![ServerAuthMode](/img/NetworkAnimatorServerAuthTiming.png)
 
@@ -107,7 +107,7 @@ Using `NetworkAnimator` is a pretty straight forward approach with the only subt
 
 ### Server Authoritative
 
-If you decide you want to use the server authoritative model, then you can add a `NetworkAnimator` component to either the same `GameObject` that has the `NetworkObject` component attached to it or any child `GameObject`. In the below screenshot, you can see a network Prefab that houses two authoritative models. The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component.
+If you decide you want to use the server authoritative model, then you can add a `NetworkAnimator` component to either the same `GameObject` that has the NetworkObject component attached to it or any child `GameObject`. In the below screenshot, you can see a network Prefab that houses two authoritative models. The `NetworkAnimatorCube-Server` `GameObject` has an `Animator` component, an `AnimatedCubeController` component (used for manual testing), and the `NetworkAnimator` component that has a reference to the `Animator` component.
 
 ![Usage-1](/img/NetworkAnimatorUsage-1.png)
 
@@ -119,7 +119,7 @@ If you decide you want to use the owner authoritative model, then (for example p
 
 :::info
 
-While it isn't advised to have different `NetworkAnimator` authoritative models "under the same root network Prefab `GameObject`, " you can have multiple children that each have their own `Animator` and `NetworkAnimator` all housed under a single `NetworkObject` and all use the same authoritative model. However, you should always consider the balance between performance (CPU or bandwidth consumption) and convenience/modularity.
+While it isn't advised to have different `NetworkAnimator` authoritative models "under the same root network Prefab `GameObject`, " you can have multiple children that each have their own `Animator` and `NetworkAnimator` all housed under a single NetworkObject and all use the same authoritative model. However, you should always consider the balance between performance (CPU or bandwidth consumption) and convenience/modularity.
 
 :::
 

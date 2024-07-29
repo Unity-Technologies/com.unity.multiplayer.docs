@@ -273,9 +273,9 @@ public class PlayerCubeController : NetworkTransform
 ```
 2. In the open *SampleScene*, create a 3D cube and name it *PlayerCube*.
 ![create PlayerCube object](/img/learn/distributed-authority-quick-start/player-cube.png)
-3. Add a `NetworkObject` component to the *PlayerCube*.
+3. Add a NetworkObject component to the *PlayerCube*.
 ![add a NetworkObject component](/img/learn/distributed-authority-quick-start/add-networkobject.png)
-4. Set the `NetworkObject` Ownership to "None".
+4. Set the NetworkObject Ownership to "None".
 5. Add the *PlayerCubeController* to the *PlayerCube*.
 ![add the PlayerCubeController component](/img/learn/distributed-authority-quick-start/add-playercubecontroller.png)
 6. Create a Prefabs folder in the root Assets folder.

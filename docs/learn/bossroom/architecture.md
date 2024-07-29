@@ -118,7 +118,7 @@ Inside the Boss Room scene, `ServerBossRoomState` spawns a `PlayerAvatar` per `P
 
 The following example of a selected “Archer Boy” class shows the `PlayerAvatar` GameObject hierarchy:
 
-* `PlayerAvatar` is a `NetworkObject` that Boss Room destroys when the scene unloads.
+* `PlayerAvatar` is a NetworkObject that Boss Room destroys when the scene unloads.
 * `PlayerGraphics` is a child `GameObject` containing a `NetworkAnimator` component responsible for replicating animations invoked on the server.
 * `PlayerGraphics_Archer_Boy` is a purely graphical representation of the selected avatar class.
 
