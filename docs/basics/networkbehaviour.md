@@ -84,6 +84,8 @@ public class MyNetworkBehaviour : NetworkBehaviour
 
 For in-scene placed NetworkObjects, the `OnNetworkSpawn` method is invoked after the `Start` method, because the SceneManager scene loading process controls when NetworkObjects are instantiated. The previous code example shows how you can design a `NetworkBehaviour` that ensures both in-scene placed and dynamically spawned NetworkObjects will have assigned the required properties before attempting to access them. Of course, you can always make the decision to have in-scene placed `NetworkObjects` contain unique components to that of dynamically spawned `NetworkObjects`. It all depends upon what usage pattern works best for your project.
 
+For more information about in-scene placed `NetworkObject`s, refer to the [in-scene placed `NetworkObject`s page](scenemanagement/inscene-placed-networkobjects.md).
+
 ## Despawning
 
 `NetworkBehaviour.OnNetworkDespawn` is invoked on each `NetworkBehaviour` associated with a `NetworkObject` when it's despawned. This is where all netcode cleanup code should occur, but isn't to be confused with destroying ([see below](#destroying)). When a `NetworkBehaviour` component is destroyed, it means the associated GameObject, and all attached components, are in the middle of being destroyed. Regarding the order of operations, `NetworkBehaviour.OnNetworkDespawn` is always invoked before `NetworkBehaviour.OnDestroy`.
