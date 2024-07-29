@@ -16,11 +16,8 @@ Before you begin, you need the following:
 
 ## Project setup
 
-1. Create a new Unity Project using the __3D__ template.
-
-2. Ensure that the project is connected to a Unity Cloud project.
-
-![connect unity cloud](/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
+1. Create a new Unity Project using the **3D** template.
+2. Connect the project to Unity Cloud by selecting the **Connect to Unity Cloud** checkbox.
 
 ## Install packages
 
