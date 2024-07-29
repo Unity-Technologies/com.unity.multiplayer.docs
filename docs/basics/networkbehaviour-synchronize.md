@@ -37,7 +37,7 @@ In addition to the methods above, there are two special case convenience methods
 
 ### Pre-spawn synchronization with `OnSynchronize`
 
-There can be scenarios where you need to include additional configuration data or use a `NetworkBehaviour` to configure some non-netcode related component (or the like) before a `NetworkObject` is spawned. This can be particularly critical if you want specific settings applied before `NetworkBehaviour.OnNetworkSpawn` is invoked. When a client is synchronizing with an existing network session, this can become problematic as messaging requires a client to be fully synchronized before you know "it is safe" to send the message, and even if you send a message there is the latency involved in the whole process that might not be convenient and can require additional specialized code to account for this.
+There can be scenarios where you need to include additional configuration data or use a `NetworkBehaviour` to configure some non-netcode related component (or the like) before a NetworkObject is spawned. This can be particularly critical if you want specific settings applied before `NetworkBehaviour.OnNetworkSpawn` is invoked. When a client is synchronizing with an existing network session, this can become problematic as messaging requires a client to be fully synchronized before you know "it is safe" to send the message, and even if you send a message there is the latency involved in the whole process that might not be convenient and can require additional specialized code to account for this.
 
 `NetworkBehaviour.OnSynchronize` allows you to write and read custom serialized data during the NetworkObject serialization process.  
 
@@ -57,24 +57,24 @@ The following provides you with an outline of the order of operations that occur
 
 Server-side:
 
-- `GameObject` with `NetworkObject` component is instantiated.
-- The `NetworkObject` is spawned.
+- `GameObject` with NetworkObject component is instantiated.
+- The NetworkObject is spawned.
   - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
 - The `CreateObjectMessage` is generated.
-  - `NetworkObject` state is serialized.
+  - NetworkObject state is serialized.
   - `NetworkVariable` state is serialized.
   - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
     - If this method isn't overridden then nothing is written to the serialization buffer.
-- The `CreateObjectMessage` is sent to all clients that are observers of the `NetworkObject`.
+- The `CreateObjectMessage` is sent to all clients that are observers of the NetworkObject.
 
 
 Client-side:
 - The `CreateObjectMessage` is received.
-  - `GameObject` with `NetworkObject` component is instantiated.
+  - `GameObject` with NetworkObject component is instantiated.
   - `NetworkVariable` state is deserialized and applied.
   - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
     - If this method isn't overridden then nothing is read from the serialization buffer.
-- The `NetworkObject` is spawned.
+- The NetworkObject is spawned.
   - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
 
 #### Order of operations during full (late-join) client synchronization
@@ -82,7 +82,7 @@ Client-side:
 Server-side:
 - The `SceneEventMessage` of type `SceneEventType.Synchronize` is created.
   - All spawned `NetworkObjects` that are visible to the client, already instantiated, and spawned are serialized.
-    - `NetworkObject` state is serialized.
+    - NetworkObject state is serialized.
     - `NetworkVariable` state is serialized.
     - `NetworkBehaviour.OnSynchronize` is invoked for each `NetworkBehaviour` component.
       - If this method isn't overridden then nothing is written to the serialization buffer.
@@ -91,14 +91,14 @@ Server-side:
 Client-side:
 - The `SceneEventMessage` of type `SceneEventType.Synchronize` is received.
 - Scene information is deserialized and scenes are loaded (if not already).
-  - In-scene placed `NetworkObject`s are instantiated when a scene is loaded.
-- All `NetworkObject` oriented synchronization information is deserialized.
-  - Dynamically spawned `NetworkObject`s are instantiated and state is synchronized.
-  - For each `NetworkObject` instance:
+  - In-scene placed NetworkObjects are instantiated when a scene is loaded.
+- All NetworkObject oriented synchronization information is deserialized.
+  - Dynamically spawned NetworkObjects are instantiated and state is synchronized.
+  - For each NetworkObject instance:
     - `NetworkVariable` state is deserialized and applied.
     - `NetworkBehaviour.OnSynchronize` is invoked.
       - If this method isn't overridden then nothing is read from the serialization buffer.
-    - The `NetworkObject` is spawned.
+    - The NetworkObject is spawned.
       - For each associated `NetworkBehaviour` component, `NetworkBehaviour.OnNetworkSpawn` is invoked.
 
 ### `OnSynchronize` example

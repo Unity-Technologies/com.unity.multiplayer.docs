@@ -130,10 +130,10 @@ At times you might need to disconnect a client for various reasons without shutt
 - As a read only list of `NetworkClients`  via the `NetworkManager.ConnectedClientsList`.
 - A full list of all connected client identifiers can be accessed via `NetworkManager.ConnectedClientsIds`.
 - The client identifier is passed as a parameter to all subscribers of the `NetworkManager.OnClientConnected` event.
-- The player's `NetworkObject` has the `NetworkObject.OwnerClientId` property.
+- The player's NetworkObject has the `NetworkObject.OwnerClientId` property.
 
 :::tip
-One way to get a player's primary `NetworkObject` is via `NetworkClient.PlayerObject`.
+One way to get a player's primary NetworkObject is via `NetworkClient.PlayerObject`.
 :::
 
 ```csharp
