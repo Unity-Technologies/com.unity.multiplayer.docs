@@ -1,6 +1,6 @@
 ---
 id: inscene-placed-networkobjects
-title: In-scene NetworkObjects
+title: In-scene placed NetworkObjects
 sidebar_label: In-scene NetworkObjects
 ---
 :::caution
