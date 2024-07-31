@@ -22,7 +22,7 @@ You can use [NetworkBehaviours](networkbehaviour.md) to add your own custom Netc
 
 :::warning
 
-The order of networked objects matters. Make sure to load any NetworkBehaviour components before the Network Object component on the GameObject.
+The order of components on a networked GameObject matters. When adding netcode components to a GameObject, ensure that the NetworkObject component is ordered before any NetworkBehaviour components.
 
 :::
 
