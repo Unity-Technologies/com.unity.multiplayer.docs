@@ -47,7 +47,7 @@ NetworkManager.Singleton.StartClient();      // Starts the NetworkManager as jus
 ```
 
 :::warning
-Don't start a NetworkManager within a NetworkBehaviour's Awake method as this can lead to undesirable results depending upon your project's settings!
+Don't start a `NetworkManager` within any `NetworkBehaviour` component's method; doing so can produce timing-related issues that cause the `NetworkManager` to only start once or not at all. `NetworkManager`s begin and end a network session, while `NetworkBehaviour` components are used during a network session. By the time you're using `NetworkBehaviour`s, a `NetworkManager` should already be running.
 :::
 
 :::note

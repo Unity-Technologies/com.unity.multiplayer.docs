@@ -21,9 +21,7 @@ When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value init
 You can use [NetworkBehaviours](networkbehaviour.md) to add your own custom Netcode logic to the associated NetworkObject.
 
 :::warning
-
 The order of components on a networked GameObject matters. When adding netcode components to a GameObject, ensure that the NetworkObject component is ordered before any NetworkBehaviour components.
-
 :::
 
 ## Ownership
