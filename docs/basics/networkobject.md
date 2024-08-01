@@ -20,9 +20,15 @@ When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value init
 
 You can use [NetworkBehaviours](networkbehaviour.md) to add your own custom Netcode logic to the associated NetworkObject.
 
-:::warning
+### Component order
+
 The order of components on a networked GameObject matters. When adding netcode components to a GameObject, ensure that the NetworkObject component is ordered before any NetworkBehaviour components.
-:::
+
+The order in which NetworkBehaviour components are presented in the **Inspector** view is the order in which each associated `NetworkBehaviour.OnNetworkSpawn` method is invoked. Any properties that are set during `NetworkBehaviour.OnNetworkSpawn` are set in the order that each NetworkBehaviour's `OnNetworkSpawned` method is invoked.
+
+#### Avoiding execution order issues
+
+You can avoid execution order issues in any NetworkBehaviour component scripts that have dependencies on other NetworkBehaviour components associated with the same NetworkObject by placing those scripts in an overridden `NetworkBehaviour.OnNetworkPostSpawn` method. The `NetworkBehaviour.OnNetworkPostSpawn` method is invoked on each NetworkBehaviour component after all NetworkBehaviour components associated with the same NetworkObject component have had their `NetworkBehaviour.OnNetworkSpawn` methods invoked (but they will still be invoked in the same execution order defined by their relative position to the NetworkObject component when viewed within the Unity Editor **Inspector** view).
 
 ## Ownership
 
