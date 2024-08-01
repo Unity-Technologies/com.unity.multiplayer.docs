@@ -134,7 +134,7 @@ void Start ()
 When creating the `NetworkDriver`, pass in this `NetworkSettings` object:
 
 ```csharp
-m_Driver = NetworkDriver.Create(settings); 
+m_Driver = NetworkDriver.Create(settings);
 ```
 
 That’s all you need to do to enable secure communication server-side.
@@ -149,7 +149,7 @@ The secure client is similar to the secure server. The only difference is in how
 void Start ()
 {
     var settings = new NetworkSettings();
-    settings.WithSecureServerParameters(
+    settings.WithSecureClientParameters(
         serverName: SecureParameters.ServerCommonName,     
         caCertificate: SecureParameters.MyGameClientCA);
     m_Driver = NetworkDriver.Create(settings);
