@@ -19,7 +19,7 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 - **Force Same Prefabs**: When checked it will always verify that connecting clients have the same registered network prefabs as the server.  When not checked, Netcode for GameObjects will ignore any differences.
 - **Recycle Network Ids**: When checked this will re-use previously assigned `NetworkObject.NetworkObjectIds` after the specified period of time.
 - **Network Id Recycle Delay**: The time it takes for a previously assigned but currently unassigned identifier to be available for use.  
-- **Enable Scene Management**: When checked Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, users will have to create their own scene management scripts and handle client synchronization.
+- **Enable Scene Management**: When checked, Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, you will have to create your own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
 
 ### `NetworkManager` sub-systems
@@ -47,7 +47,7 @@ NetworkManager.Singleton.StartClient();      // Starts the NetworkManager as jus
 ```
 
 :::warning
-Don't start a NetworkManager within a NetworkBehaviour's Awake method as this can lead to undesirable results depending upon your project's settings!
+Don't start a `NetworkManager` within any `NetworkBehaviour` component's method; doing so can produce timing-related issues that cause the `NetworkManager` to only start once or not at all. `NetworkManager`s begin and end a network session, while `NetworkBehaviour` components are used during a network session. By the time you're using `NetworkBehaviour`s, a `NetworkManager` should already be running.
 :::
 
 :::note
@@ -130,10 +130,10 @@ At times you might need to disconnect a client for various reasons without shutt
 - As a read only list of `NetworkClients`  via the `NetworkManager.ConnectedClientsList`.
 - A full list of all connected client identifiers can be accessed via `NetworkManager.ConnectedClientsIds`.
 - The client identifier is passed as a parameter to all subscribers of the `NetworkManager.OnClientConnected` event.
-- The player's `NetworkObject` has the `NetworkObject.OwnerClientId` property.
+- The player's NetworkObject has the `NetworkObject.OwnerClientId` property.
 
 :::tip
-One way to get a player's primary `NetworkObject` is via `NetworkClient.PlayerObject`.
+One way to get a player's primary NetworkObject is via `NetworkClient.PlayerObject`.
 :::
 
 ```csharp

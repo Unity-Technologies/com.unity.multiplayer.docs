@@ -11,26 +11,6 @@ You have to enable ConnectionApproval in the NetworkManager Inspector or by sett
 
 In both cases clients also have to pass internal authentication, to confirm that their NetworkConfig matches that of the server. 
 
-## `NetworkManager.ConnectionApprovalRequest`
-
-This class represents the client-to-server request which has:
-
-- **ClientNetworkId**: the connecting client identifier
-- **Payload**: any additional user-defined connection data
-
-## `NetworkManager.ConnectionApprovalResponse`
-
-This is how the connection approval response is formed by server-side specific user code in the handler assigned to `NetworkManager.ConnectionApprovalCallback`. On the server side, this class has all the connection approval response information required to either allow or reject a player attempting to connect. It also has the following properties:
-
-- **Approved**: When `true`, the player is approved. When `false`, the player is denied.
-- **CreatePlayerObject**: When `true`, the server spawns a player Prefab for the connecting client. When `false`, the connecting client will have no player Prefab spawned.
-- **PlayerPrefabHash**: The type of player Prefab to use for the authorized player (if this is `null`, it uses the default NetworkManager-defined player Prefab)
-- **Position** and **Rotation**: The position and rotation of the player when spawned.
-- **Pending**: Provides the ability to mark the approval as pending to delay the authorization until other user-specific code finishes the approval process.
-- **Reason**: If `Approved` is `false`, you can populate this with a string-based message (or JSON) to send the reason the client wasn't approved.
-
-In earlier versions of Netcode for GameObjects, you had to provide a callback to invoke within the connection approval handler method. It's now only necessary to set the appropriate properties of the `NetworkManager.ConnectionApprovalResponse` class. Part of this update allows you to set your `ConnectionApprovalResponse` to `Pending`, providing extra time to process any other tasks involved with the player approval process.
-
 ## Server-side connection approval example
 
 ```csharp
@@ -72,6 +52,26 @@ private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, Net
     response.Pending = false;
 }
 ```
+
+## `NetworkManager.ConnectionApprovalRequest`
+
+This class represents the client-to-server request which has:
+
+- **ClientNetworkId**: the connecting client identifier
+- **Payload**: any additional user-defined connection data
+
+## `NetworkManager.ConnectionApprovalResponse`
+
+This is how the connection approval response is formed by server-side specific user code in the handler assigned to `NetworkManager.ConnectionApprovalCallback`. On the server side, this class has all the connection approval response information required to either allow or reject a player attempting to connect. It also has the following properties:
+
+- **Approved**: When `true`, the player is approved. When `false`, the player is denied.
+- **CreatePlayerObject**: When `true`, the server spawns a player Prefab for the connecting client. When `false`, the connecting client will have no player Prefab spawned.
+- **PlayerPrefabHash**: The type of player Prefab to use for the authorized player (if this is `null`, it uses the default NetworkManager-defined player Prefab)
+- **Position** and **Rotation**: The position and rotation of the player when spawned.
+- **Pending**: Provides the ability to mark the approval as pending to delay the authorization until other user-specific code finishes the approval process.
+- **Reason**: If `Approved` is `false`, you can populate this with a string-based message (or JSON) to send the reason the client wasn't approved.
+
+In earlier versions of Netcode for GameObjects, you had to provide a callback to invoke within the connection approval handler method. It's now only necessary to set the appropriate properties of the `NetworkManager.ConnectionApprovalResponse` class. Part of this update allows you to set your `ConnectionApprovalResponse` to `Pending`, providing extra time to process any other tasks involved with the player approval process.
 
 ## Sending an approval declined reason (`NetworkManager.ConnectionApprovalResponse.Reason`)
 

@@ -217,6 +217,6 @@ Optionally, you can directly add this line to your `manifest.json` file:
 
 `NetworkTransform.Awake`: This method has been made virtual in order to provide you with the ability to do any custom initialization. If you override this method, you are required to invoke `base.Awake()` (recommended invoking it first).
 
-`NetworkTransform.OnInitialize`: This virtual method is invoked when the associated `NetworkObject` is first spawned and when ownership changes.
+`NetworkTransform.OnInitialize`: This virtual method is invoked when the associated NetworkObject is first spawned and when ownership changes.
 
 `NetworkTransform.Update`: This method has been made virtual in order to provide you with the ability to handle any customizations to a derived `NetworkTransform` class. If you override this method, it is required that all non-authoritative instances invoke `base.Update()` but not required for authoritative instances.
