@@ -140,7 +140,7 @@ If you're planning to use a NetworkTransform, then you always want to make sure 
 
 When a GameObject is instantiated, it gets instantiated in the current active scene. However, sometimes you might find that you want to change the currently active scene and would like specific NetworkObject instances to automatically migrate to the newly assigned active scene. While you could keep a list or table of the NetworkObject instances and write the code/logic to migrate them into a newly assigned active scene, this can be time consuming and become complicated depending on project size and complexity. The alternate and recommended way to handle this is by enabling the **Active Scene Synchronization** property of each NetworkObject you want to automatically migrate into any newly assigned scene. This property defaults to disabled.
 
-Refer to the [NetworkSceneManager active scene synchronization](../basics/scenemanagement/using-networkscenemanager#active-scene-synchronization) page for more details.
+Refer to the [NetworkSceneManager active scene synchronization](../scenemanagement/using-networkscenemanager#active-scene-synchronization) page for more details.
 
 ## Scene migration synchronization
 
