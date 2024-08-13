@@ -7,7 +7,7 @@ This table explains the meaning of each status icon in the Play Mode Scenarios d
 
 |**Property**|**Description**|
 |-|-|
-|![Warning icon](/img/Warning-32.png) Warning|Indicates that you need to change some settings in the Play Mode Scenarios window for this Play Mode scenario to function correctly. For more information, refer to the error box that appears in the Play Mode Scenarios window. |
+|![Warning icon](/img/Warning-32.png) Warning|You need to change some settings in the Play Mode Scenarios window for this Play Mode scenario to function correctly. For more information, refer to the error box that appears in the Play Mode Scenarios window. |
 |![Scenario icon](/img/d_PlaymodeScenario-32.png) Scenario| A Play Mode scenario that contains Play Mode settings.|
 
 ## Additional resources

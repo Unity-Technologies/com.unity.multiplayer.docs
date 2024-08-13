@@ -6,13 +6,13 @@ description: Learn how to set up and run instances in the Play Mode Scenario win
 
 When you set up a Play Mode scenario, you can create the following type of instances: 
 
-* Additional editor
+* Additional Editor
 * Local
 * Remote
 
 ## Configure and build a remote instance
 
-A remote instance exists in the [Unity Cloud](https://docs.unity.com/cloud/en-us) and uses the [Unity Game Service (UGS) Game Server Hosting (Multiplay)](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay). You can start using Game Server Hosting for free, but server use can incur a cost even when it is not running a process or hosting any users. To reduce cost in a project that uses Game Server Hosting, open the [Unity Cloud Dashboard](http://cloud.unity.com/) and reduce the **Minimum Available Scaling** property value to 0. To learn more about Game Server Hosting cost, refer to [UGS pricing](https://unity.com/products/gaming-services/pricing).
+A remote instance exists in the [Unity Cloud](https://docs.unity.com/cloud/en-us) and uses [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay). You can start using Multiplay Hosting for free, but server use can incur a cost even when it's not running a process or hosting any users. To reduce cost in a project that uses Multiplay Hosting, open the [Unity Cloud Dashboard](http://cloud.unity.com/) and reduce the **Minimum Available Scaling** property value to 0. To learn more about Multiplay Hosting costs, refer to [UGS pricing](https://unity.com/products/gaming-services/pricing).
 
 You can only have one remote instance in a Play Mode Scenario and it can only run on a Linux platform.
 
@@ -39,5 +39,5 @@ To open the Play Mode status window:
 ## Additional resources
 * [Play Mode Scenarios requirements and limitations](play-mode-scenario-req)
 * [Create a Play Mode Scenario](play-mode-scenario-create.md)
-* [Unity Game Service (UGS) Game Server Hosting (Multiplay)](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
+* [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
 * [Troubleshoot a test build](play-mode-scenario-troubleshoot.md)

@@ -8,7 +8,7 @@ This table explains the meaning of each status symbol in the instances status dr
 |**Property**|**Description**|
 |-|-|
 |![Warning icon](/img/Warning-32.png) Warning|This Play Mode scenario is not configured correctly. For more information, refer to the error box that appears in the Play Mode Scenarios window. |
-|![Error icon](/img/Error-32.png) Error|This Play Mode scenario does not function correctly. To solve this refer to the error that appears in the console window. |
+|![Error icon](/img/Error-32.png) Error|This Play Mode scenario does not function correctly. For more information, refer to the error that appears in the console window. |
 |![Loading icon](/img/d_Loading-32.png) Loading|Unity is currently performing a building or loading step.|
 |![Connected and Running icon](/img/CompletedTask-32.png) Connected and Running|This Play Mode scenario is active with no errors.|
 |![Idling icon](/img/d_IdleState-2x.png) Idling|This Play Mode scenario is not yet active. To activate it, enter Play Mode.|
@@ -17,6 +17,6 @@ This table explains the meaning of each status symbol in the instances status dr
 
 ## Additional resources
 * [Play Mode Scenarios requirements and limitations](play-mode-scenario-req.md)
-* [Unity Game Service (UGS) Game Server Hosting (Multiplay)](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
+* [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
 * [Play Mode scenario window reference](play-mode-scenario-window-reference.md)
 * [Create a Play Mode Scenario](play-mode-scenario-create.md)

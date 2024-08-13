@@ -19,5 +19,5 @@ To learn more about the properties in the Play Mode Scenarios window, refer to [
 
 - [Play Mode Scenarios requirements and limitations](play-mode-scenario-req.md)
 - [Play Mode scenario window reference](play-mode-scenario-window-reference.md)
-- [Unity Game Service (UGS) Game Server Hosting (Multiplay)](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
+- [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
 - [Build Profiles](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles.html)
