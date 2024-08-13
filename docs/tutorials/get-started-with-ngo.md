@@ -222,18 +222,18 @@ The `HelloWorldManager.cs` script accomplishes this menu within the `StartButton
 ```csharp
        static void StartButtons()
         {
-            if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
-            if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
-            if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
+            if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
+            if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
+            if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
         static void StatusLabels()
         {
-            var mode = NetworkManager.Singleton.IsHost ?
-                "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
+            var mode = m_NetworkManager.IsHost ?
+                "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
 
             GUILayout.Label("Transport: " +
-                NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
+                m_NetworkManager.NetworkConfig.NetworkTransport.GetType().Name);
             GUILayout.Label("Mode: " + mode);
         }
 ```
@@ -489,9 +489,9 @@ Because the `HelloWorldPlayer.cs` script handles the position NetworkVariable, t
 ```csharp
        static void SubmitNewPosition()
         {
-            if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
+            if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
-                var playerObject = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+                var playerObject = m_NetworkManager.SpawnManager.GetLocalPlayerObject();
                 var player = playerObject.GetComponent<HelloWorldPlayer>();
                 player.Move();
             }
