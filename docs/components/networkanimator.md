@@ -2,7 +2,9 @@
 id: networkanimator
 title: NetworkAnimator
 ---
-The `NetworkAnimator` component provides a fundamental example of how to synchronize animations during a network session. Animation states are synchronized with players joining an existing network session and any client already connected before the animation state changes.
+The `NetworkAnimator` component provides a fundamental example of how to synchronize animations during a network session. You can also use [RPCs](../advanced-topics/messaging-system.md), [NetworkVariables](../basics/networkvariable.md), and [custom messages](../advanced-topics/message-system/custom-messages.md) to create a custom animation synchronization system, if it suits the needs of your project better.
+
+Using `NetworkAnimator`, animation states are synchronized with players joining an existing network session and any client already connected before the animation state changes.
 
 * Players joining an existing network session are synchronized with:
     * All the `Animator`'s current properties and states.
@@ -137,3 +139,9 @@ public void SetPlayerJumping(bool isJumping)
     m_NetworkAnimator.SetTrigger("IsJumping");
 }
 ```
+
+:::tip Changing meshes
+
+When swapping a skinned mesh with another reparented skinned mesh, you can invoke the `Rebind ` method on the `Animator` components: `Animator.Rebind()`.
+
+:::
