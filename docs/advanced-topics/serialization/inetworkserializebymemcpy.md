@@ -24,6 +24,6 @@ If you have a type you wish to serialize that you know is compatible with this m
 public NetworkVariable<ForceNetworkSerializeByMemcpy<Guid>> GuidVar;
 ```
 
-f:::caution
+:::caution
 Take care with using `INetworkSerializeByMemcpy`, and especially `ForceNetworkSerializeByMemcpy`, because not all unmanaged structs are actually compatible with this type of serialization. Anything that includes pointer types (including Native Collections like `NativeArray<>`) won't function correctly when serialized this way, and will likely cause memory corruption or crashes on the receiving side.
 :::
