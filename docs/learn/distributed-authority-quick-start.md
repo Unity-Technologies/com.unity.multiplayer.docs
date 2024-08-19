@@ -150,6 +150,8 @@ public class ConnectionManager : MonoBehaviour
 }
 ```
 
+*NOTE:* It is important to wait until `OnClientConnectedCallback` has been triggered before spawning objects. Spawning them early will result in errors and unexpected behaviour. 
+
 2. Add the `ConnectionManager` component script you created to the  *NetworkManager* object.
 ![add connection manager](/img/learn/distributed-authority-quick-start/create-connection-manager.png)
 
