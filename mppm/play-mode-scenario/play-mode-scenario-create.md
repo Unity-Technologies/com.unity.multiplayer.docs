@@ -1,6 +1,6 @@
 ---
 id: play-mode-scenario-create
-title: Create a Play Mode Scenario
+title: Create a Play Mode scenario
 description: Add a Play Mode Scenario to your project.
 ---
 

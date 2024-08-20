@@ -38,6 +38,6 @@ To open the Play Mode status window:
 
 ## Additional resources
 * [Play Mode Scenarios requirements and limitations](play-mode-scenario-req)
-* [Create a Play Mode Scenario](play-mode-scenario-create.md)
+* [Create a Play Mode scenario](play-mode-scenario-create.md)
 * [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
 * [Troubleshoot a test build](play-mode-scenario-troubleshoot.md)

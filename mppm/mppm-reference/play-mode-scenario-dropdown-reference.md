@@ -12,4 +12,4 @@ This table explains the meaning of each status icon in the Play Mode Scenarios d
 
 ## Additional resources
 * [Test live instances locally and remotely](play-mode-scenario-about.md)
-* [Create a Play Mode Scenario](play-mode-scenario-create.md)
+* [Create a Play Mode scenario](play-mode-scenario-create.md)

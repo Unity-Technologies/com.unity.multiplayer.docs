@@ -41,6 +41,6 @@ To control whether a player exists on the client or server, use the **Multiplaye
 |||Arguments|The [UGS launch parameters](https://docs.unity.com/ugs/manual/game-server-hosting/manual/concepts/launch-parameters) that modify this instance.|
 
 ## Additional resources
-* [Create a Play Mode Scenario](play-mode-scenario-create.md)
+* [Create a Play Mode scenario](play-mode-scenario-create.md)
 * [Test live instances locally and remotely](play-mode-scenario-about.md)
 * [Play Mode Scenarios requirements and limitations](play-mode-scenario-req.md)

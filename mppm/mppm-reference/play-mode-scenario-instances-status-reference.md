@@ -19,4 +19,4 @@ This table explains the meaning of each status symbol in the instances status dr
 * [Play Mode Scenarios requirements and limitations](play-mode-scenario-req.md)
 * [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
 * [Play Mode scenario window reference](play-mode-scenario-window-reference.md)
-* [Create a Play Mode Scenario](play-mode-scenario-create.md)
+* [Create a Play Mode scenario](play-mode-scenario-create.md)
