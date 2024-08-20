@@ -8,6 +8,6 @@ To test one or more instances of a multiplayer project on a local machine or a r
 
 ## Additional resources
 * [Play Mode Scenarios requirements and limitations](play-mode-scenario-req.md)
-* [Play Mode scenario window reference](play-mode-scenario-window-reference.md)
+* [Play Mode scenario window reference](mppm-reference/play-mode-scenario-window-reference.md)
 * [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
 * [Dedicated Server](https://docs.unity3d.com/Manual/dedicated-server.html)

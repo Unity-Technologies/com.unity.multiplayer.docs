@@ -16,12 +16,12 @@ A remote instance exists in the [Unity Cloud](https://docs.unity.com/cloud/en-us
 
 You can only have one remote instance in a Play Mode Scenario and it can only run on a Linux platform.
 
-To learn more about the properties that you can use to configure a remote instance, refer to [Play Mode Scenarios window reference](play-mode-scenario-window-reference.md).
+To learn more about the properties that you can use to configure a remote instance, refer to [Play Mode Scenarios window reference](mppm-reference/play-mode-scenario-window-reference.md).
 
 ## Configure and build a local instance
 A local instance exists on the same platform as the Unity Editor. To build a local instance that you have configured in the Play Mode Scenarios window, [enter Play Mode](https://docs.unity3d.com/Manual/GameView.html). All configured Play Mode Scenarios build automatically when you enter Play Mode.
 
-To learn more about the properties that you can use to configure a local instance, refer to [Play Mode Scenarios window reference](play-mode-scenario-window-reference.md).
+To learn more about the properties that you can use to configure a local instance, refer to [Play Mode Scenarios window reference](mppm-reference/play-mode-scenario-window-reference.md).
 
 ## Check the status of all instances
 The Play Mode status window displays the following information for each Play Mode scenario:

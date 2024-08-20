@@ -16,7 +16,7 @@ This table explains the meaning of each status symbol in the instances status dr
 |![Open status window icon](/img/d_WindowInstance-32.png) Open status window|Select this icon to open the Play Mode Status window to see more information for each instance.|
 
 ## Additional resources
-* [Play Mode Scenarios requirements and limitations](play-mode-scenario-req.md)
+* [Play Mode Scenarios requirements and limitations](play-mode-scenario/play-mode-scenario-req.md)
 * [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay)
-* [Play Mode scenario window reference](play-mode-scenario-window-reference.md)
-* [Create a Play Mode scenario](play-mode-scenario-create.md)
+* [Play Mode scenario window reference](/mppm-reference/play-mode-scenario-window-reference.md)
+* [Create a Play Mode scenario](play-mode-scenario/play-mode-scenario-create.md)

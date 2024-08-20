@@ -31,5 +31,5 @@ The Play Mode Scenario window has the following limitations:
 ## Additional resources
 * [Netcode for Entities Project Setup](https://docs.unity3d.com/Packages/com.unity.netcode@1.0/manual/installation.html)
 * [Multiplayer Play Mode System requirements and compatibility](sys-req.md)
-* [Play Mode scenario window reference](play-mode-scenario-window-reference.md)
+* [Play Mode scenario window reference](mppm-reference/play-mode-scenario-window-reference.md)
 * [Create a Play Mode scenario](play-mode-scenario-create.md)

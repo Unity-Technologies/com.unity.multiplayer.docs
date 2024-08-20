@@ -11,5 +11,5 @@ This table explains the meaning of each status icon in the Play Mode Scenarios d
 |![Scenario icon](/img/d_PlaymodeScenario-32.png) Scenario| A Play Mode scenario that contains Play Mode settings.|
 
 ## Additional resources
-* [Test live instances locally and remotely](play-mode-scenario-about.md)
-* [Create a Play Mode scenario](play-mode-scenario-create.md)
+* [Test live instances locally and remotely](play-mode-scenario/play-mode-scenario-about.md)
+* [Create a Play Mode scenario](play-mode-scenario/play-mode-scenario-create.md)

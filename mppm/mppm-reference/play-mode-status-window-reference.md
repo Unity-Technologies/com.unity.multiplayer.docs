@@ -11,5 +11,5 @@ This table explains the behavior of each property in the Play Mode status window
 |Disconnect|Disconnect this Play Mode instance from the local or remote server.|
 
 ## Additional resources
-* [Test live instances locally and remotely](play-mode-scenario-about.md)
-* [Create a Play Mode scenario](play-mode-scenario-create.md)
+* [Test live instances locally and remotely](play-mode-scenario/play-mode-scenario-about.md)
+* [Create a Play Mode scenario](play-mode-scenario/play-mode-scenario-create.md)
