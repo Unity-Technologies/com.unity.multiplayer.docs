@@ -5,7 +5,7 @@ description: Add a Play Mode Scenario to your project.
 ---
 
 To create a new Play Mode scenario: 
-1. Install the Multiplayer Play Mode package (LINK).
+1. [Install the Multiplayer Play Mode package](https://docs-multiplayer.unity3d.com/mppm/current/install/).
 2. Select the Play Mode dropdown menu.
 3. Select **Configure play mode scenarios…**.
 4. In the Play Mode Scenarios window toolbar, select the (**+**) icon to create a new scenario.

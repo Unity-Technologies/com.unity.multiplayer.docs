@@ -8,7 +8,7 @@ To use the Play Mode Scenarios window, install the following packages:
 * [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/about/)
 * [Dedicated server](https://docs.unity3d.com/Packages/com.unity.dedicated-server@1.3/manual/index.html)
 
-A Play Mode Scenario that contains a local or remote instance requires a Build Profile that matches the platform your project exists on. To learn how to assign a Build profile, refer to [Create a Play Mode scenario](play-mode-scenario-create.md). Use a [Build Profile](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles.html) to configure the type of build this scenario uses. To learn what each property in a build profile controls, refer to the [build profiles reference](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles-reference.html).
+A Play Mode Scenario that contains a local or remote instance requires a Build Profile that matches the platform your project exists on. To learn how to assign a Build Profile, refer to [Create a Play Mode scenario](play-mode-scenario-create.md). Use a [Build Profile](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles.html) to configure the type of build this scenario uses. To learn what each property in a Build Profile controls, refer to the [Build Profiles reference](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles-reference.html).
 
 Remote instances use [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay). You can get started with a Unity Gaming service for free. To learn how billing works for each Unity Gaming service, refer to [UGS pricing](https://unity.com/products/gaming-services/pricing).
 

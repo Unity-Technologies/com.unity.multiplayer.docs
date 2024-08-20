@@ -5,7 +5,7 @@ description: Learn about errors that can happen when you build a play mode scena
 ---
 To troubleshoot an error that appears when you enter Play Mode, refer to the error message that appears in the console window. You can also open the [Play Mode scenario status dropdown](play-mode-scenario-dropdown-reference.md) for more information.
 
-To fix the error **Build profile needs to match the current platform**: 
+To fix the error **Build Profile needs to match the current platform**: 
 1. Open the Build Profile window ( **File** > **Build Profiles**). 
 2. In the **Platforms** list, select the platform that matches the platform that the Unity Editor is running on.
 
