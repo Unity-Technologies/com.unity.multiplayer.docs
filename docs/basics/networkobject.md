@@ -20,11 +20,15 @@ When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value init
 
 You can use [NetworkBehaviours](networkbehaviour.md) to add your own custom Netcode logic to the associated NetworkObject.
 
-:::warning
+### Component order
 
-The order of networked objects matters. Make sure to load any NetworkBehaviour components before the Network Object component on the GameObject.
+The order of components on a networked GameObject matters. When adding netcode components to a GameObject, ensure that the NetworkObject component is ordered before any NetworkBehaviour components.
 
-:::
+The order in which NetworkBehaviour components are presented in the **Inspector** view is the order in which each associated `NetworkBehaviour.OnNetworkSpawn` method is invoked. Any properties that are set during `NetworkBehaviour.OnNetworkSpawn` are set in the order that each NetworkBehaviour's `OnNetworkSpawned` method is invoked.
+
+#### Avoiding execution order issues
+
+You can avoid execution order issues in any NetworkBehaviour component scripts that have dependencies on other NetworkBehaviour components associated with the same NetworkObject by placing those scripts in an overridden `NetworkBehaviour.OnNetworkPostSpawn` method. The `NetworkBehaviour.OnNetworkPostSpawn` method is invoked on each NetworkBehaviour component after all NetworkBehaviour components associated with the same NetworkObject component have had their `NetworkBehaviour.OnNetworkSpawn` methods invoked (but they will still be invoked in the same execution order defined by their relative position to the NetworkObject component when viewed within the Unity Editor **Inspector** view).
 
 ## Ownership
 
@@ -136,7 +140,7 @@ If you're planning to use a NetworkTransform, then you always want to make sure 
 
 When a GameObject is instantiated, it gets instantiated in the current active scene. However, sometimes you might find that you want to change the currently active scene and would like specific NetworkObject instances to automatically migrate to the newly assigned active scene. While you could keep a list or table of the NetworkObject instances and write the code/logic to migrate them into a newly assigned active scene, this can be time consuming and become complicated depending on project size and complexity. The alternate and recommended way to handle this is by enabling the **Active Scene Synchronization** property of each NetworkObject you want to automatically migrate into any newly assigned scene. This property defaults to disabled.
 
-Refer to the [NetworkSceneManager active scene synchronization](../basics/scenemanagement/using-networkscenemanager#active-scene-synchronization) page for more details.
+Refer to the [NetworkSceneManager active scene synchronization](../scenemanagement/using-networkscenemanager#active-scene-synchronization) page for more details.
 
 ## Scene migration synchronization
 
