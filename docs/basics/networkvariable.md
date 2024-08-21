@@ -260,9 +260,9 @@ There are two options for reading a `NetworkVariable.Value`:
 
 There are two options for writing a `NetworkVariable.Value`:
 
-- **Server (default)**: the server is the only one that can write the value.
+- **Server**: the server is the only one that can write the value. This is the default for [client-server contexts](../terms-concepts/client-server.md).
     - This is useful for server-side specific states that all clients should be aware of but can't change, such as an NPC's status or some global world environment state (that is, is it night or day time).
-- **Owner**: only the owner of the NetworkObject can write to the value.
+- **Owner**: only the owner of the NetworkObject can write to the value. This is the default for [distributed authority contexts](../terms-concepts/distributed-authority.md).
     - This is useful if your `NetworkVariable` represents something specific to the client's player that only the owning client should be able to set, such as a player's skin or other cosmetics.
 
 ### Permissions example
