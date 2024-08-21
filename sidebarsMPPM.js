@@ -40,6 +40,27 @@ module.exports = {
         {
             collapsed: true,
             type: 'category',
+            label: 'Test live instances locally and remotely',
+            link: {type: 'doc', id: 'play-mode-scenario/play-mode-scenario-about'},
+            items: [
+                {
+                    type: 'doc',
+                    id: 'play-mode-scenario/play-mode-scenario-req'
+                },
+                {
+                    type: 'doc',
+                    id: 'play-mode-scenario/play-mode-scenario-create'
+                },
+                {
+                    type: 'doc',
+                    id: 'play-mode-scenario/play-mode-scenario-configure-build'
+                },
+            ]
+
+        },
+        {
+            collapsed: true,
+            type: 'category',
             label: 'Information about tags',
             link: {type: 'doc', id: 'player-tags/player-tags'},
             items: [
@@ -102,6 +123,34 @@ module.exports = {
                 {
                     type: 'doc',
                     id: 'troubleshoot/debug-mppm'
+                },
+                {
+                    type: 'doc',
+                    id: 'troubleshoot/play-mode-scenario-troubleshoot'
+                },
+            ]
+        },
+        {
+            collapsed: true,
+            type: 'category',
+            label: 'Reference',
+            link: {type: 'doc', id: 'mppm-reference/mppm-reference-lp'},
+            items: [
+                {
+                    type: 'doc',
+                    id: 'mppm-reference/play-mode-scenario-dropdown-reference'
+                },
+                {
+                    type: 'doc',
+                    id: 'mppm-reference/play-mode-scenario-instances-status-reference'
+                },
+                {
+                    type: 'doc',
+                    id: 'mppm-reference/play-mode-scenario-window-reference'
+                },
+                {
+                    type: 'doc',
+                    id: 'mppm-reference/play-mode-status-window-reference'
                 },
             ]
         },
