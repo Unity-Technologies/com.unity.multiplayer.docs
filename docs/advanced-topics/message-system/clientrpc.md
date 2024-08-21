@@ -116,7 +116,7 @@ The host is both a client and a server. If a host invokes a client RPC, it trigg
 <ImageSwitcher 
 lightImageSrc="/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/RPCs/ClientRPCs_ClientHosts_CalledByClientHost_Dark.png?text=DarkMode"/>
- <figcaption>Hosts can invoke client RPCs on `NetworkObjects`. If broadcasting to all clients, the RPC will be immediately invoked on the host and placed in the local queue. At the end of the frame, the client RPC will be sent to the remote clients. When a remote client receives the client RPC it's executed on the client's local cloned instance of the same `NetworkObject`.</figcaption>
+ <figcaption>Hosts can invoke client RPCs on `NetworkObjects`. If broadcasting to all clients, the RPC will be immediately invoked on the host and placed in the local queue. At the end of the frame, the client RPC will be sent to the remote clients. When a remote client receives the client RPC it's executed on the client's local cloned instance of the same NetworkObject.</figcaption>
 </figure>
 
 :::warning

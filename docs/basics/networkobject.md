@@ -7,7 +7,7 @@ A NetworkObject is a [GameObject](https://docs.unity3d.com/Manual/GameObjects.ht
 
 Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../object-spawning), and [`NetworkVariable`](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
 
-  1. `NetworkObject`
+  1. NetworkObject
   2. [`NetworkBehaviour`](networkbehaviour.md)
 
 NetworkObjects require the use of specialized [`NetworkObjectReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html) structures before you can serialize and use them with RPCs and `NetworkVariable`s.
@@ -20,11 +20,15 @@ When spawning a NetworkObject, the `NetworkObject.GlobalObjectIdHash` value init
 
 You can use [NetworkBehaviours](networkbehaviour.md) to add your own custom Netcode logic to the associated NetworkObject.
 
-:::warning
+### Component order
 
-The order of networked objects matters. Make sure to load any NetworkBehaviour components before the Network Object component on the GameObject.
+The order of components on a networked GameObject matters. When adding netcode components to a GameObject, ensure that the NetworkObject component is ordered before any NetworkBehaviour components.
 
-:::
+The order in which NetworkBehaviour components are presented in the **Inspector** view is the order in which each associated `NetworkBehaviour.OnNetworkSpawn` method is invoked. Any properties that are set during `NetworkBehaviour.OnNetworkSpawn` are set in the order that each NetworkBehaviour's `OnNetworkSpawned` method is invoked.
+
+#### Avoiding execution order issues
+
+You can avoid execution order issues in any NetworkBehaviour component scripts that have dependencies on other NetworkBehaviour components associated with the same NetworkObject by placing those scripts in an overridden `NetworkBehaviour.OnNetworkPostSpawn` method. The `NetworkBehaviour.OnNetworkPostSpawn` method is invoked on each NetworkBehaviour component after all NetworkBehaviour components associated with the same NetworkObject component have had their `NetworkBehaviour.OnNetworkSpawn` methods invoked (but they will still be invoked in the same execution order defined by their relative position to the NetworkObject component when viewed within the Unity Editor **Inspector** view).
 
 ## Ownership
 
@@ -36,7 +40,7 @@ The default `NetworkObject.Spawn` method assumes server-side ownership:
 GetComponent<NetworkObject>().Spawn();
 ```
 
-To spawn `NetworkObject`s with ownership use the following:
+To spawn NetworkObjects with ownership use the following:
 
 ```csharp
 GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
@@ -110,7 +114,7 @@ However, when you want to limit which prefabs are available (for example, to red
 
 :::warning
 
-You can only have one `NetworkObject` at the root of a prefab. Don't create prefabs with nested `NetworkObjects`.
+You can only have one NetworkObject at the root of a prefab. Don't create prefabs with nested `NetworkObjects`.
 
 :::
 
@@ -118,7 +122,7 @@ You can only have one `NetworkObject` at the root of a prefab. Don't create pref
 
 ![image](/img/SpawnWithObservers.png)
 
-The `NetworkObject.SpawnWithObservers` property (default is true) enables you to spawn a `NetworkObject` with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the `NetworkObject` in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
+The `NetworkObject.SpawnWithObservers` property (default is true) enables you to spawn a NetworkObject with no initial observers. This is the recommended alternative to using `NetworkObject.CheckObjectVisibility` when you just want it to be applied globally to all clients (only when spawning an instance of the NetworkObject in question). If you want more precise per-client control then `NetworkObject.CheckObjectVisibility` is recommended. `NetworkObject.SpawnWithObservers` is only applied upon the initial server-side spawning and once spawned it has no impact on object visibility.
 
 ## Transform synchronization
 
