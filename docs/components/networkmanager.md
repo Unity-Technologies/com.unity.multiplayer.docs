@@ -8,8 +8,8 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 ### `NetworkManager` Inspector properties
 
 - **LogLevel**:  Sets the network logging level
-- **PlayerPrefab**:  When a Prefab is assigned, the Prefab will be instantiated as the player object and assigned to the newly connected and authorized client.
-- **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network Prefab override per registered network Prefab here.
+- **PlayerPrefab**:  When a prefab is assigned, the prefab will be instantiated as the player object and assigned to the newly connected and authorized client. For more information about player prefabs, refer to [Player NetworkObjects](../basics/networkobject.md#player-networkobjects).
+- **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network prefab override per registered network prefab here.
 - **Protocol Version**: Set this value to help distinguish between builds when the most current build has new assets that can cause issues with older builds connecting.
 - **Network Transport**: Where your network specific settings and transport type is set.  This field accepts any INetworkTransport implementation.  However, unless you have unique transport specific needs UnityTransport is the recommended transport to use with Netcode for GameObjects.
 - **Tick Rate**: This value controls the network tick update rate.
@@ -23,6 +23,7 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
 
 ### `NetworkManager` sub-systems
+
 `NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
 :::caution

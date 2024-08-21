@@ -70,7 +70,7 @@ When you want to despawn and destroy the owner but you don't want to destroy a s
 
 ## Player NetworkObjects
 
-Player objects are an optional feature in Netcode for GameObjects that you can use to assign a networked object to a specific client. A client can always only have at most one player object.
+Player objects are an optional feature in Netcode for GameObjects that you can use to assign a networked object to a specific client. A client can only have at most one player object.
 
 If you want a client to control more than one NetworkObject, use the ownership methods described above under the ownership section.
 
@@ -87,6 +87,33 @@ GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
 ```
 
 If the player already had a prefab instance assigned, then the client owns the NetworkObject of that prefab instance unless there's additional server-side specific user code that removes or changes the ownership.
+
+### Defining defaults for PlayerObjects
+
+If you're using `UnityEngine.InputSystem.PlayerInput` or `UnityEngine.PhysicsModule.CharacterController` components on your player prefab(s), you should disable them by default and only enable them for the local client's PlayerObject. Otherwise, you may get events from the most recently instantiated player prefab instance, even if it isn't the local client instance.
+
+You can disable these components in the **Inspector** view on the prefab itself, or disable them during `Awake` in one of your `NetworkBehaviour` components. Then you can enable the components only on the owner's instance using code like the example below:
+
+```
+PlayerInput m_PlayerInput;
+private void Awake()
+{
+    m_PlayerInput = GetComponent<PlayerInput>();
+    m_PlayerInput.enabled = false;
+}
+
+public override void OnNetworkSpawn()
+{
+    m_PlayerInput.enabled = IsOwner;
+    base.OnNetworkSpawn();
+}
+
+public override void OnNetworkDespawn()
+{
+    m_PlayerInput.enabled = false;
+    base.OnNetworkDespawn();
+}
+```
 
 ### Finding PlayerObjects
 
