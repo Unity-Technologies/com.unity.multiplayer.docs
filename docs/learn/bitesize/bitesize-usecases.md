@@ -1,40 +1,42 @@
-# Summary
+---
+id: bitesize-usecases
+title: Multiplayer Use Cases Sample
+description: 
+---
 
-The [Multiplayer Use Cases Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/MultiplayerUseCases) provides a series of scenes that explain a specific API or system commonly used in Netcode for GameObjects (Netcode).
+The [Multiplayer Use Cases Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/MultiplayerUseCases) provides a series of scenes that explain some of the APIs and systems you can use with Netcode for GameObjects.
 
-Each scene comes with an in-editor tutorial that will help you explore the main scripts and object of each scene, so you know where to look at to find what you're looking for.
+This sample contains multiple scenes that helps you to understand the following concepts:
 
-Some of the concepts covered are:
+- Server-side manipulation of data sent by Clients.
+- State synchronization through NetworkVariables.
+- Proximity interactions that are only visible only to the local player.
+- Client-server communication through RPCs.
 
-- **Client-server communication** through RPCs
-- **State synchronization** through NetworkVariables
-- **Server-side manipulation** of data sent by Clients
-- **Proximity interactions** visible only to the local player
+### Tutorials
 
-And other typical mechanics and features of multiplayer games.
+Each scene includes a tutorial to help you locate the scripts and GameObjects it uses. Follow each tutorials to learn how to use this Sample.
 
-### In-Editor Tutorials
+The tutorials that open with each scene use the [Tutorial Framework package](https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@4.0/manual/index.html). You can can open each tutorial at any time from the **Tutorials** menu.
 
-The In-Editor tutorials are powered by the official [Tutorial Framework package](https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@4.0/manual/index.html) and can be accessed at any times from the "Tutorials" menu.
+## The NetvarVsRpc scene
 
-It is highly recommended to follow the In-Editor tutorials to get the most value when exploring this Sample.
+The NetvarVsRpc scene demonstrates the differences betweeen the way NetworkVariables and Remote Procedure Calls (RPCs) perform state synchronization.
 
+## The NetworkVariables scene
 
-## Scene: "NetvarVsRpc"
+The NetworkVariables scene demonstrates the way NetworkVariables perform state synchronization in a way that sends the most recent information to late joining or reconnecting clients.
 
-Explains the differences between NetworkVariables and RPCs for state synchronization.
+## The ProximityChecks scene
 
-## Scene: "NetworkVariables"
+The ProximityChecks scene shows you how to detect the local player and enable or disable in-game actions based on their distance from a GameObject.
 
-Explains how to use NetworkVariables for state synchronization in a way that allows to send the most up-to-date information even to late joining (or reconnecting) clients.
+## The RPCs scene
 
-## Scene: "ProximityChecks"
-
-Showcases how to detect the local player to enable or disable in-game actions based on their distance from an object.
-
-## Scene: "RPCs"
-
-Showcases how to use RPCs to send information from clients to the server, how to perform server-side manipulation of the data sent, and how to use Connection Approval to determine the spawn position of the player.
+Demonstrates the following Remote Procedure Call (RPC) processes: 
+ * Use RPCs to send information from clients to the server.
+ * Perform server-side manipulation of the data sent.
+ * Use Connection Approval to determine the spawn position of the player.
 
 ## Additional resources
 
