@@ -3,7 +3,7 @@ id: networkvariable
 title: NetworkVariables
 ---
 
-`NetworkVariable`s are a way of synchronizing properties between servers and clients in a persistent manner, unlike [RPCs](../advanced-topics/message-system/rpc.md) and [custom messages](../advanced-topics/message-system/custom-messages.md), which are one-off, point-in-time communications that aren't shared with any clients not connected at the time of sending. `NetworkVariable`s are session-mode agnostic and can be used with either a [client-server](../terms-concepts/client-server.md) or [distributed authority](../terms-concepts/distributed-authority.md) network topology.
+`NetworkVariable`s are a way of synchronizing properties between servers and clients in a persistent manner, unlike [RPCs](../advanced-topics/message-system/rpc.md) and [custom messages](../advanced-topics/message-system/custom-messages.md), which are one-off, point-in-time communications that aren't shared with any clients not connected at the time of sending.
 
 `NetworkVariable` is a wrapper of the stored value of type `T`, so you need to use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable` is synchronized with:
 
