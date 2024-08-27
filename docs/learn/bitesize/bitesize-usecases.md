@@ -1,27 +1,25 @@
 ---
 id: bitesize-usecases
-title: Multiplayer Use Cases Sample
-description: 
+title: Multiplayer Use Cases sample
+description: Learn about the scenes in the Multiplayer Use Cases sample.
 ---
 
-The [Multiplayer Use Cases Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/MultiplayerUseCases) provides a series of scenes that explain some of the APIs and systems you can use with Netcode for GameObjects.
-
-This sample contains multiple scenes that helps you to understand the following concepts:
+The [Multiplayer Use Cases Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/MultiplayerUseCases) provides multiple scenes that explain some APIs, systems, and concepts that you can use with Netcode for GameObjects:
 
 - Server-side manipulation of data sent by Clients.
 - State synchronization through NetworkVariables.
 - Proximity interactions that are only visible only to the local player.
-- Client-server communication through RPCs.
+- Client-server communication through  Remote Procedure Calls (RPCs).
 
 ### Tutorials
 
 Each scene includes a tutorial to help you locate the scripts and GameObjects it uses. Follow each tutorials to learn how to use this Sample.
 
-The tutorials that open with each scene use the [Tutorial Framework package](https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@4.0/manual/index.html). You can can open each tutorial at any time from the **Tutorials** menu.
+The tutorials that open with each scene use the [Tutorial Framework package](https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@4.0/manual/index.html). You can open each tutorial at any time from the **Tutorials** menu.
 
 ## The NetvarVsRpc scene
 
-The NetvarVsRpc scene demonstrates the differences betweeen the way NetworkVariables and Remote Procedure Calls (RPCs) perform state synchronization.
+The NetvarVsRpc scene demonstrates the differences between the way NetworkVariables and Remote Procedure Calls (RPCs) perform state synchronization.
 
 ## The NetworkVariables scene
 
@@ -40,6 +38,6 @@ Demonstrates the following Remote Procedure Call (RPC) processes:
 
 ## Additional resources
 
-- Get help and ask questions on the [Multiplayer Discussions](https://discussions.unity.com/lists/multiplayer)
-- Join our community of Multiplayer Creators on the [Multiplayer Networking Discord!](https://discord.gg/unity-multiplayer-network)
-- [Request a feature or report a bug](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/issues/new/choose), and help us make the best samples!
+- Get help and ask questions on the [Multiplayer Discussions](https://discussions.unity.com/lists/multiplayer).
+- Join our community of Multiplayer Creators on the [Multiplayer Networking Discord!](https://discord.gg/unity-multiplayer-network).
+- [Request a feature or report a bug](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/issues/new/choose).
