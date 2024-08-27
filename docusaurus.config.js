@@ -240,6 +240,10 @@ module.exports = {
               label: "2.0.0-pre",
               path: "current",
             },
+            "1.11.0": {
+              label: "1.11.0",
+              path: "1.11.0",
+            },
             "1.10.0": {
               label: "1.10.0",
               path: "1.10.0",
