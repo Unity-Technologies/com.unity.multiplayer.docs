@@ -81,12 +81,12 @@ Using a cloud hosting solution often saves you money upfront but can cost more t
 | Cloud providers often have data centers located across the world, so you can always have your servers near your users, reducing the latency of their connection. | If there’s a problem in your code causing servers to crash at some odd hour of the night, you can’t rely on the cloud provider to fix it. |
 
 :::note
-You can also opt to host your servers with a bare-metal data center, such as Rackspace or Servers.com. Using bare-metal servers comes with its own set of pros and cons. Unity’s Game Server Hosting uses a combination of bare-metal and cloud servers to leverage the advantages of both. See [Machine capacity](https://docs.unity.com/game-server-hosting/legacy/machine-capacity.html) to learn more about the differences between the two options.
+You can also opt to host your servers with a bare-metal data center, such as Rackspace or Servers.com. Using bare-metal servers comes with its own set of pros and cons. Unity’s Multiplay Hosting uses a combination of bare-metal and cloud servers to leverage the advantages of both. See [Machine capacity](https://docs.unity.com/game-server-hosting/legacy/machine-capacity.html) to learn more about the differences between the two options.
 :::
 
 ### Managed service provider
 
-A managed service provider is a service that takes your game server build and manages hosting, scaling, and maintaining it in a white-glove environment. You tell the managed service provider how to run your game, and you often have control over scaling, availability, and other key operation points. Examples of managed service providers include [Unity’s Game Server Hosting](https://docs.unity.com/multiplay/), Amazon Web Services’ Gamelift, Microsoft’s Playfab, and Google’s Agones.
+A managed service provider is a service that takes your game server build and manages hosting, scaling, and maintaining it in a white-glove environment. You tell the managed service provider how to run your game, and you often have control over scaling, availability, and other key operation points. Examples of managed service providers include [Unity’s Multiplay Hosting](https://docs.unity.com/multiplay/), Amazon Web Services’ Gamelift, Microsoft’s Playfab, and Google’s Agones.
 
 See the following table to learn more about the pros and cons of opting for a managed service provider to host your game.
 
@@ -102,7 +102,7 @@ See the following table to learn more about the pros and cons of opting for a ma
 
 Your game server usually needs a way to communicate with their hosting provider, to expose essential information, like the number of connected players, available player slots, map information, and server readiness to accept new player connections.
 
-Managed service providers usually provide an SDK you can use to integrate your game. For example, if you use Unity’s Game Server Hosting solution, you can use the [Game Server SDK](https://docs.unity.com/game-server-hosting/sdk/sdk-overview.html).
+Managed service providers usually provide an SDK you can use to integrate your game. For example, if you use Unity’s Multiplay Hosting solution, you can use the [Game Server SDK](https://docs.unity.com/game-server-hosting/sdk/sdk-overview.html).
 
 You can also create similar tooling internally if you manage your own infrastructure, such as with an on-premise or cloud-hosted solution.
 
@@ -114,7 +114,7 @@ Depending on the nature of your multiplayer game, you might also need to conside
 
 The Boss Room sample relies on Unity’s [Lobby service](https://docs.unity.com/lobby/) to advertise hosts for client-hosted games, but you can adapt it for a dedicated-server workflow.
 
-The lobby-based matchmaking in the Boss Room sample is minimal and might result in unfair matches if highly skilled players end up in the same lobby as low-skilled players. You can extend the example implementation with Unity’s Matchmaker service, which integrates with Game Server Hosting to match the right players together and send them to the best possible service. See the [Matchplay sample](https://github.com/Unity-Technologies/com.unity.services.samples.matchplay).
+The lobby-based matchmaking in the Boss Room sample is minimal and might result in unfair matches if highly skilled players end up in the same lobby as low-skilled players. You can extend the example implementation with Unity’s Matchmaker service, which integrates with Unity Multiplay Hosting to match the right players together and send them to the best possible service. See the [Matchplay sample](https://github.com/Unity-Technologies/com.unity.services.samples.matchplay).
 
 ## Continuous integration (CI)
 
