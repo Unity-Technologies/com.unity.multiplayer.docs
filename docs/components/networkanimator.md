@@ -19,9 +19,9 @@ Using `NetworkAnimator`, animation states are synchronized with players joining 
 
 `NetworkAnimator` can operate in two authoritative modes:
 
-* [Server authoritative](#server-authoritative-mode) (default): The server initiates animation state changes.
+* [Server authoritative](#server-authoritative-mode): The server initiates animation state changes. This is the default in [client-server topologies](../terms-concepts/client-server.md).
     * Owners can still invoke `NetworkAnimator.SetTrigger`.
-* [Client authoritative](#owner-authoritative-mode): Client owners start animation state changes.
+* [Client authoritative](#owner-authoritative-mode): Client owners start animation state changes. This is the default in [distributed authority topologies](../terms-concepts/distributed-authority.md).
 
 
 :::note
@@ -42,7 +42,7 @@ If you set a trigger property using `Animator.SetTrigger` then this won't be syn
 
 ## Server authoritative mode
 
-The default setting for `NetworkAnimator` is server authoritative mode. When operating in server authoritative mode, any animation state changes that are set (triggers) or detected (change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients. Because the server initiates any synchronization of changes to an `Animator`'s state, a client that's the owner of the NetworkObject associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT). Below is a timing diagram to show this:
+In [client-server contexts](../terms-concepts/client-server.md), the default setting for `NetworkAnimator` is server authoritative mode. When operating in server authoritative mode, any animation state changes that are set (triggers) or detected (change in layer, state, or any `Animator` properties excluding triggers) on the server side will be synchronized with all clients. Because the server initiates any synchronization of changes to an `Animator`'s state, a client that's the owner of the NetworkObject associated with the `NetworkAnimator` can lag by roughly the full round trip time (RTT). Below is a timing diagram to show this:
 
 ![ServerAuthMode](/img/NetworkAnimatorServerAuthTiming.png)
 
@@ -59,7 +59,9 @@ In the above diagram, a client might be sending the server an RPC to tell the se
 
 ## Owner authoritative mode
 
-Your project's design (or personal preference) might require that owners are immediately updated with any `Animator` state changes, typically to give the local player instantaneous visual (animation) feedback. To create an owner authoritative `NetworkAnimator`, you need to create a new class that's derived from `NetworkAnimator`, override the `NetworkAnimator.OnIsServerAuthoritative` method, and within the overridden `OnIsServerAuthoritative` method you should return false like in the example provided below:
+Your project's design (or personal preference) might require that owners are immediately updated with any `Animator` state changes, typically to give the local player instantaneous visual (animation) feedback. In [distributed authority contexts](../terms-concepts/distributed-authority.md), the default setting for `NetworkAnimator` is owner authoritative mode.
+
+To create an owner authoritative `NetworkAnimator` in a client-server context, you need to create a new class that's derived from `NetworkAnimator`, override the `NetworkAnimator.OnIsServerAuthoritative` method, and within the overridden `OnIsServerAuthoritative` method you should return false like in the example provided below:
 
 ```csharp
     public class OwnerNetworkAnimator : NetworkAnimator
