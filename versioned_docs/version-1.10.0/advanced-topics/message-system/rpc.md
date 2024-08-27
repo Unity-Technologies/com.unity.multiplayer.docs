@@ -4,7 +4,7 @@ title: RPC
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-Any process can communicate with any other process by sending a remote procedure call (RPC). As of Netcode for GameObjects version 1.8.0, the `Rpc` attribute encompasses server to client RPCs, client to server RPCs, and client to client RPCs. The `Rpc` attribute is session-mode agnostic and can be used in both [client-server](../../terms-concepts/client-server.md) and [distributed authority](../../terms-concepts/distributed-authority.md) contexts.
+Any process can communicate with any other process by sending a remote procedure call (RPC). As of Netcode for GameObjects version 1.8.0, the `Rpc` attribute encompasses server to client RPCs, client to server RPCs, and client to client RPCs.
 
 <figure>
 <ImageSwitcher
@@ -82,21 +82,19 @@ PongRpc(somenumber, sometext); // This is clearly an remote function
 
 There are several default compile-time targets you can choose from. Some of these are only available in [client-server contexts](../../terms-concepts/client-server.md).
 
-While client-to-client RPCs are supported, it's important to note that there are no direct connections between clients. When sending a client-to-client RPC, the RPC is sent to the server (or distributed authority service) that acts as a proxy and forwards the same RPC message to all destination clients. If the targeted destination clients includes the local client, the local client will still execute the RPC immediately (or on the next frame locally, if deferred).
+While client-to-client RPCs are supported, it's important to note that there are no direct connections between clients. When sending a client-to-client RPC, the RPC is sent to the server that acts as a proxy and forwards the same RPC message to all destination clients. If the targeted destination clients includes the local client, the local client will still execute the RPC immediately (or on the next frame locally, if deferred).
 
-| Target                   | Available contexts| Description                                              |
-| ---------------------------- | :----------------------------------------------------------- | --- |
-| `SendTo.Server`            |Client-server only| Send to the server, regardless of ownership. Executes locally if invoked on the server. |
+| Target                   | Description                                              |
+| ---------------------------- | --- |
+| `SendTo.Server`            | Send to the server, regardless of ownership. Executes locally if invoked on the server. |
 | `SendTo.NotServer`        |Client-server only| Send to everyone _but_ the server, filtered to the current observer list. Won't send to a server running in host mode - it's still treated as a server. If you want to send to servers when they are host, but not when they are dedicated server, use `SendTo.ClientsAndHost`.<br /><br />Executes locally if invoked on a client. Doesn't execute locally if invoked on a server running in host mode. |
-|`SendTo.Authority`|Client-server and distributed authority|Send to the NetworkObject's current authority. Executes locally if the local process has authority.|
-|`SendTo.NotAuthority`|Client-server and distributed authority|Send to everyone but the current authority, filtered to the current observer list. Executes locally if the local process is not the owner.|
-| `SendTo.Owner`             |Client-server and distributed authority| Send to the NetworkObject's current owner. Executes locally if the local process is the owner. |
-| `SendTo.NotOwner`          |Client-server and distributed authority| Send to everyone but the current owner, filtered to the current observer list. Executes locally if the local process is not the owner.<br/><br/>In host mode, the host receives this message twice: once on the host client, once on the host server. |
-| `SendTo.Me`                |Client-server and distributed authority| Execute this RPC locally.<br/><br/>Normally this is no different from a standard function call.<br/><br/>Using the `DeferLocal` parameter of the attribute or the `LocalDeferMode` override in `RpcSendParams`, this can allow an RPC to be processed on localhost with a one-frame delay as if it were sent over the network. |
-| `SendTo.NotMe`             |Client-server and distributed authority| Send this RPC to everyone but the local machine, filtered to the current observer list. |
-| `SendTo.Everyone`          |Client-server and distributed authority| Send this RPC to everyone, filtered to the current observer list. Executes locally. |
-| `SendTo.ClientsAndHost`    |Client-server and distributed authority| Send this RPC to all clients, including the host, if a host exists. If the server is running in host mode, this is the same as `SendTo.Everyone`. If the server is running in dedicated server mode, this is the same as `SendTo.NotServer`. |
-| `SendTo.SpecifiedInParams` |Client-server and distributed authority| This RPC cannot be sent without passing in a target in `RpcSendParams`. |
+| `SendTo.Owner`             |Send to the NetworkObject's current owner. Executes locally if the local process is the owner. |
+| `SendTo.NotOwner`          |Send to everyone but the current owner, filtered to the current observer list. Executes locally if the local process is not the owner.<br/><br/>In host mode, the host receives this message twice: once on the host client, once on the host server. |
+| `SendTo.Me`                |Execute this RPC locally.<br/><br/>Normally this is no different from a standard function call.<br/><br/>Using the `DeferLocal` parameter of the attribute or the `LocalDeferMode` override in `RpcSendParams`, this can allow an RPC to be processed on localhost with a one-frame delay as if it were sent over the network. |
+| `SendTo.NotMe`             |Send this RPC to everyone but the local machine, filtered to the current observer list. |
+| `SendTo.Everyone`          |Send this RPC to everyone, filtered to the current observer list. Executes locally. |
+| `SendTo.ClientsAndHost`    |Send this RPC to all clients, including the host, if a host exists. If the server is running in host mode, this is the same as `SendTo.Everyone`. If the server is running in dedicated server mode, this is the same as `SendTo.NotServer`. |
+| `SendTo.SpecifiedInParams` |This RPC cannot be sent without passing in a target in `RpcSendParams`. |
 
 ### Runtime targets
 

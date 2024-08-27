@@ -4,7 +4,7 @@ title: Connection events
 
 ---
 
-When you need to react to connection or disconnection events for yourself or other clients, you can use `NetworkManager.OnConnectionEvent` as a unified source of information about changes in the network. Connection events are session-mode agnostic and work in both [client-server](../terms-concepts/client-server.md) and [distributed authority](../terms-concepts/distributed-authority.md) contexts.
+When you need to react to connection or disconnection events for yourself or other clients, you can use `NetworkManager.OnConnectionEvent` as a unified source of information about changes in the network.
 
 `OnConnectionEvent` receives a `ConnectionEventData` struct detailing the relevant information about the connection state change:
 

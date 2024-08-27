@@ -3,7 +3,7 @@ id: networkobject
 title: NetworkObject
 ---
 
-A NetworkObject is a [GameObject](https://docs.unity3d.com/Manual/GameObjects.html) with a NetworkObject component and at least one [NetworkBehaviour](networkbehaviour.md) component, which enables the GameObject to respond to and interact with netcode. NetworkObjects are session-mode agnostic and used in both [client-server](../terms-concepts/client-server.md) and [distributed authority](../terms-concepts/distributed-authority.md) contexts.
+A NetworkObject is a [GameObject](https://docs.unity3d.com/Manual/GameObjects.html) with a NetworkObject component and at least one [NetworkBehaviour](networkbehaviour.md) component, which enables the GameObject to respond to and interact with netcode.
 
 Netcode for GameObjects' high level components, [the RPC system](../advanced-topics/messaging-system.md), [object spawning](../object-spawning), and [`NetworkVariable`](networkvariable.md)s all rely on there being at least two Netcode components added to a GameObject:
 
@@ -28,7 +28,7 @@ The order of networked objects matters. Make sure to load any NetworkBehaviour c
 
 ## Ownership
 
-Either the server (default) or any connected and approved client owns each NetworkObject. By default, Netcode for GameObjects is [server-authoritative](../terms-concepts/client-server.md), which means only the server can spawn and despawn NetworkObjects, but you can also build [distributed authority](../terms-concepts/distributed-authority.md) games where clients have the authority to spawn and despawn NetworkObjects as well.
+Either the server (default) or any connected and approved client owns each NetworkObject. By default, Netcode for GameObjects is [server-authoritative](../terms-concepts/client-server.md), which means only the server can spawn and despawn NetworkObjects.
 
 The default `NetworkObject.Spawn` method assumes server-side ownership:
 

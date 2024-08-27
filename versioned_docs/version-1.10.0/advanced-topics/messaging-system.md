@@ -4,7 +4,7 @@ title: Sending events with RPCs
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
-Netcode for GameObjects has two parts to its messaging system: [remote procedure calls (RPCs)](message-system/rpc.md) and [custom messages](message-system/custom-messages.md). Both types have sub-types that change their behavior, functionality, and performance. RPCs as implemented in Netcode for GameObjects are session-mode agnostic, and work in both [client-server](../terms-concepts/client-server.md) and [distributed authority](../terms-concepts/distributed-authority.md) contexts.
+Netcode for GameObjects has two parts to its messaging system: [remote procedure calls (RPCs)](message-system/rpc.md) and [custom messages](message-system/custom-messages.md). Both types have sub-types that change their behavior, functionality, and performance.
 
 This page provides an introduction to RPCs. For more details, refer to the pages listed in the [RPCs in Netcode for GameObjects section](#rpcs-in-netcode-for-gameobjects)
 
@@ -19,7 +19,7 @@ darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_Dark.png?text=DarkMode"/>
   <figcaption>Client can invoke a server RPC on a NetworkObject. The RPC is placed in the local queue and then sent to the server, where it's executed on the server version of the same NetworkObject.</figcaption>
 </figure>
 
-When calling an RPC from a client, the SDK takes note of the object, component, method, and any parameters for that RPC and sends that information over the network. The server or distributed authority service receives that information, finds the specified object, finds the specified method, and calls it on the specified object with the received parameters.
+When calling an RPC from a client, the SDK takes note of the object, component, method, and any parameters for that RPC and sends that information over the network. The server receives that information, finds the specified object, finds the specified method, and calls it on the specified object with the received parameters.
 
 Netcode for GameObjects includes multiple RPC variations that you can use to execute logic with various remote targets.
 
