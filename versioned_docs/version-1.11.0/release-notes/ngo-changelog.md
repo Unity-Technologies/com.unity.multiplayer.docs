@@ -8,8 +8,6 @@ The following content tracks features, updates, bug fixes, and refactoring for t
 
 | Release | Date | Changelog |
 |---|---|---|
-| 2.0.0-pre.4 | 2024-08-21 | [2.0.0-pre.4](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.0/changelog/CHANGELOG.html) |
-| 2.0.0-exp | 2024-06-03 | [2.0.0-exp](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/blob/develop-2.0.0/com.unity.netcode.gameobjects/CHANGELOG.md#200-exp5---2024-06-03) |
 | 1.11.0 | 2024-08-20 | [1.11.0](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F1.11.0) |
 | 1.10.0 | 2024-07-22 | [1.10.0](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F1.10.0) |
 | 1.9.1 | 2024-04-18 | [1.9.1](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F1.9.1) |
