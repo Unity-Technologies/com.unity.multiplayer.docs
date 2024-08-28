@@ -70,6 +70,12 @@ Additionally, any type that has a managed type is itself a managed type - so a s
 
 Finally, while managed `INetworkSerializable` types are serialized in-place (and thus don't incur allocations for simple value updates), C# arrays and managed types serialized through custom serialization are **not** serialized in-place, and will incur an allocation on every update.
 
+### Using collections with `NetworkVariable`s
+
+You can use `NetworkVariable`s with both managed and unmanaged collections, but you need to call `NetworkVariable<T>.CheckDirtyState()` after making changes to a collection (or items in a collection) for those changes to be detected. Then the [`OnValueChanged`](#onvaluechanged-example) event will trigger, if subscribed locally, and by the end of the frame the rest of the clients and server will be synchronized with the detected change(s).
+
+`NetworkVariable<T>.CheckDirtyState()` checks every item in a collection, including recursively nested collections, which can have a significant impact on performance if collections are large. If you're making multiple changes to a collection, you only need to call `NetworkVariable<T>.CheckDirtyState()` once after all changes are complete, rather than calling it after each change.
+
 ## Synchronization and notification example
 
 The following client-server example shows how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked. It also shows how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` provides notifications for any changes to `m_SomeValue.Value` that occur.
@@ -244,7 +250,7 @@ Owner writer permissions are owner-only.
 
 There are two options for reading a `NetworkVariable.Value`:
 
-- **Everyone(default)**: both owners and non-owners of the NetworkObject can read the value.
+- **Everyone (default)**: both owners and non-owners of the NetworkObject can read the value.
     - This is useful for global states that all clients should be aware of, such as player scores, health, or any other state that all clients should know about.
     - We provided an example of maintaining a door's open or closed state using the everyone permission.
 - **Owner**: only the owner of the NetworkObject and the server can read the value.
@@ -254,9 +260,9 @@ There are two options for reading a `NetworkVariable.Value`:
 
 There are two options for writing a `NetworkVariable.Value`:
 
-- **Server(default)**: the server is the only one that can write the value.
+- **Server**: the server is the only one that can write the value. This is the default for [client-server contexts](../terms-concepts/client-server.md).
     - This is useful for server-side specific states that all clients should be aware of but can't change, such as an NPC's status or some global world environment state (that is, is it night or day time).
-- **Owner**: only the owner of the NetworkObject can write to the value.
+- **Owner**: only the owner of the NetworkObject can write to the value. This is the default for [distributed authority contexts](../terms-concepts/distributed-authority.md).
     - This is useful if your `NetworkVariable` represents something specific to the client's player that only the owning client should be able to set, such as a player's skin or other cosmetics.
 
 ### Permissions example
@@ -349,7 +355,7 @@ public class PlayerState : NetworkBehaviour
     void Awake()
     {
         //NetworkList can't be initialized at declaration time like NetworkVariable. It must be initialized in Awake instead.
-        //If you do initialize at declaration, you will run into Memmory leak errors.
+        //If you do initialize at declaration, you will run into memory leak errors.
         TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>();
     }
 

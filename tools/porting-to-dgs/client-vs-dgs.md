@@ -41,11 +41,11 @@ The following table lists some pros and cons of using a client-hosted hosting ap
 | Client-hosted games are simpler to debug and profile compared to dedicated server-hosted games (your development PC can also run the host, a DGS might run on specialized hardware). | Players can more easily cheat because they have physical access to the server. |
 | The above makes it great for LAN (local area network) parties. | Client-hosted games don’t scale well. Player hardware usually isn’t capable of hosting game sessions with hundreds of connections. |
 
-✝ However, some games might generate more traffic (compared to compute resources), which might make a client-hosted game more expensive than using a service like Game Server Hosting (Multiplay) if relying too much on Relay.
+✝ However, some games might generate more traffic (compared to compute resources), which might make a client-hosted game more expensive than using a service like Unity Multiplay Hosting if relying too much on Relay.
 
 ## Dedicated server-hosted games
 
-A dedicated server-hosted game is a game that runs server builds on hardware that’s dedicated to hosting the game. The dedicated server might be in an [on-premise data center](./hosting-considerations.md#developer-hosted-cloud), in the [cloud](./hosting-considerations#developer-hosted-cloud), or made available through a [managed service provider](#managed-service-provider), such as Unity’s [Game Server Hosting](https://docs.unity.com/game-server-hosting). In any case, players don’t usually have access to the server build.
+A dedicated server-hosted game is a game that runs server builds on hardware that’s dedicated to hosting the game. The dedicated server might be in an [on-premise data center](./hosting-considerations.md#developer-hosted-cloud), in the [cloud](./hosting-considerations#developer-hosted-cloud), or made available through a [managed service provider](#managed-service-provider), such as Unity’s [Multiplay Hosting](https://docs.unity.com/game-server-hosting). In any case, players don’t usually have access to the server build.
 
 Games that benefit most from a dedicated server-hosted hosting approach include those that:
 
@@ -61,9 +61,9 @@ The following table lists some pros and cons of using a dedicated server hosting
 | There’s no extra lag due to relay based connections. | You must consider scalability because the number of players connected to your server fleet can change drastically in a short time. |
 | You have more control over performance and quality of service since you as a developer control the hardware the server runs on. | It can quickly get expensive, depending on how you host the server build. |
 | It’s easier to think about the server part of your code and the client part of your code when there’s no overlap like a client-hosted game. | It’s more complicated to debug because you usually need to run the production build in a virtual machine for testing. |
-| Clients don’t require as much performance because they'ren’t responsible for the processing and bandwidth overhead involved with hosting. | You have to keep a server build and a client build. |
+| Clients don’t require as much performance because they aren't responsible for the processing and bandwidth overhead involved with hosting. | You have to keep a server build and a client build. |
 | You don’t have to worry about host migrations or what to do when the host player disconnects. ✝ |  |
 | You don’t have to worry about the unfairness of the host having zero latency or lag. |  |
-| You have the option of using a managed service provider like Game Server Hosting, which allows you to focus on other aspects of your game. |  |
+| You have the option of using a managed service provider like Unity Multiplay Hosting, which allows you to focus on other aspects of your game. |  |
 
 ✝ However, you still need to accommodate for unexpected server failures. These failures are less likely to happen, but you still need to handle them with appropriate error messaging.

@@ -9,9 +9,9 @@ Client synchronization occurs when immediately after a client connects to a host
 
 The client synchronization mode should be set when the server or host is first provided via the `NetworkSceneManager.SetClientSynchronizationMode` method that takes a [`LoadSceneMode`](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) value as a parameter. Each client synchronization mode behaves in a similar way to loading a scene based on the chosen `LoadSceneMode`.
 
-::note Distributed authority contexts
+:::note Distributed authority contexts
 When using a [distributed authority network topology](../../terms-concepts/distributed-authority.md), any client can set the client synchronization mode when they're promoted to session owner. Late-joining clients are synchronized using whatever setting the current session owner has.
-::
+:::
 
 ## Single Client Synchronization Mode
 _(Existing Client-Side Scenes Unloaded During Synchronization)_
