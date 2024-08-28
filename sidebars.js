@@ -545,6 +545,10 @@ module.exports = {
                     "items": [
                         {
                             "type": "doc",
+                            "id": "learn/bitesize/bitesize-usecases"
+                        },
+                        {
+                            "type": "doc",
                             "id": "learn/bitesize/bitesize-introduction"
                         },
                         {
