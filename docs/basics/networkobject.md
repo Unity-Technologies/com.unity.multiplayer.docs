@@ -120,6 +120,6 @@ Similar to `NetworkObject.ActiveSceneSynchronization`, this property automatical
 
 ## Additional resources
 
-- [PlayerObject](playerobject.md)
+- [PlayerObjects and player prefabs](playerobjects.md)
 - [NetworkBehaviour](networkbehaviour.md)
 - [NetworkVariable](networkvariable.md)
