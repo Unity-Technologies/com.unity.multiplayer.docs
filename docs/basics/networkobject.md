@@ -10,7 +10,9 @@ Netcode for GameObjects' high level components, [the RPC system](../advanced-top
   1. NetworkObject
   2. [`NetworkBehaviour`](networkbehaviour.md)
 
-NetworkObjects require the use of specialized [`NetworkObjectReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html) structures before you can serialize and use them with RPCs and `NetworkVariable`s.
+NetworkObjects require the use of specialized [`NetworkObjectReference`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObjectReference.html) structures before you can serialize and use them with RPCs and `NetworkVariable`s
+
+Netcode for GameObjects also has [PlayerObjects](playerobjects.md), an optional feature that you can use to assign a NetworkObject to a specific client.
 
 ## Using NetworkObjects
 
@@ -33,6 +35,8 @@ You can avoid execution order issues in any NetworkBehaviour component scripts t
 ## Ownership
 
 Either the server (default) or any connected and approved client owns each NetworkObject. By default, Netcode for GameObjects is [server-authoritative](../terms-concepts/client-server.md), which means only the server can spawn and despawn NetworkObjects, but you can also build [distributed authority](../terms-concepts/distributed-authority.md) games where clients have the authority to spawn and despawn NetworkObjects as well.
+
+If you're creating a client-server game and you want a client to control more than one NetworkObject, use the following ownership methods.
 
 The default `NetworkObject.Spawn` method assumes server-side ownership:
 
@@ -67,71 +71,6 @@ To see if the server owns the NetworkObject, you can check the [`NetworkBehaviou
 When you want to despawn and destroy the owner but you don't want to destroy a specific NetworkObject along with the owner, you can set the `NetworkObject.DontDestroyWithOwner` property to `true` which ensures that the owned NetworkObject isn't destroyed with the owner.
 
 :::
-
-## Player NetworkObjects
-
-Player objects are an optional feature in Netcode for GameObjects that you can use to assign a networked object to a specific client. A client can only have at most one player object.
-
-If you want a client to control more than one NetworkObject, use the ownership methods described above under the ownership section.
-
-If you want to be able to assign a unique player prefab on a per-client connection basis, use client [connection approval](connection-approval.md).
-
-### Creating a PlayerObject
-
-Netcode for GameObjects can spawn a default PlayerObject for you. If you enable **Create Player Prefab** (true) in the NetworkManager and assign a valid prefab, then Netcode for GameObjects spawns a unique instance of the designated player prefab for each connected and approved client.
-
-To manually spawn an object as PlayerObject, use the following method:
-
-```csharp
-GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
-```
-
-If the player already had a prefab instance assigned, then the client owns the NetworkObject of that prefab instance unless there's additional server-side specific user code that removes or changes the ownership.
-
-### Defining defaults for PlayerObjects
-
-If you're using `UnityEngine.InputSystem.PlayerInput` or `UnityEngine.PhysicsModule.CharacterController` components on your player prefab(s), you should disable them by default and only enable them for the local client's PlayerObject. Otherwise, you may get events from the most recently instantiated player prefab instance, even if it isn't the local client instance.
-
-You can disable these components in the **Inspector** view on the prefab itself, or disable them during `Awake` in one of your `NetworkBehaviour` components. Then you can enable the components only on the owner's instance using code like the example below:
-
-```
-PlayerInput m_PlayerInput;
-private void Awake()
-{
-    m_PlayerInput = GetComponent<PlayerInput>();
-    m_PlayerInput.enabled = false;
-}
-
-public override void OnNetworkSpawn()
-{
-    m_PlayerInput.enabled = IsOwner;
-    base.OnNetworkSpawn();
-}
-
-public override void OnNetworkDespawn()
-{
-    m_PlayerInput.enabled = false;
-    base.OnNetworkDespawn();
-}
-```
-
-### Finding PlayerObjects
-
-To find a PlayerObject for a specific client ID, you can use the following methods:
-
-Within a NetworkBehaviour, you can check the local `NetworkManager.LocalClient` to get the local PlayerObjects:
-
-```csharp
-NetworkManager.LocalClient.PlayerObject
-```
-
-Conversely, on the server-side, if you need to get the PlayerObject instance for a specific client, you can use the following:
-
-```csharp
-NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
-```
-
-To find your own player object just pass `NetworkManager.Singleton.LocalClientId` as the `clientId` in the sample above.
 
 ## Network prefabs
 
@@ -178,3 +117,9 @@ Similar to `NetworkObject.ActiveSceneSynchronization`, this property automatical
 :::info
 `NetworkObject.ActiveSceneSynchronization` can be used with `NetworkObject.SceneMigrationSynchronization` as long as you take into consideration that if you migrate a NetworkObject into a non-active scene via `SceneManager.MoveGameObjectToScene` and then later change the active scene, then the NetworkObject instance will be automatically migrated to the newly set active scene.
 :::
+
+## Additional resources
+
+- [PlayerObject](playerobject.md)
+- [NetworkBehaviour](networkbehaviour.md)
+- [NetworkVariable](networkvariable.md)

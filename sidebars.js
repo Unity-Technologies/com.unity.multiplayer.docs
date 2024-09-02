@@ -123,14 +123,26 @@ module.exports = {
             "type": "category",
             "label": "Networking components",
             "items": [
-                {
-                    "type": "doc",
-                    "id": "basics/networkobject"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/networkobject-parenting"
-                },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "NetworkObject",
+                "items": [
+                    {
+                        "type": "doc",
+                        "id": "basics/networkobject"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "basics/playerobjects"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "advanced-topics/networkobject-parenting"
+                    },
+
+                  ]
+              },
                 {
                   "collapsed": true,
                   "type": "category",
