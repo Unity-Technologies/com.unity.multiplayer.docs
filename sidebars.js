@@ -558,10 +558,6 @@ module.exports = {
                         },
                         {
                             "type": "doc",
-                            "id": "learn/bitesize/bitesize-invaders"
-                        },
-                        {
-                            "type": "doc",
                             "id": "learn/bitesize/bitesize-spaceshooter"
                         },
                         {
@@ -574,6 +570,17 @@ module.exports = {
                         },
                     ]
                 },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Deprecated samples",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-invaders"
+                        },
+                    ]
+                },                
             ],
         },
         {
