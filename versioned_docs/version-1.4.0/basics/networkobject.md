@@ -33,7 +33,7 @@ The order of networked objects matters. Make sure to load any NetworkBehaviour c
 
 # Ownership
 
-Either the server (default) or any connected and approved client each NetworkObject. Netcode for GameObjects is server-authoritative, which means the server controls (the only system authorized) spawning and despawning NetworkObjects.
+Ownership can be held either by the server (by default) or by any connected and approved client for each NetworkObject. Netcode for GameObjects is server-authoritative, which means the server controls (the only system authorized) spawning and despawning NetworkObjects.
 
 :::note
 
