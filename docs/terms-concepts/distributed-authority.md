@@ -20,7 +20,7 @@ Distributed authority provides additional permissions to manage object distribut
 Using a distributed authority topology is typically not suitable for high-performance competitive games that require an accurate predictive motion model. The distributed authority model successfully addresses a lot of visual and input-related issues, but does have some limitations:
 
 * Since authority and ownership of objects is distributed across clients, there's typically no single physics simulation governing the interaction of all objects. This can require approaching physics-related gameplay differently compared to a traditional client-server context.
-* Depending on the platform and overall design of your product, client-side cheating and hacking can become less complicated for bad actors since there's no single authority.
+* Depending on the platform and overall design of your product, it can be easier for bad actors to cheat. The authority model gives more trust to individual clients. Evaluate your cheating tolerance when developing with distributed authority.
 
 For game designs that don't require a precise physics simulation or client prediction model (with potentially some form of rollback), a distributed authority approach can be a good option. It's less resource intensive than having a dedicated game server, and can make it simpler to implement many common netcode features when compared with equivalent implementations in a client-server topology.
 
