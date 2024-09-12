@@ -160,10 +160,6 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "advanced-topics/physics"
-                },
-                {
-                    "type": "doc",
                     "id": "components/networkmanager"
                 },
                 {
@@ -175,6 +171,10 @@ module.exports = {
                     "label": "NetworkAnimator",
                     "id": "components/networkanimator"
                 },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/physics"
+                }
             ]
         },
         {
