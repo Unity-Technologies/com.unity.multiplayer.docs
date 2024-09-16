@@ -29,7 +29,7 @@
     {
       "type": "link",
       "label": "API reference",
-      "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.0/api/index.html"
+      "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.10/api/index.html"
     },
     {
       "collapsed": true,
@@ -43,10 +43,6 @@
         {
           "type": "doc",
           "id": "tutorials/get-started-ngo"
-        },
-        {
-          "type": "doc",
-          "id": "learn/distributed-authority-quick-start"
         },
         {
           "collapsed": true,
@@ -86,10 +82,6 @@
             {
               "type": "doc",
               "id": "learn/listen-server-host-architecture"
-            },
-            {
-              "type": "doc",
-              "id": "terms-concepts/distributed-authority"
             }
           ]
         },
@@ -173,10 +165,6 @@
         {
           "type": "doc",
           "id": "basics/ownership"
-        },
-        {
-          "type": "doc",
-          "id": "basics/race-conditions"
         }
       ]
     },
@@ -200,10 +188,6 @@
         {
           "type": "doc",
           "id": "basics/spawning-synchronization"
-        },
-        {
-          "type": "doc",
-          "id": "basics/deferred-despawning"
         }
       ]
     },

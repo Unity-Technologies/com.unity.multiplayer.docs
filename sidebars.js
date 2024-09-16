@@ -124,12 +124,19 @@ module.exports = {
             "label": "Networking components",
             "items": [
                 {
-                    "type": "doc",
-                    "id": "basics/networkobject"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/networkobject-parenting"
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "NetworkObject",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "basics/networkobject"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "advanced-topics/networkobject-parenting"
+                      },
+                    ]
                 },
                 {
                   "collapsed": true,
@@ -148,10 +155,6 @@ module.exports = {
                 },
                 {
                     "type": "doc",
-                    "id": "advanced-topics/physics"
-                },
-                {
-                    "type": "doc",
                     "id": "components/networkmanager"
                 },
                 {
@@ -163,6 +166,10 @@ module.exports = {
                     "label": "NetworkAnimator",
                     "id": "components/networkanimator"
                 },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/physics"
+                }
             ]
         },
         {
@@ -536,6 +543,10 @@ module.exports = {
                     "type": "category",
                     "label": "Bitesize samples",
                     "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-usecases"
+                        },
                         {
                             "type": "doc",
                             "id": "learn/bitesize/bitesize-introduction"
