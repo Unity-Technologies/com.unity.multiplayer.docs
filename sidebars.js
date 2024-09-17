@@ -123,26 +123,25 @@ module.exports = {
             "type": "category",
             "label": "Networking components",
             "items": [
-              {
-                "collapsed": true,
-                "type": "category",
-                "label": "NetworkObject",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "basics/networkobject"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "basics/playerobjects"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "advanced-topics/networkobject-parenting"
-                    },
-
-                  ]
-              },
+                {
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "NetworkObject",
+                  "items": [
+                      {
+                          "type": "doc",
+                          "id": "basics/networkobject"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "basics/playerobjects"
+                      },
+                      {
+                          "type": "doc",
+                          "id": "advanced-topics/networkobject-parenting"
+                      },
+                    ]
+                },
                 {
                   "collapsed": true,
                   "type": "category",
@@ -580,7 +579,7 @@ module.exports = {
                             "id": "learn/bitesize/bitesize-invaders"
                         },
                     ]
-                },                
+                },
             ],
         },
         {
