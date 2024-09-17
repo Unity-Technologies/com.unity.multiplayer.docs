@@ -134,6 +134,10 @@ module.exports = {
                       },
                       {
                           "type": "doc",
+                          "id": "basics/playerobjects"
+                      },
+                      {
+                          "type": "doc",
                           "id": "advanced-topics/networkobject-parenting"
                       },
                     ]
@@ -553,10 +557,6 @@ module.exports = {
                         },
                         {
                             "type": "doc",
-                            "id": "learn/bitesize/bitesize-invaders"
-                        },
-                        {
-                            "type": "doc",
                             "id": "learn/bitesize/bitesize-spaceshooter"
                         },
                         {
@@ -566,6 +566,17 @@ module.exports = {
                         {
                             "type": "doc",
                             "id": "learn/bitesize/bitesize-dynamicPrefabs"
+                        },
+                    ]
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Deprecated samples",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-invaders"
                         },
                     ]
                 },
