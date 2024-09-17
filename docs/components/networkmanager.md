@@ -8,7 +8,7 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 ### `NetworkManager` Inspector properties
 
 - **LogLevel**:  Sets the network logging level
-- **PlayerPrefab**:  When a prefab is assigned, the prefab will be instantiated as the player object and assigned to the newly connected and authorized client. For more information about player prefabs, refer to [Player NetworkObjects](../basics/networkobject.md#player-networkobjects).
+- **PlayerPrefab**:  When a prefab is assigned, the prefab will be instantiated as the PlayerObject and assigned to the newly connected and authorized client. For more information about player prefabs, refer to [PlayerObjects and player prefabs](../basics/playerobjects.md).
 - **NetworkPrefabs**: Where you register your network prefabs.  You can also create a single network prefab override per registered network prefab here.
 - **Protocol Version**: Set this value to help distinguish between builds when the most current build has new assets that can cause issues with older builds connecting.
 - **Network Transport**: Where your network specific settings and transport type is set.  This field accepts any INetworkTransport implementation.  However, unless you have unique transport specific needs UnityTransport is the recommended transport to use with Netcode for GameObjects.
