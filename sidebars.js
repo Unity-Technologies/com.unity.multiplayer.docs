@@ -134,6 +134,10 @@ module.exports = {
                       },
                       {
                           "type": "doc",
+                          "id": "basics/playerobjects"
+                      },
+                      {
+                          "type": "doc",
                           "id": "advanced-topics/networkobject-parenting"
                       },
                     ]
