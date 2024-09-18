@@ -8,7 +8,7 @@ title: NetworkVariables
 `NetworkVariable` is a wrapper of the stored value of type `T`, so you need to use the `NetworkVariable.Value` property to access the actual value being synchronized. A `NetworkVariable` is synchronized with:
 
 * New clients joining the game (also referred to as late-joining clients)
-    * When the associated `NetworkObject` of a `NetworkBehaviour` with `NetworkVariable` properties is spawned, any `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side.
+    * When the associated NetworkObject of a `NetworkBehaviour` with `NetworkVariable` properties is spawned, any `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side.
 * Connected clients
     * When a `NetworkVariable` value changes, all connected clients that subscribed to the `NetworkVariable.OnValueChanged` event (prior to the value being changed) are notified of the change. Two parameters are passed to any `NetworkVariable.OnValueChanged` subscribed callback method:
         - First parameter (Previous): The previous value before the value was changed
@@ -21,19 +21,19 @@ You can use `NetworkVariable` [permissions](#permissions) to control read and wr
 ### Defining a NetworkVariable
 
 - A `NetworkVariable` property must be defined within a `NetworkBehaviour`-derived class attached to a `GameObject`.
-    - The `GameObject` or a parent `GameObject` must also have a `NetworkObject` component attached to it.
+    - The `GameObject` or a parent `GameObject` must also have a NetworkObject component attached to it.
 - A `NetworkVariable`'s value can only be set:
     - When initializing the property (either when it's declared or within the Awake method).
-    - While the associated `NetworkObject` is spawned (upon being spawned or any time while it's still spawned).
+    - While the associated NetworkObject is spawned (upon being spawned or any time while it's still spawned).
 
 ###  Initializing a NetworkVariable
 
-When a client first connects, it's synchronized with the current value of the `NetworkVariable`. Typically, clients should register for `NetworkVariable.OnValueChanged` within the `OnNetworkSpawn` method. A `NetworkBehaviour`'s `Start` and `OnNetworkSpawn` methods are invoked based on the type of `NetworkObject` the `NetworkBehaviour` is associated with:   
+When a client first connects, it's synchronized with the current value of the `NetworkVariable`. Typically, clients should register for `NetworkVariable.OnValueChanged` within the `OnNetworkSpawn` method. A `NetworkBehaviour`'s `Start` and `OnNetworkSpawn` methods are invoked based on the type of NetworkObject the `NetworkBehaviour` is associated with:   
 
 - In-scene placed: Since the instantiation occurs via the scene loading mechanism(s), the `Start` method is invoked before `OnNetworkSpawn`.
 - Dynamically spawned: Since `OnNetworkSpawn` is invoked immediately (that is, within the same relative call-stack) after instantiation, the `Start` method is invoked after `OnNetworkSpawn`.  
 
-Typically, these methods are invoked at least one frame after the `NetworkObject` and associated `NetworkBehaviour` components are instantiated. The table below lists the event order for dynamically spawned and in-scene placed objects respectively.
+Typically, these methods are invoked at least one frame after the NetworkObject and associated `NetworkBehaviour` components are instantiated. The table below lists the event order for dynamically spawned and in-scene placed objects respectively.
 
 Dynamically spawned | In-scene placed
 ------------------- | ---------------
@@ -41,7 +41,7 @@ Awake               | Awake
 OnNetworkSpawn      | Start
 Start               | OnNetworkSpawn
 
-You should only set the value of a `NetworkVariable` when first initializing it or if it's spawned. It isn't recommended to set a `NetworkVariable` when the associated `NetworkObject` isn't spawned.
+You should only set the value of a `NetworkVariable` when first initializing it or if it's spawned. It isn't recommended to set a `NetworkVariable` when the associated NetworkObject isn't spawned.
 
 :::tip
 If you need to initialize other components or objects based on a `NetworkVariable`'s initial synchronized state, then you can use a common method that's invoked on the client side within the `NetworkVariable.OnValueChanged` callback (if assigned) and `NetworkBehaviour.OnNetworkSpawn` method.
@@ -70,11 +70,17 @@ Additionally, any type that has a managed type is itself a managed type - so a s
 
 Finally, while managed `INetworkSerializable` types are serialized in-place (and thus don't incur allocations for simple value updates), C# arrays and managed types serialized through custom serialization are **not** serialized in-place, and will incur an allocation on every update.
 
+### Using collections with `NetworkVariable`s
+
+You can use `NetworkVariable`s with both managed and unmanaged collections, but you need to call `NetworkVariable<T>.CheckDirtyState()` after making changes to a collection (or items in a collection) for those changes to be detected. Then the [`OnValueChanged`](#onvaluechanged-example) event will trigger, if subscribed locally, and by the end of the frame the rest of the clients and server will be synchronized with the detected change(s).
+
+`NetworkVariable<T>.CheckDirtyState()` checks every item in a collection, including recursively nested collections, which can have a significant impact on performance if collections are large. If you're making multiple changes to a collection, you only need to call `NetworkVariable<T>.CheckDirtyState()` once after all changes are complete, rather than calling it after each change.
+
 ## Synchronization and notification example
 
 The following client-server example shows how the initial `NetworkVariable` synchronization has already occurred by the time `OnNetworkSpawn` is invoked. It also shows how subscribing to `NetworkVariable.OnValueChanged` within `OnNetworkSpawn` provides notifications for any changes to `m_SomeValue.Value` that occur.
 
-1. The server initializes the `NetworkVariable` when the associated `NetworkObject` is spawned.
+1. The server initializes the `NetworkVariable` when the associated NetworkObject is spawned.
 1. The client confirms that the `NetworkVariable` is synchronized to the initial value set by the server and assigns a callback method to `NetworkVariable.OnValueChanged`.
 1. Once spawned, the client is notified of any changes made to the `NetworkVariable`.
 
@@ -134,11 +140,11 @@ public class TestNetworkVariableSynchronization : NetworkBehaviour
 }
  ```
 
-If you attach the above script to an in-scene placed `NetworkObject`, make a standalone build, run the standalone build as a host, and then connect to that host by entering Play Mode in the Editor, you can see (in the console output):
+If you attach the above script to an in-scene placed NetworkObject, make a standalone build, run the standalone build as a host, and then connect to that host by entering Play Mode in the Editor, you can see (in the console output):
 - The client side `NetworkVariable` value is the same as the server when `NetworkBehaviour.OnNetworkSpawn` is invoked.  
-- The client detects any changes made to the `NetworkVariable` after the in-scene placed `NetworkObject` is spawned.  
+- The client detects any changes made to the `NetworkVariable` after the in-scene placed NetworkObject is spawned.  
 
-This works the same way with dynamically spawned `NetworkObject`s.
+This works the same way with dynamically spawned NetworkObjects.
 
 ## OnValueChanged example
 
@@ -244,19 +250,19 @@ Owner writer permissions are owner-only.
 
 There are two options for reading a `NetworkVariable.Value`:
 
-- **Everyone(default)**: both owners and non-owners of the `NetworkObject` can read the value.
+- **Everyone (default)**: both owners and non-owners of the NetworkObject can read the value.
     - This is useful for global states that all clients should be aware of, such as player scores, health, or any other state that all clients should know about.
     - We provided an example of maintaining a door's open or closed state using the everyone permission.
-- **Owner**: only the owner of the `NetworkObject` and the server can read the value.
+- **Owner**: only the owner of the NetworkObject and the server can read the value.
     - This is useful if your `NetworkVariable` represents something specific to the client's player that only the server and client should know about, such as a player's inventory or ammo count.
 
 ### Write permissions
 
 There are two options for writing a `NetworkVariable.Value`:
 
-- **Server(default)**: the server is the only one that can write the value.
+- **Server**: the server is the only one that can write the value. This is the default for [client-server contexts](../terms-concepts/client-server.md).
     - This is useful for server-side specific states that all clients should be aware of but can't change, such as an NPC's status or some global world environment state (that is, is it night or day time).
-- **Owner**: only the owner of the `NetworkObject` can write to the value.
+- **Owner**: only the owner of the NetworkObject can write to the value. This is the default for [distributed authority contexts](../terms-concepts/distributed-authority.md).
     - This is useful if your `NetworkVariable` represents something specific to the client's player that only the owning client should be able to set, such as a player's skin or other cosmetics.
 
 ### Permissions example
@@ -349,7 +355,7 @@ public class PlayerState : NetworkBehaviour
     void Awake()
     {
         //NetworkList can't be initialized at declaration time like NetworkVariable. It must be initialized in Awake instead.
-        //If you do initialize at declaration, you will run into Memmory leak errors.
+        //If you do initialize at declaration, you will run into memory leak errors.
         TeamAreaWeaponBoosters = new NetworkList<AreaWeaponBooster>();
     }
 
@@ -467,7 +473,7 @@ public struct AreaWeaponBooster : INetworkSerializable, System.IEquatable<AreaWe
 
     public bool Equals(AreaWeaponBooster other)
     {
-        return other.Equals(this) && Radius == other.Radius && Location == other.Location;
+        return other.ApplyWeaponBooster.Equals(ApplyWeaponBooster) && Radius == other.Radius && Location == other.Location;
     }
 }
 ```

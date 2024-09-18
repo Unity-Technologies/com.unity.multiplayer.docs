@@ -237,8 +237,16 @@ module.exports = {
           lastVersion: "current",
           versions: {
             current: {
-              label: "2.0.0-exp",
+              label: "2.0.0",
               path: "current",
+            },
+            "1.11.0": {
+              label: "1.11.0",
+              path: "1.11.0",
+            },
+            "1.10.0": {
+              label: "1.10.0",
+              path: "1.10.0",
             },
             "1.9.1": {
               label: "1.9.1",
@@ -336,8 +344,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "2.1.0",
+            label: "2.2.0",
             path: "current",
+          },
+          "2.1.0": {
+            label: "2.1.0",
+            path: "2.1.0",
           },
           "1.1.0": {
             label: "1.1.0",
@@ -369,16 +381,16 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "1.2.0",
+            label: "1.3.0",
             path: "current",
+          },
+          "1.2.0": {
+            label: "1.2.0",
+            path: "1.2.0",
           },
           "1.1.0": {
             label: "1.1.0",
             path: "1.1.0",
-          },
-          "1.0.0": {
-            label: "1.0.0",
-            path: "1.0.0",
           },
           "1.0.0": {
             label: "1.0.0",

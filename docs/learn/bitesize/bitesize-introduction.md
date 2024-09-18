@@ -5,6 +5,7 @@ title: About Bitesize samples
 
 The Bitesize Samples repository provides a series of sample code as modules to use in your games and better understand Netcode for GameObjects (Netcode).
 
+* [Multiplayer Use Cases](bitesize-usecases.md) - Learn more about core Netcode For GameObjects (Netcode) features through practical examples and In-Editor tutorials.
 * [2D Space Shooter Sample](bitesize-spaceshooter.md) - Learn more about physics movement and status effects using Netcode `NetworkVariables` and `ObjectPooling`.
 * [Invaders Sample](bitesize-invaders.md) - Learn more about game flow, modes, unconventional movement networked, and a shared timer.
 * [Client Driven Sample](bitesize-clientdriven.md) - Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting.

@@ -44,7 +44,7 @@ The `2DSpaceShooter` object creates many objects dynamically at runtime includin
 
 ![pool img](/img/bitesize/invader-networkobjectpool.png)
 
-All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the `NetworkObject` is despawned, it will be automatically returned to the pool instead of getting destroyed.
+All of the runtime spawnable objects have been registered to the pool. On the client-side, this will cause Netcode to use an object from the pool instead of instantiating a new Object. When the NetworkObject is despawned, it will be automatically returned to the pool instead of getting destroyed.
 
 Adding the `NetworkObjectPool` to the scene won't yet pool server objects because these must be manually created and then spawned by the user. Instead of instantiating objects, your code should take them from the pool.
 

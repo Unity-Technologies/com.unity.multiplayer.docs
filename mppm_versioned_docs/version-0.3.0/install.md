@@ -4,7 +4,7 @@ title: Install Multiplayer Play Mode
 description: How to install Multiplayer Play Mode (MPPM)
 ---
 
-To begin testing your multiplayer functionality, you must first intall **Multiplayer Play Mode (MPPM)**.
+To begin testing your multiplayer functionality, you must first install **Multiplayer Play Mode (MPPM)**.
 
 ## Prerequisites
 
@@ -25,4 +25,4 @@ To install **MPPM**, you must have:
 
 ## Next Steps
 
-You can now access and configure your [**Virtual Players**](../virtual-players) and their [**Player Tags**](../player-tags).
+You can now access and configure your [Virtual Players](../virtual-players) and their [tags](../player-tags).

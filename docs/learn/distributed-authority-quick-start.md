@@ -16,18 +16,13 @@ Before you begin, you need the following:
 
 ## Project setup
 
-1. Create a new Unity Project using the 3D template.
-
-![new unity project](/img/learn/distributed-authority-quick-start/new-project.png)
-
-2. Ensure that the project is connected to a Unity Cloud project.
-
-![connect unity cloud](/img/learn/distributed-authority-quick-start/connect-unity-cloud.png)
+1. Create a new Unity Project using the **3D** template.
+2. Connect the project to Unity Cloud by selecting the **Connect to Unity Cloud** checkbox.
 
 ## Install packages
 
 - Install the latest `com.unity.netcode.gameobjects` Netcode for GameObjects **v2.0.0** package.
-- Install the latest `com.unity.services.multiplayer` Multiplayer Services package.
+- Install the latest `com.unity.services.multiplayer` Multiplayer Services SDK package.
 
 ## Netcode for GameObjects setup
 
@@ -50,6 +45,7 @@ Before you begin, you need the following:
 ```cs
 using System;
 using System.Threading.Tasks;
+using Unity.Netcode;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Multiplayer;
@@ -136,9 +132,10 @@ public class ConnectionManager : MonoBehaviour
            AuthenticationService.Instance.SwitchProfile(_profileName);
            await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
-            var options = new CreateSessionOptions(_maxPlayers) {
-                Name = _sessionName
-            }.WithDistributedConnection();
+            var options = new SessionOptions() {
+                Name = _sessionName,
+                MaxPlayers = _maxPlayers
+            }.WithDistributedAuthorityNetwork();
 
             _session = await MultiplayerService.Instance.CreateOrJoinSessionAsync(_sessionName, options);
 
@@ -152,6 +149,12 @@ public class ConnectionManager : MonoBehaviour
    }
 }
 ```
+
+:::note
+
+It's important to wait until `OnClientConnectedCallback` has been triggered before spawning objects. Spawning objects early will result in errors and unexpected behaviour. 
+
+:::
 
 2. Add the `ConnectionManager` component script you created to the  *NetworkManager* object.
 ![add connection manager](/img/learn/distributed-authority-quick-start/create-connection-manager.png)
@@ -276,17 +279,18 @@ public class PlayerCubeController : NetworkTransform
 ```
 2. In the open *SampleScene*, create a 3D cube and name it *PlayerCube*.
 ![create PlayerCube object](/img/learn/distributed-authority-quick-start/player-cube.png)
-3. Add a `NetworkObject` component to the *PlayerCube*.
+3. Add a NetworkObject component to the *PlayerCube*.
 ![add a NetworkObject component](/img/learn/distributed-authority-quick-start/add-networkobject.png)
-4. Add the *PlayerCubeController* to the *PlayerCube*.
+4. Set the NetworkObject Ownership to "None".
+5. Add the *PlayerCubeController* to the *PlayerCube*.
 ![add the PlayerCubeController component](/img/learn/distributed-authority-quick-start/add-playercubecontroller.png)
-5. Create a Prefabs folder in the root Assets folder.
-6. Drag and drop the *PlayerCube* object into the newly created Prefabs folder.
+6. Create a Prefabs folder in the root Assets folder.
+7. Drag and drop the *PlayerCube* object into the newly created Prefabs folder.
 ![create the player cube prefab](/img/learn/distributed-authority-quick-start/create-playercube-prefab.png)
-6. Delete the *PlayerCube* object from your scene.
-5. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created *PlayerCube*.
+8. Delete the *PlayerCube* object from your scene.
+9. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created *PlayerCube*.
 ![set the default player prefab](/img/learn/distributed-authority-quick-start/assign-default-player-prefab.png)
-6. Save all changes to the scene.
+10. Save all changes to the scene.
 
 ## Next steps
 

@@ -74,7 +74,7 @@ Games using a DGS hosting approach rely on automation to handle startup events a
 Instead of using in-game menus on start-up, you’ll need to implement an automated startup flow that will `StartServer()` automatically, then wait for your clients to connect. This is also when you might want to set up a lobby in your lobby service or advertise yourself as “ready” to your hosting provider and matchmaking service. After your service knows you’re ready, it can redirect clients to your server.
 
 :::note
-If you’re interested in using other Unity services for your multiplayer game, see [Lobby](https://docs.unity.com/lobby), [Game Server Hosting](https://docs.unity.com/game-server-hosting), and [Matchmaker](https://docs.unity.com/matchmaker).
+If you’re interested in using other Unity services for your multiplayer game, see [Lobby](https://docs.unity.com/lobby), [Multiplay Hosting](https://docs.unity.com/game-server-hosting), and [Matchmaker](https://docs.unity.com/matchmaker).
 :::
 
 ### Automate closing the lobby
@@ -126,7 +126,7 @@ Starting a new game with connected players and keeping the same game session is 
 
 ### Automate exit codes
 
-Many hosting providers, such as [Unity’s Game Server Hosting service](https://docs.unity.com/multiplay/), watch your server and react to exit codes. For example, if you have a bug resulting in `StartServer` failing, you can call `Application.Quit(1)` with exit code `1`. Exit codes greater than `0` let the hosting provider know something went wrong and the provider can automatically react to this appropriately by trying to reboot your server or just destroying it.
+Many hosting providers, such as [Unity’s Multiplay Hosting service](https://docs.unity.com/multiplay/), watch your server and react to exit codes. For example, if you have a bug resulting in `StartServer` failing, you can call `Application.Quit(1)` with exit code `1`. Exit codes greater than `0` let the hosting provider know something went wrong and the provider can automatically react to this appropriately by trying to reboot your server or just destroying it.
 
 ## General game changes
 
@@ -296,9 +296,9 @@ I've also seen self-signed certificates used for "offline" purposes, such as enc
 The content in this section might only apply to some hosting providers. Other hosting providers might have zero bandwidth costs for in-datacenter and ingress transfers.
 :::
 
-Some hosting providers manage build updates for you and charge for in-datacenter and ingress transfers. One such hosting provider is [Unity’s Game Server Hosting (GSH)](https://docs.unity.com/multiplay/) solution (Multiplay).
+Some hosting providers manage build updates for you and charge for in-datacenter and ingress transfers. One such hosting provider is [Unity’s Multiplay Hosting](https://docs.unity.com/multiplay/) solution.
 
-If you use GSH, you can make sure there’s no downtime between updates. GSH performs [build updates and rollouts](https://docs.unity.com/game-server-hosting/legacy/how-do-differential-updates-work.html) in the background. However, you can still [optimize your builds to reduce your bandwidth costs](https://docs.unity.com/game-server-hosting/legacy/cost-optimization.html). For example, you can speed up the update process (and incur fewer charges) by ensuring you have as few changes as possible between build versions.
+If you use Multiplay Hosting, you can make sure there’s no downtime between updates. Multiplay Hosting performs [build updates and rollouts](https://docs.unity.com/game-server-hosting/legacy/how-do-differential-updates-work.html) in the background. However, you can still [optimize your builds to reduce your bandwidth costs](https://docs.unity.com/game-server-hosting/legacy/cost-optimization.html). For example, you can speed up the update process (and incur fewer charges) by ensuring you have as few changes as possible between build versions.
 
 There are several ways you can mitigate the differences between build versions. For example, you can use:
 
@@ -331,5 +331,5 @@ You can use DGS asset stripping to optimize many aspects of your server-hosted g
 If you’re a small game studio with a small player base, you might not consider the bandwidth costs involved with updating your game. However, these costs can grow quickly without optimizations like incremental builds. A server build of 30 GB and a fleet of 15,000 servers equates to hundreds of terabytes of bandwidth costs for each update.
 
 :::tip
-The recommended best practice is to review the bandwidth and related costs of your hosting provider so you can calculate the true cost of rolling out an update. You can view the pricing information for Unity’s Game Server Hosting [here](https://docs.unity.com/game-server-hosting/concepts/pricing.html).
+The recommended best practice is to review the bandwidth and related costs of your hosting provider so you can calculate the true cost of rolling out an update. You can view the pricing information for Unity’s Multiplay Hosting [here](https://docs.unity.com/game-server-hosting/concepts/pricing.html).
 :::
