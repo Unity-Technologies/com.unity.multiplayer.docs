@@ -57,14 +57,14 @@ This section adds in a player object and spawns it for each connected player.
 
 1. Right-click in the **Hierarchy** tab of the Unity Window to create a **3D Object > Capsule**
 1. Rename it **Player**.
-1. While **Player** is selected, add a **Netcode** > `NetworkObject` component in the Inspector Tab.
+1. While **Player** is selected, add a **Netcode** > NetworkObject component in the Inspector Tab.
 1. Click the **Assets** folder under the **Project** tab.
 2. Right-click inside the **Assets** folder to **Create** > **Folder** and call it **Prefabs**.
 3. Make **Player** a Prefab by dragging it to **Prefabs** folder you just created.
 4. Delete **Player** from scene.
 
   :::tip
-  We remove the **Player** object from the scene because we assign this network Prefab to the `Player Prefab` property in the `NetworkManager` component. The library does not support defining a player object as an in-scene placed `NetworkObject`.
+  We remove the **Player** object from the scene because we assign this network Prefab to the `Player Prefab` property in the `NetworkManager` component. The library does not support defining a player object as an in-scene placed NetworkObject.
   :::
 
 5. Select `NetworkManager`.

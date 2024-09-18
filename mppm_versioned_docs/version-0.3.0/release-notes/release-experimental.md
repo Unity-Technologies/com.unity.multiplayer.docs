@@ -9,12 +9,12 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Fixed
 
 - Fixed PlayerTags starting and ending with whitespace.
-- Fixed handling of relative paths in the package.json of a player.
+- Fixed handling of relative paths in the package.json of a Player.
 
 ### Features
 
-- Can now have your players reboot if they fail to import or stop unexpectedly (e.g. crash). A prompt will appear asking what action to take.
-- Debugging workflows is now enabled (giving users more access to the editor in players). It can be accessed by using the Layout Dropdown in the top left of a player to enable more views (Scene, Game, etc).
+- Can now have your Players reboot if they fail to import or stop unexpectedly (e.g. crash). A prompt will appear asking what action to take.
+- Debugging workflows is now enabled (giving users more access to the editor in Players). It can be accessed by using the Layout Dropdown in the top left of a Player to enable more views (Scene, Game, etc).
 - Can disable MPPM in settings.
 - Updated Tag to be ReadOnlyTag to better communicate how tags as a feature works.
 
@@ -23,15 +23,15 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Fixed
 
 * Fixed null exception when loading into a new scene with unsaved changes.
-* Fixed exception triggered on players when changing scene in play mode.
+* Fixed exception triggered on Players when changing scene in play mode.
 * Updated text to "Show in Finder" on MacOS for revealing Players location on disk.
 * Fixed issues with the Asset Database syncing.
 
 ### Features
 
 * Display a message to the console log when opening Clones that don't have the required symlinked folders.
-* Trigger play mode for clones before main editor starts entering play mode.
-* Clone players will have the same behaviour as the main editor regarding the "Stop playing and compile" option.
+* Trigger play mode for clones before main Editor Player starts entering play mode.
+* Clone Players will have the same behaviour as the main Editor Player regarding the "Stop playing and compile" option.
  
 ## [0.1.1] - 2023-01-26
 
@@ -54,7 +54,7 @@ This release adds the Multiplayer Play Mode, which is a multiplayer development 
 ### Known issues
 
 * Player windows can't be reopened if they're closed during Play Mode
-* Virtual Players can remain in Play Mode after the Main Editor has exited in certain circumstances, such as if script changes are made during Play Mode and the “Stop Playing and Recompile” option is active.
+* Virtual Players can remain in Play Mode after the main Editor Player has exited in certain circumstances, such as if script changes are made during Play Mode and the “Stop Playing and Recompile” option is active.
 * Entering Play Mode with multiple scenes open isn't currently supported
 * Virtual Players lose some Game view settings, such as Aspect Ratio, when exiting and entering Play Mode
 * Opening a Virtual Player with unresolved script updater issues will cause an API Update prompt to appear
