@@ -14,6 +14,10 @@ Multiplayer Play Mode version 1.1.0 is compatible with Unity Editor versions 600
 
 Multiplayer Play Mode version 1.1.0 is compatible with Unity Editor versions 6000.0.3f1 or later.
 
+## Compatibility
+
+Multiplayer Play Mode version 1.1.0 is compatible with Unity Editor versions 6000.0.3f1 or later.
+
 ## Multiplayer Play Mode terminology
 
 The following have specific meaning in relation to Multiplayer Play Mode:
