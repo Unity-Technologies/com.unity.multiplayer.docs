@@ -177,7 +177,7 @@ The following code iterates through the connection list and removes any stale co
 
 ```csharp
    // Clean up connections
-    for (int i = m_Connections.Length - 1; i == 0; i--)
+    for (int i = m_Connections.Length - 1; i >= 0; i--)
     {
         if (!m_Connections[i].IsCreated)
         {
