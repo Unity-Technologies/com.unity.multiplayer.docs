@@ -89,9 +89,7 @@ public class ServerBehaviour : MonoBehaviour {
 
     void Update () {
     }
-
-public NetworkDriver m_Driver;
-private NativeList<NetworkConnection> m_Connections;
+}
 ```
 
 Next, expand the `Start`, `OnDestroy`, and `Update` methods.
@@ -179,12 +177,11 @@ The following code iterates through the connection list and removes any stale co
 
 ```csharp
    // Clean up connections
-    for (int i = 0; i < m_Connections.Length; i++)
+    for (int i = m_Connections.Length - 1; i >= 0; i--)
     {
         if (!m_Connections[i].IsCreated)
         {
             m_Connections.RemoveAtSwapBack(i);
-            --i;
         }
     }
 ```
