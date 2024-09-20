@@ -28,7 +28,7 @@ You can change the Multiplayer Role in the **File** > **Build Profiles** window.
 |||Arguments|The [UGS launch parameters](https://docs.unity.com/ugs/manual/game-server-hosting/manual/concepts/launch-parameters) that modify this instance.|
 |Remote Instances|||Instances that exist in the [Unity Cloud](https://docs.unity.com/cloud/en-us) and use [Unity Gaming Services (UGS) Multiplay Hosting](https://docs.unity.com/ugs/en-us/manual/game-server-hosting/manual/welcome-to-multiplay).|
 ||Name||The name of this instance that appears in the [Play Mode status window](play-mode-scenario-window-reference.md).|
-||Identifier||The list of names, in a string, that refer to the the Multiplay build, fleet, and server. This string field uses the format `CreatedFromTheUnityEditor-[identifier]-[username]`. Don't use any special characters.|
+||Identifier||The label, in a string, that determines the name of the Multiplay build, fleet, and server. This string field uses the format `CreatedFromTheUnityEditor-[identifier]-[username]`. Don't use any special characters.|
 ||Multiplayer Role||The [Multiplayer Role](https://docs.unity3d.com/Packages/com.unity.dedicated-server@1.3/manual/multiplayer-roles.html) that this remote instance uses. Unity uses this Multiplayer Role and ignores the Multiplayer Role you assign in the Project Settings window. This property appears when the [Dedicated Server package](https://docs.unity3d.com/Packages/com.unity.dedicated-server@1.3/manual/index.html) exists in your project|
 ||Advanced Configuration|||Optional properties that you can use to debug and control this remote instance. |
 |||Fleet Name|The name of the server fleet to display in the Multiplayer Hosting environment. |
