@@ -167,13 +167,14 @@ function Home() {
               Get started
             </Link>
           </div>
+          <br></br>
           <div className="buttons-pages">
             <Link
               className={clsx(
                 "button button--outline button--secondary button--lg",
                 styles.getStarted
               )}
-              to={useBaseUrl("netcode/current/about")}
+              to="https://docs.unity3d.com/6000.0/Documentation/Manual/multiplayer.html"
             >
               Multiplayer in the Unity Manual
             </Link>
