@@ -164,7 +164,18 @@ function Home() {
               )}
               to={useBaseUrl("netcode/current/about")}
             >
-              Get Started
+              Get started
+            </Link>
+          </div>
+          <div className="buttons-pages">
+            <Link
+              className={clsx(
+                "button button--outline button--secondary button--lg",
+                styles.getStarted
+              )}
+              to={useBaseUrl("netcode/current/about")}
+            >
+              Multiplayer in the Unity Manual
             </Link>
           </div>
         </div>
