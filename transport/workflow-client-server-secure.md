@@ -125,7 +125,7 @@ void Start ()
     var settings = new NetworkSettings();
     settings.WithSecureServerParameters(
         certificate: SecureParameters.MyGameServerCertificate,     
-        privateKey: SecureParameters.myGameServerPrivateKey);
+        privateKey: SecureParameters.MyGameServerPrivateKey);
 
     // ...
 }
