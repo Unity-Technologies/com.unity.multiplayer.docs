@@ -26,7 +26,6 @@ The Play Mode Scenario window has the following limitations:
 * You can only run a remote instance on the Linux platform.
 * You can only run a local instance on Mac, Linux, or Windows platforms.
 * Play Mode scenarios doesn’t support [Play Mode shortcuts](https://docs.unity3d.com/6000.0/Documentation/Manual/UnityHotkeys.html).
-* When you enable [domain reloading](https://docs.unity3d.com/Manual/DomainReloading.html), streaming logs for local instances might stop working.
 
 ## Additional resources
 * [Netcode for Entities Project Setup](https://docs.unity3d.com/Packages/com.unity.netcode@1.0/manual/installation.html)
