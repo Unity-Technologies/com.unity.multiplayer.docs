@@ -96,7 +96,7 @@ const highlights = [
     title: "Unity Transport and Netcode for GameObjects",
     imageUrl: "img/hilight-code.jpg",
     description: (
-      <>Unity Netcode for GameObject uses Unity Transport by default!</>
+      <>Unity Transport is a low-level networking library for multiplayer game development. It's the underlying protocol for Netcode for GameObjects, but you can also use it with a custom solution.</>
     ),
     link: (
       <>
@@ -158,13 +158,22 @@ function Home() {
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className="buttons-pages">
             <Link
-              className={clsx(
-                "button button--outline button--secondary button--lg",
-                styles.getStarted
-              )}
-              to={useBaseUrl("netcode/current/about")}
+             className={clsx(
+              "button button--outline button--secondary button--lg",
+              styles.heroButton
+             )}
+             to={useBaseUrl("netcode/current/about")}
             >
-              Get Started
+             Netcode for GameObjects
+            </Link>
+            <Link
+             className={clsx(
+              "button button--outline button--secondary button--lg",
+              styles.heroButton
+             )}
+             to="https://docs.unity3d.com/6000.0/Documentation/Manual/multiplayer.html"
+            >
+             Multiplayer Unity Manual
             </Link>
           </div>
         </div>
@@ -204,7 +213,7 @@ function Home() {
               <h1 className="blog-title">Be part of the community!</h1>
               <p className="blog-subtitle">
                 We have an active community on Discord for tips, announcements, and
-                interact with other users and Unity developers to help you on your Multiplayer Networking
+                interact with other users and Unity developers to help you on your Multiplayer
                 journey!
                 Connect to our {" "}
                 <a href="https://discord.gg/buMxnnPvTb" target="_blank">

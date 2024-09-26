@@ -2,6 +2,7 @@
 id: virtual-players-enable
 title: Activate a Virtual Player
 description: Enable up to three additional Virtual Players to your main Editor Player in Multiplayer Play Mode.
+---
 
 To use a Virtual Player to test multiplayer gameplay, activate at least one Virtual Player.
 

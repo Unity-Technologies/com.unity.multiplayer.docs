@@ -2,7 +2,7 @@ const admonitions = require("./config/admonitions.config.js");
 const headTags = require("./config/scripts.config.js");
 
 module.exports = {
-  title: "Unity Multiplayer Networking",
+  title: "Unity Multiplayer",
   tagline: "Build multiplayer games in Unity",
   url: "https://docs-multiplayer.unity3d.com/",
   headTags,
@@ -87,7 +87,7 @@ module.exports = {
           ],
         },
         {
-          title: "Multiplayer Networking",
+          title: "Multiplayer",
           items: [
             {
               label: "Licenses",
@@ -125,12 +125,12 @@ module.exports = {
           title: "Contact",
           items: [
             {
-              label: "Unity Multiplayer Forum",
-              href: "https://forum.unity.com/forums/multiplayer.26/",
+              label: "Unity Multiplayer Discussions",
+              href: "https://discussions.unity.com/lists/multiplayer",
             },
             {
-              label: "Unity Forums",
-              href: "https://forum.unity.com/",
+              label: "Unity Discussions",
+              href: "https://discussions.unity.com",
             },
             {
               label: "Discord",
@@ -142,7 +142,7 @@ module.exports = {
       copyright: `© ${new Date().getFullYear()} Unity Technologies`,
     },
     navbar: {
-      title: "Multiplayer Networking",
+      title: "Multiplayer",
       logo: {
         alt: "Unity",
         src: "img/logo.png",
