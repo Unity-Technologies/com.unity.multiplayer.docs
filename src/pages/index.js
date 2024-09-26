@@ -164,7 +164,7 @@ function Home() {
              )}
              to={useBaseUrl("netcode/current/about")}
             >
-              Get Started
+              Netcode for GameObjects
             </Link>
           </div>
           <div className="buttons-pages">
@@ -175,7 +175,7 @@ function Home() {
              )}
              to="https://docs.unity3d.com/6000.0/Documentation/Manual/multiplayer.html" target="_blank"
             >
-              Netcode for GameObjects
+              Multiplayer Unity Manual
             </Link>
           </div>
         </div>
