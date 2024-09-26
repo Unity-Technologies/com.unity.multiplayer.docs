@@ -164,7 +164,7 @@ function Home() {
              )}
              to={useBaseUrl("netcode/current/about")}
             >
-              Netcode for GameObjects
+              Get started
             </Link>
           </div>
           <div className="buttons-pages">
