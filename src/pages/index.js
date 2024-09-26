@@ -166,8 +166,6 @@ function Home() {
             >
               Get started
             </Link>
-          </div>
-          <div className="buttons-pages">
             <Link
              className={clsx(
               "button button--outline button--secondary button--lg",
@@ -177,7 +175,7 @@ function Home() {
             >
               Multiplayer Unity Manual
             </Link>
-          </div>
+        </div>
         </div>
       </header>
       <main>
