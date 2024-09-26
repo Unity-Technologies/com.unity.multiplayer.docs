@@ -156,32 +156,26 @@ function Home() {
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div class="row">
-  <div class="column">
- <div className="buttons-pages">
-      <Link
-       className={clsx(
-        "button button--outline button--secondary button--lg",
-        styles.getStarted
-       )}
-       to={useBaseUrl("netcode/current/about")}
-      >
-       Netcode for GameObjects
-      </Link>
-     </div></div>
-  <div class="column">
- <div className="buttons-pages">
-      <Link
-       className={clsx(
-        "button button--outline button--secondary button--lg",
-        styles.getStarted
-       )}
-       to="https://docs.unity3d.com/6000.0/Documentation/Manual/multiplayer.html"
-      >
-       Multiplayer Unity Manual
-      </Link>
-     </div></div>
-</div>
+          <div className="buttons-pages">
+            <Link
+             className={clsx(
+              "button button--outline button--secondary button--lg",
+              styles.heroButton
+             )}
+             to={useBaseUrl("netcode/current/about")}
+            >
+             Netcode for GameObjects
+            </Link>
+            <Link
+             className={clsx(
+              "button button--outline button--secondary button--lg",
+              styles.heroButton
+             )}
+             to="https://docs.unity3d.com/6000.0/Documentation/Manual/multiplayer.html"
+            >
+             Multiplayer Unity Manual
+            </Link>
+          </div>
         </div>
       </header>
       <main>
