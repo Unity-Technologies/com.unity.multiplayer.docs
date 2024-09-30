@@ -5,7 +5,7 @@ sidebar_label: Client synchronization mode
 ---
 
 ## Introduction
-Client synchronization occurs when immediately after a client connects to a host or server and the connection is approved. During the client synchronization process, the server will determine everything that a client might need to know about in order to join an in progress network session (networked game session). Netcode for GameObjects provides you with the ability to select the client synchronization mode that best suits your project's needs.  During client synchronization a client will automatically set its local client synchronization mode to match that of the server or host setting.
+Client synchronization occurs when immediately after a client connects to a host or server and the connection is approved. During the client synchronization process, the server will determine everything that a client might need to know about in order to join an in-progress network session (networked game session). Netcode for GameObjects provides you with the ability to select the client synchronization mode that best suits your project's needs.  During client synchronization a client will automatically set its local client synchronization mode to match that of the server or host setting.
 
 The client synchronization mode should be set when the server or host is first provided via the `NetworkSceneManager.SetClientSynchronizationMode` method that takes a [`LoadSceneMode`](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) value as a parameter. Each client synchronization mode behaves in a similar way to loading a scene based on the chosen `LoadSceneMode`.
 
