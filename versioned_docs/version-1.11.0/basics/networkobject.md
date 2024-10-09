@@ -169,8 +169,16 @@ Refer to the [NetworkSceneManager active scene synchronization](../basics/scenem
 
 ![image](/img/SceneMigrationSynchronization.png)
 
-Similar to `NetworkObject.ActiveSceneSynchronization`, this property automatically synchronizes client-side NetworkObject instances that are migrated to a scene via [`SceneManager.MoveGameObjectToScene`](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.MoveGameObjectToScene.html) on the host or server side. This can be useful if you have a specific scene you wish to migrate NetworkObject instances to that is not the currently active scene.
+Similar to [`NetworkObject.ActiveSceneSynchronization`](#active-scene-synchronization), [`NetworkObject.SceneMigrationSynchronization`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkObject.html#Unity_Netcode_NetworkObject_SceneMigrationSynchronization) automatically synchronizes client-side NetworkObject instances that are migrated to a scene via [`SceneManager.MoveGameObjectToScene`](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.MoveGameObjectToScene.html) on the host or server side. This can be useful if you have a specific scene you wish to migrate NetworkObject instances to that is not the currently active scene.
 
-:::info
-`NetworkObject.ActiveSceneSynchronization` can be used with `NetworkObject.SceneMigrationSynchronization` as long as you take into consideration that if you migrate a NetworkObject into a non-active scene via `SceneManager.MoveGameObjectToScene` and then later change the active scene, then the NetworkObject instance will be automatically migrated to the newly set active scene.
+`NetworkObject.ActiveSceneSynchronization` can be used with `NetworkObject.SceneMigrationSynchronization` as long as you take into consideration that if you migrate a NetworkObject into a non-active scene via `SceneManager.MoveGameObjectToScene` and later change the active scene, then the NetworkObject instance will be automatically migrated to the newly set active scene.
+
+:::warning
+Scene migration synchronization is enabled by default. For NetworkObjects that don't require it, such as those that generate static environmental objects like trees, it's recommended to disable scene migration synchronization to avoid additional processing overheads.
 :::
+
+## Additional resources
+
+- [PlayerObjects and player prefabs](playerobjects.md)
+- [NetworkBehaviour](networkbehaviour.md)
+- [NetworkVariable](networkvariable.md)
