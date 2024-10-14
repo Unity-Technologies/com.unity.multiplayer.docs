@@ -8,7 +8,7 @@ Use Multiplayer Play Mode to test multiplayer functionality within the Unity Edi
 
 ## Compatibility
 
-Multiplayer Play Mode version 1.2.0 is compatible with Unity Editor versions 6000.0.22f1 or later.
+Multiplayer Play Mode version 1.2.0 is compatible with Unity Editor versions 6000.0.3f1 or later.
 
 ## Multiplayer Play Mode terminology
 
