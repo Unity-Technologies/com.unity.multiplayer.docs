@@ -24,7 +24,7 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 
 ## Starting and stopping `NetworkManager`
 
-There are two static event notifications available when [starting](#starting-a-server-host-or-client) or [stopping](#disconnecting-and-shutting-down) `NetworkManager`.
+There are two static event notifications available when [starting](#starting-a-server-host-or-client) or [stopping](#disconnecting-and-shutting-down) `NetworkManager`. If you need to know when a `NetworkManager` has been instantiated or when it's in the process of being destroyed, there are two event notifications you can subscribe to:
 
 - The `NetworkManager.OnInstantiated` notification is triggered when a new `NetworkManager` instance has been instantiated.
 - The `NetworkManager.OnDestroying` notification is triggered when an existing `NetworkManager` instance is being destroyed.
