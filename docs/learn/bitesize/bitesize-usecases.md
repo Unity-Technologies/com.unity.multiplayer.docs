@@ -31,7 +31,7 @@ The ProximityChecks scene shows you how to detect the local user and enable or d
 
 ## The RPCs scene
 
-The RPCs scene semonstrates the following Remote Procedure Call (RPC) processes: 
+The RPCs scene demonstrates the following Remote Procedure Call (RPC) processes: 
  * Use RPCs to send information from clients to the server.
  * Perform server-side manipulation of the data sent.
  * Use connection approval to determine the spawn position of the player.
