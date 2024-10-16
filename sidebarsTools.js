@@ -34,12 +34,12 @@ module.exports = {
         },
         {
             "type": "doc",
-            "id": "profiler"
+            "id": "multiplayer-tools-window"
         },
         {
             "type": "doc",
-            "id": "multiplayer-tools-window"
-          },
+            "id": "profiler"
+        },
         {
             "type": "doc",
             "id": "RNSM"
@@ -51,6 +51,10 @@ module.exports = {
         {
             "type": "doc",
             "id": "netscenevis"
+        },
+        {
+            "type": "doc",
+            "id": "hierarchy-network-debug"
         },
         {
             "collapsed": true,
