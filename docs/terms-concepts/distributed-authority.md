@@ -5,6 +5,10 @@ title: Distributed authority topologies
 
 Distributed authority is one possible [network topology](network-topologies.md) you can use for your multiplayer game.
 
+:::note Beta feature
+Distributed authority is still in beta. During the beta phase, using the distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) is free. When distributed authority is fully released, using the service will incur a cost.
+:::
+
 ## Defining distributed authority
 
 In a distributed authority topology, game clients share responsibility for owning and tracking the state of objects in the network and have the authority to spawn and manage objects themselves, with additional options to configure ownership permissions. A small, lightweight central state service keeps track of changes in spawned object states and routes network traffic. There is no central server simulating the game: all clients run their own partial simulations and communicate their updates directly to other clients (via the central state service).
