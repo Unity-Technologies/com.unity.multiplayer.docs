@@ -5,6 +5,10 @@ title: Distributed authority quickstart for Netcode for GameObjects
 
 Use this guide to learn how to create your first [distributed authority](../terms-concepts/distributed-authority.md) Netcode for GameObjects project. It walks you through the connection setup, including connecting to the distributed authority service, and adding basic gameplay.
 
+:::note Beta feature
+Distributed authority is still in beta. During the beta phase, using the distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) is free. When distributed authority is fully released, [using the service will incur a cost](https://unity.com/products/gaming-services/pricing).
+:::
+
 ## Prerequisites
 
 Before you begin, you need the following:
@@ -152,7 +156,7 @@ public class ConnectionManager : MonoBehaviour
 
 :::note
 
-It's important to wait until `OnClientConnectedCallback` has been triggered before spawning objects. Spawning objects early will result in errors and unexpected behaviour. 
+It's important to wait until `OnClientConnectedCallback` has been triggered before spawning objects. Spawning objects early will result in errors and unexpected behaviour.
 
 :::
 

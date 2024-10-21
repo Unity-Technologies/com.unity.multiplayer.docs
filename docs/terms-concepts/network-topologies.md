@@ -7,8 +7,6 @@ Network topology defines how a network is arranged. In the context of multiplaye
 
 The two primary network topologies that Netcode for GameObjects supports are [client-server](#client-server) and [distributed authority](#distributed-authority).
 
-<!-- Link to Multiplayer Center here when available, as a 'if you don't know which topology to use, there's this tool' -->
-
 ## Client-server
 
 ### Dedicated game server
