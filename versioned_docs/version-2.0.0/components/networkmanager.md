@@ -5,7 +5,7 @@ title: NetworkManager
 
 The `NetworkManager` is a required Netcode for GameObjects component that has all of your project's netcode-related settings. Think of it as the central netcode hub for your netcode-enabled project.  
 
-## `NetworkManager` Inspector properties
+### `NetworkManager` Inspector properties
 
 - **LogLevel**:  Sets the network logging level
 - **PlayerPrefab**:  When a prefab is assigned, the prefab will be instantiated as the PlayerObject and assigned to the newly connected and authorized client. For more information about player prefabs, refer to [PlayerObjects and player prefabs](../basics/playerobjects.md).
@@ -22,19 +22,12 @@ The `NetworkManager` is a required Netcode for GameObjects component that has al
 - **Enable Scene Management**: When checked, Netcode for GameObjects will handle scene management and client synchronization for you.  When not checked, you will have to create your own scene management scripts and handle client synchronization.
 - **Load Scene Time Out**: When Enable Scene Management is checked, this specifies the period of time the `NetworkSceneManager` will wait while a scene is being loaded asynchronously before `NetworkSceneManager` considers the load/unload scene event to have failed/timed out.
 
-## Starting and stopping `NetworkManager`
-
-There are two static event notifications available when [starting](#starting-a-server-host-or-client) or [stopping](#disconnecting-and-shutting-down) `NetworkManager`. If you need to know when a `NetworkManager` has been instantiated or when it's in the process of being destroyed, there are two event notifications you can subscribe to:
-
-- The `NetworkManager.OnInstantiated` notification is triggered when a new `NetworkManager` instance has been instantiated.
-- The `NetworkManager.OnDestroying` notification is triggered when an existing `NetworkManager` instance is being destroyed.
-
 ### `NetworkManager` sub-systems
 
-`NetworkManager` is also where you can find references to other Netcode-related management systems:
+`NetworkManager` is also where you can find references to other Netcode related management systems:<br/>
 
 :::caution
-All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (either when `NetworkManager.IsListening == true` or after you've received a `NetworkManager.OnInstantiated` notification). Don't attempt to access the following sub-systems before starting the `NetworkManager`, otherwise they won't yet be initialized.
+All `NetworkManager` sub-systems are instantiated once the `NetworkManager` is started (that is, `NetworkManager.IsListening == true`).  A good general "rule of thumb" is to not attempt to access the below sub-systems before starting the `NetworkManager`, otherwise they won't yet be initialized.
 :::
 
 - [NetworkManager.PrefabHandler](../advanced-topics/object-pooling.md): This provides access to the NetworkPrefabHandler that is used for NetworkObject pools and to have more control overriding network prefabs.
@@ -66,7 +59,7 @@ Don't start a `NetworkManager` within any `NetworkBehaviour` component's method;
  - [Connection Approval](../basics/connection-approval)  
 :::
 
-### Connecting
+## Connecting
 
 When starting a client, the `NetworkManager` uses the IP and the Port provided in your `Transport` component for connecting. While you can set the IP address in the editor, many times you might want to be able to set the IP address and port during runtime.
 
@@ -254,7 +247,3 @@ public class ConnectionNotificationManager : MonoBehaviour
     }
 }
 ```
-
-## Additional resources
-
-- [`NetworkManager` API documentation](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkManager.html)
