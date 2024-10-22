@@ -34,7 +34,7 @@
     "dns-packet": "^5.2.2",
     "docusaurus-plugin-sass": "^0.1.14",
     "mdx-mermaid": "^v1.3.2",
-    "mermaid": "^10.0.2",
+    "mermaid": "^10.9.3",
     "plugin-image-zoom": "github:ataft/plugin-image-zoom",
     "prism-react-renderer": "^1.2.0",
     "react": "^17.0.2",
