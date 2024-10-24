@@ -69,7 +69,7 @@ For more information on the art in Boss Room, see [ART_NOTES.md](https://github.
 
 To install the Boss Room project, download or clone it from the [com.unity.multiplayer.samples.coop](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) repository. 
 
-**Note**: If you use git, you must install Git LFS.
+**Note**: If you install the project with Git, you must install Git LFS first.
 
 #### Install Git LFS to clone locally
 
