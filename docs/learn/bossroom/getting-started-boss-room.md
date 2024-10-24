@@ -28,10 +28,9 @@ Join the multiplayer community on the Unity [Discord](https://discord.gg/mNgM2XR
 
 ### Contents and quick links
 
-- [Contents and quick links](#contents-and-quick-links)
 - [Boss Room Overview](#boss-room-overview)
-- [Getting the project](#getting-the-project)
-  - [Installing Git LFS to clone locally](#installing-git-lfs-to-clone-locally)
+- [Install the Boss Room project](#getting-the-project)
+  - [Install Git LFS to clone locally](#installing-git-lfs-to-clone-locally)
   - [Direct download](#direct-download)
 - [Registering the project with Unity Gaming Services (UGS)](#registering-the-project-with-unity-gaming-services-ugs)
 - [Opening the project for the first time](#opening-the-project-for-the-first-time)
@@ -66,11 +65,13 @@ This repository also has a [Utilities](https://github.com/Unity-Technologies/com
 
 For more information on the art in Boss Room, see [ART_NOTES.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Documentation/ART_NOTES.md).
 
-### Getting the project
+### Install the Boss Room project
 
-You can get the project by downloading it directly or cloning locally. However, if you use git, you must install Git LFS.
+To install the Boss Room project, download or clone it from the [com.unity.multiplayer.samples.coop](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) repository. 
 
-#### Installing Git LFS to clone locally
+**Note**: If you install the project with Git, you must install Git LFS first.
+
+#### Install Git LFS to clone locally
 
 Boss Room uses Git Large Files Support (LFS) to handle all large assets required locally. See [Git LFS installation options](https://github.com/git-lfs/git-lfs/wiki/Installation) for Windows and Mac instructions. This step is only needed if cloning locally. You can also just download the project which will already include large files.
 
