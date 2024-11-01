@@ -1,7 +1,7 @@
 ---
 id: bitesize-socialhub
 title: Multiplayer Distributed Authority Social Hub sample
-description: Learn about the scenes in the Multiplayer Use Cases sample.
+description: Learn about the scenes in the Multiplayer Distributed Authority Social Hub sample.
 ---
 
 The [Distributed Authority Social Hub Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/DistributedAuthoritySocialHub) is a project that demonstrates Distributed Authority's features and helps you integrate Distributed Authority into your own game projects.
