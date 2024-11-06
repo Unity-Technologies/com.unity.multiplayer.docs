@@ -188,7 +188,7 @@ public class PlayerCubeControllerEditor : NetworkTransformEditor
         base.OnEnable();
     }
 
-    private void DisplayePlayerCubeControllerProperties()
+    private void DisplayPlayerCubeControllerProperties()
     {
         EditorGUILayout.PropertyField(m_Speed);
         EditorGUILayout.PropertyField(m_ApplyVerticalInputToZAxis);
@@ -198,7 +198,7 @@ public class PlayerCubeControllerEditor : NetworkTransformEditor
     {
         var playerCubeController = target as PlayerCubeController;
         void SetExpanded(bool expanded) { playerCubeController.PlayerCubeControllerPropertiesVisible = expanded; };
-        DrawFoldOutGroup<PlayerCubeController>(playerCubeController.GetType(), DisplayePlayerCubeControllerProperties, playerCubeController.PlayerCubeControllerPropertiesVisible, SetExpanded);
+        DrawFoldOutGroup<PlayerCubeController>(playerCubeController.GetType(), DisplayPlayerCubeControllerProperties, playerCubeController.PlayerCubeControllerPropertiesVisible, SetExpanded);
         base.OnInspectorGUI();
     }
 }
