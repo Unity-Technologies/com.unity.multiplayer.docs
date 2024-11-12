@@ -13,14 +13,14 @@ Distributed authority is still in beta. During the beta phase, using the distrib
 
 ## Prerequisites
 
-Before you begin, you need the following general requirements:
+Before you begin, you need the following general requirements in order to use the distributed authority network topology:
 
 - An active Unity account with a valid license.
 - The [Unity Hub](https://unity.com/download).
 - A supported version of the Unity 6 Editor. Refer to the [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
     - When installing the Editor, make sure to include the __WebGL Build Support_ module.
 
-You also need the following packages and minimum versions:
+You also need the following packages and minimum versions for a WebGL distributed authority session:
 
 - Netcode for GameObjects version 2.1.1+
 - Unity Transport version 2.3.0+
