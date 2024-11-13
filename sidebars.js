@@ -57,6 +57,8 @@ module.exports = {
                         "type": "doc",
                         "id": "learn/distributed-authority-webgl"
                     },
+                  ]
+                  },
                 {
                   "collapsed": true,
                   "type": "category",
