@@ -1,6 +1,6 @@
 ---
 id: distributed-authority-quick-start
-title: Distributed authority quickstart for Netcode for GameObjects
+title: Distributed authority general quickstart
 ---
 
 Use this guide to learn how to create your first [distributed authority](../terms-concepts/distributed-authority.md) Netcode for GameObjects project. It walks you through the connection setup, including connecting to the distributed authority service, and adding basic gameplay.
@@ -15,8 +15,7 @@ Before you begin, you need the following:
 
 - An active Unity account with a valid license.
 - The [Unity Hub](https://unity.com/download).
-- A supported version of the Unity 6 Editor.
-  - Additional requirements information can be found here: [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
+- A supported version of the Unity 6 Editor. Refer to the [Netcode for GameObjects requirements](https://docs-multiplayer.unity3d.com/netcode/current/installation).
 
 ## Project setup
 
