@@ -50,3 +50,4 @@ For more information about how distributed authority works in Netcode for GameOb
 - [Race conditions](../basics/race-conditions.md)
 - [Spawning synchronization](../basics/spawning-synchronization.md)
 - [Deferred despawning](../basics/deferred-despawning.md)
+- [Multiplayer Distributed Authority Social Hub sample](../learn/bitesize/bitesize-socialhub.md)

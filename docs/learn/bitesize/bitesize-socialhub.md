@@ -24,12 +24,14 @@ Social Hub uses services from Unity Gaming Services to facilitate connectivity b
 
 This is the entry point to the sample. After the Bootstrap scene loads, the MainMenu scene appears.
 
-Note: Be sure you have registered the project with a cloud ID.
+**Note**: Be sure you have registered the project with a cloud ID.
 
 ## The MainMenu scene
 
+To create or join an existing game:
+
 1. Enter a player name and a session name.
-2. Select **Start** to create or join an existing game.
+2. Select **Start**.
 
 A successful load indicates that you have correctly registered your project with a cloud ID.
 
