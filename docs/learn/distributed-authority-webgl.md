@@ -13,7 +13,7 @@ Distributed authority is still in beta. During the beta phase, using the distrib
 
 ## Prerequisites
 
-Before you begin, you need the following general requirements in order to use the distributed authority network topology:
+Before you begin, you need the following general requirements to use the distributed authority network topology:
 
 - An active Unity account with a valid license.
 - The [Unity Hub](https://unity.com/download).
