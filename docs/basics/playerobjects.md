@@ -99,4 +99,4 @@ To find your own player object just pass `NetworkManager.Singleton.LocalClientId
 - [NetworkManager](../components/networkmanager.md)
 - [Distributed authority topologies](../terms-concepts/distributed-authority.md)
 - [Client-server topologies](../terms-concepts/client-server.md)
-- [Object spawning](objectspawning.md)
+- [Object spawning](object-spawning.md)
