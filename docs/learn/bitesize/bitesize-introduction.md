@@ -10,7 +10,9 @@ The Bitesize Samples repository provides a series of sample code as modules to u
 * [Invaders Sample](bitesize-invaders.md) - Learn more about game flow, modes, unconventional movement networked, and a shared timer.
 * [Client Driven Sample](bitesize-clientdriven.md) - Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting.
 * [Dynamic Addressables Network Prefabs](bitesize-dynamicprefabs.md) - Learn more about the dynamic prefab system, which allows you to add new spawnable prefabs at runtime.
-* [Multiplayer Distributed Authority Social Hub sample](bitesize-socialhub.md) - Learn how distributed authority changes the ownership of GameObjects between the clients and host.
+* [Distributed Authority Social Hub sample](bitesize-socialhub.md) - Learn how to use features of distributed authority like host migration and NetworkObject ownership transfer.
+
+
 
 ## Requirements
 
