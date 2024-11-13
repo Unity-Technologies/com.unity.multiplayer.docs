@@ -116,7 +116,7 @@ Netcode for GameObjects comes with an integrated scene management solution that 
 
 Now that you have a **NetworkManager**, assigned a **PlayerPrefab**, and added your current scene to the scenes in build test, you can quickly verify everything is functioning/configured correctly via entering play mode in the Unity Editor. By starting a host, you are starting `NetworkManager` as both a server and a client at the same time.
 
-You can test your Hello World project using the Unity Editor or a command-line helper. If you choose the latter, refer to [Create a command line helper](../tutorials/command-line-helper/). Otherwise, refer to the following instructions to test using the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
+You can test your Hello World project using the Unity Editor or a command-line helper. If you choose the latter, refer to [Create a command line helper](command-line-helper.md). Otherwise, refer to the following instructions to test using the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
 
 1. Select **Play** from the top of the Unity Editor to start the scene.
 
