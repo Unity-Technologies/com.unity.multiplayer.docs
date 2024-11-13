@@ -32,7 +32,7 @@ For game designs that don't require a precise physics simulation or client predi
 
 The traditional [client-server](client-server.md) model typically includes a service relay to solve connectivity issues, notably Network Address Translation (NAT), between players across different regions and networks. This topology works well for projects that require competitive client prediction, rollback, and a centralized authority – however, it comes at the cost of added latencies when communicating state changes from one client to another.
 
-With a distributed authority topology, a client's state change takes a single client-relative [round trip period of time (RTT)](../lagandpacketloss.md#round-trip-time-and-pings) (½ per client) to be updated on all connected clients. The distributed authority service is more efficient: messages are routed and then processed, whereas client-server topologies require messages to be processed and then, at a later time, conveyed via new messages to all connected clients.
+With a distributed authority topology, a client's state change takes a single client-relative [round trip period of time (RTT)](../learn/lagandpacketloss.md#round-trip-time-and-pings) (½ per client) to be updated on all connected clients. The distributed authority service is more efficient: messages are routed and then processed, whereas client-server topologies require messages to be processed and then, at a later time, conveyed via new messages to all connected clients.
 
 <p align="middle">
   <img src="/img/cloud-relay-service.jpg" width="50%" />
