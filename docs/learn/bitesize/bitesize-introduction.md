@@ -6,10 +6,11 @@ title: About Bitesize samples
 The Bitesize Samples repository provides a series of sample code as modules to use in your games and better understand Netcode for GameObjects (Netcode).
 
 * [Multiplayer Use Cases](bitesize-usecases.md) - Learn more about core Netcode For GameObjects (Netcode) features through practical examples and In-Editor tutorials.
-* [2D Space Shooter Sample](bitesize-spaceshooter.md) - Learn more about physics movement and status effects using Netcode `NetworkVariables` and `ObjectPooling`.
-* [Invaders Sample](bitesize-invaders.md) - Learn more about game flow, modes, unconventional movement networked, and a shared timer.
-* [Client Driven Sample](bitesize-clientdriven.md) - Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting.
-* [Dynamic Addressables Network Prefabs](bitesize-dynamicprefabs.md) - Learn more about the dynamic prefab system, which allows us to add new spawnable prefabs at runtime.
+* [2D Space Shooter](bitesize-spaceshooter.md) - Learn more about physics movement and status effects using Netcode `NetworkVariables` and `ObjectPooling`.
+* [Invaders](bitesize-invaders.md) - Learn more about game flow, modes, unconventional movement networked, and a shared timer.
+* [Client Driven](bitesize-clientdriven.md) - Learn more about Client driven movements, networked physics, spawning vs statically placed objects, object reparenting.
+* [Dynamic Addressables Network Prefabs](bitesize-dynamicprefabs.md) - Learn more about the dynamic prefab system, which allows you to add new spawnable prefabs at runtime.
+* [Distributed Authority Social Hub](bitesize-socialhub.md) - Learn how to use features of distributed authority like host migration and NetworkObject ownership transfer.
 
 ## Requirements
 
