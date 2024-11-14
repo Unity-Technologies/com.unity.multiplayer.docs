@@ -45,9 +45,20 @@ module.exports = {
                     "id": "tutorials/get-started-ngo"
                 },
                 {
-                    "type": "doc",
-                    "id": "learn/distributed-authority-quick-start"
-                },
+                  "collapsed": true,
+                  "type": "category",
+                  "label": "Distributed authority quickstart",
+                  "items": [
+                    {
+                      "type": "doc",
+                      "id": "learn/distributed-authority-quick-start"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "learn/distributed-authority-webgl"
+                    },
+                  ]
+                  },
                 {
                   "collapsed": true,
                   "type": "category",
@@ -566,6 +577,10 @@ module.exports = {
                         {
                             "type": "doc",
                             "id": "learn/bitesize/bitesize-dynamicPrefabs"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-socialhub"
                         },
                     ]
                 },

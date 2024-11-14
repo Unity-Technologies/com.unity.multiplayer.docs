@@ -1,6 +1,6 @@
 ---
 id: get-started-ngo
-title: Client-server quickstart for Netcode for GameObjects
+title: Client-server quickstart
 ---
 
 Use this guide to learn how to create your first [client-server](../terms-concepts/client-server.md) Netcode for GameObjects project. It walks you through creating a simple Hello World project that implements the basic features of Netcode for GameObjects.
@@ -116,7 +116,7 @@ Netcode for GameObjects comes with an integrated scene management solution that 
 
 Now that you have a **NetworkManager**, assigned a **PlayerPrefab**, and added your current scene to the scenes in build test, you can quickly verify everything is functioning/configured correctly via entering play mode in the Unity Editor. By starting a host, you are starting `NetworkManager` as both a server and a client at the same time.
 
-You can test your Hello World project using the Unity Editor or a command-line helper. If you choose the latter, refer to [Create a command line helper](../tutorials/command-line-helper/). Otherwise, refer to the following instructions to test using the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
+You can test your Hello World project using the Unity Editor or a command-line helper. If you choose the latter, refer to [Create a command line helper](command-line-helper.md). Otherwise, refer to the following instructions to test using the Unity Editor. Only the Plane appears on the server until the first client connects. Then, Netcode for GameObjects spawns a new Player prefab for each connected client; however, they overlap in the Game view.
 
 1. Select **Play** from the top of the Unity Editor to start the scene.
 
@@ -403,7 +403,7 @@ namespace HelloWorld
 }
 ```
 
-#### A Review of the `HelloWorldPlayer.cs` script 
+#### A Review of the `HelloWorldPlayer.cs` script
 
 The `HelloWorldPlayer.cs` script adds some basic movement to the Hello World project player. Both the server player and the client player can start player movement. However, the movement occurs through the server's position NetworkVariable, which means the server player can move immediately, but the client player must request a movement from the server, wait for the server to update the position NetworkVariable, then replicate the change locally.
 
