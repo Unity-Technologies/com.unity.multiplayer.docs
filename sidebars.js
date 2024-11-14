@@ -578,6 +578,10 @@ module.exports = {
                             "type": "doc",
                             "id": "learn/bitesize/bitesize-dynamicPrefabs"
                         },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-socialhub"
+                        },
                     ]
                 },
                 {
