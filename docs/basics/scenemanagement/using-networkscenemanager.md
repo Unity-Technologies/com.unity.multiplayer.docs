@@ -52,7 +52,7 @@ Don't try to access the `NetworkSceneManager` when the `NetworkManager` is shutd
 ### Loading a Scene
 In order to load a scene, there are four requirements:
 1. The `NetworkManager` instance loading the scene must be a host or server.
-2. The `NetworkSceneManager.Load` method is used to load the scene.
+2. The `NetworkSceneManager.LoadScene` method is used to load the scene.
 3. The scene being loaded must be registered with your project's [build settings scenes in build list](https://docs.unity3d.com/Manual/BuildSettings.html)
 4. A Scene Event can't already be in progress.
 
