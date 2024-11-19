@@ -6,7 +6,7 @@ description: Enable up to three additional Virtual Players to your main Editor P
 
 To use a Virtual Player to test multiplayer gameplay, activate at least one Virtual Player.
 
-The first time you enable a Virtual Player Unity creates a new folder inside your project folder  `...[ProjectName]/Library/VP` that contains the data for each Virtual Player you activate. When you deactivate a Virtual Player, Unity caches its corresponding folder to use again when you re-activate it.
+The first time you enable a Virtual Player, Unity creates a new folder within your project folder at `...[ProjectName]/Library/VP`. This folder stores the data for each Virtual Player you activate. When you deactivate a Virtual Player, Unity caches its corresponding folder to use again when you re-activate it.
 
 :::info
 You can only attach tags to inactive Players (including the main Editor Player). To use tags, [create and configure your tags](../player-tags/player-tags-create.md) before you enable virtual Players.
