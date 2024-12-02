@@ -4,6 +4,57 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [1.3.2] - 2024-11-14
+
+### Fixed
+- Fixed clones so that they correctly deactivate when you stop a play mode scenario during the clone activation.
+- Fixed the clone editor's layout configuration so that it displays correctly when you enable Playmode Tools.
+- Fixed the compilation error "'UnityPlayer' does not contain a definition for 'Role'" when the Dedicated Server package version doesn't match.
+
+### Added
+- Avoid reconstructing virtual player windows through Play modes if their layouts in PlayMode and EditMode are the same. This helps retain anchoring in Windows.
+
+## [1.3.1] - 2024-10-21
+
+### Fixed
+
+- Fixed an issue where the "Player [X] failed to sync" window appeared without a synchronization issue.
+- The Virtual Player folder now refreshes when you update the package, engine, or engine changeset version.
+
+### Added
+
+- Added a help box to the Multiplayer window to stop package imports while the virtual player(s) are activating. The help box remains visible until all virtual player(s) are ready.
+- Added Multiplayer Menu links to the **Scenario Configuration** and the **Scenarios** status in **Windows** > **Multiplayer**.
+
+## [1.3.0] - 2024-09-26
+
+### Changed
+
+- Updated `com.unity.services.multiplayer` to release version 1.3.0.
+
+### Fixed
+
+- Increased the minimum Engine version to 6000.0.22f1 to fix a crash that happened when you use virtual players and a build profile.
+
+## [1.3.0-exp.3] - 2024-09-20
+
+### Changed
+
+- Replaced the **Original Name** property in the **Remote Instances** > **Advance Configuration** section with the **Identifier** property. The **Identifier** string field produces a unique name for the Multiplay Build, Build Configuration, and Fleet. This name is in the form `CreatedFromTheUnityEditor-[identifier]-[username]`.
+
+### Added
+
+- Added stream logs to main editor option for additional editor instances.
+- Fixed an issue where streaming logs from local instances stopped when domain reloads are enabled.
+- Added a percentage progress to the Playmode Status Window for the preparing, deploying, and launching stages.
+
+### Fixed
+
+- Removed the compilation warning "This async method lacks 'await' operators and will run synchronously".
+- Fixed an issues that disabled streaming logs from remote instances.
+- Fixed an issue where code changes didn't consistently sync between the main editor and the clone when you use Rider.
+- Fixed the asset out of sync error that happened when the clone didn't start in the correct build target.
+
 ## [1.3.0-exp.2] - 2024-07-03
 
 ### Fixed
