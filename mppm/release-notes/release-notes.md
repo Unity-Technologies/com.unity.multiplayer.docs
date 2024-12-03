@@ -4,6 +4,98 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [1.3.2] - 2024-11-14
+
+### Fixed
+- Fixed clones so that they correctly deactivate when you stop a play mode scenario during the clone activation.
+- Fixed the clone editor's layout configuration so that it displays correctly when you enable Playmode Tools.
+- Fixed the compilation error "'UnityPlayer' does not contain a definition for 'Role'" when the Dedicated Server package version doesn't match.
+
+### Added
+- On Windows devices, the Virtual Player window now remains anchored when you use the same layout in Play mode and Edit mode.
+
+## [1.3.1] - 2024-10-21
+
+### Fixed
+
+- Fixed an issue where the "Player [X] failed to sync" window appeared without a synchronization issue.
+- The Virtual Player folder now refreshes when you update the package, Unity Editor, or Editor changeset version.
+
+### Added
+
+- Added a help box to the Multiplayer window to stop package imports while the virtual player(s) are activating. The help box remains visible until all virtual player(s) are ready.
+- Added Multiplayer Menu links to the **Scenario Configuration** and the **Scenarios** status in **Windows** > **Multiplayer**.
+
+## [1.3.0] - 2024-09-26
+
+### Changed
+
+- Updated `com.unity.services.multiplayer` to release version 1.3.0.
+
+### Fixed
+
+- Increased the minimum Engine version to 6000.0.22f1 to fix a crash that happened when you use virtual players and a build profile.
+
+## [1.3.0-pre.3] - 2024-09-20
+
+### Changed
+
+- Replaced the **Original Name** property in the **Remote Instances** > **Advance Configuration** section with the **Identifier** property. The **Identifier** string field creates a unique name for the Multiplay Build, Build Configuration, and Fleet. This name uses the format `CreatedFromTheUnityEditor-[identifier]-[username]`.
+
+### Added
+
+- Added stream logs to main editor option for additional editor instances.
+- Fixed an issue where domain reloads caused streaming logs from local instances to stop.
+- Added a percentage progress to the Play mode Status Window for the preparing, deploying, and launching stages.
+
+### Fixed
+
+- Removed the compilation warning "This async method lacks 'await' operators and will run synchronously".
+- Enabled log streaming from remote instances.
+- Code changes now sync consistently between the Main editor and the virtual player when you use Rider.
+- Fixed the "Asset out of sync" error that appeared when the virtual player didn't start in the correct build target.
+
+## [1.3.0-pre.2] - 2024-08-14
+
+### Fixed
+- Fixed an issue where the virtual player called `OpenScene()` and `CloseScene()` during Play mode when multiple scenes existed in the project.
+- Fixed the error "Type is not a supported string value" that appeared when you add a tag to the Main editor instance.
+- Tags now persist in the **Tag** dropdown after you navigate away from the **Scenario configuration** window.
+- Fixed the error "Multiplayer Play Mode can't spawn virtual player" in Play mode.
+
+### Changed
+- The Multiplayer Play Mode Window is now disabled when you select a Play Mode Scenario.
+
+## [1.3.0-pre.1] - 2024-07-26
+
+### Changed
+- Reduced the time it takes to enter Play mode with remote instances on consecutive runs that create the same build files.
+- Added the **Editor** property to the **Play mode scenario** window that you can use to disable the Main editor instance.
+- Updated the remote deployment dependency to `com.unity.services.multiplayer@1.0.0-pre.1`.
+- Removed UPM from the clones to improve performance and so clones rely on library redirect as originally intended.
+
+### Fixed
+- Added a window that gives you the option to **Save**, **Don’t Save**, or **Cancel** when you initiate a virtual player with an unsaved scene.
+- Fixed the "Asset database is out of sync" error that appeared when virtual player opened.
+
+## [1.3.0-exp.4] - 2024-07-16
+
+### Changed
+- Updated the remote deployment dependency to `com.unity.services.multiplayer@0.6.0`.
+
+## [1.3.0-exp.3] - 2024-07-11
+
+### Changed
+- Moved the Multiplayer Window from **Window** > **Multiplayer Playmode** to **Window** > **Multiplayer** > **Multiplayer Playmode** to ensure consistency with the other Multiplayer packages.
+- Scenario status popup title changed from **Connection Status** to **Instances Status**.
+
+### Added
+- Added the Playmode Status Window that gives more information about each instance in the scenario
+
+### Fixed
+- Removed warning log when the multiplay package is not installed. Information message now appears only in the UI in the "configure play mode scenarios" window.
+- Fixed remote instances default arguments from `-log` to `-logFile`.
+
 ## [1.3.0-exp.2] - 2024-07-03
 
 ### Fixed
