@@ -12,7 +12,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 - Fixed the compilation error "'UnityPlayer' does not contain a definition for 'Role'" when the Dedicated Server package version doesn't match.
 
 ### Added
-- The Virtual Player window now keeps the same layout when you switch between Play mode and Edit mode.
+- On Windows devices, the Virtual Player window now reamins anchored when you use the same layout in Play mode and Edit mode.
 
 ## [1.3.1] - 2024-10-21
 
