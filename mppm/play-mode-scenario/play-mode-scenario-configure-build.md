@@ -18,12 +18,12 @@ You can only have one remote instance in a Play Mode Scenario and it can only ru
 
 To learn more about the properties that you can use to configure a remote instance, refer to [Play Mode Scenarios window reference](mppm-reference/play-mode-scenario-window-reference.md).
 
-::warning
+:::info
  You can start using Multiplay Hosting for free, but it can cost money to use a server even when it's not running a process or hosting any users. To reduce cost in a project that uses Multiplay Hosting, open the [Unity Cloud Dashboard](http://cloud.unity.com/) and reduce the **Minimum Available Scaling** property value to 0. To learn more about Multiplay Hosting pricing, refer to [UGS pricing](https://unity.com/products/gaming-services/pricing).
 :::
 
 ## Configure and build a local instance
-A local instance exists on the same platform as the Unity Editor. To build a local instance that you have configured in the Play Mode Scenarios window, [enter Play Mode](https://docs.unity3d.com/Manual/GameView.html). All configured Play Mode Scenarios build automatically when you enter Play Mode.
+A local instance can run on the same platform as the Unity Editor, or on an Android device that is connected to that platform. To build a local instance that you have configured in the Play Mode Scenarios window, [enter Play Mode](https://docs.unity3d.com/Manual/GameView.html). All configured Play Mode Scenarios build automatically when you enter Play Mode.
 
 To learn more about the properties that you can use to configure a local instance, refer to [Play Mode Scenarios window reference](mppm-reference/play-mode-scenario-window-reference.md).
 
