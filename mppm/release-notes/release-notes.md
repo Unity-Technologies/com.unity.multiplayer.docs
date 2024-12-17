@@ -11,7 +11,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 - Removed instances of outdated internal build profile API functions.
 
 ### Added
-- Added a Scenario launching pop-up window that shows the scenario stages, progress bars, and configuration details.
+- Added a Scenario launch pop-up window that shows the scenario stages, progress bars, and configuration details.
 - Added the Entities Hierarchy window to Virtual Players. To enable this window, go to **Layout** > **Entities Hierarchy**.
 
 ## [1.3.2] - 2024-11-14
