@@ -4,6 +4,14 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [1.3.3] - 2024-12-17
+
+### Added
+- Fixed an `ArgumentNullException` issue that occurs across an MPPM upgrade with an actively set Play Mode Scenario configuration.
+
+### Fixed
+- Fixed an issue where project settings were not getting propagated to Virtual Players when entering Play mode via the play button.
+
 ## [1.4.0-pre.1] - 2024-12-05
 
 ### Fixed
