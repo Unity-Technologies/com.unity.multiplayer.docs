@@ -388,9 +388,9 @@ module.exports = {
             label: "1.4.0-pre",
             path: "current",
           },
-          "1.3.2": {
-            label: "1.3.2",
-            path: "1.3.2",
+          "1.3.3": {
+            label: "1.3.3",
+            path: "1.3.3",
           },
           "1.2.0": {
             label: "1.2.0",
