@@ -81,7 +81,7 @@ UserNetworkVariableSerialization<Url>.WriteValue = (FastBufferWriter writer, in 
     writer.WriteValueSafe(url.Value);
 };
 
-UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url)
+UserNetworkVariableSerialization<Url>.ReadValue = (FastBufferReader reader, out Url url) =>
 {
     reader.ReadValueSafe(out string val);
     url = new Url(val);
