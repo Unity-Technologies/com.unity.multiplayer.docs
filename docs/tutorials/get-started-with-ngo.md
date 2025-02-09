@@ -149,7 +149,7 @@ namespace HelloWorld
 {
     public class HelloWorldManager : MonoBehaviour
     {
-        private NetworkManager m_NetworkManager;
+        private static NetworkManager m_NetworkManager;
 
         void Awake()
         {
@@ -167,7 +167,7 @@ namespace HelloWorld
             {
                 StatusLabels();
 
-                SubmitNewPosition();
+                // SubmitNewPosition();
             }
 
             GUILayout.EndArea();
@@ -189,7 +189,7 @@ namespace HelloWorld
                 m_NetworkManager.NetworkConfig.NetworkTransport.GetType().Name);
             GUILayout.Label("Mode: " + mode);
         }
-
+        /* 
         static void SubmitNewPosition()
         {
             if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
@@ -207,9 +207,15 @@ namespace HelloWorld
                 }
             }
         }
+        */ 
     }
 }
 ```
+
+:::note
+
+`SubmitNewPosition()` is currently unused, but it should be uncommented once `HelloWorldPlayer.cs` is introduced in a later section.
+:::
 
 In your Hello World project, you created a NetworkManager by adding the pre-created NetworkManager component to a `GameObject`. This component allows you to start a Host, Client, or Server in Play Mode via the inspector view. The `HelloWorldManager.cs` script simplifies and extends this functionality by creating a runtime/play mode UI menu that allows you to select the three different `NetworkManager` modes you can start:
 
@@ -301,16 +307,7 @@ public class RpcTest : NetworkBehaviour
 
 ### Test the RPCs
 
-This section guides you through testing the RPCs you added in the earlier section.
-
-1. Select **File** > **Build Setting...**.
-2. In the **Build Setting** window, configure your build settings as needed.
-3. Click **Build** and choose a location to save your first build.
-4. After the first build is done, return to the **Build Setting** window.
-5. Click **Build** again and choose a different location to save your second build.
-    * Alternatively, you can run the builds by:
-      - Launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
-      - Using the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
+This section guides you through testing the RPCs you added in the earlier section. Enable the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/mppm/current/about/) to learn more.
 
 After the client and server spawn, a log displays in the **Console** of the client and server sending RPC messages to each other.
 
@@ -500,15 +497,12 @@ Because the `HelloWorldPlayer.cs` script handles the position NetworkVariable, t
 
 The method in the code block above adds a contextual button that changes depending on whether the client is a server or a client. When you press the button this method creates, it finds your local player and calls `Move()`.
 
-You can now create a build that shows the concepts outlined above.
+:::note
 
-Create two build instances: one for the host and the other for the client (to join the host's game).
+If you haven't done so already, make sure you uncomment the references to `SubmitNewPosition()` in `HelloWorldManager.cs`.
+:::
 
-Both build instances can move the player with the GUI button. The server moves the player immediately and replicates the movement on the client.
-
-The client can request a new position, instructing the server to change that instance's position `NetworkVariable`. After the server updates the position `NetworkVariable`, the client applies that `NetworkVariable` position inside its `Update()` method.
-
-## Add the `HelloWorldPlayer.cs` script to the Player prefab
+#### Add the `HelloWorldPlayer.cs` script to the Player prefab
 
 This section guides you through adding the `HelloWorldPlayer.cs` script to the Player prefab.
 
@@ -522,6 +516,15 @@ Add the `HelloWorldPlayer.cs` script to the Player prefab as a component:
 1. With the Player prefab selected, select **Add Component** from the Inspector tab.
 2. Select **Scripts** > **Hello World** > **Hello World Player**.
 
+### Test the movement
+
+You can now create a build that shows the concepts outlined above.
+
+Create two build instances: one for the host and the other for the client (to join the host's game).
+
+Both build instances can move the player with the GUI button. The server moves the player immediately and replicates the movement on the client.
+
+The client can request a new position, instructing the server to change that instance's position `NetworkVariable`. After the server updates the position `NetworkVariable`, the client applies that `NetworkVariable` position inside its `Update()` method.
 
 ## Add a NetworkTransform
 
@@ -582,6 +585,11 @@ This section guides you through testing the NetworkTransform you added in the ea
 5. Click **Build** again and choose a different location to save your second build.
     * Alternatively, you can run the builds by:
       - Launching the client and server together in a terminal, as shown in [Testing the command line helper](command-line-helper.md).
-      - Using the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/tools/current/mppm) to learn more.
+      - Using the Multiplayer Play Mode package, which lets you run multiple instances of the Unity Editor to test multiplayer functionality. Refer to [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/mppm/current/about/) to learn more.
 
 After the client and server spawn, the player capsule moves in a circle on both the client and the server.
+
+:::note
+
+You can now remove the `Update()` logic in `HelloWorldPlayer.cs` as `NetworkTransform` automatically updates the positions for all players. 
+:::
