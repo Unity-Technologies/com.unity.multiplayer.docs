@@ -8,7 +8,7 @@ description: A NetworkObject parenting solution within Netcode for GameObjects (
 
 If you aren't completely familiar with transform parenting in Unity, then it's highly recommended to [review over the existing Unity documentation](https://docs.unity3d.com/Manual/class-Transform.html) before reading further to properly synchronize all connected clients with any change in a GameObject component's transform parented status, Netcode for GameObjects requires that the parent and child GameObject components have NetworkObject components attached to them.
 
-### Parenting rules 
+### Parenting rules
 
 - Setting the parent of a child's `Transform` directly (that is, `transform.parent = childTransform;`) always uses the default `WorldPositionStays` value of `true`.
   - It's recommended to always use the `NetworkObject.TrySetParent` method when parenting if you plan on changing the `WorldPositionStays` default value.
@@ -31,7 +31,7 @@ Parenting within a distributed authority network topology follows the same rules
 #### Rules Adjustments:
   - Whoever has authority of a `NewtworkObject` can control its parenting. 
   - You can parent under mixed authority. This means Client-B can parent a `NetworkObject` it is the authority over under a `NetworkObject` that Client-A has authority over.
-  
+
 #### Distributable Permissions and Child Hierarchies:
 - **Upon a client disconnecting:**
   - Any root parent with distributable permission set and was owned by the client that disconnected will be redistributed.
@@ -53,8 +53,6 @@ Parenting within a distributed authority network topology follows the same rules
 :::tip
 When a NetworkObject is parented, Netcode for GameObjects synchronizes both the parenting information along with the child's transform values. Netcode for GameObjects uses the `WorldPositionStays` setting to decide whether to synchronize the local or world space transform values of the child NetworkObject component. This means that a NetworkObject component doesn't require you to include a NetworkTransform component if it never moves around, rotates, or changes its scale when it isn't parented. This can be beneficial for world items a player might pickup (parent the item under the player) and the item in question needs to adjustment relative to the player when it's parented or the parent is removed (dropped). This helps to reduce the item's over-all bandwidth and processing resources consumption.
 :::
-
-
 
 ### OnNetworkObjectParentChanged
 
