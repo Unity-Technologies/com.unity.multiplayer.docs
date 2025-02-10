@@ -35,19 +35,19 @@ Parenting within a distributed authority network topology follows the same rules
 #### Distributable Permissions and Child Hierarchies:
 - **Upon a client disconnecting:**
   - Any root parent with distributable permission set and was owned by the client that disconnected will be redistributed.
-    -If the root parent was locked when the client disconnected, then the service should unlock it prior to redistributing.
-    - All children under the root parent should follow the root parent ownership change if:
+    - If the root parent was locked when the client disconnected, then it will be unlocked prior to redistributing.
+    - All children under the root parent will "follow" the root parent ownership change only if:
       - The child is owned by the client that disconnected.
       - The child has either the distributable or transferable permission set.
-      - If the child's ownership permission is locked, then the service should unlock it prior to changing ownership.
-    - Any child of the root parent that is owned by a different client should not have the ownership redistributed.
+    - If a child's ownership permission is locked, it will be unlocked prior to redistributing.
+    - Any child of the root parent that is owned by a different client will not get redistributed.
 - **Upon a client connecting:**
-  - Any root parent with the distributable permission set and does not have ownership locked should be taken into consideration for redistribution.
-    - If a root parent is redistributed to the newly connecting client then:
-      - Any child under the root parent that has the same owner as the root parent should "follow" (*i.e. change ownership with the root parent*).
-        - Unless the child has ownership locked (i.e. it should not have its ownership changed).
+  - Any root parent with the distributable permission set and does not have ownership locked will be taken into consideration for redistribution.
+    - If a root parent is redistributed to a newly connecting client then:
+      - Any child under the root parent that has the same owner as the root parent will "follow" (*i.e. change ownership with the root parent*).
+        - Unless the child has ownership locked (i.e. it will not have its ownership changed).
     - Any child under the root parent that has the distributable or transferrable permission set can be redistributed as well.
-      - Unless the child has ownership locked (i.e. it should not have its ownership changed).
+      - Unless the child has ownership locked (i.e. it will not have its ownership changed).
 
 
 :::tip
