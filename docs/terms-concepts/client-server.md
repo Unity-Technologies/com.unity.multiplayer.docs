@@ -3,19 +3,27 @@ id: client-server
 title: Client-server topologies
 ---
 
-Client-server is one possible [network topology](network-topologies.md) you can use for your multiplayer game.
+The [client-server network topology](network-topologies.md#client-server) is one possible [network topology](network-topologies.md) available within Netcode for GameObjects. Client-server games use the [Server authority model](authority.md#server-authority)
 
-## Defining client-server
+Client-server encompasses a number of potential network architectures. The most common are the dedicated game server, in which a specialized server manages the game and exists solely for that purpose, and the listen server, in which the game server runs on the same game instance as a client.
 
-In a client-server topology, a central server is responsible for running the main simulation and managing all aspects of running the networked game, including simulating physics, spawning and despawning objects, and authorizing client requests. Players connect to the server using separate client programs to see and interact with the game.
+### Dedicated game server
 
-Client-server encompasses a number of potential network arrangements. The most common is a dedicated game server, in which a specialized server manages the game and exists solely for that purpose. An alternative client-server arrangement is to have a [listen server](../learn/listenserverhostarchitecture.md), in which the game server runs on the same machine as a client.
-
-## Use cases for client-server
+Dedicated servers run the game simulation and manage all aspects of running the networked game. Players connect to the server using separate game instances (clients) to see and interact with the game.
 
 Dedicated servers are often the most expensive network topology, but also offer the highest performance and can provide additional functionality such as competitive client prediction, rollback, and a centralized authority to manage any potential client conflicts. However, this comes at the cost of added latencies when communicating state changes from one client to another, as all state changes must be sent from client to server, processed, and then sent back out to other clients.
 
-Client-server is primarily used by performance-sensitive games, such as first-person shooters, or competitive games where having a central server authority is necessary to minimize cheating and the effects of bad actors.
+This network topology is primarily used by performance-sensitive games, such as first-person shooters, or competitive games where having a central server authority is necessary to minimize cheating and the effects of bad actors.
+
+![Dedicated Server](/img/ded_server.png)
+
+### Client-hosted listen server
+
+Listen servers are similar to dedicated game servers, except that the server runs in the same game instance as a game client. This makes it a cheaper option, but with the disadvantage that the hosting client has to communicate updates over a residential internet connection. Server performance is also degraded because the machine running the server is also generating an output image for the user playing on that machine.
+
+For more details about listen servers, refer to the [Listen server page](../learn/listenserverhostarchitecture.md)
+
+![Client Hosted](/img/client-hosted.png)
 
 ### Client-server versus distributed authority
 

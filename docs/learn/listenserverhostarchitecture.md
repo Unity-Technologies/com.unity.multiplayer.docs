@@ -69,6 +69,8 @@ Disadvantages:
 
 A relay server costs money, and the round trip times for packet exchange may be higher because they have to go through the relay server instead of being sent directly to the other client.
 
+Unity provides a relay service. More information can be found in the [Unity Relay documentation](https://docs.unity.com/ugs/manual/relay/manual/introduction)
+
 ### NAT Punch-through
 
 Network Address Translation (NAT) punch-through, also known as hole punching, opens a direct connection without port forwarding. When successful, clients are directly connected to each other to exchange packets. However, depending on the NAT types among the clients, NAT punching often fails.
