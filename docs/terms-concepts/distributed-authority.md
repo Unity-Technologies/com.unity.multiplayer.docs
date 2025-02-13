@@ -3,7 +3,7 @@ id: distributed-authority
 title: Distributed authority topologies
 ---
 
-Distributed authority is one possible [network topology](network-topologies.md) you can use for your multiplayer game.
+The [distributed authority network topology](network-topologies.md#distributed-authority) is one possible [network topology](network-topologies.md) available within Netcode for GameObjects. Distributed authority games use the [Distributed authority model](authority.md#distributed-authority)
 
 :::note Beta feature
 Distributed authority is still in beta. During the beta phase, using the distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) is free. When distributed authority is fully released, [using the service will incur a cost](https://unity.com/products/gaming-services/pricing).
