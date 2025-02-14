@@ -25,7 +25,7 @@ If you aren't completely familiar with transform parenting in Unity, then it's h
   - When `OnNetworkObjectParentChanged` is invoked, on the server side, adjust the child's transform values within the overridden method.
   - Netcode for GameObjects will then synchronize all clients with the child's parenting and transform changes.
 
-### Parenting, Distributed Authority, and NetworkObject Redistribution
+### Parenting, distributed authority, and NetworkObject redistribution
 
 Parenting within a distributed authority network topology follows the same rules as outlined above with the minor exception that you can exchange any references to "server" with "authority". 
 #### Rules Adjustments:
