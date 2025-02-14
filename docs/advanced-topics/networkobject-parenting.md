@@ -36,14 +36,14 @@ Parenting within a [distributed authority](../terms-concepts/distributed-authori
 
 #### Distributable permissions and child hierarchies
 
-- **Upon a client disconnecting:**
-  - Any root parent with distributable permission set and was owned by the client that disconnected will be redistributed.
-    - If the root parent was locked when the client disconnected, then it will be unlocked prior to redistributing.
-    - All children under the root parent will "follow" the root parent ownership change only if:
-      - The child is owned by the client that disconnected.
+- **When a client disconnects:**
+  - Any root parent with [distributable permission](../basics/ownership.md#ownership-permission-settings) set that was owned by the disconnected client is redistributed.
+    - If the root parent was locked when the client disconnected, then it's unlocked prior to redistributing.
+    - Children of the root parent change ownership with the root parent only if:
+      - The child was owned by the client that disconnected.
       - The child has either the distributable or transferable permission set.
-    - If a child's ownership permission is locked, it will be unlocked prior to redistributing.
-    - Any child of the root parent that is owned by a different client will not get redistributed.
+    - If a child's ownership permission is locked, it's unlocked prior to redistributing.
+    - Any child of the root parent that's owned by a different client won't get redistributed.
 - **Upon a client connecting:**
   - Any root parent with the distributable permission set and does not have ownership locked will be taken into consideration for redistribution.
     - If a root parent is redistributed to a newly connecting client then:
