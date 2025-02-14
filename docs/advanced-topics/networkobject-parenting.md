@@ -34,7 +34,8 @@ Parenting within a [distributed authority](../terms-concepts/distributed-authori
   - Whichever client has authority over a NetworkObject can control its parenting. 
   - You can parent under mixed authority. This means that Client-B can parent a NetworkObject it has authority over under another NetworkObject that Client-A has authority over.
 
-#### Distributable Permissions and Child Hierarchies:
+#### Distributable permissions and child hierarchies
+
 - **Upon a client disconnecting:**
   - Any root parent with distributable permission set and was owned by the client that disconnected will be redistributed.
     - If the root parent was locked when the client disconnected, then it will be unlocked prior to redistributing.
