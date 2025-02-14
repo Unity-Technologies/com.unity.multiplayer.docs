@@ -31,7 +31,7 @@ Parenting within a [distributed authority](../terms-concepts/distributed-authori
  
 #### Rule adjustments
 
-  - Whoever has authority of a `NewtworkObject` can control its parenting. 
+  - Whichever client has authority over a NetworkObject can control its parenting. 
   - You can parent under mixed authority. This means Client-B can parent a `NetworkObject` it has authority over under another `NetworkObject` that Client-A has authority over.
 
 #### Distributable Permissions and Child Hierarchies:
