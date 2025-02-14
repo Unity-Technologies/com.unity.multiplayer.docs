@@ -29,7 +29,8 @@ If you aren't completely familiar with transform parenting in Unity, then it's h
 
 Parenting within a [distributed authority](../terms-concepts/distributed-authority.md) network topology follows the same rules as outlined above, with the exception that you can change any references to the server with references to authority.
  
-#### Rules Adjustments:
+#### Rule adjustments
+
   - Whoever has authority of a `NewtworkObject` can control its parenting. 
   - You can parent under mixed authority. This means Client-B can parent a `NetworkObject` it has authority over under another `NetworkObject` that Client-A has authority over.
 
