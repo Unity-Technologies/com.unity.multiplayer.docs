@@ -44,14 +44,13 @@ Parenting within a [distributed authority](../terms-concepts/distributed-authori
       - The child has either the distributable or transferable permission set.
     - If a child's ownership permission is locked, it's unlocked prior to redistributing.
     - Any child of the root parent that's owned by a different client won't get redistributed.
-- **Upon a client connecting:**
-  - Any root parent with the distributable permission set and does not have ownership locked will be taken into consideration for redistribution.
+- **When a client connects:**
+  - Any root parent with [distributable permission](../basics/ownership.md#ownership-permission-settings) set that doesn't have ownership locked is considered for redistribution.
     - If a root parent is redistributed to a newly connecting client then:
-      - Any child under the root parent that has the same owner as the root parent will "follow" (*i.e. change ownership with the root parent*).
-        - Unless the child has ownership locked (i.e. it will not have its ownership changed).
+      - Any child under the root parent that has the same owner as the root parent changes ownership with the root parent.
+        - Unless the child has ownership locked.
     - Any child under the root parent that has the distributable or transferrable permission set can be redistributed as well.
-      - Unless the child has ownership locked (i.e. it will not have its ownership changed).
-
+      - Unless the child has ownership locked.
 
 :::tip
 When a NetworkObject is parented, Netcode for GameObjects synchronizes both the parenting information along with the child's transform values. Netcode for GameObjects uses the `WorldPositionStays` setting to decide whether to synchronize the local or world space transform values of the child NetworkObject component. This means that a NetworkObject component doesn't require you to include a NetworkTransform component if it never moves around, rotates, or changes its scale when it isn't parented. This can be beneficial for world items a player might pickup (parent the item under the player) and the item in question needs to adjustment relative to the player when it's parented or the parent is removed (dropped). This helps to reduce the item's over-all bandwidth and processing resources consumption.
