@@ -4,7 +4,7 @@ title: Invaders sample
 description: Learn more about game flow, modes, unconventional movement networked, and a shared timer using Netcode for GameObjects.
 ---
 
-The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/blob/main/Basic/Invaders) to understand the game flow and modes with  Netcode for GameObjects (Netcode) using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients updated client-side with server side seeding.
+The [Invaders Sample Project](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Deprecated/Invaders) to understand the game flow and modes with  Netcode for GameObjects (Netcode) using Scene Management, Unconventional Movement Networked, and a Shared Timer between clients updated client-side with server side seeding.
 
 ## Game Flows
 
