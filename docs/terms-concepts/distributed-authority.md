@@ -28,6 +28,7 @@ Using a distributed authority topology is typically not suitable for high-perfor
 
 For game designs that don't require a precise physics simulation or client prediction model (with potentially some form of rollback), a distributed authority approach can be a good option. It's less resource intensive than having a dedicated game server, and can make it simpler to implement many common netcode features when compared with equivalent implementations in a client-server topology.
 
+
 ### Distributed authority versus client-server
 
 The traditional [client-server](client-server.md) model typically includes a service relay to solve connectivity issues, notably Network Address Translation (NAT), between players across different regions and networks. This topology works well for projects that require competitive client prediction, rollback, and a centralized authority – however, it comes at the cost of added latencies when communicating state changes from one client to another.

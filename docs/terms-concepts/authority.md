@@ -34,7 +34,3 @@ In a distributed authority game, each game instance is the authority for a subdi
 The authority of each network object is responsible for simulating the behaviour and managing any aspects of running the networked game that relate to the objects it is the authority of.
 
 As distributed authority games share the simulation between each connected client, they are less resource intensive. As each machine connected to the game is processing a subdivision of the simulation, no single machine needs to have the capacity to process the entire simulation. This results in a multiplayer game experience that can run on cheaper machines and is less resource intensive.
-
-It is important to note that distributed authority games rely on the assumption that each game instance can be trusted. At this time, distributed authority is not a reliable authority mode for competitive games where local game instances may be attempting to cheat.
-
-Distributed authority is best for cooperative games that require low-latency and assume game instances can be trusted.
