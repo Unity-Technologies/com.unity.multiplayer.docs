@@ -52,6 +52,10 @@ Parenting within a [distributed authority](../terms-concepts/distributed-authori
     - Any child under the root parent that has the distributable or transferrable permission set can be redistributed as well.
       - Unless the child has ownership locked.
 
+#### Distributable permissions and in-scene placed `NetworkObject` instances:
+By default, any root in-scnee placed `NetworkObject` instance will have the `Distributable` permissions flag unless it already has the `SessionOwner` permission flag set. This assures in-scene placed `NetworkObject` instances will always distributed amongst clients or a newly promoted session owner.
+
+
 :::tip
 When a NetworkObject is parented, Netcode for GameObjects synchronizes both the parenting information along with the child's transform values. Netcode for GameObjects uses the `WorldPositionStays` setting to decide whether to synchronize the local or world space transform values of the child NetworkObject component. This means that a NetworkObject component doesn't require you to include a NetworkTransform component if it never moves around, rotates, or changes its scale when it isn't parented. This can be beneficial for world items a player might pickup (parent the item under the player) and the item in question needs to adjustment relative to the player when it's parented or the parent is removed (dropped). This helps to reduce the item's over-all bandwidth and processing resources consumption.
 :::
