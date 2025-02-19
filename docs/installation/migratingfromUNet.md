@@ -343,7 +343,7 @@ In Netcode for GameObjects, RPC function names must end with an `Rpc` suffix.
 
 See [Messaging System](../advanced-topics/messaging-system.md) for more information.
 
-## Replace `OnServerAddPlayer`  
+## Replace `OnServerAddPlayer`
 
 Replace `OnServerAddPlayer` with `ConnectionApproval` everywhere in your project.
 
@@ -663,7 +663,7 @@ Netcode for GameObjects doesn't provide Network Discovery. The Contributions rep
 
 After migrating to the Netcode for GameObjects package, you can review the following for what to do next:
 
-* Consider using the [Hello World](../tutorials/helloworld.md) and [Golden Path series](../tutorials/goldenpath_series/gp_intro.md) to learn some basics of Netcode for GameObjects.
+* Follow the [client-server quickstart](../tutorials/get-started-with-ngo.md) to learn some basics of Netcode for GameObjects.
 * Explore the educational samples content for a deeper exploration into Netcode for GameObjects:
   * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
   * [2D Spaceshooter Bitesize sample](../learn/bitesize/bitesize-spaceshooter.md)
