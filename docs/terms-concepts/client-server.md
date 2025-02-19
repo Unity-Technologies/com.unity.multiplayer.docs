@@ -3,11 +3,11 @@ id: client-server
 title: Client-server topologies
 ---
 
-The [client-server network topology](network-topologies.md#client-server) is one possible [network topology](network-topologies.md) available within Netcode for GameObjects. Client-server games use the [Server authority model](authority.md#server-authority)
+The [client-server network topology](network-topologies.md#client-server) is one possible [network topology](network-topologies.md) available within Netcode for GameObjects. Client-server games use a [server authority model](authority.md#server-authority).
 
 ## Client-server network architectures
 
-Client-server encompasses a number of potential network architectures. The most common are the dedicated game server, in which a specialized server manages the game and exists solely for that purpose, and the listen server, in which the game server runs on the same game instance as a client.
+Client-server encompasses a number of potential network architectures. The most common are the [dedicated game server](#dedicated-game-server), in which a specialized server manages the game and exists solely for that purpose, and the [listen server](#client-hosted-listen-server), in which the game server runs on the same game instance as a client.
 
 ### Dedicated game server
 
@@ -21,13 +21,13 @@ This network topology is primarily used by performance-sensitive games, such as 
 
 ### Client-hosted listen server
 
-Listen servers are similar to dedicated game servers, except that the server runs in the same game instance as a game client. This makes listen servers cheap to run as there is not requirement for a  separate, dedicated machine to run the game simulation.
+Listen servers are similar to dedicated game servers, except that the server runs in the same game instance as the game client. This makes listen servers cheap to run because there isn't a requirement for a separate, dedicated machine to run the game simulation.
 
-There are networking considerations with the listen server architecture. As the hosting client has to communicate updates over a residential internet connection, there can be large variances in the communication time and therefore the lag between clients.
+However, there are networking considerations when using a listen server architecture. Because the hosting client has to communicate updates over a residential internet connection, there can be large variations in the communication time and therefore the lag between clients.
 
-Server performance can also degraded as one machine is both running the simulation and also generating an output image for the user playing on that machine.
+Server performance can also be degraded because one machine is both running the simulation and generating an output image for the user playing on that machine.
 
-The listen server architecture also increases the cheating footprint for bad actors as the simulation is running on a player's machine, and so the runtime of the simulation is completely vulnerable to cheating.
+The listen server architecture also makes cheating easier for bad actors because the simulation is running on the player's machine, and so the runtime of the simulation is vulnerable to cheating.
 
 For more details about listen servers, refer to the [Listen server page](../learn/listenserverhostarchitecture.md)
 

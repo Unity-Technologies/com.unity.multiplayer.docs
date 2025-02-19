@@ -69,7 +69,7 @@ Disadvantages:
 
 A relay server costs money, and the round trip times for packet exchange may be higher because they have to go through the relay server instead of being sent directly to the other client.
 
-Unity provides a relay service. More information can be found in the [Unity Relay documentation](https://docs.unity.com/ugs/manual/relay/manual/introduction)
+Unity provides a relay service. Refer to the [Unity Relay documentation](https://docs.unity.com/ugs/manual/relay/manual/introduction) for more information.
 
 ### NAT Punch-through
 
