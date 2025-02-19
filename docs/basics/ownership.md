@@ -27,7 +27,7 @@ The following ownership permission settings, defined by `NetworkObject.Ownership
 * `Distributable`: Ownership of this NetworkObject is automatically redistributed when a client joins or leaves, as long as ownership is not locked or a request is pending.
 * `Transferable`: Ownership of this NetworkObject can be transferred immediately, as long as ownership is not locked and there are no pending requests.
 * `RequestRequired`: Ownership of this NetworkObject must be requested before it can be transferred and will always be locked after transfer.
-* `SessionOwner`: This NetworkObject will always be owned by the [session owner](../terms-concepts/distributed-authority.md#session-ownership) and cannot be transferred or distributed. If the session owner changes this NetworkObject will automatically be transferred to the new session owner.
+* `SessionOwner`: This NetworkObject is always owned by the [session owner](../terms-concepts/distributed-authority.md#session-ownership) and can't be transferred or distributed. If the session owner changes, this NetworkObject is automatically transferred to the new session owner.
 
 You can also use `NetworkObject.SetOwnershipLock` to lock and unlock the permission settings of a NetworkObject for a period of time, preventing ownership changes on a temporary basis.
 
