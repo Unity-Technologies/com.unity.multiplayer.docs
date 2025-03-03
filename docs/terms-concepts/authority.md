@@ -27,7 +27,7 @@ Server authority is primarily used by performance-sensitive games, such as first
 
 The distributed authority model shares authority between game instances. Each game instance is the authority for a subdivision of the networked objects in the game and is responsible for running the simulation for their subdivision of objects. Updates are shared from other game instances for the rest of the simulation.
 
-The authority of each networked object is responsible for simulating the behaviour and managing any aspects of running the networked game that relate to the objects it is the authority of.
+The authority of each networked object is responsible for simulating the behavior and managing any aspects of running the networked game that relate to the objects it is the authority of.
 
 Because distributed authority games share the simulation between each connected client, they are less resource intensive. Each machine connected to the game processes a subdivision of the simulation, so no single machine needs to have the capacity to process the entire simulation. This results in a multiplayer game experience that can run on cheaper machines and is less resource intensive.
 
