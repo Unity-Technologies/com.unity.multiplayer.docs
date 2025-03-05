@@ -237,8 +237,12 @@ module.exports = {
           lastVersion: "current",
           versions: {
             current: {
-              label: "2.1.1",
+              label: "2.2.0",
               path: "current",
+            },
+            "2.1.1": {
+              label: "2.1.1",
+              path: "2.1.1",
             },
             "2.0.0": {
               label: "2.0.0",
@@ -385,20 +389,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "1.5.0",
+            label: "1.4.0-pre",
             path: "current",
           },
-          "1.4.0": {
-            label: "1.4.0",
-            path: "1.4.0",
-          },
-          "1.4.0-pre": {
-            label: "1.4.0-pre",
-            path: "1.4.0-pre",
-          },
-          "1.3.2": {
-            label: "1.3.2",
-            path: "1.3.2",
+          "1.3.3": {
+            label: "1.3.3",
+            path: "1.3.3",
           },
           "1.2.0": {
             label: "1.2.0",

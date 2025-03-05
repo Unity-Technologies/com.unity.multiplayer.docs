@@ -148,7 +148,7 @@ If this appears when you enter Play Mode or save a scene, close the Unity Editor
 
 After migrating to the Netcode for GameObjects package, you can review the following for what to do next:
 
-* Consider using the [Hello World](../tutorials/helloworld.md) and [Golden Path series](../tutorials/goldenpath_series/gp_intro.md) to learn some basics of Netcode for GameObjects.
+* Follow the [client-server quickstart](../tutorials/get-started-with-ngo.md) to learn some basics of Netcode for GameObjects.
 * Explore the educational samples content for a deeper exploration into Netcode for GameObjects:
   * [Boss Room](../learn/bossroom/getting-started-boss-room.md)
   * [2D Spaceshooter Bitesize sample](../learn/bitesize/bitesize-spaceshooter.md)
