@@ -23,7 +23,7 @@ You can start using Multiplay Hosting for free, but it can cost money to use a s
 :::
 
 ## Configure and build a local instance
-A local instance can run on the same platform as the Unity Editor, or on an Android device that is connected to that platform. To build a local instance that you have configured in the Play Mode Scenarios window, [enter Play Mode](https://docs.unity3d.com/Manual/GameView.html). All configured Play Mode Scenarios build automatically when you enter Play Mode.
+A local instance can run on the same platform as the Unity Editor, or on an Android device that is connected to that platform wirelessly or by a USB cable. To build a local instance that you have configured in the Play Mode Scenarios window, [enter Play Mode](https://docs.unity3d.com/Manual/GameView.html). All configured Play Mode Scenarios build automatically when you enter Play Mode.
 
 To learn more about the properties that you can use to configure a local instance, refer to [Play Mode Scenarios window reference](mppm-reference/play-mode-scenario-window-reference.md).
 
