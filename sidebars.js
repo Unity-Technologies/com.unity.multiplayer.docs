@@ -70,6 +70,10 @@ module.exports = {
                     },
                     {
                         "type": "doc",
+                        "id": "installation/migrate-from-matchmaker-to-lobby"
+                    },
+                    {
+                        "type": "doc",
                         "id": "installation/upgrade_from_mlapi"
                     },
                   ],
