@@ -31,20 +31,19 @@ There are some differences between UNet Matchmaker and Lobby features. To learn 
 
 ## UNet and Lobby SDK scripting comparison
 
-|Section title|Description|
-|-|-|
-|[Imports](#imports)||
-|[Initialization](#initialization)||
-|[Authentication](#authentication)||
-|[Method invocation and return types](#method-invocation-and-return-types)||
-|[Create a UNet Match or a UGS lobby](#create-a-unet-match-or-a-ugs-lobby)||
-|[Custom data properties](#custom-data-properties)||
-|[Connection data](#connection-data)||
-|[Delete a Match or Lobby](#delete-a-match-or-lobby)||
-|[Join a Match or Lobby](#join-a-match-or-lobby)||
-|[Remove a player or leave a lobby](#remove-a-player-or-leave-a-lobby)||
-|[List a Match or query a lobby](#list-a-match-or-query-a-lobby)||
-|[Update a Match or lobby](#update-a-match-or-lobby)||
+Learn the difference between the following features in UNet and the Lobby service:
+* [Imports](#imports)
+* [Initialization](#initialization)
+* [Authentication](#authentication)
+* [Method invocation and return types](#method-invocation-and-return-types)
+* [Create a UNet Match or a UGS lobby](#create-a-unet-match-or-a-ugs-lobby)
+* [Custom data properties](#custom-data-properties)
+* [Connection data](#connection-data)
+* [Delete a Match or Lobby](#delete-a-match-or-lobby)
+* [Join a Match or Lobby](#join-a-match-or-lobby)
+* [Remove a player or leave a lobby](#remove-a-player-or-leave-a-lobby)
+* [List a Match or query a lobby](#list-a-match-or-query-a-lobby)
+* [Update a Match or lobby](#update-a-match-or-lobby)
 
 ### Imports
 
