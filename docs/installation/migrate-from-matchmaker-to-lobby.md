@@ -114,7 +114,7 @@ UNet and the Lobby service use the following invocation and return types:
 API calls to both the UNet matchmaker and the Lobby service are asynchronous, but the patterns used are different in the following ways:
 
 * UNet Matchmaker methods return Coroutines and use callbacks. To call UNet Matchmaker APIs, manually initialize the `NetworkMatch `object of the `NetworkManager`, and reference it.
-* Lobby methods return async `Task `or `Task&lt;T>` objects. To call Lobby service APIs, use the built-in singleton `Lobbies.Instance`.
+* Lobby methods return async `Task `or `Task<T>` objects. To call Lobby service APIs, use the built-in singleton `Lobbies.Instance`.
 
 
 ### Create a UNet Match or a UGS lobby
@@ -249,12 +249,12 @@ Lastly, the lobby itself is created:
 ```
 
 
-Unlike UNet APIs which return coroutines, the `Lobbies.Instance.CreateLobbyAsync()` returns a `Task&lt;Lobby>` object that can be awaited. If the call was successful, the resulting lobby object contains information about the created lobby.
+Unlike UNet APIs which return coroutines, the `Lobbies.Instance.CreateLobbyAsync()` returns a `Task<Lobby>` object that can be awaited. If the call was successful, the resulting lobby object contains information about the created lobby.
 
 Refer to the [Create a lobby](https://docs.unity.com/ugs/manual/lobby/manual/create-a-lobby) documentation for more information.
 
 ### Connection data
-In UNet, you can share connection information by embedding each client's WAN or LAN IP in the match. This is also possible in the Lobby service through either the per-player <code>[ConnectionInfo](https://docs.unity3d.com/Packages/com.unity.services.lobby@1.2/api/Unity.Services.Lobbies.Models.Player.html#Unity_Services_Lobbies_Models_Player_ConnectionInfo)</code>** **field or using custom properties at the player or lobby level. However, sharing IPs and directly connecting players to each other is highly discouraged in modern practice due to privacy issues, hacking and DDoS concerns. 
+In UNet, you can share connection information by embedding each client's WAN or LAN IP in the match. This is also possible in the Lobby service through either the per-player [`ConnectionInfo`](https://docs.unity3d.com/Packages/com.unity.services.lobby@1.2/api/Unity.Services.Lobbies.Models.Player.html#Unity_Services_Lobbies_Models_Player_ConnectionInfo) field or using custom properties at the player or lobby level. However, sharing IPs and directly connecting players to each other is highly discouraged in modern practice due to privacy issues, hacking and DDoS concerns. 
 
 Instead, Unity suggests using the [Relay](https://docs.unity.com/relay/introduction.html) service, which replaces the old UNet Relay service. Use the Relay service to connect players together without exposing IPs and without a direct connection to each other. Relay also supports [special integrations with the Lobby service](https://docs.unity.com/ugs/manual/relay/manual/integration).
 
@@ -640,11 +640,45 @@ var updatedPlayerOptions = new UpdatePlayerOptions()
 
 ```
 
-
-
 ## Lobby lifecycle
 
+Lobby uses the [heartbeat](https://docs.unity.com/ugs/manual/lobby/manual/heartbeat-a-lobby) pattern in order to prevent inactive lobbies from polluting query results, and to eventually delete inactive lobbies.
+
+The host must heartbeat or update a Lobby at least once every 30 seconds to appear in query results. If lobbies are not updated or heartbeat for over one hours, they may be deleted.
+
+:::note
+If all players leave a lobby, it is automatically delisted and deleted.
+:::
+
+Refer to the [Heartbeat a lobby](https://docs.unity.com/ugs/manual/lobby/manual/heartbeat-a-lobby) documentation for more information.
+
+
 ## Partially-supported UNet features and workarounds
+
+The following UNet features do not have a direct replacement in Lobby:
+
+* Domain IDs
+* Elo Score
+
+### Domain IDs
+
+Domain IDs in UNet Matchmaking partition matches into different domains. If a client creates a match in one domain, another client has to search within the same domain to find the match. This could be used for things like separating builds or game modes.
+
+Lobby does not have a dedicated Domain ID field, but you can easily implement something similar using custom lobby properties and query filters. For example, a client could set properties such as `build` or `game mode` when creating a match, and then other clients could search for `build = 123` or `gamemode = XYZ` when querying.
+
+### Elo Score
+
+**UNet Matchmaking**
+
+This is a dedicated number field designed to represent the average skill level of a match. The host sets it when creating the match. Clients searching for a match get results ordered by their absolute value distance to the ELO score of possible matches.
+
+**The Lobby service**
+
+There is no dedicated EloScore field, but you can use custom public lobby properties to store a custom EloScore value.
+
+The Lobby service query APIs currently do not support ordering results by lowest absolute value difference of a custom data field, which would be required for 1:1 support. This can be emulated, but the results may not be ideal or reliable.
+
+You can use two queries: one to get lobbies with an EloScore greater or equal to the player's score (ordered by EloScore ascending), and one to get lobbies with an EloScore less than or equal to the players score (ordered by EloScore descending). Then, union the results on the client. This should give you the closest results above and below the player's EloSkill value. However, this approach does not work with QuickJoin. It also requires two calls for every attempt, and you must space out your queries to avoid [rate limiting](https://docs.unity.com/lobby/rate-limits.html).
 
 ## New features in the Lobby service
 
@@ -682,11 +716,7 @@ You can lock a Lobby to prevent new players from joining. This is useful if, for
 
 For more information, refer to [Using Lobby.](https://docs.unity.com/ugs/en-us/manual/cloud-code/manual/scripts/use-cases/lobby)
 
-
 ### Getting joined lobbies
 
-If a client for some reason loses their knowledge of which lobbies they are in, they may call the <code>[GetJoinedLobbies](https://docs.unity.com/ugs/manual/lobby/manual/get-joined-lobbies)</code> API to see all the lobbies the logged-in player currently belongs to.
-
-
-## Additional resources
+If a client loses their knowledge of which lobbies they are in, they can call the [`GetJoinedLobbies`](https://docs.unity.com/ugs/manual/lobby/manual/get-joined-lobbies) API to see all the lobbies the logged-in player currently belongs to.
 
