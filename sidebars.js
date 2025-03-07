@@ -66,7 +66,15 @@ module.exports = {
                   "items": [
                     {
                         "type": "doc",
+                        "id": "installation/unet-migration-path"
+                    },
+                    {
+                        "type": "doc",
                         "id": "installation/upgrade_from_UNet"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "installation/migrate-from-matchmaker-to-lobby"
                     },
                     {
                         "type": "doc",
