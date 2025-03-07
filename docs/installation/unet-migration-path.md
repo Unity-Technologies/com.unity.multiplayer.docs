@@ -49,7 +49,9 @@ You can use one of the following options to replace UNet:
 
 ### Get started with Mirror
 
-**Attention: **The following concerns a product or service (each a “Third Party Product”) that is not developed, owned, or operated by Unity. This information may not be up-to-date or complete, and is provided to you for your information and convenience only. Your access and use of any Third Party Product is governed solely by the terms and conditions of such Third Party Product. Unity makes no express or implied representations or warranties regarding such Third Party Products, and will not be responsible or liable, directly or indirectly, for any actual or alleged damage or loss arising from your use thereof (including damage or loss arising from any content, advertising, products or other materials on or available from the provider of any Third Party Products).
+:::info
+The following concerns a product or service (each a “Third Party Product”) that is not developed, owned, or operated by Unity. This information may not be up-to-date or complete, and is provided to you for your information and convenience only. Your access and use of any Third Party Product is governed solely by the terms and conditions of such Third Party Product. Unity makes no express or implied representations or warranties regarding such Third Party Products, and will not be responsible or liable, directly or indirectly, for any actual or alleged damage or loss arising from your use thereof (including damage or loss arising from any content, advertising, products or other materials on or available from the provider of any Third Party Products).
+:::
 
 Mirror is a third party fork of UNet, so its syntax and core system, at least for the first versions of Mirror, is very similar to UNet. For this reason, it might be easier to adopt Mirror as a replacement for UNet.
 
