@@ -66,6 +66,10 @@ module.exports = {
                   "items": [
                     {
                         "type": "doc",
+                        "id": "installation/unet-migration-path"
+                    },
+                    {
+                        "type": "doc",
                         "id": "installation/upgrade_from_UNet"
                     },
                     {
