@@ -10,7 +10,7 @@ This guide explains how to replace the following major UNet components:
 * Backend service components (UNet services)
 
 :::warning
-UNet services will no longer be accessible after May 2025.
+UNet services will no longer be accessible after July 7th, 2025.
 :::
 
 All options provided below require that you upgrade the project to Unity 2020.3 LTS first. Since UNet’s services are no longer available, the suggested first party alternatives are Unity Lobby, and Unity Relay, which are available from Unity 2020.3 onward.
