@@ -1,6 +1,6 @@
 ---
 id: migrate-from-matchmaker-to-lobby
-title: Migrate from UNet Matchmaker to to the Lobby Unity Gaming Service
+title: Migrate from UNet Matchmaker to the Lobby Unity Gaming Service
 ---
 
 UNet is deprecated and no longer supported. Follow this guide to migrate from UNet to the [Lobby service](https://docs.unity.com/ugs/manual/lobby/manual/unity-lobby-service). If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
