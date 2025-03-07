@@ -81,32 +81,6 @@ The following snippet of code is triggered by an RPC coming from the server
 https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs#L77-L82
 ```
 
-:::tip
-If you want to make sure two variables are received at the same time, RPCs are great for this.
-
-If you change `NetworkVariables` "a" and "b", there is no guarantee they will both be received client side at the same time.
-
-<figure>
-<ImageSwitcher
-lightImageSrc="/sequence_diagrams/NetworkVariable/NetVarDataUpdates.png?text=LightMode"
-darkImageSrc="/sequence_diagrams/NetworkVariable/NetVarDataUpdates_Dark.png?text=DarkMode"/>
- <figcaption>Different Network Variables updated within the same tick aren't guranteed to be delivered to the clients at the same time. </figcaption>
-</figure>
-
-Sending them as two parameters in the same RPC ensures they will be received at the same time client side.
-
-<figure>
-<ImageSwitcher
-lightImageSrc="/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs.png?text=LightMode"
-darkImageSrc="/sequence_diagrams/NetworkVariableVSRPCs/ManagingNetVarData_RPCs_Dark.png?text=DarkMode"/>
- <figcaption>To ensure that several different Network Variables are all synchronized at the same exact time we can use client RPC to join these value changes together.</figcaption>
-</figure>
-
-`NetworkVariable`s are great when you only care about the latest value.
-
-:::
-
-
 ## Summary
 
 `NetworkVariable`s are great for managing state, to make sure everyone has the latest value. Use them when you want to make sure newly connected players get an up to date world state.
