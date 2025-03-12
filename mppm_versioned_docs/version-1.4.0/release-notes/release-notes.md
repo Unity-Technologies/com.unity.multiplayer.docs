@@ -1,39 +1,17 @@
 ---
-id: Multiplayer Play Mode-release-notes
+id: mppm-release-notes
 title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
-## [1.5.0-exp.1] - 2025-03-06
-
-### Fixed
-- Fixed and exception that was thrown when you start a scenario with no instances.
-- When a stop is requested during a domain reload, the scenario now exits Play Mode.
-- The launching scenario progress bar transition animation now appears correctly.
-- Reduced the number of errors that appear in the log when you rename the project.
-- Deleting Player Tags from Project Settings no longer removes them from existing Scenarios.
-- The editor window controls or widgets in Clone Editor instances now display correctly.
-- The launching scenario window UI is now ready during the build process.
+## [1.3.3] - 2024-12-17
 
 ### Added
-- Added Android mobile support to playmode scenarios.
-
-## [1.4.0-pre.2] - 2025-01-10
-
-### Added
-- Added `CurrentPlayer.IsMainEditor` to the API to check if the current Player is the Main Editor instance.
-- Added a Main Editor label to the scenario launch window.
+- Fixed an `ArgumentNullException` issue that occurs across an MPPM upgrade with an actively set Play Mode Scenario configuration.
 
 ### Fixed
-- Fixed an `ArgumentNullException` issue that occurs across an Multiplayer Play Mode upgrade with an actively set playmode Scenario configuration.
-- Fixed an issue where project settings were not getting propagated to Virtual Players when entering Playmode via the play button.
-- Fixing the issue where the launching scenario window persists when domain/scene reload is enabled in the project settings.
+- Fixed an issue where project settings were not getting propagated to Virtual Players when entering Play mode via the play button.
 
-### Changed
-- Moved the warning helpbox in Multiplayer Play Mode window to the bottom of the VP list during VP activation.
-
-### Fixed
-- Virtual players can now be muted and mute all virtual player setting only mutes players at launch
 ## [1.4.0-pre.1] - 2024-12-05
 
 ### Fixed
@@ -43,14 +21,6 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Added
 - Added a Scenario launch pop-up window that shows the scenario stages, progress bars, and configuration details.
 - Added the Entities Hierarchy window to Virtual Players. To enable this window, go to **Layout** > **Entities Hierarchy**.
-
-## [1.3.3] - 2024-12-17
-
-### Added
-- Fixed an `ArgumentNullException` issue that occurs across an Multiplayer Play Mode upgrade with an actively set Play Mode Scenario configuration.
-
-### Fixed
-- Fixed an issue where project settings were not getting propagated to Virtual Players when entering Play mode via the play button.
 
 ## [1.3.2] - 2024-11-14
 
