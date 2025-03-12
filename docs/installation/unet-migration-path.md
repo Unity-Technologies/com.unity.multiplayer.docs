@@ -37,7 +37,7 @@ Replacing the netcode framework of a game means replacing the foundation onto wh
 
 Therefore, if you don’t plan to invest a long time reworking and testing your game, keeping UNet might be the lowest-effort solution in terms of netcode, but you won’t be able to use Unity Relay. You also won’t receive support for any future UNet issues because it’s deprecated.
 
-UNet services won’t be active and accessible after May 2025, even if you keep UNet as a netcode framework. Once you’ve made a decision about the netcode framework, replace the gaming services.
+UNet services won’t be active and accessible after July 7th 2025, even if you keep UNet as a netcode framework. Once you’ve made a decision about the netcode framework, replace the gaming services.
 :::
 
 ## Replacing UNet and adopting Unity Gaming Services
