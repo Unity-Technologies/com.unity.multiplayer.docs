@@ -8,10 +8,11 @@ Use Multiplayer Play Mode to test multiplayer functionality within the Unity Edi
 
 ## Compatibility
 
-Multiplayer Play Mode version 1.4.0-pre is compatible with the following: 
+Multiplayer Play Mode version 1.5.0-exp.1 is compatible with the following: 
 
 * Unity Editor versions 6000.0.22f1 or later.
-* Windows, Linux, MacOS, and Android platforms.
+* Windows, Linux,and MacOS platforms.
+* Experimental Android support for Unity Editor version 6.1.
 
 ## Multiplayer Play Mode terminology
 

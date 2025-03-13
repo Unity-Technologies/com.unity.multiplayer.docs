@@ -24,7 +24,7 @@ The Play Mode Scenario window has the following limitations:
 
 * The Pause and Step icons in the Game view window aren't supported for local and remote targets.
 * You can only run a remote instance on the Linux platform.
-* You can only run a local instance on MacOS, Linux, Windows, or Android platforms.
+* You can only run a local instance on MacOS, Linux, Windows, and, from version 1.5.0, Android platforms.
 * Play Mode Scenarios doesn’t support [Play Mode shortcuts](https://docs.unity3d.com/6000.0/Documentation/Manual/UnityHotkeys.html).
 
 ## Additional resources
