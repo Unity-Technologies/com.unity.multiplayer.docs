@@ -21,6 +21,7 @@ This example uses [Netcode for GameObjects](https://docs-multiplayer.unity3d.com
 :::
 
 ```csharp
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 using Unity.Multiplayer.Playmode;

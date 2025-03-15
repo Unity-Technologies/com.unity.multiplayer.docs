@@ -17,6 +17,7 @@ The following script automatically sets a [NetworkVariable](https://docs-multipl
 A Player with a `Red` tag automatically sets the `Team` NetworkVariable to `Red`. A Player with a `Blue` tag automatically sets the `Team` NetworkVariable to `Blue`.
 
 ```csharp
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 using Unity.Multiplayer.Playmode;
