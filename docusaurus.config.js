@@ -389,8 +389,12 @@ module.exports = {
         lastVersion: "current",
         versions: {
           current: {
-            label: "1.4.0-pre",
+            label: "1.5.0-exp.1",
             path: "current",
+          },
+          "1.4.0": {
+            label: "1.4.0",
+            path: "1.4.0",
           },
           "1.3.3": {
             label: "1.3.3",

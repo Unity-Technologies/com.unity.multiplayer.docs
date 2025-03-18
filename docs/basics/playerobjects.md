@@ -13,7 +13,7 @@ If you're using `UnityEngine.InputSystem.PlayerInput` or `UnityEngine.PhysicsMod
 
 You can disable these components in the **Inspector** view on the prefab itself, or disable them during `Awake` in one of your `NetworkBehaviour` components. Then you can enable the components only on the owner's instance using code like the example below:
 
-```
+```csharp
 PlayerInput m_PlayerInput;
 private void Awake()
 {
