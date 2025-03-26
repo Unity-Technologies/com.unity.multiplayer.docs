@@ -9,7 +9,7 @@ description: Learn more about installing and running the Boss Room game sample.
 Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. it's an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
 
 :::note
-**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2022 LTS](https://unity.com/releases/lts)). Make sure to include standalone support for Windows/Mac in your installation.
+**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [6000 LTS](https://unity.com/releases). Make sure to include standalone support for Windows/Mac in your installation.
 :::
 
 Boss Room has been developed and tested on the following platforms:
@@ -79,7 +79,7 @@ Boss Room uses Git Large Files Support (LFS) to handle all large assets required
 
 You can download the latest version of Boss Room from our [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page. Doing so doesn't require you to use Git LFS.
 
-Alternatively, you can click the green **Code** button, then select **Download Zip**. This downloadd the branch that you are currently viewing on Github.
+Alternatively, you can click the green **Code** button on the main "Code" github page, then select **Download Zip**. This downloads the branch that you are currently viewing on Github.
 
 :::note
 **Note for Windows users**: Using Windows' built-in extraction tool may generate an `Error 0x80010135: Path too long` error window which can invalidate the extraction process. A workaround for this is to shorten the zip file to a single character (for example, "`c.zip`") and move it to the shortest path on your computer (most often right at `C:\`) and retry. If that solution fails, another workaround is to extract the downloaded zip file using [7zip](https://www.7-zip.org/).
@@ -93,7 +93,7 @@ Boss Room leverages several services from UGS to ease connectivity between playe
 
 Once you have downloaded the project, follow the steps below to get up and running:
 
-1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/lts).
+1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/).
     1. Include standalone support for **Windows/Mac** in your Unity Editor installation.
 2. Add the project to the Unity Hub by selecting the **Add** button and pointing it to the root folder of the downloaded project.
     1. Unity imports all the project assets the first time you open the project, which takes longer than usual.
@@ -122,7 +122,7 @@ See [Testing multiplayer games locally](../../tutorials/testing/testing_locally.
 
 #### Local multiplayer setup
 
-First, build an executable by selecting **File** > **Build Settings** > **Build**.
+First, build an executable by selecting **File** > **Build Profiles** > **Build**.
 
 After you have the build, you can launch several instances of the build executable to host or join a game.
 
@@ -182,7 +182,7 @@ Boss Room includes the following gameplay resources:
 * Character logic (including player's avatar) - [Assets/Scripts/Gameplay/GameplayObjects/Character/ \
 Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacter.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Character)
 * Character movements - [Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs)
-* Client driven movements - Boss Room is server driven with anticipation animation. See [Client Driven bitesize](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/v2.1.0/Basic/ClientDriven) for client driven gameplay
+* Client driven movements - Boss Room is server driven with anticipation animation. See [Client Driven bitesize](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) for client driven gameplay
 * Player spawn - SpawnPlayer() in [Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs)
 
 #### Game flow
@@ -233,7 +233,6 @@ Boss Room includes the following tools and utilities:
 * Scene utils with synced loading screens - [Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
 * RNSM custom config - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset)
 * NetworkSimulator usage through UI - [Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs ](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs)
-* ParrelSync - [Packages/manifest.json](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/manifest.json)
 
 ### Troubleshooting
 
